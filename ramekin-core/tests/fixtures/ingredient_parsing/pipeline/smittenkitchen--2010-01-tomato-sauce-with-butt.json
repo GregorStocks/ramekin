@@ -1,0 +1,83 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-01-tomato-sauce-with-butt",
+  "ingredients": [
+    {
+      "raw": "1 28-ounce (800 grams) can whole peeled tomatoes (San Marzano, if you can find them)",
+      "expected": {
+        "item": "whole peeled tomatoes (San Marzano, if you can find them)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "28-ounce can"
+          },
+          {
+            "amount": "800",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "5 tablespoons (70 grams) unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "70",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 medium-sized yellow onion, halved and peeled",
+      "expected": {
+        "item": "medium-sized yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "halved and peeled",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt to taste",
+      "expected": {
+        "item": "Salt to taste",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 pound (455 grams) spaghetti or another dried pasta [To finish]",
+      "expected": {
+        "item": "spaghetti or another dried pasta [To finish]",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "455",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    }
+  ]
+}

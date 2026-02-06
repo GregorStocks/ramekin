@@ -1,0 +1,70 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2024-04-steamed-artichokes",
+  "ingredients": [
+    {
+      "raw": "2 to 3 full-sized fresh artichokes",
+      "expected": {
+        "item": "full-sized fresh artichokes",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 to 2 lemons, halved",
+      "expected": {
+        "item": "lemons",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": null
+          }
+        ],
+        "note": "halved",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt, freshly ground black pepper",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": "freshly ground black pepper",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "A big pat of butter (optional)",
+      "expected": {
+        "item": "A big pat of butter",
+        "measurements": [],
+        "note": "optional",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "A few garlic cloves, halved lengthwise (optional)",
+      "expected": {
+        "item": "A few garlic cloves, halved lengthwise",
+        "measurements": [],
+        "note": "optional",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Mayonnaise, for dipping sauce",
+      "expected": {
+        "item": "Mayonnaise, for dipping sauce",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

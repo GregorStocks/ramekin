@@ -1,0 +1,92 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2019-12-cider-glazed-bacon-wra",
+  "ingredients": [
+    {
+      "raw": "12 ounces bacon (thinner is better), each strip cut into two segments",
+      "expected": {
+        "item": "bacon (thinner is better), each strip cut into two segments",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "6 ounces pitted dates (about 28)",
+      "expected": {
+        "item": "pitted dates",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": null
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons apple cider vinegar",
+      "expected": {
+        "item": "apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 teaspoons maple syrup or honey",
+      "expected": {
+        "item": "maple syrup or honey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "A few pinches aleppo-style mild red pepper flakes",
+      "expected": {
+        "item": "A few pinches aleppo-style mild red pepper flakes",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Flaky sea salt",
+      "expected": {
+        "item": "Flaky sea salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2024-09-lemon-chicken-with-pot",
+  "ingredients": [
+    {
+      "raw": "2 lemons, halved",
+      "expected": {
+        "item": "lemons",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "halved",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon dried oregano, divided",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 medium-large bone-in chicken thighs (about 2.25 pounds total)",
+      "expected": {
+        "item": "medium-large bone-in chicken thighs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "2.25",
+            "unit": "lb"
+          },
+          {
+            "amount": "1021",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "3 tablespoons olive oil, plus an additional drizzle",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": "plus an additional drizzle",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 large yellow onion, halved and thinly sliced",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "halved and thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 garlic cloves, thinly sliced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 15-ounce can chickpeas, drained and rinsed",
+      "expected": {
+        "item": "chickpeas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "15-ounce can"
+          }
+        ],
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "3/4 pound yukon gold potatoes (about 3 medium), unpeeled, each cut into 8 wedges",
+      "expected": {
+        "item": "yukon gold potatoes, unpeeled, each cut into 8 wedges",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "3",
+            "unit": "medium"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Big handful chopped flat-leaf parsley, to finish",
+      "expected": {
+        "item": "Big handful chopped flat-leaf parsley, to finish",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

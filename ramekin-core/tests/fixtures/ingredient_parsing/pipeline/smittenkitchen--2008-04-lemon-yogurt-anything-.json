@@ -1,0 +1,187 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2008-04-lemon-yogurt-anything-",
+  "ingredients": [
+    {
+      "raw": "1/2 cup (120 ml) vegetable or another neutral oil",
+      "expected": {
+        "item": "vegetable or another neutral oil",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 cup (200 grams) plus 1 tablespoon (15 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1 cup plus 1 tablespoon",
+            "unit": null
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 small/medium or 2 large lemons",
+      "expected": {
+        "item": "small/medium or 2 large lemons",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vanilla extract (optional; I skip it)",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": "optional; I skip it",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup (225 grams) plain yogurt, whole, low-fat, or greek-style",
+      "expected": {
+        "item": "plain yogurt, whole, low-fat, or greek-style",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 teaspoons baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 cups plus 1 tablespoon (205 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1 1/2 cups plus 1 tablespoon",
+            "unit": null
+          },
+          {
+            "amount": "205",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (250 grams) blueberries, fresh or frozen [see Note]",
+      "expected": {
+        "item": "blueberries",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": "fresh or frozen [see Note]",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Powdered sugar for dusting [optional]",
+      "expected": {
+        "item": "Powdered sugar for dusting [optional]",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

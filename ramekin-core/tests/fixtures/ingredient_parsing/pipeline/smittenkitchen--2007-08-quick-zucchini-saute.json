@@ -1,0 +1,70 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-08-quick-zucchini-saute",
+  "ingredients": [
+    {
+      "raw": "1 to 2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 tablespoons thinly sliced almonds",
+      "expected": {
+        "item": "thinly sliced almonds",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1 medium or 2 small zucchinis, cut into 1/8-inch matchsticks",
+      "expected": {
+        "item": "zucchinis, cut into 1/8-inch matchsticks",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "2",
+            "unit": "small"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground pepper",
+      "expected": {
+        "item": "Salt and freshly ground pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Peelings of pecorino romano or parmesan cheese, to taste (optional)",
+      "expected": {
+        "item": "Peelings of pecorino romano or parmesan cheese, to taste",
+        "measurements": [],
+        "note": "optional",
+        "category": "Cheese"
+      }
+    }
+  ]
+}

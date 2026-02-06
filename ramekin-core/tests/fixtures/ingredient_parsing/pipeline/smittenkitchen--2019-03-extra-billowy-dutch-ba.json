@@ -1,0 +1,102 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2019-03-extra-billowy-dutch-ba",
+  "ingredients": [
+    {
+      "raw": "2 to 3 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 cup (65 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "65",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup milk (ideally whole milk but most varieties will work)",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
+          }
+        ],
+        "note": "ideally whole milk but most varieties will work",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "If savory: Freshly ground black pepper, wilted spinach or sauteed greens, bacon or ham, cheese, herbs or comte, herbs (shown here with ham, gruyere, and chives)",
+      "expected": {
+        "item": "If savory: Freshly ground black pepper, wilted spinach or sauteed greens, bacon or ham, cheese, herbs or comte, herbs (shown here with ham, gruyere, and chives)",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "If sweet: 1 tablespoon granulated sugar in batter, powdered sugar to finish, lemon juice, syrup, fresh berries, shaved chocolate, or chocolate sauce",
+      "expected": {
+        "item": "If sweet: 1 tablespoon granulated sugar in batter, powdered sugar to finish, lemon juice, syrup, fresh berries, shaved chocolate, or chocolate sauce",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

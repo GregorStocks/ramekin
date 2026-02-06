@@ -1,0 +1,158 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2017-08-fried-rice-with-zucchi",
+  "ingredients": [
+    {
+      "raw": "Olive oil",
+      "expected": {
+        "item": "Olive oil",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 medium-large sweet onion, diced or 1/2 a large onion",
+      "expected": {
+        "item": "medium-large sweet onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced or 1/2 a large onion",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper, plus red pepper flakes for heat if desired",
+      "expected": {
+        "item": "Salt and freshly ground black pepper",
+        "measurements": [],
+        "note": "plus red pepper flakes for heat if desired",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 pound zucchini or other summer squash (about 2 small/medium), diced",
+      "expected": {
+        "item": "zucchini or other summer squash",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "diced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon finely chopped fresh thyme leaves",
+      "expected": {
+        "item": "finely chopped fresh thyme leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup small red cherry or grape tomatoes, sliced 1/4-inch thick if large, halved if tiny",
+      "expected": {
+        "item": "small red cherry or grape tomatoes, sliced 1/4-inch thick if large",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "halved if tiny",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 1/2 to 3 cups cooked, ideally day old, short-grain white or brown rice",
+      "expected": {
+        "item": "to 3 cups cooked, ideally day old, short-grain white or brown rice",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "1/2 cup grated Parmesan, divided",
+      "expected": {
+        "item": "grated Parmesan",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "Handful chopped flat-leaf parsley",
+      "expected": {
+        "item": "chopped flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 large eggs (for scrambled method) or 4 large eggs (for an egg on top of each portion)",
+      "expected": {
+        "item": "eggs (for scrambled method) or 4 large eggs (for an egg on top of each portion)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2008-10-twice-baked-shortbread",
+  "ingredients": [
+    {
+      "raw": "12 tablespoons (6 ounces or 170 grams) unsalted butter, melted and still warm",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "melted and still warm",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "5 tablespoons (60 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract or the seeds from half a vanilla bean",
+      "expected": {
+        "item": "vanilla extract or the seeds from half a vanilla bean",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt or a two solid pinches of flaky sea salt (such as Maldon)",
+      "expected": {
+        "item": "salt or a two solid pinches of flaky sea salt (such as Maldon)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (190 grams or 6.75 ounces) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "190",
+            "unit": "g"
+          },
+          {
+            "amount": "6.75",
+            "unit": "oz"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Turbinado, Demerara or another coarse sugar for sprinkling",
+      "expected": {
+        "item": "Turbinado, Demerara or another coarse sugar for sprinkling",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

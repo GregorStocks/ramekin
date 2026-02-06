@@ -1,0 +1,227 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2023-07-buffalo-chicken-cobb-s",
+  "ingredients": [
+    {
+      "raw": "1/2 cup buttermilk, shaken",
+      "expected": {
+        "item": "buttermilk, shaken",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "Juice of half a lemon (about 1 1/2 tablespoons)",
+      "expected": {
+        "item": "Juice of half a lemon",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 small garlic clove, minced",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon kosher salt, plus more to taste",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Many grinds of black pepper",
+      "expected": {
+        "item": "Many grinds of black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 cup minced fresh chives, divided",
+      "expected": {
+        "item": "minced fresh chives",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "6 tablespoons hot sauce, ideally Franks",
+      "expected": {
+        "item": "hot sauce, ideally Franks",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "4 tablespoons melted butter",
+      "expected": {
+        "item": "melted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "6 to 6 1/2 cups diced fresh vegetables, such as celery, carrots, bell pepper, cucumber, and tomatoes",
+      "expected": {
+        "item": "1/2 cups diced fresh vegetables, such as celery, carrots, bell pepper, cucumber, and tomatoes",
+        "measurements": [
+          {
+            "amount": "6 to 6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup diced red onion (from 1 small)",
+      "expected": {
+        "item": "diced red onion (from 1 small)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 to 6 ounces diced blue cheese, such as a Danish blue",
+      "expected": {
+        "item": "diced blue cheese, such as a Danish blue",
+        "measurements": [
+          {
+            "amount": "4 to 6",
+            "unit": "oz"
+          },
+          {
+            "amount": "113 to 170",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "4 to 5 ounces romaine or baby gem lettuce, sliced or torn",
+      "expected": {
+        "item": "romaine or baby gem lettuce",
+        "measurements": [
+          {
+            "amount": "4 to 5",
+            "unit": "oz"
+          },
+          {
+            "amount": "113 to 142",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced or torn",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 pound boneless chicken thighs, grilled and sliced, ideally still warm",
+      "expected": {
+        "item": "boneless chicken thighs, grilled and sliced, ideally still warm",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    }
+  ]
+}

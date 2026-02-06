@@ -1,0 +1,160 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2020-08-corn-coconut-soup",
+  "ingredients": [
+    {
+      "raw": "2 large yellow onions",
+      "expected": {
+        "item": "yellow onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 quarts (2.8 liters) water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "quart"
+          },
+          {
+            "amount": "2.8",
+            "unit": "l"
+          },
+          {
+            "amount": "2844",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "4 large ears or 5 medium-large fresh corn, kernels cut from cobs, cobs reserved",
+      "expected": {
+        "item": "ears or 5 medium-large fresh corn, kernels cut from cobs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": "cobs reserved",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 (1-inch) piece ginger, peeled and thinly sliced",
+      "expected": {
+        "item": "ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "piece"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled and thinly sliced",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "4 garlic cloves, sliced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) canola, safflower, or another neutral oil",
+      "expected": {
+        "item": "canola, safflower, or another neutral oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 1/2 teaspoons kosher salt, plus more to taste",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 (13.5-ounce or 400-ml) can full-fat coconut milk, well-stirred",
+      "expected": {
+        "item": "full-fat coconut milk, well-stirred",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "13.5",
+            "unit": null
+          },
+          {
+            "amount": "400",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "Juice of half a lime",
+      "expected": {
+        "item": "Juice of half a lime",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "To garnish: Fresh cilantro leaves, lime wedges, toasted coconut flakes, (see below for next three) chile oil, pickled shallots, and/or crispy shallots",
+      "expected": {
+        "item": "To garnish: Fresh cilantro leaves, lime wedges, toasted coconut flakes, (see below for next three) chile oil, pickled shallots, and/or crispy shallots",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2019-04-cannellini-aglio-e-oli",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "4 garlic cloves, peeled and thinly sliced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "peeled and thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt and red pepper flakes",
+      "expected": {
+        "item": "Salt and red pepper flakes",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 15-ounce can cannellini beans, drained and rinsed (about 1 3/4 cups)",
+      "expected": {
+        "item": "cannellini beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "15-ounce can"
+          },
+          {
+            "amount": "1 3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "Half a 14-ounce can artichoke hearts, drained, chopped",
+      "expected": {
+        "item": "a 14-ounce can artichoke hearts, drained",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "chopped",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/4 cup chopped flat-leaf parsley",
+      "expected": {
+        "item": "chopped flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Grated parmesan or pecorino romano",
+      "expected": {
+        "item": "Grated parmesan or pecorino romano",
+        "measurements": [],
+        "note": null,
+        "category": "Cheese"
+      }
+    }
+  ]
+}

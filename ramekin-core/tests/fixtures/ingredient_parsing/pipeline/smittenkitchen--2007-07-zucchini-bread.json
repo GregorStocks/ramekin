@@ -1,0 +1,224 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-07-zucchini-bread",
+  "ingredients": [
+    {
+      "raw": "3 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup (235 ml) olive, vegetable oil or melted butter (I use a mix)",
+      "expected": {
+        "item": "olive",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "235",
+            "unit": "ml"
+          }
+        ],
+        "note": "vegetable oil or melted butter (I use a mix)",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 1/3 to 1 3/4 cups granulated or turbinado sugar (the latter is the original amount)",
+      "expected": {
+        "item": "to 1 3/4 cups granulated or turbinado sugar (the latter is the original amount)",
+        "measurements": [
+          {
+            "amount": "1 1/3",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 teaspoons (10 ml) vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "8.7",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 teaspoons ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon ground or freshly grated nutmeg",
+      "expected": {
+        "item": "ground or freshly grated nutmeg",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.6",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon fine sea or table salt",
+      "expected": {
+        "item": "fine sea or table salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 cups grated, packed zucchini, not wrung out (from about 10 ounces or 2 smallish zucchini)",
+      "expected": {
+        "item": "grated, packed zucchini, not wrung out",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 cups (390 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "390",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup (55 grams) chopped walnuts or pecans (optional)",
+      "expected": {
+        "item": "chopped walnuts or pecans",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1 to 2 cups dried cranberries, raisins or chocolate chips or a combination thereof (optional)",
+      "expected": {
+        "item": "dried cranberries, raisins or chocolate chips or a combination thereof",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional",
+        "category": "Baking"
+      }
+    }
+  ]
+}

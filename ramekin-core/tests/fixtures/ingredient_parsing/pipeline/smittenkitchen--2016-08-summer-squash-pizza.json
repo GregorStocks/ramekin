@@ -1,0 +1,114 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2016-08-summer-squash-pizza",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon olive oil, plus more for fingertips",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for fingertips",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 recipe pizza dough (below) or about a 2/3 volume of my lazy fitted-to-your-schedule favorite or your favorite, whichever it may be",
+      "expected": {
+        "item": "recipe pizza dough (below) or about a 2/3 volume of my lazy fitted-to-your-schedule favorite or your favorite, whichever it may be",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 1/2 pounds (about 5 small-medium or 3 large) zucchini or other summer squash, trimmed",
+      "expected": {
+        "item": "zucchini or other summer squash",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "5",
+            "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": "large"
+          },
+          {
+            "amount": "1134",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons fine sea salt",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 cups (8 ounces) coarsely grated gruyere cheese",
+      "expected": {
+        "item": "coarsely grated gruyere cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2 to 3 tablespoons plain breadcrumbs",
+      "expected": {
+        "item": "plain breadcrumbs",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    }
+  ]
+}

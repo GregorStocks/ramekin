@@ -1,0 +1,119 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2008-04-chocolate-walnut-cooki",
+  "ingredients": [
+    {
+      "raw": "2 3/4 cups (285 grams or 10 ounces) walnut halves",
+      "expected": {
+        "item": "walnut halves",
+        "measurements": [
+          {
+            "amount": "2 3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "285",
+            "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "oz"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "3 cups (360 grams) confectioners’ sugar",
+      "expected": {
+        "item": "confectioners’ sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "360",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup plus 3 tablespoons (55 grams) unsweetened Dutch-process cocoa powder",
+      "expected": {
+        "item": "unsweetened Dutch-process cocoa powder",
+        "measurements": [
+          {
+            "amount": "1/2 cup plus 3 tablespoons",
+            "unit": null
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 large egg whites, at room temperature",
+      "expected": {
+        "item": "egg whites",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "A few sea salt flakes to finish (if you wish)",
+      "expected": {
+        "item": "A few sea salt flakes to finish (if you wish)",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

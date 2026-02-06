@@ -1,0 +1,111 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2023-07-flaky-chocolate-cake",
+  "ingredients": [
+    {
+      "raw": "4 ounces (115 grams) semi or bittersweet chocolate, coarsely chopped or chips",
+      "expected": {
+        "item": "semi or bittersweet chocolate",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "115",
+            "unit": "g"
+          }
+        ],
+        "note": "coarsely chopped or chips",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "4 tablespoons (55 grams) unsalted butter, diced",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": "diced",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 cup (100 grams) granulated sugar, divided",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 teaspoons cognac or brandy or 1 teaspoon vanilla extract",
+      "expected": {
+        "item": "cognac",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or brandy or 1 teaspoon vanilla extract",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "3 large eggs, separated",
+      "expected": {
+        "item": "eggs, separated",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Powdered sugar for dusting",
+      "expected": {
+        "item": "Powdered sugar for dusting",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

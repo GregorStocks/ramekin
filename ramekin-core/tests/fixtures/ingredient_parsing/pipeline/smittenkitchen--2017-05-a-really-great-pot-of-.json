@@ -1,0 +1,98 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2017-05-a-really-great-pot-of-",
+  "ingredients": [
+    {
+      "raw": "1 pound dried chickpeas",
+      "expected": {
+        "item": "dried chickpeas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "Water",
+      "expected": {
+        "item": "Water",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 tablespoons coarse or kosher salt, divided",
+      "expected": {
+        "item": "coarse or kosher salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 fresh sage sprigs or 1 sage and 1 rosemary sprig",
+      "expected": {
+        "item": "fresh sage sprigs or 1 sage and 1 rosemary sprig",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 to 5 cloves garlic, unpeeled but crushed",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4 to 5",
+            "unit": "clove"
+          }
+        ],
+        "note": "unpeeled but crushed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon whole black peppercorns",
+      "expected": {
+        "item": "whole black peppercorns",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "A parmesan rind (optional)",
+      "expected": {
+        "item": "A parmesan rind",
+        "measurements": [],
+        "note": "optional",
+        "category": "Cheese"
+      }
+    }
+  ]
+}

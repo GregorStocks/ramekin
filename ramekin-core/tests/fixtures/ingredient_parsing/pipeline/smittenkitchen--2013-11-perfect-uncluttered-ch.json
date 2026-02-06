@@ -1,0 +1,88 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-11-perfect-uncluttered-ch",
+  "ingredients": [
+    {
+      "raw": "3 pounds uncooked chicken wings",
+      "expected": {
+        "item": "uncooked chicken wings",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "3 quarts water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "quart"
+          },
+          {
+            "amount": "2844",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 large onion, roughly chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "roughly chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 garlic clove, smashed",
+      "expected": {
+        "item": "garlic clove, smashed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon table salt, or more to taste*",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6.1",
+            "unit": "g"
+          }
+        ],
+        "note": "or more to taste*",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

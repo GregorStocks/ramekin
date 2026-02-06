@@ -1,0 +1,130 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2020-12-brussels-sprout-and-ba",
+  "ingredients": [
+    {
+      "raw": "1/2 pound bacon, diced",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "diced",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "2 small- medium shallots, halved and thinly sliced",
+      "expected": {
+        "item": "small- medium shallots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "halved and thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3/4 pound brussels sprouts, halved and sliced 1/4 -nch thick",
+      "expected": {
+        "item": "brussels sprouts",
+        "measurements": [
+          {
+            "amount": "3/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "halved and sliced 1/4 -nch thick",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground pepper",
+      "expected": {
+        "item": "Freshly ground pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "8 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 tablespoons whole milk or cream",
+      "expected": {
+        "item": "whole milk or cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup shredded gruyère cheese",
+      "expected": {
+        "item": "shredded gruyère cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/4 cup snipped chives, divided",
+      "expected": {
+        "item": "snipped chives",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided",
+        "category": "Produce"
+      }
+    }
+  ]
+}

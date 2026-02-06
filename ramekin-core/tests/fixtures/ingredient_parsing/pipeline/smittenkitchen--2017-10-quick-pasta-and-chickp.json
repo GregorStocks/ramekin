@@ -1,0 +1,180 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2017-10-quick-pasta-and-chickp",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 cloves garlic, peeled and smashed",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled and smashed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 tablespoons tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt, plus more to taste",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper or red pepper flakes, to taste",
+      "expected": {
+        "item": "Freshly ground black pepper or red pepper flakes",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 cups cooked chickpeas (from one 15-ounce can, drained and rinsed)",
+      "expected": {
+        "item": "cooked chickpeas",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "from one 15-ounce can, drained and rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/2 cup (2 ounces or 55 grams) uncooked ditalini pasta (or another small shape; I use annelini)",
+      "expected": {
+        "item": "uncooked ditalini pasta (or another small shape; I use annelini)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "2 cups (475 ml) boiling water (update: actually I just use tap, not boiled, water)",
+      "expected": {
+        "item": "boiling water (update: actually I just use tap, not boiled, water)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "475",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "2 to 3 tablespoons olive oil (estimate 1 per serving)",
+      "expected": {
+        "item": "olive oil (estimate 1 per serving)",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 clove of garlic, peeled and finely chopped",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled and finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon minced fresh rosemary",
+      "expected": {
+        "item": "minced fresh rosemary",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt and red pepper flakes",
+      "expected": {
+        "item": "Salt and red pepper flakes",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2020-04-roast-chicken-with-sch",
+  "ingredients": [
+    {
+      "raw": "1 large head (2 1/2 pounds) green cabbage",
+      "expected": {
+        "item": "head green cabbage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "2 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "1134",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Splash of oil, any kind",
+      "expected": {
+        "item": "Splash of oil, any kind",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 whole chicken (shown here is 3 pounds)",
+      "expected": {
+        "item": "whole chicken (shown here is 3 pounds)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "4 tablespoons unsalted butter, melted",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "melted",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "A lemon, if you wish, for serving (we never used ours)",
+      "expected": {
+        "item": "A lemon, if you wish",
+        "measurements": [],
+        "note": "for serving (we never used ours)",
+        "category": "Produce"
+      }
+    }
+  ]
+}

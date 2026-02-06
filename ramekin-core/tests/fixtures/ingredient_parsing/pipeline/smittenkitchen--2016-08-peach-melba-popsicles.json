@@ -1,0 +1,98 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2016-08-peach-melba-popsicles",
+  "ingredients": [
+    {
+      "raw": "1/2 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup whole raspberries",
+      "expected": {
+        "item": "whole raspberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 cups peeled chopped peaches in small/medium chunks",
+      "expected": {
+        "item": "peeled chopped peaches in small/medium chunks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon almond extract (optional)",
+      "expected": {
+        "item": "almond extract",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 cups vanilla ice cream, frozen yogurt or non-dairy vanilla ice cream of your choice, slightly softened (think: soft-serve consistency)",
+      "expected": {
+        "item": "vanilla ice cream, frozen yogurt or non-dairy vanilla ice cream of your choice",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "slightly softened (think: soft-serve consistency)",
+        "category": "Frozen"
+      }
+    }
+  ]
+}

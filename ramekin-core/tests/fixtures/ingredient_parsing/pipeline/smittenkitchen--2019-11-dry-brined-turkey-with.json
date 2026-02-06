@@ -1,0 +1,107 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2019-11-dry-brined-turkey-with",
+  "ingredients": [
+    {
+      "raw": "1 12- to 16-pound fresh turkey",
+      "expected": {
+        "item": "12- to 16-pound fresh turkey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 tablespoons maple syrup",
+      "expected": {
+        "item": "maple syrup",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "79",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup unsalted butter, melted",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": "melted",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon of a chile paste — gochujang, harissa, or chipotle — plus more to taste",
+      "expected": {
+        "item": "a chile paste - gochujang, harissa, or chipotle -",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more to taste",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "8 to 10 medium onions, half red, half yellow, peeled and cut into quarters",
+      "expected": {
+        "item": "onions, half red, half yellow",
+        "measurements": [
+          {
+            "amount": "8 to 10",
+            "unit": "medium"
+          }
+        ],
+        "note": "peeled and cut into quarters",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons sunflower, safflower, or another high-heat friendly oil",
+      "expected": {
+        "item": "sunflower, safflower, or another high-heat friendly oil",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2022-02-lemon-sorbet",
+  "ingredients": [
+    {
+      "raw": "2 1/2 cups (590 grams) cold water, divided",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "590",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "14 tablespoons (175 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "175",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Finely grated zest and juice from about 6 lemons",
+      "expected": {
+        "item": "Finely grated zest and juice from about 6 lemons",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    }
+  ]
+}

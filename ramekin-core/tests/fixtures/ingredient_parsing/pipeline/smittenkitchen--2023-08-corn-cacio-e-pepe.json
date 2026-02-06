@@ -1,0 +1,105 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2023-08-corn-cacio-e-pepe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons (30 grams) olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "About 3 cups fresh corn kernels (from 3 medium-large ears)",
+      "expected": {
+        "item": "About 3 cups fresh corn kernels (from 3 medium-large ears)",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 grams) butter, salted or unsalted",
+      "expected": {
+        "item": "butter, salted or unsalted",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 pound (455 grams) dried linguine or another pasta of your choice",
+      "expected": {
+        "item": "dried linguine or another pasta of your choice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "455",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "8 ounces (225 grams) pecorino romano cheese, cut into 1-inch chunks, plus a few extra gratings for garnish",
+      "expected": {
+        "item": "pecorino romano cheese, cut into 1-inch chunks",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": "plus a few extra gratings for garnish",
+        "category": "Cheese"
+      }
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-02-moms-chocolate-chip-me",
+  "ingredients": [
+    {
+      "raw": "2 egg whites, room temperature",
+      "expected": {
+        "item": "egg whites",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon cream of tartar",
+      "expected": {
+        "item": "cream of tartar",
+        "measurements": [
+          {
+            "amount": "1/8",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.4",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2/3 to 3/4 cup regular or superfine sugar (I use a bit less — a slightly heaped 1/2 cup)",
+      "expected": {
+        "item": "regular or superfine sugar (I use a bit less - a slightly heaped 1/2 cup)",
+        "measurements": [
+          {
+            "amount": "2/3 to 3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "6 ounces chocolate chips, miniature chips or finely diced semi or bittersweet chocolate",
+      "expected": {
+        "item": "chocolate chips",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "miniature chips or finely diced semi or bittersweet chocolate",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup finely chopped pecans or walnuts, toasted first is even tastier (optional)",
+      "expected": {
+        "item": "finely chopped pecans or walnuts, toasted first is even tastier",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional",
+        "category": "Nuts & Dried Fruit"
+      }
+    }
+  ]
+}

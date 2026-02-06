@@ -1,0 +1,182 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2015-09-zucchini-rice-cheese-g",
+  "ingredients": [
+    {
+      "raw": "Butter for dish",
+      "expected": {
+        "item": "Butter for dish",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 1/2 pounds (about 1 1/8 kg) zucchini",
+      "expected": {
+        "item": "zucchini",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "1 1/8",
+            "unit": "kg"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 1/2 teaspoons kosher salt (I use Diamond brand, use 1 1/2 of other brands)",
+      "expected": {
+        "item": "kosher salt (I use Diamond brand, use 1 1/2 of other brands)",
+        "measurements": [
+          {
+            "amount": "2 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 cup (90 grams) plain, uncooked white rice",
+      "expected": {
+        "item": "plain",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "90",
+            "unit": "g"
+          }
+        ],
+        "note": "uncooked white rice",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 medium onion, minced (about 1 cup)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "138",
+            "unit": "g"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "5 tablespoons (75 ml) olive oil, divided",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "75",
+            "unit": "ml"
+          },
+          {
+            "amount": "68",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 large cloves garlic, mashed or finely minced",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "mashed or finely minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons (15 grams) all-purpose flour (optional)",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup milk, as needed, although water or broth of your choice would work just fine [1/2 cup needed for streamlined directions, less for original]",
+      "expected": {
+        "item": "milk, as needed, although water or broth of your choice would work just fine [1/2 cup needed for streamlined directions, less for original]",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2/3 cup (55 grams) grated Parmesan cheese, divided",
+      "expected": {
+        "item": "grated Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "2/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

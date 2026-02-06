@@ -1,0 +1,211 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2016-06-corn-and-black-bean-we",
+  "ingredients": [
+    {
+      "raw": "2 ears corn, husked",
+      "expected": {
+        "item": "ears corn, husked",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 15-ounce can black beans, drained and rinsed",
+      "expected": {
+        "item": "black beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "15-ounce can"
+          }
+        ],
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 large poblano",
+      "expected": {
+        "item": "poblano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Nonstick spray or 2 teaspoons oil",
+      "expected": {
+        "item": "Nonstick spray",
+        "measurements": [],
+        "note": "or 2 teaspoons oil",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 generous cups (about 8 ounces) coarsely grated monterey jack cheese",
+      "expected": {
+        "item": "coarsely grated monterey jack cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "generous cup"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2 generous cups (about 8 ounces) coarsely grated cheddar cheese",
+      "expected": {
+        "item": "coarsely grated cheddar cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "generous cup"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 12-ounce bag tortilla chips, the thicker the better",
+      "expected": {
+        "item": "tortilla chips, the thicker the better",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "12-ounce bag"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "Thinly sliced jalapeno (1 used 1/2 a big one)",
+      "expected": {
+        "item": "Thinly sliced jalapeno",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Thinly sliced radishes (I used 2 medium)",
+      "expected": {
+        "item": "Thinly sliced radishes (I used 2 medium)",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 a white onion, minced (you can toss it with a little lime juice and salt to lightly pickle it, if desired)",
+      "expected": {
+        "item": "a white onion, minced (you can toss it with a little lime juice and salt to lightly pickle it, if desired)",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "Handful fresh cilantro, roughly chopped",
+      "expected": {
+        "item": "fresh cilantro",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": "roughly chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Diced tomatoes",
+      "expected": {
+        "item": "Diced tomatoes",
+        "measurements": [],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "Shredded lettuce",
+      "expected": {
+        "item": "Shredded lettuce",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Sliced avocado",
+      "expected": {
+        "item": "Sliced avocado",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Lime wedges",
+      "expected": {
+        "item": "Lime wedges",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Hot sauce",
+      "expected": {
+        "item": "Hot sauce",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

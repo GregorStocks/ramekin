@@ -1,0 +1,241 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2017-09-pizza-beans",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons (30 ml) olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 large onion, chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 celery stalks, diced",
+      "expected": {
+        "item": "celery stalks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "diced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large or 2 regular carrots, diced",
+      "expected": {
+        "item": "or 2 regular carrots",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "diced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper or red pepper flakes",
+      "expected": {
+        "item": "Salt and freshly ground black pepper or red pepper flakes",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 large garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup (60 ml) dry white or red wine (optional)",
+      "expected": {
+        "item": "dry white or red wine",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": "optional",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "4 ounces (115 grams) curly kale leaves, chopped or torn",
+      "expected": {
+        "item": "curly kale leaves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "115",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped or torn",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 1/4 cups (550 grams) crushed tomatoes (28-ounce or 800-gram can minus 1 cup; reserve the rest for another use)",
+      "expected": {
+        "item": "crushed tomatoes",
+        "measurements": [
+          {
+            "amount": "2 1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "550",
+            "unit": "g"
+          },
+          {
+            "amount": "28",
+            "unit": null
+          },
+          {
+            "amount": "800",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 pound (455 grams) cooked firm-tender giant white beans",
+      "expected": {
+        "item": "cooked firm-tender giant white beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "455",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "Up to 3/4 cup (175 ml) vegetable broth",
+      "expected": {
+        "item": "Up to 3/4 cup vegetable broth",
+        "measurements": [
+          {
+            "amount": "175",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/2 pound (225 grams) mozzarella, coarsely grated",
+      "expected": {
+        "item": "mozzarella",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": "coarsely grated",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/3 cup (35 grams) grated Parmesan",
+      "expected": {
+        "item": "grated Parmesan",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "35",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2 tablespoons (5 grams) roughly chopped fresh flat-leaf parsley, for garnish (optional)",
+      "expected": {
+        "item": "roughly chopped fresh flat-leaf parsley, for garnish",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

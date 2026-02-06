@@ -1,0 +1,118 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-04-chocolate-caramel-crac",
+  "ingredients": [
+    {
+      "raw": "About 4 sheets matzo or approximately 40 saltine-style crackers",
+      "expected": {
+        "item": "About 4 sheets matzo or approximately 40 saltine-style crackers",
+        "measurements": [],
+        "note": null,
+        "category": "Snacks"
+      }
+    },
+    {
+      "raw": "1 cup (8 ounces or 225 grams) unsalted butter, cut into a few large pieces",
+      "expected": {
+        "item": "unsalted butter, cut into a few large pieces",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup (190 grams) packed light brown sugar",
+      "expected": {
+        "item": "packed light brown sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "190",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Sea salt, preferably flaky",
+      "expected": {
+        "item": "Sea salt, preferably flaky",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vanilla extract (optional)",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (9 ounces or 255 grams) semi- or bittersweet chocolate chips, or 9 ounces chopped semi- or bittersweet chocolate",
+      "expected": {
+        "item": "semi- or bittersweet chocolate chips",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "9",
+            "unit": "oz"
+          },
+          {
+            "amount": "255",
+            "unit": "g"
+          }
+        ],
+        "note": "or 9 ounces chopped semi- or bittersweet chocolate",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup toasted chopped almonds, pecans, walnuts or a nut of your choice (optional)",
+      "expected": {
+        "item": "toasted chopped almonds, pecans, walnuts or a nut of your choice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional",
+        "category": "Nuts & Dried Fruit"
+      }
+    }
+  ]
+}

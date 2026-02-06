@@ -1,0 +1,244 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2019-10-chickpea-and-kale-shak",
+  "ingredients": [
+    {
+      "raw": "Olive oil",
+      "expected": {
+        "item": "Olive oil",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 medium yellow onion, finely chopped",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 garlic cloves, finely minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "finely minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground coriander",
+      "expected": {
+        "item": "ground coriander",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 a jalapeño pepper, de-seeded and finely chopped",
+      "expected": {
+        "item": "a jalapeño pepper",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": null
+          }
+        ],
+        "note": "de-seeded and finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Kosher salt and black pepper",
+      "expected": {
+        "item": "Kosher salt and black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 15-ounce cans cooked chickpeas, drained and rinsed (about 3 1/2 cups)",
+      "expected": {
+        "item": "cooked chickpeas",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "15-ounce cans"
+          },
+          {
+            "amount": "3 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "15-ounce can crushed tomatoes (1 3/4 cups)",
+      "expected": {
+        "item": "-ounce can crushed tomatoes",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": null
+          },
+          {
+            "amount": "1 3/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/2 cup (125ml) vegetable broth or stock",
+      "expected": {
+        "item": "vegetable broth or stock",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "4 ounces kale, stems removed (I use a package from the salad greens section)",
+      "expected": {
+        "item": "kale, stems removed (I use a package from the salad greens section)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup (150 grams) feta, crumbled",
+      "expected": {
+        "item": "feta",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": "crumbled",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "4 to 6 large eggs (shown with 6)",
+      "expected": {
+        "item": "eggs (shown with 6)",
+        "measurements": [
+          {
+            "amount": "4 to 6",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon za’atar",
+      "expected": {
+        "item": "za’atar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Handful of mint leaves, chopped",
+      "expected": {
+        "item": "mint leaves",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": "chopped",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Toasted pita wedges, to serve (optional)",
+      "expected": {
+        "item": "Toasted pita wedges, to serve",
+        "measurements": [],
+        "note": "optional",
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "Dollops of plain Greek yogurt, to serve (optional)",
+      "expected": {
+        "item": "Dollops of plain Greek yogurt, to serve",
+        "measurements": [],
+        "note": "optional",
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

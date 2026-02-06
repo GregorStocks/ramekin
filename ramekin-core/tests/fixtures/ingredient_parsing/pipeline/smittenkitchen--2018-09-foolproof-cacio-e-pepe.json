@@ -1,0 +1,51 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2018-09-foolproof-cacio-e-pepe",
+  "ingredients": [
+    {
+      "raw": "8 ounces dried spaghetti or tonnarelli",
+      "expected": {
+        "item": "dried spaghetti or tonnarelli",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "4 ounces aged pecorino romano, finely grated",
+      "expected": {
+        "item": "aged pecorino romano",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "finely grated",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "A lot of freshly ground black pepper",
+      "expected": {
+        "item": "A lot of freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

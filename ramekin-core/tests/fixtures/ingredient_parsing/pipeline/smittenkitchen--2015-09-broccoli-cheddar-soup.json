@@ -1,0 +1,187 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2015-09-broccoli-cheddar-soup",
+  "ingredients": [
+    {
+      "raw": "4 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 small onion, chopped small",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "chopped small",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 garlic clove, minced",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup half-and-half",
+      "expected": {
+        "item": "half-and-half",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 cups low-sodium vegetable or chicken broth (here’s my favorite chicken stock)",
+      "expected": {
+        "item": "low-sodium vegetable or chicken broth (here’s my favorite chicken stock)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/4 pounds broccoli or 4 cups broccoli florets and stems, chopped small",
+      "expected": {
+        "item": "broccoli or 4 cups broccoli florets and stems",
+        "measurements": [
+          {
+            "amount": "1 1/4",
+            "unit": "lb"
+          },
+          {
+            "amount": "567",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped small",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large carrot (about 6 ounces) or 2 slim ones, chopped tiny (1 cup)",
+      "expected": {
+        "item": "carrot or 2 slim ones",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped tiny",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "8 ounces (about 2 1/2 cups) coarsely grated sharp cheddar cheese, plus a pinch extra for garnish",
+      "expected": {
+        "item": "coarsely grated sharp cheddar cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "2 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "plus a pinch extra for garnish",
+        "category": "Cheese"
+      }
+    }
+  ]
+}

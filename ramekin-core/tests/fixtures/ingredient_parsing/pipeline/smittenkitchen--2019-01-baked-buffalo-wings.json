@@ -1,0 +1,89 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2019-01-baked-buffalo-wings",
+  "ingredients": [
+    {
+      "raw": "1 to 4 pounds chicken wings that have been cut into flats and drumettes",
+      "expected": {
+        "item": "chicken wings that have been cut into flats and drumettes",
+        "measurements": [
+          {
+            "amount": "1 to 4",
+            "unit": "lb"
+          },
+          {
+            "amount": "454 to 1814",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons to 2 tablespoons baking powder (using 1 1/2 teaspoons per pound)",
+      "expected": {
+        "item": "to 2 tablespoons baking powder (using 1 1/2 teaspoons per pound)",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 to 4 teaspoons kosher salt (using 1 teaspoon per pound; use less salt if you’re not using Diamond brand)",
+      "expected": {
+        "item": "kosher salt (using 1 teaspoon per pound; use less salt if you’re not using Diamond brand)",
+        "measurements": [
+          {
+            "amount": "1 to 4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons hot sauce (Frank’s RedHot is traditional) per pound of wings",
+      "expected": {
+        "item": "hot sauce (Frank’s RedHot is traditional) per pound of wings",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 1/2 to 2 tablespoons unsalted butter per pound of wings",
+      "expected": {
+        "item": "to 2 tablespoons unsalted butter per pound of wings",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "To serve (optional): Homemade Blue Cheese Dressing (below), plus celery and carrot sticks",
+      "expected": {
+        "item": "To serve : Homemade Blue Cheese Dressing (below)",
+        "measurements": [],
+        "note": "optional",
+        "category": "Cheese"
+      }
+    }
+  ]
+}

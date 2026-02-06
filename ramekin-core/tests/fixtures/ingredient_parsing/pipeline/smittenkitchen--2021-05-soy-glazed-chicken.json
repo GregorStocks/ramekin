@@ -1,0 +1,121 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2021-05-soy-glazed-chicken",
+  "ingredients": [
+    {
+      "raw": "Vegetable oil",
+      "expected": {
+        "item": "Vegetable oil",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 pounds boneless skinless chicken thighs or breast cutlets",
+      "expected": {
+        "item": "boneless skinless chicken thighs or breast cutlets",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 tablespoon minced garlic",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon minced fresh ginger",
+      "expected": {
+        "item": "minced fresh ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 tablespoons tamari, or light or low-sodium soy sauce",
+      "expected": {
+        "item": "tamari, or light or low-sodium soy sauce",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "4 tablespoons unseasoned rice vinegar or 2 tablespoons black vinegar and 2 tablespoons rice (see Note)",
+      "expected": {
+        "item": "unseasoned rice vinegar",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or 2 tablespoons black vinegar and 2 tablespoons rice (see Note)",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 tablespoons brown sugar (I use dark)",
+      "expected": {
+        "item": "brown sugar (I use dark)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Toasted sesame seeds and/or a thinly-sliced scallion to finish",
+      "expected": {
+        "item": "Toasted sesame seeds and/or a thinly-sliced scallion to finish",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

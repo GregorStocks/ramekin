@@ -1,0 +1,134 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2016-05-crispy-tortellini-with",
+  "ingredients": [
+    {
+      "raw": "3 thin slices prosciutto (optional)",
+      "expected": {
+        "item": "thin slices prosciutto",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "optional",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 13-14 ounce package frozen cheese tortellini (about 3 cups)",
+      "expected": {
+        "item": "13-14 ounce package frozen cheese tortellini",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "1/2 cup frozen peas, no need to defrost",
+      "expected": {
+        "item": "frozen peas, no need to defrost",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Frozen"
+      }
+    },
+    {
+      "raw": "1/3 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/3",
+            "unit": "cup"
+          },
+          {
+            "amount": "79",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3 tablespoons crème fraîche or mascarpone",
+      "expected": {
+        "item": "crème fraîche or mascarpone",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Juice of half a lemon, more or less to taste",
+      "expected": {
+        "item": "Juice of half a lemon",
+        "measurements": [],
+        "note": "more or less to taste",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper",
+      "expected": {
+        "item": "Salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "A few fresh mint leaves, cut into thin slivers",
+      "expected": {
+        "item": "A few fresh mint leaves, cut into thin slivers",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Grated parmesan (optional)",
+      "expected": {
+        "item": "Grated parmesan",
+        "measurements": [],
+        "note": "optional",
+        "category": "Cheese"
+      }
+    }
+  ]
+}

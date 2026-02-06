@@ -1,0 +1,98 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-01-smashed-chickpea-salad",
+  "ingredients": [
+    {
+      "raw": "1 15-ounce can chickpeas, drained and rinsed",
+      "expected": {
+        "item": "chickpeas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "15-ounce can"
+          }
+        ],
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 tablespoons pitted, halved and very thinly sliced black olives",
+      "expected": {
+        "item": "pitted",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "halved and very thinly sliced black olives",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 tablespoon finely chopped red onion",
+      "expected": {
+        "item": "finely chopped red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon chopped fresh parsley",
+      "expected": {
+        "item": "chopped fresh parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Zest and juice from half a lemon (if you’ve got one of those sad, juiceless lemons, use both sides for juice)",
+      "expected": {
+        "item": "Zest and juice from half a lemon (if you’ve got one of those sad, juiceless lemons, use both sides for juice)",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Couple good pinches of salt",
+      "expected": {
+        "item": "Couple good pinches of salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "A few grinds of black pepper, and/or pinches of red pepper flakes",
+      "expected": {
+        "item": "A few grinds of black pepper, and/or pinches of red pepper flakes",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "A few glugs of olive oil",
+      "expected": {
+        "item": "A few glugs of olive oil",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    }
+  ]
+}

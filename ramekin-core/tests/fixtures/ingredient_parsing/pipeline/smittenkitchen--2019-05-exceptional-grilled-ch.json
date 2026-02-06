@@ -1,0 +1,93 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2019-05-exceptional-grilled-ch",
+  "ingredients": [
+    {
+      "raw": "2 quarts cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "quart"
+          },
+          {
+            "amount": "1896",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 tablespoons granulated or brown sugar",
+      "expected": {
+        "item": "granulated or brown sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup Diamond kosher salt (use 2 tablespoons if any other brand)",
+      "expected": {
+        "item": "Diamond kosher salt (use 2 tablespoons if any other brand)",
+        "measurements": [
+          {
+            "amount": "1/4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 1/2 pounds chicken parts with skin and bones",
+      "expected": {
+        "item": "chicken parts with skin and bones",
+        "measurements": [
+          {
+            "amount": "3 1/2",
+            "unit": "lb"
+          },
+          {
+            "amount": "1588",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Oil for grill",
+      "expected": {
+        "item": "Oil for grill",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "One of the three vinaigrettes, below",
+      "expected": {
+        "item": "of the three vinaigrettes, below",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

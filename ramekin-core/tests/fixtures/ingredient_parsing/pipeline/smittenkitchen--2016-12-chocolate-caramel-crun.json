@@ -1,0 +1,105 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2016-12-chocolate-caramel-crun",
+  "ingredients": [
+    {
+      "raw": "1 cup (200 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup (120 grams) water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 1/2 cup (205 grams or 7 1/4 ounces) whole almonds",
+      "expected": {
+        "item": "whole almonds",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          },
+          {
+            "amount": "205",
+            "unit": "g"
+          },
+          {
+            "amount": "7 1/4",
+            "unit": "oz"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon flaky salt",
+      "expected": {
+        "item": "flaky salt",
+        "measurements": [
+          {
+            "amount": "1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "8 ounces (225 grams) semi- or bittersweet chocolate, chopped, or 1 1/3 cups chocolate chips",
+      "expected": {
+        "item": "semi- or bittersweet chocolate, chopped, or 1 1/3 cups chocolate chips",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Approximately 1/2 cup cocoa powder, sanding or coarse sugar or sprinkles to coat",
+      "expected": {
+        "item": "Approximately 1/2 cup cocoa powder, sanding or coarse sugar or sprinkles to coat",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

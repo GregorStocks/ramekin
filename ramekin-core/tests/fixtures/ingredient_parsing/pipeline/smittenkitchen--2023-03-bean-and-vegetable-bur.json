@@ -1,0 +1,268 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2023-03-bean-and-vegetable-bur",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons olive or vegetable oil",
+      "expected": {
+        "item": "olive or vegetable oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 medium onion, diced small",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "diced small",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 large cloves of garlic, minced",
+      "expected": {
+        "item": "cloves of garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 fresh jalapeño or habanero pepper, minced",
+      "expected": {
+        "item": "fresh jalapeño or habanero pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 bell pepper, diced",
+      "expected": {
+        "item": "bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 to 3 teaspoons ground chili powder (to taste)",
+      "expected": {
+        "item": "ground chili powder",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "tsp"
+          }
+        ],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 (14-ounce) can diced tomatoes",
+      "expected": {
+        "item": "diced tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "14",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 (15.5-ounces) cans black, red, or pinto beans, drained and rinsed",
+      "expected": {
+        "item": "black, red, or pinto beans",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "15.5",
+            "unit": null
+          }
+        ],
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 1/2 cups corn kernels, fresh (from 2 ears), canned and drained, or frozen (no need to thaw)",
+      "expected": {
+        "item": "corn kernels, fresh (from 2 ears), canned and drained",
+        "measurements": [
+          {
+            "amount": "1 1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "or frozen (no need to thaw)",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "5 ounces baby spinach, roughly chopped",
+      "expected": {
+        "item": "baby spinach",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": "roughly chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 lime, halved",
+      "expected": {
+        "item": "lime",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "halved",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup crumbled cotija cheese",
+      "expected": {
+        "item": "crumbled cotija cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "8 ounces (about 2 cups) coarsely grated monterey jack or pepper jack cheese",
+      "expected": {
+        "item": "coarsely grated monterey jack or pepper jack cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "8 large burrito-sized flour tortillas",
+      "expected": {
+        "item": "burrito-sized flour tortillas",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "Hot sauce, to taste",
+      "expected": {
+        "item": "Hot sauce",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}
