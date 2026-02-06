@@ -175,6 +175,15 @@ enum Commands {
         /// Merge with existing file instead of replacing
         #[arg(long)]
         merge: bool,
+        /// Filter to a specific site domain (e.g., "smittenkitchen.com")
+        #[arg(long)]
+        site: Option<String>,
+        /// Minimum year for dated blog posts (default: 2016)
+        #[arg(long, default_value = "2016")]
+        min_year: u32,
+        /// Remove URL count limits (process all URLs from sitemaps)
+        #[arg(long)]
+        no_limit: bool,
     },
     /// Run the full pipeline for all test URLs and generate reports
     Pipeline {
@@ -341,9 +350,20 @@ async fn main() -> Result<()> {
             num_sites,
             urls_per_site,
             merge,
+            site,
+            min_year,
+            no_limit,
         } => {
-            generate_test_urls::generate_test_urls(&output, num_sites, urls_per_site, merge)
-                .await?;
+            generate_test_urls::generate_test_urls(
+                &output,
+                num_sites,
+                urls_per_site,
+                merge,
+                site.as_deref(),
+                min_year,
+                no_limit,
+            )
+            .await?;
         }
         Commands::Pipeline {
             test_urls,

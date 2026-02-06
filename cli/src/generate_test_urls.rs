@@ -89,9 +89,15 @@ pub async fn generate_test_urls(
     num_sites: usize,
     urls_per_site: usize,
     merge: bool,
+    site_filter: Option<&str>,
+    min_year: u32,
+    no_limit: bool,
 ) -> Result<()> {
     // Use CachingClient with rate limiting to avoid hammering servers
     let client = CachingClient::new().context("Failed to create HTTP client")?;
+
+    // When filtering to a single site, always merge to preserve other sites
+    let merge = merge || site_filter.is_some();
 
     // Load existing data if merging
     let existing_data = if merge && output.exists() {
@@ -117,6 +123,21 @@ pub async fn generate_test_urls(
 
     // Get list of known food blogs
     let ranked_sites = get_known_food_blogs();
+
+    // Filter to specific site if requested
+    let ranked_sites: Vec<_> = if let Some(site_domain) = site_filter {
+        let filtered: Vec<_> = ranked_sites
+            .into_iter()
+            .filter(|s| s.domain == site_domain)
+            .collect();
+        if filtered.is_empty() {
+            return Err(anyhow!("No sites matched filter: {}", site_domain));
+        }
+        filtered
+    } else {
+        ranked_sites
+    };
+
     println!("Found {} known food blog sites", ranked_sites.len());
 
     // Process sites
@@ -124,18 +145,20 @@ pub async fn generate_test_urls(
     let mut results: Vec<SiteEntry> = Vec::new();
 
     for site in &sites_to_process {
-        // Check if we already have enough URLs for this site
-        if let Some(existing) = existing_sites.get(&site.domain) {
-            if existing.urls.len() >= urls_per_site && existing.source != UrlSource::Failed {
-                println!(
-                    "[{}/{}] {} - already have {} URLs, skipping",
-                    site.rank,
-                    sites_to_process.len(),
-                    site.domain,
-                    existing.urls.len()
-                );
-                results.push(existing.clone());
-                continue;
+        // Check if we already have enough URLs for this site (skip when no_limit or site_filter)
+        if !no_limit && site_filter.is_none() {
+            if let Some(existing) = existing_sites.get(&site.domain) {
+                if existing.urls.len() >= urls_per_site && existing.source != UrlSource::Failed {
+                    println!(
+                        "[{}/{}] {} - already have {} URLs, skipping",
+                        site.rank,
+                        sites_to_process.len(),
+                        site.domain,
+                        existing.urls.len()
+                    );
+                    results.push(existing.clone());
+                    continue;
+                }
             }
         }
 
@@ -146,7 +169,7 @@ pub async fn generate_test_urls(
             site.domain
         );
 
-        let result = process_site(&client, site, urls_per_site).await;
+        let result = process_site(&client, site, urls_per_site, min_year, no_limit).await;
 
         // Merge with existing if applicable
         let final_entry = if let Some(existing) = existing_sites.get(&site.domain) {
@@ -342,9 +365,11 @@ async fn process_site(
     client: &CachingClient,
     site: &RankedSite,
     urls_per_site: usize,
+    min_year: u32,
+    no_limit: bool,
 ) -> SiteEntry {
     // Try sitemap first
-    match try_sitemap(client, &site.domain, urls_per_site).await {
+    match try_sitemap(client, &site.domain, urls_per_site, min_year, no_limit).await {
         Ok(urls) if !urls.is_empty() => {
             return SiteEntry {
                 domain: site.domain.clone(),
@@ -361,7 +386,7 @@ async fn process_site(
     }
 
     // Try homepage fallback
-    match try_homepage(client, &site.domain, urls_per_site).await {
+    match try_homepage(client, &site.domain, urls_per_site, min_year, no_limit).await {
         Ok(urls) if !urls.is_empty() => {
             return SiteEntry {
                 domain: site.domain.clone(),
@@ -395,6 +420,8 @@ async fn try_sitemap(
     client: &CachingClient,
     domain: &str,
     urls_per_site: usize,
+    min_year: u32,
+    no_limit: bool,
 ) -> Result<Vec<String>> {
     let mut all_urls = Vec::new();
 
@@ -402,15 +429,18 @@ async fn try_sitemap(
     let robots_sitemaps = fetch_robots_sitemaps(client, domain).await;
     let prioritized_sitemaps = prioritize_sitemaps(robots_sitemaps);
 
+    let max_sitemaps = if no_limit { usize::MAX } else { 3 };
+    let max_urls = if no_limit { usize::MAX } else { 200 };
+
     if !prioritized_sitemaps.is_empty() {
         // Process sitemaps from robots.txt in priority order
-        for sitemap_url in prioritized_sitemaps.iter().take(3) {
+        for sitemap_url in prioritized_sitemaps.iter().take(max_sitemaps) {
             if let Ok(content) = fetch_sitemap(client, sitemap_url).await {
                 if let Ok(urls) =
-                    extract_urls_from_sitemap_recursive(client, &content, domain, 2).await
+                    extract_urls_from_sitemap_recursive(client, &content, domain, 2, no_limit).await
                 {
                     all_urls.extend(urls);
-                    if all_urls.len() >= 200 {
+                    if all_urls.len() >= max_urls {
                         break;
                     }
                 }
@@ -422,15 +452,17 @@ async fn try_sitemap(
         let sitemap_url = format!("https://{}/sitemap.xml", domain);
         let sitemap_content = fetch_sitemap(client, &sitemap_url).await?;
         all_urls.extend(
-            extract_urls_from_sitemap_recursive(client, &sitemap_content, domain, 2).await?,
+            extract_urls_from_sitemap_recursive(client, &sitemap_content, domain, 2, no_limit)
+                .await?,
         );
     }
 
     // Filter for recipe URLs and take the requested amount
+    let final_limit = if no_limit { usize::MAX } else { urls_per_site };
     let recipe_urls: Vec<String> = all_urls
         .into_iter()
-        .filter(|url| is_recipe_url(url))
-        .take(urls_per_site)
+        .filter(|url| is_recipe_url(url, min_year))
+        .take(final_limit)
         .collect();
 
     Ok(recipe_urls)
@@ -481,8 +513,12 @@ async fn extract_urls_from_sitemap_recursive(
     content: &str,
     domain: &str,
     max_depth: usize,
+    no_limit: bool,
 ) -> Result<Vec<String>> {
     let mut urls = Vec::new();
+
+    let max_sitemaps = if no_limit { usize::MAX } else { 3 };
+    let max_urls = if no_limit { usize::MAX } else { 200 };
 
     // Try to parse as sitemap index first (using safe parsing to handle malformed XML)
     if let Some(index) = safe_parse_sitemap_index(content) {
@@ -494,20 +530,20 @@ async fn extract_urls_from_sitemap_recursive(
         let all_sitemaps: Vec<String> = index.sitemap.iter().map(|s| s.loc.clone()).collect();
         let prioritized = prioritize_sitemaps(all_sitemaps);
 
-        // Fetch and parse sub-sitemaps (limit to 3 to avoid too many requests)
-        for sitemap_url in prioritized.iter().take(3) {
+        // Fetch and parse sub-sitemaps
+        for sitemap_url in prioritized.iter().take(max_sitemaps) {
             if let Ok(sub_content) = fetch_sitemap(client, sitemap_url).await {
                 if let Ok(sub_urls) = Box::pin(extract_urls_from_sitemap_recursive(
                     client,
                     &sub_content,
                     domain,
                     max_depth - 1,
+                    no_limit,
                 ))
                 .await
                 {
                     urls.extend(sub_urls);
-                    // Stop if we have enough URLs
-                    if urls.len() >= 200 {
+                    if urls.len() >= max_urls {
                         break;
                     }
                 }
@@ -602,6 +638,8 @@ async fn try_homepage(
     client: &CachingClient,
     domain: &str,
     urls_per_site: usize,
+    min_year: u32,
+    no_limit: bool,
 ) -> Result<Vec<String>> {
     let homepage_url = format!("https://{}/", domain);
     let html = client
@@ -613,6 +651,8 @@ async fn try_homepage(
 
     let mut recipe_urls = Vec::new();
     let mut seen: HashSet<String> = HashSet::new();
+
+    let limit = if no_limit { usize::MAX } else { urls_per_site };
 
     for element in document.select(&link_selector) {
         if let Some(href) = element.value().attr("href") {
@@ -630,11 +670,11 @@ async fn try_homepage(
                 if let Some(host) = parsed.host_str() {
                     let normalized = host.trim_start_matches("www.");
                     if normalized == domain
-                        && is_recipe_url(&full_url)
+                        && is_recipe_url(&full_url, min_year)
                         && seen.insert(full_url.clone())
                     {
                         recipe_urls.push(full_url);
-                        if recipe_urls.len() >= urls_per_site {
+                        if recipe_urls.len() >= limit {
                             break;
                         }
                     }
@@ -733,7 +773,7 @@ fn extract_post_year(url: &str) -> Option<u32> {
         .and_then(|year_str| year_str.as_str().parse::<u32>().ok())
 }
 
-fn is_recipe_url(url: &str) -> bool {
+fn is_recipe_url(url: &str, min_year: u32) -> bool {
     let lower = url.to_lowercase();
 
     // === PHASE 1: SITE-SPECIFIC LOGIC ===
@@ -792,8 +832,8 @@ fn is_recipe_url(url: &str) -> bool {
     // Check for dated blog post - reject old posts, remember for later acceptance
     let post_year = extract_post_year(&lower);
     if let Some(year) = post_year {
-        if year < 2016 {
-            return false; // Old posts often lack structured data
+        if year < min_year {
+            return false;
         }
     }
 
@@ -828,7 +868,7 @@ fn is_recipe_url(url: &str) -> bool {
         return true;
     }
 
-    // Date-based blog URLs from 2016+ (already passed old post filter)
+    // Date-based blog URLs from min_year+ (already passed old post filter)
     if post_year.is_some() {
         return true;
     }
@@ -885,49 +925,70 @@ mod tests {
     #[test]
     fn test_is_recipe_url_basic() {
         // Positive cases - individual recipes
-        assert!(is_recipe_url("https://example.com/recipe/chocolate-cake"));
-        assert!(is_recipe_url("https://example.com/recipes/minestrone-soup"));
-        assert!(is_recipe_url("https://example.com/chocolate-cake-recipe/"));
         assert!(is_recipe_url(
-            "https://example.com/2025/01/my-delicious-recipe"
+            "https://example.com/recipe/chocolate-cake",
+            2016
+        ));
+        assert!(is_recipe_url(
+            "https://example.com/recipes/minestrone-soup",
+            2016
+        ));
+        assert!(is_recipe_url(
+            "https://example.com/chocolate-cake-recipe/",
+            2016
+        ));
+        assert!(is_recipe_url(
+            "https://example.com/2025/01/my-delicious-recipe",
+            2016
         ));
 
         // Negative cases - static pages
-        assert!(!is_recipe_url("https://example.com/about"));
-        assert!(!is_recipe_url("https://example.com/category/desserts"));
-        assert!(!is_recipe_url("https://example.com/tag/chocolate"));
+        assert!(!is_recipe_url("https://example.com/about", 2016));
+        assert!(!is_recipe_url(
+            "https://example.com/category/desserts",
+            2016
+        ));
+        assert!(!is_recipe_url("https://example.com/tag/chocolate", 2016));
     }
 
     #[test]
     fn test_roundup_detection() {
         // Roundup patterns should be rejected
-        assert!(!is_recipe_url("https://example.com/30-easy-recipes/"));
+        assert!(!is_recipe_url("https://example.com/30-easy-recipes/", 2016));
         assert!(!is_recipe_url(
-            "https://example.com/top-10-best-soup-recipes/"
+            "https://example.com/top-10-best-soup-recipes/",
+            2016
         ));
         assert!(!is_recipe_url(
-            "https://example.com/christmas-recipe-roundup/"
+            "https://example.com/christmas-recipe-roundup/",
+            2016
         ));
         assert!(!is_recipe_url(
-            "https://example.com/favorite-recipes-of-2021/"
+            "https://example.com/favorite-recipes-of-2021/",
+            2016
         ));
         assert!(!is_recipe_url(
-            "https://twopeasandtheirpod.com/our-10-favorite-recipes-from-2011/"
+            "https://twopeasandtheirpod.com/our-10-favorite-recipes-from-2011/",
+            2016
         ));
         assert!(!is_recipe_url(
-            "https://example.com/50-healthy-recipes-to-kick-off-2012/"
+            "https://example.com/50-healthy-recipes-to-kick-off-2012/",
+            2016
         ));
         assert!(!is_recipe_url(
-            "https://example.com/healthy-dinner-recipes/"
+            "https://example.com/healthy-dinner-recipes/",
+            2016
         ));
-        assert!(!is_recipe_url("https://example.com/all-recipes/"));
+        assert!(!is_recipe_url("https://example.com/all-recipes/", 2016));
 
         // But individual recipes with numbers should be accepted
         assert!(is_recipe_url(
-            "https://example.com/5-ingredient-pasta-recipe/"
+            "https://example.com/5-ingredient-pasta-recipe/",
+            2016
         ));
         assert!(is_recipe_url(
-            "https://example.com/20-minute-chicken-recipe/"
+            "https://example.com/20-minute-chicken-recipe/",
+            2016
         ));
     }
 
@@ -935,37 +996,53 @@ mod tests {
     fn test_category_exclusion() {
         // Category pages should be rejected
         assert!(!is_recipe_url(
-            "https://davidlebovitz.com/category/recipes/breads/"
+            "https://davidlebovitz.com/category/recipes/breads/",
+            2016
         ));
         assert!(!is_recipe_url(
-            "https://example.com/category/recipes/desserts/"
+            "https://example.com/category/recipes/desserts/",
+            2016
         ));
 
         // Malformed paths should be rejected
         assert!(!is_recipe_url(
-            "https://smittenkitchen.com/./recipes/vegetable/cabbage/"
+            "https://smittenkitchen.com/./recipes/vegetable/cabbage/",
+            2016
         ));
 
         // Comment fragment URLs should be rejected
-        assert!(!is_recipe_url("https://example.com/2025/01/cake/#comments"));
+        assert!(!is_recipe_url(
+            "https://example.com/2025/01/cake/#comments",
+            2016
+        ));
 
         // Category index pages (/recipes/X with short single/two-word slug) should be rejected
-        assert!(!is_recipe_url("https://pinchofyum.com/recipes/dinner"));
-        assert!(!is_recipe_url("https://pinchofyum.com/recipes/pasta"));
-        assert!(!is_recipe_url("https://pinchofyum.com/recipes/casserole/"));
         assert!(!is_recipe_url(
-            "https://minimalistbaker.com/recipes/hearty-meals/"
+            "https://pinchofyum.com/recipes/dinner",
+            2016
+        ));
+        assert!(!is_recipe_url("https://pinchofyum.com/recipes/pasta", 2016));
+        assert!(!is_recipe_url(
+            "https://pinchofyum.com/recipes/casserole/",
+            2016
         ));
         assert!(!is_recipe_url(
-            "https://minimalistbaker.com/recipes/sweet-things/"
+            "https://minimalistbaker.com/recipes/hearty-meals/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://minimalistbaker.com/recipes/sweet-things/",
+            2016
         ));
 
         // But actual recipe slugs with 3+ words should be accepted
         assert!(is_recipe_url(
-            "https://example.com/recipes/chocolate-chip-cookies/"
+            "https://example.com/recipes/chocolate-chip-cookies/",
+            2016
         ));
         assert!(is_recipe_url(
-            "https://example.com/recipes/beef-brisket-pot-roast/"
+            "https://example.com/recipes/beef-brisket-pot-roast/",
+            2016
         ));
     }
 
@@ -973,54 +1050,96 @@ mod tests {
     fn test_non_recipe_posts() {
         // Giveaways should be rejected
         assert!(!is_recipe_url(
-            "https://bakingbites.com/2015/03/baking-bites-easter-giveaway/"
+            "https://bakingbites.com/2015/03/baking-bites-easter-giveaway/",
+            2016
         ));
         assert!(!is_recipe_url(
-            "https://example.com/2020/01/kitchen-giveaway/"
+            "https://example.com/2020/01/kitchen-giveaway/",
+            2016
         ));
 
         // Link roundups should be rejected
         assert!(!is_recipe_url(
-            "https://bakingbites.com/2015/01/bites-from-other-blogs-125/"
+            "https://bakingbites.com/2015/01/bites-from-other-blogs-125/",
+            2016
         ));
-        assert!(!is_recipe_url("https://example.com/2020/01/links-i-love/"));
-        assert!(!is_recipe_url("https://example.com/2020/01/friday-links/"));
+        assert!(!is_recipe_url(
+            "https://example.com/2020/01/links-i-love/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://example.com/2020/01/friday-links/",
+            2016
+        ));
 
         // Travel/personal posts should be rejected (old posts without recipe signal)
         // Note: 2010 posts are rejected as too old, and field-trip matches the exclusion pattern
         assert!(!is_recipe_url(
-            "https://bakingbites.com/2010/04/baking-bites-in-kauai/"
+            "https://bakingbites.com/2010/04/baking-bites-in-kauai/",
+            2016
         ));
-        assert!(!is_recipe_url("https://example.com/2020/01/field-trip/"));
+        assert!(!is_recipe_url(
+            "https://example.com/2020/01/field-trip/",
+            2016
+        ));
 
         // Gift guides should be rejected
         assert!(!is_recipe_url(
-            "https://loveandoliveoil.com/2022/11/ultimate-foodie-holiday-gift-guide/"
+            "https://loveandoliveoil.com/2022/11/ultimate-foodie-holiday-gift-guide/",
+            2016
         ));
     }
 
     #[test]
     fn test_old_post_filtering() {
-        // Posts before 2016 should be rejected
+        // Posts before 2016 should be rejected with default min_year
         assert!(!is_recipe_url(
-            "https://bakingbites.com/2004/12/chocolate-cake/"
+            "https://bakingbites.com/2004/12/chocolate-cake/",
+            2016
         ));
         assert!(!is_recipe_url(
-            "https://howsweeteats.com/2009/09/random-post/"
-        ));
-        assert!(!is_recipe_url("https://example.com/2010/01/old-recipe/"));
-        assert!(!is_recipe_url(
-            "https://example.com/2012/01/chocolate-cake/"
+            "https://howsweeteats.com/2009/09/random-post/",
+            2016
         ));
         assert!(!is_recipe_url(
-            "https://example.com/2015/01/chocolate-cake/"
+            "https://example.com/2010/01/old-recipe/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://example.com/2012/01/chocolate-cake/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://example.com/2015/01/chocolate-cake/",
+            2016
         ));
 
         // 2016+ posts should be accepted
-        assert!(is_recipe_url("https://example.com/2016/01/chocolate-cake/"));
-        assert!(is_recipe_url("https://example.com/2023/01/chocolate-cake/"));
         assert!(is_recipe_url(
-            "https://alexandracooks.com/2019/06/21/fish-en-papillote/"
+            "https://example.com/2016/01/chocolate-cake/",
+            2016
+        ));
+        assert!(is_recipe_url(
+            "https://example.com/2023/01/chocolate-cake/",
+            2016
+        ));
+        assert!(is_recipe_url(
+            "https://alexandracooks.com/2019/06/21/fish-en-papillote/",
+            2016
+        ));
+
+        // With lower min_year, old posts should be accepted
+        assert!(is_recipe_url(
+            "https://example.com/2010/01/old-recipe/",
+            2006
+        ));
+        assert!(is_recipe_url(
+            "https://smittenkitchen.com/2006/08/moules-frites/",
+            2006
+        ));
+        assert!(!is_recipe_url(
+            "https://example.com/2005/01/ancient-post/",
+            2006
         ));
     }
 
@@ -1028,44 +1147,57 @@ mod tests {
     fn test_valid_recipe_url_patterns() {
         // /recipe/ path pattern
         assert!(is_recipe_url(
-            "https://altonbrown.com/recipes/beef-carpaccio/"
+            "https://altonbrown.com/recipes/beef-carpaccio/",
+            2016
         ));
         assert!(is_recipe_url(
-            "https://slenderkitchen.com/recipe/salmon-burgers"
+            "https://slenderkitchen.com/recipe/salmon-burgers",
+            2016
         ));
 
         // -recipe suffix pattern
         assert!(is_recipe_url(
-            "https://therecipecritic.com/avocado-toast-recipe/"
+            "https://therecipecritic.com/avocado-toast-recipe/",
+            2016
         ));
-        assert!(is_recipe_url("https://cookingclassy.com/brownie-recipe/"));
+        assert!(is_recipe_url(
+            "https://cookingclassy.com/brownie-recipe/",
+            2016
+        ));
     }
 
     #[test]
     fn test_seriouseats_recipe_url_filtering() {
         // Individual recipes should be accepted (singular "-recipe-" pattern)
         assert!(is_recipe_url(
-            "https://www.seriouseats.com/hot-milk-cake-recipe-11878680"
+            "https://www.seriouseats.com/hot-milk-cake-recipe-11878680",
+            2016
         ));
         assert!(is_recipe_url(
-            "https://www.seriouseats.com/lentil-sausage-stew-recipe-11880797"
+            "https://www.seriouseats.com/lentil-sausage-stew-recipe-11880797",
+            2016
         ));
         assert!(is_recipe_url(
-            "https://www.seriouseats.com/binakol-na-manok-filipino-chicken-and-coconut-soup-recipe-11878784"
+            "https://www.seriouseats.com/binakol-na-manok-filipino-chicken-and-coconut-soup-recipe-11878784",
+            2016
         ));
 
         // Collection pages should be rejected (plural "-recipes-" pattern)
         assert!(!is_recipe_url(
-            "https://www.seriouseats.com/vegan-dinner-recipes-11878691"
+            "https://www.seriouseats.com/vegan-dinner-recipes-11878691",
+            2016
         ));
         assert!(!is_recipe_url(
-            "https://www.seriouseats.com/tahini-recipes-beyond-hummus-11878978"
+            "https://www.seriouseats.com/tahini-recipes-beyond-hummus-11878978",
+            2016
         ));
         assert!(!is_recipe_url(
-            "https://www.seriouseats.com/most-saved-shrimp-recipes-11879657"
+            "https://www.seriouseats.com/most-saved-shrimp-recipes-11879657",
+            2016
         ));
         assert!(!is_recipe_url(
-            "https://www.seriouseats.com/hearty-chickpea-recipes-11878318"
+            "https://www.seriouseats.com/hearty-chickpea-recipes-11878318",
+            2016
         ));
     }
 
