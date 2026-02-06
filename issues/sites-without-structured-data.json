@@ -1,0 +1,10 @@
+{
+  "title": "Several smaller sites have no structured data",
+  "description": "Some sites serve recipe pages without JSON-LD or Microdata:\n- bakingbites.com: 12 URLs, 0% extraction rate\n- sprinklebakes.com: ~26 URLs failed\n- Scattered older posts on other sites\n\nSame root cause as smittenkitchen-no-structured-data but lower volume. Would benefit from the same raw HTML fallback extraction.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": ["extraction"],
+  "created_at": "2026-02-05T17:00:00.000000-08:00",
+  "updated_at": "2026-02-05T17:00:00.000000-08:00"
+}

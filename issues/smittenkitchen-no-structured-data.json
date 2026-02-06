@@ -1,0 +1,10 @@
+{
+  "title": "smittenkitchen.com older posts lack structured data",
+  "description": "~500 smittenkitchen.com URLs from 2006-2016 return 'No recipe found' because they predate the site adding JSON-LD/Microdata. These are real recipe pages with ingredients and instructions in the HTML, just not in structured data format. This is the single biggest source of extraction failures (585 of 983 URLs failed, 40.5% overall success rate). Would need raw HTML or heuristic extraction as a fallback when structured data is absent.",
+  "status": "open",
+  "priority": 1,
+  "type": "task",
+  "labels": ["extraction"],
+  "created_at": "2026-02-05T17:00:00.000000-08:00",
+  "updated_at": "2026-02-05T17:00:00.000000-08:00"
+}
