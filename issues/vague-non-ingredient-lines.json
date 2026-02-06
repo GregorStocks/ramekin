@@ -1,0 +1,12 @@
+{
+  "title": "Vague non-ingredient lines in ingredient lists",
+  "description": "Some recipe sources include vague non-ingredient lines like 'Burger accompaniments, as you like' (paprika--carrot-and-white-bean-burgers) or instructional text in their ingredient lists. These are not equipment (now filtered) and not section headers, but they're also not real ingredients. Low priority since these are rare and hard to detect without false positives.\n\nSee doc/ingredient-parsing.md for workflow and file locations.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "ingredient-parser"
+  ],
+  "created_at": "2026-02-05T16:50:00.000000-08:00",
+  "updated_at": "2026-02-05T16:50:00.000000-08:00"
+}
