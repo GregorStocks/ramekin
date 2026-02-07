@@ -28,7 +28,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AuthAPI* | [**login**](docs/AuthAPI.md#login) | **POST** /api/auth/login | 
 *AuthAPI* | [**signup**](docs/AuthAPI.md#signup) | **POST** /api/auth/signup | 
-*EnrichAPI* | [**enrichRecipe**](docs/EnrichAPI.md#enrichrecipe) | **POST** /api/enrich | Enrich a recipe using AI
+*EnrichAPI* | [**enrichRecipe**](docs/EnrichAPI.md#enrichrecipe) | **POST** /api/enrich | Enrich a recipe
 *ImportAPI* | [**importRecipe**](docs/ImportAPI.md#importrecipe) | **POST** /api/import/recipe | 
 *MealPlansAPI* | [**createMealPlan**](docs/MealPlansAPI.md#createmealplan) | **POST** /api/meal-plans | 
 *MealPlansAPI* | [**deleteMealPlan**](docs/MealPlansAPI.md#deletemealplan) | **DELETE** /api/meal-plans/{id} | 
