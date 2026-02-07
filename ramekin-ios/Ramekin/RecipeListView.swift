@@ -14,7 +14,16 @@ struct RecipeListView: View {
     @State private var activeQuery: String?
     @State private var searchTask: Task<Void, Never>?
 
+    @AppStorage("recipeSortOrder") private var sortOrder = RecipeSortOrder.newest
+    @AppStorage("recipePhotoFilter") private var photoFilter = PhotoFilter.any
+    @State private var selectedTags: Set<String> = []
+    @State private var availableTags: [TagItem] = []
+
     private let pageSize: Int64 = 20
+
+    private var hasActiveFilters: Bool {
+        !selectedTags.isEmpty || photoFilter != .any
+    }
 
     var body: some View {
         Group {
@@ -23,35 +32,145 @@ struct RecipeListView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else if let error = error, recipes.isEmpty {
                 errorView(message: error)
-            } else if recipes.isEmpty {
+            } else if recipes.isEmpty && !hasActiveFilters && searchText.isEmpty {
                 emptyStateView
             } else {
-                recipeList
+                VStack(spacing: 0) {
+                    filterBar
+                    Divider()
+                    if recipes.isEmpty {
+                        noResultsView
+                    } else {
+                        recipeList
+                    }
+                }
             }
         }
         .searchable(text: $searchText, prompt: "Search recipes")
-        .onChange(of: searchText) { newValue in
+        .onChange(of: searchText) { _ in
             searchTask?.cancel()
-            let trimmed = newValue.trimmingCharacters(in: .whitespacesAndNewlines)
             searchTask = Task {
                 try? await Task.sleep(nanoseconds: 300_000_000)
-                await loadRecipes(reset: true, query: trimmed.isEmpty ? nil : trimmed)
+                await loadRecipes(reset: true)
             }
         }
         .navigationTitle("Recipes")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationLink(value: NavigationDestination.settings) {
-                    Image(systemName: "gear")
+                HStack(spacing: 16) {
+                    sortMenu
+                    NavigationLink(value: NavigationDestination.settings) {
+                        Image(systemName: "gear")
+                    }
                 }
             }
         }
         .refreshable {
+            await loadTags()
             await loadRecipes(reset: true)
         }
         .task {
+            loadPersistedTags()
+            await loadTags()
             await loadRecipes(reset: true)
         }
+    }
+
+    // MARK: - Sort Menu
+
+    private var sortMenu: some View {
+        Menu {
+            ForEach(RecipeSortOrder.allCases, id: \.self) { order in
+                Button {
+                    sortOrder = order
+                    reloadRecipes()
+                } label: {
+                    if sortOrder == order {
+                        Label(order.label, systemImage: "checkmark")
+                    } else {
+                        Text(order.label)
+                    }
+                }
+            }
+        } label: {
+            Image(systemName: "arrow.up.arrow.down")
+        }
+    }
+
+    // MARK: - Filter Bar
+
+    private var filterBar: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                photoFilterMenu
+
+                ForEach(availableTags) { tag in
+                    Button {
+                        toggleTag(tag.name)
+                    } label: {
+                        chipView(
+                            text: tag.name,
+                            isSelected: selectedTags.contains(tag.name)
+                        )
+                    }
+                    .buttonStyle(.plain)
+                }
+
+                if hasActiveFilters {
+                    Button {
+                        clearFilters()
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundColor(.secondary)
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .padding(.horizontal)
+            .padding(.vertical, 8)
+        }
+    }
+
+    private var photoFilterMenu: some View {
+        Menu {
+            ForEach(PhotoFilter.allCases, id: \.self) { filter in
+                Button {
+                    photoFilter = filter
+                    reloadRecipes()
+                } label: {
+                    if photoFilter == filter {
+                        Label(filter.label, systemImage: "checkmark")
+                    } else {
+                        Text(filter.label)
+                    }
+                }
+            }
+        } label: {
+            chipView(
+                text: photoFilter != .any ? photoFilter.label : nil,
+                icon: "camera",
+                isSelected: photoFilter != .any
+            )
+        }
+    }
+
+    private func chipView(text: String? = nil, icon: String? = nil, isSelected: Bool) -> some View {
+        HStack(spacing: 4) {
+            if let icon = icon {
+                Image(systemName: icon)
+                    .font(.caption)
+            }
+            if let text = text {
+                Text(text)
+                    .font(.caption)
+                    .fontWeight(.medium)
+            }
+        }
+        .padding(.horizontal, 10)
+        .padding(.vertical, 6)
+        .background(isSelected ? Color.orange : Color(.systemGray5))
+        .foregroundColor(isSelected ? .white : .primary)
+        .clipShape(Capsule())
     }
 
     // MARK: - Subviews
@@ -110,6 +229,23 @@ struct RecipeListView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
+    private var noResultsView: some View {
+        VStack(spacing: 16) {
+            Image(systemName: "magnifyingglass")
+                .font(.system(size: 48))
+                .foregroundColor(.secondary)
+            Text("No matching recipes")
+                .font(.title2)
+            if hasActiveFilters {
+                Button("Clear filters") {
+                    clearFilters()
+                }
+                .buttonStyle(.borderedProminent)
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+
     private func errorView(message: String) -> some View {
         VStack(spacing: 16) {
             Image(systemName: "exclamationmark.triangle")
@@ -126,11 +262,90 @@ struct RecipeListView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
+}
 
-    // MARK: - Data Loading
+// MARK: - Data Loading & Filter Logic
 
-    private func loadRecipes(reset: Bool, query: String? = nil) async {
-        let queryValue = query ?? (searchText.isEmpty ? nil : searchText)
+extension RecipeListView {
+    private func buildQuery() -> String? {
+        var parts: [String] = []
+
+        let trimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        if !trimmed.isEmpty {
+            parts.append(trimmed)
+        }
+
+        for tag in selectedTags.sorted() {
+            if tag.contains(" ") {
+                parts.append("tag:\"\(tag)\"")
+            } else {
+                parts.append("tag:\(tag)")
+            }
+        }
+
+        switch photoFilter {
+        case .any: break
+        case .hasPhotos: parts.append("has:photos")
+        case .noPhotos: parts.append("no:photos")
+        }
+
+        return parts.isEmpty ? nil : parts.joined(separator: " ")
+    }
+
+    private func toggleTag(_ name: String) {
+        if selectedTags.contains(name) {
+            selectedTags.remove(name)
+        } else {
+            selectedTags.insert(name)
+        }
+        persistSelectedTags()
+        reloadRecipes()
+    }
+
+    private func clearFilters() {
+        selectedTags.removeAll()
+        photoFilter = .any
+        persistSelectedTags()
+        reloadRecipes()
+    }
+
+    private func reloadRecipes() {
+        searchTask?.cancel()
+        Task { await loadRecipes(reset: true) }
+    }
+
+    private func persistSelectedTags() {
+        if let data = try? JSONEncoder().encode(Array(selectedTags)) {
+            UserDefaults.standard.set(data, forKey: "recipeSelectedTags")
+        }
+    }
+
+    fileprivate func loadPersistedTags() {
+        if let data = UserDefaults.standard.data(forKey: "recipeSelectedTags"),
+           let names = try? JSONDecoder().decode([String].self, from: data) {
+            selectedTags = Set(names)
+        }
+    }
+
+    fileprivate func loadTags() async {
+        do {
+            let response = try await TagsAPI.listAllTags()
+            await MainActor.run {
+                availableTags = response.tags
+                let validNames = Set(response.tags.map(\.name))
+                let removed = selectedTags.subtracting(validNames)
+                if !removed.isEmpty {
+                    selectedTags.subtract(removed)
+                    persistSelectedTags()
+                }
+            }
+        } catch {
+            // Tags loading failure is non-fatal; filter bar will be empty
+        }
+    }
+
+    fileprivate func loadRecipes(reset: Bool) async {
+        let queryValue = buildQuery()
 
         await MainActor.run {
             if reset {
@@ -149,7 +364,9 @@ struct RecipeListView: View {
             let response = try await RecipesAPI.listRecipes(
                 limit: pageSize,
                 offset: 0,
-                q: queryValue
+                q: queryValue,
+                sortBy: sortOrder.sortBy,
+                sortDir: sortOrder.sortDir
             )
 
             await MainActor.run {
@@ -180,7 +397,9 @@ struct RecipeListView: View {
             let response = try await RecipesAPI.listRecipes(
                 limit: pageSize,
                 offset: Int64(recipes.count),
-                q: activeQuery
+                q: activeQuery,
+                sortBy: sortOrder.sortBy,
+                sortDir: sortOrder.sortDir
             )
 
             await MainActor.run {
@@ -196,51 +415,4 @@ struct RecipeListView: View {
             }
         }
     }
-}
-
-// MARK: - Recipe Row View
-
-struct RecipeRowView: View {
-    let recipe: RecipeSummary
-
-    var body: some View {
-        HStack(spacing: 12) {
-            RecipeThumbnail(photoId: recipe.thumbnailPhotoId, size: 60)
-
-            VStack(alignment: .leading, spacing: 4) {
-                Text(recipe.title)
-                    .font(.headline)
-                    .lineLimit(2)
-
-                if let description = recipe.description, !description.isEmpty {
-                    Text(description)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                        .lineLimit(2)
-                }
-
-                if !recipe.tags.isEmpty {
-                    Text(recipe.tags.joined(separator: ", "))
-                        .font(.caption)
-                        .foregroundColor(.orange)
-                        .lineLimit(1)
-                }
-            }
-        }
-        .padding(.vertical, 4)
-    }
-}
-
-// MARK: - Navigation Destinations
-
-enum NavigationDestination: Hashable {
-    case recipe(UUID)
-    case settings
-}
-
-#Preview {
-    NavigationStack {
-        RecipeListView()
-    }
-    .environmentObject(AppState())
 }
