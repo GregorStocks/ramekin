@@ -22,6 +22,7 @@
 		1160E2BECEF8AE016E12034D /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7426EBD21559666D718D19AA /* TagItem.swift */; };
 		128A7DF5C4ABE98CDFBA032C /* MealPlanListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93B28A979A33E5B1E5A32CB /* MealPlanListResponse.swift */; };
 		138E30AB21BF21C25E9E546E /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E904A8309560C2D2DE7559C8 /* RecipeListView.swift */; };
+		139F40BC31CF31D36F0E647F /* RecipeListTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F015B9409670D3E3EF8660D9 /* RecipeListTypes.swift */; };
 		14CF86FC7A65A00735692AED /* EnrichAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7FCDE4187D97650355369F /* EnrichAPI.swift */; };
 		15211913FC7B9D4E80EEAD9E /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BF400F8E60D7FF3FB341DB /* Direction.swift */; };
 		155A8A5234D566DEA3EBC7A9 /* SynchronizedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23BE4A4CF9F680FA8AF08C1 /* SynchronizedDictionary.swift */; };
@@ -328,6 +329,7 @@
 		E80909813DAF8B4769FB0D32 /* ImportRecipeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportRecipeResponse.swift; sourceTree = "<group>"; };
 		E8940739D7FD7D674E9EEEAE /* RamekinAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamekinAPI.swift; sourceTree = "<group>"; };
 		E904A8309560C2D2DE7559C8 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
+		F015B9409670D3E3EF8660D9 /* RecipeListTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListTypes.swift; sourceTree = "<group>"; };
 		E92229829097670ECE5BAD93 /* RecipeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResponse.swift; sourceTree = "<group>"; };
 		EBB5D051E55D9BE131B7458E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		F43D3022E01BD87E5FBCB23E /* CreateRecipeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipeResponse.swift; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 				2D0329159F00DE9F47C1781B /* RamekinApp.swift */,
 				6B1C3B09A87C9749A7B28EBD /* RecipeDetailView.swift */,
 				E904A8309560C2D2DE7559C8 /* RecipeListView.swift */,
+				F015B9409670D3E3EF8660D9 /* RecipeListTypes.swift */,
 				03421A2A0FA405C5E3DEBFE3 /* SettingsView.swift */,
 				A5E8783A1CE33E091F1B47E1 /* ShoppingListStore.swift */,
 				BCAA16DC80A2291496EA7EAD /* ShoppingListView.swift */,
@@ -715,6 +718,7 @@
 				3D717F3FD6678B550F180ED4 /* RecipeContent.swift in Sources */,
 				52CA81038877B404D3908609 /* RecipeDetailView.swift in Sources */,
 				138E30AB21BF21C25E9E546E /* RecipeListView.swift in Sources */,
+				139F40BC31CF31D36F0E647F /* RecipeListTypes.swift in Sources */,
 				534B1446E4E926C758FA2333 /* RecipeResponse.swift in Sources */,
 				75C387BB32F5196F84171C85 /* RecipeSummary.swift in Sources */,
 				4CA26488474E46D4C17F2885 /* RecipesAPI.swift in Sources */,
