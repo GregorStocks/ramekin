@@ -603,7 +603,8 @@
                 "null"
               ],
               "format": "int32",
-              "minimum": 0
+              "maximum": 800,
+              "minimum": 1
             }
           }
         ],

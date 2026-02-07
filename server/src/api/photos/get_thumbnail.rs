@@ -21,6 +21,7 @@ use uuid::Uuid;
 #[derive(Debug, Deserialize, IntoParams)]
 pub struct ThumbnailParams {
     /// Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200.
+    #[param(minimum = 1, maximum = 800)]
     pub size: Option<u32>,
 }
 
@@ -127,13 +128,24 @@ pub async fn get_photo_thumbnail(
     }
 
     // Check the thumbnail cache
-    let cached: Option<Vec<u8>> = photo_thumbnails::table
+    let cached: Option<Vec<u8>> = match photo_thumbnails::table
         .filter(photo_thumbnails::photo_id.eq(id))
         .filter(photo_thumbnails::size.eq(size as i32))
         .select(photo_thumbnails::data)
         .first(&mut conn)
         .optional()
-        .unwrap_or(None);
+    {
+        Ok(value) => value,
+        Err(_) => {
+            return (
+                StatusCode::INTERNAL_SERVER_ERROR,
+                Json(ErrorResponse {
+                    error: "Failed to fetch thumbnail cache".to_string(),
+                }),
+            )
+                .into_response()
+        }
+    };
 
     if let Some(data) = cached {
         return jpeg_response(data).into_response();
@@ -142,6 +154,8 @@ pub async fn get_photo_thumbnail(
     // Cache miss: load the full image and generate
     let full_data: Vec<u8> = match photos::table
         .filter(photos::id.eq(id))
+        .filter(photos::user_id.eq(user.id))
+        .filter(photos::deleted_at.is_null())
         .select(photos::data)
         .first(&mut conn)
     {
