@@ -83,7 +83,7 @@ example().catch(console.error);
 
 ## getPhotoThumbnail
 
-> getPhotoThumbnail(id)
+> getPhotoThumbnail(id, size)
 
 
 
@@ -107,6 +107,8 @@ async function example() {
   const body = {
     // string | Photo ID
     id: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
+    // number | Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200. (optional)
+    size: 56,
   } satisfies GetPhotoThumbnailRequest;
 
   try {
@@ -127,6 +129,7 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | `string` | Photo ID | [Defaults to `undefined`] |
+| **size** | `number` | Desired thumbnail size in pixels (longest edge). Clamped to 1..&#x3D;800. Default: 200. | [Optional] [Defaults to `undefined`] |
 
 ### Return type
 

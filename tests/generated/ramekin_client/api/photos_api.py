@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import Field, StrictBytes, StrictStr
-from typing import Tuple, Union
+from typing import Optional, Tuple, Union
 from typing_extensions import Annotated
 from uuid import UUID
 from ramekin_client.models.upload_photo_response import UploadPhotoResponse
@@ -309,6 +309,7 @@ class PhotosApi:
     def get_photo_thumbnail(
         self,
         id: Annotated[UUID, Field(description="Photo ID")],
+        size: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -327,6 +328,8 @@ class PhotosApi:
 
         :param id: Photo ID (required)
         :type id: UUID
+        :param size: Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200.
+        :type size: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -351,6 +354,7 @@ class PhotosApi:
 
         _param = self._get_photo_thumbnail_serialize(
             id=id,
+            size=size,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -377,6 +381,7 @@ class PhotosApi:
     def get_photo_thumbnail_with_http_info(
         self,
         id: Annotated[UUID, Field(description="Photo ID")],
+        size: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -395,6 +400,8 @@ class PhotosApi:
 
         :param id: Photo ID (required)
         :type id: UUID
+        :param size: Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200.
+        :type size: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -419,6 +426,7 @@ class PhotosApi:
 
         _param = self._get_photo_thumbnail_serialize(
             id=id,
+            size=size,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -445,6 +453,7 @@ class PhotosApi:
     def get_photo_thumbnail_without_preload_content(
         self,
         id: Annotated[UUID, Field(description="Photo ID")],
+        size: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -463,6 +472,8 @@ class PhotosApi:
 
         :param id: Photo ID (required)
         :type id: UUID
+        :param size: Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200.
+        :type size: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -487,6 +498,7 @@ class PhotosApi:
 
         _param = self._get_photo_thumbnail_serialize(
             id=id,
+            size=size,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -508,6 +520,7 @@ class PhotosApi:
     def _get_photo_thumbnail_serialize(
         self,
         id,
+        size,
         _request_auth,
         _content_type,
         _headers,
@@ -532,6 +545,10 @@ class PhotosApi:
         if id is not None:
             _path_params['id'] = id
         # process the query parameters
+        if size is not None:
+            
+            _query_params.append(('size', size))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter

@@ -591,6 +591,20 @@
               "type": "string",
               "format": "uuid"
             }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200.",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int32",
+              "minimum": 1
+            }
           }
         ],
         "responses": {

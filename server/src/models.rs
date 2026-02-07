@@ -89,6 +89,26 @@ pub struct NewPhoto<'a> {
     pub thumbnail: &'a [u8],
 }
 
+#[derive(Queryable, Selectable, Debug)]
+#[diesel(table_name = crate::schema::photo_thumbnails)]
+#[diesel(check_for_backend(diesel::pg::Pg))]
+#[allow(dead_code)]
+pub struct PhotoThumbnail {
+    pub id: Uuid,
+    pub photo_id: Uuid,
+    pub size: i32,
+    pub data: Vec<u8>,
+    pub created_at: DateTime<Utc>,
+}
+
+#[derive(Insertable)]
+#[diesel(table_name = crate::schema::photo_thumbnails)]
+pub struct NewPhotoThumbnail<'a> {
+    pub photo_id: Uuid,
+    pub size: i32,
+    pub data: &'a [u8],
+}
+
 // Recipe is now minimal - just identity + pointer to current version
 #[derive(Queryable, Selectable, Debug)]
 #[diesel(table_name = crate::schema::recipes)]

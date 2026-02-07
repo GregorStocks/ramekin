@@ -15,6 +15,16 @@ diesel::table! {
 }
 
 diesel::table! {
+    photo_thumbnails (id) {
+        id -> Uuid,
+        photo_id -> Uuid,
+        size -> Int4,
+        data -> Bytea,
+        created_at -> Timestamptz,
+    }
+}
+
+diesel::table! {
     photos (id) {
         id -> Uuid,
         user_id -> Uuid,
@@ -107,9 +117,9 @@ diesel::table! {
         sort_order -> Int4,
         created_at -> Timestamptz,
         updated_at -> Timestamptz,
-        deleted_at -> Nullable<Timestamptz>,
         client_id -> Nullable<Uuid>,
         version -> Int4,
+        deleted_at -> Nullable<Timestamptz>,
     }
 }
 
@@ -148,6 +158,7 @@ diesel::table! {
 
 diesel::joinable!(meal_plans -> recipes (recipe_id));
 diesel::joinable!(meal_plans -> users (user_id));
+diesel::joinable!(photo_thumbnails -> photos (photo_id));
 diesel::joinable!(photos -> users (user_id));
 diesel::joinable!(recipe_version_tags -> recipe_versions (recipe_version_id));
 diesel::joinable!(recipe_version_tags -> user_tags (tag_id));
@@ -161,6 +172,7 @@ diesel::joinable!(user_tags -> users (user_id));
 
 diesel::allow_tables_to_appear_in_same_query!(
     meal_plans,
+    photo_thumbnails,
     photos,
     recipe_version_tags,
     recipe_versions,

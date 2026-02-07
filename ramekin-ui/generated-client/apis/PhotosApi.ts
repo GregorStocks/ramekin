@@ -31,6 +31,7 @@ export interface GetPhotoRequest {
 
 export interface GetPhotoThumbnailRequest {
     id: string;
+    size?: number | null;
 }
 
 export interface UploadRequest {
@@ -95,6 +96,10 @@ export class PhotosApi extends runtime.BaseAPI {
         }
 
         const queryParameters: any = {};
+
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
 
         const headerParameters: runtime.HTTPHeaders = {};
 
