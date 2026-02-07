@@ -82,9 +82,11 @@ pub async fn get_photo(
 pub async fn get_photo_thumbnail(
     configuration: &configuration::Configuration,
     id: &str,
+    size: Option<i32>,
 ) -> Result<(), Error<GetPhotoThumbnailError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_id = id;
+    let p_query_size = size;
 
     let uri_str = format!(
         "{}/api/photos/{id}/thumbnail",
@@ -93,6 +95,9 @@ pub async fn get_photo_thumbnail(
     );
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
+    if let Some(ref param_value) = p_query_size {
+        req_builder = req_builder.query(&[("size", &param_value.to_string())]);
+    }
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
     }

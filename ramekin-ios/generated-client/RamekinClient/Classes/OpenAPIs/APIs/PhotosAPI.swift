@@ -54,11 +54,12 @@ open class PhotosAPI {
     /**
 
      - parameter id: (path) Photo ID 
+     - parameter size: (query) Desired thumbnail size in pixels (longest edge). Clamped to 1..&#x3D;800. Default: 200. (optional)
      - returns: Void
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-    open class func getPhotoThumbnail(id: UUID) async throws {
-        return try await getPhotoThumbnailWithRequestBuilder(id: id).execute().body
+    open class func getPhotoThumbnail(id: UUID, size: Int? = nil) async throws {
+        return try await getPhotoThumbnailWithRequestBuilder(id: id, size: size).execute().body
     }
 
     /**
@@ -67,9 +68,10 @@ open class PhotosAPI {
        - type: http
        - name: bearer_auth
      - parameter id: (path) Photo ID 
+     - parameter size: (query) Desired thumbnail size in pixels (longest edge). Clamped to 1..&#x3D;800. Default: 200. (optional)
      - returns: RequestBuilder<Void> 
      */
-    open class func getPhotoThumbnailWithRequestBuilder(id: UUID) -> RequestBuilder<Void> {
+    open class func getPhotoThumbnailWithRequestBuilder(id: UUID, size: Int? = nil) -> RequestBuilder<Void> {
         var localVariablePath = "/api/photos/{id}/thumbnail"
         let idPreEscape = "\(APIHelper.mapValueToPathItem(id))"
         let idPostEscape = idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -77,7 +79,10 @@ open class PhotosAPI {
         let localVariableURLString = RamekinClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
 
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+        var localVariableUrlComponents = URLComponents(string: localVariableURLString)
+        localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
+            "size": (wrappedValue: size?.encodeToJSON(), isExplode: true),
+        ])
 
         let localVariableNillableHeaders: [String: Any?] = [
             :

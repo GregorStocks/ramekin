@@ -100,3 +100,75 @@ def test_photo_thumbnail_requires_auth(unauthed_api_client):
         photos_api.get_photo_thumbnail(id="00000000-0000-0000-0000-000000000000")
 
     assert exc_info.value.status == 401
+
+
+def test_photo_thumbnail_custom_size(authed_api_client, test_image):
+    """Test that requesting a custom thumbnail size returns a valid JPEG."""
+    client, user_id = authed_api_client
+    photos_api = PhotosApi(client)
+
+    upload_response = photos_api.upload(file=("test.png", test_image))
+    photo_id = str(upload_response.id)
+
+    response = photos_api.get_photo_thumbnail_without_preload_content(
+        id=photo_id, size=400
+    )
+    assert response.status == 200
+    assert response.headers.get("content-type") == "image/jpeg"
+    assert response.data[:3] == b"\xff\xd8\xff"
+
+
+def test_photo_thumbnail_custom_size_cached(authed_api_client, test_image):
+    """Test that a second request for the same size returns identical bytes (cached)."""
+    client, user_id = authed_api_client
+    photos_api = PhotosApi(client)
+
+    upload_response = photos_api.upload(file=("test.png", test_image))
+    photo_id = str(upload_response.id)
+
+    r1 = photos_api.get_photo_thumbnail_without_preload_content(id=photo_id, size=400)
+    r2 = photos_api.get_photo_thumbnail_without_preload_content(id=photo_id, size=400)
+    assert r1.data == r2.data
+
+
+def test_photo_thumbnail_size_capped_at_max(authed_api_client, test_image):
+    """Test that size is capped at 800 (MAX_THUMBNAIL_SIZE)."""
+    client, user_id = authed_api_client
+    photos_api = PhotosApi(client)
+
+    upload_response = photos_api.upload(file=("test.png", test_image))
+    photo_id = str(upload_response.id)
+
+    # Requesting size=5000 should be clamped to 800 and return the same as size=800
+    r_huge = photos_api.get_photo_thumbnail_without_preload_content(
+        id=photo_id, size=5000
+    )
+    r_max = photos_api.get_photo_thumbnail_without_preload_content(
+        id=photo_id, size=800
+    )
+    assert r_huge.status == 200
+    assert r_huge.data == r_max.data
+
+
+def test_photo_thumbnail_custom_size_not_found(authed_api_client):
+    """Test that requesting a custom size for a non-existent photo returns 404."""
+    client, user_id = authed_api_client
+    photos_api = PhotosApi(client)
+
+    fake_id = "00000000-0000-0000-0000-000000000000"
+    with pytest.raises(ApiException) as exc_info:
+        photos_api.get_photo_thumbnail(id=fake_id, size=400)
+
+    assert exc_info.value.status == 404
+
+
+def test_photo_thumbnail_custom_size_requires_auth(unauthed_api_client):
+    """Test that custom-size thumbnail still requires auth."""
+    photos_api = PhotosApi(unauthed_api_client)
+
+    with pytest.raises(ApiException) as exc_info:
+        photos_api.get_photo_thumbnail(
+            id="00000000-0000-0000-0000-000000000000", size=400
+        )
+
+    assert exc_info.value.status == 401

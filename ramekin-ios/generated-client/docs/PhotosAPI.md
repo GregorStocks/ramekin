@@ -58,7 +58,7 @@ Void (empty response body)
 
 # **getPhotoThumbnail**
 ```swift
-    open class func getPhotoThumbnail(id: UUID, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
+    open class func getPhotoThumbnail(id: UUID, size: Int? = nil, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 
@@ -69,8 +69,9 @@ Void (empty response body)
 import RamekinClient
 
 let id = 987 // UUID | Photo ID
+let size = 987 // Int | Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200. (optional)
 
-PhotosAPI.getPhotoThumbnail(id: id) { (response, error) in
+PhotosAPI.getPhotoThumbnail(id: id, size: size) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -87,6 +88,7 @@ PhotosAPI.getPhotoThumbnail(id: id) { (response, error) in
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **UUID** | Photo ID | 
+ **size** | **Int** | Desired thumbnail size in pixels (longest edge). Clamped to 1..&#x3D;800. Default: 200. | [optional] 
 
 ### Return type
 

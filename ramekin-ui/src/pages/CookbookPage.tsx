@@ -156,17 +156,24 @@ function buildQueryFromFilters(
   return parts.join(" ");
 }
 
+const thumbnailSize = window.devicePixelRatio >= 2 ? 800 : 400;
+
 function PhotoThumbnail(props: {
   photoId: string;
   token: string;
   alt: string;
+  size?: number;
 }) {
   const [src, setSrc] = createSignal<string | null>(null);
 
   onMount(async () => {
-    const response = await fetch(`/api/photos/${props.photoId}/thumbnail`, {
-      headers: { Authorization: `Bearer ${props.token}` },
-    });
+    const sizeParam = props.size ? `?size=${props.size}` : "";
+    const response = await fetch(
+      `/api/photos/${props.photoId}/thumbnail${sizeParam}`,
+      {
+        headers: { Authorization: `Bearer ${props.token}` },
+      },
+    );
     if (response.ok) {
       const blob = await response.blob();
       setSrc(URL.createObjectURL(blob));
@@ -639,6 +646,7 @@ export default function CookbookPage() {
                     photoId={recipe.thumbnailPhotoId!}
                     token={token()!}
                     alt=""
+                    size={thumbnailSize}
                   />
                 </Show>
                 <div class="recipe-card-content">

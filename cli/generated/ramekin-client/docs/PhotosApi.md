@@ -40,7 +40,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_photo_thumbnail
 
-> get_photo_thumbnail(id)
+> get_photo_thumbnail(id, size)
 
 
 ### Parameters
@@ -49,6 +49,7 @@ Name | Type | Description  | Required | Notes
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **uuid::Uuid** | Photo ID | [required] |
+**size** | Option<**i32**> | Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200. |  |
 
 ### Return type
 

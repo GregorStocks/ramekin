@@ -54,6 +54,9 @@ export class PhotosApi extends runtime.BaseAPI {
             throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling getPhotoThumbnail().');
         }
         const queryParameters = {};
+        if (requestParameters['size'] != null) {
+            queryParameters['size'] = requestParameters['size'];
+        }
         const headerParameters = {};
         if (this.configuration && this.configuration.accessToken) {
             const token = this.configuration.accessToken;

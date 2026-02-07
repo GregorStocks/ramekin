@@ -16,6 +16,7 @@ export interface GetPhotoRequest {
 }
 export interface GetPhotoThumbnailRequest {
     id: string;
+    size?: number | null;
 }
 export interface UploadRequest {
     file: Blob;

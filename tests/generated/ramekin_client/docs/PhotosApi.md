@@ -82,7 +82,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_photo_thumbnail**
-> get_photo_thumbnail(id)
+> get_photo_thumbnail(id, size=size)
 
 ### Example
 
@@ -114,9 +114,10 @@ with ramekin_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ramekin_client.PhotosApi(api_client)
     id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | Photo ID
+    size = 56 # int | Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200. (optional)
 
     try:
-        api_instance.get_photo_thumbnail(id)
+        api_instance.get_photo_thumbnail(id, size=size)
     except Exception as e:
         print("Exception when calling PhotosApi->get_photo_thumbnail: %s\n" % e)
 ```
@@ -129,6 +130,7 @@ with ramekin_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **UUID**| Photo ID | 
+ **size** | **int**| Desired thumbnail size in pixels (longest edge). Clamped to 1..&#x3D;800. Default: 200. | [optional] 
 
 ### Return type
 
