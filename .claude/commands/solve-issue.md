@@ -8,7 +8,7 @@ Pick and solve exactly **one** issue, then create a PR.
    ```bash
    for f in issues/*.json; do echo "$(basename "$f" .json): $(jq -r '[.priority, .title] | @tsv' "$f")"; done | sort -t: -k2 -n
    ```
-2. Pick **one** issue that seems worth fixing (see criteria below)
+2. Pick **one** issue, preferring higher-priority (lower number) issues first (see criteria below)
 3. Implement the fix
 4. Update tests to expect the correct behavior
 5. Run `make test` and `make lint` to verify
