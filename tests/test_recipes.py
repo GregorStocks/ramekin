@@ -1050,10 +1050,10 @@ def test_list_recipes_sort_by_created_at(authed_api_client):
     # Create three recipes in order
     ids = []
     for i in range(3):
-        r = recipes_api.create_recipe(
+        recipe = recipes_api.create_recipe(
             CreateRecipeRequest(title=f"Recipe {i}", instructions="x", ingredients=[])
         )
-        ids.append(r.id)
+        ids.append(recipe.id)
 
     # Update the first recipe so its updated_at changes but created_at stays earliest
     recipes_api.update_recipe(
@@ -1066,7 +1066,10 @@ def test_list_recipes_sort_by_created_at(authed_api_client):
         sort_by=SortBy.CREATED_AT, sort_dir=Direction.DESC
     )
     result_ids = [r.id for r in desc_response.recipes]
-    assert result_ids == list(reversed(ids))
+    created_recipes = [recipes_api.get_recipe(str(recipe_id)) for recipe_id in ids]
+    created_by_id = sorted(created_recipes, key=lambda recipe: str(recipe.id))
+    expected = sorted(created_by_id, key=lambda recipe: recipe.created_at, reverse=True)
+    assert result_ids == [recipe.id for recipe in expected]
 
     # Sort by updated_at desc: most recently updated first (Recipe 0 should be first)
     updated_response = recipes_api.list_recipes(

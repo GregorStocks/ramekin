@@ -30,6 +30,11 @@ diesel::define_sql_function! {
     fn random() -> diesel::sql_types::Double;
 }
 
+diesel::define_sql_function! {
+    /// PostgreSQL lower() function
+    fn lower(x: diesel::sql_types::Text) -> diesel::sql_types::Text;
+}
+
 /// Sort field for recipe list
 #[derive(Debug, Default, Clone, Copy, Deserialize, ToSchema)]
 #[serde(rename_all = "snake_case")]
@@ -347,10 +352,10 @@ pub async fn list_recipes(
             recipes::id.asc(),
         )),
         (SortBy::Title, Direction::Desc) => {
-            query.order((recipe_versions::title.desc(), recipes::id.asc()))
+            query.order((lower(recipe_versions::title).desc(), recipes::id.asc()))
         }
         (SortBy::Title, Direction::Asc) => {
-            query.order((recipe_versions::title.asc(), recipes::id.asc()))
+            query.order((lower(recipe_versions::title).asc(), recipes::id.asc()))
         }
         (SortBy::CreatedAt, Direction::Desc) => {
             query.order((recipes::created_at.desc(), recipes::id.asc()))
