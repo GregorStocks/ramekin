@@ -80,6 +80,7 @@ impl PipelineStep for ParseIngredientsStep {
             .into_iter()
             .map(|ing| add_metric_weight_alternative(ing, &mut weight_stats))
             .map(|ing| add_volume_to_weight_alternative(ing, &mut volume_stats))
+            .map(|ing| ing.normalize_amounts())
             .collect();
 
         let output = ParseIngredientsOutput {

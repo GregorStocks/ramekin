@@ -8,6 +8,8 @@ use std::sync::LazyLock;
 use regex::Regex;
 use serde::{Deserialize, Serialize};
 
+use crate::metric_weights::parse_amount;
+
 /// A single measurement (amount + unit pair)
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct Measurement {
@@ -24,6 +26,19 @@ pub struct ParsedIngredient {
     pub raw: Option<String>,
     /// Section name for grouping (e.g., "For the sauce", "For the dough")
     pub section: Option<String>,
+}
+
+impl ParsedIngredient {
+    /// Normalize fraction amounts to decimal form across all measurements.
+    /// Should be called after metric/volume enrichment to avoid rounding errors.
+    pub fn normalize_amounts(mut self) -> Self {
+        for m in &mut self.measurements {
+            if let Some(ref amount) = m.amount {
+                m.amount = Some(normalize_fraction_to_decimal(amount));
+            }
+        }
+        self
+    }
 }
 
 /// Common cooking units (lowercase for matching).
@@ -402,6 +417,92 @@ fn normalize_unicode(s: &str) -> String {
     }
 
     result
+}
+
+/// Format a decimal amount, stripping trailing zeros.
+/// "0.50" -> "0.5", "1.00" -> "1", "2.50" -> "2.5"
+fn format_decimal_amount(value: f64) -> String {
+    let rounded = (value * 100.0).round() / 100.0;
+    if rounded == rounded.floor() {
+        format!("{}", rounded as i64)
+    } else {
+        let s = format!("{:.2}", rounded);
+        s.trim_end_matches('0').to_string()
+    }
+}
+
+/// Normalize a single amount value to clean decimal form.
+/// Fractions: "1/2" -> "0.5", "3/4" -> "0.75", "1 1/2" -> "1.5"
+/// Ugly decimals: "0.33333334326744" -> "0.33"
+/// Clean values pass through: "2" -> "2", "0.5" -> "0.5"
+fn normalize_single_amount(s: &str) -> String {
+    match parse_amount(s) {
+        Some(value) => {
+            let formatted = format_decimal_amount(value);
+            // Only use the formatted version if it's different (i.e., we actually simplified)
+            // or if the original contained a fraction
+            if s.contains('/') || formatted.len() < s.len() {
+                formatted
+            } else {
+                s.to_string()
+            }
+        }
+        None => s.to_string(),
+    }
+}
+
+/// Find the index of a range hyphen in an amount string.
+/// Distinguishes real ranges ("6-8") from mixed-number notation ("1-1/2").
+fn find_range_hyphen_in_amount(s: &str) -> Option<usize> {
+    for (i, c) in s.char_indices() {
+        if c == '-' && i > 0 {
+            let before = s.get(..i)?.chars().last()?;
+            let after_part = s.get(i + 1..)?;
+            let after = after_part.chars().next()?;
+            if before.is_ascii_digit() && after.is_ascii_digit() {
+                let first_token = after_part.split_whitespace().next().unwrap_or("");
+                if !first_token.contains('/') {
+                    return Some(i);
+                }
+            }
+        }
+    }
+    None
+}
+
+/// Normalize amounts to clean decimal form.
+/// Fractions: "1/2" -> "0.5", "3/4" -> "0.75", "1 1/2" -> "1.5"
+/// Repeating fractions round to 2 decimal places: "1/3" -> "0.33"
+/// Ugly decimals: "0.33333334326744" -> "0.33"
+/// Clean values pass through unchanged.
+fn normalize_fraction_to_decimal(amount: &str) -> String {
+    let amount = amount.trim();
+
+    // Handle ranges with " to "
+    if let Some((low, high)) = amount.split_once(" to ") {
+        let low_converted = normalize_single_amount(low.trim());
+        let high_converted = normalize_single_amount(high.trim());
+        return format!("{} to {}", low_converted, high_converted);
+    }
+
+    // Handle ranges with " or "
+    if let Some((low, high)) = amount.split_once(" or ") {
+        let low_converted = normalize_single_amount(low.trim());
+        let high_converted = normalize_single_amount(high.trim());
+        return format!("{} or {}", low_converted, high_converted);
+    }
+
+    // Handle hyphenated ranges: "1 1/2-3" or "2 1/2-4 1/2"
+    if let Some(hyphen_idx) = find_range_hyphen_in_amount(amount) {
+        if let (Some(low), Some(high)) = (amount.get(..hyphen_idx), amount.get(hyphen_idx + 1..)) {
+            let low_converted = normalize_single_amount(low.trim());
+            let high_converted = normalize_single_amount(high.trim());
+            return format!("{}-{}", low_converted, high_converted);
+        }
+    }
+
+    // Single value
+    normalize_single_amount(amount)
 }
 
 /// Convert word numbers to digits at the start of the string.
