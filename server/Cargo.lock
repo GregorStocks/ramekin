@@ -2626,6 +2626,7 @@ dependencies = [
  "chrono",
  "dashmap",
  "dirs",
+ "encoding_rs",
  "html-escape",
  "image",
  "ingredient-density",

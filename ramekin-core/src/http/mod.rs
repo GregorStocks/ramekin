@@ -4,6 +4,7 @@
 //! consistent caching behavior and avoid hammering external servers.
 
 mod cache;
+pub(crate) mod charset;
 mod client;
 mod rate_limiter;
 

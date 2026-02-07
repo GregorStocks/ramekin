@@ -4,15 +4,15 @@
 
 - Total URLs: 5370
 - Completed: 4574 (85.2%)
-- Failed at fetch: 13 (0.2%)
-- Failed at extract: 783 (14.6%)
+- Failed at fetch: 1 (0.0%)
+- Failed at extract: 795 (14.8%)
 
 ## Extraction Methods
 
-- JSON-LD: 4051/5357 (75.6%)
-- Microdata: 523/5357 (9.8%)
-- Both: 0/5357 (0.0%)
-- Neither: 783/5357 (14.6%)
+- JSON-LD: 4051/5369 (75.5%)
+- Microdata: 523/5369 (9.7%)
+- Both: 0/5369 (0.0%)
+- Neither: 795/5369 (14.8%)
 
 ## Ingredient Parsing
 
@@ -127,21 +127,6 @@
 
 - https://nomnompaleo.com/2017/08/15/6053
 
-### Invalid response encoding: Invalid UTF-8 in respon... (12 URLs)
-
-- https://hostthetoast.com/birria-de-res-beef-birria-recipe/
-- https://hostthetoast.com/easy-candied-pecans-10-minute-stovetop-recipe/
-- https://hostthetoast.com/feel-better-chicken-soup-recipe/
-- https://hostthetoast.com/homemade-bread-white-bread-recipe/
-- https://hostthetoast.com/homemade-hot-honey-recipe/
-- https://hostthetoast.com/tomato-bruschetta-recipe/
-- https://www.asweetpeachef.com/chai-tea-latte-recipe/
-- https://www.asweetpeachef.com/healthy-beef-and-broccoli-recipe/
-- https://www.asweetpeachef.com/healthy-vanilla-latte-recipe/
-- https://www.asweetpeachef.com/homemade-chili-cheese-dog-recipe/
-- https://www.asweetpeachef.com/horchata-recipe/
-- https://www.asweetpeachef.com/pumpkin-spice-latte-recipe/
-
 ### Missing required field: name (1 URLs)
 
 - https://iamafoodblog.com/turkey-shepherds-pie-recipe/
@@ -215,7 +200,7 @@
 - https://smittenkitchen.com/2024/02/chocolate-raspberry-pavlova-stack/
 - https://smittenkitchen.com/2025/12/winter-cabbage-salad-with-mandarins-and-cashews/
 
-### No recipe found (719 URLs)
+### No recipe found (731 URLs)
 
 - http://bakingbites.com/2017/02/how-to-use-freeze-dried-fruit-in-baking/
 - https://alexandracooks.com/2018/12/21/15-savory-homemade-treats-to-gift-all-season/
@@ -241,6 +226,12 @@
 - https://food.com/recipe/egg-in-a-basket-421172
 - https://food.com/recipe/mash-potato-and-stuffing-balls-445449
 - https://food.com/recipe/mash-potato-and-stuffing-balls-445449#reviews
+- https://hostthetoast.com/birria-de-res-beef-birria-recipe/
+- https://hostthetoast.com/easy-candied-pecans-10-minute-stovetop-recipe/
+- https://hostthetoast.com/feel-better-chicken-soup-recipe/
+- https://hostthetoast.com/homemade-bread-white-bread-recipe/
+- https://hostthetoast.com/homemade-hot-honey-recipe/
+- https://hostthetoast.com/tomato-bruschetta-recipe/
 - https://kingarthurbaking.com/recipes/muffins-popovers
 - https://kingarthurbaking.com/recipes/pancakes-waffles
 - https://nomnompaleo.com/post/1451231058/i-love-this-roasted-broccoli-recipe
@@ -827,6 +818,12 @@
 - https://tasty.co/compilation/if-famous-five-characters-were-a-recipe
 - https://www.101cookbooks.com/13-inspiring-instagrammers-to-follow-for-healthy-feelgood-food-recipe/
 - https://www.101cookbooks.com/okonomiyaki-recipe/
+- https://www.asweetpeachef.com/chai-tea-latte-recipe/
+- https://www.asweetpeachef.com/healthy-beef-and-broccoli-recipe/
+- https://www.asweetpeachef.com/healthy-vanilla-latte-recipe/
+- https://www.asweetpeachef.com/homemade-chili-cheese-dog-recipe/
+- https://www.asweetpeachef.com/horchata-recipe/
+- https://www.asweetpeachef.com/pumpkin-spice-latte-recipe/
 - https://www.averiecooks.com/raw-vegan-donut-holes-5-minute-recipe/
 - https://www.averiecooks.com/trainer-session-progress-recipe/
 - https://www.bbcgoodfood.com/us/prime-rib-recipe

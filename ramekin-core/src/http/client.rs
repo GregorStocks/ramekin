@@ -9,7 +9,14 @@ use std::time::Duration;
 use crate::error::FetchError;
 
 use super::cache::DiskCache;
+use super::charset;
 use super::rate_limiter::RateLimiter;
+
+/// Result of a fetch operation, including content-type for charset detection.
+struct FetchResult {
+    data: Vec<u8>,
+    content_type: Option<String>,
+}
 
 /// Trait for HTTP clients, enabling mockability in tests.
 #[async_trait]
@@ -177,8 +184,9 @@ impl CachingClient {
     /// Get cached HTML if it exists (without fetching).
     pub fn get_cached_html(&self, url: &str) -> Option<String> {
         self.cache.as_ref().and_then(|c| {
-            c.get(url)
-                .and_then(|resp| String::from_utf8(resp.data).ok())
+            c.get(url).map(|resp| {
+                charset::decode_bytes_to_utf8(resp.data, resp.metadata.content_type.as_deref())
+            })
         })
     }
 
@@ -230,7 +238,7 @@ impl CachingClient {
     }
 
     /// Internal fetch implementation with caching logic.
-    async fn fetch_with_cache(&self, url: &str) -> Result<Vec<u8>, FetchError> {
+    async fn fetch_with_cache(&self, url: &str) -> Result<FetchResult, FetchError> {
         // Validate URL first
         let parsed = reqwest::Url::parse(url).map_err(|e| FetchError::InvalidUrl(e.to_string()))?;
 
@@ -250,7 +258,10 @@ impl CachingClient {
                 if self.offline_mode || self.never_network {
                     // Offline/never-network mode: use cached response without validation
                     tracing::debug!(url, "cache hit (offline mode)");
-                    return Ok(cached.data);
+                    return Ok(FetchResult {
+                        data: cached.data,
+                        content_type: cached.metadata.content_type,
+                    });
                 }
 
                 // Online mode: validate with ETag/If-Modified-Since
@@ -273,7 +284,10 @@ impl CachingClient {
                         if response.status() == reqwest::StatusCode::NOT_MODIFIED {
                             // 304 Not Modified: use cached response
                             tracing::debug!(url, "cache valid (304 Not Modified)");
-                            return Ok(cached.data);
+                            return Ok(FetchResult {
+                                data: cached.data,
+                                content_type: cached.metadata.content_type,
+                            });
                         }
 
                         if response.status().is_success() {
@@ -297,9 +311,13 @@ impl CachingClient {
 
                             let bytes = response.bytes().await?.to_vec();
 
-                            let _ = cache.put(url, &bytes, content_type, etag, last_modified);
+                            let _ =
+                                cache.put(url, &bytes, content_type.clone(), etag, last_modified);
 
-                            return Ok(bytes);
+                            return Ok(FetchResult {
+                                data: bytes,
+                                content_type,
+                            });
                         }
 
                         // Non-success status, fall through to error
@@ -311,7 +329,10 @@ impl CachingClient {
                     Err(e) => {
                         // Network error, use cached response as fallback
                         tracing::debug!(url, error = %e, "network error, using cached fallback");
-                        return Ok(cached.data);
+                        return Ok(FetchResult {
+                            data: cached.data,
+                            content_type: cached.metadata.content_type,
+                        });
                     }
                 }
             }
@@ -366,23 +387,28 @@ impl CachingClient {
 
         // Save to cache
         if let Some(cache) = &self.cache {
-            let _ = cache.put(url, &bytes, content_type, etag, last_modified);
+            let _ = cache.put(url, &bytes, content_type.clone(), etag, last_modified);
         }
 
-        Ok(bytes)
+        Ok(FetchResult {
+            data: bytes,
+            content_type,
+        })
     }
 }
 
 #[async_trait]
 impl HttpClient for CachingClient {
     async fn fetch_html(&self, url: &str) -> Result<String, FetchError> {
-        let bytes = self.fetch_with_cache(url).await?;
-        String::from_utf8(bytes)
-            .map_err(|e| FetchError::InvalidEncoding(format!("Invalid UTF-8 in response: {}", e)))
+        let result = self.fetch_with_cache(url).await?;
+        Ok(charset::decode_bytes_to_utf8(
+            result.data,
+            result.content_type.as_deref(),
+        ))
     }
 
     async fn fetch_bytes(&self, url: &str) -> Result<Vec<u8>, FetchError> {
-        self.fetch_with_cache(url).await
+        Ok(self.fetch_with_cache(url).await?.data)
     }
 }
 
@@ -452,8 +478,9 @@ impl HttpClient for MockClient {
     async fn fetch_html(&self, url: &str) -> Result<String, FetchError> {
         match self.responses.get(url) {
             Some(MockResponse::Html(html)) => Ok(html.clone()),
-            Some(MockResponse::Bytes(bytes)) => String::from_utf8(bytes.clone())
-                .map_err(|e| FetchError::InvalidEncoding(e.to_string())),
+            Some(MockResponse::Bytes(bytes)) => {
+                Ok(charset::decode_bytes_to_utf8(bytes.clone(), None))
+            }
             Some(MockResponse::Error(e)) => Err(FetchError::InvalidUrl(e.clone())),
             None => Err(FetchError::InvalidUrl(format!(
                 "No mock response for URL: {}",
