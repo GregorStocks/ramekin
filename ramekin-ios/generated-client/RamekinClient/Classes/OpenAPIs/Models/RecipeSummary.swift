@@ -15,16 +15,19 @@ public struct RecipeSummary: Codable, JSONEncodable, Hashable {
     public var createdAt: Date
     public var description: String?
     public var id: UUID
+    /** Rating from 1-5, if set */
+    public var rating: Int?
     public var tags: [String]
     /** Photo ID of the first photo (thumbnail), if any */
     public var thumbnailPhotoId: UUID?
     public var title: String
     public var updatedAt: Date
 
-    public init(createdAt: Date, description: String? = nil, id: UUID, tags: [String], thumbnailPhotoId: UUID? = nil, title: String, updatedAt: Date) {
+    public init(createdAt: Date, description: String? = nil, id: UUID, rating: Int? = nil, tags: [String], thumbnailPhotoId: UUID? = nil, title: String, updatedAt: Date) {
         self.createdAt = createdAt
         self.description = description
         self.id = id
+        self.rating = rating
         self.tags = tags
         self.thumbnailPhotoId = thumbnailPhotoId
         self.title = title
@@ -35,6 +38,7 @@ public struct RecipeSummary: Codable, JSONEncodable, Hashable {
         case createdAt = "created_at"
         case description
         case id
+        case rating
         case tags
         case thumbnailPhotoId = "thumbnail_photo_id"
         case title
@@ -48,6 +52,7 @@ public struct RecipeSummary: Codable, JSONEncodable, Hashable {
         try container.encode(createdAt, forKey: .createdAt)
         try container.encodeIfPresent(description, forKey: .description)
         try container.encode(id, forKey: .id)
+        try container.encodeIfPresent(rating, forKey: .rating)
         try container.encode(tags, forKey: .tags)
         try container.encodeIfPresent(thumbnailPhotoId, forKey: .thumbnailPhotoId)
         try container.encode(title, forKey: .title)

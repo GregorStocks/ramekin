@@ -24,6 +24,14 @@ pub struct RecipeSummary {
     pub description: Option<Option<String>>,
     #[serde(rename = "id")]
     pub id: uuid::Uuid,
+    /// Rating from 1-5, if set
+    #[serde(
+        rename = "rating",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub rating: Option<Option<i32>>,
     #[serde(rename = "tags")]
     pub tags: Vec<String>,
     /// Photo ID of the first photo (thumbnail), if any
@@ -52,6 +60,7 @@ impl RecipeSummary {
             created_at,
             description: None,
             id,
+            rating: None,
             tags,
             thumbnail_photo_id: None,
             title,

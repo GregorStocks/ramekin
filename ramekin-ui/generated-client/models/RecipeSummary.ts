@@ -38,6 +38,12 @@ export interface RecipeSummary {
      */
     id: string;
     /**
+     * Rating from 1-5, if set
+     * @type {number}
+     * @memberof RecipeSummary
+     */
+    rating?: number | null;
+    /**
      * 
      * @type {Array<string>}
      * @memberof RecipeSummary
@@ -88,6 +94,7 @@ export function RecipeSummaryFromJSONTyped(json: any, ignoreDiscriminator: boole
         'createdAt': (new Date(json['created_at'])),
         'description': json['description'] == null ? undefined : json['description'],
         'id': json['id'],
+        'rating': json['rating'] == null ? undefined : json['rating'],
         'tags': json['tags'],
         'thumbnailPhotoId': json['thumbnail_photo_id'] == null ? undefined : json['thumbnail_photo_id'],
         'title': json['title'],
@@ -109,6 +116,7 @@ export function RecipeSummaryToJSONTyped(value?: RecipeSummary | null, ignoreDis
         'created_at': value['createdAt'].toISOString(),
         'description': value['description'],
         'id': value['id'],
+        'rating': value['rating'],
         'tags': value['tags'],
         'thumbnail_photo_id': value['thumbnailPhotoId'],
         'title': value['title'],

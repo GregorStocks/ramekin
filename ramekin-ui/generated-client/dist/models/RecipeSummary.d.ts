@@ -34,6 +34,12 @@ export interface RecipeSummary {
      */
     id: string;
     /**
+     * Rating from 1-5, if set
+     * @type {number}
+     * @memberof RecipeSummary
+     */
+    rating?: number | null;
+    /**
      *
      * @type {Array<string>}
      * @memberof RecipeSummary

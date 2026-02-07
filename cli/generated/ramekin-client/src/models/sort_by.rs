@@ -17,6 +17,12 @@ use serde::{Deserialize, Serialize};
 pub enum SortBy {
     #[serde(rename = "updated_at")]
     UpdatedAt,
+    #[serde(rename = "rating")]
+    Rating,
+    #[serde(rename = "title")]
+    Title,
+    #[serde(rename = "created_at")]
+    CreatedAt,
     #[serde(rename = "random")]
     Random,
 }
@@ -25,6 +31,9 @@ impl std::fmt::Display for SortBy {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
             Self::UpdatedAt => write!(f, "updated_at"),
+            Self::Rating => write!(f, "rating"),
+            Self::Title => write!(f, "title"),
+            Self::CreatedAt => write!(f, "created_at"),
             Self::Random => write!(f, "random"),
         }
     }

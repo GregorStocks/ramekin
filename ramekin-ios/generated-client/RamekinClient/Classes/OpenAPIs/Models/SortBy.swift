@@ -13,5 +13,8 @@ import AnyCodable
 /** Sort field for recipe list */
 public enum SortBy: String, Codable, CaseIterable {
     case updatedAt = "updated_at"
+    case rating = "rating"
+    case title = "title"
+    case createdAt = "created_at"
     case random = "random"
 }

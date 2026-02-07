@@ -37,6 +37,12 @@ pub enum SortBy {
     /// Sort by update time (version created_at)
     #[default]
     UpdatedAt,
+    /// Sort by rating (1-5 stars)
+    Rating,
+    /// Sort by title (alphabetical)
+    Title,
+    /// Sort by creation time (recipe created_at)
+    CreatedAt,
     /// Random order (useful for "pick a random recipe")
     Random,
 }
@@ -200,6 +206,8 @@ pub struct RecipeSummary {
     pub tags: Vec<String>,
     /// Photo ID of the first photo (thumbnail), if any
     pub thumbnail_photo_id: Option<Uuid>,
+    /// Rating from 1-5, if set
+    pub rating: Option<i32>,
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
 }
@@ -224,6 +232,7 @@ type RecipeRow = (
     String,            // version title
     Option<String>,    // version description
     Vec<Option<Uuid>>, // version photo_ids
+    Option<i32>,       // version rating
     DateTime<Utc>,     // version created_at (updated_at)
     i64,               // total count from window function
     Vec<String>,       // tags from correlated subquery
@@ -320,11 +329,35 @@ pub async fn list_recipes(
         }
     }
 
-    // Add ordering
+    // Add ordering (with recipes::id tiebreaker for deterministic pagination)
     let query = match (params.sort_by, params.sort_dir) {
         (SortBy::Random, _) => query.order(random()),
-        (SortBy::UpdatedAt, Direction::Desc) => query.order(recipe_versions::created_at.desc()),
-        (SortBy::UpdatedAt, Direction::Asc) => query.order(recipe_versions::created_at.asc()),
+        (SortBy::UpdatedAt, Direction::Desc) => {
+            query.order((recipe_versions::created_at.desc(), recipes::id.asc()))
+        }
+        (SortBy::UpdatedAt, Direction::Asc) => {
+            query.order((recipe_versions::created_at.asc(), recipes::id.asc()))
+        }
+        (SortBy::Rating, Direction::Desc) => query.order((
+            recipe_versions::rating.desc().nulls_last(),
+            recipes::id.asc(),
+        )),
+        (SortBy::Rating, Direction::Asc) => query.order((
+            recipe_versions::rating.asc().nulls_last(),
+            recipes::id.asc(),
+        )),
+        (SortBy::Title, Direction::Desc) => {
+            query.order((recipe_versions::title.desc(), recipes::id.asc()))
+        }
+        (SortBy::Title, Direction::Asc) => {
+            query.order((recipe_versions::title.asc(), recipes::id.asc()))
+        }
+        (SortBy::CreatedAt, Direction::Desc) => {
+            query.order((recipes::created_at.desc(), recipes::id.asc()))
+        }
+        (SortBy::CreatedAt, Direction::Asc) => {
+            query.order((recipes::created_at.asc(), recipes::id.asc()))
+        }
     };
 
     // Select columns including COUNT(*) OVER() for total and tags via correlated subquery
@@ -336,6 +369,7 @@ pub async fn list_recipes(
             recipe_versions::title,
             recipe_versions::description,
             recipe_versions::photo_ids,
+            recipe_versions::rating,
             recipe_versions::created_at,
             count_star().over(),
             raw_sql::tags_subquery(),
@@ -358,12 +392,12 @@ pub async fn list_recipes(
     };
 
     // Extract total from first row, or 0 if no results
-    let total = results.first().map(|r| r.6).unwrap_or(0);
+    let total = results.first().map(|r| r.7).unwrap_or(0);
 
     let recipes = results
         .into_iter()
         .map(
-            |(id, created_at, title, description, photo_ids, updated_at, _, tags)| {
+            |(id, created_at, title, description, photo_ids, rating, updated_at, _, tags)| {
                 let thumbnail_photo_id = photo_ids.first().and_then(|id| *id);
 
                 RecipeSummary {
@@ -372,6 +406,7 @@ pub async fn list_recipes(
                     description,
                     tags,
                     thumbnail_photo_id,
+                    rating,
                     created_at,
                     updated_at,
                 }

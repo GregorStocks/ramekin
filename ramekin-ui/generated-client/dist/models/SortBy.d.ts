@@ -15,6 +15,9 @@
  */
 export declare const SortBy: {
     readonly UpdatedAt: "updated_at";
+    readonly Rating: "rating";
+    readonly Title: "title";
+    readonly CreatedAt: "created_at";
     readonly Random: "random";
 };
 export type SortBy = typeof SortBy[keyof typeof SortBy];

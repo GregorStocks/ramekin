@@ -975,6 +975,152 @@ def test_list_recipes_direction_asc_vs_desc(authed_api_client):
     )
 
 
+def test_list_recipes_sort_by_rating(authed_api_client):
+    """Test sorting recipes by rating, with nulls sorted last."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create recipes with different ratings (including unrated)
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Unrated", instructions="x", ingredients=[], rating=None
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Three Stars", instructions="x", ingredients=[], rating=3
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Five Stars", instructions="x", ingredients=[], rating=5
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="One Star", instructions="x", ingredients=[], rating=1
+        )
+    )
+
+    # Sort by rating desc: highest first, unrated last
+    desc_response = recipes_api.list_recipes(
+        sort_by=SortBy.RATING, sort_dir=Direction.DESC
+    )
+    titles = [r.title for r in desc_response.recipes]
+    assert titles == ["Five Stars", "Three Stars", "One Star", "Unrated"]
+
+    # Sort by rating asc: lowest first, unrated last
+    asc_response = recipes_api.list_recipes(
+        sort_by=SortBy.RATING, sort_dir=Direction.ASC
+    )
+    titles = [r.title for r in asc_response.recipes]
+    assert titles == ["One Star", "Three Stars", "Five Stars", "Unrated"]
+
+
+def test_list_recipes_sort_by_title(authed_api_client):
+    """Test sorting recipes alphabetically by title."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    for name in ["Cherry Pie", "Apple Sauce", "Banana Bread"]:
+        recipes_api.create_recipe(
+            CreateRecipeRequest(title=name, instructions="x", ingredients=[])
+        )
+
+    # Sort by title asc (A-Z)
+    asc_response = recipes_api.list_recipes(
+        sort_by=SortBy.TITLE, sort_dir=Direction.ASC
+    )
+    titles = [r.title for r in asc_response.recipes]
+    assert titles == ["Apple Sauce", "Banana Bread", "Cherry Pie"]
+
+    # Sort by title desc (Z-A)
+    desc_response = recipes_api.list_recipes(
+        sort_by=SortBy.TITLE, sort_dir=Direction.DESC
+    )
+    titles = [r.title for r in desc_response.recipes]
+    assert titles == ["Cherry Pie", "Banana Bread", "Apple Sauce"]
+
+
+def test_list_recipes_sort_by_created_at(authed_api_client):
+    """Test sorting recipes by creation time (distinct from updated_at)."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create three recipes in order
+    ids = []
+    for i in range(3):
+        r = recipes_api.create_recipe(
+            CreateRecipeRequest(title=f"Recipe {i}", instructions="x", ingredients=[])
+        )
+        ids.append(r.id)
+
+    # Update the first recipe so its updated_at changes but created_at stays earliest
+    recipes_api.update_recipe(
+        str(ids[0]),
+        UpdateRecipeRequest(title="Recipe 0 Updated"),
+    )
+
+    # Sort by created_at desc: most recently created first
+    desc_response = recipes_api.list_recipes(
+        sort_by=SortBy.CREATED_AT, sort_dir=Direction.DESC
+    )
+    result_ids = [r.id for r in desc_response.recipes]
+    assert result_ids == list(reversed(ids))
+
+    # Sort by updated_at desc: most recently updated first (Recipe 0 should be first)
+    updated_response = recipes_api.list_recipes(
+        sort_by=SortBy.UPDATED_AT, sort_dir=Direction.DESC
+    )
+    assert updated_response.recipes[0].id == ids[0]
+
+
+def test_list_recipes_deterministic_sort(authed_api_client):
+    """Test that sorting with ties produces deterministic ordering via id tiebreaker."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create recipes with the same rating
+    for i in range(5):
+        recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title=f"Recipe {i}", instructions="x", ingredients=[], rating=3
+            )
+        )
+
+    # Fetch multiple times and verify same order
+    first_response = recipes_api.list_recipes(
+        sort_by=SortBy.RATING, sort_dir=Direction.DESC
+    )
+    first_ids = [r.id for r in first_response.recipes]
+
+    for _ in range(3):
+        response = recipes_api.list_recipes(
+            sort_by=SortBy.RATING, sort_dir=Direction.DESC
+        )
+        assert [r.id for r in response.recipes] == first_ids
+
+
+def test_recipe_summary_includes_rating(authed_api_client):
+    """Test that rating is included in the recipe summary response."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Rated Recipe", instructions="x", ingredients=[], rating=4
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(title="Unrated Recipe", instructions="x", ingredients=[])
+    )
+
+    response = recipes_api.list_recipes()
+    by_title = {r.title: r for r in response.recipes}
+    assert by_title["Rated Recipe"].rating == 4
+    assert by_title["Unrated Recipe"].rating is None
+
+
 def test_create_recipe_with_paprika_fields(authed_api_client):
     """Test creating a recipe with Paprika-compatible fields."""
     client, user_id = authed_api_client
