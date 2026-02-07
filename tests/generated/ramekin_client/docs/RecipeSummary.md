@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **created_at** | **datetime** |  | 
 **description** | **str** |  | [optional] 
 **id** | **UUID** |  | 
+**rating** | **int** | Rating from 1-5, if set | [optional] 
 **tags** | **List[str]** |  | 
 **thumbnail_photo_id** | **UUID** | Photo ID of the first photo (thumbnail), if any | [optional] 
 **title** | **str** |  | 

@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
 from typing import Optional, Set
@@ -31,11 +31,12 @@ class RecipeSummary(BaseModel):
     created_at: datetime
     description: Optional[StrictStr] = None
     id: UUID
+    rating: Optional[StrictInt] = Field(default=None, description="Rating from 1-5, if set")
     tags: List[StrictStr]
     thumbnail_photo_id: Optional[UUID] = Field(default=None, description="Photo ID of the first photo (thumbnail), if any")
     title: StrictStr
     updated_at: datetime
-    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "tags", "thumbnail_photo_id", "title", "updated_at"]
+    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "rating", "tags", "thumbnail_photo_id", "title", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,6 +82,11 @@ class RecipeSummary(BaseModel):
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
 
+        # set to None if rating (nullable) is None
+        # and model_fields_set contains the field
+        if self.rating is None and "rating" in self.model_fields_set:
+            _dict['rating'] = None
+
         # set to None if thumbnail_photo_id (nullable) is None
         # and model_fields_set contains the field
         if self.thumbnail_photo_id is None and "thumbnail_photo_id" in self.model_fields_set:
@@ -101,6 +107,7 @@ class RecipeSummary(BaseModel):
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
             "id": obj.get("id"),
+            "rating": obj.get("rating"),
             "tags": obj.get("tags"),
             "thumbnail_photo_id": obj.get("thumbnail_photo_id"),
             "title": obj.get("title"),

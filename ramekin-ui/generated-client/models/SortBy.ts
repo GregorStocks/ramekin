@@ -19,6 +19,9 @@
  */
 export const SortBy = {
     UpdatedAt: 'updated_at',
+    Rating: 'rating',
+    Title: 'title',
+    CreatedAt: 'created_at',
     Random: 'random'
 } as const;
 export type SortBy = typeof SortBy[keyof typeof SortBy];

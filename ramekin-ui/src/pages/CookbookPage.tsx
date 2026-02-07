@@ -18,7 +18,13 @@ interface FilterState {
   createdBefore: string;
 }
 
-type SortOption = "newest" | "oldest" | "random";
+type SortOption =
+  | "newest"
+  | "oldest"
+  | "rating"
+  | "title"
+  | "created"
+  | "random";
 
 function getSortParams(sort: SortOption): {
   sortBy: SortBy;
@@ -27,6 +33,12 @@ function getSortParams(sort: SortOption): {
   switch (sort) {
     case "oldest":
       return { sortBy: "updated_at", sortDir: "asc" };
+    case "rating":
+      return { sortBy: "rating", sortDir: "desc" };
+    case "title":
+      return { sortBy: "title", sortDir: "asc" };
+    case "created":
+      return { sortBy: "created_at", sortDir: "desc" };
     case "random":
       return { sortBy: "random" };
     case "newest":
@@ -245,7 +257,14 @@ export default function CookbookPage() {
   // Get current sort from URL (default to "newest")
   const sortOption = (): SortOption => {
     const sort = getQueryParam(searchParams.sort);
-    if (sort === "oldest" || sort === "random") return sort;
+    if (
+      sort === "oldest" ||
+      sort === "rating" ||
+      sort === "title" ||
+      sort === "created" ||
+      sort === "random"
+    )
+      return sort;
     return "newest";
   };
 
@@ -474,6 +493,9 @@ export default function CookbookPage() {
         >
           <option value="newest">Newest first</option>
           <option value="oldest">Oldest first</option>
+          <option value="rating">Highest rated</option>
+          <option value="title">Title A–Z</option>
+          <option value="created">Date added</option>
           <option value="random">Random order</option>
         </select>
         <button

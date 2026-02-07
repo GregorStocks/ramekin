@@ -5,6 +5,9 @@
 | Name | Value |
 |---- | -----|
 | UpdatedAt | updated_at |
+| Rating | rating |
+| Title | title |
+| CreatedAt | created_at |
 | Random | random |
 
 

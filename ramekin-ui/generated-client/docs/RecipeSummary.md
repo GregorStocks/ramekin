@@ -9,6 +9,7 @@ Name | Type
 `createdAt` | Date
 `description` | string
 `id` | string
+`rating` | number
 `tags` | Array&lt;string&gt;
 `thumbnailPhotoId` | string
 `title` | string
@@ -24,6 +25,7 @@ const example = {
   "createdAt": null,
   "description": null,
   "id": null,
+  "rating": null,
   "tags": null,
   "thumbnailPhotoId": null,
   "title": null,

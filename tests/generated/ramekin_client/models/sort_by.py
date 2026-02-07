@@ -27,6 +27,9 @@ class SortBy(str, Enum):
     allowed enum values
     """
     UPDATED_AT = 'updated_at'
+    RATING = 'rating'
+    TITLE = 'title'
+    CREATED_AT = 'created_at'
     RANDOM = 'random'
 
     @classmethod

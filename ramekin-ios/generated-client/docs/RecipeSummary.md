@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **createdAt** | **Date** |  | 
 **description** | **String** |  | [optional] 
 **id** | **UUID** |  | 
+**rating** | **Int** | Rating from 1-5, if set | [optional] 
 **tags** | **[String]** |  | 
 **thumbnailPhotoId** | **UUID** | Photo ID of the first photo (thumbnail), if any | [optional] 
 **title** | **String** |  | 

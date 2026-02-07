@@ -2848,6 +2848,14 @@
             "type": "string",
             "format": "uuid"
           },
+          "rating": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32",
+            "description": "Rating from 1-5, if set"
+          },
           "tags": {
             "type": "array",
             "items": {
@@ -3107,6 +3115,9 @@
         "description": "Sort field for recipe list",
         "enum": [
           "updated_at",
+          "rating",
+          "title",
+          "created_at",
           "random"
         ]
       },

@@ -5,19 +5,25 @@ import SwiftUI
 enum RecipeSortOrder: String, CaseIterable {
     case newest
     case oldest
+    case rating
+    case title
+    case created
     case random
 
     var sortBy: SortBy {
         switch self {
         case .newest, .oldest: return .updatedAt
+        case .rating: return .rating
+        case .title: return .title
+        case .created: return .createdAt
         case .random: return .random
         }
     }
 
     var sortDir: Direction {
         switch self {
-        case .newest: return .desc
-        case .oldest: return .asc
+        case .newest, .rating, .created: return .desc
+        case .oldest, .title: return .asc
         case .random: return .desc
         }
     }
@@ -26,6 +32,9 @@ enum RecipeSortOrder: String, CaseIterable {
         switch self {
         case .newest: return "Newest first"
         case .oldest: return "Oldest first"
+        case .rating: return "Highest rated"
+        case .title: return "Title A–Z"
+        case .created: return "Date added"
         case .random: return "Random"
         }
     }
