@@ -309,7 +309,7 @@ class PhotosApi:
     def get_photo_thumbnail(
         self,
         id: Annotated[UUID, Field(description="Photo ID")],
-        size: Annotated[Optional[Annotated[int, Field(le=800, strict=True, ge=1)]], Field(description="Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200.")] = None,
+        size: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -381,7 +381,7 @@ class PhotosApi:
     def get_photo_thumbnail_with_http_info(
         self,
         id: Annotated[UUID, Field(description="Photo ID")],
-        size: Annotated[Optional[Annotated[int, Field(le=800, strict=True, ge=1)]], Field(description="Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200.")] = None,
+        size: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -453,7 +453,7 @@ class PhotosApi:
     def get_photo_thumbnail_without_preload_content(
         self,
         id: Annotated[UUID, Field(description="Photo ID")],
-        size: Annotated[Optional[Annotated[int, Field(le=800, strict=True, ge=1)]], Field(description="Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200.")] = None,
+        size: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],

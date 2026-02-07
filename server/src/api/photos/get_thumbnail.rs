@@ -21,7 +21,7 @@ use uuid::Uuid;
 #[derive(Debug, Deserialize, IntoParams)]
 pub struct ThumbnailParams {
     /// Desired thumbnail size in pixels (longest edge). Clamped to 1..=800. Default: 200.
-    #[param(minimum = 1, maximum = 800)]
+    #[param(minimum = 1)]
     pub size: Option<u32>,
 }
 
