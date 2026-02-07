@@ -7,37 +7,40 @@ use encoding_rs::Encoding;
 
 /// Decode raw bytes to a UTF-8 string, detecting charset from HTTP headers and HTML meta tags.
 ///
+/// Takes ownership of the bytes to avoid copying in the common UTF-8 fast path.
+///
 /// Detection priority:
 /// 1. `charset=` parameter from Content-Type header
 /// 2. `<meta charset="...">` in first 1024 bytes of HTML
 /// 3. `<meta http-equiv="Content-Type" content="...; charset=...">` in first 1024 bytes
 /// 4. Direct UTF-8 if bytes are valid UTF-8
 /// 5. Lossy UTF-8 conversion (replaces invalid bytes with U+FFFD)
-pub fn decode_bytes_to_utf8(bytes: &[u8], content_type: Option<&str>) -> String {
+pub fn decode_bytes_to_utf8(bytes: Vec<u8>, content_type: Option<&str>) -> String {
     // Try charset from Content-Type header
     if let Some(ct) = content_type {
         if let Some(encoding) = charset_from_content_type(ct) {
             if encoding != encoding_rs::UTF_8 {
-                let (decoded, _, _) = encoding.decode(bytes);
+                let (decoded, _, _) = encoding.decode(&bytes);
                 return decoded.into_owned();
             }
         }
     }
 
     // Try charset from HTML meta tags (scan first 1024 bytes)
-    if let Some(encoding) = charset_from_html_meta(bytes) {
+    if let Some(encoding) = charset_from_html_meta(&bytes) {
         if encoding != encoding_rs::UTF_8 {
-            let (decoded, _, _) = encoding.decode(bytes);
+            let (decoded, _, _) = encoding.decode(&bytes);
             return decoded.into_owned();
         }
     }
 
-    // Try direct UTF-8
-    match String::from_utf8(bytes.to_vec()) {
+    // Try direct UTF-8 (zero-copy: consumes the Vec)
+    match String::from_utf8(bytes) {
         Ok(s) => s,
         Err(e) => {
             tracing::debug!("falling back to lossy UTF-8 conversion: {}", e);
-            String::from_utf8_lossy(bytes).into_owned()
+            let bytes = e.into_bytes();
+            String::from_utf8_lossy(&bytes).into_owned()
         }
     }
 }
@@ -207,42 +210,44 @@ mod tests {
 
     #[test]
     fn decode_iso_8859_1_bytes() {
-        let bytes = b"caf\xe9";
-        let result = decode_bytes_to_utf8(bytes, Some("text/html; charset=iso-8859-1"));
+        let result =
+            decode_bytes_to_utf8(b"caf\xe9".to_vec(), Some("text/html; charset=iso-8859-1"));
         assert_eq!(result, "café");
     }
 
     #[test]
     fn decode_windows_1252_smart_quotes() {
-        let bytes = b"\x93hello\x94";
-        let result = decode_bytes_to_utf8(bytes, Some("text/html; charset=windows-1252"));
+        let result = decode_bytes_to_utf8(
+            b"\x93hello\x94".to_vec(),
+            Some("text/html; charset=windows-1252"),
+        );
         assert_eq!(result, "\u{201c}hello\u{201d}");
     }
 
     #[test]
     fn decode_utf8_passthrough() {
         let text = "Hello, café! 日本語";
-        let result = decode_bytes_to_utf8(text.as_bytes(), None);
+        let result = decode_bytes_to_utf8(text.as_bytes().to_vec(), None);
         assert_eq!(result, text);
     }
 
     #[test]
     fn decode_utf8_with_content_type() {
         let text = "Hello, world!";
-        let result = decode_bytes_to_utf8(text.as_bytes(), Some("text/html; charset=utf-8"));
+        let result =
+            decode_bytes_to_utf8(text.as_bytes().to_vec(), Some("text/html; charset=utf-8"));
         assert_eq!(result, text);
     }
 
     #[test]
     fn decode_unknown_encoding_falls_back_to_lossy() {
-        let bytes = b"hello \xff world";
-        let result = decode_bytes_to_utf8(bytes, None);
+        let result = decode_bytes_to_utf8(b"hello \xff world".to_vec(), None);
         assert_eq!(result, "hello \u{FFFD} world");
     }
 
     #[test]
     fn decode_empty_input() {
-        let result = decode_bytes_to_utf8(b"", None);
+        let result = decode_bytes_to_utf8(vec![], None);
         assert_eq!(result, "");
     }
 
@@ -250,7 +255,7 @@ mod tests {
     fn decode_charset_from_meta_tag() {
         let html =
             b"<html><head><meta charset=\"iso-8859-1\"></head><body>caf\xe9</body></html>".to_vec();
-        let result = decode_bytes_to_utf8(&html, None);
+        let result = decode_bytes_to_utf8(html, None);
         assert_eq!(
             result,
             "<html><head><meta charset=\"iso-8859-1\"></head><body>café</body></html>"
@@ -259,8 +264,10 @@ mod tests {
 
     #[test]
     fn content_type_takes_precedence_over_meta() {
-        let bytes = b"<html><head><meta charset=\"utf-8\"></head><body>caf\xe9</body></html>";
-        let result = decode_bytes_to_utf8(bytes, Some("text/html; charset=iso-8859-1"));
+        let result = decode_bytes_to_utf8(
+            b"<html><head><meta charset=\"utf-8\"></head><body>caf\xe9</body></html>".to_vec(),
+            Some("text/html; charset=iso-8859-1"),
+        );
         assert_eq!(
             result,
             "<html><head><meta charset=\"utf-8\"></head><body>café</body></html>"

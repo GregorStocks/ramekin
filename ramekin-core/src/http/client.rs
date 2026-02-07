@@ -185,7 +185,7 @@ impl CachingClient {
     pub fn get_cached_html(&self, url: &str) -> Option<String> {
         self.cache.as_ref().and_then(|c| {
             c.get(url).map(|resp| {
-                charset::decode_bytes_to_utf8(&resp.data, resp.metadata.content_type.as_deref())
+                charset::decode_bytes_to_utf8(resp.data, resp.metadata.content_type.as_deref())
             })
         })
     }
@@ -402,7 +402,7 @@ impl HttpClient for CachingClient {
     async fn fetch_html(&self, url: &str) -> Result<String, FetchError> {
         let result = self.fetch_with_cache(url).await?;
         Ok(charset::decode_bytes_to_utf8(
-            &result.data,
+            result.data,
             result.content_type.as_deref(),
         ))
     }
@@ -478,7 +478,9 @@ impl HttpClient for MockClient {
     async fn fetch_html(&self, url: &str) -> Result<String, FetchError> {
         match self.responses.get(url) {
             Some(MockResponse::Html(html)) => Ok(html.clone()),
-            Some(MockResponse::Bytes(bytes)) => Ok(charset::decode_bytes_to_utf8(bytes, None)),
+            Some(MockResponse::Bytes(bytes)) => {
+                Ok(charset::decode_bytes_to_utf8(bytes.clone(), None))
+            }
             Some(MockResponse::Error(e)) => Err(FetchError::InvalidUrl(e.clone())),
             None => Err(FetchError::InvalidUrl(format!(
                 "No mock response for URL: {}",
