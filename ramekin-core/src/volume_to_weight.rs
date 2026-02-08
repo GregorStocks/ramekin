@@ -15,6 +15,9 @@ pub struct VolumeConversionStats {
     pub skipped_unknown_ingredient: usize,
     pub skipped_already_has_weight: usize,
     pub skipped_unparseable: usize,
+    /// Names of ingredients that had volume measurements but no density data.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub unknown_ingredients: Vec<String>,
 }
 
 /// Add a weight measurement alternative for volume-measured ingredients.
@@ -55,6 +58,7 @@ pub fn add_volume_to_weight_alternative(
     // Look up density for this ingredient
     let Some(grams_per_cup) = find_density(&ingredient.item) else {
         stats.skipped_unknown_ingredient += 1;
+        stats.unknown_ingredients.push(ingredient.item.clone());
         return ingredient;
     };
 
