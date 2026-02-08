@@ -1,0 +1,143 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "frozen-cherry-mojitos-recipe",
+  "ingredients": [
+    {
+      "raw": "1 pound bag frozen pitted cherries",
+      "expected": {
+        "item": "bag frozen pitted cherries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Frozen"
+      }
+    },
+    {
+      "raw": "3 cups crushed ice, plus extra to serve if desired",
+      "expected": {
+        "item": "crushed ice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus extra to serve if desired",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 cup packed fresh mint leaves",
+      "expected": {
+        "item": "packed fresh mint leaves",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup white rum",
+      "expected": {
+        "item": "white rum",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Lime Simple Syrup, recipe follows",
+      "expected": {
+        "item": "Lime Simple Syrup, recipe follows",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Lime wedges and fresh cherries, for garnish",
+      "expected": {
+        "item": "Lime wedges and fresh cherries",
+        "measurements": [],
+        "note": "for garnish",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Lime Simple Syrup",
+      "expected": {
+        "item": "Lime Simple Syrup",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "237",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3 limes, juiced and zested",
+      "expected": {
+        "item": "limes, juiced and zested",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    }
+  ]
+}

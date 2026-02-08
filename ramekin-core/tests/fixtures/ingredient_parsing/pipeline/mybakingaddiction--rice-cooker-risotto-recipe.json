@@ -1,0 +1,200 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "rice-cooker-risotto-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "16 ounces baby portabella mushrooms",
+      "expected": {
+        "item": "baby portabella mushrooms",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 tablespoons butter; melted",
+      "expected": {
+        "item": "butter; melted",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 cups Arborio rice",
+      "expected": {
+        "item": "Arborio rice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "1 shallot; finely diced",
+      "expected": {
+        "item": "shallot; finely diced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 clove garlic; minced",
+      "expected": {
+        "item": "garlic; minced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup dry white wine",
+      "expected": {
+        "item": "dry white wine",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "4 1/2  cups chicken broth; divided use",
+      "expected": {
+        "item": "chicken broth; divided use",
+        "measurements": [
+          {
+            "amount": "4.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/3 cup grated parmesan cheese",
+      "expected": {
+        "item": "grated parmesan cheese",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2/3 cup frozen peas; thawed",
+      "expected": {
+        "item": "frozen peas; thawed",
+        "measurements": [
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Frozen"
+      }
+    },
+    {
+      "raw": "1 tablespoon butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

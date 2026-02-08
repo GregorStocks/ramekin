@@ -1,0 +1,255 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2025-12-winter-cabbage-salad-w",
+  "ingredients": [
+    {
+      "raw": "1 cup (115 grams) cashews",
+      "expected": {
+        "item": "cashews",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "115",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "2 tablespoons (25 grams) dark brown sugar",
+      "expected": {
+        "item": "dark brown sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground cayenne",
+      "expected": {
+        "item": "ground cayenne",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.4",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon smoked paprika",
+      "expected": {
+        "item": "smoked paprika",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 pound (455 grams) red cabbage, thinly sliced or shredded (about 4 cups)",
+      "expected": {
+        "item": "red cabbage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "455",
+            "unit": "g"
+          },
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": "thinly sliced or shredded",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 small or half a large fennel bulb, halved and sliced thin (about 1 cup)",
+      "expected": {
+        "item": "or half a large fennel bulb",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "halved and sliced thin",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 regular or 4 thin scallions, thinly sliced (green and white parts)",
+      "expected": {
+        "item": "regular or 4 thin scallions",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced (green and white parts)",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "A small handful fresh mint leaves, thinly sliced",
+      "expected": {
+        "item": "A small handful fresh mint leaves",
+        "measurements": [],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 mandarins (clementines and other small oranges work here), divided",
+      "expected": {
+        "item": "mandarins (clementines and other small oranges work here)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "divided",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) white wine vinegar",
+      "expected": {
+        "item": "white wine vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "3 tablespoons (45 ml) olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon sumac, plus more for finishing",
+      "expected": {
+        "item": "sumac",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more for finishing",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Spiced cashews (from above)",
+      "expected": {
+        "item": "Spiced cashews (from above)",
+        "measurements": [],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    }
+  ]
+}

@@ -1,0 +1,328 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "apple-bars-recipe",
+  "ingredients": [
+    {
+      "raw": "For the Bars",
+      "expected": {
+        "item": "For the Bars",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 cup sifted all-purpose flour",
+      "expected": {
+        "item": "sifted all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.6",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.6",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 cup butter or margarine, melted",
+      "expected": {
+        "item": "butter or margarine",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "melted",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 cup packed brown sugar",
+      "expected": {
+        "item": "packed brown sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup white sugar",
+      "expected": {
+        "item": "white sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup chopped apple",
+      "expected": {
+        "item": "chopped apple",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup finely chopped pecans",
+      "expected": {
+        "item": "finely chopped pecans",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "2 tablespoons white sugar",
+      "expected": {
+        "item": "white sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 teaspoons ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "For the Cream Cheese Glaze",
+      "expected": {
+        "item": "For the Cream Cheese Glaze",
+        "measurements": [],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 (4 ounce) package cream cheese, softened",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "softened",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 tablespoon butter, softened",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "softened",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 cups confectioners' sugar",
+      "expected": {
+        "item": "confectioners' sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

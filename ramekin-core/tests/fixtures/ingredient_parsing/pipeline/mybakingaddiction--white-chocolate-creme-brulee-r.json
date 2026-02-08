@@ -1,0 +1,110 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "white-chocolate-creme-brulee-r",
+  "ingredients": [
+    {
+      "raw": "5 large egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 cup sugar, divided",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 cups whipping cream",
+      "expected": {
+        "item": "whipping cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "476",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 ounces white chocolate, imported finely chopped",
+      "expected": {
+        "item": "white chocolate",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "imported finely chopped",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tablespoons sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

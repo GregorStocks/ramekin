@@ -1,0 +1,152 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "peanut-butter-pie-recipe",
+  "ingredients": [
+    {
+      "raw": "For the crust",
+      "expected": {
+        "item": "For the crust",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "16 Oreo cookies",
+      "expected": {
+        "item": "Oreo cookies",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "4 tablespoons unsalted butter, melted",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "melted",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "For the filling",
+      "expected": {
+        "item": "For the filling",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "8 ounces cream cheese",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 cup creamy-style peanut butter",
+      "expected": {
+        "item": "creamy-style peanut butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 cup confectioner's sugar",
+      "expected": {
+        "item": "confectioner's sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 14-ounce can sweetened condensed milk",
+      "expected": {
+        "item": "sweetened condensed milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "14-ounce can"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

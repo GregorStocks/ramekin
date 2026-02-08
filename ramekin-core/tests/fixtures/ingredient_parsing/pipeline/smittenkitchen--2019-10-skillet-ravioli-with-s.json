@@ -1,0 +1,111 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2019-10-skillet-ravioli-with-s",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 large garlic cloves, chopped",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "5 ounces baby spinach (from a salad-ready container)",
+      "expected": {
+        "item": "baby spinach (from a salad-ready container)",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper or red pepper flakes",
+      "expected": {
+        "item": "Salt and freshly ground black pepper or red pepper flakes",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "18 ounces refrigerated or frozen ravioli",
+      "expected": {
+        "item": "refrigerated or frozen ravioli",
+        "measurements": [
+          {
+            "amount": "18",
+            "unit": "oz"
+          },
+          {
+            "amount": "510",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "1/2 cup grated parmesan",
+      "expected": {
+        "item": "grated parmesan",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "6 tablespoons mascarpone cheese",
+      "expected": {
+        "item": "mascarpone cheese",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    }
+  ]
+}

@@ -1,0 +1,339 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "heath-bar-cupcakes-recipe",
+  "ingredients": [
+    {
+      "raw": "For the Cupcakes",
+      "expected": {
+        "item": "For the Cupcakes",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 (18.25 ounce) package devil’s food cake mix",
+      "expected": {
+        "item": "devil’s food cake mix",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "18.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "517",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 (5.9 ounce) package instant chocolate pudding mix",
+      "expected": {
+        "item": "instant chocolate pudding mix",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "5.9",
+            "unit": "oz"
+          },
+          {
+            "amount": "167",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 cup sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "242",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "218",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "4 eggs, lightly beaten",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "lightly beaten",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 teaspoons pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon instant espresso granules dissolved in 1/2 cup warm water",
+      "expected": {
+        "item": "instant espresso granules dissolved in 1/2 cup warm water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 cup Heath English Toffee Bits",
+      "expected": {
+        "item": "Heath English Toffee Bits",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "For the Buttercream",
+      "expected": {
+        "item": "For the Buttercream",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 sticks unsalted butter, softened",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "stick"
+          }
+        ],
+        "note": "softened",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "pinch of fine grain sea salt",
+      "expected": {
+        "item": "fine grain sea salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon clear vanilla extract",
+      "expected": {
+        "item": "clear vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 pounds confectioners’ sugar, sifted",
+      "expected": {
+        "item": "confectioners’ sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "sifted",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "4-6 tablespoons heavy cream or milk",
+      "expected": {
+        "item": "heavy cream or milk",
+        "measurements": [
+          {
+            "amount": "4-6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "For the Ganache",
+      "expected": {
+        "item": "For the Ganache",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "4 oz bittersweet chocolate, chopped into very small pieces",
+      "expected": {
+        "item": "bittersweet chocolate",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped into very small pieces",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 cup heavy whipping cream",
+      "expected": {
+        "item": "heavy whipping cream",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "119",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 tablespoons honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tablespoons light corn syrup",
+      "expected": {
+        "item": "light corn syrup",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 teaspoons vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "5 1.4-ounce Heath Bars, chopped into large pieces",
+      "expected": {
+        "item": "1.4-ounce Heath Bars",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "chopped into large pieces",
+        "category": "Other"
+      }
+    }
+  ]
+}

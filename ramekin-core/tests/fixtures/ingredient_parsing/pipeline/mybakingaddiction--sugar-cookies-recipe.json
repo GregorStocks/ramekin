@@ -1,0 +1,124 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "sugar-cookies-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups butter, softened",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "softened",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 cups white sugar",
+      "expected": {
+        "item": "white sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "4 eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "5 cups all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "cup"
+          },
+          {
+            "amount": "625",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 teaspoons baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}
