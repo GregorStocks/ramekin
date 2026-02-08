@@ -69,13 +69,24 @@ pub async fn import_from_photos(
             }
         };
 
-        let found_count: i64 = photos::table
+        let found_count: i64 = match photos::table
             .filter(photos::id.eq_any(&request.photo_ids))
             .filter(photos::user_id.eq(user.id))
             .filter(photos::deleted_at.is_null())
             .count()
             .get_result(&mut conn)
-            .unwrap_or(0);
+        {
+            Ok(count) => count,
+            Err(e) => {
+                return (
+                    StatusCode::INTERNAL_SERVER_ERROR,
+                    Json(ErrorResponse {
+                        error: format!("Database error: {}", e),
+                    }),
+                )
+                    .into_response();
+            }
+        };
 
         if found_count != request.photo_ids.len() as i64 {
             return (

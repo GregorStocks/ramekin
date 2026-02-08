@@ -480,16 +480,22 @@ fn fetch_photo_images(
         return Err("One or more photos not found".to_string());
     }
 
-    photos_list
-        .into_iter()
-        .map(|photo| {
-            let base64 = base64::engine::general_purpose::STANDARD.encode(&photo.data);
-            Ok(ramekin_core::ai::ImageData {
-                base64,
-                content_type: photo.content_type,
-            })
-        })
-        .collect()
+    let photos_by_id: std::collections::HashMap<Uuid, Photo> =
+        photos_list.into_iter().map(|photo| (photo.id, photo)).collect();
+
+    let mut ordered_images = Vec::with_capacity(photo_ids.len());
+    for photo_id in photo_ids {
+        let photo = photos_by_id
+            .get(photo_id)
+            .ok_or_else(|| "One or more photos not found".to_string())?;
+        let base64 = base64::engine::general_purpose::STANDARD.encode(&photo.data);
+        ordered_images.push(ramekin_core::ai::ImageData {
+            base64,
+            content_type: photo.content_type.clone(),
+        });
+    }
+
+    Ok(ordered_images)
 }
 
 /// Get a scrape job by ID.
