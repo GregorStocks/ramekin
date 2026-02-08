@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**custom_enrich_recipe**](EnrichApi.md#custom_enrich_recipe) | **POST** /api/enrich/custom | Apply a custom AI modification to a recipe
-[**enrich_recipe**](EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe using AI
+[**enrich_recipe**](EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe
 
 
 # **custom_enrich_recipe**
@@ -93,13 +93,15 @@ Name | Type | Description  | Notes
 # **enrich_recipe**
 > RecipeContent enrich_recipe(recipe_content)
 
-Enrich a recipe using AI
+Enrich a recipe
 
 This is a stateless endpoint that takes a recipe object and returns an enriched version.
 It does NOT modify any database records. The client can apply the enriched data
 via a normal PUT /api/recipes/{id} call.
 
-Currently enriches tags by suggesting from the user's existing tag library.
+Enriches:
+- Ingredient measurements with gram conversions (volume/weight → grams)
+- Tags by suggesting from the user's existing tag library (requires AI; skipped if unavailable)
 
 ### Example
 
@@ -134,7 +136,7 @@ with ramekin_client.ApiClient(configuration) as api_client:
     recipe_content = ramekin_client.RecipeContent() # RecipeContent | 
 
     try:
-        # Enrich a recipe using AI
+        # Enrich a recipe
         api_response = api_instance.enrich_recipe(recipe_content)
         print("The response of EnrichApi->enrich_recipe:\n")
         pprint(api_response)
@@ -170,7 +172,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Enriched recipe object |  -  |
 **401** | Unauthorized |  -  |
-**503** | AI service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -52,7 +52,7 @@ open class EnrichAPI {
     }
 
     /**
-     Enrich a recipe using AI
+     Enrich a recipe
      
      - parameter recipeContent: (body)  
      - returns: RecipeContent
@@ -63,9 +63,9 @@ open class EnrichAPI {
     }
 
     /**
-     Enrich a recipe using AI
+     Enrich a recipe
      - POST /api/enrich
-     - This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently enriches tags by suggesting from the user's existing tag library.
+     - This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Enriches: - Ingredient measurements with gram conversions (volume/weight → grams) - Tags by suggesting from the user's existing tag library (requires AI; skipped if unavailable)
      - Bearer Token:
        - type: http
        - name: bearer_auth

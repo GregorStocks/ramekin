@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**customEnrichRecipe**](EnrichAPI.md#customenrichrecipe) | **POST** /api/enrich/custom | Apply a custom AI modification to a recipe
-[**enrichRecipe**](EnrichAPI.md#enrichrecipe) | **POST** /api/enrich | Enrich a recipe using AI
+[**enrichRecipe**](EnrichAPI.md#enrichrecipe) | **POST** /api/enrich | Enrich a recipe
 
 
 # **customEnrichRecipe**
@@ -63,9 +63,9 @@ Name | Type | Description  | Notes
     open class func enrichRecipe(recipeContent: RecipeContent, completion: @escaping (_ data: RecipeContent?, _ error: Error?) -> Void)
 ```
 
-Enrich a recipe using AI
+Enrich a recipe
 
-This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently enriches tags by suggesting from the user's existing tag library.
+This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Enriches: - Ingredient measurements with gram conversions (volume/weight → grams) - Tags by suggesting from the user's existing tag library (requires AI; skipped if unavailable)
 
 ### Example
 ```swift
@@ -74,7 +74,7 @@ import RamekinClient
 
 let recipeContent = RecipeContent(cookTime: "cookTime_example", description: "description_example", difficulty: "difficulty_example", ingredients: [Ingredient(item: "item_example", measurements: [Measurement(amount: "amount_example", unit: "unit_example")], note: "note_example", raw: "raw_example", section: "section_example")], instructions: "instructions_example", notes: "notes_example", nutritionalInfo: "nutritionalInfo_example", prepTime: "prepTime_example", rating: 123, servings: "servings_example", sourceName: "sourceName_example", sourceUrl: "sourceUrl_example", tags: ["tags_example"], title: "title_example", totalTime: "totalTime_example") // RecipeContent | 
 
-// Enrich a recipe using AI
+// Enrich a recipe
 EnrichAPI.enrichRecipe(recipeContent: recipeContent) { (response, error) in
     guard error == nil else {
         print(error)

@@ -329,6 +329,12 @@ mod tests {
         // Dairy
         assert!(find_density("buttermilk").is_some());
         assert!(find_density("greek yogurt").is_some());
+        // Condiments
+        assert!(find_density("mayo").is_some());
+        assert!(find_density("mayonnaise").is_some());
+        assert!(find_density("mustard").is_some());
+        assert!(find_density("yellow mustard").is_some());
+        assert!(find_density("dijon mustard").is_some());
         // Other
         assert!(find_density("water").is_some());
     }

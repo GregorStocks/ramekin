@@ -1,5 +1,11 @@
 {
-  "ingredients": {},
+  "ingredients": {
+    "mayonnaise": {
+      "grams_per_cup": 220.0,
+      "source": "USDA FoodData Central",
+      "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/168025/nutrients"
+    }
+  },
   "aliases": {
     "table salt": "salt, table",
     "kosher salt": null,
@@ -76,6 +82,14 @@
     "smooth peanut butter": "peanut butter, smooth style, with salt",
     "creamy peanut butter": "peanut butter, smooth style, with salt",
     "chunky peanut butter": "peanut butter, chunk style, with salt",
+
+    "mayo": "mayonnaise",
+    "hellmann's": "mayonnaise",
+
+    "mustard": "mustard, prepared, yellow",
+    "yellow mustard": "mustard, prepared, yellow",
+    "dijon mustard": "mustard, prepared, yellow",
+    "prepared mustard": "mustard, prepared, yellow",
 
     "water": "water, bottled, generic"
   }
