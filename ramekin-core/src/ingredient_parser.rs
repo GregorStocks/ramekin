@@ -1095,6 +1095,49 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
     }
 
+    // Step 5.7: Handle comma-separated conditional alternatives in remaining text
+    // e.g., remaining = "vegetable broth, 1 1/2 cups vegetable broth (for cooked chickpeas)"
+    // Pattern: [item], [amount] [unit] [same item] ([condition])
+    // The repeated item name distinguishes this from other comma uses.
+    if let Some(comma_idx) = remaining.find(',') {
+        let before_comma = remaining.get(..comma_idx).unwrap_or("").trim();
+        let after_comma = remaining.get(comma_idx + 1..).unwrap_or("").trim();
+
+        if !before_comma.is_empty() && !after_comma.is_empty() {
+            let (alt_amount, after_alt_amount) = extract_amount(after_comma);
+            let (alt_unit, after_alt_unit) = extract_unit(&after_alt_amount);
+
+            if let (Some(ref amt), Some(ref unit)) = (&alt_amount, &alt_unit) {
+                let after_alt_unit_trimmed = after_alt_unit.trim();
+                let before_comma_lower = before_comma.to_lowercase();
+                let after_unit_lower = after_alt_unit_trimmed.to_lowercase();
+
+                if after_unit_lower.starts_with(&before_comma_lower) {
+                    // Item name repeats after the alternative measurement — this is a conditional
+                    let conditional_part = after_alt_unit_trimmed
+                        .get(before_comma.len()..)
+                        .unwrap_or("")
+                        .trim()
+                        .trim_start_matches('(')
+                        .trim_end_matches(')')
+                        .trim();
+
+                    let fragment = if conditional_part.is_empty() {
+                        format!("or {} {}", amt, normalize_unit(unit))
+                    } else {
+                        format!("or {} {} {}", amt, normalize_unit(unit), conditional_part)
+                    };
+
+                    remaining = before_comma.to_string();
+                    note = match note {
+                        Some(existing) => Some(format!("{}; {}", existing, fragment)),
+                        None => Some(fragment),
+                    };
+                }
+            }
+        }
+    }
+
     // Step 6: Build measurements list
     if primary_amount.is_some() || primary_unit.is_some() {
         measurements.push(Measurement {
