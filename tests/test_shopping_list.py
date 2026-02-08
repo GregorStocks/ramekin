@@ -590,3 +590,41 @@ def test_sync_server_changes_have_category(authed_api_client):
     assert len(sync_response.server_changes) == 1
     assert sync_response.server_changes[0].item == "butter"
     assert sync_response.server_changes[0].category == "Dairy & Eggs"
+
+
+def test_sync_created_items_have_category_in_server_changes(authed_api_client):
+    """Test that items created via sync include correct category in server_changes."""
+    client, user_id = authed_api_client
+    api = ShoppingListApi(client)
+
+    # Create items via sync (simulating iOS offline-create)
+    client_id1 = str(uuid.uuid4())
+    client_id2 = str(uuid.uuid4())
+    sync_response = api.sync_items(
+        SyncRequest(
+            creates=[
+                SyncCreateItem(
+                    client_id=client_id1,
+                    item="chicken breast",
+                    is_checked=False,
+                    sort_order=0,
+                ),
+                SyncCreateItem(
+                    client_id=client_id2,
+                    item="olive oil",
+                    is_checked=False,
+                    sort_order=1,
+                ),
+            ]
+        )
+    )
+
+    # Both items should be in created
+    assert len(sync_response.created) == 2
+
+    # Both items should also appear in server_changes with correct categories
+    changes_by_item = {c.item: c for c in sync_response.server_changes}
+    assert "chicken breast" in changes_by_item
+    assert changes_by_item["chicken breast"].category == "Meat & Seafood"
+    assert "olive oil" in changes_by_item
+    assert changes_by_item["olive oil"].category == "Oils & Vinegars"

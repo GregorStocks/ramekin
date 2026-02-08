@@ -211,7 +211,7 @@ class ShoppingListStore: ObservableObject {
         let existing = (try? context.fetch(ShoppingItem.fetchById(change.id)))?.first
 
         if let item = existing {
-            guard change.version > item.serverVersion else { return }
+            guard change.version >= item.serverVersion else { return }
             item.item = change.item
             item.amount = change.amount
             item.note = change.note
