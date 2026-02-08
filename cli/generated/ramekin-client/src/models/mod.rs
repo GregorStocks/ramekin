@@ -24,6 +24,8 @@ pub mod create_tag_request;
 pub use self::create_tag_request::CreateTagRequest;
 pub mod create_tag_response;
 pub use self::create_tag_response::CreateTagResponse;
+pub mod custom_enrich_request;
+pub use self::custom_enrich_request::CustomEnrichRequest;
 pub mod direction;
 pub use self::direction::Direction;
 pub mod error_response;

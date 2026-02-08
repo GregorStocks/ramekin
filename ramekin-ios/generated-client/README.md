@@ -28,6 +28,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AuthAPI* | [**login**](docs/AuthAPI.md#login) | **POST** /api/auth/login | 
 *AuthAPI* | [**signup**](docs/AuthAPI.md#signup) | **POST** /api/auth/signup | 
+*EnrichAPI* | [**customEnrichRecipe**](docs/EnrichAPI.md#customenrichrecipe) | **POST** /api/enrich/custom | Apply a custom AI modification to a recipe
 *EnrichAPI* | [**enrichRecipe**](docs/EnrichAPI.md#enrichrecipe) | **POST** /api/enrich | Enrich a recipe using AI
 *ImportAPI* | [**importRecipe**](docs/ImportAPI.md#importrecipe) | **POST** /api/import/recipe | 
 *MealPlansAPI* | [**createMealPlan**](docs/MealPlansAPI.md#createmealplan) | **POST** /api/meal-plans | 
@@ -79,6 +80,7 @@ Class | Method | HTTP request | Description
  - [CreateShoppingListResponse](docs/CreateShoppingListResponse.md)
  - [CreateTagRequest](docs/CreateTagRequest.md)
  - [CreateTagResponse](docs/CreateTagResponse.md)
+ - [CustomEnrichRequest](docs/CustomEnrichRequest.md)
  - [Direction](docs/Direction.md)
  - [ImportExtractionMethod](docs/ImportExtractionMethod.md)
  - [ImportRawRecipe](docs/ImportRawRecipe.md)

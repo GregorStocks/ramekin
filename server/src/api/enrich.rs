@@ -6,9 +6,11 @@ use crate::schema::user_tags;
 use crate::types::RecipeContent;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
-use ramekin_core::ai::{suggest_tags, CachingAiClient};
+use ramekin_core::ai::{custom_enrich, suggest_tags, CachingAiClient};
+use serde::Deserialize;
 use std::sync::Arc;
 use utoipa::OpenApi;
+use utoipa::ToSchema;
 
 /// Enrich a recipe using AI
 ///
@@ -118,6 +120,89 @@ pub async fn enrich_recipe(
     (StatusCode::OK, Json(enriched)).into_response()
 }
 
+/// Request body for custom enrichment.
+#[derive(Debug, Deserialize, ToSchema)]
+pub struct CustomEnrichRequest {
+    pub recipe: RecipeContent,
+    pub instruction: String,
+}
+
+/// Apply a custom AI modification to a recipe
+///
+/// Takes a recipe and a free-text instruction describing the desired change.
+/// Returns the complete modified recipe. Stateless - does NOT modify any database records.
+#[utoipa::path(
+    post,
+    path = "/api/enrich/custom",
+    tag = "enrich",
+    request_body = CustomEnrichRequest,
+    responses(
+        (status = 200, description = "Modified recipe", body = RecipeContent),
+        (status = 401, description = "Unauthorized", body = crate::api::ErrorResponse),
+        (status = 503, description = "AI service unavailable", body = crate::api::ErrorResponse)
+    ),
+    security(
+        ("bearer_auth" = [])
+    )
+)]
+pub async fn custom_enrich_recipe(
+    AuthUser(_user): AuthUser,
+    Json(request): Json<CustomEnrichRequest>,
+) -> impl IntoResponse {
+    // Create AI client
+    let ai_client = match CachingAiClient::from_env() {
+        Ok(c) => c,
+        Err(e) => {
+            tracing::warn!("AI client unavailable: {}", e);
+            return (
+                StatusCode::SERVICE_UNAVAILABLE,
+                Json(ErrorResponse {
+                    error: "AI service unavailable".to_string(),
+                }),
+            )
+                .into_response();
+        }
+    };
+
+    // Serialize the recipe to JSON for the prompt
+    let recipe_json = serde_json::to_string_pretty(&request.recipe).unwrap();
+
+    // Call custom enrich
+    let result = match custom_enrich(&ai_client, &recipe_json, &request.instruction).await {
+        Ok(r) => r,
+        Err(e) => {
+            tracing::warn!("Custom enrich AI call failed: {}", e);
+            return (
+                StatusCode::SERVICE_UNAVAILABLE,
+                Json(ErrorResponse {
+                    error: format!("AI service error: {}", e),
+                }),
+            )
+                .into_response();
+        }
+    };
+
+    // Deserialize the AI response back into RecipeContent
+    let modified: RecipeContent = match serde_json::from_str(&result.recipe_json) {
+        Ok(r) => r,
+        Err(e) => {
+            tracing::warn!("Failed to parse AI response: {}", e);
+            return (
+                StatusCode::SERVICE_UNAVAILABLE,
+                Json(ErrorResponse {
+                    error: format!("Failed to parse AI response: {}", e),
+                }),
+            )
+                .into_response();
+        }
+    };
+
+    (StatusCode::OK, Json(modified)).into_response()
+}
+
 #[derive(OpenApi)]
-#[openapi(paths(enrich_recipe), components(schemas(RecipeContent)))]
+#[openapi(
+    paths(enrich_recipe, custom_enrich_recipe),
+    components(schemas(RecipeContent, CustomEnrichRequest))
+)]
 pub struct ApiDoc;

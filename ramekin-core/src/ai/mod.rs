@@ -37,6 +37,7 @@ mod auto_tag;
 mod cache;
 mod client;
 mod config;
+mod custom_enrich;
 pub mod prompts;
 mod types;
 
@@ -44,4 +45,5 @@ pub use auto_tag::{suggest_tags, AutoTagResult};
 pub use cache::{AiCache, CacheKey, CacheStats, CachedAiResponse};
 pub use client::{AiClient, AiError, CachingAiClient};
 pub use config::{AiConfig, ConfigError};
+pub use custom_enrich::{custom_enrich, CustomEnrichResult};
 pub use types::{ChatMessage, ChatRequest, ChatResponse, Role, Usage};

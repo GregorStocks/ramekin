@@ -50,6 +50,7 @@ __all__ = [
     "CreateShoppingListResponse",
     "CreateTagRequest",
     "CreateTagResponse",
+    "CustomEnrichRequest",
     "Direction",
     "ErrorResponse",
     "ImportExtractionMethod",
@@ -134,6 +135,7 @@ from ramekin_client.models.create_shopping_list_request import CreateShoppingLis
 from ramekin_client.models.create_shopping_list_response import CreateShoppingListResponse as CreateShoppingListResponse
 from ramekin_client.models.create_tag_request import CreateTagRequest as CreateTagRequest
 from ramekin_client.models.create_tag_response import CreateTagResponse as CreateTagResponse
+from ramekin_client.models.custom_enrich_request import CustomEnrichRequest as CustomEnrichRequest
 from ramekin_client.models.direction import Direction as Direction
 from ramekin_client.models.error_response import ErrorResponse as ErrorResponse
 from ramekin_client.models.import_extraction_method import ImportExtractionMethod as ImportExtractionMethod

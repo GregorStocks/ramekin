@@ -15,15 +15,22 @@
 
 import * as runtime from '../runtime';
 import type {
+  CustomEnrichRequest,
   ErrorResponse,
   RecipeContent,
 } from '../models/index';
 import {
+    CustomEnrichRequestFromJSON,
+    CustomEnrichRequestToJSON,
     ErrorResponseFromJSON,
     ErrorResponseToJSON,
     RecipeContentFromJSON,
     RecipeContentToJSON,
 } from '../models/index';
+
+export interface CustomEnrichRecipeRequest {
+    customEnrichRequest: CustomEnrichRequest;
+}
 
 export interface EnrichRecipeRequest {
     recipeContent: RecipeContent;
@@ -33,6 +40,55 @@ export interface EnrichRecipeRequest {
  * 
  */
 export class EnrichApi extends runtime.BaseAPI {
+
+    /**
+     * Takes a recipe and a free-text instruction describing the desired change. Returns the complete modified recipe. Stateless - does NOT modify any database records.
+     * Apply a custom AI modification to a recipe
+     */
+    async customEnrichRecipeRaw(requestParameters: CustomEnrichRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RecipeContent>> {
+        if (requestParameters['customEnrichRequest'] == null) {
+            throw new runtime.RequiredError(
+                'customEnrichRequest',
+                'Required parameter "customEnrichRequest" was null or undefined when calling customEnrichRecipe().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/api/enrich/custom`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CustomEnrichRequestToJSON(requestParameters['customEnrichRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => RecipeContentFromJSON(jsonValue));
+    }
+
+    /**
+     * Takes a recipe and a free-text instruction describing the desired change. Returns the complete modified recipe. Stateless - does NOT modify any database records.
+     * Apply a custom AI modification to a recipe
+     */
+    async customEnrichRecipe(requestParameters: CustomEnrichRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RecipeContent> {
+        const response = await this.customEnrichRecipeRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
 
     /**
      * This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently enriches tags by suggesting from the user\'s existing tag library.
