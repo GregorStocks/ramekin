@@ -7,7 +7,7 @@ use std::time::Instant;
 use serde::{Deserialize, Serialize};
 
 use ramekin_core::http::{CachingClient, HttpClient};
-use ramekin_core::pipeline::run_pipeline;
+use ramekin_core::pipeline::{run_pipeline, StepRegistry};
 pub use ramekin_core::PipelineStep;
 
 use super::output_store::FileOutputStore;
@@ -123,17 +123,15 @@ pub async fn run_fetch_html(url: &str, client: &CachingClient, force: bool) -> S
 
 /// Run all pipeline steps for a URL using the generic pipeline infrastructure.
 ///
-/// Takes an `Arc<CachingClient>` for shared ownership across pipeline steps.
-/// User tags are passed to the auto-tag step for evaluation.
+/// Takes an `Arc<CachingClient>` for shared ownership across pipeline steps,
+/// plus a shared `StepRegistry` (built once per pipeline run).
 pub async fn run_all_steps(
     url: &str,
     client: Arc<CachingClient>,
     run_dir: &Path,
     force_fetch: bool,
-    user_tags: Vec<String>,
+    registry: Arc<StepRegistry>,
 ) -> AllStepsResult {
-    use super::build_registry;
-
     let _span = tracing::info_span!("run_all_steps").entered();
 
     let mut step_results = Vec::new();
@@ -188,12 +186,6 @@ pub async fn run_all_steps(
     } else {
         // Not cached - start from fetch_html
         "fetch_html"
-    };
-
-    // Build the registry with the shared client and user tags
-    let registry = {
-        let _span = tracing::info_span!("build_registry").entered();
-        build_registry(client, user_tags)
     };
 
     // Run the generic pipeline from the determined starting point

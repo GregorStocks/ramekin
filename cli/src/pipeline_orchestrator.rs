@@ -16,11 +16,12 @@ use tracing::{info_span, Instrument};
 
 use crate::generate_test_urls::TestUrlsOutput;
 use crate::pipeline::{
-    clear_staging, ensure_staging_dir, find_staged_html, run_all_steps, staging_dir,
-    AllStepsResult, ExtractionStats, IngredientStats, PipelineStep, StepResult,
+    build_registry, clear_staging, ensure_staging_dir, find_staged_html, run_all_steps,
+    staging_dir, AllStepsResult, ExtractionStats, IngredientStats, PipelineStep, StepResult,
 };
 use crate::OnFetchFail;
 use ramekin_core::http::{CachingClient, DiskCache};
+use ramekin_core::pipeline::StepRegistry;
 
 // ============================================================================
 // Configuration
@@ -271,6 +272,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
 
     let total_urls = urls_to_process.len();
     let start_time = Instant::now();
+    let registry = Arc::new(build_registry(Arc::clone(&client), user_tags));
 
     println!("Pipeline Test Starting");
     println!("======================");
@@ -315,8 +317,8 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     let url_results: Vec<Option<UrlResult>> = stream::iter(urls_to_process.into_iter())
         .map(|(url, domain)| {
             let client = Arc::clone(&client);
+            let registry = Arc::clone(&registry);
             let run_dir = Arc::clone(&run_dir);
-            let user_tags = user_tags.clone();
             let results = Arc::clone(&results);
             let completed_count = Arc::clone(&completed_count);
             let on_fetch_fail = config.on_fetch_fail;
@@ -350,7 +352,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
                     Arc::clone(&client),
                     &run_dir,
                     force_refetch,
-                    user_tags.clone(),
+                    Arc::clone(&registry),
                 )
                 .await;
 
@@ -373,7 +375,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
                                 &url,
                                 Arc::clone(&client),
                                 &run_dir,
-                                user_tags,
+                                Arc::clone(&registry),
                             )
                             .await
                             {
@@ -430,6 +432,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         for url_result in url_results.into_iter().flatten() {
             results.url_results.push(url_result);
         }
+        save_results(&run_dir, &results).context("Failed to save final results")?;
     }
 
     // Extract final results from Arc<Mutex<>>
@@ -849,7 +852,7 @@ async fn prompt_for_manual_cache(
     url: &str,
     client: Arc<CachingClient>,
     run_dir: &Path,
-    user_tags: Vec<String>,
+    registry: Arc<StepRegistry>,
 ) -> Result<Option<AllStepsResult>> {
     let staging = staging_dir();
 
@@ -917,7 +920,7 @@ async fn prompt_for_manual_cache(
 
                     // Re-run all steps (should hit cache now)
                     let new_results =
-                        run_all_steps(url, Arc::clone(&client), run_dir, false, user_tags).await;
+                        run_all_steps(url, Arc::clone(&client), run_dir, false, registry).await;
                     return Ok(Some(new_results));
                 }
                 Err(e) => {

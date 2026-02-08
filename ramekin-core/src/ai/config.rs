@@ -11,6 +11,8 @@ pub const DEFAULT_MODEL: &str = "openai/gpt-4o-mini";
 
 /// Default rate limit between requests in milliseconds.
 pub const DEFAULT_RATE_LIMIT_MS: u64 = 500;
+/// Default request timeout in seconds.
+pub const DEFAULT_REQUEST_TIMEOUT_SECS: u64 = 30;
 
 #[derive(Error, Debug)]
 pub enum ConfigError {
@@ -33,6 +35,8 @@ pub struct AiConfig {
     pub offline: bool,
     /// Milliseconds to wait between requests.
     pub rate_limit_ms: u64,
+    /// Seconds before failing an API request.
+    pub request_timeout_secs: u64,
 }
 
 impl AiConfig {
@@ -47,6 +51,7 @@ impl AiConfig {
     /// - `RAMEKIN_AI_CACHE_DIR`: Cache directory (default: "~/.ramekin/ai-cache")
     /// - `RAMEKIN_AI_OFFLINE`: Use cache only (default: false)
     /// - `RAMEKIN_AI_RATE_LIMIT_MS`: Rate limit in ms (default: 500)
+    /// - `RAMEKIN_AI_TIMEOUT_SECS`: Request timeout in seconds (default: 30)
     pub fn from_env() -> Result<Self, ConfigError> {
         let api_key = env::var("OPENROUTER_API_KEY")
             .map_err(|_| ConfigError::MissingEnvVar("OPENROUTER_API_KEY".to_string()))?;
@@ -69,6 +74,11 @@ impl AiConfig {
             .and_then(|v| v.parse().ok())
             .unwrap_or(DEFAULT_RATE_LIMIT_MS);
 
+        let request_timeout_secs = env::var("RAMEKIN_AI_TIMEOUT_SECS")
+            .ok()
+            .and_then(|v| v.parse().ok())
+            .unwrap_or(DEFAULT_REQUEST_TIMEOUT_SECS);
+
         Ok(Self {
             api_key,
             model,
@@ -76,6 +86,7 @@ impl AiConfig {
             cache_dir,
             offline,
             rate_limit_ms,
+            request_timeout_secs,
         })
     }
 
