@@ -5,11 +5,11 @@
     {
       "raw": "2 1/2 tablespoons EACH sunflower seeds, pumpkin seeds, sesame seeds, poppy seeds, flax seeds",
       "expected": {
-        "item": "EACH sunflower seeds, pumpkin seeds, sesame seeds, poppy seeds, flax seeds",
+        "item": "sunflower seeds, pumpkin seeds, sesame seeds, poppy seeds, flax seeds",
         "measurements": [
           {
             "amount": "2.5",
-            "unit": "tbsp"
+            "unit": "tbsp each"
           }
         ],
         "note": null,

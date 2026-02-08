@@ -75,11 +75,11 @@
     {
       "raw": "1 teaspoon each chili powder, onion powder, and garlic powder",
       "expected": {
-        "item": "each chili powder, onion powder, and garlic powder",
+        "item": "chili powder, onion powder, and garlic powder",
         "measurements": [
           {
             "amount": "1",
-            "unit": "tsp"
+            "unit": "tsp each"
           }
         ],
         "note": null,

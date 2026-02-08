@@ -113,11 +113,11 @@
     {
       "raw": "½ teaspoon each ground cinnamon, ginger, cloves, and cardamom",
       "expected": {
-        "item": "each ground cinnamon, ginger, cloves, and cardamom",
+        "item": "ground cinnamon, ginger, cloves, and cardamom",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": "tsp"
+            "unit": "tsp each"
           }
         ],
         "note": null,
