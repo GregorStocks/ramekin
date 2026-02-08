@@ -65,7 +65,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AuthApi* | [**login**](ramekin_client/docs/AuthApi.md#login) | **POST** /api/auth/login | 
 *AuthApi* | [**signup**](ramekin_client/docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
-*EnrichApi* | [**enrich_recipe**](ramekin_client/docs/EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe using AI
+*EnrichApi* | [**enrich_recipe**](ramekin_client/docs/EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe
 *ImportApi* | [**import_recipe**](ramekin_client/docs/ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
 *MealPlansApi* | [**create_meal_plan**](ramekin_client/docs/MealPlansApi.md#create_meal_plan) | **POST** /api/meal-plans | 
 *MealPlansApi* | [**delete_meal_plan**](ramekin_client/docs/MealPlansApi.md#delete_meal_plan) | **DELETE** /api/meal-plans/{id} | 

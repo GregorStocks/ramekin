@@ -102,6 +102,19 @@ fn convert_volume_to_grams(amount: &str, unit: &str, grams_per_cup: f64) -> Opti
     Some(format_grams(grams))
 }
 
+/// Apply all measurement enrichments to a single ingredient.
+///
+/// Adds metric weight alternatives (oz/lb → g) and volume-to-weight
+/// alternatives (cups/tbsp/tsp → g) when density data is available.
+/// Useful for enriching already-stored ingredients outside the pipeline.
+pub fn enrich_ingredient_measurements(ingredient: ParsedIngredient) -> ParsedIngredient {
+    let mut weight_stats = crate::metric_weights::MetricConversionStats::default();
+    let mut volume_stats = VolumeConversionStats::default();
+    let ingredient =
+        crate::metric_weights::add_metric_weight_alternative(ingredient, &mut weight_stats);
+    add_volume_to_weight_alternative(ingredient, &mut volume_stats)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

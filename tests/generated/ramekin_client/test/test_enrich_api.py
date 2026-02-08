@@ -29,7 +29,7 @@ class TestEnrichApi(unittest.TestCase):
     def test_enrich_recipe(self) -> None:
         """Test case for enrich_recipe
 
-        Enrich a recipe using AI
+        Enrich a recipe
         """
         pass
 
