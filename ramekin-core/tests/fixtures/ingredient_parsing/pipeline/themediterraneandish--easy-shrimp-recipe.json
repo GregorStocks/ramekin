@@ -55,16 +55,31 @@
     {
       "raw": "1/2 tsp each salt and pepper",
       "expected": {
-        "item": "salt and pepper",
+        "item": "salt",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": "tsp each"
+            "unit": "tsp"
           }
         ],
         "note": null,
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "1/2 tsp each salt and pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
     },
     {
       "raw": "1/2 tsp ground coriander",
