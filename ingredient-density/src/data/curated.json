@@ -4,6 +4,20 @@
       "grams_per_cup": 220.0,
       "source": "USDA FoodData Central",
       "url": "https://fdc.nal.usda.gov/fdc-app.html#/food-details/168025/nutrients"
+    },
+    "ground cumin": {
+      "grams_per_cup": 96.0,
+      "source": "USDA FoodData Central FDC 170923: Spices, cumin seed, 6.0g/tbsp x 16",
+      "url": "https://fdc.nal.usda.gov/food-details/170923/nutrients"
+    },
+    "dried oregano": {
+      "grams_per_cup": 48.0,
+      "source": "USDA FoodData Central FDC 171328: Spices, oregano, dried, 1.0g/tsp leaves x 48",
+      "url": "https://fdc.nal.usda.gov/food-details/171328/nutrients"
+    },
+    "rice vinegar": {
+      "grams_per_cup": 239.0,
+      "source": "Comparable to USDA vinegar entries (cider 239, red wine 239, distilled 238)"
     }
   },
   "aliases": {
@@ -53,6 +67,8 @@
     "dried parsley": "spices, parsley, dried",
     "dried thyme": "thyme, fresh",
     "thyme": "thyme, fresh",
+    "cumin": "ground cumin",
+    "oregano": "dried oregano",
 
     "black pepper": null,
     "ground black pepper": null,
@@ -90,6 +106,29 @@
     "yellow mustard": "mustard, prepared, yellow",
     "dijon mustard": "mustard, prepared, yellow",
     "prepared mustard": "mustard, prepared, yellow",
+
+    "soy sauce": "soy sauce made from soy and wheat (shoyu)",
+    "low-sodium soy sauce": "soy sauce made from soy and wheat (shoyu), low sodium",
+    "tamari": "soy sauce made from soy (tamari)",
+    "japanese soy sauce (koikuchi shoyu)": "soy sauce made from soy and wheat (shoyu)",
+
+    "vanilla": "vanilla extract",
+    "pure vanilla extract": "vanilla extract",
+
+    "worcestershire sauce": "sauce, worcestershire",
+
+    "fresh lemon juice": "lemon juice",
+
+    "tomato paste": "tomato products, canned, paste, without salt added",
+
+    "sesame oil": "oil, sesame, salad or cooking",
+    "toasted sesame oil": "oil, sesame, salad or cooking",
+
+    "apple cider vinegar": "vinegar, cider",
+    "red wine vinegar": "vinegar, red wine",
+    "balsamic vinegar": "vinegar, balsamic",
+    "white vinegar": "vinegar, distilled",
+    "white wine vinegar": "vinegar, red wine",
 
     "water": "water, bottled, generic"
   }

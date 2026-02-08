@@ -349,4 +349,30 @@ mod tests {
         assert!(find_density("black pepper").is_none());
         assert!(find_density("ground black pepper").is_none());
     }
+
+    #[test]
+    fn test_top_density_aliases() {
+        // Top 10 from density gap report
+        assert!(find_density("soy sauce").is_some());
+        assert!(find_density("ground cumin").is_some());
+        assert!(find_density("dried oregano").is_some());
+        assert!(find_density("pure vanilla extract").is_some());
+        assert!(find_density("Worcestershire sauce").is_some());
+        assert!(find_density("fresh lemon juice").is_some());
+        assert!(find_density("tomato paste").is_some());
+        assert!(find_density("sesame oil").is_some());
+        assert!(find_density("vanilla").is_some());
+        assert!(find_density("rice vinegar").is_some());
+        // Related aliases
+        assert!(find_density("cumin").is_some());
+        assert!(find_density("oregano").is_some());
+        assert!(find_density("toasted sesame oil").is_some());
+        assert!(find_density("apple cider vinegar").is_some());
+        assert!(find_density("red wine vinegar").is_some());
+        assert!(find_density("balsamic vinegar").is_some());
+        assert!(find_density("white vinegar").is_some());
+        assert!(find_density("white wine vinegar").is_some());
+        assert!(find_density("tamari").is_some());
+        assert!(find_density("Japanese soy sauce (koikuchi shoyu)").is_some());
+    }
 }
