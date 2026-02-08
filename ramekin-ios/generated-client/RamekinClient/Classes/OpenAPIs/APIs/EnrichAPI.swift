@@ -13,6 +13,45 @@ import AnyCodable
 open class EnrichAPI {
 
     /**
+     Apply a custom AI modification to a recipe
+     
+     - parameter customEnrichRequest: (body)  
+     - returns: RecipeContent
+     */
+    @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    open class func customEnrichRecipe(customEnrichRequest: CustomEnrichRequest) async throws -> RecipeContent {
+        return try await customEnrichRecipeWithRequestBuilder(customEnrichRequest: customEnrichRequest).execute().body
+    }
+
+    /**
+     Apply a custom AI modification to a recipe
+     - POST /api/enrich/custom
+     - Takes a recipe and a free-text instruction describing the desired change. Returns the complete modified recipe. Stateless - does NOT modify any database records.
+     - Bearer Token:
+       - type: http
+       - name: bearer_auth
+     - parameter customEnrichRequest: (body)  
+     - returns: RequestBuilder<RecipeContent> 
+     */
+    open class func customEnrichRecipeWithRequestBuilder(customEnrichRequest: CustomEnrichRequest) -> RequestBuilder<RecipeContent> {
+        let localVariablePath = "/api/enrich/custom"
+        let localVariableURLString = RamekinClientAPI.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: customEnrichRequest)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<RecipeContent>.Type = RamekinClientAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
+    }
+
+    /**
      Enrich a recipe
      
      - parameter recipeContent: (body)  

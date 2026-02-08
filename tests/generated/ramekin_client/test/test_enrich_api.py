@@ -26,6 +26,13 @@ class TestEnrichApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_custom_enrich_recipe(self) -> None:
+        """Test case for custom_enrich_recipe
+
+        Apply a custom AI modification to a recipe
+        """
+        pass
+
     def test_enrich_recipe(self) -> None:
         """Test case for enrich_recipe
 

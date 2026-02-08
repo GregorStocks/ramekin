@@ -1,0 +1,10 @@
+{
+  "title": "Custom enrichment should support interacting with images",
+  "description": "The custom enrichment feature currently only works with text-based recipe fields. It should also support image-based interactions, e.g. uploading a photo of a dish and having Claude suggest modifications, or analyzing recipe photos to improve descriptions. Blocked on smarter Claude with better multimodal capabilities.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": ["enrichment", "ai"],
+  "created_at": "2026-02-07T17:25:00.000000-08:00",
+  "updated_at": "2026-02-07T17:25:00.000000-08:00"
+}

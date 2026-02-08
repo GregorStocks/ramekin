@@ -11,6 +11,7 @@ export * from './CreateShoppingListRequest';
 export * from './CreateShoppingListResponse';
 export * from './CreateTagRequest';
 export * from './CreateTagResponse';
+export * from './CustomEnrichRequest';
 export * from './Direction';
 export * from './ErrorResponse';
 export * from './ImportExtractionMethod';

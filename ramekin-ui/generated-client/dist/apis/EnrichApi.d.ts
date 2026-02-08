@@ -10,7 +10,10 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { RecipeContent } from '../models/index';
+import type { CustomEnrichRequest, RecipeContent } from '../models/index';
+export interface CustomEnrichRecipeRequest {
+    customEnrichRequest: CustomEnrichRequest;
+}
 export interface EnrichRecipeRequest {
     recipeContent: RecipeContent;
 }
@@ -18,6 +21,16 @@ export interface EnrichRecipeRequest {
  *
  */
 export declare class EnrichApi extends runtime.BaseAPI {
+    /**
+     * Takes a recipe and a free-text instruction describing the desired change. Returns the complete modified recipe. Stateless - does NOT modify any database records.
+     * Apply a custom AI modification to a recipe
+     */
+    customEnrichRecipeRaw(requestParameters: CustomEnrichRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RecipeContent>>;
+    /**
+     * Takes a recipe and a free-text instruction describing the desired change. Returns the complete modified recipe. Stateless - does NOT modify any database records.
+     * Apply a custom AI modification to a recipe
+     */
+    customEnrichRecipe(requestParameters: CustomEnrichRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RecipeContent>;
     /**
      * This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Enriches: - Ingredient measurements with gram conversions (volume/weight → grams) - Tags by suggesting from the user\'s existing tag library (requires AI; skipped if unavailable)
      * Enrich a recipe

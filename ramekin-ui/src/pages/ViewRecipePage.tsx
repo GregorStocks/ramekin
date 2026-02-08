@@ -129,6 +129,10 @@ export default function ViewRecipePage() {
     createSignal<RecipeContent | null>(null);
   const [applyingEnrichment, setApplyingEnrichment] = createSignal(false);
 
+  // Custom enrich state
+  const [customInstruction, setCustomInstruction] = createSignal("");
+  const [showCustomEnrichInput, setShowCustomEnrichInput] = createSignal(false);
+
   // Compare state
   const [compareLoading, setCompareLoading] = createSignal(false);
   const [compareVersions, setCompareVersions] = createSignal<
@@ -364,6 +368,45 @@ export default function ViewRecipePage() {
     setEnrichedContent(null);
   };
 
+  const handleCustomEnrich = async () => {
+    const r = recipe();
+    const instruction = customInstruction();
+    if (!r || !instruction.trim()) return;
+
+    setEnriching(true);
+    setError(null);
+    try {
+      const enriched = await getEnrichApi().customEnrichRecipe({
+        customEnrichRequest: {
+          recipe: {
+            title: r.title,
+            description: r.description,
+            instructions: r.instructions,
+            ingredients: r.ingredients,
+            tags: r.tags,
+            prepTime: r.prepTime,
+            cookTime: r.cookTime,
+            totalTime: r.totalTime,
+            servings: r.servings,
+            difficulty: r.difficulty,
+            notes: r.notes,
+            nutritionalInfo: r.nutritionalInfo,
+            sourceName: r.sourceName,
+            sourceUrl: r.sourceUrl,
+          },
+          instruction,
+        },
+      });
+      setEnrichedContent(enriched);
+      setShowCustomEnrichInput(false);
+      setCustomInstruction("");
+    } catch (err) {
+      setError("Failed to apply custom enrichment");
+    } finally {
+      setEnriching(false);
+    }
+  };
+
   // Compare handlers
   const handleCompareVersions = async (versionIds: [string, string]) => {
     setCompareLoading(true);
@@ -558,6 +601,16 @@ export default function ViewRecipePage() {
                 <button
                   type="button"
                   class="btn"
+                  onClick={() =>
+                    setShowCustomEnrichInput(!showCustomEnrichInput())
+                  }
+                  disabled={enriching() || isViewingHistoricalVersion()}
+                >
+                  Customize with AI
+                </button>
+                <button
+                  type="button"
+                  class="btn"
                   onClick={() => setShowShoppingListModal(true)}
                   disabled={isViewingHistoricalVersion()}
                 >
@@ -582,6 +635,32 @@ export default function ViewRecipePage() {
                   {deleting() ? "Deleting..." : "Delete"}
                 </button>
               </div>
+              <Show when={showCustomEnrichInput()}>
+                <div
+                  class="custom-enrich-input"
+                  style={{ display: "flex", gap: "8px", "margin-top": "8px" }}
+                >
+                  <input
+                    type="text"
+                    placeholder="e.g., make this vegan, double the servings..."
+                    value={customInstruction()}
+                    onInput={(e) => setCustomInstruction(e.currentTarget.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") handleCustomEnrich();
+                    }}
+                    disabled={enriching()}
+                    style={{ flex: "1" }}
+                  />
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onClick={handleCustomEnrich}
+                    disabled={enriching() || !customInstruction().trim()}
+                  >
+                    {enriching() ? "Customizing..." : "Go"}
+                  </button>
+                </div>
+              </Show>
             </div>
 
             {/* Historical version banner */}

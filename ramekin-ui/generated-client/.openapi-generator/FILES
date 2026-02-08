@@ -24,6 +24,7 @@ docs/CreateShoppingListRequest.md
 docs/CreateShoppingListResponse.md
 docs/CreateTagRequest.md
 docs/CreateTagResponse.md
+docs/CustomEnrichRequest.md
 docs/Direction.md
 docs/EnrichApi.md
 docs/ErrorResponse.md
@@ -92,6 +93,7 @@ models/CreateShoppingListRequest.ts
 models/CreateShoppingListResponse.ts
 models/CreateTagRequest.ts
 models/CreateTagResponse.ts
+models/CustomEnrichRequest.ts
 models/Direction.ts
 models/ErrorResponse.ts
 models/ImportExtractionMethod.ts

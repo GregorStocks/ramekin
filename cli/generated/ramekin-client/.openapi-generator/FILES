@@ -17,6 +17,7 @@ docs/CreateShoppingListRequest.md
 docs/CreateShoppingListResponse.md
 docs/CreateTagRequest.md
 docs/CreateTagResponse.md
+docs/CustomEnrichRequest.md
 docs/Direction.md
 docs/EnrichApi.md
 docs/ErrorResponse.md
@@ -98,6 +99,7 @@ src/models/create_shopping_list_request.rs
 src/models/create_shopping_list_response.rs
 src/models/create_tag_request.rs
 src/models/create_tag_response.rs
+src/models/custom_enrich_request.rs
 src/models/direction.rs
 src/models/error_response.rs
 src/models/import_extraction_method.rs

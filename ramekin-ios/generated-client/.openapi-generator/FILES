@@ -36,6 +36,7 @@ RamekinClient/Classes/OpenAPIs/Models/CreateShoppingListRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/CreateShoppingListResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/CreateTagRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/CreateTagResponse.swift
+RamekinClient/Classes/OpenAPIs/Models/CustomEnrichRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/Direction.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportExtractionMethod.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportRawRecipe.swift
@@ -99,6 +100,7 @@ docs/CreateShoppingListRequest.md
 docs/CreateShoppingListResponse.md
 docs/CreateTagRequest.md
 docs/CreateTagResponse.md
+docs/CustomEnrichRequest.md
 docs/Direction.md
 docs/EnrichAPI.md
 docs/ImportAPI.md

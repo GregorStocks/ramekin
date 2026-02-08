@@ -158,6 +158,63 @@
         ]
       }
     },
+    "/api/enrich/custom": {
+      "post": {
+        "tags": [
+          "enrich"
+        ],
+        "summary": "Apply a custom AI modification to a recipe",
+        "description": "Takes a recipe and a free-text instruction describing the desired change.\nReturns the complete modified recipe. Stateless - does NOT modify any database records.",
+        "operationId": "custom_enrich_recipe",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomEnrichRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Modified recipe",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecipeContent"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "AI service unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/import/recipe": {
       "post": {
         "tags": [
@@ -2212,6 +2269,22 @@
           },
           "name": {
             "type": "string"
+          }
+        }
+      },
+      "CustomEnrichRequest": {
+        "type": "object",
+        "description": "Request body for custom enrichment.",
+        "required": [
+          "recipe",
+          "instruction"
+        ],
+        "properties": {
+          "instruction": {
+            "type": "string"
+          },
+          "recipe": {
+            "$ref": "#/components/schemas/RecipeContent"
           }
         }
       },

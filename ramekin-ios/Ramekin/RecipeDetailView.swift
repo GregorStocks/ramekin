@@ -7,6 +7,8 @@ struct RecipeDetailView: View {
     @State private var isLoading = false
     @State private var error: String?
     @State private var showingAddToShoppingList = false
+    @State private var showingCustomEnrich = false
+    @State private var enrichResult: RecipeContent?
 
     var body: some View {
         ScrollView {
@@ -22,12 +24,23 @@ struct RecipeDetailView: View {
         .navigationTitle(recipe?.title ?? "Recipe")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            if let recipe = recipe, !recipe.ingredients.isEmpty {
+            if let recipe = recipe {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        showingAddToShoppingList = true
+                    Menu {
+                        Button {
+                            showingCustomEnrich = true
+                        } label: {
+                            Label("Customize with AI", systemImage: "wand.and.stars")
+                        }
+                        if !recipe.ingredients.isEmpty {
+                            Button {
+                                showingAddToShoppingList = true
+                            } label: {
+                                Label("Add to Shopping List", systemImage: "cart.badge.plus")
+                            }
+                        }
                     } label: {
-                        Image(systemName: "cart.badge.plus")
+                        Image(systemName: "ellipsis.circle")
                     }
                 }
             }
@@ -35,6 +48,28 @@ struct RecipeDetailView: View {
         .sheet(isPresented: $showingAddToShoppingList) {
             if let recipe = recipe {
                 AddToShoppingListSheet(recipe: recipe, isPresented: $showingAddToShoppingList)
+            }
+        }
+        .sheet(isPresented: $showingCustomEnrich) {
+            if let recipe = recipe {
+                CustomEnrichSheet(recipe: recipe, isPresented: $showingCustomEnrich) { result in
+                    enrichResult = result
+                }
+            }
+        }
+        .sheet(isPresented: Binding(
+            get: { enrichResult != nil },
+            set: { if !$0 { enrichResult = nil } }
+        )) {
+            if let recipe = recipe, let modified = enrichResult {
+                EnrichPreviewSheet(
+                    original: recipe,
+                    modified: modified,
+                    onApply: {
+                        Task { await applyEnrichment(modified) }
+                    },
+                    onCancel: { enrichResult = nil }
+                )
             }
         }
         .task {
@@ -249,9 +284,12 @@ struct RecipeDetailView: View {
         }
     }
 
-    // MARK: - Helpers
+}
 
-    private func groupIngredientsBySection(_ ingredients: [Ingredient]) -> [(section: String?, items: [Ingredient])] {
+// MARK: - Helpers & Data Loading
+
+extension RecipeDetailView {
+    func groupIngredientsBySection(_ ingredients: [Ingredient]) -> [(section: String?, items: [Ingredient])] {
         var groups: [(section: String?, items: [Ingredient])] = []
         var currentSection: String?
         var currentItems: [Ingredient] = []
@@ -275,7 +313,7 @@ struct RecipeDetailView: View {
         return groups
     }
 
-    private func formatIngredient(_ ingredient: Ingredient) -> String {
+    func formatIngredient(_ ingredient: Ingredient) -> String {
         var parts: [String] = []
 
         if let measurement = ingredient.measurements.first {
@@ -292,9 +330,7 @@ struct RecipeDetailView: View {
         return parts.joined(separator: " ")
     }
 
-    // MARK: - Data Loading
-
-    private func loadRecipe() async {
+    func loadRecipe() async {
         isLoading = true
         error = nil
 
@@ -308,6 +344,37 @@ struct RecipeDetailView: View {
             await MainActor.run {
                 self.error = error.localizedDescription
                 isLoading = false
+            }
+        }
+    }
+
+    func applyEnrichment(_ modified: RecipeContent) async {
+        let updateRequest = UpdateRecipeRequest(
+            cookTime: modified.cookTime,
+            description: modified.description,
+            difficulty: modified.difficulty,
+            ingredients: modified.ingredients,
+            instructions: modified.instructions,
+            notes: modified.notes,
+            nutritionalInfo: modified.nutritionalInfo,
+            prepTime: modified.prepTime,
+            rating: modified.rating,
+            servings: modified.servings,
+            sourceName: modified.sourceName,
+            sourceUrl: modified.sourceUrl,
+            tags: modified.tags,
+            title: modified.title,
+            totalTime: modified.totalTime
+        )
+        do {
+            try await RecipesAPI.updateRecipe(id: recipeId, updateRecipeRequest: updateRequest)
+            await MainActor.run {
+                enrichResult = nil
+            }
+            await loadRecipe()
+        } catch {
+            await MainActor.run {
+                self.error = error.localizedDescription
             }
         }
     }
