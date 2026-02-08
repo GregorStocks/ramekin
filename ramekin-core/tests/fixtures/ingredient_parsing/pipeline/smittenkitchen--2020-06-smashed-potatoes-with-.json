@@ -1,0 +1,339 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2020-06-smashed-potatoes-with-",
+  "ingredients": [
+    {
+      "raw": "3 large ears sweet corn, shucked",
+      "expected": {
+        "item": "ears sweet corn, shucked",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "12 ripe cherry tomatoes, cut into 1/8-inch-thick slices",
+      "expected": {
+        "item": "ripe cherry tomatoes, cut into 1/8-inch-thick slices",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup finely diced red onion",
+      "expected": {
+        "item": "finely diced red onion",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup finely diced green bell pepper",
+      "expected": {
+        "item": "finely diced green bell pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons minced jalapeno",
+      "expected": {
+        "item": "minced jalapeno",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 garlic cloves, ends cut off",
+      "expected": {
+        "item": "garlic cloves, ends cut off",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3/4 cup unseasoned rice vinegar",
+      "expected": {
+        "item": "unseasoned rice vinegar",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/4 cup raw cane sugar (see Note)",
+      "expected": {
+        "item": "raw cane sugar (see Note)",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon brown mustard seeds",
+      "expected": {
+        "item": "brown mustard seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 teaspoons cumin seeds",
+      "expected": {
+        "item": "cumin seeds",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon whole black peppercorns",
+      "expected": {
+        "item": "whole black peppercorns",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground turmeric",
+      "expected": {
+        "item": "ground turmeric",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 1/4 teaspoons kosher salt, plus more as needed",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "2.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more as needed",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 pound fresh spring peas in their pods (or about 1 to 1 1/4 cup frozen)",
+      "expected": {
+        "item": "fresh spring peas in their pods",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "or about 1 to 1 1/4 cup frozen",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon minced, seeded, minced jalapeño",
+      "expected": {
+        "item": "minced, seeded",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "minced jalapeño",
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon fresh lemon juice, plus more as needed",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more as needed",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Freshly ground white pepper",
+      "expected": {
+        "item": "Freshly ground white pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "16 small new potatoes (a little larger than a walnut is what Terry recommends)",
+      "expected": {
+        "item": "new potatoes (a little larger than a walnut is what Terry recommends)",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "small"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup peanut or a vegetable oil",
+      "expected": {
+        "item": "peanut or a vegetable oil",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 large yellow onions, cut into 1/2-inch-thick slices",
+      "expected": {
+        "item": "yellow onions, cut into 1/2-inch-thick slices",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Sweet Corn Relish, for serving",
+      "expected": {
+        "item": "Sweet Corn Relish",
+        "measurements": [],
+        "note": "for serving",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "Spicy Spring Green Pea Sauce, for serving",
+      "expected": {
+        "item": "Spicy Spring Green Pea Sauce",
+        "measurements": [],
+        "note": "for serving",
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

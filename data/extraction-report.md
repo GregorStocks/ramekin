@@ -3,9 +3,9 @@
 ## Overall
 
 - Total URLs: 5370
-- Completed: 4574 (85.2%)
+- Completed: 4637 (86.4%)
 - Failed at fetch: 1 (0.0%)
-- Failed at extract: 795 (14.8%)
+- Failed at extract: 732 (13.6%)
 
 ## Extraction Methods
 
@@ -16,13 +16,13 @@
 
 ## Ingredient Parsing
 
-- Total ingredients: 50276
-- Volume-to-weight converted: 10939/35422 (30.9%)
-- Unknown ingredient (no density data): 17540
-- Already has weight: 6943
-- No volume unit (count-based): 14668
-- Metric converted (oz→g): 2195
-- Metric converted (lb→g): 1441
+- Total ingredients: 51005
+- Volume-to-weight converted: 11149/35935 (31.0%)
+- Unknown ingredient (no density data): 17766
+- Already has weight: 7020
+- No volume unit (count-based): 14883
+- Metric converted (oz→g): 2240
+- Metric converted (lb→g): 1450
 
 ## AI Cache
 
@@ -85,13 +85,13 @@
 | loveandoliveoil.com | 95 | 100 | 95.0% |
 | marthastewart.com | 6 | 7 | 85.7% |
 | momontimeout.com | 95 | 100 | 95.0% |
-| mybakingaddiction.com | 46 | 97 | 47.4% |
+| mybakingaddiction.com | 94 | 97 | 96.9% |
 | natashaskitchen.com | 100 | 100 | 100.0% |
 | nomnompaleo.com | 3 | 6 | 50.0% |
 | norecipes.com | 100 | 100 | 100.0% |
 | ohmyveggies.com | 3 | 6 | 50.0% |
 | onceuponachef.com | 92 | 100 | 92.0% |
-| onmykidsplate.com | 17 | 18 | 94.4% |
+| onmykidsplate.com | 18 | 18 | 100.0% |
 | peasandcrayons.com | 51 | 52 | 98.1% |
 | pinchofyum.com | 0 | 2 | 0.0% |
 | recipetineats.com | 9 | 9 | 100.0% |
@@ -100,7 +100,7 @@
 | simplyrecipes.com | 99 | 100 | 99.0% |
 | skinnytaste.com | 2 | 2 | 100.0% |
 | slenderkitchen.com | 56 | 56 | 100.0% |
-| smittenkitchen.com | 398 | 983 | 40.5% |
+| smittenkitchen.com | 412 | 983 | 41.9% |
 | spendwithpennies.com | 35 | 35 | 100.0% |
 | spoonforkbacon.com | 2 | 2 | 100.0% |
 | sprinklebakes.com | 74 | 100 | 74.0% |
@@ -127,80 +127,22 @@
 
 - https://nomnompaleo.com/2017/08/15/6053
 
-### Missing required field: name (1 URLs)
+### Missing required field: name (12 URLs)
 
-- https://iamafoodblog.com/turkey-shepherds-pie-recipe/
+- https://hostthetoast.com/birria-de-res-beef-birria-recipe/
+- https://hostthetoast.com/easy-candied-pecans-10-minute-stovetop-recipe/
+- https://hostthetoast.com/feel-better-chicken-soup-recipe/
+- https://hostthetoast.com/homemade-bread-white-bread-recipe/
+- https://hostthetoast.com/homemade-hot-honey-recipe/
+- https://hostthetoast.com/tomato-bruschetta-recipe/
+- https://www.asweetpeachef.com/chai-tea-latte-recipe/
+- https://www.asweetpeachef.com/healthy-beef-and-broccoli-recipe/
+- https://www.asweetpeachef.com/healthy-vanilla-latte-recipe/
+- https://www.asweetpeachef.com/homemade-chili-cheese-dog-recipe/
+- https://www.asweetpeachef.com/horchata-recipe/
+- https://www.asweetpeachef.com/pumpkin-spice-latte-recipe/
 
-### Missing required field: recipeIngredient (empty) (54 URLs)
-
-- https://smittenkitchen.com/2008/07/huevos-rancheros/
-- https://smittenkitchen.com/2012/05/bacon-egg-and-leek-risotto/
-- https://smittenkitchen.com/2017/01/chicken-wonton-soup/
-- https://smittenkitchen.com/2017/05/potatoes-anna/
-- https://smittenkitchen.com/2019/10/skillet-ravioli-with-spinach/
-- https://smittenkitchen.com/2022/04/lemon-cream-meringues/
-- https://www.mybakingaddiction.com/apple-bars-recipe/
-- https://www.mybakingaddiction.com/asian-chicken-kebabs-recipe/
-- https://www.mybakingaddiction.com/banana-crumb-muffins-recipe/
-- https://www.mybakingaddiction.com/barbecue-chicken-pizza-recipe/
-- https://www.mybakingaddiction.com/berry-lime-popsicles-recipe/
-- https://www.mybakingaddiction.com/blueberry-trifles-with-mascarpone-whip-recipe/
-- https://www.mybakingaddiction.com/cheese-ball-recipe/
-- https://www.mybakingaddiction.com/chocolate-caramel-tart-recipe/
-- https://www.mybakingaddiction.com/chocolate-chip-cookies-recipe/
-- https://www.mybakingaddiction.com/clementine-granita-recipe/
-- https://www.mybakingaddiction.com/copycat-hostess-cupcakes-recipe/
-- https://www.mybakingaddiction.com/curried-chicken-salad-recipe/
-- https://www.mybakingaddiction.com/frozen-cherry-mojitos-recipe/
-- https://www.mybakingaddiction.com/fruit-and-cheese-kabobs-recipe/
-- https://www.mybakingaddiction.com/heath-bar-cupcakes-recipe/
-- https://www.mybakingaddiction.com/holy-guacamole-recipe/
-- https://www.mybakingaddiction.com/homemade-granola-bars-recipe/
-- https://www.mybakingaddiction.com/homemade-granola-recipe/
-- https://www.mybakingaddiction.com/honey-nut-bars-recipe/
-- https://www.mybakingaddiction.com/hot-cocoa-recipe/
-- https://www.mybakingaddiction.com/lemon-blueberry-coffee-cake-recipe/
-- https://www.mybakingaddiction.com/lemon-meringue-cupcakes-recipe/
-- https://www.mybakingaddiction.com/lime-coconut-sour-cream-bundt-cake-recipe/
-- https://www.mybakingaddiction.com/mini-apple-pies-recipe/
-- https://www.mybakingaddiction.com/mini-chocolate-bundt-cake-recipe/
-- https://www.mybakingaddiction.com/mocha-scones-recipe/
-- https://www.mybakingaddiction.com/neapolitan-cupcakes-recipe/
-- https://www.mybakingaddiction.com/oatmeal-peanut-butter-chip-cookies-recipe/
-- https://www.mybakingaddiction.com/peanut-butter-brownies-recipe/
-- https://www.mybakingaddiction.com/peanut-butter-cookies-recipe/
-- https://www.mybakingaddiction.com/peanut-butter-pie-recipe/
-- https://www.mybakingaddiction.com/peppermint-truffles-recipe/
-- https://www.mybakingaddiction.com/pumpkin-cupcakes-recipe/
-- https://www.mybakingaddiction.com/rice-cooker-risotto-recipe/
-- https://www.mybakingaddiction.com/rolo-brownies-recipe/
-- https://www.mybakingaddiction.com/rolo-dream-bars-recipe/
-- https://www.mybakingaddiction.com/rolo-ice-cream-recipe/
-- https://www.mybakingaddiction.com/rum-raisin-bread-recipe/
-- https://www.mybakingaddiction.com/samoa-popsicles-recipe/
-- https://www.mybakingaddiction.com/snickerdoodle-cookies-recipe/
-- https://www.mybakingaddiction.com/soft-ginger-cookies-recipe/
-- https://www.mybakingaddiction.com/southern-comfort-cupcakes-recipe/
-- https://www.mybakingaddiction.com/spicy-chicken-and-pepper-jack-pizza-recipe/
-- https://www.mybakingaddiction.com/sugar-cookies-recipe/
-- https://www.mybakingaddiction.com/sweet-spicy-snack-mix-recipe/
-- https://www.mybakingaddiction.com/thin-mint-pie-recipe/
-- https://www.mybakingaddiction.com/tiramisu-trifles-recipe/
-- https://www.mybakingaddiction.com/white-chocolate-creme-brulee-recipe/
-
-### Missing required field: recipeInstructions (empty) (9 URLs)
-
-- https://smittenkitchen.com/2006/11/cream-of-tomato-soup-classic-grilled-cheese/
-- https://smittenkitchen.com/2007/12/iceberg-wedge-salad-with-blue-cheese/
-- https://smittenkitchen.com/2008/08/slow-roasted-tomatoes/
-- https://smittenkitchen.com/2016/07/corn-bacon-and-parmesan-pasta/
-- https://smittenkitchen.com/2018/07/minimalist-barbecue-sauce/
-- https://smittenkitchen.com/2020/06/smashed-potatoes-with-sweet-corn-relish/
-- https://smittenkitchen.com/2021/02/rigatoni-alla-vodka/
-- https://smittenkitchen.com/2024/02/chocolate-raspberry-pavlova-stack/
-- https://smittenkitchen.com/2025/12/winter-cabbage-salad-with-mandarins-and-cashews/
-
-### No recipe found (731 URLs)
+### Missing required field: recipeIngredient (empty) (719 URLs)
 
 - http://bakingbites.com/2017/02/how-to-use-freeze-dried-fruit-in-baking/
 - https://alexandracooks.com/2018/12/21/15-savory-homemade-treats-to-gift-all-season/
@@ -226,12 +168,7 @@
 - https://food.com/recipe/egg-in-a-basket-421172
 - https://food.com/recipe/mash-potato-and-stuffing-balls-445449
 - https://food.com/recipe/mash-potato-and-stuffing-balls-445449#reviews
-- https://hostthetoast.com/birria-de-res-beef-birria-recipe/
-- https://hostthetoast.com/easy-candied-pecans-10-minute-stovetop-recipe/
-- https://hostthetoast.com/feel-better-chicken-soup-recipe/
-- https://hostthetoast.com/homemade-bread-white-bread-recipe/
-- https://hostthetoast.com/homemade-hot-honey-recipe/
-- https://hostthetoast.com/tomato-bruschetta-recipe/
+- https://iamafoodblog.com/turkey-shepherds-pie-recipe/
 - https://kingarthurbaking.com/recipes/muffins-popovers
 - https://kingarthurbaking.com/recipes/pancakes-waffles
 - https://nomnompaleo.com/post/1451231058/i-love-this-roasted-broccoli-recipe
@@ -239,7 +176,6 @@
 - https://ohmyveggies.com/best-vegetarian-pho-recipe/
 - https://ohmyveggies.com/great-ginger-tea-recipe/
 - https://ohmyveggies.com/red-lentil-recipe/
-- https://onmykidsplate.com/sidewalk-chalk-paint-recipe/
 - https://peasandcrayons.com/chili-and-cornbread-recipe/
 - https://pinchofyum.com/recipes/healthy-choices
 - https://pinchofyum.com/recipes/quick-and-easy
@@ -324,6 +260,7 @@
 - https://smittenkitchen.com/2008/06/breakfast-apricot-crisp/
 - https://smittenkitchen.com/2008/07/blueberry-pancakes-pancake-101/
 - https://smittenkitchen.com/2008/07/chocolate-sorbet/
+- https://smittenkitchen.com/2008/07/huevos-rancheros/
 - https://smittenkitchen.com/2008/07/nectarine-mascarpone-and-gingersnap-tart/
 - https://smittenkitchen.com/2008/07/project-wedding-cake-ta-da/
 - https://smittenkitchen.com/2008/08/bourbon-peach-hand-pies/
@@ -818,12 +755,6 @@
 - https://tasty.co/compilation/if-famous-five-characters-were-a-recipe
 - https://www.101cookbooks.com/13-inspiring-instagrammers-to-follow-for-healthy-feelgood-food-recipe/
 - https://www.101cookbooks.com/okonomiyaki-recipe/
-- https://www.asweetpeachef.com/chai-tea-latte-recipe/
-- https://www.asweetpeachef.com/healthy-beef-and-broccoli-recipe/
-- https://www.asweetpeachef.com/healthy-vanilla-latte-recipe/
-- https://www.asweetpeachef.com/homemade-chili-cheese-dog-recipe/
-- https://www.asweetpeachef.com/horchata-recipe/
-- https://www.asweetpeachef.com/pumpkin-spice-latte-recipe/
 - https://www.averiecooks.com/raw-vegan-donut-holes-5-minute-recipe/
 - https://www.averiecooks.com/trainer-session-progress-recipe/
 - https://www.bbcgoodfood.com/us/prime-rib-recipe
@@ -889,7 +820,6 @@
 - https://www.marthastewart.com/8384694/compost-tea-recipe
 - https://www.momontimeout.com/black-widow-spider-bites-recipe/
 - https://www.momontimeout.com/fresh-cherry-fritters-recipe/
-- https://www.momontimeout.com/perfect-pasta-salad-recipe/
 - https://www.momontimeout.com/popcorn-balls-recipe/
 - https://www.momontimeout.com/watermelon-mojitos-recipe/
 - https://www.mybakingaddiction.com/apple-cinnamon-cheesecake-recipe/
@@ -933,3 +863,7 @@
 - https://www.sprinklebakes.com/2021/01/fancy-chocolate-covered-strawberries.html
 - https://www.twopeasandtheirpod.com/coconut-lime-cake-recipe/
 - https://www.twopeasandtheirpod.com/mixed-berry-cobbler-recipe/
+
+### Missing required field: recipeInstructions (empty) (1 URLs)
+
+- https://www.momontimeout.com/perfect-pasta-salad-recipe/

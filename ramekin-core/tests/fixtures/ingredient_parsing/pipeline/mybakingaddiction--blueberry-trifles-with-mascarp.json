@@ -1,0 +1,111 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "blueberry-trifles-with-mascarp",
+  "ingredients": [
+    {
+      "raw": "1/4 cup sugar, or to taste",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": "or to taste",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "zest of one medium lemon",
+      "expected": {
+        "item": "zest of one medium lemon",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "8 ounces Mascarpone cheese",
+      "expected": {
+        "item": "Mascarpone cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "3/4 cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "178",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tsp pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "4 slices of pound cake, each cut into 8 small cubes",
+      "expected": {
+        "item": "pound cake, each cut into 8 small cubes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 cup Homemade Blueberry Sauce or Canned Blueberry Pie Filling",
+      "expected": {
+        "item": "Homemade Blueberry Sauce or Canned Blueberry Pie Filling",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

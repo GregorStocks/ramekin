@@ -1,0 +1,42 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2008-08-slow-roasted-tomatoes",
+  "ingredients": [
+    {
+      "raw": "Cherry, grape or small Roma tomatoes",
+      "expected": {
+        "item": "Cherry, grape or small Roma tomatoes",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Whole cloves of garlic, unpeeled",
+      "expected": {
+        "item": "Whole cloves of garlic",
+        "measurements": [],
+        "note": "unpeeled",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Olive oil",
+      "expected": {
+        "item": "Olive oil",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Herbs such as thyme or rosemary (optional)",
+      "expected": {
+        "item": "Herbs such as thyme or rosemary",
+        "measurements": [],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

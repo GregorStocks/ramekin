@@ -1,0 +1,158 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "curried-chicken-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "1/4 cup light mayonnaise",
+      "expected": {
+        "item": "light mayonnaise",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1/2 tsp. curry powder",
+      "expected": {
+        "item": "curry powder",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 cups chopped cooked chicken",
+      "expected": {
+        "item": "chopped cooked chicken",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1/2 cup grapes, sliced in half",
+      "expected": {
+        "item": "grapes",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "sliced in half",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup finely chopped red bell pepper",
+      "expected": {
+        "item": "finely chopped red bell pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 stalk celery, finely chopped",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stalk"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped cilantro",
+      "expected": {
+        "item": "chopped cilantro",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "salt and pepper to taste",
+      "expected": {
+        "item": "salt and pepper to taste",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "lettuce",
+      "expected": {
+        "item": "lettuce",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 slices Sargento® Reduced Fat Colby-Jack Cheese",
+      "expected": {
+        "item": "Sargento® Reduced Fat Colby-Jack Cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "slice"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2 (7 to 8-inch) flavored wraps or flour tortillas",
+      "expected": {
+        "item": "flavored wraps or flour tortillas",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "7",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    }
+  ]
+}

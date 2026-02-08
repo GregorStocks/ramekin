@@ -102,6 +102,8 @@ pub struct EnrichGeneratePhotoOutput {
 pub enum ExtractionMethod {
     JsonLd,
     Microdata,
+    /// Structured data supplemented with HTML class-based fallbacks
+    HtmlFallback,
     /// Imported from Paprika app
     Paprika,
 }

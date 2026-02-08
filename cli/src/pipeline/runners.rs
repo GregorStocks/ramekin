@@ -246,6 +246,7 @@ fn extract_stats_from_output(output: &serde_json::Value) -> Option<ExtractionSta
     let method = match method_used {
         "json_ld" => ramekin_core::ExtractionMethod::JsonLd,
         "microdata" => ramekin_core::ExtractionMethod::Microdata,
+        "html_fallback" => ramekin_core::ExtractionMethod::HtmlFallback,
         _ => return None,
     };
 

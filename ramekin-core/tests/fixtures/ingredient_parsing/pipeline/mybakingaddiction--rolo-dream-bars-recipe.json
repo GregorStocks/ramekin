@@ -1,0 +1,198 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "rolo-dream-bars-recipe",
+  "ingredients": [
+    {
+      "raw": "For the Shortbread Base",
+      "expected": {
+        "item": "For the Shortbread Base",
+        "measurements": [],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "1 cup butter (2 sticks), room temperature",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "stick"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3/4 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 cups unbleached all-purpose flour (I used King Arthur)",
+      "expected": {
+        "item": "unbleached all-purpose flour (I used King Arthur)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "For the Dream Bar Topping",
+      "expected": {
+        "item": "For the Dream Bar Topping",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 cups dark brown sugar",
+      "expected": {
+        "item": "dark brown sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "440",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon unbleached all-purpose flour (I used King Arthur)",
+      "expected": {
+        "item": "unbleached all-purpose flour (I used King Arthur)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 large eggs, well-beaten",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "well-beaten",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup shredded sweetened coconut, toasted (toasting is optional)",
+      "expected": {
+        "item": "shredded sweetened coconut, toasted",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "toasting is optional",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup diced nuts: walnuts, pecans, hazelnuts, sunflower seeds or crisp rice cereal",
+      "expected": {
+        "item": "diced nuts: walnuts, pecans, hazelnuts, sunflower seeds or crisp rice cereal",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "26 Rolos, frozen and unwrapped",
+      "expected": {
+        "item": "Rolos",
+        "measurements": [
+          {
+            "amount": "26",
+            "unit": null
+          }
+        ],
+        "note": "frozen and unwrapped",
+        "category": "Other"
+      }
+    }
+  ]
+}
