@@ -1,0 +1,10 @@
+{
+  "title": "Add density entries for top 10 missing ingredients",
+  "description": "After salt/pepper (which are intentionally ambiguous), the density gap report shows these as the most common missing ingredients with volume measurements:\n\n1. soy sauce (202)\n2. ground cumin (171)\n3. dried oregano (152)\n4. pure vanilla extract (151)\n5. Worcestershire sauce (123)\n6. fresh lemon juice (121)\n7. tomato paste (106)\n8. sesame oil (81)\n9. vanilla (79)\n10. rice vinegar (75)\n\nAdd curated.json aliases mapping these to existing USDA entries, or add new ingredient entries with sourced grams_per_cup values from USDA FoodData Central.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": ["ingredient-density"],
+  "created_at": "2026-02-08T20:40:00.000000+00:00",
+  "updated_at": "2026-02-08T20:40:00.000000+00:00"
+}
