@@ -177,13 +177,19 @@ impl AiClient for CachingAiClient {
             "Calling AI API"
         );
 
-        // Make the API call
-        let response = self
-            .client
-            .chat()
-            .create(openai_request)
-            .await
-            .map_err(|e| AiError::Api(e.to_string()))?;
+        // Make the API call with a hard timeout to avoid hanging the pipeline.
+        let response = tokio::time::timeout(
+            Duration::from_secs(self.config.request_timeout_secs),
+            self.client.chat().create(openai_request),
+        )
+        .await
+        .map_err(|_| {
+            AiError::Api(format!(
+                "Request timed out after {}s",
+                self.config.request_timeout_secs
+            ))
+        })?
+        .map_err(|e| AiError::Api(e.to_string()))?;
 
         // Extract the response content
         let content = response
