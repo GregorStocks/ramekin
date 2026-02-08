@@ -18,7 +18,8 @@
 export const ImportExtractionMethod = {
     JsonLd: 'json_ld',
     Microdata: 'microdata',
-    Paprika: 'paprika'
+    Paprika: 'paprika',
+    PhotoUpload: 'photo_upload'
 };
 export function instanceOfImportExtractionMethod(value) {
     for (const key in ImportExtractionMethod) {

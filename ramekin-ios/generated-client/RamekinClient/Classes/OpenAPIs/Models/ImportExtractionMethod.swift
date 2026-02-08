@@ -15,4 +15,5 @@ public enum ImportExtractionMethod: String, Codable, CaseIterable {
     case jsonLd = "json_ld"
     case microdata = "microdata"
     case paprika = "paprika"
+    case photoUpload = "photo_upload"
 }

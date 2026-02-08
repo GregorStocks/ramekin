@@ -29,6 +29,7 @@ class ImportExtractionMethod(str, Enum):
     JSON_LD = 'json_ld'
     MICRODATA = 'microdata'
     PAPRIKA = 'paprika'
+    PHOTO_UPLOAD = 'photo_upload'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
