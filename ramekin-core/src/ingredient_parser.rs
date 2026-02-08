@@ -2075,6 +2075,83 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
     None
 }
 
+/// Split a compound item string into individual items.
+///
+/// Splitting rules:
+/// 1. Replace ", and " with ", " (normalize Oxford comma)
+/// 2. Split on ", "
+/// 3. Further split each part on " and "
+/// 4. Trim each result, drop empties
+fn split_compound_items(item: &str) -> Vec<String> {
+    // Normalize Oxford commas
+    let normalized = item.replace(", and ", ", ");
+
+    let mut result = Vec::new();
+    for part in normalized.split(", ") {
+        for sub in part.split(" and ") {
+            let trimmed = sub.trim();
+            if !trimmed.is_empty() {
+                result.push(trimmed.to_string());
+            }
+        }
+    }
+
+    result
+}
+
+/// Expand a parsed ingredient with "each" modifier into multiple ingredients.
+///
+/// When the first measurement's unit ends with " each" and the item contains
+/// comma/and-separated items, split into one ParsedIngredient per sub-item,
+/// each with the same measurements but " each" stripped from units.
+///
+/// Only checks the first measurement to avoid false positives on parenthetical
+/// per-unit weights like "4 chicken breasts (8 oz each)".
+///
+/// Returns a vec with a single element (the original) if no expansion is needed.
+pub fn expand_each_ingredients(ingredient: ParsedIngredient) -> Vec<ParsedIngredient> {
+    // Check: does the FIRST measurement have a unit ending in " each"?
+    let first_has_each = ingredient
+        .measurements
+        .first()
+        .and_then(|m| m.unit.as_ref())
+        .is_some_and(|u| u.ends_with(" each"));
+    if !first_has_each {
+        return vec![ingredient];
+    }
+
+    // Split the item on delimiters
+    let sub_items = split_compound_items(&ingredient.item);
+    if sub_items.len() <= 1 {
+        return vec![ingredient];
+    }
+
+    // Build stripped measurements (remove " each" suffix from all units)
+    let stripped_measurements: Vec<Measurement> = ingredient
+        .measurements
+        .iter()
+        .map(|m| Measurement {
+            amount: m.amount.clone(),
+            unit: m
+                .unit
+                .as_ref()
+                .map(|u| u.strip_suffix(" each").unwrap_or(u).to_string()),
+        })
+        .collect();
+
+    // Create one ParsedIngredient per sub-item
+    sub_items
+        .into_iter()
+        .map(|sub_item| ParsedIngredient {
+            item: sub_item,
+            measurements: stripped_measurements.clone(),
+            note: ingredient.note.clone(),
+            raw: ingredient.raw.clone(),
+            section: ingredient.section.clone(),
+        })
+        .collect()
+}
+
 /// Parse multiple ingredient lines (separated by newlines).
 /// Detects section headers (lines ending with colon, no measurements) and
 /// applies the section name to subsequent ingredients.
@@ -2108,7 +2185,8 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
         // Parse the ingredient and apply current section
         let mut ingredient = parse_ingredient(trimmed);
         ingredient.section = current_section.clone();
-        results.push(ingredient);
+        // Expand "each" compound ingredients (e.g., "1/2 tsp each salt and pepper" -> 2 ingredients)
+        results.extend(expand_each_ingredients(ingredient));
     }
 
     results
@@ -2451,5 +2529,131 @@ mod tests {
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("2".to_string()));
         assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+    }
+
+    #[test]
+    fn test_split_compound_items() {
+        assert_eq!(
+            split_compound_items("salt and pepper"),
+            vec!["salt", "pepper"]
+        );
+        assert_eq!(
+            split_compound_items("dried oregano and cumin"),
+            vec!["dried oregano", "cumin"]
+        );
+        assert_eq!(
+            split_compound_items("ground cinnamon, ginger, cloves, and cardamom"),
+            vec!["ground cinnamon", "ginger", "cloves", "cardamom"]
+        );
+        assert_eq!(
+            split_compound_items("chili powder, onion powder, and garlic powder"),
+            vec!["chili powder", "onion powder", "garlic powder"]
+        );
+        assert_eq!(
+            split_compound_items("garlic and onion powder"),
+            vec!["garlic", "onion powder"]
+        );
+        // Single item - no split
+        assert_eq!(
+            split_compound_items("pork tenderloins"),
+            vec!["pork tenderloins"]
+        );
+    }
+
+    #[test]
+    fn test_expand_each_ingredients_basic() {
+        let ingredient = ParsedIngredient {
+            item: "salt and pepper".to_string(),
+            measurements: vec![Measurement {
+                amount: Some("0.5".to_string()),
+                unit: Some("tsp each".to_string()),
+            }],
+            note: None,
+            raw: Some("1/2 tsp each salt and pepper".to_string()),
+            section: None,
+        };
+        let expanded = expand_each_ingredients(ingredient);
+        assert_eq!(expanded.len(), 2);
+        assert_eq!(expanded[0].item, "salt");
+        assert_eq!(expanded[0].measurements[0].unit, Some("tsp".to_string()));
+        assert_eq!(expanded[1].item, "pepper");
+        assert_eq!(expanded[1].measurements[0].unit, Some("tsp".to_string()));
+    }
+
+    #[test]
+    fn test_expand_each_no_split_parenthetical() {
+        // "lb each" in measurement[1] with no compound item - should NOT split
+        let ingredient = ParsedIngredient {
+            item: "pork tenderloins".to_string(),
+            measurements: vec![
+                Measurement {
+                    amount: Some("2".to_string()),
+                    unit: None,
+                },
+                Measurement {
+                    amount: Some("1".to_string()),
+                    unit: Some("lb each".to_string()),
+                },
+            ],
+            note: None,
+            raw: Some("2 (1 lb each) pork tenderloins".to_string()),
+            section: None,
+        };
+        let expanded = expand_each_ingredients(ingredient);
+        assert_eq!(expanded.len(), 1);
+        assert_eq!(expanded[0].item, "pork tenderloins");
+    }
+
+    #[test]
+    fn test_expand_each_no_each_unit() {
+        // No "each" in any unit - should NOT split even with "and" in item
+        let ingredient = ParsedIngredient {
+            item: "salt and pepper".to_string(),
+            measurements: vec![Measurement {
+                amount: Some("1".to_string()),
+                unit: Some("tsp".to_string()),
+            }],
+            note: None,
+            raw: Some("1 tsp salt and pepper".to_string()),
+            section: None,
+        };
+        let expanded = expand_each_ingredients(ingredient);
+        assert_eq!(expanded.len(), 1);
+    }
+
+    #[test]
+    fn test_expand_each_four_items() {
+        let ingredient = ParsedIngredient {
+            item: "ground cinnamon, ginger, cloves, and cardamom".to_string(),
+            measurements: vec![Measurement {
+                amount: Some("0.5".to_string()),
+                unit: Some("tsp each".to_string()),
+            }],
+            note: None,
+            raw: Some(
+                "1/2 teaspoon each ground cinnamon, ginger, cloves, and cardamom".to_string(),
+            ),
+            section: None,
+        };
+        let expanded = expand_each_ingredients(ingredient);
+        assert_eq!(expanded.len(), 4);
+        assert_eq!(expanded[0].item, "ground cinnamon");
+        assert_eq!(expanded[1].item, "ginger");
+        assert_eq!(expanded[2].item, "cloves");
+        assert_eq!(expanded[3].item, "cardamom");
+        for ing in &expanded {
+            assert_eq!(ing.measurements[0].unit, Some("tsp".to_string()));
+        }
+    }
+
+    #[test]
+    fn test_parse_ingredients_expands_each() {
+        let blob = "1/2 tsp each salt and pepper";
+        let result = parse_ingredients(blob);
+        assert_eq!(result.len(), 2);
+        assert_eq!(result[0].item, "salt");
+        assert_eq!(result[0].measurements[0].unit, Some("tsp".to_string()));
+        assert_eq!(result[1].item, "pepper");
+        assert_eq!(result[1].measurements[0].unit, Some("tsp".to_string()));
     }
 }

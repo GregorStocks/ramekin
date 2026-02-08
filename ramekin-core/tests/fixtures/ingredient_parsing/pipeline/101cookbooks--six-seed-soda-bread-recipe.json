@@ -5,16 +5,61 @@
     {
       "raw": "2 1/2 tablespoons EACH sunflower seeds, pumpkin seeds, sesame seeds, poppy seeds, flax seeds",
       "expected": {
-        "item": "sunflower seeds, pumpkin seeds, sesame seeds, poppy seeds, flax seeds",
+        "item": "sunflower seeds",
         "measurements": [
           {
             "amount": "2.5",
-            "unit": "tbsp each"
+            "unit": "tbsp"
           }
         ],
         "note": null,
         "category": "Nuts & Dried Fruit"
       }
+    },
+    {
+      "raw": "2 1/2 tablespoons EACH sunflower seeds, pumpkin seeds, sesame seeds, poppy seeds, flax seeds",
+      "expected": {
+        "item": "pumpkin seeds",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "2 1/2 tablespoons EACH sunflower seeds, pumpkin seeds, sesame seeds, poppy seeds, flax seeds",
+      "expected": {
+        "item": "sesame seeds, poppy seeds",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "2 1/2 tablespoons EACH sunflower seeds, pumpkin seeds, sesame seeds, poppy seeds, flax seeds",
+      "expected": {
+        "item": "flax seeds",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      },
+      "expanded": true
     },
     {
       "raw": "1 teaspoon fennel seeds",

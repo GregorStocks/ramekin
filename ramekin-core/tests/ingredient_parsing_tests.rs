@@ -68,6 +68,9 @@ struct IngredientTestCase {
     #[serde(default)]
     #[allow(dead_code)] // Used by serde for deserialization filtering
     is_section_header: bool,
+    /// True if this entry is a continuation of an "each" expansion from the previous entry's raw line.
+    #[serde(default)]
+    expanded: bool,
 }
 
 /// Curated test file (category-based)
@@ -201,8 +204,13 @@ fn load_recipe_batch_tests() -> Vec<RecipeBatchTest> {
                 .unwrap_or_else(|e| panic!("Failed to parse {}: {}", path.display(), e));
 
             let name = format!("{}/{}--{}", subdir, file.source, file.recipe_slug);
-            // Collect all raw lines (including section headers) for batch processing
-            let raw_lines: Vec<String> = file.ingredients.iter().map(|i| i.raw.clone()).collect();
+            // Collect raw lines, skipping expanded entries (continuations of "each" expansion)
+            let raw_lines: Vec<String> = file
+                .ingredients
+                .iter()
+                .filter(|i| !i.expanded)
+                .map(|i| i.raw.clone())
+                .collect();
             // Collect only non-section-header expected values (section headers have expected: None)
             let expected: Vec<Expected> = file
                 .ingredients

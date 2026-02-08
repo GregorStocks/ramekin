@@ -113,16 +113,73 @@
     {
       "raw": "½ teaspoon each ground cinnamon, ginger, cloves, and cardamom",
       "expected": {
-        "item": "ground cinnamon, ginger, cloves, and cardamom",
+        "item": "ground cinnamon",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": "tsp each"
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.3",
+            "unit": "g"
           }
         ],
         "note": null,
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "½ teaspoon each ground cinnamon, ginger, cloves, and cardamom",
+      "expected": {
+        "item": "ginger",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.9",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "½ teaspoon each ground cinnamon, ginger, cloves, and cardamom",
+      "expected": {
+        "item": "cloves",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "½ teaspoon each ground cinnamon, ginger, cloves, and cardamom",
+      "expected": {
+        "item": "cardamom",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
     },
     {
       "raw": "½ teaspoon kosher salt",

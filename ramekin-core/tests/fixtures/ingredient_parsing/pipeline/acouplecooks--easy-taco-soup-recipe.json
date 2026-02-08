@@ -175,11 +175,11 @@
     {
       "raw": "1 tablespoon&nbsp;each&nbsp;dried oregano and cumin",
       "expected": {
-        "item": "dried oregano and cumin",
+        "item": "dried oregano",
         "measurements": [
           {
             "amount": "1",
-            "unit": "tbsp each"
+            "unit": "tbsp"
           }
         ],
         "note": null,
@@ -187,18 +187,56 @@
       }
     },
     {
-      "raw": "1 teaspoon&nbsp;each&nbsp;garlic and onion powder",
+      "raw": "1 tablespoon&nbsp;each&nbsp;dried oregano and cumin",
       "expected": {
-        "item": "garlic and onion powder",
+        "item": "cumin",
         "measurements": [
           {
             "amount": "1",
-            "unit": "tsp each"
+            "unit": "tbsp"
           }
         ],
         "note": null,
         "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "1 teaspoon&nbsp;each&nbsp;garlic and onion powder",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
       }
+    },
+    {
+      "raw": "1 teaspoon&nbsp;each&nbsp;garlic and onion powder",
+      "expected": {
+        "item": "onion powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
     },
     {
       "raw": "1 to 1 1/2 teaspoons kosher salt, plus more for sprinkling",

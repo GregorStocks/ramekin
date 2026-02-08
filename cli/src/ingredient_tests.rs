@@ -42,6 +42,10 @@ struct IngredientTestCase {
     /// True if this raw line is a section header (not an ingredient).
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     is_section_header: bool,
+    /// True if this entry is a continuation of an "each" expansion from the previous entry's raw line.
+    /// When building the ingredient blob for batch processing, expanded entries should be skipped.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    expanded: bool,
 }
 
 /// Expected output from parsing
@@ -175,6 +179,7 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
                 raw,
                 expected: Some(expected),
                 is_section_header: false,
+                expanded: false,
             });
         }
 
@@ -245,9 +250,13 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
                 // Recipe format (pipeline/paprika) - process as batch for section detection
                 let recipe: RecipeTestFile = serde_json::from_value(json)?;
 
-                // Collect all raw lines and run batch processing
-                let raw_lines: Vec<String> =
-                    recipe.ingredients.iter().map(|i| i.raw.clone()).collect();
+                // Collect raw lines, skipping expanded entries (continuations of "each" expansion)
+                let raw_lines: Vec<String> = recipe
+                    .ingredients
+                    .iter()
+                    .filter(|i| !i.expanded)
+                    .map(|i| i.raw.clone())
+                    .collect();
                 let batch_results = run_pipeline_batch(&raw_lines);
 
                 // Build new ingredients list, preserving section headers as markers
@@ -266,14 +275,26 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
                             raw: raw.clone(),
                             expected: None,
                             is_section_header: true,
+                            expanded: false,
                         });
-                    } else if let Some(result) = batch_iter.next() {
-                        // Regular ingredient - use the batch result
-                        new_ingredients.push(IngredientTestCase {
-                            raw: result.raw,
-                            expected: Some(result.expected),
-                            is_section_header: false,
-                        });
+                    } else {
+                        // Regular ingredient - consume all batch results matching this raw line
+                        // (one line may expand into multiple results, e.g., "1/2 tsp each salt and pepper")
+                        let mut is_first = true;
+                        while let Some(result) = batch_iter.peek() {
+                            if result.raw == *raw {
+                                let result = batch_iter.next().unwrap();
+                                new_ingredients.push(IngredientTestCase {
+                                    raw: result.raw,
+                                    expected: Some(result.expected),
+                                    is_section_header: false,
+                                    expanded: !is_first,
+                                });
+                                is_first = false;
+                            } else {
+                                break;
+                            }
+                        }
                     }
                 }
 
@@ -493,6 +514,7 @@ pub fn generate_from_paprika(paprika_file: &Path, fixtures_dir: Option<&Path>) -
                 raw,
                 expected: Some(expected),
                 is_section_header: false,
+                expanded: false,
             });
         }
 
