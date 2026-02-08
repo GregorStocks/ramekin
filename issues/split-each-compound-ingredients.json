@@ -1,0 +1,10 @@
+{
+  "title": "Split 'each' compound ingredients into separate lines",
+  "description": "Lines like '1/2 tsp each salt and pepper' currently parse as a single ingredient with unit 'tsp each' and item 'salt and pepper'. The correct interpretation is two separate ingredients: '1/2 tsp salt' and '1/2 tsp pepper'. This would require the parser (or a post-processing step) to detect the 'each' qualifier on the unit and split the compound item list (separated by 'and', commas, or both) into individual ingredients, duplicating the measurement for each.\n\nAffects ~11 ingredients across the pipeline corpus. Examples:\n- '1/2 tsp each salt and pepper' -> '1/2 tsp salt' + '1/2 tsp pepper'\n- '1 tablespoon each dried oregano and cumin' -> '1 tbsp dried oregano' + '1 tbsp cumin'\n- '1/2 teaspoon each ground cinnamon, ginger, cloves, and cardamom' -> 4 separate ingredients\n\nSee doc/ingredient-parsing.md for workflow and file locations.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": ["ingredient-parser"],
+  "created_at": "2026-02-08T06:45:00.000000+00:00",
+  "updated_at": "2026-02-08T06:45:00.000000+00:00"
+}

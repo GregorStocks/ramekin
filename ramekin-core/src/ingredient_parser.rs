@@ -833,13 +833,18 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
 
     remaining = after_unit;
 
-    // Step 4.1: Strip leading "each" from remaining text
-    // Handles "1/2 tsp each salt and pepper" -> item becomes "salt and pepper"
+    // Step 4.1: Move leading "each" from remaining text onto the unit
+    // Handles "1/2 tsp each salt and pepper" -> unit becomes "tsp each", item becomes "salt and pepper"
     // "each" here means "this measurement applies to each of the following items"
+    // This is consistent with how parenthetical "each" is handled (e.g., "(8 oz each)" -> unit: "oz each")
     {
         let remaining_trimmed = remaining.trim_start();
         if remaining_trimmed.to_lowercase().starts_with("each ") {
             remaining = remaining_trimmed.get(5..).unwrap_or("").to_string();
+            base_unit = Some(match base_unit {
+                Some(u) => format!("{} each", u),
+                None => "each".to_string(),
+            });
         }
     }
 
