@@ -60,13 +60,8 @@ jobs:
       - name: Install Playwright browsers
         run: |
           START=$(date +%s)
-          if [ "${{ steps.playwright-cache.outputs.cache-hit }}" != "true" ]; then
-            # Install with system deps on cache miss
-            .venv/bin/playwright install chromium --with-deps
-          else
-            # Just ensure browsers are up to date (skips if already installed)
-            .venv/bin/playwright install chromium
-          fi
+          # Always install with system deps to avoid missing libs on refreshed runners
+          .venv/bin/playwright install chromium --with-deps
           echo "::notice::Playwright browsers installed in $(($(date +%s) - START))s"
 
       - name: Skip unnecessary regeneration
