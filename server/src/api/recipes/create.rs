@@ -138,7 +138,7 @@ pub async fn create_recipe(
                 })
                 .on_conflict((user_tags::user_id, user_tags::name))
                 .do_update()
-                .set(user_tags::name.eq(user_tags::name)) // No-op update to return the id
+                .set(user_tags::deleted_at.eq(None::<chrono::DateTime<chrono::Utc>>)) // Revive soft-deleted tags
                 .returning(user_tags::id)
                 .get_result(conn)?;
 

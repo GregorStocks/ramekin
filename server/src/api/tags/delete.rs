@@ -9,6 +9,7 @@ use axum::{
     response::IntoResponse,
     Json,
 };
+use chrono::Utc;
 use diesel::prelude::*;
 use std::sync::Arc;
 use uuid::Uuid;
@@ -36,15 +37,17 @@ pub async fn delete_tag(
 ) -> impl IntoResponse {
     let mut conn = get_conn!(pool);
 
-    // Delete the tag (CASCADE will remove from recipe_version_tags)
-    let deleted = diesel::delete(
+    // Soft delete - set deleted_at timestamp
+    let updated = diesel::update(
         user_tags::table
             .filter(user_tags::id.eq(id))
-            .filter(user_tags::user_id.eq(user.id)),
+            .filter(user_tags::user_id.eq(user.id))
+            .filter(user_tags::deleted_at.is_null()),
     )
+    .set(user_tags::deleted_at.eq(Some(Utc::now())))
     .execute(&mut conn);
 
-    match deleted {
+    match updated {
         Ok(0) => (
             StatusCode::NOT_FOUND,
             Json(ErrorResponse {

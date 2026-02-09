@@ -517,3 +517,81 @@ def test_rename_tag_cross_user_isolation(authed_api_client, second_authed_api_cl
     # Verify the tag is unchanged for user 1
     response = tags_api1.list_all_tags()
     assert any(t.name == "user1-tag" for t in response.tags)
+
+
+def test_recreate_deleted_tag(authed_api_client):
+    """Test that creating a tag with the same name as a deleted tag revives it."""
+    client, user_id = authed_api_client
+    tags_api = TagsApi(client)
+
+    # Create and delete a tag
+    create_response = tags_api.create_tag(CreateTagRequest(name="revivable"))
+    original_id = create_response.id
+    tags_api.delete_tag(original_id)
+
+    # Verify it's gone from the list
+    response = tags_api.list_all_tags()
+    assert not any(t.name == "revivable" for t in response.tags)
+
+    # Re-create the tag with the same name
+    recreate_response = tags_api.create_tag(CreateTagRequest(name="revivable"))
+    assert recreate_response.name == "revivable"
+
+    # Verify it's back in the list
+    response = tags_api.list_all_tags()
+    assert any(t.name == "revivable" for t in response.tags)
+
+
+def test_delete_tag_hides_from_recipes(authed_api_client):
+    """Test that soft-deleting a tag hides it from recipe tag lists."""
+    client, user_id = authed_api_client
+    tags_api = TagsApi(client)
+    recipes_api = RecipesApi(client)
+
+    # Create a recipe with a tag
+    recipe = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Recipe with soft-deleted tag",
+            instructions="Cook it",
+            ingredients=[make_ingredient(item="food")],
+            tags=["soft-delete-test"],
+        )
+    )
+
+    # Verify the recipe has the tag
+    recipe_response = recipes_api.get_recipe(recipe.id)
+    assert "soft-delete-test" in recipe_response.tags
+
+    # Delete the tag
+    tags_response = tags_api.list_all_tags()
+    tag = next(t for t in tags_response.tags if t.name == "soft-delete-test")
+    tags_api.delete_tag(tag.id)
+
+    # Verify the recipe no longer shows the tag
+    recipe_response = recipes_api.get_recipe(recipe.id)
+    assert "soft-delete-test" not in recipe_response.tags
+
+
+def test_recipe_auto_revives_deleted_tag(authed_api_client):
+    """Test that creating a recipe with a deleted tag name revives the tag."""
+    client, user_id = authed_api_client
+    tags_api = TagsApi(client)
+    recipes_api = RecipesApi(client)
+
+    # Create and delete a tag
+    create_response = tags_api.create_tag(CreateTagRequest(name="auto-revive"))
+    tags_api.delete_tag(create_response.id)
+
+    # Create a recipe using that tag name
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Recipe that revives tag",
+            instructions="Cook it",
+            ingredients=[make_ingredient(item="food")],
+            tags=["auto-revive"],
+        )
+    )
+
+    # Verify the tag is back in the user's tag list
+    response = tags_api.list_all_tags()
+    assert any(t.name == "auto-revive" for t in response.tags)

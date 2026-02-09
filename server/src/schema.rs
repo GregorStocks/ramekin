@@ -140,6 +140,7 @@ diesel::table! {
         user_id -> Uuid,
         name -> Citext,
         created_at -> Timestamptz,
+        deleted_at -> Nullable<Timestamptz>,
     }
 }
 

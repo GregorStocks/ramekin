@@ -87,6 +87,7 @@ async fn try_enrich_tags(
     let mut conn = pool.get().map_err(|e| e.to_string())?;
     let user_tags: Vec<String> = user_tags::table
         .filter(user_tags::user_id.eq(user_id))
+        .filter(user_tags::deleted_at.is_null())
         .select(user_tags::name)
         .order(user_tags::name.asc())
         .load(&mut conn)
