@@ -49,6 +49,9 @@ pub enum ScrapeError {
 
     #[error("Max retries exceeded")]
     MaxRetriesExceeded,
+
+    #[error("AI configuration error: {0}")]
+    AiConfig(#[from] ramekin_core::ai::AiError),
 }
 
 /// Job statuses
@@ -117,7 +120,7 @@ pub fn build_registry(
     pool: Arc<DbPool>,
     user_id: Uuid,
     existing_recipe_id: Option<Uuid>,
-) -> StepRegistry {
+) -> Result<StepRegistry, ScrapeError> {
     let mut registry = StepRegistry::new();
     registry.register(Box::new(FetchHtmlStep));
     registry.register(Box::new(ExtractRecipeStep));
@@ -134,8 +137,7 @@ pub fn build_registry(
     registry.register(Box::new(EnrichNormalizeIngredientsStep));
 
     // Create AI client and fetch user tags for auto-tagging
-    let ai_client: Arc<dyn AiClient> =
-        Arc::new(CachingAiClient::from_env().expect("OPENROUTER_API_KEY must be set"));
+    let ai_client: Arc<dyn AiClient> = Arc::new(CachingAiClient::from_env()?);
     let user_tags = fetch_user_tags(&pool, user_id).unwrap_or_else(|e| {
         tracing::warn!("Failed to fetch user tags: {}", e);
         vec![]
@@ -144,7 +146,7 @@ pub fn build_registry(
     registry.register(Box::new(EnrichAutoTagStep::new(ai_client, user_tags)));
     registry.register(Box::new(ApplyAutoTagsStep::new(pool.clone())));
     registry.register(Box::new(EnrichGeneratePhotoStep));
-    registry
+    Ok(registry)
 }
 
 /// Create a new scrape job.
@@ -688,7 +690,7 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
 
     // Build the step registry and output store
     // If job.recipe_id is already set, this is a rescrape - pass it to build_registry
-    let registry = build_registry(pool.clone(), job.user_id, job.recipe_id);
+    let registry = build_registry(pool.clone(), job.user_id, job.recipe_id)?;
     let mut store = DbOutputStore::new(&pool, job_id);
 
     // URL for context (empty string for imports without a URL)
