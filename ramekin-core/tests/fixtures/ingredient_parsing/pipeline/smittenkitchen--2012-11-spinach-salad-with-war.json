@@ -1,0 +1,143 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2012-11-spinach-salad-with-war",
+  "ingredients": [
+    {
+      "raw": "4 ounces baby spinach",
+      "expected": {
+        "item": "baby spinach",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 large white mushrooms, thinly sliced",
+      "expected": {
+        "item": "white mushrooms",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 small or medium red onion, very thinly sliced",
+      "expected": {
+        "item": "or medium red onion",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "small"
+          }
+        ],
+        "note": "very thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large egg, hard-boiled (see above), chilled, peeled and thinly sliced",
+      "expected": {
+        "item": "egg, hard-boiled (see above), chilled",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "peeled and thinly sliced",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 pieces thick-sliced bacon (about 4 ounces), finely diced",
+      "expected": {
+        "item": "thick-sliced bacon",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "piece"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "finely diced",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "2 tablespoons red wine vinegar",
+      "expected": {
+        "item": "red wine vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon honey or sugar",
+      "expected": {
+        "item": "honey or sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon smooth Dijon mustard",
+      "expected": {
+        "item": "smooth Dijon mustard",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "Coarse salt and freshly ground black pepper to taste",
+      "expected": {
+        "item": "Coarse salt and freshly ground black pepper to taste",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

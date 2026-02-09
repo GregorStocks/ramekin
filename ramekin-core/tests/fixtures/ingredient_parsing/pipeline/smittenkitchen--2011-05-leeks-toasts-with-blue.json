@@ -1,0 +1,127 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-05-leeks-toasts-with-blue",
+  "ingredients": [
+    {
+      "raw": "1 1/2 pounds leeks (about 3 big leeks), lengthwise and white and pale green parts sliced 1/4-inch thick (about 3 generous cups of slices)",
+      "expected": {
+        "item": "leeks",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "3",
+            "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": null
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "lengthwise and white and pale green parts sliced 1/4-inch thick",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil, plus extra for brushing toasts",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "plus extra for brushing toasts",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Coarse salt",
+      "expected": {
+        "item": "Coarse salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "6 medium-sized or 12 baguette-sized 1/2-inch slices of bread of your choice (I used a light sourdough)",
+      "expected": {
+        "item": "medium-sized or 12 baguette-sized 1/2-inch slices of bread of your choice (I used a light sourdough)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "2 ounces blue cheese, crumbled (a soft or crumbly goat cheese would also work)",
+      "expected": {
+        "item": "blue cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "crumbled (a soft or crumbly goat cheese would also work)",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "Few drops of lemon juice (optional)",
+      "expected": {
+        "item": "Few drops of lemon juice",
+        "measurements": [],
+        "note": "optional",
+        "category": "Beverages"
+      }
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2012-01-carrot-soup-with-miso-",
+  "ingredients": [
+    {
+      "raw": "Soup",
+      "expected": {
+        "item": "Soup",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 pounds carrots, peeled, thinly sliced",
+      "expected": {
+        "item": "carrots, peeled",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large onion, finely chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 regular or 6 small garlic cloves, peeled and smashed",
+      "expected": {
+        "item": "regular or 6 small garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "peeled and smashed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon finely chopped or grated ginger, or more to taste (it could easily be doubled)",
+      "expected": {
+        "item": "finely chopped or grated ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or more to taste (it could easily be doubled)",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "4 cups vegetable broth",
+      "expected": {
+        "item": "vegetable broth",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/4 cup white miso paste, or more to taste",
+      "expected": {
+        "item": "white miso paste",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "or more to taste",
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

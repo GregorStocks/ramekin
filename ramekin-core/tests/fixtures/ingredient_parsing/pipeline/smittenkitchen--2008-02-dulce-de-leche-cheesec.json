@@ -1,0 +1,253 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2008-02-dulce-de-leche-cheesec",
+  "ingredients": [
+    {
+      "raw": "For crust",
+      "expected": {
+        "item": "For crust",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3 1/2 ounces (100 grams or 1 cup) graham crackers, crumbled",
+      "expected": {
+        "item": "graham crackers",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "crumbled",
+        "category": "Snacks"
+      }
+    },
+    {
+      "raw": "2 tablespoons (25 grams) sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 tablespoons (45 grams) unsalted butter, melted",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
+          }
+        ],
+        "note": "melted",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "For filling",
+      "expected": {
+        "item": "For filling",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 teaspoon unflavored gelatin (from a 1/4-ounce or 7-gram envelope, will be just about half an envelope)",
+      "expected": {
+        "item": "unflavored gelatin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "7",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup (60 ml) whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "8 ounces (225 grams) cream cheese, softened",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": "softened",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3/8 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.38",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup dulce de leche (12 1/2-ounce or 355-gram can) (recipe follows)",
+      "expected": {
+        "item": "dulce de leche (recipe follows)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "12",
+            "unit": null
+          },
+          {
+            "amount": "355",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "For glaze",
+      "expected": {
+        "item": "For glaze",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3 ounces (85 grams) fine-quality bittersweet chocolate (not unsweetened), coarsely chopped",
+      "expected": {
+        "item": "fine-quality bittersweet chocolate (not unsweetened)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "coarsely chopped",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 stick (2 ounces or 55 grams) unsalted butter, cut into pieces",
+      "expected": {
+        "item": "unsalted butter, cut into pieces",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "stick"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 teaspoons light corn syrup",
+      "expected": {
+        "item": "light corn syrup",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

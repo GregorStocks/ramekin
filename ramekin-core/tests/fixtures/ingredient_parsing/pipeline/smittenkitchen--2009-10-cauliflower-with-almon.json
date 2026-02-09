@@ -1,0 +1,173 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-10-cauliflower-with-almon",
+  "ingredients": [
+    {
+      "raw": "1 head cauliflower, trimmed of leaves",
+      "expected": {
+        "item": "cauliflower",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": "trimmed of leaves",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons butter or olive oil",
+      "expected": {
+        "item": "butter or olive oil",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "3 tablespoons fresh soft bread crumbs",
+      "expected": {
+        "item": "fresh soft bread crumbs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "1 tablespoon plus 1 teaspoon extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1 tablespoon plus 1 teaspoon",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "3 tablespoons whole almonds",
+      "expected": {
+        "item": "whole almonds",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper",
+      "expected": {
+        "item": "Salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons golden raisins (I had only dark ones on hand, nobody complained)",
+      "expected": {
+        "item": "golden raisins (I had only dark ones on hand, nobody complained)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1 tablespoon white wine vinegar",
+      "expected": {
+        "item": "white wine vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 tablespoon capers, rinsed and drained",
+      "expected": {
+        "item": "capers",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "rinsed and drained",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 teaspoon finely chopped parsley",
+      "expected": {
+        "item": "finely chopped parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon finely chopped tarragon",
+      "expected": {
+        "item": "finely chopped tarragon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon finely sliced chives.",
+      "expected": {
+        "item": "finely sliced chives.",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

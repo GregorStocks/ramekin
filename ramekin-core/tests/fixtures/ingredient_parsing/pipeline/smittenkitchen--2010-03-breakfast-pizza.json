@@ -1,0 +1,164 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-03-breakfast-pizza",
+  "ingredients": [
+    {
+      "raw": "1/2 teaspoon dry active yeast",
+      "expected": {
+        "item": "dry active yeast",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 cups plus 2 tablespoons bread flour, plus more for dusting",
+      "expected": {
+        "item": "bread flour",
+        "measurements": [
+          {
+            "amount": "2 cups plus 2 tablespoons",
+            "unit": null
+          }
+        ],
+        "note": "plus more for dusting",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "6 strips bacon",
+      "expected": {
+        "item": "strips bacon",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1/2 cup grated Parmesan",
+      "expected": {
+        "item": "grated Parmesan",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2 cups grated mozzarella",
+      "expected": {
+        "item": "grated mozzarella",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "6 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons minced flat-leaf parsley",
+      "expected": {
+        "item": "minced flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons minced chives",
+      "expected": {
+        "item": "minced chives",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 scallions, thinly sliced",
+      "expected": {
+        "item": "scallions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 shallot, minced",
+      "expected": {
+        "item": "shallot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    }
+  ]
+}

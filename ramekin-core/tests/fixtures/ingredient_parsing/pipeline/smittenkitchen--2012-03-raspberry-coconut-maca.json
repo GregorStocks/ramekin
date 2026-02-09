@@ -1,0 +1,110 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2012-03-raspberry-coconut-maca",
+  "ingredients": [
+    {
+      "raw": "14 ounces (400 grams) sweetened, flaked coconut",
+      "expected": {
+        "item": "sweetened, flaked coconut",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2/3 cup (130 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          },
+          {
+            "amount": "130",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 large egg whites",
+      "expected": {
+        "item": "egg whites",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Heaped 1/4 teaspoon flaked sea salt or level 1/4 teaspoon table salt",
+      "expected": {
+        "item": "flaked sea salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "heaped tsp"
+          }
+        ],
+        "note": "or level 1/4 teaspoon table salt",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon almond extract",
+      "expected": {
+        "item": "almond extract",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 pint (6 ounces, 170 grams or 1 1/4 cups) fresh raspberries (if washed, patted very dry)",
+      "expected": {
+        "item": "fresh raspberries",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "pint"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          },
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "if washed, patted very dry",
+        "category": "Produce"
+      }
+    }
+  ]
+}

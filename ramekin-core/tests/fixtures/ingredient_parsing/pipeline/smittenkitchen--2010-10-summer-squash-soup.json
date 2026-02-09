@@ -1,0 +1,139 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-10-summer-squash-soup",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 tablespoon butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 medium onion, halved lengthwise and thinly sliced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "halved lengthwise and thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon salt plus more to taste",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 pounds yellow summer squash or zucchini, halved and thinly sliced",
+      "expected": {
+        "item": "yellow summer squash or zucchini",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "halved and thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 carrots, thinly sliced",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 sweet potato, peeled, halved and thinly sliced",
+      "expected": {
+        "item": "sweet potato, peeled",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "halved and thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 cups low-sodium chicken stock",
+      "expected": {
+        "item": "low-sodium chicken stock",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

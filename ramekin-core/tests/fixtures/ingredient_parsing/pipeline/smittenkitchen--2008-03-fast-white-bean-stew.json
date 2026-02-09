@@ -1,0 +1,160 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2008-03-fast-white-bean-stew",
+  "ingredients": [
+    {
+      "raw": "2 large garlic cloves, chopped",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup plus 1/2 tablespoon extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1/4 cup plus 1/2 tablespoon",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 (14- to 15-oz) can stewed tomatoes",
+      "expected": {
+        "item": "stewed tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "14",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 3/4 cups reduced-sodium chicken broth",
+      "expected": {
+        "item": "reduced-sodium chicken broth",
+        "measurements": [
+          {
+            "amount": "1.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 (19-oz) cans cannellini beans, rinsed and drained (3 cups)",
+      "expected": {
+        "item": "cannellini beans",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "19",
+            "unit": null
+          },
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": "rinsed and drained",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 (1/2-lb) piece baked ham (1/2 to 3/4 inch thick), cut into 1/2-inch cubes",
+      "expected": {
+        "item": "baked ham, cut into 1/2-inch cubes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "piece"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "0.5 to 0.75",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 (5-oz) bag baby romaine (er, what? I used spinach) or baby arugula (10 cups loosely packed)",
+      "expected": {
+        "item": "baby romaine (er",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bag"
+          },
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "what? I used spinach) or baby arugula (10 cups loosely packed)",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "8 (3/4-inch-thick) slices baguette",
+      "expected": {
+        "item": "baguette",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "slice"
+          },
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    }
+  ]
+}

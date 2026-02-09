@@ -1,0 +1,97 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-08-strawberry-lime-and-bl",
+  "ingredients": [
+    {
+      "raw": "4 slightly heaped cups (about 20 ounces) fresh, ripe strawberries, hulled and quartered",
+      "expected": {
+        "item": "fresh, ripe strawberries",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slightly heaped cup"
+          },
+          {
+            "amount": "20",
+            "unit": "oz"
+          },
+          {
+            "amount": "567",
+            "unit": "g"
+          }
+        ],
+        "note": "hulled and quartered",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2/3 to 3/4 cup granulated sugar (we used the latter but use less if you’re sensitive to sugar)",
+      "expected": {
+        "item": "granulated sugar (we used the latter but use less if you’re sensitive to sugar)",
+        "measurements": [
+          {
+            "amount": "0.67 to 0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Juice of 2 limes",
+      "expected": {
+        "item": "Juice of 2 limes",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/4 to 1/2 teaspoon freshly ground black pepper (use less for a barely detectable bite, more if you’d like it more present)",
+      "expected": {
+        "item": "freshly ground black pepper (use less for a barely detectable bite, more if you’d like it more present)",
+        "measurements": [
+          {
+            "amount": "0.25 to 0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Pinch of sea salt",
+      "expected": {
+        "item": "sea salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

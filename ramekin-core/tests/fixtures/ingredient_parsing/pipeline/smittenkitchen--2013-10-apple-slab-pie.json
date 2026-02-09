@@ -1,0 +1,287 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-10-apple-slab-pie",
+  "ingredients": [
+    {
+      "raw": "Crust",
+      "expected": {
+        "item": "Crust",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3 3/4 (470 grams) cups all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "470",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "19",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9.1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 sticks (340 grams) unsalted butter, very cold",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "stick"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "very cold",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3/4 cup very cold water",
+      "expected": {
+        "item": "very cold water",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Filling",
+      "expected": {
+        "item": "Filling",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3 1/2 to 4 pounds apples, peeled, cored and chopped into approximately 1/2-inch chunks (about 8 cups)",
+      "expected": {
+        "item": "to 4 pounds apples, peeled",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": "cup"
+          }
+        ],
+        "note": "cored and chopped into approximately 1/2-inch chunks",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Squeeze of lemon juice",
+      "expected": {
+        "item": "Squeeze of lemon juice",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2/3 to 3/4 cup sugar (depending on how sweet you like your pies)",
+      "expected": {
+        "item": "sugar (depending on how sweet you like your pies)",
+        "measurements": [
+          {
+            "amount": "0.67 to 0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 tablespoons cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "24",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.6",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground nutmeg",
+      "expected": {
+        "item": "ground nutmeg",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.6",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground allspice",
+      "expected": {
+        "item": "ground allspice",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Glaze",
+      "expected": {
+        "item": "Glaze",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "(optional) (only need half, barely, for what’s in photos)",
+      "expected": {
+        "item": "(only need half, barely, for what’s in photos)",
+        "measurements": [],
+        "note": "optional",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 cup confectioners’ sugar",
+      "expected": {
+        "item": "confectioners’ sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon milk, water, lemon juice or fresh apple cider, plus a drop or two more if needed",
+      "expected": {
+        "item": "milk, water, lemon juice or fresh apple cider",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus a drop or two more if needed",
+        "category": "Produce"
+      }
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-01-with-glee-and-ebullien",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups dried chickpeas, soaked overnight",
+      "expected": {
+        "item": "dried chickpeas, soaked overnight",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt, divided",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 garlic cloves, peeled",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "peeled",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3/4 cup sesame seed paste",
+      "expected": {
+        "item": "sesame seed paste",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 cup fresh lemon juice, and more to taste",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
+          }
+        ],
+        "note": "and more to taste",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Cayenne, hot Hungarian paprika or za’atar",
+      "expected": {
+        "item": "Cayenne, hot Hungarian paprika or za’atar",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped parsley",
+      "expected": {
+        "item": "chopped parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 teaspoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    }
+  ]
+}

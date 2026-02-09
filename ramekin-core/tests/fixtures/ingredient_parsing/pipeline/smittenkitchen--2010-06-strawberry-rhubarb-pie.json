@@ -1,0 +1,166 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-06-strawberry-rhubarb-pie",
+  "ingredients": [
+    {
+      "raw": "1 recipe All Butter, Really Flaky Pie Dough or double-crust pie dough of your choice",
+      "expected": {
+        "item": "recipe All Butter, Really Flaky Pie Dough or double-crust pie dough of your choice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 1/2 cups (about 1 1/2 pounds, untrimmed) rhubarb, in 1/2-inch thick slices",
+      "expected": {
+        "item": "rhubarb, in 1/2-inch thick slices",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "about 1 1/2 pounds, untrimmed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 1/2 cups (about 1 pound) strawberries, hulled and sliced if big, halved if tiny",
+      "expected": {
+        "item": "strawberries, hulled and sliced if big",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "halved if tiny",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup light brown sugar",
+      "expected": {
+        "item": "light brown sugar",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 cup quick-cooking tapioca",
+      "expected": {
+        "item": "quick-cooking tapioca",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tablespoons unsalted butter, cut into small pieces",
+      "expected": {
+        "item": "unsalted butter, cut into small pieces",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 large egg yolk beaten to blend with 1 teaspoon water (for glaze)",
+      "expected": {
+        "item": "egg yolk beaten to blend with 1 teaspoon water (for glaze)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

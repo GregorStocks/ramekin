@@ -1,0 +1,183 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2014-09-corn-cheddar-and-scall",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 cups fresh corn (cut from 3 small-to-average cobs)",
+      "expected": {
+        "item": "fresh corn (cut from 3 small-to-average cobs)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 1/2 cup thinly sliced scallions (both white and green parts from a 4-ounce bundle)",
+      "expected": {
+        "item": "thinly sliced scallions (both white and green parts from a 4-ounce bundle)",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "8 cups whole wheat, country or French bread in 1-inch cubes (weight will vary from 10 to 14 ounces, depending on bread type)",
+      "expected": {
+        "item": "whole wheat, country or French bread in 1-inch cubes (weight will vary from 10 to 14 ounces, depending on bread type)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "2 cups (6 ounces) coarsely grated sharp cheddar",
+      "expected": {
+        "item": "coarsely grated sharp cheddar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 cup (2 ounces) finely grated parmesan",
+      "expected": {
+        "item": "finely grated parmesan",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "9 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 tablespoons mayonnaise (optional, see Note up top)",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "optional, see Note up top",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "2 3/4 cups milk [note: several commenters have said that they find prefer it with only 2 cups milk]",
+      "expected": {
+        "item": "milk [note: several commenters have said that they find prefer it with only 2 cups milk]",
+        "measurements": [
+          {
+            "amount": "2.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 teaspoon table salt or 2 teaspoons of a coarse sea salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6.1",
+            "unit": "g"
+          }
+        ],
+        "note": "or 2 teaspoons of a coarse sea salt",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-03-my-favorite-buttermilk",
+  "ingredients": [
+    {
+      "raw": "2 1/4 cups (280 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "280",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 teaspoons to 1 1/2 tablespoons (10 to 20 grams) sugar (to taste, see note above)",
+      "expected": {
+        "item": "to 1 1/2 tablespoons sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10 to 20",
+            "unit": "g"
+          }
+        ],
+        "note": "to taste, see note above",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 grams) baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon (5 grams) table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "9 tablespoons (125 grams) chilled unsalted butter, cut into small chunks",
+      "expected": {
+        "item": "chilled unsalted butter, cut into small chunks",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3/4 cup (175 ml) buttermilk",
+      "expected": {
+        "item": "buttermilk",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "175",
+            "unit": "ml"
+          },
+          {
+            "amount": "184",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

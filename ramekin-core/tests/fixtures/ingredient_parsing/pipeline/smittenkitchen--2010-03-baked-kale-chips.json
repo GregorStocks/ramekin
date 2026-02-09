@@ -1,0 +1,55 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-03-baked-kale-chips",
+  "ingredients": [
+    {
+      "raw": "1 bunch (about 6 ounces) kale (I used Lacinato or “Dinosaur” Kale but I understand that the curlier stuff works, too, possibly even better)",
+      "expected": {
+        "item": "kale (I used Lacinato or “Dinosaur” Kale but I understand that the curlier stuff works, too, possibly even better)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Sea salt, to taste",
+      "expected": {
+        "item": "Sea salt",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

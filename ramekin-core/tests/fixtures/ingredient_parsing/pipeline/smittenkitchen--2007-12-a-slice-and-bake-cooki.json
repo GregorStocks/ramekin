@@ -1,0 +1,110 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-12-a-slice-and-bake-cooki",
+  "ingredients": [
+    {
+      "raw": "2 sticks (8 ounces; 230 grams) unsalted butter, at room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "stick"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "230",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2/3 cup (80 grams) confectioners’ sugar, sifted",
+      "expected": {
+        "item": "confectioners’ sugar",
+        "measurements": [
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "g"
+          }
+        ],
+        "note": "sifted",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 large egg yolks, at room temperature",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Pinch of salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon (5 ml) vanilla or almond extract",
+      "expected": {
+        "item": "vanilla or almond extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 cups (280 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "280",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

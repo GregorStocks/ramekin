@@ -1,0 +1,247 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-06-root-beer-float-cupcak",
+  "ingredients": [
+    {
+      "raw": "Cupcakes",
+      "expected": {
+        "item": "Cupcakes",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 cups root beer (I used Boylan because it was easy to find and made with cane sugar)",
+      "expected": {
+        "item": "root beer (I used Boylan because it was easy to find and made with cane sugar)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup dark unsweetened cocoa powder",
+      "expected": {
+        "item": "dark unsweetened cocoa powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup (1 stick or 4 ounces) unsalted butter, cut into 1-inch pieces",
+      "expected": {
+        "item": "unsalted butter, cut into 1-inch pieces",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "stick"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/4 cups granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup firmly packed dark brown sugar",
+      "expected": {
+        "item": "firmly packed dark brown sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 cups all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/4 teaspoons baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5.8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Toppings",
+      "expected": {
+        "item": "Toppings",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 1/2 cups heavy or whipping cream",
+      "expected": {
+        "item": "heavy or whipping cream",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 tablespoons powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "22",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Pint of vanilla ice cream (you’ll have leftover; you’re welcome)",
+      "expected": {
+        "item": "vanilla ice cream (you’ll have leftover; you’re welcome)",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pint"
+          }
+        ],
+        "note": null,
+        "category": "Frozen"
+      }
+    },
+    {
+      "raw": "Maraschino cherries (optional)",
+      "expected": {
+        "item": "Maraschino cherries",
+        "measurements": [],
+        "note": "optional",
+        "category": "Produce"
+      }
+    }
+  ]
+}

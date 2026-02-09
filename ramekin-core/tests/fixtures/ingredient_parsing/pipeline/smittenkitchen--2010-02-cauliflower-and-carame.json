@@ -1,0 +1,286 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-02-cauliflower-and-carame",
+  "ingredients": [
+    {
+      "raw": "1 small head of cauliflower (about 1 pound) or 1 pound of a larger head of cauliflower, cut into 1-inch flowerets (Romanesco cauliflower, especially orange or green, would be a pretty substitute)",
+      "expected": {
+        "item": "head of cauliflower",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "or 1 pound of a larger head of cauliflower, cut into 1-inch flowerets (Romanesco cauliflower, especially orange or green, would be a pretty substitute)",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 1/2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "47",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 tablespoon truffle oil or a few pinches of truffle salt (optional) (see Notes below)",
+      "expected": {
+        "item": "truffle oil or a few pinches of truffle salt (see Notes below)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 refrigerated pie crust or a homemade tart shell (recipe below)",
+      "expected": {
+        "item": "refrigerated pie crust or a homemade tart shell (recipe below)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Frozen"
+      }
+    },
+    {
+      "raw": "1 large onion, halved lenghtwise and thinly sliced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "halved lenghtwise and thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 (7- to 8- ounce) container mascarpone cheese (see Note below for suggested substitutions)",
+      "expected": {
+        "item": "container mascarpone cheese (see Note below for suggested substitutions)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "7",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/2 cup whipping cream (although any low- or full-fat milk or light cream will work as well)",
+      "expected": {
+        "item": "whipping cream (although any low- or full-fat milk or light cream will work as well)",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground white or black pepper",
+      "expected": {
+        "item": "ground white or black pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Pinch of ground nutmeg",
+      "expected": {
+        "item": "ground nutmeg",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup grated Gruyère cheese (Swiss or Comté are great swaps)",
+      "expected": {
+        "item": "grated Gruyère cheese (Swiss or Comté are great swaps)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/3 cup Parmesan cheese",
+      "expected": {
+        "item": "Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 1/4 cups flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "156",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon plus 2 teaspoons cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1 tablespoon plus 2 teaspoons",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "6 tablespoons butter, diced",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "diced",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

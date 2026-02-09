@@ -1,0 +1,206 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2006-11-jacked-up-banana-bread",
+  "ingredients": [
+    {
+      "raw": "3 to 4 ripe bananas, smashed",
+      "expected": {
+        "item": "ripe bananas, smashed",
+        "measurements": [
+          {
+            "amount": "3 to 4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/3 cup (75 grams) melted salted butter",
+      "expected": {
+        "item": "melted salted butter",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          },
+          {
+            "amount": "75",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3/4 to 1 cup (145 to 190 grams) light brown sugar (depending on the level of sweetness you prefer, I always use the smaller amount)",
+      "expected": {
+        "item": "light brown sugar (depending on the level of sweetness you prefer, I always use the smaller amount)",
+        "measurements": [
+          {
+            "amount": "0.75 to 1",
+            "unit": "cup"
+          },
+          {
+            "amount": "145 to 190",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 egg, beaten",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "beaten",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 teaspoon (5 ml) vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) bourbon (optional)",
+      "expected": {
+        "item": "bourbon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": "optional",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 teaspoon (5 grams) baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Pinch of salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon (3 grams) cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Up to 1/2 teaspoon (1) nutmeg",
+      "expected": {
+        "item": "Up to 1/2 teaspoon nutmeg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Pinch of ground cloves",
+      "expected": {
+        "item": "ground cloves",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (190 grams) flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "190",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

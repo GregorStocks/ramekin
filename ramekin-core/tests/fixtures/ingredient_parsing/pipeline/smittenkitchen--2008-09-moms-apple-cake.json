@@ -1,0 +1,236 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2008-09-moms-apple-cake",
+  "ingredients": [
+    {
+      "raw": "For the apples",
+      "expected": {
+        "item": "For the apples",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "6 apples, Mom uses McIntosh apples, I use a mix of whatever looks good",
+      "expected": {
+        "item": "apples, Mom uses McIntosh apples, I use a mix of whatever looks good",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "7.8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "5 tablespoons (65 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "65",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "For the cake",
+      "expected": {
+        "item": "For the cake",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 3/4 cups (360 grams) flour",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "2.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "360",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon fine sea or table salt",
+      "expected": {
+        "item": "fine sea or table salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup (235 ml) vegetable oil (safflower, sunflower, olive and coconut oil also work, as does melted butter)",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "235",
+            "unit": "ml"
+          },
+          {
+            "amount": "218",
+            "unit": "g"
+          }
+        ],
+        "note": "safflower, sunflower, olive and coconut oil also work, as does melted butter",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 cups (400 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup (60 ml) orange juice",
+      "expected": {
+        "item": "orange juice",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 1/2 (13 ml) teaspoons vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "13",
+            "unit": "ml"
+          },
+          {
+            "amount": "11",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "4 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup (130 grams) walnuts, chopped (optional and to be honest, we never use them)",
+      "expected": {
+        "item": "walnuts, chopped",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "130",
+            "unit": "g"
+          }
+        ],
+        "note": "optional and to be honest, we never use them",
+        "category": "Nuts & Dried Fruit"
+      }
+    }
+  ]
+}

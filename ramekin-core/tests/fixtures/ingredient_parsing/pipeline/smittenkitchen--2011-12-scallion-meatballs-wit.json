@@ -1,0 +1,252 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-12-scallion-meatballs-wit",
+  "ingredients": [
+    {
+      "raw": "Sauce",
+      "expected": {
+        "item": "Sauce",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1/2 cup dark brown sugar",
+      "expected": {
+        "item": "dark brown sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 cup soy sauce, preferably Japanese or reduced sodium",
+      "expected": {
+        "item": "soy sauce, preferably Japanese or reduced sodium",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1/2 cup mirin (sweet rice wine), or 1/2 cup sake with 1/4 cup sugar",
+      "expected": {
+        "item": "mirin (sweet rice wine)",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "or 1/2 cup sake with 1/4 cup sugar",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1/4 cup peeled, chopped ginger (I used half and it tasted like plenty to me; adjust to your preference)",
+      "expected": {
+        "item": "peeled, chopped ginger (I used half and it tasted like plenty to me; adjust to your preference)",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground coriander",
+      "expected": {
+        "item": "ground coriander",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 whole black peppercorns (no, I did not count how many I put in there)",
+      "expected": {
+        "item": "whole black peppercorns (no, I did not count how many I put in there)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Meatballs",
+      "expected": {
+        "item": "Meatballs",
+        "measurements": [],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 pound ground turkey",
+      "expected": {
+        "item": "ground turkey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "4 large or 6 small scallions, finely chopped",
+      "expected": {
+        "item": "scallions",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          },
+          {
+            "amount": "6",
+            "unit": "small"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Half bunch cilantro, finely chopped (about 1/2 cup) (the cilantro-averse can use flat-leaf parsley)",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "bunch"
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "finely chopped (the cilantro-averse can use flat-leaf parsley)",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 tablespoons sesame oil, toasted if you can find it",
+      "expected": {
+        "item": "sesame oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "toasted if you can find it",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 tablespoons soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Vegetable oil",
+      "expected": {
+        "item": "Vegetable oil",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    }
+  ]
+}

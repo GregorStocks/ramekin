@@ -1,0 +1,125 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-05-shaved-asparagus-pizza",
+  "ingredients": [
+    {
+      "raw": "1 recipe Really Simple Pizza Dough or your favorite pizza dough",
+      "expected": {
+        "item": "recipe Really Simple Pizza Dough or your favorite pizza dough",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 pound asparagus",
+      "expected": {
+        "item": "asparagus",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup grated Parmesan",
+      "expected": {
+        "item": "grated Parmesan",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/2 pound mozzarella, shredded or cut into small cubes",
+      "expected": {
+        "item": "mozzarella",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "shredded or cut into small cubes",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2 teaspoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon coarse salt",
+      "expected": {
+        "item": "coarse salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Several grinds black pepper",
+      "expected": {
+        "item": "Several grinds black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 scallion, thinly sliced",
+      "expected": {
+        "item": "scallion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    }
+  ]
+}

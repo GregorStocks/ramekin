@@ -1,0 +1,149 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-07-red-pepper-soup",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "3 1/4 cup sliced onions",
+      "expected": {
+        "item": "sliced onions",
+        "measurements": [
+          {
+            "amount": "3.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 large cloves garlic, crushed",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": "crushed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup dry white wine",
+      "expected": {
+        "item": "dry white wine",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "12 large red bell peppers, cut into 1-inch pieces",
+      "expected": {
+        "item": "red bell peppers, cut into 1-inch pieces",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 cups chicken or vegetable stock or broth",
+      "expected": {
+        "item": "chicken or vegetable stock or broth",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh thyme",
+      "expected": {
+        "item": "chopped fresh thyme",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 to 1/2 teaspoon hot red pepper flakes",
+      "expected": {
+        "item": "hot red pepper flakes",
+        "measurements": [
+          {
+            "amount": "0.25 to 0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Salt and white or black pepper",
+      "expected": {
+        "item": "Salt and white or black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Crème fraîche for garnish",
+      "expected": {
+        "item": "Crème fraîche for garnish",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Thyme sprigs for garnish.",
+      "expected": {
+        "item": "Thyme sprigs for garnish.",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

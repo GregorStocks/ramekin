@@ -1,0 +1,356 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2012-09-roasted-apple-spice-sh",
+  "ingredients": [
+    {
+      "raw": "Cake",
+      "expected": {
+        "item": "Cake",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "6 medium apples, any variety you like to bake with, peeled, halved and cored",
+      "expected": {
+        "item": "apples, any variety you like to bake with, peeled",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "medium"
+          }
+        ],
+        "note": "halved and cored",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "7 1/2 cups (940 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "7.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "940",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons (10 grams) table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons (8 grams) baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 grams) baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "7.8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons (3 grams) ground ginger",
+      "expected": {
+        "item": "ground ginger",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon (1 gram) ground cloves",
+      "expected": {
+        "item": "ground cloves",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon (1 gram) freshly grated nutmeg",
+      "expected": {
+        "item": "freshly grated nutmeg",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (505 grams) honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "505",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "4 1/2 cups (585 grams updated: 1170 grams) applesauce",
+      "expected": {
+        "item": "applesauce",
+        "measurements": [
+          {
+            "amount": "4.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "585",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (3 sticks) unsalted butter, at room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "3",
+            "unit": "stick"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/2 cups packed (285 grams) dark-brown sugar",
+      "expected": {
+        "item": "packed dark-brown sugar",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "285",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "6 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Frosting",
+      "expected": {
+        "item": "Frosting",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3 8-ounce (675 grams total) blocks cream cheese, at room temperature",
+      "expected": {
+        "item": "8-ounce blocks cream cheese",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          },
+          {
+            "amount": "675",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (3 sticks, 3/4 pound or 340 grams) butter, at room temperature",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "3",
+            "unit": "stick"
+          },
+          {
+            "amount": "0.75",
+            "unit": "lb"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "6 cups (720 grams) powdered sugar, sifted",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          },
+          {
+            "amount": "720",
+            "unit": "g"
+          }
+        ],
+        "note": "sifted",
+        "category": "Baking"
+      }
+    }
+  ]
+}

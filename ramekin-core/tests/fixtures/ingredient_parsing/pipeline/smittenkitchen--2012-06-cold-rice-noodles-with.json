@@ -1,0 +1,367 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2012-06-cold-rice-noodles-with",
+  "ingredients": [
+    {
+      "raw": "Dipping sauce",
+      "expected": {
+        "item": "Dipping sauce",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "6 tablespoons Asian fish sauce",
+      "expected": {
+        "item": "Asian fish sauce",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "6 tablespoons brown sugar",
+      "expected": {
+        "item": "brown sugar",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "82",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "12 tablespoons lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "182",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 garlic cloves, finely grated or minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "finely grated or minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Small Thai or Serrano chiles, thinly sliced, to taste",
+      "expected": {
+        "item": "Thai or Serrano chiles, thinly sliced",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": "to taste",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Peanut dressing",
+      "expected": {
+        "item": "Peanut dressing",
+        "measurements": [],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "3 tablespoons Asian fish sauce",
+      "expected": {
+        "item": "Asian fish sauce",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "3 tablespoons rice vinegar",
+      "expected": {
+        "item": "rice vinegar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "9 tablespoons lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "136",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "3 tablespoons soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "48",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 one-and-a-half inch chunk ginger, peeled and sliced",
+      "expected": {
+        "item": "one-and-a-half inch chunk ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "peeled and sliced",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "6 tablespoons natural unsalted peanut butter",
+      "expected": {
+        "item": "natural unsalted peanut butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 tablespoon toasted sesame oil",
+      "expected": {
+        "item": "toasted sesame oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Pinch of cayenne",
+      "expected": {
+        "item": "cayenne",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Chicken and noodle salad",
+      "expected": {
+        "item": "Chicken and noodle salad",
+        "measurements": [],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 1/4 pounds boneless skinless chicken thighs (about 6)",
+      "expected": {
+        "item": "boneless skinless chicken thighs",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "lb"
+          },
+          {
+            "amount": "6",
+            "unit": null
+          },
+          {
+            "amount": "567",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "8 ounces dried rice vermicelli or other rice noodles",
+      "expected": {
+        "item": "dried rice vermicelli or other rice noodles",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "2 small cucumbers, cut in 1/4-inch half moons",
+      "expected": {
+        "item": "cucumbers, cut in 1/4-inch half moons",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "small"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 medium carrots, cut in thin julienne",
+      "expected": {
+        "item": "carrots, cut in thin julienne",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Additional vegetables, as suggested above",
+      "expected": {
+        "item": "Additional vegetables, as suggested above",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Small handful basil or mint or cilantro sprigs, or your favorite of the three (torn or roughly chopped)",
+      "expected": {
+        "item": "handful basil or mint or cilantro sprigs, or your favorite of the three",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": "torn or roughly chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 or more scallions, slivered",
+      "expected": {
+        "item": "or more scallions, slivered",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup crushed or chopped roasted peanuts",
+      "expected": {
+        "item": "crushed or chopped roasted peanuts",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "Lime wedges (to serve)",
+      "expected": {
+        "item": "Lime wedges (to serve)",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

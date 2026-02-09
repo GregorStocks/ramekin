@@ -1,0 +1,121 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-08-fresh-tomato-sauce",
+  "ingredients": [
+    {
+      "raw": "4 pounds sad, unloved tomatoes (some swear by romas, I’ve had success with all varieties)",
+      "expected": {
+        "item": "sad, unloved tomatoes (some swear by romas, I’ve had success with all varieties)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1814",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Small onion",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 to 3 small cloves of garlic",
+      "expected": {
+        "item": "cloves of garlic",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "small"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 medium carrot",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "medium"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 stalk of celery",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "stalk"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon salt plus more to taste",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Slivers of fresh basil, to finish",
+      "expected": {
+        "item": "Slivers of fresh basil, to finish",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

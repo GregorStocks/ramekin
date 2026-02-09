@@ -1,0 +1,348 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2008-08-chocolate-peanut-butte",
+  "ingredients": [
+    {
+      "raw": "2 cups (250 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 1/2 cups (500 grams) sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "500",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3/4 cup (about 65 grams) unsweetened cocoa powder, preferably Dutch process",
+      "expected": {
+        "item": "unsweetened cocoa powder, preferably Dutch process",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "65",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 teaspoons baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup (235 ml) neutral vegetable oil, such as canola, soybean or vegetable blend",
+      "expected": {
+        "item": "neutral vegetable oil, such as canola, soybean or vegetable blend",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "235",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 cup (240 grams) sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/2 (355 ml) cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "355",
+            "unit": "ml"
+          },
+          {
+            "amount": "356",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 tablespoons distilled white vinegar",
+      "expected": {
+        "item": "distilled white vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "10 ounces (285 grams) cream cheese, at room temperature",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "285",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 stick (115 grams, 4 ounces or 1/2 cup) unsalted butter, at room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stick"
+          },
+          {
+            "amount": "115",
+            "unit": "g"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "5 cups (600 grams) confectioners’ sugar, sifted",
+      "expected": {
+        "item": "confectioners’ sugar",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "cup"
+          },
+          {
+            "amount": "600",
+            "unit": "g"
+          }
+        ],
+        "note": "sifted",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2/3 cup (170 grams) smooth peanut butter, preferably a commercial brand (because oil doesn’t separate out)",
+      "expected": {
+        "item": "smooth peanut butter, preferably a commercial brand (because oil doesn’t separate out)",
+        "measurements": [
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "8 ounces (225 grams) semisweet chocolate, coarsely chopped",
+      "expected": {
+        "item": "semisweet chocolate",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": "coarsely chopped",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3 tablespoons (50 grams) smooth peanut butter",
+      "expected": {
+        "item": "smooth peanut butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "2 tablespoons (40 grams) light corn syrup, honey or golden syrup",
+      "expected": {
+        "item": "light corn syrup, honey or golden syrup",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup (120 ml) half-and-half",
+      "expected": {
+        "item": "half-and-half",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

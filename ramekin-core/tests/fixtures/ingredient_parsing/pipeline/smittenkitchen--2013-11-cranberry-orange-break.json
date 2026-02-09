@@ -1,0 +1,268 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-11-cranberry-orange-break",
+  "ingredients": [
+    {
+      "raw": "4 large egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 large whole egg",
+      "expected": {
+        "item": "whole egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 cup (50 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "6 tablespoons (85 grams) butter, melted, plus additional to grease pan",
+      "expected": {
+        "item": "butter, melted",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "plus additional to grease pan",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3/4 cup (175 ml) buttermilk",
+      "expected": {
+        "item": "buttermilk",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "175",
+            "unit": "ml"
+          },
+          {
+            "amount": "184",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Zest of 1 orange, finely grated (to be used in dough and filling, below)",
+      "expected": {
+        "item": "Zest of 1 orange, finely grated (to be used in dough and filling, below)",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 3/4 cups (470 grams) all-purpose flour, plus more for dusting counter",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "470",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for dusting counter",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 packet (7 grams or 2 1/4 teaspoons) instant dry yeast",
+      "expected": {
+        "item": "packet instant dry yeast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "7",
+            "unit": "g"
+          },
+          {
+            "amount": "2.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/4 teaspoons coarse or kosher salt, or more to taste",
+      "expected": {
+        "item": "coarse or kosher salt",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or more to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon oil for bowl",
+      "expected": {
+        "item": "oil for bowl",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons (20 grams) butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup (190 grams) packed light brown sugar",
+      "expected": {
+        "item": "packed light brown sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "190",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup (115 grams) fresh cranberries",
+      "expected": {
+        "item": "fresh cranberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "115",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Orange zest leftover from above",
+      "expected": {
+        "item": "Orange zest leftover from above",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 1/2 tablespoons (55 ml) orange juice",
+      "expected": {
+        "item": "orange juice",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "55",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 cups (240 grams) powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

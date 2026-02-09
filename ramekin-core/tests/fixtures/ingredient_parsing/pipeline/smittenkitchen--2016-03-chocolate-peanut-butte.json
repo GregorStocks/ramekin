@@ -1,0 +1,354 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2016-03-chocolate-peanut-butte",
+  "ingredients": [
+    {
+      "raw": "And for the other side of the world:",
+      "expected": {
+        "item": "And for the other side of the world:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Six Months Ago: Caponata",
+      "expected": {
+        "item": "Months Ago: Caponata",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1.5 Years Ago: Herbed Tomato and Roasted Garlic Tart",
+      "expected": {
+        "item": "Years Ago: Herbed Tomato and Roasted Garlic Tart",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2.5 Years Ago: Baked Pasta with Sausage and Broccoli Rabe",
+      "expected": {
+        "item": "Years Ago: Baked Pasta with Sausage and Broccoli Rabe",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3.5 Years Ago: Fig Olive Oil and Sea Salt Challah",
+      "expected": {
+        "item": "Years Ago: Fig Olive Oil and Sea Salt Challah",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "4.5 Years Ago: Roasted Eggplant with Tomatoes and Mint",
+      "expected": {
+        "item": "Years Ago: Roasted Eggplant with Tomatoes and Mint",
+        "measurements": [
+          {
+            "amount": "4.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Crust",
+      "expected": {
+        "item": "Crust",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 5.3-ounce (150 gram) shortbread cookie packages (to yield 1 3/4 to 2 cups shortbread cookie crumbs)",
+      "expected": {
+        "item": "5.3-ounce shortbread cookie packages (to yield 1 3/4 to 2 cups shortbread cookie crumbs)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "2 tablespoons granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon coarse or kosher salt",
+      "expected": {
+        "item": "coarse or kosher salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 tablespoons unsalted butter, melted (see note about butter amount)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": "melted (see note about butter amount)",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Filling",
+      "expected": {
+        "item": "Filling",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 cup (4 ounces or 115 grams) cream cheese, softened",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "115",
+            "unit": "g"
+          }
+        ],
+        "note": "softened",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2 tablespoons (1 ounce or 30 grams) unsalted butter, softened",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": "softened",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/3 cup (40 grams) powdered or confectioners’ sugar",
+      "expected": {
+        "item": "powdered or confectioners’ sugar",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup (130 grams) creamy peanut butter (I use Skippy but think a more natural one would work just fine here)",
+      "expected": {
+        "item": "creamy peanut butter (I use Skippy but think a more natural one would work just fine here)",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "130",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon coarse or kosher salt",
+      "expected": {
+        "item": "coarse or kosher salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Topping",
+      "expected": {
+        "item": "Topping",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 cup (about 6 ounces or 170 grams) semisweet chocolate chips",
+      "expected": {
+        "item": "semisweet chocolate chips",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "A pinch of salt",
+      "expected": {
+        "item": "A pinch of salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 cup (120 ml) heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          },
+          {
+            "amount": "119",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Flaky sea salt, to finish (optional)",
+      "expected": {
+        "item": "Flaky sea salt, to finish",
+        "measurements": [],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-07-porch-swing",
+  "ingredients": [
+    {
+      "raw": "1 1/2 ounces (3 tablespoons) gin (Hendricks is specified; Tanqueray was used)",
+      "expected": {
+        "item": "gin (Hendricks is specified; Tanqueray was used)",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 1/2 ounces (3 tablespoons) Pimm’s No. 1 liqueur (what’s Pimm’s?)",
+      "expected": {
+        "item": "Pimm’s No. 1 liqueur (what’s Pimm’s?)",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "4 ounces (1/2 cup) homemade lemonade (recipe below)",
+      "expected": {
+        "item": "homemade lemonade (recipe below)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "7-Up or another lemon/lime soda",
+      "expected": {
+        "item": "-Up or another lemon/lime soda",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "10 paper-thin half moon slices of cucumber (I used an “English”, unwaxed, cucumber)",
+      "expected": {
+        "item": "paper-thin half moon slices of cucumber (I used an “English”, unwaxed, cucumber)",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 part freshly squeezed lemon juice",
+      "expected": {
+        "item": "part freshly squeezed lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 part simple syrup, or to taste (I will use perhaps 1/2 or 3/4 of a part next time, see Note above)",
+      "expected": {
+        "item": "part simple syrup",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "0.75",
+            "unit": null
+          }
+        ],
+        "note": "or to taste",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 parts water",
+      "expected": {
+        "item": "parts water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-09-roasted-tomatoes-and-c",
+  "ingredients": [
+    {
+      "raw": "1 pound cipollini onions",
+      "expected": {
+        "item": "cipollini onions",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 pound small Roma or large cherry tomatoes",
+      "expected": {
+        "item": "small Roma or large cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Coarse salt",
+      "expected": {
+        "item": "Coarse salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 slices of country or ciabatta bread, one-inch thick",
+      "expected": {
+        "item": "country or ciabatta bread, one-inch thick",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "1 15-ounce can of white beans, drained and rinsed or 1 1/2 cups cooked beans of your choice",
+      "expected": {
+        "item": "of white beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "15-ounce can"
+          }
+        ],
+        "note": "drained and rinsed or 1 1/2 cups cooked beans of your choice",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "Garlic clove (optional)",
+      "expected": {
+        "item": "Garlic clove",
+        "measurements": [],
+        "note": "optional",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Few fresh basil leaves, slivered",
+      "expected": {
+        "item": "Few fresh basil leaves, slivered",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

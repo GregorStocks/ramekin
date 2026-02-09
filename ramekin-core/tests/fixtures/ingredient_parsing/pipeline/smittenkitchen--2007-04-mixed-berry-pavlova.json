@@ -1,0 +1,225 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-04-mixed-berry-pavlova",
+  "ingredients": [
+    {
+      "raw": "Meringue Cake",
+      "expected": {
+        "item": "Meringue Cake",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "4 large (120 grams) egg whites",
+      "expected": {
+        "item": "egg whites",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Pinch of salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup (200 grams) superfine (castor) or granulated (regular) sugar",
+      "expected": {
+        "item": "superfine (castor) or granulated (regular) sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon white vinegar",
+      "expected": {
+        "item": "white vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/2 tablespoon cornstarch, potato starch or arrowroot powder",
+      "expected": {
+        "item": "cornstarch, potato starch or arrowroot powder",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Whipped Cream",
+      "expected": {
+        "item": "Whipped Cream",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup heavy whipping cream",
+      "expected": {
+        "item": "heavy whipping cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon granulated white sugar",
+      "expected": {
+        "item": "granulated white sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Mixed Berry Topping",
+      "expected": {
+        "item": "Mixed Berry Topping",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 pint fresh strawberries, hulled and sliced",
+      "expected": {
+        "item": "fresh strawberries",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "pint"
+          }
+        ],
+        "note": "hulled and sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 pint fresh blueberries",
+      "expected": {
+        "item": "fresh blueberries",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "pint"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 pint fresh raspberries",
+      "expected": {
+        "item": "fresh raspberries",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "pint"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

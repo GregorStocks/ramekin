@@ -1,0 +1,152 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-11-sweet-corn-spoonbread",
+  "ingredients": [
+    {
+      "raw": "1 cup cornmeal",
+      "expected": {
+        "item": "cornmeal",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 3/4 cups whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "2.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "674",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 tablespoons unsalted butter, plus additional for greasing dish",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "plus additional for greasing dish",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 cups corn kernels (from 3 to 4 ears of corn, or frozen, if defrosted and well drained)",
+      "expected": {
+        "item": "corn kernels",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "from 3 to 4 ears of corn, or frozen, if defrosted and well drained",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 teaspoon sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon cayenne",
+      "expected": {
+        "item": "cayenne",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 large eggs, separated",
+      "expected": {
+        "item": "eggs, separated",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon cream of tartar",
+      "expected": {
+        "item": "cream of tartar",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

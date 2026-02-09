@@ -1,0 +1,132 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-08-zucchini-and-almond-pa",
+  "ingredients": [
+    {
+      "raw": "1 1/2 pounds zucchini (2 to 3, depending on size), halved lenthwise and very thinly sliced",
+      "expected": {
+        "item": "zucchini",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "2 to 3",
+            "unit": null
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "halved lenthwise and very thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 ounces parmesan or pecorino romano cheese, thinly sliced on a mandoline or with a peeler",
+      "expected": {
+        "item": "parmesan or pecorino romano cheese",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": "thinly sliced on a mandoline or with a peeler",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/2 cup slivered almonds, well-toasted and cooled (300 degree oven for 7 to 10 minutes, tossing occasionally, usually works)",
+      "expected": {
+        "item": "slivered almonds",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "300",
+            "unit": null
+          }
+        ],
+        "note": "well-toasted and cooled",
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1/2 pound pasta of your choice (I like the extra bite of whole wheat pasta in pasta salads), cooked, drained and cooled",
+      "expected": {
+        "item": "pasta of your choice, cooked, drained and cooled",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "I like the extra bite of whole wheat pasta in pasta salads",
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "5 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "68",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Juice of one lemon",
+      "expected": {
+        "item": "Juice of one lemon",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

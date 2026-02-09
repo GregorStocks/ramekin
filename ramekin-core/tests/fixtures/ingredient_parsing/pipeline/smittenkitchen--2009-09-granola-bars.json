@@ -1,0 +1,126 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-09-granola-bars",
+  "ingredients": [
+    {
+      "raw": "2 cups old-fashioned oatmeal",
+      "expected": {
+        "item": "old-fashioned oatmeal",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Snacks"
+      }
+    },
+    {
+      "raw": "1 cup sliced almonds",
+      "expected": {
+        "item": "sliced almonds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1 cup shredded coconut, loosely packed (I used unsweetened)",
+      "expected": {
+        "item": "shredded coconut",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "loosely packed (I used unsweetened)",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup toasted wheat germ",
+      "expected": {
+        "item": "toasted wheat germ",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2/3 cup honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 cup dried fruit, or a mix of dried fruit (I used chopped apricots, cranberries and raisins)",
+      "expected": {
+        "item": "dried fruit, or a mix of dried fruit",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "I used chopped apricots, cranberries and raisins",
+        "category": "Nuts & Dried Fruit"
+      }
+    }
+  ]
+}

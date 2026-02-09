@@ -1,0 +1,87 @@
+{
+  "source": "momontimeout",
+  "recipe_slug": "popcorn-balls-recipe",
+  "ingredients": [
+    {
+      "raw": "1 lb marshmallows",
+      "expected": {
+        "item": "marshmallows",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 c butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tsp vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "popcorn",
+      "expected": {
+        "item": "popcorn",
+        "measurements": [],
+        "note": null,
+        "category": "Snacks"
+      }
+    },
+    {
+      "raw": "food coloring (optional)",
+      "expected": {
+        "item": "food coloring",
+        "measurements": [],
+        "note": "optional",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "non stick baking spray",
+      "expected": {
+        "item": "non stick baking spray",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

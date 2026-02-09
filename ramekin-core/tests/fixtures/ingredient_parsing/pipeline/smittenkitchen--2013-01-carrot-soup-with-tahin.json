@@ -1,0 +1,381 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-01-carrot-soup-with-tahin",
+  "ingredients": [
+    {
+      "raw": "Soup",
+      "expected": {
+        "item": "Soup",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 pounds (905 grams) carrots, peeled, diced or thinly sliced",
+      "expected": {
+        "item": "carrots, peeled",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "905",
+            "unit": "g"
+          }
+        ],
+        "note": "diced or thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large onion, finely chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 regular or 6 small garlic cloves, peeled and smashed",
+      "expected": {
+        "item": "regular or 6 small garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "peeled and smashed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground coriander",
+      "expected": {
+        "item": "ground coriander",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon table salt, plus more if needed",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more if needed",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Pinch of Aleppo pepper or red pepper flakes",
+      "expected": {
+        "item": "Aleppo pepper or red pepper flakes",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 cups (945 ml) vegetable broth",
+      "expected": {
+        "item": "vegetable broth",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "945",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "Crisped chickpeas",
+      "expected": {
+        "item": "Crisped chickpeas",
+        "measurements": [],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 3/4 cups cooked chickpeas, or 1 15-ounce (425-gram) can, drained, patted dry on paper towels",
+      "expected": {
+        "item": "cooked chickpeas, or 1 15-ounce can, drained, patted dry on paper towels",
+        "measurements": [
+          {
+            "amount": "1.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "425",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 generous tablespoon (15 ml or so) olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "generous tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon coarse salt",
+      "expected": {
+        "item": "coarse salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Lemon-tahini dollop",
+      "expected": {
+        "item": "Lemon-tahini dollop",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "3 tablespoons (25 grams) tahini paste",
+      "expected": {
+        "item": "tahini paste",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Pinch or two of salt",
+      "expected": {
+        "item": "or two of salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Pita wedges, garnish",
+      "expected": {
+        "item": "Pita wedges, garnish",
+        "measurements": [],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "A few large pitas, cut into 8 wedges",
+      "expected": {
+        "item": "A few large pitas, cut into 8 wedges",
+        "measurements": [],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "Olive oil, to brush pitas",
+      "expected": {
+        "item": "Olive oil, to brush pitas",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Za’atar (a Middle Eastern spice-herb blend) or sesame seeds and sea salt to sprinkle",
+      "expected": {
+        "item": "Za’atar (a Middle Eastern spice-herb blend) or sesame seeds and sea salt to sprinkle",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons flat-leaf parsley, coarsely chopped",
+      "expected": {
+        "item": "flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "coarsely chopped",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

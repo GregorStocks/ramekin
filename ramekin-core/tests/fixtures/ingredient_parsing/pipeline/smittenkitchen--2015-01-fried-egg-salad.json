@@ -1,0 +1,233 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2015-01-fried-egg-salad",
+  "ingredients": [
+    {
+      "raw": "And for the other side of the world:",
+      "expected": {
+        "item": "And for the other side of the world:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Six Months Ago: Grilled Peach Splits + News! and Summer Squash Gratin with Salsa Verde",
+      "expected": {
+        "item": "Months Ago: Grilled Peach Splits + News! and Summer Squash Gratin with Salsa Verde",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1.5 Years Ago: Hot Fudge Sundae Cake",
+      "expected": {
+        "item": "Years Ago: Hot Fudge Sundae Cake",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2.5 Years Ago: Peach Pie",
+      "expected": {
+        "item": "Years Ago: Peach Pie",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3.5 Years Ago: Charred Corn Tacos with Zucchini-Radish Slaw",
+      "expected": {
+        "item": "Years Ago: Charred Corn Tacos with Zucchini-Radish Slaw",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salad",
+      "expected": {
+        "item": "Salad",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 cup lightly-packed torn green leaf lettuce (approximately 2-inch pieces)",
+      "expected": {
+        "item": "lightly-packed torn green leaf lettuce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "approximately 2-inch pieces",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup thinly sliced yellow onion",
+      "expected": {
+        "item": "thinly sliced yellow onion",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup thin or julienned carrot strips",
+      "expected": {
+        "item": "thin or julienned carrot strips",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup coarsely chopped celery, Chinese or other, include leaves",
+      "expected": {
+        "item": "coarsely chopped celery, Chinese or other, include leaves",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup lightly packed coarsely chopped cilantro, thin stems and leaves",
+      "expected": {
+        "item": "lightly packed coarsely chopped cilantro, thin stems and leaves",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Dressing",
+      "expected": {
+        "item": "Dressing",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons lime juice (Key limes are recommended, but don’t fuss if you can’t find them)",
+      "expected": {
+        "item": "lime juice (Key limes are recommended, but don’t fuss if you can’t find them)",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons palm sugar simple syrup [see Note up top] or 1 tablespoon water + 1 teaspoon dark brown sugar",
+      "expected": {
+        "item": "palm sugar simple syrup [see Note up top]",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or 1 tablespoon water + 1 teaspoon dark brown sugar",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon Thai fish sauce",
+      "expected": {
+        "item": "Thai fish sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons (1 large clove) very thinly sliced garlic",
+      "expected": {
+        "item": "very thinly sliced garlic",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 fresh Thai chiles, preferably green, thinly sliced (more or less to taste)",
+      "expected": {
+        "item": "fresh Thai chiles, preferably green, thinly sliced",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "more or less to taste",
+        "category": "Other"
+      }
+    }
+  ]
+}

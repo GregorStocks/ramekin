@@ -1,0 +1,144 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2012-08-mediterranean-baked-fe",
+  "ingredients": [
+    {
+      "raw": "1 cup cherry tomatoes, halved",
+      "expected": {
+        "item": "cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "halved",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/3 cup chopped, pitted Kalmata olives",
+      "expected": {
+        "item": "chopped, pitted Kalmata olives",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 clove garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup thinly sliced red onion (oops, I forgot this)",
+      "expected": {
+        "item": "thinly sliced red onion (oops, I forgot this)",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons finely-chopped fresh flat-leaf parsley, divided",
+      "expected": {
+        "item": "finely-chopped fresh flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon dried oregano",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 8- to 10-ounce block feta",
+      "expected": {
+        "item": "8- to 10-ounce block feta",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "Crackers, flatbread*, pita chips, or crostini, for dipping",
+      "expected": {
+        "item": "Crackers, flatbread*, pita chips, or crostini, for dipping",
+        "measurements": [],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    }
+  ]
+}

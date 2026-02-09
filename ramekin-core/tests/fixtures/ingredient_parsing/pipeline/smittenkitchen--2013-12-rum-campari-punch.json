@@ -1,0 +1,193 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-12-rum-campari-punch",
+  "ingredients": [
+    {
+      "raw": "Punch",
+      "expected": {
+        "item": "Punch",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 1/4 cups sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/4 cups cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "296",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 1/4 cups lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "302",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "3 3/4 cups pineapple juice",
+      "expected": {
+        "item": "pineapple juice",
+        "measurements": [
+          {
+            "amount": "3.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 3/4 cups Campari (or less, to taste)",
+      "expected": {
+        "item": "Campari",
+        "measurements": [
+          {
+            "amount": "1.75",
+            "unit": "cup"
+          }
+        ],
+        "note": "or less, to taste",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 750 ml (about 3 1/4 cups) bottle dark rum",
+      "expected": {
+        "item": "dark rum",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "750 ml bottle"
+          },
+          {
+            "amount": "3.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 750 ml (about 3 1/4 cups) bottle sparkling wine",
+      "expected": {
+        "item": "sparkling wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "750 ml bottle"
+          },
+          {
+            "amount": "3.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Garnish",
+      "expected": {
+        "item": "Garnish",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 giant ice cube",
+      "expected": {
+        "item": "giant ice cube",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 orange, sliced thin",
+      "expected": {
+        "item": "orange",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced thin",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 lime, sliced thin",
+      "expected": {
+        "item": "lime",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced thin",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "or thick peels of zest from 1 lime and 1 orange",
+      "expected": {
+        "item": "or thick peels of zest from 1 lime and 1 orange",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

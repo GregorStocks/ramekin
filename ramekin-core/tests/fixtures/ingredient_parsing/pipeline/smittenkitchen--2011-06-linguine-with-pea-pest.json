@@ -1,0 +1,133 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-06-linguine-with-pea-pest",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups (from approximately 1 1/2 pounds peas in pods) fresh pea or a 10-ounce package frozen peas, defrosted",
+      "expected": {
+        "item": "fresh pea or a 10-ounce package frozen peas, defrosted",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "from approximately 1 1/2 pounds peas in pods",
+        "category": "Frozen"
+      }
+    },
+    {
+      "raw": "1 small garlic clove, minced",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons pine nuts, toasted and cooled",
+      "expected": {
+        "item": "pine nuts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "toasted and cooled",
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1/2 cup (1 1/8 ounces) finely grated parmesan cheese",
+      "expected": {
+        "item": "finely grated parmesan cheese",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "1.13",
+            "unit": "oz"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon table salt, plus more for pasta water",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for pasta water",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/3 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          },
+          {
+            "amount": "72",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "12 ounces dried linguine",
+      "expected": {
+        "item": "dried linguine",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "Garnish (optional): thinly slivered basil or mint leaves",
+      "expected": {
+        "item": "Garnish : thinly slivered basil or mint leaves",
+        "measurements": [],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}
