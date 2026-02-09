@@ -26,9 +26,13 @@ pub struct VolumeConversionStats {
 /// 1. The ingredient has a volume measurement (cup, tbsp, tsp, etc.)
 /// 2. No weight measurement already exists
 /// 3. The ingredient name matches a known density entry
+///
+/// When `domain` is provided, per-site density overrides are used
+/// (e.g., "salt" resolves differently on smittenkitchen vs allrecipes).
 pub fn add_volume_to_weight_alternative(
     mut ingredient: ParsedIngredient,
     stats: &mut VolumeConversionStats,
+    domain: Option<&str>,
 ) -> ParsedIngredient {
     // Check if already has weight measurement
     if has_weight_measurement(&ingredient.measurements) {
@@ -56,7 +60,7 @@ pub fn add_volume_to_weight_alternative(
     };
 
     // Look up density for this ingredient
-    let Some(grams_per_cup) = find_density(&ingredient.item) else {
+    let Some(grams_per_cup) = find_density(&ingredient.item, domain) else {
         stats.skipped_unknown_ingredient += 1;
         stats.unknown_ingredients.push(ingredient.item.clone());
         return ingredient;
@@ -116,7 +120,7 @@ pub fn enrich_ingredient_measurements(ingredient: ParsedIngredient) -> ParsedIng
     let mut volume_stats = VolumeConversionStats::default();
     let ingredient =
         crate::metric_weights::add_metric_weight_alternative(ingredient, &mut weight_stats);
-    add_volume_to_weight_alternative(ingredient, &mut volume_stats)
+    add_volume_to_weight_alternative(ingredient, &mut volume_stats, None)
 }
 
 #[cfg(test)]
@@ -137,7 +141,7 @@ mod tests {
         };
 
         let mut stats = VolumeConversionStats::default();
-        let result = add_volume_to_weight_alternative(ingredient, &mut stats);
+        let result = add_volume_to_weight_alternative(ingredient, &mut stats, None);
 
         assert_eq!(result.measurements.len(), 2);
         assert_eq!(result.measurements[1].amount, Some("250".to_string())); // 2 * 125g
@@ -159,7 +163,7 @@ mod tests {
         };
 
         let mut stats = VolumeConversionStats::default();
-        let result = add_volume_to_weight_alternative(ingredient, &mut stats);
+        let result = add_volume_to_weight_alternative(ingredient, &mut stats, None);
 
         assert_eq!(result.measurements.len(), 2);
         // 2 tbsp = 2/16 cup = 0.125 cup; 0.125 * 200g = 25g
@@ -181,7 +185,7 @@ mod tests {
         };
 
         let mut stats = VolumeConversionStats::default();
-        let result = add_volume_to_weight_alternative(ingredient, &mut stats);
+        let result = add_volume_to_weight_alternative(ingredient, &mut stats, None);
 
         assert_eq!(result.measurements.len(), 2);
         // 0.5 cup * 227g = 113.5g -> 114g
@@ -203,7 +207,7 @@ mod tests {
         };
 
         let mut stats = VolumeConversionStats::default();
-        let result = add_volume_to_weight_alternative(ingredient, &mut stats);
+        let result = add_volume_to_weight_alternative(ingredient, &mut stats, None);
 
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(stats.skipped_unknown_ingredient, 1);
@@ -229,7 +233,7 @@ mod tests {
         };
 
         let mut stats = VolumeConversionStats::default();
-        let result = add_volume_to_weight_alternative(ingredient, &mut stats);
+        let result = add_volume_to_weight_alternative(ingredient, &mut stats, None);
 
         assert_eq!(result.measurements.len(), 2); // unchanged
         assert_eq!(stats.skipped_already_has_weight, 1);
@@ -250,7 +254,7 @@ mod tests {
         };
 
         let mut stats = VolumeConversionStats::default();
-        let result = add_volume_to_weight_alternative(ingredient, &mut stats);
+        let result = add_volume_to_weight_alternative(ingredient, &mut stats, None);
 
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(stats.skipped_no_volume, 1);
@@ -270,7 +274,7 @@ mod tests {
         };
 
         let mut stats = VolumeConversionStats::default();
-        let result = add_volume_to_weight_alternative(ingredient, &mut stats);
+        let result = add_volume_to_weight_alternative(ingredient, &mut stats, None);
 
         assert_eq!(result.measurements.len(), 2);
         assert_eq!(result.measurements[1].amount, Some("227".to_string()));

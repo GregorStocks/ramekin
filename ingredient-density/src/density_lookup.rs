@@ -45,6 +45,10 @@ struct CuratedDataFile {
     ingredients: HashMap<String, CuratedIngredient>,
     /// Aliases can be null to indicate "explicitly ambiguous, do not resolve"
     aliases: HashMap<String, Option<String>>,
+    /// Per-domain overrides: domain -> ingredient name -> canonical name.
+    /// Used when a site has a known convention (e.g., "salt" means Diamond Crystal on smittenkitchen).
+    #[serde(default)]
+    domain_overrides: HashMap<String, HashMap<String, String>>,
 }
 
 /// Merged density data from all sources.
@@ -53,6 +57,8 @@ struct MergedData {
     ingredients: HashMap<String, f64>,
     /// Alias -> canonical name (or None if explicitly ambiguous)
     aliases: HashMap<String, Option<String>>,
+    /// Per-domain overrides: domain -> ingredient name -> canonical name
+    domain_overrides: HashMap<String, HashMap<String, String>>,
 }
 
 // =============================================================================
@@ -86,9 +92,23 @@ static DATA: LazyLock<MergedData> = LazyLock::new(|| {
         aliases.insert(alias, canonical);
     }
 
+    // Normalize domain override keys to lowercase
+    let domain_overrides = curated
+        .domain_overrides
+        .into_iter()
+        .map(|(domain, overrides)| {
+            let normalized: HashMap<String, String> = overrides
+                .into_iter()
+                .map(|(k, v)| (k.to_lowercase(), v))
+                .collect();
+            (domain, normalized)
+        })
+        .collect();
+
     MergedData {
         ingredients,
         aliases,
+        domain_overrides,
     }
 });
 
@@ -194,13 +214,29 @@ fn normalize_ingredient_name(s: &str) -> String {
 
 /// Find the density (grams per cup) for an ingredient name.
 ///
+/// When `domain` is provided, domain-specific overrides are checked first,
+/// allowing per-site salt conventions (e.g., "salt" means Diamond Crystal
+/// on smittenkitchen.com but table salt on allrecipes.com).
+///
 /// Lookup order:
-/// 1. Direct lookup in ingredients
-/// 2. Lookup via aliases (returns None if alias is explicitly null/ambiguous)
-/// 3. Try plural/singular variations
-/// 4. After stripping common modifiers, retry steps 1-3
-pub fn find_density(ingredient_item: &str) -> Option<f64> {
+/// 1. Domain override (if domain provided and ingredient has an override)
+/// 2. Direct lookup in ingredients
+/// 3. Lookup via aliases (returns None if alias is explicitly null/ambiguous)
+/// 4. Try plural/singular variations
+/// 5. After stripping common modifiers, retry steps 2-4
+pub fn find_density(ingredient_item: &str, domain: Option<&str>) -> Option<f64> {
     let normalized = normalize_ingredient_name(ingredient_item);
+
+    // Check domain overrides first
+    if let Some(domain) = domain {
+        if let Some(overrides) = DATA.domain_overrides.get(domain) {
+            if let Some(canonical) = overrides.get(&normalized) {
+                if let Some(&density) = DATA.ingredients.get(canonical) {
+                    return Some(density);
+                }
+            }
+        }
+    }
 
     // Helper to do full lookup chain
     fn lookup(name: &str, data: &MergedData) -> Option<f64> {
@@ -259,39 +295,39 @@ mod tests {
     #[test]
     fn test_find_density_direct() {
         // USDA has "salt, table"
-        assert!(find_density("salt, table").is_some());
+        assert!(find_density("salt, table", None).is_some());
     }
 
     #[test]
     fn test_find_density_alias() {
         // Common aliases should work
-        assert!(find_density("flour").is_some());
-        assert!(find_density("sugar").is_some());
-        assert!(find_density("butter").is_some());
+        assert!(find_density("flour", None).is_some());
+        assert!(find_density("sugar", None).is_some());
+        assert!(find_density("butter", None).is_some());
     }
 
     #[test]
     fn test_find_density_with_modifiers() {
-        assert!(find_density("softened butter").is_some());
-        assert!(find_density("melted butter").is_some());
+        assert!(find_density("softened butter", None).is_some());
+        assert!(find_density("melted butter", None).is_some());
     }
 
     #[test]
     fn test_find_density_case_insensitive() {
-        assert!(find_density("FLOUR").is_some());
-        assert!(find_density("Butter").is_some());
+        assert!(find_density("FLOUR", None).is_some());
+        assert!(find_density("Butter", None).is_some());
     }
 
     #[test]
     fn test_find_density_unknown() {
-        assert_eq!(find_density("unicorn tears"), None);
-        assert_eq!(find_density("mystery powder"), None);
+        assert_eq!(find_density("unicorn tears", None), None);
+        assert_eq!(find_density("mystery powder", None), None);
     }
 
     #[test]
     fn test_plural_fallback() {
         // "onion" should find "onions" (USDA has plural)
-        assert!(find_density("onion").is_some());
+        assert!(find_density("onion", None).is_some());
     }
 
     #[test]
@@ -317,62 +353,99 @@ mod tests {
     #[test]
     fn test_curated_aliases() {
         // Leavening agents
-        assert!(find_density("baking powder").is_some());
-        assert!(find_density("baking soda").is_some());
+        assert!(find_density("baking powder", None).is_some());
+        assert!(find_density("baking soda", None).is_some());
         // Spices
-        assert!(find_density("cinnamon").is_some());
-        assert!(find_density("ground cinnamon").is_some());
-        assert!(find_density("garlic powder").is_some());
+        assert!(find_density("cinnamon", None).is_some());
+        assert!(find_density("ground cinnamon", None).is_some());
+        assert!(find_density("garlic powder", None).is_some());
         // Onion varieties
-        assert!(find_density("yellow onion").is_some());
-        assert!(find_density("red onion").is_some());
+        assert!(find_density("yellow onion", None).is_some());
+        assert!(find_density("red onion", None).is_some());
         // Dairy
-        assert!(find_density("buttermilk").is_some());
-        assert!(find_density("greek yogurt").is_some());
+        assert!(find_density("buttermilk", None).is_some());
+        assert!(find_density("greek yogurt", None).is_some());
         // Condiments
-        assert!(find_density("mayo").is_some());
-        assert!(find_density("mayonnaise").is_some());
-        assert!(find_density("mustard").is_some());
-        assert!(find_density("yellow mustard").is_some());
-        assert!(find_density("dijon mustard").is_some());
+        assert!(find_density("mayo", None).is_some());
+        assert!(find_density("mayonnaise", None).is_some());
+        assert!(find_density("mustard", None).is_some());
+        assert!(find_density("yellow mustard", None).is_some());
+        assert!(find_density("dijon mustard", None).is_some());
         // Other
-        assert!(find_density("water").is_some());
+        assert!(find_density("water", None).is_some());
     }
 
     #[test]
     fn test_ambiguous_aliases_return_none() {
-        // Salt varieties are ambiguous (different densities)
-        assert!(find_density("salt").is_none());
-        assert!(find_density("kosher salt").is_none());
-        assert!(find_density("sea salt").is_none());
+        // Salt varieties are globally ambiguous (different densities by site/brand)
+        assert!(find_density("salt", None).is_none());
+        assert!(find_density("kosher salt", None).is_none());
+        assert!(find_density("sea salt", None).is_none());
         // Pepper is ambiguous
-        assert!(find_density("black pepper").is_none());
-        assert!(find_density("ground black pepper").is_none());
+        assert!(find_density("black pepper", None).is_none());
+        assert!(find_density("ground black pepper", None).is_none());
+    }
+
+    #[test]
+    fn test_fine_salt_aliases() {
+        // Fine salt variants are unambiguous (~292 g/cup, same as table salt)
+        assert!(find_density("fine salt", None).is_some());
+        assert!(find_density("fine sea salt", None).is_some());
+        assert!(find_density("fine grain sea salt", None).is_some());
+        assert!(find_density("fine-grain sea salt", None).is_some());
+        assert!(find_density("fine sea or table salt", None).is_some());
+        assert!(find_density("fine grain salt", None).is_some());
+    }
+
+    #[test]
+    fn test_domain_overrides() {
+        // Without domain, salt is ambiguous
+        assert!(find_density("salt", None).is_none());
+        assert!(find_density("kosher salt", None).is_none());
+
+        // smittenkitchen uses Diamond Crystal kosher salt
+        let sk = Some("smittenkitchen.com");
+        let salt_density =
+            find_density("salt", sk).expect("salt should resolve for smittenkitchen");
+        assert!((salt_density - 137.0).abs() < 0.1);
+        let kosher_density =
+            find_density("kosher salt", sk).expect("kosher salt should resolve for smittenkitchen");
+        assert!((kosher_density - 137.0).abs() < 0.1);
+
+        // allrecipes uses table salt
+        let ar = Some("allrecipes.com");
+        let salt_density = find_density("salt", ar).expect("salt should resolve for allrecipes");
+        assert!((salt_density - 292.0).abs() < 0.1);
+        // kosher salt has no override on allrecipes, stays ambiguous
+        assert!(find_density("kosher salt", ar).is_none());
+
+        // Unknown domain gets no override
+        assert!(find_density("salt", Some("unknownsite.com")).is_none());
     }
 
     #[test]
     fn test_top_density_aliases() {
         // Top 10 from density gap report
-        assert!(find_density("soy sauce").is_some());
-        assert!(find_density("ground cumin").is_some());
-        assert!(find_density("dried oregano").is_some());
-        assert!(find_density("pure vanilla extract").is_some());
-        assert!(find_density("Worcestershire sauce").is_some());
-        assert!(find_density("fresh lemon juice").is_some());
-        assert!(find_density("tomato paste").is_some());
-        assert!(find_density("sesame oil").is_some());
-        assert!(find_density("vanilla").is_some());
-        assert!(find_density("rice vinegar").is_some());
+        assert!(find_density("soy sauce", None).is_some());
+        assert!(find_density("ground cumin", None).is_some());
+        assert!(find_density("dried oregano", None).is_some());
+        assert!(find_density("pure vanilla extract", None).is_some());
+        assert!(find_density("Worcestershire sauce", None).is_some());
+        assert!(find_density("fresh lemon juice", None).is_some());
+        assert!(find_density("tomato paste", None).is_some());
+        assert!(find_density("sesame oil", None).is_some());
+        assert!(find_density("vanilla", None).is_some());
+        assert!(find_density("rice vinegar", None).is_some());
         // Related aliases
-        assert!(find_density("cumin").is_some());
-        assert!(find_density("oregano").is_some());
-        assert!(find_density("toasted sesame oil").is_some());
-        assert!(find_density("apple cider vinegar").is_some());
-        assert!(find_density("red wine vinegar").is_some());
-        assert!(find_density("balsamic vinegar").is_some());
-        assert!(find_density("white vinegar").is_some());
-        assert!(find_density("white wine vinegar").is_some());
-        assert!(find_density("tamari").is_some());
-        assert!(find_density("Japanese soy sauce (koikuchi shoyu)").is_some());
+        assert!(find_density("cumin", None).is_some());
+        assert!(find_density("oregano", None).is_some());
+        assert!(find_density("toasted sesame oil", None).is_some());
+        assert!(find_density("apple cider vinegar", None).is_some());
+        assert!(find_density("red wine vinegar", None).is_some());
+        assert!(find_density("balsamic vinegar", None).is_some());
+        assert!(find_density("white vinegar", None).is_some());
+        assert!(find_density("white wine vinegar", None).is_some());
+        assert!(find_density("tamari", None).is_some());
+        assert!(find_density("Japanese soy sauce (koikuchi shoyu)", None).is_some());
     }
 }

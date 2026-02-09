@@ -120,7 +120,7 @@ fn run_pipeline(raw: &str) -> Expected {
     let mut weight_stats = MetricConversionStats::default();
     let mut volume_stats = VolumeConversionStats::default();
     let result = add_metric_weight_alternative(parsed, &mut weight_stats);
-    let result = add_volume_to_weight_alternative(result, &mut volume_stats);
+    let result = add_volume_to_weight_alternative(result, &mut volume_stats, None);
     let result = result.normalize_amounts();
     Expected::from(result)
 }
@@ -136,7 +136,7 @@ fn run_pipeline_batch(raw_lines: &[String]) -> Vec<Expected> {
             let mut weight_stats = MetricConversionStats::default();
             let mut volume_stats = VolumeConversionStats::default();
             let result = add_metric_weight_alternative(ing, &mut weight_stats);
-            let result = add_volume_to_weight_alternative(result, &mut volume_stats);
+            let result = add_volume_to_weight_alternative(result, &mut volume_stats, None);
             let result = result.normalize_amounts();
             Expected::from(result)
         })

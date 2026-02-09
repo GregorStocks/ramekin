@@ -13,7 +13,7 @@
 //! use ingredient_density::{find_density, volume_to_cups, is_volume_unit};
 //!
 //! // Look up density for flour
-//! if let Some(grams_per_cup) = find_density("all-purpose flour") {
+//! if let Some(grams_per_cup) = find_density("all-purpose flour", None) {
 //!     // Convert 2 cups to grams
 //!     let cups = volume_to_cups(2.0, "cup").unwrap();
 //!     let grams = cups * grams_per_cup;

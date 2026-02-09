@@ -72,6 +72,11 @@ impl PipelineStep for ParseIngredientsStep {
         // Parse the ingredients blob into structured data
         let parsed = parse_ingredients(&raw_recipe.ingredients);
 
+        // Extract domain from URL for per-site density overrides
+        let domain = url::Url::parse(ctx.url)
+            .ok()
+            .and_then(|u| u.host_str().map(|h| h.to_string()));
+
         // Enrich with metric weight alternatives (oz/lb → g)
         let mut weight_stats = MetricConversionStats::default();
         // Enrich with volume-to-weight alternatives for known ingredients
@@ -79,7 +84,7 @@ impl PipelineStep for ParseIngredientsStep {
         let enriched: Vec<_> = parsed
             .into_iter()
             .map(|ing| add_metric_weight_alternative(ing, &mut weight_stats))
-            .map(|ing| add_volume_to_weight_alternative(ing, &mut volume_stats))
+            .map(|ing| add_volume_to_weight_alternative(ing, &mut volume_stats, domain.as_deref()))
             .map(|ing| ing.normalize_amounts())
             .collect();
 

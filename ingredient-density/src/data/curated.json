@@ -18,6 +18,11 @@
     "rice vinegar": {
       "grams_per_cup": 239.0,
       "source": "Comparable to USDA vinegar entries (cider 239, red wine 239, distilled 238)"
+    },
+    "diamond crystal kosher salt": {
+      "grams_per_cup": 137.0,
+      "source": "Widely cited density for Diamond Crystal kosher salt (~137g/cup vs Morton ~241g/cup)",
+      "url": "https://www.seriouseats.com/ask-the-food-lab-do-i-need-to-use-kosher-salt"
     }
   },
   "aliases": {
@@ -25,7 +30,13 @@
     "kosher salt": null,
     "salt": null,
     "sea salt": null,
-    "fine salt": null,
+    "fine salt": "salt, table",
+    "fine sea salt": "salt, table",
+    "fine grain sea salt": "salt, table",
+    "fine-grain sea salt": "salt, table",
+    "fine sea or table salt": "salt, table",
+    "table or fine sea salt": "salt, table",
+    "fine grain salt": "salt, table",
 
     "baking powder": "leavening agents, baking powder, double-acting, sodium aluminum sulfate",
     "baking soda": "leavening agents, baking soda",
@@ -131,5 +142,29 @@
     "white wine vinegar": "vinegar, red wine",
 
     "water": "water, bottled, generic"
+  },
+  "domain_overrides": {
+    "smittenkitchen.com": {
+      "salt": "diamond crystal kosher salt",
+      "kosher salt": "diamond crystal kosher salt"
+    },
+    "allrecipes.com": {
+      "salt": "salt, table"
+    },
+    "tasteofhome.com": {
+      "salt": "salt, table"
+    },
+    "natashaskitchen.com": {
+      "salt": "salt, table"
+    },
+    "downshiftology.com": {
+      "salt": "salt, table"
+    },
+    "inspiredtaste.net": {
+      "salt": "salt, table"
+    },
+    "theforkedspoon.com": {
+      "salt": "salt, table"
+    }
   }
 }
