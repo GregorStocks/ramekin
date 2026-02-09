@@ -1,0 +1,133 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-06-springy-fluffy-marshma",
+  "ingredients": [
+    {
+      "raw": "About 1 cup confectioners’ sugar",
+      "expected": {
+        "item": "About 1 cup confectioners’ sugar",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 1/2 envelopes (2 tablespoons plus 2 1/2 teaspoons) unflavored gelatin",
+      "expected": {
+        "item": "envelopes unflavored gelatin",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": null
+          },
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup cold water, divided",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "237",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 cups granulated sugar (cane sugar worked just fine)",
+      "expected": {
+        "item": "granulated sugar (cane sugar worked just fine)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup light corn syrup",
+      "expected": {
+        "item": "light corn syrup",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 large egg whites or reconstituted powdered egg whites",
+      "expected": {
+        "item": "egg whites or reconstituted powdered egg whites",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon vanilla (alternately: 1/2 of a scraped vanilla bean, 2 teaspoons almond or mint extract or maybe even some food coloring for tinting)",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

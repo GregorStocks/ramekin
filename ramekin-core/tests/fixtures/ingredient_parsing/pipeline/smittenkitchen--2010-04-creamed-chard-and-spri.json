@@ -1,0 +1,97 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-04-creamed-chard-and-spri",
+  "ingredients": [
+    {
+      "raw": "1 1-pound bunch Swiss chard, thick stems removed and leaves sliced into ribbons",
+      "expected": {
+        "item": "1-pound bunch Swiss chard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thick stems removed and leaves sliced into ribbons",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 spring onions, ends trimmed, white and some green parts sliced into thin coins",
+      "expected": {
+        "item": "spring onions, ends trimmed",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "white and some green parts sliced into thin coins",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 tablespoons all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "23",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/4 cups milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "306",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

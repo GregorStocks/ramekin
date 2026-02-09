@@ -1,0 +1,10 @@
+{
+  "title": "Scrape job polling has no backoff or timeout",
+  "description": "CapturePage.tsx:158-160 polls job status every 500ms with setInterval. No backoff and no maximum timeout - if a job hangs, polling continues forever. CreateRecipePage has a similar pattern. Should add backoff and a max timeout.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": ["ui"],
+  "created_at": "2026-02-09T07:06:55.000000+00:00",
+  "updated_at": "2026-02-09T07:06:55.000000+00:00"
+}

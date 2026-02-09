@@ -144,6 +144,10 @@
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "49",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -153,11 +157,15 @@
     {
       "raw": "2 teaspoons salt ((to taste))",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.7",
+            "unit": "g"
           }
         ],
         "note": "to taste",
@@ -172,6 +180,10 @@
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
           }
         ],
         "note": null,

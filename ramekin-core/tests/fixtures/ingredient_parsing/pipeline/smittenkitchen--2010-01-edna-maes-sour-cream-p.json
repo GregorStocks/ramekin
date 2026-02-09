@@ -1,0 +1,146 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-01-edna-maes-sour-cream-p",
+  "ingredients": [
+    {
+      "raw": "7 tablespoons (60 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon (13 grams) sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.6",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup (240 grams) sour cream (I swapped some with yogurt when I realized I was short, to no ill-effect)",
+      "expected": {
+        "item": "sour cream (I swapped some with yogurt when I realized I was short, to no ill-effect)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Butter, as needed",
+      "expected": {
+        "item": "Butter",
+        "measurements": [],
+        "note": "as needed",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Maple syrup (or perhaps some Cranberry Syrup)",
+      "expected": {
+        "item": "Maple syrup (or perhaps some Cranberry Syrup)",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

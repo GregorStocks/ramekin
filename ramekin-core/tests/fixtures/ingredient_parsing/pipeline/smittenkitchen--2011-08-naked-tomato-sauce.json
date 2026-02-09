@@ -1,0 +1,134 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-08-naked-tomato-sauce",
+  "ingredients": [
+    {
+      "raw": "3 pound plum tomatoes",
+      "expected": {
+        "item": "plum tomatoes",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon coarse salt",
+      "expected": {
+        "item": "coarse salt",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 large clove garlic, thinly sliced",
+      "expected": {
+        "item": "clove garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Pinch of red pepper flakes",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Small handful basil leaves, most left whole, a few slivered for garnish",
+      "expected": {
+        "item": "handful basil leaves, most left whole",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": "a few slivered for garnish",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "12 ounces (3/4 pound) dried spaghetti",
+      "expected": {
+        "item": "dried spaghetti",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "0.75",
+            "unit": "lb"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "1 tablespoon unsalted butter, or maybe two if nobody is looking",
+      "expected": {
+        "item": "unsalted butter, or maybe two if nobody is looking",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

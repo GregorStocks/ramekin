@@ -1,0 +1,128 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-02-spaghetti-with-lemon-a",
+  "ingredients": [
+    {
+      "raw": "1 pound spaghetti or linguine",
+      "expected": {
+        "item": "spaghetti or linguine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 lemons",
+      "expected": {
+        "item": "lemons",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup extra virgin olive oil , plus additional for serving",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": "plus additional for serving",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/4 cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 ounce finely grated Parmesan cheese (about 1/2 cup), plus additional for serving",
+      "expected": {
+        "item": "finely grated Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "plus additional for serving",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "Ground black pepper",
+      "expected": {
+        "item": "Ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Small handful fresh basil or arugula (what I used, deliciously, in a pinch) leaves, shredded",
+      "expected": {
+        "item": "handful fresh basil or arugula (what I used, deliciously, in a pinch) leaves",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": "shredded",
+        "category": "Produce"
+      }
+    }
+  ]
+}

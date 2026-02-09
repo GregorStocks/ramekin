@@ -101,7 +101,7 @@
     {
       "raw": "½ tsp salt (0.8-1.0% of meat weight)",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.5",
@@ -110,6 +110,10 @@
           {
             "amount": "0.8",
             "unit": null
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -230,6 +234,10 @@
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "17",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -276,6 +284,10 @@
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.7",
+            "unit": "g"
           }
         ],
         "note": null,

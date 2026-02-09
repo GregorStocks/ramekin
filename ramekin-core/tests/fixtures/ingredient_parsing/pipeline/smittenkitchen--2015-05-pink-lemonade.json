@@ -1,0 +1,139 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2015-05-pink-lemonade",
+  "ingredients": [
+    {
+      "raw": "And for the other side of the world:",
+      "expected": {
+        "item": "And for the other side of the world:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Six Months Ago: Twice-Baked Potatoes with Kale",
+      "expected": {
+        "item": "Months Ago: Twice-Baked Potatoes with Kale",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1.5 Years Ago: Cauliflower with Brown Butter Crumbs</a",
+      "expected": {
+        "item": "Years Ago: Cauliflower with Brown Butter Crumbs</a",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2.5 Years Ago: Dijon-Braised Brussels Sprouts",
+      "expected": {
+        "item": "Years Ago: Dijon-Braised Brussels Sprouts",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3.5 Years Ago: Cauliflower-Feta Fritters with Pomegranate",
+      "expected": {
+        "item": "Years Ago: Cauliflower-Feta Fritters with Pomegranate",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 cups cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "711",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/4 cup plus 1 tablespoon granulated sugar, divided",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/4 cup plus 1 tablespoon",
+            "unit": null
+          }
+        ],
+        "note": "divided",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup (about 5 ounces) fresh raspberries, blackberries or sliced strawberries",
+      "expected": {
+        "item": "fresh raspberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": "blackberries or sliced strawberries",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup lemon juice (from 4 to 6 lemons, depending on size and juicer efficiency)",
+      "expected": {
+        "item": "lemon juice (from 4 to 6 lemons, depending on size and juicer efficiency)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    }
+  ]
+}

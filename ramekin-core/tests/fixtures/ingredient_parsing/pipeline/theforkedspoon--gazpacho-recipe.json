@@ -153,11 +153,15 @@
     {
       "raw": "1 teaspoon salt (plus more to taste)",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
         "note": "plus more to taste",
@@ -186,6 +190,10 @@
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "g"
           }
         ],
         "note": null,

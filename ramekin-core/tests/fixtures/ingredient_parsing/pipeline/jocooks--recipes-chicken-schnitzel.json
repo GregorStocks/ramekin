@@ -23,11 +23,15 @@
     {
       "raw": "4 teaspoons salt (or to taste, divided)",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "4",
             "unit": "tsp"
+          },
+          {
+            "amount": "11",
+            "unit": "g"
           }
         ],
         "note": "or to taste, divided",

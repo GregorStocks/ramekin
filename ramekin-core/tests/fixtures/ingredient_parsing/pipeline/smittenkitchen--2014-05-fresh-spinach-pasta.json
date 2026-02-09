@@ -1,0 +1,98 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2014-05-fresh-spinach-pasta",
+  "ingredients": [
+    {
+      "raw": "5 ounces baby spinach leaves",
+      "expected": {
+        "item": "baby spinach leaves",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 3/4 to 3 cups all-purpose flour, preferably unbleached",
+      "expected": {
+        "item": "to 3 cups all-purpose flour, preferably unbleached",
+        "measurements": [
+          {
+            "amount": "2.75",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon sea salt or kosher salt",
+      "expected": {
+        "item": "sea salt or kosher salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 large egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Water (only if absolutely needed)",
+      "expected": {
+        "item": "Water (only if absolutely needed)",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Additional flour for rolling",
+      "expected": {
+        "item": "Additional flour for rolling",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

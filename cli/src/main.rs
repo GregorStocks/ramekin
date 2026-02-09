@@ -411,6 +411,15 @@ async fn main() -> Result<()> {
                 run_id
             );
 
+            // Generate and save density gap report
+            let density_report = pipeline_orchestrator::generate_density_gap_report(&results);
+            let density_report_path = PathBuf::from("data/density-gap-report.txt");
+            std::fs::write(&density_report_path, &density_report)?;
+            println!(
+                "Density gap report saved to: {}",
+                density_report_path.display()
+            );
+
             // Generate and save unique ingredients file
             let unique_ingredients =
                 pipeline_orchestrator::generate_unique_ingredients_file(&run_dir)?;

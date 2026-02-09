@@ -35,7 +35,9 @@ use ramekin_core::ingredient_parser::{
     parse_ingredient, parse_ingredients, Measurement, ParsedIngredient,
 };
 use ramekin_core::metric_weights::{add_metric_weight_alternative, MetricConversionStats};
-use ramekin_core::volume_to_weight::{add_volume_to_weight_alternative, VolumeConversionStats};
+use ramekin_core::volume_to_weight::{
+    add_volume_to_weight_alternative, apply_ingredient_rewrites, VolumeConversionStats,
+};
 use serde::Deserialize;
 use std::fs;
 use std::path::PathBuf;
@@ -68,6 +70,9 @@ struct IngredientTestCase {
     #[serde(default)]
     #[allow(dead_code)] // Used by serde for deserialization filtering
     is_section_header: bool,
+    /// True if this entry is a continuation of an "each" expansion from the previous entry's raw line.
+    #[serde(default)]
+    expanded: bool,
 }
 
 /// Curated test file (category-based)
@@ -116,7 +121,8 @@ fn run_pipeline(raw: &str) -> Expected {
     let parsed = parse_ingredient(raw);
     let mut weight_stats = MetricConversionStats::default();
     let mut volume_stats = VolumeConversionStats::default();
-    let result = add_metric_weight_alternative(parsed, &mut weight_stats);
+    let result = apply_ingredient_rewrites(parsed);
+    let result = add_metric_weight_alternative(result, &mut weight_stats);
     let result = add_volume_to_weight_alternative(result, &mut volume_stats);
     let result = result.normalize_amounts();
     Expected::from(result)
@@ -132,7 +138,8 @@ fn run_pipeline_batch(raw_lines: &[String]) -> Vec<Expected> {
         .map(|ing| {
             let mut weight_stats = MetricConversionStats::default();
             let mut volume_stats = VolumeConversionStats::default();
-            let result = add_metric_weight_alternative(ing, &mut weight_stats);
+            let result = apply_ingredient_rewrites(ing);
+            let result = add_metric_weight_alternative(result, &mut weight_stats);
             let result = add_volume_to_weight_alternative(result, &mut volume_stats);
             let result = result.normalize_amounts();
             Expected::from(result)
@@ -201,8 +208,13 @@ fn load_recipe_batch_tests() -> Vec<RecipeBatchTest> {
                 .unwrap_or_else(|e| panic!("Failed to parse {}: {}", path.display(), e));
 
             let name = format!("{}/{}--{}", subdir, file.source, file.recipe_slug);
-            // Collect all raw lines (including section headers) for batch processing
-            let raw_lines: Vec<String> = file.ingredients.iter().map(|i| i.raw.clone()).collect();
+            // Collect raw lines, skipping expanded entries (continuations of "each" expansion)
+            let raw_lines: Vec<String> = file
+                .ingredients
+                .iter()
+                .filter(|i| !i.expanded)
+                .map(|i| i.raw.clone())
+                .collect();
             // Collect only non-section-header expected values (section headers have expected: None)
             let expected: Vec<Expected> = file
                 .ingredients

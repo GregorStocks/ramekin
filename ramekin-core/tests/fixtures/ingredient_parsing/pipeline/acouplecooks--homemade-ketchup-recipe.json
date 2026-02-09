@@ -38,6 +38,10 @@
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "179",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -52,6 +56,10 @@
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -75,16 +83,58 @@
     {
       "raw": "1 teaspoon each chili powder, onion powder, and garlic powder",
       "expected": {
-        "item": "each chili powder, onion powder, and garlic powder",
+        "item": "chili powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.7",
+            "unit": "g"
           }
         ],
         "note": null,
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "1 teaspoon each chili powder, onion powder, and garlic powder",
+      "expected": {
+        "item": "onion powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "1 teaspoon each chili powder, onion powder, and garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
     },
     {
       "raw": "1/2 teaspoon paprika",

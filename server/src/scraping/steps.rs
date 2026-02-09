@@ -291,6 +291,7 @@ impl PipelineStep for SaveRecipeStep {
         // Determine version_source based on extraction method
         let version_source = match extraction_method {
             Some(ExtractionMethod::Paprika) => "import",
+            Some(ExtractionMethod::PhotoUpload) => "photo_import",
             _ => match self.existing_recipe_id {
                 Some(_) => "rescrape",
                 None => "scrape",

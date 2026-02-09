@@ -1,0 +1,116 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2008-03-butterscotch-ice-cream",
+  "ingredients": [
+    {
+      "raw": "1 cup firmly packed brown sugar",
+      "expected": {
+        "item": "firmly packed brown sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 teaspoons bourbon (optional)",
+      "expected": {
+        "item": "bourbon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 1/2 cups whipping cream",
+      "expected": {
+        "item": "whipping cream",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "357",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 cups half-and-half (light cream)",
+      "expected": {
+        "item": "half-and-half (light cream)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "6 large egg yolks (hint: if you make a hazelnut brown butter cake, you should have these in your fridge already!)",
+      "expected": {
+        "item": "egg yolks (hint: if you make a hazelnut brown butter cake, you should have these in your fridge already!)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    }
+  ]
+}

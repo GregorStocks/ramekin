@@ -1,0 +1,148 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-05-my-bacon-is-always-cri",
+  "ingredients": [
+    {
+      "raw": "5 ounces tomato juice",
+      "expected": {
+        "item": "tomato juice",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 1/2 ounces vodka",
+      "expected": {
+        "item": "vodka",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Juice of 2 lime wedges",
+      "expected": {
+        "item": "Juice of 2 lime wedges",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon finely grated",
+      "expected": {
+        "item": "1/2 teaspoon finely grated",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "fresh horseradish",
+      "expected": {
+        "item": "fresh horseradish",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "2 or 3 dashes of Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "2 or 3",
+            "unit": "dash"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "3 or 4 drops of Tabasco sauce",
+      "expected": {
+        "item": "Tabasco sauce",
+        "measurements": [
+          {
+            "amount": "3 or 4",
+            "unit": "drop"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "Pinch of salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Pinch of celery salt",
+      "expected": {
+        "item": "celery salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Small pinch of cayenne pepper",
+      "expected": {
+        "item": "pinch of cayenne pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Ice",
+      "expected": {
+        "item": "Ice",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-03-irish-soda-bread-scone",
+  "ingredients": [
+    {
+      "raw": "3 cups all-purpose flour, plus additional for work surface",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "375",
+            "unit": "g"
+          }
+        ],
+        "note": "plus additional for work surface",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup cake flour (or, make your own)",
+      "expected": {
+        "item": "cake flour (or, make your own)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6.9",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons cream of tartar",
+      "expected": {
+        "item": "cream of tartar",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon table salt (this is 2/3 the original amount, which I found too salty)",
+      "expected": {
+        "item": "table salt (this is 2/3 the original amount, which I found too salty)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "5 tablespoons unsalted butter (4 tablespoons softened, 1 tablespoon melted)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "71",
+            "unit": "g"
+          }
+        ],
+        "note": "4 tablespoons softened, 1 tablespoon melted",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/4 cups buttermilk (or, make your own)",
+      "expected": {
+        "item": "buttermilk (or, make your own)",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 egg, lightly beaten",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "lightly beaten",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup currants or raisins",
+      "expected": {
+        "item": "currants or raisins",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1 tablespoons caraway seeds (optional)",
+      "expected": {
+        "item": "caraway seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

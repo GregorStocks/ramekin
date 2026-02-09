@@ -1,0 +1,290 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "chocolate-caramel-tart-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1⁄2 cups flour",
+      "expected": {
+        "item": "1⁄2 cups flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1⁄4 cup plus 1 tablespoon dutch-process unsweetened",
+      "expected": {
+        "item": "⁄4 cup plus 1 tablespoon dutch-process unsweetened",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "cocoa powder",
+      "expected": {
+        "item": "cocoa powder",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1⁄4 teaspoon. kosher salt",
+      "expected": {
+        "item": "⁄4 teaspoon. kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "10 tablespoons unsalted butter, cubed and softened",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed and softened",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1⁄2 cup plus 2 tablespoons. confectioners' sugar",
+      "expected": {
+        "item": "⁄2 cup plus 2 tablespoons. confectioners' sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 egg yolks, room temperature",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1⁄2 teaspoon pure vanilla extract",
+      "expected": {
+        "item": "⁄2 teaspoon pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1⁄2 cups sugar",
+      "expected": {
+        "item": "1⁄2 cups sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 tablespoons light corn syrup",
+      "expected": {
+        "item": "light corn syrup",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1⁄4 teaspoon kosher salt",
+      "expected": {
+        "item": "⁄4 teaspoon kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "6 tablespoons water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "89",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "6 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "6 tablespoons heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "89",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 teaspoon pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1⁄2 cup heavy cream",
+      "expected": {
+        "item": "⁄2 cup heavy cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 oz. Scharffen Berger Bittersweet Chocolate, finely chopped",
+      "expected": {
+        "item": "Scharffen Berger Bittersweet Chocolate",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Vanilla Fleur de Sel for garnish (optional)",
+      "expected": {
+        "item": "Vanilla Fleur de Sel for garnish",
+        "measurements": [],
+        "note": "optional",
+        "category": "Baking"
+      }
+    }
+  ]
+}

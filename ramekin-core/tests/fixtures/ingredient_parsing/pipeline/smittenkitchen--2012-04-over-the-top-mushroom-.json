@@ -1,0 +1,289 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2012-04-over-the-top-mushroom-",
+  "ingredients": [
+    {
+      "raw": "Buttery Pastry Shell",
+      "expected": {
+        "item": "Buttery Pastry Shell",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 cups (250 grams) all-purpose flour, plus more for dusting",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for dusting",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup (2 sicks or 225 grams) very cold unsalted butter, cut into a small dice",
+      "expected": {
+        "item": "very cold unsalted butter, cut into a small dice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 cup (60 ml) water, ice cold",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          },
+          {
+            "amount": "59",
+            "unit": "g"
+          }
+        ],
+        "note": "ice cold",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Neutral oil, for brushing springform",
+      "expected": {
+        "item": "Neutral oil, for brushing springform",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Filling",
+      "expected": {
+        "item": "Filling",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) olive or vegetable oil",
+      "expected": {
+        "item": "olive or vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 pounds (905 grams) mushrooms (see Note up top for suggestions)",
+      "expected": {
+        "item": "mushrooms (see Note up top for suggestions)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "905",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper",
+      "expected": {
+        "item": "Salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 grams) unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 shallots, minced (I used 4 small because I’m a rebel)",
+      "expected": {
+        "item": "shallots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "minced (I used 4 small because I’m a rebel)",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh thyme, minced (use 1 teaspoon only if dried/jarred)",
+      "expected": {
+        "item": "fresh thyme, minced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "use 1 teaspoon only if dried/jarred",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3/4 cup (2 1/2 ounces or 70 grams) Comte, Emmantel or Gruyere, grated",
+      "expected": {
+        "item": "Comte, Emmantel or Gruyere",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "2.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "70",
+            "unit": "g"
+          }
+        ],
+        "note": "grated",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2 cups (475 ml) milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "475",
+            "unit": "ml"
+          },
+          {
+            "amount": "490",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 cup (475 ml) heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "475",
+            "unit": "ml"
+          },
+          {
+            "amount": "476",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "6 large eggs, lightly beaten",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": "lightly beaten",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Freshly grated nutmeg (optional)",
+      "expected": {
+        "item": "Freshly grated nutmeg",
+        "measurements": [],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

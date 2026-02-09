@@ -52,6 +52,10 @@
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -121,7 +125,7 @@
     {
       "raw": "salt (to taste)",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [],
         "note": "to taste",
         "category": "Spices & Seasonings"

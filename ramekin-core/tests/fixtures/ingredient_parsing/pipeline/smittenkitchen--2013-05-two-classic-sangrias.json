@@ -1,0 +1,230 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-05-two-classic-sangrias",
+  "ingredients": [
+    {
+      "raw": "1 bottle dry red wine",
+      "expected": {
+        "item": "dry red wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bottle"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 tablespoon sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup brandy",
+      "expected": {
+        "item": "brandy",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/4 cup Triple sec or another orange liqueur",
+      "expected": {
+        "item": "Triple sec or another orange liqueur",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/4 cup freshly squeezed orange juice",
+      "expected": {
+        "item": "freshly squeezed orange juice",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Sliced peaches, apples, oranges or berries, tossed with a squeeze of lemon juice",
+      "expected": {
+        "item": "Sliced peaches, apples, oranges or berries, tossed with a squeeze of lemon juice",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Sparkling water, if desired",
+      "expected": {
+        "item": "Sparkling water, if desired",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 bottles dry Spanish red wine (they recommend garnacha)",
+      "expected": {
+        "item": "dry Spanish red wine (they recommend garnacha)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "bottle"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 bottle dry Spanish rosé (they recommend this to lighten the body of the sangria)",
+      "expected": {
+        "item": "dry Spanish rosé (they recommend this to lighten the body of the sangria)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bottle"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 ounce orange liqueur (such as Triple Sec or Torres)",
+      "expected": {
+        "item": "orange liqueur (such as Triple Sec or Torres)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 ounces brandy, preferably Spanish, such as Romate",
+      "expected": {
+        "item": "brandy, preferably Spanish, such as Romate",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 tablespoon sugar, or more to taste",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": "or more to taste",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 apples, cored and diced, for garnish (I used one red and one green, for color)",
+      "expected": {
+        "item": "apples, cored and diced, for garnish (I used one red and one green, for color)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 oranges, cut into wedges, for garnish",
+      "expected": {
+        "item": "oranges, cut into wedges",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "for garnish",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "12 ounces (1 can) orange soda (they recommend less sweet brands such as San Pellegrino aranciata)",
+      "expected": {
+        "item": "orange soda (they recommend less sweet brands such as San Pellegrino aranciata)",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

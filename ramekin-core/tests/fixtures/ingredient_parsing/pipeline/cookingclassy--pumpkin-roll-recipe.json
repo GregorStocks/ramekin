@@ -59,11 +59,15 @@
     {
       "raw": "1/4 tsp salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -87,7 +91,44 @@
     {
       "raw": "1/4 tsp each ginger, nutmeg and cloves*",
       "expected": {
-        "item": "each ginger, nutmeg and cloves*",
+        "item": "ginger",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.4",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/4 tsp each ginger, nutmeg and cloves*",
+      "expected": {
+        "item": "nutmeg",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.6",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "1/4 tsp each ginger, nutmeg and cloves*",
+      "expected": {
+        "item": "cloves*",
         "measurements": [
           {
             "amount": "0.25",
@@ -96,7 +137,8 @@
         ],
         "note": null,
         "category": "Spices & Seasonings"
-      }
+      },
+      "expanded": true
     },
     {
       "raw": "3 large eggs, (at room temperature**)",

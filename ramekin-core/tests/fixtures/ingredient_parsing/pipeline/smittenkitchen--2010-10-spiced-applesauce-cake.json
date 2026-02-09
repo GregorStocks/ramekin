@@ -1,0 +1,376 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-10-spiced-applesauce-cake",
+  "ingredients": [
+    {
+      "raw": "For cake",
+      "expected": {
+        "item": "For cake",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 cups (8 3/4 ounces or 250 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "8.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 teaspoons (10 grams) baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon (3 grams) baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon (3 grams) salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon (2 grams) cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon (1 gram) ground ginger",
+      "expected": {
+        "item": "ground ginger",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon ground cloves",
+      "expected": {
+        "item": "ground cloves",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 stick (4 ounces or 113 grams) unsalted butter, softened",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stick"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "softened",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup (6 7/8 ounces or 195 grams) packed light brown sugar (updated weight)",
+      "expected": {
+        "item": "packed light brown sugar (updated weight)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "6.88",
+            "unit": "oz"
+          },
+          {
+            "amount": "195",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon (5 ml) pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (about 13 ounces or 365 grams) unsweetened applesauce",
+      "expected": {
+        "item": "unsweetened applesauce",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "13",
+            "unit": "oz"
+          },
+          {
+            "amount": "365",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup (about 1 3/4 ounces or 50 grams) walnuts (optional), toasted, cooled, and chopped",
+      "expected": {
+        "item": "walnuts, toasted, cooled, and chopped",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "1.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "For frosting",
+      "expected": {
+        "item": "For frosting",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "5 ounces (142 grams) cream cheese, softened",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": "softened",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "3 tablespoons (1 1/2 ounces or 42 grams) unsalted butter, softened",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
+          }
+        ],
+        "note": "softened",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup (4 ounces or 120 grams) confectioners sugar",
+      "expected": {
+        "item": "confectioners sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

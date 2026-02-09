@@ -1,0 +1,264 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2014-07-summer-squash-gratin-w",
+  "ingredients": [
+    {
+      "raw": "Gratin",
+      "expected": {
+        "item": "Gratin",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 pounds summer squash",
+      "expected": {
+        "item": "summer squash",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 cup fresh breadcrumbs",
+      "expected": {
+        "item": "fresh breadcrumbs",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "3 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3/4 cup thinly sliced shallots (from 4 to 5 medium)",
+      "expected": {
+        "item": "thinly sliced shallots (from 4 to 5 medium)",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup grated gruyere cheese",
+      "expected": {
+        "item": "grated gruyere cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/4 cup salsa verde (below)",
+      "expected": {
+        "item": "salsa verde (below)",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Salsa verde",
+      "expected": {
+        "item": "Salsa verde",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 tablespoon thyme leaves",
+      "expected": {
+        "item": "thyme leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon marjoram or oregano leaves (or half, if dried)",
+      "expected": {
+        "item": "marjoram or oregano leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or half, if dried",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 cup coarsely chopped mint leaves",
+      "expected": {
+        "item": "coarsely chopped mint leaves",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup coarsely chopped flat-leaf parsley",
+      "expected": {
+        "item": "coarsely chopped flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 small cloves garlic",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "small"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 salt-packed anchovy, rinsed and bones removed",
+      "expected": {
+        "item": "salt-packed anchovy",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "rinsed and bones removed",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 tablespoon capers, drained (and rinsed, too, if salt-packed)",
+      "expected": {
+        "item": "capers, drained",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "and rinsed, too, if salt-packed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/2 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "108",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/2 lemon, or more to taste",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": null
+          }
+        ],
+        "note": "or more to taste",
+        "category": "Produce"
+      }
+    }
+  ]
+}

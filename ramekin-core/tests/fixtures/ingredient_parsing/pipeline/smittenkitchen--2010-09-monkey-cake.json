@@ -1,0 +1,698 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-09-monkey-cake",
+  "ingredients": [
+    {
+      "raw": "5 1/4 cups (21 1/2 ounces or 609 grams) cake flour",
+      "expected": {
+        "item": "cake flour",
+        "measurements": [
+          {
+            "amount": "5.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "21.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "609",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon (1/2 ounce or 15 grams) baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 1/4 teaspoons (13 grams) baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "2.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon (6 grams) salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon (2 grams) cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (3 sticks, 12 ounces or 341 grams) unsalted butter, room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "3",
+            "unit": "stick"
+          },
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "341",
+            "unit": "g"
+          }
+        ],
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (10 1/2 ounces or 300 grams) sugar [weights corrected 6/23/11]",
+      "expected": {
+        "item": "sugar [weights corrected 6/23/11]",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "10.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "300",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (11 1/2 ounces or 327 grams) packed golden brown sugar",
+      "expected": {
+        "item": "packed golden brown sugar",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "11.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "327",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "6 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 cups mashed or pureed very ripe bananas (about 8 large)",
+      "expected": {
+        "item": "mashed or pureed very ripe bananas",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "8",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup plus 1 tablespoon (4 7/8 ounces or 136 grams) sour cream or (weight will vary) plain yogurt",
+      "expected": {
+        "item": "sour cream or (weight will vary) plain yogurt",
+        "measurements": [
+          {
+            "amount": "1/2 cup plus 1 tablespoon",
+            "unit": null
+          },
+          {
+            "amount": "4.88",
+            "unit": "oz"
+          },
+          {
+            "amount": "136",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 1/2 cups (14 3/8 ounces or 406 grams) cake flour",
+      "expected": {
+        "item": "cake flour",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "14.38",
+            "unit": "oz"
+          },
+          {
+            "amount": "406",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 teaspoons (10 grams) baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons (8 grams) baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon (5 grams) salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon (2 grams) cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup (2 sticks, 8 ounces or 227 grams) unsalted butter, room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "stick"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup (7 ounces or 200 grams) sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup (7 5/8 ounces or 218 grams) packed golden brown sugar",
+      "expected": {
+        "item": "packed golden brown sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "7.63",
+            "unit": "oz"
+          },
+          {
+            "amount": "218",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "4 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 cups mashed or pureed very ripe bananas (5 to 6 large)",
+      "expected": {
+        "item": "mashed or pureed very ripe bananas",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "5 to 6",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "6 tablespoons (3 1/4 ounces or 91 grams) sour cream or (weight will vary) plain yogurt",
+      "expected": {
+        "item": "sour cream or (weight will vary) plain yogurt",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "3.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "91",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 teaspoons (10 ml) vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "8.7",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "6 3/4 cups (28 1/2 ounces or 810 grams) confectioners’ sugar (no need to sift)",
+      "expected": {
+        "item": "confectioners’ sugar (no need to sift)",
+        "measurements": [
+          {
+            "amount": "6.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "28.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "810",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "4 1/2 sticks (18 ounces or 510 grams) unsalted butter, at room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4.5",
+            "unit": "stick"
+          },
+          {
+            "amount": "18",
+            "unit": "oz"
+          },
+          {
+            "amount": "510",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "9 tablespoons (135 ml) half-and-half or whole milk",
+      "expected": {
+        "item": "half-and-half or whole milk",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "135",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons (23 ml) vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "23",
+            "unit": "ml"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "8 ounces (226 grams) unsweetened chocolate, melted and cooled",
+      "expected": {
+        "item": "unsweetened chocolate",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
+          }
+        ],
+        "note": "melted and cooled",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "4 1/2 cups (19 ounces or 540 grams) confectioners’ sugar (no need to sift)",
+      "expected": {
+        "item": "confectioners’ sugar (no need to sift)",
+        "measurements": [
+          {
+            "amount": "4.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "19",
+            "unit": "oz"
+          },
+          {
+            "amount": "540",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (3 sticks, 12 ounces or 341 grams) unsalted butter, at room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "3",
+            "unit": "stick"
+          },
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "341",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "6 tablespoons (90 ml) half-and-half or whole milk",
+      "expected": {
+        "item": "half-and-half or whole milk",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "90",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "5 ounces (142 grams) unsweetened chocolate, melted and cooled",
+      "expected": {
+        "item": "unsweetened chocolate",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": "melted and cooled",
+        "category": "Other"
+      }
+    }
+  ]
+}

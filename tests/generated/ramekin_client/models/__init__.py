@@ -30,6 +30,8 @@ from ramekin_client.models.custom_enrich_request import CustomEnrichRequest
 from ramekin_client.models.direction import Direction
 from ramekin_client.models.error_response import ErrorResponse
 from ramekin_client.models.import_extraction_method import ImportExtractionMethod
+from ramekin_client.models.import_from_photos_request import ImportFromPhotosRequest
+from ramekin_client.models.import_from_photos_response import ImportFromPhotosResponse
 from ramekin_client.models.import_raw_recipe import ImportRawRecipe
 from ramekin_client.models.import_recipe_request import ImportRecipeRequest
 from ramekin_client.models.import_recipe_response import ImportRecipeResponse

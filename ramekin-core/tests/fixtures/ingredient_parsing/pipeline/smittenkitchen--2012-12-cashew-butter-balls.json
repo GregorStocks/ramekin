@@ -1,0 +1,118 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2012-12-cashew-butter-balls",
+  "ingredients": [
+    {
+      "raw": "1 cup (145 grams) raw cashews",
+      "expected": {
+        "item": "raw cashews",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "145",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "2 cups (250 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon table salt, or a heaped 1/4 teaspoon sea salt flakes",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "g"
+          }
+        ],
+        "note": "or a heaped 1/4 teaspoon sea salt flakes",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup (2 sticks or 230 grams) unsalted butter, softened slightly, cut into chunks",
+      "expected": {
+        "item": "unsalted butter, softened slightly, cut into chunks",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "stick"
+          },
+          {
+            "amount": "230",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 cups (240 grams) powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

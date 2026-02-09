@@ -21,6 +21,8 @@ pub enum ImportExtractionMethod {
     Microdata,
     #[serde(rename = "paprika")]
     Paprika,
+    #[serde(rename = "photo_upload")]
+    PhotoUpload,
 }
 
 impl std::fmt::Display for ImportExtractionMethod {
@@ -29,6 +31,7 @@ impl std::fmt::Display for ImportExtractionMethod {
             Self::JsonLd => write!(f, "json_ld"),
             Self::Microdata => write!(f, "microdata"),
             Self::Paprika => write!(f, "paprika"),
+            Self::PhotoUpload => write!(f, "photo_upload"),
         }
     }
 }

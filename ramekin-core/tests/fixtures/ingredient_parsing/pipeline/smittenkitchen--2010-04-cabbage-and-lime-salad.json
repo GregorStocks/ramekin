@@ -1,0 +1,153 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-04-cabbage-and-lime-salad",
+  "ingredients": [
+    {
+      "raw": "1/2 small red cabbage, trimmed, cored, and shredded (about 6 cups)",
+      "expected": {
+        "item": "red cabbage, trimmed, cored",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "small"
+          },
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": "and shredded",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 small green cabbage, trimmed, cored, and shredded (about 6 cups)",
+      "expected": {
+        "item": "green cabbage, trimmed, cored",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "small"
+          },
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": "and shredded",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon kosher salt, plus more to taste",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 bunch fresh baby spinach, stemmed and cut into 1/2-inch wide ribbons (about 4 cups loosely packed)",
+      "expected": {
+        "item": "fresh baby spinach, stemmed and cut into 1/2-inch wide ribbons",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": "about 4 cups loosely packed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup fresh lime juice (from about 2 small limes)",
+      "expected": {
+        "item": "fresh lime juice (from about 2 small limes)",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 tablespoon Dijon or other salty prepared mustard",
+      "expected": {
+        "item": "Dijon or other salty prepared mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 cup peanut oil",
+      "expected": {
+        "item": "peanut oil",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/2 cup roasted unsalted peanuts, coarsely chopped",
+      "expected": {
+        "item": "roasted unsalted peanuts",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "coarsely chopped",
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

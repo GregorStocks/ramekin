@@ -69,7 +69,25 @@
     {
       "raw": "1/4 teaspoon each salt and pepper*",
       "expected": {
-        "item": "each salt and pepper*",
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon each salt and pepper*",
+      "expected": {
+        "item": "pepper*",
         "measurements": [
           {
             "amount": "0.25",
@@ -78,7 +96,8 @@
         ],
         "note": null,
         "category": "Spices & Seasonings"
-      }
+      },
+      "expanded": true
     },
     {
       "raw": "1 cup (4 ounces / 90g) shredded or crumbled cheese such as feta, cheddar, goat cheese, or gruyere",

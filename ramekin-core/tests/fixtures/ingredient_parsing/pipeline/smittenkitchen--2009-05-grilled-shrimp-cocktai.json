@@ -1,0 +1,108 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-05-grilled-shrimp-cocktai",
+  "ingredients": [
+    {
+      "raw": "1 cup ketchup",
+      "expected": {
+        "item": "ketchup",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 tablespoon prepared horseradish",
+      "expected": {
+        "item": "prepared horseradish",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground black pepper",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon ancho or other mild chili powder",
+      "expected": {
+        "item": "ancho or other mild chili powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Pinch cayenne pepper",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon juice from 1 small lemon (we use more)",
+      "expected": {
+        "item": "juice from 1 small lemon (we use more)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    }
+  ]
+}

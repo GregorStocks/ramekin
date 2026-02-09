@@ -1,0 +1,317 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-12-chicken-and-dumplings",
+  "ingredients": [
+    {
+      "raw": "Stew",
+      "expected": {
+        "item": "Stew",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "5 pounds bone-in, skin-on chicken thighs",
+      "expected": {
+        "item": "bone-in, skin-on chicken thighs",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "lb"
+          },
+          {
+            "amount": "2268",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Table salt and ground black pepper",
+      "expected": {
+        "item": "Table salt and ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 teaspoons vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          },
+          {
+            "amount": "18",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "4 tablespoons unsalted butter (1/2 stick)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "stick"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 medium leeks , white and llight green parts only, cut in half lengthwise and then into 1-inch pieces",
+      "expected": {
+        "item": "leeks, white and llight green parts only, cut in half lengthwise and then into 1-inch pieces",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large onion, minced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "6 tablespoons unbleached all-purpose flour",
+      "expected": {
+        "item": "unbleached all-purpose flour",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup dry sherry",
+      "expected": {
+        "item": "dry sherry",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "4 1/2 cups low-sodium chicken broth",
+      "expected": {
+        "item": "low-sodium chicken broth",
+        "measurements": [
+          {
+            "amount": "4.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/4 cup whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 teaspoon minced fresh thyme leaves",
+      "expected": {
+        "item": "minced fresh thyme leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 cup frozen green peas",
+      "expected": {
+        "item": "frozen green peas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Frozen"
+      }
+    },
+    {
+      "raw": "3 tablespoons minced fresh tarragon leaves",
+      "expected": {
+        "item": "minced fresh tarragon leaves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Dumplings",
+      "expected": {
+        "item": "Dumplings",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 cups unbleached all-purpose flour",
+      "expected": {
+        "item": "unbleached all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6.1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 tablespoons reserved chicken fat (or unsalted butter)",
+      "expected": {
+        "item": "reserved chicken fat (or unsalted butter)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    }
+  ]
+}

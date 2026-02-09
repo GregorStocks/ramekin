@@ -1,0 +1,330 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-05-spring-vegetable-potst",
+  "ingredients": [
+    {
+      "raw": "Potstickers",
+      "expected": {
+        "item": "Potstickers",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3 to 3 1/4 cups chopped spring vegetables (such as asparagus, favas, peas, lima beans or more) (I used 2 1/4 cups chopped asparagus from 12 ounces stalks plus 1 cup cooked favas from about 1 pound fresh in their pods)",
+      "expected": {
+        "item": "1/4 cups chopped spring vegetables (I used 2 1/4 cups chopped asparagus from 12 ounces stalks plus 1 cup cooked favas from about 1 pound fresh in their pods)",
+        "measurements": [
+          {
+            "amount": "3 to 3",
+            "unit": null
+          }
+        ],
+        "note": "such as asparagus, favas, peas, lima beans or more",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon neutral cooking oil, such as safflower, canola or peanut",
+      "expected": {
+        "item": "neutral cooking oil, such as safflower, canola or peanut",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "3/4 cup thinly sliced scallions (from about 3/4 of a bundle, about 3 ounces)",
+      "expected": {
+        "item": "thinly sliced scallions",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon minced ginger",
+      "expected": {
+        "item": "minced ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 clove garlic, peeled minced (if using garlic chives, omit)",
+      "expected": {
+        "item": "garlic, peeled minced (if using garlic chives, omit)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup (about 6 ounces) firm tofu, chopped small (see Note up top for alternative)",
+      "expected": {
+        "item": "firm tofu",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped small (see Note up top for alternative)",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup garlic or regular chives",
+      "expected": {
+        "item": "garlic or regular chives",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon toasted sesame oil",
+      "expected": {
+        "item": "toasted sesame oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon kosher salt, or more to taste",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or more to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "To assemble",
+      "expected": {
+        "item": "To assemble",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 tablespoon cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "50 round dumpling wrappers (most packages contain 50)",
+      "expected": {
+        "item": "round dumpling wrappers (most packages contain 50)",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "Scallion dipping sauce",
+      "expected": {
+        "item": "Scallion dipping sauce",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 to 3 scallions (or, remainder of bundle used for potstickers), thinly sliced (use some in sauce, some for garnish)",
+      "expected": {
+        "item": "scallions (or, remainder of bundle used for potstickers), thinly sliced (use some in sauce",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": null
+          }
+        ],
+        "note": "some for garnish)",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup rice vinegar",
+      "expected": {
+        "item": "rice vinegar",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/4 cup soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "64",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 tablespoon regular or spicy toasted sesame oil",
+      "expected": {
+        "item": "regular or spicy toasted sesame oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "To cook",
+      "expected": {
+        "item": "To cook",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons neutral cooking oil",
+      "expected": {
+        "item": "neutral cooking oil",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/4 to 1/2 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "0.25 to 0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

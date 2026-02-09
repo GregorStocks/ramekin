@@ -1,0 +1,93 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-06-pickled-vegetable-sand",
+  "ingredients": [
+    {
+      "raw": "Pickling mixture",
+      "expected": {
+        "item": "Pickling mixture",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 cup distilled white vinegar",
+      "expected": {
+        "item": "distilled white vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "4 tablespoons sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tablespoons Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons yellow mustard seeds",
+      "expected": {
+        "item": "yellow mustard seeds",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "237",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

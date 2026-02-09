@@ -42,6 +42,10 @@
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -56,6 +60,10 @@
           {
             "amount": "3",
             "unit": "tsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -70,6 +78,10 @@
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.7",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -133,7 +145,7 @@
     {
       "raw": "salt, to taste",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [],
         "note": "to taste",
         "category": "Spices & Seasonings"
@@ -155,7 +167,8 @@
         "measurements": [],
         "note": "to taste",
         "category": "Spices & Seasonings"
-      }
+      },
+      "expanded": true
     }
   ]
 }

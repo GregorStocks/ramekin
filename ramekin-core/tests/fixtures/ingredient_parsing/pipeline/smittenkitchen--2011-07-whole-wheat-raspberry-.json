@@ -1,0 +1,172 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-07-whole-wheat-raspberry-",
+  "ingredients": [
+    {
+      "raw": "1 cup (120 grams) whole wheat flour",
+      "expected": {
+        "item": "whole wheat flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup (125 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon baking powder, preferably aluminum-free",
+      "expected": {
+        "item": "baking powder, preferably aluminum-free",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup (50 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "6 tablespoons (85 grams) cold unsalted butter",
+      "expected": {
+        "item": "cold unsalted butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup (136 grams or 4 3/4 ounces) fresh raspberries",
+      "expected": {
+        "item": "fresh raspberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "136",
+            "unit": "g"
+          },
+          {
+            "amount": "4.75",
+            "unit": "oz"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3/4 cup (189 grams) whole milk ricotta",
+      "expected": {
+        "item": "whole milk ricotta",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "189",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/3 cup (79 ml) heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          },
+          {
+            "amount": "79",
+            "unit": "ml"
+          },
+          {
+            "amount": "79",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

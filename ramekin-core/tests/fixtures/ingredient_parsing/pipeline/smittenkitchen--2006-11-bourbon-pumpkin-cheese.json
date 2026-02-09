@@ -95,7 +95,7 @@
     {
       "raw": "Two pinches of salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "2",
@@ -168,6 +168,10 @@
           {
             "amount": "5",
             "unit": "ml"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
           }
         ],
         "note": null,

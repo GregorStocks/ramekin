@@ -18,14 +18,13 @@ use utoipa::ToSchema;
 ///
 /// Converts volume units (cups, tbsp, tsp) and imperial weights (oz, lb)
 /// to grams when density data is available.
-fn enrich_ingredients(ingredients: Vec<Ingredient>) -> Vec<Ingredient> {
+fn enrich_ingredients(ingredients: Vec<Ingredient>) -> Result<Vec<Ingredient>, serde_json::Error> {
     ingredients
         .into_iter()
         .map(|ing| {
-            let parsed: ParsedIngredient =
-                serde_json::from_value(serde_json::to_value(&ing).unwrap()).unwrap();
+            let parsed: ParsedIngredient = serde_json::from_value(serde_json::to_value(&ing)?)?;
             let enriched = enrich_ingredient_measurements(parsed);
-            serde_json::from_value(serde_json::to_value(&enriched).unwrap()).unwrap()
+            serde_json::from_value(serde_json::to_value(&enriched)?)
         })
         .collect()
 }
@@ -47,6 +46,7 @@ fn enrich_ingredients(ingredients: Vec<Ingredient>) -> Vec<Ingredient> {
     responses(
         (status = 200, description = "Enriched recipe object", body = RecipeContent),
         (status = 401, description = "Unauthorized", body = crate::api::ErrorResponse),
+        (status = 500, description = "Internal server error", body = crate::api::ErrorResponse),
     ),
     security(
         ("bearer_auth" = [])
@@ -67,7 +67,19 @@ pub async fn enrich_recipe(
     };
 
     // Enrich ingredient measurements (no AI needed - uses density database)
-    let ingredients = enrich_ingredients(request.ingredients);
+    let ingredients = match enrich_ingredients(request.ingredients) {
+        Ok(v) => v,
+        Err(e) => {
+            tracing::error!("Failed to enrich ingredients: {}", e);
+            return (
+                StatusCode::INTERNAL_SERVER_ERROR,
+                Json(ErrorResponse {
+                    error: "Failed to enrich ingredients".to_string(),
+                }),
+            )
+                .into_response();
+        }
+    };
 
     // Return enriched recipe
     let enriched = RecipeContent {
@@ -156,6 +168,7 @@ pub struct CustomEnrichRequest {
     responses(
         (status = 200, description = "Modified recipe", body = RecipeContent),
         (status = 401, description = "Unauthorized", body = crate::api::ErrorResponse),
+        (status = 500, description = "Internal server error", body = crate::api::ErrorResponse),
         (status = 503, description = "AI service unavailable", body = crate::api::ErrorResponse)
     ),
     security(
@@ -182,7 +195,19 @@ pub async fn custom_enrich_recipe(
     };
 
     // Serialize the recipe to JSON for the prompt
-    let recipe_json = serde_json::to_string_pretty(&request.recipe).unwrap();
+    let recipe_json = match serde_json::to_string_pretty(&request.recipe) {
+        Ok(j) => j,
+        Err(e) => {
+            tracing::error!("Failed to serialize recipe for AI: {}", e);
+            return (
+                StatusCode::INTERNAL_SERVER_ERROR,
+                Json(ErrorResponse {
+                    error: "Failed to serialize recipe".to_string(),
+                }),
+            )
+                .into_response();
+        }
+    };
 
     // Call custom enrich
     let result = match custom_enrich(&ai_client, &recipe_json, &request.instruction).await {

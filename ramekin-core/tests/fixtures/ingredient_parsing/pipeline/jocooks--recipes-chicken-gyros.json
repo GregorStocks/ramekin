@@ -60,6 +60,10 @@
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -106,6 +110,10 @@
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "6",
+            "unit": "g"
           }
         ],
         "note": "ground",
@@ -120,6 +128,10 @@
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
           }
         ],
         "note": "dried",
@@ -165,11 +177,15 @@
     {
       "raw": "1 teaspoon salt (or to taste)",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
         "note": "or to taste",

@@ -1,0 +1,135 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-04-spinach-and-smashed-eg",
+  "ingredients": [
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 slice of your favorite hearty bread",
+      "expected": {
+        "item": "your favorite hearty bread",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "slice"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "2 ounces baby spinach",
+      "expected": {
+        "item": "baby spinach",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 pat butter",
+      "expected": {
+        "item": "pat butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon minced shallot or white onion",
+      "expected": {
+        "item": "minced shallot or white onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Sea salt and freshly ground black pepper",
+      "expected": {
+        "item": "Sea salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon smooth Dijon mustard",
+      "expected": {
+        "item": "smooth Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 tablespoon crumbled cheese, such as goat cheese or feta",
+      "expected": {
+        "item": "crumbled cheese, such as goat cheese or feta",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    }
+  ]
+}

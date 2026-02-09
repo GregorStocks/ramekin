@@ -45,6 +45,9 @@ struct CuratedDataFile {
     ingredients: HashMap<String, CuratedIngredient>,
     /// Aliases can be null to indicate "explicitly ambiguous, do not resolve"
     aliases: HashMap<String, Option<String>>,
+    /// Rewrites rename ingredient items before density lookup (e.g. "salt" → "salt, presumably Diamond")
+    #[serde(default)]
+    rewrites: HashMap<String, String>,
 }
 
 /// Merged density data from all sources.
@@ -53,6 +56,8 @@ struct MergedData {
     ingredients: HashMap<String, f64>,
     /// Alias -> canonical name (or None if explicitly ambiguous)
     aliases: HashMap<String, Option<String>>,
+    /// Rewrites rename ingredient items (e.g. "salt" → "salt, presumably Diamond")
+    rewrites: HashMap<String, String>,
 }
 
 // =============================================================================
@@ -89,6 +94,7 @@ static DATA: LazyLock<MergedData> = LazyLock::new(|| {
     MergedData {
         ingredients,
         aliases,
+        rewrites: curated.rewrites,
     }
 });
 
@@ -190,6 +196,16 @@ pub fn is_volume_unit(unit: Option<&str>) -> bool {
 /// Normalize ingredient name for matching.
 fn normalize_ingredient_name(s: &str) -> String {
     s.to_lowercase().trim().to_string()
+}
+
+/// Rewrite an ingredient name using curated rewrite rules.
+///
+/// Rewrites rename ingredients to make assumptions visible
+/// (e.g. "salt" → "salt, presumably Diamond").
+/// Returns the rewritten name if a rule matches, otherwise None.
+pub fn rewrite_ingredient(name: &str) -> Option<&'static str> {
+    let normalized = normalize_ingredient_name(name);
+    DATA.rewrites.get(&normalized).map(|s| s.as_str())
 }
 
 /// Find the density (grams per cup) for an ingredient name.
@@ -341,12 +357,61 @@ mod tests {
 
     #[test]
     fn test_ambiguous_aliases_return_none() {
-        // Salt varieties are ambiguous (different densities)
-        assert!(find_density("salt").is_none());
+        // These salt varieties remain ambiguous
         assert!(find_density("kosher salt").is_none());
         assert!(find_density("sea salt").is_none());
+        assert!(find_density("fine salt").is_none());
         // Pepper is ambiguous
         assert!(find_density("black pepper").is_none());
         assert!(find_density("ground black pepper").is_none());
+    }
+
+    #[test]
+    fn test_salt_density() {
+        // "salt" maps to Diamond Crystal kosher salt (137.0 g/cup)
+        let density = find_density("salt").unwrap();
+        assert!((density - 137.0).abs() < 0.1);
+
+        // "salt, presumably diamond" also resolves
+        let density = find_density("salt, presumably Diamond").unwrap();
+        assert!((density - 137.0).abs() < 0.1);
+
+        // "table salt" still maps to salt, table (292.0 g/cup)
+        let density = find_density("table salt").unwrap();
+        assert!((density - 292.0).abs() < 0.1);
+    }
+
+    #[test]
+    fn test_rewrite_ingredient() {
+        assert_eq!(rewrite_ingredient("salt"), Some("salt, presumably Diamond"));
+        assert_eq!(rewrite_ingredient("Salt"), Some("salt, presumably Diamond"));
+        assert_eq!(rewrite_ingredient("kosher salt"), None);
+        assert_eq!(rewrite_ingredient("flour"), None);
+    }
+
+    #[test]
+    fn test_top_density_aliases() {
+        // Top 10 from density gap report
+        assert!(find_density("soy sauce").is_some());
+        assert!(find_density("ground cumin").is_some());
+        assert!(find_density("dried oregano").is_some());
+        assert!(find_density("pure vanilla extract").is_some());
+        assert!(find_density("Worcestershire sauce").is_some());
+        assert!(find_density("fresh lemon juice").is_some());
+        assert!(find_density("tomato paste").is_some());
+        assert!(find_density("sesame oil").is_some());
+        assert!(find_density("vanilla").is_some());
+        assert!(find_density("rice vinegar").is_some());
+        // Related aliases
+        assert!(find_density("cumin").is_some());
+        assert!(find_density("oregano").is_some());
+        assert!(find_density("toasted sesame oil").is_some());
+        assert!(find_density("apple cider vinegar").is_some());
+        assert!(find_density("red wine vinegar").is_some());
+        assert!(find_density("balsamic vinegar").is_some());
+        assert!(find_density("white vinegar").is_some());
+        assert!(find_density("white wine vinegar").is_some());
+        assert!(find_density("tamari").is_some());
+        assert!(find_density("Japanese soy sauce (koikuchi shoyu)").is_some());
     }
 }

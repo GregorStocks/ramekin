@@ -54,6 +54,8 @@ __all__ = [
     "Direction",
     "ErrorResponse",
     "ImportExtractionMethod",
+    "ImportFromPhotosRequest",
+    "ImportFromPhotosResponse",
     "ImportRawRecipe",
     "ImportRecipeRequest",
     "ImportRecipeResponse",
@@ -139,6 +141,8 @@ from ramekin_client.models.custom_enrich_request import CustomEnrichRequest as C
 from ramekin_client.models.direction import Direction as Direction
 from ramekin_client.models.error_response import ErrorResponse as ErrorResponse
 from ramekin_client.models.import_extraction_method import ImportExtractionMethod as ImportExtractionMethod
+from ramekin_client.models.import_from_photos_request import ImportFromPhotosRequest as ImportFromPhotosRequest
+from ramekin_client.models.import_from_photos_response import ImportFromPhotosResponse as ImportFromPhotosResponse
 from ramekin_client.models.import_raw_recipe import ImportRawRecipe as ImportRawRecipe
 from ramekin_client.models.import_recipe_request import ImportRecipeRequest as ImportRecipeRequest
 from ramekin_client.models.import_recipe_response import ImportRecipeResponse as ImportRecipeResponse

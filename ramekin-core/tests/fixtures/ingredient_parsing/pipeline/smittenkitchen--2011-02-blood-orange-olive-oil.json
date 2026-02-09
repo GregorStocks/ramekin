@@ -1,0 +1,199 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-02-blood-orange-olive-oil",
+  "ingredients": [
+    {
+      "raw": "Butter for greasing pan",
+      "expected": {
+        "item": "Butter for greasing pan",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 blood oranges",
+      "expected": {
+        "item": "blood oranges",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup (200 grams or 7 ounces) sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          },
+          {
+            "amount": "7",
+            "unit": "oz"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Scant 1/2 cup (118 ml) buttermilk or plain yogurt",
+      "expected": {
+        "item": "buttermilk or plain yogurt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "scant cup"
+          },
+          {
+            "amount": "118",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2/3 cup (156 ml) extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          },
+          {
+            "amount": "156",
+            "unit": "ml"
+          },
+          {
+            "amount": "144",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 3/4 cups (219 grams or 7 3/4 ounces) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "219",
+            "unit": "g"
+          },
+          {
+            "amount": "7.75",
+            "unit": "oz"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons (8 grams) baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Honey-blood orange compote, for serving (optional, below)",
+      "expected": {
+        "item": "Honey-blood orange compote, for serving",
+        "measurements": [],
+        "note": "optional, below",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Whipped cream, for serving (optional)",
+      "expected": {
+        "item": "Whipped cream, for serving",
+        "measurements": [],
+        "note": "optional",
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

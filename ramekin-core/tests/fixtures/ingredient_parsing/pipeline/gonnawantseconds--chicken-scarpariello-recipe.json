@@ -41,7 +41,7 @@
     {
       "raw": "salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"
@@ -77,7 +77,7 @@
     {
       "raw": "salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"
@@ -220,6 +220,10 @@
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
         "note": null,

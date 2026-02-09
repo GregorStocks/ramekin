@@ -1,0 +1,160 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2012-10-apple-mosaic-tart-with",
+  "ingredients": [
+    {
+      "raw": "Tart base",
+      "expected": {
+        "item": "Tart base",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "14-ounce package puff pastry, defrosted in fridge overnight",
+      "expected": {
+        "item": "-ounce package puff pastry, defrosted in fridge overnight",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Frozen"
+      }
+    },
+    {
+      "raw": "3 large or 4 medium apples (about 1 1/4 pounds)",
+      "expected": {
+        "item": "apples",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          },
+          {
+            "amount": "1.25",
+            "unit": "lb"
+          },
+          {
+            "amount": "4",
+            "unit": "medium"
+          },
+          {
+            "amount": "567",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tablespoons unsalted butter, cold, cut into small bits",
+      "expected": {
+        "item": "unsalted butter, cold, cut into small bits",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Salted caramel glaze",
+      "expected": {
+        "item": "Salted caramel glaze",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tablespoons unsalted butter (or salted, but then ease up on the sea salt)",
+      "expected": {
+        "item": "unsalted butter (or salted, but then ease up on the sea salt)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon flaky sea salt (or half as much table salt)",
+      "expected": {
+        "item": "flaky sea salt (or half as much table salt)",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

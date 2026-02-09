@@ -1,0 +1,277 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-12-parsnip-latkes-with-ho",
+  "ingredients": [
+    {
+      "raw": "Pancakes",
+      "expected": {
+        "item": "Pancakes",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 pound (about 1 large) Russet potato",
+      "expected": {
+        "item": "Russet potato",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 pound parsnips (about 2 large or 4 medium)",
+      "expected": {
+        "item": "parsnips",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "2",
+            "unit": "large"
+          },
+          {
+            "amount": "4",
+            "unit": "medium"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.6",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 large eggs, lightly beaten",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "lightly beaten",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh dill",
+      "expected": {
+        "item": "chopped fresh dill",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6.1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Olive oil (or a mix of olive and vegetable or peanut oil) for frying",
+      "expected": {
+        "item": "Olive oil (or a mix of olive and vegetable or peanut oil) for frying",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Sauce",
+      "expected": {
+        "item": "Sauce",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 cup sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "242",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon freshly grated or prepared horseradish",
+      "expected": {
+        "item": "freshly grated or prepared horseradish",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 tablespoon chopped dill",
+      "expected": {
+        "item": "chopped dill",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-06-rich-homemade-ricotta",
+  "ingredients": [
+    {
+      "raw": "3 cups whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "735",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup heavy cream (see Note above about using less)",
+      "expected": {
+        "item": "heavy cream (see Note above about using less)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon coarse sea salt",
+      "expected": {
+        "item": "coarse sea salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 tablespoons freshly squeezed lemon juice",
+      "expected": {
+        "item": "freshly squeezed lemon juice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    }
+  ]
+}

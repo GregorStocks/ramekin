@@ -1,0 +1,52 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-07-banana-nutella-and-sal",
+  "ingredients": [
+    {
+      "raw": "1/3 cup shelled roasted salted pistachios",
+      "expected": {
+        "item": "shelled roasted salted pistachios",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "4 large bananas, ripe but not mushy",
+      "expected": {
+        "item": "bananas, ripe but not mushy",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "A scant 1/2 cup Nutella or another chocolate-hazelnut (gianduja) spread",
+      "expected": {
+        "item": "A scant 1/2 cup Nutella or another chocolate-hazelnut (gianduja) spread",
+        "measurements": [],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "Flavorings (see Note up top), if desired",
+      "expected": {
+        "item": "Flavorings (see Note up top), if desired",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

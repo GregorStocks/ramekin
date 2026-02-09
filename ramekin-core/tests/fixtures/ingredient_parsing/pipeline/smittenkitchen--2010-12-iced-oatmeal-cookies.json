@@ -1,0 +1,319 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-12-iced-oatmeal-cookies",
+  "ingredients": [
+    {
+      "raw": "Butter for baking sheets",
+      "expected": {
+        "item": "Butter for baking sheets",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 1/2 cups + 1 tablespoon (8 1/4 ounces or 231 grams) old fashioned oats",
+      "expected": {
+        "item": "+ 1 tablespoon old fashioned oats",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "8.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "231",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Snacks"
+      }
+    },
+    {
+      "raw": "1/2 cup (2 1/4 ounces or 65 grams) whole wheat flour",
+      "expected": {
+        "item": "whole wheat flour",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "2.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "65",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup (4 3/8 ounces or 125 grams) all-purpose flour*",
+      "expected": {
+        "item": "all-purpose flour*",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "4.38",
+            "unit": "oz"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon plus 1 teaspoons (20 grams) baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1 tablespoon plus 1 teaspoons",
+            "unit": null
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon (5 grams) baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 teaspoons kosher salt**",
+      "expected": {
+        "item": "kosher salt**",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup (8 3/8 ounces or 238 grams) dark brown sugar",
+      "expected": {
+        "item": "dark brown sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "8.38",
+            "unit": "oz"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup (3 1/2 ounces or 100 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "3.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon (2 grams) cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon (2 grams) freshly grated nutmeg (I used less, because I was nutmeg-wary, but wouldn’t have minded more)",
+      "expected": {
+        "item": "freshly grated nutmeg (I used less, because I was nutmeg-wary, but wouldn’t have minded more)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "8 ounces (2 sticks) unsalted butter, melted",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "stick"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "melted",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 1/4 (9 1/2 ounces or 270 grams) cups powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "2.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "9.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "270",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "5 to 6 (75 to 90 ml) tablespoons whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "5 to 6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "75 to 90",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon (6 grams) cinnamon",
+      "expected": {
+        "item": "cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "6",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon kosher salt**",
+      "expected": {
+        "item": "kosher salt**",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

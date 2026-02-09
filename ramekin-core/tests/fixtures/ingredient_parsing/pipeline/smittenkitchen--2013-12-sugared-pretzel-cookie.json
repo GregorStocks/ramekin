@@ -1,0 +1,164 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-12-sugared-pretzel-cookie",
+  "ingredients": [
+    {
+      "raw": "1 large egg, hard-boiled and cooled",
+      "expected": {
+        "item": "egg, hard-boiled and cooled",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "10 tablespoons (140 grams or 1 1/4 sticks) unsalted butter, softened",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "140",
+            "unit": "g"
+          },
+          {
+            "amount": "1.25",
+            "unit": "stick"
+          }
+        ],
+        "note": "softened",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/3 cup plus 1 tablespoon (80 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/3 cup plus 1 tablespoon",
+            "unit": null
+          },
+          {
+            "amount": "80",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons vanilla extract (this is halved from the original)",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6.5",
+            "unit": "g"
+          }
+        ],
+        "note": "this is halved from the original",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup (125 grams) unbleached all-purpose flour",
+      "expected": {
+        "item": "unbleached all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup (45 grams) rye flour (medium or white will work)",
+      "expected": {
+        "item": "rye flour",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
+          },
+          {
+            "amount": null,
+            "unit": "medium"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 large egg white, lightly beaten with 1 teaspoon water",
+      "expected": {
+        "item": "egg white",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "lightly beaten with 1 teaspoon water",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 teaspoons turbinado or clear sanding sugar",
+      "expected": {
+        "item": "turbinado or clear sanding sugar",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2012-01-apple-sharlotka",
+  "ingredients": [
+    {
+      "raw": "Butter or nonstick spray, for greasing pan",
+      "expected": {
+        "item": "Butter or nonstick spray, for greasing pan",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "6 large, tart apples, such as Granny Smiths",
+      "expected": {
+        "item": "tart apples, such as Granny Smiths",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup (200 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup (125 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Ground cinnamon, to finish",
+      "expected": {
+        "item": "Ground cinnamon, to finish",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Powdered sugar, also to finish",
+      "expected": {
+        "item": "Powdered sugar, also to finish",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

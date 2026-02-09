@@ -1,0 +1,272 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-06-dobos-torte",
+  "ingredients": [
+    {
+      "raw": "Cake layers:",
+      "expected": {
+        "item": "Cake layers:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "7 large eggs, separated",
+      "expected": {
+        "item": "eggs, separated",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 large egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 pound (3 1/2 cups or 455 grams) confectioners’ sugar, plus extra for dusting racks",
+      "expected": {
+        "item": "confectioners’ sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "3.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "455",
+            "unit": "g"
+          }
+        ],
+        "note": "plus extra for dusting racks",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3/4 cup (94 grams or 3 1/3 ounces) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "94",
+            "unit": "g"
+          },
+          {
+            "amount": "3.33",
+            "unit": "oz"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 pound (8 ounces or 227 grams) semi- or bittersweet chocolate, coarsely chopped",
+      "expected": {
+        "item": "semi- or bittersweet chocolate",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "coarsely chopped",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 pound (2 sticks or 226 grams) unsalted butter, cut into chunks",
+      "expected": {
+        "item": "unsalted butter, cut into chunks",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "2",
+            "unit": "stick"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 large egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 tablespoons confectioners’ sugar",
+      "expected": {
+        "item": "confectioners’ sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Caramel layer (optional)",
+      "expected": {
+        "item": "Caramel layer",
+        "measurements": [],
+        "note": "optional",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Handful of toasted, peeled hazelnuts",
+      "expected": {
+        "item": "toasted, peeled hazelnuts",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    }
+  ]
+}

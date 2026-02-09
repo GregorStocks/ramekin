@@ -1,0 +1,129 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-09-linguine-with-tomato-a",
+  "ingredients": [
+    {
+      "raw": "3/4 cup (85 grams) slivered almonds",
+      "expected": {
+        "item": "slivered almonds",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1 large handful fresh basil leaves",
+      "expected": {
+        "item": "handful fresh basil leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 to 2 large garlic cloves",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Several sprinkles of sea salt",
+      "expected": {
+        "item": "Several sprinkles of sea salt",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "6 ripe plum tomatoes, quartered",
+      "expected": {
+        "item": "ripe plum tomatoes",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "quartered",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup (50 grams) grated Pecorino or Parmesan",
+      "expected": {
+        "item": "grated Pecorino or Parmesan",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/4 to 1/3 cup (60 to 80 ml) olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "0.25 to 0.33",
+            "unit": "cup"
+          },
+          {
+            "amount": "60 to 80",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 pound (455 grams) linguine",
+      "expected": {
+        "item": "linguine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "455",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    }
+  ]
+}

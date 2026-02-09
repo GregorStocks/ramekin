@@ -70,7 +70,25 @@
     {
       "raw": "1/2 tsp each ground cumin and crushed red pepper flakes, more to your liking ( (optional) )",
       "expected": {
-        "item": "each ground cumin and crushed red pepper flakes, more to your liking",
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ],
+        "note": "(optional",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 tsp each ground cumin and crushed red pepper flakes, more to your liking ( (optional) )",
+      "expected": {
+        "item": "crushed red pepper flakes",
         "measurements": [
           {
             "amount": "0.5",
@@ -79,7 +97,23 @@
         ],
         "note": "(optional",
         "category": "Spices & Seasonings"
-      }
+      },
+      "expanded": true
+    },
+    {
+      "raw": "1/2 tsp each ground cumin and crushed red pepper flakes, more to your liking ( (optional) )",
+      "expected": {
+        "item": "more to your liking",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "(optional",
+        "category": "Other"
+      },
+      "expanded": true
     },
     {
       "raw": "1  lemon (zested and juiced)",

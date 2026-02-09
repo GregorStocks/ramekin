@@ -1,0 +1,143 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-01-flaky-blood-orange-tar",
+  "ingredients": [
+    {
+      "raw": "1 cup all-purpose flour, plus more for dusting",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for dusting",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup plus 2 tablespoons granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1/4 cup plus 2 tablespoons",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 cup plus 1 tablespoon unsalted butter, the 1/2 cup cut into 1/2-inch pieces and chilled",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1/2 cup plus 1 tablespoon",
+            "unit": null
+          }
+        ],
+        "note": "the 1/2 cup cut into 1/2-inch pieces and chilled",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 tablespoons ice water",
+      "expected": {
+        "item": "ice water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "7 to 8 blood oranges (about 5 ounces each)",
+      "expected": {
+        "item": "blood oranges",
+        "measurements": [
+          {
+            "amount": "7 to 8",
+            "unit": null
+          },
+          {
+            "amount": "5",
+            "unit": "oz each"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large egg yolk mixed with 2 tablespoons of water",
+      "expected": {
+        "item": "egg yolk mixed with 2 tablespoons of water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Deep, Dark Salted Butter Caramel Sauce, for serving",
+      "expected": {
+        "item": "Deep, Dark Salted Butter Caramel Sauce",
+        "measurements": [],
+        "note": "for serving",
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

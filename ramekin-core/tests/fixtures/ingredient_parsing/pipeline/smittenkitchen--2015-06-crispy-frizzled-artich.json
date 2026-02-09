@@ -1,0 +1,71 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2015-06-crispy-frizzled-artich",
+  "ingredients": [
+    {
+      "raw": "And for the other side of the world:",
+      "expected": {
+        "item": "And for the other side of the world:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Six Months Ago: Decadent Hot Chocolate Mix",
+      "expected": {
+        "item": "Months Ago: Decadent Hot Chocolate Mix",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1.5 Years Ago: Parsley Leaf Potatoes and Sweet Potato Cake with Marshmallow Frosting",
+      "expected": {
+        "item": "Years Ago: Parsley Leaf Potatoes and Sweet Potato Cake with Marshmallow Frosting",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2.5 Years Ago: Nutmeg Maple Butter Cookies",
+      "expected": {
+        "item": "Years Ago: Nutmeg Maple Butter Cookies",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3.5 Years Ago: Cauliflower Feta Fritters with Pomegranate",
+      "expected": {
+        "item": "Years Ago: Cauliflower Feta Fritters with Pomegranate",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

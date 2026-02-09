@@ -1,0 +1,400 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2012-10-pancetta-white-bean-an",
+  "ingredients": [
+    {
+      "raw": "Lid",
+      "expected": {
+        "item": "Lid",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 cups (250 grams) all- purpose flour",
+      "expected": {
+        "item": "all- purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "13 tablespoons (185 grams or 1 stick plus 5 tablespoons) cold unsalted butter, diced",
+      "expected": {
+        "item": "cold unsalted butter",
+        "measurements": [
+          {
+            "amount": "13",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "185",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "stick"
+          }
+        ],
+        "note": "diced",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "6 tablespoons (90 grams) sour cream or whole Greek yogurt (i.e., a strained",
+      "expected": {
+        "item": "sour cream or whole Greek yogurt (i.e., a strained",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "90",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "yogurt)",
+      "expected": {
+        "item": "yogurt)",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) white wine vinegar",
+      "expected": {
+        "item": "white wine vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/4 cup (60 ml) ice water",
+      "expected": {
+        "item": "ice water",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 egg, beaten with 1 tablespoon water, for egg wash",
+      "expected": {
+        "item": "egg, beaten with 1 tablespoon water, for egg wash",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Filling",
+      "expected": {
+        "item": "Filling",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "4 ounces (115 grams or 3/4 to 1 cup) 1/4-inch-diced pancetta",
+      "expected": {
+        "item": "1/4-inch-diced pancetta",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "115",
+            "unit": "g"
+          },
+          {
+            "amount": "0.75 to 1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 large or 2 small onions, finely chopped",
+      "expected": {
+        "item": "onions",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "2",
+            "unit": "small"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large carrot, finely chopped",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large stalk celery, finely chopped",
+      "expected": {
+        "item": "stalk celery",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Pinch of red pepper flakes",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper",
+      "expected": {
+        "item": "Salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Thinly sliced Swiss chard leaves from an 8- to 10-ounce (225- to 285-gram)",
+      "expected": {
+        "item": "Thinly sliced Swiss chard leaves from an 8- to 10-ounce",
+        "measurements": [
+          {
+            "amount": "225",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "bundle (4 cups); if leaves are very wide, you can halve them lengthwise",
+      "expected": {
+        "item": "bundle ; if leaves are very wide, you can halve them lengthwise",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "3 1/2 tablespoons (50 grams) butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 1/2 tablespoons (25 grams) all- purpose flour",
+      "expected": {
+        "item": "all- purpose flour",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 1/2 cups (765 ml) sodium- free or low- sodium chicken or vegetable broth",
+      "expected": {
+        "item": "sodium- free or low- sodium chicken or vegetable broth",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "765",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 cups white beans, cooked and drained, or from one and a third 15.5- ounce",
+      "expected": {
+        "item": "white beans, cooked and drained",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "or from one and a third 15.5- ounce",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "(440-gram) cans",
+      "expected": {
+        "item": "-gram cans",
+        "measurements": [
+          {
+            "amount": "440",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

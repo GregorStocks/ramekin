@@ -1,0 +1,133 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2012-01-buttermilk-roast-chick",
+  "ingredients": [
+    {
+      "raw": "2 cups buttermilk",
+      "expected": {
+        "item": "buttermilk",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "490",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "5 garlic cloves, peeled and smashed",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "peeled and smashed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "18",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons paprika, plus extra for sprinkling (I used Hungarian, a smoked one would also be delicious)",
+      "expected": {
+        "item": "paprika",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3.4",
+            "unit": "g"
+          }
+        ],
+        "note": "plus extra for sprinkling (I used Hungarian, a smoked one would also be delicious)",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Lots of freshly ground black pepper",
+      "expected": {
+        "item": "Lots of freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 1/2 to 3 pounds chicken parts (we used all legs)",
+      "expected": {
+        "item": "to 3 pounds chicken parts (we used all legs)",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Drizzle of olive oil",
+      "expected": {
+        "item": "Drizzle of olive oil",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Flaked or coarse sea salt, to finish",
+      "expected": {
+        "item": "Flaked or coarse sea salt, to finish",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

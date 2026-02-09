@@ -1,0 +1,165 @@
+{
+  "source": "bakingbites",
+  "recipe_slug": "2023-05-blueberries-and-cream-",
+  "ingredients": [
+    {
+      "raw": "Blueberries and Cream Bread Pudding",
+      "expected": {
+        "item": "Blueberries and Cream Bread Pudding",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "6 cups cubed bread (preferably challah or brioche), about 1/2 large loaf",
+      "expected": {
+        "item": "cubed bread (preferably challah or brioche), about 1/2 large loaf",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "1 1/4 cups heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "298",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/4 cups milk (whole or lowfat)",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "306",
+            "unit": "g"
+          }
+        ],
+        "note": "whole or lowfat",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2/3 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          },
+          {
+            "amount": "133",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tsp vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8.7",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 tsp almond extract",
+      "expected": {
+        "item": "almond extract",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 tsp salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 cups blueberries, fresh or frozen",
+      "expected": {
+        "item": "blueberries",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "296",
+            "unit": "g"
+          }
+        ],
+        "note": "fresh or frozen",
+        "category": "Produce"
+      }
+    }
+  ]
+}

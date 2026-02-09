@@ -102,6 +102,10 @@
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "g"
           }
         ],
         "note": "dried",
@@ -111,11 +115,15 @@
     {
       "raw": "1 tsp salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
         "note": null,

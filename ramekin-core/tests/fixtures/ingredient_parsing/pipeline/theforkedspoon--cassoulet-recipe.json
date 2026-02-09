@@ -65,11 +65,15 @@
     {
       "raw": "4 teaspoon salt (divided)",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "4",
             "unit": "tsp"
+          },
+          {
+            "amount": "11",
+            "unit": "g"
           }
         ],
         "note": "divided",
@@ -298,6 +302,10 @@
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -312,6 +320,10 @@
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
         "note": null,

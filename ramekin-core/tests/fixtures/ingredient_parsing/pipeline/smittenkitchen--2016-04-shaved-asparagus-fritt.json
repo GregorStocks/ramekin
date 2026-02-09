@@ -1,0 +1,222 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2016-04-shaved-asparagus-fritt",
+  "ingredients": [
+    {
+      "raw": "And for the other side of the world:",
+      "expected": {
+        "item": "And for the other side of the world:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Six Months Ago: Salted Peanut Butter Cookies and Baked Potatoes with Wild Mushroom Ragu",
+      "expected": {
+        "item": "Months Ago: Salted Peanut Butter Cookies and Baked Potatoes with Wild Mushroom Ragu",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1.5 Years Ago: Carrot Cake with Cider and Olive Oil and Homemade Harissa",
+      "expected": {
+        "item": "Years Ago: Carrot Cake with Cider and Olive Oil and Homemade Harissa",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2.5 Years Ago:  Apple Slab Pie",
+      "expected": {
+        "item": "Years Ago:  Apple Slab Pie",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3.5 Years Ago: Pancetta White Bean and Swiss Chard Pot Pies and Apple Mosaic Tart with Salted Caramel",
+      "expected": {
+        "item": "Years Ago: Pancetta White Bean and Swiss Chard Pot Pies and Apple Mosaic Tart with Salted Caramel",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "4.5 Years Ago: Cumin Seed Roasted Cauliflower with Yogurt",
+      "expected": {
+        "item": "Years Ago: Cumin Seed Roasted Cauliflower with Yogurt",
+        "measurements": [
+          {
+            "amount": "4.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 pound asparagus, cleaned, not trimmed",
+      "expected": {
+        "item": "asparagus, cleaned",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "not trimmed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 ounces thinly sliced prosciutto (optional, see Note up top)",
+      "expected": {
+        "item": "thinly sliced prosciutto",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "optional, see Note up top",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "8 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 tablespoons milk or cream",
+      "expected": {
+        "item": "milk or cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt, plus more to taste",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 scallions, thinly sliced on the diagonal",
+      "expected": {
+        "item": "scallions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced on the diagonal",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 to 4 ounces soft goat cheese, crumbled (to taste)",
+      "expected": {
+        "item": "soft goat cheese, crumbled",
+        "measurements": [
+          {
+            "amount": "2 to 4",
+            "unit": "oz"
+          },
+          {
+            "amount": "57 to 113",
+            "unit": "g"
+          }
+        ],
+        "note": "to taste",
+        "category": "Cheese"
+      }
+    }
+  ]
+}

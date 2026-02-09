@@ -1,0 +1,75 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "fruit-and-cheese-kabobs-recipe",
+  "ingredients": [
+    {
+      "raw": "8 Sargento® Reduced Fat Colby-Jack Cheese Snacks",
+      "expected": {
+        "item": "Sargento® Reduced Fat Colby-Jack Cheese Snacks",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "24 green seedless grapes",
+      "expected": {
+        "item": "green seedless grapes",
+        "measurements": [
+          {
+            "amount": "24",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "24 small strawberries",
+      "expected": {
+        "item": "strawberries",
+        "measurements": [
+          {
+            "amount": "24",
+            "unit": "small"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 oz. low fat vanilla yogurt",
+      "expected": {
+        "item": "low fat vanilla yogurt",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "honey (optional)",
+      "expected": {
+        "item": "honey",
+        "measurements": [],
+        "note": "optional",
+        "category": "Baking"
+      }
+    }
+  ]
+}

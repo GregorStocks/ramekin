@@ -1,0 +1,222 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-11-black-bean-pumkin-soup",
+  "ingredients": [
+    {
+      "raw": "Three 15 1/2 ounce cans black beans (about 4 1/2 cups), rinsed and drained",
+      "expected": {
+        "item": "15 1/2 ounce cans black beans",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          },
+          {
+            "amount": "4.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "rinsed and drained",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 cup drained canned tomatoes, chopped",
+      "expected": {
+        "item": "drained canned tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 1/4 cups chopped onion",
+      "expected": {
+        "item": "chopped onion",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup minced shallot",
+      "expected": {
+        "item": "minced shallot",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 garlic cloves minced",
+      "expected": {
+        "item": "garlic cloves minced",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon plus 2 teaspoons ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1 tablespoon plus 2 teaspoons",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 stick (1/4 cup) unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "stick"
+          },
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 cups beef broth",
+      "expected": {
+        "item": "beef broth",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "a 16-ounce can pumpkin puree (about 1 1/2 cups)",
+      "expected": {
+        "item": "a 16-ounce can pumpkin puree",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup dry Sherry",
+      "expected": {
+        "item": "dry Sherry",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/2 pound cooked ham, cut into 1/8-inch dice",
+      "expected": {
+        "item": "cooked ham, cut into 1/8-inch dice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "3 to 4 tablespoons Sherry vinegar",
+      "expected": {
+        "item": "Sherry vinegar",
+        "measurements": [
+          {
+            "amount": "3 to 4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    }
+  ]
+}

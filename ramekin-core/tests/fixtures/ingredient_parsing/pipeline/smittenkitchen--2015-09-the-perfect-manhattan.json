@@ -1,0 +1,92 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2015-09-the-perfect-manhattan",
+  "ingredients": [
+    {
+      "raw": "Ice",
+      "expected": {
+        "item": "Ice",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 ounces rye or bourbon whiskey",
+      "expected": {
+        "item": "rye or bourbon whiskey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/2 ounce sweet vermouth, usually red",
+      "expected": {
+        "item": "sweet vermouth, usually red",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/2 ounce dry vermouth, usually white",
+      "expected": {
+        "item": "dry vermouth, usually white",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 dashes angostura, peychauds or orange bitters",
+      "expected": {
+        "item": "angostura, peychauds or orange bitters",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "dash"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Maraschino cherry (traditional) or small piece lemon peel for garnish",
+      "expected": {
+        "item": "Maraschino cherry (traditional) or small piece lemon peel for garnish",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

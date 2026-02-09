@@ -1,0 +1,89 @@
+{
+  "source": "101cookbooks",
+  "recipe_slug": "okonomiyaki-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups cabbage, finely shredded",
+      "expected": {
+        "item": "cabbage",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "159",
+            "unit": "g"
+          }
+        ],
+        "note": "finely shredded",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup leeks, well washed and chopped (see head notes)",
+      "expected": {
+        "item": "leeks",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "well washed and chopped (see head notes)",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2/3 cup whole wheat pastry flour (or apf flour)",
+      "expected": {
+        "item": "whole wheat pastry flour (or apf flour)",
+        "measurements": [
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "a couple pinches of fine grain sea salt",
+      "expected": {
+        "item": "a couple pinches of fine grain sea salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 eggs, beaten",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "beaten",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1+ tablespoon olive oil",
+      "expected": {
+        "item": "+ tablespoon olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    }
+  ]
+}

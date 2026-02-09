@@ -1,0 +1,131 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-02-ginger-fried-rice",
+  "ingredients": [
+    {
+      "raw": "1/2 cup peanut oil",
+      "expected": {
+        "item": "peanut oil",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 tablespoons minced garlic",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons minced ginger",
+      "expected": {
+        "item": "minced ginger",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 cups thinly sliced leeks, white and light green parts only, rinsed and dried",
+      "expected": {
+        "item": "thinly sliced leeks, white and light green parts only",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "rinsed and dried",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 cups day-old cooked rice; Vongerichten recommends jasmine (I used brown jasmine) but this is the perfect way to use up any leftover rice you have, especially from Chinese delivery",
+      "expected": {
+        "item": "day-old cooked rice; Vongerichten recommends jasmine (I used brown jasmine) but this is the perfect way to use up any leftover rice you have, especially from Chinese delivery",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "4 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 teaspoons sesame oil (for some heat but the same awesome flavor, use hot sesame oil)",
+      "expected": {
+        "item": "sesame oil (for some heat but the same awesome flavor, use hot sesame oil)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "4 teaspoons soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-04-blue-cheese-scallion-d",
+  "ingredients": [
+    {
+      "raw": "2 1/4 cups all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "281",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 1/2 teaspoons baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 teaspoons sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "6 tablespoons (3/4 stick or 3 ounces) cold unsalted butter, cut into 1/2-inch cubes",
+      "expected": {
+        "item": "cold unsalted butter, cut into 1/2-inch cubes",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "0.75",
+            "unit": "stick"
+          },
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/2 cups crumbled blue cheese",
+      "expected": {
+        "item": "crumbled blue cheese",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "4 scallions, finely chopped",
+      "expected": {
+        "item": "scallions",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup well-shaken buttermilk (or, you can make your own)",
+      "expected": {
+        "item": "well-shaken buttermilk (or, you can make your own)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

@@ -28,6 +28,10 @@
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -56,6 +60,10 @@
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -70,6 +78,10 @@
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "9.1",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -107,11 +119,15 @@
     {
       "raw": "1/8 teaspoon salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.4",
+            "unit": "g"
           }
         ],
         "note": null,

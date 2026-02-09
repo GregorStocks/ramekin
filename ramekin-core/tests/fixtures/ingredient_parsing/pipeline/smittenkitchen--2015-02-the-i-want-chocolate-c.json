@@ -1,0 +1,401 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2015-02-the-i-want-chocolate-c",
+  "ingredients": [
+    {
+      "raw": "And for the other side of the world:",
+      "expected": {
+        "item": "And for the other side of the world:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Six Months Ago: Strawberries and Cream with Graham Crumbles",
+      "expected": {
+        "item": "Months Ago: Strawberries and Cream with Graham Crumbles",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1.5 Years Ago: Key Lime Popsicles (still a favorite!)",
+      "expected": {
+        "item": "Years Ago: Key Lime Popsicles (still a favorite!)",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2.5 Years Ago: Leek Chard and Corn Flatbread",
+      "expected": {
+        "item": "Years Ago: Leek Chard and Corn Flatbread",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "3.5 Years Ago: Naked Tomato Sauce",
+      "expected": {
+        "item": "Years Ago: Naked Tomato Sauce",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "Cake",
+      "expected": {
+        "item": "Cake",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "6 tablespoons (85 grams) unsalted butter, at room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3/4 cup (145 grams) firmly packed dark brown sugar",
+      "expected": {
+        "item": "firmly packed dark brown sugar",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "145",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tablespoons (25 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 large egg yolk",
+      "expected": {
+        "item": "egg yolk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3/4 cup (175 ml) buttermilk (see Notes for other options)",
+      "expected": {
+        "item": "buttermilk (see Notes for other options)",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "175",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 teaspoon (5 ml) vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup (41 grams) Dutch cocoa powder",
+      "expected": {
+        "item": "Dutch cocoa powder",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "41",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup (125 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon table or fine sea salt",
+      "expected": {
+        "item": "table or fine sea salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Frosting",
+      "expected": {
+        "item": "Frosting",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 ounces (55 grams) unsweetened chocolate, melted and cooled",
+      "expected": {
+        "item": "unsweetened chocolate",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": "melted and cooled",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (180 grams) powdered sugar (sifted if lumpy)",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "g"
+          }
+        ],
+        "note": "sifted if lumpy",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup (4 ounces or 115 grams) unsalted butter, at room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "115",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Pinch of fine sea salt (optional)",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoons cream or whole milk",
+      "expected": {
+        "item": "cream or whole milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

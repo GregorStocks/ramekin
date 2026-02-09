@@ -148,6 +148,10 @@
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -185,11 +189,15 @@
     {
       "raw": "1 teaspoon salt (to taste)",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
         "note": "to taste",
@@ -300,6 +308,10 @@
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "33",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -328,6 +340,10 @@
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -351,7 +367,7 @@
     {
       "raw": "1 pinch salt (to taste)",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",

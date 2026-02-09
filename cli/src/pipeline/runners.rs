@@ -44,6 +44,9 @@ pub struct IngredientStats {
     pub volume_already_has_weight: usize,
     pub metric_converted_oz: usize,
     pub metric_converted_lb: usize,
+    /// Names of ingredients that had volume measurements but no density data.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub unknown_ingredients: Vec<String>,
 }
 
 /// Result from running all steps, including extraction stats.
@@ -243,6 +246,7 @@ fn extract_stats_from_output(output: &serde_json::Value) -> Option<ExtractionSta
     let method = match method_used {
         "json_ld" => ramekin_core::ExtractionMethod::JsonLd,
         "microdata" => ramekin_core::ExtractionMethod::Microdata,
+        "html_fallback" => ramekin_core::ExtractionMethod::HtmlFallback,
         _ => return None,
     };
 
@@ -297,6 +301,15 @@ fn extract_ingredient_stats_from_output(output: &serde_json::Value) -> Option<In
             .get("converted_lb")
             .and_then(|v| v.as_u64())
             .unwrap_or(0) as usize,
+        unknown_ingredients: volume_stats
+            .get("unknown_ingredients")
+            .and_then(|v| v.as_array())
+            .map(|arr| {
+                arr.iter()
+                    .filter_map(|v| v.as_str().map(String::from))
+                    .collect()
+            })
+            .unwrap_or_default(),
     })
 }
 

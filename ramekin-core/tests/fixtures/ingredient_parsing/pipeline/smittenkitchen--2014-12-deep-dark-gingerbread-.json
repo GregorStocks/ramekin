@@ -1,0 +1,316 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2014-12-deep-dark-gingerbread-",
+  "ingredients": [
+    {
+      "raw": "And for the other side of the world:",
+      "expected": {
+        "item": "And for the other side of the world:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Six Months Ago: Frozen Coconut Limeade",
+      "expected": {
+        "item": "Months Ago: Frozen Coconut Limeade",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1.5 Years Ago: Espresso Granita with Whipped Cream",
+      "expected": {
+        "item": "Years Ago: Espresso Granita with Whipped Cream",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2.5 Years Ago: Cold Rice Noodles with Peanut-Lime Chicken",
+      "expected": {
+        "item": "Years Ago: Cold Rice Noodles with Peanut-Lime Chicken",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "3.5 Years Ago: Linguine with Pea Pesto",
+      "expected": {
+        "item": "Years Ago: Linguine with Pea Pesto",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "1 cup all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.9",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon ground ginger",
+      "expected": {
+        "item": "ground ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "5.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon ground cloves",
+      "expected": {
+        "item": "ground cloves",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon freshly grated nutmeg",
+      "expected": {
+        "item": "freshly grated nutmeg",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6.9",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon fine sea or table salt",
+      "expected": {
+        "item": "fine sea or table salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 cup buttermilk, yogurt thinned with a little milk, fresh apple cider or even stout beer",
+      "expected": {
+        "item": "buttermilk, yogurt thinned with a little milk",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "fresh apple cider or even stout beer",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 cup molasses",
+      "expected": {
+        "item": "molasses",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "168",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup dark brown sugar, packed",
+      "expected": {
+        "item": "dark brown sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
+          }
+        ],
+        "note": "packed",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 tablespoons butter, melted, plus extra for brushing waffle iron",
+      "expected": {
+        "item": "butter, melted",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": "plus extra for brushing waffle iron",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Powdered sugar for serving",
+      "expected": {
+        "item": "Powdered sugar for serving",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

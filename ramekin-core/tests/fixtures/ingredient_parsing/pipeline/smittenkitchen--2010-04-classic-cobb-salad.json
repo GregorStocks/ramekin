@@ -1,0 +1,332 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-04-classic-cobb-salad",
+  "ingredients": [
+    {
+      "raw": "Dressing",
+      "expected": {
+        "item": "Dressing",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "(Heads up: I found I only needed half of this)",
+      "expected": {
+        "item": "(Heads up: I found I only needed half of this)",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "head"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3/4 cup canola oil",
+      "expected": {
+        "item": "canola oil",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "164",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/4 cup extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/4 cup red wine vinegar",
+      "expected": {
+        "item": "red wine vinegar",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon dry mustard",
+      "expected": {
+        "item": "dry mustard",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon Worcestershire",
+      "expected": {
+        "item": "Worcestershire",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 clove garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper, to taste",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Salad",
+      "expected": {
+        "item": "Salad",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 head iceberg lettuce, cored and shredded",
+      "expected": {
+        "item": "iceberg lettuce",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "head"
+          }
+        ],
+        "note": "cored and shredded",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 head romaine lettuce, chopped",
+      "expected": {
+        "item": "romaine lettuce",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "head"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 bunch watercress, some of the stems trimmed, chopped",
+      "expected": {
+        "item": "watercress, some of the stems trimmed",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "bunch"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 ounces blue cheese, crumbled (we used a Stilton)",
+      "expected": {
+        "item": "blue cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "crumbled (we used a Stilton)",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "6 strips cooked bacon, roughly chopped",
+      "expected": {
+        "item": "strips cooked bacon",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "roughly chopped",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "3 hard-boiled eggs, peeled and cut into 1/2-inch cubes",
+      "expected": {
+        "item": "hard-boiled eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "peeled and cut into 1/2-inch cubes",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 medium tomatoes, peeled*, seeded, and cut into 1/2-inch cubes",
+      "expected": {
+        "item": "tomatoes, peeled*, seeded, and cut into 1/2-inch cubes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 boneless skinless chicken breast, cooked and cut into 1/2-inch cubes",
+      "expected": {
+        "item": "boneless skinless chicken breast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "cooked and cut into 1/2-inch cubes",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 avocado, peeled, pitted, and cut into 1/2-inch cubes",
+      "expected": {
+        "item": "avocado, peeled, pitted, and cut into 1/2-inch cubes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper, to taste",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons chives, minced",
+      "expected": {
+        "item": "chives",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    }
+  ]
+}

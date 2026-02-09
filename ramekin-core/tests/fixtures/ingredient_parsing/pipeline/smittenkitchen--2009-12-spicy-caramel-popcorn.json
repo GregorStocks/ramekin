@@ -1,0 +1,143 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-12-spicy-caramel-popcorn",
+  "ingredients": [
+    {
+      "raw": "Nonstick cooking spray or vegetable oil",
+      "expected": {
+        "item": "Nonstick cooking spray or vegetable oil",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "3 tablespoons vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "41",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/2 cup popcorn kernels",
+      "expected": {
+        "item": "popcorn kernels",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Snacks"
+      }
+    },
+    {
+      "raw": "2 cups salted peanuts (optional)",
+      "expected": {
+        "item": "salted peanuts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional",
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6.9",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 to 3/4 teaspoon cayenne pepper (see Note)",
+      "expected": {
+        "item": "cayenne pepper (see Note)",
+        "measurements": [
+          {
+            "amount": "0.25 to 0.75",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 cups sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "600",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 to 1 1/2 tablespoons kosher or coarse sea salt (see Note)",
+      "expected": {
+        "item": "1/2 tablespoons kosher or coarse sea salt (see Note)",
+        "measurements": [
+          {
+            "amount": "1 to 1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

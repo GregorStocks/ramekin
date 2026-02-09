@@ -88,6 +88,10 @@
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "128",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -102,6 +106,10 @@
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "138",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -111,11 +119,15 @@
     {
       "raw": "2 teaspoons salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.7",
+            "unit": "g"
           }
         ],
         "note": null,

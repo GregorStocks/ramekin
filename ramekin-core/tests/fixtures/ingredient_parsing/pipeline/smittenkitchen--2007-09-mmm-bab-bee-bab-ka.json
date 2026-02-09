@@ -1,0 +1,251 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-09-mmm-bab-bee-bab-ka",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups warm milk, 110 degrees",
+      "expected": {
+        "item": "warm milk, 110 degrees",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 (1/4 ounce each) packages active dry yeast",
+      "expected": {
+        "item": "active dry yeast",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "package"
+          },
+          {
+            "amount": "0.25",
+            "unit": "oz each"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 3/4 cups plus a pinch of sugar",
+      "expected": {
+        "item": "1 3/4 cups plus a pinch of sugar",
+        "measurements": [
+          {
+            "amount": "1.75",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus a pinch of sugar",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 whole large eggs, room temperature",
+      "expected": {
+        "item": "whole large eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 large egg yolks, room temperature",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "6 cups all-purpose flour, plus more for work surface",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          },
+          {
+            "amount": "750",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for work surface",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 3/4 cups (3 1/2 sticks) unsalted butter, cut into 1-inch pieces, room temperature, plus more for bowl and loaf pans",
+      "expected": {
+        "item": "unsalted butter, cut into 1-inch pieces, room temperature",
+        "measurements": [
+          {
+            "amount": "1.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "3.5",
+            "unit": "stick"
+          }
+        ],
+        "note": "plus more for bowl and loaf pans",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 1/4 pounds semisweet chocolate, very finely chopped*",
+      "expected": {
+        "item": "semisweet chocolate",
+        "measurements": [
+          {
+            "amount": "2.25",
+            "unit": "lb"
+          },
+          {
+            "amount": "1021",
+            "unit": "g"
+          }
+        ],
+        "note": "very finely chopped*",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 1/2 tablespoons ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Streusel topping (below)",
+      "expected": {
+        "item": "Streusel topping (below)",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 2/3 cups confectioners’ sugar",
+      "expected": {
+        "item": "confectioners’ sugar",
+        "measurements": [
+          {
+            "amount": "1.67",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/3 cups all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1.33",
+            "unit": "cup"
+          },
+          {
+            "amount": "167",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "12 tablespoons (1 1/2 sticks) unsalted butter, room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "stick"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

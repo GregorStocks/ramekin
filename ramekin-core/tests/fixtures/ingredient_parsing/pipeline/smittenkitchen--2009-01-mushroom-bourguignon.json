@@ -1,0 +1,212 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-01-mushroom-bourguignon",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 tablespoons butter, softened",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "softened",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 pounds portobello mushrooms, in 1/4-inch slices (save the stems for another use) (you can use cremini instead, as well)",
+      "expected": {
+        "item": "portobello mushrooms, in 1/4-inch slices (save the stems for another use) (you can use cremini instead, as well)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 carrot, finely diced",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": null
+          }
+        ],
+        "note": "finely diced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 small yellow onion, finely diced",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "finely diced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 cloves garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup full-bodied red wine",
+      "expected": {
+        "item": "full-bodied red wine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 cups beef or vegetable broth (beef broth is traditional but vegetable to make it vegetarian; it works with either)",
+      "expected": {
+        "item": "beef or vegetable broth (beef broth is traditional but vegetable to make it vegetarian; it works with either)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 tablespoons tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "33",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 teaspoon fresh thyme leaves (1/2 teaspoon dried)",
+      "expected": {
+        "item": "fresh thyme leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "1/2 teaspoon dried",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup pearl onions, peeled (thawed if frozen)",
+      "expected": {
+        "item": "pearl onions, peeled",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed if frozen",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Egg noodles, for serving",
+      "expected": {
+        "item": "Egg noodles",
+        "measurements": [],
+        "note": "for serving",
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "Sour cream and chopped chives or parsley, for garnish (optional)",
+      "expected": {
+        "item": "Sour cream and chopped chives or parsley, for garnish",
+        "measurements": [],
+        "note": "optional",
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2012-07-bacon-corn-hash",
+  "ingredients": [
+    {
+      "raw": "1/2 pound thick-cut bacon, cut into small dice",
+      "expected": {
+        "item": "thick-cut bacon, cut into small dice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 pound red potatoes, scrubbed clean and diced into 1/4- to 1/2-inch cubes (about 3 to 3 1/4 cups)",
+      "expected": {
+        "item": "red potatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "3 to 3",
+            "unit": null
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "scrubbed clean and diced into 1/4- to 1/2-inch cubes",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper",
+      "expected": {
+        "item": "Salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 medium-large ears corn, kernels cut from the cob (2 1/2 to 3 cups)",
+      "expected": {
+        "item": "medium-large ears corn, kernels cut from the cob",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "2.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 bundle scallions, thinly sliced",
+      "expected": {
+        "item": "bundle scallions",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    }
+  ]
+}

@@ -19,7 +19,7 @@
     {
       "raw": "2 pinches salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "2",
@@ -144,6 +144,10 @@
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "48",
+            "unit": "g"
           }
         ],
         "note": null,
