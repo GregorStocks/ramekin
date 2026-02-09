@@ -83,7 +83,7 @@
     {
       "raw": "1/8 tsp each dried basil (, oregano and parsley (or a mix of choice))",
       "expected": {
-        "item": "each dried basil (, oregano and parsley (or a mix of choice)",
+        "item": "dried basil (",
         "measurements": [
           {
             "amount": "0.13",
@@ -93,6 +93,40 @@
         "note": null,
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "1/8 tsp each dried basil (, oregano and parsley (or a mix of choice))",
+      "expected": {
+        "item": "oregano",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "1/8 tsp each dried basil (, oregano and parsley (or a mix of choice))",
+      "expected": {
+        "item": "parsley (or a mix of choice)",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
     },
     {
       "raw": "1/8 tsp red pepper flakes ((Note 3))",
@@ -111,11 +145,15 @@
     {
       "raw": "1/4 tsp salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -212,7 +250,7 @@
     {
       "raw": "1/2 tsp each dried basil (, oregano and parsley (or a mix of choice))",
       "expected": {
-        "item": "each dried basil (, oregano and parsley (or a mix of choice)",
+        "item": "dried basil (",
         "measurements": [
           {
             "amount": "0.5",
@@ -222,6 +260,40 @@
         "note": null,
         "category": "Spices & Seasonings"
       }
+    },
+    {
+      "raw": "1/2 tsp each dried basil (, oregano and parsley (or a mix of choice))",
+      "expected": {
+        "item": "oregano",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "1/2 tsp each dried basil (, oregano and parsley (or a mix of choice))",
+      "expected": {
+        "item": "parsley (or a mix of choice)",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
     },
     {
       "raw": "3/4 tsp red pepper flakes ((Note 3))",
@@ -240,11 +312,15 @@
     {
       "raw": "1 tsp salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
         "note": null,

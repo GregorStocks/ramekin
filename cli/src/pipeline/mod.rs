@@ -12,7 +12,7 @@ mod steps;
 
 use std::sync::Arc;
 
-use ramekin_core::ai::{AiClient, CachingAiClient};
+use ramekin_core::ai::{AiClient, AiConfig, CachingAiClient};
 use ramekin_core::http::HttpClient;
 use ramekin_core::pipeline::steps::{
     EnrichAutoTagStep, EnrichGeneratePhotoStep, EnrichNormalizeIngredientsStep, ExtractRecipeStep,
@@ -32,9 +32,11 @@ use steps::{ApplyAutoTagsStep, FetchImagesStep, SaveRecipeStep};
 /// The HTTP client is injected for fetch_html and fetch_images steps.
 /// The AI client is created from environment variables.
 /// User tags are used for auto-tagging evaluation.
+/// When `offline` is true, the AI client uses cache only (no API calls, no cost).
 pub fn build_registry<C: HttpClient + Clone + Send + Sync + 'static>(
     client: C,
     user_tags: Vec<String>,
+    offline: bool,
 ) -> StepRegistry {
     let mut registry = StepRegistry::new();
 
@@ -46,8 +48,10 @@ pub fn build_registry<C: HttpClient + Clone + Send + Sync + 'static>(
     registry.register(Box::new(EnrichNormalizeIngredientsStep));
 
     // Create AI client for auto-tagging
-    let ai_client: Arc<dyn AiClient> =
-        Arc::new(CachingAiClient::from_env().expect("OPENROUTER_API_KEY must be set in cli.env"));
+    let mut ai_config = AiConfig::from_env().expect("OPENROUTER_API_KEY must be set in cli.env");
+    ai_config.offline = offline;
+    ai_config.rate_limit_ms = 0;
+    let ai_client: Arc<dyn AiClient> = Arc::new(CachingAiClient::new(ai_config));
     registry.register(Box::new(EnrichAutoTagStep::new(ai_client, user_tags)));
     registry.register(Box::new(ApplyAutoTagsStep));
 

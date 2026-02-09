@@ -1,0 +1,83 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-05-spring-asparagus-pance",
+  "ingredients": [
+    {
+      "raw": "1/4 pound pancetta (a cured pork that is less salty than proscuitto, and not smoked like bacon), cut into 1/4-inch dice",
+      "expected": {
+        "item": "pancetta (a cured pork that is less salty than proscuitto, and not smoked like bacon), cut into 1/4-inch dice",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "lb"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 pound Yukon gold potatoes, peeled and cut into a 1/2-inch dice",
+      "expected": {
+        "item": "Yukon gold potatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into a 1/2-inch dice",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 small yellow onion, chopped small",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "chopped small",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 pound asparagus, tough ends trimmed and cut into 1-inch segments",
+      "expected": {
+        "item": "asparagus",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "tough ends trimmed and cut into 1-inch segments",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt and pepper to taste",
+      "expected": {
+        "item": "Salt and pepper to taste",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

@@ -9,7 +9,9 @@ use crate::ingredient_parser::parse_ingredients;
 use crate::metric_weights::{add_metric_weight_alternative, MetricConversionStats};
 use crate::pipeline::{PipelineStep, StepContext, StepMetadata, StepResult};
 use crate::types::{ParseIngredientsOutput, RawRecipe};
-use crate::volume_to_weight::{add_volume_to_weight_alternative, VolumeConversionStats};
+use crate::volume_to_weight::{
+    add_volume_to_weight_alternative, apply_ingredient_rewrites, VolumeConversionStats,
+};
 
 /// Step that parses raw ingredient strings into structured data.
 ///
@@ -78,6 +80,7 @@ impl PipelineStep for ParseIngredientsStep {
         let mut volume_stats = VolumeConversionStats::default();
         let enriched: Vec<_> = parsed
             .into_iter()
+            .map(apply_ingredient_rewrites)
             .map(|ing| add_metric_weight_alternative(ing, &mut weight_stats))
             .map(|ing| add_volume_to_weight_alternative(ing, &mut volume_stats))
             .map(|ing| ing.normalize_amounts())

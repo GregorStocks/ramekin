@@ -1,0 +1,116 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-04-crispy-potato-roast",
+  "ingredients": [
+    {
+      "raw": "3 tablespoons salted or unsalted butter, melted",
+      "expected": {
+        "item": "salted or unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "melted",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Coarse salt",
+      "expected": {
+        "item": "Coarse salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 to 1 teaspoon red-pepper flakes (optional)(I used aleppo, which is milder and can therefore be used more generously)",
+      "expected": {
+        "item": "red-pepper flakes (I used aleppo, which is milder and can therefore be used more generously)",
+        "measurements": [
+          {
+            "amount": "0.5 to 1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 pounds russet potatoes, peeled (smaller diameter potatoes are great, if you can find them)",
+      "expected": {
+        "item": "russet potatoes, peeled (smaller diameter potatoes are great, if you can find them)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1814",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 shallots, peeled",
+      "expected": {
+        "item": "shallots",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "peeled",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "8 sprigs thyme",
+      "expected": {
+        "item": "thyme",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "sprig"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Garnishes (optional): Bits of goat cheese, crumbles of bacon and/or bits of crisped pancetta",
+      "expected": {
+        "item": "Garnishes : Bits of goat cheese, crumbles of bacon and/or bits of crisped pancetta",
+        "measurements": [],
+        "note": "optional",
+        "category": "Meat & Seafood"
+      }
+    }
+  ]
+}

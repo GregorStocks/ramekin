@@ -23,7 +23,7 @@
     {
       "raw": "2 tablespoons plus 1 teaspoon salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "2 tablespoons plus 1 teaspoon",
@@ -92,6 +92,10 @@
           {
             "amount": "4",
             "unit": "tsp"
+          },
+          {
+            "amount": "4",
+            "unit": "g"
           }
         ],
         "note": null,

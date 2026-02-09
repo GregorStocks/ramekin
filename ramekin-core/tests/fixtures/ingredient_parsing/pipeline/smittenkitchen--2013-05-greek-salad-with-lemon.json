@@ -1,0 +1,165 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-05-greek-salad-with-lemon",
+  "ingredients": [
+    {
+      "raw": "1/2 a large, seedless English cucumber (about 6 to 7 ounces), chopped",
+      "expected": {
+        "item": "a large, seedless English cucumber",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": null
+          },
+          {
+            "amount": "6 to 7",
+            "unit": "oz"
+          },
+          {
+            "amount": "170 to 198",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 a green bell pepper, chopped",
+      "expected": {
+        "item": "a green bell pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": null
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup (about 6 ounces) cherry or grape tomatoes, halved",
+      "expected": {
+        "item": "cherry or grape tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "halved",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup kalamata olives (you can also serve these alongside)",
+      "expected": {
+        "item": "kalamata olives (you can also serve these alongside)",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/4 small red onion, thinly sliced",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "small"
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 lemon, halved",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "halved",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 to 3 ounces feta (Bulgarian or French, if you can find them, are my favorites), in thick slices",
+      "expected": {
+        "item": "feta (Bulgarian or French, if you can find them, are my favorites), in thick slices",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "oz"
+          },
+          {
+            "amount": "57 to 85",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil, or more to taste",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "or more to taste",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper",
+      "expected": {
+        "item": "Salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 sprig oregano, leaves minced",
+      "expected": {
+        "item": "oregano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "sprig"
+          }
+        ],
+        "note": "leaves minced",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

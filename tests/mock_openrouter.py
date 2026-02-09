@@ -63,7 +63,30 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
     def _generate_response_content(self, request):
         """Generate appropriate mock response based on the request type."""
         messages = request.get("messages", [])
-        all_text = " ".join(m.get("content", "") for m in messages)
+
+        # Check for vision request (content is an array with image_url parts)
+        for msg in messages:
+            content = msg.get("content", "")
+            if isinstance(content, list):
+                # This is a vision/multimodal request
+                has_images = any(
+                    part.get("type") == "image_url"
+                    for part in content
+                    if isinstance(part, dict)
+                )
+                if has_images:
+                    return self._mock_photo_extract()
+
+        # Extract text from messages
+        all_text = ""
+        for m in messages:
+            content = m.get("content", "")
+            if isinstance(content, str):
+                all_text += " " + content
+            elif isinstance(content, list):
+                for part in content:
+                    if isinstance(part, dict) and part.get("type") == "text":
+                        all_text += " " + part.get("text", "")
 
         # Custom enrich: extract the recipe from the request and return it
         # with a small modification to prove the "change" was applied
@@ -95,6 +118,24 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                     "tags": [],
                 }
             )
+
+    def _mock_photo_extract(self):
+        """Return a mock recipe extracted from photos."""
+        return json.dumps(
+            {
+                "title": "Photo Imported Recipe",
+                "description": "A recipe extracted from a photo",
+                "ingredients": "1 cup flour\n2 eggs\n1/2 cup sugar",
+                "instructions": (
+                    "Mix all ingredients together.\n\nBake at 350F for 30 minutes."
+                ),
+                "servings": "4 servings",
+                "prep_time": "10 minutes",
+                "cook_time": "30 minutes",
+                "total_time": "40 minutes",
+                "notes": None,
+            }
+        )
 
     def log_message(self, format, *args):
         pass

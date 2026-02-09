@@ -1,0 +1,157 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2014-01-coconut-tapioca-puddin",
+  "ingredients": [
+    {
+      "raw": "Pudding",
+      "expected": {
+        "item": "Pudding",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/3 cup small pearl tapioca (I used this)",
+      "expected": {
+        "item": "small pearl tapioca (I used this)",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 1/2 cups coconut milk (light or full-fat; a 13.5-ounce can will contain 1 3/4 cups)",
+      "expected": {
+        "item": "coconut milk (light",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "or full-fat; a 13.5-ounce can will contain 1 3/4 cups)",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 egg yolk",
+      "expected": {
+        "item": "egg yolk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/3 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          },
+          {
+            "amount": "67",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon table salt or a heaped 1/4 teaspoon sea salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "g"
+          }
+        ],
+        "note": "or a heaped 1/4 teaspoon sea salt",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vanilla extract or the seeds from a 1-inch segment of vanilla bean",
+      "expected": {
+        "item": "vanilla extract or the seeds from a 1-inch segment of vanilla bean",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Mango puree",
+      "expected": {
+        "item": "Mango puree",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 very ripe mango, peeled, pitted and roughly chopped",
+      "expected": {
+        "item": "very ripe mango, peeled",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "pitted and roughly chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 teaspoons granulated sugar (optional; I used it but would skip it next time)",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8.3",
+            "unit": "g"
+          }
+        ],
+        "note": "optional; I used it but would skip it next time",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "A squeeze or two of fresh lime juice",
+      "expected": {
+        "item": "A squeeze or two of fresh lime juice",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    }
+  ]
+}

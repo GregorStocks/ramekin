@@ -1,0 +1,61 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2014-07-three-ingredient-summe",
+  "ingredients": [
+    {
+      "raw": "1 pound plum or roma tomatoes, stemmed and cut in half",
+      "expected": {
+        "item": "plum or roma tomatoes, stemmed and cut in half",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 or 2 jalapeños (depending on how hot you want the salsa), stemmed and cut in half",
+      "expected": {
+        "item": "jalapeños (depending on how hot you want the salsa), stemmed and cut in half",
+        "measurements": [
+          {
+            "amount": "1 or 2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 cloves garlic, peeled",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt and pepper, to taste",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

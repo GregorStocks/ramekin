@@ -1,0 +1,106 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-07-cantaloupe-salsa",
+  "ingredients": [
+    {
+      "raw": "2 cups diced (1/4 inch) cantaloupe (from a 2 1/4-lb piece)",
+      "expected": {
+        "item": "diced cantaloupe (from a 2 1/4-lb piece)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "0.25",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup diced (1/4 inch) sweet onion (such as Vidalia) or red onion",
+      "expected": {
+        "item": "diced sweet onion (such as Vidalia) or red onion",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "0.25",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh basil or cilantro",
+      "expected": {
+        "item": "chopped fresh basil or cilantro",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 (2-inch-long) fresh hot red or green chile (skip the seeds if you want to dim the heat), minced",
+      "expected": {
+        "item": "fresh hot red or green chile (skip the seeds if you want to dim the heat)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "minced",
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "2 tablespoons fresh lime juice",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

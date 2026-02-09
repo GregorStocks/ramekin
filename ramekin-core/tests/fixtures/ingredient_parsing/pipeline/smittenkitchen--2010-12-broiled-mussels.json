@@ -1,0 +1,98 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-12-broiled-mussels",
+  "ingredients": [
+    {
+      "raw": "2 pounds mussels",
+      "expected": {
+        "item": "mussels",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 cup white wine (they suggest 1/2 cup but I need more to steam that volume)",
+      "expected": {
+        "item": "white wine (they suggest 1/2 cup but I need more to steam that volume)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "4 tablespoons butter, softened",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "softened",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 handful fresh flat-leaf parsley leaves, minced",
+      "expected": {
+        "item": "fresh flat-leaf parsley leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "handful"
+          }
+        ],
+        "note": "minced",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 small clove garlic, minced",
+      "expected": {
+        "item": "clove garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 pinches smoked paprika (pimenton)",
+      "expected": {
+        "item": "smoked paprika (pimenton)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

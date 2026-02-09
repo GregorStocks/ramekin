@@ -86,6 +86,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Modified recipe |  -  |
 **401** | Unauthorized |  -  |
+**500** | Internal server error |  -  |
 **503** | AI service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -172,6 +173,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Enriched recipe object |  -  |
 **401** | Unauthorized |  -  |
+**500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,0 +1,94 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-07-watermelon-lemonade",
+  "ingredients": [
+    {
+      "raw": "1/4 cup (2 ounces) fresh-squeezed lemon juice",
+      "expected": {
+        "item": "fresh-squeezed lemon juice",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/2 cup (4 ounces) fresh watermelon puree, strained through a coarse strainer to remove seeds",
+      "expected": {
+        "item": "fresh watermelon puree, strained through a coarse strainer to remove seeds",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 tablespoons (1 1/2 ounces) simple syrup*",
+      "expected": {
+        "item": "simple syrup*",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3/4 cup (6 ounces) cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

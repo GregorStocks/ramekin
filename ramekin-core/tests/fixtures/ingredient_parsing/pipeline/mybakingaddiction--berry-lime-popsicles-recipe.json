@@ -1,0 +1,56 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "berry-lime-popsicles-recipe",
+  "ingredients": [
+    {
+      "raw": "8 3-ounce plastic cups",
+      "expected": {
+        "item": "3-ounce plastic cups",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "sliced strawberries",
+      "expected": {
+        "item": "sliced strawberries",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "blueberries",
+      "expected": {
+        "item": "blueberries",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "12 ounces Berry Lime Iced Tea",
+      "expected": {
+        "item": "Berry Lime Iced Tea",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

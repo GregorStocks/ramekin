@@ -1,0 +1,153 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2006-07-onion-pizza-strawberry",
+  "ingredients": [
+    {
+      "raw": "1 fresh pizza dough",
+      "expected": {
+        "item": "fresh pizza dough",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 large onion, halved and thinly sliced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "halved and thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Fresh sage leaves (I slivered up about 5 of them)",
+      "expected": {
+        "item": "Fresh sage leaves (I slivered up about 5 of them)",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 piece of thick-cut bacon, cut into lardons",
+      "expected": {
+        "item": "thick-cut bacon, cut into lardons",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "piece"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons onion marmalade",
+      "expected": {
+        "item": "onion marmalade",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "Salt and pepper to taste",
+      "expected": {
+        "item": "Salt and pepper to taste",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 lemon, seeded and roughly chopped",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "seeded and roughly chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 cups granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 pounds strawberries, hulled",
+      "expected": {
+        "item": "strawberries, hulled",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Juice of 1 to 2 lemons (I always use 2)",
+      "expected": {
+        "item": "Juice of 1 to 2 lemons (I always use 2)",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    }
+  ]
+}

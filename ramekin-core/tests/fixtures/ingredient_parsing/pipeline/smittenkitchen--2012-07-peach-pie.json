@@ -1,0 +1,269 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2012-07-peach-pie",
+  "ingredients": [
+    {
+      "raw": "Crust",
+      "expected": {
+        "item": "Crust",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 1/2 cups (315 grams) all-purpose flour, plus more for dusting surfaces",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "315",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for dusting surfaces",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoons (15 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6.1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 sticks (225 grams, 8 ounces, or 1 cup) unsalted butter, very cold",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "stick"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "very cold",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 cup water, very cold",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
+          }
+        ],
+        "note": "very cold",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Filling",
+      "expected": {
+        "item": "Filling",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "About 3 1/2 pounds peaches (approximately 6 large, 7 medium or 8 small)",
+      "expected": {
+        "item": "About 3 1/2 pounds peaches",
+        "measurements": [],
+        "note": "approximately 6 large, 7 medium or 8 small",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh lemon juice, from about half a regular lemon",
+      "expected": {
+        "item": "fresh lemon juice, from about half a regular lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/4 cup granulated sugar (see note up top; use 1/3 cup for a sweeter pie)",
+      "expected": {
+        "item": "granulated sugar (see note up top; use 1/3 cup for a sweeter pie)",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup light brown sugar (ditto)",
+      "expected": {
+        "item": "light brown sugar (ditto)",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Few gratings of fresh nutmeg",
+      "expected": {
+        "item": "Few gratings of fresh nutmeg",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons minute tapioca, ground to a powder (see note up top), or 3 tablespoons cornstarch or potato starch",
+      "expected": {
+        "item": "minute tapioca, ground to a powder (see note up top)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or 3 tablespoons cornstarch or potato starch",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "To finish",
+      "expected": {
+        "item": "To finish",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 tablespoon milk, cream or water",
+      "expected": {
+        "item": "milk, cream or water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon coarse or granulated sugar",
+      "expected": {
+        "item": "coarse or granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

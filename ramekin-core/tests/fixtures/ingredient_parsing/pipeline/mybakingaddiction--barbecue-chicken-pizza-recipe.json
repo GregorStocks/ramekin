@@ -1,0 +1,107 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "barbecue-chicken-pizza-recipe",
+  "ingredients": [
+    {
+      "raw": "1 store bought pizza crust or refrigerated crust (I used 1lb of homemade crust)",
+      "expected": {
+        "item": "store bought pizza crust or refrigerated crust (I used 1lb of homemade crust)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 cup barbecue sauce",
+      "expected": {
+        "item": "barbecue sauce",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 cup cooked and shredded chicken",
+      "expected": {
+        "item": "cooked and shredded chicken",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1/2 cup thinly sliced red onion",
+      "expected": {
+        "item": "thinly sliced red onion",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 orange bell pepper; diced",
+      "expected": {
+        "item": "orange bell pepper; diced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1-3/4 cups (7 oz.) Sargento® Monterey Jack Shredded Cheese",
+      "expected": {
+        "item": "Sargento® Monterey Jack Shredded Cheese",
+        "measurements": [
+          {
+            "amount": "1-3/4",
+            "unit": "cup"
+          },
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "198",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "Chopped cilantro; to taste (optional)",
+      "expected": {
+        "item": "Chopped cilantro; to taste",
+        "measurements": [],
+        "note": "optional",
+        "category": "Produce"
+      }
+    }
+  ]
+}

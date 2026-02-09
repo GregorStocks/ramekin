@@ -1,0 +1,161 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-04-heavenly-chocolate-cak",
+  "ingredients": [
+    {
+      "raw": "Cake layer:",
+      "expected": {
+        "item": "Cake layer:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "6 ounces semisweet bittersweet chocolate, chopped or 1 cup semi- or bittersweet chocolate chips",
+      "expected": {
+        "item": "semisweet bittersweet chocolate",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped or 1 cup semi- or bittersweet chocolate chips",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3 tablespoons water or strong coffee",
+      "expected": {
+        "item": "water or strong coffee",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "6 large eggs, at room temperature, separated",
+      "expected": {
+        "item": "eggs, at room temperature, separated",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2/3 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          },
+          {
+            "amount": "133",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons unsweetened cocoa powder, divided",
+      "expected": {
+        "item": "unsweetened cocoa powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "11",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup heavy or whipping cream",
+      "expected": {
+        "item": "heavy or whipping cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 to 3 tablespoons powdered sugar (use more if you prefer a sweeter filling)",
+      "expected": {
+        "item": "powdered sugar (use more if you prefer a sweeter filling)",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vanilla extract or 1 to 2 tablespoons liqueur of your choice, such as Grand Marnier",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": "or 1 to 2 tablespoons liqueur of your choice, such as Grand Marnier",
+        "category": "Baking"
+      }
+    }
+  ]
+}

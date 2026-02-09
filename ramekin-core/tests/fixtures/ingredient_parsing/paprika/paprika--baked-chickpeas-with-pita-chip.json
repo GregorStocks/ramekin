@@ -82,6 +82,10 @@
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "4",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -162,14 +166,14 @@
     {
       "raw": "4 cups vegetable broth (for dried but soaked chickpeas), 1 1/2 cups vegetable broth (for cooked chickpeas)",
       "expected": {
-        "item": "vegetable broth, 1 1/2 cups vegetable broth (for cooked chickpeas)",
+        "item": "vegetable broth",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": "for dried but soaked chickpeas",
+        "note": "for dried but soaked chickpeas; or 1 1/2 cup for cooked chickpeas",
         "section": "Chickpeas",
         "category": "Canned Goods"
       }

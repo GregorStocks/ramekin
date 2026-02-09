@@ -1,0 +1,188 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2014-09-cauliflower-slaw",
+  "ingredients": [
+    {
+      "raw": "1/2 cup thinly sliced almonds",
+      "expected": {
+        "item": "thinly sliced almonds",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "Juice of half a lemon (about 1 tablespoon), plus more to taste",
+      "expected": {
+        "item": "Juice of half a lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more to taste",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 tablespoon white wine vinegar",
+      "expected": {
+        "item": "white wine vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon fine sea salt or table salt, then more to taste",
+      "expected": {
+        "item": "fine sea salt or table salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "then more to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 tablespoons (30 grams) dried currants",
+      "expected": {
+        "item": "dried currants",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "5 tablespoons olive oil, plus more for frying",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "68",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for frying",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 tablespoons (about 25 grams) brined or salt-packed capers",
+      "expected": {
+        "item": "brined or salt-packed capers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "oil for frying",
+      "expected": {
+        "item": "oil for frying",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 small, compact-looking head of cauliflower (about 1 1/4 pounds)",
+      "expected": {
+        "item": "compact-looking head of cauliflower",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": "1.25",
+            "unit": "lb"
+          },
+          {
+            "amount": "567",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 scallions, thinly sliced (use green and white parts)",
+      "expected": {
+        "item": "scallions",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced (use green and white parts)",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped flat-leaf parsley (optional, mostly for color)",
+      "expected": {
+        "item": "chopped flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional, mostly for color",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

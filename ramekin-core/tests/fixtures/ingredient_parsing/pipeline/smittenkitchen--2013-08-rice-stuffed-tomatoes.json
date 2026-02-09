@@ -1,0 +1,121 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-08-rice-stuffed-tomatoes",
+  "ingredients": [
+    {
+      "raw": "2 to 3 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2 to 3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Coarse or Kosher salt",
+      "expected": {
+        "item": "Coarse or Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "6 medium-to-large (mine were 3 inches across, averaged 8 1/4 ounces in weight) tomatoes",
+      "expected": {
+        "item": "medium-to-large (mine were 3 inches across, averaged 8 1/4 ounces in weight) tomatoes",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Red pepper flakes, to taste",
+      "expected": {
+        "item": "Red pepper flakes",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 medium or 1/2 small onion, finely chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "medium"
+          },
+          {
+            "amount": "0.5",
+            "unit": "small"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 garlic clove, minced",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "9 tablespoons arborio or another short-grained starchy rice",
+      "expected": {
+        "item": "arborio or another short-grained starchy rice",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "Few tablespoons chopped parsley, oregano or slivered basil (or mix thereof)",
+      "expected": {
+        "item": "Few tablespoons chopped parsley, oregano or slivered basil (or mix thereof)",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Handful breadcrumbs, if using (unless using gluten-free breadcrumbs, this will of course negate the dish’s gluten-free status)",
+      "expected": {
+        "item": "breadcrumbs, if using (unless using gluten-free breadcrumbs, this will of course negate the dish’s gluten-free status)",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    }
+  ]
+}

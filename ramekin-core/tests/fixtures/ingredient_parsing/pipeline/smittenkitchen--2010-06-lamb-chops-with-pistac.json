@@ -1,0 +1,149 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-06-lamb-chops-with-pistac",
+  "ingredients": [
+    {
+      "raw": "1/2 cup pistachios, shelled and toasted",
+      "expected": {
+        "item": "pistachios",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "shelled and toasted",
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1/2 cup pitted green (what I used) or Cerignola (what Burrell recommends) olives",
+      "expected": {
+        "item": "pitted green (what I used) or Cerignola (what Burrell recommends) olives",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 tablespoons capers",
+      "expected": {
+        "item": "capers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 clove garlic, smashed",
+      "expected": {
+        "item": "garlic, smashed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon freshly chopped oregano leaves (nixed because mine had gone bad)",
+      "expected": {
+        "item": "freshly chopped oregano leaves (nixed because mine had gone bad)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons freshly chopped parsley leaves",
+      "expected": {
+        "item": "freshly chopped parsley leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Extra-virgin olive oil",
+      "expected": {
+        "item": "Extra-virgin olive oil",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 lemon, zested",
+      "expected": {
+        "item": "lemon, zested",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 (8-rib) rack of lamb or 6 lamb chops",
+      "expected": {
+        "item": "rack of lamb or 6 lamb chops",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper*",
+      "expected": {
+        "item": "Freshly ground black pepper*",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

@@ -142,6 +142,9 @@ pub struct IngredientParsingStats {
     pub metric_converted_oz: usize,
     /// Metric conversions from lb
     pub metric_converted_lb: usize,
+    /// Names of ingredients that had volume measurements but no density data.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub unknown_ingredients: Vec<String>,
 }
 
 /// Stats about which extraction methods work across all URLs
@@ -272,7 +275,11 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
 
     let total_urls = urls_to_process.len();
     let start_time = Instant::now();
-    let registry = Arc::new(build_registry(Arc::clone(&client), user_tags));
+    let registry = Arc::new(build_registry(
+        Arc::clone(&client),
+        user_tags,
+        config.offline,
+    ));
 
     println!("Pipeline Test Starting");
     println!("======================");
@@ -743,6 +750,10 @@ fn update_results(
         results.ingredient_stats.volume_already_has_weight += stats.volume_already_has_weight;
         results.ingredient_stats.metric_converted_oz += stats.metric_converted_oz;
         results.ingredient_stats.metric_converted_lb += stats.metric_converted_lb;
+        results
+            .ingredient_stats
+            .unknown_ingredients
+            .extend(stats.unknown_ingredients.iter().cloned());
     }
 }
 
@@ -1307,6 +1318,45 @@ fn pct(num: usize, denom: usize) -> f64 {
     } else {
         num as f64 / denom as f64 * 100.0
     }
+}
+
+/// Generate a density gap report showing the most common ingredients missing density data.
+pub fn generate_density_gap_report(results: &PipelineResults) -> String {
+    use std::collections::HashMap;
+
+    let mut report = String::new();
+
+    let unknown = &results.ingredient_stats.unknown_ingredients;
+    if unknown.is_empty() {
+        report.push_str("No unknown ingredients found.\n");
+        return report;
+    }
+
+    // Count frequency of each ingredient name
+    let mut counts: HashMap<&str, usize> = HashMap::new();
+    for name in unknown {
+        *counts.entry(name.as_str()).or_default() += 1;
+    }
+
+    // Sort by frequency descending
+    let mut sorted: Vec<_> = counts.into_iter().collect();
+    sorted.sort_by(|a, b| b.1.cmp(&a.1).then_with(|| a.0.cmp(b.0)));
+
+    report.push_str(&format!(
+        "{} total occurrences across {} unique ingredients\n\n",
+        unknown.len(),
+        sorted.len()
+    ));
+
+    // Find max width needed for count column
+    let max_count = sorted.first().map(|(_, c)| *c).unwrap_or(0);
+    let count_width = max_count.to_string().len();
+
+    for (name, count) in &sorted {
+        report.push_str(&format!("{count:>count_width$}  {name}\n"));
+    }
+
+    report
 }
 
 /// Generate a sorted text file of unique ingredient names from a pipeline run

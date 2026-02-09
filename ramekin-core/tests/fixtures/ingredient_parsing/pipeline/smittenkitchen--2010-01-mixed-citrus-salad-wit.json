@@ -1,0 +1,129 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-01-mixed-citrus-salad-wit",
+  "ingredients": [
+    {
+      "raw": "3 to 4 tablespoons red onion, cut into tiny bits",
+      "expected": {
+        "item": "red onion, cut into tiny bits",
+        "measurements": [
+          {
+            "amount": "3 to 4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 pieces of citrus, preferably a mix of grapefruits and oranges but use what you can get, and what you like to eat (spoiled by the spread at the store, I used 1 pink grapefruit, 1 cara cara and 1 blood orange, and 1 mineola)",
+      "expected": {
+        "item": "citrus, preferably a mix of grapefruits and oranges but use what you can get, and what you like to eat",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "piece"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon red wine vinegar or lemon juice",
+      "expected": {
+        "item": "red wine vinegar or lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 teaspoon smooth Dijon mustard",
+      "expected": {
+        "item": "smooth Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground pepper, to taste",
+      "expected": {
+        "item": "Salt and freshly ground pepper",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 to 4 tablespoons (1.5 ounces) feta cheese, chopped or crumbled",
+      "expected": {
+        "item": "feta cheese",
+        "measurements": [
+          {
+            "amount": "3 to 4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped or crumbled",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh mint, chopped or cut into tiny slivers",
+      "expected": {
+        "item": "fresh mint",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped or cut into tiny slivers",
+        "category": "Produce"
+      }
+    }
+  ]
+}

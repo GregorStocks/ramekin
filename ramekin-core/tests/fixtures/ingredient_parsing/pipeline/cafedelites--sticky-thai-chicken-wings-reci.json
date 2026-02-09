@@ -70,6 +70,10 @@
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "64",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -213,7 +217,7 @@
     {
       "raw": "1 pinch salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",

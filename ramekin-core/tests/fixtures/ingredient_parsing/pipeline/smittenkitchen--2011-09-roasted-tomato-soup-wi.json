@@ -1,0 +1,162 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-09-roasted-tomato-soup-wi",
+  "ingredients": [
+    {
+      "raw": "Soup",
+      "expected": {
+        "item": "Soup",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3 pounds plum tomatoes, halved lengthwise",
+      "expected": {
+        "item": "plum tomatoes",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361",
+            "unit": "g"
+          }
+        ],
+        "note": "halved lengthwise",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 large or 4 small cloves garlic, unpeeled",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          },
+          {
+            "amount": "4",
+            "unit": "small"
+          }
+        ],
+        "note": "unpeeled",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon finely chopped fresh thyme leaves or 1/4 teaspoon dried",
+      "expected": {
+        "item": "finely chopped fresh thyme leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1/4 teaspoon dried",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon (or more to taste) dried crushed red pepper",
+      "expected": {
+        "item": "dried crushed red pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or more to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 cups chicken or vegetable stock",
+      "expected": {
+        "item": "chicken or vegetable stock",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Lid",
+      "expected": {
+        "item": "Lid",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "4 1-inch slices from a large loaf of rye bread, whole wheat sourdough or bread of your choice (or 16 1-inch slices from a baguette), toasted until hard and lightly buttered on one side",
+      "expected": {
+        "item": "1-inch slices from a large loaf of rye bread, whole wheat sourdough or bread of your choice (or 16 1-inch slices from a baguette)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "toasted until hard and lightly buttered on one side",
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "1 tablespoon grated raw onion",
+      "expected": {
+        "item": "grated raw onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup coarsely grated cheddar (or more to taste)",
+      "expected": {
+        "item": "coarsely grated cheddar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "or more to taste",
+        "category": "Cheese"
+      }
+    }
+  ]
+}

@@ -140,6 +140,10 @@
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "17",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -186,6 +190,10 @@
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -241,11 +249,15 @@
     {
       "raw": "2 ½ tsp salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
           }
         ],
         "note": null,

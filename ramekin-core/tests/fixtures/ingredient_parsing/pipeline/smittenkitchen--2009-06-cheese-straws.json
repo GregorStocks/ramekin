@@ -1,0 +1,114 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-06-cheese-straws",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups (about 6 ounces) grated extra-sharp Cheddar cheese",
+      "expected": {
+        "item": "grated extra-sharp Cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "4 tablespoons (1/2 stick or 2 ounces) unsalted butter, softened and cut into 4 pieces",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "stick"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "softened and cut into 4 pieces",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3/4 cup flour, plus more for dusting",
+      "expected": {
+        "item": "flour",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "94",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for dusting",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon crushed red pepper flakes",
+      "expected": {
+        "item": "crushed red pepper flakes",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon half-and-half (I used cream, because I had it on hand; suspect milk would work just as well)",
+      "expected": {
+        "item": "half-and-half (I used cream, because I had it on hand; suspect milk would work just as well)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

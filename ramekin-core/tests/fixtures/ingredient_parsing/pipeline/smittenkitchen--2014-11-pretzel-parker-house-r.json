@@ -1,0 +1,264 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2014-11-pretzel-parker-house-r",
+  "ingredients": [
+    {
+      "raw": "And for the other side of the world:",
+      "expected": {
+        "item": "And for the other side of the world:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Six Months Ago: Five Egg Sandwiches",
+      "expected": {
+        "item": "Months Ago: Five Egg Sandwiches",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1.5 Years Ago: Japanese Vegetable Pancakes",
+      "expected": {
+        "item": "Years Ago: Japanese Vegetable Pancakes",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2.5 Years Ago: Chocolate Buckwheat Cake",
+      "expected": {
+        "item": "Years Ago: Chocolate Buckwheat Cake",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3.5 Years Ago: Vermontucky Lemonade",
+      "expected": {
+        "item": "Years Ago: Vermontucky Lemonade",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Rolls",
+      "expected": {
+        "item": "Rolls",
+        "measurements": [],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "3/4 cup plus 2 tablespoons (205 ml) milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "3/4 cup plus 2 tablespoons",
+            "unit": null
+          },
+          {
+            "amount": "205",
+            "unit": "ml"
+          },
+          {
+            "amount": "212",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons (20 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/4 teaspoons (half a 1/4-ounce or 7-gram packet) active dry yeast",
+      "expected": {
+        "item": "active dry yeast",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "7",
+            "unit": null
+          },
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 tablespoons (45 grams) unsalted butter, melted, plus extra to coat bowl",
+      "expected": {
+        "item": "unsalted butter, melted",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
+          }
+        ],
+        "note": "plus extra to coat bowl",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 cups (265 grams) flour, either all-purpose or bread flour, or a mix thereof, plus extra for dusting",
+      "expected": {
+        "item": "flour, either all-purpose or bread flour, or a mix thereof",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "265",
+            "unit": "g"
+          }
+        ],
+        "note": "plus extra for dusting",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon (6 grams) fine sea or table salt",
+      "expected": {
+        "item": "fine sea or table salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "To finish",
+      "expected": {
+        "item": "To finish",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 cup (120 ml) water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons baking soda or food-grade lye (see Notes below)",
+      "expected": {
+        "item": "baking soda or food-grade lye (see Notes below)",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 egg, beaten with 1 teaspoon water",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "beaten with 1 teaspoon water",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Pretzel salt, coarse salt or sesame seeds",
+      "expected": {
+        "item": "Pretzel salt, coarse salt or sesame seeds",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

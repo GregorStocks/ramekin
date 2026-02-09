@@ -1,0 +1,157 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-12-crescent-jam-and-chees",
+  "ingredients": [
+    {
+      "raw": "2 sticks (1 cup, 8 ounces or 227 grams) unsalted butter, softened",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "stick"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "softened",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "7.5 ounces farmer cheese (a lowfat cottage/ricotta-style cheese; I buy mine from Friendship)*",
+      "expected": {
+        "item": "farmer cheese (a lowfat cottage/ricotta-style cheese; I buy mine from Friendship)*",
+        "measurements": [
+          {
+            "amount": "7.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "213",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2 tablespoons (1 ounce or 30 grams) sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 cups (8 3/4 ounces or 250 grams) all-purpose flour, plus additional for rolling cookies out",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "8.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": "plus additional for rolling cookies out",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Jam or preserves (I used raspberry)",
+      "expected": {
+        "item": "Jam or preserves (I used raspberry)",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Milk, for brushing cookies",
+      "expected": {
+        "item": "Milk, for brushing cookies",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Powdered sugar, for dusting",
+      "expected": {
+        "item": "Powdered sugar, for dusting",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

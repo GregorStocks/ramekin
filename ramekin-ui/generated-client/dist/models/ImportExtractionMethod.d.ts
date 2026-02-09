@@ -17,6 +17,7 @@ export declare const ImportExtractionMethod: {
     readonly JsonLd: "json_ld";
     readonly Microdata: "microdata";
     readonly Paprika: "paprika";
+    readonly PhotoUpload: "photo_upload";
 };
 export type ImportExtractionMethod = typeof ImportExtractionMethod[keyof typeof ImportExtractionMethod];
 export declare function instanceOfImportExtractionMethod(value: any): boolean;

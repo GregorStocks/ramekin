@@ -107,11 +107,15 @@
     {
       "raw": "1 1/4 teaspoons salt ((to taste))",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "3.6",
+            "unit": "g"
           }
         ],
         "note": "to taste",
@@ -126,6 +130,10 @@
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.7",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -214,11 +222,15 @@
     {
       "raw": "1/4 teaspoon salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
           }
         ],
         "note": null,

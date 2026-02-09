@@ -1,0 +1,112 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-05-scrambled-egg-toast",
+  "ingredients": [
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 tablespoons milk, half-and-half or cream",
+      "expected": {
+        "item": "milk, half-and-half or cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.4",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Few grinds black pepper",
+      "expected": {
+        "item": "Few grinds black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 teaspoons butter or olive oil",
+      "expected": {
+        "item": "butter or olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "A 1-inch thick piece of bread",
+      "expected": {
+        "item": "A 1-inch thick piece of bread",
+        "measurements": [],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "1 tablespoon goat cheese, softened a bit (though cream cheese is a great swap here)",
+      "expected": {
+        "item": "goat cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "softened a bit (though cream cheese is a great swap here)",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 teaspoon chives or scallion greens, thinly sliced",
+      "expected": {
+        "item": "chives or scallion greens",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    }
+  ]
+}

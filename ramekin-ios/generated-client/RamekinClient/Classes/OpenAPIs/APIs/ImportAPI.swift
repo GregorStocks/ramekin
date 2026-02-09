@@ -14,6 +14,42 @@ open class ImportAPI {
 
     /**
 
+     - parameter importFromPhotosRequest: (body)  
+     - returns: ImportFromPhotosResponse
+     */
+    @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    open class func importFromPhotos(importFromPhotosRequest: ImportFromPhotosRequest) async throws -> ImportFromPhotosResponse {
+        return try await importFromPhotosWithRequestBuilder(importFromPhotosRequest: importFromPhotosRequest).execute().body
+    }
+
+    /**
+     - POST /api/import/photos
+     - Bearer Token:
+       - type: http
+       - name: bearer_auth
+     - parameter importFromPhotosRequest: (body)  
+     - returns: RequestBuilder<ImportFromPhotosResponse> 
+     */
+    open class func importFromPhotosWithRequestBuilder(importFromPhotosRequest: ImportFromPhotosRequest) -> RequestBuilder<ImportFromPhotosResponse> {
+        let localVariablePath = "/api/import/photos"
+        let localVariableURLString = RamekinClientAPI.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: importFromPhotosRequest)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            "Content-Type": "application/json",
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<ImportFromPhotosResponse>.Type = RamekinClientAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
+    }
+
+    /**
+
      - parameter importRecipeRequest: (body)  
      - returns: ImportRecipeResponse
      */

@@ -39,6 +39,7 @@ mod cache;
 mod client;
 mod config;
 mod custom_enrich;
+pub mod photo_extract;
 pub mod prompts;
 mod types;
 
@@ -47,4 +48,5 @@ pub use cache::{AiCache, CacheKey, CacheStats, CachedAiResponse};
 pub use client::{AiClient, AiError, CachingAiClient};
 pub use config::{AiConfig, ConfigError};
 pub use custom_enrich::{custom_enrich, CustomEnrichResult};
-pub use types::{ChatMessage, ChatRequest, ChatResponse, Role, Usage};
+pub use photo_extract::{extract_recipe_from_photos, PhotoExtractResult};
+pub use types::{ChatMessage, ChatRequest, ChatResponse, ImageData, Role, Usage};

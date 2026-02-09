@@ -1,0 +1,251 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-01-gnocchi-in-tomato-brot",
+  "ingredients": [
+    {
+      "raw": "Tomato broth",
+      "expected": {
+        "item": "Tomato broth",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 medium carrot, chopped",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 medium stalk celery, chopped",
+      "expected": {
+        "item": "stalk celery",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 small yellow onion, chopped",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 garlic cloves, peeled and smashed",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "peeled and smashed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup (120 ml) white wine",
+      "expected": {
+        "item": "white wine",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "One 28-ounce (795 grams) can whole or chopped tomatoes with juices",
+      "expected": {
+        "item": "whole or chopped tomatoes with juices",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "28-ounce can"
+          },
+          {
+            "amount": "795",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Small handful fresh basil leaves, plus more for garnish",
+      "expected": {
+        "item": "handful fresh basil leaves",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "small"
+          }
+        ],
+        "note": "plus more for garnish",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 cups (475 ml) chicken or vegetable stock",
+      "expected": {
+        "item": "chicken or vegetable stock",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "475",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper, to taste",
+      "expected": {
+        "item": "Salt and freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Gnocchi",
+      "expected": {
+        "item": "Gnocchi",
+        "measurements": [],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "2 pounds (905 grams) Russet potatoes (3 to 4)",
+      "expected": {
+        "item": "Russet potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "905",
+            "unit": "g"
+          },
+          {
+            "amount": "3 to 4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large egg, lightly beaten",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "lightly beaten",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6.1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/4 to 1 1/2 cups (156 to 190 grams) all-purpose flour, plus more for dusting surface",
+      "expected": {
+        "item": "to 1 1/2 cups all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": null
+          },
+          {
+            "amount": "156 to 190",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for dusting surface",
+        "category": "Baking"
+      }
+    }
+  ]
+}

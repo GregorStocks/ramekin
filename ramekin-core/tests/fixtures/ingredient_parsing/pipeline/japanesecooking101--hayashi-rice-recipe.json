@@ -194,6 +194,10 @@
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "66",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -208,6 +212,10 @@
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -231,11 +239,15 @@
     {
       "raw": "3/4 tsp salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.1",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -290,7 +302,8 @@
         ],
         "note": null,
         "category": "Dairy & Eggs"
-      }
+      },
+      "expanded": true
     },
     {
       "raw": "10 oz beef (thinly sliced and cut bite size pieces)",

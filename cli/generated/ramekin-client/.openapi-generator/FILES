@@ -23,6 +23,8 @@ docs/EnrichApi.md
 docs/ErrorResponse.md
 docs/ImportApi.md
 docs/ImportExtractionMethod.md
+docs/ImportFromPhotosRequest.md
+docs/ImportFromPhotosResponse.md
 docs/ImportRawRecipe.md
 docs/ImportRecipeRequest.md
 docs/ImportRecipeResponse.md
@@ -103,6 +105,8 @@ src/models/custom_enrich_request.rs
 src/models/direction.rs
 src/models/error_response.rs
 src/models/import_extraction_method.rs
+src/models/import_from_photos_request.rs
+src/models/import_from_photos_response.rs
 src/models/import_raw_recipe.rs
 src/models/import_recipe_request.rs
 src/models/import_recipe_response.rs

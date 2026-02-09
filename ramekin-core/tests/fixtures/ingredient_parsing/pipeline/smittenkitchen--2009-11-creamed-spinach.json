@@ -1,0 +1,116 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-11-creamed-spinach",
+  "ingredients": [
+    {
+      "raw": "2 pounds baby spinach or 2 1/2 pounds fresh spinach, tough stems discarded",
+      "expected": {
+        "item": "baby spinach",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "or 2 1/2 pounds fresh spinach, tough stems discarded",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 3/4 cups heavy cream or whole milk, or a mix thereof",
+      "expected": {
+        "item": "heavy cream or whole milk, or a mix thereof",
+        "measurements": [
+          {
+            "amount": "1.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 small onion, finely chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 small clove garlic, minced (optional)",
+      "expected": {
+        "item": "clove garlic, minced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "optional",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 tablespoons all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "23",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Pinch of freshly grated nutmeg",
+      "expected": {
+        "item": "freshly grated nutmeg",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

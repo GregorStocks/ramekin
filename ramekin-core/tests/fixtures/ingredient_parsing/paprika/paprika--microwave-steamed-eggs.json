@@ -33,7 +33,7 @@
     {
       "raw": "Pinch of salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": null,
@@ -52,6 +52,10 @@
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.3",
+            "unit": "g"
           }
         ],
         "note": null,

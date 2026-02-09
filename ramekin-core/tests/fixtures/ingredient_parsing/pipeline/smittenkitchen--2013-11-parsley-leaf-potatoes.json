@@ -1,0 +1,73 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-11-parsley-leaf-potatoes",
+  "ingredients": [
+    {
+      "raw": "3 ounces (6 tablespoons) unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "8 small-medium baking potatoes (about 4 pounds), scrubbed",
+      "expected": {
+        "item": "small-medium baking potatoes",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1814",
+            "unit": "g"
+          }
+        ],
+        "note": "scrubbed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "16 fresh flat-leaf parsley leaves",
+      "expected": {
+        "item": "fresh flat-leaf parsley leaves",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Coarse salt",
+      "expected": {
+        "item": "Coarse salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

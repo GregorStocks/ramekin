@@ -1,0 +1,124 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-12-nutmeg-maple-butter-co",
+  "ingredients": [
+    {
+      "raw": "1 cup (2 sticks or 226 grams) unsalted butter, at room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "stick"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup (200 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup (118 ml) maple syrup (Grade B is ideal here, but the original recipe suggested that Grade A with a few drops of maple extract would also work)",
+      "expected": {
+        "item": "maple syrup (Grade B is ideal here, but the original recipe suggested that Grade A with a few drops of maple extract would also work)",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 large egg yolk",
+      "expected": {
+        "item": "egg yolk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 cups (375 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "375",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly grated nutmeg or 1/4 teaspoon ground nutmeg (because it packs more tightly)",
+      "expected": {
+        "item": "freshly grated nutmeg",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1/4 teaspoon ground nutmeg (because it packs more tightly)",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/4 teaspoon flaky salt or 1 teaspoon table salt",
+      "expected": {
+        "item": "flaky salt",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1 teaspoon table salt",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "holy-guacamole-recipe",
+  "ingredients": [
+    {
+      "raw": "4 ripe avocados, pitted and mashed",
+      "expected": {
+        "item": "ripe avocados, pitted and mashed",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 Roma tomato, diced",
+      "expected": {
+        "item": "Roma tomato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "diced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup diced red onion",
+      "expected": {
+        "item": "diced red onion",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 cloves of minced garlic",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 diced jalapeno",
+      "expected": {
+        "item": "diced jalapeno",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "the juice of one lime",
+      "expected": {
+        "item": "the juice of one lime",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "salt and black pepper to taste",
+      "expected": {
+        "item": "salt and black pepper to taste",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "pinch of Cayenne pepper",
+      "expected": {
+        "item": "Cayenne pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "a couple dashes of Sriracha",
+      "expected": {
+        "item": "a couple dashes of Sriracha",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "*You can also add fresh cilantro…I had none on hand.",
+      "expected": {
+        "item": "*You can also add fresh cilantro…I had none on hand.",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

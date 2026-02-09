@@ -26,6 +26,12 @@ class TestImportApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_import_from_photos(self) -> None:
+        """Test case for import_from_photos
+
+        """
+        pass
+
     def test_import_recipe(self) -> None:
         """Test case for import_recipe
 

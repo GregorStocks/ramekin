@@ -11,11 +11,23 @@ pub enum Role {
     Assistant,
 }
 
+/// Image data for vision API requests.
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct ImageData {
+    /// Base64-encoded image bytes.
+    pub base64: String,
+    /// MIME type (e.g., "image/jpeg", "image/png").
+    pub content_type: String,
+}
+
 /// A message in a chat conversation.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ChatMessage {
     pub role: Role,
     pub content: String,
+    /// Optional images for vision requests. Empty by default.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub images: Vec<ImageData>,
 }
 
 impl ChatMessage {
@@ -23,6 +35,7 @@ impl ChatMessage {
         Self {
             role: Role::System,
             content: content.into(),
+            images: vec![],
         }
     }
 
@@ -30,6 +43,15 @@ impl ChatMessage {
         Self {
             role: Role::User,
             content: content.into(),
+            images: vec![],
+        }
+    }
+
+    pub fn user_with_images(content: impl Into<String>, images: Vec<ImageData>) -> Self {
+        Self {
+            role: Role::User,
+            content: content.into(),
+            images,
         }
     }
 
@@ -37,6 +59,7 @@ impl ChatMessage {
         Self {
             role: Role::Assistant,
             content: content.into(),
+            images: vec![],
         }
     }
 }

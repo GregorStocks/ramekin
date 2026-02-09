@@ -1,0 +1,94 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2014-04-asparagus-stuffed-eggs",
+  "ingredients": [
+    {
+      "raw": "6 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 medium asparagus spears",
+      "expected": {
+        "item": "asparagus spears",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 teaspoons very finely minced shallot, scallion or chives, plus a pinch extra for garnish",
+      "expected": {
+        "item": "very finely minced shallot, scallion or chives",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus a pinch extra for garnish",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 tablespoons mayonnaise, whipping cream, creme fraiche, sour cream and/or soft butter",
+      "expected": {
+        "item": "mayonnaise, whipping cream, creme fraiche, sour cream and/or soft butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon smooth Dijon (optional)",
+      "expected": {
+        "item": "smooth Dijon",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "Few gratings fresh lemon zest (optional)",
+      "expected": {
+        "item": "Few gratings fresh lemon zest",
+        "measurements": [],
+        "note": "optional",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt and pepper to taste",
+      "expected": {
+        "item": "Salt and pepper to taste",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

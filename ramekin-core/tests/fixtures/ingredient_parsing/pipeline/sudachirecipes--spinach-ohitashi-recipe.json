@@ -38,6 +38,10 @@
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -79,7 +83,7 @@
     {
       "raw": "1 tbsp salt (1% the weight of cooking water)",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
@@ -88,6 +92,10 @@
           {
             "amount": "1",
             "unit": null
+          },
+          {
+            "amount": "8.6",
+            "unit": "g"
           }
         ],
         "note": null,

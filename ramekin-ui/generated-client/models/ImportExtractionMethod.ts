@@ -20,7 +20,8 @@
 export const ImportExtractionMethod = {
     JsonLd: 'json_ld',
     Microdata: 'microdata',
-    Paprika: 'paprika'
+    Paprika: 'paprika',
+    PhotoUpload: 'photo_upload'
 } as const;
 export type ImportExtractionMethod = typeof ImportExtractionMethod[keyof typeof ImportExtractionMethod];
 

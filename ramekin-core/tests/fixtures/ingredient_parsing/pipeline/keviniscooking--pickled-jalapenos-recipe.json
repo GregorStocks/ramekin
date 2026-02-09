@@ -56,6 +56,10 @@
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "476",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -143,11 +147,15 @@
     {
       "raw": "1 tsp salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
         "note": null,

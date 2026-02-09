@@ -1,0 +1,376 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2006-12-short-ribs-bourguignon",
+  "ingredients": [
+    {
+      "raw": "For short ribs",
+      "expected": {
+        "item": "For short ribs",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "4 (8-oz) pieces bone-in beef short ribs",
+      "expected": {
+        "item": "bone-in beef short ribs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "piece"
+          },
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 tablespoon vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon fine sea salt",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 medium carrots, finely chopped",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 medium onion, finely chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 garlic cloves, finely chopped",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 (14-oz) can whole San Marzano tomatoes in juice, pur&#233;ed",
+      "expected": {
+        "item": "whole San Marzano tomatoes in juice, puréed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "14",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "in a blender with juice",
+      "expected": {
+        "item": "in a blender with juice",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 1/2 cups dry red wine",
+      "expected": {
+        "item": "dry red wine",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "4 cups brown veal stock or 1/2 cup Demi-Glace Gold concentrate (concentrate requires a dilution ratio of 1:8; 1/2 cup concentrate to 4 cups water)*",
+      "expected": {
+        "item": "brown veal stock",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "or 1/2 cup Demi-Glace Gold concentrate *",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 sprigs fresh thyme",
+      "expected": {
+        "item": "fresh thyme",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "sprig"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 Turkish or 1/2 California bay leaf",
+      "expected": {
+        "item": "Turkish or 1/2 California bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon Banyuls vinegar or red-wine vinegar",
+      "expected": {
+        "item": "Banyuls vinegar or red-wine vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 tablespoon balsamic vinegar",
+      "expected": {
+        "item": "balsamic vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "For vegetables",
+      "expected": {
+        "item": "For vegetables",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "20 pearl onions (5 oz)",
+      "expected": {
+        "item": "pearl onions",
+        "measurements": [
+          {
+            "amount": "20",
+            "unit": null
+          },
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon Banyuls vinegar or red-wine vinegar",
+      "expected": {
+        "item": "Banyuls vinegar or red-wine vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 cups chicken stock or reduced-sodium chicken broth (16",
+      "expected": {
+        "item": "chicken stock or reduced-sodium chicken broth (16",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "fl oz)",
+      "expected": {
+        "item": "fl oz)",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "4 medium carrots, cut diagonally into 1 1/2-inch pieces",
+      "expected": {
+        "item": "carrots, cut diagonally into 1 1/2-inch pieces",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 thick bacon slices (preferably applewood-smoked; 1/4 lb total), cut crosswise into 1/4-inch pieces**",
+      "expected": {
+        "item": "thick bacon slices, cut crosswise into 1/4-inch pieces**",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          },
+          {
+            "amount": "0.25",
+            "unit": "lb"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "8 medium fresh white mushrooms, trimmed and quartered lengthwise",
+      "expected": {
+        "item": "fresh white mushrooms",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "medium"
+          }
+        ],
+        "note": "trimmed and quartered lengthwise",
+        "category": "Produce"
+      }
+    }
+  ]
+}

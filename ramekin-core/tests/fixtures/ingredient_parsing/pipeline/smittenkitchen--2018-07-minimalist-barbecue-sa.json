@@ -1,0 +1,93 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2018-07-minimalist-barbecue-sa",
+  "ingredients": [
+    {
+      "raw": "1 generously heaped tablespoon ketchup",
+      "expected": {
+        "item": "generously heaped tablespoon ketchup",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 tablespoon molasses",
+      "expected": {
+        "item": "molasses",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon apple cider vinegar",
+      "expected": {
+        "item": "apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 teaspoon hot sauce of your choice, such as Sriracha or Tabasco, plus more to taste",
+      "expected": {
+        "item": "hot sauce of your choice, such as Sriracha or Tabasco",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 teaspoon Worcestershire or fish sauce, plus more to taste",
+      "expected": {
+        "item": "Worcestershire or fish sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "Salt and pepper to taste",
+      "expected": {
+        "item": "Salt and pepper to taste",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

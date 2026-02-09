@@ -1,0 +1,261 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2015-06-chocolate-chunk-granol",
+  "ingredients": [
+    {
+      "raw": "And for the other side of the world:",
+      "expected": {
+        "item": "And for the other side of the world:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Six Months Ago: Fairytale of New York",
+      "expected": {
+        "item": "Months Ago: Fairytale of New York",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1.5 Years Ago: Gingerbread Snacking Cake",
+      "expected": {
+        "item": "Years Ago: Gingerbread Snacking Cake",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "2.5 Years Ago: Parsnip Latkes with Horseradish and Dill",
+      "expected": {
+        "item": "Years Ago: Parsnip Latkes with Horseradish and Dill",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "3.5 Years Ago: Cashew Butter Balls",
+      "expected": {
+        "item": "Years Ago: Cashew Butter Balls",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/4 cups (100 grams) rolled oats (be sure that they’re labeled gluten-free if needed; I prefer old-fashioned but any will work)",
+      "expected": {
+        "item": "rolled oats (be sure that they’re labeled gluten-free if needed; I prefer old-fashioned but any will work)",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "1/4 cup (20 grams) rolled oats, finely ground, or 1/4 cup oat flour",
+      "expected": {
+        "item": "rolled oats, finely ground",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": "or 1/4 cup oat flour",
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "3/4 cup (60 grams) dried unsweetened shredded coconut (I used a medium grind)",
+      "expected": {
+        "item": "dried unsweetened shredded coconut (I used a medium grind)",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/3 cup (65 grams) uncooked millet (see alternatives up top)",
+      "expected": {
+        "item": "uncooked millet (see alternatives up top)",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          },
+          {
+            "amount": "65",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon fine sea salt",
+      "expected": {
+        "item": "fine sea salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground cinnamon (optional)",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.6",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup (about 140 grams) chopped dried fruit",
+      "expected": {
+        "item": "chopped dried fruit",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "140",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1 cup (170 grams) chopped dark chocolate or chocolate chips",
+      "expected": {
+        "item": "chopped dark chocolate or chocolate chips",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup (65 grams) sunflower seed butter",
+      "expected": {
+        "item": "sunflower seed butter",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "65",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1/4 cup olive oil or coconut oil, warmed until liquefied",
+      "expected": {
+        "item": "olive oil or coconut oil, warmed until liquefied",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/4 cup (about 85 grams) maple syrup, honey or golden syrup",
+      "expected": {
+        "item": "maple syrup, honey or golden syrup",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

@@ -104,6 +104,10 @@
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -295,7 +299,7 @@
     {
       "raw": "Salt",
       "expected": {
-        "item": "Salt",
+        "item": "salt, presumably Diamond",
         "measurements": [],
         "note": null,
         "section": "For the Vegetables",

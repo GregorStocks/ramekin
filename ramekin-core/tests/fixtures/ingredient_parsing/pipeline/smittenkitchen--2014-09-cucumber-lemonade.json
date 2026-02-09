@@ -1,0 +1,74 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2014-09-cucumber-lemonade",
+  "ingredients": [
+    {
+      "raw": "1 pound cucumber(s), peeled or unpeeled, cut into large chunks, plus a few extra thin cucumber slices for garnish",
+      "expected": {
+        "item": "cucumber(s), peeled or unpeeled, cut into large chunks",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "plus a few extra thin cucumber slices for garnish",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup lemon juice (from about 7 to 8 lemons, although juiciness will vary)",
+      "expected": {
+        "item": "lemon juice (from about 7 to 8 lemons, although juiciness will vary)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/3 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          },
+          {
+            "amount": "67",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 cups cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "474",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

@@ -10,6 +10,10 @@
           {
             "amount": "0.75",
             "unit": "tbsp"
+          },
+          {
+            "amount": "4.5",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -115,7 +119,7 @@
     {
       "raw": "Salt",
       "expected": {
-        "item": "Salt",
+        "item": "salt, presumably Diamond",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"

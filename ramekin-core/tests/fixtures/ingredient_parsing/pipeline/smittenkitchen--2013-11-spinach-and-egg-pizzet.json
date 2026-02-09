@@ -1,0 +1,103 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-11-spinach-and-egg-pizzet",
+  "ingredients": [
+    {
+      "raw": "About 1 pound fresh spinach with stems or 10 ounces baby spinach",
+      "expected": {
+        "item": "About 1 pound fresh spinach with stems",
+        "measurements": [],
+        "note": "or 10 ounces baby spinach",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup creme fraiche",
+      "expected": {
+        "item": "creme fraiche",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 small garlic clove, minched",
+      "expected": {
+        "item": "garlic clove, minched",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup finely grated parmesan, plus more for garnish",
+      "expected": {
+        "item": "finely grated parmesan",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for garnish",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon coarse salt, plus more to taste",
+      "expected": {
+        "item": "coarse salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "5 to 6 (one per pizza) small eggs, if you can find them, or the next smallest that you can find",
+      "expected": {
+        "item": "(one per pizza) small eggs, if you can find them, or the next smallest that you can find",
+        "measurements": [
+          {
+            "amount": "5 to 6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Olive oil, to finish",
+      "expected": {
+        "item": "Olive oil, to finish",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    }
+  ]
+}

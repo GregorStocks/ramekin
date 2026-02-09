@@ -1,0 +1,130 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2008-12-sugar-and-spice-candie",
+  "ingredients": [
+    {
+      "raw": "1/3 cup dark-brown sugar",
+      "expected": {
+        "item": "dark-brown sugar",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2/3 cup white granulated sugar",
+      "expected": {
+        "item": "white granulated sugar",
+        "measurements": [
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt (I might up this by a 1/2 tsp. next time for more of a sweet/salty balance)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "I might up this by a 1/2 tsp. next time for more of a sweet/salty balance",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Generous pinch of cayenne pepper (I swapped this with 1/4 teaspoon of hot smoked paprika)",
+      "expected": {
+        "item": "cayenne pepper (I swapped this with 1/4 teaspoon of hot smoked paprika)",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "generous pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.6",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 pound walnut or pecan halves or whole peeled hazelnuts",
+      "expected": {
+        "item": "walnut or pecan halves or whole peeled hazelnuts",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1 egg white, room temperature",
+      "expected": {
+        "item": "egg white",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

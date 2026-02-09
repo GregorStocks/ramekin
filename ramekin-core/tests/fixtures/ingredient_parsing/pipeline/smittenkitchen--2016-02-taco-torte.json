@@ -1,0 +1,342 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2016-02-taco-torte",
+  "ingredients": [
+    {
+      "raw": "And for the other side of the world:",
+      "expected": {
+        "item": "And for the other side of the world:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Six Months Ago: Takeout-Style Sesame Noodles with Cucumber",
+      "expected": {
+        "item": "Months Ago: Takeout-Style Sesame Noodles with Cucumber",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1.5 Years Ago: Blueberry Crumb Cake",
+      "expected": {
+        "item": "Years Ago: Blueberry Crumb Cake",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2.5 Years Ago: Charred Corn Crepes",
+      "expected": {
+        "item": "Years Ago: Charred Corn Crepes",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3.5 Years Ago: Zucchini Tomato and Rice Gratin",
+      "expected": {
+        "item": "Years Ago: Zucchini Tomato and Rice Gratin",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4.5 Years Ago: Corn Buttermilk and Chive Popovers",
+      "expected": {
+        "item": "Years Ago: Corn Buttermilk and Chive Popovers",
+        "measurements": [
+          {
+            "amount": "4.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Nonstick cooking spray",
+      "expected": {
+        "item": "Nonstick cooking spray",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 tablespoon olive, vegetable, or canola oil",
+      "expected": {
+        "item": "olive, vegetable, or canola oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 medium onion, chopped small",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "chopped small",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 clove garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 fresh chile pepper, chopped small (optional)",
+      "expected": {
+        "item": "fresh chile pepper, chopped small",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons chili powder (adjusted to taste)",
+      "expected": {
+        "item": "chili powder",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4",
+            "unit": "g"
+          }
+        ],
+        "note": "adjusted to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 can (14 ounces) or 1 1/2 cups chopped tomatoes, drained, with 1/3 cup juice reserved",
+      "expected": {
+        "item": "chopped tomatoes, drained",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": "with 1/3 cup juice reserved",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "66",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 cans (15.5 ounces each) black, red or kidney beans (or a mixture of any two), drained and rinsed",
+      "expected": {
+        "item": "black, red or kidney beans (or a mixture of any two)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "15.5",
+            "unit": "oz each"
+          }
+        ],
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "Kosher or coarse salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher or coarse salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 cups corn kernels, fresh (from 1 to 2 ears), from 1 15-ounce can, drained, or frozen and thawed",
+      "expected": {
+        "item": "corn kernels, fresh (from 1 to 2 ears), from 1 15-ounce can, drained",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "or frozen and thawed",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3 cups (about 2 3/4 ounces) rough-chopped spinach leaves",
+      "expected": {
+        "item": "rough-chopped spinach leaves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "2.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "78",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "6 medium-size (8-inch) flour tortillas (although corn should work too)",
+      "expected": {
+        "item": "medium-size flour tortillas (although corn should work too)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "2 cups (8 ounces) shredded Monterey Jack or cheddar cheese (I used a mix)",
+      "expected": {
+        "item": "shredded Monterey Jack or cheddar cheese (I used a mix)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "Chopped fresh cilantro, sour cream and/or salsa for serving (optional)",
+      "expected": {
+        "item": "Chopped fresh cilantro, sour cream and/or salsa for serving",
+        "measurements": [],
+        "note": "optional",
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

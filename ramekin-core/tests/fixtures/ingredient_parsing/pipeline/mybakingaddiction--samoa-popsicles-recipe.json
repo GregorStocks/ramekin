@@ -1,0 +1,93 @@
+{
+  "source": "mybakingaddiction",
+  "recipe_slug": "samoa-popsicles-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup pre-made coconut pudding (vanilla will work too)",
+      "expected": {
+        "item": "pre-made coconut pudding (vanilla will work too)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3/4 cup milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "184",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "½ teaspoon pure vanilla extract",
+      "expected": {
+        "item": "pure vanilla extract",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 Samoa cookies, finely chopped",
+      "expected": {
+        "item": "Samoa cookies",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Magic Shell",
+      "expected": {
+        "item": "Magic Shell",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "½ cup toasted coconut",
+      "expected": {
+        "item": "toasted coconut",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

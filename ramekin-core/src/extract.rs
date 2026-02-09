@@ -25,7 +25,8 @@ static OG_IMAGE_REGEX_ALT: LazyLock<Regex> = LazyLock::new(|| {
 });
 
 /// Extract a recipe from HTML containing JSON-LD structured data.
-/// Falls back to microdata extraction if JSON-LD fails.
+/// Falls back to microdata extraction if JSON-LD fails, then tries
+/// supplementing partial structured data with HTML class-based extraction.
 ///
 /// Uses a fast regex-based path for JSON-LD to avoid full DOM parsing.
 pub fn extract_recipe(html: &str, source_url: &str) -> Result<RawRecipe, ExtractError> {
@@ -43,7 +44,12 @@ pub fn extract_recipe(html: &str, source_url: &str) -> Result<RawRecipe, Extract
     }
 
     // Fall back to microdata
-    extract_recipe_from_microdata(&document, source_url)
+    if let Ok(recipe) = extract_recipe_from_microdata(&document, source_url) {
+        return Ok(recipe);
+    }
+
+    // Last resort: supplement partial structured data with HTML fallbacks
+    extract_recipe_with_html_fallback(html, &document, source_url)
 }
 
 /// Fast JSON-LD extraction using regex to avoid DOM parsing.
@@ -131,8 +137,8 @@ pub fn extract_recipe_with_stats(
 
     // Fall back to microdata
     let microdata_result = extract_recipe_from_microdata(&document, source_url);
-    match microdata_result {
-        Ok(recipe) => Ok(ExtractRecipeOutput {
+    if let Ok(recipe) = microdata_result {
+        return Ok(ExtractRecipeOutput {
             raw_recipe: recipe,
             method_used: ExtractionMethod::Microdata,
             all_attempts: vec![
@@ -143,6 +149,32 @@ pub fn extract_recipe_with_stats(
                 },
                 ExtractionAttempt {
                     method: ExtractionMethod::Microdata,
+                    success: true,
+                    error: None,
+                },
+            ],
+        });
+    }
+
+    // Last resort: supplement partial structured data with HTML fallbacks
+    let html_fallback_result = extract_recipe_with_html_fallback(html, &document, source_url);
+    match html_fallback_result {
+        Ok(recipe) => Ok(ExtractRecipeOutput {
+            raw_recipe: recipe,
+            method_used: ExtractionMethod::HtmlFallback,
+            all_attempts: vec![
+                ExtractionAttempt {
+                    method: ExtractionMethod::JsonLd,
+                    success: false,
+                    error: jsonld_result.as_ref().err().map(|e| e.to_string()),
+                },
+                ExtractionAttempt {
+                    method: ExtractionMethod::Microdata,
+                    success: false,
+                    error: microdata_result.as_ref().err().map(|e| e.to_string()),
+                },
+                ExtractionAttempt {
+                    method: ExtractionMethod::HtmlFallback,
                     success: true,
                     error: None,
                 },
@@ -612,6 +644,784 @@ fn extract_og_image(document: &Html) -> Option<String> {
         .map(|s| s.to_string())
 }
 
+/// Regex to strip HTML tags for extracting text from raw HTML fragments.
+static HTML_TAG_REGEX: LazyLock<Regex> =
+    LazyLock::new(|| Regex::new(r"<[^>]+>").expect("Invalid HTML tag regex"));
+
+/// Regex to split HTML on paragraph boundaries for unstructured blog extraction.
+static P_TAG_SPLIT_REGEX: LazyLock<Regex> =
+    LazyLock::new(|| Regex::new(r"(?i)</?p[^>]*>").expect("Invalid p-tag split regex"));
+
+/// Regex to match `<br>` tags in various forms.
+static BR_TAG_REGEX: LazyLock<Regex> =
+    LazyLock::new(|| Regex::new(r"(?i)<br\s*/?>").expect("Invalid br regex"));
+
+/// Regex to extract bold/strong text (recipe title signal).
+static BOLD_TEXT_REGEX: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r"(?i)<(?:b|strong)>([^<]+)</(?:b|strong)>").expect("Invalid bold text regex")
+});
+
+/// Regex to extract underlined text (section header signal).
+static UNDERLINE_TEXT_REGEX: LazyLock<Regex> =
+    LazyLock::new(|| Regex::new(r"(?i)<u>([^<]+)</u>").expect("Invalid underline text regex"));
+
+/// Regex to detect "One year ago:" / "Previously" / "Two years ago:" link sections.
+static LOOKBACK_LINK_REGEX: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r"(?i)^(\s*<b>)?\s*(one|two|three|four|five|six|seven|eight|nine|ten|\d+)\s+years?\s+ago\s*:|(^|\s)previously\b")
+        .expect("Invalid lookback link regex")
+});
+
+/// Extract a recipe from an unstructured blog post.
+///
+/// Handles older WordPress posts that write recipes in plain HTML without any
+/// recipe plugin or structured data. The defining signal is `<br>`-delimited
+/// ingredient lists in `<p>` blocks: this is how bloggers commonly format
+/// ingredient lists in the post editor.
+///
+/// Pattern:
+/// 1. `<p><b>Recipe Title</b>...` (bold text introduces the recipe)
+/// 2. `<p>ingredient 1<br>ingredient 2<br>ingredient 3</p>` (ingredients)
+/// 3. `<p>Prose instruction paragraph.</p>` (instructions, no `<br>` chains)
+fn extract_recipe_from_unstructured_blog(html: &str, source_url: &str) -> Option<RawRecipe> {
+    // Limit search to before comments section to avoid picking up user comments.
+    // These markers are ASCII so the byte position is always a valid char boundary.
+    let comments_pos = html
+        .find("<div id=\"comments\"")
+        .or_else(|| html.find("<section id=\"comments\""))
+        .or_else(|| html.find("<ol class=\"commentlist\""))
+        .or_else(|| html.find("<div class=\"comments-area\""));
+    let search_html = match comments_pos {
+        Some(pos) => html.get(..pos).unwrap_or(html),
+        None => html,
+    };
+
+    // Split on <p> tags to get paragraph chunks
+    let chunks: Vec<&str> = P_TAG_SPLIT_REGEX.split(search_html).collect();
+
+    // Find paragraph chunks that look like ingredient lists:
+    // they contain 2+ <br> tags and their lines look like ingredients (short, with quantities)
+    let ingredient_chunk_indices: Vec<usize> = chunks
+        .iter()
+        .enumerate()
+        .filter(|(_, chunk)| {
+            let trimmed = chunk.trim();
+            !trimmed.is_empty()
+                && BR_TAG_REGEX.find_iter(trimmed).count() >= 2
+                && looks_like_ingredient_list(trimmed)
+        })
+        .map(|(i, _)| i)
+        .collect();
+
+    if ingredient_chunk_indices.is_empty() {
+        return None;
+    }
+
+    let first_ingredient_idx = ingredient_chunk_indices[0];
+    let last_ingredient_idx = *ingredient_chunk_indices.last().unwrap();
+
+    // Extract ingredients from all identified ingredient chunks
+    let mut ingredient_lines: Vec<String> = Vec::new();
+    for &idx in &ingredient_chunk_indices {
+        let chunk = chunks[idx];
+        extract_ingredient_lines_from_chunk(chunk, &mut ingredient_lines);
+    }
+
+    if ingredient_lines.is_empty() {
+        return None;
+    }
+
+    // Find recipe title: look backwards from the first ingredient chunk
+    // for the nearest chunk containing a <b> or <strong> tag
+    let mut title: Option<String> = None;
+    for i in (0..first_ingredient_idx).rev() {
+        let chunk = chunks[i].trim();
+        if chunk.is_empty() {
+            continue;
+        }
+        if let Some(cap) = BOLD_TEXT_REGEX.captures(chunk) {
+            let bold_text = cap.get(1).unwrap().as_str().trim();
+            // Skip "One year ago:" and similar navigational bold text
+            if !LOOKBACK_LINK_REGEX.is_match(chunk) && !bold_text.is_empty() {
+                title = Some(decode_html_entities(bold_text));
+                break;
+            }
+        }
+    }
+
+    // Fall back to page title if no bold title found near ingredients
+    if title.is_none() {
+        let document = Html::parse_document(html);
+        title = extract_title_from_html(&document);
+    }
+
+    let title = title?;
+
+    // Extract instructions: prose paragraphs after the last ingredient chunk
+    // that don't contain <br> chains (i.e., they're not ingredient lists)
+    let mut instruction_paragraphs: Vec<String> = Vec::new();
+    for chunk in chunks.iter().skip(last_ingredient_idx + 1) {
+        let chunk = chunk.trim();
+        if chunk.is_empty() {
+            continue;
+        }
+
+        // Stop at sharing/social buttons
+        if chunk.contains("sharedaddy") || chunk.contains("sd-sharing") {
+            break;
+        }
+
+        // Skip chunks that are just images or links with no text content
+        let text = HTML_TAG_REGEX.replace_all(chunk, "");
+        let text = text.trim();
+        if text.is_empty() {
+            continue;
+        }
+
+        // Skip "One year ago:" / "Previously" link sections
+        if LOOKBACK_LINK_REGEX.is_match(chunk) {
+            continue;
+        }
+
+        // Skip attribution lines at the start (before any real instructions)
+        if instruction_paragraphs.is_empty() {
+            let lower = text.to_lowercase();
+            if lower.starts_with("adapted from")
+                || lower.starts_with("from ")
+                || lower.starts_with("recipe from")
+                || lower.starts_with("source:")
+            {
+                continue;
+            }
+        }
+
+        let decoded = decode_html_entities(text);
+        if !decoded.is_empty() {
+            instruction_paragraphs.push(decoded);
+        }
+    }
+
+    if instruction_paragraphs.is_empty() {
+        return None;
+    }
+
+    // Extract servings from chunks near the title (between title and first ingredient)
+    let mut servings: Option<String> = None;
+    for i in (0..first_ingredient_idx).rev() {
+        let chunk = chunks[i].trim();
+        if chunk.is_empty() {
+            continue;
+        }
+        let text = HTML_TAG_REGEX.replace_all(chunk, "");
+        let text = text.trim().to_lowercase();
+        if text.starts_with("makes ") || text.starts_with("serves ") || text.starts_with("yield") {
+            servings = Some(decode_html_entities(text.trim()));
+            break;
+        }
+        // Only look back a couple chunks from ingredients
+        if first_ingredient_idx - i > 3 {
+            break;
+        }
+    }
+
+    let image_urls = extract_og_image_fast(html).into_iter().collect();
+    let source_name = extract_source_name(source_url);
+
+    Some(RawRecipe {
+        title,
+        description: None,
+        ingredients: ingredient_lines.join("\n"),
+        instructions: instruction_paragraphs.join("\n\n"),
+        image_urls,
+        source_url: Some(source_url.to_string()),
+        source_name,
+        servings,
+        prep_time: None,
+        cook_time: None,
+        total_time: None,
+        rating: None,
+        difficulty: None,
+        nutritional_info: None,
+        notes: None,
+        categories: None,
+    })
+}
+
+/// Regex to detect ingredient-like quantity patterns at the start of a line.
+static INGREDIENT_QUANTITY_REGEX: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r"(?i)^(\d|½|⅓|¼|⅔|¾|⅛|a\s+(pinch|few|handful|dash|splash)|juice\s+of|zest\s+of|pinch\s+of|dash\s+of|kosher\s+salt|salt[,\s]|ground\s|fresh\s|sea\s+salt)")
+        .expect("Invalid ingredient quantity regex")
+});
+
+/// Check whether an HTML chunk looks like an ingredient list.
+/// Ingredient paragraphs have multiple short lines (split by `<br>`) where
+/// at least some lines contain quantity-like patterns (digits, fractions)
+/// and lines are generally short (not prose paragraphs).
+fn looks_like_ingredient_list(chunk: &str) -> bool {
+    let lines: Vec<&str> = BR_TAG_REGEX.split(chunk).collect();
+    if lines.len() < 2 {
+        return false;
+    }
+
+    let mut quantity_lines = 0;
+    let mut total_text_lines = 0;
+    let mut long_lines = 0;
+
+    for line in &lines {
+        let text = HTML_TAG_REGEX.replace_all(line, "");
+        let text = text.trim();
+        if text.is_empty() {
+            continue;
+        }
+        total_text_lines += 1;
+
+        if text.len() > 200 {
+            long_lines += 1;
+        }
+
+        // A line looks like an ingredient if it matches quantity patterns
+        if text.len() < 300 && INGREDIENT_QUANTITY_REGEX.is_match(text) {
+            quantity_lines += 1;
+        }
+    }
+
+    // Reject chunks where most lines are very long (likely prose, not ingredients)
+    if total_text_lines > 0 && (long_lines * 100 / total_text_lines) > 50 {
+        return false;
+    }
+
+    // At least 2 text lines and at least 40% look like quantities
+    total_text_lines >= 2 && quantity_lines > 0 && (quantity_lines * 100 / total_text_lines) >= 40
+}
+
+/// Extract individual ingredient lines from a `<br>`-delimited HTML chunk.
+/// Preserves `<u>` section headers as their own lines.
+fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<String>) {
+    for part in BR_TAG_REGEX.split(chunk) {
+        let part = part.trim();
+        if part.is_empty() {
+            continue;
+        }
+
+        // Check for section header (<u> tag)
+        if let Some(cap) = UNDERLINE_TEXT_REGEX.captures(part) {
+            let header = cap.get(1).unwrap().as_str().trim();
+            if !header.is_empty() {
+                lines.push(decode_html_entities(header));
+            }
+            // There might be ingredient text after the </u> on the same line
+            let after_u = UNDERLINE_TEXT_REGEX.replace(part, "");
+            let after_text = HTML_TAG_REGEX.replace_all(&after_u, "");
+            let after_text = after_text.trim();
+            if !after_text.is_empty() {
+                lines.push(decode_html_entities(after_text));
+            }
+        } else {
+            let text = HTML_TAG_REGEX.replace_all(part, "");
+            let text = text.trim();
+            if !text.is_empty() {
+                lines.push(decode_html_entities(text));
+            }
+        }
+    }
+}
+
+/// Decode common HTML entities to their Unicode equivalents.
+fn decode_html_entities(text: &str) -> String {
+    text.replace("&amp;", "&")
+        .replace("&lt;", "<")
+        .replace("&gt;", ">")
+        .replace("&quot;", "\"")
+        .replace("&#8217;", "\u{2019}")
+        .replace("&#8216;", "\u{2018}")
+        .replace("&#8220;", "\u{201c}")
+        .replace("&#8221;", "\u{201d}")
+        .replace("&#8212;", "\u{2014}")
+        .replace("&#8211;", "\u{2013}")
+        .replace("&#038;", "&")
+        .replace("&#176;", "\u{00b0}")
+        .replace("&deg;", "\u{00b0}")
+        .replace("&reg;", "\u{00ae}")
+        .replace("&frac12;", "\u{00bd}")
+        .replace("&frac14;", "\u{00bc}")
+        .replace("&frac34;", "\u{00be}")
+        .replace("&#189;", "\u{00bd}")
+        .replace("&ndash;", "\u{2013}")
+        .replace("&mdash;", "\u{2014}")
+        .replace("&rsquo;", "\u{2019}")
+        .replace("&lsquo;", "\u{2018}")
+        .replace("&rdquo;", "\u{201d}")
+        .replace("&ldquo;", "\u{201c}")
+        .replace("&hellip;", "\u{2026}")
+}
+
+/// Extract a recipe by combining partial structured data with HTML class-based fallbacks.
+/// This handles cases where JSON-LD or microdata has a Recipe object but with empty required
+/// fields, while the actual content exists in HTML elements with common recipe plugin classes.
+fn extract_recipe_with_html_fallback(
+    html: &str,
+    document: &Html,
+    source_url: &str,
+) -> Result<RawRecipe, ExtractError> {
+    // Try to get partial data from JSON-LD
+    let partial = extract_partial_from_jsonld(html);
+
+    // Try to get partial data from microdata
+    let micro_partial = extract_partial_from_microdata(document);
+
+    // Merge: prefer JSON-LD fields, fall back to microdata
+    let title = partial.title.or(micro_partial.title);
+    let description = partial.description.or(micro_partial.description);
+    let ingredients = partial.ingredients.or(micro_partial.ingredients);
+    let instructions = partial.instructions.or(micro_partial.instructions);
+    let image_urls = if partial.image_urls.is_empty() {
+        micro_partial.image_urls
+    } else {
+        partial.image_urls
+    };
+    let servings = partial.servings.or(micro_partial.servings);
+
+    // For any still-missing required fields, try HTML class-based fallbacks
+    let title = title.or_else(|| extract_title_from_html(document));
+
+    let ingredients = ingredients
+        .or_else(|| extract_ingredients_from_html_classes(document))
+        .or_else(|| extract_ingredients_from_itemprop_unscoped(document));
+
+    let instructions = instructions
+        .or_else(|| extract_instructions_from_html_classes(document))
+        .or_else(|| extract_instructions_from_itemprop_unscoped(document))
+        .or_else(|| extract_instructions_from_raw_html(html));
+
+    // If we got all required fields from structured data / class-based fallbacks, use them
+    if let (Some(title), Some(ingredients), Some(instructions)) =
+        (title.clone(), ingredients.clone(), instructions.clone())
+    {
+        let mut image_urls = image_urls;
+        if image_urls.is_empty() {
+            if let Some(og_image) = extract_og_image(document) {
+                image_urls.push(og_image);
+            }
+        }
+
+        let source_name = extract_source_name(source_url);
+
+        return Ok(RawRecipe {
+            title,
+            description,
+            ingredients,
+            instructions,
+            image_urls,
+            source_url: Some(source_url.to_string()),
+            source_name,
+            servings,
+            prep_time: None,
+            cook_time: None,
+            total_time: None,
+            rating: None,
+            difficulty: None,
+            nutritional_info: None,
+            notes: None,
+            categories: None,
+        });
+    }
+
+    // Last resort: try unstructured blog recipe extraction (handles older WordPress
+    // posts that write recipes in plain HTML without any recipe plugin)
+    if let Some(recipe) = extract_recipe_from_unstructured_blog(html, source_url) {
+        return Ok(recipe);
+    }
+
+    // Nothing worked — report what's missing
+    if title.is_none() {
+        return Err(ExtractError::MissingField("name".to_string()));
+    }
+    if ingredients.is_none() {
+        return Err(ExtractError::MissingField(
+            "recipeIngredient (empty)".to_string(),
+        ));
+    }
+    Err(ExtractError::MissingField(
+        "recipeInstructions (empty)".to_string(),
+    ))
+}
+
+/// Partial recipe data extracted leniently (missing required fields are None, not errors).
+struct PartialRecipe {
+    title: Option<String>,
+    description: Option<String>,
+    ingredients: Option<String>,
+    instructions: Option<String>,
+    image_urls: Vec<String>,
+    servings: Option<String>,
+}
+
+/// Extract whatever we can from JSON-LD without failing on missing required fields.
+fn extract_partial_from_jsonld(html: &str) -> PartialRecipe {
+    for cap in JSONLD_REGEX.captures_iter(html) {
+        let json_text = match cap.get(1) {
+            Some(m) => m.as_str(),
+            None => continue,
+        };
+
+        let sanitized = sanitize_json(json_text);
+        let json: serde_json::Value = match serde_json::from_str(&sanitized) {
+            Ok(v) => v,
+            Err(_) => continue,
+        };
+
+        if let Some(recipe) = find_recipe_in_json(&json) {
+            let title = recipe
+                .get("name")
+                .and_then(|v| v.as_str())
+                .map(|s| s.to_string());
+
+            let description = recipe
+                .get("description")
+                .and_then(|v| v.as_str())
+                .map(|s| s.to_string());
+
+            let ingredients = extract_ingredients(recipe).ok();
+            let instructions = extract_instructions(recipe).ok();
+            let image_urls = extract_image_urls(recipe);
+
+            let servings = recipe.get("recipeYield").and_then(|v| match v {
+                serde_json::Value::String(s) => Some(s.clone()),
+                serde_json::Value::Array(arr) => {
+                    arr.first().and_then(|v| v.as_str()).map(|s| s.to_string())
+                }
+                _ => None,
+            });
+
+            return PartialRecipe {
+                title,
+                description,
+                ingredients,
+                instructions,
+                image_urls,
+                servings,
+            };
+        }
+    }
+
+    PartialRecipe {
+        title: None,
+        description: None,
+        ingredients: None,
+        instructions: None,
+        image_urls: Vec::new(),
+        servings: None,
+    }
+}
+
+/// Extract whatever we can from microdata without failing on missing required fields.
+fn extract_partial_from_microdata(document: &Html) -> PartialRecipe {
+    let recipe_selector = Selector::parse(
+        r#"[itemtype="http://schema.org/Recipe"], [itemtype="https://schema.org/Recipe"]"#,
+    )
+    .expect("Invalid selector");
+
+    let recipe_element = match document.select(&recipe_selector).next() {
+        Some(el) => el,
+        None => {
+            return PartialRecipe {
+                title: None,
+                description: None,
+                ingredients: None,
+                instructions: None,
+                image_urls: Vec::new(),
+                servings: None,
+            }
+        }
+    };
+
+    let title = extract_microdata_text(&recipe_element, "name");
+    let description = extract_microdata_text(&recipe_element, "description");
+
+    let ingredient_selector =
+        Selector::parse(r#"[itemprop="recipeIngredient"], [itemprop="ingredients"]"#)
+            .expect("Invalid selector");
+    let ingredients_vec: Vec<String> = recipe_element
+        .select(&ingredient_selector)
+        .map(|el| el.text().collect::<String>().trim().to_string())
+        .filter(|s| !s.is_empty())
+        .collect();
+    let ingredients = if ingredients_vec.is_empty() {
+        None
+    } else {
+        Some(ingredients_vec.join("\n"))
+    };
+
+    let instructions = extract_microdata_instructions(&recipe_element).ok();
+
+    let image_urls = extract_microdata_images(&recipe_element);
+    let servings = extract_microdata_text(&recipe_element, "recipeYield");
+
+    PartialRecipe {
+        title,
+        description,
+        ingredients,
+        instructions,
+        image_urls,
+        servings,
+    }
+}
+
+/// Search the entire document for itemprop="recipeIngredient" elements,
+/// regardless of whether they're inside an itemscope container.
+/// Handles malformed HTML where ingredients fall outside the Recipe scope.
+fn extract_ingredients_from_itemprop_unscoped(document: &Html) -> Option<String> {
+    let selector = Selector::parse(r#"[itemprop="recipeIngredient"], [itemprop="ingredients"]"#)
+        .expect("Invalid selector");
+    let ingredients: Vec<String> = document
+        .select(&selector)
+        .map(|el| el.text().collect::<String>().trim().to_string())
+        .filter(|s| !s.is_empty())
+        .collect();
+
+    if ingredients.is_empty() {
+        None
+    } else {
+        Some(ingredients.join("\n"))
+    }
+}
+
+/// Search the entire document for instruction elements via itemprop,
+/// regardless of whether they're inside an itemscope container.
+fn extract_instructions_from_itemprop_unscoped(document: &Html) -> Option<String> {
+    let selector = Selector::parse(r#"[itemprop="recipeInstructions"], [itemprop="instructions"]"#)
+        .expect("Invalid selector");
+
+    let steps: Vec<String> = document
+        .select(&selector)
+        .map(|el| el.text().collect::<String>().trim().to_string())
+        .filter(|s| !s.is_empty())
+        .collect();
+
+    if steps.is_empty() {
+        None
+    } else {
+        Some(steps.join("\n\n"))
+    }
+}
+
+/// Extract ingredients from common recipe plugin HTML classes.
+/// Searches the entire document (not scoped to a microdata container).
+fn extract_ingredients_from_html_classes(document: &Html) -> Option<String> {
+    // Try Jetpack recipe ingredient list items
+    if let Some(result) = extract_from_selector_items(document, ".jetpack-recipe-ingredient") {
+        return Some(result);
+    }
+
+    // Try div.ingredients with <br>-separated content (mybakingaddiction old format)
+    if let Some(result) = extract_ingredients_from_div(document) {
+        return Some(result);
+    }
+
+    // Try WP Recipe Maker
+    if let Some(result) = extract_from_selector_items(document, ".wprm-recipe-ingredient") {
+        return Some(result);
+    }
+
+    // Try Tasty Recipes
+    if let Some(result) = extract_from_selector_items(document, ".tasty-recipe-ingredients li") {
+        return Some(result);
+    }
+
+    None
+}
+
+/// Extract text items from a CSS selector, joining with newlines.
+fn extract_from_selector_items(document: &Html, selector_str: &str) -> Option<String> {
+    let selector = Selector::parse(selector_str).ok()?;
+    let items: Vec<String> = document
+        .select(&selector)
+        .map(|el| el.text().collect::<String>().trim().to_string())
+        .filter(|s| !s.is_empty())
+        .collect();
+
+    if items.is_empty() {
+        None
+    } else {
+        Some(items.join("\n"))
+    }
+}
+
+/// Extract ingredients from a `<div class="ingredients">` container.
+/// Handles the old WordPress recipe format where ingredients are in `<p>` tags
+/// separated by `<br>` elements, with optional `<h4>` section headers.
+fn extract_ingredients_from_div(document: &Html) -> Option<String> {
+    let selector = Selector::parse("div.ingredients").ok()?;
+    let div = document.select(&selector).next()?;
+
+    // Get the inner HTML and split on <br> tags to get individual lines
+    let inner_html = div.inner_html();
+    let mut lines: Vec<String> = Vec::new();
+
+    // Split on <br>, <br/>, <br />, </p><p>, </p>, <p>
+    for chunk in Regex::new(r"(?i)<br\s*/?>|</p>\s*<p>|</?p>")
+        .expect("Invalid regex")
+        .split(&inner_html)
+    {
+        // Strip remaining HTML tags and decode entities
+        let text = HTML_TAG_REGEX.replace_all(chunk, "");
+        let text = text.trim();
+        if !text.is_empty() {
+            // Decode common HTML entities
+            let text = text
+                .replace("&amp;", "&")
+                .replace("&lt;", "<")
+                .replace("&gt;", ">")
+                .replace("&quot;", "\"")
+                .replace("&#8217;", "\u{2019}")
+                .replace("&deg;", "\u{00b0}")
+                .replace("&reg;", "\u{00ae}")
+                .replace("&#038;", "&");
+            if !text.is_empty() {
+                lines.push(text);
+            }
+        }
+    }
+
+    if lines.is_empty() {
+        None
+    } else {
+        Some(lines.join("\n"))
+    }
+}
+
+/// Extract instructions from common recipe plugin HTML classes.
+/// Searches the entire document (not scoped to a microdata container).
+fn extract_instructions_from_html_classes(document: &Html) -> Option<String> {
+    let selectors = [
+        ".jetpack-recipe-directions",
+        "div.instructions",
+        ".recipe-instructions",
+        ".e-instructions",
+        ".wprm-recipe-instruction",
+        ".recipe-directions",
+    ];
+
+    for selector_str in selectors {
+        let selector = match Selector::parse(selector_str) {
+            Ok(s) => s,
+            Err(_) => continue,
+        };
+
+        let steps: Vec<String> = document
+            .select(&selector)
+            .map(|el| el.text().collect::<String>().trim().to_string())
+            .filter(|s| !s.is_empty())
+            .collect();
+
+        if !steps.is_empty() {
+            return Some(steps.join("\n\n"));
+        }
+    }
+
+    None
+}
+
+/// Regex-based extraction of instructions from raw HTML.
+/// Handles malformed HTML where DOM parsing collapses the instruction container
+/// (e.g., smittenkitchen's Jetpack recipes where `<p><div class="...">` causes
+/// the div to close immediately, leaving instruction text as siblings).
+///
+/// In the raw HTML, the pattern is:
+///   `<div class="jetpack-recipe-directions e-instructions"></p>`
+///   `<p></div><br />`
+///   [ACTUAL INSTRUCTIONS IN `<p>` TAGS]
+///   `</div></div>`
+/// We capture between the broken div close and the recipe container close.
+static JETPACK_DIRECTIONS_REGEX: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(
+        r#"(?is)<div[^>]*class="[^"]*jetpack-recipe-directions[^"]*"[^>]*>.*?</div>\s*(?:<br\s*/?>)?\s*(.*?)</div>\s*</div>"#,
+    )
+    .expect("Invalid Jetpack directions regex")
+});
+
+fn extract_instructions_from_raw_html(html: &str) -> Option<String> {
+    if let Some(cap) = JETPACK_DIRECTIONS_REGEX.captures(html) {
+        if let Some(content) = cap.get(1) {
+            let raw = content.as_str();
+            let paragraphs = html_to_paragraphs(raw);
+
+            if !paragraphs.is_empty() {
+                return Some(paragraphs.join("\n\n"));
+            }
+        }
+    }
+    None
+}
+
+/// Convert an HTML fragment into a list of plain-text paragraphs.
+/// Splits on `</p><p>` and `<br><br>` boundaries, strips tags, decodes entities.
+fn html_to_paragraphs(html: &str) -> Vec<String> {
+    Regex::new(r"(?i)</p>\s*<p[^>]*>|<br\s*/?\s*>\s*<br\s*/?\s*>")
+        .expect("Invalid paragraph split regex")
+        .split(html)
+        .map(|chunk| {
+            let text = HTML_TAG_REGEX.replace_all(chunk, "");
+            let text = text
+                .replace("&amp;", "&")
+                .replace("&lt;", "<")
+                .replace("&gt;", ">")
+                .replace("&#8217;", "\u{2019}")
+                .replace("&#8220;", "\u{201c}")
+                .replace("&#8221;", "\u{201d}")
+                .replace("&#8212;", "\u{2014}")
+                .replace("&#038;", "&")
+                .replace("&deg;", "\u{00b0}")
+                .replace("&reg;", "\u{00ae}");
+            text.trim().to_string()
+        })
+        .filter(|s| !s.is_empty())
+        .collect()
+}
+
+/// Extract a recipe title from common HTML elements when structured data lacks a name.
+fn extract_title_from_html(document: &Html) -> Option<String> {
+    // Try Jetpack recipe title
+    let selectors = [
+        ".jetpack-recipe-title",
+        ".wprm-recipe-name",
+        "h1.entry-title",
+        "h2.entry-title",
+    ];
+
+    for selector_str in selectors {
+        if let Ok(selector) = Selector::parse(selector_str) {
+            if let Some(el) = document.select(&selector).next() {
+                let text = el.text().collect::<String>();
+                let text = text.trim();
+                if !text.is_empty() {
+                    return Some(text.to_string());
+                }
+            }
+        }
+    }
+
+    // Last resort: <title> tag, stripped of site name suffix
+    let title_selector = Selector::parse("title").ok()?;
+    let title_el = document.select(&title_selector).next()?;
+    let title_text = title_el.text().collect::<String>();
+    let title_text = title_text.trim();
+    if title_text.is_empty() {
+        return None;
+    }
+    // Strip common " - Site Name" or " | Site Name" suffixes
+    let title = title_text
+        .split(" - ")
+        .next()
+        .or_else(|| title_text.split(" | ").next())
+        .unwrap_or(title_text)
+        .trim();
+    if title.is_empty() {
+        None
+    } else {
+        Some(title.to_string())
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -764,5 +1574,220 @@ mod tests {
 
         let result = extract_recipe(html, "https://example.com/recipe").unwrap();
         assert_eq!(result.servings, Some("Serves 6".to_string()));
+    }
+
+    #[test]
+    fn test_jsonld_empty_ingredients_falls_back_to_html_div() {
+        // JSON-LD has empty recipeIngredient, but HTML has div.ingredients (mybakingaddiction pattern)
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Apple Bars",
+                    "recipeIngredient": [],
+                    "recipeInstructions": [{"@type": "HowToStep", "text": "Preheat oven to 350."}]
+                }
+                </script>
+            </head>
+            <body>
+                <div class="ingredients">
+                    <h4>For the Bars</h4>
+                    <p>1 cup flour<br>2 eggs<br>1/2 cup sugar</p>
+                    <h4>For the Glaze</h4>
+                    <p>1 cup powdered sugar<br>1 tablespoon milk</p>
+                </div>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+        assert_eq!(result.title, "Apple Bars");
+        assert!(result.ingredients.contains("1 cup flour"));
+        assert!(result.ingredients.contains("2 eggs"));
+        assert!(result.ingredients.contains("1 tablespoon milk"));
+        assert!(result.ingredients.contains("For the Bars"));
+    }
+
+    #[test]
+    fn test_microdata_ingredients_outside_scope_falls_back() {
+        // Simulates smittenkitchen's malformed HTML where itemprop elements
+        // fall outside the itemscope container due to premature div closure
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <body>
+                <div itemscope itemtype="https://schema.org/Recipe">
+                    <h3 itemprop="name">Chicken Wonton Soup</h3>
+                    <div class="jetpack-recipe-content"></div>
+                </div>
+                <!-- Ingredients are outside the itemscope due to malformed HTML -->
+                <ul>
+                    <li itemprop="recipeIngredient">3/4 pound ground chicken</li>
+                    <li itemprop="recipeIngredient">1 teaspoon soy sauce</li>
+                    <li itemprop="recipeIngredient">50 wonton wrappers</li>
+                </ul>
+                <div itemprop="recipeInstructions">Combine chicken and soy sauce in a bowl.</div>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://smittenkitchen.com/recipe").unwrap();
+        assert_eq!(result.title, "Chicken Wonton Soup");
+        assert!(result.ingredients.contains("3/4 pound ground chicken"));
+        assert!(result.ingredients.contains("50 wonton wrappers"));
+        assert!(result.instructions.contains("Combine chicken"));
+    }
+
+    #[test]
+    fn test_html_fallback_jetpack_ingredients() {
+        // Jetpack recipe with ingredients in .jetpack-recipe-ingredient class
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <body>
+                <div itemscope itemtype="https://schema.org/Recipe">
+                    <h3 itemprop="name">Test Recipe</h3>
+                    <div class="jetpack-recipe-content"></div>
+                </div>
+                <ul>
+                    <li class="jetpack-recipe-ingredient">1 cup flour</li>
+                    <li class="jetpack-recipe-ingredient">2 eggs</li>
+                </ul>
+                <div class="jetpack-recipe-directions">Mix and bake at 350.</div>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+        assert_eq!(result.title, "Test Recipe");
+        assert!(result.ingredients.contains("1 cup flour"));
+        assert!(result.ingredients.contains("2 eggs"));
+        assert!(result.instructions.contains("Mix and bake"));
+    }
+
+    #[test]
+    fn test_html_fallback_title_from_entry_title() {
+        // JSON-LD with missing name, title available in h1.entry-title
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "recipeIngredient": ["1 cup flour"],
+                    "recipeInstructions": "Mix and bake."
+                }
+                </script>
+            </head>
+            <body>
+                <h1 class="entry-title">My Great Recipe</h1>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+        assert_eq!(result.title, "My Great Recipe");
+    }
+
+    #[test]
+    fn test_unstructured_blog_basic_recipe() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta property="og:image" content="https://example.com/recipe.jpg">
+            </head>
+            <body>
+                <h1 class="entry-title">My Blog Post About Cake</h1>
+                <div class="entry-content">
+                    <p>I love making this cake. It reminds me of childhood.</p>
+                    <p><strong>Simple Vanilla Cake</strong></p>
+                    <p>2 cups flour<br />1 cup sugar<br />3 eggs<br />1 cup milk<br />1 teaspoon vanilla extract</p>
+                    <p>Preheat oven to 350. Mix dry ingredients. Add wet ingredients. Pour into pan and bake for 30 minutes.</p>
+                </div>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/blog/cake").unwrap();
+        assert_eq!(result.title, "Simple Vanilla Cake");
+        assert!(result.ingredients.contains("2 cups flour"));
+        assert!(result.ingredients.contains("3 eggs"));
+        assert!(result.ingredients.contains("1 teaspoon vanilla extract"));
+        assert!(result.instructions.contains("Preheat oven to 350"));
+    }
+
+    #[test]
+    fn test_unstructured_blog_with_section_headers() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <body>
+                <p><b>Apple Pie</b></p>
+                <p><u>For the crust</u><br />2 cups flour<br />1 stick butter<br />1/4 cup ice water</p>
+                <p><u>For the filling</u><br />6 apples<br />1 cup sugar<br />1 teaspoon cinnamon</p>
+                <p>Make the crust by cutting butter into flour. Roll out and place in pie dish.</p>
+                <p>Slice apples and toss with sugar and cinnamon. Fill the crust and bake at 375 for 45 minutes.</p>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/pie").unwrap();
+        assert_eq!(result.title, "Apple Pie");
+        assert!(result.ingredients.contains("For the crust"));
+        assert!(result.ingredients.contains("2 cups flour"));
+        assert!(result.ingredients.contains("For the filling"));
+        assert!(result.ingredients.contains("6 apples"));
+        assert!(result.instructions.contains("Make the crust"));
+    }
+
+    #[test]
+    fn test_unstructured_blog_no_ingredients_returns_none() {
+        // A blog post without br-delimited ingredient lists should not extract
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <body>
+                <p><b>My Trip to Paris</b></p>
+                <p>We visited the Eiffel Tower and ate at a lovely bistro.</p>
+                <p>The food was amazing and the views were spectacular.</p>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/paris");
+        assert!(result.is_err());
+    }
+
+    #[test]
+    fn test_html_fallback_with_stats_reports_method() {
+        // Verify that extract_recipe_with_stats reports HtmlFallback method
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Test Recipe",
+                    "recipeIngredient": [],
+                    "recipeInstructions": "Mix it."
+                }
+                </script>
+            </head>
+            <body>
+                <div class="ingredients"><p>1 cup flour<br>2 eggs</p></div>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe_with_stats(html, "https://example.com/recipe").unwrap();
+        assert_eq!(result.method_used, ExtractionMethod::HtmlFallback);
+        assert_eq!(result.raw_recipe.title, "Test Recipe");
+        assert!(result.raw_recipe.ingredients.contains("1 cup flour"));
     }
 }
