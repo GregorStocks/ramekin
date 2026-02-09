@@ -93,6 +93,7 @@ class EnrichApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecipeContent",
             '401': "ErrorResponse",
+            '500': "ErrorResponse",
             '503': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -162,6 +163,7 @@ class EnrichApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecipeContent",
             '401': "ErrorResponse",
+            '500': "ErrorResponse",
             '503': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -231,6 +233,7 @@ class EnrichApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecipeContent",
             '401': "ErrorResponse",
+            '500': "ErrorResponse",
             '503': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -373,6 +376,7 @@ class EnrichApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecipeContent",
             '401': "ErrorResponse",
+            '500': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -441,6 +445,7 @@ class EnrichApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecipeContent",
             '401': "ErrorResponse",
+            '500': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -509,6 +514,7 @@ class EnrichApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecipeContent",
             '401': "ErrorResponse",
+            '500': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -18,6 +18,7 @@ use serde::{de::Error as _, Deserialize, Serialize};
 #[serde(untagged)]
 pub enum CustomEnrichRecipeError {
     Status401(models::ErrorResponse),
+    Status500(models::ErrorResponse),
     Status503(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
@@ -27,6 +28,7 @@ pub enum CustomEnrichRecipeError {
 #[serde(untagged)]
 pub enum EnrichRecipeError {
     Status401(models::ErrorResponse),
+    Status500(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
