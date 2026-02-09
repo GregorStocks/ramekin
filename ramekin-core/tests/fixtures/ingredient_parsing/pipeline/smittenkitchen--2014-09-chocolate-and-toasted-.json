@@ -1,0 +1,77 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2014-09-chocolate-and-toasted-",
+  "ingredients": [
+    {
+      "raw": "2 cups (10 ounces or 285 grams) hazelnuts",
+      "expected": {
+        "item": "hazelnuts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "285",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "3 1/2 cups (830 grams) water, plus more for soaking",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "830",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for soaking",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 1/4 cups (7 1/2 ounces 215 grams) semisweet chocolate chips or rough-chopped chocolate",
+      "expected": {
+        "item": "semisweet chocolate chips or rough-chopped chocolate",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "7.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "213",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Sugar or a sweetener to taste (optional)",
+      "expected": {
+        "item": "Sugar or a sweetener to taste",
+        "measurements": [],
+        "note": "optional",
+        "category": "Baking"
+      }
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2012-05-vidalia-onion-soup-wit",
+  "ingredients": [
+    {
+      "raw": "1/2 cup wild rice, uncooked",
+      "expected": {
+        "item": "wild rice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "g"
+          }
+        ],
+        "note": "uncooked",
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "3 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 1/2 pounds (about 4) Vidalia onions, or other sweet onions, quartered and very thinly sliced",
+      "expected": {
+        "item": "Vidalia onions, or other sweet onions",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "1134",
+            "unit": "g"
+          }
+        ],
+        "note": "quartered and very thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "6 cups chicken or vegetable stock",
+      "expected": {
+        "item": "chicken or vegetable stock",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Herb bundle (see Note above)",
+      "expected": {
+        "item": "Herb bundle (see Note above)",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "8 slices baguette",
+      "expected": {
+        "item": "baguette",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "slice"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "2 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "4 ounces Maytag or other young, not too sharp, blue cheese, at room temperature",
+      "expected": {
+        "item": "Maytag or other young, not too sharp, blue cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature",
+        "category": "Cheese"
+      }
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2014-02-fennel-and-blood-orang",
+  "ingredients": [
+    {
+      "raw": "1/4 cup hazelnuts or walnuts",
+      "expected": {
+        "item": "hazelnuts or walnuts",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1 medium-large fennel bulb, leaves and stems trimmed off",
+      "expected": {
+        "item": "medium-large fennel bulb",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "leaves and stems trimmed off",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper",
+      "expected": {
+        "item": "Salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Juice of 1 lemon",
+      "expected": {
+        "item": "Juice of 1 lemon",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 large blood oranges",
+      "expected": {
+        "item": "blood oranges",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 small shallot, peeled and cut into paper-thin slices",
+      "expected": {
+        "item": "shallot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "peeled and cut into paper-thin slices",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "10 mint leaves",
+      "expected": {
+        "item": "mint leaves",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 teaspoon lime zest",
+      "expected": {
+        "item": "lime zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

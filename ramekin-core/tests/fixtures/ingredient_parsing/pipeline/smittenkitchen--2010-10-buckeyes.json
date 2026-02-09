@@ -1,0 +1,135 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-10-buckeyes",
+  "ingredients": [
+    {
+      "raw": "1/4 cup (2 ounces or 55 grams) cream cheese, softened",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": "softened",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (385 grams) peanut butter (I use smooth, but you can use chunky if you are looking for more texture) (previous weight was 145 grams, which is too low)",
+      "expected": {
+        "item": "peanut butter (previous weight was 145 grams, which is too low)",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "385",
+            "unit": "g"
+          }
+        ],
+        "note": "I use smooth, but you can use chunky if you are looking for more texture",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 cup (about 130 grams) graham cracker crumbs (from about 14 graham crackers)",
+      "expected": {
+        "item": "graham cracker crumbs (from about 14 graham crackers)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "130",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Snacks"
+      }
+    },
+    {
+      "raw": "Salt (optional, see note up top)",
+      "expected": {
+        "item": "Salt",
+        "measurements": [],
+        "note": "optional, see note up top",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 cups (360 grams) confectioners’ (powdered) sugar",
+      "expected": {
+        "item": "confectioners’ (powdered) sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "360",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "10 tablespoons (5 ounces or 140 grams) unsalted butter, melted and cooled",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "140",
+            "unit": "g"
+          }
+        ],
+        "note": "melted and cooled",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "12 ounces (340 grams) dark chocolate (60 to 72%), coarsely chopped",
+      "expected": {
+        "item": "dark chocolate",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          },
+          {
+            "amount": "60",
+            "unit": null
+          }
+        ],
+        "note": "coarsely chopped",
+        "category": "Other"
+      }
+    }
+  ]
+}

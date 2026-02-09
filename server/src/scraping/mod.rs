@@ -480,8 +480,10 @@ fn fetch_photo_images(
         return Err("One or more photos not found".to_string());
     }
 
-    let photos_by_id: std::collections::HashMap<Uuid, Photo> =
-        photos_list.into_iter().map(|photo| (photo.id, photo)).collect();
+    let photos_by_id: std::collections::HashMap<Uuid, Photo> = photos_list
+        .into_iter()
+        .map(|photo| (photo.id, photo))
+        .collect();
 
     let mut ordered_images = Vec::with_capacity(photo_ids.len());
     for photo_id in photo_ids {

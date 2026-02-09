@@ -1,0 +1,79 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-08-key-lime-pie-popsicles",
+  "ingredients": [
+    {
+      "raw": "Approximately 4 large regular limes or 6 to 7 several key limes",
+      "expected": {
+        "item": "Approximately 4 large regular limes or 6 to 7 several key limes",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 (14-ounce) can sweetened condensed milk",
+      "expected": {
+        "item": "sweetened condensed milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "14",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 cup half-and-half (or, 1/2 cup heavy cream + 1/2 cup milk)",
+      "expected": {
+        "item": "half-and-half",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Pinch of salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 cups coarsely crushed graham crackers or Maria cookies",
+      "expected": {
+        "item": "coarsely crushed graham crackers or Maria cookies",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Snacks"
+      }
+    }
+  ]
+}

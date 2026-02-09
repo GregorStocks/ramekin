@@ -1,0 +1,78 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-11-salted-brown-butter-cr",
+  "ingredients": [
+    {
+      "raw": "1/2 cup (4 ounces or 115 grams) unsalted butter, plus extra for the pan",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "115",
+            "unit": "g"
+          }
+        ],
+        "note": "plus extra for the pan",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 10-ounce (285-gram) bag marshmallows",
+      "expected": {
+        "item": "marshmallows",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "10-ounce bag"
+          },
+          {
+            "amount": "285",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Heaping 1/4 teaspoon coarse sea salt",
+      "expected": {
+        "item": "coarse sea salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "heaping tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "6 cups (160 grams) crispy rice cereal (about half a 12-ounce box)",
+      "expected": {
+        "item": "crispy rice cereal (about half a 12-ounce box)",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "cup"
+          },
+          {
+            "amount": "160",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Snacks"
+      }
+    }
+  ]
+}

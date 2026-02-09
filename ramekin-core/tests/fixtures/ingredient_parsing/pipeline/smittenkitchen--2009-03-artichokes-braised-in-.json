@@ -1,0 +1,186 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-03-artichokes-braised-in-",
+  "ingredients": [
+    {
+      "raw": "1 lemon, halved",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "halved",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "8 medium artichokes",
+      "expected": {
+        "item": "artichokes",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "medium"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 small shallots, sliced into thin rings",
+      "expected": {
+        "item": "shallots",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "small"
+          }
+        ],
+        "note": "sliced into thin rings",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 carrot, finely chopped",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 garlic cloves, thinly sliced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon fennel seeds",
+      "expected": {
+        "item": "fennel seeds",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon coriander seeds",
+      "expected": {
+        "item": "coriander seeds",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 cup extra-virgin olive oil, divided",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "108",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 1/2 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "356",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3 strips lemon zest",
+      "expected": {
+        "item": "strips lemon zest",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup fresh lemon juice, divided",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 tablespoons coarsely chopped flat-leaf parsley",
+      "expected": {
+        "item": "coarsely chopped flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

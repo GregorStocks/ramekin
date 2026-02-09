@@ -1,0 +1,60 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2008-10-paris-a-deep-dark-salt",
+  "ingredients": [
+    {
+      "raw": "1 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 ounces (6 tablespoons) salted butter, the better you can get, the better it will taste",
+      "expected": {
+        "item": "salted butter, the better you can get, the better it will taste",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 cup plus two tablespoons heavy cream, at room temperature",
+      "expected": {
+        "item": "1/2 cup plus two tablespoons heavy cream, at room temperature",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus two tablespoons heavy cream, at room temperature",
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

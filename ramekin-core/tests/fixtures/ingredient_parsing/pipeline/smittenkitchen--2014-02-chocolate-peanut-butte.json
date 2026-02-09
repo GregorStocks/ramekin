@@ -1,0 +1,330 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2014-02-chocolate-peanut-butte",
+  "ingredients": [
+    {
+      "raw": "Chocolate Crust",
+      "expected": {
+        "item": "Chocolate Crust",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "9 ounces (255 grams) chocolate wafers (such as these; the cookie portion of these are best for homemade crumbs)",
+      "expected": {
+        "item": "chocolate wafers (such as these; the cookie portion of these are best for homemade crumbs)",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "oz"
+          },
+          {
+            "amount": "255",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "6 ounces (170 grams) bitter- or semisweet chocolate, coarsely chopped or 1 cup chips",
+      "expected": {
+        "item": "bitter- or semisweet chocolate",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "coarsely chopped or 1 cup chips",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 cup (95 grams) packed dark brown sugar",
+      "expected": {
+        "item": "packed dark brown sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "95",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "7 tablespoons (100 grams) unsalted butter, melted and still hot",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": "melted and still hot",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Fudge Layer",
+      "expected": {
+        "item": "Fudge Layer",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 cup (235 ml) heavy or whipping cream",
+      "expected": {
+        "item": "heavy or whipping cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "235",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "13 ounces (370 grams) bittersweet or semisweet chocolate, chopped",
+      "expected": {
+        "item": "bittersweet or semisweet chocolate",
+        "measurements": [
+          {
+            "amount": "13",
+            "unit": "oz"
+          },
+          {
+            "amount": "370",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 grams) smooth peanut butter (optional)",
+      "expected": {
+        "item": "smooth peanut butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "Cheesecake Layer",
+      "expected": {
+        "item": "Cheesecake Layer",
+        "measurements": [],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2 8-ounce packages (455 grams) cream cheese, at room temperature",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "8-ounce packages"
+          },
+          {
+            "amount": "455",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 1/4 cups (320 grams) smooth peanut butter",
+      "expected": {
+        "item": "smooth peanut butter",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "320",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 cup (200 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3/4 cup (180 grams) sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 teaspoons (10 ml) vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          },
+          {
+            "amount": "8.7",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Ganache Topping",
+      "expected": {
+        "item": "Ganache Topping",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/3 cup (80 ml) heavy or whipping cream",
+      "expected": {
+        "item": "heavy or whipping cream",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 1/2 ounces (130 grams) bittersweet or semisweet chocolate, chopped",
+      "expected": {
+        "item": "bittersweet or semisweet chocolate",
+        "measurements": [
+          {
+            "amount": "4.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "130",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 grams) smooth peanut butter (optional)",
+      "expected": {
+        "item": "smooth peanut butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

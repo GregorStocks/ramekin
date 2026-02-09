@@ -1,0 +1,263 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2015-08-takeout-style-sesame-n",
+  "ingredients": [
+    {
+      "raw": "And for the other side of the world:",
+      "expected": {
+        "item": "And for the other side of the world:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Six Months Ago: Key Lime Pie",
+      "expected": {
+        "item": "Months Ago: Key Lime Pie",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1.5 Years Ago: Pear and Hazelnut Muffins",
+      "expected": {
+        "item": "Years Ago: Pear and Hazelnut Muffins",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "2.5 Years Ago: Buttermilk Roast Chicken",
+      "expected": {
+        "item": "Years Ago: Buttermilk Roast Chicken",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3.5 Years Ago: Intensely Chocolate Sables",
+      "expected": {
+        "item": "Years Ago: Intensely Chocolate Sables",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3/4 pound dried rice noodles (see notes up top)",
+      "expected": {
+        "item": "dried rice noodles (see notes up top)",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "lb"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "2 tablespoons toasted sesame oil, plus a splash to loosen noodles",
+      "expected": {
+        "item": "toasted sesame oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "plus a splash to loosen noodles",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 tablespoons Chinese sesame paste or tahini (see note up top)",
+      "expected": {
+        "item": "Chinese sesame paste or tahini (see note up top)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 tablespoon smooth peanut butter",
+      "expected": {
+        "item": "smooth peanut butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "3 1/2 tablespoons soy sauce",
+      "expected": {
+        "item": "soy sauce",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "2 tablespoons Chinese rice vinegar",
+      "expected": {
+        "item": "Chinese rice vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 tablespoon granulated or brown sugar",
+      "expected": {
+        "item": "granulated or brown sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon finely grated ginger",
+      "expected": {
+        "item": "finely grated ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 teaspoons minced garlic (from 1 medium-large clove)",
+      "expected": {
+        "item": "minced garlic (from 1 medium-large clove)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Chili-garlic paste, to taste",
+      "expected": {
+        "item": "Chili-garlic paste",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 pound cucumber, very thinly sliced",
+      "expected": {
+        "item": "cucumber",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "very thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup roasted salted peanuts, roughly chopped",
+      "expected": {
+        "item": "roasted salted peanuts",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "roughly chopped",
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "A handful of chopped fresh herbs, such as mint and cilantro, for garnish",
+      "expected": {
+        "item": "A handful of chopped fresh herbs, such as mint and cilantro",
+        "measurements": [],
+        "note": "for garnish",
+        "category": "Produce"
+      }
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2008-07-chocolate-sorbet",
+  "ingredients": [
+    {
+      "raw": "2 1/4 cups (555 ml) water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "555",
+            "unit": "ml"
+          },
+          {
+            "amount": "533",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 cup (200 g) sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3/4 cup (75 g) unsweetened Dutch-process cocoa powder",
+      "expected": {
+        "item": "unsweetened Dutch-process cocoa powder",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "75",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Pinch of salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "6 ounces (170 g) bittersweet or semisweet chocolate, finely chopped",
+      "expected": {
+        "item": "bittersweet or semisweet chocolate",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

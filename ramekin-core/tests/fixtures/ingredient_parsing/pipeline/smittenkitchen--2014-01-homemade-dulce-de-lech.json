@@ -1,0 +1,90 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2014-01-homemade-dulce-de-lech",
+  "ingredients": [
+    {
+      "raw": "1 to 2-inch segment of vanilla bean (optional)",
+      "expected": {
+        "item": "to 2-inch segment of vanilla bean",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 quart whole milk (cow or goat, or a combination thereof)",
+      "expected": {
+        "item": "whole milk (cow or goat, or a combination thereof)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "quart"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup granulated or raw sugar",
+      "expected": {
+        "item": "granulated or raw sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2-inch segment of cinnamon stick (optional)",
+      "expected": {
+        "item": "-inch segment of cinnamon stick",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon coarse or flaky sea salt (optional, but ooh, it’s good here)",
+      "expected": {
+        "item": "coarse or flaky sea salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional, but ooh, it’s good here",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon baking soda dissolved in 2 teaspoons water",
+      "expected": {
+        "item": "baking soda dissolved in 2 teaspoons water",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

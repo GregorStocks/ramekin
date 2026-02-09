@@ -1,0 +1,141 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2014-07-bourbon-slush-punch",
+  "ingredients": [
+    {
+      "raw": "1 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "237",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 tea bags (whatever you like for iced tea)",
+      "expected": {
+        "item": "tea bags (whatever you like for iced tea)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 cup bourbon",
+      "expected": {
+        "item": "bourbon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/4 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 cups orange juice (about 3 well-squeezed oranges)",
+      "expected": {
+        "item": "orange juice",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "6 tablespoons lemon juice (about 2 lemons)",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "92",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "16 to 17 ounces (about 5 cups of small pieces of ice) ice cubes",
+      "expected": {
+        "item": "ice cubes",
+        "measurements": [
+          {
+            "amount": "16 to 17",
+            "unit": "oz"
+          },
+          {
+            "amount": "5",
+            "unit": "cup"
+          },
+          {
+            "amount": "454 to 482",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Mint sprigs or lemon slices, for garnish",
+      "expected": {
+        "item": "Mint sprigs or lemon slices",
+        "measurements": [],
+        "note": "for garnish",
+        "category": "Produce"
+      }
+    }
+  ]
+}

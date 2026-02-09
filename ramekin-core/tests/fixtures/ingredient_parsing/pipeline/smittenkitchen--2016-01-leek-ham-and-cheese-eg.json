@@ -1,0 +1,208 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2016-01-leek-ham-and-cheese-eg",
+  "ingredients": [
+    {
+      "raw": "And for the other side of the world:",
+      "expected": {
+        "item": "And for the other side of the world:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Six Months Ago: Tomato and Fried Provolone Sandwich",
+      "expected": {
+        "item": "Months Ago: Tomato and Fried Provolone Sandwich",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1.5 Years Ago: Summer Squash Gratin with Salsa Verde",
+      "expected": {
+        "item": "Years Ago: Summer Squash Gratin with Salsa Verde",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2.5 Years Ago: Hot Fudge Sundae Cake",
+      "expected": {
+        "item": "Years Ago: Hot Fudge Sundae Cake",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3.5 Years Ago: Peach Pie",
+      "expected": {
+        "item": "Years Ago: Peach Pie",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4.5 Years Ago: Charred Corn Tacos with Zucchini-Radish Slaw",
+      "expected": {
+        "item": "Years Ago: Charred Corn Tacos with Zucchini-Radish Slaw",
+        "measurements": [
+          {
+            "amount": "4.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon butter, plus more for greasing baking dish",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for greasing baking dish",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "6 medium-large leeks or 3 leeks and 2 small yellow onions, diced (just white and pale green parts from leeks; leeks washed well)",
+      "expected": {
+        "item": "medium-large leeks or 3 leeks and 2 small yellow onions, diced",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "just white and pale green parts from leeks; leeks washed well",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "12 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 1/3 cups milk, preferably whole",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "3.33",
+            "unit": "cup"
+          },
+          {
+            "amount": "817",
+            "unit": "g"
+          }
+        ],
+        "note": "preferably whole",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper",
+      "expected": {
+        "item": "Salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3/4 pound grated cheese (I use a mix of gruyere and comte)",
+      "expected": {
+        "item": "grated cheese (I use a mix of gruyere and comte)",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "lb"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "10 ounces cooked ham, diced very small",
+      "expected": {
+        "item": "cooked ham",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": "diced very small",
+        "category": "Meat & Seafood"
+      }
+    }
+  ]
+}

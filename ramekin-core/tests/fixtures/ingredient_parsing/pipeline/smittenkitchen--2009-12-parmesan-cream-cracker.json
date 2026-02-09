@@ -1,0 +1,93 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-12-parmesan-cream-cracker",
+  "ingredients": [
+    {
+      "raw": "1 cup all-purpose flour, more as needed",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": "more as needed",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 cup finely grated fresh Parmesan cheese (alternate: I think Romano could also work well here)",
+      "expected": {
+        "item": "finely grated fresh Parmesan cheese (alternate: I think Romano could also work well here)",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "4 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 cup cream or half-and-half, more as needed",
+      "expected": {
+        "item": "cream or half-and-half",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "more as needed",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Coarse salt, pepper, sesame or poppy seeds or whatever you like for sprinkling (optional).",
+      "expected": {
+        "item": "Coarse salt, pepper, sesame or poppy seeds or whatever you like for sprinkling .",
+        "measurements": [],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

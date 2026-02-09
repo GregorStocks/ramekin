@@ -1,0 +1,117 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2015-02-oven-braised-beef-with",
+  "ingredients": [
+    {
+      "raw": "And for the other side of the world:",
+      "expected": {
+        "item": "And for the other side of the world:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Six Months Ago: Apricot Pistachio Squares",
+      "expected": {
+        "item": "Months Ago: Apricot Pistachio Squares",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1.5 Years Ago: Strawberry Lime and Black Pepper Popsicles",
+      "expected": {
+        "item": "Years Ago: Strawberry Lime and Black Pepper Popsicles",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2.5 Years Ago: Charred Pepper Steak Sauce",
+      "expected": {
+        "item": "Years Ago: Charred Pepper Steak Sauce",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "3.5 Years Ago: Tomato Salad with Crushed Croutons",
+      "expected": {
+        "item": "Years Ago: Tomato Salad with Crushed Croutons",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "1 28-ounce can whole tomatoes",
+      "expected": {
+        "item": "whole tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "28-ounce can"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 (3 to 3 1/2 pound) boneless beef chuck roast, tied with a string",
+      "expected": {
+        "item": "boneless beef chuck roast, tied with a string",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "3 to 3",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 head garlic, separated into cloves, left unpeeled",
+      "expected": {
+        "item": "garlic, separated into cloves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": "left unpeeled",
+        "category": "Produce"
+      }
+    }
+  ]
+}

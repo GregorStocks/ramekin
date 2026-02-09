@@ -1,0 +1,120 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-01-pizza-with-bacon-onion",
+  "ingredients": [
+    {
+      "raw": "1/2 pound pizza dough",
+      "expected": {
+        "item": "pizza dough",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Olive oil, for oiling baking sheets",
+      "expected": {
+        "item": "Olive oil, for oiling baking sheets",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/2 cup fromage blanc or ricotta",
+      "expected": {
+        "item": "fromage blanc or ricotta",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/2 cup crème fraîche or sour cream",
+      "expected": {
+        "item": "crème fraîche or sour cream",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "7.8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground pepper",
+      "expected": {
+        "item": "Salt and freshly ground pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 pound thickly sliced smoky bacon, cut crosswise into 1/4-inch strips",
+      "expected": {
+        "item": "thickly sliced smoky bacon, cut crosswise into 1/4-inch strips",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "lb"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 medium onion, thinly sliced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    }
+  ]
+}

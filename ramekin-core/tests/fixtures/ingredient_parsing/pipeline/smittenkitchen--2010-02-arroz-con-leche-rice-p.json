@@ -1,0 +1,176 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-02-arroz-con-leche-rice-p",
+  "ingredients": [
+    {
+      "raw": "1 cup long-grain white rice",
+      "expected": {
+        "item": "long-grain white rice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "2 cinnamon sticks (I had very large canela sticks — see bottom for more info — so I only used one)",
+      "expected": {
+        "item": "cinnamon sticks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "I had very large canela sticks - see bottom for more info - so I only used one",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 strips of lemon or orange zest (can use a peeler to get a larger piece)",
+      "expected": {
+        "item": "strips of lemon or orange zest",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": null,
+            "unit": "can"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 whole cloves or a tiny pinch of ground cloves",
+      "expected": {
+        "item": "whole cloves or a tiny pinch of ground cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "948",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 cups whole milk (updated to note that many people, including my mother, successfully made this with lower fat milks)",
+      "expected": {
+        "item": "whole milk (updated to note that many people, including my mother, successfully made this with lower fat milks)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1 (12-ounce) can sweetened condensed milk (I realized after the fact that my can had been 14 ounces, had no averse effect)",
+      "expected": {
+        "item": "sweetened condensed milk (I realized after the fact that my can had been 14 ounces, had no averse effect)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon vanilla",
+      "expected": {
+        "item": "vanilla",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup raisins (optional)",
+      "expected": {
+        "item": "raisins",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional",
+        "category": "Nuts & Dried Fruit"
+      }
+    }
+  ]
+}

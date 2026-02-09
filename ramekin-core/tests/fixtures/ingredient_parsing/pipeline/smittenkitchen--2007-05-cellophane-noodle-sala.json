@@ -1,0 +1,351 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-05-cellophane-noodle-sala",
+  "ingredients": [
+    {
+      "raw": "For pork",
+      "expected": {
+        "item": "For pork",
+        "measurements": [],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 pound solid piece boneless pork butt (shoulder) or pork tenderloin",
+      "expected": {
+        "item": "solid piece boneless pork butt (shoulder) or pork tenderloin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1/4 cup hoisin sauce",
+      "expected": {
+        "item": "hoisin sauce",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1/4 cup soy sauce (low-sodium is best here)",
+      "expected": {
+        "item": "soy sauce (low-sodium is best here)",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1/4 cup Chinese rice wine or sake",
+      "expected": {
+        "item": "Chinese rice wine or sake",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "1 tablespoon finely chopped peeled fresh ginger",
+      "expected": {
+        "item": "finely chopped peeled fresh ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon finely chopped garlic",
+      "expected": {
+        "item": "finely chopped garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon salt (see Note below)",
+      "expected": {
+        "item": "salt (see Note below)",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "For dressing",
+      "expected": {
+        "item": "For dressing",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3/4 cup seasoned rice vinegar",
+      "expected": {
+        "item": "seasoned rice vinegar",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/2 cup peanut or vegetable oil**",
+      "expected": {
+        "item": "peanut or vegetable oil**",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "3 tablespoons fresh lime juice",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "3 tablespoons finely grated peeled fresh ginger",
+      "expected": {
+        "item": "finely grated peeled fresh ginger",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large fresh jalapeno chile, seeded and minced",
+      "expected": {
+        "item": "fresh jalapeno chile",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "seeded and minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "For salad",
+      "expected": {
+        "item": "For salad",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "8 oz very thin bean-thread noodles (also known as cellophane, glass, or mung bean noodles)",
+      "expected": {
+        "item": "very thin bean-thread noodles (also known as cellophane, glass, or mung bean noodles)",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "3/4 lb Chinese long beans (1 bunch) or green beans, trimmed and cut into 3-inch pieces",
+      "expected": {
+        "item": "Chinese long beans or green beans",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "lb"
+          },
+          {
+            "amount": "1",
+            "unit": "bunch"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed and cut into 3-inch pieces",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 seedless cucumber (usually plastic-wrapped; about 1 lb), halved lengthwise and sliced diagonally 1/8 inch thick",
+      "expected": {
+        "item": "seedless cucumber",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "halved lengthwise and sliced diagonally 1/8 inch thick",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 bunch scallions, cut into matchsticks",
+      "expected": {
+        "item": "scallions, cut into matchsticks",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bunch"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 firm-ripe mango, peeled, pitted, and thinly sliced",
+      "expected": {
+        "item": "firm-ripe mango, peeled, pitted",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "and thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 thin carrots, cut into 1/8-inch-thick matchsticks",
+      "expected": {
+        "item": "thin carrots, cut into 1/8-inch-thick matchsticks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup loosely packed fresh cilantro leaves",
+      "expected": {
+        "item": "loosely packed fresh cilantro leaves",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup loosely packed fresh mint leaves",
+      "expected": {
+        "item": "loosely packed fresh mint leaves",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup loosely packed fresh small basil leaves",
+      "expected": {
+        "item": "loosely packed fresh small basil leaves",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

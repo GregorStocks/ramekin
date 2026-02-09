@@ -1,0 +1,80 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-01-chocolate-peanut-sprea",
+  "ingredients": [
+    {
+      "raw": "2 cups shelled and skinned raw peanuts",
+      "expected": {
+        "item": "shelled and skinned raw peanuts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1/2 cup of your darkest, richest unsweetened cocoa powder",
+      "expected": {
+        "item": "your darkest, richest unsweetened cocoa powder",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/4 cups powdered sugar",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt plus additional to taste (I used an extra 1/8 teaspoon)",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus additional to taste (I used an extra 1/8 teaspoon)",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 tablespoons peanut oil",
+      "expected": {
+        "item": "peanut oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    }
+  ]
+}

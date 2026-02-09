@@ -1,0 +1,270 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-04-french-onion-soup",
+  "ingredients": [
+    {
+      "raw": "1 1/2 pounds (680 grams or 24 ounces or about 5 cups) thinly sliced yellow onions",
+      "expected": {
+        "item": "thinly sliced yellow onions",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          },
+          {
+            "amount": "24",
+            "unit": "oz"
+          },
+          {
+            "amount": "5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 tablespoons (42 grams or 1 1/2 ounces) unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
+          },
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 teaspoon (5 grams) table salt, plus additional to taste",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": "plus additional to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon (1 gram) granulated sugar (helps the onions to brown)",
+      "expected": {
+        "item": "granulated sugar (helps the onions to brown)",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 tablespoons (24 grams or 7/8 ounce) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "24",
+            "unit": "g"
+          },
+          {
+            "amount": "0.88",
+            "unit": "oz"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 quarts (8 cups or 1.9 liters) beef or other brown stock*",
+      "expected": {
+        "item": "beef or other brown stock*",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "quart"
+          },
+          {
+            "amount": "8",
+            "unit": "cup"
+          },
+          {
+            "amount": "1.9",
+            "unit": "l"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/2 cup (118 ml) dry white wine or dry white vermouth",
+      "expected": {
+        "item": "dry white wine or dry white vermouth",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 tablespoons (45 ml) cognac or brandy (optional)",
+      "expected": {
+        "item": "cognac or brandy",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
+          }
+        ],
+        "note": "optional",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "To finish [Gratinée] (Optional)",
+      "expected": {
+        "item": "To finish [Gratinée]",
+        "measurements": [],
+        "note": "Optional",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 tablespoon grated raw onion",
+      "expected": {
+        "item": "grated raw onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 to 2 cups (to taste) grated Swiss (I often use Gruyere) or a mixture of Swiss and Parmesan cheese",
+      "expected": {
+        "item": "grated Swiss (I often use Gruyere) or a mixture of Swiss and Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "cup"
+          }
+        ],
+        "note": "to taste",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 tablespoon butter, melted",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "melted",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "12 to 16 1-inch thick rounds French bread, toasted until hard",
+      "expected": {
+        "item": "1-inch thick rounds French bread",
+        "measurements": [
+          {
+            "amount": "12 to 16",
+            "unit": null
+          }
+        ],
+        "note": "toasted until hard",
+        "category": "Bakery & Bread"
+      }
+    }
+  ]
+}

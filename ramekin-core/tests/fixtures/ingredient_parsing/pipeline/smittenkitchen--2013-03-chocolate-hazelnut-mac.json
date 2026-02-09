@@ -1,0 +1,228 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2013-03-chocolate-hazelnut-mac",
+  "ingredients": [
+    {
+      "raw": "Macaroons",
+      "expected": {
+        "item": "Macaroons",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Oil or butter for greasing parchment rounds",
+      "expected": {
+        "item": "Oil or butter for greasing parchment rounds",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup plus 2 tablespoons (225 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1 cup plus 2 tablespoons",
+            "unit": null
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "6 large egg whites",
+      "expected": {
+        "item": "egg whites",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 1/2 cups hazelnuts (about 12 ounces or 340 grams), toasted, then skinned as much as possible*",
+      "expected": {
+        "item": "hazelnuts, toasted, then skinned as much as possible*",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon (5 ml) vanilla extract**",
+      "expected": {
+        "item": "vanilla extract**",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Chocolate filling",
+      "expected": {
+        "item": "Chocolate filling",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "6 ounces (170 grams or the equivalent of 1 cup chips) bittersweet chocolate, coarsely chopped",
+      "expected": {
+        "item": "bittersweet chocolate",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "coarsely chopped",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/4 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "59",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 teaspoon instant coffee or espresso granules (optional)",
+      "expected": {
+        "item": "instant coffee or espresso granules",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Whipped frosting and filling",
+      "expected": {
+        "item": "Whipped frosting and filling",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 1/2 cups chilled heavy or whipping cream",
+      "expected": {
+        "item": "chilled heavy or whipping cream",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 tablespoons granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "38",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon Frangelico or another hazelnut liqueur or 1 teaspoon vanilla extract**",
+      "expected": {
+        "item": "Frangelico",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or another hazelnut liqueur or 1 teaspoon vanilla extract**",
+        "category": "Other"
+      }
+    }
+  ]
+}

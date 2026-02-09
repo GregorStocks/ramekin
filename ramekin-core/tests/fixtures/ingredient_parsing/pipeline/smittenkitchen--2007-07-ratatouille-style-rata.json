@@ -1,0 +1,149 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-07-ratatouille-style-rata",
+  "ingredients": [
+    {
+      "raw": "1/2 onion, finely chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 garlic cloves, very thinly sliced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "very thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup tomato puree (such as Pomi)",
+      "expected": {
+        "item": "tomato puree (such as Pomi)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil, divided",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 small eggplant (my store sells these “Italian Eggplant” that are less than half the size of regular ones; it worked perfectly)",
+      "expected": {
+        "item": "eggplant (my store sells these “Italian Eggplant” that are less than half the size of regular ones; it worked perfectly)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 smallish zucchini",
+      "expected": {
+        "item": "smallish zucchini",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 smallish yellow squash",
+      "expected": {
+        "item": "smallish yellow squash",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 longish red bell pepper",
+      "expected": {
+        "item": "longish red bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Few sprigs fresh thyme",
+      "expected": {
+        "item": "Few sprigs fresh thyme",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Few tablespoons soft goat cheese, for serving",
+      "expected": {
+        "item": "Few tablespoons soft goat cheese",
+        "measurements": [],
+        "note": "for serving",
+        "category": "Cheese"
+      }
+    }
+  ]
+}

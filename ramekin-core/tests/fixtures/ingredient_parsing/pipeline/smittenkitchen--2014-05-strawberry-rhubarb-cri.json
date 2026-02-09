@@ -1,0 +1,199 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2014-05-strawberry-rhubarb-cri",
+  "ingredients": [
+    {
+      "raw": "1 cup (80 grams) rolled oats",
+      "expected": {
+        "item": "rolled oats",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "3/4 cup (95 grams) plus up to 2 tablespoons (15 grams) extra all-purpose flour",
+      "expected": {
+        "item": "3/4 cup (95 grams) plus up to 2 tablespoons (15 grams) extra all-purpose flour",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "95",
+            "unit": "g"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "plus up to 2 tablespoons extra all-purpose flour",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup (95 grams) light brown sugar",
+      "expected": {
+        "item": "light brown sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "95",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Heaped 1/4 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "heaped tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "6 tablespoons (85 grams) unsalted butter, melted",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "melted",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 teaspoon cornstarch (optional, but helps firm up the filling)",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.7",
+            "unit": "g"
+          }
+        ],
+        "note": "optional, but helps firm up the filling",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 grams) granulated sugar, divided",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup (125 grams) small-diced rhubarb (from about 1 1/2 medium stalks)",
+      "expected": {
+        "item": "small-diced rhubarb (from about 1 1/2 medium stalks)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup (155 grams) small-diced strawberries",
+      "expected": {
+        "item": "small-diced strawberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "155",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Powdered sugar, for decoration, if desired",
+      "expected": {
+        "item": "Powdered sugar, for decoration, if desired",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

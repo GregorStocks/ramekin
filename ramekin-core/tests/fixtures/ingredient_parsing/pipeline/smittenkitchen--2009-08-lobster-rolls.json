@@ -1,0 +1,107 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2009-08-lobster-rolls",
+  "ingredients": [
+    {
+      "raw": "2 pounds cooked lobster meat*, chopped roughly into 1/2 and 3/4-inch pieces",
+      "expected": {
+        "item": "cooked lobster meat*",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped roughly into 1/2 and 3/4-inch pieces",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 small celery rib, finely chopped",
+      "expected": {
+        "item": "celery rib",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup mayonnaise (Charles insists on Hellman’s; I didn’t argue)",
+      "expected": {
+        "item": "mayonnaise (Charles insists on Hellman’s; I didn’t argue)",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "Squeeze or two of lemon juice",
+      "expected": {
+        "item": "Squeeze or two of lemon juice",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Pinch of kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "kosher salt and freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 top-loading hot dog buns or 64 miniature burger buns (described above) or small dinner rolls",
+      "expected": {
+        "item": "top-loading hot dog buns or 64 miniature burger buns (described above) or small dinner rolls",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "Unsalted butter",
+      "expected": {
+        "item": "Unsalted butter",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Snipped fresh chives for garnish (though we mixed ours right into the salad, for convenience)",
+      "expected": {
+        "item": "Snipped fresh chives for garnish",
+        "measurements": [],
+        "note": "though we mixed ours right into the salad, for convenience",
+        "category": "Produce"
+      }
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2012-12-fromage-fort",
+  "ingredients": [
+    {
+      "raw": "1 pound mix leftover cheese, harder cheeses grated, softer ones cut into chunks",
+      "expected": {
+        "item": "mix leftover cheese, harder cheeses grated, softer ones cut into chunks",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "A couple pats of butter, if using mostly firm cheese varieties",
+      "expected": {
+        "item": "A couple pats of butter, if using mostly firm cheese varieties",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 small clove garlic, minced, or more to taste",
+      "expected": {
+        "item": "clove garlic, minced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "or more to taste",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 to 1 cup leftover white wine",
+      "expected": {
+        "item": "leftover white wine",
+        "measurements": [
+          {
+            "amount": "0.5 to 1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons finely chopped fresh herbs, such as parsley, thyme, rosemary or chives",
+      "expected": {
+        "item": "finely chopped fresh herbs, such as parsley, thyme, rosemary or chives",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground black pepper to taste",
+      "expected": {
+        "item": "Salt and freshly ground black pepper to taste",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

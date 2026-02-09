@@ -1,0 +1,101 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2012-04-pasta-with-garlicky-br",
+  "ingredients": [
+    {
+      "raw": "1 pound pasta, whatever shape you like (but chunky ones will match up better with the rabe)",
+      "expected": {
+        "item": "pasta, whatever shape you like (but chunky ones will match up better with the rabe)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "1 pound broccoli rabe, heavy stems removed, remaining stems and leaves cut into 1- to 2-inch sections (I attempt to match my pasta in length)",
+      "expected": {
+        "item": "broccoli rabe, heavy stems removed, remaining stems and leaves cut into 1- to 2-inch sections (I attempt to match my pasta in length)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "108",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "5 garlic cloves, peeled and minced or pressed",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "peeled and minced or pressed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon red pepper flakes, or more or less to taste",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.9",
+            "unit": "g"
+          }
+        ],
+        "note": "or more or less to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "About 1 heaping teaspoon Kosher salt (or more to taste)",
+      "expected": {
+        "item": "About 1 heaping teaspoon Kosher salt",
+        "measurements": [],
+        "note": "or more to taste",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

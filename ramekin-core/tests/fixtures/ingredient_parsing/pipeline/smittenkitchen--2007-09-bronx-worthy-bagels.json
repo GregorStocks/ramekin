@@ -1,0 +1,126 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-09-bronx-worthy-bagels",
+  "ingredients": [
+    {
+      "raw": "Sponge",
+      "expected": {
+        "item": "Sponge",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 teaspoon instant yeast",
+      "expected": {
+        "item": "instant yeast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "4 cups unbleached high-gluten or bread flour (see note below)",
+      "expected": {
+        "item": "unbleached high-gluten or bread flour (see note below)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 1/2 cups water, room temperature",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "592",
+            "unit": "g"
+          }
+        ],
+        "note": "room temperature",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Dough",
+      "expected": {
+        "item": "Dough",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon instant yeast",
+      "expected": {
+        "item": "instant yeast",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 3/4 cups unbleached high-gluten or bread flour",
+      "expected": {
+        "item": "unbleached high-gluten or bread flour",
+        "measurements": [
+          {
+            "amount": "3.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 3/4 teaspoons salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "2.75",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 teaspoons malt powder or 1 tablespoon dark or light malt syrup, honey, or brown sugar (see note below)",
+      "expected": {
+        "item": "malt powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1 tablespoon dark or light malt syrup, honey, or brown sugar (see note below)",
+        "category": "Other"
+      }
+    }
+  ]
+}

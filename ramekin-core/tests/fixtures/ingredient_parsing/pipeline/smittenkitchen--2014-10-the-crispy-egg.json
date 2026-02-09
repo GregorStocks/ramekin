@@ -1,0 +1,43 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2014-10-the-crispy-egg",
+  "ingredients": [
+    {
+      "raw": "1 glug olive oil or cooking fat of your choice",
+      "expected": {
+        "item": "glug olive oil or cooking fat of your choice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 egg, any size",
+      "expected": {
+        "item": "egg, any size",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Salt, pepper, herbs, spices or hot sauce, or all of the above",
+      "expected": {
+        "item": "Salt, pepper, herbs, spices or hot sauce, or all of the above",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

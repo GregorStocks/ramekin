@@ -1,0 +1,289 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-02-monkey-bread-with-crea",
+  "ingredients": [
+    {
+      "raw": "Dough",
+      "expected": {
+        "item": "Dough",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "4 tablespoons (1/2 stick or 2 ounces) unsalted butter, divided (2 tablespoons softened, 2 tablespoons melted)",
+      "expected": {
+        "item": "unsalted butter, divided",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "stick"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "2 tablespoons softened, 2 tablespoons melted",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup milk, warm (around 110 degrees)",
+      "expected": {
+        "item": "milk, warm (around 110 degrees)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/3 cup water, warm (also around 110 degrees)",
+      "expected": {
+        "item": "water, warm (also around 110 degrees)",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/4 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 package or 2 1/4 teaspoons rapid rise, instant or bread machine yeast",
+      "expected": {
+        "item": "rapid rise, instant or bread machine yeast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "2.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "3 1/4 cups all-purpose flour, plus extra for work surface",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "406",
+            "unit": "g"
+          }
+        ],
+        "note": "plus extra for work surface",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 teaspoons table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Brown Sugar Coating",
+      "expected": {
+        "item": "Brown Sugar Coating",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup packed light brown sugar (CI advises against dark brown, which they feel imparts too strong of a molasses taste; I suspect it wouldn’t bother me)",
+      "expected": {
+        "item": "packed light brown sugar (CI advises against dark brown, which they feel imparts too strong of a molasses taste; I suspect it wouldn’t bother me)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 teaspoons ground cinnamon",
+      "expected": {
+        "item": "ground cinnamon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "8 tablespoons unsalted butter (1 stick or 4 ounces), melted",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1",
+            "unit": "stick"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "melted",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Cream Cheese Glaze",
+      "expected": {
+        "item": "Cream Cheese Glaze",
+        "measurements": [],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "3 ounces cream cheese, softened",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "softened",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "3 tablespoons powdered sugar, plus extra if needed",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "22",
+            "unit": "g"
+          }
+        ],
+        "note": "plus extra if needed",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tablespoons milk, plus extra if needed",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
+        "note": "plus extra if needed",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

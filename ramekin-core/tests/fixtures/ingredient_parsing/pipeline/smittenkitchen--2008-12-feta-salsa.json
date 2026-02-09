@@ -1,0 +1,112 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2008-12-feta-salsa",
+  "ingredients": [
+    {
+      "raw": "1/2 pound feta (cow’s milk)",
+      "expected": {
+        "item": "feta (cow’s milk)",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2/3 cup sundried tomatoes in oil",
+      "expected": {
+        "item": "sundried tomatoes in oil",
+        "measurements": [
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/2 cup pitted Kalamata olives",
+      "expected": {
+        "item": "pitted Kalamata olives",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 tablespoons fresh dill",
+      "expected": {
+        "item": "fresh dill",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 tablespoons flat-leaf parsley",
+      "expected": {
+        "item": "flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 scallions",
+      "expected": {
+        "item": "scallions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    }
+  ]
+}

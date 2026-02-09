@@ -1,0 +1,153 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-07-thai-style-chicken-leg",
+  "ingredients": [
+    {
+      "raw": "5 garlic cloves, coarsely chopped",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "coarsely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup chopped cilantro (or flat-leaf parsley if you are cilantro-averse)",
+      "expected": {
+        "item": "chopped cilantro (or flat-leaf parsley if you are cilantro-averse)",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup Asian fish sauce*",
+      "expected": {
+        "item": "Asian fish sauce*",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1/4 cup vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 tablespoons hoisin sauce (I accidentally doubled this and can only advise you do the same)",
+      "expected": {
+        "item": "hoisin sauce (I accidentally doubled this and can only advise you do the same)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons ground coriander",
+      "expected": {
+        "item": "ground coriander",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon freshly ground black or white pepper",
+      "expected": {
+        "item": "freshly ground black or white pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "8 whole chicken legs, split, or 8 drumsticks and 8 thighs (about 5 pounds total)",
+      "expected": {
+        "item": "whole chicken legs, split, or 8 drumsticks and 8 thighs",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          },
+          {
+            "amount": "5",
+            "unit": "lb"
+          },
+          {
+            "amount": "2268",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Thai sweet chili sauce, for serving",
+      "expected": {
+        "item": "Thai sweet chili sauce",
+        "measurements": [],
+        "note": "for serving",
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2011-09-peach-butter",
+  "ingredients": [
+    {
+      "raw": "4 pounds (1.8 kilograms) peaches",
+      "expected": {
+        "item": "peaches",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1.8",
+            "unit": "kg"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup (237 ml) water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "237",
+            "unit": "ml"
+          },
+          {
+            "amount": "237",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 cups (400 grams) granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Juice of one lemon",
+      "expected": {
+        "item": "Juice of one lemon",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    }
+  ]
+}

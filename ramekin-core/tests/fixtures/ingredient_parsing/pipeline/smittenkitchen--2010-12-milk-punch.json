@@ -1,0 +1,83 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2010-12-milk-punch",
+  "ingredients": [
+    {
+      "raw": "5 cups of a mixture of whole milk and half-and-half (4:1 is suggested, but I might go more like 3:2 next time)",
+      "expected": {
+        "item": "a mixture of whole milk and half-and-half",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/2 cups bourbon, another whiskey or brandy",
+      "expected": {
+        "item": "bourbon, another whiskey or brandy",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 cup powdered sugar, sifted",
+      "expected": {
+        "item": "powdered sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
+          }
+        ],
+        "note": "sifted",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Freshly grated nutmeg, for garnish.",
+      "expected": {
+        "item": "Freshly grated nutmeg",
+        "measurements": [],
+        "note": "for garnish.",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

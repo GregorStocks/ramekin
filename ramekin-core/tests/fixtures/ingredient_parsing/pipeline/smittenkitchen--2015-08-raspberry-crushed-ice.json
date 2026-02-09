@@ -1,0 +1,139 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2015-08-raspberry-crushed-ice",
+  "ingredients": [
+    {
+      "raw": "And for the other side of the world:",
+      "expected": {
+        "item": "And for the other side of the world:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Six Months Ago: Fried Egg Salad and Caramelized Onion and Gruyere Biscuits",
+      "expected": {
+        "item": "Months Ago: Fried Egg Salad and Caramelized Onion and Gruyere Biscuits",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "1.5 Years Ago: Warm Lentil and Potato Salad and Homemade Dulce de Leche",
+      "expected": {
+        "item": "Years Ago: Warm Lentil and Potato Salad and Homemade Dulce de Leche",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2.5 Years Ago: Potato Chip Cookies and Cheddar Beer and Mustard Pull-Apart Bread",
+      "expected": {
+        "item": "Years Ago: Potato Chip Cookies and Cheddar Beer and Mustard Pull-Apart Bread",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "3.5 Years Ago: Pasta and White Beans with Garlic-Rosemary Oil and Egg Salad with Pickled Celery and Coarse Dijon",
+      "expected": {
+        "item": "Years Ago: Pasta and White Beans with Garlic-Rosemary Oil and Egg Salad with Pickled Celery and Coarse Dijon",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "237",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 cup granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 cups fresh raspberries",
+      "expected": {
+        "item": "fresh raspberries",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    }
+  ]
+}

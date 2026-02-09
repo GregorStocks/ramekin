@@ -1,0 +1,8 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/smittenkitchen/baked_kale_chips.html",
+  "source_url": "https://smittenkitchen.com/2010/03/baked-kale-chips/",
+  "expected": {
+    "title": "Baked Kale Chips",
+    "ingredients_raw": "1 bunch (about 6 ounces) kale (I used Lacinato or \u201cDinosaur\u201d Kale but I understand that the curlier stuff works, too, possibly even better)\n1 tablespoon olive oil\nSea salt, to taste"
+  }
+}

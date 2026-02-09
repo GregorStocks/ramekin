@@ -1,0 +1,306 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2008-02-pear-and-almond-tart",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups (190 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "190",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup (60 grams) confectioner’s sugar",
+      "expected": {
+        "item": "confectioner’s sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon (1 to 2 grams) table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1 to 2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 stick plus 1 tablespoon (9 tablespoons, 4 1/2 ounces or 130 grams) very cold (or frozen) unsalted butter, cut into small pieces",
+      "expected": {
+        "item": "very cold unsalted butter, cut into small pieces",
+        "measurements": [
+          {
+            "amount": "1 stick plus 1 tablespoon",
+            "unit": null
+          },
+          {
+            "amount": "9",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "4.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "130",
+            "unit": "g"
+          }
+        ],
+        "note": "or frozen",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 large egg yolk",
+      "expected": {
+        "item": "egg yolk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Pears",
+      "expected": {
+        "item": "Pears",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 cups (950 ml) water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "950",
+            "unit": "ml"
+          },
+          {
+            "amount": "948",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 1/4 cups (225 grams) sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons (20 ml) fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "20",
+            "unit": "ml"
+          },
+          {
+            "amount": "23",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "3 medium-size firm but ripe Bosc pears, peeled (each about 7 ounces or 200 grams)",
+      "expected": {
+        "item": "medium-size firm but ripe Bosc pears",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Almond Filling",
+      "expected": {
+        "item": "Almond Filling",
+        "measurements": [],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "2/3 cup (75 grams) blanched slivered almonds",
+      "expected": {
+        "item": "blanched slivered almonds",
+        "measurements": [
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          },
+          {
+            "amount": "75",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1 tablespoon (10 grams) all purpose flour",
+      "expected": {
+        "item": "all purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "7 tablespoons (90 grams) sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "90",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "6 tablespoons (3 ounces or 85 grams) unsalted butter, room temperature",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon almond extract or 2 teaspoons (10 ml) brandy (optional)",
+      "expected": {
+        "item": "almond extract or 2 teaspoons brandy",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "ml"
+          }
+        ],
+        "note": "optional",
+        "category": "Baking"
+      }
+    }
+  ]
+}

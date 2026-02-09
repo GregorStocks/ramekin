@@ -1,0 +1,130 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-04-tabula-beana",
+  "ingredients": [
+    {
+      "raw": "2 15-ounce cans black beans, drained and well-rinsed",
+      "expected": {
+        "item": "black beans",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "15-ounce cans"
+          }
+        ],
+        "note": "drained and well-rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "4 bell peppers, a mix of colors, chopped into a small dice",
+      "expected": {
+        "item": "bell peppers, a mix of colors",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "chopped into a small dice",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 super-large or 1 medium white onion, chopped into a small dice",
+      "expected": {
+        "item": "super-large or 1 medium white onion",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": null
+          }
+        ],
+        "note": "chopped into a small dice",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Juice of one lime",
+      "expected": {
+        "item": "Juice of one lime",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "3 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 fresh chile, very thinly sliced or finely chopped or hot sauce, to taste",
+      "expected": {
+        "item": "fresh chile, very thinly sliced or finely chopped or hot sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "to taste",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "Optional: If you’re the kind of person who loves cilantro, it’s a great match for this salad.",
+      "expected": {
+        "item": "If you’re the kind of person who loves cilantro, it’s a great match for this salad.",
+        "measurements": [],
+        "note": "optional",
+        "category": "Produce"
+      }
+    }
+  ]
+}

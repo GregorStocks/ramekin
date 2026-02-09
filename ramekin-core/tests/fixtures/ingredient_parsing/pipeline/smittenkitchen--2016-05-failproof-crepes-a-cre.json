@@ -1,0 +1,167 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2016-05-failproof-crepes-a-cre",
+  "ingredients": [
+    {
+      "raw": "And for the other side of the world:",
+      "expected": {
+        "item": "And for the other side of the world:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Six Months Ago: Chocolate Peanut and Pretzel Brittle",
+      "expected": {
+        "item": "Months Ago: Chocolate Peanut and Pretzel Brittle",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "1.5 Years Ago: Smoked Whitefish Dip with Horseradish",
+      "expected": {
+        "item": "Years Ago: Smoked Whitefish Dip with Horseradish",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "2.5 Years Ago: Spinach and Egg Pizzettes",
+      "expected": {
+        "item": "Years Ago: Spinach and Egg Pizzettes",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3.5 Years Ago: Apple Cider Caramels",
+      "expected": {
+        "item": "Years Ago: Apple Cider Caramels",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4.5 Years Ago: Homesick Texan Carnitas",
+      "expected": {
+        "item": "Years Ago: Homesick Texan Carnitas",
+        "measurements": [
+          {
+            "amount": "4.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3 tablespoons (45 grams) unsalted butter, plus more for buttering pan",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for buttering pan",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/4 cup (295 ml) milk (and sometimes a splash more)",
+      "expected": {
+        "item": "milk (and sometimes a splash more)",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "295",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup (125 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Two pinches of salt",
+      "expected": {
+        "item": "salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}
