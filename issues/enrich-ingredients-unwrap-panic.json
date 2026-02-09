@@ -1,0 +1,10 @@
+{
+  "title": "enrich_ingredients can panic on serde round-trip",
+  "description": "server/src/api/enrich.rs:25-28 does serde_json::to_value(&ing).unwrap() then serde_json::from_value(...).unwrap() to convert between Ingredient and ParsedIngredient. If the types diverge (field added to one but not the other), this panics in a user-facing API handler. Should propagate the error and return a 500.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": ["server"],
+  "created_at": "2026-02-09T07:06:55.000000+00:00",
+  "updated_at": "2026-02-09T07:06:55.000000+00:00"
+}
