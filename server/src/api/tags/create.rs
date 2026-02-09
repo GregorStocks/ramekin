@@ -5,6 +5,7 @@ use crate::get_conn;
 use crate::models::NewUserTag;
 use crate::schema::user_tags;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
+use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
@@ -56,16 +57,44 @@ pub async fn create_tag(
 
     let mut conn = get_conn!(pool);
 
-    // Check if tag already exists (case-insensitive due to CITEXT)
-    let existing: Option<Uuid> = user_tags::table
+    // Check if tag already exists (including soft-deleted)
+    let existing: Option<(Uuid, String, Option<DateTime<Utc>>)> = user_tags::table
         .filter(user_tags::user_id.eq(user.id))
         .filter(user_tags::name.eq(name))
-        .select(user_tags::id)
+        .select((user_tags::id, user_tags::name, user_tags::deleted_at))
         .first(&mut conn)
         .optional()
         .unwrap_or(None);
 
-    if existing.is_some() {
+    if let Some((id, existing_name, deleted_at)) = existing {
+        if deleted_at.is_some() {
+            // Revive the soft-deleted tag
+            let result = diesel::update(user_tags::table.filter(user_tags::id.eq(id)))
+                .set(user_tags::deleted_at.eq(None::<DateTime<Utc>>))
+                .execute(&mut conn);
+
+            return match result {
+                Ok(_) => (
+                    StatusCode::CREATED,
+                    Json(CreateTagResponse {
+                        id,
+                        name: existing_name,
+                    }),
+                )
+                    .into_response(),
+                Err(e) => {
+                    tracing::error!("Failed to revive tag: {}", e);
+                    (
+                        StatusCode::INTERNAL_SERVER_ERROR,
+                        Json(ErrorResponse {
+                            error: "Failed to create tag".to_string(),
+                        }),
+                    )
+                        .into_response()
+                }
+            };
+        }
+
         return (
             StatusCode::CONFLICT,
             Json(ErrorResponse {

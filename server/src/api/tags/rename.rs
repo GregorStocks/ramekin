@@ -65,10 +65,11 @@ pub async fn rename_tag(
 
     let mut conn = get_conn!(pool);
 
-    // Check if tag exists and belongs to user
+    // Check if tag exists, belongs to user, and is not deleted
     let existing_tag: Option<(Uuid, String)> = user_tags::table
         .filter(user_tags::id.eq(id))
         .filter(user_tags::user_id.eq(user.id))
+        .filter(user_tags::deleted_at.is_null())
         .select((user_tags::id, user_tags::name))
         .first(&mut conn)
         .optional()
@@ -114,11 +115,12 @@ pub async fn rename_tag(
         };
     }
 
-    // Check if another tag with the new name already exists (case-insensitive)
+    // Check if another non-deleted tag with the new name already exists (case-insensitive)
     let duplicate: Option<Uuid> = user_tags::table
         .filter(user_tags::user_id.eq(user.id))
         .filter(user_tags::name.eq(new_name))
         .filter(user_tags::id.ne(id))
+        .filter(user_tags::deleted_at.is_null())
         .select(user_tags::id)
         .first(&mut conn)
         .optional()

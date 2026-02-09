@@ -301,6 +301,7 @@ pub async fn list_recipes(
             .inner_join(user_tags::table)
             .filter(recipe_version_tags::recipe_version_id.eq(recipe_versions::id))
             .filter(user_tags::name.eq(tag))
+            .filter(user_tags::deleted_at.is_null())
             .select(recipe_version_tags::recipe_version_id);
         query = query.filter(diesel::dsl::exists(tag_subquery));
     }

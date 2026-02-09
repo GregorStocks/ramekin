@@ -103,6 +103,7 @@ fn fetch_user_tags(pool: &DbPool, user_id: Uuid) -> Result<Vec<String>, ScrapeEr
 
     let tags: Vec<String> = user_tags::table
         .filter(user_tags::user_id.eq(user_id))
+        .filter(user_tags::deleted_at.is_null())
         .select(user_tags::name)
         .order(user_tags::name.asc())
         .load(&mut conn)

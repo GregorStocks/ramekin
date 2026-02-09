@@ -28,6 +28,7 @@ pub fn tags_subquery() -> SqlLiteral<Array<Text>> {
         "(SELECT COALESCE(array_agg(ut.name ORDER BY ut.name), ARRAY[]::text[]) \
          FROM recipe_version_tags rvt \
          JOIN user_tags ut ON ut.id = rvt.tag_id \
-         WHERE rvt.recipe_version_id = recipe_versions.id)",
+         WHERE rvt.recipe_version_id = recipe_versions.id \
+         AND ut.deleted_at IS NULL)",
     )
 }
