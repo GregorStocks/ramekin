@@ -35,7 +35,9 @@ use ramekin_core::ingredient_parser::{
     parse_ingredient, parse_ingredients, Measurement, ParsedIngredient,
 };
 use ramekin_core::metric_weights::{add_metric_weight_alternative, MetricConversionStats};
-use ramekin_core::volume_to_weight::{add_volume_to_weight_alternative, VolumeConversionStats};
+use ramekin_core::volume_to_weight::{
+    add_volume_to_weight_alternative, apply_ingredient_rewrites, VolumeConversionStats,
+};
 use serde::Deserialize;
 use std::fs;
 use std::path::PathBuf;
@@ -119,7 +121,8 @@ fn run_pipeline(raw: &str) -> Expected {
     let parsed = parse_ingredient(raw);
     let mut weight_stats = MetricConversionStats::default();
     let mut volume_stats = VolumeConversionStats::default();
-    let result = add_metric_weight_alternative(parsed, &mut weight_stats);
+    let result = apply_ingredient_rewrites(parsed);
+    let result = add_metric_weight_alternative(result, &mut weight_stats);
     let result = add_volume_to_weight_alternative(result, &mut volume_stats);
     let result = result.normalize_amounts();
     Expected::from(result)
@@ -135,7 +138,8 @@ fn run_pipeline_batch(raw_lines: &[String]) -> Vec<Expected> {
         .map(|ing| {
             let mut weight_stats = MetricConversionStats::default();
             let mut volume_stats = VolumeConversionStats::default();
-            let result = add_metric_weight_alternative(ing, &mut weight_stats);
+            let result = apply_ingredient_rewrites(ing);
+            let result = add_metric_weight_alternative(result, &mut weight_stats);
             let result = add_volume_to_weight_alternative(result, &mut volume_stats);
             let result = result.normalize_amounts();
             Expected::from(result)

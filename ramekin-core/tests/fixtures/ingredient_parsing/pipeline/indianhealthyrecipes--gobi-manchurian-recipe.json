@@ -96,11 +96,15 @@
     {
       "raw": "¼ teaspoon salt ((adjust to taste))",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
           }
         ],
         "note": "adjust to taste",
@@ -308,7 +312,7 @@
     {
       "raw": "salt (as needed)",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [],
         "note": "as needed",
         "category": "Spices & Seasonings"
@@ -345,11 +349,15 @@
     {
       "raw": "⅛ teaspoon salt ((adjust to taste))",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.4",
+            "unit": "g"
           }
         ],
         "note": "adjust to taste",

@@ -628,7 +628,7 @@
       "name": "leading_paren_modifier",
       "raw": "(heaping) salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": null,
@@ -740,7 +740,7 @@
     },
     {
       "name": "each_quantity_split_nbsp",
-      "raw": "1 tablespoon\u00a0each\u00a0dried oregano and cumin",
+      "raw": "1 tablespoon each dried oregano and cumin",
       "expected": {
         "item": "dried oregano and cumin",
         "measurements": [

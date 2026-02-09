@@ -23,7 +23,7 @@
     {
       "raw": "Two good pinches of salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "2",
@@ -127,7 +127,7 @@
     {
       "raw": "One good pinch of salt",
       "expected": {
-        "item": "salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",

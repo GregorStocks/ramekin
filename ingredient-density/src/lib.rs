@@ -24,6 +24,7 @@
 mod density_lookup;
 
 pub use density_lookup::{
-    find_density, is_volume_unit, volume_to_cups, CUPS_PER_FL_OZ, CUPS_PER_GALLON, CUPS_PER_L,
-    CUPS_PER_ML, CUPS_PER_PINT, CUPS_PER_QUART, CUPS_PER_TBSP, CUPS_PER_TSP,
+    find_density, is_volume_unit, rewrite_ingredient, volume_to_cups, CUPS_PER_FL_OZ,
+    CUPS_PER_GALLON, CUPS_PER_L, CUPS_PER_ML, CUPS_PER_PINT, CUPS_PER_QUART, CUPS_PER_TBSP,
+    CUPS_PER_TSP,
 };
