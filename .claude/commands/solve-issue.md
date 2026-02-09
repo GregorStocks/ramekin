@@ -4,18 +4,17 @@ Pick and solve exactly **one** issue, then create a PR.
 
 ## Workflow
 
-1. List open issues:
+1. List open issues, pick **one** (preferring higher-priority / lower number), and **ask the user to confirm your choice before proceeding** (see criteria below):
    ```bash
    for f in issues/*.json; do echo "$(basename "$f" .json): $(jq -r '[.priority, .title] | @tsv' "$f")"; done | sort -t: -k2 -n
    ```
-2. Pick **one** issue, preferring higher-priority (lower number) issues first (see criteria below)
-3. Implement the fix
-4. Update tests to expect the correct behavior
-5. Run `make test` and `make lint` to verify
-6. Run `make pipeline` and spot-check the diff for regressions
-7. Delete the issue file (e.g., `rm issues/the-issue-name.json`)
-8. **Document ALL issues you discover** during exploration, even if you're only fixing one. Future Claudes benefit from this documentation!
-9. Create a PR, then stop - leave remaining issues for the next Claude
+2. Implement the fix
+3. Update tests to expect the correct behavior
+4. Run `make test` and `make lint` to verify
+5. Run `make pipeline` and spot-check the diff for regressions
+6. Delete the issue file (e.g., `rm issues/the-issue-name.json`)
+7. **Document ALL issues you discover** during exploration, even if you're only fixing one. Future Claudes benefit from this documentation!
+8. Create a PR, then stop - leave remaining issues for the next Claude
 
 ## Is It Worth Fixing?
 
