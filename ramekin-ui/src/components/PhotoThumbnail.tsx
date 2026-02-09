@@ -10,14 +10,21 @@ interface PhotoThumbnailProps {
 
 export default function PhotoThumbnail(props: PhotoThumbnailProps) {
   const [src, setSrc] = createSignal<string | null>(null);
+  const [error, setError] = createSignal(false);
 
   onMount(async () => {
-    const response = await fetch(`/api/photos/${props.photoId}`, {
-      headers: { Authorization: `Bearer ${props.token}` },
-    });
-    if (response.ok) {
-      const blob = await response.blob();
-      setSrc(URL.createObjectURL(blob));
+    try {
+      const response = await fetch(`/api/photos/${props.photoId}`, {
+        headers: { Authorization: `Bearer ${props.token}` },
+      });
+      if (response.ok) {
+        const blob = await response.blob();
+        setSrc(URL.createObjectURL(blob));
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
     }
   });
 
@@ -28,7 +35,14 @@ export default function PhotoThumbnail(props: PhotoThumbnailProps) {
 
   return (
     <div class={props.class ?? "photo-thumbnail"}>
-      <Show when={src()} fallback={<div class="photo-loading">Loading...</div>}>
+      <Show
+        when={src()}
+        fallback={
+          <div class="photo-loading">
+            {error() ? "Failed to load" : "Loading..."}
+          </div>
+        }
+      >
         <img src={src()!} alt={props.alt ?? "Recipe photo"} />
       </Show>
       <Show when={props.onRemove}>
