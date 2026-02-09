@@ -77,6 +77,7 @@ export default function MealPlanPage() {
     createSignal<MealTypeValue | null>(null);
   const [recipes, setRecipes] = createSignal<RecipeSummary[]>([]);
   const [recipesLoading, setRecipesLoading] = createSignal(false);
+  const [recipesError, setRecipesError] = createSignal<string | null>(null);
   const [searchQuery, setSearchQuery] = createSignal("");
 
   // Delete confirmation
@@ -147,20 +148,23 @@ export default function MealPlanPage() {
     setPickerDate(date);
     setPickerMealType(mealType);
     setSearchQuery("");
+    setRecipesError(null);
     setPickerOpen(true);
     loadRecipes();
   };
 
   const loadRecipes = async () => {
     setRecipesLoading(true);
+    setRecipesError(null);
     try {
       const response = await getRecipesApi().listRecipes({
         limit: 50,
         q: searchQuery() || undefined,
       });
       setRecipes(response.recipes);
-    } catch {
-      // Ignore
+    } catch (err) {
+      const message = await extractApiError(err, "Failed to load recipes");
+      setRecipesError(message);
     } finally {
       setRecipesLoading(false);
     }
@@ -345,7 +349,13 @@ export default function MealPlanPage() {
           <p class="loading-text">Loading recipes...</p>
         </Show>
 
-        <Show when={!recipesLoading() && recipes().length === 0}>
+        <Show when={recipesError()}>
+          <div class="error-message">{recipesError()}</div>
+        </Show>
+
+        <Show
+          when={!recipesLoading() && !recipesError() && recipes().length === 0}
+        >
           <p class="empty-state">No recipes found.</p>
         </Show>
 

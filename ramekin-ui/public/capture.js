@@ -8,10 +8,6 @@
   var origin = new URL(src).origin;
   var apiOrigin = decodeURIComponent(params.get("api") || origin);
 
-  console.log("[Ramekin] Bookmarklet loaded");
-  console.log("[Ramekin] Script origin:", origin);
-  console.log("[Ramekin] API origin:", apiOrigin);
-
   if (!token) {
     console.error("[Ramekin] No token in bookmarklet URL");
     alert("Ramekin: Invalid bookmarklet. Please get a new one from your Ramekin account.");
