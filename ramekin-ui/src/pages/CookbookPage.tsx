@@ -179,16 +179,20 @@ function PhotoThumbnail(props: {
   const [src, setSrc] = createSignal<string | null>(null);
 
   onMount(async () => {
-    const sizeParam = props.size ? `?size=${props.size}` : "";
-    const response = await fetch(
-      `/api/photos/${props.photoId}/thumbnail${sizeParam}`,
-      {
-        headers: { Authorization: `Bearer ${props.token}` },
-      },
-    );
-    if (response.ok) {
-      const blob = await response.blob();
-      setSrc(URL.createObjectURL(blob));
+    try {
+      const sizeParam = props.size ? `?size=${props.size}` : "";
+      const response = await fetch(
+        `/api/photos/${props.photoId}/thumbnail${sizeParam}`,
+        {
+          headers: { Authorization: `Bearer ${props.token}` },
+        },
+      );
+      if (response.ok) {
+        const blob = await response.blob();
+        setSrc(URL.createObjectURL(blob));
+      }
+    } catch {
+      // Fetch failed; src stays null so the placeholder emoji shows
     }
   });
 

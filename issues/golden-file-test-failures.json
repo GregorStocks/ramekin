@@ -1,0 +1,13 @@
+{
+  "title": "3 ingredient parsing golden file test failures",
+  "description": "test_ingredient_parsing_golden_files has 3 failures across 5670 tests. The failing recipes are: pipeline/japanesecooking101--hayashi-rice-recipe, pipeline/tasty-co--recipe-slow-cooker-ribs, and pipeline/whiteonricecouple--lamingtons-recipe. Either the golden files need updating or the parser has regressed for these cases.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "parsing",
+    "tests"
+  ],
+  "created_at": "2026-02-09T09:30:00.000000+00:00",
+  "updated_at": "2026-02-09T09:30:00.000000+00:00"
+}
