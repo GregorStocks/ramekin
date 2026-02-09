@@ -10,7 +10,10 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { ImportRecipeRequest, ImportRecipeResponse } from '../models/index';
+import type { ImportFromPhotosRequest, ImportFromPhotosResponse, ImportRecipeRequest, ImportRecipeResponse } from '../models/index';
+export interface ImportFromPhotosOperationRequest {
+    importFromPhotosRequest: ImportFromPhotosRequest;
+}
 export interface ImportRecipeOperationRequest {
     importRecipeRequest: ImportRecipeRequest;
 }
@@ -18,6 +21,12 @@ export interface ImportRecipeOperationRequest {
  *
  */
 export declare class ImportApi extends runtime.BaseAPI {
+    /**
+     */
+    importFromPhotosRaw(requestParameters: ImportFromPhotosOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ImportFromPhotosResponse>>;
+    /**
+     */
+    importFromPhotos(requestParameters: ImportFromPhotosOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ImportFromPhotosResponse>;
     /**
      */
     importRecipeRaw(requestParameters: ImportRecipeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ImportRecipeResponse>>;

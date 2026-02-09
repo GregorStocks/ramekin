@@ -8,7 +8,7 @@ log_configuration:
 
 processes:
   server:
-    command: cargo run --release -q
+    command: ${SERVER_CMD:-cargo run --release -q}
     readiness_probe:
       http_get:
         host: localhost

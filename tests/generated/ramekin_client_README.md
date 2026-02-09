@@ -67,6 +67,7 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**signup**](ramekin_client/docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
 *EnrichApi* | [**custom_enrich_recipe**](ramekin_client/docs/EnrichApi.md#custom_enrich_recipe) | **POST** /api/enrich/custom | Apply a custom AI modification to a recipe
 *EnrichApi* | [**enrich_recipe**](ramekin_client/docs/EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe
+*ImportApi* | [**import_from_photos**](ramekin_client/docs/ImportApi.md#import_from_photos) | **POST** /api/import/photos | 
 *ImportApi* | [**import_recipe**](ramekin_client/docs/ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
 *MealPlansApi* | [**create_meal_plan**](ramekin_client/docs/MealPlansApi.md#create_meal_plan) | **POST** /api/meal-plans | 
 *MealPlansApi* | [**delete_meal_plan**](ramekin_client/docs/MealPlansApi.md#delete_meal_plan) | **DELETE** /api/meal-plans/{id} | 
@@ -121,6 +122,8 @@ Class | Method | HTTP request | Description
  - [Direction](ramekin_client/docs/Direction.md)
  - [ErrorResponse](ramekin_client/docs/ErrorResponse.md)
  - [ImportExtractionMethod](ramekin_client/docs/ImportExtractionMethod.md)
+ - [ImportFromPhotosRequest](ramekin_client/docs/ImportFromPhotosRequest.md)
+ - [ImportFromPhotosResponse](ramekin_client/docs/ImportFromPhotosResponse.md)
  - [ImportRawRecipe](ramekin_client/docs/ImportRawRecipe.md)
  - [ImportRecipeRequest](ramekin_client/docs/ImportRecipeRequest.md)
  - [ImportRecipeResponse](ramekin_client/docs/ImportRecipeResponse.md)

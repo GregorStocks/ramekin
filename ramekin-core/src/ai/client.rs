@@ -3,8 +3,10 @@
 use async_openai::{
     config::OpenAIConfig,
     types::chat::{
-        ChatCompletionRequestMessage, ChatCompletionRequestSystemMessageArgs,
-        ChatCompletionRequestUserMessageArgs, CreateChatCompletionRequestArgs, ResponseFormat,
+        ChatCompletionRequestMessage, ChatCompletionRequestMessageContentPartImage,
+        ChatCompletionRequestMessageContentPartText, ChatCompletionRequestSystemMessageArgs,
+        ChatCompletionRequestUserMessageContent, ChatCompletionRequestUserMessageContentPart,
+        CreateChatCompletionRequestArgs, ImageDetail, ImageUrl, ResponseFormat,
     },
     Client,
 };
@@ -105,11 +107,42 @@ impl CachingAiClient {
                 .build()
                 .map(Into::into)
                 .map_err(|e| AiError::Api(format!("Failed to build system message: {}", e))),
-            Role::User => ChatCompletionRequestUserMessageArgs::default()
-                .content(msg.content.clone())
-                .build()
-                .map(Into::into)
-                .map_err(|e| AiError::Api(format!("Failed to build user message: {}", e))),
+            Role::User => {
+                use async_openai::types::chat::ChatCompletionRequestUserMessage;
+
+                let content: ChatCompletionRequestUserMessageContent = if msg.images.is_empty() {
+                    msg.content.clone().into()
+                } else {
+                    // Vision message: build content array with text + image parts
+                    let mut parts: Vec<ChatCompletionRequestUserMessageContentPart> = Vec::new();
+
+                    parts.push(
+                        ChatCompletionRequestMessageContentPartText {
+                            text: msg.content.clone(),
+                        }
+                        .into(),
+                    );
+
+                    for image in &msg.images {
+                        let data_url =
+                            format!("data:{};base64,{}", image.content_type, image.base64);
+                        parts.push(
+                            ChatCompletionRequestMessageContentPartImage {
+                                image_url: ImageUrl {
+                                    url: data_url,
+                                    detail: Some(ImageDetail::High),
+                                },
+                            }
+                            .into(),
+                        );
+                    }
+
+                    parts.into()
+                };
+
+                let user_msg = ChatCompletionRequestUserMessage::from(content);
+                Ok(user_msg.into())
+            }
             Role::Assistant => {
                 use async_openai::types::chat::ChatCompletionRequestAssistantMessageArgs;
                 ChatCompletionRequestAssistantMessageArgs::default()

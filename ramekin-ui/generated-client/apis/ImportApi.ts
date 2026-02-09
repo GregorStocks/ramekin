@@ -16,17 +16,27 @@
 import * as runtime from '../runtime';
 import type {
   ErrorResponse,
+  ImportFromPhotosRequest,
+  ImportFromPhotosResponse,
   ImportRecipeRequest,
   ImportRecipeResponse,
 } from '../models/index';
 import {
     ErrorResponseFromJSON,
     ErrorResponseToJSON,
+    ImportFromPhotosRequestFromJSON,
+    ImportFromPhotosRequestToJSON,
+    ImportFromPhotosResponseFromJSON,
+    ImportFromPhotosResponseToJSON,
     ImportRecipeRequestFromJSON,
     ImportRecipeRequestToJSON,
     ImportRecipeResponseFromJSON,
     ImportRecipeResponseToJSON,
 } from '../models/index';
+
+export interface ImportFromPhotosOperationRequest {
+    importFromPhotosRequest: ImportFromPhotosRequest;
+}
 
 export interface ImportRecipeOperationRequest {
     importRecipeRequest: ImportRecipeRequest;
@@ -36,6 +46,51 @@ export interface ImportRecipeOperationRequest {
  * 
  */
 export class ImportApi extends runtime.BaseAPI {
+
+    /**
+     */
+    async importFromPhotosRaw(requestParameters: ImportFromPhotosOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ImportFromPhotosResponse>> {
+        if (requestParameters['importFromPhotosRequest'] == null) {
+            throw new runtime.RequiredError(
+                'importFromPhotosRequest',
+                'Required parameter "importFromPhotosRequest" was null or undefined when calling importFromPhotos().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/api/import/photos`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ImportFromPhotosRequestToJSON(requestParameters['importFromPhotosRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ImportFromPhotosResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async importFromPhotos(requestParameters: ImportFromPhotosOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ImportFromPhotosResponse> {
+        const response = await this.importFromPhotosRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
 
     /**
      */

@@ -30,6 +30,7 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**signup**](docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
 *EnrichApi* | [**custom_enrich_recipe**](docs/EnrichApi.md#custom_enrich_recipe) | **POST** /api/enrich/custom | Apply a custom AI modification to a recipe
 *EnrichApi* | [**enrich_recipe**](docs/EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe
+*ImportApi* | [**import_from_photos**](docs/ImportApi.md#import_from_photos) | **POST** /api/import/photos | 
 *ImportApi* | [**import_recipe**](docs/ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
 *MealPlansApi* | [**create_meal_plan**](docs/MealPlansApi.md#create_meal_plan) | **POST** /api/meal-plans | 
 *MealPlansApi* | [**delete_meal_plan**](docs/MealPlansApi.md#delete_meal_plan) | **DELETE** /api/meal-plans/{id} | 
@@ -84,6 +85,8 @@ Class | Method | HTTP request | Description
  - [Direction](docs/Direction.md)
  - [ErrorResponse](docs/ErrorResponse.md)
  - [ImportExtractionMethod](docs/ImportExtractionMethod.md)
+ - [ImportFromPhotosRequest](docs/ImportFromPhotosRequest.md)
+ - [ImportFromPhotosResponse](docs/ImportFromPhotosResponse.md)
  - [ImportRawRecipe](docs/ImportRawRecipe.md)
  - [ImportRecipeRequest](docs/ImportRecipeRequest.md)
  - [ImportRecipeResponse](docs/ImportRecipeResponse.md)

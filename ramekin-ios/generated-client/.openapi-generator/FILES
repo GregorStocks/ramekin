@@ -39,6 +39,8 @@ RamekinClient/Classes/OpenAPIs/Models/CreateTagResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/CustomEnrichRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/Direction.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportExtractionMethod.swift
+RamekinClient/Classes/OpenAPIs/Models/ImportFromPhotosRequest.swift
+RamekinClient/Classes/OpenAPIs/Models/ImportFromPhotosResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportRawRecipe.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportRecipeRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportRecipeResponse.swift
@@ -105,6 +107,8 @@ docs/Direction.md
 docs/EnrichAPI.md
 docs/ImportAPI.md
 docs/ImportExtractionMethod.md
+docs/ImportFromPhotosRequest.md
+docs/ImportFromPhotosResponse.md
 docs/ImportRawRecipe.md
 docs/ImportRecipeRequest.md
 docs/ImportRecipeResponse.md

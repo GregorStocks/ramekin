@@ -215,6 +215,61 @@
         ]
       }
     },
+    "/api/import/photos": {
+      "post": {
+        "tags": [
+          "import"
+        ],
+        "operationId": "import_from_photos",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportFromPhotosRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Photo import job created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImportFromPhotosResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/import/recipe": {
       "post": {
         "tags": [
@@ -2314,8 +2369,43 @@
         "enum": [
           "json_ld",
           "microdata",
-          "paprika"
+          "paprika",
+          "photo_upload"
         ]
+      },
+      "ImportFromPhotosRequest": {
+        "type": "object",
+        "required": [
+          "photo_ids"
+        ],
+        "properties": {
+          "photo_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Photo IDs that have already been uploaded via POST /api/photos"
+          }
+        }
+      },
+      "ImportFromPhotosResponse": {
+        "type": "object",
+        "required": [
+          "job_id",
+          "status"
+        ],
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The created job ID"
+          },
+          "status": {
+            "type": "string",
+            "description": "Current job status"
+          }
+        }
       },
       "ImportRawRecipe": {
         "type": "object",

@@ -3,7 +3,7 @@ pub mod steps;
 
 use crate::db::DbPool;
 use crate::models::{NewScrapeJob, NewStepOutput, ScrapeJob, StepOutput};
-use crate::schema::{scrape_jobs, step_outputs, user_tags};
+use crate::schema::{photos, scrape_jobs, step_outputs, user_tags};
 use chrono::Utc;
 use diesel::prelude::*;
 use ramekin_core::ai::{AiClient, CachingAiClient};
@@ -305,6 +305,197 @@ pub fn spawn_import_job(pool: Arc<DbPool>, job_id: Uuid) {
         }
         .instrument(span),
     );
+}
+
+/// Create a pending photo import job (no step pre-population yet).
+pub fn create_pending_photo_job(pool: &DbPool, user_id: Uuid) -> Result<ScrapeJob, ScrapeError> {
+    let mut conn = pool
+        .get()
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    let new_job = NewScrapeJob { user_id, url: None };
+
+    diesel::insert_into(scrape_jobs::table)
+        .values(&new_job)
+        .get_result::<ScrapeJob>(&mut conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))
+}
+
+/// Spawn a photo import job with proper OpenTelemetry context propagation.
+pub fn spawn_photo_import_job(
+    pool: Arc<DbPool>,
+    job_id: Uuid,
+    user_id: Uuid,
+    photo_ids: Vec<Uuid>,
+) {
+    let span = tracing::info_span!(
+        "photo_import_job",
+        otel.name = "photo_import_job",
+        job.id = %job_id,
+        job.operation = "photo_import",
+        job.status = tracing::field::Empty,
+        job.error = tracing::field::Empty,
+        photos.count = photo_ids.len(),
+    );
+
+    tokio::spawn(
+        async move {
+            run_photo_import_job(pool, job_id, user_id, photo_ids).await;
+        }
+        .instrument(span),
+    );
+}
+
+/// Run a photo import job: extract recipe from photos, then run pipeline.
+async fn run_photo_import_job(
+    pool: Arc<DbPool>,
+    job_id: Uuid,
+    user_id: Uuid,
+    photo_ids: Vec<Uuid>,
+) {
+    // Update status to "scraping" (extraction phase)
+    if let Err(e) = update_status_and_step(&pool, job_id, STATUS_SCRAPING, Some("photo_extract")) {
+        tracing::error!("Failed to update job status: {}", e);
+        let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+        return;
+    }
+
+    // Step 1: Fetch photo bytes from database
+    let images = match fetch_photo_images(&pool, user_id, &photo_ids) {
+        Ok(imgs) => imgs,
+        Err(e) => {
+            tracing::error!("Failed to fetch photos: {}", e);
+            let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e);
+            return;
+        }
+    };
+
+    // Step 2: Call vision AI to extract recipe
+    let ai_client: Arc<dyn ramekin_core::ai::AiClient> =
+        match ramekin_core::ai::CachingAiClient::from_env() {
+            Ok(c) => Arc::new(c),
+            Err(e) => {
+                let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+                return;
+            }
+        };
+
+    let extract_result =
+        match ramekin_core::ai::extract_recipe_from_photos(ai_client.as_ref(), images).await {
+            Ok(r) => r,
+            Err(e) => {
+                tracing::error!("Photo extraction failed: {}", e);
+                let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+                return;
+            }
+        };
+
+    tracing::info!(
+        "Extracted recipe '{}' from photos (cached={})",
+        extract_result.raw_recipe.title,
+        extract_result.cached
+    );
+
+    // Step 3: Pre-populate step outputs and continue pipeline
+    // Store extract_recipe output
+    let extract_output = ExtractRecipeOutput {
+        raw_recipe: extract_result.raw_recipe.clone(),
+        method_used: ExtractionMethod::PhotoUpload,
+        all_attempts: vec![],
+    };
+    let extract_json = match serde_json::to_value(&extract_output) {
+        Ok(j) => j,
+        Err(e) => {
+            let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+            return;
+        }
+    };
+    if let Err(e) = save_step_output(&pool, job_id, ExtractRecipeStep::NAME, extract_json) {
+        let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+        return;
+    }
+
+    // Store fetch_images output (photos already uploaded)
+    let images_output = FetchImagesOutput {
+        photo_ids: photo_ids.clone(),
+        failed_urls: vec![],
+    };
+    let images_json = match serde_json::to_value(&images_output) {
+        Ok(j) => j,
+        Err(e) => {
+            let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+            return;
+        }
+    };
+    if let Err(e) = save_step_output(&pool, job_id, FetchImagesStepMeta::NAME, images_json) {
+        let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+        return;
+    }
+
+    // Update job to start from parse_ingredients
+    {
+        let mut conn = match pool.get() {
+            Ok(c) => c,
+            Err(e) => {
+                let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+                return;
+            }
+        };
+        if let Err(e) = diesel::update(scrape_jobs::table.find(job_id))
+            .set((
+                scrape_jobs::status.eq(STATUS_PARSING),
+                scrape_jobs::current_step.eq(Some(ParseIngredientsStep::NAME)),
+                scrape_jobs::updated_at.eq(Utc::now()),
+            ))
+            .execute(&mut conn)
+        {
+            let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+            return;
+        }
+    }
+
+    // Step 4: Run the rest of the pipeline
+    run_scrape_job(pool, job_id).await;
+}
+
+/// Fetch photo image data from the database for vision API.
+fn fetch_photo_images(
+    pool: &DbPool,
+    user_id: Uuid,
+    photo_ids: &[Uuid],
+) -> Result<Vec<ramekin_core::ai::ImageData>, String> {
+    use crate::models::Photo;
+    use base64::Engine;
+
+    let mut conn = pool.get().map_err(|e| e.to_string())?;
+
+    let photos_list: Vec<Photo> = photos::table
+        .filter(photos::id.eq_any(photo_ids))
+        .filter(photos::user_id.eq(user_id))
+        .filter(photos::deleted_at.is_null())
+        .load::<Photo>(&mut conn)
+        .map_err(|e| e.to_string())?;
+
+    if photos_list.len() != photo_ids.len() {
+        return Err("One or more photos not found".to_string());
+    }
+
+    let photos_by_id: std::collections::HashMap<Uuid, Photo> =
+        photos_list.into_iter().map(|photo| (photo.id, photo)).collect();
+
+    let mut ordered_images = Vec::with_capacity(photo_ids.len());
+    for photo_id in photo_ids {
+        let photo = photos_by_id
+            .get(photo_id)
+            .ok_or_else(|| "One or more photos not found".to_string())?;
+        let base64 = base64::engine::general_purpose::STANDARD.encode(&photo.data);
+        ordered_images.push(ramekin_core::ai::ImageData {
+            base64,
+            content_type: photo.content_type.clone(),
+        });
+    }
+
+    Ok(ordered_images)
 }
 
 /// Get a scrape job by ID.

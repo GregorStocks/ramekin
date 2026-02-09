@@ -16,6 +16,7 @@ pub enum ImportExtractionMethod {
     JsonLd,
     Microdata,
     Paprika,
+    PhotoUpload,
 }
 
 impl From<ImportExtractionMethod> for ExtractionMethod {
@@ -24,6 +25,7 @@ impl From<ImportExtractionMethod> for ExtractionMethod {
             ImportExtractionMethod::JsonLd => ExtractionMethod::JsonLd,
             ImportExtractionMethod::Microdata => ExtractionMethod::Microdata,
             ImportExtractionMethod::Paprika => ExtractionMethod::Paprika,
+            ImportExtractionMethod::PhotoUpload => ExtractionMethod::PhotoUpload,
         }
     }
 }

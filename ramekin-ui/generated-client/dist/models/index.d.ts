@@ -15,6 +15,8 @@ export * from './CustomEnrichRequest';
 export * from './Direction';
 export * from './ErrorResponse';
 export * from './ImportExtractionMethod';
+export * from './ImportFromPhotosRequest';
+export * from './ImportFromPhotosResponse';
 export * from './ImportRawRecipe';
 export * from './ImportRecipeRequest';
 export * from './ImportRecipeResponse';

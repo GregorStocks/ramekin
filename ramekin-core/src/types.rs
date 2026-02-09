@@ -106,6 +106,8 @@ pub enum ExtractionMethod {
     HtmlFallback,
     /// Imported from Paprika app
     Paprika,
+    /// Extracted from uploaded photos using vision AI
+    PhotoUpload,
 }
 
 /// Result of attempting a single extraction method
