@@ -10,7 +10,7 @@ interface PhotoThumbnailProps {
 
 export default function PhotoThumbnail(props: PhotoThumbnailProps) {
   const [src, setSrc] = createSignal<string | null>(null);
-  const [failed, setFailed] = createSignal(false);
+  const [error, setError] = createSignal(false);
 
   onMount(async () => {
     try {
@@ -21,10 +21,10 @@ export default function PhotoThumbnail(props: PhotoThumbnailProps) {
         const blob = await response.blob();
         setSrc(URL.createObjectURL(blob));
       } else {
-        setFailed(true);
+        setError(true);
       }
     } catch {
-      setFailed(true);
+      setError(true);
     }
   });
 
@@ -35,14 +35,15 @@ export default function PhotoThumbnail(props: PhotoThumbnailProps) {
 
   return (
     <div class={props.class ?? "photo-thumbnail"}>
-      <Show when={failed()}>
-        <div class="photo-error">Failed to load</div>
-      </Show>
-      <Show when={!failed() && src()}>
+      <Show
+        when={src()}
+        fallback={
+          <div class="photo-loading">
+            {error() ? "Failed to load" : "Loading..."}
+          </div>
+        }
+      >
         <img src={src()!} alt={props.alt ?? "Recipe photo"} />
-      </Show>
-      <Show when={!failed() && !src()}>
-        <div class="photo-loading">Loading...</div>
       </Show>
       <Show when={props.onRemove}>
         <button type="button" class="photo-remove" onClick={props.onRemove}>

@@ -63,6 +63,7 @@ pub async fn list_all_tags(
                 .and(recipes::deleted_at.is_null())),
         )
         .filter(user_tags::user_id.eq(user.id))
+        .filter(user_tags::deleted_at.is_null())
         .group_by((user_tags::id, user_tags::name, user_tags::created_at))
         .select((
             user_tags::id,

@@ -191,6 +191,7 @@ pub fn export_recipe_to_paprikarecipe(
     let tags: Vec<String> = recipe_version_tags::table
         .inner_join(user_tags::table)
         .filter(recipe_version_tags::recipe_version_id.eq(recipe.version.id))
+        .filter(user_tags::deleted_at.is_null())
         .select(user_tags::name)
         .load(conn)
         .unwrap_or_default();
