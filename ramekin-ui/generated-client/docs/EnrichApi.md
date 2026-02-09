@@ -77,6 +77,7 @@ example().catch(console.error);
 |-------------|-------------|------------------|
 | **200** | Modified recipe |  -  |
 | **401** | Unauthorized |  -  |
+| **500** | Internal server error |  -  |
 | **503** | AI service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
@@ -150,6 +151,7 @@ example().catch(console.error);
 |-------------|-------------|------------------|
 | **200** | Enriched recipe object |  -  |
 | **401** | Unauthorized |  -  |
+| **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
