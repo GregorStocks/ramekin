@@ -5,7 +5,7 @@
 
 use crate::ingredient_parser::{Measurement, ParsedIngredient};
 use crate::metric_weights::{format_grams, parse_amount};
-use ingredient_density::{find_density, is_volume_unit, volume_to_cups};
+use ingredient_density::{find_density, is_volume_unit, rewrite_ingredient, volume_to_cups};
 
 /// Statistics about volume-to-weight conversion.
 #[derive(Debug, Default, Clone, serde::Serialize, serde::Deserialize)]
@@ -106,6 +106,17 @@ fn convert_volume_to_grams(amount: &str, unit: &str, grams_per_cup: f64) -> Opti
     Some(format_grams(grams))
 }
 
+/// Apply ingredient name rewrites from curated rules.
+///
+/// Rewrites rename ingredient items to make assumptions visible
+/// (e.g. "salt" → "salt, presumably Diamond").
+pub fn apply_ingredient_rewrites(mut ingredient: ParsedIngredient) -> ParsedIngredient {
+    if let Some(rewritten) = rewrite_ingredient(&ingredient.item) {
+        ingredient.item = rewritten.to_string();
+    }
+    ingredient
+}
+
 /// Apply all measurement enrichments to a single ingredient.
 ///
 /// Adds metric weight alternatives (oz/lb → g) and volume-to-weight
@@ -114,6 +125,7 @@ fn convert_volume_to_grams(amount: &str, unit: &str, grams_per_cup: f64) -> Opti
 pub fn enrich_ingredient_measurements(ingredient: ParsedIngredient) -> ParsedIngredient {
     let mut weight_stats = crate::metric_weights::MetricConversionStats::default();
     let mut volume_stats = VolumeConversionStats::default();
+    let ingredient = apply_ingredient_rewrites(ingredient);
     let ingredient =
         crate::metric_weights::add_metric_weight_alternative(ingredient, &mut weight_stats);
     add_volume_to_weight_alternative(ingredient, &mut volume_stats)

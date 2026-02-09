@@ -1,5 +1,10 @@
 {
   "ingredients": {
+    "diamond crystal kosher salt": {
+      "grams_per_cup": 137.0,
+      "source": "Serious Eats",
+      "url": "https://www.seriouseats.com/ask-the-food-lab-do-i-need-to-use-kosher-salt"
+    },
     "mayonnaise": {
       "grams_per_cup": 220.0,
       "source": "USDA FoodData Central",
@@ -23,7 +28,8 @@
   "aliases": {
     "table salt": "salt, table",
     "kosher salt": null,
-    "salt": null,
+    "salt": "diamond crystal kosher salt",
+    "salt, presumably diamond": "diamond crystal kosher salt",
     "sea salt": null,
     "fine salt": null,
 
@@ -131,5 +137,8 @@
     "white wine vinegar": "vinegar, red wine",
 
     "water": "water, bottled, generic"
+  },
+  "rewrites": {
+    "salt": "salt, presumably Diamond"
   }
 }
