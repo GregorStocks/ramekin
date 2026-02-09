@@ -15,6 +15,9 @@ set +a
 echo "[$(date +%H:%M:%S)] Starting UI test orchestration via process-compose"
 START_TIME=$(date +%s)
 
+echo "[$(date +%H:%M:%S)] Ensuring Playwright browsers are installed"
+playwright install chromium
+
 process-compose up -e "$ENV_FILE" -f test-ui-compose.yaml -t=false --port "$PROCESS_COMPOSE_PORT"
 EXIT_CODE=$?
 
