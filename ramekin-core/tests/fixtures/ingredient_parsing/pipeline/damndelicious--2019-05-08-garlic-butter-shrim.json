@@ -1,0 +1,125 @@
+{
+  "source": "damndelicious",
+  "recipe_slug": "2019-05-08-garlic-butter-shrim",
+  "ingredients": [
+    {
+      "raw": "4 tablespoons unsalted butter (divided)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 cloves garlic (minced and divided)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced and divided",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 pound 3 medium-sized zucchini, spiralized*",
+      "expected": {
+        "item": "3 medium-sized zucchini, spiralized*",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper (to taste)",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1  shallot (minced)",
+      "expected": {
+        "item": "shallot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 pound medium shrimp (peeled and deveined)",
+      "expected": {
+        "item": "medium shrimp",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and deveined",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "2 teaspoons lemon zest",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh parsley leaves",
+      "expected": {
+        "item": "chopped fresh parsley leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

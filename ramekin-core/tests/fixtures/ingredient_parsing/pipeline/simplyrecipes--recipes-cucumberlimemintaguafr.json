@@ -1,0 +1,87 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-cucumberlimemintaguafr",
+  "ingredients": [
+    {
+      "raw": "1 lb of cucumbers (about 2 good sized cucumbers), ends trimmed, but peel still on, coarsely chopped",
+      "expected": {
+        "item": "cucumbers, ends trimmed, but peel still on",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "coarsely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup lime juice from fresh limes (from about 1 pound of limes, or 5 to 10 limes, depending on how juicy they are)",
+      "expected": {
+        "item": "lime juice from fresh limes",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "5 to 10",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 1/4 cup packed (spearmint) mint leaves (about a large handful), woody stems removed",
+      "expected": {
+        "item": "packed (spearmint) mint leaves (about a large handful), woody stems removed",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Approximately 1 1/4 cup of water",
+      "expected": {
+        "item": "Approximately 1 1/4 cup of water",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

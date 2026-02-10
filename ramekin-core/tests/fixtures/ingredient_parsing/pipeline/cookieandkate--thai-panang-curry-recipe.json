@@ -1,0 +1,275 @@
+{
+  "source": "cookieandkate",
+  "recipe_slug": "thai-panang-curry-recipe",
+  "ingredients": [
+    {
+      "raw": "Optional: 1 batch crispy baked tofu",
+      "expected": {
+        "item": "batch crispy baked tofu",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "optional",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Optional: 1 ¼ cups brown jasmine rice or long-grain brown rice, rinsed",
+      "expected": {
+        "item": "brown jasmine rice or long-grain brown rice",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional, rinsed",
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "1 tablespoon coconut oil or olive oil",
+      "expected": {
+        "item": "coconut oil or olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 small white or yellow onion, chopped (about 1 cup)",
+      "expected": {
+        "item": "white or yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Pinch of salt, more to taste",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": "more to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 red bell pepper, sliced into thin (&frac14;” wide) strips",
+      "expected": {
+        "item": "red bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced into thin strips",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 yellow, orange or green bell pepper, sliced into thin (&frac14;” wide) strips",
+      "expected": {
+        "item": "yellow, orange or green bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced into thin strips",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 carrots, peeled and sliced on the diagonal into ¼&#8221; thick rounds (about 1 cup)",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "peeled and sliced on the diagonal into 1/4” thick rounds",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 cloves garlic, pressed or minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "pressed or minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons panang curry paste* (use 1 for mild or 2 for spicy)",
+      "expected": {
+        "item": "panang curry paste*",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 can (14 ounces) regular coconut milk",
+      "expected": {
+        "item": "regular coconut milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "½ cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 tablespoons peanut butter",
+      "expected": {
+        "item": "peanut butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 tablespoon tamari or soy sauce**",
+      "expected": {
+        "item": "tamari or soy sauce**",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 ½ teaspoons coconut sugar or brown sugar",
+      "expected": {
+        "item": "coconut sugar or brown sugar",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 teaspoons fresh lime juice, to taste",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "to taste",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Optional garnishes: fresh Thai basil or regular basil, sriracha or chili garlic sauce for extra spice",
+      "expected": {
+        "item": "Optional garnishes: fresh Thai basil or regular basil, sriracha or chili garlic sauce for extra spice",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

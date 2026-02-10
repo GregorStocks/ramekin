@@ -1,0 +1,315 @@
+{
+  "source": "feastingathome",
+  "recipe_slug": "easy-ceviche-recipe",
+  "ingredients": [
+    {
+      "raw": "½ a red onion, thinly sliced, with the grain.",
+      "expected": {
+        "item": "a red onion, thinly sliced, with the grain.",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "1- 1 ½ teaspoon kosher salt, start with 1, add more to taste",
+      "expected": {
+        "item": "- 1 1/2 teaspoon kosher salt, start with 1",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "add more to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "¼ teaspoon black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "¾ cup fresh lime juice (4-6 limes) freshly squeezed ( try to use ripe limes)",
+      "expected": {
+        "item": "fresh lime juice freshly squeezed ( try to use ripe limes)",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "4-6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1-2 garlic cloves very finely minced (use a garlic press)",
+      "expected": {
+        "item": "garlic cloves very finely minced (use a garlic press)",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 fresh serrano or jalapeño chili pepper seeded and very finely chopped. Start conservatively, more to taste.",
+      "expected": {
+        "item": "fresh serrano or jalapeño chili pepper seeded and very finely chopped. Start conservatively",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "more to taste.",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 pound fresh fish- sea bass, red snapper, corvina, halibut, dorado, escolar, mahi-mahi, tilapia, or hamachi &#8211; diced into 1/2 inch cubes.",
+      "expected": {
+        "item": "fresh fish- sea bass, red snapper, corvina, halibut, dorado, escolar, mahi-mahi, tilapia",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "or hamachi - diced into 1/2 inch cubes.",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "¼-½ cup fresh cilantro, chopped",
+      "expected": {
+        "item": "fresh cilantro",
+        "measurements": [
+          {
+            "amount": "1/4-1/2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup grape or cherry tomatoes, sliced or cut in half  (or 1 cup diced tomatoes)",
+      "expected": {
+        "item": "grape or cherry tomatoes, sliced or cut in half",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "or 1 cup diced tomatoes",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup diced cucumber",
+      "expected": {
+        "item": "diced cucumber",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil (optional)",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "optional: 1 semi-firm Avocado, diced, or make the Avocado Sauce",
+      "expected": {
+        "item": "semi-firm Avocado, diced, or make the Avocado Sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "optional",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "⅔ cup Avocado",
+      "expected": {
+        "item": "Avocado",
+        "measurements": [
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "⅓ cup cilantro",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2/3 cup water- plus more as needed",
+      "expected": {
+        "item": "water-",
+        "measurements": [
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more as needed",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "½ teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon coriander",
+      "expected": {
+        "item": "coriander",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 garlic clove",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "cracked pepper to taste",
+      "expected": {
+        "item": "cracked pepper to taste",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

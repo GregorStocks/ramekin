@@ -1,0 +1,79 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "orzo-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup orzo",
+      "expected": {
+        "item": "orzo",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon butter (or olive oil)",
+      "expected": {
+        "item": "butter (or olive oil)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 tablespoons fresh lemon juice (1/2 lemon)",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": null
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Chopped fresh parsley or feta cheese crumbles, for garnish (optional)",
+      "expected": {
+        "item": "Chopped fresh parsley or feta cheese crumbles, for garnish",
+        "measurements": [],
+        "note": "optional",
+        "category": "Produce"
+      }
+    }
+  ]
+}

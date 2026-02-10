@@ -1,0 +1,208 @@
+{
+  "source": "tasty-co",
+  "recipe_slug": "recipe-creamy-chicken-penne-pa",
+  "ingredients": [
+    {
+      "raw": "4 slices bacon",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "slice"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "2 chicken breasts, sliced",
+      "expected": {
+        "item": "chicken breasts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "sliced",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "salt, to taste",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "pepper, to taste",
+      "expected": {
+        "item": "pepper",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 teaspoons italian seasoning",
+      "expected": {
+        "item": "italian seasoning",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon paprika",
+      "expected": {
+        "item": "paprika",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 cloves garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 cups spinach",
+      "expected": {
+        "item": "spinach",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 small tomatoes, diced",
+      "expected": {
+        "item": "tomatoes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "small"
+          }
+        ],
+        "note": "diced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 ½ cups cream",
+      "expected": {
+        "item": "cream",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup shredded parmesan cheese, plus more for serving",
+      "expected": {
+        "item": "shredded parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for serving",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "½ teaspoon red pepper flakes, plus more for garnish",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.9",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for garnish",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "10 oz penne pasta, cooked until al dente",
+      "expected": {
+        "item": "penne pasta",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": "cooked until al dente",
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "3 tablespoons Chopped fresh parsley, for garnish",
+      "expected": {
+        "item": "Chopped fresh parsley",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "for garnish",
+        "category": "Produce"
+      }
+    }
+  ]
+}

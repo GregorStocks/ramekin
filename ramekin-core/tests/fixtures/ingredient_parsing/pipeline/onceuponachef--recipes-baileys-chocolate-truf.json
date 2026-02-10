@@ -1,0 +1,97 @@
+{
+  "source": "onceuponachef",
+  "recipe_slug": "recipes-baileys-chocolate-truf",
+  "ingredients": [
+    {
+      "raw": "½ cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "119",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 tablespoons Baileys Irish Cream ((okay to substitute more heavy cream))",
+      "expected": {
+        "item": "Baileys Irish Cream (okay to substitute more heavy cream)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Pinch salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "8 oz semi-sweet chocolate, (best quality such as Ghiradelli, chopped)",
+      "expected": {
+        "item": "semi-sweet chocolate",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "best quality such as Ghiradelli, chopped",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Cocoa powder,",
+      "expected": {
+        "item": "Cocoa powder",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

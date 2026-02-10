@@ -1,0 +1,143 @@
+{
+  "source": "jocooks",
+  "recipe_slug": "recipes-aglio-e-olio",
+  "ingredients": [
+    {
+      "raw": "1 pound linguini (uncooked, or any pasta)",
+      "expected": {
+        "item": "linguini",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "uncooked, or any pasta",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "¾ cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "162",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 head garlic (peeled and sliced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": "peeled and sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 teaspoon red pepper flakes",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "½ teaspoon salt (or to taste)",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
+          }
+        ],
+        "note": "or to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "½ teaspoon pepper (or to taste)",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "½ cup parsley (fresh, chopped)",
+      "expected": {
+        "item": "parsley",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "fresh, chopped",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "½ cup Parmesan cheese (freshly grated)",
+      "expected": {
+        "item": "Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "freshly grated",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "lemon juice (freshly squeezed)",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [],
+        "note": "freshly squeezed",
+        "category": "Beverages"
+      }
+    }
+  ]
+}

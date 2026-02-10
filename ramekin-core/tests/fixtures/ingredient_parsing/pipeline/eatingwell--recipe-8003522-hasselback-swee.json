@@ -1,0 +1,149 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-8003522-hasselback-swee",
+  "ingredients": [
+    {
+      "raw": "1 head garlic",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon extra-virgin olive oil plus 3 tablespoons, divided",
+      "expected": {
+        "item": "extra-virgin olive oil plus 3 tablespoons",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "6 small sweet potatoes, scrubbed",
+      "expected": {
+        "item": "sweet potatoes",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "small"
+          }
+        ],
+        "note": "scrubbed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "0.5 teaspoon cumin",
+      "expected": {
+        "item": "cumin",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "0.5 teaspoon salt plus 1/8 teaspoon, divided",
+      "expected": {
+        "item": "salt plus 1/8 teaspoon",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "0.125 teaspoon cayenne pepper",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "0.5 cup plain strained yogurt, such as Greek-style",
+      "expected": {
+        "item": "plain strained yogurt, such as Greek-style",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon finely chopped flat-leaf parsley, plus more for garnish",
+      "expected": {
+        "item": "finely chopped flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more for garnish",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "0.25 teaspoon cracked pepper",
+      "expected": {
+        "item": "cracked pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Grated lemon zest for garnish",
+      "expected": {
+        "item": "Grated lemon zest for garnish",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

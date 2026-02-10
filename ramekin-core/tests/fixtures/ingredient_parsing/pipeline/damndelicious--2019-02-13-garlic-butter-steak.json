@@ -1,0 +1,129 @@
+{
+  "source": "damndelicious",
+  "recipe_slug": "2019-02-13-garlic-butter-steak",
+  "ingredients": [
+    {
+      "raw": "1 1/2 pounds fingerling potatoes (halved lengthwise)",
+      "expected": {
+        "item": "fingerling potatoes",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "halved lengthwise",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 tablespoons canola oil (divided)",
+      "expected": {
+        "item": "canola oil",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper (to taste)",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 pounds thick-cut New York strip steak (cut into 1-inch chunks)",
+      "expected": {
+        "item": "thick-cut New York strip steak (cut into 1-inch chunks)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "3 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "5 tablespoons unsalted butter (cubed)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "71",
+            "unit": "g"
+          }
+        ],
+        "note": "cubed",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh parsley leaves",
+      "expected": {
+        "item": "chopped fresh parsley leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 teaspoons chopped fresh thyme",
+      "expected": {
+        "item": "chopped fresh thyme",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

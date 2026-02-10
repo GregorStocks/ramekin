@@ -1,0 +1,83 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "mudslide-recipe",
+  "ingredients": [
+    {
+      "raw": "1 ounce* vodka",
+      "expected": {
+        "item": "ounce* vodka",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 ounce coffee liqueur (like Kahlua)",
+      "expected": {
+        "item": "coffee liqueur (like Kahlua)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 1/2 ounces Irish cream (like Baileys)",
+      "expected": {
+        "item": "Irish cream (like Baileys)",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/2 ounces heavy cream (or 2 scoops vanilla ice cream and 1/2 cup ice*)",
+      "expected": {
+        "item": "heavy cream (or 2 scoops vanilla ice cream and 1/2 cup ice*)",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "For the garnish: Shaved chocolate (optional), chocolate sauce for the rim (optional)",
+      "expected": {
+        "item": "For the garnish: Shaved chocolate, chocolate sauce for the rim (optional)",
+        "measurements": [],
+        "note": "optional",
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

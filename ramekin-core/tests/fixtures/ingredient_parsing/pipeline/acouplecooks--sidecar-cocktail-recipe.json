@@ -1,0 +1,78 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "sidecar-cocktail-recipe",
+  "ingredients": [
+    {
+      "raw": "2 ounces Cognac (VS or VSOP)",
+      "expected": {
+        "item": "Cognac (VS or VSOP)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 ounce Cointreau",
+      "expected": {
+        "item": "Cointreau",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 ounce lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "For the garnish: lemon twist or orange twist",
+      "expected": {
+        "item": "For the garnish: lemon twist or orange twist",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Superfine sugar* rim, optional",
+      "expected": {
+        "item": "Superfine sugar* rim",
+        "measurements": [],
+        "note": "optional",
+        "category": "Baking"
+      }
+    }
+  ]
+}

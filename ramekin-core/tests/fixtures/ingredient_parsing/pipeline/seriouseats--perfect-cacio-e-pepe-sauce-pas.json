@@ -1,0 +1,113 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "perfect-cacio-e-pepe-sauce-pas",
+  "ingredients": [
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 pound (225g) dried spaghetti (see note)",
+      "expected": {
+        "item": "dried spaghetti (see note)",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "1 teaspoon (4g) cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup (45ml) water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
+          },
+          {
+            "amount": "59",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 teaspoon (4g) coarsely ground black pepper, plus more for serving",
+      "expected": {
+        "item": "coarsely ground black pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for serving",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 packed cup finely grated Pecorino Romano Cheese (5 ounces; 140g), plus more for serving",
+      "expected": {
+        "item": "finely grated Pecorino Romano Cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "packed cup"
+          },
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "140",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for serving",
+        "category": "Cheese"
+      }
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-240111-caldo-gallego",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 medium onion, minced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "8 cloves garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 Spanish chorizo links, sliced",
+      "expected": {
+        "item": "Spanish chorizo links",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "sliced",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "2 thick slices smoked ham, diced, or more to taste",
+      "expected": {
+        "item": "thick slices smoked ham, diced",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "or more to taste",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "3 medium potatoes, peeled and diced",
+      "expected": {
+        "item": "potatoes",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          }
+        ],
+        "note": "peeled and diced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 medium turnips, peeled and diced",
+      "expected": {
+        "item": "turnips",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": "peeled and diced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "8 cups chicken stock",
+      "expected": {
+        "item": "chicken stock",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 (15 ounce) can white cannellini beans",
+      "expected": {
+        "item": "white cannellini beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "3 cups chopped turnip greens",
+      "expected": {
+        "item": "chopped turnip greens",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

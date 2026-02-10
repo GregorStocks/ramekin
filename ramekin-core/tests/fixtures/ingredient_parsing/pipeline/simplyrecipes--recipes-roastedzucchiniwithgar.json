@@ -1,0 +1,88 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-roastedzucchiniwithgar",
+  "ingredients": [
+    {
+      "raw": "1 pound zucchini, each cut in half across the middle, then each half quartered lengthwise",
+      "expected": {
+        "item": "zucchini, each cut in half across the middle",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "then each half quartered lengthwise",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon fresh minced garlic cloves",
+      "expected": {
+        "item": "fresh minced garlic cloves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon Herbes de Provence or dried thyme, or 1 teaspoon of fresh chopped thyme",
+      "expected": {
+        "item": "Herbes de Provence or dried thyme",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1 teaspoon of fresh chopped thyme",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "sherry-braised-chicken-with-ch",
+  "ingredients": [
+    {
+      "raw": "8 (5- to 7-ounce) bone-in, skin-on chicken thighs, trimmed",
+      "expected": {
+        "item": "bone-in, skin-on chicken thighs",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          },
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": "trimmed",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "2 teaspoons (8 g) Diamond Crystal kosher salt, divided",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons smoked paprika, divided",
+      "expected": {
+        "item": "smoked paprika",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3.4",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 yellow or white onion, halved and thinly sliced",
+      "expected": {
+        "item": "yellow or white onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "halved and thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large fennel bulb, stalks discarded, bulb halved and cut into 1/2-inch-thick wedges through core",
+      "expected": {
+        "item": "fennel bulb, stalks discarded",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "bulb halved and cut into 1/2-inch-thick wedges through core",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 ounces (113 g) cured Spanish chorizo, cut into 1/4-inch pieces",
+      "expected": {
+        "item": "cured Spanish chorizo, cut into 1/4-inch pieces",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 red, yellow, or orange bell pepper (about 4 ounces; 113 g), stemmed, seeded, and cut into 1/2-inch pieces",
+      "expected": {
+        "item": "red, yellow, or orange bell pepper, stemmed, seeded, and cut into 1/2-inch pieces",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 cloves garlic, thinly sliced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "clove"
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 teaspoons minced fresh thyme",
+      "expected": {
+        "item": "minced fresh thyme",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons (16 g) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3/4 cup (180 ml) dry sherry, divided",
+      "expected": {
+        "item": "dry sherry",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "ml"
+          }
+        ],
+        "note": "divided",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 cup (240 ml) chicken broth",
+      "expected": {
+        "item": "chicken broth",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 (15-ounce) cans chickpeas, drained and rinsed",
+      "expected": {
+        "item": "chickpeas",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "3 tablespoons (42 g) unsalted butter, cut into 3 pieces",
+      "expected": {
+        "item": "unsalted butter, cut into 3 pieces",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 tablespoons minced fresh parsley for serving, optional",
+      "expected": {
+        "item": "minced fresh parsley for serving",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional",
+        "category": "Produce"
+      }
+    }
+  ]
+}

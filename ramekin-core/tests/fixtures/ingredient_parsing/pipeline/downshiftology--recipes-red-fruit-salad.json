@@ -1,0 +1,111 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-red-fruit-salad",
+  "ingredients": [
+    {
+      "raw": "1 cup watermelon (sliced into chunks)",
+      "expected": {
+        "item": "watermelon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "153",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced into chunks",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup strawberries (sliced)",
+      "expected": {
+        "item": "strawberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "174",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup raspberries",
+      "expected": {
+        "item": "raspberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "123",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup yogurt (dairy, coconut or coconut whipped cream)",
+      "expected": {
+        "item": "yogurt (dairy, coconut or coconut whipped cream)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 tbsp honey (or maple syrup for vegan)",
+      "expected": {
+        "item": "honey (or maple syrup for vegan)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup pomegranate seeds",
+      "expected": {
+        "item": "pomegranate seeds",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "mint leaves for garnish ((optional))",
+      "expected": {
+        "item": "mint leaves for garnish",
+        "measurements": [],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

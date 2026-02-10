@@ -1,0 +1,212 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-mongolian-beef-scallio",
+  "ingredients": [
+    {
+      "raw": "1 pound sirloin steak, sliced 1/8 inch thick across the grain",
+      "expected": {
+        "item": "sirloin steak",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "sliced 1/8 inch thick across the grain",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tablespoons low-sodium soy sauce",
+      "expected": {
+        "item": "low-sodium soy sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 tablespoon Shaoxing wine or dry vermouth",
+      "expected": {
+        "item": "Shaoxing wine or dry vermouth",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 teaspoons oyster sauce",
+      "expected": {
+        "item": "oyster sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons Sriracha sauce",
+      "expected": {
+        "item": "Sriracha sauce",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon toasted sesame oil",
+      "expected": {
+        "item": "toasted sesame oil",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 tablespoons peanut or canola oil",
+      "expected": {
+        "item": "peanut or canola oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 tablespoon minced fresh ginger",
+      "expected": {
+        "item": "minced fresh ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "6 scallions, sliced on the diagonal 3/4 inch thick",
+      "expected": {
+        "item": "scallions",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "sliced on the diagonal 3/4 inch thick",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground pepper",
+      "expected": {
+        "item": "Freshly ground pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Steamed rice, for serving",
+      "expected": {
+        "item": "Steamed rice",
+        "measurements": [],
+        "note": "for serving",
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "Toasted sesame seeds, for garnish",
+      "expected": {
+        "item": "Toasted sesame seeds",
+        "measurements": [],
+        "note": "for garnish",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

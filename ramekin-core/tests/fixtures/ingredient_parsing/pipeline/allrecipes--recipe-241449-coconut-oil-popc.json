@@ -1,0 +1,47 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-241449-coconut-oil-popc",
+  "ingredients": [
+    {
+      "raw": "0.25 cup unpopped popcorn",
+      "expected": {
+        "item": "unpopped popcorn",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Snacks"
+      }
+    },
+    {
+      "raw": "2 tablespoons coconut oil",
+      "expected": {
+        "item": "coconut oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "sea salt to taste",
+      "expected": {
+        "item": "sea salt to taste",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

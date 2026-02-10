@@ -1,0 +1,78 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "margarita-recipe",
+  "ingredients": [
+    {
+      "raw": "1 ½ ounces tequila blanco or reposado*",
+      "expected": {
+        "item": "tequila blanco or reposado*",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 ounce Cointreau or Triple Sec",
+      "expected": {
+        "item": "Cointreau or Triple Sec",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "¾ ounce fresh lime juice",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Kosher salt or flaky sea salt, for the rim",
+      "expected": {
+        "item": "Kosher salt or flaky sea salt, for the rim",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Lime wedge, for the garnish",
+      "expected": {
+        "item": "Lime wedge, for the garnish",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

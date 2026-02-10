@@ -1,0 +1,57 @@
+{
+  "source": "damndelicious",
+  "recipe_slug": "2016-10-05-baked-eggs-in-avoca",
+  "ingredients": [
+    {
+      "raw": "3  avocados (halved and seeded)",
+      "expected": {
+        "item": "avocados",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "halved and seeded",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "6  large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper (to taste)",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh chives",
+      "expected": {
+        "item": "chopped fresh chives",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

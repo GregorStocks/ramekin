@@ -1,0 +1,122 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "potato-wedges-recipe-5217319",
+  "ingredients": [
+    {
+      "raw": "Cooking spray, for the baking sheet",
+      "expected": {
+        "item": "Cooking spray, for the baking sheet",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/4 cup (60ml) vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 1/2 pounds (1.1kg) russet potatoes, washed and scrubbed",
+      "expected": {
+        "item": "russet potatoes",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "1.1",
+            "unit": "kg"
+          }
+        ],
+        "note": "washed and scrubbed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 quarts (1.9L) water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "quart"
+          },
+          {
+            "amount": "1.9",
+            "unit": "l"
+          },
+          {
+            "amount": "1896",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 tablespoons (25g) Diamond Crystal kosher salt, plus extra for seasoning; for table salt use half as much by volume or an equal amount by weight",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": "plus extra for seasoning; for table salt use half as much by volume or an equal amount by weight",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

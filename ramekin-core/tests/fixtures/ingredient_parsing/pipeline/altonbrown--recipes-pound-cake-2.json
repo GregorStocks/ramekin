@@ -1,0 +1,110 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-pound-cake-2",
+  "ingredients": [
+    {
+      "raw": "33 tablespoons (4 sticks) unsalted butter, at room temperature, plus 1 tablespoon for the pan",
+      "expected": {
+        "item": "unsalted butter, at room temperature",
+        "measurements": [
+          {
+            "amount": "33",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "4",
+            "unit": "stick"
+          },
+          {
+            "amount": "468",
+            "unit": "g"
+          }
+        ],
+        "note": "plus 1 tablespoon for the pan",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "16 ounces cake flour, plus extra for the pan",
+      "expected": {
+        "item": "cake flour",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "plus extra for the pan",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "16 ounces sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "9 large  eggs, at room temperature",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "9",
+            "unit": "large"
+          }
+        ],
+        "note": "at room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

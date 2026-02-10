@@ -1,0 +1,205 @@
+{
+  "source": "bbcgoodfood",
+  "recipe_slug": "recipes-rigatoni-sausage-bake",
+  "ingredients": [
+    {
+      "raw": "400g good quality pork sausage",
+      "expected": {
+        "item": "good quality pork sausage",
+        "measurements": [
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 tbsp olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 onion chopped",
+      "expected": {
+        "item": "onion chopped",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large carrot grated",
+      "expected": {
+        "item": "carrot grated",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "150ml red wine",
+      "expected": {
+        "item": "red wine",
+        "measurements": [
+          {
+            "amount": "150",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "300ml vegetable stock",
+      "expected": {
+        "item": "vegetable stock",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "3 tbsp tomato purée",
+      "expected": {
+        "item": "tomato purée",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "50g butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "50g plain flour",
+      "expected": {
+        "item": "plain flour",
+        "measurements": [
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "600ml milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "600",
+            "unit": "ml"
+          },
+          {
+            "amount": "621",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "freshly grated nutmeg",
+      "expected": {
+        "item": "freshly grated nutmeg",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "500g rigatoni or penne",
+      "expected": {
+        "item": "rigatoni or penne",
+        "measurements": [
+          {
+            "amount": "500",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "200g fresh spinach",
+      "expected": {
+        "item": "fresh spinach",
+        "measurements": [
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "140g mature cheddar grated",
+      "expected": {
+        "item": "mature cheddar grated",
+        "measurements": [
+          {
+            "amount": "140",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    }
+  ]
+}

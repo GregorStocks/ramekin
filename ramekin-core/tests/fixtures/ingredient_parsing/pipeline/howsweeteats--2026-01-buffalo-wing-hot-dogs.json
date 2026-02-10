@@ -1,0 +1,136 @@
+{
+  "source": "howsweeteats",
+  "recipe_slug": "2026-01-buffalo-wing-hot-dogs",
+  "ingredients": [
+    {
+      "raw": "1  sheet puff pastry, (thawed)",
+      "expected": {
+        "item": "sheet puff pastry",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thawed",
+        "category": "Frozen"
+      }
+    },
+    {
+      "raw": "6  hot dogs",
+      "expected": {
+        "item": "hot dogs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1  large egg + 1 teaspoon water, (beaten together for egg wash)",
+      "expected": {
+        "item": "egg + 1 teaspoon water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "beaten together for egg wash",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 cup freshly grated sharp cheddar cheese",
+      "expected": {
+        "item": "freshly grated sharp cheddar cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "⅔ cup crumbled blue cheese",
+      "expected": {
+        "item": "crumbled blue cheese",
+        "measurements": [
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons parmesan cheese",
+      "expected": {
+        "item": "parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "buffalo wing sauce, (for drizzling)",
+      "expected": {
+        "item": "buffalo wing sauce, (for drizzling)",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "4  green onions, (sliced for topping)",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "sliced for topping",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "⅓ cup chopped fresh cilantro,  (for topping)",
+      "expected": {
+        "item": "chopped fresh cilantro,  (for topping)",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "ranch dressing, (for serving)",
+      "expected": {
+        "item": "ranch dressing",
+        "measurements": [],
+        "note": "for serving",
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

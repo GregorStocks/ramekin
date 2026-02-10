@@ -1,0 +1,139 @@
+{
+  "source": "tasteofhome",
+  "recipe_slug": "recipes-spicy-shrimp-salsa",
+  "ingredients": [
+    {
+      "raw": "1/2 pound cooked shrimp, peeled, deveined and chopped",
+      "expected": {
+        "item": "cooked shrimp, peeled",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "deveined and chopped",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 large tomato, chopped",
+      "expected": {
+        "item": "tomato",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup finely chopped onion",
+      "expected": {
+        "item": "finely chopped onion",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 radishes, chopped",
+      "expected": {
+        "item": "radishes",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup minced fresh cilantro",
+      "expected": {
+        "item": "minced fresh cilantro",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1-1/2 teaspoons finely chopped seeded jalapeno pepper",
+      "expected": {
+        "item": "finely chopped seeded jalapeno pepper",
+        "measurements": [
+          {
+            "amount": "1-1/2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Baked tortilla chip scoops",
+      "expected": {
+        "item": "Baked tortilla chip scoops",
+        "measurements": [],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    }
+  ]
+}

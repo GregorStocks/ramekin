@@ -1,0 +1,128 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-honeymustardbakedsalmo",
+  "ingredients": [
+    {
+      "raw": "1 1/2 to 2 pounds (680 to 900g) salmon fillets",
+      "expected": {
+        "item": "to 2 pounds salmon fillets",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          },
+          {
+            "amount": "680",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "3 tablespoons honey mustard (1 1/2 tablespoons honey plus 1 1/2 tablespoon Dijon mustard)",
+      "expected": {
+        "item": "honey mustard",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "3 cloves garlic, minced (about 3 teaspoons)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          },
+          {
+            "amount": "3",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8.5",
+            "unit": "g"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 tablespoons extra virgin olive oil (divided into 2 tablespoons and 1 tablespoon)",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": "divided into 2 tablespoons and 1 tablespoon",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 tablespoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 tablespoon chopped fresh dill",
+      "expected": {
+        "item": "chopped fresh dill",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Pinch of salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

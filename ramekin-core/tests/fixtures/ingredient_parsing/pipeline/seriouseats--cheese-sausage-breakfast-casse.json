@@ -1,0 +1,252 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "cheese-sausage-breakfast-casse",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons extra-virgin olive oil, plus more as needed",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more as needed",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "12 ounces (340g) bulk sweet or hot Italian sausage (optional)",
+      "expected": {
+        "item": "bulk sweet or hot Italian sausage",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "5 ounces (140g) thinly sliced fresh mushrooms, such as shiitake, cremini, or oyster (2 cups sliced)",
+      "expected": {
+        "item": "thinly sliced fresh mushrooms, such as shiitake, cremini, or oyster",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "140",
+            "unit": "g"
+          }
+        ],
+        "note": "2 cups sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 small red onion (6 ounces; 170g), thinly sliced (about 1 1/2 cups sliced)",
+      "expected": {
+        "item": "red onion, thinly sliced",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "about 1 1/2 cups sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoon Diamond Crystal kosher salt, divided; for table salt use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": "divided; for table salt use half as much by volume",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 cup drained and chopped sundried tomatoes in oil (3 ounces; 85g)",
+      "expected": {
+        "item": "drained and chopped sundried tomatoes in oil",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "3 medium garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "5 ounces (140g) fresh baby spinach (5 cups)",
+      "expected": {
+        "item": "fresh baby spinach",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "140",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "6 ounces (170g) shredded Gouda or cheddar cheese, (1 1/2 cups)",
+      "expected": {
+        "item": "shredded Gouda or cheddar cheese",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          },
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "10 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/3 cup (80ml) sour cream or plain, whole-milk strained (Greek-style) yogurt",
+      "expected": {
+        "item": "sour cream or plain",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          },
+          {
+            "amount": "80",
+            "unit": "ml"
+          }
+        ],
+        "note": "whole-milk strained (Greek-style) yogurt",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (360ml) half-and-half or whole milk",
+      "expected": {
+        "item": "half-and-half or whole milk",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "360",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15ml) Dijon mustard",
+      "expected": {
+        "item": "Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

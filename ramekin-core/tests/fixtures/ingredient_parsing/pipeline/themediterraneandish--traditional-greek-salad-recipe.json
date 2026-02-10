@@ -1,0 +1,157 @@
+{
+  "source": "themediterraneandish",
+  "recipe_slug": "traditional-greek-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "1  medium red onion, (thinly sliced into half moons)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "thinly sliced into half moons",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4  medium juicy tomatoes, (sliced into bite-sized pieces or wedges)",
+      "expected": {
+        "item": "juicy tomatoes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": "sliced into bite-sized pieces or wedges",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1  English cucumber, (partially peeled to make a striped pattern and sliced into half moons)",
+      "expected": {
+        "item": "English cucumber",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "partially peeled to make a striped pattern and sliced into half moons",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1  green bell pepper, (cored and sliced into rings)",
+      "expected": {
+        "item": "green bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "cored and sliced into rings",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1  handful  (pitted Kalamata olives)",
+      "expected": {
+        "item": "(pitted Kalamata olives)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "handful"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons dried oregano",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 cup extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1-2 tablespoons red wine vinegar",
+      "expected": {
+        "item": "red wine vinegar",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1  (7 ounce) block Greek feta cheese in brine,  (torn into slabs)",
+      "expected": {
+        "item": "block Greek feta cheese in brine,  (torn into slabs)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "198",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    }
+  ]
+}

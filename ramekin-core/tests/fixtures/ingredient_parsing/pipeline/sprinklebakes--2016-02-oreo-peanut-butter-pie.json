@@ -1,0 +1,88 @@
+{
+  "source": "sprinklebakes",
+  "recipe_slug": "2016-02-oreo-peanut-butter-pie",
+  "ingredients": [
+    {
+      "raw": "12  Oreo ‘Double Stuf’ cookies (divided)",
+      "expected": {
+        "item": "Oreo ‘Double Stuf’ cookies",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": "divided",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 cup heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 ounces cream cheese (at room temperature)",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "at room temperature",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/2 cup creamy-style peanut butter",
+      "expected": {
+        "item": "creamy-style peanut butter",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "7 ounces 1/2 can plus one tablespoon sweetened condensed milk",
+      "expected": {
+        "item": "1/2 can",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "198",
+            "unit": "g"
+          }
+        ],
+        "note": "plus one tablespoon sweetened condensed milk",
+        "category": "Other"
+      }
+    }
+  ]
+}

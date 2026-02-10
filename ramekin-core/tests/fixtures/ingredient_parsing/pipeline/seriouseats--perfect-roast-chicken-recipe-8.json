@@ -1,0 +1,96 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "perfect-roast-chicken-recipe-8",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon (9g) Diamond Crystal kosher salt; for table salt use half as much by volume or the same weight",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt use half as much by volume or the same weight",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "9",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly ground black pepper (optional)1 teaspoon (5g) baking powder (optional; see note)",
+      "expected": {
+        "item": "freshly ground black pepper 1 teaspoon baking powder (optional; see note)",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon (5g) baking powder (optional; see note)",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": "optional; see note",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 large chicken, about 4 to 5 pounds (1.8 to 2.3kg), giblets removed and wing tips trimmed and reserved for stock",
+      "expected": {
+        "item": "chicken, about 4 to 5 pounds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "1.8",
+            "unit": null
+          }
+        ],
+        "note": "giblets removed and wing tips trimmed and reserved for stock",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15ml) neutral-flavored oil, such as canola or vegetable, plus more for rubbing",
+      "expected": {
+        "item": "neutral-flavored oil, such as canola or vegetable",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": "plus more for rubbing",
+        "category": "Oils & Vinegars"
+      }
+    }
+  ]
+}

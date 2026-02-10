@@ -1,0 +1,157 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "bloody-mary-recipe",
+  "ingredients": [
+    {
+      "raw": "2 cups tomato juice, chilled",
+      "expected": {
+        "item": "tomato juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "chilled",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 teaspoons Worcestershire sauce (vegan as desired)",
+      "expected": {
+        "item": "Worcestershire sauce (vegan as desired)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "2 teaspoons prepared horseradish",
+      "expected": {
+        "item": "prepared horseradish",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon Tabasco hot sauce",
+      "expected": {
+        "item": "Tabasco hot sauce",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon celery salt",
+      "expected": {
+        "item": "celery salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup (8 ounces) vodka, chilled",
+      "expected": {
+        "item": "vodka",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "chilled",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Ice, for serving (try clear ice!)",
+      "expected": {
+        "item": "Ice",
+        "measurements": [],
+        "note": "for serving (try clear ice!)",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "For the rim: Old Bay seasoning (purchased or homemade) and kosher salt",
+      "expected": {
+        "item": "For the rim: Old Bay seasoning (purchased or homemade) and kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "For the garnish: celery stalk, lemon wedge, olive, cocktail onion (use cocktail picks if desired)",
+      "expected": {
+        "item": "For the garnish: celery stalk, lemon wedge, olive, cocktail onion (use cocktail picks if desired)",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

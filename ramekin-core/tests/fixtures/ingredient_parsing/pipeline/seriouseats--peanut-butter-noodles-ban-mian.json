@@ -1,0 +1,136 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "peanut-butter-noodles-ban-mian",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons creamy peanut butter spread (1 1/4 ounces; 35 g), such as Skippys",
+      "expected": {
+        "item": "creamy peanut butter spread, such as Skippys",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "35",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 teaspoon lard",
+      "expected": {
+        "item": "lard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) garlic oil, see notes",
+      "expected": {
+        "item": "garlic oil, see notes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon dark soy sauce",
+      "expected": {
+        "item": "dark soy sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 teaspoon toasted sesame oil",
+      "expected": {
+        "item": "toasted sesame oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "4 ounces (113 g) fresh wide noodles, preferably thick, chewy wonton noodles such as Twin Marquis",
+      "expected": {
+        "item": "fresh wide noodles, preferably thick, chewy wonton noodles such as Twin Marquis",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "2 scallions (1 ounce; 30 g), white and green parts, thinly sliced cross-wise",
+      "expected": {
+        "item": "scallions, white and green parts",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": "thinly sliced cross-wise",
+        "category": "Produce"
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-barbecuedchickenontheg",
+  "ingredients": [
+    {
+      "raw": "4 pounds bone-in, skin-on chicken parts (legs, thighs, wings, breasts)",
+      "expected": {
+        "item": "bone-in, skin-on chicken parts (legs, thighs, wings, breasts)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1814",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Extra virgin olive oil or vegetable oil",
+      "expected": {
+        "item": "Extra virgin olive oil or vegetable oil",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 cup barbecue sauce, store-bought or homemade",
+      "expected": {
+        "item": "barbecue sauce, store-bought or homemade",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

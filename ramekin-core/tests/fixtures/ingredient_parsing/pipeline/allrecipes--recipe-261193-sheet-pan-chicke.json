@@ -1,0 +1,92 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-261193-sheet-pan-chicke",
+  "ingredients": [
+    {
+      "raw": "3 skinless, boneless chicken breasts",
+      "expected": {
+        "item": "skinless, boneless chicken breasts",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "0.75 pound fresh green beans, trimmed",
+      "expected": {
+        "item": "fresh green beans",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "lb"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 red potatoes, quartered",
+      "expected": {
+        "item": "red potatoes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "quartered",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "0.5 (.7 ounce) package dry Italian-style salad dressing mix",
+      "expected": {
+        "item": "dry Italian-style salad dressing mix",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "package"
+          },
+          {
+            "amount": ".7",
+            "unit": "oz"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "6 tablespoons butter, melted",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "melted",
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

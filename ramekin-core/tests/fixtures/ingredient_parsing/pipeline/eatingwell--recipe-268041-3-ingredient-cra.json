@@ -1,0 +1,78 @@
+{
+  "source": "eatingwell",
+  "recipe_slug": "recipe-268041-3-ingredient-cra",
+  "ingredients": [
+    {
+      "raw": "1 (7 to 8 ounce) prepared pie crust (1/2 of a 14 ounce package; see Tip)",
+      "expected": {
+        "item": "prepared pie crust",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "7 to 8",
+            "unit": "oz"
+          },
+          {
+            "amount": "0.5",
+            "unit": null
+          },
+          {
+            "amount": "198 to 227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Frozen"
+      }
+    },
+    {
+      "raw": "0.5 cup prepared cranberry sauce or homemade (see associated recipe), divided",
+      "expected": {
+        "item": "prepared cranberry sauce or homemade (see associated recipe)",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 ounces Brie cheese, cut into 24 pieces, divided",
+      "expected": {
+        "item": "Brie cheese, cut into 24 pieces",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 tablespoon chopped fresh chives",
+      "expected": {
+        "item": "chopped fresh chives",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "fried-shrimp-recipe-8768924",
+  "ingredients": [
+    {
+      "raw": "1 cup self-rising flour (4 1/2 ounces; 128g), see notes",
+      "expected": {
+        "item": "self-rising flour, see notes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "4.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "128",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup corn flour (4 ounces; 113g), see notes 3/4 cup yellow cornmeal (4 ounces; 113g)",
+      "expected": {
+        "item": "corn flour, see notes 3/4 cup yellow cornmeal",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3/4 cup yellow cornmeal (4 ounces; 113g)",
+      "expected": {
+        "item": "yellow cornmeal",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 tablespoons Creole seasoning (1 ounce; 30g)",
+      "expected": {
+        "item": "Creole seasoning",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 cup (120ml) whole buttermilk2 large eggs1 1/2 pounds (680g) large shrimp (26 to 36 per pound), peeled, deveined, with tail-onPeanut Oil for frying",
+      "expected": {
+        "item": "whole buttermilk2 large eggs1 1/2 pounds large shrimp, peeled, deveined, with tail-onPeanut Oil for frying",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          },
+          {
+            "amount": "26 to 36",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/2 pounds (680g) large shrimp (26 to 36 per pound), peeled, deveined, with tail-on",
+      "expected": {
+        "item": "large shrimp, peeled, deveined, with tail-on",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          },
+          {
+            "amount": "26 to 36",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Peanut Oil for frying",
+      "expected": {
+        "item": "Peanut Oil for frying",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 recipe New Orleans Rémoulade Sauce (optional)",
+      "expected": {
+        "item": "recipe New Orleans Rémoulade Sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "optional",
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

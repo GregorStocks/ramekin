@@ -1,0 +1,38 @@
+{
+  "source": "downshiftology",
+  "recipe_slug": "recipes-how-to-spatchcock-a-tu",
+  "ingredients": [
+    {
+      "raw": "10-12 pound  turkey",
+      "expected": {
+        "item": "turkey",
+        "measurements": [
+          {
+            "amount": "10-12",
+            "unit": "lb"
+          },
+          {
+            "amount": "4536-5443",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "good quality kitchen shears",
+      "expected": {
+        "item": "quality kitchen shears",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "good"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

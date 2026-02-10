@@ -110,13 +110,25 @@ pub async fn generate_test_urls(
         None
     };
 
-    // Build map of existing sites for merging
+    // Build map of existing sites for merging, refiltering URLs through current rules
     let existing_sites: HashMap<String, SiteEntry> = existing_data
         .as_ref()
         .map(|d| {
             d.sites
                 .iter()
-                .map(|s| (s.domain.clone(), s.clone()))
+                .map(|s| {
+                    let mut entry = s.clone();
+                    let before = entry.urls.len();
+                    entry.urls.retain(|url| is_recipe_url(url, min_year));
+                    let removed = before - entry.urls.len();
+                    if removed > 0 {
+                        println!(
+                            "Refiltered {}: removed {} URLs that no longer pass is_recipe_url",
+                            s.domain, removed
+                        );
+                    }
+                    (entry.domain.clone(), entry)
+                })
                 .collect()
         })
         .unwrap_or_default();
@@ -711,14 +723,24 @@ fn is_roundup_url(url: &str) -> bool {
             Regex::new(r"/our-\d+-favorite").unwrap(),
             // "all-recipes/" at end
             Regex::new(r"/all-recipes/?$").unwrap(),
-            // Recipe category indexes like "/chicken-recipes/" at end of path
-            Regex::new(r"/[a-z]+-recipes/?$").unwrap(),
+            // Recipe category indexes like "/chicken-recipes/", "/game-day-recipes/" at end of path
+            Regex::new(r"/[-a-z]+-recipes/?$").unwrap(),
             // "50-healthy-recipes-to-kick-off"
             Regex::new(r"/\d+-[a-z]+-recipes-to-").unwrap(),
             // "25-recipes-that-should" - number followed by recipes
             Regex::new(r"/\d+-recipes-").unwrap(),
             // "12-summer-recipes-i-forgot" - number-adjective-recipes
             Regex::new(r"/\d+-[a-z]+-recipes-[a-z]").unwrap(),
+            // "best-shrimp-recipes", "best-chicken-recipes" (best-X-recipes anywhere)
+            Regex::new(r"/best-[a-z]+-recipes").unwrap(),
+            // "recipes-for-game-day", "recipes-for-weeknight-dinners" (roundup collections)
+            Regex::new(r"[-/]recipes-for-").unwrap(),
+            // "recipes-and-ideas", "recipes-and-tips"
+            Regex::new(r"[-/]recipes-and-").unwrap(),
+            // "recipes-to-warm-you-up", "recipes-to-celebrate"
+            Regex::new(r"[-/]recipes-to-").unwrap(),
+            // "-recipes.html" or "-recipes.htm" at end (e.g., st-patricks-day-recipes.html)
+            Regex::new(r"-recipes\.html?$").unwrap(),
         ]
     });
 
@@ -754,6 +776,17 @@ fn is_non_recipe_post(url: &str) -> bool {
             Regex::new(r"[-/]tips-for-").unwrap(),
             Regex::new(r"[-/]gift-guide").unwrap(),
             Regex::new(r"[-/]holiday-gift").unwrap(),
+            // Lifestyle diary posts
+            Regex::new(r"[-/]a-week-in-the-life").unwrap(),
+            Regex::new(r"[-/]currently-crushing").unwrap(),
+            Regex::new(r"[-/]tuesday-things").unwrap(),
+            Regex::new(r"[-/]year-in-review").unwrap(),
+            Regex::new(r"[-/]best-of-\d{4}").unwrap(),
+            Regex::new(r"[-/]what-to-eat-this-week").unwrap(),
+            Regex::new(r"[-/]recipes?-for-(january|february|march|april|may|june|july|august|september|october|november|december)").unwrap(),
+            // Non-recipe decorating/product posts
+            Regex::new(r"[-/]tablescape").unwrap(),
+            Regex::new(r"[-/]gifts-for-").unwrap(),
         ]
     });
 
@@ -791,6 +824,16 @@ fn is_recipe_url(url: &str, min_year: u32) -> bool {
     // === PHASE 2: UNIVERSAL EXCLUSIONS ===
     // Reject URLs that are clearly NOT individual recipes
 
+    // Query parameters indicate filter/faceted pages, not individual recipes
+    if lower.contains('?') {
+        return false;
+    }
+
+    // All fragment URLs (e.g., #questions, #reviews, #comments)
+    if lower.contains('#') {
+        return false;
+    }
+
     // Category and tag pages
     if lower.contains("/category/")
         || lower.contains("/tag/")
@@ -814,8 +857,18 @@ fn is_recipe_url(url: &str, min_year: u32) -> bool {
         return false;
     }
 
-    // URLs with fragment identifiers (comments sections)
-    if lower.contains("#comments") || lower.contains("#respond") {
+    // Blog posts (informational, not recipes)
+    if lower.contains("/blog/") {
+        return false;
+    }
+
+    // Compilation/collection pages
+    if lower.contains("/compilation/") {
+        return false;
+    }
+
+    // Recipe category/cuisine index pages
+    if lower.contains("/recipe-cuisine/") || lower.contains("/recipe-type/") {
         return false;
     }
 
@@ -826,6 +879,13 @@ fn is_recipe_url(url: &str, min_year: u32) -> bool {
 
     // Non-recipe blog posts (giveaways, link roundups, how-to guides, etc.)
     if is_non_recipe_post(&lower) {
+        return false;
+    }
+
+    // Bare archive/date index pages (e.g., /2026/01/ with no slug after)
+    static ARCHIVE_REGEX: LazyLock<Regex> =
+        LazyLock::new(|| Regex::new(r"/\d{4}/\d{2}/?$").unwrap());
+    if ARCHIVE_REGEX.is_match(&lower) {
         return false;
     }
 
@@ -850,13 +910,13 @@ fn is_recipe_url(url: &str, min_year: u32) -> bool {
         // Strip trailing slash if present
         let slug = after_recipes.trim_end_matches('/');
         // Must have content after /recipes/ and not be a category path or nested
-        // Require either: hyphen + long enough (>12 chars) OR very long (>25 chars)
-        // This filters category pages like /recipes/dinner, /recipes/hearty-meals
-        // while allowing recipes like /recipes/minestrone-soup, /recipes/beef-carpaccio
+        // Require 3+ hyphen-separated words (e.g., chocolate-chip-cookies) OR very long (>25 chars)
+        // This filters category pages like /recipes/dinner, /recipes/muffins-popovers
+        // while allowing recipes like /recipes/chocolate-chip-cookies
         if !slug.is_empty()
             && !slug.starts_with("category")
             && !slug.contains('/')
-            && ((slug.contains('-') && slug.len() > 12) || slug.len() > 25)
+            && (slug.split('-').count() >= 3 || slug.len() > 25)
         {
             return true;
         }
@@ -930,7 +990,7 @@ mod tests {
             2016
         ));
         assert!(is_recipe_url(
-            "https://example.com/recipes/minestrone-soup",
+            "https://example.com/recipes/classic-minestrone-soup",
             2016
         ));
         assert!(is_recipe_url(
@@ -1147,7 +1207,7 @@ mod tests {
     fn test_valid_recipe_url_patterns() {
         // /recipe/ path pattern
         assert!(is_recipe_url(
-            "https://altonbrown.com/recipes/beef-carpaccio/",
+            "https://altonbrown.com/recipes/beef-carpaccio-with-arugula/",
             2016
         ));
         assert!(is_recipe_url(
@@ -1197,6 +1257,205 @@ mod tests {
         ));
         assert!(!is_recipe_url(
             "https://www.seriouseats.com/hearty-chickpea-recipes-11878318",
+            2016
+        ));
+    }
+
+    #[test]
+    fn test_query_param_and_fragment_rejection() {
+        // Query-parameter filter pages should be rejected
+        assert!(!is_recipe_url(
+            "https://www.halfbakedharvest.com/recipes/?_recipe_meal=desserts&_recipe_occasion=winter",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.halfbakedharvest.com/recipes/?_recipe_meal=appetizers&_recipe_occasion=game-day",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://food.com/recipe/all/popular?ref=nav",
+            2016
+        ));
+
+        // All fragment URLs should be rejected
+        assert!(!is_recipe_url(
+            "https://food.com/recipe/breaded-eggplant-oven-baked-160089#questions",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://food.com/recipe/mash-potato-and-stuffing-balls-445449#reviews",
+            2016
+        ));
+    }
+
+    #[test]
+    fn test_blog_and_compilation_exclusion() {
+        // Blog posts should be rejected
+        assert!(!is_recipe_url(
+            "https://www.kingarthurbaking.com/blog/2026/01/02/recipe-of-the-year-flaky-pizza",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.kingarthurbaking.com/blog/2022/07/14/8-reasons-your-cakes-turn-out-dry",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.kingarthurbaking.com/blog/2024/02/28/beginner-sourdough-guide?from=search-overlay",
+            2016
+        ));
+
+        // Compilation pages should be rejected
+        assert!(!is_recipe_url(
+            "https://tasty.co/compilation/5-best-chicken-wings-recipe",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://tasty.co/compilation/easy-and-delicious-spicy-appetizers-recipe",
+            2016
+        ));
+
+        // Recipe cuisine/type index pages should be rejected
+        assert!(!is_recipe_url(
+            "https://www.feastingathome.com/recipe-cuisine/asian-recipe/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.feastingathome.com/recipe-cuisine/chili-recipe/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.feastingathome.com/recipe-cuisine/stir-fry-recipe/",
+            2016
+        ));
+    }
+
+    #[test]
+    fn test_archive_page_rejection() {
+        // Bare archive pages should be rejected
+        assert!(!is_recipe_url(
+            "https://www.halfbakedharvest.com/2026/01/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.halfbakedharvest.com/2026/01",
+            2016
+        ));
+        assert!(!is_recipe_url("https://example.com/2025/12/", 2016));
+
+        // But archive pages with a slug after should still be accepted
+        assert!(is_recipe_url(
+            "https://example.com/2025/12/my-chocolate-cake/",
+            2016
+        ));
+    }
+
+    #[test]
+    fn test_lifestyle_post_rejection() {
+        // Lifestyle diary posts should be rejected
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2026/01/a-week-in-the-life-vol-1-7/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2026/01/currently-crushing-on-608/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2026/01/tuesday-things-753/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2026/01/what-to-eat-this-week-1-25-26/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2026/01/recipes-for-january/",
+            2016
+        ));
+
+        // Year-in-review and best-of posts should be rejected
+        assert!(!is_recipe_url(
+            "https://www.sprinklebakes.com/2016/12/sprinkle-bakes-2016-year-in-review.html",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.loveandoliveoil.com/2025/12/the-best-of-2025.html",
+            2016
+        ));
+
+        // Tablescape and gift posts should be rejected
+        assert!(!is_recipe_url(
+            "https://www.sprinklebakes.com/2018/11/a-holiday-tablescape-with-tartan-and.html",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.sprinklebakes.com/2018/11/gifts-for-baker-on-your-list-2.html",
+            2016
+        ));
+    }
+
+    #[test]
+    fn test_additional_roundup_patterns() {
+        // "best-X-recipes" should be rejected
+        assert!(!is_recipe_url(
+            "https://www.onceuponachef.com/recipes/50-best-chicken-recipes.html",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.onceuponachef.com/recipes/20-best-shrimp-recipes-for-weeknight-dinners.html",
+            2016
+        ));
+
+        // "recipes-for-X" roundups should be rejected
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2026/01/game-day-recipes/",
+            2016
+        ));
+
+        // "recipes-to-X" roundups should be rejected
+        assert!(!is_recipe_url(
+            "https://www.onceuponachef.com/recipes/soup-recipes-to-warm-you-up.html",
+            2016
+        ));
+
+        // "-recipes.html" at end should be rejected
+        assert!(!is_recipe_url(
+            "https://www.onceuponachef.com/recipes/st-patricks-day-recipes.html",
+            2016
+        ));
+    }
+
+    #[test]
+    fn test_recipes_slug_heuristic_tightened() {
+        // Two-word category slugs under /recipes/ should be rejected
+        assert!(!is_recipe_url(
+            "https://kingarthurbaking.com/recipes/muffins-popovers",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://kingarthurbaking.com/recipes/pancakes-waffles",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://kingarthurbaking.com/recipes/biscuits-shortcakes",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://kingarthurbaking.com/recipes/crisps-cobblers",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://kingarthurbaking.com/recipes/pasta-noodles",
+            2016
+        ));
+
+        // But 3+ word recipe slugs should still be accepted
+        assert!(is_recipe_url(
+            "https://kingarthurbaking.com/recipes/classic-sourdough-pancakes",
+            2016
+        ));
+        assert!(is_recipe_url(
+            "https://kingarthurbaking.com/recipes/flaky-puff-crust-pizza",
             2016
         ));
     }

@@ -1,0 +1,145 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "nachos-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups Walnut Taco Meat or 1 pound ground beef",
+      "expected": {
+        "item": "Walnut Taco Meat",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "or 1 pound ground beef",
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1 15-ounce can refried beans",
+      "expected": {
+        "item": "refried beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "15-ounce can"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/2 cup salsa",
+      "expected": {
+        "item": "salsa",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "2 cups shredded Colby Jack or Mexican blend cheese (or Vegan Nacho Cheese, for vegan)",
+      "expected": {
+        "item": "shredded Colby Jack or Mexican blend cheese (or Vegan Nacho Cheese, for vegan)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/2 cup pico de gallo (or finely diced tomato and red onion)",
+      "expected": {
+        "item": "pico de gallo",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "or finely diced tomato and red onion",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 tablespoon cilantro, chopped",
+      "expected": {
+        "item": "cilantro",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 green onions, thinly sliced",
+      "expected": {
+        "item": "green onions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 jalapeño pepper or 1/4 cup pickled jalapeños",
+      "expected": {
+        "item": "jalapeño pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "or 1/4 cup pickled jalapeños",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Sour cream, for garnish (omit for vegan and use cashew cream or nacho cheese)",
+      "expected": {
+        "item": "Sour cream",
+        "measurements": [],
+        "note": "for garnish (omit for vegan and use cashew cream or nacho cheese)",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Guacamole, for garnish",
+      "expected": {
+        "item": "Guacamole",
+        "measurements": [],
+        "note": "for garnish",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Optional toppings: Black olives, lettuce or corn",
+      "expected": {
+        "item": "Optional toppings: Black olives, lettuce or corn",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

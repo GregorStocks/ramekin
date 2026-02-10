@@ -1,0 +1,102 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-aguadejamaicahibiscust",
+  "ingredients": [
+    {
+      "raw": "2 quarts water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "quart"
+          },
+          {
+            "amount": "1896",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3/4 to 1 cup sugar (depending on how sweet you would like it to be)",
+      "expected": {
+        "item": "sugar (depending on how sweet you would like it to be)",
+        "measurements": [
+          {
+            "amount": "0.75 to 1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup dried hibiscus flowers",
+      "expected": {
+        "item": "dried hibiscus flowers",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 cinnamon stick (optional)",
+      "expected": {
+        "item": "cinnamon stick",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": null
+          }
+        ],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "A few thin slices ginger (optional)",
+      "expected": {
+        "item": "A few thin slices ginger",
+        "measurements": [],
+        "note": "optional",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Allspice berries (optional)",
+      "expected": {
+        "item": "Allspice berries",
+        "measurements": [],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Lime juice (optional)",
+      "expected": {
+        "item": "Lime juice",
+        "measurements": [],
+        "note": "optional",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Orange or lime slices for garnish",
+      "expected": {
+        "item": "Orange or lime slices for garnish",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-prosciuttowrappedaspar",
+  "ingredients": [
+    {
+      "raw": "1 pound asparagus, preferably thick spears",
+      "expected": {
+        "item": "asparagus, preferably thick spears",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 to 3 1/2 ounces sliced prosciutto",
+      "expected": {
+        "item": "1/2 ounces sliced prosciutto",
+        "measurements": [
+          {
+            "amount": "3 to 3",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Ground black pepper",
+      "expected": {
+        "item": "Ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Lemon zest, optional",
+      "expected": {
+        "item": "Lemon zest",
+        "measurements": [],
+        "note": "optional",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Freshly grated Parmesan cheese, optional",
+      "expected": {
+        "item": "Freshly grated Parmesan cheese",
+        "measurements": [],
+        "note": "optional",
+        "category": "Cheese"
+      }
+    }
+  ]
+}

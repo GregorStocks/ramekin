@@ -1,0 +1,55 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "rosti-recipe-5217302",
+  "ingredients": [
+    {
+      "raw": "1 pound (450g) Yukon Gold Potatoes (about 2 medium potatoes)",
+      "expected": {
+        "item": "Yukon Gold Potatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "450",
+            "unit": "g"
+          },
+          {
+            "amount": "2",
+            "unit": "medium"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "6 tablespoons (85g) unsalted butter, divided",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

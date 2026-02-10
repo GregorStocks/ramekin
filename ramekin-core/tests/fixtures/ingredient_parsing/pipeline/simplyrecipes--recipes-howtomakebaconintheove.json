@@ -1,0 +1,34 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-howtomakebaconintheove",
+  "ingredients": [
+    {
+      "raw": "12 strips bacon",
+      "expected": {
+        "item": "strips bacon",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground black pepper (optional)",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

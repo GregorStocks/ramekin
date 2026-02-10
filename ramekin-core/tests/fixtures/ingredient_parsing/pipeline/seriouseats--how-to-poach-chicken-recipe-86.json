@@ -1,0 +1,77 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "how-to-poach-chicken-recipe-86",
+  "ingredients": [
+    {
+      "raw": "2 quarts (2L) cold water",
+      "expected": {
+        "item": "cold water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "quart"
+          },
+          {
+            "amount": "2",
+            "unit": "l"
+          },
+          {
+            "amount": "1896",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons (15g) kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 medium skin-on, bone-in chicken breast halves (about 1 1/2 pounds; 680g)",
+      "expected": {
+        "item": "skin-on, bone-in chicken breast halves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          },
+          {
+            "amount": "1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Aromatic herbs and vegetables of your choosing, such as yellow or white onion, garlic, carrot, celery, scallion, ginger, and parsley sprigs (see notes)",
+      "expected": {
+        "item": "Aromatic herbs and vegetables of your choosing, such as yellow or white onion, garlic, carrot, celery, scallion, ginger, and parsley sprigs (see notes)",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

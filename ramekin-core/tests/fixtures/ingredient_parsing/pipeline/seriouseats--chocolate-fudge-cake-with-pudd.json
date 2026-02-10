@@ -1,0 +1,330 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "chocolate-fudge-cake-with-pudd",
+  "ingredients": [
+    {
+      "raw": "2 large eggs (about 3 1/2 ounces; 100 g)3/4 cup plus 2 tablespoons neutral oil (205 ml; 170 g), such as canola, plus more for greasing",
+      "expected": {
+        "item": "eggs 3/4 cup plus 2 tablespoons neutral oil, such as canola",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          },
+          {
+            "amount": "3.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          },
+          {
+            "amount": "205",
+            "unit": "ml"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for greasing",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3/4 cup plus 2 tablespoons neutral oil (205 ml; 170 g), such as canola, plus more for greasing",
+      "expected": {
+        "item": "neutral oil, such as canola",
+        "measurements": [
+          {
+            "amount": "3/4 cup plus 2 tablespoons",
+            "unit": null
+          },
+          {
+            "amount": "205",
+            "unit": "ml"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for greasing",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "8 1/2 ounces granulated sugar (245g; 1 cup plus 3 tablespoons)",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "8.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "6 tablespoons (90 ml) black coffee, cooled slightly",
+      "expected": {
+        "item": "black coffee, cooled slightly",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "90",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "7 1/2 ounces all-purpose flour (215g; 1 2/3 cups)",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "7.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "215",
+            "unit": "g"
+          },
+          {
+            "amount": "1.67",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 ounces Dutch-process cocoa powder (55 g; 2/3 cup)",
+      "expected": {
+        "item": "Dutch-process cocoa powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          },
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.6",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "7 ounces crème fraîche (200g; 3/4 cup plus 1 tablespoon)",
+      "expected": {
+        "item": "crème fraîche",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          },
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon powdered gelatin",
+      "expected": {
+        "item": "powdered gelatin",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/4 ounces cornstarch (30g; 1/4 cup plus 1 tablespoon)",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          },
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 3/4 ounces granulated sugar (50g; 1/4 cup)",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          },
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (355 ml) water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "355",
+            "unit": "ml"
+          },
+          {
+            "amount": "356",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "4 1/2 ounces dark chocolate, 60 to 70% cocoa (125 g; 1 cup), roughly chopped",
+      "expected": {
+        "item": "dark chocolate, 60 to 70% cocoa",
+        "measurements": [
+          {
+            "amount": "4.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "roughly chopped",
+        "category": "Baking"
+      }
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "source": "onceuponachef",
+  "recipe_slug": "recipes-peanut-butter-clouds-h",
+  "ingredients": [
+    {
+      "raw": "3  large egg whites, at room temperature (see note)",
+      "expected": {
+        "item": "egg whites",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": "at room temperature (see note)",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "⅛ teaspoon cream of tartar",
+      "expected": {
+        "item": "cream of tartar",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.4",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "⅔ cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          },
+          {
+            "amount": "133",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "⅓ cup smooth peanut butter, well stirred",
+      "expected": {
+        "item": "smooth peanut butter, well stirred",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "3 tablespoons finely chopped salted peanuts",
+      "expected": {
+        "item": "finely chopped salted peanuts",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-quickandeasypanfriedfl",
+  "ingredients": [
+    {
+      "raw": "1 1/2 pound flank steak",
+      "expected": {
+        "item": "flank steak",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Dry mustard",
+      "expected": {
+        "item": "Dry mustard",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "Softened butter",
+      "expected": {
+        "item": "Softened butter",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

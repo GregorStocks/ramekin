@@ -1,0 +1,66 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-21220-mashed-sweet-pota",
+  "ingredients": [
+    {
+      "raw": "6 medium sweet potatoes, peeled and cubed",
+      "expected": {
+        "item": "sweet potatoes",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "medium"
+          }
+        ],
+        "note": "peeled and cubed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "0.75 cup warm 2% milk, or as needed",
+      "expected": {
+        "item": "warm 2% milk",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": "or as needed",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "0.75 cup maple syrup, or to taste",
+      "expected": {
+        "item": "maple syrup",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "236",
+            "unit": "g"
+          }
+        ],
+        "note": "or to taste",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "0.5 cup softened butter, cut into chunks",
+      "expected": {
+        "item": "softened butter, cut into chunks",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "pizza-dough-recipe",
+  "ingredients": [
+    {
+      "raw": "500 grams* Tipo 00 or all-purpose flour (3 1/3 cups)",
+      "expected": {
+        "item": "grams* Tipo 00 or all-purpose flour",
+        "measurements": [
+          {
+            "amount": "500",
+            "unit": null
+          },
+          {
+            "amount": "3.33",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "8 grams instant or active dry yeast (2 teaspoons)",
+      "expected": {
+        "item": "instant or active dry yeast",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "g"
+          },
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "7 grams kosher salt (1 teaspoon)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "338 grams warm water (1 1/4 cups + 3 tablespoons)",
+      "expected": {
+        "item": "warm water",
+        "measurements": [
+          {
+            "amount": "338",
+            "unit": "g"
+          },
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "13 grams olive oil (1 tablespoon)",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "13",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-flourlesslemonalmondca",
+  "ingredients": [
+    {
+      "raw": "4 eggs (large), separated into 4 egg yolks and 4 egg whites, room temperature (see how to separate eggs)",
+      "expected": {
+        "item": "eggs, separated into 4 egg yolks and 4 egg whites",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": null,
+            "unit": "large"
+          }
+        ],
+        "note": "room temperature (see how to separate eggs)",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 Tbsp lemon zest, packed",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "packed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup (100 g) white sugar, divided 1/4 cup (50 g) and 1/4 cup (50 g)",
+      "expected": {
+        "item": "white sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": "divided 1/4 cup and 1/4 cup",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 cup lightly scooped (144 g) finely ground blanched almond flour",
+      "expected": {
+        "item": "lightly scooped finely ground blanched almond flour",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "144",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon baking powder (make sure your baking powder is fresh!)",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "4.6",
+            "unit": "g"
+          }
+        ],
+        "note": "make sure your baking powder is fresh!",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon ground cardamom",
+      "expected": {
+        "item": "ground cardamom",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon white or cider vinegar",
+      "expected": {
+        "item": "white or cider vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Pinch of salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Powdered sugar for sprinkling",
+      "expected": {
+        "item": "Powdered sugar for sprinkling",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

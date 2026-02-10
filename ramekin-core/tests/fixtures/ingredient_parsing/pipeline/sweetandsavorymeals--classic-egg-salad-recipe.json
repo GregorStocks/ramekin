@@ -1,0 +1,200 @@
+{
+  "source": "sweetandsavorymeals",
+  "recipe_slug": "classic-egg-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "8  hard-boiled eggs (peeled and chopped)",
+      "expected": {
+        "item": "hard-boiled eggs",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": "peeled and chopped",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/3 cup mayonnaise (or more)",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          },
+          {
+            "amount": "73",
+            "unit": "g"
+          }
+        ],
+        "note": "or more",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 tablespoon stone ground mustard",
+      "expected": {
+        "item": "stone ground mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 tablespoon pickle juice (or lemon juice)",
+      "expected": {
+        "item": "pickle juice (or lemon juice)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/2  small red onion (chopped)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "small"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon dill (chopped)",
+      "expected": {
+        "item": "dill",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon green onion (chopped)",
+      "expected": {
+        "item": "green onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon green garlic (chopped or use 2 minced garlic cloves)",
+      "expected": {
+        "item": "green garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped or use 2 minced garlic cloves",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup diced pickles (optional)",
+      "expected": {
+        "item": "diced pickles",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "optional",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon kosher salt (or to taste)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "fresh black pepper (to taste)",
+      "expected": {
+        "item": "fresh black pepper",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon paprika (sweet or smoked)",
+      "expected": {
+        "item": "paprika (sweet or smoked)",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "chopped chives",
+      "expected": {
+        "item": "chopped chives",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "chopped green onion",
+      "expected": {
+        "item": "chopped green onion",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "paprika",
+      "expected": {
+        "item": "paprika",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 {
-  "title": "Push up extraction success rate (currently 86.4%)",
-  "description": "732/5370 URLs (13.6%) still fail extraction. The HTML fallback (PR #264) helped but several sites still have low/zero success rates: bakingbites.com (0/12), halfbakedharvest.com (0/7), feastingathome.com (0/5), kingarthurbaking.com (5/24), hostthetoast.com (3/9). This is a tracker for the overall extraction rate goal. Individual site-specific issues exist separately.",
+  "title": "Push up extraction success rate (currently 98.3%)",
+  "description": "71/4333 URLs (1.6%) still fail extraction. Improved from 164/5370 (3.1%) by enabling reqwest content decompression (fixing hostthetoast.com, asweetpeachef.com) and filtering ~1000 non-recipe URLs from the test set (category pages, blog posts, roundups, lifestyle posts). Remaining failures are mostly JS-rendered sites (sprinklebakes.com 79/100) and scattered older posts without structured data.",
   "status": "open",
-  "priority": 2,
+  "priority": 4,
   "type": "task",
   "labels": ["extraction"],
   "created_at": "2026-02-09T07:06:55.000000+00:00",
-  "updated_at": "2026-02-09T07:06:55.000000+00:00"
+  "updated_at": "2026-02-10T04:30:00.000000+00:00"
 }

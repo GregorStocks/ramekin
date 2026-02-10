@@ -1,0 +1,81 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "daiquiri-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 ounces (3 tablespoons) best quality light or white rum",
+      "expected": {
+        "item": "best quality light or white rum",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 ounce (2 tablespoons) lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/2 ounce (1 tablespoon) simple syrup or maple syrup",
+      "expected": {
+        "item": "simple syrup or maple syrup",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Lime slice, for garnish",
+      "expected": {
+        "item": "Lime slice",
+        "measurements": [],
+        "note": "for garnish",
+        "category": "Produce"
+      }
+    }
+  ]
+}

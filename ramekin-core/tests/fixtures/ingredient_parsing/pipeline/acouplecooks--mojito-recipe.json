@@ -1,0 +1,92 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "mojito-recipe",
+  "ingredients": [
+    {
+      "raw": "6 mint leaves, plus additional for garnish",
+      "expected": {
+        "item": "mint leaves",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "plus additional for garnish",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 lime, cut into wedges, plus additional for garnish",
+      "expected": {
+        "item": "lime, cut into wedges",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "plus additional for garnish",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 1/2 to 2 tablespoons* granulated sugar (6 sugar cubes or 1 1/2 ounces simple syrup)",
+      "expected": {
+        "item": "to 2 tablespoons* granulated sugar",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          },
+          {
+            "amount": "6",
+            "unit": null
+          },
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 ounces** white rum",
+      "expected": {
+        "item": "ounces** white rum",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 ounces soda water",
+      "expected": {
+        "item": "soda water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    }
+  ]
+}

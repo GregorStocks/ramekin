@@ -1,0 +1,76 @@
+{
+  "source": "sprinklebakes",
+  "recipe_slug": "2016-04-homemade-hibiscus-syru",
+  "ingredients": [
+    {
+      "raw": "4 cups 960 ml filtered water",
+      "expected": {
+        "item": "960 ml filtered water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 cups 400 g granulated sugar",
+      "expected": {
+        "item": "400 g granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup 2.5 ounces dried hibiscus flowers",
+      "expected": {
+        "item": "2.5 ounces dried hibiscus flowers",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 teaspoon freshly squeezed lemon juice",
+      "expected": {
+        "item": "freshly squeezed lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/4  vanilla bean",
+      "expected": {
+        "item": "vanilla bean",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "source": "cookieandkate",
+  "recipe_slug": "pickle-dip-recipe",
+  "ingredients": [
+    {
+      "raw": "16 ounces (2 cups) sour cream or plain Greek yogurt",
+      "expected": {
+        "item": "sour cream or plain Greek yogurt",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 ¼ cups chopped dill pickles",
+      "expected": {
+        "item": "chopped dill pickles",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 tablespoons pickle brine",
+      "expected": {
+        "item": "pickle brine",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh dill, plus more for garnish",
+      "expected": {
+        "item": "chopped fresh dill",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more for garnish",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh chives, plus more for garnish",
+      "expected": {
+        "item": "chopped fresh chives",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more for garnish",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper, to taste",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Serving suggestions: Wavy potato chips, and sticks of carrot, celery or bell pepper",
+      "expected": {
+        "item": "Serving suggestions: Wavy potato chips, and sticks of carrot, celery or bell pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

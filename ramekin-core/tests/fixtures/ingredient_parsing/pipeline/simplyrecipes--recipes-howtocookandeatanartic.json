@@ -1,0 +1,66 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-howtocookandeatanartic",
+  "ingredients": [
+    {
+      "raw": "1 or more large globe artichokes",
+      "expected": {
+        "item": "or more large globe artichokes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1-2 cloves of garlic, cut in half (can leave skin on)",
+      "expected": {
+        "item": "garlic, cut in half",
+        "measurements": [
+          {
+            "amount": "1-2",
+            "unit": "clove"
+          },
+          {
+            "amount": null,
+            "unit": "can"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 bay leaf",
+      "expected": {
+        "item": "bay leaf",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 slice of lemon",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "slice"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

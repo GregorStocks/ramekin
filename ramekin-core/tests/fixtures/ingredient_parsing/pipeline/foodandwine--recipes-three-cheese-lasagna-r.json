@@ -1,0 +1,238 @@
+{
+  "source": "foodandwine",
+  "recipe_slug": "recipes-three-cheese-lasagna-r",
+  "ingredients": [
+    {
+      "raw": "1/2 cup extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "108",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "8 medium garlic cloves, smashed",
+      "expected": {
+        "item": "garlic cloves, smashed",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "medium"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "5 medium red bell peppers (2 pounds total), seeded cut into 1-inch-wide strips",
+      "expected": {
+        "item": "red bell peppers, seeded cut into 1-inch-wide strips",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "medium"
+          },
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 1/4 teaspoons kosher salt, divided",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "2.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon black pepper, divided",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 (8-ounce) packages cremini mushrooms, quartered (6 cups)",
+      "expected": {
+        "item": "cremini mushrooms",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "package"
+          },
+          {
+            "amount": "8",
+            "unit": null
+          },
+          {
+            "amount": "6",
+            "unit": "cup"
+          }
+        ],
+        "note": "quartered",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 (16-ounce) container ricotta cheese",
+      "expected": {
+        "item": "container ricotta cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "16",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 cup chopped fresh flat-leaf parsley",
+      "expected": {
+        "item": "chopped fresh flat-leaf parsley",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 pound Parmesan cheese, grated (about 2 cups), divided",
+      "expected": {
+        "item": "Parmesan cheese, grated",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "3 1/2 cups store-bought marinara sauce (from 1 [32-ounce] jar)",
+      "expected": {
+        "item": "store-bought marinara sauce (from 1 [32-ounce] jar)",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "13 no-boil lasagna noodles (from a 8-ounce package)",
+      "expected": {
+        "item": "no-boil lasagna noodles (from a 8-ounce package)",
+        "measurements": [
+          {
+            "amount": "13",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "1 (8-ounce) container fresh mozzarella balls, cut into 1/4-inch-thick slabs",
+      "expected": {
+        "item": "container fresh mozzarella balls, cut into 1/4-inch-thick slabs",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/2 cup loosely packed fresh basil leaves, torn",
+      "expected": {
+        "item": "loosely packed fresh basil leaves, torn",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

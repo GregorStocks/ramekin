@@ -1,0 +1,115 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "mai-tai-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 ounces* aged rum",
+      "expected": {
+        "item": "ounces* aged rum",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/2 ounce orange liqueur: Curaçao, Cointreau or Grand Marnier",
+      "expected": {
+        "item": "orange liqueur: Curaçao, Cointreau or Grand Marnier",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "3/4 ounce lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 ounce orgeat syrup",
+      "expected": {
+        "item": "orgeat syrup",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon simple syrup (optional**)",
+      "expected": {
+        "item": "simple syrup",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional**",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 ounce dark rum, to float (optional)",
+      "expected": {
+        "item": "dark rum, to float",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Snacks"
+      }
+    },
+    {
+      "raw": "For serving: Crushed ice or clear ice, fresh mint, cocktail cherry, lime wedge",
+      "expected": {
+        "item": "For serving: Crushed ice or clear ice, fresh mint, cocktail cherry, lime wedge",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-256403-strawberry-cream",
+  "ingredients": [
+    {
+      "raw": "8 ounces cream cheese, softened",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "softened",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "0.5 cup butter, softened",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": "softened",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 strawberries, hulled and chopped",
+      "expected": {
+        "item": "strawberries",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "hulled and chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 (16 ounce) package confectioners' sugar, or as needed",
+      "expected": {
+        "item": "confectioners' sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "or as needed",
+        "category": "Baking"
+      }
+    }
+  ]
+}

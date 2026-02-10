@@ -1,0 +1,198 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "fish-and-chips-recipe-11690853",
+  "ingredients": [
+    {
+      "raw": "Four 6-ounce (170 g) white-fleshed fish fillets, such as cod or haddock",
+      "expected": {
+        "item": "6-ounce white-fleshed fish fillets, such as cod or haddock",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 teaspoon Diamond Crystal kosher salt, plus more for brining; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for brining; for table salt, use half as much by volume",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "6 3/4 ounces all-purpose flour (192 g; 1 1/2 cups), divided2 1/2 ounces rice flour (71 g; 1/2 cup)",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "6.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "192",
+            "unit": "g"
+          },
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "71",
+            "unit": "g"
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided2 1/2 ounces rice flour",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 1/2 ounces rice flour (71 g; 1/2 cup)",
+      "expected": {
+        "item": "rice flour",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "71",
+            "unit": "g"
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons baking powder1 cup (240 ml) light, crisp lager, preferably Narragansett",
+      "expected": {
+        "item": "baking powder1 cup light, crisp lager, preferably Narragansett",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "240",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup (240 ml) light, crisp lager, preferably Narragansett",
+      "expected": {
+        "item": "light, crisp lager, preferably Narragansett",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/4 cup (60 ml) vodka",
+      "expected": {
+        "item": "vodka",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 quarts (1.9 L) neutral oil, such as canola or vegetable",
+      "expected": {
+        "item": "neutral oil, such as canola or vegetable",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "quart"
+          },
+          {
+            "amount": "1.9",
+            "unit": "l"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Malt vinegar, placed in a spray bottle",
+      "expected": {
+        "item": "Malt vinegar, placed in a spray bottle",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 recipe British chips",
+      "expected": {
+        "item": "recipe British chips",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Snacks"
+      }
+    },
+    {
+      "raw": "Tartar sauce, homemade or store-bought (optional)",
+      "expected": {
+        "item": "Tartar sauce, homemade or store-bought",
+        "measurements": [],
+        "note": "optional",
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

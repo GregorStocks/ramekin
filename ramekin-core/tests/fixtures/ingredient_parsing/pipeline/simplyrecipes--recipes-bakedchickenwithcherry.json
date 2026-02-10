@@ -1,0 +1,129 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-bakedchickenwithcherry",
+  "ingredients": [
+    {
+      "raw": "2 pounds (900 g) bone-in, skin-on chicken thighs, trimmed of excess fat",
+      "expected": {
+        "item": "bone-in, skin-on chicken thighs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "900",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed of excess fat",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 cups of cherry tomatoes (a heaping basket or 25 to 30 cherry tomatoes)",
+      "expected": {
+        "item": "cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "25 to 30",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "6 whole cloves garlic, peeled",
+      "expected": {
+        "item": "whole cloves garlic",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "peeled",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons balsamic vinegar",
+      "expected": {
+        "item": "balsamic vinegar",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "24",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6.8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 sprigs fresh rosemary (or 1/2 teaspoon dry rosemary)",
+      "expected": {
+        "item": "fresh rosemary (or 1/2 teaspoon dry rosemary)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "sprig"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Toasted crusty bread, buttered noodles, or rice for serving, optional",
+      "expected": {
+        "item": "Toasted crusty bread, buttered noodles, or rice for serving",
+        "measurements": [],
+        "note": "optional",
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

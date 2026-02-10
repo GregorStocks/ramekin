@@ -1,0 +1,113 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "salmoriglio-recipe-11895409",
+  "ingredients": [
+    {
+      "raw": "1/2 teaspoon finely grated lemon zest plus 1/4 cup (60 ml) lemon juice from 2 medium lemons",
+      "expected": {
+        "item": "finely grated lemon zest plus 1/4 cup lemon juice from 2 medium lemons",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly-ground black pepper",
+      "expected": {
+        "item": "Kosher salt and freshly-ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3/4 cup (180 ml) extra-virgin olive oil",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "ml"
+          },
+          {
+            "amount": "162",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3/4 cup fresh oregano leaves (3/4 ounce; 21 g), finely minced",
+      "expected": {
+        "item": "fresh oregano leaves",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "0.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": "finely minced",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3/4 cup fresh parsley leaves (3/4 ounce; 21 g), finely minced",
+      "expected": {
+        "item": "fresh parsley leaves",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "0.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": "finely minced",
+        "category": "Produce"
+      }
+    }
+  ]
+}

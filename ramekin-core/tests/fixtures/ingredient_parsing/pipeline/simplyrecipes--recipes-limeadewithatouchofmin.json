@@ -1,0 +1,70 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-limeadewithatouchofmin",
+  "ingredients": [
+    {
+      "raw": "1 cup lime juice (from about 4-6 Persian limes)",
+      "expected": {
+        "item": "lime juice (from about 4-6 Persian limes)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "3 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "711",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Sugar",
+      "expected": {
+        "item": "Sugar",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Grated zest of one lime (about 1 Tbsp)",
+      "expected": {
+        "item": "Grated zest of one lime",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Several sprigs of fresh mint",
+      "expected": {
+        "item": "Several sprigs of fresh mint",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

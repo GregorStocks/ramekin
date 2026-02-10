@@ -1,0 +1,102 @@
+{
+  "source": "cookieandkate",
+  "recipe_slug": "chocolate-peanut-butter-crispy",
+  "ingredients": [
+    {
+      "raw": "3 cups brown rice crisps*",
+      "expected": {
+        "item": "brown rice crisps*",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "1 &frac14; cups whole pecans, chopped, divided",
+      "expected": {
+        "item": "whole pecans, chopped",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided",
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "¾ cup creamy peanut butter (plus a pinch of salt if your peanut butter is unsalted)",
+      "expected": {
+        "item": "creamy peanut butter (plus a pinch of salt if your peanut butter is unsalted)",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "½ cup honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 ½ cups (9 ounces) chocolate chips*",
+      "expected": {
+        "item": "chocolate chips*",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "9",
+            "unit": "oz"
+          },
+          {
+            "amount": "255",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "&frac12; teaspoon flaky sea salt or &frac14; teaspoon kosher salt",
+      "expected": {
+        "item": "flaky sea salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or 1/4 teaspoon kosher salt",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

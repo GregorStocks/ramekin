@@ -1,0 +1,72 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-213073-slow-cooker-cock",
+  "ingredients": [
+    {
+      "raw": "1 (12 ounce) bottle barbeque sauce",
+      "expected": {
+        "item": "barbeque sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "bottle"
+          },
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 (8 ounce) jar grape jelly",
+      "expected": {
+        "item": "grape jelly",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "jar"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 (14 ounce) packages miniature smoked sausage links",
+      "expected": {
+        "item": "miniature smoked sausage links",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "package"
+          },
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    }
+  ]
+}

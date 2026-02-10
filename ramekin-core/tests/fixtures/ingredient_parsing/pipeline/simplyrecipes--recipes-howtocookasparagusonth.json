@@ -1,0 +1,70 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-howtocookasparagusonth",
+  "ingredients": [
+    {
+      "raw": "1/2 pound asparagus (or up to a pound), thin, medium, or large",
+      "expected": {
+        "item": "asparagus (or up to a pound), thin, medium, or large",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon of salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 garlic clove, cut in half (optional)",
+      "expected": {
+        "item": "garlic clove, cut in half",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "optional",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 strip of lemon peel (optional)",
+      "expected": {
+        "item": "strip of lemon peel",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "optional",
+        "category": "Produce"
+      }
+    }
+  ]
+}

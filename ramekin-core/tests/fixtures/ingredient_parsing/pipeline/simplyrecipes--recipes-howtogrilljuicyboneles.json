@@ -1,0 +1,88 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-howtogrilljuicyboneles",
+  "ingredients": [
+    {
+      "raw": "4 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          },
+          {
+            "amount": "948",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/4 cup kosher salt (or 3 tablespoons sea salt)",
+      "expected": {
+        "item": "kosher salt (or 3 tablespoons sea salt)",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 to 2 pounds boneless skinless chicken breasts",
+      "expected": {
+        "item": "to 2 pounds boneless skinless chicken breasts",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "3 tablespoons extra virgin olive oil (plus more for the grill)",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for the grill",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons paprika",
+      "expected": {
+        "item": "paprika",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3.4",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

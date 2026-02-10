@@ -1,0 +1,390 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "creamy-chicken-and-wild-rice-s",
+  "ingredients": [
+    {
+      "raw": "3 pounds (1.35Kg) bone-in, skin-on chicken thighs",
+      "expected": {
+        "item": "bone-in, skin-on chicken thighs",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1.35",
+            "unit": "kg"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "3 quarts (2.8L) water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "quart"
+          },
+          {
+            "amount": "2.8",
+            "unit": "l"
+          },
+          {
+            "amount": "2844",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 medium celery stalks (about 2 1/2 ounces; 70g each), roughly chopped",
+      "expected": {
+        "item": "celery stalks",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          },
+          {
+            "amount": "2.5",
+            "unit": "oz each"
+          },
+          {
+            "amount": "70",
+            "unit": "g each"
+          }
+        ],
+        "note": "roughly chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large carrot (6 ounces; 170g), roughly chopped",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "roughly chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large leek (7 ounces; 198g), washed and rinsed well of grit, white and light green parts halved lengthwise and sliced 1/4-inch thick (about 2 1/2 cups sliced)",
+      "expected": {
+        "item": "leek, washed and rinsed well of grit, white and light green parts halved lengthwise and sliced 1/4-inch thick",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "198",
+            "unit": "g"
+          }
+        ],
+        "note": "about 2 1/2 cups sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 teaspoons Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 fresh thyme sprigs",
+      "expected": {
+        "item": "fresh thyme sprigs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 tablespoons unsalted butter (2 ounces; 56g)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 medium celery stalks with leaves (about 2 1/2 ounces; 70g each), sliced 1/4-inch thick (about 2 cups sliced), leaves reserved for garnish",
+      "expected": {
+        "item": "celery stalks with leaves, sliced 1/4-inch thick, leaves reserved for garnish",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          },
+          {
+            "amount": "2.5",
+            "unit": "oz each"
+          },
+          {
+            "amount": "70",
+            "unit": "g each"
+          }
+        ],
+        "note": "about 2 cups sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large carrot (6 ounces; 170g), halved and sliced 1/4-inch thick",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "halved and sliced 1/4-inch thick",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 medium fennel bulb (8 ounces; 226g), chopped into 1/2 inch pieces",
+      "expected": {
+        "item": "fennel bulb",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped into 1/2 inch pieces",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 medium cloves garlic (15g), minced",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 teaspoons chopped fresh thyme leaves",
+      "expected": {
+        "item": "chopped fresh thyme leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 teaspoons Diamond Crystal kosher salt; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 cup all-purpose flour (about 1 ounce; 30g)",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 cup uncooked wild rice (about 6 1/4 ounces; 175g)",
+      "expected": {
+        "item": "uncooked wild rice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "6.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "175",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon baking soda, optional",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.6",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup (120ml) heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          },
+          {
+            "amount": "119",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 teaspoon grated lemon zest plus 2 tablespoons (30ml) lemon juice from 1 lemon",
+      "expected": {
+        "item": "grated lemon zest plus 2 tablespoons lemon juice from 1 lemon",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    }
+  ]
+}

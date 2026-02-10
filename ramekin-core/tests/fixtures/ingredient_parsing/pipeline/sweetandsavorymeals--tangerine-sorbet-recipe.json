@@ -1,0 +1,33 @@
+{
+  "source": "sweetandsavorymeals",
+  "recipe_slug": "tangerine-sorbet-recipe",
+  "ingredients": [
+    {
+      "raw": "2 lbs tangerines (seedless - make sure you choose seedless)",
+      "expected": {
+        "item": "tangerines (seedless - make sure you choose seedless)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Dark chocolate shavings",
+      "expected": {
+        "item": "Dark chocolate shavings",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

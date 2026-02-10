@@ -1,0 +1,116 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-instantpotcornedbeefan",
+  "ingredients": [
+    {
+      "raw": "1 corned beef brisket (up to 4 pounds)",
+      "expected": {
+        "item": "corned beef brisket (up to 4 pounds)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 pound yellow waxy potatoes, cut into 1 1/2 inch pieces",
+      "expected": {
+        "item": "yellow waxy potatoes, cut into 1 1/2 inch pieces",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 pound carrots, peeled and cut into 2-inch lengths",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into 2-inch lengths",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 small (1 1/2 pounds or less) green cabbage, cut into 2-inch thick wedges",
+      "expected": {
+        "item": "green cabbage, cut into 2-inch thick wedges",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "1 1/2 pounds or less",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon salted butter or margarine (optional)",
+      "expected": {
+        "item": "salted butter or margarine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "optional",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons chopped parsley (optional)",
+      "expected": {
+        "item": "chopped parsley",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon salt (optional)",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

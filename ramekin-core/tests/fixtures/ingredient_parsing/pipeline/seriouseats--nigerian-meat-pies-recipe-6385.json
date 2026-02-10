@@ -1,0 +1,402 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "nigerian-meat-pies-recipe-6385",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon (8g) cornstarch",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup (120ml) water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3 tablespoons (45ml) vegetable or other neutral cooking oil, divided",
+      "expected": {
+        "item": "vegetable or other neutral cooking oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
+          }
+        ],
+        "note": "divided",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "8.8 ounces (250g) ground beef, at least 20% fat",
+      "expected": {
+        "item": "ground beef, at least 20% fat",
+        "measurements": [
+          {
+            "amount": "8.8",
+            "unit": "oz"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 small yellow onion (1.7 ounces; 50g), finely diced",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "small"
+          },
+          {
+            "amount": "1.7",
+            "unit": "oz"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": "finely diced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 small Yukon gold or yellow potatoes (4.2 ounces; 120g total), peeled and cut into 1/2-inch dice",
+      "expected": {
+        "item": "Yukon gold or yellow potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "small"
+          },
+          {
+            "amount": "4.2",
+            "unit": "oz"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into 1/2-inch dice",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 small carrot (2.6 ounces; 75g), peeled and cut into 1/4-inch dice",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": "2.6",
+            "unit": "oz"
+          },
+          {
+            "amount": "75",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into 1/4-inch dice",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon Nigerian-style curry powder (see note)",
+      "expected": {
+        "item": "Nigerian-style curry powder (see note)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon dried thyme",
+      "expected": {
+        "item": "dried thyme",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup (235ml) Nigerian-style stock or water",
+      "expected": {
+        "item": "Nigerian-style stock or water",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "235",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/2 small green bell pepper (1.7 ounces; 50g), stemmed, seeded, and finely chopped, divided",
+      "expected": {
+        "item": "green bell pepper, stemmed, seeded, and finely chopped",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "small"
+          },
+          {
+            "amount": "1.7",
+            "unit": "oz"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "5.6 ounces all-purpose flour (160g; 1 1/4 cups)",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "5.6",
+            "unit": "oz"
+          },
+          {
+            "amount": "160",
+            "unit": "g"
+          },
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 ounce whole wheat flour (30g; 1/4 cup)",
+      "expected": {
+        "item": "whole wheat flour",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          },
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon (3g) Diamond Crystal kosher salt; for table salt, use half as much by volume or the same weight",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume or the same weight",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon baking powder",
+      "expected": {
+        "item": "baking powder",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3.1 ounces unsalted butter (90g; 6 tablespoons), cold",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3.1",
+            "unit": "oz"
+          },
+          {
+            "amount": "90",
+            "unit": "g"
+          },
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "cold",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 large egg (1 1/4 ounces; 50g), lightly beaten",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "1.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": "lightly beaten",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 cup (60ml) ice-cold water, plus more as needed",
+      "expected": {
+        "item": "ice-cold water",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": "plus more as needed",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 large egg yolk (15g) lightly beaten with 1 tablespoon (15ml) milk (any fat percentage)",
+      "expected": {
+        "item": "egg yolk lightly beaten with 1 tablespoon milk (any fat percentage)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

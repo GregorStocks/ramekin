@@ -1,0 +1,333 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "pozole-mexican-red-chile-pork-",
+  "ingredients": [
+    {
+      "raw": "3 pounds boneless pork shoulder, trimmed of excess fat and cut into 2-inch cubes",
+      "expected": {
+        "item": "boneless pork shoulder",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1361",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed of excess fat and cut into 2-inch cubes",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 tablespoon Diamond Crystal kosher salt, plus more for seasoning; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "8.6",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for seasoning; for table salt, use half as much by volume",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 pound pig’s feet (optional)",
+      "expected": {
+        "item": "pig’s feet",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 whole white onion, peeled, ends trimmed (8 ounces; 227g)",
+      "expected": {
+        "item": "whole white onion, peeled",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "ends trimmed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "5 medium cloves garlic, peeled and left whole",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "medium"
+          }
+        ],
+        "note": "peeled and left whole",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Five 15-ounce cans white hominy (75 ounces total weight), drained and rinsed",
+      "expected": {
+        "item": "white hominy",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "15-ounce cans"
+          },
+          {
+            "amount": "75",
+            "unit": "oz"
+          },
+          {
+            "amount": "2126",
+            "unit": "g"
+          }
+        ],
+        "note": "drained and rinsed",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "5 guajillo chiles, stems and seeds removed",
+      "expected": {
+        "item": "guajillo chiles, stems and seeds removed",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "4 California chiles, stems and seeds removed",
+      "expected": {
+        "item": "California chiles, stems and seeds removed",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "2 ancho chiles, stems and seeds removed",
+      "expected": {
+        "item": "ancho chiles, stems and seeds removed",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1/2 white onion, trimmed, halved, and roughly chopped (4 ounces; 113g)",
+      "expected": {
+        "item": "white onion, trimmed, halved",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "and roughly chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "5 medium cloves garlic, roughly chopped",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "medium"
+          }
+        ],
+        "note": "roughly chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon chicken bouillon powder or substitute with 1 teaspoon Diamond Crystal kosher salt",
+      "expected": {
+        "item": "chicken bouillon powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or substitute with 1 teaspoon Diamond Crystal kosher salt",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon whole black peppercorns",
+      "expected": {
+        "item": "whole black peppercorns",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon cumin seeds",
+      "expected": {
+        "item": "cumin seeds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Diced white onion",
+      "expected": {
+        "item": "Diced white onion",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Thinly sliced radish",
+      "expected": {
+        "item": "Thinly sliced radish",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Thinly sliced cabbage",
+      "expected": {
+        "item": "Thinly sliced cabbage",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Cubed avocado",
+      "expected": {
+        "item": "Cubed avocado",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Dried Mexican oregano",
+      "expected": {
+        "item": "Dried Mexican oregano",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Crema",
+      "expected": {
+        "item": "Crema",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Tostadas or chicharrón",
+      "expected": {
+        "item": "Tostadas or chicharrón",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Lime wedges",
+      "expected": {
+        "item": "Lime wedges",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

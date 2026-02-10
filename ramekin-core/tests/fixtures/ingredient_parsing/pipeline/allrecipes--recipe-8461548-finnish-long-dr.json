@@ -1,0 +1,108 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-8461548-finnish-long-dr",
+  "ingredients": [
+    {
+      "raw": "1 cup ice, or as needed",
+      "expected": {
+        "item": "ice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "or as needed",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3 ounces grapefruit flavored soda (such as Fresca®)",
+      "expected": {
+        "item": "grapefruit flavored soda (such as Fresca®)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 fluid ounces white grapefruit juice",
+      "expected": {
+        "item": "white grapefruit juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 fluid ounces gin",
+      "expected": {
+        "item": "gin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "0.5 fluid ounce freshly squeezed lemon juice",
+      "expected": {
+        "item": "freshly squeezed lemon juice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "fl oz"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 splash club soda, or as needed",
+      "expected": {
+        "item": "splash club soda",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "or as needed",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 slice grapefruit for garnish",
+      "expected": {
+        "item": "grapefruit for garnish",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "slice"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

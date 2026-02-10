@@ -1,0 +1,161 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "no-knead-whole-wheat-bread-rec",
+  "ingredients": [
+    {
+      "raw": "255 g bread flour (9 ounces; about 2 cups)",
+      "expected": {
+        "item": "bread flour",
+        "measurements": [
+          {
+            "amount": "255",
+            "unit": "g"
+          },
+          {
+            "amount": "9",
+            "unit": "oz"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "198 g whole wheat flour (7 ounces; about 1 3/4 cup)",
+      "expected": {
+        "item": "whole wheat flour",
+        "measurements": [
+          {
+            "amount": "198",
+            "unit": "g"
+          },
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "1.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 g (1 teaspoon) Diamond Crystal kosher salt; for table salt, use half as much by volume or same weight",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume or same weight",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 g (1/2 teaspoon) instant yeast",
+      "expected": {
+        "item": "instant yeast",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "g"
+          },
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "226 g room temperature water (1 cup; 8 ounces)",
+      "expected": {
+        "item": "room temperature water",
+        "measurements": [
+          {
+            "amount": "226",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) apple cider vinegar",
+      "expected": {
+        "item": "apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15 ml) honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Cooking oil spray",
+      "expected": {
+        "item": "Cooking oil spray",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    }
+  ]
+}

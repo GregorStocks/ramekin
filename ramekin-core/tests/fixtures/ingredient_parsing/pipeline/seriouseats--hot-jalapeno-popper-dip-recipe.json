@@ -1,0 +1,250 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "hot-jalapeno-popper-dip-recipe",
+  "ingredients": [
+    {
+      "raw": "2 large jalapeño chiles (3 1/2 ounces; 99 g total)",
+      "expected": {
+        "item": "jalapeño chiles",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          },
+          {
+            "amount": "3.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "99",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "5 small scallions (1 ounce; 28 g total), ends trimmed",
+      "expected": {
+        "item": "scallions",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "small"
+          },
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "ends trimmed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "6 slices bacon (6 ounces; 170 g total), chopped",
+      "expected": {
+        "item": "bacon",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "slice"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "12 ounces (340 g) cream cheese, softened",
+      "expected": {
+        "item": "cream cheese",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "softened",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/2 cup sour cream (4 ounces; 113 g)",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 (4-ounce; 113 g) can mild diced green chiles, drained",
+      "expected": {
+        "item": "mild diced green chiles",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "drained",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 teaspoon garlic powder",
+      "expected": {
+        "item": "garlic powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon onion powder",
+      "expected": {
+        "item": "onion powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 ounces (113 g) pepper Jack cheese, shredded (about 1 cup) (see notes)",
+      "expected": {
+        "item": "pepper Jack cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded (see notes)",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 ounce (28 g) Parmesan cheese, shredded (about 1/4 cup) (see notes)",
+      "expected": {
+        "item": "Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          },
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "shredded (see notes)",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "Chopped fresh scallions (white and light green parts only)",
+      "expected": {
+        "item": "Chopped fresh scallions (white and light green parts only)",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Thinly sliced jalapeño rounds",
+      "expected": {
+        "item": "Thinly sliced jalapeño rounds",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Corn tortilla chips",
+      "expected": {
+        "item": "Corn tortilla chips",
+        "measurements": [],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    }
+  ]
+}

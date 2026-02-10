@@ -1,0 +1,187 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "taco-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "1 recipe Vegan Walnut Taco Meat or 1 pound ground beef",
+      "expected": {
+        "item": "recipe Vegan Walnut Taco Meat",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "or 1 pound ground beef",
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "3 romaine lettuce hearts (enough for 8 cups chopped)",
+      "expected": {
+        "item": "romaine lettuce hearts",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": null
+          }
+        ],
+        "note": "enough for 8 cups chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup canned corn, drained",
+      "expected": {
+        "item": "canned corn",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "drained",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 handful ripe cherry tomatoes or pico de gallo (purchased or homemade)",
+      "expected": {
+        "item": "ripe cherry tomatoes or pico de gallo (purchased or homemade)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "handful"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 ripe avocado or 1 cup guacamole",
+      "expected": {
+        "item": "ripe avocado",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "or 1 cup guacamole",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 handfuls finely chopped red onion or thinly sliced green onion, or both",
+      "expected": {
+        "item": "finely chopped red onion or thinly sliced green onion, or both",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "handful"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Crushed tortilla chips (about 1 handful per serving)",
+      "expected": {
+        "item": "Crushed tortilla chips",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "handful"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "Optional toppings: Easy black beans or refried beans, shredded Colby jack or cheddar cheese, taco sauce, or pickled jalapenos or pickled onions",
+      "expected": {
+        "item": "Optional toppings: Easy black beans or refried beans, shredded Colby jack or cheddar cheese, taco sauce, or pickled jalapenos or pickled onions",
+        "measurements": [],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/2 cup red salsa (mild or medium)",
+      "expected": {
+        "item": "red salsa",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": null,
+            "unit": "medium"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1/2 cup Greek yogurt (or vegan yogurt*)",
+      "expected": {
+        "item": "Greek yogurt (or vegan yogurt*)",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 cup sour cream (or mayonnaise or vegan mayo)",
+      "expected": {
+        "item": "sour cream (or mayonnaise or vegan mayo)",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 teaspoon hot sauce",
+      "expected": {
+        "item": "hot sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "2 pinches kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

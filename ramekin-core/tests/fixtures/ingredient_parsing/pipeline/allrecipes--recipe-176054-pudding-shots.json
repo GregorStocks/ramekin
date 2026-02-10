@@ -1,0 +1,74 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-176054-pudding-shots",
+  "ingredients": [
+    {
+      "raw": "1 cup milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "0.5 cup Irish cream liqueur (eg. Bailey's®)",
+      "expected": {
+        "item": "Irish cream liqueur (eg. Bailey's®)",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "0.5 cup vodka (eg. Smirnoff®)",
+      "expected": {
+        "item": "vodka (eg. Smirnoff®)",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 (3.9 ounce) package instant chocolate pudding mix",
+      "expected": {
+        "item": "instant chocolate pudding mix",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "3.9",
+            "unit": "oz"
+          },
+          {
+            "amount": "111",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

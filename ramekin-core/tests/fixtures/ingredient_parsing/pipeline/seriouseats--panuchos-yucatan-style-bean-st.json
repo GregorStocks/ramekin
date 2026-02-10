@@ -1,0 +1,257 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "panuchos-yucatan-style-bean-st",
+  "ingredients": [
+    {
+      "raw": "1 habanero chile",
+      "expected": {
+        "item": "habanero chile",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "5 cloves garlic, peeled",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/3 cup (90 ml) freshly squeezed orange juice, from one orange",
+      "expected": {
+        "item": "freshly squeezed orange juice, from one orange",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          },
+          {
+            "amount": "90",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon (20 g) achiote paste",
+      "expected": {
+        "item": "achiote paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 tablespoon black peppercorns",
+      "expected": {
+        "item": "black peppercorns",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon fresh oregano leaves",
+      "expected": {
+        "item": "fresh oregano leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 whole allspice berries",
+      "expected": {
+        "item": "whole allspice berries",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 whole clove or a pinch ground",
+      "expected": {
+        "item": "whole clove or a pinch ground",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 cup (360 ml) chicken broth",
+      "expected": {
+        "item": "chicken broth",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "360",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 pound (454 g) store-bought rotisserie chicken or homemade poached chicken , shredded into bite-size",
+      "expected": {
+        "item": "store-bought rotisserie chicken or homemade poached chicken",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "shredded into bite-size",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "2 cups (224 g) masa harina",
+      "expected": {
+        "item": "masa harina",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "224",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 1/2 cups (360 g) water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "360",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 cups store-bought or homemade frijoles refritos (Mexican refried beans)",
+      "expected": {
+        "item": "store-bought or homemade frijoles refritos (Mexican refried beans)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 tablespoons lard, divided",
+      "expected": {
+        "item": "lard",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "26",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Pickled red onions , for serving",
+      "expected": {
+        "item": "Pickled red onions",
+        "measurements": [],
+        "note": "for serving",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "Sliced hard-boiled egg, for serving",
+      "expected": {
+        "item": "Sliced hard-boiled egg",
+        "measurements": [],
+        "note": "for serving",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Sliced avocado",
+      "expected": {
+        "item": "Sliced avocado",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

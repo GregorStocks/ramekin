@@ -1,0 +1,161 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "margherita-pizza-recipe",
+  "ingredients": [
+    {
+      "raw": "1 ball Best Pizza Dough* (or Thin Crust Dough or KitchenAid Pizza Dough)",
+      "expected": {
+        "item": "ball Best Pizza Dough* (or Thin Crust Dough or KitchenAid Pizza Dough)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Semolina flour or cornmeal, for dusting the pizza peel",
+      "expected": {
+        "item": "Semolina flour or cornmeal, for dusting the pizza peel",
+        "measurements": [],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 small garlic clove (1/2 medium)",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          },
+          {
+            "amount": "0.5",
+            "unit": "medium"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "15 ounces crushed fire roasted tomatoes or San Marzano tomatoes",
+      "expected": {
+        "item": "crushed fire roasted tomatoes or San Marzano tomatoes",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 tablespoon extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon dried oregano",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt (scant)",
+      "expected": {
+        "item": "kosher salt (scant)",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 to 1/3 cup pizza sauce",
+      "expected": {
+        "item": "pizza sauce",
+        "measurements": [
+          {
+            "amount": "0.25 to 0.33",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "3/4 cup shredded mozzarella cheese or 2 to 3 ounces fresh mozzarella cheese",
+      "expected": {
+        "item": "shredded mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": "or 2 to 3 ounces fresh mozzarella cheese",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "Parmesan cheese, for topping (optional)",
+      "expected": {
+        "item": "Parmesan cheese, for topping",
+        "measurements": [],
+        "note": "optional",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "Fresh basil leaves, for garnish",
+      "expected": {
+        "item": "Fresh basil leaves",
+        "measurements": [],
+        "note": "for garnish",
+        "category": "Produce"
+      }
+    }
+  ]
+}

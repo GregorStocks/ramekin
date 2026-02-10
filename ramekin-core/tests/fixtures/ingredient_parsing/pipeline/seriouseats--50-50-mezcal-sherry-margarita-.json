@@ -1,0 +1,87 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "50-50-mezcal-sherry-margarita-",
+  "ingredients": [
+    {
+      "raw": "Tajín and/or kosher salt, for glass rims",
+      "expected": {
+        "item": "Tajín and/or kosher salt, for glass rims",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 fluid ounce (30 ml) mezcal",
+      "expected": {
+        "item": "mezcal",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "fl oz"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 fluid ounce (30 ml) sherry, preferably a sweet option like Pedro Ximénez",
+      "expected": {
+        "item": "sherry, preferably a sweet option like Pedro Ximénez",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "fl oz"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/2 fluid ounce (15 ml) Cointreau or triple sec",
+      "expected": {
+        "item": "Cointreau or triple sec",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "fl oz"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "3/4 fluid ounce (22 ml) fresh lime juice",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "fl oz"
+          },
+          {
+            "amount": "22",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    }
+  ]
+}

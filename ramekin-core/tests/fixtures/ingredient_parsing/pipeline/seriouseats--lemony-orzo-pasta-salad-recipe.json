@@ -1,0 +1,226 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "lemony-orzo-pasta-salad-recipe",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons (30 ml) balsamic vinegar",
+      "expected": {
+        "item": "balsamic vinegar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon lemon zest plus 2 tablespoons (30 ml) lemon juice",
+      "expected": {
+        "item": "lemon zest plus 2 tablespoons lemon juice",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 clove garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 1/2 teaspoons Diamond Crystal kosher salt, divided; for table salt use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": "divided; for table salt use half as much by volume",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "6 tablespoons (90 ml) extra-virgin olive oil, plus extra for drizzling",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "90",
+            "unit": "ml"
+          },
+          {
+            "amount": "81",
+            "unit": "g"
+          }
+        ],
+        "note": "plus extra for drizzling",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "12 ounces dried orzo",
+      "expected": {
+        "item": "dried orzo",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "1 ounce (28 g) Parmesiano-Reggiano cheese, freshly grated on a microplane (1/2 cup grated)",
+      "expected": {
+        "item": "Parmesiano-Reggiano cheese, freshly grated on a microplane",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "1/2 cup grated",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/2 small head radicchio (3 ounces; 85 g), cored and very finely diced",
+      "expected": {
+        "item": "head radicchio",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "small"
+          },
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "cored and very finely diced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 (15-ounce) can chickpeas, drained and rinsed",
+      "expected": {
+        "item": "chickpeas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/2 cup chopped fresh basil",
+      "expected": {
+        "item": "chopped fresh basil",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup chopped pickled mild banana pepper rings (about 1 1/2 ounces; 45 g)",
+      "expected": {
+        "item": "chopped pickled mild banana pepper rings",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

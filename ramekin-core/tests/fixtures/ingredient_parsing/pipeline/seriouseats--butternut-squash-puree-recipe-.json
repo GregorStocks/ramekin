@@ -1,0 +1,95 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "butternut-squash-puree-recipe-",
+  "ingredients": [
+    {
+      "raw": "1 large butternut squash (about 2 3/4 pounds; 1.25kg)",
+      "expected": {
+        "item": "butternut squash",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "2.75",
+            "unit": "lb"
+          },
+          {
+            "amount": "1.25",
+            "unit": "kg"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Neutral oil, such as vegetable or canola, for coating the squash",
+      "expected": {
+        "item": "Neutral oil, such as vegetable or canola, for coating the squash",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 1/4 teaspoons Diamond Crystal kosher salt, divided; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt, divided; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "2.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 cup (60ml) heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon unsalted butter (about 1/2 ounce; 14g)",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

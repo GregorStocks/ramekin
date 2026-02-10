@@ -1,0 +1,129 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-slowcookercornedbeefan",
+  "ingredients": [
+    {
+      "raw": "3 to 3 1/2 pounds cured corned beef, with spice packet",
+      "expected": {
+        "item": "1/2 pounds cured corned beef, with spice packet",
+        "measurements": [
+          {
+            "amount": "3 to 3",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 medium white onion, quartered",
+      "expected": {
+        "item": "white onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "quartered",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 cloves garlic, peeled and left whole",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled and left whole",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 cups of water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "711",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 1/2 pounds new red potatoes, washed and chopped into 2-inch chunks",
+      "expected": {
+        "item": "new red potatoes",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "washed and chopped into 2-inch chunks",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 medium (about 1 1/4 pounds) green cabbage, cut into sixths",
+      "expected": {
+        "item": "green cabbage, cut into sixths",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "1.25",
+            "unit": "lb"
+          },
+          {
+            "amount": "567",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 large carrots, peeled and cut into 2-inch slices",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": "peeled and cut into 2-inch slices",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Whole grain mustard, for topping",
+      "expected": {
+        "item": "Whole grain mustard, for topping",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

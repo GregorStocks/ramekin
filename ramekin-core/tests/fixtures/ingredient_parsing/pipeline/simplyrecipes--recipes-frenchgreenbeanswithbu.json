@@ -1,0 +1,134 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-frenchgreenbeanswithbu",
+  "ingredients": [
+    {
+      "raw": "1 pound thin green beans (haricots vert), trimmed",
+      "expected": {
+        "item": "thin green beans (haricots vert)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup red onion, chopped fine",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "34",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped fine",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 Tbsp butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 Tbsp parsley, chopped fine",
+      "expected": {
+        "item": "parsley",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped fine",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 Tbsp fresh thyme leaves",
+      "expected": {
+        "item": "fresh thyme leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 Tbsp tarragon or basil, chopped fine",
+      "expected": {
+        "item": "tarragon or basil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped fine",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 Tbsp chives, chopped fine",
+      "expected": {
+        "item": "chives",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped fine",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt and pepper to taste",
+      "expected": {
+        "item": "Salt and pepper to taste",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Lemon wedges",
+      "expected": {
+        "item": "Lemon wedges",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

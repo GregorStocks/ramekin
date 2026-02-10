@@ -1,0 +1,145 @@
+{
+  "source": "slenderkitchen",
+  "recipe_slug": "recipe-tzatziki-chicken-salad",
+  "ingredients": [
+    {
+      "raw": "4 cups cooked boneless skinless chicken breast (I use rotisserie chicken, chopped or shredded)",
+      "expected": {
+        "item": "cooked boneless skinless chicken breast",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "cup"
+          }
+        ],
+        "note": "I use rotisserie chicken, chopped or shredded",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 cup tzatziki",
+      "expected": {
+        "item": "tzatziki",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1/2 cup celery, diced",
+      "expected": {
+        "item": "celery",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": "diced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup Persian cucumbers, diced",
+      "expected": {
+        "item": "Persian cucumbers",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "diced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup red bell pepper, diced",
+      "expected": {
+        "item": "red bell pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "diced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup pepperoncinis (drained and chopped)",
+      "expected": {
+        "item": "pepperoncinis",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "drained and chopped",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 cup black olives, chopped",
+      "expected": {
+        "item": "black olives",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/4 cup reduced fat feta cheese",
+      "expected": {
+        "item": "reduced fat feta cheese",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2 tbsp fresh dill, chopped",
+      "expected": {
+        "item": "fresh dill",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

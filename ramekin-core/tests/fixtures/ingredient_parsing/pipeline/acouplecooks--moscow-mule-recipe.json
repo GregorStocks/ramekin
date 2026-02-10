@@ -1,0 +1,69 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "moscow-mule-recipe",
+  "ingredients": [
+    {
+      "raw": "2 ounces vodka",
+      "expected": {
+        "item": "vodka",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/2 ounce fresh lime juice",
+      "expected": {
+        "item": "fresh lime juice",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "4 ounces ginger beer",
+      "expected": {
+        "item": "ginger beer",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "For the garnish: lime wheel or wedge, fresh mint (if desired)",
+      "expected": {
+        "item": "For the garnish: lime wheel or wedge",
+        "measurements": [],
+        "note": "fresh mint (if desired)",
+        "category": "Produce"
+      }
+    }
+  ]
+}

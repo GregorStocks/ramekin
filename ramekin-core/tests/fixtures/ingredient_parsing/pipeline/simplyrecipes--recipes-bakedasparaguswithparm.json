@@ -1,0 +1,92 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-bakedasparaguswithparm",
+  "ingredients": [
+    {
+      "raw": "1 pound asparagus",
+      "expected": {
+        "item": "asparagus",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon coarse or chunky kosher salt, or to taste",
+      "expected": {
+        "item": "coarse or chunky kosher salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon ground black pepper, or to taste",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 cup loosely packed (about 1.5 ounces or 40g) shredded or grated Parmesan cheese, or to taste",
+      "expected": {
+        "item": "loosely packed shredded or grated Parmesan cheese",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": "or to taste",
+        "category": "Cheese"
+      }
+    }
+  ]
+}

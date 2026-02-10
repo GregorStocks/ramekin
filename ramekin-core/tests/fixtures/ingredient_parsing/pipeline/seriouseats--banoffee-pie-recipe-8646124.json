@@ -1,0 +1,136 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "banoffee-pie-recipe-8646124",
+  "ingredients": [
+    {
+      "raw": "One 14-ounce can sweetened condensed milk, label and glue removed",
+      "expected": {
+        "item": "sweetened condensed milk, label and glue removed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "14-ounce can"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "300g (10 1/2 ounces) digestive biscuits",
+      "expected": {
+        "item": "digestive biscuits",
+        "measurements": [
+          {
+            "amount": "300",
+            "unit": "g"
+          },
+          {
+            "amount": "10.5",
+            "unit": "oz"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon Diamond Crystal kosher salt, divided; for table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt, divided; for table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "140g unsalted butter (about 5 ounces; 10 tablespoons), melted and slightly cooled",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "140",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "10",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "melted and slightly cooled",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 medium bananas (about 16 1/2 ounces; 465g), peeled and cut into 1/2-inch slices",
+      "expected": {
+        "item": "bananas",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          },
+          {
+            "amount": "16.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "465",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut into 1/2-inch slices",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 cups (480ml) heavy cream",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "480",
+            "unit": "ml"
+          },
+          {
+            "amount": "476",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "One 2-ounce (57g) dark chocolate bar, for garnishing (optional)",
+      "expected": {
+        "item": "2-ounce dark chocolate bar, for garnishing",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Other"
+      }
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "easy-one-pot-black-eyed-pea-st",
+  "ingredients": [
+    {
+      "raw": "1/4 cup (60 ml) extra-virgin olive oil, plus more for drizzling",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for drizzling",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 medium red onion (8 ounces; 227 g), finely chopped",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup finely chopped fennel from 1 large bulb (about 5 ounces; 142 g)",
+      "expected": {
+        "item": "finely chopped fennel from 1 large bulb",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "5",
+            "unit": "oz"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 medium carrot (4 ounces; 113g), peeled and finely chopped",
+      "expected": {
+        "item": "carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 1/2 teaspoons (about 8 g) Diamond Crystal kosher salt, divided; for table salt use half as much by volume or the same weight",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
+          }
+        ],
+        "note": "divided; for table salt use half as much by volume or the same weight",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 medium cloves garlic, minced",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon smoked paprika",
+      "expected": {
+        "item": "smoked paprika",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly ground black pepper, plus more for serving",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more for serving",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 (15-ounce; 425 g) can diced tomatoes, drained",
+      "expected": {
+        "item": "diced tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": null
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": "drained",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 (15-ounce; 425 g each) cans black-eyed peas, drained and rinsed",
+      "expected": {
+        "item": "black-eyed peas",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": null
+          },
+          {
+            "amount": "425",
+            "unit": "g each"
+          }
+        ],
+        "note": "drained and rinsed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 cups (720 ml) low-sodium vegetable broth",
+      "expected": {
+        "item": "low-sodium vegetable broth",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "720",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 medium bunch Swiss Chard (10 ounces; 283 g), stemmed and chopped",
+      "expected": {
+        "item": "bunch Swiss Chard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": "stemmed and chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons (5 g) chopped fresh dill, plus more for serving",
+      "expected": {
+        "item": "chopped fresh dill",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for serving",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30 ml) fresh lemon juice, from 1 medium lemonc",
+      "expected": {
+        "item": "fresh lemon juice, from 1 medium lemonc",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/4 cup (60 ml) plain whole-milk strained (Greek-style) yogurt",
+      "expected": {
+        "item": "plain whole-milk strained (Greek-style) yogurt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

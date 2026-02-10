@@ -1,0 +1,98 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "buffalo-deviled-eggs-with-blue",
+  "ingredients": [
+    {
+      "raw": "6 hard boiled or hard steamed eggs , peeled and halved lengthwise",
+      "expected": {
+        "item": "hard boiled or hard steamed eggs",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "peeled and halved lengthwise",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 tablespoon plus 1 teaspoon Frank&#39;s Red Hot sauce, plus more for garnish",
+      "expected": {
+        "item": "Frank's Red Hot sauce",
+        "measurements": [
+          {
+            "amount": "1 tablespoon plus 1 teaspoon",
+            "unit": null
+          }
+        ],
+        "note": "plus more for garnish",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "2 tablespoons crumbled blue cheese, plus more for garnish",
+      "expected": {
+        "item": "crumbled blue cheese",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus more for garnish",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 tablespoon plus 1 teaspoon finely diced celery, plus more for garnish",
+      "expected": {
+        "item": "finely diced celery",
+        "measurements": [
+          {
+            "amount": "1 tablespoon plus 1 teaspoon",
+            "unit": null
+          }
+        ],
+        "note": "plus more for garnish",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Picked celery leaves, for garnish",
+      "expected": {
+        "item": "Picked celery leaves",
+        "measurements": [],
+        "note": "for garnish",
+        "category": "Produce"
+      }
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "bavarian-style-soft-pretzels-r",
+  "ingredients": [
+    {
+      "raw": "For the Poolish: 80g high-protein all-purpose flour (1/2 cup plus 1 tablespoon), such as King Arthur, or bread flour (see notes)1/4 teaspoon instant yeast80g (1/3 cup) room-temperature water",
+      "expected": {
+        "item": "For the Poolish: 80g high-protein all-purpose flour, such as King Arthur",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "or bread flour (see notes)1/4 teaspoon instant yeast80g (1/3 cup) room-temperature water",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon instant yeast",
+      "expected": {
+        "item": "instant yeast",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "80g (1/3 cup) room-temperature water",
+      "expected": {
+        "item": "room-temperature water",
+        "measurements": [
+          {
+            "amount": "80",
+            "unit": "g"
+          },
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "245g high-protein all-purpose flour (1 3/4 cups), such as King Arthur, or bread flour (see note)",
+      "expected": {
+        "item": "high-protein all-purpose flour, such as King Arthur, or bread flour (see note)",
+        "measurements": [
+          {
+            "amount": "245",
+            "unit": "g"
+          },
+          {
+            "amount": "1.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 heaping teaspoon Diamond Crystal kosher salt; if using table salt, use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; if using table salt, use half as much by volume",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "heaping tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "90g (1/3 cup plus 2 teaspoons) warm water, at 90ºF (32ºC)",
+      "expected": {
+        "item": "warm water, at 90ºF",
+        "measurements": [
+          {
+            "amount": "90",
+            "unit": "g"
+          },
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          },
+          {
+            "amount": "32",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "14g unsalted butter (1 tablespoon), melted and slightly cooled",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "melted and slightly cooled",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Nonstick cooking spray",
+      "expected": {
+        "item": "Nonstick cooking spray",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "30g (5 teaspoons) food-grade lye crystals",
+      "expected": {
+        "item": "food-grade lye crystals",
+        "measurements": [
+          {
+            "amount": "30",
+            "unit": "g"
+          },
+          {
+            "amount": "5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "720g (3 cups) water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "720",
+            "unit": "g"
+          },
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 to 2 teaspoons pretzel salt",
+      "expected": {
+        "item": "pretzel salt",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    }
+  ]
+}

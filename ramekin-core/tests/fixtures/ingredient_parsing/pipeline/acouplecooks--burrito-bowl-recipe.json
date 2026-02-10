@@ -1,0 +1,186 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "burrito-bowl-recipe",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups dry rice (or 1 recipe Cilantro Lime Rice) or pre-cooked rice packages (like Seeds of Change or other)",
+      "expected": {
+        "item": "dry rice (or 1 recipe Cilantro Lime Rice) or pre-cooked rice packages (like Seeds of Change or other)",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "15-ounce can black beans",
+      "expected": {
+        "item": "-ounce can black beans",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "15-ounce can corn",
+      "expected": {
+        "item": "-ounce can corn",
+        "measurements": [
+          {
+            "amount": "15",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 cup fresh pico de gallo, aka fresh salsa (purchased)*",
+      "expected": {
+        "item": "fresh pico de gallo",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "aka fresh salsa (purchased)*",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Vegetables: Avocado, cherry tomatoes, red onion (or pickled onions), chopped romaine",
+      "expected": {
+        "item": "Vegetables: Avocado, cherry tomatoes, red onion (or pickled onions)",
+        "measurements": [],
+        "note": "chopped romaine",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Add ins: nacho cheese, roasted peppers,  sauteed shrimp, shredded cooked chicken, etc.",
+      "expected": {
+        "item": "Add ins: nacho cheese, roasted peppers,  sauteed shrimp, shredded cooked chicken, etc.",
+        "measurements": [],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "½ cup plain whole milk yogurt (or Greek yogurt plus 1 tablespoon water)",
+      "expected": {
+        "item": "plain whole milk yogurt (or Greek yogurt plus 1 tablespoon water)",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "¼ cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 teaspoon apple cider vinegar",
+      "expected": {
+        "item": "apple cider vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/2 each teaspoon each dried dill, garlic powder and onion powder",
+      "expected": {
+        "item": "teaspoon each dried dill, garlic powder and onion powder",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "each"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 each teaspoon each kosher salt and ground black pepper",
+      "expected": {
+        "item": "teaspoon each kosher salt and ground black pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "each"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons adobo sauce from a can of chipotle chilis**",
+      "expected": {
+        "item": "adobo sauce from a can of chipotle chilis**",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

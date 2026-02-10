@@ -1,0 +1,120 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2019-02-chocolate-puddle-cakes",
+  "ingredients": [
+    {
+      "raw": "4 tablespoons (55 grams) unsalted butter, cut into chunks, plus more for dishes",
+      "expected": {
+        "item": "unsalted butter, cut into chunks",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for dishes",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 teaspoons cocoa powder, plus more for dusting",
+      "expected": {
+        "item": "cocoa powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3.6",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for dusting",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 ounces (85 grams) bittersweet chocolate, roughly chopped",
+      "expected": {
+        "item": "bittersweet chocolate",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "roughly chopped",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/8 teaspoon fine sea salt or a couple pinches of flaky salt",
+      "expected": {
+        "item": "fine sea salt or a couple pinches of flaky salt",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 to 2 tablespoons (13 to 25 grams) granulated sugar (see Note)",
+      "expected": {
+        "item": "granulated sugar (see Note)",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "13 to 25",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 egg yolk",
+      "expected": {
+        "item": "egg yolk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

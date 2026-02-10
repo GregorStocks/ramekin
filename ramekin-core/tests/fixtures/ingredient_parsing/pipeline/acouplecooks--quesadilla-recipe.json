@@ -1,0 +1,103 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "quesadilla-recipe",
+  "ingredients": [
+    {
+      "raw": "2 6-inch flour tortillas (per 1 serving*)",
+      "expected": {
+        "item": "6-inch flour tortillas (per 1 serving*)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "1/4 cup shredded mild cheddar cheese",
+      "expected": {
+        "item": "shredded mild cheddar cheese",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/4 cup shredded Colby jack cheese**",
+      "expected": {
+        "item": "shredded Colby jack cheese**",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2 tablespoons pico de gallo (aka fresh salsa)",
+      "expected": {
+        "item": "pico de gallo",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "aka fresh salsa",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 pinches salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Olive oil, for cooking",
+      "expected": {
+        "item": "Olive oil, for cooking",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Other filling items: cooked chicken, cooked ground beef (or plant-based crumbles), black beans, canned corn, avocado, green onions, chopped cilantro, etc.",
+      "expected": {
+        "item": "Other filling items: cooked chicken, cooked ground beef (or plant-based crumbles), black beans, canned corn, avocado, green onions, chopped cilantro, etc.",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "To serve: sour cream, hot sauce, cilantro, avocado crema, lime crema, salsa, guacamole, chipotle sauce, etc.",
+      "expected": {
+        "item": "To serve: sour cream, hot sauce, cilantro, avocado crema, lime crema, salsa, guacamole, chipotle sauce, etc.",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

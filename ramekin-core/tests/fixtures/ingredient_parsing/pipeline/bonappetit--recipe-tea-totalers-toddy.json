@@ -1,0 +1,84 @@
+{
+  "source": "bonappetit",
+  "recipe_slug": "recipe-tea-totalers-toddy",
+  "ingredients": [
+    {
+      "raw": "6 jasmine green tea bags",
+      "expected": {
+        "item": "jasmine green tea bags",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "¾ cup honey",
+      "expected": {
+        "item": "honey",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "255",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "12 sprigs mint, divided",
+      "expected": {
+        "item": "mint",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "sprig"
+          }
+        ],
+        "note": "divided",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "6 lemons, divided",
+      "expected": {
+        "item": "lemons",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": "divided",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "12 oz. mezcal (optional)",
+      "expected": {
+        "item": "mezcal",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "optional",
+        "category": "Other"
+      }
+    }
+  ]
+}

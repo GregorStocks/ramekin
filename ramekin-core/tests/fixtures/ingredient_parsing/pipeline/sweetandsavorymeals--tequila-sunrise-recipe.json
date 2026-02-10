@@ -1,0 +1,92 @@
+{
+  "source": "sweetandsavorymeals",
+  "recipe_slug": "tequila-sunrise-recipe",
+  "ingredients": [
+    {
+      "raw": "1 cup ice",
+      "expected": {
+        "item": "ice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 oz. tequila",
+      "expected": {
+        "item": "tequila",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "4 oz. orange juice (or grapefruit juice for tequila sunset)",
+      "expected": {
+        "item": "orange juice (or grapefruit juice for tequila sunset)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 oz. grenadine",
+      "expected": {
+        "item": "grenadine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Orange slices",
+      "expected": {
+        "item": "Orange slices",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Maraschino cherries",
+      "expected": {
+        "item": "Maraschino cherries",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

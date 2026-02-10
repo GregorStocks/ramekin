@@ -1,0 +1,139 @@
+{
+  "source": "onceuponachef",
+  "recipe_slug": "recipes-lemon-berry-parfaits-h",
+  "ingredients": [
+    {
+      "raw": "2 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1¼ cups sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "½ cup freshly squeezed lemon juice, from 3 large lemons",
+      "expected": {
+        "item": "freshly squeezed lemon juice, from 3 large lemons",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "4 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 teaspoons grated lemon zest (see note below)",
+      "expected": {
+        "item": "grated lemon zest (see note below)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup whipping cream, chilled",
+      "expected": {
+        "item": "whipping cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
+          }
+        ],
+        "note": "chilled",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "5 cups assorted fresh berries (if using strawberries, cut into bite-size pieces)",
+      "expected": {
+        "item": "assorted fresh berries",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "cup"
+          }
+        ],
+        "note": "if using strawberries, cut into bite-size pieces",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "A few springs fresh mint, for garnish",
+      "expected": {
+        "item": "A few springs fresh mint",
+        "measurements": [],
+        "note": "for garnish",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4-6 shortbread or ginger cookies (optional)",
+      "expected": {
+        "item": "shortbread or ginger cookies",
+        "measurements": [
+          {
+            "amount": "4-6",
+            "unit": null
+          }
+        ],
+        "note": "optional",
+        "category": "Bakery & Bread"
+      }
+    }
+  ]
+}

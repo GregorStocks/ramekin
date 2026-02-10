@@ -1,0 +1,126 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-momsgroundturkeyandpep",
+  "ingredients": [
+    {
+      "raw": "3 to 4 tablespoons extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "3 to 4",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 cup chopped yellow onion, including some chopped greens from scallions or green onions",
+      "expected": {
+        "item": "chopped yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "including some chopped greens from scallions or green onions",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Some chopped greens from green onions, if you have any",
+      "expected": {
+        "item": "Some chopped greens from green onions, if you have any",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 red bell pepper",
+      "expected": {
+        "item": "red bell pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 cloves garlic, minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 pound ground turkey, preferably ground turkey thighs",
+      "expected": {
+        "item": "ground turkey",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "preferably ground turkey thighs",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 teaspoon chipotle powder or chili powder (or to taste)",
+      "expected": {
+        "item": "chipotle powder or chili powder",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh parsley or cilantro",
+      "expected": {
+        "item": "chopped fresh parsley or cilantro",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

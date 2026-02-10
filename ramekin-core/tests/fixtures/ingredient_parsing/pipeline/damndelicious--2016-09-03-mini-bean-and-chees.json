@@ -1,0 +1,80 @@
+{
+  "source": "damndelicious",
+  "recipe_slug": "2016-09-03-mini-bean-and-chees",
+  "ingredients": [
+    {
+      "raw": "24  wonton wrappers",
+      "expected": {
+        "item": "wonton wrappers",
+        "measurements": [
+          {
+            "amount": "24",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "1  16-ounce can refried beans",
+      "expected": {
+        "item": "refried beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "16-ounce can"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 1/2 cups mozzarella cheese",
+      "expected": {
+        "item": "mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh cilantro leaves",
+      "expected": {
+        "item": "chopped fresh cilantro leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

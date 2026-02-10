@@ -1,0 +1,51 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-howtomakequickandeasyp",
+  "ingredients": [
+    {
+      "raw": "1 to 4 boneless, skinless chicken breasts (roughly 12 ounces each)",
+      "expected": {
+        "item": "boneless, skinless chicken breasts",
+        "measurements": [
+          {
+            "amount": "1 to 4",
+            "unit": null
+          },
+          {
+            "amount": "12",
+            "unit": "oz each"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Optional seasonings: smashed garlic, bay leaf, peppercorns, sliced ginger, sliced lemons or oranges, sliced onions or celery, fresh rosemary, fresh thyme",
+      "expected": {
+        "item": "Optional seasonings: smashed garlic, bay leaf, peppercorns, sliced ginger, sliced lemons or oranges, sliced onions or celery, fresh rosemary",
+        "measurements": [],
+        "note": "fresh thyme",
+        "category": "Produce"
+      }
+    }
+  ]
+}

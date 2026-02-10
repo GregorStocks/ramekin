@@ -1,0 +1,94 @@
+{
+  "source": "altonbrown",
+  "recipe_slug": "recipes-red-wine-macerated-str",
+  "ingredients": [
+    {
+      "raw": "1 pint medium strawberries, rinsed, hulled, and sliced",
+      "expected": {
+        "item": "medium strawberries, rinsed, hulled",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pint"
+          }
+        ],
+        "note": "and sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 bottle bottle red wine, Pinot Noir or Merlot will do nicely",
+      "expected": {
+        "item": "bottle red wine, Pinot Noir or Merlot will do nicely",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "bottle"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 tablespoons orange blossom honey",
+      "expected": {
+        "item": "orange blossom honey",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon lemon zest",
+      "expected": {
+        "item": "lemon zest",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

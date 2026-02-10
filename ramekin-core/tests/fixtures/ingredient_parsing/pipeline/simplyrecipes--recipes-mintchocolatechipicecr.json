@@ -1,0 +1,115 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-mintchocolatechipicecr",
+  "ingredients": [
+    {
+      "raw": "3 cups fresh spearmint leaves (not stems), rinsed, drained, packed",
+      "expected": {
+        "item": "fresh spearmint leaves (not stems), rinsed, drained",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": "packed",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 cups heavy cream (divided, 1 cup and 1 cup)",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "476",
+            "unit": "g"
+          }
+        ],
+        "note": "divided, 1 cup and 1 cup",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2/3 cup sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "0.67",
+            "unit": "cup"
+          },
+          {
+            "amount": "133",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "A pinch of salt",
+      "expected": {
+        "item": "A pinch of salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "6 large egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "6 ounces semisweet chocolate or dark chocolate, chopped fine, keep in the freezer until used",
+      "expected": {
+        "item": "semisweet chocolate or dark chocolate, chopped fine, keep in the freezer until used",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "sole-meuniere-recipe-5649376",
+  "ingredients": [
+    {
+      "raw": "All-purpose flour, for dredging (about 1/2 cup)",
+      "expected": {
+        "item": "All-purpose flour, for dredging",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 pounds (680g) thin boneless, skinless sole or other white-fleshed fish fillets (see note)",
+      "expected": {
+        "item": "thin boneless, skinless sole or other white-fleshed fish fillets (see note)",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "Kosher salt",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 tablespoons (60g) homemade or store-bought clarified butter, plus more if needed (see note)",
+      "expected": {
+        "item": "homemade or store-bought clarified butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more if needed (see note)",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "6 tablespoons (90g) unsalted butter, cut into 1-tablespoon pieces",
+      "expected": {
+        "item": "unsalted butter, cut into 1-tablespoon pieces",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "90",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 lemon, cut into wedges, plus more for serving",
+      "expected": {
+        "item": "lemon, cut into wedges",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "plus more for serving",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 1/2 tablespoons (1/4 ounce; 8g) flat-leaf parsley leaves and tender stems",
+      "expected": {
+        "item": "flat-leaf parsley leaves and tender stems",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "0.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

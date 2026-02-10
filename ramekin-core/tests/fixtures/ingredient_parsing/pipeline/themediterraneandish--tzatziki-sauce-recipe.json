@@ -1,0 +1,140 @@
+{
+  "source": "themediterraneandish",
+  "recipe_slug": "tzatziki-sauce-recipe",
+  "ingredients": [
+    {
+      "raw": "3/4  English cucumber,  (partially peeled (striped) )",
+      "expected": {
+        "item": "English cucumber",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": null
+          }
+        ],
+        "note": "partially peeled (striped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tsp kosher salt, (divided)",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 to 5  garlic cloves,",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4 to 5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tsp white vinegar",
+      "expected": {
+        "item": "white vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 tbsp Early Harvest  Greek Extra Virgin Olive Oil",
+      "expected": {
+        "item": "Early Harvest  Greek Extra Virgin Olive Oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 cups plain Greek yogurt",
+      "expected": {
+        "item": "plain Greek yogurt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Handful of chopped fresh dill or mint (optional)",
+      "expected": {
+        "item": "chopped fresh dill or mint",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "handful"
+          }
+        ],
+        "note": "optional",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 tsp ground white pepper",
+      "expected": {
+        "item": "ground white pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Warm pita bread for serving",
+      "expected": {
+        "item": "Warm pita bread for serving",
+        "measurements": [],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "Sliced vegetables for serving",
+      "expected": {
+        "item": "Sliced vegetables for serving",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

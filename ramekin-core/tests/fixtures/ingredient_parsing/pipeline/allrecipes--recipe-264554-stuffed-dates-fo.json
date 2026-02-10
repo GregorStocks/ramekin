@@ -1,0 +1,70 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-264554-stuffed-dates-fo",
+  "ingredients": [
+    {
+      "raw": "20 pitted dates",
+      "expected": {
+        "item": "pitted dates",
+        "measurements": [
+          {
+            "amount": "20",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "20 blanched almonds, toasted",
+      "expected": {
+        "item": "blanched almonds",
+        "measurements": [
+          {
+            "amount": "20",
+            "unit": null
+          }
+        ],
+        "note": "toasted",
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1 (8 ounce) container creme fraiche",
+      "expected": {
+        "item": "container creme fraiche",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped toasted almonds, or to taste",
+      "expected": {
+        "item": "chopped toasted almonds",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "or to taste",
+        "category": "Nuts & Dried Fruit"
+      }
+    }
+  ]
+}

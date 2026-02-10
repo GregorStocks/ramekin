@@ -1,0 +1,216 @@
+{
+  "source": "damndelicious",
+  "recipe_slug": "2019-06-11-summer-cheese-board",
+  "ingredients": [
+    {
+      "raw": "8 ounces brie",
+      "expected": {
+        "item": "brie",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "8 ounces gorgonzola cheese",
+      "expected": {
+        "item": "gorgonzola cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "6 ounces aged gouda",
+      "expected": {
+        "item": "aged gouda",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "6 ounces white cheddar cheese (thinly sliced)",
+      "expected": {
+        "item": "white cheddar cheese",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1  6-ounce package rosemary artisan crackers",
+      "expected": {
+        "item": "rosemary artisan crackers",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "6-ounce package"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1  5.3-ounce package Lesley Stowe Raincoast Crisps, Fig and Olive",
+      "expected": {
+        "item": "Lesley Stowe Raincoast Crisps, Fig and Olive",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "5.3-ounce package"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 cup pita bite crackers",
+      "expected": {
+        "item": "pita bite crackers",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Snacks"
+      }
+    },
+    {
+      "raw": "1 cup strawberries",
+      "expected": {
+        "item": "strawberries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "174",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup cherries",
+      "expected": {
+        "item": "cherries",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup raspberries",
+      "expected": {
+        "item": "raspberries",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "62",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup blueberries",
+      "expected": {
+        "item": "blueberries",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "74",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup marcona almonds",
+      "expected": {
+        "item": "marcona almonds",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "1  nectarine (sliced)",
+      "expected": {
+        "item": "nectarine",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "sliced",
+        "category": "Produce"
+      }
+    }
+  ]
+}

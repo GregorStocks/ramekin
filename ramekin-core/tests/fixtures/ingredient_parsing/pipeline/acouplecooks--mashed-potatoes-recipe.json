@@ -1,0 +1,146 @@
+{
+  "source": "acouplecooks",
+  "recipe_slug": "mashed-potatoes-recipe",
+  "ingredients": [
+    {
+      "raw": "3 pounds Yukon gold potatoes (4 large)",
+      "expected": {
+        "item": "Yukon gold potatoes",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "4",
+            "unit": "large"
+          },
+          {
+            "amount": "1361",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 pound russet potatoes (1 large; or more Yukon gold potatoes)",
+      "expected": {
+        "item": "russet potatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "1 large; or more Yukon gold potatoes",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "6 tablespoons salted butter",
+      "expected": {
+        "item": "salted butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 garlic cloves, finely minced (or 6 cloves for garlic mashed potatoes)",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "finely minced (or 6 cloves for garlic mashed potatoes)",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3/4 cup milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "184",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 cup sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "121",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/4 teaspoons kosher salt, plus more for boiling",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus more for boiling",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Chopped fresh chives, for garnish",
+      "expected": {
+        "item": "Chopped fresh chives",
+        "measurements": [],
+        "note": "for garnish",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Variation: 2 tablespoons prepared horseradish (in a jar)*",
+      "expected": {
+        "item": "Variation: 2 tablespoons prepared horseradish (in a jar)*",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "source": "damndelicious",
+  "recipe_slug": "2018-07-01-smoked-salmon-bagel",
+  "ingredients": [
+    {
+      "raw": "8  assorted bagels (toasted)",
+      "expected": {
+        "item": "assorted bagels",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          }
+        ],
+        "note": "toasted",
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "2 pounds thin-sliced smoked salmon",
+      "expected": {
+        "item": "thin-sliced smoked salmon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "2  heirloom tomatoes (thinly sliced)",
+      "expected": {
+        "item": "heirloom tomatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2  Persian cucumbers (thinly sliced)",
+      "expected": {
+        "item": "Persian cucumbers",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1  red onion (thinly sliced)",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1  8-ounce package cream cheese spread",
+      "expected": {
+        "item": "cream cheese spread",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "8-ounce package"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/4 cup drained capers",
+      "expected": {
+        "item": "drained capers",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1  lemon (cut into wedges)",
+      "expected": {
+        "item": "lemon (cut into wedges)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup fresh dill",
+      "expected": {
+        "item": "fresh dill",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

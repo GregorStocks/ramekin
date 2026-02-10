@@ -1,0 +1,98 @@
+{
+  "source": "simplyrecipes",
+  "recipe_slug": "recipes-quickandeasywhitebeans",
+  "ingredients": [
+    {
+      "raw": "1 14.5-ounce can white beans, drained but not rinsed",
+      "expected": {
+        "item": "white beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "14.5-ounce can"
+          }
+        ],
+        "note": "drained but not rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped red onion",
+      "expected": {
+        "item": "chopped red onion",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "A squeeze of lemon juice",
+      "expected": {
+        "item": "A squeeze of lemon juice",
+        "measurements": [],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 teaspoons wine vinegar (red or white)",
+      "expected": {
+        "item": "wine vinegar (red or white)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 tablespoon extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon dry Herbs de Provence (crumbled) OR 1 teaspoon of some combination of finely chopped rosemary, tarragon, thyme, and lavender",
+      "expected": {
+        "item": "dry Herbs de Provence OR 1 teaspoon of some combination of finely chopped rosemary, tarragon, thyme, and lavender",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": "crumbled",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Salt and freshly ground pepper to taste",
+      "expected": {
+        "item": "Salt and freshly ground pepper to taste",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}
