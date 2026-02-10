@@ -1,0 +1,10 @@
+{
+  "title": "CookbookPage recipe card thumbnails have empty alt text",
+  "description": "In ramekin-ui/src/pages/CookbookPage.tsx line 679, the PhotoThumbnail component is passed alt=\"\" for recipe card images. These are meaningful content images (not decorative), so the alt text should be the recipe title.\n\nFix: Change alt=\"\" to alt={recipe.title} on the PhotoThumbnail in the recipe grid.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": ["frontend", "accessibility"],
+  "created_at": "2026-02-09T12:00:00.000000-08:00",
+  "updated_at": "2026-02-09T12:00:00.000000-08:00"
+}

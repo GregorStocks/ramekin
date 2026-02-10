@@ -1,0 +1,10 @@
+{
+  "title": "Duplicate meal plan constants and utilities across files",
+  "description": "MEAL_TYPES, MEAL_TYPE_LABELS, toApiDate, and formatDate are independently defined in both ramekin-ui/src/pages/ViewRecipePage.tsx and ramekin-ui/src/pages/MealPlanPage.tsx. The two toApiDate implementations even have different signatures (ViewRecipePage takes a string, MealPlanPage takes a Date).\n\nFix: Extract shared constants and utilities into a common module (e.g. utils/mealPlanHelpers.ts) and import from both pages.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": ["frontend", "code-quality"],
+  "created_at": "2026-02-09T12:00:00.000000-08:00",
+  "updated_at": "2026-02-09T12:00:00.000000-08:00"
+}

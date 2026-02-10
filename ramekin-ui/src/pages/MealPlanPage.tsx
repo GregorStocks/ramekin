@@ -148,6 +148,7 @@ export default function MealPlanPage() {
     setPickerDate(date);
     setPickerMealType(mealType);
     setSearchQuery("");
+    setPickerError(null);
     setPickerOpen(true);
     loadRecipes();
   };

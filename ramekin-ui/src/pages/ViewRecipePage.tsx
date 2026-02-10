@@ -457,7 +457,13 @@ export default function ViewRecipePage() {
       const jobId = response.jobId;
 
       // Poll for completion
+      const pollStartTime = Date.now();
       const poll = async (): Promise<void> => {
+        if (Date.now() - pollStartTime > 120_000) {
+          setError("Rescrape timed out");
+          setRescraping(false);
+          return;
+        }
         const job = await getScrapeApi().getScrape({ id: jobId });
 
         if (job.status === "completed") {

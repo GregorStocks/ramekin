@@ -240,6 +240,83 @@ pub async fn generate_test_urls(
 }
 
 // ============================================================================
+// Refilter existing URLs
+// ============================================================================
+
+/// Refilter existing test-urls.json through current is_recipe_url() logic.
+/// Strips query strings and fragments from URLs, deduplicates, and removes
+/// URLs that no longer pass the filter. Does not fetch any new URLs.
+pub fn refilter_test_urls(path: &Path, _min_year: u32) -> Result<()> {
+    // Use min_year=0 to skip the time-based filter. Refiltering should only
+    // apply structural filters (roundup detection, site-specific rules, etc.),
+    // not reject old posts that were already accepted into the URL list.
+    let min_year: u32 = 0;
+    let content = std::fs::read_to_string(path)
+        .with_context(|| format!("Failed to read {}", path.display()))?;
+    let mut data: TestUrlsOutput =
+        serde_json::from_str(&content).context("Failed to parse existing JSON")?;
+
+    let mut total_removed = 0;
+    let mut total_deduped = 0;
+
+    for site in &mut data.sites {
+        let before = site.urls.len();
+
+        // Step 1: Clean URLs (strip query strings and fragments)
+        for url in site.urls.iter_mut() {
+            let clean = url
+                .split('?')
+                .next()
+                .unwrap_or(url)
+                .split('#')
+                .next()
+                .unwrap_or(url)
+                .to_string();
+            *url = clean;
+        }
+
+        // Step 2: Deduplicate
+        let mut seen = HashSet::new();
+        site.urls.retain(|url| seen.insert(url.clone()));
+        let after_dedup = site.urls.len();
+        let deduped = before - after_dedup;
+
+        // Step 3: Apply filter
+        let mut removed = Vec::new();
+        site.urls.retain(|url| {
+            let keep = is_recipe_url(url, min_year);
+            if !keep {
+                removed.push(url.clone());
+            }
+            keep
+        });
+
+        for url in &removed {
+            println!("  REMOVED [{}]: {}", site.domain, url);
+        }
+        if deduped > 0 {
+            println!("  DEDUPED [{}]: {} duplicates", site.domain, deduped);
+        }
+
+        total_deduped += deduped;
+        total_removed += removed.len();
+    }
+
+    let total_urls: usize = data.sites.iter().map(|s| s.urls.len()).sum();
+    println!();
+    println!("Deduped: {} URLs", total_deduped);
+    println!("Removed: {} URLs", total_removed);
+    println!("Total remaining: {}", total_urls);
+
+    // Write back
+    let json = serde_json::to_string_pretty(&data)?;
+    std::fs::write(path, &json)?;
+    println!("Wrote filtered URLs to {}", path.display());
+
+    Ok(())
+}
+
+// ============================================================================
 // Site list
 // ============================================================================
 
@@ -693,12 +770,23 @@ async fn try_homepage(
 use regex::Regex;
 use std::sync::LazyLock;
 
+/// Detect monthly/yearly archive pages with no recipe slug (e.g., /2026/01/)
+fn is_archive_page(url: &str) -> bool {
+    static ARCHIVE_PATTERN: LazyLock<Regex> =
+        LazyLock::new(|| Regex::new(r"/\d{4}/\d{2}/?$").unwrap());
+
+    ARCHIVE_PATTERN.is_match(url)
+}
+
 /// Detect roundup/collection pages that aggregate multiple recipes
 fn is_roundup_url(url: &str) -> bool {
+    // Strip .html suffix so patterns with $ anchors match correctly
+    let url = url.strip_suffix(".html").unwrap_or(url);
+
     static ROUNDUP_PATTERNS: LazyLock<Vec<Regex>> = LazyLock::new(|| {
         vec![
-            // "30-easy-recipes", "15-chicken-recipes", "100-best-recipes"
-            Regex::new(r"/\d+-[a-z]+-recipes?(/|$)").unwrap(),
+            // "30-easy-recipes", "50-best-chicken-recipes" (plural only, not singular -recipe)
+            Regex::new(r"/\d+(-[a-z]+)+-recipes(/|$)").unwrap(),
             // "top-10-recipes", "top-25-most-popular"
             Regex::new(r"/top-\d+").unwrap(),
             // "best-25-soup-recipes"
@@ -711,14 +799,30 @@ fn is_roundup_url(url: &str) -> bool {
             Regex::new(r"/our-\d+-favorite").unwrap(),
             // "all-recipes/" at end
             Regex::new(r"/all-recipes/?$").unwrap(),
-            // Recipe category indexes like "/chicken-recipes/" at end of path
-            Regex::new(r"/[a-z]+-recipes/?$").unwrap(),
+            // Multi-word slugs ending in -recipes, optionally followed by a number
+            // e.g., "fall-soup-recipes", "game-day-recipes", "best-fall-dinner-recipes-2"
+            Regex::new(r"/[a-z]+(-[a-z0-9]+)*-recipes(-\d+)?/?$").unwrap(),
             // "50-healthy-recipes-to-kick-off"
-            Regex::new(r"/\d+-[a-z]+-recipes-to-").unwrap(),
+            Regex::new(r"/\d+(-[a-z]+)*-recipes-to-").unwrap(),
             // "25-recipes-that-should" - number followed by recipes
             Regex::new(r"/\d+-recipes-").unwrap(),
-            // "12-summer-recipes-i-forgot" - number-adjective-recipes
-            Regex::new(r"/\d+-[a-z]+-recipes-[a-z]").unwrap(),
+            // "12-summer-recipes-i-forgot", "20-best-shrimp-recipes-for-weeknight-dinners"
+            Regex::new(r"/\d+(-[a-z]+)+-recipes-[a-z]").unwrap(),
+            // "christmas-recipes-for-your-holiday-table", "soup-recipes-to-warm-you-up"
+            Regex::new(r"/[a-z]+-recipes-[a-z]").unwrap(),
+            // "recipes-for-january", "recipes-for-the-week"
+            Regex::new(r"/recipes-for-[a-z]").unwrap(),
+            // Spelled-out number roundups with collection words:
+            // "six-spooky-cocktails-for-spirited", "four-quick-and-easy-easter-treats-for"
+            // Requires a collection word (recipes/treats/cocktails/etc.) to avoid false positives
+            // on recipe names like "five-spice-beef" or "three-bean-chili"
+            Regex::new(r"/(three|four|five|six|seven|eight|nine|ten|twelve|fifteen|twenty|thirty|fifty)(-[a-z0-9]+)*-(recipes|treats|cocktails|desserts|meals|appetizers|snacks|ideas|drinks)").unwrap(),
+            // "new-years-eve-recipes-and-ideas" - recipes-and-X is always a roundup
+            Regex::new(r"-recipes-and-").unwrap(),
+            // Collection adjective + plural food category at end of URL slug:
+            // "summer-weeknight-meals", "best-back-to-school-dinners", "healthy-dinner-ideas",
+            // "spring-cocktails-and-mocktails"
+            Regex::new(r"/(best|summer|fall|winter|spring|healthy|easy|quick)(-[a-z]+)*-(meals|dinners|lunches|breakfasts|cocktails|mocktails|appetizers|snacks|ideas)/?$").unwrap(),
         ]
     });
 
@@ -742,6 +846,8 @@ fn is_non_recipe_post(url: &str) -> bool {
             // Product reviews and announcements
             Regex::new(r"[-/]product-review").unwrap(),
             Regex::new(r"[-/]book-review").unwrap(),
+            Regex::new(r"[-/]introducing-").unwrap(),
+            Regex::new(r"cookbook-pre-order").unwrap(),
             // Travel and personal posts
             Regex::new(r"[-/]trip-to-").unwrap(),
             Regex::new(r"[-/]vacation-").unwrap(),
@@ -750,14 +856,87 @@ fn is_non_recipe_post(url: &str) -> bool {
             Regex::new(r"[-/]i-started/?$").unwrap(),
             Regex::new(r"[-/]a-boys-job").unwrap(),
             Regex::new(r"[-/]my-happy-place").unwrap(),
+            // Lifestyle series posts
+            Regex::new(r"a-week-in-the-life").unwrap(),
+            Regex::new(r"currently-crushing-on").unwrap(),
+            Regex::new(r"tuesday-things").unwrap(),
+            Regex::new(r"what-to-eat-this-week").unwrap(),
             // Generic tips without recipes
             Regex::new(r"[-/]tips-for-").unwrap(),
             Regex::new(r"[-/]gift-guide").unwrap(),
             Regex::new(r"[-/]holiday-gift").unwrap(),
+            Regex::new(r"[-/]gifts-for-").unwrap(),
+            // Year-in-review and best-of posts
+            Regex::new(r"year-in-review").unwrap(),
+            Regex::new(r"best-of-\d{4}").unwrap(),
+            // Equipment/decor/non-food posts
+            Regex::new(r"[-/]kitchen-essentials").unwrap(),
+            Regex::new(r"[-/]holiday-tablescape").unwrap(),
+            Regex::new(r"[-/]inspiring-instagrammers").unwrap(),
         ]
     });
 
     NON_RECIPE_PATTERNS.iter().any(|re| re.is_match(url))
+}
+
+/// Check if a /recipes/SLUG slug looks like a category page rather than an individual recipe.
+/// Category slugs are short 1-2 word phrases naming a food category or site section,
+/// e.g. "healthy-choices", "weeknight-meals", "indian-breakfast", "latest-updates".
+fn is_category_slug(slug: &str) -> bool {
+    static CATEGORY_WORDS: LazyLock<Vec<&'static str>> = LazyLock::new(|| {
+        vec![
+            // Food categories (plural = collection, not individual recipe)
+            "meals",
+            "dinners",
+            "lunches",
+            "breakfasts",
+            "desserts",
+            "snacks",
+            "appetizers",
+            "cocktails",
+            "mocktails",
+            "salads",
+            "soups",
+            "sides",
+            // Site navigation / meta sections
+            "latest-updates",
+            "most-popular",
+            "quick-and-easy",
+            "healthy-choices",
+        ]
+    });
+
+    // Check if the slug ends with a category word
+    // This catches "indian-breakfast" (ends with "breakfast" — but that's singular, skip)
+    // and "weeknight-meals" (ends with "meals"), "sweets-desserts" (ends with "desserts")
+    for word in CATEGORY_WORDS.iter() {
+        if slug == *word || slug.ends_with(&format!("-{}", word)) {
+            return true;
+        }
+    }
+
+    // Also check for singular food category words, but only for short slugs (1-2 words).
+    // Long slugs like "sausage-and-potatoes-sheet-pan-dinner" are real recipes, not categories.
+    let hyphen_count = slug.matches('-').count();
+    if hyphen_count <= 1 {
+        static SINGULAR_CATEGORIES: LazyLock<Vec<&'static str>> = LazyLock::new(|| {
+            vec![
+                "breakfast",
+                "dinner",
+                "lunch",
+                "dessert",
+                "snack",
+                "appetizer",
+            ]
+        });
+        for word in SINGULAR_CATEGORIES.iter() {
+            if slug == *word || slug.ends_with(&format!("-{}", word)) {
+                return true;
+            }
+        }
+    }
+
+    false
 }
 
 /// Filter out old posts that predate reliable structured recipe data
@@ -774,7 +953,10 @@ fn extract_post_year(url: &str) -> Option<u32> {
 }
 
 fn is_recipe_url(url: &str, min_year: u32) -> bool {
-    let lower = url.to_lowercase();
+    // Strip query strings and fragment identifiers before analysis
+    let url_clean = url.split('?').next().unwrap_or(url);
+    let url_clean = url_clean.split('#').next().unwrap_or(url_clean);
+    let lower = url_clean.to_lowercase();
 
     // === PHASE 1: SITE-SPECIFIC LOGIC ===
     // Handle sites with unique URL structures
@@ -786,6 +968,41 @@ fn is_recipe_url(url: &str, min_year: u32) -> bool {
         }
         // Require the singular "-recipe-" pattern
         return lower.contains("-recipe-");
+    }
+
+    if lower.contains("kingarthurbaking.com") {
+        // KAB recipes are always under /recipes/SLUG where slug ends with -recipe
+        // Blog posts (/blog/*) are articles/tips, not recipe pages
+        // Category pages (/recipes/muffins-popovers) lack -recipe suffix
+        return lower.contains("/recipes/") && lower.contains("-recipe");
+    }
+
+    if lower.contains("tasty.co") {
+        // Compilations are collection pages, not individual recipes
+        if lower.contains("/compilation/") {
+            return false;
+        }
+    }
+
+    if lower.contains("food.com") {
+        // /recipe/all/* are category listing pages (popular, trending)
+        if lower.contains("/recipe/all/") {
+            return false;
+        }
+    }
+
+    if lower.contains("foodnetwork.com") {
+        // /fn-dish/* are article pages, not recipe pages
+        if lower.contains("/fn-dish/") {
+            return false;
+        }
+    }
+
+    if lower.contains("feastingathome.com") {
+        // /recipe-cuisine/* are category pages listing recipes by cuisine
+        if lower.contains("/recipe-cuisine/") {
+            return false;
+        }
     }
 
     // === PHASE 2: UNIVERSAL EXCLUSIONS ===
@@ -814,8 +1031,8 @@ fn is_recipe_url(url: &str, min_year: u32) -> bool {
         return false;
     }
 
-    // URLs with fragment identifiers (comments sections)
-    if lower.contains("#comments") || lower.contains("#respond") {
+    // Monthly/yearly archive pages with no slug (e.g., /2026/01/)
+    if is_archive_page(&lower) {
         return false;
     }
 
@@ -857,6 +1074,7 @@ fn is_recipe_url(url: &str, min_year: u32) -> bool {
             && !slug.starts_with("category")
             && !slug.contains('/')
             && ((slug.contains('-') && slug.len() > 12) || slug.len() > 25)
+            && !is_category_slug(slug)
         {
             return true;
         }
@@ -1010,8 +1228,9 @@ mod tests {
             2016
         ));
 
-        // Comment fragment URLs should be rejected
-        assert!(!is_recipe_url(
+        // Fragment URLs: fragment is stripped, so the base URL is evaluated
+        // The base URL /2025/01/cake/ is a valid date-based recipe post
+        assert!(is_recipe_url(
             "https://example.com/2025/01/cake/#comments",
             2016
         ));
@@ -1202,6 +1421,95 @@ mod tests {
     }
 
     #[test]
+    fn test_category_slug_filtering() {
+        // Category pages under /recipes/ should be rejected
+        assert!(!is_recipe_url(
+            "https://pinchofyum.com/recipes/healthy-choices",
+            2016,
+        ));
+        assert!(!is_recipe_url(
+            "https://pinchofyum.com/recipes/quick-and-easy",
+            2016,
+        ));
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/recipes/weeknight-meals/",
+            2016,
+        ));
+        assert!(!is_recipe_url(
+            "https://www.indianhealthyrecipes.com/recipes/indian-breakfast/",
+            2016,
+        ));
+        assert!(!is_recipe_url(
+            "https://www.indianhealthyrecipes.com/recipes/latest-updates/",
+            2016,
+        ));
+        assert!(!is_recipe_url(
+            "https://www.indianhealthyrecipes.com/recipes/sweets-desserts/",
+            2016,
+        ));
+
+        // But real recipe slugs should still be accepted
+        assert!(is_recipe_url(
+            "https://example.com/recipes/minestrone-soup",
+            2016,
+        ));
+        assert!(is_recipe_url(
+            "https://example.com/recipes/chocolate-chip-cookies/",
+            2016,
+        ));
+        assert!(is_recipe_url(
+            "https://example.com/recipes/grilled-chicken-salad/",
+            2016,
+        ));
+        // Long slugs ending in food words are real recipes, not categories
+        assert!(is_recipe_url(
+            "https://www.jocooks.com/recipes/sausage-and-potatoes-sheet-pan-dinner/",
+            2016,
+        ));
+        assert!(is_recipe_url(
+            "https://www.jocooks.com/recipes/ranch-pork-chops-potatoes-sheet-pan-dinner/",
+            2016,
+        ));
+    }
+
+    #[test]
+    fn test_collection_roundup_patterns() {
+        // "recipes-and-X" is always a roundup
+        assert!(!is_recipe_url(
+            "https://damndelicious.net/2025/12/28/new-years-eve-recipes-and-ideas/",
+            2016,
+        ));
+
+        // Collection adjective + plural food category
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2026/01/healthy-dinner-ideas/",
+            2016,
+        ));
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2025/03/spring-cocktails-and-mocktails/",
+            2016,
+        ));
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2025/07/summer-weeknight-meals/",
+            2016,
+        ));
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2025/08/best-back-to-school-dinners/",
+            2016,
+        ));
+
+        // But real recipes that happen to end with food words should still pass
+        assert!(is_recipe_url(
+            "https://example.com/2025/01/crispy-chicken-dinner/",
+            2016,
+        ));
+        assert!(is_recipe_url(
+            "https://example.com/2025/01/chocolate-lava-cake/",
+            2016,
+        ));
+    }
+
+    #[test]
     fn test_parse_urlset() {
         let xml = r#"<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -1282,5 +1590,292 @@ Sitemap: https://example.com/recipe-sitemap.xml
         // Should be deterministic on re-run
         let prioritized2 = prioritize_sitemaps(sitemaps);
         assert_eq!(prioritized, prioritized2);
+    }
+
+    #[test]
+    fn test_query_string_and_fragment_stripping() {
+        // Query strings are stripped — filtered listings become bare /recipes/ path (rejected)
+        assert!(!is_recipe_url(
+            "https://food.com/recipe/all/popular?ref=nav",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.halfbakedharvest.com/recipes/?_recipe_meal=bread-recipes",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.halfbakedharvest.com/recipes/?_recipe_search=Dip&_recipe_meal=appetizers",
+            2016
+        ));
+
+        // Fragments are stripped — base URL is evaluated
+        assert!(!is_recipe_url(
+            "https://food.com/recipe/all/trending#questions",
+            2016
+        ));
+
+        // Valid recipe URLs with query strings still pass after stripping
+        assert!(is_recipe_url(
+            "https://www.kingarthurbaking.com/recipes/flaky-puff-crust-pizza-recipe?from=search-overlay",
+            2016
+        ));
+        assert!(is_recipe_url(
+            "https://food.com/recipe/breaded-eggplant-oven-baked-160089#questions",
+            2016
+        ));
+    }
+
+    #[test]
+    fn test_kingarthurbaking_site_specific() {
+        // Blog posts should be rejected
+        assert!(!is_recipe_url(
+            "https://www.kingarthurbaking.com/blog/2021/05/24/prebake-pie-crust",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.kingarthurbaking.com/blog/2022/07/14/8-reasons-your-cakes-turn-out-dry",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.kingarthurbaking.com/blog/2026/01/02/recipe-of-the-year-flaky-pizza",
+            2016
+        ));
+
+        // Category pages should be rejected (no -recipe suffix)
+        assert!(!is_recipe_url(
+            "https://kingarthurbaking.com/recipes/muffins-popovers",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.kingarthurbaking.com/recipes/pasta-noodles",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.kingarthurbaking.com/recipes/biscuits-shortcakes",
+            2016
+        ));
+
+        // Actual recipes should pass (slug ends with -recipe)
+        assert!(is_recipe_url(
+            "https://www.kingarthurbaking.com/recipes/flaky-puff-crust-pizza-recipe",
+            2016
+        ));
+        assert!(is_recipe_url(
+            "https://kingarthurbaking.com/recipes/no-bake-chocolate-and-date-energy-bars-recipe",
+            2016
+        ));
+    }
+
+    #[test]
+    fn test_tasty_compilation_rejection() {
+        assert!(!is_recipe_url(
+            "https://tasty.co/compilation/5-best-chicken-wings-recipe",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://tasty.co/compilation/easy-and-delicious-spicy-appetizers-recipe",
+            2016
+        ));
+        // But actual tasty.co recipes should pass
+        assert!(is_recipe_url(
+            "https://tasty.co/recipe/easy-butter-chicken",
+            2016
+        ));
+    }
+
+    #[test]
+    fn test_food_com_category_rejection() {
+        assert!(!is_recipe_url("https://food.com/recipe/all/trending", 2016));
+        assert!(!is_recipe_url(
+            "https://food.com/recipe/all/popular?ref=nav",
+            2016
+        ));
+        // But actual food.com recipes should pass
+        assert!(is_recipe_url(
+            "https://food.com/recipe/tender-pot-roast-22137",
+            2016
+        ));
+    }
+
+    #[test]
+    fn test_foodnetwork_fn_dish_rejection() {
+        assert!(!is_recipe_url(
+            "https://www.foodnetwork.com/fn-dish/recipes/food-networks-healthy-recipe-tricks",
+            2016
+        ));
+    }
+
+    #[test]
+    fn test_feastingathome_category_rejection() {
+        assert!(!is_recipe_url(
+            "https://www.feastingathome.com/recipe-cuisine/asian-recipe/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.feastingathome.com/recipe-cuisine/chili-recipe/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.feastingathome.com/recipe-cuisine/stir-fry-recipe/",
+            2016
+        ));
+    }
+
+    #[test]
+    fn test_archive_page_rejection() {
+        // Monthly archive with no slug should be rejected
+        assert!(!is_recipe_url(
+            "https://www.halfbakedharvest.com/2026/01/",
+            2016
+        ));
+        // But a post within the same month should pass
+        assert!(is_recipe_url(
+            "https://www.halfbakedharvest.com/2026/01/easy-chicken-soup/",
+            2016
+        ));
+    }
+
+    #[test]
+    fn test_improved_roundup_patterns() {
+        // Multi-word slugs ending in -recipes
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2025/10/fall-soup-recipes/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2026/01/game-day-recipes/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2026/01/blood-orange-recipes/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2025/09/best-fall-dinner-recipes-2/",
+            2016
+        ));
+
+        // Word-recipes-word patterns
+        assert!(!is_recipe_url(
+            "https://damndelicious.net/2025/12/16/christmas-recipes-for-your-holiday-table/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://damndelicious.net/2026/01/27/winning-super-bowl-recipes/",
+            2016
+        ));
+
+        // onceuponachef roundups with .html
+        assert!(!is_recipe_url(
+            "https://www.onceuponachef.com/recipes/50-best-chicken-recipes.html",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.onceuponachef.com/recipes/20-best-shrimp-recipes-for-weeknight-dinners.html",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.onceuponachef.com/recipes/st-patricks-day-recipes.html",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.onceuponachef.com/recipes/soup-recipes-to-warm-you-up.html",
+            2016
+        ));
+
+        // Spelled-out number roundups
+        assert!(!is_recipe_url(
+            "https://www.sprinklebakes.com/2018/03/four-quick-and-easy-easter-treats-for.html",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.sprinklebakes.com/2020/10/six-spooky-cocktails-for-spirited.html",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.sprinklebakes.com/2020/10/six-spooky-treats-for-sweet-halloween.html",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.sprinklebakes.com/2018/12/three-classic-christmas-treats-to-make.html",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.sprinklebakes.com/2019/12/20-quick-and-easy-holiday-candy-recipes.html",
+            2016
+        ));
+
+        // recipes-for- pattern
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2026/01/recipes-for-january/",
+            2016
+        ));
+
+        // But individual recipes with numbers should still be accepted
+        assert!(is_recipe_url(
+            "https://example.com/5-ingredient-pasta-recipe/",
+            2016
+        ));
+    }
+
+    #[test]
+    fn test_improved_non_recipe_posts() {
+        // Lifestyle series
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2026/01/a-week-in-the-life-vol-1-7/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2026/01/currently-crushing-on-608/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2026/01/tuesday-things-753/",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2026/01/what-to-eat-this-week-1-25-26/",
+            2016
+        ));
+
+        // Product/promo posts
+        assert!(!is_recipe_url(
+            "https://www.loveandoliveoil.com/2025/07/introducing-fresh-baked-puns.html",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://bakingbites.com/2018/04/perfectly-creamy-frozen-yogurt-cookbook-pre-order/",
+            2016
+        ));
+
+        // Year-in-review
+        assert!(!is_recipe_url(
+            "https://www.sprinklebakes.com/2016/12/sprinkle-bakes-2016-year-in-review.html",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.loveandoliveoil.com/2025/12/the-best-of-2025.html",
+            2016
+        ));
+
+        // Gift/tablescape/equipment posts
+        assert!(!is_recipe_url(
+            "https://www.sprinklebakes.com/2018/11/gifts-for-baker-on-your-list-2.html",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.sprinklebakes.com/2018/11/a-holiday-tablescape-with-tartan-and.html",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://www.loveandoliveoil.com/2017/09/kitchen-essentials.html",
+            2016
+        ));
+
+        // Inspiring instagrammers
+        assert!(!is_recipe_url(
+            "https://www.101cookbooks.com/13-inspiring-instagrammers-to-follow-for-healthy-feelgood-food-recipe/",
+            2016
+        ));
     }
 }
