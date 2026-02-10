@@ -8,6 +8,7 @@ import {
 } from "solid-js";
 import { A, useNavigate, useSearchParams } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
+import { extractApiError } from "../utils/recipeFormHelpers";
 import type { RecipeSummary, SortBy, Direction } from "ramekin-client";
 
 interface FilterState {
@@ -454,8 +455,12 @@ export default function CookbookPage() {
           `/recipes/${response.recipes[0].id}?randomQ=${encodeURIComponent(q || "")}`,
         );
       }
-    } catch {
-      // Ignore errors
+    } catch (err) {
+      const message = await extractApiError(
+        err,
+        "Failed to load random recipe",
+      );
+      setError(message);
     }
   };
 

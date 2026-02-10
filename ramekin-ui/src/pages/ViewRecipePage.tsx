@@ -219,8 +219,12 @@ export default function ViewRecipePage() {
           `/recipes/${response.recipes[0].id}?randomQ=${encodeURIComponent(q)}`,
         );
       }
-    } catch {
-      // Ignore errors
+    } catch (err) {
+      const message = await extractApiError(
+        err,
+        "Failed to load next random recipe",
+      );
+      setError(message);
     }
   };
 

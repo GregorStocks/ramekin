@@ -69,6 +69,7 @@ export default function MealPlanPage() {
   const [mealPlans, setMealPlans] = createSignal<MealPlanItem[]>([]);
   const [loading, setLoading] = createSignal(true);
   const [error, setError] = createSignal<string | null>(null);
+  const [pickerError, setPickerError] = createSignal<string | null>(null);
 
   // Recipe picker modal state
   const [pickerOpen, setPickerOpen] = createSignal(false);
@@ -152,6 +153,7 @@ export default function MealPlanPage() {
   };
 
   const loadRecipes = async () => {
+    setPickerError(null);
     setRecipesLoading(true);
     try {
       const response = await getRecipesApi().listRecipes({
@@ -159,8 +161,9 @@ export default function MealPlanPage() {
         q: searchQuery() || undefined,
       });
       setRecipes(response.recipes);
-    } catch {
-      // Ignore
+    } catch (err) {
+      const message = await extractApiError(err, "Failed to load recipes");
+      setPickerError(message);
     } finally {
       setRecipesLoading(false);
     }
@@ -345,7 +348,13 @@ export default function MealPlanPage() {
           <p class="loading-text">Loading recipes...</p>
         </Show>
 
-        <Show when={!recipesLoading() && recipes().length === 0}>
+        <Show when={pickerError()}>
+          <p class="error">{pickerError()}</p>
+        </Show>
+
+        <Show
+          when={!recipesLoading() && !pickerError() && recipes().length === 0}
+        >
           <p class="empty-state">No recipes found.</p>
         </Show>
 
