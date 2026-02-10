@@ -1,0 +1,10 @@
+{
+  "title": "Recipe photo not properly fitted in detail view",
+  "description": "On the recipe detail page, some photos have black/gray padding on the sides rather than being properly cropped or fitted to the container. The photo container doesn't use object-fit to fill the space cleanly.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": ["ui"],
+  "created_at": "2026-02-09T17:45:00.000000-08:00",
+  "updated_at": "2026-02-09T17:45:00.000000-08:00"
+}
