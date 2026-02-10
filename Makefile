@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -152,6 +152,9 @@ generate-test-urls: ## Generate test URL list from top recipe sites
 		$(if $(SITE),--site $(SITE),) \
 		$(if $(MIN_YEAR),--min-year $(MIN_YEAR),) \
 		$(if $(NO_LIMIT),--no-limit,)
+
+refilter-test-urls: ## Refilter existing test URLs through current filter logic
+	@cargo run -q --manifest-path cli/Cargo.toml -- generate-test-urls --refilter
 
 pipeline: ## Run pipeline for test URLs and generate reports (offline by default, use OFFLINE=false to enable network)
 	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
