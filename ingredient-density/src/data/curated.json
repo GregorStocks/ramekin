@@ -23,6 +23,43 @@
     "rice vinegar": {
       "grams_per_cup": 239.0,
       "source": "Comparable to USDA vinegar entries (cider 239, red wine 239, distilled 238)"
+    },
+    "fish sauce": {
+      "grams_per_cup": 288.0,
+      "source": "USDA FoodData Central FDC 174531: Sauce, fish, ready-to-serve, 18g/tbsp x 16",
+      "url": "https://fdc.nal.usda.gov/food-details/174531/nutrients"
+    },
+    "chicken broth": {
+      "grams_per_cup": 249.0,
+      "source": "USDA FoodData Central FDC 174536: Soup, chicken broth, ready-to-serve, 249g/cup",
+      "url": "https://fdc.nal.usda.gov/food-details/174536/nutrients"
+    },
+    "light corn syrup": {
+      "grams_per_cup": 341.0,
+      "source": "USDA FoodData Central FDC 168837: Syrups, corn, light, 341g/cup",
+      "url": "https://fdc.nal.usda.gov/food-details/168837/nutrients"
+    },
+    "oyster sauce": {
+      "grams_per_cup": 288.0,
+      "source": "USDA FoodData Central FDC 174529: Sauce, oyster, ready-to-serve, 18g/tbsp x 16",
+      "url": "https://fdc.nal.usda.gov/food-details/174529/nutrients"
+    },
+    "mirin": {
+      "grams_per_cup": 240.0,
+      "source": "Not in USDA; rice wine with sugar, comparable to sweetened water/broth densities (~240g/cup)"
+    },
+    "almond extract": {
+      "grams_per_cup": 208.0,
+      "source": "Not in USDA; comparable to vanilla extract (USDA FDC 173471: 208g/cup), both are alcohol-based extracts",
+      "url": "https://fdc.nal.usda.gov/food-details/173471/nutrients"
+    },
+    "dry white wine": {
+      "grams_per_cup": 236.0,
+      "source": "Not in USDA; wine is mostly water (~88%) with ~12% alcohol (density 0.789), estimated ~236g/cup"
+    },
+    "sake": {
+      "grams_per_cup": 240.0,
+      "source": "Not in USDA; rice wine with ~15% alcohol and residual sugars, comparable to mirin/water densities"
     }
   },
   "aliases": {
@@ -75,6 +112,7 @@
     "thyme": "thyme, fresh",
     "cumin": "ground cumin",
     "oregano": "dried oregano",
+    "pumpkin pie spice": "spices, pumpkin pie spice",
 
     "black pepper": null,
     "ground black pepper": null,
@@ -95,6 +133,8 @@
     "evaporated milk": "milk, canned, evaporated, with added vitamin a",
     "condensed milk": "milk, canned, condensed, sweetened",
     "sweetened condensed milk": "milk, canned, condensed, sweetened",
+    "half and half": "cream, fluid, half and half",
+    "half-and-half": "cream, fluid, half and half",
 
     "sour cream": "sour cream",
     "greek yogurt": "yogurt, plain, skim milk",
@@ -120,10 +160,11 @@
 
     "vanilla": "vanilla extract",
     "pure vanilla extract": "vanilla extract",
-
     "worcestershire sauce": "sauce, worcestershire",
 
     "fresh lemon juice": "lemon juice",
+    "freshly squeezed lemon juice": "lemon juice",
+    "fresh lime juice": "lime juice",
 
     "tomato paste": "tomato products, canned, paste, without salt added",
 
@@ -131,12 +172,61 @@
     "toasted sesame oil": "oil, sesame, salad or cooking",
 
     "apple cider vinegar": "vinegar, cider",
+    "cider vinegar": "vinegar, cider",
     "red wine vinegar": "vinegar, red wine",
     "balsamic vinegar": "vinegar, balsamic",
     "white vinegar": "vinegar, distilled",
+    "distilled white vinegar": "vinegar, distilled",
     "white wine vinegar": "vinegar, red wine",
 
-    "water": "water, bottled, generic"
+    "water": "water, bottled, generic",
+    "boiling water": "water, bottled, generic",
+    "hot water": "water, bottled, generic",
+    "ice water": "water, bottled, generic",
+
+    "ketchup": "catsup",
+
+    "all purpose flour": "all-purpose flour",
+
+    "orange juice": "orange juice, chilled, includes from concentrate",
+
+    "cilantro": "coriander (cilantro) leaves",
+    "fresh cilantro": "coriander (cilantro) leaves",
+
+    "hoisin sauce": "sauce, hoisin, ready-to-serve",
+
+    "raisins": "raisins, dark, seedless",
+    "golden raisins": "raisins, golden, seedless",
+
+    "tahini": "seeds, sesame butter, tahini, type of kernels unspecified",
+
+    "sesame seeds": "seeds, sesame seeds, whole, dried",
+
+    "pine nuts": "nuts, pine nuts, dried",
+
+    "grated parmesan cheese": "cheese, parmesan, grated",
+    "grated parmesan": "cheese, parmesan, grated",
+    "freshly grated parmesan": "cheese, parmesan, grated",
+    "freshly grated parmesan cheese": "cheese, parmesan, grated",
+    "finely grated parmesan cheese": "cheese, parmesan, grated",
+    "finely grated parmesan": "cheese, parmesan, grated",
+
+    "shredded parmesan cheese": "cheese, parmesan, shredded",
+    "shredded parmesan": "cheese, parmesan, shredded",
+    "finely shredded parmesan cheese": "cheese, parmesan, shredded",
+
+    "shredded mozzarella": "cheese, mozzarella, low moisture, part-skim, shredded",
+    "shredded mozzarella cheese": "cheese, mozzarella, low moisture, part-skim, shredded",
+
+    "chicken stock": "chicken broth",
+    "low-sodium chicken broth": "chicken broth",
+    "vegetable broth": "chicken broth",
+    "beef broth": "chicken broth",
+
+    "white wine": "dry white wine",
+    "shaoxing wine": "sake",
+
+    "corn syrup": "light corn syrup"
   },
   "rewrites": {
     "salt": "salt, presumably Diamond"

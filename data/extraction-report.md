@@ -3,31 +3,31 @@
 ## Overall
 
 - Total URLs: 5370
-- Completed: 5205 (96.9%)
+- Completed: 5217 (97.2%)
 - Failed at fetch: 1 (0.0%)
-- Failed at extract: 164 (3.1%)
+- Failed at extract: 152 (2.8%)
 
 ## Extraction Methods
 
-- JSON-LD: 4051/5369 (75.5%)
+- JSON-LD: 4063/5369 (75.7%)
 - Microdata: 523/5369 (9.7%)
 - Both: 0/5369 (0.0%)
-- Neither: 795/5369 (14.8%)
+- Neither: 783/5369 (14.6%)
 
 ## Ingredient Parsing
 
-- Total ingredients: 58388
-- Volume-to-weight converted: 15782/40593 (38.9%)
-- Unknown ingredient (no density data): 16405
-- Already has weight: 8406
-- No volume unit (count-based): 17538
-- Metric converted (oz→g): 2485
-- Metric converted (lb→g): 1703
+- Total ingredients: 58516
+- Volume-to-weight converted: 17275/40640 (42.5%)
+- Unknown ingredient (no density data): 14952
+- Already has weight: 8413
+- No volume unit (count-based): 17576
+- Metric converted (oz→g): 2488
+- Metric converted (lb→g): 1707
 
 ## AI Cache
 
-- Cache hits: 4574/4574 (100.0%)
-- API calls: 0/4574 (0.0%)
+- Cache hits: 4680/4680 (100.0%)
+- API calls: 0/4680 (0.0%)
 
 ## By Site
 
@@ -38,7 +38,7 @@
 | alexandracooks.com | 100 | 100 | 100.0% |
 | allrecipes.com | 100 | 100 | 100.0% |
 | altonbrown.com | 100 | 100 | 100.0% |
-| asweetpeachef.com | 25 | 31 | 80.6% |
+| asweetpeachef.com | 31 | 31 | 100.0% |
 | averiecooks.com | 1 | 3 | 33.3% |
 | bakerita.com | 7 | 7 | 100.0% |
 | bakingbites.com | 10 | 12 | 83.3% |
@@ -67,7 +67,7 @@
 | gimmesomeoven.com | 6 | 6 | 100.0% |
 | gonnawantseconds.com | 58 | 59 | 98.3% |
 | halfbakedharvest.com | 0 | 7 | 0.0% |
-| hostthetoast.com | 3 | 9 | 33.3% |
+| hostthetoast.com | 9 | 9 | 100.0% |
 | howsweeteats.com | 82 | 100 | 82.0% |
 | iamafoodblog.com | 99 | 100 | 99.0% |
 | indianhealthyrecipes.com | 25 | 28 | 89.3% |
@@ -126,21 +126,6 @@
 ### Cached fetch error (1 URLs)
 
 - https://nomnompaleo.com/2017/08/15/6053
-
-### Missing required field: name (12 URLs)
-
-- https://hostthetoast.com/birria-de-res-beef-birria-recipe/
-- https://hostthetoast.com/easy-candied-pecans-10-minute-stovetop-recipe/
-- https://hostthetoast.com/feel-better-chicken-soup-recipe/
-- https://hostthetoast.com/homemade-bread-white-bread-recipe/
-- https://hostthetoast.com/homemade-hot-honey-recipe/
-- https://hostthetoast.com/tomato-bruschetta-recipe/
-- https://www.asweetpeachef.com/chai-tea-latte-recipe/
-- https://www.asweetpeachef.com/healthy-beef-and-broccoli-recipe/
-- https://www.asweetpeachef.com/healthy-vanilla-latte-recipe/
-- https://www.asweetpeachef.com/homemade-chili-cheese-dog-recipe/
-- https://www.asweetpeachef.com/horchata-recipe/
-- https://www.asweetpeachef.com/pumpkin-spice-latte-recipe/
 
 ### Missing required field: recipeIngredient (empty) (151 URLs)
 
