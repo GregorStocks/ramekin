@@ -1,0 +1,93 @@
+{
+  "source": "hostthetoast",
+  "recipe_slug": "tomato-bruschetta-recipe",
+  "ingredients": [
+    {
+      "raw": "4-5 Roma tomatoes or other fresh tomatoes",
+      "expected": {
+        "item": "Roma tomatoes or other fresh tomatoes",
+        "measurements": [
+          {
+            "amount": "4-5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt",
+      "expected": {
+        "item": "kosher salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 cloves garlic, peeled",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "peeled",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "216",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "Fresh basil, oregano, and/or thyme, as needed",
+      "expected": {
+        "item": "Fresh basil, oregano, and/or thyme",
+        "measurements": [],
+        "note": "as needed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper, to taste",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Crostini or bruschetta toast, to serve",
+      "expected": {
+        "item": "Crostini or bruschetta toast, to serve",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

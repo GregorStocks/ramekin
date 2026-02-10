@@ -69,6 +69,7 @@ export default function MealPlanPage() {
   const [mealPlans, setMealPlans] = createSignal<MealPlanItem[]>([]);
   const [loading, setLoading] = createSignal(true);
   const [error, setError] = createSignal<string | null>(null);
+  const [pickerError, setPickerError] = createSignal<string | null>(null);
 
   // Recipe picker modal state
   const [pickerOpen, setPickerOpen] = createSignal(false);
@@ -77,7 +78,6 @@ export default function MealPlanPage() {
     createSignal<MealTypeValue | null>(null);
   const [recipes, setRecipes] = createSignal<RecipeSummary[]>([]);
   const [recipesLoading, setRecipesLoading] = createSignal(false);
-  const [recipesError, setRecipesError] = createSignal<string | null>(null);
   const [searchQuery, setSearchQuery] = createSignal("");
 
   // Delete confirmation
@@ -148,14 +148,14 @@ export default function MealPlanPage() {
     setPickerDate(date);
     setPickerMealType(mealType);
     setSearchQuery("");
-    setRecipesError(null);
+    setPickerError(null);
     setPickerOpen(true);
     loadRecipes();
   };
 
   const loadRecipes = async () => {
+    setPickerError(null);
     setRecipesLoading(true);
-    setRecipesError(null);
     try {
       const response = await getRecipesApi().listRecipes({
         limit: 50,
@@ -164,7 +164,7 @@ export default function MealPlanPage() {
       setRecipes(response.recipes);
     } catch (err) {
       const message = await extractApiError(err, "Failed to load recipes");
-      setRecipesError(message);
+      setPickerError(message);
     } finally {
       setRecipesLoading(false);
     }
@@ -349,12 +349,12 @@ export default function MealPlanPage() {
           <p class="loading-text">Loading recipes...</p>
         </Show>
 
-        <Show when={recipesError()}>
-          <div class="error-message">{recipesError()}</div>
+        <Show when={pickerError()}>
+          <p class="error">{pickerError()}</p>
         </Show>
 
         <Show
-          when={!recipesLoading() && !recipesError() && recipes().length === 0}
+          when={!recipesLoading() && !pickerError() && recipes().length === 0}
         >
           <p class="empty-state">No recipes found.</p>
         </Show>
