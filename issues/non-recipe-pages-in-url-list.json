@@ -1,10 +1,10 @@
 {
   "title": "Non-recipe pages included in crawled URL list",
-  "description": "~100+ URLs in the crawl list aren't actual recipe pages. Categories include:\n- Category/index pages: kingarthurbaking.com/recipes/muffins-popovers, food.com/recipe/all/popular\n- Roundup/listicle posts: onceuponachef.com '50 best chicken recipes', howsweeteats.com 'game-day-recipes'\n- Blog posts without recipes: kingarthurbaking.com blog posts, loveandoliveoil.com product pages\n- Lifestyle posts: howsweeteats.com 'a week in the life'\n\nThe is_recipe_url() filter in URL discovery could be improved to exclude these patterns.",
+  "description": "Some non-recipe URLs remain in the test set after filtering improvements. Recent work added: category slug blocklist for /recipes/ paths, -recipes-and- roundup pattern, and collection-keyword roundup patterns. This removed 11 non-recipe URLs.\n\nRemaining non-recipe URLs in the test set (not worth filtering due to false positive risk):\n- How-to/technique posts (e.g. smittenkitchen how-to-poach-an-egg) - filtering risky since some how-tos ARE recipes\n- Non-food recipe content (e.g. marthastewart compost-tea-recipe, barefeetinthekitchen DIY produce wash) - has -recipe suffix, hard to distinguish\n- Merchandise/sale posts (loveandoliveoil sale.html, designs.html) - too site-specific\n- Blog posts without recipes (sprinklebakes christmas-at-workshop) - no URL signal to distinguish\n\nThese are tracked as extraction failures in the P2 issue rather than filtering problems.",
   "status": "open",
   "priority": 4,
   "type": "task",
   "labels": ["url-discovery"],
   "created_at": "2026-02-05T17:00:00.000000-08:00",
-  "updated_at": "2026-02-05T17:00:00.000000-08:00"
+  "updated_at": "2026-02-10T08:30:00.000000+00:00"
 }
