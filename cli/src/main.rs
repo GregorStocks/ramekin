@@ -184,6 +184,9 @@ enum Commands {
         /// Remove URL count limits (process all URLs from sitemaps)
         #[arg(long)]
         no_limit: bool,
+        /// Refilter existing URLs through current filter logic (no network requests)
+        #[arg(long)]
+        refilter: bool,
     },
     /// Run the full pipeline for all test URLs and generate reports
     Pipeline {
@@ -353,17 +356,22 @@ async fn main() -> Result<()> {
             site,
             min_year,
             no_limit,
+            refilter,
         } => {
-            generate_test_urls::generate_test_urls(
-                &output,
-                num_sites,
-                urls_per_site,
-                merge,
-                site.as_deref(),
-                min_year,
-                no_limit,
-            )
-            .await?;
+            if refilter {
+                generate_test_urls::refilter_test_urls(&output, min_year)?;
+            } else {
+                generate_test_urls::generate_test_urls(
+                    &output,
+                    num_sites,
+                    urls_per_site,
+                    merge,
+                    site.as_deref(),
+                    min_year,
+                    no_limit,
+                )
+                .await?;
+            }
         }
         Commands::Pipeline {
             test_urls,
