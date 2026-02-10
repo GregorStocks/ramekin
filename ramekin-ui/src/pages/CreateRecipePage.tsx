@@ -20,6 +20,7 @@ export default function CreateRecipePage() {
   const [scrapeError, setScrapeError] = createSignal<string | null>(null);
   const [scraping, setScraping] = createSignal(false);
   let pollInterval: ReturnType<typeof setInterval> | null = null;
+  let pollStartTime = 0;
 
   onCleanup(() => {
     if (pollInterval) clearInterval(pollInterval);
@@ -85,8 +86,16 @@ export default function CreateRecipePage() {
       setScrapeJob({ ...response, url, canRetry: false, retryCount: 0 });
 
       // Start polling
+      pollStartTime = Date.now();
       pollInterval = setInterval(async () => {
         try {
+          if (Date.now() - pollStartTime > 120_000) {
+            if (pollInterval) clearInterval(pollInterval);
+            pollInterval = null;
+            setScraping(false);
+            setScrapeError("Import timed out");
+            return;
+          }
           const job = await getScrapeApi().getScrape({ id: response.id });
           setScrapeJob(job);
 
@@ -123,8 +132,16 @@ export default function CreateRecipePage() {
       await getScrapeApi().retryScrape({ id: job.id });
 
       // Start polling again
+      pollStartTime = Date.now();
       pollInterval = setInterval(async () => {
         try {
+          if (Date.now() - pollStartTime > 120_000) {
+            if (pollInterval) clearInterval(pollInterval);
+            pollInterval = null;
+            setScraping(false);
+            setScrapeError("Import timed out");
+            return;
+          }
           const updatedJob = await getScrapeApi().getScrape({ id: job.id });
           setScrapeJob(updatedJob);
 
