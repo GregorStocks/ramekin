@@ -1152,6 +1152,19 @@
   font-size: 0.75rem;
 }
 
+.photo-thumbnail .photo-error {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1a;
+  border-radius: 4px;
+  border: 1px solid #442222;
+  color: #aa6666;
+  font-size: 0.75rem;
+}
+
 .photo-remove {
   position: absolute;
   top: -8px;
@@ -2710,4 +2723,52 @@
   padding: 2rem 1rem;
   color: #4caf50;
   font-weight: 500;
+}
+
+/* Meal plan mobile responsive */
+@media (max-width: 768px) {
+  .meal-plan-grid {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .meal-plan-header,
+  .meal-row {
+    grid-template-columns: 80px repeat(7, minmax(120px, 1fr));
+    min-width: 920px;
+  }
+
+  .meal-type-label {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .day-header {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .meal-slot {
+    min-height: 80px;
+    padding: 0.25rem;
+  }
+
+  .meal-card {
+    padding: 0.25rem;
+    gap: 0.25rem;
+  }
+
+  .meal-title {
+    font-size: 0.7rem;
+  }
+
+  .meal-thumbnail {
+    width: 24px;
+    height: 24px;
+  }
+
+  .add-meal-btn {
+    padding: 0.25rem;
+    font-size: 0.85rem;
+  }
 }
