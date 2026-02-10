@@ -1,6 +1,6 @@
 {
   "title": "Push up extraction success rate (currently 98.3%)",
-  "description": "71/4333 URLs (1.6%) still fail extraction. Improved from 164/5370 (3.1%) by enabling reqwest content decompression (fixing hostthetoast.com, asweetpeachef.com) and filtering ~1000 non-recipe URLs from the test set (category pages, blog posts, roundups, lifestyle posts). Remaining failures are mostly JS-rendered sites (sprinklebakes.com 79/100) and scattered older posts without structured data.",
+  "description": "77/4826 URLs (1.6%) still fail extraction. Improved from 164/5370 (3.1%) by enabling reqwest content decompression (fixing hostthetoast.com, asweetpeachef.com) and filtering ~541 non-recipe URLs from the test set (category pages, blog posts, roundups, lifestyle posts). Remaining failures are mostly JS-rendered sites (sprinklebakes.com 79/100) and scattered older posts without structured data.",
   "status": "open",
   "priority": 4,
   "type": "task",

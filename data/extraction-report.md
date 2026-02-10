@@ -2,39 +2,39 @@
 
 ## Overall
 
-- Total URLs: 4333
-- Completed: 4259 (98.3%)
+- Total URLs: 4829
+- Completed: 4749 (98.3%)
 - Failed at fetch: 3 (0.1%)
-- Failed at extract: 71 (1.6%)
+- Failed at extract: 77 (1.6%)
 
 ## Extraction Methods
 
-- JSON-LD: 4054/4330 (93.6%)
-- Microdata: 139/4330 (3.2%)
-- Both: 0/4330 (0.0%)
-- Neither: 137/4330 (3.2%)
+- JSON-LD: 4258/4826 (88.2%)
+- Microdata: 397/4826 (8.2%)
+- Both: 0/4826 (0.0%)
+- Neither: 171/4826 (3.5%)
 
 ## Ingredient Parsing
 
-- Total ingredients: 46396
-- Volume-to-weight converted: 13644/33070 (41.3%)
-- Unknown ingredient (no density data): 13779
-- Already has weight: 5647
-- No volume unit (count-based): 13124
-- Metric converted (oz→g): 2065
-- Metric converted (lb→g): 1347
+- Total ingredients: 52541
+- Volume-to-weight converted: 14657/36801 (39.8%)
+- Unknown ingredient (no density data): 15281
+- Already has weight: 6863
+- No volume unit (count-based): 15512
+- Metric converted (oz→g): 2309
+- Metric converted (lb→g): 1537
 
 ## AI Cache
 
-- Cache hits: 3673/4259 (86.2%)
-- API calls: 586/4259 (13.8%)
+- Cache hits: 4721/4749 (99.4%)
+- API calls: 28/4749 (0.6%)
 
 ## By Site
 
 | Site | Completed | Total | Rate |
 |------|-----------|-------|------|
 | 101cookbooks.com | 68 | 69 | 98.6% |
-| acouplecooks.com | 49 | 49 | 100.0% |
+| acouplecooks.com | 97 | 97 | 100.0% |
 | alexandracooks.com | 100 | 100 | 100.0% |
 | allrecipes.com | 100 | 100 | 100.0% |
 | altonbrown.com | 100 | 100 | 100.0% |
@@ -44,16 +44,16 @@
 | bakingbites.com | 10 | 12 | 83.3% |
 | barefeetinthekitchen.com | 99 | 100 | 99.0% |
 | bbcgoodfood.com | 98 | 100 | 98.0% |
-| bonappetit.com | 41 | 41 | 100.0% |
+| bonappetit.com | 46 | 46 | 100.0% |
 | browneyedbaker.com | 100 | 100 | 100.0% |
 | budgetbytes.com | 2 | 2 | 100.0% |
 | butterwithasideofbread.com | 44 | 44 | 100.0% |
 | cafedelites.com | 55 | 55 | 100.0% |
 | chefspencil.com | 4 | 4 | 100.0% |
 | chopstickchronicles.com | 2 | 2 | 100.0% |
-| cookieandkate.com | 16 | 16 | 100.0% |
+| cookieandkate.com | 20 | 20 | 100.0% |
 | cookingclassy.com | 56 | 56 | 100.0% |
-| damndelicious.net | 96 | 100 | 96.0% |
+| damndelicious.net | 121 | 125 | 96.8% |
 | davidlebovitz.com | 7 | 7 | 100.0% |
 | delish.com | 100 | 100 | 100.0% |
 | dinnerthendessert.com | 4 | 4 | 100.0% |
@@ -61,27 +61,27 @@
 | eatingwell.com | 100 | 100 | 100.0% |
 | epicurious.com | 1 | 1 | 100.0% |
 | feastingathome.com | 4 | 4 | 100.0% |
-| food.com | 24 | 28 | 85.7% |
-| foodandwine.com | 100 | 100 | 100.0% |
-| foodnetwork.com | 0 | 2 | 0.0% |
-| gimmesomeoven.com | 5 | 5 | 100.0% |
+| food.com | 24 | 31 | 77.4% |
+| foodandwine.com | 102 | 102 | 100.0% |
+| foodnetwork.com | 0 | 3 | 0.0% |
+| gimmesomeoven.com | 6 | 6 | 100.0% |
 | gonnawantseconds.com | 59 | 60 | 98.3% |
 | hostthetoast.com | 9 | 9 | 100.0% |
-| howsweeteats.com | 93 | 100 | 93.0% |
+| howsweeteats.com | 101 | 108 | 93.5% |
 | iamafoodblog.com | 99 | 100 | 99.0% |
 | indianhealthyrecipes.com | 25 | 25 | 100.0% |
 | inspiredtaste.net | 100 | 100 | 100.0% |
 | japanesecooking101.com | 100 | 100 | 100.0% |
-| jocooks.com | 64 | 64 | 100.0% |
+| jocooks.com | 68 | 68 | 100.0% |
 | joyfoodsunshine.com | 88 | 88 | 100.0% |
 | justonecookbook.com | 16 | 17 | 94.1% |
 | keviniscooking.com | 34 | 34 | 100.0% |
-| kingarthurbaking.com | 2 | 2 | 100.0% |
+| kingarthurbaking.com | 3 | 3 | 100.0% |
 | lecremedelacrumb.com | 27 | 27 | 100.0% |
 | lifemadesweeter.com | 6 | 6 | 100.0% |
 | littlesweetbaker.com | 23 | 23 | 100.0% |
-| loveandlemons.com | 34 | 34 | 100.0% |
-| loveandoliveoil.com | 95 | 100 | 95.0% |
+| loveandlemons.com | 35 | 35 | 100.0% |
+| loveandoliveoil.com | 98 | 103 | 95.1% |
 | marthastewart.com | 6 | 7 | 85.7% |
 | momontimeout.com | 97 | 100 | 97.0% |
 | mybakingaddiction.com | 94 | 97 | 96.9% |
@@ -89,28 +89,27 @@
 | nomnompaleo.com | 3 | 6 | 50.0% |
 | norecipes.com | 100 | 100 | 100.0% |
 | ohmyveggies.com | 3 | 6 | 50.0% |
-| ohsheglows.com | 1 | 1 | 100.0% |
-| onceuponachef.com | 98 | 100 | 98.0% |
+| onceuponachef.com | 99 | 101 | 98.0% |
 | onmykidsplate.com | 18 | 18 | 100.0% |
-| peasandcrayons.com | 49 | 50 | 98.0% |
+| peasandcrayons.com | 51 | 52 | 98.1% |
 | pinchofyum.com | 0 | 1 | 0.0% |
 | recipetineats.com | 9 | 9 | 100.0% |
 | sallysbakingaddiction.com | 34 | 34 | 100.0% |
 | seriouseats.com | 99 | 100 | 99.0% |
-| simplyrecipes.com | 100 | 100 | 100.0% |
+| simplyrecipes.com | 99 | 100 | 99.0% |
 | skinnytaste.com | 2 | 2 | 100.0% |
-| slenderkitchen.com | 55 | 55 | 100.0% |
-| smittenkitchen.com | 16 | 17 | 94.1% |
+| slenderkitchen.com | 61 | 61 | 100.0% |
+| smittenkitchen.com | 302 | 304 | 99.3% |
 | spendwithpennies.com | 35 | 35 | 100.0% |
-| spoonforkbacon.com | 2 | 2 | 100.0% |
+| spoonforkbacon.com | 3 | 3 | 100.0% |
 | sprinklebakes.com | 79 | 100 | 79.0% |
 | sudachirecipes.com | 94 | 94 | 100.0% |
 | sweetandsavorymeals.com | 100 | 100 | 100.0% |
-| tasteofhome.com | 100 | 100 | 100.0% |
+| tasteofhome.com | 101 | 101 | 100.0% |
 | tastesbetterfromscratch.com | 4 | 4 | 100.0% |
 | tasty.co | 100 | 100 | 100.0% |
 | theforkedspoon.com | 100 | 100 | 100.0% |
-| themediterraneandish.com | 7 | 7 | 100.0% |
+| themediterraneandish.com | 100 | 100 | 100.0% |
 | themodernproper.com | 14 | 14 | 100.0% |
 | thepioneerwoman.com | 100 | 100 | 100.0% |
 | therecipecritic.com | 34 | 34 | 100.0% |
@@ -123,16 +122,13 @@
 
 ## Failed URLs by Error
 
-### Cached fetch error (1 URLs)
-
-- https://nomnompaleo.com/2017/08/15/6053
-
-### HTTP request failed: HTTP status client error (404... (2 URLs)
+### Cached fetch error (3 URLs)
 
 - https://foodnetwork.com//www.foodnetwork.com/recipes/chocolate-lava-cakes-2312421
 - https://foodnetwork.com//www.foodnetwork.com/shows/articles/bobby-berks-blood-orange-margarita-recipe
+- https://nomnompaleo.com/2017/08/15/6053
 
-### Missing required field: recipeIngredient (empty) (70 URLs)
+### Missing required field: recipeIngredient (empty) (76 URLs)
 
 - http://bakingbites.com/2017/02/how-to-use-freeze-dried-fruit-in-baking/
 - https://bakingbites.com/2018/04/perfectly-creamy-frozen-yogurt-cookbook-pre-order/
@@ -144,7 +140,10 @@
 - https://food.com/recipe/100-whole-grain-wheat-bread-181106
 - https://food.com/recipe/all/trending
 - https://food.com/recipe/baking-powder-biscuits-118281
+- https://food.com/recipe/breaded-eggplant-oven-baked-160089
+- https://food.com/recipe/egg-in-a-basket-421172
 - https://food.com/recipe/lazy-cooks-golumpki-stuffed-cabbage-360095
+- https://food.com/recipe/mash-potato-and-stuffing-balls-445449
 - https://iamafoodblog.com/turkey-shepherds-pie-recipe/
 - https://nomnompaleo.com/post/1451231058/i-love-this-roasted-broccoli-recipe
 - https://nomnompaleo.com/post/63912988125/cooking-from-well-fed-2-and-an-exclusive-recipe
@@ -153,12 +152,14 @@
 - https://ohmyveggies.com/red-lentil-recipe/
 - https://peasandcrayons.com/chili-and-cornbread-recipe/
 - https://pinchofyum.com/recipes/quick-and-easy
+- https://smittenkitchen.com/2016/08/even-more-perfect-blueberry-muffins/
 - https://smittenkitchen.com/2020/04/how-i-stock-the-smitten-kitchen/
 - https://www.101cookbooks.com/13-inspiring-instagrammers-to-follow-for-healthy-feelgood-food-recipe/
 - https://www.averiecooks.com/raw-vegan-donut-holes-5-minute-recipe/
 - https://www.averiecooks.com/trainer-session-progress-recipe/
 - https://www.bbcgoodfood.com/recipes/our-favourite-recipe-and-wine-pairings-this-month
 - https://www.bbcgoodfood.com/us/prime-rib-recipe
+- https://www.foodnetwork.com/fn-dish/recipes/food-networks-healthy-recipe-tricks
 - https://www.gonnawantseconds.com/ginger-cookies-recipe/
 - https://www.howsweeteats.com/2025/03/spring-cocktails-and-mocktails/
 - https://www.howsweeteats.com/2025/07/summer-weeknight-meals/
@@ -182,6 +183,7 @@
 - https://www.onceuponachef.com/recipes/fifty-30-minute-meals-your-family-will-love.html
 - https://www.onceuponachef.com/recipes/luscious-lemon-desserts.html
 - https://www.seriouseats.com/new-orleans-bbq-shrimp-recipe-11891402
+- https://www.simplyrecipes.com/recipes/the_finger_test_to_check_the_doneness_of_meat/
 - https://www.sprinklebakes.com/2018/03/four-quick-and-easy-easter-treats-for.html
 - https://www.sprinklebakes.com/2018/04/celebrate-like-royal-with-lemon.html
 - https://www.sprinklebakes.com/2018/05/rhubarb-pie-with-double-crust.html
