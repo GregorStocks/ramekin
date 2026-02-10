@@ -2,17 +2,17 @@
 
 ## Overall
 
-- Total URLs: 5291
-- Completed: 5212 (98.5%)
+- Total URLs: 5280
+- Completed: 5212 (98.7%)
 - Failed at fetch: 1 (0.0%)
-- Failed at extract: 78 (1.5%)
+- Failed at extract: 67 (1.3%)
 
 ## Extraction Methods
 
-- JSON-LD: 4059/5290 (76.7%)
-- Microdata: 522/5290 (9.9%)
-- Both: 0/5290 (0.0%)
-- Neither: 709/5290 (13.4%)
+- JSON-LD: 4059/5279 (76.9%)
+- Microdata: 522/5279 (9.9%)
+- Both: 0/5279 (0.0%)
+- Neither: 698/5279 (13.2%)
 
 ## Ingredient Parsing
 
@@ -53,7 +53,7 @@
 | chopstickchronicles.com | 2 | 2 | 100.0% |
 | cookieandkate.com | 14 | 14 | 100.0% |
 | cookingclassy.com | 56 | 56 | 100.0% |
-| damndelicious.net | 26 | 27 | 96.3% |
+| damndelicious.net | 26 | 26 | 100.0% |
 | davidlebovitz.com | 7 | 7 | 100.0% |
 | delish.com | 100 | 100 | 100.0% |
 | dinnerthendessert.com | 4 | 4 | 100.0% |
@@ -65,9 +65,9 @@
 | gimmesomeoven.com | 6 | 6 | 100.0% |
 | gonnawantseconds.com | 58 | 59 | 98.3% |
 | hostthetoast.com | 9 | 9 | 100.0% |
-| howsweeteats.com | 82 | 87 | 94.3% |
+| howsweeteats.com | 82 | 82 | 100.0% |
 | iamafoodblog.com | 99 | 100 | 99.0% |
-| indianhealthyrecipes.com | 25 | 28 | 89.3% |
+| indianhealthyrecipes.com | 25 | 25 | 100.0% |
 | inspiredtaste.net | 100 | 100 | 100.0% |
 | japanesecooking101.com | 100 | 100 | 100.0% |
 | jocooks.com | 77 | 77 | 100.0% |
@@ -90,7 +90,6 @@
 | onceuponachef.com | 92 | 93 | 98.9% |
 | onmykidsplate.com | 18 | 18 | 100.0% |
 | peasandcrayons.com | 51 | 52 | 98.1% |
-| pinchofyum.com | 0 | 2 | 0.0% |
 | recipetineats.com | 9 | 9 | 100.0% |
 | sallysbakingaddiction.com | 34 | 34 | 100.0% |
 | seriouseats.com | 97 | 98 | 99.0% |
@@ -124,11 +123,10 @@
 
 - https://nomnompaleo.com/2017/08/15/6053
 
-### Missing required field: recipeIngredient (empty) (77 URLs)
+### Missing required field: recipeIngredient (empty) (66 URLs)
 
 - http://bakingbites.com/2017/02/how-to-use-freeze-dried-fruit-in-baking/
 - https://barefeetinthekitchen.com/diy-fruit-and-vegetable-wash-homemade-produce-wash-recipe/
-- https://damndelicious.net/2025/12/28/new-years-eve-recipes-and-ideas/
 - https://food.com/recipe/breaded-eggplant-oven-baked-160089
 - https://food.com/recipe/egg-in-a-basket-421172
 - https://food.com/recipe/mash-potato-and-stuffing-balls-445449
@@ -139,8 +137,6 @@
 - https://ohmyveggies.com/great-ginger-tea-recipe/
 - https://ohmyveggies.com/red-lentil-recipe/
 - https://peasandcrayons.com/chili-and-cornbread-recipe/
-- https://pinchofyum.com/recipes/healthy-choices
-- https://pinchofyum.com/recipes/quick-and-easy
 - https://smittenkitchen.com/2007/04/fish-tacos/
 - https://smittenkitchen.com/2007/05/homemade-oreoes/
 - https://smittenkitchen.com/2007/10/flan-flop/
@@ -164,14 +160,6 @@
 - https://www.bbcgoodfood.com/us/prime-rib-recipe
 - https://www.foodandwine.com/recipes/rosh-hashanah-recipes-to-celebrate-the-new-year
 - https://www.gonnawantseconds.com/ginger-cookies-recipe/
-- https://www.howsweeteats.com/2025/03/spring-cocktails-and-mocktails/
-- https://www.howsweeteats.com/2025/07/summer-weeknight-meals/
-- https://www.howsweeteats.com/2025/08/best-back-to-school-dinners/
-- https://www.howsweeteats.com/2026/01/healthy-dinner-ideas/
-- https://www.howsweeteats.com/recipes/weeknight-meals/
-- https://www.indianhealthyrecipes.com/recipes/indian-breakfast/
-- https://www.indianhealthyrecipes.com/recipes/latest-updates/
-- https://www.indianhealthyrecipes.com/recipes/sweets-desserts/
 - https://www.justonecookbook.com/dango-recipe/
 - https://www.loveandoliveoil.com/2025/09/new-fresh-baked-puns-designs.html
 - https://www.loveandoliveoil.com/2025/11/snack-friday-sale.html

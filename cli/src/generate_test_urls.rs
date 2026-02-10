@@ -817,6 +817,12 @@ fn is_roundup_url(url: &str) -> bool {
             // Requires a collection word (recipes/treats/cocktails/etc.) to avoid false positives
             // on recipe names like "five-spice-beef" or "three-bean-chili"
             Regex::new(r"/(three|four|five|six|seven|eight|nine|ten|twelve|fifteen|twenty|thirty|fifty)(-[a-z0-9]+)*-(recipes|treats|cocktails|desserts|meals|appetizers|snacks|ideas|drinks)").unwrap(),
+            // "new-years-eve-recipes-and-ideas" - recipes-and-X is always a roundup
+            Regex::new(r"-recipes-and-").unwrap(),
+            // Collection adjective + plural food category at end of URL slug:
+            // "summer-weeknight-meals", "best-back-to-school-dinners", "healthy-dinner-ideas",
+            // "spring-cocktails-and-mocktails"
+            Regex::new(r"/(best|summer|fall|winter|spring|healthy|easy|quick)(-[a-z]+)*-(meals|dinners|lunches|breakfasts|cocktails|mocktails|appetizers|snacks|ideas)/?$").unwrap(),
         ]
     });
 
@@ -871,6 +877,66 @@ fn is_non_recipe_post(url: &str) -> bool {
     });
 
     NON_RECIPE_PATTERNS.iter().any(|re| re.is_match(url))
+}
+
+/// Check if a /recipes/SLUG slug looks like a category page rather than an individual recipe.
+/// Category slugs are short 1-2 word phrases naming a food category or site section,
+/// e.g. "healthy-choices", "weeknight-meals", "indian-breakfast", "latest-updates".
+fn is_category_slug(slug: &str) -> bool {
+    static CATEGORY_WORDS: LazyLock<Vec<&'static str>> = LazyLock::new(|| {
+        vec![
+            // Food categories (plural = collection, not individual recipe)
+            "meals",
+            "dinners",
+            "lunches",
+            "breakfasts",
+            "desserts",
+            "snacks",
+            "appetizers",
+            "cocktails",
+            "mocktails",
+            "salads",
+            "soups",
+            "sides",
+            // Site navigation / meta sections
+            "latest-updates",
+            "most-popular",
+            "quick-and-easy",
+            "healthy-choices",
+        ]
+    });
+
+    // Check if the slug ends with a category word
+    // This catches "indian-breakfast" (ends with "breakfast" — but that's singular, skip)
+    // and "weeknight-meals" (ends with "meals"), "sweets-desserts" (ends with "desserts")
+    for word in CATEGORY_WORDS.iter() {
+        if slug == *word || slug.ends_with(&format!("-{}", word)) {
+            return true;
+        }
+    }
+
+    // Also check for singular food category words, but only for short slugs (1-2 words).
+    // Long slugs like "sausage-and-potatoes-sheet-pan-dinner" are real recipes, not categories.
+    let hyphen_count = slug.matches('-').count();
+    if hyphen_count <= 1 {
+        static SINGULAR_CATEGORIES: LazyLock<Vec<&'static str>> = LazyLock::new(|| {
+            vec![
+                "breakfast",
+                "dinner",
+                "lunch",
+                "dessert",
+                "snack",
+                "appetizer",
+            ]
+        });
+        for word in SINGULAR_CATEGORIES.iter() {
+            if slug == *word || slug.ends_with(&format!("-{}", word)) {
+                return true;
+            }
+        }
+    }
+
+    false
 }
 
 /// Filter out old posts that predate reliable structured recipe data
@@ -1008,6 +1074,7 @@ fn is_recipe_url(url: &str, min_year: u32) -> bool {
             && !slug.starts_with("category")
             && !slug.contains('/')
             && ((slug.contains('-') && slug.len() > 12) || slug.len() > 25)
+            && !is_category_slug(slug)
         {
             return true;
         }
@@ -1350,6 +1417,95 @@ mod tests {
         assert!(!is_recipe_url(
             "https://www.seriouseats.com/hearty-chickpea-recipes-11878318",
             2016
+        ));
+    }
+
+    #[test]
+    fn test_category_slug_filtering() {
+        // Category pages under /recipes/ should be rejected
+        assert!(!is_recipe_url(
+            "https://pinchofyum.com/recipes/healthy-choices",
+            2016,
+        ));
+        assert!(!is_recipe_url(
+            "https://pinchofyum.com/recipes/quick-and-easy",
+            2016,
+        ));
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/recipes/weeknight-meals/",
+            2016,
+        ));
+        assert!(!is_recipe_url(
+            "https://www.indianhealthyrecipes.com/recipes/indian-breakfast/",
+            2016,
+        ));
+        assert!(!is_recipe_url(
+            "https://www.indianhealthyrecipes.com/recipes/latest-updates/",
+            2016,
+        ));
+        assert!(!is_recipe_url(
+            "https://www.indianhealthyrecipes.com/recipes/sweets-desserts/",
+            2016,
+        ));
+
+        // But real recipe slugs should still be accepted
+        assert!(is_recipe_url(
+            "https://example.com/recipes/minestrone-soup",
+            2016,
+        ));
+        assert!(is_recipe_url(
+            "https://example.com/recipes/chocolate-chip-cookies/",
+            2016,
+        ));
+        assert!(is_recipe_url(
+            "https://example.com/recipes/grilled-chicken-salad/",
+            2016,
+        ));
+        // Long slugs ending in food words are real recipes, not categories
+        assert!(is_recipe_url(
+            "https://www.jocooks.com/recipes/sausage-and-potatoes-sheet-pan-dinner/",
+            2016,
+        ));
+        assert!(is_recipe_url(
+            "https://www.jocooks.com/recipes/ranch-pork-chops-potatoes-sheet-pan-dinner/",
+            2016,
+        ));
+    }
+
+    #[test]
+    fn test_collection_roundup_patterns() {
+        // "recipes-and-X" is always a roundup
+        assert!(!is_recipe_url(
+            "https://damndelicious.net/2025/12/28/new-years-eve-recipes-and-ideas/",
+            2016,
+        ));
+
+        // Collection adjective + plural food category
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2026/01/healthy-dinner-ideas/",
+            2016,
+        ));
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2025/03/spring-cocktails-and-mocktails/",
+            2016,
+        ));
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2025/07/summer-weeknight-meals/",
+            2016,
+        ));
+        assert!(!is_recipe_url(
+            "https://www.howsweeteats.com/2025/08/best-back-to-school-dinners/",
+            2016,
+        ));
+
+        // But real recipes that happen to end with food words should still pass
+        assert!(is_recipe_url(
+            "https://example.com/2025/01/crispy-chicken-dinner/",
+            2016,
+        ));
+        assert!(is_recipe_url(
+            "https://example.com/2025/01/chocolate-lava-cake/",
+            2016,
         ));
     }
 

@@ -8,6 +8,7 @@ Pick and solve exactly **one** issue, then create a PR.
    ```bash
    for f in issues/*.json; do echo "$(basename "$f" .json): $(jq -r '[.priority, .title] | @tsv' "$f")"; done | sort -t: -k2 -n
    ```
+   If a higher-priority issue is vague or broad, prefer making progress on it over picking a lower-priority issue. Progress includes: investigating root causes, splitting a tracker into actionable sub-issues, implementing a partial fix, or documenting findings.
 2. Implement the fix
 3. Update tests to expect the correct behavior
 4. Run `make test` and `make lint` to verify
