@@ -282,21 +282,34 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
                             expanded: false,
                         });
                     } else {
-                        // Regular ingredient - consume all batch results matching this raw line
-                        // (one line may expand into multiple results, e.g., "1/2 tsp each salt and pepper")
-                        let mut is_first = true;
-                        while let Some(result) = batch_iter.peek() {
+                        // Regular ingredient - consume one batch result for this raw line,
+                        // then consume additional "each" expansion results (same raw, different item).
+                        // This avoids incorrectly treating duplicate raw lines (e.g., butter used
+                        // in two recipe steps) as "each" expansions.
+                        if let Some(result) = batch_iter.peek() {
                             if result.raw == *raw {
-                                let result = batch_iter.next().unwrap();
+                                let first_result = batch_iter.next().unwrap();
+                                let first_item = first_result.expected.item.clone();
                                 new_ingredients.push(IngredientTestCase {
-                                    raw: result.raw,
-                                    expected: Some(result.expected),
+                                    raw: first_result.raw,
+                                    expected: Some(first_result.expected),
                                     is_section_header: false,
-                                    expanded: !is_first,
+                                    expanded: false,
                                 });
-                                is_first = false;
-                            } else {
-                                break;
+                                // Consume additional "each" expansion results (same raw line, different item)
+                                while let Some(next) = batch_iter.peek() {
+                                    if next.raw == *raw && next.expected.item != first_item {
+                                        let next = batch_iter.next().unwrap();
+                                        new_ingredients.push(IngredientTestCase {
+                                            raw: next.raw,
+                                            expected: Some(next.expected),
+                                            is_section_header: false,
+                                            expanded: true,
+                                        });
+                                    } else {
+                                        break;
+                                    }
+                                }
                             }
                         }
                     }
