@@ -414,4 +414,99 @@ mod tests {
         assert!(find_density("tamari").is_some());
         assert!(find_density("Japanese soy sauce (koikuchi shoyu)").is_some());
     }
+
+    #[test]
+    fn test_new_curated_entries() {
+        // Fish sauce: 288 g/cup (18g/tbsp x 16)
+        let density = find_density("fish sauce").unwrap();
+        assert!((density - 288.0).abs() < 0.1);
+
+        // Chicken broth: 249 g/cup
+        let density = find_density("chicken broth").unwrap();
+        assert!((density - 249.0).abs() < 0.1);
+
+        // Light corn syrup: 341 g/cup
+        let density = find_density("light corn syrup").unwrap();
+        assert!((density - 341.0).abs() < 0.1);
+
+        // Oyster sauce: 288 g/cup (18g/tbsp x 16)
+        let density = find_density("oyster sauce").unwrap();
+        assert!((density - 288.0).abs() < 0.1);
+
+        // Mirin: 240 g/cup
+        let density = find_density("mirin").unwrap();
+        assert!((density - 240.0).abs() < 0.1);
+
+        // Almond extract: 208 g/cup
+        let density = find_density("almond extract").unwrap();
+        assert!((density - 208.0).abs() < 0.1);
+
+        // Dry white wine: 236 g/cup
+        let density = find_density("dry white wine").unwrap();
+        assert!((density - 236.0).abs() < 0.1);
+
+        // Sake: 240 g/cup
+        let density = find_density("sake").unwrap();
+        assert!((density - 240.0).abs() < 0.1);
+    }
+
+    #[test]
+    fn test_new_aliases() {
+        // Flour variant
+        assert!(find_density("all purpose flour").is_some());
+
+        // Liquids
+        assert!(find_density("ketchup").is_some());
+        assert!(find_density("fresh lime juice").is_some());
+        assert!(find_density("freshly squeezed lemon juice").is_some());
+        assert!(find_density("orange juice").is_some());
+        assert!(find_density("boiling water").is_some());
+        assert!(find_density("hot water").is_some());
+        assert!(find_density("ice water").is_some());
+        assert!(find_density("cider vinegar").is_some());
+        assert!(find_density("distilled white vinegar").is_some());
+        assert!(find_density("half and half").is_some());
+        assert!(find_density("half-and-half").is_some());
+
+        // Herbs and produce
+        assert!(find_density("cilantro").is_some());
+        assert!(find_density("fresh cilantro").is_some());
+
+        // Sauces
+        assert!(find_density("hoisin sauce").is_some());
+
+        // Nuts, seeds, dried fruit
+        assert!(find_density("raisins").is_some());
+        assert!(find_density("golden raisins").is_some());
+        assert!(find_density("tahini").is_some());
+        assert!(find_density("sesame seeds").is_some());
+        assert!(find_density("pine nuts").is_some());
+        assert!(find_density("pumpkin pie spice").is_some());
+
+        // Cheese (grated vs shredded have different densities)
+        let grated = find_density("grated parmesan cheese").unwrap();
+        assert!((grated - 100.0).abs() < 0.1);
+        assert!(find_density("freshly grated parmesan").is_some());
+        assert!(find_density("finely grated parmesan cheese").is_some());
+
+        let shredded = find_density("shredded parmesan cheese").unwrap();
+        assert!((shredded - 80.0).abs() < 0.1);
+        assert!(find_density("finely shredded parmesan cheese").is_some());
+
+        assert!(find_density("shredded mozzarella").is_some());
+        assert!(find_density("shredded mozzarella cheese").is_some());
+
+        // Broth aliases
+        assert!(find_density("chicken stock").is_some());
+        assert!(find_density("low-sodium chicken broth").is_some());
+        assert!(find_density("vegetable broth").is_some());
+        assert!(find_density("beef broth").is_some());
+
+        // Wine aliases
+        assert!(find_density("white wine").is_some());
+        assert!(find_density("Shaoxing wine").is_some());
+
+        // Corn syrup alias
+        assert!(find_density("corn syrup").is_some());
+    }
 }
