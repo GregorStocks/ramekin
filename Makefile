@@ -149,6 +149,7 @@ screenshots: check-deps $(CLIENT_MARKER) ## Take screenshots for visual testing
 
 generate-test-urls: ## Generate test URL list from top recipe sites
 	@cargo run -q --manifest-path cli/Cargo.toml -- generate-test-urls -o data/test-urls.json \
+		--merge \
 		$(if $(SITE),--site $(SITE),) \
 		$(if $(MIN_YEAR),--min-year $(MIN_YEAR),) \
 		$(if $(NO_LIMIT),--no-limit,)
