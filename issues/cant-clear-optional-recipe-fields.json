@@ -1,0 +1,10 @@
+{
+  "title": "Can't clear optional recipe fields back to null",
+  "description": "The update_recipe endpoint in server/src/api/recipes/update.rs merges request fields with the current version using .or(), e.g. `request.description.or(cur_description)`. Since all optional fields are Option<String>, there's no way to distinguish 'field not provided' (keep current) from 'set to null' (clear field). Once a field has a value, it can never be cleared through the API.\n\nAffected fields: description, notes, difficulty, nutritional_info, servings, prep_time, cook_time, total_time, source_url, source_name, rating.\n\nA common fix is to use a wrapper type or a separate sentinel value to distinguish absent vs explicit-null in the JSON request body. For example, serde supports #[serde(default, deserialize_with = ...)] patterns, or the request could use a nested Option<Option<T>> where None = absent and Some(None) = clear.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": ["backend", "api"],
+  "created_at": "2026-02-09T12:00:00.000000-08:00",
+  "updated_at": "2026-02-09T12:00:00.000000-08:00"
+}

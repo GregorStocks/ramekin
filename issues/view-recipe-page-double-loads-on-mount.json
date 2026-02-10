@@ -1,0 +1,10 @@
+{
+  "title": "ViewRecipePage loads recipe twice on mount",
+  "description": "In ramekin-ui/src/pages/ViewRecipePage.tsx, onMount (line 548-549) calls loadRecipe(), and then the createEffect (line 553-557) that tracks versionId() also calls loadRecipe() on its initial run (Solid effects always execute once on creation). This means every recipe page visit fires 2 identical GET /api/recipes/:id requests.\n\nFix: Remove the loadRecipe() call from onMount and let the createEffect handle it, or gate the effect so it doesn't fire on the initial run.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": ["frontend", "performance"],
+  "created_at": "2026-02-09T12:00:00.000000-08:00",
+  "updated_at": "2026-02-09T12:00:00.000000-08:00"
+}
