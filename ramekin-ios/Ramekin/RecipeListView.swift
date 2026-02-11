@@ -376,6 +376,8 @@ extension RecipeListView {
                 hasMore = recipes.count < totalCount
                 isLoading = false
             }
+        } catch is CancellationError {
+            // Task was cancelled (e.g. new search started), not a real error
         } catch {
             await MainActor.run {
                 guard activeQuery == queryValue else { return }
@@ -408,6 +410,8 @@ extension RecipeListView {
                 hasMore = recipes.count < totalCount
                 isLoadingMore = false
             }
+        } catch is CancellationError {
+            // Task was cancelled, not a real error
         } catch {
             await MainActor.run {
                 loadMoreFailed = true

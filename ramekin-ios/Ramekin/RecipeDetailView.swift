@@ -340,6 +340,8 @@ extension RecipeDetailView {
                 recipe = loaded
                 isLoading = false
             }
+        } catch is CancellationError {
+            // Task was cancelled, not a real error
         } catch {
             await MainActor.run {
                 self.error = error.localizedDescription
@@ -372,6 +374,8 @@ extension RecipeDetailView {
                 enrichResult = nil
             }
             await loadRecipe()
+        } catch is CancellationError {
+            // Task was cancelled, not a real error
         } catch {
             await MainActor.run {
                 self.error = error.localizedDescription
