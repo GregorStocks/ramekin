@@ -165,9 +165,12 @@ export default function ViewRecipePage() {
         versionId: vid ?? undefined,
       });
       setRecipe(response);
-      // Store the current version ID when not viewing a specific version
       if (!vid) {
         setCurrentVersionId(response.versionId);
+      } else if (!currentVersionId()) {
+        // Initial load with a version param — also fetch the latest version ID
+        // so we can show the "viewing historical version" banner.
+        loadCurrentVersionId();
       }
     } catch (err) {
       if (err instanceof Response && err.status === 404) {
@@ -283,11 +286,10 @@ export default function ViewRecipePage() {
         },
       });
 
-      // Clear version param and reload
+      // Clear version param — the createEffect tracking versionId() will
+      // automatically reload the recipe with the new (null) version.
       setSearchParams({ version_id: undefined });
       setRevertVersion(null);
-      await loadRecipe();
-      await loadCurrentVersionId();
     } catch (err) {
       setError("Failed to revert to this version");
     } finally {
@@ -360,7 +362,6 @@ export default function ViewRecipePage() {
       });
       setEnrichedContent(null);
       await loadRecipe();
-      await loadCurrentVersionId();
     } catch (err) {
       setError("Failed to apply enrichment");
     } finally {
@@ -468,7 +469,6 @@ export default function ViewRecipePage() {
 
         if (job.status === "completed") {
           await loadRecipe();
-          await loadCurrentVersionId();
           setRescraping(false);
         } else if (job.status === "failed") {
           setError(`Rescrape failed: ${job.error || "Unknown error"}`);
@@ -543,11 +543,6 @@ export default function ViewRecipePage() {
       setAddingToMealPlan(false);
     }
   };
-
-  onMount(() => {
-    loadCurrentVersionId();
-    loadRecipe();
-  });
 
   // Reload when version_id changes
   createEffect(() => {
