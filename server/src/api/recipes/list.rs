@@ -283,14 +283,16 @@ pub async fn list_recipes(
         .filter(recipes::deleted_at.is_null())
         .into_boxed();
 
-    // Text search on title OR description
-    if !parsed.text.is_empty() {
-        let search_text = parsed.text.join(" ");
-        let pattern = format!("%{}%", escape_like_pattern(&search_text));
+    // Text search: each word must appear somewhere across all fields (AND between words, OR between fields)
+    for token in &parsed.text {
+        let pattern = format!("%{}%", escape_like_pattern(token));
         query = query.filter(
             recipe_versions::title
                 .ilike(pattern.clone())
-                .or(recipe_versions::description.ilike(pattern)),
+                .or(recipe_versions::description.ilike(pattern.clone()))
+                .or(recipe_versions::instructions.ilike(pattern.clone()))
+                .or(recipe_versions::notes.ilike(pattern.clone()))
+                .or(raw_sql::ingredients_ilike(&pattern)),
         );
     }
 

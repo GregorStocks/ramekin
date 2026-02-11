@@ -3,8 +3,8 @@
 //! # Safety
 //!
 //! All SQL in this module has been reviewed for SQL injection safety:
-//! - User input is ALWAYS passed via `.bind()` parameters
-//! - No string concatenation or interpolation with user data
+//! - User input is passed via `.bind()` parameters or with proper escaping
+//! - See per-function safety docs for details
 //!
 //! When adding new SQL here:
 //! 1. Document why Diesel DSL can't be used
@@ -13,7 +13,7 @@
 
 use diesel::dsl::sql;
 use diesel::expression::SqlLiteral;
-use diesel::sql_types::{Array, Text};
+use diesel::sql_types::{Array, Bool, Text};
 
 /// Correlated subquery to fetch tags for the current recipe_versions row.
 ///
@@ -31,4 +31,20 @@ pub fn tags_subquery() -> SqlLiteral<Array<Text>> {
          WHERE rvt.recipe_version_id = recipe_versions.id \
          AND ut.deleted_at IS NULL)",
     )
+}
+
+/// ILIKE filter on the ingredients JSONB field cast to text.
+///
+/// Diesel has no native support for casting JSONB to text for ILIKE.
+///
+/// # Safety
+/// The pattern is embedded in the SQL string with single-quote escaping
+/// (`'` → `''`). Callers must pass a pattern already processed by
+/// `escape_like_pattern` (which handles `\`, `%`, `_`).
+pub fn ingredients_ilike(pattern: &str) -> SqlLiteral<Bool> {
+    let sql_escaped = pattern.replace('\'', "''");
+    sql::<Bool>(&format!(
+        "recipe_versions.ingredients::text ILIKE '{}'",
+        sql_escaped
+    ))
 }

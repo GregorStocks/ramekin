@@ -909,6 +909,150 @@ def test_empty_search_returns_all(authed_api_client):
     assert len(response.recipes) == 3
 
 
+def test_search_by_ingredient(authed_api_client):
+    """Test searching recipes by ingredient name."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Pasta Dinner",
+            instructions="Boil water, cook pasta",
+            ingredients=[
+                make_ingredient(item="spaghetti", amount="1", unit="lb"),
+                make_ingredient(item="marinara sauce", amount="2", unit="cups"),
+            ],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Rice Bowl",
+            instructions="Cook rice, add toppings",
+            ingredients=[
+                make_ingredient(item="jasmine rice", amount="2", unit="cups"),
+                make_ingredient(item="soy sauce", amount="2", unit="tbsp"),
+            ],
+        )
+    )
+
+    response = recipes_api.list_recipes(q="spaghetti")
+    assert len(response.recipes) == 1
+    assert response.recipes[0].title == "Pasta Dinner"
+
+
+def test_search_by_instructions(authed_api_client):
+    """Test searching recipes by instruction text."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Simple Dish A",
+            instructions="Preheat the oven to 375 degrees and bake for 30 minutes",
+            ingredients=[],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Simple Dish B",
+            instructions="Stir fry in a hot wok for 5 minutes",
+            ingredients=[],
+        )
+    )
+
+    response = recipes_api.list_recipes(q="preheat")
+    assert len(response.recipes) == 1
+    assert response.recipes[0].title == "Simple Dish A"
+
+
+def test_search_by_notes(authed_api_client):
+    """Test searching recipes by notes field."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Recipe With Notes",
+            instructions="Cook it well",
+            ingredients=[],
+            notes="Substitute almond milk for dairy-free version",
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Recipe Without Matching Notes",
+            instructions="Prepare carefully",
+            ingredients=[],
+            notes="Serve hot",
+        )
+    )
+
+    response = recipes_api.list_recipes(q="almond")
+    assert len(response.recipes) == 1
+    assert response.recipes[0].title == "Recipe With Notes"
+
+
+def test_multi_word_search_matches_per_word(authed_api_client):
+    """Test that multi-word search matches each word independently (AND logic)."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Chicken Noodle Soup",
+            instructions="Simmer together",
+            ingredients=[],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Chicken Parmesan",
+            instructions="Bread and fry",
+            ingredients=[],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Hearty Soup",
+            instructions="Simmer together",
+            ingredients=[
+                make_ingredient(item="chicken breast", amount="2", unit="lbs")
+            ],
+        )
+    )
+
+    response = recipes_api.list_recipes(q="chicken soup")
+    assert len(response.recipes) == 2
+    titles = {r.title for r in response.recipes}
+    assert "Chicken Noodle Soup" in titles
+    assert "Hearty Soup" in titles
+
+
+def test_search_across_fields(authed_api_client):
+    """Test search where terms match across different fields."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Dinner Entree",
+            instructions="Roast in the oven for 45 minutes",
+            ingredients=[make_ingredient(item="garlic", amount="4", unit="cloves")],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Garlic Bread",
+            instructions="Toast in oven",
+            ingredients=[make_ingredient(item="garlic", amount="2", unit="cloves")],
+        )
+    )
+
+    response = recipes_api.list_recipes(q="garlic roast")
+    assert len(response.recipes) == 1
+    assert response.recipes[0].title == "Dinner Entree"
+
+
 def test_list_recipes_random_order(authed_api_client):
     """Test that order=random returns recipes in random order."""
     client, user_id = authed_api_client

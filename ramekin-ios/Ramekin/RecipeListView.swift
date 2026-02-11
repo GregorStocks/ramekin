@@ -349,7 +349,6 @@ extension RecipeListView {
 
         await MainActor.run {
             if reset {
-                recipes = []
                 hasMore = true
                 loadMoreFailed = false
                 isLoadingMore = false
@@ -381,7 +380,9 @@ extension RecipeListView {
         } catch {
             await MainActor.run {
                 guard activeQuery == queryValue else { return }
-                self.error = error.localizedDescription
+                if recipes.isEmpty {
+                    self.error = "Could not load recipes. Please try again."
+                }
                 isLoading = false
             }
         }
