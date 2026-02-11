@@ -13,6 +13,7 @@ use axum::{
 };
 use diesel::prelude::*;
 use serde::Deserialize;
+use serde_with::rust::double_option;
 use std::sync::Arc;
 use utoipa::ToSchema;
 use uuid::Uuid;
@@ -20,22 +21,44 @@ use uuid::Uuid;
 #[derive(Debug, Clone, Deserialize, ToSchema)]
 pub struct UpdateRecipeRequest {
     pub title: Option<String>,
-    pub description: Option<String>,
+    #[serde(default, deserialize_with = "double_option::deserialize")]
+    #[schema(value_type = Option<String>)]
+    pub description: Option<Option<String>>,
     pub ingredients: Option<Vec<Ingredient>>,
     pub instructions: Option<String>,
-    pub source_url: Option<String>,
-    pub source_name: Option<String>,
+    #[serde(default, deserialize_with = "double_option::deserialize")]
+    #[schema(value_type = Option<String>)]
+    pub source_url: Option<Option<String>>,
+    #[serde(default, deserialize_with = "double_option::deserialize")]
+    #[schema(value_type = Option<String>)]
+    pub source_name: Option<Option<String>>,
     pub photo_ids: Option<Vec<Uuid>>,
     pub tags: Option<Vec<String>>,
     // Paprika-compatible fields
-    pub servings: Option<String>,
-    pub prep_time: Option<String>,
-    pub cook_time: Option<String>,
-    pub total_time: Option<String>,
-    pub rating: Option<i32>,
-    pub difficulty: Option<String>,
-    pub nutritional_info: Option<String>,
-    pub notes: Option<String>,
+    #[serde(default, deserialize_with = "double_option::deserialize")]
+    #[schema(value_type = Option<String>)]
+    pub servings: Option<Option<String>>,
+    #[serde(default, deserialize_with = "double_option::deserialize")]
+    #[schema(value_type = Option<String>)]
+    pub prep_time: Option<Option<String>>,
+    #[serde(default, deserialize_with = "double_option::deserialize")]
+    #[schema(value_type = Option<String>)]
+    pub cook_time: Option<Option<String>>,
+    #[serde(default, deserialize_with = "double_option::deserialize")]
+    #[schema(value_type = Option<String>)]
+    pub total_time: Option<Option<String>>,
+    #[serde(default, deserialize_with = "double_option::deserialize")]
+    #[schema(value_type = Option<i32>)]
+    pub rating: Option<Option<i32>>,
+    #[serde(default, deserialize_with = "double_option::deserialize")]
+    #[schema(value_type = Option<String>)]
+    pub difficulty: Option<Option<String>>,
+    #[serde(default, deserialize_with = "double_option::deserialize")]
+    #[schema(value_type = Option<String>)]
+    pub nutritional_info: Option<Option<String>>,
+    #[serde(default, deserialize_with = "double_option::deserialize")]
+    #[schema(value_type = Option<String>)]
+    pub notes: Option<Option<String>>,
 }
 
 // Type alias for the combined recipe + version + tags query result
@@ -184,7 +207,7 @@ pub async fn update_recipe(
 
     // Merge request with current version
     let new_title = request.title.unwrap_or(cur_title);
-    let new_description = request.description.or(cur_description);
+    let new_description = request.description.unwrap_or(cur_description);
     let new_ingredients = match request.ingredients {
         Some(ingredients) => match serde_json::to_value(&ingredients) {
             Ok(v) => v,
@@ -201,21 +224,21 @@ pub async fn update_recipe(
         None => cur_ingredients,
     };
     let new_instructions = request.instructions.unwrap_or(cur_instructions);
-    let new_source_url = request.source_url.or(cur_source_url);
-    let new_source_name = request.source_name.or(cur_source_name);
+    let new_source_url = request.source_url.unwrap_or(cur_source_url);
+    let new_source_name = request.source_name.unwrap_or(cur_source_name);
     let new_photo_ids: Vec<Option<Uuid>> = request
         .photo_ids
         .map(|ids| ids.into_iter().map(Some).collect())
         .unwrap_or(cur_photo_ids);
     let new_tags: Vec<String> = request.tags.unwrap_or(cur_tags);
-    let new_servings = request.servings.or(cur_servings);
-    let new_prep_time = request.prep_time.or(cur_prep_time);
-    let new_cook_time = request.cook_time.or(cur_cook_time);
-    let new_total_time = request.total_time.or(cur_total_time);
-    let new_rating = request.rating.or(cur_rating);
-    let new_difficulty = request.difficulty.or(cur_difficulty);
-    let new_nutritional_info = request.nutritional_info.or(cur_nutritional_info);
-    let new_notes = request.notes.or(cur_notes);
+    let new_servings = request.servings.unwrap_or(cur_servings);
+    let new_prep_time = request.prep_time.unwrap_or(cur_prep_time);
+    let new_cook_time = request.cook_time.unwrap_or(cur_cook_time);
+    let new_total_time = request.total_time.unwrap_or(cur_total_time);
+    let new_rating = request.rating.unwrap_or(cur_rating);
+    let new_difficulty = request.difficulty.unwrap_or(cur_difficulty);
+    let new_nutritional_info = request.nutritional_info.unwrap_or(cur_nutritional_info);
+    let new_notes = request.notes.unwrap_or(cur_notes);
 
     // Create new version in a transaction
     let result: Result<(), diesel::result::Error> = conn.transaction(|conn| {

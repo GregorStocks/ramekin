@@ -281,6 +281,76 @@ def test_update_recipe_requires_auth(unauthed_api_client):
     assert exc_info.value.status == 401
 
 
+def test_update_recipe_clear_optional_fields(authed_api_client):
+    """Test that optional fields can be cleared back to null."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create recipe with all optional fields populated
+    create_response = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Full Recipe",
+            instructions="Cook it.",
+            ingredients=[],
+            description="A nice recipe",
+            source_url="https://example.com",
+            source_name="Example",
+            servings="4",
+            prep_time="10 min",
+            cook_time="20 min",
+            total_time="30 min",
+            rating=4,
+            difficulty="Easy",
+            nutritional_info="200 cal",
+            notes="Some notes",
+        )
+    )
+    recipe_id = str(create_response.id)
+
+    # Verify fields are populated
+    recipe = recipes_api.get_recipe(id=recipe_id)
+    assert recipe.description == "A nice recipe"
+    assert recipe.source_url == "https://example.com"
+    assert recipe.rating == 4
+    assert recipe.notes == "Some notes"
+
+    # Clear all optional fields by explicitly setting them to None
+    recipes_api.update_recipe(
+        id=recipe_id,
+        update_recipe_request=UpdateRecipeRequest(
+            description=None,
+            source_url=None,
+            source_name=None,
+            servings=None,
+            prep_time=None,
+            cook_time=None,
+            total_time=None,
+            rating=None,
+            difficulty=None,
+            nutritional_info=None,
+            notes=None,
+        ),
+    )
+
+    # Verify all fields are now null
+    recipe = recipes_api.get_recipe(id=recipe_id)
+    assert recipe.description is None
+    assert recipe.source_url is None
+    assert recipe.source_name is None
+    assert recipe.servings is None
+    assert recipe.prep_time is None
+    assert recipe.cook_time is None
+    assert recipe.total_time is None
+    assert recipe.rating is None
+    assert recipe.difficulty is None
+    assert recipe.nutritional_info is None
+    assert recipe.notes is None
+
+    # Verify non-cleared fields are preserved
+    assert recipe.title == "Full Recipe"
+    assert recipe.instructions == "Cook it."
+
+
 def test_delete_recipe_success(authed_api_client):
     """Test deleting a recipe."""
     client, user_id = authed_api_client
