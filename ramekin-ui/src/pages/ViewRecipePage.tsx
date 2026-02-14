@@ -15,6 +15,13 @@ import EnrichPreviewModal from "../components/EnrichPreviewModal";
 import VersionCompareModal from "../components/VersionCompareModal";
 import AddToShoppingListModal from "../components/AddToShoppingListModal";
 import { extractApiError } from "../utils/recipeFormHelpers";
+import {
+  MEAL_TYPES,
+  MEAL_TYPE_LABELS,
+  toApiDate,
+  parseLocalDate,
+  formatDateLocal,
+} from "../utils/mealPlanHelpers";
 import type {
   RecipeResponse,
   RecipeContent,
@@ -69,27 +76,6 @@ function PhotoImage(props: { photoId: string; token: string; alt: string }) {
       <img src={src()!} alt={props.alt} class="recipe-photo" />
     </Show>
   );
-}
-
-const MEAL_TYPES: MealType[] = ["breakfast", "lunch", "dinner", "snack"];
-const MEAL_TYPE_LABELS: Record<MealType, string> = {
-  breakfast: "Breakfast",
-  lunch: "Lunch",
-  dinner: "Dinner",
-  snack: "Snack",
-};
-
-function getTodayString(): string {
-  const d = new Date();
-  const year = d.getFullYear();
-  const month = String(d.getMonth() + 1).padStart(2, "0");
-  const day = String(d.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
-}
-
-function toApiDate(dateStr: string): Date {
-  const [year, month, day] = dateStr.split("-").map(Number);
-  return new Date(Date.UTC(year, month - 1, day));
 }
 
 export default function ViewRecipePage() {
@@ -149,7 +135,9 @@ export default function ViewRecipePage() {
 
   // Meal plan modal state
   const [showMealPlanModal, setShowMealPlanModal] = createSignal(false);
-  const [mealPlanDate, setMealPlanDate] = createSignal(getTodayString());
+  const [mealPlanDate, setMealPlanDate] = createSignal(
+    formatDateLocal(new Date()),
+  );
   const [mealPlanMealType, setMealPlanMealType] =
     createSignal<MealType>("dinner");
   const [addingToMealPlan, setAddingToMealPlan] = createSignal(false);
@@ -502,7 +490,7 @@ export default function ViewRecipePage() {
 
   // Meal plan handlers
   const openMealPlanModal = () => {
-    setMealPlanDate(getTodayString());
+    setMealPlanDate(formatDateLocal(new Date()));
     setMealPlanMealType("dinner");
     setMealPlanError(null);
     setMealPlanSuccess(false);
@@ -522,7 +510,7 @@ export default function ViewRecipePage() {
       await getMealPlansApi().createMealPlan({
         createMealPlanRequest: {
           recipeId: params.id,
-          mealDate: toApiDate(mealPlanDate()),
+          mealDate: toApiDate(parseLocalDate(mealPlanDate())),
           mealType: mealPlanMealType(),
         },
       });
