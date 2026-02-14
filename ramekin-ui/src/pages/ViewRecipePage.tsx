@@ -117,6 +117,7 @@ export default function ViewRecipePage() {
   const [loading, setLoading] = createSignal(true);
   const [error, setError] = createSignal<string | null>(null);
   const [deleting, setDeleting] = createSignal(false);
+  const [showDeleteModal, setShowDeleteModal] = createSignal(false);
   // Revert state
   const [revertVersion, setRevertVersion] = createSignal<VersionSummary | null>(
     null,
@@ -193,17 +194,19 @@ export default function ViewRecipePage() {
     }
   };
 
-  const handleDelete = async () => {
-    if (!confirm("Are you sure you want to delete this recipe?")) {
-      return;
-    }
+  const handleDelete = () => {
+    setShowDeleteModal(true);
+  };
 
+  const handleDeleteConfirm = async () => {
     setDeleting(true);
     try {
       await getRecipesApi().deleteRecipe({ id: params.id });
       navigate("/");
     } catch (err) {
-      setError("Failed to delete recipe");
+      const message = await extractApiError(err, "Failed to delete recipe");
+      setError(message);
+      setShowDeleteModal(false);
       setDeleting(false);
     }
   };
@@ -949,6 +952,38 @@ export default function ViewRecipePage() {
               onClose={() => setShowShoppingListModal(false)}
               recipe={r()}
             />
+
+            {/* Delete Confirmation Modal */}
+            <Modal
+              isOpen={showDeleteModal}
+              onClose={() => setShowDeleteModal(false)}
+              title="Delete Recipe"
+              actions={
+                <>
+                  <button
+                    type="button"
+                    class="btn"
+                    onClick={() => setShowDeleteModal(false)}
+                    disabled={deleting()}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    onClick={handleDeleteConfirm}
+                    disabled={deleting()}
+                  >
+                    {deleting() ? "Deleting..." : "Delete"}
+                  </button>
+                </>
+              }
+            >
+              <p>
+                Are you sure you want to delete this recipe? This cannot be
+                undone.
+              </p>
+            </Modal>
 
             {/* Add to Meal Plan Modal */}
             <Modal
