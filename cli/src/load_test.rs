@@ -3,7 +3,7 @@ use headless_chrome::Browser;
 use ramekin_client::apis::configuration::Configuration;
 use ramekin_client::apis::{auth_api, recipes_api};
 use ramekin_client::models::{CreateRecipeRequest, Ingredient, SignupRequest, UpdateRecipeRequest};
-use rand::{Rng, SeedableRng};
+use rand::{RngExt, SeedableRng};
 use rand_chacha::ChaCha8Rng;
 use std::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::Arc;
