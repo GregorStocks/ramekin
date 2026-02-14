@@ -115,7 +115,7 @@ struct SettingsView: View {
             }
 
             Section("Debug") {
-                Button("View Share Extension Logs") {
+                Button("View Debug Logs") {
                     debugLogs = DebugLogger.shared.readLogs()
                     showingDebugLogs = true
                 }
@@ -128,15 +128,28 @@ struct SettingsView: View {
         }
         .sheet(isPresented: $showingDebugLogs) {
             NavigationStack {
-                ScrollView {
-                    Text(debugLogs.isEmpty ? "No logs yet. Try using the share extension." : debugLogs)
-                        .font(.system(.caption, design: .monospaced))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding()
+                ScrollViewReader { proxy in
+                    ScrollView {
+                        Text(debugLogs.isEmpty ? "No logs yet." : debugLogs)
+                            .font(.system(.caption, design: .monospaced))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding()
+                        Color.clear.frame(height: 1).id("bottom")
+                    }
+                    .onAppear {
+                        proxy.scrollTo("bottom")
+                    }
                 }
-                .navigationTitle("Extension Logs")
+                .navigationTitle("Debug Logs")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        if !debugLogs.isEmpty {
+                            ShareLink(item: debugLogs) {
+                                Image(systemName: "square.and.arrow.up")
+                            }
+                        }
+                    }
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Done") {
                             showingDebugLogs = false

@@ -331,6 +331,8 @@ class RamekinAPI {
         }
     }
 
+    // MARK: - Connection Test
+
     /// Test the connection to the server
     func testConnection() async throws -> Bool {
         guard let baseURL = serverURL else {
@@ -350,5 +352,114 @@ class RamekinAPI {
         }
 
         return httpResponse.statusCode == 200
+    }
+}
+
+// MARK: - Meal Plans
+
+extension RamekinAPI {
+    private static let dateOnlyFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.calendar = Calendar(identifier: .iso8601)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        return formatter
+    }()
+
+    func listMealPlans(startDate: Date, endDate: Date) async throws -> MealPlanListResponse {
+        guard let baseURL = serverURL else { throw APIError.noServerURL }
+        guard let token = authToken else { throw APIError.noAuthToken }
+
+        let start = Self.dateOnlyFormatter.string(from: startDate)
+        let end = Self.dateOnlyFormatter.string(from: endDate)
+
+        guard let url = URL(string: "\(baseURL)/api/meal-plans?start_date=\(start)&end_date=\(end)") else {
+            throw APIError.invalidURL
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+        let (data, response) = try await urlSession.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.invalidResponse
+        }
+
+        if httpResponse.statusCode == 200 {
+            return try CodableHelper.jsonDecoder.decode(MealPlanListResponse.self, from: data)
+        } else {
+            throw parseError(from: data, statusCode: httpResponse.statusCode)
+        }
+    }
+
+    func createMealPlan(
+        recipeId: UUID, mealDate: Date, mealType: String, notes: String? = nil
+    ) async throws -> CreateMealPlanResponse {
+        guard let baseURL = serverURL else { throw APIError.noServerURL }
+        guard let token = authToken else { throw APIError.noAuthToken }
+
+        guard let url = URL(string: "\(baseURL)/api/meal-plans") else {
+            throw APIError.invalidURL
+        }
+
+        var body: [String: Any] = [
+            "recipe_id": recipeId.uuidString,
+            "meal_date": Self.dateOnlyFormatter.string(from: mealDate),
+            "meal_type": mealType
+        ]
+        if let notes = notes, !notes.isEmpty {
+            body["notes"] = notes
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.httpBody = try JSONSerialization.data(withJSONObject: body)
+
+        let (data, response) = try await urlSession.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.invalidResponse
+        }
+
+        if httpResponse.statusCode == 200 || httpResponse.statusCode == 201 {
+            return try CodableHelper.jsonDecoder.decode(CreateMealPlanResponse.self, from: data)
+        } else {
+            throw parseError(from: data, statusCode: httpResponse.statusCode)
+        }
+    }
+
+    func deleteMealPlan(id: UUID) async throws {
+        guard let baseURL = serverURL else { throw APIError.noServerURL }
+        guard let token = authToken else { throw APIError.noAuthToken }
+
+        guard let url = URL(string: "\(baseURL)/api/meal-plans/\(id.uuidString)") else {
+            throw APIError.invalidURL
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+        let (data, response) = try await urlSession.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.invalidResponse
+        }
+
+        if httpResponse.statusCode != 204 && httpResponse.statusCode != 200 {
+            throw parseError(from: data, statusCode: httpResponse.statusCode)
+        }
+    }
+
+    private func parseError(from data: Data, statusCode: Int) -> APIError {
+        if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
+            return .httpError(statusCode, errorResponse.errorMessage)
+        }
+        return .httpError(statusCode, String(data: data, encoding: .utf8))
     }
 }
