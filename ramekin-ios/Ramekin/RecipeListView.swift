@@ -66,8 +66,10 @@ struct RecipeListView: View {
             }
         }
         .refreshable {
+            DebugLogger.shared.log("Pull-to-refresh started", source: "RecipeList")
             await loadTags()
             await loadRecipes(reset: true)
+            DebugLogger.shared.log("Pull-to-refresh completed", source: "RecipeList")
         }
         .task {
             loadPersistedTags()
@@ -329,7 +331,9 @@ extension RecipeListView {
 
     fileprivate func loadTags() async {
         do {
-            let response = try await TagsAPI.listAllTags()
+            let response = try await DebugLogger.shared.timed("listAllTags API", source: "RecipeList") {
+                try await TagsAPI.listAllTags()
+            }
             await MainActor.run {
                 availableTags = response.tags
                 let validNames = Set(response.tags.map(\.name))
@@ -339,13 +343,17 @@ extension RecipeListView {
                     persistSelectedTags()
                 }
             }
+        } catch is CancellationError {
+            DebugLogger.shared.log("loadTags cancelled", source: "RecipeList")
         } catch {
-            // Tags loading failure is non-fatal; filter bar will be empty
+            DebugLogger.shared.log("loadTags error: \(error.localizedDescription)", source: "RecipeList")
         }
     }
 
     fileprivate func loadRecipes(reset: Bool) async {
+        let logger = DebugLogger.shared
         let queryValue = buildQuery()
+        logger.log("loadRecipes called (reset=\(reset), query=\(queryValue ?? "nil"))", source: "RecipeList")
 
         await MainActor.run {
             if reset {
@@ -360,24 +368,31 @@ extension RecipeListView {
         }
 
         do {
-            let response = try await RecipesAPI.listRecipes(
-                limit: pageSize,
-                offset: 0,
-                q: queryValue,
-                sortBy: sortOrder.sortBy,
-                sortDir: sortOrder.sortDir
-            )
+            let response = try await logger.timed("listRecipes API", source: "RecipeList") {
+                try await RecipesAPI.listRecipes(
+                    limit: pageSize,
+                    offset: 0,
+                    q: queryValue,
+                    sortBy: sortOrder.sortBy,
+                    sortDir: sortOrder.sortDir
+                )
+            }
 
             await MainActor.run {
-                guard activeQuery == queryValue else { return }
+                guard activeQuery == queryValue else {
+                    logger.log("loadRecipes: stale query, discarding results", source: "RecipeList")
+                    return
+                }
                 recipes = response.recipes
                 totalCount = Int(response.pagination.total)
                 hasMore = recipes.count < totalCount
                 isLoading = false
+                logger.log("loadRecipes: got \(response.recipes.count) recipes, total \(response.pagination.total)", source: "RecipeList")
             }
         } catch is CancellationError {
-            // Task was cancelled (e.g. new search started), not a real error
+            logger.log("loadRecipes: cancelled", source: "RecipeList")
         } catch {
+            logger.log("loadRecipes: error - \(error.localizedDescription)", source: "RecipeList")
             await MainActor.run {
                 guard activeQuery == queryValue else { return }
                 if recipes.isEmpty {

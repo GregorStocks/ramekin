@@ -126,17 +126,27 @@ class ShoppingListStore: ObservableObject {
     }
 
     func syncWithServer() async {
-        guard isOnline, !isSyncing else { return }
+        let logger = DebugLogger.shared
+        guard isOnline, !isSyncing else {
+            logger.log("syncWithServer skipped (online=\(isOnline), syncing=\(isSyncing))", source: "Shopping")
+            return
+        }
         isSyncing = true
         lastSyncError = nil
+        logger.log("syncWithServer started", source: "Shopping")
 
         do {
             let pending = try coreDataStack.viewContext.fetch(ShoppingItem.fetchPendingSync())
+            logger.log("syncWithServer: \(pending.count) pending items", source: "Shopping")
             let request = buildSyncRequest(from: pending)
-            let response = try await ShoppingListAPI.syncItems(syncRequest: request)
+            let response = try await logger.timed("shopping sync API", source: "Shopping") {
+                try await ShoppingListAPI.syncItems(syncRequest: request)
+            }
             processServerResponse(response, pendingItems: pending)
             lastSyncAt = response.syncTimestamp
+            logger.log("syncWithServer completed successfully", source: "Shopping")
         } catch {
+            logger.log("syncWithServer FAILED: \(error.localizedDescription)", source: "Shopping")
             lastSyncError = error.localizedDescription
         }
 

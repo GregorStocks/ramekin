@@ -45,6 +45,11 @@ struct ContentView: View {
                         Label("Recipes", systemImage: "book")
                     }
 
+                MealPlanView()
+                    .tabItem {
+                        Label("Meal Plan", systemImage: "calendar")
+                    }
+
                 ShoppingListView()
                     .tabItem {
                         Label("Shopping", systemImage: "cart")

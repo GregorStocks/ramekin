@@ -80,6 +80,7 @@
 		581605ADA61A72D6CA151D01 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F943106CF9609C3A5C466E7F /* APIHelper.swift */; };
 		5A04650A05F2EC0332C9693F /* PhotosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CE5EA6B7597BB39D9B8A11 /* PhotosAPI.swift */; };
 		5A18644C573A6D34B4157002 /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780795BB53DE49C06BF6F6A3 /* Measurement.swift */; };
+		5B974BD5D3642D95AC95D65C /* RecipePickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE9A3D9991FB577C47DE95 /* RecipePickerSheet.swift */; };
 		5C008529593553A290DC56FC /* MealPlansAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FB5C67516AFA3447C384B3 /* MealPlansAPI.swift */; };
 		5C0935E4537F07E5AFB6E56A /* CreateShoppingListItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A08A730BFC9170D83039BDC /* CreateShoppingListItemRequest.swift */; };
 		5DF96D155930A036E7D02393 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D63B893A17EC6CBC0FCC22 /* Configuration.swift */; };
@@ -174,6 +175,7 @@
 		D9E0CBADCEC62D1FE28807D0 /* TagsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436EC511E45EAF977C090179 /* TagsAPI.swift */; };
 		DB069AB8FDFFEC4F717CBB02 /* ImportFromPhotosRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA861960EF59F266B5E3532 /* ImportFromPhotosRequest.swift */; };
 		DC14692844419612005AC503 /* CreateRecipeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43D3022E01BD87E5FBCB23E /* CreateRecipeResponse.swift */; };
+		DE9A4C0B28834C405B6FD6AA /* MealPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1F7BAF8D2F4A31E8C08FF2 /* MealPlanView.swift */; };
 		DF1649267D6C2351451B2E15 /* JSONEncodingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3734DDEC4C8FBAAFD2C6B3EB /* JSONEncodingHelper.swift */; };
 		DFD3B3446802A0FCC78D7913 /* MealType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE55D8D1D68354FB035C930B /* MealType.swift */; };
 		E097D11FD872058E91091CE5 /* CreateTagResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BA88FF899C5404CD213E5E /* CreateTagResponse.swift */; };
@@ -295,6 +297,7 @@
 		7A08A730BFC9170D83039BDC /* CreateShoppingListItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateShoppingListItemRequest.swift; sourceTree = "<group>"; };
 		7C169E007B8DB6AF79F2E334 /* ScrapeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapeAPI.swift; sourceTree = "<group>"; };
 		7D6043F8B8F29FF9C2D8B7C0 /* CreateShoppingListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateShoppingListResponse.swift; sourceTree = "<group>"; };
+		7F1F7BAF8D2F4A31E8C08FF2 /* MealPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanView.swift; sourceTree = "<group>"; };
 		81AC2F08D2DAF3493C1C5014 /* VersionListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionListResponse.swift; sourceTree = "<group>"; };
 		81F7C299975D3F24EB6A4D28 /* Ramekin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ramekin.xcdatamodel; sourceTree = "<group>"; };
 		83443024887A3D4A118DC509 /* RetryScrapeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryScrapeResponse.swift; sourceTree = "<group>"; };
@@ -347,6 +350,7 @@
 		EBB5D051E55D9BE131B7458E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		F43D3022E01BD87E5FBCB23E /* CreateRecipeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipeResponse.swift; sourceTree = "<group>"; };
 		F6C3D44DEFEAA3510B4238B4 /* CreateMealPlanRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMealPlanRequest.swift; sourceTree = "<group>"; };
+		F8BE9A3D9991FB577C47DE95 /* RecipePickerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePickerSheet.swift; sourceTree = "<group>"; };
 		F943106CF9609C3A5C466E7F /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		F9BA88FF899C5404CD213E5E /* CreateTagResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTagResponse.swift; sourceTree = "<group>"; };
 		FA5FBCCFD150F4711DD13303 /* RescrapeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RescrapeResponse.swift; sourceTree = "<group>"; };
@@ -476,11 +480,13 @@
 				7043E9CC292308AA22A8E63E /* CustomEnrichSheet.swift */,
 				CD4928929BE074C493D9AD90 /* EnrichPreviewSheet.swift */,
 				23D459758C4EE86BC13B17C2 /* LoginView.swift */,
+				7F1F7BAF8D2F4A31E8C08FF2 /* MealPlanView.swift */,
 				65A3FBC65B40D61D69A062C6 /* Ramekin.xcdatamodeld */,
 				2D0329159F00DE9F47C1781B /* RamekinApp.swift */,
 				6B1C3B09A87C9749A7B28EBD /* RecipeDetailView.swift */,
 				0FB234BA3A501EC1091A9E33 /* RecipeListTypes.swift */,
 				E904A8309560C2D2DE7559C8 /* RecipeListView.swift */,
+				F8BE9A3D9991FB577C47DE95 /* RecipePickerSheet.swift */,
 				03421A2A0FA405C5E3DEBFE3 /* SettingsView.swift */,
 				A5E8783A1CE33E091F1B47E1 /* ShoppingListStore.swift */,
 				BCAA16DC80A2291496EA7EAD /* ShoppingListView.swift */,
@@ -726,6 +732,7 @@
 				C7F7242B7A49DA0E719CC3A0 /* LoginView.swift in Sources */,
 				6C475C12E91442989C2C58E0 /* MealPlanItem.swift in Sources */,
 				128A7DF5C4ABE98CDFBA032C /* MealPlanListResponse.swift in Sources */,
+				DE9A4C0B28834C405B6FD6AA /* MealPlanView.swift in Sources */,
 				5C008529593553A290DC56FC /* MealPlansAPI.swift in Sources */,
 				65A4A4BFBA64C3625FA58E95 /* MealType.swift in Sources */,
 				5A18644C573A6D34B4157002 /* Measurement.swift in Sources */,
@@ -742,6 +749,7 @@
 				52CA81038877B404D3908609 /* RecipeDetailView.swift in Sources */,
 				4327699387A7D91456025247 /* RecipeListTypes.swift in Sources */,
 				138E30AB21BF21C25E9E546E /* RecipeListView.swift in Sources */,
+				5B974BD5D3642D95AC95D65C /* RecipePickerSheet.swift in Sources */,
 				534B1446E4E926C758FA2333 /* RecipeResponse.swift in Sources */,
 				75C387BB32F5196F84171C85 /* RecipeSummary.swift in Sources */,
 				4CA26488474E46D4C17F2885 /* RecipesAPI.swift in Sources */,
