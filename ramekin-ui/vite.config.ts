@@ -1,5 +1,6 @@
 import { defineConfig, type PluginOption } from 'vite'
 import solid from 'vite-plugin-solid'
+import { execSync } from 'child_process'
 import fs from 'fs'
 import path from 'path'
 import http from 'http'
@@ -45,7 +46,14 @@ function httpMirrorPlugin(): PluginOption {
   }
 }
 
+const buildCommit = execSync('git rev-parse --short HEAD').toString().trim()
+const buildTime = new Date().toISOString()
+
 export default defineConfig({
+  define: {
+    __BUILD_COMMIT__: JSON.stringify(buildCommit),
+    __BUILD_TIME__: JSON.stringify(buildTime),
+  },
   plugins: [solid(), httpMirrorPlugin()],
   server: {
     allowedHosts: [hostname],
