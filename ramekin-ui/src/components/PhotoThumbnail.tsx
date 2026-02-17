@@ -6,6 +6,7 @@ interface PhotoThumbnailProps {
   onRemove?: () => void;
   alt?: string;
   class?: string;
+  thumbnailSize?: number;
 }
 
 export default function PhotoThumbnail(props: PhotoThumbnailProps) {
@@ -14,7 +15,10 @@ export default function PhotoThumbnail(props: PhotoThumbnailProps) {
 
   onMount(async () => {
     try {
-      const response = await fetch(`/api/photos/${props.photoId}`, {
+      const url = props.thumbnailSize
+        ? `/api/photos/${props.photoId}/thumbnail?size=${props.thumbnailSize}`
+        : `/api/photos/${props.photoId}`;
+      const response = await fetch(url, {
         headers: { Authorization: `Bearer ${props.token}` },
       });
       if (response.ok) {

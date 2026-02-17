@@ -580,9 +580,15 @@
 .recipe-card-thumbnail {
   width: 100%;
   aspect-ratio: 1;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.recipe-card-thumbnail img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.2s;
 }
 
 .recipe-card-placeholder {

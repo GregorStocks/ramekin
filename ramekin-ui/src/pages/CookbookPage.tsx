@@ -9,6 +9,7 @@ import {
 import { A, useNavigate, useSearchParams } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import { extractApiError } from "../utils/recipeFormHelpers";
+import PhotoThumbnail from "../components/PhotoThumbnail";
 import type { RecipeSummary, SortBy, Direction } from "ramekin-client";
 
 interface FilterState {
@@ -170,44 +171,6 @@ function buildQueryFromFilters(
 }
 
 const thumbnailSize = window.devicePixelRatio >= 2 ? 800 : 400;
-
-function PhotoThumbnail(props: {
-  photoId: string;
-  token: string;
-  alt: string;
-  size?: number;
-}) {
-  const [src, setSrc] = createSignal<string | null>(null);
-
-  onMount(async () => {
-    try {
-      const sizeParam = props.size ? `?size=${props.size}` : "";
-      const response = await fetch(
-        `/api/photos/${props.photoId}/thumbnail${sizeParam}`,
-        {
-          headers: { Authorization: `Bearer ${props.token}` },
-        },
-      );
-      if (response.ok) {
-        const blob = await response.blob();
-        setSrc(URL.createObjectURL(blob));
-      }
-    } catch {
-      // Fetch failed; src stays null so the placeholder emoji shows
-    }
-  });
-
-  onCleanup(() => {
-    const url = src();
-    if (url) URL.revokeObjectURL(url);
-  });
-
-  return (
-    <Show when={src()} fallback={<div class="recipe-card-placeholder">🍽️</div>}>
-      <img src={src()!} alt={props.alt} class="recipe-card-thumbnail" />
-    </Show>
-  );
-}
 
 function formatRelativeDate(date: Date): string {
   const now = new Date();
@@ -677,7 +640,8 @@ export default function CookbookPage() {
                     photoId={recipe.thumbnailPhotoId!}
                     token={token()!}
                     alt=""
-                    size={thumbnailSize}
+                    thumbnailSize={thumbnailSize}
+                    class="recipe-card-thumbnail"
                   />
                 </Show>
                 <div class="recipe-card-content">
