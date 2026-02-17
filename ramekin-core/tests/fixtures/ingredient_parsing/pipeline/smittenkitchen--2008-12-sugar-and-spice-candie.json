@@ -33,11 +33,15 @@
     {
       "raw": "1 teaspoon kosher salt (I might up this by a 1/2 tsp. next time for more of a sweet/salty balance)",
       "expected": {
-        "item": "kosher salt",
+        "item": "kosher salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
         "note": "I might up this by a 1/2 tsp. next time for more of a sweet/salty balance",

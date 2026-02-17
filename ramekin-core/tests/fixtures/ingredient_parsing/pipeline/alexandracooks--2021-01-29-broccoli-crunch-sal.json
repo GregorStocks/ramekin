@@ -5,7 +5,7 @@
     {
       "raw": "kosher salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "kosher salt, presumably Diamond",
         "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"
@@ -170,11 +170,15 @@
     {
       "raw": "1 teaspoon kosher salt",
       "expected": {
-        "item": "kosher salt",
+        "item": "kosher salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
         "note": null,
