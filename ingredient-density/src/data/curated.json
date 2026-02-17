@@ -64,9 +64,9 @@
   },
   "aliases": {
     "table salt": "salt, table",
-    "kosher salt": null,
     "salt": "diamond crystal kosher salt",
     "salt, presumably diamond": "diamond crystal kosher salt",
+    "kosher salt, presumably diamond": "diamond crystal kosher salt",
     "sea salt": null,
     "fine salt": null,
 
@@ -229,6 +229,7 @@
     "corn syrup": "light corn syrup"
   },
   "rewrites": {
-    "salt": "salt, presumably Diamond"
+    "salt": "salt, presumably Diamond",
+    "kosher salt": "kosher salt, presumably Diamond"
   }
 }
