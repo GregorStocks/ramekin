@@ -335,6 +335,10 @@ mod tests {
         // Leavening agents
         assert!(find_density("baking powder").is_some());
         assert!(find_density("baking soda").is_some());
+        assert!(find_density("instant yeast").is_some());
+        assert!(find_density("rapid-rise yeast").is_some());
+        assert!(find_density("instant dry yeast").is_some());
+        assert!(find_density("bread machine yeast").is_some());
         // Spices
         assert!(find_density("cinnamon").is_some());
         assert!(find_density("ground cinnamon").is_some());
