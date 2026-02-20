@@ -335,6 +335,10 @@ mod tests {
         // Leavening agents
         assert!(find_density("baking powder").is_some());
         assert!(find_density("baking soda").is_some());
+        assert!(find_density("instant yeast").is_some());
+        assert!(find_density("rapid-rise yeast").is_some());
+        assert!(find_density("instant dry yeast").is_some());
+        assert!(find_density("bread machine yeast").is_some());
         // Spices
         assert!(find_density("cinnamon").is_some());
         assert!(find_density("ground cinnamon").is_some());
@@ -358,7 +362,6 @@ mod tests {
     #[test]
     fn test_ambiguous_aliases_return_none() {
         // These salt varieties remain ambiguous
-        assert!(find_density("kosher salt").is_none());
         assert!(find_density("sea salt").is_none());
         assert!(find_density("fine salt").is_none());
         // Pepper is ambiguous
@@ -376,6 +379,10 @@ mod tests {
         let density = find_density("salt, presumably Diamond").unwrap();
         assert!((density - 137.0).abs() < 0.1);
 
+        // "kosher salt, presumably Diamond" also resolves
+        let density = find_density("kosher salt, presumably Diamond").unwrap();
+        assert!((density - 137.0).abs() < 0.1);
+
         // "table salt" still maps to salt, table (292.0 g/cup)
         let density = find_density("table salt").unwrap();
         assert!((density - 292.0).abs() < 0.1);
@@ -385,7 +392,14 @@ mod tests {
     fn test_rewrite_ingredient() {
         assert_eq!(rewrite_ingredient("salt"), Some("salt, presumably Diamond"));
         assert_eq!(rewrite_ingredient("Salt"), Some("salt, presumably Diamond"));
-        assert_eq!(rewrite_ingredient("kosher salt"), None);
+        assert_eq!(
+            rewrite_ingredient("kosher salt"),
+            Some("kosher salt, presumably Diamond")
+        );
+        assert_eq!(
+            rewrite_ingredient("Kosher Salt"),
+            Some("kosher salt, presumably Diamond")
+        );
         assert_eq!(rewrite_ingredient("flour"), None);
     }
 

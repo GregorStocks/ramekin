@@ -2,6 +2,13 @@ import { A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import type { ParentComponent } from "solid-js";
 
+declare const __BUILD_COMMIT__: string;
+declare const __BUILD_TIME__: string;
+
+const startTime = new Date().toLocaleString();
+
+const formatBuildTime = (iso: string) => new Date(iso).toLocaleString();
+
 const Layout: ParentComponent = (props) => {
   const { setToken } = useAuth();
 
@@ -29,6 +36,10 @@ const Layout: ParentComponent = (props) => {
         </nav>
       </header>
       <main class="app-main">{props.children}</main>
+      <footer class="app-footer">
+        Built on {__BUILD_COMMIT__} | Build time:{" "}
+        {formatBuildTime(__BUILD_TIME__)} | Start time: {startTime}
+      </footer>
     </div>
   );
 };

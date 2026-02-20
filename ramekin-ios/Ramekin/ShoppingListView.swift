@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ShoppingListView: View {
     @StateObject private var store = ShoppingListStore.shared
+    @State private var showingAddIngredient = false
 
     /// Category display order for grouping
     private static let categoryOrder = [
@@ -35,12 +36,22 @@ struct ShoppingListView: View {
             .navigationTitle("Shopping List")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    if store.items.contains(where: \.isChecked) {
-                        Button("Clear Checked") {
-                            store.clearChecked()
+                    HStack(spacing: 12) {
+                        Button {
+                            showingAddIngredient = true
+                        } label: {
+                            Image(systemName: "plus")
+                        }
+                        if store.items.contains(where: \.isChecked) {
+                            Button("Clear Checked") {
+                                store.clearChecked()
+                            }
                         }
                     }
                 }
+            }
+            .sheet(isPresented: $showingAddIngredient) {
+                AddIngredientSheet(isPresented: $showingAddIngredient)
             }
             .refreshable {
                 await store.syncWithServer()
@@ -61,7 +72,7 @@ struct ShoppingListView: View {
             Text("Your shopping list is empty")
                 .font(.headline)
                 .foregroundColor(.secondary)
-            Text("Add ingredients from a recipe to get started")
+            Text("Add ingredients from a recipe or tap + to add manually")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)

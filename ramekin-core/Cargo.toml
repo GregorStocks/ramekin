@@ -49,10 +49,10 @@ tokio = { version = "1", features = ["time"] }
 tracing = "0.1"
 
 # UUIDs for photo IDs
-uuid = { version = "1.20", features = ["v4", "serde"] }
+uuid = { version = "1.21", features = ["v4", "serde"] }
 
 # AI client (OpenAI-compatible API for OpenRouter)
-async-openai = { version = "0.32", features = ["chat-completion"] }
+async-openai = { version = "0.33", features = ["chat-completion"] }
 
 # Hashing for cache keys
 sha2 = "0.10"
@@ -64,7 +64,7 @@ image = "0.25"
 encoding_rs = "0.8"
 
 [build-dependencies]
-uuid = { version = "1.20", features = ["v4"] }
+uuid = { version = "1.21", features = ["v4"] }
 
 [dev-dependencies]
 pretty_assertions = "1.4"

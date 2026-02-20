@@ -32,11 +32,15 @@
     {
       "raw": "1/3 cup Kosher salt",
       "expected": {
-        "item": "Kosher salt",
+        "item": "kosher salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "46",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -196,11 +200,15 @@
     {
       "raw": "2 tablespoons Kosher salt",
       "expected": {
-        "item": "Kosher salt",
+        "item": "kosher salt, presumably Diamond",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "17",
+            "unit": "g"
           }
         ],
         "note": null,
