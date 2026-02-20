@@ -4,17 +4,13 @@ import { useAuth } from "../context/AuthContext";
 import Modal from "../components/Modal";
 import PhotoThumbnail from "../components/PhotoThumbnail";
 import { extractApiError } from "../utils/recipeFormHelpers";
-import type { MealPlanItem, RecipeSummary } from "ramekin-client";
-
-const MEAL_TYPES = ["breakfast", "lunch", "dinner", "snack"] as const;
-type MealTypeValue = (typeof MEAL_TYPES)[number];
-
-const MEAL_TYPE_LABELS: Record<MealTypeValue, string> = {
-  breakfast: "Breakfast",
-  lunch: "Lunch",
-  dinner: "Dinner",
-  snack: "Snack",
-};
+import {
+  MEAL_TYPES,
+  MEAL_TYPE_LABELS,
+  toApiDate,
+  formatDateLocal,
+} from "../utils/mealPlanHelpers";
+import type { MealPlanItem, MealType, RecipeSummary } from "ramekin-client";
 
 function getMonday(d: Date): Date {
   const date = new Date(d);
@@ -25,22 +21,11 @@ function getMonday(d: Date): Date {
   return date;
 }
 
-function formatDateLocal(d: Date): string {
-  const year = d.getFullYear();
-  const month = String(d.getMonth() + 1).padStart(2, "0");
-  const day = String(d.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
-}
-
 function formatDateUtc(d: Date): string {
   const year = d.getUTCFullYear();
   const month = String(d.getUTCMonth() + 1).padStart(2, "0");
   const day = String(d.getUTCDate()).padStart(2, "0");
   return `${year}-${month}-${day}`;
-}
-
-function toApiDate(d: Date): Date {
-  return new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
 }
 
 function formatDayHeader(d: Date): string {
@@ -74,8 +59,9 @@ export default function MealPlanPage() {
   // Recipe picker modal state
   const [pickerOpen, setPickerOpen] = createSignal(false);
   const [pickerDate, setPickerDate] = createSignal<Date | null>(null);
-  const [pickerMealType, setPickerMealType] =
-    createSignal<MealTypeValue | null>(null);
+  const [pickerMealType, setPickerMealType] = createSignal<MealType | null>(
+    null,
+  );
   const [recipes, setRecipes] = createSignal<RecipeSummary[]>([]);
   const [recipesLoading, setRecipesLoading] = createSignal(false);
   const [searchQuery, setSearchQuery] = createSignal("");
@@ -120,7 +106,7 @@ export default function MealPlanPage() {
     loadMealPlans();
   });
 
-  const getMealsForSlot = (date: Date, mealType: MealTypeValue) => {
+  const getMealsForSlot = (date: Date, mealType: MealType) => {
     const dateStr = formatDateLocal(date);
     return mealPlans().filter(
       (mp) =>
@@ -144,7 +130,7 @@ export default function MealPlanPage() {
     setWeekStart(getMonday(new Date()));
   };
 
-  const openPicker = (date: Date, mealType: MealTypeValue) => {
+  const openPicker = (date: Date, mealType: MealType) => {
     setPickerDate(date);
     setPickerMealType(mealType);
     setSearchQuery("");
