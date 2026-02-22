@@ -182,7 +182,7 @@ ios-generate: ## Generate Xcode project for iOS app (requires xcodegen: brew ins
 	@echo "Xcode project generated at ramekin-ios/Ramekin.xcodeproj"
 	@echo "Open with: open ramekin-ios/Ramekin.xcodeproj"
 
-ios-build: ## Build iOS app for simulator
+ios-build: ios-generate ## Build iOS app for simulator
 	@cd ramekin-ios && xcodebuild -project Ramekin.xcodeproj -scheme Ramekin -destination 'generic/platform=iOS Simulator' build
 
 ios-test-ui: ios-generate ## Run iOS UI tests (requires dev server running)
