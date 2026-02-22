@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ios-install ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -182,8 +182,19 @@ ios-generate: ## Generate Xcode project for iOS app (requires xcodegen: brew ins
 	@echo "Xcode project generated at ramekin-ios/Ramekin.xcodeproj"
 	@echo "Open with: open ramekin-ios/Ramekin.xcodeproj"
 
-ios-build: ## Build iOS app for simulator
+ios-build: ios-generate ## Build iOS app for simulator
 	@cd ramekin-ios && xcodebuild -project Ramekin.xcodeproj -scheme Ramekin -destination 'generic/platform=iOS Simulator' build
+
+ios-install: ios-generate ## Build and install iOS app on connected device
+	@cd ramekin-ios && xcodebuild -project Ramekin.xcodeproj -scheme Ramekin \
+		-destination 'generic/platform=iOS' \
+		-derivedDataPath build \
+		build
+	@APP_PATH=$$(find ramekin-ios/build/Build/Products -name "Ramekin.app" -path "*/Debug-iphoneos/*" | head -1) && \
+		DEVICE_ID=$$(xcrun devicectl list devices 2>/dev/null | grep -oE '[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}' | head -1) && \
+		if [ -z "$$DEVICE_ID" ]; then echo "No connected device found" && exit 1; fi && \
+		echo "Installing to device $$DEVICE_ID..." && \
+		xcrun devicectl device install app --device "$$DEVICE_ID" "$$APP_PATH"
 
 ios-test-ui: ios-generate ## Run iOS UI tests (requires dev server running)
 	@rm -rf logs/ios-ui-tests.xcresult
