@@ -73,6 +73,7 @@ struct RecipeListView: View {
         }
         .task {
             loadPersistedTags()
+            loadPersistedAvailableTags()
             await loadTags()
             await loadRecipes(reset: true)
         }
@@ -258,7 +259,10 @@ struct RecipeListView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
             Button("Retry") {
-                Task { await loadRecipes(reset: true) }
+                Task {
+                    await loadTags()
+                    await loadRecipes(reset: true)
+                }
             }
             .buttonStyle(.borderedProminent)
         }
@@ -322,10 +326,23 @@ extension RecipeListView {
         }
     }
 
+    private func persistAvailableTags() {
+        if let data = try? CodableHelper.jsonEncoder.encode(availableTags) {
+            UserDefaults.standard.set(data, forKey: "recipeAvailableTags")
+        }
+    }
+
     fileprivate func loadPersistedTags() {
         if let data = UserDefaults.standard.data(forKey: "recipeSelectedTags"),
            let names = try? JSONDecoder().decode([String].self, from: data) {
             selectedTags = Set(names)
+        }
+    }
+
+    fileprivate func loadPersistedAvailableTags() {
+        if let data = UserDefaults.standard.data(forKey: "recipeAvailableTags"),
+           let tags = try? CodableHelper.jsonDecoder.decode([TagItem].self, from: data) {
+            availableTags = tags
         }
     }
 
@@ -336,6 +353,7 @@ extension RecipeListView {
             }
             await MainActor.run {
                 availableTags = response.tags
+                persistAvailableTags()
                 let validNames = Set(response.tags.map(\.name))
                 let removed = selectedTags.subtracting(validNames)
                 if !removed.isEmpty {
