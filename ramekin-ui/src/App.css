@@ -724,7 +724,7 @@
 
 .recipe-layout {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 340px 1fr;
   gap: 2rem;
   align-items: start;
 }
@@ -789,11 +789,15 @@
 }
 
 .ingredients-list .ingredient-raw {
-  display: block;
+  display: none;
   margin-top: 0.25rem;
   font-size: 0.75rem;
   color: #666;
   font-style: italic;
+}
+
+.ingredients-list li:hover .ingredient-raw {
+  display: block;
 }
 
 .ingredient-section-header {
