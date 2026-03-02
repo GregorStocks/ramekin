@@ -2,8 +2,8 @@ use argon2::{
     password_hash::{phc::PasswordHash, PasswordHasher, PasswordVerifier},
     Argon2, Params,
 };
-use rand::rngs::OsRng;
-use rand::TryRngCore;
+use rand::rngs::SysRng;
+use rand::TryRng;
 use sha2::{Digest, Sha256};
 use std::sync::LazyLock;
 
@@ -13,7 +13,7 @@ static INSECURE_HASHING: LazyLock<bool> =
 
 pub fn generate_token() -> String {
     let mut bytes = [0u8; 32];
-    OsRng
+    SysRng
         .try_fill_bytes(&mut bytes)
         .expect("Failed to generate random bytes");
     hex::encode(bytes)
