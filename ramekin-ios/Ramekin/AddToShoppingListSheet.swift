@@ -7,50 +7,50 @@ struct AddToShoppingListSheet: View {
     @State private var selectedIngredients: Set<Int> = []
     @State private var showingConfirmation = false
 
-    /// Ingredients grouped by aisle category in store order
-    private var groupedIngredients: [(category: String, ingredients: [(index: Int, ingredient: Ingredient)])] {
-        let indexed = recipe.ingredients.enumerated().map { ($0.offset, $0.element) }
-        let grouped = Dictionary(grouping: indexed) { IngredientCategorizer.categorize($0.1.item) }
-
-        return IngredientCategorizer.categoryOrder.compactMap { category in
-            guard let items = grouped[category], !items.isEmpty else { return nil }
-            return (category: category, ingredients: items.map { (index: $0.0, ingredient: $0.1) })
-        }
-    }
-
     var body: some View {
         NavigationStack {
             List {
-                ForEach(groupedIngredients, id: \.category) { group in
-                    Section(group.category) {
-                        ForEach(group.ingredients, id: \.index) { entry in
-                            Button {
-                                if selectedIngredients.contains(entry.index) {
-                                    selectedIngredients.remove(entry.index)
-                                } else {
-                                    selectedIngredients.insert(entry.index)
-                                }
-                            } label: {
-                                HStack {
-                                    Image(systemName: selectedIngredients.contains(entry.index) ? "checkmark.circle.fill" : "circle")
-                                        .foregroundColor(selectedIngredients.contains(entry.index) ? .orange : .secondary)
-                                        .font(.title3)
+                Section {
+                    ForEach(Array(recipe.ingredients.enumerated()), id: \.offset) { index, ingredient in
+                        Button {
+                            if selectedIngredients.contains(index) {
+                                selectedIngredients.remove(index)
+                            } else {
+                                selectedIngredients.insert(index)
+                            }
+                        } label: {
+                            HStack {
+                                Image(systemName: selectedIngredients.contains(index) ? "checkmark.circle.fill" : "circle")
+                                    .foregroundColor(selectedIngredients.contains(index) ? .orange : .secondary)
+                                    .font(.title3)
 
-                                    VStack(alignment: .leading, spacing: 2) {
-                                        Text(formatIngredient(entry.ingredient))
-                                            .foregroundColor(.primary)
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text(formatIngredient(ingredient))
+                                        .foregroundColor(.primary)
 
-                                        if let note = entry.ingredient.note, !note.isEmpty {
-                                            Text(note)
-                                                .font(.caption)
-                                                .foregroundColor(.secondary)
-                                                .italic()
-                                        }
+                                    if let note = ingredient.note, !note.isEmpty {
+                                        Text(note)
+                                            .font(.caption)
+                                            .foregroundColor(.secondary)
+                                            .italic()
                                     }
                                 }
                             }
-                            .buttonStyle(.plain)
                         }
+                        .buttonStyle(.plain)
+                    }
+                } header: {
+                    HStack {
+                        Text("Select ingredients to add")
+                        Spacer()
+                        Button(allSelected ? "Deselect All" : "Select All") {
+                            if allSelected {
+                                selectedIngredients.removeAll()
+                            } else {
+                                selectedIngredients = Set(0..<recipe.ingredients.count)
+                            }
+                        }
+                        .font(.caption)
                     }
                 }
             }
@@ -62,16 +62,6 @@ struct AddToShoppingListSheet: View {
                     Button("Cancel") {
                         isPresented = false
                     }
-                }
-                ToolbarItem(placement: .principal) {
-                    Button(allSelected ? "Deselect All" : "Select All") {
-                        if allSelected {
-                            selectedIngredients.removeAll()
-                        } else {
-                            selectedIngredients = Set(0..<recipe.ingredients.count)
-                        }
-                    }
-                    .font(.caption)
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add \(selectedIngredients.count)") {

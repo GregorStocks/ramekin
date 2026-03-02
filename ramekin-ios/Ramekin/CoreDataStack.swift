@@ -108,7 +108,6 @@ extension ShoppingItem {
         shoppingItem.sourceRecipeTitle = sourceRecipeTitle
         shoppingItem.isChecked = false
         shoppingItem.sortOrder = sortOrder
-        shoppingItem.category = IngredientCategorizer.categorize(item)
         shoppingItem.createdAt = Date()
         shoppingItem.updatedAt = Date()
         shoppingItem.syncStatus = SyncStatus.pendingCreate.rawValue

@@ -60,13 +60,8 @@ class ShoppingListStore: ObservableObject {
     }
 
     func addItemsFromRecipe(ingredients: [(name: String, amount: String?)], recipeId: UUID, recipeTitle: String) {
-        // Sort by aisle category so items are grouped logically in the list
-        let sorted = ingredients.sorted { a, b in
-            IngredientCategorizer.categoryIndex(IngredientCategorizer.categorize(a.name))
-                < IngredientCategorizer.categoryIndex(IngredientCategorizer.categorize(b.name))
-        }
         var maxSort = items.map(\.sortOrder).max() ?? -1
-        for ingredient in sorted {
+        for ingredient in ingredients {
             maxSort += 1
             _ = ShoppingItem.create(
                 in: coreDataStack.viewContext, item: ingredient.name, amount: ingredient.amount,

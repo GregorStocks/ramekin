@@ -5,7 +5,24 @@ struct ShoppingListView: View {
     @State private var showingAddIngredient = false
 
     /// Category display order for grouping
-    private static let categoryOrder = IngredientCategorizer.categoryOrder
+    private static let categoryOrder = [
+        "Produce",
+        "Meat & Seafood",
+        "Dairy & Eggs",
+        "Cheese",
+        "Bakery & Bread",
+        "Frozen",
+        "Pasta & Rice",
+        "Canned Goods",
+        "Baking",
+        "Spices & Seasonings",
+        "Condiments & Sauces",
+        "Oils & Vinegars",
+        "Nuts & Dried Fruit",
+        "Beverages",
+        "Snacks",
+        "Other"
+    ]
 
     var body: some View {
         NavigationStack {
