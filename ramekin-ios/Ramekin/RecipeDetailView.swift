@@ -327,8 +327,8 @@ extension RecipeDetailView {
 
         // Show alternative measurements (e.g. weight) in parentheses
         if ingredient.measurements.count > 1 {
-            let altTexts = ingredient.measurements.dropFirst().compactMap { m -> String? in
-                let altParts = [m.amount, m.unit].compactMap { $0 }.filter { !$0.isEmpty }
+            let altTexts = ingredient.measurements.dropFirst().compactMap { alt -> String? in
+                let altParts = [alt.amount, alt.unit].compactMap { $0 }.filter { !$0.isEmpty }
                 return altParts.isEmpty ? nil : altParts.joined(separator: " ")
             }
             if !altTexts.isEmpty {
