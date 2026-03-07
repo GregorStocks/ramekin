@@ -26,9 +26,18 @@ pub fn create_session_with_token(
         expires_at,
     };
 
-    diesel::insert_into(sessions::table)
-        .values(&new_session)
-        .execute(conn)?;
+    if fixed_token.is_some() {
+        diesel::insert_into(sessions::table)
+            .values(&new_session)
+            .on_conflict(sessions::token_hash)
+            .do_update()
+            .set(sessions::expires_at.eq(expires_at))
+            .execute(conn)?;
+    } else {
+        diesel::insert_into(sessions::table)
+            .values(&new_session)
+            .execute(conn)?;
+    }
 
     Ok(token)
 }
