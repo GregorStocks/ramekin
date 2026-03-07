@@ -37,7 +37,7 @@ pub type AppState = Arc<db::DbPool>;
 /// If OTEL_EXPORTER_OTLP_ENDPOINT is set and reachable, traces are sent to the collector.
 /// Otherwise, only console logging is used.
 fn init_telemetry() {
-    let fmt_layer = tracing_subscriber::fmt::layer();
+    let fmt_layer = tracing_subscriber::fmt::layer().with_ansi(env::var("NO_COLOR").is_err());
     let env_filter = tracing_subscriber::EnvFilter::from_default_env();
 
     // Check if OTLP endpoint is configured

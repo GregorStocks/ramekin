@@ -6,6 +6,9 @@ log_configuration:
   add_timestamp: true
   flush_each_line: true
 
+environment:
+  - "NO_COLOR=1"
+
 processes:
   server:
     command: ${SERVER_CMD:-cargo run --release -q}
