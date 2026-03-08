@@ -1,9 +1,28 @@
-import { createSignal, createEffect, For, Show } from "solid-js";
+import { createSignal, createMemo, createEffect, For, Show } from "solid-js";
 import { A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import Modal from "../components/Modal";
 import { extractApiError } from "../utils/recipeFormHelpers";
 import type { ShoppingListItemResponse } from "ramekin-client";
+
+const CATEGORY_ORDER = [
+  "Produce",
+  "Meat & Seafood",
+  "Dairy & Eggs",
+  "Cheese",
+  "Bakery & Bread",
+  "Frozen",
+  "Pasta & Rice",
+  "Canned Goods",
+  "Baking",
+  "Spices & Seasonings",
+  "Condiments & Sauces",
+  "Oils & Vinegars",
+  "Nuts & Dried Fruit",
+  "Beverages",
+  "Snacks",
+  "Other",
+];
 
 export default function ShoppingListPage() {
   const { getShoppingListApi } = useAuth();
@@ -15,22 +34,36 @@ export default function ShoppingListPage() {
     createSignal<ShoppingListItemResponse | null>(null);
   const [deleteLoading, setDeleteLoading] = createSignal(false);
   const [clearingChecked, setClearingChecked] = createSignal(false);
+  const [newItemName, setNewItemName] = createSignal("");
+  const [newItemAmount, setNewItemAmount] = createSignal("");
+  const [adding, setAdding] = createSignal(false);
 
   const hasCheckedItems = () => items().some((item) => item.isChecked);
 
-  const sortedItems = () => {
-    const all = items();
-    const unchecked = all
+  const groupedUncheckedItems = createMemo(() => {
+    const unchecked = items()
       .filter((i) => !i.isChecked)
       .sort((a, b) => a.sortOrder - b.sortOrder);
-    const checked = all
-      .filter((i) => i.isChecked)
-      .sort((a, b) => a.sortOrder - b.sortOrder);
-    return [...unchecked, ...checked];
-  };
+    const grouped = new Map<string, ShoppingListItemResponse[]>();
+    for (const item of unchecked) {
+      const cat = item.category;
+      if (!grouped.has(cat)) grouped.set(cat, []);
+      grouped.get(cat)!.push(item);
+    }
+    return CATEGORY_ORDER.filter((cat) => grouped.has(cat)).map((cat) => ({
+      category: cat,
+      items: grouped.get(cat)!,
+    }));
+  });
 
-  const loadItems = async () => {
-    setLoading(true);
+  const checkedItems = createMemo(() =>
+    items()
+      .filter((i) => i.isChecked)
+      .sort((a, b) => a.sortOrder - b.sortOrder),
+  );
+
+  const loadItems = async (showLoading = true) => {
+    if (showLoading) setLoading(true);
     setError(null);
     try {
       const response = await getShoppingListApi().listItems();
@@ -49,6 +82,30 @@ export default function ShoppingListPage() {
   createEffect(() => {
     loadItems();
   });
+
+  const handleAddItem = async () => {
+    const name = newItemName().trim();
+    if (!name) return;
+
+    setAdding(true);
+    setError(null);
+    try {
+      const amount = newItemAmount().trim() || undefined;
+      await getShoppingListApi().createItems({
+        createShoppingListRequest: {
+          items: [{ item: name, amount }],
+        },
+      });
+      setNewItemName("");
+      setNewItemAmount("");
+      await loadItems(false);
+    } catch (err) {
+      const message = await extractApiError(err, "Failed to add item");
+      setError(message);
+    } finally {
+      setAdding(false);
+    }
+  };
 
   const handleToggleChecked = async (item: ShoppingListItemResponse) => {
     try {
@@ -107,6 +164,40 @@ export default function ShoppingListPage() {
     }
   };
 
+  const renderItem = (item: ShoppingListItemResponse) => (
+    <li class="shopping-item" classList={{ checked: item.isChecked }}>
+      <label class="shopping-checkbox-label">
+        <input
+          type="checkbox"
+          checked={item.isChecked}
+          onChange={() => handleToggleChecked(item)}
+          class="shopping-checkbox"
+        />
+        <span class="shopping-item-content">
+          <span class="shopping-item-name">{item.item}</span>
+          <Show when={item.amount}>
+            <span class="shopping-item-amount">{item.amount}</span>
+          </Show>
+        </span>
+      </label>
+      <Show when={item.sourceRecipeId && item.sourceRecipeTitle}>
+        <A
+          href={`/recipes/${item.sourceRecipeId}`}
+          class="shopping-item-source"
+        >
+          {item.sourceRecipeTitle}
+        </A>
+      </Show>
+      <button
+        class="shopping-item-delete"
+        onClick={() => confirmDelete(item)}
+        title="Delete item"
+      >
+        &times;
+      </button>
+    </li>
+  );
+
   return (
     <div class="shopping-list-page">
       <div class="page-header">
@@ -122,6 +213,38 @@ export default function ShoppingListPage() {
         </Show>
       </div>
 
+      <form
+        class="shopping-add-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleAddItem();
+        }}
+      >
+        <input
+          type="text"
+          class="shopping-add-input"
+          placeholder="Add an item..."
+          value={newItemName()}
+          onInput={(e) => setNewItemName(e.currentTarget.value)}
+          disabled={adding()}
+        />
+        <input
+          type="text"
+          class="shopping-add-amount"
+          placeholder="Amount"
+          value={newItemAmount()}
+          onInput={(e) => setNewItemAmount(e.currentTarget.value)}
+          disabled={adding()}
+        />
+        <button
+          type="submit"
+          class="btn btn-primary btn-small"
+          disabled={adding() || !newItemName().trim()}
+        >
+          {adding() ? "Adding..." : "Add"}
+        </button>
+      </form>
+
       <Show when={error()}>
         <div class="error-message">{error()}</div>
       </Show>
@@ -134,50 +257,34 @@ export default function ShoppingListPage() {
         <div class="empty-state">
           <p>Your shopping list is empty.</p>
           <p class="empty-hint">
-            Add items from recipes by clicking "Add to Shopping List" on any
-            recipe page.
+            Add items above, or from recipes by clicking "Add to Shopping List"
+            on any recipe page.
           </p>
         </div>
       </Show>
 
       <Show when={!loading() && items().length > 0}>
-        <ul class="shopping-list">
-          <For each={sortedItems()}>
-            {(item) => (
-              <li class="shopping-item" classList={{ checked: item.isChecked }}>
-                <label class="shopping-checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={item.isChecked}
-                    onChange={() => handleToggleChecked(item)}
-                    class="shopping-checkbox"
-                  />
-                  <span class="shopping-item-content">
-                    <span class="shopping-item-name">{item.item}</span>
-                    <Show when={item.amount}>
-                      <span class="shopping-item-amount">{item.amount}</span>
-                    </Show>
-                  </span>
-                </label>
-                <Show when={item.sourceRecipeId && item.sourceRecipeTitle}>
-                  <A
-                    href={`/recipes/${item.sourceRecipeId}`}
-                    class="shopping-item-source"
-                  >
-                    {item.sourceRecipeTitle}
-                  </A>
-                </Show>
-                <button
-                  class="shopping-item-delete"
-                  onClick={() => confirmDelete(item)}
-                  title="Delete item"
-                >
-                  &times;
-                </button>
-              </li>
+        <div class="shopping-list">
+          <For each={groupedUncheckedItems()}>
+            {(group) => (
+              <div class="shopping-category-group">
+                <h3 class="shopping-category-header">{group.category}</h3>
+                <ul class="shopping-category-items">
+                  <For each={group.items}>{renderItem}</For>
+                </ul>
+              </div>
             )}
           </For>
-        </ul>
+
+          <Show when={checkedItems().length > 0}>
+            <div class="shopping-category-group checked-group">
+              <h3 class="shopping-category-header">Checked</h3>
+              <ul class="shopping-category-items">
+                <For each={checkedItems()}>{renderItem}</For>
+              </ul>
+            </div>
+          </Show>
+        </div>
       </Show>
 
       <Modal
