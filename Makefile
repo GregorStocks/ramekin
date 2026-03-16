@@ -94,7 +94,15 @@ venv-clean: ## Remove Python venv
 	@rm -rf .venv
 
 db-up: ## Start postgres container with dev and test databases
-	@if ! docker ps --format '{{.Names}}' | grep -q '^ramekin-db$$'; then \
+	@if docker ps --format '{{.Names}}' | grep -q '^ramekin-db$$'; then \
+	  echo "Postgres already running."; \
+	elif docker ps -a --format '{{.Names}}' | grep -q '^ramekin-db$$'; then \
+	  echo "Starting existing postgres container..."; \
+	  docker start ramekin-db >/dev/null; \
+	  echo "Waiting for postgres..."; \
+	  until docker exec ramekin-db pg_isready -U ramekin >/dev/null 2>&1; do sleep 0.2; done; \
+	  echo "Postgres ready on localhost:54321"; \
+	else \
 	  echo "Starting postgres..."; \
 	  docker run -d --name ramekin-db \
 	    -e POSTGRES_USER=ramekin \
