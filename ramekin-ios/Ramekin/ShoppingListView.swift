@@ -2,7 +2,11 @@ import SwiftUI
 
 struct ShoppingListView: View {
     @StateObject private var store = ShoppingListStore.shared
-    @State private var showingAddIngredient = false
+    @State private var isAddingItem = false
+    @State private var ingredientName = ""
+    @State private var amount = ""
+    @State private var addedCount = 0
+    @FocusState private var addFieldFocused: Bool
 
     /// Category display order for grouping
     private static let categoryOrder = [
@@ -27,7 +31,7 @@ struct ShoppingListView: View {
     var body: some View {
         NavigationStack {
             Group {
-                if store.items.isEmpty {
+                if store.items.isEmpty && !isAddingItem {
                     emptyState
                 } else {
                     itemsList
@@ -38,7 +42,8 @@ struct ShoppingListView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     HStack(spacing: 12) {
                         Button {
-                            showingAddIngredient = true
+                            isAddingItem = true
+                            addFieldFocused = true
                         } label: {
                             Image(systemName: "plus")
                         }
@@ -50,8 +55,10 @@ struct ShoppingListView: View {
                     }
                 }
             }
-            .sheet(isPresented: $showingAddIngredient) {
-                AddIngredientSheet(isPresented: $showingAddIngredient)
+            .onChange(of: addFieldFocused) { focused in
+                if !focused && ingredientName.trimmingCharacters(in: .whitespaces).isEmpty {
+                    isAddingItem = false
+                }
             }
             .refreshable {
                 await store.syncWithServer()
@@ -59,6 +66,22 @@ struct ShoppingListView: View {
             .overlay(alignment: .top) {
                 if !store.isOnline {
                     offlineBanner
+                }
+            }
+            .overlay(alignment: .bottom) {
+                if addedCount > 0 {
+                    HStack {
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundColor(.green)
+                        Text(addedCount == 1 ? "1 item added" : "\(addedCount) items added")
+                    }
+                    .font(.subheadline.weight(.medium))
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 10)
+                    .background(.regularMaterial)
+                    .clipShape(Capsule())
+                    .padding(.bottom, 8)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
             }
         }
@@ -91,9 +114,37 @@ struct ShoppingListView: View {
         }
     }
 
+    private var addItemSection: some View {
+        Section {
+            TextField("Ingredient", text: $ingredientName)
+                .focused($addFieldFocused)
+                .submitLabel(.done)
+                .onSubmit(addItem)
+            TextField("Amount (optional)", text: $amount)
+                .submitLabel(.done)
+                .onSubmit(addItem)
+            HStack {
+                Button("Add to List", action: addItem)
+                    .disabled(ingredientName.trimmingCharacters(in: .whitespaces).isEmpty)
+                Spacer()
+                Button("Done") {
+                    isAddingItem = false
+                    addFieldFocused = false
+                    ingredientName = ""
+                    amount = ""
+                }
+                .foregroundColor(.secondary)
+            }
+        }
+    }
+
     private var itemsList: some View {
         List {
             let checked = store.items.filter(\.isChecked)
+
+            if isAddingItem {
+                addItemSection
+            }
 
             // Unchecked items grouped by category
             ForEach(groupedUncheckedItems, id: \.category) { group in
@@ -124,6 +175,25 @@ struct ShoppingListView: View {
             }
         }
         .listStyle(.plain)
+    }
+
+    private func addItem() {
+        let name = ingredientName.trimmingCharacters(in: .whitespaces)
+        guard !name.isEmpty else { return }
+
+        let trimmedAmount = amount.trimmingCharacters(in: .whitespaces)
+        ShoppingListStore.shared.addItem(
+            name: name,
+            amount: trimmedAmount.isEmpty ? nil : trimmedAmount
+        )
+
+        ingredientName = ""
+        amount = ""
+        addFieldFocused = true
+
+        withAnimation {
+            addedCount += 1
+        }
     }
 
     private var offlineBanner: some View {
