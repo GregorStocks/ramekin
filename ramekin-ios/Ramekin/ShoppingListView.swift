@@ -55,9 +55,9 @@ struct ShoppingListView: View {
                     }
                 }
             }
-            .onChange(of: addFieldFocused) { focused in
-                if !focused && ingredientName.trimmingCharacters(in: .whitespaces).isEmpty {
-                    isAddingItem = false
+            .onChange(of: isAddingItem) { adding in
+                if !adding {
+                    addedCount = 0
                 }
             }
             .refreshable {
