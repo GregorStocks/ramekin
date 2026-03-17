@@ -14,6 +14,14 @@ final class RecipeFlowTests: XCTestCase {
         app = nil
     }
 
+    /// Clear a text field by triple-tapping to select all, then deleting.
+    /// More reliable than long-press + "Select All" menu item on CI.
+    private func clearField(_ field: XCUIElement) {
+        field.tap()
+        field.tap(withNumberOfTaps: 3, numberOfTouches: 1)
+        field.typeText(XCUIKeyboardKey.delete.rawValue)
+    }
+
     /// Test the full recipe flow: login -> recipe list -> recipe detail
     func testRecipeFlow() throws {
         // MARK: - Login
@@ -21,25 +29,19 @@ final class RecipeFlowTests: XCTestCase {
         // Find and fill server URL field (clear default value first)
         let serverField = app.textFields["https://media.noodles:5173"]
         XCTAssertTrue(serverField.waitForExistence(timeout: 5), "Server URL field should exist")
-        serverField.tap()
-        serverField.press(forDuration: 1.0)
-        app.menuItems["Select All"].tap()
+        clearField(serverField)
         serverField.typeText("http://localhost:55000")
 
         // Find and fill username field (clear default value first)
         let usernameField = app.textFields["Username"]
         XCTAssertTrue(usernameField.exists, "Username field should exist")
-        usernameField.tap()
-        usernameField.press(forDuration: 1.0)
-        app.menuItems["Select All"].tap()
+        clearField(usernameField)
         usernameField.typeText("t")
 
         // Find and fill password field (clear default value first)
         let passwordField = app.secureTextFields["Password"]
         XCTAssertTrue(passwordField.exists, "Password field should exist")
-        passwordField.tap()
-        passwordField.press(forDuration: 1.0)
-        app.menuItems["Select All"].tap()
+        clearField(passwordField)
         passwordField.typeText("t")
 
         // Take screenshot of login form
@@ -94,21 +96,15 @@ final class RecipeFlowTests: XCTestCase {
     func testLoginFailure() throws {
         let serverField = app.textFields["https://media.noodles:5173"]
         XCTAssertTrue(serverField.waitForExistence(timeout: 5))
-        serverField.tap()
-        serverField.press(forDuration: 1.0)
-        app.menuItems["Select All"].tap()
+        clearField(serverField)
         serverField.typeText("http://localhost:55000")
 
         let usernameField = app.textFields["Username"]
-        usernameField.tap()
-        usernameField.press(forDuration: 1.0)
-        app.menuItems["Select All"].tap()
+        clearField(usernameField)
         usernameField.typeText("invalid")
 
         let passwordField = app.secureTextFields["Password"]
-        passwordField.tap()
-        passwordField.press(forDuration: 1.0)
-        app.menuItems["Select All"].tap()
+        clearField(passwordField)
         passwordField.typeText("wrong")
 
         app.buttons["Sign In"].tap()
