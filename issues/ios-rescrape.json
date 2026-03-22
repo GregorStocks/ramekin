@@ -1,0 +1,10 @@
+{
+  "title": "iOS: Add rescrape from source URL",
+  "description": "The web app allows re-importing/rescraping a recipe from its original source URL to pick up any changes. The iOS app does not have this capability. Add a rescrape action to the iOS recipe detail view for recipes that have a source URL.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": ["ios", "feature-parity"],
+  "created_at": "2026-03-22T00:00:00.000000-07:00",
+  "updated_at": "2026-03-22T00:00:00.000000-07:00"
+}
