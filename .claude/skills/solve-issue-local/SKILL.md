@@ -21,4 +21,4 @@ Use these notes together with the global `solve-issue` skill.
 - Prefer Diesel DSL over raw SQL; ask before using raw SQL.
 - Soft-delete data instead of hard-deleting it.
 - Add end-to-end tests before using new API endpoints in the UI.
-- Sign `doc/guestbook.md` when you finish.
+- If you'd like, sign `doc/guestbook.md` when you finish.
