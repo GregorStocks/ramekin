@@ -639,7 +639,7 @@ export default function CookbookPage() {
                   <PhotoThumbnail
                     photoId={recipe.thumbnailPhotoId!}
                     token={token()!}
-                    alt=""
+                    alt={recipe.title}
                     thumbnailSize={thumbnailSize}
                     class="recipe-card-thumbnail"
                   />
