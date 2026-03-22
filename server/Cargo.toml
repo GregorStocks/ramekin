@@ -64,5 +64,5 @@ zip = "8.2"
 
 # Web scraping
 reqwest = { version = "0.13", default-features = false, features = ["rustls", "json"] }
-scraper = "0.25"
+scraper = "0.26"
 ramekin-core = { path = "../ramekin-core" }
