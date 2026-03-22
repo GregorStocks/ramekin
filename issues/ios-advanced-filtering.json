@@ -1,0 +1,10 @@
+{
+  "title": "iOS: Add advanced recipe filtering (source, date range)",
+  "description": "The web app supports filtering recipes by source website and creation date range in addition to tags and photo presence. The iOS app only supports tag and photo filters. Add source and date range filtering to the iOS recipe list.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": ["ios", "feature-parity"],
+  "created_at": "2026-03-22T00:00:00.000000-07:00",
+  "updated_at": "2026-03-22T00:00:00.000000-07:00"
+}

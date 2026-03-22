@@ -1,0 +1,10 @@
+{
+  "title": "iOS: Add tag management",
+  "description": "The web app has a dedicated tag management page (/tags) where users can rename tags, delete tags, and see recipe counts per tag. The iOS app can only filter by tags but has no way to manage them. Add a tag management screen to the iOS app with rename, delete, and recipe count display.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": ["ios", "feature-parity"],
+  "created_at": "2026-03-22T00:00:00.000000-07:00",
+  "updated_at": "2026-03-22T00:00:00.000000-07:00"
+}
