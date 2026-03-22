@@ -7,6 +7,7 @@ struct RecipeDetailView: View {
     @State private var isLoading = false
     @State private var error: String?
     @State private var showingAddToShoppingList = false
+    @State private var showingAddToMealPlan = false
     @State private var showingCustomEnrich = false
     @State private var enrichResult: RecipeContent?
 
@@ -32,6 +33,11 @@ struct RecipeDetailView: View {
                         } label: {
                             Label("Customize with AI", systemImage: "wand.and.stars")
                         }
+                        Button {
+                            showingAddToMealPlan = true
+                        } label: {
+                            Label("Add to Meal Plan", systemImage: "calendar.badge.plus")
+                        }
                         if !recipe.ingredients.isEmpty {
                             Button {
                                 showingAddToShoppingList = true
@@ -48,6 +54,11 @@ struct RecipeDetailView: View {
         .sheet(isPresented: $showingAddToShoppingList) {
             if let recipe = recipe {
                 AddToShoppingListSheet(recipe: recipe, isPresented: $showingAddToShoppingList)
+            }
+        }
+        .sheet(isPresented: $showingAddToMealPlan) {
+            if let recipe = recipe {
+                AddToMealPlanSheet(recipe: recipe, isPresented: $showingAddToMealPlan)
             }
         }
         .sheet(isPresented: $showingCustomEnrich) {
