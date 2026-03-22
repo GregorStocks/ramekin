@@ -14,6 +14,8 @@ This script runs:
 
 import json
 import os
+import re
+import shutil
 import subprocess
 import sys
 import time
@@ -225,6 +227,27 @@ def lint_rust_ingredient_density(project_root: Path) -> tuple[str, bool]:
     return ("Rust (ingredient-density)", success)
 
 
+def ensure_ui_node_modules(ui_dir: Path) -> bool:
+    """Install UI dependencies using npx when node_modules is missing."""
+    if (ui_dir / "node_modules").exists():
+        return True
+
+    install_result = subprocess.run(
+        ["npx", "--yes", "-p", "npm@latest", "npm", "ci", "--silent"],
+        cwd=ui_dir,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    if install_result.stdout:
+        print(install_result.stdout, end="")
+    if install_result.stderr:
+        print(install_result.stderr, end="", file=sys.stderr)
+
+    return install_result.returncode == 0
+
+
 def lint_typescript(project_root: Path) -> tuple[str, bool]:
     """Lint TypeScript code."""
     ui_dir = project_root / "ramekin-ui"
@@ -238,14 +261,12 @@ def lint_typescript(project_root: Path) -> tuple[str, bool]:
         check=False,
     )
 
-    # Ensure node_modules exists
-    if not (ui_dir / "node_modules").exists():
-        subprocess.run(
-            ["npm", "install", "--silent"],
-            cwd=ui_dir,
-            capture_output=True,
-            check=False,
-        )
+    if not ensure_ui_node_modules(ui_dir):
+        if prettier_result.stdout:
+            print(prettier_result.stdout, end="")
+        if prettier_result.stderr:
+            print(prettier_result.stderr, end="", file=sys.stderr)
+        return ("TypeScript", False)
 
     # Run tsc
     tsc_result = subprocess.run(
@@ -274,14 +295,8 @@ def lint_css(project_root: Path) -> tuple[str, bool]:
     """Lint CSS files with Stylelint."""
     ui_dir = project_root / "ramekin-ui"
 
-    # Ensure node_modules exists
-    if not (ui_dir / "node_modules").exists():
-        subprocess.run(
-            ["npm", "install", "--silent"],
-            cwd=ui_dir,
-            capture_output=True,
-            check=False,
-        )
+    if not ensure_ui_node_modules(ui_dir):
+        return ("CSS", False)
 
     result = subprocess.run(
         ["npx", "stylelint", "--fix", "src/**/*.css"],
@@ -537,58 +552,98 @@ def check_raw_sql(project_root: Path) -> tuple[str, bool]:
 
 
 def lint_issues(project_root: Path) -> tuple[str, bool]:
-    """Validate issue JSON files in issues/ directory."""
+    """Validate issue JSON5 files in issues/ directory."""
+    issue_lint = shutil.which("issue-lint")
+    if issue_lint is not None:
+        return run_command("Issues", [issue_lint, str(project_root)])
+
+    return _lint_issues_fallback(project_root)
+
+
+ISSUE_REQUIRED_FIELDS = {
+    "title",
+    "description",
+    "status",
+    "priority",
+    "type",
+    "labels",
+    "created_at",
+    "updated_at",
+}
+ISSUE_OPTIONAL_FIELDS = {"blocked"}
+ISSUE_KNOWN_FIELDS = ISSUE_REQUIRED_FIELDS | ISSUE_OPTIONAL_FIELDS
+ISSUE_FILENAME_RE = re.compile(r"^(p[1-4]|blocked)-[a-z0-9][a-z0-9-]*$")
+
+
+def _expected_issue_prefix(issue: dict) -> str:
+    return "blocked" if issue.get("blocked") else f"p{issue['priority']}"
+
+
+def _lint_issues_fallback(project_root: Path) -> tuple[str, bool]:
+    """Fallback issue validation when shared tooling is unavailable."""
     issues_dir = project_root / "issues"
     if not issues_dir.exists():
         return ("Issues", True)
 
-    required_fields = {
-        "title",
-        "description",
-        "status",
-        "priority",
-        "type",
-        "labels",
-        "created_at",
-        "updated_at",
-    }
-    errors = []
+    errors = [
+        f"{legacy_issue_file.name}: legacy issue file extension; rename to .json5"
+        for legacy_issue_file in sorted(issues_dir.glob("*.json"))
+    ]
 
-    for issue_file in issues_dir.glob("*.json"):
+    for issue_file in sorted(issues_dir.glob("*.json5")):
         try:
             with open(issue_file) as f:
                 issue = json.load(f)
         except json.JSONDecodeError as e:
-            errors.append(f"{issue_file.name}: invalid JSON - {e}")
+            errors.append(f"{issue_file.name}: invalid JSON5 - {e}")
             continue
 
-        # Check for unexpected id field (filename is the id)
         if "id" in issue:
             errors.append(f"{issue_file.name}: has 'id' field (filename serves as id)")
 
-        # Check required fields
-        missing = required_fields - set(issue.keys())
+        missing = ISSUE_REQUIRED_FIELDS - set(issue.keys())
         if missing:
             errors.append(
                 f"{issue_file.name}: missing fields: {', '.join(sorted(missing))}"
             )
             continue
 
-        # Closed issues should be deleted
-        if issue["status"] == "closed":
+        unknown = set(issue.keys()) - ISSUE_KNOWN_FIELDS
+        if unknown:
             errors.append(
-                f"{issue_file.name}: status is 'closed' (delete closed issues)"
+                f"{issue_file.name}: unknown fields: {', '.join(sorted(unknown))}"
             )
 
-        # Priority should be 1-4
+        if not ISSUE_FILENAME_RE.fullmatch(issue_file.stem):
+            errors.append(
+                f"{issue_file.name}: filename must start with "
+                "p1-/p2-/p3-/p4-/blocked- and use kebab-case"
+            )
+        else:
+            expected_prefix = _expected_issue_prefix(issue)
+            actual_prefix = issue_file.stem.split("-", 1)[0]
+            if actual_prefix != expected_prefix:
+                errors.append(
+                    f"{issue_file.name}: filename prefix must be "
+                    f"'{expected_prefix}-' for this issue"
+                )
+
+        if issue["status"] != "open":
+            errors.append(
+                f"{issue_file.name}: status is '{issue['status']}' "
+                "(delete resolved issues)"
+            )
+
         if not isinstance(issue["priority"], int) or not 1 <= issue["priority"] <= 4:
             errors.append(
                 f"{issue_file.name}: priority must be int 1-4, got {issue['priority']}"
             )
 
-        # Labels should be a list
         if not isinstance(issue["labels"], list):
             errors.append(f"{issue_file.name}: labels must be an array")
+
+        if "blocked" in issue and not isinstance(issue["blocked"], (bool, str)):
+            errors.append(f"{issue_file.name}: blocked must be a boolean or string")
 
     if errors:
         print("Issue validation errors:", file=sys.stderr)

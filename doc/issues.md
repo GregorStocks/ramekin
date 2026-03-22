@@ -1,12 +1,12 @@
 # Issues
 
-Issues are stored as individual JSON files in the `issues/` directory. The filename serves as the issue ID (e.g., `decimal-amounts-not-converted-to-fractions.json`).
+Issues are stored as individual JSON5 files in the `issues/` directory. The filename serves as the issue ID and must start with `p1-`, `p2-`, `p3-`, `p4-`, or `blocked-` (for example `p3-decimal-amounts-not-converted-to-fractions.json5`).
 
-Closed issues should be deleted, not marked as closed.
+Resolved issues should be deleted, not marked as resolved or closed.
 
 ## Format
 
-```json
+```json5
 {
   "title": "Decimal amounts not converted to fractions",
   "description": "Full description...",
@@ -19,57 +19,60 @@ Closed issues should be deleted, not marked as closed.
 }
 ```
 
+Use real timestamps, not placeholder times.
+
 ### Fields
 
 | Field | Type | Description |
 |-------|------|-------------|
 | `title` | string | Short summary |
 | `description` | string | Full description with context |
-| `status` | string | Always "open" (delete closed issues) |
+| `status` | string | Always `"open"` |
 | `priority` | int | 1 (highest) to 4 (lowest) |
-| `type` | string | Usually "task" |
-| `labels` | string[] | Tags like "ingredient-parser", "upstream" |
+| `type` | string | Usually `"task"` |
+| `labels` | string[] | Tags like `"ingredient-parser"` or `"upstream"` |
 | `created_at` | string | ISO 8601 timestamp |
 | `updated_at` | string | ISO 8601 timestamp |
+| `blocked` | bool \| string? | If truthy, the filename must start with `blocked-` and the issue is skipped by auto-claiming |
 
 ## Querying
 
-### List all issues
+If `agent-issues` is installed, prefer the shared CLI tools.
+
+### List all issues with priority
 
 ```bash
-ls issues/
+issue-query
 ```
 
-### View an issue
+### Filter by label
 
 ```bash
-jq . issues/decimal-amounts-not-converted-to-fractions.json
+issue-query --label upstream
 ```
 
-### List all issue titles with priority
+### Show high priority issues (P1-P2)
 
 ```bash
-for f in issues/*.json; do echo "$(basename "$f" .json): $(jq -r '[.priority, .title] | @tsv' "$f")"; done | sort -t$'\t' -k1 -n
+issue-query --max-priority 2
 ```
 
-### Find issues by label
+### Search titles and descriptions
 
 ```bash
-for f in issues/*.json; do
-  jq -e '.labels | index("upstream")' "$f" >/dev/null && basename "$f" .json
-done
+issue-query --search "ingredient"
 ```
 
-### Find high priority issues (priority 1-2)
+### Claim an issue
 
 ```bash
-for f in issues/*.json; do
-  jq -e '.priority <= 2' "$f" >/dev/null && echo "$(basename "$f" .json): $(jq -r .title "$f")"
-done
+issue-autoclaim
+issue-autoclaim <issue-name>
+issue-claim --current
 ```
 
-### Search descriptions
+### Lint issue files
 
 ```bash
-grep -l "upstream" issues/*.json
+issue-lint
 ```

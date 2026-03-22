@@ -41,6 +41,6 @@ When you find a recurring pattern, create an issue with a few concrete examples 
 
 ## Creating New Issues
 
-Create a new JSON file in `issues/` with a unique ID. See `doc/issues.md` for the format.
+Create a new JSON5 issue file in `issues/` named `pN-short-summary.json5`, or `blocked-short-summary.json5` if it has an unresolved prerequisite. See `doc/issues.md` for the format.
 
 Add the `ingredient-parser` label. If the issue is caused by upstream data problems (not fixable in the parser), also add `upstream`.
