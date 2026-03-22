@@ -111,33 +111,6 @@ EOF
         echo "Note: $SOURCE_DIR not found, skipping key sync"
     fi
 
-    # Create Claude settings with lint hook
-    echo ""
-    echo "Creating Claude settings..."
-    if [ -f .claude/settings.local.json ]; then
-        echo "Error: .claude/settings.local.json already exists"
-        exit 1
-    fi
-    mkdir -p .claude
-    cat > .claude/settings.local.json << 'EOF'
-{
-  "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Write|Edit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "make lint"
-          }
-        ]
-      }
-    ]
-  }
-}
-EOF
-    echo "Created .claude/settings.local.json"
-
     # Create databases (requires postgres running on port 54321)
     echo ""
     echo "Creating databases..."
