@@ -133,7 +133,7 @@ extension RecipeFormView {
     private var ingredientsFormSection: some View {
         Section {
             let grouped = groupIngredientsBySection(ingredients)
-            ForEach(Array(grouped.enumerated()), id: \.element.section) { _, group in
+            ForEach(Array(grouped.enumerated()), id: \.offset) { _, group in
                 ingredientGroupView(group)
             }
             addIngredientButton
