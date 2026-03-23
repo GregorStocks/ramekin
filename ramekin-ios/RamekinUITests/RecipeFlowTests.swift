@@ -1,6 +1,7 @@
 import XCTest
 
 final class RecipeFlowTests: XCTestCase {
+    private let importedRecipeTitle = "Armenian-Style Rice Pilaf"
 
     var app: XCUIApplication!
 
@@ -70,8 +71,21 @@ final class RecipeFlowTests: XCTestCase {
 
             // MARK: - Recipe Detail
 
-            // Tap first recipe
-            recipeCell.tap()
+            if !app.searchFields["Search recipes"].waitForExistence(timeout: 2) {
+                app.swipeDown()
+            }
+
+            let searchField = app.searchFields["Search recipes"]
+            XCTAssertTrue(searchField.waitForExistence(timeout: 5), "Recipe search field should exist")
+            searchField.tap()
+            searchField.typeText(importedRecipeTitle)
+
+            let recipeTitle = app.staticTexts[importedRecipeTitle]
+            XCTAssertTrue(
+                recipeTitle.waitForExistence(timeout: 10),
+                "Seeded recipe with source URL should exist in search results"
+            )
+            recipeTitle.tap()
 
             // Wait for detail view to load
             sleep(2)
