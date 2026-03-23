@@ -82,7 +82,7 @@ final class RecipeFlowTests: XCTestCase {
             detailScreenshot.lifetime = .keepAlways
             add(detailScreenshot)
 
-            let actionsButton = app.buttons["recipe-detail-actions"]
+            let actionsButton = app.buttons["Recipe actions"]
             XCTAssertTrue(actionsButton.waitForExistence(timeout: 5), "Recipe actions button should exist")
             actionsButton.tap()
 

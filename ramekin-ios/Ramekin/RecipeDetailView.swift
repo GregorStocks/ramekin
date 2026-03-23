@@ -55,9 +55,9 @@ struct RecipeDetailView: View {
                             }
                         }
                     } label: {
-                        Image(systemName: "ellipsis.circle")
+                        Label("Recipe actions", systemImage: "ellipsis.circle")
+                            .labelStyle(.iconOnly)
                     }
-                    .accessibilityLabel("Recipe actions")
                     .accessibilityIdentifier("recipe-detail-actions")
                 }
             }
