@@ -58,6 +58,9 @@ struct RecipeListView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 HStack(spacing: 16) {
+                    NavigationLink(value: NavigationDestination.createRecipe) {
+                        Image(systemName: "plus")
+                    }
                     sortMenu
                     NavigationLink(value: NavigationDestination.settings) {
                         Image(systemName: "gear")
@@ -76,6 +79,11 @@ struct RecipeListView: View {
             loadPersistedAvailableTags()
             await loadTags()
             await loadRecipes(reset: true)
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .tagsDidChange)) { _ in
+            loadPersistedTags()
+            loadPersistedAvailableTags()
+            reloadRecipes()
         }
         .onReceive(NotificationCenter.default.publisher(for: .recipeDeleted)) { _ in
             Task { await loadRecipes(reset: true) }
@@ -227,7 +235,7 @@ struct RecipeListView: View {
                 .foregroundColor(.secondary)
             Text("No recipes yet")
                 .font(.title2)
-            Text("Use the Share button in Safari to save recipes")
+            Text("Tap + to create a recipe, or use the Share button in Safari to import one")
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
@@ -324,29 +332,19 @@ extension RecipeListView {
     }
 
     private func persistSelectedTags() {
-        if let data = try? JSONEncoder().encode(Array(selectedTags)) {
-            UserDefaults.standard.set(data, forKey: "recipeSelectedTags")
-        }
+        TagFilterCache.saveSelectedTags(selectedTags)
     }
 
     private func persistAvailableTags() {
-        if let data = try? CodableHelper.jsonEncoder.encode(availableTags) {
-            UserDefaults.standard.set(data, forKey: "recipeAvailableTags")
-        }
+        TagFilterCache.saveAvailableTags(availableTags)
     }
 
     fileprivate func loadPersistedTags() {
-        if let data = UserDefaults.standard.data(forKey: "recipeSelectedTags"),
-           let names = try? JSONDecoder().decode([String].self, from: data) {
-            selectedTags = Set(names)
-        }
+        selectedTags = TagFilterCache.loadSelectedTags()
     }
 
     fileprivate func loadPersistedAvailableTags() {
-        if let data = UserDefaults.standard.data(forKey: "recipeAvailableTags"),
-           let tags = try? CodableHelper.jsonDecoder.decode([TagItem].self, from: data) {
-            availableTags = tags
-        }
+        availableTags = TagFilterCache.loadAvailableTags()
     }
 
     fileprivate func loadTags() async {
@@ -357,12 +355,8 @@ extension RecipeListView {
             await MainActor.run {
                 availableTags = response.tags
                 persistAvailableTags()
-                let validNames = Set(response.tags.map(\.name))
-                let removed = selectedTags.subtracting(validNames)
-                if !removed.isEmpty {
-                    selectedTags.subtract(removed)
-                    persistSelectedTags()
-                }
+                TagFilterCache.pruneSelectedTags(validNames: Set(response.tags.map(\.name)))
+                selectedTags = TagFilterCache.loadSelectedTags()
             }
         } catch is CancellationError {
             DebugLogger.shared.log("loadTags cancelled", source: "RecipeList")
