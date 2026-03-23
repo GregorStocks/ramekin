@@ -77,6 +77,11 @@ struct RecipeListView: View {
             await loadTags()
             await loadRecipes(reset: true)
         }
+        .onReceive(NotificationCenter.default.publisher(for: .tagsDidChange)) { _ in
+            loadPersistedTags()
+            loadPersistedAvailableTags()
+            reloadRecipes()
+        }
     }
 
     // MARK: - Sort Menu
@@ -321,29 +326,19 @@ extension RecipeListView {
     }
 
     private func persistSelectedTags() {
-        if let data = try? JSONEncoder().encode(Array(selectedTags)) {
-            UserDefaults.standard.set(data, forKey: "recipeSelectedTags")
-        }
+        TagFilterCache.saveSelectedTags(selectedTags)
     }
 
     private func persistAvailableTags() {
-        if let data = try? CodableHelper.jsonEncoder.encode(availableTags) {
-            UserDefaults.standard.set(data, forKey: "recipeAvailableTags")
-        }
+        TagFilterCache.saveAvailableTags(availableTags)
     }
 
     fileprivate func loadPersistedTags() {
-        if let data = UserDefaults.standard.data(forKey: "recipeSelectedTags"),
-           let names = try? JSONDecoder().decode([String].self, from: data) {
-            selectedTags = Set(names)
-        }
+        selectedTags = TagFilterCache.loadSelectedTags()
     }
 
     fileprivate func loadPersistedAvailableTags() {
-        if let data = UserDefaults.standard.data(forKey: "recipeAvailableTags"),
-           let tags = try? CodableHelper.jsonDecoder.decode([TagItem].self, from: data) {
-            availableTags = tags
-        }
+        availableTags = TagFilterCache.loadAvailableTags()
     }
 
     fileprivate func loadTags() async {
@@ -354,12 +349,8 @@ extension RecipeListView {
             await MainActor.run {
                 availableTags = response.tags
                 persistAvailableTags()
-                let validNames = Set(response.tags.map(\.name))
-                let removed = selectedTags.subtracting(validNames)
-                if !removed.isEmpty {
-                    selectedTags.subtract(removed)
-                    persistSelectedTags()
-                }
+                TagFilterCache.pruneSelectedTags(validNames: Set(response.tags.map(\.name)))
+                selectedTags = TagFilterCache.loadSelectedTags()
             }
         } catch is CancellationError {
             DebugLogger.shared.log("loadTags cancelled", source: "RecipeList")
