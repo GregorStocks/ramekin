@@ -63,16 +63,21 @@ final class RecipeFlowTests: XCTestCase {
     }
 
     private func returnToRecipeList() {
-        let backButton = app.navigationBars.buttons["Recipes"]
-        if backButton.waitForExistence(timeout: 3) {
-            backButton.tap()
-            return
+        // Try the back button labeled with the previous view's title
+        for label in ["Recipes", "Back"] {
+            let btn = app.navigationBars.buttons[label]
+            if btn.exists {
+                btn.tap()
+                return
+            }
         }
 
-        // Fallback: try "Back" label (used when the title is too long)
-        let genericBack = app.navigationBars.buttons["Back"]
-        if genericBack.exists {
-            genericBack.tap()
+        // Fallback: any navigation bar button that isn't the ellipsis menu
+        let nonMenuButtons = app.navigationBars.buttons.allElementsBoundByIndex.filter { button in
+            button.exists && button.identifier != "ellipsis.circle"
+        }
+        if let backButton = nonMenuButtons.first {
+            backButton.tap()
             return
         }
 
@@ -108,21 +113,23 @@ final class RecipeFlowTests: XCTestCase {
                 fallbackIndex += 1
                 cell.tap()
 
-                // Check if navigation to the detail view occurred (back button appears)
-                let backButton = app.navigationBars.buttons["Recipes"]
-                guard backButton.waitForExistence(timeout: 3) else {
-                    // Tap didn't trigger navigation (cell may be partially obscured)
-                    continue
-                }
-
                 let rescrapeButton = app.buttons["Rescrape"]
                 if rescrapeButton.waitForExistence(timeout: 5) {
                     return true
                 }
 
+                // Check if we actually navigated to the detail view before going back
+                let onDetailView = app.navigationBars.buttons["Recipes"].exists
+                    || app.navigationBars.buttons["Back"].exists
+                    || app.navigationBars.buttons.matching(identifier: "ellipsis.circle").firstMatch.exists
+                guard onDetailView else {
+                    // Tap didn't trigger navigation (cell may be partially obscured)
+                    continue
+                }
+
                 returnToRecipeList()
                 XCTAssertTrue(
-                    app.navigationBars["Recipes"].waitForExistence(timeout: 5),
+                    app.cells.firstMatch.waitForExistence(timeout: 5),
                     "Recipe list should reappear after returning from detail view"
                 )
             }
@@ -168,9 +175,9 @@ final class RecipeFlowTests: XCTestCase {
 
         // MARK: - Recipe List
 
-        // Wait for the tab bar to appear (login screen has no tabs; recipe list does)
-        let recipesTab = app.tabBars.buttons["Recipes"]
-        let recipesLoaded = recipesTab.waitForExistence(timeout: 15)
+        // Wait for recipe list to load (requires seeded data from make seed)
+        let recipeCell = app.cells.firstMatch
+        let recipesLoaded = recipeCell.waitForExistence(timeout: 15)
 
         if recipesLoaded {
             // Take screenshot of recipe list
