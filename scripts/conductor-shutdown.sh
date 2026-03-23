@@ -11,16 +11,27 @@ cd "$PROJECT_ROOT"
 # Stop dev processes first
 make dev-down
 
-# Require workspace name to derive database names
-if [ -z "$CONDUCTOR_WORKSPACE_NAME" ]; then
-    echo "Warning: CONDUCTOR_WORKSPACE_NAME not set, skipping database cleanup"
-    exit 0
+DEV_DB=""
+TEST_DB=""
+
+if [ -f dev.env ]; then
+    DEV_DB=$(grep '^DATABASE_URL=' dev.env | sed 's|.*/||')
 fi
 
-# Derive database names (same logic as setup)
-DB_SUFFIX=$(echo "$CONDUCTOR_WORKSPACE_NAME" | tr '-' '_' | tr '[:upper:]' '[:lower:]')
-DEV_DB="ramekin_${DB_SUFFIX}"
-TEST_DB="ramekin_${DB_SUFFIX}_test"
+if [ -f test.env ]; then
+    TEST_DB=$(grep '^DATABASE_URL=' test.env | sed 's|.*/||')
+fi
+
+if [ -z "$DEV_DB" ] || [ -z "$TEST_DB" ]; then
+    if [ -z "$CONDUCTOR_WORKSPACE_NAME" ]; then
+        echo "Warning: CONDUCTOR_WORKSPACE_NAME not set and env files missing, skipping database cleanup"
+        exit 0
+    fi
+
+    DB_SUFFIX=$(echo "$CONDUCTOR_WORKSPACE_NAME" | tr '-' '_' | tr '[:upper:]' '[:lower:]')
+    DEV_DB="ramekin_${DB_SUFFIX}"
+    TEST_DB="ramekin_${DB_SUFFIX}_test"
+fi
 
 echo "Dropping databases: $DEV_DB, $TEST_DB"
 

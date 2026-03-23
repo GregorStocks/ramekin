@@ -30,43 +30,14 @@ do_setup() {
 
     echo "Setting up workspace: $WORKSPACE_NAME (base port: $BASE_PORT)"
 
-    # Derive ports (Conductor provides 10 consecutive ports starting at CONDUCTOR_PORT)
-    DEV_PORT=$BASE_PORT
-    DEV_UI_PORT=$((BASE_PORT + 1))
-    TEST_PORT=$((BASE_PORT + 2))
-    TEST_FIXTURE_PORT=$((BASE_PORT + 3))
-    MOCK_OPENROUTER_PORT=$((BASE_PORT + 4))
-    PROCESS_COMPOSE_PORT=$((BASE_PORT + 5))
+    ./scripts/worktree-setup.py \
+        --workspace-name "$WORKSPACE_NAME" \
+        --base-port "$BASE_PORT" \
+        --force
 
-    # Derive database names (sanitize workspace name for postgres)
-    DB_SUFFIX=$(echo "$WORKSPACE_NAME" | tr '-' '_' | tr '[:upper:]' '[:lower:]')
-    DEV_DB="ramekin_${DB_SUFFIX}"
-    TEST_DB="ramekin_${DB_SUFFIX}_test"
-
-    echo "Ports: server=$DEV_PORT, ui=$DEV_UI_PORT, test=$TEST_PORT, fixture=$TEST_FIXTURE_PORT, mock_openrouter=$MOCK_OPENROUTER_PORT, process_compose=$PROCESS_COMPOSE_PORT"
-    echo "Databases: dev=$DEV_DB, test=$TEST_DB"
-
-    # Generate dev.env
-    cat > dev.env << EOF
-DATABASE_URL=postgres://ramekin:ramekin@localhost:54321/${DEV_DB}
-PORT=${DEV_PORT}
-UI_PORT=${DEV_UI_PORT}
-RUST_LOG=info
-INSECURE_PASSWORD_HASHING=1
-EOF
-    echo "Created dev.env"
-
-    # Generate test.env
-    cat > test.env << EOF
-DATABASE_URL=postgres://ramekin:ramekin@localhost:54321/${TEST_DB}
-PORT=${TEST_PORT}
-FIXTURE_PORT=${TEST_FIXTURE_PORT}
-MOCK_OPENROUTER_PORT=${MOCK_OPENROUTER_PORT}
-PROCESS_COMPOSE_PORT=${PROCESS_COMPOSE_PORT}
-RUST_LOG=error
-INSECURE_PASSWORD_HASHING=1
-EOF
-    echo "Created test.env"
+    DEV_DB=$(grep '^DATABASE_URL=' dev.env | sed 's|.*/||')
+    TEST_DB=$(grep '^DATABASE_URL=' test.env | sed 's|.*/||')
+    echo "Created dev.env and test.env"
 
     # Sync keys from source directory (if available)
     SOURCE_DIR="$HOME/code/ramekin"
@@ -80,13 +51,29 @@ EOF
             if [ -n "$OPENROUTER_KEY" ]; then
                 echo "$OPENROUTER_KEY" > cli.env
                 echo "Created cli.env with OPENROUTER_API_KEY"
-                # Also add to dev.env so the server can use it for pipeline enrichment
-                {
-                    echo ""
-                    echo "# AI enrichment (synced from source)"
-                    echo "$OPENROUTER_KEY"
-                } >> dev.env
-                echo "Added OPENROUTER_API_KEY to dev.env"
+                TMP_DEV_ENV=$(mktemp)
+                awk -v openrouter_key="$OPENROUTER_KEY" '
+                    BEGIN { replaced = 0 }
+                    /^OPENROUTER_API_KEY=/ {
+                        if (!replaced) {
+                            print openrouter_key
+                            replaced = 1
+                        }
+                        next
+                    }
+                    { print }
+                    END {
+                        if (!replaced) {
+                            if (NR > 0) {
+                                print ""
+                            }
+                            print "# AI enrichment (synced from source)"
+                            print openrouter_key
+                        }
+                    }
+                ' dev.env > "$TMP_DEV_ENV"
+                mv "$TMP_DEV_ENV" dev.env
+                echo "Updated OPENROUTER_API_KEY in dev.env"
             fi
         fi
 
