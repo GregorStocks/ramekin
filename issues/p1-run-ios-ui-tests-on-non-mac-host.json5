@@ -1,0 +1,10 @@
+{
+  "title": "Figure out how to run iOS UI tests on a non-Mac host",
+  "description": "We currently cannot run `make ios-test-ui` from Linux-based agent environments because the workflow depends on Xcode tooling such as `xcodegen` and simulator-based `xcodebuild test`. We need a concrete plan for how to validate the iOS UI test suite from a non-Mac host, whether that means remote execution on a Mac runner, a reproducible bridge workflow, a hosted service, or another approach that still fits our development and CI model. The result should make it practical for non-Mac agents to trigger or verify iOS UI tests instead of treating them as opaque remote-only failures.",
+  "status": "open",
+  "priority": 1,
+  "type": "task",
+  "labels": ["ios", "testing", "infrastructure"],
+  "created_at": "2026-03-22T23:15:23-07:00",
+  "updated_at": "2026-03-22T23:15:23-07:00"
+}
