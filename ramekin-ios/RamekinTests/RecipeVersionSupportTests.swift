@@ -83,24 +83,27 @@ final class RecipeVersionSupportTests: XCTestCase {
         XCTAssertEqual(request.sourceUrl, recipe.sourceUrl)
     }
 
-    func testFormatIngredientsUsesPrimaryMeasurementAndItem() {
+    func testFormatIngredientsIncludesAlternateMeasurementsNotesAndSections() {
         let ingredients = [
             Ingredient(
                 item: "flour",
                 measurements: [
                     Measurement(amount: "1", unit: "cup"),
                     Measurement(amount: "120", unit: "g")
-                ]
+                ],
+                note: "sifted",
+                section: "Batter"
             ),
             Ingredient(
                 item: "salt",
-                measurements: []
+                measurements: [],
+                section: "Batter"
             )
         ]
 
         XCTAssertEqual(
             RecipeVersionSupport.formatIngredients(ingredients),
-            "1 cup flour\nsalt"
+            "[Batter]\n1 cup (120 g) flour (sifted)\nsalt"
         )
     }
 

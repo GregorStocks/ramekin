@@ -3,39 +3,39 @@ import SwiftUI
 struct RecipeDetailView: View {
     let recipeId: UUID
 
-    @State private var recipe: RecipeResponse?
-    @State private var currentVersionId: UUID?
-    @State private var versionHistory: [VersionSummary] = []
-    @State private var compareSelection: [UUID] = []
-    @State private var isVersionHistoryExpanded = false
-    @State private var isLoading = false
-    @State private var isLoadingVersions = false
-    @State private var isLoadingCompare = false
-    @State private var isReverting = false
-    @State private var error: String?
-    @State private var versionHistoryError: String?
-    @State private var compareError: String?
-    @State private var revertCandidate: VersionSummary?
-    @State private var showingAddToShoppingList = false
-    @State private var showingAddToMealPlan = false
-    @State private var showingCustomEnrich = false
-    @State private var showingCompareSheet = false
-    @State private var enrichResult: RecipeContent?
-    @State private var comparedOlderVersion: RecipeResponse?
-    @State private var comparedNewerVersion: RecipeResponse?
+    @State var recipe: RecipeResponse?
+    @State var currentVersionId: UUID?
+    @State var versionHistory: [VersionSummary] = []
+    @State var compareSelection: [UUID] = []
+    @State var isVersionHistoryExpanded = false
+    @State var isLoading = false
+    @State var isLoadingVersions = false
+    @State var isLoadingCompare = false
+    @State var isReverting = false
+    @State var error: String?
+    @State var versionHistoryError: String?
+    @State var compareError: String?
+    @State var revertCandidate: VersionSummary?
+    @State var showingAddToShoppingList = false
+    @State var showingAddToMealPlan = false
+    @State var showingCustomEnrich = false
+    @State var showingCompareSheet = false
+    @State var enrichResult: RecipeContent?
+    @State var comparedOlderVersion: RecipeResponse?
+    @State var comparedNewerVersion: RecipeResponse?
 
-    private var isViewingHistoricalVersion: Bool {
+    var isViewingHistoricalVersion: Bool {
         RecipeVersionSupport.isViewingHistoricalVersion(
             displayedVersionId: recipe?.versionId,
             currentVersionId: currentVersionId
         )
     }
 
-    private var actionsDisabledForHistoricalVersion: Bool {
+    var actionsDisabledForHistoricalVersion: Bool {
         isViewingHistoricalVersion || isReverting
     }
 
-    private var canCompareSelectedVersions: Bool {
+    var canCompareSelectedVersions: Bool {
         compareSelection.count == 2
     }
 
