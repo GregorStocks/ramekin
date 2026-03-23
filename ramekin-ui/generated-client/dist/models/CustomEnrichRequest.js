@@ -31,6 +31,7 @@ export function CustomEnrichRequestFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'instruction': json['instruction'],
+        'photoIds': json['photo_ids'] == null ? undefined : json['photo_ids'],
         'recipe': RecipeContentFromJSON(json['recipe']),
     };
 }
@@ -43,6 +44,7 @@ export function CustomEnrichRequestToJSONTyped(value, ignoreDiscriminator = fals
     }
     return {
         'instruction': value['instruction'],
+        'photo_ids': value['photoIds'],
         'recipe': RecipeContentToJSON(value['recipe']),
     };
 }

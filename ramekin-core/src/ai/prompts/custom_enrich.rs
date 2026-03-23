@@ -5,7 +5,7 @@ pub const CUSTOM_ENRICH_PROMPT_NAME: &str = "custom_enrich";
 
 /// Render the system prompt for custom enrichment.
 pub fn render_custom_enrich_system_prompt() -> String {
-    r#"You are a recipe modification assistant. The user will give you a recipe as JSON and an instruction describing what change they want. Apply the requested change and return the complete modified recipe as JSON.
+    r#"You are a recipe modification assistant. The user will give you a recipe as JSON and an instruction describing what change they want. They may also attach reference photos of the dish. Apply the requested change using the recipe and any relevant visual context, then return the complete modified recipe as JSON.
 
 IMPORTANT RULES:
 - Return ONLY valid JSON matching the exact schema below. No other text.
@@ -45,7 +45,7 @@ JSON Schema:
 /// Render the user message with the recipe and instruction.
 pub fn render_custom_enrich_user_prompt(recipe_json: &str, instruction: &str) -> String {
     format!(
-        "Here is the recipe:\n\n{recipe_json}\n\nApply this change: {instruction}",
+        "Here is the recipe:\n\n{recipe_json}\n\nIf reference photos are attached to this message, use them as additional context when they help.\n\nApply this change: {instruction}",
         recipe_json = recipe_json,
         instruction = instruction
     )
