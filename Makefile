@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ios-install ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -13,8 +13,9 @@ API_SOURCES := $(shell find server/src/api -type f -name '*.rs' 2>/dev/null) ser
 # Marker file for generated clients
 CLIENT_MARKER := cli/generated/ramekin-client/Cargo.toml
 
-# Default simulator target for iOS UI tests (override with IOS_UI_DESTINATION)
-IOS_UI_DESTINATION ?= platform=iOS Simulator,name=iPhone 15,OS=latest
+# Default simulator target for iOS tests (override with IOS_TEST_DESTINATION / IOS_UI_DESTINATION)
+IOS_TEST_DESTINATION ?= platform=iOS Simulator,name=iPhone 15,OS=latest
+IOS_UI_DESTINATION ?= $(IOS_TEST_DESTINATION)
 
 help: ## Show this help message
 	@echo 'Usage: make [target]'
@@ -204,7 +205,20 @@ ios-install: ios-generate ## Build and install iOS app on connected device
 		echo "Installing to device $$DEVICE_ID..." && \
 		xcrun devicectl device install app --device "$$DEVICE_ID" "$$APP_PATH"
 
+ios-test: ios-generate ## Run iOS unit tests
+	@mkdir -p logs
+	@rm -rf logs/ios-tests.xcresult
+	@cd ramekin-ios && xcodebuild test \
+		-project Ramekin.xcodeproj \
+		-scheme Ramekin \
+		-destination '$(IOS_TEST_DESTINATION)' \
+		-only-testing:RamekinTests \
+		-resultBundlePath ../logs/ios-tests.xcresult \
+		CODE_SIGNING_ALLOWED=NO
+	@echo "Unit test results at logs/ios-tests.xcresult"
+
 ios-test-ui: ios-generate ## Run iOS UI tests (requires dev server running)
+	@mkdir -p logs
 	@rm -rf logs/ios-ui-tests.xcresult
 	@cd ramekin-ios && xcodebuild test \
 		-project Ramekin.xcodeproj \
