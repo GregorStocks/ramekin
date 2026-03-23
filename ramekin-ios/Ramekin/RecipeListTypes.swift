@@ -92,6 +92,8 @@ struct RecipeRowView: View {
 enum NavigationDestination: Hashable {
     case recipe(UUID)
     case settings
+    case createRecipe
+    case editRecipe(UUID)
 }
 
 #Preview {

@@ -111,6 +111,10 @@ struct MealPlanView: View {
                     RecipeDetailView(recipeId: id)
                 case .settings:
                     SettingsView()
+                case .createRecipe:
+                    RecipeFormView(mode: .create)
+                case .editRecipe(let id):
+                    RecipeFormView(mode: .edit(recipeId: id))
                 }
             }
         }

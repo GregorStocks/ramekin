@@ -78,6 +78,14 @@ struct SettingsView: View {
                 .padding(.vertical, 4)
             }
 
+            Section("Library") {
+                NavigationLink {
+                    TagManagementView()
+                } label: {
+                    Label("Manage Tags", systemImage: "tag")
+                }
+            }
+
             Section("Account") {
                 HStack {
                     Label("Username", systemImage: "person.fill")
