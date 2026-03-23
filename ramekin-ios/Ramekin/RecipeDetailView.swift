@@ -3,7 +3,7 @@ import SwiftUI
 struct RecipeDetailView: View {
     let recipeId: UUID
 
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismiss) var dismiss
 
     @State var recipe: RecipeResponse?
     @State var currentVersionId: UUID?
