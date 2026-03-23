@@ -1,16 +1,11 @@
 import XCTest
 
 final class RecipeFlowTests: XCTestCase {
-    private let importedRecipeTitle = "Armenian-Style Rice Pilaf"
-
     var app: XCUIApplication!
 
     override func setUpWithError() throws {
         continueAfterFailure = false
         app = XCUIApplication()
-        if name.contains("testRecipeFlow") {
-            app.launchEnvironment["UITEST_RECIPE_SEARCH"] = importedRecipeTitle
-        }
         app.launch()
     }
 
@@ -24,35 +19,6 @@ final class RecipeFlowTests: XCTestCase {
         field.tap()
         field.tap(withNumberOfTaps: 3, numberOfTouches: 1)
         field.typeText(XCUIKeyboardKey.delete.rawValue)
-    }
-
-    private func recipeTitleIdentifier(for title: String) -> String {
-        "recipe-title-\(title)"
-    }
-
-    private func openRecipeFromList(named title: String, maxSwipes: Int = 40) -> Bool {
-        let recipeTitle = app.staticTexts[recipeTitleIdentifier(for: title)]
-
-        if recipeTitle.waitForExistence(timeout: 2) {
-            recipeTitle.tap()
-            return true
-        }
-
-        for _ in 0..<maxSwipes {
-            app.swipeUp()
-            if recipeTitle.waitForExistence(timeout: 1) {
-                recipeTitle.tap()
-                return true
-            }
-        }
-
-        let visibleCells = app.cells.allElementsBoundByIndex.filter { $0.exists }
-        if visibleCells.count == 1 {
-            visibleCells[0].tap()
-            return true
-        }
-
-        return false
     }
 
     private func scrollToElement(
@@ -75,6 +41,85 @@ final class RecipeFlowTests: XCTestCase {
         }
 
         return nil
+    }
+
+    private func visibleRecipeCells() -> [XCUIElement] {
+        app.cells.allElementsBoundByIndex.filter { cell in
+            cell.exists && cell.isHittable
+        }
+    }
+
+    private func recipeCellIdentifier(_ cell: XCUIElement, pageIndex: Int, fallbackIndex: Int) -> String {
+        if !cell.identifier.isEmpty {
+            return cell.identifier
+        }
+
+        let title = cell.staticTexts.firstMatch.label.trimmingCharacters(in: .whitespacesAndNewlines)
+        if !title.isEmpty {
+            return "recipe-title-\(title)"
+        }
+
+        return "page-\(pageIndex)-index-\(fallbackIndex)"
+    }
+
+    private func returnToRecipeList() {
+        let nonMenuButtons = app.navigationBars.buttons.allElementsBoundByIndex.filter { button in
+            button.exists && button.identifier != "ellipsis.circle"
+        }
+
+        if let backButton = nonMenuButtons.first {
+            backButton.tap()
+            return
+        }
+
+        XCTFail("Could not find a navigation button to return to the recipe list")
+    }
+
+    private func openRecipeWithRescrapeAction(maxPages: Int = 8) -> Bool {
+        var attemptedRecipeIdentifiers = Set<String>()
+
+        for pageIndex in 0..<maxPages {
+            var fallbackIndex = 0
+
+            while true {
+                let candidates = visibleRecipeCells().compactMap { cell -> (String, XCUIElement)? in
+                    let identifier = recipeCellIdentifier(
+                        cell,
+                        pageIndex: pageIndex,
+                        fallbackIndex: fallbackIndex
+                    )
+
+                    guard !attemptedRecipeIdentifiers.contains(identifier) else {
+                        return nil
+                    }
+
+                    return (identifier, cell)
+                }
+
+                guard let (identifier, cell) = candidates.first else {
+                    break
+                }
+
+                attemptedRecipeIdentifiers.insert(identifier)
+                fallbackIndex += 1
+                cell.tap()
+
+                let rescrapeButton = app.buttons["Rescrape"]
+                if rescrapeButton.waitForExistence(timeout: 3) {
+                    return true
+                }
+
+                returnToRecipeList()
+                XCTAssertTrue(
+                    app.cells.firstMatch.waitForExistence(timeout: 5),
+                    "Recipe list should reappear after returning from detail view"
+                )
+            }
+
+            app.swipeUp()
+        }
+
+        return false
     }
 
     /// Test the full recipe flow: login -> recipe list -> recipe detail
@@ -126,8 +171,8 @@ final class RecipeFlowTests: XCTestCase {
             // MARK: - Recipe Detail
 
             XCTAssertTrue(
-                openRecipeFromList(named: importedRecipeTitle),
-                "Seeded recipe with source URL should exist somewhere in the recipe list"
+                openRecipeWithRescrapeAction(),
+                "At least one recipe in the seeded list should expose the rescrape action"
             )
 
             // Wait for detail view to load

@@ -24,13 +24,6 @@ struct RecipeListView: View {
     @State private var showingAdvancedFilters = false
 
     private let pageSize: Int64 = 20
-    private let uiTestRecipeSearch = ProcessInfo.processInfo.environment["UITEST_RECIPE_SEARCH"]
-
-    init() {
-        _searchText = State(
-            initialValue: ProcessInfo.processInfo.environment["UITEST_RECIPE_SEARCH"] ?? ""
-        )
-    }
 
     private var hasActiveFilters: Bool {
         currentFilterState.hasAnyFilters
@@ -38,7 +31,7 @@ struct RecipeListView: View {
 
     private var currentFilterState: RecipeListFilterState {
         RecipeListFilterState(
-            searchText: uiTestRecipeSearch ?? searchText,
+            searchText: searchText,
             selectedTags: selectedTags,
             photoFilter: photoFilter,
             source: sourceFilter,
@@ -97,9 +90,6 @@ struct RecipeListView: View {
             DebugLogger.shared.log("Pull-to-refresh completed", source: "RecipeList")
         }
         .task {
-            if let uiTestRecipeSearch, searchText != uiTestRecipeSearch {
-                searchText = uiTestRecipeSearch
-            }
             loadPersistedTags()
             loadPersistedAvailableTags()
             await loadTags()
