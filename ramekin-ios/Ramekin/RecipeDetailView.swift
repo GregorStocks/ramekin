@@ -96,6 +96,7 @@ struct RecipeDetailView: View {
                         } label: {
                             Label("Delete Recipe", systemImage: "trash")
                         }
+                        .disabled(actionsDisabledForHistoricalVersion)
                     } label: {
                         Image(systemName: "ellipsis.circle")
                     }
