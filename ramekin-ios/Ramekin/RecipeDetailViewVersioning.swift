@@ -297,6 +297,19 @@ extension RecipeDetailView {
     }
 
     @MainActor
+    func deleteRecipe() async {
+        isDeleting = true
+        do {
+            try await RecipesAPI.deleteRecipe(id: recipeId)
+            NotificationCenter.default.post(name: .recipeDeleted, object: nil)
+            dismiss()
+        } catch {
+            deleteError = error.localizedDescription
+            isDeleting = false
+        }
+    }
+
+    @MainActor
     func loadRecipe(versionId: UUID? = nil) async {
         isLoading = true
         error = nil

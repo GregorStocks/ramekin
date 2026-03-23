@@ -3,6 +3,8 @@ import SwiftUI
 struct RecipeDetailView: View {
     let recipeId: UUID
 
+    @Environment(\.dismiss) var dismiss
+
     @State var recipe: RecipeResponse?
     @State var currentVersionId: UUID?
     @State var versionHistory: [VersionSummary] = []
@@ -24,6 +26,9 @@ struct RecipeDetailView: View {
     @State var enrichResult: RecipeContent?
     @State var comparedOlderVersion: RecipeResponse?
     @State var comparedNewerVersion: RecipeResponse?
+    @State var showingDeleteConfirmation = false
+    @State var isDeleting = false
+    @State var deleteError: String?
 
     var isViewingHistoricalVersion: Bool {
         RecipeVersionSupport.isViewingHistoricalVersion(
@@ -85,6 +90,13 @@ struct RecipeDetailView: View {
                             }
                             .disabled(actionsDisabledForHistoricalVersion)
                         }
+                        Divider()
+                        Button(role: .destructive) {
+                            showingDeleteConfirmation = true
+                        } label: {
+                            Label("Delete Recipe", systemImage: "trash")
+                        }
+                        .disabled(actionsDisabledForHistoricalVersion)
                     } label: {
                         Image(systemName: "ellipsis.circle")
                     }
@@ -138,6 +150,21 @@ struct RecipeDetailView: View {
                 error: compareError,
                 onClose: closeCompareSheet
             )
+        }
+        .confirmationDialog("Delete Recipe", isPresented: $showingDeleteConfirmation) {
+            Button("Delete Recipe", role: .destructive) {
+                Task { await deleteRecipe() }
+            }
+        } message: {
+            Text("Are you sure you want to delete this recipe? This cannot be undone.")
+        }
+        .alert("Delete Failed", isPresented: Binding(
+            get: { deleteError != nil },
+            set: { if !$0 { deleteError = nil } }
+        )) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(deleteError ?? "")
         }
         .alert(
             "Revert to this version?",

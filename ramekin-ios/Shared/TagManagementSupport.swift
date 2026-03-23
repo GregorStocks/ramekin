@@ -2,6 +2,7 @@ import Foundation
 
 extension Notification.Name {
     static let tagsDidChange = Notification.Name("TagsDidChangeNotification")
+    static let recipeDeleted = Notification.Name("RecipeDeletedNotification")
 }
 
 enum TagFilterCache {
