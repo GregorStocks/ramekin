@@ -82,10 +82,6 @@ final class RecipeFlowTests: XCTestCase {
             detailScreenshot.lifetime = .keepAlways
             add(detailScreenshot)
 
-            let actionsButton = app.buttons["Recipe actions"]
-            XCTAssertTrue(actionsButton.waitForExistence(timeout: 5), "Recipe actions button should exist")
-            actionsButton.tap()
-
             let rescrapeButton = app.buttons["Rescrape"]
             XCTAssertTrue(
                 rescrapeButton.waitForExistence(timeout: 5),

@@ -29,14 +29,6 @@ struct RecipeDetailView: View {
             if let recipe = recipe {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
-                        if let sourceUrl = recipe.sourceUrl, !sourceUrl.isEmpty {
-                            Button {
-                                Task { await rescrapeRecipe() }
-                            } label: {
-                                Label(isRescraping ? "Rescraping..." : "Rescrape", systemImage: "arrow.clockwise")
-                            }
-                            .disabled(isRescraping)
-                        }
                         Button {
                             showingCustomEnrich = true
                         } label: {
@@ -55,10 +47,8 @@ struct RecipeDetailView: View {
                             }
                         }
                     } label: {
-                        Label("Recipe actions", systemImage: "ellipsis.circle")
-                            .labelStyle(.iconOnly)
+                        Image(systemName: "ellipsis.circle")
                     }
-                    .accessibilityIdentifier("recipe-detail-actions")
                 }
             }
         }
@@ -141,6 +131,10 @@ struct RecipeDetailView: View {
                 // Header
                 headerSection(recipe)
 
+                if let sourceUrl = recipe.sourceUrl, let url = URL(string: sourceUrl) {
+                    sourceLinkSection(url: url, name: recipe.sourceName)
+                }
+
                 // Tags
                 if !recipe.tags.isEmpty {
                     tagsSection(recipe.tags)
@@ -163,11 +157,6 @@ struct RecipeDetailView: View {
                     notesSection(notes)
                 }
 
-                // Source link
-                if let sourceUrl = recipe.sourceUrl, let url = URL(string: sourceUrl) {
-                    Divider()
-                    sourceLinkSection(url: url, name: recipe.sourceName)
-                }
             }
             .padding()
         }
@@ -304,14 +293,25 @@ struct RecipeDetailView: View {
     }
 
     private func sourceLinkSection(url: URL, name: String?) -> some View {
-        Link(destination: url) {
-            HStack {
-                Image(systemName: "link")
-                Text(name ?? url.host ?? "View Original")
-                Spacer()
-                Image(systemName: "arrow.up.right.square")
+        VStack(alignment: .leading, spacing: 12) {
+            Link(destination: url) {
+                HStack {
+                    Image(systemName: "link")
+                    Text(name ?? url.host ?? "View Original")
+                    Spacer()
+                    Image(systemName: "arrow.up.right.square")
+                }
+                .foregroundColor(.orange)
             }
-            .foregroundColor(.orange)
+
+            Button {
+                Task { await rescrapeRecipe() }
+            } label: {
+                Label(isRescraping ? "Rescraping..." : "Rescrape", systemImage: "arrow.clockwise")
+                    .frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.bordered)
+            .disabled(isRescraping)
         }
     }
 
