@@ -10,6 +10,7 @@ struct RecipeDetailView: View {
     @State private var showingAddToMealPlan = false
     @State private var showingCustomEnrich = false
     @State private var enrichResult: RecipeContent?
+    @State private var isRescraping = false
 
     var body: some View {
         ScrollView {
@@ -28,6 +29,14 @@ struct RecipeDetailView: View {
             if let recipe = recipe {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
+                        if let sourceUrl = recipe.sourceUrl, !sourceUrl.isEmpty {
+                            Button {
+                                Task { await rescrapeRecipe() }
+                            } label: {
+                                Label(isRescraping ? "Rescraping..." : "Rescrape", systemImage: "arrow.clockwise")
+                            }
+                            .disabled(isRescraping)
+                        }
                         Button {
                             showingCustomEnrich = true
                         } label: {
@@ -48,6 +57,8 @@ struct RecipeDetailView: View {
                     } label: {
                         Image(systemName: "ellipsis.circle")
                     }
+                    .accessibilityLabel("Recipe actions")
+                    .accessibilityIdentifier("recipe-detail-actions")
                 }
             }
         }
@@ -118,6 +129,15 @@ struct RecipeDetailView: View {
             }
 
             VStack(alignment: .leading, spacing: 20) {
+                if isRescraping {
+                    RecipeDetailStatusBanner(message: "Rescraping recipe...", style: .progress)
+                        .accessibilityIdentifier("recipe-detail-rescrape-progress")
+                }
+
+                if let error = error {
+                    RecipeDetailStatusBanner(message: error, style: .error)
+                }
+
                 // Header
                 headerSection(recipe)
 
@@ -372,6 +392,57 @@ extension RecipeDetailView {
         }
     }
 
+    func rescrapeRecipe() async {
+        guard let recipe = recipe, recipe.sourceUrl?.isEmpty == false else {
+            await MainActor.run {
+                error = "Recipe has no source URL to rescrape from"
+            }
+            return
+        }
+
+        await MainActor.run {
+            isRescraping = true
+            error = nil
+        }
+
+        do {
+            let response = try await RecipesAPI.rescrape(id: recipe.id)
+            try await waitForRescrapeCompletion(jobId: response.jobId)
+            await loadRecipe()
+        } catch is CancellationError {
+            // Task was cancelled, not a real error
+        } catch {
+            await MainActor.run {
+                self.error = error.localizedDescription
+            }
+        }
+
+        await MainActor.run {
+            isRescraping = false
+        }
+    }
+
+    func waitForRescrapeCompletion(jobId: UUID) async throws {
+        let timeout = Date().addingTimeInterval(120)
+
+        while Date() < timeout {
+            let job = try await ScrapeAPI.getScrape(id: jobId)
+
+            if job.status == "completed" {
+                return
+            }
+
+            if job.status == "failed" {
+                let message = job.error ?? "Unknown error"
+                throw RamekinAPI.APIError.httpError(500, "Rescrape failed: \(message)")
+            }
+
+            try await Task.sleep(nanoseconds: 500_000_000)
+        }
+
+        throw RamekinAPI.APIError.httpError(408, "Rescrape timed out")
+    }
+
     func applyEnrichment(_ modified: RecipeContent) async {
         let updateRequest = UpdateRecipeRequest(
             cookTime: modified.cookTime,
@@ -403,28 +474,6 @@ extension RecipeDetailView {
                 self.error = error.localizedDescription
             }
         }
-    }
-}
-
-// MARK: - Photo Carousel
-
-struct PhotoCarouselView: View {
-    let photoIds: [UUID]
-
-    var body: some View {
-        TabView {
-            ForEach(photoIds, id: \.self) { photoId in
-                AuthenticatedImage(url: photoURL(for: photoId))
-                    .clipped()
-            }
-        }
-        .tabViewStyle(.page)
-    }
-
-    private func photoURL(for photoId: UUID) -> URL? {
-        guard let baseURL = RamekinAPI.shared.serverURL else { return nil }
-        // Use full size for detail view, not thumbnail
-        return URL(string: "\(baseURL)/api/photos/\(photoId.uuidString)")
     }
 }
 

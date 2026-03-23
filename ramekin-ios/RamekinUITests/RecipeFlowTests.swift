@@ -81,6 +81,16 @@ final class RecipeFlowTests: XCTestCase {
             detailScreenshot.name = "03-RecipeDetail"
             detailScreenshot.lifetime = .keepAlways
             add(detailScreenshot)
+
+            let actionsButton = app.buttons["recipe-detail-actions"]
+            XCTAssertTrue(actionsButton.waitForExistence(timeout: 5), "Recipe actions button should exist")
+            actionsButton.tap()
+
+            let rescrapeButton = app.buttons["Rescrape"]
+            XCTAssertTrue(
+                rescrapeButton.waitForExistence(timeout: 5),
+                "Rescrape action should exist for imported recipes with a source URL"
+            )
         } else {
             // Still take a screenshot of whatever we see after login
             let afterLoginScreenshot = XCTAttachment(screenshot: app.screenshot())
