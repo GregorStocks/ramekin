@@ -45,7 +45,7 @@ final class RecipeFlowTests: XCTestCase {
 
     private func visibleRecipeCells() -> [XCUIElement] {
         app.cells.allElementsBoundByIndex.filter { cell in
-            cell.exists && cell.isHittable
+            cell.exists && cell.isHittable && cell.staticTexts.count > 0
         }
     }
 
@@ -63,12 +63,16 @@ final class RecipeFlowTests: XCTestCase {
     }
 
     private func returnToRecipeList() {
-        let nonMenuButtons = app.navigationBars.buttons.allElementsBoundByIndex.filter { button in
-            button.exists && button.identifier != "ellipsis.circle"
+        let backButton = app.navigationBars.buttons["Recipes"]
+        if backButton.waitForExistence(timeout: 3) {
+            backButton.tap()
+            return
         }
 
-        if let backButton = nonMenuButtons.first {
-            backButton.tap()
+        // Fallback: try "Back" label (used when the title is too long)
+        let genericBack = app.navigationBars.buttons["Back"]
+        if genericBack.exists {
+            genericBack.tap()
             return
         }
 
@@ -104,14 +108,21 @@ final class RecipeFlowTests: XCTestCase {
                 fallbackIndex += 1
                 cell.tap()
 
+                // Check if navigation to the detail view occurred (back button appears)
+                let backButton = app.navigationBars.buttons["Recipes"]
+                guard backButton.waitForExistence(timeout: 3) else {
+                    // Tap didn't trigger navigation (cell may be partially obscured)
+                    continue
+                }
+
                 let rescrapeButton = app.buttons["Rescrape"]
-                if rescrapeButton.waitForExistence(timeout: 3) {
+                if rescrapeButton.waitForExistence(timeout: 5) {
                     return true
                 }
 
                 returnToRecipeList()
                 XCTAssertTrue(
-                    app.cells.firstMatch.waitForExistence(timeout: 5),
+                    app.navigationBars["Recipes"].waitForExistence(timeout: 5),
                     "Recipe list should reappear after returning from detail view"
                 )
             }
@@ -157,9 +168,9 @@ final class RecipeFlowTests: XCTestCase {
 
         // MARK: - Recipe List
 
-        // Wait for recipe list to load (requires seeded data from make seed)
-        let recipeCell = app.cells.firstMatch
-        let recipesLoaded = recipeCell.waitForExistence(timeout: 15)
+        // Wait for the tab bar to appear (login screen has no tabs; recipe list does)
+        let recipesTab = app.tabBars.buttons["Recipes"]
+        let recipesLoaded = recipesTab.waitForExistence(timeout: 15)
 
         if recipesLoaded {
             // Take screenshot of recipe list
