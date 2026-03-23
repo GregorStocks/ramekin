@@ -21,6 +21,12 @@ struct RecipeListView: View {
 
     private let pageSize: Int64 = 20
 
+    init() {
+        _searchText = State(
+            initialValue: ProcessInfo.processInfo.environment["UITEST_RECIPE_SEARCH"] ?? ""
+        )
+    }
+
     private var hasActiveFilters: Bool {
         !selectedTags.isEmpty || photoFilter != .any
     }

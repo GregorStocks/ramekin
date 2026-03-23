@@ -8,6 +8,9 @@ final class RecipeFlowTests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
         app = XCUIApplication()
+        if name.contains("testRecipeFlow") {
+            app.launchEnvironment["UITEST_RECIPE_SEARCH"] = importedRecipeTitle
+        }
         app.launch()
     }
 
