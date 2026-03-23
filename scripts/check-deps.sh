@@ -39,10 +39,10 @@ python3 -c "import requests" 2>/dev/null || MISSING+=("requests (uv pip install 
 # Check env files (not needed in CI, created explicitly there)
 if [ -z "$CI" ]; then
     if [ ! -f "$PROJECT_ROOT/dev.env" ]; then
-        MISSING+=("dev.env file (copy from dev.env.example)")
+        MISSING+=("dev.env file (run: make worktree-setup)")
     fi
     if [ ! -f "$PROJECT_ROOT/test.env" ]; then
-        MISSING+=("test.env file (copy from test.env.example)")
+        MISSING+=("test.env file (run: make worktree-setup)")
     fi
 fi
 
