@@ -26,24 +26,22 @@ final class RecipeFlowTests: XCTestCase {
         field.typeText(XCUIKeyboardKey.delete.rawValue)
     }
 
-    private func recipeRowIdentifier(for title: String) -> String {
-        "recipe-row-\(title)"
+    private func recipeTitleIdentifier(for title: String) -> String {
+        "recipe-title-\(title)"
     }
 
     private func openRecipeFromList(named title: String, maxSwipes: Int = 40) -> Bool {
-        let recipeRow = app.descendants(matching: .any)
-            .matching(identifier: recipeRowIdentifier(for: title))
-            .firstMatch
+        let recipeTitle = app.staticTexts[recipeTitleIdentifier(for: title)]
 
-        if recipeRow.waitForExistence(timeout: 2) {
-            recipeRow.tap()
+        if recipeTitle.waitForExistence(timeout: 2) {
+            recipeTitle.tap()
             return true
         }
 
         for _ in 0..<maxSwipes {
             app.swipeUp()
-            if recipeRow.waitForExistence(timeout: 1) {
-                recipeRow.tap()
+            if recipeTitle.waitForExistence(timeout: 1) {
+                recipeTitle.tap()
                 return true
             }
         }
@@ -57,21 +55,22 @@ final class RecipeFlowTests: XCTestCase {
         return false
     }
 
-    private func scrollToStaticText(
-        containing text: String,
+    private func scrollToElement(
+        identifier: String,
         maxSwipes: Int = 6
     ) -> XCUIElement? {
-        let predicate = NSPredicate(format: "label CONTAINS[c] %@", text)
-        let matchingText = app.staticTexts.matching(predicate).firstMatch
+        let matchingElement = app.descendants(matching: .any)
+            .matching(identifier: identifier)
+            .firstMatch
 
-        if matchingText.waitForExistence(timeout: 2) {
-            return matchingText
+        if matchingElement.waitForExistence(timeout: 2) {
+            return matchingElement
         }
 
         for _ in 0..<maxSwipes {
             app.swipeUp()
-            if matchingText.waitForExistence(timeout: 1) {
-                return matchingText
+            if matchingElement.waitForExistence(timeout: 1) {
+                return matchingElement
             }
         }
 
@@ -174,7 +173,7 @@ final class RecipeFlowTests: XCTestCase {
         app.buttons["Sign In"].tap()
 
         // Wait for error message
-        let errorExists = scrollToStaticText(containing: "Invalid credentials") != nil
+        let errorExists = scrollToElement(identifier: "login-error-message") != nil
 
         let errorScreenshot = XCTAttachment(screenshot: app.screenshot())
         errorScreenshot.name = "LoginError"

@@ -95,6 +95,7 @@ struct LoginView: View {
                             .foregroundColor(.red)
                         Text(error)
                             .foregroundColor(.red)
+                            .accessibilityIdentifier("login-error-message")
                     }
                 }
             }

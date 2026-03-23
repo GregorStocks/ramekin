@@ -20,6 +20,7 @@ struct RecipeListView: View {
     @State private var availableTags: [TagItem] = []
 
     private let pageSize: Int64 = 20
+    private let uiTestRecipeSearch = ProcessInfo.processInfo.environment["UITEST_RECIPE_SEARCH"]
 
     init() {
         _searchText = State(
@@ -294,7 +295,8 @@ extension RecipeListView {
     private func buildQuery() -> String? {
         var parts: [String] = []
 
-        let trimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        let effectiveSearchText = uiTestRecipeSearch ?? searchText
+        let trimmed = effectiveSearchText.trimmingCharacters(in: .whitespacesAndNewlines)
         if !trimmed.isEmpty {
             parts.append(trimmed)
         }

@@ -67,6 +67,7 @@ struct RecipeRowView: View {
                 Text(recipe.title)
                     .font(.headline)
                     .lineLimit(2)
+                    .accessibilityIdentifier("recipe-title-\(recipe.title)")
 
                 if let description = recipe.description, !description.isEmpty {
                     Text(description)
