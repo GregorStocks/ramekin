@@ -16,6 +16,8 @@ use serde::{Deserialize, Serialize};
 pub struct CustomEnrichRequest {
     #[serde(rename = "instruction")]
     pub instruction: String,
+    #[serde(rename = "photo_ids", skip_serializing_if = "Option::is_none")]
+    pub photo_ids: Option<Vec<uuid::Uuid>>,
     #[serde(rename = "recipe")]
     pub recipe: Box<models::RecipeContent>,
 }
@@ -25,6 +27,7 @@ impl CustomEnrichRequest {
     pub fn new(instruction: String, recipe: models::RecipeContent) -> CustomEnrichRequest {
         CustomEnrichRequest {
             instruction,
+            photo_ids: None,
             recipe: Box::new(recipe),
         }
     }

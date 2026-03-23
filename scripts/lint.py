@@ -270,7 +270,16 @@ def lint_typescript(project_root: Path) -> tuple[str, bool]:
 
     # Run tsc
     tsc_result = subprocess.run(
-        ["npx", "tsc", "-p", "tsconfig.app.json", "--noEmit"],
+        [
+            "npx",
+            "--yes",
+            "-p",
+            "typescript",
+            "tsc",
+            "-p",
+            "tsconfig.app.json",
+            "--noEmit",
+        ],
         cwd=ui_dir,
         capture_output=True,
         text=True,

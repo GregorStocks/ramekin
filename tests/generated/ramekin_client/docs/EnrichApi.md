@@ -85,6 +85,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Modified recipe |  -  |
+**400** | Invalid photo IDs |  -  |
 **401** | Unauthorized |  -  |
 **500** | Internal server error |  -  |
 **503** | AI service unavailable |  -  |

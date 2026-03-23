@@ -18,7 +18,8 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from ramekin_client.models.recipe_content import RecipeContent
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,8 +29,9 @@ class CustomEnrichRequest(BaseModel):
     Request body for custom enrichment.
     """ # noqa: E501
     instruction: StrictStr
+    photo_ids: Optional[List[UUID]] = None
     recipe: RecipeContent
-    __properties: ClassVar[List[str]] = ["instruction", "recipe"]
+    __properties: ClassVar[List[str]] = ["instruction", "photo_ids", "recipe"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,6 +88,7 @@ class CustomEnrichRequest(BaseModel):
 
         _obj = cls.model_validate({
             "instruction": obj.get("instruction"),
+            "photo_ids": obj.get("photo_ids"),
             "recipe": RecipeContent.from_dict(obj["recipe"]) if obj.get("recipe") is not None else None
         })
         return _obj

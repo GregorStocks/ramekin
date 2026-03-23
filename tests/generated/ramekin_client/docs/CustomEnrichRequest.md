@@ -7,6 +7,7 @@ Request body for custom enrichment.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **instruction** | **str** |  | 
+**photo_ids** | **List[UUID]** |  | [optional] 
 **recipe** | [**RecipeContent**](RecipeContent.md) |  | 
 
 ## Example

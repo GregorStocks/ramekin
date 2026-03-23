@@ -63,21 +63,9 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
     def _generate_response_content(self, request):
         """Generate appropriate mock response based on the request type."""
         messages = request.get("messages", [])
+        has_images = False
 
-        # Check for vision request (content is an array with image_url parts)
-        for msg in messages:
-            content = msg.get("content", "")
-            if isinstance(content, list):
-                # This is a vision/multimodal request
-                has_images = any(
-                    part.get("type") == "image_url"
-                    for part in content
-                    if isinstance(part, dict)
-                )
-                if has_images:
-                    return self._mock_photo_extract()
-
-        # Extract text from messages
+        # Extract text and note whether any image inputs were provided.
         all_text = ""
         for m in messages:
             content = m.get("content", "")
@@ -85,18 +73,23 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                 all_text += " " + content
             elif isinstance(content, list):
                 for part in content:
-                    if isinstance(part, dict) and part.get("type") == "text":
+                    if not isinstance(part, dict):
+                        continue
+                    if part.get("type") == "text":
                         all_text += " " + part.get("text", "")
+                    elif part.get("type") == "image_url":
+                        has_images = True
 
-        # Custom enrich: extract the recipe from the request and return it
-        # with a small modification to prove the "change" was applied
         if "recipe modification assistant" in all_text:
-            return self._mock_custom_enrich(all_text)
+            return self._mock_custom_enrich(all_text, has_images=has_images)
+
+        if has_images:
+            return self._mock_photo_extract()
 
         # Default: auto-tag response
         return '{"suggested_tags": ["test-auto-tag"]}'
 
-    def _mock_custom_enrich(self, all_text):
+    def _mock_custom_enrich(self, all_text, has_images=False):
         """Return a modified recipe for custom enrich requests."""
         # Try to extract the recipe JSON from the prompt
         try:
@@ -104,15 +97,27 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
             start = all_text.index("Here is the recipe:") + len("Here is the recipe:")
             end = all_text.index("Apply this change:")
             recipe_json = all_text[start:end].strip()
+            recipe_json = recipe_json.replace(
+                (
+                    "If reference photos are attached to this message, use them as "
+                    "additional context when they help."
+                ),
+                "",
+            ).strip()
             recipe = json.loads(recipe_json)
-            # Apply a visible modification: prepend "[Modified] " to the title
-            recipe["title"] = "[Modified] " + recipe.get("title", "")
+            # Apply a visible modification so tests can tell whether images were passed.
+            prefix = "[Modified with Photo] " if has_images else "[Modified] "
+            recipe["title"] = prefix + recipe.get("title", "")
             return json.dumps(recipe)
         except (ValueError, json.JSONDecodeError):
             # Fallback: return a minimal valid recipe
             return json.dumps(
                 {
-                    "title": "[Modified] Test Recipe",
+                    "title": (
+                        "[Modified with Photo] Test Recipe"
+                        if has_images
+                        else "[Modified] Test Recipe"
+                    ),
                     "instructions": "Modified instructions.",
                     "ingredients": [],
                     "tags": [],
