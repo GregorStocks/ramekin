@@ -80,6 +80,9 @@ struct MealPlanView: View {
             .onChange(of: weekStart) { _ in
                 Task { await loadMealPlans() }
             }
+            .onReceive(NotificationCenter.default.publisher(for: .recipeDeleted)) { _ in
+                Task { await loadMealPlans() }
+            }
             .sheet(isPresented: $showingRecipePicker) {
                 RecipePickerSheet(
                     date: pickerDate,

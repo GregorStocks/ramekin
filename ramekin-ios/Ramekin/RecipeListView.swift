@@ -85,6 +85,9 @@ struct RecipeListView: View {
             loadPersistedAvailableTags()
             reloadRecipes()
         }
+        .onReceive(NotificationCenter.default.publisher(for: .recipeDeleted)) { _ in
+            Task { await loadRecipes(reset: true) }
+        }
     }
 
     // MARK: - Sort Menu
