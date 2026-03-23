@@ -9,6 +9,7 @@ struct RecipeDetailView: View {
     @State private var showingAddToShoppingList = false
     @State private var showingAddToMealPlan = false
     @State private var showingCustomEnrich = false
+    @State private var showingEdit = false
     @State private var enrichResult: RecipeContent?
 
     var body: some View {
@@ -28,6 +29,11 @@ struct RecipeDetailView: View {
             if let recipe = recipe {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
+                        Button {
+                            showingEdit = true
+                        } label: {
+                            Label("Edit Recipe", systemImage: "pencil")
+                        }
                         Button {
                             showingCustomEnrich = true
                         } label: {
@@ -65,6 +71,13 @@ struct RecipeDetailView: View {
             if let recipe = recipe {
                 CustomEnrichSheet(recipe: recipe, isPresented: $showingCustomEnrich) { result in
                     enrichResult = result
+                }
+            }
+        }
+        .sheet(isPresented: $showingEdit) {
+            NavigationStack {
+                RecipeFormView(mode: .edit(recipeId: recipeId)) {
+                    Task { await loadRecipe() }
                 }
             }
         }

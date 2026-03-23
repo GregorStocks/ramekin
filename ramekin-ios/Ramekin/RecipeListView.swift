@@ -58,6 +58,9 @@ struct RecipeListView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 HStack(spacing: 16) {
+                    NavigationLink(value: NavigationDestination.createRecipe) {
+                        Image(systemName: "plus")
+                    }
                     sortMenu
                     NavigationLink(value: NavigationDestination.settings) {
                         Image(systemName: "gear")
@@ -224,7 +227,7 @@ struct RecipeListView: View {
                 .foregroundColor(.secondary)
             Text("No recipes yet")
                 .font(.title2)
-            Text("Use the Share button in Safari to save recipes")
+            Text("Tap + to create a recipe, or use the Share button in Safari to import one")
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
