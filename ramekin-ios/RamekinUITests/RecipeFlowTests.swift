@@ -23,22 +23,43 @@ final class RecipeFlowTests: XCTestCase {
         field.typeText(XCUIKeyboardKey.delete.rawValue)
     }
 
-    private func openRecipeFromList(named title: String, maxSwipes: Int = 20) -> Bool {
-        let recipeCell = app.cells.containing(.staticText, identifier: title).firstMatch
-        if recipeCell.waitForExistence(timeout: 2) {
-            recipeCell.tap()
+    private func openRecipeFromList(named title: String, maxSwipes: Int = 40) -> Bool {
+        let recipeTitle = app.staticTexts[title]
+        if recipeTitle.waitForExistence(timeout: 2) {
+            recipeTitle.tap()
             return true
         }
 
         for _ in 0..<maxSwipes {
             app.swipeUp()
-            if recipeCell.waitForExistence(timeout: 1) {
-                recipeCell.tap()
+            if recipeTitle.waitForExistence(timeout: 1) {
+                recipeTitle.tap()
                 return true
             }
         }
 
         return false
+    }
+
+    private func scrollToStaticText(
+        containing text: String,
+        maxSwipes: Int = 6
+    ) -> XCUIElement? {
+        let predicate = NSPredicate(format: "label CONTAINS[c] %@", text)
+        let matchingText = app.staticTexts.matching(predicate).firstMatch
+
+        if matchingText.waitForExistence(timeout: 2) {
+            return matchingText
+        }
+
+        for _ in 0..<maxSwipes {
+            app.swipeUp()
+            if matchingText.waitForExistence(timeout: 1) {
+                return matchingText
+            }
+        }
+
+        return nil
     }
 
     /// Test the full recipe flow: login -> recipe list -> recipe detail
@@ -137,7 +158,7 @@ final class RecipeFlowTests: XCTestCase {
         app.buttons["Sign In"].tap()
 
         // Wait for error message
-        let errorExists = app.staticTexts.matching(NSPredicate(format: "label CONTAINS 'error' OR label CONTAINS 'Invalid' OR label CONTAINS 'unauthorized'")).firstMatch.waitForExistence(timeout: 10)
+        let errorExists = scrollToStaticText(containing: "Invalid credentials") != nil
 
         let errorScreenshot = XCTAttachment(screenshot: app.screenshot())
         errorScreenshot.name = "LoginError"
