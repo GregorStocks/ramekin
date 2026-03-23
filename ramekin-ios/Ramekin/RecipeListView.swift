@@ -16,13 +16,28 @@ struct RecipeListView: View {
 
     @AppStorage("recipeSortOrder") private var sortOrder = RecipeSortOrder.newest
     @AppStorage("recipePhotoFilter") private var photoFilter = PhotoFilter.any
+    @AppStorage("recipeSourceFilter") private var sourceFilter = ""
+    @AppStorage("recipeCreatedAfterFilter") private var createdAfterFilter = ""
+    @AppStorage("recipeCreatedBeforeFilter") private var createdBeforeFilter = ""
     @State private var selectedTags: Set<String> = []
     @State private var availableTags: [TagItem] = []
+    @State private var showingAdvancedFilters = false
 
     private let pageSize: Int64 = 20
 
     private var hasActiveFilters: Bool {
-        !selectedTags.isEmpty || photoFilter != .any
+        currentFilterState.hasAnyFilters
+    }
+
+    private var currentFilterState: RecipeListFilterState {
+        RecipeListFilterState(
+            searchText: searchText,
+            selectedTags: selectedTags,
+            photoFilter: photoFilter,
+            source: sourceFilter,
+            createdAfter: createdAfterFilter,
+            createdBefore: createdBeforeFilter
+        )
     }
 
     var body: some View {
@@ -88,6 +103,15 @@ struct RecipeListView: View {
         .onReceive(NotificationCenter.default.publisher(for: .recipeDeleted)) { _ in
             Task { await loadRecipes(reset: true) }
         }
+        .sheet(isPresented: $showingAdvancedFilters) {
+            RecipeAdvancedFiltersSheet(
+                source: $sourceFilter,
+                createdAfter: $createdAfterFilter,
+                createdBefore: $createdBeforeFilter
+            ) {
+                reloadRecipes()
+            }
+        }
     }
 
     // MARK: - Sort Menu
@@ -114,77 +138,23 @@ struct RecipeListView: View {
     // MARK: - Filter Bar
 
     private var filterBar: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
-                photoFilterMenu
-
-                ForEach(availableTags) { tag in
-                    Button {
-                        toggleTag(tag.name)
-                    } label: {
-                        chipView(
-                            text: tag.name,
-                            isSelected: selectedTags.contains(tag.name)
-                        )
-                    }
-                    .buttonStyle(.plain)
-                }
-
-                if hasActiveFilters {
-                    Button {
-                        clearFilters()
-                    } label: {
-                        Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(.secondary)
-                    }
-                    .buttonStyle(.plain)
-                }
-            }
-            .padding(.horizontal)
-            .padding(.vertical, 8)
-        }
-    }
-
-    private var photoFilterMenu: some View {
-        Menu {
-            ForEach(PhotoFilter.allCases, id: \.self) { filter in
-                Button {
-                    photoFilter = filter
-                    reloadRecipes()
-                } label: {
-                    if photoFilter == filter {
-                        Label(filter.label, systemImage: "checkmark")
-                    } else {
-                        Text(filter.label)
-                    }
-                }
-            }
-        } label: {
-            chipView(
-                text: photoFilter != .any ? photoFilter.label : nil,
-                icon: "camera",
-                isSelected: photoFilter != .any
-            )
-        }
-    }
-
-    private func chipView(text: String? = nil, icon: String? = nil, isSelected: Bool) -> some View {
-        HStack(spacing: 4) {
-            if let icon = icon {
-                Image(systemName: icon)
-                    .font(.caption)
-            }
-            if let text = text {
-                Text(text)
-                    .font(.caption)
-                    .fontWeight(.medium)
-            }
-        }
-        .padding(.horizontal, 10)
-        .padding(.vertical, 6)
-        .background(isSelected ? Color.orange : Color(.systemGray5))
-        .foregroundColor(isSelected ? .white : .primary)
-        .clipShape(Capsule())
+        RecipeListFilterBar(
+            availableTags: availableTags,
+            selectedTags: selectedTags,
+            photoFilter: photoFilter,
+            advancedFilterLabel: RecipeListFilterSupport.advancedFilterLabel(for: currentFilterState) ?? "Filters",
+            hasAdvancedFilters: currentFilterState.hasAdvancedFilters,
+            hasActiveFilters: hasActiveFilters,
+            onSelectPhotoFilter: { filter in
+                photoFilter = filter
+                reloadRecipes()
+            },
+            onOpenAdvancedFilters: {
+                showingAdvancedFilters = true
+            },
+            onToggleTag: toggleTag,
+            onClearFilters: clearFilters
+        )
     }
 
     // MARK: - Subviews
@@ -285,28 +255,7 @@ struct RecipeListView: View {
 
 extension RecipeListView {
     private func buildQuery() -> String? {
-        var parts: [String] = []
-
-        let trimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
-        if !trimmed.isEmpty {
-            parts.append(trimmed)
-        }
-
-        for tag in selectedTags.sorted() {
-            if tag.contains(" ") {
-                parts.append("tag:\"\(tag)\"")
-            } else {
-                parts.append("tag:\(tag)")
-            }
-        }
-
-        switch photoFilter {
-        case .any: break
-        case .hasPhotos: parts.append("has:photos")
-        case .noPhotos: parts.append("no:photos")
-        }
-
-        return parts.isEmpty ? nil : parts.joined(separator: " ")
+        RecipeListFilterSupport.buildQuery(from: currentFilterState)
     }
 
     private func toggleTag(_ name: String) {
@@ -322,6 +271,9 @@ extension RecipeListView {
     private func clearFilters() {
         selectedTags.removeAll()
         photoFilter = .any
+        sourceFilter = ""
+        createdAfterFilter = ""
+        createdBeforeFilter = ""
         persistSelectedTags()
         reloadRecipes()
     }
