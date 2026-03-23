@@ -3,7 +3,7 @@
 use crate::ai::prompts::custom_enrich::{
     render_custom_enrich_system_prompt, render_custom_enrich_user_prompt, CUSTOM_ENRICH_PROMPT_NAME,
 };
-use crate::ai::{AiClient, AiError, ChatMessage, ChatRequest, Usage};
+use crate::ai::{AiClient, AiError, ChatMessage, ChatRequest, ImageData, Usage};
 
 /// Result of custom enrichment.
 pub struct CustomEnrichResult {
@@ -21,15 +21,18 @@ pub async fn custom_enrich(
     ai_client: &dyn AiClient,
     recipe_json: &str,
     instruction: &str,
+    images: Vec<ImageData>,
 ) -> Result<CustomEnrichResult, AiError> {
     let system_prompt = render_custom_enrich_system_prompt();
     let user_prompt = render_custom_enrich_user_prompt(recipe_json, instruction);
+    let user_message = if images.is_empty() {
+        ChatMessage::user(user_prompt)
+    } else {
+        ChatMessage::user_with_images(user_prompt, images)
+    };
 
     let request = ChatRequest {
-        messages: vec![
-            ChatMessage::system(system_prompt),
-            ChatMessage::user(user_prompt),
-        ],
+        messages: vec![ChatMessage::system(system_prompt), user_message],
         json_response: true,
         max_tokens: Some(4096),
         temperature: Some(0.7),

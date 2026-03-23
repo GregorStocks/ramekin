@@ -8,6 +8,7 @@ Request body for custom enrichment.
 Name | Type
 ------------ | -------------
 `instruction` | string
+`photoIds` | Array&lt;string&gt;
 `recipe` | [RecipeContent](RecipeContent.md)
 
 ## Example
@@ -18,6 +19,7 @@ import type { CustomEnrichRequest } from ''
 // TODO: Update the object below with actual values
 const example = {
   "instruction": null,
+  "photoIds": null,
   "recipe": null,
 } satisfies CustomEnrichRequest
 

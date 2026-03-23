@@ -391,6 +391,7 @@ export default function ViewRecipePage() {
             sourceUrl: r.sourceUrl,
           },
           instruction,
+          photoIds: r.photoIds.length > 0 ? r.photoIds : undefined,
         },
       });
       setEnrichedContent(enriched);

@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ios-install ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web worktree-setup screenshots generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -13,8 +13,9 @@ API_SOURCES := $(shell find server/src/api -type f -name '*.rs' 2>/dev/null) ser
 # Marker file for generated clients
 CLIENT_MARKER := cli/generated/ramekin-client/Cargo.toml
 
-# Default simulator target for iOS UI tests (override with IOS_UI_DESTINATION)
-IOS_UI_DESTINATION ?= platform=iOS Simulator,name=iPhone 15,OS=latest
+# Default simulator target for iOS tests (override with IOS_TEST_DESTINATION / IOS_UI_DESTINATION)
+IOS_TEST_DESTINATION ?= platform=iOS Simulator,name=iPhone 15,OS=latest
+IOS_UI_DESTINATION ?= $(IOS_TEST_DESTINATION)
 
 help: ## Show this help message
 	@echo 'Usage: make [target]'
@@ -25,12 +26,12 @@ help: ## Show this help message
 dev: check-deps db-up $(CLIENT_MARKER) ## Start local dev environment (server + UI via process-compose)
 	@echo "Starting dev environment (Ctrl+C to stop)..."
 	@mkdir -p logs
-	@process-compose up -e dev.env --port 8180
+	@set -a && . ./dev.env && set +a && process-compose up -e dev.env --port "$${PROCESS_COMPOSE_PORT:-8180}"
 
 dev-headless: check-deps db-up $(CLIENT_MARKER) ## Start local dev environment without TUI
 	@echo "Starting dev environment (headless)..."
 	@mkdir -p logs
-	@process-compose up -e dev.env -t=false --port 8180
+	@set -a && . ./dev.env && set +a && process-compose up -e dev.env -t=false --port "$${PROCESS_COMPOSE_PORT:-8180}"
 
 dev-down: ## Stop dev processes (not database)
 	@process-compose down 2>/dev/null || true
@@ -70,6 +71,12 @@ generate-schema: ## Regenerate schema.rs from database (requires db-up and migra
 
 setup-claude-web: ## Setup environment for Claude Code for Web (no-op elsewhere)
 	@./scripts/setup-claude-web.sh
+
+worktree-setup: ## Generate dev.env and test.env for this worktree
+	@./scripts/worktree-setup.py \
+		$(if $(WORKSPACE_NAME),--workspace-name $(WORKSPACE_NAME),) \
+		$(if $(BASE_PORT),--base-port $(BASE_PORT),) \
+		$(if $(FORCE),--force,)
 
 cli/target/debug/ramekin-cli: $(CLIENT_MARKER)
 	cd cli && cargo build
@@ -152,7 +159,7 @@ install-hooks: ## Install git hooks for local development
 	@echo "Git hooks installed successfully"
 
 screenshots: check-deps $(CLIENT_MARKER) ## Take screenshots for visual testing
-	@PC_EXIT_ON_END=true SERVER_CMD="./target/release/ramekin-server" SERVER_RESTART=exit_on_failure process-compose up -e dev.env -t=false --port 8180 || true
+	@set -a && . ./dev.env && set +a && PC_EXIT_ON_END=true SERVER_CMD="./target/release/ramekin-server" SERVER_RESTART=exit_on_failure process-compose up -e dev.env -t=false --port "$${PROCESS_COMPOSE_PORT:-8180}" || true
 	@test -f logs/cookbook.png || (echo "Screenshots not found" && exit 1)
 
 generate-test-urls: ## Generate test URL list from top recipe sites
@@ -204,7 +211,20 @@ ios-install: ios-generate ## Build and install iOS app on connected device
 		echo "Installing to device $$DEVICE_ID..." && \
 		xcrun devicectl device install app --device "$$DEVICE_ID" "$$APP_PATH"
 
+ios-test: ios-generate ## Run iOS unit tests
+	@mkdir -p logs
+	@rm -rf logs/ios-tests.xcresult
+	@cd ramekin-ios && xcodebuild test \
+		-project Ramekin.xcodeproj \
+		-scheme Ramekin \
+		-destination '$(IOS_TEST_DESTINATION)' \
+		-only-testing:RamekinTests \
+		-resultBundlePath ../logs/ios-tests.xcresult \
+		CODE_SIGNING_ALLOWED=NO
+	@echo "Unit test results at logs/ios-tests.xcresult"
+
 ios-test-ui: ios-generate ## Run iOS UI tests (requires dev server running)
+	@mkdir -p logs
 	@rm -rf logs/ios-ui-tests.xcresult
 	@cd ramekin-ios && xcodebuild test \
 		-project Ramekin.xcodeproj \
