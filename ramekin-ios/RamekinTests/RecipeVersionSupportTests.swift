@@ -65,6 +65,37 @@ final class RecipeVersionSupportTests: XCTestCase {
         XCTAssertEqual(sorted.newer.updatedAt, newerVersion.updatedAt)
     }
 
+    func testShouldRefreshVersionHistoryOnlyForCurrentRecipeLoadsWithVisibleOrCachedHistory() {
+        XCTAssertTrue(
+            RecipeVersionSupport.shouldRefreshVersionHistory(
+                requestedVersionId: nil,
+                isVersionHistoryExpanded: true,
+                hasCachedVersionHistory: false
+            )
+        )
+        XCTAssertTrue(
+            RecipeVersionSupport.shouldRefreshVersionHistory(
+                requestedVersionId: nil,
+                isVersionHistoryExpanded: false,
+                hasCachedVersionHistory: true
+            )
+        )
+        XCTAssertFalse(
+            RecipeVersionSupport.shouldRefreshVersionHistory(
+                requestedVersionId: nil,
+                isVersionHistoryExpanded: false,
+                hasCachedVersionHistory: false
+            )
+        )
+        XCTAssertFalse(
+            RecipeVersionSupport.shouldRefreshVersionHistory(
+                requestedVersionId: UUID(),
+                isVersionHistoryExpanded: true,
+                hasCachedVersionHistory: true
+            )
+        )
+    }
+
     func testRevertRecipeRequestEncodesExplicitNulls() throws {
         let recipe = makeRecipe(
             updatedAt: Date(timeIntervalSince1970: 300),

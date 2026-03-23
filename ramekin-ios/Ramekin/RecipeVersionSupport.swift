@@ -51,6 +51,14 @@ enum RecipeVersionSupport {
         return (second, first)
     }
 
+    static func shouldRefreshVersionHistory(
+        requestedVersionId: UUID?,
+        isVersionHistoryExpanded: Bool,
+        hasCachedVersionHistory: Bool
+    ) -> Bool {
+        requestedVersionId == nil && (isVersionHistoryExpanded || hasCachedVersionHistory)
+    }
+
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
     static func revertRecipe(id: UUID, from recipe: RecipeResponse) async throws {
         let request = RevertRecipeRequest(recipe: recipe)

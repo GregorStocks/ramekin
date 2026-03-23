@@ -312,6 +312,14 @@ extension RecipeDetailView {
                 let current = try await RecipesAPI.getRecipe(id: recipeId)
                 currentVersionId = current.versionId
             }
+
+            if RecipeVersionSupport.shouldRefreshVersionHistory(
+                requestedVersionId: versionId,
+                isVersionHistoryExpanded: isVersionHistoryExpanded,
+                hasCachedVersionHistory: !versionHistory.isEmpty
+            ) {
+                await loadVersionHistory(force: true)
+            }
         } catch is CancellationError {
             isLoading = false
         } catch {
@@ -414,10 +422,6 @@ extension RecipeDetailView {
             try await RecipeVersionSupport.revertRecipe(id: recipeId, from: historicalRecipe)
 
             await loadRecipe()
-
-            if isVersionHistoryExpanded || !versionHistory.isEmpty {
-                await loadVersionHistory(force: true)
-            }
         } catch is CancellationError {
         } catch {
             self.error = "Failed to revert to this version"
@@ -450,10 +454,6 @@ extension RecipeDetailView {
             try await RecipesAPI.updateRecipe(id: recipeId, updateRecipeRequest: updateRequest)
             enrichResult = nil
             await loadRecipe()
-
-            if isVersionHistoryExpanded || !versionHistory.isEmpty {
-                await loadVersionHistory(force: true)
-            }
         } catch is CancellationError {
         } catch {
             self.error = error.localizedDescription
