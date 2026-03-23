@@ -3,6 +3,8 @@ import SwiftUI
 struct RecipeDetailView: View {
     let recipeId: UUID
 
+    @Environment(\.dismiss) private var dismiss
+
     @State private var recipe: RecipeResponse?
     @State private var isLoading = false
     @State private var error: String?
@@ -10,6 +12,8 @@ struct RecipeDetailView: View {
     @State private var showingAddToMealPlan = false
     @State private var showingCustomEnrich = false
     @State private var enrichResult: RecipeContent?
+    @State private var showingDeleteConfirmation = false
+    @State private var isDeleting = false
 
     var body: some View {
         ScrollView {
@@ -44,6 +48,12 @@ struct RecipeDetailView: View {
                             } label: {
                                 Label("Add to Shopping List", systemImage: "cart.badge.plus")
                             }
+                        }
+                        Divider()
+                        Button(role: .destructive) {
+                            showingDeleteConfirmation = true
+                        } label: {
+                            Label("Delete Recipe", systemImage: "trash")
                         }
                     } label: {
                         Image(systemName: "ellipsis.circle")
@@ -82,6 +92,13 @@ struct RecipeDetailView: View {
                     onCancel: { enrichResult = nil }
                 )
             }
+        }
+        .confirmationDialog("Delete Recipe", isPresented: $showingDeleteConfirmation) {
+            Button("Delete Recipe", role: .destructive) {
+                Task { await deleteRecipe() }
+            }
+        } message: {
+            Text("Are you sure you want to delete this recipe? This cannot be undone.")
         }
         .task {
             await loadRecipe()
@@ -350,6 +367,21 @@ extension RecipeDetailView {
         parts.append(ingredient.item)
 
         return parts.joined(separator: " ")
+    }
+
+    func deleteRecipe() async {
+        isDeleting = true
+        do {
+            try await RecipesAPI.deleteRecipe(id: recipeId)
+            await MainActor.run {
+                dismiss()
+            }
+        } catch {
+            await MainActor.run {
+                self.error = error.localizedDescription
+                isDeleting = false
+            }
+        }
     }
 
     func loadRecipe() async {
