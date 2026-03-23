@@ -3,6 +3,7 @@ use crate::models::Photo;
 use crate::schema::photos;
 use base64::Engine;
 use diesel::prelude::*;
+use std::collections::{HashMap, HashSet};
 use thiserror::Error;
 use uuid::Uuid;
 
@@ -35,11 +36,13 @@ pub fn load_photo_images(
         .load::<Photo>(&mut conn)
         .map_err(|e| PhotoImageLoadError::Database(e.to_string()))?;
 
-    if photos_list.len() != photo_ids.len() {
+    let unique_photo_ids: HashSet<Uuid> = photo_ids.iter().copied().collect();
+
+    if photos_list.len() != unique_photo_ids.len() {
         return Err(PhotoImageLoadError::NotFound);
     }
 
-    let photos_by_id: std::collections::HashMap<Uuid, Photo> = photos_list
+    let photos_by_id: HashMap<Uuid, Photo> = photos_list
         .into_iter()
         .map(|photo| (photo.id, photo))
         .collect();

@@ -71,6 +71,30 @@ def test_custom_enrich_uses_recipe_photos(authed_api_client, test_image):
     assert "[Modified with Photo]" in result.title
 
 
+def test_custom_enrich_allows_duplicate_photo_ids(authed_api_client, test_image):
+    client, _user_id = authed_api_client
+    enrich_api = EnrichApi(client)
+    photos_api = PhotosApi(client)
+    photo_id = photos_api.upload(file=("test.png", test_image)).id
+
+    recipe = RecipeContent(
+        title="Test Recipe",
+        instructions="Mix and cook.",
+        ingredients=[make_ingredient("flour", "2", "cups")],
+    )
+
+    result = enrich_api.custom_enrich_recipe(
+        CustomEnrichRequest(
+            recipe=recipe,
+            instruction="make it crispier",
+            photo_ids=[photo_id, photo_id],
+        )
+    )
+
+    assert result.title is not None
+    assert "[Modified with Photo]" in result.title
+
+
 def test_custom_enrich_rejects_other_users_photos(
     authed_api_client, second_authed_api_client, test_image
 ):
