@@ -10,38 +10,52 @@ struct RecipeVersionCompareSheet: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 16) {
-                    if isLoading {
-                        ProgressView("Loading versions...")
-                            .frame(maxWidth: .infinity, alignment: .center)
-                            .padding(.top, 40)
-                    } else if let error {
-                        Text(error)
-                            .foregroundColor(.red)
-                            .frame(maxWidth: .infinity, alignment: .center)
-                            .padding(.top, 40)
-                    } else if let olderVersion, let newerVersion {
-                        compareHeader(olderVersion: olderVersion, newerVersion: newerVersion)
-
-                        if diffs(olderVersion: olderVersion, newerVersion: newerVersion).isEmpty {
-                            Text("These versions are identical.")
-                                .foregroundColor(.secondary)
-                                .frame(maxWidth: .infinity, alignment: .center)
-                                .padding(.top, 40)
-                        } else {
-                            ForEach(diffs(olderVersion: olderVersion, newerVersion: newerVersion)) { diff in
-                                fieldDiff(diff)
-                            }
-                        }
-                    }
-                }
-                .padding()
+                content
+                    .padding()
             }
             .navigationTitle("Compare Versions")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Close", action: onClose)
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var content: some View {
+        if isLoading {
+            ProgressView("Loading versions...")
+                .frame(maxWidth: .infinity, alignment: .center)
+                .padding(.top, 40)
+        } else if let error {
+            Text(error)
+                .foregroundColor(.red)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .padding(.top, 40)
+        } else if let olderVersion, let newerVersion {
+            loadedContent(olderVersion: olderVersion, newerVersion: newerVersion)
+        }
+    }
+
+    private func loadedContent(
+        olderVersion: RecipeResponse,
+        newerVersion: RecipeResponse
+    ) -> some View {
+        let versionDiffs = diffs(olderVersion: olderVersion, newerVersion: newerVersion)
+
+        return VStack(alignment: .leading, spacing: 16) {
+            compareHeader(olderVersion: olderVersion, newerVersion: newerVersion)
+
+            if versionDiffs.isEmpty {
+                Text("These versions are identical.")
+                    .foregroundColor(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.top, 40)
+            } else {
+                ForEach(versionDiffs) { diff in
+                    fieldDiff(diff)
                 }
             }
         }
@@ -130,38 +144,98 @@ struct RecipeVersionCompareSheet: View {
         olderVersion: RecipeResponse,
         newerVersion: RecipeResponse
     ) -> [VersionFieldDiff] {
-        let candidates = [
-            ("Title", olderVersion.title, newerVersion.title),
-            ("Description", olderVersion.description ?? "", newerVersion.description ?? ""),
-            (
-                "Ingredients",
-                RecipeVersionSupport.formatIngredients(olderVersion.ingredients),
-                RecipeVersionSupport.formatIngredients(newerVersion.ingredients)
-            ),
-            ("Instructions", olderVersion.instructions, newerVersion.instructions),
-            (
-                "Tags",
-                RecipeVersionSupport.formatTags(olderVersion.tags),
-                RecipeVersionSupport.formatTags(newerVersion.tags)
-            ),
-            ("Notes", olderVersion.notes ?? "", newerVersion.notes ?? ""),
-            ("Prep Time", olderVersion.prepTime ?? "", newerVersion.prepTime ?? ""),
-            ("Cook Time", olderVersion.cookTime ?? "", newerVersion.cookTime ?? ""),
-            ("Total Time", olderVersion.totalTime ?? "", newerVersion.totalTime ?? ""),
-            ("Servings", olderVersion.servings ?? "", newerVersion.servings ?? ""),
-            ("Difficulty", olderVersion.difficulty ?? "", newerVersion.difficulty ?? ""),
-            (
-                "Nutritional Info",
-                olderVersion.nutritionalInfo ?? "",
-                newerVersion.nutritionalInfo ?? ""
-            ),
-            ("Source Name", olderVersion.sourceName ?? "", newerVersion.sourceName ?? ""),
-            ("Source URL", olderVersion.sourceUrl ?? "", newerVersion.sourceUrl ?? "")
-        ]
+        textDiffs(olderVersion: olderVersion, newerVersion: newerVersion)
+            + metadataDiffs(olderVersion: olderVersion, newerVersion: newerVersion)
+            + sourceDiffs(olderVersion: olderVersion, newerVersion: newerVersion)
+    }
 
-        return candidates.compactMap { label, before, after in
-            makeDiff(label: label, before: before, after: after)
-        }
+    private func textDiffs(
+        olderVersion: RecipeResponse,
+        newerVersion: RecipeResponse
+    ) -> [VersionFieldDiff] {
+        [
+            makeDiff(label: "Title", before: olderVersion.title, after: newerVersion.title),
+            makeDiff(
+                label: "Description",
+                before: olderVersion.description ?? "",
+                after: newerVersion.description ?? ""
+            ),
+            makeDiff(
+                label: "Ingredients",
+                before: RecipeVersionSupport.formatIngredients(olderVersion.ingredients),
+                after: RecipeVersionSupport.formatIngredients(newerVersion.ingredients)
+            ),
+            makeDiff(
+                label: "Instructions",
+                before: olderVersion.instructions,
+                after: newerVersion.instructions
+            ),
+            makeDiff(
+                label: "Tags",
+                before: RecipeVersionSupport.formatTags(olderVersion.tags),
+                after: RecipeVersionSupport.formatTags(newerVersion.tags)
+            ),
+            makeDiff(label: "Notes", before: olderVersion.notes ?? "", after: newerVersion.notes ?? "")
+        ]
+        .compactMap { $0 }
+    }
+
+    private func metadataDiffs(
+        olderVersion: RecipeResponse,
+        newerVersion: RecipeResponse
+    ) -> [VersionFieldDiff] {
+        [
+            makeDiff(
+                label: "Prep Time",
+                before: olderVersion.prepTime ?? "",
+                after: newerVersion.prepTime ?? ""
+            ),
+            makeDiff(
+                label: "Cook Time",
+                before: olderVersion.cookTime ?? "",
+                after: newerVersion.cookTime ?? ""
+            ),
+            makeDiff(
+                label: "Total Time",
+                before: olderVersion.totalTime ?? "",
+                after: newerVersion.totalTime ?? ""
+            ),
+            makeDiff(
+                label: "Servings",
+                before: olderVersion.servings ?? "",
+                after: newerVersion.servings ?? ""
+            ),
+            makeDiff(
+                label: "Difficulty",
+                before: olderVersion.difficulty ?? "",
+                after: newerVersion.difficulty ?? ""
+            ),
+            makeDiff(
+                label: "Nutritional Info",
+                before: olderVersion.nutritionalInfo ?? "",
+                after: newerVersion.nutritionalInfo ?? ""
+            )
+        ]
+        .compactMap { $0 }
+    }
+
+    private func sourceDiffs(
+        olderVersion: RecipeResponse,
+        newerVersion: RecipeResponse
+    ) -> [VersionFieldDiff] {
+        [
+            makeDiff(
+                label: "Source Name",
+                before: olderVersion.sourceName ?? "",
+                after: newerVersion.sourceName ?? ""
+            ),
+            makeDiff(
+                label: "Source URL",
+                before: olderVersion.sourceUrl ?? "",
+                after: newerVersion.sourceUrl ?? ""
+            )
+        ]
+        .compactMap { $0 }
     }
 
     private func makeDiff(

@@ -411,9 +411,7 @@ extension RecipeDetailView {
                 id: recipeId,
                 versionId: version.id
             )
-            let request = RecipeVersionSupport.updateRequest(for: historicalRecipe)
-
-            try await RecipesAPI.updateRecipe(id: recipeId, updateRecipeRequest: request)
+            try await RecipeVersionSupport.revertRecipe(id: recipeId, from: historicalRecipe)
 
             await loadRecipe()
 
