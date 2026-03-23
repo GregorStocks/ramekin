@@ -92,6 +92,7 @@ class EnrichApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecipeContent",
+            '400': "ErrorResponse",
             '401': "ErrorResponse",
             '500': "ErrorResponse",
             '503': "ErrorResponse",
@@ -162,6 +163,7 @@ class EnrichApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecipeContent",
+            '400': "ErrorResponse",
             '401': "ErrorResponse",
             '500': "ErrorResponse",
             '503': "ErrorResponse",
@@ -232,6 +234,7 @@ class EnrichApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "RecipeContent",
+            '400': "ErrorResponse",
             '401': "ErrorResponse",
             '500': "ErrorResponse",
             '503': "ErrorResponse",

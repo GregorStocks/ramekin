@@ -14,15 +14,18 @@ import AnyCodable
 public struct CustomEnrichRequest: Codable, JSONEncodable, Hashable {
 
     public var instruction: String
+    public var photoIds: [UUID]?
     public var recipe: RecipeContent
 
-    public init(instruction: String, recipe: RecipeContent) {
+    public init(instruction: String, photoIds: [UUID]? = nil, recipe: RecipeContent) {
         self.instruction = instruction
+        self.photoIds = photoIds
         self.recipe = recipe
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case instruction
+        case photoIds = "photo_ids"
         case recipe
     }
 
@@ -31,6 +34,7 @@ public struct CustomEnrichRequest: Codable, JSONEncodable, Hashable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(instruction, forKey: .instruction)
+        try container.encodeIfPresent(photoIds, forKey: .photoIds)
         try container.encode(recipe, forKey: .recipe)
     }
 }

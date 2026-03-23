@@ -3,7 +3,8 @@ pub mod steps;
 
 use crate::db::DbPool;
 use crate::models::{NewScrapeJob, NewStepOutput, ScrapeJob, StepOutput};
-use crate::schema::{photos, scrape_jobs, step_outputs, user_tags};
+use crate::photos::load_photo_images;
+use crate::schema::{scrape_jobs, step_outputs, user_tags};
 use chrono::Utc;
 use diesel::prelude::*;
 use ramekin_core::ai::{AiClient, CachingAiClient};
@@ -364,11 +365,12 @@ async fn run_photo_import_job(
     }
 
     // Step 1: Fetch photo bytes from database
-    let images = match fetch_photo_images(&pool, user_id, &photo_ids) {
+    let images = match load_photo_images(&pool, user_id, &photo_ids) {
         Ok(imgs) => imgs,
         Err(e) => {
             tracing::error!("Failed to fetch photos: {}", e);
-            let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e);
+            let error = e.to_string();
+            let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &error);
             return;
         }
     };
@@ -459,48 +461,6 @@ async fn run_photo_import_job(
 
     // Step 4: Run the rest of the pipeline
     run_scrape_job(pool, job_id).await;
-}
-
-/// Fetch photo image data from the database for vision API.
-fn fetch_photo_images(
-    pool: &DbPool,
-    user_id: Uuid,
-    photo_ids: &[Uuid],
-) -> Result<Vec<ramekin_core::ai::ImageData>, String> {
-    use crate::models::Photo;
-    use base64::Engine;
-
-    let mut conn = pool.get().map_err(|e| e.to_string())?;
-
-    let photos_list: Vec<Photo> = photos::table
-        .filter(photos::id.eq_any(photo_ids))
-        .filter(photos::user_id.eq(user_id))
-        .filter(photos::deleted_at.is_null())
-        .load::<Photo>(&mut conn)
-        .map_err(|e| e.to_string())?;
-
-    if photos_list.len() != photo_ids.len() {
-        return Err("One or more photos not found".to_string());
-    }
-
-    let photos_by_id: std::collections::HashMap<Uuid, Photo> = photos_list
-        .into_iter()
-        .map(|photo| (photo.id, photo))
-        .collect();
-
-    let mut ordered_images = Vec::with_capacity(photo_ids.len());
-    for photo_id in photo_ids {
-        let photo = photos_by_id
-            .get(photo_id)
-            .ok_or_else(|| "One or more photos not found".to_string())?;
-        let base64 = base64::engine::general_purpose::STANDARD.encode(&photo.data);
-        ordered_images.push(ramekin_core::ai::ImageData {
-            base64,
-            content_type: photo.content_type.clone(),
-        });
-    }
-
-    Ok(ordered_images)
 }
 
 /// Get a scrape job by ID.

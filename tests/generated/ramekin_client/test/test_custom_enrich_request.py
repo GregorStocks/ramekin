@@ -36,6 +36,9 @@ class TestCustomEnrichRequest(unittest.TestCase):
         if include_optional:
             return CustomEnrichRequest(
                 instruction = '',
+                photo_ids = [
+                    ''
+                    ],
                 recipe = ramekin_client.models.recipe_content.RecipeContent(
                     cook_time = '', 
                     description = '', 

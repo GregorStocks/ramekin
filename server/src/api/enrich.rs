@@ -2,6 +2,7 @@ use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::models::Ingredient;
+use crate::photos::{load_photo_images, PhotoImageLoadError};
 use crate::schema::user_tags;
 use crate::types::RecipeContent;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
@@ -154,6 +155,8 @@ async fn try_enrich_tags(
 pub struct CustomEnrichRequest {
     pub recipe: RecipeContent,
     pub instruction: String,
+    #[serde(default)]
+    pub photo_ids: Vec<uuid::Uuid>,
 }
 
 /// Apply a custom AI modification to a recipe
@@ -167,6 +170,7 @@ pub struct CustomEnrichRequest {
     request_body = CustomEnrichRequest,
     responses(
         (status = 200, description = "Modified recipe", body = RecipeContent),
+        (status = 400, description = "Invalid photo IDs", body = crate::api::ErrorResponse),
         (status = 401, description = "Unauthorized", body = crate::api::ErrorResponse),
         (status = 500, description = "Internal server error", body = crate::api::ErrorResponse),
         (status = 503, description = "AI service unavailable", body = crate::api::ErrorResponse)
@@ -176,7 +180,8 @@ pub struct CustomEnrichRequest {
     )
 )]
 pub async fn custom_enrich_recipe(
-    AuthUser(_user): AuthUser,
+    AuthUser(user): AuthUser,
+    State(pool): State<Arc<DbPool>>,
     Json(request): Json<CustomEnrichRequest>,
 ) -> impl IntoResponse {
     // Create AI client
@@ -209,8 +214,31 @@ pub async fn custom_enrich_recipe(
         }
     };
 
+    let images = match load_photo_images(&pool, user.id, &request.photo_ids) {
+        Ok(images) => images,
+        Err(PhotoImageLoadError::NotFound) => {
+            return (
+                StatusCode::BAD_REQUEST,
+                Json(ErrorResponse {
+                    error: "One or more photo_ids not found or don't belong to user".to_string(),
+                }),
+            )
+                .into_response();
+        }
+        Err(PhotoImageLoadError::Database(e)) => {
+            tracing::error!("Failed to load custom enrich photos: {}", e);
+            return (
+                StatusCode::INTERNAL_SERVER_ERROR,
+                Json(ErrorResponse {
+                    error: "Failed to load photos".to_string(),
+                }),
+            )
+                .into_response();
+        }
+    };
+
     // Call custom enrich
-    let result = match custom_enrich(&ai_client, &recipe_json, &request.instruction).await {
+    let result = match custom_enrich(&ai_client, &recipe_json, &request.instruction, images).await {
         Ok(r) => r,
         Err(e) => {
             tracing::warn!("Custom enrich AI call failed: {}", e);

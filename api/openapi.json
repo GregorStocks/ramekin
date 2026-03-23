@@ -197,6 +197,16 @@
               }
             }
           },
+          "400": {
+            "description": "Invalid photo IDs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
           "401": {
             "description": "Unauthorized",
             "content": {
@@ -2357,6 +2367,13 @@
         "properties": {
           "instruction": {
             "type": "string"
+          },
+          "photo_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            }
           },
           "recipe": {
             "$ref": "#/components/schemas/RecipeContent"

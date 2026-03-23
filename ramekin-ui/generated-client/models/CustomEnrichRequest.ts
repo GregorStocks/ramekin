@@ -35,6 +35,12 @@ export interface CustomEnrichRequest {
     instruction: string;
     /**
      * 
+     * @type {Array<string>}
+     * @memberof CustomEnrichRequest
+     */
+    photoIds?: Array<string>;
+    /**
+     * 
      * @type {RecipeContent}
      * @memberof CustomEnrichRequest
      */
@@ -61,6 +67,7 @@ export function CustomEnrichRequestFromJSONTyped(json: any, ignoreDiscriminator:
     return {
         
         'instruction': json['instruction'],
+        'photoIds': json['photo_ids'] == null ? undefined : json['photo_ids'],
         'recipe': RecipeContentFromJSON(json['recipe']),
     };
 }
@@ -77,6 +84,7 @@ export function CustomEnrichRequestToJSONTyped(value?: CustomEnrichRequest | nul
     return {
         
         'instruction': value['instruction'],
+        'photo_ids': value['photoIds'],
         'recipe': RecipeContentToJSON(value['recipe']),
     };
 }

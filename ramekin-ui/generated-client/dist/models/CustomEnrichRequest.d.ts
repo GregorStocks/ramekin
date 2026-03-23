@@ -24,6 +24,12 @@ export interface CustomEnrichRequest {
     instruction: string;
     /**
      *
+     * @type {Array<string>}
+     * @memberof CustomEnrichRequest
+     */
+    photoIds?: Array<string>;
+    /**
+     *
      * @type {RecipeContent}
      * @memberof CustomEnrichRequest
      */
