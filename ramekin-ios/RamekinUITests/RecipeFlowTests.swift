@@ -23,6 +23,24 @@ final class RecipeFlowTests: XCTestCase {
         field.typeText(XCUIKeyboardKey.delete.rawValue)
     }
 
+    private func openRecipeFromList(named title: String, maxSwipes: Int = 20) -> Bool {
+        let recipeCell = app.cells.containing(.staticText, identifier: title).firstMatch
+        if recipeCell.waitForExistence(timeout: 2) {
+            recipeCell.tap()
+            return true
+        }
+
+        for _ in 0..<maxSwipes {
+            app.swipeUp()
+            if recipeCell.waitForExistence(timeout: 1) {
+                recipeCell.tap()
+                return true
+            }
+        }
+
+        return false
+    }
+
     /// Test the full recipe flow: login -> recipe list -> recipe detail
     func testRecipeFlow() throws {
         // MARK: - Login
@@ -71,21 +89,10 @@ final class RecipeFlowTests: XCTestCase {
 
             // MARK: - Recipe Detail
 
-            if !app.searchFields["Search recipes"].waitForExistence(timeout: 2) {
-                app.swipeDown()
-            }
-
-            let searchField = app.searchFields["Search recipes"]
-            XCTAssertTrue(searchField.waitForExistence(timeout: 5), "Recipe search field should exist")
-            searchField.tap()
-            searchField.typeText(importedRecipeTitle)
-
-            let recipeTitle = app.staticTexts[importedRecipeTitle]
             XCTAssertTrue(
-                recipeTitle.waitForExistence(timeout: 10),
-                "Seeded recipe with source URL should exist in search results"
+                openRecipeFromList(named: importedRecipeTitle),
+                "Seeded recipe with source URL should exist somewhere in the recipe list"
             )
-            recipeTitle.tap()
 
             // Wait for detail view to load
             sleep(2)

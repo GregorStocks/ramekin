@@ -236,7 +236,13 @@ extension RecipeDetailView {
             }
 
             Button {
-                Task { await rescrapeRecipe() }
+                rescrapeTask?.cancel()
+                rescrapeTask = Task {
+                    await rescrapeRecipe()
+                    await MainActor.run {
+                        rescrapeTask = nil
+                    }
+                }
             } label: {
                 Label(isRescraping ? "Rescraping..." : "Rescrape", systemImage: "arrow.clockwise")
                     .frame(maxWidth: .infinity)

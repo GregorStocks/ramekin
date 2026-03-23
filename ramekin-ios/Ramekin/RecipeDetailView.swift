@@ -25,6 +25,7 @@ struct RecipeDetailView: View {
     @State var comparedOlderVersion: RecipeResponse?
     @State var comparedNewerVersion: RecipeResponse?
     @State var isRescraping = false
+    @State var rescrapeTask: Task<Void, Never>?
 
     var isViewingHistoricalVersion: Bool {
         RecipeVersionSupport.isViewingHistoricalVersion(
@@ -169,6 +170,10 @@ struct RecipeDetailView: View {
             if isExpanded && versionHistory.isEmpty {
                 Task { await loadVersionHistory(force: true) }
             }
+        }
+        .onDisappear {
+            rescrapeTask?.cancel()
+            rescrapeTask = nil
         }
     }
 }
