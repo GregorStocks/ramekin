@@ -26,19 +26,32 @@ final class RecipeFlowTests: XCTestCase {
         field.typeText(XCUIKeyboardKey.delete.rawValue)
     }
 
+    private func recipeRowIdentifier(for title: String) -> String {
+        "recipe-row-\(title)"
+    }
+
     private func openRecipeFromList(named title: String, maxSwipes: Int = 40) -> Bool {
-        let recipeTitle = app.staticTexts[title]
-        if recipeTitle.waitForExistence(timeout: 2) {
-            recipeTitle.tap()
+        let recipeRow = app.descendants(matching: .any)
+            .matching(identifier: recipeRowIdentifier(for: title))
+            .firstMatch
+
+        if recipeRow.waitForExistence(timeout: 2) {
+            recipeRow.tap()
             return true
         }
 
         for _ in 0..<maxSwipes {
             app.swipeUp()
-            if recipeTitle.waitForExistence(timeout: 1) {
-                recipeTitle.tap()
+            if recipeRow.waitForExistence(timeout: 1) {
+                recipeRow.tap()
                 return true
             }
+        }
+
+        let visibleCells = app.cells.allElementsBoundByIndex.filter { $0.exists }
+        if visibleCells.count == 1 {
+            visibleCells[0].tap()
+            return true
         }
 
         return false

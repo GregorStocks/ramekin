@@ -201,6 +201,7 @@ struct RecipeListView: View {
                 NavigationLink(value: NavigationDestination.recipe(recipe.id)) {
                     RecipeRowView(recipe: recipe)
                 }
+                .accessibilityIdentifier("recipe-row-\(recipe.title)")
             }
 
             if hasMore {
