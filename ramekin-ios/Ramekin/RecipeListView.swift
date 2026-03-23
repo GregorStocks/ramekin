@@ -77,6 +77,9 @@ struct RecipeListView: View {
             await loadTags()
             await loadRecipes(reset: true)
         }
+        .onReceive(NotificationCenter.default.publisher(for: .recipeDeleted)) { _ in
+            Task { await loadRecipes(reset: true) }
+        }
     }
 
     // MARK: - Sort Menu

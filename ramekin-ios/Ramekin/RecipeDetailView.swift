@@ -14,6 +14,7 @@ struct RecipeDetailView: View {
     @State private var enrichResult: RecipeContent?
     @State private var showingDeleteConfirmation = false
     @State private var isDeleting = false
+    @State private var deleteError: String?
 
     var body: some View {
         ScrollView {
@@ -99,6 +100,14 @@ struct RecipeDetailView: View {
             }
         } message: {
             Text("Are you sure you want to delete this recipe? This cannot be undone.")
+        }
+        .alert("Delete Failed", isPresented: Binding(
+            get: { deleteError != nil },
+            set: { if !$0 { deleteError = nil } }
+        )) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(deleteError ?? "")
         }
         .task {
             await loadRecipe()
@@ -374,11 +383,12 @@ extension RecipeDetailView {
         do {
             try await RecipesAPI.deleteRecipe(id: recipeId)
             await MainActor.run {
+                NotificationCenter.default.post(name: .recipeDeleted, object: nil)
                 dismiss()
             }
         } catch {
             await MainActor.run {
-                self.error = error.localizedDescription
+                deleteError = error.localizedDescription
                 isDeleting = false
             }
         }
@@ -436,6 +446,12 @@ extension RecipeDetailView {
             }
         }
     }
+}
+
+// MARK: - Notifications
+
+extension Notification.Name {
+    static let recipeDeleted = Notification.Name("recipeDeleted")
 }
 
 // MARK: - Photo Carousel
