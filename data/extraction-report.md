@@ -26,8 +26,8 @@
 
 ## AI Cache
 
-- Cache hits: 4675/4675 (100.0%)
-- API calls: 0/4675 (0.0%)
+- Cache hits: 3681/5212 (70.6%)
+- API calls: 1531/5212 (29.4%)
 
 ## By Site
 

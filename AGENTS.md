@@ -20,6 +20,12 @@ We do not need backwards compatibility. This does not exist in production. Do no
 
 Never fail gracefully, always fail fast. Check with me if you're not sure. (This is another training issue.)
 
+# Pipeline
+
+When you change extraction or parsing behavior, rerun `make pipeline` and commit the resulting data/ diffs. Those diffs are the point — they show the impact of your change and reviewers need to see them.
+
+If you see changes in the working tree that you don't think belong in your PR, that is an extremely bad smell. Do not silently exclude files from your commit. Escalate to the user and ask — the changes are probably related to your work and you're wrong about them not belonging.
+
 # Git
 
 We use master, not main.
