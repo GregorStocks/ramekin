@@ -62,11 +62,15 @@ struct RecipeListView: View {
             }
         }
         .searchable(text: $searchText, prompt: "Search recipes")
-        .onChange(of: searchText) { _ in
-            searchTask?.cancel()
-            searchTask = Task {
-                try? await Task.sleep(nanoseconds: 300_000_000)
-                await loadRecipes(reset: true)
+        .onChange(of: searchText) { newValue in
+            if newValue.isEmpty {
+                clearFilters()
+            } else {
+                searchTask?.cancel()
+                searchTask = Task {
+                    try? await Task.sleep(nanoseconds: 300_000_000)
+                    await loadRecipes(reset: true)
+                }
             }
         }
         .navigationTitle("Recipes")
