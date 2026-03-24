@@ -302,13 +302,13 @@ fn extract_recipe_data(
     let title = recipe
         .get("name")
         .and_then(|v| v.as_str())
-        .ok_or_else(|| ExtractError::MissingField("name".to_string()))?
-        .to_string();
+        .ok_or_else(|| ExtractError::MissingField("name".to_string()))?;
+    let title = decode_html_entities(title);
 
     let description = recipe
         .get("description")
         .and_then(|v| v.as_str())
-        .map(|s| s.to_string());
+        .map(decode_html_entities);
 
     let ingredients = extract_ingredients(recipe)?;
     let instructions = extract_instructions(recipe)?;
@@ -326,8 +326,8 @@ fn extract_recipe_data(
     Ok(RawRecipe {
         title,
         description,
-        ingredients,
-        instructions,
+        ingredients: decode_html_entities(&ingredients),
+        instructions: decode_html_entities(&instructions),
         image_urls,
         source_url: Some(source_url.to_string()),
         source_name,
@@ -488,9 +488,11 @@ fn extract_recipe_from_microdata(
     // Extract title from itemprop="name"
     let title = extract_microdata_text(&recipe_element, "name")
         .ok_or_else(|| ExtractError::MissingField("name".to_string()))?;
+    let title = decode_html_entities(&title);
 
     // Extract description (optional)
-    let description = extract_microdata_text(&recipe_element, "description");
+    let description =
+        extract_microdata_text(&recipe_element, "description").map(|s| decode_html_entities(&s));
 
     // Extract ingredients
     let ingredient_selector =
@@ -526,8 +528,8 @@ fn extract_recipe_from_microdata(
     Ok(RawRecipe {
         title,
         description,
-        ingredients: ingredients.join("\n"),
-        instructions,
+        ingredients: decode_html_entities(&ingredients.join("\n")),
+        instructions: decode_html_entities(&instructions),
         image_urls,
         source_url: Some(source_url.to_string()),
         source_name,
@@ -925,33 +927,15 @@ fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<String>) {
     }
 }
 
-/// Decode common HTML entities to their Unicode equivalents.
+/// Decode HTML entities using the html-escape crate.
+/// Also handles double-encoded entities like "&amp;#8531;" by decoding twice.
 fn decode_html_entities(text: &str) -> String {
-    text.replace("&amp;", "&")
-        .replace("&lt;", "<")
-        .replace("&gt;", ">")
-        .replace("&quot;", "\"")
-        .replace("&#8217;", "\u{2019}")
-        .replace("&#8216;", "\u{2018}")
-        .replace("&#8220;", "\u{201c}")
-        .replace("&#8221;", "\u{201d}")
-        .replace("&#8212;", "\u{2014}")
-        .replace("&#8211;", "\u{2013}")
-        .replace("&#038;", "&")
-        .replace("&#176;", "\u{00b0}")
-        .replace("&deg;", "\u{00b0}")
-        .replace("&reg;", "\u{00ae}")
-        .replace("&frac12;", "\u{00bd}")
-        .replace("&frac14;", "\u{00bc}")
-        .replace("&frac34;", "\u{00be}")
-        .replace("&#189;", "\u{00bd}")
-        .replace("&ndash;", "\u{2013}")
-        .replace("&mdash;", "\u{2014}")
-        .replace("&rsquo;", "\u{2019}")
-        .replace("&lsquo;", "\u{2018}")
-        .replace("&rdquo;", "\u{201d}")
-        .replace("&ldquo;", "\u{201c}")
-        .replace("&hellip;", "\u{2026}")
+    // First pass: decode entities (this handles &amp; -> & among others)
+    let decoded = html_escape::decode_html_entities(text);
+    // Second pass: decode again to handle double-encoded entities
+    // e.g., "&amp;#8531;" -> "&#8531;" -> "⅓"
+    let decoded = html_escape::decode_html_entities(&decoded);
+    decoded.into_owned()
 }
 
 /// Extract a recipe by combining partial structured data with HTML class-based fallbacks.
@@ -1789,5 +1773,66 @@ mod tests {
         assert_eq!(result.method_used, ExtractionMethod::HtmlFallback);
         assert_eq!(result.raw_recipe.title, "Test Recipe");
         assert!(result.raw_recipe.ingredients.contains("1 cup flour"));
+    }
+
+    #[test]
+    fn test_jsonld_decodes_html_entities() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Nami&#39;s Rice Crackers",
+                    "description": "A delicious &amp; crunchy snack",
+                    "recipeIngredient": ["1 cup flour", "&#189; tsp salt"],
+                    "recipeInstructions": "When it&#39;s hot, add oil."
+                }
+                </script>
+            </head><body></body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+        assert_eq!(result.title, "Nami's Rice Crackers");
+        assert_eq!(
+            result.description.as_deref(),
+            Some("A delicious & crunchy snack")
+        );
+        assert!(
+            result.ingredients.contains("\u{00bd} tsp salt"),
+            "got: {}",
+            result.ingredients
+        );
+        assert!(
+            result.instructions.contains("it's hot"),
+            "got: {}",
+            result.instructions
+        );
+    }
+
+    #[test]
+    fn test_microdata_decodes_html_entities() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><body>
+                <div itemscope itemtype="https://schema.org/Recipe">
+                    <h1 itemprop="name">Nami&#39;s Dango</h1>
+                    <p itemprop="description">Sweet &amp; chewy</p>
+                    <ul>
+                        <li itemprop="recipeIngredient">1 cup flour</li>
+                    </ul>
+                    <div itemprop="recipeInstructions">When it&#39;s done, serve.</div>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+        assert_eq!(result.title, "Nami's Dango");
+        assert_eq!(result.description.as_deref(), Some("Sweet & chewy"));
+        assert!(
+            result.instructions.contains("it's done"),
+            "got: {}",
+            result.instructions
+        );
     }
 }
