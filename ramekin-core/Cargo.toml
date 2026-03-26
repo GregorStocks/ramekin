@@ -52,7 +52,7 @@ tracing = "0.1"
 uuid = { version = "1.22", features = ["v4", "serde"] }
 
 # AI client (OpenAI-compatible API for OpenRouter)
-async-openai = { version = "0.33", features = ["chat-completion"] }
+async-openai = { version = "0.34", features = ["chat-completion"] }
 
 # Hashing for cache keys
 sha2 = "0.10"
