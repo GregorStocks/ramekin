@@ -785,15 +785,13 @@ const FOOTNOTE_FALSE_POSITIVE_PREFIXES: &[&str] = &[
 /// known recipe card note containers (WPRM, Tasty Recipes, etc.).
 /// Returns a list of (marker, text) pairs, or None if no footnotes found.
 pub fn extract_footnotes_from_html(html: &str) -> Option<Vec<(String, String)>> {
-    // Only search for footnotes if the HTML contains a known recipe notes container.
-    // We search the full HTML for footnote patterns rather than trying to extract the
-    // container content, because nested <div> elements make regex-based section
-    // extraction fragile.
-    if !has_recipe_notes_container(html) {
-        return None;
-    }
+    // Scope the search to the portion of HTML starting from the first recipe notes
+    // container. This avoids matching starred <li>/<p> elements in unrelated parts
+    // of the page (sidebars, comments) while handling nested <div> elements that
+    // break regex-based container content extraction.
+    let search_html = find_notes_section_start(html)?;
 
-    let candidates = FOOTNOTE_REGEX.captures_iter(html).map(|cap| {
+    let candidates = FOOTNOTE_REGEX.captures_iter(search_html).map(|cap| {
         let marker = cap.get(1).unwrap().as_str().to_string();
         // Strip inline HTML tags (e.g., <em>, <strong>, <a>) from footnote text
         let raw_text = cap.get(2).unwrap().as_str().trim();
@@ -872,11 +870,14 @@ const RECIPE_NOTES_CONTAINER_CLASSES: &[&str] = &[
     "tasty-recipe-notes",
 ];
 
-/// Check if the HTML contains a known recipe notes container.
-fn has_recipe_notes_container(html: &str) -> bool {
+/// Find the start of the recipe notes section in HTML.
+/// Returns a slice from the first notes container class marker onwards,
+/// scoping footnote search to avoid matching unrelated content earlier in the page.
+fn find_notes_section_start(html: &str) -> Option<&str> {
     RECIPE_NOTES_CONTAINER_CLASSES
         .iter()
-        .any(|class| html.contains(class))
+        .filter_map(|class| html.find(class).and_then(|pos| html.get(pos..)))
+        .min_by_key(|s| s.len())
 }
 
 /// Regex to strip HTML tags for extracting text from raw HTML fragments.
