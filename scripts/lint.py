@@ -677,6 +677,11 @@ def main() -> None:
     overall_start = time.monotonic()
     project_root = get_project_root()
 
+    # Install UI node_modules before parallel linting to avoid race condition
+    # (both lint_typescript and lint_css call ensure_ui_node_modules concurrently)
+    ui_dir = project_root / "ramekin-ui"
+    ensure_ui_node_modules(ui_dir)
+
     # Define linters to run
     linters = [
         ("Rust (server)", lambda: lint_rust_server(project_root)),
