@@ -39,6 +39,11 @@ extension RecipeDetailView {
                     notesSection(notes)
                 }
 
+                if let nutritionalInfo = recipe.nutritionalInfoForDisplay {
+                    Divider()
+                    nutritionalInfoSection(nutritionalInfo)
+                }
+
                 if let sourceUrl = recipe.sourceUrl, let url = URL(string: sourceUrl) {
                     Divider()
                     sourceLinkSection(url: url, name: recipe.sourceName)
@@ -172,5 +177,25 @@ extension RecipeDetailView {
                 .font(.body)
                 .foregroundColor(.secondary)
         }
+    }
+
+    func nutritionalInfoSection(_ nutritionalInfo: String) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Nutritional Info")
+                .font(.title3)
+                .fontWeight(.bold)
+
+            Text(nutritionalInfo)
+                .font(.body)
+                .foregroundColor(.secondary)
+        }
+    }
+}
+
+extension RecipeResponse {
+    var nutritionalInfoForDisplay: String? {
+        guard let nutritionalInfo else { return nil }
+        let trimmed = nutritionalInfo.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmed.isEmpty ? nil : trimmed
     }
 }
