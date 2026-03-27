@@ -1157,6 +1157,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // Step 7: The remaining text is the ingredient item
     // Strip leading commas that can occur after units (e.g., "2 large, boneless chicken")
     // Strip trailing " )" that can occur from double-paren patterns like "((45ml) )"
+    // Strip trailing footnote markers (*, **, ***) from recipe sites
     // Strip trailing commas (e.g., "pork tenderloins,")
     // Strip trailing semicolons (e.g., "cheese, grated;" when semicolon was separator before note)
     // Normalize " ," to "," (space before comma from parenthetical extraction)
@@ -1168,9 +1169,20 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         .trim()
         .trim_end_matches(',')
         .trim_end_matches(';')
+        .trim_end_matches('*')
         .trim()
         .replace(" ,", ",")
         .to_string();
+
+    // Strip trailing footnote markers from note (e.g., "at room temperature**" → "at room temperature")
+    if let Some(ref n) = note {
+        let trimmed = n.trim_end_matches('*').trim_end().to_string();
+        note = if trimmed.is_empty() {
+            None
+        } else {
+            Some(trimmed)
+        };
+    }
 
     // Prepend "optional" to note if we stripped that prefix
     if optional_prefix {
@@ -1937,6 +1949,11 @@ pub fn should_ignore_line(raw: &str) -> bool {
     let trimmed = raw.trim();
     let lower = trimmed.to_lowercase();
 
+    // Skip lines that are only asterisks (footnote section dividers, e.g., "**")
+    if !trimmed.is_empty() && trimmed.chars().all(|c| c == '*') {
+        return true;
+    }
+
     // Check exact matches (case-insensitive)
     for &pattern in IGNORED_LINE_PATTERNS {
         if lower == pattern {
@@ -2698,5 +2715,49 @@ mod tests {
         assert_eq!(result[0].measurements[0].unit, Some("tsp".to_string()));
         assert_eq!(result[1].item, "pepper");
         assert_eq!(result[1].measurements[0].unit, Some("tsp".to_string()));
+    }
+
+    #[test]
+    fn test_strip_trailing_asterisks_from_item() {
+        // Single asterisk
+        let result = parse_ingredient("3/4 cup (170g) unsalted butter*");
+        assert_eq!(result.item, "unsalted butter");
+
+        // Double asterisk
+        let result = parse_ingredient("2/3 cup (56g) unsweetened cocoa powder**");
+        assert_eq!(result.item, "unsweetened cocoa powder");
+
+        // Triple asterisk
+        let result = parse_ingredient("3/4 cup (128g) chocolate chips***");
+        assert_eq!(result.item, "chocolate chips");
+
+        // Asterisk with trailing comma (no note after)
+        let result = parse_ingredient("7 tablespoons vegetable oil*,");
+        assert_eq!(result.item, "vegetable oil");
+    }
+
+    #[test]
+    fn test_should_ignore_standalone_asterisks() {
+        assert!(should_ignore_line("**"));
+        assert!(should_ignore_line("*"));
+        assert!(should_ignore_line("***"));
+        // Regular ingredients should not be ignored
+        assert!(!should_ignore_line("1 cup flour*"));
+    }
+
+    #[test]
+    fn test_strip_asterisks_from_note() {
+        let result = parse_ingredient("1 cup butter, at room temperature**");
+        assert_eq!(result.item, "butter");
+        assert_eq!(result.note.as_deref(), Some("at room temperature"));
+    }
+
+    #[test]
+    fn test_parse_ingredients_filters_standalone_asterisks() {
+        let blob = "For pistou\n**\n3/4 cup fresh mint leaves";
+        let result = parse_ingredients(blob);
+        // The ** line should be filtered out
+        assert_eq!(result.len(), 2);
+        assert_eq!(result[1].item, "fresh mint leaves");
     }
 }

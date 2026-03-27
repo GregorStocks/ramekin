@@ -111,11 +111,15 @@
     {
       "raw": "2 tablespoons chili powder*",
       "expected": {
-        "item": "chili powder*",
+        "item": "chili powder",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -143,11 +147,15 @@
     {
       "raw": "1 &amp;frac12; teaspoons smoked paprika*",
       "expected": {
-        "item": "smoked paprika*",
+        "item": "smoked paprika",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "3.4",
+            "unit": "g"
           }
         ],
         "note": null,

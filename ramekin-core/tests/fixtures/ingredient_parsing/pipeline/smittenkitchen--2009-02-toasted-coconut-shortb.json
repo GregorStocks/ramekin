@@ -5,7 +5,7 @@
     {
       "raw": "1/2 cup (about 1.5 ounces) unsweetened shredded coconut*",
       "expected": {
-        "item": "unsweetened shredded coconut*",
+        "item": "unsweetened shredded coconut",
         "measurements": [
           {
             "amount": "0.5",
@@ -46,7 +46,7 @@
             "unit": "g"
           }
         ],
-        "note": "room temperature**",
+        "note": "room temperature",
         "category": "Dairy & Eggs"
       }
     },

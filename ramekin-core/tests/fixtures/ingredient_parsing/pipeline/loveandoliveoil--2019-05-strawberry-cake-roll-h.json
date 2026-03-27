@@ -186,11 +186,15 @@
     {
       "raw": "2/3 cup cake flour* (sifted)",
       "expected": {
-        "item": "cake flour*",
+        "item": "cake flour",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "76",
+            "unit": "g"
           }
         ],
         "note": "sifted",

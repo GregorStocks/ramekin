@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "grated *",
+        "note": "grated",
         "category": "Cheese"
       }
     },
@@ -45,7 +45,7 @@
     {
       "raw": "3/4 cup evaporated milk (aka unsweetened condensed milk)**",
       "expected": {
-        "item": "evaporated milk (aka unsweetened condensed milk)**",
+        "item": "evaporated milk (aka unsweetened condensed milk)",
         "measurements": [
           {
             "amount": "0.75",

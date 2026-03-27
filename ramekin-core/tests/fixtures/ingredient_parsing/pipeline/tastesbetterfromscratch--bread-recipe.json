@@ -27,11 +27,15 @@
     {
       "raw": "1 Tablespoons active dry yeast*",
       "expected": {
-        "item": "active dry yeast*",
+        "item": "active dry yeast",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -95,7 +99,7 @@
     {
       "raw": "4 - 5 1/2 cups all-purpose or bread flour* ((500g-688g))",
       "expected": {
-        "item": "1/2 cups all-purpose or bread flour*",
+        "item": "1/2 cups all-purpose or bread flour",
         "measurements": [
           {
             "amount": "4-5",

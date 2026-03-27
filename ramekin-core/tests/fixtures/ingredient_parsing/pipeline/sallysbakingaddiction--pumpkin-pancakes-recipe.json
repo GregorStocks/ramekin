@@ -95,7 +95,7 @@
     {
       "raw": "1 teaspoon store-bought or homemade pumpkin pie spice*",
       "expected": {
-        "item": "store-bought or homemade pumpkin pie spice*",
+        "item": "store-bought or homemade pumpkin pie spice",
         "measurements": [
           {
             "amount": "1",
@@ -177,7 +177,7 @@
     {
       "raw": "1 and 1/2 cups (360ml) whole milk*",
       "expected": {
-        "item": "whole milk*",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "1.5",
@@ -186,6 +186,10 @@
           {
             "amount": "360",
             "unit": "ml"
+          },
+          {
+            "amount": "368",
+            "unit": "g"
           }
         ],
         "note": null,

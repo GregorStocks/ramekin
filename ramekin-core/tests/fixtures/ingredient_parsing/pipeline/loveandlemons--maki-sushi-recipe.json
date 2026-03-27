@@ -165,11 +165,15 @@
     {
       "raw": "2 cups water*",
       "expected": {
-        "item": "water*",
+        "item": "water",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "474",
+            "unit": "g"
           }
         ],
         "note": null,

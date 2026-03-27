@@ -73,11 +73,15 @@
     {
       "raw": "3/4 cup all-purpose flour *",
       "expected": {
-        "item": "all-purpose flour *",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "94",
+            "unit": "g"
           }
         ],
         "note": null,

@@ -68,6 +68,7 @@ pub async fn extract_recipe_from_photos(
         nutritional_info: None,
         notes: extracted.notes,
         categories: None,
+        footnotes: None,
     };
 
     Ok(PhotoExtractResult {

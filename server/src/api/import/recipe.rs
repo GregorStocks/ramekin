@@ -87,6 +87,7 @@ impl From<ImportRawRecipe> for RawRecipe {
             nutritional_info: recipe.nutritional_info,
             notes: recipe.notes,
             categories: recipe.categories,
+            footnotes: None,
         }
     }
 }

@@ -59,11 +59,15 @@
     {
       "raw": "3 1/4 cups powdered sugar *",
       "expected": {
-        "item": "powdered sugar *",
+        "item": "powdered sugar",
         "measurements": [
           {
             "amount": "3.25",
             "unit": "cup"
+          },
+          {
+            "amount": "390",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -73,7 +77,7 @@
     {
       "raw": "1/2 teaspoon peppermint extract **",
       "expected": {
-        "item": "peppermint extract **",
+        "item": "peppermint extract",
         "measurements": [
           {
             "amount": "0.5",

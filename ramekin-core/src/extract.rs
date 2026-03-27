@@ -85,6 +85,10 @@ fn extract_jsonld_fast(html: &str, source_url: &str) -> Option<RawRecipe> {
                         raw_recipe.image_urls.push(og_image);
                     }
                 }
+                // Extract footnotes from HTML when ingredients contain asterisks
+                if raw_recipe.ingredients.contains('*') {
+                    raw_recipe.footnotes = extract_footnotes_from_html(html);
+                }
                 return Some(raw_recipe);
             }
         }
@@ -220,6 +224,10 @@ fn extract_recipe_from_jsonld(
                     raw_recipe.image_urls.push(og_image);
                 }
             }
+            // Extract footnotes when ingredients contain asterisks
+            if raw_recipe.ingredients.contains('*') {
+                raw_recipe.footnotes = extract_footnotes_from_document(document);
+            }
             return Ok(raw_recipe);
         }
     }
@@ -348,6 +356,7 @@ fn extract_recipe_data(
         nutritional_info: None,
         notes: None,
         categories: None,
+        footnotes: None,
     })
 }
 
@@ -625,10 +634,17 @@ fn extract_recipe_from_microdata(
     let source_name = extract_source_name(source_url);
     let servings = extract_microdata_text(&recipe_element, "recipeYield");
 
+    let ingredients_str = decode_html_entities(&ingredients.join("\n"));
+    let footnotes = if ingredients_str.contains('*') {
+        extract_footnotes_from_document(document)
+    } else {
+        None
+    };
+
     Ok(RawRecipe {
         title,
         description,
-        ingredients: decode_html_entities(&ingredients.join("\n")),
+        ingredients: ingredients_str,
         instructions: decode_html_entities(&instructions),
         image_urls,
         source_url: Some(source_url.to_string()),
@@ -642,6 +658,7 @@ fn extract_recipe_from_microdata(
         nutritional_info: None,
         notes: None,
         categories: None,
+        footnotes,
     })
 }
 
@@ -744,6 +761,121 @@ fn extract_og_image(document: &Html) -> Option<String> {
         .value()
         .attr("content")
         .map(|s| s.to_string())
+}
+
+/// Regex to match footnote lines starting with asterisks inside `<li>` or `<p>` tags.
+/// Captures: (1) the asterisk marker, (2) the footnote text.
+static FOOTNOTE_REGEX: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r"(?i)<(?:li|p)[^>]*>\s*(\*{1,3})\s*([^<]{10,500})</(?:li|p)>")
+        .expect("Invalid footnote regex")
+});
+
+/// Phrases that indicate a false-positive footnote (nutritional disclaimers, affiliate notices).
+const FOOTNOTE_FALSE_POSITIVE_PREFIXES: &[&str] = &[
+    "percent daily value",
+    "daily values",
+    "this post may contain affiliate",
+    "this post contains affiliate",
+    "nutrient information is not available",
+];
+
+/// Extract footnotes from HTML recipe notes sections.
+///
+/// Searches for `<li>` and `<p>` elements starting with `*`, `**`, or `***` inside
+/// known recipe card note containers (WPRM, Tasty Recipes, etc.).
+/// Returns a list of (marker, text) pairs, or None if no footnotes found.
+pub fn extract_footnotes_from_html(html: &str) -> Option<Vec<(String, String)>> {
+    let notes_sections = find_recipe_notes_sections(html);
+    if notes_sections.is_empty() {
+        return None;
+    }
+
+    let candidates = notes_sections.iter().flat_map(|section| {
+        FOOTNOTE_REGEX.captures_iter(section).map(|cap| {
+            let marker = cap.get(1).unwrap().as_str().to_string();
+            let text = cap.get(2).unwrap().as_str().trim().to_string();
+            (marker, decode_html_entities(&text))
+        })
+    });
+
+    collect_footnotes(candidates)
+}
+
+/// Extract footnotes from a pre-parsed HTML document.
+/// Uses CSS selectors instead of regex to avoid re-parsing the DOM.
+fn extract_footnotes_from_document(document: &Html) -> Option<Vec<(String, String)>> {
+    let notes_selector = Selector::parse(
+        ".wprm-recipe-notes-container li, .wprm-recipe-notes-container p, .wprm-recipe-notes li, .wprm-recipe-notes p, .tasty-recipes-notes li, .tasty-recipes-notes p, .tasty-recipe-notes li, .tasty-recipe-notes p",
+    ).ok()?;
+
+    let candidates = document.select(&notes_selector).filter_map(|element| {
+        let text: String = element.text().collect::<String>();
+        let text = text.trim().to_string();
+
+        let marker_len = text.chars().take_while(|&c| c == '*').count();
+        if marker_len == 0 || marker_len > 3 {
+            return None;
+        }
+
+        let marker = "*".repeat(marker_len);
+        // Safe: '*' is ASCII so marker_len bytes == marker_len chars
+        let footnote_text = text.get(marker_len..)?.trim();
+        if footnote_text.len() < 10 {
+            return None;
+        }
+
+        Some((marker, decode_html_entities(footnote_text)))
+    });
+
+    collect_footnotes(candidates)
+}
+
+/// Shared logic for deduplicating and filtering footnote candidates.
+/// Takes an iterator of (marker, text) pairs and returns the first footnote
+/// for each marker level, skipping false positives (nutritional disclaimers, etc.).
+fn collect_footnotes(
+    candidates: impl Iterator<Item = (String, String)>,
+) -> Option<Vec<(String, String)>> {
+    let mut footnotes: Vec<(String, String)> = Vec::new();
+    let mut seen_markers = std::collections::HashSet::new();
+
+    for (marker, text) in candidates {
+        let lower = text.to_lowercase();
+        if FOOTNOTE_FALSE_POSITIVE_PREFIXES
+            .iter()
+            .any(|prefix| lower.starts_with(prefix))
+        {
+            continue;
+        }
+
+        // Only keep the first footnote for each marker level
+        if !seen_markers.contains(&marker) {
+            seen_markers.insert(marker.clone());
+            footnotes.push((marker, text));
+        }
+    }
+
+    if footnotes.is_empty() {
+        None
+    } else {
+        Some(footnotes)
+    }
+}
+
+/// Regex to find recipe notes container sections in HTML.
+/// Matches the content between the opening and closing tags of known note containers.
+static RECIPE_NOTES_SECTION_REGEX: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(
+        r#"(?is)<div[^>]*class\s*=\s*["'][^"']*(?:wprm-recipe-notes|tasty-recipes?-notes)[^"']*["'][^>]*>(.*?)</div>"#
+    ).expect("Invalid recipe notes section regex")
+});
+
+/// Find recipe notes sections in the HTML.
+fn find_recipe_notes_sections(html: &str) -> Vec<String> {
+    RECIPE_NOTES_SECTION_REGEX
+        .captures_iter(html)
+        .map(|cap| cap.get(1).unwrap().as_str().to_string())
+        .collect()
 }
 
 /// Regex to strip HTML tags for extracting text from raw HTML fragments.
@@ -928,10 +1060,17 @@ fn extract_recipe_from_unstructured_blog(html: &str, source_url: &str) -> Option
     let image_urls = extract_og_image_fast(html).into_iter().collect();
     let source_name = extract_source_name(source_url);
 
+    let ingredients_str = ingredient_lines.join("\n");
+    let footnotes = if ingredients_str.contains('*') {
+        extract_footnotes_from_html(html)
+    } else {
+        None
+    };
+
     Some(RawRecipe {
         title,
         description: None,
-        ingredients: ingredient_lines.join("\n"),
+        ingredients: ingredients_str,
         instructions: instruction_paragraphs.join("\n\n"),
         image_urls,
         source_url: Some(source_url.to_string()),
@@ -945,6 +1084,7 @@ fn extract_recipe_from_unstructured_blog(html: &str, source_url: &str) -> Option
         nutritional_info: None,
         notes: None,
         categories: None,
+        footnotes,
     })
 }
 
@@ -1089,6 +1229,12 @@ fn extract_recipe_with_html_fallback(
 
         let source_name = extract_source_name(source_url);
 
+        let footnotes = if ingredients.contains('*') {
+            extract_footnotes_from_document(document)
+        } else {
+            None
+        };
+
         return Ok(RawRecipe {
             title,
             description,
@@ -1106,6 +1252,7 @@ fn extract_recipe_with_html_fallback(
             nutritional_info: None,
             notes: None,
             categories: None,
+            footnotes,
         });
     }
 
@@ -2110,5 +2257,86 @@ mod tests {
                 "1 cup milk",
             ]
         );
+    }
+
+    #[test]
+    fn test_extract_footnotes_from_wprm_notes() {
+        let html = r#"
+            <div class="wprm-recipe-notes-container">
+                <ul>
+                    <li>*If you only have salted butter that works fine too.</li>
+                    <li>**Regular or dutch process cocoa works great in this recipe.</li>
+                    <li>***Milk chocolate chips give the crackly top.</li>
+                </ul>
+            </div>
+        "#;
+
+        let footnotes = extract_footnotes_from_html(html).unwrap();
+        assert_eq!(footnotes.len(), 3);
+        assert_eq!(footnotes[0].0, "*");
+        assert!(footnotes[0].1.contains("salted butter"));
+        assert_eq!(footnotes[1].0, "**");
+        assert!(footnotes[1].1.contains("cocoa"));
+        assert_eq!(footnotes[2].0, "***");
+        assert!(footnotes[2].1.contains("chocolate chips"));
+    }
+
+    #[test]
+    fn test_extract_footnotes_skips_false_positives() {
+        let html = r#"
+            <div class="wprm-recipe-notes-container">
+                <p>*Percent Daily Values are based on a 2,000 calorie diet.</p>
+                <p>**This post may contain affiliate links for products.</p>
+            </div>
+        "#;
+
+        let footnotes = extract_footnotes_from_html(html);
+        assert!(footnotes.is_none());
+    }
+
+    #[test]
+    fn test_extract_footnotes_none_without_notes_section() {
+        let html = r#"
+            <div class="recipe-content">
+                <p>*This is just a blog paragraph with an asterisk.</p>
+            </div>
+        "#;
+
+        let footnotes = extract_footnotes_from_html(html);
+        assert!(footnotes.is_none());
+    }
+
+    #[test]
+    fn test_jsonld_with_footnotes_populates_field() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Brownies",
+                    "recipeIngredient": ["3/4 cup unsalted butter*", "2/3 cup cocoa powder**"],
+                    "recipeInstructions": "Mix and bake."
+                }
+                </script>
+            </head>
+            <body>
+                <div class="wprm-recipe-notes-container">
+                    <ul>
+                        <li>*Use European-style butter for best results.</li>
+                        <li>**Dutch process cocoa is recommended here.</li>
+                    </ul>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/brownies").unwrap();
+        assert!(result.ingredients.contains("butter*"));
+        let footnotes = result.footnotes.unwrap();
+        assert_eq!(footnotes.len(), 2);
+        assert_eq!(footnotes[0].0, "*");
+        assert!(footnotes[0].1.contains("European-style butter"));
+        assert_eq!(footnotes[1].0, "**");
+        assert!(footnotes[1].1.contains("Dutch process"));
     }
 }

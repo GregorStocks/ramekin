@@ -5,7 +5,7 @@ use std::time::Instant;
 
 use async_trait::async_trait;
 
-use crate::ingredient_parser::parse_ingredients;
+use crate::ingredient_parser::{parse_ingredients, ParsedIngredient};
 use crate::metric_weights::{add_metric_weight_alternative, MetricConversionStats};
 use crate::pipeline::{PipelineStep, StepContext, StepMetadata, StepResult};
 use crate::types::{ParseIngredientsOutput, RawRecipe};
@@ -72,7 +72,12 @@ impl PipelineStep for ParseIngredientsStep {
         };
 
         // Parse the ingredients blob into structured data
-        let parsed = parse_ingredients(&raw_recipe.ingredients);
+        let mut parsed = parse_ingredients(&raw_recipe.ingredients);
+
+        // Annotate ingredients with footnote text extracted from HTML
+        if let Some(ref footnotes) = raw_recipe.footnotes {
+            apply_footnotes_to_ingredients(&mut parsed, footnotes);
+        }
 
         // Enrich with metric weight alternatives (oz/lb → g)
         let mut weight_stats = MetricConversionStats::default();
@@ -100,5 +105,59 @@ impl PipelineStep for ParseIngredientsStep {
             duration_ms: start.elapsed().as_millis() as u64,
             next_step: Some("save_recipe".to_string()),
         }
+    }
+}
+
+/// Apply extracted footnote text to ingredients that have asterisk markers.
+///
+/// For each ingredient, checks its `raw` text for trailing asterisks and matches
+/// the marker count to the footnotes list. When a match is found, the footnote
+/// text is appended to the ingredient's `note` field.
+fn apply_footnotes_to_ingredients(
+    ingredients: &mut [ParsedIngredient],
+    footnotes: &[(String, String)],
+) {
+    if footnotes.is_empty() {
+        return;
+    }
+
+    let footnote_map: std::collections::HashMap<&str, &str> = footnotes
+        .iter()
+        .map(|(marker, text)| (marker.as_str(), text.as_str()))
+        .collect();
+
+    for ingredient in ingredients.iter_mut() {
+        // Use raw text (not item) because the parser already stripped asterisks from item
+        let raw = match ingredient.raw.as_deref() {
+            Some(r) => r,
+            None => continue,
+        };
+
+        let marker = extract_trailing_marker(raw.trim());
+        if marker.is_empty() {
+            continue;
+        }
+
+        if let Some(&footnote_text) = footnote_map.get(marker.as_str()) {
+            ingredient.note = match &ingredient.note {
+                Some(existing) => Some(format!("{}; {}", existing, footnote_text)),
+                None => Some(footnote_text.to_string()),
+            };
+        }
+    }
+}
+
+/// Extract the trailing asterisk marker from an ingredient string.
+/// Checks the text before the first comma (the item name portion) for
+/// trailing `*`, `**`, or `***`.
+fn extract_trailing_marker(s: &str) -> String {
+    // Check the portion before the first comma (item name, not prep notes)
+    let item_portion = s.split(',').next().unwrap_or(s);
+    let trimmed = item_portion.trim().trim_end_matches(')').trim();
+    let asterisk_count = trimmed.chars().rev().take_while(|&c| c == '*').count();
+    if asterisk_count > 0 && asterisk_count <= 3 {
+        "*".repeat(asterisk_count)
+    } else {
+        String::new()
     }
 }

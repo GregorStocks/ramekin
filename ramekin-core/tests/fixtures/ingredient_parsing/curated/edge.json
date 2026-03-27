@@ -156,11 +156,15 @@
       "name": "footnote_asterisk",
       "raw": "6 Tbsp butter*, divided",
       "expected": {
-        "item": "butter*",
+        "item": "butter",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
         "note": "divided",

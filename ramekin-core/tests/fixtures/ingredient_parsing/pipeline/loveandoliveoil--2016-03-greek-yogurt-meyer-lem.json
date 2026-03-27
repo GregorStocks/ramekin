@@ -27,7 +27,7 @@
     {
       "raw": "1 1/2 cups (6 ounces) cake flour*",
       "expected": {
-        "item": "cake flour*",
+        "item": "cake flour",
         "measurements": [
           {
             "amount": "1.5",
@@ -128,7 +128,7 @@
             "unit": "large"
           }
         ],
-        "note": "room temperature**",
+        "note": "room temperature",
         "category": "Dairy & Eggs"
       }
     },

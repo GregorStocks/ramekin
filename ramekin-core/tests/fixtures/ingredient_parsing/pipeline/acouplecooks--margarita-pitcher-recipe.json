@@ -27,7 +27,7 @@
     {
       "raw": "1/2 cup fresh lime juice (about 4 limes)*",
       "expected": {
-        "item": "fresh lime juice *",
+        "item": "fresh lime juice",
         "measurements": [
           {
             "amount": "0.5",
@@ -36,6 +36,10 @@
           {
             "amount": "4",
             "unit": null
+          },
+          {
+            "amount": "121",
+            "unit": "g"
           }
         ],
         "note": null,

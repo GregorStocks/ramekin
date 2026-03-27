@@ -23,11 +23,15 @@
     {
       "raw": "1/2 cup honey*",
       "expected": {
-        "item": "honey*",
+        "item": "honey",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
         "note": null,

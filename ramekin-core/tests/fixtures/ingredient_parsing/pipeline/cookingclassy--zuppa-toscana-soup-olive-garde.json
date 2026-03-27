@@ -103,11 +103,15 @@
     {
       "raw": "1 cup water**",
       "expected": {
-        "item": "water**",
+        "item": "water",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "237",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -117,7 +121,7 @@
     {
       "raw": "1 1/2 lbs Russet potatoes,*** (scrubbed and rinsed then sliced into halves, halves diced into 1/6-inch slices)",
       "expected": {
-        "item": "Russet potatoes,***",
+        "item": "Russet potatoes,",
         "measurements": [
           {
             "amount": "1.5",

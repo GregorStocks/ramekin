@@ -77,7 +77,7 @@
     {
       "raw": "1 cup (130g) diced yellow onion*",
       "expected": {
-        "item": "diced yellow onion*",
+        "item": "diced yellow onion",
         "measurements": [
           {
             "amount": "1",
@@ -241,7 +241,7 @@
     {
       "raw": "4 ounces (113g) full-fat or light brick-style cream cheese*, at room temperature",
       "expected": {
-        "item": "full-fat or light brick-style cream cheese*",
+        "item": "full-fat or light brick-style cream cheese",
         "measurements": [
           {
             "amount": "4",
