@@ -125,7 +125,7 @@ class ShoppingListStore: ObservableObject {
         if hasPending || stale { await syncWithServer() }
     }
 
-    func syncWithServer() async {
+    func syncWithServer(isFollowUp: Bool = false) async {
         let logger = DebugLogger.shared
         guard isOnline, !isSyncing else {
             logger.log("syncWithServer skipped (online=\(isOnline), syncing=\(isSyncing))", source: "Shopping")
@@ -133,6 +133,7 @@ class ShoppingListStore: ObservableObject {
         }
         isSyncing = true
         lastSyncError = nil
+        let syncStartedAt = Date()
         logger.log("syncWithServer started", source: "Shopping")
 
         do {
@@ -142,7 +143,7 @@ class ShoppingListStore: ObservableObject {
             let response = try await logger.timed("shopping sync API", source: "Shopping") {
                 try await ShoppingListAPI.syncItems(syncRequest: request)
             }
-            processServerResponse(response, pendingItems: pending)
+            processServerResponse(response, pendingItems: pending, syncStartedAt: syncStartedAt)
             lastSyncAt = response.syncTimestamp
             logger.log("syncWithServer completed successfully", source: "Shopping")
         } catch {
@@ -152,6 +153,16 @@ class ShoppingListStore: ObservableObject {
 
         isSyncing = false
         fetchItems()
+
+        // If the sync succeeded and new items were modified during it, do one follow-up sync.
+        // Only re-sync once to avoid unbounded loops from persistent conflicts.
+        if lastSyncError == nil && !isFollowUp {
+            let hasPending = (try? coreDataStack.viewContext.fetch(ShoppingItem.fetchPendingSync()))?.isEmpty == false
+            if hasPending && isOnline {
+                logger.log("syncWithServer: still have pending items, follow-up sync", source: "Shopping")
+                await syncWithServer(isFollowUp: true)
+            }
+        }
     }
 
     private func buildSyncRequest(from pending: [ShoppingItem]) -> SyncRequest {
@@ -188,19 +199,19 @@ class ShoppingListStore: ObservableObject {
         )
     }
 
-    private func processServerResponse(_ response: SyncResponse, pendingItems: [ShoppingItem]) {
+    private func processServerResponse(_ response: SyncResponse, pendingItems: [ShoppingItem], syncStartedAt: Date) {
         let context = coreDataStack.viewContext
 
         for created in response.created {
             if let local = pendingItems.first(where: { $0.id == created.clientId }) {
                 local.id = created.serverId
-                local.markSynced(serverVersion: Int32(created.version))
+                reconcileSyncedItem(local, version: created.version, success: true, syncStartedAt: syncStartedAt)
             }
         }
 
-        for updated in response.updated where updated.success {
+        for updated in response.updated {
             if let local = pendingItems.first(where: { $0.id == updated.id }) {
-                local.markSynced(serverVersion: Int32(updated.version))
+                reconcileSyncedItem(local, version: updated.version, success: updated.success, syncStartedAt: syncStartedAt)
             }
         }
 
@@ -217,10 +228,30 @@ class ShoppingListStore: ObservableObject {
         coreDataStack.saveContext()
     }
 
+    /// Reconcile a pending item after the server acknowledges it.
+    /// If the item was locally modified during the in-flight sync, keep it pending
+    /// so the new changes get pushed in the next round.
+    private func reconcileSyncedItem(_ local: ShoppingItem, version: Int, success: Bool, syncStartedAt: Date) {
+        let modifiedDuringSync = local.updatedAt ?? Date.distantPast > syncStartedAt
+
+        if success && !modifiedDuringSync {
+            local.markSynced(serverVersion: Int32(version))
+        } else if version > 0 {
+            // Update version for retry; version 0 means item not found on server.
+            local.serverVersion = Int32(version)
+            // A created item that was modified during sync now has a server ID — promote to update
+            if local.syncStatusEnum == .pendingCreate && modifiedDuringSync {
+                local.syncStatusEnum = .pendingUpdate
+            }
+        }
+    }
+
     private func applyServerChange(_ change: SyncServerChange, in context: NSManagedObjectContext) {
         let existing = (try? context.fetch(ShoppingItem.fetchById(change.id)))?.first
 
         if let item = existing {
+            // Don't overwrite pending local changes — they'll be synced next round
+            guard item.syncStatusEnum == .synced else { return }
             guard change.version >= item.serverVersion else { return }
             item.item = change.item
             item.amount = change.amount
