@@ -13,18 +13,18 @@
     "@solidjs/router": "^0.16.1",
     "@thisbeyond/solid-dnd": "^0.7.5",
     "@types/diff": "^8.0.0",
-    "diff": "^8.0.3",
+    "diff": "^8.0.4",
     "http-proxy": "^1.18.1",
     "ramekin-client": "file:./generated-client",
-    "solid-js": "^1.9.11"
+    "solid-js": "^1.9.12"
   },
   "devDependencies": {
     "@types/http-proxy": "^1.17.17",
     "@types/node": "^25.5.0",
-    "stylelint": "^17.4.0",
+    "stylelint": "^17.5.0",
     "stylelint-config-standard": "^40.0.0",
-    "typescript": "~5.9.3",
-    "vite": "^8.0.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.0.2",
     "vite-plugin-solid": "^2.11.11"
   }
 }
