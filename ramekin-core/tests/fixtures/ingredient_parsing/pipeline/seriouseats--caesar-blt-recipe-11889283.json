@@ -3,13 +3,27 @@
   "recipe_slug": "caesar-blt-recipe-11889283",
   "ingredients": [
     {
-      "raw": "3 strips thick-cut, naturally cured bacon (see note)2 slices high-quality sandwich bread, such as shokupanExtra-virgin olive oil, for drizzling",
+      "raw": "3 strips thick-cut, naturally cured bacon (see note)",
       "expected": {
-        "item": "strips thick-cut, naturally cured bacon (see note)2 slices high-quality sandwich bread, such as shokupanExtra-virgin olive oil, for drizzling",
+        "item": "strips thick-cut, naturally cured bacon (see note)",
         "measurements": [
           {
             "amount": "3",
             "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "2 slices high-quality sandwich bread, such as shokupanExtra-virgin olive oil, for drizzling",
+      "expected": {
+        "item": "high-quality sandwich bread, such as shokupanExtra-virgin olive oil, for drizzling",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "slice"
           }
         ],
         "note": null,
@@ -77,9 +91,9 @@
       }
     },
     {
-      "raw": "2 to 4 thick slices ripe tomato (see note)2 oil-packed anchovy fillets",
+      "raw": "2 to 4 thick slices ripe tomato (see note)",
       "expected": {
-        "item": "thick slices ripe tomato (see note)2 oil-packed anchovy fillets",
+        "item": "thick slices ripe tomato (see note)",
         "measurements": [
           {
             "amount": "2 to 4",
@@ -87,7 +101,7 @@
           }
         ],
         "note": null,
-        "category": "Meat & Seafood"
+        "category": "Produce"
       }
     },
     {

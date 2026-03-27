@@ -301,28 +301,6 @@
       }
     },
     {
-      "raw": "1 tablespoon (15 ml) honey",
-      "expected": {
-        "item": "honey",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "ml"
-          },
-          {
-            "amount": "21",
-            "unit": "g"
-          }
-        ],
-        "note": null,
-        "category": "Baking"
-      }
-    },
-    {
       "raw": "1/2 teaspoon gochujang",
       "expected": {
         "item": "gochujang",

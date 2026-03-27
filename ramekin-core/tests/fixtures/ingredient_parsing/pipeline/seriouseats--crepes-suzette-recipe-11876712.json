@@ -201,20 +201,6 @@
       }
     },
     {
-      "raw": "1/4 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
-      "expected": {
-        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
-        "measurements": [
-          {
-            "amount": "0.25",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
-    },
-    {
       "raw": "2/3 cup (160ml) orange juice from 2 medium oranges",
       "expected": {
         "item": "orange juice from 2 medium oranges",

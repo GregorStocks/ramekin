@@ -83,7 +83,7 @@
       }
     },
     {
-      "raw": "One 3-inch piece ginger, peeled and thinly sliced3 star anise pods",
+      "raw": "One 3-inch piece ginger, peeled and thinly sliced",
       "expected": {
         "item": "3-inch piece ginger",
         "measurements": [
@@ -92,7 +92,7 @@
             "unit": null
           }
         ],
-        "note": "peeled and thinly sliced3 star anise pods",
+        "note": "peeled and thinly sliced",
         "category": "Beverages"
       }
     },

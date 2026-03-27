@@ -57,7 +57,7 @@
       }
     },
     {
-      "raw": "1 teaspoon (5 ml) fish sauce&nbsp;",
+      "raw": "1 teaspoon (5 ml) fish sauce",
       "expected": {
         "item": "fish sauce",
         "measurements": [
@@ -173,7 +173,7 @@
       }
     },
     {
-      "raw": "1/4 cup (35 g) crushed roasted salted peanuts&nbsp;",
+      "raw": "1/4 cup (35 g) crushed roasted salted peanuts",
       "expected": {
         "item": "crushed roasted salted peanuts",
         "measurements": [
@@ -191,7 +191,7 @@
       }
     },
     {
-      "raw": "1 large red Thai chile, finely chopped (about 1 teaspoon)&nbsp;",
+      "raw": "1 large red Thai chile, finely chopped (about 1 teaspoon)",
       "expected": {
         "item": "red Thai chile",
         "measurements": [
@@ -227,28 +227,6 @@
       }
     },
     {
-      "raw": "1 teaspoon (5 ml) fish sauce",
-      "expected": {
-        "item": "fish sauce",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "tsp"
-          },
-          {
-            "amount": "5",
-            "unit": "ml"
-          },
-          {
-            "amount": "6",
-            "unit": "g"
-          }
-        ],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
-    },
-    {
       "raw": "1/2 cup (120 ml) canned unsweetened coconut milk, well-shaken and stirred",
       "expected": {
         "item": "canned unsweetened coconut milk, well-shaken and stirred",
@@ -267,7 +245,7 @@
       }
     },
     {
-      "raw": "2 1/2 tablespoons (40 g) creamy natural peanut butter&nbsp;",
+      "raw": "2 1/2 tablespoons (40 g) creamy natural peanut butter",
       "expected": {
         "item": "creamy natural peanut butter",
         "measurements": [

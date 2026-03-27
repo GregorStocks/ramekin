@@ -182,24 +182,6 @@
       }
     },
     {
-      "raw": "2 tablespoons (30ml) fish sauce (see note)",
-      "expected": {
-        "item": "fish sauce (see note)",
-        "measurements": [
-          {
-            "amount": "2",
-            "unit": "tbsp"
-          },
-          {
-            "amount": "30",
-            "unit": "ml"
-          }
-        ],
-        "note": null,
-        "category": "Condiments & Sauces"
-      }
-    },
-    {
       "raw": "2 tablespoons (30ml) vegetable or other neutral oil",
       "expected": {
         "item": "vegetable or other neutral oil",
@@ -236,7 +218,7 @@
       }
     },
     {
-      "raw": "1 small shallot (35g), roughly chopped (2 tablespoons)&nbsp;",
+      "raw": "1 small shallot (35g), roughly chopped (2 tablespoons)",
       "expected": {
         "item": "shallot",
         "measurements": [
@@ -476,7 +458,7 @@
       }
     },
     {
-      "raw": "1 head butter lettuce, leaves picked and washed&nbsp;",
+      "raw": "1 head butter lettuce, leaves picked and washed",
       "expected": {
         "item": "butter lettuce",
         "measurements": [

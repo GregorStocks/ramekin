@@ -12,9 +12,9 @@
       }
     },
     {
-      "raw": "4 large eggs (200g)300g granulated sugar (10 1/2 ounces; 1 1/2 cups)192g cake flour (6 3/4 ounces; 1 1/2 cups), plus more for dusting",
+      "raw": "4 large eggs (200g)",
       "expected": {
-        "item": "eggs 300g granulated sugar 192g cake flour",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "4",
@@ -23,26 +23,10 @@
           {
             "amount": "200",
             "unit": "g"
-          },
-          {
-            "amount": "10.5",
-            "unit": "oz"
-          },
-          {
-            "amount": "1.5",
-            "unit": "cup"
-          },
-          {
-            "amount": "6.75",
-            "unit": "oz"
-          },
-          {
-            "amount": "1.5",
-            "unit": "cup"
           }
         ],
-        "note": "plus more for dusting",
-        "category": "Baking"
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {

@@ -16,18 +16,18 @@
 
 ## Ingredient Parsing
 
-- Total ingredients: 58457
-- Volume-to-weight converted: 17950/40584 (44.2%)
-- Unknown ingredient (no density data): 14243
-- Already has weight: 8391
-- No volume unit (count-based): 17567
-- Metric converted (oz→g): 2486
-- Metric converted (lb→g): 1707
+- Total ingredients: 58480
+- Volume-to-weight converted: 17955/40602 (44.2%)
+- Unknown ingredient (no density data): 14247
+- Already has weight: 8400
+- No volume unit (count-based): 17572
+- Metric converted (oz→g): 2484
+- Metric converted (lb→g): 1706
 
 ## AI Cache
 
-- Cache hits: 3681/5212 (70.6%)
-- API calls: 1531/5212 (29.4%)
+- Cache hits: 5195/5195 (100.0%)
+- API calls: 0/5195 (0.0%)
 
 ## By Site
 
