@@ -1023,18 +1023,15 @@
 | Pecan Pralines | dessert, snack, easy, american, holiday | yes |
 | Dill Pickle Popcorn | snack, appetizer, quick, easy, vegetarian | yes |
 | Sushi Popcorn | snack, appetizer, quick, easy, vegetarian, vegan, gluten-free, asian, japanese | yes |
-| Chocolate Martinis | dessert, snack, quick, easy, holiday | yes |
 | Chicken Tortilla Soup | dinner, soup, entree, easy, healthy, comfort food, mexican, chicken | yes |
 | S'mores Poke Cake | dessert, snack, easy, comfort food, american, holiday | yes |
 | Cilantro-Lime Chicken | dinner, entree, quick, easy, healthy, chicken, mexican, rice | yes |
 | Vegetarian Gravy | side dish, vegetarian, easy, mushroom, gluten-free, dairy-free | yes |
 | Crunchwrap Supreme | lunch, dinner, snack, appetizer, entree, quick, easy, comfort food, mexican, beef, cheese | yes |
-| Preserved Lemons | quick, easy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | Dirty Rice | dinner, entree, comfort food, beef, pork, rice, american | yes |
 | Lemon Asparagus Chicken Pasta | dinner, entree, quick, easy, healthy, comfort food, italian, chicken, pasta, cheese | yes |
 | Cowboy Butter | appetizer, side dish, quick, easy, american, grill | yes |
 | Lemon-Blueberry Mini Cheesecakes | dessert, snack, quick, easy, vegetarian, american | yes |
-| Parmesan Zucchini Fritters | snack, appetizer, side dish, vegetarian, easy, italian, cheese | yes |
 | Copycat Nutter Butters | dessert, snack, easy, comfort food, vegetarian, american, holiday | yes |
 | Bloomin' Apples | dessert, snack, easy, comfort food, vegetarian, american, holiday | yes |
 | Goddess Bowls | lunch, dinner, entree, quick, easy, healthy, chicken, rice | yes |
@@ -1045,7 +1042,6 @@
 | Slow-Cooker Chicken Thighs | dinner, entree, easy, comfort food, chicken, rice, asian | yes |
 | Apple Butter | breakfast, snack, dessert, vegetarian, vegan, gluten-free, dairy-free, american, holiday, pantry | yes |
 | Black Bean Burgers | lunch, dinner, entree, quick, easy, healthy, vegetarian, vegan, gluten-free, legumes, mushroom, sandwich | yes |
-| Watermelon-Feta Salad | side dish, salad, quick, easy, healthy, vegetarian, gluten-free, mediterranean, cheese | yes |
 | Shrimp Cocktail | appetizer, seafood, quick, easy | yes |
 | Lemon Curd | dessert, snack, quick, easy, vegetarian, gluten-free, dairy-free | yes |
 | Americano Cocktail | quick, easy, american | yes |
@@ -1072,7 +1068,6 @@
 | Watermelon Caprese | appetizer, side dish, quick, easy, healthy, vegetarian, gluten-free, mediterranean | yes |
 | Pull-Apart Cuban Sliders | lunch, dinner, snack, appetizer, entree, quick, easy, comfort food, american, pork, sandwich, cheese, bread | yes |
 | Mermaid Petal Cake | dessert, easy, holiday | yes |
-| Prosecco Punch | snack, quick, easy, holiday | yes |
 | Caramel Apple S'mores | dessert, snack, easy, vegetarian, american, holiday | yes |
 | Chocolate Chip Cookie Shooters | dessert, snack, easy, comfort food, holiday | yes |
 | Slow Cooker Hot Dogs | lunch, dinner, snack, appetizer, quick, easy, comfort food, american, sandwich, grill | yes |
@@ -2050,7 +2045,6 @@
 | How to Make Homemade Peanut Butter | snack, quick, easy, healthy, vegan, gluten-free, dairy-free, pantry | yes |
 | Homemade Pizza Recipe | lunch, dinner, snack, appetizer, entree, comfort food, american, italian, cheese, bread | yes |
 | Homemade Soft Pretzel Recipe | snack, appetizer, side dish, comfort food, vegetarian, american, bread | yes |
-| Homemade Trail Mix Recipe | snack, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free | yes |
 | Homemade Hot Chocolate Recipe (Hot Co... | dessert, snack, comfort food, vegetarian, holiday | yes |
 | Hummingbird Cake Recipe | dessert, easy, comfort food, american, holiday | yes |
 | Baked Hummus Chicken Recipe | dinner, entree, quick, easy, healthy, chicken, mediterranean | yes |
@@ -2955,8 +2949,6 @@
 | The Simplest White Bread Ever Recipe ... | breakfast, lunch, dinner, snack, side dish, easy, comfort food, vegetarian, american, bread | yes |
 | Breakfast Bars | breakfast, snack, healthy, vegetarian, vegan, gluten-free, easy | yes |
 |  Bún Chả Hanoi | dinner, entree, asian, pork, grill | yes |
-| Caesar BLT | lunch, dinner, entree, quick, easy, comfort food, american, sandwich, bread, pork, cheese | yes |
-| Cantonese-Style One-Pot Braised Brisket | dinner, entree, comfort food, asian, chinese, beef, rice | yes |
 | Carne Asada Fries With Sliced Steak a... | lunch, dinner, snack, appetizer, entree, comfort food, mexican, beef, potato, cheese, grill | yes |
 | Chicken Francese (Rochester-Style Chi... | dinner, entree, comfort food, chicken, american, italian | yes |
 | Cabbage Soup With Cauliflower, Chickp... | lunch, dinner, soup, healthy, vegetarian, vegan, gluten-free, dairy-free, legumes | yes |
@@ -2964,7 +2956,6 @@
 | Chocolate Peppermint Sandwich Cookies | dessert, snack, holiday, vegetarian | yes |
 | Chocolate Pot de Crèmes | dessert, easy, comfort food, vegetarian, french, holiday | yes |
 | Churrasco Steak | dinner, entree, beef, grill | yes |
-| Classic Banana Pudding | dessert, comfort food, american | yes |
 | Buttery Pull-Apart Cloverleaf Dinner ... | side dish, bread, comfort food, american, holiday, easy | yes |
 | Malted Cocoa Rice Krispies Treats | dessert, snack, easy, comfort food, vegetarian, american | yes |
 | Coquito (Creamy Puerto Rican Spiced C... | dessert, snack, holiday | yes |
@@ -2973,15 +2964,12 @@
 | Crepes Suzette | dessert, quick, easy, vegetarian, french, holiday | yes |
 | Buttery, Flaky Croissants | breakfast, snack, appetizer, comfort food, vegetarian, french, bread | yes |
 | 3-Ingredient Devils on Horseback | snack, appetizer, easy, pork, cheese, holiday | yes |
-| Éclair Cake | dessert, snack, easy, comfort food, vegetarian, american, holiday, french | yes |
 | Éclair Paris-Brest | dessert, snack, comfort food, vegetarian, french, holiday | yes |
 | Espresso Martini | _none_ | yes |
 | Espresso Tonic | quick, easy, snack | yes |
-| Eton Mess | dessert, snack, quick, easy, vegetarian | yes |
 | Everything Nice (Spiced-Rum Coffee Wi... | snack, dessert, quick, easy, comfort food, american, holiday | yes |
 | Kenyan Chapati (Kenyan Flatbread) | side dish, bread, vegetarian, easy, healthy | yes |
 | Fried Mozzarella Stick Dip | snack, appetizer, comfort food, cheese, italian | yes |
-| Fried Pickle Dip | snack, appetizer, easy, comfort food, vegetarian, american | yes |
 | Easy Air-Fryer Meatballs with Sweet-a... | dinner, appetizer, entree, quick, easy, healthy, beef, pork, asian | yes |
 | Gochujang Scallion Cornbread With Hon... | breakfast, snack, side dish, quick, easy, vegetarian, american, bread | yes |
 | Pork Souvlaki With Pita and Tzatziki | dinner, entree, healthy, mediterranean, pork, grill | yes |
@@ -2989,7 +2977,6 @@
 | Ham and Cheese Sliders | lunch, snack, appetizer, entree, quick, easy, comfort food, american, pork, cheese, sandwich, bread | yes |
 | Homemade Phyllo Dough Recipe | snack, appetizer, side dish, vegetarian, vegan, mediterranean, bread | yes |
 | Hong Kong Milk Tea | breakfast, snack, quick, easy, comfort food, vegetarian, asian, chinese | yes |
-| Hot Milk Cake | dessert, snack, easy, comfort food, vegetarian, american, holiday | yes |
 | Hot-Water Pie Crust | bread, easy, american | yes |
 | Hummus B'Tahini (Hummus With Tahini) | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, mediterranean, legumes, pantry | yes |
 | Indiana Fried Chicken | dinner, entree, comfort food, american, chicken | yes |
@@ -3018,12 +3005,9 @@
 | Roasted Oysters With Bacon and Parmesan | appetizer, seafood, pork, cheese, american | yes |
 | Sahlab (A Creamy Levantine Winter Drink) | snack, dessert, comfort food, vegetarian, mediterranean, holiday | yes |
 | Salmon Wellington (Salmon en Croûte W... | dinner, entree, comfort food, seafood, fish, mushroom, french | yes |
-| Salty Brown Sugar Shortbread | dessert, snack, quick, easy, comfort food, vegetarian, american | yes |
 | Scottish Oatcakes | snack, breakfast, easy, healthy, vegetarian, gluten-free | yes |
 | Scottish-Style Oatmeal | breakfast, healthy, vegetarian, gluten-free, comfort food, easy | yes |
 | Sheet-Pan Chicken and Vegetables With... | dinner, entree, healthy, easy, asian, thai, chicken | yes |
-| Shokupan (Japanese Milk Bread) | breakfast, lunch, dinner, snack, side dish, comfort food, vegetarian, asian, japanese, bread | yes |
-| Shortbread Cookies | dessert, snack, quick, easy, vegetarian, american, holiday | yes |
 | Smash Falafel Pitas | lunch, dinner, snack, appetizer, entree, quick, easy, healthy, vegetarian, vegan, gluten-free, mediterranean, sandwich, legumes, bread | yes |
 | Sopa de Albóndigas de Pollo (Nicaragu... | dinner, entree, soup, chicken, comfort food | yes |
 | Soubise (French Onion Sauce) | side dish, easy, vegetarian, french | yes |
@@ -4975,7 +4959,6 @@
 | Turkey Taco Lettuce Wraps | lunch, dinner, entree, quick, easy, healthy, low-carb, mexican, legumes | yes |
 | Sausage and Rice Stuffed Peppers | dinner, entree, easy, comfort food, italian, pork, rice, cheese | yes |
 | How to Make the Best Peach Cobbler | dessert, comfort food, american | yes |
-| Sheet-Pan Cajun Chicken and Corn | dinner, entree, quick, easy, healthy, chicken, american | yes |
 | Easy 5 Minute Avocado Toast | breakfast, lunch, snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, bread | yes |
 | Baked Potato Recipe | side dish, easy, vegetarian, vegan, gluten-free, dairy-free, american, potato | yes |
 | Easy Strawberry Bruschetta | snack, appetizer, side dish, quick, easy, healthy, vegetarian, gluten-free, dairy-free, bread, french | yes |
@@ -5221,57 +5204,57 @@
 ## Summary
 
 - Total recipes processed: 5212
-- Recipes with tag suggestions: 5191
-- Cached responses: 5212
+- Recipes with tag suggestions: 5174
+- Cached responses: 5195
 
 ## Tag Frequency
 
 | Tag | Count |
 |-----|-------|
-| easy | 3761 |
-| vegetarian | 2902 |
-| comfort food | 2388 |
-| quick | 2360 |
-| healthy | 2241 |
-| snack | 2237 |
-| dinner | 1966 |
-| entree | 1744 |
-| american | 1741 |
-| side dish | 1432 |
-| dessert | 1430 |
-| gluten-free | 1338 |
-| holiday | 1070 |
-| vegan | 950 |
-| appetizer | 900 |
-| cheese | 886 |
-| dairy-free | 800 |
-| lunch | 780 |
-| breakfast | 645 |
-| bread | 546 |
-| asian | 530 |
-| italian | 503 |
-| chicken | 499 |
-| mediterranean | 396 |
-| pork | 384 |
-| salad | 373 |
-| beef | 367 |
+| easy | 3747 |
+| vegetarian | 2891 |
+| comfort food | 2380 |
+| quick | 2350 |
+| healthy | 2238 |
+| snack | 2226 |
+| dinner | 1962 |
+| entree | 1741 |
+| american | 1733 |
+| side dish | 1429 |
+| dessert | 1423 |
+| gluten-free | 1335 |
+| holiday | 1065 |
+| vegan | 948 |
+| appetizer | 898 |
+| cheese | 883 |
+| dairy-free | 798 |
+| lunch | 778 |
+| breakfast | 644 |
+| bread | 544 |
+| asian | 528 |
+| italian | 502 |
+| chicken | 498 |
+| mediterranean | 395 |
+| pork | 383 |
+| salad | 372 |
+| beef | 366 |
 | pasta | 365 |
 | legumes | 353 |
 | mexican | 339 |
 | egg | 335 |
 | soup | 314 |
 | potato | 303 |
-| rice | 299 |
+| rice | 298 |
 | grill | 289 |
 | seafood | 288 |
-| japanese | 279 |
+| japanese | 278 |
 | greens | 225 |
 | mushroom | 184 |
-| french | 183 |
+| french | 182 |
 | fish | 150 |
-| pantry | 150 |
-| sandwich | 150 |
-| chinese | 116 |
+| pantry | 149 |
+| sandwich | 149 |
+| chinese | 115 |
 | eastern european | 103 |
 | low-carb | 99 |
 | indian | 85 |
