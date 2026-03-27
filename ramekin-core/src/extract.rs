@@ -764,9 +764,9 @@ fn extract_og_image(document: &Html) -> Option<String> {
 }
 
 /// Regex to match footnote lines starting with asterisks inside `<li>` or `<p>` tags.
-/// Captures: (1) the asterisk marker, (2) the footnote text.
+/// Captures: (1) the asterisk marker, (2) the footnote text (may contain inline HTML like <em>).
 static FOOTNOTE_REGEX: LazyLock<Regex> = LazyLock::new(|| {
-    Regex::new(r"(?i)<(?:li|p)[^>]*>\s*(\*{1,3})\s*([^<]{10,500})</(?:li|p)>")
+    Regex::new(r"(?is)<(?:li|p)[^>]*>\s*(\*{1,3})\s*(.{10,500}?)</(?:li|p)>")
         .expect("Invalid footnote regex")
 });
 
@@ -785,17 +785,20 @@ const FOOTNOTE_FALSE_POSITIVE_PREFIXES: &[&str] = &[
 /// known recipe card note containers (WPRM, Tasty Recipes, etc.).
 /// Returns a list of (marker, text) pairs, or None if no footnotes found.
 pub fn extract_footnotes_from_html(html: &str) -> Option<Vec<(String, String)>> {
-    let notes_sections = find_recipe_notes_sections(html);
-    if notes_sections.is_empty() {
+    // Only search for footnotes if the HTML contains a known recipe notes container.
+    // We search the full HTML for footnote patterns rather than trying to extract the
+    // container content, because nested <div> elements make regex-based section
+    // extraction fragile.
+    if !has_recipe_notes_container(html) {
         return None;
     }
 
-    let candidates = notes_sections.iter().flat_map(|section| {
-        FOOTNOTE_REGEX.captures_iter(section).map(|cap| {
-            let marker = cap.get(1).unwrap().as_str().to_string();
-            let text = cap.get(2).unwrap().as_str().trim().to_string();
-            (marker, decode_html_entities(&text))
-        })
+    let candidates = FOOTNOTE_REGEX.captures_iter(html).map(|cap| {
+        let marker = cap.get(1).unwrap().as_str().to_string();
+        // Strip inline HTML tags (e.g., <em>, <strong>, <a>) from footnote text
+        let raw_text = cap.get(2).unwrap().as_str().trim();
+        let text = HTML_TAG_REGEX.replace_all(raw_text, "").trim().to_string();
+        (marker, decode_html_entities(&text))
     });
 
     collect_footnotes(candidates)
@@ -862,20 +865,18 @@ fn collect_footnotes(
     }
 }
 
-/// Regex to find recipe notes container sections in HTML.
-/// Matches the content between the opening and closing tags of known note containers.
-static RECIPE_NOTES_SECTION_REGEX: LazyLock<Regex> = LazyLock::new(|| {
-    Regex::new(
-        r#"(?is)<div[^>]*class\s*=\s*["'][^"']*(?:wprm-recipe-notes|tasty-recipes?-notes)[^"']*["'][^>]*>(.*?)</div>"#
-    ).expect("Invalid recipe notes section regex")
-});
+/// Known recipe notes container class substrings.
+const RECIPE_NOTES_CONTAINER_CLASSES: &[&str] = &[
+    "wprm-recipe-notes",
+    "tasty-recipes-notes",
+    "tasty-recipe-notes",
+];
 
-/// Find recipe notes sections in the HTML.
-fn find_recipe_notes_sections(html: &str) -> Vec<String> {
-    RECIPE_NOTES_SECTION_REGEX
-        .captures_iter(html)
-        .map(|cap| cap.get(1).unwrap().as_str().to_string())
-        .collect()
+/// Check if the HTML contains a known recipe notes container.
+fn has_recipe_notes_container(html: &str) -> bool {
+    RECIPE_NOTES_CONTAINER_CLASSES
+        .iter()
+        .any(|class| html.contains(class))
 }
 
 /// Regex to strip HTML tags for extracting text from raw HTML fragments.

@@ -148,16 +148,24 @@ fn apply_footnotes_to_ingredients(
 }
 
 /// Extract the trailing asterisk marker from an ingredient string.
-/// Checks the text before the first comma (the item name portion) for
-/// trailing `*`, `**`, or `***`.
+/// Checks the full string first, then the portion before the first comma,
+/// to handle both `"butter*"` and `"salt, or more to taste*"`.
 fn extract_trailing_marker(s: &str) -> String {
-    // Check the portion before the first comma (item name, not prep notes)
-    let item_portion = s.split(',').next().unwrap_or(s);
-    let trimmed = item_portion.trim().trim_end_matches(')').trim();
+    // Check the full string first (handles "salt, to taste*")
+    let trimmed = s.trim().trim_end_matches(')').trim();
     let asterisk_count = trimmed.chars().rev().take_while(|&c| c == '*').count();
     if asterisk_count > 0 && asterisk_count <= 3 {
-        "*".repeat(asterisk_count)
-    } else {
-        String::new()
+        return "*".repeat(asterisk_count);
     }
+
+    // Fall back to the portion before the first comma (handles "butter*, cut into pieces")
+    if let Some(item_portion) = s.split(',').next() {
+        let trimmed = item_portion.trim().trim_end_matches(')').trim();
+        let asterisk_count = trimmed.chars().rev().take_while(|&c| c == '*').count();
+        if asterisk_count > 0 && asterisk_count <= 3 {
+            return "*".repeat(asterisk_count);
+        }
+    }
+
+    String::new()
 }
