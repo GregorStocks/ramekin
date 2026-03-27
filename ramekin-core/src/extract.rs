@@ -877,7 +877,7 @@ fn find_notes_section_start(html: &str) -> Option<&str> {
     RECIPE_NOTES_CONTAINER_CLASSES
         .iter()
         .filter_map(|class| html.find(class).and_then(|pos| html.get(pos..)))
-        .min_by_key(|s| s.len())
+        .max_by_key(|s| s.len())
 }
 
 /// Regex to strip HTML tags for extracting text from raw HTML fragments.
