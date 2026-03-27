@@ -94,6 +94,22 @@ extension RecipeDetailView {
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
+
+            if let rating = recipe.rating, (1...5).contains(rating) {
+                HStack(spacing: 4) {
+                    ForEach(1...5, id: \.self) { star in
+                        Image(systemName: star <= rating ? "star.fill" : "star")
+                            .font(.subheadline)
+                            .foregroundColor(.orange)
+                    }
+                }
+            }
+
+            if let difficulty = recipe.difficulty, !difficulty.isEmpty {
+                Text("Difficulty: \(difficulty)")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+            }
         }
     }
 
