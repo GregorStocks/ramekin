@@ -863,21 +863,20 @@ fn collect_footnotes(
     }
 }
 
-/// Known recipe notes container class substrings.
-const RECIPE_NOTES_CONTAINER_CLASSES: &[&str] = &[
-    "wprm-recipe-notes",
-    "tasty-recipes-notes",
-    "tasty-recipe-notes",
-];
+/// Regex to find a notes container class in an actual HTML class attribute,
+/// ignoring matches inside `<style>` or `<script>` blocks.
+static NOTES_CONTAINER_ATTR_REGEX: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r#"(?i)class\s*=\s*["'][^"']*(wprm-recipe-notes|tasty-recipes?-notes)[^"']*["']"#)
+        .expect("Invalid notes container attr regex")
+});
 
 /// Find the start of the recipe notes section in HTML.
-/// Returns a slice from the first notes container class marker onwards,
-/// scoping footnote search to avoid matching unrelated content earlier in the page.
+/// Returns a slice from the first notes container class attribute onwards,
+/// scoping footnote search to avoid matching class names in `<style>`/`<script>` blocks.
 fn find_notes_section_start(html: &str) -> Option<&str> {
-    RECIPE_NOTES_CONTAINER_CLASSES
-        .iter()
-        .filter_map(|class| html.find(class).and_then(|pos| html.get(pos..)))
-        .max_by_key(|s| s.len())
+    NOTES_CONTAINER_ATTR_REGEX
+        .find(html)
+        .and_then(|m| html.get(m.start()..))
 }
 
 /// Regex to strip HTML tags for extracting text from raw HTML fragments.

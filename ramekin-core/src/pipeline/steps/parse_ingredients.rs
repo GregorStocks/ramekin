@@ -147,27 +147,33 @@ fn apply_footnotes_to_ingredients(
     }
 }
 
-/// Extract the trailing asterisk marker from an ingredient string.
-/// Checks multiple positions where markers appear in practice:
-/// end of line, before commas, and before parenthetical notes.
+/// Extract a footnote asterisk marker from an ingredient string.
+/// Finds runs of 1-3 `*` characters that are followed by a word boundary
+/// (whitespace, comma, paren, end of string) — the pattern recipe sites
+/// use for footnote references.
 fn extract_trailing_marker(s: &str) -> String {
-    // Try several segments where the marker might appear:
-    // 1. Full string (handles "salt, to taste*")
-    // 2. Before first open paren (handles "flour* (sifted)")
-    // 3. Before first comma (handles "butter*, cut into pieces")
-    let segments = [
-        s,
-        s.split('(').next().unwrap_or(s),
-        s.split(',').next().unwrap_or(s),
-    ];
-
-    for segment in segments {
-        let trimmed = segment.trim().trim_end_matches(')').trim();
-        let asterisk_count = trimmed.chars().rev().take_while(|&c| c == '*').count();
-        if asterisk_count > 0 && asterisk_count <= 3 {
-            return "*".repeat(asterisk_count);
+    let bytes = s.as_bytes();
+    let mut i = 0;
+    while i < bytes.len() {
+        if bytes[i] == b'*' {
+            let start = i;
+            while i < bytes.len() && bytes[i] == b'*' {
+                i += 1;
+            }
+            let count = i - start;
+            // Valid marker: 1-3 asterisks followed by end-of-string or a boundary char
+            if (1..=3).contains(&count)
+                && (i >= bytes.len()
+                    || bytes[i] == b' '
+                    || bytes[i] == b','
+                    || bytes[i] == b'('
+                    || bytes[i] == b')')
+            {
+                return "*".repeat(count);
+            }
+        } else {
+            i += 1;
         }
     }
-
     String::new()
 }
