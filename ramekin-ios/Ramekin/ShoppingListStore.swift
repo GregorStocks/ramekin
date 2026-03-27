@@ -133,6 +133,7 @@ class ShoppingListStore: ObservableObject {
         }
         isSyncing = true
         lastSyncError = nil
+        let syncStartedAt = Date()
         logger.log("syncWithServer started", source: "Shopping")
 
         do {
@@ -142,7 +143,7 @@ class ShoppingListStore: ObservableObject {
             let response = try await logger.timed("shopping sync API", source: "Shopping") {
                 try await ShoppingListAPI.syncItems(syncRequest: request)
             }
-            processServerResponse(response, pendingItems: pending)
+            processServerResponse(response, pendingItems: pending, syncStartedAt: syncStartedAt)
             lastSyncAt = response.syncTimestamp
             logger.log("syncWithServer completed successfully", source: "Shopping")
         } catch {
@@ -152,6 +153,13 @@ class ShoppingListStore: ObservableObject {
 
         isSyncing = false
         fetchItems()
+
+        // If items were modified during the sync, re-sync to push those changes
+        let hasPending = (try? coreDataStack.viewContext.fetch(ShoppingItem.fetchPendingSync()))?.isEmpty == false
+        if hasPending && isOnline {
+            logger.log("syncWithServer: still have pending items, re-syncing", source: "Shopping")
+            await syncWithServer()
+        }
     }
 
     private func buildSyncRequest(from pending: [ShoppingItem]) -> SyncRequest {
@@ -188,19 +196,34 @@ class ShoppingListStore: ObservableObject {
         )
     }
 
-    private func processServerResponse(_ response: SyncResponse, pendingItems: [ShoppingItem]) {
+    private func processServerResponse(_ response: SyncResponse, pendingItems: [ShoppingItem], syncStartedAt: Date) {
         let context = coreDataStack.viewContext
 
         for created in response.created {
             if let local = pendingItems.first(where: { $0.id == created.clientId }) {
                 local.id = created.serverId
-                local.markSynced(serverVersion: Int32(created.version))
+                if local.updatedAt ?? Date.distantPast <= syncStartedAt {
+                    local.markSynced(serverVersion: Int32(created.version))
+                } else {
+                    // Item was modified during sync — keep pending, update version for retry
+                    local.serverVersion = Int32(created.version)
+                }
             }
         }
 
-        for updated in response.updated where updated.success {
+        for updated in response.updated {
             if let local = pendingItems.first(where: { $0.id == updated.id }) {
-                local.markSynced(serverVersion: Int32(updated.version))
+                if updated.success {
+                    if local.updatedAt ?? Date.distantPast <= syncStartedAt {
+                        local.markSynced(serverVersion: Int32(updated.version))
+                    } else {
+                        // Item was modified during sync — keep pending, update version for retry
+                        local.serverVersion = Int32(updated.version)
+                    }
+                } else {
+                    // Conflict — update version so next retry uses the correct expected_version
+                    local.serverVersion = Int32(updated.version)
+                }
             }
         }
 
@@ -221,6 +244,8 @@ class ShoppingListStore: ObservableObject {
         let existing = (try? context.fetch(ShoppingItem.fetchById(change.id)))?.first
 
         if let item = existing {
+            // Don't overwrite pending local changes — they'll be synced next round
+            guard item.syncStatusEnum == .synced else { return }
             guard change.version >= item.serverVersion else { return }
             item.item = change.item
             item.amount = change.amount
