@@ -154,11 +154,13 @@ class ShoppingListStore: ObservableObject {
         isSyncing = false
         fetchItems()
 
-        // If items were modified during the sync, re-sync to push those changes
-        let hasPending = (try? coreDataStack.viewContext.fetch(ShoppingItem.fetchPendingSync()))?.isEmpty == false
-        if hasPending && isOnline {
-            logger.log("syncWithServer: still have pending items, re-syncing", source: "Shopping")
-            await syncWithServer()
+        // If the sync succeeded and items were modified during it, re-sync to push those changes
+        if lastSyncError == nil {
+            let hasPending = (try? coreDataStack.viewContext.fetch(ShoppingItem.fetchPendingSync()))?.isEmpty == false
+            if hasPending && isOnline {
+                logger.log("syncWithServer: still have pending items, re-syncing", source: "Shopping")
+                await syncWithServer()
+            }
         }
     }
 
@@ -205,8 +207,9 @@ class ShoppingListStore: ObservableObject {
                 if local.updatedAt ?? Date.distantPast <= syncStartedAt {
                     local.markSynced(serverVersion: Int32(created.version))
                 } else {
-                    // Item was modified during sync — keep pending, update version for retry
+                    // Item was modified during sync — promote to update since it now has a server ID
                     local.serverVersion = Int32(created.version)
+                    local.syncStatusEnum = .pendingUpdate
                 }
             }
         }
