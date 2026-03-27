@@ -380,9 +380,13 @@ fn split_concatenated_ingredient(s: &str) -> Vec<String> {
         }
         let (_, prev) = indexed[idx - 1];
 
-        // Pattern 1: ) followed by digit — always split
+        // Pattern 1: ) followed by digit — split if the digit starts a new quantity
         if prev == b')' {
-            split_positions.push(byte_pos);
+            if let Some(rest) = s.get(byte_pos..) {
+                if INGREDIENT_START_AFTER_SPLIT_RE.is_match(rest) {
+                    split_positions.push(byte_pos);
+                }
+            }
             continue;
         }
 
@@ -427,21 +431,11 @@ fn split_concatenated_ingredient(s: &str) -> Vec<String> {
     parts
 }
 
-/// Apply concatenation splitting to each ingredient, flatten, and deduplicate.
-///
-/// After splitting, the same ingredient may appear both from the split of a
-/// concatenated entry and as its own separate array element. Deduplication
-/// preserves order (keeps first occurrence).
+/// Apply concatenation splitting to each ingredient and flatten.
 fn split_and_dedup_ingredients(ingredients: Vec<String>) -> Vec<String> {
-    let split: Vec<String> = ingredients
+    ingredients
         .into_iter()
         .flat_map(|s| split_concatenated_ingredient(&s))
-        .collect();
-
-    let mut seen = std::collections::HashSet::new();
-    split
-        .into_iter()
-        .filter(|s| seen.insert(s.clone()))
         .collect()
 }
 
@@ -2033,13 +2027,25 @@ mod tests {
     }
 
     #[test]
-    fn test_dedup_removes_duplicates_after_split() {
+    fn test_split_preserves_duplicate_ingredients() {
+        // Intentional duplicates (same ingredient in different recipe sections) must survive
         let input = vec![
             "4 large eggs (200g)300g sugar".to_string(),
             "300g sugar".to_string(),
         ];
         let result = split_and_dedup_ingredients(input);
-        assert_eq!(result, vec!["4 large eggs (200g)", "300g sugar",]);
+        assert_eq!(
+            result,
+            vec!["4 large eggs (200g)", "300g sugar", "300g sugar"]
+        );
+    }
+
+    #[test]
+    fn test_split_paren_digit_requires_quantity() {
+        // ")2" where the digit doesn't start a quantity should NOT split
+        let input = "1 cup (240ml)2% milk";
+        let result = split_concatenated_ingredient(input);
+        assert_eq!(result, vec!["1 cup (240ml)2% milk"]);
     }
 
     #[test]
@@ -2093,9 +2099,16 @@ mod tests {
 
         let result = extract_recipe(html, "https://example.com/recipe").unwrap();
         let lines: Vec<&str> = result.ingredients.lines().collect();
+        // "300g granulated sugar" appears twice: once from the split, once as a separate entry.
+        // We preserve both to avoid losing intentional duplicates in other recipes.
         assert_eq!(
             lines,
-            vec!["4 large eggs (200g)", "300g granulated sugar", "1 cup milk",]
+            vec![
+                "4 large eggs (200g)",
+                "300g granulated sugar",
+                "300g granulated sugar",
+                "1 cup milk",
+            ]
         );
     }
 }
