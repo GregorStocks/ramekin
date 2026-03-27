@@ -48,3 +48,27 @@ def test_edit_recipe_page(logged_in_page: Page):
 
     # Should see edit form with textarea
     expect(logged_in_page.locator("textarea").first).to_be_visible()
+
+
+def test_mobile_nav_collapses_into_menu(logged_in_page: Page):
+    """Verify header nav collapses behind a mobile menu toggle."""
+    logged_in_page.set_viewport_size({"width": 390, "height": 844})
+
+    nav = logged_in_page.locator("#app-navigation")
+    menu_toggle = logged_in_page.get_by_role("button", name="Open navigation menu")
+
+    expect(menu_toggle).to_be_visible()
+    expect(nav).not_to_be_visible()
+
+    menu_toggle.click()
+
+    expect(
+        logged_in_page.get_by_role("button", name="Close navigation menu")
+    ).to_be_visible()
+    expect(nav).to_be_visible()
+    expect(nav.get_by_role("link", name="My Cookbook")).to_be_visible()
+    expect(nav.get_by_role("link", name="Meal Plan")).to_be_visible()
+    expect(nav.get_by_role("link", name="Shopping List")).to_be_visible()
+    expect(nav.get_by_role("link", name="Tags")).to_be_visible()
+    expect(nav.get_by_role("link", name="+ New Recipe")).to_be_visible()
+    expect(nav.get_by_role("button", name="Logout")).to_be_visible()
