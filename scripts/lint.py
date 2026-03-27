@@ -63,6 +63,7 @@ def lint_rust_server(project_root: Path) -> tuple[str, bool]:
         ["cargo", "fmt", "--all"],
         cwd=server_dir,
         capture_output=True,
+        text=True,
         check=False,
     )
 
@@ -89,6 +90,10 @@ def lint_rust_server(project_root: Path) -> tuple[str, bool]:
     )
 
     # Print any output
+    if fmt_result.stdout:
+        print(fmt_result.stdout, end="")
+    if fmt_result.stderr:
+        print(fmt_result.stderr, end="", file=sys.stderr)
     if clippy_result.stdout:
         print(clippy_result.stdout, end="")
     if clippy_result.stderr:
@@ -107,6 +112,7 @@ def lint_rust_cli(project_root: Path) -> tuple[str, bool]:
         ["cargo", "fmt", "--all"],
         cwd=cli_dir,
         capture_output=True,
+        text=True,
         check=False,
     )
 
@@ -132,6 +138,10 @@ def lint_rust_cli(project_root: Path) -> tuple[str, bool]:
     )
 
     # Print any output
+    if fmt_result.stdout:
+        print(fmt_result.stdout, end="")
+    if fmt_result.stderr:
+        print(fmt_result.stderr, end="", file=sys.stderr)
     if clippy_result.stdout:
         print(clippy_result.stdout, end="")
     if clippy_result.stderr:
@@ -150,6 +160,7 @@ def lint_rust_core(project_root: Path) -> tuple[str, bool]:
         ["cargo", "fmt", "--all"],
         cwd=crate_dir,
         capture_output=True,
+        text=True,
         check=False,
     )
 
@@ -175,6 +186,10 @@ def lint_rust_core(project_root: Path) -> tuple[str, bool]:
     )
 
     # Print any output
+    if fmt_result.stdout:
+        print(fmt_result.stdout, end="")
+    if fmt_result.stderr:
+        print(fmt_result.stderr, end="", file=sys.stderr)
     if clippy_result.stdout:
         print(clippy_result.stdout, end="")
     if clippy_result.stderr:
@@ -193,6 +208,7 @@ def lint_rust_ingredient_density(project_root: Path) -> tuple[str, bool]:
         ["cargo", "fmt", "--all"],
         cwd=crate_dir,
         capture_output=True,
+        text=True,
         check=False,
     )
 
@@ -218,6 +234,10 @@ def lint_rust_ingredient_density(project_root: Path) -> tuple[str, bool]:
     )
 
     # Print any output
+    if fmt_result.stdout:
+        print(fmt_result.stdout, end="")
+    if fmt_result.stderr:
+        print(fmt_result.stderr, end="", file=sys.stderr)
     if clippy_result.stdout:
         print(clippy_result.stdout, end="")
     if clippy_result.stderr:
