@@ -165,6 +165,62 @@ final class RecipeVersionSupportTests: XCTestCase {
         )
     }
 
+    func testNutritionalInfoForDisplayTrimsWhitespaceAndHidesEmptyValues() {
+        var recipe = makeRecipe(updatedAt: Date(timeIntervalSince1970: 400))
+
+        XCTAssertEqual(recipe.nutritionalInfoForDisplay, "200 calories")
+
+        recipe = RecipeResponse(
+            cookTime: recipe.cookTime,
+            createdAt: recipe.createdAt,
+            description: recipe.description,
+            difficulty: recipe.difficulty,
+            id: recipe.id,
+            ingredients: recipe.ingredients,
+            instructions: recipe.instructions,
+            notes: recipe.notes,
+            nutritionalInfo: "  200 calories\n",
+            photoIds: recipe.photoIds,
+            prepTime: recipe.prepTime,
+            rating: recipe.rating,
+            servings: recipe.servings,
+            sourceName: recipe.sourceName,
+            sourceUrl: recipe.sourceUrl,
+            tags: recipe.tags,
+            title: recipe.title,
+            totalTime: recipe.totalTime,
+            updatedAt: recipe.updatedAt,
+            versionId: recipe.versionId,
+            versionSource: recipe.versionSource
+        )
+        XCTAssertEqual(recipe.nutritionalInfoForDisplay, "200 calories")
+
+        recipe = RecipeResponse(
+            cookTime: recipe.cookTime,
+            createdAt: recipe.createdAt,
+            description: recipe.description,
+            difficulty: recipe.difficulty,
+            id: recipe.id,
+            ingredients: recipe.ingredients,
+            instructions: recipe.instructions,
+            notes: recipe.notes,
+            nutritionalInfo: " \n ",
+            photoIds: recipe.photoIds,
+            prepTime: recipe.prepTime,
+            rating: recipe.rating,
+            servings: recipe.servings,
+            sourceName: recipe.sourceName,
+            sourceUrl: recipe.sourceUrl,
+            tags: recipe.tags,
+            title: recipe.title,
+            totalTime: recipe.totalTime,
+            updatedAt: recipe.updatedAt,
+            versionId: recipe.versionId,
+            versionSource: recipe.versionSource
+        )
+        XCTAssertNil(recipe.nutritionalInfoForDisplay)
+    }
+
     private func makeRecipe(
         updatedAt: Date,
         photoIds: [UUID] = [UUID()]
