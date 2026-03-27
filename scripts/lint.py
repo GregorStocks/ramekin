@@ -596,9 +596,13 @@ def _lint_issues_fallback(project_root: Path) -> tuple[str, bool]:
 
     for issue_file in sorted(issues_dir.glob("*.json5")):
         try:
-            with open(issue_file) as f:
-                issue = json.load(f)
-        except json.JSONDecodeError as e:
+            text = issue_file.read_text()
+            # Strip JSON5 features so stdlib json can parse:
+            # line continuations (backslash-newline) and trailing commas
+            text = text.replace("\\\n", "")
+            text = re.sub(r",(\s*[}\]])", r"\1", text)
+            issue = json.loads(text)
+        except (json.JSONDecodeError, ValueError) as e:
             errors.append(f"{issue_file.name}: invalid JSON5 - {e}")
             continue
 
