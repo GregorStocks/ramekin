@@ -25,9 +25,9 @@
       }
     },
     {
-      "raw": "255g white whole wheat flour (9 ounces; 2 cups), see notes226g cornstarch (8 ounces; 2 cups)&nbsp;",
+      "raw": "255g white whole wheat flour (9 ounces; 2 cups), see notes",
       "expected": {
-        "item": "white whole wheat flour, see notes226g cornstarch",
+        "item": "white whole wheat flour, see notes",
         "measurements": [
           {
             "amount": "255",
@@ -40,6 +40,20 @@
           {
             "amount": "2",
             "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "226g cornstarch (8 ounces; 2 cups)",
+      "expected": {
+        "item": "cornstarch",
+        "measurements": [
+          {
+            "amount": "226",
+            "unit": "g"
           },
           {
             "amount": "8",
@@ -91,25 +105,13 @@
       }
     },
     {
-      "raw": "1/2 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume454g unsalted butter (1 pound; 2 cups)",
+      "raw": "1/2 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
       "expected": {
-        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume454g unsalted butter",
+        "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "lb"
-          },
-          {
-            "amount": "2",
-            "unit": "cup"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": null,

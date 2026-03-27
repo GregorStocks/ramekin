@@ -24,6 +24,14 @@ static OG_IMAGE_REGEX_ALT: LazyLock<Regex> = LazyLock::new(|| {
         .expect("Invalid og:image alt regex")
 });
 
+/// Regex to validate that text after a letter→digit boundary looks like a new
+/// ingredient quantity. Matches a digit followed by a space, fraction slash,
+/// or metric/imperial unit.
+static INGREDIENT_START_AFTER_SPLIT_RE: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r"(?i)^\d+(\s|/\d|g\b|kg\b|mg\b|ml\b|l\b|oz|lb|cup|teaspoon|tablespoon|tsp\b|tbsp\b|pound|ounce)")
+        .expect("Invalid ingredient start after split regex")
+});
+
 /// Extract a recipe from HTML containing JSON-LD structured data.
 /// Falls back to microdata extraction if JSON-LD fails, then tries
 /// supplementing partial structured data with HTML class-based extraction.
@@ -343,6 +351,100 @@ fn extract_recipe_data(
     })
 }
 
+/// Split a single potentially concatenated ingredient string into individual ingredients.
+///
+/// Some websites (notably Serious Eats) produce JSON-LD where multiple ingredients
+/// are concatenated into a single array element with no separator. This detects
+/// two boundary patterns:
+///
+/// 1. `)digit` — close parenthesis directly followed by a digit (always splits)
+/// 2. `word(3+ letters)→digit` — ASCII word of 3+ letters ending directly before a digit,
+///    excluding 'x'/'X' before digit (avoids "4x175g"), validated by checking that the
+///    text from the digit onward starts a new ingredient quantity.
+fn split_concatenated_ingredient(s: &str) -> Vec<String> {
+    let s = s.trim();
+    if s.is_empty() {
+        return Vec::new();
+    }
+
+    // Collect (byte_offset, char) pairs so we can look back at previous characters
+    // while tracking byte positions for safe slicing via str::get().
+    let indexed: Vec<(usize, u8)> = s.bytes().enumerate().collect();
+
+    let mut split_positions: Vec<usize> = Vec::new();
+
+    for idx in 1..indexed.len() {
+        let (byte_pos, curr) = indexed[idx];
+        if !curr.is_ascii_digit() {
+            continue;
+        }
+        let (_, prev) = indexed[idx - 1];
+
+        // Pattern 1: ) followed by digit — always split
+        if prev == b')' {
+            split_positions.push(byte_pos);
+            continue;
+        }
+
+        // Pattern 2: letter (not x/X) followed by digit, with 3+ letter word
+        if prev.is_ascii_alphabetic()
+            && prev != b'x'
+            && prev != b'X'
+            && idx >= 3
+            && indexed[idx - 2].1.is_ascii_alphabetic()
+            && indexed[idx - 3].1.is_ascii_alphabetic()
+        {
+            if let Some(rest) = s.get(byte_pos..) {
+                if INGREDIENT_START_AFTER_SPLIT_RE.is_match(rest) {
+                    split_positions.push(byte_pos);
+                }
+            }
+        }
+    }
+
+    if split_positions.is_empty() {
+        return vec![s.to_string()];
+    }
+
+    let mut parts = Vec::new();
+    let mut start = 0;
+    for &pos in &split_positions {
+        if let Some(part) = s.get(start..pos) {
+            let part = part.trim();
+            if !part.is_empty() {
+                parts.push(part.to_string());
+            }
+        }
+        start = pos;
+    }
+    if let Some(part) = s.get(start..) {
+        let part = part.trim();
+        if !part.is_empty() {
+            parts.push(part.to_string());
+        }
+    }
+
+    parts
+}
+
+/// Apply concatenation splitting to each ingredient, flatten, and deduplicate.
+///
+/// After splitting, the same ingredient may appear both from the split of a
+/// concatenated entry and as its own separate array element. Deduplication
+/// preserves order (keeps first occurrence).
+fn split_and_dedup_ingredients(ingredients: Vec<String>) -> Vec<String> {
+    let split: Vec<String> = ingredients
+        .into_iter()
+        .flat_map(|s| split_concatenated_ingredient(&s))
+        .collect();
+
+    let mut seen = std::collections::HashSet::new();
+    split
+        .into_iter()
+        .filter(|s| seen.insert(s.clone()))
+        .collect()
+}
+
 /// Extract ingredients as a newline-separated blob.
 fn extract_ingredients(recipe: &serde_json::Value) -> Result<String, ExtractError> {
     let ingredients_raw = recipe
@@ -356,8 +458,8 @@ fn extract_ingredients(recipe: &serde_json::Value) -> Result<String, ExtractErro
     let ingredients: Vec<String> = ingredients_array
         .iter()
         .filter_map(|v| v.as_str())
-        .map(|s| s.trim().to_string())
-        .filter(|s| !s.is_empty()) // Filter out empty/whitespace-only strings
+        .map(|s| decode_html_entities(s.trim()))
+        .filter(|s| !s.is_empty())
         .collect();
 
     if ingredients.is_empty() {
@@ -365,6 +467,9 @@ fn extract_ingredients(recipe: &serde_json::Value) -> Result<String, ExtractErro
             "recipeIngredient (empty)".to_string(),
         ));
     }
+
+    // Split concatenated ingredients and deduplicate
+    let ingredients = split_and_dedup_ingredients(ingredients);
 
     Ok(ingredients.join("\n"))
 }
@@ -503,6 +608,7 @@ fn extract_recipe_from_microdata(
         .map(|el| el.text().collect::<String>().trim().to_string())
         .filter(|s| !s.is_empty())
         .collect();
+    let ingredients = split_and_dedup_ingredients(ingredients);
 
     if ingredients.is_empty() {
         return Err(ExtractError::MissingField(
@@ -1129,6 +1235,7 @@ fn extract_partial_from_microdata(document: &Html) -> PartialRecipe {
         .map(|el| el.text().collect::<String>().trim().to_string())
         .filter(|s| !s.is_empty())
         .collect();
+    let ingredients_vec = split_and_dedup_ingredients(ingredients_vec);
     let ingredients = if ingredients_vec.is_empty() {
         None
     } else {
@@ -1161,6 +1268,7 @@ fn extract_ingredients_from_itemprop_unscoped(document: &Html) -> Option<String>
         .map(|el| el.text().collect::<String>().trim().to_string())
         .filter(|s| !s.is_empty())
         .collect();
+    let ingredients = split_and_dedup_ingredients(ingredients);
 
     if ingredients.is_empty() {
         None
@@ -1192,7 +1300,9 @@ fn extract_instructions_from_itemprop_unscoped(document: &Html) -> Option<String
 /// Searches the entire document (not scoped to a microdata container).
 fn extract_ingredients_from_html_classes(document: &Html) -> Option<String> {
     // Try Jetpack recipe ingredient list items
-    if let Some(result) = extract_from_selector_items(document, ".jetpack-recipe-ingredient") {
+    if let Some(result) =
+        extract_ingredient_items_from_selector(document, ".jetpack-recipe-ingredient")
+    {
         return Some(result);
     }
 
@@ -1202,26 +1312,31 @@ fn extract_ingredients_from_html_classes(document: &Html) -> Option<String> {
     }
 
     // Try WP Recipe Maker
-    if let Some(result) = extract_from_selector_items(document, ".wprm-recipe-ingredient") {
+    if let Some(result) =
+        extract_ingredient_items_from_selector(document, ".wprm-recipe-ingredient")
+    {
         return Some(result);
     }
 
     // Try Tasty Recipes
-    if let Some(result) = extract_from_selector_items(document, ".tasty-recipe-ingredients li") {
+    if let Some(result) =
+        extract_ingredient_items_from_selector(document, ".tasty-recipe-ingredients li")
+    {
         return Some(result);
     }
 
     None
 }
 
-/// Extract text items from a CSS selector, joining with newlines.
-fn extract_from_selector_items(document: &Html, selector_str: &str) -> Option<String> {
+/// Extract ingredient items from a CSS selector, splitting concatenated entries and deduplicating.
+fn extract_ingredient_items_from_selector(document: &Html, selector_str: &str) -> Option<String> {
     let selector = Selector::parse(selector_str).ok()?;
     let items: Vec<String> = document
         .select(&selector)
         .map(|el| el.text().collect::<String>().trim().to_string())
         .filter(|s| !s.is_empty())
         .collect();
+    let items = split_and_dedup_ingredients(items);
 
     if items.is_empty() {
         None
@@ -1833,6 +1948,154 @@ mod tests {
             result.instructions.contains("it's done"),
             "got: {}",
             result.instructions
+        );
+    }
+
+    // --- Concatenated ingredient splitting tests ---
+
+    #[test]
+    fn test_split_paren_digit() {
+        let input =
+            "4 large eggs (200g)300g granulated sugar (10 1/2 ounces; 1 1/2 cups)192g cake flour";
+        let result = split_concatenated_ingredient(input);
+        assert_eq!(
+            result,
+            vec![
+                "4 large eggs (200g)",
+                "300g granulated sugar (10 1/2 ounces; 1 1/2 cups)",
+                "192g cake flour",
+            ]
+        );
+    }
+
+    #[test]
+    fn test_split_word_digit_with_unit() {
+        let input = "1/2 teaspoon baking soda2 teaspoons vanilla extract288g all-purpose flour (10 ounces; 2 1/4 cups)";
+        let result = split_concatenated_ingredient(input);
+        assert_eq!(
+            result,
+            vec![
+                "1/2 teaspoon baking soda",
+                "2 teaspoons vanilla extract",
+                "288g all-purpose flour (10 ounces; 2 1/4 cups)",
+            ]
+        );
+    }
+
+    #[test]
+    fn test_split_milk_digit() {
+        let input = "45g (3 tablespoons) cold whole milk1 large egg yolk";
+        let result = split_concatenated_ingredient(input);
+        assert_eq!(
+            result,
+            vec!["45g (3 tablespoons) cold whole milk", "1 large egg yolk",]
+        );
+    }
+
+    #[test]
+    fn test_split_no_false_positive_a1() {
+        // "A1" is only 1 letter before digit — should NOT split
+        let input = "2 Tbsp A1 Steak Sauce";
+        let result = split_concatenated_ingredient(input);
+        assert_eq!(result, vec!["2 Tbsp A1 Steak Sauce"]);
+    }
+
+    #[test]
+    fn test_split_no_false_positive_x_multiplier() {
+        // "4x175g" has 'x' before digit — should NOT split
+        let input = "4 4x175g/6oz firm skinless white fish fillets";
+        let result = split_concatenated_ingredient(input);
+        assert_eq!(
+            result,
+            vec!["4 4x175g/6oz firm skinless white fish fillets"]
+        );
+    }
+
+    #[test]
+    fn test_split_no_false_positive_fraction_entity() {
+        // After HTML decoding, ½ is a Unicode character, not "frac12"
+        let input = "1 \u{00bd} cups flour";
+        let result = split_concatenated_ingredient(input);
+        assert_eq!(result, vec!["1 \u{00bd} cups flour"]);
+    }
+
+    #[test]
+    fn test_split_normal_ingredient_unchanged() {
+        let input = "1 cup (240ml) all-purpose flour";
+        let result = split_concatenated_ingredient(input);
+        assert_eq!(result, vec!["1 cup (240ml) all-purpose flour"]);
+    }
+
+    #[test]
+    fn test_split_empty_string() {
+        let result = split_concatenated_ingredient("");
+        assert!(result.is_empty());
+    }
+
+    #[test]
+    fn test_dedup_removes_duplicates_after_split() {
+        let input = vec![
+            "4 large eggs (200g)300g sugar".to_string(),
+            "300g sugar".to_string(),
+        ];
+        let result = split_and_dedup_ingredients(input);
+        assert_eq!(result, vec!["4 large eggs (200g)", "300g sugar",]);
+    }
+
+    #[test]
+    fn test_split_eton_mess_severe_concatenation() {
+        let input = "1 pound (454g) strawberries, washed, hulled, and quartered8 ounces (227g) raspberries2 tablespoons granulated sugar (1 ounce; 30g)1 teaspoon lemon zest";
+        let result = split_concatenated_ingredient(input);
+        assert_eq!(
+            result,
+            vec![
+                "1 pound (454g) strawberries, washed, hulled, and quartered",
+                "8 ounces (227g) raspberries",
+                "2 tablespoons granulated sugar (1 ounce; 30g)",
+                "1 teaspoon lemon zest",
+            ]
+        );
+    }
+
+    #[test]
+    fn test_split_volume_digit() {
+        let input = "1/2 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume454g unsalted butter (1 pound; 2 cups)";
+        let result = split_concatenated_ingredient(input);
+        assert_eq!(
+            result,
+            vec![
+            "1/2 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume",
+            "454g unsalted butter (1 pound; 2 cups)",
+        ]
+        );
+    }
+
+    #[test]
+    fn test_jsonld_concatenated_ingredients_integration() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+            <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Recipe",
+                "name": "Test Cake",
+                "recipeIngredient": [
+                    "4 large eggs (200g)300g granulated sugar",
+                    "300g granulated sugar",
+                    "1 cup milk"
+                ],
+                "recipeInstructions": [{"@type": "HowToStep", "text": "Mix."}]
+            }
+            </script>
+            </head><body></body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+        let lines: Vec<&str> = result.ingredients.lines().collect();
+        assert_eq!(
+            lines,
+            vec!["4 large eggs (200g)", "300g granulated sugar", "1 cup milk",]
         );
     }
 }

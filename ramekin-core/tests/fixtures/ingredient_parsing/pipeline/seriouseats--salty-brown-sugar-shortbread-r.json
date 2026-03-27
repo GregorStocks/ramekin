@@ -61,24 +61,16 @@
       }
     },
     {
-      "raw": "1/2 teaspoon baking soda2 teaspoons vanilla extract288g all-purpose flour (10 ounces; 2 1/4 cups)",
+      "raw": "1/2 teaspoon baking soda",
       "expected": {
-        "item": "baking soda2 teaspoons vanilla extract288g all-purpose flour",
+        "item": "baking soda",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           },
           {
-            "amount": "10",
-            "unit": "oz"
-          },
-          {
-            "amount": "2.25",
-            "unit": "cup"
-          },
-          {
-            "amount": "283",
+            "amount": "2.3",
             "unit": "g"
           }
         ],
