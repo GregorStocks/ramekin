@@ -2164,6 +2164,7 @@ const IGNORED_LINE_PATTERNS: &[&str] = &[
     "you will need",
     "you'll need",
     "ingredients list",
+    "sweeten as desired",
 ];
 
 /// Prefixes that indicate a line should be ignored (not an ingredient).
@@ -2252,6 +2253,43 @@ const INGREDIENT_INDICATOR_WORDS: &[&str] = &[
     "beet",
 ];
 
+/// Generic category words that are not specific food items.
+/// When these appear as the sole content before a vague qualifier phrase,
+/// the line is not a real ingredient (e.g., "Toppings as desired").
+const VAGUE_CATEGORY_WORDS: &[&str] = &[
+    "accompaniment",
+    "accompaniments",
+    "add-in",
+    "add-ins",
+    "condiment",
+    "condiments",
+    "extra",
+    "extras",
+    "finish",
+    "finishes",
+    "fixing",
+    "fixings",
+    "garnish",
+    "garnishes",
+    "side",
+    "sides",
+    "topping",
+    "toppings",
+];
+
+/// Phrases that indicate vague/optional intent rather than a specific ingredient.
+const VAGUE_QUALIFIER_PHRASES: &[&str] = &[
+    "as desired",
+    "as many as desired",
+    "as many as you like",
+    "as preferred",
+    "as you like",
+    "as you please",
+    "as you wish",
+    "of your choice",
+    "to your liking",
+];
+
 /// Check if a word appears at a word boundary in the text.
 /// The word must start at a word boundary (beginning of text or preceded by non-alpha char),
 /// but may be followed by additional letters (to allow plurals like "seeds" matching "seed").
@@ -2259,6 +2297,20 @@ fn contains_word_prefix(text: &str, word: &str) -> bool {
     for (i, _) in text.match_indices(word) {
         let before_ok = i == 0 || !text.as_bytes()[i - 1].is_ascii_alphabetic();
         if before_ok {
+            return true;
+        }
+    }
+    false
+}
+
+/// Check if a word appears as an exact whole word in the text (bounded on both sides).
+/// Unlike `contains_word_prefix`, "extra" will NOT match "extract".
+fn contains_exact_word(text: &str, word: &str) -> bool {
+    for (i, _) in text.match_indices(word) {
+        let before_ok = i == 0 || !text.as_bytes()[i - 1].is_ascii_alphabetic();
+        let end = i + word.len();
+        let after_ok = end >= text.len() || !text.as_bytes()[end].is_ascii_alphabetic();
+        if before_ok && after_ok {
             return true;
         }
     }
@@ -2280,6 +2332,77 @@ fn is_equipment_line(lower: &str) -> bool {
         return false;
     }
     true
+}
+
+/// Check if a line is a vague non-ingredient line: a generic category word
+/// (like "toppings", "accompaniments") paired with a vague qualifier phrase
+/// (like "as desired", "of your choice") and no specific food item.
+///
+/// Examples that ARE filtered:
+///   "Burger accompaniments, as you like"
+///   "Toppings of your choice (see in post)"
+///
+/// Examples that are NOT filtered (contain real food words):
+///   "Hot sauce of your choice"
+///   "cheese of your choice"
+fn is_vague_non_ingredient_line(lower: &str) -> bool {
+    // Strip parenthetical content so "(optional; see note above)" doesn't interfere
+    let stripped = strip_parenthetical_content(lower);
+    let stripped = stripped.trim();
+
+    // Find a vague qualifier phrase in the text
+    let before = VAGUE_QUALIFIER_PHRASES
+        .iter()
+        .find_map(|&phrase| stripped.find(phrase).and_then(|pos| stripped.get(..pos)));
+    let before = match before {
+        Some(b) => b.trim().trim_end_matches(',').trim(),
+        None => return false,
+    };
+
+    if before.is_empty() {
+        return false;
+    }
+
+    // Long text before the qualifier is likely a real ingredient line where a
+    // category word appears incidentally (e.g., "2 cups Caramel Bark or the add-in").
+    if before.split_whitespace().count() > 5 {
+        return false;
+    }
+
+    // The text before the qualifier must contain a generic category word.
+    // Use exact word matching so "extra" doesn't match "extract".
+    if !VAGUE_CATEGORY_WORDS
+        .iter()
+        .any(|&cat| contains_exact_word(before, cat))
+    {
+        return false;
+    }
+
+    // But must NOT contain a specific food/ingredient word
+    if INGREDIENT_INDICATOR_WORDS
+        .iter()
+        .any(|&ing| contains_word_prefix(before, ing))
+    {
+        return false;
+    }
+
+    true
+}
+
+/// Strip parenthetical content from a string, e.g.
+/// "toppings of your choice (see in post)" → "toppings of your choice "
+fn strip_parenthetical_content(s: &str) -> String {
+    let mut result = String::with_capacity(s.len());
+    let mut depth = 0u32;
+    for c in s.chars() {
+        match c {
+            '(' => depth += 1,
+            ')' if depth > 0 => depth -= 1,
+            _ if depth == 0 => result.push(c),
+            _ => {}
+        }
+    }
+    result
 }
 
 /// Check if a line should be completely ignored (scraper artifact or equipment).
@@ -2309,6 +2432,11 @@ pub fn should_ignore_line(raw: &str) -> bool {
 
     // Check if the line is purely about equipment/tools
     if is_equipment_line(&lower) {
+        return true;
+    }
+
+    // Check if the line is a vague non-ingredient (generic category + vague qualifier)
+    if is_vague_non_ingredient_line(&lower) {
         return true;
     }
 
@@ -2809,6 +2937,52 @@ mod tests {
         ));
         assert!(!should_ignore_line(
             "1 tsp caraway seeds, (toasted and ground (use food processor))"
+        ));
+    }
+
+    #[test]
+    fn test_should_ignore_vague_non_ingredient_lines() {
+        // Vague generic category + qualifier should be ignored
+        assert!(should_ignore_line("Burger accompaniments, as you like"));
+        assert!(should_ignore_line("Toppings as desired"));
+        assert!(should_ignore_line("toppings of your choice"));
+        assert!(should_ignore_line(
+            "Toppings of your choice (optional; see note above)"
+        ));
+        assert!(should_ignore_line("toppings of your choice (see in post)"));
+        assert!(should_ignore_line(
+            "Finishes of your choice (see suggestions in post)"
+        ));
+        assert!(should_ignore_line("garnishes as desired"));
+        assert!(should_ignore_line("condiments of your choice"));
+        assert!(should_ignore_line("extras, as you like"));
+        assert!(should_ignore_line(
+            "Pizza sauce and toppings as you like them"
+        ));
+
+        // Instructional patterns
+        assert!(should_ignore_line("sweeten as desired"));
+
+        // Lines with real food items should NOT be ignored
+        assert!(!should_ignore_line("Hot sauce of your choice"));
+        assert!(!should_ignore_line("cheese of your choice"));
+        assert!(!should_ignore_line("salad greens of your choice"));
+        assert!(!should_ignore_line("Maple syrup, as an accompaniment"));
+        assert!(!should_ignore_line("1/2 cup broth of your choice"));
+        assert!(!should_ignore_line(
+            "1 tablespoon Dijon or a mustard of your choice"
+        ));
+        assert!(!should_ignore_line(
+            "ice cream of your choice, slightly softened"
+        ));
+        assert!(!should_ignore_line("olive oil for drizzling (as desired)"));
+        assert!(!should_ignore_line("1/2 teaspoon pepper (or as desired)"));
+        assert!(!should_ignore_line(
+            "Food coloring and sprinkles, as you wish"
+        ));
+        // Long lines with a category word buried in real ingredient text
+        assert!(!should_ignore_line(
+            "Optional: 2 cups worth of Caramel Turtle Bark or the add-in of your choice (chopped very small)"
         ));
     }
 
