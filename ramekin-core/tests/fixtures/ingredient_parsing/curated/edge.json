@@ -85,6 +85,36 @@
       }
     },
     {
+      "name": "multiplied_compound_unit_attached",
+      "raw": "2x 14 ounce cans black beans (drained and rinsed)",
+      "expected": {
+        "item": "black beans",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "14 ounce cans"
+          }
+        ],
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "name": "multiplied_compound_unit_metric",
+      "raw": "2 x 400g cans cannellini beans drained",
+      "expected": {
+        "item": "cannellini beans drained",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "400g cans"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
       "name": "double_encoded_entity",
       "raw": "&amp;#8531; cup melted coconut oil",
       "expected": {
