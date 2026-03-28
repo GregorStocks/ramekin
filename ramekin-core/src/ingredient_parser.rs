@@ -820,7 +820,15 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     let (pre_unit_modifier, after_modifier) = strip_measurement_modifier(&remaining);
     remaining = after_modifier;
 
-    let (mut base_unit, mut after_unit) = extract_unit(&remaining);
+    let multiplier_unit = primary_amount
+        .as_ref()
+        .and_then(|_| try_extract_multiplier_unit(&remaining));
+
+    let (mut base_unit, mut after_unit) = if let Some((unit, after_multiplier)) = multiplier_unit {
+        (Some(unit), after_multiplier)
+    } else {
+        extract_unit(&remaining)
+    };
 
     // Step 4a: Handle "N unit container" compound units (e.g., "14 ounce can")
     // If no unit was found, check if remaining starts with a compound unit pattern
@@ -1722,6 +1730,57 @@ fn try_extract_attached_metric(s: &str) -> Option<(Measurement, String)> {
     }
 
     None
+}
+
+/// Try to extract a measurement after a leading multiplier marker like "x" or "×".
+/// Examples:
+/// - "x 14 ounce cans black beans" -> ("14 ounce cans", "black beans")
+/// - "x 400g cans cannellini beans" -> ("400g cans", "cannellini beans")
+/// - "x packs shortcrust pastry" -> ("packs", "shortcrust pastry")
+fn try_extract_multiplier_unit(s: &str) -> Option<(String, String)> {
+    let s = s.trim_start();
+    let after_marker = if let Some(rest) = s.strip_prefix('x') {
+        rest
+    } else if let Some(rest) = s.strip_prefix('×') {
+        rest
+    } else {
+        return None;
+    };
+
+    let next_char = after_marker.chars().next()?;
+    if !next_char.is_ascii_digit() && !next_char.is_whitespace() {
+        return None;
+    }
+
+    let after_marker = after_marker.trim_start();
+    if after_marker.is_empty() {
+        return None;
+    }
+
+    if let Some((compound_unit, remaining)) = try_extract_compound_unit(after_marker) {
+        return Some((compound_unit, remaining));
+    }
+
+    if let Some((measurement, after_metric)) = try_extract_attached_metric(after_marker) {
+        let metric_amount = measurement.amount?;
+        let metric_unit = measurement.unit?;
+        let (container, remaining) = extract_unit(&after_metric);
+
+        if let Some(container) = container {
+            if CONTAINERS
+                .iter()
+                .any(|&c| c.eq_ignore_ascii_case(&container))
+            {
+                return Some((
+                    format!("{}{} {}", metric_amount, metric_unit, container),
+                    remaining,
+                ));
+            }
+        }
+    }
+
+    let (unit, remaining) = extract_unit(after_marker);
+    unit.map(|unit| (unit, remaining))
 }
 
 /// Check if a string looks like a preparation note.
