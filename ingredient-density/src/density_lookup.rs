@@ -486,6 +486,28 @@ mod tests {
         assert!(find_density("cilantro").is_some());
         assert!(find_density("fresh cilantro").is_some());
 
+        // Fresh parsley aliases (all → "parsley, fresh" at 60.8 g/cup)
+        let parsley = find_density("fresh parsley").unwrap();
+        assert!((parsley - 60.8).abs() < 0.1);
+        assert!(find_density("parsley").is_some());
+        assert!(find_density("chopped fresh parsley").is_some());
+        assert!(find_density("chopped parsley").is_some());
+        assert!(find_density("chopped fresh flat-leaf parsley").is_some());
+        assert!(find_density("chopped flat-leaf parsley").is_some());
+        assert!(find_density("finely chopped parsley").is_some());
+        assert!(find_density("minced fresh parsley").is_some());
+        assert!(find_density("chopped fresh parsley leaves").is_some());
+        assert!(find_density("flat-leaf parsley").is_some());
+
+        // Ground coriander aliases (→ "spices, coriander seed" at 80 g/cup)
+        let coriander = find_density("ground coriander").unwrap();
+        assert!((coriander - 80.0).abs() < 0.1);
+        assert!(find_density("coriander").is_some());
+
+        // Minced garlic alias (→ "garlic" at 136 g/cup)
+        let garlic = find_density("minced garlic").unwrap();
+        assert!((garlic - 136.0).abs() < 0.1);
+
         // Sauces
         assert!(find_density("hoisin sauce").is_some());
 
