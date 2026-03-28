@@ -129,11 +129,11 @@
     {
       "raw": "8-ounce wheel of brie (or camembert)",
       "expected": {
-        "item": "-ounce wheel of brie (or camembert)",
+        "item": "brie (or camembert)",
         "measurements": [
           {
-            "amount": "8",
-            "unit": null
+            "amount": "1",
+            "unit": "8-ounce wheel"
           }
         ],
         "note": null,

@@ -51,11 +51,11 @@
     {
       "raw": "2-inch piece ginger, peeled and julienned",
       "expected": {
-        "item": "-inch piece ginger",
+        "item": "ginger",
         "measurements": [
           {
-            "amount": "2",
-            "unit": null
+            "amount": "1",
+            "unit": "2-inch piece"
           }
         ],
         "note": "peeled and julienned",

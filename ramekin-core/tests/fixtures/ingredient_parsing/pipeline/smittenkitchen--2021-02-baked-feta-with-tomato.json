@@ -5,15 +5,15 @@
     {
       "raw": "8-ounce (225-gram) block feta",
       "expected": {
-        "item": "-ounce block feta",
+        "item": "feta",
         "measurements": [
           {
-            "amount": "8",
-            "unit": null
+            "amount": "1",
+            "unit": "8-ounce block"
           },
           {
             "amount": "225",
-            "unit": null
+            "unit": "g"
           }
         ],
         "note": null,
@@ -117,7 +117,11 @@
           },
           {
             "amount": "15",
-            "unit": null
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
           }
         ],
         "note": "drained and rinsed",

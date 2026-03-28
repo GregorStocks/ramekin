@@ -5,11 +5,11 @@
     {
       "raw": "14-ounce package extra-firm tofu",
       "expected": {
-        "item": "-ounce package extra-firm tofu",
+        "item": "extra-firm tofu",
         "measurements": [
           {
-            "amount": "14",
-            "unit": null
+            "amount": "1",
+            "unit": "14-ounce package"
           }
         ],
         "note": null,
@@ -79,11 +79,11 @@
     {
       "raw": "1-inch piece fresh ginger, peeled and finely grated",
       "expected": {
-        "item": "-inch piece fresh ginger",
+        "item": "fresh ginger",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "1-inch piece"
           }
         ],
         "note": "peeled and finely grated",

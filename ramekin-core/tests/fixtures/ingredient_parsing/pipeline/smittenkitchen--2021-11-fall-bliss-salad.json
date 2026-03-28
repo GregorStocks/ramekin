@@ -32,11 +32,11 @@
     {
       "raw": "1-pound (455 grams) honeynut squash, peeled, seeded, and sliced thin (¼-inch)",
       "expected": {
-        "item": "-pound honeynut squash, peeled, seeded",
+        "item": "honeynut squash, peeled, seeded",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "lb"
           },
           {
             "amount": "455",
@@ -44,7 +44,7 @@
           },
           {
             "amount": "1",
-            "unit": null
+            "unit": "inch"
           }
         ],
         "note": "and sliced thin",

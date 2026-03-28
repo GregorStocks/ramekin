@@ -47,11 +47,11 @@
     {
       "raw": "2-inch segment of cinnamon stick (optional)",
       "expected": {
-        "item": "-inch segment of cinnamon stick",
+        "item": "cinnamon stick",
         "measurements": [
           {
-            "amount": "2",
-            "unit": null
+            "amount": "1",
+            "unit": "2-inch segment"
           }
         ],
         "note": "optional",

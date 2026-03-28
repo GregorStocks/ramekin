@@ -5,11 +5,15 @@
     {
       "raw": "14-ounces firm or extra firm tofu*",
       "expected": {
-        "item": "-ounces firm or extra firm tofu",
+        "item": "firm or extra firm tofu",
         "measurements": [
           {
             "amount": "14",
-            "unit": null
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
           }
         ],
         "note": null,
