@@ -24,8 +24,9 @@ function httpMirrorPlugin(): PluginOption {
       if (!httpPort) return
 
       server.httpServer?.once('listening', () => {
+        const protocol = certsExist ? 'https' : 'http'
         const proxy = httpProxy.createProxyServer({
-          target: `https://localhost:${process.env.UI_PORT}`,
+          target: `${protocol}://localhost:${process.env.UI_PORT}`,
           secure: false, // Accept self-signed certs
           ws: true, // WebSocket support for HMR
         })
