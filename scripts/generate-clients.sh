@@ -7,6 +7,18 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 SPEC_FILE="$PROJECT_ROOT/api/openapi.json"
+LOCK_DIR="$PROJECT_ROOT/.generate-clients.lock"
+
+cleanup() {
+    rm -rf "$LOCK_DIR"
+}
+
+acquire_lock() {
+    while ! mkdir "$LOCK_DIR" 2>/dev/null; do
+        sleep 0.1
+    done
+    trap cleanup EXIT
+}
 
 generate_client() {
     local generator=$1
@@ -87,5 +99,6 @@ EOF
 LOG_DIR="$PROJECT_ROOT/logs"
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/generate-clients.log"
+acquire_lock
 main > "$LOG_FILE" 2>&1
 echo "Generated clients, log at $LOG_FILE"
