@@ -72,6 +72,7 @@ processes:
       - FIXTURE_BASE_URL=http://localhost:${FIXTURE_PORT}
       - API_BASE_URL=http://localhost:${PORT}
       - CLI_PATH=./cli/target/debug/ramekin-cli
+      - PYTHONPATH=./tests/generated
     availability:
       restart: "no"
     depends_on:

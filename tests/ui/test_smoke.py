@@ -5,13 +5,10 @@ These tests require the full stack (server + UI) to be running.
 
 import os
 import re
-import sys
 import time
 import uuid
 
 from playwright.sync_api import Page, expect
-
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "generated"))
 
 from ramekin_client import ApiClient, Configuration
 from ramekin_client.api import AuthApi, RecipesApi, ScrapeApi

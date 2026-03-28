@@ -75,6 +75,7 @@ processes:
     environment:
       - API_BASE_URL=http://localhost:${PORT}
       - FIXTURE_BASE_URL=http://localhost:${FIXTURE_PORT}
+      - PYTHONPATH=./tests/generated
       - UI_BASE_URL=http://localhost:${UI_PORT_HTTP}
     availability:
       restart: "no"
