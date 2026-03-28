@@ -116,10 +116,10 @@
     {
       "raw": "1/2 tsp to 1 tsp sumac",
       "expected": {
-        "item": "to 1 tsp sumac",
+        "item": "sumac",
         "measurements": [
           {
-            "amount": "0.5",
+            "amount": "0.5 to 1",
             "unit": "tsp"
           }
         ],

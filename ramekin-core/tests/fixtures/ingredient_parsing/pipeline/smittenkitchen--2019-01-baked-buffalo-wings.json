@@ -23,11 +23,11 @@
     {
       "raw": "1 1/2 teaspoons to 2 tablespoons baking powder (using 1 1/2 teaspoons per pound)",
       "expected": {
-        "item": "to 2 tablespoons baking powder (using 1 1/2 teaspoons per pound)",
+        "item": "baking powder (using 1 1/2 teaspoons per pound)",
         "measurements": [
           {
-            "amount": "1.5",
-            "unit": "tsp"
+            "amount": "1 1/2 teaspoons to 2 tablespoons",
+            "unit": null
           }
         ],
         "note": null,
@@ -65,11 +65,11 @@
     {
       "raw": "1 1/2 to 2 tablespoons unsalted butter per pound of wings",
       "expected": {
-        "item": "to 2 tablespoons unsalted butter per pound of wings",
+        "item": "unsalted butter per pound of wings",
         "measurements": [
           {
-            "amount": "1.5",
-            "unit": null
+            "amount": "1.5 to 2",
+            "unit": "tbsp"
           }
         ],
         "note": null,

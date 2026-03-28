@@ -127,11 +127,11 @@
     {
       "raw": "1 to 1 1/2 tablespoons fresh lemon juice",
       "expected": {
-        "item": "1/2 tablespoons fresh lemon juice",
+        "item": "fresh lemon juice",
         "measurements": [
           {
-            "amount": "1 to 1",
-            "unit": null
+            "amount": "1 to 1.5",
+            "unit": "tbsp"
           }
         ],
         "note": null,

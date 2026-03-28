@@ -5,11 +5,15 @@
     {
       "raw": "1 1/4 to 1/2 pounds boneless, skinless chicken thighs",
       "expected": {
-        "item": "to 1/2 pounds boneless, skinless chicken thighs",
+        "item": "boneless, skinless chicken thighs",
         "measurements": [
           {
-            "amount": "1.25",
-            "unit": null
+            "amount": "1.25 to 0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "567 to 227",
+            "unit": "g"
           }
         ],
         "note": null,

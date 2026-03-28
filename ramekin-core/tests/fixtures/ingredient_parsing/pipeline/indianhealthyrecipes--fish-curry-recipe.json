@@ -281,11 +281,11 @@
     {
       "raw": "1 to 1 ½ tsp garam masala (or curry powder as needed (refer notes))",
       "expected": {
-        "item": "1/2 tsp garam masala",
+        "item": "garam masala",
         "measurements": [
           {
-            "amount": "1 to 1",
-            "unit": null
+            "amount": "1 to 1.5",
+            "unit": "tsp"
           }
         ],
         "note": "or curry powder as needed (refer notes",
@@ -295,11 +295,11 @@
     {
       "raw": "1¼ to 1½ cup water",
       "expected": {
-        "item": "to 1 1/2 cup water",
+        "item": "water",
         "measurements": [
           {
-            "amount": "1.25",
-            "unit": null
+            "amount": "1.25 to 1.5",
+            "unit": "cup"
           }
         ],
         "note": null,

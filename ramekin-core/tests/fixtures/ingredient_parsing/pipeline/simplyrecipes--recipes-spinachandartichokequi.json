@@ -71,11 +71,11 @@
     {
       "raw": "2 to 2 1/2 tablespoons of water",
       "expected": {
-        "item": "1/2 tablespoons of water",
+        "item": "water",
         "measurements": [
           {
-            "amount": "2 to 2",
-            "unit": null
+            "amount": "2 to 2.5",
+            "unit": "tbsp"
           }
         ],
         "note": null,

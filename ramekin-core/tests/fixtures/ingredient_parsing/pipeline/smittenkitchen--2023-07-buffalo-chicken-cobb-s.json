@@ -156,11 +156,11 @@
     {
       "raw": "6 to 6 1/2 cups diced fresh vegetables, such as celery, carrots, bell pepper, cucumber, and tomatoes",
       "expected": {
-        "item": "1/2 cups diced fresh vegetables, such as celery, carrots, bell pepper, cucumber, and tomatoes",
+        "item": "diced fresh vegetables, such as celery, carrots, bell pepper, cucumber, and tomatoes",
         "measurements": [
           {
-            "amount": "6 to 6",
-            "unit": null
+            "amount": "6 to 6.5",
+            "unit": "cup"
           }
         ],
         "note": null,

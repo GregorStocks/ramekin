@@ -5,15 +5,19 @@
     {
       "raw": "2 1/4 to 1/2 pounds (1 to 1.15kg) apples, such as Granny Smith or Mutsu",
       "expected": {
-        "item": "to 1/2 pounds apples, such as Granny Smith or Mutsu",
+        "item": "apples, such as Granny Smith or Mutsu",
         "measurements": [
           {
-            "amount": "2.25",
-            "unit": null
+            "amount": "2.25 to 0.5",
+            "unit": "lb"
           },
           {
             "amount": "1",
             "unit": null
+          },
+          {
+            "amount": "1021 to 227",
+            "unit": "g"
           }
         ],
         "note": null,

@@ -33,14 +33,14 @@
     {
       "raw": "1 lb to 1 1/4 lb chicken thighs (trimmed and cut into 1\" pieces)",
       "expected": {
-        "item": "to 1 1/4 lb chicken thighs",
+        "item": "chicken thighs",
         "measurements": [
           {
-            "amount": "1",
+            "amount": "1 to 1.25",
             "unit": "lb"
           },
           {
-            "amount": "454",
+            "amount": "454 to 567",
             "unit": "g"
           }
         ],

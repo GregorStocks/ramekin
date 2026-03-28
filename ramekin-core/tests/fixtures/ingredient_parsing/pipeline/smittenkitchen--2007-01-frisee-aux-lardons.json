@@ -91,11 +91,11 @@
     {
       "raw": "1 1/2 to 2 cups milk",
       "expected": {
-        "item": "to 2 cups milk",
+        "item": "milk",
         "measurements": [
           {
-            "amount": "1.5",
-            "unit": null
+            "amount": "1.5 to 2",
+            "unit": "cup"
           }
         ],
         "note": null,

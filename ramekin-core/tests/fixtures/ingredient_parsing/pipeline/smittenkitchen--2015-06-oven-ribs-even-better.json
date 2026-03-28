@@ -180,10 +180,10 @@
     {
       "raw": "2 1/2 to 3 hours at 300°F.",
       "expected": {
-        "item": "to 3 hours at 300°F.",
+        "item": "hours at 300°F.",
         "measurements": [
           {
-            "amount": "2.5",
+            "amount": "2.5 to 3",
             "unit": null
           }
         ],
@@ -194,10 +194,10 @@
     {
       "raw": "3 1/2 to 4 hours at 250°F.",
       "expected": {
-        "item": "to 4 hours at 250°F.",
+        "item": "hours at 250°F.",
         "measurements": [
           {
-            "amount": "3.5",
+            "amount": "3.5 to 4",
             "unit": null
           }
         ],

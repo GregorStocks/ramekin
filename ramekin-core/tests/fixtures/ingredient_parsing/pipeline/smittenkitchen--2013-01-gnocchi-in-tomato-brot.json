@@ -236,11 +236,11 @@
     {
       "raw": "1 1/4 to 1 1/2 cups (156 to 190 grams) all-purpose flour, plus more for dusting surface",
       "expected": {
-        "item": "to 1 1/2 cups all-purpose flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
-            "amount": "1.25",
-            "unit": null
+            "amount": "1.25 to 1.5",
+            "unit": "cup"
           },
           {
             "amount": "156 to 190",

@@ -5,11 +5,11 @@
     {
       "raw": "1 to 2-inch segment of vanilla bean (optional)",
       "expected": {
-        "item": "to 2-inch segment of vanilla bean",
+        "item": "vanilla bean",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "1 to",
+            "unit": "inch segment"
           }
         ],
         "note": "optional",

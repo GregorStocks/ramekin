@@ -149,11 +149,11 @@
     {
       "raw": "6 to 6-1/2 cups all-purpose flour",
       "expected": {
-        "item": "to 6-1/2 cups all-purpose flour",
+        "item": "all-purpose flour",
         "measurements": [
           {
-            "amount": "6",
-            "unit": null
+            "amount": "6 to 6.5",
+            "unit": "cup"
           }
         ],
         "note": null,

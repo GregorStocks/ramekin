@@ -288,11 +288,11 @@
     {
       "raw": "1 1/2 to 3 tablespoons pineapple juice",
       "expected": {
-        "item": "to 3 tablespoons pineapple juice",
+        "item": "pineapple juice",
         "measurements": [
           {
-            "amount": "1.5",
-            "unit": null
+            "amount": "1.5 to 3",
+            "unit": "tbsp"
           }
         ],
         "note": null,

@@ -155,11 +155,11 @@
     {
       "raw": "1 to 1 1/2 cups water",
       "expected": {
-        "item": "1/2 cups water",
+        "item": "water",
         "measurements": [
           {
-            "amount": "1 to 1",
-            "unit": null
+            "amount": "1 to 1.5",
+            "unit": "cup"
           }
         ],
         "note": null,

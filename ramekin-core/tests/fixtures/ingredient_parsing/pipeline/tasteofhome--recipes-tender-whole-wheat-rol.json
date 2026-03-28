@@ -187,11 +187,11 @@
     {
       "raw": "2-1/2 to 3 cups bread flour",
       "expected": {
-        "item": "to 3 cups bread flour",
+        "item": "bread flour",
         "measurements": [
           {
-            "amount": "2-1/2",
-            "unit": null
+            "amount": "2.5 to 3",
+            "unit": "cup"
           }
         ],
         "note": null,

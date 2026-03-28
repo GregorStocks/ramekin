@@ -92,11 +92,11 @@
     {
       "raw": "2 to 2 1/2 tablespoons champagne or white wine vinegar",
       "expected": {
-        "item": "1/2 tablespoons champagne or white wine vinegar",
+        "item": "champagne or white wine vinegar",
         "measurements": [
           {
-            "amount": "2 to 2",
-            "unit": null
+            "amount": "2 to 2.5",
+            "unit": "tbsp"
           }
         ],
         "note": null,

@@ -158,11 +158,15 @@
     {
       "raw": "3 1/2 to 4 pounds bone-in, skin-on chicken parts (breasts, thighs and drumsticks are ideal)",
       "expected": {
-        "item": "to 4 pounds bone-in, skin-on chicken parts (breasts, thighs and drumsticks are ideal)",
+        "item": "bone-in, skin-on chicken parts (breasts, thighs and drumsticks are ideal)",
         "measurements": [
           {
-            "amount": "3.5",
-            "unit": null
+            "amount": "3.5 to 4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1588 to 1814",
+            "unit": "g"
           }
         ],
         "note": null,
