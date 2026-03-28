@@ -812,7 +812,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     let (pre_amount_modifier, after_modifier) = strip_measurement_modifier(&remaining);
     remaining = after_modifier;
 
-    let (primary_amount, after_amount) = extract_amount(&remaining);
+    let (mut primary_amount, after_amount) = extract_amount(&remaining);
     remaining = after_amount;
 
     // Step 4: Strip measurement modifiers before unit, combine with any pre-amount modifier
@@ -828,6 +828,14 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         if let Some((compound_unit, after_compound)) = try_extract_compound_unit(&remaining) {
             base_unit = Some(compound_unit);
             after_unit = after_compound;
+        } else if let Some(amount_str) = primary_amount.as_deref() {
+            if let Some(((replacement_amount, recovered_unit), after_recovered)) =
+                try_extract_hyphenated_unit_tail(amount_str, &remaining)
+            {
+                primary_amount = Some(replacement_amount);
+                base_unit = Some(recovered_unit);
+                after_unit = after_recovered;
+            }
         }
     }
 
@@ -859,7 +867,6 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // Step 4.4b: Handle "plus [amount] [unit]" compound quantities
     // e.g., "1/2 cup plus 2 tablespoons flour" -> amount="1/2 cup plus 2 tablespoons", unit=null
     // This keeps the compound quantity together as a single amount rather than splitting into note
-    let mut primary_amount = primary_amount;
     {
         let remaining_trimmed = remaining.trim_start();
         let remaining_lower = remaining_trimmed.to_lowercase();
@@ -1233,8 +1240,20 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
 /// Preserves "each" qualifier as part of the unit (e.g., "8 ounces each" -> unit: "ounces each")
 fn try_parse_measurement(s: &str) -> Option<Measurement> {
     let s = s.trim();
-    let (amount, after_amount) = extract_amount(s);
-    let (unit, remaining) = extract_unit(&after_amount);
+    let (mut amount, after_amount) = extract_amount(s);
+    let (mut unit, mut remaining) = extract_unit(&after_amount);
+
+    if unit.is_none() {
+        if let Some(amount_str) = amount.as_deref() {
+            if let Some(((replacement_amount, recovered_unit), after_recovered)) =
+                try_extract_hyphenated_unit_tail(amount_str, &after_amount)
+            {
+                amount = Some(replacement_amount);
+                unit = Some(recovered_unit);
+                remaining = after_recovered;
+            }
+        }
+    }
 
     // Check if remaining is "each" - if so, append it to the unit
     // This preserves important semantic info like "8 ounces each" vs "8 ounces total"
@@ -1537,6 +1556,64 @@ fn extract_unit(s: &str) -> (Option<String>, String) {
     }
 
     (None, s.to_string())
+}
+
+/// Count/container nouns that pair with a hyphenated size descriptor.
+/// Examples: "14-ounce package", "1/2-inch piece", "8-ounce block".
+const HYPHENATED_DESCRIPTOR_NOUNS: &[&str] = &[
+    "package", "packages", "pkg", "pkgs", "can", "cans", "bag", "bags", "block", "blocks", "wheel",
+    "wheels", "piece", "pieces", "knob", "knobs", "segment", "segments", "slice", "slices",
+    "stick", "sticks", "loaf", "loaves", "hunk", "hunks",
+];
+
+/// Recover a measurement from a hyphenated tail left behind after the numeric
+/// amount has already been extracted, e.g. "-ounce can" or "/2-inch piece".
+fn try_extract_hyphenated_unit_tail(amount: &str, s: &str) -> Option<((String, String), String)> {
+    let s = s.trim();
+    if s.is_empty() || (!s.starts_with('-') && !s.starts_with('/')) {
+        return None;
+    }
+
+    let words: Vec<&str> = s.split_whitespace().collect();
+    if words.is_empty() {
+        return None;
+    }
+
+    let reconstructed_first = format!("{}{}", amount, words[0]);
+    let (_, after_hyphen) = reconstructed_first.split_once('-')?;
+    let normalized_unit = after_hyphen.to_lowercase();
+    let normalized_unit = normalized_unit.trim_end_matches('.');
+
+    let is_known_base_unit = WEIGHT_UNITS_FOR_COMPOUND.contains(&normalized_unit)
+        || normalized_unit == "inch"
+        || normalized_unit == "inches";
+    if !is_known_base_unit {
+        return None;
+    }
+
+    let mut consumed_words = 1;
+    let mut replacement_amount = amount.to_string();
+    let mut unit = after_hyphen.to_string();
+
+    if let Some(second) = words.get(1) {
+        let second_normalized = second.to_lowercase();
+        let second_normalized = second_normalized.trim_end_matches('.');
+        if HYPHENATED_DESCRIPTOR_NOUNS.contains(&second_normalized) {
+            consumed_words = 2;
+            replacement_amount = "1".to_string();
+            unit = format!("{} {}", reconstructed_first, second);
+        }
+    }
+
+    let remaining = words[consumed_words..].join(" ");
+    let remaining = remaining.trim();
+    let remaining_lower = remaining.to_lowercase();
+    let remaining = if remaining_lower.starts_with("of ") || remaining_lower == "of" {
+        remaining.get(2..).unwrap_or("").trim_start().to_string()
+    } else {
+        remaining.to_string()
+    };
+    Some(((replacement_amount, unit), remaining))
 }
 
 /// Container types that can form compound units like "14 ounce can"
@@ -2589,6 +2666,53 @@ mod tests {
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("2".to_string()));
         assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+    }
+
+    #[test]
+    fn test_hyphenated_compound_unit_tail_package() {
+        let result = parse_ingredient("14-ounce package extra-firm tofu");
+        assert_eq!(result.item, "extra-firm tofu");
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("1".to_string()));
+        assert_eq!(
+            result.measurements[0].unit,
+            Some("14-ounce package".to_string())
+        );
+    }
+
+    #[test]
+    fn test_hyphenated_compound_unit_tail_fractional_piece() {
+        let result = parse_ingredient("1/2-inch piece of fresh ginger");
+        assert_eq!(result.item, "fresh ginger");
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("1".to_string()));
+        assert_eq!(
+            result.measurements[0].unit,
+            Some("1/2-inch piece".to_string())
+        );
+    }
+
+    #[test]
+    fn test_hyphenated_parenthetical_measurement_preserves_unit() {
+        let result = parse_ingredient("1-pound (454-gram) package phyllo/filo pastry");
+        assert_eq!(result.item, "phyllo/filo pastry");
+        assert_eq!(result.measurements.len(), 2);
+        assert_eq!(result.measurements[0].amount, Some("1".to_string()));
+        assert_eq!(
+            result.measurements[0].unit,
+            Some("1-pound package".to_string())
+        );
+        assert_eq!(result.measurements[1].amount, Some("454".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("g".to_string()));
+    }
+
+    #[test]
+    fn test_hyphenated_unit_tail_without_descriptor_noun() {
+        let result = parse_ingredient("1-pound ground beef");
+        assert_eq!(result.item, "ground beef");
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("1".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("lb".to_string()));
     }
 
     #[test]

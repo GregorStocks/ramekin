@@ -5,11 +5,11 @@
     {
       "raw": "12-ounce (340g) loaf of crusty bread",
       "expected": {
-        "item": "-ounce loaf of crusty bread",
+        "item": "crusty bread",
         "measurements": [
           {
-            "amount": "12",
-            "unit": null
+            "amount": "1",
+            "unit": "12-ounce loaf"
           },
           {
             "amount": "340",

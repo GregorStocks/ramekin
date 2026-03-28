@@ -47,11 +47,11 @@
     {
       "raw": "1-inch piece of ginger, finely chopped",
       "expected": {
-        "item": "-inch piece of ginger",
+        "item": "ginger",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "1-inch piece"
           }
         ],
         "note": "finely chopped",

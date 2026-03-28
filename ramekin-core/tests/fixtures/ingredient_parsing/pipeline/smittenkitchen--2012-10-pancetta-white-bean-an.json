@@ -389,11 +389,11 @@
     {
       "raw": "(440-gram) cans",
       "expected": {
-        "item": "-gram cans",
+        "item": "(440-gram) cans",
         "measurements": [
           {
-            "amount": "440",
-            "unit": null
+            "amount": "1",
+            "unit": "440-gram cans"
           }
         ],
         "note": null,

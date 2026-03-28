@@ -119,11 +119,15 @@
     {
       "raw": "1/4-pound firm feta cheese",
       "expected": {
-        "item": "/4-pound firm feta cheese",
+        "item": "firm feta cheese",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
           }
         ],
         "note": null,

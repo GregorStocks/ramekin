@@ -131,11 +131,11 @@
     {
       "raw": "4-ounce white chocolate bar, for garnish (113g)",
       "expected": {
-        "item": "-ounce white chocolate bar",
+        "item": "white chocolate bar",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "oz"
           },
           {
             "amount": "113",

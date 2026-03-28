@@ -247,6 +247,36 @@
       }
     },
     {
+      "name": "hyphenated_compound_unit_without_count",
+      "raw": "14-ounce package extra-firm tofu",
+      "expected": {
+        "item": "extra-firm tofu",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "14-ounce package"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "name": "hyphenated_fractional_piece_without_count",
+      "raw": "1/2-inch piece of fresh ginger, peeled and minced or finely grated",
+      "expected": {
+        "item": "fresh ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "1/2-inch piece"
+          }
+        ],
+        "note": "peeled and minced or finely grated",
+        "category": "Produce"
+      }
+    },
+    {
       "name": "ingredient_alternative",
       "raw": "1/2 cup water or 1/2 cup beef broth",
       "expected": {
@@ -330,7 +360,11 @@
           },
           {
             "amount": "15.5",
-            "unit": null
+            "unit": "oz"
+          },
+          {
+            "amount": "439",
+            "unit": "g"
           }
         ],
         "note": null,
