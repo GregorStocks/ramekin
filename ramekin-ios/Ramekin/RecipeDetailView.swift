@@ -29,6 +29,9 @@ struct RecipeDetailView: View {
     @State var showingDeleteConfirmation = false
     @State var isDeleting = false
     @State var deleteError: String?
+    @State var isRescraping = false
+    @State var rescrapeError: String?
+    @State var showingRescrapeConfirmation = false
 
     var isViewingHistoricalVersion: Bool {
         RecipeVersionSupport.isViewingHistoricalVersion(
@@ -38,7 +41,7 @@ struct RecipeDetailView: View {
     }
 
     var actionsDisabledForHistoricalVersion: Bool {
-        isViewingHistoricalVersion || isReverting
+        isViewingHistoricalVersion || isReverting || isRescraping
     }
 
     var canCompareSelectedVersions: Bool {
@@ -89,6 +92,15 @@ struct RecipeDetailView: View {
                                 Label("Add to Shopping List", systemImage: "cart.badge.plus")
                             }
                             .disabled(actionsDisabledForHistoricalVersion)
+                        }
+
+                        if let sourceUrl = recipe.sourceUrl, !sourceUrl.isEmpty {
+                            Button {
+                                showingRescrapeConfirmation = true
+                            } label: {
+                                Label("Rescrape from Source", systemImage: "arrow.triangle.2.circlepath")
+                            }
+                            .disabled(actionsDisabledForHistoricalVersion || isRescraping)
                         }
                         Divider()
                         Button(role: .destructive) {
@@ -165,6 +177,24 @@ struct RecipeDetailView: View {
             Button("OK", role: .cancel) {}
         } message: {
             Text(deleteError ?? "")
+        }
+        .confirmationDialog("Rescrape from Source", isPresented: $showingRescrapeConfirmation) {
+            Button("Rescrape") {
+                Task { await rescrapeFromSource() }
+            }
+        } message: {
+            Text(
+                "This will re-import the recipe from its original URL. "
+                    + "Your current version will be preserved in history."
+            )
+        }
+        .alert("Rescrape Failed", isPresented: Binding(
+            get: { rescrapeError != nil },
+            set: { if !$0 { rescrapeError = nil } }
+        )) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(rescrapeError ?? "")
         }
         .alert(
             "Revert to this version?",

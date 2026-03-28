@@ -9,6 +9,10 @@ extension RecipeDetailView {
             }
 
             VStack(alignment: .leading, spacing: 20) {
+                if isRescraping {
+                    rescrapeProgressBanner()
+                }
+
                 if let error {
                     inlineErrorBanner(message: error)
                 }
