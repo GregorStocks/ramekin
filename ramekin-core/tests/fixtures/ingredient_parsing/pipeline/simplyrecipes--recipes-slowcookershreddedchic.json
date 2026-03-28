@@ -55,11 +55,15 @@
           },
           {
             "amount": "15",
-            "unit": null
+            "unit": "oz"
           },
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -177,7 +181,11 @@
           },
           {
             "amount": "15",
-            "unit": null
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
           }
         ],
         "note": "drained and rinsed",

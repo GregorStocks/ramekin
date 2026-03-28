@@ -47,11 +47,11 @@
     {
       "raw": "1-inch knob fresh ginger, peeled and chopped",
       "expected": {
-        "item": "-inch knob fresh ginger",
+        "item": "fresh ginger",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "1-inch knob"
           }
         ],
         "note": "peeled and chopped",

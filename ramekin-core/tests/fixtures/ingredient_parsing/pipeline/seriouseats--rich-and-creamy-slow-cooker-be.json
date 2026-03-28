@@ -244,11 +244,11 @@
     {
       "raw": "12-ounce package egg noodles",
       "expected": {
-        "item": "-ounce package egg noodles",
+        "item": "egg noodles",
         "measurements": [
           {
-            "amount": "12",
-            "unit": null
+            "amount": "1",
+            "unit": "12-ounce package"
           }
         ],
         "note": null,

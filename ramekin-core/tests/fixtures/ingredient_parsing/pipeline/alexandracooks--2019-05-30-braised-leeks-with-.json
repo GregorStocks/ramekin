@@ -138,11 +138,15 @@
     {
       "raw": "12-oz pasta, such as pappardelle",
       "expected": {
-        "item": "-oz pasta, such as pappardelle",
+        "item": "pasta, such as pappardelle",
         "measurements": [
           {
             "amount": "12",
-            "unit": null
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
           }
         ],
         "note": null,

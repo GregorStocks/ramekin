@@ -125,11 +125,11 @@
     {
       "raw": "28-ounce can crushed San Marzano tomatoes",
       "expected": {
-        "item": "-ounce can crushed San Marzano tomatoes",
+        "item": "crushed San Marzano tomatoes",
         "measurements": [
           {
-            "amount": "28",
-            "unit": null
+            "amount": "1",
+            "unit": "28-ounce can"
           }
         ],
         "note": null,

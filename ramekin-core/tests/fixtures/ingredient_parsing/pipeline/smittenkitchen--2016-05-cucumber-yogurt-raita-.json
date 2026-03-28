@@ -37,11 +37,11 @@
     {
       "raw": "1-inch piece of fresh ginger, peeled",
       "expected": {
-        "item": "-inch piece of fresh ginger",
+        "item": "fresh ginger",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "1-inch piece"
           }
         ],
         "note": "peeled",
