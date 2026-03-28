@@ -653,6 +653,35 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         remaining = remaining.replace("))", ")");
     }
 
+    // Strip placeholder parentheticals: TK ("to come") and TODO markers
+    // e.g., "1/2 cup (TK g) panko bread crumbs" -> "1/2 cup panko bread crumbs"
+    // e.g., "(TODO) chicken stock" -> "chicken stock"
+    loop {
+        let lower = remaining.to_lowercase();
+        let Some(start) = lower.find("(tk").or_else(|| lower.find("(todo")) else {
+            break;
+        };
+        let after = match remaining.get(start..) {
+            Some(s) => s,
+            None => break,
+        };
+        let Some(end_offset) = after.find(')') else {
+            break;
+        };
+        let before = remaining.get(..start).unwrap_or("").trim_end();
+        let after = remaining
+            .get(start + end_offset + 1..)
+            .unwrap_or("")
+            .trim_start();
+        remaining = if before.is_empty() {
+            after.to_string()
+        } else if after.is_empty() {
+            before.to_string()
+        } else {
+            format!("{} {}", before, after)
+        };
+    }
+
     // Unwrap leading parentheticals that contain quantities
     // e.g., "(half stick) butter" -> "1/2 stick butter"
     // But NOT "(optional) 1/4 cup" which should keep the paren structure
