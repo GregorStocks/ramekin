@@ -849,6 +849,27 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
 
     remaining = after_unit;
 
+    // Step 4.0.5: Strip orphaned "of" + article after amount extraction with no unit.
+    // Handles "Half of a lemon" → after amount "1/2" extracted, remaining is
+    // "of a lemon". With no unit to absorb the "of", strip it here.
+    if primary_amount.is_some() && base_unit.is_none() {
+        let remaining_trimmed = remaining.trim_start();
+        let remaining_lower = remaining_trimmed.to_lowercase();
+        if remaining_lower.starts_with("of ") {
+            let after_of = remaining_trimmed.get(3..).unwrap_or("").trim_start();
+            let after_of_lower = after_of.to_lowercase();
+            remaining = if after_of_lower.starts_with("a ") {
+                after_of.get(2..).unwrap_or("").trim_start().to_string()
+            } else if after_of_lower.starts_with("an ") {
+                after_of.get(3..).unwrap_or("").trim_start().to_string()
+            } else if after_of_lower.starts_with("the ") {
+                after_of.get(4..).unwrap_or("").trim_start().to_string()
+            } else {
+                after_of.to_string()
+            };
+        }
+    }
+
     // Step 4.1: Move leading "each" from remaining text onto the unit
     // Handles "1/2 tsp each salt and pepper" -> unit becomes "tsp each", item becomes "salt and pepper"
     // "each" here means "this measurement applies to each of the following items"

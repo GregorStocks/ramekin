@@ -847,6 +847,36 @@
         "note": "for dried but soaked chickpeas; or 1 1/2 cup for cooked chickpeas",
         "category": "Canned Goods"
       }
+    },
+    {
+      "name": "of_a_orphan_simple",
+      "raw": "Half of a lemon",
+      "expected": {
+        "item": "lemon",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "name": "of_a_orphan_with_descriptor",
+      "raw": "1/2 of a medium-large cabbage",
+      "expected": {
+        "item": "medium-large cabbage",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
     }
   ]
 }
