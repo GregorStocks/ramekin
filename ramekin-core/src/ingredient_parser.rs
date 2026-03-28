@@ -903,7 +903,11 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             if let Some((upper_amount, upper_unit, after_to_unit)) =
                 parse_range_continuation_measurement(after_to)
             {
-                match (primary_amount.as_ref(), primary_unit.as_ref(), upper_unit.as_ref()) {
+                match (
+                    primary_amount.as_ref(),
+                    primary_unit.as_ref(),
+                    upper_unit.as_ref(),
+                ) {
                     (Some(amount), Some(unit), Some(upper_unit))
                         if units_share_base(unit, upper_unit) =>
                     {
@@ -911,8 +915,10 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                         remaining = after_to_unit;
                     }
                     (Some(amount), Some(unit), Some(upper_unit)) => {
-                        primary_amount =
-                            Some(format!("{} {} to {} {}", amount, unit, upper_amount, upper_unit));
+                        primary_amount = Some(format!(
+                            "{} {} to {} {}",
+                            amount, unit, upper_amount, upper_unit
+                        ));
                         primary_unit = None;
                         remaining = after_to_unit;
                     }
@@ -1655,11 +1661,9 @@ fn is_fraction(s: &str) -> bool {
 
 fn units_share_base(a: &str, b: &str) -> bool {
     a.eq_ignore_ascii_case(b)
-        || a
-            .strip_suffix(&format!(" {}", b))
+        || a.strip_suffix(&format!(" {}", b))
             .is_some_and(|prefix| !prefix.is_empty())
-        || b
-            .strip_suffix(&format!(" {}", a))
+        || b.strip_suffix(&format!(" {}", a))
             .is_some_and(|prefix| !prefix.is_empty())
 }
 
@@ -1728,7 +1732,11 @@ fn try_extract_hyphenated_descriptor_range(s: &str) -> Option<(String, String, S
         remaining.to_string()
     };
 
-    Some((amount.to_string(), format!("{} {}", unit, descriptor), remaining))
+    Some((
+        amount.to_string(),
+        format!("{} {}", unit, descriptor),
+        remaining,
+    ))
 }
 
 /// Extract a unit from the beginning of a string.
