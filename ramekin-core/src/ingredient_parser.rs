@@ -1740,13 +1740,19 @@ fn try_extract_attached_metric(s: &str) -> Option<(Measurement, String)> {
 fn try_extract_multiplier_unit(s: &str) -> Option<(String, String)> {
     let s = s.trim_start();
     let after_marker = if let Some(rest) = s.strip_prefix('x') {
-        rest.trim_start()
+        rest
     } else if let Some(rest) = s.strip_prefix('×') {
-        rest.trim_start()
+        rest
     } else {
         return None;
     };
 
+    let next_char = after_marker.chars().next()?;
+    if !next_char.is_ascii_digit() && !next_char.is_whitespace() {
+        return None;
+    }
+
+    let after_marker = after_marker.trim_start();
     if after_marker.is_empty() {
         return None;
     }
