@@ -1,3 +1,9 @@
+---
+name: add-density
+description: Pick one high-impact ingredient from the density gap report, find a reliable density, and add it to the system. Use when adding ingredient density data.
+disable-model-invocation: true
+---
+
 # Add Density for a High-Priority Ingredient
 
 Pick one high-impact ingredient from the density gap report, find a reliable density, and add it.
@@ -24,10 +30,10 @@ Pick one high-impact ingredient from the density gap report, find a reliable den
 
 ## Key files
 
-- `ingredient-density/src/data/curated.json` — hand-curated densities and aliases (overrides USDA)
-- `ingredient-density/src/data/usda.json` — USDA FoodData Central densities (auto-imported)
-- `ingredient-density/src/density_lookup.rs` — lookup logic, modifier stripping, tests
-- `data/density-gap-report.txt` — ingredients missing density data, sorted by frequency
+- `ingredient-density/src/data/curated.json` -- hand-curated densities and aliases (overrides USDA)
+- `ingredient-density/src/data/usda.json` -- USDA FoodData Central densities (auto-imported)
+- `ingredient-density/src/density_lookup.rs` -- lookup logic, modifier stripping, tests
+- `data/density-gap-report.txt` -- ingredients missing density data, sorted by frequency
 
 ## Density format
 
