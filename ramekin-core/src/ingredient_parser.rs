@@ -893,6 +893,40 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         (None, u) => u,
     };
 
+    // Step 4.4a: Handle repeated-unit ranges like "1/2 cup to 1 cup white rum".
+    // If the second half parses as another measurement with the same unit, fold it
+    // into the primary amount and keep the shared unit once.
+    {
+        let remaining_trimmed = remaining.trim_start();
+        if let Some(after_to) = remaining_trimmed.strip_prefix("to ") {
+            let after_to = after_to.trim_start();
+            if let Some((upper_amount, upper_unit, after_to_unit)) =
+                parse_range_continuation_measurement(after_to)
+            {
+                match (primary_amount.as_ref(), primary_unit.as_ref(), upper_unit.as_ref()) {
+                    (Some(amount), Some(unit), Some(upper_unit))
+                        if units_share_base(unit, upper_unit) =>
+                    {
+                        primary_amount = Some(format!("{} to {}", amount, upper_amount));
+                        remaining = after_to_unit;
+                    }
+                    (Some(amount), Some(unit), Some(upper_unit)) => {
+                        primary_amount =
+                            Some(format!("{} {} to {} {}", amount, unit, upper_amount, upper_unit));
+                        primary_unit = None;
+                        remaining = after_to_unit;
+                    }
+                    (Some(amount), None, Some(upper_unit)) => {
+                        primary_amount = Some(format!("{} to {}", amount, upper_amount));
+                        primary_unit = Some(upper_unit.clone());
+                        remaining = after_to_unit;
+                    }
+                    _ => {}
+                }
+            }
+        }
+    }
+
     // Step 4.4b: Handle "plus [amount] [unit]" compound quantities
     // e.g., "1/2 cup plus 2 tablespoons flour" -> amount="1/2 cup plus 2 tablespoons", unit=null
     // This keeps the compound quantity together as a single amount rather than splitting into note
@@ -1392,6 +1426,23 @@ fn extract_amount(s: &str) -> (Option<String>, String) {
     // We need to look for: number, space, fraction
     let words: Vec<&str> = s.split_whitespace().collect();
     if words.len() >= 2 {
+        if let Some((first_amount, first_consumed)) = parse_leading_amount_words(&words) {
+            let range_connector = words
+                .get(first_consumed)
+                .filter(|word| word.eq_ignore_ascii_case("to") || word.eq_ignore_ascii_case("or"))
+                .copied();
+            if let Some(connector) = range_connector {
+                let second_start = first_consumed + 1;
+                if let Some((second_amount, second_consumed)) =
+                    parse_leading_amount_words(&words[second_start..])
+                {
+                    let amount = format!("{} {} {}", first_amount, connector, second_amount);
+                    let remaining_after_range = words[second_start + second_consumed..].join(" ");
+                    return (Some(amount), remaining_after_range);
+                }
+            }
+        }
+
         let first = words[0];
         let second = words[1];
 
@@ -1517,6 +1568,47 @@ fn extract_amount(s: &str) -> (Option<String>, String) {
     (None, s.to_string())
 }
 
+/// Parse a leading amount from whitespace-split words.
+/// Returns the normalized amount string and number of consumed words.
+fn parse_leading_amount_words(words: &[&str]) -> Option<(String, usize)> {
+    if words.is_empty() {
+        return None;
+    }
+
+    let first = words[0];
+
+    if words.len() >= 2 && first.chars().all(|c| c.is_ascii_digit()) && is_fraction(words[1]) {
+        return Some((format!("{} {}", first, words[1]), 2));
+    }
+
+    if let Some((whole, fraction)) = split_hyphenated_mixed_number(first) {
+        return Some((format!("{} {}", whole, fraction), 1));
+    }
+
+    if words.len() >= 3
+        && first.chars().all(|c| c.is_ascii_digit())
+        && (words[1].eq_ignore_ascii_case("and") || words[1] == "&")
+        && is_fraction(words[2])
+    {
+        return Some((format!("{} {}", first, words[2]), 3));
+    }
+
+    if is_amount_like(first) {
+        return Some((first.to_string(), 1));
+    }
+
+    None
+}
+
+fn split_hyphenated_mixed_number(s: &str) -> Option<(&str, &str)> {
+    let (whole, fraction) = s.split_once('-')?;
+    if whole.chars().all(|c| c.is_ascii_digit()) && is_fraction(fraction) {
+        Some((whole, fraction))
+    } else {
+        None
+    }
+}
+
 /// Check if a string looks like an amount (number, fraction, decimal)
 fn is_amount_like(s: &str) -> bool {
     if s.is_empty() {
@@ -1528,6 +1620,10 @@ fn is_amount_like(s: &str) -> bool {
     }
     // Fraction
     if is_fraction(s) {
+        return true;
+    }
+    // Hyphenated mixed number, e.g. "1-1/2"
+    if split_hyphenated_mixed_number(s).is_some() {
         return true;
     }
     // Decimal
@@ -1555,6 +1651,84 @@ fn is_fraction(s: &str) -> bool {
     } else {
         false
     }
+}
+
+fn units_share_base(a: &str, b: &str) -> bool {
+    a.eq_ignore_ascii_case(b)
+        || a
+            .strip_suffix(&format!(" {}", b))
+            .is_some_and(|prefix| !prefix.is_empty())
+        || b
+            .strip_suffix(&format!(" {}", a))
+            .is_some_and(|prefix| !prefix.is_empty())
+}
+
+fn parse_range_continuation_measurement(s: &str) -> Option<(String, Option<String>, String)> {
+    let (pre_amount_modifier, after_modifier) = strip_measurement_modifier(s);
+    let (mut amount, after_amount) = extract_amount(&after_modifier);
+    let (pre_unit_modifier, after_pre_unit) = strip_measurement_modifier(&after_amount);
+    let modifier = pre_unit_modifier.or(pre_amount_modifier);
+    let (mut base_unit, mut remaining) = extract_unit(&after_pre_unit);
+
+    if base_unit.is_none() {
+        if let Some((descriptor_amount, descriptor_unit, descriptor_remaining)) =
+            try_extract_hyphenated_descriptor_range(&after_pre_unit)
+        {
+            amount = Some(descriptor_amount);
+            base_unit = Some(descriptor_unit);
+            remaining = descriptor_remaining;
+        } else if let Some(amount_str) = amount.as_deref() {
+            if let Some(((replacement_amount, recovered_unit), after_recovered)) =
+                try_extract_hyphenated_unit_tail(amount_str, &after_pre_unit)
+            {
+                amount = Some(replacement_amount);
+                base_unit = Some(recovered_unit);
+                remaining = after_recovered;
+            }
+        }
+    }
+
+    let unit = match (modifier, base_unit) {
+        (Some(m), Some(u)) => Some(format!("{} {}", m, u)),
+        (Some(m), None) => Some(m),
+        (None, u) => u,
+    };
+
+    Some((amount?, unit, remaining))
+}
+
+fn try_extract_hyphenated_descriptor_range(s: &str) -> Option<(String, String, String)> {
+    let s = s.trim();
+    let words: Vec<&str> = s.split_whitespace().collect();
+    let first = *words.first()?;
+    let (amount, unit) = first.split_once('-')?;
+    if !amount.chars().all(|c| c.is_ascii_digit()) {
+        return None;
+    }
+
+    let normalized_unit = unit.to_lowercase();
+    let normalized_unit = normalized_unit.trim_end_matches('.');
+    if normalized_unit != "inch" && normalized_unit != "inches" {
+        return None;
+    }
+
+    let descriptor = *words.get(1)?;
+    let descriptor_lower = descriptor.to_lowercase();
+    let descriptor_lower = descriptor_lower.trim_end_matches('.');
+    if !HYPHENATED_DESCRIPTOR_NOUNS.contains(&descriptor_lower) {
+        return None;
+    }
+
+    let remaining = words[2..].join(" ");
+    let remaining = remaining.trim();
+    let remaining_lower = remaining.to_lowercase();
+    let remaining = if remaining_lower.starts_with("of ") || remaining_lower == "of" {
+        remaining.get(2..).unwrap_or("").trim_start().to_string()
+    } else {
+        remaining.to_string()
+    };
+
+    Some((amount.to_string(), format!("{} {}", unit, descriptor), remaining))
 }
 
 /// Extract a unit from the beginning of a string.

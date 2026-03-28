@@ -89,11 +89,11 @@
     {
       "raw": "2 to 2 3/4 cups white whole wheat flour (divided)",
       "expected": {
-        "item": "3/4 cups white whole wheat flour",
+        "item": "white whole wheat flour",
         "measurements": [
           {
-            "amount": "2 to 2",
-            "unit": null
+            "amount": "2 to 2.75",
+            "unit": "cup"
           }
         ],
         "note": "divided",

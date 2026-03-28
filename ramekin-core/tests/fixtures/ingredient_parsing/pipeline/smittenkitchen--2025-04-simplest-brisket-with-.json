@@ -108,11 +108,11 @@
     {
       "raw": "1 to 1 1/2 pounds (455 to 680 grams) thick carrots, peeled, trimmed, and cut into 1-inch chunks",
       "expected": {
-        "item": "1/2 pounds thick carrots, peeled, trimmed, and cut into 1-inch chunks",
+        "item": "thick carrots, peeled, trimmed, and cut into 1-inch chunks",
         "measurements": [
           {
-            "amount": "1 to 1",
-            "unit": null
+            "amount": "1 to 1.5",
+            "unit": "lb"
           },
           {
             "amount": "455 to 680",

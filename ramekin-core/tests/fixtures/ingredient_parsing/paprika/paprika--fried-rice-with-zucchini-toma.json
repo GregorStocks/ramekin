@@ -101,11 +101,11 @@
     {
       "raw": "2 1/2 to 3 cups cooked, ideally day old, short-grain white or brown rice",
       "expected": {
-        "item": "to 3 cups cooked, ideally day old, short-grain white or brown rice",
+        "item": "cooked, ideally day old, short-grain white or brown rice",
         "measurements": [
           {
-            "amount": "2.5",
-            "unit": null
+            "amount": "2.5 to 3",
+            "unit": "cup"
           }
         ],
         "note": null,

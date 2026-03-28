@@ -133,11 +133,15 @@
     {
       "raw": "1 to 1 1/4 pound green cabbage, cut into 1-to-2-inch chunks",
       "expected": {
-        "item": "1/4 pound green cabbage, cut into 1-to-2-inch chunks",
+        "item": "green cabbage, cut into 1-to-2-inch chunks",
         "measurements": [
           {
-            "amount": "1 to 1",
-            "unit": null
+            "amount": "1 to 1.25",
+            "unit": "lb"
+          },
+          {
+            "amount": "454 to 567",
+            "unit": "g"
           }
         ],
         "note": null,

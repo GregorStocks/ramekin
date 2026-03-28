@@ -245,11 +245,15 @@
     {
       "raw": "1 to 1 1/2 pounds green beans, trimmed and halved (see note about volume)",
       "expected": {
-        "item": "1/2 pounds green beans",
+        "item": "green beans",
         "measurements": [
           {
-            "amount": "1 to 1",
-            "unit": null
+            "amount": "1 to 1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "454 to 680",
+            "unit": "g"
           }
         ],
         "note": "trimmed and halved (see note about volume)",

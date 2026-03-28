@@ -153,11 +153,11 @@
     {
       "raw": "¾ to 1½ teaspoon Kashmiri red chili powder ((adjust to preference, I use 1 tsp))",
       "expected": {
-        "item": "1/2 teaspoon Kashmiri red chili powder (adjust to preference, I use 1 tsp)",
+        "item": "Kashmiri red chili powder (adjust to preference, I use 1 tsp)",
         "measurements": [
           {
-            "amount": "0.75 to 1",
-            "unit": null
+            "amount": "0.75 to 1.5",
+            "unit": "tsp"
           }
         ],
         "note": null,

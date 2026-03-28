@@ -23,11 +23,11 @@
     {
       "raw": "2 teaspoons to 1 1/2 tablespoons (10 to 20 grams) sugar (to taste, see note above)",
       "expected": {
-        "item": "to 1 1/2 tablespoons sugar",
+        "item": "sugar",
         "measurements": [
           {
-            "amount": "2",
-            "unit": "tsp"
+            "amount": "2 teaspoons to 1 1/2 tablespoons",
+            "unit": null
           },
           {
             "amount": "10 to 20",

@@ -19,11 +19,15 @@
     {
       "raw": "1 to 1 1/4 pounds Napa cabbage, halved and sliced very thinly",
       "expected": {
-        "item": "1/4 pounds Napa cabbage",
+        "item": "Napa cabbage",
         "measurements": [
           {
-            "amount": "1 to 1",
-            "unit": null
+            "amount": "1 to 1.25",
+            "unit": "lb"
+          },
+          {
+            "amount": "454 to 567",
+            "unit": "g"
           }
         ],
         "note": "halved and sliced very thinly",

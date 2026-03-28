@@ -64,15 +64,19 @@
     {
       "raw": "2 1/4 to 2 1/2 pound (1 to 1 1/8 kgs) head of cauliflower, cut into small florets",
       "expected": {
-        "item": "to 2 1/2 pound head of cauliflower, cut into small florets",
+        "item": "head of cauliflower, cut into small florets",
         "measurements": [
           {
-            "amount": "2.25",
+            "amount": "2.25 to 2.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "1 to 1.13",
             "unit": null
           },
           {
-            "amount": "1 to 1",
-            "unit": null
+            "amount": "1021 to 1134",
+            "unit": "g"
           }
         ],
         "note": null,

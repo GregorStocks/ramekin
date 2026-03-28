@@ -84,15 +84,19 @@
     {
       "raw": "1 to 1 1/4 pounds red cabbage (1 small head or half of a large one), sliced very thin",
       "expected": {
-        "item": "1/4 pounds red cabbage",
+        "item": "red cabbage",
         "measurements": [
           {
-            "amount": "1 to 1",
-            "unit": null
+            "amount": "1 to 1.25",
+            "unit": "lb"
           },
           {
             "amount": "1",
             "unit": "small"
+          },
+          {
+            "amount": "454 to 567",
+            "unit": "g"
           }
         ],
         "note": "sliced very thin",

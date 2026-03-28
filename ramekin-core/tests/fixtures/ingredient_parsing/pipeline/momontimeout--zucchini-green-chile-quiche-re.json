@@ -145,11 +145,11 @@
     {
       "raw": "2 1/2 to 3 cups cheese (two or more kinds)",
       "expected": {
-        "item": "to 3 cups cheese",
+        "item": "cheese",
         "measurements": [
           {
-            "amount": "2.5",
-            "unit": null
+            "amount": "2.5 to 3",
+            "unit": "cup"
           }
         ],
         "note": "two or more kinds",

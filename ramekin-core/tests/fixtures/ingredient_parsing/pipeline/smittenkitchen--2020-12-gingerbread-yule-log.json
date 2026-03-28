@@ -311,11 +311,11 @@
     {
       "raw": "1 1/2 to 3 tablespoons powdered sugar, plus more to decorate",
       "expected": {
-        "item": "to 3 tablespoons powdered sugar",
+        "item": "powdered sugar",
         "measurements": [
           {
-            "amount": "1.5",
-            "unit": null
+            "amount": "1.5 to 3",
+            "unit": "tbsp"
           }
         ],
         "note": "plus more to decorate",

@@ -174,11 +174,11 @@
     {
       "raw": "1 to 1 1/2 teaspoons ground cinnamon, to taste",
       "expected": {
-        "item": "1/2 teaspoons ground cinnamon",
+        "item": "ground cinnamon",
         "measurements": [
           {
-            "amount": "1 to 1",
-            "unit": null
+            "amount": "1 to 1.5",
+            "unit": "tsp"
           }
         ],
         "note": "to taste",

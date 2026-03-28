@@ -168,11 +168,11 @@
     {
       "raw": "1/2 to 1 1/2 tablespoons tapioca flour/starch (see Note, below)",
       "expected": {
-        "item": "1/2 tablespoons tapioca flour/starch (see Note, below)",
+        "item": "tapioca flour/starch (see Note, below)",
         "measurements": [
           {
-            "amount": "0.5 to 1",
-            "unit": null
+            "amount": "0.5 to 1.5",
+            "unit": "tbsp"
           }
         ],
         "note": null,

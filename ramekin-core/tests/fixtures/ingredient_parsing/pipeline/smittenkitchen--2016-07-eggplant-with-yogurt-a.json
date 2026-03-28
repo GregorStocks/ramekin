@@ -23,11 +23,15 @@
     {
       "raw": "1 1/4 to 1 1/2 pounds eggplant; I prefer the long, thin variety here but any will do",
       "expected": {
-        "item": "to 1 1/2 pounds eggplant; I prefer the long, thin variety here but any will do",
+        "item": "eggplant; I prefer the long, thin variety here but any will do",
         "measurements": [
           {
-            "amount": "1.25",
-            "unit": null
+            "amount": "1.25 to 1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "567 to 680",
+            "unit": "g"
           }
         ],
         "note": null,

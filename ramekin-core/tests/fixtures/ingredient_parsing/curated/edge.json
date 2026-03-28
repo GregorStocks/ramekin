@@ -455,6 +455,126 @@
       }
     },
     {
+      "name": "mixed_number_range_with_to",
+      "raw": "1 1/2 to 2 cups milk",
+      "expected": {
+        "item": "milk",
+        "measurements": [
+          {
+            "amount": "1.5 to 2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "name": "range_with_mixed_number_upper_bound",
+      "raw": "1 to 1 1/2 cups water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "1 to 1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "name": "repeated_unit_range_with_to",
+      "raw": "1/2 cup to 1 cup white rum",
+      "expected": {
+        "item": "white rum",
+        "measurements": [
+          {
+            "amount": "0.5 to 1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "name": "hyphenated_mixed_number_range_with_to",
+      "raw": "2-1/2 to 3 cups bread flour",
+      "expected": {
+        "item": "bread flour",
+        "measurements": [
+          {
+            "amount": "2.5 to 3",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "name": "cross_unit_range_with_to",
+      "raw": "1 teaspoon to 1 tablespoon granulated sugar",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "1 teaspoon to 1 tablespoon",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "name": "modifier_prefixed_range_with_to",
+      "raw": "Heaped 1/2 cup to 3/4 cup granulated sugar (see Note)",
+      "expected": {
+        "item": "granulated sugar (see Note)",
+        "measurements": [
+          {
+            "amount": "0.5 to 0.75",
+            "unit": "heaped cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "name": "range_with_hyphenated_descriptor_upper_bound",
+      "raw": "1 to 2-inch segment of vanilla bean (optional)",
+      "expected": {
+        "item": "vanilla bean",
+        "measurements": [
+          {
+            "amount": "1 to",
+            "unit": "inch segment"
+          }
+        ],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "name": "repeated_unit_range_with_to_and_note",
+      "raw": "1/2 tsp to 1 tsp smoked paprika (adjust to your liking)",
+      "expected": {
+        "item": "smoked paprika (adjust to your liking)",
+        "measurements": [
+          {
+            "amount": "0.5 to 1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
       "name": "scant",
       "raw": "scant 1 teaspoon fine grain sea salt",
       "expected": {
