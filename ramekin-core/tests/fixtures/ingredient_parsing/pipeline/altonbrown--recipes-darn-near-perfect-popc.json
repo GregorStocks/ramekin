@@ -43,6 +43,15 @@
         "note": "or finely ground kosher salt",
         "category": "Snacks"
       }
+    },
+    {
+      "raw": "Toppings of your choice (optional; see note above)",
+      "expected": {
+        "item": "Toppings of your choice",
+        "measurements": [],
+        "note": "optional; see note above",
+        "category": "Other"
+      }
     }
   ]
 }
