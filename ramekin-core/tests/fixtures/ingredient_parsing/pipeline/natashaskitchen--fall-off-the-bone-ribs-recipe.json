@@ -120,7 +120,7 @@
     {
       "raw": "3/4  of a 16 oz bottle of your favorite BBQ sauce",
       "expected": {
-        "item": "of a 16 oz bottle of your favorite BBQ sauce",
+        "item": "16 oz bottle of your favorite BBQ sauce",
         "measurements": [
           {
             "amount": "0.75",
