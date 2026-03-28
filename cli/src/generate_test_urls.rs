@@ -808,8 +808,8 @@ fn is_roundup_url(url: &str) -> bool {
             Regex::new(r"/\d+-recipes-").unwrap(),
             // "12-summer-recipes-i-forgot", "20-best-shrimp-recipes-for-weeknight-dinners"
             Regex::new(r"/\d+(-[a-z]+)+-recipes-[a-z]").unwrap(),
-            // "christmas-recipes-for-your-holiday-table", "soup-recipes-to-warm-you-up"
-            Regex::new(r"/[a-z]+-recipes-[a-z]").unwrap(),
+            // "christmas-recipes-for-your-holiday-table", "rosh-hashanah-recipes-to-celebrate"
+            Regex::new(r"/[a-z]+(-[a-z]+)*-recipes-[a-z]").unwrap(),
             // "recipes-for-january", "recipes-for-the-week"
             Regex::new(r"/recipes-for-[a-z]").unwrap(),
             // Spelled-out number roundups with collection words:
@@ -869,6 +869,8 @@ fn is_non_recipe_post(url: &str) -> bool {
             // Year-in-review and best-of posts
             Regex::new(r"year-in-review").unwrap(),
             Regex::new(r"best-of-\d{4}").unwrap(),
+            // Sale/merchandise pages
+            Regex::new(r"[-/]sale([./]|$)").unwrap(),
             // Equipment/decor/non-food posts
             Regex::new(r"[-/]kitchen-essentials").unwrap(),
             Regex::new(r"[-/]holiday-tablescape").unwrap(),
@@ -1066,6 +1068,8 @@ fn is_recipe_url(url: &str, min_year: u32) -> bool {
     if let Some((_, after_recipes)) = lower.split_once("/recipes/") {
         // Strip trailing slash if present
         let slug = after_recipes.trim_end_matches('/');
+        // Strip .html for category check (file extension isn't part of the recipe name)
+        let slug_base = slug.strip_suffix(".html").unwrap_or(slug);
         // Must have content after /recipes/ and not be a category path or nested
         // Require either: hyphen + long enough (>12 chars) OR very long (>25 chars)
         // This filters category pages like /recipes/dinner, /recipes/hearty-meals
@@ -1074,7 +1078,7 @@ fn is_recipe_url(url: &str, min_year: u32) -> bool {
             && !slug.starts_with("category")
             && !slug.contains('/')
             && ((slug.contains('-') && slug.len() > 12) || slug.len() > 25)
-            && !is_category_slug(slug)
+            && !is_category_slug(slug_base)
         {
             return true;
         }
@@ -1876,6 +1880,52 @@ Sitemap: https://example.com/recipe-sitemap.xml
         assert!(!is_recipe_url(
             "https://www.101cookbooks.com/13-inspiring-instagrammers-to-follow-for-healthy-feelgood-food-recipe/",
             2016
+        ));
+
+        // Sale/merchandise pages
+        assert!(!is_recipe_url(
+            "https://www.loveandoliveoil.com/2025/11/snack-friday-sale.html",
+            2016
+        ));
+        assert!(!is_recipe_url(
+            "https://example.com/2025/01/holiday-sale/",
+            2016
+        ));
+    }
+
+    #[test]
+    fn test_html_suffix_category_slug() {
+        // .html suffix should not prevent category slug detection under /recipes/
+        assert!(!is_recipe_url(
+            "https://www.onceuponachef.com/recipes/luscious-lemon-desserts.html",
+            2016,
+        ));
+        // But real recipe slugs with .html should still pass
+        assert!(is_recipe_url(
+            "https://www.onceuponachef.com/recipes/apple-cranberry-oat-crumble.html",
+            2016,
+        ));
+        assert!(is_recipe_url(
+            "https://www.onceuponachef.com/recipes/baileys-irish-cream-cheesecake-marbled-brownies.html",
+            2016,
+        ));
+    }
+
+    #[test]
+    fn test_multi_word_roundup_prefix() {
+        // Multi-word prefix before -recipes- should be caught as roundup
+        assert!(!is_recipe_url(
+            "https://www.foodandwine.com/recipes/rosh-hashanah-recipes-to-celebrate-the-new-year",
+            2016,
+        ));
+        assert!(!is_recipe_url(
+            "https://example.com/2025/01/gluten-free-dinner-recipes-for-weeknights/",
+            2016,
+        ));
+        // Single-word prefix still works
+        assert!(!is_recipe_url(
+            "https://example.com/2025/01/christmas-recipes-for-your-holiday-table/",
+            2016,
         ));
     }
 }

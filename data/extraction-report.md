@@ -2,17 +2,17 @@
 
 ## Overall
 
-- Total URLs: 5280
-- Completed: 5212 (98.7%)
+- Total URLs: 5277
+- Completed: 5212 (98.8%)
 - Failed at fetch: 1 (0.0%)
-- Failed at extract: 67 (1.3%)
+- Failed at extract: 64 (1.2%)
 
 ## Extraction Methods
 
-- JSON-LD: 4059/5279 (76.9%)
-- Microdata: 522/5279 (9.9%)
-- Both: 0/5279 (0.0%)
-- Neither: 698/5279 (13.2%)
+- JSON-LD: 4059/5276 (76.9%)
+- Microdata: 522/5276 (9.9%)
+- Both: 0/5276 (0.0%)
+- Neither: 695/5276 (13.2%)
 
 ## Ingredient Parsing
 
@@ -61,7 +61,7 @@
 | eatingwell.com | 100 | 100 | 100.0% |
 | epicurious.com | 1 | 1 | 100.0% |
 | food.com | 24 | 27 | 88.9% |
-| foodandwine.com | 99 | 100 | 99.0% |
+| foodandwine.com | 99 | 99 | 100.0% |
 | gimmesomeoven.com | 6 | 6 | 100.0% |
 | gonnawantseconds.com | 58 | 59 | 98.3% |
 | hostthetoast.com | 9 | 9 | 100.0% |
@@ -79,7 +79,7 @@
 | lifemadesweeter.com | 6 | 6 | 100.0% |
 | littlesweetbaker.com | 23 | 23 | 100.0% |
 | loveandlemons.com | 35 | 35 | 100.0% |
-| loveandoliveoil.com | 95 | 97 | 97.9% |
+| loveandoliveoil.com | 95 | 96 | 99.0% |
 | marthastewart.com | 6 | 7 | 85.7% |
 | momontimeout.com | 97 | 100 | 97.0% |
 | mybakingaddiction.com | 94 | 97 | 96.9% |
@@ -87,7 +87,7 @@
 | nomnompaleo.com | 3 | 6 | 50.0% |
 | norecipes.com | 100 | 100 | 100.0% |
 | ohmyveggies.com | 3 | 6 | 50.0% |
-| onceuponachef.com | 92 | 93 | 98.9% |
+| onceuponachef.com | 92 | 92 | 100.0% |
 | onmykidsplate.com | 18 | 18 | 100.0% |
 | peasandcrayons.com | 51 | 52 | 98.1% |
 | recipetineats.com | 9 | 9 | 100.0% |
@@ -123,7 +123,7 @@
 
 - https://nomnompaleo.com/2017/08/15/6053
 
-### Missing required field: recipeIngredient (empty) (66 URLs)
+### Missing required field: recipeIngredient (empty) (63 URLs)
 
 - http://bakingbites.com/2017/02/how-to-use-freeze-dried-fruit-in-baking/
 - https://barefeetinthekitchen.com/diy-fruit-and-vegetable-wash-homemade-produce-wash-recipe/
@@ -158,18 +158,15 @@
 - https://www.averiecooks.com/raw-vegan-donut-holes-5-minute-recipe/
 - https://www.averiecooks.com/trainer-session-progress-recipe/
 - https://www.bbcgoodfood.com/us/prime-rib-recipe
-- https://www.foodandwine.com/recipes/rosh-hashanah-recipes-to-celebrate-the-new-year
 - https://www.gonnawantseconds.com/ginger-cookies-recipe/
 - https://www.justonecookbook.com/dango-recipe/
 - https://www.loveandoliveoil.com/2025/09/new-fresh-baked-puns-designs.html
-- https://www.loveandoliveoil.com/2025/11/snack-friday-sale.html
 - https://www.marthastewart.com/8384694/compost-tea-recipe
 - https://www.momontimeout.com/black-widow-spider-bites-recipe/
 - https://www.momontimeout.com/watermelon-mojitos-recipe/
 - https://www.mybakingaddiction.com/apple-cinnamon-cheesecake-recipe/
 - https://www.mybakingaddiction.com/smores-recipe/
 - https://www.mybakingaddiction.com/tollhouse-cookies-recipe/
-- https://www.onceuponachef.com/recipes/luscious-lemon-desserts.html
 - https://www.seriouseats.com/new-orleans-bbq-shrimp-recipe-11891402
 - https://www.simplyrecipes.com/recipes/the_finger_test_to_check_the_doneness_of_meat/
 - https://www.sprinklebakes.com/2018/04/celebrate-like-royal-with-lemon.html
