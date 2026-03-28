@@ -3,9 +3,76 @@ Smoke tests that verify the UI loads and basic navigation works.
 These tests require the full stack (server + UI) to be running.
 """
 
+import os
 import re
+import sys
+import time
+import uuid
 
 from playwright.sync_api import Page, expect
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "generated"))
+
+from ramekin_client import ApiClient, Configuration
+from ramekin_client.api import AuthApi, RecipesApi, ScrapeApi
+from ramekin_client.models import (
+    CreateRecipeRequest,
+    CreateScrapeRequest,
+    Ingredient,
+    Measurement,
+    SignupRequest,
+)
+
+
+def wait_for_job_completion(scrape_api: ScrapeApi, job_id: str, timeout: float = 10.0):
+    """Poll until a scrape job reaches a terminal state."""
+    start = time.time()
+    while time.time() - start < timeout:
+        job = scrape_api.get_scrape(job_id)
+        if job.status in ("completed", "failed"):
+            return job
+        time.sleep(0.1)
+    raise TimeoutError(f"Job {job_id} did not complete within {timeout}s")
+
+
+def create_scraped_recipe_with_enrichment(api_url: str) -> tuple[str, str, str]:
+    """Create a user and scrape a recipe so version history includes enrichment."""
+    username = f"ui_smoke_{uuid.uuid4().hex[:8]}"
+    password = "testpass123"
+    fixture_base_url = os.environ["FIXTURE_BASE_URL"]
+    config = Configuration(host=api_url)
+
+    with ApiClient(config) as client:
+        auth_api = AuthApi(client)
+        signup = auth_api.signup(SignupRequest(username=username, password=password))
+
+    authed_config = Configuration(host=api_url)
+    authed_config.access_token = signup.token
+
+    with ApiClient(authed_config) as client:
+        scrape_api = ScrapeApi(client)
+        recipes_api = RecipesApi(client)
+        recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title="Tag seed",
+                instructions="Seed user tags for scrape auto-tagging.",
+                ingredients=[
+                    Ingredient(
+                        item="salt",
+                        measurements=[Measurement(amount="1", unit="tsp")],
+                    )
+                ],
+                tags=["test-auto-tag"],
+            )
+        )
+        response = scrape_api.create_scrape(
+            CreateScrapeRequest(url=f"{fixture_base_url}/seriouseats/rice_pilaf.html")
+        )
+        job = wait_for_job_completion(scrape_api, response.id)
+        assert job.status == "completed"
+        recipe = recipes_api.get_recipe(job.recipe_id)
+        assert recipe.version_source == "enrichment"
+        return username, password, recipe.id
 
 
 def test_login_page_loads(page: Page, ui_url: str):
@@ -89,4 +156,25 @@ def test_cookbook_search_filters_as_you_type(logged_in_page: Page):
         logged_in_page.locator(".recipe-card h3").filter(
             has_text="Apple Cider Caramels"
         )
+    ).to_have_count(0)
+
+
+def test_version_history_labels_enrichment_badges(
+    page: Page, ui_url: str, api_url: str
+):
+    """Verify AI-enriched versions show the user-facing badge label."""
+    username, password, recipe_id = create_scraped_recipe_with_enrichment(api_url)
+
+    page.goto(ui_url)
+    page.fill("input[type='text']", username)
+    page.fill("input[type='password']", password)
+    page.click("button[type='submit']")
+    page.wait_for_selector(".recipe-card")
+
+    page.goto(f"{ui_url}/recipes/{recipe_id}")
+    page.get_by_text("Version History").click()
+
+    expect(page.locator(".version-source-badge").first).to_have_text("AI Enriched")
+    expect(
+        page.locator(".version-source-badge").filter(has_text="enrichment")
     ).to_have_count(0)
