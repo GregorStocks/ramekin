@@ -78,7 +78,7 @@
     {
       "raw": "4 cups 1-inch pieces peeled butternut squash (about 1 1/2 pounds)*",
       "expected": {
-        "item": "1-inch pieces peeled butternut squash *",
+        "item": "1-inch pieces peeled butternut squash",
         "measurements": [
           {
             "amount": "4",
@@ -100,7 +100,7 @@
     {
       "raw": "4 cups 1-inch pieces peeled acorn squash (about 1 1/2 pounds)*",
       "expected": {
-        "item": "1-inch pieces peeled acorn squash *",
+        "item": "1-inch pieces peeled acorn squash",
         "measurements": [
           {
             "amount": "4",

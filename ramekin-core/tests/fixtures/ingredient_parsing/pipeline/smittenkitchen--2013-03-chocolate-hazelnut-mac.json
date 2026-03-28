@@ -55,7 +55,7 @@
     {
       "raw": "2 1/2 cups hazelnuts (about 12 ounces or 340 grams), toasted, then skinned as much as possible*",
       "expected": {
-        "item": "hazelnuts, toasted, then skinned as much as possible*",
+        "item": "hazelnuts, toasted, then skinned as much as possible",
         "measurements": [
           {
             "amount": "2.5",
@@ -95,7 +95,7 @@
     {
       "raw": "1 teaspoon (5 ml) vanilla extract**",
       "expected": {
-        "item": "vanilla extract**",
+        "item": "vanilla extract",
         "measurements": [
           {
             "amount": "1",
@@ -104,6 +104,10 @@
           {
             "amount": "5",
             "unit": "ml"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -220,7 +224,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or another hazelnut liqueur or 1 teaspoon vanilla extract**",
+        "note": "or another hazelnut liqueur or 1 teaspoon vanilla extract",
         "category": "Other"
       }
     }

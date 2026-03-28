@@ -5,7 +5,7 @@
     {
       "raw": "1 unbaked Flaky Pie Crust (what I used) or All Butter Pie Crust*",
       "expected": {
-        "item": "unbaked Flaky Pie Crust (what I used) or All Butter Pie Crust*",
+        "item": "unbaked Flaky Pie Crust (what I used) or All Butter Pie Crust",
         "measurements": [
           {
             "amount": "1",
@@ -33,7 +33,7 @@
     {
       "raw": "1/2 cup (120ml) whole milk*",
       "expected": {
-        "item": "whole milk*",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "0.5",
@@ -42,6 +42,10 @@
           {
             "amount": "120",
             "unit": "ml"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -51,7 +55,7 @@
     {
       "raw": "1/2 cup (120ml) heavy cream or heavy whipping cream*",
       "expected": {
-        "item": "heavy cream or heavy whipping cream*",
+        "item": "heavy cream or heavy whipping cream",
         "measurements": [
           {
             "amount": "0.5",
@@ -87,7 +91,7 @@
     {
       "raw": "1/4 teaspoon each salt and pepper*",
       "expected": {
-        "item": "pepper*",
+        "item": "pepper",
         "measurements": [
           {
             "amount": "0.25",

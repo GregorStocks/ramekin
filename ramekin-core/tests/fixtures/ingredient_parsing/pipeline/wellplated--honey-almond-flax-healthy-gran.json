@@ -111,11 +111,15 @@
     {
       "raw": "1/2 cup honey* (I prefer to use raw honey)",
       "expected": {
-        "item": "honey*",
+        "item": "honey",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
         "note": "I prefer to use raw honey",

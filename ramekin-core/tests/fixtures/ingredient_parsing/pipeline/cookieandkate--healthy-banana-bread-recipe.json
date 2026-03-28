@@ -5,7 +5,7 @@
     {
       "raw": "&amp;#8531; cup (75 grams) melted coconut oil or extra-virgin olive oil or high quality vegetable oil*",
       "expected": {
-        "item": "melted coconut oil or extra-virgin olive oil or high quality vegetable oil*",
+        "item": "melted coconut oil or extra-virgin olive oil or high quality vegetable oil",
         "measurements": [
           {
             "amount": "0.33",
@@ -171,7 +171,7 @@
     {
       "raw": "1 &amp;frac34; cups (220 grams) white whole wheat flour or regular whole wheat flour**",
       "expected": {
-        "item": "white whole wheat flour or regular whole wheat flour**",
+        "item": "white whole wheat flour or regular whole wheat flour",
         "measurements": [
           {
             "amount": "1.75",

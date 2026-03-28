@@ -77,11 +77,15 @@
     {
       "raw": "1 1/4 tsp ground cinnamon*",
       "expected": {
-        "item": "ground cinnamon*",
+        "item": "ground cinnamon",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "3.2",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -128,11 +132,15 @@
     {
       "raw": "1/4 tsp each ginger, nutmeg and cloves*",
       "expected": {
-        "item": "cloves*",
+        "item": "cloves",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.5",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -150,7 +158,7 @@
             "unit": "large"
           }
         ],
-        "note": "at room temperature**",
+        "note": "at room temperature",
         "category": "Dairy & Eggs"
       }
     },

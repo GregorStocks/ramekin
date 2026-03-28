@@ -23,11 +23,15 @@
     {
       "raw": "1 cup almond flour*",
       "expected": {
-        "item": "almond flour*",
+        "item": "almond flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "96",
+            "unit": "g"
           }
         ],
         "note": null,

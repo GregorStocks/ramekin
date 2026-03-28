@@ -5,7 +5,7 @@
     {
       "raw": "2 cups (340g; 12 ounces) whole unsalted almonds*",
       "expected": {
-        "item": "whole unsalted almonds*",
+        "item": "whole unsalted almonds",
         "measurements": [
           {
             "amount": "2",
@@ -144,7 +144,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely chopped*",
+        "note": "finely chopped",
         "category": "Other"
       }
     },

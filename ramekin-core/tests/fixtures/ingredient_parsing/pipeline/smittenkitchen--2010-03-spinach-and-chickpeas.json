@@ -163,11 +163,15 @@
     {
       "raw": "1/2 teaspoon smoked paprika**",
       "expected": {
-        "item": "smoked paprika**",
+        "item": "smoked paprika",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
           }
         ],
         "note": null,

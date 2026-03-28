@@ -347,11 +347,15 @@
     {
       "raw": "1 cup heavy cream*",
       "expected": {
-        "item": "heavy cream*",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -397,7 +401,7 @@
     {
       "raw": "1/8 teaspoon guar gum* (optional)",
       "expected": {
-        "item": "guar gum*",
+        "item": "guar gum",
         "measurements": [
           {
             "amount": "0.13",

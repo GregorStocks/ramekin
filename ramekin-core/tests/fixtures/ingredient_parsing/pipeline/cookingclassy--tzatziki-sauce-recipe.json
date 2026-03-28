@@ -19,7 +19,7 @@
     {
       "raw": "10 oz.  English cucumber**, (peeled if desired, seeded)",
       "expected": {
-        "item": "English cucumber**",
+        "item": "English cucumber",
         "measurements": [
           {
             "amount": "10",
@@ -37,7 +37,7 @@
     {
       "raw": "1 1/2 Tbsp chopped fresh dill***",
       "expected": {
-        "item": "chopped fresh dill***",
+        "item": "chopped fresh dill",
         "measurements": [
           {
             "amount": "1.5",

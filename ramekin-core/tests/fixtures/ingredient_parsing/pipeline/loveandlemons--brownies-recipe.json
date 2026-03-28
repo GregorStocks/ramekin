@@ -5,11 +5,15 @@
     {
       "raw": "1 1/2 cups granulated sugar*",
       "expected": {
-        "item": "granulated sugar*",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "300",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -115,7 +119,7 @@
     {
       "raw": "1/2 cup canola oil or extra-virgin olive oil**",
       "expected": {
-        "item": "canola oil or extra-virgin olive oil**",
+        "item": "canola oil or extra-virgin olive oil",
         "measurements": [
           {
             "amount": "0.5",

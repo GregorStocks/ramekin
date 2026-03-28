@@ -160,6 +160,9 @@ pub struct RawRecipe {
     /// Categories/tags from import source
     #[serde(skip_serializing_if = "Option::is_none")]
     pub categories: Option<Vec<String>>,
+    /// Footnote text extracted from HTML, keyed by marker (e.g., "*", "**")
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub footnotes: Option<Vec<(String, String)>>,
 }
 
 /// Output from a pipeline step, stored in step_data

@@ -115,11 +115,15 @@
     {
       "raw": "3/4 teaspoons ground cinnamon*",
       "expected": {
-        "item": "ground cinnamon*",
+        "item": "ground cinnamon",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.9",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -129,11 +133,15 @@
     {
       "raw": "1/2 teaspoon ground ginger*",
       "expected": {
-        "item": "ground ginger*",
+        "item": "ground ginger",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.9",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -143,11 +151,15 @@
     {
       "raw": "1/8 teaspoon ground nutmeg*",
       "expected": {
-        "item": "ground nutmeg*",
+        "item": "ground nutmeg",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.3",
+            "unit": "g"
           }
         ],
         "note": null,

@@ -165,11 +165,15 @@
     {
       "raw": "2 cups vegetable broth*",
       "expected": {
-        "item": "vegetable broth*",
+        "item": "vegetable broth",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "498",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -179,7 +183,7 @@
     {
       "raw": "1  14 oz pkg Pepperidge Farm Cubed Herb Seasoned Stuffing**",
       "expected": {
-        "item": "Pepperidge Farm Cubed Herb Seasoned Stuffing**",
+        "item": "Pepperidge Farm Cubed Herb Seasoned Stuffing",
         "measurements": [
           {
             "amount": "1",
