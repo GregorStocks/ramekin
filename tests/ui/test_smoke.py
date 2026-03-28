@@ -3,6 +3,8 @@ Smoke tests that verify the UI loads and basic navigation works.
 These tests require the full stack (server + UI) to be running.
 """
 
+import re
+
 from playwright.sync_api import Page, expect
 
 
@@ -72,3 +74,19 @@ def test_mobile_nav_collapses_into_menu(logged_in_page: Page):
     expect(nav.get_by_role("link", name="Tags")).to_be_visible()
     expect(nav.get_by_role("link", name="+ New Recipe")).to_be_visible()
     expect(nav.get_by_role("button", name="Logout")).to_be_visible()
+
+
+def test_cookbook_search_filters_as_you_type(logged_in_page: Page):
+    """Verify cookbook search updates results without pressing Enter."""
+    search_input = logged_in_page.get_by_placeholder("Search recipes...")
+    search_input.fill("wonton")
+
+    expect(logged_in_page).to_have_url(re.compile(r"[?&]q="))
+    expect(
+        logged_in_page.locator(".recipe-card h3").filter(has_text="Chicken Wonton Soup")
+    ).to_have_count(1)
+    expect(
+        logged_in_page.locator(".recipe-card h3").filter(
+            has_text="Apple Cider Caramels"
+        )
+    ).to_have_count(0)

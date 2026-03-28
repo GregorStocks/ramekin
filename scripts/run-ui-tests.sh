@@ -12,6 +12,10 @@ set -a
 source "$ENV_FILE"
 set +a
 
+if [ -z "${UI_PORT_HTTP:-}" ]; then
+  export UI_PORT_HTTP=$((UI_PORT + 1))
+fi
+
 # Ensure logs directory exists for process-compose output
 mkdir -p logs
 
