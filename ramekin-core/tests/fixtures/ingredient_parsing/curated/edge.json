@@ -997,6 +997,21 @@
         "note": null,
         "category": "Produce"
       }
+    },
+    {
+      "name": "placeholder_tk_metric",
+      "raw": "1/2 cup (TK g) panko bread crumbs",
+      "expected": {
+        "item": "panko bread crumbs",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
     }
   ]
 }
