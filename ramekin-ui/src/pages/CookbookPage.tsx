@@ -201,7 +201,7 @@ export default function CookbookPage() {
   const [total, setTotal] = createSignal(0);
   const [hasMore, setHasMore] = createSignal(true);
 
-  // Search input state (local, updates URL on submit/blur)
+  // Search input state mirrors the URL query so typing immediately updates results.
   const getQueryParam = (param: string | string[] | undefined): string => {
     if (Array.isArray(param)) return param[0] || "";
     return param || "";
@@ -292,13 +292,18 @@ export default function CookbookPage() {
     }
   };
 
-  // Handle search submission
-  const handleSearch = (e?: Event) => {
-    e?.preventDefault();
-    const q = searchInput().trim();
+  const updateSearchQuery = (value: string) => {
+    setSearchInput(value);
+    const q = value.trim();
     if (q !== searchQuery()) {
       setSearchParams({ q: q || undefined });
     }
+  };
+
+  // Handle explicit search submission without changing behavior from live updates.
+  const handleSearch = (e?: Event) => {
+    e?.preventDefault();
+    updateSearchQuery(searchInput());
   };
 
   // Reload when search query or sort changes in URL
@@ -445,8 +450,7 @@ export default function CookbookPage() {
             class="search-input"
             placeholder="Search recipes..."
             value={searchInput()}
-            onInput={(e) => setSearchInput(e.currentTarget.value)}
-            onBlur={() => handleSearch()}
+            onInput={(e) => updateSearchQuery(e.currentTarget.value)}
           />
           <Show when={searchInput()}>
             <button type="button" class="search-clear" onClick={clearSearch}>

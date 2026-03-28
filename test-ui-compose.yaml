@@ -26,10 +26,11 @@ processes:
     working_dir: ./ramekin-ui
     environment:
       - PORT=${PORT}
+      - UI_PORT_HTTP=${UI_PORT_HTTP}
     readiness_probe:
       http_get:
         host: localhost
-        port: ${UI_PORT}
+        port: ${UI_PORT_HTTP}
         path: /
     depends_on:
       server:
@@ -61,7 +62,7 @@ processes:
       exit $EXIT_CODE
     environment:
       - API_BASE_URL=http://localhost:${PORT}
-      - UI_BASE_URL=http://localhost:${UI_PORT}
+      - UI_BASE_URL=http://localhost:${UI_PORT_HTTP}
     availability:
       restart: "no"
       exit_on_end: true
