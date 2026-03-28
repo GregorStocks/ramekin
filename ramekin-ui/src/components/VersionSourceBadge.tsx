@@ -10,6 +10,7 @@ export default function VersionSourceBadge(props: VersionSourceBadgeProps) {
       case "scrape":
         return "Imported";
       case "enrich":
+      case "enrichment":
         return "AI Enriched";
       default:
         return props.source;
@@ -23,6 +24,7 @@ export default function VersionSourceBadge(props: VersionSourceBadgeProps) {
       case "scrape":
         return "version-source-badge version-source-scrape";
       case "enrich":
+      case "enrichment":
         return "version-source-badge version-source-enrich";
       default:
         return "version-source-badge";

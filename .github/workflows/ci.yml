@@ -105,16 +105,17 @@ jobs:
       - name: Create test-ui.env (for UI tests, with dynamically allocated ports)
         run: |
           # Find free ports for UI tests
-          eval $(./scripts/find-free-ports.sh PORT UI_PORT MOCK_OPENROUTER_PORT PROCESS_COMPOSE_PORT)
+          eval $(./scripts/find-free-ports.sh PORT FIXTURE_PORT UI_PORT MOCK_OPENROUTER_PORT PROCESS_COMPOSE_PORT)
           echo "DATABASE_URL=postgres://ramekin:ramekin@localhost:5432/ramekin" > test-ui.env
           echo "PORT=${PORT}" >> test-ui.env
+          echo "FIXTURE_PORT=${FIXTURE_PORT}" >> test-ui.env
           echo "UI_PORT=${UI_PORT}" >> test-ui.env
           echo "UI_HOSTNAME=localhost" >> test-ui.env
           echo "MOCK_OPENROUTER_PORT=${MOCK_OPENROUTER_PORT}" >> test-ui.env
           echo "PROCESS_COMPOSE_PORT=${PROCESS_COMPOSE_PORT}" >> test-ui.env
           echo "RUST_LOG=error" >> test-ui.env
           echo "INSECURE_PASSWORD_HASHING=1" >> test-ui.env
-          echo "::notice::UI ports: ${PORT} ${UI_PORT} ${MOCK_OPENROUTER_PORT} ${PROCESS_COMPOSE_PORT}"
+          echo "::notice::UI ports: ${PORT} ${FIXTURE_PORT} ${UI_PORT} ${MOCK_OPENROUTER_PORT} ${PROCESS_COMPOSE_PORT}"
 
       - name: Run tests
         run: |

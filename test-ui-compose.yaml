@@ -4,6 +4,15 @@ extends: compose/base.yaml
 log_location: ./logs/test-ui.log
 
 processes:
+  fixture-server:
+    command: python3 ../fixture_server.py ${FIXTURE_PORT}
+    working_dir: ./tests/scrape_fixtures
+    readiness_probe:
+      http_get:
+        host: localhost
+        port: ${FIXTURE_PORT}
+        path: /
+
   mock-openrouter:
     command: python3 tests/mock_openrouter.py ${MOCK_OPENROUTER_PORT}
     readiness_probe:
@@ -17,7 +26,10 @@ processes:
     environment:
       - OPENROUTER_API_KEY=test-api-key
       - RAMEKIN_AI_BASE_URL=http://localhost:${MOCK_OPENROUTER_PORT}/v1
+      - SCRAPE_ALLOWED_HOSTS=localhost:${FIXTURE_PORT}
     depends_on:
+      fixture-server:
+        condition: process_healthy
       mock-openrouter:
         condition: process_healthy
 
@@ -62,6 +74,8 @@ processes:
       exit $EXIT_CODE
     environment:
       - API_BASE_URL=http://localhost:${PORT}
+      - FIXTURE_BASE_URL=http://localhost:${FIXTURE_PORT}
+      - PYTHONPATH=./tests/generated
       - UI_BASE_URL=http://localhost:${UI_PORT_HTTP}
     availability:
       restart: "no"

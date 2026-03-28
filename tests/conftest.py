@@ -1,11 +1,8 @@
 import os
 import re
-import sys
 import uuid
 
 import pytest
-
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "generated"))
 
 from query_thresholds import get_thresholds
 from ramekin_client import ApiClient, Configuration
