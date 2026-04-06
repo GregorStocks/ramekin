@@ -89,7 +89,7 @@ fn convert_to_paprika(
             let filename = format!("{}.jpg", id);
             let mut hasher = Sha256::new();
             hasher.update(data);
-            let hash = format!("{:X}", hasher.finalize());
+            let hash = hex::encode_upper(hasher.finalize());
             let data_b64 = base64::engine::general_purpose::STANDARD.encode(data);
             PaprikaPhoto {
                 filename,
@@ -115,7 +115,7 @@ fn convert_to_paprika(
     );
     let mut hasher = Sha256::new();
     hasher.update(recipe_content.as_bytes());
-    let hash = format!("{:X}", hasher.finalize());
+    let hash = hex::encode_upper(hasher.finalize());
 
     PaprikaRecipe {
         uid: recipe.id.to_string().to_uppercase(),
