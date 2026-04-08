@@ -7,7 +7,7 @@ license = "LicenseRef-Proprietary"
 
 [dependencies]
 # Async runtime
-tokio = { version = "1.50", features = ["full"] }
+tokio = { version = "1.51", features = ["full"] }
 
 # Web framework
 axum = { version = "0.8", features = ["multipart"] }
@@ -60,7 +60,7 @@ base64 = "0.22"
 
 # Compression (for Paprika export)
 flate2 = "1.1"
-zip = "8.4"
+zip = "8.5"
 
 # Web scraping
 reqwest = { version = "0.13", default-features = false, features = ["rustls", "json"] }
