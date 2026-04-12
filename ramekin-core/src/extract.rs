@@ -39,7 +39,16 @@ static INGREDIENT_START_AFTER_SPLIT_RE: LazyLock<Regex> = LazyLock::new(|| {
 /// Uses a fast regex-based path for JSON-LD to avoid full DOM parsing.
 pub fn extract_recipe(html: &str, source_url: &str) -> Result<RawRecipe, ExtractError> {
     // Fast path: extract JSON-LD using regex (avoids DOM parsing)
-    if let Some(recipe) = extract_jsonld_fast(html, source_url) {
+    if let Some(mut recipe) = extract_jsonld_fast(html, source_url) {
+        // Supplement with ingredient groups from WPRM HTML if available.
+        // WPRM JSON-LD provides a flat ingredient list; the group structure
+        // (e.g. "Meatballs", "Broth") only exists in the HTML.
+        if html.contains("wprm-recipe-group-name") {
+            let document = Html::parse_document(html);
+            if let Some(grouped) = extract_wprm_ingredients_with_groups(&document) {
+                recipe.ingredients = grouped;
+            }
+        }
         return Ok(recipe);
     }
 
@@ -47,12 +56,18 @@ pub fn extract_recipe(html: &str, source_url: &str) -> Result<RawRecipe, Extract
     let document = Html::parse_document(html);
 
     // Try JSON-LD via DOM (handles edge cases regex might miss)
-    if let Ok(recipe) = extract_recipe_from_jsonld(&document, source_url) {
+    if let Ok(mut recipe) = extract_recipe_from_jsonld(&document, source_url) {
+        if let Some(grouped) = extract_wprm_ingredients_with_groups(&document) {
+            recipe.ingredients = grouped;
+        }
         return Ok(recipe);
     }
 
     // Fall back to microdata
-    if let Ok(recipe) = extract_recipe_from_microdata(&document, source_url) {
+    if let Ok(mut recipe) = extract_recipe_from_microdata(&document, source_url) {
+        if let Some(grouped) = extract_wprm_ingredients_with_groups(&document) {
+            recipe.ingredients = grouped;
+        }
         return Ok(recipe);
     }
 
@@ -1453,7 +1468,11 @@ fn extract_ingredients_from_html_classes(document: &Html) -> Option<String> {
         return Some(result);
     }
 
-    // Try WP Recipe Maker
+    // Try WP Recipe Maker (with group support)
+    if let Some(result) = extract_wprm_ingredients_with_groups(document) {
+        return Some(result);
+    }
+    // Fallback: WPRM without groups
     if let Some(result) =
         extract_ingredient_items_from_selector(document, ".wprm-recipe-ingredient")
     {
@@ -1468,6 +1487,65 @@ fn extract_ingredients_from_html_classes(document: &Html) -> Option<String> {
     }
 
     None
+}
+
+/// Extract WPRM ingredients with group headers (e.g. "Meatballs:", "Broth:").
+///
+/// WPRM structures ingredients as `.wprm-recipe-ingredient-group` containers,
+/// each with an optional `.wprm-recipe-group-name` header and a list of
+/// `.wprm-recipe-ingredient` items. JSON-LD flattens these into a single array,
+/// losing the group structure. This function recovers it from the HTML.
+fn extract_wprm_ingredients_with_groups(document: &Html) -> Option<String> {
+    let group_selector = Selector::parse(".wprm-recipe-ingredient-group").ok()?;
+    let name_selector = Selector::parse(".wprm-recipe-group-name").ok()?;
+    let item_selector = Selector::parse(".wprm-recipe-ingredient").ok()?;
+
+    let groups: Vec<_> = document.select(&group_selector).collect();
+    if groups.is_empty() {
+        return None;
+    }
+
+    // Only use this path when at least one group actually has a name
+    let has_any_group_name = groups.iter().any(|g| {
+        g.select(&name_selector)
+            .next()
+            .map(|el| !el.text().collect::<String>().trim().is_empty())
+            .unwrap_or(false)
+    });
+    if !has_any_group_name {
+        return None;
+    }
+
+    let mut lines: Vec<String> = Vec::new();
+    for group in &groups {
+        // Extract group name if present
+        if let Some(name_el) = group.select(&name_selector).next() {
+            let name = name_el.text().collect::<String>().trim().to_string();
+            if !name.is_empty() {
+                // Add as section header (colon-terminated so the parser detects it)
+                if name.ends_with(':') {
+                    lines.push(name);
+                } else {
+                    lines.push(format!("{}:", name));
+                }
+            }
+        }
+
+        // Extract ingredients in this group
+        for item in group.select(&item_selector) {
+            let text = item.text().collect::<String>().trim().to_string();
+            if !text.is_empty() {
+                lines.push(text);
+            }
+        }
+    }
+
+    let lines = split_and_dedup_ingredients(lines);
+    if lines.is_empty() {
+        None
+    } else {
+        Some(lines.join("\n"))
+    }
 }
 
 /// Extract ingredient items from a CSS selector, splitting concatenated entries and deduplicating.
@@ -2339,5 +2417,86 @@ mod tests {
         assert!(footnotes[0].1.contains("European-style butter"));
         assert_eq!(footnotes[1].0, "**");
         assert!(footnotes[1].1.contains("Dutch process"));
+    }
+
+    #[test]
+    fn test_wprm_ingredient_groups_supplement_jsonld() {
+        // WPRM JSON-LD provides flat ingredient list; HTML has the group structure.
+        // The extraction should inject group headers from the HTML.
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Ginger Meatballs",
+                    "recipeIngredient": [
+                        "2 pounds ground pork",
+                        "2 large eggs",
+                        "1 can coconut milk",
+                        "2 cups chicken stock"
+                    ],
+                    "recipeInstructions": "Make meatballs and broth."
+                }
+                </script>
+            </head>
+            <body>
+                <div class="wprm-recipe-ingredient-group">
+                    <span class="wprm-recipe-group-name">Meatballs</span>
+                    <ul>
+                        <li class="wprm-recipe-ingredient">2 pounds ground pork</li>
+                        <li class="wprm-recipe-ingredient">2 large eggs</li>
+                    </ul>
+                </div>
+                <div class="wprm-recipe-ingredient-group">
+                    <span class="wprm-recipe-group-name">Broth</span>
+                    <ul>
+                        <li class="wprm-recipe-ingredient">1 can coconut milk</li>
+                        <li class="wprm-recipe-ingredient">2 cups chicken stock</li>
+                    </ul>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+        let lines: Vec<&str> = result.ingredients.lines().collect();
+        assert_eq!(lines[0], "Meatballs:");
+        assert_eq!(lines[1], "2 pounds ground pork");
+        assert_eq!(lines[2], "2 large eggs");
+        assert_eq!(lines[3], "Broth:");
+        assert_eq!(lines[4], "1 can coconut milk");
+        assert_eq!(lines[5], "2 cups chicken stock");
+    }
+
+    #[test]
+    fn test_wprm_ingredient_groups_no_names_skipped() {
+        // When WPRM groups exist but none have names, fall through to flat extraction
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Simple Recipe",
+                    "recipeIngredient": ["1 cup flour", "2 eggs"],
+                    "recipeInstructions": "Mix."
+                }
+                </script>
+            </head>
+            <body>
+                <div class="wprm-recipe-ingredient-group">
+                    <span class="wprm-recipe-group-name"></span>
+                    <ul>
+                        <li class="wprm-recipe-ingredient">1 cup flour</li>
+                        <li class="wprm-recipe-ingredient">2 eggs</li>
+                    </ul>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+        // Should use JSON-LD ingredients (no group headers injected)
+        assert!(!result.ingredients.contains(':'));
+        assert!(result.ingredients.contains("1 cup flour"));
     }
 }
