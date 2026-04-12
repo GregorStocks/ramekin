@@ -40,14 +40,12 @@ static INGREDIENT_START_AFTER_SPLIT_RE: LazyLock<Regex> = LazyLock::new(|| {
 pub fn extract_recipe(html: &str, source_url: &str) -> Result<RawRecipe, ExtractError> {
     // Fast path: extract JSON-LD using regex (avoids DOM parsing)
     if let Some(mut recipe) = extract_jsonld_fast(html, source_url) {
-        // Supplement with ingredient groups from WPRM HTML if available.
-        // WPRM JSON-LD provides a flat ingredient list; the group structure
-        // (e.g. "Meatballs", "Broth") only exists in the HTML.
-        if html.contains("wprm-recipe-group-name") {
+        // Structured data provides a flat ingredient list; group headers
+        // (e.g. "Meatballs", "Broth") only exist in the HTML.
+        // Only parse the DOM when a group marker is present.
+        if html.contains("wprm-recipe-group-name") || html.contains("jetpack-recipe-ingredients") {
             let document = Html::parse_document(html);
-            if let Some(grouped) = extract_wprm_ingredients_with_groups(&document) {
-                recipe.ingredients = grouped;
-            }
+            supplement_ingredient_groups(&mut recipe, &document);
         }
         return Ok(recipe);
     }
@@ -57,22 +55,28 @@ pub fn extract_recipe(html: &str, source_url: &str) -> Result<RawRecipe, Extract
 
     // Try JSON-LD via DOM (handles edge cases regex might miss)
     if let Ok(mut recipe) = extract_recipe_from_jsonld(&document, source_url) {
-        if let Some(grouped) = extract_wprm_ingredients_with_groups(&document) {
-            recipe.ingredients = grouped;
-        }
+        supplement_ingredient_groups(&mut recipe, &document);
         return Ok(recipe);
     }
 
     // Fall back to microdata
     if let Ok(mut recipe) = extract_recipe_from_microdata(&document, source_url) {
-        if let Some(grouped) = extract_wprm_ingredients_with_groups(&document) {
-            recipe.ingredients = grouped;
-        }
+        supplement_ingredient_groups(&mut recipe, &document);
         return Ok(recipe);
     }
 
     // Last resort: supplement partial structured data with HTML fallbacks
     extract_recipe_with_html_fallback(html, &document, source_url)
+}
+
+/// Try to replace flat ingredients with a grouped version from HTML.
+/// Supports WPRM and Jetpack recipe plugins.
+fn supplement_ingredient_groups(recipe: &mut RawRecipe, document: &Html) {
+    if let Some(grouped) = extract_wprm_ingredients_with_groups(document)
+        .or_else(|| extract_jetpack_ingredients_with_groups(document))
+    {
+        recipe.ingredients = grouped;
+    }
 }
 
 /// Fast JSON-LD extraction using regex to avoid DOM parsing.
@@ -133,7 +137,11 @@ pub fn extract_recipe_with_stats(
     source_url: &str,
 ) -> Result<ExtractRecipeOutput, ExtractError> {
     // Fast path: try regex-based JSON-LD extraction (avoids DOM parsing)
-    if let Some(recipe) = extract_jsonld_fast(html, source_url) {
+    if let Some(mut recipe) = extract_jsonld_fast(html, source_url) {
+        if html.contains("wprm-recipe-group-name") || html.contains("jetpack-recipe-ingredients") {
+            let document = Html::parse_document(html);
+            supplement_ingredient_groups(&mut recipe, &document);
+        }
         return Ok(ExtractRecipeOutput {
             raw_recipe: recipe,
             method_used: ExtractionMethod::JsonLd,
@@ -150,7 +158,8 @@ pub fn extract_recipe_with_stats(
 
     // Try JSON-LD via DOM (handles edge cases regex might miss)
     let jsonld_result = extract_recipe_from_jsonld(&document, source_url);
-    if let Ok(recipe) = jsonld_result {
+    if let Ok(mut recipe) = jsonld_result {
+        supplement_ingredient_groups(&mut recipe, &document);
         return Ok(ExtractRecipeOutput {
             raw_recipe: recipe,
             method_used: ExtractionMethod::JsonLd,
@@ -164,7 +173,8 @@ pub fn extract_recipe_with_stats(
 
     // Fall back to microdata
     let microdata_result = extract_recipe_from_microdata(&document, source_url);
-    if let Ok(recipe) = microdata_result {
+    if let Ok(mut recipe) = microdata_result {
+        supplement_ingredient_groups(&mut recipe, &document);
         return Ok(ExtractRecipeOutput {
             raw_recipe: recipe,
             method_used: ExtractionMethod::Microdata,
@@ -1456,7 +1466,11 @@ fn extract_instructions_from_itemprop_unscoped(document: &Html) -> Option<String
 /// Extract ingredients from common recipe plugin HTML classes.
 /// Searches the entire document (not scoped to a microdata container).
 fn extract_ingredients_from_html_classes(document: &Html) -> Option<String> {
-    // Try Jetpack recipe ingredient list items
+    // Try Jetpack recipe ingredient list items (with group support)
+    if let Some(result) = extract_jetpack_ingredients_with_groups(document) {
+        return Some(result);
+    }
+    // Fallback: Jetpack without groups
     if let Some(result) =
         extract_ingredient_items_from_selector(document, ".jetpack-recipe-ingredient")
     {
@@ -1537,6 +1551,56 @@ fn extract_wprm_ingredients_with_groups(document: &Html) -> Option<String> {
             if !text.is_empty() {
                 lines.push(text);
             }
+        }
+    }
+
+    let lines = split_and_dedup_ingredients(lines);
+    if lines.is_empty() {
+        None
+    } else {
+        Some(lines.join("\n"))
+    }
+}
+
+/// Extract Jetpack recipe ingredients with group headers.
+///
+/// Jetpack structures ingredients inside a `.jetpack-recipe-ingredients` container
+/// with `<h5>` (or other heading) elements as group headers interleaved with
+/// `.jetpack-recipe-ingredient` list items. Microdata extraction only picks up
+/// the `[itemprop]` items, losing the headings. This function walks the container's
+/// children to recover the group structure.
+fn extract_jetpack_ingredients_with_groups(document: &Html) -> Option<String> {
+    let container_selector = Selector::parse(".jetpack-recipe-ingredients").ok()?;
+    let container = document.select(&container_selector).next()?;
+
+    let heading_selector = Selector::parse("h1, h2, h3, h4, h5, h6").ok()?;
+
+    // Check if there are any headings inside the container
+    let has_headings = container.select(&heading_selector).next().is_some();
+    if !has_headings {
+        return None;
+    }
+
+    // Walk all descendant elements in document order, emitting headings and
+    // ingredient items as we encounter them.
+    let mut lines: Vec<String> = Vec::new();
+    let all_selector =
+        Selector::parse("h1, h2, h3, h4, h5, h6, .jetpack-recipe-ingredient").ok()?;
+    for el in container.select(&all_selector) {
+        let tag = el.value().name();
+        let text = el.text().collect::<String>().trim().to_string();
+        if text.is_empty() {
+            continue;
+        }
+        if tag.starts_with('h') && tag.len() == 2 {
+            // Heading → section header
+            if text.ends_with(':') {
+                lines.push(text);
+            } else {
+                lines.push(format!("{}:", text));
+            }
+        } else {
+            lines.push(text);
         }
     }
 
@@ -2498,5 +2562,86 @@ mod tests {
         // Should use JSON-LD ingredients (no group headers injected)
         assert!(!result.ingredients.contains(':'));
         assert!(result.ingredients.contains("1 cup flour"));
+    }
+
+    #[test]
+    fn test_jetpack_ingredient_groups_supplement_microdata() {
+        // Jetpack uses <h5> headings inside .jetpack-recipe-ingredients to group
+        // ingredients. Microdata extraction only picks up the [itemprop] items.
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <body>
+                <div itemscope itemtype="https://schema.org/Recipe">
+                    <h3 class="jetpack-recipe-title" itemprop="name">Ginger Meatballs</h3>
+                    <div class="jetpack-recipe-content">
+                        <div class="jetpack-recipe-ingredients">
+                            <h5>Meatballs</h5>
+                            <ul>
+                                <li class="jetpack-recipe-ingredient" itemprop="recipeIngredient">2 pounds ground pork</li>
+                                <li class="jetpack-recipe-ingredient" itemprop="recipeIngredient">2 large eggs</li>
+                            </ul>
+                            <h5>Broth</h5>
+                            <ul>
+                                <li class="jetpack-recipe-ingredient" itemprop="recipeIngredient">1 can coconut milk</li>
+                                <li class="jetpack-recipe-ingredient" itemprop="recipeIngredient">2 cups chicken stock</li>
+                            </ul>
+                            <h5>To serve</h5>
+                            <ul>
+                                <li class="jetpack-recipe-ingredient" itemprop="recipeIngredient">Steamed jasmine rice</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div itemprop="recipeInstructions">Make meatballs and broth.</div>
+                </div>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://smittenkitchen.com/recipe").unwrap();
+        let lines: Vec<&str> = result.ingredients.lines().collect();
+        assert_eq!(lines[0], "Meatballs:");
+        assert_eq!(lines[1], "2 pounds ground pork");
+        assert_eq!(lines[2], "2 large eggs");
+        assert_eq!(lines[3], "Broth:");
+        assert_eq!(lines[4], "1 can coconut milk");
+        assert_eq!(lines[5], "2 cups chicken stock");
+        assert_eq!(lines[6], "To serve:");
+        assert_eq!(lines[7], "Steamed jasmine rice");
+    }
+
+    #[test]
+    fn test_jetpack_ingredient_groups_malformed_h5_inside_ul() {
+        // Real smittenkitchen HTML: <p> wrapping a <div> (invalid), and <h5>
+        // headers inside <ul> (also invalid). html5ever reparses this.
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <body>
+                <div itemscope itemtype="https://schema.org/Recipe">
+                    <h3 class="jetpack-recipe-title" itemprop="name">Ginger Meatballs</h3>
+                    <p><div class="jetpack-recipe-ingredients"><ul>
+                        <h5>Meatballs</h5>
+                        <li class="jetpack-recipe-ingredient" itemprop="recipeIngredient">2 pounds ground pork</li>
+                        <li class="jetpack-recipe-ingredient" itemprop="recipeIngredient">2 large eggs</li>
+                        <h5>Broth</h5>
+                        <li class="jetpack-recipe-ingredient" itemprop="recipeIngredient">1 can coconut milk</li>
+                    </ul></div></p>
+                    <div itemprop="recipeInstructions">Make meatballs and broth.</div>
+                </div>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://smittenkitchen.com/recipe").unwrap();
+        eprintln!("Ingredients:\n{}", result.ingredients);
+        assert!(
+            result.ingredients.contains("Meatballs"),
+            "should contain Meatballs group header"
+        );
+        assert!(
+            result.ingredients.contains("Broth"),
+            "should contain Broth group header"
+        );
     }
 }
