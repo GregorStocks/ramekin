@@ -3,31 +3,31 @@
 ## Overall
 
 - Total URLs: 5277
-- Completed: 5212 (98.8%)
-- Failed at fetch: 1 (0.0%)
-- Failed at extract: 64 (1.2%)
+- Completed: 5199 (98.5%)
+- Failed at fetch: 2 (0.0%)
+- Failed at extract: 76 (1.4%)
 
 ## Extraction Methods
 
-- JSON-LD: 4059/5276 (76.9%)
-- Microdata: 522/5276 (9.9%)
-- Both: 0/5276 (0.0%)
-- Neither: 695/5276 (13.2%)
+- JSON-LD: 4045/5275 (76.7%)
+- Microdata: 527/5275 (10.0%)
+- Both: 0/5275 (0.0%)
+- Neither: 703/5275 (13.3%)
 
 ## Ingredient Parsing
 
-- Total ingredients: 58479
-- Volume-to-weight converted: 18019/40895 (44.1%)
-- Unknown ingredient (no density data): 14194
-- Already has weight: 8682
-- No volume unit (count-based): 17252
-- Metric converted (oz→g): 2697
-- Metric converted (lb→g): 1755
+- Total ingredients: 58847
+- Volume-to-weight converted: 14904/35639 (41.8%)
+- Unknown ingredient (no density data): 12383
+- Already has weight: 8352
+- No volume unit (count-based): 22945
+- Metric converted (oz→g): 2411
+- Metric converted (lb→g): 1610
 
 ## AI Cache
 
-- Cache hits: 5195/5195 (100.0%)
-- API calls: 0/5195 (0.0%)
+- Cache hits: 5196/5199 (99.9%)
+- API calls: 3/5199 (0.1%)
 
 ## By Site
 
@@ -38,7 +38,7 @@
 | alexandracooks.com | 100 | 100 | 100.0% |
 | allrecipes.com | 100 | 100 | 100.0% |
 | altonbrown.com | 100 | 100 | 100.0% |
-| asweetpeachef.com | 31 | 31 | 100.0% |
+| asweetpeachef.com | 21 | 31 | 67.7% |
 | averiecooks.com | 1 | 3 | 33.3% |
 | bakerita.com | 7 | 7 | 100.0% |
 | bakingbites.com | 10 | 11 | 90.9% |
@@ -55,7 +55,7 @@
 | cookingclassy.com | 56 | 56 | 100.0% |
 | damndelicious.net | 26 | 26 | 100.0% |
 | davidlebovitz.com | 7 | 7 | 100.0% |
-| delish.com | 100 | 100 | 100.0% |
+| delish.com | 99 | 100 | 99.0% |
 | dinnerthendessert.com | 4 | 4 | 100.0% |
 | downshiftology.com | 100 | 100 | 100.0% |
 | eatingwell.com | 100 | 100 | 100.0% |
@@ -64,7 +64,7 @@
 | foodandwine.com | 99 | 99 | 100.0% |
 | gimmesomeoven.com | 6 | 6 | 100.0% |
 | gonnawantseconds.com | 58 | 59 | 98.3% |
-| hostthetoast.com | 9 | 9 | 100.0% |
+| hostthetoast.com | 7 | 9 | 77.8% |
 | howsweeteats.com | 82 | 82 | 100.0% |
 | iamafoodblog.com | 99 | 100 | 99.0% |
 | indianhealthyrecipes.com | 25 | 25 | 100.0% |
@@ -96,7 +96,7 @@
 | simplyrecipes.com | 99 | 100 | 99.0% |
 | skinnytaste.com | 2 | 2 | 100.0% |
 | slenderkitchen.com | 55 | 55 | 100.0% |
-| smittenkitchen.com | 964 | 982 | 98.2% |
+| smittenkitchen.com | 965 | 982 | 98.3% |
 | spendwithpennies.com | 35 | 35 | 100.0% |
 | spoonforkbacon.com | 2 | 2 | 100.0% |
 | sprinklebakes.com | 74 | 92 | 80.4% |
@@ -105,7 +105,7 @@
 | tasteofhome.com | 100 | 100 | 100.0% |
 | tastesbetterfromscratch.com | 3 | 3 | 100.0% |
 | tasty.co | 97 | 97 | 100.0% |
-| theforkedspoon.com | 100 | 100 | 100.0% |
+| theforkedspoon.com | 99 | 100 | 99.0% |
 | themediterraneandish.com | 100 | 100 | 100.0% |
 | themodernproper.com | 14 | 14 | 100.0% |
 | thepioneerwoman.com | 100 | 100 | 100.0% |
@@ -119,9 +119,25 @@
 
 ## Failed URLs by Error
 
-### Cached fetch error (1 URLs)
+### Cached fetch error (2 URLs)
 
 - https://nomnompaleo.com/2017/08/15/6053
+- https://theforkedspoon.com/chicken-fajita-meal-prep-recipe/
+
+### Missing required field: name (12 URLs)
+
+- https://hostthetoast.com/feel-better-chicken-soup-recipe/
+- https://hostthetoast.com/tomato-bruschetta-recipe/
+- https://www.asweetpeachef.com/cinnamon-raisin-overnight-oats-recipe/
+- https://www.asweetpeachef.com/cream-of-tomato-soup-recipe/
+- https://www.asweetpeachef.com/healthy-beef-and-broccoli-recipe/
+- https://www.asweetpeachef.com/healthy-carrot-cake-recipe/
+- https://www.asweetpeachef.com/homemade-alfredo-sauce-recipe/
+- https://www.asweetpeachef.com/homemade-chili-cheese-dog-recipe/
+- https://www.asweetpeachef.com/homemade-marshmallow-recipe/
+- https://www.asweetpeachef.com/homemade-tomatillo-salsa-verde-recipe/
+- https://www.asweetpeachef.com/no-bake-cheesecake-recipe/
+- https://www.asweetpeachef.com/orange-creamsicle-recipe/
 
 ### Missing required field: recipeIngredient (empty) (63 URLs)
 
@@ -138,7 +154,6 @@
 - https://ohmyveggies.com/red-lentil-recipe/
 - https://peasandcrayons.com/chili-and-cornbread-recipe/
 - https://smittenkitchen.com/2007/04/fish-tacos/
-- https://smittenkitchen.com/2007/05/homemade-oreoes/
 - https://smittenkitchen.com/2007/10/flan-flop/
 - https://smittenkitchen.com/2008/07/huevos-rancheros/
 - https://smittenkitchen.com/2008/07/project-wedding-cake-ta-da/
@@ -158,6 +173,7 @@
 - https://www.averiecooks.com/raw-vegan-donut-holes-5-minute-recipe/
 - https://www.averiecooks.com/trainer-session-progress-recipe/
 - https://www.bbcgoodfood.com/us/prime-rib-recipe
+- https://www.delish.com/entertaining/tabletop/recipes/a44519/pear-blue-cheese-and-maple-puff-pastry-tarts-recipe/
 - https://www.gonnawantseconds.com/ginger-cookies-recipe/
 - https://www.justonecookbook.com/dango-recipe/
 - https://www.loveandoliveoil.com/2025/09/new-fresh-baked-puns-designs.html

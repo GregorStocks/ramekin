@@ -1,10 +1,10 @@
 {
   "title": "Skill: identify high-impact ingredients missing density data",
-  "description": "We have /add-density for adding a density once you know which \
-ingredient to add, but no automated way to identify which ingredients are the \
-best candidates. The workflow is: read the gap report, cross-reference against \
-curated.json nulls and existing aliases, and surface the top unresolved \
-ingredients ranked by occurrence count.\n\
+  "description": "We have /add-density for adding a density once you know \
+which ingredient to add, but no automated way to identify which ingredients \
+are the best candidates. The workflow is: read the gap report, cross-reference \
+against curated.json nulls and existing aliases, and surface the top \
+unresolved ingredients ranked by occurrence count.\n\
 \n\
 Create a /identify-density-gap skill that walks through this analysis and \
 presents a ranked table of actionable candidates (skipping intentionally-null \
