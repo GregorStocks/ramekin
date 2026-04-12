@@ -13,7 +13,7 @@ ramekin-core = { path = "../ramekin-core" }
 clap = { version = "4.6", features = ["derive", "env"] }
 
 # Async runtime
-tokio = { version = "1.50", features = ["full"] }
+tokio = { version = "1.51", features = ["full"] }
 futures = "0.3"
 
 # HTTP client for RPC
@@ -54,7 +54,7 @@ tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 dirs = "6.0"
 
 # Paprika import
-zip = "8.4"
+zip = "8.5"
 flate2 = "1.1"
 base64 = "0.22"
 
