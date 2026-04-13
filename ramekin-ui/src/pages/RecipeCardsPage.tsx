@@ -33,11 +33,15 @@ async function getImagePixelSize(
 async function fetchThumbnail(
   photoId: string,
   token: string,
-): Promise<ImageData | null> {
+): Promise<ImageData> {
   const resp = await fetch(`/api/photos/${photoId}/thumbnail?size=1200`, {
     headers: { Authorization: `Bearer ${token}` },
   });
-  if (!resp.ok) return null;
+  if (!resp.ok) {
+    throw new Error(
+      `Failed to fetch thumbnail ${photoId}: ${resp.status} ${resp.statusText}`,
+    );
+  }
   const blob = await resp.blob();
   const dataUrl = await blobToDataUrl(blob);
   const format: "JPEG" | "PNG" = blob.type.includes("png") ? "PNG" : "JPEG";
@@ -128,14 +132,35 @@ export default function RecipeCardsPage() {
     const g = gutterIn();
     const w = cardW();
     const h = cardH();
+    const b = borderIn();
     const contentW = pageW - 2 * m;
     const contentH = pageH - 2 * m;
-    if (w <= 0 || h <= 0 || w > contentW || h > contentH) {
-      return { cols: 0, rows: 0, perPage: 0, contentW, contentH };
+    const invalid = (reason: string) => ({
+      cols: 0,
+      rows: 0,
+      perPage: 0,
+      contentW,
+      contentH,
+      error: reason,
+    });
+    if (w <= 0 || h <= 0) return invalid("Card size must be positive.");
+    if (w > contentW || h > contentH) {
+      return invalid("Card is too large for the page at these margins.");
+    }
+    if (b < 0) return invalid("Border width must be non-negative.");
+    if (2 * b >= Math.min(w, h)) {
+      return invalid("Border is too wide — no inner card area left.");
     }
     const cols = Math.max(1, Math.floor((contentW + g) / (w + g)));
     const rows = Math.max(1, Math.floor((contentH + g) / (h + g)));
-    return { cols, rows, perPage: cols * rows, contentW, contentH };
+    return {
+      cols,
+      rows,
+      perPage: cols * rows,
+      contentW,
+      contentH,
+      error: null as string | null,
+    };
   });
 
   const canGenerate = () =>
@@ -149,11 +174,12 @@ export default function RecipeCardsPage() {
       .filter((r): r is RecipeSummary => !!r);
 
     if (chosen.length === 0) return;
-    const { cols, perPage } = layout();
-    if (perPage === 0) {
-      setError("Card size is too large for the page at these margins");
+    const l = layout();
+    if (l.perPage === 0) {
+      setError(l.error ?? "Invalid card layout");
       return;
     }
+    const { cols, perPage } = l;
 
     setGenerating(true);
     setError(null);
@@ -203,14 +229,9 @@ export default function RecipeCardsPage() {
         const titleAreaH = Math.min(0.45, Math.max(0.25, innerH * 0.22));
         const imgAreaH = innerH - titleAreaH;
 
-        let img: ImageData | null = null;
-        if (recipe.thumbnailPhotoId) {
-          try {
-            img = await fetchThumbnail(recipe.thumbnailPhotoId, tok);
-          } catch {
-            img = null;
-          }
-        }
+        const img: ImageData | null = recipe.thumbnailPhotoId
+          ? await fetchThumbnail(recipe.thumbnailPhotoId, tok)
+          : null;
 
         if (img && imgAreaH > 0) {
           const ratio = img.pxW / img.pxH;
@@ -329,10 +350,7 @@ export default function RecipeCardsPage() {
           </div>
 
           <p class="recipe-cards-layout-info">
-            <Show
-              when={layout().perPage > 0}
-              fallback={<>Card is too large for the page at these margins.</>}
-            >
+            <Show when={layout().perPage > 0} fallback={<>{layout().error}</>}>
               {layout().cols}×{layout().rows} grid = {layout().perPage} cards
               per page
             </Show>
