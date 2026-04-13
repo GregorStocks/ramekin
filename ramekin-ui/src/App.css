@@ -2874,3 +2874,73 @@
     font-size: 0.85rem;
   }
 }
+
+.recipe-cards-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.recipe-cards-config h3,
+.recipe-cards-list h3 {
+  margin-top: 0;
+}
+
+.recipe-cards-config .form-group {
+  margin-bottom: 0.75rem;
+}
+
+.recipe-cards-layout-info {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.5rem 0 1rem;
+}
+
+.recipe-cards-list-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.recipe-cards-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 70vh;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.recipe-cards-checklist li {
+  border-bottom: 1px solid #eee;
+}
+
+.recipe-cards-checklist li:last-child {
+  border-bottom: none;
+}
+
+.recipe-cards-checklist label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+}
+
+.recipe-cards-checklist label:hover {
+  background: #f6f6f6;
+}
+
+.recipe-cards-no-photo {
+  color: #999;
+  font-size: 0.8rem;
+  margin-left: auto;
+}
+
+@media (width <= 700px) {
+  .recipe-cards-layout {
+    grid-template-columns: 1fr;
+  }
+}
