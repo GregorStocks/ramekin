@@ -143,7 +143,12 @@ export default function RecipeCardsPage() {
       contentH,
       error: reason,
     });
+    if (m < 0) return invalid("Margin must be non-negative.");
+    if (g < 0) return invalid("Gutter must be non-negative.");
     if (w <= 0 || h <= 0) return invalid("Card size must be positive.");
+    if (contentW <= 0 || contentH <= 0) {
+      return invalid("Margins leave no room on the page.");
+    }
     if (w > contentW || h > contentH) {
       return invalid("Card is too large for the page at these margins.");
     }
