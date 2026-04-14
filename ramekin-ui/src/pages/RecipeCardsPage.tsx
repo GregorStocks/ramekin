@@ -173,15 +173,16 @@ export default function RecipeCardsPage() {
     if (contentW <= 0 || contentH <= 0) {
       return invalid("Margins leave no room on the page.");
     }
-    if (w > contentW || h > contentH) {
-      return invalid("Card is too large for the page at these margins.");
-    }
     if (b < 0) return invalid("Border width must be non-negative.");
-    if (2 * b >= Math.min(w, h)) {
-      return invalid("Border is too wide — no inner card area left.");
+    const footW = w + b;
+    const footH = h + b;
+    if (footW > contentW || footH > contentH) {
+      return invalid(
+        "Card with border is too large for the page at these margins.",
+      );
     }
-    const cols = Math.max(1, Math.floor((contentW + g) / (w + g)));
-    const rows = Math.max(1, Math.floor((contentH + g) / (h + g)));
+    const cols = Math.max(1, Math.floor((contentW + g) / (footW + g)));
+    const rows = Math.max(1, Math.floor((contentH + g) / (footH + g)));
     return {
       cols,
       rows,
@@ -229,7 +230,9 @@ export default function RecipeCardsPage() {
       const h = cardH();
       const border = borderIn();
 
-      const gridW = cols * w + (cols - 1) * g;
+      const footW = w + border;
+      const footH = h + border;
+      const gridW = cols * footW + (cols - 1) * g;
       const startX = (pageW - gridW) / 2;
       const startY = m;
 
@@ -240,16 +243,17 @@ export default function RecipeCardsPage() {
 
         const col = slot % cols;
         const row = Math.floor(slot / cols);
-        const x = startX + col * (w + g);
-        const y = startY + row * (h + g);
+        const x = startX + border / 2 + col * (footW + g);
+        const y = startY + border / 2 + row * (footH + g);
 
         if (border > 0) {
           doc.setLineWidth(border);
           doc.setDrawColor(0, 0, 0);
-          doc.rect(x, y, w, h, "S");
+          const bHalf = border / 2;
+          doc.rect(x - bHalf, y - bHalf, w + border, h + border, "S");
         }
 
-        const pad = Math.max(border, 0.05);
+        const pad = 0.05;
         const innerX = x + pad;
         const innerY = y + pad;
         const innerW = w - 2 * pad;
@@ -286,11 +290,16 @@ export default function RecipeCardsPage() {
           doc.setTextColor(0);
         }
 
-        const fontPt = Math.min(14, Math.max(8, titleAreaH * 36));
-        doc.setFontSize(fontPt);
-        const lines = doc
-          .splitTextToSize(recipe.title, innerW)
-          .slice(0, 2) as string[];
+        const maxLines = 2;
+        let fontPt = Math.min(14, Math.max(8, titleAreaH * 36));
+        let lines: string[];
+        while (true) {
+          doc.setFontSize(fontPt);
+          lines = doc.splitTextToSize(recipe.title, innerW) as string[];
+          if (lines.length <= maxLines || fontPt <= 5) break;
+          fontPt -= 0.5;
+        }
+        lines = lines.slice(0, maxLines);
         const titleCenterY = innerY + imgAreaH + titleAreaH / 2;
         doc.text(lines, innerX + innerW / 2, titleCenterY, {
           align: "center",
