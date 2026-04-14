@@ -171,15 +171,16 @@ export default function RecipeCardsPage() {
     if (contentW <= 0 || contentH <= 0) {
       return invalid("Margins leave no room on the page.");
     }
-    if (w > contentW || h > contentH) {
-      return invalid("Card is too large for the page at these margins.");
-    }
     if (b < 0) return invalid("Border width must be non-negative.");
-    if (2 * b >= Math.min(w, h)) {
-      return invalid("Border is too wide — no inner card area left.");
+    const footW = w + b;
+    const footH = h + b;
+    if (footW > contentW || footH > contentH) {
+      return invalid(
+        "Card with border is too large for the page at these margins.",
+      );
     }
-    const cols = Math.max(1, Math.floor((contentW + g) / (w + g)));
-    const rows = Math.max(1, Math.floor((contentH + g) / (h + g)));
+    const cols = Math.max(1, Math.floor((contentW + g) / (footW + g)));
+    const rows = Math.max(1, Math.floor((contentH + g) / (footH + g)));
     return {
       cols,
       rows,
@@ -227,7 +228,9 @@ export default function RecipeCardsPage() {
       const h = cardH();
       const border = borderIn();
 
-      const gridW = cols * w + (cols - 1) * g;
+      const footW = w + border;
+      const footH = h + border;
+      const gridW = cols * footW + (cols - 1) * g;
       const startX = (pageW - gridW) / 2;
       const startY = m;
 
@@ -238,8 +241,8 @@ export default function RecipeCardsPage() {
 
         const col = slot % cols;
         const row = Math.floor(slot / cols);
-        const x = startX + col * (w + g);
-        const y = startY + row * (h + g);
+        const x = startX + border / 2 + col * (footW + g);
+        const y = startY + border / 2 + row * (footH + g);
 
         if (border > 0) {
           doc.setLineWidth(border);
