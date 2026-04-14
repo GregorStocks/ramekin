@@ -13,6 +13,7 @@ import TagsPage from "./pages/TagsPage";
 import MealPlanPage from "./pages/MealPlanPage";
 import ShoppingListPage from "./pages/ShoppingListPage";
 import RecipeCardsPage from "./pages/RecipeCardsPage";
+import ImportPage from "./pages/ImportPage";
 import type { ParentComponent } from "solid-js";
 
 const ProtectedRoute: ParentComponent = (props) => {
@@ -108,6 +109,14 @@ function App() {
           component={() => (
             <ProtectedRoute>
               <RecipeCardsPage />
+            </ProtectedRoute>
+          )}
+        />
+        <Route
+          path="/import"
+          component={() => (
+            <ProtectedRoute>
+              <ImportPage />
             </ProtectedRoute>
           )}
         />
