@@ -42,6 +42,11 @@ function createJobPoller(scrapeApi: ScrapeApi) {
     running = true;
     while (pending.length > 0) {
       const job = pending[0];
+      if (Date.now() - job.startedAt > JOB_POLL_TIMEOUT_MS) {
+        pending.shift();
+        job.resolve({ status: "timeout" });
+        continue;
+      }
       try {
         const response = await scrapeApi.getScrape({ id: job.jobId });
         if (TERMINAL_STATUSES.has(response.status)) {
@@ -54,11 +59,6 @@ function createJobPoller(scrapeApi: ScrapeApi) {
               error: response.error ?? "Import job failed",
             });
           }
-          continue;
-        }
-        if (Date.now() - job.startedAt > JOB_POLL_TIMEOUT_MS) {
-          pending.shift();
-          job.resolve({ status: "timeout" });
           continue;
         }
       } catch (err) {
