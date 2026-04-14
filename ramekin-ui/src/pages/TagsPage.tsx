@@ -3,9 +3,11 @@ import { useNavigate } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import Modal from "../components/Modal";
 import { extractApiError } from "../utils/recipeFormHelpers";
+import { usePageTitle } from "../utils/pageTitle";
 import type { TagItem } from "ramekin-client";
 
 export default function TagsPage() {
+  usePageTitle(() => "Tags");
   const navigate = useNavigate();
   const { getTagsApi, refreshTags } = useAuth();
 

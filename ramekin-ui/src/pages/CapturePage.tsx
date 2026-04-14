@@ -1,4 +1,5 @@
 import { createSignal, onMount, onCleanup, Show } from "solid-js";
+import { usePageTitle } from "../utils/pageTitle";
 
 interface CaptureMessage {
   type: "html";
@@ -34,6 +35,7 @@ const POLL_BACKOFF = 1.5;
 const POLL_TIMEOUT_MS = 120_000; // 2 minutes
 
 export default function CapturePage() {
+  usePageTitle(() => "Capture");
   const [status, setStatus] = createSignal<Status>({ type: "waiting" });
   let pollTimeout: ReturnType<typeof setTimeout> | null = null;
   let pollStartTime: number | null = null;

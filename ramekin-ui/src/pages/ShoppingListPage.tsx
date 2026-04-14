@@ -3,6 +3,7 @@ import { A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import Modal from "../components/Modal";
 import { extractApiError } from "../utils/recipeFormHelpers";
+import { usePageTitle } from "../utils/pageTitle";
 import type { ShoppingListItemResponse } from "ramekin-client";
 
 const CATEGORY_ORDER = [
@@ -25,6 +26,7 @@ const CATEGORY_ORDER = [
 ];
 
 export default function ShoppingListPage() {
+  usePageTitle(() => "Shopping List");
   const { getShoppingListApi } = useAuth();
 
   const [items, setItems] = createSignal<ShoppingListItemResponse[]>([]);

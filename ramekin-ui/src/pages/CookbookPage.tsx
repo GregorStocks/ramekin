@@ -9,6 +9,7 @@ import {
 import { A, useNavigate, useSearchParams } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import { extractApiError } from "../utils/recipeFormHelpers";
+import { usePageTitle } from "../utils/pageTitle";
 import PhotoThumbnail from "../components/PhotoThumbnail";
 import type { RecipeSummary, SortBy, Direction } from "ramekin-client";
 
@@ -189,6 +190,7 @@ function formatRelativeDate(date: Date): string {
 }
 
 export default function CookbookPage() {
+  usePageTitle(() => "Cookbook");
   const { getRecipesApi, tags: availableTags, token } = useAuth();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
