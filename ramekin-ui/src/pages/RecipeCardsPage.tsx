@@ -77,6 +77,15 @@ export default function RecipeCardsPage() {
   const [marginIn, setMarginIn] = createSignal(0.75);
   const [gutterIn, setGutterIn] = createSignal(0.2);
   const [borderIn, setBorderIn] = createSignal(0);
+  const [orientation, setOrientation] = createSignal<"portrait" | "landscape">(
+    "portrait",
+  );
+
+  const pageSize = createMemo(() =>
+    orientation() === "portrait"
+      ? { pageW: 8.5, pageH: 11 }
+      : { pageW: 11, pageH: 8.5 },
+  );
 
   const [generating, setGenerating] = createSignal(false);
   const [progress, setProgress] = createSignal<{ done: number; total: number }>(
@@ -140,8 +149,7 @@ export default function RecipeCardsPage() {
   const clearSelection = () => setSelected(new Set<string>());
 
   const layout = createMemo(() => {
-    const pageW = 8.5;
-    const pageH = 11;
+    const { pageW, pageH } = pageSize();
     const m = marginIn();
     const g = gutterIn();
     const w = cardW();
@@ -209,10 +217,10 @@ export default function RecipeCardsPage() {
       const doc = new jsPDF({
         unit: "in",
         format: "letter",
-        orientation: "portrait",
+        orientation: orientation(),
       });
 
-      const pageW = 8.5;
+      const { pageW } = pageSize();
       const m = marginIn();
       const g = gutterIn();
       const w = cardW();
@@ -311,6 +319,20 @@ export default function RecipeCardsPage() {
       <div class="recipe-cards-layout">
         <section class="recipe-cards-config">
           <h3>Card layout</h3>
+          <div class="form-group">
+            <label>Page orientation</label>
+            <select
+              value={orientation()}
+              onChange={(e) =>
+                setOrientation(
+                  e.currentTarget.value as "portrait" | "landscape",
+                )
+              }
+            >
+              <option value="portrait">Portrait</option>
+              <option value="landscape">Landscape</option>
+            </select>
+          </div>
           <div class="form-group">
             <label>Card width (in)</label>
             <input
