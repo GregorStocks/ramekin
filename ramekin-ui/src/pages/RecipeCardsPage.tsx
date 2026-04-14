@@ -244,10 +244,11 @@ export default function RecipeCardsPage() {
         if (border > 0) {
           doc.setLineWidth(border);
           doc.setDrawColor(0, 0, 0);
-          doc.rect(x, y, w, h, "S");
+          const bHalf = border / 2;
+          doc.rect(x - bHalf, y - bHalf, w + border, h + border, "S");
         }
 
-        const pad = Math.max(border, 0.05);
+        const pad = 0.05;
         const innerX = x + pad;
         const innerY = y + pad;
         const innerW = w - 2 * pad;
@@ -284,11 +285,16 @@ export default function RecipeCardsPage() {
           doc.setTextColor(0);
         }
 
-        const fontPt = Math.min(14, Math.max(8, titleAreaH * 36));
-        doc.setFontSize(fontPt);
-        const lines = doc
-          .splitTextToSize(recipe.title, innerW)
-          .slice(0, 2) as string[];
+        const maxLines = 2;
+        let fontPt = Math.min(14, Math.max(8, titleAreaH * 36));
+        let lines: string[];
+        while (true) {
+          doc.setFontSize(fontPt);
+          lines = doc.splitTextToSize(recipe.title, innerW) as string[];
+          if (lines.length <= maxLines || fontPt <= 5) break;
+          fontPt -= 0.5;
+        }
+        lines = lines.slice(0, maxLines);
         const titleCenterY = innerY + imgAreaH + titleAreaH / 2;
         doc.text(lines, innerX + innerW / 2, titleCenterY, {
           align: "center",
