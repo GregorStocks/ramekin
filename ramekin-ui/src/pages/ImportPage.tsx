@@ -19,19 +19,24 @@ interface RecipeRow {
 }
 
 const JOB_POLL_INTERVAL_MS = 2000;
+const JOB_POLL_TIMEOUT_MS = 10 * 60 * 1000;
 const TERMINAL_STATUSES = new Set(["completed", "failed"]);
 
 async function pollJob(
   scrapeApi: ScrapeApi,
   jobId: string,
 ): Promise<{ status: string; error?: string }> {
-  while (true) {
+  const deadline = Date.now() + JOB_POLL_TIMEOUT_MS;
+  while (Date.now() < deadline) {
     const job = await scrapeApi.getScrape({ id: jobId });
     if (TERMINAL_STATUSES.has(job.status)) {
       return { status: job.status, error: job.error ?? undefined };
     }
     await new Promise((resolve) => setTimeout(resolve, JOB_POLL_INTERVAL_MS));
   }
+  throw new Error(
+    `Timed out waiting for import job after ${JOB_POLL_TIMEOUT_MS / 1000}s`,
+  );
 }
 
 export default function ImportPage() {
@@ -77,10 +82,13 @@ export default function ImportPage() {
     const importApi = getImportApi();
     const scrapeApi = getScrapeApi();
 
+    const pollPromises: Promise<void>[] = [];
+
     for (let i = 0; i < parsed.length; i++) {
       const recipe = parsed[i];
       updateRow(i, { state: "importing" });
 
+      let jobId: string;
       try {
         const photoIds: string[] = [];
         for (const photoBytes of recipe.photos) {
@@ -107,25 +115,40 @@ export default function ImportPage() {
             extractionMethod: ImportExtractionMethod.Paprika,
           },
         });
-        updateRow(i, { state: "queued", jobId: response.jobId });
-
-        const terminal = await pollJob(scrapeApi, response.jobId);
-        if (terminal.status === "completed") {
-          updateRow(i, { state: "done", jobId: response.jobId });
-        } else {
-          updateRow(i, {
-            state: "error",
-            message: terminal.error ?? "Import job failed",
-          });
-        }
+        jobId = response.jobId;
+        updateRow(i, { state: "queued", jobId });
       } catch (err) {
         updateRow(i, {
           state: "error",
           message: err instanceof Error ? err.message : String(err),
         });
+        continue;
       }
+
+      const rowIndex = i;
+      pollPromises.push(
+        (async () => {
+          try {
+            const terminal = await pollJob(scrapeApi, jobId);
+            if (terminal.status === "completed") {
+              updateRow(rowIndex, { state: "done", jobId });
+            } else {
+              updateRow(rowIndex, {
+                state: "error",
+                message: terminal.error ?? "Import job failed",
+              });
+            }
+          } catch (err) {
+            updateRow(rowIndex, {
+              state: "error",
+              message: err instanceof Error ? err.message : String(err),
+            });
+          }
+        })(),
+      );
     }
 
+    await Promise.all(pollPromises);
     setBusy(false);
     input.value = "";
   };
