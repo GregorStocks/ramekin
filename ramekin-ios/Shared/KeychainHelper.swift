@@ -69,6 +69,10 @@ class KeychainHelper {
         return String(data: data, encoding: .utf8)
     }
 
+    func deleteAccessClientId() {
+        delete(key: accessClientIdKey)
+    }
+
     func saveAccessClientSecret(_ value: String) -> Bool {
         return save(key: accessClientSecretKey, data: Data(value.utf8))
     }
@@ -76,6 +80,10 @@ class KeychainHelper {
     func getAccessClientSecret() -> String? {
         guard let data = load(key: accessClientSecretKey) else { return nil }
         return String(data: data, encoding: .utf8)
+    }
+
+    func deleteAccessClientSecret() {
+        delete(key: accessClientSecretKey)
     }
 
     // MARK: - Private Keychain Operations

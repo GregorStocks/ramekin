@@ -164,13 +164,18 @@ class RamekinAPI {
             normalizedURL = String(normalizedURL.dropLast())
         }
 
-        // Persist access credentials before the login call so the request
-        // itself carries the CF-Access headers through the Access policy.
+        // Persist (or clear) access credentials before the login call so the
+        // request itself carries the current CF-Access headers through the
+        // Access policy. Empty or nil clears so stale values aren't re-sent.
         if let id = accessClientId, !id.isEmpty {
             _ = KeychainHelper.shared.saveAccessClientId(id)
+        } else {
+            KeychainHelper.shared.deleteAccessClientId()
         }
         if let secret = accessClientSecret, !secret.isEmpty {
             _ = KeychainHelper.shared.saveAccessClientSecret(secret)
+        } else {
+            KeychainHelper.shared.deleteAccessClientSecret()
         }
 
         guard let url = URL(string: "\(normalizedURL)/api/auth/login") else {
