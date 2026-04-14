@@ -25,27 +25,6 @@ if command -v mkcert >/dev/null 2>&1; then
     mkcert -install 2>/dev/null || true
 fi
 
-# Install Chromium for screenshots (try multiple methods)
-if ! command -v chromium >/dev/null 2>&1 && ! command -v chromium-browser >/dev/null 2>&1 && ! command -v google-chrome >/dev/null 2>&1; then
-    echo "Installing Chromium for screenshots..."
-    # Method 1: Try apt (may require snap on newer Ubuntu)
-    if apt-get install -y -qq chromium 2>/dev/null; then
-        echo "Chromium installed via apt"
-    elif apt-get install -y -qq chromium-browser 2>/dev/null; then
-        echo "Chromium installed via apt (chromium-browser)"
-    else
-        # Method 2: Try using Playwright to install Chromium
-        echo "apt install failed, trying Playwright..."
-        if [ -d ".venv" ] && .venv/bin/python -c "import playwright" 2>/dev/null; then
-            .venv/bin/playwright install chromium 2>/dev/null && echo "Chromium installed via Playwright" || \
-                echo "Warning: Could not install Chromium. Screenshots will not work."
-        else
-            echo "Warning: Could not install Chromium. Screenshots will not work."
-            echo "  Install manually: apt install chromium OR playwright install chromium"
-        fi
-    fi
-fi
-
 # Install diesel_cli if not present
 if ! command -v diesel >/dev/null 2>&1; then
     echo "Installing diesel_cli..."

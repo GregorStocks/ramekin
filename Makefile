@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web worktree-setup screenshots generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -157,10 +157,6 @@ install-hooks: ## Install git hooks for local development
 	@cp scripts/pre-push .git/hooks/pre-push
 	@chmod +x .git/hooks/pre-push
 	@echo "Git hooks installed successfully"
-
-screenshots: check-deps $(CLIENT_MARKER) ## Take screenshots for visual testing
-	@set -a && . ./dev.env && set +a && PC_EXIT_ON_END=true SERVER_CMD="./target/release/ramekin-server" SERVER_RESTART=exit_on_failure process-compose up -e dev.env -t=false --port "$${PROCESS_COMPOSE_PORT:-8180}" || true
-	@test -f logs/cookbook.png || (echo "Screenshots not found" && exit 1)
 
 generate-test-urls: ## Generate test URL list from top recipe sites
 	@cargo run -q --manifest-path cli/Cargo.toml -- generate-test-urls -o data/test-urls.json \

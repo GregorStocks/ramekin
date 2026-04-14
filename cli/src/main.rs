@@ -6,7 +6,6 @@ mod load_test;
 mod parse_html;
 mod pipeline;
 mod pipeline_orchestrator;
-mod screenshot;
 mod seed;
 
 use anyhow::Result;
@@ -97,27 +96,6 @@ enum Commands {
         /// Number of concurrent workers (default: 5)
         #[arg(long, default_value = "5")]
         concurrency: usize,
-    },
-    /// Take screenshots of the app as the test user
-    Screenshot {
-        /// UI URL
-        #[arg(long, env = "UI_BASE_URL")]
-        ui_url: String,
-        /// Username for authentication
-        #[arg(long, default_value = "t")]
-        username: String,
-        /// Password for authentication
-        #[arg(long, default_value = "t")]
-        password: String,
-        /// Output directory for screenshots (default: logs)
-        #[arg(long, default_value = "logs")]
-        output_dir: PathBuf,
-        /// Viewport width (default: 1280)
-        #[arg(long, default_value = "1280")]
-        width: u32,
-        /// Viewport height (default: 900)
-        #[arg(long, default_value = "900")]
-        height: u32,
     },
     /// Parse a recipe from an HTML file (offline, no server required)
     ParseHtml {
@@ -317,16 +295,6 @@ async fn main() -> Result<()> {
             concurrency,
         } => {
             load_test::load_test(&server_url, &ui_url, users, concurrency).await?;
-        }
-        Commands::Screenshot {
-            ui_url,
-            username,
-            password,
-            output_dir,
-            width,
-            height,
-        } => {
-            screenshot::screenshot(&ui_url, &username, &password, &output_dir, width, height)?;
         }
         Commands::ParseHtml { file, source_url } => {
             parse_html::parse_html(&file, &source_url)?;
