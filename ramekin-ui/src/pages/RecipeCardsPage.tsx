@@ -1,6 +1,7 @@
 import { createSignal, createMemo, For, Show, onMount } from "solid-js";
 import jsPDF from "jspdf";
 import { useAuth } from "../context/AuthContext";
+import { usePageTitle } from "../utils/pageTitle";
 import type { RecipeSummary } from "ramekin-client";
 
 type ImageData = {
@@ -64,6 +65,7 @@ async function fetchThumbnail(
 }
 
 export default function RecipeCardsPage() {
+  usePageTitle(() => "Recipe Cards");
   const { getRecipesApi, token } = useAuth();
 
   const [recipes, setRecipes] = createSignal<RecipeSummary[]>([]);

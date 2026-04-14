@@ -4,6 +4,7 @@ import {
   parsePaprikaArchive,
   type ParsedPaprikaRecipe,
 } from "../utils/paprikaImport";
+import { usePageTitle } from "../utils/pageTitle";
 import { ImportExtractionMethod } from "ramekin-client";
 
 type RecipeStatus =
@@ -18,6 +19,7 @@ interface RecipeRow {
 }
 
 export default function ImportPage() {
+  usePageTitle(() => "Import");
   const { getPhotosApi, getImportApi } = useAuth();
   const [rows, setRows] = createSignal<RecipeRow[]>([]);
   const [busy, setBusy] = createSignal(false);

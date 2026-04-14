@@ -15,6 +15,7 @@ import EnrichPreviewModal from "../components/EnrichPreviewModal";
 import VersionCompareModal from "../components/VersionCompareModal";
 import AddToShoppingListModal from "../components/AddToShoppingListModal";
 import { extractApiError } from "../utils/recipeFormHelpers";
+import { usePageTitle } from "../utils/pageTitle";
 import {
   MEAL_TYPES,
   MEAL_TYPE_LABELS,
@@ -97,6 +98,7 @@ export default function ViewRecipePage() {
       : null;
 
   const [recipe, setRecipe] = createSignal<RecipeResponse | null>(null);
+  usePageTitle(() => recipe()?.title);
   const [currentVersionId, setCurrentVersionId] = createSignal<string | null>(
     null,
   );

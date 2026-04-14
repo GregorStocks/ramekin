@@ -4,6 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import Modal from "../components/Modal";
 import PhotoThumbnail from "../components/PhotoThumbnail";
 import { extractApiError } from "../utils/recipeFormHelpers";
+import { usePageTitle } from "../utils/pageTitle";
 import {
   MEAL_TYPES,
   MEAL_TYPE_LABELS,
@@ -48,6 +49,7 @@ function formatDayHeader(d: Date): string {
 }
 
 export default function MealPlanPage() {
+  usePageTitle(() => "Meal Plan");
   const { getMealPlansApi, getRecipesApi, token } = useAuth();
 
   const [weekStart, setWeekStart] = createSignal(getMonday(new Date()));

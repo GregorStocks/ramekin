@@ -5,9 +5,11 @@ import { useNavigate, A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import RecipeForm from "../components/RecipeForm";
 import { extractApiError } from "../utils/recipeFormHelpers";
+import { usePageTitle } from "../utils/pageTitle";
 import type { Ingredient, ScrapeJobResponse } from "ramekin-client";
 
 export default function CreateRecipePage() {
+  usePageTitle(() => "New Recipe");
   const navigate = useNavigate();
   const { getRecipesApi, getPhotosApi, getScrapeApi, refreshTags, token } =
     useAuth();

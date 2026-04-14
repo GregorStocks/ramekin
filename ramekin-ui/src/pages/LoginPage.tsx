@@ -2,12 +2,14 @@ import { createSignal, Show } from "solid-js";
 import { useNavigate } from "@solidjs/router";
 import { AuthApi, Configuration } from "ramekin-client";
 import { useAuth } from "../context/AuthContext";
+import { usePageTitle } from "../utils/pageTitle";
 
 export default function LoginPage() {
   const navigate = useNavigate();
   const { setToken } = useAuth();
 
   const [isLogin, setIsLogin] = createSignal(true);
+  usePageTitle(() => (isLogin() ? "Sign In" : "Sign Up"));
   const [username, setUsername] = createSignal("");
   const [password, setPassword] = createSignal("");
   const [error, setError] = createSignal<string | null>(null);
