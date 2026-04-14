@@ -4,6 +4,7 @@ import { useParams, useNavigate, A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import RecipeForm from "../components/RecipeForm";
 import { extractApiError } from "../utils/recipeFormHelpers";
+import { usePageTitle } from "../utils/pageTitle";
 import type { Ingredient, RecipeResponse } from "ramekin-client";
 
 export default function EditRecipePage() {
@@ -13,6 +14,7 @@ export default function EditRecipePage() {
 
   const [loading, setLoading] = createSignal(true);
   const [title, setTitle] = createSignal("");
+  usePageTitle(() => (title() ? `Edit: ${title()}` : "Edit Recipe"));
   const [description, setDescription] = createSignal("");
   const [photoIds, setPhotoIds] = createSignal<string[]>([]);
   const [uploading, setUploading] = createSignal(false);

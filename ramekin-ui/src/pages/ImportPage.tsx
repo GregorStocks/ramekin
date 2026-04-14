@@ -4,6 +4,7 @@ import {
   parsePaprikaArchive,
   type ParsedPaprikaRecipe,
 } from "../utils/paprikaImport";
+import { usePageTitle } from "../utils/pageTitle";
 import { ImportExtractionMethod, type ScrapeApi } from "ramekin-client";
 
 type RecipeStatus =
@@ -40,6 +41,7 @@ async function pollJob(
 }
 
 export default function ImportPage() {
+  usePageTitle(() => "Import");
   const { getPhotosApi, getImportApi, getScrapeApi } = useAuth();
   const [rows, setRows] = createSignal<RecipeRow[]>([]);
   const [busy, setBusy] = createSignal(false);
