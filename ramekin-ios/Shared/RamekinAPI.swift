@@ -1,57 +1,5 @@
 import Foundation
 
-/// URLSession delegate that accepts self-signed certificates for development
-private class InsecureSessionDelegate: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
-    func urlSession(
-        _ session: URLSession,
-        didReceive challenge: URLAuthenticationChallenge,
-        completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
-    ) {
-        acceptChallenge(challenge, completionHandler: completionHandler)
-    }
-
-    func urlSession(
-        _ session: URLSession,
-        task: URLSessionTask,
-        didReceive challenge: URLAuthenticationChallenge,
-        completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
-    ) {
-        acceptChallenge(challenge, completionHandler: completionHandler)
-    }
-
-    private func acceptChallenge(
-        _ challenge: URLAuthenticationChallenge,
-        completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
-    ) {
-        if let serverTrust = challenge.protectionSpace.serverTrust {
-            completionHandler(.useCredential, URLCredential(trust: serverTrust))
-        } else {
-            completionHandler(.performDefaultHandling, nil)
-        }
-    }
-}
-
-/// Shared insecure URLSession for development
-private let insecureSession: URLSession = {
-    URLSession(configuration: .default, delegate: InsecureSessionDelegate(), delegateQueue: nil)
-}()
-
-/// Request builder that accepts self-signed certificates
-private class InsecureRequestBuilder<T>: URLSessionRequestBuilder<T> {
-    override func createURLSession() -> URLSessionProtocol { insecureSession }
-}
-
-/// Decodable request builder that accepts self-signed certificates
-private class InsecureDecodableBuilder<T: Decodable>: URLSessionDecodableRequestBuilder<T> {
-    override func createURLSession() -> URLSessionProtocol { insecureSession }
-}
-
-/// Factory for insecure request builders
-private class InsecureBuilderFactory: RequestBuilderFactory {
-    func getNonDecodableBuilder<T>() -> RequestBuilder<T>.Type { InsecureRequestBuilder<T>.self }
-    func getBuilder<T: Decodable>() -> RequestBuilder<T>.Type { InsecureDecodableBuilder<T>.self }
-}
-
 /// API client for interacting with the Ramekin server
 class RamekinAPI {
     static let shared = RamekinAPI()
@@ -87,6 +35,14 @@ class RamekinAPI {
         KeychainHelper.shared.getToken()
     }
 
+    var accessClientId: String? {
+        KeychainHelper.shared.getAccessClientId()
+    }
+
+    var accessClientSecret: String? {
+        KeychainHelper.shared.getAccessClientSecret()
+    }
+
     var isLoggedIn: Bool {
         authToken != nil && serverURL != nil
     }
@@ -100,6 +56,26 @@ class RamekinAPI {
             RamekinClientAPI.customHeaders["Authorization"] = "Bearer \(token)"
         } else {
             RamekinClientAPI.customHeaders.removeValue(forKey: "Authorization")
+        }
+        if let id = accessClientId {
+            RamekinClientAPI.customHeaders["CF-Access-Client-Id"] = id
+        } else {
+            RamekinClientAPI.customHeaders.removeValue(forKey: "CF-Access-Client-Id")
+        }
+        if let secret = accessClientSecret {
+            RamekinClientAPI.customHeaders["CF-Access-Client-Secret"] = secret
+        } else {
+            RamekinClientAPI.customHeaders.removeValue(forKey: "CF-Access-Client-Secret")
+        }
+    }
+
+    /// Attach Cloudflare Access service-token headers to a request if configured.
+    func applyAccessHeaders(to request: inout URLRequest) {
+        if let id = accessClientId {
+            request.setValue(id, forHTTPHeaderField: "CF-Access-Client-Id")
+        }
+        if let secret = accessClientSecret {
+            request.setValue(secret, forHTTPHeaderField: "CF-Access-Client-Secret")
         }
     }
 
@@ -172,7 +148,13 @@ class RamekinAPI {
     // MARK: - Authentication
 
     /// Login to the Ramekin server
-    func login(serverURL: String, username: String, password: String) async throws -> String {
+    func login(
+        serverURL: String,
+        username: String,
+        password: String,
+        accessClientId: String? = nil,
+        accessClientSecret: String? = nil
+    ) async throws -> String {
         // Normalize URL
         var normalizedURL = serverURL.trimmingCharacters(in: .whitespacesAndNewlines)
         if !normalizedURL.hasPrefix("http://") && !normalizedURL.hasPrefix("https://") {
@@ -182,6 +164,20 @@ class RamekinAPI {
             normalizedURL = String(normalizedURL.dropLast())
         }
 
+        // Persist (or clear) access credentials before the login call so the
+        // request itself carries the current CF-Access headers through the
+        // Access policy. Empty or nil clears so stale values aren't re-sent.
+        if let id = accessClientId, !id.isEmpty {
+            _ = KeychainHelper.shared.saveAccessClientId(id)
+        } else {
+            KeychainHelper.shared.deleteAccessClientId()
+        }
+        if let secret = accessClientSecret, !secret.isEmpty {
+            _ = KeychainHelper.shared.saveAccessClientSecret(secret)
+        } else {
+            KeychainHelper.shared.deleteAccessClientSecret()
+        }
+
         guard let url = URL(string: "\(normalizedURL)/api/auth/login") else {
             throw APIError.invalidURL
         }
@@ -189,6 +185,7 @@ class RamekinAPI {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        applyAccessHeaders(to: &request)
 
         let body = LoginRequest(username: username, password: password)
         request.httpBody = try JSONEncoder().encode(body)
@@ -255,6 +252,7 @@ class RamekinAPI {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        applyAccessHeaders(to: &request)
 
         let body = ScrapeRequest(url: urlString)
         request.httpBody = try JSONEncoder().encode(body)
@@ -311,6 +309,7 @@ class RamekinAPI {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        applyAccessHeaders(to: &request)
 
         let (data, response) = try await urlSession.data(for: request)
 
@@ -344,6 +343,7 @@ class RamekinAPI {
 
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
+        applyAccessHeaders(to: &request)
 
         let (_, response) = try await urlSession.data(for: request)
 
@@ -381,6 +381,7 @@ extension RamekinAPI {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        applyAccessHeaders(to: &request)
 
         let (data, response) = try await urlSession.data(for: request)
 
@@ -418,6 +419,7 @@ extension RamekinAPI {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        applyAccessHeaders(to: &request)
         request.httpBody = try JSONSerialization.data(withJSONObject: body)
 
         let (data, response) = try await urlSession.data(for: request)
@@ -444,6 +446,7 @@ extension RamekinAPI {
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        applyAccessHeaders(to: &request)
 
         let (data, response) = try await urlSession.data(for: request)
 

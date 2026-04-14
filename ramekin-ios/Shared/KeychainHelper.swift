@@ -55,6 +55,37 @@ class KeychainHelper {
         return String(data: data, encoding: .utf8)
     }
 
+    // MARK: - Cloudflare Access Service Token
+
+    private let accessClientIdKey = "accessClientId"
+    private let accessClientSecretKey = "accessClientSecret"
+
+    func saveAccessClientId(_ value: String) -> Bool {
+        return save(key: accessClientIdKey, data: Data(value.utf8))
+    }
+
+    func getAccessClientId() -> String? {
+        guard let data = load(key: accessClientIdKey) else { return nil }
+        return String(data: data, encoding: .utf8)
+    }
+
+    func deleteAccessClientId() {
+        delete(key: accessClientIdKey)
+    }
+
+    func saveAccessClientSecret(_ value: String) -> Bool {
+        return save(key: accessClientSecretKey, data: Data(value.utf8))
+    }
+
+    func getAccessClientSecret() -> String? {
+        guard let data = load(key: accessClientSecretKey) else { return nil }
+        return String(data: data, encoding: .utf8)
+    }
+
+    func deleteAccessClientSecret() {
+        delete(key: accessClientSecretKey)
+    }
+
     // MARK: - Private Keychain Operations
 
     private func save(key: String, data: Data) -> Bool {
@@ -107,5 +138,7 @@ class KeychainHelper {
         deleteToken()
         delete(key: serverURLKey)
         delete(key: usernameKey)
+        delete(key: accessClientIdKey)
+        delete(key: accessClientSecretKey)
     }
 }
