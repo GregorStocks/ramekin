@@ -4,11 +4,12 @@ import {
   parsePaprikaArchive,
   type ParsedPaprikaRecipe,
 } from "../utils/paprikaImport";
-import { ImportExtractionMethod } from "ramekin-client";
+import { ImportExtractionMethod, type ScrapeApi } from "ramekin-client";
 
 type RecipeStatus =
   | { state: "pending" }
   | { state: "importing" }
+  | { state: "queued"; jobId: string }
   | { state: "done"; jobId: string }
   | { state: "error"; message: string };
 
@@ -17,8 +18,24 @@ interface RecipeRow {
   status: RecipeStatus;
 }
 
+const JOB_POLL_INTERVAL_MS = 2000;
+const TERMINAL_STATUSES = new Set(["completed", "failed"]);
+
+async function pollJob(
+  scrapeApi: ScrapeApi,
+  jobId: string,
+): Promise<{ status: string; error?: string }> {
+  while (true) {
+    const job = await scrapeApi.getScrape({ id: jobId });
+    if (TERMINAL_STATUSES.has(job.status)) {
+      return { status: job.status, error: job.error ?? undefined };
+    }
+    await new Promise((resolve) => setTimeout(resolve, JOB_POLL_INTERVAL_MS));
+  }
+}
+
 export default function ImportPage() {
-  const { getPhotosApi, getImportApi } = useAuth();
+  const { getPhotosApi, getImportApi, getScrapeApi } = useAuth();
   const [rows, setRows] = createSignal<RecipeRow[]>([]);
   const [busy, setBusy] = createSignal(false);
   const [fileError, setFileError] = createSignal<string | null>(null);
@@ -58,6 +75,7 @@ export default function ImportPage() {
 
     const photosApi = getPhotosApi();
     const importApi = getImportApi();
+    const scrapeApi = getScrapeApi();
 
     for (let i = 0; i < parsed.length; i++) {
       const recipe = parsed[i];
@@ -66,13 +84,20 @@ export default function ImportPage() {
       try {
         const photoIds: string[] = [];
         for (const photoBytes of recipe.photos) {
-          const blob = new Blob([photoBytes as BlobPart], {
-            type: "image/jpeg",
-          });
-          const response = await photosApi.upload({
-            file: new File([blob], "photo.jpg", { type: "image/jpeg" }),
-          });
-          photoIds.push(response.id);
+          try {
+            const blob = new Blob([photoBytes as BlobPart], {
+              type: "image/jpeg",
+            });
+            const response = await photosApi.upload({
+              file: new File([blob], "photo.jpg", { type: "image/jpeg" }),
+            });
+            photoIds.push(response.id);
+          } catch (err) {
+            console.warn(
+              `Photo upload failed for recipe "${recipe.name}"; continuing without it`,
+              err,
+            );
+          }
         }
 
         const response = await importApi.importRecipe({
@@ -82,7 +107,17 @@ export default function ImportPage() {
             extractionMethod: ImportExtractionMethod.Paprika,
           },
         });
-        updateRow(i, { state: "done", jobId: response.jobId });
+        updateRow(i, { state: "queued", jobId: response.jobId });
+
+        const terminal = await pollJob(scrapeApi, response.jobId);
+        if (terminal.status === "completed") {
+          updateRow(i, { state: "done", jobId: response.jobId });
+        } else {
+          updateRow(i, {
+            state: "error",
+            message: terminal.error ?? "Import job failed",
+          });
+        }
       } catch (err) {
         updateRow(i, {
           state: "error",
@@ -109,6 +144,8 @@ export default function ImportPage() {
         return "Waiting...";
       case "importing":
         return "Importing...";
+      case "queued":
+        return "Queued...";
       case "done":
         return "Imported";
       case "error":
