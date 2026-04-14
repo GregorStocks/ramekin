@@ -63,6 +63,9 @@ const Layout: ParentComponent = (props) => {
           <A href="/recipe-cards" onClick={closeMobileNav}>
             Cards PDF
           </A>
+          <A href="/import" onClick={closeMobileNav}>
+            Import
+          </A>
           <A
             href="/recipes/new"
             class="btn btn-primary btn-header"
