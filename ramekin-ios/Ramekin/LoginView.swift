@@ -6,6 +6,8 @@ struct LoginView: View {
     @State private var serverURL: String = "https://media.noodles:5173"
     @State private var username: String = "t"
     @State private var password: String = "t"
+    @State private var accessClientId: String = ""
+    @State private var accessClientSecret: String = ""
 
     @State private var isLoading: Bool = false
     @State private var errorMessage: String?
@@ -13,7 +15,7 @@ struct LoginView: View {
     @FocusState private var focusedField: Field?
 
     enum Field {
-        case serverURL, username, password
+        case serverURL, username, password, accessClientId, accessClientSecret
     }
 
     var body: some View {
@@ -61,6 +63,20 @@ struct LoginView: View {
                 SecureField("Password", text: $password)
                     .textContentType(.password)
                     .focused($focusedField, equals: .password)
+                    .submitLabel(.next)
+                    .onSubmit { focusedField = .accessClientId }
+            }
+
+            Section("Cloudflare Access (optional)") {
+                TextField("Client ID", text: $accessClientId)
+                    .autocapitalization(.none)
+                    .autocorrectionDisabled()
+                    .focused($focusedField, equals: .accessClientId)
+                    .submitLabel(.next)
+                    .onSubmit { focusedField = .accessClientSecret }
+
+                SecureField("Client Secret", text: $accessClientSecret)
+                    .focused($focusedField, equals: .accessClientSecret)
                     .submitLabel(.go)
                     .onSubmit { login() }
             }
@@ -102,9 +118,15 @@ struct LoginView: View {
         .navigationTitle("Sign In")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
-            // Pre-fill saved server URL if available
+            // Pre-fill saved credentials if available
             if let savedURL = KeychainHelper.shared.getServerURL() {
                 serverURL = savedURL
+            }
+            if let savedId = KeychainHelper.shared.getAccessClientId() {
+                accessClientId = savedId
+            }
+            if let savedSecret = KeychainHelper.shared.getAccessClientSecret() {
+                accessClientSecret = savedSecret
             }
         }
     }
@@ -120,7 +142,9 @@ struct LoginView: View {
                 _ = try await RamekinAPI.shared.login(
                     serverURL: serverURL,
                     username: username,
-                    password: password
+                    password: password,
+                    accessClientId: accessClientId.isEmpty ? nil : accessClientId,
+                    accessClientSecret: accessClientSecret.isEmpty ? nil : accessClientSecret
                 )
 
                 await MainActor.run {

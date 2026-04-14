@@ -23,6 +23,7 @@ class AuthenticatedImageLoader: ObservableObject {
         currentTask = Task {
             var request = URLRequest(url: url)
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            RamekinAPI.shared.applyAccessHeaders(to: &request)
 
             do {
                 let (data, response) = try await URLSession.shared.data(for: request)
