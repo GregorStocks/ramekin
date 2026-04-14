@@ -34,19 +34,33 @@ async function fetchThumbnail(
   photoId: string,
   token: string,
 ): Promise<ImageData> {
-  const resp = await fetch(`/api/photos/${photoId}/thumbnail?size=1200`, {
-    headers: { Authorization: `Bearer ${token}` },
-  });
-  if (!resp.ok) {
-    throw new Error(
-      `Failed to fetch thumbnail ${photoId}: ${resp.status} ${resp.statusText}`,
-    );
+  const maxAttempts = 4;
+  let lastErr: unknown;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      const resp = await fetch(`/api/photos/${photoId}/thumbnail?size=1200`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      if (!resp.ok) {
+        throw new Error(
+          `Failed to fetch thumbnail ${photoId}: ${resp.status} ${resp.statusText}`,
+        );
+      }
+      const blob = await resp.blob();
+      const dataUrl = await blobToDataUrl(blob);
+      const format: "JPEG" | "PNG" = blob.type.includes("png") ? "PNG" : "JPEG";
+      const { w, h } = await getImagePixelSize(dataUrl);
+      return { dataUrl, format, pxW: w, pxH: h };
+    } catch (e) {
+      lastErr = e;
+      if (attempt === maxAttempts) break;
+      const backoffMs = 250 * 2 ** (attempt - 1);
+      await new Promise((r) => setTimeout(r, backoffMs));
+    }
   }
-  const blob = await resp.blob();
-  const dataUrl = await blobToDataUrl(blob);
-  const format: "JPEG" | "PNG" = blob.type.includes("png") ? "PNG" : "JPEG";
-  const { w, h } = await getImagePixelSize(dataUrl);
-  return { dataUrl, format, pxW: w, pxH: h };
+  throw lastErr instanceof Error
+    ? lastErr
+    : new Error(`Failed to fetch thumbnail ${photoId}`);
 }
 
 export default function RecipeCardsPage() {
