@@ -13,7 +13,7 @@ ramekin-core = { path = "../ramekin-core" }
 clap = { version = "4.6", features = ["derive", "env"] }
 
 # Async runtime
-tokio = { version = "1.51", features = ["full"] }
+tokio = { version = "1.52", features = ["full"] }
 futures = "0.3"
 
 # HTTP client for RPC

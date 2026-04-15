@@ -17,6 +17,8 @@ type ImageData = {
   pxH: number;
 };
 
+const PHOTO_ASPECT_RATIO = 3 / 2;
+
 async function blobToDataUrl(blob: Blob): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -35,6 +37,121 @@ async function getImagePixelSize(
     img.onerror = () => reject(new Error("image decode failed"));
     img.src = dataUrl;
   });
+}
+
+async function cropImageToAspectRatio(
+  img: ImageData,
+  targetRatio: number,
+): Promise<ImageData> {
+  if (targetRatio <= 0) return img;
+
+  const sourceRatio = img.pxW / img.pxH;
+  if (Math.abs(sourceRatio - targetRatio) < 0.01) return img;
+
+  const image = new Image();
+  image.src = img.dataUrl;
+  await image.decode();
+
+  let sourceX = 0;
+  let sourceY = 0;
+  let sourceW = img.pxW;
+  let sourceH = img.pxH;
+
+  if (sourceRatio > targetRatio) {
+    sourceW = Math.round(img.pxH * targetRatio);
+    sourceX = Math.round((img.pxW - sourceW) / 2);
+  } else {
+    sourceH = Math.round(img.pxW / targetRatio);
+    sourceY = Math.round((img.pxH - sourceH) / 2);
+  }
+
+  const canvas = document.createElement("canvas");
+  canvas.width = sourceW;
+  canvas.height = sourceH;
+
+  const ctx = canvas.getContext("2d");
+  if (!ctx) {
+    throw new Error("Failed to create canvas context for image crop");
+  }
+
+  ctx.drawImage(
+    image,
+    sourceX,
+    sourceY,
+    sourceW,
+    sourceH,
+    0,
+    0,
+    sourceW,
+    sourceH,
+  );
+
+  const mimeType = img.format === "PNG" ? "image/png" : "image/jpeg";
+  return {
+    dataUrl: canvas.toDataURL(mimeType, 0.92),
+    format: img.format,
+    pxW: sourceW,
+    pxH: sourceH,
+  };
+}
+
+function uniqueSorted(values: number[]): number[] {
+  return [...new Set(values.map((value) => value.toFixed(4)))]
+    .map((value) => Number.parseFloat(value))
+    .sort((a, b) => a - b);
+}
+
+function drawCutGuides(
+  doc: jsPDF,
+  pageW: number,
+  pageH: number,
+  xCuts: number[],
+  yCuts: number[],
+  gridBounds: { left: number; right: number; top: number; bottom: number },
+) {
+  const edgeInset = 0.08;
+  const desiredGuideLen = 0.22;
+  const guideGap = 0.04;
+
+  const topGuideLen = Math.max(
+    0,
+    Math.min(desiredGuideLen, gridBounds.top - edgeInset - guideGap),
+  );
+  const bottomGuideLen = Math.max(
+    0,
+    Math.min(desiredGuideLen, pageH - gridBounds.bottom - edgeInset - guideGap),
+  );
+  const leftGuideLen = Math.max(
+    0,
+    Math.min(desiredGuideLen, gridBounds.left - edgeInset - guideGap),
+  );
+  const rightGuideLen = Math.max(
+    0,
+    Math.min(desiredGuideLen, pageW - gridBounds.right - edgeInset - guideGap),
+  );
+
+  doc.setDrawColor(120);
+  doc.setLineWidth(0.01);
+
+  for (const x of xCuts) {
+    if (topGuideLen > 0) {
+      doc.line(x, edgeInset, x, edgeInset + topGuideLen);
+    }
+    if (bottomGuideLen > 0) {
+      doc.line(x, pageH - edgeInset - bottomGuideLen, x, pageH - edgeInset);
+    }
+  }
+
+  for (const y of yCuts) {
+    if (leftGuideLen > 0) {
+      doc.line(edgeInset, y, edgeInset + leftGuideLen, y);
+    }
+    if (rightGuideLen > 0) {
+      doc.line(pageW - edgeInset - rightGuideLen, y, pageW - edgeInset, y);
+    }
+  }
+
+  doc.setDrawColor(0);
 }
 
 async function fetchThumbnail(
@@ -80,6 +197,7 @@ export default function PdfExportModal(props: Props) {
   const [orientation, setOrientation] = createSignal<"portrait" | "landscape">(
     "landscape",
   );
+  const [showCutGuides, setShowCutGuides] = createSignal(false);
   const [showPageNumbers, setShowPageNumbers] = createSignal(true);
   const [generating, setGenerating] = createSignal(false);
   const [progress, setProgress] = createSignal<{ done: number; total: number }>(
@@ -175,6 +293,30 @@ export default function PdfExportModal(props: Props) {
       const gridH = rows * footH + (rows - 1) * g;
       const startX = (pageW - gridW) / 2;
       const startY = (pageH - gridH) / 2;
+      const bHalf = border / 2;
+      const xCuts = uniqueSorted(
+        Array.from({ length: cols }, (_, col) => {
+          const left = startX + col * (footW + g);
+          return [left, left + w + border];
+        }).flat(),
+      );
+      const yCuts = uniqueSorted(
+        Array.from({ length: rows }, (_, row) => {
+          const top = startY + row * (footH + g);
+          return [top, top + h + border];
+        }).flat(),
+      );
+      const drawPageDecorations = (pageIdx: number) => {
+        if (showCutGuides()) {
+          drawCutGuides(doc, pageW, pageH, xCuts, yCuts, {
+            left: startX,
+            right: startX + gridW,
+            top: startY,
+            bottom: startY + gridH,
+          });
+        }
+        drawPageNumber(pageIdx);
+      };
 
       const pageNumFontPt = 9;
       const pageNumHeightIn = pageNumFontPt / 72;
@@ -191,14 +333,14 @@ export default function PdfExportModal(props: Props) {
         doc.setTextColor(0);
       };
 
-      drawPageNumber(0);
+      drawPageDecorations(0);
 
       for (let i = 0; i < chosen.length; i++) {
         const recipe = chosen[i];
         const slot = i % perPage;
         if (i > 0 && slot === 0) {
           doc.addPage();
-          drawPageNumber(Math.floor(i / perPage));
+          drawPageDecorations(Math.floor(i / perPage));
         }
 
         const col = slot % cols;
@@ -209,7 +351,6 @@ export default function PdfExportModal(props: Props) {
         if (border > 0) {
           doc.setLineWidth(border);
           doc.setDrawColor(0, 0, 0);
-          const bHalf = border / 2;
           doc.rect(x - bHalf, y - bHalf, w + border, h + border, "S");
         }
 
@@ -223,17 +364,15 @@ export default function PdfExportModal(props: Props) {
         const imgAreaH = innerH - titleAreaH;
 
         const img: ImageData | null = recipe.thumbnailPhotoId
-          ? await fetchThumbnail(recipe.thumbnailPhotoId, tok)
+          ? await cropImageToAspectRatio(
+              await fetchThumbnail(recipe.thumbnailPhotoId, tok),
+              PHOTO_ASPECT_RATIO,
+            )
           : null;
 
         if (img && imgAreaH > 0) {
-          const ratio = img.pxW / img.pxH;
-          let drawW = innerW;
-          let drawH = drawW / ratio;
-          if (drawH > imgAreaH) {
-            drawH = imgAreaH;
-            drawW = drawH * ratio;
-          }
+          const drawW = Math.min(innerW, imgAreaH * PHOTO_ASPECT_RATIO);
+          const drawH = drawW / PHOTO_ASPECT_RATIO;
           const drawX = innerX + (innerW - drawW) / 2;
           const drawY = innerY + (imgAreaH - drawH) / 2;
           doc.addImage(img.dataUrl, img.format, drawX, drawY, drawW, drawH);
@@ -391,6 +530,16 @@ export default function PdfExportModal(props: Props) {
           <label>
             <input
               type="checkbox"
+              checked={showCutGuides()}
+              onChange={(e) => setShowCutGuides(e.currentTarget.checked)}
+            />{" "}
+            Add cutting guides
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            <input
+              type="checkbox"
               checked={showPageNumbers()}
               onChange={(e) => setShowPageNumbers(e.currentTarget.checked)}
             />{" "}
@@ -401,7 +550,7 @@ export default function PdfExportModal(props: Props) {
         <p class="recipe-cards-layout-info">
           <Show when={layout().perPage > 0} fallback={<>{layout().error}</>}>
             {layout().cols}×{layout().rows} grid = {layout().perPage} cards per
-            page
+            page. Photos crop to a fixed 3:2 landscape frame.
           </Show>
         </p>
 
