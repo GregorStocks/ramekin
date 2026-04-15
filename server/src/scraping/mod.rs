@@ -920,7 +920,13 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
             (STATUS_SCRAPING, FetchHtmlStep::NAME)
         }
         Some(STATUS_PARSING) => {
-            if has_fetch_images_output {
+            // Photo-only rescrapes fail at save_recipe specifically when
+            // fetch_images returned an empty photo_ids list. Re-running
+            // save_recipe with the same stale output would just fail again,
+            // so for this mode we always rewind to fetch_images on retry.
+            if job.photo_only {
+                (STATUS_PARSING, FetchImagesStepMeta::NAME)
+            } else if has_fetch_images_output {
                 // Have fetch_images output, try save again
                 (STATUS_PARSING, SaveRecipeStepMeta::NAME)
             } else if has_extract_output {

@@ -513,6 +513,10 @@ export default function CookbookPage() {
       setBulkMode(false);
       setSelected(new Set<string>());
       setBulkRecipes([]);
+      // Bump the request ID so any in-flight selectAll discards its
+      // results instead of repopulating selected/bulkRecipes after the
+      // user has already exited bulk mode.
+      setBulkRequestId((id) => id + 1);
     } else {
       setBulkMode(true);
     }
