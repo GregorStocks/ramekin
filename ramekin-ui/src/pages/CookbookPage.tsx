@@ -525,14 +525,17 @@ export default function CookbookPage() {
 
   // Fetch *every* recipe matching the current filter (across all pages).
   // Returns the full list. Also caches it on bulkRecipes() so later actions
-  // don't need to refetch.
+  // don't need to refetch. We always paginate with a deterministic sort
+  // (updated_at desc) regardless of the user's visible sort — otherwise
+  // random order gives a different shuffle per page, so offset pagination
+  // would duplicate and skip rows and the resulting Set would silently miss
+  // matching recipes.
   const fetchAllMatching = async (): Promise<RecipeSummary[]> => {
     const cached = bulkRecipes();
     if (cached.length > 0 && cached.length === total()) {
       return cached;
     }
     const q = searchQuery();
-    const { sortBy, sortDir } = getSortParams(sortOption());
     const api = getRecipesApi();
     const all: RecipeSummary[] = [];
     const pageSize = 200;
@@ -542,8 +545,8 @@ export default function CookbookPage() {
         limit: pageSize,
         offset,
         q: q || undefined,
-        sortBy,
-        sortDir,
+        sortBy: "updated_at",
+        sortDir: "desc",
       });
       all.push(...resp.recipes);
       offset += resp.recipes.length;
