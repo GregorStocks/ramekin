@@ -911,8 +911,23 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
     let has_fetch_output = get_latest_step_output(pool, job_id, FetchHtmlStep::NAME)?.is_some();
     let has_extract_output =
         get_latest_step_output(pool, job_id, ExtractRecipeStep::NAME)?.is_some();
-    let has_fetch_images_output =
-        get_latest_step_output(pool, job_id, FetchImagesStepMeta::NAME)?.is_some();
+    let fetch_images_output = get_latest_step_output(pool, job_id, FetchImagesStepMeta::NAME)?;
+    let has_fetch_images_output = fetch_images_output.is_some();
+
+    // For photo-only retries, the loud-failure path makes save_recipe fail
+    // specifically when fetch_images produced an empty photo_ids list. In
+    // that case replaying save_recipe with the same stale output just fails
+    // again. We detect this by inspecting the actual fetch_images output —
+    // not just its existence — so transient save_recipe failures (e.g. DB
+    // errors) still resume at save and don't redundantly re-download photos
+    // or create duplicate Photo rows.
+    let photo_only_empty_fetch = job.photo_only
+        && fetch_images_output
+            .as_ref()
+            .and_then(|o| o.output.get("photo_ids"))
+            .and_then(|v| v.as_array())
+            .map(|arr| arr.is_empty())
+            .unwrap_or(false);
 
     let (resume_status, resume_step) = match job.failed_at_step.as_deref() {
         Some(STATUS_SCRAPING) => {
@@ -920,17 +935,9 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
             (STATUS_SCRAPING, FetchHtmlStep::NAME)
         }
         Some(STATUS_PARSING) => {
-            // Photo-only rescrapes that reach save_recipe fail when
-            // fetch_images produced an empty photo_ids list; replaying
-            // save_recipe with the same stale output would just fail
-            // again, so we must rewind past fetch_images. We still walk
-            // back through earlier outputs to handle the case where the
-            // photo-only job failed before save_recipe (e.g. extract failed)
-            // — otherwise jumping straight to fetch_images would error with
-            // "extract_recipe output not found".
-            let photo_only_skip_save = job.photo_only && has_fetch_images_output;
-            if has_fetch_images_output && !photo_only_skip_save {
-                // Have fetch_images output, try save again
+            if has_fetch_images_output && !photo_only_empty_fetch {
+                // Have fetch_images output with at least one photo (or this
+                // is a normal rescrape) — try save again
                 (STATUS_PARSING, SaveRecipeStepMeta::NAME)
             } else if has_extract_output {
                 // Have extract output, try fetch_images
