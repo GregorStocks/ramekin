@@ -11,8 +11,9 @@ const startTime = new Date().toLocaleString();
 const formatBuildTime = (iso: string) => new Date(iso).toLocaleString();
 
 const Layout: ParentComponent = (props) => {
-  const { setToken } = useAuth();
+  const { setToken, token } = useAuth();
   const [isMobileNavOpen, setIsMobileNavOpen] = createSignal(false);
+  const [isExporting, setIsExporting] = createSignal(false);
 
   const closeMobileNav = () => {
     setIsMobileNavOpen(false);
@@ -21,6 +22,38 @@ const Layout: ParentComponent = (props) => {
   const logout = () => {
     closeMobileNav();
     setToken(null);
+  };
+
+  const exportAllRecipes = async () => {
+    if (isExporting()) return;
+    setIsExporting(true);
+    try {
+      const t = token();
+      if (!t) throw new Error("not authenticated");
+      const response = await fetch("/api/recipes/export", {
+        headers: { Authorization: `Bearer ${t}` },
+      });
+      if (!response.ok) {
+        throw new Error(`export failed: ${response.status}`);
+      }
+      const disposition = response.headers.get("content-disposition") ?? "";
+      const match = disposition.match(/filename="?([^"]+)"?/);
+      const filename =
+        match?.[1] ??
+        `recipes-${new Date().toISOString().replace(/[:.]/g, "-")}.paprikarecipes`;
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      closeMobileNav();
+    } finally {
+      setIsExporting(false);
+    }
   };
 
   return (
@@ -57,6 +90,14 @@ const Layout: ParentComponent = (props) => {
           <A href="/shopping-list" onClick={closeMobileNav}>
             Shopping List
           </A>
+          <button
+            type="button"
+            class="nav-link-button"
+            onClick={exportAllRecipes}
+            disabled={isExporting()}
+          >
+            {isExporting() ? "Exporting…" : "Export"}
+          </button>
           <A href="/tags" onClick={closeMobileNav}>
             Tags
           </A>
