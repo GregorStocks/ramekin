@@ -188,17 +188,17 @@ async function fetchThumbnail(
 }
 
 export default function PdfExportModal(props: Props) {
-  const [cardW, setCardW] = createSignal(3.5);
-  const [cardH, setCardH] = createSignal(2.5);
+  const [cardW, setCardW] = createSignal(2);
+  const [cardH, setCardH] = createSignal(2);
   const [marginXIn, setMarginXIn] = createSignal(0.75);
   const [marginYIn, setMarginYIn] = createSignal(0.75);
-  const [gutterIn, setGutterIn] = createSignal(0.2);
+  const [gutterIn, setGutterIn] = createSignal(0.15);
   const [borderIn, setBorderIn] = createSignal(0);
   const [orientation, setOrientation] = createSignal<"portrait" | "landscape">(
-    "portrait",
+    "landscape",
   );
   const [showCutGuides, setShowCutGuides] = createSignal(false);
-  const [showPageNumbers, setShowPageNumbers] = createSignal(false);
+  const [showPageNumbers, setShowPageNumbers] = createSignal(true);
   const [generating, setGenerating] = createSignal(false);
   const [progress, setProgress] = createSignal<{ done: number; total: number }>(
     { done: 0, total: 0 },
