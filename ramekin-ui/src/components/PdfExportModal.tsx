@@ -176,12 +176,15 @@ export default function PdfExportModal(props: Props) {
       const startX = (pageW - gridW) / 2;
       const startY = (pageH - gridH) / 2;
 
+      const pageNumFontPt = 9;
+      const pageNumHeightIn = pageNumFontPt / 72;
+      const pageNumBaselineY = pageH - Math.max(mY / 2, pageNumHeightIn * 0.75);
       const drawPageNumber = (pageIdx: number) => {
         if (!withPageNums) return;
         const label = `${pageIdx + 1} / ${totalPages}`;
-        doc.setFontSize(9);
+        doc.setFontSize(pageNumFontPt);
         doc.setTextColor(120);
-        doc.text(label, pageW / 2, pageH - mY / 2, {
+        doc.text(label, pageW / 2, pageNumBaselineY, {
           align: "center",
           baseline: "middle",
         });
