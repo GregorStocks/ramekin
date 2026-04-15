@@ -8,8 +8,10 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import os
 import re
 import socket
+import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -237,6 +239,78 @@ def write_env_file(
     output_path.write_text(rendered, encoding="utf-8")
 
 
+def postgres_is_ready(database_host: str, database_port: int) -> bool:
+    """Return whether postgres is reachable on the configured host/port."""
+    try:
+        result = subprocess.run(
+            [
+                "pg_isready",
+                "-h",
+                database_host,
+                "-p",
+                str(database_port),
+                "-U",
+                "ramekin",
+            ],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+    except FileNotFoundError:
+        return False
+
+    return result.returncode == 0
+
+
+def ensure_database_exists(
+    database_host: str, database_port: int, database_name: str
+) -> None:
+    """Create the database unless it already exists."""
+    result = subprocess.run(
+        [
+            "createdb",
+            "-h",
+            database_host,
+            "-p",
+            str(database_port),
+            "-U",
+            "ramekin",
+            "--no-password",
+            database_name,
+        ],
+        check=False,
+        capture_output=True,
+        text=True,
+        env={**os.environ, "PGPASSWORD": "ramekin"},
+    )
+    if result.returncode == 0:
+        print(f"Created database: {database_name}")
+        return
+
+    stderr = result.stderr.strip()
+    if "already exists" in stderr.lower():
+        print(f"Database already exists: {database_name}")
+        return
+
+    detail = stderr or "createdb exited without error output"
+    raise SystemExit(f"Failed to create database {database_name}: {detail}")
+
+
+def create_workspace_databases_if_available(
+    config: GeneratedConfig, database_host: str, database_port: int
+) -> None:
+    """Create workspace databases when postgres is already running."""
+    if not postgres_is_ready(database_host, database_port):
+        print(
+            "Postgres not reachable at "
+            f"{database_host}:{database_port}; skipped workspace database creation."
+        )
+        return
+
+    ensure_database_exists(database_host, database_port, config.dev_database_name)
+    ensure_database_exists(database_host, database_port, config.test_database_name)
+
+
 def print_summary(
     config: GeneratedConfig, database_host: str, database_port: int
 ) -> None:
@@ -298,6 +372,9 @@ def main() -> None:
     ensure_outputs_are_writable(output_paths, args.force)
     write_env_file(root / "dev.env.example", output_paths[0], dev_overrides)
     write_env_file(root / "test.env.example", output_paths[1], test_overrides)
+    create_workspace_databases_if_available(
+        config, args.database_host, args.database_port
+    )
     print_summary(config, args.database_host, args.database_port)
 
 
