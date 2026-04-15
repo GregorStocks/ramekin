@@ -26,8 +26,13 @@ pub fn spawn_dimension_backfill(pool: Arc<DbPool>) {
 fn run_backfill(pool: &DbPool) -> Result<(), String> {
     let mut conn = pool.get().map_err(|e| e.to_string())?;
 
+    // A photo needs backfill when *neither* dimensions nor file_size have been
+    // written yet. We use file_size as the "attempted" flag so undecodable
+    // photos can leave width/height NULL (excluding them from dim filters)
+    // while still dropping out of this query.
     let total_pending: i64 = photos::table
         .filter(photos::width.is_null())
+        .filter(photos::file_size.is_null())
         .filter(photos::deleted_at.is_null())
         .count()
         .get_result(&mut conn)
@@ -43,11 +48,12 @@ fn run_backfill(pool: &DbPool) -> Result<(), String> {
     let mut ok = 0;
     let mut failed = 0;
     loop {
-        // Re-query each batch so already-processed rows fall out of `width IS NULL`.
-        // This keeps memory use bounded by BACKFILL_BATCH_SIZE rather than growing
-        // with the total number of pending photos.
+        // Re-query each batch so already-processed rows drop out of the
+        // pending set. This keeps memory use bounded by BACKFILL_BATCH_SIZE
+        // rather than growing with the total number of pending photos.
         let batch: Vec<(uuid::Uuid, Vec<u8>)> = photos::table
             .filter(photos::width.is_null())
+            .filter(photos::file_size.is_null())
             .filter(photos::deleted_at.is_null())
             .select((photos::id, photos::data))
             .limit(BACKFILL_BATCH_SIZE)
@@ -78,20 +84,14 @@ fn run_backfill(pool: &DbPool) -> Result<(), String> {
                 }
                 Err(e) => {
                     tracing::warn!("Failed to decode photo {}: {}", id, e);
-                    // The row still needs to drop out of `width IS NULL` so
-                    // the backfill loop terminates, but the user's actual
-                    // workflow is `photo_dim:<600` to find low-res images —
-                    // an undecodable photo is "unknown", not "small", and
-                    // must not match that filter. Write i32::MAX as a
-                    // sentinel so the photo is treated as maximally large;
-                    // it will never match `<N` for any reasonable N, and the
-                    // bytes filter still works because file_size is real.
+                    // Leave width/height NULL so this photo is excluded from
+                    // BOTH `photo_dim:<N` and `photo_dim:>N` (the raw-SQL
+                    // filters already check width/height IS NOT NULL). We
+                    // still record file_size, which both makes the bytes
+                    // filter work *and* marks the row as "backfill attempted"
+                    // so it falls out of the pending query.
                     let _ = diesel::update(photos::table.find(id))
-                        .set((
-                            photos::file_size.eq(Some(file_size)),
-                            photos::width.eq(Some(i32::MAX)),
-                            photos::height.eq(Some(i32::MAX)),
-                        ))
+                        .set(photos::file_size.eq(Some(file_size)))
                         .execute(&mut conn);
                     failed += 1;
                 }
