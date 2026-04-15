@@ -33,6 +33,9 @@ diesel::table! {
         created_at -> Timestamptz,
         deleted_at -> Nullable<Timestamptz>,
         thumbnail -> Bytea,
+        width -> Nullable<Int4>,
+        height -> Nullable<Int4>,
+        file_size -> Nullable<Int4>,
     }
 }
 
@@ -90,6 +93,7 @@ diesel::table! {
         created_at -> Timestamptz,
         updated_at -> Timestamptz,
         current_step -> Nullable<Varchar>,
+        photo_only -> Bool,
     }
 }
 

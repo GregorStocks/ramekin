@@ -122,6 +122,7 @@ pub fn build_registry(
     pool: Arc<DbPool>,
     user_id: Uuid,
     existing_recipe_id: Option<Uuid>,
+    photo_only: bool,
 ) -> Result<StepRegistry, ScrapeError> {
     let mut registry = StepRegistry::new();
     registry.register(Box::new(FetchHtmlStep));
@@ -129,10 +130,13 @@ pub fn build_registry(
     registry.register(Box::new(FetchImagesStep::new(pool.clone(), user_id)));
     registry.register(Box::new(ParseIngredientsStep));
 
-    // Use the appropriate SaveRecipeStep based on whether this is a rescrape
-    let save_step = match existing_recipe_id {
-        Some(recipe_id) => SaveRecipeStep::for_rescrape(pool.clone(), user_id, recipe_id),
-        None => SaveRecipeStep::new(pool.clone(), user_id),
+    // Pick the right SaveRecipeStep based on job mode.
+    let save_step = match (existing_recipe_id, photo_only) {
+        (Some(recipe_id), true) => {
+            SaveRecipeStep::for_photo_rescrape(pool.clone(), user_id, recipe_id)
+        }
+        (Some(recipe_id), false) => SaveRecipeStep::for_rescrape(pool.clone(), user_id, recipe_id),
+        (None, _) => SaveRecipeStep::new(pool.clone(), user_id),
     };
     registry.register(Box::new(save_step));
 
@@ -185,6 +189,30 @@ pub fn create_rescrape_job(
             scrape_jobs::user_id.eq(user_id),
             scrape_jobs::url.eq(url),
             scrape_jobs::recipe_id.eq(Some(recipe_id)),
+        ))
+        .get_result::<ScrapeJob>(&mut conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))
+}
+
+/// Create a photo-only rescrape job. The pipeline runs normally but the save
+/// step only updates `photo_ids`, carrying forward every other field from the
+/// current version.
+pub fn create_photo_rescrape_job(
+    pool: &DbPool,
+    user_id: Uuid,
+    recipe_id: Uuid,
+    url: &str,
+) -> Result<ScrapeJob, ScrapeError> {
+    let mut conn = pool
+        .get()
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    diesel::insert_into(scrape_jobs::table)
+        .values((
+            scrape_jobs::user_id.eq(user_id),
+            scrape_jobs::url.eq(url),
+            scrape_jobs::recipe_id.eq(Some(recipe_id)),
+            scrape_jobs::photo_only.eq(true),
         ))
         .get_result::<ScrapeJob>(&mut conn)
         .map_err(|e| ScrapeError::Database(e.to_string()))
@@ -651,7 +679,7 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
 
     // Build the step registry and output store
     // If job.recipe_id is already set, this is a rescrape - pass it to build_registry
-    let registry = build_registry(pool.clone(), job.user_id, job.recipe_id)?;
+    let registry = build_registry(pool.clone(), job.user_id, job.recipe_id, job.photo_only)?;
     let mut store = DbOutputStore::new(&pool, job_id);
 
     // URL for context (empty string for imports without a URL)
@@ -883,8 +911,23 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
     let has_fetch_output = get_latest_step_output(pool, job_id, FetchHtmlStep::NAME)?.is_some();
     let has_extract_output =
         get_latest_step_output(pool, job_id, ExtractRecipeStep::NAME)?.is_some();
-    let has_fetch_images_output =
-        get_latest_step_output(pool, job_id, FetchImagesStepMeta::NAME)?.is_some();
+    let fetch_images_output = get_latest_step_output(pool, job_id, FetchImagesStepMeta::NAME)?;
+    let has_fetch_images_output = fetch_images_output.is_some();
+
+    // For photo-only retries, the loud-failure path makes save_recipe fail
+    // specifically when fetch_images produced an empty photo_ids list. In
+    // that case replaying save_recipe with the same stale output just fails
+    // again. We detect this by inspecting the actual fetch_images output —
+    // not just its existence — so transient save_recipe failures (e.g. DB
+    // errors) still resume at save and don't redundantly re-download photos
+    // or create duplicate Photo rows.
+    let photo_only_empty_fetch = job.photo_only
+        && fetch_images_output
+            .as_ref()
+            .and_then(|o| o.output.get("photo_ids"))
+            .and_then(|v| v.as_array())
+            .map(|arr| arr.is_empty())
+            .unwrap_or(false);
 
     let (resume_status, resume_step) = match job.failed_at_step.as_deref() {
         Some(STATUS_SCRAPING) => {
@@ -892,8 +935,9 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
             (STATUS_SCRAPING, FetchHtmlStep::NAME)
         }
         Some(STATUS_PARSING) => {
-            if has_fetch_images_output {
-                // Have fetch_images output, try save again
+            if has_fetch_images_output && !photo_only_empty_fetch {
+                // Have fetch_images output with at least one photo (or this
+                // is a normal rescrape) — try save again
                 (STATUS_PARSING, SaveRecipeStepMeta::NAME)
             } else if has_extract_output {
                 // Have extract output, try fetch_images

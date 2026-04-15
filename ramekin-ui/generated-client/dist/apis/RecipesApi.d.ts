@@ -37,6 +37,9 @@ export interface ListVersionsRequest {
 export interface RescrapeRequest {
     id: string;
 }
+export interface RescrapePhotoRequest {
+    id: string;
+}
 export interface UpdateRecipeOperationRequest {
     id: string;
     updateRecipeRequest: UpdateRecipeRequest;
@@ -93,6 +96,12 @@ export declare class RecipesApi extends runtime.BaseAPI {
     /**
      */
     rescrape(requestParameters: RescrapeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RescrapeResponse>;
+    /**
+     */
+    rescrapePhotoRaw(requestParameters: RescrapePhotoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RescrapeResponse>>;
+    /**
+     */
+    rescrapePhoto(requestParameters: RescrapePhotoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RescrapeResponse>;
     /**
      */
     updateRecipeRaw(requestParameters: UpdateRecipeOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;

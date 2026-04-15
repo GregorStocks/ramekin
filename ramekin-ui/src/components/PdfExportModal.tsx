@@ -1,8 +1,14 @@
-import { createSignal, createMemo, For, Show, onMount } from "solid-js";
+import { createMemo, createSignal, Show } from "solid-js";
 import jsPDF from "jspdf";
-import { useAuth } from "../context/AuthContext";
-import { usePageTitle } from "../utils/pageTitle";
+import Modal from "./Modal";
 import type { RecipeSummary } from "ramekin-client";
+
+interface Props {
+  isOpen: () => boolean;
+  onClose: () => void;
+  recipes: () => RecipeSummary[];
+  token: () => string | null;
+}
 
 type ImageData = {
   dataUrl: string;
@@ -64,16 +70,7 @@ async function fetchThumbnail(
     : new Error(`Failed to fetch thumbnail ${photoId}`);
 }
 
-export default function RecipeCardsPage() {
-  usePageTitle(() => "Recipe Cards");
-  const { getRecipesApi, token } = useAuth();
-
-  const [recipes, setRecipes] = createSignal<RecipeSummary[]>([]);
-  const [loading, setLoading] = createSignal(true);
-  const [error, setError] = createSignal<string | null>(null);
-  const [selected, setSelected] = createSignal<Set<string>>(new Set());
-  const [search, setSearch] = createSignal("");
-
+export default function PdfExportModal(props: Props) {
   const [cardW, setCardW] = createSignal(3.5);
   const [cardH, setCardH] = createSignal(2.5);
   const [marginIn, setMarginIn] = createSignal(0.75);
@@ -82,73 +79,17 @@ export default function RecipeCardsPage() {
   const [orientation, setOrientation] = createSignal<"portrait" | "landscape">(
     "portrait",
   );
+  const [generating, setGenerating] = createSignal(false);
+  const [progress, setProgress] = createSignal<{ done: number; total: number }>(
+    { done: 0, total: 0 },
+  );
+  const [error, setError] = createSignal<string | null>(null);
 
   const pageSize = createMemo(() =>
     orientation() === "portrait"
       ? { pageW: 8.5, pageH: 11 }
       : { pageW: 11, pageH: 8.5 },
   );
-
-  const [generating, setGenerating] = createSignal(false);
-  const [progress, setProgress] = createSignal<{ done: number; total: number }>(
-    { done: 0, total: 0 },
-  );
-
-  const loadAllRecipes = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const api = getRecipesApi();
-      const all: RecipeSummary[] = [];
-      const pageSize = 200;
-      let offset = 0;
-      while (true) {
-        const resp = await api.listRecipes({
-          limit: pageSize,
-          offset,
-          sortBy: "title",
-          sortDir: "asc",
-        });
-        all.push(...resp.recipes);
-        offset += resp.recipes.length;
-        if (resp.recipes.length === 0 || offset >= resp.pagination.total) {
-          break;
-        }
-      }
-      setRecipes(all);
-    } catch (e) {
-      setError("Failed to load recipes");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  onMount(loadAllRecipes);
-
-  const filteredRecipes = createMemo(() => {
-    const q = search().trim().toLowerCase();
-    if (!q) return recipes();
-    return recipes().filter((r) => r.title.toLowerCase().includes(q));
-  });
-
-  const toggle = (id: string) => {
-    setSelected((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
-      return next;
-    });
-  };
-
-  const selectAllFiltered = () => {
-    setSelected((prev) => {
-      const next = new Set(prev);
-      for (const r of filteredRecipes()) next.add(r.id);
-      return next;
-    });
-  };
-
-  const clearSelection = () => setSelected(new Set<string>());
 
   const layout = createMemo(() => {
     const { pageW, pageH } = pageSize();
@@ -193,16 +134,8 @@ export default function RecipeCardsPage() {
     };
   });
 
-  const canGenerate = () =>
-    !generating() && selected().size > 0 && layout().perPage > 0;
-
   const generatePdf = async () => {
-    const ids = Array.from(selected());
-    const byId = new Map(recipes().map((r) => [r.id, r]));
-    const chosen = ids
-      .map((id) => byId.get(id))
-      .filter((r): r is RecipeSummary => !!r);
-
+    const chosen = props.recipes();
     if (chosen.length === 0) return;
     const l = layout();
     if (l.perPage === 0) {
@@ -216,7 +149,7 @@ export default function RecipeCardsPage() {
     setProgress({ done: 0, total: chosen.length });
 
     try {
-      const tok = token() ?? "";
+      const tok = props.token() ?? "";
       const doc = new jsPDF({
         unit: "in",
         format: "letter",
@@ -311,6 +244,7 @@ export default function RecipeCardsPage() {
       }
 
       doc.save("recipe-cards.pdf");
+      props.onClose();
     } catch (e) {
       setError(e instanceof Error ? e.message : "Failed to generate PDF");
     } finally {
@@ -319,166 +253,112 @@ export default function RecipeCardsPage() {
   };
 
   return (
-    <div class="recipe-cards-page">
-      <div class="page-header">
-        <h2>Recipe Cards PDF</h2>
-      </div>
-
-      <Show when={error()}>
-        <p class="error">{error()}</p>
-      </Show>
-
-      <div class="recipe-cards-layout">
-        <section class="recipe-cards-config">
-          <h3>Card layout</h3>
-          <div class="form-group">
-            <label>Page orientation</label>
-            <select
-              value={orientation()}
-              onChange={(e) =>
-                setOrientation(
-                  e.currentTarget.value as "portrait" | "landscape",
-                )
-              }
-            >
-              <option value="portrait">Portrait</option>
-              <option value="landscape">Landscape</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Card width (in)</label>
-            <input
-              type="number"
-              step="0.1"
-              min="0.5"
-              value={cardW()}
-              onInput={(e) => setCardW(parseFloat(e.currentTarget.value) || 0)}
-            />
-          </div>
-          <div class="form-group">
-            <label>Card height (in)</label>
-            <input
-              type="number"
-              step="0.1"
-              min="0.5"
-              value={cardH()}
-              onInput={(e) => setCardH(parseFloat(e.currentTarget.value) || 0)}
-            />
-          </div>
-          <div class="form-group">
-            <label>Page margin (in)</label>
-            <input
-              type="number"
-              step="0.05"
-              min="0"
-              value={marginIn()}
-              onInput={(e) =>
-                setMarginIn(parseFloat(e.currentTarget.value) || 0)
-              }
-            />
-          </div>
-          <div class="form-group">
-            <label>Gutter between cards (in)</label>
-            <input
-              type="number"
-              step="0.05"
-              min="0"
-              value={gutterIn()}
-              onInput={(e) =>
-                setGutterIn(parseFloat(e.currentTarget.value) || 0)
-              }
-            />
-          </div>
-          <div class="form-group">
-            <label>Border width (in, 0 = invisible)</label>
-            <input
-              type="number"
-              step="0.005"
-              min="0"
-              value={borderIn()}
-              onInput={(e) =>
-                setBorderIn(parseFloat(e.currentTarget.value) || 0)
-              }
-            />
-          </div>
-
-          <p class="recipe-cards-layout-info">
-            <Show when={layout().perPage > 0} fallback={<>{layout().error}</>}>
-              {layout().cols}×{layout().rows} grid = {layout().perPage} cards
-              per page
-            </Show>
-          </p>
-
+    <Modal
+      isOpen={props.isOpen}
+      onClose={props.onClose}
+      title={`Export ${props.recipes().length} recipes to PDF`}
+      actions={
+        <>
           <button
             type="button"
-            class="btn btn-primary"
-            disabled={!canGenerate()}
+            class="btn btn-small"
+            onClick={props.onClose}
+            disabled={generating()}
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            class="btn btn-small btn-primary"
+            disabled={
+              generating() ||
+              props.recipes().length === 0 ||
+              layout().perPage === 0
+            }
             onClick={generatePdf}
           >
-            <Show
-              when={generating()}
-              fallback={<>Generate PDF ({selected().size} selected)</>}
-            >
+            <Show when={generating()} fallback={<>Generate PDF</>}>
               Generating {progress().done}/{progress().total}…
             </Show>
           </button>
-        </section>
-
-        <section class="recipe-cards-list">
-          <h3>Recipes</h3>
+        </>
+      }
+    >
+      <div class="recipe-cards-config">
+        <div class="form-group">
+          <label>Page orientation</label>
+          <select
+            value={orientation()}
+            onChange={(e) =>
+              setOrientation(e.currentTarget.value as "portrait" | "landscape")
+            }
+          >
+            <option value="portrait">Portrait</option>
+            <option value="landscape">Landscape</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Card width (in)</label>
           <input
-            type="text"
-            class="filter-input"
-            placeholder="Filter by title…"
-            value={search()}
-            onInput={(e) => setSearch(e.currentTarget.value)}
+            type="number"
+            step="0.1"
+            min="0.5"
+            value={cardW()}
+            onInput={(e) => setCardW(parseFloat(e.currentTarget.value) || 0)}
           />
-          <div class="recipe-cards-list-actions">
-            <button
-              type="button"
-              class="btn btn-small"
-              onClick={selectAllFiltered}
-              disabled={filteredRecipes().length === 0}
-            >
-              Select all ({filteredRecipes().length})
-            </button>
-            <button
-              type="button"
-              class="btn btn-small"
-              onClick={clearSelection}
-              disabled={selected().size === 0}
-            >
-              Clear ({selected().size})
-            </button>
-          </div>
+        </div>
+        <div class="form-group">
+          <label>Card height (in)</label>
+          <input
+            type="number"
+            step="0.1"
+            min="0.5"
+            value={cardH()}
+            onInput={(e) => setCardH(parseFloat(e.currentTarget.value) || 0)}
+          />
+        </div>
+        <div class="form-group">
+          <label>Page margin (in)</label>
+          <input
+            type="number"
+            step="0.05"
+            min="0"
+            value={marginIn()}
+            onInput={(e) => setMarginIn(parseFloat(e.currentTarget.value) || 0)}
+          />
+        </div>
+        <div class="form-group">
+          <label>Gutter between cards (in)</label>
+          <input
+            type="number"
+            step="0.05"
+            min="0"
+            value={gutterIn()}
+            onInput={(e) => setGutterIn(parseFloat(e.currentTarget.value) || 0)}
+          />
+        </div>
+        <div class="form-group">
+          <label>Border width (in, 0 = invisible)</label>
+          <input
+            type="number"
+            step="0.005"
+            min="0"
+            value={borderIn()}
+            onInput={(e) => setBorderIn(parseFloat(e.currentTarget.value) || 0)}
+          />
+        </div>
 
-          <Show when={loading()}>
-            <p class="loading">Loading recipes…</p>
+        <p class="recipe-cards-layout-info">
+          <Show when={layout().perPage > 0} fallback={<>{layout().error}</>}>
+            {layout().cols}×{layout().rows} grid = {layout().perPage} cards per
+            page
           </Show>
+        </p>
 
-          <Show when={!loading()}>
-            <ul class="recipe-cards-checklist">
-              <For each={filteredRecipes()}>
-                {(r) => (
-                  <li>
-                    <label>
-                      <input
-                        type="checkbox"
-                        checked={selected().has(r.id)}
-                        onChange={() => toggle(r.id)}
-                      />
-                      <span>{r.title}</span>
-                      <Show when={!r.thumbnailPhotoId}>
-                        <span class="recipe-cards-no-photo">(no photo)</span>
-                      </Show>
-                    </label>
-                  </li>
-                )}
-              </For>
-            </ul>
-          </Show>
-        </section>
+        <Show when={error()}>
+          <p class="error">{error()}</p>
+        </Show>
       </div>
-    </div>
+    </Modal>
   );
 }

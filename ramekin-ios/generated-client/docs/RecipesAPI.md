@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**listRecipes**](RecipesAPI.md#listrecipes) | **GET** /api/recipes | 
 [**listVersions**](RecipesAPI.md#listversions) | **GET** /api/recipes/{id}/versions | 
 [**rescrape**](RecipesAPI.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
+[**rescrapePhoto**](RecipesAPI.md#rescrapephoto) | **POST** /api/recipes/{id}/rescrape-photo | 
 [**updateRecipe**](RecipesAPI.md#updaterecipe) | **PUT** /api/recipes/{id} | 
 
 
@@ -365,6 +366,53 @@ import RamekinClient
 let id = 987 // UUID | Recipe ID
 
 RecipesAPI.rescrape(id: id) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **UUID** | Recipe ID | 
+
+### Return type
+
+[**RescrapeResponse**](RescrapeResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **rescrapePhoto**
+```swift
+    open class func rescrapePhoto(id: UUID, completion: @escaping (_ data: RescrapeResponse?, _ error: Error?) -> Void)
+```
+
+
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import RamekinClient
+
+let id = 987 // UUID | Recipe ID
+
+RecipesAPI.rescrapePhoto(id: id) { (response, error) in
     guard error == nil else {
         print(error)
         return

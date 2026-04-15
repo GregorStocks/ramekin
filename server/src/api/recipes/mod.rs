@@ -4,6 +4,7 @@ pub mod export;
 pub mod get;
 pub mod list;
 pub mod rescrape;
+pub mod rescrape_photo;
 pub mod update;
 pub mod versions;
 
@@ -26,6 +27,7 @@ pub fn router() -> Router<AppState> {
         .route("/{id}/export", get(export::export_recipe))
         .route("/{id}/versions", get(versions::list_versions))
         .route("/{id}/rescrape", post(rescrape::rescrape))
+        .route("/{id}/rescrape-photo", post(rescrape_photo::rescrape_photo))
 }
 
 #[derive(OpenApi)]
@@ -40,6 +42,7 @@ pub fn router() -> Router<AppState> {
         export::export_all_recipes,
         versions::list_versions,
         rescrape::rescrape,
+        rescrape_photo::rescrape_photo,
     ),
     components(schemas(
         create::CreateRecipeRequest,

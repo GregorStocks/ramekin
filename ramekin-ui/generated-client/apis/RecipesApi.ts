@@ -82,6 +82,10 @@ export interface RescrapeRequest {
     id: string;
 }
 
+export interface RescrapePhotoRequest {
+    id: string;
+}
+
 export interface UpdateRecipeOperationRequest {
     id: string;
     updateRecipeRequest: UpdateRecipeRequest;
@@ -440,6 +444,49 @@ export class RecipesApi extends runtime.BaseAPI {
      */
     async rescrape(requestParameters: RescrapeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RescrapeResponse> {
         const response = await this.rescrapeRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async rescrapePhotoRaw(requestParameters: RescrapePhotoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RescrapeResponse>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling rescrapePhoto().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/api/recipes/{id}/rescrape-photo`;
+        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => RescrapeResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async rescrapePhoto(requestParameters: RescrapePhotoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RescrapeResponse> {
+        const response = await this.rescrapePhotoRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

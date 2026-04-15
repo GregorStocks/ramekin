@@ -88,6 +88,13 @@ pub struct ListRecipesParams {
     pub sort_dir: Direction,
 }
 
+/// Numeric threshold used for photo size/dimension filters.
+#[derive(Debug, Clone, Copy)]
+struct NumericThreshold {
+    op: &'static str, // "<" or ">"
+    value: i32,
+}
+
 /// Parsed search query components
 #[derive(Debug, Default)]
 struct ParsedQuery {
@@ -97,6 +104,8 @@ struct ParsedQuery {
     has_photos: Option<bool>,
     created_after: Option<NaiveDate>,
     created_before: Option<NaiveDate>,
+    photo_size: Option<NumericThreshold>,
+    photo_dim: Option<NumericThreshold>,
 }
 
 fn parse_query(q: &str) -> ParsedQuery {
@@ -120,6 +129,10 @@ fn parse_query(q: &str) -> ParsedQuery {
             result.has_photos = Some(false);
         } else if let Some(date_expr) = token.strip_prefix("created:") {
             parse_date_filter(date_expr, &mut result);
+        } else if let Some(expr) = token.strip_prefix("photo_size:") {
+            result.photo_size = parse_numeric_threshold(expr);
+        } else if let Some(expr) = token.strip_prefix("photo_dim:") {
+            result.photo_dim = parse_numeric_threshold(expr);
         } else if !token.is_empty() {
             // Plain text search term
             result.text.push(token.to_string());
@@ -156,6 +169,20 @@ fn tokenize(input: &str) -> Vec<String> {
     }
 
     tokens
+}
+
+fn parse_numeric_threshold(expr: &str) -> Option<NumericThreshold> {
+    if let Some(rest) = expr.strip_prefix('<') {
+        rest.parse::<i32>()
+            .ok()
+            .map(|value| NumericThreshold { op: "<", value })
+    } else if let Some(rest) = expr.strip_prefix('>') {
+        rest.parse::<i32>()
+            .ok()
+            .map(|value| NumericThreshold { op: ">", value })
+    } else {
+        None
+    }
 }
 
 fn parse_date_filter(expr: &str, result: &mut ParsedQuery) {
@@ -321,6 +348,19 @@ pub async fn list_recipes(
         } else {
             query = query.filter(cardinality(recipe_versions::photo_ids).eq(0));
         }
+    }
+
+    // Photo file size filter (bytes)
+    if let Some(threshold) = parsed.photo_size {
+        query = query.filter(raw_sql::photo_file_size_filter(
+            threshold.op,
+            threshold.value,
+        ));
+    }
+
+    // Photo dimension filter (pixels, compares smaller of width/height)
+    if let Some(threshold) = parsed.photo_dim {
+        query = query.filter(raw_sql::photo_min_dim_filter(threshold.op, threshold.value));
     }
 
     // Date range filters (on recipe created_at)
