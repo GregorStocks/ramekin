@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**get_recipe**](RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 [**list_recipes**](RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 [**list_versions**](RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
+[**normalize_title**](RecipesApi.md#normalize_title) | **POST** /api/recipes/{id}/normalize-title | 
 [**rescrape**](RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 [**rescrape_photo**](RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
 [**update_recipe**](RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
@@ -537,6 +538,82 @@ Name | Type | Description  | Notes
 **200** | List of recipe versions |  -  |
 **401** | Unauthorized |  -  |
 **404** | Recipe not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **normalize_title**
+> NormalizeTitleResponse normalize_title(id)
+
+### Example
+
+* Bearer Authentication (bearer_auth):
+
+```python
+import ramekin_client
+from ramekin_client.models.normalize_title_response import NormalizeTitleResponse
+from ramekin_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ramekin_client.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearer_auth
+configuration = ramekin_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with ramekin_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ramekin_client.RecipesApi(api_client)
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | Recipe ID
+
+    try:
+        api_response = api_instance.normalize_title(id)
+        print("The response of RecipesApi->normalize_title:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RecipesApi->normalize_title: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **UUID**| Recipe ID | 
+
+### Return type
+
+[**NormalizeTitleResponse**](NormalizeTitleResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Title normalized and applied |  -  |
+**401** | Unauthorized |  -  |
+**404** | Recipe not found |  -  |
+**503** | AI service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

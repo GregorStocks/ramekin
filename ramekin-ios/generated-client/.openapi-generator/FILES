@@ -53,6 +53,7 @@ RamekinClient/Classes/OpenAPIs/Models/MealPlanListResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/MealType.swift
 RamekinClient/Classes/OpenAPIs/Models/Measurement.swift
 RamekinClient/Classes/OpenAPIs/Models/ModelErrorResponse.swift
+RamekinClient/Classes/OpenAPIs/Models/NormalizeTitleResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/PaginationMetadata.swift
 RamekinClient/Classes/OpenAPIs/Models/PingResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/RecipeContent.swift
@@ -122,6 +123,7 @@ docs/MealPlansAPI.md
 docs/MealType.md
 docs/Measurement.md
 docs/ModelErrorResponse.md
+docs/NormalizeTitleResponse.md
 docs/PaginationMetadata.md
 docs/PhotosAPI.md
 docs/PingResponse.md

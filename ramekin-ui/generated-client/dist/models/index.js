@@ -30,6 +30,7 @@ export * from './MealPlanItem';
 export * from './MealPlanListResponse';
 export * from './MealType';
 export * from './Measurement';
+export * from './NormalizeTitleResponse';
 export * from './PaginationMetadata';
 export * from './PingResponse';
 export * from './RecipeContent';

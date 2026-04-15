@@ -48,6 +48,7 @@ ramekin_client/docs/MealPlanListResponse.md
 ramekin_client/docs/MealPlansApi.md
 ramekin_client/docs/MealType.md
 ramekin_client/docs/Measurement.md
+ramekin_client/docs/NormalizeTitleResponse.md
 ramekin_client/docs/PaginationMetadata.md
 ramekin_client/docs/PhotosApi.md
 ramekin_client/docs/PingResponse.md
@@ -117,6 +118,7 @@ ramekin_client/models/meal_plan_item.py
 ramekin_client/models/meal_plan_list_response.py
 ramekin_client/models/meal_type.py
 ramekin_client/models/measurement.py
+ramekin_client/models/normalize_title_response.py
 ramekin_client/models/pagination_metadata.py
 ramekin_client/models/ping_response.py
 ramekin_client/models/recipe_content.py
@@ -184,6 +186,7 @@ ramekin_client/test/test_meal_plan_list_response.py
 ramekin_client/test/test_meal_plans_api.py
 ramekin_client/test/test_meal_type.py
 ramekin_client/test/test_measurement.py
+ramekin_client/test/test_normalize_title_response.py
 ramekin_client/test/test_pagination_metadata.py
 ramekin_client/test/test_photos_api.py
 ramekin_client/test/test_ping_response.py

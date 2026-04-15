@@ -270,6 +270,10 @@ export default function CookbookPage() {
     done: number;
     total: number;
   } | null>(null);
+  const [normalizeTitleProgress, setNormalizeTitleProgress] = createSignal<{
+    done: number;
+    total: number;
+  } | null>(null);
 
   const PAGE_SIZE = 20;
 
@@ -626,6 +630,44 @@ export default function CookbookPage() {
     setShowPdfModal(true);
   };
 
+  const bulkNormalizeTitle = async () => {
+    const ids = Array.from(selected());
+    if (ids.length === 0) return;
+    const confirmMsg =
+      ids.length === 1
+        ? "Normalize (de-clickbait) the title of this recipe?"
+        : `Normalize (de-clickbait) titles for ${ids.length} recipes? Each one calls the LLM (cached results are free).`;
+    if (!window.confirm(confirmMsg)) return;
+
+    setNormalizeTitleProgress({ done: 0, total: ids.length });
+    const api = getRecipesApi();
+    let done = 0;
+    let changed = 0;
+    const errors: string[] = [];
+    for (const id of ids) {
+      try {
+        const res = await api.normalizeTitle({ id });
+        if (res.changed) changed += 1;
+      } catch (e) {
+        const msg = await extractApiError(e, "normalize failed");
+        errors.push(`${id.slice(0, 8)}: ${msg}`);
+      }
+      done += 1;
+      setNormalizeTitleProgress({ done, total: ids.length });
+    }
+    setNormalizeTitleProgress(null);
+    await loadRecipes();
+    if (errors.length > 0) {
+      setError(
+        `${ids.length - errors.length}/${ids.length} normalized (${changed} changed). Errors: ${errors.slice(0, 3).join("; ")}${errors.length > 3 ? "…" : ""}`,
+      );
+    } else {
+      setError(
+        `Normalized ${ids.length} recipes (${changed} changed, ${ids.length - changed} unchanged).`,
+      );
+    }
+  };
+
   const bulkRescrapePhoto = async () => {
     const ids = Array.from(selected());
     if (ids.length === 0) return;
@@ -765,6 +807,19 @@ export default function CookbookPage() {
           >
             <Show when={rescrapeProgress()} fallback={<>Rescrape photo</>}>
               Rescraping {rescrapeProgress()!.done}/{rescrapeProgress()!.total}…
+            </Show>
+          </button>
+          <button
+            type="button"
+            class="btn btn-small"
+            onClick={bulkNormalizeTitle}
+            disabled={
+              selected().size === 0 || normalizeTitleProgress() !== null
+            }
+          >
+            <Show when={normalizeTitleProgress()} fallback={<>Auto-rename</>}>
+              Renaming {normalizeTitleProgress()!.done}/
+              {normalizeTitleProgress()!.total}…
             </Show>
           </button>
         </div>

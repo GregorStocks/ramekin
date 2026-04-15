@@ -7,6 +7,7 @@ mod parse_html;
 mod pipeline;
 mod pipeline_orchestrator;
 mod seed;
+mod title_normalization;
 
 use anyhow::Result;
 use clap::{Parser, Subcommand, ValueEnum};
@@ -241,6 +242,21 @@ enum Commands {
         #[arg(long)]
         fixtures_dir: Option<PathBuf>,
     },
+    /// Generate a title-normalization mapping from a .paprikarecipes file
+    TitleNormalizationTest {
+        /// Path to the .paprikarecipes file
+        #[arg(long, default_value = "data/dev/seed.paprikarecipes")]
+        file: PathBuf,
+        /// Path to write the input titles (one per line)
+        #[arg(long, default_value = "data/title-normalization-input.txt")]
+        titles_file: PathBuf,
+        /// Path to write the normalized mapping output
+        #[arg(long, default_value = "data/title-normalization.txt")]
+        output: PathBuf,
+        /// Max number of recipes to process (default: 500)
+        #[arg(long)]
+        limit: Option<usize>,
+    },
 }
 
 #[tokio::main]
@@ -429,6 +445,14 @@ async fn main() -> Result<()> {
         }
         Commands::IngredientTestsMigrateCurated { fixtures_dir } => {
             ingredient_tests::migrate_curated(fixtures_dir.as_deref())?;
+        }
+        Commands::TitleNormalizationTest {
+            file,
+            titles_file,
+            output,
+            limit,
+        } => {
+            title_normalization::run(&file, &titles_file, &output, limit).await?;
         }
     }
 

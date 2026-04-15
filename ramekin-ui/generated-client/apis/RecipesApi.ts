@@ -20,6 +20,7 @@ import type {
   Direction,
   ErrorResponse,
   ListRecipesResponse,
+  NormalizeTitleResponse,
   RecipeResponse,
   RescrapeResponse,
   SortBy,
@@ -37,6 +38,8 @@ import {
     ErrorResponseToJSON,
     ListRecipesResponseFromJSON,
     ListRecipesResponseToJSON,
+    NormalizeTitleResponseFromJSON,
+    NormalizeTitleResponseToJSON,
     RecipeResponseFromJSON,
     RecipeResponseToJSON,
     RescrapeResponseFromJSON,
@@ -75,6 +78,10 @@ export interface ListRecipesRequest {
 }
 
 export interface ListVersionsRequest {
+    id: string;
+}
+
+export interface NormalizeTitleRequest {
     id: string;
 }
 
@@ -401,6 +408,49 @@ export class RecipesApi extends runtime.BaseAPI {
      */
     async listVersions(requestParameters: ListVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<VersionListResponse> {
         const response = await this.listVersionsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async normalizeTitleRaw(requestParameters: NormalizeTitleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<NormalizeTitleResponse>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling normalizeTitle().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/api/recipes/{id}/normalize-title`;
+        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => NormalizeTitleResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async normalizeTitle(requestParameters: NormalizeTitleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<NormalizeTitleResponse> {
+        const response = await this.normalizeTitleRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

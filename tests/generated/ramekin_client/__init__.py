@@ -67,6 +67,7 @@ __all__ = [
     "MealPlanListResponse",
     "MealType",
     "Measurement",
+    "NormalizeTitleResponse",
     "PaginationMetadata",
     "PingResponse",
     "RecipeContent",
@@ -154,6 +155,7 @@ from ramekin_client.models.meal_plan_item import MealPlanItem as MealPlanItem
 from ramekin_client.models.meal_plan_list_response import MealPlanListResponse as MealPlanListResponse
 from ramekin_client.models.meal_type import MealType as MealType
 from ramekin_client.models.measurement import Measurement as Measurement
+from ramekin_client.models.normalize_title_response import NormalizeTitleResponse as NormalizeTitleResponse
 from ramekin_client.models.pagination_metadata import PaginationMetadata as PaginationMetadata
 from ramekin_client.models.ping_response import PingResponse as PingResponse
 from ramekin_client.models.recipe_content import RecipeContent as RecipeContent

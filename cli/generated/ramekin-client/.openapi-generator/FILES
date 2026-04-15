@@ -37,6 +37,7 @@ docs/MealPlanListResponse.md
 docs/MealPlansApi.md
 docs/MealType.md
 docs/Measurement.md
+docs/NormalizeTitleResponse.md
 docs/PaginationMetadata.md
 docs/PhotosApi.md
 docs/PingResponse.md
@@ -119,6 +120,7 @@ src/models/meal_plan_list_response.rs
 src/models/meal_type.rs
 src/models/measurement.rs
 src/models/mod.rs
+src/models/normalize_title_response.rs
 src/models/pagination_metadata.rs
 src/models/ping_response.rs
 src/models/recipe_content.rs

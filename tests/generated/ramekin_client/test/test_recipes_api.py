@@ -68,6 +68,12 @@ class TestRecipesApi(unittest.TestCase):
         """
         pass
 
+    def test_normalize_title(self) -> None:
+        """Test case for normalize_title
+
+        """
+        pass
+
     def test_rescrape(self) -> None:
         """Test case for rescrape
 

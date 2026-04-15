@@ -297,6 +297,45 @@ open class RecipesAPI {
     /**
 
      - parameter id: (path) Recipe ID 
+     - returns: NormalizeTitleResponse
+     */
+    @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    open class func normalizeTitle(id: UUID) async throws -> NormalizeTitleResponse {
+        return try await normalizeTitleWithRequestBuilder(id: id).execute().body
+    }
+
+    /**
+     - POST /api/recipes/{id}/normalize-title
+     - Bearer Token:
+       - type: http
+       - name: bearer_auth
+     - parameter id: (path) Recipe ID 
+     - returns: RequestBuilder<NormalizeTitleResponse> 
+     */
+    open class func normalizeTitleWithRequestBuilder(id: UUID) -> RequestBuilder<NormalizeTitleResponse> {
+        var localVariablePath = "/api/recipes/{id}/normalize-title"
+        let idPreEscape = "\(APIHelper.mapValueToPathItem(id))"
+        let idPostEscape = idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{id}", with: idPostEscape, options: .literal, range: nil)
+        let localVariableURLString = RamekinClientAPI.basePath + localVariablePath
+        let localVariableParameters: [String: Any]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<NormalizeTitleResponse>.Type = RamekinClientAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
+    }
+
+    /**
+
+     - parameter id: (path) Recipe ID 
      - returns: RescrapeResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)

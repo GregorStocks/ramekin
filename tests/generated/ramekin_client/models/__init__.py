@@ -43,6 +43,7 @@ from ramekin_client.models.meal_plan_item import MealPlanItem
 from ramekin_client.models.meal_plan_list_response import MealPlanListResponse
 from ramekin_client.models.meal_type import MealType
 from ramekin_client.models.measurement import Measurement
+from ramekin_client.models.normalize_title_response import NormalizeTitleResponse
 from ramekin_client.models.pagination_metadata import PaginationMetadata
 from ramekin_client.models.ping_response import PingResponse
 from ramekin_client.models.recipe_content import RecipeContent
