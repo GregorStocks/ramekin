@@ -223,18 +223,19 @@ export default function RecipeCardsPage() {
         orientation: orientation(),
       });
 
-      const { pageW } = pageSize();
-      const m = marginIn();
+      const { pageW, pageH } = pageSize();
       const g = gutterIn();
       const w = cardW();
       const h = cardH();
       const border = borderIn();
+      const rows = l.rows;
 
       const footW = w + border;
       const footH = h + border;
       const gridW = cols * footW + (cols - 1) * g;
+      const gridH = rows * footH + (rows - 1) * g;
       const startX = (pageW - gridW) / 2;
-      const startY = m;
+      const startY = (pageH - gridH) / 2;
 
       for (let i = 0; i < chosen.length; i++) {
         const recipe = chosen[i];
