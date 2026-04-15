@@ -190,16 +190,19 @@ impl FetchImagesStep {
         }
 
         // Process: validate format, generate thumbnail
-        let (content_type, thumbnail) = process_image(&data).map_err(|e| e.to_string())?;
+        let processed = process_image(&data).map_err(|e| e.to_string())?;
 
         // Store in database
         let mut conn = self.pool.get().map_err(|e| e.to_string())?;
 
         let new_photo = NewPhoto {
             user_id: self.user_id,
-            content_type: &content_type,
+            content_type: &processed.content_type,
             data: &data,
-            thumbnail: &thumbnail,
+            thumbnail: &processed.thumbnail,
+            width: Some(processed.width as i32),
+            height: Some(processed.height as i32),
+            file_size: Some(data.len() as i32),
         };
 
         let photo_id: Uuid = diesel::insert_into(photos::table)
@@ -213,14 +216,25 @@ impl FetchImagesStep {
     }
 }
 
+/// How SaveRecipeStep should behave.
+#[derive(Debug, Clone, Copy)]
+pub enum SaveMode {
+    /// Create a brand-new recipe.
+    Create,
+    /// Update an existing recipe by creating a new version from the newly
+    /// scraped data.
+    Rescrape(Uuid),
+    /// Update an existing recipe by creating a new version that copies every
+    /// field from the current version and only replaces `photo_ids` with the
+    /// newly-fetched photos.
+    PhotoOnly(Uuid),
+}
+
 /// Server implementation of SaveRecipe step.
-///
-/// Creates a recipe and recipe_version in the database, or updates an existing
-/// recipe if `existing_recipe_id` is set (for rescrape).
 pub struct SaveRecipeStep {
     pool: Arc<DbPool>,
     user_id: Uuid,
-    existing_recipe_id: Option<Uuid>,
+    mode: SaveMode,
 }
 
 impl SaveRecipeStep {
@@ -228,7 +242,7 @@ impl SaveRecipeStep {
         Self {
             pool,
             user_id,
-            existing_recipe_id: None,
+            mode: SaveMode::Create,
         }
     }
 
@@ -236,7 +250,15 @@ impl SaveRecipeStep {
         Self {
             pool,
             user_id,
-            existing_recipe_id: Some(recipe_id),
+            mode: SaveMode::Rescrape(recipe_id),
+        }
+    }
+
+    pub fn for_photo_rescrape(pool: Arc<DbPool>, user_id: Uuid, recipe_id: Uuid) -> Self {
+        Self {
+            pool,
+            user_id,
+            mode: SaveMode::PhotoOnly(recipe_id),
         }
     }
 }
@@ -292,9 +314,10 @@ impl PipelineStep for SaveRecipeStep {
         let version_source = match extraction_method {
             Some(ExtractionMethod::Paprika) => "import",
             Some(ExtractionMethod::PhotoUpload) => "photo_import",
-            _ => match self.existing_recipe_id {
-                Some(_) => "rescrape",
-                None => "scrape",
+            _ => match self.mode {
+                SaveMode::Create => "scrape",
+                SaveMode::Rescrape(_) => "rescrape",
+                SaveMode::PhotoOnly(_) => "photo_rescrape",
             },
         };
 
@@ -330,16 +353,19 @@ impl PipelineStep for SaveRecipeStep {
             });
 
         // Create or update recipe in database
-        let result = match self.existing_recipe_id {
-            Some(recipe_id) => self.update_recipe(
+        let result = match self.mode {
+            SaveMode::Create => {
+                self.create_recipe(&raw_recipe, &photo_ids, &parsed_ingredients, version_source)
+            }
+            SaveMode::Rescrape(recipe_id) => self.update_recipe(
                 recipe_id,
                 &raw_recipe,
                 &photo_ids,
                 &parsed_ingredients,
                 version_source,
             ),
-            None => {
-                self.create_recipe(&raw_recipe, &photo_ids, &parsed_ingredients, version_source)
+            SaveMode::PhotoOnly(recipe_id) => {
+                self.update_photos_only(recipe_id, &photo_ids, version_source)
             }
         };
 
@@ -505,6 +531,78 @@ impl SaveRecipeStep {
             diesel::update(recipes::table.find(recipe_id))
                 .set(recipes::current_version_id.eq(version_id))
                 .execute(conn)?;
+
+            Ok(recipe_id)
+        })
+        .map_err(|e: diesel::result::Error| e.to_string())
+    }
+
+    /// Create a new version that copies every field from the recipe's current
+    /// version and only replaces `photo_ids`. Used by photo-only rescrape to
+    /// refresh the image without losing any other edits.
+    fn update_photos_only(
+        &self,
+        recipe_id: Uuid,
+        photo_ids: &[Uuid],
+        version_source: &str,
+    ) -> Result<Uuid, String> {
+        use crate::models::{Recipe, RecipeVersion, RecipeVersionTag};
+
+        let mut conn = self.pool.get().map_err(|e| e.to_string())?;
+        let photo_ids_nullable: Vec<Option<Uuid>> = photo_ids.iter().map(|id| Some(*id)).collect();
+
+        conn.transaction(|conn| {
+            let recipe: Recipe = recipes::table.find(recipe_id).first(conn)?;
+            let current_version_id = recipe
+                .current_version_id
+                .ok_or_else(|| diesel::result::Error::RollbackTransaction)?;
+            let current: RecipeVersion = recipe_versions::table
+                .find(current_version_id)
+                .first(conn)?;
+
+            let existing_tag_ids: Vec<Uuid> = recipe_version_tags::table
+                .filter(recipe_version_tags::recipe_version_id.eq(current_version_id))
+                .select(recipe_version_tags::tag_id)
+                .load(conn)?;
+
+            let new_version = NewRecipeVersion {
+                recipe_id,
+                title: &current.title,
+                description: current.description.as_deref(),
+                ingredients: current.ingredients.clone(),
+                instructions: &current.instructions,
+                source_url: current.source_url.as_deref(),
+                source_name: current.source_name.as_deref(),
+                photo_ids: &photo_ids_nullable,
+                servings: current.servings.as_deref(),
+                prep_time: current.prep_time.as_deref(),
+                cook_time: current.cook_time.as_deref(),
+                total_time: current.total_time.as_deref(),
+                rating: current.rating,
+                difficulty: current.difficulty.as_deref(),
+                nutritional_info: current.nutritional_info.as_deref(),
+                notes: current.notes.as_deref(),
+                version_source,
+            };
+
+            let version_id: Uuid = diesel::insert_into(recipe_versions::table)
+                .values(&new_version)
+                .returning(recipe_versions::id)
+                .get_result(conn)?;
+
+            diesel::update(recipes::table.find(recipe_id))
+                .set(recipes::current_version_id.eq(version_id))
+                .execute(conn)?;
+
+            for tag_id in &existing_tag_ids {
+                diesel::insert_into(recipe_version_tags::table)
+                    .values(RecipeVersionTag {
+                        recipe_version_id: version_id,
+                        tag_id: *tag_id,
+                    })
+                    .on_conflict_do_nothing()
+                    .execute(conn)?;
+            }
 
             Ok(recipe_id)
         })

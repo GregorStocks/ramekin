@@ -11,7 +11,13 @@ import { useAuth } from "../context/AuthContext";
 import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 import PhotoThumbnail from "../components/PhotoThumbnail";
+import PdfExportModal from "../components/PdfExportModal";
 import type { RecipeSummary, SortBy, Direction } from "ramekin-client";
+
+interface NumericThreshold {
+  op: "<" | ">";
+  value: number;
+}
 
 interface FilterState {
   tags: string[];
@@ -19,6 +25,8 @@ interface FilterState {
   photos: "any" | "has" | "no";
   createdAfter: string;
   createdBefore: string;
+  photoSize: NumericThreshold | null;
+  photoDim: NumericThreshold | null;
 }
 
 type SortOption =
@@ -50,6 +58,17 @@ function getSortParams(sort: SortOption): {
   }
 }
 
+function parseNumericThreshold(expr: string): NumericThreshold | null {
+  if (expr.startsWith("<")) {
+    const v = parseInt(expr.slice(1), 10);
+    if (!isNaN(v)) return { op: "<", value: v };
+  } else if (expr.startsWith(">")) {
+    const v = parseInt(expr.slice(1), 10);
+    if (!isNaN(v)) return { op: ">", value: v };
+  }
+  return null;
+}
+
 function parseQueryToFilters(query: string): {
   textTerms: string[];
   filters: FilterState;
@@ -60,6 +79,8 @@ function parseQueryToFilters(query: string): {
     photos: "any",
     createdAfter: "",
     createdBefore: "",
+    photoSize: null,
+    photoDim: null,
   };
   const textTerms: string[] = [];
 
@@ -92,6 +113,10 @@ function parseQueryToFilters(query: string): {
       filters.photos = "has";
     } else if (token === "no:photos" || token === "no:photo") {
       filters.photos = "no";
+    } else if (token.startsWith("photo_size:")) {
+      filters.photoSize = parseNumericThreshold(token.slice(11));
+    } else if (token.startsWith("photo_dim:")) {
+      filters.photoDim = parseNumericThreshold(token.slice(10));
     } else if (token.startsWith("created:")) {
       const expr = token.slice(8);
       if (expr.includes("..")) {
@@ -121,7 +146,6 @@ function buildQueryFromFilters(
 ): string {
   const parts: string[] = [];
 
-  // Add text terms (quote if contains spaces)
   for (const term of textTerms) {
     if (term.includes(" ")) {
       parts.push(`"${term}"`);
@@ -130,7 +154,6 @@ function buildQueryFromFilters(
     }
   }
 
-  // Add tags (quote if contains spaces)
   for (const tag of filters.tags) {
     if (tag.includes(" ")) {
       parts.push(`tag:"${tag}"`);
@@ -139,7 +162,6 @@ function buildQueryFromFilters(
     }
   }
 
-  // Add source (quote if contains spaces)
   if (filters.source) {
     if (filters.source.includes(" ")) {
       parts.push(`source:"${filters.source}"`);
@@ -148,14 +170,19 @@ function buildQueryFromFilters(
     }
   }
 
-  // Add photos filter
   if (filters.photos === "has") {
     parts.push("has:photos");
   } else if (filters.photos === "no") {
     parts.push("no:photos");
   }
 
-  // Add date filters
+  if (filters.photoSize) {
+    parts.push(`photo_size:${filters.photoSize.op}${filters.photoSize.value}`);
+  }
+  if (filters.photoDim) {
+    parts.push(`photo_dim:${filters.photoDim.op}${filters.photoDim.value}`);
+  }
+
   if (filters.createdAfter && filters.createdBefore) {
     if (filters.createdAfter === filters.createdBefore) {
       parts.push(`created:${filters.createdAfter}`);
@@ -203,7 +230,6 @@ export default function CookbookPage() {
   const [total, setTotal] = createSignal(0);
   const [hasMore, setHasMore] = createSignal(true);
 
-  // Search input state mirrors the URL query so typing immediately updates results.
   const getQueryParam = (param: string | string[] | undefined): string => {
     if (Array.isArray(param)) return param[0] || "";
     return param || "";
@@ -222,16 +248,33 @@ export default function CookbookPage() {
   );
   const [filterCreatedAfter, setFilterCreatedAfter] = createSignal("");
   const [filterCreatedBefore, setFilterCreatedBefore] = createSignal("");
+  const [filterPhotoSizeValue, setFilterPhotoSizeValue] = createSignal("");
+  const [filterPhotoSizeOp, setFilterPhotoSizeOp] = createSignal<"<" | ">">(
+    "<",
+  );
+  const [filterPhotoDimValue, setFilterPhotoDimValue] = createSignal("");
+  const [filterPhotoDimOp, setFilterPhotoDimOp] = createSignal<"<" | ">">("<");
 
-  // Track text terms from search (non-filter parts)
   const [textTerms, setTextTerms] = createSignal<string[]>([]);
+
+  // Bulk mode state
+  const [bulkMode, setBulkMode] = createSignal(false);
+  const [selected, setSelected] = createSignal<Set<string>>(new Set());
+  const [selectAllStatus, setSelectAllStatus] = createSignal<string | null>(
+    null,
+  );
+  // Full list of matching recipes (loaded for bulk ops like PDF export).
+  const [bulkRecipes, setBulkRecipes] = createSignal<RecipeSummary[]>([]);
+  const [showPdfModal, setShowPdfModal] = createSignal(false);
+  const [rescrapeProgress, setRescrapeProgress] = createSignal<{
+    done: number;
+    total: number;
+  } | null>(null);
 
   const PAGE_SIZE = 20;
 
-  // Get current search query from URL
   const searchQuery = () => getQueryParam(searchParams.q);
 
-  // Get current sort from URL (default to "newest")
   const sortOption = (): SortOption => {
     const sort = getQueryParam(searchParams.sort);
     if (
@@ -302,7 +345,6 @@ export default function CookbookPage() {
     }
   };
 
-  // Handle explicit search submission without changing behavior from live updates.
   const handleSearch = (e?: Event) => {
     e?.preventDefault();
     updateSearchQuery(searchInput());
@@ -311,22 +353,21 @@ export default function CookbookPage() {
   // Reload when search query or sort changes in URL
   createEffect(() => {
     const q = searchQuery();
-    sortOption(); // Track sort changes
-    // Sync input with URL
+    sortOption();
     setSearchInput(q);
-    // Reset and reload
     setOffset(0);
     setRecipes([]);
+    // Leaving bulk mode on filter change would surprise the user; clear selection.
+    setSelected(new Set<string>());
+    setBulkRecipes([]);
     loadRecipes(false, 0);
   });
 
-  // Scroll listener for infinite scroll
   const handleScroll = () => {
     const scrollHeight = document.documentElement.scrollHeight;
     const scrollTop = document.documentElement.scrollTop;
     const clientHeight = document.documentElement.clientHeight;
 
-    // Load more when user is within 300px of bottom
     if (scrollHeight - scrollTop - clientHeight < 300) {
       loadMore();
     }
@@ -356,17 +397,17 @@ export default function CookbookPage() {
     setSearchParams({ q: undefined });
   };
 
-  // Count active filters for button badge
   const activeFilterCount = () => {
     let count = 0;
     if (filterTags().length > 0) count += filterTags().length;
     if (filterSource()) count++;
     if (filterPhotos() !== "any") count++;
     if (filterCreatedAfter() || filterCreatedBefore()) count++;
+    if (filterPhotoSizeValue()) count++;
+    if (filterPhotoDimValue()) count++;
     return count;
   };
 
-  // Open filter panel and sync from current query
   const openFilters = () => {
     const { textTerms: terms, filters } = parseQueryToFilters(searchQuery());
     setTextTerms(terms);
@@ -375,33 +416,61 @@ export default function CookbookPage() {
     setFilterPhotos(filters.photos);
     setFilterCreatedAfter(filters.createdAfter);
     setFilterCreatedBefore(filters.createdBefore);
+    if (filters.photoSize) {
+      setFilterPhotoSizeOp(filters.photoSize.op);
+      setFilterPhotoSizeValue(String(filters.photoSize.value));
+    } else {
+      setFilterPhotoSizeValue("");
+    }
+    if (filters.photoDim) {
+      setFilterPhotoDimOp(filters.photoDim.op);
+      setFilterPhotoDimValue(String(filters.photoDim.value));
+    } else {
+      setFilterPhotoDimValue("");
+    }
     setShowFilters(true);
   };
 
-  // Apply filters and close panel
   const applyFilters = () => {
+    const photoSizeValStr = filterPhotoSizeValue().trim();
+    const photoDimValStr = filterPhotoDimValue().trim();
+    const photoSize = photoSizeValStr
+      ? {
+          op: filterPhotoSizeOp(),
+          value: parseInt(photoSizeValStr, 10),
+        }
+      : null;
+    const photoDim = photoDimValStr
+      ? {
+          op: filterPhotoDimOp(),
+          value: parseInt(photoDimValStr, 10),
+        }
+      : null;
+
     const newQuery = buildQueryFromFilters(textTerms(), {
       tags: filterTags(),
       source: filterSource(),
       photos: filterPhotos(),
       createdAfter: filterCreatedAfter(),
       createdBefore: filterCreatedBefore(),
+      photoSize: photoSize && !isNaN(photoSize.value) ? photoSize : null,
+      photoDim: photoDim && !isNaN(photoDim.value) ? photoDim : null,
     });
     setSearchInput(newQuery);
     setSearchParams({ q: newQuery || undefined });
     setShowFilters(false);
   };
 
-  // Clear all filters
   const clearFilters = () => {
     setFilterTags([]);
     setFilterSource("");
     setFilterPhotos("any");
     setFilterCreatedAfter("");
     setFilterCreatedBefore("");
+    setFilterPhotoSizeValue("");
+    setFilterPhotoDimValue("");
   };
 
-  // Toggle a tag in the filter
   const toggleTag = (tag: string) => {
     const current = filterTags();
     if (current.includes(tag)) {
@@ -411,7 +480,6 @@ export default function CookbookPage() {
     }
   };
 
-  // Navigate to a random recipe from current filter
   const goToRandomRecipe = async () => {
     try {
       const q = searchQuery();
@@ -431,6 +499,126 @@ export default function CookbookPage() {
         "Failed to load random recipe",
       );
       setError(message);
+    }
+  };
+
+  // --- Bulk mode helpers ---
+
+  const toggleBulkMode = () => {
+    if (bulkMode()) {
+      setBulkMode(false);
+      setSelected(new Set<string>());
+      setBulkRecipes([]);
+    } else {
+      setBulkMode(true);
+    }
+  };
+
+  const toggleSelected = (id: string) => {
+    setSelected((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
+  // Fetch *every* recipe matching the current filter (across all pages).
+  // Returns the full list. Also caches it on bulkRecipes() so later actions
+  // don't need to refetch.
+  const fetchAllMatching = async (): Promise<RecipeSummary[]> => {
+    const cached = bulkRecipes();
+    if (cached.length > 0 && cached.length === total()) {
+      return cached;
+    }
+    const q = searchQuery();
+    const { sortBy, sortDir } = getSortParams(sortOption());
+    const api = getRecipesApi();
+    const all: RecipeSummary[] = [];
+    const pageSize = 200;
+    let offset = 0;
+    while (true) {
+      const resp = await api.listRecipes({
+        limit: pageSize,
+        offset,
+        q: q || undefined,
+        sortBy,
+        sortDir,
+      });
+      all.push(...resp.recipes);
+      offset += resp.recipes.length;
+      if (resp.recipes.length === 0 || offset >= resp.pagination.total) {
+        break;
+      }
+    }
+    setBulkRecipes(all);
+    return all;
+  };
+
+  const selectAll = async () => {
+    setSelectAllStatus("Loading…");
+    try {
+      const all = await fetchAllMatching();
+      setSelected(new Set(all.map((r) => r.id)));
+      setSelectAllStatus(null);
+    } catch (e) {
+      setSelectAllStatus(null);
+      setError("Failed to load all recipes");
+    }
+  };
+
+  const clearSelection = () => setSelected(new Set<string>());
+
+  const selectedRecipes = (): RecipeSummary[] => {
+    const ids = selected();
+    if (ids.size === 0) return [];
+    // Prefer bulkRecipes (full set) if populated, else fall back to visible list
+    const source = bulkRecipes().length > 0 ? bulkRecipes() : recipes();
+    return source.filter((r) => ids.has(r.id));
+  };
+
+  const openPdfExport = async () => {
+    // If user selected items that aren't all in the visible page, we still need
+    // their details to generate the PDF. Make sure we have the full set.
+    if (bulkRecipes().length === 0 && selected().size > recipes().length) {
+      try {
+        await fetchAllMatching();
+      } catch (e) {
+        setError("Failed to load recipes for PDF");
+        return;
+      }
+    }
+    setShowPdfModal(true);
+  };
+
+  const bulkRescrapePhoto = async () => {
+    const ids = Array.from(selected());
+    if (ids.length === 0) return;
+    const confirmMsg =
+      ids.length === 1
+        ? "Queue a photo rescrape for this recipe?"
+        : `Queue photo rescrapes for ${ids.length} recipes? This will issue one job per recipe.`;
+    if (!window.confirm(confirmMsg)) return;
+
+    setRescrapeProgress({ done: 0, total: ids.length });
+    const api = getRecipesApi();
+    let done = 0;
+    const errors: string[] = [];
+    for (const id of ids) {
+      try {
+        await api.rescrapePhoto({ id });
+      } catch (e) {
+        const msg = await extractApiError(e, "rescrape failed");
+        errors.push(`${id.slice(0, 8)}: ${msg}`);
+      }
+      done += 1;
+      setRescrapeProgress({ done, total: ids.length });
+    }
+    setRescrapeProgress(null);
+    if (errors.length > 0) {
+      setError(
+        `${ids.length - errors.length}/${ids.length} jobs queued. Errors: ${errors.slice(0, 3).join("; ")}${errors.length > 3 ? "…" : ""}`,
+      );
     }
   };
 
@@ -491,7 +679,61 @@ export default function CookbookPage() {
         >
           Random
         </button>
+        <button
+          type="button"
+          class="filter-button"
+          onClick={toggleBulkMode}
+          classList={{ active: bulkMode() }}
+        >
+          {bulkMode() ? "Done" : "Select"}
+        </button>
       </div>
+
+      <Show when={bulkMode()}>
+        <div class="bulk-toolbar">
+          <span class="bulk-count">
+            {selected().size} selected
+            <Show when={selectAllStatus()}>
+              {" "}
+              · <em>{selectAllStatus()}</em>
+            </Show>
+          </span>
+          <button
+            type="button"
+            class="btn btn-small"
+            onClick={selectAll}
+            disabled={total() === 0 || selectAllStatus() !== null}
+          >
+            Select all ({total()})
+          </button>
+          <button
+            type="button"
+            class="btn btn-small"
+            onClick={clearSelection}
+            disabled={selected().size === 0}
+          >
+            Clear
+          </button>
+          <button
+            type="button"
+            class="btn btn-small btn-primary"
+            onClick={openPdfExport}
+            disabled={selected().size === 0}
+          >
+            Export to PDF
+          </button>
+          <button
+            type="button"
+            class="btn btn-small"
+            onClick={bulkRescrapePhoto}
+            disabled={selected().size === 0 || rescrapeProgress() !== null}
+          >
+            <Show when={rescrapeProgress()} fallback={<>Rescrape photo</>}>
+              Rescraping {rescrapeProgress()!.done}/{rescrapeProgress()!.total}…
+            </Show>
+          </button>
+        </div>
+      </Show>
 
       <Show when={showFilters()}>
         <div class="filter-panel">
@@ -559,6 +801,56 @@ export default function CookbookPage() {
                 />
                 No photos
               </label>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <label class="filter-label">Photo file size (bytes)</label>
+            <div class="filter-threshold-row">
+              <select
+                class="filter-input"
+                value={filterPhotoSizeOp()}
+                onChange={(e) =>
+                  setFilterPhotoSizeOp(e.currentTarget.value as "<" | ">")
+                }
+              >
+                <option value="<">&lt;</option>
+                <option value=">">&gt;</option>
+              </select>
+              <input
+                type="number"
+                min="0"
+                step="1"
+                class="filter-input"
+                placeholder="e.g. 100000"
+                value={filterPhotoSizeValue()}
+                onInput={(e) => setFilterPhotoSizeValue(e.currentTarget.value)}
+              />
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <label class="filter-label">Photo dimensions (min side, px)</label>
+            <div class="filter-threshold-row">
+              <select
+                class="filter-input"
+                value={filterPhotoDimOp()}
+                onChange={(e) =>
+                  setFilterPhotoDimOp(e.currentTarget.value as "<" | ">")
+                }
+              >
+                <option value="<">&lt;</option>
+                <option value=">">&gt;</option>
+              </select>
+              <input
+                type="number"
+                min="0"
+                step="1"
+                class="filter-input"
+                placeholder="e.g. 600"
+                value={filterPhotoDimValue()}
+                onInput={(e) => setFilterPhotoDimValue(e.currentTarget.value)}
+              />
             </div>
           </div>
 
@@ -636,43 +928,71 @@ export default function CookbookPage() {
       <Show when={!loading() && recipes().length > 0}>
         <div class="recipe-grid">
           <For each={recipes()}>
-            {(recipe) => (
-              <A href={`/recipes/${recipe.id}`} class="recipe-card">
+            {(recipe) => {
+              const card = (
+                <>
+                  <Show
+                    when={recipe.thumbnailPhotoId}
+                    fallback={<div class="recipe-card-placeholder">🍽️</div>}
+                  >
+                    <PhotoThumbnail
+                      photoId={recipe.thumbnailPhotoId!}
+                      token={token()!}
+                      alt={recipe.title}
+                      thumbnailSize={thumbnailSize}
+                      class="recipe-card-thumbnail"
+                    />
+                  </Show>
+                  <div class="recipe-card-content">
+                    <h3>{recipe.title}</h3>
+                    <Show when={recipe.description}>
+                      <p class="recipe-description">{recipe.description}</p>
+                    </Show>
+                    <Show when={recipe.tags && recipe.tags.length > 0}>
+                      <div class="recipe-tags">
+                        <For each={recipe.tags!.slice(0, 3)}>
+                          {(tag) => <span class="tag">{tag}</span>}
+                        </For>
+                        <Show when={recipe.tags!.length > 3}>
+                          <span class="tag tag-more">
+                            +{recipe.tags!.length - 3}
+                          </span>
+                        </Show>
+                      </div>
+                    </Show>
+                    <p class="recipe-date">
+                      {formatRelativeDate(recipe.updatedAt)}
+                    </p>
+                  </div>
+                </>
+              );
+
+              return (
                 <Show
-                  when={recipe.thumbnailPhotoId}
-                  fallback={<div class="recipe-card-placeholder">🍽️</div>}
+                  when={bulkMode()}
+                  fallback={
+                    <A href={`/recipes/${recipe.id}`} class="recipe-card">
+                      {card}
+                    </A>
+                  }
                 >
-                  <PhotoThumbnail
-                    photoId={recipe.thumbnailPhotoId!}
-                    token={token()!}
-                    alt={recipe.title}
-                    thumbnailSize={thumbnailSize}
-                    class="recipe-card-thumbnail"
-                  />
+                  <div
+                    class="recipe-card recipe-card-selectable"
+                    classList={{ selected: selected().has(recipe.id) }}
+                    onClick={() => toggleSelected(recipe.id)}
+                  >
+                    <input
+                      type="checkbox"
+                      class="recipe-card-checkbox"
+                      checked={selected().has(recipe.id)}
+                      onClick={(e) => e.stopPropagation()}
+                      onChange={() => toggleSelected(recipe.id)}
+                    />
+                    {card}
+                  </div>
                 </Show>
-                <div class="recipe-card-content">
-                  <h3>{recipe.title}</h3>
-                  <Show when={recipe.description}>
-                    <p class="recipe-description">{recipe.description}</p>
-                  </Show>
-                  <Show when={recipe.tags && recipe.tags.length > 0}>
-                    <div class="recipe-tags">
-                      <For each={recipe.tags!.slice(0, 3)}>
-                        {(tag) => <span class="tag">{tag}</span>}
-                      </For>
-                      <Show when={recipe.tags!.length > 3}>
-                        <span class="tag tag-more">
-                          +{recipe.tags!.length - 3}
-                        </span>
-                      </Show>
-                    </div>
-                  </Show>
-                  <p class="recipe-date">
-                    {formatRelativeDate(recipe.updatedAt)}
-                  </p>
-                </div>
-              </A>
-            )}
+              );
+            }}
           </For>
         </div>
 
@@ -694,6 +1014,13 @@ export default function CookbookPage() {
           </p>
         </Show>
       </Show>
+
+      <PdfExportModal
+        isOpen={showPdfModal}
+        onClose={() => setShowPdfModal(false)}
+        recipes={selectedRecipes}
+        token={token}
+      />
     </div>
   );
 }

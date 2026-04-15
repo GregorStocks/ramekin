@@ -594,6 +594,54 @@
   transform: scale(1.05);
 }
 
+.recipe-card-selectable {
+  position: relative;
+  cursor: pointer;
+}
+
+.recipe-card-selectable.selected {
+  border-color: #646cff;
+  box-shadow: 0 0 0 2px #646cff;
+}
+
+.recipe-card-checkbox {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 2;
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+.bulk-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+
+.bulk-count {
+  font-weight: 600;
+  margin-right: auto;
+}
+
+.filter-threshold-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.filter-threshold-row select.filter-input {
+  width: auto;
+  min-width: 3rem;
+}
+
 .recipe-card-thumbnail {
   width: 100%;
   aspect-ratio: 1;

@@ -147,6 +147,10 @@ async fn main() {
 
     let pool: AppState = Arc::new(db::create_pool(&database_url));
 
+    // Spawn background backfill for photo dimensions (populates width/height
+    // for photos created before the column existed).
+    photos::spawn_dimension_backfill(pool.clone());
+
     // Public routes (no auth required)
     let public_router = api::public::router();
 

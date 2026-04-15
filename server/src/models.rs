@@ -78,6 +78,9 @@ pub struct Photo {
     pub created_at: DateTime<Utc>,
     pub deleted_at: Option<DateTime<Utc>>,
     pub thumbnail: Vec<u8>,
+    pub width: Option<i32>,
+    pub height: Option<i32>,
+    pub file_size: Option<i32>,
 }
 
 #[derive(Insertable)]
@@ -87,6 +90,9 @@ pub struct NewPhoto<'a> {
     pub content_type: &'a str,
     pub data: &'a [u8],
     pub thumbnail: &'a [u8],
+    pub width: Option<i32>,
+    pub height: Option<i32>,
+    pub file_size: Option<i32>,
 }
 
 #[derive(Queryable, Selectable, Debug)]
@@ -194,6 +200,7 @@ pub struct ScrapeJob {
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
     pub current_step: Option<String>,
+    pub photo_only: bool,
 }
 
 #[derive(Insertable)]

@@ -140,6 +140,70 @@ class TestRescrapeAuth:
         assert exc_info.value.status == 401
 
 
+class TestRescrapePhoto:
+    """Test the photo-only rescrape workflow."""
+
+    def test_rescrape_photo_creates_version_with_same_content(self, authed_api_client):
+        """Photo rescrape should make a new version whose only change is photo_ids."""
+        client, _ = authed_api_client
+        scrape_api = ScrapeApi(client)
+        recipes_api = RecipesApi(client)
+
+        url = f"{FIXTURE_BASE_URL}/seriouseats/rice_pilaf.html"
+        response = scrape_api.create_scrape(CreateScrapeRequest(url=url))
+        job = wait_for_job_completion(scrape_api, response.id)
+        assert job.status == "completed"
+        recipe_id = job.recipe_id
+
+        original = recipes_api.get_recipe(recipe_id)
+        original_title = original.title
+        original_instructions = original.instructions
+
+        rescrape_response = recipes_api.rescrape_photo(recipe_id)
+        assert rescrape_response.job_id is not None
+        rescrape_job = wait_for_job_completion(scrape_api, rescrape_response.job_id)
+        assert rescrape_job.status == "completed"
+        assert rescrape_job.recipe_id == recipe_id
+
+        updated = recipes_api.get_recipe(recipe_id)
+        # A fresh version was created...
+        assert updated.version_id != original.version_id
+        assert updated.version_source == "photo_rescrape"
+        # ...but the recipe content is preserved verbatim.
+        assert updated.title == original_title
+        assert updated.instructions == original_instructions
+
+    def test_rescrape_photo_requires_source_url(self, authed_api_client):
+        client, _ = authed_api_client
+        recipes_api = RecipesApi(client)
+
+        recipe = recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title="Manual Recipe",
+                ingredients=[make_ingredient(item="test ingredient")],
+                instructions="test instructions",
+            )
+        )
+
+        with pytest.raises(ApiException) as exc_info:
+            recipes_api.rescrape_photo(recipe.id)
+        assert exc_info.value.status == 400
+
+    def test_rescrape_photo_nonexistent_recipe(self, authed_api_client):
+        client, _ = authed_api_client
+        recipes_api = RecipesApi(client)
+
+        with pytest.raises(ApiException) as exc_info:
+            recipes_api.rescrape_photo("00000000-0000-0000-0000-000000000000")
+        assert exc_info.value.status == 404
+
+    def test_rescrape_photo_requires_auth(self, unauthed_api_client):
+        recipes_api = RecipesApi(unauthed_api_client)
+        with pytest.raises(ApiException) as exc_info:
+            recipes_api.rescrape_photo("00000000-0000-0000-0000-000000000000")
+        assert exc_info.value.status == 401
+
+
 class TestRescrapeIsolation:
     """Test that rescrape respects user isolation."""
 

@@ -122,6 +122,7 @@ pub fn build_registry(
     pool: Arc<DbPool>,
     user_id: Uuid,
     existing_recipe_id: Option<Uuid>,
+    photo_only: bool,
 ) -> Result<StepRegistry, ScrapeError> {
     let mut registry = StepRegistry::new();
     registry.register(Box::new(FetchHtmlStep));
@@ -129,10 +130,13 @@ pub fn build_registry(
     registry.register(Box::new(FetchImagesStep::new(pool.clone(), user_id)));
     registry.register(Box::new(ParseIngredientsStep));
 
-    // Use the appropriate SaveRecipeStep based on whether this is a rescrape
-    let save_step = match existing_recipe_id {
-        Some(recipe_id) => SaveRecipeStep::for_rescrape(pool.clone(), user_id, recipe_id),
-        None => SaveRecipeStep::new(pool.clone(), user_id),
+    // Pick the right SaveRecipeStep based on job mode.
+    let save_step = match (existing_recipe_id, photo_only) {
+        (Some(recipe_id), true) => {
+            SaveRecipeStep::for_photo_rescrape(pool.clone(), user_id, recipe_id)
+        }
+        (Some(recipe_id), false) => SaveRecipeStep::for_rescrape(pool.clone(), user_id, recipe_id),
+        (None, _) => SaveRecipeStep::new(pool.clone(), user_id),
     };
     registry.register(Box::new(save_step));
 
@@ -185,6 +189,30 @@ pub fn create_rescrape_job(
             scrape_jobs::user_id.eq(user_id),
             scrape_jobs::url.eq(url),
             scrape_jobs::recipe_id.eq(Some(recipe_id)),
+        ))
+        .get_result::<ScrapeJob>(&mut conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))
+}
+
+/// Create a photo-only rescrape job. The pipeline runs normally but the save
+/// step only updates `photo_ids`, carrying forward every other field from the
+/// current version.
+pub fn create_photo_rescrape_job(
+    pool: &DbPool,
+    user_id: Uuid,
+    recipe_id: Uuid,
+    url: &str,
+) -> Result<ScrapeJob, ScrapeError> {
+    let mut conn = pool
+        .get()
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    diesel::insert_into(scrape_jobs::table)
+        .values((
+            scrape_jobs::user_id.eq(user_id),
+            scrape_jobs::url.eq(url),
+            scrape_jobs::recipe_id.eq(Some(recipe_id)),
+            scrape_jobs::photo_only.eq(true),
         ))
         .get_result::<ScrapeJob>(&mut conn)
         .map_err(|e| ScrapeError::Database(e.to_string()))
@@ -651,7 +679,7 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
 
     // Build the step registry and output store
     // If job.recipe_id is already set, this is a rescrape - pass it to build_registry
-    let registry = build_registry(pool.clone(), job.user_id, job.recipe_id)?;
+    let registry = build_registry(pool.clone(), job.user_id, job.recipe_id, job.photo_only)?;
     let mut store = DbOutputStore::new(&pool, job_id);
 
     // URL for context (empty string for imports without a URL)

@@ -97,7 +97,7 @@ pub async fn upload(
     }
 
     // Process image: detect format from bytes, validate, and generate thumbnail
-    let (content_type, thumbnail) = match process_image(&data) {
+    let processed = match process_image(&data) {
         Ok(result) => result,
         Err(e) => {
             return (StatusCode::BAD_REQUEST, Json(ErrorResponse { error: e })).into_response()
@@ -110,9 +110,12 @@ pub async fn upload(
     // Insert photo
     let new_photo = NewPhoto {
         user_id: user.id,
-        content_type: &content_type,
+        content_type: &processed.content_type,
         data: &data,
-        thumbnail: &thumbnail,
+        thumbnail: &processed.thumbnail,
+        width: Some(processed.width as i32),
+        height: Some(processed.height as i32),
+        file_size: Some(data.len() as i32),
     };
 
     let photo_id: Uuid = match diesel::insert_into(photos::table)

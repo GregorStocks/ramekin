@@ -1,7 +1,7 @@
 import pytest
 
 from conftest import make_ingredient
-from ramekin_client.api import RecipesApi
+from ramekin_client.api import PhotosApi, RecipesApi
 from ramekin_client.exceptions import ApiException
 from ramekin_client.models import (
     CreateRecipeRequest,
@@ -833,6 +833,49 @@ def test_filter_by_source(authed_api_client):
     response = recipes_api.list_recipes(q="source:York")
     assert len(response.recipes) == 1
     assert response.recipes[0].title == "NYT Recipe"
+
+
+def test_filter_photo_size_and_dim(authed_api_client, test_image):
+    """Test filtering recipes by photo file size / photo dimensions."""
+    client, _ = authed_api_client
+    recipes_api = RecipesApi(client)
+    photos_api = PhotosApi(client)
+
+    upload = photos_api.upload(file=("bread.png", test_image))
+    photo_id = str(upload.id)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Has A Photo",
+            instructions="Cook it",
+            ingredients=[],
+            photo_ids=[photo_id],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="No Photo",
+            instructions="Cook it",
+            ingredients=[],
+        )
+    )
+
+    # Photo should match both "anything smaller than a huge number" filters
+    response = recipes_api.list_recipes(q="photo_size:<99999999")
+    titles = {r.title for r in response.recipes}
+    assert "Has A Photo" in titles
+    assert "No Photo" not in titles
+
+    response = recipes_api.list_recipes(q="photo_dim:<99999")
+    titles = {r.title for r in response.recipes}
+    assert "Has A Photo" in titles
+    assert "No Photo" not in titles
+
+    # And neither filter should match when the threshold is 1
+    response = recipes_api.list_recipes(q="photo_size:<1")
+    assert all(r.title != "Has A Photo" for r in response.recipes)
+    response = recipes_api.list_recipes(q="photo_dim:<1")
+    assert all(r.title != "Has A Photo" for r in response.recipes)
 
 
 def test_filter_has_photos(authed_api_client):

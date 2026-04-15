@@ -84,6 +84,7 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**list_recipes**](ramekin_client/docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 *RecipesApi* | [**list_versions**](ramekin_client/docs/RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
 *RecipesApi* | [**rescrape**](ramekin_client/docs/RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
+*RecipesApi* | [**rescrape_photo**](ramekin_client/docs/RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
 *RecipesApi* | [**update_recipe**](ramekin_client/docs/RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
 *ScrapeApi* | [**capture**](ramekin_client/docs/ScrapeApi.md#capture) | **POST** /api/scrape/capture | 
 *ScrapeApi* | [**create_scrape**](ramekin_client/docs/ScrapeApi.md#create_scrape) | **POST** /api/scrape | 

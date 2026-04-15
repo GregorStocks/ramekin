@@ -8,9 +8,15 @@ pub use ramekin_core::image::{ALLOWED_FORMATS, MAX_FILE_SIZE};
 pub const THUMBNAIL_SIZE: u32 = 200;
 pub const MAX_THUMBNAIL_SIZE: u32 = 800;
 
+pub struct ProcessedImage {
+    pub content_type: String,
+    pub thumbnail: Vec<u8>,
+    pub width: u32,
+    pub height: u32,
+}
+
 /// Process an image: detect format from magic bytes, validate it's allowed, and generate thumbnail.
-/// Returns (content_type, thumbnail_bytes) on success.
-pub fn process_image(data: &[u8]) -> Result<(String, Vec<u8>), String> {
+pub fn process_image(data: &[u8]) -> Result<ProcessedImage, String> {
     let reader = ImageReader::new(Cursor::new(data))
         .with_guessed_format()
         .map_err(|e| format!("Failed to read image: {}", e))?;
@@ -32,6 +38,9 @@ pub fn process_image(data: &[u8]) -> Result<(String, Vec<u8>), String> {
         .decode()
         .map_err(|e| format!("Failed to decode image: {}", e))?;
 
+    let width = img.width();
+    let height = img.height();
+
     // thumbnail() preserves aspect ratio, fitting within the given dimensions
     let thumbnail_img = img.thumbnail(THUMBNAIL_SIZE, THUMBNAIL_SIZE);
 
@@ -40,7 +49,12 @@ pub fn process_image(data: &[u8]) -> Result<(String, Vec<u8>), String> {
         .write_to(&mut thumbnail_buf, ImageFormat::Jpeg)
         .map_err(|e| format!("Failed to encode thumbnail: {}", e))?;
 
-    Ok((content_type, thumbnail_buf.into_inner()))
+    Ok(ProcessedImage {
+        content_type,
+        thumbnail: thumbnail_buf.into_inner(),
+        width,
+        height,
+    })
 }
 
 /// Generate a thumbnail at a specific size from raw image data.

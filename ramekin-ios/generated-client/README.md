@@ -47,6 +47,7 @@ Class | Method | HTTP request | Description
 *RecipesAPI* | [**listRecipes**](docs/RecipesAPI.md#listrecipes) | **GET** /api/recipes | 
 *RecipesAPI* | [**listVersions**](docs/RecipesAPI.md#listversions) | **GET** /api/recipes/{id}/versions | 
 *RecipesAPI* | [**rescrape**](docs/RecipesAPI.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
+*RecipesAPI* | [**rescrapePhoto**](docs/RecipesAPI.md#rescrapephoto) | **POST** /api/recipes/{id}/rescrape-photo | 
 *RecipesAPI* | [**updateRecipe**](docs/RecipesAPI.md#updaterecipe) | **PUT** /api/recipes/{id} | 
 *ScrapeAPI* | [**capture**](docs/ScrapeAPI.md#capture) | **POST** /api/scrape/capture | 
 *ScrapeAPI* | [**createScrape**](docs/ScrapeAPI.md#createscrape) | **POST** /api/scrape | 

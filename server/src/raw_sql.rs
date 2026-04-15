@@ -33,6 +33,42 @@ pub fn tags_subquery() -> SqlLiteral<Array<Text>> {
     )
 }
 
+/// EXISTS filter: at least one photo on the current recipe version matches a
+/// file-size threshold (bytes).
+///
+/// # Safety
+/// The threshold is an `i32` and is formatted directly into the SQL string.
+/// Integers cannot cause SQL injection.
+pub fn photo_file_size_filter(op: &'static str, bytes: i32) -> SqlLiteral<Bool> {
+    debug_assert!(op == "<" || op == ">");
+    sql::<Bool>(&format!(
+        "EXISTS (SELECT 1 FROM photos p \
+         WHERE p.id = ANY(recipe_versions.photo_ids) \
+         AND p.deleted_at IS NULL \
+         AND p.file_size IS NOT NULL \
+         AND p.file_size {} {})",
+        op, bytes
+    ))
+}
+
+/// EXISTS filter: at least one photo on the current recipe version has a
+/// minimum dimension (smaller of width/height) matching a threshold.
+///
+/// # Safety
+/// The threshold is an `i32` and is formatted directly into the SQL string.
+/// Integers cannot cause SQL injection.
+pub fn photo_min_dim_filter(op: &'static str, pixels: i32) -> SqlLiteral<Bool> {
+    debug_assert!(op == "<" || op == ">");
+    sql::<Bool>(&format!(
+        "EXISTS (SELECT 1 FROM photos p \
+         WHERE p.id = ANY(recipe_versions.photo_ids) \
+         AND p.deleted_at IS NULL \
+         AND p.width IS NOT NULL AND p.height IS NOT NULL \
+         AND LEAST(p.width, p.height) {} {})",
+        op, pixels
+    ))
+}
+
 /// ILIKE filter on the ingredients JSONB field cast to text.
 ///
 /// Diesel has no native support for casting JSONB to text for ILIKE.

@@ -12,6 +12,7 @@ All URIs are relative to *http://localhost*
 | [**listRecipes**](RecipesApi.md#listrecipes) | **GET** /api/recipes |  |
 | [**listVersions**](RecipesApi.md#listversions) | **GET** /api/recipes/{id}/versions |  |
 | [**rescrape**](RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape |  |
+| [**rescrapePhoto**](RecipesApi.md#rescrapephoto) | **POST** /api/recipes/{id}/rescrape-photo |  |
 | [**updateRecipe**](RecipesApi.md#updaterecipeoperation) | **PUT** /api/recipes/{id} |  |
 
 
@@ -584,6 +585,78 @@ example().catch(console.error);
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Rescrape job created |  -  |
+| **400** | Recipe has no source URL |  -  |
+| **401** | Unauthorized |  -  |
+| **404** | Recipe not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## rescrapePhoto
+
+> RescrapeResponse rescrapePhoto(id)
+
+
+
+### Example
+
+```ts
+import {
+  Configuration,
+  RecipesApi,
+} from '';
+import type { RescrapePhotoRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearer_auth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new RecipesApi(config);
+
+  const body = {
+    // string | Recipe ID
+    id: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
+  } satisfies RescrapePhotoRequest;
+
+  try {
+    const data = await api.rescrapePhoto(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | `string` | Recipe ID | [Defaults to `undefined`] |
+
+### Return type
+
+[**RescrapeResponse**](RescrapeResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Photo rescrape job created |  -  |
 | **400** | Recipe has no source URL |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Recipe not found |  -  |
