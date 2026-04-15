@@ -20,11 +20,16 @@ pub struct NormalizeTitleResult {
 }
 
 /// De-clickbait a recipe title via the AI client.
+///
+/// The full ingredient list and instructions are passed to the model so it can
+/// disambiguate obscure dish names and confirm what the recipe actually is.
 pub async fn normalize_title(
     ai_client: &dyn AiClient,
     title: &str,
+    ingredients: &str,
+    instructions: &str,
 ) -> Result<NormalizeTitleResult, AiError> {
-    let prompt = render_normalize_title_prompt(title);
+    let prompt = render_normalize_title_prompt(title, ingredients, instructions);
     let request = ChatRequest {
         messages: vec![ChatMessage::user(prompt)],
         json_response: true,

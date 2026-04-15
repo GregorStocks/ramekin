@@ -2,7 +2,7 @@ use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
-use crate::models::NewRecipeVersion;
+use crate::models::{Ingredient, NewRecipeVersion};
 use crate::schema::{recipe_versions, recipes};
 use axum::{
     extract::{Path, State},
@@ -23,6 +23,31 @@ pub struct NormalizeTitleResponse {
     pub normalized_title: String,
     pub changed: bool,
     pub cached: bool,
+}
+
+/// Flatten stored JSON ingredients into a comma-separated string for LLM context.
+fn format_ingredients_for_prompt(ingredients: &serde_json::Value) -> String {
+    let Ok(items) = serde_json::from_value::<Vec<Ingredient>>(ingredients.clone()) else {
+        return ingredients.to_string();
+    };
+    items
+        .iter()
+        .map(|i| {
+            let measurement = i
+                .measurements
+                .first()
+                .map(|m| {
+                    format!(
+                        "{} {}",
+                        m.amount.as_deref().unwrap_or(""),
+                        m.unit.as_deref().unwrap_or("")
+                    )
+                })
+                .unwrap_or_default();
+            format!("{} {}", measurement, i.item).trim().to_string()
+        })
+        .collect::<Vec<_>>()
+        .join(", ")
 }
 
 #[allow(clippy::type_complexity)]
@@ -153,7 +178,16 @@ pub async fn normalize_title(
         }
     };
 
-    let result = match ai_normalize_title(&ai_client, &original_title).await {
+    let ingredients_str = format_ingredients_for_prompt(&ingredients);
+
+    let result = match ai_normalize_title(
+        &ai_client,
+        &original_title,
+        &ingredients_str,
+        &instructions,
+    )
+    .await
+    {
         Ok(r) => r,
         Err(e) => {
             tracing::error!("normalize_title call failed: {}", e);
