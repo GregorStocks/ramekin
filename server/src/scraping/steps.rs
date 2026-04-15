@@ -540,6 +540,11 @@ impl SaveRecipeStep {
     /// Create a new version that copies every field from the recipe's current
     /// version and only replaces `photo_ids`. Used by photo-only rescrape to
     /// refresh the image without losing any other edits.
+    ///
+    /// If no new photos were fetched, we refuse to write a new version — the
+    /// image-fetch step is tolerant of failures (bad URL, CDN timeout, no
+    /// image in the extracted recipe) and we would rather the job fail loudly
+    /// than silently drop the recipe's existing photos.
     fn update_photos_only(
         &self,
         recipe_id: Uuid,
@@ -547,6 +552,12 @@ impl SaveRecipeStep {
         version_source: &str,
     ) -> Result<Uuid, String> {
         use crate::models::{Recipe, RecipeVersion, RecipeVersionTag};
+
+        if photo_ids.is_empty() {
+            return Err(
+                "Photo rescrape fetched no new images; keeping existing photos".to_string(),
+            );
+        }
 
         let mut conn = self.pool.get().map_err(|e| e.to_string())?;
         let photo_ids_nullable: Vec<Option<Uuid>> = photo_ids.iter().map(|id| Some(*id)).collect();

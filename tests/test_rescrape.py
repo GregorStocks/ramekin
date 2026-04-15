@@ -140,6 +140,36 @@ class TestRescrapeAuth:
         assert exc_info.value.status == 401
 
 
+_MINIMAL_RECIPE_HTML = """<!DOCTYPE html>
+<html>
+<head>
+<title>Local Photo Rescrape Recipe</title>
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Local Photo Rescrape Recipe",
+  "image": "{image_url}",
+  "recipeIngredient": ["1 cup flour", "2 eggs"],
+  "recipeInstructions": "Mix and bake.",
+  "author": {{"@type": "Person", "name": "Test Author"}}
+}}
+</script>
+</head>
+<body><h1>Local Photo Rescrape Recipe</h1></body>
+</html>
+"""
+
+
+def _write_local_fixture(name: str, html: str) -> str:
+    """Write an HTML fixture into the fixture server's root so it can be fetched
+    back by the scraper over localhost. Returns the absolute path."""
+    path = os.path.join(os.path.dirname(__file__), "scrape_fixtures", name)
+    with open(path, "w") as f:
+        f.write(html)
+    return path
+
+
 class TestRescrapePhoto:
     """Test the photo-only rescrape workflow."""
 
@@ -149,29 +179,60 @@ class TestRescrapePhoto:
         scrape_api = ScrapeApi(client)
         recipes_api = RecipesApi(client)
 
+        image_url = f"{FIXTURE_BASE_URL}/images/test_recipe.jpg"
+        fixture_path = _write_local_fixture(
+            "rescrape_photo_fixture.html",
+            _MINIMAL_RECIPE_HTML.format(image_url=image_url),
+        )
+        try:
+            source_url = f"{FIXTURE_BASE_URL}/rescrape_photo_fixture.html"
+            response = scrape_api.create_scrape(CreateScrapeRequest(url=source_url))
+            job = wait_for_job_completion(scrape_api, response.id)
+            assert job.status == "completed"
+            recipe_id = job.recipe_id
+
+            original = recipes_api.get_recipe(recipe_id)
+            original_title = original.title
+            original_instructions = original.instructions
+
+            rescrape_response = recipes_api.rescrape_photo(recipe_id)
+            assert rescrape_response.job_id is not None
+            rescrape_job = wait_for_job_completion(scrape_api, rescrape_response.job_id)
+            assert rescrape_job.status == "completed"
+            assert rescrape_job.recipe_id == recipe_id
+
+            updated = recipes_api.get_recipe(recipe_id)
+            # A fresh version was created...
+            assert updated.version_id != original.version_id
+            assert updated.version_source == "photo_rescrape"
+            # ...but the recipe content is preserved verbatim.
+            assert updated.title == original_title
+            assert updated.instructions == original_instructions
+            # ...and a photo still exists (same slot replaced, not blanked).
+            assert len(updated.photo_ids or []) > 0
+        finally:
+            os.remove(fixture_path)
+
+    def test_rescrape_photo_fails_loudly_when_no_images_fetched(
+        self, authed_api_client
+    ):
+        """If the source URL produces no fetchable image, photo rescrape should
+        fail rather than silently blanking out the existing photo_ids."""
+        client, _ = authed_api_client
+        scrape_api = ScrapeApi(client)
+        recipes_api = RecipesApi(client)
+
+        # rice_pilaf's image URLs point at seriouseats.com, outside the
+        # SCRAPE_ALLOWED_HOSTS allowlist — so image fetch produces zero photos.
         url = f"{FIXTURE_BASE_URL}/seriouseats/rice_pilaf.html"
         response = scrape_api.create_scrape(CreateScrapeRequest(url=url))
         job = wait_for_job_completion(scrape_api, response.id)
         assert job.status == "completed"
         recipe_id = job.recipe_id
 
-        original = recipes_api.get_recipe(recipe_id)
-        original_title = original.title
-        original_instructions = original.instructions
-
         rescrape_response = recipes_api.rescrape_photo(recipe_id)
-        assert rescrape_response.job_id is not None
         rescrape_job = wait_for_job_completion(scrape_api, rescrape_response.job_id)
-        assert rescrape_job.status == "completed"
-        assert rescrape_job.recipe_id == recipe_id
-
-        updated = recipes_api.get_recipe(recipe_id)
-        # A fresh version was created...
-        assert updated.version_id != original.version_id
-        assert updated.version_source == "photo_rescrape"
-        # ...but the recipe content is preserved verbatim.
-        assert updated.title == original_title
-        assert updated.instructions == original_instructions
+        assert rescrape_job.status == "failed"
 
     def test_rescrape_photo_requires_source_url(self, authed_api_client):
         client, _ = authed_api_client
