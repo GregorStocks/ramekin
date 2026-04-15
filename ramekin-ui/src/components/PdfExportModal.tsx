@@ -73,12 +73,14 @@ async function fetchThumbnail(
 export default function PdfExportModal(props: Props) {
   const [cardW, setCardW] = createSignal(3.5);
   const [cardH, setCardH] = createSignal(2.5);
-  const [marginIn, setMarginIn] = createSignal(0.75);
+  const [marginXIn, setMarginXIn] = createSignal(0.75);
+  const [marginYIn, setMarginYIn] = createSignal(0.75);
   const [gutterIn, setGutterIn] = createSignal(0.2);
   const [borderIn, setBorderIn] = createSignal(0);
   const [orientation, setOrientation] = createSignal<"portrait" | "landscape">(
     "portrait",
   );
+  const [showPageNumbers, setShowPageNumbers] = createSignal(false);
   const [generating, setGenerating] = createSignal(false);
   const [progress, setProgress] = createSignal<{ done: number; total: number }>(
     { done: 0, total: 0 },
@@ -93,13 +95,14 @@ export default function PdfExportModal(props: Props) {
 
   const layout = createMemo(() => {
     const { pageW, pageH } = pageSize();
-    const m = marginIn();
+    const mx = marginXIn();
+    const my = marginYIn();
     const g = gutterIn();
     const w = cardW();
     const h = cardH();
     const b = borderIn();
-    const contentW = pageW - 2 * m;
-    const contentH = pageH - 2 * m;
+    const contentW = pageW - 2 * mx;
+    const contentH = pageH - 2 * my;
     const invalid = (reason: string) => ({
       cols: 0,
       rows: 0,
@@ -108,7 +111,7 @@ export default function PdfExportModal(props: Props) {
       contentH,
       error: reason,
     });
-    if (m < 0) return invalid("Margin must be non-negative.");
+    if (mx < 0 || my < 0) return invalid("Margins must be non-negative.");
     if (g < 0) return invalid("Gutter must be non-negative.");
     if (w <= 0 || h <= 0) return invalid("Card size must be positive.");
     if (contentW <= 0 || contentH <= 0) {
@@ -162,6 +165,9 @@ export default function PdfExportModal(props: Props) {
       const h = cardH();
       const border = borderIn();
       const rows = l.rows;
+      const mY = marginYIn();
+      const withPageNums = showPageNumbers();
+      const totalPages = Math.ceil(chosen.length / perPage);
 
       const footW = w + border;
       const footH = h + border;
@@ -170,10 +176,27 @@ export default function PdfExportModal(props: Props) {
       const startX = (pageW - gridW) / 2;
       const startY = (pageH - gridH) / 2;
 
+      const drawPageNumber = (pageIdx: number) => {
+        if (!withPageNums) return;
+        const label = `${pageIdx + 1} / ${totalPages}`;
+        doc.setFontSize(9);
+        doc.setTextColor(120);
+        doc.text(label, pageW / 2, pageH - mY / 2, {
+          align: "center",
+          baseline: "middle",
+        });
+        doc.setTextColor(0);
+      };
+
+      drawPageNumber(0);
+
       for (let i = 0; i < chosen.length; i++) {
         const recipe = chosen[i];
         const slot = i % perPage;
-        if (i > 0 && slot === 0) doc.addPage();
+        if (i > 0 && slot === 0) {
+          doc.addPage();
+          drawPageNumber(Math.floor(i / perPage));
+        }
 
         const col = slot % cols;
         const row = Math.floor(slot / cols);
@@ -318,13 +341,27 @@ export default function PdfExportModal(props: Props) {
           />
         </div>
         <div class="form-group">
-          <label>Page margin (in)</label>
+          <label>Horizontal margin (in)</label>
           <input
             type="number"
             step="0.05"
             min="0"
-            value={marginIn()}
-            onInput={(e) => setMarginIn(parseFloat(e.currentTarget.value) || 0)}
+            value={marginXIn()}
+            onInput={(e) =>
+              setMarginXIn(parseFloat(e.currentTarget.value) || 0)
+            }
+          />
+        </div>
+        <div class="form-group">
+          <label>Vertical margin (in)</label>
+          <input
+            type="number"
+            step="0.05"
+            min="0"
+            value={marginYIn()}
+            onInput={(e) =>
+              setMarginYIn(parseFloat(e.currentTarget.value) || 0)
+            }
           />
         </div>
         <div class="form-group">
@@ -346,6 +383,16 @@ export default function PdfExportModal(props: Props) {
             value={borderIn()}
             onInput={(e) => setBorderIn(parseFloat(e.currentTarget.value) || 0)}
           />
+        </div>
+        <div class="form-group">
+          <label>
+            <input
+              type="checkbox"
+              checked={showPageNumbers()}
+              onChange={(e) => setShowPageNumbers(e.currentTarget.checked)}
+            />{" "}
+            Show page numbers
+          </label>
         </div>
 
         <p class="recipe-cards-layout-info">
