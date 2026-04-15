@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { CreateRecipeRequest, CreateRecipeResponse, Direction, ListRecipesResponse, RecipeResponse, RescrapeResponse, SortBy, UpdateRecipeRequest, VersionListResponse } from '../models/index';
+import type { CreateRecipeRequest, CreateRecipeResponse, Direction, ListRecipesResponse, NormalizeTitleResponse, RecipeResponse, RescrapeResponse, SortBy, UpdateRecipeRequest, VersionListResponse } from '../models/index';
 export interface CreateRecipeOperationRequest {
     createRecipeRequest: CreateRecipeRequest;
 }
@@ -32,6 +32,9 @@ export interface ListRecipesRequest {
     sortDir?: Direction;
 }
 export interface ListVersionsRequest {
+    id: string;
+}
+export interface NormalizeTitleRequest {
     id: string;
 }
 export interface RescrapeRequest {
@@ -90,6 +93,12 @@ export declare class RecipesApi extends runtime.BaseAPI {
     /**
      */
     listVersions(requestParameters: ListVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<VersionListResponse>;
+    /**
+     */
+    normalizeTitleRaw(requestParameters: NormalizeTitleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<NormalizeTitleResponse>>;
+    /**
+     */
+    normalizeTitle(requestParameters: NormalizeTitleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<NormalizeTitleResponse>;
     /**
      */
     rescrapeRaw(requestParameters: RescrapeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RescrapeResponse>>;

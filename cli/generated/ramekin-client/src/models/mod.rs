@@ -58,6 +58,8 @@ pub mod meal_type;
 pub use self::meal_type::MealType;
 pub mod measurement;
 pub use self::measurement::Measurement;
+pub mod normalize_title_response;
+pub use self::normalize_title_response::NormalizeTitleResponse;
 pub mod pagination_metadata;
 pub use self::pagination_metadata::PaginationMetadata;
 pub mod ping_response;

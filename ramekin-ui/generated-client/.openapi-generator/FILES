@@ -44,6 +44,7 @@ docs/MealPlanListResponse.md
 docs/MealPlansApi.md
 docs/MealType.md
 docs/Measurement.md
+docs/NormalizeTitleResponse.md
 docs/PaginationMetadata.md
 docs/PhotosApi.md
 docs/PingResponse.md
@@ -112,6 +113,7 @@ models/MealPlanItem.ts
 models/MealPlanListResponse.ts
 models/MealType.ts
 models/Measurement.ts
+models/NormalizeTitleResponse.ts
 models/PaginationMetadata.ts
 models/PingResponse.ts
 models/RecipeContent.ts

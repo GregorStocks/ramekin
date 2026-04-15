@@ -46,6 +46,7 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**get_recipe**](docs/RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 *RecipesApi* | [**list_recipes**](docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 *RecipesApi* | [**list_versions**](docs/RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
+*RecipesApi* | [**normalize_title**](docs/RecipesApi.md#normalize_title) | **POST** /api/recipes/{id}/normalize-title | 
 *RecipesApi* | [**rescrape**](docs/RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 *RecipesApi* | [**rescrape_photo**](docs/RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
 *RecipesApi* | [**update_recipe**](docs/RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
@@ -99,6 +100,7 @@ Class | Method | HTTP request | Description
  - [MealPlanListResponse](docs/MealPlanListResponse.md)
  - [MealType](docs/MealType.md)
  - [Measurement](docs/Measurement.md)
+ - [NormalizeTitleResponse](docs/NormalizeTitleResponse.md)
  - [PaginationMetadata](docs/PaginationMetadata.md)
  - [PingResponse](docs/PingResponse.md)
  - [RecipeContent](docs/RecipeContent.md)

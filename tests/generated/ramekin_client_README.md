@@ -83,6 +83,7 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**get_recipe**](ramekin_client/docs/RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 *RecipesApi* | [**list_recipes**](ramekin_client/docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 *RecipesApi* | [**list_versions**](ramekin_client/docs/RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
+*RecipesApi* | [**normalize_title**](ramekin_client/docs/RecipesApi.md#normalize_title) | **POST** /api/recipes/{id}/normalize-title | 
 *RecipesApi* | [**rescrape**](ramekin_client/docs/RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 *RecipesApi* | [**rescrape_photo**](ramekin_client/docs/RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
 *RecipesApi* | [**update_recipe**](ramekin_client/docs/RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
@@ -136,6 +137,7 @@ Class | Method | HTTP request | Description
  - [MealPlanListResponse](ramekin_client/docs/MealPlanListResponse.md)
  - [MealType](ramekin_client/docs/MealType.md)
  - [Measurement](ramekin_client/docs/Measurement.md)
+ - [NormalizeTitleResponse](ramekin_client/docs/NormalizeTitleResponse.md)
  - [PaginationMetadata](ramekin_client/docs/PaginationMetadata.md)
  - [PingResponse](ramekin_client/docs/PingResponse.md)
  - [RecipeContent](ramekin_client/docs/RecipeContent.md)

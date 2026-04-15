@@ -1200,6 +1200,73 @@
         ]
       }
     },
+    "/api/recipes/{id}/normalize-title": {
+      "post": {
+        "tags": [
+          "recipes"
+        ],
+        "operationId": "normalize_title",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Recipe ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Title normalized and applied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NormalizeTitleResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recipe not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "AI service unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/recipes/{id}/rescrape": {
       "post": {
         "tags": [
@@ -2830,6 +2897,29 @@
               "string",
               "null"
             ]
+          }
+        }
+      },
+      "NormalizeTitleResponse": {
+        "type": "object",
+        "required": [
+          "original_title",
+          "normalized_title",
+          "changed",
+          "cached"
+        ],
+        "properties": {
+          "cached": {
+            "type": "boolean"
+          },
+          "changed": {
+            "type": "boolean"
+          },
+          "normalized_title": {
+            "type": "string"
+          },
+          "original_title": {
+            "type": "string"
           }
         }
       },

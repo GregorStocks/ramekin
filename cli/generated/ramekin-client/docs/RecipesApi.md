@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**get_recipe**](RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 [**list_recipes**](RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 [**list_versions**](RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
+[**normalize_title**](RecipesApi.md#normalize_title) | **POST** /api/recipes/{id}/normalize-title | 
 [**rescrape**](RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 [**rescrape_photo**](RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
 [**update_recipe**](RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
@@ -202,6 +203,34 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::VersionListResponse**](VersionListResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## normalize_title
+
+> models::NormalizeTitleResponse normalize_title(id)
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **uuid::Uuid** | Recipe ID | [required] |
+
+### Return type
+
+[**models::NormalizeTitleResponse**](NormalizeTitleResponse.md)
 
 ### Authorization
 
