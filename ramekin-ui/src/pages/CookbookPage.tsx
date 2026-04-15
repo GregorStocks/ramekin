@@ -357,9 +357,13 @@ export default function CookbookPage() {
     setSearchInput(q);
     setOffset(0);
     setRecipes([]);
-    // Leaving bulk mode on filter change would surprise the user; clear selection.
+    // Leaving bulk mode on filter change would surprise the user; clear
+    // selection, and bump bulkRequestId so any in-flight fetchAllMatching
+    // sees the change and discards its results instead of writing stale
+    // IDs back into bulkRecipes/selected.
     setSelected(new Set<string>());
     setBulkRecipes([]);
+    setBulkRequestId((id) => id + 1);
     loadRecipes(false, 0);
   });
 
@@ -523,18 +527,28 @@ export default function CookbookPage() {
     });
   };
 
+  // Monotonically-increasing request ID used to discard stale select-all
+  // responses. If the user changes filters/sort while fetchAllMatching is
+  // in flight, the createEffect below bumps bulkRequestId so the older
+  // request's results are ignored instead of being written back to state
+  // (where they'd silently target the wrong recipes).
+  const [bulkRequestId, setBulkRequestId] = createSignal(0);
+
   // Fetch *every* recipe matching the current filter (across all pages).
-  // Returns the full list. Also caches it on bulkRecipes() so later actions
-  // don't need to refetch. We always paginate with a deterministic sort
-  // (updated_at desc) regardless of the user's visible sort — otherwise
-  // random order gives a different shuffle per page, so offset pagination
-  // would duplicate and skip rows and the resulting Set would silently miss
-  // matching recipes.
-  const fetchAllMatching = async (): Promise<RecipeSummary[]> => {
+  // Returns the full list, or null if the request was superseded by a newer
+  // one (filter changed mid-flight). Also caches the result on bulkRecipes()
+  // when still current, so later actions don't need to refetch. We always
+  // paginate with a deterministic sort (updated_at desc) regardless of the
+  // user's visible sort — otherwise random order gives a different shuffle
+  // per page, so offset pagination would duplicate and skip rows and the
+  // resulting Set would silently miss matching recipes.
+  const fetchAllMatching = async (): Promise<RecipeSummary[] | null> => {
     const cached = bulkRecipes();
     if (cached.length > 0 && cached.length === total()) {
       return cached;
     }
+    const myRequestId = bulkRequestId() + 1;
+    setBulkRequestId(myRequestId);
     const q = searchQuery();
     const api = getRecipesApi();
     const all: RecipeSummary[] = [];
@@ -548,11 +562,19 @@ export default function CookbookPage() {
         sortBy: "updated_at",
         sortDir: "desc",
       });
+      // If a newer request was started (filter changed), bail out without
+      // touching bulk state.
+      if (bulkRequestId() !== myRequestId) {
+        return null;
+      }
       all.push(...resp.recipes);
       offset += resp.recipes.length;
       if (resp.recipes.length === 0 || offset >= resp.pagination.total) {
         break;
       }
+    }
+    if (bulkRequestId() !== myRequestId) {
+      return null;
     }
     setBulkRecipes(all);
     return all;
@@ -562,6 +584,12 @@ export default function CookbookPage() {
     setSelectAllStatus("Loading…");
     try {
       const all = await fetchAllMatching();
+      if (all === null) {
+        // Filter changed while we were loading — selection was already
+        // cleared by the createEffect and bulkRecipes was not mutated.
+        setSelectAllStatus(null);
+        return;
+      }
       setSelected(new Set(all.map((r) => r.id)));
       setSelectAllStatus(null);
     } catch (e) {

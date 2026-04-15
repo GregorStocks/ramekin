@@ -78,15 +78,19 @@ fn run_backfill(pool: &DbPool) -> Result<(), String> {
                 }
                 Err(e) => {
                     tracing::warn!("Failed to decode photo {}: {}", id, e);
-                    // width stays NULL so we don't re-enter this branch next loop;
-                    // record file_size directly so the bytes filter still works.
+                    // The row still needs to drop out of `width IS NULL` so
+                    // the backfill loop terminates, but the user's actual
+                    // workflow is `photo_dim:<600` to find low-res images —
+                    // an undecodable photo is "unknown", not "small", and
+                    // must not match that filter. Write i32::MAX as a
+                    // sentinel so the photo is treated as maximally large;
+                    // it will never match `<N` for any reasonable N, and the
+                    // bytes filter still works because file_size is real.
                     let _ = diesel::update(photos::table.find(id))
                         .set((
                             photos::file_size.eq(Some(file_size)),
-                            // Set width/height to 0 as a sentinel so the row drops
-                            // out of the "IS NULL" query and we don't loop forever.
-                            photos::width.eq(Some(0)),
-                            photos::height.eq(Some(0)),
+                            photos::width.eq(Some(i32::MAX)),
+                            photos::height.eq(Some(i32::MAX)),
                         ))
                         .execute(&mut conn);
                     failed += 1;
