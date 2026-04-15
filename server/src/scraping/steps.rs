@@ -376,7 +376,14 @@ impl PipelineStep for SaveRecipeStep {
                 output: json!({ "recipe_id": recipe_id.to_string() }),
                 error: None,
                 duration_ms: start.elapsed().as_millis() as u64,
-                next_step: Some("enrich_normalize_ingredients".to_string()),
+                // Photo-only rescrape must not run the post-save enrichment
+                // chain: enrich_auto_tag / apply_auto_tags would create yet
+                // another version with newly applied tags, breaking the
+                // endpoint's promise that *only* photo_ids change.
+                next_step: match self.mode {
+                    SaveMode::PhotoOnly(_) => None,
+                    _ => Some("enrich_normalize_ingredients".to_string()),
+                },
             },
             Err(e) => StepResult {
                 step_name: SaveRecipeStepMeta::NAME.to_string(),

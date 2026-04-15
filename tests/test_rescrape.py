@@ -213,6 +213,44 @@ class TestRescrapePhoto:
         finally:
             os.remove(fixture_path)
 
+    def test_rescrape_photo_creates_exactly_one_new_version(self, authed_api_client):
+        """Photo rescrape must not trigger the enrichment chain afterwards —
+        otherwise auto-tagging would create a second 'enrichment' version and
+        the endpoint would silently mutate metadata beyond photo_ids."""
+        client, _ = authed_api_client
+        scrape_api = ScrapeApi(client)
+        recipes_api = RecipesApi(client)
+
+        image_url = f"{FIXTURE_BASE_URL}/images/test_recipe.jpg"
+        fixture_path = _write_local_fixture(
+            "rescrape_photo_fixture_single_version.html",
+            _MINIMAL_RECIPE_HTML.format(image_url=image_url),
+        )
+        try:
+            source_url = (
+                f"{FIXTURE_BASE_URL}/rescrape_photo_fixture_single_version.html"
+            )
+            response = scrape_api.create_scrape(CreateScrapeRequest(url=source_url))
+            job = wait_for_job_completion(scrape_api, response.id)
+            assert job.status == "completed"
+            recipe_id = job.recipe_id
+
+            before = recipes_api.list_versions(recipe_id)
+            before_count = len(before.versions)
+
+            rescrape_response = recipes_api.rescrape_photo(recipe_id)
+            wait_for_job_completion(scrape_api, rescrape_response.job_id)
+
+            after = recipes_api.list_versions(recipe_id)
+            # Exactly one new version — the photo_rescrape one — with no
+            # follow-up enrichment version from apply_auto_tags.
+            assert len(after.versions) == before_count + 1
+            # The newest version is photo_rescrape, not enrichment.
+            newest = after.versions[0]
+            assert newest.version_source == "photo_rescrape"
+        finally:
+            os.remove(fixture_path)
+
     def test_rescrape_photo_fails_loudly_when_no_images_fetched(
         self, authed_api_client
     ):
