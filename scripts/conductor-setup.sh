@@ -35,8 +35,6 @@ do_setup() {
         --base-port "$BASE_PORT" \
         --force
 
-    DEV_DB=$(grep '^DATABASE_URL=' dev.env | sed 's|.*/||')
-    TEST_DB=$(grep '^DATABASE_URL=' test.env | sed 's|.*/||')
     echo "Created dev.env and test.env"
 
     # Sync keys from source directory (if available)
@@ -97,12 +95,6 @@ do_setup() {
     else
         echo "Note: $SOURCE_DIR not found, skipping key sync"
     fi
-
-    # Create databases (requires postgres running on port 54321)
-    echo ""
-    echo "Creating databases..."
-    PGPASSWORD=ramekin createdb -h localhost -p 54321 -U ramekin --no-password "$DEV_DB"
-    PGPASSWORD=ramekin createdb -h localhost -p 54321 -U ramekin --no-password "$TEST_DB"
 
     # Install npm dependencies
     echo ""
