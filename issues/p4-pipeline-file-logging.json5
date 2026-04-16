@@ -1,0 +1,19 @@
+{
+  "title": "Add file logging for pipeline runs",
+  "description": "Pipeline runs currently only log to stderr via tracing. When \
+something goes wrong (e.g. the stack overflow from #398), there's no persistent \
+log to look at after the fact.\n\
+\n\
+Add a file appender so pipeline runs write debug-level logs to `logs/`. \
+Probably use `tracing-appender` with a non-rolling file per run, named after \
+the run ID.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "pipeline",
+    "observability",
+  ],
+  "created_at": "2026-04-15T22:32:15-07:00",
+  "updated_at": "2026-04-15T22:32:15-07:00",
+}
