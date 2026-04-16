@@ -7,7 +7,7 @@ use thiserror::Error;
 pub const DEFAULT_BASE_URL: &str = "https://openrouter.ai/api/v1";
 
 /// Default model to use.
-pub const DEFAULT_MODEL: &str = "openai/gpt-4o-mini";
+pub const DEFAULT_MODEL: &str = "google/gemini-2.5-flash";
 
 /// Default rate limit between requests in milliseconds.
 pub const DEFAULT_RATE_LIMIT_MS: u64 = 500;
@@ -25,7 +25,7 @@ pub enum ConfigError {
 pub struct AiConfig {
     /// API key for OpenRouter.
     pub api_key: String,
-    /// Model name (e.g., "openai/gpt-4o-mini", "anthropic/claude-sonnet-4-20250514").
+    /// Model name (e.g., "google/gemini-2.5-flash", "openai/gpt-4.1-mini").
     pub model: String,
     /// Base URL for the API.
     pub base_url: String,
@@ -46,7 +46,7 @@ impl AiConfig {
     /// - `OPENROUTER_API_KEY`: API key for OpenRouter
     ///
     /// Optional:
-    /// - `RAMEKIN_AI_MODEL`: Model name (default: "openai/gpt-4o-mini")
+    /// - `RAMEKIN_AI_MODEL`: Model name (default: "google/gemini-2.5-flash")
     /// - `RAMEKIN_AI_BASE_URL`: API base URL (default: "https://openrouter.ai/api/v1")
     /// - `RAMEKIN_AI_CACHE_DIR`: Cache directory (default: "~/.ramekin/ai-cache")
     /// - `RAMEKIN_AI_OFFLINE`: Use cache only (default: false)

@@ -61,7 +61,7 @@ impl CacheKey {
     ///
     /// Format: {prompt_name}/{model_safe}/{hash[0:2]}/{hash}.json
     pub fn to_path(&self) -> PathBuf {
-        // Replace slashes in model name (e.g., "openai/gpt-4o-mini" -> "openai--gpt-4o-mini")
+        // Replace slashes in model name (e.g., "google/gemini-2.5-flash" -> "google--gemini-2.5-flash")
         let model_safe = self.model.replace('/', "--");
         let hash_prefix: String = self.input_hash.chars().take(2).collect();
 

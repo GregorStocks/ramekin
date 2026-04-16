@@ -266,12 +266,12 @@ mod tests {
     fn test_cache_key_path() {
         let key = CacheKey::new(
             "auto_tag",
-            "openai/gpt-4o-mini",
+            "google/gemini-2.5-flash",
             &[ChatMessage::user("test")],
         );
 
         let path = key.to_path();
-        assert!(path.starts_with("auto_tag/openai--gpt-4o-mini/"));
+        assert!(path.starts_with("auto_tag/google--gemini-2.5-flash/"));
         assert!(path.to_string_lossy().ends_with(".json"));
     }
 }

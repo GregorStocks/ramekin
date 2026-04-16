@@ -3,31 +3,31 @@
 ## Overall
 
 - Total URLs: 5277
-- Completed: 5199 (98.5%)
+- Completed: 5197 (98.5%)
 - Failed at fetch: 2 (0.0%)
-- Failed at extract: 76 (1.4%)
+- Failed at extract: 78 (1.5%)
 
 ## Extraction Methods
 
-- JSON-LD: 4045/5275 (76.7%)
+- JSON-LD: 4043/5275 (76.6%)
 - Microdata: 527/5275 (10.0%)
 - Both: 0/5275 (0.0%)
-- Neither: 703/5275 (13.3%)
+- Neither: 705/5275 (13.4%)
 
 ## Ingredient Parsing
 
-- Total ingredients: 58847
-- Volume-to-weight converted: 14904/35639 (41.8%)
-- Unknown ingredient (no density data): 12383
-- Already has weight: 8352
-- No volume unit (count-based): 22945
+- Total ingredients: 58809
+- Volume-to-weight converted: 14901/35608 (41.8%)
+- Unknown ingredient (no density data): 12370
+- Already has weight: 8337
+- No volume unit (count-based): 22938
 - Metric converted (oz→g): 2411
 - Metric converted (lb→g): 1610
 
 ## AI Cache
 
-- Cache hits: 5196/5199 (99.9%)
-- API calls: 3/5199 (0.1%)
+- Cache hits: 5196/5196 (100.0%)
+- API calls: 0/5196 (0.0%)
 
 ## By Site
 
@@ -92,7 +92,7 @@
 | peasandcrayons.com | 51 | 52 | 98.1% |
 | recipetineats.com | 9 | 9 | 100.0% |
 | sallysbakingaddiction.com | 34 | 34 | 100.0% |
-| seriouseats.com | 97 | 98 | 99.0% |
+| seriouseats.com | 95 | 98 | 96.9% |
 | simplyrecipes.com | 99 | 100 | 99.0% |
 | skinnytaste.com | 2 | 2 | 100.0% |
 | slenderkitchen.com | 55 | 55 | 100.0% |
@@ -124,7 +124,7 @@
 - https://nomnompaleo.com/2017/08/15/6053
 - https://theforkedspoon.com/chicken-fajita-meal-prep-recipe/
 
-### Missing required field: name (12 URLs)
+### Missing required field: name (14 URLs)
 
 - https://hostthetoast.com/feel-better-chicken-soup-recipe/
 - https://hostthetoast.com/tomato-bruschetta-recipe/
@@ -138,6 +138,8 @@
 - https://www.asweetpeachef.com/homemade-tomatillo-salsa-verde-recipe/
 - https://www.asweetpeachef.com/no-bake-cheesecake-recipe/
 - https://www.asweetpeachef.com/orange-creamsicle-recipe/
+- https://www.seriouseats.com/fried-pickle-dip-recipe-8702294
+- https://www.seriouseats.com/pad-see-ew-recipe-8784741
 
 ### Missing required field: recipeIngredient (empty) (63 URLs)
 

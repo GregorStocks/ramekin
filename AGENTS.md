@@ -12,6 +12,8 @@ Never modify generated code (except for temporary testing), since your changes w
 
 Never bypass the linter with #noqa or equivalent. Never put a Python import anywhere other than the top of the file.
 
+Use `tracing` (tracing::info!, tracing::warn!, etc.) for logging in Rust code, not println/eprintln.
+
 If a test is failing, you aren't done. There is no such thing as an unrelated test failure. Your extremely strong prior should be that you broke the test. Even if you didn't, you should fix it.
 
 Try very hard to avoid ever writing raw SQL. We should always use the regular Diesel DSL. If you're really sure that you need raw SQL, explicitly confirm with the user first.

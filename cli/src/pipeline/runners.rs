@@ -135,8 +135,6 @@ pub async fn run_all_steps(
     force_fetch: bool,
     registry: Arc<StepRegistry>,
 ) -> AllStepsResult {
-    let _span = tracing::info_span!("run_all_steps").entered();
-
     let mut step_results = Vec::new();
     let mut store = FileOutputStore::new(run_dir, url);
 
@@ -162,7 +160,6 @@ pub async fn run_all_steps(
         // After force fetch, pre-populate store and start from extract_recipe
         // Only cache in memory - skip disk write since HTML is already in disk cache
         {
-            let _span = tracing::info_span!("load_cached_html").entered();
             if let Some(html) = client.get_cached_html(url) {
                 store.cache_only("fetch_html", serde_json::json!({ "html": html }));
             }
@@ -180,7 +177,6 @@ pub async fn run_all_steps(
         // Pre-populate store with cached HTML so extract_recipe can find it
         // Only cache in memory - skip disk write since HTML is already in disk cache
         {
-            let _span = tracing::info_span!("load_cached_html").entered();
             if let Some(html) = client.get_cached_html(url) {
                 store.cache_only("fetch_html", serde_json::json!({ "html": html }));
             }

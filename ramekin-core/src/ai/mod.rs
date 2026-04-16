@@ -11,7 +11,7 @@
 //! Set these environment variables:
 //!
 //! - `OPENROUTER_API_KEY` (required): Your OpenRouter API key
-//! - `RAMEKIN_AI_MODEL` (optional): Model name, e.g., "openai/gpt-4o-mini"
+//! - `RAMEKIN_AI_MODEL` (optional): Model name, e.g., "google/gemini-2.5-flash"
 //! - `RAMEKIN_AI_BASE_URL` (optional): API base URL
 //! - `RAMEKIN_AI_CACHE_DIR` (optional): Cache directory path
 //! - `RAMEKIN_AI_OFFLINE` (optional): Set to "true" to use cache only

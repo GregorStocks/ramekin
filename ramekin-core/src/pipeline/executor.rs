@@ -2,8 +2,6 @@
 
 use std::collections::HashMap;
 
-use tracing::{info_span, Instrument};
-
 use crate::pipeline::step::{PipelineStep, StepContext, StepOutputStore, StepResult};
 
 /// Registry that maps step names to their implementations.
@@ -61,15 +59,11 @@ pub async fn run_pipeline(
             url,
             outputs: store,
         };
-        let result = step
-            .execute(&ctx)
-            .instrument(info_span!("pipeline_step", step = %step_name))
-            .await;
+        let result = step.execute(&ctx).await;
 
         // Save output if successful
         // TODO: Confirm that we want to continue on save failure (vs failing the step)
         if result.success {
-            let _save_span = info_span!("save_output", step = %step_name).entered();
             if let Err(e) = store.save_output(meta.name, &result.output) {
                 // Log error but continue - we still have the result
                 tracing::warn!("Failed to save output for step {}: {}", meta.name, e);
