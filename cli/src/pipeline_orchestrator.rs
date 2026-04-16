@@ -12,7 +12,7 @@ use futures::stream::{self, StreamExt};
 use rand::seq::SliceRandom;
 use serde::{Deserialize, Serialize};
 use tokio::sync::Mutex;
-use tracing::{info_span, Instrument};
+use tracing::info_span;
 
 use crate::generate_test_urls::TestUrlsOutput;
 use crate::pipeline::{
@@ -337,6 +337,8 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             let span_domain = domain.clone();
 
             async move {
+                let _span =
+                    info_span!("process_url", url = %span_url, domain = %span_domain).entered();
                 // Check if we need to fetch (for progress display)
                 let needs_fetch = force_refetch || (!offline && !client.is_cached(&url));
 
@@ -427,7 +429,6 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
                     extraction_stats: all_results.extraction_stats,
                 })
             }
-            .instrument(info_span!("process_url", url = %span_url, domain = %span_domain))
         })
         .buffer_unordered(concurrency)
         .collect()
