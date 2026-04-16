@@ -396,7 +396,6 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
 
                 // Update shared results
                 {
-                    let _span = tracing::info_span!("update_and_save_results").entered();
                     let mut results = results.lock().await;
                     update_results(
                         &mut results,
