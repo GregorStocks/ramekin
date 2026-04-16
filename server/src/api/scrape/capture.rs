@@ -63,8 +63,10 @@ pub async fn capture(
         };
 
     tracing::info!(
-        "Created capture job {} for URL {}",
+        "Created capture job {} for user {} with HTML len {} from URL {}",
         job.id,
+        user.id,
+        request.html.len(),
         request.source_url
     );
 

@@ -352,6 +352,16 @@ impl PipelineStep for SaveRecipeStep {
                     .collect()
             });
 
+        tracing::info!(
+            "save_recipe: mode={:?} user_id={} title={:?} version_source={} photos={} ingredients={}",
+            self.mode,
+            self.user_id,
+            raw_recipe.title,
+            version_source,
+            photo_ids.len(),
+            parsed_ingredients.len(),
+        );
+
         // Create or update recipe in database
         let result = match self.mode {
             SaveMode::Create => {
