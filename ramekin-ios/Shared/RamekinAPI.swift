@@ -1,6 +1,6 @@
 import Foundation
 
-private struct CreateMealPlanRequestBody: Encodable {
+struct CreateMealPlanRequestBody: Encodable {
     let recipeId: UUID
     let mealDate: String
     let mealType: String
