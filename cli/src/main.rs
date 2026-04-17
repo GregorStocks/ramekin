@@ -277,14 +277,12 @@ enum Commands {
 async fn main() -> Result<()> {
     let cli = Cli::parse();
 
-    // For pipeline runs, also write debug-level logs to a per-run file under `logs/`
-    // so there's a persistent record to inspect after the fact. Other commands keep
-    // the plain stderr-only setup.
-    let pipeline_run_id = match &cli.command {
-        Commands::Pipeline { .. } => Some(Utc::now().format("%Y-%m-%d_%H-%M-%S").to_string()),
-        _ => None,
-    };
-    let _log_guard = init_tracing(pipeline_run_id.as_deref())?;
+    // Every invocation writes debug-level logs to `logs/<command>-<timestamp>.log`
+    // so there's a persistent record to inspect after the fact. The timestamp is
+    // also reused as the pipeline run_id so the log file matches the run directory.
+    // Millisecond precision keeps back-to-back invocations from clobbering each other.
+    let timestamp = Utc::now().format("%Y-%m-%d_%H-%M-%S%.3f").to_string();
+    let _log_guard = init_tracing(command_slug(&cli.command), &timestamp)?;
 
     match cli.command {
         Commands::Ping { server_url } => {
@@ -382,9 +380,8 @@ async fn main() -> Result<()> {
             tags_file,
             concurrency,
         } => {
-            let run_id = pipeline_run_id.expect("run_id set for Pipeline command");
             let config = pipeline_orchestrator::OrchestratorConfig {
-                run_id,
+                run_id: timestamp.clone(),
                 test_urls_file: test_urls,
                 output_dir: output_dir.clone(),
                 limit,
@@ -494,12 +491,13 @@ async fn ping(server: &str) -> Result<()> {
 
 /// Initialize the tracing subscriber.
 ///
-/// Always writes INFO-and-above events to stderr (configurable via `RUST_LOG`).
-/// When `pipeline_run_id` is set, also writes DEBUG-and-above events to
-/// `logs/pipeline-<run_id>.log` so pipeline runs leave a persistent record.
+/// Writes INFO-and-above events to stderr (configurable via `RUST_LOG`) and
+/// DEBUG-and-above events to `logs/<command>-<timestamp>.log`. The log file
+/// lives in the worktree, so it's effectively scratch space.
 fn init_tracing(
-    pipeline_run_id: Option<&str>,
-) -> Result<Option<tracing_appender::non_blocking::WorkerGuard>> {
+    command_name: &str,
+    timestamp: &str,
+) -> Result<tracing_appender::non_blocking::WorkerGuard> {
     let console_filter =
         EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("info"));
     let console_layer = fmt::layer()
@@ -508,22 +506,17 @@ fn init_tracing(
         .without_time()
         .with_filter(console_filter);
 
-    let (file_layer, guard) = if let Some(run_id) = pipeline_run_id {
-        std::fs::create_dir_all("logs").context("Failed to create logs/ directory")?;
-        let path = PathBuf::from("logs").join(format!("pipeline-{run_id}.log"));
-        let file = std::fs::File::create(&path)
-            .with_context(|| format!("Failed to create log file {}", path.display()))?;
-        let (non_blocking, guard) = tracing_appender::non_blocking(file);
-        let layer = fmt::layer()
-            .with_writer(non_blocking)
-            .with_ansi(false)
-            .with_target(true)
-            .with_filter(EnvFilter::new("debug"));
-        eprintln!("Pipeline logs: {}", path.display());
-        (Some(layer), Some(guard))
-    } else {
-        (None, None)
-    };
+    std::fs::create_dir_all("logs").context("Failed to create logs/ directory")?;
+    let path = PathBuf::from("logs").join(format!("{command_name}-{timestamp}.log"));
+    let file = std::fs::File::create(&path)
+        .with_context(|| format!("Failed to create log file {}", path.display()))?;
+    let (non_blocking, guard) = tracing_appender::non_blocking(file);
+    let file_layer = fmt::layer()
+        .with_writer(non_blocking)
+        .with_ansi(false)
+        .with_target(true)
+        .with_filter(EnvFilter::new("debug"));
+    eprintln!("Logs: {}", path.display());
 
     tracing_subscriber::registry()
         .with(console_layer)
@@ -531,4 +524,27 @@ fn init_tracing(
         .init();
 
     Ok(guard)
+}
+
+/// Stable slug for a CLI subcommand, used in log file names.
+fn command_slug(cmd: &Commands) -> &'static str {
+    match cmd {
+        Commands::Ping { .. } => "ping",
+        Commands::Seed { .. } => "seed",
+        Commands::Import { .. } => "import",
+        Commands::LoadTest { .. } => "load-test",
+        Commands::ParseHtml { .. } => "parse-html",
+        Commands::ExportRecipe { .. } => "export-recipe",
+        Commands::ExportAll { .. } => "export-all",
+        Commands::GenerateTestUrls { .. } => "generate-test-urls",
+        Commands::Pipeline { .. } => "pipeline",
+        Commands::PipelineCacheStats { .. } => "pipeline-cache-stats",
+        Commands::PipelineCacheClear { .. } => "pipeline-cache-clear",
+        Commands::IngredientTestsGenerate { .. } => "ingredient-tests-generate",
+        Commands::IngredientTestsUpdate { .. } => "ingredient-tests-update",
+        Commands::IngredientTestsGeneratePaprika { .. } => "ingredient-tests-generate-paprika",
+        Commands::IngredientTestsMigrateCurated { .. } => "ingredient-tests-migrate-curated",
+        Commands::TitleNormalizationTest { .. } => "title-normalization-test",
+        Commands::DescriptionGenerationTest { .. } => "description-generation-test",
+    }
 }

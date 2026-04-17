@@ -290,6 +290,12 @@
   padding-inline: var(--page-gutter);
 }
 
+@media (max-width: 960px) {
+  .app-main {
+    padding: 1rem;
+  }
+}
+
 .app-footer {
   text-align: center;
   padding: 0.5rem 1rem;
@@ -515,6 +521,12 @@ textarea:focus-visible {
   gap: 1rem;
 }
 
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 .toggle-auth {
   text-align: center;
   margin-top: 1.5rem;
@@ -605,6 +617,14 @@ textarea:focus-visible {
   font-weight: normal;
   font-size: 0.9rem;
   color: var(--text-faint);
+}
+
+@media (max-width: 960px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }
 
 /* Cookbook utility bar (search / filters trigger / sort / random / select).
@@ -731,6 +751,28 @@ textarea:focus-visible {
 .sort-select:focus {
   outline: none;
   border-color: var(--accent);
+}
+
+/* Utility bar: stack search above the trigger row, narrower side bleed. */
+@media (max-width: 960px) {
+  .cookbook-utility-bar {
+    flex-wrap: wrap;
+    margin: 0 -1rem 1rem;
+    padding: 0.65rem 1rem;
+  }
+
+  .search-bar {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .filter-button,
+  .sort-select,
+  .density-toggle {
+    flex: 1;
+    min-width: 0;
+    justify-content: center;
+  }
 }
 
 /* Cookbook body lays out the filter sidebar next to the recipe grid. The
@@ -937,6 +979,41 @@ textarea:focus-visible {
   display: none;
 }
 
+/* Cookbook sidebar collapses to a slide-over sheet on tablet and below.
+   The same sidebar markup is repositioned via fixed-position overrides so
+   we don't need to render two copies. The "Filters" trigger in the utility
+   bar appears in this range to open the sheet. */
+@media (max-width: 960px) {
+  .cookbook-body {
+    grid-template-columns: 1fr;
+  }
+
+  .cookbook-mobile-filters-toggle {
+    display: inline-flex;
+  }
+
+  .cookbook-sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(85vw, 320px);
+    max-height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    border-radius: 0;
+    border: none;
+    border-right: 1px solid var(--border-hairline);
+    z-index: 1001;
+  }
+
+  .cookbook-sidebar-open {
+    transform: translateX(0);
+  }
+
+  .cookbook-sidebar-close {
+    display: inline-flex;
+  }
+}
+
 .recipe-grid {
   --rc-direction: column;
   --rc-padding: 0.9rem 1rem 1rem;
@@ -972,6 +1049,12 @@ textarea:focus-visible {
 
 .recipe-grid[data-density="list"] .recipe-card:hover {
   transform: none;
+}
+
+@media (max-width: 640px) {
+  .recipe-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .recipe-card {
@@ -1371,7 +1454,7 @@ textarea:focus-visible {
   border: 1px solid var(--border-hairline);
 }
 
-/* Responsive: stack on smaller screens */
+/* Recipe-view responsive: stack on smaller screens, shrink actions on narrow. */
 @media (max-width: 960px) {
   .recipe-layout {
     grid-template-columns: 1fr;
@@ -1380,6 +1463,23 @@ textarea:focus-visible {
   .recipe-left {
     position: static;
     max-height: none;
+  }
+
+  .recipe-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .recipe-actions {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .recipe-actions .btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -1568,6 +1668,37 @@ textarea:focus-visible {
 
 .ingredient-raw .raw-label {
   color: var(--text-muted);
+}
+
+/* Ingredient row stacks on narrow screens; the remove button becomes an
+   absolutely-positioned corner affordance instead of an inline column. */
+@media (max-width: 640px) {
+  .ingredient-row {
+    flex-direction: column;
+    gap: 0.375rem;
+    position: relative;
+    padding-right: 2rem;
+  }
+
+  .ingredient-row .input-item {
+    width: 100%;
+    min-width: 0;
+    order: -1;
+  }
+
+  .ingredient-row .input-amount,
+  .ingredient-row .input-unit,
+  .ingredient-row .input-note {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .ingredient-row .btn-remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
 }
 
 /* Drag-and-drop section styles */
@@ -2218,7 +2349,7 @@ textarea:focus-visible {
 
 @media (max-width: 640px) {
   .form-row-4 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2591,135 +2722,6 @@ textarea:focus-visible {
   font-style: italic;
 }
 
-/* Cookbook sidebar collapses to a slide-over sheet on tablet and below.
-   The same sidebar markup is repositioned via fixed-position overrides so
-   we don't need to render two copies. The "Filters" trigger in the utility
-   bar appears in this range to open the sheet. */
-/* Mobile Responsive Styles */
-@media (max-width: 960px) {
-  .cookbook-body {
-    grid-template-columns: 1fr;
-  }
-
-  .cookbook-mobile-filters-toggle {
-    display: inline-flex;
-  }
-
-  .cookbook-sidebar {
-    position: fixed;
-    inset: 0 auto 0 0;
-    width: min(85vw, 320px);
-    max-height: 100vh;
-    transform: translateX(-100%);
-    transition: transform 0.2s ease;
-    border-radius: 0;
-    border: none;
-    border-right: 1px solid var(--border-hairline);
-    z-index: 1001;
-  }
-
-  .cookbook-sidebar-open {
-    transform: translateX(0);
-  }
-
-  .cookbook-sidebar-close {
-    display: inline-flex;
-  }
-
-  /* Main content padding */
-  .app-main {
-    padding: 1rem;
-  }
-
-  /* Utility bar - stack search above the trigger row, narrower side bleed */
-  .cookbook-utility-bar {
-    flex-wrap: wrap;
-    margin: 0 -1rem 1rem;
-    padding: 0.65rem 1rem;
-  }
-
-  .search-bar {
-    flex: 1 1 100%;
-    min-width: 0;
-  }
-
-  .filter-button,
-  .sort-select,
-  .density-toggle {
-    flex: 1;
-    min-width: 0;
-    justify-content: center;
-  }
-
-  /* Page header */
-  .page-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  /* Recipe detail top bar - stack nav and actions vertically */
-  .recipe-top-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .recipe-actions {
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 640px) {
-  /* Recipe grid - single column */
-  .recipe-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Form rows - stack on mobile */
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .form-row-4 {
-    grid-template-columns: 1fr;
-  }
-
-  /* Ingredient row - stack on mobile */
-  .ingredient-row {
-    flex-direction: column;
-    gap: 0.375rem;
-    position: relative;
-    padding-right: 2rem;
-  }
-
-  .ingredient-row .input-item {
-    width: 100%;
-    min-width: 0;
-    order: -1;
-  }
-
-  .ingredient-row .input-amount,
-  .ingredient-row .input-unit,
-  .ingredient-row .input-note {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .ingredient-row .btn-remove {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-  }
-
-  /* Recipe action buttons - smaller on narrow screens */
-  .recipe-actions .btn {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.75rem;
-  }
-}
-
 /* Tags Page */
 .tags-page {
   text-align: left;
@@ -2974,6 +2976,53 @@ textarea:focus-visible {
   border-color: var(--accent);
   color: var(--accent);
   background: var(--accent-wash);
+}
+
+@media (max-width: 960px) {
+  .meal-plan-grid {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .meal-plan-header,
+  .meal-row {
+    grid-template-columns: 80px repeat(7, minmax(120px, 1fr));
+    min-width: 920px;
+  }
+
+  .meal-type-label {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .day-header {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .meal-slot {
+    min-height: 80px;
+    padding: 0.25rem;
+  }
+
+  .meal-card {
+    padding: 0.25rem;
+    gap: 0.25rem;
+  }
+
+  .meal-title {
+    font-size: 0.7rem;
+  }
+
+  .meal-thumbnail {
+    width: 24px;
+    height: 24px;
+  }
+
+  .add-meal-btn {
+    padding: 0.25rem;
+    font-size: 0.85rem;
+  }
 }
 
 /* Recipe Picker Modal */
@@ -3349,54 +3398,6 @@ textarea:focus-visible {
   font-weight: 500;
 }
 
-/* Meal plan mobile responsive */
-@media (max-width: 960px) {
-  .meal-plan-grid {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .meal-plan-header,
-  .meal-row {
-    grid-template-columns: 80px repeat(7, minmax(120px, 1fr));
-    min-width: 920px;
-  }
-
-  .meal-type-label {
-    font-size: 0.75rem;
-    padding: 0.5rem;
-  }
-
-  .day-header {
-    font-size: 0.75rem;
-    padding: 0.5rem;
-  }
-
-  .meal-slot {
-    min-height: 80px;
-    padding: 0.25rem;
-  }
-
-  .meal-card {
-    padding: 0.25rem;
-    gap: 0.25rem;
-  }
-
-  .meal-title {
-    font-size: 0.7rem;
-  }
-
-  .meal-thumbnail {
-    width: 24px;
-    height: 24px;
-  }
-
-  .add-meal-btn {
-    padding: 0.25rem;
-    font-size: 0.85rem;
-  }
-}
-
 .recipe-cards-layout {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -3461,7 +3462,10 @@ textarea:focus-visible {
   margin-left: auto;
 }
 
-@media (width <= 700px) {
+/* Stack the 280px config column below the preview once the preview column
+   gets too narrow. Triggers earlier than the app-wide 640 breakpoint
+   because 280 + 1fr is unusable before we hit 640. */
+@media (max-width: 700px) {
   .recipe-cards-layout {
     grid-template-columns: 1fr;
   }
