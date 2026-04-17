@@ -1,6 +1,7 @@
 pub mod create;
 pub mod delete;
 pub mod export;
+pub mod generate_description;
 pub mod generate_photo;
 pub mod get;
 pub mod list;
@@ -35,6 +36,10 @@ pub fn router() -> Router<AppState> {
             "/{id}/normalize-title",
             post(normalize_title::normalize_title),
         )
+        .route(
+            "/{id}/generate-description",
+            post(generate_description::generate_description),
+        )
 }
 
 #[derive(OpenApi)]
@@ -52,6 +57,7 @@ pub fn router() -> Router<AppState> {
         rescrape_photo::rescrape_photo,
         generate_photo::generate_photo,
         normalize_title::normalize_title,
+        generate_description::generate_description,
     ),
     components(schemas(
         create::CreateRecipeRequest,
@@ -67,6 +73,7 @@ pub fn router() -> Router<AppState> {
         rescrape::RescrapeResponse,
         generate_photo::GeneratePhotoResponse,
         normalize_title::NormalizeTitleResponse,
+        generate_description::GenerateDescriptionResponse,
     ))
 )]
 pub struct ApiDoc;

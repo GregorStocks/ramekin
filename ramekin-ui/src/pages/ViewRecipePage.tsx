@@ -133,6 +133,9 @@ export default function ViewRecipePage() {
   const [rescraping, setRescraping] = createSignal(false);
   const [generatingPhoto, setGeneratingPhoto] = createSignal(false);
 
+  // Generate description state
+  const [generatingDescription, setGeneratingDescription] = createSignal(false);
+
   // Shopping list modal state
   const [showShoppingListModal, setShowShoppingListModal] = createSignal(false);
 
@@ -456,6 +459,25 @@ export default function ViewRecipePage() {
     setCompareError(null);
   };
 
+  // Generate description handler
+  const handleGenerateDescription = async () => {
+    if (!recipe()) return;
+    setGeneratingDescription(true);
+    setError(null);
+    try {
+      const res = await getRecipesApi().generateDescription({
+        id: params.id,
+      });
+      if (res.changed) {
+        await loadRecipe();
+      }
+    } catch (err) {
+      setError("Failed to generate description");
+    } finally {
+      setGeneratingDescription(false);
+    }
+  };
+
   // Rescrape handler
   const handleRescrape = async () => {
     const r = recipe();
@@ -609,6 +631,18 @@ export default function ViewRecipePage() {
                 <button
                   type="button"
                   class="btn"
+                  onClick={handleGenerateDescription}
+                  disabled={
+                    generatingDescription() || isViewingHistoricalVersion()
+                  }
+                >
+                  {generatingDescription()
+                    ? "Generating..."
+                    : "Generate Description"}
+                </button>
+                <button
+                  type="button"
+                  class="btn"
                   onClick={handleEnrich}
                   disabled={enriching() || isViewingHistoricalVersion()}
                 >
@@ -741,6 +775,9 @@ export default function ViewRecipePage() {
                     {(tag) => <span class="tag">{tag}</span>}
                   </For>
                 </div>
+              </Show>
+              <Show when={r().description}>
+                <p class="recipe-description">{r().description}</p>
               </Show>
               <Show when={r().sourceUrl || r().sourceName}>
                 <div class="recipe-source-inline">

@@ -1200,6 +1200,73 @@
         ]
       }
     },
+    "/api/recipes/{id}/generate-description": {
+      "post": {
+        "tags": [
+          "recipes"
+        ],
+        "operationId": "generate_description",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Recipe ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Description generated and applied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerateDescriptionResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recipe not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "AI service unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/recipes/{id}/generate-photo": {
       "post": {
         "tags": [
@@ -2608,6 +2675,31 @@
         "properties": {
           "error": {
             "type": "string"
+          }
+        }
+      },
+      "GenerateDescriptionResponse": {
+        "type": "object",
+        "required": [
+          "generated_description",
+          "changed",
+          "cached"
+        ],
+        "properties": {
+          "cached": {
+            "type": "boolean"
+          },
+          "changed": {
+            "type": "boolean"
+          },
+          "generated_description": {
+            "type": "string"
+          },
+          "original_description": {
+            "type": [
+              "string",
+              "null"
+            ]
           }
         }
       },

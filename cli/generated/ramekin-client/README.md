@@ -43,6 +43,7 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**delete_recipe**](docs/RecipesApi.md#delete_recipe) | **DELETE** /api/recipes/{id} | 
 *RecipesApi* | [**export_all_recipes**](docs/RecipesApi.md#export_all_recipes) | **GET** /api/recipes/export | 
 *RecipesApi* | [**export_recipe**](docs/RecipesApi.md#export_recipe) | **GET** /api/recipes/{id}/export | 
+*RecipesApi* | [**generate_description**](docs/RecipesApi.md#generate_description) | **POST** /api/recipes/{id}/generate-description | 
 *RecipesApi* | [**generate_photo**](docs/RecipesApi.md#generate_photo) | **POST** /api/recipes/{id}/generate-photo | 
 *RecipesApi* | [**get_recipe**](docs/RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 *RecipesApi* | [**list_recipes**](docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
@@ -87,6 +88,7 @@ Class | Method | HTTP request | Description
  - [CustomEnrichRequest](docs/CustomEnrichRequest.md)
  - [Direction](docs/Direction.md)
  - [ErrorResponse](docs/ErrorResponse.md)
+ - [GenerateDescriptionResponse](docs/GenerateDescriptionResponse.md)
  - [GeneratePhotoResponse](docs/GeneratePhotoResponse.md)
  - [ImportExtractionMethod](docs/ImportExtractionMethod.md)
  - [ImportFromPhotosRequest](docs/ImportFromPhotosRequest.md)

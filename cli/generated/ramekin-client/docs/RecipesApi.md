@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**delete_recipe**](RecipesApi.md#delete_recipe) | **DELETE** /api/recipes/{id} | 
 [**export_all_recipes**](RecipesApi.md#export_all_recipes) | **GET** /api/recipes/export | 
 [**export_recipe**](RecipesApi.md#export_recipe) | **GET** /api/recipes/{id}/export | 
+[**generate_description**](RecipesApi.md#generate_description) | **POST** /api/recipes/{id}/generate-description | 
 [**generate_photo**](RecipesApi.md#generate_photo) | **POST** /api/recipes/{id}/generate-photo | 
 [**get_recipe**](RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 [**list_recipes**](RecipesApi.md#list_recipes) | **GET** /api/recipes | 
@@ -124,6 +125,34 @@ Name | Type | Description  | Required | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/gzip, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## generate_description
+
+> models::GenerateDescriptionResponse generate_description(id)
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **uuid::Uuid** | Recipe ID | [required] |
+
+### Return type
+
+[**models::GenerateDescriptionResponse**](GenerateDescriptionResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
