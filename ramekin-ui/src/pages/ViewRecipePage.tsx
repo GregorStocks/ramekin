@@ -131,6 +131,7 @@ export default function ViewRecipePage() {
 
   // Rescrape state
   const [rescraping, setRescraping] = createSignal(false);
+  const [generatingPhoto, setGeneratingPhoto] = createSignal(false);
 
   // Shopping list modal state
   const [showShoppingListModal, setShowShoppingListModal] = createSignal(false);
@@ -364,6 +365,22 @@ export default function ViewRecipePage() {
 
   const handleEnrichClose = () => {
     setEnrichedContent(null);
+  };
+
+  const handleGeneratePhoto = async () => {
+    if (!recipe()) return;
+
+    setGeneratingPhoto(true);
+    setError(null);
+    try {
+      await getRecipesApi().generatePhoto({ id: params.id });
+      await loadRecipe();
+    } catch (err) {
+      const message = await extractApiError(err, "Failed to generate AI photo");
+      setError(message);
+    } finally {
+      setGeneratingPhoto(false);
+    }
   };
 
   const handleCustomEnrich = async () => {
@@ -606,6 +623,16 @@ export default function ViewRecipePage() {
                   disabled={enriching() || isViewingHistoricalVersion()}
                 >
                   Customize with AI
+                </button>
+                <button
+                  type="button"
+                  class="btn"
+                  onClick={handleGeneratePhoto}
+                  disabled={generatingPhoto() || isViewingHistoricalVersion()}
+                >
+                  {generatingPhoto()
+                    ? "Generating Photo..."
+                    : "Generate AI Photo"}
                 </button>
                 <button
                   type="button"

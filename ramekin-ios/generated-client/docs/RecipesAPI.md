@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**deleteRecipe**](RecipesAPI.md#deleterecipe) | **DELETE** /api/recipes/{id} | 
 [**exportAllRecipes**](RecipesAPI.md#exportallrecipes) | **GET** /api/recipes/export | 
 [**exportRecipe**](RecipesAPI.md#exportrecipe) | **GET** /api/recipes/{id}/export | 
+[**generatePhoto**](RecipesAPI.md#generatephoto) | **POST** /api/recipes/{id}/generate-photo | 
 [**getRecipe**](RecipesAPI.md#getrecipe) | **GET** /api/recipes/{id} | 
 [**listRecipes**](RecipesAPI.md#listrecipes) | **GET** /api/recipes | 
 [**listVersions**](RecipesAPI.md#listversions) | **GET** /api/recipes/{id}/versions | 
@@ -198,6 +199,53 @@ Void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: application/gzip, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generatePhoto**
+```swift
+    open class func generatePhoto(id: UUID, completion: @escaping (_ data: GeneratePhotoResponse?, _ error: Error?) -> Void)
+```
+
+
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import RamekinClient
+
+let id = 987 // UUID | Recipe ID
+
+RecipesAPI.generatePhoto(id: id) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **UUID** | Recipe ID | 
+
+### Return type
+
+[**GeneratePhotoResponse**](GeneratePhotoResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

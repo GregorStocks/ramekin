@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateRecipeRequestToJSON, CreateRecipeResponseFromJSON, ListRecipesResponseFromJSON, NormalizeTitleResponseFromJSON, RecipeResponseFromJSON, RescrapeResponseFromJSON, UpdateRecipeRequestToJSON, VersionListResponseFromJSON, } from '../models/index';
+import { CreateRecipeRequestToJSON, CreateRecipeResponseFromJSON, GeneratePhotoResponseFromJSON, ListRecipesResponseFromJSON, NormalizeTitleResponseFromJSON, RecipeResponseFromJSON, RescrapeResponseFromJSON, UpdateRecipeRequestToJSON, VersionListResponseFromJSON, } from '../models/index';
 /**
  *
  */
@@ -134,6 +134,37 @@ export class RecipesApi extends runtime.BaseAPI {
      */
     async exportRecipe(requestParameters, initOverrides) {
         await this.exportRecipeRaw(requestParameters, initOverrides);
+    }
+    /**
+     */
+    async generatePhotoRaw(requestParameters, initOverrides) {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling generatePhoto().');
+        }
+        const queryParameters = {};
+        const headerParameters = {};
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+        let urlPath = `/api/recipes/{id}/generate-photo`;
+        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => GeneratePhotoResponseFromJSON(jsonValue));
+    }
+    /**
+     */
+    async generatePhoto(requestParameters, initOverrides) {
+        const response = await this.generatePhotoRaw(requestParameters, initOverrides);
+        return await response.value();
     }
     /**
      */
