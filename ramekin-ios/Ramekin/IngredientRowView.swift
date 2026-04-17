@@ -9,10 +9,9 @@ struct IngredientRowView: View {
         _ingredient = ingredient
         self.onDelete = onDelete
         _isNoteVisible = State(
-            initialValue: IngredientRowViewSupport.shouldShowNoteField(
+            initialValue: IngredientRowViewSupport.initialNoteVisibility(
                 item: ingredient.wrappedValue.item,
-                note: ingredient.wrappedValue.note,
-                isNoteVisible: false
+                note: ingredient.wrappedValue.note
             )
         )
     }
@@ -25,6 +24,12 @@ struct IngredientRowView: View {
             actionButtons
         }
         .padding(.vertical, 4)
+        .onChange(of: ingredient.id) { _, _ in
+            isNoteVisible = IngredientRowViewSupport.initialNoteVisibility(
+                item: ingredient.item,
+                note: ingredient.note
+            )
+        }
     }
 
     // MARK: - Subviews
@@ -164,6 +169,10 @@ struct IngredientRowView: View {
 }
 
 enum IngredientRowViewSupport {
+    static func initialNoteVisibility(item: String, note: String) -> Bool {
+        shouldShowNoteField(item: item, note: note, isNoteVisible: false)
+    }
+
     static func shouldShowNoteField(item: String, note: String, isNoteVisible: Bool) -> Bool {
         isNoteVisible || !note.isEmpty || item.isEmpty
     }
