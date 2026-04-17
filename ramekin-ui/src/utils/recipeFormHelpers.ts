@@ -244,3 +244,17 @@ export async function extractApiError(
 
   return fallbackMessage;
 }
+
+/**
+ * Pull the first image file out of a ClipboardEvent's data, if any.
+ */
+export function extractImageFile(data: DataTransfer | null): File | null {
+  if (!data) return null;
+  for (const item of data.items) {
+    if (item.kind === "file" && item.type.startsWith("image/")) {
+      const file = item.getAsFile();
+      if (file) return file;
+    }
+  }
+  return null;
+}

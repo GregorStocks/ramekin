@@ -1,9 +1,9 @@
-import { createSignal, Show, onMount } from "solid-js";
+import { createSignal, Show, onMount, onCleanup } from "solid-js";
 import { createStore, reconcile } from "solid-js/store";
 import { useParams, useNavigate, A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import RecipeForm from "../components/RecipeForm";
-import { extractApiError } from "../utils/recipeFormHelpers";
+import { extractApiError, extractImageFile } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 import type { Ingredient, RecipeResponse } from "ramekin-client";
 
@@ -79,11 +79,8 @@ export default function EditRecipePage() {
     loadRecipe();
   });
 
-  const handlePhotoUpload = async (e: Event) => {
-    const input = e.target as HTMLInputElement;
-    const file = input.files?.[0];
-    if (!file) return;
-
+  const uploadPhotoFile = async (file: File) => {
+    if (uploading()) return;
     setUploading(true);
     setError(null);
     try {
@@ -94,9 +91,34 @@ export default function EditRecipePage() {
       setError(errorMessage);
     } finally {
       setUploading(false);
+    }
+  };
+
+  const handlePhotoUpload = async (e: Event) => {
+    const input = e.target as HTMLInputElement;
+    const file = input.files?.[0];
+    if (!file) return;
+    try {
+      await uploadPhotoFile(file);
+    } finally {
       input.value = "";
     }
   };
+
+  const handlePaste = (e: ClipboardEvent) => {
+    const file = extractImageFile(e.clipboardData);
+    if (!file) return;
+    e.preventDefault();
+    void uploadPhotoFile(file);
+  };
+
+  onMount(() => {
+    document.addEventListener("paste", handlePaste);
+  });
+
+  onCleanup(() => {
+    document.removeEventListener("paste", handlePaste);
+  });
 
   const removePhoto = (photoId: string) => {
     setPhotoIds(photoIds().filter((id) => id !== photoId));
