@@ -26,7 +26,7 @@ class AuthenticatedImageLoader: ObservableObject {
             RamekinAPI.shared.applyAccessHeaders(to: &request)
 
             do {
-                let (data, response) = try await URLSession.shared.data(for: request)
+                let (data, response) = try await RamekinAPI.shared.imageSession.data(for: request)
 
                 guard !Task.isCancelled else { return }
 
