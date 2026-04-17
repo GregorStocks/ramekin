@@ -20,15 +20,6 @@ class RamekinAPI {
 
     private let logger = DebugLogger.shared
 
-    /// Custom URLSession that accepts self-signed certificates
-    private lazy var urlSession: URLSession = {
-        let config = URLSessionConfiguration.default
-        return URLSession(configuration: config, delegate: InsecureSessionDelegate(), delegateQueue: nil)
-    }()
-
-    /// Shared URLSession for authenticated image requests.
-    lazy var imageSession: URLSession = urlSession
-
     private init() {
         // Configure generated client to accept self-signed certificates
         RamekinClientAPI.requestBuilderFactory = InsecureBuilderFactory()
@@ -209,7 +200,7 @@ class RamekinAPI {
         let data: Data
         let response: URLResponse
         do {
-            (data, response) = try await urlSession.data(for: urlRequest)
+            (data, response) = try await insecureSession.data(for: urlRequest)
         } catch {
             logger.log("NETWORK ERROR: \(error.localizedDescription)")
             throw APIError.networkError(error)
@@ -282,7 +273,7 @@ class RamekinAPI {
         let body = LoginRequest(username: username, password: password)
         request.httpBody = try JSONEncoder().encode(body)
 
-        let (data, response) = try await urlSession.data(for: request)
+        let (data, response) = try await insecureSession.data(for: request)
 
         guard let httpResponse = response as? HTTPURLResponse else {
             throw APIError.invalidResponse
