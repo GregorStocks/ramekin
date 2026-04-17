@@ -310,16 +310,23 @@ pub async fn list_recipes(
         .filter(recipes::deleted_at.is_null())
         .into_boxed();
 
-    // Text search: each word must appear somewhere across all fields (AND between words, OR between fields)
+    // Text search: each word must appear somewhere across all fields (AND
+    // between words, OR between fields). Matches are case- AND
+    // accent-insensitive ("creme brulee" finds "Crème Brûlée").
     for token in &parsed.text {
         let pattern = format!("%{}%", escape_like_pattern(token));
         query = query.filter(
-            recipe_versions::title
-                .ilike(pattern.clone())
-                .or(recipe_versions::description.ilike(pattern.clone()))
-                .or(recipe_versions::instructions.ilike(pattern.clone()))
-                .or(recipe_versions::notes.ilike(pattern.clone()))
-                .or(raw_sql::ingredients_ilike(&pattern)),
+            raw_sql::unaccent_ilike("recipe_versions.title", &pattern)
+                .or(raw_sql::unaccent_ilike(
+                    "recipe_versions.description",
+                    &pattern,
+                ))
+                .or(raw_sql::unaccent_ilike(
+                    "recipe_versions.instructions",
+                    &pattern,
+                ))
+                .or(raw_sql::unaccent_ilike("recipe_versions.notes", &pattern))
+                .or(raw_sql::ingredients_unaccent_ilike(&pattern)),
         );
     }
 
@@ -335,10 +342,13 @@ pub async fn list_recipes(
         query = query.filter(diesel::dsl::exists(tag_subquery));
     }
 
-    // Source filter
+    // Source filter (accent- and case-insensitive)
     if let Some(ref source) = parsed.source {
         let pattern = format!("%{}%", escape_like_pattern(source));
-        query = query.filter(recipe_versions::source_name.ilike(pattern));
+        query = query.filter(raw_sql::unaccent_ilike(
+            "recipe_versions.source_name",
+            &pattern,
+        ));
     }
 
     // Has photos filter

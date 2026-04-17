@@ -725,6 +725,40 @@ def test_search_case_insensitive(authed_api_client):
     assert len(response.recipes) == 1
 
 
+def test_search_accent_insensitive(authed_api_client):
+    """Search is accent-insensitive: plain ASCII matches diacritics and vice versa."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Crème Brûlée",
+            instructions="Torch the top",
+            ingredients=[],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Jalapeno Poppers",
+            description="Stuffed jalapeños with cream cheese",
+            instructions="Bake",
+            ingredients=[],
+        )
+    )
+
+    # Plain ASCII query finds accented title.
+    response = recipes_api.list_recipes(q="creme brulee")
+    assert {r.title for r in response.recipes} == {"Crème Brûlée"}
+
+    # Accented query finds plain-ASCII content.
+    response = recipes_api.list_recipes(q="jalapeño")
+    assert {r.title for r in response.recipes} == {"Jalapeno Poppers"}
+
+    # Accented query also finds accented content.
+    response = recipes_api.list_recipes(q="crème")
+    assert {r.title for r in response.recipes} == {"Crème Brûlée"}
+
+
 def test_filter_by_single_tag(authed_api_client):
     """Test filtering by a single tag."""
     client, user_id = authed_api_client

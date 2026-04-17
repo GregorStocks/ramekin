@@ -193,6 +193,7 @@ pub fn export_recipe_to_paprikarecipe(
         .filter(recipe_version_tags::recipe_version_id.eq(recipe.version.id))
         .filter(user_tags::deleted_at.is_null())
         .select(user_tags::name)
+        .order(user_tags::name.asc())
         .load(conn)
         .unwrap_or_default();
 

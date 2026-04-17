@@ -61,7 +61,7 @@ def test_export_single_recipe(authed_api_client, server_url):
     assert "flour" in exported["ingredients"]
     assert "sugar" in exported["ingredients"]
     assert exported["description"] == "A recipe to test export"
-    assert exported["categories"] == ["test", "export"]
+    assert exported["categories"] == ["export", "test"]
     assert exported["source"] == "Test Kitchen"
     assert exported["source_url"] == "https://example.com/recipe"
     assert exported["servings"] == "4 servings"
