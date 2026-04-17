@@ -38,6 +38,7 @@ RamekinClient/Classes/OpenAPIs/Models/CreateTagRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/CreateTagResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/CustomEnrichRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/Direction.swift
+RamekinClient/Classes/OpenAPIs/Models/GeneratePhotoResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportExtractionMethod.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportFromPhotosRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportFromPhotosResponse.swift
@@ -106,6 +107,7 @@ docs/CreateTagResponse.md
 docs/CustomEnrichRequest.md
 docs/Direction.md
 docs/EnrichAPI.md
+docs/GeneratePhotoResponse.md
 docs/ImportAPI.md
 docs/ImportExtractionMethod.md
 docs/ImportFromPhotosRequest.md

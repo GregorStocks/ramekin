@@ -28,6 +28,7 @@ docs/CustomEnrichRequest.md
 docs/Direction.md
 docs/EnrichApi.md
 docs/ErrorResponse.md
+docs/GeneratePhotoResponse.md
 docs/ImportApi.md
 docs/ImportExtractionMethod.md
 docs/ImportFromPhotosRequest.md
@@ -99,6 +100,7 @@ models/CreateTagResponse.ts
 models/CustomEnrichRequest.ts
 models/Direction.ts
 models/ErrorResponse.ts
+models/GeneratePhotoResponse.ts
 models/ImportExtractionMethod.ts
 models/ImportFromPhotosRequest.ts
 models/ImportFromPhotosResponse.ts

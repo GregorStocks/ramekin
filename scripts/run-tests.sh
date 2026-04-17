@@ -3,11 +3,17 @@ set -e
 
 cd "$(dirname "$0")/.."
 
+ORIG_PROCESS_COMPOSE_PORT="${PROCESS_COMPOSE_PORT:-}"
+
 # Source test.env to get PROCESS_COMPOSE_PORT
 set -a
 # shellcheck source=/dev/null
 source test.env
 set +a
+
+if [ -n "$ORIG_PROCESS_COMPOSE_PORT" ]; then
+  export PROCESS_COMPOSE_PORT="$ORIG_PROCESS_COMPOSE_PORT"
+fi
 
 echo "[$(date +%H:%M:%S)] Starting test orchestration via process-compose"
 START_TIME=$(date +%s)

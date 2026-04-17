@@ -43,6 +43,7 @@ Class | Method | HTTP request | Description
 *RecipesAPI* | [**deleteRecipe**](docs/RecipesAPI.md#deleterecipe) | **DELETE** /api/recipes/{id} | 
 *RecipesAPI* | [**exportAllRecipes**](docs/RecipesAPI.md#exportallrecipes) | **GET** /api/recipes/export | 
 *RecipesAPI* | [**exportRecipe**](docs/RecipesAPI.md#exportrecipe) | **GET** /api/recipes/{id}/export | 
+*RecipesAPI* | [**generatePhoto**](docs/RecipesAPI.md#generatephoto) | **POST** /api/recipes/{id}/generate-photo | 
 *RecipesAPI* | [**getRecipe**](docs/RecipesAPI.md#getrecipe) | **GET** /api/recipes/{id} | 
 *RecipesAPI* | [**listRecipes**](docs/RecipesAPI.md#listrecipes) | **GET** /api/recipes | 
 *RecipesAPI* | [**listVersions**](docs/RecipesAPI.md#listversions) | **GET** /api/recipes/{id}/versions | 
@@ -85,6 +86,7 @@ Class | Method | HTTP request | Description
  - [CreateTagResponse](docs/CreateTagResponse.md)
  - [CustomEnrichRequest](docs/CustomEnrichRequest.md)
  - [Direction](docs/Direction.md)
+ - [GeneratePhotoResponse](docs/GeneratePhotoResponse.md)
  - [ImportExtractionMethod](docs/ImportExtractionMethod.md)
  - [ImportFromPhotosRequest](docs/ImportFromPhotosRequest.md)
  - [ImportFromPhotosResponse](docs/ImportFromPhotosResponse.md)

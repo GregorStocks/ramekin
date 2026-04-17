@@ -19,6 +19,7 @@ import type {
   CreateRecipeResponse,
   Direction,
   ErrorResponse,
+  GeneratePhotoResponse,
   ListRecipesResponse,
   NormalizeTitleResponse,
   RecipeResponse,
@@ -36,6 +37,8 @@ import {
     DirectionToJSON,
     ErrorResponseFromJSON,
     ErrorResponseToJSON,
+    GeneratePhotoResponseFromJSON,
+    GeneratePhotoResponseToJSON,
     ListRecipesResponseFromJSON,
     ListRecipesResponseToJSON,
     NormalizeTitleResponseFromJSON,
@@ -61,6 +64,10 @@ export interface DeleteRecipeRequest {
 }
 
 export interface ExportRecipeRequest {
+    id: string;
+}
+
+export interface GeneratePhotoRequest {
     id: string;
 }
 
@@ -264,6 +271,49 @@ export class RecipesApi extends runtime.BaseAPI {
      */
     async exportRecipe(requestParameters: ExportRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.exportRecipeRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     */
+    async generatePhotoRaw(requestParameters: GeneratePhotoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GeneratePhotoResponse>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling generatePhoto().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/api/recipes/{id}/generate-photo`;
+        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GeneratePhotoResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async generatePhoto(requestParameters: GeneratePhotoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GeneratePhotoResponse> {
+        const response = await this.generatePhotoRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
     /**

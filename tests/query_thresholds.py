@@ -32,6 +32,7 @@ QUERY_THRESHOLDS: dict[str, tuple[int, int]] = {
     "GET /api/recipes/export": (5, 12),
     "GET /api/recipes/{id}/export": (5, 10),
     "POST /api/recipes/{id}/rescrape": (8, 22),
+    "POST /api/recipes/{id}/generate-photo": (6, 12),
     # Tag endpoints
     "GET /api/tags": (5, 7),
     "POST /api/tags": (4, 10),

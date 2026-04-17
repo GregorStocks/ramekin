@@ -5,12 +5,17 @@ cd "$(dirname "$0")/.."
 
 # Use TEST_ENV_FILE if set, otherwise default to test.env
 ENV_FILE="${TEST_ENV_FILE:-test.env}"
+ORIG_PROCESS_COMPOSE_PORT="${PROCESS_COMPOSE_PORT:-}"
 
 # Source env file to get PROCESS_COMPOSE_PORT
 set -a
 # shellcheck source=/dev/null
 source "$ENV_FILE"
 set +a
+
+if [ -n "$ORIG_PROCESS_COMPOSE_PORT" ]; then
+  export PROCESS_COMPOSE_PORT="$ORIG_PROCESS_COMPOSE_PORT"
+fi
 
 if [ -z "${UI_PORT_HTTP:-}" ]; then
   export UI_PORT_HTTP=$((UI_PORT + 1))

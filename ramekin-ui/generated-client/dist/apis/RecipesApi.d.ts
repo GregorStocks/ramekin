@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { CreateRecipeRequest, CreateRecipeResponse, Direction, ListRecipesResponse, NormalizeTitleResponse, RecipeResponse, RescrapeResponse, SortBy, UpdateRecipeRequest, VersionListResponse } from '../models/index';
+import type { CreateRecipeRequest, CreateRecipeResponse, Direction, GeneratePhotoResponse, ListRecipesResponse, NormalizeTitleResponse, RecipeResponse, RescrapeResponse, SortBy, UpdateRecipeRequest, VersionListResponse } from '../models/index';
 export interface CreateRecipeOperationRequest {
     createRecipeRequest: CreateRecipeRequest;
 }
@@ -18,6 +18,9 @@ export interface DeleteRecipeRequest {
     id: string;
 }
 export interface ExportRecipeRequest {
+    id: string;
+}
+export interface GeneratePhotoRequest {
     id: string;
 }
 export interface GetRecipeRequest {
@@ -75,6 +78,12 @@ export declare class RecipesApi extends runtime.BaseAPI {
     /**
      */
     exportRecipe(requestParameters: ExportRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    /**
+     */
+    generatePhotoRaw(requestParameters: GeneratePhotoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GeneratePhotoResponse>>;
+    /**
+     */
+    generatePhoto(requestParameters: GeneratePhotoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GeneratePhotoResponse>;
     /**
      */
     getRecipeRaw(requestParameters: GetRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RecipeResponse>>;

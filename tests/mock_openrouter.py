@@ -4,9 +4,24 @@
 Returns valid OpenAI-compatible chat completion responses.
 """
 
+import base64
 import json
 import sys
+import time
 from http.server import HTTPServer, BaseHTTPRequestHandler
+from pathlib import Path
+
+
+def mock_png_data_url():
+    image_path = (
+        Path(__file__).resolve().parent.parent
+        / "cli"
+        / "src"
+        / "seed_images"
+        / "bread.png"
+    )
+    encoded = base64.b64encode(image_path.read_bytes()).decode()
+    return f"data:image/png;base64,{encoded}"
 
 
 class MockOpenRouterHandler(BaseHTTPRequestHandler):
@@ -27,6 +42,14 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                 request = json.loads(body)
             except json.JSONDecodeError:
                 self.send_error(400, "Invalid JSON")
+                return
+
+            if "image" in request.get("modalities", []):
+                response = self._mock_image_generation_response(request)
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(json.dumps(response).encode())
                 return
 
             content = self._generate_response_content(request)
@@ -62,6 +85,9 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
 
     def _generate_response_content(self, request):
         """Generate appropriate mock response based on the request type."""
+        if "image" in request.get("modalities", []):
+            return self._mock_image_generation_content()
+
         messages = request.get("messages", [])
         has_images = False
 
@@ -88,6 +114,48 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
 
         # Default: auto-tag response
         return '{"suggested_tags": ["test-auto-tag"]}'
+
+    def _mock_image_generation_content(self):
+        return "Generated recipe photo."
+
+    def _mock_image_generation_response(self, request):
+        messages = request.get("messages", [])
+        all_text = " ".join(
+            content
+            for message in messages
+            for content in [message.get("content", "")]
+            if isinstance(content, str)
+        )
+        if "Slow Generated Photo" in all_text:
+            time.sleep(1.0)
+
+        return {
+            "id": "mock-image-generation-id",
+            "object": "chat.completion",
+            "created": 1234567890,
+            "model": request.get("model", "mock-model"),
+            "choices": [
+                {
+                    "index": 0,
+                    "message": {
+                        "role": "assistant",
+                        "content": self._mock_image_generation_content(),
+                        "images": [
+                            {
+                                "type": "image_url",
+                                "image_url": {"url": mock_png_data_url()},
+                            }
+                        ],
+                    },
+                    "finish_reason": "stop",
+                }
+            ],
+            "usage": {
+                "prompt_tokens": 10,
+                "completion_tokens": 5,
+                "total_tokens": 15,
+            },
+        }
 
     def _mock_custom_enrich(self, all_text, has_images=False):
         """Return a modified recipe for custom enrich requests."""
