@@ -4,6 +4,7 @@ import Foundation
 /// Manages the Core Data stack for offline shopping list storage
 class CoreDataStack: ObservableObject {
     static let shared = CoreDataStack()
+    private let logger = DebugLogger.shared
 
     let container: NSPersistentContainer
 
@@ -49,7 +50,10 @@ class CoreDataStack: ObservableObject {
             try saveContextOrThrow()
         } catch {
             let nsError = error as NSError
-            print("CoreData save error: \(nsError), \(nsError.userInfo)")
+            logger.log(
+                "CoreData save error: \(nsError), \(nsError.userInfo)",
+                source: "CoreDataStack"
+            )
         }
     }
 
@@ -68,7 +72,10 @@ class CoreDataStack: ObservableObject {
                 try context.save()
             } catch {
                 let nsError = error as NSError
-                print("CoreData save error: \(nsError), \(nsError.userInfo)")
+                logger.log(
+                    "CoreData save error: \(nsError), \(nsError.userInfo)",
+                    source: "CoreDataStack"
+                )
             }
         }
     }

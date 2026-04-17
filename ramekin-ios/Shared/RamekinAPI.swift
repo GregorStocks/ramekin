@@ -12,6 +12,9 @@ class RamekinAPI {
         return URLSession(configuration: config, delegate: InsecureSessionDelegate(), delegateQueue: nil)
     }()
 
+    /// Shared URLSession for authenticated image requests.
+    lazy var imageSession: URLSession = urlSession
+
     private init() {
         // Configure generated client to accept self-signed certificates
         RamekinClientAPI.requestBuilderFactory = InsecureBuilderFactory()
