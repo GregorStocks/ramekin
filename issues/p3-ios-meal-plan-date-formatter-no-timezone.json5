@@ -1,0 +1,20 @@
+{
+  "title": "MealPlan local-date formatting uses device-default timezone \
+silently",
+  "description": "`Shared/RamekinAPI.swift` dateOnlyFormatter sets `timeZone = \
+.current` with an iso8601 calendar and en_US_POSIX locale, but \
+`Ramekin/MealPlanView.swift:274-278` (`localDateString`) creates a fresh \
+`DateFormatter` with no locale/calendar/timezone pin. They agree most of the \
+time but can disagree at DST boundaries and for users whose device calendar is \
+non-Gregorian (Japanese era, Hebrew). Symptom: a meal planned for April 17 \
+renders under April 16 for some users. Align all date-only formatting on one \
+shared formatter with an explicit timezone.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ios",
+  ],
+  "created_at": "2026-04-17T12:00:00-07:00",
+  "updated_at": "2026-04-17T12:00:00-07:00",
+}

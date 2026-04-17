@@ -1,0 +1,22 @@
+{
+  "title": "RamekinAPI repeats guard/URL/Bearer/parseError boilerplate in \
+every method",
+  "description": "Each endpoint in `Shared/RamekinAPI.swift` (scrapeURL, \
+getScrapeStatus, testConnection, listMealPlans, createMealPlan, \
+deleteMealPlan) repeats the same ~15 lines: `guard let baseURL` → `guard let \
+token` → `URL(string: ...)` → build `URLRequest` → set `Authorization` + \
+Content-Type → `applyAccessHeaders` → `urlSession.data` → cast \
+`HTTPURLResponse` → status-code branch → `parseError`. Extract a private \
+`request<T: Decodable>(method:path:body:)` helper that throws typed errors so \
+new endpoints are one-liners. Many of the endpoints exist solely because the \
+generated OpenAPI client doesn't cover them yet — the real fix is \
+regenerating, but until then a helper would cut ~200 lines.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ios",
+  ],
+  "created_at": "2026-04-17T12:00:00-07:00",
+  "updated_at": "2026-04-17T12:00:00-07:00",
+}
