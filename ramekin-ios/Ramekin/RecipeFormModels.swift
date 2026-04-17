@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - Editable Models
 
-struct EditableIngredient: Identifiable {
+struct EditableIngredient: Equatable, Identifiable {
     let id = UUID()
     var item: String
     var measurements: [EditableMeasurement]
@@ -40,7 +40,7 @@ struct EditableIngredient: Identifiable {
     }
 }
 
-struct EditableMeasurement: Identifiable {
+struct EditableMeasurement: Equatable, Identifiable {
     let id = UUID()
     var amount: String
     var unit: String

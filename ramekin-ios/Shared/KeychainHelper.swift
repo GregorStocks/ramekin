@@ -1,9 +1,26 @@
 import Foundation
 import Security
 
+protocol CredentialStore: AnyObject {
+    func saveToken(_ token: String) -> Bool
+    func getToken() -> String?
+    func deleteToken()
+    func saveServerURL(_ url: String) -> Bool
+    func getServerURL() -> String?
+    func saveUsername(_ username: String) -> Bool
+    func getUsername() -> String?
+    func saveAccessClientId(_ value: String) -> Bool
+    func getAccessClientId() -> String?
+    func deleteAccessClientId()
+    func saveAccessClientSecret(_ value: String) -> Bool
+    func getAccessClientSecret() -> String?
+    func deleteAccessClientSecret()
+    func clearAll()
+}
+
 /// Helper for storing and retrieving credentials from the iOS Keychain
 /// Uses an App Group so the main app and Share Extension can share data
-class KeychainHelper {
+class KeychainHelper: CredentialStore {
     static let shared = KeychainHelper()
 
     // IMPORTANT: Change this to match your App Group identifier
