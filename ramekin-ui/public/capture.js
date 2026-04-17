@@ -7,6 +7,7 @@
   var token = params.get("token");
   var origin = new URL(src).origin;
   var apiOrigin = decodeURIComponent(params.get("api") || origin);
+  var externalOrigin = decodeURIComponent(params.get("external") || origin);
 
   if (!token) {
     console.error("[Ramekin] No token in bookmarklet URL");
@@ -60,7 +61,7 @@
   function showActions(recipeId) {
     actionsEl.style.display = "flex";
     actionsEl.innerHTML = [
-      '<a href="', origin, '/recipes/', recipeId, '" target="_blank" ',
+      '<a href="', externalOrigin, '/recipes/', recipeId, '" target="_blank" ',
       'style="padding:8px 16px;background:#4a9eff;color:#fff;text-decoration:none;',
       'border-radius:6px;font-weight:500;">View Recipe</a>',
       '<button id="ramekin-close" style="padding:8px 16px;background:#e0e0e0;',
