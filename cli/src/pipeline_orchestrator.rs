@@ -27,6 +27,9 @@ use ramekin_core::pipeline::StepRegistry;
 // ============================================================================
 
 pub struct OrchestratorConfig {
+    /// Identifier for this run. Caller generates this before setting up logging
+    /// so the log file and run directory share the same stem.
+    pub run_id: String,
     pub test_urls_file: PathBuf,
     pub output_dir: PathBuf,
     pub limit: Option<usize>,
@@ -42,6 +45,7 @@ pub struct OrchestratorConfig {
 impl Default for OrchestratorConfig {
     fn default() -> Self {
         Self {
+            run_id: Utc::now().format("%Y-%m-%d_%H-%M-%S").to_string(),
             test_urls_file: PathBuf::from("data/test-urls.json"),
             output_dir: PathBuf::from("data/pipeline-runs"),
             limit: None,
@@ -193,9 +197,8 @@ pub enum FinalStatus {
 // ============================================================================
 
 pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineResults> {
-    // Generate run ID
+    let run_id = config.run_id.clone();
     let now = Utc::now();
-    let run_id = now.format("%Y-%m-%d_%H-%M-%S").to_string();
     let run_dir = config.output_dir.join(&run_id);
 
     // Create run directory
