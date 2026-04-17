@@ -444,12 +444,17 @@ export default function PdfExportModal(props: Props) {
         }
 
         const maxLines = 2;
-        let fontPt = Math.min(14, Math.max(8, titleAreaH * 36));
+        const lineHeightFactor = doc.getLineHeightFactor();
+        let fontPt = 14;
         let lines: string[];
         while (true) {
           doc.setFontSize(fontPt);
           lines = doc.splitTextToSize(recipe.title, innerW) as string[];
-          if (lines.length <= maxLines || fontPt <= 5) break;
+          const effLines = Math.min(lines.length, maxLines);
+          const neededH = (effLines * fontPt * lineHeightFactor) / 72;
+          const fitsWidth = lines.length <= maxLines;
+          const fitsHeight = neededH <= titleAreaH;
+          if ((fitsWidth && fitsHeight) || fontPt <= 5) break;
           fontPt -= 0.5;
         }
         lines = lines.slice(0, maxLines);
