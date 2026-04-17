@@ -3,6 +3,19 @@ import SwiftUI
 struct IngredientRowView: View {
     @Binding var ingredient: EditableIngredient
     var onDelete: () -> Void
+    @State private var isNoteVisible: Bool
+
+    init(ingredient: Binding<EditableIngredient>, onDelete: @escaping () -> Void) {
+        _ingredient = ingredient
+        self.onDelete = onDelete
+        _isNoteVisible = State(
+            initialValue: IngredientRowViewSupport.shouldShowNoteField(
+                item: ingredient.wrappedValue.item,
+                note: ingredient.wrappedValue.note,
+                isNoteVisible: false
+            )
+        )
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
@@ -30,7 +43,11 @@ struct IngredientRowView: View {
 
     @ViewBuilder
     private var noteField: some View {
-        if !ingredient.note.isEmpty || ingredient.item.isEmpty {
+        if IngredientRowViewSupport.shouldShowNoteField(
+            item: ingredient.item,
+            note: ingredient.note,
+            isNoteVisible: isNoteVisible
+        ) {
             TextField("Note (e.g., chopped)", text: $ingredient.note)
                 .font(.caption)
                 .foregroundColor(.secondary)
@@ -77,9 +94,13 @@ struct IngredientRowView: View {
             }
             .buttonStyle(.plain)
 
-            if ingredient.note.isEmpty && !ingredient.item.isEmpty {
+            if IngredientRowViewSupport.shouldShowAddNoteButton(
+                item: ingredient.item,
+                note: ingredient.note,
+                isNoteVisible: isNoteVisible
+            ) {
                 Button {
-                    ingredient.note = " "
+                    isNoteVisible = true
                 } label: {
                     Label("Note", systemImage: "note.text")
                         .font(.caption2)
@@ -139,5 +160,15 @@ struct IngredientRowView: View {
         if ingredient.measurements.isEmpty {
             ingredient.measurements = [EditableMeasurement()]
         }
+    }
+}
+
+enum IngredientRowViewSupport {
+    static func shouldShowNoteField(item: String, note: String, isNoteVisible: Bool) -> Bool {
+        isNoteVisible || !note.isEmpty || item.isEmpty
+    }
+
+    static func shouldShowAddNoteButton(item: String, note: String, isNoteVisible: Bool) -> Bool {
+        !item.isEmpty && note.isEmpty && !isNoteVisible
     }
 }
