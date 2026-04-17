@@ -10,12 +10,13 @@ mod pipeline_orchestrator;
 mod seed;
 mod title_normalization;
 
-use anyhow::Result;
+use anyhow::{Context, Result};
+use chrono::Utc;
 use clap::{Parser, Subcommand, ValueEnum};
 use ramekin_client::apis::configuration::Configuration;
 use ramekin_client::apis::testing_api;
 use std::path::PathBuf;
-use tracing_subscriber::EnvFilter;
+use tracing_subscriber::{fmt, layer::SubscriberExt, util::SubscriberInitExt, EnvFilter, Layer};
 
 /// What to do when HTML fetch fails
 #[derive(Clone, Copy, Default, ValueEnum)]
@@ -274,17 +275,16 @@ enum Commands {
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    // Initialize tracing with info level by default for CLI
-    // Can be overridden with RUST_LOG environment variable (e.g., RUST_LOG=debug)
-    let filter = EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("info"));
-
-    tracing_subscriber::fmt()
-        .with_env_filter(filter)
-        .with_target(false)
-        .without_time()
-        .init();
-
     let cli = Cli::parse();
+
+    // For pipeline runs, also write debug-level logs to a per-run file under `logs/`
+    // so there's a persistent record to inspect after the fact. Other commands keep
+    // the plain stderr-only setup.
+    let pipeline_run_id = match &cli.command {
+        Commands::Pipeline { .. } => Some(Utc::now().format("%Y-%m-%d_%H-%M-%S").to_string()),
+        _ => None,
+    };
+    let _log_guard = init_tracing(pipeline_run_id.as_deref())?;
 
     match cli.command {
         Commands::Ping { server_url } => {
@@ -382,7 +382,9 @@ async fn main() -> Result<()> {
             tags_file,
             concurrency,
         } => {
+            let run_id = pipeline_run_id.expect("run_id set for Pipeline command");
             let config = pipeline_orchestrator::OrchestratorConfig {
+                run_id,
                 test_urls_file: test_urls,
                 output_dir: output_dir.clone(),
                 limit,
@@ -488,4 +490,45 @@ async fn ping(server: &str) -> Result<()> {
     println!("{}", response.message);
 
     Ok(())
+}
+
+/// Initialize the tracing subscriber.
+///
+/// Always writes INFO-and-above events to stderr (configurable via `RUST_LOG`).
+/// When `pipeline_run_id` is set, also writes DEBUG-and-above events to
+/// `logs/pipeline-<run_id>.log` so pipeline runs leave a persistent record.
+fn init_tracing(
+    pipeline_run_id: Option<&str>,
+) -> Result<Option<tracing_appender::non_blocking::WorkerGuard>> {
+    let console_filter =
+        EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("info"));
+    let console_layer = fmt::layer()
+        .with_writer(std::io::stderr)
+        .with_target(false)
+        .without_time()
+        .with_filter(console_filter);
+
+    let (file_layer, guard) = if let Some(run_id) = pipeline_run_id {
+        std::fs::create_dir_all("logs").context("Failed to create logs/ directory")?;
+        let path = PathBuf::from("logs").join(format!("pipeline-{run_id}.log"));
+        let file = std::fs::File::create(&path)
+            .with_context(|| format!("Failed to create log file {}", path.display()))?;
+        let (non_blocking, guard) = tracing_appender::non_blocking(file);
+        let layer = fmt::layer()
+            .with_writer(non_blocking)
+            .with_ansi(false)
+            .with_target(true)
+            .with_filter(EnvFilter::new("debug"));
+        eprintln!("Pipeline logs: {}", path.display());
+        (Some(layer), Some(guard))
+    } else {
+        (None, None)
+    };
+
+    tracing_subscriber::registry()
+        .with(console_layer)
+        .with(file_layer)
+        .init();
+
+    Ok(guard)
 }
