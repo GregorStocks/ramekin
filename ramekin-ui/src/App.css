@@ -1083,13 +1083,13 @@ textarea:focus-visible {
 }
 
 .recipe-top-bar .back-link {
-  color: #888;
+  color: var(--text-muted);
   text-decoration: none;
   font-size: 0.9rem;
 }
 
 .recipe-top-bar .back-link:hover {
-  color: #646cff;
+  color: var(--accent);
 }
 
 .recipe-nav-links {
@@ -1109,7 +1109,12 @@ textarea:focus-visible {
 
 .recipe-header-compact h2 {
   margin: 0 0 0.5rem;
-  font-size: 1.75rem;
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 144;
+  font-size: clamp(2rem, 1.2rem + 2vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
 }
 
 .recipe-header-compact .recipe-tags {
@@ -1119,16 +1124,16 @@ textarea:focus-visible {
 .recipe-description {
   margin: 0.25rem 0 0.5rem;
   font-style: italic;
-  color: #aaa;
+  color: var(--text-secondary);
 }
 
 .recipe-source-inline {
   font-size: 0.85rem;
-  color: #888;
+  color: var(--text-muted);
 }
 
 .recipe-source-inline a {
-  color: #646cff;
+  color: var(--accent);
 }
 
 .recipe-layout {
@@ -1166,8 +1171,11 @@ textarea:focus-visible {
 .recipe-section h3 {
   margin: 0 0 0.75rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid #333;
-  font-size: 1rem;
+  border-bottom: 1px solid var(--border-hairline);
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 72;
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
 .ingredients-list {
@@ -1180,20 +1188,20 @@ textarea:focus-visible {
 
 .ingredients-list li {
   padding: 0.5rem 0.625rem;
-  background: #2a2a2a;
+  background: var(--surface-2);
   border-radius: 4px;
-  border: 1px solid #3a3a3a;
+  border: 1px solid var(--border-subtle);
   font-size: 0.875rem;
-  color: #eee;
+  color: var(--text-secondary);
 }
 
 .ingredients-list .amount {
   font-weight: 600;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .ingredients-list .note {
-  color: #aaa;
+  color: var(--text-secondary);
   font-style: italic;
 }
 
@@ -1201,7 +1209,7 @@ textarea:focus-visible {
   display: none;
   margin-top: 0.25rem;
   font-size: 0.75rem;
-  color: #666;
+  color: var(--text-faint);
   font-style: italic;
 }
 
@@ -1213,7 +1221,7 @@ textarea:focus-visible {
   font-weight: 600;
   margin: 1rem 0 0.5rem;
   font-size: 0.95rem;
-  color: #ccc;
+  color: var(--text-secondary);
 }
 
 .ingredient-section-header:first-child {
@@ -1245,7 +1253,7 @@ textarea:focus-visible {
   max-height: 400px;
   border-radius: 8px;
   object-fit: cover;
-  border: 1px solid #333;
+  border: 1px solid var(--border-hairline);
 }
 
 /* Responsive: stack on smaller screens */
@@ -1568,7 +1576,7 @@ textarea:focus-visible {
   height: 100%;
   object-fit: cover;
   border-radius: 4px;
-  border: 1px solid #333;
+  border: 1px solid var(--border-hairline);
 }
 
 .photo-thumbnail .photo-loading {
@@ -1577,10 +1585,10 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #1a1a1a;
+  background: var(--surface-1);
   border-radius: 4px;
-  border: 1px solid #333;
-  color: #666;
+  border: 1px solid var(--border-hairline);
+  color: var(--text-faint);
   font-size: 0.75rem;
 }
 
@@ -1590,10 +1598,10 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #1a1a1a;
+  background: var(--surface-1);
   border-radius: 4px;
-  border: 1px solid #442222;
-  color: #aa6666;
+  border: 1px solid var(--danger);
+  color: var(--danger);
   font-size: 0.75rem;
 }
 
@@ -1604,9 +1612,9 @@ textarea:focus-visible {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #dc3545;
+  background: var(--danger);
   border: none;
-  color: white;
+  color: var(--text-on-accent);
   font-size: 1rem;
   line-height: 1;
   cursor: pointer;
@@ -1616,11 +1624,11 @@ textarea:focus-visible {
 }
 
 .photo-remove:hover {
-  background: #c82333;
+  background: var(--danger-hover);
 }
 
 .empty-photos {
-  color: #666;
+  color: var(--text-faint);
   font-size: 0.9rem;
   margin: 0.5rem 0;
 }
@@ -2026,7 +2034,7 @@ textarea:focus-visible {
   gap: 1rem;
   margin: 0.75rem 0;
   padding: 0.75rem;
-  background: #1a1a1a;
+  background: var(--surface-1);
   border-radius: 6px;
   font-size: 0.9rem;
 }
@@ -2035,25 +2043,25 @@ textarea:focus-visible {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  color: #aaa;
+  color: var(--text-secondary);
 }
 
 .recipe-metadata-item .label {
-  color: #666;
+  color: var(--text-faint);
 }
 
 .recipe-metadata-item .value {
-  color: #fff;
+  color: var(--text-primary);
   font-weight: 500;
 }
 
 /* Difficulty badge */
 .difficulty-badge {
   padding: 0.15rem 0.5rem;
-  background: rgba(100, 108, 255, 0.15);
-  border: 1px solid rgba(100, 108, 255, 0.3);
+  background: var(--accent-wash);
+  border: 1px solid var(--accent);
   border-radius: 4px;
-  color: #a8aeff;
+  color: var(--accent);
   font-size: 0.8rem;
 }
 
@@ -2065,12 +2073,12 @@ textarea:focus-visible {
 
 .star-rating .star {
   font-size: 1.25rem;
-  color: #444;
+  color: var(--border-subtle);
   cursor: default;
 }
 
 .star-rating .star.filled {
-  color: #fbbf24;
+  color: var(--accent);
 }
 
 .star-rating.editable .star {
@@ -2079,7 +2087,7 @@ textarea:focus-visible {
 }
 
 .star-rating.editable .star:hover {
-  color: #fbbf24;
+  color: var(--accent);
 }
 
 /* Form: Recipe details row */
