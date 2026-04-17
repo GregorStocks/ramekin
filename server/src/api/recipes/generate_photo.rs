@@ -3,7 +3,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
 use crate::models::{Ingredient, NewPhoto, NewRecipeVersion};
-use crate::photos::processing::process_image;
+use crate::photos::processing::{process_image, MAX_FILE_SIZE};
 use crate::schema::{photos, recipe_version_tags, recipe_versions, recipes};
 use axum::{
     extract::{Path, State},
@@ -193,22 +193,27 @@ pub async fn generate_photo(
     };
 
     let ingredients_str = format_ingredients_for_prompt(&ingredients);
-    let generated =
-        match ai_generate_recipe_photo(&config, &title, description.as_deref(), &ingredients_str)
-            .await
-        {
-            Ok(result) => result,
-            Err(e) => {
-                tracing::warn!("Recipe photo generation failed: {}", e);
-                return (
-                    StatusCode::SERVICE_UNAVAILABLE,
-                    Json(ErrorResponse {
-                        error: format!("Photo generation failed: {}", e),
-                    }),
-                )
-                    .into_response();
-            }
-        };
+    let generated = match ai_generate_recipe_photo(
+        &config,
+        &title,
+        description.as_deref(),
+        &ingredients_str,
+        &instructions,
+    )
+    .await
+    {
+        Ok(result) => result,
+        Err(e) => {
+            tracing::warn!("Recipe photo generation failed: {}", e);
+            return (
+                StatusCode::SERVICE_UNAVAILABLE,
+                Json(ErrorResponse {
+                    error: format!("Photo generation failed: {}", e),
+                }),
+            )
+                .into_response();
+        }
+    };
 
     let raw_image = match decode_data_url_image(&generated.image_data_url) {
         Ok(data) => data,
@@ -223,6 +228,21 @@ pub async fn generate_photo(
                 .into_response();
         }
     };
+
+    if raw_image.len() > MAX_FILE_SIZE {
+        tracing::warn!(
+            "Generated photo exceeded max size: {} bytes (max {})",
+            raw_image.len(),
+            MAX_FILE_SIZE
+        );
+        return (
+            StatusCode::SERVICE_UNAVAILABLE,
+            Json(ErrorResponse {
+                error: "AI returned an invalid image".to_string(),
+            }),
+        )
+            .into_response();
+    }
 
     let processed = match process_image(&raw_image) {
         Ok(processed) => processed,

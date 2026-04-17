@@ -247,14 +247,22 @@ def lint_rust_ingredient_density(project_root: Path) -> tuple[str, bool]:
     return ("Rust (ingredient-density)", success)
 
 
-def ensure_ui_node_modules(ui_dir: Path) -> bool:
-    """Install UI dependencies using npx when node_modules is missing."""
-    required_paths = [
+def get_required_ui_paths(ui_dir: Path) -> list[Path]:
+    """Return the files required to run the UI linters locally."""
+    return [
         ui_dir / "node_modules" / "prettier",
         ui_dir / "node_modules" / "typescript",
         ui_dir / "node_modules" / "jspdf",
         ui_dir / "node_modules" / "fflate",
+        ui_dir / "node_modules" / ".bin" / "prettier",
+        ui_dir / "node_modules" / ".bin" / "tsc",
+        ui_dir / "node_modules" / ".bin" / "stylelint",
     ]
+
+
+def ensure_ui_node_modules(ui_dir: Path) -> bool:
+    """Install UI dependencies using npx when node_modules is missing."""
+    required_paths = get_required_ui_paths(ui_dir)
 
     if all(path.exists() for path in required_paths):
         return True
@@ -272,7 +280,9 @@ def ensure_ui_node_modules(ui_dir: Path) -> bool:
     if install_result.stderr:
         print(install_result.stderr, end="", file=sys.stderr)
 
-    return install_result.returncode == 0
+    return install_result.returncode == 0 and all(
+        path.exists() for path in required_paths
+    )
 
 
 def lint_typescript(project_root: Path) -> tuple[str, bool]:

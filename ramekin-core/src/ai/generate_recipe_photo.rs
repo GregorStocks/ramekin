@@ -50,12 +50,13 @@ pub async fn generate_recipe_photo(
     title: &str,
     description: Option<&str>,
     ingredients: &str,
+    instructions: &str,
 ) -> Result<GenerateRecipePhotoResult, AiError> {
     if config.offline {
         return Err(AiError::OfflineNotCached);
     }
 
-    let prompt = render_generate_recipe_photo_prompt(title, description, ingredients);
+    let prompt = render_generate_recipe_photo_prompt(title, description, ingredients, instructions);
     let url = format!("{}/chat/completions", config.base_url.trim_end_matches('/'));
 
     tracing::debug!(

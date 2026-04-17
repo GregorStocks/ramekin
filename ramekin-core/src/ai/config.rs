@@ -9,7 +9,7 @@ pub const DEFAULT_BASE_URL: &str = "https://openrouter.ai/api/v1";
 /// Default model to use.
 pub const DEFAULT_MODEL: &str = "google/gemini-2.5-flash";
 /// Default model to use for image generation.
-pub const DEFAULT_IMAGE_MODEL: &str = "openai/gpt-image-1";
+pub const DEFAULT_IMAGE_MODEL: &str = "google/gemini-2.5-flash-image";
 
 /// Default rate limit between requests in milliseconds.
 pub const DEFAULT_RATE_LIMIT_MS: u64 = 500;
@@ -51,7 +51,7 @@ impl AiConfig {
     ///
     /// Optional:
     /// - `RAMEKIN_AI_MODEL`: Model name (default: "google/gemini-2.5-flash")
-    /// - `RAMEKIN_AI_IMAGE_MODEL`: Image model name (default: "openai/gpt-image-1")
+    /// - `RAMEKIN_AI_IMAGE_MODEL`: Image model name (default: "google/gemini-2.5-flash-image")
     /// - `RAMEKIN_AI_BASE_URL`: API base URL (default: "https://openrouter.ai/api/v1")
     /// - `RAMEKIN_AI_CACHE_DIR`: Cache directory (default: "~/.ramekin/ai-cache")
     /// - `RAMEKIN_AI_OFFLINE`: Use cache only (default: false)
