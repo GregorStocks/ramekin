@@ -1,7 +1,7 @@
-import { A } from "@solidjs/router";
+import { A, useSearchParams } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import type { ParentComponent } from "solid-js";
-import { createSignal } from "solid-js";
+import { Show, createSignal, onCleanup, onMount } from "solid-js";
 
 declare const __BUILD_COMMIT__: string;
 declare const __BUILD_TIME__: string;
@@ -12,15 +12,25 @@ const formatBuildTime = (iso: string) => new Date(iso).toLocaleString();
 
 const Layout: ParentComponent = (props) => {
   const { setToken, token } = useAuth();
+  const [searchParams] = useSearchParams();
   const [isMobileNavOpen, setIsMobileNavOpen] = createSignal(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = createSignal(false);
   const [isExporting, setIsExporting] = createSignal(false);
 
-  const closeMobileNav = () => {
+  let userMenuRef: HTMLDivElement | undefined;
+  let userMenuTriggerRef: HTMLButtonElement | undefined;
+
+  const closeUserMenu = () => {
+    setIsUserMenuOpen(false);
+  };
+
+  const closeAll = () => {
     setIsMobileNavOpen(false);
+    setIsUserMenuOpen(false);
   };
 
   const logout = () => {
-    closeMobileNav();
+    closeAll();
     setToken(null);
   };
 
@@ -50,11 +60,32 @@ const Layout: ParentComponent = (props) => {
       a.click();
       a.remove();
       setTimeout(() => URL.revokeObjectURL(url), 0);
-      closeMobileNav();
+      closeAll();
     } finally {
       setIsExporting(false);
     }
   };
+
+  onMount(() => {
+    const handlePointerDown = (event: MouseEvent) => {
+      if (!isUserMenuOpen()) return;
+      const target = event.target as Node | null;
+      if (target && userMenuRef && userMenuRef.contains(target)) return;
+      closeUserMenu();
+    };
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && isUserMenuOpen()) {
+        closeUserMenu();
+        userMenuTriggerRef?.focus();
+      }
+    };
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    onCleanup(() => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    });
+  });
 
   return (
     <div class="app-layout">
@@ -81,46 +112,86 @@ const Layout: ParentComponent = (props) => {
             "app-nav-open": isMobileNavOpen(),
           }}
         >
-          <A href="/" onClick={closeMobileNav}>
-            My Cookbook
-          </A>
-          <A href="/meal-plan" onClick={closeMobileNav}>
-            Meal Plan
-          </A>
-          <A href="/shopping-list" onClick={closeMobileNav}>
-            Shopping List
-          </A>
-          <button
-            type="button"
-            class="nav-link-button"
-            onClick={exportAllRecipes}
-            disabled={isExporting()}
-          >
-            {isExporting() ? "Exporting…" : "Export"}
-          </button>
-          <A href="/tags" onClick={closeMobileNav}>
-            Tags
-          </A>
-          <A href="/import" onClick={closeMobileNav}>
-            Import
-          </A>
-          <A
-            href="/recipes/new"
-            class="btn btn-primary btn-header"
-            onClick={closeMobileNav}
-          >
-            + New Recipe
-          </A>
-          <button onClick={logout} class="logout-button">
-            Logout
-          </button>
+          <div class="app-nav-primary">
+            <A href="/" onClick={closeAll}>
+              Cookbook
+            </A>
+            <A href="/meal-plan" onClick={closeAll}>
+              Meal Plan
+            </A>
+            <A href="/shopping-list" onClick={closeAll}>
+              Shopping List
+            </A>
+          </div>
+          <div class="app-nav-actions">
+            <A
+              href="/recipes/new"
+              class="btn btn-primary btn-header"
+              onClick={closeAll}
+            >
+              + New Recipe
+            </A>
+            <div
+              class="user-menu"
+              classList={{ open: isUserMenuOpen() }}
+              ref={userMenuRef}
+            >
+              <button
+                type="button"
+                class="user-menu-trigger"
+                ref={userMenuTriggerRef}
+                aria-haspopup="true"
+                aria-expanded={isUserMenuOpen()}
+                aria-controls="user-menu-items"
+                aria-label="Account menu"
+                onClick={() => setIsUserMenuOpen((open) => !open)}
+              >
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6" />
+                </svg>
+              </button>
+              <div id="user-menu-items" class="user-menu-items">
+                <A href="/tags" onClick={closeAll}>
+                  Tags
+                </A>
+                <A href="/import" onClick={closeAll}>
+                  Import
+                </A>
+                <button
+                  type="button"
+                  class="nav-link-button"
+                  onClick={exportAllRecipes}
+                  disabled={isExporting()}
+                >
+                  {isExporting() ? "Exporting…" : "Export"}
+                </button>
+                <div class="user-menu-divider" aria-hidden="true" />
+                <button type="button" class="nav-link-button" onClick={logout}>
+                  Logout
+                </button>
+              </div>
+            </div>
+          </div>
         </nav>
       </header>
       <main class="app-main">{props.children}</main>
-      <footer class="app-footer">
-        Built on {__BUILD_COMMIT__} | Build time:{" "}
-        {formatBuildTime(__BUILD_TIME__)} | Start time: {startTime}
-      </footer>
+      <Show when={searchParams.debug !== undefined}>
+        <footer class="app-footer">
+          Built on {__BUILD_COMMIT__} | Build time:{" "}
+          {formatBuildTime(__BUILD_TIME__)} | Start time: {startTime}
+        </footer>
+      </Show>
     </div>
   );
 };

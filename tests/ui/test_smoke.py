@@ -156,7 +156,8 @@ def test_edit_recipe_page(logged_in_page: Page):
 
 
 def test_mobile_nav_collapses_into_menu(logged_in_page: Page):
-    """Verify header nav collapses behind a mobile menu toggle."""
+    """Verify header nav collapses behind a mobile menu toggle and shows
+    primary destinations first, then housekeeping items below a divider."""
     logged_in_page.set_viewport_size({"width": 390, "height": 844})
 
     nav = logged_in_page.locator("#app-navigation")
@@ -171,12 +172,65 @@ def test_mobile_nav_collapses_into_menu(logged_in_page: Page):
         logged_in_page.get_by_role("button", name="Close navigation menu")
     ).to_be_visible()
     expect(nav).to_be_visible()
-    expect(nav.get_by_role("link", name="My Cookbook")).to_be_visible()
+    expect(nav.get_by_role("link", name="Cookbook", exact=True)).to_be_visible()
     expect(nav.get_by_role("link", name="Meal Plan")).to_be_visible()
     expect(nav.get_by_role("link", name="Shopping List")).to_be_visible()
-    expect(nav.get_by_role("link", name="Tags")).to_be_visible()
     expect(nav.get_by_role("link", name="+ New Recipe")).to_be_visible()
+    expect(nav.get_by_role("link", name="Tags")).to_be_visible()
+    expect(nav.get_by_role("link", name="Import")).to_be_visible()
+    expect(nav.get_by_role("button", name="Export")).to_be_visible()
     expect(nav.get_by_role("button", name="Logout")).to_be_visible()
+
+    # Primary destinations appear before the user-menu items in DOM order.
+    labels = nav.locator("a, button").evaluate_all(
+        "els => els.map(e => "
+        "(e.textContent || e.getAttribute('aria-label') || '').trim())"
+    )
+    primary_idx = labels.index("Cookbook")
+    tags_idx = labels.index("Tags")
+    logout_idx = labels.index("Logout")
+    assert primary_idx < tags_idx < logout_idx
+
+
+def test_desktop_user_menu_dropdown(logged_in_page: Page):
+    """Verify Tags / Import / Export / Logout live in a user menu dropdown
+    on desktop and open when the account button is clicked."""
+    logged_in_page.set_viewport_size({"width": 1280, "height": 800})
+
+    nav = logged_in_page.locator("#app-navigation")
+    # Primary destinations are visible without any interaction.
+    expect(nav.get_by_role("link", name="Cookbook", exact=True)).to_be_visible()
+    expect(nav.get_by_role("link", name="+ New Recipe")).to_be_visible()
+
+    tags_item = nav.get_by_role("link", name="Tags")
+    logout_item = nav.get_by_role("button", name="Logout")
+    expect(tags_item).not_to_be_visible()
+    expect(logout_item).not_to_be_visible()
+
+    trigger = logged_in_page.get_by_role("button", name="Account menu")
+    expect(trigger).to_be_visible()
+    trigger.click()
+
+    expect(tags_item).to_be_visible()
+    expect(nav.get_by_role("link", name="Import")).to_be_visible()
+    expect(nav.get_by_role("button", name="Export")).to_be_visible()
+    expect(logout_item).to_be_visible()
+
+    # Clicking outside the menu closes it.
+    logged_in_page.locator(".app-main").click()
+    expect(tags_item).not_to_be_visible()
+
+
+def test_dev_footer_hidden_without_debug_param(logged_in_page: Page):
+    """The build-commit / build-time footer is hidden by default."""
+    expect(logged_in_page.locator(".app-footer")).to_have_count(0)
+
+
+def test_dev_footer_shown_with_debug_param(logged_in_page: Page, ui_url: str):
+    """Appending ?debug reveals the dev footer."""
+    logged_in_page.goto(f"{ui_url}?debug")
+    logged_in_page.wait_for_selector(".recipe-card")
+    expect(logged_in_page.locator(".app-footer")).to_be_visible()
 
 
 def test_cookbook_search_filters_as_you_type(logged_in_page: Page):
