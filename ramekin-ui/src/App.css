@@ -7,13 +7,10 @@
    prefers-reduced-motion). */
 
 :root {
-  /* Cookbook layout tokens — introduced with the wide-display fix.
-     Broader tokenization lives in p3-css-cleanup. */
+  /* Layout-specific tokens that don't belong in the palette root in
+     index.css — page gutter and cookbook max-width for the fluid grid. */
   --page-gutter: clamp(1.25rem, 4vw, 4rem);
   --cookbook-max-width: 2400px;
-  --recipe-grid-gap: clamp(0.75rem, 1vw, 1.25rem);
-  --recipe-card-min: clamp(180px, 18vw, 260px);
-  --card-thumb-aspect: 4 / 3;
 }
 
 /* Layout */
