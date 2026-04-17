@@ -1,7 +1,47 @@
+import UniformTypeIdentifiers
 import XCTest
 @testable import Ramekin
 
 final class ShareExtensionTests: XCTestCase {
+    func testExtractURLFallsBackToLaterProviderAfterURLLoadFailure() async throws {
+        let expectedURL = try XCTUnwrap(URL(string: "https://example.com/fallback"))
+        let providers: [any SharedURLItemProvider] = [
+            FakeSharedURLItemProvider(
+                loadResults: [
+                    UTType.url.identifier: .failure(URLError(.cannotDecodeContentData))
+                ]
+            ),
+            FakeSharedURLItemProvider(
+                loadResults: [
+                    UTType.url.identifier: .success(expectedURL as NSURL)
+                ]
+            )
+        ]
+
+        let extractedURL = await SharedURLExtractor.extractURL(from: providers)
+
+        XCTAssertEqual(extractedURL, expectedURL)
+    }
+
+    func testExtractURLFallsBackToLaterProviderAfterPlainTextLoadFailure() async throws {
+        let expectedURL = try XCTUnwrap(URL(string: "https://example.com/from-text"))
+        let providers: [any SharedURLItemProvider] = [
+            FakeSharedURLItemProvider(
+                loadResults: [
+                    UTType.plainText.identifier: .failure(URLError(.badURL))
+                ]
+            ),
+            FakeSharedURLItemProvider(
+                loadResults: [
+                    UTType.plainText.identifier: .success(expectedURL.absoluteString as NSString)
+                ]
+            )
+        ]
+
+        let extractedURL = await SharedURLExtractor.extractURL(from: providers)
+
+        XCTAssertEqual(extractedURL, expectedURL)
+    }
 
     // MARK: - URL Validation Tests
 
@@ -108,6 +148,37 @@ final class ShareExtensionTests: XCTestCase {
                 XCTAssertNotNil(url, "Should extract URL from: \(text)")
             } else {
                 XCTFail("Should find URL in: \(text)")
+            }
+        }
+    }
+}
+
+private final class FakeSharedURLItemProvider: SharedURLItemProvider {
+    private let loadResults: [String: Result<NSSecureCoding?, Error>]
+
+    init(loadResults: [String: Result<NSSecureCoding?, Error>]) {
+        self.loadResults = loadResults
+    }
+
+    var registeredTypeIdentifiers: [String] {
+        Array(loadResults.keys)
+    }
+
+    func hasItemConformingToTypeIdentifier(_ typeIdentifier: String) -> Bool {
+        loadResults[typeIdentifier] != nil
+    }
+
+    func loadItem(
+        forTypeIdentifier typeIdentifier: String,
+        completionHandler: @escaping @Sendable (NSSecureCoding?, Error?) -> Void
+    ) {
+        let result = loadResults[typeIdentifier] ?? .success(nil)
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.01) {
+            switch result {
+            case .success(let item):
+                completionHandler(item, nil)
+            case .failure(let error):
+                completionHandler(nil, error)
             }
         }
     }
