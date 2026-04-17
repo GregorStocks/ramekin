@@ -163,7 +163,7 @@ extension RecipeDetailView {
                 .padding(.top, 6)
 
             VStack(alignment: .leading, spacing: 2) {
-                Text(formatIngredient(ingredient))
+                Text(ingredient.formatted())
                     .font(.body)
 
                 if let note = ingredient.note, !note.isEmpty {
