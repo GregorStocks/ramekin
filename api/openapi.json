@@ -1249,6 +1249,16 @@
               }
             }
           },
+          "409": {
+            "description": "Recipe changed during generation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
           "503": {
             "description": "AI service unavailable",
             "content": {

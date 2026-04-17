@@ -25,9 +25,22 @@ pub struct GeneratePhotoResponse {
     pub version_id: Uuid,
 }
 
+#[derive(Debug)]
+enum GeneratePhotoWriteError {
+    Db(diesel::result::Error),
+    StaleVersion,
+}
+
+impl From<diesel::result::Error> for GeneratePhotoWriteError {
+    fn from(value: diesel::result::Error) -> Self {
+        Self::Db(value)
+    }
+}
+
 #[allow(clippy::type_complexity)]
 type CurrentVersionRow = (
     Uuid,              // recipes.id
+    Option<Uuid>,      // recipes.current_version_id
     String,            // title
     Option<String>,    // description
     serde_json::Value, // ingredients
@@ -94,6 +107,7 @@ fn decode_data_url_image(data_url: &str) -> Result<Vec<u8>, String> {
     responses(
         (status = 200, description = "Recipe photo generated and applied", body = GeneratePhotoResponse),
         (status = 401, description = "Unauthorized", body = ErrorResponse),
+        (status = 409, description = "Recipe changed during generation", body = ErrorResponse),
         (status = 404, description = "Recipe not found", body = ErrorResponse),
         (status = 503, description = "AI service unavailable", body = ErrorResponse)
     ),
@@ -119,6 +133,7 @@ pub async fn generate_photo(
         .filter(recipes::deleted_at.is_null())
         .select((
             recipes::id,
+            recipes::current_version_id,
             recipe_versions::title,
             recipe_versions::description,
             recipe_versions::ingredients,
@@ -161,22 +176,40 @@ pub async fn generate_photo(
 
     let (
         recipe_id,
+        source_version_id,
         title,
         description,
         ingredients,
         instructions,
-        source_url,
-        source_name,
-        current_photo_ids,
-        servings,
-        prep_time,
-        cook_time,
-        total_time,
-        rating,
-        difficulty,
-        nutritional_info,
-        notes,
+        _source_url,
+        _source_name,
+        _current_photo_ids,
+        _servings,
+        _prep_time,
+        _cook_time,
+        _total_time,
+        _rating,
+        _difficulty,
+        _nutritional_info,
+        _notes,
     ) = current;
+
+    let source_version_id = match source_version_id {
+        Some(version_id) => version_id,
+        None => {
+            tracing::error!(
+                "Recipe {} had no current version during photo generation",
+                recipe_id
+            );
+            return (
+                StatusCode::INTERNAL_SERVER_ERROR,
+                Json(ErrorResponse {
+                    error: "Failed to fetch recipe".to_string(),
+                }),
+            )
+                .into_response();
+        }
+    };
 
     let config = match AiConfig::from_env() {
         Ok(c) => c,
@@ -258,11 +291,67 @@ pub async fn generate_photo(
         }
     };
 
-    let write_result: Result<(Uuid, Uuid), diesel::result::Error> = conn.transaction(|conn| {
+    let write_result: Result<(Uuid, Uuid), GeneratePhotoWriteError> = conn.transaction(|conn| {
+        let current: CurrentVersionRow = recipes::table
+            .inner_join(
+                recipe_versions::table.on(recipe_versions::id
+                    .nullable()
+                    .eq(recipes::current_version_id)),
+            )
+            .filter(recipes::id.eq(recipe_id))
+            .filter(recipes::user_id.eq(user.id))
+            .filter(recipes::deleted_at.is_null())
+            .select((
+                recipes::id,
+                recipes::current_version_id,
+                recipe_versions::title,
+                recipe_versions::description,
+                recipe_versions::ingredients,
+                recipe_versions::instructions,
+                recipe_versions::source_url,
+                recipe_versions::source_name,
+                recipe_versions::photo_ids,
+                recipe_versions::servings,
+                recipe_versions::prep_time,
+                recipe_versions::cook_time,
+                recipe_versions::total_time,
+                recipe_versions::rating,
+                recipe_versions::difficulty,
+                recipe_versions::nutritional_info,
+                recipe_versions::notes,
+            ))
+            .first(conn)
+            .map_err(GeneratePhotoWriteError::Db)?;
+
+        let (
+            _recipe_id,
+            current_version_id,
+            current_title,
+            current_description,
+            current_ingredients,
+            current_instructions,
+            current_source_url,
+            current_source_name,
+            current_photo_ids,
+            current_servings,
+            current_prep_time,
+            current_cook_time,
+            current_total_time,
+            current_rating,
+            current_difficulty,
+            current_nutritional_info,
+            current_notes,
+        ) = current;
+
+        if current_version_id != Some(source_version_id) {
+            return Err(GeneratePhotoWriteError::StaleVersion);
+        }
+
         let old_version_id: Option<Uuid> = recipes::table
             .filter(recipes::id.eq(recipe_id))
             .select(recipes::current_version_id)
-            .first(conn)?;
+            .first(conn)
+            .map_err(GeneratePhotoWriteError::Db)?;
 
         let new_photo = NewPhoto {
             user_id: user.id,
@@ -277,7 +366,8 @@ pub async fn generate_photo(
         let photo_id: Uuid = diesel::insert_into(photos::table)
             .values(&new_photo)
             .returning(photos::id)
-            .get_result(conn)?;
+            .get_result(conn)
+            .map_err(GeneratePhotoWriteError::Db)?;
 
         let mut new_photo_ids = Vec::with_capacity(current_photo_ids.len() + 1);
         new_photo_ids.push(Some(photo_id));
@@ -285,38 +375,41 @@ pub async fn generate_photo(
 
         let new_version = NewRecipeVersion {
             recipe_id,
-            title: &title,
-            description: description.as_deref(),
-            ingredients,
-            instructions: &instructions,
-            source_url: source_url.as_deref(),
-            source_name: source_name.as_deref(),
+            title: &current_title,
+            description: current_description.as_deref(),
+            ingredients: current_ingredients,
+            instructions: &current_instructions,
+            source_url: current_source_url.as_deref(),
+            source_name: current_source_name.as_deref(),
             photo_ids: &new_photo_ids,
-            servings: servings.as_deref(),
-            prep_time: prep_time.as_deref(),
-            cook_time: cook_time.as_deref(),
-            total_time: total_time.as_deref(),
-            rating,
-            difficulty: difficulty.as_deref(),
-            nutritional_info: nutritional_info.as_deref(),
-            notes: notes.as_deref(),
+            servings: current_servings.as_deref(),
+            prep_time: current_prep_time.as_deref(),
+            cook_time: current_cook_time.as_deref(),
+            total_time: current_total_time.as_deref(),
+            rating: current_rating,
+            difficulty: current_difficulty.as_deref(),
+            nutritional_info: current_nutritional_info.as_deref(),
+            notes: current_notes.as_deref(),
             version_source: "ai_photo",
         };
 
         let new_version_id: Uuid = diesel::insert_into(recipe_versions::table)
             .values(&new_version)
             .returning(recipe_versions::id)
-            .get_result(conn)?;
+            .get_result(conn)
+            .map_err(GeneratePhotoWriteError::Db)?;
 
         diesel::update(recipes::table.find(recipe_id))
             .set(recipes::current_version_id.eq(new_version_id))
-            .execute(conn)?;
+            .execute(conn)
+            .map_err(GeneratePhotoWriteError::Db)?;
 
         if let Some(old_vid) = old_version_id {
             let old_tag_ids: Vec<Uuid> = recipe_version_tags::table
                 .filter(recipe_version_tags::recipe_version_id.eq(old_vid))
                 .select(recipe_version_tags::tag_id)
-                .load(conn)?;
+                .load(conn)
+                .map_err(GeneratePhotoWriteError::Db)?;
 
             for tag_id in old_tag_ids {
                 diesel::insert_into(recipe_version_tags::table)
@@ -325,7 +418,8 @@ pub async fn generate_photo(
                         tag_id,
                     })
                     .on_conflict_do_nothing()
-                    .execute(conn)?;
+                    .execute(conn)
+                    .map_err(GeneratePhotoWriteError::Db)?;
             }
         }
 
@@ -341,7 +435,14 @@ pub async fn generate_photo(
             }),
         )
             .into_response(),
-        Err(e) => {
+        Err(GeneratePhotoWriteError::StaleVersion) => (
+            StatusCode::CONFLICT,
+            Json(ErrorResponse {
+                error: "Recipe changed while generating photo; try again".to_string(),
+            }),
+        )
+            .into_response(),
+        Err(GeneratePhotoWriteError::Db(e)) => {
             tracing::error!("Failed to persist generated recipe photo: {}", e);
             (
                 StatusCode::INTERNAL_SERVER_ERROR,

@@ -1159,6 +1159,7 @@ class RecipesApi:
             '200': "GeneratePhotoResponse",
             '401': "ErrorResponse",
             '404': "ErrorResponse",
+            '409': "ErrorResponse",
             '503': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1228,6 +1229,7 @@ class RecipesApi:
             '200': "GeneratePhotoResponse",
             '401': "ErrorResponse",
             '404': "ErrorResponse",
+            '409': "ErrorResponse",
             '503': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
@@ -1297,6 +1299,7 @@ class RecipesApi:
             '200': "GeneratePhotoResponse",
             '401': "ErrorResponse",
             '404': "ErrorResponse",
+            '409': "ErrorResponse",
             '503': "ErrorResponse",
         }
         response_data = self.api_client.call_api(

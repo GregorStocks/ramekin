@@ -7,6 +7,7 @@ Returns valid OpenAI-compatible chat completion responses.
 import base64
 import json
 import sys
+import time
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from pathlib import Path
 
@@ -118,6 +119,16 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
         return "Generated recipe photo."
 
     def _mock_image_generation_response(self, request):
+        messages = request.get("messages", [])
+        all_text = " ".join(
+            content
+            for message in messages
+            for content in [message.get("content", "")]
+            if isinstance(content, str)
+        )
+        if "Slow Generated Photo" in all_text:
+            time.sleep(1.0)
+
         return {
             "id": "mock-image-generation-id",
             "object": "chat.completion",

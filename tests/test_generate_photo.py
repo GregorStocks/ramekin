@@ -1,9 +1,11 @@
 import pytest
+import threading
+import time
 
 from conftest import make_ingredient
 from ramekin_client.api import RecipesApi
 from ramekin_client.exceptions import ApiException
-from ramekin_client.models import CreateRecipeRequest
+from ramekin_client.models import CreateRecipeRequest, UpdateRecipeRequest
 
 
 def test_generate_photo_requires_auth(unauthed_api_client):
@@ -72,3 +74,53 @@ def test_generate_photo_rejects_other_users_recipe(
         recipes_api.generate_photo(id=str(create_response.id))
 
     assert exc_info.value.status == 404
+
+
+def test_generate_photo_fails_if_recipe_changes_mid_generation(authed_api_client):
+    client, _user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    create_response = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Slow Generated Photo",
+            description="A recipe used to simulate photo generation races.",
+            instructions="Toast the bread and serve it warm.",
+            ingredients=[
+                make_ingredient("bread", "2", "slices"),
+                make_ingredient("butter", "1", "tbsp"),
+            ],
+        )
+    )
+
+    result: dict[str, object] = {}
+
+    def generate_photo() -> None:
+        try:
+            recipes_api.generate_photo(id=str(create_response.id))
+            result["status"] = "ok"
+        except ApiException as exc:
+            result["status"] = "error"
+            result["code"] = exc.status
+            result["body"] = exc.body
+
+    thread = threading.Thread(target=generate_photo)
+    thread.start()
+
+    time.sleep(0.2)
+    recipes_api.update_recipe(
+        id=str(create_response.id),
+        update_recipe_request=UpdateRecipeRequest(
+            title="Updated While Generating",
+            description="A recipe used to simulate photo generation races.",
+            instructions="Toast the bread and serve it warm.",
+            ingredients=[
+                make_ingredient("bread", "2", "slices"),
+                make_ingredient("butter", "1", "tbsp"),
+            ],
+        ),
+    )
+
+    thread.join(timeout=5)
+
+    assert result["status"] == "error"
+    assert result["code"] == 409

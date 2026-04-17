@@ -377,6 +377,7 @@ Name | Type | Description  | Notes
 **200** | Recipe photo generated and applied |  -  |
 **401** | Unauthorized |  -  |
 **404** | Recipe not found |  -  |
+**409** | Recipe changed during generation |  -  |
 **503** | AI service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
