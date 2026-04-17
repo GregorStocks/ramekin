@@ -81,6 +81,7 @@ type CurrentVersionRow = (
         (status = 200, description = "Description generated and applied", body = GenerateDescriptionResponse),
         (status = 401, description = "Unauthorized", body = ErrorResponse),
         (status = 404, description = "Recipe not found", body = ErrorResponse),
+        (status = 409, description = "Recipe was modified concurrently", body = ErrorResponse),
         (status = 503, description = "AI service unavailable", body = ErrorResponse)
     ),
     security(

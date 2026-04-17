@@ -633,7 +633,9 @@ export default function ViewRecipePage() {
                   class="btn"
                   onClick={handleGenerateDescription}
                   disabled={
-                    generatingDescription() || isViewingHistoricalVersion()
+                    generatingDescription() ||
+                    isViewingHistoricalVersion() ||
+                    loading()
                   }
                 >
                   {generatingDescription()
