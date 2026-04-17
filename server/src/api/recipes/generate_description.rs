@@ -164,6 +164,14 @@ pub async fn generate_description(
         notes,
     ) = current;
 
+    // Snapshot the current version ID before the AI call so we can detect
+    // concurrent edits inside the write transaction.
+    let version_id_before_ai: Option<Uuid> = recipes::table
+        .filter(recipes::id.eq(recipe_id))
+        .select(recipes::current_version_id)
+        .first(&mut conn)
+        .unwrap_or(None);
+
     let ai_client = match CachingAiClient::from_env() {
         Ok(c) => c,
         Err(e) => {
@@ -238,6 +246,11 @@ pub async fn generate_description(
             .select(recipes::current_version_id)
             .first(conn)?;
 
+        // Abort if the recipe was edited while the AI call was in flight.
+        if old_version_id != version_id_before_ai {
+            return Err(diesel::result::Error::RollbackTransaction);
+        }
+
         let new_version_id: Uuid = diesel::insert_into(recipe_versions::table)
             .values(&new_version)
             .returning(recipe_versions::id)
@@ -269,6 +282,16 @@ pub async fn generate_description(
     });
 
     if let Err(e) = write_result {
+        if matches!(e, diesel::result::Error::RollbackTransaction) {
+            return (
+                StatusCode::CONFLICT,
+                Json(ErrorResponse {
+                    error: "Recipe was modified while generating description; try again"
+                        .to_string(),
+                }),
+            )
+                .into_response();
+        }
         tracing::error!("Failed to persist generated description: {}", e);
         return (
             StatusCode::INTERNAL_SERVER_ERROR,
