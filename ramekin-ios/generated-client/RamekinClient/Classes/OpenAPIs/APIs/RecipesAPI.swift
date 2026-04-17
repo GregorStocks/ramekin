@@ -163,6 +163,45 @@ open class RecipesAPI {
     /**
 
      - parameter id: (path) Recipe ID 
+     - returns: GeneratePhotoResponse
+     */
+    @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    open class func generatePhoto(id: UUID) async throws -> GeneratePhotoResponse {
+        return try await generatePhotoWithRequestBuilder(id: id).execute().body
+    }
+
+    /**
+     - POST /api/recipes/{id}/generate-photo
+     - Bearer Token:
+       - type: http
+       - name: bearer_auth
+     - parameter id: (path) Recipe ID 
+     - returns: RequestBuilder<GeneratePhotoResponse> 
+     */
+    open class func generatePhotoWithRequestBuilder(id: UUID) -> RequestBuilder<GeneratePhotoResponse> {
+        var localVariablePath = "/api/recipes/{id}/generate-photo"
+        let idPreEscape = "\(APIHelper.mapValueToPathItem(id))"
+        let idPostEscape = idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{id}", with: idPostEscape, options: .literal, range: nil)
+        let localVariableURLString = RamekinClientAPI.basePath + localVariablePath
+        let localVariableParameters: [String: Any]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GeneratePhotoResponse>.Type = RamekinClientAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
+    }
+
+    /**
+
+     - parameter id: (path) Recipe ID 
      - parameter versionId: (query) Optional version ID to fetch a specific version instead of current (optional)
      - returns: RecipeResponse
      */

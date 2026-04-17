@@ -16,6 +16,7 @@ export * from './CreateTagResponse';
 export * from './CustomEnrichRequest';
 export * from './Direction';
 export * from './ErrorResponse';
+export * from './GeneratePhotoResponse';
 export * from './ImportExtractionMethod';
 export * from './ImportFromPhotosRequest';
 export * from './ImportFromPhotosResponse';

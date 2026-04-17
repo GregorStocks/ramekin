@@ -247,9 +247,24 @@ def lint_rust_ingredient_density(project_root: Path) -> tuple[str, bool]:
     return ("Rust (ingredient-density)", success)
 
 
+def get_required_ui_paths(ui_dir: Path) -> list[Path]:
+    """Return the files required to run the UI linters locally."""
+    return [
+        ui_dir / "node_modules" / "prettier",
+        ui_dir / "node_modules" / "typescript",
+        ui_dir / "node_modules" / "jspdf",
+        ui_dir / "node_modules" / "fflate",
+        ui_dir / "node_modules" / ".bin" / "prettier",
+        ui_dir / "node_modules" / ".bin" / "tsc",
+        ui_dir / "node_modules" / ".bin" / "stylelint",
+    ]
+
+
 def ensure_ui_node_modules(ui_dir: Path) -> bool:
     """Install UI dependencies using npx when node_modules is missing."""
-    if (ui_dir / "node_modules").exists():
+    required_paths = get_required_ui_paths(ui_dir)
+
+    if all(path.exists() for path in required_paths):
         return True
 
     install_result = subprocess.run(
@@ -265,12 +280,15 @@ def ensure_ui_node_modules(ui_dir: Path) -> bool:
     if install_result.stderr:
         print(install_result.stderr, end="", file=sys.stderr)
 
-    return install_result.returncode == 0
+    return install_result.returncode == 0 and all(
+        path.exists() for path in required_paths
+    )
 
 
 def lint_typescript(project_root: Path) -> tuple[str, bool]:
     """Lint TypeScript code."""
     ui_dir = project_root / "ramekin-ui"
+    node_bin_dir = ui_dir / "node_modules" / ".bin"
 
     if not ensure_ui_node_modules(ui_dir):
         return ("TypeScript", False)
@@ -278,9 +296,7 @@ def lint_typescript(project_root: Path) -> tuple[str, bool]:
     # Run prettier
     prettier_result = subprocess.run(
         [
-            "npx",
-            "--no-install",
-            "prettier",
+            str(node_bin_dir / "prettier"),
             "--write",
             "--log-level",
             "warn",
@@ -294,7 +310,12 @@ def lint_typescript(project_root: Path) -> tuple[str, bool]:
 
     # Run tsc
     tsc_result = subprocess.run(
-        ["npx", "--no-install", "tsc", "-p", "tsconfig.app.json", "--noEmit"],
+        [
+            str(node_bin_dir / "tsc"),
+            "-p",
+            "tsconfig.app.json",
+            "--noEmit",
+        ],
         cwd=ui_dir,
         capture_output=True,
         text=True,
@@ -318,12 +339,17 @@ def lint_typescript(project_root: Path) -> tuple[str, bool]:
 def lint_css(project_root: Path) -> tuple[str, bool]:
     """Lint CSS files with Stylelint."""
     ui_dir = project_root / "ramekin-ui"
+    node_bin_dir = ui_dir / "node_modules" / ".bin"
 
     if not ensure_ui_node_modules(ui_dir):
         return ("CSS", False)
 
     result = subprocess.run(
-        ["npx", "--no-install", "stylelint", "--fix", "src/**/*.css"],
+        [
+            str(node_bin_dir / "stylelint"),
+            "--fix",
+            "src/**/*.css",
+        ],
         cwd=ui_dir,
         capture_output=True,
         text=True,

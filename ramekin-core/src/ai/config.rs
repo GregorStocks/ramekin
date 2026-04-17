@@ -8,6 +8,8 @@ pub const DEFAULT_BASE_URL: &str = "https://openrouter.ai/api/v1";
 
 /// Default model to use.
 pub const DEFAULT_MODEL: &str = "google/gemini-2.5-flash";
+/// Default model to use for image generation.
+pub const DEFAULT_IMAGE_MODEL: &str = "google/gemini-2.5-flash-image";
 
 /// Default rate limit between requests in milliseconds.
 pub const DEFAULT_RATE_LIMIT_MS: u64 = 500;
@@ -27,6 +29,8 @@ pub struct AiConfig {
     pub api_key: String,
     /// Model name (e.g., "google/gemini-2.5-flash", "openai/gpt-4.1-mini").
     pub model: String,
+    /// Model name for image generation.
+    pub image_model: String,
     /// Base URL for the API.
     pub base_url: String,
     /// Directory for caching responses.
@@ -47,6 +51,7 @@ impl AiConfig {
     ///
     /// Optional:
     /// - `RAMEKIN_AI_MODEL`: Model name (default: "google/gemini-2.5-flash")
+    /// - `RAMEKIN_AI_IMAGE_MODEL`: Image model name (default: "google/gemini-2.5-flash-image")
     /// - `RAMEKIN_AI_BASE_URL`: API base URL (default: "https://openrouter.ai/api/v1")
     /// - `RAMEKIN_AI_CACHE_DIR`: Cache directory (default: "~/.ramekin/ai-cache")
     /// - `RAMEKIN_AI_OFFLINE`: Use cache only (default: false)
@@ -57,6 +62,8 @@ impl AiConfig {
             .map_err(|_| ConfigError::MissingEnvVar("OPENROUTER_API_KEY".to_string()))?;
 
         let model = env::var("RAMEKIN_AI_MODEL").unwrap_or_else(|_| DEFAULT_MODEL.to_string());
+        let image_model =
+            env::var("RAMEKIN_AI_IMAGE_MODEL").unwrap_or_else(|_| DEFAULT_IMAGE_MODEL.to_string());
 
         let base_url =
             env::var("RAMEKIN_AI_BASE_URL").unwrap_or_else(|_| DEFAULT_BASE_URL.to_string());
@@ -82,6 +89,7 @@ impl AiConfig {
         Ok(Self {
             api_key,
             model,
+            image_model,
             base_url,
             cache_dir,
             offline,

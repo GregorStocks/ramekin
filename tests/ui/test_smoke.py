@@ -72,6 +72,45 @@ def create_scraped_recipe_with_enrichment(api_url: str) -> tuple[str, str, str]:
         return username, password, recipe.id
 
 
+def create_recipe_for_manual_photo(api_url: str) -> tuple[str, str, str]:
+    """Create a user and recipe ready for manual AI photo generation."""
+    username = f"ui_photo_{uuid.uuid4().hex[:8]}"
+    password = "testpass123"
+    config = Configuration(host=api_url)
+
+    with ApiClient(config) as client:
+        auth_api = AuthApi(client)
+        signup = auth_api.signup(SignupRequest(username=username, password=password))
+
+    authed_config = Configuration(host=api_url)
+    authed_config.access_token = signup.token
+
+    with ApiClient(authed_config) as client:
+        recipes_api = RecipesApi(client)
+        recipe = recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title="Tomato Soup",
+                description="A silky tomato soup with cream and basil.",
+                instructions="Simmer tomatoes, blend smooth, and finish with cream.",
+                ingredients=[
+                    Ingredient(
+                        item="tomatoes",
+                        measurements=[Measurement(amount="2", unit="lb")],
+                    ),
+                    Ingredient(
+                        item="cream",
+                        measurements=[Measurement(amount="1", unit="cup")],
+                    ),
+                    Ingredient(
+                        item="basil",
+                        measurements=[Measurement(amount="1/4", unit="cup")],
+                    ),
+                ],
+            )
+        )
+        return username, password, recipe.id
+
+
 def test_login_page_loads(page: Page, ui_url: str):
     """Verify the login page loads correctly."""
     page.goto(ui_url)
@@ -175,3 +214,21 @@ def test_version_history_labels_enrichment_badges(
     expect(
         page.locator(".version-source-badge").filter(has_text="enrichment")
     ).to_have_count(0)
+
+
+def test_generate_ai_photo_from_recipe_detail(page: Page, ui_url: str, api_url: str):
+    """Verify the manual AI photo action generates and displays a recipe image."""
+    username, password, recipe_id = create_recipe_for_manual_photo(api_url)
+
+    page.goto(ui_url)
+    page.fill("input[type='text']", username)
+    page.fill("input[type='password']", password)
+    page.click("button[type='submit']")
+    page.wait_for_selector(".recipe-card")
+
+    page.goto(f"{ui_url}/recipes/{recipe_id}")
+    page.get_by_role("button", name="Generate AI Photo").click()
+
+    expect(page.locator(".recipe-photos img")).to_have_count(1)
+    page.get_by_text("Version History").click()
+    expect(page.locator(".version-source-badge").first).to_have_text("AI Photo")
