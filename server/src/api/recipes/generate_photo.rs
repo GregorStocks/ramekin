@@ -92,6 +92,14 @@ fn decode_data_url_image(data_url: &str) -> Result<Vec<u8>, String> {
         return Err("Generated image was not returned as a base64 image data URL".to_string());
     }
 
+    let estimated_decoded_len = payload.len().saturating_mul(3) / 4;
+    if estimated_decoded_len > MAX_FILE_SIZE {
+        return Err(format!(
+            "Generated image payload too large: estimated {} bytes (max {})",
+            estimated_decoded_len, MAX_FILE_SIZE
+        ));
+    }
+
     base64::engine::general_purpose::STANDARD
         .decode(payload)
         .map_err(|e| format!("Failed to decode generated image: {}", e))
