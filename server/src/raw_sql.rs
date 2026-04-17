@@ -69,18 +69,31 @@ pub fn photo_min_dim_filter(op: &'static str, pixels: i32) -> SqlLiteral<Bool> {
     ))
 }
 
-/// ILIKE filter on the ingredients JSONB field cast to text.
+/// Accent- and case-insensitive ILIKE filter on a text column.
 ///
-/// Diesel has no native support for casting JSONB to text for ILIKE.
+/// Emits `f_unaccent(<column>) ILIKE f_unaccent('<pattern>')` so that queries
+/// for "creme brulee" match rows containing "crème brûlée". Matches the
+/// expression trigram indexes defined on `f_unaccent(col)`.
 ///
 /// # Safety
-/// The pattern is embedded in the SQL string with single-quote escaping
-/// (`'` → `''`). Callers must pass a pattern already processed by
-/// `escape_like_pattern` (which handles `\`, `%`, `_`).
-pub fn ingredients_ilike(pattern: &str) -> SqlLiteral<Bool> {
+/// `column` is a compile-time `&'static str` that must be a literal column
+/// reference (e.g. `recipe_versions.title`) — never user input. The pattern
+/// is embedded with single-quote escaping (`'` → `''`) and callers must have
+/// already run it through `escape_like_pattern` (which handles `\`, `%`, `_`).
+pub fn unaccent_ilike(column: &'static str, pattern: &str) -> SqlLiteral<Bool> {
     let sql_escaped = pattern.replace('\'', "''");
     sql::<Bool>(&format!(
-        "recipe_versions.ingredients::text ILIKE '{}'",
-        sql_escaped
+        "f_unaccent({}) ILIKE f_unaccent('{}')",
+        column, sql_escaped
     ))
+}
+
+/// Accent- and case-insensitive ILIKE filter on the ingredients JSONB field
+/// cast to text. Diesel has no native support for casting JSONB to text for
+/// ILIKE.
+///
+/// # Safety
+/// See `unaccent_ilike` — same pattern escaping rules apply.
+pub fn ingredients_unaccent_ilike(pattern: &str) -> SqlLiteral<Bool> {
+    unaccent_ilike("recipe_versions.ingredients::text", pattern)
 }
