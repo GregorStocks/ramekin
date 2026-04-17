@@ -44,11 +44,12 @@ struct RecipePickerSheet: View {
             }
             .searchable(text: $searchText, prompt: "Search recipes")
             .onChange(of: searchText) { _ in
-                searchTask?.cancel()
-                searchTask = Task {
-                    try? await Task.sleep(nanoseconds: 300_000_000)
+                SearchDebounceSupport.replaceTask(&searchTask) {
                     await loadRecipes()
                 }
+            }
+            .onDisappear {
+                SearchDebounceSupport.cancelTask(&searchTask)
             }
             .navigationTitle("Add \(mealType.displayLabel)")
             .navigationBarTitleDisplayMode(.inline)
