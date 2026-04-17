@@ -1207,7 +1207,14 @@
 
 .section-header-actions {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
+}
+
+.photo-paste-hint {
+  color: #888;
+  font-size: 0.85em;
+  font-style: italic;
 }
 
 .form-actions {

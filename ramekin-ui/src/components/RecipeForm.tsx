@@ -560,16 +560,19 @@ export default function RecipeForm(props: RecipeFormProps) {
       <div class="form-section">
         <div class="section-header">
           <label>Photos</label>
-          <label class="btn btn-small">
-            {props.uploading() ? "Uploading..." : "+ Add Photo"}
-            <input
-              type="file"
-              accept="image/*"
-              onChange={props.onPhotoUpload}
-              disabled={props.uploading()}
-              style={{ display: "none" }}
-            />
-          </label>
+          <div class="section-header-actions">
+            <span class="photo-paste-hint">or paste from clipboard</span>
+            <label class="btn btn-small">
+              {props.uploading() ? "Uploading..." : "+ Add Photo"}
+              <input
+                type="file"
+                accept="image/*"
+                onChange={props.onPhotoUpload}
+                disabled={props.uploading()}
+                style={{ display: "none" }}
+              />
+            </label>
+          </div>
         </div>
         <Show when={props.photoIds().length > 0}>
           <div class="photo-grid">
