@@ -4,7 +4,7 @@ import QRCode from "qrcode";
 import Modal from "./Modal";
 import type { RecipeSummary } from "ramekin-client";
 
-declare const __QR_CODE_BASE_URL__: string;
+declare const __EXTERNAL_URL__: string;
 
 interface Props {
   isOpen: () => boolean;
@@ -187,14 +187,12 @@ async function fetchThumbnail(
     : new Error(`Failed to fetch thumbnail ${photoId}`);
 }
 
-function qrCodeBaseUrl(): string {
-  const configured = (__QR_CODE_BASE_URL__ ?? "").trim();
-  if (configured) return configured.replace(/\/+$/, "");
-  return window.location.origin.replace(/\/+$/, "");
+function externalUrl(): string {
+  return __EXTERNAL_URL__.replace(/\/+$/, "");
 }
 
 function recipeUrlFor(recipeId: string): string {
-  return `${qrCodeBaseUrl()}/recipes/${recipeId}`;
+  return `${externalUrl()}/recipes/${recipeId}`;
 }
 
 async function generateQrDataUrl(url: string): Promise<string> {
