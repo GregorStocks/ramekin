@@ -1,0 +1,52 @@
+{
+  "title": "App.css cleanup: tokens, dedup, structure",
+  "description": "`ramekin-ui/src/App.css` is a single ~3000-line file that \
+has grown organically. Quick smell test:\n\
+- ~200 hardcoded color literals (`#1a1a1a`, `#444`, `#646cff`, `#ccc`, \
+  `#888`, …) repeated throughout.\n\
+- 7 separate `@media` blocks at inconsistent breakpoints \
+  (480, 600, 700, 768, 900, plus a `max-height` one). Same element often \
+  gets restyled in multiple places far apart in the file.\n\
+- Page-specific rules, shared button rules, modal rules, and third-party-ish \
+  utilities are all interleaved.\n\
+- `.recipe-card h3` and `.recipe-card .recipe-description` both duplicate \
+  the same 2-line clamp incantation; clamp patterns like this probably \
+  want a utility class.\n\
+\n\
+This issue is *the general cleanup* that the five cookbook-redesign issues \
+keep referring to. They'll each drag a little of it along — this issue \
+exists so that after that work lands, someone can do a focused pass without \
+feature scope.\n\
+\n\
+Scope (suggested, not prescriptive):\n\
+- Extract design tokens to CSS custom properties at the top of the file (or \
+  in `index.css`): surface colors, text colors, accent colors, border \
+  colors, font families, radius scale, spacing scale. Replace the hardcoded \
+  literals.\n\
+- Consolidate the breakpoint set. Three is probably enough \
+  (e.g. 640/960/1280). Introduce named variables (`--bp-sm`, `--bp-md`, \
+  `--bp-lg`) and use them consistently.\n\
+- Co-locate: all rules for a given component/page in one section, not \
+  scattered. Split App.css into smaller files if it helps.\n\
+- Remove dead or duplicated rules as you find them. Watch for old selectors \
+  that no longer have matching markup.\n\
+- Prefer logical properties (`padding-inline`, `margin-block`) and modern \
+  features (`color-mix`, `:has`, `clamp`) over one-off magic numbers where \
+  it reads well.\n\
+\n\
+Non-goals: changing the visual design. This is structural. Screenshots \
+before/after should look identical (modulo token values already changed by \
+other issues).\n\
+\n\
+Do this *after* the cookbook-redesign issues land, so there's one sweep \
+instead of rebasing churn.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ui",
+    "refactor",
+  ],
+  "created_at": "2026-04-16T23:14:07-07:00",
+  "updated_at": "2026-04-16T23:14:07-07:00",
+}
