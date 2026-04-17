@@ -268,7 +268,7 @@ struct MealPlanView: View {
     }
 
     private static func localDateString(from date: Date) -> String {
-        localDateFormatter.string(from: date)
+        SharedDateFormatters.localDateOnly.string(from: date)
     }
 
     static func getMonday(from date: Date) -> Date {
@@ -359,15 +359,6 @@ extension MealPlanView {
     static let dayHeaderFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, MMM d"
-        formatter.calendar = .autoupdatingCurrent
-        formatter.locale = .autoupdatingCurrent
-        formatter.timeZone = .autoupdatingCurrent
-        return formatter
-    }()
-
-    static let localDateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
         formatter.calendar = .autoupdatingCurrent
         formatter.locale = .autoupdatingCurrent
         formatter.timeZone = .autoupdatingCurrent

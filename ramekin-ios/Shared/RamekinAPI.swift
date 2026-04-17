@@ -375,21 +375,12 @@ class RamekinAPI {
 // MARK: - Meal Plans
 
 extension RamekinAPI {
-    private static let dateOnlyFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        formatter.calendar = Calendar(identifier: .iso8601)
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.timeZone = .current
-        return formatter
-    }()
-
     func listMealPlans(startDate: Date, endDate: Date) async throws -> MealPlanListResponse {
         guard let baseURL = serverURL else { throw APIError.noServerURL }
         guard let token = authToken else { throw APIError.noAuthToken }
 
-        let start = Self.dateOnlyFormatter.string(from: startDate)
-        let end = Self.dateOnlyFormatter.string(from: endDate)
+        let start = SharedDateFormatters.localDateOnly.string(from: startDate)
+        let end = SharedDateFormatters.localDateOnly.string(from: endDate)
 
         guard let url = URL(string: "\(baseURL)/api/meal-plans?start_date=\(start)&end_date=\(end)") else {
             throw APIError.invalidURL
@@ -432,7 +423,7 @@ extension RamekinAPI {
 
         let body = CreateMealPlanRequestBody(
             recipeId: recipeId,
-            mealDate: Self.dateOnlyFormatter.string(from: mealDate),
+            mealDate: SharedDateFormatters.localDateOnly.string(from: mealDate),
             mealType: mealType,
             notes: normalizedNotes
         )

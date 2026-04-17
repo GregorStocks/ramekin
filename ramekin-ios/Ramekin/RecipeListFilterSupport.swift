@@ -79,7 +79,7 @@ enum RecipeListFilterSupport {
     }
 
     static func dateOnlyString(from date: Date) -> String {
-        dateOnlyFormatter.string(from: date)
+        SharedDateFormatters.localDateOnly.string(from: date)
     }
 
     static func date(from rawValue: String) -> Date? {
@@ -88,7 +88,7 @@ enum RecipeListFilterSupport {
             return nil
         }
 
-        return dateOnlyFormatter.date(from: normalizedValue)
+        return SharedDateFormatters.localDateOnly.date(from: normalizedValue)
     }
 
     private static func createdFilterLabel(createdAfter: String, createdBefore: String) -> String? {
@@ -158,15 +158,6 @@ enum RecipeListFilterSupport {
 
         return "\(prefix):\(value)"
     }
-
-    private static let dateOnlyFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        formatter.calendar = Calendar(identifier: .iso8601)
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.timeZone = .current
-        return formatter
-    }()
 
     private static let chipDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
