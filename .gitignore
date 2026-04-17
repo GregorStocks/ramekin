@@ -85,3 +85,7 @@ data/pipeline-runs/
 
 reference-recipe/
 crates/
+
+# Claude Code / playwright-cli scratch
+.claude/scheduled_tasks.lock
+.playwright-cli/

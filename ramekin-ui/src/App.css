@@ -6,15 +6,12 @@
   --recipe-grid-gap: clamp(0.75rem, 1vw, 1.25rem);
   --recipe-card-min: clamp(180px, 18vw, 260px);
   --card-thumb-aspect: 4 / 3;
-}
-
-/* Layout */
-:root {
   --font-display:
     Georgia, "Iowan Old Style", "Apple Garamond", "Palatino Linotype",
     "Times New Roman", serif;
 }
 
+/* Layout */
 *,
 *::before,
 *::after {
