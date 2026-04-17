@@ -46,6 +46,11 @@ instead of rebasing churn.",
     "ui",
     "refactor",
   ],
+  "blocked": "Deferred until the five cookbook-redesign issues land \
+(cookbook-density-toggle, cookbook-grid-fill-wide-displays, \
+cookbook-filter-sidebar, header-nav-hierarchy, warmer-cookbook-aesthetic). The \
+issue body explicitly requests this be done after those, so there's one \
+focused sweep instead of rebasing churn.",
   "created_at": "2026-04-16T23:14:07-07:00",
   "updated_at": "2026-04-16T23:14:07-07:00",
 }
