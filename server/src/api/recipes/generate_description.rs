@@ -93,56 +93,59 @@ pub async fn generate_description(
     State(pool): State<Arc<DbPool>>,
     Path(recipe_id): Path<Uuid>,
 ) -> impl IntoResponse {
-    let mut conn = get_conn!(pool);
-
-    let current: CurrentVersionRow = match recipes::table
-        .inner_join(
-            recipe_versions::table.on(recipe_versions::id
-                .nullable()
-                .eq(recipes::current_version_id)),
-        )
-        .filter(recipes::id.eq(recipe_id))
-        .filter(recipes::user_id.eq(user.id))
-        .filter(recipes::deleted_at.is_null())
-        .select((
-            recipes::current_version_id,
-            recipe_versions::title,
-            recipe_versions::description,
-            recipe_versions::ingredients,
-            recipe_versions::instructions,
-            recipe_versions::source_url,
-            recipe_versions::source_name,
-            recipe_versions::photo_ids,
-            recipe_versions::servings,
-            recipe_versions::prep_time,
-            recipe_versions::cook_time,
-            recipe_versions::total_time,
-            recipe_versions::rating,
-            recipe_versions::difficulty,
-            recipe_versions::nutritional_info,
-            recipe_versions::notes,
-        ))
-        .first(&mut conn)
-    {
-        Ok(r) => r,
-        Err(diesel::NotFound) => {
-            return (
-                StatusCode::NOT_FOUND,
-                Json(ErrorResponse {
-                    error: "Recipe not found".to_string(),
-                }),
+    // Read recipe snapshot in its own scope so the DB connection is released
+    // before the (potentially slow) AI call.
+    let current: CurrentVersionRow = {
+        let mut conn = get_conn!(pool);
+        match recipes::table
+            .inner_join(
+                recipe_versions::table.on(recipe_versions::id
+                    .nullable()
+                    .eq(recipes::current_version_id)),
             )
-                .into_response()
-        }
-        Err(e) => {
-            tracing::error!("Failed to fetch recipe: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch recipe".to_string(),
-                }),
-            )
-                .into_response();
+            .filter(recipes::id.eq(recipe_id))
+            .filter(recipes::user_id.eq(user.id))
+            .filter(recipes::deleted_at.is_null())
+            .select((
+                recipes::current_version_id,
+                recipe_versions::title,
+                recipe_versions::description,
+                recipe_versions::ingredients,
+                recipe_versions::instructions,
+                recipe_versions::source_url,
+                recipe_versions::source_name,
+                recipe_versions::photo_ids,
+                recipe_versions::servings,
+                recipe_versions::prep_time,
+                recipe_versions::cook_time,
+                recipe_versions::total_time,
+                recipe_versions::rating,
+                recipe_versions::difficulty,
+                recipe_versions::nutritional_info,
+                recipe_versions::notes,
+            ))
+            .first(&mut conn)
+        {
+            Ok(r) => r,
+            Err(diesel::NotFound) => {
+                return (
+                    StatusCode::NOT_FOUND,
+                    Json(ErrorResponse {
+                        error: "Recipe not found".to_string(),
+                    }),
+                )
+                    .into_response()
+            }
+            Err(e) => {
+                tracing::error!("Failed to fetch recipe: {}", e);
+                return (
+                    StatusCode::INTERNAL_SERVER_ERROR,
+                    Json(ErrorResponse {
+                        error: "Failed to fetch recipe".to_string(),
+                    }),
+                )
+                    .into_response();
+            }
         }
     };
 
@@ -215,6 +218,7 @@ pub async fn generate_description(
             .into_response();
     }
 
+    let mut conn = get_conn!(pool);
     let write_result: Result<(), diesel::result::Error> = conn.transaction(|conn| {
         let new_version = NewRecipeVersion {
             recipe_id,
