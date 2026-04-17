@@ -129,10 +129,10 @@ final class RamekinAPITests: XCTestCase {
 
     func testCreateMealPlanRequestEncodingOmitsEmptyNotes() throws {
         let recipeId = UUID(uuidString: "12345678-1234-1234-1234-123456789ABC")!
-        let request = RamekinAPI.CreateMealPlanRequest(
-            recipe_id: recipeId,
-            meal_date: "2026-04-17",
-            meal_type: "dinner",
+        let request = CreateMealPlanRequestBody(
+            recipeId: recipeId,
+            mealDate: "2026-04-17",
+            mealType: "dinner",
             notes: nil
         )
         let data = try JSONEncoder().encode(request)
@@ -141,7 +141,7 @@ final class RamekinAPITests: XCTestCase {
             return
         }
 
-        XCTAssertEqual(json["recipe_id"], recipeId.uuidString.lowercased())
+        XCTAssertEqual(json["recipe_id"], recipeId.uuidString)
         XCTAssertEqual(json["meal_date"], "2026-04-17")
         XCTAssertEqual(json["meal_type"], "dinner")
         XCTAssertNil(json["notes"])

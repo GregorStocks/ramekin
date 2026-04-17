@@ -1,5 +1,19 @@
 import Foundation
 
+private struct CreateMealPlanRequestBody: Encodable {
+    let recipeId: UUID
+    let mealDate: String
+    let mealType: String
+    let notes: String?
+
+    enum CodingKeys: String, CodingKey {
+        case recipeId = "recipe_id"
+        case mealDate = "meal_date"
+        case mealType = "meal_type"
+        case notes
+    }
+}
+
 /// API client for interacting with the Ramekin server
 class RamekinAPI {
     static let shared = RamekinAPI()
@@ -123,13 +137,6 @@ class RamekinAPI {
 
     struct ScrapeRequest: Encodable {
         let url: String
-    }
-
-    struct CreateMealPlanRequest: Encodable {
-        let recipe_id: UUID
-        let meal_date: String
-        let meal_type: String
-        let notes: String?
     }
 
     struct ScrapeResponse: Decodable {
@@ -420,10 +427,10 @@ extension RamekinAPI {
             normalizedNotes = nil
         }
 
-        let body = CreateMealPlanRequest(
-            recipe_id: recipeId,
-            meal_date: Self.dateOnlyFormatter.string(from: mealDate),
-            meal_type: mealType,
+        let body = CreateMealPlanRequestBody(
+            recipeId: recipeId,
+            mealDate: Self.dateOnlyFormatter.string(from: mealDate),
+            mealType: mealType,
             notes: normalizedNotes
         )
 
