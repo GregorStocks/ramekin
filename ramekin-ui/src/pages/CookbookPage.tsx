@@ -1,6 +1,7 @@
 import {
   createSignal,
   createEffect,
+  createMemo,
   Show,
   For,
   onMount,
@@ -67,6 +68,17 @@ function parseNumericThreshold(expr: string): NumericThreshold | null {
     if (!isNaN(v)) return { op: ">", value: v };
   }
   return null;
+}
+
+function buildThresholdFromInput(
+  valueStr: string,
+  op: "<" | ">",
+): NumericThreshold | null {
+  const trimmed = valueStr.trim();
+  if (!trimmed) return null;
+  const value = parseInt(trimmed, 10);
+  if (isNaN(value)) return null;
+  return { op, value };
 }
 
 function parseQueryToFilters(query: string): {
@@ -239,23 +251,16 @@ export default function CookbookPage() {
     getQueryParam(searchParams.q),
   );
 
-  // Filter panel state
-  const [showFilters, setShowFilters] = createSignal(false);
-  const [filterTags, setFilterTags] = createSignal<string[]>([]);
-  const [filterSource, setFilterSource] = createSignal("");
-  const [filterPhotos, setFilterPhotos] = createSignal<"any" | "has" | "no">(
-    "any",
-  );
-  const [filterCreatedAfter, setFilterCreatedAfter] = createSignal("");
-  const [filterCreatedBefore, setFilterCreatedBefore] = createSignal("");
-  const [filterPhotoSizeValue, setFilterPhotoSizeValue] = createSignal("");
-  const [filterPhotoSizeOp, setFilterPhotoSizeOp] = createSignal<"<" | ">">(
-    "<",
-  );
-  const [filterPhotoDimValue, setFilterPhotoDimValue] = createSignal("");
-  const [filterPhotoDimOp, setFilterPhotoDimOp] = createSignal<"<" | ">">("<");
+  // Mobile filter sheet visibility (desktop sidebar is always shown via CSS).
+  const [mobileFiltersOpen, setMobileFiltersOpen] = createSignal(false);
 
-  const [textTerms, setTextTerms] = createSignal<string[]>([]);
+  // Local input state for typed filter fields. Hydrates from URL whenever
+  // the URL query changes; flushed back to the URL via patchFilters().
+  const [sourceInput, setSourceInput] = createSignal("");
+  const [photoSizeOp, setPhotoSizeOp] = createSignal<"<" | ">">("<");
+  const [photoSizeInput, setPhotoSizeInput] = createSignal("");
+  const [photoDimOp, setPhotoDimOp] = createSignal<"<" | ">">("<");
+  const [photoDimInput, setPhotoDimInput] = createSignal("");
 
   // Bulk mode state
   const [bulkMode, setBulkMode] = createSignal(false);
@@ -282,6 +287,19 @@ export default function CookbookPage() {
   const PAGE_SIZE = 20;
 
   const searchQuery = () => getQueryParam(searchParams.q);
+
+  // URL is the single source of truth for filter state. Memoized so the ~45
+  // tag chips share a single parse per URL change rather than reparsing on
+  // every chip's classList read.
+  const parsedQuery = createMemo(() => parseQueryToFilters(searchQuery()));
+  const currentFilters = (): FilterState => parsedQuery().filters;
+  const currentTextTerms = (): string[] => parsedQuery().textTerms;
+
+  // Tags sorted alphabetically (case-insensitive) for stable chip ordering.
+  const sortedTags = () =>
+    [...availableTags()].sort((a, b) =>
+      a.localeCompare(b, undefined, { sensitivity: "base" }),
+    );
 
   const sortOption = (): SortOption => {
     const sort = getQueryParam(searchParams.sort);
@@ -375,6 +393,40 @@ export default function CookbookPage() {
     loadRecipes(false, 0);
   });
 
+  // Hydrate local input fields whenever filter state changes in the URL.
+  // Safe to overwrite because patchFilters() always commits pending local
+  // edits before writing the URL, so the URL is the canonical truth.
+  createEffect(() => {
+    const f = currentFilters();
+    setSourceInput(f.source);
+    if (f.photoSize) {
+      setPhotoSizeOp(f.photoSize.op);
+      setPhotoSizeInput(String(f.photoSize.value));
+    } else {
+      setPhotoSizeInput("");
+    }
+    if (f.photoDim) {
+      setPhotoDimOp(f.photoDim.op);
+      setPhotoDimInput(String(f.photoDim.value));
+    } else {
+      setPhotoDimInput("");
+    }
+  });
+
+  // Lock body scroll + listen for Escape while the mobile filter sheet is open.
+  createEffect(() => {
+    if (!mobileFiltersOpen()) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileFiltersOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    onCleanup(() => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    });
+  });
+
   const handleScroll = () => {
     const scrollHeight = document.documentElement.scrollHeight;
     const scrollTop = document.documentElement.scrollTop;
@@ -410,87 +462,113 @@ export default function CookbookPage() {
   };
 
   const activeFilterCount = () => {
+    const f = currentFilters();
     let count = 0;
-    if (filterTags().length > 0) count += filterTags().length;
-    if (filterSource()) count++;
-    if (filterPhotos() !== "any") count++;
-    if (filterCreatedAfter() || filterCreatedBefore()) count++;
-    if (filterPhotoSizeValue()) count++;
-    if (filterPhotoDimValue()) count++;
+    if (f.tags.length > 0) count += f.tags.length;
+    if (f.source) count++;
+    if (f.photos !== "any") count++;
+    if (f.createdAfter || f.createdBefore) count++;
+    if (f.photoSize) count++;
+    if (f.photoDim) count++;
     return count;
   };
 
-  const openFilters = () => {
-    const { textTerms: terms, filters } = parseQueryToFilters(searchQuery());
-    setTextTerms(terms);
-    setFilterTags(filters.tags);
-    setFilterSource(filters.source);
-    setFilterPhotos(filters.photos);
-    setFilterCreatedAfter(filters.createdAfter);
-    setFilterCreatedBefore(filters.createdBefore);
-    if (filters.photoSize) {
-      setFilterPhotoSizeOp(filters.photoSize.op);
-      setFilterPhotoSizeValue(String(filters.photoSize.value));
-    } else {
-      setFilterPhotoSizeValue("");
-    }
-    if (filters.photoDim) {
-      setFilterPhotoDimOp(filters.photoDim.op);
-      setFilterPhotoDimValue(String(filters.photoDim.value));
-    } else {
-      setFilterPhotoDimValue("");
-    }
-    setShowFilters(true);
-  };
-
-  const applyFilters = () => {
-    const photoSizeValStr = filterPhotoSizeValue().trim();
-    const photoDimValStr = filterPhotoDimValue().trim();
-    const photoSize = photoSizeValStr
-      ? {
-          op: filterPhotoSizeOp(),
-          value: parseInt(photoSizeValStr, 10),
-        }
-      : null;
-    const photoDim = photoDimValStr
-      ? {
-          op: filterPhotoDimOp(),
-          value: parseInt(photoDimValStr, 10),
-        }
-      : null;
-
-    const newQuery = buildQueryFromFilters(textTerms(), {
-      tags: filterTags(),
-      source: filterSource(),
-      photos: filterPhotos(),
-      createdAfter: filterCreatedAfter(),
-      createdBefore: filterCreatedBefore(),
-      photoSize: photoSize && !isNaN(photoSize.value) ? photoSize : null,
-      photoDim: photoDim && !isNaN(photoDim.value) ? photoDim : null,
-    });
+  // Merge a partial filter change into the URL query, preserving free-text
+  // search terms. Always commits any pending local input edits (source,
+  // photo size/dim) before applying the patch so a chip click never silently
+  // discards a half-typed text input.
+  const patchFilters = (patch: Partial<FilterState>) => {
+    const base = currentFilters();
+    const next: FilterState = {
+      ...base,
+      source: sourceInput().trim(),
+      photoSize: buildThresholdFromInput(photoSizeInput(), photoSizeOp()),
+      photoDim: buildThresholdFromInput(photoDimInput(), photoDimOp()),
+      ...patch,
+    };
+    const newQuery = buildQueryFromFilters(currentTextTerms(), next);
     setSearchInput(newQuery);
     setSearchParams({ q: newQuery || undefined });
-    setShowFilters(false);
   };
 
   const clearFilters = () => {
-    setFilterTags([]);
-    setFilterSource("");
-    setFilterPhotos("any");
-    setFilterCreatedAfter("");
-    setFilterCreatedBefore("");
-    setFilterPhotoSizeValue("");
-    setFilterPhotoDimValue("");
+    // Empty the local inputs first so patchFilters' implicit flush rebuilds
+    // the URL with cleared source/threshold values; the explicit patch
+    // handles the URL-derived facets (tags, photos, dates).
+    setSourceInput("");
+    setPhotoSizeInput("");
+    setPhotoDimInput("");
+    patchFilters({
+      tags: [],
+      photos: "any",
+      createdAfter: "",
+      createdBefore: "",
+    });
   };
 
   const toggleTag = (tag: string) => {
-    const current = filterTags();
-    if (current.includes(tag)) {
-      setFilterTags(current.filter((t) => t !== tag));
-    } else {
-      setFilterTags([...current, tag]);
+    const tags = currentFilters().tags;
+    patchFilters({
+      tags: tags.includes(tag) ? tags.filter((t) => t !== tag) : [...tags, tag],
+    });
+  };
+
+  const flushLocalInputs = () => patchFilters({});
+
+  const handleOpChange = (
+    setOp: (op: "<" | ">") => void,
+    input: () => string,
+    op: "<" | ">",
+  ) => {
+    setOp(op);
+    if (input().trim()) flushLocalInputs();
+  };
+
+  const handleFlushKeyDown = (
+    e: KeyboardEvent & { currentTarget: HTMLInputElement },
+  ) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      flushLocalInputs();
+      e.currentTarget.blur();
     }
   };
+
+  const renderThreshold = (
+    label: string,
+    placeholder: string,
+    op: () => "<" | ">",
+    setOp: (op: "<" | ">") => void,
+    input: () => string,
+    setInput: (v: string) => void,
+  ) => (
+    <div class="cookbook-filter-section">
+      <div class="cookbook-filter-label">{label}</div>
+      <div class="cookbook-filter-threshold-row">
+        <select
+          class="cookbook-filter-input cookbook-filter-input-op"
+          value={op()}
+          onChange={(e) =>
+            handleOpChange(setOp, input, e.currentTarget.value as "<" | ">")
+          }
+        >
+          <option value="<">&lt;</option>
+          <option value=">">&gt;</option>
+        </select>
+        <input
+          type="number"
+          min="0"
+          step="1"
+          class="cookbook-filter-input"
+          placeholder={placeholder}
+          value={input()}
+          onInput={(e) => setInput(e.currentTarget.value)}
+          onBlur={flushLocalInputs}
+          onKeyDown={handleFlushKeyDown}
+        />
+      </div>
+    </div>
+  );
 
   const goToRandomRecipe = async () => {
     try {
@@ -752,7 +830,7 @@ export default function CookbookPage() {
         </h2>
       </div>
 
-      <div class="search-container">
+      <div class="cookbook-utility-bar">
         <form class="search-bar" onSubmit={handleSearch}>
           <input
             type="text"
@@ -769,9 +847,10 @@ export default function CookbookPage() {
         </form>
         <button
           type="button"
-          class="filter-button"
-          onClick={openFilters}
+          class="filter-button cookbook-mobile-filters-toggle"
+          onClick={() => setMobileFiltersOpen(true)}
           classList={{ active: activeFilterCount() > 0 }}
+          aria-label="Open filters"
         >
           Filters
           <Show when={activeFilterCount() > 0}>
@@ -881,285 +960,287 @@ export default function CookbookPage() {
         </div>
       </Show>
 
-      <Show when={showFilters()}>
-        <div class="filter-panel">
-          <div class="filter-section">
-            <label class="filter-label">Tags</label>
-            <div class="filter-tags">
-              <Show
-                when={availableTags().length > 0}
-                fallback={<span class="filter-empty">No tags yet</span>}
-              >
-                <For each={availableTags()}>
-                  {(tag) => (
-                    <label class="filter-tag-option">
-                      <input
-                        type="checkbox"
-                        checked={filterTags().includes(tag)}
-                        onChange={() => toggleTag(tag)}
-                      />
-                      {tag}
-                    </label>
-                  )}
-                </For>
-              </Show>
-            </div>
+      <div class="cookbook-body">
+        <aside
+          class="cookbook-sidebar"
+          classList={{ "cookbook-sidebar-open": mobileFiltersOpen() }}
+          aria-label="Filters"
+        >
+          <div class="cookbook-sidebar-header">
+            <h3 class="cookbook-sidebar-title">Filters</h3>
+            <button
+              type="button"
+              class="cookbook-sidebar-close"
+              onClick={() => setMobileFiltersOpen(false)}
+              aria-label="Close filters"
+            >
+              ✕
+            </button>
           </div>
 
-          <div class="filter-section">
-            <label class="filter-label">Source</label>
+          <div class="cookbook-filter-section">
+            <div class="cookbook-filter-label">Tags</div>
+            <Show
+              when={sortedTags().length > 0}
+              fallback={<span class="cookbook-filter-empty">No tags yet</span>}
+            >
+              <div class="cookbook-filter-chips">
+                <For each={sortedTags()}>
+                  {(tag) => (
+                    <button
+                      type="button"
+                      class="filter-chip"
+                      classList={{
+                        "filter-chip-active":
+                          currentFilters().tags.includes(tag),
+                      }}
+                      aria-pressed={currentFilters().tags.includes(tag)}
+                      onClick={() => toggleTag(tag)}
+                    >
+                      {tag}
+                    </button>
+                  )}
+                </For>
+              </div>
+            </Show>
+          </div>
+
+          <div class="cookbook-filter-section">
+            <label class="cookbook-filter-label" for="cookbook-filter-source">
+              Source
+            </label>
             <input
+              id="cookbook-filter-source"
               type="text"
-              class="filter-input"
+              class="cookbook-filter-input"
               placeholder="e.g. NYTimes"
-              value={filterSource()}
-              onInput={(e) => setFilterSource(e.currentTarget.value)}
+              value={sourceInput()}
+              onInput={(e) => setSourceInput(e.currentTarget.value)}
+              onBlur={flushLocalInputs}
+              onKeyDown={handleFlushKeyDown}
             />
           </div>
 
-          <div class="filter-section">
-            <label class="filter-label">Photos</label>
-            <div class="filter-radio-group">
-              <label class="filter-radio">
+          <div class="cookbook-filter-section">
+            <div class="cookbook-filter-label">Photos</div>
+            <div class="cookbook-filter-radio-group">
+              <label class="cookbook-filter-radio">
                 <input
                   type="radio"
                   name="photos"
-                  checked={filterPhotos() === "any"}
-                  onChange={() => setFilterPhotos("any")}
+                  checked={currentFilters().photos === "any"}
+                  onChange={() => patchFilters({ photos: "any" })}
                 />
                 Any
               </label>
-              <label class="filter-radio">
+              <label class="cookbook-filter-radio">
                 <input
                   type="radio"
                   name="photos"
-                  checked={filterPhotos() === "has"}
-                  onChange={() => setFilterPhotos("has")}
+                  checked={currentFilters().photos === "has"}
+                  onChange={() => patchFilters({ photos: "has" })}
                 />
                 Has photos
               </label>
-              <label class="filter-radio">
+              <label class="cookbook-filter-radio">
                 <input
                   type="radio"
                   name="photos"
-                  checked={filterPhotos() === "no"}
-                  onChange={() => setFilterPhotos("no")}
+                  checked={currentFilters().photos === "no"}
+                  onChange={() => patchFilters({ photos: "no" })}
                 />
                 No photos
               </label>
             </div>
           </div>
 
-          <div class="filter-section">
-            <label class="filter-label">Photo file size (bytes)</label>
-            <div class="filter-threshold-row">
-              <select
-                class="filter-input"
-                value={filterPhotoSizeOp()}
-                onChange={(e) =>
-                  setFilterPhotoSizeOp(e.currentTarget.value as "<" | ">")
-                }
-              >
-                <option value="<">&lt;</option>
-                <option value=">">&gt;</option>
-              </select>
-              <input
-                type="number"
-                min="0"
-                step="1"
-                class="filter-input"
-                placeholder="e.g. 100000"
-                value={filterPhotoSizeValue()}
-                onInput={(e) => setFilterPhotoSizeValue(e.currentTarget.value)}
-              />
-            </div>
-          </div>
+          {renderThreshold(
+            "Photo file size (bytes)",
+            "e.g. 100000",
+            photoSizeOp,
+            setPhotoSizeOp,
+            photoSizeInput,
+            setPhotoSizeInput,
+          )}
 
-          <div class="filter-section">
-            <label class="filter-label">Photo dimensions (min side, px)</label>
-            <div class="filter-threshold-row">
-              <select
-                class="filter-input"
-                value={filterPhotoDimOp()}
-                onChange={(e) =>
-                  setFilterPhotoDimOp(e.currentTarget.value as "<" | ">")
-                }
-              >
-                <option value="<">&lt;</option>
-                <option value=">">&gt;</option>
-              </select>
-              <input
-                type="number"
-                min="0"
-                step="1"
-                class="filter-input"
-                placeholder="e.g. 600"
-                value={filterPhotoDimValue()}
-                onInput={(e) => setFilterPhotoDimValue(e.currentTarget.value)}
-              />
-            </div>
-          </div>
+          {renderThreshold(
+            "Photo dimensions (min side, px)",
+            "e.g. 600",
+            photoDimOp,
+            setPhotoDimOp,
+            photoDimInput,
+            setPhotoDimInput,
+          )}
 
-          <div class="filter-section">
-            <label class="filter-label">Created</label>
-            <div class="filter-date-range">
+          <div class="cookbook-filter-section">
+            <div class="cookbook-filter-label">Created</div>
+            <div class="cookbook-filter-date-range">
               <input
                 type="date"
-                class="filter-input"
-                value={filterCreatedAfter()}
-                onInput={(e) => setFilterCreatedAfter(e.currentTarget.value)}
+                class="cookbook-filter-input"
+                value={currentFilters().createdAfter}
+                onInput={(e) =>
+                  patchFilters({ createdAfter: e.currentTarget.value })
+                }
               />
               <span>to</span>
               <input
                 type="date"
-                class="filter-input"
-                value={filterCreatedBefore()}
-                onInput={(e) => setFilterCreatedBefore(e.currentTarget.value)}
+                class="cookbook-filter-input"
+                value={currentFilters().createdBefore}
+                onInput={(e) =>
+                  patchFilters({ createdBefore: e.currentTarget.value })
+                }
               />
             </div>
           </div>
 
-          <div class="filter-actions">
-            <button type="button" class="btn btn-small" onClick={clearFilters}>
-              Clear
-            </button>
+          <div class="cookbook-filter-actions">
             <button
               type="button"
               class="btn btn-small"
-              onClick={() => setShowFilters(false)}
+              onClick={clearFilters}
+              disabled={activeFilterCount() === 0}
             >
-              Cancel
-            </button>
-            <button
-              type="button"
-              class="btn btn-small btn-primary"
-              onClick={applyFilters}
-            >
-              Apply
+              Clear all filters
             </button>
           </div>
-        </div>
-      </Show>
+        </aside>
 
-      <Show when={loading()}>
-        <p class="loading">Loading recipes...</p>
-      </Show>
+        <Show when={mobileFiltersOpen()}>
+          <div
+            class="cookbook-sidebar-overlay"
+            aria-hidden="true"
+            onClick={() => setMobileFiltersOpen(false)}
+          />
+        </Show>
 
-      <Show when={error()}>
-        <p class="error">{error()}</p>
-      </Show>
+        <div class="cookbook-content">
+          <Show when={loading()}>
+            <p class="loading">Loading recipes...</p>
+          </Show>
 
-      <Show when={!loading() && recipes().length === 0 && !searchQuery()}>
-        <div class="empty-state">
-          <div class="empty-state-icon">📖</div>
-          <h3>Your cookbook is empty</h3>
-          <p>Start building your collection by adding your first recipe.</p>
-          <A href="/recipes/new" class="btn btn-primary">
-            + Add Your First Recipe
-          </A>
-        </div>
-      </Show>
+          <Show when={error()}>
+            <p class="error">{error()}</p>
+          </Show>
 
-      <Show when={!loading() && recipes().length === 0 && searchQuery()}>
-        <div class="empty-state">
-          <div class="empty-state-icon">🔍</div>
-          <h3>No recipes found</h3>
-          <p>Try a different search term or clear the search.</p>
-          <button class="btn btn-primary" onClick={clearSearch}>
-            Clear Search
-          </button>
-        </div>
-      </Show>
+          <Show when={!loading() && recipes().length === 0 && !searchQuery()}>
+            <div class="empty-state">
+              <div class="empty-state-icon">📖</div>
+              <h3>Your cookbook is empty</h3>
+              <p>Start building your collection by adding your first recipe.</p>
+              <A href="/recipes/new" class="btn btn-primary">
+                + Add Your First Recipe
+              </A>
+            </div>
+          </Show>
 
-      <Show when={!loading() && recipes().length > 0}>
-        <div class="recipe-grid">
-          <For each={recipes()}>
-            {(recipe) => {
-              const card = (
-                <>
-                  <Show
-                    when={recipe.thumbnailPhotoId}
-                    fallback={<div class="recipe-card-placeholder">🍽️</div>}
-                  >
-                    <PhotoThumbnail
-                      photoId={recipe.thumbnailPhotoId!}
-                      token={token()!}
-                      alt={recipe.title}
-                      thumbnailSize={thumbnailSize}
-                      class="recipe-card-thumbnail"
-                    />
-                  </Show>
-                  <div class="recipe-card-content">
-                    <h3>{recipe.title}</h3>
-                    <Show when={recipe.description}>
-                      <p class="recipe-description">{recipe.description}</p>
-                    </Show>
-                    <Show when={recipe.tags && recipe.tags.length > 0}>
-                      <div class="recipe-tags">
-                        <For each={recipe.tags!.slice(0, 3)}>
-                          {(tag) => <span class="tag">{tag}</span>}
-                        </For>
-                        <Show when={recipe.tags!.length > 3}>
-                          <span class="tag tag-more">
-                            +{recipe.tags!.length - 3}
-                          </span>
+          <Show when={!loading() && recipes().length === 0 && searchQuery()}>
+            <div class="empty-state">
+              <div class="empty-state-icon">🔍</div>
+              <h3>No recipes found</h3>
+              <p>Try a different search term or clear the search.</p>
+              <button class="btn btn-primary" onClick={clearSearch}>
+                Clear Search
+              </button>
+            </div>
+          </Show>
+
+          <Show when={!loading() && recipes().length > 0}>
+            <div class="recipe-grid">
+              <For each={recipes()}>
+                {(recipe) => {
+                  const card = (
+                    <>
+                      <Show
+                        when={recipe.thumbnailPhotoId}
+                        fallback={<div class="recipe-card-placeholder">🍽️</div>}
+                      >
+                        <PhotoThumbnail
+                          photoId={recipe.thumbnailPhotoId!}
+                          token={token()!}
+                          alt={recipe.title}
+                          thumbnailSize={thumbnailSize}
+                          class="recipe-card-thumbnail"
+                        />
+                      </Show>
+                      <div class="recipe-card-content">
+                        <h3>{recipe.title}</h3>
+                        <Show when={recipe.description}>
+                          <p class="recipe-description">{recipe.description}</p>
                         </Show>
+                        <Show when={recipe.tags && recipe.tags.length > 0}>
+                          <div class="recipe-tags">
+                            <For each={recipe.tags!.slice(0, 3)}>
+                              {(tag) => <span class="tag">{tag}</span>}
+                            </For>
+                            <Show when={recipe.tags!.length > 3}>
+                              <span class="tag tag-more">
+                                +{recipe.tags!.length - 3}
+                              </span>
+                            </Show>
+                          </div>
+                        </Show>
+                        <p class="recipe-date">
+                          {formatRelativeDate(recipe.updatedAt)}
+                        </p>
+                      </div>
+                    </>
+                  );
+
+                  return (
+                    <Show
+                      when={bulkMode()}
+                      fallback={
+                        <A href={`/recipes/${recipe.id}`} class="recipe-card">
+                          {card}
+                        </A>
+                      }
+                    >
+                      <div
+                        class="recipe-card recipe-card-selectable"
+                        classList={{ selected: selected().has(recipe.id) }}
+                        onClick={() => toggleSelected(recipe.id)}
+                      >
+                        <input
+                          type="checkbox"
+                          class="recipe-card-checkbox"
+                          checked={selected().has(recipe.id)}
+                          onClick={(e) => e.stopPropagation()}
+                          onChange={() => toggleSelected(recipe.id)}
+                        />
+                        {card}
                       </div>
                     </Show>
-                    <p class="recipe-date">
-                      {formatRelativeDate(recipe.updatedAt)}
-                    </p>
-                  </div>
-                </>
-              );
+                  );
+                }}
+              </For>
+            </div>
 
-              return (
-                <Show
-                  when={bulkMode()}
-                  fallback={
-                    <A href={`/recipes/${recipe.id}`} class="recipe-card">
-                      {card}
-                    </A>
-                  }
-                >
-                  <div
-                    class="recipe-card recipe-card-selectable"
-                    classList={{ selected: selected().has(recipe.id) }}
-                    onClick={() => toggleSelected(recipe.id)}
-                  >
-                    <input
-                      type="checkbox"
-                      class="recipe-card-checkbox"
-                      checked={selected().has(recipe.id)}
-                      onClick={(e) => e.stopPropagation()}
-                      onChange={() => toggleSelected(recipe.id)}
-                    />
-                    {card}
-                  </div>
-                </Show>
-              );
-            }}
-          </For>
+            <Show when={loadingMore()}>
+              <p
+                class="loading"
+                style={{ "text-align": "center", padding: "2rem" }}
+              >
+                Loading more recipes...
+              </p>
+            </Show>
+
+            <Show when={!loadingMore() && !hasMore()}>
+              <p
+                class="loading"
+                style={{
+                  "text-align": "center",
+                  padding: "2rem",
+                  color: "#666",
+                }}
+              >
+                No more recipes
+              </p>
+            </Show>
+          </Show>
         </div>
-
-        <Show when={loadingMore()}>
-          <p
-            class="loading"
-            style={{ "text-align": "center", padding: "2rem" }}
-          >
-            Loading more recipes...
-          </p>
-        </Show>
-
-        <Show when={!loadingMore() && !hasMore()}>
-          <p
-            class="loading"
-            style={{ "text-align": "center", padding: "2rem", color: "#666" }}
-          >
-            No more recipes
-          </p>
-        </Show>
-      </Show>
+      </div>
 
       <PdfExportModal
         isOpen={showPdfModal}
