@@ -42,7 +42,7 @@ final class ShoppingListMutationSupportTests: XCTestCase {
         let container = makeInMemoryContainer()
         let context = container.viewContext
         let recipeId = UUID()
-        let saveError = NSError(
+        let underlyingSaveError = NSError(
             domain: "ShoppingListMutationSupportTests",
             code: 42,
             userInfo: [NSLocalizedDescriptionKey: "disk full"]
@@ -55,19 +55,19 @@ final class ShoppingListMutationSupportTests: XCTestCase {
                 recipeTitle: "Pie",
                 context: context,
                 save: {
-                    throw saveError
+                    throw underlyingSaveError
                 }
             )
         ) { error in
-            guard let saveError = error as? ShoppingListStoreError else {
+            guard let shoppingListError = error as? ShoppingListStoreError else {
                 return XCTFail("Expected ShoppingListStoreError, got \(error)")
             }
 
-            guard case .saveFailed(let underlying) = saveError else {
+            guard case .saveFailed(let underlying) = shoppingListError else {
                 return XCTFail("Expected saveFailed error, got \(error)")
             }
 
-            XCTAssertEqual((underlying as NSError).domain, saveError.domain)
+            XCTAssertEqual((underlying as NSError).domain, underlyingSaveError.domain)
             XCTAssertEqual(error.localizedDescription, "Failed to save shopping list changes.")
         }
 
