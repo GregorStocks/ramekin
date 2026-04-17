@@ -21,6 +21,7 @@ docs/CustomEnrichRequest.md
 docs/Direction.md
 docs/EnrichApi.md
 docs/ErrorResponse.md
+docs/GenerateDescriptionResponse.md
 docs/GeneratePhotoResponse.md
 docs/ImportApi.md
 docs/ImportExtractionMethod.md
@@ -106,6 +107,7 @@ src/models/create_tag_response.rs
 src/models/custom_enrich_request.rs
 src/models/direction.rs
 src/models/error_response.rs
+src/models/generate_description_response.rs
 src/models/generate_photo_response.rs
 src/models/import_extraction_method.rs
 src/models/import_from_photos_request.rs

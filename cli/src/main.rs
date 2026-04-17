@@ -1,3 +1,4 @@
+mod description_generation;
 mod export;
 mod generate_test_urls;
 mod import;
@@ -257,6 +258,18 @@ enum Commands {
         #[arg(long)]
         limit: Option<usize>,
     },
+    /// Generate menu-style descriptions from a .paprikarecipes file
+    DescriptionGenerationTest {
+        /// Path to the .paprikarecipes file
+        #[arg(long, default_value = "data/dev/seed.paprikarecipes")]
+        file: PathBuf,
+        /// Path to write the description mapping output
+        #[arg(long, default_value = "data/description-generation.txt")]
+        output: PathBuf,
+        /// Max number of recipes to process (default: 500)
+        #[arg(long)]
+        limit: Option<usize>,
+    },
 }
 
 #[tokio::main]
@@ -453,6 +466,13 @@ async fn main() -> Result<()> {
             limit,
         } => {
             title_normalization::run(&file, &titles_file, &output, limit).await?;
+        }
+        Commands::DescriptionGenerationTest {
+            file,
+            output,
+            limit,
+        } => {
+            description_generation::run(&file, &output, limit).await?;
         }
     }
 

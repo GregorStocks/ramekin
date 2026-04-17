@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import title-normalization-test
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import title-normalization-test description-generation-test
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -252,5 +252,11 @@ ingredient-density-import: ## Regenerate USDA data from downloaded CSV (requires
 title-normalization-test: ## Normalize recipe titles from seed.paprikarecipes via the LLM (cached; free on rerun)
 	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
 	cargo run -q --manifest-path cli/Cargo.toml -- title-normalization-test \
+		$(if $(FILE),--file $(FILE),) \
+		$(if $(LIMIT),--limit $(LIMIT),)
+
+description-generation-test: ## Generate menu-style descriptions from seed.paprikarecipes via the LLM (cached; free on rerun)
+	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
+	cargo run -q --manifest-path cli/Cargo.toml -- description-generation-test \
 		$(if $(FILE),--file $(FILE),) \
 		$(if $(LIMIT),--limit $(LIMIT),)

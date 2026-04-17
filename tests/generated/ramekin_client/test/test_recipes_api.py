@@ -50,6 +50,12 @@ class TestRecipesApi(unittest.TestCase):
         """
         pass
 
+    def test_generate_description(self) -> None:
+        """Test case for generate_description
+
+        """
+        pass
+
     def test_generate_photo(self) -> None:
         """Test case for generate_photo
 

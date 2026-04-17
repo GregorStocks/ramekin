@@ -8,6 +8,7 @@ All URIs are relative to *http://localhost*
 | [**deleteRecipe**](RecipesApi.md#deleterecipe) | **DELETE** /api/recipes/{id} |  |
 | [**exportAllRecipes**](RecipesApi.md#exportallrecipes) | **GET** /api/recipes/export |  |
 | [**exportRecipe**](RecipesApi.md#exportrecipe) | **GET** /api/recipes/{id}/export |  |
+| [**generateDescription**](RecipesApi.md#generatedescription) | **POST** /api/recipes/{id}/generate-description |  |
 | [**generatePhoto**](RecipesApi.md#generatephoto) | **POST** /api/recipes/{id}/generate-photo |  |
 | [**getRecipe**](RecipesApi.md#getrecipe) | **GET** /api/recipes/{id} |  |
 | [**listRecipes**](RecipesApi.md#listrecipes) | **GET** /api/recipes |  |
@@ -290,6 +291,79 @@ example().catch(console.error);
 | **200** | Paprika recipe file (.paprikarecipe) |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Recipe not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## generateDescription
+
+> GenerateDescriptionResponse generateDescription(id)
+
+
+
+### Example
+
+```ts
+import {
+  Configuration,
+  RecipesApi,
+} from '';
+import type { GenerateDescriptionRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearer_auth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new RecipesApi(config);
+
+  const body = {
+    // string | Recipe ID
+    id: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
+  } satisfies GenerateDescriptionRequest;
+
+  try {
+    const data = await api.generateDescription(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | `string` | Recipe ID | [Defaults to `undefined`] |
+
+### Return type
+
+[**GenerateDescriptionResponse**](GenerateDescriptionResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Description generated and applied |  -  |
+| **401** | Unauthorized |  -  |
+| **404** | Recipe not found |  -  |
+| **409** | Recipe was modified concurrently |  -  |
+| **503** | AI service unavailable |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

@@ -19,6 +19,7 @@ import type {
   CreateRecipeResponse,
   Direction,
   ErrorResponse,
+  GenerateDescriptionResponse,
   GeneratePhotoResponse,
   ListRecipesResponse,
   NormalizeTitleResponse,
@@ -37,6 +38,8 @@ import {
     DirectionToJSON,
     ErrorResponseFromJSON,
     ErrorResponseToJSON,
+    GenerateDescriptionResponseFromJSON,
+    GenerateDescriptionResponseToJSON,
     GeneratePhotoResponseFromJSON,
     GeneratePhotoResponseToJSON,
     ListRecipesResponseFromJSON,
@@ -64,6 +67,10 @@ export interface DeleteRecipeRequest {
 }
 
 export interface ExportRecipeRequest {
+    id: string;
+}
+
+export interface GenerateDescriptionRequest {
     id: string;
 }
 
@@ -271,6 +278,49 @@ export class RecipesApi extends runtime.BaseAPI {
      */
     async exportRecipe(requestParameters: ExportRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.exportRecipeRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     */
+    async generateDescriptionRaw(requestParameters: GenerateDescriptionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GenerateDescriptionResponse>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling generateDescription().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/api/recipes/{id}/generate-description`;
+        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GenerateDescriptionResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async generateDescription(requestParameters: GenerateDescriptionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GenerateDescriptionResponse> {
+        const response = await this.generateDescriptionRaw(requestParameters, initOverrides);
+        return await response.value();
     }
 
     /**

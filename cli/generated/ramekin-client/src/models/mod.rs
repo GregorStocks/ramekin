@@ -30,6 +30,8 @@ pub mod direction;
 pub use self::direction::Direction;
 pub mod error_response;
 pub use self::error_response::ErrorResponse;
+pub mod generate_description_response;
+pub use self::generate_description_response::GenerateDescriptionResponse;
 pub mod generate_photo_response;
 pub use self::generate_photo_response::GeneratePhotoResponse;
 pub mod import_extraction_method;

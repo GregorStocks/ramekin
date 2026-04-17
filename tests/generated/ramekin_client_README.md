@@ -80,6 +80,7 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**delete_recipe**](ramekin_client/docs/RecipesApi.md#delete_recipe) | **DELETE** /api/recipes/{id} | 
 *RecipesApi* | [**export_all_recipes**](ramekin_client/docs/RecipesApi.md#export_all_recipes) | **GET** /api/recipes/export | 
 *RecipesApi* | [**export_recipe**](ramekin_client/docs/RecipesApi.md#export_recipe) | **GET** /api/recipes/{id}/export | 
+*RecipesApi* | [**generate_description**](ramekin_client/docs/RecipesApi.md#generate_description) | **POST** /api/recipes/{id}/generate-description | 
 *RecipesApi* | [**generate_photo**](ramekin_client/docs/RecipesApi.md#generate_photo) | **POST** /api/recipes/{id}/generate-photo | 
 *RecipesApi* | [**get_recipe**](ramekin_client/docs/RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 *RecipesApi* | [**list_recipes**](ramekin_client/docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
@@ -124,6 +125,7 @@ Class | Method | HTTP request | Description
  - [CustomEnrichRequest](ramekin_client/docs/CustomEnrichRequest.md)
  - [Direction](ramekin_client/docs/Direction.md)
  - [ErrorResponse](ramekin_client/docs/ErrorResponse.md)
+ - [GenerateDescriptionResponse](ramekin_client/docs/GenerateDescriptionResponse.md)
  - [GeneratePhotoResponse](ramekin_client/docs/GeneratePhotoResponse.md)
  - [ImportExtractionMethod](ramekin_client/docs/ImportExtractionMethod.md)
  - [ImportFromPhotosRequest](ramekin_client/docs/ImportFromPhotosRequest.md)

@@ -112,6 +112,12 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
         if has_images:
             return self._mock_photo_extract()
 
+        if "like what you'd see on a restaurant menu" in all_text:
+            return self._mock_generate_description(all_text)
+
+        if "recipe title editor" in all_text:
+            return self._mock_normalize_title(all_text)
+
         # Default: auto-tag response
         return '{"suggested_tags": ["test-auto-tag"]}'
 
@@ -191,6 +197,21 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                     "tags": [],
                 }
             )
+
+    def _mock_generate_description(self, all_text):
+        """Return a mock generated description."""
+        return json.dumps({"description": "A delicious test recipe."})
+
+    def _mock_normalize_title(self, all_text):
+        """Return a mock normalized title."""
+        # Try to extract the title from the prompt
+        try:
+            start = all_text.index("- Title: ") + len("- Title: ")
+            end = all_text.index("\n", start)
+            title = all_text[start:end].strip()
+            return json.dumps({"normalized_title": title})
+        except ValueError:
+            return json.dumps({"normalized_title": "Normalized Recipe"})
 
     def _mock_photo_extract(self):
         """Return a mock recipe extracted from photos."""

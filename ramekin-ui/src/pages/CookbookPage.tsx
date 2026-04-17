@@ -274,6 +274,10 @@ export default function CookbookPage() {
     done: number;
     total: number;
   } | null>(null);
+  const [descriptionProgress, setDescriptionProgress] = createSignal<{
+    done: number;
+    total: number;
+  } | null>(null);
 
   const PAGE_SIZE = 20;
 
@@ -668,6 +672,44 @@ export default function CookbookPage() {
     }
   };
 
+  const bulkGenerateDescription = async () => {
+    const ids = Array.from(selected());
+    if (ids.length === 0) return;
+    const confirmMsg =
+      ids.length === 1
+        ? "Generate a description for this recipe?"
+        : `Generate descriptions for ${ids.length} recipes? Each one calls the LLM (cached results are free).`;
+    if (!window.confirm(confirmMsg)) return;
+
+    setDescriptionProgress({ done: 0, total: ids.length });
+    const api = getRecipesApi();
+    let done = 0;
+    let changed = 0;
+    const errors: string[] = [];
+    for (const id of ids) {
+      try {
+        const res = await api.generateDescription({ id });
+        if (res.changed) changed += 1;
+      } catch (e) {
+        const msg = await extractApiError(e, "description failed");
+        errors.push(`${id.slice(0, 8)}: ${msg}`);
+      }
+      done += 1;
+      setDescriptionProgress({ done, total: ids.length });
+    }
+    setDescriptionProgress(null);
+    await loadRecipes();
+    if (errors.length > 0) {
+      setError(
+        `${ids.length - errors.length}/${ids.length} described (${changed} changed). Errors: ${errors.slice(0, 3).join("; ")}${errors.length > 3 ? "…" : ""}`,
+      );
+    } else {
+      setError(
+        `Generated descriptions for ${ids.length} recipes (${changed} changed, ${ids.length - changed} unchanged).`,
+      );
+    }
+  };
+
   const bulkRescrapePhoto = async () => {
     const ids = Array.from(selected());
     if (ids.length === 0) return;
@@ -820,6 +862,20 @@ export default function CookbookPage() {
             <Show when={normalizeTitleProgress()} fallback={<>Auto-rename</>}>
               Renaming {normalizeTitleProgress()!.done}/
               {normalizeTitleProgress()!.total}…
+            </Show>
+          </button>
+          <button
+            type="button"
+            class="btn btn-small"
+            onClick={bulkGenerateDescription}
+            disabled={selected().size === 0 || descriptionProgress() !== null}
+          >
+            <Show
+              when={descriptionProgress()}
+              fallback={<>Generate descriptions</>}
+            >
+              Describing {descriptionProgress()!.done}/
+              {descriptionProgress()!.total}…
             </Show>
           </button>
         </div>

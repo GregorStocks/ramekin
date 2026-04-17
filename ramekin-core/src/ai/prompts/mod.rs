@@ -2,12 +2,14 @@
 
 pub mod auto_tag;
 pub mod custom_enrich;
+pub mod generate_description;
 pub mod generate_recipe_photo;
 pub mod normalize_title;
 pub mod photo_extract;
 
 pub use auto_tag::render_auto_tag_prompt;
 pub use custom_enrich::{render_custom_enrich_system_prompt, render_custom_enrich_user_prompt};
+pub use generate_description::render_generate_description_prompt;
 pub use generate_recipe_photo::render_generate_recipe_photo_prompt;
 pub use normalize_title::render_normalize_title_prompt;
 pub use photo_extract::render_photo_extract_prompt;
