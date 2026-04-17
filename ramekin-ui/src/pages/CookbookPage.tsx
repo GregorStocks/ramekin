@@ -457,6 +457,18 @@ export default function CookbookPage() {
     window.removeEventListener("scroll", handleScroll);
   });
 
+  // Scroll events alone aren't enough: in compact/list density on a tall
+  // viewport, the first 20 rows can fit without filling the screen, so the
+  // user has nothing to scroll and loadMore never fires. After each batch
+  // arrives or the density changes, re-run the proximity check so we keep
+  // pulling pages until the viewport is actually full.
+  createEffect(() => {
+    const items = recipes();
+    density();
+    if (items.length === 0) return;
+    requestAnimationFrame(handleScroll);
+  });
+
   const recipeCount = () => {
     const count = recipes().length;
     const totalCount = total();
