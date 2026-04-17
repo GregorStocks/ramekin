@@ -321,7 +321,10 @@ pub async fn generate_photo(
                 recipe_versions::notes,
             ))
             .first(conn)
-            .map_err(GeneratePhotoWriteError::Db)?;
+            .map_err(|e| match e {
+                diesel::result::Error::NotFound => GeneratePhotoWriteError::StaleVersion,
+                other => GeneratePhotoWriteError::Db(other),
+            })?;
 
         let (
             _recipe_id,
@@ -346,12 +349,6 @@ pub async fn generate_photo(
         if current_version_id != Some(source_version_id) {
             return Err(GeneratePhotoWriteError::StaleVersion);
         }
-
-        let old_version_id: Option<Uuid> = recipes::table
-            .filter(recipes::id.eq(recipe_id))
-            .select(recipes::current_version_id)
-            .first(conn)
-            .map_err(GeneratePhotoWriteError::Db)?;
 
         let new_photo = NewPhoto {
             user_id: user.id,
@@ -399,28 +396,36 @@ pub async fn generate_photo(
             .get_result(conn)
             .map_err(GeneratePhotoWriteError::Db)?;
 
-        diesel::update(recipes::table.find(recipe_id))
-            .set(recipes::current_version_id.eq(new_version_id))
-            .execute(conn)
+        let updated_rows = diesel::update(
+            recipes::table
+                .filter(recipes::id.eq(recipe_id))
+                .filter(recipes::user_id.eq(user.id))
+                .filter(recipes::deleted_at.is_null())
+                .filter(recipes::current_version_id.eq(source_version_id)),
+        )
+        .set(recipes::current_version_id.eq(new_version_id))
+        .execute(conn)
+        .map_err(GeneratePhotoWriteError::Db)?;
+
+        if updated_rows == 0 {
+            return Err(GeneratePhotoWriteError::StaleVersion);
+        }
+
+        let old_tag_ids: Vec<Uuid> = recipe_version_tags::table
+            .filter(recipe_version_tags::recipe_version_id.eq(source_version_id))
+            .select(recipe_version_tags::tag_id)
+            .load(conn)
             .map_err(GeneratePhotoWriteError::Db)?;
 
-        if let Some(old_vid) = old_version_id {
-            let old_tag_ids: Vec<Uuid> = recipe_version_tags::table
-                .filter(recipe_version_tags::recipe_version_id.eq(old_vid))
-                .select(recipe_version_tags::tag_id)
-                .load(conn)
+        for tag_id in old_tag_ids {
+            diesel::insert_into(recipe_version_tags::table)
+                .values(crate::models::RecipeVersionTag {
+                    recipe_version_id: new_version_id,
+                    tag_id,
+                })
+                .on_conflict_do_nothing()
+                .execute(conn)
                 .map_err(GeneratePhotoWriteError::Db)?;
-
-            for tag_id in old_tag_ids {
-                diesel::insert_into(recipe_version_tags::table)
-                    .values(crate::models::RecipeVersionTag {
-                        recipe_version_id: new_version_id,
-                        tag_id,
-                    })
-                    .on_conflict_do_nothing()
-                    .execute(conn)
-                    .map_err(GeneratePhotoWriteError::Db)?;
-            }
         }
 
         Ok((photo_id, new_version_id))
