@@ -95,12 +95,6 @@ async function cropImageToAspectRatio(
   };
 }
 
-function uniqueSorted(values: number[]): number[] {
-  return [...new Set(values.map((value) => value.toFixed(4)))]
-    .map((value) => Number.parseFloat(value))
-    .sort((a, b) => a - b);
-}
-
 function drawCutGuides(
   doc: jsPDF,
   pageW: number,
@@ -294,18 +288,22 @@ export default function PdfExportModal(props: Props) {
       const startX = (pageW - gridW) / 2;
       const startY = (pageH - gridH) / 2;
       const bHalf = border / 2;
-      const xCuts = uniqueSorted(
-        Array.from({ length: cols }, (_, col) => {
-          const left = startX + col * (footW + g);
-          return [left, left + w + border];
-        }).flat(),
-      );
-      const yCuts = uniqueSorted(
-        Array.from({ length: rows }, (_, row) => {
-          const top = startY + row * (footH + g);
-          return [top, top + h + border];
-        }).flat(),
-      );
+      const xCuts = [
+        startX,
+        ...Array.from(
+          { length: cols - 1 },
+          (_, col) => startX + col * (footW + g) + footW + g / 2,
+        ),
+        startX + gridW,
+      ];
+      const yCuts = [
+        startY,
+        ...Array.from(
+          { length: rows - 1 },
+          (_, row) => startY + row * (footH + g) + footH + g / 2,
+        ),
+        startY + gridH,
+      ];
       const drawPageDecorations = (pageIdx: number) => {
         if (showCutGuides()) {
           drawCutGuides(doc, pageW, pageH, xCuts, yCuts, {
