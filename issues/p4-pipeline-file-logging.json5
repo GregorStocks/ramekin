@@ -1,8 +1,8 @@
 {
   "title": "Add file logging for pipeline runs",
   "description": "Pipeline runs currently only log to stderr via tracing. When \
-something goes wrong (e.g. the stack overflow from #398), there's no persistent \
-log to look at after the fact.\n\
+something goes wrong (e.g. the stack overflow from #398), there's no \
+persistent log to look at after the fact.\n\
 \n\
 Add a file appender so pipeline runs write debug-level logs to `logs/`. \
 Probably use `tracing-appender` with a non-rolling file per run, named after \
