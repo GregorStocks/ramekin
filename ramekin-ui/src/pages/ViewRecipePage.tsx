@@ -192,11 +192,19 @@ export default function ViewRecipePage() {
     setShowDeleteModal(true);
   };
 
+  const goBackToCookbook = () => {
+    if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate("/");
+    }
+  };
+
   const handleDeleteConfirm = async () => {
     setDeleting(true);
     try {
       await getRecipesApi().deleteRecipe({ id: params.id });
-      navigate("/");
+      goBackToCookbook();
     } catch (err) {
       const message = await extractApiError(err, "Failed to delete recipe");
       setError(message);
@@ -594,9 +602,9 @@ export default function ViewRecipePage() {
       <Show when={error()}>
         <div class="error-state">
           <p class="error">{error()}</p>
-          <A href="/" class="btn">
+          <button type="button" class="btn" onClick={goBackToCookbook}>
             Back to Cookbook
-          </A>
+          </button>
         </div>
       </Show>
 
@@ -605,9 +613,13 @@ export default function ViewRecipePage() {
           <>
             <div class="recipe-top-bar">
               <div class="recipe-nav-links">
-                <A href="/" class="back-link">
+                <button
+                  type="button"
+                  class="back-link"
+                  onClick={goBackToCookbook}
+                >
                   &larr; Back
-                </A>
+                </button>
                 <Show when={isRandomMode()}>
                   <button
                     type="button"
