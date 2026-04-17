@@ -159,12 +159,15 @@ enum RecipeListFilterSupport {
         return "\(prefix):\(value)"
     }
 
+    // Pair timeZone with SharedDateFormatters.localDateOnly (.autoupdatingCurrent)
+    // so parsing a chip's yyyy-MM-dd string and then displaying it in "MMM d"
+    // can't disagree on the calendar day after a runtime timezone change.
     private static let chipDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d"
         formatter.calendar = Calendar(identifier: .iso8601)
         formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.timeZone = .current
+        formatter.timeZone = .autoupdatingCurrent
         return formatter
     }()
 }
