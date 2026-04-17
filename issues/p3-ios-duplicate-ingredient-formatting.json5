@@ -1,10 +1,10 @@
 {
   "title": "formatIngredient duplicated across four iOS files",
   "description": "Four near-identical copies of the \"amount unit (alt1, alt2) \
-item\" formatter: `Ramekin/RecipeDetailViewSections.swift:272`, \
+item\" formatter: `Ramekin/RecipeDetailViewVersioning.swift:272`, \
 `Ramekin/AddToShoppingListSheet.swift:125`, \
-`Ramekin/RecipeVersionSupport.swift:94`, and a partial version inside \
-`Ramekin/EnrichPreviewSheet.swift`. They diverge on whether they append \
+`Ramekin/RecipeVersionSupport.swift:94`, and a sibling `formatIngredients` in \
+`Ramekin/EnrichPreviewSheet.swift:139`. They diverge on whether they append \
 `(note)` and whether they include alt measurements. Extract one canonical \
 `Ingredient.formatted(includeAlternatives:includeNote:)` (on `Ingredient` or a \
 dedicated `IngredientFormatter`) and kill the copies. Today a formatting fix \

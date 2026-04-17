@@ -1,7 +1,7 @@
 {
   "title": "groupIngredientsBySection duplicated for Ingredient and \
 EditableIngredient",
-  "description": "`RecipeDetailViewSections.swift:248-270` groups \
+  "description": "`RecipeDetailViewVersioning.swift:248-270` groups \
 `[Ingredient]` and `RecipeFormModels.swift:82-105` groups \
 `[EditableIngredient]`. The algorithms are identical; they only differ in \
 output shape (one returns `(section: String?, items:)`, the other returns \
