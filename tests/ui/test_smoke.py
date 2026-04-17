@@ -249,6 +249,26 @@ def test_cookbook_search_filters_as_you_type(logged_in_page: Page):
     ).to_have_count(0)
 
 
+def test_cookbook_density_toggle_persists(logged_in_page: Page):
+    """Verify density toggle switches modes and persists via localStorage."""
+    grid = logged_in_page.locator(".recipe-grid")
+    expect(grid).to_have_attribute("data-density", "card")
+
+    logged_in_page.get_by_role("button", name="Compact").click()
+    expect(grid).to_have_attribute("data-density", "compact")
+
+    logged_in_page.reload()
+    logged_in_page.wait_for_selector(".recipe-card")
+    expect(logged_in_page.locator(".recipe-grid")).to_have_attribute(
+        "data-density", "compact"
+    )
+
+    logged_in_page.get_by_role("button", name="Cards").click()
+    expect(logged_in_page.locator(".recipe-grid")).to_have_attribute(
+        "data-density", "card"
+    )
+
+
 def test_version_history_labels_enrichment_badges(
     page: Page, ui_url: str, api_url: str
 ):
