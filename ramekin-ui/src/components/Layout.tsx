@@ -20,17 +20,13 @@ const Layout: ParentComponent = (props) => {
   let userMenuRef: HTMLDivElement | undefined;
   let userMenuTriggerRef: HTMLButtonElement | undefined;
 
-  const closeMobileNav = () => {
-    setIsMobileNavOpen(false);
-  };
-
   const closeUserMenu = () => {
     setIsUserMenuOpen(false);
   };
 
   const closeAll = () => {
-    closeMobileNav();
-    closeUserMenu();
+    setIsMobileNavOpen(false);
+    setIsUserMenuOpen(false);
   };
 
   const logout = () => {
@@ -117,13 +113,13 @@ const Layout: ParentComponent = (props) => {
           }}
         >
           <div class="app-nav-primary">
-            <A href="/" onClick={closeMobileNav}>
+            <A href="/" onClick={closeAll}>
               Cookbook
             </A>
-            <A href="/meal-plan" onClick={closeMobileNav}>
+            <A href="/meal-plan" onClick={closeAll}>
               Meal Plan
             </A>
-            <A href="/shopping-list" onClick={closeMobileNav}>
+            <A href="/shopping-list" onClick={closeAll}>
               Shopping List
             </A>
           </div>
@@ -131,7 +127,7 @@ const Layout: ParentComponent = (props) => {
             <A
               href="/recipes/new"
               class="btn btn-primary btn-header"
-              onClick={closeMobileNav}
+              onClick={closeAll}
             >
               + New Recipe
             </A>
