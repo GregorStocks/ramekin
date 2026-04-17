@@ -24,7 +24,7 @@ struct IngredientRowView: View {
             actionButtons
         }
         .padding(.vertical, 4)
-        .onChange(of: ingredient.id) { _, _ in
+        .onChange(of: ingredient.id) { _ in
             isNoteVisible = IngredientRowViewSupport.initialNoteVisibility(
                 item: ingredient.item,
                 note: ingredient.note
