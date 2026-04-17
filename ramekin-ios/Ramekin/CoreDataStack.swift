@@ -46,17 +46,22 @@ class CoreDataStack: ObservableObject {
 
     /// Saves the view context if there are unsaved changes
     func saveContext() {
+        do {
+            try saveContextOrThrow()
+        } catch {
+            let nsError = error as NSError
+            logger.log(
+                "CoreData save error: \(nsError), \(nsError.userInfo)",
+                source: "CoreDataStack"
+            )
+        }
+    }
+
+    /// Saves the view context if there are unsaved changes and surfaces failures to callers.
+    func saveContextOrThrow() throws {
         let context = viewContext
         if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nsError = error as NSError
-                logger.log(
-                    "CoreData save error: \(nsError), \(nsError.userInfo)",
-                    source: "CoreDataStack"
-                )
-            }
+            try context.save()
         }
     }
 
