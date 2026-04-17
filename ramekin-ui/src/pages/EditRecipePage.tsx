@@ -106,6 +106,7 @@ export default function EditRecipePage() {
   };
 
   const handlePaste = (e: ClipboardEvent) => {
+    if (loading()) return;
     const file = extractImageFile(e.clipboardData);
     if (!file) return;
     e.preventDefault();
