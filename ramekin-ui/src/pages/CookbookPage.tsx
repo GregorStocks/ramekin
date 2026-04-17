@@ -212,6 +212,14 @@ function buildQueryFromFilters(
 
 const thumbnailSize = window.devicePixelRatio >= 2 ? 800 : 400;
 
+type Density = "card" | "compact" | "list";
+const DENSITY_KEY = "cookbookDensity";
+
+function loadDensity(): Density {
+  const v = localStorage.getItem(DENSITY_KEY);
+  return v === "compact" || v === "list" ? v : "card";
+}
+
 function formatRelativeDate(date: Date): string {
   const now = new Date();
   const diffMs = now.getTime() - date.getTime();
@@ -264,6 +272,10 @@ export default function CookbookPage() {
 
   // Bulk mode state
   const [bulkMode, setBulkMode] = createSignal(false);
+  const [density, setDensity] = createSignal<Density>(loadDensity());
+  createEffect(() => {
+    localStorage.setItem(DENSITY_KEY, density());
+  });
   const [selected, setSelected] = createSignal<Set<string>>(new Set());
   const [selectAllStatus, setSelectAllStatus] = createSignal<string | null>(
     null,
@@ -885,6 +897,25 @@ export default function CookbookPage() {
         >
           {bulkMode() ? "Done" : "Select"}
         </button>
+        <div class="density-toggle" role="group" aria-label="Recipe density">
+          <For each={["card", "compact", "list"] as const}>
+            {(mode) => (
+              <button
+                type="button"
+                class="density-toggle-button"
+                classList={{ active: density() === mode }}
+                aria-pressed={density() === mode}
+                onClick={() => setDensity(mode)}
+              >
+                {mode === "card"
+                  ? "Cards"
+                  : mode === "compact"
+                    ? "Compact"
+                    : "List"}
+              </button>
+            )}
+          </For>
+        </div>
       </div>
 
       <Show when={bulkMode()}>
@@ -1147,7 +1178,7 @@ export default function CookbookPage() {
           </Show>
 
           <Show when={!loading() && recipes().length > 0}>
-            <div class="recipe-grid">
+            <div class="recipe-grid" data-density={density()}>
               <For each={recipes()}>
                 {(recipe) => {
                   const card = (
