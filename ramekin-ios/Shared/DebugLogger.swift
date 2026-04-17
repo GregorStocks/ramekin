@@ -15,6 +15,7 @@ class DebugLogger {
     private let logDirectoryURLProvider: () -> URL?
     private let maxLogSizeBytes: Int
     private var fileHandle: FileHandle?
+    private var fileHandleFileID: UInt64?
 
     private var logFileURL: URL? {
         logDirectoryURLProvider()?.appendingPathComponent(Self.logFileName)
@@ -33,7 +34,7 @@ class DebugLogger {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
     }
 
-    init(logDirectoryURL: URL, maxLogSizeBytes: Int = Self.defaultMaxLogSizeBytes) {
+    init(logDirectoryURL: URL, maxLogSizeBytes: Int = 2 * 1024 * 1024) {
         logDirectoryURLProvider = { logDirectoryURL }
         self.maxLogSizeBytes = maxLogSizeBytes
         dateFormatter = DateFormatter()
@@ -117,20 +118,29 @@ class DebugLogger {
     }
 
     private func openFileHandle() -> FileHandle? {
-        if let fileHandle {
+        let currentFileID = currentLogFileID()
+        if let fileHandle, let currentFileID, fileHandleFileID == currentFileID {
             return fileHandle
         }
+        closeFileHandle()
         guard let logFileURL else { return nil }
-        if !fileManager.fileExists(atPath: logFileURL.path) {
+        if currentFileID == nil {
             _ = fileManager.createFile(atPath: logFileURL.path, contents: nil)
         }
         guard let handle = try? FileHandle(forWritingTo: logFileURL) else { return nil }
         fileHandle = handle
+        fileHandleFileID = currentLogFileID()
         return handle
     }
 
     private func closeFileHandle() {
         try? fileHandle?.close()
         fileHandle = nil
+        fileHandleFileID = nil
+    }
+
+    private func currentLogFileID() -> UInt64? {
+        guard let logFileURL else { return nil }
+        return (try? fileManager.attributesOfItem(atPath: logFileURL.path)[.systemFileNumber] as? NSNumber)?.uint64Value
     }
 }

@@ -55,4 +55,25 @@ final class DebugLoggerTests: XCTestCase {
         XCTAssertFalse(FileManager.default.fileExists(atPath: tempDirectoryURL.appendingPathComponent("debug.log").path))
         XCTAssertFalse(FileManager.default.fileExists(atPath: tempDirectoryURL.appendingPathComponent("debug.log.1").path))
     }
+
+    func testLoggerReopensHandleAfterExternalRotation() throws {
+        let logger = DebugLogger(logDirectoryURL: tempDirectoryURL, maxLogSizeBytes: 1_024)
+        let currentLogURL = tempDirectoryURL.appendingPathComponent("debug.log")
+        let archivedLogURL = tempDirectoryURL.appendingPathComponent("external-debug.log")
+
+        logger.log("first entry", source: "First")
+        XCTAssertTrue(logger.readLogs().contains("[First]"))
+
+        try FileManager.default.moveItem(at: currentLogURL, to: archivedLogURL)
+        _ = FileManager.default.createFile(atPath: currentLogURL.path, contents: nil)
+
+        logger.log("second entry", source: "Second")
+        let currentLogs = logger.readLogs()
+        let archivedLogs = try String(contentsOf: archivedLogURL, encoding: .utf8)
+
+        XCTAssertTrue(currentLogs.contains("[Second]"))
+        XCTAssertFalse(currentLogs.contains("[First]"))
+        XCTAssertTrue(archivedLogs.contains("[First]"))
+        XCTAssertFalse(archivedLogs.contains("[Second]"))
+    }
 }
