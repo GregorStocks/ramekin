@@ -253,27 +253,7 @@ extension RecipeDetailView {
 
 extension RecipeDetailView {
     func groupIngredientsBySection(_ ingredients: [Ingredient]) -> [(section: String?, items: [Ingredient])] {
-        var groups: [(section: String?, items: [Ingredient])] = []
-        var currentSection: String?
-        var currentItems: [Ingredient] = []
-
-        for ingredient in ingredients {
-            if ingredient.section != currentSection {
-                if !currentItems.isEmpty {
-                    groups.append((section: currentSection, items: currentItems))
-                }
-                currentSection = ingredient.section
-                currentItems = [ingredient]
-            } else {
-                currentItems.append(ingredient)
-            }
-        }
-
-        if !currentItems.isEmpty {
-            groups.append((section: currentSection, items: currentItems))
-        }
-
-        return groups
+        groupConsecutiveItemsBySection(ingredients) { $0.section }
     }
 
     func formatIngredient(_ ingredient: Ingredient) -> String {
