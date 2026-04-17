@@ -87,6 +87,7 @@ struct ShareExtensionView: View {
 
     @State private var status: ShareStatus = .ready
     @State private var errorMessage: String?
+    @State private var showSlowAffordance = false
 
     enum ShareStatus {
         case ready
@@ -95,6 +96,11 @@ struct ShareExtensionView: View {
         case error
         case notLoggedIn
     }
+
+    /// Delay after which, if we're still in `.sending`, we surface a
+    /// "Still working, tap to close" affordance so the user can dismiss
+    /// instead of waiting for iOS to terminate the extension.
+    static let slowAffordanceDelay: TimeInterval = 10
 
     var body: some View {
         NavigationStack {
@@ -204,8 +210,24 @@ struct ShareExtensionView: View {
     @ViewBuilder
     private var actionButton: some View {
         switch status {
-        case .ready, .sending:
+        case .ready:
             EmptyView()
+        case .sending:
+            if showSlowAffordance {
+                Button {
+                    onComplete()
+                } label: {
+                    Text("Still working, tap to close")
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.secondary.opacity(0.2))
+                        .foregroundColor(.primary)
+                        .cornerRadius(12)
+                }
+            } else {
+                EmptyView()
+            }
         case .success:
             Button {
                 onComplete()
@@ -287,6 +309,16 @@ struct ShareExtensionView: View {
         DebugLogger.shared.log("sendURL called with: \(url.absoluteString)")
         logger.info("Sending URL to API: \(url.absoluteString)")
         status = .sending
+        showSlowAffordance = false
+
+        Task {
+            try? await Task.sleep(nanoseconds: UInt64(Self.slowAffordanceDelay * 1_000_000_000))
+            await MainActor.run {
+                if status == .sending {
+                    showSlowAffordance = true
+                }
+            }
+        }
 
         Task {
             do {

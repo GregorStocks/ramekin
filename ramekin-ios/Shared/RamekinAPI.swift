@@ -165,7 +165,8 @@ class RamekinAPI {
         path: String,
         body: Data? = nil,
         requiresAuth: Bool = true,
-        acceptedStatusCodes: Set<Int> = [200, 201, 204]
+        acceptedStatusCodes: Set<Int> = [200, 201, 204],
+        timeoutInterval: TimeInterval? = nil
     ) async throws -> Data {
         guard let baseURL = serverURL else {
             logger.log("ERROR: No server URL configured")
@@ -183,6 +184,9 @@ class RamekinAPI {
 
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method
+        if let timeoutInterval {
+            urlRequest.timeoutInterval = timeoutInterval
+        }
         if let token {
             urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         }
@@ -310,7 +314,11 @@ class RamekinAPI {
 
     // MARK: - Scraping
 
-    /// Submit a URL for scraping (async job)
+    /// Submit a URL for scraping (async job). Uses a short timeout because the
+    /// endpoint just enqueues a job and must return quickly — share extensions
+    /// have a tight memory/time budget before iOS terminates them.
+    static let scrapeSubmitTimeout: TimeInterval = 15
+
     func scrapeURL(_ urlString: String) async throws -> ScrapeResponse {
         logger.log("scrapeURL called with: \(urlString)")
         let body = try JSONEncoder().encode(ScrapeRequest(url: urlString))
@@ -318,7 +326,8 @@ class RamekinAPI {
             method: "POST",
             path: "/api/scrape",
             body: body,
-            acceptedStatusCodes: [200, 201]
+            acceptedStatusCodes: [200, 201],
+            timeoutInterval: Self.scrapeSubmitTimeout
         )
         let decoded = try JSONDecoder().decode(ScrapeResponse.self, from: data)
         logger.log("SUCCESS: Scrape job ID: \(decoded.id)")
