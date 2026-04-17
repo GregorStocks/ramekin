@@ -6,7 +6,8 @@ import path from 'path'
 import http from 'http'
 import httpProxy from 'http-proxy'
 
-const hostname = process.env.UI_HOSTNAME || 'localhost'
+const selfSignedUrl = process.env.RAMEKIN_SELF_SIGNED_URL || 'https://localhost:5173'
+const hostname = new URL(selfSignedUrl).hostname
 const certDir = path.join(process.env.HOME || '', '.ramekin', 'certs', hostname)
 
 // Only use HTTPS if cert files exist (not in CI)
@@ -49,13 +50,16 @@ function httpMirrorPlugin(): PluginOption {
 
 const buildCommit = execSync('git rev-parse --short HEAD').toString().trim()
 const buildTime = new Date().toISOString()
-const qrCodeBaseUrl = process.env.RAMEKIN_QR_CODE_BASE_URL ?? ''
+const externalUrl = process.env.RAMEKIN_EXTERNAL_URL
+if (!externalUrl) {
+  throw new Error('RAMEKIN_EXTERNAL_URL is required (see dev.env.example)')
+}
 
 export default defineConfig({
   define: {
     __BUILD_COMMIT__: JSON.stringify(buildCommit),
     __BUILD_TIME__: JSON.stringify(buildTime),
-    __QR_CODE_BASE_URL__: JSON.stringify(qrCodeBaseUrl),
+    __EXTERNAL_URL__: JSON.stringify(externalUrl),
   },
   plugins: [solid(), httpMirrorPlugin()],
   server: {
