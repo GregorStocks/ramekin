@@ -162,6 +162,81 @@ class RamekinAPI {
         }
     }
 
+    // MARK: - Request Helper
+
+    /// Execute a request against the configured server, applying the common
+    /// guard/URL/Bearer/Access-header boilerplate and translating transport-level
+    /// failures into `APIError`. Returns the raw response body on success;
+    /// callers decode as needed.
+    @discardableResult
+    fileprivate func performRequest(
+        method: String,
+        path: String,
+        body: Data? = nil,
+        requiresAuth: Bool = true,
+        acceptedStatusCodes: Set<Int> = [200, 201, 204]
+    ) async throws -> Data {
+        guard let baseURL = serverURL else {
+            logger.log("ERROR: No server URL configured")
+            throw APIError.noServerURL
+        }
+        let token = authToken
+        if requiresAuth, token == nil {
+            logger.log("ERROR: No auth token")
+            throw APIError.noAuthToken
+        }
+        guard let url = URL(string: "\(baseURL)\(path)") else {
+            logger.log("ERROR: Invalid URL: \(baseURL)\(path)")
+            throw APIError.invalidURL
+        }
+
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = method
+        if let token {
+            urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
+        if body != nil {
+            urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        }
+        applyAccessHeaders(to: &urlRequest)
+        urlRequest.httpBody = body
+
+        logger.log("REQUEST: \(method) \(url.absoluteString)")
+        if let body, let bodyString = String(data: body, encoding: .utf8) {
+            logger.log("REQUEST BODY: \(bodyString)")
+        }
+
+        let data: Data
+        let response: URLResponse
+        do {
+            (data, response) = try await urlSession.data(for: urlRequest)
+        } catch {
+            logger.log("NETWORK ERROR: \(error.localizedDescription)")
+            throw APIError.networkError(error)
+        }
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            logger.log("ERROR: Invalid response (not HTTPURLResponse)")
+            throw APIError.invalidResponse
+        }
+
+        let responseBody = String(data: data, encoding: .utf8) ?? "nil"
+        logger.log("RESPONSE: HTTP \(httpResponse.statusCode)")
+        logger.log("RESPONSE BODY: \(responseBody)")
+
+        guard acceptedStatusCodes.contains(httpResponse.statusCode) else {
+            throw parseError(from: data, statusCode: httpResponse.statusCode)
+        }
+        return data
+    }
+
+    fileprivate func parseError(from data: Data, statusCode: Int) -> APIError {
+        if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
+            return .httpError(statusCode, errorResponse.errorMessage)
+        }
+        return .httpError(statusCode, String(data: data, encoding: .utf8))
+    }
+
     // MARK: - Authentication
 
     /// Login to the Ramekin server
@@ -247,128 +322,44 @@ class RamekinAPI {
     /// Submit a URL for scraping (async job)
     func scrapeURL(_ urlString: String) async throws -> ScrapeResponse {
         logger.log("scrapeURL called with: \(urlString)")
-
-        guard let baseURL = serverURL else {
-            logger.log("ERROR: No server URL configured")
-            throw APIError.noServerURL
-        }
-        logger.log("Using server URL: \(baseURL)")
-
-        guard let token = authToken else {
-            logger.log("ERROR: No auth token")
-            throw APIError.noAuthToken
-        }
-        logger.log("Auth token present (length: \(token.count))")
-
-        guard let url = URL(string: "\(baseURL)/api/scrape") else {
-            logger.log("ERROR: Invalid URL: \(baseURL)/api/scrape")
-            throw APIError.invalidURL
-        }
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        applyAccessHeaders(to: &request)
-
-        let body = ScrapeRequest(url: urlString)
-        request.httpBody = try JSONEncoder().encode(body)
-
-        logger.log("REQUEST: POST \(url.absoluteString)")
-        logger.log("REQUEST BODY: \(String(data: request.httpBody ?? Data(), encoding: .utf8) ?? "nil")")
-
-        do {
-            let (data, response) = try await urlSession.data(for: request)
-
-            guard let httpResponse = response as? HTTPURLResponse else {
-                logger.log("ERROR: Invalid response (not HTTPURLResponse)")
-                throw APIError.invalidResponse
-            }
-
-            let responseBody = String(data: data, encoding: .utf8) ?? "nil"
-            logger.log("RESPONSE: HTTP \(httpResponse.statusCode)")
-            logger.log("RESPONSE BODY: \(responseBody)")
-
-            if httpResponse.statusCode == 200 || httpResponse.statusCode == 201 {
-                let decoded = try JSONDecoder().decode(ScrapeResponse.self, from: data)
-                logger.log("SUCCESS: Scrape job ID: \(decoded.id)")
-                return decoded
-            } else {
-                let errorMessage: String?
-                if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
-                    errorMessage = errorResponse.errorMessage
-                } else {
-                    errorMessage = responseBody
-                }
-                logger.log("ERROR: HTTP \(httpResponse.statusCode) - \(errorMessage ?? "unknown")")
-                throw APIError.httpError(httpResponse.statusCode, errorMessage)
-            }
-        } catch let error as APIError {
-            throw error
-        } catch {
-            logger.log("NETWORK ERROR: \(error.localizedDescription)")
-            throw APIError.networkError(error)
-        }
+        let body = try JSONEncoder().encode(ScrapeRequest(url: urlString))
+        let data = try await performRequest(
+            method: "POST",
+            path: "/api/scrape",
+            body: body,
+            acceptedStatusCodes: [200, 201]
+        )
+        let decoded = try JSONDecoder().decode(ScrapeResponse.self, from: data)
+        logger.log("SUCCESS: Scrape job ID: \(decoded.id)")
+        return decoded
     }
 
     /// Check the status of a scrape job
     func getScrapeStatus(id: String) async throws -> ScrapeJobStatus {
-        guard let baseURL = serverURL else {
-            throw APIError.noServerURL
-        }
-        guard let token = authToken else {
-            throw APIError.noAuthToken
-        }
-        guard let url = URL(string: "\(baseURL)/api/scrape/\(id)") else {
-            throw APIError.invalidURL
-        }
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        applyAccessHeaders(to: &request)
-
-        let (data, response) = try await urlSession.data(for: request)
-
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw APIError.invalidResponse
-        }
-
-        if httpResponse.statusCode == 200 {
-            return try JSONDecoder().decode(ScrapeJobStatus.self, from: data)
-        } else {
-            let errorMessage: String?
-            if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
-                errorMessage = errorResponse.errorMessage
-            } else {
-                errorMessage = String(data: data, encoding: .utf8)
-            }
-            throw APIError.httpError(httpResponse.statusCode, errorMessage)
-        }
+        let data = try await performRequest(
+            method: "GET",
+            path: "/api/scrape/\(id)",
+            acceptedStatusCodes: [200]
+        )
+        return try JSONDecoder().decode(ScrapeJobStatus.self, from: data)
     }
 
     // MARK: - Connection Test
 
-    /// Test the connection to the server
+    /// Test the connection to the server. Returns true on 200, false on any
+    /// other HTTP status; rethrows network/URL-level errors.
     func testConnection() async throws -> Bool {
-        guard let baseURL = serverURL else {
-            throw APIError.noServerURL
+        do {
+            _ = try await performRequest(
+                method: "GET",
+                path: "/api/test/unauthed-ping",
+                requiresAuth: false,
+                acceptedStatusCodes: [200]
+            )
+            return true
+        } catch APIError.httpError {
+            return false
         }
-        guard let url = URL(string: "\(baseURL)/api/test/unauthed-ping") else {
-            throw APIError.invalidURL
-        }
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        applyAccessHeaders(to: &request)
-
-        let (_, response) = try await urlSession.data(for: request)
-
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw APIError.invalidResponse
-        }
-
-        return httpResponse.statusCode == 200
     }
 }
 
@@ -376,44 +367,19 @@ class RamekinAPI {
 
 extension RamekinAPI {
     func listMealPlans(startDate: Date, endDate: Date) async throws -> MealPlanListResponse {
-        guard let baseURL = serverURL else { throw APIError.noServerURL }
-        guard let token = authToken else { throw APIError.noAuthToken }
-
         let start = SharedDateFormatters.localDateOnly.string(from: startDate)
         let end = SharedDateFormatters.localDateOnly.string(from: endDate)
-
-        guard let url = URL(string: "\(baseURL)/api/meal-plans?start_date=\(start)&end_date=\(end)") else {
-            throw APIError.invalidURL
-        }
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        applyAccessHeaders(to: &request)
-
-        let (data, response) = try await urlSession.data(for: request)
-
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw APIError.invalidResponse
-        }
-
-        if httpResponse.statusCode == 200 {
-            return try CodableHelper.jsonDecoder.decode(MealPlanListResponse.self, from: data)
-        } else {
-            throw parseError(from: data, statusCode: httpResponse.statusCode)
-        }
+        let data = try await performRequest(
+            method: "GET",
+            path: "/api/meal-plans?start_date=\(start)&end_date=\(end)",
+            acceptedStatusCodes: [200]
+        )
+        return try CodableHelper.jsonDecoder.decode(MealPlanListResponse.self, from: data)
     }
 
     func createMealPlan(
         recipeId: UUID, mealDate: Date, mealType: String, notes: String? = nil
     ) async throws -> CreateMealPlanResponse {
-        guard let baseURL = serverURL else { throw APIError.noServerURL }
-        guard let token = authToken else { throw APIError.noAuthToken }
-
-        guard let url = URL(string: "\(baseURL)/api/meal-plans") else {
-            throw APIError.invalidURL
-        }
-
         let normalizedNotes: String?
         if let notes, !notes.isEmpty {
             normalizedNotes = notes
@@ -421,61 +387,26 @@ extension RamekinAPI {
             normalizedNotes = nil
         }
 
-        let body = CreateMealPlanRequestBody(
+        let body = try JSONEncoder().encode(CreateMealPlanRequestBody(
             recipeId: recipeId,
             mealDate: SharedDateFormatters.localDateOnly.string(from: mealDate),
             mealType: mealType,
             notes: normalizedNotes
+        ))
+        let data = try await performRequest(
+            method: "POST",
+            path: "/api/meal-plans",
+            body: body,
+            acceptedStatusCodes: [200, 201]
         )
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        applyAccessHeaders(to: &request)
-        request.httpBody = try JSONEncoder().encode(body)
-
-        let (data, response) = try await urlSession.data(for: request)
-
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw APIError.invalidResponse
-        }
-
-        if httpResponse.statusCode == 200 || httpResponse.statusCode == 201 {
-            return try CodableHelper.jsonDecoder.decode(CreateMealPlanResponse.self, from: data)
-        } else {
-            throw parseError(from: data, statusCode: httpResponse.statusCode)
-        }
+        return try CodableHelper.jsonDecoder.decode(CreateMealPlanResponse.self, from: data)
     }
 
     func deleteMealPlan(id: UUID) async throws {
-        guard let baseURL = serverURL else { throw APIError.noServerURL }
-        guard let token = authToken else { throw APIError.noAuthToken }
-
-        guard let url = URL(string: "\(baseURL)/api/meal-plans/\(id.uuidString)") else {
-            throw APIError.invalidURL
-        }
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "DELETE"
-        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        applyAccessHeaders(to: &request)
-
-        let (data, response) = try await urlSession.data(for: request)
-
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw APIError.invalidResponse
-        }
-
-        if httpResponse.statusCode != 204 && httpResponse.statusCode != 200 {
-            throw parseError(from: data, statusCode: httpResponse.statusCode)
-        }
-    }
-
-    private func parseError(from data: Data, statusCode: Int) -> APIError {
-        if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
-            return .httpError(statusCode, errorResponse.errorMessage)
-        }
-        return .httpError(statusCode, String(data: data, encoding: .utf8))
+        try await performRequest(
+            method: "DELETE",
+            path: "/api/meal-plans/\(id.uuidString)",
+            acceptedStatusCodes: [200, 204]
+        )
     }
 }
