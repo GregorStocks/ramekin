@@ -32,6 +32,7 @@ struct RecipeDetailView: View {
     @State var isRescraping = false
     @State var rescrapeError: String?
     @State var showingRescrapeConfirmation = false
+    @State var rescrapeTask: Task<Void, Never>?
 
     var isViewingHistoricalVersion: Bool {
         RecipeVersionSupport.isViewingHistoricalVersion(
@@ -180,7 +181,8 @@ struct RecipeDetailView: View {
         }
         .confirmationDialog("Rescrape from Source", isPresented: $showingRescrapeConfirmation) {
             Button("Rescrape") {
-                Task { await rescrapeFromSource() }
+                rescrapeTask?.cancel()
+                rescrapeTask = Task { await rescrapeFromSource() }
             }
         } message: {
             Text(
@@ -224,6 +226,10 @@ struct RecipeDetailView: View {
             if isExpanded && versionHistory.isEmpty {
                 Task { await loadVersionHistory(force: true) }
             }
+        }
+        .onDisappear {
+            rescrapeTask?.cancel()
+            rescrapeTask = nil
         }
     }
 
