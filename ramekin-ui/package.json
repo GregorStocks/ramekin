@@ -17,12 +17,14 @@
     "fflate": "^0.8.2",
     "http-proxy": "^1.18.1",
     "jspdf": "^4.2.1",
+    "qrcode": "^1.5.4",
     "ramekin-client": "file:./generated-client",
     "solid-js": "^1.9.12"
   },
   "devDependencies": {
     "@types/http-proxy": "^1.17.17",
     "@types/node": "^25.5.2",
+    "@types/qrcode": "^1.5.6",
     "prettier": "^3.8.3",
     "stylelint": "^17.6.0",
     "stylelint-config-standard": "^40.0.0",

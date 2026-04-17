@@ -49,11 +49,13 @@ function httpMirrorPlugin(): PluginOption {
 
 const buildCommit = execSync('git rev-parse --short HEAD').toString().trim()
 const buildTime = new Date().toISOString()
+const qrCodeBaseUrl = process.env.RAMEKIN_QR_CODE_BASE_URL ?? ''
 
 export default defineConfig({
   define: {
     __BUILD_COMMIT__: JSON.stringify(buildCommit),
     __BUILD_TIME__: JSON.stringify(buildTime),
+    __QR_CODE_BASE_URL__: JSON.stringify(qrCodeBaseUrl),
   },
   plugins: [solid(), httpMirrorPlugin()],
   server: {
