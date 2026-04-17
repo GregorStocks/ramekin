@@ -1,3 +1,13 @@
+:root {
+  /* Cookbook layout tokens — introduced with the wide-display fix.
+     Broader tokenization lives in p3-css-cleanup. */
+  --page-gutter: clamp(1.25rem, 4vw, 4rem);
+  --cookbook-max-width: 2400px;
+  --recipe-grid-gap: clamp(0.75rem, 1vw, 1.25rem);
+  --recipe-card-min: clamp(180px, 18vw, 260px);
+  --card-thumb-aspect: 4 / 3;
+}
+
 /* Layout */
 *,
 *::before,
@@ -98,6 +108,14 @@
 /* Wider container for recipe view (two-column layout) */
 .app-main:has(.view-recipe-page) {
   max-width: 1000px;
+}
+
+/* Wide fluid container for the cookbook — fill big displays with a
+   sanity cap and a clamp-based gutter instead of fixed 1200px. */
+.app-main:has(.cookbook-page) {
+  max-width: var(--cookbook-max-width);
+  padding-block: 2rem;
+  padding-inline: var(--page-gutter);
 }
 
 .app-footer {
@@ -581,8 +599,8 @@
 
 .recipe-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(var(--recipe-card-min), 1fr));
+  gap: var(--recipe-grid-gap);
 }
 
 .recipe-card {
@@ -662,7 +680,7 @@
 
 .recipe-card-thumbnail {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: var(--card-thumb-aspect);
   overflow: hidden;
   transition: transform 0.2s;
 }
@@ -676,7 +694,7 @@
 
 .recipe-card-placeholder {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: var(--card-thumb-aspect);
   background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
   display: flex;
   align-items: center;
