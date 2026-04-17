@@ -127,6 +127,26 @@ final class RamekinAPITests: XCTestCase {
         XCTAssertEqual(json["url"], "https://example.com/recipe")
     }
 
+    func testCreateMealPlanRequestEncodingOmitsEmptyNotes() throws {
+        let recipeId = UUID(uuidString: "12345678-1234-1234-1234-123456789ABC")!
+        let request = RamekinAPI.CreateMealPlanRequest(
+            recipe_id: recipeId,
+            meal_date: "2026-04-17",
+            meal_type: "dinner",
+            notes: nil
+        )
+        let data = try JSONEncoder().encode(request)
+        guard let json = try JSONSerialization.jsonObject(with: data) as? [String: String] else {
+            XCTFail("Failed to decode JSON as [String: String]")
+            return
+        }
+
+        XCTAssertEqual(json["recipe_id"], recipeId.uuidString.lowercased())
+        XCTAssertEqual(json["meal_date"], "2026-04-17")
+        XCTAssertEqual(json["meal_type"], "dinner")
+        XCTAssertNil(json["notes"])
+    }
+
     // MARK: - Response Decoding Tests
 
     func testLoginResponseDecoding() throws {
