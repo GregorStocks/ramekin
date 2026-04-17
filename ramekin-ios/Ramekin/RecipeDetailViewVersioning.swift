@@ -1,6 +1,16 @@
 import SwiftUI
 
 extension RecipeDetailView {
+    static let versionHistoryDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        formatter.calendar = .autoupdatingCurrent
+        formatter.locale = .autoupdatingCurrent
+        formatter.timeZone = .autoupdatingCurrent
+        return formatter
+    }()
+
     func errorView(message: String) -> some View {
         VStack(spacing: 16) {
             Image(systemName: "exclamationmark.triangle")
@@ -217,10 +227,7 @@ extension RecipeDetailView {
     }
 
     func formatDate(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
-        return formatter.string(from: date)
+        Self.versionHistoryDateFormatter.string(from: date)
     }
 
     func sourceLinkSection(url: URL, name: String?) -> some View {
