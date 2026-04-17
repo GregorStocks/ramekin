@@ -1,0 +1,38 @@
+{
+  "title": "Replace inline filter panel with a sidebar (desktop) / sheet \
+(mobile)",
+  "description": "The cookbook filter panel currently expands inline above the \
+grid, pushing all results below the fold whenever you want to narrow by tag. \
+With ~45 tag checkboxes it dominates the screen.\n\
+\n\
+Change:\n\
+- Desktop (≥1200px after the grid-fill change lands): persistent left sidebar  \
+ (~260px) with filters always visible and collapsible. Grid takes the rest.\n\
+- Tablet/mobile: slide-over drawer or bottom sheet.\n\
+- Render tag filters as clickable chips with an active/filled state, not   \
+checkbox+label pairs. Sort by frequency or alphabetical.\n\
+- Make the utility bar (search / sort / density / bulk-mode entry) sticky   \
+under the app header with a blurred translucent backdrop so it stays   \
+reachable while scrolling.\n\
+\n\
+Out of scope: the query-string contract for filters. Keep the existing \
+URL-based state — that's a strength.\n\
+\n\
+Depends on `p2-cookbook-grid-fill-wide-displays.json5` for the space budget; \
+do that first.\n\
+\n\
+CSS quality: the filter panel and its children have their own ~100 lines of \
+one-off rules. When you rebuild as a sidebar, audit what can collapse into \
+shared components (chip, form input, surface) and what genuinely needs its own \
+rules. Don't leave the old `.filter-panel` CSS sitting alongside the new \
+sidebar styles. See `p3-css-cleanup.json5`.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ui",
+    "cookbook",
+  ],
+  "created_at": "2026-04-16T23:14:07-07:00",
+  "updated_at": "2026-04-16T23:14:07-07:00",
+}

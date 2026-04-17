@@ -1,0 +1,37 @@
+{
+  "title": "Tighten the header nav: primary destinations + user menu",
+  "description": "The header currently shows seven equally-weighted items: `My \
+Cookbook · Meal Plan · Shopping List · Export · Tags · Import · + New Recipe · \
+Logout`. Nothing visually distinguishes the meal-flow destinations from the \
+housekeeping tools.\n\
+\n\
+Change:\n\
+- **Primary nav** (always visible): Cookbook · Meal Plan · Shopping List.\n\
+- **Primary CTA**: `+ New Recipe` stays prominent, pulled to the right.\n\
+- **User menu** (avatar or initial, far right): Tags, Import, Export,   \
+Logout, and anything else settings-adjacent.\n\
+- The app-title \"Ramekin\" should use the display serif from   \
+`p3-warmer-cookbook-aesthetic.json5` — it's the only piece of branding on   \
+every page and currently renders as 1.5rem bold sans.\n\
+- Hide the dev footer (build commit / build time / start time) behind a   \
+`?debug` query param or move it into an \"About\" entry in the user menu.   \
+It's shouting \"hobby project.\"\n\
+\n\
+Mobile behavior: the existing mobile-nav-toggle already groups everything — \
+but reorder items so primary destinations are at the top and the user-menu \
+items are below a divider.\n\
+\n\
+CSS quality: the header / nav rules are currently spread across multiple \
+blocks and repeated inside at least two `@media` queries. Consolidate them, \
+and prefer logical-property / container-aware sizing over hard-coded pixel \
+breakpoints where possible. See `p3-css-cleanup.json5`.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ui",
+    "nav",
+  ],
+  "created_at": "2026-04-16T23:14:07-07:00",
+  "updated_at": "2026-04-16T23:14:07-07:00",
+}

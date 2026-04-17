@@ -1,0 +1,40 @@
+{
+  "title": "Cookbook grid should fill wide displays, not cap at 1200px",
+  "description": "On a 2560px (or even 1920px) display, `.app-main { \
+max-width: 1200px }` leaves more than half the viewport empty and caps the \
+recipe grid at ~4 columns. This is the single biggest reason big monitors show \
+so few recipes at once.\n\
+\n\
+Scope:\n\
+- Drop the 1200px cap specifically for the cookbook page (keep narrow caps for \
+  create/edit forms).\n\
+- Replace with fluid gutters, e.g. `padding-inline: clamp(1.25rem, 4vw, \
+4rem)`.\n\
+- Consider a sanity max around 2400px so absurd 4K widths don't produce 12+   \
+columns.\n\
+- Combine with tighter grid tracks:   `grid-template-columns: \
+repeat(auto-fill, minmax(clamp(180px, 18vw, 260px), 1fr))`   and gap \
+`clamp(0.75rem, 1vw, 1.25rem)`.\n\
+- Consider flipping the thumbnail aspect-ratio from `1/1` to `4/3` so cards \
+are   shorter and more rows fit above the fold.\n\
+\n\
+On a 2560 display this should get us from ~4 columns to 7-8 without changing \
+any card internals.\n\
+\n\
+CSS quality: leave it better than you found it. Don't just append new rules. \
+If you touch the cookbook layout CSS, pull shared values (gap, gutter, surface \
+colors) into CSS custom properties at the top of the file, remove any \
+duplicated or dead rules you pass through, and co-locate related declarations \
+instead of leaving them scattered across the file. See `p3-css-cleanup.json5` \
+for the broader context — don't do that whole cleanup here, but make sure this \
+change moves in its direction, not against it.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "ui",
+    "cookbook",
+  ],
+  "created_at": "2026-04-16T23:14:07-07:00",
+  "updated_at": "2026-04-16T23:14:07-07:00",
+}
