@@ -1,3 +1,11 @@
+/* Breakpoints (keep in sync with the design doc):
+   --bp-sm: 640px   small → medium
+   --bp-md: 960px   medium → large
+   --bp-lg: 1280px  large → xl
+   Use only these three width values in media queries. Any exception must
+   include an inline comment explaining why (e.g. orientation, max-height,
+   prefers-reduced-motion). */
+
 :root {
   /* Cookbook layout tokens — introduced with the wide-display fix.
      Broader tokenization lives in p3-css-cleanup. */
@@ -169,7 +177,7 @@
   margin: 0.35rem 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .app-header {
     flex-wrap: wrap;
     padding: 0.75rem 1rem;
@@ -243,7 +251,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .app-header {
     padding: 0.5rem 0.75rem;
   }
@@ -1279,7 +1287,7 @@ textarea:focus-visible {
 }
 
 /* Responsive: stack on smaller screens */
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .recipe-layout {
     grid-template-columns: 1fr;
   }
@@ -2123,7 +2131,7 @@ textarea:focus-visible {
   gap: 1rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .form-row-4 {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2502,7 +2510,8 @@ textarea:focus-visible {
    The same sidebar markup is repositioned via fixed-position overrides so
    we don't need to render two copies. The "Filters" trigger in the utility
    bar appears in this range to open the sheet. */
-@media (max-width: 899px) {
+/* Mobile Responsive Styles */
+@media (max-width: 960px) {
   .cookbook-body {
     grid-template-columns: 1fr;
   }
@@ -2531,10 +2540,7 @@ textarea:focus-visible {
   .cookbook-sidebar-close {
     display: inline-flex;
   }
-}
 
-/* Mobile Responsive Styles */
-@media (max-width: 768px) {
   /* Main content padding */
   .app-main {
     padding: 1rem;
@@ -2578,7 +2584,7 @@ textarea:focus-visible {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   /* Recipe grid - single column */
   .recipe-grid {
     grid-template-columns: 1fr;
@@ -3258,7 +3264,7 @@ textarea:focus-visible {
 }
 
 /* Meal plan mobile responsive */
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .meal-plan-grid {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
