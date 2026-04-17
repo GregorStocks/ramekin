@@ -73,56 +73,9 @@ class ShareViewController: UIViewController {
         }
 
         logger.info("Found \(extensionItems.count) extension items")
-
-        for item in extensionItems {
-            guard let attachments = item.attachments else {
-                logger.debug("Item has no attachments")
-                continue
-            }
-
-            logger.info("Item has \(attachments.count) attachments")
-
-            for provider in attachments {
-                logger.debug("Provider registered types: \(provider.registeredTypeIdentifiers)")
-
-                // Try to get URL directly
-                if provider.hasItemConformingToTypeIdentifier(UTType.url.identifier) {
-                    logger.info("Provider has URL type, loading...")
-                    provider.loadItem(forTypeIdentifier: UTType.url.identifier) { item, error in
-                        if let error = error {
-                            logger.error("Error loading URL: \(error.localizedDescription)")
-                        }
-                        if let url = item as? URL {
-                            logger.info("Successfully extracted URL: \(url.absoluteString)")
-                            completion(url)
-                            return
-                        }
-                        logger.warning("URL item was not a URL type")
-                    }
-                    return
-                }
-
-                // Try to get plain text (might be a URL string)
-                if provider.hasItemConformingToTypeIdentifier(UTType.plainText.identifier) {
-                    logger.info("Provider has plainText type, loading...")
-                    provider.loadItem(forTypeIdentifier: UTType.plainText.identifier) { item, error in
-                        if let error = error {
-                            logger.error("Error loading text: \(error.localizedDescription)")
-                        }
-                        if let text = item as? String, let url = URL(string: text) {
-                            logger.info("Successfully extracted URL from text: \(url.absoluteString)")
-                            completion(url)
-                            return
-                        }
-                        logger.warning("Text item was not a valid URL string")
-                    }
-                    return
-                }
-            }
+        Task {
+            completion(await SharedURLExtractor.extractURL(from: extensionItems))
         }
-
-        logger.error("Could not extract URL from any provider")
-        completion(nil)
     }
 }
 
