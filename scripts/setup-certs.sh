@@ -1,12 +1,14 @@
 #!/bin/bash
 # Generate mkcert certificates for local HTTPS development
 # Certs are stored in ~/.ramekin/certs/{hostname}/
-# Uses UI_HOSTNAME env var, defaults to localhost
+# Uses RAMEKIN_SELF_SIGNED_URL env var, defaults to https://localhost:5173
 
 set -e
 
 CERT_BASE="$HOME/.ramekin/certs"
-HOSTNAME="${UI_HOSTNAME:-localhost}"
+SELF_SIGNED_URL="${RAMEKIN_SELF_SIGNED_URL:-https://localhost:5173}"
+# Strip scheme, port, and path to get bare hostname
+HOSTNAME="$(echo "$SELF_SIGNED_URL" | sed -E 's#^[a-z]+://([^:/]+).*#\1#')"
 CERT_DIR="$CERT_BASE/$HOSTNAME"
 
 # Check if certs already exist
