@@ -65,6 +65,10 @@ class AuthenticatedImageLoader: ObservableObject {
                 return
             }
 
+            guard !Task.isCancelled else {
+                self.isLoading = false
+                return
+            }
             self.isLoading = true
 
             var request = URLRequest(url: url)
@@ -97,6 +101,7 @@ class AuthenticatedImageLoader: ObservableObject {
     func cancel() {
         currentTask?.cancel()
         currentTask = nil
+        isLoading = false
     }
 
     static func cacheKey(for url: URL, token: String) -> String {

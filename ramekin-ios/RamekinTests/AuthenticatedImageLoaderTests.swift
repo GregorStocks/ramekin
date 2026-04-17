@@ -31,7 +31,8 @@ final class AuthenticatedImageLoaderTests: XCTestCase {
         XCTAssertTrue(loader.image === cachedImage)
         XCTAssertFalse(loader.isLoading)
         XCTAssertNil(loader.error)
-        XCTAssertEqual(await fetchSpy.count, 0)
+        let fetchCount = await fetchSpy.currentCount()
+        XCTAssertEqual(fetchCount, 0)
     }
 
     @MainActor
@@ -48,7 +49,9 @@ final class AuthenticatedImageLoaderTests: XCTestCase {
         let loaderA = AuthenticatedImageLoader(
             imageCache: cache,
             tokenProvider: { "token-a" },
-            imageFetcher: fetcher.fetch
+            imageFetcher: { request in
+                try await fetcher.fetch(request: request)
+            }
         )
         loaderA.load(url: url)
         try await waitForImage(on: loaderA)
@@ -57,7 +60,9 @@ final class AuthenticatedImageLoaderTests: XCTestCase {
         let loaderB = AuthenticatedImageLoader(
             imageCache: cache,
             tokenProvider: { "token-b" },
-            imageFetcher: fetcher.fetch
+            imageFetcher: { request in
+                try await fetcher.fetch(request: request)
+            }
         )
         loaderB.load(url: url)
         try await waitForImage(on: loaderB)
@@ -66,7 +71,9 @@ final class AuthenticatedImageLoaderTests: XCTestCase {
         let loaderASecond = AuthenticatedImageLoader(
             imageCache: cache,
             tokenProvider: { "token-a" },
-            imageFetcher: fetcher.fetch
+            imageFetcher: { request in
+                try await fetcher.fetch(request: request)
+            }
         )
         loaderASecond.load(url: url)
         try await waitForImage(on: loaderASecond)
@@ -74,7 +81,8 @@ final class AuthenticatedImageLoaderTests: XCTestCase {
 
         XCTAssertNotEqual(tokenAFirstImageData, tokenBImageData)
         XCTAssertEqual(tokenAFirstImageData, tokenASecondImageData)
-        XCTAssertEqual(await fetcher.requestCount, 2)
+        let requestCount = await fetcher.currentRequestCount()
+        XCTAssertEqual(requestCount, 2)
     }
 
     @MainActor
@@ -104,17 +112,21 @@ final class AuthenticatedImageLoaderTests: XCTestCase {
 }
 
 private actor FetchSpy {
-    private(set) var count = 0
+    private var count = 0
 
     func record(request: URLRequest) {
         _ = request
         count += 1
     }
+
+    func currentCount() -> Int {
+        count
+    }
 }
 
 private actor TokenAwareFetcher {
     private let responses: [String: Data]
-    private(set) var requestCount = 0
+    private var requestCount = 0
 
     init(responses: [String: Data]) {
         self.responses = responses
@@ -136,5 +148,9 @@ private actor TokenAwareFetcher {
             headerFields: nil
         )!
         return (data, response)
+    }
+
+    func currentRequestCount() -> Int {
+        requestCount
     }
 }
