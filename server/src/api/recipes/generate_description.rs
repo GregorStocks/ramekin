@@ -52,7 +52,7 @@ fn format_ingredients_for_prompt(ingredients: &serde_json::Value) -> String {
 
 #[allow(clippy::type_complexity)]
 type CurrentVersionRow = (
-    Uuid,              // recipes.id
+    Option<Uuid>,      // current_version_id (snapshot for CAS)
     String,            // title
     Option<String>,    // description
     serde_json::Value, // ingredients
@@ -104,7 +104,7 @@ pub async fn generate_description(
         .filter(recipes::user_id.eq(user.id))
         .filter(recipes::deleted_at.is_null())
         .select((
-            recipes::id,
+            recipes::current_version_id,
             recipe_versions::title,
             recipe_versions::description,
             recipe_versions::ingredients,
@@ -145,8 +145,10 @@ pub async fn generate_description(
         }
     };
 
+    // Snapshot version_id from the same read as recipe fields so a concurrent
+    // edit between reads can't slip through the guard.
     let (
-        recipe_id,
+        version_id_snapshot,
         title,
         original_description,
         ingredients,
@@ -163,14 +165,6 @@ pub async fn generate_description(
         nutritional_info,
         notes,
     ) = current;
-
-    // Snapshot the current version ID before the AI call so we can detect
-    // concurrent edits inside the write transaction.
-    let version_id_before_ai: Option<Uuid> = recipes::table
-        .filter(recipes::id.eq(recipe_id))
-        .select(recipes::current_version_id)
-        .first(&mut conn)
-        .unwrap_or(None);
 
     let ai_client = match CachingAiClient::from_env() {
         Ok(c) => c,
@@ -241,27 +235,27 @@ pub async fn generate_description(
             version_source: "generate_description",
         };
 
-        let old_version_id: Option<Uuid> = recipes::table
-            .filter(recipes::id.eq(recipe_id))
-            .select(recipes::current_version_id)
-            .first(conn)?;
-
-        // Abort if the recipe was edited while the AI call was in flight.
-        if old_version_id != version_id_before_ai {
-            return Err(diesel::result::Error::RollbackTransaction);
-        }
-
         let new_version_id: Uuid = diesel::insert_into(recipe_versions::table)
             .values(&new_version)
             .returning(recipe_versions::id)
             .get_result(conn)?;
 
-        diesel::update(recipes::table.find(recipe_id))
-            .set(recipes::current_version_id.eq(new_version_id))
-            .execute(conn)?;
+        // Compare-and-swap: only update if current_version_id hasn't changed
+        // since our initial read, preventing overwrites of concurrent edits.
+        let rows_updated = diesel::update(
+            recipes::table
+                .filter(recipes::id.eq(recipe_id))
+                .filter(recipes::current_version_id.eq(version_id_snapshot)),
+        )
+        .set(recipes::current_version_id.eq(new_version_id))
+        .execute(conn)?;
+
+        if rows_updated == 0 {
+            return Err(diesel::result::Error::RollbackTransaction);
+        }
 
         // Carry over tags from the previous version
-        if let Some(old_vid) = old_version_id {
+        if let Some(old_vid) = version_id_snapshot {
             use crate::schema::recipe_version_tags;
             let old_tag_ids: Vec<Uuid> = recipe_version_tags::table
                 .filter(recipe_version_tags::recipe_version_id.eq(old_vid))
