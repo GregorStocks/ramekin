@@ -278,6 +278,7 @@ def ensure_ui_node_modules(ui_dir: Path) -> bool:
 def lint_typescript(project_root: Path) -> tuple[str, bool]:
     """Lint TypeScript code."""
     ui_dir = project_root / "ramekin-ui"
+    node_bin_dir = ui_dir / "node_modules" / ".bin"
 
     if not ensure_ui_node_modules(ui_dir):
         return ("TypeScript", False)
@@ -285,14 +286,7 @@ def lint_typescript(project_root: Path) -> tuple[str, bool]:
     # Run prettier
     prettier_result = subprocess.run(
         [
-            "npx",
-            "--yes",
-            "-p",
-            "npm@latest",
-            "npm",
-            "exec",
-            "--",
-            "prettier",
+            str(node_bin_dir / "prettier"),
             "--write",
             "--log-level",
             "warn",
@@ -307,14 +301,7 @@ def lint_typescript(project_root: Path) -> tuple[str, bool]:
     # Run tsc
     tsc_result = subprocess.run(
         [
-            "npx",
-            "--yes",
-            "-p",
-            "npm@latest",
-            "npm",
-            "exec",
-            "--",
-            "tsc",
+            str(node_bin_dir / "tsc"),
             "-p",
             "tsconfig.app.json",
             "--noEmit",
@@ -342,20 +329,14 @@ def lint_typescript(project_root: Path) -> tuple[str, bool]:
 def lint_css(project_root: Path) -> tuple[str, bool]:
     """Lint CSS files with Stylelint."""
     ui_dir = project_root / "ramekin-ui"
+    node_bin_dir = ui_dir / "node_modules" / ".bin"
 
     if not ensure_ui_node_modules(ui_dir):
         return ("CSS", False)
 
     result = subprocess.run(
         [
-            "npx",
-            "--yes",
-            "-p",
-            "npm@latest",
-            "npm",
-            "exec",
-            "--",
-            "stylelint",
+            str(node_bin_dir / "stylelint"),
             "--fix",
             "src/**/*.css",
         ],
