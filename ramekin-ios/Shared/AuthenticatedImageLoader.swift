@@ -37,7 +37,7 @@ class AuthenticatedImageLoader: ObservableObject {
         imageCache: AuthenticatedImageCache = .shared,
         tokenProvider: @escaping TokenProvider = { RamekinAPI.shared.authToken },
         imageFetcher: @escaping ImageFetcher = { request in
-            try await RamekinAPI.shared.imageSession.data(for: request)
+            try await insecureSession.data(for: request)
         }
     ) {
         self.imageCache = imageCache
