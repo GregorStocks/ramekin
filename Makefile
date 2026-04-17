@@ -13,9 +13,20 @@ API_SOURCES := $(shell find server/src/api -type f -name '*.rs' 2>/dev/null) ser
 # Marker file for generated clients
 CLIENT_MARKER := cli/generated/ramekin-client/Cargo.toml
 
-# Default simulator target for iOS tests (override with IOS_TEST_DESTINATION / IOS_UI_DESTINATION)
-IOS_TEST_DESTINATION ?= platform=iOS Simulator,name=iPhone 15,OS=latest
+# Simulator destination for iOS tests. Leave empty to auto-detect the newest
+# iPhone on the newest installed iOS runtime via scripts/find-ios-simulator.py.
+# Override with IOS_TEST_DESTINATION / IOS_UI_DESTINATION to pin a device.
+IOS_TEST_DESTINATION ?=
 IOS_UI_DESTINATION ?= $(IOS_TEST_DESTINATION)
+
+# Shell snippet that expands $$DEST to a usable -destination value. Uses the
+# override if set, otherwise asks simctl. Sourcing `xcrun simctl list` also
+# forces CoreSimulator to resync after macOS updates.
+ios_resolve_destination = \
+	if [ -n "$(1)" ]; then DEST="$(1)"; \
+	else UDID=$$(xcrun simctl list devices available -j | python3 scripts/find-ios-simulator.py); \
+	     DEST="platform=iOS Simulator,id=$$UDID"; fi; \
+	echo "Using iOS destination: $$DEST"
 
 help: ## Show this help message
 	@echo 'Usage: make [target]'
@@ -210,10 +221,11 @@ ios-install: ios-generate ## Build and install iOS app on connected device
 ios-test: ios-generate ## Run iOS unit tests
 	@mkdir -p logs
 	@rm -rf logs/ios-tests.xcresult
-	@cd ramekin-ios && xcodebuild test \
+	@$(call ios_resolve_destination,$(IOS_TEST_DESTINATION)); \
+	cd ramekin-ios && xcodebuild test \
 		-project Ramekin.xcodeproj \
 		-scheme Ramekin \
-		-destination '$(IOS_TEST_DESTINATION)' \
+		-destination "$$DEST" \
 		-only-testing:RamekinTests \
 		-resultBundlePath ../logs/ios-tests.xcresult \
 		CODE_SIGNING_ALLOWED=NO
@@ -222,10 +234,11 @@ ios-test: ios-generate ## Run iOS unit tests
 ios-test-ui: ios-generate ## Run iOS UI tests (requires dev server running)
 	@mkdir -p logs
 	@rm -rf logs/ios-ui-tests.xcresult
-	@cd ramekin-ios && xcodebuild test \
+	@$(call ios_resolve_destination,$(IOS_UI_DESTINATION)); \
+	cd ramekin-ios && xcodebuild test \
 		-project Ramekin.xcodeproj \
 		-scheme Ramekin \
-		-destination '$(IOS_UI_DESTINATION)' \
+		-destination "$$DEST" \
 		-only-testing:RamekinUITests \
 		-resultBundlePath ../logs/ios-ui-tests.xcresult \
 		CODE_SIGNING_ALLOWED=NO
