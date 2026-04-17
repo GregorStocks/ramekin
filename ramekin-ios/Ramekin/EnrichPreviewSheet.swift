@@ -137,18 +137,8 @@ struct EnrichPreviewSheet: View {
     }
 
     private func formatIngredients(_ ingredients: [Ingredient]) -> String {
-        ingredients.map { ingredient in
-            var parts: [String] = []
-            if let measurement = ingredient.measurements.first {
-                if let amount = measurement.amount, !amount.isEmpty {
-                    parts.append(amount)
-                }
-                if let unit = measurement.unit, !unit.isEmpty {
-                    parts.append(unit)
-                }
-            }
-            parts.append(ingredient.item)
-            return parts.joined(separator: " ")
-        }.joined(separator: "\n")
+        ingredients
+            .map { $0.formatted() }
+            .joined(separator: "\n")
     }
 }

@@ -1,6 +1,16 @@
 import SwiftUI
 
 extension RecipeDetailView {
+    static let versionHistoryDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        formatter.calendar = .autoupdatingCurrent
+        formatter.locale = .autoupdatingCurrent
+        formatter.timeZone = .autoupdatingCurrent
+        return formatter
+    }()
+
     func errorView(message: String) -> some View {
         VStack(spacing: 16) {
             Image(systemName: "exclamationmark.triangle")
@@ -217,10 +227,7 @@ extension RecipeDetailView {
     }
 
     func formatDate(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
-        return formatter.string(from: date)
+        Self.versionHistoryDateFormatter.string(from: date)
     }
 
     func sourceLinkSection(url: URL, name: String?) -> some View {
@@ -246,54 +253,7 @@ extension RecipeDetailView {
 
 extension RecipeDetailView {
     func groupIngredientsBySection(_ ingredients: [Ingredient]) -> [(section: String?, items: [Ingredient])] {
-        var groups: [(section: String?, items: [Ingredient])] = []
-        var currentSection: String?
-        var currentItems: [Ingredient] = []
-
-        for ingredient in ingredients {
-            if ingredient.section != currentSection {
-                if !currentItems.isEmpty {
-                    groups.append((section: currentSection, items: currentItems))
-                }
-                currentSection = ingredient.section
-                currentItems = [ingredient]
-            } else {
-                currentItems.append(ingredient)
-            }
-        }
-
-        if !currentItems.isEmpty {
-            groups.append((section: currentSection, items: currentItems))
-        }
-
-        return groups
-    }
-
-    func formatIngredient(_ ingredient: Ingredient) -> String {
-        var parts: [String] = []
-
-        if let measurement = ingredient.measurements.first {
-            if let amount = measurement.amount, !amount.isEmpty {
-                parts.append(amount)
-            }
-            if let unit = measurement.unit, !unit.isEmpty {
-                parts.append(unit)
-            }
-        }
-
-        if ingredient.measurements.count > 1 {
-            let altTexts = ingredient.measurements.dropFirst().compactMap { alt -> String? in
-                let altParts = [alt.amount, alt.unit].compactMap { $0 }.filter { !$0.isEmpty }
-                return altParts.isEmpty ? nil : altParts.joined(separator: " ")
-            }
-            if !altTexts.isEmpty {
-                parts.append("(\(altTexts.joined(separator: ", ")))")
-            }
-        }
-
-        parts.append(ingredient.item)
-
-        return parts.joined(separator: " ")
+        groupConsecutiveItemsBySection(ingredients) { $0.section }
     }
 
     @MainActor

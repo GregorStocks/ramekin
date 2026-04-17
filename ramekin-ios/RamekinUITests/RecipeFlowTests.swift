@@ -110,7 +110,7 @@ final class RecipeFlowTests: XCTestCase {
         app.buttons["Sign In"].tap()
 
         // Wait for error message
-        let errorExists = app.staticTexts.matching(NSPredicate(format: "label CONTAINS 'error' OR label CONTAINS 'Invalid' OR label CONTAINS 'unauthorized'")).firstMatch.waitForExistence(timeout: 10)
+        let errorExists = app.staticTexts["login-error-message"].waitForExistence(timeout: 10)
 
         let errorScreenshot = XCTAttachment(screenshot: app.screenshot())
         errorScreenshot.name = "LoginError"

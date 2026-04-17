@@ -6,6 +6,7 @@ struct AddToShoppingListSheet: View {
 
     @State private var selectedIngredients: Set<Int> = []
     @State private var showingConfirmation = false
+    @State private var error: String?
 
     var body: some View {
         NavigationStack {
@@ -25,7 +26,7 @@ struct AddToShoppingListSheet: View {
                                     .font(.title3)
 
                                 VStack(alignment: .leading, spacing: 2) {
-                                    Text(formatIngredient(ingredient))
+                                    Text(ingredient.formatted())
                                         .foregroundColor(.primary)
 
                                     if let note = ingredient.note, !note.isEmpty {
@@ -51,6 +52,13 @@ struct AddToShoppingListSheet: View {
                             }
                         }
                         .font(.caption)
+                    }
+                }
+
+                if let error {
+                    Section {
+                        Text(error)
+                            .foregroundColor(.red)
                     }
                 }
             }
@@ -100,6 +108,8 @@ struct AddToShoppingListSheet: View {
     }
 
     private func addToShoppingList() {
+        error = nil
+
         let ingredients = selectedIngredients.compactMap { index -> (name: String, amount: String?)? in
             guard index < recipe.ingredients.count else { return nil }
             let ingredient = recipe.ingredients[index]
@@ -109,31 +119,21 @@ struct AddToShoppingListSheet: View {
             return (name: ingredient.item, amount: amount?.isEmpty == true ? nil : amount)
         }
 
-        ShoppingListStore.shared.addItemsFromRecipe(
-            ingredients: ingredients,
-            recipeId: recipe.id,
-            recipeTitle: recipe.title
-        )
+        do {
+            try ShoppingListStore.shared.addItemsFromRecipe(
+                ingredients: ingredients,
+                recipeId: recipe.id,
+                recipeTitle: recipe.title
+            )
 
-        showingConfirmation = true
+            showingConfirmation = true
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            isPresented = false
-        }
-    }
-
-    private func formatIngredient(_ ingredient: Ingredient) -> String {
-        var parts: [String] = []
-        if let measurement = ingredient.measurements.first {
-            if let amount = measurement.amount, !amount.isEmpty {
-                parts.append(amount)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                isPresented = false
             }
-            if let unit = measurement.unit, !unit.isEmpty {
-                parts.append(unit)
-            }
+        } catch {
+            self.error = error.localizedDescription
         }
-        parts.append(ingredient.item)
-        return parts.joined(separator: " ")
     }
 }
 

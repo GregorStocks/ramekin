@@ -59,16 +59,20 @@ class ShoppingListStore: ObservableObject {
         saveAndSync()
     }
 
-    func addItemsFromRecipe(ingredients: [(name: String, amount: String?)], recipeId: UUID, recipeTitle: String) {
-        var maxSort = items.map(\.sortOrder).max() ?? -1
-        for ingredient in ingredients {
-            maxSort += 1
-            _ = ShoppingItem.create(
-                in: coreDataStack.viewContext, item: ingredient.name, amount: ingredient.amount,
-                sourceRecipeId: recipeId, sourceRecipeTitle: recipeTitle, sortOrder: maxSort
-            )
-        }
-        saveAndSync()
+    func addItemsFromRecipe(
+        ingredients: [(name: String, amount: String?)],
+        recipeId: UUID,
+        recipeTitle: String
+    ) throws {
+        try ShoppingListMutationSupport.addItemsFromRecipe(
+            ingredients: ingredients,
+            recipeId: recipeId,
+            recipeTitle: recipeTitle,
+            context: coreDataStack.viewContext,
+            save: coreDataStack.saveContextOrThrow
+        )
+        fetchItems()
+        triggerSync()
     }
 
     func toggleChecked(_ item: ShoppingItem) {
