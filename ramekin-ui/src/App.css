@@ -410,9 +410,22 @@ textarea {
   color: var(--text-primary);
   font-family: var(--font-body);
   font-size: 0.95rem;
-  width: 100%;
   box-shadow: var(--shadow-card);
   transition: border-color var(--dur-med) ease;
+}
+
+/* Form controls stretch to fill their label group — inline selects and
+   toolbar inputs outside a .form-group keep their intrinsic/explicit
+   width. */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="search"],
+.form-group input[type="number"],
+.form-group input[type="url"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
 }
 
 input::placeholder,
