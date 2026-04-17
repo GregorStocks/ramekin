@@ -1019,18 +1019,19 @@
 
 .tag {
   display: inline-block;
-  padding: 0.2rem 0.5rem;
-  background: rgba(100, 108, 255, 0.15);
-  border: 1px solid rgba(100, 108, 255, 0.3);
-  border-radius: 4px;
-  font-size: 0.75rem;
-  color: #a8aeff;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  border: 1px solid var(--border-hairline);
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  line-height: 1.5;
 }
 
 .tag-more {
-  background: rgba(100, 108, 255, 0.08);
-  border-color: rgba(100, 108, 255, 0.2);
-  color: #8890dd;
+  background: var(--surface-2);
+  border-color: var(--border-hairline);
+  color: var(--text-muted);
 }
 
 /* View Recipe Page */
@@ -1605,62 +1606,61 @@
   display: flex;
   gap: 0.5rem;
   padding: 0.375rem 0.5rem;
-  border: 1px solid #555;
-  border-radius: 4px;
-  background: #252525;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
   min-height: 42px;
   align-items: center;
 }
 
 .tag-input-wrapper:focus-within {
-  border-color: #646cff;
-  background: #2a2a2a;
+  border-color: var(--accent);
+  background: var(--surface-elevated);
 }
 
 .tag-chip {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  padding: 0.25rem 0.5rem;
-  background: rgba(100, 108, 255, 0.15);
-  border: 1px solid rgba(100, 108, 255, 0.3);
-  border-radius: 4px;
+  padding: 0.15rem 0.55rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-pill);
   font-size: 0.85rem;
-  color: #a8aeff;
+  color: var(--text-secondary);
 }
 
 .tag-chip-selected {
-  background: rgba(100, 108, 255, 0.25);
-  border-color: rgba(100, 108, 255, 0.5);
+  background: var(--accent-wash);
+  border-color: color-mix(in oklab, var(--accent) 45%, var(--border-hairline));
+  color: var(--accent-press);
 }
 
 .tag-chip-available {
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all var(--dur-fast);
 }
 
 .tag-chip-available:hover {
-  background: rgba(100, 108, 255, 0.3);
-  border-color: rgba(100, 108, 255, 0.6);
-  color: #fff;
+  background: var(--accent-wash);
+  border-color: color-mix(in oklab, var(--accent) 45%, var(--border-hairline));
+  color: var(--accent-press);
 }
 
 .tag-chip-remove {
   background: none;
   border: none;
-  color: #a8aeff;
+  color: var(--text-muted);
   cursor: pointer;
-  padding: 0;
+  padding: 0 0.25rem;
   margin-left: 0.125rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1;
-  opacity: 0.7;
-  transition: opacity 0.15s;
+  transition: color var(--dur-fast);
 }
 
 .tag-chip-remove:hover {
-  opacity: 1;
-  color: #ff6b6b;
+  color: var(--danger);
 }
 
 .tag-input-field {
@@ -1668,32 +1668,33 @@
   min-width: 120px;
   border: none;
   background: transparent;
-  color: #fff;
+  color: var(--text-primary);
   font-size: 1rem;
   padding: 0.25rem 0;
   outline: none;
 }
 
 .tag-input-field::placeholder {
-  color: #666;
+  color: var(--text-faint);
 }
 
 .tag-create-btn {
-  background: rgba(100, 108, 255, 0.2);
-  border: 1px solid rgba(100, 108, 255, 0.4);
-  border-radius: 4px;
-  color: #a8aeff;
+  background: var(--accent-wash);
+  border: 1px solid
+    color-mix(in oklab, var(--accent) 45%, var(--border-hairline));
+  border-radius: var(--radius-sm);
+  color: var(--accent-press);
   padding: 0.25rem 0.5rem;
   font-size: 0.85rem;
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.15s;
+  transition: all var(--dur-fast);
 }
 
 .tag-create-btn:hover {
-  background: rgba(100, 108, 255, 0.3);
-  border-color: rgba(100, 108, 255, 0.6);
-  color: #fff;
+  background: color-mix(in oklab, var(--accent-wash) 70%, var(--surface-2));
+  border-color: color-mix(in oklab, var(--accent) 60%, var(--border-hairline));
+  color: var(--accent);
 }
 
 .tag-available-list {
@@ -1701,9 +1702,9 @@
   flex-wrap: wrap;
   gap: 0.375rem;
   padding: 0.5rem;
-  background: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 4px;
+  background: var(--surface-1);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
   max-height: 150px;
   overflow-y: auto;
 }
@@ -2546,7 +2547,7 @@
 
 .tags-page .loading-text,
 .tags-page .empty-state {
-  color: #888;
+  color: var(--text-muted);
   font-style: italic;
 }
 
@@ -2561,18 +2562,18 @@
   align-items: center;
   gap: 1rem;
   padding: 0.75rem 1rem;
-  background: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 4px;
+  background: var(--surface-1);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
 }
 
 .tag-row:hover {
-  border-color: #444;
+  border-color: var(--border-subtle);
 }
 
 .tag-name {
   flex: 1;
-  color: #646cff;
+  color: var(--accent);
   cursor: pointer;
   font-weight: 500;
 }
@@ -2582,7 +2583,7 @@
 }
 
 .tag-count {
-  color: #888;
+  color: var(--text-muted);
   font-size: 0.85rem;
   white-space: nowrap;
 }
@@ -2596,20 +2597,20 @@
   flex: 1;
   padding: 0.375rem 0.5rem;
   font-size: 0.9rem;
-  border: 1px solid #555;
-  border-radius: 4px;
-  background: #252525;
-  color: #fff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+  color: var(--text-primary);
 }
 
 .tag-edit-input:focus {
   outline: none;
-  border-color: #646cff;
-  background: #2a2a2a;
+  border-color: var(--accent);
+  background: var(--surface-elevated);
 }
 
 .edit-error {
-  color: #dc3545;
+  color: var(--danger);
   font-size: 0.8rem;
 }
 
