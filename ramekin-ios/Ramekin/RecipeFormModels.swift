@@ -80,26 +80,12 @@ struct IngredientGroup {
 }
 
 func groupIngredientsBySection(_ ingredients: [EditableIngredient]) -> [IngredientGroup] {
-    var groups: [IngredientGroup] = []
-    var currentSection: String?
-    var currentIndices: [Int] = []
-
-    for (index, ingredient) in ingredients.enumerated() {
-        let section = ingredient.section
-        if section != currentSection {
-            if !currentIndices.isEmpty {
-                groups.append(IngredientGroup(section: currentSection ?? "", indices: currentIndices))
-            }
-            currentSection = section
-            currentIndices = [index]
-        } else {
-            currentIndices.append(index)
-        }
+    groupConsecutiveItemsBySection(Array(ingredients.enumerated())) { indexedIngredient in
+        indexedIngredient.element.section
+    }.map { group in
+        IngredientGroup(
+            section: group.section ?? "",
+            indices: group.items.map(\.offset)
+        )
     }
-
-    if !currentIndices.isEmpty {
-        groups.append(IngredientGroup(section: currentSection ?? "", indices: currentIndices))
-    }
-
-    return groups
 }

@@ -138,10 +138,8 @@ struct MealPlanView: View {
 
     private var weekHeader: some View {
         let endDate = Calendar.current.date(byAdding: .day, value: 6, to: weekStart)!
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM d"
-        let start = formatter.string(from: weekStart)
-        let end = formatter.string(from: endDate)
+        let start = Self.weekRangeFormatter.string(from: weekStart)
+        let end = Self.weekRangeFormatter.string(from: endDate)
         return Text("\(start) – \(end)")
             .font(.subheadline)
             .foregroundColor(.secondary)
@@ -183,9 +181,7 @@ struct MealPlanView: View {
     }
 
     private func dayHeaderText(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE, MMM d"
-        return formatter.string(from: date)
+        Self.dayHeaderFormatter.string(from: date)
     }
 
     private func mealSlot(date: Date, mealType: MealType) -> some View {
@@ -272,9 +268,7 @@ struct MealPlanView: View {
     }
 
     private static func localDateString(from date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter.string(from: date)
+        localDateFormatter.string(from: date)
     }
 
     static func getMonday(from date: Date) -> Date {
@@ -350,6 +344,35 @@ struct MealPlanView: View {
             }
         }
     }
+}
+
+extension MealPlanView {
+    static let weekRangeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d"
+        formatter.calendar = .autoupdatingCurrent
+        formatter.locale = .autoupdatingCurrent
+        formatter.timeZone = .autoupdatingCurrent
+        return formatter
+    }()
+
+    static let dayHeaderFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE, MMM d"
+        formatter.calendar = .autoupdatingCurrent
+        formatter.locale = .autoupdatingCurrent
+        formatter.timeZone = .autoupdatingCurrent
+        return formatter
+    }()
+
+    static let localDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.calendar = .autoupdatingCurrent
+        formatter.locale = .autoupdatingCurrent
+        formatter.timeZone = .autoupdatingCurrent
+        return formatter
+    }()
 }
 
 #Preview {

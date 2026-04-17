@@ -1,5 +1,19 @@
 import Foundation
 
+struct CreateMealPlanRequestBody: Encodable {
+    let recipeId: UUID
+    let mealDate: String
+    let mealType: String
+    let notes: String?
+
+    enum CodingKeys: String, CodingKey {
+        case recipeId = "recipe_id"
+        case mealDate = "meal_date"
+        case mealType = "meal_type"
+        case notes
+    }
+}
+
 /// API client for interacting with the Ramekin server
 class RamekinAPI {
     static let shared = RamekinAPI()
@@ -409,21 +423,26 @@ extension RamekinAPI {
             throw APIError.invalidURL
         }
 
-        var body: [String: Any] = [
-            "recipe_id": recipeId.uuidString,
-            "meal_date": Self.dateOnlyFormatter.string(from: mealDate),
-            "meal_type": mealType
-        ]
-        if let notes = notes, !notes.isEmpty {
-            body["notes"] = notes
+        let normalizedNotes: String?
+        if let notes, !notes.isEmpty {
+            normalizedNotes = notes
+        } else {
+            normalizedNotes = nil
         }
+
+        let body = CreateMealPlanRequestBody(
+            recipeId: recipeId,
+            mealDate: Self.dateOnlyFormatter.string(from: mealDate),
+            mealType: mealType,
+            notes: normalizedNotes
+        )
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         applyAccessHeaders(to: &request)
-        request.httpBody = try JSONSerialization.data(withJSONObject: body)
+        request.httpBody = try JSONEncoder().encode(body)
 
         let (data, response) = try await urlSession.data(for: request)
 

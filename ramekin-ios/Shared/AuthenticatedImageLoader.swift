@@ -1,32 +1,82 @@
 import SwiftUI
 
+actor AuthenticatedImageCache {
+    static let shared = AuthenticatedImageCache()
+
+    private let storage = NSCache<NSString, UIImage>()
+
+    func image(forKey key: String) -> UIImage? {
+        storage.object(forKey: key as NSString)
+    }
+
+    func insert(_ image: UIImage, forKey key: String) {
+        storage.setObject(image, forKey: key as NSString)
+    }
+
+    func removeAll() {
+        storage.removeAllObjects()
+    }
+}
+
 /// Loads images from authenticated endpoints with Bearer token
 @MainActor
 class AuthenticatedImageLoader: ObservableObject {
+    typealias TokenProvider = @MainActor () -> String?
+    typealias ImageFetcher = @Sendable (URLRequest) async throws -> (Data, URLResponse)
+
     @Published var image: UIImage?
     @Published var isLoading = false
     @Published var error: Error?
 
+    private let imageCache: AuthenticatedImageCache
+    private let tokenProvider: TokenProvider
+    private let imageFetcher: ImageFetcher
     private var currentTask: Task<Void, Never>?
+
+    init(
+        imageCache: AuthenticatedImageCache = .shared,
+        tokenProvider: @escaping TokenProvider = { RamekinAPI.shared.authToken },
+        imageFetcher: @escaping ImageFetcher = { request in
+            try await RamekinAPI.shared.imageSession.data(for: request)
+        }
+    ) {
+        self.imageCache = imageCache
+        self.tokenProvider = tokenProvider
+        self.imageFetcher = imageFetcher
+    }
 
     func load(url: URL) {
         // Cancel any existing load
         currentTask?.cancel()
 
-        guard let token = RamekinAPI.shared.authToken else {
+        guard let token = tokenProvider() else {
             return
         }
 
-        isLoading = true
         error = nil
+        let cacheKey = Self.cacheKey(for: url, token: token)
 
         currentTask = Task {
+            if let cachedImage = await imageCache.image(forKey: cacheKey) {
+                guard !Task.isCancelled else { return }
+
+                self.image = cachedImage
+                self.isLoading = false
+                return
+            }
+
+            guard !Task.isCancelled else {
+                self.isLoading = false
+                return
+            }
+            self.isLoading = true
+
             var request = URLRequest(url: url)
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
             RamekinAPI.shared.applyAccessHeaders(to: &request)
 
             do {
-                let (data, response) = try await RamekinAPI.shared.imageSession.data(for: request)
+                let (data, response) = try await imageFetcher(request)
 
                 guard !Task.isCancelled else { return }
 
@@ -36,6 +86,7 @@ class AuthenticatedImageLoader: ObservableObject {
                 }
 
                 if let loadedImage = UIImage(data: data) {
+                    await imageCache.insert(loadedImage, forKey: cacheKey)
                     self.image = loadedImage
                 }
             } catch {
@@ -50,6 +101,11 @@ class AuthenticatedImageLoader: ObservableObject {
     func cancel() {
         currentTask?.cancel()
         currentTask = nil
+        isLoading = false
+    }
+
+    static func cacheKey(for url: URL, token: String) -> String {
+        "\(token)|\(url.absoluteString)"
     }
 }
 
