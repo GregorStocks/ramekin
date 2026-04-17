@@ -1,11 +1,59 @@
+/* Design tokens. All App.css rules must consume tokens from here — no
+   literal hex values outside this file. */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Palette — warm light */
+  --bg-0: #faf5ec;
+  --surface-1: #ffffff;
+  --surface-2: #fbf6ed;
+  --surface-elevated: #fffdf7;
+  --border-hairline: #eadfce;
+  --border-subtle: #ddcfb8;
+  --text-primary: #1d1612;
+  --text-secondary: #3d342c;
+  --text-muted: #6f6256;
+  --text-faint: #8e8074;
+  --text-on-accent: #fffdf7;
+  --accent: #9a611a;
+  --accent-hover: #8a5614;
+  --accent-press: #6e4310;
+  --accent-wash: #f4e7cc;
+  --danger: #9c3a2c;
+  --danger-hover: #b04438;
+  --danger-wash: #f2dbd5;
+  --focus-ring: color-mix(in oklab, var(--accent) 55%, transparent);
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Shadows */
+  --shadow-card:
+    0 1px 2px rgba(35, 22, 10, 0.04), 0 1px 1px rgba(35, 22, 10, 0.03);
+  --shadow-hover: 0 6px 18px rgba(35, 22, 10, 0.09);
+  --shadow-modal: 0 20px 60px rgba(35, 22, 10, 0.18);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+
+  /* Type */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body:
+    "Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, "Liberation Mono", monospace;
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.1, 1);
+  --dur-fast: 0.15s;
+  --dur-med: 0.22s;
+  --dur-slow: 0.6s;
+
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.5;
+  color-scheme: light;
+  color: var(--text-primary);
+  background-color: var(--bg-0);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,52 +63,74 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--accent);
   text-decoration: inherit;
 }
+
 a:hover {
-  color: #535bf2;
+  color: var(--accent-hover);
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background: var(--bg-0);
+  color: var(--text-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin: 0 0 0.6em;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: clamp(2rem, 1.2rem + 2vw, 2.75rem);
+  font-variation-settings: "opsz" 144;
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+h2 {
+  font-size: 1.75rem;
+  font-variation-settings: "opsz" 96;
+  line-height: 1.15;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+h3 {
+  font-size: 1.25rem;
+  font-variation-settings: "opsz" 72;
+  line-height: 1.2;
+}
+
+button {
+  font-family: inherit;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  padding: 0.55rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--surface-1);
+  color: var(--text-primary);
+  transition:
+    background-color var(--dur-med) ease,
+    border-color var(--dur-med) ease,
+    color var(--dur-med) ease;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }

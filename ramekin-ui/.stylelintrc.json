@@ -12,5 +12,18 @@
     "value-keyword-case": null,
     "rule-empty-line-before": null,
     "color-hex-length": null
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src/App.css"],
+      "rules": {
+        "color-no-hex": [
+          true,
+          {
+            "message": "Use a design token from index.css instead of a hex literal"
+          }
+        ]
+      }
+    }
+  ]
 }
