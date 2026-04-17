@@ -26,7 +26,7 @@ struct AddToShoppingListSheet: View {
                                     .font(.title3)
 
                                 VStack(alignment: .leading, spacing: 2) {
-                                    Text(formatIngredient(ingredient))
+                                    Text(ingredient.formatted())
                                         .foregroundColor(.primary)
 
                                     if let note = ingredient.note, !note.isEmpty {
@@ -134,20 +134,6 @@ struct AddToShoppingListSheet: View {
         } catch {
             self.error = error.localizedDescription
         }
-    }
-
-    private func formatIngredient(_ ingredient: Ingredient) -> String {
-        var parts: [String] = []
-        if let measurement = ingredient.measurements.first {
-            if let amount = measurement.amount, !amount.isEmpty {
-                parts.append(amount)
-            }
-            if let unit = measurement.unit, !unit.isEmpty {
-                parts.append(unit)
-            }
-        }
-        parts.append(ingredient.item)
-        return parts.joined(separator: " ")
     }
 }
 

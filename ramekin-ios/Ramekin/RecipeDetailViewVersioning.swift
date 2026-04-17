@@ -256,33 +256,6 @@ extension RecipeDetailView {
         groupConsecutiveItemsBySection(ingredients) { $0.section }
     }
 
-    func formatIngredient(_ ingredient: Ingredient) -> String {
-        var parts: [String] = []
-
-        if let measurement = ingredient.measurements.first {
-            if let amount = measurement.amount, !amount.isEmpty {
-                parts.append(amount)
-            }
-            if let unit = measurement.unit, !unit.isEmpty {
-                parts.append(unit)
-            }
-        }
-
-        if ingredient.measurements.count > 1 {
-            let altTexts = ingredient.measurements.dropFirst().compactMap { alt -> String? in
-                let altParts = [alt.amount, alt.unit].compactMap { $0 }.filter { !$0.isEmpty }
-                return altParts.isEmpty ? nil : altParts.joined(separator: " ")
-            }
-            if !altTexts.isEmpty {
-                parts.append("(\(altTexts.joined(separator: ", ")))")
-            }
-        }
-
-        parts.append(ingredient.item)
-
-        return parts.joined(separator: " ")
-    }
-
     @MainActor
     func deleteRecipe() async {
         isDeleting = true

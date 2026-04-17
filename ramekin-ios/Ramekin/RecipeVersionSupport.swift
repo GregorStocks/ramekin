@@ -81,7 +81,7 @@ enum RecipeVersionSupport {
                 }
             }
 
-            lines.append(formatIngredient(ingredient))
+            lines.append(ingredient.formatted(includeAlternatives: true, includeNote: true))
         }
 
         return lines.joined(separator: "\n")
@@ -90,46 +90,6 @@ enum RecipeVersionSupport {
     static func formatTags(_ tags: [String]) -> String {
         tags.joined(separator: ", ")
     }
-
-    private static func formatIngredient(_ ingredient: Ingredient) -> String {
-        var parts: [String] = []
-
-        if let measurement = ingredient.measurements.first {
-            if let amount = measurement.amount, !amount.isEmpty {
-                parts.append(amount)
-            }
-            if let unit = measurement.unit, !unit.isEmpty {
-                parts.append(unit)
-            }
-        }
-
-        if ingredient.measurements.count > 1 {
-            let alternatives = ingredient.measurements.dropFirst().compactMap { measurement -> String? in
-                let values = [measurement.amount, measurement.unit]
-                    .compactMap { $0 }
-                    .filter { !$0.isEmpty }
-
-                guard !values.isEmpty else {
-                    return nil
-                }
-
-                return values.joined(separator: " ")
-            }
-
-            if !alternatives.isEmpty {
-                parts.append("(\(alternatives.joined(separator: ", ")))")
-            }
-        }
-
-        parts.append(ingredient.item)
-
-        if let note = ingredient.note, !note.isEmpty {
-            parts.append("(\(note))")
-        }
-
-        return parts.joined(separator: " ")
-    }
-
     private static func updateRecipeRequestBuilder<Request: Encodable>(
         id: UUID,
         request: Request
