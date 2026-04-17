@@ -42,11 +42,11 @@ and contains no literal color values post-refactor.
 --border-subtle:     #ddcfb8   stronger contextual border
 --text-primary:      #1d1612   body text & headings
 --text-secondary:    #3d342c   nav links, secondary body
---text-muted:        #7a6d60   metadata, descriptions
---text-faint:        #a89c8e   timestamps, counts
---accent:            #b47a1c   saffron, darkened for light-bg contrast
---accent-hover:      #c78728
---accent-press:      #8f6014
+--text-muted:        #6f6256   metadata, descriptions
+--text-faint:        #8e8074   timestamps, counts
+--accent:            #9a611a   saffron, darkened for AA on light bg
+--accent-hover:      #8a5614   hover goes darker (not lighter) for AA
+--accent-press:      #6e4310
 --accent-wash:       #f4e7cc   selected filter pill fill
 --danger:            #9c3a2c   muted cherry — destructive actions
 --danger-hover:      #b04438
