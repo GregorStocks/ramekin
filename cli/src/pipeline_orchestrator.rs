@@ -45,7 +45,7 @@ pub struct OrchestratorConfig {
 impl Default for OrchestratorConfig {
     fn default() -> Self {
         Self {
-            run_id: Utc::now().format("%Y-%m-%d_%H-%M-%S").to_string(),
+            run_id: Utc::now().format("%Y-%m-%d_%H-%M-%S%.3f").to_string(),
             test_urls_file: PathBuf::from("data/test-urls.json"),
             output_dir: PathBuf::from("data/pipeline-runs"),
             limit: None,
