@@ -1,7 +1,10 @@
 import { createMemo, createSignal, Show } from "solid-js";
 import jsPDF from "jspdf";
+import QRCode from "qrcode";
 import Modal from "./Modal";
 import type { RecipeSummary } from "ramekin-client";
+
+declare const __QR_CODE_BASE_URL__: string;
 
 interface Props {
   isOpen: () => boolean;
@@ -17,7 +20,10 @@ type ImageData = {
   pxH: number;
 };
 
+type FlipDirection = "long-edge" | "short-edge";
+
 const PHOTO_ASPECT_RATIO = 3 / 2;
+const BACK_CARD_PAD_DEFAULT = 0.1;
 
 async function blobToDataUrl(blob: Blob): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -181,6 +187,40 @@ async function fetchThumbnail(
     : new Error(`Failed to fetch thumbnail ${photoId}`);
 }
 
+function qrCodeBaseUrl(): string {
+  const configured = (__QR_CODE_BASE_URL__ ?? "").trim();
+  if (configured) return configured.replace(/\/+$/, "");
+  return window.location.origin.replace(/\/+$/, "");
+}
+
+function recipeUrlFor(recipeId: string): string {
+  return `${qrCodeBaseUrl()}/recipes/${recipeId}`;
+}
+
+async function generateQrDataUrl(url: string): Promise<string> {
+  return QRCode.toDataURL(url, {
+    errorCorrectionLevel: "M",
+    margin: 1,
+    width: 600,
+  });
+}
+
+// Physical page-flip for duplex printing:
+// - Long-edge binding flips around the long edge of the sheet.
+// - Short-edge binding flips around the short edge.
+// After the flip, one axis of the grid is reversed; we mirror the back cards
+// so that the card drawn behind slot (col,row) lands on the physical back of
+// that same slot once the sheet is flipped.
+function backSlotFlipAxis(
+  orientation: "portrait" | "landscape",
+  flip: FlipDirection,
+): "horizontal" | "vertical" {
+  const flipsHorizontally =
+    (orientation === "portrait" && flip === "long-edge") ||
+    (orientation === "landscape" && flip === "short-edge");
+  return flipsHorizontally ? "horizontal" : "vertical";
+}
+
 export default function PdfExportModal(props: Props) {
   const [cardW, setCardW] = createSignal(2);
   const [cardH, setCardH] = createSignal(2);
@@ -193,6 +233,10 @@ export default function PdfExportModal(props: Props) {
   );
   const [showCutGuides, setShowCutGuides] = createSignal(false);
   const [showPageNumbers, setShowPageNumbers] = createSignal(true);
+  const [doubleSided, setDoubleSided] = createSignal(false);
+  const [flipDirection, setFlipDirection] =
+    createSignal<FlipDirection>("long-edge");
+  const [backPaddingIn, setBackPaddingIn] = createSignal(BACK_CARD_PAD_DEFAULT);
   const [generating, setGenerating] = createSignal(false);
   const [progress, setProgress] = createSignal<{ done: number; total: number }>(
     { done: 0, total: 0 },
@@ -279,7 +323,13 @@ export default function PdfExportModal(props: Props) {
       const rows = l.rows;
       const mY = marginYIn();
       const withPageNums = showPageNumbers();
-      const totalPages = Math.ceil(chosen.length / perPage);
+      const twoSided = doubleSided();
+      const frontPageCount = Math.ceil(chosen.length / perPage);
+      const totalPhysicalPages = frontPageCount * (twoSided ? 2 : 1);
+      const backPad = Math.max(0, backPaddingIn());
+      const flipAxis = twoSided
+        ? backSlotFlipAxis(orientation(), flipDirection())
+        : "horizontal";
 
       const footW = w + border;
       const footH = h + border;
@@ -304,24 +354,17 @@ export default function PdfExportModal(props: Props) {
         ),
         startY + gridH,
       ];
-      const drawPageDecorations = (pageIdx: number) => {
-        if (showCutGuides()) {
-          drawCutGuides(doc, pageW, pageH, xCuts, yCuts, {
-            left: startX,
-            right: startX + gridW,
-            top: startY,
-            bottom: startY + gridH,
-          });
-        }
-        drawPageNumber(pageIdx);
-      };
 
       const pageNumFontPt = 9;
       const pageNumHeightIn = pageNumFontPt / 72;
       const pageNumBaselineY = pageH - Math.max(mY / 2, pageNumHeightIn * 0.75);
-      const drawPageNumber = (pageIdx: number) => {
+      const drawPageNumber = (physicalPageIdx: number, isBack: boolean) => {
         if (!withPageNums) return;
-        const label = `${pageIdx + 1} / ${totalPages}`;
+        const sheetIdx = Math.floor(physicalPageIdx / (twoSided ? 2 : 1));
+        const sideLabel = twoSided ? (isBack ? "B" : "F") : "";
+        const label = twoSided
+          ? `${sheetIdx + 1}${sideLabel} / ${frontPageCount} (${physicalPageIdx + 1}/${totalPhysicalPages})`
+          : `${physicalPageIdx + 1} / ${totalPhysicalPages}`;
         doc.setFontSize(pageNumFontPt);
         doc.setTextColor(120);
         doc.text(label, pageW / 2, pageNumBaselineY, {
@@ -331,27 +374,40 @@ export default function PdfExportModal(props: Props) {
         doc.setTextColor(0);
       };
 
-      drawPageDecorations(0);
-
-      for (let i = 0; i < chosen.length; i++) {
-        const recipe = chosen[i];
-        const slot = i % perPage;
-        if (i > 0 && slot === 0) {
-          doc.addPage();
-          drawPageDecorations(Math.floor(i / perPage));
+      const drawPageDecorations = (
+        physicalPageIdx: number,
+        isBack: boolean,
+      ) => {
+        if (showCutGuides()) {
+          drawCutGuides(doc, pageW, pageH, xCuts, yCuts, {
+            left: startX,
+            right: startX + gridW,
+            top: startY,
+            bottom: startY + gridH,
+          });
         }
+        drawPageNumber(physicalPageIdx, isBack);
+      };
 
-        const col = slot % cols;
-        const row = Math.floor(slot / cols);
-        const x = startX + border / 2 + col * (footW + g);
-        const y = startY + border / 2 + row * (footH + g);
+      const cardRect = (slotCol: number, slotRow: number) => {
+        const x = startX + border / 2 + slotCol * (footW + g);
+        const y = startY + border / 2 + slotRow * (footH + g);
+        return { x, y };
+      };
 
+      const drawCardBorder = (x: number, y: number) => {
         if (border > 0) {
           doc.setLineWidth(border);
           doc.setDrawColor(0, 0, 0);
           doc.rect(x - bHalf, y - bHalf, w + border, h + border, "S");
         }
+      };
 
+      const drawFrontCard = async (
+        recipe: RecipeSummary,
+        x: number,
+        y: number,
+      ) => {
         const pad = 0.05;
         const innerX = x + pad;
         const innerY = y + pad;
@@ -402,8 +458,144 @@ export default function PdfExportModal(props: Props) {
           align: "center",
           baseline: "middle",
         });
+      };
 
-        setProgress({ done: i + 1, total: chosen.length });
+      // Mirror the front-card layout so the QR lines up over the photo region
+      // on the front (not the title).
+      const frontPad = 0.05;
+      const frontInnerH = Math.max(0, h - 2 * frontPad);
+      const frontTitleAreaH = Math.min(
+        0.45,
+        Math.max(0.25, frontInnerH * 0.22),
+      );
+      const frontImgAreaH = Math.max(0, frontInnerH - frontTitleAreaH);
+      const frontImgCenterYOffset = frontPad + frontImgAreaH / 2;
+
+      const qrSize = Math.min(
+        Math.max(0, w - 2 * backPad),
+        Math.max(0, frontImgAreaH * 0.85),
+        1.5,
+      );
+
+      const descGap = 0.08;
+      const pointsPerInch = 72;
+
+      const drawBackCard = async (
+        recipe: RecipeSummary,
+        x: number,
+        y: number,
+      ) => {
+        if (qrSize <= 0) return;
+
+        // When the physical duplex flip is around a horizontal axis (vertical
+        // flipAxis in grid terms), the back content lands upside-down relative
+        // to the front after the user flips the sheet. Compensate by rotating
+        // the entire back card 180° around its center via a PDF
+        // transformation matrix, so we can draw everything at its intended
+        // (reader's-perspective) position without fighting jsPDF's text
+        // rotation quirks around align/baseline.
+        const rotate180 = flipAxis === "vertical";
+
+        // Visual coords (reader's perspective, measured from card top-left).
+        const visualQrCenterY = frontImgCenterYOffset;
+        const visualTextTopY = visualQrCenterY + qrSize / 2 + descGap;
+
+        if (rotate180) {
+          const cx = x + w / 2;
+          const cy = y + h / 2;
+          // setCurrentTransformationMatrix takes PDF-native coords (points,
+          // y-up). Convert from our jsPDF user coords (inches, y-down).
+          const cxPts = cx * pointsPerInch;
+          const cyPtsPdf = (pageH - cy) * pointsPerInch;
+          doc.saveGraphicsState();
+          doc.setCurrentTransformationMatrix(
+            doc.Matrix(-1, 0, 0, -1, 2 * cxPts, 2 * cyPtsPdf),
+          );
+        }
+
+        try {
+          const qrX = x + (w - qrSize) / 2;
+          const qrY = y + visualQrCenterY - qrSize / 2;
+
+          const qrDataUrl = await generateQrDataUrl(recipeUrlFor(recipe.id));
+          doc.addImage(qrDataUrl, "PNG", qrX, qrY, qrSize, qrSize);
+
+          const description = (recipe.description ?? "").trim();
+          if (!description) return;
+
+          const visualTextAreaH = h - backPad - visualTextTopY;
+          if (visualTextAreaH <= 0) return;
+
+          const innerW = Math.max(0, w - 2 * backPad);
+          const descFontPt = 8;
+          doc.setFontSize(descFontPt);
+          doc.setTextColor(60);
+          const lineHeightIn = (descFontPt * 1.25) / 72;
+          const maxLines = Math.max(
+            1,
+            Math.floor(visualTextAreaH / lineHeightIn),
+          );
+          let lines = doc.splitTextToSize(description, innerW) as string[];
+          if (lines.length > maxLines) {
+            lines = lines.slice(0, maxLines);
+            const last = lines[maxLines - 1];
+            lines[maxLines - 1] =
+              last.length > 3 ? `${last.slice(0, -1).trimEnd()}…` : last;
+          }
+
+          doc.text(lines, x + w / 2, y + visualTextTopY, {
+            align: "center",
+            baseline: "top",
+          });
+          doc.setTextColor(0);
+        } finally {
+          if (rotate180) {
+            doc.restoreGraphicsState();
+          }
+        }
+      };
+
+      let physicalPageIdx = 0;
+      for (let pageIdx = 0; pageIdx < frontPageCount; pageIdx++) {
+        if (physicalPageIdx > 0) doc.addPage();
+        drawPageDecorations(physicalPageIdx, false);
+
+        for (let slot = 0; slot < perPage; slot++) {
+          const recipeIdx = pageIdx * perPage + slot;
+          if (recipeIdx >= chosen.length) break;
+          const recipe = chosen[recipeIdx];
+          const col = slot % cols;
+          const row = Math.floor(slot / cols);
+          const { x, y } = cardRect(col, row);
+          drawCardBorder(x, y);
+          await drawFrontCard(recipe, x, y);
+          if (!twoSided) {
+            setProgress({ done: recipeIdx + 1, total: chosen.length });
+          }
+        }
+
+        physicalPageIdx++;
+
+        if (twoSided) {
+          doc.addPage();
+          drawPageDecorations(physicalPageIdx, true);
+
+          for (let slot = 0; slot < perPage; slot++) {
+            const recipeIdx = pageIdx * perPage + slot;
+            if (recipeIdx >= chosen.length) break;
+            const recipe = chosen[recipeIdx];
+            const col = slot % cols;
+            const row = Math.floor(slot / cols);
+            const backCol = flipAxis === "horizontal" ? cols - 1 - col : col;
+            const backRow = flipAxis === "vertical" ? rows - 1 - row : row;
+            const { x, y } = cardRect(backCol, backRow);
+            drawCardBorder(x, y);
+            await drawBackCard(recipe, x, y);
+            setProgress({ done: recipeIdx + 1, total: chosen.length });
+          }
+
+          physicalPageIdx++;
+        }
       }
 
       doc.save("recipe-cards.pdf");
@@ -544,11 +736,58 @@ export default function PdfExportModal(props: Props) {
             Show page numbers
           </label>
         </div>
+        <div class="form-group">
+          <label>
+            <input
+              type="checkbox"
+              checked={doubleSided()}
+              onChange={(e) => setDoubleSided(e.currentTarget.checked)}
+            />{" "}
+            Double-sided (QR code + description on back)
+          </label>
+        </div>
+        <Show when={doubleSided()}>
+          <div class="form-group">
+            <label>Duplex flip direction</label>
+            <select
+              value={flipDirection()}
+              onChange={(e) =>
+                setFlipDirection(e.currentTarget.value as FlipDirection)
+              }
+            >
+              <option value="long-edge">
+                Long edge (most printers' default)
+              </option>
+              <option value="short-edge">Short edge</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Back-side padding (in)</label>
+            <input
+              type="number"
+              step="0.05"
+              min="0"
+              value={backPaddingIn()}
+              onInput={(e) =>
+                setBackPaddingIn(parseFloat(e.currentTarget.value) || 0)
+              }
+            />
+          </div>
+        </Show>
 
         <p class="recipe-cards-layout-info">
           <Show when={layout().perPage > 0} fallback={<>{layout().error}</>}>
             {layout().cols}×{layout().rows} grid = {layout().perPage} cards per
             page. Photos crop to a fixed 3:2 landscape frame.
+            <Show when={doubleSided()}>
+              {" "}
+              Back pages mirror the grid so each card's back aligns after duplex
+              printing with{" "}
+              {flipDirection() === "long-edge"
+                ? "long-edge"
+                : "short-edge"}{" "}
+              flipping.
+            </Show>
           </Show>
         </p>
 
