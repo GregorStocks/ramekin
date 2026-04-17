@@ -280,7 +280,8 @@ async fn main() -> Result<()> {
     // Every invocation writes debug-level logs to `logs/<command>-<timestamp>.log`
     // so there's a persistent record to inspect after the fact. The timestamp is
     // also reused as the pipeline run_id so the log file matches the run directory.
-    let timestamp = Utc::now().format("%Y-%m-%d_%H-%M-%S").to_string();
+    // Millisecond precision keeps back-to-back invocations from clobbering each other.
+    let timestamp = Utc::now().format("%Y-%m-%d_%H-%M-%S%.3f").to_string();
     let _log_guard = init_tracing(command_slug(&cli.command), &timestamp)?;
 
     match cli.command {
