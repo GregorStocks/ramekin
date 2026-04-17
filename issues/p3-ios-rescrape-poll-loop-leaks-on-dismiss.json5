@@ -1,0 +1,20 @@
+{
+  "title": "Rescrape polling task keeps running after the recipe detail view \
+is dismissed",
+  "description": "`Ramekin/RecipeDetailViewRescrape.swift` polls \
+`getScrapeStatus` in a detached `Task` that runs for up to 120s. If the user \
+backs out of the recipe before the scrape completes, the task is not cancelled \
+— it continues hitting the server, and its `await MainActor.run { ... }` still \
+flips `@State` on a view that no longer exists (noisy warnings at minimum, \
+risk of unexpected state writes). Store the `Task` as `@State` and cancel it \
+from `.onDisappear`, or move the polling into a `.task(id:)` on the view which \
+SwiftUI cancels automatically.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ios",
+  ],
+  "created_at": "2026-04-17T12:00:00-07:00",
+  "updated_at": "2026-04-17T12:00:00-07:00",
+}

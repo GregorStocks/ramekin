@@ -1,0 +1,20 @@
+{
+  "title": "DebugLogger log file grows without bound and reopens FileHandle \
+per write",
+  "description": "`Shared/DebugLogger.swift` appends to `debug.log` in the \
+app-group container forever. No rotation, no size cap, no cleanup beyond the \
+manual `Clear Logs` button in Settings. Every call also opens a fresh \
+`FileHandle`, seeks to end, writes, closes. Two easy fixes: (1) enforce a max \
+size (truncate or rotate to `debug.log.1` when the file exceeds e.g. 2 MB); \
+(2) keep a single `FileHandle` cached on the logger instance, reopened only \
+when truncation happens. Also consider wrapping the whole thing in \
+`OSLog`/`Logger` for structured logs and dropping the custom file.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ios",
+  ],
+  "created_at": "2026-04-17T12:00:00-07:00",
+  "updated_at": "2026-04-17T12:00:00-07:00",
+}

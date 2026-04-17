@@ -1,0 +1,19 @@
+{
+  "title": "IngredientRowView `Note` button persists a literal space as the \
+note",
+  "description": "`Ramekin/IngredientRowView.swift:82` toggles the note field \
+visible by doing `ingredient.note = \" \"` — a single space. The visibility \
+predicate on line 33 (`!ingredient.note.isEmpty || ingredient.item.isEmpty`) \
+treats that space as a real note, so the field appears but the persisted note \
+is `\" \"`. That space round-trips to the server on save. Fix by driving \
+visibility from a separate `@State var showingNote: Bool` (or an \
+`isNoteVisible` on `EditableIngredient`) instead of coercing the text content.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "ios",
+  ],
+  "created_at": "2026-04-17T12:00:00-07:00",
+  "updated_at": "2026-04-17T12:00:00-07:00",
+}

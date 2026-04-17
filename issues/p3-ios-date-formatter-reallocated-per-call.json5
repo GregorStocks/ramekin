@@ -1,0 +1,20 @@
+{
+  "title": "DateFormatter reallocated on every call in multiple views",
+  "description": "`Ramekin/RecipeDetailViewVersioning.swift:219-224` \
+(`formatDate`), `Ramekin/MealPlanView.swift:141-143` (week header), \
+`MealPlanView.swift:186-188` (day header), and `MealPlanView.swift:274-278` \
+(localDateString) all construct a fresh `DateFormatter` per call. \
+Version-history rows and the meal planner render dozens of dates per frame. \
+Cache static formatters like `RecipeListFilterSupport` already does. For \
+comparison, instrumenting a meal-plan week (7 days × 4 meal slots + header) \
+easily creates >10 DateFormatters per render pass.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ios",
+    "performance",
+  ],
+  "created_at": "2026-04-17T12:00:00-07:00",
+  "updated_at": "2026-04-17T12:00:00-07:00",
+}

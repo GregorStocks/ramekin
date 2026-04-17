@@ -1,0 +1,22 @@
+{
+  "title": "RecipeVersionSupport.revertRecipe manually reconstructs an OpenAPI \
+RequestBuilder",
+  "description": "`Ramekin/RecipeVersionSupport.swift:133-163` copy-pastes the \
+generated-client plumbing (path templating, `APIHelper`, `JSONEncodingHelper`, \
+`requestBuilderFactory.getNonDecodableBuilder`) to issue a `PUT \
+/api/recipes/{id}` with a custom `RevertRecipeRequest`. This will silently \
+drift from the generated code when the OpenAPI spec changes (e.g. new required \
+fields). Options: (1) add a revert endpoint to the OpenAPI schema and \
+regenerate; (2) serialize the existing `UpdateRecipeRequest` with the same \
+nil-vs-missing semantics and call `RecipesAPI.updateRecipe`; (3) at minimum \
+write an extension method in Shared and centralize the handrolled plumbing so \
+one file changes when regeneration shifts.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ios",
+  ],
+  "created_at": "2026-04-17T12:00:00-07:00",
+  "updated_at": "2026-04-17T12:00:00-07:00",
+}

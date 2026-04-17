@@ -1,0 +1,20 @@
+{
+  "title": "Share extension can hang indefinitely on slow scrape",
+  "description": "`RamekinShareExtension/ShareViewController.swift` fires \
+`scrapeURL` with no timeout. The underlying `URLSession` default timeout is \
+60s, but share extensions have a much tighter (~30s) memory/time budget before \
+iOS terminates them. If the server is slow the user is stuck on the spinner \
+until the OS kills the extension, with no error. Set \
+`URLSessionConfiguration.default.timeoutIntervalForRequest = 15` on the share \
+path (`scrape` only submits a job, so it should return fast), and surface a \
+\"Still working, tap to close\" affordance after ~10s.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ios",
+    "share-extension",
+  ],
+  "created_at": "2026-04-17T12:00:00-07:00",
+  "updated_at": "2026-04-17T12:00:00-07:00",
+}
