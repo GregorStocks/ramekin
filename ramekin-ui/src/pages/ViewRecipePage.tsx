@@ -469,6 +469,7 @@ export default function ViewRecipePage() {
         id: params.id,
       });
       if (res.changed) {
+        setSearchParams({ version_id: undefined });
         await loadRecipe();
       }
     } catch (err) {
