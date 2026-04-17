@@ -289,6 +289,27 @@
   border-top: 1px solid var(--border-hairline);
 }
 
+/* Texture — paper grain. Skipped when reduced-motion is requested. */
+@media (prefers-reduced-motion: no-preference) {
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("./assets/grain.png");
+    background-size: 200px 200px;
+    opacity: 0.03;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Keep real content above the grain */
+  .app-layout {
+    position: relative;
+    z-index: 1;
+  }
+}
+
 /* Buttons */
 .btn {
   display: inline-block;
