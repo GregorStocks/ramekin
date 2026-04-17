@@ -102,6 +102,10 @@ final class RamekinAPITests: XCTestCase {
         XCTAssertEqual(error.errorDescription, "HTTP error 500")
     }
 
+    func testImageSessionUsesInsecureSessionDelegate() {
+        XCTAssertTrue(RamekinAPI.shared.imageSession.delegate is InsecureSessionDelegate)
+    }
+
     // MARK: - Request Encoding Tests
 
     func testLoginRequestEncoding() throws {
