@@ -523,7 +523,7 @@ export default function PdfExportModal(props: Props) {
           const description = (recipe.description ?? "").trim();
           if (!description) return;
 
-          const visualTextAreaH = h - backPad - visualTextTopY;
+          const visualTextAreaH = h - visualTextTopY;
           if (visualTextAreaH <= 0) return;
 
           const innerW = Math.max(0, w - 2 * backPad);
