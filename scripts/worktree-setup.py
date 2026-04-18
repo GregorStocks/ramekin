@@ -342,12 +342,24 @@ def print_summary(
     )
 
 
+def localhost_certs_exist() -> bool:
+    """Return whether mkcert has been set up for localhost in this user's home."""
+    home = Path(os.environ.get("HOME", ""))
+    cert_dir = home / ".ramekin" / "certs" / "localhost"
+    return (cert_dir / "cert.pem").exists() and (cert_dir / "key.pem").exists()
+
+
 def main() -> None:
     """Generate dev.env and test.env in the repository root."""
     args = parse_args()
     root = project_root()
     workspace_name = args.workspace_name or root.name
     config = generate_config(workspace_name, args.base_port)
+
+    # Vite serves HTTPS on UI_PORT when mkcert certs exist; otherwise plain HTTP.
+    # Bake the matching scheme into the URL env vars so user-facing links from
+    # the bookmarklet/QR/capture flows resolve to an origin that's actually served.
+    scheme = "https" if localhost_certs_exist() else "http"
 
     database_prefix = (
         f"postgres://ramekin:ramekin@{args.database_host}:{args.database_port}"
@@ -358,8 +370,8 @@ def main() -> None:
         "UI_PORT": str(config.dev_ui_port),
         "UI_PORT_HTTP": str(config.dev_ui_port_http),
         "PROCESS_COMPOSE_PORT": str(config.dev_process_compose_port),
-        "RAMEKIN_SELF_SIGNED_URL": f"https://localhost:{config.dev_ui_port}",
-        "RAMEKIN_EXTERNAL_URL": f"https://localhost:{config.dev_ui_port}",
+        "RAMEKIN_SELF_SIGNED_URL": f"{scheme}://localhost:{config.dev_ui_port}",
+        "RAMEKIN_EXTERNAL_URL": f"{scheme}://localhost:{config.dev_ui_port}",
     }
     test_overrides = {
         "DATABASE_URL": f"{database_prefix}/{config.test_database_name}",
@@ -368,8 +380,8 @@ def main() -> None:
         "UI_PORT": str(config.test_ui_port),
         "MOCK_OPENROUTER_PORT": str(config.test_mock_openrouter_port),
         "PROCESS_COMPOSE_PORT": str(config.test_process_compose_port),
-        "RAMEKIN_SELF_SIGNED_URL": f"https://localhost:{config.test_ui_port}",
-        "RAMEKIN_EXTERNAL_URL": f"https://localhost:{config.test_ui_port}",
+        "RAMEKIN_SELF_SIGNED_URL": f"{scheme}://localhost:{config.test_ui_port}",
+        "RAMEKIN_EXTERNAL_URL": f"{scheme}://localhost:{config.test_ui_port}",
     }
 
     output_paths = (root / "dev.env", root / "test.env")

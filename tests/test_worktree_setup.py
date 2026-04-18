@@ -125,11 +125,25 @@ def test_apply_overrides_rewrites_ramekin_urls_to_assigned_ui_port():
         test_template,
         {
             "UI_PORT": "57690",
-            "RAMEKIN_SELF_SIGNED_URL": "https://localhost:57690",
-            "RAMEKIN_EXTERNAL_URL": "https://localhost:57690",
+            "RAMEKIN_SELF_SIGNED_URL": "http://localhost:57690",
+            "RAMEKIN_EXTERNAL_URL": "http://localhost:57690",
         },
     )
-    assert "RAMEKIN_SELF_SIGNED_URL=https://localhost:57690" in test_rendered
-    assert "RAMEKIN_EXTERNAL_URL=https://localhost:57690" in test_rendered
+    assert "RAMEKIN_SELF_SIGNED_URL=http://localhost:57690" in test_rendered
+    assert "RAMEKIN_EXTERNAL_URL=http://localhost:57690" in test_rendered
     assert "RAMEKIN_SELF_SIGNED_URL=https://localhost:5174" not in test_rendered
     assert "RAMEKIN_EXTERNAL_URL=https://localhost:5174" not in test_rendered
+
+
+def test_localhost_certs_exist_true_when_both_files_present(monkeypatch, tmp_path):
+    cert_dir = tmp_path / ".ramekin" / "certs" / "localhost"
+    cert_dir.mkdir(parents=True)
+    (cert_dir / "cert.pem").write_text("x")
+    (cert_dir / "key.pem").write_text("x")
+    monkeypatch.setenv("HOME", str(tmp_path))
+    assert WORKTREE_SETUP.localhost_certs_exist() is True
+
+
+def test_localhost_certs_exist_false_when_files_missing(monkeypatch, tmp_path):
+    monkeypatch.setenv("HOME", str(tmp_path))
+    assert WORKTREE_SETUP.localhost_certs_exist() is False
