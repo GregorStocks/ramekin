@@ -15,6 +15,7 @@ use uuid::Uuid;
 
 use crate::db::DbPool;
 use crate::schema::step_outputs;
+use crate::scraping::ScrapeError;
 
 /// Canonical pipeline step names, in the order they run in `build_registry`.
 pub const PIPELINE_STEPS: &[&str] = &[
@@ -126,6 +127,11 @@ pub fn step_summary(step_name: &str, output: &JsonValue) -> Option<String> {
 /// photo-only import path). Without this, the status API would render every
 /// canonical step as `"pending"` and silently hide the real failure.
 ///
+/// `build_step_states` prepends this entry to the returned list so that the
+/// non-canonical failed step renders above the canonical pipeline steps — it
+/// represents a step that ran outside the canonical pipeline and the real
+/// cause of the failure should be the first thing the user sees.
+///
 /// Returns `None` if `failed_at_step` is absent or matches a known step.
 pub fn extra_failed_state_for_unknown_step(
     failed_at_step: Option<&str>,
@@ -160,6 +166,10 @@ pub fn extra_failed_state_for_unknown_step(
 /// and `duration_ms` from `step_outputs.duration_ms` (written by
 /// `DbOutputStore::save_output`). `started_at` is derived as
 /// `finished_at - duration_ms` when duration is available.
+///
+/// If `failed_at_step` is not one of `PIPELINE_STEPS`, a synthetic failed
+/// entry is prepended — these represent steps that run outside the canonical
+/// scrape pipeline (e.g. `photo_extract` in photo-only imports).
 pub fn build_step_states(
     pool: &DbPool,
     job_id: Uuid,
@@ -168,18 +178,22 @@ pub fn build_step_states(
     current_step_started_at: Option<DateTime<Utc>>,
     failed_at_step: Option<&str>,
     job_error_message: Option<&str>,
-) -> Result<Vec<StepState>, diesel::result::Error> {
-    let mut conn = pool.get().expect("db pool");
+) -> Result<Vec<StepState>, ScrapeError> {
+    let mut conn = pool
+        .get()
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
     let outputs: Vec<(String, JsonValue, DateTime<Utc>, Option<i64>)> = step_outputs::table
         .filter(step_outputs::scrape_job_id.eq(job_id))
+        .order(step_outputs::created_at.asc())
         .select((
             step_outputs::step_name,
             step_outputs::output,
             step_outputs::created_at,
             step_outputs::duration_ms,
         ))
-        .load(&mut conn)?;
+        .load(&mut conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
     // Latest output per step name (in case a step was re-run on retry).
     let mut by_name: std::collections::HashMap<String, (JsonValue, DateTime<Utc>, Option<i64>)> =
@@ -254,7 +268,7 @@ pub fn build_step_states(
         current_step_started_at,
         job_error_message,
     ) {
-        states.push(extra);
+        states.insert(0, extra);
     }
 
     Ok(states)
