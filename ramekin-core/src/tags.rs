@@ -34,6 +34,7 @@ pub enum TagNameError {
     EmptyNamespace,
     EmptyValue,
     InvalidNamespace,
+    WhitespaceAroundColon,
 }
 
 impl TagNameError {
@@ -47,6 +48,9 @@ impl TagNameError {
             TagNameError::EmptyValue => "Tag value cannot be empty",
             TagNameError::InvalidNamespace => {
                 "Namespace must be lowercase letters, digits, hyphen, or underscore, starting with a letter"
+            }
+            TagNameError::WhitespaceAroundColon => {
+                "Whitespace is not allowed adjacent to ':'"
             }
         }
     }
@@ -106,13 +110,14 @@ pub fn validate_tag_name(name: &str) -> Result<(), TagNameError> {
         return Err(TagNameError::MultipleColons);
     }
     let (ns, value) = trimmed.split_once(':').unwrap();
-    let ns = ns.trim();
-    let value = value.trim();
     if ns.is_empty() {
         return Err(TagNameError::EmptyNamespace);
     }
     if value.is_empty() {
         return Err(TagNameError::EmptyValue);
+    }
+    if ns != ns.trim_end() || value != value.trim_start() {
+        return Err(TagNameError::WhitespaceAroundColon);
     }
     if !NAMESPACE_RE.is_match(ns) {
         return Err(TagNameError::InvalidNamespace);
@@ -222,5 +227,22 @@ mod tests {
             validate_tag_name("course!:breakfast"),
             Err(TagNameError::InvalidNamespace)
         );
+    }
+
+    #[test]
+    fn validate_whitespace_around_colon_rejected() {
+        assert_eq!(
+            validate_tag_name("course : breakfast"),
+            Err(TagNameError::WhitespaceAroundColon)
+        );
+        assert_eq!(
+            validate_tag_name("course :breakfast"),
+            Err(TagNameError::WhitespaceAroundColon)
+        );
+        assert_eq!(
+            validate_tag_name("course: breakfast"),
+            Err(TagNameError::WhitespaceAroundColon)
+        );
+        assert_eq!(validate_tag_name("  course:breakfast  "), Ok(()));
     }
 }
