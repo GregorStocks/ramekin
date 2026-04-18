@@ -97,22 +97,16 @@ pub async fn get_scrape(
 
     let can_retry = job.status == scraping::STATUS_FAILED;
 
-    // Build the per-step state list for the status page. For failed jobs the
-    // current_step is the step that was running when the failure was recorded
-    // (mark_failed leaves current_step intact), so that's what we pass as the
-    // "failed step" marker.
-    let failed_step_name: Option<&str> = if job.status == scraping::STATUS_FAILED {
-        job.current_step.as_deref()
-    } else {
-        None
-    };
+    // Build the per-step state list for the status page. `failed_at_step`
+    // now stores the real pipeline step name (e.g. `"fetch_html"`), so we
+    // can pass it straight through to the status builder.
     let steps = match build_step_states(
         &pool,
         job.id,
         &job.status,
         job.current_step.as_deref(),
         job.current_step_started_at,
-        failed_step_name,
+        job.failed_at_step.as_deref(),
         job.error_message.as_deref(),
     ) {
         Ok(s) => s,

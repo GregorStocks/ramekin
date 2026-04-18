@@ -57,7 +57,6 @@ pub enum ScrapeError {
 }
 
 /// Job statuses
-pub const STATUS_PENDING: &str = "pending";
 pub const STATUS_SCRAPING: &str = "scraping";
 pub const STATUS_PARSING: &str = "parsing";
 pub const STATUS_COMPLETED: &str = "completed";
@@ -393,7 +392,7 @@ async fn run_photo_import_job(
     // Update status to "scraping" (extraction phase)
     if let Err(e) = update_status_and_step(&pool, job_id, STATUS_SCRAPING, Some("photo_extract")) {
         tracing::error!("Failed to update job status: {}", e);
-        let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+        let _ = mark_failed(&pool, job_id, "photo_extract", &e.to_string());
         return;
     }
 
@@ -403,7 +402,7 @@ async fn run_photo_import_job(
         Err(e) => {
             tracing::error!("Failed to fetch photos: {}", e);
             let error = e.to_string();
-            let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &error);
+            let _ = mark_failed(&pool, job_id, "photo_extract", &error);
             return;
         }
     };
@@ -413,7 +412,7 @@ async fn run_photo_import_job(
         match ramekin_core::ai::CachingAiClient::from_env() {
             Ok(c) => Arc::new(c),
             Err(e) => {
-                let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+                let _ = mark_failed(&pool, job_id, "photo_extract", &e.to_string());
                 return;
             }
         };
@@ -423,7 +422,7 @@ async fn run_photo_import_job(
             Ok(r) => r,
             Err(e) => {
                 tracing::error!("Photo extraction failed: {}", e);
-                let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+                let _ = mark_failed(&pool, job_id, "photo_extract", &e.to_string());
                 return;
             }
         };
@@ -444,12 +443,12 @@ async fn run_photo_import_job(
     let extract_json = match serde_json::to_value(&extract_output) {
         Ok(j) => j,
         Err(e) => {
-            let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+            let _ = mark_failed(&pool, job_id, "photo_extract", &e.to_string());
             return;
         }
     };
     if let Err(e) = save_step_output(&pool, job_id, ExtractRecipeStep::NAME, extract_json) {
-        let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+        let _ = mark_failed(&pool, job_id, "photo_extract", &e.to_string());
         return;
     }
 
@@ -461,12 +460,12 @@ async fn run_photo_import_job(
     let images_json = match serde_json::to_value(&images_output) {
         Ok(j) => j,
         Err(e) => {
-            let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+            let _ = mark_failed(&pool, job_id, "photo_extract", &e.to_string());
             return;
         }
     };
     if let Err(e) = save_step_output(&pool, job_id, FetchImagesStepMeta::NAME, images_json) {
-        let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+        let _ = mark_failed(&pool, job_id, "photo_extract", &e.to_string());
         return;
     }
 
@@ -475,7 +474,7 @@ async fn run_photo_import_job(
         let mut conn = match pool.get() {
             Ok(c) => c,
             Err(e) => {
-                let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+                let _ = mark_failed(&pool, job_id, "photo_extract", &e.to_string());
                 return;
             }
         };
@@ -489,7 +488,7 @@ async fn run_photo_import_job(
             ))
             .execute(&mut conn)
         {
-            let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+            let _ = mark_failed(&pool, job_id, "photo_extract", &e.to_string());
             return;
         }
     }
@@ -605,7 +604,16 @@ fn get_latest_step_output(
 }
 
 /// Mark job as failed.
-fn mark_failed(pool: &DbPool, job_id: Uuid, step: &str, error: &str) -> Result<(), ScrapeError> {
+///
+/// `step_name` is the real pipeline step name that failed (e.g. `"fetch_html"`,
+/// `"extract_recipe"`, `"photo_extract"`), not a job status string. The status
+/// page and retry logic both key off this value.
+fn mark_failed(
+    pool: &DbPool,
+    job_id: Uuid,
+    step_name: &str,
+    error: &str,
+) -> Result<(), ScrapeError> {
     let mut conn = pool
         .get()
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
@@ -614,7 +622,7 @@ fn mark_failed(pool: &DbPool, job_id: Uuid, step: &str, error: &str) -> Result<(
     diesel::update(scrape_jobs::table.find(job_id))
         .set((
             scrape_jobs::status.eq(STATUS_FAILED),
-            scrape_jobs::failed_at_step.eq(Some(step)),
+            scrape_jobs::failed_at_step.eq(Some(step_name)),
             scrape_jobs::error_message.eq(Some(error)),
             scrape_jobs::updated_at.eq(Utc::now()),
         ))
@@ -720,7 +728,9 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
 
     // Run pipeline with status updates and OpenTelemetry instrumentation
     let mut current_step_name: Option<String> = Some(first_step.to_string());
-    let mut failed_at_status = STATUS_SCRAPING;
+    // Real step name of the most recently executed step. Used to populate
+    // `scrape_jobs.failed_at_step` if the pipeline ends without a recipe.
+    let mut last_step_name: String = first_step.to_string();
     let mut last_error: Option<String> = None;
 
     while let Some(step_name) = current_step_name.take() {
@@ -738,7 +748,7 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
         } else {
             STATUS_PARSING
         };
-        failed_at_status = step_status;
+        last_step_name = step_name.clone();
 
         // Update job status and current_step before executing
         update_status_and_step(&pool, job_id, step_status, Some(&step_name))?;
@@ -792,15 +802,15 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
         mark_completed(&pool, job_id, id)?;
     } else if let Some(error) = last_error {
         // Pipeline failed
-        tracing::warn!("Job {} failed at '{}': {}", job_id, failed_at_status, error);
-        mark_failed(&pool, job_id, failed_at_status, &error)?;
+        tracing::warn!("Job {} failed at '{}': {}", job_id, last_step_name, error);
+        mark_failed(&pool, job_id, &last_step_name, &error)?;
     } else {
         // Pipeline ended without a recipe (shouldn't happen in normal flow)
         tracing::warn!("Job {} ended without recipe", job_id);
         mark_failed(
             &pool,
             job_id,
-            failed_at_status,
+            &last_step_name,
             "Pipeline ended without creating recipe",
         )?;
     }
@@ -962,12 +972,12 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
             .map(|arr| arr.is_empty())
             .unwrap_or(false);
 
+    // `failed_at_step` now stores the real pipeline step name. Anything that
+    // failed at or before `fetch_html` restarts from the top; for later
+    // failures we resume at the earliest step whose output is missing.
     let (resume_status, resume_step) = match job.failed_at_step.as_deref() {
-        Some(STATUS_SCRAPING) => {
-            // Failed during fetch - restart from fetch
-            (STATUS_SCRAPING, FetchHtmlStep::NAME)
-        }
-        Some(STATUS_PARSING) => {
+        Some(FetchHtmlStep::NAME) | None => (STATUS_SCRAPING, FetchHtmlStep::NAME),
+        Some(_) => {
             if has_fetch_images_output && !photo_only_empty_fetch {
                 // Have fetch_images output with at least one photo (or this
                 // is a normal rescrape) — try save again
@@ -982,10 +992,6 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
                 // No outputs, start from beginning
                 (STATUS_SCRAPING, FetchHtmlStep::NAME)
             }
-        }
-        _ => {
-            // Unknown failure point, start from beginning
-            (STATUS_PENDING, FetchHtmlStep::NAME)
         }
     };
 
