@@ -53,11 +53,11 @@ pub async fn rename_tag(
 ) -> impl IntoResponse {
     let new_name = request.name.trim();
 
-    if new_name.is_empty() {
+    if let Err(err) = ramekin_core::validate_tag_name(new_name) {
         return (
             StatusCode::BAD_REQUEST,
             Json(ErrorResponse {
-                error: "Tag name cannot be empty".to_string(),
+                error: err.message().to_string(),
             }),
         )
             .into_response();
