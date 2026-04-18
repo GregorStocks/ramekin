@@ -195,6 +195,27 @@ pub fn build_step_states(
         .load(&mut conn)
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
+    Ok(build_step_states_from_outputs(
+        outputs,
+        job_status,
+        current_step,
+        current_step_started_at,
+        failed_at_step,
+        job_error_message,
+    ))
+}
+
+/// Pure helper: walk PIPELINE_STEPS and emit a `StepState` per step from the
+/// given `step_outputs` rows plus the job's live state. Separated from
+/// `build_step_states` so it can be unit-tested without a DB.
+fn build_step_states_from_outputs(
+    outputs: Vec<(String, JsonValue, DateTime<Utc>, Option<i64>)>,
+    job_status: &str,
+    current_step: Option<&str>,
+    current_step_started_at: Option<DateTime<Utc>>,
+    failed_at_step: Option<&str>,
+    job_error_message: Option<&str>,
+) -> Vec<StepState> {
     // Latest output per step name (in case a step was re-run on retry).
     let mut by_name: std::collections::HashMap<String, (JsonValue, DateTime<Utc>, Option<i64>)> =
         std::collections::HashMap::new();
@@ -212,7 +233,30 @@ pub fn build_step_states(
 
     for step_name in PIPELINE_STEPS {
         let name = (*step_name).to_string();
-        if let Some((output, created_at, duration_ms)) = by_name.get(&name) {
+        // Check failed BEFORE checking the output rows, so a failed step with
+        // a persisted output row (execute_step_with_tracing writes outputs
+        // even for failing steps, for debugging) is still rendered as failed.
+        if failed_at_step == Some(name.as_str()) {
+            let stored = by_name.get(&name);
+            let finished_at = stored.map(|(_, created_at, _)| *created_at);
+            let duration_ms = stored.and_then(|(_, _, d)| *d);
+            let started_at = match (finished_at, duration_ms) {
+                (Some(finished), Some(d)) => chrono::Duration::try_milliseconds(d)
+                    .map(|dur| finished - dur)
+                    .or(current_step_started_at),
+                _ => current_step_started_at,
+            };
+            states.push(StepState {
+                name: name.clone(),
+                status: "failed".to_string(),
+                started_at,
+                finished_at,
+                duration_ms,
+                summary: None,
+                error: job_error_message.map(|s| s.to_string()),
+                has_output: stored.is_some(),
+            });
+        } else if let Some((output, created_at, duration_ms)) = by_name.get(&name) {
             let finished_at = *created_at;
             let started_at = duration_ms
                 .and_then(chrono::Duration::try_milliseconds)
@@ -226,17 +270,6 @@ pub fn build_step_states(
                 summary: step_summary(&name, output),
                 error: None,
                 has_output: true,
-            });
-        } else if failed_at_step == Some(name.as_str()) {
-            states.push(StepState {
-                name: name.clone(),
-                status: "failed".to_string(),
-                started_at: current_step_started_at,
-                finished_at: None,
-                duration_ms: None,
-                summary: None,
-                error: job_error_message.map(|s| s.to_string()),
-                has_output: false,
             });
         } else if !terminal && current_step == Some(name.as_str()) {
             states.push(StepState {
@@ -271,7 +304,7 @@ pub fn build_step_states(
         states.insert(0, extra);
     }
 
-    Ok(states)
+    states
 }
 
 #[cfg(test)]
@@ -448,5 +481,40 @@ mod tests {
         assert_eq!(v["has_output"], false);
         assert!(v.get("started_at").is_none());
         assert!(v.get("summary").is_none());
+    }
+
+    #[test]
+    fn failed_step_with_output_row_is_rendered_as_failed() {
+        // `execute_step_with_tracing` persists a step_outputs row even when a
+        // step fails (for debugging). `build_step_states` must render that
+        // step as "failed" — not "completed" — when `failed_at_step` names
+        // it. `has_output` and `finished_at` still come from the stored row
+        // so the user can expand the row to see the partial output.
+        let finished = DateTime::parse_from_rfc3339("2025-01-01T00:00:05Z")
+            .unwrap()
+            .with_timezone(&Utc);
+        let outputs = vec![(
+            "save_recipe".to_string(),
+            json!({ "partial": true }),
+            finished,
+            Some(1000),
+        )];
+        let states = build_step_states_from_outputs(
+            outputs,
+            "failed",
+            None,
+            None,
+            Some("save_recipe"),
+            Some("save failed: no photo ids"),
+        );
+        let save = states
+            .iter()
+            .find(|s| s.name == "save_recipe")
+            .expect("save_recipe state present");
+        assert_eq!(save.status, "failed");
+        assert!(save.has_output);
+        assert_eq!(save.finished_at, Some(finished));
+        assert_eq!(save.duration_ms, Some(1000));
+        assert_eq!(save.error.as_deref(), Some("save failed: no photo ids"));
     }
 }
