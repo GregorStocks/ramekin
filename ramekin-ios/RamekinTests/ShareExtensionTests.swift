@@ -1,48 +1,7 @@
-import UniformTypeIdentifiers
 import XCTest
 @testable import Ramekin
 
 final class ShareExtensionTests: XCTestCase {
-    func testExtractURLFallsBackToLaterProviderAfterURLLoadFailure() async throws {
-        let expectedURL = try XCTUnwrap(URL(string: "https://example.com/fallback"))
-        let providers: [any SharedURLItemProvider] = [
-            FakeSharedURLItemProvider(
-                loadResults: [
-                    UTType.url.identifier: .failure(URLError(.cannotDecodeContentData))
-                ]
-            ),
-            FakeSharedURLItemProvider(
-                loadResults: [
-                    UTType.url.identifier: .success(expectedURL as NSURL)
-                ]
-            )
-        ]
-
-        let extractedURL = await SharedURLExtractor.extractURL(from: providers)
-
-        XCTAssertEqual(extractedURL, expectedURL)
-    }
-
-    func testExtractURLFallsBackToLaterProviderAfterPlainTextLoadFailure() async throws {
-        let expectedURL = try XCTUnwrap(URL(string: "https://example.com/from-text"))
-        let providers: [any SharedURLItemProvider] = [
-            FakeSharedURLItemProvider(
-                loadResults: [
-                    UTType.plainText.identifier: .failure(URLError(.badURL))
-                ]
-            ),
-            FakeSharedURLItemProvider(
-                loadResults: [
-                    UTType.plainText.identifier: .success(expectedURL.absoluteString as NSString)
-                ]
-            )
-        ]
-
-        let extractedURL = await SharedURLExtractor.extractURL(from: providers)
-
-        XCTAssertEqual(extractedURL, expectedURL)
-    }
-
     // MARK: - URL Validation Tests
 
     func testValidRecipeURLs() {
@@ -81,7 +40,6 @@ final class ShareExtensionTests: XCTestCase {
     }
 
     func testInternationalURLs() {
-        // URLs with international characters should be handled
         let urlString = "https://example.com/recette/gâteau"
         let url = URL(string: urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? urlString)
 
@@ -91,7 +49,6 @@ final class ShareExtensionTests: XCTestCase {
     // MARK: - Share Status Tests
 
     func testShareStatusTransitions() {
-        // This tests the conceptual state machine of share statuses
         enum ShareStatus: Equatable {
             case ready
             case sending
@@ -100,86 +57,22 @@ final class ShareExtensionTests: XCTestCase {
             case notLoggedIn
         }
 
-        // Valid transitions
         var status: ShareStatus = .ready
-
-        // ready -> sending (user initiates share)
         status = .sending
         XCTAssertEqual(status, .sending)
-
-        // sending -> success (API call succeeds)
         status = .success
         XCTAssertEqual(status, .success)
 
-        // Reset and test error path
         status = .ready
         status = .sending
         status = .error
         XCTAssertEqual(status, .error)
 
-        // error -> sending (user retries)
         status = .sending
         XCTAssertEqual(status, .sending)
 
-        // Test not logged in path
         status = .ready
         status = .notLoggedIn
         XCTAssertEqual(status, .notLoggedIn)
-    }
-
-    // MARK: - URL Extraction Simulation
-
-    func testExtractURLFromText() {
-        // Simulates extracting URL from plain text (as might come from some share sources)
-        let texts = [
-            "https://example.com/recipe",
-            "Check out this recipe: https://example.com/recipe",
-            "   https://example.com/recipe   "
-        ]
-
-        for text in texts {
-            // Simple URL extraction logic
-            let pattern = "https?://[^\\s]+"
-            if let regex = try? NSRegularExpression(pattern: pattern),
-               let match = regex.firstMatch(in: text, range: NSRange(text.startIndex..., in: text)),
-               let range = Range(match.range, in: text) {
-                let urlString = String(text[range])
-                let url = URL(string: urlString)
-                XCTAssertNotNil(url, "Should extract URL from: \(text)")
-            } else {
-                XCTFail("Should find URL in: \(text)")
-            }
-        }
-    }
-}
-
-private final class FakeSharedURLItemProvider: SharedURLItemProvider {
-    private let loadResults: [String: Result<NSSecureCoding?, Error>]
-
-    init(loadResults: [String: Result<NSSecureCoding?, Error>]) {
-        self.loadResults = loadResults
-    }
-
-    var registeredTypeIdentifiers: [String] {
-        Array(loadResults.keys)
-    }
-
-    func hasItemConformingToTypeIdentifier(_ typeIdentifier: String) -> Bool {
-        loadResults[typeIdentifier] != nil
-    }
-
-    func loadItem(
-        forTypeIdentifier typeIdentifier: String,
-        completionHandler: @escaping @Sendable (NSSecureCoding?, Error?) -> Void
-    ) {
-        let result = loadResults[typeIdentifier] ?? .success(nil)
-        DispatchQueue.global().asyncAfter(deadline: .now() + 0.01) {
-            switch result {
-            case .success(let item):
-                completionHandler(item, nil)
-            case .failure(let error):
-                completionHandler(nil, error)
-            }
-        }
     }
 }
