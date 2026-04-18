@@ -1,3 +1,4 @@
+pub mod apple_app_site_association;
 pub mod auth;
 pub mod testing;
 
@@ -15,6 +16,10 @@ pub fn router() -> Router<AppState> {
         )
         .route("/api/auth/signup", post(auth::signup::signup))
         .route("/api/auth/login", post(auth::login::login))
+        .route(
+            "/.well-known/apple-app-site-association",
+            get(apple_app_site_association::apple_app_site_association),
+        )
 }
 
 #[derive(OpenApi)]
