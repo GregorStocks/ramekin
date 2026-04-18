@@ -105,18 +105,22 @@ jobs:
       - name: Create test-ui.env (for UI tests, with dynamically allocated ports)
         run: |
           # Find free ports for UI tests
-          eval $(./scripts/find-free-ports.sh PORT FIXTURE_PORT UI_PORT MOCK_OPENROUTER_PORT PROCESS_COMPOSE_PORT)
+          eval $(./scripts/find-free-ports.sh \
+            PORT FIXTURE_PORT UI_PORT UI_PORT_HTTP MOCK_OPENROUTER_PORT PROCESS_COMPOSE_PORT)
           echo "DATABASE_URL=postgres://ramekin:ramekin@localhost:5432/ramekin" > test-ui.env
           echo "PORT=${PORT}" >> test-ui.env
           echo "FIXTURE_PORT=${FIXTURE_PORT}" >> test-ui.env
           echo "UI_PORT=${UI_PORT}" >> test-ui.env
+          echo "UI_PORT_HTTP=${UI_PORT_HTTP}" >> test-ui.env
           echo "RAMEKIN_SELF_SIGNED_URL=http://localhost:${UI_PORT}" >> test-ui.env
-          echo "RAMEKIN_EXTERNAL_URL=http://localhost:${UI_PORT}" >> test-ui.env
+          echo "RAMEKIN_EXTERNAL_URL=http://localhost:${UI_PORT_HTTP}" >> test-ui.env
           echo "MOCK_OPENROUTER_PORT=${MOCK_OPENROUTER_PORT}" >> test-ui.env
           echo "PROCESS_COMPOSE_PORT=${PROCESS_COMPOSE_PORT}" >> test-ui.env
           echo "RUST_LOG=error" >> test-ui.env
           echo "INSECURE_PASSWORD_HASHING=1" >> test-ui.env
-          echo "::notice::UI ports: ${PORT} ${FIXTURE_PORT} ${UI_PORT} ${MOCK_OPENROUTER_PORT} ${PROCESS_COMPOSE_PORT}"
+          PORTS="${PORT} ${FIXTURE_PORT} ${UI_PORT} ${UI_PORT_HTTP}"
+          PORTS="$PORTS ${MOCK_OPENROUTER_PORT} ${PROCESS_COMPOSE_PORT}"
+          echo "::notice::UI ports: $PORTS"
 
       - name: Run tests
         run: |

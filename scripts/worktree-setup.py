@@ -27,6 +27,7 @@ PORT_ASSIGNMENT_ORDER = (
     "test_process_compose_port",
     "dev_ui_port_http",
     "test_ui_port",
+    "test_ui_port_http",
     "dev_process_compose_port",
 )
 
@@ -45,6 +46,7 @@ class GeneratedConfig:
     test_port: int
     test_fixture_port: int
     test_ui_port: int
+    test_ui_port_http: int
     test_mock_openrouter_port: int
     test_process_compose_port: int
 
@@ -189,6 +191,7 @@ def generate_config(workspace_name: str, base_port: int | None) -> GeneratedConf
         test_port=ports["test_port"],
         test_fixture_port=ports["test_fixture_port"],
         test_ui_port=ports["test_ui_port"],
+        test_ui_port_http=ports["test_ui_port_http"],
         test_mock_openrouter_port=ports["test_mock_openrouter_port"],
         test_process_compose_port=ports["test_process_compose_port"],
     )
@@ -336,17 +339,10 @@ def print_summary(
         "  test: "
         f"db={test_database_url} "
         f"server={config.test_port} fixture={config.test_fixture_port} "
-        f"ui={config.test_ui_port} "
+        f"ui={config.test_ui_port} ui_http={config.test_ui_port_http} "
         f"mock_openrouter={config.test_mock_openrouter_port} "
         f"process_compose={config.test_process_compose_port}"
     )
-
-
-def localhost_certs_exist() -> bool:
-    """Return whether mkcert has been set up for localhost in this user's home."""
-    home = Path(os.environ.get("HOME", ""))
-    cert_dir = home / ".ramekin" / "certs" / "localhost"
-    return (cert_dir / "cert.pem").exists() and (cert_dir / "key.pem").exists()
 
 
 def main() -> None:
@@ -356,32 +352,33 @@ def main() -> None:
     workspace_name = args.workspace_name or root.name
     config = generate_config(workspace_name, args.base_port)
 
-    # Vite serves HTTPS on UI_PORT when mkcert certs exist; otherwise plain HTTP.
-    # Bake the matching scheme into the URL env vars so user-facing links from
-    # the bookmarklet/QR/capture flows resolve to an origin that's actually served.
-    scheme = "https" if localhost_certs_exist() else "http"
-
     database_prefix = (
         f"postgres://ramekin:ramekin@{args.database_host}:{args.database_port}"
     )
+    # Dev: `make dev` runs setup-certs.sh before launching vite, so UI_PORT serves
+    # HTTPS. External links point at that.
+    # Test: vite only has certs when a prior dev run generated them, so cert state
+    # is unpredictable. Point at the HTTP mirror (UI_PORT_HTTP), which vite always
+    # serves via httpMirrorPlugin regardless of cert presence.
     dev_overrides = {
         "DATABASE_URL": f"{database_prefix}/{config.dev_database_name}",
         "PORT": str(config.dev_port),
         "UI_PORT": str(config.dev_ui_port),
         "UI_PORT_HTTP": str(config.dev_ui_port_http),
         "PROCESS_COMPOSE_PORT": str(config.dev_process_compose_port),
-        "RAMEKIN_SELF_SIGNED_URL": f"{scheme}://localhost:{config.dev_ui_port}",
-        "RAMEKIN_EXTERNAL_URL": f"{scheme}://localhost:{config.dev_ui_port}",
+        "RAMEKIN_SELF_SIGNED_URL": f"https://localhost:{config.dev_ui_port}",
+        "RAMEKIN_EXTERNAL_URL": f"https://localhost:{config.dev_ui_port}",
     }
     test_overrides = {
         "DATABASE_URL": f"{database_prefix}/{config.test_database_name}",
         "PORT": str(config.test_port),
         "FIXTURE_PORT": str(config.test_fixture_port),
         "UI_PORT": str(config.test_ui_port),
+        "UI_PORT_HTTP": str(config.test_ui_port_http),
         "MOCK_OPENROUTER_PORT": str(config.test_mock_openrouter_port),
         "PROCESS_COMPOSE_PORT": str(config.test_process_compose_port),
-        "RAMEKIN_SELF_SIGNED_URL": f"{scheme}://localhost:{config.test_ui_port}",
-        "RAMEKIN_EXTERNAL_URL": f"{scheme}://localhost:{config.test_ui_port}",
+        "RAMEKIN_SELF_SIGNED_URL": f"http://localhost:{config.test_ui_port}",
+        "RAMEKIN_EXTERNAL_URL": f"http://localhost:{config.test_ui_port_http}",
     }
 
     output_paths = (root / "dev.env", root / "test.env")

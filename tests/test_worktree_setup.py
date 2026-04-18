@@ -33,6 +33,7 @@ def test_worktree_setup_creates_both_databases_when_postgres_is_ready(monkeypatc
         test_port=5,
         test_fixture_port=6,
         test_ui_port=7,
+        test_ui_port_http=10,
         test_mock_openrouter_port=8,
         test_process_compose_port=9,
     )
@@ -92,6 +93,7 @@ def test_worktree_setup_skips_database_creation_when_postgres_is_unreachable(
         test_port=5,
         test_fixture_port=6,
         test_ui_port=7,
+        test_ui_port_http=10,
         test_mock_openrouter_port=8,
         test_process_compose_port=9,
     )
@@ -125,25 +127,13 @@ def test_apply_overrides_rewrites_ramekin_urls_to_assigned_ui_port():
         test_template,
         {
             "UI_PORT": "57690",
+            "UI_PORT_HTTP": "57691",
             "RAMEKIN_SELF_SIGNED_URL": "http://localhost:57690",
-            "RAMEKIN_EXTERNAL_URL": "http://localhost:57690",
+            "RAMEKIN_EXTERNAL_URL": "http://localhost:57691",
         },
     )
     assert "RAMEKIN_SELF_SIGNED_URL=http://localhost:57690" in test_rendered
-    assert "RAMEKIN_EXTERNAL_URL=http://localhost:57690" in test_rendered
-    assert "RAMEKIN_SELF_SIGNED_URL=https://localhost:5174" not in test_rendered
-    assert "RAMEKIN_EXTERNAL_URL=https://localhost:5174" not in test_rendered
-
-
-def test_localhost_certs_exist_true_when_both_files_present(monkeypatch, tmp_path):
-    cert_dir = tmp_path / ".ramekin" / "certs" / "localhost"
-    cert_dir.mkdir(parents=True)
-    (cert_dir / "cert.pem").write_text("x")
-    (cert_dir / "key.pem").write_text("x")
-    monkeypatch.setenv("HOME", str(tmp_path))
-    assert WORKTREE_SETUP.localhost_certs_exist() is True
-
-
-def test_localhost_certs_exist_false_when_files_missing(monkeypatch, tmp_path):
-    monkeypatch.setenv("HOME", str(tmp_path))
-    assert WORKTREE_SETUP.localhost_certs_exist() is False
+    assert "RAMEKIN_EXTERNAL_URL=http://localhost:57691" in test_rendered
+    assert "UI_PORT_HTTP=57691" in test_rendered
+    assert "RAMEKIN_SELF_SIGNED_URL=http://localhost:5174" not in test_rendered
+    assert "RAMEKIN_EXTERNAL_URL=http://localhost:5175" not in test_rendered
