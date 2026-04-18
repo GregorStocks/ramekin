@@ -63,9 +63,10 @@ The `steps` array is always returned in the canonical pipeline order:
 3. `fetch_images`
 4. `parse_ingredients`
 5. `save_recipe`
-6. `enrich_auto_tags`
-7. `apply_auto_tags`
-8. `enrich_generate_photo`
+6. `enrich_normalize_ingredients`
+7. `enrich_auto_tag`
+8. `apply_auto_tags`
+9. `enrich_generate_photo`
 
 Status derivation:
 
@@ -83,9 +84,19 @@ Returns the raw `step_outputs` row for a given step as JSON. Ownership-checked l
 
 ### Database
 
-No schema changes anticipated. `scrape_jobs.current_step`, `scrape_jobs.failed_at_step`, `scrape_jobs.created_at`, `scrape_jobs.completed_at`, and `scrape_jobs.error` already exist. `step_outputs` stores per-step output JSON.
+Verified during planning:
 
-If `step_outputs` does not already have `started_at` and `finished_at` columns, add them via a migration. This will be verified during implementation planning.
+- `scrape_jobs` already has `current_step`, `failed_at_step`, `status`, `created_at`, `updated_at`, `retry_count`, `error_message` (not `error`). There is no `completed_at`.
+- `step_outputs` is append-only with `created_at` only (no `started_at` / `finished_at`).
+
+One small migration: add `current_step_started_at TIMESTAMPTZ NULL` to `scrape_jobs`, written whenever `current_step` is written. Per-step timing is then derived:
+
+- Completed step: `finished_at = step_outputs.created_at`, `started_at = finished_at - duration_ms` (duration is stored in the output JSON by the existing `StepResult`).
+- Running step: `started_at = scrape_jobs.current_step_started_at`, `finished_at = null`.
+
+### Retry behavior
+
+Confirmed during planning: `POST /api/scrape/{id}/retry` mutates the same job ID (does not create a new one). The UI stays on `/scrape/:id`; polling resumes with the reset status.
 
 ## Frontend
 
@@ -110,7 +121,7 @@ Each row is expandable. On expand, it lazy-fetches `GET /api/scrape/{id}/steps/{
 ### Terminal states
 
 - `completed`: green "View Recipe →" button at the bottom linking to `/recipes/{recipe_id}`.
-- `failed`: error banner at the top, "Retry" button wired to `POST /api/scrape/{id}/retry`. If the retry endpoint reuses the same job ID, polling resumes on the same page. If it returns a new ID, the page navigates to `/scrape/{new_id}`. Which of these the endpoint does will be confirmed during implementation planning, and the UI will handle whichever it is.
+- `failed`: error banner at the top, "Retry" button wired to `POST /api/scrape/{id}/retry`. The retry endpoint reuses the same job ID, so polling resumes on the same page with the job's status reset.
 
 ## Testing
 
