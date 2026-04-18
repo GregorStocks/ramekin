@@ -94,6 +94,7 @@ diesel::table! {
         updated_at -> Timestamptz,
         current_step -> Nullable<Varchar>,
         photo_only -> Bool,
+        current_step_started_at -> Nullable<Timestamptz>,
     }
 }
 
