@@ -65,7 +65,10 @@ export default function CreateRecipePage() {
       .replace("__ORIGIN__", origin)
       .replace("__TOKEN__", userToken)
       .replace("__API__", encodeURIComponent(apiOrigin))
-      .replace("__EXTERNAL__", encodeURIComponent(__EXTERNAL_URL__));
+      .replace(
+        "__EXTERNAL__",
+        encodeURIComponent(__EXTERNAL_URL__.replace(/\/+$/, "")),
+      );
     // Minify: remove newlines, collapse whitespace
     const minified = code
       .replace(/\n\s*/g, "")
