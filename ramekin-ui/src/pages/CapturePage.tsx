@@ -1,6 +1,8 @@
 import { createSignal, onMount, onCleanup, Show } from "solid-js";
 import { usePageTitle } from "../utils/pageTitle";
 
+declare const __EXTERNAL_URL__: string;
+
 interface CaptureMessage {
   type: "html";
   html: string;
@@ -197,7 +199,7 @@ export default function CapturePage() {
   };
 
   const handleViewRecipe = (recipeId: string) => {
-    const recipeUrl = `${window.location.origin}/recipes/${recipeId}`;
+    const recipeUrl = `${__EXTERNAL_URL__.replace(/\/+$/, "")}/recipes/${recipeId}`;
     window.parent.postMessage({ type: "viewRecipe", url: recipeUrl }, "*");
   };
 
