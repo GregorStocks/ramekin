@@ -1,18 +1,13 @@
 """End-to-end tests for the extended scrape status response and step output endpoint."""
 
-import os
-import time
+from datetime import datetime, timezone
 
 import pytest
 import requests
 
+from conftest import wait_for_job_completion
 from ramekin_client.api import ScrapeApi
 from ramekin_client.models import CreateScrapeRequest
-
-
-FIXTURE_BASE_URL = os.environ.get("FIXTURE_BASE_URL")
-if not FIXTURE_BASE_URL:
-    raise ValueError("FIXTURE_BASE_URL environment variable required")
 
 
 CANONICAL_STEP_NAMES = [
@@ -28,35 +23,27 @@ CANONICAL_STEP_NAMES = [
 ]
 
 
-def _wait_terminal(scrape_api: ScrapeApi, job_id: str, timeout: float = 30.0):
-    deadline = time.monotonic() + timeout
-    while time.monotonic() < deadline:
-        job = scrape_api.get_scrape(job_id)
-        if job.status in ("completed", "failed"):
-            return job
-        time.sleep(0.25)
-    raise TimeoutError(f"scrape {job_id} did not finish in {timeout}s")
-
-
 class TestScrapeStatusResponse:
-    def test_steps_field_present_and_ordered(self, authed_api_client):
+    def test_steps_field_present_and_ordered(self, authed_api_client, fixture_base_url):
         client, _user_id = authed_api_client
         scrape_api = ScrapeApi(client)
 
-        url = f"{FIXTURE_BASE_URL}/seriouseats/rice_pilaf.html"
+        url = f"{fixture_base_url}/seriouseats/rice_pilaf.html"
         created = scrape_api.create_scrape(CreateScrapeRequest(url=url))
-        job = _wait_terminal(scrape_api, created.id)
+        job = wait_for_job_completion(scrape_api, created.id)
 
         names = [s.name for s in job.steps]
         assert names == CANONICAL_STEP_NAMES, f"expected canonical order, got {names}"
 
-    def test_completed_steps_have_output_and_duration(self, authed_api_client):
+    def test_completed_steps_have_output_and_duration(
+        self, authed_api_client, fixture_base_url
+    ):
         client, _user_id = authed_api_client
         scrape_api = ScrapeApi(client)
 
-        url = f"{FIXTURE_BASE_URL}/seriouseats/rice_pilaf.html"
+        url = f"{fixture_base_url}/seriouseats/rice_pilaf.html"
         created = scrape_api.create_scrape(CreateScrapeRequest(url=url))
-        job = _wait_terminal(scrape_api, created.id)
+        job = wait_for_job_completion(scrape_api, created.id)
 
         fetch_html = next(s for s in job.steps if s.name == "fetch_html")
         assert fetch_html.status == "completed"
@@ -65,24 +52,29 @@ class TestScrapeStatusResponse:
         assert fetch_html.finished_at is not None
         assert fetch_html.started_at is not None
 
-    def test_created_at_present(self, authed_api_client):
+    def test_created_at_present(self, authed_api_client, fixture_base_url):
         client, _user_id = authed_api_client
         scrape_api = ScrapeApi(client)
 
-        url = f"{FIXTURE_BASE_URL}/seriouseats/rice_pilaf.html"
+        url = f"{fixture_base_url}/seriouseats/rice_pilaf.html"
         created = scrape_api.create_scrape(CreateScrapeRequest(url=url))
         job = scrape_api.get_scrape(created.id)
-        # created_at should be a timestamp; the generated client returns a datetime.
         assert job.created_at is not None
+        # Sanity: created_at should be within a minute of now (catches e.g. accidentally
+        # populating from a different column).
+        now = datetime.now(timezone.utc)
+        assert abs((now - job.created_at).total_seconds()) < 60
 
     @pytest.mark.xfail(reason="endpoint implemented in Task 5")
-    def test_step_output_endpoint_returns_json(self, authed_api_client, server_url):
+    def test_step_output_endpoint_returns_json(
+        self, authed_api_client, server_url, fixture_base_url
+    ):
         client, _user_id = authed_api_client
         scrape_api = ScrapeApi(client)
 
-        url = f"{FIXTURE_BASE_URL}/seriouseats/rice_pilaf.html"
+        url = f"{fixture_base_url}/seriouseats/rice_pilaf.html"
         created = scrape_api.create_scrape(CreateScrapeRequest(url=url))
-        _wait_terminal(scrape_api, created.id)
+        wait_for_job_completion(scrape_api, created.id)
 
         token = client.configuration.access_token
         resp = requests.get(
@@ -95,14 +87,14 @@ class TestScrapeStatusResponse:
 
     @pytest.mark.xfail(reason="endpoint implemented in Task 5")
     def test_step_output_endpoint_404_for_unknown_step(
-        self, authed_api_client, server_url
+        self, authed_api_client, server_url, fixture_base_url
     ):
         client, _user_id = authed_api_client
         scrape_api = ScrapeApi(client)
 
-        url = f"{FIXTURE_BASE_URL}/seriouseats/rice_pilaf.html"
+        url = f"{fixture_base_url}/seriouseats/rice_pilaf.html"
         created = scrape_api.create_scrape(CreateScrapeRequest(url=url))
-        _wait_terminal(scrape_api, created.id)
+        wait_for_job_completion(scrape_api, created.id)
 
         token = client.configuration.access_token
         resp = requests.get(
@@ -113,15 +105,19 @@ class TestScrapeStatusResponse:
 
     @pytest.mark.xfail(reason="endpoint implemented in Task 5")
     def test_step_output_endpoint_404_for_non_owner(
-        self, authed_api_client, second_authed_api_client, server_url
+        self,
+        authed_api_client,
+        second_authed_api_client,
+        server_url,
+        fixture_base_url,
     ):
         client1, _u1 = authed_api_client
         client2, _u2 = second_authed_api_client
         scrape_api1 = ScrapeApi(client1)
 
-        url = f"{FIXTURE_BASE_URL}/seriouseats/rice_pilaf.html"
+        url = f"{fixture_base_url}/seriouseats/rice_pilaf.html"
         created = scrape_api1.create_scrape(CreateScrapeRequest(url=url))
-        _wait_terminal(scrape_api1, created.id)
+        wait_for_job_completion(scrape_api1, created.id)
 
         token2 = client2.configuration.access_token
         resp = requests.get(
