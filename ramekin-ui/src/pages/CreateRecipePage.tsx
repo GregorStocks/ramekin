@@ -97,6 +97,7 @@ export default function CreateRecipePage() {
         canRetry: false,
         retryCount: 0,
         steps: [],
+        createdAt: new Date(),
       });
 
       // Start polling

@@ -3506,12 +3506,18 @@
           "status",
           "can_retry",
           "retry_count",
-          "steps"
+          "steps",
+          "created_at"
         ],
         "properties": {
           "can_retry": {
             "type": "boolean",
             "description": "Whether this job can be retried"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the job was created"
           },
           "error": {
             "type": [

@@ -38,6 +38,8 @@ pub struct ScrapeJobResponse {
     pub retry_count: i32,
     /// Per-step state for the status page (ordered by pipeline step).
     pub steps: Vec<StepState>,
+    /// When the job was created
+    pub created_at: chrono::DateTime<chrono::Utc>,
 }
 
 #[utoipa::path(
@@ -134,6 +136,7 @@ pub async fn get_scrape(
             can_retry,
             retry_count: job.retry_count,
             steps,
+            created_at: job.created_at,
         }),
     )
         .into_response()
