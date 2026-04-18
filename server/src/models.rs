@@ -201,6 +201,7 @@ pub struct ScrapeJob {
     pub updated_at: DateTime<Utc>,
     pub current_step: Option<String>,
     pub photo_only: bool,
+    pub current_step_started_at: Option<DateTime<Utc>>,
 }
 
 #[derive(Insertable)]
@@ -222,6 +223,10 @@ pub struct StepOutput {
     pub build_id: String,
     pub output: JsonValue,
     pub created_at: DateTime<Utc>,
+    pub duration_ms: Option<i64>,
+    pub summary: Option<String>,
+    pub success: bool,
+    pub error: Option<String>,
 }
 
 #[derive(Insertable)]
@@ -231,6 +236,10 @@ pub struct NewStepOutput {
     pub step_name: String,
     pub build_id: String,
     pub output: JsonValue,
+    pub duration_ms: Option<i64>,
+    pub summary: Option<String>,
+    pub success: bool,
+    pub error: Option<String>,
 }
 
 #[derive(Insertable)]

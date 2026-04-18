@@ -94,6 +94,7 @@ diesel::table! {
         updated_at -> Timestamptz,
         current_step -> Nullable<Varchar>,
         photo_only -> Bool,
+        current_step_started_at -> Nullable<Timestamptz>,
     }
 }
 
@@ -135,6 +136,10 @@ diesel::table! {
         build_id -> Varchar,
         output -> Jsonb,
         created_at -> Timestamptz,
+        duration_ms -> Nullable<Int8>,
+        summary -> Nullable<Text>,
+        success -> Bool,
+        error -> Nullable<Text>,
     }
 }
 

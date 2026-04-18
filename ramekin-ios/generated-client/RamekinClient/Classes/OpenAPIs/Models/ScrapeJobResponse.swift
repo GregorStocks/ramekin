@@ -14,6 +14,8 @@ public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
 
     /** Whether this job can be retried */
     public var canRetry: Bool
+    /** When the job was created */
+    public var createdAt: Date
     /** Error message if failed */
     public var error: String?
     /** Which step failed (for retry logic) */
@@ -26,28 +28,34 @@ public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
     public var retryCount: Int
     /** Current job status (pending, scraping, parsing, completed, failed) */
     public var status: String
+    /** Per-step state for the status page (ordered by pipeline step). */
+    public var steps: [StepState]
     /** URL being scraped (optional for imports) */
     public var url: String?
 
-    public init(canRetry: Bool, error: String? = nil, failedAtStep: String? = nil, id: UUID, recipeId: UUID? = nil, retryCount: Int, status: String, url: String? = nil) {
+    public init(canRetry: Bool, createdAt: Date, error: String? = nil, failedAtStep: String? = nil, id: UUID, recipeId: UUID? = nil, retryCount: Int, status: String, steps: [StepState], url: String? = nil) {
         self.canRetry = canRetry
+        self.createdAt = createdAt
         self.error = error
         self.failedAtStep = failedAtStep
         self.id = id
         self.recipeId = recipeId
         self.retryCount = retryCount
         self.status = status
+        self.steps = steps
         self.url = url
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case canRetry = "can_retry"
+        case createdAt = "created_at"
         case error
         case failedAtStep = "failed_at_step"
         case id
         case recipeId = "recipe_id"
         case retryCount = "retry_count"
         case status
+        case steps
         case url
     }
 
@@ -56,12 +64,14 @@ public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(canRetry, forKey: .canRetry)
+        try container.encode(createdAt, forKey: .createdAt)
         try container.encodeIfPresent(error, forKey: .error)
         try container.encodeIfPresent(failedAtStep, forKey: .failedAtStep)
         try container.encode(id, forKey: .id)
         try container.encodeIfPresent(recipeId, forKey: .recipeId)
         try container.encode(retryCount, forKey: .retryCount)
         try container.encode(status, forKey: .status)
+        try container.encode(steps, forKey: .steps)
         try container.encodeIfPresent(url, forKey: .url)
     }
 }

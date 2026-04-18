@@ -1,11 +1,12 @@
 mod output_store;
+pub mod status;
 pub mod steps;
 
 use crate::db::DbPool;
-use crate::models::{NewScrapeJob, NewStepOutput, ScrapeJob, StepOutput};
+use crate::models::{NewScrapeJob, NewStepOutput, ScrapeJob};
 use crate::photos::load_photo_images;
 use crate::schema::{scrape_jobs, step_outputs, user_tags};
-use chrono::Utc;
+use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use ramekin_core::ai::{AiClient, CachingAiClient};
 use ramekin_core::pipeline::steps::{
@@ -56,7 +57,6 @@ pub enum ScrapeError {
 }
 
 /// Job statuses
-pub const STATUS_PENDING: &str = "pending";
 pub const STATUS_SCRAPING: &str = "scraping";
 pub const STATUS_PARSING: &str = "parsing";
 pub const STATUS_COMPLETED: &str = "completed";
@@ -250,11 +250,13 @@ pub fn create_job_with_html(
     save_step_output(pool, job.id, FetchHtmlStep::NAME, output_json)?;
 
     // Update the job to start from parsing (skip fetch step)
+    let now = Utc::now();
     diesel::update(scrape_jobs::table.find(job.id))
         .set((
             scrape_jobs::status.eq(STATUS_PARSING),
             scrape_jobs::current_step.eq(Some(ExtractRecipeStep::NAME)),
-            scrape_jobs::updated_at.eq(Utc::now()),
+            scrape_jobs::current_step_started_at.eq(Some(now)),
+            scrape_jobs::updated_at.eq(now),
         ))
         .execute(&mut conn)
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
@@ -307,11 +309,13 @@ pub fn create_import_job(
     save_step_output(pool, job.id, FetchImagesStepMeta::NAME, images_json)?;
 
     // Update the job to start from parse_ingredients (skip fetch_html, extract_recipe, fetch_images)
+    let now = Utc::now();
     diesel::update(scrape_jobs::table.find(job.id))
         .set((
             scrape_jobs::status.eq(STATUS_PARSING),
             scrape_jobs::current_step.eq(Some(ParseIngredientsStep::NAME)),
-            scrape_jobs::updated_at.eq(Utc::now()),
+            scrape_jobs::current_step_started_at.eq(Some(now)),
+            scrape_jobs::updated_at.eq(now),
         ))
         .execute(&mut conn)
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
@@ -388,7 +392,7 @@ async fn run_photo_import_job(
     // Update status to "scraping" (extraction phase)
     if let Err(e) = update_status_and_step(&pool, job_id, STATUS_SCRAPING, Some("photo_extract")) {
         tracing::error!("Failed to update job status: {}", e);
-        let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+        let _ = mark_failed(&pool, job_id, "photo_extract", &e.to_string());
         return;
     }
 
@@ -398,7 +402,7 @@ async fn run_photo_import_job(
         Err(e) => {
             tracing::error!("Failed to fetch photos: {}", e);
             let error = e.to_string();
-            let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &error);
+            let _ = mark_failed(&pool, job_id, "photo_extract", &error);
             return;
         }
     };
@@ -408,7 +412,7 @@ async fn run_photo_import_job(
         match ramekin_core::ai::CachingAiClient::from_env() {
             Ok(c) => Arc::new(c),
             Err(e) => {
-                let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+                let _ = mark_failed(&pool, job_id, "photo_extract", &e.to_string());
                 return;
             }
         };
@@ -418,7 +422,7 @@ async fn run_photo_import_job(
             Ok(r) => r,
             Err(e) => {
                 tracing::error!("Photo extraction failed: {}", e);
-                let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+                let _ = mark_failed(&pool, job_id, "photo_extract", &e.to_string());
                 return;
             }
         };
@@ -439,12 +443,12 @@ async fn run_photo_import_job(
     let extract_json = match serde_json::to_value(&extract_output) {
         Ok(j) => j,
         Err(e) => {
-            let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+            let _ = mark_failed(&pool, job_id, "photo_extract", &e.to_string());
             return;
         }
     };
     if let Err(e) = save_step_output(&pool, job_id, ExtractRecipeStep::NAME, extract_json) {
-        let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+        let _ = mark_failed(&pool, job_id, "photo_extract", &e.to_string());
         return;
     }
 
@@ -456,12 +460,12 @@ async fn run_photo_import_job(
     let images_json = match serde_json::to_value(&images_output) {
         Ok(j) => j,
         Err(e) => {
-            let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+            let _ = mark_failed(&pool, job_id, "photo_extract", &e.to_string());
             return;
         }
     };
     if let Err(e) = save_step_output(&pool, job_id, FetchImagesStepMeta::NAME, images_json) {
-        let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+        let _ = mark_failed(&pool, job_id, "photo_extract", &e.to_string());
         return;
     }
 
@@ -470,19 +474,21 @@ async fn run_photo_import_job(
         let mut conn = match pool.get() {
             Ok(c) => c,
             Err(e) => {
-                let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+                let _ = mark_failed(&pool, job_id, "photo_extract", &e.to_string());
                 return;
             }
         };
+        let now = Utc::now();
         if let Err(e) = diesel::update(scrape_jobs::table.find(job_id))
             .set((
                 scrape_jobs::status.eq(STATUS_PARSING),
                 scrape_jobs::current_step.eq(Some(ParseIngredientsStep::NAME)),
-                scrape_jobs::updated_at.eq(Utc::now()),
+                scrape_jobs::current_step_started_at.eq(Some(now)),
+                scrape_jobs::updated_at.eq(now),
             ))
             .execute(&mut conn)
         {
-            let _ = mark_failed(&pool, job_id, STATUS_SCRAPING, &e.to_string());
+            let _ = mark_failed(&pool, job_id, "photo_extract", &e.to_string());
             return;
         }
     }
@@ -506,6 +512,10 @@ pub fn get_job(pool: &DbPool, job_id: Uuid) -> Result<ScrapeJob, ScrapeError> {
 }
 
 /// Update job status and current_step.
+///
+/// Also sets `current_step_started_at` to `NOW()` when a step is provided, or
+/// clears it when the step is cleared. The frontend uses this timestamp to
+/// show how long the currently running step has been executing.
 fn update_status_and_step(
     pool: &DbPool,
     job_id: Uuid,
@@ -516,14 +526,31 @@ fn update_status_and_step(
         .get()
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
-    diesel::update(scrape_jobs::table.find(job_id))
-        .set((
-            scrape_jobs::status.eq(status),
-            scrape_jobs::current_step.eq(current_step),
-            scrape_jobs::updated_at.eq(Utc::now()),
-        ))
-        .execute(&mut conn)
-        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+    let now = Utc::now();
+    match current_step {
+        Some(step) => {
+            diesel::update(scrape_jobs::table.find(job_id))
+                .set((
+                    scrape_jobs::status.eq(status),
+                    scrape_jobs::current_step.eq(Some(step)),
+                    scrape_jobs::current_step_started_at.eq(Some(now)),
+                    scrape_jobs::updated_at.eq(now),
+                ))
+                .execute(&mut conn)
+                .map_err(|e| ScrapeError::Database(e.to_string()))?;
+        }
+        None => {
+            diesel::update(scrape_jobs::table.find(job_id))
+                .set((
+                    scrape_jobs::status.eq(status),
+                    scrape_jobs::current_step.eq::<Option<String>>(None),
+                    scrape_jobs::current_step_started_at.eq::<Option<DateTime<Utc>>>(None),
+                    scrape_jobs::updated_at.eq(now),
+                ))
+                .execute(&mut conn)
+                .map_err(|e| ScrapeError::Database(e.to_string()))?;
+        }
+    }
 
     Ok(())
 }
@@ -539,11 +566,20 @@ fn save_step_output(
         .get()
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
+    let summary = status::step_summary(step_name, &output);
     let new_output = NewStepOutput {
         scrape_job_id: job_id,
         step_name: step_name.to_string(),
         build_id: BUILD_ID.to_string(),
         output,
+        // Pre-populated outputs (HTML capture / photo import / recipe import)
+        // don't run the step, so there's no meaningful duration to record.
+        duration_ms: None,
+        summary,
+        // Pre-populated outputs are always successful — the step didn't run
+        // so there's no failure to record.
+        success: true,
+        error: None,
     };
 
     diesel::insert_into(step_outputs::table)
@@ -554,35 +590,26 @@ fn save_step_output(
     Ok(())
 }
 
-/// Get the most recent step output for a job by step name.
-fn get_latest_step_output(
+/// Mark job as failed.
+///
+/// `step_name` is the real pipeline step name that failed (e.g. `"fetch_html"`,
+/// `"extract_recipe"`, `"photo_extract"`), not a job status string. The status
+/// page and retry logic both key off this value.
+fn mark_failed(
     pool: &DbPool,
     job_id: Uuid,
     step_name: &str,
-) -> Result<Option<StepOutput>, ScrapeError> {
+    error: &str,
+) -> Result<(), ScrapeError> {
     let mut conn = pool
         .get()
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
-    step_outputs::table
-        .filter(step_outputs::scrape_job_id.eq(job_id))
-        .filter(step_outputs::step_name.eq(step_name))
-        .order(step_outputs::created_at.desc())
-        .first::<StepOutput>(&mut conn)
-        .optional()
-        .map_err(|e| ScrapeError::Database(e.to_string()))
-}
-
-/// Mark job as failed.
-fn mark_failed(pool: &DbPool, job_id: Uuid, step: &str, error: &str) -> Result<(), ScrapeError> {
-    let mut conn = pool
-        .get()
-        .map_err(|e| ScrapeError::Database(e.to_string()))?;
-
+    // Leave current_step_started_at set so the status API can show when the failed step started.
     diesel::update(scrape_jobs::table.find(job_id))
         .set((
             scrape_jobs::status.eq(STATUS_FAILED),
-            scrape_jobs::failed_at_step.eq(Some(step)),
+            scrape_jobs::failed_at_step.eq(Some(step_name)),
             scrape_jobs::error_message.eq(Some(error)),
             scrape_jobs::updated_at.eq(Utc::now()),
         ))
@@ -603,6 +630,7 @@ fn mark_completed(pool: &DbPool, job_id: Uuid, recipe_id: Uuid) -> Result<(), Sc
             scrape_jobs::status.eq(STATUS_COMPLETED),
             scrape_jobs::recipe_id.eq(Some(recipe_id)),
             scrape_jobs::current_step.eq::<Option<String>>(None),
+            scrape_jobs::current_step_started_at.eq::<Option<DateTime<Utc>>>(None),
             scrape_jobs::updated_at.eq(Utc::now()),
         ))
         .execute(&mut conn)
@@ -687,7 +715,9 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
 
     // Run pipeline with status updates and OpenTelemetry instrumentation
     let mut current_step_name: Option<String> = Some(first_step.to_string());
-    let mut failed_at_status = STATUS_SCRAPING;
+    // Real step name of the most recently executed step. Used to populate
+    // `scrape_jobs.failed_at_step` if the pipeline ends without a recipe.
+    let mut last_step_name: String = first_step.to_string();
     let mut last_error: Option<String> = None;
 
     while let Some(step_name) = current_step_name.take() {
@@ -705,20 +735,45 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
         } else {
             STATUS_PARSING
         };
-        failed_at_status = step_status;
+        last_step_name = step_name.clone();
 
         // Update job status and current_step before executing
         update_status_and_step(&pool, job_id, step_status, Some(&step_name))?;
 
         // Execute step with OpenTelemetry span
-        let result = execute_step_with_tracing(step, url, &store, &step_name).await;
-
-        // Save output (for both success and failure - useful for debugging)
-        if let Err(e) = store.save_output(&step_name, &result.output) {
-            tracing::warn!("Failed to save output for step {}: {}", step_name, e);
-        }
+        let mut result = execute_step_with_tracing(step, url, &store, &step_name).await;
 
         let meta = step.metadata();
+
+        // Save output (for both success and failure - useful for debugging).
+        // If persistence itself fails we normally fail the step: silently
+        // swallowing the error leaves a "successful" step with no output row,
+        // which makes downstream retries think the step already ran and
+        // produces a deadlock where the pipeline can never make progress.
+        //
+        // Exception: for `continues_on_failure` steps (enrichment), a
+        // persistence failure should NOT terminate the pipeline — otherwise a
+        // transient save error after `save_recipe` has already succeeded
+        // would cause the user to silently lose enrichment for that recipe.
+        // We still mark the step as failed on the result so the persisted row
+        // (and status API) reflect the failure, but we preserve `next_step`
+        // so the chain continues.
+        if let Err(e) = store.save_output(
+            &step_name,
+            &result.output,
+            result.duration_ms as i64,
+            result.success,
+            result.error.as_deref(),
+        ) {
+            let msg = format!("Failed to persist output for step {step_name}: {e}");
+            tracing::error!("{msg}");
+            result.success = false;
+            result.error = Some(msg);
+            if !meta.continues_on_failure {
+                result.next_step = None;
+            }
+        }
+
         let should_continue = result.success || meta.continues_on_failure;
 
         if result.success {
@@ -759,15 +814,15 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
         mark_completed(&pool, job_id, id)?;
     } else if let Some(error) = last_error {
         // Pipeline failed
-        tracing::warn!("Job {} failed at '{}': {}", job_id, failed_at_status, error);
-        mark_failed(&pool, job_id, failed_at_status, &error)?;
+        tracing::warn!("Job {} failed at '{}': {}", job_id, last_step_name, error);
+        mark_failed(&pool, job_id, &last_step_name, &error)?;
     } else {
         // Pipeline ended without a recipe (shouldn't happen in normal flow)
         tracing::warn!("Job {} ended without recipe", job_id);
         mark_failed(
             &pool,
             job_id,
-            failed_at_status,
+            &last_step_name,
             "Pipeline ended without creating recipe",
         )?;
     }
@@ -907,67 +962,79 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
         return Err(ScrapeError::MaxRetriesExceeded);
     }
 
-    // Determine where to resume based on failed_at_step and available outputs
-    let has_fetch_output = get_latest_step_output(pool, job_id, FetchHtmlStep::NAME)?.is_some();
-    let has_extract_output =
-        get_latest_step_output(pool, job_id, ExtractRecipeStep::NAME)?.is_some();
-    let fetch_images_output = get_latest_step_output(pool, job_id, FetchImagesStepMeta::NAME)?;
-    let has_fetch_images_output = fetch_images_output.is_some();
-
-    // For photo-only retries, the loud-failure path makes save_recipe fail
-    // specifically when fetch_images produced an empty photo_ids list. In
-    // that case replaying save_recipe with the same stale output just fails
-    // again. We detect this by inspecting the actual fetch_images output —
-    // not just its existence — so transient save_recipe failures (e.g. DB
-    // errors) still resume at save and don't redundantly re-download photos
-    // or create duplicate Photo rows.
-    let photo_only_empty_fetch = job.photo_only
-        && fetch_images_output
-            .as_ref()
-            .and_then(|o| o.output.get("photo_ids"))
-            .and_then(|v| v.as_array())
-            .map(|arr| arr.is_empty())
-            .unwrap_or(false);
-
-    let (resume_status, resume_step) = match job.failed_at_step.as_deref() {
-        Some(STATUS_SCRAPING) => {
-            // Failed during fetch - restart from fetch
-            (STATUS_SCRAPING, FetchHtmlStep::NAME)
-        }
-        Some(STATUS_PARSING) => {
-            if has_fetch_images_output && !photo_only_empty_fetch {
-                // Have fetch_images output with at least one photo (or this
-                // is a normal rescrape) — try save again
-                (STATUS_PARSING, SaveRecipeStepMeta::NAME)
-            } else if has_extract_output {
-                // Have extract output, try fetch_images
-                (STATUS_PARSING, FetchImagesStepMeta::NAME)
-            } else if has_fetch_output {
-                // Have fetch output, try extract again
-                (STATUS_PARSING, ExtractRecipeStep::NAME)
-            } else {
-                // No outputs, start from beginning
-                (STATUS_SCRAPING, FetchHtmlStep::NAME)
-            }
-        }
-        _ => {
-            // Unknown failure point, start from beginning
-            (STATUS_PENDING, FetchHtmlStep::NAME)
-        }
-    };
+    // Resume at the step that failed. `failed_at_step` holds the real pipeline
+    // step name (see `mark_failed`); if it's missing or not a canonical pipeline
+    // step, fall back to running the whole pipeline from the top.
+    let mut resume_step: String = job
+        .failed_at_step
+        .as_deref()
+        .filter(|name| status::PIPELINE_STEPS.contains(name))
+        .unwrap_or(FetchHtmlStep::NAME)
+        .to_string();
 
     let mut conn = pool
         .get()
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
+    // Photo-only jobs: if the failed step is save_recipe or later but
+    // fetch_images produced an empty photo_ids set, resuming at the failed
+    // step reuses the stale empty fetch_images output and save_recipe rejects
+    // it again — creating an unrecoverable retry loop. Rewind to fetch_images
+    // so it actually retries the image download. Narrowly scoped to
+    // photo-only jobs; full scrapes have their own empty-photo handling.
+    if job.photo_only {
+        let resume_idx = status::PIPELINE_STEPS
+            .iter()
+            .position(|s| *s == resume_step.as_str());
+        let save_idx = status::PIPELINE_STEPS
+            .iter()
+            .position(|s| *s == SaveRecipeStepMeta::NAME);
+        if let (Some(ri), Some(si)) = (resume_idx, save_idx) {
+            if ri >= si {
+                let fetch_images_output: Option<serde_json::Value> = step_outputs::table
+                    .filter(step_outputs::scrape_job_id.eq(job_id))
+                    .filter(step_outputs::step_name.eq(FetchImagesStepMeta::NAME))
+                    .select(step_outputs::output)
+                    .order(step_outputs::created_at.desc())
+                    .first::<serde_json::Value>(&mut conn)
+                    .optional()
+                    .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+                let photo_ids_empty = fetch_images_output
+                    .as_ref()
+                    .and_then(|o: &serde_json::Value| o.get("photo_ids"))
+                    .and_then(|v: &serde_json::Value| v.as_array())
+                    .map(|a: &Vec<serde_json::Value>| a.is_empty())
+                    .unwrap_or(false);
+
+                if photo_ids_empty {
+                    tracing::info!(
+                        job_id = %job_id,
+                        original_resume = %resume_step,
+                        "rewinding photo-only retry to fetch_images (empty photo_ids)"
+                    );
+                    resume_step = FetchImagesStepMeta::NAME.to_string();
+                }
+            }
+        }
+    }
+
+    let resume_status = if resume_step.as_str() == FetchHtmlStep::NAME {
+        STATUS_SCRAPING
+    } else {
+        STATUS_PARSING
+    };
+
+    let now = Utc::now();
     diesel::update(scrape_jobs::table.find(job_id))
         .set((
             scrape_jobs::status.eq(resume_status),
-            scrape_jobs::current_step.eq(Some(resume_step)),
+            scrape_jobs::current_step.eq(Some(resume_step.as_str())),
+            scrape_jobs::current_step_started_at.eq(Some(now)),
             scrape_jobs::failed_at_step.eq::<Option<String>>(None),
             scrape_jobs::error_message.eq::<Option<String>>(None),
             scrape_jobs::retry_count.eq(job.retry_count + 1),
-            scrape_jobs::updated_at.eq(Utc::now()),
+            scrape_jobs::updated_at.eq(now),
         ))
         .execute(&mut conn)
         .map_err(|e| ScrapeError::Database(e.to_string()))?;

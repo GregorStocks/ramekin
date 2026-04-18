@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**capture**](ScrapeApi.md#capture) | **POST** /api/scrape/capture | 
 [**create_scrape**](ScrapeApi.md#create_scrape) | **POST** /api/scrape | 
 [**get_scrape**](ScrapeApi.md#get_scrape) | **GET** /api/scrape/{id} | 
+[**get_step_output**](ScrapeApi.md#get_step_output) | **GET** /api/scrape/{id}/steps/{step_name}/output | 
 [**retry_scrape**](ScrapeApi.md#retry_scrape) | **POST** /api/scrape/{id}/retry | 
 
 
@@ -82,6 +83,35 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::ScrapeJobResponse**](ScrapeJobResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_step_output
+
+> serde_json::Value get_step_output(id, step_name)
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **uuid::Uuid** | Scrape job ID | [required] |
+**step_name** | **String** | Pipeline step name | [required] |
+
+### Return type
+
+[**serde_json::Value**](serde_json::Value.md)
 
 ### Authorization
 

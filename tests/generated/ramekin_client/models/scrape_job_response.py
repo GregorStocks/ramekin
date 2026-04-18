@@ -17,9 +17,11 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
+from ramekin_client.models.step_state import StepState
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,14 +30,16 @@ class ScrapeJobResponse(BaseModel):
     ScrapeJobResponse
     """ # noqa: E501
     can_retry: StrictBool = Field(description="Whether this job can be retried")
+    created_at: datetime = Field(description="When the job was created")
     error: Optional[StrictStr] = Field(default=None, description="Error message if failed")
     failed_at_step: Optional[StrictStr] = Field(default=None, description="Which step failed (for retry logic)")
     id: UUID = Field(description="The scrape job ID")
     recipe_id: Optional[UUID] = Field(default=None, description="Recipe ID if completed successfully")
     retry_count: StrictInt = Field(description="Number of retry attempts")
     status: StrictStr = Field(description="Current job status (pending, scraping, parsing, completed, failed)")
+    steps: List[StepState] = Field(description="Per-step state for the status page (ordered by pipeline step).")
     url: Optional[StrictStr] = Field(default=None, description="URL being scraped (optional for imports)")
-    __properties: ClassVar[List[str]] = ["can_retry", "error", "failed_at_step", "id", "recipe_id", "retry_count", "status", "url"]
+    __properties: ClassVar[List[str]] = ["can_retry", "created_at", "error", "failed_at_step", "id", "recipe_id", "retry_count", "status", "steps", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -76,6 +80,13 @@ class ScrapeJobResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in steps (list)
+        _items = []
+        if self.steps:
+            for _item_steps in self.steps:
+                if _item_steps:
+                    _items.append(_item_steps.to_dict())
+            _dict['steps'] = _items
         # set to None if error (nullable) is None
         # and model_fields_set contains the field
         if self.error is None and "error" in self.model_fields_set:
@@ -109,12 +120,14 @@ class ScrapeJobResponse(BaseModel):
 
         _obj = cls.model_validate({
             "can_retry": obj.get("can_retry"),
+            "created_at": obj.get("created_at"),
             "error": obj.get("error"),
             "failed_at_step": obj.get("failed_at_step"),
             "id": obj.get("id"),
             "recipe_id": obj.get("recipe_id"),
             "retry_count": obj.get("retry_count"),
             "status": obj.get("status"),
+            "steps": [StepState.from_dict(_item) for _item in obj["steps"]] if obj.get("steps") is not None else None,
             "url": obj.get("url")
         })
         return _obj

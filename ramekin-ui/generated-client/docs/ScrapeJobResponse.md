@@ -7,12 +7,14 @@
 Name | Type
 ------------ | -------------
 `canRetry` | boolean
+`createdAt` | Date
 `error` | string
 `failedAtStep` | string
 `id` | string
 `recipeId` | string
 `retryCount` | number
 `status` | string
+`steps` | [Array&lt;StepState&gt;](StepState.md)
 `url` | string
 
 ## Example
@@ -23,12 +25,14 @@ import type { ScrapeJobResponse } from ''
 // TODO: Update the object below with actual values
 const example = {
   "canRetry": null,
+  "createdAt": null,
   "error": null,
   "failedAtStep": null,
   "id": null,
   "recipeId": null,
   "retryCount": null,
   "status": null,
+  "steps": null,
   "url": null,
 } satisfies ScrapeJobResponse
 

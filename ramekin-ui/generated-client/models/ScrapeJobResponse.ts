@@ -13,6 +13,14 @@
  */
 
 import { mapValues } from '../runtime';
+import type { StepState } from './StepState';
+import {
+    StepStateFromJSON,
+    StepStateFromJSONTyped,
+    StepStateToJSON,
+    StepStateToJSONTyped,
+} from './StepState';
+
 /**
  * 
  * @export
@@ -25,6 +33,12 @@ export interface ScrapeJobResponse {
      * @memberof ScrapeJobResponse
      */
     canRetry: boolean;
+    /**
+     * When the job was created
+     * @type {Date}
+     * @memberof ScrapeJobResponse
+     */
+    createdAt: Date;
     /**
      * Error message if failed
      * @type {string}
@@ -62,6 +76,12 @@ export interface ScrapeJobResponse {
      */
     status: string;
     /**
+     * Per-step state for the status page (ordered by pipeline step).
+     * @type {Array<StepState>}
+     * @memberof ScrapeJobResponse
+     */
+    steps: Array<StepState>;
+    /**
      * URL being scraped (optional for imports)
      * @type {string}
      * @memberof ScrapeJobResponse
@@ -74,9 +94,11 @@ export interface ScrapeJobResponse {
  */
 export function instanceOfScrapeJobResponse(value: object): value is ScrapeJobResponse {
     if (!('canRetry' in value) || value['canRetry'] === undefined) return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
     if (!('id' in value) || value['id'] === undefined) return false;
     if (!('retryCount' in value) || value['retryCount'] === undefined) return false;
     if (!('status' in value) || value['status'] === undefined) return false;
+    if (!('steps' in value) || value['steps'] === undefined) return false;
     return true;
 }
 
@@ -91,12 +113,14 @@ export function ScrapeJobResponseFromJSONTyped(json: any, ignoreDiscriminator: b
     return {
         
         'canRetry': json['can_retry'],
+        'createdAt': (new Date(json['created_at'])),
         'error': json['error'] == null ? undefined : json['error'],
         'failedAtStep': json['failed_at_step'] == null ? undefined : json['failed_at_step'],
         'id': json['id'],
         'recipeId': json['recipe_id'] == null ? undefined : json['recipe_id'],
         'retryCount': json['retry_count'],
         'status': json['status'],
+        'steps': ((json['steps'] as Array<any>).map(StepStateFromJSON)),
         'url': json['url'] == null ? undefined : json['url'],
     };
 }
@@ -113,12 +137,14 @@ export function ScrapeJobResponseToJSONTyped(value?: ScrapeJobResponse | null, i
     return {
         
         'can_retry': value['canRetry'],
+        'created_at': value['createdAt'].toISOString(),
         'error': value['error'],
         'failed_at_step': value['failedAtStep'],
         'id': value['id'],
         'recipe_id': value['recipeId'],
         'retry_count': value['retryCount'],
         'status': value['status'],
+        'steps': ((value['steps'] as Array<any>).map(StepStateToJSON)),
         'url': value['url'],
     };
 }

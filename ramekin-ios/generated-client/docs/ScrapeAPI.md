@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**capture**](ScrapeAPI.md#capture) | **POST** /api/scrape/capture | 
 [**createScrape**](ScrapeAPI.md#createscrape) | **POST** /api/scrape | 
 [**getScrape**](ScrapeAPI.md#getscrape) | **GET** /api/scrape/{id} | 
+[**getStepOutput**](ScrapeAPI.md#getstepoutput) | **GET** /api/scrape/{id}/steps/{step_name}/output | 
 [**retryScrape**](ScrapeAPI.md#retryscrape) | **POST** /api/scrape/{id}/retry | 
 
 
@@ -139,6 +140,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ScrapeJobResponse**](ScrapeJobResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getStepOutput**
+```swift
+    open class func getStepOutput(id: UUID, stepName: String, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+```
+
+
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import RamekinClient
+
+let id = 987 // UUID | Scrape job ID
+let stepName = "stepName_example" // String | Pipeline step name
+
+ScrapeAPI.getStepOutput(id: id, stepName: stepName) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **UUID** | Scrape job ID | 
+ **stepName** | **String** | Pipeline step name | 
+
+### Return type
+
+**AnyCodable**
 
 ### Authorization
 

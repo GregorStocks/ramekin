@@ -1,28 +1,16 @@
-import os
-import time
-
 import pytest
 
-from conftest import make_ingredient
+from conftest import (
+    _require_fixture_base_url,
+    make_ingredient,
+    wait_for_job_completion,
+)
 from ramekin_client.api import RecipesApi, ScrapeApi
 from ramekin_client.exceptions import ApiException
 from ramekin_client.models import CreateRecipeRequest, CreateScrapeRequest
 
 
-FIXTURE_BASE_URL = os.environ.get("FIXTURE_BASE_URL")
-if not FIXTURE_BASE_URL:
-    raise ValueError("FIXTURE_BASE_URL environment variable required")
-
-
-def wait_for_job_completion(scrape_api: ScrapeApi, job_id: str, timeout: float = 10.0):
-    """Poll until job reaches a terminal state (completed or failed)."""
-    start = time.time()
-    while time.time() - start < timeout:
-        job = scrape_api.get_scrape(job_id)
-        if job.status in ("completed", "failed"):
-            return job
-        time.sleep(0.1)
-    raise TimeoutError(f"Job {job_id} did not complete within {timeout}s")
+FIXTURE_BASE_URL = _require_fixture_base_url()
 
 
 class TestScrapeSuccess:
@@ -149,7 +137,7 @@ class TestScrapeFailureAtScrapingStep:
         job = wait_for_job_completion(scrape_api, response.id)
 
         assert job.status == "failed"
-        assert job.failed_at_step == "scraping"
+        assert job.failed_at_step == "fetch_html"
         assert job.error is not None
         assert job.can_retry is True
 
@@ -168,7 +156,7 @@ class TestScrapeFailureAtParsingStep:
         job = wait_for_job_completion(scrape_api, response.id)
 
         assert job.status == "failed"
-        assert job.failed_at_step == "parsing"
+        assert job.failed_at_step == "extract_recipe"
         assert job.error is not None
         assert job.can_retry is True
         assert job.recipe_id is None
@@ -188,7 +176,7 @@ class TestScrapeRetry:
 
         job = wait_for_job_completion(scrape_api, response.id)
         assert job.status == "failed"
-        assert job.failed_at_step == "scraping"
+        assert job.failed_at_step == "fetch_html"
         assert job.retry_count == 0
 
         retry_response = scrape_api.retry_scrape(job.id)
@@ -208,14 +196,17 @@ class TestScrapeRetry:
 
         job = wait_for_job_completion(scrape_api, response.id)
         assert job.status == "failed"
-        assert job.failed_at_step == "parsing"
+        assert job.failed_at_step == "extract_recipe"
         assert job.retry_count == 0
 
         scrape_api.retry_scrape(job.id)
 
         job2 = wait_for_job_completion(scrape_api, job.id)
         assert job2.status == "failed"
-        assert job2.failed_at_step == "parsing"
+        assert job2.failed_at_step == "extract_recipe", (
+            f"retry should re-fail at extract_recipe (earliest missing output); "
+            f"got {job2.failed_at_step}"
+        )
         assert job2.retry_count == 1
 
     def test_cannot_retry_completed_job(self, authed_api_client):

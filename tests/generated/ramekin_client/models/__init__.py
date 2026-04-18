@@ -61,6 +61,7 @@ from ramekin_client.models.shopping_list_response import ShoppingListResponse
 from ramekin_client.models.signup_request import SignupRequest
 from ramekin_client.models.signup_response import SignupResponse
 from ramekin_client.models.sort_by import SortBy
+from ramekin_client.models.step_state import StepState
 from ramekin_client.models.sync_create_item import SyncCreateItem
 from ramekin_client.models.sync_created_item import SyncCreatedItem
 from ramekin_client.models.sync_request import SyncRequest

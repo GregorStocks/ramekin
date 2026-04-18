@@ -114,6 +114,46 @@ export class ScrapeApi extends runtime.BaseAPI {
     }
     /**
      */
+    async getStepOutputRaw(requestParameters, initOverrides) {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling getStepOutput().');
+        }
+        if (requestParameters['stepName'] == null) {
+            throw new runtime.RequiredError('stepName', 'Required parameter "stepName" was null or undefined when calling getStepOutput().');
+        }
+        const queryParameters = {};
+        const headerParameters = {};
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+        let urlPath = `/api/scrape/{id}/steps/{step_name}/output`;
+        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+        urlPath = urlPath.replace(`{${"step_name"}}`, encodeURIComponent(String(requestParameters['stepName'])));
+        const response = await this.request({
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+        if (this.isJsonMime(response.headers.get('content-type'))) {
+            return new runtime.JSONApiResponse(response);
+        }
+        else {
+            return new runtime.TextApiResponse(response);
+        }
+    }
+    /**
+     */
+    async getStepOutput(requestParameters, initOverrides) {
+        const response = await this.getStepOutputRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+    /**
+     */
     async retryScrapeRaw(requestParameters, initOverrides) {
         if (requestParameters['id'] == null) {
             throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling retryScrape().');

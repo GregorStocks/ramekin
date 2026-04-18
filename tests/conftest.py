@@ -1,5 +1,6 @@
 import os
 import re
+import time
 import uuid
 
 import pytest
@@ -8,6 +9,33 @@ from query_thresholds import get_thresholds
 from ramekin_client import ApiClient, Configuration
 from ramekin_client.api import AuthApi, PhotosApi, TestingApi
 from ramekin_client.models import Ingredient, Measurement, SignupRequest
+
+
+def _require_fixture_base_url() -> str:
+    """Return the FIXTURE_BASE_URL env var, raising if unset."""
+    base = os.environ.get("FIXTURE_BASE_URL")
+    if not base:
+        raise ValueError("FIXTURE_BASE_URL environment variable is not set")
+    return base
+
+
+@pytest.fixture(scope="session")
+def fixture_base_url() -> str:
+    return _require_fixture_base_url()
+
+
+def wait_for_job_completion(scrape_api, job_id: str, timeout: float = 30.0):
+    """Poll ``get_scrape`` until the job reaches a terminal status.
+
+    Uses monotonic time so clock adjustments don't affect the timeout.
+    """
+    deadline = time.monotonic() + timeout
+    while time.monotonic() < deadline:
+        job = scrape_api.get_scrape(job_id)
+        if job.status in ("completed", "failed"):
+            return job
+        time.sleep(0.25)
+    raise TimeoutError(f"scrape {job_id} did not finish in {timeout}s")
 
 
 def make_ingredient(

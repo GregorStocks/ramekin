@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import title-normalization-test description-generation-test
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import title-normalization-test description-generation-test
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -157,6 +157,10 @@ db-down: ## Stop postgres container
 
 db-clean: db-down ## Stop postgres and remove data
 	@docker rm ramekin-db >/dev/null 2>&1 || true
+
+db-migrate: db-up ## Apply pending diesel migrations against the dev database
+	@cd server && DATABASE_URL=$$(grep '^DATABASE_URL=' ../dev.env | cut -d= -f2-) \
+	    diesel migration run
 
 seed: ## Create test user with sample recipes (requires dev server running)
 	@cd cli && cargo run -q -- seed --username t --password t ../data/dev/seed.paprikarecipes

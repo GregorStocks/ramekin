@@ -2,6 +2,7 @@ pub mod capture;
 pub mod create;
 pub mod get;
 pub mod retry;
+pub mod steps;
 
 use crate::AppState;
 use axum::extract::DefaultBodyLimit;
@@ -14,6 +15,10 @@ pub fn router() -> Router<AppState> {
     Router::new()
         .route("/", post(create::create_scrape))
         .route("/{id}", get(get::get_scrape))
+        .route(
+            "/{id}/steps/{step_name}/output",
+            get(steps::get_step_output),
+        )
         .route("/{id}/retry", post(retry::retry_scrape))
         .route(
             "/capture",
@@ -28,6 +33,7 @@ pub fn router() -> Router<AppState> {
         create::create_scrape,
         get::get_scrape,
         retry::retry_scrape,
+        steps::get_step_output,
     ),
     components(schemas(
         capture::CaptureRequest,

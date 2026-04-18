@@ -6,12 +6,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **can_retry** | **bool** | Whether this job can be retried | 
+**created_at** | **datetime** | When the job was created | 
 **error** | **str** | Error message if failed | [optional] 
 **failed_at_step** | **str** | Which step failed (for retry logic) | [optional] 
 **id** | **UUID** | The scrape job ID | 
 **recipe_id** | **UUID** | Recipe ID if completed successfully | [optional] 
 **retry_count** | **int** | Number of retry attempts | 
 **status** | **str** | Current job status (pending, scraping, parsing, completed, failed) | 
+**steps** | [**List[StepState]**](StepState.md) | Per-step state for the status page (ordered by pipeline step). | 
 **url** | **str** | URL being scraped (optional for imports) | [optional] 
 
 ## Example

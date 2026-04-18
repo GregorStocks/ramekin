@@ -55,6 +55,7 @@ Class | Method | HTTP request | Description
 *ScrapeApi* | [**capture**](docs/ScrapeApi.md#capture) | **POST** /api/scrape/capture | 
 *ScrapeApi* | [**create_scrape**](docs/ScrapeApi.md#create_scrape) | **POST** /api/scrape | 
 *ScrapeApi* | [**get_scrape**](docs/ScrapeApi.md#get_scrape) | **GET** /api/scrape/{id} | 
+*ScrapeApi* | [**get_step_output**](docs/ScrapeApi.md#get_step_output) | **GET** /api/scrape/{id}/steps/{step_name}/output | 
 *ScrapeApi* | [**retry_scrape**](docs/ScrapeApi.md#retry_scrape) | **POST** /api/scrape/{id}/retry | 
 *ShoppingListApi* | [**clear_checked**](docs/ShoppingListApi.md#clear_checked) | **DELETE** /api/shopping-list/clear-checked | 
 *ShoppingListApi* | [**create_items**](docs/ShoppingListApi.md#create_items) | **POST** /api/shopping-list | 
@@ -120,6 +121,7 @@ Class | Method | HTTP request | Description
  - [SignupRequest](docs/SignupRequest.md)
  - [SignupResponse](docs/SignupResponse.md)
  - [SortBy](docs/SortBy.md)
+ - [StepState](docs/StepState.md)
  - [SyncCreateItem](docs/SyncCreateItem.md)
  - [SyncCreatedItem](docs/SyncCreatedItem.md)
  - [SyncRequest](docs/SyncRequest.md)

@@ -94,6 +94,8 @@ pub mod signup_response;
 pub use self::signup_response::SignupResponse;
 pub mod sort_by;
 pub use self::sort_by::SortBy;
+pub mod step_state;
+pub use self::step_state::StepState;
 pub mod sync_create_item;
 pub use self::sync_create_item::SyncCreateItem;
 pub mod sync_created_item;

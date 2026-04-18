@@ -20,6 +20,10 @@ export interface CreateScrapeOperationRequest {
 export interface GetScrapeRequest {
     id: string;
 }
+export interface GetStepOutputRequest {
+    id: string;
+    stepName: string;
+}
 export interface RetryScrapeRequest {
     id: string;
 }
@@ -45,6 +49,12 @@ export declare class ScrapeApi extends runtime.BaseAPI {
     /**
      */
     getScrape(requestParameters: GetScrapeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScrapeJobResponse>;
+    /**
+     */
+    getStepOutputRaw(requestParameters: GetStepOutputRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<any>>;
+    /**
+     */
+    getStepOutput(requestParameters: GetStepOutputRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<any>;
     /**
      */
     retryScrapeRaw(requestParameters: RetryScrapeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RetryScrapeResponse>>;

@@ -16,6 +16,9 @@ pub struct ScrapeJobResponse {
     /// Whether this job can be retried
     #[serde(rename = "can_retry")]
     pub can_retry: bool,
+    /// When the job was created
+    #[serde(rename = "created_at")]
+    pub created_at: String,
     /// Error message if failed
     #[serde(
         rename = "error",
@@ -49,6 +52,9 @@ pub struct ScrapeJobResponse {
     /// Current job status (pending, scraping, parsing, completed, failed)
     #[serde(rename = "status")]
     pub status: String,
+    /// Per-step state for the status page (ordered by pipeline step).
+    #[serde(rename = "steps")]
+    pub steps: Vec<models::StepState>,
     /// URL being scraped (optional for imports)
     #[serde(
         rename = "url",
@@ -62,18 +68,22 @@ pub struct ScrapeJobResponse {
 impl ScrapeJobResponse {
     pub fn new(
         can_retry: bool,
+        created_at: String,
         id: uuid::Uuid,
         retry_count: i32,
         status: String,
+        steps: Vec<models::StepState>,
     ) -> ScrapeJobResponse {
         ScrapeJobResponse {
             can_retry,
+            created_at,
             error: None,
             failed_at_step: None,
             id,
             recipe_id: None,
             retry_count,
             status,
+            steps,
             url: None,
         }
     }

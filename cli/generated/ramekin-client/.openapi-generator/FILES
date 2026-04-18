@@ -59,6 +59,7 @@ docs/ShoppingListResponse.md
 docs/SignupRequest.md
 docs/SignupResponse.md
 docs/SortBy.md
+docs/StepState.md
 docs/SyncCreateItem.md
 docs/SyncCreatedItem.md
 docs/SyncRequest.md
@@ -140,6 +141,7 @@ src/models/shopping_list_response.rs
 src/models/signup_request.rs
 src/models/signup_response.rs
 src/models/sort_by.rs
+src/models/step_state.rs
 src/models/sync_create_item.rs
 src/models/sync_created_item.rs
 src/models/sync_request.rs

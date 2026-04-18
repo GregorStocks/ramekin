@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import type { StepState } from './StepState';
 /**
  *
  * @export
@@ -21,6 +22,12 @@ export interface ScrapeJobResponse {
      * @memberof ScrapeJobResponse
      */
     canRetry: boolean;
+    /**
+     * When the job was created
+     * @type {Date}
+     * @memberof ScrapeJobResponse
+     */
+    createdAt: Date;
     /**
      * Error message if failed
      * @type {string}
@@ -57,6 +64,12 @@ export interface ScrapeJobResponse {
      * @memberof ScrapeJobResponse
      */
     status: string;
+    /**
+     * Per-step state for the status page (ordered by pipeline step).
+     * @type {Array<StepState>}
+     * @memberof ScrapeJobResponse
+     */
+    steps: Array<StepState>;
     /**
      * URL being scraped (optional for imports)
      * @type {string}

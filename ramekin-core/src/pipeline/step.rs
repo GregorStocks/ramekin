@@ -43,10 +43,19 @@ pub trait StepOutputStore: Send + Sync {
     fn get_output(&self, step_name: &str) -> Option<JsonValue>;
 
     /// Save the output from a step.
+    ///
+    /// `success` records whether the step succeeded; `error` carries the
+    /// step's error message when `success == false`. These are persisted
+    /// alongside the output so the status API can surface per-step failures
+    /// for enrichment steps that have `continues_on_failure = true` (the
+    /// overall job completes, but the individual step still failed).
     fn save_output(
         &mut self,
         step_name: &str,
         output: &JsonValue,
+        duration_ms: i64,
+        success: bool,
+        error: Option<&str>,
     ) -> Result<(), Box<dyn Error + Send + Sync>>;
 }
 

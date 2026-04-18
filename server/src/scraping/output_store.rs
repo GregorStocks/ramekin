@@ -11,6 +11,7 @@ use uuid::Uuid;
 use crate::db::DbPool;
 use crate::models::{NewStepOutput, StepOutput};
 use crate::schema::step_outputs;
+use crate::scraping::status::step_summary;
 
 /// Database-backed output store for server pipeline runs.
 ///
@@ -45,6 +46,9 @@ impl StepOutputStore for DbOutputStore<'_> {
         &mut self,
         step_name: &str,
         output: &JsonValue,
+        duration_ms: i64,
+        success: bool,
+        error: Option<&str>,
     ) -> Result<(), Box<dyn Error + Send + Sync>> {
         let mut conn = self
             .pool
@@ -56,6 +60,10 @@ impl StepOutputStore for DbOutputStore<'_> {
             step_name: step_name.to_string(),
             build_id: BUILD_ID.to_string(),
             output: output.clone(),
+            duration_ms: Some(duration_ms),
+            summary: step_summary(step_name, output),
+            success,
+            error: error.map(|s| s.to_string()),
         };
 
         diesel::insert_into(step_outputs::table)
