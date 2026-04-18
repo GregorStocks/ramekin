@@ -233,9 +233,16 @@ fn build_step_states_from_outputs(
 
     for step_name in PIPELINE_STEPS {
         let name = (*step_name).to_string();
-        // Check failed BEFORE checking the output rows, so a failed step with
-        // a persisted output row (execute_step_with_tracing writes outputs
-        // even for failing steps, for debugging) is still rendered as failed.
+        // Branch order matters:
+        //   1. failed_at_step — a failed step must render as "failed" even if
+        //      execute_step_with_tracing persisted a partial output row for
+        //      debugging.
+        //   2. current_step (when not terminal) — on a retry, a previously
+        //      failed step has a stale output row from the prior attempt; the
+        //      live current_step must win so the retry renders as "running"
+        //      instead of the stale "completed".
+        //   3. Output row present → "completed".
+        //   4. Otherwise → "pending".
         if failed_at_step == Some(name.as_str()) {
             let stored = by_name.get(&name);
             let finished_at = stored.map(|(_, created_at, _)| *created_at);
@@ -256,6 +263,17 @@ fn build_step_states_from_outputs(
                 error: job_error_message.map(|s| s.to_string()),
                 has_output: stored.is_some(),
             });
+        } else if !terminal && current_step == Some(name.as_str()) {
+            states.push(StepState {
+                name: name.clone(),
+                status: "running".to_string(),
+                started_at: current_step_started_at,
+                finished_at: None,
+                duration_ms: None,
+                summary: None,
+                error: None,
+                has_output: false,
+            });
         } else if let Some((output, created_at, duration_ms)) = by_name.get(&name) {
             let finished_at = *created_at;
             let started_at = duration_ms
@@ -270,17 +288,6 @@ fn build_step_states_from_outputs(
                 summary: step_summary(&name, output),
                 error: None,
                 has_output: true,
-            });
-        } else if !terminal && current_step == Some(name.as_str()) {
-            states.push(StepState {
-                name: name.clone(),
-                status: "running".to_string(),
-                started_at: current_step_started_at,
-                finished_at: None,
-                duration_ms: None,
-                summary: None,
-                error: None,
-                has_output: false,
             });
         } else {
             states.push(StepState {
@@ -516,5 +523,47 @@ mod tests {
         assert_eq!(save.finished_at, Some(finished));
         assert_eq!(save.duration_ms, Some(1000));
         assert_eq!(save.error.as_deref(), Some("save failed: no photo ids"));
+    }
+
+    #[test]
+    fn current_running_step_overrides_stale_output_row() {
+        // Scenario: a previous attempt for "fetch_html" left an output row
+        // behind, and the retry is now re-running that step. The status
+        // should be "running", not "completed" — the live current_step must
+        // win over the stale output row.
+        let stale_finished = DateTime::parse_from_rfc3339("2025-01-01T00:00:05Z")
+            .unwrap()
+            .with_timezone(&Utc);
+        let retry_started = DateTime::parse_from_rfc3339("2025-01-01T00:01:00Z")
+            .unwrap()
+            .with_timezone(&Utc);
+        let outputs = vec![(
+            "fetch_html".to_string(),
+            json!({ "html": "old" }),
+            stale_finished,
+            Some(123),
+        )];
+
+        let states = build_step_states_from_outputs(
+            outputs,
+            "scraping",
+            Some("fetch_html"),
+            Some(retry_started),
+            None,
+            None,
+        );
+
+        let fetch_html = states
+            .iter()
+            .find(|s| s.name == "fetch_html")
+            .expect("fetch_html state present");
+        assert_eq!(
+            fetch_html.status, "running",
+            "current_step should override stale output row on retry"
+        );
+        assert_eq!(fetch_html.started_at, Some(retry_started));
+        assert_eq!(fetch_html.finished_at, None);
+        assert_eq!(fetch_html.duration_ms, None);
+        assert!(!fetch_html.has_output);
     }
 }
