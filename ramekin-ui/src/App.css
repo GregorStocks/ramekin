@@ -3504,7 +3504,7 @@ textarea:focus-visible {
   gap: 0.75rem;
 }
 
-.status-pill {
+.scrape-status-page .status-pill {
   display: inline-block;
   padding: 0.2rem 0.625rem;
   border-radius: 999px;
@@ -3516,32 +3516,32 @@ textarea:focus-visible {
   text-transform: capitalize;
 }
 
-.status-pill[data-status="pending"],
-.status-pill[data-status="scraping"],
-.status-pill[data-status="parsing"] {
+.scrape-status-page .status-pill[data-status="pending"],
+.scrape-status-page .status-pill[data-status="scraping"],
+.scrape-status-page .status-pill[data-status="parsing"] {
   background: var(--accent-wash);
   color: var(--accent-press);
   border-color: color-mix(in oklab, var(--accent) 45%, var(--border-hairline));
 }
 
-.status-pill[data-status="completed"] {
+.scrape-status-page .status-pill[data-status="completed"] {
   background: var(--accent-wash);
   color: var(--accent-press);
   border-color: color-mix(in oklab, var(--accent) 45%, var(--border-hairline));
 }
 
-.status-pill[data-status="failed"] {
+.scrape-status-page .status-pill[data-status="failed"] {
   background: var(--danger-wash);
   color: var(--danger);
   border-color: color-mix(in oklab, var(--danger) 45%, var(--border-hairline));
 }
 
-.elapsed {
+.scrape-status-page .elapsed {
   color: var(--text-faint);
   font-size: 0.85rem;
 }
 
-.scrape-poll-error {
+.scrape-status-page .scrape-poll-error {
   margin-bottom: 1rem;
   padding: 0.5rem 0.75rem;
   background: var(--danger-wash);
@@ -3552,7 +3552,7 @@ textarea:focus-visible {
   font-size: 0.85rem;
 }
 
-.error-banner {
+.scrape-status-page .error-banner {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -3566,11 +3566,11 @@ textarea:focus-visible {
   color: var(--danger);
 }
 
-.error-banner > div {
+.scrape-status-page .error-banner > div {
   flex: 1;
 }
 
-.step-list {
+.scrape-status-page .step-list {
   list-style: none;
   padding: 0;
   margin: 0 0 1.5rem;
@@ -3579,13 +3579,13 @@ textarea:focus-visible {
   gap: 0.25rem;
 }
 
-.step {
+.scrape-status-page .step {
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-sm);
   background: var(--surface-1);
 }
 
-.step-row {
+.scrape-status-page .step-row {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -3599,37 +3599,37 @@ textarea:focus-visible {
   cursor: pointer;
 }
 
-.step-row:disabled {
+.scrape-status-page .step-row:disabled {
   cursor: default;
 }
 
-.step-row:not(:disabled):hover {
+.scrape-status-page .step-row:not(:disabled):hover {
   background: var(--surface-2);
 }
 
-.step-icon {
+.scrape-status-page .step-icon {
   font-size: 1rem;
   width: 1.25rem;
   text-align: center;
   flex-shrink: 0;
 }
 
-.step-running .step-icon {
+.scrape-status-page .step-running .step-icon {
   color: var(--accent);
   display: inline-block;
   animation: scrape-step-spin 1.2s linear infinite;
 }
 
-.step-completed .step-icon {
+.scrape-status-page .step-completed .step-icon {
   color: var(--accent);
 }
 
-.step-failed .step-icon {
+.scrape-status-page .step-failed .step-icon {
   color: var(--danger);
 }
 
-.step-skipped .step-icon,
-.step-pending .step-icon {
+.scrape-status-page .step-skipped .step-icon,
+.scrape-status-page .step-pending .step-icon {
   color: var(--text-faint);
 }
 
@@ -3642,19 +3642,19 @@ textarea:focus-visible {
   }
 }
 
-.step-name {
+.scrape-status-page .step-name {
   font-weight: 500;
   flex-shrink: 0;
 }
 
-.step-duration {
+.scrape-status-page .step-duration {
   color: var(--text-faint);
   font-size: 0.8rem;
   font-variant-numeric: tabular-nums;
   flex-shrink: 0;
 }
 
-.step-summary {
+.scrape-status-page .step-summary {
   color: var(--text-muted);
   font-size: 0.85rem;
   flex: 1;
@@ -3664,24 +3664,24 @@ textarea:focus-visible {
   white-space: nowrap;
 }
 
-.step-expand {
+.scrape-status-page .step-expand {
   margin-left: auto;
   color: var(--text-faint);
   font-size: 0.85rem;
 }
 
-.step-error {
+.scrape-status-page .step-error {
   padding: 0.5rem 0.875rem 0.625rem 2.75rem;
   color: var(--danger);
   font-size: 0.85rem;
 }
 
-.step-output {
+.scrape-status-page .step-output {
   padding: 0.5rem 0.875rem 0.75rem 2.75rem;
   border-top: 1px solid var(--border-hairline);
 }
 
-.step-output pre {
+.scrape-status-page .step-output pre {
   margin: 0;
   padding: 0.75rem;
   background: var(--surface-2);
@@ -3692,13 +3692,13 @@ textarea:focus-visible {
   max-height: 500px;
 }
 
-.terminal-actions {
+.scrape-status-page .terminal-actions {
   display: flex;
   justify-content: flex-end;
   margin-top: 1rem;
 }
 
-.terminal-actions .view-recipe {
+.scrape-status-page .terminal-actions .view-recipe {
   font-size: 1rem;
   padding: 0.625rem 1.25rem;
 }

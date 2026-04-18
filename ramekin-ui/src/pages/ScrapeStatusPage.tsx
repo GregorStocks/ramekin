@@ -6,7 +6,7 @@ import {
   Show,
   For,
 } from "solid-js";
-import { createStore } from "solid-js/store";
+import { createStore, produce } from "solid-js/store";
 import { useNavigate, useParams, A } from "@solidjs/router";
 import type { ScrapeJobResponse, StepState } from "ramekin-client";
 
@@ -21,7 +21,6 @@ interface ExpandedOutput {
   loading: boolean;
   error?: string;
   output?: unknown;
-  hasOutput: boolean;
 }
 
 function formatDuration(ms: number | null | undefined): string {
@@ -76,13 +75,14 @@ export default function ScrapeStatusPage() {
     {},
   );
 
-  let pollInterval: ReturnType<typeof setInterval> | null = null;
+  let pollTimer: ReturnType<typeof setTimeout> | null = null;
   let tickInterval: ReturnType<typeof setInterval> | null = null;
+  let cancelled = false;
 
   const stopPolling = () => {
-    if (pollInterval) {
-      clearInterval(pollInterval);
-      pollInterval = null;
+    if (pollTimer !== null) {
+      clearTimeout(pollTimer);
+      pollTimer = null;
     }
   };
 
@@ -91,31 +91,45 @@ export default function ScrapeStatusPage() {
     if (!id) return;
     try {
       const resp = await getScrapeApi().getScrape({ id });
+      if (cancelled) return;
       setJob(resp);
       setPollError(null);
-      if (TERMINAL_STATUSES.has(resp.status)) {
-        stopPolling();
-      }
     } catch (err) {
+      if (cancelled) return;
       const message = await extractApiError(err, "Failed to load scrape");
       setPollError(message);
     }
   };
 
-  const startPolling = () => {
-    stopPolling();
-    pollInterval = setInterval(() => {
-      void poll();
+  const schedulePoll = () => {
+    if (cancelled) return;
+    pollTimer = setTimeout(async () => {
+      await poll();
+      const current = job();
+      if (!cancelled && current && !TERMINAL_STATUSES.has(current.status)) {
+        schedulePoll();
+      }
     }, POLL_INTERVAL_MS);
   };
 
+  const startPolling = () => {
+    stopPolling();
+    schedulePoll();
+  };
+
   onMount(() => {
-    void poll();
-    startPolling();
+    void (async () => {
+      await poll();
+      const current = job();
+      if (!cancelled && current && !TERMINAL_STATUSES.has(current.status)) {
+        startPolling();
+      }
+    })();
     tickInterval = setInterval(() => setNow(Date.now()), 1000);
   });
 
   onCleanup(() => {
+    cancelled = true;
     stopPolling();
     if (tickInterval) {
       clearInterval(tickInterval);
@@ -129,19 +143,23 @@ export default function ScrapeStatusPage() {
     const name = step.name;
     const existing = expanded[name];
     if (existing) {
-      setExpanded(name, undefined as unknown as ExpandedOutput);
+      setExpanded(
+        produce((s) => {
+          delete s[name];
+        }),
+      );
       return;
     }
-    setExpanded(name, { loading: true, hasOutput: true });
+    setExpanded(name, { loading: true });
     try {
       const output = await getScrapeApi().getStepOutput({
         id,
         stepName: name,
       });
-      setExpanded(name, { loading: false, output, hasOutput: true });
+      setExpanded(name, { loading: false, output });
     } catch (err) {
       const message = await extractApiError(err, "Failed to load step output");
-      setExpanded(name, { loading: false, error: message, hasOutput: true });
+      setExpanded(name, { loading: false, error: message });
     }
   };
 
@@ -152,9 +170,13 @@ export default function ScrapeStatusPage() {
     try {
       await getScrapeApi().retryScrape({ id });
       // Clear any expanded outputs since we're starting over.
-      for (const key of Object.keys(expanded)) {
-        setExpanded(key, undefined as unknown as ExpandedOutput);
-      }
+      setExpanded(
+        produce((s) => {
+          for (const key of Object.keys(s)) {
+            delete s[key];
+          }
+        }),
+      );
       await poll();
       startPolling();
     } catch (err) {
