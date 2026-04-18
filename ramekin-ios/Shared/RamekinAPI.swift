@@ -348,13 +348,15 @@ class RamekinAPI {
         updateGeneratedClientConfig()
     }
 
-    // MARK: - Scraping
-
     /// Submit a URL for scraping (async job). Uses a short timeout because the
     /// endpoint just enqueues a job and must return quickly — share extensions
     /// have a tight memory/time budget before iOS terminates them.
     static let scrapeSubmitTimeout: TimeInterval = 15
+}
 
+// MARK: - Scraping
+
+extension RamekinAPI {
     func scrapeURL(_ urlString: String) async throws -> ScrapeResponse {
         logger.log("scrapeURL called with: \(urlString)")
         let body = try JSONEncoder().encode(ScrapeRequest(url: urlString))
@@ -379,9 +381,11 @@ class RamekinAPI {
         )
         return try JSONDecoder().decode(ScrapeJobStatus.self, from: data)
     }
+}
 
-    // MARK: - Connection Test
+// MARK: - Connection Test
 
+extension RamekinAPI {
     /// Test the connection to the server. Returns true on 200, false on any
     /// other HTTP status; rethrows network/URL-level errors.
     func testConnection() async throws -> Bool {
