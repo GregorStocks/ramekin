@@ -8,6 +8,8 @@ import { extractApiError, extractImageFile } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 import type { Ingredient, ScrapeJobResponse } from "ramekin-client";
 
+declare const __EXTERNAL_URL__: string;
+
 export default function CreateRecipePage() {
   usePageTitle(() => "New Recipe");
   const navigate = useNavigate();
@@ -62,7 +64,11 @@ export default function CreateRecipePage() {
     const code = bookmarkletSource
       .replace("__ORIGIN__", origin)
       .replace("__TOKEN__", userToken)
-      .replace("__API__", encodeURIComponent(apiOrigin));
+      .replace("__API__", encodeURIComponent(apiOrigin))
+      .replace(
+        "__EXTERNAL__",
+        encodeURIComponent(__EXTERNAL_URL__.replace(/\/+$/, "")),
+      );
     // Minify: remove newlines, collapse whitespace
     const minified = code
       .replace(/\n\s*/g, "")
