@@ -759,6 +759,23 @@ def test_search_accent_insensitive(authed_api_client):
     assert {r.title for r in response.recipes} == {"Crème Brûlée"}
 
 
+def test_create_recipe_rejects_invalid_tag_name(authed_api_client):
+    """Invalid hierarchical tag names are rejected when creating a recipe."""
+    client, _ = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    with pytest.raises(ApiException) as exc_info:
+        recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title="bad tags",
+                instructions="none",
+                ingredients=[make_ingredient(item="water", amount="1", unit="cup")],
+                tags=["a:b:c"],
+            )
+        )
+    assert exc_info.value.status == 400
+
+
 def test_filter_by_single_tag(authed_api_client):
     """Test filtering by a single tag."""
     client, user_id = authed_api_client

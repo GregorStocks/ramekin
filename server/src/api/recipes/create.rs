@@ -87,6 +87,20 @@ pub async fn create_recipe(
 
     let tags = request.content.tags;
 
+    // Validate all tag names before doing any DB work
+    for tag_name in &tags {
+        let name = tag_name.trim();
+        if let Err(err) = ramekin_core::validate_tag_name(name) {
+            return (
+                StatusCode::BAD_REQUEST,
+                Json(ErrorResponse {
+                    error: err.message().to_string(),
+                }),
+            )
+                .into_response();
+        }
+    }
+
     // Use a transaction to create recipe + version atomically
     let result: Result<Uuid, diesel::result::Error> = conn.transaction(|conn| {
         // 1. Create the recipe row
