@@ -19,7 +19,7 @@ import json
 
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,8 +31,10 @@ class TagItem(BaseModel):
     created_at: datetime
     id: UUID
     name: StrictStr
+    namespace: Optional[StrictStr] = Field(default=None, description="Namespace portion for `namespace:value`-shaped names, else null.")
     recipe_count: StrictInt = Field(description="Number of recipes using this tag")
-    __properties: ClassVar[List[str]] = ["created_at", "id", "name", "recipe_count"]
+    value: StrictStr = Field(description="Value portion. Equals `name` for flat tags.")
+    __properties: ClassVar[List[str]] = ["created_at", "id", "name", "namespace", "recipe_count", "value"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -73,6 +75,11 @@ class TagItem(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if namespace (nullable) is None
+        # and model_fields_set contains the field
+        if self.namespace is None and "namespace" in self.model_fields_set:
+            _dict['namespace'] = None
+
         return _dict
 
     @classmethod
@@ -88,7 +95,9 @@ class TagItem(BaseModel):
             "created_at": obj.get("created_at"),
             "id": obj.get("id"),
             "name": obj.get("name"),
-            "recipe_count": obj.get("recipe_count")
+            "namespace": obj.get("namespace"),
+            "recipe_count": obj.get("recipe_count"),
+            "value": obj.get("value")
         })
         return _obj
 

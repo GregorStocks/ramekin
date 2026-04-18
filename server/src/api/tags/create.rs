@@ -45,11 +45,11 @@ pub async fn create_tag(
 ) -> impl IntoResponse {
     let name = request.name.trim();
 
-    if name.is_empty() {
+    if let Err(err) = ramekin_core::validate_tag_name(name) {
         return (
             StatusCode::BAD_REQUEST,
             Json(ErrorResponse {
-                error: "Tag name cannot be empty".to_string(),
+                error: err.message().to_string(),
             }),
         )
             .into_response();

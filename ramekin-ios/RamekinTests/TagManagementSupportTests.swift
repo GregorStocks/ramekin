@@ -23,8 +23,8 @@ final class TagManagementSupportTests: XCTestCase {
         let breakfastId = UUID()
         let dinnerId = UUID()
         let tags = [
-            TagItem(createdAt: Date(), id: dinnerId, name: "Dinner", recipeCount: 3),
-            TagItem(createdAt: Date(), id: breakfastId, name: "Breakfast", recipeCount: 1)
+            TagItem(createdAt: Date(), id: dinnerId, name: "Dinner", namespace: nil, recipeCount: 3, value: "Dinner"),
+            TagItem(createdAt: Date(), id: breakfastId, name: "Breakfast", namespace: nil, recipeCount: 1, value: "Breakfast")
         ]
 
         let renamed = TagManagementSupport.renamedTags(tags, id: dinnerId, newName: "Appetizer")
@@ -37,8 +37,8 @@ final class TagManagementSupportTests: XCTestCase {
         let firstId = UUID()
         let secondId = UUID()
         let tags = [
-            TagItem(createdAt: Date(), id: firstId, name: "Dinner", recipeCount: 3),
-            TagItem(createdAt: Date(), id: secondId, name: "Quick", recipeCount: 2)
+            TagItem(createdAt: Date(), id: firstId, name: "Dinner", namespace: nil, recipeCount: 3, value: "Dinner"),
+            TagItem(createdAt: Date(), id: secondId, name: "Quick", namespace: nil, recipeCount: 2, value: "Quick")
         ]
 
         let filtered = TagManagementSupport.removingTag(tags, id: firstId)

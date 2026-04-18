@@ -230,7 +230,26 @@ pub async fn update_recipe(
         .photo_ids
         .map(|ids| ids.into_iter().map(Some).collect())
         .unwrap_or(cur_photo_ids);
-    let new_tags: Vec<String> = request.tags.unwrap_or(cur_tags);
+    let new_tags: Vec<String> = match request.tags {
+        Some(tags) => {
+            // Normalize and validate before any DB work so the trimmed
+            // form is what lands in user_tags.
+            let tags: Vec<String> = tags.into_iter().map(|t| t.trim().to_string()).collect();
+            for tag_name in &tags {
+                if let Err(err) = ramekin_core::validate_tag_name(tag_name) {
+                    return (
+                        StatusCode::BAD_REQUEST,
+                        Json(ErrorResponse {
+                            error: err.message().to_string(),
+                        }),
+                    )
+                        .into_response();
+                }
+            }
+            tags
+        }
+        None => cur_tags,
+    };
     let new_servings = request.servings.unwrap_or(cur_servings);
     let new_prep_time = request.prep_time.unwrap_or(cur_prep_time);
     let new_cook_time = request.cook_time.unwrap_or(cur_cook_time);

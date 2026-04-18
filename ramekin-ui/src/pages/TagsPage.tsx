@@ -5,6 +5,7 @@ import Modal from "../components/Modal";
 import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 import type { TagItem } from "ramekin-client";
+import { groupTags, parseTag } from "../utils/tagHierarchy";
 
 export default function TagsPage() {
   usePageTitle(() => "Tags");
@@ -12,6 +13,13 @@ export default function TagsPage() {
   const { getTagsApi, refreshTags } = useAuth();
 
   const [tags, setTags] = createSignal<TagItem[]>([]);
+  const groupedTags = () => {
+    const byName = new Map(tags().map((t) => [t.name, t] as const));
+    return groupTags(tags().map((t) => t.name)).map((group) => ({
+      namespace: group.namespace,
+      items: group.tags.map((name) => byName.get(name)!).filter(Boolean),
+    }));
+  };
   const [loading, setLoading] = createSignal(true);
   const [error, setError] = createSignal<string | null>(null);
 
@@ -138,70 +146,87 @@ export default function TagsPage() {
 
       <Show when={!loading() && tags().length > 0}>
         <div class="tags-list">
-          <For each={tags()}>
-            {(tag) => (
-              <div class="tag-row">
-                <Show
-                  when={editingId() === tag.id}
-                  fallback={
-                    <>
-                      <span
-                        class="tag-name"
-                        onClick={() => navigateToFiltered(tag.name)}
-                        title="Click to view recipes with this tag"
-                      >
-                        {tag.name}
-                      </span>
-                      <span class="tag-count">
-                        {tag.recipeCount}{" "}
-                        {tag.recipeCount === 1 ? "recipe" : "recipes"}
-                      </span>
-                      <div class="tag-actions">
-                        <button
-                          class="btn btn-small"
-                          onClick={() => startEditing(tag)}
+          <For each={groupedTags()}>
+            {(group) => (
+              <section class="tags-group">
+                <h3 class="tags-group-label">
+                  {group.namespace ?? "Uncategorized"}
+                </h3>
+                <For each={group.items}>
+                  {(tag) => {
+                    const parsed = parseTag(tag.name);
+                    return (
+                      <div class="tag-row">
+                        <Show
+                          when={editingId() === tag.id}
+                          fallback={
+                            <>
+                              <span
+                                class="tag-name"
+                                onClick={() => navigateToFiltered(tag.name)}
+                                title="Click to view recipes with this tag"
+                              >
+                                <Show when={parsed.namespace}>
+                                  <span class="tag-chip-ns">
+                                    {parsed.namespace}:
+                                  </span>
+                                </Show>
+                                {parsed.value}
+                              </span>
+                              <span class="tag-count">
+                                {tag.recipeCount}{" "}
+                                {tag.recipeCount === 1 ? "recipe" : "recipes"}
+                              </span>
+                              <div class="tag-actions">
+                                <button
+                                  class="btn btn-small"
+                                  onClick={() => startEditing(tag)}
+                                >
+                                  Rename
+                                </button>
+                                <button
+                                  class="btn btn-small btn-danger"
+                                  onClick={() => confirmDelete(tag)}
+                                >
+                                  Delete
+                                </button>
+                              </div>
+                            </>
+                          }
                         >
-                          Rename
-                        </button>
-                        <button
-                          class="btn btn-small btn-danger"
-                          onClick={() => confirmDelete(tag)}
-                        >
-                          Delete
-                        </button>
+                          <input
+                            type="text"
+                            class="tag-edit-input"
+                            value={editName()}
+                            onInput={(e) => setEditName(e.currentTarget.value)}
+                            onKeyDown={(e) => handleKeyDown(e, tag.id)}
+                            autofocus
+                          />
+                          <Show when={editError()}>
+                            <span class="edit-error">{editError()}</span>
+                          </Show>
+                          <div class="tag-actions">
+                            <button
+                              class="btn btn-small btn-primary"
+                              onClick={() => handleRename(tag.id)}
+                              disabled={saving()}
+                            >
+                              {saving() ? "Saving..." : "Save"}
+                            </button>
+                            <button
+                              class="btn btn-small"
+                              onClick={cancelEditing}
+                              disabled={saving()}
+                            >
+                              Cancel
+                            </button>
+                          </div>
+                        </Show>
                       </div>
-                    </>
-                  }
-                >
-                  <input
-                    type="text"
-                    class="tag-edit-input"
-                    value={editName()}
-                    onInput={(e) => setEditName(e.currentTarget.value)}
-                    onKeyDown={(e) => handleKeyDown(e, tag.id)}
-                    autofocus
-                  />
-                  <Show when={editError()}>
-                    <span class="edit-error">{editError()}</span>
-                  </Show>
-                  <div class="tag-actions">
-                    <button
-                      class="btn btn-small btn-primary"
-                      onClick={() => handleRename(tag.id)}
-                      disabled={saving()}
-                    >
-                      {saving() ? "Saving..." : "Save"}
-                    </button>
-                    <button
-                      class="btn btn-small"
-                      onClick={cancelEditing}
-                      disabled={saving()}
-                    >
-                      Cancel
-                    </button>
-                  </div>
-                </Show>
-              </div>
+                    );
+                  }}
+                </For>
+              </section>
             )}
           </For>
         </div>

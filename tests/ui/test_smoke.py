@@ -306,3 +306,70 @@ def test_generate_ai_photo_from_recipe_detail(page: Page, ui_url: str, api_url: 
     expect(page.locator(".recipe-photos img")).to_have_count(1)
     page.get_by_text("Version History").click()
     expect(page.locator(".version-source-badge").first).to_have_text("AI Photo")
+
+
+def test_cookbook_grouped_tag_filter(page: Page, ui_url: str, api_url: str):
+    """Tags filter panel groups tags by namespace and filters correctly."""
+    username = f"ui_tags_{uuid.uuid4().hex[:8]}"
+    password = "testpass123"
+    config = Configuration(host=api_url)
+
+    with ApiClient(config) as client:
+        auth_api = AuthApi(client)
+        signup = auth_api.signup(SignupRequest(username=username, password=password))
+
+    authed_config = Configuration(host=api_url)
+    authed_config.access_token = signup.token
+
+    with ApiClient(authed_config) as client:
+        recipes_api = RecipesApi(client)
+        recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title="Chicken dish",
+                instructions="cook it",
+                ingredients=[
+                    Ingredient(
+                        item="chicken",
+                        measurements=[Measurement(amount="1", unit="lb")],
+                    )
+                ],
+                tags=["ingredient:chicken", "course:dinner"],
+            )
+        )
+        recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title="Morning oats",
+                instructions="cook them",
+                ingredients=[
+                    Ingredient(
+                        item="oats",
+                        measurements=[Measurement(amount="1", unit="cup")],
+                    )
+                ],
+                tags=["course:breakfast", "quick"],
+            )
+        )
+
+    page.goto(ui_url)
+    page.fill("input[type='text']", username)
+    page.fill("input[type='password']", password)
+    page.click("button[type='submit']")
+    page.wait_for_selector(".recipe-card")
+
+    # Grouped sections visible.
+    expect(
+        page.locator(".cookbook-filter-tag-group summary", has_text="course")
+    ).to_be_visible()
+    expect(
+        page.locator(".cookbook-filter-tag-group summary", has_text="ingredient")
+    ).to_be_visible()
+    expect(
+        page.locator(".cookbook-filter-tag-group summary", has_text="Uncategorized")
+    ).to_be_visible()
+
+    # Clicking the "chicken" chip (under the ingredient namespace) filters
+    # the recipes. The chip label renders as "<span>ingredient:</span>chicken"
+    # so the accessible name includes the full text "ingredient:chicken".
+    page.locator(".filter-chip", has_text="chicken").click()
+    expect(page.get_by_text("Chicken dish")).to_be_visible()
+    expect(page.locator(".recipe-card h3", has_text="Morning oats")).to_have_count(0)

@@ -38,7 +38,9 @@ class TestTagItem(unittest.TestCase):
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 id = '',
                 name = '',
-                recipe_count = 56
+                namespace = '',
+                recipe_count = 56,
+                value = ''
             )
         else:
             return TagItem(
@@ -46,6 +48,7 @@ class TestTagItem(unittest.TestCase):
                 id = '',
                 name = '',
                 recipe_count = 56,
+                value = '',
         )
         """
 

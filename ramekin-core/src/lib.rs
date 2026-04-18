@@ -8,6 +8,7 @@ pub mod ingredient_categorizer;
 pub mod ingredient_parser;
 pub mod metric_weights;
 pub mod pipeline;
+pub mod tags;
 pub mod types;
 pub mod volume_to_weight;
 
@@ -19,6 +20,9 @@ pub use http::{
     MockResponse,
 };
 pub use image::{fetch_and_validate_image, validate_image, FetchedImage, MAX_FILE_SIZE};
+pub use tags::{
+    format_tag, parse_tag, validate_tag_name, ParsedTag, TagNameError, SEEDED_NAMESPACES,
+};
 pub use types::{
     EnrichAutoTagOutput, EnrichGeneratePhotoOutput, EnrichNormalizeIngredientsOutput,
     ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod, FailedImageFetch, FetchHtmlOutput,

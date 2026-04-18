@@ -19,18 +19,37 @@ pub struct TagItem {
     pub id: uuid::Uuid,
     #[serde(rename = "name")]
     pub name: String,
+    /// Namespace portion for `namespace:value`-shaped names, else null.
+    #[serde(
+        rename = "namespace",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub namespace: Option<Option<String>>,
     /// Number of recipes using this tag
     #[serde(rename = "recipe_count")]
     pub recipe_count: i64,
+    /// Value portion. Equals `name` for flat tags.
+    #[serde(rename = "value")]
+    pub value: String,
 }
 
 impl TagItem {
-    pub fn new(created_at: String, id: uuid::Uuid, name: String, recipe_count: i64) -> TagItem {
+    pub fn new(
+        created_at: String,
+        id: uuid::Uuid,
+        name: String,
+        recipe_count: i64,
+        value: String,
+    ) -> TagItem {
         TagItem {
             created_at,
             id,
             name,
+            namespace: None,
             recipe_count,
+            value,
         }
     }
 }

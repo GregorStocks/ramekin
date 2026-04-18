@@ -595,3 +595,66 @@ def test_recipe_auto_revives_deleted_tag(authed_api_client):
     # Verify the tag is back in the user's tag list
     response = tags_api.list_all_tags()
     assert any(t.name == "auto-revive" for t in response.tags)
+
+
+def test_create_tag_hierarchical(authed_api_client):
+    """Tags with a namespace:value shape are accepted."""
+    client, _ = authed_api_client
+    tags_api = TagsApi(client)
+
+    response = tags_api.create_tag(CreateTagRequest(name="ingredient:chicken"))
+    assert response.name == "ingredient:chicken"
+
+
+def test_create_tag_multi_colon_rejected(authed_api_client):
+    client, _ = authed_api_client
+    tags_api = TagsApi(client)
+
+    with pytest.raises(ApiException) as exc_info:
+        tags_api.create_tag(CreateTagRequest(name="a:b:c"))
+    assert exc_info.value.status == 400
+
+
+def test_create_tag_invalid_namespace_rejected(authed_api_client):
+    client, _ = authed_api_client
+    tags_api = TagsApi(client)
+
+    with pytest.raises(ApiException) as exc_info:
+        tags_api.create_tag(CreateTagRequest(name="Course:breakfast"))
+    assert exc_info.value.status == 400
+
+
+def test_create_tag_empty_sides_rejected(authed_api_client):
+    client, _ = authed_api_client
+    tags_api = TagsApi(client)
+
+    for bad in (":chicken", "ingredient:"):
+        with pytest.raises(ApiException) as exc_info:
+            tags_api.create_tag(CreateTagRequest(name=bad))
+        assert exc_info.value.status == 400
+
+
+def test_rename_tag_validates(authed_api_client):
+    client, _ = authed_api_client
+    tags_api = TagsApi(client)
+
+    created = tags_api.create_tag(CreateTagRequest(name="dinner"))
+    with pytest.raises(ApiException) as exc_info:
+        tags_api.rename_tag(created.id, RenameTagRequest(name="a:b:c"))
+    assert exc_info.value.status == 400
+
+
+def test_list_tags_exposes_namespace_and_value(authed_api_client):
+    client, _ = authed_api_client
+    tags_api = TagsApi(client)
+
+    tags_api.create_tag(CreateTagRequest(name="ingredient:chicken"))
+    tags_api.create_tag(CreateTagRequest(name="dinner"))
+
+    response = tags_api.list_all_tags()
+    by_name = {t.name: t for t in response.tags}
+
+    assert by_name["ingredient:chicken"].namespace == "ingredient"
+    assert by_name["ingredient:chicken"].value == "chicken"
+    assert by_name["dinner"].namespace is None
+    assert by_name["dinner"].value == "dinner"

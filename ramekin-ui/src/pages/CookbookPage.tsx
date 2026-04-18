@@ -14,6 +14,7 @@ import { usePageTitle } from "../utils/pageTitle";
 import PhotoThumbnail from "../components/PhotoThumbnail";
 import PdfExportModal from "../components/PdfExportModal";
 import type { RecipeSummary, SortBy, Direction } from "ramekin-client";
+import { groupTags, parseTag } from "../utils/tagHierarchy";
 
 interface NumericThreshold {
   op: "<" | ">";
@@ -312,6 +313,8 @@ export default function CookbookPage() {
     [...availableTags()].sort((a, b) =>
       a.localeCompare(b, undefined, { sensitivity: "base" }),
     );
+
+  const groupedTags = () => groupTags(sortedTags());
 
   const sortOption = (): SortOption => {
     const sort = getQueryParam(searchParams.sort);
@@ -1027,21 +1030,46 @@ export default function CookbookPage() {
               when={sortedTags().length > 0}
               fallback={<span class="cookbook-filter-empty">No tags yet</span>}
             >
-              <div class="cookbook-filter-chips">
-                <For each={sortedTags()}>
-                  {(tag) => (
-                    <button
-                      type="button"
-                      class="filter-chip"
-                      classList={{
-                        "filter-chip-active":
-                          currentFilters().tags.includes(tag),
-                      }}
-                      aria-pressed={currentFilters().tags.includes(tag)}
-                      onClick={() => toggleTag(tag)}
-                    >
-                      {tag}
-                    </button>
+              <div class="cookbook-filter-tag-groups">
+                <For each={groupedTags()}>
+                  {(group) => (
+                    <details class="cookbook-filter-tag-group" open>
+                      <summary>
+                        {group.namespace ?? "Uncategorized"}
+                        <span class="cookbook-filter-tag-group-count">
+                          {" "}
+                          ({group.tags.length})
+                        </span>
+                      </summary>
+                      <div class="cookbook-filter-chips">
+                        <For each={group.tags}>
+                          {(tag) => {
+                            const parsed = parseTag(tag);
+                            return (
+                              <button
+                                type="button"
+                                class="filter-chip"
+                                classList={{
+                                  "filter-chip-active":
+                                    currentFilters().tags.includes(tag),
+                                }}
+                                aria-pressed={currentFilters().tags.includes(
+                                  tag,
+                                )}
+                                onClick={() => toggleTag(tag)}
+                              >
+                                <Show when={parsed.namespace}>
+                                  <span class="tag-chip-ns">
+                                    {parsed.namespace}:
+                                  </span>
+                                </Show>
+                                {parsed.value}
+                              </button>
+                            );
+                          }}
+                        </For>
+                      </div>
+                    </details>
                   )}
                 </For>
               </div>
@@ -1215,7 +1243,19 @@ export default function CookbookPage() {
                         <Show when={recipe.tags && recipe.tags.length > 0}>
                           <div class="recipe-tags">
                             <For each={recipe.tags!.slice(0, 3)}>
-                              {(tag) => <span class="tag">{tag}</span>}
+                              {(tag) => {
+                                const parsed = parseTag(tag);
+                                return (
+                                  <span class="tag">
+                                    <Show when={parsed.namespace}>
+                                      <span class="tag-chip-ns">
+                                        {parsed.namespace}:
+                                      </span>
+                                    </Show>
+                                    {parsed.value}
+                                  </span>
+                                );
+                              }}
                             </For>
                             <Show when={recipe.tags!.length > 3}>
                               <span class="tag tag-more">

@@ -17,6 +17,8 @@ pub fn render_auto_tag_prompt(
 
 IMPORTANT: Only suggest tags from the provided list. Never create new tags.
 
+Note: some tags use a `namespace:value` form (for example `ingredient:chicken`, `course:breakfast`). Treat the full string as the tag identifier — match the whole thing, do not split or strip the namespace prefix.
+
 Recipe:
 - Title: {title}
 - Ingredients: {ingredients}

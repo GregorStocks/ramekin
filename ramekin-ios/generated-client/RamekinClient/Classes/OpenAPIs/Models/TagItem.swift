@@ -15,21 +15,29 @@ public struct TagItem: Codable, JSONEncodable, Hashable {
     public var createdAt: Date
     public var id: UUID
     public var name: String
+    /** Namespace portion for `namespace:value`-shaped names, else null. */
+    public var namespace: String?
     /** Number of recipes using this tag */
     public var recipeCount: Int64
+    /** Value portion. Equals `name` for flat tags. */
+    public var value: String
 
-    public init(createdAt: Date, id: UUID, name: String, recipeCount: Int64) {
+    public init(createdAt: Date, id: UUID, name: String, namespace: String? = nil, recipeCount: Int64, value: String) {
         self.createdAt = createdAt
         self.id = id
         self.name = name
+        self.namespace = namespace
         self.recipeCount = recipeCount
+        self.value = value
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case createdAt = "created_at"
         case id
         case name
+        case namespace
         case recipeCount = "recipe_count"
+        case value
     }
 
     // Encodable protocol methods
@@ -39,7 +47,9 @@ public struct TagItem: Codable, JSONEncodable, Hashable {
         try container.encode(createdAt, forKey: .createdAt)
         try container.encode(id, forKey: .id)
         try container.encode(name, forKey: .name)
+        try container.encodeIfPresent(namespace, forKey: .namespace)
         try container.encode(recipeCount, forKey: .recipeCount)
+        try container.encode(value, forKey: .value)
     }
 }
 

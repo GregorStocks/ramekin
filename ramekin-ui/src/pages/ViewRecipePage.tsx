@@ -15,6 +15,7 @@ import EnrichPreviewModal from "../components/EnrichPreviewModal";
 import VersionCompareModal from "../components/VersionCompareModal";
 import AddToShoppingListModal from "../components/AddToShoppingListModal";
 import { extractApiError } from "../utils/recipeFormHelpers";
+import { parseTag } from "../utils/tagHierarchy";
 import { usePageTitle } from "../utils/pageTitle";
 import {
   MEAL_TYPES,
@@ -787,7 +788,17 @@ export default function ViewRecipePage() {
               <Show when={r().tags && r().tags.length > 0}>
                 <div class="recipe-tags">
                   <For each={r().tags}>
-                    {(tag) => <span class="tag">{tag}</span>}
+                    {(tag) => {
+                      const parsed = parseTag(tag);
+                      return (
+                        <span class="tag">
+                          <Show when={parsed.namespace}>
+                            <span class="tag-chip-ns">{parsed.namespace}:</span>
+                          </Show>
+                          {parsed.value}
+                        </span>
+                      );
+                    }}
                   </For>
                 </div>
               </Show>
