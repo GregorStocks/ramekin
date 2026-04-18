@@ -146,6 +146,11 @@ class RamekinAPI {
         let url: String
     }
 
+    struct CaptureRequest: Encodable {
+        let html: String
+        let source_url: String
+    }
+
     struct ScrapeResponse: Decodable {
         let id: String
     }
@@ -369,6 +374,21 @@ extension RamekinAPI {
         )
         let decoded = try JSONDecoder().decode(ScrapeResponse.self, from: data)
         logger.log("SUCCESS: Scrape job ID: \(decoded.id)")
+        return decoded
+    }
+
+    func captureHTML(html: String, sourceURL: String) async throws -> ScrapeResponse {
+        logger.log("captureHTML called for: \(sourceURL) (html \(html.count) bytes)")
+        let body = try JSONEncoder().encode(CaptureRequest(html: html, source_url: sourceURL))
+        let data = try await performRequest(
+            method: "POST",
+            path: "/api/scrape/capture",
+            body: body,
+            acceptedStatusCodes: [200, 201],
+            timeoutInterval: Self.scrapeSubmitTimeout
+        )
+        let decoded = try JSONDecoder().decode(ScrapeResponse.self, from: data)
+        logger.log("SUCCESS: Capture job ID: \(decoded.id)")
         return decoded
     }
 
