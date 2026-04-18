@@ -18,10 +18,18 @@ use crate::schema::step_outputs;
 use crate::scraping::ScrapeError;
 
 /// Row shape read by `build_step_states_from_outputs`:
-/// `(step_name, created_at, duration_ms, summary)`. The full `output` JSON is
-/// intentionally excluded — it can be multi-MB for `fetch_html` /
-/// `extract_recipe` and is loaded on demand by the expand-step endpoint only.
-type StepOutputRow = (String, DateTime<Utc>, Option<i64>, Option<String>);
+/// `(step_name, created_at, duration_ms, summary, success, error)`. The full
+/// `output` JSON is intentionally excluded — it can be multi-MB for
+/// `fetch_html` / `extract_recipe` and is loaded on demand by the expand-step
+/// endpoint only.
+type StepOutputRow = (
+    String,
+    DateTime<Utc>,
+    Option<i64>,
+    Option<String>,
+    bool,
+    Option<String>,
+);
 
 /// Canonical pipeline step names, in the order they run in `build_registry`.
 pub const PIPELINE_STEPS: &[&str] = &[
@@ -201,6 +209,8 @@ pub fn build_step_states(
             step_outputs::created_at,
             step_outputs::duration_ms,
             step_outputs::summary,
+            step_outputs::success,
+            step_outputs::error,
         ))
         .load(&mut conn)
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
@@ -228,14 +238,20 @@ fn build_step_states_from_outputs(
 ) -> Vec<StepState> {
     // Latest row per step name (in case a step was re-run on retry).
     // Value layout matches `StepOutputRow` minus the leading name.
-    type StoredRow = (DateTime<Utc>, Option<i64>, Option<String>);
+    type StoredRow = (
+        DateTime<Utc>,
+        Option<i64>,
+        Option<String>,
+        bool,
+        Option<String>,
+    );
     let mut by_name: std::collections::HashMap<String, StoredRow> =
         std::collections::HashMap::new();
-    for (name, created_at, duration_ms, summary) in outputs {
+    for (name, created_at, duration_ms, summary, success, error) in outputs {
         match by_name.get(&name) {
-            Some((existing_at, _, _)) if *existing_at >= created_at => {}
+            Some((existing_at, _, _, _, _)) if *existing_at >= created_at => {}
             _ => {
-                by_name.insert(name, (created_at, duration_ms, summary));
+                by_name.insert(name, (created_at, duration_ms, summary, success, error));
             }
         }
     }
@@ -253,12 +269,16 @@ fn build_step_states_from_outputs(
         //      failed step has a stale output row from the prior attempt; the
         //      live current_step must win so the retry renders as "running"
         //      instead of the stale "completed".
-        //   3. Output row present → "completed".
-        //   4. Otherwise → "pending".
+        //   3. Output row present with `success = false` → "failed" (this is
+        //      the continues-on-failure enrichment case: the overall job
+        //      completed, but the step itself failed and the per-step error
+        //      should be surfaced).
+        //   4. Output row present → "completed".
+        //   5. Otherwise → "pending".
         if failed_at_step == Some(name.as_str()) {
             let stored = by_name.get(&name);
-            let finished_at = stored.map(|(created_at, _, _)| *created_at);
-            let duration_ms = stored.and_then(|(_, d, _)| *d);
+            let finished_at = stored.map(|(created_at, _, _, _, _)| *created_at);
+            let duration_ms = stored.and_then(|(_, d, _, _, _)| *d);
             let started_at = match (finished_at, duration_ms) {
                 (Some(finished), Some(d)) => chrono::Duration::try_milliseconds(d)
                     .map(|dur| finished - dur)
@@ -286,19 +306,28 @@ fn build_step_states_from_outputs(
                 error: None,
                 has_output: false,
             });
-        } else if let Some((created_at, duration_ms, summary)) = by_name.get(&name) {
+        } else if let Some((created_at, duration_ms, summary, success, step_error)) =
+            by_name.get(&name)
+        {
             let finished_at = *created_at;
             let started_at = duration_ms
                 .and_then(chrono::Duration::try_milliseconds)
                 .map(|d| finished_at - d);
+            let (status, summary_val, error_val) = if *success {
+                ("completed".to_string(), summary.clone(), None)
+            } else {
+                // continues_on_failure enrichment step failed: surface the
+                // per-step error even though the overall job completed.
+                ("failed".to_string(), None, step_error.clone())
+            };
             states.push(StepState {
                 name: name.clone(),
-                status: "completed".to_string(),
+                status,
                 started_at,
                 finished_at: Some(finished_at),
                 duration_ms: *duration_ms,
-                summary: summary.clone(),
-                error: None,
+                summary: summary_val,
+                error: error_val,
                 has_output: true,
             });
         } else {
@@ -512,7 +541,14 @@ mod tests {
         let finished = DateTime::parse_from_rfc3339("2025-01-01T00:00:05Z")
             .unwrap()
             .with_timezone(&Utc);
-        let outputs = vec![("save_recipe".to_string(), finished, Some(1000), None)];
+        let outputs = vec![(
+            "save_recipe".to_string(),
+            finished,
+            Some(1000),
+            None,
+            true,
+            None,
+        )];
         let states = build_step_states_from_outputs(
             outputs,
             "failed",
@@ -533,6 +569,37 @@ mod tests {
     }
 
     #[test]
+    fn continues_on_failure_enrichment_renders_as_failed() {
+        // Enrichment steps (enrich_normalize_ingredients, enrich_auto_tag,
+        // enrich_generate_photo) have `continues_on_failure = true`, so the
+        // pipeline continues past their failure and the job completes. The
+        // step_outputs row is persisted with `success = false`, and the
+        // status page must render that step as "failed" with the stored
+        // error — otherwise the failure is silently hidden.
+        let finished = DateTime::parse_from_rfc3339("2025-01-01T00:00:05Z")
+            .unwrap()
+            .with_timezone(&Utc);
+        let outputs = vec![(
+            "enrich_normalize_ingredients".to_string(),
+            finished,
+            Some(500),
+            None,
+            false,
+            Some("boom".to_string()),
+        )];
+        let states = build_step_states_from_outputs(outputs, "completed", None, None, None, None);
+        let enrich = states
+            .iter()
+            .find(|s| s.name == "enrich_normalize_ingredients")
+            .expect("enrich_normalize_ingredients state present");
+        assert_eq!(enrich.status, "failed");
+        assert_eq!(enrich.error.as_deref(), Some("boom"));
+        assert_eq!(enrich.finished_at, Some(finished));
+        assert_eq!(enrich.duration_ms, Some(500));
+        assert!(enrich.has_output);
+    }
+
+    #[test]
     fn current_running_step_overrides_stale_output_row() {
         // Scenario: a previous attempt for "fetch_html" left an output row
         // behind, and the retry is now re-running that step. The status
@@ -549,6 +616,8 @@ mod tests {
             stale_finished,
             Some(123),
             Some("3 bytes fetched".to_string()),
+            true,
+            None,
         )];
 
         let states = build_step_states_from_outputs(

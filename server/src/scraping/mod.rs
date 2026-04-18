@@ -576,6 +576,10 @@ fn save_step_output(
         // don't run the step, so there's no meaningful duration to record.
         duration_ms: None,
         summary,
+        // Pre-populated outputs are always successful — the step didn't run
+        // so there's no failure to record.
+        success: true,
+        error: None,
     };
 
     diesel::insert_into(step_outputs::table)
@@ -744,7 +748,13 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
         // the error leaves a "successful" step with no output row, which makes
         // downstream retries think the step already ran and produces a deadlock
         // where the pipeline can never make progress. Fail fast instead.
-        if let Err(e) = store.save_output(&step_name, &result.output, result.duration_ms as i64) {
+        if let Err(e) = store.save_output(
+            &step_name,
+            &result.output,
+            result.duration_ms as i64,
+            result.success,
+            result.error.as_deref(),
+        ) {
             let msg = format!("Failed to persist output for step {step_name}: {e}");
             tracing::error!("{msg}");
             result.success = false;

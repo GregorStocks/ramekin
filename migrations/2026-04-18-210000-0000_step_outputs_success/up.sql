@@ -1,0 +1,3 @@
+ALTER TABLE step_outputs
+    ADD COLUMN success BOOLEAN NOT NULL DEFAULT true,
+    ADD COLUMN error TEXT NULL;

@@ -138,6 +138,8 @@ diesel::table! {
         created_at -> Timestamptz,
         duration_ms -> Nullable<Int8>,
         summary -> Nullable<Text>,
+        success -> Bool,
+        error -> Nullable<Text>,
     }
 }
 

@@ -47,6 +47,8 @@ impl StepOutputStore for DbOutputStore<'_> {
         step_name: &str,
         output: &JsonValue,
         duration_ms: i64,
+        success: bool,
+        error: Option<&str>,
     ) -> Result<(), Box<dyn Error + Send + Sync>> {
         let mut conn = self
             .pool
@@ -60,6 +62,8 @@ impl StepOutputStore for DbOutputStore<'_> {
             output: output.clone(),
             duration_ms: Some(duration_ms),
             summary: step_summary(step_name, output),
+            success,
+            error: error.map(|s| s.to_string()),
         };
 
         diesel::insert_into(step_outputs::table)

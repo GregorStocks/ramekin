@@ -76,6 +76,8 @@ impl StepOutputStore for FileOutputStore {
         step_name: &str,
         output: &JsonValue,
         _duration_ms: i64,
+        _success: bool,
+        _error: Option<&str>,
     ) -> Result<(), Box<dyn Error + Send + Sync>> {
         // Cache in memory
         self.cache.insert(step_name.to_string(), output.clone());
