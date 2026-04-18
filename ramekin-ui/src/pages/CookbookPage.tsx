@@ -1243,7 +1243,19 @@ export default function CookbookPage() {
                         <Show when={recipe.tags && recipe.tags.length > 0}>
                           <div class="recipe-tags">
                             <For each={recipe.tags!.slice(0, 3)}>
-                              {(tag) => <span class="tag">{tag}</span>}
+                              {(tag) => {
+                                const parsed = parseTag(tag);
+                                return (
+                                  <span class="tag">
+                                    <Show when={parsed.namespace}>
+                                      <span class="tag-chip-ns">
+                                        {parsed.namespace}:
+                                      </span>
+                                    </Show>
+                                    {parsed.value}
+                                  </span>
+                                );
+                              }}
                             </For>
                             <Show when={recipe.tags!.length > 3}>
                               <span class="tag tag-more">
