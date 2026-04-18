@@ -224,6 +224,7 @@ pub struct StepOutput {
     pub output: JsonValue,
     pub created_at: DateTime<Utc>,
     pub duration_ms: Option<i64>,
+    pub summary: Option<String>,
 }
 
 #[derive(Insertable)]
@@ -234,6 +235,7 @@ pub struct NewStepOutput {
     pub build_id: String,
     pub output: JsonValue,
     pub duration_ms: Option<i64>,
+    pub summary: Option<String>,
 }
 
 #[derive(Insertable)]

@@ -11,6 +11,7 @@ use uuid::Uuid;
 use crate::db::DbPool;
 use crate::models::{NewStepOutput, StepOutput};
 use crate::schema::step_outputs;
+use crate::scraping::status::step_summary;
 
 /// Database-backed output store for server pipeline runs.
 ///
@@ -58,6 +59,7 @@ impl StepOutputStore for DbOutputStore<'_> {
             build_id: BUILD_ID.to_string(),
             output: output.clone(),
             duration_ms: Some(duration_ms),
+            summary: step_summary(step_name, output),
         };
 
         diesel::insert_into(step_outputs::table)

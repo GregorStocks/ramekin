@@ -566,6 +566,7 @@ fn save_step_output(
         .get()
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
+    let summary = status::step_summary(step_name, &output);
     let new_output = NewStepOutput {
         scrape_job_id: job_id,
         step_name: step_name.to_string(),
@@ -574,6 +575,7 @@ fn save_step_output(
         // Pre-populated outputs (HTML capture / photo import / recipe import)
         // don't run the step, so there's no meaningful duration to record.
         duration_ms: None,
+        summary,
     };
 
     diesel::insert_into(step_outputs::table)

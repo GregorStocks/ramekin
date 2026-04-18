@@ -137,6 +137,7 @@ diesel::table! {
         output -> Jsonb,
         created_at -> Timestamptz,
         duration_ms -> Nullable<Int8>,
+        summary -> Nullable<Text>,
     }
 }
 
