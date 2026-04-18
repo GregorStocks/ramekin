@@ -7,6 +7,7 @@ All URIs are relative to *http://localhost*
 | [**capture**](ScrapeApi.md#captureoperation) | **POST** /api/scrape/capture |  |
 | [**createScrape**](ScrapeApi.md#createscrapeoperation) | **POST** /api/scrape |  |
 | [**getScrape**](ScrapeApi.md#getscrape) | **GET** /api/scrape/{id} |  |
+| [**getStepOutput**](ScrapeApi.md#getstepoutput) | **GET** /api/scrape/{id}/steps/{step_name}/output |  |
 | [**retryScrape**](ScrapeApi.md#retryscrape) | **POST** /api/scrape/{id}/retry |  |
 
 
@@ -220,6 +221,80 @@ example().catch(console.error);
 | **200** | Scrape job status |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Job not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## getStepOutput
+
+> any getStepOutput(id, stepName)
+
+
+
+### Example
+
+```ts
+import {
+  Configuration,
+  ScrapeApi,
+} from '';
+import type { GetStepOutputRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearer_auth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new ScrapeApi(config);
+
+  const body = {
+    // string | Scrape job ID
+    id: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
+    // string | Pipeline step name
+    stepName: stepName_example,
+  } satisfies GetStepOutputRequest;
+
+  try {
+    const data = await api.getStepOutput(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | `string` | Scrape job ID | [Defaults to `undefined`] |
+| **stepName** | `string` | Pipeline step name | [Defaults to `undefined`] |
+
+### Return type
+
+**any**
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Raw step output JSON |  -  |
+| **401** | Unauthorized |  -  |
+| **404** | Step output not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

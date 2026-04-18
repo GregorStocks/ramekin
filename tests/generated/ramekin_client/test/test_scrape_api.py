@@ -44,6 +44,12 @@ class TestScrapeApi(unittest.TestCase):
         """
         pass
 
+    def test_get_step_output(self) -> None:
+        """Test case for get_step_output
+
+        """
+        pass
+
     def test_retry_scrape(self) -> None:
         """Test case for retry_scrape
 

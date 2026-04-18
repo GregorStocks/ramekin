@@ -36,6 +36,7 @@ class TestScrapeJobResponse(unittest.TestCase):
         if include_optional:
             return ScrapeJobResponse(
                 can_retry = True,
+                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 error = '',
                 failed_at_step = '',
                 id = '',
@@ -58,6 +59,7 @@ class TestScrapeJobResponse(unittest.TestCase):
         else:
             return ScrapeJobResponse(
                 can_retry = True,
+                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 id = '',
                 retry_count = 56,
                 status = '',

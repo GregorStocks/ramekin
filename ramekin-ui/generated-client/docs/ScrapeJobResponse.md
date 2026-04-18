@@ -7,6 +7,7 @@
 Name | Type
 ------------ | -------------
 `canRetry` | boolean
+`createdAt` | Date
 `error` | string
 `failedAtStep` | string
 `id` | string
@@ -24,6 +25,7 @@ import type { ScrapeJobResponse } from ''
 // TODO: Update the object below with actual values
 const example = {
   "canRetry": null,
+  "createdAt": null,
   "error": null,
   "failedAtStep": null,
   "id": null,

@@ -16,6 +16,9 @@ pub struct ScrapeJobResponse {
     /// Whether this job can be retried
     #[serde(rename = "can_retry")]
     pub can_retry: bool,
+    /// When the job was created
+    #[serde(rename = "created_at")]
+    pub created_at: String,
     /// Error message if failed
     #[serde(
         rename = "error",
@@ -65,6 +68,7 @@ pub struct ScrapeJobResponse {
 impl ScrapeJobResponse {
     pub fn new(
         can_retry: bool,
+        created_at: String,
         id: uuid::Uuid,
         retry_count: i32,
         status: String,
@@ -72,6 +76,7 @@ impl ScrapeJobResponse {
     ) -> ScrapeJobResponse {
         ScrapeJobResponse {
             can_retry,
+            created_at,
             error: None,
             failed_at_step: None,
             id,

@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **canRetry** | **Bool** | Whether this job can be retried | 
+**createdAt** | **Date** | When the job was created | 
 **error** | **String** | Error message if failed | [optional] 
 **failedAtStep** | **String** | Which step failed (for retry logic) | [optional] 
 **id** | **UUID** | The scrape job ID | 

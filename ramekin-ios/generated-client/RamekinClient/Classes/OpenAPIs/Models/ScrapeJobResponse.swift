@@ -14,6 +14,8 @@ public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
 
     /** Whether this job can be retried */
     public var canRetry: Bool
+    /** When the job was created */
+    public var createdAt: Date
     /** Error message if failed */
     public var error: String?
     /** Which step failed (for retry logic) */
@@ -31,8 +33,9 @@ public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
     /** URL being scraped (optional for imports) */
     public var url: String?
 
-    public init(canRetry: Bool, error: String? = nil, failedAtStep: String? = nil, id: UUID, recipeId: UUID? = nil, retryCount: Int, status: String, steps: [StepState], url: String? = nil) {
+    public init(canRetry: Bool, createdAt: Date, error: String? = nil, failedAtStep: String? = nil, id: UUID, recipeId: UUID? = nil, retryCount: Int, status: String, steps: [StepState], url: String? = nil) {
         self.canRetry = canRetry
+        self.createdAt = createdAt
         self.error = error
         self.failedAtStep = failedAtStep
         self.id = id
@@ -45,6 +48,7 @@ public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case canRetry = "can_retry"
+        case createdAt = "created_at"
         case error
         case failedAtStep = "failed_at_step"
         case id
@@ -60,6 +64,7 @@ public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(canRetry, forKey: .canRetry)
+        try container.encode(createdAt, forKey: .createdAt)
         try container.encodeIfPresent(error, forKey: .error)
         try container.encodeIfPresent(failedAtStep, forKey: .failedAtStep)
         try container.encode(id, forKey: .id)

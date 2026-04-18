@@ -49,6 +49,11 @@ export interface GetScrapeRequest {
     id: string;
 }
 
+export interface GetStepOutputRequest {
+    id: string;
+    stepName: string;
+}
+
 export interface RetryScrapeRequest {
     id: string;
 }
@@ -188,6 +193,61 @@ export class ScrapeApi extends runtime.BaseAPI {
      */
     async getScrape(requestParameters: GetScrapeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScrapeJobResponse> {
         const response = await this.getScrapeRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async getStepOutputRaw(requestParameters: GetStepOutputRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<any>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling getStepOutput().'
+            );
+        }
+
+        if (requestParameters['stepName'] == null) {
+            throw new runtime.RequiredError(
+                'stepName',
+                'Required parameter "stepName" was null or undefined when calling getStepOutput().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/api/scrape/{id}/steps/{step_name}/output`;
+        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+        urlPath = urlPath.replace(`{${"step_name"}}`, encodeURIComponent(String(requestParameters['stepName'])));
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        if (this.isJsonMime(response.headers.get('content-type'))) {
+            return new runtime.JSONApiResponse<any>(response);
+        } else {
+            return new runtime.TextApiResponse(response) as any;
+        }
+    }
+
+    /**
+     */
+    async getStepOutput(requestParameters: GetStepOutputRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<any> {
+        const response = await this.getStepOutputRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

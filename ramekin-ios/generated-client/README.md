@@ -55,6 +55,7 @@ Class | Method | HTTP request | Description
 *ScrapeAPI* | [**capture**](docs/ScrapeAPI.md#capture) | **POST** /api/scrape/capture | 
 *ScrapeAPI* | [**createScrape**](docs/ScrapeAPI.md#createscrape) | **POST** /api/scrape | 
 *ScrapeAPI* | [**getScrape**](docs/ScrapeAPI.md#getscrape) | **GET** /api/scrape/{id} | 
+*ScrapeAPI* | [**getStepOutput**](docs/ScrapeAPI.md#getstepoutput) | **GET** /api/scrape/{id}/steps/{step_name}/output | 
 *ScrapeAPI* | [**retryScrape**](docs/ScrapeAPI.md#retryscrape) | **POST** /api/scrape/{id}/retry | 
 *ShoppingListAPI* | [**clearChecked**](docs/ShoppingListAPI.md#clearchecked) | **DELETE** /api/shopping-list/clear-checked | 
 *ShoppingListAPI* | [**createItems**](docs/ShoppingListAPI.md#createitems) | **POST** /api/shopping-list | 

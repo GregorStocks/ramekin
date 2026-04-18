@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **can_retry** | **bool** | Whether this job can be retried | 
+**created_at** | **String** | When the job was created | 
 **error** | Option<**String**> | Error message if failed | [optional]
 **failed_at_step** | Option<**String**> | Which step failed (for retry logic) | [optional]
 **id** | [**uuid::Uuid**](uuid::Uuid.md) | The scrape job ID | 

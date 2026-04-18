@@ -17,6 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
@@ -29,6 +30,7 @@ class ScrapeJobResponse(BaseModel):
     ScrapeJobResponse
     """ # noqa: E501
     can_retry: StrictBool = Field(description="Whether this job can be retried")
+    created_at: datetime = Field(description="When the job was created")
     error: Optional[StrictStr] = Field(default=None, description="Error message if failed")
     failed_at_step: Optional[StrictStr] = Field(default=None, description="Which step failed (for retry logic)")
     id: UUID = Field(description="The scrape job ID")
@@ -37,7 +39,7 @@ class ScrapeJobResponse(BaseModel):
     status: StrictStr = Field(description="Current job status (pending, scraping, parsing, completed, failed)")
     steps: List[StepState] = Field(description="Per-step state for the status page (ordered by pipeline step).")
     url: Optional[StrictStr] = Field(default=None, description="URL being scraped (optional for imports)")
-    __properties: ClassVar[List[str]] = ["can_retry", "error", "failed_at_step", "id", "recipe_id", "retry_count", "status", "steps", "url"]
+    __properties: ClassVar[List[str]] = ["can_retry", "created_at", "error", "failed_at_step", "id", "recipe_id", "retry_count", "status", "steps", "url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -118,6 +120,7 @@ class ScrapeJobResponse(BaseModel):
 
         _obj = cls.model_validate({
             "can_retry": obj.get("can_retry"),
+            "created_at": obj.get("created_at"),
             "error": obj.get("error"),
             "failed_at_step": obj.get("failed_at_step"),
             "id": obj.get("id"),

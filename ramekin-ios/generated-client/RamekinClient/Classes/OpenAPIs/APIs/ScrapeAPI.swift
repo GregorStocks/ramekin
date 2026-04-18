@@ -126,6 +126,50 @@ open class ScrapeAPI {
     /**
 
      - parameter id: (path) Scrape job ID 
+     - parameter stepName: (path) Pipeline step name 
+     - returns: AnyCodable
+     */
+    @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    open class func getStepOutput(id: UUID, stepName: String) async throws -> AnyCodable {
+        return try await getStepOutputWithRequestBuilder(id: id, stepName: stepName).execute().body
+    }
+
+    /**
+     - GET /api/scrape/{id}/steps/{step_name}/output
+     - Bearer Token:
+       - type: http
+       - name: bearer_auth
+     - parameter id: (path) Scrape job ID 
+     - parameter stepName: (path) Pipeline step name 
+     - returns: RequestBuilder<AnyCodable> 
+     */
+    open class func getStepOutputWithRequestBuilder(id: UUID, stepName: String) -> RequestBuilder<AnyCodable> {
+        var localVariablePath = "/api/scrape/{id}/steps/{step_name}/output"
+        let idPreEscape = "\(APIHelper.mapValueToPathItem(id))"
+        let idPostEscape = idPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{id}", with: idPostEscape, options: .literal, range: nil)
+        let stepNamePreEscape = "\(APIHelper.mapValueToPathItem(stepName))"
+        let stepNamePostEscape = stepNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        localVariablePath = localVariablePath.replacingOccurrences(of: "{step_name}", with: stepNamePostEscape, options: .literal, range: nil)
+        let localVariableURLString = RamekinClientAPI.basePath + localVariablePath
+        let localVariableParameters: [String: Any]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<AnyCodable>.Type = RamekinClientAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
+    }
+
+    /**
+
+     - parameter id: (path) Scrape job ID 
      - returns: RetryScrapeResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)

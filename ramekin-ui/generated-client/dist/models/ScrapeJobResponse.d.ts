@@ -23,6 +23,12 @@ export interface ScrapeJobResponse {
      */
     canRetry: boolean;
     /**
+     * When the job was created
+     * @type {Date}
+     * @memberof ScrapeJobResponse
+     */
+    createdAt: Date;
+    /**
      * Error message if failed
      * @type {string}
      * @memberof ScrapeJobResponse

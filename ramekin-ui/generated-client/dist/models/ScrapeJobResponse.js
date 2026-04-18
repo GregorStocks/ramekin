@@ -18,6 +18,8 @@ import { StepStateFromJSON, StepStateToJSON, } from './StepState';
 export function instanceOfScrapeJobResponse(value) {
     if (!('canRetry' in value) || value['canRetry'] === undefined)
         return false;
+    if (!('createdAt' in value) || value['createdAt'] === undefined)
+        return false;
     if (!('id' in value) || value['id'] === undefined)
         return false;
     if (!('retryCount' in value) || value['retryCount'] === undefined)
@@ -37,6 +39,7 @@ export function ScrapeJobResponseFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'canRetry': json['can_retry'],
+        'createdAt': (new Date(json['created_at'])),
         'error': json['error'] == null ? undefined : json['error'],
         'failedAtStep': json['failed_at_step'] == null ? undefined : json['failed_at_step'],
         'id': json['id'],
@@ -56,6 +59,7 @@ export function ScrapeJobResponseToJSONTyped(value, ignoreDiscriminator = false)
     }
     return {
         'can_retry': value['canRetry'],
+        'created_at': value['createdAt'].toISOString(),
         'error': value['error'],
         'failed_at_step': value['failedAtStep'],
         'id': value['id'],
