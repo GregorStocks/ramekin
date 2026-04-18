@@ -232,10 +232,11 @@ pub async fn update_recipe(
         .unwrap_or(cur_photo_ids);
     let new_tags: Vec<String> = match request.tags {
         Some(tags) => {
-            // Validate all incoming tag names before doing any DB work
+            // Normalize and validate before any DB work so the trimmed
+            // form is what lands in user_tags.
+            let tags: Vec<String> = tags.into_iter().map(|t| t.trim().to_string()).collect();
             for tag_name in &tags {
-                let name = tag_name.trim();
-                if let Err(err) = ramekin_core::validate_tag_name(name) {
+                if let Err(err) = ramekin_core::validate_tag_name(tag_name) {
                     return (
                         StatusCode::BAD_REQUEST,
                         Json(ErrorResponse {

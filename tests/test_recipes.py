@@ -1,7 +1,7 @@
 import pytest
 
 from conftest import make_ingredient
-from ramekin_client.api import PhotosApi, RecipesApi
+from ramekin_client.api import PhotosApi, RecipesApi, TagsApi
 from ramekin_client.exceptions import ApiException
 from ramekin_client.models import (
     CreateRecipeRequest,
@@ -774,6 +774,36 @@ def test_create_recipe_rejects_invalid_tag_name(authed_api_client):
             )
         )
     assert exc_info.value.status == 400
+
+
+def test_create_recipe_trims_tag_names_before_storage(authed_api_client):
+    """Recipe tags with outer whitespace are normalized to the trimmed form
+    so `  course:breakfast  ` doesn't create a distinct user_tags row from
+    `course:breakfast`."""
+    client, _ = authed_api_client
+    recipes_api = RecipesApi(client)
+    tags_api = TagsApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="padded",
+            instructions="none",
+            ingredients=[make_ingredient(item="water", amount="1", unit="cup")],
+            tags=["  course:breakfast  "],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="clean",
+            instructions="none",
+            ingredients=[make_ingredient(item="water", amount="1", unit="cup")],
+            tags=["course:breakfast"],
+        )
+    )
+
+    names = [t.name for t in tags_api.list_all_tags().tags]
+    assert names.count("course:breakfast") == 1
+    assert "  course:breakfast  " not in names
 
 
 def test_filter_by_single_tag(authed_api_client):

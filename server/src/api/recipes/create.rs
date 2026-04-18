@@ -85,12 +85,17 @@ pub async fn create_recipe(
         .map(Some)
         .collect();
 
-    let tags = request.content.tags;
-
-    // Validate all tag names before doing any DB work
+    // Normalize and validate tag names before any DB work. Store the
+    // trimmed form so " course:breakfast " and "course:breakfast" resolve
+    // to the same user_tags row.
+    let tags: Vec<String> = request
+        .content
+        .tags
+        .into_iter()
+        .map(|t| t.trim().to_string())
+        .collect();
     for tag_name in &tags {
-        let name = tag_name.trim();
-        if let Err(err) = ramekin_core::validate_tag_name(name) {
+        if let Err(err) = ramekin_core::validate_tag_name(tag_name) {
             return (
                 StatusCode::BAD_REQUEST,
                 Json(ErrorResponse {
