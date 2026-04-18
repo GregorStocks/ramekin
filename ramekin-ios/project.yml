@@ -13,6 +13,16 @@ settings:
     CURRENT_PROJECT_VERSION: "1"
     DEVELOPMENT_TEAM: 32ANM8P9HJ
 
+packages:
+  # The OpenAPI generator's Swift template emits `AnyCodable` in the generated
+  # ScrapeAPI signatures for endpoints returning `serde_json::Value` (e.g.
+  # `/api/scrape/{id}/steps/{step_name}/output`). The generated client's own
+  # Package.swift pulls in Flight-School/AnyCodable; mirror that here so the
+  # app and share-extension targets have `AnyCodable` in scope.
+  AnyCodable:
+    url: https://github.com/Flight-School/AnyCodable
+    from: 0.6.1
+
 targets:
   Ramekin:
     type: application
@@ -46,6 +56,7 @@ targets:
       - target: RamekinShareExtension
         embed:
           codeSign: true
+      - package: AnyCodable
 
   RamekinShareExtension:
     type: app-extension
@@ -77,6 +88,8 @@ targets:
       properties:
         com.apple.security.application-groups:
           - group.com.ramekin.app
+    dependencies:
+      - package: AnyCodable
 
   RamekinTests:
     type: bundle.unit-test
