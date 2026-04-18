@@ -358,6 +358,8 @@ def main() -> None:
         "UI_PORT": str(config.dev_ui_port),
         "UI_PORT_HTTP": str(config.dev_ui_port_http),
         "PROCESS_COMPOSE_PORT": str(config.dev_process_compose_port),
+        "RAMEKIN_SELF_SIGNED_URL": f"https://localhost:{config.dev_ui_port}",
+        "RAMEKIN_EXTERNAL_URL": f"https://localhost:{config.dev_ui_port}",
     }
     test_overrides = {
         "DATABASE_URL": f"{database_prefix}/{config.test_database_name}",
@@ -366,6 +368,8 @@ def main() -> None:
         "UI_PORT": str(config.test_ui_port),
         "MOCK_OPENROUTER_PORT": str(config.test_mock_openrouter_port),
         "PROCESS_COMPOSE_PORT": str(config.test_process_compose_port),
+        "RAMEKIN_SELF_SIGNED_URL": f"https://localhost:{config.test_ui_port}",
+        "RAMEKIN_EXTERNAL_URL": f"http://localhost:{config.test_ui_port}",
     }
 
     output_paths = (root / "dev.env", root / "test.env")

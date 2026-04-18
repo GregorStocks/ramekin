@@ -102,3 +102,34 @@ def test_worktree_setup_skips_database_creation_when_postgres_is_unreachable(
         ["pg_isready", "-h", "localhost", "-p", "54321", "-U", "ramekin"]
     ]
     assert "skipped workspace database creation" in capsys.readouterr().out
+
+
+def test_apply_overrides_rewrites_ramekin_urls_to_assigned_ui_port():
+    dev_template = REPO_ROOT.joinpath("dev.env.example").read_text(encoding="utf-8")
+    test_template = REPO_ROOT.joinpath("test.env.example").read_text(encoding="utf-8")
+
+    dev_rendered = WORKTREE_SETUP.apply_overrides(
+        dev_template,
+        {
+            "UI_PORT": "57684",
+            "RAMEKIN_SELF_SIGNED_URL": "https://localhost:57684",
+            "RAMEKIN_EXTERNAL_URL": "https://localhost:57684",
+        },
+    )
+    assert "RAMEKIN_SELF_SIGNED_URL=https://localhost:57684" in dev_rendered
+    assert "RAMEKIN_EXTERNAL_URL=https://localhost:57684" in dev_rendered
+    assert "RAMEKIN_SELF_SIGNED_URL=https://localhost:5173" not in dev_rendered
+    assert "RAMEKIN_EXTERNAL_URL=https://localhost:5173" not in dev_rendered
+
+    test_rendered = WORKTREE_SETUP.apply_overrides(
+        test_template,
+        {
+            "UI_PORT": "57690",
+            "RAMEKIN_SELF_SIGNED_URL": "https://localhost:57690",
+            "RAMEKIN_EXTERNAL_URL": "http://localhost:57690",
+        },
+    )
+    assert "RAMEKIN_SELF_SIGNED_URL=https://localhost:57690" in test_rendered
+    assert "RAMEKIN_EXTERNAL_URL=http://localhost:57690" in test_rendered
+    assert "RAMEKIN_SELF_SIGNED_URL=https://localhost:5174" not in test_rendered
+    assert "RAMEKIN_EXTERNAL_URL=http://localhost:5174" not in test_rendered
