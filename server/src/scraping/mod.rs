@@ -5,7 +5,7 @@ use crate::db::DbPool;
 use crate::models::{NewScrapeJob, NewStepOutput, ScrapeJob, StepOutput};
 use crate::photos::load_photo_images;
 use crate::schema::{scrape_jobs, step_outputs, user_tags};
-use chrono::Utc;
+use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use ramekin_core::ai::{AiClient, CachingAiClient};
 use ramekin_core::pipeline::steps::{
@@ -250,11 +250,13 @@ pub fn create_job_with_html(
     save_step_output(pool, job.id, FetchHtmlStep::NAME, output_json)?;
 
     // Update the job to start from parsing (skip fetch step)
+    let now = Utc::now();
     diesel::update(scrape_jobs::table.find(job.id))
         .set((
             scrape_jobs::status.eq(STATUS_PARSING),
             scrape_jobs::current_step.eq(Some(ExtractRecipeStep::NAME)),
-            scrape_jobs::updated_at.eq(Utc::now()),
+            scrape_jobs::current_step_started_at.eq(Some(now)),
+            scrape_jobs::updated_at.eq(now),
         ))
         .execute(&mut conn)
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
@@ -307,11 +309,13 @@ pub fn create_import_job(
     save_step_output(pool, job.id, FetchImagesStepMeta::NAME, images_json)?;
 
     // Update the job to start from parse_ingredients (skip fetch_html, extract_recipe, fetch_images)
+    let now = Utc::now();
     diesel::update(scrape_jobs::table.find(job.id))
         .set((
             scrape_jobs::status.eq(STATUS_PARSING),
             scrape_jobs::current_step.eq(Some(ParseIngredientsStep::NAME)),
-            scrape_jobs::updated_at.eq(Utc::now()),
+            scrape_jobs::current_step_started_at.eq(Some(now)),
+            scrape_jobs::updated_at.eq(now),
         ))
         .execute(&mut conn)
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
@@ -474,11 +478,13 @@ async fn run_photo_import_job(
                 return;
             }
         };
+        let now = Utc::now();
         if let Err(e) = diesel::update(scrape_jobs::table.find(job_id))
             .set((
                 scrape_jobs::status.eq(STATUS_PARSING),
                 scrape_jobs::current_step.eq(Some(ParseIngredientsStep::NAME)),
-                scrape_jobs::updated_at.eq(Utc::now()),
+                scrape_jobs::current_step_started_at.eq(Some(now)),
+                scrape_jobs::updated_at.eq(now),
             ))
             .execute(&mut conn)
         {
@@ -506,6 +512,10 @@ pub fn get_job(pool: &DbPool, job_id: Uuid) -> Result<ScrapeJob, ScrapeError> {
 }
 
 /// Update job status and current_step.
+///
+/// Also sets `current_step_started_at` to `NOW()` when a step is provided, or
+/// clears it when the step is cleared. The frontend uses this timestamp to
+/// show how long the currently running step has been executing.
 fn update_status_and_step(
     pool: &DbPool,
     job_id: Uuid,
@@ -516,14 +526,31 @@ fn update_status_and_step(
         .get()
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
-    diesel::update(scrape_jobs::table.find(job_id))
-        .set((
-            scrape_jobs::status.eq(status),
-            scrape_jobs::current_step.eq(current_step),
-            scrape_jobs::updated_at.eq(Utc::now()),
-        ))
-        .execute(&mut conn)
-        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+    let now = Utc::now();
+    match current_step {
+        Some(step) => {
+            diesel::update(scrape_jobs::table.find(job_id))
+                .set((
+                    scrape_jobs::status.eq(status),
+                    scrape_jobs::current_step.eq(Some(step)),
+                    scrape_jobs::current_step_started_at.eq(Some(now)),
+                    scrape_jobs::updated_at.eq(now),
+                ))
+                .execute(&mut conn)
+                .map_err(|e| ScrapeError::Database(e.to_string()))?;
+        }
+        None => {
+            diesel::update(scrape_jobs::table.find(job_id))
+                .set((
+                    scrape_jobs::status.eq(status),
+                    scrape_jobs::current_step.eq::<Option<String>>(None),
+                    scrape_jobs::current_step_started_at.eq::<Option<DateTime<Utc>>>(None),
+                    scrape_jobs::updated_at.eq(now),
+                ))
+                .execute(&mut conn)
+                .map_err(|e| ScrapeError::Database(e.to_string()))?;
+        }
+    }
 
     Ok(())
 }
@@ -603,6 +630,7 @@ fn mark_completed(pool: &DbPool, job_id: Uuid, recipe_id: Uuid) -> Result<(), Sc
             scrape_jobs::status.eq(STATUS_COMPLETED),
             scrape_jobs::recipe_id.eq(Some(recipe_id)),
             scrape_jobs::current_step.eq::<Option<String>>(None),
+            scrape_jobs::current_step_started_at.eq::<Option<DateTime<Utc>>>(None),
             scrape_jobs::updated_at.eq(Utc::now()),
         ))
         .execute(&mut conn)
@@ -960,14 +988,16 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
         .get()
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
+    let now = Utc::now();
     diesel::update(scrape_jobs::table.find(job_id))
         .set((
             scrape_jobs::status.eq(resume_status),
             scrape_jobs::current_step.eq(Some(resume_step)),
+            scrape_jobs::current_step_started_at.eq(Some(now)),
             scrape_jobs::failed_at_step.eq::<Option<String>>(None),
             scrape_jobs::error_message.eq::<Option<String>>(None),
             scrape_jobs::retry_count.eq(job.retry_count + 1),
-            scrape_jobs::updated_at.eq(Utc::now()),
+            scrape_jobs::updated_at.eq(now),
         ))
         .execute(&mut conn)
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
