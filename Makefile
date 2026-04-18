@@ -201,10 +201,12 @@ pipeline-cache-clear: ## Clear HTML cache
 
 ios-generate: ## Generate Xcode project for iOS app (requires xcodegen: brew install xcodegen)
 	@set -a && [ -f dev.env ] && . ./dev.env; set +a && \
-	if [ -z "$$RAMEKIN_EXTERNAL_URL" ]; then \
-	  echo "RAMEKIN_EXTERNAL_URL must be set (from dev.env or the environment)" >&2; exit 1; \
+	if [ -n "$$RAMEKIN_EXTERNAL_URL" ]; then \
+	  RAMEKIN_EXTERNAL_HOST=$$(echo "$$RAMEKIN_EXTERNAL_URL" | sed -E 's|^[a-z]+://||; s|[:/].*$$||'); \
+	else \
+	  RAMEKIN_EXTERNAL_HOST=ramekin.invalid; \
+	  echo "RAMEKIN_EXTERNAL_URL unset; using placeholder applinks host '$$RAMEKIN_EXTERNAL_HOST' (universal links won't work until this is set)" >&2; \
 	fi && \
-	RAMEKIN_EXTERNAL_HOST=$$(echo "$$RAMEKIN_EXTERNAL_URL" | sed -E 's|^[a-z]+://||; s|[:/].*$$||') && \
 	export RAMEKIN_EXTERNAL_HOST && \
 	echo "Using applinks host: $$RAMEKIN_EXTERNAL_HOST" && \
 	cd ramekin-ios && xcodegen generate
