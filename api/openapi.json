@@ -1846,6 +1846,70 @@
         ]
       }
     },
+    "/api/scrape/{id}/steps/{step_name}/output": {
+      "get": {
+        "tags": [
+          "scrape"
+        ],
+        "operationId": "get_step_output",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Scrape job ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "step_name",
+            "in": "path",
+            "description": "Pipeline step name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Raw step output JSON",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Step output not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/shopping-list": {
       "get": {
         "tags": [

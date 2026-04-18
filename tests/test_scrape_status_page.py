@@ -2,7 +2,6 @@
 
 from datetime import datetime, timezone
 
-import pytest
 import requests
 
 from conftest import wait_for_job_completion
@@ -65,7 +64,6 @@ class TestScrapeStatusResponse:
         now = datetime.now(timezone.utc)
         assert abs((now - job.created_at).total_seconds()) < 60
 
-    @pytest.mark.xfail(reason="endpoint implemented in Task 5")
     def test_step_output_endpoint_returns_json(
         self, authed_api_client, server_url, fixture_base_url
     ):
@@ -85,7 +83,6 @@ class TestScrapeStatusResponse:
         body = resp.json()
         assert isinstance(body, dict)
 
-    @pytest.mark.xfail(reason="endpoint implemented in Task 5")
     def test_step_output_endpoint_404_for_unknown_step(
         self, authed_api_client, server_url, fixture_base_url
     ):
@@ -103,7 +100,6 @@ class TestScrapeStatusResponse:
         )
         assert resp.status_code == 404
 
-    @pytest.mark.xfail(reason="endpoint implemented in Task 5")
     def test_step_output_endpoint_404_for_non_owner(
         self,
         authed_api_client,
