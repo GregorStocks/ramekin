@@ -49,6 +49,9 @@ pub struct ScrapeJobResponse {
     /// Current job status (pending, scraping, parsing, completed, failed)
     #[serde(rename = "status")]
     pub status: String,
+    /// Per-step state for the status page (ordered by pipeline step).
+    #[serde(rename = "steps")]
+    pub steps: Vec<models::StepState>,
     /// URL being scraped (optional for imports)
     #[serde(
         rename = "url",
@@ -65,6 +68,7 @@ impl ScrapeJobResponse {
         id: uuid::Uuid,
         retry_count: i32,
         status: String,
+        steps: Vec<models::StepState>,
     ) -> ScrapeJobResponse {
         ScrapeJobResponse {
             can_retry,
@@ -74,6 +78,7 @@ impl ScrapeJobResponse {
             recipe_id: None,
             retry_count,
             status,
+            steps,
             url: None,
         }
     }

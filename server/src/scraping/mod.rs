@@ -1,4 +1,5 @@
 mod output_store;
+pub mod status;
 pub mod steps;
 
 use crate::db::DbPool;

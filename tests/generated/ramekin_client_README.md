@@ -157,6 +157,7 @@ Class | Method | HTTP request | Description
  - [SignupRequest](ramekin_client/docs/SignupRequest.md)
  - [SignupResponse](ramekin_client/docs/SignupResponse.md)
  - [SortBy](ramekin_client/docs/SortBy.md)
+ - [StepState](ramekin_client/docs/StepState.md)
  - [SyncCreateItem](ramekin_client/docs/SyncCreateItem.md)
  - [SyncCreatedItem](ramekin_client/docs/SyncCreatedItem.md)
  - [SyncRequest](ramekin_client/docs/SyncRequest.md)

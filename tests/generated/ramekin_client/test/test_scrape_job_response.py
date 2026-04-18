@@ -42,6 +42,17 @@ class TestScrapeJobResponse(unittest.TestCase):
                 recipe_id = '',
                 retry_count = 56,
                 status = '',
+                steps = [
+                    ramekin_client.models.step_state.StepState(
+                        duration_ms = 56, 
+                        error = '', 
+                        finished_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        has_output = True, 
+                        name = '', 
+                        started_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        status = '', 
+                        summary = '', )
+                    ],
                 url = ''
             )
         else:
@@ -50,6 +61,17 @@ class TestScrapeJobResponse(unittest.TestCase):
                 id = '',
                 retry_count = 56,
                 status = '',
+                steps = [
+                    ramekin_client.models.step_state.StepState(
+                        duration_ms = 56, 
+                        error = '', 
+                        finished_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        has_output = True, 
+                        name = '', 
+                        started_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        status = '', 
+                        summary = '', )
+                    ],
         )
         """
 

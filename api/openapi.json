@@ -3505,7 +3505,8 @@
           "id",
           "status",
           "can_retry",
-          "retry_count"
+          "retry_count",
+          "steps"
         ],
         "properties": {
           "can_retry": {
@@ -3547,6 +3548,13 @@
           "status": {
             "type": "string",
             "description": "Current job status (pending, scraping, parsing, completed, failed)"
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StepState"
+            },
+            "description": "Per-step state for the status page (ordered by pipeline step)."
           },
           "url": {
             "type": [
@@ -3677,6 +3685,60 @@
           "created_at",
           "random"
         ]
+      },
+      "StepState": {
+        "type": "object",
+        "description": "A single pipeline step's state for the status API response.",
+        "required": [
+          "name",
+          "status",
+          "has_output"
+        ],
+        "properties": {
+          "duration_ms": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64"
+          },
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "finished_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "has_output": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "started_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "description": "One of \"pending\", \"running\", \"completed\", \"failed\", \"skipped\"."
+          },
+          "summary": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
       },
       "SyncCreateItem": {
         "type": "object",

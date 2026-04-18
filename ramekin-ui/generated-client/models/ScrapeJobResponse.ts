@@ -13,6 +13,14 @@
  */
 
 import { mapValues } from '../runtime';
+import type { StepState } from './StepState';
+import {
+    StepStateFromJSON,
+    StepStateFromJSONTyped,
+    StepStateToJSON,
+    StepStateToJSONTyped,
+} from './StepState';
+
 /**
  * 
  * @export
@@ -62,6 +70,12 @@ export interface ScrapeJobResponse {
      */
     status: string;
     /**
+     * Per-step state for the status page (ordered by pipeline step).
+     * @type {Array<StepState>}
+     * @memberof ScrapeJobResponse
+     */
+    steps: Array<StepState>;
+    /**
      * URL being scraped (optional for imports)
      * @type {string}
      * @memberof ScrapeJobResponse
@@ -77,6 +91,7 @@ export function instanceOfScrapeJobResponse(value: object): value is ScrapeJobRe
     if (!('id' in value) || value['id'] === undefined) return false;
     if (!('retryCount' in value) || value['retryCount'] === undefined) return false;
     if (!('status' in value) || value['status'] === undefined) return false;
+    if (!('steps' in value) || value['steps'] === undefined) return false;
     return true;
 }
 
@@ -97,6 +112,7 @@ export function ScrapeJobResponseFromJSONTyped(json: any, ignoreDiscriminator: b
         'recipeId': json['recipe_id'] == null ? undefined : json['recipe_id'],
         'retryCount': json['retry_count'],
         'status': json['status'],
+        'steps': ((json['steps'] as Array<any>).map(StepStateFromJSON)),
         'url': json['url'] == null ? undefined : json['url'],
     };
 }
@@ -119,6 +135,7 @@ export function ScrapeJobResponseToJSONTyped(value?: ScrapeJobResponse | null, i
         'recipe_id': value['recipeId'],
         'retry_count': value['retryCount'],
         'status': value['status'],
+        'steps': ((value['steps'] as Array<any>).map(StepStateToJSON)),
         'url': value['url'],
     };
 }

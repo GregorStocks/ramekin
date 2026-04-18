@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import type { StepState } from './StepState';
 /**
  *
  * @export
@@ -57,6 +58,12 @@ export interface ScrapeJobResponse {
      * @memberof ScrapeJobResponse
      */
     status: string;
+    /**
+     * Per-step state for the status page (ordered by pipeline step).
+     * @type {Array<StepState>}
+     * @memberof ScrapeJobResponse
+     */
+    steps: Array<StepState>;
     /**
      * URL being scraped (optional for imports)
      * @type {string}

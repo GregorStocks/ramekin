@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **recipe_id** | **UUID** | Recipe ID if completed successfully | [optional] 
 **retry_count** | **int** | Number of retry attempts | 
 **status** | **str** | Current job status (pending, scraping, parsing, completed, failed) | 
+**steps** | [**List[StepState]**](StepState.md) | Per-step state for the status page (ordered by pipeline step). | 
 **url** | **str** | URL being scraped (optional for imports) | [optional] 
 
 ## Example

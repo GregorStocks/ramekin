@@ -120,6 +120,7 @@ Class | Method | HTTP request | Description
  - [SignupRequest](docs/SignupRequest.md)
  - [SignupResponse](docs/SignupResponse.md)
  - [SortBy](docs/SortBy.md)
+ - [StepState](docs/StepState.md)
  - [SyncCreateItem](docs/SyncCreateItem.md)
  - [SyncCreatedItem](docs/SyncCreatedItem.md)
  - [SyncRequest](docs/SyncRequest.md)

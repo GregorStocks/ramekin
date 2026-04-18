@@ -17,27 +17,25 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from uuid import UUID
-from ramekin_client.models.step_state import StepState
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ScrapeJobResponse(BaseModel):
+class StepState(BaseModel):
     """
-    ScrapeJobResponse
+    A single pipeline step's state for the status API response.
     """ # noqa: E501
-    can_retry: StrictBool = Field(description="Whether this job can be retried")
-    error: Optional[StrictStr] = Field(default=None, description="Error message if failed")
-    failed_at_step: Optional[StrictStr] = Field(default=None, description="Which step failed (for retry logic)")
-    id: UUID = Field(description="The scrape job ID")
-    recipe_id: Optional[UUID] = Field(default=None, description="Recipe ID if completed successfully")
-    retry_count: StrictInt = Field(description="Number of retry attempts")
-    status: StrictStr = Field(description="Current job status (pending, scraping, parsing, completed, failed)")
-    steps: List[StepState] = Field(description="Per-step state for the status page (ordered by pipeline step).")
-    url: Optional[StrictStr] = Field(default=None, description="URL being scraped (optional for imports)")
-    __properties: ClassVar[List[str]] = ["can_retry", "error", "failed_at_step", "id", "recipe_id", "retry_count", "status", "steps", "url"]
+    duration_ms: Optional[StrictInt] = None
+    error: Optional[StrictStr] = None
+    finished_at: Optional[datetime] = None
+    has_output: StrictBool
+    name: StrictStr
+    started_at: Optional[datetime] = None
+    status: StrictStr = Field(description="One of \"pending\", \"running\", \"completed\", \"failed\", \"skipped\".")
+    summary: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["duration_ms", "error", "finished_at", "has_output", "name", "started_at", "status", "summary"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -57,7 +55,7 @@ class ScrapeJobResponse(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ScrapeJobResponse from a JSON string"""
+        """Create an instance of StepState from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -78,38 +76,36 @@ class ScrapeJobResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in steps (list)
-        _items = []
-        if self.steps:
-            for _item_steps in self.steps:
-                if _item_steps:
-                    _items.append(_item_steps.to_dict())
-            _dict['steps'] = _items
+        # set to None if duration_ms (nullable) is None
+        # and model_fields_set contains the field
+        if self.duration_ms is None and "duration_ms" in self.model_fields_set:
+            _dict['duration_ms'] = None
+
         # set to None if error (nullable) is None
         # and model_fields_set contains the field
         if self.error is None and "error" in self.model_fields_set:
             _dict['error'] = None
 
-        # set to None if failed_at_step (nullable) is None
+        # set to None if finished_at (nullable) is None
         # and model_fields_set contains the field
-        if self.failed_at_step is None and "failed_at_step" in self.model_fields_set:
-            _dict['failed_at_step'] = None
+        if self.finished_at is None and "finished_at" in self.model_fields_set:
+            _dict['finished_at'] = None
 
-        # set to None if recipe_id (nullable) is None
+        # set to None if started_at (nullable) is None
         # and model_fields_set contains the field
-        if self.recipe_id is None and "recipe_id" in self.model_fields_set:
-            _dict['recipe_id'] = None
+        if self.started_at is None and "started_at" in self.model_fields_set:
+            _dict['started_at'] = None
 
-        # set to None if url (nullable) is None
+        # set to None if summary (nullable) is None
         # and model_fields_set contains the field
-        if self.url is None and "url" in self.model_fields_set:
-            _dict['url'] = None
+        if self.summary is None and "summary" in self.model_fields_set:
+            _dict['summary'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ScrapeJobResponse from a dict"""
+        """Create an instance of StepState from a dict"""
         if obj is None:
             return None
 
@@ -117,15 +113,14 @@ class ScrapeJobResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "can_retry": obj.get("can_retry"),
+            "duration_ms": obj.get("duration_ms"),
             "error": obj.get("error"),
-            "failed_at_step": obj.get("failed_at_step"),
-            "id": obj.get("id"),
-            "recipe_id": obj.get("recipe_id"),
-            "retry_count": obj.get("retry_count"),
+            "finished_at": obj.get("finished_at"),
+            "has_output": obj.get("has_output"),
+            "name": obj.get("name"),
+            "started_at": obj.get("started_at"),
             "status": obj.get("status"),
-            "steps": [StepState.from_dict(_item) for _item in obj["steps"]] if obj.get("steps") is not None else None,
-            "url": obj.get("url")
+            "summary": obj.get("summary")
         })
         return _obj
 

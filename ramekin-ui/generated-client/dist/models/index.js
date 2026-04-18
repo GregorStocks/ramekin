@@ -48,6 +48,7 @@ export * from './ShoppingListResponse';
 export * from './SignupRequest';
 export * from './SignupResponse';
 export * from './SortBy';
+export * from './StepState';
 export * from './SyncCreateItem';
 export * from './SyncCreatedItem';
 export * from './SyncRequest';

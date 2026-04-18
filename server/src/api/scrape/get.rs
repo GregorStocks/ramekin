@@ -2,6 +2,7 @@ use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::scraping;
+use crate::scraping::status::{build_step_states, StepState};
 use axum::{
     extract::{Path, State},
     http::StatusCode,
@@ -35,6 +36,8 @@ pub struct ScrapeJobResponse {
     pub can_retry: bool,
     /// Number of retry attempts
     pub retry_count: i32,
+    /// Per-step state for the status page (ordered by pipeline step).
+    pub steps: Vec<StepState>,
 }
 
 #[utoipa::path(
@@ -94,6 +97,37 @@ pub async fn get_scrape(
 
     let can_retry = job.status == scraping::STATUS_FAILED;
 
+    // Build the per-step state list for the status page. For failed jobs the
+    // current_step is the step that was running when the failure was recorded
+    // (mark_failed leaves current_step intact), so that's what we pass as the
+    // "failed step" marker.
+    let failed_step_name: Option<&str> = if job.status == scraping::STATUS_FAILED {
+        job.current_step.as_deref()
+    } else {
+        None
+    };
+    let steps = match build_step_states(
+        &pool,
+        job.id,
+        &job.status,
+        job.current_step.as_deref(),
+        job.current_step_started_at,
+        failed_step_name,
+        job.error_message.as_deref(),
+    ) {
+        Ok(s) => s,
+        Err(e) => {
+            tracing::error!("Failed to build step states: {}", e);
+            return (
+                StatusCode::INTERNAL_SERVER_ERROR,
+                Json(ErrorResponse {
+                    error: "Failed to build step states".to_string(),
+                }),
+            )
+                .into_response();
+        }
+    };
+
     (
         StatusCode::OK,
         Json(ScrapeJobResponse {
@@ -105,6 +139,7 @@ pub async fn get_scrape(
             failed_at_step: job.failed_at_step,
             can_retry,
             retry_count: job.retry_count,
+            steps,
         }),
     )
         .into_response()

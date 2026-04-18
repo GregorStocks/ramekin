@@ -1,38 +1,37 @@
 
-# ScrapeJobResponse
+# StepState
 
+A single pipeline step\'s state for the status API response.
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`canRetry` | boolean
+`durationMs` | number
 `error` | string
-`failedAtStep` | string
-`id` | string
-`recipeId` | string
-`retryCount` | number
+`finishedAt` | Date
+`hasOutput` | boolean
+`name` | string
+`startedAt` | Date
 `status` | string
-`steps` | [Array&lt;StepState&gt;](StepState.md)
-`url` | string
+`summary` | string
 
 ## Example
 
 ```typescript
-import type { ScrapeJobResponse } from ''
+import type { StepState } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "canRetry": null,
+  "durationMs": null,
   "error": null,
-  "failedAtStep": null,
-  "id": null,
-  "recipeId": null,
-  "retryCount": null,
+  "finishedAt": null,
+  "hasOutput": null,
+  "name": null,
+  "startedAt": null,
   "status": null,
-  "steps": null,
-  "url": null,
-} satisfies ScrapeJobResponse
+  "summary": null,
+} satisfies StepState
 
 console.log(example)
 
@@ -41,7 +40,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as ScrapeJobResponse
+const exampleParsed = JSON.parse(exampleJSON) as StepState
 console.log(exampleParsed)
 ```
 

@@ -91,7 +91,13 @@ export default function CreateRecipePage() {
         createScrapeRequest: { url },
       });
 
-      setScrapeJob({ ...response, url, canRetry: false, retryCount: 0 });
+      setScrapeJob({
+        ...response,
+        url,
+        canRetry: false,
+        retryCount: 0,
+        steps: [],
+      });
 
       // Start polling
       pollStartTime = Date.now();

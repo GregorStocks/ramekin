@@ -26,10 +26,12 @@ public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
     public var retryCount: Int
     /** Current job status (pending, scraping, parsing, completed, failed) */
     public var status: String
+    /** Per-step state for the status page (ordered by pipeline step). */
+    public var steps: [StepState]
     /** URL being scraped (optional for imports) */
     public var url: String?
 
-    public init(canRetry: Bool, error: String? = nil, failedAtStep: String? = nil, id: UUID, recipeId: UUID? = nil, retryCount: Int, status: String, url: String? = nil) {
+    public init(canRetry: Bool, error: String? = nil, failedAtStep: String? = nil, id: UUID, recipeId: UUID? = nil, retryCount: Int, status: String, steps: [StepState], url: String? = nil) {
         self.canRetry = canRetry
         self.error = error
         self.failedAtStep = failedAtStep
@@ -37,6 +39,7 @@ public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
         self.recipeId = recipeId
         self.retryCount = retryCount
         self.status = status
+        self.steps = steps
         self.url = url
     }
 
@@ -48,6 +51,7 @@ public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
         case recipeId = "recipe_id"
         case retryCount = "retry_count"
         case status
+        case steps
         case url
     }
 
@@ -62,6 +66,7 @@ public struct ScrapeJobResponse: Codable, JSONEncodable, Hashable {
         try container.encodeIfPresent(recipeId, forKey: .recipeId)
         try container.encode(retryCount, forKey: .retryCount)
         try container.encode(status, forKey: .status)
+        try container.encode(steps, forKey: .steps)
         try container.encodeIfPresent(url, forKey: .url)
     }
 }
