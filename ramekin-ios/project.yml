@@ -40,6 +40,8 @@ targets:
       properties:
         com.apple.security.application-groups:
           - group.com.ramekin.app
+        com.apple.developer.associated-domains:
+          - applinks:${RAMEKIN_EXTERNAL_HOST}
     dependencies:
       - target: RamekinShareExtension
         embed:
