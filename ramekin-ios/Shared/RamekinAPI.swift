@@ -142,10 +142,6 @@ class RamekinAPI {
         let token: String
     }
 
-    struct ScrapeRequest: Encodable {
-        let url: String
-    }
-
     struct CaptureRequest: Encodable {
         let html: String
         let source_url: String
@@ -362,21 +358,6 @@ class RamekinAPI {
 // MARK: - Scraping
 
 extension RamekinAPI {
-    func scrapeURL(_ urlString: String) async throws -> ScrapeResponse {
-        logger.log("scrapeURL called with: \(urlString)")
-        let body = try JSONEncoder().encode(ScrapeRequest(url: urlString))
-        let data = try await performRequest(
-            method: "POST",
-            path: "/api/scrape",
-            body: body,
-            acceptedStatusCodes: [200, 201],
-            timeoutInterval: Self.scrapeSubmitTimeout
-        )
-        let decoded = try JSONDecoder().decode(ScrapeResponse.self, from: data)
-        logger.log("SUCCESS: Scrape job ID: \(decoded.id)")
-        return decoded
-    }
-
     func captureHTML(html: String, sourceURL: String) async throws -> ScrapeResponse {
         logger.log("captureHTML called for: \(sourceURL) (html \(html.count) bytes)")
         let body = try JSONEncoder().encode(CaptureRequest(html: html, source_url: sourceURL))
