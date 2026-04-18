@@ -3,7 +3,7 @@ pub mod status;
 pub mod steps;
 
 use crate::db::DbPool;
-use crate::models::{NewScrapeJob, NewStepOutput, ScrapeJob, StepOutput};
+use crate::models::{NewScrapeJob, NewStepOutput, ScrapeJob};
 use crate::photos::load_photo_images;
 use crate::schema::{scrape_jobs, step_outputs, user_tags};
 use chrono::{DateTime, Utc};
@@ -584,25 +584,6 @@ fn save_step_output(
     Ok(())
 }
 
-/// Get the most recent step output for a job by step name.
-fn get_latest_step_output(
-    pool: &DbPool,
-    job_id: Uuid,
-    step_name: &str,
-) -> Result<Option<StepOutput>, ScrapeError> {
-    let mut conn = pool
-        .get()
-        .map_err(|e| ScrapeError::Database(e.to_string()))?;
-
-    step_outputs::table
-        .filter(step_outputs::scrape_job_id.eq(job_id))
-        .filter(step_outputs::step_name.eq(step_name))
-        .order(step_outputs::created_at.desc())
-        .first::<StepOutput>(&mut conn)
-        .optional()
-        .map_err(|e| ScrapeError::Database(e.to_string()))
-}
-
 /// Mark job as failed.
 ///
 /// `step_name` is the real pipeline step name that failed (e.g. `"fetch_html"`,
@@ -950,49 +931,18 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
         return Err(ScrapeError::MaxRetriesExceeded);
     }
 
-    // Determine where to resume based on failed_at_step and available outputs
-    let has_fetch_output = get_latest_step_output(pool, job_id, FetchHtmlStep::NAME)?.is_some();
-    let has_extract_output =
-        get_latest_step_output(pool, job_id, ExtractRecipeStep::NAME)?.is_some();
-    let fetch_images_output = get_latest_step_output(pool, job_id, FetchImagesStepMeta::NAME)?;
-    let has_fetch_images_output = fetch_images_output.is_some();
-
-    // For photo-only retries, the loud-failure path makes save_recipe fail
-    // specifically when fetch_images produced an empty photo_ids list. In
-    // that case replaying save_recipe with the same stale output just fails
-    // again. We detect this by inspecting the actual fetch_images output —
-    // not just its existence — so transient save_recipe failures (e.g. DB
-    // errors) still resume at save and don't redundantly re-download photos
-    // or create duplicate Photo rows.
-    let photo_only_empty_fetch = job.photo_only
-        && fetch_images_output
-            .as_ref()
-            .and_then(|o| o.output.get("photo_ids"))
-            .and_then(|v| v.as_array())
-            .map(|arr| arr.is_empty())
-            .unwrap_or(false);
-
-    // `failed_at_step` now stores the real pipeline step name. Anything that
-    // failed at or before `fetch_html` restarts from the top; for later
-    // failures we resume at the earliest step whose output is missing.
-    let (resume_status, resume_step) = match job.failed_at_step.as_deref() {
-        Some(FetchHtmlStep::NAME) | None => (STATUS_SCRAPING, FetchHtmlStep::NAME),
-        Some(_) => {
-            if has_fetch_images_output && !photo_only_empty_fetch {
-                // Have fetch_images output with at least one photo (or this
-                // is a normal rescrape) — try save again
-                (STATUS_PARSING, SaveRecipeStepMeta::NAME)
-            } else if has_extract_output {
-                // Have extract output, try fetch_images
-                (STATUS_PARSING, FetchImagesStepMeta::NAME)
-            } else if has_fetch_output {
-                // Have fetch output, try extract again
-                (STATUS_PARSING, ExtractRecipeStep::NAME)
-            } else {
-                // No outputs, start from beginning
-                (STATUS_SCRAPING, FetchHtmlStep::NAME)
-            }
-        }
+    // Resume at the step that failed. `failed_at_step` holds the real pipeline
+    // step name (see `mark_failed`); if it's missing or not a canonical pipeline
+    // step, fall back to running the whole pipeline from the top.
+    let resume_step = job
+        .failed_at_step
+        .as_deref()
+        .filter(|name| status::PIPELINE_STEPS.contains(name))
+        .unwrap_or(FetchHtmlStep::NAME);
+    let resume_status = if resume_step == FetchHtmlStep::NAME {
+        STATUS_SCRAPING
+    } else {
+        STATUS_PARSING
     };
 
     let mut conn = pool

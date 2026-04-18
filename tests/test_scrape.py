@@ -215,11 +215,10 @@ class TestScrapeRetry:
 
         job2 = wait_for_job_completion(scrape_api, job.id)
         assert job2.status == "failed"
-        # retry_scrape resumes at the earliest step whose output is missing.
-        # Retry may land at a different concrete step depending on which
-        # outputs were persisted on the first run; we just require the
-        # retry attempt to be recorded.
-        assert job2.failed_at_step is not None
+        assert job2.failed_at_step == "extract_recipe", (
+            f"retry should re-fail at extract_recipe (earliest missing output); "
+            f"got {job2.failed_at_step}"
+        )
         assert job2.retry_count == 1
 
     def test_cannot_retry_completed_job(self, authed_api_client):
