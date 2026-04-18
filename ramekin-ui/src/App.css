@@ -1284,6 +1284,11 @@ textarea:focus-visible {
   color: var(--text-muted);
   text-decoration: none;
   font-size: 0.9rem;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .recipe-top-bar .back-link:hover {

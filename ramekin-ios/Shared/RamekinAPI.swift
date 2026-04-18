@@ -20,15 +20,6 @@ class RamekinAPI {
 
     private let logger = DebugLogger.shared
 
-    /// Custom URLSession that accepts self-signed certificates
-    private lazy var urlSession: URLSession = {
-        let config = URLSessionConfiguration.default
-        return URLSession(configuration: config, delegate: InsecureSessionDelegate(), delegateQueue: nil)
-    }()
-
-    /// Shared URLSession for authenticated image requests.
-    lazy var imageSession: URLSession = urlSession
-
     private init() {
         // Configure generated client to accept self-signed certificates
         RamekinClientAPI.requestBuilderFactory = InsecureBuilderFactory()
@@ -174,7 +165,8 @@ class RamekinAPI {
         path: String,
         body: Data? = nil,
         requiresAuth: Bool = true,
-        acceptedStatusCodes: Set<Int> = [200, 201, 204]
+        acceptedStatusCodes: Set<Int> = [200, 201, 204],
+        timeoutInterval: TimeInterval? = nil
     ) async throws -> Data {
         guard let baseURL = serverURL else {
             logger.log("ERROR: No server URL configured")
@@ -192,6 +184,9 @@ class RamekinAPI {
 
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method
+        if let timeoutInterval {
+            urlRequest.timeoutInterval = timeoutInterval
+        }
         if let token {
             urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         }
@@ -209,7 +204,7 @@ class RamekinAPI {
         let data: Data
         let response: URLResponse
         do {
-            (data, response) = try await urlSession.data(for: urlRequest)
+            (data, response) = try await insecureSession.data(for: urlRequest)
         } catch {
             logger.log("NETWORK ERROR: \(error.localizedDescription)")
             throw APIError.networkError(error)
@@ -282,7 +277,7 @@ class RamekinAPI {
         let body = LoginRequest(username: username, password: password)
         request.httpBody = try JSONEncoder().encode(body)
 
-        let (data, response) = try await urlSession.data(for: request)
+        let (data, response) = try await insecureSession.data(for: request)
 
         guard let httpResponse = response as? HTTPURLResponse else {
             throw APIError.invalidResponse
@@ -319,7 +314,11 @@ class RamekinAPI {
 
     // MARK: - Scraping
 
-    /// Submit a URL for scraping (async job)
+    /// Submit a URL for scraping (async job). Uses a short timeout because the
+    /// endpoint just enqueues a job and must return quickly — share extensions
+    /// have a tight memory/time budget before iOS terminates them.
+    static let scrapeSubmitTimeout: TimeInterval = 15
+
     func scrapeURL(_ urlString: String) async throws -> ScrapeResponse {
         logger.log("scrapeURL called with: \(urlString)")
         let body = try JSONEncoder().encode(ScrapeRequest(url: urlString))
@@ -327,7 +326,8 @@ class RamekinAPI {
             method: "POST",
             path: "/api/scrape",
             body: body,
-            acceptedStatusCodes: [200, 201]
+            acceptedStatusCodes: [200, 201],
+            timeoutInterval: Self.scrapeSubmitTimeout
         )
         let decoded = try JSONDecoder().decode(ScrapeResponse.self, from: data)
         logger.log("SUCCESS: Scrape job ID: \(decoded.id)")
@@ -366,18 +366,9 @@ class RamekinAPI {
 // MARK: - Meal Plans
 
 extension RamekinAPI {
-    private static let dateOnlyFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        formatter.calendar = Calendar(identifier: .iso8601)
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.timeZone = .current
-        return formatter
-    }()
-
     func listMealPlans(startDate: Date, endDate: Date) async throws -> MealPlanListResponse {
-        let start = Self.dateOnlyFormatter.string(from: startDate)
-        let end = Self.dateOnlyFormatter.string(from: endDate)
+        let start = SharedDateFormatters.localDateOnly.string(from: startDate)
+        let end = SharedDateFormatters.localDateOnly.string(from: endDate)
         let data = try await performRequest(
             method: "GET",
             path: "/api/meal-plans?start_date=\(start)&end_date=\(end)",
@@ -398,7 +389,7 @@ extension RamekinAPI {
 
         let body = try JSONEncoder().encode(CreateMealPlanRequestBody(
             recipeId: recipeId,
-            mealDate: Self.dateOnlyFormatter.string(from: mealDate),
+            mealDate: SharedDateFormatters.localDateOnly.string(from: mealDate),
             mealType: mealType,
             notes: normalizedNotes
         ))

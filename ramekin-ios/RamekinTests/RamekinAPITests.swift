@@ -102,8 +102,16 @@ final class RamekinAPITests: XCTestCase {
         XCTAssertEqual(error.errorDescription, "HTTP error 500")
     }
 
-    func testImageSessionUsesInsecureSessionDelegate() {
-        XCTAssertTrue(RamekinAPI.shared.imageSession.delegate is InsecureSessionDelegate)
+    func testInsecureSessionUsesInsecureSessionDelegate() {
+        XCTAssertTrue(insecureSession.delegate is InsecureSessionDelegate)
+    }
+
+    func testScrapeSubmitTimeoutFitsShareExtensionBudget() {
+        // iOS terminates share extensions around ~30s; the submit call must
+        // return well before that so the user sees a result instead of the
+        // OS killing the extension mid-spinner.
+        XCTAssertLessThanOrEqual(RamekinAPI.scrapeSubmitTimeout, 20)
+        XCTAssertGreaterThan(RamekinAPI.scrapeSubmitTimeout, 0)
     }
 
     // MARK: - Request Encoding Tests

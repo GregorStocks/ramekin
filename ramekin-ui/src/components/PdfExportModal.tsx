@@ -229,9 +229,9 @@ export default function PdfExportModal(props: Props) {
   const [orientation, setOrientation] = createSignal<"portrait" | "landscape">(
     "landscape",
   );
-  const [showCutGuides, setShowCutGuides] = createSignal(false);
+  const [showCutGuides, setShowCutGuides] = createSignal(true);
   const [showPageNumbers, setShowPageNumbers] = createSignal(true);
-  const [doubleSided, setDoubleSided] = createSignal(false);
+  const [doubleSided, setDoubleSided] = createSignal(true);
   const [flipDirection, setFlipDirection] =
     createSignal<FlipDirection>("long-edge");
   const [backPaddingIn, setBackPaddingIn] = createSignal(BACK_CARD_PAD_DEFAULT);

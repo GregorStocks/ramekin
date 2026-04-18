@@ -66,12 +66,13 @@ struct RecipeListView: View {
             if newValue.isEmpty {
                 clearFilters()
             } else {
-                searchTask?.cancel()
-                searchTask = Task {
-                    try? await Task.sleep(nanoseconds: 300_000_000)
+                SearchDebounceSupport.replaceTask(&searchTask) {
                     await loadRecipes(reset: true)
                 }
             }
+        }
+        .onDisappear {
+            SearchDebounceSupport.cancelTask(&searchTask)
         }
         .navigationTitle("Recipes")
         .toolbar {
@@ -283,7 +284,7 @@ extension RecipeListView {
     }
 
     private func reloadRecipes() {
-        searchTask?.cancel()
+        SearchDebounceSupport.cancelTask(&searchTask)
         Task { await loadRecipes(reset: true) }
     }
 
