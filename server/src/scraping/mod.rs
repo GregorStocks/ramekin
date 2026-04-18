@@ -743,11 +743,21 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
         // Execute step with OpenTelemetry span
         let mut result = execute_step_with_tracing(step, url, &store, &step_name).await;
 
+        let meta = step.metadata();
+
         // Save output (for both success and failure - useful for debugging).
-        // If persistence itself fails we MUST fail the step: silently swallowing
-        // the error leaves a "successful" step with no output row, which makes
-        // downstream retries think the step already ran and produces a deadlock
-        // where the pipeline can never make progress. Fail fast instead.
+        // If persistence itself fails we normally fail the step: silently
+        // swallowing the error leaves a "successful" step with no output row,
+        // which makes downstream retries think the step already ran and
+        // produces a deadlock where the pipeline can never make progress.
+        //
+        // Exception: for `continues_on_failure` steps (enrichment), a
+        // persistence failure should NOT terminate the pipeline — otherwise a
+        // transient save error after `save_recipe` has already succeeded
+        // would cause the user to silently lose enrichment for that recipe.
+        // We still mark the step as failed on the result so the persisted row
+        // (and status API) reflect the failure, but we preserve `next_step`
+        // so the chain continues.
         if let Err(e) = store.save_output(
             &step_name,
             &result.output,
@@ -759,10 +769,11 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
             tracing::error!("{msg}");
             result.success = false;
             result.error = Some(msg);
-            result.next_step = None;
+            if !meta.continues_on_failure {
+                result.next_step = None;
+            }
         }
 
-        let meta = step.metadata();
         let should_continue = result.success || meta.continues_on_failure;
 
         if result.success {
