@@ -169,12 +169,12 @@ final class RamekinAPITests: XCTestCase {
         XCTAssertNil(credentialStore.accessClientSecret)
     }
 
-    func testScrapeSubmitTimeoutFitsShareExtensionBudget() {
+    func testCaptureSubmitTimeoutFitsShareExtensionBudget() {
         // iOS terminates share extensions around ~30s; the submit call must
-        // return well before that so the user sees a result instead of the
-        // OS killing the extension mid-spinner.
-        XCTAssertLessThanOrEqual(RamekinAPI.scrapeSubmitTimeout, 20)
-        XCTAssertGreaterThan(RamekinAPI.scrapeSubmitTimeout, 0)
+        // return before that so the user sees a result instead of the OS
+        // killing the extension mid-spinner.
+        XCTAssertLessThan(RamekinAPI.captureSubmitTimeout, 30)
+        XCTAssertGreaterThan(RamekinAPI.captureSubmitTimeout, 0)
     }
 
     // MARK: - Request Encoding Tests
@@ -191,15 +191,19 @@ final class RamekinAPITests: XCTestCase {
         XCTAssertEqual(json["password"], "testpass")
     }
 
-    func testScrapeRequestEncoding() throws {
-        let request = RamekinAPI.ScrapeRequest(url: "https://example.com/recipe")
+    func testCaptureRequestEncoding() throws {
+        let request = RamekinAPI.CaptureRequest(
+            html: "<html><body>hi</body></html>",
+            source_url: "https://example.com/recipe"
+        )
         let data = try JSONEncoder().encode(request)
         guard let json = try JSONSerialization.jsonObject(with: data) as? [String: String] else {
             XCTFail("Failed to decode JSON as [String: String]")
             return
         }
 
-        XCTAssertEqual(json["url"], "https://example.com/recipe")
+        XCTAssertEqual(json["html"], "<html><body>hi</body></html>")
+        XCTAssertEqual(json["source_url"], "https://example.com/recipe")
     }
 
     func testCreateMealPlanRequestEncodingOmitsEmptyNotes() throws {

@@ -142,8 +142,9 @@ class RamekinAPI {
         let token: String
     }
 
-    struct ScrapeRequest: Encodable {
-        let url: String
+    struct CaptureRequest: Encodable {
+        let html: String
+        let source_url: String
     }
 
     struct ScrapeResponse: Decodable {
@@ -179,7 +180,8 @@ class RamekinAPI {
         body: Data? = nil,
         requiresAuth: Bool = true,
         acceptedStatusCodes: Set<Int> = [200, 201, 204],
-        timeoutInterval: TimeInterval? = nil
+        timeoutInterval: TimeInterval? = nil,
+        logBody: Bool = true
     ) async throws -> Data {
         guard let baseURL = serverURL else {
             logger.log("ERROR: No server URL configured")
@@ -210,9 +212,7 @@ class RamekinAPI {
         urlRequest.httpBody = body
 
         logger.log("REQUEST: \(method) \(url.absoluteString)")
-        if let body, let bodyString = String(data: body, encoding: .utf8) {
-            logger.log("REQUEST BODY: \(bodyString)")
-        }
+        logRequestBody(body, logBody: logBody)
 
         let data: Data
         let response: URLResponse
@@ -236,6 +236,15 @@ class RamekinAPI {
             throw parseError(from: data, statusCode: httpResponse.statusCode)
         }
         return data
+    }
+
+    private func logRequestBody(_ body: Data?, logBody: Bool) {
+        guard let body else { return }
+        if logBody, let bodyString = String(data: body, encoding: .utf8) {
+            logger.log("REQUEST BODY: \(bodyString)")
+        } else {
+            logger.log("REQUEST BODY: <\(body.count) bytes, not logged>")
+        }
     }
 
     fileprivate func parseError(from data: Data, statusCode: Int) -> APIError {
@@ -348,27 +357,28 @@ class RamekinAPI {
         updateGeneratedClientConfig()
     }
 
-    /// Submit a URL for scraping (async job). Uses a short timeout because the
-    /// endpoint just enqueues a job and must return quickly — share extensions
-    /// have a tight memory/time budget before iOS terminates them.
-    static let scrapeSubmitTimeout: TimeInterval = 15
+    /// Timeout for the capture POST. Must fit inside the ~30s iOS gives a
+    /// share extension before it's terminated, while leaving enough headroom
+    /// for multi-MB HTML uploads on a slow mobile uplink.
+    static let captureSubmitTimeout: TimeInterval = 25
 }
 
 // MARK: - Scraping
 
 extension RamekinAPI {
-    func scrapeURL(_ urlString: String) async throws -> ScrapeResponse {
-        logger.log("scrapeURL called with: \(urlString)")
-        let body = try JSONEncoder().encode(ScrapeRequest(url: urlString))
+    func captureHTML(html: String, sourceURL: String) async throws -> ScrapeResponse {
+        logger.log("captureHTML called for: \(sourceURL) (html \(html.count) bytes)")
+        let body = try JSONEncoder().encode(CaptureRequest(html: html, source_url: sourceURL))
         let data = try await performRequest(
             method: "POST",
-            path: "/api/scrape",
+            path: "/api/scrape/capture",
             body: body,
             acceptedStatusCodes: [200, 201],
-            timeoutInterval: Self.scrapeSubmitTimeout
+            timeoutInterval: Self.captureSubmitTimeout,
+            logBody: false
         )
         let decoded = try JSONDecoder().decode(ScrapeResponse.self, from: data)
-        logger.log("SUCCESS: Scrape job ID: \(decoded.id)")
+        logger.log("SUCCESS: Capture job ID: \(decoded.id)")
         return decoded
     }
 

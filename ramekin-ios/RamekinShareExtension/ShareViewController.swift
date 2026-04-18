@@ -5,8 +5,12 @@ import os.log
 
 private let logger = Logger(subsystem: "com.ramekin.app.share", category: "ShareExtension")
 
-/// Share Extension entry point
-/// Handles receiving URLs from Safari and other apps
+/// Share Extension entry point.
+///
+/// We only run from Safari via a JS preprocessing file (see
+/// `SharePreprocessor.js` and Info.plist). The preprocessor delivers a
+/// property-list payload containing `{html, url, title}`; we POST that to
+/// `/api/scrape/capture`, matching the web bookmarklet.
 class ShareViewController: UIViewController {
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -24,17 +28,16 @@ class ShareViewController: UIViewController {
         DebugLogger.shared.log("ShareViewController viewDidLoad called")
         logger.info("ShareViewController viewDidLoad called")
 
-        // Extract the shared URL
-        extractURL { [weak self] url in
+        extractPayload { [weak self] payload in
             DispatchQueue.main.async {
-                self?.presentShareView(with: url)
+                self?.presentShareView(with: payload)
             }
         }
     }
 
-    private func presentShareView(with url: URL?) {
+    private func presentShareView(with payload: SharedPagePayload?) {
         let shareView = ShareExtensionView(
-            sharedURL: url,
+            payload: payload,
             onComplete: { [weak self] in
                 self?.extensionContext?.completeRequest(returningItems: nil)
             },
@@ -64,24 +67,22 @@ class ShareViewController: UIViewController {
         hostingController.didMove(toParent: self)
     }
 
-    /// Extract URL from the share extension context
-    private func extractURL(completion: @escaping (URL?) -> Void) {
+    private func extractPayload(completion: @escaping (SharedPagePayload?) -> Void) {
         guard let extensionItems = extensionContext?.inputItems as? [NSExtensionItem] else {
             logger.error("No extension items found in context")
             completion(nil)
             return
         }
-
         logger.info("Found \(extensionItems.count) extension items")
         Task {
-            completion(await SharedURLExtractor.extractURL(from: extensionItems))
+            completion(await SharedPagePayloadExtractor.extractPayload(from: extensionItems))
         }
     }
 }
 
 /// SwiftUI View for the Share Extension
 struct ShareExtensionView: View {
-    let sharedURL: URL?
+    let payload: SharedPagePayload?
     let onComplete: () -> Void
     let onCancel: () -> Void
 
@@ -111,8 +112,8 @@ struct ShareExtensionView: View {
 
                 statusText
 
-                if let url = sharedURL {
-                    Text(url.absoluteString)
+                if let payload {
+                    Text(payload.url.absoluteString)
                         .font(.caption)
                         .foregroundColor(.secondary)
                         .lineLimit(2)
@@ -283,7 +284,6 @@ struct ShareExtensionView: View {
         DebugLogger.shared.log("authToken present: \(RamekinAPI.shared.authToken != nil)")
         logger.info("checkLoginAndSend called, isLoggedIn: \(RamekinAPI.shared.isLoggedIn)")
 
-        // Check if logged in
         guard RamekinAPI.shared.isLoggedIn else {
             DebugLogger.shared.log("ERROR: User not logged in")
             logger.warning("User not logged in")
@@ -291,23 +291,21 @@ struct ShareExtensionView: View {
             return
         }
 
-        // Check if we have a URL
-        guard let url = sharedURL else {
-            DebugLogger.shared.log("ERROR: No URL provided to share")
-            logger.error("No URL provided to share")
+        guard let payload else {
+            DebugLogger.shared.log("ERROR: No payload from Safari preprocessing")
+            logger.error("No payload from Safari preprocessing")
             status = .error
-            errorMessage = "No URL to save"
+            errorMessage = "Could not read page content. Open the page in Safari and share from there."
             return
         }
 
-        DebugLogger.shared.log("URL to share: \(url.absoluteString)")
-        // Send the URL
-        sendURL(url)
+        DebugLogger.shared.log("Payload URL: \(payload.url.absoluteString)")
+        sendCapture(payload)
     }
 
-    private func sendURL(_ url: URL) {
-        DebugLogger.shared.log("sendURL called with: \(url.absoluteString)")
-        logger.info("Sending URL to API: \(url.absoluteString)")
+    private func sendCapture(_ payload: SharedPagePayload) {
+        DebugLogger.shared.log("sendCapture for: \(payload.url.absoluteString)")
+        logger.info("Sending capture to API: \(payload.url.absoluteString)")
         status = .sending
         showSlowAffordance = false
 
@@ -322,16 +320,17 @@ struct ShareExtensionView: View {
 
         Task {
             do {
-                DebugLogger.shared.log("Calling RamekinAPI.shared.scrapeURL...")
-                _ = try await RamekinAPI.shared.scrapeURL(url.absoluteString)
+                DebugLogger.shared.log("Calling RamekinAPI.shared.captureHTML...")
+                _ = try await RamekinAPI.shared.captureHTML(
+                    html: payload.html,
+                    sourceURL: payload.url.absoluteString
+                )
                 DebugLogger.shared.log("API call completed successfully")
                 logger.info("API call succeeded")
 
                 await MainActor.run {
                     status = .success
                     DebugLogger.shared.log("Status set to success, will dismiss in 1.5s")
-
-                    // Auto-dismiss after a short delay
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                         DebugLogger.shared.log("Calling onComplete()")
                         onComplete()
@@ -352,7 +351,11 @@ struct ShareExtensionView: View {
 
 #Preview {
     ShareExtensionView(
-        sharedURL: URL(string: "https://example.com/recipe"),
+        payload: SharedPagePayload(
+            html: "<html><body>preview</body></html>",
+            url: URL(string: "https://example.com/recipe")!,
+            title: "Example"
+        ),
         onComplete: {},
         onCancel: {}
     )

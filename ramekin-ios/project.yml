@@ -40,6 +40,8 @@ targets:
       properties:
         com.apple.security.application-groups:
           - group.com.ramekin.app
+        com.apple.developer.associated-domains:
+          - applinks:${RAMEKIN_EXTERNAL_HOST}
     dependencies:
       - target: RamekinShareExtension
         embed:
@@ -61,8 +63,8 @@ targets:
         NSExtension:
           NSExtensionAttributes:
             NSExtensionActivationRule:
-              NSExtensionActivationSupportsWebURLWithMaxCount: 1
               NSExtensionActivationSupportsWebPageWithMaxCount: 1
+            NSExtensionJavaScriptPreprocessingFile: SharePreprocessor
           NSExtensionPointIdentifier: com.apple.share-services
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).ShareViewController
     settings:

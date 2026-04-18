@@ -204,7 +204,16 @@ pipeline-cache-clear: ## Clear HTML cache
 	cargo run -q --manifest-path cli/Cargo.toml -- pipeline-cache-clear
 
 ios-generate: ## Generate Xcode project for iOS app (requires xcodegen: brew install xcodegen)
-	@cd ramekin-ios && xcodegen generate
+	@set -a && [ -f dev.env ] && . ./dev.env; set +a && \
+	if [ -n "$$RAMEKIN_EXTERNAL_URL" ]; then \
+	  RAMEKIN_EXTERNAL_HOST=$$(echo "$$RAMEKIN_EXTERNAL_URL" | sed -E 's|^[a-z]+://||; s|[:/].*$$||'); \
+	else \
+	  RAMEKIN_EXTERNAL_HOST=ramekin.invalid; \
+	  echo "RAMEKIN_EXTERNAL_URL unset; using placeholder applinks host '$$RAMEKIN_EXTERNAL_HOST' (universal links won't work until this is set)" >&2; \
+	fi && \
+	export RAMEKIN_EXTERNAL_HOST && \
+	echo "Using applinks host: $$RAMEKIN_EXTERNAL_HOST" && \
+	cd ramekin-ios && xcodegen generate
 	@echo "Xcode project generated at ramekin-ios/Ramekin.xcodeproj"
 	@echo "Open with: open ramekin-ios/Ramekin.xcodeproj"
 
