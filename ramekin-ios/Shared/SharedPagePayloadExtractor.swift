@@ -24,9 +24,16 @@ protocol SharedPagePayloadItemProvider {
     )
 }
 
-// NSItemProvider already gets loadItem(forTypeIdentifier:completionHandler:) from
-// SharedURLExtractor.swift's conformance extension. We just declare it conforms here.
-extension NSItemProvider: SharedPagePayloadItemProvider {}
+extension NSItemProvider: SharedPagePayloadItemProvider {
+    func loadItem(
+        forTypeIdentifier typeIdentifier: String,
+        completionHandler: @escaping @Sendable (NSSecureCoding?, Error?) -> Void
+    ) {
+        loadItem(forTypeIdentifier: typeIdentifier, options: nil) { item, error in
+            completionHandler(item, error)
+        }
+    }
+}
 
 enum SharedPagePayloadExtractor {
     static func extractPayload(
