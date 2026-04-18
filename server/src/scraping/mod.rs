@@ -606,6 +606,7 @@ fn mark_failed(pool: &DbPool, job_id: Uuid, step: &str, error: &str) -> Result<(
         .get()
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
+    // Leave current_step_started_at set so the status API can show when the failed step started.
     diesel::update(scrape_jobs::table.find(job_id))
         .set((
             scrape_jobs::status.eq(STATUS_FAILED),
