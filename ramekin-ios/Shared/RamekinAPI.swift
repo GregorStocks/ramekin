@@ -17,6 +17,7 @@ struct CreateMealPlanRequestBody: Encodable {
 /// API client for interacting with the Ramekin server
 class RamekinAPI {
     static let shared = RamekinAPI()
+    typealias RequestExecutor = @Sendable (URLRequest) async throws -> (Data, URLResponse)
 
     private let logger = DebugLogger.shared
 
@@ -79,6 +80,18 @@ class RamekinAPI {
 
     /// Attach Cloudflare Access service-token headers to a request if configured.
     func applyAccessHeaders(to request: inout URLRequest) {
+        applyAccessHeaders(
+            to: &request,
+            accessClientId: accessClientId,
+            accessClientSecret: accessClientSecret
+        )
+    }
+
+    func applyAccessHeaders(
+        to request: inout URLRequest,
+        accessClientId: String?,
+        accessClientSecret: String?
+    ) {
         if let id = accessClientId {
             request.setValue(id, forHTTPHeaderField: "CF-Access-Client-Id")
         }
@@ -240,29 +253,29 @@ class RamekinAPI {
         username: String,
         password: String,
         accessClientId: String? = nil,
-        accessClientSecret: String? = nil
+        accessClientSecret: String? = nil,
+        credentialStore: CredentialStore = KeychainHelper.shared,
+        updateClientConfiguration: Bool = true,
+        requestExecutor: @escaping RequestExecutor = { request in
+            try await insecureSession.data(for: request)
+        }
     ) async throws -> String {
-        // Normalize URL
-        var normalizedURL = serverURL.trimmingCharacters(in: .whitespacesAndNewlines)
-        if !normalizedURL.hasPrefix("http://") && !normalizedURL.hasPrefix("https://") {
-            normalizedURL = "https://\(normalizedURL)"
-        }
-        if normalizedURL.hasSuffix("/") {
-            normalizedURL = String(normalizedURL.dropLast())
-        }
+        let normalizedURL = Self.normalizeServerURL(serverURL)
+        let normalizedAccessClientId = Self.normalizedOptionalCredential(accessClientId)
+        let normalizedAccessClientSecret = Self.normalizedOptionalCredential(accessClientSecret)
 
         // Persist (or clear) access credentials before the login call so the
         // request itself carries the current CF-Access headers through the
         // Access policy. Empty or nil clears so stale values aren't re-sent.
-        if let id = accessClientId, !id.isEmpty {
-            _ = KeychainHelper.shared.saveAccessClientId(id)
+        if let id = normalizedAccessClientId {
+            _ = credentialStore.saveAccessClientId(id)
         } else {
-            KeychainHelper.shared.deleteAccessClientId()
+            credentialStore.deleteAccessClientId()
         }
-        if let secret = accessClientSecret, !secret.isEmpty {
-            _ = KeychainHelper.shared.saveAccessClientSecret(secret)
+        if let secret = normalizedAccessClientSecret {
+            _ = credentialStore.saveAccessClientSecret(secret)
         } else {
-            KeychainHelper.shared.deleteAccessClientSecret()
+            credentialStore.deleteAccessClientSecret()
         }
 
         guard let url = URL(string: "\(normalizedURL)/api/auth/login") else {
@@ -272,12 +285,16 @@ class RamekinAPI {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        applyAccessHeaders(to: &request)
+        applyAccessHeaders(
+            to: &request,
+            accessClientId: normalizedAccessClientId,
+            accessClientSecret: normalizedAccessClientSecret
+        )
 
         let body = LoginRequest(username: username, password: password)
         request.httpBody = try JSONEncoder().encode(body)
 
-        let (data, response) = try await insecureSession.data(for: request)
+        let (data, response) = try await requestExecutor(request)
 
         guard let httpResponse = response as? HTTPURLResponse else {
             throw APIError.invalidResponse
@@ -287,12 +304,14 @@ class RamekinAPI {
             let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
 
             // Save credentials
-            self.serverURL = normalizedURL
-            _ = KeychainHelper.shared.saveToken(loginResponse.token)
-            _ = KeychainHelper.shared.saveUsername(username)
+            _ = credentialStore.saveServerURL(normalizedURL)
+            _ = credentialStore.saveToken(loginResponse.token)
+            _ = credentialStore.saveUsername(username)
 
             // Update generated client with new credentials
-            updateGeneratedClientConfig()
+            if updateClientConfiguration {
+                updateGeneratedClientConfig()
+            }
 
             return loginResponse.token
         } else {
@@ -306,19 +325,38 @@ class RamekinAPI {
         }
     }
 
+    static func normalizeServerURL(_ serverURL: String) -> String {
+        var normalizedURL = serverURL.trimmingCharacters(in: .whitespacesAndNewlines)
+        if !normalizedURL.hasPrefix("http://") && !normalizedURL.hasPrefix("https://") {
+            normalizedURL = "https://\(normalizedURL)"
+        }
+        if normalizedURL.hasSuffix("/") {
+            normalizedURL = String(normalizedURL.dropLast())
+        }
+        return normalizedURL
+    }
+
+    private static func normalizedOptionalCredential(_ value: String?) -> String? {
+        guard let value else { return nil }
+        let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmed.isEmpty ? nil : trimmed
+    }
+
     /// Logout and clear credentials
     func logout() {
         KeychainHelper.shared.clearAll()
         updateGeneratedClientConfig()
     }
 
-    // MARK: - Scraping
-
     /// Submit a URL for scraping (async job). Uses a short timeout because the
     /// endpoint just enqueues a job and must return quickly — share extensions
     /// have a tight memory/time budget before iOS terminates them.
     static let scrapeSubmitTimeout: TimeInterval = 15
+}
 
+// MARK: - Scraping
+
+extension RamekinAPI {
     func scrapeURL(_ urlString: String) async throws -> ScrapeResponse {
         logger.log("scrapeURL called with: \(urlString)")
         let body = try JSONEncoder().encode(ScrapeRequest(url: urlString))
@@ -343,9 +381,11 @@ class RamekinAPI {
         )
         return try JSONDecoder().decode(ScrapeJobStatus.self, from: data)
     }
+}
 
-    // MARK: - Connection Test
+// MARK: - Connection Test
 
+extension RamekinAPI {
     /// Test the connection to the server. Returns true on 200, false on any
     /// other HTTP status; rethrows network/URL-level errors.
     func testConnection() async throws -> Bool {

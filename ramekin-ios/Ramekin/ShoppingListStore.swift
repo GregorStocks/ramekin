@@ -209,13 +209,23 @@ class ShoppingListStore: ObservableObject {
         for created in response.created {
             if let local = pendingItems.first(where: { $0.id == created.clientId }) {
                 local.id = created.serverId
-                reconcileSyncedItem(local, version: created.version, success: true, syncStartedAt: syncStartedAt)
+                ShoppingListSyncSupport.reconcileSyncedItem(
+                    local,
+                    version: created.version,
+                    success: true,
+                    syncStartedAt: syncStartedAt
+                )
             }
         }
 
         for updated in response.updated {
             if let local = pendingItems.first(where: { $0.id == updated.id }) {
-                reconcileSyncedItem(local, version: updated.version, success: updated.success, syncStartedAt: syncStartedAt)
+                ShoppingListSyncSupport.reconcileSyncedItem(
+                    local,
+                    version: updated.version,
+                    success: updated.success,
+                    syncStartedAt: syncStartedAt
+                )
             }
         }
 
@@ -230,24 +240,6 @@ class ShoppingListStore: ObservableObject {
         }
 
         coreDataStack.saveContext()
-    }
-
-    /// Reconcile a pending item after the server acknowledges it.
-    /// If the item was locally modified during the in-flight sync, keep it pending
-    /// so the new changes get pushed in the next round.
-    private func reconcileSyncedItem(_ local: ShoppingItem, version: Int, success: Bool, syncStartedAt: Date) {
-        let modifiedDuringSync = local.updatedAt ?? Date.distantPast > syncStartedAt
-
-        if success && !modifiedDuringSync {
-            local.markSynced(serverVersion: Int32(version))
-        } else if version > 0 {
-            // Update version for retry; version 0 means item not found on server.
-            local.serverVersion = Int32(version)
-            // A created item that was modified during sync now has a server ID — promote to update
-            if local.syncStatusEnum == .pendingCreate && modifiedDuringSync {
-                local.syncStatusEnum = .pendingUpdate
-            }
-        }
     }
 
     private func applyServerChange(_ change: SyncServerChange, in context: NSManagedObjectContext) {

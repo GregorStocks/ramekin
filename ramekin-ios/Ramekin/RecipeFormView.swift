@@ -294,6 +294,46 @@ extension RecipeFormView {
 // MARK: - Actions
 
 extension RecipeFormView {
+    private var formData: RecipeFormData {
+        RecipeFormData(
+            title: title,
+            recipeDescription: recipeDescription,
+            instructions: instructions,
+            servings: servings,
+            prepTime: prepTime,
+            cookTime: cookTime,
+            totalTime: totalTime,
+            difficulty: difficulty,
+            rating: rating,
+            sourceUrl: sourceUrl,
+            sourceName: sourceName,
+            tags: tags,
+            notes: notes,
+            nutritionalInfo: nutritionalInfo,
+            ingredients: ingredients,
+            photoIds: photoIds
+        )
+    }
+
+    private func apply(formData: RecipeFormData) {
+        title = formData.title
+        recipeDescription = formData.recipeDescription
+        instructions = formData.instructions
+        servings = formData.servings
+        prepTime = formData.prepTime
+        cookTime = formData.cookTime
+        totalTime = formData.totalTime
+        difficulty = formData.difficulty
+        rating = formData.rating
+        sourceUrl = formData.sourceUrl
+        sourceName = formData.sourceName
+        tags = formData.tags
+        notes = formData.notes
+        nutritionalInfo = formData.nutritionalInfo
+        photoIds = formData.photoIds
+        ingredients = formData.ingredients
+    }
+
     private func addTag() {
         let tag = newTag.trimmingCharacters(in: .whitespaces).lowercased()
         if !tag.isEmpty && !tags.contains(tag) { tags.append(tag) }
@@ -303,15 +343,12 @@ extension RecipeFormView {
     private func save() async {
         error = nil
         isSaving = true
-        let validIngredients = ingredients
-            .filter { !$0.item.trimmingCharacters(in: .whitespaces).isEmpty }
-            .map { $0.toIngredient() }
         do {
             switch mode {
             case .create:
-                try await saveNewRecipe(validIngredients)
+                try await saveNewRecipe()
             case .edit(let recipeId):
-                try await updateExistingRecipe(recipeId, validIngredients)
+                try await updateExistingRecipe(recipeId)
             }
         } catch is CancellationError {
             // ignore
@@ -323,25 +360,8 @@ extension RecipeFormView {
         }
     }
 
-    private func saveNewRecipe(_ validIngredients: [Ingredient]) async throws {
-        let request = CreateRecipeRequest(
-            cookTime: cookTime.isEmpty ? nil : cookTime,
-            description: recipeDescription.isEmpty ? nil : recipeDescription,
-            difficulty: difficulty.isEmpty ? nil : difficulty,
-            ingredients: validIngredients,
-            instructions: instructions,
-            notes: notes.isEmpty ? nil : notes,
-            nutritionalInfo: nutritionalInfo.isEmpty ? nil : nutritionalInfo,
-            prepTime: prepTime.isEmpty ? nil : prepTime,
-            rating: rating,
-            servings: servings.isEmpty ? nil : servings,
-            sourceName: sourceName.isEmpty ? nil : sourceName,
-            sourceUrl: sourceUrl.isEmpty ? nil : sourceUrl,
-            tags: tags.isEmpty ? nil : tags,
-            title: title,
-            totalTime: totalTime.isEmpty ? nil : totalTime,
-            photoIds: photoIds.isEmpty ? nil : photoIds
-        )
+    private func saveNewRecipe() async throws {
+        let request = formData.makeCreateRequest()
         _ = try await RecipesAPI.createRecipe(createRecipeRequest: request)
         await MainActor.run {
             isSaving = false
@@ -350,25 +370,8 @@ extension RecipeFormView {
         }
     }
 
-    private func updateExistingRecipe(_ recipeId: UUID, _ validIngredients: [Ingredient]) async throws {
-        let request = UpdateRecipeRequest(
-            cookTime: cookTime.isEmpty ? nil : cookTime,
-            description: recipeDescription.isEmpty ? nil : recipeDescription,
-            difficulty: difficulty.isEmpty ? nil : difficulty,
-            ingredients: validIngredients,
-            instructions: instructions,
-            notes: notes.isEmpty ? nil : notes,
-            nutritionalInfo: nutritionalInfo.isEmpty ? nil : nutritionalInfo,
-            photoIds: photoIds,
-            prepTime: prepTime.isEmpty ? nil : prepTime,
-            rating: rating,
-            servings: servings.isEmpty ? nil : servings,
-            sourceName: sourceName.isEmpty ? nil : sourceName,
-            sourceUrl: sourceUrl.isEmpty ? nil : sourceUrl,
-            tags: tags,
-            title: title,
-            totalTime: totalTime.isEmpty ? nil : totalTime
-        )
+    private func updateExistingRecipe(_ recipeId: UUID) async throws {
+        let request = formData.makeUpdateRequest()
         try await RecipesAPI.updateRecipe(id: recipeId, updateRecipeRequest: request)
         await MainActor.run {
             isSaving = false
@@ -396,24 +399,7 @@ extension RecipeFormView {
     }
 
     private func populateForm(from recipe: RecipeResponse) {
-        title = recipe.title
-        recipeDescription = recipe.description ?? ""
-        instructions = recipe.instructions
-        servings = recipe.servings ?? ""
-        prepTime = recipe.prepTime ?? ""
-        cookTime = recipe.cookTime ?? ""
-        totalTime = recipe.totalTime ?? ""
-        difficulty = recipe.difficulty ?? ""
-        rating = recipe.rating
-        sourceUrl = recipe.sourceUrl ?? ""
-        sourceName = recipe.sourceName ?? ""
-        tags = recipe.tags
-        notes = recipe.notes ?? ""
-        nutritionalInfo = recipe.nutritionalInfo ?? ""
-        photoIds = recipe.photoIds
-        ingredients = recipe.ingredients.isEmpty
-            ? [.empty()]
-            : recipe.ingredients.map { EditableIngredient.from($0) }
+        apply(formData: RecipeFormData(recipe: recipe))
     }
 
     private func uploadPhotos(_ items: [PhotosPickerItem]) async {

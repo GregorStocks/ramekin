@@ -10,7 +10,7 @@ final class RamekinAPITests: XCTestCase {
         let input = "example.com"
 
         // When normalized
-        let normalized = normalizeServerURL(input)
+        let normalized = RamekinAPI.normalizeServerURL(input)
 
         // Then it should add https://
         XCTAssertEqual(normalized, "https://example.com")
@@ -21,7 +21,7 @@ final class RamekinAPITests: XCTestCase {
         let input = "https://example.com"
 
         // When normalized
-        let normalized = normalizeServerURL(input)
+        let normalized = RamekinAPI.normalizeServerURL(input)
 
         // Then it should remain unchanged
         XCTAssertEqual(normalized, "https://example.com")
@@ -32,7 +32,7 @@ final class RamekinAPITests: XCTestCase {
         let input = "http://localhost:3000"
 
         // When normalized
-        let normalized = normalizeServerURL(input)
+        let normalized = RamekinAPI.normalizeServerURL(input)
 
         // Then it should preserve http
         XCTAssertEqual(normalized, "http://localhost:3000")
@@ -43,7 +43,7 @@ final class RamekinAPITests: XCTestCase {
         let input = "https://example.com/"
 
         // When normalized
-        let normalized = normalizeServerURL(input)
+        let normalized = RamekinAPI.normalizeServerURL(input)
 
         // Then trailing slash should be removed
         XCTAssertEqual(normalized, "https://example.com")
@@ -54,7 +54,7 @@ final class RamekinAPITests: XCTestCase {
         let input = "  example.com  "
 
         // When normalized
-        let normalized = normalizeServerURL(input)
+        let normalized = RamekinAPI.normalizeServerURL(input)
 
         // Then whitespace should be trimmed
         XCTAssertEqual(normalized, "https://example.com")
@@ -65,7 +65,7 @@ final class RamekinAPITests: XCTestCase {
         let input = "  my-server.example.com/  "
 
         // When normalized
-        let normalized = normalizeServerURL(input)
+        let normalized = RamekinAPI.normalizeServerURL(input)
 
         // Then all issues should be fixed
         XCTAssertEqual(normalized, "https://my-server.example.com")
@@ -104,6 +104,69 @@ final class RamekinAPITests: XCTestCase {
 
     func testInsecureSessionUsesInsecureSessionDelegate() {
         XCTAssertTrue(insecureSession.delegate is InsecureSessionDelegate)
+    }
+
+    func testLoginPersistsNormalizedURLTokenAndUsername() async throws {
+        let credentialStore = MockCredentialStore()
+        let api = RamekinAPI.shared
+        let responseData = Data(#"{"token":"secret-token"}"#.utf8)
+
+        let token = try await api.login(
+            serverURL: " example.com/ ",
+            username: "gregor",
+            password: "pw",
+            accessClientId: "cf-id",
+            accessClientSecret: "cf-secret",
+            credentialStore: credentialStore,
+            updateClientConfiguration: false,
+            requestExecutor: { request in
+                XCTAssertEqual(request.url?.absoluteString, "https://example.com/api/auth/login")
+                XCTAssertEqual(request.httpMethod, "POST")
+                XCTAssertEqual(request.value(forHTTPHeaderField: "CF-Access-Client-Id"), "cf-id")
+                XCTAssertEqual(
+                    request.value(forHTTPHeaderField: "CF-Access-Client-Secret"),
+                    "cf-secret"
+                )
+                let response = HTTPURLResponse(
+                    url: try XCTUnwrap(request.url),
+                    statusCode: 200,
+                    httpVersion: nil,
+                    headerFields: nil
+                )!
+                return (responseData, response)
+            }
+        )
+
+        XCTAssertEqual(token, "secret-token")
+        XCTAssertEqual(credentialStore.serverURL, "https://example.com")
+        XCTAssertEqual(credentialStore.token, "secret-token")
+        XCTAssertEqual(credentialStore.username, "gregor")
+        XCTAssertEqual(credentialStore.accessClientId, "cf-id")
+        XCTAssertEqual(credentialStore.accessClientSecret, "cf-secret")
+    }
+
+    func testLoginClearsStaleAccessCredentialsWhenValuesAreBlank() async {
+        let credentialStore = MockCredentialStore()
+        credentialStore.accessClientId = "stale-id"
+        credentialStore.accessClientSecret = "stale-secret"
+
+        await XCTAssertThrowsErrorAsync {
+            try await RamekinAPI.shared.login(
+                serverURL: "example.com",
+                username: "gregor",
+                password: "pw",
+                accessClientId: " ",
+                accessClientSecret: "",
+                credentialStore: credentialStore,
+                updateClientConfiguration: false,
+                requestExecutor: { _ in
+                    throw URLError(.notConnectedToInternet)
+                }
+            )
+        }
+
+        XCTAssertNil(credentialStore.accessClientId)
+        XCTAssertNil(credentialStore.accessClientSecret)
     }
 
     func testScrapeSubmitTimeoutFitsShareExtensionBudget() {
@@ -232,18 +295,79 @@ final class RamekinAPITests: XCTestCase {
         let response2 = try JSONDecoder().decode(RamekinAPI.ErrorResponse.self, from: data2)
         XCTAssertEqual(response2.errorMessage, "Another error")
     }
+}
 
-    // MARK: - Helper
+private final class MockCredentialStore: CredentialStore {
+    var token: String?
+    var serverURL: String?
+    var username: String?
+    var accessClientId: String?
+    var accessClientSecret: String?
 
-    /// Extracted URL normalization logic for testing
-    private func normalizeServerURL(_ serverURL: String) -> String {
-        var normalized = serverURL.trimmingCharacters(in: .whitespacesAndNewlines)
-        if !normalized.hasPrefix("http://") && !normalized.hasPrefix("https://") {
-            normalized = "https://\(normalized)"
-        }
-        if normalized.hasSuffix("/") {
-            normalized = String(normalized.dropLast())
-        }
-        return normalized
+    func saveToken(_ token: String) -> Bool {
+        self.token = token
+        return true
+    }
+
+    func getToken() -> String? { token }
+
+    func deleteToken() {
+        token = nil
+    }
+
+    func saveServerURL(_ url: String) -> Bool {
+        serverURL = url
+        return true
+    }
+
+    func getServerURL() -> String? { serverURL }
+
+    func saveUsername(_ username: String) -> Bool {
+        self.username = username
+        return true
+    }
+
+    func getUsername() -> String? { username }
+
+    func saveAccessClientId(_ value: String) -> Bool {
+        accessClientId = value
+        return true
+    }
+
+    func getAccessClientId() -> String? { accessClientId }
+
+    func deleteAccessClientId() {
+        accessClientId = nil
+    }
+
+    func saveAccessClientSecret(_ value: String) -> Bool {
+        accessClientSecret = value
+        return true
+    }
+
+    func getAccessClientSecret() -> String? { accessClientSecret }
+
+    func deleteAccessClientSecret() {
+        accessClientSecret = nil
+    }
+
+    func clearAll() {
+        token = nil
+        serverURL = nil
+        username = nil
+        accessClientId = nil
+        accessClientSecret = nil
+    }
+}
+
+private func XCTAssertThrowsErrorAsync<T>(
+    _ expression: () async throws -> T,
+    file: StaticString = #filePath,
+    line: UInt = #line
+) async {
+    do {
+        _ = try await expression()
+        XCTFail("Expected expression to throw", file: file, line: line)
+    } catch {
     }
 }
