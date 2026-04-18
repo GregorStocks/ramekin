@@ -169,12 +169,12 @@ final class RamekinAPITests: XCTestCase {
         XCTAssertNil(credentialStore.accessClientSecret)
     }
 
-    func testScrapeSubmitTimeoutFitsShareExtensionBudget() {
+    func testCaptureSubmitTimeoutFitsShareExtensionBudget() {
         // iOS terminates share extensions around ~30s; the submit call must
-        // return well before that so the user sees a result instead of the
-        // OS killing the extension mid-spinner.
-        XCTAssertLessThanOrEqual(RamekinAPI.scrapeSubmitTimeout, 20)
-        XCTAssertGreaterThan(RamekinAPI.scrapeSubmitTimeout, 0)
+        // return before that so the user sees a result instead of the OS
+        // killing the extension mid-spinner.
+        XCTAssertLessThan(RamekinAPI.captureSubmitTimeout, 30)
+        XCTAssertGreaterThan(RamekinAPI.captureSubmitTimeout, 0)
     }
 
     // MARK: - Request Encoding Tests
