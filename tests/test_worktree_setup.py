@@ -126,10 +126,10 @@ def test_apply_overrides_rewrites_ramekin_urls_to_assigned_ui_port():
         {
             "UI_PORT": "57690",
             "RAMEKIN_SELF_SIGNED_URL": "https://localhost:57690",
-            "RAMEKIN_EXTERNAL_URL": "http://localhost:57690",
+            "RAMEKIN_EXTERNAL_URL": "https://localhost:57690",
         },
     )
     assert "RAMEKIN_SELF_SIGNED_URL=https://localhost:57690" in test_rendered
-    assert "RAMEKIN_EXTERNAL_URL=http://localhost:57690" in test_rendered
+    assert "RAMEKIN_EXTERNAL_URL=https://localhost:57690" in test_rendered
     assert "RAMEKIN_SELF_SIGNED_URL=https://localhost:5174" not in test_rendered
-    assert "RAMEKIN_EXTERNAL_URL=http://localhost:5174" not in test_rendered
+    assert "RAMEKIN_EXTERNAL_URL=https://localhost:5174" not in test_rendered

@@ -369,7 +369,7 @@ def main() -> None:
         "MOCK_OPENROUTER_PORT": str(config.test_mock_openrouter_port),
         "PROCESS_COMPOSE_PORT": str(config.test_process_compose_port),
         "RAMEKIN_SELF_SIGNED_URL": f"https://localhost:{config.test_ui_port}",
-        "RAMEKIN_EXTERNAL_URL": f"http://localhost:{config.test_ui_port}",
+        "RAMEKIN_EXTERNAL_URL": f"https://localhost:{config.test_ui_port}",
     }
 
     output_paths = (root / "dev.env", root / "test.env")
