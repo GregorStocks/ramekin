@@ -737,11 +737,19 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
         update_status_and_step(&pool, job_id, step_status, Some(&step_name))?;
 
         // Execute step with OpenTelemetry span
-        let result = execute_step_with_tracing(step, url, &store, &step_name).await;
+        let mut result = execute_step_with_tracing(step, url, &store, &step_name).await;
 
-        // Save output (for both success and failure - useful for debugging)
+        // Save output (for both success and failure - useful for debugging).
+        // If persistence itself fails we MUST fail the step: silently swallowing
+        // the error leaves a "successful" step with no output row, which makes
+        // downstream retries think the step already ran and produces a deadlock
+        // where the pipeline can never make progress. Fail fast instead.
         if let Err(e) = store.save_output(&step_name, &result.output, result.duration_ms as i64) {
-            tracing::warn!("Failed to save output for step {}: {}", step_name, e);
+            let msg = format!("Failed to persist output for step {step_name}: {e}");
+            tracing::error!("{msg}");
+            result.success = false;
+            result.error = Some(msg);
+            result.next_step = None;
         }
 
         let meta = step.metadata();
