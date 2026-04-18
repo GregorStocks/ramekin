@@ -1,12 +1,12 @@
 import { createSignal, createMemo, Show, onCleanup, onMount } from "solid-js";
 import bookmarkletSource from "../bookmarklet.js?raw";
 import { createStore } from "solid-js/store";
-import { useNavigate, A } from "@solidjs/router";
+import { useNavigate } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import RecipeForm from "../components/RecipeForm";
 import { extractApiError, extractImageFile } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
-import type { Ingredient, ScrapeJobResponse } from "ramekin-client";
+import type { Ingredient } from "ramekin-client";
 
 declare const __EXTERNAL_URL__: string;
 
@@ -18,17 +18,8 @@ export default function CreateRecipePage() {
 
   // URL import state
   const [importUrl, setImportUrl] = createSignal("");
-  const [scrapeJob, setScrapeJob] = createSignal<ScrapeJobResponse | null>(
-    null,
-  );
   const [scrapeError, setScrapeError] = createSignal<string | null>(null);
   const [scraping, setScraping] = createSignal(false);
-  let pollInterval: ReturnType<typeof setInterval> | null = null;
-  let pollStartTime = 0;
-
-  onCleanup(() => {
-    if (pollInterval) clearInterval(pollInterval);
-  });
 
   // Form state
   const [title, setTitle] = createSignal("");
@@ -83,129 +74,17 @@ export default function CreateRecipePage() {
     if (!url) return;
 
     setScrapeError(null);
-    setScrapeJob(null);
     setScraping(true);
 
     try {
       const response = await getScrapeApi().createScrape({
         createScrapeRequest: { url },
       });
-
-      setScrapeJob({
-        ...response,
-        url,
-        canRetry: false,
-        retryCount: 0,
-        steps: [],
-        createdAt: new Date(),
-      });
-
-      // Start polling
-      pollStartTime = Date.now();
-      pollInterval = setInterval(async () => {
-        try {
-          if (Date.now() - pollStartTime > 120_000) {
-            if (pollInterval) clearInterval(pollInterval);
-            pollInterval = null;
-            setScraping(false);
-            setScrapeError("Import timed out");
-            return;
-          }
-          const job = await getScrapeApi().getScrape({ id: response.id });
-          setScrapeJob(job);
-
-          if (job.status === "completed" || job.status === "failed") {
-            if (pollInterval) clearInterval(pollInterval);
-            pollInterval = null;
-            setScraping(false);
-            if (job.status === "failed") {
-              setScrapeError(job.error || "Import failed");
-            }
-          }
-        } catch {
-          if (pollInterval) clearInterval(pollInterval);
-          pollInterval = null;
-          setScraping(false);
-          setScrapeError("Failed to check import status");
-        }
-      }, 1000);
+      navigate(`/scrape/${response.id}`);
     } catch (err) {
       setScraping(false);
       const errorMessage = await extractApiError(err, "Failed to start import");
       setScrapeError(errorMessage);
-    }
-  };
-
-  const retryScrape = async () => {
-    const job = scrapeJob();
-    if (!job) return;
-
-    setScrapeError(null);
-    setScraping(true);
-
-    try {
-      await getScrapeApi().retryScrape({ id: job.id });
-
-      // Start polling again
-      pollStartTime = Date.now();
-      pollInterval = setInterval(async () => {
-        try {
-          if (Date.now() - pollStartTime > 120_000) {
-            if (pollInterval) clearInterval(pollInterval);
-            pollInterval = null;
-            setScraping(false);
-            setScrapeError("Import timed out");
-            return;
-          }
-          const updatedJob = await getScrapeApi().getScrape({ id: job.id });
-          setScrapeJob(updatedJob);
-
-          if (
-            updatedJob.status === "completed" ||
-            updatedJob.status === "failed"
-          ) {
-            if (pollInterval) clearInterval(pollInterval);
-            pollInterval = null;
-            setScraping(false);
-            if (updatedJob.status === "failed") {
-              setScrapeError(updatedJob.error || "Import failed");
-            }
-          }
-        } catch {
-          if (pollInterval) clearInterval(pollInterval);
-          pollInterval = null;
-          setScraping(false);
-          setScrapeError("Failed to check import status");
-        }
-      }, 1000);
-    } catch {
-      setScraping(false);
-      setScrapeError("Failed to retry import");
-    }
-  };
-
-  const clearImport = () => {
-    setScrapeJob(null);
-    setScrapeError(null);
-    setImportUrl("");
-  };
-
-  const getScrapeStatusText = () => {
-    const job = scrapeJob();
-    if (!job) return "";
-    switch (job.status) {
-      case "pending":
-        return "Starting...";
-      case "scraping":
-        return "Fetching page...";
-      case "parsing":
-        return "Extracting recipe...";
-      case "completed":
-        return "Done!";
-      case "failed":
-        return "Failed";
-      default:
-        return job.status;
     }
   };
 
@@ -309,67 +188,33 @@ export default function CreateRecipePage() {
         <div class="import-header">
           <label>Import from URL</label>
         </div>
-        <Show
-          when={scrapeJob()?.status !== "completed"}
-          fallback={
-            <div class="import-success">
-              <span>Recipe imported!</span>
-              <A
-                href={`/recipes/${scrapeJob()?.recipeId}`}
-                class="btn btn-small"
-              >
-                View
-              </A>
-              <A
-                href={`/recipes/${scrapeJob()?.recipeId}/edit`}
-                class="btn btn-small"
-              >
-                Edit
-              </A>
-              <button type="button" class="btn btn-small" onClick={clearImport}>
-                Import another
-              </button>
-            </div>
-          }
-        >
-          <div class="import-row">
-            <input
-              type="url"
-              placeholder="Paste recipe URL..."
-              value={importUrl()}
-              onInput={(e) => setImportUrl(e.currentTarget.value)}
-              disabled={scraping()}
-              class="import-input"
-            />
-            <button
-              type="button"
-              class="btn btn-primary"
-              onClick={startScrape}
-              disabled={scraping() || !importUrl().trim()}
-            >
-              {scraping() ? getScrapeStatusText() : "Import"}
-            </button>
+        <div class="import-row">
+          <input
+            type="url"
+            placeholder="Paste recipe URL..."
+            value={importUrl()}
+            onInput={(e) => setImportUrl(e.currentTarget.value)}
+            disabled={scraping()}
+            class="import-input"
+          />
+          <button
+            type="button"
+            class="btn btn-primary"
+            onClick={startScrape}
+            disabled={scraping() || !importUrl().trim()}
+          >
+            {scraping() ? "Starting..." : "Import"}
+          </button>
+        </div>
+        <Show when={scrapeError()}>
+          <div class="import-error">
+            <span>{scrapeError()}</span>
           </div>
-          <Show when={scrapeError()}>
-            <div class="import-error">
-              <span>{scrapeError()}</span>
-              <Show when={scrapeJob()?.canRetry}>
-                <button
-                  type="button"
-                  class="btn btn-small"
-                  onClick={retryScrape}
-                  disabled={scraping()}
-                >
-                  Retry
-                </button>
-              </Show>
-            </div>
-          </Show>
-          <p class="import-hint">
-            Import a recipe from a website. Works with sites that use structured
-            recipe data.
-          </p>
         </Show>
+        <p class="import-hint">
+          Import a recipe from a website. Works with sites that use structured
+          recipe data.
+        </p>
       </div>
 
       {/* Bookmarklet Section */}
