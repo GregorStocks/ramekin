@@ -934,26 +934,71 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
     // Resume at the step that failed. `failed_at_step` holds the real pipeline
     // step name (see `mark_failed`); if it's missing or not a canonical pipeline
     // step, fall back to running the whole pipeline from the top.
-    let resume_step = job
+    let mut resume_step: String = job
         .failed_at_step
         .as_deref()
         .filter(|name| status::PIPELINE_STEPS.contains(name))
-        .unwrap_or(FetchHtmlStep::NAME);
-    let resume_status = if resume_step == FetchHtmlStep::NAME {
-        STATUS_SCRAPING
-    } else {
-        STATUS_PARSING
-    };
+        .unwrap_or(FetchHtmlStep::NAME)
+        .to_string();
 
     let mut conn = pool
         .get()
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
+    // Photo-only jobs: if the failed step is save_recipe or later but
+    // fetch_images produced an empty photo_ids set, resuming at the failed
+    // step reuses the stale empty fetch_images output and save_recipe rejects
+    // it again — creating an unrecoverable retry loop. Rewind to fetch_images
+    // so it actually retries the image download. Narrowly scoped to
+    // photo-only jobs; full scrapes have their own empty-photo handling.
+    if job.photo_only {
+        let resume_idx = status::PIPELINE_STEPS
+            .iter()
+            .position(|s| *s == resume_step.as_str());
+        let save_idx = status::PIPELINE_STEPS
+            .iter()
+            .position(|s| *s == SaveRecipeStepMeta::NAME);
+        if let (Some(ri), Some(si)) = (resume_idx, save_idx) {
+            if ri >= si {
+                let fetch_images_output: Option<serde_json::Value> = step_outputs::table
+                    .filter(step_outputs::scrape_job_id.eq(job_id))
+                    .filter(step_outputs::step_name.eq(FetchImagesStepMeta::NAME))
+                    .select(step_outputs::output)
+                    .order(step_outputs::created_at.desc())
+                    .first::<serde_json::Value>(&mut conn)
+                    .optional()
+                    .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+                let photo_ids_empty = fetch_images_output
+                    .as_ref()
+                    .and_then(|o: &serde_json::Value| o.get("photo_ids"))
+                    .and_then(|v: &serde_json::Value| v.as_array())
+                    .map(|a: &Vec<serde_json::Value>| a.is_empty())
+                    .unwrap_or(false);
+
+                if photo_ids_empty {
+                    tracing::info!(
+                        job_id = %job_id,
+                        original_resume = %resume_step,
+                        "rewinding photo-only retry to fetch_images (empty photo_ids)"
+                    );
+                    resume_step = FetchImagesStepMeta::NAME.to_string();
+                }
+            }
+        }
+    }
+
+    let resume_status = if resume_step.as_str() == FetchHtmlStep::NAME {
+        STATUS_SCRAPING
+    } else {
+        STATUS_PARSING
+    };
+
     let now = Utc::now();
     diesel::update(scrape_jobs::table.find(job_id))
         .set((
             scrape_jobs::status.eq(resume_status),
-            scrape_jobs::current_step.eq(Some(resume_step)),
+            scrape_jobs::current_step.eq(Some(resume_step.as_str())),
             scrape_jobs::current_step_started_at.eq(Some(now)),
             scrape_jobs::failed_at_step.eq::<Option<String>>(None),
             scrape_jobs::error_message.eq::<Option<String>>(None),
