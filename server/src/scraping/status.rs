@@ -129,9 +129,10 @@ pub fn step_summary(step_name: &str, output: &JsonValue) -> Option<String> {
 /// - the job's `current_step` (running) / `failed_at_step` (failed), or
 /// - nothing → pending.
 ///
-/// `duration_ms`/`started_at` are None for completed steps because the
-/// output JSON stored via `DbOutputStore::save_output` does not include
-/// timing — only `created_at` is available, which we report as `finished_at`.
+/// For completed steps, `finished_at` comes from `step_outputs.created_at`
+/// and `duration_ms` from `step_outputs.duration_ms` (written by
+/// `DbOutputStore::save_output`). `started_at` is derived as
+/// `finished_at - duration_ms` when duration is available.
 pub fn build_step_states(
     pool: &DbPool,
     job_id: Uuid,
@@ -143,23 +144,24 @@ pub fn build_step_states(
 ) -> Result<Vec<StepState>, diesel::result::Error> {
     let mut conn = pool.get().expect("db pool");
 
-    let outputs: Vec<(String, JsonValue, DateTime<Utc>)> = step_outputs::table
+    let outputs: Vec<(String, JsonValue, DateTime<Utc>, Option<i64>)> = step_outputs::table
         .filter(step_outputs::scrape_job_id.eq(job_id))
         .select((
             step_outputs::step_name,
             step_outputs::output,
             step_outputs::created_at,
+            step_outputs::duration_ms,
         ))
         .load(&mut conn)?;
 
     // Latest output per step name (in case a step was re-run on retry).
-    let mut by_name: std::collections::HashMap<String, (JsonValue, DateTime<Utc>)> =
+    let mut by_name: std::collections::HashMap<String, (JsonValue, DateTime<Utc>, Option<i64>)> =
         std::collections::HashMap::new();
-    for (name, output, created_at) in outputs {
+    for (name, output, created_at, duration_ms) in outputs {
         match by_name.get(&name) {
-            Some((_, existing_at)) if *existing_at >= created_at => {}
+            Some((_, existing_at, _)) if *existing_at >= created_at => {}
             _ => {
-                by_name.insert(name, (output, created_at));
+                by_name.insert(name, (output, created_at, duration_ms));
             }
         }
     }
@@ -169,13 +171,17 @@ pub fn build_step_states(
 
     for step_name in PIPELINE_STEPS {
         let name = (*step_name).to_string();
-        if let Some((output, created_at)) = by_name.get(&name) {
+        if let Some((output, created_at, duration_ms)) = by_name.get(&name) {
+            let finished_at = *created_at;
+            let started_at = duration_ms
+                .and_then(chrono::Duration::try_milliseconds)
+                .map(|d| finished_at - d);
             states.push(StepState {
                 name: name.clone(),
                 status: "completed".to_string(),
-                started_at: None,
-                finished_at: Some(*created_at),
-                duration_ms: None,
+                started_at,
+                finished_at: Some(finished_at),
+                duration_ms: *duration_ms,
                 summary: step_summary(&name, output),
                 error: None,
                 has_output: true,

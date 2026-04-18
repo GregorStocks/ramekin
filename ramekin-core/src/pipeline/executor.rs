@@ -64,7 +64,8 @@ pub async fn run_pipeline(
         // Save output if successful
         // TODO: Confirm that we want to continue on save failure (vs failing the step)
         if result.success {
-            if let Err(e) = store.save_output(meta.name, &result.output) {
+            if let Err(e) = store.save_output(meta.name, &result.output, result.duration_ms as i64)
+            {
                 // Log error but continue - we still have the result
                 tracing::warn!("Failed to save output for step {}: {}", meta.name, e);
             }

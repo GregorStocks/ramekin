@@ -47,6 +47,7 @@ pub trait StepOutputStore: Send + Sync {
         &mut self,
         step_name: &str,
         output: &JsonValue,
+        duration_ms: i64,
     ) -> Result<(), Box<dyn Error + Send + Sync>>;
 }
 

@@ -136,6 +136,7 @@ diesel::table! {
         build_id -> Varchar,
         output -> Jsonb,
         created_at -> Timestamptz,
+        duration_ms -> Nullable<Int8>,
     }
 }
 

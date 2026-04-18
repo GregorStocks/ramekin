@@ -75,6 +75,7 @@ impl StepOutputStore for FileOutputStore {
         &mut self,
         step_name: &str,
         output: &JsonValue,
+        _duration_ms: i64,
     ) -> Result<(), Box<dyn Error + Send + Sync>> {
         // Cache in memory
         self.cache.insert(step_name.to_string(), output.clone());

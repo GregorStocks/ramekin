@@ -572,6 +572,9 @@ fn save_step_output(
         step_name: step_name.to_string(),
         build_id: BUILD_ID.to_string(),
         output,
+        // Pre-populated outputs (HTML capture / photo import / recipe import)
+        // don't run the step, so there's no meaningful duration to record.
+        duration_ms: None,
     };
 
     diesel::insert_into(step_outputs::table)
@@ -744,7 +747,7 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
         let result = execute_step_with_tracing(step, url, &store, &step_name).await;
 
         // Save output (for both success and failure - useful for debugging)
-        if let Err(e) = store.save_output(&step_name, &result.output) {
+        if let Err(e) = store.save_output(&step_name, &result.output, result.duration_ms as i64) {
             tracing::warn!("Failed to save output for step {}: {}", step_name, e);
         }
 
