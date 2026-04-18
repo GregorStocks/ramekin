@@ -110,7 +110,8 @@ jobs:
           echo "PORT=${PORT}" >> test-ui.env
           echo "FIXTURE_PORT=${FIXTURE_PORT}" >> test-ui.env
           echo "UI_PORT=${UI_PORT}" >> test-ui.env
-          echo "UI_HOSTNAME=localhost" >> test-ui.env
+          echo "RAMEKIN_SELF_SIGNED_URL=http://localhost:${UI_PORT}" >> test-ui.env
+          echo "RAMEKIN_EXTERNAL_URL=http://localhost:${UI_PORT}" >> test-ui.env
           echo "MOCK_OPENROUTER_PORT=${MOCK_OPENROUTER_PORT}" >> test-ui.env
           echo "PROCESS_COMPOSE_PORT=${PROCESS_COMPOSE_PORT}" >> test-ui.env
           echo "RUST_LOG=error" >> test-ui.env
