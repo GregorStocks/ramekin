@@ -121,6 +121,33 @@ pub fn step_summary(step_name: &str, output: &JsonValue) -> Option<String> {
     }
 }
 
+/// Produce a synthetic `StepState` for a `failed_at_step` value that isn't
+/// one of the canonical `PIPELINE_STEPS` (e.g. `photo_extract` for the
+/// photo-only import path). Without this, the status API would render every
+/// canonical step as `"pending"` and silently hide the real failure.
+///
+/// Returns `None` if `failed_at_step` is absent or matches a known step.
+pub fn extra_failed_state_for_unknown_step(
+    failed_at_step: Option<&str>,
+    current_step_started_at: Option<DateTime<Utc>>,
+    job_error_message: Option<&str>,
+) -> Option<StepState> {
+    let name = failed_at_step?;
+    if PIPELINE_STEPS.contains(&name) {
+        return None;
+    }
+    Some(StepState {
+        name: name.to_string(),
+        status: "failed".to_string(),
+        started_at: current_step_started_at,
+        finished_at: None,
+        duration_ms: None,
+        summary: None,
+        error: job_error_message.map(|s| s.to_string()),
+        has_output: false,
+    })
+}
+
 /// Build the ordered list of step states for a job.
 ///
 /// Reads all step outputs for the job, then walks `PIPELINE_STEPS` in order
@@ -220,6 +247,14 @@ pub fn build_step_states(
                 has_output: false,
             });
         }
+    }
+
+    if let Some(extra) = extra_failed_state_for_unknown_step(
+        failed_at_step,
+        current_step_started_at,
+        job_error_message,
+    ) {
+        states.push(extra);
     }
 
     Ok(states)
@@ -337,6 +372,46 @@ mod tests {
                 "enrich_generate_photo",
             ]
         );
+    }
+
+    #[test]
+    fn extra_failed_state_for_unknown_step_returns_none_when_missing() {
+        // No failed step → no synthetic state.
+        assert!(extra_failed_state_for_unknown_step(None, None, None).is_none());
+    }
+
+    #[test]
+    fn extra_failed_state_for_unknown_step_returns_none_for_canonical_step() {
+        // A canonical step is already handled by the main loop; don't
+        // duplicate it with a synthetic entry.
+        let out =
+            extra_failed_state_for_unknown_step(Some("extract_recipe"), None, Some("bad recipe"));
+        assert!(out.is_none());
+    }
+
+    #[test]
+    fn build_step_states_synthetic_entry_for_non_canonical_failed_step() {
+        // `photo_extract` is the photo-only import path's step name and is
+        // NOT in PIPELINE_STEPS; without the fallback the status list would
+        // render all 9 canonical steps as "pending" and silently hide the
+        // real failure.
+        let started = DateTime::parse_from_rfc3339("2025-01-01T00:00:00Z")
+            .unwrap()
+            .with_timezone(&Utc);
+        let state = extra_failed_state_for_unknown_step(
+            Some("photo_extract"),
+            Some(started),
+            Some("photo extraction failed"),
+        )
+        .expect("expected synthetic state for non-canonical step");
+        assert_eq!(state.name, "photo_extract");
+        assert_eq!(state.status, "failed");
+        assert_eq!(state.started_at, Some(started));
+        assert_eq!(state.finished_at, None);
+        assert_eq!(state.duration_ms, None);
+        assert_eq!(state.summary, None);
+        assert_eq!(state.error.as_deref(), Some("photo extraction failed"));
+        assert!(!state.has_output);
     }
 
     #[test]
