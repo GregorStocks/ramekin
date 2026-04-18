@@ -642,3 +642,19 @@ def test_rename_tag_validates(authed_api_client):
     with pytest.raises(ApiException) as exc_info:
         tags_api.rename_tag(created.id, RenameTagRequest(name="a:b:c"))
     assert exc_info.value.status == 400
+
+
+def test_list_tags_exposes_namespace_and_value(authed_api_client):
+    client, _ = authed_api_client
+    tags_api = TagsApi(client)
+
+    tags_api.create_tag(CreateTagRequest(name="ingredient:chicken"))
+    tags_api.create_tag(CreateTagRequest(name="dinner"))
+
+    response = tags_api.list_all_tags()
+    by_name = {t.name: t for t in response.tags}
+
+    assert by_name["ingredient:chicken"].namespace == "ingredient"
+    assert by_name["ingredient:chicken"].value == "chicken"
+    assert by_name["dinner"].namespace is None
+    assert by_name["dinner"].value == "dinner"

@@ -9,7 +9,9 @@ Name | Type
 `createdAt` | Date
 `id` | string
 `name` | string
+`namespace` | string
 `recipeCount` | number
+`value` | string
 
 ## Example
 
@@ -21,7 +23,9 @@ const example = {
   "createdAt": null,
   "id": null,
   "name": null,
+  "namespace": null,
   "recipeCount": null,
+  "value": null,
 } satisfies TagItem
 
 console.log(example)

@@ -23,6 +23,8 @@ export function instanceOfTagItem(value) {
         return false;
     if (!('recipeCount' in value) || value['recipeCount'] === undefined)
         return false;
+    if (!('value' in value) || value['value'] === undefined)
+        return false;
     return true;
 }
 export function TagItemFromJSON(json) {
@@ -36,7 +38,9 @@ export function TagItemFromJSONTyped(json, ignoreDiscriminator) {
         'createdAt': (new Date(json['created_at'])),
         'id': json['id'],
         'name': json['name'],
+        'namespace': json['namespace'] == null ? undefined : json['namespace'],
         'recipeCount': json['recipe_count'],
+        'value': json['value'],
     };
 }
 export function TagItemToJSON(json) {
@@ -50,6 +54,8 @@ export function TagItemToJSONTyped(value, ignoreDiscriminator = false) {
         'created_at': value['createdAt'].toISOString(),
         'id': value['id'],
         'name': value['name'],
+        'namespace': value['namespace'],
         'recipe_count': value['recipeCount'],
+        'value': value['value'],
     };
 }

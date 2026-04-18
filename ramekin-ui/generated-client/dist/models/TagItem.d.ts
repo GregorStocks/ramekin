@@ -34,11 +34,23 @@ export interface TagItem {
      */
     name: string;
     /**
+     * Namespace portion for `namespace:value`-shaped names, else null.
+     * @type {string}
+     * @memberof TagItem
+     */
+    namespace?: string | null;
+    /**
      * Number of recipes using this tag
      * @type {number}
      * @memberof TagItem
      */
     recipeCount: number;
+    /**
+     * Value portion. Equals `name` for flat tags.
+     * @type {string}
+     * @memberof TagItem
+     */
+    value: string;
 }
 /**
  * Check if a given object implements the TagItem interface.

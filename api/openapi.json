@@ -3973,6 +3973,7 @@
         "required": [
           "id",
           "name",
+          "value",
           "created_at",
           "recipe_count"
         ],
@@ -3988,10 +3989,21 @@
           "name": {
             "type": "string"
           },
+          "namespace": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Namespace portion for `namespace:value`-shaped names, else null."
+          },
           "recipe_count": {
             "type": "integer",
             "format": "int64",
             "description": "Number of recipes using this tag"
+          },
+          "value": {
+            "type": "string",
+            "description": "Value portion. Equals `name` for flat tags."
           }
         }
       },

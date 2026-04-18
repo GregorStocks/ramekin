@@ -38,11 +38,23 @@ export interface TagItem {
      */
     name: string;
     /**
+     * Namespace portion for `namespace:value`-shaped names, else null.
+     * @type {string}
+     * @memberof TagItem
+     */
+    namespace?: string | null;
+    /**
      * Number of recipes using this tag
      * @type {number}
      * @memberof TagItem
      */
     recipeCount: number;
+    /**
+     * Value portion. Equals `name` for flat tags.
+     * @type {string}
+     * @memberof TagItem
+     */
+    value: string;
 }
 
 /**
@@ -53,6 +65,7 @@ export function instanceOfTagItem(value: object): value is TagItem {
     if (!('id' in value) || value['id'] === undefined) return false;
     if (!('name' in value) || value['name'] === undefined) return false;
     if (!('recipeCount' in value) || value['recipeCount'] === undefined) return false;
+    if (!('value' in value) || value['value'] === undefined) return false;
     return true;
 }
 
@@ -69,7 +82,9 @@ export function TagItemFromJSONTyped(json: any, ignoreDiscriminator: boolean): T
         'createdAt': (new Date(json['created_at'])),
         'id': json['id'],
         'name': json['name'],
+        'namespace': json['namespace'] == null ? undefined : json['namespace'],
         'recipeCount': json['recipe_count'],
+        'value': json['value'],
     };
 }
 
@@ -87,7 +102,9 @@ export function TagItemToJSONTyped(value?: TagItem | null, ignoreDiscriminator: 
         'created_at': value['createdAt'].toISOString(),
         'id': value['id'],
         'name': value['name'],
+        'namespace': value['namespace'],
         'recipe_count': value['recipeCount'],
+        'value': value['value'],
     };
 }
 

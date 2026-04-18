@@ -8,7 +8,9 @@ Name | Type | Description | Notes
 **created_at** | **datetime** |  | 
 **id** | **UUID** |  | 
 **name** | **str** |  | 
+**namespace** | **str** | Namespace portion for &#x60;namespace:value&#x60;-shaped names, else null. | [optional] 
 **recipe_count** | **int** | Number of recipes using this tag | 
+**value** | **str** | Value portion. Equals &#x60;name&#x60; for flat tags. | 
 
 ## Example
 

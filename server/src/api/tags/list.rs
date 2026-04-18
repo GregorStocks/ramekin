@@ -16,6 +16,10 @@ use uuid::Uuid;
 pub struct TagItem {
     pub id: Uuid,
     pub name: String,
+    /// Namespace portion for `namespace:value`-shaped names, else null.
+    pub namespace: Option<String>,
+    /// Value portion. Equals `name` for flat tags.
+    pub value: String,
     pub created_at: DateTime<Utc>,
     /// Number of recipes using this tag
     pub recipe_count: i64,
@@ -90,11 +94,16 @@ pub async fn list_all_tags(
     let response = TagsListResponse {
         tags: tags
             .into_iter()
-            .map(|(id, name, created_at, recipe_count)| TagItem {
-                id,
-                name,
-                created_at,
-                recipe_count,
+            .map(|(id, name, created_at, recipe_count)| {
+                let parsed = ramekin_core::parse_tag(&name);
+                TagItem {
+                    id,
+                    namespace: parsed.namespace,
+                    value: parsed.value,
+                    name,
+                    created_at,
+                    recipe_count,
+                }
             })
             .collect(),
     };
