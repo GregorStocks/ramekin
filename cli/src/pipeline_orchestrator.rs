@@ -445,6 +445,10 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
 
     let elapsed = start_time.elapsed();
 
+    // Write allowlisted per-URL snapshots before the final manifest so that a
+    // snapshot failure propagates as a failed run.
+    write_pipeline_snapshots(&run_dir)?;
+
     // Update manifest with completion
     let final_manifest = RunManifest {
         completed_at: Some(Utc::now().to_rfc3339()),
@@ -763,6 +767,21 @@ fn save_results(run_dir: &Path, results: &PipelineResults) -> Result<()> {
     let json = serde_json::to_string_pretty(results)?;
     fs::write(run_dir.join("results.json"), json)?;
     Ok(())
+}
+
+fn write_pipeline_snapshots(run_dir: &Path) -> Result<()> {
+    let allowlist = PathBuf::from("data/pipeline-snapshot-urls.json");
+    let snapshots_dir = PathBuf::from("data/pipeline-snapshots");
+
+    if !allowlist.exists() {
+        tracing::warn!(
+            "Snapshot allowlist {} not found; skipping snapshot write",
+            allowlist.display()
+        );
+        return Ok(());
+    }
+
+    crate::pipeline::snapshots::write_snapshots(run_dir, &allowlist, &snapshots_dir)
 }
 
 fn truncate_url(url: &str, max_len: usize) -> String {

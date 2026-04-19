@@ -17,7 +17,6 @@ use ramekin_core::types::RawRecipe;
 
 /// Write snapshots for every URL in `allowlist_path` by reading step outputs
 /// under `run_dir` and writing JSON files under `snapshots_dir`.
-#[allow(dead_code)] // Wired into pipeline_orchestrator in a follow-up batch.
 pub fn write_snapshots(run_dir: &Path, allowlist_path: &Path, snapshots_dir: &Path) -> Result<()> {
     let urls = read_allowlist(allowlist_path)?;
     if urls.is_empty() {
@@ -46,7 +45,6 @@ pub fn write_snapshots(run_dir: &Path, allowlist_path: &Path, snapshots_dir: &Pa
     Ok(())
 }
 
-#[allow(dead_code)] // Used via write_snapshots once wired into the orchestrator.
 fn read_allowlist(path: &Path) -> Result<Vec<String>> {
     let text = std::fs::read_to_string(path)
         .with_context(|| format!("Failed to read allowlist: {}", path.display()))?;
@@ -55,7 +53,6 @@ fn read_allowlist(path: &Path) -> Result<Vec<String>> {
     Ok(urls)
 }
 
-#[allow(dead_code)] // Used via write_snapshots once wired into the orchestrator.
 fn read_step_output(
     run_dir: &Path,
     url_slug: &str,
@@ -76,7 +73,6 @@ fn read_step_output(
     Ok(Some(value))
 }
 
-#[allow(dead_code)] // Used via write_snapshots once wired into the orchestrator.
 fn assemble_snapshot(run_dir: &Path, url_slug: &str) -> Result<FinalRecipe> {
     let extract = read_step_output(run_dir, url_slug, "extract_recipe")?.ok_or_else(|| {
         anyhow!(
