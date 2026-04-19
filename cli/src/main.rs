@@ -494,6 +494,10 @@ async fn ping(server: &str) -> Result<()> {
 /// Writes INFO-and-above events to stderr (configurable via `RUST_LOG`) and
 /// DEBUG-and-above events to `logs/<command>-<timestamp>.log`. The log file
 /// lives in the worktree, so it's effectively scratch space.
+///
+/// The file layer's verbosity can be tuned via `RAMEKIN_FILE_LOG`; it defaults
+/// to `debug,html5ever=warn,selectors=warn` to keep HTML-parser noise from
+/// producing gigabyte-scale log files on pipeline runs.
 fn init_tracing(
     command_name: &str,
     timestamp: &str,
@@ -511,11 +515,15 @@ fn init_tracing(
     let file = std::fs::File::create(&path)
         .with_context(|| format!("Failed to create log file {}", path.display()))?;
     let (non_blocking, guard) = tracing_appender::non_blocking(file);
+    let file_filter = std::env::var("RAMEKIN_FILE_LOG")
+        .ok()
+        .and_then(|s| EnvFilter::try_new(s).ok())
+        .unwrap_or_else(|| EnvFilter::new("debug,html5ever=warn,selectors=warn"));
     let file_layer = fmt::layer()
         .with_writer(non_blocking)
         .with_ansi(false)
         .with_target(true)
-        .with_filter(EnvFilter::new("debug"));
+        .with_filter(file_filter);
     eprintln!("Logs: {}", path.display());
 
     tracing_subscriber::registry()
