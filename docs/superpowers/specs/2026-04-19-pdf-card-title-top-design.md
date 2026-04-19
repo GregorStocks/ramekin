@@ -1,12 +1,12 @@
-# PDF card export: title on top, QR relocated
+# PDF card export: title on top, QR aligned under image
 
 ## Motivation
 
 Moving the recipe title to the top of the front card is a design preference.
-Keeping the QR code centered over the image region (where it is today) would
-cause bleedthrough on printed cards because the QR on the back would sit
-directly behind the photo on the front. Put the QR on the opposite end of the
-card from the image.
+With the image now at the bottom, the QR on the back needs to move too — we
+want it to sit directly behind the photo so dark ink stacks on dark ink and
+prevents bleedthrough. (Putting the QR anywhere else would let it show
+through the lighter title region and vice versa.)
 
 ## Front card (`drawFrontCard`)
 
@@ -23,22 +23,19 @@ Swap title and image regions:
 
 ## Back card (`drawBackCard`)
 
-Mirror the new front layout so QR and image are on opposite ends:
+Mirror the new front layout in reader coords so the QR aligns through the
+paper with the front image:
 
-- `visualQrCenterY` moves to the top half of the card. Compute it to align
-  vertically with the front's image region inverted: the front image now spans
-  `[frontPad + frontTitleAreaH, h - frontPad]`; the back QR center should
-  align with where the front title currently sits, i.e.
-  `frontPad + frontTitleAreaH / 2` — but placed so the QR square is
-  comfortably within the top region. Concretely: QR center at
-  `frontPad + frontTitleAreaH / 2` (shifted down if needed so the top of the
-  QR respects `backPad`).
-- Description moves to the bottom. Its top is
-  `visualQrCenterY + qrSize / 2 + descGap` as before; because the QR is now
-  up top, this puts the description in the lower portion of the card.
-- Description is limited to **at most 3 lines** regardless of available space
-  (still respect the area-based cap — the final limit is
-  `min(3, floor(visualTextAreaH / lineHeightIn))`).
+- `visualQrCenterY = frontPad + frontTitleAreaH + frontImgAreaH / 2` — the
+  same Y center as the front image. Under the existing `rotate180`
+  compensation, the QR lands in the correct physical position on the back
+  after a duplex flip.
+- Description fills the band *above* the QR (reader coords from `backPad` to
+  `visualQrCenterY - qrSize/2 - descGap`), behind the front title region.
+- Description is capped at **3 lines**, with the area-based cap still
+  respected: `min(3, floor(visualTextAreaH / lineHeightIn))`.
+- Short descriptions anchor to the bottom of the text band (just above the
+  QR) so they don't float near the top edge.
 
 ## Non-goals
 
