@@ -190,4 +190,30 @@ mod tests {
         assert_eq!(fr.suggested_tags.as_deref(), Some(&suggested[..]));
         assert_eq!(fr.applied_tags.as_deref(), Some(&applied[..]));
     }
+
+    #[test]
+    fn serializes_without_null_fields_for_missing_optionals() {
+        let raw = raw_recipe_fixture();
+        let fr = build_final_recipe(&raw, None, None, None);
+        let json = serde_json::to_string(&fr).unwrap();
+        assert!(
+            !json.contains("\"applied_tags\""),
+            "unexpected applied_tags in {json}"
+        );
+        assert!(
+            !json.contains("\"suggested_tags\""),
+            "unexpected suggested_tags in {json}"
+        );
+    }
+
+    #[test]
+    fn round_trips_through_serde() {
+        let raw = raw_recipe_fixture();
+        let suggested = vec!["dinner".to_string()];
+        let applied = vec!["vegetarian".to_string()];
+        let fr = build_final_recipe(&raw, None, Some(&suggested), Some(&applied));
+        let json = serde_json::to_string_pretty(&fr).unwrap();
+        let decoded: FinalRecipe = serde_json::from_str(&json).unwrap();
+        assert_eq!(decoded, fr);
+    }
 }
