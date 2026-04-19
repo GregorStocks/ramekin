@@ -7,6 +7,7 @@
 
 mod output_store;
 mod runners;
+pub mod snapshots;
 mod staging;
 mod steps;
 
