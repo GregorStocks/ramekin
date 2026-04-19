@@ -43,7 +43,6 @@ pub fn build_final_recipe(
     suggested_tags: Option<&[String]>,
     applied_tags: Option<&[String]>,
 ) -> FinalRecipe {
-    let _ = (suggested_tags, applied_tags);
     let ingredients = match parsed_ingredients {
         Some(parsed) if !parsed.is_empty() => parsed.to_vec(),
         _ => raw_recipe
@@ -71,8 +70,8 @@ pub fn build_final_recipe(
         source_url: raw_recipe.source_url.clone(),
         source_name: raw_recipe.source_name.clone(),
         ingredients,
-        applied_tags: None,
-        suggested_tags: None,
+        applied_tags: applied_tags.map(<[String]>::to_vec),
+        suggested_tags: suggested_tags.map(<[String]>::to_vec),
     }
 }
 
@@ -162,5 +161,33 @@ mod tests {
         assert_eq!(fr.ingredients.len(), 2);
         assert_eq!(fr.ingredients[0].item, "1 cup flour");
         assert_eq!(fr.ingredients[1].item, "2 eggs");
+    }
+
+    #[test]
+    fn passes_suggested_tags_through() {
+        let raw = raw_recipe_fixture();
+        let suggested = vec!["dinner".to_string(), "mexican".to_string()];
+        let fr = build_final_recipe(&raw, None, Some(&suggested), None);
+        assert_eq!(fr.suggested_tags.as_deref(), Some(&suggested[..]));
+        assert!(fr.applied_tags.is_none());
+    }
+
+    #[test]
+    fn passes_applied_tags_through() {
+        let raw = raw_recipe_fixture();
+        let applied = vec!["vegetarian".to_string()];
+        let fr = build_final_recipe(&raw, None, None, Some(&applied));
+        assert_eq!(fr.applied_tags.as_deref(), Some(&applied[..]));
+        assert!(fr.suggested_tags.is_none());
+    }
+
+    #[test]
+    fn passes_both_tag_fields_through() {
+        let raw = raw_recipe_fixture();
+        let suggested = vec!["dinner".to_string()];
+        let applied = vec!["dinner".to_string(), "mexican".to_string()];
+        let fr = build_final_recipe(&raw, None, Some(&suggested), Some(&applied));
+        assert_eq!(fr.suggested_tags.as_deref(), Some(&suggested[..]));
+        assert_eq!(fr.applied_tags.as_deref(), Some(&applied[..]));
     }
 }
