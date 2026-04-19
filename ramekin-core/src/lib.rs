@@ -2,6 +2,7 @@ pub mod ai;
 pub mod error;
 pub mod extract;
 pub mod fetch;
+pub mod final_recipe;
 pub mod http;
 pub mod image;
 pub mod ingredient_categorizer;
