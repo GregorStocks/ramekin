@@ -43,7 +43,22 @@ pub fn build_final_recipe(
     suggested_tags: Option<&[String]>,
     applied_tags: Option<&[String]>,
 ) -> FinalRecipe {
-    let _ = (parsed_ingredients, suggested_tags, applied_tags);
+    let _ = (suggested_tags, applied_tags);
+    let ingredients = match parsed_ingredients {
+        Some(parsed) if !parsed.is_empty() => parsed.to_vec(),
+        _ => raw_recipe
+            .ingredients
+            .lines()
+            .filter(|line| !line.trim().is_empty())
+            .map(|line| ParsedIngredient {
+                item: line.trim().to_string(),
+                measurements: Vec::new(),
+                note: None,
+                raw: None,
+                section: None,
+            })
+            .collect(),
+    };
     FinalRecipe {
         title: raw_recipe.title.clone(),
         description: raw_recipe.description.clone(),
@@ -55,7 +70,7 @@ pub fn build_final_recipe(
         image_urls: raw_recipe.image_urls.clone(),
         source_url: raw_recipe.source_url.clone(),
         source_name: raw_recipe.source_name.clone(),
-        ingredients: Vec::new(),
+        ingredients,
         applied_tags: None,
         suggested_tags: None,
     }
@@ -101,5 +116,51 @@ mod tests {
         assert_eq!(fr.source_name.as_deref(), Some("example.com"));
         assert_eq!(fr.servings.as_deref(), Some("4"));
         assert_eq!(fr.total_time.as_deref(), Some("30 minutes"));
+    }
+
+    #[test]
+    fn uses_parsed_ingredients_when_present() {
+        let raw = raw_recipe_fixture();
+        let parsed = vec![ParsedIngredient {
+            item: "flour".to_string(),
+            measurements: vec![crate::ingredient_parser::Measurement {
+                amount: Some("1".to_string()),
+                unit: Some("cup".to_string()),
+            }],
+            note: None,
+            raw: Some("1 cup flour".to_string()),
+            section: None,
+        }];
+        let fr = build_final_recipe(&raw, Some(&parsed), None, None);
+        assert_eq!(fr.ingredients.len(), 1);
+        assert_eq!(fr.ingredients[0].item, "flour");
+    }
+
+    #[test]
+    fn falls_back_to_line_split_when_parsed_absent() {
+        let raw = raw_recipe_fixture();
+        let fr = build_final_recipe(&raw, None, None, None);
+        assert_eq!(fr.ingredients.len(), 2);
+        assert_eq!(fr.ingredients[0].item, "1 cup flour");
+        assert_eq!(fr.ingredients[0].measurements, Vec::new());
+        assert_eq!(fr.ingredients[1].item, "2 eggs");
+    }
+
+    #[test]
+    fn falls_back_to_line_split_when_parsed_empty() {
+        let raw = raw_recipe_fixture();
+        let empty: Vec<ParsedIngredient> = Vec::new();
+        let fr = build_final_recipe(&raw, Some(&empty), None, None);
+        assert_eq!(fr.ingredients.len(), 2);
+    }
+
+    #[test]
+    fn line_split_skips_blank_lines() {
+        let mut raw = raw_recipe_fixture();
+        raw.ingredients = "1 cup flour\n\n   \n2 eggs".to_string();
+        let fr = build_final_recipe(&raw, None, None, None);
+        assert_eq!(fr.ingredients.len(), 2);
+        assert_eq!(fr.ingredients[0].item, "1 cup flour");
+        assert_eq!(fr.ingredients[1].item, "2 eggs");
     }
 }
