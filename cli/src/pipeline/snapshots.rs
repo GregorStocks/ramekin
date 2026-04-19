@@ -11,6 +11,7 @@ use std::path::Path;
 
 use anyhow::{anyhow, Context, Result};
 use ramekin_core::final_recipe::{build_final_recipe, FinalRecipe};
+use ramekin_core::http::slugify_url;
 use ramekin_core::ingredient_parser::ParsedIngredient;
 use ramekin_core::types::RawRecipe;
 
@@ -18,7 +19,30 @@ use ramekin_core::types::RawRecipe;
 /// under `run_dir` and writing JSON files under `snapshots_dir`.
 #[allow(dead_code)] // Wired into pipeline_orchestrator in a follow-up batch.
 pub fn write_snapshots(run_dir: &Path, allowlist_path: &Path, snapshots_dir: &Path) -> Result<()> {
-    let _ = (run_dir, allowlist_path, snapshots_dir);
+    let urls = read_allowlist(allowlist_path)?;
+    if urls.is_empty() {
+        return Ok(());
+    }
+
+    std::fs::create_dir_all(snapshots_dir)
+        .with_context(|| format!("Failed to create {}", snapshots_dir.display()))?;
+
+    for url in &urls {
+        let slug = slugify_url(url);
+        let final_recipe = assemble_snapshot(run_dir, &slug)
+            .with_context(|| format!("Failed to assemble snapshot for allowlisted URL {url}"))?;
+
+        let mut json = serde_json::to_string_pretty(&final_recipe)
+            .context("Failed to serialize FinalRecipe")?;
+        json.push('\n');
+
+        let path = snapshots_dir.join(format!("{slug}.json"));
+        std::fs::write(&path, json)
+            .with_context(|| format!("Failed to write snapshot: {}", path.display()))?;
+
+        tracing::info!("Wrote pipeline snapshot: {}", path.display());
+    }
+
     Ok(())
 }
 
@@ -100,12 +124,6 @@ fn assemble_snapshot(run_dir: &Path, url_slug: &str) -> Result<FinalRecipe> {
 mod tests {
     use super::*;
     use tempfile::TempDir;
-
-    #[test]
-    fn stub_is_noop() {
-        let p = Path::new("/nonexistent");
-        write_snapshots(p, p, p).unwrap();
-    }
 
     #[test]
     fn reads_valid_allowlist() {
@@ -278,5 +296,68 @@ mod tests {
             msg.contains("extract_recipe"),
             "error should mention extract_recipe: {msg}"
         );
+    }
+
+    #[test]
+    fn writes_snapshot_files_for_allowlisted_urls() {
+        let dir = TempDir::new().unwrap();
+        let run_dir = dir.path().join("run");
+        let snapshots_dir = dir.path().join("snapshots");
+        let url = "https://example.com/r";
+        let slug = slugify_url(url);
+        write_step_output(&run_dir, &slug, "extract_recipe", extract_output_body());
+
+        let allowlist = dir.path().join("allowlist.json");
+        std::fs::write(&allowlist, format!("[{url:?}]")).unwrap();
+
+        write_snapshots(&run_dir, &allowlist, &snapshots_dir).unwrap();
+
+        let snapshot_path = snapshots_dir.join(format!("{slug}.json"));
+        assert!(
+            snapshot_path.exists(),
+            "snapshot not written at {}",
+            snapshot_path.display()
+        );
+        let content = std::fs::read_to_string(&snapshot_path).unwrap();
+        let value: serde_json::Value = serde_json::from_str(&content).unwrap();
+        assert_eq!(value.get("title").and_then(|v| v.as_str()), Some("Test"));
+    }
+
+    #[test]
+    fn errors_when_allowlisted_url_missing_from_run() {
+        let dir = TempDir::new().unwrap();
+        let run_dir = dir.path().join("run");
+        std::fs::create_dir_all(&run_dir).unwrap();
+        let snapshots_dir = dir.path().join("snapshots");
+        let allowlist = dir.path().join("allowlist.json");
+        std::fs::write(&allowlist, r#"["https://missing.example/"]"#).unwrap();
+
+        let err = write_snapshots(&run_dir, &allowlist, &snapshots_dir).unwrap_err();
+        let msg = err.to_string();
+        assert!(
+            msg.contains("https://missing.example/"),
+            "error should name the URL: {msg}"
+        );
+    }
+
+    #[test]
+    fn snapshot_output_is_pretty_printed() {
+        let dir = TempDir::new().unwrap();
+        let run_dir = dir.path().join("run");
+        let snapshots_dir = dir.path().join("snapshots");
+        let url = "https://example.com/r";
+        let slug = slugify_url(url);
+        write_step_output(&run_dir, &slug, "extract_recipe", extract_output_body());
+
+        let allowlist = dir.path().join("allowlist.json");
+        std::fs::write(&allowlist, format!("[{url:?}]")).unwrap();
+        write_snapshots(&run_dir, &allowlist, &snapshots_dir).unwrap();
+
+        let snapshot = std::fs::read_to_string(snapshots_dir.join(format!("{slug}.json"))).unwrap();
+        assert!(
+            snapshot.contains('\n'),
+            "expected pretty-printed multi-line JSON"
+        );
+        assert!(snapshot.ends_with('\n'), "expected trailing newline");
     }
 }
