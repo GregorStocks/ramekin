@@ -28,6 +28,27 @@ fn read_allowlist(path: &Path) -> Result<Vec<String>> {
     Ok(urls)
 }
 
+#[allow(dead_code)] // Used via write_snapshots once wired into the orchestrator.
+fn read_step_output(
+    run_dir: &Path,
+    url_slug: &str,
+    step_name: &str,
+) -> Result<Option<serde_json::Value>> {
+    let path = run_dir
+        .join("urls")
+        .join(url_slug)
+        .join(step_name)
+        .join("output.json");
+    if !path.exists() {
+        return Ok(None);
+    }
+    let text = std::fs::read_to_string(&path)
+        .with_context(|| format!("Failed to read step output: {}", path.display()))?;
+    let value: serde_json::Value = serde_json::from_str(&text)
+        .with_context(|| format!("Failed to parse step output JSON: {}", path.display()))?;
+    Ok(Some(value))
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -76,5 +97,42 @@ mod tests {
         std::fs::write(&path, "not json").unwrap();
         let err = read_allowlist(&path).unwrap_err();
         assert!(err.to_string().contains("Failed to parse allowlist JSON"));
+    }
+
+    #[test]
+    fn reads_step_output_when_present() {
+        let dir = TempDir::new().unwrap();
+        let run_dir = dir.path();
+        let step_dir = run_dir
+            .join("urls")
+            .join("example-com_recipe")
+            .join("extract_recipe");
+        std::fs::create_dir_all(&step_dir).unwrap();
+        std::fs::write(step_dir.join("output.json"), r#"{"foo":"bar"}"#).unwrap();
+
+        let out = read_step_output(run_dir, "example-com_recipe", "extract_recipe").unwrap();
+        assert_eq!(out, Some(serde_json::json!({"foo": "bar"})));
+    }
+
+    #[test]
+    fn returns_none_when_step_output_missing() {
+        let dir = TempDir::new().unwrap();
+        let out = read_step_output(dir.path(), "example-com_recipe", "extract_recipe").unwrap();
+        assert!(out.is_none());
+    }
+
+    #[test]
+    fn errors_when_step_output_is_malformed_json() {
+        let dir = TempDir::new().unwrap();
+        let run_dir = dir.path();
+        let step_dir = run_dir
+            .join("urls")
+            .join("example-com_recipe")
+            .join("extract_recipe");
+        std::fs::create_dir_all(&step_dir).unwrap();
+        std::fs::write(step_dir.join("output.json"), "not json").unwrap();
+
+        let err = read_step_output(run_dir, "example-com_recipe", "extract_recipe").unwrap_err();
+        assert!(err.to_string().contains("Failed to parse"));
     }
 }
