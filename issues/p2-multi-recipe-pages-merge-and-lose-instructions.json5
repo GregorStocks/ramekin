@@ -1,0 +1,36 @@
+{
+  "title": "Multi-recipe pages get merged into one record with instructions \
+from only one recipe",
+  "description": "When a source page contains two distinct recipes under \
+separate headings (title + attribution + ingredient list + method), the \
+pipeline collapses them into a single record and keeps instructions from only \
+one of them. Ingredients from both recipes end up flattened into one list with \
+`section: null`, so shared item names (salt, lemon juice, pepper) appear twice \
+with no indication of which recipe they belong to.\n\
+\n\
+Concrete example: \
+https://smittenkitchen.com/2009/09/grilled-lamb-kebabs-tzatziki/ (cached at \
+~/.ramekin/http-cache/smittenkitchen-com_2009-09-grilled-lamb-kebabs-tzatziki/). \
+The source has a `<b>Yogurt-Marinated Lamb Kebabs</b>` section followed by a \
+`<b>Tzatziki</b>` section, each with its own ingredient block and method. The \
+snapshot at \
+data/pipeline-snapshots/smittenkitchen-com_2009-09-grilled-lamb-kebabs-tzatziki.json \
+is titled 'Yogurt-Marinated Lamb Kebabs' but its `instructions` field contains \
+only the tzatziki procedure ('Place the yogurt in a medium bowl. Grate the \
+cucumber...'). The entire lamb procedure -- combining the marinade, cubing the \
+lamb, grilling the skewers with onion -- is dropped. All 18 ingredients from \
+both recipes are concatenated with no sectioning.\n\
+\n\
+Ideal fix is to emit one recipe per heading block. Acceptable fallback: keep \
+one record but preserve every method paragraph and populate `section` on \
+ingredients so the two sub-recipes are distinguishable.",
+  "status": "open",
+  "priority": 2,
+  "type": "bug",
+  "labels": [
+    "pipeline",
+    "extraction",
+  ],
+  "created_at": "2026-04-20T09:33:56-07:00",
+  "updated_at": "2026-04-20T09:33:56-07:00",
+}
