@@ -333,7 +333,10 @@ extension RecipeFormView {
         if selectedTagNamespace == nil {
             let parsed = TagHierarchySupport.parse(name: newTagValue)
             if parsed.namespace != nil {
-                appendTagIfNeeded(parsed.name)
+                guard let normalizedTag = TagHierarchySupport.normalizedTypedName(from: newTagValue) else {
+                    return
+                }
+                appendTagIfNeeded(normalizedTag)
                 newTagValue = ""
                 return
             }

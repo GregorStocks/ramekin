@@ -49,6 +49,14 @@ final class TagHierarchySupportTests: XCTestCase {
         XCTAssertNil(TagHierarchySupport.formattedName(namespace: "bad namespace", value: "Chicken"))
     }
 
+    func testNormalizedTypedNameValidatesAndNormalizesFreeformHierarchicalInput() {
+        XCTAssertEqual(
+            TagHierarchySupport.normalizedTypedName(from: " Course:Breakfast "),
+            "course:Breakfast"
+        )
+        XCTAssertNil(TagHierarchySupport.normalizedTypedName(from: "bad namespace:Breakfast"))
+    }
+
     func testGroupsOrderSeededExtrasThenUncategorized() {
         let tags = [
             TagItem(createdAt: Date(), id: UUID(), name: "season:winter", namespace: "season", recipeCount: 1, value: "winter"),

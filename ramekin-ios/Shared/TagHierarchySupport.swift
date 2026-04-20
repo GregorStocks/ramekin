@@ -81,6 +81,15 @@ enum TagHierarchySupport {
         return "\(normalizedNamespace):\(normalizedValue)"
     }
 
+    static func normalizedTypedName(from rawName: String) -> String? {
+        let parsed = parse(name: rawName)
+        if parsed.namespace != nil {
+            return formattedName(namespace: parsed.namespace, value: parsed.value)
+        }
+
+        return normalizedValue(from: parsed.value)
+    }
+
     static func availableNamespaces(from names: [String]) -> [String] {
         var discovered = Set<String>()
         for name in names {

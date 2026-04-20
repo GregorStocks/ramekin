@@ -61,7 +61,11 @@ struct RecipeFormTagsSection: View {
                     TextField("Tag value", text: $newTagValue)
                         .autocapitalization(.none)
                         .autocorrectionDisabled()
-                        .onSubmit { onAddTag() }
+                        .onSubmit {
+                            if canAddTag {
+                                onAddTag()
+                            }
+                        }
                     Button("Add") { onAddTag() }
                         .disabled(!canAddTag)
                 }
