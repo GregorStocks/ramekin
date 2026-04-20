@@ -104,6 +104,8 @@ export default function TagsPage() {
   const pendingBulkChanges = () =>
     tags().filter((tag) => normalizedBulkName(tag) !== tag.name);
 
+  const temporaryBulkName = (tag: TagItem) => `__bulk_rename_${tag.id}`;
+
   const validateBulkChanges = () => {
     const nextErrors: Record<string, string> = {};
     const byNormalizedName = new Map<string, string[]>();
@@ -170,6 +172,12 @@ export default function TagsPage() {
     setError(null);
 
     try {
+      for (const tag of changedTags) {
+        await getTagsApi().renameTag({
+          id: tag.id,
+          renameTagRequest: { name: temporaryBulkName(tag) },
+        });
+      }
       for (const tag of changedTags) {
         await getTagsApi().renameTag({
           id: tag.id,
