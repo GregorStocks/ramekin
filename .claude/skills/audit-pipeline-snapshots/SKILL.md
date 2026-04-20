@@ -12,7 +12,7 @@ bugs. Takes an optional N (default 1) = how many snapshots to look at.
 ## 1. Sample the snapshots
 
 ```
-ls data/pipeline-snapshots | sort -R | head -N
+ls data/pipeline-snapshots | sort -R | head -n "${N:-1}"
 ```
 
 (Use `sort -R` rather than `shuf` — coreutils isn't guaranteed on PATH.)
