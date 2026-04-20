@@ -32,8 +32,6 @@ pub struct OrchestratorConfig {
     pub run_id: String,
     pub test_urls_file: PathBuf,
     pub output_dir: PathBuf,
-    pub limit: Option<usize>,
-    pub site_filter: Option<String>,
     pub delay_ms: u64,
     pub offline: bool,
     pub force_refetch: bool,
@@ -48,8 +46,6 @@ impl Default for OrchestratorConfig {
             run_id: Utc::now().format("%Y-%m-%d_%H-%M-%S%.3f").to_string(),
             test_urls_file: PathBuf::from("data/test-urls.json"),
             output_dir: PathBuf::from("data/pipeline-runs"),
-            limit: None,
-            site_filter: None,
             delay_ms: 1000,
             offline: true,
             force_refetch: false,
@@ -91,8 +87,6 @@ pub struct RunManifest {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ManifestConfig {
     pub test_urls_file: String,
-    pub limit: Option<usize>,
-    pub site_filter: Option<String>,
     pub delay_ms: u64,
     pub offline: bool,
     pub force_refetch: bool,
@@ -218,21 +212,9 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     let mut urls_to_process: Vec<(String, String)> = Vec::new(); // (url, domain)
 
     for site in &test_urls.sites {
-        // Apply site filter
-        if let Some(ref filter) = config.site_filter {
-            if !site.domain.contains(filter) {
-                continue;
-            }
-        }
-
         for url in &site.urls {
             urls_to_process.push((url.clone(), site.domain.clone()));
         }
-    }
-
-    // Apply limit
-    if let Some(limit) = config.limit {
-        urls_to_process.truncate(limit);
     }
 
     // Load tags for auto-tag evaluation
@@ -250,8 +232,6 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         completed_at: None,
         config: ManifestConfig {
             test_urls_file: config.test_urls_file.display().to_string(),
-            limit: config.limit,
-            site_filter: config.site_filter.clone(),
             delay_ms: config.delay_ms,
             offline: config.offline,
             force_refetch: config.force_refetch,
@@ -287,9 +267,6 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     println!("======================");
     println!("Run ID: {}", run_id);
     println!("URLs to process: {}", total_urls);
-    if let Some(ref filter) = config.site_filter {
-        println!("Site filter: {}", filter);
-    }
     println!();
 
     // In prompt mode, ensure staging directory exists and is empty

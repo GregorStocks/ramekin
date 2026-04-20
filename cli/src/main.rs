@@ -177,12 +177,6 @@ enum Commands {
         /// Output directory for runs
         #[arg(long, default_value = "data/pipeline-runs")]
         output_dir: PathBuf,
-        /// Limit number of URLs to process
-        #[arg(long)]
-        limit: Option<usize>,
-        /// Filter to URLs from a specific site (domain)
-        #[arg(long)]
-        site: Option<String>,
         /// Delay in milliseconds between URL fetches
         #[arg(long, default_value = "1000")]
         delay_ms: u64,
@@ -371,8 +365,6 @@ async fn main() -> Result<()> {
         Commands::Pipeline {
             test_urls,
             output_dir,
-            limit,
-            site,
             delay_ms,
             offline,
             force_refetch,
@@ -384,8 +376,6 @@ async fn main() -> Result<()> {
                 run_id: timestamp.clone(),
                 test_urls_file: test_urls,
                 output_dir: output_dir.clone(),
-                limit,
-                site_filter: site,
                 delay_ms,
                 offline,
                 force_refetch,
