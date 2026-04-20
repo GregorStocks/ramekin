@@ -73,11 +73,11 @@
     {
       "raw": "1 tablespoon each minced fresh rosemary, sage, thyme",
       "expected": {
-        "item": "minced fresh rosemary, sage, thyme",
+        "item": "minced fresh rosemary",
         "measurements": [
           {
             "amount": "1",
-            "unit": "tbsp each"
+            "unit": "tbsp"
           }
         ],
         "note": null,
@@ -87,11 +87,49 @@
     {
       "raw": "1 tablespoon each minced fresh rosemary, sage, thyme",
       "expected": {
-        "item": "minced fresh rosemary, sage, thyme",
+        "item": "sage",
         "measurements": [
           {
             "amount": "1",
-            "unit": "tbsp each"
+            "unit": "tbsp"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "1 tablespoon each minced fresh rosemary, sage, thyme",
+      "expected": {
+        "item": "thyme",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "2.4",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "1 tablespoon each minced fresh rosemary, sage, thyme",
+      "expected": {
+        "item": "minced fresh rosemary",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
           }
         ],
         "note": null,
@@ -101,16 +139,92 @@
     {
       "raw": "1 tablespoon each minced fresh rosemary, sage, thyme",
       "expected": {
-        "item": "minced fresh rosemary, sage, thyme",
+        "item": "sage",
         "measurements": [
           {
             "amount": "1",
-            "unit": "tbsp each"
+            "unit": "tbsp"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "1 tablespoon each minced fresh rosemary, sage, thyme",
+      "expected": {
+        "item": "thyme",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "2.4",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "1 tablespoon each minced fresh rosemary, sage, thyme",
+      "expected": {
+        "item": "minced fresh rosemary",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
           }
         ],
         "note": null,
         "category": "Produce"
       }
+    },
+    {
+      "raw": "1 tablespoon each minced fresh rosemary, sage, thyme",
+      "expected": {
+        "item": "sage",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
+    },
+    {
+      "raw": "1 tablespoon each minced fresh rosemary, sage, thyme",
+      "expected": {
+        "item": "thyme",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "2.4",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      },
+      "expanded": true
     },
     {
       "raw": "1/2 cup packed, chopped flat-leaf parsley",
