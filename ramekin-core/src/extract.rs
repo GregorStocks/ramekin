@@ -1163,12 +1163,13 @@ fn looks_like_ingredient_list(chunk: &str) -> bool {
 
 /// Extract individual ingredient lines from a `<br>`-delimited HTML chunk.
 ///
-/// Treats a leading `<u>…</u>` that stands alone (no ingredient text on the
-/// same line) as the group's section header and colon-terminates it so the
-/// ingredient parser picks it up. Underlines elsewhere in the chunk are
-/// stripped as plain inline emphasis — blogs sometimes use `<u>` to highlight
-/// a single ingredient, and turning that into a section header would drop the
-/// ingredient from the recipe.
+/// When the chunk's first text line is `<u>…</u>` standing alone and its
+/// contents look like a header cue (starts with "For "/"To ", is ALL CAPS,
+/// already ends with a colon, or mentions a well-known section keyword) we
+/// colon-terminate it so the ingredient parser recognizes it as a group
+/// marker. Any other `<u>` — mid-chunk, followed by ingredient text on the
+/// same line, or lacking a header cue — is stripped as plain inline emphasis
+/// so an underlined ingredient like `<u>Olive oil</u>` stays an ingredient.
 fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<String>) {
     let mut seen_text_line = false;
     for part in BR_TAG_REGEX.split(chunk) {
@@ -1185,14 +1186,8 @@ fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<String>) {
             let after_text = HTML_TAG_REGEX.replace_all(&after_u, "");
             let after_text = after_text.trim();
 
-            // A section header is a `<u>…</u>` that (a) leads the chunk
-            // before any actual text line and (b) owns its line entirely.
-            // Empty/markup-only fragments before it (e.g. stray `<span>` or
-            // `&nbsp;`) don't disqualify it — that's why we gate on whether
-            // we've produced a text line yet, not the raw BR index.
-            // If there's non-empty text after the `</u>`, treat the `<u>` as
-            // inline emphasis (e.g. `<u>Note:</u> whisk well`).
-            if !seen_text_line && !header.is_empty() && after_text.is_empty() {
+            let is_leading_solo_u = !seen_text_line && !header.is_empty() && after_text.is_empty();
+            if is_leading_solo_u && looks_like_section_header_cue(header) {
                 let decoded = decode_html_entities(header);
                 if decoded.ends_with(':') {
                     lines.push(decoded);
@@ -1201,8 +1196,8 @@ fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<String>) {
                 }
                 seen_text_line = true;
             } else {
-                // Inline emphasis or non-leading <u>: keep as a plain
-                // ingredient line.
+                // Inline emphasis, non-leading `<u>`, or ambiguous text
+                // without a header cue: keep as a plain ingredient line.
                 let text = HTML_TAG_REGEX.replace_all(part, "");
                 let text = text.trim();
                 if !text.is_empty() {
@@ -1219,6 +1214,37 @@ fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<String>) {
             }
         }
     }
+}
+
+/// Heuristic that says a trimmed `<u>` text looks like a section header —
+/// not just an emphasized ingredient. Returns true for classic header
+/// forms: "For the X", "To X", ALL-CAPS labels, lines already ending in a
+/// colon, and short labels built around common section keywords.
+fn looks_like_section_header_cue(text: &str) -> bool {
+    let trimmed = text.trim();
+    if trimmed.is_empty() {
+        return false;
+    }
+    if trimmed.ends_with(':') {
+        return true;
+    }
+
+    let lower = trimmed.to_lowercase();
+    if lower.starts_with("for ") || lower.starts_with("to ") {
+        return true;
+    }
+
+    let alpha_chars: Vec<char> = trimmed.chars().filter(|c| c.is_alphabetic()).collect();
+    if !alpha_chars.is_empty() && alpha_chars.iter().all(|c| c.is_uppercase()) {
+        return true;
+    }
+
+    const HEADER_KEYWORDS: &[&str] = &[
+        "topping", "filling", "frosting", "icing", "glaze", "sauce", "marinade", "dressing",
+        "crust", "batter", "drizzle", "garnish", "assembly", "assemble", "serving", "coating",
+        "streusel", "crumble", "spread", "dough", "brine",
+    ];
+    HEADER_KEYWORDS.iter().any(|kw| lower.contains(kw))
 }
 
 /// Decode HTML entities using the html-escape crate.
@@ -2203,6 +2229,29 @@ mod tests {
             "expected colon-terminated header after markup-only prefix, got:\n{}",
             result.ingredients
         );
+    }
+
+    #[test]
+    fn test_unstructured_blog_u_leading_solo_without_cue_stays_ingredient() {
+        // A lone `<u>…</u>` at the top of a chunk could be a header or an
+        // emphasized ingredient. Without a header cue ("For "/"To ", ALL
+        // CAPS, trailing colon, or section keyword), err on the side of
+        // treating it as an ingredient so it isn't silently dropped.
+        let html = r#"
+            <html><body>
+                <p><b>Recipe</b></p>
+                <p><u>Olive oil</u><br />1 pound pasta<br />1 teaspoon salt<br />2 cloves garlic</p>
+                <p>Toss everything together and serve immediately while warm.</p>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/r").unwrap();
+        assert!(
+            !result.ingredients.contains("Olive oil:"),
+            "bare <u>Olive oil</u> with no header cue must not become a section, got:\n{}",
+            result.ingredients
+        );
+        assert!(result.ingredients.contains("Olive oil"));
     }
 
     #[test]
