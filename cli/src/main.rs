@@ -521,6 +521,26 @@ fn init_tracing(
         .with(file_layer)
         .init();
 
+    // Route panics through tracing so they land in the log file too. Without this
+    // the default hook writes directly to stderr and the log file ends up missing
+    // the most important event of the run.
+    let default_hook = std::panic::take_hook();
+    std::panic::set_hook(Box::new(move |info| {
+        let payload = info.payload();
+        let msg = payload
+            .downcast_ref::<&'static str>()
+            .copied()
+            .or_else(|| payload.downcast_ref::<String>().map(String::as_str))
+            .unwrap_or("<non-string panic payload>");
+        let location = info
+            .location()
+            .map(|l| format!("{}:{}:{}", l.file(), l.line(), l.column()))
+            .unwrap_or_else(|| "<unknown location>".to_string());
+        let backtrace = std::backtrace::Backtrace::force_capture();
+        tracing::error!(target: "panic", location = %location, "panic: {msg}\n{backtrace}");
+        default_hook(info);
+    }));
+
     Ok(guard)
 }
 
