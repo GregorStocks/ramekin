@@ -76,10 +76,13 @@ struct RecipeRowView: View {
                 }
 
                 if !recipe.tags.isEmpty {
-                    Text(recipe.tags.joined(separator: ", "))
-                        .font(.caption)
-                        .foregroundColor(.orange)
-                        .lineLimit(1)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 6) {
+                            ForEach(Array(recipe.tags.prefix(3)), id: \.self) { tag in
+                                HierarchicalTagChip(name: tag, valueFont: .caption2, namespaceFont: .caption2)
+                            }
+                        }
+                    }
                 }
             }
         }

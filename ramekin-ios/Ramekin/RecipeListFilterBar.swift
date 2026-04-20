@@ -11,21 +11,24 @@ struct RecipeListFilterBar: View {
     let onOpenAdvancedFilters: () -> Void
     let onToggleTag: (String) -> Void
     let onClearFilters: () -> Void
+    @State private var showingTagFilters = false
+
+    private var selectedTagNames: [String] {
+        selectedTags.sorted()
+    }
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
                 photoFilterMenu
                 advancedFiltersButton
+                tagFiltersButton
 
-                ForEach(availableTags) { tag in
+                ForEach(selectedTagNames, id: \.self) { tagName in
                     Button {
-                        onToggleTag(tag.name)
+                        onToggleTag(tagName)
                     } label: {
-                        chipView(
-                            text: tag.name,
-                            isSelected: selectedTags.contains(tag.name)
-                        )
+                        HierarchicalTagChip(name: tagName, isSelected: true)
                     }
                     .buttonStyle(.plain)
                 }
@@ -42,6 +45,13 @@ struct RecipeListFilterBar: View {
             }
             .padding(.horizontal)
             .padding(.vertical, 8)
+        }
+        .sheet(isPresented: $showingTagFilters) {
+            RecipeTagFiltersSheet(
+                availableTags: availableTags,
+                selectedTags: selectedTags,
+                onToggleTag: onToggleTag
+            )
         }
     }
 
@@ -80,6 +90,19 @@ struct RecipeListFilterBar: View {
         }
     }
 
+    private var tagFiltersButton: some View {
+        Button {
+            showingTagFilters = true
+        } label: {
+            chipView(
+                text: selectedTags.isEmpty ? "Tags" : "\(selectedTags.count) tag\(selectedTags.count == 1 ? "" : "s")",
+                icon: "tag",
+                isSelected: !selectedTags.isEmpty
+            )
+        }
+        .buttonStyle(.plain)
+    }
+
     private func chipView(text: String? = nil, icon: String? = nil, isSelected: Bool) -> some View {
         HStack(spacing: 4) {
             if let icon = icon {
@@ -98,5 +121,79 @@ struct RecipeListFilterBar: View {
         .background(isSelected ? Color.orange : Color(.systemGray5))
         .foregroundColor(isSelected ? .white : .primary)
         .clipShape(Capsule())
+    }
+}
+
+private struct RecipeTagFiltersSheet: View {
+    let availableTags: [TagItem]
+    let selectedTags: Set<String>
+    let onToggleTag: (String) -> Void
+
+    @Environment(\.dismiss) private var dismiss
+
+    private var groupedTags: [TagHierarchySupport.TagGroup<TagItem>] {
+        TagHierarchySupport.groups(for: availableTags)
+    }
+
+    var body: some View {
+        NavigationStack {
+            List {
+                if groupedTags.isEmpty {
+                    Section {
+                        Text("No tags available yet.")
+                            .foregroundColor(.secondary)
+                    }
+                } else {
+                    ForEach(groupedTags) { group in
+                        Section(group.title) {
+                            tagGrid(group.items)
+                        }
+                    }
+                }
+            }
+            .listStyle(.insetGrouped)
+            .navigationTitle("Tag Filters")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Done") {
+                        dismiss()
+                    }
+                }
+            }
+        }
+    }
+
+    private func tagGrid(_ tags: [TagItem]) -> some View {
+        FlexibleTagGrid(items: tags, id: \.id) { tag in
+            Button {
+                onToggleTag(tag.name)
+            } label: {
+                HierarchicalTagChip(
+                    name: tag.name,
+                    isSelected: selectedTags.contains(tag.name)
+                )
+            }
+            .buttonStyle(.plain)
+        }
+    }
+}
+
+struct FlexibleTagGrid<Item, ID: Hashable, Content: View>: View {
+    let items: [Item]
+    let id: KeyPath<Item, ID>
+    let content: (Item) -> Content
+
+    private let columns = [
+        GridItem(.adaptive(minimum: 110), alignment: .leading)
+    ]
+
+    var body: some View {
+        LazyVGrid(columns: columns, alignment: .leading, spacing: 10) {
+            ForEach(items, id: id) { item in
+                content(item)
+            }
+        }
+        .padding(.vertical, 4)
     }
 }

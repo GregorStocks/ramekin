@@ -53,6 +53,18 @@ final class RecipeListFilterSupportTests: XCTestCase {
         XCTAssertNil(RecipeListFilterSupport.buildQuery(from: RecipeListFilterState()))
     }
 
+    func testBuildQueryQuotesHierarchicalTagNames() {
+        let state = RecipeListFilterState(
+            selectedTags: ["ingredient:chicken", "season:winter"],
+            photoFilter: .any
+        )
+
+        XCTAssertEqual(
+            RecipeListFilterSupport.buildQuery(from: state),
+            "tag:\"ingredient:chicken\" tag:\"season:winter\""
+        )
+    }
+
     func testAdvancedFilterLabelUsesSourceOrDateSummary() {
         XCTAssertEqual(
             RecipeListFilterSupport.advancedFilterLabel(

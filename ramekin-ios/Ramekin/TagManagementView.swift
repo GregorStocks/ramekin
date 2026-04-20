@@ -10,6 +10,10 @@ struct TagManagementView: View {
     @State private var isSaving = false
     @State private var deletingTag: TagItem?
 
+    private var groupedTags: [TagHierarchySupport.TagGroup<TagItem>] {
+        TagHierarchySupport.groups(for: tags)
+    }
+
     var body: some View {
         List {
             if let error {
@@ -45,14 +49,16 @@ struct TagManagementView: View {
                     .padding(.vertical, 24)
                 }
             } else {
-                Section {
-                    ForEach(tags) { tag in
-                        if editingTagId == tag.id {
-                            editingRow(for: tag)
-                        } else {
-                            tagRow(for: tag)
+                ForEach(groupedTags) { group in
+                    Section(group.title) {
+                        ForEach(group.items) { tag in
+                            row(for: tag)
                         }
                     }
+                }
+
+                Section {
+                    EmptyView()
                 } footer: {
                     Text("Deleting a tag removes it from recipes that currently use it.")
                 }
@@ -94,12 +100,20 @@ struct TagManagementView: View {
 }
 
 private extension TagManagementView {
+    @ViewBuilder
+    func row(for tag: TagItem) -> some View {
+        if editingTagId == tag.id {
+            editingRow(for: tag)
+        } else {
+            tagRow(for: tag)
+        }
+    }
+
     func tagRow(for tag: TagItem) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(alignment: .top, spacing: 12) {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(tag.name)
-                        .font(.headline)
+                    HierarchicalTagLabel(name: tag.name, valueFont: .headline, namespaceFont: .subheadline)
                     Text(TagManagementSupport.recipeCountText(for: tag.recipeCount))
                         .font(.subheadline)
                         .foregroundColor(.secondary)
