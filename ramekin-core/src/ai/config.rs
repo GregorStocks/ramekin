@@ -35,8 +35,6 @@ pub struct AiConfig {
     pub base_url: String,
     /// Directory for caching responses.
     pub cache_dir: std::path::PathBuf,
-    /// If true, only use cache, error if not cached.
-    pub offline: bool,
     /// Milliseconds to wait between requests.
     pub rate_limit_ms: u64,
     /// Seconds before failing an API request.
@@ -54,7 +52,6 @@ impl AiConfig {
     /// - `RAMEKIN_AI_IMAGE_MODEL`: Image model name (default: "google/gemini-2.5-flash-image")
     /// - `RAMEKIN_AI_BASE_URL`: API base URL (default: "https://openrouter.ai/api/v1")
     /// - `RAMEKIN_AI_CACHE_DIR`: Cache directory (default: "~/.ramekin/ai-cache")
-    /// - `RAMEKIN_AI_OFFLINE`: Use cache only (default: false)
     /// - `RAMEKIN_AI_RATE_LIMIT_MS`: Rate limit in ms (default: 500)
     /// - `RAMEKIN_AI_TIMEOUT_SECS`: Request timeout in seconds (default: 30)
     pub fn from_env() -> Result<Self, ConfigError> {
@@ -72,10 +69,6 @@ impl AiConfig {
             .map(std::path::PathBuf::from)
             .unwrap_or_else(|_| Self::default_cache_dir());
 
-        let offline = env::var("RAMEKIN_AI_OFFLINE")
-            .map(|v| v == "true" || v == "1")
-            .unwrap_or(false);
-
         let rate_limit_ms = env::var("RAMEKIN_AI_RATE_LIMIT_MS")
             .ok()
             .and_then(|v| v.parse().ok())
@@ -92,7 +85,6 @@ impl AiConfig {
             image_model,
             base_url,
             cache_dir,
-            offline,
             rate_limit_ms,
             request_timeout_secs,
         })
