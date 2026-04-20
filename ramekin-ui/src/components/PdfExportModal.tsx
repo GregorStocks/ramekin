@@ -414,6 +414,7 @@ export default function PdfExportModal(props: Props) {
 
         const titleAreaH = Math.min(0.45, Math.max(0.25, innerH * 0.22));
         const imgAreaH = innerH - titleAreaH;
+        const imgAreaY = innerY + titleAreaH;
 
         const img: ImageData | null = recipe.thumbnailPhotoId
           ? await cropImageToAspectRatio(
@@ -426,18 +427,23 @@ export default function PdfExportModal(props: Props) {
           const drawW = Math.min(innerW, imgAreaH * PHOTO_ASPECT_RATIO);
           const drawH = drawW / PHOTO_ASPECT_RATIO;
           const drawX = innerX + (innerW - drawW) / 2;
-          const drawY = innerY + (imgAreaH - drawH) / 2;
+          const drawY = imgAreaY + (imgAreaH - drawH) / 2;
           doc.addImage(img.dataUrl, img.format, drawX, drawY, drawW, drawH);
         } else {
           doc.setDrawColor(200);
           doc.setLineWidth(0.01);
-          doc.rect(innerX, innerY, innerW, imgAreaH, "S");
+          doc.rect(innerX, imgAreaY, innerW, imgAreaH, "S");
           doc.setFontSize(24);
           doc.setTextColor(180);
-          doc.text("\uD83C\uDF7D", innerX + innerW / 2, innerY + imgAreaH / 2, {
-            align: "center",
-            baseline: "middle",
-          });
+          doc.text(
+            "\uD83C\uDF7D",
+            innerX + innerW / 2,
+            imgAreaY + imgAreaH / 2,
+            {
+              align: "center",
+              baseline: "middle",
+            },
+          );
           doc.setTextColor(0);
         }
 
@@ -456,15 +462,16 @@ export default function PdfExportModal(props: Props) {
           fontPt -= 0.5;
         }
         lines = lines.slice(0, maxLines);
-        const titleCenterY = innerY + imgAreaH + titleAreaH / 2;
+        const titleCenterY = innerY + titleAreaH / 2;
         doc.text(lines, innerX + innerW / 2, titleCenterY, {
           align: "center",
           baseline: "middle",
         });
       };
 
-      // Mirror the front-card layout so the QR lines up over the photo region
-      // on the front (not the title).
+      // Front-card geometry: title band on top, image area below. Mirror that
+      // on the back so the QR sits directly behind the photo — dark ink
+      // stacks on dark ink and prevents bleedthrough on either side.
       const frontPad = 0.05;
       const frontInnerH = Math.max(0, h - 2 * frontPad);
       const frontTitleAreaH = Math.min(
@@ -472,7 +479,8 @@ export default function PdfExportModal(props: Props) {
         Math.max(0.25, frontInnerH * 0.22),
       );
       const frontImgAreaH = Math.max(0, frontInnerH - frontTitleAreaH);
-      const frontImgCenterYOffset = frontPad + frontImgAreaH / 2;
+      const frontImgCenterYOffset =
+        frontPad + frontTitleAreaH + frontImgAreaH / 2;
 
       const qrSize = Math.min(
         Math.max(0, w - 2 * backPad),
@@ -500,8 +508,12 @@ export default function PdfExportModal(props: Props) {
         const rotate180 = flipAxis === "vertical";
 
         // Visual coords (reader's perspective, measured from card top-left).
+        // QR aligns with the front image (bottom of the card) so the two dark
+        // regions stack and prevent bleedthrough. Description fills the band
+        // above the QR (behind the front title).
         const visualQrCenterY = frontImgCenterYOffset;
-        const visualTextTopY = visualQrCenterY + qrSize / 2 + descGap;
+        const visualTextAreaTopY = backPad;
+        const visualTextAreaBottomY = visualQrCenterY - qrSize / 2 - descGap;
 
         if (rotate180) {
           const cx = x + w / 2;
@@ -526,7 +538,10 @@ export default function PdfExportModal(props: Props) {
           const description = (recipe.description ?? "").trim();
           if (!description) return;
 
-          const visualTextAreaH = h - visualTextTopY;
+          const visualTextAreaH = Math.max(
+            0,
+            visualTextAreaBottomY - visualTextAreaTopY,
+          );
           if (visualTextAreaH <= 0) return;
 
           const innerW = Math.max(0, w - 2 * backPad);
@@ -536,7 +551,7 @@ export default function PdfExportModal(props: Props) {
           const lineHeightIn = (descFontPt * 1.25) / 72;
           const maxLines = Math.max(
             1,
-            Math.floor(visualTextAreaH / lineHeightIn),
+            Math.min(3, Math.floor(visualTextAreaH / lineHeightIn)),
           );
           let lines = doc.splitTextToSize(description, innerW) as string[];
           if (lines.length > maxLines) {
@@ -546,7 +561,15 @@ export default function PdfExportModal(props: Props) {
               last.length > 3 ? `${last.slice(0, -1).trimEnd()}…` : last;
           }
 
-          doc.text(lines, x + w / 2, y + visualTextTopY, {
+          // Anchor the description to the bottom of its band (just above the
+          // QR) so short descriptions sit close to the code rather than
+          // floating near the top edge.
+          const textBlockH = lines.length * lineHeightIn;
+          const textTopY = Math.max(
+            visualTextAreaTopY,
+            visualTextAreaBottomY - textBlockH,
+          );
+          doc.text(lines, x + w / 2, y + textTopY, {
             align: "center",
             baseline: "top",
           });
