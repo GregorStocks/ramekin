@@ -1,0 +1,78 @@
+{
+  "source": "kingarthurbaking",
+  "recipe_slug": "recipes-french-style-baguettes",
+  "ingredients": [
+    {
+      "raw": "3 cups (360g) King Arthur Unbleached All-Purpose Flour",
+      "expected": {
+        "item": "King Arthur Unbleached All-Purpose Flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "cup"
+          },
+          {
+            "amount": "360",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 to 1 1/4 cups (227g to 283g) lukewarm water",
+      "expected": {
+        "item": "lukewarm water",
+        "measurements": [
+          {
+            "amount": "1 to 1.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 teaspoons instant yeast",
+      "expected": {
+        "item": "instant yeast",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoons (9g) table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

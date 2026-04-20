@@ -1,0 +1,225 @@
+{
+  "source": "cooking-nytimes",
+  "recipe_slug": "recipes-1019034-garlic-braised",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "5 pounds bone-in short ribs, at least 1 1/2 inches thick",
+      "expected": {
+        "item": "bone-in short ribs, at least 1 1/2 inches thick",
+        "measurements": [
+          {
+            "amount": "5",
+            "unit": "lb"
+          },
+          {
+            "amount": "2268",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 large heads garlic, halved crosswise",
+      "expected": {
+        "item": "heads garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": "halved crosswise",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 medium onion (about 10 ounces), chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 ribs celery (about 8 ounces, chopped",
+      "expected": {
+        "item": "ribs celery (about 8 ounces",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 medium carrots (about 6 ounces), chopped",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 tablespoons tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "49",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 cups dry red wine (about half a bottle)",
+      "expected": {
+        "item": "dry red wine (about half a bottle)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 cups beef stock or bone broth (use beef bouillon dissolved in water if unavailable; chicken stock will work in a pinch), plus more as needed",
+      "expected": {
+        "item": "beef stock or bone broth (use beef bouillon dissolved in water if unavailable; chicken stock will work in a pinch)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more as needed",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 sprigs thyme",
+      "expected": {
+        "item": "thyme",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "sprig"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 cup parsley, coarsely chopped",
+      "expected": {
+        "item": "parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "coarsely chopped",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 cup finely chopped chives",
+      "expected": {
+        "item": "finely chopped chives",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon finely grated lemon zest",
+      "expected": {
+        "item": "finely grated lemon zest",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

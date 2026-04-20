@@ -1,0 +1,51 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-240438-easy-roasted-bro",
+  "ingredients": [
+    {
+      "raw": "14 ounces broccoli",
+      "expected": {
+        "item": "broccoli",
+        "measurements": [
+          {
+            "amount": "14",
+            "unit": "oz"
+          },
+          {
+            "amount": "397",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "salt and ground black pepper to taste",
+      "expected": {
+        "item": "salt and ground black pepper to taste",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

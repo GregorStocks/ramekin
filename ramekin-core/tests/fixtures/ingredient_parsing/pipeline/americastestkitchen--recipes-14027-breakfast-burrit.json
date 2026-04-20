@@ -1,0 +1,210 @@
+{
+  "source": "americastestkitchen",
+  "recipe_slug": "recipes-14027-breakfast-burrit",
+  "ingredients": [
+    {
+      "raw": "¼ cup sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 tablespoons minced canned chipotle chile in adobo sauce",
+      "expected": {
+        "item": "minced canned chipotle chile in adobo sauce",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 teaspoons lime juice",
+      "expected": {
+        "item": "lime juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 garlic clove , minced",
+      "expected": {
+        "item": "garlic clove",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "¼ teaspoon cayenne pepper",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.4",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "¼ teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "¼ cup vegetable oil , divided",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 cups frozen tater tots , thawed and patted dry",
+      "expected": {
+        "item": "frozen tater tots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed and patted dry",
+        "category": "Frozen"
+      }
+    },
+    {
+      "raw": "8 ounces Mexican-style chorizo sausage , casings removed",
+      "expected": {
+        "item": "Mexican-style chorizo sausage, casings removed",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "8 large eggs , beaten",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "large"
+          }
+        ],
+        "note": "beaten",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 ounces sharp cheddar cheese , shredded (¾ cup)",
+      "expected": {
+        "item": "sharp cheddar cheese",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": "shredded",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "4 (10-inch) flour tortillas",
+      "expected": {
+        "item": "flour tortillas",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "10",
+            "unit": "inch"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    }
+  ]
+}

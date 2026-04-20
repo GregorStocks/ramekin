@@ -1,0 +1,184 @@
+{
+  "source": "americastestkitchen",
+  "recipe_slug": "recipes-15779-chickpea-salad-s",
+  "ingredients": [
+    {
+      "raw": "½ English cucumber , sliced thin",
+      "expected": {
+        "item": "English cucumber",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": null
+          }
+        ],
+        "note": "sliced thin",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "½ small red onion , sliced thin",
+      "expected": {
+        "item": "red onion",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "small"
+          }
+        ],
+        "note": "sliced thin",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "¼ cup cider vinegar",
+      "expected": {
+        "item": "cider vinegar",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 teaspoon table salt , divided",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6.1",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 (15-ounce) cans chickpeas , rinsed, divided",
+      "expected": {
+        "item": "chickpeas, rinsed",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "½ cup mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 tablespoon lemon juice",
+      "expected": {
+        "item": "lemon juice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 tablespoons chopped fresh dill",
+      "expected": {
+        "item": "chopped fresh dill",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "8 slices pumpernickel hearty sandwich bread",
+      "expected": {
+        "item": "pumpernickel hearty sandwich bread",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "slice"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "2 hard-cooked eggs , sliced thin",
+      "expected": {
+        "item": "hard-cooked eggs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "sliced thin",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 leaves Bibb lettuce",
+      "expected": {
+        "item": "leaves Bibb lettuce",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2008-07-why-were-afraid-to-coo",
+  "ingredients": [
+    {
+      "raw": "2 pounds Russet potatoes, boiled, peeled and finely diced (1/4- to 1/2-inch for this and all chopped ingredients)",
+      "expected": {
+        "item": "Russet potatoes, boiled, peeled and finely diced",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": "1/4- to 1/2-inch for this and all chopped ingredients",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 eggs, hard-boiled, finely diced (optional)",
+      "expected": {
+        "item": "eggs, hard-boiled, finely diced",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "optional",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 small red or white onion, finely diced",
+      "expected": {
+        "item": "red or white onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "finely diced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3/4 cup mayonnaise (low-fat, or a mixture of mayo and sour cream work great here)",
+      "expected": {
+        "item": "mayonnaise (low-fat, or a mixture of mayo and sour cream work great here)",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "3 small dill pickles, finely diced",
+      "expected": {
+        "item": "dill pickles",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "small"
+          }
+        ],
+        "note": "finely diced",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 cup canned peas and carrots, drained or 1/2 cup cooked peas and 1 carrot, chopped and cooked",
+      "expected": {
+        "item": "canned peas and carrots, drained or 1/2 cup cooked peas and 1 carrot",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped and cooked",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "source": "americastestkitchen",
+  "recipe_slug": "recipes-6294-garlic-knots-prin",
+  "ingredients": [
+    {
+      "raw": "10 garlic cloves , minced (see note)",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "10",
+            "unit": null
+          }
+        ],
+        "note": "minced (see note)",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "6 tablespoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 teaspoon plus 3/4 cup water , heated to 110 degrees",
+      "expected": {
+        "item": "water, heated to 110 degrees",
+        "measurements": [
+          {
+            "amount": "1 teaspoon plus 3/4 cup",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 1/8 teaspoons instant or rapid-rise yeast",
+      "expected": {
+        "item": "instant or rapid-rise yeast",
+        "measurements": [
+          {
+            "amount": "1.13",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 cups (10 ounces/283 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "10",
+            "unit": null
+          },
+          {
+            "amount": "250",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

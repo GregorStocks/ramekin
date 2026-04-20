@@ -1,0 +1,94 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "the-best-basic-guacamole-recip",
+  "ingredients": [
+    {
+      "raw": "1 small yellow onion, roughly chopped",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "small"
+          }
+        ],
+        "note": "roughly chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 serrano chile, roughly chopped",
+      "expected": {
+        "item": "serrano chile",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "roughly chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup picked cilantro leaves, finely chopped, divided",
+      "expected": {
+        "item": "picked cilantro leaves, finely chopped",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 teaspoons kosher salt",
+      "expected": {
+        "item": "kosher salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5.7",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 ripe avocados",
+      "expected": {
+        "item": "ripe avocados",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons juice from 2 limes",
+      "expected": {
+        "item": "juice from 2 limes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    }
+  ]
+}

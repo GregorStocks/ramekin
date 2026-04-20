@@ -1,0 +1,130 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "the-best-yorkshire-pudding-pop",
+  "ingredients": [
+    {
+      "raw": "4 large eggs (200g; 7 ounces)",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
+          },
+          {
+            "amount": "7",
+            "unit": "oz"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "150g all-purpose flour (5.25 ounces; about 1 cup plus 2 teaspoons)",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "150",
+            "unit": "g"
+          },
+          {
+            "amount": "5.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "175g whole milk (6 ounces; 3/4 cup) (see note)",
+      "expected": {
+        "item": "whole milk (see note)",
+        "measurements": [
+          {
+            "amount": "175",
+            "unit": "g"
+          },
+          {
+            "amount": "6",
+            "unit": "oz"
+          },
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2g kosher salt (about 1/2 teaspoon)",
+      "expected": {
+        "item": "kosher salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "g"
+          },
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "25g water (.85 ounces; 1 tablespoon plus 2 teaspoons) (see note)",
+      "expected": {
+        "item": "water (see note)",
+        "measurements": [
+          {
+            "amount": "25",
+            "unit": "g"
+          },
+          {
+            "amount": ".85",
+            "unit": "oz"
+          },
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "100ml beef drippings, lard, shortening, or vegetable oil (about 1/2 cup)",
+      "expected": {
+        "item": "beef drippings, lard, shortening, or vegetable oil",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "ml"
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    }
+  ]
+}

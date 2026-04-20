@@ -1,0 +1,177 @@
+{
+  "source": "cooking-nytimes",
+  "recipe_slug": "recipes-1017336-craig-claiborn",
+  "ingredients": [
+    {
+      "raw": "1 poached chicken, 3 1/2 pounds",
+      "expected": {
+        "item": "poached chicken, 3 1/2 pounds",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 cup finely chopped celery",
+      "expected": {
+        "item": "finely chopped celery",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup finely chopped onion",
+      "expected": {
+        "item": "finely chopped onion",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup drained capers",
+      "expected": {
+        "item": "drained capers",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/2 cup yogurt",
+      "expected": {
+        "item": "yogurt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3/4 cup mayonnaise, preferably homemade",
+      "expected": {
+        "item": "mayonnaise, preferably homemade",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 tablespoon red wine vinegar, or to taste",
+      "expected": {
+        "item": "red wine vinegar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "or to taste",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "salt to taste, if desired",
+      "expected": {
+        "item": "salt to taste, if desired",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "freshly ground black pepper, to taste",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon finely chopped parsley",
+      "expected": {
+        "item": "finely chopped parsley",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons finely chopped scallions",
+      "expected": {
+        "item": "finely chopped scallions",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "8 to 12 slices rye bread, either freshly toasted or left untoasted",
+      "expected": {
+        "item": "rye bread",
+        "measurements": [
+          {
+            "amount": "8 to 12",
+            "unit": "slice"
+          }
+        ],
+        "note": "either freshly toasted or left untoasted",
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "Pickle strips, radishes or cherry tomatoes, for garnish",
+      "expected": {
+        "item": "Pickle strips, radishes or cherry tomatoes",
+        "measurements": [],
+        "note": "for garnish",
+        "category": "Produce"
+      }
+    }
+  ]
+}

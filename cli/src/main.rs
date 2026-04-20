@@ -180,9 +180,6 @@ enum Commands {
         /// Delay in milliseconds between URL fetches
         #[arg(long, default_value = "1000")]
         delay_ms: u64,
-        /// Run HTML fetches in offline mode (cache only, no network requests)
-        #[arg(long, default_value_t = true, action = clap::ArgAction::Set)]
-        offline: bool,
         /// Force re-fetch all URLs, ignoring cache
         #[arg(long)]
         force_refetch: bool,
@@ -366,7 +363,6 @@ async fn main() -> Result<()> {
             test_urls,
             output_dir,
             delay_ms,
-            offline,
             force_refetch,
             on_fetch_fail,
             tags_file,
@@ -377,7 +373,6 @@ async fn main() -> Result<()> {
                 test_urls_file: test_urls,
                 output_dir: output_dir.clone(),
                 delay_ms,
-                offline,
                 force_refetch,
                 on_fetch_fail,
                 tags_file,

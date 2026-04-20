@@ -1,0 +1,102 @@
+{
+  "source": "americastestkitchen",
+  "recipe_slug": "recipes-3711-creme-brulee-for-",
+  "ingredients": [
+    {
+      "raw": "1 cup heavy cream , chilled",
+      "expected": {
+        "item": "heavy cream",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
+          }
+        ],
+        "note": "chilled",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 tablespoons granulated sugar  plus 1 additional teaspoon",
+      "expected": {
+        "item": "granulated sugar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
+          }
+        ],
+        "note": "plus 1 additional teaspoon",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "pinch table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 large egg yolks",
+      "expected": {
+        "item": "egg yolks",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon vanilla extract",
+      "expected": {
+        "item": "vanilla extract",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 - 4 teaspoons turbinado sugar  or Demerara sugar",
+      "expected": {
+        "item": "turbinado sugar or Demerara sugar",
+        "measurements": [
+          {
+            "amount": "2-4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    }
+  ]
+}

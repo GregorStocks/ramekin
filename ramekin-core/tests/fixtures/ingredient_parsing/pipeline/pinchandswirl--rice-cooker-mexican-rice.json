@@ -1,0 +1,180 @@
+{
+  "source": "pinchandswirl",
+  "recipe_slug": "rice-cooker-mexican-rice",
+  "ingredients": [
+    {
+      "raw": "1 1/2 cups long grain rice (rinsed well and drained)",
+      "expected": {
+        "item": "long grain rice",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "rinsed well and drained",
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "2 1/2 cups chicken broth (or vegetable broth or water, (recipe note #1))",
+      "expected": {
+        "item": "chicken broth (or vegetable broth or water, (recipe note #1)",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "8 ounces tomato sauce",
+      "expected": {
+        "item": "tomato sauce",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "3 tablespoons butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 small white onion (finely chopped)",
+      "expected": {
+        "item": "white onion",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "small"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 cloves garlic (minced)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1  jalapeño (minced (stems, ribs, and seeds removed - gloves recommended!), optional (recipe note #2))",
+      "expected": {
+        "item": "jalapeño, optional (recipe note #2)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "minced (stems, ribs, and seeds removed - gloves recommended!",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon chipotle chili powder (or more for extra heat)",
+      "expected": {
+        "item": "chipotle chili powder",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "or more for extra heat",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon kosher salt (plus more to taste)",
+      "expected": {
+        "item": "kosher salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "fresh cilantro (for garnish)",
+      "expected": {
+        "item": "fresh cilantro",
+        "measurements": [],
+        "note": "for garnish",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "lime wedges (for serving, optional)",
+      "expected": {
+        "item": "lime wedges",
+        "measurements": [],
+        "note": "for serving, optional",
+        "category": "Produce"
+      }
+    }
+  ]
+}

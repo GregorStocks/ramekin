@@ -1,0 +1,81 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "filthy-sopping-wet-martini",
+  "ingredients": [
+    {
+      "raw": "1 1/2 ounces (45ml) dry gin",
+      "expected": {
+        "item": "dry gin",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 1/2 ounces (45ml) dry vermouth",
+      "expected": {
+        "item": "dry vermouth",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "3/4 ounce (22ml) olive brine",
+      "expected": {
+        "item": "olive brine",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "22",
+            "unit": "ml"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "Pitted manzanilla olives, for garnish",
+      "expected": {
+        "item": "Pitted manzanilla olives",
+        "measurements": [],
+        "note": "for garnish",
+        "category": "Canned Goods"
+      }
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "spinach-black-bean-chipotle-qu",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons plus 2 teaspoons (40ml) vegetable oil, divided",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "2 tablespoons plus 2 teaspoons",
+            "unit": null
+          },
+          {
+            "amount": "40",
+            "unit": "ml"
+          },
+          {
+            "amount": "37",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 ounce (30g) chopped fresh spinach",
+      "expected": {
+        "item": "chopped fresh spinach",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 ounces (85g) drained canned black beans",
+      "expected": {
+        "item": "drained canned black beans",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 chipotle chili packed in adobo sauce, minced (about 15g)",
+      "expected": {
+        "item": "chipotle chili packed in adobo sauce",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "minced",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "4 ounces (115g) shredded Swiss cheese",
+      "expected": {
+        "item": "shredded Swiss cheese",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "115",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2 (8-inch) flour tortillas",
+      "expected": {
+        "item": "flour tortillas",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "8",
+            "unit": "inch"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    }
+  ]
+}

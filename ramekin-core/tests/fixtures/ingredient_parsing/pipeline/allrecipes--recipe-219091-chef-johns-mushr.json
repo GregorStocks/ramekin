@@ -1,0 +1,115 @@
+{
+  "source": "allrecipes",
+  "recipe_slug": "recipe-219091-chef-johns-mushr",
+  "ingredients": [
+    {
+      "raw": "0.25 cup butter",
+      "expected": {
+        "item": "butter",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 (16 ounce) package sliced mushrooms",
+      "expected": {
+        "item": "sliced mushrooms",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "package"
+          },
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "salt to taste",
+      "expected": {
+        "item": "salt to taste",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "0.25 cup all-purpose flour, or as needed",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
+          }
+        ],
+        "note": "or as needed",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 quart beef stock",
+      "expected": {
+        "item": "beef stock",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "quart"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 pinch ground black pepper to taste",
+      "expected": {
+        "item": "ground black pepper to taste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 pinch fresh thyme leaves, to taste",
+      "expected": {
+        "item": "fresh thyme leaves",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "pinch"
+          }
+        ],
+        "note": "to taste",
+        "category": "Produce"
+      }
+    }
+  ]
+}

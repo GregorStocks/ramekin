@@ -1,0 +1,112 @@
+{
+  "source": "cooking-nytimes",
+  "recipe_slug": "recipes-1021131-crispy-sour-cr",
+  "ingredients": [
+    {
+      "raw": "4 boneless, skinless chicken breasts, halved horizontally (see Tip) and pounded 1/8-inch thick, or use 4 chicken cutlets (don’t split or pound)",
+      "expected": {
+        "item": "boneless, skinless chicken breasts, halved horizontally (see Tip) and pounded 1/8-inch thick, or use 4 chicken cutlets (don’t split or pound)",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Salt and black pepper",
+      "expected": {
+        "item": "Salt and black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 cup sour cream or Greek yogurt",
+      "expected": {
+        "item": "sour cream or Greek yogurt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 cup thinly sliced chives (or 1 tablespoon dried chives), plus more for serving",
+      "expected": {
+        "item": "thinly sliced chives",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "or 1 tablespoon dried chives",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons onion powder",
+      "expected": {
+        "item": "onion powder",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 cups panko bread crumbs",
+      "expected": {
+        "item": "panko bread crumbs",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "Canola oil, for frying",
+      "expected": {
+        "item": "Canola oil, for frying",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 lemon, cut into wedges",
+      "expected": {
+        "item": "lemon, cut into wedges",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

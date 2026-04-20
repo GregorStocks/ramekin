@@ -1,0 +1,38 @@
+{
+  "source": "americastestkitchen",
+  "recipe_slug": "recipes-12368-pan-seared-strip",
+  "ingredients": [
+    {
+      "raw": "2 (12- to 16-ounce) boneless strip steaks , 1½ inches thick, trimmed",
+      "expected": {
+        "item": "boneless strip steaks, 1 1/2 inches thick",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          },
+          {
+            "amount": "12",
+            "unit": null
+          }
+        ],
+        "note": "trimmed",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 teaspoon pepper",
+      "expected": {
+        "item": "pepper",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "source": "americastestkitchen",
+  "recipe_slug": "recipes-11535-scrambled-eggs-w",
+  "ingredients": [
+    {
+      "raw": "8 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3 tablespoons extra-virgin olive oil , divided",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/4 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 cup jarred sliced jalapeños , chopped coarse",
+      "expected": {
+        "item": "jarred sliced jalapeños",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped coarse",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 garlic cloves , minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 (15-ounce) can pinto beans , rinsed",
+      "expected": {
+        "item": "pinto beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": "rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/4 cup chopped fresh cilantro , divided",
+      "expected": {
+        "item": "chopped fresh cilantro",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 ounce cotija cheese , crumbled (¼ cup)",
+      "expected": {
+        "item": "cotija cheese",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "oz"
+          },
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
+          }
+        ],
+        "note": "crumbled",
+        "category": "Cheese"
+      }
+    }
+  ]
+}

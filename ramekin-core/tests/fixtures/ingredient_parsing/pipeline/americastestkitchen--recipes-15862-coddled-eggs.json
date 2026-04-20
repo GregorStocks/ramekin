@@ -1,0 +1,61 @@
+{
+  "source": "americastestkitchen",
+  "recipe_slug": "recipes-15862-coddled-eggs",
+  "ingredients": [
+    {
+      "raw": "4 large eggs , cold from refrigerator",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": "cold from refrigerator",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "4 pinches table salt , divided",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "pinch"
+          }
+        ],
+        "note": "divided",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 teaspoons unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9.5",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "minced fresh tarragon   or dill (optional)",
+      "expected": {
+        "item": "minced fresh tarragon   or dill",
+        "measurements": [],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

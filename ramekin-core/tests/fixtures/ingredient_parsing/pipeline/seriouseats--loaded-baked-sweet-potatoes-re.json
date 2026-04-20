@@ -1,0 +1,77 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "loaded-baked-sweet-potatoes-re",
+  "ingredients": [
+    {
+      "raw": "4 medium sweet potatoes (about 12 ounces; 340g each), washed, scrubbed, and dried",
+      "expected": {
+        "item": "sweet potatoes, washed, scrubbed",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          },
+          {
+            "amount": "12",
+            "unit": "oz each"
+          },
+          {
+            "amount": "340",
+            "unit": "g each"
+          }
+        ],
+        "note": "and dried",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Canola, vegetable, or extra-virgin olive oil, for rubbing",
+      "expected": {
+        "item": "Canola, vegetable, or extra-virgin olive oil, for rubbing",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "4 tablespoons unsalted butter (2 ounces; 56g), diced",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "56",
+            "unit": "g"
+          }
+        ],
+        "note": "diced",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Kosher salt and freshly ground black pepper",
+      "expected": {
+        "item": "Kosher salt and freshly ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Toppings of your choice, such as grated cheddar cheese, crispy diced bacon bits, minced chives, sour cream, and store-bought homemade chili",
+      "expected": {
+        "item": "Toppings of your choice, such as grated cheddar cheese, crispy diced bacon bits, minced chives, sour cream, and store-bought homemade chili",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    }
+  ]
+}

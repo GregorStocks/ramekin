@@ -1,0 +1,118 @@
+{
+  "source": "americastestkitchen",
+  "recipe_slug": "recipes-11732-pupusas",
+  "ingredients": [
+    {
+      "raw": "2 cups (8 ounces) masa harina",
+      "expected": {
+        "item": "masa harina",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 cups boiling water , plus extra water as needed",
+      "expected": {
+        "item": "boiling water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "474",
+            "unit": "g"
+          }
+        ],
+        "note": "plus extra water as needed",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 teaspoons vegetable oil , divided",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "9.1",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "2 ounces cotija cheese , cut into 2 pieces",
+      "expected": {
+        "item": "cotija cheese, cut into 2 pieces",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "8 ounces Monterey Jack cheese , cut into 8 pieces",
+      "expected": {
+        "item": "Monterey Jack cheese, cut into 8 pieces",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "source": "runningwithspoons",
+  "recipe_slug": "baked-egg-stuffed-sweet-potato",
+  "ingredients": [
+    {
+      "raw": "2 large sweet potatoes",
+      "expected": {
+        "item": "sweet potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 large eggs",
+      "expected": {
+        "item": "eggs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "salt and pepper, to taste",
+      "expected": {
+        "item": "salt and pepper",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "optional toppings such as: shredded cheese, green onions, chives, salsa, avocado, ketchup, etc.",
+      "expected": {
+        "item": "optional toppings such as: shredded cheese, green onions, chives, salsa, avocado, ketchup, etc.",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

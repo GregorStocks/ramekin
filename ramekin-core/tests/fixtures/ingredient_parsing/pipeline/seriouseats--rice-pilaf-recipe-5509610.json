@@ -1,0 +1,128 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "rice-pilaf-recipe-5509610",
+  "ingredients": [
+    {
+      "raw": "1 cup (185g) long-grain white rice",
+      "expected": {
+        "item": "long-grain white rice",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          },
+          {
+            "amount": "185",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "3 tablespoons (42g) unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "3/4 cup (2 ounces; 57g) thin pasta (such as vermicelli or fine spaghetti), broken into 1-inch pieces, or 1/2 cup of small, non-tubular pasta, like orzo",
+      "expected": {
+        "item": "thin pasta (such as vermicelli or fine spaghetti), broken into 1-inch pieces, or 1/2 cup of small, non-tubular pasta, like orzo",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "2 cups (480ml) homemade or store-bought low-sodium chicken stock",
+      "expected": {
+        "item": "homemade or store-bought low-sodium chicken stock",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "480",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 teaspoon (3g) Diamond Crystal kosher salt; if using table salt use half as much by volume or same weight",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; if using table salt use half as much by volume or same weight",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon black pepper",
+      "expected": {
+        "item": "black pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 tablespoon minced fresh parsley or dill (or a combination), optional, divided",
+      "expected": {
+        "item": "minced fresh parsley or dill (or a combination), optional",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "divided",
+        "category": "Produce"
+      }
+    }
+  ]
+}

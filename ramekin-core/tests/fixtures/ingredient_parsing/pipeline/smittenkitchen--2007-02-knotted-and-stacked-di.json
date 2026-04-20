@@ -1,0 +1,143 @@
+{
+  "source": "smittenkitchen",
+  "recipe_slug": "2007-02-knotted-and-stacked-di",
+  "ingredients": [
+    {
+      "raw": "2 cups warm water (100°F to 110°F)",
+      "expected": {
+        "item": "warm water",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": null
+          },
+          {
+            "amount": "474",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 tablespoon + 2 tablespoons sugar",
+      "expected": {
+        "item": "+ 2 tablespoons sugar",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 packet active dry yeast",
+      "expected": {
+        "item": "packet active dry yeast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "5 to 6 cups all-purpose flour, plus more for dusting",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "5 to 6",
+            "unit": "cup"
+          }
+        ],
+        "note": "plus more for dusting",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 tablespoon salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "8.6",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 teaspoons canola or other neutral oil",
+      "expected": {
+        "item": "canola or other neutral oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/4 cup baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 large egg",
+      "expected": {
+        "item": "egg",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Coarse or pretzel salt",
+      "expected": {
+        "item": "Coarse or pretzel salt",
+        "measurements": [],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    }
+  ]
+}

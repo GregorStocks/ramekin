@@ -1,0 +1,89 @@
+{
+  "source": "americastestkitchen",
+  "recipe_slug": "recipes-11255-sous-vide-pepper",
+  "ingredients": [
+    {
+      "raw": "1 5-pound boneless beef chuck-eye roast , pulled into 2 pieces at natural seam and trimmed of large pieces of fat",
+      "expected": {
+        "item": "5-pound boneless beef chuck-eye roast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "pulled into 2 pieces at natural seam and trimmed of large pieces of fat",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Kosher salt and pepper",
+      "expected": {
+        "item": "Kosher salt and pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 egg white",
+      "expected": {
+        "item": "egg white",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/4 cup coarsely ground black, green, and pink peppercorns",
+      "expected": {
+        "item": "coarsely ground black, green, and pink peppercorns",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons flake sea salt",
+      "expected": {
+        "item": "flake sea salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

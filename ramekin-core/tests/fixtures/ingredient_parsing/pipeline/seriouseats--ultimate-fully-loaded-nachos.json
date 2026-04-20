@@ -1,0 +1,230 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "ultimate-fully-loaded-nachos",
+  "ingredients": [
+    {
+      "raw": "1 1/2 quarts peanut, vegetable, or canola oil",
+      "expected": {
+        "item": "peanut, vegetable, or canola oil",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "quart"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "16 fresh corn tortillas, stacked in groups of 8 and cut into 6 wedges each",
+      "expected": {
+        "item": "fresh corn tortillas, stacked in groups of 8 and cut into 6 wedges each",
+        "measurements": [
+          {
+            "amount": "16",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "1 1/2 cups Nacho Cheese Sauce (1 full recipe), flavored with 2 minced pickled jalapeños as per the recipe note",
+      "expected": {
+        "item": "Nacho Cheese Sauce",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "flavored with 2 minced pickled jalapeños as per the recipe note",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2 cups refried beans (1/2 recipe), thinned with water to a just-pourable consistency",
+      "expected": {
+        "item": "refried beans, thinned with water to a just-pourable consistency",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "0.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/2 cup sliced pickled jalapeños",
+      "expected": {
+        "item": "sliced pickled jalapeños",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup cooked black beans from one (15-ounce) can, drained and rinsed",
+      "expected": {
+        "item": "cooked black beans from one can",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "15",
+            "unit": "oz"
+          },
+          {
+            "amount": "425",
+            "unit": "g"
+          }
+        ],
+        "note": "drained and rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "8 ounces cheddar and/or Monterey Jack cheese, grated",
+      "expected": {
+        "item": "cheddar and/or Monterey Jack cheese",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "grated",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "2 cups pico de gallo (1/2 recipe)",
+      "expected": {
+        "item": "pico de gallo",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "0.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/4 cup Mexican crema",
+      "expected": {
+        "item": "Mexican crema",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/4 cup cotija cheese",
+      "expected": {
+        "item": "cotija cheese",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/4 cup picked cilantro leaves",
+      "expected": {
+        "item": "picked cilantro leaves",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 large radish, very thinly sliced on a mandoline",
+      "expected": {
+        "item": "radish",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "very thinly sliced on a mandoline",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup sour cream",
+      "expected": {
+        "item": "sour cream",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "121",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1/2 recipe The Best Basic Guacamole",
+      "expected": {
+        "item": "recipe The Best Basic Guacamole",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}

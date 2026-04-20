@@ -1,0 +1,290 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "daube-de-boeuf-a-la-gasconne-g",
+  "ingredients": [
+    {
+      "raw": "3 pounds (1.4Kg) boneless chuck roast",
+      "expected": {
+        "item": "boneless chuck roast",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1.4",
+            "unit": "kg"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 1/4 teaspoons Diamond Crystal kosher salt, divided; for table salt use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3.6",
+            "unit": "g"
+          }
+        ],
+        "note": "divided; for table salt use half as much by volume",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3/4 teaspoon freshly ground black pepper, divided",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "tsp"
+          }
+        ],
+        "note": "divided",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons olive oil or duck fat",
+      "expected": {
+        "item": "olive oil or duck fat",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "4 ounces (113g) bacon, cut into 1/4-inch wide strips",
+      "expected": {
+        "item": "bacon, cut into 1/4-inch wide strips",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 medium onion (8 ounces; 226g), diced",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
+          }
+        ],
+        "note": "diced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 large carrots (8 ounces; 225g total), peeled and cut crosswise into 1/2-inch thick rounds",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut crosswise into 1/2-inch thick rounds",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 large parsnips (8 ounces; 225g total), peeled and cut crosswise into 1/2-inch thick rounds",
+      "expected": {
+        "item": "parsnips",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          },
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "225",
+            "unit": "g"
+          }
+        ],
+        "note": "peeled and cut crosswise into 1/2-inch thick rounds",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 medium garlic cloves, minced",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 tablespoons all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "23",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/4 cup (60ml) brandy (preferably Armagnac), see notes",
+      "expected": {
+        "item": "brandy (preferably Armagnac), see notes",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "One 750ml bottle full-bodied red wine (preferably Madiran or Cahors), see notes",
+      "expected": {
+        "item": "bottle full-bodied red wine (preferably Madiran or Cahors), see notes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "750",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 cups homemade beef stock or homemade chicken stock or store-bought low-sodium chicken broth",
+      "expected": {
+        "item": "homemade beef stock or homemade chicken stock or store-bought low-sodium chicken broth",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "4 sprigs fresh thyme",
+      "expected": {
+        "item": "fresh thyme",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "sprig"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "8 pitted prunes (about 2 ounces), roughly chopped",
+      "expected": {
+        "item": "pitted prunes",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": null
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "roughly chopped",
+        "category": "Nuts & Dried Fruit"
+      }
+    },
+    {
+      "raw": "Chopped fresh parsley for garnish",
+      "expected": {
+        "item": "Chopped fresh parsley for garnish",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Potatoes or crusty bread for serving (optional)",
+      "expected": {
+        "item": "Potatoes or crusty bread for serving",
+        "measurements": [],
+        "note": "optional",
+        "category": "Produce"
+      }
+    }
+  ]
+}

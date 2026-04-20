@@ -1,0 +1,183 @@
+{
+  "source": "cooking-nytimes",
+  "recipe_slug": "recipes-1020022-quick-lamb-rag",
+  "ingredients": [
+    {
+      "raw": "2 tablespoons olive oil, plus more for drizzling",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for drizzling",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 medium yellow onion, finely chopped",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 garlic cloves, finely chopped",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": "finely chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Kosher salt and black pepper",
+      "expected": {
+        "item": "Kosher salt and black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Pinch of red-pepper flakes (optional)",
+      "expected": {
+        "item": "red-pepper flakes",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 anchovy fillets (optional)",
+      "expected": {
+        "item": "anchovy fillets",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": "optional",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "2 tablespoons tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "33",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 pound ground lamb",
+      "expected": {
+        "item": "ground lamb",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 (28-ounce) can crushed tomatoes",
+      "expected": {
+        "item": "crushed tomatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "can"
+          },
+          {
+            "amount": "28",
+            "unit": "oz"
+          },
+          {
+            "amount": "794",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "12 ounces cooked pasta, noodles or tubes, for serving",
+      "expected": {
+        "item": "cooked pasta, noodles or tubes",
+        "measurements": [
+          {
+            "amount": "12",
+            "unit": "oz"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "for serving",
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "A good hunk of Parmesan or pecorino, for serving",
+      "expected": {
+        "item": "A good hunk of Parmesan or pecorino",
+        "measurements": [],
+        "note": "for serving",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "A small handful of marjoram, oregano or thyme, for serving (optional)",
+      "expected": {
+        "item": "A small handful of marjoram, oregano or thyme, for serving",
+        "measurements": [],
+        "note": "optional",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "garlic-mashed-potatoes-recipe-",
+  "ingredients": [
+    {
+      "raw": "1 head garlic (2 to 2 1/2 ounces; 60g)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "head"
+          },
+          {
+            "amount": "2 to 2.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup (60g) unsalted butter, cut into 1/2-inch pieces, divided, plus more for serving",
+      "expected": {
+        "item": "unsalted butter, cut into 1/2-inch pieces, divided",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for serving",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 1/4 pounds(1kg) yellow, medium starch potatoes such as Yukon Gold (about eight 5-ounce potatoes), scrubbed",
+      "expected": {
+        "item": "yellow, medium starch potatoes such as Yukon Gold (about eight 5-ounce potatoes)",
+        "measurements": [
+          {
+            "amount": "2.25",
+            "unit": "lb"
+          },
+          {
+            "amount": "1",
+            "unit": "kg"
+          }
+        ],
+        "note": "scrubbed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup (60ml) heavy whipping cream, plus for as needed",
+      "expected": {
+        "item": "heavy whipping cream",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "ml"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
+          }
+        ],
+        "note": "plus for as needed",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 teaspoons (6g) Diamond Crystal kosher salt; for table salt use half as much by volume or the same weight",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt use half as much by volume or the same weight",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "6",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Freshly ground black pepper, for serving",
+      "expected": {
+        "item": "Freshly ground black pepper",
+        "measurements": [],
+        "note": "for serving",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}
