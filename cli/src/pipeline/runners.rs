@@ -98,8 +98,13 @@ pub async fn run_fetch_html(url: &str, client: &CachingClient, force: bool) -> S
         false
     };
 
-    // Fetch (this will use cache internally with ETag validation if not force)
-    let result = client.fetch_html(url).await;
+    // Force refetch bypasses the cache read entirely; a failure preserves the
+    // existing cache entry (see `CachingClient::refetch_html`).
+    let result = if force {
+        client.refetch_html(url).await
+    } else {
+        client.fetch_html(url).await
+    };
     let duration_ms = start.elapsed().as_millis() as u64;
 
     match result {
