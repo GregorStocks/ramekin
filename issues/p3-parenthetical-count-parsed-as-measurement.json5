@@ -1,0 +1,34 @@
+{
+  "title": "Parenthetical equivalence hints like '(2 lemons)' are parsed as a \
+separate measurement",
+  "description": "Ingredient strings where a parenthetical expresses an \
+equivalence for the primary measurement get the parenthetical number pulled \
+out as an extra measurement entry with a null unit, rather than being treated \
+as a note or discarded.\n\
+\n\
+Concrete example from \
+data/pipeline-snapshots/smittenkitchen-com_2009-09-grilled-lamb-kebabs-tzatziki.json: \
+the raw ingredient '1/4 cup freshly squeezed lemon juice (2 lemons)' produces\n\
+  measurements: [\n\
+    {amount: '0.25', unit: 'cup'},\n\
+    {amount: '2', unit: null},\n\
+    {amount: '61', unit: 'g'}\n\
+  ]\n\
+The middle entry is junk -- '2 lemons' is an equivalence hint explaining how \
+much fruit yields 1/4 cup of juice, not an alternate quantity to use. The \
+unit-to-grams conversion correctly ignored it (61g ~= 1/4 cup of lemon juice), \
+but the bogus entry still ends up in the output.\n\
+\n\
+Expected behavior: when a parenthetical contains only a count + a produce name \
+that matches (or is compatible with) the item, treat it as a note rather than \
+a measurement. Or, more conservatively, drop unitless counts when another \
+measurement on the same ingredient already has a unit.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "ingredient-parser",
+  ],
+  "created_at": "2026-04-20T09:33:56-07:00",
+  "updated_at": "2026-04-20T09:33:56-07:00",
+}
