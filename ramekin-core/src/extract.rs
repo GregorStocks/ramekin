@@ -1162,33 +1162,52 @@ fn looks_like_ingredient_list(chunk: &str) -> bool {
 }
 
 /// Extract individual ingredient lines from a `<br>`-delimited HTML chunk.
-/// Preserves `<u>` section headers as their own lines.
+///
+/// Treats a leading `<u>…</u>` that stands alone (no ingredient text on the
+/// same line) as the group's section header and colon-terminates it so the
+/// ingredient parser picks it up. Underlines elsewhere in the chunk are
+/// stripped as plain inline emphasis — blogs sometimes use `<u>` to highlight
+/// a single ingredient, and turning that into a section header would drop the
+/// ingredient from the recipe.
 fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<String>) {
+    let mut seen_nonempty = false;
     for part in BR_TAG_REGEX.split(chunk) {
         let part = part.trim();
         if part.is_empty() {
             continue;
         }
+        let is_first = !seen_nonempty;
+        seen_nonempty = true;
 
-        // Check for section header (<u> tag)
-        if let Some(cap) = UNDERLINE_TEXT_REGEX.captures(part) {
+        let u_cap = if is_first {
+            UNDERLINE_TEXT_REGEX.captures(part)
+        } else {
+            None
+        };
+
+        if let Some(cap) = u_cap {
             let header = cap.get(1).unwrap().as_str().trim();
-            if !header.is_empty() {
-                // Colon-terminate so the ingredient parser's section-header
-                // detector picks it up (parallel to WPRM/Jetpack group headers).
+            let after_u = UNDERLINE_TEXT_REGEX.replace(part, "");
+            let after_text = HTML_TAG_REGEX.replace_all(&after_u, "");
+            let after_text = after_text.trim();
+
+            // A section header is a `<u>…</u>` that owns its line entirely.
+            // If there's non-empty text after the `</u>`, treat the `<u>` as
+            // inline emphasis (e.g. `<u>Note:</u> whisk well`).
+            if !header.is_empty() && after_text.is_empty() {
                 let decoded = decode_html_entities(header);
                 if decoded.ends_with(':') {
                     lines.push(decoded);
                 } else {
                     lines.push(format!("{}:", decoded));
                 }
-            }
-            // There might be ingredient text after the </u> on the same line
-            let after_u = UNDERLINE_TEXT_REGEX.replace(part, "");
-            let after_text = HTML_TAG_REGEX.replace_all(&after_u, "");
-            let after_text = after_text.trim();
-            if !after_text.is_empty() {
-                lines.push(decode_html_entities(after_text));
+            } else {
+                // Inline emphasis: keep as a plain ingredient line.
+                let text = HTML_TAG_REGEX.replace_all(part, "");
+                let text = text.trim();
+                if !text.is_empty() {
+                    lines.push(decode_html_entities(text));
+                }
             }
         } else {
             let text = HTML_TAG_REGEX.replace_all(part, "");
@@ -2159,6 +2178,27 @@ mod tests {
         assert!(
             result.ingredients.contains("To assemble:"),
             "expected colon-terminated 'To assemble:' header, got:\n{}",
+            result.ingredients
+        );
+    }
+
+    #[test]
+    fn test_unstructured_blog_u_midline_not_header() {
+        // An ingredient line with an underlined word ("emphasis") must NOT be
+        // promoted to a section header — otherwise the ingredient disappears.
+        let html = r#"
+            <html><body>
+                <p><b>Recipe</b></p>
+                <p>1 pound pasta<br /><u>Olive oil</u><br />1 teaspoon salt<br />1 clove garlic<br />1 cup basil</p>
+                <p>Toss everything together and serve immediately while warm.</p>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/r").unwrap();
+        assert!(result.ingredients.contains("Olive oil"));
+        assert!(
+            !result.ingredients.contains("Olive oil:"),
+            "<u> emphasis mid-chunk must not become a section header, got:\n{}",
             result.ingredients
         );
     }

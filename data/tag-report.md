@@ -3200,7 +3200,7 @@
 | Lime Curd Tart | dessert, vegetarian, pantry | yes |
 | Orange Chocolate Chunk Cake | dessert, comfort food, vegetarian, pantry, holiday | yes |
 | Silky Cauliflower Soup | lunch, dinner, appetizer, side dish, easy, healthy, comfort food, vegetarian, gluten-free, low-carb, soup, cheese, pantry | yes |
-| Summer-Squash Soup with Parsley-Mint ... | lunch, dinner, healthy, vegetarian, gluten-free, soup, potato, greens | yes |
+| Summer-Squash Soup with Parsley-Mint ... | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, gluten-free, dairy-free, soup, potato, greens, pantry | no |
 | Pretzel Rolls | snack, side dish, vegetarian, bread, pantry | yes |
 | Easiest Baked Macaroni and Cheese | lunch, dinner, easy, comfort food, vegetarian, american, pasta, cheese | yes |
 | Lemon Pound Cake | dessert, comfort food, american, bread, egg, pantry | yes |
@@ -3394,7 +3394,7 @@
 | Cinnamon Swirl Buns with Cream Cheese... | breakfast, comfort food, vegetarian, bread, cheese, pantry | yes |
 | Asparagus, Goat Cheese and Lemon Pasta | dinner, entree, easy, vegetarian, pasta, cheese | yes |
 | Broccoli Slaw | lunch, dinner, side dish, easy, healthy, vegetarian, gluten-free, dairy-free, low-carb, salad, greens | yes |
-| Graham Crackers | snack, vegetarian, pantry, bread | yes |
+| Graham Crackers | snack, vegetarian, bread, pantry | no |
 | Shrimp Cocktail | appetizer, quick, easy, seafood, grill | yes |
 | Raspberry Buttermilk Cake | dessert, easy, vegetarian, american, bread, pantry | yes |
 | Cheese Straws | snack, appetizer, easy, vegetarian, cheese, pantry, holiday | yes |
@@ -3473,10 +3473,10 @@
 | Avocado Salad with Carrot-Ginger Dres... | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, salad, greens | yes |
 | Blue Cheese Scallion Drop Biscuits | side dish, easy, comfort food, vegetarian, american, bread, cheese, pantry | yes |
 | Cabbage and Lime Salad with Roasted P... | lunch, dinner, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, asian, salad, greens | yes |
-| Classic Cobb Salad | lunch, dinner, easy, healthy, american, chicken, salad, egg, greens, cheese | yes |
+| Classic Cobb Salad | lunch, dinner, entree, easy, healthy, american, chicken, salad, egg, greens, cheese | no |
 | Creamed Chard and Spring Onions | side dish, vegetarian, comfort food, greens | yes |
 | Easy Jam Tart | dessert, easy, vegetarian, egg, pantry | yes |
-| Homemade Pop Tarts | breakfast, snack, easy, comfort food, vegetarian, american, bread, egg, pantry | yes |
+| Homemade Pop Tarts | breakfast, snack, comfort food, vegetarian, american, egg, pantry | no |
 | Leek Bread Pudding | lunch, dinner, side dish, comfort food, vegetarian, bread, egg, greens, cheese | yes |
 | Lime Yogurt Cake with Blackberry Sauce | dessert, vegetarian, pantry | yes |
 | New York Cheesecake | dessert, comfort food, vegetarian, cheese, pantry | yes |
@@ -3708,7 +3708,7 @@
 | Strawberry, Lime and Black Pepper Pop... | dessert, snack, easy, healthy, vegetarian, vegan, gluten-free, dairy-free | yes |
 | Baked Pasta with Broccoli Rabe and Sa... | dinner, comfort food, italian, pork, pasta, greens, cheese | yes |
 | Zucchini Parmesan Crisps | snack, appetizer, side dish, easy, healthy, vegetarian, low-carb, cheese | yes |
-| Apple Slab Pie | dessert, comfort food, vegetarian, american, holiday | yes |
+| Apple Slab Pie | dessert, comfort food, vegetarian, american, bread, holiday | no |
 | Frico Grilled Cheese Sandwich | lunch, snack, quick, easy, comfort food, vegetarian, american, sandwich, bread, cheese | yes |
 | Lazy Pizza Dough | dinner, easy, comfort food, vegetarian, italian, bread, cheese, greens, mushroom, pantry | yes |
 | Miso Sweet Potato and Broccoli Bowl | lunch, dinner, easy, healthy, vegetarian, gluten-free, dairy-free, asian, japanese, rice, potato, greens | yes |
@@ -5222,7 +5222,7 @@
 
 - Total recipes processed: 5212
 - Recipes with tag suggestions: 5212
-- Cached responses: 5212
+- Cached responses: 5207
 
 ## Tag Frequency
 
@@ -5232,22 +5232,22 @@
 | vegetarian | 3156 |
 | comfort food | 2456 |
 | dinner | 2450 |
-| pantry | 2316 |
+| pantry | 2317 |
 | dessert | 1348 |
 | healthy | 1301 |
 | lunch | 1279 |
 | snack | 1279 |
 | cheese | 1266 |
-| entree | 1101 |
+| entree | 1102 |
 | gluten-free | 1082 |
-| side dish | 1028 |
-| dairy-free | 1027 |
+| side dish | 1029 |
+| dairy-free | 1028 |
 | american | 952 |
 | holiday | 805 |
 | greens | 804 |
 | vegan | 768 |
 | egg | 752 |
-| appetizer | 688 |
+| appetizer | 689 |
 | quick | 582 |
 | bread | 549 |
 | breakfast | 530 |
