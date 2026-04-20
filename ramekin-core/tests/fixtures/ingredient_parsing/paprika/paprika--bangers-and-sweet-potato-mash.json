@@ -181,7 +181,13 @@
     },
     {
       "raw": "Sweet potato mash:",
-      "is_section_header": true
+      "expected": {
+        "item": "Sweet potato mash:",
+        "measurements": [],
+        "note": null,
+        "section": "Sausage",
+        "category": "Produce"
+      }
     },
     {
       "raw": "2 medium sweet potatoes",
@@ -194,7 +200,7 @@
           }
         ],
         "note": null,
-        "section": "Sweet Potato Mash",
+        "section": "Sausage",
         "category": "Produce"
       }
     },
@@ -213,7 +219,7 @@
           }
         ],
         "note": null,
-        "section": "Sweet Potato Mash",
+        "section": "Sausage",
         "category": "Dairy & Eggs"
       }
     },
@@ -228,13 +234,19 @@
           }
         ],
         "note": null,
-        "section": "Sweet Potato Mash",
+        "section": "Sausage",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "Caramelized onions:",
-      "is_section_header": true
+      "expected": {
+        "item": "Caramelized onions:",
+        "measurements": [],
+        "note": null,
+        "section": "Sausage",
+        "category": "Produce"
+      }
     },
     {
       "raw": "1 onion, thinly sliced",
@@ -247,7 +259,7 @@
           }
         ],
         "note": "thinly sliced",
-        "section": "Caramelized Onions",
+        "section": "Sausage",
         "category": "Produce"
       }
     },
@@ -266,7 +278,7 @@
           }
         ],
         "note": null,
-        "section": "Caramelized Onions",
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     },
@@ -281,7 +293,7 @@
           }
         ],
         "note": null,
-        "section": "Caramelized Onions",
+        "section": "Sausage",
         "category": "Spices & Seasonings"
       }
     }

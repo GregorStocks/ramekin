@@ -4,7 +4,12 @@
   "ingredients": [
     {
       "raw": "soaking and cooking the chickpeas:",
-      "is_section_header": true
+      "expected": {
+        "item": "soaking and cooking the chickpeas:",
+        "measurements": [],
+        "note": null,
+        "category": "Canned Goods"
+      }
     },
     {
       "raw": "3 tablespoons + 1 teaspoon salt",
@@ -17,7 +22,6 @@
           }
         ],
         "note": null,
-        "section": "Soaking and Cooking the Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -32,7 +36,6 @@
           }
         ],
         "note": null,
-        "section": "Soaking and Cooking the Chickpeas",
         "category": "Other"
       }
     },
@@ -51,7 +54,6 @@
           }
         ],
         "note": null,
-        "section": "Soaking and Cooking the Chickpeas",
         "category": "Canned Goods"
       }
     },
@@ -66,7 +68,6 @@
           }
         ],
         "note": "peeled and halved through the core",
-        "section": "Soaking and Cooking the Chickpeas",
         "category": "Produce"
       }
     },
@@ -76,7 +77,6 @@
         "item": "a few sprigs thyme",
         "measurements": [],
         "note": null,
-        "section": "Soaking and Cooking the Chickpeas",
         "category": "Spices & Seasonings"
       }
     },
@@ -91,7 +91,6 @@
           }
         ],
         "note": null,
-        "section": "Soaking and Cooking the Chickpeas",
         "category": "Produce"
       }
     },
@@ -106,7 +105,6 @@
           }
         ],
         "note": null,
-        "section": "Soaking and Cooking the Chickpeas",
         "category": "Spices & Seasonings"
       }
     },

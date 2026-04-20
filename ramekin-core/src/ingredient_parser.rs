@@ -2487,21 +2487,19 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
         return Some(normalize_section_name(name));
     }
 
-    // Pattern 4: Short colon-terminated headers with no digits.
-    // We already rejected anything that parses with both amount + unit above,
-    // so by here the line has no obvious ingredient shape. Treat short,
-    // digit-free, few-word phrases as section headers (e.g. "Dough:",
-    // "Asparagus pesto:", "Chicken and noodle salad:").
-    let word_count = name.split_whitespace().count();
-    if name.len() <= 50 && word_count <= 5 && !name.chars().any(|c| c.is_ascii_digit()) {
+    // Pattern 4: Single-word colon-terminated headers with no digits
+    // (e.g. "Dough:", "Brine:", "Broth:", "Chicken:"). Single-word labels
+    // are unambiguous enough; multi-word labels without a recognized
+    // keyword stay as ingredients so we don't misclassify things like
+    // "Olive oil:" as a section.
+    if !name.contains(' ') && name.len() <= 20 && !name.chars().any(|c| c.is_ascii_digit()) {
         return Some(normalize_section_name(name));
     }
 
-    // Pattern 5: Longer mixed-case headers containing a well-known section
-    // keyword. Short phrases are already covered by pattern 4; this fallback
-    // catches verbose labels like "Creamy Artichoke Spread (makes a little
-    // extra):" or "PART III: The ham and nut filling:" where the word count
-    // exceeds five but a section keyword gives us high confidence.
+    // Pattern 5: Longer colon-terminated labels that contain a well-known
+    // section keyword. Catches verbose headers like "Creamy Artichoke
+    // Spread (makes a little extra):" or "Fresh Mint Chocolate Chip Ice
+    // Cream:" where the pattern-4 single-word gate wouldn't fire.
     if name.len() <= 80 {
         const SECTION_KEYWORDS: &[&str] = &[
             "topping", "filling", "frosting", "icing", "glaze", "sauce", "marinade", "dressing",

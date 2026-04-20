@@ -4,7 +4,12 @@
   "ingredients": [
     {
       "raw": "Crispy Onions:",
-      "is_section_header": true
+      "expected": {
+        "item": "Crispy Onions:",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
     },
     {
       "raw": "2 medium yellow onions, halved and thinly sliced",
@@ -17,7 +22,6 @@
           }
         ],
         "note": "halved and thinly sliced",
-        "section": "Crispy Onions",
         "category": "Produce"
       }
     },
@@ -36,7 +40,6 @@
           }
         ],
         "note": null,
-        "section": "Crispy Onions",
         "category": "Baking"
       }
     },
@@ -51,7 +54,6 @@
           }
         ],
         "note": null,
-        "section": "Crispy Onions",
         "category": "Bakery & Bread"
       }
     },
@@ -66,7 +68,6 @@
           }
         ],
         "note": null,
-        "section": "Crispy Onions",
         "category": "Spices & Seasonings"
       }
     },
@@ -76,7 +77,6 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
-        "section": "Crispy Onions",
         "category": "Spices & Seasonings"
       }
     },
@@ -86,7 +86,6 @@
         "item": "Canola, safflower, peanut or other high-heat oil, for deep-frying",
         "measurements": [],
         "note": null,
-        "section": "Crispy Onions",
         "category": "Nuts & Dried Fruit"
       }
     },

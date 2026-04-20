@@ -4,7 +4,12 @@
   "ingredients": [
     {
       "raw": "Cake layers:",
-      "is_section_header": true
+      "expected": {
+        "item": "Cake layers:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
     },
     {
       "raw": "2 1/4 cups sifted cake flour",
@@ -17,7 +22,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -32,7 +36,6 @@
           }
         ],
         "note": "divided",
-        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -51,7 +54,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -70,7 +72,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Spices & Seasonings"
       }
     },
@@ -89,7 +90,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Other"
       }
     },
@@ -108,7 +108,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Oils & Vinegars"
       }
     },
@@ -123,7 +122,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Produce"
       }
     },
@@ -142,7 +140,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -157,7 +154,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -172,7 +168,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -191,7 +186,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -210,7 +204,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }
     },
@@ -229,7 +222,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -248,7 +240,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layers",
         "category": "Baking"
       }
     },
@@ -263,7 +254,6 @@
           }
         ],
         "note": "I sliced mine very thinly, but would do so more thickly next time, or double-layer the strawberries so that you get a higher fruit-to-bite ratio.",
-        "section": "Cake Layers",
         "category": "Produce"
       }
     }

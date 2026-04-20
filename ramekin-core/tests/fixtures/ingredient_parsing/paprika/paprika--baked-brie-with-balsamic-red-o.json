@@ -114,7 +114,13 @@
     },
     {
       "raw": "Balsamic onions:",
-      "is_section_header": true
+      "expected": {
+        "item": "Balsamic onions:",
+        "measurements": [],
+        "note": null,
+        "section": "Pastry",
+        "category": "Oils & Vinegars"
+      }
     },
     {
       "raw": "2 small or 1 large red onion, halved and thinly sliced",
@@ -131,7 +137,7 @@
           }
         ],
         "note": "halved and thinly sliced",
-        "section": "Balsamic Onions",
+        "section": "Pastry",
         "category": "Produce"
       }
     },
@@ -150,7 +156,7 @@
           }
         ],
         "note": null,
-        "section": "Balsamic Onions",
+        "section": "Pastry",
         "category": "Dairy & Eggs"
       }
     },
@@ -165,7 +171,7 @@
           }
         ],
         "note": null,
-        "section": "Balsamic Onions",
+        "section": "Pastry",
         "category": "Baking"
       }
     },
@@ -180,7 +186,7 @@
           }
         ],
         "note": null,
-        "section": "Balsamic Onions",
+        "section": "Pastry",
         "category": "Spices & Seasonings"
       }
     },
@@ -199,7 +205,7 @@
           }
         ],
         "note": null,
-        "section": "Balsamic Onions",
+        "section": "Pastry",
         "category": "Oils & Vinegars"
       }
     },
@@ -209,7 +215,7 @@
         "item": "Freshly ground black pepper",
         "measurements": [],
         "note": null,
-        "section": "Balsamic Onions",
+        "section": "Pastry",
         "category": "Spices & Seasonings"
       }
     },

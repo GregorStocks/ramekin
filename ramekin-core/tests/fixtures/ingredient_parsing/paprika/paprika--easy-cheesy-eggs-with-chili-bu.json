@@ -4,7 +4,12 @@
   "ingredients": [
     {
       "raw": "Chili Butter:",
-      "is_section_header": true
+      "expected": {
+        "item": "Chili Butter:",
+        "measurements": [],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
     },
     {
       "raw": "1 tablespoons extra virgin olive oil",
@@ -21,7 +26,6 @@
           }
         ],
         "note": null,
-        "section": "Chili Butter",
         "category": "Oils & Vinegars"
       }
     },
@@ -40,7 +44,6 @@
           }
         ],
         "note": null,
-        "section": "Chili Butter",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,7 +58,6 @@
           }
         ],
         "note": "chopped",
-        "section": "Chili Butter",
         "category": "Produce"
       }
     },
@@ -70,7 +72,6 @@
           }
         ],
         "note": null,
-        "section": "Chili Butter",
         "category": "Spices & Seasonings"
       }
     },
@@ -89,7 +90,6 @@
           }
         ],
         "note": null,
-        "section": "Chili Butter",
         "category": "Spices & Seasonings"
       }
     },

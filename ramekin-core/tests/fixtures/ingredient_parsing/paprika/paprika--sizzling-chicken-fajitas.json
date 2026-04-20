@@ -235,7 +235,13 @@
     },
     {
       "raw": "Fixings (pick your favorites):",
-      "is_section_header": true
+      "expected": {
+        "item": "Fixings (pick your favorites):",
+        "measurements": [],
+        "note": null,
+        "section": "To Assemble",
+        "category": "Other"
+      }
     },
     {
       "raw": "1 1/2 cup cooked black beans (1 15-ounce can, drained and rinsed)",
@@ -248,7 +254,7 @@
           }
         ],
         "note": "1 15-ounce can, drained and rinsed",
-        "section": "Fixings (Pick Your Favorites)",
+        "section": "To Assemble",
         "category": "Canned Goods"
       }
     },
@@ -258,7 +264,7 @@
         "item": "Salsa (or pico de gallo)",
         "measurements": [],
         "note": null,
-        "section": "Fixings (Pick Your Favorites)",
+        "section": "To Assemble",
         "category": "Condiments & Sauces"
       }
     },
@@ -268,7 +274,7 @@
         "item": "Sliced avocado (or guacamole)",
         "measurements": [],
         "note": null,
-        "section": "Fixings (Pick Your Favorites)",
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -278,7 +284,7 @@
         "item": "Shredded cheese",
         "measurements": [],
         "note": null,
-        "section": "Fixings (Pick Your Favorites)",
+        "section": "To Assemble",
         "category": "Cheese"
       }
     },
@@ -288,7 +294,7 @@
         "item": "Sour cream",
         "measurements": [],
         "note": null,
-        "section": "Fixings (Pick Your Favorites)",
+        "section": "To Assemble",
         "category": "Dairy & Eggs"
       }
     },
@@ -298,7 +304,7 @@
         "item": "Minced white onion or pickled red onions",
         "measurements": [],
         "note": null,
-        "section": "Fixings (Pick Your Favorites)",
+        "section": "To Assemble",
         "category": "Canned Goods"
       }
     },
@@ -308,7 +314,7 @@
         "item": "Chopped cilantro",
         "measurements": [],
         "note": null,
-        "section": "Fixings (Pick Your Favorites)",
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -318,7 +324,7 @@
         "item": "Pickled jalalpenos",
         "measurements": [],
         "note": null,
-        "section": "Fixings (Pick Your Favorites)",
+        "section": "To Assemble",
         "category": "Canned Goods"
       }
     },
@@ -328,7 +334,7 @@
         "item": "Hot sauce",
         "measurements": [],
         "note": null,
-        "section": "Fixings (Pick Your Favorites)",
+        "section": "To Assemble",
         "category": "Condiments & Sauces"
       }
     },
@@ -338,7 +344,7 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
-        "section": "Fixings (Pick Your Favorites)",
+        "section": "To Assemble",
         "category": "Produce"
       }
     }

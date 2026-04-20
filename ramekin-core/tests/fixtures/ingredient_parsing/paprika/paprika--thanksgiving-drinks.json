@@ -65,7 +65,13 @@
     },
     {
       "raw": "Pumpkin pie sugar:",
-      "is_section_header": true
+      "expected": {
+        "item": "Pumpkin pie sugar:",
+        "measurements": [],
+        "note": null,
+        "section": "Jellied Cranberry Sauce",
+        "category": "Produce"
+      }
     },
     {
       "raw": "1 teaspoon pumpkin pie spice, such as McCormick",
@@ -78,7 +84,7 @@
           }
         ],
         "note": null,
-        "section": "Pumpkin Pie Sugar",
+        "section": "Jellied Cranberry Sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,13 +103,19 @@
           }
         ],
         "note": null,
-        "section": "Pumpkin Pie Sugar",
+        "section": "Jellied Cranberry Sauce",
         "category": "Baking"
       }
     },
     {
       "raw": "Thanksgiving Sidecar:",
-      "is_section_header": true
+      "expected": {
+        "item": "Thanksgiving Sidecar:",
+        "measurements": [],
+        "note": null,
+        "section": "Jellied Cranberry Sauce",
+        "category": "Other"
+      }
     },
     {
       "raw": "1 dash Angostura Aromatic bitters",
@@ -116,7 +128,7 @@
           }
         ],
         "note": null,
-        "section": "Thanksgiving Sidecar",
+        "section": "Jellied Cranberry Sauce",
         "category": "Other"
       }
     },
@@ -135,7 +147,7 @@
           }
         ],
         "note": null,
-        "section": "Thanksgiving Sidecar",
+        "section": "Jellied Cranberry Sauce",
         "category": "Produce"
       }
     },
@@ -154,7 +166,7 @@
           }
         ],
         "note": null,
-        "section": "Thanksgiving Sidecar",
+        "section": "Jellied Cranberry Sauce",
         "category": "Baking"
       }
     },
@@ -173,7 +185,7 @@
           }
         ],
         "note": null,
-        "section": "Thanksgiving Sidecar",
+        "section": "Jellied Cranberry Sauce",
         "category": "Other"
       }
     },
@@ -192,7 +204,7 @@
           }
         ],
         "note": null,
-        "section": "Thanksgiving Sidecar",
+        "section": "Jellied Cranberry Sauce",
         "category": "Beverages"
       }
     },
@@ -211,7 +223,7 @@
           }
         ],
         "note": null,
-        "section": "Thanksgiving Sidecar",
+        "section": "Jellied Cranberry Sauce",
         "category": "Other"
       }
     },
@@ -230,7 +242,7 @@
           }
         ],
         "note": null,
-        "section": "Thanksgiving Sidecar",
+        "section": "Jellied Cranberry Sauce",
         "category": "Beverages"
       }
     },
@@ -240,7 +252,7 @@
         "item": "Pumpkin pie sugar, to sprinkle on top",
         "measurements": [],
         "note": null,
-        "section": "Thanksgiving Sidecar",
+        "section": "Jellied Cranberry Sauce",
         "category": "Produce"
       }
     },

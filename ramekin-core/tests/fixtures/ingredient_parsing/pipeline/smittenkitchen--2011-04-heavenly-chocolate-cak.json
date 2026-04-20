@@ -4,7 +4,12 @@
   "ingredients": [
     {
       "raw": "Cake layer:",
-      "is_section_header": true
+      "expected": {
+        "item": "Cake layer:",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
     },
     {
       "raw": "6 ounces semisweet bittersweet chocolate, chopped or 1 cup semi- or bittersweet chocolate chips",
@@ -21,7 +26,6 @@
           }
         ],
         "note": "chopped or 1 cup semi- or bittersweet chocolate chips",
-        "section": "Cake Layer",
         "category": "Other"
       }
     },
@@ -36,7 +40,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layer",
         "category": "Beverages"
       }
     },
@@ -51,7 +54,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -70,7 +72,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layer",
         "category": "Baking"
       }
     },
@@ -89,7 +90,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layer",
         "category": "Spices & Seasonings"
       }
     },
@@ -108,7 +108,6 @@
           }
         ],
         "note": "divided",
-        "section": "Cake Layer",
         "category": "Baking"
       }
     },
@@ -123,7 +122,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layer",
         "category": "Dairy & Eggs"
       }
     },
@@ -138,7 +136,6 @@
           }
         ],
         "note": null,
-        "section": "Cake Layer",
         "category": "Baking"
       }
     },
@@ -157,7 +154,6 @@
           }
         ],
         "note": "or 1 to 2 tablespoons liqueur of your choice, such as Grand Marnier",
-        "section": "Cake Layer",
         "category": "Baking"
       }
     }

@@ -138,7 +138,13 @@
     },
     {
       "raw": "Flour Mixture:",
-      "is_section_header": true
+      "expected": {
+        "item": "Flour Mixture:",
+        "measurements": [],
+        "note": null,
+        "section": "Sponge",
+        "category": "Baking"
+      }
     },
     {
       "raw": "2 1/4 cups (12.5 ounces, 351 grams) bread flour",
@@ -159,7 +165,7 @@
           }
         ],
         "note": null,
-        "section": "Flour Mixture",
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -178,7 +184,7 @@
           }
         ],
         "note": null,
-        "section": "Flour Mixture",
+        "section": "Sponge",
         "category": "Baking"
       }
     },
@@ -201,7 +207,7 @@
           }
         ],
         "note": null,
-        "section": "Flour Mixture",
+        "section": "Sponge",
         "category": "Spices & Seasonings"
       }
     },
@@ -224,7 +230,7 @@
           }
         ],
         "note": null,
-        "section": "Flour Mixture",
+        "section": "Sponge",
         "category": "Spices & Seasonings"
       }
     },
@@ -234,7 +240,7 @@
         "item": "Dough and Baking",
         "measurements": [],
         "note": null,
-        "section": "Flour Mixture",
+        "section": "Sponge",
         "category": "Other"
       }
     },
@@ -257,7 +263,7 @@
           }
         ],
         "note": null,
-        "section": "Flour Mixture",
+        "section": "Sponge",
         "category": "Oils & Vinegars"
       }
     },
@@ -276,7 +282,7 @@
           }
         ],
         "note": null,
-        "section": "Flour Mixture",
+        "section": "Sponge",
         "category": "Baking"
       }
     }
