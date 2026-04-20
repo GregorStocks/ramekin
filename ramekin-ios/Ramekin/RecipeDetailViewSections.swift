@@ -121,13 +121,7 @@ extension RecipeDetailView {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
                 ForEach(tags, id: \.self) { tag in
-                    Text(tag)
-                        .font(.caption)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 4)
-                        .background(Color.orange.opacity(0.2))
-                        .foregroundColor(.orange)
-                        .clipShape(Capsule())
+                    HierarchicalTagChip(name: tag)
                 }
             }
         }

@@ -152,7 +152,7 @@ enum RecipeListFilterSupport {
     }
 
     private static func filterToken(prefix: String, value: String) -> String {
-        if value.contains(" ") {
+        if value.contains(" ") || value.contains(":") {
             return "\(prefix):\"\(value)\""
         }
 
