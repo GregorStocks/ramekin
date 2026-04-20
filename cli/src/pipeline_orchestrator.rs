@@ -196,6 +196,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     fs::create_dir_all(&run_dir)?;
 
     // Load test URLs
+    let load_urls_start = Instant::now();
     let test_urls_content = fs::read_to_string(&config.test_urls_file).with_context(|| {
         format!(
             "Failed to read test URLs from {}",
@@ -213,9 +214,23 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             urls_to_process.push((url.clone(), site.domain.clone()));
         }
     }
+    tracing::info!(
+        phase = "setup.load_urls",
+        elapsed_ms = load_urls_start.elapsed().as_millis() as u64,
+        urls = urls_to_process.len(),
+        sites = test_urls.sites.len(),
+        "loaded test URLs"
+    );
 
     // Load tags for auto-tag evaluation
+    let load_tags_start = Instant::now();
     let user_tags = load_tags_file(&config.tags_file)?;
+    tracing::info!(
+        phase = "setup.load_tags",
+        elapsed_ms = load_tags_start.elapsed().as_millis() as u64,
+        tags = user_tags.len(),
+        "loaded tag allowlist"
+    );
     println!(
         "Loaded {} tags from {}",
         user_tags.len(),
@@ -249,7 +264,13 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
 
     let total_urls = urls_to_process.len();
     let start_time = Instant::now();
+    let registry_build_start = Instant::now();
     let registry = Arc::new(build_registry(Arc::clone(&client), user_tags));
+    tracing::info!(
+        phase = "setup.build_registry",
+        elapsed_ms = registry_build_start.elapsed().as_millis() as u64,
+        "built step registry"
+    );
 
     println!("Pipeline Test Starting");
     println!("======================");
@@ -288,6 +309,12 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     let run_dir = Arc::new(run_dir);
 
     // Process URLs concurrently
+    let processing_start = Instant::now();
+    // Sum of time spent holding the results mutex while serializing and writing
+    // intermediate results.json to disk. With 5k+ URLs this can dominate wall
+    // clock even when individual saves are small, because it serializes the
+    // workers.
+    let intermediate_save_total_ms = Arc::new(AtomicUsize::new(0));
     let url_results: Vec<Option<UrlResult>> = stream::iter(urls_to_process.into_iter())
         .map(|(url, domain)| {
             let client = Arc::clone(&client);
@@ -295,6 +322,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             let run_dir = Arc::clone(&run_dir);
             let results = Arc::clone(&results);
             let completed_count = Arc::clone(&completed_count);
+            let intermediate_save_total_ms = Arc::clone(&intermediate_save_total_ms);
             let on_fetch_fail = config.on_fetch_fail;
             let force_refetch = config.force_refetch;
 
@@ -375,9 +403,12 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
                     );
 
                     // Save intermediate results periodically
+                    let save_start = Instant::now();
                     if let Err(e) = save_results(&run_dir, &results) {
                         tracing::warn!(error = %e, "Failed to save intermediate results");
                     }
+                    intermediate_save_total_ms
+                        .fetch_add(save_start.elapsed().as_millis() as usize, Ordering::Relaxed);
                 }
 
                 Some(UrlResult {
@@ -392,8 +423,18 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         .buffer_unordered(concurrency)
         .collect()
         .await;
+    let processing_elapsed = processing_start.elapsed();
+    let intermediate_save_ms = intermediate_save_total_ms.load(Ordering::Relaxed) as u64;
+    tracing::info!(
+        phase = "processing",
+        elapsed_ms = processing_elapsed.as_millis() as u64,
+        urls = total_urls,
+        intermediate_save_ms,
+        "URL processing complete"
+    );
 
     // Collect all URL results into the final results
+    let final_save_start = Instant::now();
     {
         let mut results = results.lock().await;
         for url_result in url_results.into_iter().flatten() {
@@ -401,6 +442,12 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         }
         save_results(&run_dir, &results).context("Failed to save final results")?;
     }
+    let final_save_elapsed = final_save_start.elapsed();
+    tracing::info!(
+        phase = "final_save",
+        elapsed_ms = final_save_elapsed.as_millis() as u64,
+        "wrote final results.json"
+    );
 
     // Extract final results from Arc<Mutex<>>
     let results = Arc::try_unwrap(results)
@@ -413,7 +460,16 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     // snapshot failure propagates as a failed run. On failure we still record
     // a terminal manifest status so external consumers aren't left observing a
     // run stuck in "running".
-    if let Err(e) = write_pipeline_snapshots(&run_dir) {
+    let snapshot_start = Instant::now();
+    let snapshot_result = write_pipeline_snapshots(&run_dir);
+    let snapshot_elapsed = snapshot_start.elapsed();
+    tracing::info!(
+        phase = "snapshots",
+        elapsed_ms = snapshot_elapsed.as_millis() as u64,
+        ok = snapshot_result.is_ok(),
+        "wrote pipeline snapshots"
+    );
+    if let Err(e) = snapshot_result {
         let failed_manifest = RunManifest {
             completed_at: Some(Utc::now().to_rfc3339()),
             status: RunStatus::Failed,
@@ -443,6 +499,52 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     println!("Run ID: {}", run_id);
     println!("Duration: {:.1}s", elapsed.as_secs_f64());
     println!("URLs Processed: {}", results.total_urls);
+    println!();
+    println!("Phase Timing (wall clock):");
+    println!(
+        "  {:26} {:>7.1}s",
+        "URL processing",
+        processing_elapsed.as_secs_f64()
+    );
+    println!(
+        "    (of which intermediate results.json writes held the mutex for {:.1}s)",
+        intermediate_save_ms as f64 / 1000.0
+    );
+    println!(
+        "  {:26} {:>7.1}s",
+        "Final results.json write",
+        final_save_elapsed.as_secs_f64()
+    );
+    println!(
+        "  {:26} {:>7.1}s",
+        "Snapshot write",
+        snapshot_elapsed.as_secs_f64()
+    );
+    let accounted = processing_elapsed + final_save_elapsed + snapshot_elapsed;
+    let unaccounted = elapsed.saturating_sub(accounted);
+    println!(
+        "  {:26} {:>7.1}s  (setup + everything not covered above)",
+        "Unaccounted",
+        unaccounted.as_secs_f64()
+    );
+    // Concurrency factor: if each URL ran serially, the sum of its step
+    // durations is how long it would have taken. Dividing by wall-clock
+    // processing time shows how much effective parallelism we got.
+    let sum_step_ms: u64 = results
+        .url_results
+        .iter()
+        .flat_map(|u| u.steps.iter().map(|s| s.duration_ms))
+        .sum();
+    let wall_ms = processing_elapsed.as_millis() as u64;
+    if wall_ms > 0 {
+        println!(
+            "  {:26} {:>7.2}x  (sum of step times = {:.1}s; configured concurrency = {})",
+            "Effective concurrency",
+            sum_step_ms as f64 / wall_ms as f64,
+            sum_step_ms as f64 / 1000.0,
+            config.concurrency
+        );
+    }
     println!();
     println!("Cache Stats:");
     println!(

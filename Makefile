@@ -183,14 +183,17 @@ refilter-test-urls: ## Refilter existing test URLs through current filter logic
 	@cargo run -q --manifest-path cli/Cargo.toml -- generate-test-urls --refilter
 
 pipeline: ## Run the full pipeline over every URL in test-urls.json
+	@echo "[pipeline] cargo run starting" | $(TS)
 	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
-	cargo run -q --manifest-path cli/Cargo.toml -- pipeline \
+	{ time cargo run -q --release --manifest-path cli/Cargo.toml -- pipeline \
 		$(if $(DELAY),--delay-ms $(DELAY),) \
 		$(if $(FORCE_REFETCH),--force-refetch,) \
 		$(if $(ON_FETCH_FAIL),--on-fetch-fail $(ON_FETCH_FAIL),) \
 		$(if $(TAGS_FILE),--tags-file $(TAGS_FILE),) \
-		$(if $(CONCURRENCY),--concurrency $(CONCURRENCY),)
-	@$(MAKE) ingredient-tests-generate
+		$(if $(CONCURRENCY),--concurrency $(CONCURRENCY),); }
+	@echo "[pipeline] cargo run done, running ingredient-tests-generate" | $(TS)
+	@time $(MAKE) ingredient-tests-generate
+	@echo "[pipeline] ingredient-tests-generate done" | $(TS)
 
 pipeline-cache-stats: ## Show HTML cache statistics
 	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
@@ -255,7 +258,7 @@ ios-test-ui: ios-generate ## Run iOS UI tests (requires dev server running)
 	@echo "UI test results at logs/ios-ui-tests.xcresult"
 
 ingredient-tests-generate: ## Generate ingredient parsing test fixtures from latest pipeline run
-	@cargo run -q --manifest-path cli/Cargo.toml -- ingredient-tests-generate
+	@cargo run -q --release --manifest-path cli/Cargo.toml -- ingredient-tests-generate
 
 ingredient-tests-update: ## Update ingredient parsing test fixtures to match current parser output
 	@cargo run -q --manifest-path cli/Cargo.toml -- ingredient-tests-update

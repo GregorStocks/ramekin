@@ -33,7 +33,6 @@ pub trait HttpClient: Send + Sync {
 pub struct CachingClientBuilder {
     cache_dir: Option<PathBuf>,
     rate_limit_ms: u64,
-    offline_mode: bool,
     never_network: bool,
     timeout: Duration,
     user_agent: String,
@@ -50,8 +49,10 @@ impl CachingClientBuilder {
     ///
     /// Environment variables:
     /// - `RAMEKIN_HTTP_CACHE`: "none" to disable, "disk" (default), or a path
-    /// - `RAMEKIN_HTTP_CACHE_OFFLINE`: "true" to skip network validation for cached responses
     /// - `RAMEKIN_OFFLINE`: "true" to never hit network (error if not cached)
+    ///
+    /// Cache hits are always served without revalidation. Use `FORCE_REFETCH=1`
+    /// or `make pipeline-cache-clear` to pick up upstream changes.
     pub fn new() -> Self {
         // Check environment variables for configuration
         let cache_dir = match std::env::var("RAMEKIN_HTTP_CACHE").ok() {
@@ -61,10 +62,6 @@ impl CachingClientBuilder {
             None => Some(DiskCache::default_dir()), // Default to disk caching
         };
 
-        let offline_mode = std::env::var("RAMEKIN_HTTP_CACHE_OFFLINE")
-            .map(|v| v == "true" || v == "1")
-            .unwrap_or(false);
-
         let never_network = std::env::var("RAMEKIN_OFFLINE")
             .map(|v| v == "true" || v == "1")
             .unwrap_or(false);
@@ -72,7 +69,6 @@ impl CachingClientBuilder {
         Self {
             cache_dir,
             rate_limit_ms: 200, // Default 200ms between requests to same host
-            offline_mode,
             never_network,
             timeout: Duration::from_secs(30),
             user_agent: "Mozilla/5.0 (compatible; Ramekin/1.0; +https://ramekin.app)".to_string(),
@@ -88,12 +84,6 @@ impl CachingClientBuilder {
     /// Set the rate limit delay in milliseconds. 0 disables rate limiting.
     pub fn rate_limit_ms(mut self, ms: u64) -> Self {
         self.rate_limit_ms = ms;
-        self
-    }
-
-    /// Set offline mode. When true, cached responses are used without network validation.
-    pub fn offline_mode(mut self, offline: bool) -> Self {
-        self.offline_mode = offline;
         self
     }
 
@@ -129,13 +119,17 @@ impl CachingClientBuilder {
             inner: Arc::new(inner),
             cache,
             rate_limiter,
-            offline_mode: self.offline_mode,
             never_network: self.never_network,
         })
     }
 }
 
-/// Production HTTP client with caching, rate limiting, and ETag support.
+/// Production HTTP client with a disk cache and per-host rate limiting.
+///
+/// Cache hits are served directly without revalidating against the origin;
+/// we never issue an `If-None-Match` / `If-Modified-Since` round-trip for a
+/// URL that has a cached response. Clearing or bypassing the cache is the
+/// only way to pick up upstream changes.
 pub struct CachingClient {
     /// Shared reqwest client for connection pooling.
     inner: Arc<reqwest::Client>,
@@ -143,8 +137,6 @@ pub struct CachingClient {
     cache: Option<DiskCache>,
     /// Per-host rate limiter.
     rate_limiter: RateLimiter,
-    /// When true, use cached responses without network validation.
-    offline_mode: bool,
     /// When true, never access network - return error if not cached.
     never_network: bool,
 }
@@ -238,6 +230,9 @@ impl CachingClient {
     }
 
     /// Internal fetch implementation with caching logic.
+    ///
+    /// Cache hits are served directly. We do not revalidate against the origin
+    /// — see the `CachingClient` doc comment for the rationale.
     async fn fetch_with_cache(&self, url: &str) -> Result<FetchResult, FetchError> {
         // Validate URL first
         let parsed = reqwest::Url::parse(url).map_err(|e| FetchError::InvalidUrl(e.to_string()))?;
@@ -253,94 +248,19 @@ impl CachingClient {
                 )));
             }
 
-            // Check for cached response
+            // Cache hit: serve the cached response without revalidating.
             if let Some(cached) = cache.get(url) {
-                if self.offline_mode || self.never_network {
-                    // Offline/never-network mode: use cached response without validation
-                    tracing::debug!(url, "cache hit (offline mode)");
-                    return Ok(FetchResult {
-                        data: cached.data,
-                        content_type: cached.metadata.content_type,
-                    });
-                }
-
-                // Online mode: validate with ETag/If-Modified-Since
-                if let Some(host) = Self::get_host(url) {
-                    self.rate_limiter.wait(&host).await;
-                }
-
-                let mut request = self.inner.get(parsed.clone());
-
-                if let Some(etag) = &cached.metadata.etag {
-                    request = request.header("If-None-Match", etag);
-                }
-                if let Some(last_modified) = &cached.metadata.last_modified {
-                    request = request.header("If-Modified-Since", last_modified);
-                }
-
-                tracing::debug!(url, "network: validating cached response");
-                match request.send().await {
-                    Ok(response) => {
-                        if response.status() == reqwest::StatusCode::NOT_MODIFIED {
-                            // 304 Not Modified: use cached response
-                            tracing::debug!(url, "cache valid (304 Not Modified)");
-                            return Ok(FetchResult {
-                                data: cached.data,
-                                content_type: cached.metadata.content_type,
-                            });
-                        }
-
-                        if response.status().is_success() {
-                            // Got new content, update cache
-                            tracing::debug!(url, status = %response.status(), "network: cache refreshed");
-                            let etag = response
-                                .headers()
-                                .get("etag")
-                                .and_then(|v| v.to_str().ok())
-                                .map(|s| s.to_string());
-                            let last_modified = response
-                                .headers()
-                                .get("last-modified")
-                                .and_then(|v| v.to_str().ok())
-                                .map(|s| s.to_string());
-                            let content_type = response
-                                .headers()
-                                .get("content-type")
-                                .and_then(|v| v.to_str().ok())
-                                .map(|s| s.to_string());
-
-                            let bytes = response.bytes().await?.to_vec();
-
-                            let _ =
-                                cache.put(url, &bytes, content_type.clone(), etag, last_modified);
-
-                            return Ok(FetchResult {
-                                data: bytes,
-                                content_type,
-                            });
-                        }
-
-                        // Non-success status, fall through to error
-                        tracing::debug!(url, status = %response.status(), "network: request failed");
-                        return Err(FetchError::RequestFailed(
-                            response.error_for_status().unwrap_err(),
-                        ));
-                    }
-                    Err(e) => {
-                        // Network error, use cached response as fallback
-                        tracing::debug!(url, error = %e, "network error, using cached fallback");
-                        return Ok(FetchResult {
-                            data: cached.data,
-                            content_type: cached.metadata.content_type,
-                        });
-                    }
-                }
+                tracing::debug!(url, "cache hit");
+                return Ok(FetchResult {
+                    data: cached.data,
+                    content_type: cached.metadata.content_type,
+                });
             }
         }
 
         // No cache or no cached response
         if self.never_network {
-            tracing::debug!(url, "cache miss (offline mode, network disabled)");
+            tracing::debug!(url, "cache miss (RAMEKIN_OFFLINE set, network disabled)");
             return Err(FetchError::InvalidUrl(format!(
                 "URL not cached and RAMEKIN_OFFLINE is set: {}",
                 url
