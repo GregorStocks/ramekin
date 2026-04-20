@@ -1,0 +1,27 @@
+{
+  "title": "Drop AI offline mode and rely on OpenRouter spend limits instead",
+  "description": "The pipeline's AI client supports an `offline=true` mode that \
+uses only the local AI cache. This is the default for `make pipeline`, and it \
+silently degrades: any time we change the auto-tag prompt, cache keys miss, \
+the enrich_auto_tag step returns success=false, and its step output never \
+gets written. The pipeline still exits 0 and tag-report.md regenerates as an \
+empty table. We hit this while building pipeline snapshots — data/tag-report.md \
+went from ~5200 rows to 12 after an offline-mode run and the signal was silent. \
+\
+Proposal: remove the offline flag and always let enrich_auto_tag call the \
+OpenRouter API. Protect against runaway spend via the existing per-key \
+OpenRouter spend limit, not via a bespoke cache-only mode. That way prompt \
+changes produce fresh cache entries on the next run instead of silently \
+poisoning the reports. If we still want a cached-only rerun for debugging, \
+make it an explicit flag that errors (rather than silently returning empty) \
+on a cache miss.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ai",
+    "pipeline",
+  ],
+  "created_at": "2026-04-19T00:00:00-07:00",
+  "updated_at": "2026-04-19T00:00:00-07:00",
+}
