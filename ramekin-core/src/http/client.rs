@@ -165,14 +165,77 @@ impl CachingClient {
         Ok(())
     }
 
-    /// Invalidate the cache entry for a single URL so the next fetch goes to
-    /// the network. Used by `FORCE_REFETCH` to refresh a specific URL without
-    /// clearing the entire cache.
-    pub fn invalidate_cache(&self, url: &str) -> std::io::Result<()> {
-        if let Some(cache) = &self.cache {
-            cache.remove(url)?;
+    /// Force a network fetch, bypassing any cached response.
+    ///
+    /// On success, replaces the cache entry with the fresh response. On
+    /// failure (HTTP error or network error), the existing cache entry is
+    /// left untouched and **no error is negatively cached** — callers that
+    /// use `FORCE_REFETCH=1` should be able to retry without first having
+    /// downgraded a previously-good URL into a cached failure.
+    pub async fn refetch_html(&self, url: &str) -> Result<String, FetchError> {
+        let result = self.network_fetch(url).await?;
+        Ok(charset::decode_bytes_to_utf8(
+            result.data,
+            result.content_type.as_deref(),
+        ))
+    }
+
+    /// Fetch from the network and cache the successful response.
+    ///
+    /// Unlike `fetch_with_cache`, this never consults the cache on read and
+    /// never writes a negative-cache entry on failure; it exists so that
+    /// force-refetch flows can retry a URL without risking losing a good
+    /// cached copy.
+    async fn network_fetch(&self, url: &str) -> Result<FetchResult, FetchError> {
+        let parsed = reqwest::Url::parse(url).map_err(|e| FetchError::InvalidUrl(e.to_string()))?;
+
+        if self.never_network {
+            return Err(FetchError::InvalidUrl(format!(
+                "URL not cached and RAMEKIN_OFFLINE is set: {}",
+                url
+            )));
         }
-        Ok(())
+
+        if let Some(host) = Self::get_host(url) {
+            self.rate_limiter.wait(&host).await;
+        }
+
+        tracing::debug!(url, "network: force refetch");
+        let response = self.inner.get(parsed).send().await?;
+
+        if !response.status().is_success() {
+            tracing::debug!(url, status = %response.status(), "network: force refetch got non-success status");
+            return Err(FetchError::RequestFailed(
+                response.error_for_status().unwrap_err(),
+            ));
+        }
+
+        let etag = response
+            .headers()
+            .get("etag")
+            .and_then(|v| v.to_str().ok())
+            .map(|s| s.to_string());
+        let last_modified = response
+            .headers()
+            .get("last-modified")
+            .and_then(|v| v.to_str().ok())
+            .map(|s| s.to_string());
+        let content_type = response
+            .headers()
+            .get("content-type")
+            .and_then(|v| v.to_str().ok())
+            .map(|s| s.to_string());
+
+        let bytes = response.bytes().await?.to_vec();
+
+        if let Some(cache) = &self.cache {
+            let _ = cache.put(url, &bytes, content_type.clone(), etag, last_modified);
+        }
+
+        Ok(FetchResult {
+            data: bytes,
+            content_type,
+        })
     }
 
     /// Check if a URL is cached.
