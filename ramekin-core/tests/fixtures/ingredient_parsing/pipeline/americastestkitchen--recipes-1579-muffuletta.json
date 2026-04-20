@@ -1,0 +1,216 @@
+{
+  "source": "americastestkitchen",
+  "recipe_slug": "recipes-1579-muffuletta",
+  "ingredients": [
+    {
+      "raw": "1 pound plum tomatoes (as uniform in size as possible), halved lengthwise, cored, seeded, and skin pricked 6 to 8 times with tip of a sharp knife (see illustrations below)",
+      "expected": {
+        "item": "plum tomatoes (as uniform in size as possible), halved lengthwise, cored, seeded, and skin pricked 6 to 8 times with tip of a sharp knife (see illustrations below)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 cup pitted green olives (brine cured), chopped coarse",
+      "expected": {
+        "item": "pitted green olives (brine cured)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped coarse",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 cup pitted black olives (brine cured), chopped coarse",
+      "expected": {
+        "item": "pitted black olives (brine cured)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped coarse",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1/2 cup olive oil",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "108",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1/4 cup chopped fresh parsley leaves",
+      "expected": {
+        "item": "chopped fresh parsley leaves",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 medium red bell pepper , roasted, peeled, seeded, and diced fine",
+      "expected": {
+        "item": "red bell pepper, roasted, peeled, seeded",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "and diced fine",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 tablespoons lemon juice  from 1 small lemon",
+      "expected": {
+        "item": "lemon juice  from 1 small lemon",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 teaspoon dried oregano",
+      "expected": {
+        "item": "dried oregano",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 loaf Italian bread or French bread, large, (about 9-inch diameter), halved crosswise, most of the inner crumb removed",
+      "expected": {
+        "item": "loaf Italian bread or French bread, large, halved crosswise, most of the inner crumb removed",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "9",
+            "unit": "inch"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "2 cups leaf lettuce , any type or combination, torn into bite size pieces, if necessary",
+      "expected": {
+        "item": "leaf lettuce, any type or combination, torn into bite size pieces, if necessary",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 pound mortadella , thin-sliced (or other soft salami)",
+      "expected": {
+        "item": "mortadella",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "lb"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "thin-sliced (or other soft salami)",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1/4 pound provolone cheese or fresh mozzarella, thin-sliced",
+      "expected": {
+        "item": "provolone cheese or fresh mozzarella",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "lb"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "thin-sliced",
+        "category": "Cheese"
+      }
+    },
+    {
+      "raw": "1/4 pound soppresatta , thin-sliced (or other hard salami)",
+      "expected": {
+        "item": "soppresatta",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "lb"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "thin-sliced (or other hard salami)",
+        "category": "Other"
+      }
+    }
+  ]
+}

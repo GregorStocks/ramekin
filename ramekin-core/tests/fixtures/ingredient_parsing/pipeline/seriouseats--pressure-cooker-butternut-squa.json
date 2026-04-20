@@ -1,0 +1,250 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "pressure-cooker-butternut-squa",
+  "ingredients": [
+    {
+      "raw": "3 1/2 pounds (1.6kg) butternut squash, peeled and seeded",
+      "expected": {
+        "item": "butternut squash",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "1.6",
+            "unit": "kg"
+          }
+        ],
+        "note": "peeled and seeded",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "6 tablespoons (90ml) extra-virgin olive oil, divided",
+      "expected": {
+        "item": "extra-virgin olive oil",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "90",
+            "unit": "ml"
+          },
+          {
+            "amount": "81",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "3 medium cloves garlic, crushed",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "medium"
+          }
+        ],
+        "note": "crushed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 Golden Delicious apple, peeled and cored",
+      "expected": {
+        "item": "Golden Delicious apple",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": null
+          }
+        ],
+        "note": "peeled and cored",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Pinch red pepper flakes",
+      "expected": {
+        "item": "red pepper flakes",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 sprigs sage plus 8 sage leaves, divided",
+      "expected": {
+        "item": "sage",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "sprig"
+          }
+        ],
+        "note": "plus 8 sage leaves, divided",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "kosher salt, presumably Diamond",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 tablespoons (30ml) maple syrup",
+      "expected": {
+        "item": "maple syrup",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "39",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 teaspoon (5ml) white or yellow miso",
+      "expected": {
+        "item": "white or yellow miso",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "3 3/4 cups (900ml) homemade or store-bought low-sodium vegetable broth, divided",
+      "expected": {
+        "item": "homemade or store-bought low-sodium vegetable broth",
+        "measurements": [
+          {
+            "amount": "3.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "900",
+            "unit": "ml"
+          }
+        ],
+        "note": "divided",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 medium yellow onion, minced",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 cups (400g) risotto rice, such as arborio",
+      "expected": {
+        "item": "risotto rice, such as arborio",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Pasta & Rice"
+      }
+    },
+    {
+      "raw": "1/2 cup (120ml) dry white wine",
+      "expected": {
+        "item": "dry white wine",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "4 tablespoons (55g) unsalted butter",
+      "expected": {
+        "item": "unsalted butter",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Parmigiano-Reggiano cheese, for grating",
+      "expected": {
+        "item": "Parmigiano-Reggiano cheese, for grating",
+        "measurements": [],
+        "note": null,
+        "category": "Cheese"
+      }
+    }
+  ]
+}

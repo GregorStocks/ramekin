@@ -1,0 +1,323 @@
+{
+  "source": "americastestkitchen",
+  "recipe_slug": "recipes-5027-best-beef-stew",
+  "ingredients": [
+    {
+      "raw": "2 medium garlic cloves , minced or pressed through garlic press (about 2 teaspoons)",
+      "expected": {
+        "item": "garlic cloves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "medium"
+          },
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "minced or pressed through garlic press",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 anchovy fillets , finely minced (about 2 teaspoons)",
+      "expected": {
+        "item": "anchovy fillets",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          },
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": "finely minced",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 tablespoon tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 boneless beef chuck-eye roast (about 4 pounds), trimmed of excess fat, cut into 1 1/2-inch pieces (see note and step by step below)",
+      "expected": {
+        "item": "boneless beef chuck-eye roast, trimmed of excess fat, cut into 1 1/2-inch pieces (see note and step by step below)",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1814",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "2 tablespoons vegetable oil",
+      "expected": {
+        "item": "vegetable oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 large onion , halved and cut from pole to pole into 1/8-inch-thick slices (about 2 cups)",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "275",
+            "unit": "g"
+          }
+        ],
+        "note": "halved and cut from pole to pole into 1/8-inch-thick slices",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 medium carrots , peeled and cut into 1-inch pieces (about 2 cups)",
+      "expected": {
+        "item": "carrots",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "medium"
+          },
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "peeled and cut into 1-inch pieces",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup unbleached all-purpose flour",
+      "expected": {
+        "item": "unbleached all-purpose flour",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "2 cups red wine  (see note)",
+      "expected": {
+        "item": "red wine  (see note)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 cups low-sodium chicken broth",
+      "expected": {
+        "item": "low-sodium chicken broth",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          },
+          {
+            "amount": "498",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "4 sprigs fresh thyme",
+      "expected": {
+        "item": "fresh thyme",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "sprig"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 ounces Salt pork , rinsed of excess salt (see note)",
+      "expected": {
+        "item": "Salt pork",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
+          }
+        ],
+        "note": "rinsed of excess salt (see note)",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 pound Yukon Gold potatoes , scrubbed and cut into 1-inch pieces",
+      "expected": {
+        "item": "Yukon Gold potatoes",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "scrubbed and cut into 1-inch pieces",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 1/2 cups frozen pearl onions , thawed",
+      "expected": {
+        "item": "frozen pearl onions",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed",
+        "category": "Frozen"
+      }
+    },
+    {
+      "raw": "2 teaspoons unflavored powdered gelatin  (about 1 packet)",
+      "expected": {
+        "item": "unflavored powdered gelatin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1/2 cup water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 cup frozen peas , thawed",
+      "expected": {
+        "item": "frozen peas",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "cup"
+          }
+        ],
+        "note": "thawed",
+        "category": "Frozen"
+      }
+    },
+    {
+      "raw": "Table salt and ground black pepper",
+      "expected": {
+        "item": "Table salt and ground black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

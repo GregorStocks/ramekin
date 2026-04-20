@@ -1,0 +1,166 @@
+{
+  "source": "americastestkitchen",
+  "recipe_slug": "recipes-15277-thai-curry-butte",
+  "ingredients": [
+    {
+      "raw": "¾ cup whole milk , warm",
+      "expected": {
+        "item": "whole milk, warm",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "¼ cup (1¾ ounces/50 grams) sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "1.75",
+            "unit": null
+          },
+          {
+            "amount": "50",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "1 large egg plus 1 large yolk, room temperature",
+      "expected": {
+        "item": "egg plus 1 large yolk",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          }
+        ],
+        "note": "room temperature",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 tablespoon instant or rapid-rise yeast",
+      "expected": {
+        "item": "instant or rapid-rise yeast",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3½ cups (17½ ounces/496 grams) all-purpose flour",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "3.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "17.5",
+            "unit": null
+          },
+          {
+            "amount": "438",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "4 scallions",
+      "expected": {
+        "item": "scallions",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 teaspoons table salt",
+      "expected": {
+        "item": "table salt",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "8 tablespoons unsalted butter , cut into 8 pieces and softened, plus 4 tablespoons unsalted butter, melted, divided",
+      "expected": {
+        "item": "unsalted butter, cut into 8 pieces and softened",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "tbsp"
+          }
+        ],
+        "note": "plus 4 tablespoons unsalted butter, melted, divided",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "¼ cup Thai red curry paste",
+      "expected": {
+        "item": "Thai red curry paste",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "½ cup chopped fresh cilantro , divided",
+      "expected": {
+        "item": "chopped fresh cilantro",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": "divided",
+        "category": "Produce"
+      }
+    }
+  ]
+}

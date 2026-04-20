@@ -1,0 +1,139 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "sous-vide-carnitas-crispy-mexi",
+  "ingredients": [
+    {
+      "raw": "4 pounds (1.8kg) boneless pork shoulder, cut into 2-inch-thick slabs",
+      "expected": {
+        "item": "boneless pork shoulder, cut into 2-inch-thick slabs",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "lb"
+          },
+          {
+            "amount": "1.8",
+            "unit": "kg"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1 medium onion, roughly chopped",
+      "expected": {
+        "item": "onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": "roughly chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "6 medium cloves garlic",
+      "expected": {
+        "item": "cloves garlic",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "medium"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 stick cinnamon, broken into 3 to 4 pieces",
+      "expected": {
+        "item": "cinnamon, broken into 3 to 4 pieces",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stick"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 bay leaves",
+      "expected": {
+        "item": "bay leaves",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "1 medium orange, peel intact",
+      "expected": {
+        "item": "orange, peel intact",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "medium"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "kosher salt, presumably Diamond",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Warm corn tortillas",
+      "expected": {
+        "item": "Warm corn tortillas",
+        "measurements": [],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "Lime wedges",
+      "expected": {
+        "item": "Lime wedges",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Chopped white onion and fresh cilantro leaves",
+      "expected": {
+        "item": "Chopped white onion and fresh cilantro leaves",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Charred Salsa Verde or other salsa",
+      "expected": {
+        "item": "Charred Salsa Verde or other salsa",
+        "measurements": [],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    }
+  ]
+}

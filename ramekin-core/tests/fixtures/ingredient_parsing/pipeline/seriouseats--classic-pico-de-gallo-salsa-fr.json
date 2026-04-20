@@ -1,0 +1,105 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "classic-pico-de-gallo-salsa-fr",
+  "ingredients": [
+    {
+      "raw": "1 1/2 pounds (680g) ripe tomatoes, cut into 1/4- to 1/2-inch dice (about 3 cups); see note",
+      "expected": {
+        "item": "ripe tomatoes, cut into 1/4- to 1/2-inch dice ; see note",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          },
+          {
+            "amount": "3",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Kosher salt",
+      "expected": {
+        "item": "kosher salt, presumably Diamond",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 large white onion, finely diced (about 3/4 cup)",
+      "expected": {
+        "item": "white onion",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "large"
+          },
+          {
+            "amount": "0.75",
+            "unit": "cup"
+          },
+          {
+            "amount": "103",
+            "unit": "g"
+          }
+        ],
+        "note": "finely diced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 to 2 serrano or jalapeño chilies, finely diced (seeds and membranes removed for a milder salsa)",
+      "expected": {
+        "item": "serrano or jalapeño chilies",
+        "measurements": [
+          {
+            "amount": "1 to 2",
+            "unit": null
+          }
+        ],
+        "note": "finely diced (seeds and membranes removed for a milder salsa)",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/2 cup finely chopped fresh cilantro leaves",
+      "expected": {
+        "item": "finely chopped fresh cilantro leaves",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 tablespoon (15ml) lime juice from 1 lime",
+      "expected": {
+        "item": "lime juice from 1 lime",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    }
+  ]
+}

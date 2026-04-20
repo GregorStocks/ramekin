@@ -1,0 +1,38 @@
+{
+  "source": "americastestkitchen",
+  "recipe_slug": "recipes-9071-foolproof-boiled-",
+  "ingredients": [
+    {
+      "raw": "6 ears corn , husks and silk removed",
+      "expected": {
+        "item": "ears corn, husks and silk removed",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "Unsalted butter , softened",
+      "expected": {
+        "item": "Unsalted butter",
+        "measurements": [],
+        "note": "softened",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

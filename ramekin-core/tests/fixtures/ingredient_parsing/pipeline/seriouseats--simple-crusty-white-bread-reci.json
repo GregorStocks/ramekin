@@ -1,0 +1,71 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "simple-crusty-white-bread-reci",
+  "ingredients": [
+    {
+      "raw": "1000 grams all-purpose flour, plus more for dusting",
+      "expected": {
+        "item": "all-purpose flour",
+        "measurements": [
+          {
+            "amount": "1000",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for dusting",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "700 grams room-temperature water, divided if using active dry yeast",
+      "expected": {
+        "item": "room-temperature water",
+        "measurements": [
+          {
+            "amount": "700",
+            "unit": "g"
+          }
+        ],
+        "note": "divided if using active dry yeast",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "22 grams salt",
+      "expected": {
+        "item": "salt, presumably Diamond",
+        "measurements": [
+          {
+            "amount": "22",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 grams instant yeast, 5 grams active dry yeast, or 10 grams fresh yeast (see note)",
+      "expected": {
+        "item": "instant yeast, 5 grams active dry yeast",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "g"
+          }
+        ],
+        "note": "or 10 grams fresh yeast (see note)",
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "Vegetable, canola, or other neutral oil, for greasing",
+      "expected": {
+        "item": "Vegetable, canola, or other neutral oil, for greasing",
+        "measurements": [],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    }
+  ]
+}

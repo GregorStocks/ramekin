@@ -1,0 +1,312 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "loubia-moroccan-white-bean-ste",
+  "ingredients": [
+    {
+      "raw": "1 pound dried Great Northern white beans or Cannellini white beans, picked off any debris and rinsed",
+      "expected": {
+        "item": "dried Great Northern white beans or Cannellini white beans",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
+          }
+        ],
+        "note": "picked off any debris and rinsed",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "3 tablespoons (36 g) Diamond Crystal kosher salt; for table salt, use about half as much by volume or the same weight",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt, use about half as much by volume or the same weight",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "36",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 3/4 teaspoons (10 g) baking soda",
+      "expected": {
+        "item": "baking soda",
+        "measurements": [
+          {
+            "amount": "1.75",
+            "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "3 tablespoons (45 ml) olive oil, plus more for serving",
+      "expected": {
+        "item": "olive oil",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "ml"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": "plus more for serving",
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "1 large yellow onion (10 ounces; 285 g), chopped",
+      "expected": {
+        "item": "yellow onion",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "large"
+          },
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "285",
+            "unit": "g"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 cloves garlic (15 g), minced",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
+          }
+        ],
+        "note": "minced",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "2 1/2 tablespoons tomato paste",
+      "expected": {
+        "item": "tomato paste",
+        "measurements": [
+          {
+            "amount": "2.5",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "41",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoon ground cumin",
+      "expected": {
+        "item": "ground cumin",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/2 teaspoon sweet paprika",
+      "expected": {
+        "item": "sweet paprika",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground turmeric",
+      "expected": {
+        "item": "ground turmeric",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "3.1",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon ground ginger",
+      "expected": {
+        "item": "ground ginger",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.7",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "4 teaspoons Diamond Crystal kosher salt; for table salt use half as much by volume",
+      "expected": {
+        "item": "Diamond Crystal kosher salt; for table salt use half as much by volume",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 1/4 pounds (567 g) boneless lamb stew meat (lamb neck, leg, or shoulder, or a combination),trimmed of excess fat and cut into 2- to 3-inch pieces",
+      "expected": {
+        "item": "boneless lamb stew meat (lamb neck, leg, or shoulder, or a combination)",
+        "measurements": [
+          {
+            "amount": "1.25",
+            "unit": "lb"
+          },
+          {
+            "amount": "567",
+            "unit": "g"
+          }
+        ],
+        "note": "trimmed of excess fat and cut into 2- to 3-inch pieces",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "Drained brined white beans from above",
+      "expected": {
+        "item": "Drained brined white beans from above",
+        "measurements": [],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2 large tomatoes (about 10 ounces; 285 g), halved and grated on the large holes of a box grater, with their juices (alternatively use 7 ounces canned chopped tomatoes)",
+      "expected": {
+        "item": "tomatoes, halved and grated on the large holes of a box grater, with their juices",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "large"
+          },
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "285",
+            "unit": "g"
+          }
+        ],
+        "note": "alternatively use 7 ounces canned chopped tomatoes",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 quart (960 ml) homemade chicken or vegetable stock or store-bought low-sodium chicken or vegetable broth",
+      "expected": {
+        "item": "homemade chicken or vegetable stock or store-bought low-sodium chicken or vegetable broth",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "quart"
+          },
+          {
+            "amount": "960",
+            "unit": "ml"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "Chopped cilantro, for garnish, if desired",
+      "expected": {
+        "item": "Chopped cilantro, for garnish, if desired",
+        "measurements": [],
+        "note": null,
+        "category": "Produce"
+      }
+    }
+  ]
+}

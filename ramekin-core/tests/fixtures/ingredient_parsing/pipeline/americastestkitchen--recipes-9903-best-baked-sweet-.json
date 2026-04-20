@@ -1,0 +1,33 @@
+{
+  "source": "americastestkitchen",
+  "recipe_slug": "recipes-9903-best-baked-sweet-",
+  "ingredients": [
+    {
+      "raw": "4 small sweet potatoes (8 ounces each), unpeeled, each pricked lightly with fork in 3 places",
+      "expected": {
+        "item": "sweet potatoes, unpeeled, each pricked lightly with fork in 3 places",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": "small"
+          },
+          {
+            "amount": "8",
+            "unit": "oz each"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "Salt and pepper",
+      "expected": {
+        "item": "Salt and pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

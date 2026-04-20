@@ -1,0 +1,138 @@
+{
+  "source": "halfbakedharvest",
+  "recipe_slug": "garlic-butter-smashed-potatoes",
+  "ingredients": [
+    {
+      "raw": "2 pounds mixed baby potatoes",
+      "expected": {
+        "item": "mixed baby potatoes",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "lb"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "kosher salt and black pepper",
+      "expected": {
+        "item": "kosher salt and black pepper",
+        "measurements": [],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 stick (8 tablespoons) salted butter",
+      "expected": {
+        "item": "salted butter",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "stick"
+          },
+          {
+            "amount": "8",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "2 tablespoons extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "8-12  whole cloves of garlic, peeled",
+      "expected": {
+        "item": "whole cloves of garlic",
+        "measurements": [
+          {
+            "amount": "8-12",
+            "unit": null
+          }
+        ],
+        "note": "peeled",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup fresh oregano, chopped",
+      "expected": {
+        "item": "fresh oregano",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1/4 cup fresh parsley, chopped",
+      "expected": {
+        "item": "fresh parsley",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1/4 cup fresh basil, chopped",
+      "expected": {
+        "item": "fresh basil",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
+        "note": "chopped",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "cayenne pepper, to taste",
+      "expected": {
+        "item": "cayenne pepper",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Spices & Seasonings"
+      }
+    }
+  ]
+}

@@ -2,32 +2,32 @@
 
 ## Overall
 
-- Total URLs: 5277
-- Completed: 5212 (98.8%)
-- Failed at fetch: 1 (0.0%)
-- Failed at extract: 64 (1.2%)
+- Total URLs: 5587
+- Completed: 5500 (98.4%)
+- Failed at fetch: 9 (0.2%)
+- Failed at extract: 78 (1.4%)
 
 ## Extraction Methods
 
-- JSON-LD: 4059/5276 (76.9%)
-- Microdata: 522/5276 (9.9%)
-- Both: 0/5276 (0.0%)
-- Neither: 695/5276 (13.2%)
+- JSON-LD: 4277/5578 (76.7%)
+- Microdata: 564/5578 (10.1%)
+- Both: 0/5578 (0.0%)
+- Neither: 737/5578 (13.2%)
 
 ## Ingredient Parsing
 
-- Total ingredients: 58217
-- Volume-to-weight converted: 14942/35710 (41.8%)
-- Unknown ingredient (no density data): 12403
-- Already has weight: 8365
-- No volume unit (count-based): 22243
-- Metric converted (oz→g): 2416
-- Metric converted (lb→g): 1609
+- Total ingredients: 61541
+- Volume-to-weight converted: 15711/37843 (41.5%)
+- Unknown ingredient (no density data): 13147
+- Already has weight: 8985
+- No volume unit (count-based): 23427
+- Metric converted (oz→g): 2555
+- Metric converted (lb→g): 1734
 
 ## AI Cache
 
-- Cache hits: 5212/5212 (100.0%)
-- API calls: 0/5212 (0.0%)
+- Cache hits: 5499/5499 (100.0%)
+- API calls: 0/5499 (0.0%)
 
 ## By Site
 
@@ -35,72 +35,84 @@
 |------|-----------|-------|------|
 | 101cookbooks.com | 68 | 68 | 100.0% |
 | acouplecooks.com | 50 | 50 | 100.0% |
-| alexandracooks.com | 100 | 100 | 100.0% |
-| allrecipes.com | 100 | 100 | 100.0% |
-| altonbrown.com | 100 | 100 | 100.0% |
+| alexandracooks.com | 101 | 101 | 100.0% |
+| allrecipes.com | 104 | 104 | 100.0% |
+| altonbrown.com | 101 | 101 | 100.0% |
+| americastestkitchen.com | 58 | 58 | 100.0% |
 | asweetpeachef.com | 31 | 31 | 100.0% |
 | averiecooks.com | 1 | 3 | 33.3% |
 | bakerita.com | 7 | 7 | 100.0% |
 | bakingbites.com | 10 | 11 | 90.9% |
 | barefeetinthekitchen.com | 99 | 100 | 99.0% |
 | bbcgoodfood.com | 99 | 100 | 99.0% |
-| bonappetit.com | 41 | 41 | 100.0% |
+| bonappetit.com | 45 | 45 | 100.0% |
+| bowlofdelicious.com | 1 | 1 | 100.0% |
 | browneyedbaker.com | 100 | 100 | 100.0% |
 | budgetbytes.com | 2 | 2 | 100.0% |
 | butterwithasideofbread.com | 44 | 44 | 100.0% |
 | cafedelites.com | 55 | 55 | 100.0% |
 | chefspencil.com | 4 | 4 | 100.0% |
 | chopstickchronicles.com | 2 | 2 | 100.0% |
+| cocktailswithsuderman.substack.com | 0 | 4 | 0.0% |
 | cookieandkate.com | 14 | 14 | 100.0% |
+| cooking.nytimes.com | 51 | 51 | 100.0% |
 | cookingclassy.com | 56 | 56 | 100.0% |
 | damndelicious.net | 26 | 26 | 100.0% |
 | davidlebovitz.com | 7 | 7 | 100.0% |
-| delish.com | 100 | 100 | 100.0% |
+| delish.com | 101 | 101 | 100.0% |
+| dinneratthezoo.com | 1 | 1 | 100.0% |
 | dinnerthendessert.com | 4 | 4 | 100.0% |
 | downshiftology.com | 100 | 100 | 100.0% |
 | eatingwell.com | 100 | 100 | 100.0% |
 | epicurious.com | 1 | 1 | 100.0% |
+| feedbin.com | 0 | 1 | 0.0% |
 | food.com | 24 | 27 | 88.9% |
+| food52.com | 0 | 1 | 0.0% |
 | foodandwine.com | 99 | 99 | 100.0% |
+| foodnetwork.com | 1 | 1 | 100.0% |
 | gimmesomeoven.com | 6 | 6 | 100.0% |
 | gonnawantseconds.com | 58 | 59 | 98.3% |
+| halfbakedharvest.com | 5 | 5 | 100.0% |
 | hostthetoast.com | 9 | 9 | 100.0% |
 | howsweeteats.com | 82 | 82 | 100.0% |
 | iamafoodblog.com | 99 | 100 | 99.0% |
 | indianhealthyrecipes.com | 25 | 25 | 100.0% |
 | inspiredtaste.net | 100 | 100 | 100.0% |
-| japanesecooking101.com | 100 | 100 | 100.0% |
+| japanesecooking101.com | 106 | 106 | 100.0% |
 | jocooks.com | 77 | 77 | 100.0% |
 | joyfoodsunshine.com | 88 | 88 | 100.0% |
-| justonecookbook.com | 16 | 17 | 94.1% |
+| justonecookbook.com | 16 | 22 | 72.7% |
 | keviniscooking.com | 34 | 34 | 100.0% |
-| kingarthurbaking.com | 4 | 4 | 100.0% |
+| kingarthurbaking.com | 5 | 5 | 100.0% |
+| kiyafries.com | 1 | 1 | 100.0% |
 | lecremedelacrumb.com | 27 | 27 | 100.0% |
 | lifemadesweeter.com | 6 | 6 | 100.0% |
 | littlesweetbaker.com | 23 | 23 | 100.0% |
-| loveandlemons.com | 35 | 35 | 100.0% |
+| loveandlemons.com | 37 | 37 | 100.0% |
 | loveandoliveoil.com | 95 | 96 | 99.0% |
 | marthastewart.com | 6 | 7 | 85.7% |
 | momontimeout.com | 97 | 100 | 97.0% |
 | mybakingaddiction.com | 94 | 97 | 96.9% |
 | natashaskitchen.com | 100 | 100 | 100.0% |
 | nomnompaleo.com | 3 | 6 | 50.0% |
-| norecipes.com | 100 | 100 | 100.0% |
+| norecipes.com | 101 | 101 | 100.0% |
 | ohmyveggies.com | 3 | 6 | 50.0% |
 | onceuponachef.com | 92 | 92 | 100.0% |
 | onmykidsplate.com | 18 | 18 | 100.0% |
 | peasandcrayons.com | 51 | 52 | 98.1% |
-| recipetineats.com | 9 | 9 | 100.0% |
+| pinchandswirl.com | 1 | 1 | 100.0% |
+| recipetineats.com | 10 | 10 | 100.0% |
+| runningwithspoons.com | 1 | 1 | 100.0% |
 | sallysbakingaddiction.com | 34 | 34 | 100.0% |
-| seriouseats.com | 97 | 98 | 99.0% |
+| seriouseats.com | 169 | 176 | 96.0% |
 | simplyrecipes.com | 99 | 100 | 99.0% |
 | skinnytaste.com | 2 | 2 | 100.0% |
 | slenderkitchen.com | 55 | 55 | 100.0% |
-| smittenkitchen.com | 964 | 982 | 98.2% |
+| smittenkitchen.com | 1033 | 1051 | 98.3% |
 | spendwithpennies.com | 35 | 35 | 100.0% |
 | spoonforkbacon.com | 2 | 2 | 100.0% |
 | sprinklebakes.com | 74 | 92 | 80.4% |
-| sudachirecipes.com | 94 | 94 | 100.0% |
+| sudachirecipes.com | 97 | 97 | 100.0% |
 | sweetandsavorymeals.com | 100 | 100 | 100.0% |
 | tasteofhome.com | 100 | 100 | 100.0% |
 | tastesbetterfromscratch.com | 3 | 3 | 100.0% |
@@ -108,25 +120,47 @@
 | theforkedspoon.com | 100 | 100 | 100.0% |
 | themediterraneandish.com | 100 | 100 | 100.0% |
 | themodernproper.com | 14 | 14 | 100.0% |
-| thepioneerwoman.com | 100 | 100 | 100.0% |
+| thepioneerwoman.com | 102 | 102 | 100.0% |
 | therecipecritic.com | 34 | 34 | 100.0% |
+| thespruceeats.com | 0 | 1 | 0.0% |
 | thestayathomechef.com | 12 | 12 | 100.0% |
 | thewoksoflife.com | 24 | 24 | 100.0% |
 | twopeasandtheirpod.com | 22 | 23 | 95.7% |
+| virtualweberbullet.com | 0 | 4 | 0.0% |
 | wellplated.com | 35 | 35 | 100.0% |
 | whiteonricecouple.com | 83 | 83 | 100.0% |
 | yellowblissroad.com | 31 | 31 | 100.0% |
 
 ## Failed URLs by Error
 
-### Cached fetch error (1 URLs)
+### Cached fetch error (9 URLs)
 
+- https://food52.com/recipes/85546-pickle-sandwich-recipe
 - https://nomnompaleo.com/2017/08/15/6053
+- https://www.justonecookbook.com/furikake-chex-mix/
+- https://www.justonecookbook.com/japanese-egg-sandwich-tamago-sando/
+- https://www.justonecookbook.com/japanese-potato-salad/
+- https://www.justonecookbook.com/pizza-toast/
+- https://www.justonecookbook.com/wprm_print/japanese-milk-bread-shokupan
+- https://www.seriouseats.com/easy-creamy-one-pot-weeknight-salmon-chowder-recipe
+- https://www.thespruceeats.com/classic-french-aligot-recipe-1375727
 
-### Missing required field: recipeIngredient (empty) (63 URLs)
+### Missing required field: name (4 URLs)
+
+- https://www.seriouseats.com/canederli-di-pane-italian-bread-dumpling-recipe-11679155?print
+- https://www.seriouseats.com/roasted-cauliflower-soup-curry-cream-8748572?print
+- https://www.seriouseats.com/the-best-classic-chicken-salad-recipe?print
+- https://www.seriouseats.com/toad-in-the-hole-recipe-11746714?print
+
+### Missing required field: recipeIngredient (empty) (73 URLs)
 
 - http://bakingbites.com/2017/02/how-to-use-freeze-dried-fruit-in-baking/
 - https://barefeetinthekitchen.com/diy-fruit-and-vegetable-wash-homemade-produce-wash-recipe/
+- https://cocktailswithsuderman.substack.com/p/a-question-about-the-clover-club
+- https://cocktailswithsuderman.substack.com/p/a-thanksgiving-sidecar-with-jellied
+- https://cocktailswithsuderman.substack.com/p/hot-chocolate-manhattan?utm_source=post-email-title&publication_id=10343&post_id=154956990&utm_campaign=email-post-title&isFreemail=false&r=7g75u&triedRedirect=true&utm_medium=email
+- https://cocktailswithsuderman.substack.com/p/lol-its-an-appletini?utm_source=post-email-title&publication_id=10343&post_id=116330275&isFreemail=false&utm_medium=email
+- https://feedbin.com/entries/4967860190
 - https://food.com/recipe/breaded-eggplant-oven-baked-160089
 - https://food.com/recipe/egg-in-a-basket-421172
 - https://food.com/recipe/mash-potato-and-stuffing-balls-445449
@@ -167,6 +201,7 @@
 - https://www.mybakingaddiction.com/apple-cinnamon-cheesecake-recipe/
 - https://www.mybakingaddiction.com/smores-recipe/
 - https://www.mybakingaddiction.com/tollhouse-cookies-recipe/
+- https://www.seriouseats.com/food-lab-complete-guide-to-sous-vide-steak
 - https://www.seriouseats.com/new-orleans-bbq-shrimp-recipe-11891402
 - https://www.simplyrecipes.com/recipes/the_finger_test_to_check_the_doneness_of_meat/
 - https://www.sprinklebakes.com/2018/04/celebrate-like-royal-with-lemon.html
@@ -188,6 +223,10 @@
 - https://www.sprinklebakes.com/2020/12/peppermint-stripe-mousse-cakes.html
 - https://www.sprinklebakes.com/2021/01/fancy-chocolate-covered-strawberries.html
 - https://www.twopeasandtheirpod.com/mixed-berry-cobbler-recipe/
+- https://www.virtualweberbullet.com/best-ribs-in-the-universe-mike-scrutchfield/
+- https://www.virtualweberbullet.com/brisket-high-heat/
+- https://www.virtualweberbullet.com/pork-butt-smoke-spice-renowned-mr-brown/
+- https://www.virtualweberbullet.com/spareribs-3-2-1-method/
 
 ### Missing required field: recipeInstructions (empty) (1 URLs)
 
