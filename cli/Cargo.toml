@@ -65,3 +65,6 @@ rand_chacha = "0.10"
 
 # Headless browser
 headless_chrome = "1.0"
+
+[dev-dependencies]
+tempfile = "3"

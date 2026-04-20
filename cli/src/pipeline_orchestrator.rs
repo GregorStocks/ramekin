@@ -32,8 +32,6 @@ pub struct OrchestratorConfig {
     pub run_id: String,
     pub test_urls_file: PathBuf,
     pub output_dir: PathBuf,
-    pub limit: Option<usize>,
-    pub site_filter: Option<String>,
     pub delay_ms: u64,
     pub offline: bool,
     pub force_refetch: bool,
@@ -48,8 +46,6 @@ impl Default for OrchestratorConfig {
             run_id: Utc::now().format("%Y-%m-%d_%H-%M-%S%.3f").to_string(),
             test_urls_file: PathBuf::from("data/test-urls.json"),
             output_dir: PathBuf::from("data/pipeline-runs"),
-            limit: None,
-            site_filter: None,
             delay_ms: 1000,
             offline: true,
             force_refetch: false,
@@ -91,8 +87,6 @@ pub struct RunManifest {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ManifestConfig {
     pub test_urls_file: String,
-    pub limit: Option<usize>,
-    pub site_filter: Option<String>,
     pub delay_ms: u64,
     pub offline: bool,
     pub force_refetch: bool,
@@ -218,21 +212,9 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     let mut urls_to_process: Vec<(String, String)> = Vec::new(); // (url, domain)
 
     for site in &test_urls.sites {
-        // Apply site filter
-        if let Some(ref filter) = config.site_filter {
-            if !site.domain.contains(filter) {
-                continue;
-            }
-        }
-
         for url in &site.urls {
             urls_to_process.push((url.clone(), site.domain.clone()));
         }
-    }
-
-    // Apply limit
-    if let Some(limit) = config.limit {
-        urls_to_process.truncate(limit);
     }
 
     // Load tags for auto-tag evaluation
@@ -250,8 +232,6 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         completed_at: None,
         config: ManifestConfig {
             test_urls_file: config.test_urls_file.display().to_string(),
-            limit: config.limit,
-            site_filter: config.site_filter.clone(),
             delay_ms: config.delay_ms,
             offline: config.offline,
             force_refetch: config.force_refetch,
@@ -287,9 +267,6 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     println!("======================");
     println!("Run ID: {}", run_id);
     println!("URLs to process: {}", total_urls);
-    if let Some(ref filter) = config.site_filter {
-        println!("Site filter: {}", filter);
-    }
     println!();
 
     // In prompt mode, ensure staging directory exists and is empty
@@ -444,6 +421,25 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         .into_inner();
 
     let elapsed = start_time.elapsed();
+
+    // Write allowlisted per-URL snapshots before the final manifest so that a
+    // snapshot failure propagates as a failed run. On failure we still record
+    // a terminal manifest status so external consumers aren't left observing a
+    // run stuck in "running".
+    if let Err(e) = write_pipeline_snapshots(&run_dir) {
+        let failed_manifest = RunManifest {
+            completed_at: Some(Utc::now().to_rfc3339()),
+            status: RunStatus::Failed,
+            ..manifest
+        };
+        if let Err(save_err) = save_manifest(&run_dir, &failed_manifest) {
+            tracing::warn!(
+                "Failed to persist failed manifest after snapshot error: {}",
+                save_err
+            );
+        }
+        return Err(e);
+    }
 
     // Update manifest with completion
     let final_manifest = RunManifest {
@@ -763,6 +759,21 @@ fn save_results(run_dir: &Path, results: &PipelineResults) -> Result<()> {
     let json = serde_json::to_string_pretty(results)?;
     fs::write(run_dir.join("results.json"), json)?;
     Ok(())
+}
+
+fn write_pipeline_snapshots(run_dir: &Path) -> Result<()> {
+    let allowlist = PathBuf::from("data/pipeline-snapshot-urls.json");
+    let snapshots_dir = PathBuf::from("data/pipeline-snapshots");
+
+    if !allowlist.exists() {
+        tracing::warn!(
+            "Snapshot allowlist {} not found; skipping snapshot write",
+            allowlist.display()
+        );
+        return Ok(());
+    }
+
+    crate::pipeline::snapshots::write_snapshots(run_dir, &allowlist, &snapshots_dir)
 }
 
 fn truncate_url(url: &str, max_len: usize) -> String {
