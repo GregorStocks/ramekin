@@ -165,6 +165,16 @@ impl CachingClient {
         Ok(())
     }
 
+    /// Invalidate the cache entry for a single URL so the next fetch goes to
+    /// the network. Used by `FORCE_REFETCH` to refresh a specific URL without
+    /// clearing the entire cache.
+    pub fn invalidate_cache(&self, url: &str) -> std::io::Result<()> {
+        if let Some(cache) = &self.cache {
+            cache.remove(url)?;
+        }
+        Ok(())
+    }
+
     /// Check if a URL is cached.
     pub fn is_cached(&self, url: &str) -> bool {
         self.cache

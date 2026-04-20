@@ -192,4 +192,16 @@ impl DiskCache {
         }
         Ok(())
     }
+
+    /// Remove the cached response and any negative-cache entry for a single URL.
+    ///
+    /// Intended for `FORCE_REFETCH`: invalidate a specific entry so the next
+    /// fetch goes to the network. Missing entries are a no-op.
+    pub fn remove(&self, url: &str) -> std::io::Result<()> {
+        let dir = self.url_dir(url);
+        if dir.exists() {
+            fs::remove_dir_all(&dir)?;
+        }
+        Ok(())
+    }
 }

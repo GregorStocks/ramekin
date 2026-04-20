@@ -98,7 +98,15 @@ pub async fn run_fetch_html(url: &str, client: &CachingClient, force: bool) -> S
         false
     };
 
-    // Fetch (this will use cache internally with ETag validation if not force)
+    // Force refetch: the client serves cache hits directly, so explicitly
+    // invalidate the entry to guarantee the next fetch hits the network.
+    if force {
+        if let Err(e) = client.invalidate_cache(url) {
+            tracing::warn!(url, error = %e, "failed to invalidate cache before force refetch");
+        }
+    }
+
+    // Fetch (this will hit the disk cache unless force invalidated it above)
     let result = client.fetch_html(url).await;
     let duration_ms = start.elapsed().as_millis() as u64;
 
