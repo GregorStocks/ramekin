@@ -33,6 +33,12 @@ export default function TagsPage() {
   const [deleteTag, setDeleteTag] = createSignal<TagItem | null>(null);
   const [deleting, setDeleting] = createSignal(false);
 
+  // Bulk edit state
+  const [bulkEditing, setBulkEditing] = createSignal(false);
+  const [bulkNames, setBulkNames] = createSignal<Record<string, string>>({});
+  const [bulkErrors, setBulkErrors] = createSignal<Record<string, string>>({});
+  const [bulkSaving, setBulkSaving] = createSignal(false);
+
   const loadTags = async () => {
     setLoading(true);
     setError(null);
@@ -63,6 +69,69 @@ export default function TagsPage() {
     setEditError(null);
   };
 
+  const startBulkEditing = () => {
+    setEditingId(null);
+    setEditName("");
+    setEditError(null);
+    setError(null);
+    setBulkErrors({});
+    setBulkNames(
+      Object.fromEntries(tags().map((tag) => [tag.id, tag.name] as const)),
+    );
+    setBulkEditing(true);
+  };
+
+  const cancelBulkEditing = () => {
+    setBulkEditing(false);
+    setBulkNames({});
+    setBulkErrors({});
+    setBulkSaving(false);
+  };
+
+  const updateBulkName = (tagId: string, value: string) => {
+    setBulkNames((current) => ({ ...current, [tagId]: value }));
+    setBulkErrors((current) => {
+      if (!current[tagId]) return current;
+      const next = { ...current };
+      delete next[tagId];
+      return next;
+    });
+  };
+
+  const normalizedBulkName = (tag: TagItem) =>
+    (bulkNames()[tag.id] ?? tag.name).trim();
+
+  const pendingBulkChanges = () =>
+    tags().filter((tag) => normalizedBulkName(tag) !== tag.name);
+
+  const validateBulkChanges = () => {
+    const nextErrors: Record<string, string> = {};
+    const byNormalizedName = new Map<string, string[]>();
+
+    for (const tag of tags()) {
+      const nextName = normalizedBulkName(tag);
+      if (!nextName) {
+        nextErrors[tag.id] = "Tag name cannot be empty";
+        continue;
+      }
+
+      const key = nextName.toLowerCase();
+      const ids = byNormalizedName.get(key) ?? [];
+      ids.push(tag.id);
+      byNormalizedName.set(key, ids);
+    }
+
+    for (const ids of byNormalizedName.values()) {
+      if (ids.length < 2) continue;
+      for (const id of ids) {
+        nextErrors[id] = "Two tags cannot end up with the same name";
+      }
+    }
+
+    setBulkErrors(nextErrors);
+    return Object.keys(nextErrors).length === 0;
+  };
+
   const handleRename = async (tagId: string) => {
     const newName = editName().trim();
     if (!newName) {
@@ -85,6 +154,36 @@ export default function TagsPage() {
       setEditError(message);
     } finally {
       setSaving(false);
+    }
+  };
+
+  const handleBulkSave = async () => {
+    if (!validateBulkChanges()) return;
+
+    const changedTags = pendingBulkChanges();
+    if (changedTags.length === 0) {
+      cancelBulkEditing();
+      return;
+    }
+
+    setBulkSaving(true);
+    setError(null);
+
+    try {
+      for (const tag of changedTags) {
+        await getTagsApi().renameTag({
+          id: tag.id,
+          renameTagRequest: { name: normalizedBulkName(tag) },
+        });
+      }
+      await refreshTags();
+      await loadTags();
+      cancelBulkEditing();
+    } catch (err) {
+      const message = await extractApiError(err, "Failed to rename tags");
+      setError(message);
+    } finally {
+      setBulkSaving(false);
     }
   };
 
@@ -128,7 +227,43 @@ export default function TagsPage() {
     <div class="tags-page">
       <div class="page-header">
         <h2>Manage Tags</h2>
+        <div class="tags-page-actions">
+          <Show
+            when={bulkEditing()}
+            fallback={
+              <button class="btn btn-primary" onClick={startBulkEditing}>
+                Bulk rename
+              </button>
+            }
+          >
+            <button
+              class="btn btn-primary"
+              onClick={handleBulkSave}
+              disabled={bulkSaving()}
+            >
+              {bulkSaving()
+                ? "Saving..."
+                : `Save ${pendingBulkChanges().length} change${
+                    pendingBulkChanges().length === 1 ? "" : "s"
+                  }`}
+            </button>
+            <button
+              class="btn"
+              onClick={cancelBulkEditing}
+              disabled={bulkSaving()}
+            >
+              Cancel
+            </button>
+          </Show>
+        </div>
       </div>
+
+      <Show when={bulkEditing()}>
+        <p class="tags-bulk-help">
+          Edit tag names in place, including namespace changes like{" "}
+          <code>course:breakfast</code>. Only changed rows will be saved.
+        </p>
+      </Show>
 
       <Show when={error()}>
         <div class="error-message">{error()}</div>
@@ -158,67 +293,113 @@ export default function TagsPage() {
                     return (
                       <div class="tag-row">
                         <Show
-                          when={editingId() === tag.id}
+                          when={bulkEditing()}
                           fallback={
-                            <>
-                              <span
-                                class="tag-name"
-                                onClick={() => navigateToFiltered(tag.name)}
-                                title="Click to view recipes with this tag"
-                              >
-                                <Show when={parsed.namespace}>
-                                  <span class="tag-chip-ns">
-                                    {parsed.namespace}:
+                            <Show
+                              when={editingId() === tag.id}
+                              fallback={
+                                <>
+                                  <span
+                                    class="tag-name"
+                                    onClick={() => navigateToFiltered(tag.name)}
+                                    title="Click to view recipes with this tag"
+                                  >
+                                    <Show when={parsed.namespace}>
+                                      <span class="tag-chip-ns">
+                                        {parsed.namespace}:
+                                      </span>
+                                    </Show>
+                                    {parsed.value}
                                   </span>
-                                </Show>
-                                {parsed.value}
-                              </span>
-                              <span class="tag-count">
-                                {tag.recipeCount}{" "}
-                                {tag.recipeCount === 1 ? "recipe" : "recipes"}
-                              </span>
+                                  <span class="tag-count">
+                                    {tag.recipeCount}{" "}
+                                    {tag.recipeCount === 1
+                                      ? "recipe"
+                                      : "recipes"}
+                                  </span>
+                                  <div class="tag-actions">
+                                    <button
+                                      class="btn btn-small"
+                                      onClick={() => startEditing(tag)}
+                                    >
+                                      Rename
+                                    </button>
+                                    <button
+                                      class="btn btn-small btn-danger"
+                                      onClick={() => confirmDelete(tag)}
+                                    >
+                                      Delete
+                                    </button>
+                                  </div>
+                                </>
+                              }
+                            >
+                              <input
+                                type="text"
+                                class="tag-edit-input"
+                                value={editName()}
+                                onInput={(e) =>
+                                  setEditName(e.currentTarget.value)
+                                }
+                                onKeyDown={(e) => handleKeyDown(e, tag.id)}
+                                autofocus
+                              />
+                              <Show when={editError()}>
+                                <span class="edit-error">{editError()}</span>
+                              </Show>
                               <div class="tag-actions">
                                 <button
-                                  class="btn btn-small"
-                                  onClick={() => startEditing(tag)}
+                                  class="btn btn-small btn-primary"
+                                  onClick={() => handleRename(tag.id)}
+                                  disabled={saving()}
                                 >
-                                  Rename
+                                  {saving() ? "Saving..." : "Save"}
                                 </button>
                                 <button
-                                  class="btn btn-small btn-danger"
-                                  onClick={() => confirmDelete(tag)}
+                                  class="btn btn-small"
+                                  onClick={cancelEditing}
+                                  disabled={saving()}
                                 >
-                                  Delete
+                                  Cancel
                                 </button>
                               </div>
-                            </>
+                            </Show>
                           }
                         >
-                          <input
-                            type="text"
-                            class="tag-edit-input"
-                            value={editName()}
-                            onInput={(e) => setEditName(e.currentTarget.value)}
-                            onKeyDown={(e) => handleKeyDown(e, tag.id)}
-                            autofocus
-                          />
-                          <Show when={editError()}>
-                            <span class="edit-error">{editError()}</span>
-                          </Show>
+                          <div class="tag-bulk-fields">
+                            <label
+                              class="tag-bulk-label"
+                              for={`bulk-tag-${tag.id}`}
+                            >
+                              Rename {tag.name}
+                            </label>
+                            <input
+                              id={`bulk-tag-${tag.id}`}
+                              type="text"
+                              class="tag-edit-input"
+                              value={bulkNames()[tag.id] ?? tag.name}
+                              onInput={(e) =>
+                                updateBulkName(tag.id, e.currentTarget.value)
+                              }
+                              aria-label={`Rename tag ${tag.name}`}
+                            />
+                            <Show when={bulkErrors()[tag.id]}>
+                              <span class="edit-error">
+                                {bulkErrors()[tag.id]}
+                              </span>
+                            </Show>
+                          </div>
+                          <span class="tag-count">
+                            {tag.recipeCount}{" "}
+                            {tag.recipeCount === 1 ? "recipe" : "recipes"}
+                          </span>
                           <div class="tag-actions">
                             <button
-                              class="btn btn-small btn-primary"
-                              onClick={() => handleRename(tag.id)}
-                              disabled={saving()}
+                              class="btn btn-small btn-danger"
+                              onClick={() => confirmDelete(tag)}
+                              disabled={bulkSaving()}
                             >
-                              {saving() ? "Saving..." : "Save"}
-                            </button>
-                            <button
-                              class="btn btn-small"
-                              onClick={cancelEditing}
-                              disabled={saving()}
-                            >
-                              Cancel
+                              Delete
                             </button>
                           </div>
                         </Show>

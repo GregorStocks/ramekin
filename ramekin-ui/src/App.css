@@ -2735,11 +2735,27 @@ textarea:focus-visible {
 
 .tags-page .page-header {
   margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .tags-page .page-header h2 {
   margin: 0;
   font-size: 1.5rem;
+}
+
+.tags-page-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tags-bulk-help {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
 }
 
 .tags-page .loading-text,
@@ -2790,6 +2806,18 @@ textarea:focus-visible {
   gap: 0.5rem;
 }
 
+.tag-bulk-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.tag-bulk-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
 .tag-edit-input {
   flex: 1;
   padding: 0.375rem 0.5rem;
@@ -2814,6 +2842,18 @@ textarea:focus-visible {
 .delete-warning {
   color: var(--accent);
   margin-top: 0.5rem;
+}
+
+@media (max-width: 700px) {
+  .tag-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tag-actions {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
 }
 
 /* Meal Plan Page */

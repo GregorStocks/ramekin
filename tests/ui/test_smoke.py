@@ -111,6 +111,38 @@ def create_recipe_for_manual_photo(api_url: str) -> tuple[str, str, str]:
         return username, password, recipe.id
 
 
+def create_user_with_flat_tags(api_url: str) -> tuple[str, str]:
+    """Create a user with a couple of uncategorized tags for bulk rename UI."""
+    username = f"ui_tags_{uuid.uuid4().hex[:8]}"
+    password = "testpass123"
+    config = Configuration(host=api_url)
+
+    with ApiClient(config) as client:
+        auth_api = AuthApi(client)
+        signup = auth_api.signup(SignupRequest(username=username, password=password))
+
+    authed_config = Configuration(host=api_url)
+    authed_config.access_token = signup.token
+
+    with ApiClient(authed_config) as client:
+        recipes_api = RecipesApi(client)
+        recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title="Bulk tag seed",
+                instructions="Cook it",
+                ingredients=[
+                    Ingredient(
+                        item="eggs",
+                        measurements=[Measurement(amount="2", unit=None)],
+                    )
+                ],
+                tags=["breakfast", "chicken"],
+            )
+        )
+
+    return username, password
+
+
 def test_login_page_loads(page: Page, ui_url: str):
     """Verify the login page loads correctly."""
     page.goto(ui_url)
@@ -153,6 +185,31 @@ def test_edit_recipe_page(logged_in_page: Page):
 
     # Should see edit form with textarea
     expect(logged_in_page.locator("textarea").first).to_be_visible()
+
+
+def test_tags_page_bulk_rename(page: Page, ui_url: str, api_url: str):
+    """Verify the tags page can rename multiple tags in one save."""
+    username, password = create_user_with_flat_tags(api_url)
+
+    page.goto(ui_url)
+    page.wait_for_selector("input[type='text']")
+    page.fill("input[type='text']", username)
+    page.fill("input[type='password']", password)
+    page.click("button[type='submit']")
+    page.wait_for_selector(".recipe-card")
+
+    page.goto(f"{ui_url}/tags")
+    page.wait_for_selector(".tags-list")
+
+    page.get_by_role("button", name="Bulk rename").click()
+    page.get_by_label("Rename tag breakfast").fill("course:breakfast")
+    page.get_by_label("Rename tag chicken").fill("ingredient:chicken")
+    page.get_by_role("button", name="Save 2 changes").click()
+
+    expect(page.locator(".tag-row").filter(has_text="course:breakfast")).to_be_visible()
+    expect(
+        page.locator(".tag-row").filter(has_text="ingredient:chicken")
+    ).to_be_visible()
 
 
 def test_mobile_nav_collapses_into_menu(logged_in_page: Page):
