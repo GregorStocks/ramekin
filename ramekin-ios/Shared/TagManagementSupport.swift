@@ -102,21 +102,12 @@ enum APIErrorFormatter {
 
 enum TagManagementSupport {
     static func parseTagName(_ name: String) -> (namespace: String?, value: String) {
-        let trimmed = name.trimmingCharacters(in: .whitespacesAndNewlines)
-        let parts = trimmed.split(separator: ":", maxSplits: 1, omittingEmptySubsequences: false)
-        if parts.count == 2 {
-            let namespace = parts[0].trimmingCharacters(in: .whitespacesAndNewlines)
-            let value = parts[1].trimmingCharacters(in: .whitespacesAndNewlines)
-            if !namespace.isEmpty && !value.isEmpty {
-                return (namespace: namespace, value: value)
-            }
-        }
-        return (namespace: nil, value: trimmed)
+        let parsed = TagHierarchySupport.parse(name: name)
+        return (namespace: parsed.namespace, value: parsed.value)
     }
 
     static func normalizedName(from rawName: String) -> String? {
-        let trimmed = rawName.trimmingCharacters(in: .whitespacesAndNewlines)
-        return trimmed.isEmpty ? nil : trimmed
+        TagHierarchySupport.normalizedValue(from: rawName)
     }
 
     static func recipeCountText(for count: Int64) -> String {

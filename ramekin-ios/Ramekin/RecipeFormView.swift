@@ -21,7 +21,10 @@ struct RecipeFormView: View {
     @State private var sourceUrl = ""
     @State private var sourceName = ""
     @State private var tags: [String] = []
-    @State private var newTag = ""
+    @State private var availableTags: [TagItem] = []
+    @State private var selectedTagNamespace: String?
+    @State private var newTagValue = ""
+    @State private var newNamespace = ""
     @State private var notes = ""
     @State private var nutritionalInfo = ""
     @State private var ingredients: [EditableIngredient] = [.empty()]
@@ -37,6 +40,16 @@ struct RecipeFormView: View {
         !title.trimmingCharacters(in: .whitespaces).isEmpty
             && !instructions.trimmingCharacters(in: .whitespaces).isEmpty
             && !isSaving
+    }
+
+    private var resolvedSelectedNamespace: String? {
+        if let selectedTagNamespace {
+            if selectedTagNamespace.isEmpty {
+                return TagHierarchySupport.normalizedNamespace(from: newNamespace)
+            }
+            return selectedTagNamespace
+        }
+        return nil
     }
 
     var body: some View {
@@ -71,9 +84,11 @@ struct RecipeFormView: View {
         .disabled(isSaving)
         .overlay { if isLoading { ProgressView("Loading recipe...") } }
         .task {
+            availableTags = TagFilterCache.loadAvailableTags()
             if case .edit(let recipeId) = mode {
                 await loadRecipe(id: recipeId)
             }
+            await loadAvailableTags()
         }
         .onChange(of: selectedPhotoItems) { items in
             if !items.isEmpty {
@@ -161,16 +176,14 @@ extension RecipeFormView {
     }
 
     private var tagsSection: some View {
-        Section("Tags") {
-            if !tags.isEmpty { tagChips }
-            HStack {
-                TextField("Add tag", text: $newTag)
-                    .autocapitalization(.none).autocorrectionDisabled()
-                    .onSubmit { addTag() }
-                Button("Add") { addTag() }
-                    .disabled(newTag.trimmingCharacters(in: .whitespaces).isEmpty)
-            }
-        }
+        RecipeFormTagsSection(
+            tags: $tags,
+            availableTags: $availableTags,
+            selectedTagNamespace: $selectedTagNamespace,
+            newTagValue: $newTagValue,
+            newNamespace: $newNamespace,
+            onAddTag: addTag
+        )
     }
 
     private var notesSection: some View {
@@ -254,24 +267,6 @@ extension RecipeFormView {
         }
     }
 
-    private var tagChips: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
-                ForEach(tags, id: \.self) { tag in
-                    HStack(spacing: 4) {
-                        Text(tag).font(.caption)
-                        Button { tags.removeAll { $0 == tag } } label: {
-                            Image(systemName: "xmark.circle.fill").font(.caption)
-                        }
-                    }
-                    .padding(.horizontal, 10).padding(.vertical, 4)
-                    .background(Color.orange.opacity(0.2))
-                    .foregroundColor(.orange).clipShape(Capsule())
-                }
-            }
-        }
-    }
-
     private var photoGrid: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 12) {
@@ -335,9 +330,47 @@ extension RecipeFormView {
     }
 
     private func addTag() {
-        let tag = newTag.trimmingCharacters(in: .whitespaces).lowercased()
-        if !tag.isEmpty && !tags.contains(tag) { tags.append(tag) }
-        newTag = ""
+        if selectedTagNamespace == nil {
+            let parsed = TagHierarchySupport.parse(name: newTagValue)
+            if parsed.namespace != nil {
+                appendTagIfNeeded(parsed.name)
+                newTagValue = ""
+                return
+            }
+        }
+
+        guard let tag = TagHierarchySupport.formattedName(
+            namespace: resolvedSelectedNamespace,
+            value: newTagValue
+        ) else {
+            return
+        }
+
+        appendTagIfNeeded(tag)
+        newTagValue = ""
+        if selectedTagNamespace?.isEmpty == true {
+            selectedTagNamespace = resolvedSelectedNamespace
+            newNamespace = ""
+        }
+    }
+
+    private func appendTagIfNeeded(_ name: String) {
+        guard !tags.contains(where: { $0.caseInsensitiveCompare(name) == .orderedSame }) else {
+            return
+        }
+        tags.append(name)
+    }
+
+    private func loadAvailableTags() async {
+        do {
+            let response = try await TagsAPI.listAllTags()
+            await MainActor.run {
+                availableTags = response.tags
+                TagFilterCache.saveAvailableTags(response.tags)
+            }
+        } catch is CancellationError {
+        } catch {
+        }
     }
 
     private func save() async {
