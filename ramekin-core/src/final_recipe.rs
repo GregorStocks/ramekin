@@ -43,9 +43,14 @@ pub fn build_final_recipe(
     suggested_tags: Option<&[String]>,
     applied_tags: Option<&[String]>,
 ) -> FinalRecipe {
+    // Match the server's SaveRecipeStep behaviour: if the parse_ingredients
+    // step produced output (even an empty vec), use it; only fall back to
+    // line-splitting raw text when the step was absent entirely. Collapsing
+    // Some([]) into the fallback would invent ingredients that never existed
+    // in the real pipeline output and corrupt snapshot diffs.
     let ingredients = match parsed_ingredients {
-        Some(parsed) if !parsed.is_empty() => parsed.to_vec(),
-        _ => raw_recipe
+        Some(parsed) => parsed.to_vec(),
+        None => raw_recipe
             .ingredients
             .lines()
             .filter(|line| !line.trim().is_empty())
@@ -146,11 +151,14 @@ mod tests {
     }
 
     #[test]
-    fn falls_back_to_line_split_when_parsed_empty() {
+    fn preserves_empty_ingredients_when_parse_step_produced_empty() {
+        // When parse_ingredients emits an empty vec we trust it — the server's
+        // SaveRecipeStep does the same. Falling back to line-splitting raw
+        // text here would invent ingredients that aren't really in the recipe.
         let raw = raw_recipe_fixture();
         let empty: Vec<ParsedIngredient> = Vec::new();
         let fr = build_final_recipe(&raw, Some(&empty), None, None);
-        assert_eq!(fr.ingredients.len(), 2);
+        assert!(fr.ingredients.is_empty());
     }
 
     #[test]
