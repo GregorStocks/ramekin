@@ -149,12 +149,7 @@
     },
     {
       "raw": "To serve:",
-      "expected": {
-        "item": "To serve:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Crackers or matzo, sieved hard-boiled egg, chopped flat-leaf parsley and/or chives, small pickles or cornichons, additional caramelized onions or pickled shallots or red onions (recipe below)",
@@ -162,6 +157,7 @@
         "item": "Crackers or matzo, sieved hard-boiled egg, chopped flat-leaf parsley and/or chives, small pickles or cornichons, additional caramelized onions or pickled shallots or red onions (recipe below)",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Snacks"
       }
     }

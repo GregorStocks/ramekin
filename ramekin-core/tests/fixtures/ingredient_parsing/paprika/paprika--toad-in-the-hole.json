@@ -278,13 +278,7 @@
     },
     {
       "raw": "To Assemble:",
-      "expected": {
-        "item": "To Assemble:",
-        "measurements": [],
-        "note": null,
-        "section": "For the Red Onion Gravy",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound (454 g) pork sausages",
@@ -301,7 +295,7 @@
           }
         ],
         "note": null,
-        "section": "For the Red Onion Gravy",
+        "section": "To Assemble",
         "category": "Meat & Seafood"
       }
     },
@@ -316,7 +310,7 @@
           }
         ],
         "note": null,
-        "section": "For the Red Onion Gravy",
+        "section": "To Assemble",
         "category": "Other"
       }
     },
@@ -339,7 +333,7 @@
           }
         ],
         "note": null,
-        "section": "For the Red Onion Gravy",
+        "section": "To Assemble",
         "category": "Meat & Seafood"
       }
     }

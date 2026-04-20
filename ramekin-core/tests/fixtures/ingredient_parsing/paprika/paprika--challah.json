@@ -106,12 +106,7 @@
     },
     {
       "raw": "To finish:",
-      "expected": {
-        "item": "To finish:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 large egg",
@@ -124,6 +119,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -133,6 +129,7 @@
         "item": "Poppy or sesame seeds",
         "measurements": [],
         "note": "optional",
+        "section": "To Finish",
         "category": "Spices & Seasonings"
       }
     }

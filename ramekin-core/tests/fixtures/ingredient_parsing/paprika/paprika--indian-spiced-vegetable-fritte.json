@@ -207,12 +207,7 @@
     },
     {
       "raw": "Curry-Lime Yogurt:",
-      "expected": {
-        "item": "Curry-Lime Yogurt:",
-        "measurements": [],
-        "note": null,
-        "category": "Dairy & Eggs"
-      }
+      "is_section_header": true
     },
     {
       "raw": "2 cups plain Greek yogurt",
@@ -225,6 +220,7 @@
           }
         ],
         "note": null,
+        "section": "Curry-lime Yogurt",
         "category": "Dairy & Eggs"
       }
     },
@@ -243,6 +239,7 @@
           }
         ],
         "note": null,
+        "section": "Curry-lime Yogurt",
         "category": "Spices & Seasonings"
       }
     },
@@ -261,6 +258,7 @@
           }
         ],
         "note": null,
+        "section": "Curry-lime Yogurt",
         "category": "Baking"
       }
     },
@@ -270,6 +268,7 @@
         "item": "A squeeze or two of fresh lime juice",
         "measurements": [],
         "note": "to taste",
+        "section": "Curry-lime Yogurt",
         "category": "Beverages"
       }
     },
@@ -279,6 +278,7 @@
         "item": "Salt and pepper",
         "measurements": [],
         "note": null,
+        "section": "Curry-lime Yogurt",
         "category": "Spices & Seasonings"
       }
     }

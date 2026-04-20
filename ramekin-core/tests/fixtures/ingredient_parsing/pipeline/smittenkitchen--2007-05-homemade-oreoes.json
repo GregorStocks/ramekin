@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Chocolate wafers:",
-      "expected": {
-        "item": "Chocolate wafers:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1¼ cups (155 grams) all-purpose flour",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Baking"
       }
     },
@@ -44,6 +40,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Baking"
       }
     },
@@ -62,6 +59,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Baking"
       }
     },
@@ -80,6 +78,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Baking"
       }
     },
@@ -98,6 +97,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Spices & Seasonings"
       }
     },
@@ -116,6 +116,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Baking"
       }
     },
@@ -138,6 +139,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Dairy & Eggs"
       }
     },
@@ -152,6 +154,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Dairy & Eggs"
       }
     },
@@ -174,6 +177,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Dairy & Eggs"
       }
     },
@@ -192,6 +196,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Baking"
       }
     },
@@ -210,6 +215,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Baking"
       }
     },
@@ -232,6 +238,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Baking"
       }
     },
@@ -246,6 +253,7 @@
           }
         ],
         "note": null,
+        "section": "Chocolate Wafers",
         "category": "Spices & Seasonings"
       }
     }

@@ -229,13 +229,7 @@
     },
     {
       "raw": "Mango Salsa:",
-      "expected": {
-        "item": "Mango Salsa:",
-        "measurements": [],
-        "note": null,
-        "section": "Jalapeño Cream",
-        "category": "Produce"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cups diced mango",
@@ -248,7 +242,7 @@
           }
         ],
         "note": null,
-        "section": "Jalapeño Cream",
+        "section": "Mango Salsa",
         "category": "Produce"
       }
     },
@@ -263,7 +257,7 @@
           }
         ],
         "note": null,
-        "section": "Jalapeño Cream",
+        "section": "Mango Salsa",
         "category": "Produce"
       }
     },
@@ -278,7 +272,7 @@
           }
         ],
         "note": "if desired and chopped",
-        "section": "Jalapeño Cream",
+        "section": "Mango Salsa",
         "category": "Produce"
       }
     },
@@ -293,7 +287,7 @@
           }
         ],
         "note": "chopped",
-        "section": "Jalapeño Cream",
+        "section": "Mango Salsa",
         "category": "Produce"
       }
     },
@@ -308,7 +302,7 @@
           }
         ],
         "note": "plus 1/4 cup lime juice",
-        "section": "Jalapeño Cream",
+        "section": "Mango Salsa",
         "category": "Produce"
       }
     },
@@ -323,7 +317,7 @@
           }
         ],
         "note": null,
-        "section": "Jalapeño Cream",
+        "section": "Mango Salsa",
         "category": "Condiments & Sauces"
       }
     }

@@ -105,12 +105,7 @@
     },
     {
       "raw": "To serve:",
-      "expected": {
-        "item": "To serve:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Cubed crusty bread",
@@ -118,6 +113,7 @@
         "item": "Cubed crusty bread",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Bakery & Bread"
       }
     },
@@ -127,6 +123,7 @@
         "item": "Cornichons",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Other"
       }
     },
@@ -136,6 +133,7 @@
         "item": "Boiled baby potatoes",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -145,6 +143,7 @@
         "item": "Apple slices",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -154,6 +153,7 @@
         "item": "Blanched broccoli",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     }

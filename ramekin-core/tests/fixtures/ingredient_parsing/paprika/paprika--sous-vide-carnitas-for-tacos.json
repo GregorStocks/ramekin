@@ -101,12 +101,7 @@
     },
     {
       "raw": "To Serve:",
-      "expected": {
-        "item": "To Serve:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Warm corn tortillas",
@@ -114,6 +109,7 @@
         "item": "Warm corn tortillas",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Bakery & Bread"
       }
     },
@@ -123,6 +119,7 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -132,6 +129,7 @@
         "item": "Chopped white onion and fresh cilantro leaves",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     },
@@ -141,6 +139,7 @@
         "item": "Charred salsa verde or other salsa",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Condiments & Sauces"
       }
     }

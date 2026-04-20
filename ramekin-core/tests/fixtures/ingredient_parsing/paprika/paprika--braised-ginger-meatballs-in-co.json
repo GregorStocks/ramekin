@@ -291,13 +291,7 @@
     },
     {
       "raw": "To serve:",
-      "expected": {
-        "item": "To serve:",
-        "measurements": [],
-        "note": null,
-        "section": "Broth",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Steamed jasmine rice",
@@ -305,7 +299,7 @@
         "item": "Steamed jasmine rice",
         "measurements": [],
         "note": null,
-        "section": "Broth",
+        "section": "To Serve",
         "category": "Pasta & Rice"
       }
     }

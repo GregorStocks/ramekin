@@ -1174,7 +1174,14 @@ fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<String>) {
         if let Some(cap) = UNDERLINE_TEXT_REGEX.captures(part) {
             let header = cap.get(1).unwrap().as_str().trim();
             if !header.is_empty() {
-                lines.push(decode_html_entities(header));
+                // Colon-terminate so the ingredient parser's section-header
+                // detector picks it up (parallel to WPRM/Jetpack group headers).
+                let decoded = decode_html_entities(header);
+                if decoded.ends_with(':') {
+                    lines.push(decoded);
+                } else {
+                    lines.push(format!("{}:", decoded));
+                }
             }
             // There might be ingredient text after the </u> on the same line
             let after_u = UNDERLINE_TEXT_REGEX.replace(part, "");
@@ -2121,11 +2128,39 @@ mod tests {
 
         let result = extract_recipe(html, "https://example.com/pie").unwrap();
         assert_eq!(result.title, "Apple Pie");
-        assert!(result.ingredients.contains("For the crust"));
+        assert!(result.ingredients.contains("For the crust:"));
         assert!(result.ingredients.contains("2 cups flour"));
-        assert!(result.ingredients.contains("For the filling"));
+        assert!(result.ingredients.contains("For the filling:"));
         assert!(result.ingredients.contains("6 apples"));
         assert!(result.instructions.contains("Make the crust"));
+    }
+
+    #[test]
+    fn test_unstructured_blog_u_headers_are_colon_terminated() {
+        // `<u>` section headers must be emitted colon-terminated so the
+        // ingredient parser can detect them as section markers. Otherwise
+        // plain headers like "For the chicken" or "To assemble" (no colon
+        // in the source HTML) get treated as ingredients.
+        let html = r#"
+            <html><body>
+                <p><b>Fajitas</b></p>
+                <p><u>For the chicken</u><br />1 pound chicken<br />1 teaspoon salt</p>
+                <p><u>To assemble</u><br />8 tortillas<br />Olive oil<br />2 bell peppers</p>
+                <p>Cook everything together until done.</p>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/fajitas").unwrap();
+        assert!(
+            result.ingredients.contains("For the chicken:"),
+            "expected colon-terminated 'For the chicken:' header, got:\n{}",
+            result.ingredients
+        );
+        assert!(
+            result.ingredients.contains("To assemble:"),
+            "expected colon-terminated 'To assemble:' header, got:\n{}",
+            result.ingredients
+        );
     }
 
     #[test]

@@ -251,12 +251,7 @@
     },
     {
       "raw": "To finish:",
-      "expected": {
-        "item": "To finish:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 pound rigatoni",
@@ -273,6 +268,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Pasta & Rice"
       }
     },
@@ -287,6 +283,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -305,6 +302,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     },
@@ -323,6 +321,7 @@
           }
         ],
         "note": null,
+        "section": "To Finish",
         "category": "Dairy & Eggs"
       }
     }
