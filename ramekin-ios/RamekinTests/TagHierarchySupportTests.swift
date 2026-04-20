@@ -15,6 +15,19 @@ final class TagHierarchySupportTests: XCTestCase {
         )
     }
 
+    func testParseTreatsMultiColonTagsAsUncategorized() {
+        let parsed = TagHierarchySupport.parse(name: "a:b:c")
+
+        XCTAssertEqual(
+            parsed,
+            TagHierarchySupport.ParsedTag(
+                name: "a:b:c",
+                namespace: nil,
+                value: "a:b:c"
+            )
+        )
+    }
+
     func testNormalizedNamespaceLowercasesAndRejectsInvalidValues() {
         XCTAssertEqual(
             TagHierarchySupport.normalizedNamespace(from: " Course "),
@@ -49,5 +62,12 @@ final class TagHierarchySupportTests: XCTestCase {
         XCTAssertEqual(groups.map(\.title), ["ingredient", "season", "occasion", "Uncategorized"])
         XCTAssertEqual(groups[0].items.map(\.name), ["ingredient:chicken"])
         XCTAssertEqual(groups[3].items.map(\.name), ["dinner"])
+    }
+
+    func testAvailableNamespacesAlwaysIncludeSeededValues() {
+        XCTAssertEqual(
+            Array(TagHierarchySupport.availableNamespaces(from: ["occasion:holiday"]).prefix(7)),
+            ["ingredient", "course", "cuisine", "diet", "method", "season", "occasion"]
+        )
     }
 }

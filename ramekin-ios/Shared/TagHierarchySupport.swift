@@ -30,6 +30,10 @@ enum TagHierarchySupport {
 
     static func parse(name: String) -> ParsedTag {
         let trimmed = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmed.filter({ $0 == ":" }).count != 1 {
+            return ParsedTag(name: trimmed, namespace: nil, value: trimmed)
+        }
+
         let parts = trimmed.split(separator: ":", maxSplits: 1, omittingEmptySubsequences: false)
         if parts.count == 2 {
             let namespace = parts[0].trimmingCharacters(in: .whitespacesAndNewlines)
@@ -86,7 +90,9 @@ enum TagHierarchySupport {
             }
         }
 
-        return orderedNamespaces(from: discovered)
+        return seededNamespaces + discovered
+            .filter { !seededNamespaces.contains($0) }
+            .sorted { $0.localizedCaseInsensitiveCompare($1) == .orderedAscending }
     }
 
     static func groups(for tags: [TagItem]) -> [TagGroup<TagItem>] {
