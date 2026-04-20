@@ -102,17 +102,10 @@ fn assemble_snapshot(run_dir: &Path, url_slug: &str) -> Result<FinalRecipe> {
             .transpose()
             .context("Failed to deserialize enrich_auto_tag suggested_tags")?;
 
-    let applied_tags: Option<Vec<String>> = read_step_output(run_dir, url_slug, "apply_auto_tags")?
-        .and_then(|v| v.get("tags_applied").cloned())
-        .map(serde_json::from_value)
-        .transpose()
-        .context("Failed to deserialize apply_auto_tags tags_applied")?;
-
     Ok(build_final_recipe(
         &raw_recipe,
         parsed_ingredients.as_deref(),
         suggested_tags.as_deref(),
-        applied_tags.as_deref(),
     ))
 }
 
@@ -228,7 +221,6 @@ mod tests {
         let fr = assemble_snapshot(dir.path(), "example-com_r").unwrap();
         assert_eq!(fr.title, "Test");
         assert_eq!(fr.ingredients.len(), 2); // line-split fallback
-        assert!(fr.applied_tags.is_none());
         assert!(fr.suggested_tags.is_none());
     }
 
@@ -259,12 +251,6 @@ mod tests {
             "enrich_auto_tag",
             r#"{"suggested_tags": ["dinner", "breakfast"]}"#,
         );
-        write_step_output(
-            dir.path(),
-            slug,
-            "apply_auto_tags",
-            r#"{"tags_applied": ["dinner"]}"#,
-        );
 
         let fr = assemble_snapshot(dir.path(), slug).unwrap();
         assert_eq!(fr.ingredients.len(), 1);
@@ -272,10 +258,6 @@ mod tests {
         assert_eq!(
             fr.suggested_tags.as_deref(),
             Some(&["dinner".to_string(), "breakfast".to_string()][..]),
-        );
-        assert_eq!(
-            fr.applied_tags.as_deref(),
-            Some(&["dinner".to_string()][..]),
         );
     }
 

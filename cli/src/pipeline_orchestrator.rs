@@ -423,8 +423,23 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     let elapsed = start_time.elapsed();
 
     // Write allowlisted per-URL snapshots before the final manifest so that a
-    // snapshot failure propagates as a failed run.
-    write_pipeline_snapshots(&run_dir)?;
+    // snapshot failure propagates as a failed run. On failure we still record
+    // a terminal manifest status so external consumers aren't left observing a
+    // run stuck in "running".
+    if let Err(e) = write_pipeline_snapshots(&run_dir) {
+        let failed_manifest = RunManifest {
+            completed_at: Some(Utc::now().to_rfc3339()),
+            status: RunStatus::Failed,
+            ..manifest
+        };
+        if let Err(save_err) = save_manifest(&run_dir, &failed_manifest) {
+            tracing::warn!(
+                "Failed to persist failed manifest after snapshot error: {}",
+                save_err
+            );
+        }
+        return Err(e);
+    }
 
     // Update manifest with completion
     let final_manifest = RunManifest {
