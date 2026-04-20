@@ -2505,8 +2505,8 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
     if name.len() <= 80 {
         const SECTION_KEYWORDS: &[&str] = &[
             "topping", "filling", "frosting", "icing", "glaze", "sauce", "marinade", "dressing",
-            "crust", "batter", "drizzle", "garnish", "assembly", "serving", "coating", "streusel",
-            "crumble", "spread",
+            "crust", "batter", "drizzle", "garnish", "assembly", "serving", "optional", "coating",
+            "base", "cream", "streusel", "crumble", "spread",
         ];
         if SECTION_KEYWORDS.iter().any(|kw| name_lower.contains(kw)) {
             return Some(normalize_section_name(name));
