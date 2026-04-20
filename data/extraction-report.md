@@ -2,32 +2,32 @@
 
 ## Overall
 
-- Total URLs: 5587
-- Completed: 5500 (98.4%)
+- Total URLs: 5536
+- Completed: 5449 (98.4%)
 - Failed at fetch: 9 (0.2%)
 - Failed at extract: 78 (1.4%)
 
 ## Extraction Methods
 
-- JSON-LD: 4277/5578 (76.7%)
-- Microdata: 564/5578 (10.1%)
-- Both: 0/5578 (0.0%)
-- Neither: 737/5578 (13.2%)
+- JSON-LD: 4269/5527 (77.2%)
+- Microdata: 537/5527 (9.7%)
+- Both: 0/5527 (0.0%)
+- Neither: 721/5527 (13.0%)
 
 ## Ingredient Parsing
 
-- Total ingredients: 61541
-- Volume-to-weight converted: 15711/37843 (41.5%)
-- Unknown ingredient (no density data): 13147
-- Already has weight: 8985
-- No volume unit (count-based): 23427
-- Metric converted (oz→g): 2555
-- Metric converted (lb→g): 1734
+- Total ingredients: 60919
+- Volume-to-weight converted: 15607/37487 (41.6%)
+- Unknown ingredient (no density data): 13021
+- Already has weight: 8859
+- No volume unit (count-based): 23163
+- Metric converted (oz→g): 2543
+- Metric converted (lb→g): 1709
 
 ## AI Cache
 
-- Cache hits: 5499/5499 (100.0%)
-- API calls: 0/5499 (0.0%)
+- Cache hits: 5448/5448 (100.0%)
+- API calls: 0/5448 (0.0%)
 
 ## By Site
 
@@ -104,11 +104,11 @@
 | recipetineats.com | 10 | 10 | 100.0% |
 | runningwithspoons.com | 1 | 1 | 100.0% |
 | sallysbakingaddiction.com | 34 | 34 | 100.0% |
-| seriouseats.com | 169 | 176 | 96.0% |
+| seriouseats.com | 161 | 168 | 95.8% |
 | simplyrecipes.com | 99 | 100 | 99.0% |
 | skinnytaste.com | 2 | 2 | 100.0% |
 | slenderkitchen.com | 55 | 55 | 100.0% |
-| smittenkitchen.com | 1033 | 1051 | 98.3% |
+| smittenkitchen.com | 990 | 1008 | 98.2% |
 | spendwithpennies.com | 35 | 35 | 100.0% |
 | spoonforkbacon.com | 2 | 2 | 100.0% |
 | sprinklebakes.com | 74 | 92 | 80.4% |
@@ -147,10 +147,10 @@
 
 ### Missing required field: name (4 URLs)
 
-- https://www.seriouseats.com/canederli-di-pane-italian-bread-dumpling-recipe-11679155?print
-- https://www.seriouseats.com/roasted-cauliflower-soup-curry-cream-8748572?print
-- https://www.seriouseats.com/the-best-classic-chicken-salad-recipe?print
-- https://www.seriouseats.com/toad-in-the-hole-recipe-11746714?print
+- https://www.seriouseats.com/canederli-di-pane-italian-bread-dumpling-recipe-11679155
+- https://www.seriouseats.com/roasted-cauliflower-soup-curry-cream-8748572
+- https://www.seriouseats.com/the-best-classic-chicken-salad-recipe
+- https://www.seriouseats.com/toad-in-the-hole-recipe-11746714
 
 ### Missing required field: recipeIngredient (empty) (73 URLs)
 
@@ -158,8 +158,8 @@
 - https://barefeetinthekitchen.com/diy-fruit-and-vegetable-wash-homemade-produce-wash-recipe/
 - https://cocktailswithsuderman.substack.com/p/a-question-about-the-clover-club
 - https://cocktailswithsuderman.substack.com/p/a-thanksgiving-sidecar-with-jellied
-- https://cocktailswithsuderman.substack.com/p/hot-chocolate-manhattan?utm_source=post-email-title&publication_id=10343&post_id=154956990&utm_campaign=email-post-title&isFreemail=false&r=7g75u&triedRedirect=true&utm_medium=email
-- https://cocktailswithsuderman.substack.com/p/lol-its-an-appletini?utm_source=post-email-title&publication_id=10343&post_id=116330275&isFreemail=false&utm_medium=email
+- https://cocktailswithsuderman.substack.com/p/hot-chocolate-manhattan
+- https://cocktailswithsuderman.substack.com/p/lol-its-an-appletini
 - https://feedbin.com/entries/4967860190
 - https://food.com/recipe/breaded-eggplant-oven-baked-160089
 - https://food.com/recipe/egg-in-a-basket-421172
