@@ -1170,20 +1170,14 @@ fn looks_like_ingredient_list(chunk: &str) -> bool {
 /// a single ingredient, and turning that into a section header would drop the
 /// ingredient from the recipe.
 fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<String>) {
-    let mut seen_nonempty = false;
+    let mut seen_text_line = false;
     for part in BR_TAG_REGEX.split(chunk) {
         let part = part.trim();
         if part.is_empty() {
             continue;
         }
-        let is_first = !seen_nonempty;
-        seen_nonempty = true;
 
-        let u_cap = if is_first {
-            UNDERLINE_TEXT_REGEX.captures(part)
-        } else {
-            None
-        };
+        let u_cap = UNDERLINE_TEXT_REGEX.captures(part);
 
         if let Some(cap) = u_cap {
             let header = cap.get(1).unwrap().as_str().trim();
@@ -1191,22 +1185,29 @@ fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<String>) {
             let after_text = HTML_TAG_REGEX.replace_all(&after_u, "");
             let after_text = after_text.trim();
 
-            // A section header is a `<u>…</u>` that owns its line entirely.
+            // A section header is a `<u>…</u>` that (a) leads the chunk
+            // before any actual text line and (b) owns its line entirely.
+            // Empty/markup-only fragments before it (e.g. stray `<span>` or
+            // `&nbsp;`) don't disqualify it — that's why we gate on whether
+            // we've produced a text line yet, not the raw BR index.
             // If there's non-empty text after the `</u>`, treat the `<u>` as
             // inline emphasis (e.g. `<u>Note:</u> whisk well`).
-            if !header.is_empty() && after_text.is_empty() {
+            if !seen_text_line && !header.is_empty() && after_text.is_empty() {
                 let decoded = decode_html_entities(header);
                 if decoded.ends_with(':') {
                     lines.push(decoded);
                 } else {
                     lines.push(format!("{}:", decoded));
                 }
+                seen_text_line = true;
             } else {
-                // Inline emphasis: keep as a plain ingredient line.
+                // Inline emphasis or non-leading <u>: keep as a plain
+                // ingredient line.
                 let text = HTML_TAG_REGEX.replace_all(part, "");
                 let text = text.trim();
                 if !text.is_empty() {
                     lines.push(decode_html_entities(text));
+                    seen_text_line = true;
                 }
             }
         } else {
@@ -1214,6 +1215,7 @@ fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<String>) {
             let text = text.trim();
             if !text.is_empty() {
                 lines.push(decode_html_entities(text));
+                seen_text_line = true;
             }
         }
     }
@@ -2178,6 +2180,27 @@ mod tests {
         assert!(
             result.ingredients.contains("To assemble:"),
             "expected colon-terminated 'To assemble:' header, got:\n{}",
+            result.ingredients
+        );
+    }
+
+    #[test]
+    fn test_unstructured_blog_u_header_after_markup_only_prefix() {
+        // A leading markup-only fragment (empty span, stray &nbsp;, etc.)
+        // must not disqualify the following <u>…</u> from being the
+        // section header.
+        let html = r#"
+            <html><body>
+                <p><b>Recipe</b></p>
+                <p><span></span><br /><u>For the sauce</u><br />1 cup cream<br />1 teaspoon salt</p>
+                <p>Whisk everything together until combined and smooth.</p>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/r").unwrap();
+        assert!(
+            result.ingredients.contains("For the sauce:"),
+            "expected colon-terminated header after markup-only prefix, got:\n{}",
             result.ingredients
         );
     }
