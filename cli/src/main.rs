@@ -180,7 +180,7 @@ enum Commands {
         /// Delay in milliseconds between URL fetches
         #[arg(long, default_value = "1000")]
         delay_ms: u64,
-        /// Run in offline mode (cache only, no network requests)
+        /// Run HTML fetches in offline mode (cache only, no network requests)
         #[arg(long, default_value_t = true, action = clap::ArgAction::Set)]
         offline: bool,
         /// Force re-fetch all URLs, ignoring cache

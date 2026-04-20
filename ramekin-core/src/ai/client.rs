@@ -26,9 +26,6 @@ pub enum AiError {
     #[error("API error: {0}")]
     Api(String),
 
-    #[error("Response not in cache and offline mode is enabled")]
-    OfflineNotCached,
-
     #[error("Failed to parse response: {0}")]
     ParseError(String),
 
@@ -168,11 +165,6 @@ impl AiClient for CachingAiClient {
         if let Some(cached) = self.cache.get(&cache_key) {
             tracing::debug!(prompt_name = prompt_name, "AI response found in cache");
             return Ok(cached.into());
-        }
-
-        // If offline mode, error
-        if self.config.offline {
-            return Err(AiError::OfflineNotCached);
         }
 
         // Apply rate limiting

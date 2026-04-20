@@ -92,7 +92,7 @@ pub async fn run(paprika_file: &Path, output_file: &Path, limit: Option<usize>) 
     }
 
     let ai = CachingAiClient::from_env()
-        .context("Failed to build AI client (set OPENROUTER_API_KEY or RAMEKIN_AI_OFFLINE=true)")?;
+        .context("Failed to build AI client (set OPENROUTER_API_KEY)")?;
 
     let mut lines = Vec::with_capacity(entries.len());
     let mut cached_hits = 0usize;

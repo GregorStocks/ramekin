@@ -1,0 +1,18 @@
+{
+  "title": "make test-ui wrapper hides orchestration failures",
+  "description": "scripts/run-ui-tests.sh uses `set -e`, so when \
+`process-compose up` exits non-zero the script exits before it can print the \
+tail of logs/test-ui.log. This makes UI test failures much harder to diagnose, \
+especially when the failure happens during orchestration rather than inside \
+pytest itself. The wrapper should preserve the existing make entry point but \
+reliably surface the failing process output.",
+  "status": "open",
+  "priority": 4,
+  "type": "bug",
+  "labels": [
+    "tests",
+    "tooling",
+  ],
+  "created_at": "2026-04-19T00:00:00-07:00",
+  "updated_at": "2026-04-19T00:00:00-07:00",
+}
