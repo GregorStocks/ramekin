@@ -14,7 +14,6 @@
 //! - `RAMEKIN_AI_MODEL` (optional): Model name, e.g., "google/gemini-2.5-flash"
 //! - `RAMEKIN_AI_BASE_URL` (optional): API base URL
 //! - `RAMEKIN_AI_CACHE_DIR` (optional): Cache directory path
-//! - `RAMEKIN_AI_OFFLINE` (optional): Set to "true" to use cache only
 //! - `RAMEKIN_AI_RATE_LIMIT_MS` (optional): Delay between requests in ms
 //! - `RAMEKIN_AI_TIMEOUT_SECS` (optional): Request timeout in seconds
 //!

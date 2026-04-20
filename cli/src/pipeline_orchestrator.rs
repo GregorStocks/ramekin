@@ -257,11 +257,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
 
     let total_urls = urls_to_process.len();
     let start_time = Instant::now();
-    let registry = Arc::new(build_registry(
-        Arc::clone(&client),
-        user_tags,
-        config.offline,
-    ));
+    let registry = Arc::new(build_registry(Arc::clone(&client), user_tags));
 
     println!("Pipeline Test Starting");
     println!("======================");

@@ -182,7 +182,7 @@ generate-test-urls: ## Generate test URL list from top recipe sites
 refilter-test-urls: ## Refilter existing test URLs through current filter logic
 	@cargo run -q --manifest-path cli/Cargo.toml -- generate-test-urls --refilter
 
-pipeline: ## Run the full pipeline over every URL in test-urls.json (offline by default, use OFFLINE=false to enable network)
+pipeline: ## Run the full pipeline over every URL in test-urls.json (HTML fetches offline by default; use OFFLINE=false to enable network)
 	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
 	cargo run -q --manifest-path cli/Cargo.toml -- pipeline \
 		$(if $(DELAY),--delay-ms $(DELAY),) \
