@@ -155,13 +155,7 @@
     },
     {
       "raw": "White beans:",
-      "expected": {
-        "item": "White beans:",
-        "measurements": [],
-        "note": null,
-        "section": "Lamb",
-        "category": "Canned Goods"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup diced lamb fat",
@@ -174,7 +168,7 @@
           }
         ],
         "note": null,
-        "section": "Lamb",
+        "section": "White Beans",
         "category": "Meat & Seafood"
       }
     },
@@ -189,7 +183,7 @@
           }
         ],
         "note": "diced",
-        "section": "Lamb",
+        "section": "White Beans",
         "category": "Produce"
       }
     },
@@ -204,7 +198,7 @@
           }
         ],
         "note": "minced",
-        "section": "Lamb",
+        "section": "White Beans",
         "category": "Produce"
       }
     },
@@ -219,7 +213,7 @@
           }
         ],
         "note": "drained and rinsed",
-        "section": "Lamb",
+        "section": "White Beans",
         "category": "Canned Goods"
       }
     },
@@ -234,7 +228,7 @@
           }
         ],
         "note": null,
-        "section": "Lamb",
+        "section": "White Beans",
         "category": "Canned Goods"
       }
     },
@@ -249,7 +243,7 @@
           }
         ],
         "note": null,
-        "section": "Lamb",
+        "section": "White Beans",
         "category": "Condiments & Sauces"
       }
     },
@@ -264,7 +258,7 @@
           }
         ],
         "note": null,
-        "section": "Lamb",
+        "section": "White Beans",
         "category": "Spices & Seasonings"
       }
     },
@@ -279,7 +273,7 @@
           }
         ],
         "note": null,
-        "section": "Lamb",
+        "section": "White Beans",
         "category": "Spices & Seasonings"
       }
     }

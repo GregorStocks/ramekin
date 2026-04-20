@@ -127,13 +127,7 @@
     },
     {
       "raw": "Herby yogurt:",
-      "expected": {
-        "item": "Herby yogurt:",
-        "measurements": [],
-        "note": null,
-        "section": "Sausage",
-        "category": "Dairy & Eggs"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1/2 cup (110 grams) plain yogurt",
@@ -150,7 +144,7 @@
           }
         ],
         "note": null,
-        "section": "Sausage",
+        "section": "Herby Yogurt",
         "category": "Dairy & Eggs"
       }
     },
@@ -160,7 +154,7 @@
         "item": "A small handful finely chopped leafy fresh herbs (parsley, cilantro, mint, chives, dill or a mix thereof)",
         "measurements": [],
         "note": "plus a few roughly chopped, to serve",
-        "section": "Sausage",
+        "section": "Herby Yogurt",
         "category": "Produce"
       }
     },
@@ -179,7 +173,7 @@
           }
         ],
         "note": "or more to taste",
-        "section": "Sausage",
+        "section": "Herby Yogurt",
         "category": "Oils & Vinegars"
       }
     },
@@ -189,7 +183,7 @@
         "item": "kosher salt, presumably Diamond",
         "measurements": [],
         "note": null,
-        "section": "Sausage",
+        "section": "Herby Yogurt",
         "category": "Spices & Seasonings"
       }
     },
@@ -199,7 +193,7 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
-        "section": "Sausage",
+        "section": "Herby Yogurt",
         "category": "Oils & Vinegars"
       }
     },
@@ -209,7 +203,7 @@
         "item": "A handful shredded red cabbage to serve",
         "measurements": [],
         "note": "optional",
-        "section": "Sausage",
+        "section": "Herby Yogurt",
         "category": "Produce"
       }
     },
@@ -219,7 +213,7 @@
         "item": "Lemon wedges, to serve",
         "measurements": [],
         "note": null,
-        "section": "Sausage",
+        "section": "Herby Yogurt",
         "category": "Produce"
       }
     }

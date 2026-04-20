@@ -1162,32 +1162,60 @@ fn looks_like_ingredient_list(chunk: &str) -> bool {
 }
 
 /// Extract individual ingredient lines from a `<br>`-delimited HTML chunk.
-/// Preserves `<u>` section headers as their own lines.
+///
+/// Treats a leading `<u>…</u>` that stands alone (no ingredient text on the
+/// same line) as the group's section header and colon-terminates it so the
+/// ingredient parser picks it up. Underlines elsewhere in the chunk are
+/// stripped as plain inline emphasis — blogs sometimes use `<u>` to highlight
+/// a single ingredient, and turning that into a section header would drop the
+/// ingredient from the recipe.
 fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<String>) {
+    let mut seen_text_line = false;
     for part in BR_TAG_REGEX.split(chunk) {
         let part = part.trim();
         if part.is_empty() {
             continue;
         }
 
-        // Check for section header (<u> tag)
-        if let Some(cap) = UNDERLINE_TEXT_REGEX.captures(part) {
+        let u_cap = UNDERLINE_TEXT_REGEX.captures(part);
+
+        if let Some(cap) = u_cap {
             let header = cap.get(1).unwrap().as_str().trim();
-            if !header.is_empty() {
-                lines.push(decode_html_entities(header));
-            }
-            // There might be ingredient text after the </u> on the same line
             let after_u = UNDERLINE_TEXT_REGEX.replace(part, "");
             let after_text = HTML_TAG_REGEX.replace_all(&after_u, "");
             let after_text = after_text.trim();
-            if !after_text.is_empty() {
-                lines.push(decode_html_entities(after_text));
+
+            // A section header is a `<u>…</u>` that (a) leads the chunk
+            // before any actual text line and (b) owns its line entirely.
+            // Empty/markup-only fragments before it (e.g. stray `<span>` or
+            // `&nbsp;`) don't disqualify it — that's why we gate on whether
+            // we've produced a text line yet, not the raw BR index.
+            // If there's non-empty text after the `</u>`, treat the `<u>` as
+            // inline emphasis (e.g. `<u>Note:</u> whisk well`).
+            if !seen_text_line && !header.is_empty() && after_text.is_empty() {
+                let decoded = decode_html_entities(header);
+                if decoded.ends_with(':') {
+                    lines.push(decoded);
+                } else {
+                    lines.push(format!("{}:", decoded));
+                }
+                seen_text_line = true;
+            } else {
+                // Inline emphasis or non-leading <u>: keep as a plain
+                // ingredient line.
+                let text = HTML_TAG_REGEX.replace_all(part, "");
+                let text = text.trim();
+                if !text.is_empty() {
+                    lines.push(decode_html_entities(text));
+                    seen_text_line = true;
+                }
             }
         } else {
             let text = HTML_TAG_REGEX.replace_all(part, "");
             let text = text.trim();
             if !text.is_empty() {
                 lines.push(decode_html_entities(text));
+                seen_text_line = true;
             }
         }
     }
@@ -2121,11 +2149,81 @@ mod tests {
 
         let result = extract_recipe(html, "https://example.com/pie").unwrap();
         assert_eq!(result.title, "Apple Pie");
-        assert!(result.ingredients.contains("For the crust"));
+        assert!(result.ingredients.contains("For the crust:"));
         assert!(result.ingredients.contains("2 cups flour"));
-        assert!(result.ingredients.contains("For the filling"));
+        assert!(result.ingredients.contains("For the filling:"));
         assert!(result.ingredients.contains("6 apples"));
         assert!(result.instructions.contains("Make the crust"));
+    }
+
+    #[test]
+    fn test_unstructured_blog_u_headers_are_colon_terminated() {
+        // `<u>` section headers must be emitted colon-terminated so the
+        // ingredient parser can detect them as section markers. Otherwise
+        // plain headers like "For the chicken" or "To assemble" (no colon
+        // in the source HTML) get treated as ingredients.
+        let html = r#"
+            <html><body>
+                <p><b>Fajitas</b></p>
+                <p><u>For the chicken</u><br />1 pound chicken<br />1 teaspoon salt</p>
+                <p><u>To assemble</u><br />8 tortillas<br />Olive oil<br />2 bell peppers</p>
+                <p>Cook everything together until done.</p>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/fajitas").unwrap();
+        assert!(
+            result.ingredients.contains("For the chicken:"),
+            "expected colon-terminated 'For the chicken:' header, got:\n{}",
+            result.ingredients
+        );
+        assert!(
+            result.ingredients.contains("To assemble:"),
+            "expected colon-terminated 'To assemble:' header, got:\n{}",
+            result.ingredients
+        );
+    }
+
+    #[test]
+    fn test_unstructured_blog_u_header_after_markup_only_prefix() {
+        // A leading markup-only fragment (empty span, stray &nbsp;, etc.)
+        // must not disqualify the following <u>…</u> from being the
+        // section header.
+        let html = r#"
+            <html><body>
+                <p><b>Recipe</b></p>
+                <p><span></span><br /><u>For the sauce</u><br />1 cup cream<br />1 teaspoon salt</p>
+                <p>Whisk everything together until combined and smooth.</p>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/r").unwrap();
+        assert!(
+            result.ingredients.contains("For the sauce:"),
+            "expected colon-terminated header after markup-only prefix, got:\n{}",
+            result.ingredients
+        );
+    }
+
+    #[test]
+    fn test_unstructured_blog_u_midline_not_header() {
+        // An ingredient line with an underlined word ("emphasis") must NOT be
+        // promoted to a section header — otherwise the ingredient disappears.
+        let html = r#"
+            <html><body>
+                <p><b>Recipe</b></p>
+                <p>1 pound pasta<br /><u>Olive oil</u><br />1 teaspoon salt<br />1 clove garlic<br />1 cup basil</p>
+                <p>Toss everything together and serve immediately while warm.</p>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/r").unwrap();
+        assert!(result.ingredients.contains("Olive oil"));
+        assert!(
+            !result.ingredients.contains("Olive oil:"),
+            "<u> emphasis mid-chunk must not become a section header, got:\n{}",
+            result.ingredients
+        );
     }
 
     #[test]

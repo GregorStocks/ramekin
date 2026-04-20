@@ -233,12 +233,7 @@
     },
     {
       "raw": "To serve:",
-      "expected": {
-        "item": "To serve:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Naan (optional)",
@@ -246,6 +241,7 @@
         "item": "Naan",
         "measurements": [],
         "note": "optional",
+        "section": "To Serve",
         "category": "Bakery & Bread"
       }
     },
@@ -255,6 +251,7 @@
         "item": "Rice",
         "measurements": [],
         "note": "optional",
+        "section": "To Serve",
         "category": "Pasta & Rice"
       }
     }

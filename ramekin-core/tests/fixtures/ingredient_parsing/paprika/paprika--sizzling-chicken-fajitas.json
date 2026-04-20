@@ -162,13 +162,7 @@
     },
     {
       "raw": "To assemble:",
-      "expected": {
-        "item": "To assemble:",
-        "measurements": [],
-        "note": null,
-        "section": "For the Chicken",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "8 (6-inch) flour or corn tortillas",
@@ -185,7 +179,7 @@
           }
         ],
         "note": null,
-        "section": "For the Chicken",
+        "section": "To Assemble",
         "category": "Bakery & Bread"
       }
     },
@@ -195,7 +189,7 @@
         "item": "Olive oil",
         "measurements": [],
         "note": null,
-        "section": "For the Chicken",
+        "section": "To Assemble",
         "category": "Oils & Vinegars"
       }
     },
@@ -210,7 +204,7 @@
           }
         ],
         "note": null,
-        "section": "For the Chicken",
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -225,7 +219,7 @@
           }
         ],
         "note": "halved and sliced thin",
-        "section": "For the Chicken",
+        "section": "To Assemble",
         "category": "Produce"
       }
     },
@@ -235,19 +229,13 @@
         "item": "Coarse salt",
         "measurements": [],
         "note": null,
-        "section": "For the Chicken",
+        "section": "To Assemble",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Fixings (pick your favorites):",
-      "expected": {
-        "item": "Fixings (pick your favorites):",
-        "measurements": [],
-        "note": null,
-        "section": "For the Chicken",
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "1 1/2 cup cooked black beans (1 15-ounce can, drained and rinsed)",
@@ -260,7 +248,7 @@
           }
         ],
         "note": "1 15-ounce can, drained and rinsed",
-        "section": "For the Chicken",
+        "section": "Fixings (Pick Your Favorites)",
         "category": "Canned Goods"
       }
     },
@@ -270,7 +258,7 @@
         "item": "Salsa (or pico de gallo)",
         "measurements": [],
         "note": null,
-        "section": "For the Chicken",
+        "section": "Fixings (Pick Your Favorites)",
         "category": "Condiments & Sauces"
       }
     },
@@ -280,7 +268,7 @@
         "item": "Sliced avocado (or guacamole)",
         "measurements": [],
         "note": null,
-        "section": "For the Chicken",
+        "section": "Fixings (Pick Your Favorites)",
         "category": "Produce"
       }
     },
@@ -290,7 +278,7 @@
         "item": "Shredded cheese",
         "measurements": [],
         "note": null,
-        "section": "For the Chicken",
+        "section": "Fixings (Pick Your Favorites)",
         "category": "Cheese"
       }
     },
@@ -300,7 +288,7 @@
         "item": "Sour cream",
         "measurements": [],
         "note": null,
-        "section": "For the Chicken",
+        "section": "Fixings (Pick Your Favorites)",
         "category": "Dairy & Eggs"
       }
     },
@@ -310,7 +298,7 @@
         "item": "Minced white onion or pickled red onions",
         "measurements": [],
         "note": null,
-        "section": "For the Chicken",
+        "section": "Fixings (Pick Your Favorites)",
         "category": "Canned Goods"
       }
     },
@@ -320,7 +308,7 @@
         "item": "Chopped cilantro",
         "measurements": [],
         "note": null,
-        "section": "For the Chicken",
+        "section": "Fixings (Pick Your Favorites)",
         "category": "Produce"
       }
     },
@@ -330,7 +318,7 @@
         "item": "Pickled jalalpenos",
         "measurements": [],
         "note": null,
-        "section": "For the Chicken",
+        "section": "Fixings (Pick Your Favorites)",
         "category": "Canned Goods"
       }
     },
@@ -340,7 +328,7 @@
         "item": "Hot sauce",
         "measurements": [],
         "note": null,
-        "section": "For the Chicken",
+        "section": "Fixings (Pick Your Favorites)",
         "category": "Condiments & Sauces"
       }
     },
@@ -350,7 +338,7 @@
         "item": "Lime wedges",
         "measurements": [],
         "note": null,
-        "section": "For the Chicken",
+        "section": "Fixings (Pick Your Favorites)",
         "category": "Produce"
       }
     }

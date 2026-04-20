@@ -141,12 +141,7 @@
     },
     {
       "raw": "To serve:",
-      "expected": {
-        "item": "To serve:",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
-      }
+      "is_section_header": true
     },
     {
       "raw": "Lettuce or endive leaves, or bread",
@@ -154,6 +149,7 @@
         "item": "Lettuce or endive leaves, or bread",
         "measurements": [],
         "note": null,
+        "section": "To Serve",
         "category": "Produce"
       }
     }
