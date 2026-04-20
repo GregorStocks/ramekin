@@ -33,7 +33,6 @@ pub struct OrchestratorConfig {
     pub test_urls_file: PathBuf,
     pub output_dir: PathBuf,
     pub delay_ms: u64,
-    pub offline: bool,
     pub force_refetch: bool,
     pub on_fetch_fail: OnFetchFail,
     pub tags_file: PathBuf,
@@ -47,7 +46,6 @@ impl Default for OrchestratorConfig {
             test_urls_file: PathBuf::from("data/test-urls.json"),
             output_dir: PathBuf::from("data/pipeline-runs"),
             delay_ms: 1000,
-            offline: true,
             force_refetch: false,
             on_fetch_fail: OnFetchFail::Continue,
             tags_file: PathBuf::from("data/eval-tags.json"),
@@ -88,7 +86,6 @@ pub struct RunManifest {
 pub struct ManifestConfig {
     pub test_urls_file: String,
     pub delay_ms: u64,
-    pub offline: bool,
     pub force_refetch: bool,
     pub concurrency: usize,
 }
@@ -233,7 +230,6 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         config: ManifestConfig {
             test_urls_file: config.test_urls_file.display().to_string(),
             delay_ms: config.delay_ms,
-            offline: config.offline,
             force_refetch: config.force_refetch,
             concurrency: config.concurrency,
         },
@@ -243,14 +239,10 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
 
     // Initialize HTTP client with caching
     // The CachingClient uses RAMEKIN_HTTP_CACHE env var for cache directory
-    // and handles rate limiting internally
-    // Use never_network mode when offline - this means:
-    // - Cached responses are used directly without network validation
-    // - Uncached URLs will error instead of fetching (use --offline=false to enable network)
+    // and handles rate limiting internally.
     let client = Arc::new(
         CachingClient::builder()
             .rate_limit_ms(0) // We handle delay ourselves between URLs
-            .never_network(config.offline)
             .build()
             .context("Failed to create HTTP client")?,
     );
@@ -305,11 +297,10 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             let completed_count = Arc::clone(&completed_count);
             let on_fetch_fail = config.on_fetch_fail;
             let force_refetch = config.force_refetch;
-            let offline = config.offline;
 
             async move {
                 // Check if we need to fetch (for progress display)
-                let needs_fetch = force_refetch || (!offline && !client.is_cached(&url));
+                let needs_fetch = force_refetch || !client.is_cached(&url);
 
                 // Increment and get progress
                 let completed = completed_count.fetch_add(1, Ordering::SeqCst) + 1;

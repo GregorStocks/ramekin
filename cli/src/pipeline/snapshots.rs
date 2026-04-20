@@ -15,6 +15,8 @@ use ramekin_core::http::slugify_url;
 use ramekin_core::ingredient_parser::ParsedIngredient;
 use ramekin_core::types::RawRecipe;
 
+use crate::pipeline_orchestrator::PipelineResults;
+
 /// Write snapshots for every URL in `allowlist_path` by reading step outputs
 /// under `run_dir` and writing JSON files under `snapshots_dir`.
 pub fn write_snapshots(run_dir: &Path, allowlist_path: &Path, snapshots_dir: &Path) -> Result<()> {
@@ -22,13 +24,14 @@ pub fn write_snapshots(run_dir: &Path, allowlist_path: &Path, snapshots_dir: &Pa
     if urls.is_empty() {
         return Ok(());
     }
+    let run_results = read_run_results(run_dir)?;
 
     std::fs::create_dir_all(snapshots_dir)
         .with_context(|| format!("Failed to create {}", snapshots_dir.display()))?;
 
     for url in &urls {
         let slug = slugify_url(url);
-        let final_recipe = assemble_snapshot(run_dir, &slug)
+        let final_recipe = assemble_snapshot(run_dir, run_results.as_ref(), url, &slug)
             .with_context(|| format!("Failed to assemble snapshot for allowlisted URL {url}"))?;
 
         let mut json = serde_json::to_string_pretty(&final_recipe)
@@ -53,6 +56,19 @@ fn read_allowlist(path: &Path) -> Result<Vec<String>> {
     Ok(urls)
 }
 
+fn read_run_results(run_dir: &Path) -> Result<Option<PipelineResults>> {
+    let path = run_dir.join("results.json");
+    if !path.exists() {
+        return Ok(None);
+    }
+
+    let text = std::fs::read_to_string(&path)
+        .with_context(|| format!("Failed to read pipeline results: {}", path.display()))?;
+    let results: PipelineResults = serde_json::from_str(&text)
+        .with_context(|| format!("Failed to parse pipeline results JSON: {}", path.display()))?;
+    Ok(Some(results))
+}
+
 fn read_step_output(
     run_dir: &Path,
     url_slug: &str,
@@ -73,14 +89,55 @@ fn read_step_output(
     Ok(Some(value))
 }
 
-fn assemble_snapshot(run_dir: &Path, url_slug: &str) -> Result<FinalRecipe> {
-    let extract = read_step_output(run_dir, url_slug, "extract_recipe")?.ok_or_else(|| {
-        anyhow!(
+fn missing_extract_recipe_error(
+    run_dir: &Path,
+    run_results: Option<&PipelineResults>,
+    url: &str,
+    url_slug: &str,
+) -> anyhow::Error {
+    if let Some(url_result) =
+        run_results.and_then(|results| results.url_results.iter().find(|result| result.url == url))
+    {
+        if let Some(failed_step) = url_result.steps.iter().find(|step| !step.success) {
+            let step_error = failed_step
+                .error
+                .as_deref()
+                .unwrap_or("No step error message recorded");
+            return anyhow!(
+                "No extract_recipe output for URL slug {url_slug} in {}. \
+                 The pipeline processed this URL but it ended with final_status={:?} \
+                 after step {:?} failed: {}",
+                run_dir.display(),
+                url_result.final_status,
+                failed_step.step,
+                step_error
+            );
+        }
+
+        return anyhow!(
             "No extract_recipe output for URL slug {url_slug} in {}. \
-             Either the URL wasn't in the pipeline run or the pipeline didn't reach extract_recipe.",
-            run_dir.display()
-        )
-    })?;
+             The pipeline recorded this URL with final_status={:?}, but no failed \
+             step was recorded.",
+            run_dir.display(),
+            url_result.final_status
+        );
+    }
+
+    anyhow!(
+        "No extract_recipe output for URL slug {url_slug} in {}. \
+         Either the URL wasn't in the pipeline run or the pipeline didn't reach extract_recipe.",
+        run_dir.display()
+    )
+}
+
+fn assemble_snapshot(
+    run_dir: &Path,
+    run_results: Option<&PipelineResults>,
+    url: &str,
+    url_slug: &str,
+) -> Result<FinalRecipe> {
+    let extract = read_step_output(run_dir, url_slug, "extract_recipe")?
+        .ok_or_else(|| missing_extract_recipe_error(run_dir, run_results, url, url_slug))?;
 
     let raw_recipe: RawRecipe =
         serde_json::from_value(extract.get("raw_recipe").cloned().ok_or_else(|| {
@@ -218,7 +275,8 @@ mod tests {
             extract_output_body(),
         );
 
-        let fr = assemble_snapshot(dir.path(), "example-com_r").unwrap();
+        let fr =
+            assemble_snapshot(dir.path(), None, "https://example.com/r", "example-com_r").unwrap();
         assert_eq!(fr.title, "Test");
         assert_eq!(fr.ingredients.len(), 2); // line-split fallback
         assert!(fr.suggested_tags.is_none());
@@ -252,7 +310,7 @@ mod tests {
             r#"{"suggested_tags": ["dinner", "breakfast"]}"#,
         );
 
-        let fr = assemble_snapshot(dir.path(), slug).unwrap();
+        let fr = assemble_snapshot(dir.path(), None, "https://example.com/r", slug).unwrap();
         assert_eq!(fr.ingredients.len(), 1);
         assert_eq!(fr.ingredients[0].item, "flour");
         assert_eq!(
@@ -264,7 +322,8 @@ mod tests {
     #[test]
     fn errors_when_extract_recipe_output_missing() {
         let dir = TempDir::new().unwrap();
-        let err = assemble_snapshot(dir.path(), "missing-slug").unwrap_err();
+        let err = assemble_snapshot(dir.path(), None, "https://missing.example/", "missing-slug")
+            .unwrap_err();
         let msg = err.to_string();
         assert!(
             msg.contains("missing-slug"),
@@ -274,6 +333,76 @@ mod tests {
             msg.contains("extract_recipe"),
             "error should mention extract_recipe: {msg}"
         );
+    }
+
+    #[test]
+    fn reports_pipeline_failure_details_when_extract_recipe_output_missing() {
+        let dir = TempDir::new().unwrap();
+        let run_dir = dir.path();
+        let results = serde_json::json!({
+            "total_urls": 1,
+            "completed": 0,
+            "failed_at_fetch": 1,
+            "failed_at_extract": 0,
+            "failed_at_save": 0,
+            "cache_hits": 0,
+            "cache_misses": 1,
+            "ai_cache_hits": 0,
+            "ai_cache_misses": 0,
+            "by_site": {},
+            "url_results": [
+                {
+                    "url": "https://example.com/offline-miss",
+                    "site": "example.com",
+                    "steps": [
+                        {
+                            "step": "fetch_html",
+                            "success": false,
+                            "duration_ms": 0,
+                            "error": "URL not cached and RAMEKIN_OFFLINE is set",
+                            "cached": false
+                        }
+                    ],
+                    "final_status": "failed_at_fetch"
+                }
+            ],
+            "extraction_method_stats": {
+                "urls_with_html": 0,
+                "jsonld_success": 0,
+                "microdata_success": 0,
+                "both_success": 0,
+                "neither_success": 0
+            },
+            "ingredient_stats": {
+                "total_ingredients": 0,
+                "volume_converted": 0,
+                "volume_unknown_ingredient": 0,
+                "volume_no_volume": 0,
+                "volume_already_has_weight": 0,
+                "metric_converted_oz": 0,
+                "metric_converted_lb": 0,
+                "unknown_ingredients": []
+            }
+        });
+        std::fs::write(
+            run_dir.join("results.json"),
+            serde_json::to_string_pretty(&results).unwrap(),
+        )
+        .unwrap();
+
+        let run_results = read_run_results(run_dir).unwrap();
+        let err = assemble_snapshot(
+            run_dir,
+            run_results.as_ref(),
+            "https://example.com/offline-miss",
+            "example-com_offline-miss",
+        )
+        .unwrap_err();
+        let msg = err.to_string();
+
+        assert!(msg.contains("final_status=FailedAtFetch"));
+        assert!(msg.contains("step FetchHtml failed"));
+        assert!(msg.contains("RAMEKIN_OFFLINE"));
     }
 
     #[test]
