@@ -4,12 +4,7 @@
   "ingredients": [
     {
       "raw": "Curry Sauce (makes 2 cups):",
-      "expected": {
-        "item": "Curry Sauce (makes 2 cups):",
-        "measurements": [],
-        "note": null,
-        "category": "Spices & Seasonings"
-      }
+      "is_section_header": true
     },
     {
       "raw": "4 tbsp olive oil",
@@ -26,6 +21,7 @@
           }
         ],
         "note": null,
+        "section": "Curry Sauce (Makes 2 Cups)",
         "category": "Oils & Vinegars"
       }
     },
@@ -40,6 +36,7 @@
           }
         ],
         "note": "diced",
+        "section": "Curry Sauce (Makes 2 Cups)",
         "category": "Produce"
       }
     },
@@ -54,6 +51,7 @@
           }
         ],
         "note": null,
+        "section": "Curry Sauce (Makes 2 Cups)",
         "category": "Produce"
       }
     },
@@ -68,6 +66,7 @@
           }
         ],
         "note": "minced",
+        "section": "Curry Sauce (Makes 2 Cups)",
         "category": "Produce"
       }
     },
@@ -82,6 +81,7 @@
           }
         ],
         "note": null,
+        "section": "Curry Sauce (Makes 2 Cups)",
         "category": "Spices & Seasonings"
       }
     },
@@ -96,6 +96,7 @@
           }
         ],
         "note": null,
+        "section": "Curry Sauce (Makes 2 Cups)",
         "category": "Spices & Seasonings"
       }
     },
@@ -110,6 +111,7 @@
           }
         ],
         "note": null,
+        "section": "Curry Sauce (Makes 2 Cups)",
         "category": "Canned Goods"
       }
     },
@@ -119,6 +121,7 @@
         "item": "Grated zest and juice of 1/2 lime",
         "measurements": [],
         "note": null,
+        "section": "Curry Sauce (Makes 2 Cups)",
         "category": "Beverages"
       }
     },
@@ -137,6 +140,7 @@
           }
         ],
         "note": null,
+        "section": "Curry Sauce (Makes 2 Cups)",
         "category": "Spices & Seasonings"
       }
     },
@@ -151,6 +155,7 @@
           }
         ],
         "note": null,
+        "section": "Curry Sauce (Makes 2 Cups)",
         "category": "Spices & Seasonings"
       }
     },

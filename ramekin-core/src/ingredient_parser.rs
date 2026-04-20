@@ -2491,11 +2491,26 @@ pub fn detect_section_header(raw: &str) -> Option<String> {
     // We already rejected anything that parses with both amount + unit above,
     // so by here the line has no obvious ingredient shape. Treat short,
     // digit-free, few-word phrases as section headers (e.g. "Dough:",
-    // "Asparagus pesto:", "Chicken and noodle salad:"). This also covers
-    // mixed-case keyword headers previously handled by a dedicated pattern.
+    // "Asparagus pesto:", "Chicken and noodle salad:").
     let word_count = name.split_whitespace().count();
     if name.len() <= 50 && word_count <= 5 && !name.chars().any(|c| c.is_ascii_digit()) {
         return Some(normalize_section_name(name));
+    }
+
+    // Pattern 5: Longer mixed-case headers containing a well-known section
+    // keyword. Short phrases are already covered by pattern 4; this fallback
+    // catches verbose labels like "Creamy Artichoke Spread (makes a little
+    // extra):" or "PART III: The ham and nut filling:" where the word count
+    // exceeds five but a section keyword gives us high confidence.
+    if name.len() <= 80 {
+        const SECTION_KEYWORDS: &[&str] = &[
+            "topping", "filling", "frosting", "icing", "glaze", "sauce", "marinade", "dressing",
+            "crust", "batter", "drizzle", "garnish", "assembly", "serving", "coating", "streusel",
+            "crumble", "spread",
+        ];
+        if SECTION_KEYWORDS.iter().any(|kw| name_lower.contains(kw)) {
+            return Some(normalize_section_name(name));
+        }
     }
 
     None
@@ -2734,6 +2749,20 @@ mod tests {
         assert_eq!(
             detect_section_header("For serving:"),
             Some("For Serving".to_string())
+        );
+    }
+
+    #[test]
+    fn test_detect_section_header_long_keyword_fallback() {
+        // Headers longer than five words still count as sections when they
+        // contain a well-known section keyword.
+        assert!(detect_section_header("Creamy Artichoke Spread (makes a little extra):").is_some());
+        assert!(detect_section_header("PART III: The ham and nut filling:").is_some());
+        // A long phrase without any recognized keyword stays an ingredient
+        // (we don't have enough signal to call it a header).
+        assert_eq!(
+            detect_section_header("This is a long phrase with no keyword at all:"),
+            None
         );
     }
 
