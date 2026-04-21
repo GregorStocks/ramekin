@@ -174,7 +174,30 @@ _WRAPPER_OPTS_WITH_ARG: dict[str, frozenset[str]] = {
     "command": frozenset(),
     "builtin": frozenset(),
     "exec": frozenset({"-a"}),
+    "time": frozenset(),
+    "nohup": frozenset(),
+    "nice": frozenset({"-n", "--adjustment"}),
+    "sudo": frozenset(
+        {
+            "-u", "--user",
+            "-g", "--group",
+            "-U", "--other-user",
+            "-C", "--close-from",
+            "-D", "--chdir",
+            "-h", "--host",
+            "-p", "--prompt",
+            "-r", "--role",
+            "-t", "--type",
+            "-T", "--command-timeout",
+        }
+    ),
+    "timeout": frozenset({"-s", "--signal", "-k", "--kill-after"}),
 }
+
+# Wrappers whose last positional before the real command is an argument to
+# the wrapper itself (e.g. `timeout 30 CMD`).  After flag parsing ends the
+# walker consumes one more token before handing off to the outer loop.
+_WRAPPERS_WITH_POSITIONAL_ARG = frozenset({"timeout"})
 
 _ENV_ASSIGN_RE = re.compile(r"[A-Za-z_][A-Za-z0-9_]*=.*", re.DOTALL)
 
@@ -234,6 +257,10 @@ def _skip_wrapper_args(tokens: list[str], index: int, wrapper: str) -> int:
         if wrapper == "env" and _ENV_ASSIGN_RE.fullmatch(token):
             index += 1
             continue
+        if wrapper in _WRAPPERS_WITH_POSITIONAL_ARG:
+            # Consume the wrapper's own positional arg (e.g. timeout DURATION)
+            # and let the outer loop resume with the real command.
+            return index + 1
         return index
     return index
 
@@ -279,6 +306,19 @@ def _git_branch_subcommand_index(tokens: list[str], start: int) -> int | None:
     return None
 
 
+# git switch / checkout options that consume the NEXT argv token as their
+# argument but do not themselves name the branch target. We must skip over
+# them so the parser doesn't mistake the option's value for the branch name
+# (e.g. `git switch --conflict diff3 feature` must resolve to `feature`,
+# not `diff3`).
+_SWITCH_OPTS_CONSUMING_NEXT = frozenset(
+    {"--conflict", "--start-point", "-t", "--track"}
+)
+_CHECKOUT_OPTS_CONSUMING_NEXT = frozenset(
+    {"--conflict", "--pathspec-from-file", "-t", "--track", "--start-point"}
+)
+
+
 def _branch_switch_target_for_switch(args: list[str]) -> str | None:
     index = 0
     while index < len(args):
@@ -289,11 +329,16 @@ def _branch_switch_target_for_switch(args: list[str]) -> str | None:
         # verify the target ahead of time, so force the unknown-target path.
         if token == "-":
             return "__UNKNOWN__"
-        if token in ("-c", "-C", "--create", "--force-create"):
+        if token in ("-c", "-C", "--create", "--force-create", "--orphan"):
             if index + 1 < len(args):
                 return args[index + 1]
             return "__UNKNOWN__"
+        if token in _SWITCH_OPTS_CONSUMING_NEXT:
+            index += 2
+            continue
         if token.startswith("-"):
+            # Long-option with inline value (--foo=bar) or a short/long flag
+            # that doesn't consume a separate arg token.
             index += 1
             continue
         return token
@@ -313,6 +358,9 @@ def _branch_switch_target_for_checkout(args: list[str]) -> str | None:
             if index + 1 < len(args):
                 return args[index + 1]
             return "__UNKNOWN__"
+        if token in _CHECKOUT_OPTS_CONSUMING_NEXT:
+            index += 2
+            continue
         if token.startswith("-"):
             index += 1
             continue
