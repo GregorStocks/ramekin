@@ -45,3 +45,16 @@ If you are Claude for Web, first run `make setup-claude-web`. (If you're not sur
 Issues are tracked as JSON5 files in `issues/`, using the standard `p1-`/`p2-`/`p3-`/`p4-` or `blocked-` filename prefixes. See `doc/issues.md` for format and queries.
 
 You can put whatever docs you want in `docs/agent/` with the understanding that they're your own personal memory aids and not for humans.
+
+Create and update PRs with:
+
+```bash
+agent-submit --title "Updated title" --body "$(cat <<'EOF'
+...updated description...
+EOF
+)"
+```
+
+You will be on a branch with two random English words in its name. Stay on that branch. Do not create or switch branches.
+
+Log files live in logs/.
