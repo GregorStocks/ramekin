@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import title-normalization-test description-generation-test
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import title-normalization-test description-generation-test server-release-build
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -53,11 +53,11 @@ dev-down: ## Stop dev processes (not database)
 api/openapi.json: $(API_SOURCES)
 	@echo "Building server and generating OpenAPI spec..." | $(TS)
 	@mkdir -p api
-	@$(MAKE) $(SERVER_RELEASE_BIN)
+	@$(MAKE) server-release-build
 	@$(SERVER_RELEASE_BIN) --openapi > api/openapi.json
 	@echo "Generated api/openapi.json" | $(TS)
 
-$(SERVER_RELEASE_BIN):
+server-release-build:
 	@cd server && cargo build --release -q
 
 # Generate clients from OpenAPI spec
@@ -96,7 +96,7 @@ worktree-setup: ## Generate dev.env and test.env for this worktree
 cli/target/debug/ramekin-cli: $(CLIENT_MARKER)
 	cd cli && cargo build
 
-test: check-deps $(CLIENT_MARKER) cli/target/debug/ramekin-cli $(SERVER_RELEASE_BIN) ## Run API tests
+test: check-deps $(CLIENT_MARKER) cli/target/debug/ramekin-cli server-release-build ## Run API tests
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/run-tests.sh
 
 test-ui: check-deps $(CLIENT_MARKER) ## Run UI tests with Playwright (requires DATABASE_URL)

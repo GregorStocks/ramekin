@@ -5,7 +5,8 @@ cd "$(dirname "$0")/.."
 
 ENV_FILE="${TEST_ENV_FILE:-test.env}"
 ORIG_PROCESS_COMPOSE_PORT="${PROCESS_COMPOSE_PORT:-}"
-STATUS_DIR="logs/test-status"
+TEST_LOG_FILE="${TEST_LOG_FILE:-logs/test.log}"
+STATUS_DIR="${TEST_STATUS_DIR:-logs/test-status}"
 TARGET_PROCESSES=(
   rust-tests-server
   rust-tests-cli
@@ -22,14 +23,15 @@ set +a
 if [ -n "$ORIG_PROCESS_COMPOSE_PORT" ]; then
   export PROCESS_COMPOSE_PORT="$ORIG_PROCESS_COMPOSE_PORT"
 fi
+export TEST_STATUS_DIR="$STATUS_DIR"
 
 print_failure_logs() {
-  if [ -f logs/test.log ]; then
-    echo "[$(date +%H:%M:%S)] Test orchestration failed. Last 200 lines of logs/test.log:"
-    tail -n 200 logs/test.log
+  if [ -f "$TEST_LOG_FILE" ]; then
+    echo "[$(date +%H:%M:%S)] Test orchestration failed. Last 200 lines of ${TEST_LOG_FILE}:"
+    tail -n 200 "$TEST_LOG_FILE"
   else
-    echo "[$(date +%H:%M:%S)] Test orchestration failed. logs/test.log not found."
-    ls -la logs || true
+    echo "[$(date +%H:%M:%S)] Test orchestration failed. ${TEST_LOG_FILE} not found."
+    ls -la "$(dirname "$TEST_LOG_FILE")" || true
   fi
 }
 
@@ -56,7 +58,7 @@ collect_failed_processes() {
 echo "[$(date +%H:%M:%S)] Starting test orchestration via process-compose"
 START_TIME=$(date +%s)
 
-mkdir -p logs
+mkdir -p "$(dirname "$TEST_LOG_FILE")"
 rm -rf "$STATUS_DIR"
 mkdir -p "$STATUS_DIR"
 

@@ -21,6 +21,8 @@ def test_run_tests_fails_when_a_test_process_failed_but_process_compose_exits_ze
 
     log_line = "synthetic hidden rust test failure"
     env_file = tmp_path / "test.env"
+    log_path = tmp_path / "isolated-test.log"
+    status_dir = tmp_path / "isolated-status"
     env_file.write_text("PROCESS_COMPOSE_PORT=4317\n", encoding="utf-8")
 
     _write_executable(
@@ -29,13 +31,12 @@ def test_run_tests_fails_when_a_test_process_failed_but_process_compose_exits_ze
 set -e
 
 if [ "$1" = "up" ]; then
-  mkdir -p logs
-  mkdir -p logs/test-status
-  printf '%s\\n' "{log_line}" > logs/test.log
-  printf '%s\\n' 0 > logs/test-status/rust-tests-server.exit
-  printf '%s\\n' 0 > logs/test-status/rust-tests-cli.exit
-  printf '%s\\n' 1 > logs/test-status/rust-tests-core.exit
-  printf '%s\\n' 0 > logs/test-status/api-tests.exit
+  mkdir -p "$TEST_STATUS_DIR"
+  printf '%s\\n' "{log_line}" > "$TEST_LOG_FILE"
+  printf '%s\\n' 0 > "$TEST_STATUS_DIR/rust-tests-server.exit"
+  printf '%s\\n' 0 > "$TEST_STATUS_DIR/rust-tests-cli.exit"
+  printf '%s\\n' 1 > "$TEST_STATUS_DIR/rust-tests-core.exit"
+  printf '%s\\n' 0 > "$TEST_STATUS_DIR/api-tests.exit"
   exit 0
 fi
 
@@ -46,6 +47,8 @@ exit 1
     env = os.environ.copy()
     env["PATH"] = f"{bin_dir}:{env['PATH']}"
     env["TEST_ENV_FILE"] = str(env_file)
+    env["TEST_LOG_FILE"] = str(log_path)
+    env["TEST_STATUS_DIR"] = str(status_dir)
 
     result = subprocess.run(
         ["bash", str(SCRIPT_PATH)],
@@ -59,5 +62,5 @@ exit 1
     assert result.returncode == 1
     assert "One or more test processes failed:" in result.stdout
     assert "rust-tests-core (exit_code=1)" in result.stdout
-    assert "Last 200 lines of logs/test.log:" in result.stdout
+    assert f"Last 200 lines of {log_path}:" in result.stdout
     assert log_line in result.stdout

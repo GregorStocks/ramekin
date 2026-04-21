@@ -10,7 +10,7 @@ processes:
       START=$(date +%s)
       cargo test -q --manifest-path server/Cargo.toml
       EXIT_CODE=$?
-      printf '%s\n' "$EXIT_CODE" > logs/test-status/rust-tests-server.exit
+      printf '%s\n' "$EXIT_CODE" > ${TEST_STATUS_DIR}/rust-tests-server.exit
       echo "[TIMING] rust-tests-server completed in $(($(date +%s) - START))s"
       exit $EXIT_CODE
     availability:
@@ -22,7 +22,7 @@ processes:
       START=$(date +%s)
       cargo test -q --manifest-path cli/Cargo.toml
       EXIT_CODE=$?
-      printf '%s\n' "$EXIT_CODE" > logs/test-status/rust-tests-cli.exit
+      printf '%s\n' "$EXIT_CODE" > ${TEST_STATUS_DIR}/rust-tests-cli.exit
       echo "[TIMING] rust-tests-cli completed in $(($(date +%s) - START))s"
       exit $EXIT_CODE
     availability:
@@ -34,7 +34,7 @@ processes:
       START=$(date +%s)
       cargo test -q --manifest-path ramekin-core/Cargo.toml
       EXIT_CODE=$?
-      printf '%s\n' "$EXIT_CODE" > logs/test-status/rust-tests-core.exit
+      printf '%s\n' "$EXIT_CODE" > ${TEST_STATUS_DIR}/rust-tests-core.exit
       echo "[TIMING] rust-tests-core completed in $(($(date +%s) - START))s"
       exit $EXIT_CODE
     availability:
@@ -75,7 +75,7 @@ processes:
       START=$(date +%s)
       pytest tests -v -n auto --ignore=tests/ui
       EXIT_CODE=$?
-      printf '%s\n' "$EXIT_CODE" > logs/test-status/api-tests.exit
+      printf '%s\n' "$EXIT_CODE" > ${TEST_STATUS_DIR}/api-tests.exit
       echo "[TIMING] api-tests completed in $(($(date +%s) - START))s"
       exit $EXIT_CODE
     environment:
