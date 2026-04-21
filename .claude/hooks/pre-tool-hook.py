@@ -10,6 +10,14 @@ Blocks direct invocation of the ramekin-cli binary.
 Blocks branch-changing git commands without explicit signoff.
 Protects generated pipeline output from manual shell edits and from
 pushes that leave pipeline results unstaged or uncommitted.
+
+Implementation notes:
+    Every rule operates on tokens, not raw regexes on the command string.
+    Each shell segment is tokenized with shlex, leading env-var assignments
+    are separated out, and transparent wrappers (time, sudo[+flags], nice,
+    nohup, env, timeout[+flags] DURATION) are peeled off to reveal the real
+    executable.  Matches are done against the executable's basename, so
+    `/usr/bin/cargo` trips the cargo rule exactly like `cargo` does.
 """
 
 import json
@@ -18,59 +26,6 @@ import re
 import shlex
 import subprocess
 import sys
-
-# Command-position prefix: start of string, newline, or a shell separator,
-# followed by any mix of env-var assignments and transparent command
-# wrappers (time, sudo [with flags], nohup, nice, env, timeout DURATION).
-# The wrappers don't change what's being run, so e.g. `time cargo test`
-# should trip the same rules as `cargo test`.
-_CMD_POS = r"(?:^|\n|&&|\|\||[;&|]|\$\()\s*"
-_WRAPPER_PREFIX = (
-    r"(?:"
-    r"\w+=\S+\s+"                       # FOO=bar
-    r"|(?:time|nohup|nice|env)\s+"      # simple wrappers
-    r"|sudo(?:\s+-\S+)*\s+"             # sudo, optionally with short flags
-    r"|timeout(?:\s+-\S+)*\s+\S+\s+"    # timeout [flags] DURATION
-    r")*"
-)
-
-# Matches 'cargo' at shell command position.
-_CARGO_CMD_RE = re.compile(_CMD_POS + _WRAPPER_PREFIX + r"cargo\b")
-
-# Matches pkill or killall at shell command position.
-_KILL_BY_NAME_RE = re.compile(_CMD_POS + _WRAPPER_PREFIX + r"(?:pkill|killall)\b")
-
-# Matches 'rustfmt' at shell command position.
-_RUSTFMT_RE = re.compile(_CMD_POS + _WRAPPER_PREFIX + r"rustfmt\b")
-
-# Matches invocations of the built ramekin-cli binary at shell command
-# position (e.g. 'cli/target/release/ramekin-cli', './cli/target/debug/ramekin-cli',
-# or an absolute path).  Running the built binary directly bypasses the
-# Makefile's dependency checks and DB setup.
-_RAMEKIN_CLI_RE = re.compile(
-    _CMD_POS + _WRAPPER_PREFIX + r"\S*\bcli/target/(?:release|debug)/ramekin-cli\b"
-)
-
-# Matches 'gh issue' at shell command position.
-_GH_ISSUE_RE = re.compile(_CMD_POS + _WRAPPER_PREFIX + r"gh\s+issue\b")
-
-# Matches 'git push' at shell command position.
-_GIT_PUSH_RE = re.compile(_CMD_POS + _WRAPPER_PREFIX + r"git\s+push(?:\s|$)")
-
-# Matches 'gh pr edit' at shell command position.
-_GH_PR_EDIT_RE = re.compile(_CMD_POS + _WRAPPER_PREFIX + r"gh\s+pr\s+edit\b")
-
-# Matches 'git worktree add' creating a worktree under /tmp.
-_TMP_WORKTREE_ADD_RE = re.compile(
-    _CMD_POS + _WRAPPER_PREFIX + r"git\s+worktree\s+add\b[^\n]*\s/tmp(?:/|\b)"
-)
-
-# Matches manual mutation of generated pipeline output via common shell commands.
-_PIPELINE_MUTATION_RE = re.compile(
-    _CMD_POS + _WRAPPER_PREFIX
-    + r"(?:rm|mv|cp|install|touch|truncate|mkdir|rmdir|sed\s+-i|perl\s+-pi|git\s+checkout|git\s+restore|git\s+clean)\b"
-    + r"[^\n]*\bdata/(?:pipeline-snapshots|pipeline-runs)(?:/|\b)"
-)
 
 _PIPELINE_OUTPUT_PATHS = ("data/pipeline-snapshots", "data/pipeline-runs")
 _BRANCH_SWITCH_SIGNOFF_ENV = "RAMEKIN_BRANCH_SWITCH_SIGNOFF"
@@ -84,9 +39,6 @@ _CARGO_TO_MAKE = {
     "check": "make lint",
     "run": "make test or another make target",
 }
-
-# Regex to extract the cargo subcommand from a command string.
-_CARGO_SUBCMD_RE = re.compile(_CMD_POS + _WRAPPER_PREFIX + r"cargo\s+(\w+)")
 
 
 def _shell_command_segments(command: str) -> list[str]:
@@ -137,38 +89,8 @@ def _leading_env_assignments(tokens: list[str]) -> tuple[dict[str, str], int]:
     return env, index
 
 
-def branch_switch_target(command: str) -> str | None:
-    for segment in _shell_command_segments(command):
-        target = _branch_switch_target_for_segment(segment)
-        if target is not None:
-            return target
-    return None
-
-
-def _branch_switch_target_for_segment(command: str) -> str | None:
-    tokens = _shell_tokens(command)
-    if not tokens:
-        return None
-
-    index = _git_executable_index(tokens)
-    if index is None:
-        return None
-
-    subcommand_index = _git_branch_subcommand_index(tokens, index + 1)
-    if subcommand_index is None:
-        return None
-
-    subcommand = tokens[subcommand_index]
-    args = tokens[subcommand_index + 1 :]
-    if subcommand == "switch":
-        return _branch_switch_target_for_switch(args)
-    if subcommand == "checkout":
-        return _branch_switch_target_for_checkout(args)
-    return None
-
-
-# Wrapper options that consume an extra argv token (so the hook can walk past
-# the option's argument when resolving the real executable).
+# Wrapper options that consume an extra argv token. Applied when peeling
+# wrappers off to reveal the real executable.
 _WRAPPER_OPTS_WITH_ARG: dict[str, frozenset[str]] = {
     "env": frozenset({"-u", "--unset", "-C", "--chdir", "-S", "--split-string"}),
     "command": frozenset(),
@@ -195,7 +117,7 @@ _WRAPPER_OPTS_WITH_ARG: dict[str, frozenset[str]] = {
 }
 
 # Wrappers whose last positional before the real command is an argument to
-# the wrapper itself (e.g. `timeout 30 CMD`).  After flag parsing ends the
+# the wrapper itself (e.g. `timeout 30 CMD`). After flag parsing ends the
 # walker consumes one more token before handing off to the outer loop.
 _WRAPPERS_WITH_POSITIONAL_ARG = frozenset({"timeout"})
 
@@ -209,17 +131,13 @@ _ENV_SHORT_OPTS_NO_ARG = frozenset({"i", "v", "0"})
 
 
 def _env_short_cluster_consumes_next(cluster: str) -> bool:
-    """True if a '-...' short-option cluster expects its arg in the next token."""
     position = 0
     while position < len(cluster):
         char = cluster[position]
         if char in _ENV_SHORT_OPTS_WITH_ARG:
-            # An arg-taking option anywhere but the last position packs its
-            # argument inline (e.g. `-uNAME`); at the last position the
-            # argument lives in the next argv token.
             return position == len(cluster) - 1
         if char not in _ENV_SHORT_OPTS_NO_ARG:
-            return False  # unknown short flag; don't guess it takes an arg
+            return False
         position += 1
     return False
 
@@ -265,58 +183,76 @@ def _skip_wrapper_args(tokens: list[str], index: int, wrapper: str) -> int:
     return index
 
 
-def _executable_index(tokens: list[str], name: str) -> int | None:
-    """Locate the argv index of `name` once wrappers/env-prefixes are peeled off."""
-    _env, index = _leading_env_assignments(tokens)
+def _walk_segment(
+    segment: str,
+) -> tuple[dict[str, str], str, str, list[str]] | None:
+    """Return (env, exe_raw, exe_basename, args) for a segment, or None.
+
+    Peels leading env-var assignments and transparent wrappers
+    (time/sudo/nohup/nice/timeout/env/command/builtin/exec) before exposing
+    the real executable. Match against `exe_basename` so `/usr/bin/cargo`
+    resolves to "cargo".
+    """
+    tokens = _shell_tokens(segment)
+    if not tokens:
+        return None
+    env, index = _leading_env_assignments(tokens)
     while index < len(tokens):
-        token = tokens[index]
-        basename = os.path.basename(token)
+        basename = os.path.basename(tokens[index])
         if basename in _WRAPPER_OPTS_WITH_ARG:
             index = _skip_wrapper_args(tokens, index + 1, basename)
             continue
-        if basename == name:
-            return index
+        break
+    if index >= len(tokens):
         return None
-    return None
+    exe_raw = tokens[index]
+    exe_basename = os.path.basename(exe_raw)
+    args = tokens[index + 1 :]
+    return env, exe_raw, exe_basename, args
 
 
-def _git_executable_index(tokens: list[str]) -> int | None:
-    return _executable_index(tokens, "git")
+# Git global options that consume the next token as their argument.
+_GIT_GLOBAL_OPTS_WITH_ARG = frozenset(
+    {"-C", "-c", "--exec-path", "--git-dir", "--work-tree", "--namespace"}
+)
+_GIT_GLOBAL_LONG_OPTS_WITH_VALUE = (
+    "--exec-path=",
+    "--git-dir=",
+    "--work-tree=",
+    "--namespace=",
+)
 
 
-def _git_branch_subcommand_index(tokens: list[str], start: int) -> int | None:
-    index = start
-    while index < len(tokens):
-        token = tokens[index]
-        if token in ("switch", "checkout"):
-            return index
-        if token in ("-C", "-c", "--exec-path", "--git-dir", "--work-tree", "--namespace"):
+def _git_subcommand(args: list[str]) -> tuple[str | None, list[str]]:
+    """Return (subcommand, remaining_args) for a git invocation."""
+    index = 0
+    while index < len(args):
+        token = args[index]
+        if token in _GIT_GLOBAL_OPTS_WITH_ARG:
             index += 2
             continue
-        if token.startswith("--exec-path=") or token.startswith("--git-dir="):
-            index += 1
-            continue
-        if token.startswith("--work-tree=") or token.startswith("--namespace="):
+        if any(token.startswith(p) for p in _GIT_GLOBAL_LONG_OPTS_WITH_VALUE):
             index += 1
             continue
         if token.startswith("-"):
             index += 1
             continue
-        return None
-    return None
+        return token, args[index + 1 :]
+    return None, []
 
 
-# git switch / checkout options that consume the NEXT argv token as their
+# git switch / checkout: options that consume the NEXT argv token as their
 # argument but do not themselves name the branch target. We must skip over
-# them so the parser doesn't mistake the option's value for the branch name
-# (e.g. `git switch --conflict diff3 feature` must resolve to `feature`,
-# not `diff3`).
-_SWITCH_OPTS_CONSUMING_NEXT = frozenset(
-    {"--conflict", "--start-point", "-t", "--track"}
-)
+# them so the parser doesn't mistake the option's value for the branch name.
+_SWITCH_OPTS_CONSUMING_NEXT = frozenset({"--conflict", "--start-point"})
 _CHECKOUT_OPTS_CONSUMING_NEXT = frozenset(
-    {"--conflict", "--pathspec-from-file", "-t", "--track", "--start-point"}
+    {"--conflict", "--pathspec-from-file", "--start-point"}
 )
+# git switch / checkout: options that signal a branch change we can't
+# reliably resolve to a single target. Force the __UNKNOWN__ path so
+# signoff can't be matched against anything but the real branch name.
+_AMBIGUOUS_SWITCH_OPTS = frozenset({"--track", "-t"})
+_AMBIGUOUS_CHECKOUT_OPTS = frozenset({"--track", "-t"})
 
 
 def _branch_switch_target_for_switch(args: list[str]) -> str | None:
@@ -325,9 +261,10 @@ def _branch_switch_target_for_switch(args: list[str]) -> str | None:
         token = args[index]
         if token == "--":
             return None
-        # Bare `-` is git's "previous branch" shorthand, not a flag; we can't
-        # verify the target ahead of time, so force the unknown-target path.
+        # Bare `-` is git's "previous branch" shorthand, not a flag.
         if token == "-":
+            return "__UNKNOWN__"
+        if token in _AMBIGUOUS_SWITCH_OPTS:
             return "__UNKNOWN__"
         if token in ("-c", "-C", "--create", "--force-create", "--orphan"):
             if index + 1 < len(args):
@@ -337,8 +274,6 @@ def _branch_switch_target_for_switch(args: list[str]) -> str | None:
             index += 2
             continue
         if token.startswith("-"):
-            # Long-option with inline value (--foo=bar) or a short/long flag
-            # that doesn't consume a separate arg token.
             index += 1
             continue
         return token
@@ -351,8 +286,9 @@ def _branch_switch_target_for_checkout(args: list[str]) -> str | None:
         token = args[index]
         if token == "--":
             return None
-        # Bare `-` is git's "previous branch" shorthand, not a flag.
         if token == "-":
+            return "__UNKNOWN__"
+        if token in _AMBIGUOUS_CHECKOUT_OPTS:
             return "__UNKNOWN__"
         if token in ("-b", "-B", "--orphan"):
             if index + 1 < len(args):
@@ -372,86 +308,141 @@ def _branch_switch_target_for_checkout(args: list[str]) -> str | None:
     return None
 
 
-def branch_switch_violation(command: str) -> str | None:
-    for segment in _shell_command_segments(command):
-        target = _branch_switch_target_for_segment(segment)
-        if target is None:
+# Commands that mutate files on disk. For each, any arg that resolves under
+# a protected pipeline path should block the call.
+_FS_MUTATION_CMDS = frozenset(
+    {"rm", "mv", "cp", "install", "touch", "truncate", "mkdir", "rmdir"}
+)
+# `sed -i ...` / `perl -pi ...` write the target file in place; for these we
+# only want to fire when an in-place flag is present.
+_INPLACE_EDIT_FLAGS: dict[str, frozenset[str]] = {
+    "sed": frozenset({"-i", "--in-place"}),
+    "perl": frozenset(),  # handled by _perl_in_place below
+}
+# git subcommands that can overwrite working-tree contents.
+_GIT_WORKTREE_MUTATION_SUBCMDS = frozenset({"checkout", "restore", "clean"})
+
+
+def _path_is_protected(path: str) -> bool:
+    # Normalize `./foo` and strip any trailing slashes.
+    if path.startswith("./"):
+        path = path[2:]
+    path = path.rstrip("/")
+    for protected in _PIPELINE_OUTPUT_PATHS:
+        if path == protected or path.startswith(protected + "/"):
+            return True
+    return False
+
+
+def _any_arg_targets_pipeline(args: list[str]) -> bool:
+    return any(_path_is_protected(a) for a in args if not a.startswith("-"))
+
+
+def _sed_is_inplace(args: list[str]) -> bool:
+    for arg in args:
+        if arg in _INPLACE_EDIT_FLAGS["sed"]:
+            return True
+        # GNU sed allows `-i.bak` (backup suffix glued on).
+        if arg.startswith("-i") and not arg.startswith("--"):
+            return True
+        if arg.startswith("--in-place"):
+            return True
+    return False
+
+
+def _perl_is_inplace(args: list[str]) -> bool:
+    # `perl -pi -e '...'` / `perl -pie '...'` / `perl -i.bak -pe '...'` all
+    # rewrite in place. Detect any short-option cluster containing `i`.
+    for arg in args:
+        if not arg.startswith("-") or arg.startswith("--"):
             continue
+        if "i" in arg[1:]:
+            return True
+    return False
 
-        tokens = _shell_tokens(segment)
-        assert tokens is not None
-        env, _index = _leading_env_assignments(tokens)
-        approved = env.get(_BRANCH_SWITCH_SIGNOFF_ENV)
-        if target != "__UNKNOWN__" and approved == target:
-            continue
 
-        if target == "__UNKNOWN__":
-            return (
-                "Refusing branch-changing git command. This checkout/switch form "
-                "needs explicit user signoff, and the hook could not determine a "
-                f"single target branch to verify via {_BRANCH_SWITCH_SIGNOFF_ENV}."
-            )
-
-        return (
-            "Refusing branch-changing git command without explicit user signoff. "
-            "After the user approves switching to that specific branch, re-run the "
-            f"command with {_BRANCH_SWITCH_SIGNOFF_ENV}={target} immediately before "
-            "the git invocation."
-        )
-
+def pipeline_mutation_message(
+    exe_basename: str, exe_raw: str, args: list[str]
+) -> str | None:
+    """Return the pipeline-mutation error if this call writes a protected path."""
+    if exe_basename in _FS_MUTATION_CMDS and _any_arg_targets_pipeline(args):
+        return _pipeline_mutation_error()
+    if exe_basename == "sed" and _sed_is_inplace(args) and _any_arg_targets_pipeline(args):
+        return _pipeline_mutation_error()
+    if exe_basename == "perl" and _perl_is_inplace(args) and _any_arg_targets_pipeline(args):
+        return _pipeline_mutation_error()
+    if exe_basename == "git":
+        subcmd, rest = _git_subcommand(args)
+        if subcmd in _GIT_WORKTREE_MUTATION_SUBCMDS and _any_arg_targets_pipeline(rest):
+            return _pipeline_mutation_error()
     return None
 
 
-def rejection_message(command: str, dirty_pipeline_output: bool) -> str | None:
-    # Block process-killing commands that target by name — multiple agent
-    # worktrees share this machine and pkill/killall would hit other agents.
-    if _KILL_BY_NAME_RE.search(command):
+def _pipeline_mutation_error() -> str:
+    return (
+        "Do not manually edit, restore, delete, or otherwise mutate "
+        "data/pipeline-snapshots or data/pipeline-runs from the shell. "
+        "The only acceptable way to change those directories is to run "
+        "'make pipeline'."
+    )
+
+
+def _git_worktree_add_under_tmp(args: list[str]) -> bool:
+    """True if the git sub-invocation is `worktree add ... /tmp[/...]`."""
+    subcmd, rest = _git_subcommand(args)
+    if subcmd != "worktree" or not rest or rest[0] != "add":
+        return False
+    for token in rest[1:]:
+        if token == "/tmp" or token.startswith("/tmp/"):
+            return True
+    return False
+
+
+def _looks_like_built_ramekin_cli(exe_raw: str, exe_basename: str) -> bool:
+    if exe_basename != "ramekin-cli":
+        return False
+    # Block explicitly when invoked from a target/ build dir. Tolerate any
+    # system-installed ramekin-cli (on $PATH) so users can still script
+    # around the released binary if one exists.
+    return bool(re.search(r"(?:^|/)cli/target/(?:release|debug)/ramekin-cli$", exe_raw))
+
+
+def _first_positional(args: list[str]) -> str | None:
+    for token in args:
+        if not token.startswith("-"):
+            return token
+    return None
+
+
+def _gh_subcommand_chain(args: list[str]) -> list[str]:
+    """Return the chain of positional subcommands for a gh invocation."""
+    chain: list[str] = []
+    for token in args:
+        if token.startswith("-"):
+            continue
+        chain.append(token)
+    return chain
+
+
+def _segment_rejection(
+    env: dict[str, str],
+    exe_raw: str,
+    exe_basename: str,
+    args: list[str],
+    dirty_pipeline_output: bool,
+) -> str | None:
+    # Process-killing by name — other agents share this machine.
+    if exe_basename in ("pkill", "killall"):
         return (
             "Do not use pkill/killall — other agents share this machine. "
             "Only kill processes by specific PID if you are certain the PID "
             "belongs to your own worktree."
         )
 
-    if _GH_ISSUE_RE.search(command):
-        return (
-            "Do not use GitHub issues. See doc/issues.md for how this "
-            "project tracks issues (JSON5 files in issues/)."
-        )
-
-    if _RUSTFMT_RE.search(command):
+    if exe_basename == "rustfmt":
         return "Do not run rustfmt directly. Use 'make lint' instead."
 
-    if _TMP_WORKTREE_ADD_RE.search(command):
-        return (
-            "Do not create git worktrees under /tmp. /tmp is a tmpfs on this "
-            "machine and large worktrees plus builds will exhaust RAM-backed "
-            "space. Use a disk-backed path (e.g. ~/code/worktrees) instead."
-        )
-
-    branch_switch_error = branch_switch_violation(command)
-    if branch_switch_error is not None:
-        return branch_switch_error
-
-    if _PIPELINE_MUTATION_RE.search(command):
-        return (
-            "Do not manually edit, restore, delete, or otherwise mutate "
-            "data/pipeline-snapshots or data/pipeline-runs from the shell. "
-            "The only acceptable way to change those directories is to run "
-            "'make pipeline'."
-        )
-
-    if _GIT_PUSH_RE.search(command) and dirty_pipeline_output:
-        return (
-            "Refusing to push while pipeline output is still modified under "
-            "data/pipeline-snapshots/ or data/pipeline-runs/. Keep the full "
-            "result of 'make pipeline' together: stage it, commit it, and "
-            "only then push."
-        )
-
-    if _GIT_PUSH_RE.search(command) or _GH_PR_EDIT_RE.search(command):
-        return agent_submit_message()
-
-    if _RAMEKIN_CLI_RE.search(command):
+    if _looks_like_built_ramekin_cli(exe_raw, exe_basename):
         return (
             "Do not invoke the ramekin-cli binary directly (e.g. "
             "cli/target/release/ramekin-cli). Use the appropriate make target "
@@ -459,11 +450,19 @@ def rejection_message(command: str, dirty_pipeline_output: bool) -> str | None:
             "and sets up the DB."
         )
 
-    if _CARGO_CMD_RE.search(command):
-        match = _CARGO_SUBCMD_RE.search(command)
-        subcmd = match.group(1) if match else None
-        suggestion = _CARGO_TO_MAKE.get(subcmd) if subcmd else None
+    if exe_basename == "gh":
+        chain = _gh_subcommand_chain(args)
+        if chain and chain[0] == "issue":
+            return (
+                "Do not use GitHub issues. See doc/issues.md for how this "
+                "project tracks issues (JSON5 files in issues/)."
+            )
+        if len(chain) >= 2 and chain[0] == "pr" and chain[1] == "edit":
+            return agent_submit_message()
 
+    if exe_basename == "cargo":
+        subcmd = _first_positional(args)
+        suggestion = _CARGO_TO_MAKE.get(subcmd) if subcmd else None
         if suggestion:
             return (
                 f"Do not run cargo commands directly. "
@@ -475,6 +474,81 @@ def rejection_message(command: str, dirty_pipeline_output: bool) -> str | None:
             "checks prerequisites and sets up the DB."
         )
 
+    # Protect pipeline output from shell-level mutation.
+    message = pipeline_mutation_message(exe_basename, exe_raw, args)
+    if message is not None:
+        return message
+
+    if exe_basename == "git":
+        subcmd, rest = _git_subcommand(args)
+
+        if _git_worktree_add_under_tmp(args):
+            return (
+                "Do not create git worktrees under /tmp. /tmp is a tmpfs on this "
+                "machine and large worktrees plus builds will exhaust RAM-backed "
+                "space. Use a disk-backed path (e.g. ~/code/worktrees) instead."
+            )
+
+        if subcmd == "push":
+            if dirty_pipeline_output:
+                return (
+                    "Refusing to push while pipeline output is still modified under "
+                    "data/pipeline-snapshots/ or data/pipeline-runs/. Keep the full "
+                    "result of 'make pipeline' together: stage it, commit it, and "
+                    "only then push."
+                )
+            return agent_submit_message()
+
+        if subcmd in ("switch", "checkout"):
+            if subcmd == "switch":
+                target = _branch_switch_target_for_switch(rest)
+            else:
+                target = _branch_switch_target_for_checkout(rest)
+            if target is not None:
+                approved = env.get(_BRANCH_SWITCH_SIGNOFF_ENV)
+                if target == "__UNKNOWN__":
+                    return (
+                        "Refusing branch-changing git command. This checkout/switch form "
+                        "needs explicit user signoff, and the hook could not determine a "
+                        f"single target branch to verify via {_BRANCH_SWITCH_SIGNOFF_ENV}."
+                    )
+                if approved != target:
+                    return (
+                        "Refusing branch-changing git command without explicit user signoff. "
+                        "After the user approves switching to that specific branch, re-run the "
+                        f"command with {_BRANCH_SWITCH_SIGNOFF_ENV}={target} immediately before "
+                        "the git invocation."
+                    )
+
+    return None
+
+
+def _segment_uses_git_push(segment: str) -> bool:
+    walked = _walk_segment(segment)
+    if walked is None:
+        return False
+    _env, _raw, exe_basename, args = walked
+    if exe_basename != "git":
+        return False
+    subcmd, _ = _git_subcommand(args)
+    return subcmd == "push"
+
+
+def command_uses_git_push(command: str) -> bool:
+    return any(_segment_uses_git_push(s) for s in _shell_command_segments(command))
+
+
+def rejection_message(command: str, dirty_pipeline_output: bool) -> str | None:
+    for segment in _shell_command_segments(command):
+        walked = _walk_segment(segment)
+        if walked is None:
+            continue
+        env, exe_raw, exe_basename, args = walked
+        message = _segment_rejection(
+            env, exe_raw, exe_basename, args, dirty_pipeline_output
+        )
+        if message is not None:
+            return message
     return None
 
 
@@ -486,7 +560,7 @@ def main() -> None:
 
     command = data.get("tool_input", {}).get("command", "")
     dirty_pipeline_output = False
-    if _GIT_PUSH_RE.search(command):
+    if command_uses_git_push(command):
         dirty_pipeline_output = has_uncommitted_pipeline_output()
 
     message = rejection_message(command, dirty_pipeline_output)
