@@ -42,16 +42,62 @@ _CARGO_TO_MAKE = {
 
 
 def _shell_command_segments(command: str) -> list[str]:
-    # Bash line continuations (`\<newline>`) join lines into a single
-    # logical command; collapse them BEFORE splitting so e.g.
-    # `git \<newline>push` isn't torn into two fragments that hide the real
-    # invocation from per-segment rules.
-    collapsed = re.sub(r"\\\n", " ", command)
-    return [
-        segment.strip()
-        for segment in re.split(r"\n|&&|\|\||[;|]", collapsed)
-        if segment.strip()
-    ]
+    """Split a command on unquoted shell separators.
+
+    Separators: `&&`, `||`, `;`, `|`, `&`, newline. Separators appearing
+    inside single or double quotes (or after a backslash escape in an
+    unquoted context) are treated as literal characters. Bash line
+    continuations (`\\<newline>`) are collapsed first so multi-line
+    commands aren't torn into meaningless fragments.
+    """
+    command = re.sub(r"\\\n", " ", command)
+    segments: list[str] = []
+    buf: list[str] = []
+    in_single = False
+    in_double = False
+    i = 0
+    n = len(command)
+
+    def flush() -> None:
+        text = "".join(buf).strip()
+        if text:
+            segments.append(text)
+        buf.clear()
+
+    while i < n:
+        ch = command[i]
+        if ch == "\\" and i + 1 < n and not in_single:
+            buf.append(ch)
+            buf.append(command[i + 1])
+            i += 2
+            continue
+        if ch == "'" and not in_double:
+            in_single = not in_single
+            buf.append(ch)
+            i += 1
+            continue
+        if ch == '"' and not in_single:
+            in_double = not in_double
+            buf.append(ch)
+            i += 1
+            continue
+        if in_single or in_double:
+            buf.append(ch)
+            i += 1
+            continue
+        # Unquoted territory — check separators.
+        if command.startswith("&&", i) or command.startswith("||", i):
+            flush()
+            i += 2
+            continue
+        if ch in "\n;|&":
+            flush()
+            i += 1
+            continue
+        buf.append(ch)
+        i += 1
+    flush()
+    return segments
 
 
 def has_uncommitted_pipeline_output() -> bool:
@@ -132,28 +178,38 @@ _WRAPPERS_WITH_POSITIONAL_ARG = frozenset({"timeout"})
 
 _ENV_ASSIGN_RE = re.compile(r"[A-Za-z_][A-Za-z0-9_]*=.*", re.DOTALL)
 
-# GNU `env` short options. Options that take an argument may be at the tail
-# of a clustered short-option token (e.g. `-iu NAME` == `-i -u NAME`, while
-# `-iuNAME` packs the argument inline).
-_ENV_SHORT_OPTS_WITH_ARG = frozenset({"u", "C", "S"})
-_ENV_SHORT_OPTS_NO_ARG = frozenset({"i", "v", "0"})
+
+def _short_arg_letters_for(wrapper: str) -> frozenset[str]:
+    """Short-flag letters of the wrapper that take a separate-token argument."""
+    letters: set[str] = set()
+    for opt in _WRAPPER_OPTS_WITH_ARG.get(wrapper, frozenset()):
+        if opt.startswith("-") and not opt.startswith("--") and len(opt) == 2:
+            letters.add(opt[1])
+    return frozenset(letters)
 
 
-def _env_short_cluster_consumes_next(cluster: str) -> bool:
-    position = 0
-    while position < len(cluster):
-        char = cluster[position]
-        if char in _ENV_SHORT_OPTS_WITH_ARG:
+# Precomputed per-wrapper so the cluster check doesn't rebuild the set per call.
+_WRAPPER_SHORT_ARG_LETTERS: dict[str, frozenset[str]] = {
+    wrapper: _short_arg_letters_for(wrapper) for wrapper in _WRAPPER_OPTS_WITH_ARG
+}
+
+
+def _short_cluster_consumes_next(cluster: str, arg_letters: frozenset[str]) -> bool:
+    """True if the cluster expects the NEXT argv token as its arg.
+
+    Handles `-Eu NAME` (→ True, `u` terminates the cluster) and
+    `-uNAME` / `-EuNAME` (→ False, the arg is packed inline).
+    """
+    for position, char in enumerate(cluster):
+        if char in arg_letters:
             return position == len(cluster) - 1
-        if char not in _ENV_SHORT_OPTS_NO_ARG:
-            return False
-        position += 1
     return False
 
 
 def _skip_wrapper_args(tokens: list[str], index: int, wrapper: str) -> int:
     """Advance past a wrapper's own options / env-assignments to the next command."""
     opts_with_arg = _WRAPPER_OPTS_WITH_ARG.get(wrapper, frozenset())
+    short_arg_letters = _WRAPPER_SHORT_ARG_LETTERS.get(wrapper, frozenset())
     parsing_options = True
     while index < len(tokens):
         token = tokens[index]
@@ -169,12 +225,13 @@ def _skip_wrapper_args(tokens: list[str], index: int, wrapper: str) -> int:
             if token in opts_with_arg:
                 index += 2
                 continue
+            # Clustered short options (e.g. `sudo -Eu alice`) — if the cluster
+            # ends with an arg-taking short flag, the next token is that arg.
             if (
-                wrapper == "env"
-                and token.startswith("-")
+                token.startswith("-")
                 and not token.startswith("--")
                 and len(token) > 1
-                and _env_short_cluster_consumes_next(token[1:])
+                and _short_cluster_consumes_next(token[1:], short_arg_letters)
             ):
                 index += 2
                 continue
@@ -321,6 +378,10 @@ def _branch_switch_target_for_switch(args: list[str]) -> str | None:
     while index < len(args):
         token = args[index]
         if token == "--":
+            # Option terminator — `git switch -- <branch>` is a valid
+            # branch-changing form, so the next non-empty token is the target.
+            if index + 1 < len(args) and args[index + 1]:
+                return args[index + 1]
             return None
         # Bare `-` is git's "previous branch" shorthand, not a flag.
         if token == "-":
