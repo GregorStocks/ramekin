@@ -41,7 +41,7 @@
     {
       "raw": "1 tablespoon kosher salt, plus more for seasoning",
       "expected": {
-        "item": "kosher salt, presumably Diamond",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1",
@@ -145,7 +145,7 @@
     {
       "raw": "Scant 1/2 teaspoon kosher salt",
       "expected": {
-        "item": "kosher salt, presumably Diamond",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.5",
