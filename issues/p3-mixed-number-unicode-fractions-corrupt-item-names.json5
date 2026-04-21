@@ -1,0 +1,37 @@
+{
+  "title": "Mixed numbers with unicode fraction slashes corrupt ingredient \
+item names",
+  "description": "Some ingredients written as mixed numbers with the unicode \
+fraction slash (`⁄`) are being split incorrectly, leaving the leading whole \
+number as the parsed amount and shoving the fractional remainder into the \
+`item` text.\n\
+\n\
+Concrete example from \
+data/pipeline-snapshots/americastestkitchen-com_recipes-16187-sour-cream-and-onion-pasta.json, \
+cross-checked against cached HTML at \
+~/.ramekin/http-cache/americastestkitchen-com_recipes-16187-sour-cream-and-onion-pasta/response.bin:\n\
+\n\
+The source ingredient text is `1 1⁄4 teaspoons table salt , divided, plus salt \
+for cooking pasta`, but the snapshot produces:\n\
+  raw: `1 1⁄4 teaspoons table salt , divided, plus salt for cooking pasta`\n\
+  item: `1⁄4 teaspoons table salt, divided`\n\
+  measurements: [{amount: '1', unit: null}]\n\
+\n\
+The same recipe shows the same failure for `1 1⁄2 onions , sliced thin (1½ \
+cups)` and `1 1⁄2 cups crushed kettle-style potato chips`, which become `item: \
+'1⁄2 onions'` and `item: '1⁄2 cups crushed kettle-style potato chips'` with \
+only `{amount: '1', unit: null}` captured in `measurements`.\n\
+\n\
+Expected behavior: normalize mixed numbers that use the unicode fraction slash \
+the same way we already handle ASCII forms like `1 1/2`, so the full quantity \
+lands in `measurements` and the `item` text starts at the actual ingredient \
+name.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "ingredient-parser",
+  ],
+  "created_at": "2026-04-21T14:05:30-07:00",
+  "updated_at": "2026-04-21T14:05:30-07:00",
+}
