@@ -41,6 +41,29 @@ _CARGO_TO_MAKE = {
 }
 
 
+def _match_redirect_operator(s: str, i: int) -> str | None:
+    """If position `i` in `s` begins a shell redirection operator, return it.
+
+    Used by the segment splitter so tokens like `>|` and `&>` are absorbed
+    into the current segment instead of being torn at the `|`/`&`. Only
+    matches at unquoted, un-grouped positions (the caller guarantees that).
+    """
+    # Handle optional digit prefix for N> / N>> / N>| / N<> / N<.
+    start = i
+    while start < len(s) and s[start].isdigit():
+        start += 1
+    tail = s[start:]
+    # Order matters: longer operators first.
+    for op in ("&>>", "&>", "<<<", "<<", "<>", ">>|", ">>", ">|", ">", "<"):
+        if tail.startswith(op):
+            # Reject a bare digit prefix for operators that don't take one
+            # (e.g. leading digit before `&>` is nonsensical; fall through).
+            if start > i and op.startswith("&"):
+                return None
+            return s[i : start + len(op)]
+    return None
+
+
 def _shell_command_segments(command: str) -> list[str]:
     """Split a command on unquoted shell separators.
 
@@ -117,6 +140,14 @@ def _shell_command_segments(command: str) -> list[str]:
         if command.startswith("&&", i) or command.startswith("||", i):
             flush()
             i += 2
+            continue
+        # Shell redirection operators look like `|` or `&` separators to a
+        # naive splitter (`>|file`, `&>file`), but they're not separators —
+        # absorb them into the current segment.
+        redir = _match_redirect_operator(command, i)
+        if redir is not None:
+            buf.append(redir)
+            i += len(redir)
             continue
         if ch in "\n;|&":
             flush()
@@ -356,10 +387,25 @@ _GIT_GLOBAL_LONG_OPTS_WITH_VALUE = (
 
 
 def _git_subcommand(args: list[str]) -> tuple[str | None, list[str]]:
-    """Return (subcommand, remaining_args) for a git invocation."""
+    """Return (subcommand, remaining_args) for a git invocation.
+
+    Also expands inline `-c alias.NAME=VALUE` aliases (defined on this very
+    invocation) so `git -c alias.p=push p` reports `push`, not `p`, and
+    trips the same rules.
+    """
+    aliases: dict[str, str] = {}
     index = 0
     while index < len(args):
         token = args[index]
+        if token == "-c" and index + 1 < len(args):
+            val = args[index + 1]
+            if val.startswith("alias."):
+                rest = val[len("alias.") :]
+                if "=" in rest:
+                    name, value = rest.split("=", 1)
+                    aliases[name] = value
+            index += 2
+            continue
         if token in _GIT_GLOBAL_OPTS_WITH_ARG:
             index += 2
             continue
@@ -369,7 +415,14 @@ def _git_subcommand(args: list[str]) -> tuple[str | None, list[str]]:
         if token.startswith("-"):
             index += 1
             continue
-        return token, args[index + 1 :]
+        subcmd = token
+        rest = args[index + 1 :]
+        if subcmd in aliases:
+            alias_tokens = _shell_tokens(aliases[subcmd]) or []
+            if alias_tokens and not alias_tokens[0].startswith("!"):
+                subcmd = alias_tokens[0]
+                rest = alias_tokens[1:] + rest
+        return subcmd, rest
     return None, []
 
 
@@ -817,7 +870,10 @@ def command_uses_git_push(command: str) -> bool:
     return any(_segment_uses_git_push(s) for s in _shell_command_segments(command))
 
 
-_REDIRECT_OP_RE = re.compile(r"\d*>{1,2}|&>{1,2}")
+# Output-redirection operators: `>`, `>>`, `N>`, `N>>`, `&>`, `&>>`,
+# `>|` / `N>|` (force-clobber), `<>` / `N<>` (read-write, which can create
+# a file). Ordered so longer/more-specific forms match first.
+_REDIRECT_OP_RE = re.compile(r"&>{1,2}|\d*>\||\d*<>|\d*>{1,2}")
 
 
 def _redirect_write_targets(segment: str) -> list[str]:
