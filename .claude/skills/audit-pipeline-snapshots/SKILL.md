@@ -1,21 +1,45 @@
 ---
 name: audit-pipeline-snapshots
-description: Sample random recipe(s) from data/pipeline-snapshots/, cross-reference each against its cached source HTML, and file issues for any real conversion bugs. Use for a spot-check of extraction/parsing quality, or after changing extraction code to hunt for regressions.
+description: Pull the next recipe(s) from the pipeline snapshot audit queue, cross-reference each against its cached source HTML, and file issues for any real conversion bugs. Use for a spot-check of extraction/parsing quality, or after changing extraction code to hunt for regressions.
 ---
 
 # Audit Pipeline Snapshots
 
-Pick arbitrary recipe(s) from `data/pipeline-snapshots/`, compare each to the
-original source HTML in `~/.ramekin/http-cache/`, and file issues for real
-bugs. Takes an optional N (default 1) = how many snapshots to look at.
+Pick recipe snapshot(s) from the ordered queue in
+`docs/agent/pipeline-snapshot-audit-queue.md`, compare each to the original
+source HTML in `~/.ramekin/http-cache/`, and file issues for real bugs. Takes
+an optional N (default 1) = how many snapshots to look at.
 
-## 1. Sample the snapshots
+The queue is meant to be stateful: it tracks what we've already audited, and
+the default workflow is "top N not-yet-audited snapshots," not fresh random
+sampling every time.
+
+## 1. Pull the next snapshots from the queue
+
+Open `docs/agent/pipeline-snapshot-audit-queue.md`. By default, take the top
+`N` entries still marked `[ ]`.
+
+The queue is already ordered to round-robin across sites, with a deterministic
+pseudo-random order within each site, so don't reshuffle it during normal use.
+
+If you want a quick shell view of the next candidates:
 
 ```
-ls data/pipeline-snapshots | sort -R | head -n "${N:-1}"
+rg '^- \\[ \\]' docs/agent/pipeline-snapshot-audit-queue.md | head -n "${N:-1}"
 ```
 
-(Use `sort -R` rather than `shuf` — coreutils isn't guaranteed on PATH.)
+For each snapshot you audit, update that same queue entry in-place:
+
+- Change `[ ]` to `[x]`.
+- Append a brief audit note with the date and outcome.
+- If you filed or updated issue(s), name the issue file(s).
+- If no bug was found, say `no issue`.
+
+Example:
+
+```
+- [x] 007. `cooking-nytimes-com_recipes-1019683-mozzarella-in-carrozza-fried-mozzarella-sandwiches.json` (cooking-nytimes-com) - 2026-04-21: no issue
+```
 
 ## 2. For each sampled snapshot, cross-reference the source
 
@@ -84,6 +108,8 @@ it hasn't touched. Then `make lint` to confirm the Issues linter is green.
 
 - **`response.bin` is HTML**, not a binary. The `Read` tool refuses it; use
   Grep / `sed -n` ranges / `Bash` instead.
+- **Keep the queue authoritative.** If you audited a snapshot, mark it in
+  `docs/agent/pipeline-snapshot-audit-queue.md` before you stop.
 - **Don't over-file.** If the snapshot matches the source faithfully but the
   source itself is weirdly written, that's not a pipeline bug.
 - **Don't conflate related bugs.** Two symptoms from one root cause should be
