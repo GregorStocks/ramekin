@@ -221,14 +221,24 @@ def _walk_segment(
 
 
 # Git global options that consume the next token as their argument.
+# Enumerated from `git --help` so none leaves the option's value in the
+# subcommand slot and hides the real subcommand.
 _GIT_GLOBAL_OPTS_WITH_ARG = frozenset(
-    {"-C", "-c", "--exec-path", "--git-dir", "--work-tree", "--namespace"}
+    {
+        "-C", "-c",
+        "--exec-path", "--git-dir", "--work-tree", "--namespace",
+        "--super-prefix", "--config-env", "--attr-source", "--list-cmds",
+    }
 )
 _GIT_GLOBAL_LONG_OPTS_WITH_VALUE = (
     "--exec-path=",
     "--git-dir=",
     "--work-tree=",
     "--namespace=",
+    "--super-prefix=",
+    "--config-env=",
+    "--attr-source=",
+    "--list-cmds=",
 )
 
 
@@ -263,8 +273,50 @@ _CHECKOUT_OPTS_CONSUMING_NEXT = frozenset(
 _AMBIGUOUS_SWITCH_OPTS = frozenset({"--track", "-t"})
 _AMBIGUOUS_CHECKOUT_OPTS = frozenset({"--track", "-t"})
 
+# Short options (for switch/checkout) that take an argument. Used by the
+# token normalizer to split glued forms like `-Bfoo` into `-B foo`.
+_SWITCH_SHORT_ARG_OPTS = frozenset({"-c", "-C", "-t"})
+_CHECKOUT_SHORT_ARG_OPTS = frozenset({"-b", "-B", "-t"})
+
+
+def _normalize_switch_args(
+    args: list[str], short_arg_opts: frozenset[str]
+) -> list[str]:
+    """Split attached option-value forms into separate tokens.
+
+    Turns `--foo=bar` into `--foo bar` and glued short-form `-XYZ` (when
+    `-X` takes an argument) into `-X YZ`. Leaves everything else alone.
+    After normalization the parser can treat all option/value pairs as two
+    tokens regardless of how the user wrote them.
+    """
+    out: list[str] = []
+    for token in args:
+        if token.startswith("--") and "=" in token:
+            head, value = token.split("=", 1)
+            out.append(head)
+            out.append(value)
+        elif (
+            token.startswith("-")
+            and not token.startswith("--")
+            and len(token) > 2
+            and token[:2] in short_arg_opts
+        ):
+            out.append(token[:2])
+            out.append(token[2:])
+        else:
+            out.append(token)
+    return out
+
+
+def _branch_create_target(args: list[str], index: int) -> str:
+    """Return the next arg as a branch name, or __UNKNOWN__ if empty/missing."""
+    if index + 1 < len(args) and args[index + 1]:
+        return args[index + 1]
+    return "__UNKNOWN__"
+
 
 def _branch_switch_target_for_switch(args: list[str]) -> str | None:
+    args = _normalize_switch_args(args, _SWITCH_SHORT_ARG_OPTS)
     index = 0
     while index < len(args):
         token = args[index]
@@ -276,9 +328,7 @@ def _branch_switch_target_for_switch(args: list[str]) -> str | None:
         if token in _AMBIGUOUS_SWITCH_OPTS:
             return "__UNKNOWN__"
         if token in ("-c", "-C", "--create", "--force-create", "--orphan"):
-            if index + 1 < len(args):
-                return args[index + 1]
-            return "__UNKNOWN__"
+            return _branch_create_target(args, index)
         if token in _SWITCH_OPTS_CONSUMING_NEXT:
             index += 2
             continue
@@ -290,6 +340,7 @@ def _branch_switch_target_for_switch(args: list[str]) -> str | None:
 
 
 def _branch_switch_target_for_checkout(args: list[str]) -> str | None:
+    args = _normalize_switch_args(args, _CHECKOUT_SHORT_ARG_OPTS)
     index = 0
     while index < len(args):
         token = args[index]
@@ -300,9 +351,7 @@ def _branch_switch_target_for_checkout(args: list[str]) -> str | None:
         if token in _AMBIGUOUS_CHECKOUT_OPTS:
             return "__UNKNOWN__"
         if token in ("-b", "-B", "--orphan"):
-            if index + 1 < len(args):
-                return args[index + 1]
-            return "__UNKNOWN__"
+            return _branch_create_target(args, index)
         if token in _CHECKOUT_OPTS_CONSUMING_NEXT:
             index += 2
             continue
