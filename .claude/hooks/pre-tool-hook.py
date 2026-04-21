@@ -41,6 +41,93 @@ _CARGO_TO_MAKE = {
 }
 
 
+def _strip_heredocs(command: str) -> str:
+    """Remove heredoc bodies so they don't confuse the parser.
+
+    Bash heredocs like `cmd <<EOF\\n...body...\\nEOF` carry literal text
+    that shouldn't be re-parsed as commands, subshells, or redirections.
+    A typical trigger is a PR body containing markdown-backticked
+    example commands inside `$(cat <<'EOF'...EOF)`.
+
+    The heredoc body is removed entirely, leaving only the `<<TAG` marker
+    and the closing `TAG` line. Quote-aware so `<<` inside an outer
+    quoted string is ignored.
+    """
+    out: list[str] = []
+    i = 0
+    n = len(command)
+    in_single = False
+    in_double = False
+    while i < n:
+        ch = command[i]
+        if ch == "\\" and i + 1 < n and not in_single:
+            out.append(ch)
+            out.append(command[i + 1])
+            i += 2
+            continue
+        if ch == "'" and not in_double:
+            in_single = not in_single
+            out.append(ch)
+            i += 1
+            continue
+        if ch == '"' and not in_single:
+            in_double = not in_double
+            out.append(ch)
+            i += 1
+            continue
+        if not (in_single or in_double) and ch == "<" and command.startswith("<<", i):
+            j = i + 2
+            if j < n and command[j] == "-":
+                j += 1
+            while j < n and command[j] in " \t":
+                j += 1
+            if j < n and command[j] in "\"'":
+                quote_ch = command[j]
+                end_quote = command.find(quote_ch, j + 1)
+                if end_quote == -1:
+                    out.append(command[i:])
+                    return "".join(out)
+                delim = command[j + 1 : end_quote]
+                j = end_quote + 1
+            else:
+                start_delim = j
+                while j < n and (command[j].isalnum() or command[j] in "_-"):
+                    j += 1
+                delim = command[start_delim:j]
+            if not delim:
+                out.append(ch)
+                i += 1
+                continue
+            # Emit the `<<...` marker up through the delimiter (but not yet the body).
+            out.append(command[i:j])
+            i = j
+            # Find the newline that starts the body.
+            nl = command.find("\n", i)
+            if nl == -1:
+                continue
+            out.append("\n")
+            i = nl + 1
+            # Consume body until a line matching delim alone.
+            while i < n:
+                line_end = command.find("\n", i)
+                if line_end == -1:
+                    line = command[i:]
+                    i = n
+                else:
+                    line = command[i:line_end]
+                    i = line_end + 1
+                # `<<-` allows leading tabs before the closing delimiter.
+                if line.lstrip("\t") == delim:
+                    out.append(line)
+                    out.append("\n")
+                    break
+                # Drop body line (don't re-parse as command).
+            continue
+        out.append(ch)
+        i += 1
+    return "".join(out)
+
+
 def _match_redirect_operator(s: str, i: int) -> str | None:
     """If position `i` in `s` begins a shell redirection operator, return it.
 
@@ -962,6 +1049,7 @@ def _segment_uses_git_push(segment: str) -> bool:
 
 
 def command_uses_git_push(command: str) -> bool:
+    command = _strip_heredocs(command)
     if any(command_uses_git_push(sub) for sub in _extract_subshells(command)):
         return True
     if any(command_uses_git_push(p) for p in _extract_env_s_payloads(command)):
@@ -1110,6 +1198,9 @@ def _extract_subshells(command: str) -> list[str]:
 
 
 def rejection_message(command: str, dirty_pipeline_output: bool) -> str | None:
+    # Heredoc bodies are literal data (e.g. PR body markdown); don't try
+    # to re-parse them as commands.
+    command = _strip_heredocs(command)
     # Recurse into $(...), <(...), >(...), and `...` subshells so the
     # subshell's invocation is subject to the same rules as a top-level command.
     for sub in _extract_subshells(command):
