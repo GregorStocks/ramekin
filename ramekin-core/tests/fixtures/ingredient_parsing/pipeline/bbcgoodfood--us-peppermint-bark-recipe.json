@@ -41,11 +41,11 @@
     {
       "raw": "1⁄2 tsp peppermint extract",
       "expected": {
-        "item": "⁄2 tsp peppermint extract",
+        "item": "peppermint extract",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "0.5",
+            "unit": "tsp"
           }
         ],
         "note": null,

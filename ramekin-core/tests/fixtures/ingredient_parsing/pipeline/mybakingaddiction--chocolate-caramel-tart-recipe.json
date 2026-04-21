@@ -5,11 +5,15 @@
     {
       "raw": "1 1⁄2 cups flour",
       "expected": {
-        "item": "1⁄2 cups flour",
+        "item": "flour",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "188",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -19,10 +23,10 @@
     {
       "raw": "1⁄4 cup plus 1 tablespoon dutch-process unsweetened",
       "expected": {
-        "item": "⁄4 cup plus 1 tablespoon dutch-process unsweetened",
+        "item": "dutch-process unsweetened",
         "measurements": [
           {
-            "amount": "1",
+            "amount": "1/4 cup plus 1 tablespoon",
             "unit": null
           }
         ],
@@ -42,11 +46,15 @@
     {
       "raw": "1⁄4 teaspoon. kosher salt",
       "expected": {
-        "item": "⁄4 teaspoon. kosher salt",
+        "item": "kosher salt",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -74,10 +82,10 @@
     {
       "raw": "1⁄2 cup plus 2 tablespoons. confectioners' sugar",
       "expected": {
-        "item": "⁄2 cup plus 2 tablespoons. confectioners' sugar",
+        "item": "confectioners' sugar",
         "measurements": [
           {
-            "amount": "1",
+            "amount": "1/2 cup plus 2 tablespoons",
             "unit": null
           }
         ],
@@ -102,11 +110,15 @@
     {
       "raw": "1⁄2 teaspoon pure vanilla extract",
       "expected": {
-        "item": "⁄2 teaspoon pure vanilla extract",
+        "item": "pure vanilla extract",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "0.5",
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -116,11 +128,15 @@
     {
       "raw": "1 1⁄2 cups sugar",
       "expected": {
-        "item": "1⁄2 cups sugar",
+        "item": "sugar",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "1.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "300",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -148,11 +164,15 @@
     {
       "raw": "1⁄4 teaspoon kosher salt",
       "expected": {
-        "item": "⁄4 teaspoon kosher salt",
+        "item": "kosher salt",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "0.25",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -252,11 +272,15 @@
     {
       "raw": "1⁄2 cup heavy cream",
       "expected": {
-        "item": "⁄2 cup heavy cream",
+        "item": "heavy cream",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "119",
+            "unit": "g"
           }
         ],
         "note": null,

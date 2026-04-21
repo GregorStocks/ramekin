@@ -185,11 +185,11 @@
     {
       "raw": "1 2⁄3 cups (215 grams) flour",
       "expected": {
-        "item": "2⁄3 cups flour",
+        "item": "flour",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "1.67",
+            "unit": "cup"
           },
           {
             "amount": "215",

@@ -97,11 +97,11 @@
       "section": null
     },
     {
-      "item": "⁄2 cup finely chopped celery",
+      "item": "finely chopped celery",
       "measurements": [
         {
-          "amount": "1",
-          "unit": null
+          "amount": "0.5",
+          "unit": "cup"
         }
       ],
       "note": null,
@@ -132,7 +132,7 @@
           "unit": "g"
         }
       ],
-      "note": "peeled and cut into 1⁄2-inch pieces",
+      "note": "peeled and cut into 1/2-inch pieces",
       "raw": "1 pound Yukon gold potatoes , peeled and cut into 1⁄2-inch pieces",
       "section": null
     },
@@ -185,11 +185,15 @@
       "section": null
     },
     {
-      "item": "⁄2 cup heavy cream",
+      "item": "heavy cream",
       "measurements": [
         {
-          "amount": "1",
-          "unit": null
+          "amount": "0.5",
+          "unit": "cup"
+        },
+        {
+          "amount": "119",
+          "unit": "g"
         }
       ],
       "note": null,

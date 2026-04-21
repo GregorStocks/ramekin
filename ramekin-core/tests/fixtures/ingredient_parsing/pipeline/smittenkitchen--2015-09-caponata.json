@@ -152,11 +152,15 @@
     {
       "raw": "1⁄4 cup water",
       "expected": {
-        "item": "⁄4 cup water",
+        "item": "water",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "59",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -202,11 +206,15 @@
     {
       "raw": "1⁄2 cup white wine vinegar",
       "expected": {
-        "item": "⁄2 cup white wine vinegar",
+        "item": "white wine vinegar",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -216,11 +224,11 @@
     {
       "raw": "1⁄2 cup golden raisins (I used half for a less sweet caponata)",
       "expected": {
-        "item": "⁄2 cup golden raisins (I used half for a less sweet caponata)",
+        "item": "golden raisins (I used half for a less sweet caponata)",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "0.5",
+            "unit": "cup"
           }
         ],
         "note": null,
@@ -230,11 +238,11 @@
     {
       "raw": "1⁄4 cup salt-packed capers, rinsed and drained",
       "expected": {
-        "item": "⁄4 cup salt-packed capers",
+        "item": "salt-packed capers",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "0.25",
+            "unit": "cup"
           }
         ],
         "note": "rinsed and drained",
@@ -258,11 +266,11 @@
     {
       "raw": "1⁄2 cup finely slivered basil",
       "expected": {
-        "item": "⁄2 cup finely slivered basil",
+        "item": "finely slivered basil",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "0.5",
+            "unit": "cup"
           }
         ],
         "note": null,
