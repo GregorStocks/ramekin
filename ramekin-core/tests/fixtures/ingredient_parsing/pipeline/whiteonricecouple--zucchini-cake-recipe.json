@@ -143,7 +143,7 @@
     {
       "raw": "1 teaspoon (5ml) kosher salt",
       "expected": {
-        "item": "kosher salt, presumably Diamond",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1",
@@ -152,10 +152,6 @@
           {
             "amount": "5",
             "unit": "ml"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
         "note": null,

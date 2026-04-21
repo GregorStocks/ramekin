@@ -69,15 +69,11 @@
     {
       "raw": "1½ tablespoons kosher salt",
       "expected": {
-        "item": "kosher salt, presumably Diamond",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "13",
-            "unit": "g"
           }
         ],
         "note": null,

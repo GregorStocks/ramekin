@@ -379,8 +379,8 @@ mod tests {
         let density = find_density("salt, presumably Diamond").unwrap();
         assert!((density - 137.0).abs() < 0.1);
 
-        // "kosher salt, presumably Diamond" also resolves
-        let density = find_density("kosher salt, presumably Diamond").unwrap();
+        // "kosher salt" resolves via alias without rewriting the visible item name
+        let density = find_density("kosher salt").unwrap();
         assert!((density - 137.0).abs() < 0.1);
 
         // "table salt" still maps to salt, table (292.0 g/cup)
@@ -392,14 +392,8 @@ mod tests {
     fn test_rewrite_ingredient() {
         assert_eq!(rewrite_ingredient("salt"), Some("salt, presumably Diamond"));
         assert_eq!(rewrite_ingredient("Salt"), Some("salt, presumably Diamond"));
-        assert_eq!(
-            rewrite_ingredient("kosher salt"),
-            Some("kosher salt, presumably Diamond")
-        );
-        assert_eq!(
-            rewrite_ingredient("Kosher Salt"),
-            Some("kosher salt, presumably Diamond")
-        );
+        assert_eq!(rewrite_ingredient("kosher salt"), None);
+        assert_eq!(rewrite_ingredient("Kosher Salt"), None);
         assert_eq!(rewrite_ingredient("flour"), None);
     }
 

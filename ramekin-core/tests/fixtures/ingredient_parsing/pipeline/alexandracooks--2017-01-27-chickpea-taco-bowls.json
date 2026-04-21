@@ -23,7 +23,7 @@
     {
       "raw": "3 tablespoons plus 1 teaspoon kosher salt",
       "expected": {
-        "item": "kosher salt, presumably Diamond",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "3 tablespoons plus 1 teaspoon",
@@ -65,7 +65,7 @@
     {
       "raw": "Kosher salt, to taste",
       "expected": {
-        "item": "kosher salt, presumably Diamond",
+        "item": "Kosher salt",
         "measurements": [],
         "note": "to taste",
         "category": "Spices & Seasonings"

@@ -37,15 +37,11 @@
     {
       "raw": "1/2 cup kosher salt*",
       "expected": {
-        "item": "kosher salt, presumably Diamond",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "68",
-            "unit": "g"
           }
         ],
         "note": null,
