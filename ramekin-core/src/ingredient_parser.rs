@@ -1243,6 +1243,12 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
     }
 
+    if (primary_unit.is_some() || alt_measurements.iter().any(|m| m.unit.is_some()))
+        && alt_measurements.iter().any(|m| m.unit.is_none())
+    {
+        alt_measurements.retain(|m| m.unit.is_some());
+    }
+
     // Step 6: Build measurements list
     if primary_amount.is_some() || primary_unit.is_some() {
         measurements.push(Measurement {
@@ -3043,6 +3049,15 @@ mod tests {
         );
         assert_eq!(result.measurements[1].amount, Some("454".to_string()));
         assert_eq!(result.measurements[1].unit, Some("g".to_string()));
+    }
+
+    #[test]
+    fn test_parenthetical_equivalence_count_is_not_kept_as_unitless_measurement() {
+        let result = parse_ingredient("1/4 cup freshly squeezed lemon juice (2 lemons)");
+        assert_eq!(result.item, "freshly squeezed lemon juice");
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("1/4".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
     }
 
     #[test]
