@@ -324,13 +324,27 @@ _GIT_WORKTREE_MUTATION_SUBCMDS = frozenset({"checkout", "restore", "clean"})
 
 
 def _path_is_protected(path: str) -> bool:
-    # Normalize `./foo` and strip any trailing slashes.
-    if path.startswith("./"):
-        path = path[2:]
-    path = path.rstrip("/")
+    """True if `path` names a file inside one of the protected pipeline dirs.
+
+    Catches both repo-relative (`data/pipeline-snapshots/x.json`,
+    `./data/pipeline-snapshots/`) and absolute forms
+    (`/workspace/ramekin/data/pipeline-snapshots/x.json`) so the guard can't
+    be slipped by rewriting the path.
+    """
+    if not path:
+        return False
+    normalized = os.path.normpath(path)
     for protected in _PIPELINE_OUTPUT_PATHS:
-        if path == protected or path.startswith(protected + "/"):
+        # Relative path pointing into the protected dir from the repo root.
+        if normalized == protected or normalized.startswith(protected + os.sep):
             return True
+        # Absolute (or deeply-nested) form — look for the protected suffix
+        # at a path-component boundary.
+        marker = os.sep + protected
+        if marker in normalized:
+            tail = normalized.split(marker, 1)[1]
+            if tail == "" or tail.startswith(os.sep):
+                return True
     return False
 
 
@@ -414,13 +428,37 @@ def _first_positional(args: list[str]) -> str | None:
     return None
 
 
+# gh flags that consume the next token as their argument. Not exhaustive,
+# but covers the cross-cutting ones people reach for (`-R owner/repo`,
+# `--repo ...`, `--hostname ghe.example.com`) plus a few per-subcommand
+# flags that routinely appear between `gh` and the subcommand on the CLI.
+_GH_OPTS_CONSUMING_NEXT = frozenset(
+    {"-R", "--repo", "--hostname", "-F", "--field", "-f", "--raw-field"}
+)
+
+
 def _gh_subcommand_chain(args: list[str]) -> list[str]:
-    """Return the chain of positional subcommands for a gh invocation."""
+    """Return the positional subcommand chain for a gh invocation.
+
+    Skips both flags and their argument values, so commands like
+    `gh -R owner/repo issue list` resolve to `["issue", "list"]`.
+    """
     chain: list[str] = []
-    for token in args:
+    index = 0
+    while index < len(args):
+        token = args[index]
+        if token in _GH_OPTS_CONSUMING_NEXT:
+            index += 2
+            continue
+        if token.startswith("--") and "=" in token:
+            # --repo=owner/repo bundles the value into one token.
+            index += 1
+            continue
         if token.startswith("-"):
+            index += 1
             continue
         chain.append(token)
+        index += 1
     return chain
 
 
