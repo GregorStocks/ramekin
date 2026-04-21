@@ -55,6 +55,8 @@ def _shell_command_segments(command: str) -> list[str]:
     buf: list[str] = []
     in_single = False
     in_double = False
+    paren_depth = 0
+    brace_depth = 0
     i = 0
     n = len(command)
 
@@ -85,7 +87,33 @@ def _shell_command_segments(command: str) -> list[str]:
             buf.append(ch)
             i += 1
             continue
-        # Unquoted territory — check separators.
+        # Track grouping depth so separators inside `(...)` subshells,
+        # `$(...)` substitutions, or `{ ...; }` brace groups don't split.
+        if ch == "(":
+            paren_depth += 1
+            buf.append(ch)
+            i += 1
+            continue
+        if ch == ")":
+            paren_depth = max(0, paren_depth - 1)
+            buf.append(ch)
+            i += 1
+            continue
+        if ch == "{":
+            brace_depth += 1
+            buf.append(ch)
+            i += 1
+            continue
+        if ch == "}":
+            brace_depth = max(0, brace_depth - 1)
+            buf.append(ch)
+            i += 1
+            continue
+        if paren_depth > 0 or brace_depth > 0:
+            buf.append(ch)
+            i += 1
+            continue
+        # Unquoted, un-grouped territory — check separators.
         if command.startswith("&&", i) or command.startswith("||", i):
             flush()
             i += 2
@@ -98,6 +126,32 @@ def _shell_command_segments(command: str) -> list[str]:
         i += 1
     flush()
     return segments
+
+
+def _unwrap_group_segment(segment: str) -> str | None:
+    """If the segment is a shell group, return the inner command to recurse on.
+
+    Handles `(CMD)` subshells, `{ CMD; }` brace groups, and `! CMD` negation
+    prefixes. Returns None if the segment isn't a group.
+    """
+    stripped = segment.strip()
+    if not stripped:
+        return None
+    # `! CMD` — pipeline negation.
+    if stripped.startswith("!") and (
+        len(stripped) == 1 or stripped[1].isspace() or stripped[1] in "({"
+    ):
+        return stripped[1:].lstrip()
+    # `(CMD)` subshell spanning the whole segment.
+    if stripped.startswith("(") and stripped.endswith(")"):
+        inner = stripped[1:-1].strip()
+        return inner
+    # `{ CMD; }` brace group — bash requires space after `{` and a
+    # terminator before `}`, but be lenient.
+    if stripped.startswith("{") and stripped.endswith("}"):
+        inner = stripped[1:-1].strip().rstrip(";").strip()
+        return inner
+    return None
 
 
 def has_uncommitted_pipeline_output() -> bool:
@@ -329,8 +383,10 @@ _CHECKOUT_OPTS_CONSUMING_NEXT = frozenset(
 # git switch / checkout: options that signal a branch change we can't
 # reliably resolve to a single target. Force the __UNKNOWN__ path so
 # signoff can't be matched against anything but the real branch name.
-_AMBIGUOUS_SWITCH_OPTS = frozenset({"--track", "-t"})
-_AMBIGUOUS_CHECKOUT_OPTS = frozenset({"--track", "-t"})
+# `--detach` / `-d` moves HEAD without a branch name; treat as branch-changing
+# so it requires signoff through the unknown-target path.
+_AMBIGUOUS_SWITCH_OPTS = frozenset({"--track", "-t", "--detach", "-d"})
+_AMBIGUOUS_CHECKOUT_OPTS = frozenset({"--track", "-t", "--detach"})
 
 # Short options (for switch/checkout) that take an argument. Used by the
 # token normalizer to split glued forms like `-Bfoo` into `-B foo`.
@@ -432,7 +488,7 @@ def _branch_switch_target_for_checkout(args: list[str]) -> str | None:
 # Commands that mutate files on disk. For each, any arg that resolves under
 # a protected pipeline path should block the call.
 _FS_MUTATION_CMDS = frozenset(
-    {"rm", "mv", "cp", "install", "touch", "truncate", "mkdir", "rmdir"}
+    {"rm", "mv", "cp", "install", "touch", "truncate", "mkdir", "rmdir", "tee"}
 )
 # `sed -i ...` / `perl -pi ...` write the target file in place; for these we
 # only want to fire when an in-place flag is present.
@@ -737,6 +793,9 @@ def _extract_shell_c_payload(args: list[str]) -> str | None:
 
 
 def _segment_uses_git_push(segment: str) -> bool:
+    inner = _unwrap_group_segment(segment)
+    if inner is not None:
+        return command_uses_git_push(inner)
     walked = _walk_segment(segment)
     if walked is None:
         return False
@@ -893,6 +952,15 @@ def rejection_message(command: str, dirty_pipeline_output: bool) -> str | None:
         for target in _redirect_write_targets(segment):
             if _path_is_protected(target):
                 return _pipeline_mutation_error()
+
+        # Shell grouping — `(cmd)`, `{ cmd; }`, `! cmd` — recurse into the
+        # inner command so the real invocation is subject to the rules.
+        inner = _unwrap_group_segment(segment)
+        if inner is not None:
+            inner_msg = rejection_message(inner, dirty_pipeline_output)
+            if inner_msg is not None:
+                return inner_msg
+            continue
 
         walked = _walk_segment(segment)
         if walked is None:
