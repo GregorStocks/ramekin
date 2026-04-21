@@ -470,7 +470,25 @@ def _path_is_protected(path: str) -> bool:
 
 
 def _any_arg_targets_pipeline(args: list[str]) -> bool:
-    return any(_path_is_protected(a) for a in args if not a.startswith("-"))
+    """True if any argument names a path under a protected pipeline directory.
+
+    Checks positional args, `--long=value` bundles (`cp --target-directory=...
+    src`), and glued short-form values (`-tdata/pipeline-snapshots`).
+    """
+    for arg in args:
+        if not arg.startswith("-"):
+            if _path_is_protected(arg):
+                return True
+            continue
+        if arg.startswith("--") and "=" in arg:
+            if _path_is_protected(arg.split("=", 1)[1]):
+                return True
+            continue
+        # Short-form with glued value, e.g. `-tPATH`.
+        if len(arg) > 2 and not arg.startswith("--"):
+            if _path_is_protected(arg[2:]):
+                return True
+    return False
 
 
 def _sed_is_inplace(args: list[str]) -> bool:
@@ -735,11 +753,95 @@ def _segment_uses_git_push(segment: str) -> bool:
 
 
 def command_uses_git_push(command: str) -> bool:
+    if any(command_uses_git_push(sub) for sub in _extract_command_substitutions(command)):
+        return True
     return any(_segment_uses_git_push(s) for s in _shell_command_segments(command))
 
 
+# Output-redirection operator followed by an optional-whitespace target.
+# Matches `>`, `>>`, `N>`, `N>>`, `&>`, `&>>` (write forms) and captures
+# either a quoted target or a bareword run.
+_REDIRECT_WRITE_RE = re.compile(
+    r"""(?:^|\s)(?:\d*>{1,2}|&>{1,2})\s*("[^"]*"|'[^']*'|[^\s;|&<>()]+)"""
+)
+
+
+def _redirect_write_targets(segment: str) -> list[str]:
+    """Return paths that this segment writes to via shell redirection."""
+    targets: list[str] = []
+    for match in _REDIRECT_WRITE_RE.finditer(segment):
+        target = match.group(1)
+        if len(target) >= 2 and target[0] == target[-1] and target[0] in "\"'":
+            target = target[1:-1]
+        targets.append(target)
+    return targets
+
+
+def _extract_command_substitutions(command: str) -> list[str]:
+    """Return the bodies of every `$(...)` substitution in `command`.
+
+    Respects single-quote/double-quote state so `'$(cargo test)'` (literal,
+    no substitution) is skipped. Nested parens and backslash escapes are
+    handled so bodies like `$(echo "(paren)")` aren't cut short.
+    """
+    bodies: list[str] = []
+    in_single = False
+    in_double = False
+    i = 0
+    n = len(command)
+    while i < n:
+        ch = command[i]
+        if ch == "\\" and i + 1 < n and not in_single:
+            i += 2
+            continue
+        if ch == "'" and not in_double:
+            in_single = not in_single
+            i += 1
+            continue
+        if ch == '"' and not in_single:
+            in_double = not in_double
+            i += 1
+            continue
+        if in_single:
+            i += 1
+            continue
+        if ch == "$" and i + 1 < n and command[i + 1] == "(":
+            depth = 1
+            j = i + 2
+            while j < n and depth > 0:
+                c = command[j]
+                if c == "\\" and j + 1 < n:
+                    j += 2
+                    continue
+                if c == "(":
+                    depth += 1
+                elif c == ")":
+                    depth -= 1
+                    if depth == 0:
+                        break
+                j += 1
+            if depth == 0:
+                bodies.append(command[i + 2 : j])
+                i = j + 1
+                continue
+        i += 1
+    return bodies
+
+
 def rejection_message(command: str, dirty_pipeline_output: bool) -> str | None:
+    # Recurse into $(...) command substitutions so the subshell's invocation
+    # is subject to the same rules as a top-level command.
+    for sub in _extract_command_substitutions(command):
+        inner = rejection_message(sub, dirty_pipeline_output)
+        if inner is not None:
+            return inner
+
     for segment in _shell_command_segments(command):
+        # Shell redirection writes into protected paths (`echo hi > data/pipeline-snapshots/...`).
+        for target in _redirect_write_targets(segment):
+            if _path_is_protected(target):
+                return _pipeline_mutation_error()
+
         walked = _walk_segment(segment)
         if walked is None:
             continue
