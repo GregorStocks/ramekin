@@ -107,7 +107,7 @@
     {
       "raw": "2 teaspoons kosher salt",
       "expected": {
-        "item": "kosher salt, presumably Diamond",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "2",
@@ -272,7 +272,7 @@
     {
       "raw": "Kosher salt",
       "expected": {
-        "item": "kosher salt, presumably Diamond",
+        "item": "Kosher salt",
         "measurements": [],
         "note": null,
         "section": "Broth",
