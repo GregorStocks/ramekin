@@ -19,58 +19,57 @@ import shlex
 import subprocess
 import sys
 
-# Matches 'cargo' at shell command position: start of string, after a
-# newline, or after a command separator (&&, ||, ;, |, $().  Optional
-# leading env-var assignments (FOO=bar) are allowed.
-_CARGO_CMD_RE = re.compile(
-    r"(?:^|\n|&&|\|\||[;&|]|\$\()\s*(?:\w+=\S+\s+)*cargo\b"
+# Command-position prefix: start of string, newline, or a shell separator,
+# followed by any mix of env-var assignments and transparent command
+# wrappers (time, sudo [with flags], nohup, nice, env, timeout DURATION).
+# The wrappers don't change what's being run, so e.g. `time cargo test`
+# should trip the same rules as `cargo test`.
+_CMD_POS = r"(?:^|\n|&&|\|\||[;&|]|\$\()\s*"
+_WRAPPER_PREFIX = (
+    r"(?:"
+    r"\w+=\S+\s+"                       # FOO=bar
+    r"|(?:time|nohup|nice|env)\s+"      # simple wrappers
+    r"|sudo(?:\s+-\S+)*\s+"             # sudo, optionally with short flags
+    r"|timeout(?:\s+-\S+)*\s+\S+\s+"    # timeout [flags] DURATION
+    r")*"
 )
+
+# Matches 'cargo' at shell command position.
+_CARGO_CMD_RE = re.compile(_CMD_POS + _WRAPPER_PREFIX + r"cargo\b")
 
 # Matches pkill or killall at shell command position.
-_KILL_BY_NAME_RE = re.compile(
-    r"(?:^|\n|&&|\|\||[;&|]|\$\()\s*(?:sudo\s+)?(?:pkill|killall)\b"
-)
+_KILL_BY_NAME_RE = re.compile(_CMD_POS + _WRAPPER_PREFIX + r"(?:pkill|killall)\b")
 
 # Matches 'rustfmt' at shell command position.
-_RUSTFMT_RE = re.compile(
-    r"(?:^|\n|&&|\|\||[;&|]|\$\()\s*rustfmt\b"
-)
+_RUSTFMT_RE = re.compile(_CMD_POS + _WRAPPER_PREFIX + r"rustfmt\b")
 
 # Matches invocations of the built ramekin-cli binary at shell command
 # position (e.g. 'cli/target/release/ramekin-cli', './cli/target/debug/ramekin-cli',
 # or an absolute path).  Running the built binary directly bypasses the
 # Makefile's dependency checks and DB setup.
 _RAMEKIN_CLI_RE = re.compile(
-    r"(?:^|\n|&&|\|\||[;&|]|\$\()\s*(?:\w+=\S+\s+)*"
-    r"\S*\bcli/target/(?:release|debug)/ramekin-cli\b"
+    _CMD_POS + _WRAPPER_PREFIX + r"\S*\bcli/target/(?:release|debug)/ramekin-cli\b"
 )
 
 # Matches 'gh issue' at shell command position.
-_GH_ISSUE_RE = re.compile(
-    r"(?:^|\n|&&|\|\||[;&|]|\$\()\s*(?:\w+=\S+\s+)*gh\s+issue\b"
-)
+_GH_ISSUE_RE = re.compile(_CMD_POS + _WRAPPER_PREFIX + r"gh\s+issue\b")
 
 # Matches 'git push' at shell command position.
-_GIT_PUSH_RE = re.compile(
-    r"(?:^|\n|&&|\|\||[;&|]|\$\()\s*(?:\w+=\S+\s+)*git\s+push(?:\s|$)"
-)
+_GIT_PUSH_RE = re.compile(_CMD_POS + _WRAPPER_PREFIX + r"git\s+push(?:\s|$)")
 
 # Matches 'gh pr edit' at shell command position.
-_GH_PR_EDIT_RE = re.compile(
-    r"(?:^|\n|&&|\|\||[;&|]|\$\()\s*(?:\w+=\S+\s+)*gh\s+pr\s+edit\b"
-)
+_GH_PR_EDIT_RE = re.compile(_CMD_POS + _WRAPPER_PREFIX + r"gh\s+pr\s+edit\b")
 
 # Matches 'git worktree add' creating a worktree under /tmp.
 _TMP_WORKTREE_ADD_RE = re.compile(
-    r"(?:^|\n|&&|\|\||[;&|]|\$\()\s*(?:\w+=\S+\s+)*"
-    r"git\s+worktree\s+add\b[^\n]*\s/tmp(?:/|\b)"
+    _CMD_POS + _WRAPPER_PREFIX + r"git\s+worktree\s+add\b[^\n]*\s/tmp(?:/|\b)"
 )
 
 # Matches manual mutation of generated pipeline output via common shell commands.
 _PIPELINE_MUTATION_RE = re.compile(
-    r"(?:^|\n|&&|\|\||[;&|]|\$\()\s*(?:\w+=\S+\s+)*"
-    r"(?:rm|mv|cp|install|touch|truncate|mkdir|rmdir|sed\s+-i|perl\s+-pi|git\s+checkout|git\s+restore|git\s+clean)\b"
-    r"[^\n]*\bdata/(?:pipeline-snapshots|pipeline-runs)(?:/|\b)"
+    _CMD_POS + _WRAPPER_PREFIX
+    + r"(?:rm|mv|cp|install|touch|truncate|mkdir|rmdir|sed\s+-i|perl\s+-pi|git\s+checkout|git\s+restore|git\s+clean)\b"
+    + r"[^\n]*\bdata/(?:pipeline-snapshots|pipeline-runs)(?:/|\b)"
 )
 
 _PIPELINE_OUTPUT_PATHS = ("data/pipeline-snapshots", "data/pipeline-runs")
@@ -87,9 +86,7 @@ _CARGO_TO_MAKE = {
 }
 
 # Regex to extract the cargo subcommand from a command string.
-_CARGO_SUBCMD_RE = re.compile(
-    r"(?:^|\n|&&|\|\||[;&|]|\$\()\s*(?:\w+=\S+\s+)*cargo\s+(\w+)"
-)
+_CARGO_SUBCMD_RE = re.compile(_CMD_POS + _WRAPPER_PREFIX + r"cargo\s+(\w+)")
 
 
 def _shell_command_segments(command: str) -> list[str]:
@@ -288,6 +285,10 @@ def _branch_switch_target_for_switch(args: list[str]) -> str | None:
         token = args[index]
         if token == "--":
             return None
+        # Bare `-` is git's "previous branch" shorthand, not a flag; we can't
+        # verify the target ahead of time, so force the unknown-target path.
+        if token == "-":
+            return "__UNKNOWN__"
         if token in ("-c", "-C", "--create", "--force-create"):
             if index + 1 < len(args):
                 return args[index + 1]
@@ -305,6 +306,9 @@ def _branch_switch_target_for_checkout(args: list[str]) -> str | None:
         token = args[index]
         if token == "--":
             return None
+        # Bare `-` is git's "previous branch" shorthand, not a flag.
+        if token == "-":
+            return "__UNKNOWN__"
         if token in ("-b", "-B", "--orphan"):
             if index + 1 < len(args):
                 return args[index + 1]
