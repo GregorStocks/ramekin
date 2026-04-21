@@ -1,0 +1,37 @@
+{
+  "title": "Inline sticky notes merge into instruction text",
+  "description": "Some recipe instruction HTML uses inline sticky-note markup \
+inside the instruction sentence, and the pipeline flattens the note text \
+directly into the instruction body instead of preserving readable spacing or \
+dropping the aside.\n\
+\n\
+Concrete example from \
+data/pipeline-snapshots/altonbrown-com_recipes-semi-instant-pancake-mix.json, \
+cross-checked against cached HTML at \
+~/.ramekin/http-cache/altonbrown-com_recipes-semi-instant-pancake-mix/response.bin:\n\
+\n\
+The source instruction HTML for `#wprm-recipe-5501-step-0-8` is:\n\
+  `<wprm-code><span class=\"sticky-note-btn\">Carefully flip</span><span \
+class=\"sticky-note\"><span class=\"sticky-note-text\">The first cakes tend to \
+be uglier than later ones, so feed the in-laws first.</span></span> with a \
+wide spatula and cook until golden brown on the bottom, another 2 to 3 \
+minutes.</wprm-code>`\n\
+\n\
+The snapshot produces:\n\
+  `Carefully flipThe first cakes tend to be uglier than later ones, so feed \
+the in-laws first. with a wide spatula and cook until golden brown on the \
+bottom, another 2 to 3 minutes.`\n\
+\n\
+Expected behavior: either preserve the visible instruction text cleanly \
+(`Carefully flip with a wide spatula...`) or extract the note in a readable \
+way, but do not concatenate hidden/helper note text into the instruction \
+sentence without spacing.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "instruction-parser",
+  ],
+  "created_at": "2026-04-21T15:34:39-07:00",
+  "updated_at": "2026-04-21T15:34:39-07:00",
+}

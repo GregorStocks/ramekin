@@ -14,27 +14,27 @@ This is the durable queue for `$audit-pipeline-snapshots`.
 - [x] 002. `allrecipes-com_recipe-219091-chef-johns-mushroom-gravy.json` (allrecipes-com) - 2026-04-21: no issue
 - [x] 003. `altonbrown-com_recipes-umami-mayo-2.json` (altonbrown-com) - 2026-04-21: no issue
 - [x] 004. `americastestkitchen-com_recipes-16187-sour-cream-and-onion-pasta.json` (americastestkitchen-com) - 2026-04-21: filed `p3-mixed-number-unicode-fractions-corrupt-item-names.json5`
-- [ ] 005. `bonappetit-com_recipe-smitten-kitchen-pretzel-linzers-with-salted-caramel.json` (bonappetit-com)
-- [ ] 006. `bowlofdelicious-com_wprm_print-7627.json` (bowlofdelicious-com)
-- [ ] 007. `cooking-nytimes-com_recipes-1019683-mozzarella-in-carrozza-fried-mozzarella-sandwiches.json` (cooking-nytimes-com)
-- [ ] 008. `delish-com_cooking-recipe-ideas-recipes-a53296-easy-fish-taco-recipe.json` (delish-com)
-- [ ] 009. `dinneratthezoo-com_shamrock-shake-recipe.json` (dinneratthezoo-com)
-- [ ] 010. `foodnetwork-com_recipes-alton-brown-shepherds-pie-recipe2-1942900.json` (foodnetwork-com)
-- [ ] 011. `halfbakedharvest-com_spinach-and-sun-dried-tomato-burrata-pasta.json` (halfbakedharvest-com)
-- [ ] 012. `japanesecooking101-com_vegetable-korokke-recipe.json` (japanesecooking101-com)
-- [ ] 013. `kingarthurbaking-com_recipes-french-style-baguettes-recipe.json` (kingarthurbaking-com)
-- [ ] 014. `kiyafries-com_banh-mi-vietnamese-sandwich.json` (kiyafries-com)
-- [ ] 015. `loveandlemons-com_caramelized-onions.json` (loveandlemons-com)
-- [ ] 016. `norecipes-com_sparerib-oden-recipe-japanese-comfort-food.json` (norecipes-com)
-- [ ] 017. `pinchandswirl-com_rice-cooker-mexican-rice.json` (pinchandswirl-com)
-- [ ] 018. `recipetineats-com_chicken-pad-thai.json` (recipetineats-com)
-- [ ] 019. `runningwithspoons-com_baked-egg-stuffed-sweet-potatoes-print-32052.json` (runningwithspoons-com)
-- [ ] 020. `seriouseats-com_the-food-lab-buttermilk-biscuits-recipe.json` (seriouseats-com)
-- [ ] 021. `smittenkitchen-com_2014-03-broccoli-cheddar-and-wild-rice-casserole.json` (smittenkitchen-com)
-- [ ] 022. `sudachirecipes-com_garlic-steak-fried-rice.json` (sudachirecipes-com)
-- [ ] 023. `thepioneerwoman-com_food-cooking-recipes-a40191717-grilled-salmon-recipe-how-to.json` (thepioneerwoman-com)
-- [ ] 024. `allrecipes-com_recipe-228682-amazing-oven-roasted-potatoes.json` (allrecipes-com)
-- [ ] 025. `altonbrown-com_recipes-semi-instant-pancake-mix.json` (altonbrown-com)
+- [x] 005. `bonappetit-com_recipe-smitten-kitchen-pretzel-linzers-with-salted-caramel.json` (bonappetit-com) - 2026-04-21: no issue
+- [x] 006. `bowlofdelicious-com_wprm_print-7627.json` (bowlofdelicious-com) - 2026-04-21: no issue
+- [x] 007. `cooking-nytimes-com_recipes-1019683-mozzarella-in-carrozza-fried-mozzarella-sandwiches.json` (cooking-nytimes-com) - 2026-04-21: no issue
+- [x] 008. `delish-com_cooking-recipe-ideas-recipes-a53296-easy-fish-taco-recipe.json` (delish-com) - 2026-04-21: no issue
+- [x] 009. `dinneratthezoo-com_shamrock-shake-recipe.json` (dinneratthezoo-com) - 2026-04-21: no issue
+- [x] 010. `foodnetwork-com_recipes-alton-brown-shepherds-pie-recipe2-1942900.json` (foodnetwork-com) - 2026-04-21: no issue
+- [x] 011. `halfbakedharvest-com_spinach-and-sun-dried-tomato-burrata-pasta.json` (halfbakedharvest-com) - 2026-04-21: no issue
+- [x] 012. `japanesecooking101-com_vegetable-korokke-recipe.json` (japanesecooking101-com) - 2026-04-21: no issue
+- [x] 013. `kingarthurbaking-com_recipes-french-style-baguettes-recipe.json` (kingarthurbaking-com) - 2026-04-21: no issue
+- [x] 014. `kiyafries-com_banh-mi-vietnamese-sandwich.json` (kiyafries-com) - 2026-04-21: no issue
+- [x] 015. `loveandlemons-com_caramelized-onions.json` (loveandlemons-com) - 2026-04-21: no issue
+- [x] 016. `norecipes-com_sparerib-oden-recipe-japanese-comfort-food.json` (norecipes-com) - 2026-04-21: no issue
+- [x] 017. `pinchandswirl-com_rice-cooker-mexican-rice.json` (pinchandswirl-com) - 2026-04-21: no issue
+- [x] 018. `recipetineats-com_chicken-pad-thai.json` (recipetineats-com) - 2026-04-21: no issue
+- [x] 019. `runningwithspoons-com_baked-egg-stuffed-sweet-potatoes-print-32052.json` (runningwithspoons-com) - 2026-04-21: no issue
+- [x] 020. `seriouseats-com_the-food-lab-buttermilk-biscuits-recipe.json` (seriouseats-com) - 2026-04-21: no issue
+- [x] 021. `smittenkitchen-com_2014-03-broccoli-cheddar-and-wild-rice-casserole.json` (smittenkitchen-com) - 2026-04-21: no issue
+- [x] 022. `sudachirecipes-com_garlic-steak-fried-rice.json` (sudachirecipes-com) - 2026-04-21: no issue
+- [x] 023. `thepioneerwoman-com_food-cooking-recipes-a40191717-grilled-salmon-recipe-how-to.json` (thepioneerwoman-com) - 2026-04-21: no issue
+- [x] 024. `allrecipes-com_recipe-228682-amazing-oven-roasted-potatoes.json` (allrecipes-com) - 2026-04-21: no issue
+- [x] 025. `altonbrown-com_recipes-semi-instant-pancake-mix.json` (altonbrown-com) - 2026-04-21: filed `p3-inline-sticky-notes-merge-into-instruction-text.json5`
 - [ ] 026. `americastestkitchen-com_recipes-15862-coddled-eggs.json` (americastestkitchen-com)
 - [ ] 027. `bonappetit-com_recipe-kimchi-udon-with-scallions.json` (bonappetit-com)
 - [ ] 028. `cooking-nytimes-com_recipes-1022063-brothy-cod-with-peas-and-mushrooms.json` (cooking-nytimes-com)
