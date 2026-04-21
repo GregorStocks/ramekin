@@ -42,9 +42,14 @@ _CARGO_TO_MAKE = {
 
 
 def _shell_command_segments(command: str) -> list[str]:
+    # Bash line continuations (`\<newline>`) join lines into a single
+    # logical command; collapse them BEFORE splitting so e.g.
+    # `git \<newline>push` isn't torn into two fragments that hide the real
+    # invocation from per-segment rules.
+    collapsed = re.sub(r"\\\n", " ", command)
     return [
         segment.strip()
-        for segment in re.split(r"\n|&&|\|\||[;|]", command)
+        for segment in re.split(r"\n|&&|\|\||[;|]", collapsed)
         if segment.strip()
     ]
 
@@ -99,18 +104,22 @@ _WRAPPER_OPTS_WITH_ARG: dict[str, frozenset[str]] = {
     "time": frozenset(),
     "nohup": frozenset(),
     "nice": frozenset({"-n", "--adjustment"}),
+    # Complete enumeration of sudo flags that consume the next argv token.
+    # Anything missing here leaves the flag argument in command position and
+    # lets a wrapped command hide behind it.
     "sudo": frozenset(
         {
-            "-u", "--user",
-            "-g", "--group",
-            "-U", "--other-user",
             "-C", "--close-from",
             "-D", "--chdir",
+            "-g", "--group",
             "-h", "--host",
             "-p", "--prompt",
             "-r", "--role",
-            "-t", "--type",
+            "-R", "--chroot",
             "-T", "--command-timeout",
+            "-t", "--type",
+            "-U", "--other-user",
+            "-u", "--user",
         }
     ),
     "timeout": frozenset({"-s", "--signal", "-k", "--kill-after"}),
