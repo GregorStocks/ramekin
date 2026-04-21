@@ -9,11 +9,11 @@
   "source_name": "Americastestkitchen.com",
   "ingredients": [
     {
-      "item": "1⁄4 teaspoons table salt, divided",
+      "item": "table salt, divided",
       "measurements": [
         {
-          "amount": "1",
-          "unit": null
+          "amount": "1.25",
+          "unit": "tsp"
         }
       ],
       "note": "plus salt for cooking pasta",
@@ -53,15 +53,19 @@
       "section": null
     },
     {
-      "item": "1⁄2 onions",
+      "item": "onions",
       "measurements": [
         {
-          "amount": "1",
+          "amount": "1.5",
           "unit": null
         },
         {
           "amount": "1.5",
           "unit": "cup"
+        },
+        {
+          "amount": "206",
+          "unit": "g"
         }
       ],
       "note": "sliced thin",
@@ -141,11 +145,11 @@
       "section": null
     },
     {
-      "item": "1⁄2 cups crushed kettle-style potato chips",
+      "item": "crushed kettle-style potato chips",
       "measurements": [
         {
-          "amount": "1",
-          "unit": null
+          "amount": "1.5",
+          "unit": "cup"
         }
       ],
       "note": null,
