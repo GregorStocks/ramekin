@@ -1353,6 +1353,11 @@ fn try_parse_measurement(s: &str) -> Option<Measurement> {
         }
     }
 
+    if unit.is_none() && amount.is_some() && looks_like_parenthetical_count_unit(remaining.trim()) {
+        unit = Some(remaining.trim().to_string());
+        remaining = String::new();
+    }
+
     // Check if remaining is "each" - if so, append it to the unit
     // This preserves important semantic info like "8 ounces each" vs "8 ounces total"
     let unit = match (unit, remaining.trim().to_lowercase().as_str()) {
@@ -1413,6 +1418,69 @@ fn parse_parenthetical_measurements(content: &str) -> Vec<Measurement> {
     }
 
     results
+}
+
+fn looks_like_parenthetical_count_unit(s: &str) -> bool {
+    if s.is_empty() || s.contains(['(', ')', '[', ']', ':', ';', ',']) {
+        return false;
+    }
+
+    const DISALLOWED_WORDS: &[&str] = &[
+        "a",
+        "an",
+        "and",
+        "approx",
+        "approximately",
+        "around",
+        "as",
+        "at",
+        "about",
+        "by",
+        "depending",
+        "extra",
+        "for",
+        "from",
+        "if",
+        "more",
+        "of",
+        "or",
+        "per",
+        "plus",
+        "see",
+        "to",
+        "with",
+    ];
+    const DESCRIPTOR_WORDS: &[&str] = &[
+        "big", "jumbo", "large", "medium", "meaty", "mini", "small", "tiny",
+    ];
+
+    let words: Vec<&str> = s.split_whitespace().collect();
+    if words.is_empty() {
+        return false;
+    }
+
+    let mut has_noun = false;
+    for word in words {
+        if !word.chars().all(|c| c.is_ascii_alphabetic() || c == '-') {
+            return false;
+        }
+
+        let normalized = word.to_lowercase();
+        if normalized.is_empty() {
+            return false;
+        }
+        if DISALLOWED_WORDS.contains(&normalized.as_str()) {
+            return false;
+        }
+        if normalized.chars().any(|c| c.is_ascii_digit()) {
+            return false;
+        }
+        if !DESCRIPTOR_WORDS.contains(&normalized.as_str()) {
+            has_noun = true;
+        }
+    }
+
+    has_noun
 }
 
 /// Strip common qualifiers from measurement strings, but preserve "each" as a unit suffix.
@@ -3043,6 +3111,17 @@ mod tests {
         );
         assert_eq!(result.measurements[1].amount, Some("454".to_string()));
         assert_eq!(result.measurements[1].unit, Some("g".to_string()));
+    }
+
+    #[test]
+    fn test_parenthetical_equivalence_count_keeps_item_name_as_custom_unit() {
+        let result = parse_ingredient("1/4 cup freshly squeezed lemon juice (2 lemons)");
+        assert_eq!(result.item, "freshly squeezed lemon juice");
+        assert_eq!(result.measurements.len(), 2);
+        assert_eq!(result.measurements[0].amount, Some("1/4".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+        assert_eq!(result.measurements[1].amount, Some("2".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("lemons".to_string()));
     }
 
     #[test]
