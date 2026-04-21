@@ -766,6 +766,16 @@ def _segment_rejection(
         return message
 
     if exe_basename == "git":
+        # Inline shell alias (`git -c 'alias.NAME=!CMD' NAME`): git runs
+        # CMD via /bin/sh, so recurse into it before the normal subcommand
+        # checks (which would see the alias name, not the shell body).
+        shell_alias = _git_shell_alias_payload(args)
+        if shell_alias is not None:
+            inner = rejection_message(shell_alias, dirty_pipeline_output)
+            if inner is not None:
+                return inner
+            return None
+
         subcmd, rest = _git_subcommand(args)
 
         if _git_worktree_add_under_tmp(args):
@@ -812,6 +822,92 @@ def _segment_rejection(
 _SHELL_WRAPPER_BASENAMES = frozenset({"sh", "bash", "zsh", "dash", "ksh"})
 
 
+def _extract_env_s_payloads(command: str) -> list[str]:
+    """Return payloads of every `env -S VALUE` / `env --split-string=VALUE`.
+
+    `env -S` carries an entire inner command in its argument string. Surface
+    those so `rejection_message` can recurse into them the same way it
+    recurses into `bash -c`.
+    """
+    payloads: list[str] = []
+    for segment in _shell_command_segments(command):
+        tokens = _shell_tokens(segment)
+        if not tokens:
+            continue
+        _env, idx = _leading_env_assignments(tokens)
+        while idx < len(tokens):
+            basename = os.path.basename(tokens[idx])
+            if basename != "env":
+                if basename in _WRAPPER_OPTS_WITH_ARG:
+                    idx = _skip_wrapper_args(tokens, idx + 1, basename)
+                    continue
+                break
+            # env — scan its options for -S / --split-string.
+            j = idx + 1
+            while j < len(tokens):
+                tok = tokens[j]
+                if tok == "--":
+                    break
+                if tok in ("-S", "--split-string"):
+                    if j + 1 < len(tokens):
+                        payloads.append(tokens[j + 1])
+                    break
+                if tok.startswith("--split-string="):
+                    payloads.append(tok[len("--split-string=") :])
+                    break
+                if (
+                    tok.startswith("-")
+                    and not tok.startswith("--")
+                    and len(tok) > 1
+                    and tok.endswith("S")
+                ):
+                    # Clustered short form `-iS CMD` — the S takes the next arg.
+                    if j + 1 < len(tokens):
+                        payloads.append(tokens[j + 1])
+                    break
+                if tok.startswith("-"):
+                    j += 1
+                    continue
+                break
+            break
+    return payloads
+
+
+def _git_shell_alias_payload(args: list[str]) -> str | None:
+    """If this git invocation triggers a `-c alias.NAME='!CMD'` shell alias, return CMD.
+
+    Git runs shell aliases via /bin/sh, so the payload is an arbitrary
+    shell command — pass it back through `rejection_message` to catch
+    anything blocked that hides inside the alias body.
+    """
+    aliases: dict[str, str] = {}
+    index = 0
+    while index < len(args):
+        token = args[index]
+        if token == "-c" and index + 1 < len(args):
+            val = args[index + 1]
+            if val.startswith("alias."):
+                rest = val[len("alias.") :]
+                if "=" in rest:
+                    name, value = rest.split("=", 1)
+                    aliases[name] = value
+            index += 2
+            continue
+        if token in _GIT_GLOBAL_OPTS_WITH_ARG:
+            index += 2
+            continue
+        if any(token.startswith(p) for p in _GIT_GLOBAL_LONG_OPTS_WITH_VALUE):
+            index += 1
+            continue
+        if token.startswith("-"):
+            index += 1
+            continue
+        if token in aliases and aliases[token].startswith("!"):
+            return aliases[token][1:]
+        return None
+    return None
+
+
 def _extract_shell_c_payload(args: list[str]) -> str | None:
     """Return the payload of a `-c <cmd>` argument to a shell wrapper.
 
@@ -830,13 +926,14 @@ def _extract_shell_c_payload(args: list[str]) -> str | None:
             return None
         if token.startswith("--command="):
             return token[len("--command=") :]
-        # Clustered short form: any `-...c` cluster ending in `c` (bash's
-        # `-c` must be the terminal flag in a cluster since it takes an arg).
+        # Clustered short form: any cluster containing `c` (bash accepts
+        # `-cl CMD`, `-ec CMD`, etc. — the `c` in a cluster always means
+        # "the next argv token is the command string").
         if (
             token.startswith("-")
             and not token.startswith("--")
-            and len(token) > 2
-            and token.endswith("c")
+            and len(token) > 1
+            and "c" in token[1:]
         ):
             if index + 1 < len(args):
                 return args[index + 1]
@@ -866,6 +963,8 @@ def _segment_uses_git_push(segment: str) -> bool:
 
 def command_uses_git_push(command: str) -> bool:
     if any(command_uses_git_push(sub) for sub in _extract_subshells(command)):
+        return True
+    if any(command_uses_git_push(p) for p in _extract_env_s_payloads(command)):
         return True
     return any(_segment_uses_git_push(s) for s in _shell_command_segments(command))
 
@@ -935,11 +1034,12 @@ def _redirect_write_targets(segment: str) -> list[str]:
 
 
 def _extract_subshells(command: str) -> list[str]:
-    """Return bodies of every subshell: `$(...)`, `<(...)`, `>(...)`.
+    """Return bodies of every subshell in `command`.
 
-    Respects quote state: `$(...)` works inside double quotes (expanded by
-    the shell), but `<(...)`/`>(...)` don't — so they're only extracted
-    when unquoted. Single-quoted content is skipped entirely.
+    Covers `$(...)` command substitution (expands inside double quotes),
+    `<(...)` / `>(...)` process substitution (unquoted only), and legacy
+    `` `...` `` backtick substitution (expands inside double quotes too).
+    Single-quoted regions are skipped entirely.
     """
     bodies: list[str] = []
     in_single = False
@@ -991,15 +1091,34 @@ def _extract_subshells(command: str) -> list[str]:
                 bodies.append(command[i + 2 : j])
                 i = j + 1
                 continue
+        if ch == "`":
+            j = i + 1
+            while j < n:
+                c = command[j]
+                if c == "\\" and j + 1 < n:
+                    j += 2
+                    continue
+                if c == "`":
+                    break
+                j += 1
+            if j < n:
+                bodies.append(command[i + 1 : j])
+                i = j + 1
+                continue
         i += 1
     return bodies
 
 
 def rejection_message(command: str, dirty_pipeline_output: bool) -> str | None:
-    # Recurse into $(...) command substitutions so the subshell's invocation
-    # is subject to the same rules as a top-level command.
+    # Recurse into $(...), <(...), >(...), and `...` subshells so the
+    # subshell's invocation is subject to the same rules as a top-level command.
     for sub in _extract_subshells(command):
         inner = rejection_message(sub, dirty_pipeline_output)
+        if inner is not None:
+            return inner
+    # `env -S "CMD"` carries the inner command in the option argument.
+    for payload in _extract_env_s_payloads(command):
+        inner = rejection_message(payload, dirty_pipeline_output)
         if inner is not None:
             return inner
 
