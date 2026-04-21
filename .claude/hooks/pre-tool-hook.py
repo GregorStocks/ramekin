@@ -753,36 +753,78 @@ def _segment_uses_git_push(segment: str) -> bool:
 
 
 def command_uses_git_push(command: str) -> bool:
-    if any(command_uses_git_push(sub) for sub in _extract_command_substitutions(command)):
+    if any(command_uses_git_push(sub) for sub in _extract_subshells(command)):
         return True
     return any(_segment_uses_git_push(s) for s in _shell_command_segments(command))
 
 
-# Output-redirection operator followed by an optional-whitespace target.
-# Matches `>`, `>>`, `N>`, `N>>`, `&>`, `&>>` (write forms) and captures
-# either a quoted target or a bareword run.
-_REDIRECT_WRITE_RE = re.compile(
-    r"""(?:^|\s)(?:\d*>{1,2}|&>{1,2})\s*("[^"]*"|'[^']*'|[^\s;|&<>()]+)"""
-)
+_REDIRECT_OP_RE = re.compile(r"\d*>{1,2}|&>{1,2}")
 
 
 def _redirect_write_targets(segment: str) -> list[str]:
-    """Return paths that this segment writes to via shell redirection."""
+    """Return paths this segment writes to via shell redirection.
+
+    Quote-aware: redirection operators inside single or double quotes are
+    treated as literal characters. Handles attached (`hi>file`), separated
+    (`hi > file`), and quoted-target (`> "file"`) forms for `>`, `>>`,
+    `N>`, `N>>`, `&>`, `&>>`.
+    """
     targets: list[str] = []
-    for match in _REDIRECT_WRITE_RE.finditer(segment):
-        target = match.group(1)
-        if len(target) >= 2 and target[0] == target[-1] and target[0] in "\"'":
-            target = target[1:-1]
-        targets.append(target)
+    in_single = False
+    in_double = False
+    i = 0
+    n = len(segment)
+    while i < n:
+        ch = segment[i]
+        if ch == "\\" and i + 1 < n and not in_single:
+            i += 2
+            continue
+        if ch == "'" and not in_double:
+            in_single = not in_single
+            i += 1
+            continue
+        if ch == '"' and not in_single:
+            in_double = not in_double
+            i += 1
+            continue
+        if in_single or in_double:
+            i += 1
+            continue
+        match = _REDIRECT_OP_RE.match(segment, i)
+        if match:
+            i = match.end()
+            while i < n and segment[i] in " \t":
+                i += 1
+            if i >= n:
+                break
+            target_char = segment[i]
+            if target_char in "\"'":
+                end = i + 1
+                while end < n and segment[end] != target_char:
+                    if segment[end] == "\\" and end + 1 < n:
+                        end += 2
+                        continue
+                    end += 1
+                targets.append(segment[i + 1 : end])
+                i = end + 1
+                continue
+            end = i
+            while end < n and segment[end] not in " \t\n;|&<>()":
+                end += 1
+            if end > i:
+                targets.append(segment[i:end])
+            i = end
+            continue
+        i += 1
     return targets
 
 
-def _extract_command_substitutions(command: str) -> list[str]:
-    """Return the bodies of every `$(...)` substitution in `command`.
+def _extract_subshells(command: str) -> list[str]:
+    """Return bodies of every subshell: `$(...)`, `<(...)`, `>(...)`.
 
-    Respects single-quote/double-quote state so `'$(cargo test)'` (literal,
-    no substitution) is skipped. Nested parens and backslash escapes are
-    handled so bodies like `$(echo "(paren)")` aren't cut short.
+    Respects quote state: `$(...)` works inside double quotes (expanded by
+    the shell), but `<(...)`/`>(...)` don't — so they're only extracted
+    when unquoted. Single-quoted content is skipped entirely.
     """
     bodies: list[str] = []
     in_single = False
@@ -805,7 +847,17 @@ def _extract_command_substitutions(command: str) -> list[str]:
         if in_single:
             i += 1
             continue
-        if ch == "$" and i + 1 < n and command[i + 1] == "(":
+
+        is_dollar_paren = (
+            ch == "$" and i + 1 < n and command[i + 1] == "("
+        )
+        is_proc_sub = (
+            not in_double
+            and ch in "<>"
+            and i + 1 < n
+            and command[i + 1] == "("
+        )
+        if is_dollar_paren or is_proc_sub:
             depth = 1
             j = i + 2
             while j < n and depth > 0:
@@ -831,7 +883,7 @@ def _extract_command_substitutions(command: str) -> list[str]:
 def rejection_message(command: str, dirty_pipeline_output: bool) -> str | None:
     # Recurse into $(...) command substitutions so the subshell's invocation
     # is subject to the same rules as a top-level command.
-    for sub in _extract_command_substitutions(command):
+    for sub in _extract_subshells(command):
         inner = rejection_message(sub, dirty_pipeline_output)
         if inner is not None:
             return inner
