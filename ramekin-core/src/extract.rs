@@ -3,6 +3,7 @@ use std::sync::LazyLock;
 use regex::Regex;
 
 use crate::error::ExtractError;
+use crate::ingredient_parser::detect_section_header;
 use crate::types::{ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod, RawRecipe};
 use scraper::{Html, Selector};
 
@@ -30,6 +31,12 @@ static OG_IMAGE_REGEX_ALT: LazyLock<Regex> = LazyLock::new(|| {
 static INGREDIENT_START_AFTER_SPLIT_RE: LazyLock<Regex> = LazyLock::new(|| {
     Regex::new(r"(?i)^\d+(\s|/\d|g\b|kg\b|mg\b|ml\b|l\b|oz|lb|cup|teaspoon|tablespoon|tsp\b|tbsp\b|pound|ounce)")
         .expect("Invalid ingredient start after split regex")
+});
+
+/// Regex to strip trailing parenthetical or bracketed qualifiers from a title
+/// before reusing it as an ingredient section marker.
+static TRAILING_TITLE_QUALIFIER_RE: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r"\s*[\(\[][^\)\]]*[\)\]]\s*$").expect("Invalid trailing title qualifier regex")
 });
 
 /// Extract a recipe from HTML containing JSON-LD structured data.
@@ -980,6 +987,31 @@ fn has_instruction_paragraph_between(chunks: &[&str], start_idx: usize, end_idx:
     false
 }
 
+fn normalized_block_section_title(title: &str) -> Option<String> {
+    let trimmed = title.trim();
+    if trimmed.is_empty() {
+        return None;
+    }
+
+    let mut candidates = vec![trimmed.to_string()];
+    let stripped = TRAILING_TITLE_QUALIFIER_RE
+        .replace(trimmed, "")
+        .trim()
+        .to_string();
+    if !stripped.is_empty() && stripped != trimmed {
+        candidates.push(stripped);
+    }
+
+    for candidate in candidates {
+        let header = format!("{candidate}:");
+        if let Some(section_name) = detect_section_header(&header) {
+            return Some(section_name);
+        }
+    }
+
+    None
+}
+
 /// Extract a recipe from an unstructured blog post.
 ///
 /// Handles older WordPress posts that write recipes in plain HTML without any
@@ -1078,7 +1110,11 @@ fn extract_recipe_from_unstructured_blog(html: &str, source_url: &str) -> Option
     let mut ingredient_lines: Vec<String> = Vec::new();
     for (block_idx, block) in blocks.iter().enumerate() {
         if is_multi_block && block_idx > 0 {
-            if let Some(title) = &block.title {
+            if let Some(title) = block
+                .title
+                .as_deref()
+                .and_then(normalized_block_section_title)
+            {
                 ingredient_lines.push(format!("{title}:"));
             }
         }
@@ -1158,7 +1194,11 @@ fn extract_recipe_from_unstructured_blog(html: &str, source_url: &str) -> Option
         }
 
         if is_multi_block && block_idx > 0 {
-            if let Some(title) = &block.title {
+            if let Some(title) = block
+                .title
+                .as_deref()
+                .and_then(normalized_block_section_title)
+            {
                 instruction_paragraphs.push(format!("{title}:"));
             }
         }
@@ -2853,6 +2893,42 @@ mod tests {
         assert!(result
             .instructions
             .contains("Place the yogurt in a medium bowl"));
+    }
+
+    #[test]
+    fn test_unstructured_blog_normalizes_later_block_titles_for_sections() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <body>
+                <p><b>Indian Spiced Cauliflower and Potatoes [Aloo Gobi]</b></p>
+                <p>1 head cauliflower<br />
+                1 pound potatoes<br />
+                5 tablespoons oil</p>
+                <p>Roast the vegetables until tender.</p>
+                <p><b>Red Split Lentils With Cabbage (Masoor dal aur band gobi)</b></p>
+                <p>1 1/4 cups red split lentils<br />
+                5 cups water<br />
+                1 teaspoon cumin seeds</p>
+                <p>Simmer the lentils until soft.</p>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/aloo-gobi").unwrap();
+        let ingredient_lines: Vec<&str> = result.ingredients.lines().collect();
+        assert_eq!(ingredient_lines[0], "1 head cauliflower");
+        assert_eq!(ingredient_lines[3], "Red Split Lentils with Cabbage:");
+        assert_eq!(ingredient_lines[4], "1 1/4 cups red split lentils");
+        assert!(!result
+            .ingredients
+            .contains("Red Split Lentils With Cabbage (Masoor dal aur band gobi):"));
+        assert!(result
+            .instructions
+            .contains("Red Split Lentils with Cabbage:"));
+        assert!(!result
+            .instructions
+            .contains("Red Split Lentils With Cabbage (Masoor dal aur band gobi):"));
     }
 
     #[test]
