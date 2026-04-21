@@ -1076,8 +1076,8 @@ fn extract_recipe_from_unstructured_blog(html: &str, source_url: &str) -> Option
     let is_multi_block = blocks.len() > 1;
 
     let mut ingredient_lines: Vec<String> = Vec::new();
-    for block in &blocks {
-        if is_multi_block {
+    for (block_idx, block) in blocks.iter().enumerate() {
+        if is_multi_block && block_idx > 0 {
             if let Some(title) = &block.title {
                 ingredient_lines.push(format!("{title}:"));
             }
@@ -1157,7 +1157,7 @@ fn extract_recipe_from_unstructured_blog(html: &str, source_url: &str) -> Option
             continue;
         }
 
-        if is_multi_block {
+        if is_multi_block && block_idx > 0 {
             if let Some(title) = &block.title {
                 instruction_paragraphs.push(format!("{title}:"));
             }
@@ -2840,13 +2840,9 @@ mod tests {
         let result = extract_recipe(html, "https://example.com/recipe").unwrap();
         let ingredient_lines: Vec<&str> = result.ingredients.lines().collect();
         assert_eq!(result.title, "Yogurt-Marinated Lamb Kebabs");
-        assert_eq!(ingredient_lines[0], "Yogurt-Marinated Lamb Kebabs:");
-        assert_eq!(ingredient_lines[1], "1 pound plain yogurt");
-        assert_eq!(ingredient_lines[5], "Tzatziki:");
-        assert_eq!(ingredient_lines[6], "14 ounces Greek yogurt");
-        assert!(result
-            .instructions
-            .contains("Yogurt-Marinated Lamb Kebabs:"));
+        assert_eq!(ingredient_lines[0], "1 pound plain yogurt");
+        assert_eq!(ingredient_lines[4], "Tzatziki:");
+        assert_eq!(ingredient_lines[5], "14 ounces Greek yogurt");
         assert!(result
             .instructions
             .contains("Combine the yogurt, oil, and lamb in a bowl."));
