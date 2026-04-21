@@ -147,7 +147,9 @@ _WRAPPER_OPTS_WITH_ARG: dict[str, frozenset[str]] = {
     "command": frozenset(),
     "builtin": frozenset(),
     "exec": frozenset({"-a"}),
-    "time": frozenset(),
+    # GNU `time` flags that take arguments. The builtin `time` doesn't take
+    # any, but this set is the superset and harmless for the builtin.
+    "time": frozenset({"-f", "--format", "-o", "--output"}),
     "nohup": frozenset(),
     "nice": frozenset({"-n", "--adjustment"}),
     # Complete enumeration of sudo flags that consume the next argv token.
@@ -680,11 +682,52 @@ def _segment_rejection(
     return None
 
 
+_SHELL_WRAPPER_BASENAMES = frozenset({"sh", "bash", "zsh", "dash", "ksh"})
+
+
+def _extract_shell_c_payload(args: list[str]) -> str | None:
+    """Return the payload of a `-c <cmd>` argument to a shell wrapper.
+
+    Handles `-c cmd`, `--command cmd`, `--command=cmd`, and clustered short
+    forms ending in `c` (e.g. `bash -lc cmd`, `bash -ec cmd`). Returns None
+    if no `-c` / `--command` is found.
+    """
+    index = 0
+    while index < len(args):
+        token = args[index]
+        if token == "--":
+            return None
+        if token == "-c" or token == "--command":
+            if index + 1 < len(args):
+                return args[index + 1]
+            return None
+        if token.startswith("--command="):
+            return token[len("--command=") :]
+        # Clustered short form: any `-...c` cluster ending in `c` (bash's
+        # `-c` must be the terminal flag in a cluster since it takes an arg).
+        if (
+            token.startswith("-")
+            and not token.startswith("--")
+            and len(token) > 2
+            and token.endswith("c")
+        ):
+            if index + 1 < len(args):
+                return args[index + 1]
+            return None
+        index += 1
+    return None
+
+
 def _segment_uses_git_push(segment: str) -> bool:
     walked = _walk_segment(segment)
     if walked is None:
         return False
-    _env, _raw, exe_basename, args = walked
+    env, _raw, exe_basename, args = walked
+    if exe_basename in _SHELL_WRAPPER_BASENAMES:
+        payload = _extract_shell_c_payload(args)
+        if payload is not None:
+            return command_uses_git_push(payload)
+        return False
     if exe_basename != "git":
         return False
     subcmd, _ = _git_subcommand(args)
@@ -701,6 +744,15 @@ def rejection_message(command: str, dirty_pipeline_output: bool) -> str | None:
         if walked is None:
             continue
         env, exe_raw, exe_basename, args = walked
+        # Shell wrappers (`bash -c CMD`, `sh -c CMD`, etc.) — recurse into
+        # the payload so the inner invocation is subject to the same rules.
+        if exe_basename in _SHELL_WRAPPER_BASENAMES:
+            payload = _extract_shell_c_payload(args)
+            if payload is not None:
+                inner = rejection_message(payload, dirty_pipeline_output)
+                if inner is not None:
+                    return inner
+                continue
         message = _segment_rejection(
             env, exe_raw, exe_basename, args, dirty_pipeline_output
         )
