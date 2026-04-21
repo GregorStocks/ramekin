@@ -3,6 +3,7 @@ use std::sync::LazyLock;
 use regex::Regex;
 
 use crate::error::ExtractError;
+use crate::ingredient_parser::detect_section_header;
 use crate::types::{ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod, RawRecipe};
 use scraper::{Html, Selector};
 
@@ -30,6 +31,12 @@ static OG_IMAGE_REGEX_ALT: LazyLock<Regex> = LazyLock::new(|| {
 static INGREDIENT_START_AFTER_SPLIT_RE: LazyLock<Regex> = LazyLock::new(|| {
     Regex::new(r"(?i)^\d+(\s|/\d|g\b|kg\b|mg\b|ml\b|l\b|oz|lb|cup|teaspoon|tablespoon|tsp\b|tbsp\b|pound|ounce)")
         .expect("Invalid ingredient start after split regex")
+});
+
+/// Regex to strip trailing parenthetical or bracketed qualifiers from a title
+/// before reusing it as an ingredient section marker.
+static TRAILING_TITLE_QUALIFIER_RE: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r"\s*[\(\[][^\)\]]*[\)\]]\s*$").expect("Invalid trailing title qualifier regex")
 });
 
 /// Extract a recipe from HTML containing JSON-LD structured data.
@@ -931,6 +938,80 @@ static LOOKBACK_LINK_REGEX: LazyLock<Regex> = LazyLock::new(|| {
         .expect("Invalid lookback link regex")
 });
 
+struct UnstructuredRecipeBlock {
+    title: Option<String>,
+    title_chunk_idx: Option<usize>,
+    ingredient_chunk_indices: Vec<usize>,
+}
+
+fn extract_bold_heading(chunk: &str) -> Option<String> {
+    let cap = BOLD_TEXT_REGEX.captures(chunk)?;
+    let bold_text = cap.get(1)?.as_str().trim();
+    if LOOKBACK_LINK_REGEX.is_match(chunk) || bold_text.is_empty() {
+        return None;
+    }
+    Some(decode_html_entities(bold_text))
+}
+
+fn has_instruction_paragraph_between(chunks: &[&str], start_idx: usize, end_idx: usize) -> bool {
+    for chunk in chunks.iter().take(end_idx).skip(start_idx) {
+        let chunk = chunk.trim();
+        if chunk.is_empty()
+            || LOOKBACK_LINK_REGEX.is_match(chunk)
+            || looks_like_ingredient_list(chunk)
+        {
+            continue;
+        }
+
+        let text = HTML_TAG_REGEX.replace_all(chunk, "");
+        let text = text.trim();
+        if text.is_empty() {
+            continue;
+        }
+
+        let lower = text.to_lowercase();
+        if lower == "video" || lower == "watch the video" {
+            continue;
+        }
+        if lower.starts_with("adapted from")
+            || lower.starts_with("from ")
+            || lower.starts_with("recipe from")
+            || lower.starts_with("source:")
+        {
+            continue;
+        }
+
+        return true;
+    }
+
+    false
+}
+
+fn normalized_block_section_title(title: &str) -> Option<String> {
+    let trimmed = title.trim();
+    if trimmed.is_empty() {
+        return None;
+    }
+
+    let mut candidates = vec![trimmed.to_string()];
+    let stripped = TRAILING_TITLE_QUALIFIER_RE
+        .replace(trimmed, "")
+        .trim()
+        .to_string();
+    if !stripped.is_empty() && stripped != trimmed {
+        candidates.push(stripped);
+    }
+
+    for candidate in candidates {
+        let header = format!("{candidate}:");
+        if let Some(section_name) = detect_section_header(&header) {
+            return Some(section_name);
+        }
+    }
+
+    None
+}
+
 /// Extract a recipe from an unstructured blog post.
 ///
 /// Handles older WordPress posts that write recipes in plain HTML without any
@@ -976,37 +1057,78 @@ fn extract_recipe_from_unstructured_blog(html: &str, source_url: &str) -> Option
         return None;
     }
 
-    let first_ingredient_idx = ingredient_chunk_indices[0];
-    let last_ingredient_idx = *ingredient_chunk_indices.last().unwrap();
+    let mut blocks: Vec<UnstructuredRecipeBlock> = Vec::new();
+    let mut scan_start = 0;
+    for &ingredient_idx in &ingredient_chunk_indices {
+        let mut block_title = None;
+        let mut block_title_chunk_idx = None;
+        for i in (scan_start..ingredient_idx).rev() {
+            let chunk = chunks[i].trim();
+            if chunk.is_empty() {
+                continue;
+            }
+            if let Some(title) = extract_bold_heading(chunk) {
+                block_title = Some(title);
+                block_title_chunk_idx = Some(i);
+                break;
+            }
+        }
 
-    // Extract ingredients from all identified ingredient chunks
+        let starts_new_block = match blocks.last() {
+            None => true,
+            Some(block) => {
+                if let Some(title_chunk_idx) = block_title_chunk_idx {
+                    let previous_ingredient_idx = *block.ingredient_chunk_indices.last()?;
+                    has_instruction_paragraph_between(
+                        &chunks,
+                        previous_ingredient_idx + 1,
+                        title_chunk_idx,
+                    )
+                } else {
+                    false
+                }
+            }
+        };
+
+        if starts_new_block {
+            blocks.push(UnstructuredRecipeBlock {
+                title: block_title,
+                title_chunk_idx: block_title_chunk_idx,
+                ingredient_chunk_indices: vec![ingredient_idx],
+            });
+        } else if let Some(block) = blocks.last_mut() {
+            block.ingredient_chunk_indices.push(ingredient_idx);
+        }
+
+        scan_start = ingredient_idx + 1;
+    }
+
+    let first_block = blocks.first()?;
+    let first_ingredient_idx = *first_block.ingredient_chunk_indices.first()?;
+    let is_multi_block = blocks.len() > 1;
+
     let mut ingredient_lines: Vec<String> = Vec::new();
-    for &idx in &ingredient_chunk_indices {
-        let chunk = chunks[idx];
-        extract_ingredient_lines_from_chunk(chunk, &mut ingredient_lines);
+    for (block_idx, block) in blocks.iter().enumerate() {
+        if is_multi_block && block_idx > 0 {
+            if let Some(title) = block
+                .title
+                .as_deref()
+                .and_then(normalized_block_section_title)
+            {
+                ingredient_lines.push(format!("{title}:"));
+            }
+        }
+        for &idx in &block.ingredient_chunk_indices {
+            let chunk = chunks[idx];
+            extract_ingredient_lines_from_chunk(chunk, &mut ingredient_lines);
+        }
     }
 
     if ingredient_lines.is_empty() {
         return None;
     }
 
-    // Find recipe title: look backwards from the first ingredient chunk
-    // for the nearest chunk containing a <b> or <strong> tag
-    let mut title: Option<String> = None;
-    for i in (0..first_ingredient_idx).rev() {
-        let chunk = chunks[i].trim();
-        if chunk.is_empty() {
-            continue;
-        }
-        if let Some(cap) = BOLD_TEXT_REGEX.captures(chunk) {
-            let bold_text = cap.get(1).unwrap().as_str().trim();
-            // Skip "One year ago:" and similar navigational bold text
-            if !LOOKBACK_LINK_REGEX.is_match(chunk) && !bold_text.is_empty() {
-                title = Some(decode_html_entities(bold_text));
-                break;
-            }
-        }
-    }
+    let mut title = first_block.title.clone();
 
     // Fall back to page title if no bold title found near ingredients
     if title.is_none() {
@@ -1019,45 +1141,68 @@ fn extract_recipe_from_unstructured_blog(html: &str, source_url: &str) -> Option
     // Extract instructions: prose paragraphs after the last ingredient chunk
     // that don't contain <br> chains (i.e., they're not ingredient lists)
     let mut instruction_paragraphs: Vec<String> = Vec::new();
-    for chunk in chunks.iter().skip(last_ingredient_idx + 1) {
-        let chunk = chunk.trim();
-        if chunk.is_empty() {
-            continue;
-        }
+    for (block_idx, block) in blocks.iter().enumerate() {
+        let last_ingredient_idx = *block.ingredient_chunk_indices.last()?;
+        let next_block_title_idx = blocks
+            .get(block_idx + 1)
+            .and_then(|next_block| next_block.title_chunk_idx);
 
-        // Stop at sharing/social buttons
-        if chunk.contains("sharedaddy") || chunk.contains("sd-sharing") {
-            break;
-        }
+        let mut block_paragraphs: Vec<String> = Vec::new();
+        for (idx, chunk) in chunks.iter().enumerate().skip(last_ingredient_idx + 1) {
+            if next_block_title_idx.is_some_and(|title_idx| idx >= title_idx) {
+                break;
+            }
 
-        // Skip chunks that are just images or links with no text content
-        let text = HTML_TAG_REGEX.replace_all(chunk, "");
-        let text = text.trim();
-        if text.is_empty() {
-            continue;
-        }
-
-        // Skip "One year ago:" / "Previously" link sections
-        if LOOKBACK_LINK_REGEX.is_match(chunk) {
-            continue;
-        }
-
-        // Skip attribution lines at the start (before any real instructions)
-        if instruction_paragraphs.is_empty() {
-            let lower = text.to_lowercase();
-            if lower.starts_with("adapted from")
-                || lower.starts_with("from ")
-                || lower.starts_with("recipe from")
-                || lower.starts_with("source:")
-            {
+            let chunk = chunk.trim();
+            if chunk.is_empty() {
                 continue;
+            }
+
+            if chunk.contains("sharedaddy") || chunk.contains("sd-sharing") {
+                break;
+            }
+
+            let text = HTML_TAG_REGEX.replace_all(chunk, "");
+            let text = text.trim();
+            if text.is_empty() {
+                continue;
+            }
+
+            if LOOKBACK_LINK_REGEX.is_match(chunk) {
+                continue;
+            }
+
+            if block_paragraphs.is_empty() {
+                let lower = text.to_lowercase();
+                if lower.starts_with("adapted from")
+                    || lower.starts_with("from ")
+                    || lower.starts_with("recipe from")
+                    || lower.starts_with("source:")
+                {
+                    continue;
+                }
+            }
+
+            let decoded = decode_html_entities(text);
+            if !decoded.is_empty() {
+                block_paragraphs.push(decoded);
             }
         }
 
-        let decoded = decode_html_entities(text);
-        if !decoded.is_empty() {
-            instruction_paragraphs.push(decoded);
+        if block_paragraphs.is_empty() {
+            continue;
         }
+
+        if is_multi_block && block_idx > 0 {
+            if let Some(title) = block
+                .title
+                .as_deref()
+                .and_then(normalized_block_section_title)
+            {
+                instruction_paragraphs.push(format!("{title}:"));
+            }
+        }
+        instruction_paragraphs.extend(block_paragraphs);
     }
 
     if instruction_paragraphs.is_empty() {
@@ -2747,6 +2892,84 @@ mod tests {
         assert_eq!(lines[5], "2 cups chicken stock");
         assert_eq!(lines[6], "To serve:");
         assert_eq!(lines[7], "Steamed jasmine rice");
+    }
+
+    #[test]
+    fn test_unstructured_blog_keeps_multiple_recipe_blocks_separate() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <body>
+                <p><b>Yogurt-Marinated Lamb Kebabs</b><br />Adapted from Someone</p>
+                <p>1 pound plain yogurt<br />
+                1/4 cup olive oil<br />
+                2 pounds lamb<br />
+                1 red onion</p>
+                <p>Combine the yogurt, oil, and lamb in a bowl.</p>
+                <p>Grill the skewers until the lamb is medium-rare.</p>
+                <p><b>Tzatziki</b><br />From Somewhere Else</p>
+                <p>14 ounces Greek yogurt<br />
+                1 hothouse cucumber<br />
+                1/4 cup sour cream<br />
+                2 tablespoons lemon juice</p>
+                <p>Place the yogurt in a medium bowl and stir in the cucumber.</p>
+                <div class="sharedaddy">share buttons</div>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+        let ingredient_lines: Vec<&str> = result.ingredients.lines().collect();
+        assert_eq!(result.title, "Yogurt-Marinated Lamb Kebabs");
+        assert_eq!(ingredient_lines[0], "1 pound plain yogurt");
+        assert_eq!(ingredient_lines[4], "Tzatziki:");
+        assert_eq!(ingredient_lines[5], "14 ounces Greek yogurt");
+        assert!(result
+            .instructions
+            .contains("Combine the yogurt, oil, and lamb in a bowl."));
+        assert!(result
+            .instructions
+            .contains("Grill the skewers until the lamb is medium-rare."));
+        assert!(result.instructions.contains("Tzatziki:"));
+        assert!(result
+            .instructions
+            .contains("Place the yogurt in a medium bowl"));
+    }
+
+    #[test]
+    fn test_unstructured_blog_normalizes_later_block_titles_for_sections() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <body>
+                <p><b>Indian Spiced Cauliflower and Potatoes [Aloo Gobi]</b></p>
+                <p>1 head cauliflower<br />
+                1 pound potatoes<br />
+                5 tablespoons oil</p>
+                <p>Roast the vegetables until tender.</p>
+                <p><b>Red Split Lentils With Cabbage (Masoor dal aur band gobi)</b></p>
+                <p>1 1/4 cups red split lentils<br />
+                5 cups water<br />
+                1 teaspoon cumin seeds</p>
+                <p>Simmer the lentils until soft.</p>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/aloo-gobi").unwrap();
+        let ingredient_lines: Vec<&str> = result.ingredients.lines().collect();
+        assert_eq!(ingredient_lines[0], "1 head cauliflower");
+        assert_eq!(ingredient_lines[3], "Red Split Lentils with Cabbage:");
+        assert_eq!(ingredient_lines[4], "1 1/4 cups red split lentils");
+        assert!(!result
+            .ingredients
+            .contains("Red Split Lentils With Cabbage (Masoor dal aur band gobi):"));
+        assert!(result
+            .instructions
+            .contains("Red Split Lentils with Cabbage:"));
+        assert!(!result
+            .instructions
+            .contains("Red Split Lentils With Cabbage (Masoor dal aur band gobi):"));
     }
 
     #[test]
