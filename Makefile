@@ -12,6 +12,7 @@ API_SOURCES := $(shell find server/src/api -type f -name '*.rs' 2>/dev/null) ser
 
 # Marker file for generated clients
 CLIENT_MARKER := cli/generated/ramekin-client/Cargo.toml
+SERVER_RELEASE_BIN := server/target/release/ramekin-server
 
 # Simulator destination for iOS tests. Leave empty to auto-detect the newest
 # iPhone on the newest installed iOS runtime via scripts/find-ios-simulator.py.
@@ -52,9 +53,12 @@ dev-down: ## Stop dev processes (not database)
 api/openapi.json: $(API_SOURCES)
 	@echo "Building server and generating OpenAPI spec..." | $(TS)
 	@mkdir -p api
-	@cd server && cargo build --release -q
-	@server/target/release/ramekin-server --openapi > api/openapi.json
+	@$(MAKE) $(SERVER_RELEASE_BIN)
+	@$(SERVER_RELEASE_BIN) --openapi > api/openapi.json
 	@echo "Generated api/openapi.json" | $(TS)
+
+$(SERVER_RELEASE_BIN):
+	@cd server && cargo build --release -q
 
 # Generate clients from OpenAPI spec
 $(CLIENT_MARKER): api/openapi.json
@@ -92,7 +96,7 @@ worktree-setup: ## Generate dev.env and test.env for this worktree
 cli/target/debug/ramekin-cli: $(CLIENT_MARKER)
 	cd cli && cargo build
 
-test: check-deps $(CLIENT_MARKER) cli/target/debug/ramekin-cli ## Run API tests
+test: check-deps $(CLIENT_MARKER) cli/target/debug/ramekin-cli $(SERVER_RELEASE_BIN) ## Run API tests
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/run-tests.sh
 
 test-ui: check-deps $(CLIENT_MARKER) ## Run UI tests with Playwright (requires DATABASE_URL)
