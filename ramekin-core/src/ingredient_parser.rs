@@ -1461,9 +1461,11 @@ fn looks_like_parenthetical_count_unit(s: &str) -> bool {
 
     let mut has_noun = false;
     for word in words {
-        let normalized = word
-            .trim_matches(|c: char| !c.is_ascii_alphabetic() && c != '-')
-            .to_lowercase();
+        if !word.chars().all(|c| c.is_ascii_alphabetic() || c == '-') {
+            return false;
+        }
+
+        let normalized = word.to_lowercase();
         if normalized.is_empty() {
             return false;
         }
