@@ -119,11 +119,11 @@ fn extract_jsonld_fast(html: &str, source_url: &str) -> Option<RawRecipe> {
 fn extract_og_image_fast(html: &str) -> Option<String> {
     // Try property-first pattern
     if let Some(cap) = OG_IMAGE_REGEX.captures(html) {
-        return cap.get(1).map(|m| m.as_str().to_string());
+        return cap.get(1).map(|m| decode_html_entities(m.as_str()));
     }
     // Try content-first pattern
     if let Some(cap) = OG_IMAGE_REGEX_ALT.captures(html) {
-        return cap.get(1).map(|m| m.as_str().to_string());
+        return cap.get(1).map(|m| decode_html_entities(m.as_str()));
     }
     None
 }
@@ -785,7 +785,7 @@ fn extract_og_image(document: &Html) -> Option<String> {
         .next()?
         .value()
         .attr("content")
-        .map(|s| s.to_string())
+        .map(decode_html_entities)
 }
 
 /// Regex to match footnote lines starting with asterisks inside `<li>` or `<p>` tags.
@@ -1915,6 +1915,47 @@ mod tests {
         let og_image = extract_og_image(&document);
 
         assert_eq!(og_image, Some("https://example.com/image.jpg".to_string()));
+    }
+
+    #[test]
+    fn test_extract_og_image_decodes_html_entities() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta property="og:image" content="https://example.com/image.jpg?fit=500%2C333&#038;ssl=1">
+            </head>
+            <body></body>
+            </html>
+        "#;
+
+        let document = Html::parse_document(html);
+        let og_image = extract_og_image(&document);
+
+        assert_eq!(
+            og_image,
+            Some("https://example.com/image.jpg?fit=500%2C333&ssl=1".to_string())
+        );
+    }
+
+    #[test]
+    fn test_extract_og_image_fast_decodes_html_entities() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta content="https://example.com/image.jpg?fit=500%2C333&#038;ssl=1" property="og:image">
+            </head>
+            <body></body>
+            </html>
+        "#;
+
+        let og_image = extract_og_image_fast(html);
+
+        assert_eq!(
+            og_image,
+            Some("https://example.com/image.jpg?fit=500%2C333&ssl=1".to_string())
+        );
     }
 
     #[test]

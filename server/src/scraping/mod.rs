@@ -65,6 +65,23 @@ pub const STATUS_FAILED: &str = "failed";
 /// Maximum retries before hard fail
 const MAX_RETRIES: i32 = 5;
 
+fn is_loopback_host(host: &str) -> bool {
+    matches!(host, "localhost" | "127.0.0.1" | "::1")
+}
+
+fn allowlist_entry_matches_host(allowed_entry: &str, host: &str, host_with_port: &str) -> bool {
+    if allowed_entry == host_with_port || allowed_entry == host {
+        return true;
+    }
+
+    let allowed_host = allowed_entry
+        .split_once(':')
+        .map(|(entry_host, _)| entry_host)
+        .unwrap_or(allowed_entry);
+
+    is_loopback_host(host) && is_loopback_host(allowed_host)
+}
+
 /// Check if a URL's host is allowed for scraping.
 /// If SCRAPE_ALLOWED_HOSTS is set, only those hosts are allowed.
 /// If not set, all hosts are allowed (production mode).
@@ -87,7 +104,7 @@ pub fn is_host_allowed(url: &str) -> Result<(), ScrapeError> {
 
         if !allowed_hosts
             .iter()
-            .any(|&h| h == host_with_port || h == host)
+            .any(|&h| allowlist_entry_matches_host(h, host, &host_with_port))
         {
             return Err(ScrapeError::HostNotAllowed(host_with_port));
         }
@@ -1040,4 +1057,37 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
     Ok(resume_status.to_string())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::sync::{LazyLock, Mutex};
+
+    static HOST_ALLOWLIST_ENV_LOCK: LazyLock<Mutex<()>> = LazyLock::new(|| Mutex::new(()));
+
+    #[test]
+    fn host_allowlist_allows_loopback_on_other_ports() {
+        let _guard = HOST_ALLOWLIST_ENV_LOCK.lock().unwrap();
+        env::set_var("SCRAPE_ALLOWED_HOSTS", "localhost:62872");
+
+        let result = is_host_allowed("http://localhost:57565/images/test_recipe.jpg");
+
+        env::remove_var("SCRAPE_ALLOWED_HOSTS");
+        assert!(result.is_ok());
+    }
+
+    #[test]
+    fn host_allowlist_still_rejects_other_hosts() {
+        let _guard = HOST_ALLOWLIST_ENV_LOCK.lock().unwrap();
+        env::set_var("SCRAPE_ALLOWED_HOSTS", "localhost:62872");
+
+        let result = is_host_allowed("https://www.seriouseats.com/image.jpg");
+
+        env::remove_var("SCRAPE_ALLOWED_HOSTS");
+        assert!(matches!(
+            result,
+            Err(ScrapeError::HostNotAllowed(host)) if host == "www.seriouseats.com"
+        ));
+    }
 }
