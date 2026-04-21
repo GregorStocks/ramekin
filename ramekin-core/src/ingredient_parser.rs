@@ -370,6 +370,7 @@ fn decode_html_entities(s: &str) -> String {
 /// This handles:
 /// - Non-breaking spaces → regular spaces
 /// - Unicode fractions (½, ⅓, etc.) → ASCII fractions (1/2, 1/3, etc.)
+/// - Unicode fraction slash (⁄) → ASCII slash
 /// - Unicode dashes (en-dash, em-dash) → ASCII hyphen
 fn normalize_unicode(s: &str) -> String {
     let mut result = String::with_capacity(s.len() + 10);
@@ -382,6 +383,9 @@ fn normalize_unicode(s: &str) -> String {
 
             // En-dash and em-dash → ASCII hyphen
             '–' | '—' => result.push('-'),
+
+            // Fraction slash → ASCII slash
+            '⁄' => result.push('/'),
 
             // Unicode fractions → ASCII fractions
             // Add space if preceded by a digit (e.g., "1½" -> "1 1/2")
@@ -3097,6 +3101,15 @@ mod tests {
             result.measurements[0].unit,
             Some("1/2-inch piece".to_string())
         );
+    }
+
+    #[test]
+    fn test_unicode_fraction_slash_mixed_number() {
+        let result = parse_ingredient("1 1⁄2 cups crushed kettle-style potato chips");
+        assert_eq!(result.item, "crushed kettle-style potato chips");
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("1 1/2".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
     }
 
     #[test]

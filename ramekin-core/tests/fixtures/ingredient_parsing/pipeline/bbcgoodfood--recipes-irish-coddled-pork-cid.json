@@ -75,11 +75,11 @@
     {
       "raw": "1⁄2 small swede cut into chunks",
       "expected": {
-        "item": "⁄2 small swede cut into chunks",
+        "item": "swede cut into chunks",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "0.5",
+            "unit": "small"
           }
         ],
         "note": null,
@@ -89,11 +89,11 @@
     {
       "raw": "1⁄2 large cabbage cut into smaller pieces",
       "expected": {
-        "item": "⁄2 large cabbage cut into smaller pieces",
+        "item": "cabbage cut into smaller pieces",
         "measurements": [
           {
-            "amount": "1",
-            "unit": null
+            "amount": "0.5",
+            "unit": "large"
           }
         ],
         "note": null,
