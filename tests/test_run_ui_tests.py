@@ -65,5 +65,8 @@ exit 7
 
     assert marker_path.exists()
     assert result.returncode == 7
-    assert "UI test orchestration failed. Last 200 lines of logs/test-ui.log:" in result.stdout
+    assert (
+        "UI test orchestration failed. Last 200 lines of logs/test-ui.log:"
+        in result.stdout
+    )
     assert log_line in result.stdout
