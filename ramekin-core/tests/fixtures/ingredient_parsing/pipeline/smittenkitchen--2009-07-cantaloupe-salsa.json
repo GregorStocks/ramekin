@@ -10,6 +10,10 @@
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "0.25",
+            "unit": "inch"
           }
         ],
         "note": null,
@@ -24,6 +28,10 @@
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "0.25",
+            "unit": "inch"
           }
         ],
         "note": null,
@@ -55,7 +63,7 @@
           },
           {
             "amount": "2",
-            "unit": null
+            "unit": "-inch-long"
           }
         ],
         "note": "minced",
