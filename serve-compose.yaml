@@ -9,3 +9,17 @@ processes:
     working_dir: ./server
     availability:
       restart: ${SERVER_RESTART:-on_failure}
+
+  certs:
+    command: ./scripts/setup-certs.sh
+    availability:
+      restart: "no"
+
+  ui:
+    command: >-
+      npm ci && npm run build &&
+      npm run preview -- --port ${UI_PORT} --strictPort
+    working_dir: ./ramekin-ui
+    depends_on:
+      certs:
+        condition: process_completed_successfully
