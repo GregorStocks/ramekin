@@ -480,6 +480,20 @@ fn split_and_dedup_ingredients(ingredients: Vec<String>) -> Vec<String> {
         .collect()
 }
 
+fn sanitize_extracted_ingredient(text: &str) -> Option<String> {
+    let decoded = decode_html_entities(text.trim());
+    let sanitized = decoded
+        .trim_start_matches(['▢', '☐', '☑', '☒', '✓', '✔'])
+        .trim_start()
+        .to_string();
+
+    if sanitized.is_empty() {
+        None
+    } else {
+        Some(sanitized)
+    }
+}
+
 /// Extract ingredients as a newline-separated blob.
 fn extract_ingredients(recipe: &serde_json::Value) -> Result<String, ExtractError> {
     let ingredients_raw = recipe
@@ -493,8 +507,7 @@ fn extract_ingredients(recipe: &serde_json::Value) -> Result<String, ExtractErro
     let ingredients: Vec<String> = ingredients_array
         .iter()
         .filter_map(|v| v.as_str())
-        .map(|s| decode_html_entities(s.trim()))
-        .filter(|s| !s.is_empty())
+        .filter_map(sanitize_extracted_ingredient)
         .collect();
 
     if ingredients.is_empty() {
@@ -640,8 +653,7 @@ fn extract_recipe_from_microdata(
             .expect("Invalid selector");
     let ingredients: Vec<String> = recipe_element
         .select(&ingredient_selector)
-        .map(|el| el.text().collect::<String>().trim().to_string())
-        .filter(|s| !s.is_empty())
+        .filter_map(|el| sanitize_extracted_ingredient(&el.text().collect::<String>()))
         .collect();
     let ingredients = split_and_dedup_ingredients(ingredients);
 
@@ -1605,8 +1617,7 @@ fn extract_ingredients_from_itemprop_unscoped(document: &Html) -> Option<String>
         .expect("Invalid selector");
     let ingredients: Vec<String> = document
         .select(&selector)
-        .map(|el| el.text().collect::<String>().trim().to_string())
-        .filter(|s| !s.is_empty())
+        .filter_map(|el| sanitize_extracted_ingredient(&el.text().collect::<String>()))
         .collect();
     let ingredients = split_and_dedup_ingredients(ingredients);
 
@@ -1720,8 +1731,7 @@ fn extract_wprm_ingredients_with_groups(document: &Html) -> Option<String> {
 
         // Extract ingredients in this group
         for item in group.select(&item_selector) {
-            let text = item.text().collect::<String>().trim().to_string();
-            if !text.is_empty() {
+            if let Some(text) = sanitize_extracted_ingredient(&item.text().collect::<String>()) {
                 lines.push(text);
             }
         }
@@ -1761,7 +1771,8 @@ fn extract_jetpack_ingredients_with_groups(document: &Html) -> Option<String> {
         Selector::parse("h1, h2, h3, h4, h5, h6, .jetpack-recipe-ingredient").ok()?;
     for el in container.select(&all_selector) {
         let tag = el.value().name();
-        let text = el.text().collect::<String>().trim().to_string();
+        let raw_text = el.text().collect::<String>();
+        let text = raw_text.trim().to_string();
         if text.is_empty() {
             continue;
         }
@@ -1772,7 +1783,7 @@ fn extract_jetpack_ingredients_with_groups(document: &Html) -> Option<String> {
             } else {
                 lines.push(format!("{}:", text));
             }
-        } else {
+        } else if let Some(text) = sanitize_extracted_ingredient(&raw_text) {
             lines.push(text);
         }
     }
@@ -1790,8 +1801,7 @@ fn extract_ingredient_items_from_selector(document: &Html, selector_str: &str) -
     let selector = Selector::parse(selector_str).ok()?;
     let items: Vec<String> = document
         .select(&selector)
-        .map(|el| el.text().collect::<String>().trim().to_string())
-        .filter(|s| !s.is_empty())
+        .filter_map(|el| sanitize_extracted_ingredient(&el.text().collect::<String>()))
         .collect();
     let items = split_and_dedup_ingredients(items);
 
@@ -1832,7 +1842,7 @@ fn extract_ingredients_from_div(document: &Html) -> Option<String> {
                 .replace("&deg;", "\u{00b0}")
                 .replace("&reg;", "\u{00ae}")
                 .replace("&#038;", "&");
-            if !text.is_empty() {
+            if let Some(text) = sanitize_extracted_ingredient(&text) {
                 lines.push(text);
             }
         }
@@ -2494,6 +2504,26 @@ mod tests {
     }
 
     #[test]
+    fn test_jsonld_strips_leading_checkbox_glyphs_from_ingredients() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Test Recipe",
+                    "recipeIngredient": ["▢ 1 cup flour", "☑ 2 eggs"],
+                    "recipeInstructions": "Mix it."
+                }
+                </script>
+            </head><body></body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+        assert_eq!(result.ingredients, "1 cup flour\n2 eggs");
+    }
+
+    #[test]
     fn test_microdata_decodes_html_entities() {
         let html = r#"
             <!DOCTYPE html>
@@ -2517,6 +2547,26 @@ mod tests {
             "got: {}",
             result.instructions
         );
+    }
+
+    #[test]
+    fn test_microdata_strips_leading_checkbox_glyphs_from_ingredients() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><body>
+                <div itemscope itemtype="https://schema.org/Recipe">
+                    <h1 itemprop="name">Test Recipe</h1>
+                    <ul>
+                        <li itemprop="recipeIngredient">▢ 1 cup flour</li>
+                        <li itemprop="recipeIngredient">✓ 2 eggs</li>
+                    </ul>
+                    <div itemprop="recipeInstructions">Mix it.</div>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+        assert_eq!(result.ingredients, "1 cup flour\n2 eggs");
     }
 
     // --- Concatenated ingredient splitting tests ---

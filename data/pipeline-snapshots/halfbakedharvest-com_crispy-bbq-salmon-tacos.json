@@ -13,8 +13,12 @@
   "source_name": "Halfbakedharvest.com",
   "ingredients": [
     {
-      "item": "▢ 4 salmon or white fish filets, cut into bite-size chunks",
+      "item": "salmon or white fish filets, cut into bite-size chunks",
       "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
         {
           "amount": "4-6",
           "unit": "oz"
@@ -25,150 +29,258 @@
         }
       ],
       "note": null,
-      "raw": "▢ 4 (4-6 ounce) salmon or white fish filets, cut into bite-size chunks",
+      "raw": "4 (4-6 ounce) salmon or white fish filets, cut into bite-size chunks",
       "section": null
     },
     {
-      "item": "▢ 1/4 cup extra virgin olive oil",
+      "item": "extra virgin olive oil",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "cup"
+        },
+        {
+          "amount": "54",
+          "unit": "g"
+        }
+      ],
+      "note": null,
+      "raw": "1/4 cup extra virgin olive oil",
+      "section": null
+    },
+    {
+      "item": "honey",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "21",
+          "unit": "g"
+        }
+      ],
+      "note": null,
+      "raw": "1 tablespoon honey",
+      "section": null
+    },
+    {
+      "item": "tajin or chili powder",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null,
+      "raw": "2 teaspoon tajin or chili powder",
+      "section": null
+    },
+    {
+      "item": "smoked paprika",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        },
+        {
+          "amount": "2.3",
+          "unit": "g"
+        }
+      ],
+      "note": null,
+      "raw": "1 teaspoon smoked paprika",
+      "section": null
+    },
+    {
+      "item": "garlic powder",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        },
+        {
+          "amount": "3.2",
+          "unit": "g"
+        }
+      ],
+      "note": null,
+      "raw": "1 teaspoon garlic powder",
+      "section": null
+    },
+    {
+      "item": "onion powder",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        },
+        {
+          "amount": "2.3",
+          "unit": "g"
+        }
+      ],
+      "note": null,
+      "raw": "1 teaspoon onion powder",
+      "section": null
+    },
+    {
+      "item": "kosher salt",
       "measurements": [],
       "note": null,
-      "raw": "▢ 1/4 cup extra virgin olive oil",
+      "raw": "kosher salt",
       "section": null
     },
     {
-      "item": "▢ 1 tablespoon honey",
-      "measurements": [],
+      "item": "hard shell tacos",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": null
+        }
+      ],
       "note": null,
-      "raw": "▢ 1 tablespoon honey",
+      "raw": "12 hard shell tacos",
       "section": null
     },
     {
-      "item": "▢ 2 teaspoon tajin or chili powder",
-      "measurements": [],
-      "note": null,
-      "raw": "▢ 2 teaspoon tajin or chili powder",
-      "section": null
-    },
-    {
-      "item": "▢ 1 teaspoon smoked paprika",
-      "measurements": [],
-      "note": null,
-      "raw": "▢ 1 teaspoon smoked paprika",
-      "section": null
-    },
-    {
-      "item": "▢ 1 teaspoon garlic powder",
-      "measurements": [],
-      "note": null,
-      "raw": "▢ 1 teaspoon garlic powder",
-      "section": null
-    },
-    {
-      "item": "▢ 1 teaspoon onion powder",
-      "measurements": [],
-      "note": null,
-      "raw": "▢ 1 teaspoon onion powder",
-      "section": null
-    },
-    {
-      "item": "▢ kosher salt",
-      "measurements": [],
-      "note": null,
-      "raw": "▢ kosher salt",
-      "section": null
-    },
-    {
-      "item": "▢ 12 hard shell tacos",
-      "measurements": [],
-      "note": null,
-      "raw": "▢ 12 hard shell tacos",
-      "section": null
-    },
-    {
-      "item": "▢ shredded lettuce/cabbage",
+      "item": "shredded lettuce/cabbage",
       "measurements": [],
       "note": "for serving",
-      "raw": "▢ shredded lettuce/cabbage, for serving",
+      "raw": "shredded lettuce/cabbage, for serving",
       "section": null
     },
     {
-      "item": "▢ 6 ounces cream cheese at room temperature",
-      "measurements": [],
+      "item": "cream cheese at room temperature",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "170",
+          "unit": "g"
+        }
+      ],
       "note": null,
-      "raw": "▢ 6 ounces cream cheese at room temperature",
+      "raw": "6 ounces cream cheese at room temperature",
       "section": "Jalapeño Cream"
     },
     {
-      "item": "▢ 1-2 tablespoons chopped pickled jalapeños",
-      "measurements": [],
+      "item": "chopped pickled jalapeños",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tbsp"
+        }
+      ],
       "note": null,
-      "raw": "▢ 1-2 tablespoons chopped pickled jalapeños",
+      "raw": "1-2 tablespoons chopped pickled jalapeños",
       "section": "Jalapeño Cream"
     },
     {
-      "item": "▢ 1/4 teaspoon garlic powder",
-      "measurements": [],
+      "item": "garlic powder",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "tsp"
+        },
+        {
+          "amount": "0.8",
+          "unit": "g"
+        }
+      ],
       "note": null,
-      "raw": "▢ 1/4 teaspoon garlic powder",
+      "raw": "1/4 teaspoon garlic powder",
       "section": "Jalapeño Cream"
     },
     {
-      "item": "▢ sea salt",
+      "item": "sea salt",
       "measurements": [],
       "note": null,
-      "raw": "▢ sea salt",
+      "raw": "sea salt",
       "section": "Jalapeño Cream"
     },
     {
-      "item": "▢ 1 1/2 cups diced mango",
-      "measurements": [],
+      "item": "diced mango",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "cup"
+        }
+      ],
       "note": null,
-      "raw": "▢ 1 1/2 cups diced mango",
+      "raw": "1 1/2 cups diced mango",
       "section": "Mango Salsa"
     },
     {
-      "item": "▢ 1 avocado cubed",
-      "measurements": [],
+      "item": "avocado cubed",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
       "note": null,
-      "raw": "▢ 1 avocado cubed",
+      "raw": "1 avocado cubed",
       "section": "Mango Salsa"
     },
     {
-      "item": "▢ 1-2 jalapeños seeded",
-      "measurements": [],
+      "item": "jalapeños seeded",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": null
+        }
+      ],
       "note": "if desired and chopped",
-      "raw": "▢ 1-2 jalapeños seeded, if desired and chopped",
+      "raw": "1-2 jalapeños seeded, if desired and chopped",
       "section": "Mango Salsa"
     },
     {
-      "item": "▢ 1/2 cup cilantro roughly",
-      "measurements": [],
+      "item": "cilantro roughly",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "cup"
+        }
+      ],
       "note": "chopped",
-      "raw": "▢ 1/2 cup cilantro roughly, chopped",
+      "raw": "1/2 cup cilantro roughly, chopped",
       "section": "Mango Salsa"
     },
     {
-      "item": "▢ 1 tablespoon lime zest",
-      "measurements": [],
+      "item": "lime zest",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
       "note": "plus 1/4 cup lime juice",
-      "raw": "▢ 1 tablespoon lime zest, plus 1/4 cup lime juice",
+      "raw": "1 tablespoon lime zest, plus 1/4 cup lime juice",
       "section": "Mango Salsa"
     },
     {
-      "item": "▢ 1/3 cup salsa verde",
-      "measurements": [],
+      "item": "salsa verde",
+      "measurements": [
+        {
+          "amount": "0.33",
+          "unit": "cup"
+        }
+      ],
       "note": null,
-      "raw": "▢ 1/3 cup salsa verde",
+      "raw": "1/3 cup salsa verde",
       "section": "Mango Salsa"
     }
   ],
   "suggested_tags": [
+    "lunch",
     "dinner",
     "easy",
     "healthy",
-    "mexican",
     "seafood",
     "fish",
-    "salad"
+    "mexican"
   ]
 }
