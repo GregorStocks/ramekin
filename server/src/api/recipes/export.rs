@@ -3,7 +3,7 @@ use crate::auth::AuthUser;
 use crate::db::{DbConn, DbPool};
 use crate::get_conn;
 use crate::models::{Ingredient, RecipeVersion};
-use crate::photos::processing::resize_for_export;
+use crate::photos::processing::{generate_thumbnail, resize_for_export, EXPORT_PHOTO_DATA_SIZE};
 use crate::schema::{photos, recipe_version_tags, recipe_versions, recipes, user_tags};
 use axum::{
     body::Body,
@@ -87,12 +87,26 @@ fn convert_to_paprika(
         .collect::<Vec<_>>()
         .join("\n");
 
-    // Each photo is downscaled to EXPORT_PHOTO_MAX_DIMENSION before base64
-    // encoding. Originals can be up to MAX_FILE_SIZE (10MB) each and the
-    // export would otherwise hold every photo's raw bytes plus a 1.33x base64
-    // copy plus the JSON + gzip buffer all live at once. Photos that fail to
-    // decode/resize are skipped with a warning rather than failing the whole
-    // recipe export.
+    let fallback_photo_data = photos_data.first().and_then(|(id, raw)| {
+        match generate_thumbnail(raw, EXPORT_PHOTO_DATA_SIZE) {
+            Ok(thumbnail) => Some(base64::engine::general_purpose::STANDARD.encode(thumbnail)),
+            Err(e) => {
+                tracing::warn!(
+                    photo_id = %id,
+                    bytes = raw.len(),
+                    error = %e,
+                    "skipping export photo_data fallback; thumbnail generation failed"
+                );
+                None
+            }
+        }
+    });
+
+    // Each photo is downscaled before base64 encoding. Originals can be up to
+    // MAX_FILE_SIZE (10MB) each and the export would otherwise hold every
+    // photo's raw bytes plus a 1.33x base64 copy plus the JSON + gzip buffer
+    // all live at once. Photos that fail to decode/resize are skipped with a
+    // warning rather than failing the whole recipe export.
     let paprika_photos: Vec<PaprikaPhoto> = photos_data
         .into_iter()
         .filter_map(|(id, raw)| {
@@ -123,8 +137,14 @@ fn convert_to_paprika(
         })
         .collect();
 
-    // Use first photo's base64 as photo_data fallback
-    let photo_data = paprika_photos.first().map(|p| p.data.clone());
+    // `photo_data` is only a fallback thumbnail when the structured `photos`
+    // array is empty. Duplicating the first full photo here roughly doubles
+    // the photo payload for no importer benefit.
+    let photo_data = if paprika_photos.is_empty() {
+        fallback_photo_data
+    } else {
+        None
+    };
 
     // Format created timestamp in Paprika format
     let created = recipe.created_at.format("%Y-%m-%d %H:%M:%S").to_string();
