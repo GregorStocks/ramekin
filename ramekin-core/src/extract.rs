@@ -5,7 +5,7 @@ use regex::Regex;
 use crate::error::ExtractError;
 use crate::ingredient_parser::detect_section_header;
 use crate::types::{ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod, RawRecipe};
-use scraper::{Html, Selector};
+use scraper::{ElementRef, Html, Selector};
 
 /// Regex to find JSON-LD script tags (case-insensitive for type attribute)
 static JSONLD_REGEX: LazyLock<Regex> = LazyLock::new(|| {
@@ -47,12 +47,11 @@ static TRAILING_TITLE_QUALIFIER_RE: LazyLock<Regex> = LazyLock::new(|| {
 pub fn extract_recipe(html: &str, source_url: &str) -> Result<RawRecipe, ExtractError> {
     // Fast path: extract JSON-LD using regex (avoids DOM parsing)
     if let Some(mut recipe) = extract_jsonld_fast(html, source_url) {
-        // Structured data provides a flat ingredient list; group headers
-        // (e.g. "Meatballs", "Broth") only exist in the HTML.
-        // Only parse the DOM when a group marker is present.
-        if html.contains("wprm-recipe-group-name") || html.contains("jetpack-recipe-ingredients") {
+        // Structured data can miss richer HTML-only structure or include
+        // polluted instruction text; supplement from the rendered recipe card.
+        if should_parse_html_for_supplements(html) {
             let document = Html::parse_document(html);
-            supplement_ingredient_groups(&mut recipe, &document);
+            supplement_recipe_from_html(&mut recipe, &document);
         }
         return Ok(recipe);
     }
@@ -62,18 +61,30 @@ pub fn extract_recipe(html: &str, source_url: &str) -> Result<RawRecipe, Extract
 
     // Try JSON-LD via DOM (handles edge cases regex might miss)
     if let Ok(mut recipe) = extract_recipe_from_jsonld(&document, source_url) {
-        supplement_ingredient_groups(&mut recipe, &document);
+        supplement_recipe_from_html(&mut recipe, &document);
         return Ok(recipe);
     }
 
     // Fall back to microdata
     if let Ok(mut recipe) = extract_recipe_from_microdata(&document, source_url) {
-        supplement_ingredient_groups(&mut recipe, &document);
+        supplement_recipe_from_html(&mut recipe, &document);
         return Ok(recipe);
     }
 
     // Last resort: supplement partial structured data with HTML fallbacks
     extract_recipe_with_html_fallback(html, &document, source_url)
+}
+
+fn should_parse_html_for_supplements(html: &str) -> bool {
+    html.contains("wprm-recipe-group-name")
+        || html.contains("jetpack-recipe-ingredients")
+        || html.contains("wprm-recipe-instruction")
+}
+
+/// Try to replace flat ingredients or polluted instructions with cleaner HTML-derived content.
+fn supplement_recipe_from_html(recipe: &mut RawRecipe, document: &Html) {
+    supplement_ingredient_groups(recipe, document);
+    supplement_instructions(recipe, document);
 }
 
 /// Try to replace flat ingredients with a grouped version from HTML.
@@ -83,6 +94,14 @@ fn supplement_ingredient_groups(recipe: &mut RawRecipe, document: &Html) {
         .or_else(|| extract_jetpack_ingredients_with_groups(document))
     {
         recipe.ingredients = grouped;
+    }
+}
+
+/// Prefer cleaned HTML instructions when the rendered recipe card is more accurate than
+/// the structured data. WPRM can flatten hidden sticky-note text into JSON-LD.
+fn supplement_instructions(recipe: &mut RawRecipe, document: &Html) {
+    if let Some(instructions) = extract_wprm_instructions(document, &recipe.title) {
+        recipe.instructions = instructions;
     }
 }
 
@@ -145,9 +164,9 @@ pub fn extract_recipe_with_stats(
 ) -> Result<ExtractRecipeOutput, ExtractError> {
     // Fast path: try regex-based JSON-LD extraction (avoids DOM parsing)
     if let Some(mut recipe) = extract_jsonld_fast(html, source_url) {
-        if html.contains("wprm-recipe-group-name") || html.contains("jetpack-recipe-ingredients") {
+        if should_parse_html_for_supplements(html) {
             let document = Html::parse_document(html);
-            supplement_ingredient_groups(&mut recipe, &document);
+            supplement_recipe_from_html(&mut recipe, &document);
         }
         return Ok(ExtractRecipeOutput {
             raw_recipe: recipe,
@@ -166,7 +185,7 @@ pub fn extract_recipe_with_stats(
     // Try JSON-LD via DOM (handles edge cases regex might miss)
     let jsonld_result = extract_recipe_from_jsonld(&document, source_url);
     if let Ok(mut recipe) = jsonld_result {
-        supplement_ingredient_groups(&mut recipe, &document);
+        supplement_recipe_from_html(&mut recipe, &document);
         return Ok(ExtractRecipeOutput {
             raw_recipe: recipe,
             method_used: ExtractionMethod::JsonLd,
@@ -181,7 +200,7 @@ pub fn extract_recipe_with_stats(
     // Fall back to microdata
     let microdata_result = extract_recipe_from_microdata(&document, source_url);
     if let Ok(mut recipe) = microdata_result {
-        supplement_ingredient_groups(&mut recipe, &document);
+        supplement_recipe_from_html(&mut recipe, &document);
         return Ok(ExtractRecipeOutput {
             raw_recipe: recipe,
             method_used: ExtractionMethod::Microdata,
@@ -1487,7 +1506,7 @@ fn extract_recipe_with_html_fallback(
         .or_else(|| extract_ingredients_from_itemprop_unscoped(document));
 
     let instructions = instructions
-        .or_else(|| extract_instructions_from_html_classes(document))
+        .or_else(|| extract_instructions_from_html_classes(document, title.as_deref()))
         .or_else(|| extract_instructions_from_itemprop_unscoped(document))
         .or_else(|| extract_instructions_from_raw_html(html));
 
@@ -1921,13 +1940,15 @@ fn extract_ingredients_from_div(document: &Html) -> Option<String> {
 
 /// Extract instructions from common recipe plugin HTML classes.
 /// Searches the entire document (not scoped to a microdata container).
-fn extract_instructions_from_html_classes(document: &Html) -> Option<String> {
+fn extract_instructions_from_html_classes(
+    document: &Html,
+    recipe_title: Option<&str>,
+) -> Option<String> {
     let selectors = [
         ".jetpack-recipe-directions",
         "div.instructions",
         ".recipe-instructions",
         ".e-instructions",
-        ".wprm-recipe-instruction",
         ".recipe-directions",
     ];
 
@@ -1948,7 +1969,180 @@ fn extract_instructions_from_html_classes(document: &Html) -> Option<String> {
         }
     }
 
-    None
+    extract_wprm_instructions(document, recipe_title.unwrap_or_default())
+}
+
+static WPRM_STICKY_NOTE_TEXT_REGEX: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r#"(?is)<span[^>]*class="[^"]*\bsticky-note-text\b[^"]*"[^>]*>.*?</span>"#)
+        .expect("Invalid WPRM sticky note text regex")
+});
+
+static WPRM_STICKY_NOTE_WRAPPER_REGEX: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r#"(?is)<span[^>]*class="[^"]*\bsticky-note\b[^"]*"[^>]*>\s*</span>"#)
+        .expect("Invalid WPRM sticky note wrapper regex")
+});
+
+fn normalize_wprm_text(text: &str) -> String {
+    text.split_whitespace().collect::<Vec<_>>().join(" ")
+}
+
+fn lowercase_wprm_text(text: &str) -> String {
+    normalize_wprm_text(text)
+        .chars()
+        .flat_map(char::to_lowercase)
+        .collect()
+}
+
+fn canonicalize_wprm_title(text: &str) -> String {
+    let normalized = lowercase_wprm_text(text);
+
+    normalized
+        .split(['|', '•'])
+        .next()
+        .unwrap_or(&normalized)
+        .split(" - ")
+        .next()
+        .unwrap_or(&normalized)
+        .split(" – ")
+        .next()
+        .unwrap_or(&normalized)
+        .split(" — ")
+        .next()
+        .unwrap_or(&normalized)
+        .trim()
+        .to_string()
+}
+
+fn normalize_wprm_title_tokens(text: &str) -> Vec<String> {
+    canonicalize_wprm_title(text)
+        .split(|c: char| !c.is_alphanumeric())
+        .filter_map(|part| {
+            let part = part
+                .trim()
+                .chars()
+                .flat_map(char::to_lowercase)
+                .collect::<String>();
+            if part.is_empty() || matches!(part.as_str(), "recipe" | "recipes") {
+                None
+            } else {
+                Some(part)
+            }
+        })
+        .collect()
+}
+
+fn wprm_titles_match(recipe_title: &str, card_title: &str) -> bool {
+    let normalized_recipe = canonicalize_wprm_title(recipe_title);
+    let normalized_card = canonicalize_wprm_title(card_title);
+
+    if !normalized_recipe.is_empty() && normalized_recipe == normalized_card {
+        return true;
+    }
+
+    let recipe_tokens = normalize_wprm_title_tokens(recipe_title);
+    let card_tokens = normalize_wprm_title_tokens(card_title);
+
+    if recipe_tokens.is_empty() || card_tokens.is_empty() {
+        return false;
+    }
+
+    recipe_tokens == card_tokens
+}
+
+fn extract_wprm_steps(root: ElementRef<'_>) -> Option<Vec<String>> {
+    let selector = Selector::parse(".wprm-recipe-instruction-text").ok()?;
+    let steps: Vec<String> = root
+        .select(&selector)
+        .filter_map(|el| {
+            let html = el.inner_html();
+            let html = WPRM_STICKY_NOTE_TEXT_REGEX.replace_all(&html, "");
+            let html = WPRM_STICKY_NOTE_WRAPPER_REGEX.replace_all(&html, "");
+            let text = HTML_TAG_REGEX.replace_all(&html, "");
+            let text = decode_html_entities(text.trim());
+            let text = normalize_wprm_text(&text);
+            if text.is_empty() {
+                None
+            } else {
+                Some(text)
+            }
+        })
+        .collect();
+
+    if steps.is_empty() {
+        None
+    } else {
+        Some(steps)
+    }
+}
+
+fn extract_wprm_instructions(document: &Html, recipe_title: &str) -> Option<String> {
+    let recipe_selector = Selector::parse(".wprm-recipe").ok()?;
+    let title_selector = Selector::parse(".wprm-recipe-name").ok()?;
+    let instruction_selector = Selector::parse(".wprm-recipe-instruction-text").ok()?;
+
+    let normalized_title = normalize_wprm_text(recipe_title);
+    let mut matching_steps = None;
+    let mut only_card_steps = None;
+    let mut card_count = 0;
+
+    for card in document.select(&recipe_selector) {
+        let steps = match extract_wprm_steps(card) {
+            Some(steps) => steps,
+            None => continue,
+        };
+
+        card_count += 1;
+        if only_card_steps.is_none() {
+            only_card_steps = Some(steps.clone());
+        }
+
+        let card_title = card
+            .select(&title_selector)
+            .next()
+            .map(|el| normalize_wprm_text(&el.text().collect::<String>()));
+
+        if let Some(card_title) = card_title {
+            if !normalized_title.is_empty() && wprm_titles_match(&normalized_title, &card_title) {
+                matching_steps = Some(steps);
+                break;
+            }
+        }
+    }
+
+    let require_title_match = !normalized_title.is_empty();
+
+    let steps = if let Some(steps) = matching_steps {
+        steps
+    } else if !require_title_match && card_count == 1 {
+        only_card_steps?
+    } else if !require_title_match {
+        let orphan_steps: Vec<String> = document
+            .select(&instruction_selector)
+            .filter_map(|el| {
+                let html = el.inner_html();
+                let html = WPRM_STICKY_NOTE_TEXT_REGEX.replace_all(&html, "");
+                let html = WPRM_STICKY_NOTE_WRAPPER_REGEX.replace_all(&html, "");
+                let text = HTML_TAG_REGEX.replace_all(&html, "");
+                let text = decode_html_entities(text.trim());
+                let text = normalize_wprm_text(&text);
+                if text.is_empty() {
+                    None
+                } else {
+                    Some(text)
+                }
+            })
+            .collect();
+
+        if orphan_steps.len() == 1 {
+            orphan_steps
+        } else {
+            return None;
+        }
+    } else {
+        return None;
+    };
+
+    Some(steps.join("\n\n"))
 }
 
 /// Regex-based extraction of instructions from raw HTML.
@@ -3037,6 +3231,281 @@ mod tests {
         // Should use JSON-LD ingredients (no group headers injected)
         assert!(!result.ingredients.contains(':'));
         assert!(result.ingredients.contains("1 cup flour"));
+    }
+
+    #[test]
+    fn test_wprm_sticky_note_instruction_prefers_clean_html_text() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Semi-Instant Pancakes",
+                    "recipeIngredient": ["1 cup flour"],
+                    "recipeInstructions": [
+                        {
+                            "@type": "HowToStep",
+                            "text": "Carefully flipThe first cakes tend to be uglier than later ones, so feed the in-laws first. with a wide spatula and cook until golden brown on the bottom, another 2 to 3 minutes."
+                        }
+                    ]
+                }
+                </script>
+            </head>
+            <body>
+                <div class="wprm-recipe">
+                    <h2 class="wprm-recipe-name">Semi-Instant Pancakes</h2>
+                    <li class="wprm-recipe-instruction">
+                        <div class="wprm-recipe-instruction-text">
+                            <span style="display: block;">
+                                <wprm-code>
+                                    <span class="sticky-note-btn">Carefully flip</span>
+                                    <span class="sticky-note">
+                                        <span class="sticky-note-text">The first cakes tend to be uglier than later ones, so feed the in-laws first.</span>
+                                    </span>
+                                    with a wide spatula and cook until golden brown on the bottom, another 2 to 3 minutes.
+                                </wprm-code>
+                            </span>
+                        </div>
+                    </li>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/pancakes").unwrap();
+        assert_eq!(
+            result.instructions,
+            "Carefully flip with a wide spatula and cook until golden brown on the bottom, another 2 to 3 minutes."
+        );
+    }
+
+    #[test]
+    fn test_wprm_instruction_supplement_scopes_to_matching_recipe_card() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Semi-Instant Pancakes",
+                    "recipeIngredient": ["1 cup flour"],
+                    "recipeInstructions": [
+                        {
+                            "@type": "HowToStep",
+                            "text": "Polluted JSON-LD step"
+                        }
+                    ]
+                }
+                </script>
+            </head>
+            <body>
+                <div class="wprm-recipe">
+                    <h2 class="wprm-recipe-name">Other Recipe</h2>
+                    <li class="wprm-recipe-instruction">
+                        <div class="wprm-recipe-instruction-text">Wrong card step</div>
+                    </li>
+                </div>
+                <div class="wprm-recipe">
+                    <h2 class="wprm-recipe-name">Semi-Instant Pancakes</h2>
+                    <li class="wprm-recipe-instruction">
+                        <div class="wprm-recipe-instruction-text">
+                            <wprm-code>
+                                <span class="sticky-note-btn">Carefully flip</span>
+                                <span class="sticky-note">
+                                    <span class="sticky-note-text">Ignore this note.</span>
+                                </span>
+                                with a wide spatula
+                            </wprm-code>
+                        </div>
+                    </li>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/pancakes").unwrap();
+        assert_eq!(result.instructions, "Carefully flip with a wide spatula");
+    }
+
+    #[test]
+    fn test_wprm_instruction_supplement_matches_common_title_variants() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Semi-Instant Pancakes",
+                    "recipeIngredient": ["1 cup flour"],
+                    "recipeInstructions": [
+                        {
+                            "@type": "HowToStep",
+                            "text": "Polluted JSON-LD step"
+                        }
+                    ]
+                }
+                </script>
+            </head>
+            <body>
+                <div class="wprm-recipe">
+                    <h2 class="wprm-recipe-name">Semi Instant Pancakes Recipe</h2>
+                    <li class="wprm-recipe-instruction">
+                        <div class="wprm-recipe-instruction-text">
+                            <wprm-code>
+                                <span class="sticky-note-btn">Carefully flip</span>
+                                <span class="sticky-note">
+                                    <span class="sticky-note-text">Ignore this note.</span>
+                                </span>
+                                with a wide spatula
+                            </wprm-code>
+                        </div>
+                    </li>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/pancakes").unwrap();
+        assert_eq!(result.instructions, "Carefully flip with a wide spatula");
+    }
+
+    #[test]
+    fn test_wprm_instruction_supplement_ignores_partial_title_matches() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Chicken Soup",
+                    "recipeIngredient": ["1 cup stock"],
+                    "recipeInstructions": [
+                        {
+                            "@type": "HowToStep",
+                            "text": "Keep the original structured instruction."
+                        }
+                    ]
+                }
+                </script>
+            </head>
+            <body>
+                <div class="wprm-recipe">
+                    <h2 class="wprm-recipe-name">Chicken</h2>
+                    <li class="wprm-recipe-instruction">
+                        <div class="wprm-recipe-instruction-text">Wrong card step</div>
+                    </li>
+                </div>
+                <div class="wprm-recipe">
+                    <h2 class="wprm-recipe-name">Chicken Soup Recipe</h2>
+                    <li class="wprm-recipe-instruction">
+                        <div class="wprm-recipe-instruction-text">Correct card step</div>
+                    </li>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/chicken-soup").unwrap();
+        assert_eq!(result.instructions, "Correct card step");
+    }
+
+    #[test]
+    fn test_wprm_instruction_supplement_matches_unicode_titles() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Crème Brûlée",
+                    "recipeIngredient": ["2 egg yolks"],
+                    "recipeInstructions": [
+                        {
+                            "@type": "HowToStep",
+                            "text": "Polluted JSON-LD step"
+                        }
+                    ]
+                }
+                </script>
+            </head>
+            <body>
+                <div class="wprm-recipe">
+                    <h2 class="wprm-recipe-name">Crème Brûlée Recipe</h2>
+                    <li class="wprm-recipe-instruction">
+                        <div class="wprm-recipe-instruction-text">Torch the sugar topping.</div>
+                    </li>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/creme-brulee").unwrap();
+        assert_eq!(result.instructions, "Torch the sugar topping.");
+    }
+
+    #[test]
+    fn test_wprm_instruction_supplement_matches_title_with_site_qualifier() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Semi-Instant Pancakes | Alton Brown",
+                    "recipeIngredient": ["1 cup flour"],
+                    "recipeInstructions": [
+                        {
+                            "@type": "HowToStep",
+                            "text": "Polluted JSON-LD step"
+                        }
+                    ]
+                }
+                </script>
+            </head>
+            <body>
+                <div class="wprm-recipe">
+                    <h2 class="wprm-recipe-name">Semi-Instant Pancakes</h2>
+                    <li class="wprm-recipe-instruction">
+                        <div class="wprm-recipe-instruction-text">Correct card step</div>
+                    </li>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/pancakes").unwrap();
+        assert_eq!(result.instructions, "Correct card step");
+    }
+
+    #[test]
+    fn test_wprm_instruction_supplement_does_not_use_unmatched_single_card() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Semi-Instant Pancakes",
+                    "recipeIngredient": ["1 cup flour"],
+                    "recipeInstructions": [
+                        {
+                            "@type": "HowToStep",
+                            "text": "Keep the original structured instruction."
+                        }
+                    ]
+                }
+                </script>
+            </head>
+            <body>
+                <div class="wprm-recipe">
+                    <h2 class="wprm-recipe-name">Different Recipe</h2>
+                    <li class="wprm-recipe-instruction">
+                        <div class="wprm-recipe-instruction-text">Wrong card step</div>
+                    </li>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/pancakes").unwrap();
+        assert_eq!(
+            result.instructions,
+            "Keep the original structured instruction."
+        );
     }
 
     #[test]

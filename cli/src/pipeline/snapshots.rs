@@ -3,11 +3,9 @@
 //! After a pipeline run completes, this module reads the relevant per-step
 //! outputs from `run_dir/urls/<slug>/` for each allowlisted URL, assembles a
 //! `FinalRecipe` via `ramekin_core::final_recipe::build_final_recipe`, and
-//! writes the JSON to `snapshots_dir/<slug>.json`. If an individual
-//! allowlisted URL didn't reach `extract_recipe` (fetch failed, JSON-LD
-//! missing, etc.), its snapshot is skipped with a warning — the rest of the
-//! snapshot phase still runs so one broken URL can't take down the whole
-//! allowlist.
+//! writes the JSON to `snapshots_dir/<slug>.json`. Every allowlisted URL is
+//! expected to have reached `extract_recipe`; if one did not, that is a real
+//! pipeline coverage regression and the phase fails.
 
 use std::path::Path;
 
@@ -22,12 +20,11 @@ use crate::pipeline_orchestrator::PipelineResults;
 /// Write snapshots for every URL in `allowlist_path` by reading step outputs
 /// under `run_dir` and writing JSON files under `snapshots_dir`.
 ///
-/// A URL whose `extract_recipe` output is absent gets a warn log and is
-/// skipped — the allowlist may include URLs that sometimes fail extraction
-/// (missing JSON-LD, fetch 403, etc.) and we still want snapshots for the
-/// URLs that *did* succeed. Other errors — unreadable allowlist, mkdir
-/// failure, corrupt step output JSON, serialization failure, write failure —
-/// still propagate so real regressions aren't silently hidden.
+/// Every allowlisted URL must have `extract_recipe` output in this run.
+/// Missing output is treated as a hard failure with a specific reason so the
+/// pipeline cannot silently drift away from the committed allowlist. Other
+/// errors — unreadable allowlist, mkdir failure, corrupt step output JSON,
+/// serialization failure, write failure — also propagate.
 pub fn write_snapshots(run_dir: &Path, allowlist_path: &Path, snapshots_dir: &Path) -> Result<()> {
     let urls = read_allowlist(allowlist_path)?;
     if urls.is_empty() {
@@ -39,8 +36,6 @@ pub fn write_snapshots(run_dir: &Path, allowlist_path: &Path, snapshots_dir: &Pa
         .with_context(|| format!("Failed to create {}", snapshots_dir.display()))?;
 
     let mut written = 0usize;
-    let mut skipped = 0usize;
-    let mut stale_removed = 0usize;
     for url in &urls {
         let slug = slugify_url(url);
         let path = snapshots_dir.join(format!("{slug}.json"));
@@ -48,34 +43,19 @@ pub fn write_snapshots(run_dir: &Path, allowlist_path: &Path, snapshots_dir: &Pa
             Some(recipe) => recipe,
             None => {
                 let reason = describe_missing_extract(run_dir, run_results.as_ref(), url, &slug);
-                // If a prior run produced a snapshot for this URL and the
-                // current run can't refresh it, the on-disk file is stale —
-                // keeping it would let audit tooling keep consuming a stale
-                // artifact as if it were current. Delete and log so the
-                // regression is visible. A fresh run that re-succeeds will
-                // rewrite the file.
                 if path.exists() {
                     std::fs::remove_file(&path).with_context(|| {
                         format!("Failed to remove stale snapshot {}", path.display())
                     })?;
-                    tracing::warn!(
+                    tracing::error!(
                         url = %url,
                         slug = %slug,
                         reason = %reason,
                         path = %path.display(),
-                        "removed stale pipeline snapshot; extract_recipe output no longer available"
-                    );
-                    stale_removed += 1;
-                } else {
-                    tracing::warn!(
-                        url = %url,
-                        slug = %slug,
-                        reason = %reason,
-                        "skipping pipeline snapshot; extract_recipe output not present for allowlisted URL"
+                        "removed stale pipeline snapshot before failing missing allowlisted extract output"
                     );
                 }
-                skipped += 1;
-                continue;
+                anyhow::bail!("Allowlisted URL is missing extract_recipe output: {url}. {reason}");
             }
         };
 
@@ -93,8 +73,6 @@ pub fn write_snapshots(run_dir: &Path, allowlist_path: &Path, snapshots_dir: &Pa
     tracing::info!(
         allowlisted = urls.len(),
         written,
-        skipped,
-        stale_removed,
         "pipeline snapshot phase complete"
     );
 
@@ -190,11 +168,10 @@ fn describe_missing_extract(
 /// Build a `FinalRecipe` from this URL's step outputs.
 ///
 /// Returns `Ok(None)` when `extract_recipe` produced no output for the slug —
-/// callers treat that as "skip this URL" rather than a hard failure, because
-/// it's the expected outcome for allowlisted URLs that fail fetch or extract.
-/// Any other problem (corrupt step-output JSON, missing `raw_recipe` field,
-/// deserialization mismatch) surfaces as `Err` so real regressions still
-/// break the phase.
+/// callers treat `Ok(None)` as a hard failure because every allowlisted URL
+/// must have reached `extract_recipe` in the current run. Any other problem
+/// (corrupt step-output JSON, missing `raw_recipe` field, deserialization
+/// mismatch) also surfaces as `Err`.
 fn assemble_snapshot(
     run_dir: &Path,
     _run_results: Option<&PipelineResults>,
@@ -527,7 +504,7 @@ mod tests {
     }
 
     #[test]
-    fn skips_allowlisted_url_missing_from_run_without_failing_phase() {
+    fn errors_when_allowlisted_url_missing_from_run() {
         let dir = TempDir::new().unwrap();
         let run_dir = dir.path().join("run");
         std::fs::create_dir_all(&run_dir).unwrap();
@@ -535,19 +512,20 @@ mod tests {
         let allowlist = dir.path().join("allowlist.json");
         std::fs::write(&allowlist, r#"["https://missing.example/"]"#).unwrap();
 
-        // The phase succeeds: a single allowlisted URL with no extract_recipe
-        // output is warned and skipped, not fatal.
-        write_snapshots(&run_dir, &allowlist, &snapshots_dir).unwrap();
+        let err = write_snapshots(&run_dir, &allowlist, &snapshots_dir).unwrap_err();
 
         let slug = slugify_url("https://missing.example/");
         assert!(
             !snapshots_dir.join(format!("{slug}.json")).exists(),
             "no snapshot should be written for a URL that didn't reach extract_recipe"
         );
+        assert!(err
+            .to_string()
+            .contains("Allowlisted URL is missing extract_recipe output"));
     }
 
     #[test]
-    fn writes_snapshots_for_successful_urls_even_when_one_fails() {
+    fn errors_even_if_other_allowlisted_urls_succeeded() {
         let dir = TempDir::new().unwrap();
         let run_dir = dir.path().join("run");
         let snapshots_dir = dir.path().join("snapshots");
@@ -562,17 +540,18 @@ mod tests {
         )
         .unwrap();
 
-        write_snapshots(&run_dir, &allowlist, &snapshots_dir).unwrap();
+        let err = write_snapshots(&run_dir, &allowlist, &snapshots_dir).unwrap_err();
 
         assert!(
             snapshots_dir.join(format!("{ok_slug}.json")).exists(),
-            "snapshot should still be written for the URL that extracted"
+            "successful snapshots written before the failure should remain on disk"
         );
         let missing_slug = slugify_url("https://missing.example/");
         assert!(
             !snapshots_dir.join(format!("{missing_slug}.json")).exists(),
             "no snapshot for the URL that had no extract_recipe output"
         );
+        assert!(err.to_string().contains("https://missing.example/"));
     }
 
     #[test]
@@ -593,12 +572,15 @@ mod tests {
         let allowlist = dir.path().join("allowlist.json");
         std::fs::write(&allowlist, format!("[{url:?}]")).unwrap();
 
-        write_snapshots(&run_dir, &allowlist, &snapshots_dir).unwrap();
+        let err = write_snapshots(&run_dir, &allowlist, &snapshots_dir).unwrap_err();
 
         assert!(
             !stale_path.exists(),
             "stale snapshot should be removed when the current run can't refresh it"
         );
+        assert!(err
+            .to_string()
+            .contains("Allowlisted URL is missing extract_recipe output"));
     }
 
     #[test]
