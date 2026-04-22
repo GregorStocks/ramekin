@@ -1387,7 +1387,11 @@ fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<String>) {
                 };
 
                 if let Some(section_title) = section_title {
-                    lines.push(format!("{section_title}:"));
+                    if section_title.ends_with(':') {
+                        lines.push(section_title);
+                    } else {
+                        lines.push(format!("{section_title}:"));
+                    }
                     seen_text_line = true;
                     continue;
                 }
@@ -2481,6 +2485,25 @@ mod tests {
         assert!(!result
             .ingredients
             .contains("Cinnamon Filling (enough for 9 tarts)"));
+    }
+
+    #[test]
+    fn test_unstructured_blog_u_header_preserves_existing_colon() {
+        let html = r#"
+            <html><body>
+                <p><b>Recipe</b></p>
+                <p><u>For the Sauce:</u><br />1 cup cream<br />1 teaspoon salt</p>
+                <p>Whisk everything together until combined.</p>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/r").unwrap();
+        assert!(
+            result.ingredients.contains("For the Sauce:\n1 cup cream"),
+            "expected a single colon in the emitted header, got:\n{}",
+            result.ingredients
+        );
+        assert!(!result.ingredients.contains("For the Sauce::"));
     }
 
     #[test]
