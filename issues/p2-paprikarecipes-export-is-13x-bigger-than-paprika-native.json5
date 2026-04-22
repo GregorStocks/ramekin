@@ -1,0 +1,64 @@
+{
+  "title": "paprikarecipes export is ~13x bigger than Paprika-native exports",
+  "description": "Exports produced by /api/recipes/export are roughly 13x the \
+size of an export produced by Paprika itself over a comparable recipe corpus, \
+because (a) embedded photos are stored at too-high resolution and (b) each \
+photo's base64 is duplicated within every recipe JSON.\n\
+\n\
+Empirical comparison (2026-04-21):\n\
+\n\
+  - Our export: recipes-20260422-005636.paprikarecipes — 298 MB, 463 recipes,  \
+  mean ~644 KB per `.paprikarecipe` entry.\n\
+  - Paprika-native: data/dev/seed.paprikarecipes — 23 MB, 474 recipes,    mean \
+~49 KB per entry.\n\
+\n\
+Per-recipe field sizes on a sample (`Chicken Stock`, our export vs the \
+corresponding `Perfect, Uncluttered Chicken Stock` in seed):\n\
+\n\
+  Field           ours       seed\n\
+  photo_data      249,858    27,378\n\
+  photos[0].data  249,858    (photos: [])\n\
+  total recipe    501,870    30,097\n\
+\n\
+Two distinct problems contributing to that 16x-per-recipe blowup:\n\
+\n\
+1. **Photos embedded at 1600px.** `server/src/photos/processing.rs` sets \
+`EXPORT_PHOTO_MAX_DIMENSION = 1600`, so `resize_for_export` re-encodes each \
+photo as a 1600x1065 JPEG (~187 KB decoded). Paprika's own exports embed a \
+much smaller thumbnail in `photo_data` — in the seed sample, 280x280 JPEG, ~20 \
+KB decoded. The full-resolution image is presumably referenced externally by \
+`photo`/`photo_large` filenames rather than inlined.\n\
+\n\
+2. **Photo bytes duplicated inside every recipe.** \
+`server/src/api/recipes/export.rs:127` sets `photo_data = \
+paprika_photos.first().map(|p| p.data.clone())`, so the first photo's full \
+base64 appears twice in the JSON: once in the top-level `photo_data` field and \
+once in `photos[0].data`. Verified on the `Chicken Stock` sample: `photo_data \
+== photos[0].data` is true and both are 249,858 base64 chars.\n\
+\n\
+Both behaviors combine to produce recipes ~16x larger than Paprika's own \
+format, and the .paprikarecipes archive ~13x larger overall (the archive uses \
+`CompressionMethod::Stored` because the inner files are already gzipped, so \
+the wrapper can't absorb the extra bytes).\n\
+\n\
+Suggested fix directions:\n\
+\n\
+  - Emit `photo_data` as a small thumbnail (e.g. 280px longest side) rather    \
+ than a clone of the full-resolution bytes.\n\
+  - Alternately, drop `photo_data` when `photos[0]` is populated and only     \
+include it when there are no other photos — matches the pattern seen in     \
+Paprika's own recipes where `photos: []` coincides with a small     \
+`photo_data` thumbnail.\n\
+  - Consider whether 1600px is the right cap for `photos[].data` at all;     \
+Paprika's own seed files do not inline full-resolution photos, so a     \
+smaller cap (or referencing images by filename) would close most of the     \
+gap.",
+  "status": "open",
+  "priority": 2,
+  "type": "bug",
+  "labels": [
+    "paprika-export",
+  ],
+  "created_at": "2026-04-21T18:56:53-07:00",
+  "updated_at": "2026-04-21T18:56:53-07:00",
+}
