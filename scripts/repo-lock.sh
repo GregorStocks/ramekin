@@ -4,6 +4,17 @@ repo_lock_timestamp() {
     date +%H:%M:%S
 }
 
+repo_lock_mtime_epoch() {
+    local path="$1"
+
+    if stat -f %m "$path" >/dev/null 2>&1; then
+        stat -f %m "$path"
+        return 0
+    fi
+
+    stat -c %Y "$path"
+}
+
 release_repo_lock() {
     if [ -n "${REPO_LOCK_DIR_ACTIVE:-}" ] && [ -d "$REPO_LOCK_DIR_ACTIVE" ]; then
         rm -rf "$REPO_LOCK_DIR_ACTIVE"
@@ -15,7 +26,10 @@ acquire_repo_lock() {
     local human_name="$2"
     local lock_root="${REPO_LOCK_DIR:-logs/locks}"
     local lock_dir="${lock_root}/${lock_name}.lock"
+    local lock_grace_seconds="${REPO_LOCK_STARTUP_GRACE_SECONDS:-30}"
     local lock_pid=
+    local lock_mtime=
+    local now_epoch=
 
     mkdir -p "$lock_root"
 
@@ -24,6 +38,13 @@ acquire_repo_lock() {
             lock_pid=$(tr -d '[:space:]' < "$lock_dir/pid")
         else
             lock_pid=""
+            lock_mtime=$(repo_lock_mtime_epoch "$lock_dir" 2>/dev/null || echo 0)
+            now_epoch=$(date +%s)
+            if [ "$lock_mtime" -gt 0 ] && [ $((now_epoch - lock_mtime)) -lt "$lock_grace_seconds" ]; then
+                echo "[$(repo_lock_timestamp)] Refusing to start ${human_name}: another ${human_name} is still acquiring the lock." >&2
+                echo "[$(repo_lock_timestamp)] Active lock: ${lock_dir}" >&2
+                return 1
+            fi
         fi
 
         if [ -n "$lock_pid" ] && kill -0 "$lock_pid" 2>/dev/null; then

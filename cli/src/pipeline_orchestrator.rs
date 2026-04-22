@@ -454,7 +454,8 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     // a terminal manifest status so external consumers aren't left observing a
     // run stuck in "running".
     let snapshot_start = Instant::now();
-    let snapshot_result = write_pipeline_snapshots(&run_dir);
+    let snapshot_allowlist = snapshot_allowlist_path(&config.test_urls_file);
+    let snapshot_result = write_pipeline_snapshots(&run_dir, &snapshot_allowlist);
     let snapshot_elapsed = snapshot_start.elapsed();
     tracing::info!(
         phase = "snapshots",
@@ -843,16 +844,20 @@ fn save_results(run_dir: &Path, results: &PipelineResults) -> Result<()> {
     Ok(())
 }
 
+fn snapshot_allowlist_path(test_urls_path: &Path) -> PathBuf {
+    test_urls_path
+        .parent()
+        .unwrap_or_else(|| Path::new("."))
+        .join("pipeline-snapshot-urls.json")
+}
+
 fn load_pipeline_urls(test_urls_path: &Path) -> Result<TestUrlsOutput> {
     let test_urls_content = fs::read_to_string(test_urls_path)
         .with_context(|| format!("Failed to read test URLs from {}", test_urls_path.display()))?;
     let mut test_urls: TestUrlsOutput =
         serde_json::from_str(&test_urls_content).context("Failed to parse test URLs JSON")?;
 
-    let allowlist = test_urls_path
-        .parent()
-        .unwrap_or_else(|| Path::new("."))
-        .join("pipeline-snapshot-urls.json");
+    let allowlist = snapshot_allowlist_path(test_urls_path);
     if !allowlist.exists() {
         return Ok(test_urls);
     }
@@ -899,8 +904,7 @@ fn load_pipeline_urls(test_urls_path: &Path) -> Result<TestUrlsOutput> {
     Ok(test_urls)
 }
 
-fn write_pipeline_snapshots(run_dir: &Path) -> Result<()> {
-    let allowlist = PathBuf::from("data/pipeline-snapshot-urls.json");
+fn write_pipeline_snapshots(run_dir: &Path, allowlist: &Path) -> Result<()> {
     let snapshots_dir = PathBuf::from("data/pipeline-snapshots");
 
     if !allowlist.exists() {
@@ -911,7 +915,7 @@ fn write_pipeline_snapshots(run_dir: &Path) -> Result<()> {
         return Ok(());
     }
 
-    crate::pipeline::snapshots::write_snapshots(run_dir, &allowlist, &snapshots_dir)
+    crate::pipeline::snapshots::write_snapshots(run_dir, allowlist, &snapshots_dir)
 }
 
 fn truncate_url(url: &str, max_len: usize) -> String {
@@ -1665,6 +1669,15 @@ mod tests {
         assert_eq!(
             loaded.sites[0].urls,
             vec!["https://example.com/already-present".to_string()]
+        );
+    }
+
+    #[test]
+    fn snapshot_allowlist_path_uses_test_urls_sibling_directory() {
+        let custom_test_urls = Path::new("/tmp/custom-inputs/test-urls.json");
+        assert_eq!(
+            snapshot_allowlist_path(custom_test_urls),
+            PathBuf::from("/tmp/custom-inputs/pipeline-snapshot-urls.json")
         );
     }
 }
