@@ -1,0 +1,138 @@
+{
+  "title": "Extend pipeline to cover URLs we can't currently snapshot",
+  "description": "The 2026-04-22 `.paprikarecipes` export (see PR #472) \
+contained 50 `source_url`s that the pipeline couldn't fully handle. PR #472 \
+made the snapshot writer tolerate these gracefully (warn + skip instead of \
+aborting the phase), but the underlying gaps are still there: 45 of the 50 \
+URLs produce no snapshot, and any other `source_url` in a user's export that \
+falls into one of these buckets will behave the same way.\n\
+\n\
+This issue tracks closing those gaps. The failures split cleanly into three \
+buckets, each with a distinct root cause and fix direction.\n\
+\n\
+## Bucket A: no JSON-LD Recipe data (14 URLs)\n\
+\n\
+`extract_recipe` hard-fails with `Missing required field: recipeIngredient` or \
+`Missing required field: name` because the page either has no \
+`application/ld+json` Recipe object or only a partial one. Affected URLs \
+observed in the export:\n\
+\n\
+  - substack posts — cocktailswithsuderman: \
+`p/a-question-about-the-clover-club`,     \
+`p/a-thanksgiving-sidecar-with-jellied`, `p/hot-chocolate-manhattan`,     \
+`p/lol-its-an-appletini` (substack doesn't emit recipe schema; recipe text     \
+is in prose blocks inside the post body)\n\
+  - virtualweberbullet.com — `best-ribs-in-the-universe-mike-scrutchfield`,    \
+ `brisket-high-heat`, `pork-butt-smoke-spice-renowned-mr-brown`,     \
+`spareribs-3-2-1-method` (hand-authored HTML, no structured data)\n\
+  - smittenkitchen.com — `2008/07/huevos-rancheros` (old post predating     \
+structured data on the site)\n\
+  - seriouseats.com — \
+`canederli-di-pane-italian-bread-dumpling-recipe-11679155`,     \
+`roasted-cauliflower-soup-curry-cream-8748572`,     \
+`the-best-classic-chicken-salad-recipe`,     \
+`toad-in-the-hole-recipe-11746714` (JSON-LD missing `name`),     \
+`food-lab-complete-guide-to-sous-vide-steak` (article with no recipe schema)\n\
+\n\
+Fix direction: add a fallback extraction path that uses the LLM to pull recipe \
+structure out of the raw HTML body when JSON-LD extraction fails. The infra \
+already has an AI client (`ramekin_core::ai::client`) and per-URL caching, so \
+the cost story is tractable. Existing JSON-LD path stays the primary; LLM \
+fallback fires only when the structured path returns a `Missing required \
+field` error.\n\
+\n\
+## Bucket B: cached fetch errors from anti-bot / rate limits (7 URLs)\n\
+\n\
+`fetch_html` returns a cached error, so `extract_recipe` never runs:\n\
+\n\
+  - justonecookbook.com — HTTP 403 on `japanese-egg-sandwich-tamago-sando`,    \
+ `japanese-potato-salad`, `pizza-toast`,     \
+`wprm_print/japanese-milk-bread-shokupan`\n\
+  - seriouseats.com — HTTP 403 on     \
+`easy-creamy-one-pot-weeknight-salmon-chowder-recipe`\n\
+  - thespruceeats.com — HTTP 403 on `classic-french-aligot-recipe-1375727`\n\
+  - food52.com — HTTP 429 on `recipes/85546-pickle-sandwich-recipe`\n\
+\n\
+These sites front their pages with Cloudflare or similar bot mitigation that \
+rejects the default `reqwest` user-agent. The error is then cached permanently \
+in `~/.ramekin/http-cache/<slug>/error.txt`, so subsequent runs can't \
+recover.\n\
+\n\
+Fix direction: (a) set a realistic browser `User-Agent` (and possibly \
+`Accept-Language`, `Sec-Fetch-*`) on outgoing requests so fewer pages trip the \
+403 path in the first place; (b) age out or opt-in re-fetch cached error \
+responses (today `DiskCache` treats error entries as permanent); (c) for 429 \
+specifically, honor `Retry-After` and back off rather than caching the \
+failure. For pages that still refuse (true bot walls), fall back to \
+browser-driven fetch via the playwright-cli harness.\n\
+\n\
+## Bucket C: URLs absent from `data/test-urls.json` (24 URLs)\n\
+\n\
+The pipeline iterates `data/test-urls.json`, which is produced by \
+`generate-test-urls` from sitemap crawls plus a ranked-site list. Lots of real \
+URLs from user exports aren't in that set, so the pipeline never processes \
+them and `write_snapshots` warn-skips them with \"Either the URL wasn't in the \
+pipeline run or the pipeline didn't reach extract_recipe\". Observed examples \
+(see the PR #472 description for the full list):\n\
+\n\
+  - seriouseats.com — `chicken-fried-steak-recipe`,     \
+`classic-french-omelette-recipe`,     `crab-rangoon-crab-puffs-recipe`,     \
+`kotlet-persian-ground-meat-and-potato-patties-recipe-8421664`,     \
+`okinawan-taco-rice-recipe-11740889`,     \
+`pressure-cooker-ragu-bolognese-sauce-italian-recipe`,     \
+`the-fake-shack-shake-shack-burger-recipe`, `two-minute-mayonnaise`\n\
+  - americastestkitchen.com — `recipes/12334-pizza-dip`,     \
+`recipes/15286-blue-cheese-and-chive-popovers-with-blue-cheese-butter`,     \
+`recipes/17490-pollo-al-mattone-chicken-under-a-brick`\n\
+  - www.thekitchn.com — `chex-mix-recipe-23022715`,     \
+`ranch-chex-mix-23136162`\n\
+  - www.japanesecooking101.com —     \
+`pork-and-napa-cabbage-mille-feuille-hot-pot-recipe`,     \
+`tofu-meat-sauce-gratin-recipe`\n\
+  - www.justonecookbook.com — `simmered-potato-and-chicken`,     \
+`yaki-keema-curry`\n\
+  - www.allrecipes.com — `recipe/230569/chef-johns-patatas-bravas`\n\
+  - www.culinaryhill.com — `cucumber-sandwiches-with-dill-cream-cheese`\n\
+  - smittenkitchen.com — `2015/12/potato-kugel`\n\
+  - sudachirecipes.com — `shio-koji-karaage`\n\
+  - cocktailswithsuderman.substack.com —     \
+`p/when-life-gives-you-lemons-make-blackberry`\n\
+  - healthynibblesandbits.com — `browned-butter-furikake-chex-mix`\n\
+  - iamafoodblog.com — `a-breakdown-of-the-full-english-breakfast`\n\
+\n\
+Fix direction: introduce a mechanism for hand-curated URLs to augment the \
+generated `test-urls.json` without being wiped by the next \
+`generate-test-urls` run. Simplest: a sibling `data/pinned-test-urls.json` \
+that the pipeline unions into the URL list and `generate-test-urls` preserves \
+on refilter. Alternative: let the snapshot allowlist imply inclusion — any URL \
+in `data/pipeline-snapshot-urls.json` gets processed by `make pipeline` \
+whether or not it appears in `test-urls.json`.\n\
+\n\
+## Why this matters\n\
+\n\
+The .paprikarecipes export used to seed this was representative of real user \
+data: ~10% of URLs (50 / 443 with `source_url`) hit at least one of these \
+failure modes. Closing the gap is what lets us honestly use the snapshot \
+pipeline as coverage for \"every site a real Ramekin user imports from\" \
+rather than \"every site whose sitemap the generator scraped and whose JSON-LD \
+happens to be clean\".\n\
+\n\
+## Suggested sequencing\n\
+\n\
+  1. Bucket C first — cheapest to fix, unlocks visibility into whether      \
+those URLs would *actually* scrape given a chance.\n\
+  2. Bucket A second — LLM fallback extraction. This is the highest-impact     \
+ bucket by recipe count in real exports.\n\
+  3. Bucket B last — user-agent tuning + error-cache handling. The      \
+Cloudflare-walled subset may need browser fetch, which is a larger      \
+change.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "pipeline",
+    "extraction",
+  ],
+  "created_at": "2026-04-21T21:44:06-07:00",
+  "updated_at": "2026-04-21T21:44:06-07:00",
+}
