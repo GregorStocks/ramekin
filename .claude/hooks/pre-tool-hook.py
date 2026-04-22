@@ -473,14 +473,38 @@ _GIT_GLOBAL_LONG_OPTS_WITH_VALUE = (
 )
 
 
-def _git_subcommand(args: list[str]) -> tuple[str | None, list[str]]:
+def _aliases_from_env(env: dict[str, str] | None) -> dict[str, str]:
+    """Build alias map from GIT_CONFIG_COUNT/KEY_N/VALUE_N env assignments.
+
+    Git reads these at runtime (same as inline `-c`), so aliases defined
+    via env must be expanded before the subcommand is checked.
+    """
+    if not env:
+        return {}
+    try:
+        count = int(env.get("GIT_CONFIG_COUNT", "0"))
+    except ValueError:
+        return {}
+    aliases: dict[str, str] = {}
+    for n in range(count):
+        key = env.get(f"GIT_CONFIG_KEY_{n}", "")
+        value = env.get(f"GIT_CONFIG_VALUE_{n}", "")
+        if key.startswith("alias."):
+            aliases[key[len("alias.") :]] = value
+    return aliases
+
+
+def _git_subcommand(
+    args: list[str], env: dict[str, str] | None = None
+) -> tuple[str | None, list[str]]:
     """Return (subcommand, remaining_args) for a git invocation.
 
-    Also expands inline `-c alias.NAME=VALUE` aliases (defined on this very
-    invocation) so `git -c alias.p=push p` reports `push`, not `p`, and
-    trips the same rules.
+    Expands aliases defined inline via `-c alias.NAME=VALUE` AND via the
+    GIT_CONFIG_COUNT / GIT_CONFIG_KEY_N / GIT_CONFIG_VALUE_N env vars, so
+    `git -c alias.p=push p` and `GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=alias.p
+    GIT_CONFIG_VALUE_0=push git p` both report `push`.
     """
-    aliases: dict[str, str] = {}
+    aliases = _aliases_from_env(env)
     index = 0
     while index < len(args):
         token = args[index]
@@ -711,7 +735,10 @@ def _perl_is_inplace(args: list[str]) -> bool:
 
 
 def pipeline_mutation_message(
-    exe_basename: str, exe_raw: str, args: list[str]
+    exe_basename: str,
+    exe_raw: str,
+    args: list[str],
+    env: dict[str, str] | None = None,
 ) -> str | None:
     """Return the pipeline-mutation error if this call writes a protected path."""
     if exe_basename in _FS_MUTATION_CMDS and _any_arg_targets_pipeline(args):
@@ -721,7 +748,7 @@ def pipeline_mutation_message(
     if exe_basename == "perl" and _perl_is_inplace(args) and _any_arg_targets_pipeline(args):
         return _pipeline_mutation_error()
     if exe_basename == "git":
-        subcmd, rest = _git_subcommand(args)
+        subcmd, rest = _git_subcommand(args, env)
         if subcmd in _GIT_WORKTREE_MUTATION_SUBCMDS and _any_arg_targets_pipeline(rest):
             return _pipeline_mutation_error()
     return None
@@ -848,7 +875,7 @@ def _segment_rejection(
         )
 
     # Protect pipeline output from shell-level mutation.
-    message = pipeline_mutation_message(exe_basename, exe_raw, args)
+    message = pipeline_mutation_message(exe_basename, exe_raw, args, env)
     if message is not None:
         return message
 
@@ -856,14 +883,14 @@ def _segment_rejection(
         # Inline shell alias (`git -c 'alias.NAME=!CMD' NAME`): git runs
         # CMD via /bin/sh, so recurse into it before the normal subcommand
         # checks (which would see the alias name, not the shell body).
-        shell_alias = _git_shell_alias_payload(args)
+        shell_alias = _git_shell_alias_payload(args, env)
         if shell_alias is not None:
             inner = rejection_message(shell_alias, dirty_pipeline_output)
             if inner is not None:
                 return inner
             return None
 
-        subcmd, rest = _git_subcommand(args)
+        subcmd, rest = _git_subcommand(args, env)
 
         if _git_worktree_add_under_tmp(args):
             return (
@@ -909,13 +936,49 @@ def _segment_rejection(
 _SHELL_WRAPPER_BASENAMES = frozenset({"sh", "bash", "zsh", "dash", "ksh"})
 
 
-def _extract_env_s_payloads(command: str) -> list[str]:
-    """Return payloads of every `env -S VALUE` / `env --split-string=VALUE`.
+def _find_env_s_in_args(args: list[str]) -> str | None:
+    """Return the -S / --split-string payload in an env invocation's argv.
 
-    `env -S` carries an entire inner command in its argument string. Surface
-    those so `rejection_message` can recurse into them the same way it
-    recurses into `bash -c`.
+    Handles `-S VALUE`, `-SVALUE` (attached), `-iS VALUE` / `-iSVALUE`
+    (clustered with other env short flags), `--split-string VALUE`,
+    `--split-string=VALUE`. Skips past other env options (including those
+    that take a separate-token argument like `-u NAME`) and env
+    `VAR=value` assignments.
     """
+    env_arg_letters = _WRAPPER_SHORT_ARG_LETTERS.get("env", frozenset())
+    j = 0
+    while j < len(args):
+        tok = args[j]
+        if tok == "--":
+            return None
+        if tok in ("-S", "--split-string"):
+            return args[j + 1] if j + 1 < len(args) else None
+        if tok.startswith("--split-string="):
+            return tok[len("--split-string=") :]
+        if _ENV_ASSIGN_RE.fullmatch(tok):
+            j += 1
+            continue
+        if tok.startswith("--"):
+            j += 1
+            continue
+        if tok.startswith("-") and len(tok) > 1:
+            cluster = tok[1:]
+            s_pos = cluster.find("S")
+            if s_pos >= 0:
+                if s_pos == len(cluster) - 1:
+                    return args[j + 1] if j + 1 < len(args) else None
+                return cluster[s_pos + 1 :]
+            if _short_cluster_consumes_next(cluster, env_arg_letters):
+                j += 2
+            else:
+                j += 1
+            continue
+        return None
+    return None
+
+
+def _extract_env_s_payloads(command: str) -> list[str]:
+    """Return payloads of every `env -S VALUE` / `env --split-string=VALUE`."""
     payloads: list[str] = []
     for segment in _shell_command_segments(command):
         tokens = _shell_tokens(segment)
@@ -929,45 +992,22 @@ def _extract_env_s_payloads(command: str) -> list[str]:
                     idx = _skip_wrapper_args(tokens, idx + 1, basename)
                     continue
                 break
-            # env — scan its options for -S / --split-string.
-            j = idx + 1
-            while j < len(tokens):
-                tok = tokens[j]
-                if tok == "--":
-                    break
-                if tok in ("-S", "--split-string"):
-                    if j + 1 < len(tokens):
-                        payloads.append(tokens[j + 1])
-                    break
-                if tok.startswith("--split-string="):
-                    payloads.append(tok[len("--split-string=") :])
-                    break
-                if (
-                    tok.startswith("-")
-                    and not tok.startswith("--")
-                    and len(tok) > 1
-                    and tok.endswith("S")
-                ):
-                    # Clustered short form `-iS CMD` — the S takes the next arg.
-                    if j + 1 < len(tokens):
-                        payloads.append(tokens[j + 1])
-                    break
-                if tok.startswith("-"):
-                    j += 1
-                    continue
-                break
+            payload = _find_env_s_in_args(tokens[idx + 1 :])
+            if payload is not None:
+                payloads.append(payload)
             break
     return payloads
 
 
-def _git_shell_alias_payload(args: list[str]) -> str | None:
-    """If this git invocation triggers a `-c alias.NAME='!CMD'` shell alias, return CMD.
+def _git_shell_alias_payload(
+    args: list[str], env: dict[str, str] | None = None
+) -> str | None:
+    """If this git invocation triggers a shell alias (`!CMD`), return CMD.
 
-    Git runs shell aliases via /bin/sh, so the payload is an arbitrary
-    shell command — pass it back through `rejection_message` to catch
-    anything blocked that hides inside the alias body.
+    Covers both inline `-c 'alias.NAME=!CMD'` and env-defined aliases via
+    GIT_CONFIG_COUNT / GIT_CONFIG_KEY_N / GIT_CONFIG_VALUE_N.
     """
-    aliases: dict[str, str] = {}
+    aliases: dict[str, str] = dict(_aliases_from_env(env))
     index = 0
     while index < len(args):
         token = args[index]
@@ -1044,7 +1084,7 @@ def _segment_uses_git_push(segment: str) -> bool:
         return False
     if exe_basename != "git":
         return False
-    subcmd, _ = _git_subcommand(args)
+    subcmd, _ = _git_subcommand(args, env)
     return subcmd == "push"
 
 
