@@ -7,6 +7,7 @@ ENV_FILE="${TEST_ENV_FILE:-test.env}"
 ORIG_PROCESS_COMPOSE_PORT="${PROCESS_COMPOSE_PORT:-}"
 TEST_LOG_FILE="${TEST_LOG_FILE:-logs/test.log}"
 STATUS_DIR="${TEST_STATUS_DIR:-logs/test-status}"
+STATUS_WAIT_SECONDS="${TEST_STATUS_WAIT_SECONDS:-120}"
 TARGET_PROCESSES=(
   rust-tests-server
   rust-tests-cli
@@ -55,6 +56,35 @@ collect_failed_processes() {
   done
 }
 
+wait_for_status_files() {
+  local deadline
+  local now
+  local process_name
+  local status_file
+  local missing
+
+  deadline=$((SECONDS + STATUS_WAIT_SECONDS))
+
+  while [ "$SECONDS" -lt "$deadline" ]; do
+    missing=0
+    for process_name in "${TARGET_PROCESSES[@]}"; do
+      status_file="${STATUS_DIR}/${process_name}.exit"
+      if [ ! -f "$status_file" ]; then
+        missing=1
+        break
+      fi
+    done
+
+    if [ "$missing" -eq 0 ]; then
+      return 0
+    fi
+
+    sleep 1
+    now=$(date +%H:%M:%S)
+    echo "[$now] Waiting for test status files to flush..."
+  done
+}
+
 echo "[$(date +%H:%M:%S)] Starting test orchestration via process-compose"
 START_TIME=$(date +%s)
 
@@ -77,6 +107,7 @@ if [ $EXIT_CODE -ne 0 ]; then
 fi
 
 if [ $EXIT_CODE -eq 0 ]; then
+  wait_for_status_files
   collect_failed_processes
   if [ ${#FAILED_PROCESSES[@]} -ne 0 ]; then
     EXIT_CODE=1

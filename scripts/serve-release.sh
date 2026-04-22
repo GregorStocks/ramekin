@@ -17,15 +17,15 @@ if ! cargo watch --version >/dev/null 2>&1; then
     exit 1
 fi
 
-MEMORY_MAX_MB="${SERVER_MEMORY_MAX_MB:-2048}"
+MEMORY_MAX_MB="${SERVER_MEMORY_MAX_MB:-4096}"
 
 cd "$SERVER_DIR"
 
 if [ "$MEMORY_MAX_MB" -gt 0 ]; then
     MEMORY_MAX_KB=$((MEMORY_MAX_MB * 1024))
     echo "Starting release server on port ${PORT} with socket activation and MemoryMax=${MEMORY_MAX_MB}MiB"
-    exec bash -lc "ulimit -v ${MEMORY_MAX_KB}; exec systemfd --no-pid -s http::${PORT} -- cargo watch -x 'run --release -q'"
+    exec bash -lc "ulimit -v ${MEMORY_MAX_KB}; exec systemfd --no-pid -s http::0.0.0.0:${PORT} -- cargo watch -x 'run --release -q'"
 fi
 
 echo "Starting release server on port ${PORT} with socket activation and no memory cap"
-exec systemfd --no-pid -s http::"${PORT}" -- cargo watch -x "run --release -q"
+exec systemfd --no-pid -s http::0.0.0.0:"${PORT}" -- cargo watch -x "run --release -q"
