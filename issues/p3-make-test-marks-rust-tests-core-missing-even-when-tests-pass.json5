@@ -1,0 +1,30 @@
+{
+  "title": "make test marks rust-tests-core missing even when its tests pass",
+  "description": "On 2026-04-22, repeated `make test` runs in this worktree \
+completed the visible `rust-tests-core` test binaries successfully but still \
+failed overall because `logs/test-status/rust-tests-core.exit` was never \
+written.\n\
+\n\
+Observed behavior from `logs/test.log`:\n\
+\n\
+  - `rust-tests-core` prints successful results for the 154 unit tests and the \
+  1-test golden suite.\n\
+  - It then reaches `running 2 tests` for `ingredient_parsing_tests` and no   \
+`rust-tests-core completed` line is ever emitted.\n\
+  - `make test` later fails with `rust-tests-core (status=missing)` even when  \
+ `rust-tests-server`, `rust-tests-cli`, and all 255 API tests pass.\n\
+\n\
+This looks like a test-orchestration or cargo-test lifecycle bug rather than a \
+normal assertion failure. We should determine whether `cargo test -q \
+--manifest-path ramekin-core/Cargo.toml` is hanging after the final test \
+binary, whether process-compose is terminating it early, or whether the status \
+file write in `test-compose.yaml` is being skipped for some other reason.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "test-infra",
+  ],
+  "created_at": "2026-04-22T08:31:00-07:00",
+  "updated_at": "2026-04-22T08:31:00-07:00",
+}

@@ -7,6 +7,7 @@ pub use ramekin_core::image::{ALLOWED_FORMATS, MAX_FILE_SIZE};
 
 pub const THUMBNAIL_SIZE: u32 = 200;
 pub const MAX_THUMBNAIL_SIZE: u32 = 800;
+pub const EXPORT_PHOTO_DATA_SIZE: u32 = 280;
 
 /// Max dimension (longest side) for photos embedded in paprikarecipes exports.
 /// Originals can be up to MAX_FILE_SIZE (10MB) each; for exports we trade full
