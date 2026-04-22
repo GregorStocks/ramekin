@@ -1032,8 +1032,8 @@ fn underlined_section_title(title: &str) -> Option<String> {
 
     for candidate in candidates {
         let header = format!("{candidate}:");
-        if detect_section_header(&header).is_some() {
-            return Some(candidate);
+        if let Some(section_name) = detect_section_header(&header) {
+            return Some(section_name);
         }
     }
 
@@ -2504,6 +2504,18 @@ mod tests {
             result.ingredients
         );
         assert!(!result.ingredients.contains("For the Sauce::"));
+    }
+
+    #[test]
+    fn test_underlined_section_title_returns_normalized_name() {
+        assert_eq!(
+            underlined_section_title("For the Sauce:"),
+            Some("For the Sauce".to_string())
+        );
+        assert_eq!(
+            underlined_section_title("Cinnamon Filling (enough for 9 tarts)"),
+            Some("Cinnamon Filling".to_string())
+        );
     }
 
     #[test]
