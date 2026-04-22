@@ -11,29 +11,14 @@ This is the durable queue for `$audit-pipeline-snapshots`.
 ## Priority batch (paprika export 2026-04-22 — audit first)
 
 Entries below were added from URLs seen in the 2026-04-22 `.paprikarecipes` export
-that were missing from the pipeline allowlist. Snapshots for these URLs will appear
-under `data/pipeline-snapshots/` after the next `make pipeline` run; audit them
-ahead of the round-robin queue below.
+that were missing from the pipeline allowlist and that `extract_recipe` can
+currently parse. Audit them ahead of the round-robin queue below.
 
-- [ ] 419. `cocktailswithsuderman-substack-com_p-a-question-about-the-clover-club.json` (cocktailswithsuderman-substack-com)
-- [ ] 420. `cocktailswithsuderman-substack-com_p-a-thanksgiving-sidecar-with-jellied.json` (cocktailswithsuderman-substack-com)
-- [ ] 421. `cocktailswithsuderman-substack-com_p-hot-chocolate-manhattan.json` (cocktailswithsuderman-substack-com)
-- [ ] 422. `cocktailswithsuderman-substack-com_p-lol-its-an-appletini.json` (cocktailswithsuderman-substack-com)
-- [ ] 423. `smittenkitchen-com_2008-07-huevos-rancheros.json` (smittenkitchen-com)
-- [ ] 424. `smittenkitchen-com_2010-01-southwestern-pulled-brisket.json` (smittenkitchen-com)
-- [ ] 425. `smittenkitchen-com_2010-04-homemade-pop-tarts.json` (smittenkitchen-com)
-- [ ] 426. `smittenkitchen-com_2017-02-tomato-glazed-meatloaves-with-brown-butter-mashed-potatoes.json` (smittenkitchen-com)
-- [ ] 427. `smittenkitchen-com_2024-03-turkey-meatloaf-for-skeptics.json` (smittenkitchen-com)
-- [ ] 428. `sudachirecipes-com_spaghetti-napolitan-recipe.json` (sudachirecipes-com)
-- [ ] 429. `seriouseats-com_canederli-di-pane-italian-bread-dumpling-recipe-11679155.json` (seriouseats-com)
-- [ ] 430. `seriouseats-com_food-lab-complete-guide-to-sous-vide-steak.json` (seriouseats-com)
-- [ ] 431. `seriouseats-com_roasted-cauliflower-soup-curry-cream-8748572.json` (seriouseats-com)
-- [ ] 432. `seriouseats-com_the-best-classic-chicken-salad-recipe.json` (seriouseats-com)
-- [ ] 433. `seriouseats-com_toad-in-the-hole-recipe-11746714.json` (seriouseats-com)
-- [ ] 434. `virtualweberbullet-com_best-ribs-in-the-universe-mike-scrutchfield.json` (virtualweberbullet-com)
-- [ ] 435. `virtualweberbullet-com_brisket-high-heat.json` (virtualweberbullet-com)
-- [ ] 436. `virtualweberbullet-com_pork-butt-smoke-spice-renowned-mr-brown.json` (virtualweberbullet-com)
-- [ ] 437. `virtualweberbullet-com_spareribs-3-2-1-method.json` (virtualweberbullet-com)
+- [ ] 419. `smittenkitchen-com_2010-01-southwestern-pulled-brisket.json` (smittenkitchen-com)
+- [ ] 420. `smittenkitchen-com_2010-04-homemade-pop-tarts.json` (smittenkitchen-com)
+- [ ] 421. `smittenkitchen-com_2017-02-tomato-glazed-meatloaves-with-brown-butter-mashed-potatoes.json` (smittenkitchen-com)
+- [ ] 422. `smittenkitchen-com_2024-03-turkey-meatloaf-for-skeptics.json` (smittenkitchen-com)
+- [ ] 423. `sudachirecipes-com_spaghetti-napolitan-recipe.json` (sudachirecipes-com)
 
 ## Queue
 
