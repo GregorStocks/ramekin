@@ -78,6 +78,32 @@ def test_export_downscales_photos(authed_api_client, server_url):
     # And it should actually be smaller than the original — if it were a
     # no-op, this whole exercise would have been pointless.
     assert len(photo_bytes) < len(large_jpeg)
+    assert "photo_data" not in recipe
+
+
+def test_export_omits_photo_data_when_photos_are_present(authed_api_client, server_url):
+    """Structured Paprika photos should not be duplicated into photo_data."""
+    client, _user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+    photos_api = PhotosApi(client)
+
+    photo_id = str(
+        photos_api.upload(file=("photo.jpg", _make_large_jpeg(1200, 900))).id
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Photo Data Dedup",
+            instructions="Cook it",
+            ingredients=[make_ingredient(item="salt")],
+            photo_ids=[photo_id],
+        )
+    )
+
+    contents = _export_zip_contents(server_url, client)
+    recipe = next(iter(contents.values()))
+
+    assert len(recipe["photos"]) == 1
+    assert "photo_data" not in recipe
 
 
 def _make_large_jpeg(width: int, height: int) -> bytes:

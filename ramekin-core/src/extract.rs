@@ -480,6 +480,31 @@ fn split_and_dedup_ingredients(ingredients: Vec<String>) -> Vec<String> {
         .collect()
 }
 
+fn sanitize_extracted_ingredient(text: &str) -> Option<String> {
+    let decoded = decode_html_entities(text.trim());
+    let mut sanitized = decoded.trim();
+
+    loop {
+        let mut chars = sanitized.chars();
+        let Some(first) = chars.next() else {
+            break;
+        };
+
+        if !matches!(first, '▢' | '☐' | '☑' | '☒' | '✓' | '✔') {
+            break;
+        }
+
+        sanitized = chars.as_str().trim_start_matches(['\u{fe0e}', '\u{fe0f}']);
+        sanitized = sanitized.trim_start();
+    }
+
+    if sanitized.is_empty() {
+        None
+    } else {
+        Some(sanitized.to_string())
+    }
+}
+
 /// Extract ingredients as a newline-separated blob.
 fn extract_ingredients(recipe: &serde_json::Value) -> Result<String, ExtractError> {
     let ingredients_raw = recipe
@@ -493,8 +518,7 @@ fn extract_ingredients(recipe: &serde_json::Value) -> Result<String, ExtractErro
     let ingredients: Vec<String> = ingredients_array
         .iter()
         .filter_map(|v| v.as_str())
-        .map(|s| decode_html_entities(s.trim()))
-        .filter(|s| !s.is_empty())
+        .filter_map(sanitize_extracted_ingredient)
         .collect();
 
     if ingredients.is_empty() {
@@ -640,8 +664,7 @@ fn extract_recipe_from_microdata(
             .expect("Invalid selector");
     let ingredients: Vec<String> = recipe_element
         .select(&ingredient_selector)
-        .map(|el| el.text().collect::<String>().trim().to_string())
-        .filter(|s| !s.is_empty())
+        .filter_map(|el| sanitize_extracted_ingredient(&el.text().collect::<String>()))
         .collect();
     let ingredients = split_and_dedup_ingredients(ingredients);
 
@@ -993,12 +1016,13 @@ fn normalized_block_section_title(title: &str) -> Option<String> {
         return None;
     }
 
-    let mut candidates = vec![trimmed.to_string()];
+    let mut candidates = vec![trimmed.trim_end_matches(':').trim().to_string()];
     let stripped = TRAILING_TITLE_QUALIFIER_RE
         .replace(trimmed, "")
+        .trim_end_matches(':')
         .trim()
         .to_string();
-    if !stripped.is_empty() && stripped != trimmed {
+    if !stripped.is_empty() && stripped != candidates[0] {
         candidates.push(stripped);
     }
 
@@ -1010,6 +1034,48 @@ fn normalized_block_section_title(title: &str) -> Option<String> {
     }
 
     None
+}
+
+fn underlined_section_title(title: &str) -> Option<String> {
+    let trimmed = title.trim();
+    if trimmed.is_empty() {
+        return None;
+    }
+
+    let stripped = TRAILING_TITLE_QUALIFIER_RE
+        .replace(trimmed, "")
+        .trim_end_matches(':')
+        .trim()
+        .to_string();
+    let mut candidates = Vec::new();
+    if !stripped.is_empty() {
+        candidates.push(stripped);
+    }
+    let trimmed_without_colon = trimmed.trim_end_matches(':').trim();
+    if trimmed_without_colon != candidates.first().map(String::as_str).unwrap_or_default() {
+        candidates.push(trimmed_without_colon.to_string());
+    }
+
+    for candidate in candidates {
+        let header = format!("{candidate}:");
+        if detect_section_header(&header).is_some() {
+            return Some(candidate);
+        }
+    }
+
+    None
+}
+
+fn extract_underlined_section_title(part: &str, header: &str) -> Option<String> {
+    let text = HTML_TAG_REGEX.replace_all(part, "");
+    let text = decode_html_entities(text.trim());
+    let suffix = text.strip_prefix(header)?.trim();
+
+    if !suffix.is_empty() && !TRAILING_TITLE_QUALIFIER_RE.is_match(suffix) {
+        return None;
+    }
+
+    underlined_section_title(&text)
 }
 
 /// Extract a recipe from an unstructured blog post.
@@ -1335,25 +1401,35 @@ fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<String>) {
             // Empty/markup-only fragments before it (e.g. stray `<span>` or
             // `&nbsp;`) don't disqualify it — that's why we gate on whether
             // we've produced a text line yet, not the raw BR index.
-            // If there's non-empty text after the `</u>`, treat the `<u>` as
-            // inline emphasis (e.g. `<u>Note:</u> whisk well`).
-            if !seen_text_line && !header.is_empty() && after_text.is_empty() {
+            // If there's non-empty text after the `</u>`, only keep treating
+            // it as a header when the suffix is just a trailing qualifier
+            // like "(enough for 9 tarts)".
+            if !seen_text_line && !header.is_empty() {
                 let decoded = decode_html_entities(header);
-                if decoded.ends_with(':') {
-                    lines.push(decoded);
+                let section_title = if after_text.is_empty() {
+                    underlined_section_title(&decoded)
                 } else {
-                    lines.push(format!("{}:", decoded));
-                }
-                seen_text_line = true;
-            } else {
-                // Inline emphasis or non-leading <u>: keep as a plain
-                // ingredient line.
-                let text = HTML_TAG_REGEX.replace_all(part, "");
-                let text = text.trim();
-                if !text.is_empty() {
-                    lines.push(decode_html_entities(text));
+                    extract_underlined_section_title(part, &decoded)
+                };
+
+                if let Some(section_title) = section_title {
+                    if section_title.ends_with(':') {
+                        lines.push(section_title);
+                    } else {
+                        lines.push(format!("{section_title}:"));
+                    }
                     seen_text_line = true;
+                    continue;
                 }
+            }
+
+            // Inline emphasis or non-leading <u>: keep as a plain ingredient
+            // line.
+            let text = HTML_TAG_REGEX.replace_all(part, "");
+            let text = text.trim();
+            if !text.is_empty() {
+                lines.push(decode_html_entities(text));
+                seen_text_line = true;
             }
         } else {
             let text = HTML_TAG_REGEX.replace_all(part, "");
@@ -1605,8 +1681,7 @@ fn extract_ingredients_from_itemprop_unscoped(document: &Html) -> Option<String>
         .expect("Invalid selector");
     let ingredients: Vec<String> = document
         .select(&selector)
-        .map(|el| el.text().collect::<String>().trim().to_string())
-        .filter(|s| !s.is_empty())
+        .filter_map(|el| sanitize_extracted_ingredient(&el.text().collect::<String>()))
         .collect();
     let ingredients = split_and_dedup_ingredients(ingredients);
 
@@ -1720,8 +1795,7 @@ fn extract_wprm_ingredients_with_groups(document: &Html) -> Option<String> {
 
         // Extract ingredients in this group
         for item in group.select(&item_selector) {
-            let text = item.text().collect::<String>().trim().to_string();
-            if !text.is_empty() {
+            if let Some(text) = sanitize_extracted_ingredient(&item.text().collect::<String>()) {
                 lines.push(text);
             }
         }
@@ -1761,7 +1835,8 @@ fn extract_jetpack_ingredients_with_groups(document: &Html) -> Option<String> {
         Selector::parse("h1, h2, h3, h4, h5, h6, .jetpack-recipe-ingredient").ok()?;
     for el in container.select(&all_selector) {
         let tag = el.value().name();
-        let text = el.text().collect::<String>().trim().to_string();
+        let raw_text = el.text().collect::<String>();
+        let text = raw_text.trim().to_string();
         if text.is_empty() {
             continue;
         }
@@ -1772,7 +1847,7 @@ fn extract_jetpack_ingredients_with_groups(document: &Html) -> Option<String> {
             } else {
                 lines.push(format!("{}:", text));
             }
-        } else {
+        } else if let Some(text) = sanitize_extracted_ingredient(&raw_text) {
             lines.push(text);
         }
     }
@@ -1790,8 +1865,7 @@ fn extract_ingredient_items_from_selector(document: &Html, selector_str: &str) -
     let selector = Selector::parse(selector_str).ok()?;
     let items: Vec<String> = document
         .select(&selector)
-        .map(|el| el.text().collect::<String>().trim().to_string())
-        .filter(|s| !s.is_empty())
+        .filter_map(|el| sanitize_extracted_ingredient(&el.text().collect::<String>()))
         .collect();
     let items = split_and_dedup_ingredients(items);
 
@@ -1832,7 +1906,7 @@ fn extract_ingredients_from_div(document: &Html) -> Option<String> {
                 .replace("&deg;", "\u{00b0}")
                 .replace("&reg;", "\u{00ae}")
                 .replace("&#038;", "&");
-            if !text.is_empty() {
+            if let Some(text) = sanitize_extracted_ingredient(&text) {
                 lines.push(text);
             }
         }
@@ -2413,6 +2487,62 @@ mod tests {
     }
 
     #[test]
+    fn test_unstructured_blog_u_header_with_parenthetical_qualifier() {
+        let html = r#"
+            <html><body>
+                <p><b>Homemade Pop Tarts</b></p>
+                <p><u>Pastry</u><br />2 cups flour<br />1 egg</p>
+                <p><u>Cinnamon Filling</u> (enough for 9 tarts)<br />1/2 cup brown sugar<br />1 teaspoon cinnamon</p>
+                <p>Mix and bake.</p>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://smittenkitchen.com/recipe").unwrap();
+        let ingredient_lines: Vec<&str> = result.ingredients.lines().collect();
+
+        assert_eq!(ingredient_lines[0], "Pastry:");
+        assert_eq!(ingredient_lines[1], "2 cups flour");
+        assert_eq!(ingredient_lines[2], "1 egg");
+        assert_eq!(ingredient_lines[3], "Cinnamon Filling:");
+        assert_eq!(ingredient_lines[4], "1/2 cup brown sugar");
+        assert_eq!(ingredient_lines[5], "1 teaspoon cinnamon");
+        assert!(!result
+            .ingredients
+            .contains("Cinnamon Filling (enough for 9 tarts)"));
+    }
+
+    #[test]
+    fn test_unstructured_blog_u_header_preserves_existing_colon() {
+        let html = r#"
+            <html><body>
+                <p><b>Recipe</b></p>
+                <p><u>For the Sauce:</u><br />1 cup cream<br />1 teaspoon salt</p>
+                <p>Whisk everything together until combined.</p>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/r").unwrap();
+        assert!(
+            result.ingredients.contains("For the Sauce:\n1 cup cream"),
+            "expected a single colon in the emitted header, got:\n{}",
+            result.ingredients
+        );
+        assert!(!result.ingredients.contains("For the Sauce::"));
+    }
+
+    #[test]
+    fn test_underlined_section_title_returns_normalized_name() {
+        assert_eq!(
+            underlined_section_title("For the Sauce:"),
+            Some("For the Sauce".to_string())
+        );
+        assert_eq!(
+            underlined_section_title("Cinnamon Filling (enough for 9 tarts)"),
+            Some("Cinnamon Filling".to_string())
+        );
+    }
+
+    #[test]
     fn test_unstructured_blog_no_ingredients_returns_none() {
         // A blog post without br-delimited ingredient lists should not extract
         let html = r#"
@@ -2494,6 +2624,46 @@ mod tests {
     }
 
     #[test]
+    fn test_jsonld_strips_leading_checkbox_glyphs_from_ingredients() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Test Recipe",
+                    "recipeIngredient": ["▢ 1 cup flour", "☑ 2 eggs"],
+                    "recipeInstructions": "Mix it."
+                }
+                </script>
+            </head><body></body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+        assert_eq!(result.ingredients, "1 cup flour\n2 eggs");
+    }
+
+    #[test]
+    fn test_jsonld_strips_checkbox_glyph_variation_selectors_from_ingredients() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Test Recipe",
+                    "recipeIngredient": ["✔️ 1 cup flour", "☑️ 2 eggs"],
+                    "recipeInstructions": "Mix it."
+                }
+                </script>
+            </head><body></body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+        assert_eq!(result.ingredients, "1 cup flour\n2 eggs");
+    }
+
+    #[test]
     fn test_microdata_decodes_html_entities() {
         let html = r#"
             <!DOCTYPE html>
@@ -2517,6 +2687,26 @@ mod tests {
             "got: {}",
             result.instructions
         );
+    }
+
+    #[test]
+    fn test_microdata_strips_leading_checkbox_glyphs_from_ingredients() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><body>
+                <div itemscope itemtype="https://schema.org/Recipe">
+                    <h1 itemprop="name">Test Recipe</h1>
+                    <ul>
+                        <li itemprop="recipeIngredient">▢ 1 cup flour</li>
+                        <li itemprop="recipeIngredient">✓ 2 eggs</li>
+                    </ul>
+                    <div itemprop="recipeInstructions">Mix it.</div>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+        assert_eq!(result.ingredients, "1 cup flour\n2 eggs");
     }
 
     // --- Concatenated ingredient splitting tests ---

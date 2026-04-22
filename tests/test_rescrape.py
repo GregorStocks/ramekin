@@ -1,5 +1,7 @@
 import os
 import time
+from pathlib import Path
+from uuid import uuid4
 
 import pytest
 
@@ -161,13 +163,14 @@ _MINIMAL_RECIPE_HTML = """<!DOCTYPE html>
 """
 
 
-def _write_local_fixture(name: str, html: str) -> str:
+def _write_local_fixture(name: str, html: str) -> tuple[Path, str]:
     """Write an HTML fixture into the fixture server's root so it can be fetched
-    back by the scraper over localhost. Returns the absolute path."""
-    path = os.path.join(os.path.dirname(__file__), "scrape_fixtures", name)
-    with open(path, "w") as f:
-        f.write(html)
-    return path
+    back by the scraper over localhost. Returns the absolute path and URL path."""
+    fixtures_dir = Path(__file__).parent / "scrape_fixtures"
+    unique_name = f"{Path(name).stem}-{uuid4().hex}.html"
+    path = fixtures_dir / unique_name
+    path.write_text(html)
+    return path, unique_name
 
 
 class TestRescrapePhoto:
@@ -180,12 +183,12 @@ class TestRescrapePhoto:
         recipes_api = RecipesApi(client)
 
         image_url = f"{FIXTURE_BASE_URL}/images/test_recipe.jpg"
-        fixture_path = _write_local_fixture(
+        fixture_path, fixture_name = _write_local_fixture(
             "rescrape_photo_fixture.html",
             _MINIMAL_RECIPE_HTML.format(image_url=image_url),
         )
         try:
-            source_url = f"{FIXTURE_BASE_URL}/rescrape_photo_fixture.html"
+            source_url = f"{FIXTURE_BASE_URL}/{fixture_name}"
             response = scrape_api.create_scrape(CreateScrapeRequest(url=source_url))
             job = wait_for_job_completion(scrape_api, response.id)
             assert job.status == "completed"
@@ -211,7 +214,7 @@ class TestRescrapePhoto:
             # ...and a photo still exists (same slot replaced, not blanked).
             assert len(updated.photo_ids or []) > 0
         finally:
-            os.remove(fixture_path)
+            fixture_path.unlink(missing_ok=True)
 
     def test_rescrape_photo_creates_exactly_one_new_version(self, authed_api_client):
         """Photo rescrape must not trigger the enrichment chain afterwards —
@@ -222,14 +225,12 @@ class TestRescrapePhoto:
         recipes_api = RecipesApi(client)
 
         image_url = f"{FIXTURE_BASE_URL}/images/test_recipe.jpg"
-        fixture_path = _write_local_fixture(
+        fixture_path, fixture_name = _write_local_fixture(
             "rescrape_photo_fixture_single_version.html",
             _MINIMAL_RECIPE_HTML.format(image_url=image_url),
         )
         try:
-            source_url = (
-                f"{FIXTURE_BASE_URL}/rescrape_photo_fixture_single_version.html"
-            )
+            source_url = f"{FIXTURE_BASE_URL}/{fixture_name}"
             response = scrape_api.create_scrape(CreateScrapeRequest(url=source_url))
             job = wait_for_job_completion(scrape_api, response.id)
             assert job.status == "completed"
@@ -249,7 +250,7 @@ class TestRescrapePhoto:
             newest = after.versions[0]
             assert newest.version_source == "photo_rescrape"
         finally:
-            os.remove(fixture_path)
+            fixture_path.unlink(missing_ok=True)
 
     def test_rescrape_photo_fails_loudly_when_no_images_fetched(
         self, authed_api_client
