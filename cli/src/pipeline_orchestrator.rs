@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use std::fs;
 use std::io::{self, Write};
 use std::path::{Path, PathBuf};
@@ -856,6 +856,11 @@ fn load_pipeline_urls(test_urls_path: &Path) -> Result<TestUrlsOutput> {
         .with_context(|| format!("Failed to read test URLs from {}", test_urls_path.display()))?;
     let mut test_urls: TestUrlsOutput =
         serde_json::from_str(&test_urls_content).context("Failed to parse test URLs JSON")?;
+    let mut existing_urls: HashSet<String> = test_urls
+        .sites
+        .iter()
+        .flat_map(|site| site.urls.iter().cloned())
+        .collect();
 
     let allowlist = snapshot_allowlist_path(test_urls_path);
     if !allowlist.exists() {
@@ -868,6 +873,10 @@ fn load_pipeline_urls(test_urls_path: &Path) -> Result<TestUrlsOutput> {
         .with_context(|| format!("Failed to parse snapshot allowlist {}", allowlist.display()))?;
 
     for url in allowlisted_urls {
+        if !existing_urls.insert(url.clone()) {
+            continue;
+        }
+
         let domain = reqwest::Url::parse(&url)
             .with_context(|| format!("Invalid URL in snapshot allowlist: {url}"))?
             .host_str()
@@ -900,6 +909,12 @@ fn load_pipeline_urls(test_urls_path: &Path) -> Result<TestUrlsOutput> {
     test_urls
         .sites
         .sort_by_key(|site| (site.rank, site.domain.clone()));
+
+    let mut seen_urls = HashSet::new();
+    for site in &mut test_urls.sites {
+        site.urls.retain(|url| seen_urls.insert(url.clone()));
+    }
+    test_urls.sites.retain(|site| !site.urls.is_empty());
 
     Ok(test_urls)
 }
@@ -1669,6 +1684,50 @@ mod tests {
         assert_eq!(
             loaded.sites[0].urls,
             vec!["https://example.com/already-present".to_string()]
+        );
+    }
+
+    #[test]
+    fn load_pipeline_urls_deduplicates_global_url_matches() {
+        let dir = TempDir::new().unwrap();
+        let data_dir = dir.path().join("data");
+        std::fs::create_dir_all(&data_dir).unwrap();
+        let test_urls_path = data_dir.join("test-urls.json");
+        std::fs::write(
+            &test_urls_path,
+            r#"{
+              "generated_at": "2026-04-22T00:00:00Z",
+              "config": {
+                "num_sites": 1,
+                "urls_per_site": 1
+              },
+              "sites": [
+                {
+                  "domain": "seriouseats.com",
+                  "rank": 1,
+                  "urls": [
+                    "https://www.seriouseats.com/already-present"
+                  ],
+                  "source": "sitemap"
+                }
+              ]
+            }"#,
+        )
+        .unwrap();
+        std::fs::write(
+            data_dir.join("pipeline-snapshot-urls.json"),
+            r#"[
+              "https://www.seriouseats.com/already-present"
+            ]"#,
+        )
+        .unwrap();
+
+        let loaded = load_pipeline_urls(&test_urls_path).unwrap();
+        assert_eq!(loaded.sites.len(), 1);
+        assert_eq!(loaded.sites[0].domain, "seriouseats.com");
+        assert_eq!(
+            loaded.sites[0].urls,
+            vec!["https://www.seriouseats.com/already-present".to_string()]
         );
     }
 
