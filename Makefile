@@ -45,7 +45,7 @@ dev-headless: check-deps db-up $(CLIENT_MARKER) ## Start local dev environment w
 	@mkdir -p logs
 	@set -a && . ./dev.env && set +a && process-compose up -e dev.env -t=false --port "$${PROCESS_COMPOSE_PORT:-8180}"
 
-serve: check-deps db-up $(CLIENT_MARKER) ## Start release-mode server with socket activation and a memory cap
+serve: check-deps db-up $(CLIENT_MARKER) server-release-build ## Start release-mode server with socket activation and a memory cap
 	@echo "Starting release server..."
 	@mkdir -p logs
 	@set -a && . ./dev.env && set +a && process-compose up -e dev.env -f serve-compose.yaml -t=false --port "$${PROCESS_COMPOSE_PORT:-8180}"
@@ -57,7 +57,6 @@ dev-down: ## Stop dev processes (not database)
 serve-down: ## Stop release-mode serve processes
 	@process-compose down 2>/dev/null || true
 	@pkill -f "systemfd --no-pid" 2>/dev/null || true
-	@pkill -f "cargo watch -x run --release -q" 2>/dev/null || true
 
 # Generate OpenAPI spec from Rust source
 api/openapi.json: $(API_SOURCES)
