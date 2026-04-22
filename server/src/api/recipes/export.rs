@@ -429,19 +429,21 @@ fn write_zip_stream(
     for recipe in recipes {
         // Short-lived per-recipe connection: held during the DB fetch and
         // in-memory encoding, released before the slow zip write.
+        //
+        // Pool checkout failures abort the stream rather than silently
+        // skipping the recipe — an export is meant as a backup, so silently
+        // omitting recipes under pool pressure is partial data loss the
+        // client would have no way to notice.
         let exported = {
-            let mut conn = match pool.get() {
-                Ok(c) => c,
-                Err(e) => {
-                    tracing::warn!(
-                        recipe_id = %recipe.id,
-                        title = %recipe.version.title,
-                        error = %e,
-                        "failed to acquire db connection for recipe; skipping"
-                    );
-                    continue;
-                }
-            };
+            let mut conn = pool.get().map_err(|e| {
+                tracing::error!(
+                    recipe_id = %recipe.id,
+                    title = %recipe.version.title,
+                    error = %e,
+                    "failed to acquire db connection during export; aborting stream"
+                );
+                io::Error::other(format!("db pool: {}", e))
+            })?;
             match export_recipe_to_paprikarecipe(&mut conn, user_id, recipe) {
                 Ok(e) => e,
                 Err(e) => {
