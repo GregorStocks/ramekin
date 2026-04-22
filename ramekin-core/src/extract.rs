@@ -1430,7 +1430,7 @@ fn extract_recipe_with_html_fallback(
         .or_else(|| extract_ingredients_from_itemprop_unscoped(document));
 
     let instructions = instructions
-        .or_else(|| extract_instructions_from_html_classes(document))
+        .or_else(|| extract_instructions_from_html_classes(document, title.as_deref()))
         .or_else(|| extract_instructions_from_itemprop_unscoped(document))
         .or_else(|| extract_instructions_from_raw_html(html));
 
@@ -1866,7 +1866,10 @@ fn extract_ingredients_from_div(document: &Html) -> Option<String> {
 
 /// Extract instructions from common recipe plugin HTML classes.
 /// Searches the entire document (not scoped to a microdata container).
-fn extract_instructions_from_html_classes(document: &Html) -> Option<String> {
+fn extract_instructions_from_html_classes(
+    document: &Html,
+    recipe_title: Option<&str>,
+) -> Option<String> {
     let selectors = [
         ".jetpack-recipe-directions",
         "div.instructions",
@@ -1892,7 +1895,7 @@ fn extract_instructions_from_html_classes(document: &Html) -> Option<String> {
         }
     }
 
-    extract_wprm_instructions(document, "")
+    extract_wprm_instructions(document, recipe_title.unwrap_or_default())
 }
 
 static WPRM_STICKY_NOTE_TEXT_REGEX: LazyLock<Regex> = LazyLock::new(|| {
