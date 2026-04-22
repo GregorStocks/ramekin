@@ -47,12 +47,11 @@ static TRAILING_TITLE_QUALIFIER_RE: LazyLock<Regex> = LazyLock::new(|| {
 pub fn extract_recipe(html: &str, source_url: &str) -> Result<RawRecipe, ExtractError> {
     // Fast path: extract JSON-LD using regex (avoids DOM parsing)
     if let Some(mut recipe) = extract_jsonld_fast(html, source_url) {
-        // Structured data provides a flat ingredient list; group headers
-        // (e.g. "Meatballs", "Broth") only exist in the HTML.
-        // Only parse the DOM when a group marker is present.
-        if html.contains("wprm-recipe-group-name") || html.contains("jetpack-recipe-ingredients") {
+        // Structured data can miss richer HTML-only structure or include
+        // polluted instruction text; supplement from the rendered recipe card.
+        if should_parse_html_for_supplements(html) {
             let document = Html::parse_document(html);
-            supplement_ingredient_groups(&mut recipe, &document);
+            supplement_recipe_from_html(&mut recipe, &document);
         }
         return Ok(recipe);
     }
@@ -62,18 +61,30 @@ pub fn extract_recipe(html: &str, source_url: &str) -> Result<RawRecipe, Extract
 
     // Try JSON-LD via DOM (handles edge cases regex might miss)
     if let Ok(mut recipe) = extract_recipe_from_jsonld(&document, source_url) {
-        supplement_ingredient_groups(&mut recipe, &document);
+        supplement_recipe_from_html(&mut recipe, &document);
         return Ok(recipe);
     }
 
     // Fall back to microdata
     if let Ok(mut recipe) = extract_recipe_from_microdata(&document, source_url) {
-        supplement_ingredient_groups(&mut recipe, &document);
+        supplement_recipe_from_html(&mut recipe, &document);
         return Ok(recipe);
     }
 
     // Last resort: supplement partial structured data with HTML fallbacks
     extract_recipe_with_html_fallback(html, &document, source_url)
+}
+
+fn should_parse_html_for_supplements(html: &str) -> bool {
+    html.contains("wprm-recipe-group-name")
+        || html.contains("jetpack-recipe-ingredients")
+        || html.contains("wprm-recipe-instruction")
+}
+
+/// Try to replace flat ingredients or polluted instructions with cleaner HTML-derived content.
+fn supplement_recipe_from_html(recipe: &mut RawRecipe, document: &Html) {
+    supplement_ingredient_groups(recipe, document);
+    supplement_instructions(recipe, document);
 }
 
 /// Try to replace flat ingredients with a grouped version from HTML.
@@ -83,6 +94,14 @@ fn supplement_ingredient_groups(recipe: &mut RawRecipe, document: &Html) {
         .or_else(|| extract_jetpack_ingredients_with_groups(document))
     {
         recipe.ingredients = grouped;
+    }
+}
+
+/// Prefer cleaned HTML instructions when the rendered recipe card is more accurate than
+/// the structured data. WPRM can flatten hidden sticky-note text into JSON-LD.
+fn supplement_instructions(recipe: &mut RawRecipe, document: &Html) {
+    if let Some(instructions) = extract_wprm_instructions(document) {
+        recipe.instructions = instructions;
     }
 }
 
@@ -145,9 +164,9 @@ pub fn extract_recipe_with_stats(
 ) -> Result<ExtractRecipeOutput, ExtractError> {
     // Fast path: try regex-based JSON-LD extraction (avoids DOM parsing)
     if let Some(mut recipe) = extract_jsonld_fast(html, source_url) {
-        if html.contains("wprm-recipe-group-name") || html.contains("jetpack-recipe-ingredients") {
+        if should_parse_html_for_supplements(html) {
             let document = Html::parse_document(html);
-            supplement_ingredient_groups(&mut recipe, &document);
+            supplement_recipe_from_html(&mut recipe, &document);
         }
         return Ok(ExtractRecipeOutput {
             raw_recipe: recipe,
@@ -166,7 +185,7 @@ pub fn extract_recipe_with_stats(
     // Try JSON-LD via DOM (handles edge cases regex might miss)
     let jsonld_result = extract_recipe_from_jsonld(&document, source_url);
     if let Ok(mut recipe) = jsonld_result {
-        supplement_ingredient_groups(&mut recipe, &document);
+        supplement_recipe_from_html(&mut recipe, &document);
         return Ok(ExtractRecipeOutput {
             raw_recipe: recipe,
             method_used: ExtractionMethod::JsonLd,
@@ -181,7 +200,7 @@ pub fn extract_recipe_with_stats(
     // Fall back to microdata
     let microdata_result = extract_recipe_from_microdata(&document, source_url);
     if let Ok(mut recipe) = microdata_result {
-        supplement_ingredient_groups(&mut recipe, &document);
+        supplement_recipe_from_html(&mut recipe, &document);
         return Ok(ExtractRecipeOutput {
             raw_recipe: recipe,
             method_used: ExtractionMethod::Microdata,
@@ -1848,12 +1867,15 @@ fn extract_ingredients_from_div(document: &Html) -> Option<String> {
 /// Extract instructions from common recipe plugin HTML classes.
 /// Searches the entire document (not scoped to a microdata container).
 fn extract_instructions_from_html_classes(document: &Html) -> Option<String> {
+    if let Some(result) = extract_wprm_instructions(document) {
+        return Some(result);
+    }
+
     let selectors = [
         ".jetpack-recipe-directions",
         "div.instructions",
         ".recipe-instructions",
         ".e-instructions",
-        ".wprm-recipe-instruction",
         ".recipe-directions",
     ];
 
@@ -1875,6 +1897,42 @@ fn extract_instructions_from_html_classes(document: &Html) -> Option<String> {
     }
 
     None
+}
+
+static WPRM_STICKY_NOTE_TEXT_REGEX: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r#"(?is)<span[^>]*class="[^"]*\bsticky-note-text\b[^"]*"[^>]*>.*?</span>"#)
+        .expect("Invalid WPRM sticky note text regex")
+});
+
+static WPRM_STICKY_NOTE_WRAPPER_REGEX: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r#"(?is)<span[^>]*class="[^"]*\bsticky-note\b[^"]*"[^>]*>\s*</span>"#)
+        .expect("Invalid WPRM sticky note wrapper regex")
+});
+
+fn extract_wprm_instructions(document: &Html) -> Option<String> {
+    let selector = Selector::parse(".wprm-recipe-instruction-text").ok()?;
+    let steps: Vec<String> = document
+        .select(&selector)
+        .filter_map(|el| {
+            let html = el.inner_html();
+            let html = WPRM_STICKY_NOTE_TEXT_REGEX.replace_all(&html, "");
+            let html = WPRM_STICKY_NOTE_WRAPPER_REGEX.replace_all(&html, "");
+            let text = HTML_TAG_REGEX.replace_all(&html, "");
+            let text = decode_html_entities(text.trim());
+            let text = text.split_whitespace().collect::<Vec<_>>().join(" ");
+            if text.is_empty() {
+                None
+            } else {
+                Some(text)
+            }
+        })
+        .collect();
+
+    if steps.is_empty() {
+        None
+    } else {
+        Some(steps.join("\n\n"))
+    }
 }
 
 /// Regex-based extraction of instructions from raw HTML.
@@ -2846,6 +2904,49 @@ mod tests {
         // Should use JSON-LD ingredients (no group headers injected)
         assert!(!result.ingredients.contains(':'));
         assert!(result.ingredients.contains("1 cup flour"));
+    }
+
+    #[test]
+    fn test_wprm_sticky_note_instruction_prefers_clean_html_text() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Semi-Instant Pancakes",
+                    "recipeIngredient": ["1 cup flour"],
+                    "recipeInstructions": [
+                        {
+                            "@type": "HowToStep",
+                            "text": "Carefully flipThe first cakes tend to be uglier than later ones, so feed the in-laws first. with a wide spatula and cook until golden brown on the bottom, another 2 to 3 minutes."
+                        }
+                    ]
+                }
+                </script>
+            </head>
+            <body>
+                <li class="wprm-recipe-instruction">
+                    <div class="wprm-recipe-instruction-text">
+                        <span style="display: block;">
+                            <wprm-code>
+                                <span class="sticky-note-btn">Carefully flip</span>
+                                <span class="sticky-note">
+                                    <span class="sticky-note-text">The first cakes tend to be uglier than later ones, so feed the in-laws first.</span>
+                                </span>
+                                with a wide spatula and cook until golden brown on the bottom, another 2 to 3 minutes.
+                            </wprm-code>
+                        </span>
+                    </div>
+                </li>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/pancakes").unwrap();
+        assert_eq!(
+            result.instructions,
+            "Carefully flip with a wide spatula and cook until golden brown on the bottom, another 2 to 3 minutes."
+        );
     }
 
     #[test]
