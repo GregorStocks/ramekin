@@ -1,0 +1,37 @@
+{
+  "title": "Mixed-number ranges corrupt ingredient amounts",
+  "description": "During a pipeline snapshot audit on 2026-04-22, the Half \
+Baked Harvest wrap snapshot showed that mixed-number ranges can corrupt both \
+the parsed amount and the parsed item name.\n\
+\n\
+Concrete example:\n\
+\n\
+  - \
+`data/pipeline-snapshots/halfbakedharvest-com_pesto-chicken-and-avocado-bacon-salad-wraps.json`\n\
+    Cached HTML: \
+`~/.ramekin/http-cache/halfbakedharvest-com_pesto-chicken-and-avocado-bacon-salad-wraps/response.bin`\n\
+    Source ingredient from the embedded recipe data: `1-1 1/2 cups grilled \
+chicken, cubed or shredded`\n\
+    Snapshot output:\n\
+      - `raw`: `1-1 1/2 cups grilled chicken, cubed or shredded`\n\
+      - `item`: `1/2 cups grilled chicken`\n\
+      - `measurements`: `[ { \"amount\": \"1-1\", \"unit\": null } ]`\n\
+\n\
+The mixed-number range should stay attached to the main cup quantity, but the \
+pipeline splits it at the wrong boundary and leaves a numeric fragment at the \
+front of `item`. This produces junk structured data even though the source \
+ingredient is clear and valid.\n\
+\n\
+We should make the amount parser treat forms like `1-1 1/2 cups`, `1 1/2-2 \
+cups`, and similar mixed-number ranges as a single amount expression instead \
+of truncating the leading number and spilling the remainder into `item`.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "pipeline",
+    "ingredient-parser",
+  ],
+  "created_at": "2026-04-22T14:33:50-07:00",
+  "updated_at": "2026-04-22T14:33:50-07:00",
+}
