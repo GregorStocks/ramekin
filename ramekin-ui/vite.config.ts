@@ -35,6 +35,21 @@ function httpMirrorPlugin(): PluginOption {
         target: `http://localhost:${process.env.PORT}`,
         changeOrigin: true,
       })
+      // Without an 'error' listener, http-proxy emits on a bare EventEmitter
+      // and Node crashes the whole preview process when the backend is down
+      // (e.g. during a restart). Return a 502 instead.
+      const onProxyError = (err: Error, _req: http.IncomingMessage, resOrSocket: http.ServerResponse | import('net').Socket) => {
+        console.error('[http-mirror] proxy error:', err.message)
+        if ('writeHead' in resOrSocket) {
+          if (!resOrSocket.headersSent && !resOrSocket.writableEnded) {
+            resOrSocket.writeHead(502, { 'Content-Type': 'text/plain' }).end('Bad Gateway')
+          }
+        } else {
+          resOrSocket.end()
+        }
+      }
+      apiProxy.on('error', onProxyError)
+      uiProxy.on('error', onProxyError)
       apiProxy.on('proxyRes', (_proxyRes, req, res) => {
         const origin = req.headers.origin
         if (origin) {
