@@ -20,6 +20,7 @@ Implementation notes:
     `/usr/bin/cargo` trips the cargo rule exactly like `cargo` does.
 """
 
+import fnmatch
 import json
 import os
 import re
@@ -705,7 +706,7 @@ _CHECKOUT_OPTS_CONSUMING_NEXT = frozenset(
 # `--detach` / `-d` moves HEAD without a branch name; treat as branch-changing
 # so it requires signoff through the unknown-target path.
 _AMBIGUOUS_SWITCH_OPTS = frozenset({"--track", "-t", "--detach", "-d"})
-_AMBIGUOUS_CHECKOUT_OPTS = frozenset({"--track", "-t", "--detach"})
+_AMBIGUOUS_CHECKOUT_OPTS = frozenset({"--track", "-t", "--detach", "-d"})
 
 # Short options (for switch/checkout) that take an argument. Used by the
 # token normalizer to split glued forms like `-Bfoo` into `-B foo`.
@@ -827,28 +828,59 @@ _INPLACE_EDIT_FLAGS: dict[str, frozenset[str]] = {
 _GIT_WORKTREE_MUTATION_SUBCMDS = frozenset({"checkout", "restore", "clean"})
 
 
-def _path_is_protected(path: str) -> bool:
-    """True if `path` names a file inside one of the protected pipeline dirs.
+def _brace_expand(pattern: str) -> list[str]:
+    """Expand bash-style `{a,b,c}` brace patterns.
 
-    Catches both repo-relative (`data/pipeline-snapshots/x.json`,
-    `./data/pipeline-snapshots/`) and absolute forms
-    (`/workspace/ramekin/data/pipeline-snapshots/x.json`) so the guard can't
-    be slipped by rewriting the path.
+    Doesn't handle nested braces or ranges like `{1..3}` — only the
+    comma-separated form the hook needs to notice when an argument
+    references multiple paths at once (e.g. `data/pipeline-{snapshots,runs}`).
     """
-    if not path:
-        return False
+    match = re.search(r"\{([^{}]*)\}", pattern)
+    if not match:
+        return [pattern]
+    head = pattern[: match.start()]
+    tail = pattern[match.end() :]
+    results: list[str] = []
+    for option in match.group(1).split(","):
+        results.extend(_brace_expand(head + option + tail))
+    return results
+
+
+def _single_path_is_protected(path: str) -> bool:
     normalized = os.path.normpath(path)
     for protected in _PIPELINE_OUTPUT_PATHS:
-        # Relative path pointing into the protected dir from the repo root.
         if normalized == protected or normalized.startswith(protected + os.sep):
             return True
-        # Absolute (or deeply-nested) form — look for the protected suffix
-        # at a path-component boundary.
         marker = os.sep + protected
         if marker in normalized:
             tail = normalized.split(marker, 1)[1]
             if tail == "" or tail.startswith(os.sep):
                 return True
+    # Glob form — does the pattern match any path under a protected dir?
+    if any(c in normalized for c in "*?["):
+        for protected in _PIPELINE_OUTPUT_PATHS:
+            if fnmatch.fnmatchcase(protected, normalized):
+                return True
+            if fnmatch.fnmatchcase(f"{protected}/file", normalized):
+                return True
+            if fnmatch.fnmatchcase(f"{protected}/dir/file", normalized):
+                return True
+    return False
+
+
+def _path_is_protected(path: str) -> bool:
+    """True if `path` (possibly with brace/glob expansion) names a protected path.
+
+    Catches repo-relative (`data/pipeline-snapshots/x.json`,
+    `./data/pipeline-snapshots/`), absolute (`/workspace/ramekin/data/
+    pipeline-snapshots/...`), brace-expanded (`data/pipeline-{snapshots,
+    runs}`), and wildcard (`data/pipeline-*`) forms.
+    """
+    if not path:
+        return False
+    for candidate in _brace_expand(path):
+        if _single_path_is_protected(candidate):
+            return True
     return False
 
 
