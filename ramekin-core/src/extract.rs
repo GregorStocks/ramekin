@@ -482,15 +482,26 @@ fn split_and_dedup_ingredients(ingredients: Vec<String>) -> Vec<String> {
 
 fn sanitize_extracted_ingredient(text: &str) -> Option<String> {
     let decoded = decode_html_entities(text.trim());
-    let sanitized = decoded
-        .trim_start_matches(['▢', '☐', '☑', '☒', '✓', '✔'])
-        .trim_start()
-        .to_string();
+    let mut sanitized = decoded.trim();
+
+    loop {
+        let mut chars = sanitized.chars();
+        let Some(first) = chars.next() else {
+            break;
+        };
+
+        if !matches!(first, '▢' | '☐' | '☑' | '☒' | '✓' | '✔') {
+            break;
+        }
+
+        sanitized = chars.as_str().trim_start_matches(['\u{fe0e}', '\u{fe0f}']);
+        sanitized = sanitized.trim_start();
+    }
 
     if sanitized.is_empty() {
         None
     } else {
-        Some(sanitized)
+        Some(sanitized.to_string())
     }
 }
 
@@ -2513,6 +2524,26 @@ mod tests {
                     "@type": "Recipe",
                     "name": "Test Recipe",
                     "recipeIngredient": ["▢ 1 cup flour", "☑ 2 eggs"],
+                    "recipeInstructions": "Mix it."
+                }
+                </script>
+            </head><body></body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+        assert_eq!(result.ingredients, "1 cup flour\n2 eggs");
+    }
+
+    #[test]
+    fn test_jsonld_strips_checkbox_glyph_variation_selectors_from_ingredients() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Test Recipe",
+                    "recipeIngredient": ["✔️ 1 cup flour", "☑️ 2 eggs"],
                     "recipeInstructions": "Mix it."
                 }
                 </script>
