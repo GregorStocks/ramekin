@@ -307,11 +307,45 @@ pub async fn sync_items(
                         success: true,
                     });
                 } else {
-                    updated.push(SyncUpdatedItem {
-                        id: update_req.id,
-                        version: current_version,
-                        success: false,
-                    });
+                    // Race: our prefetched version matched expected_version but the
+                    // UPDATE matched zero rows, meaning another writer changed the row
+                    // between our prefetch and our update. Re-read so a later update
+                    // for the same id in this batch sees the true state and the
+                    // response reports the true version.
+                    let fresh: Option<ItemUpdateRow> = shopping_list_items::table
+                        .filter(shopping_list_items::id.eq(update_req.id))
+                        .filter(shopping_list_items::user_id.eq(user.id))
+                        .filter(shopping_list_items::deleted_at.is_null())
+                        .select((
+                            shopping_list_items::item,
+                            shopping_list_items::amount,
+                            shopping_list_items::note,
+                            shopping_list_items::is_checked,
+                            shopping_list_items::sort_order,
+                            shopping_list_items::version,
+                        ))
+                        .first(conn)
+                        .optional()?;
+
+                    match fresh {
+                        Some(row) => {
+                            let fresh_version = row.5;
+                            current_map.insert(update_req.id, row);
+                            updated.push(SyncUpdatedItem {
+                                id: update_req.id,
+                                version: fresh_version,
+                                success: false,
+                            });
+                        }
+                        None => {
+                            current_map.remove(&update_req.id);
+                            updated.push(SyncUpdatedItem {
+                                id: update_req.id,
+                                version: 0,
+                                success: false,
+                            });
+                        }
+                    }
                 }
             }
         }
