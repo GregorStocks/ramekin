@@ -64,3 +64,55 @@ exit 1
     assert "rust-tests-core (exit_code=1)" in result.stdout
     assert f"Last 200 lines of {log_path}:" in result.stdout
     assert log_line in result.stdout
+
+
+def test_run_tests_waits_for_status_files_before_failing(tmp_path):
+    bin_dir = tmp_path / "bin"
+    bin_dir.mkdir()
+
+    env_file = tmp_path / "test.env"
+    log_path = tmp_path / "isolated-test.log"
+    status_dir = tmp_path / "isolated-status"
+    env_file.write_text("PROCESS_COMPOSE_PORT=4317\n", encoding="utf-8")
+
+    _write_executable(
+        bin_dir / "process-compose",
+        """#!/bin/bash
+set -e
+
+if [ "$1" = "up" ]; then
+  mkdir -p "$TEST_STATUS_DIR"
+  printf '%s\\n' "delayed status flush" > "$TEST_LOG_FILE"
+  (
+    sleep 1
+    printf '%s\\n' 0 > "$TEST_STATUS_DIR/rust-tests-server.exit"
+    printf '%s\\n' 0 > "$TEST_STATUS_DIR/rust-tests-cli.exit"
+    printf '%s\\n' 0 > "$TEST_STATUS_DIR/rust-tests-core.exit"
+    printf '%s\\n' 0 > "$TEST_STATUS_DIR/api-tests.exit"
+  ) &
+  exit 0
+fi
+
+exit 1
+""",
+    )
+
+    env = os.environ.copy()
+    env["PATH"] = f"{bin_dir}:{env['PATH']}"
+    env["TEST_ENV_FILE"] = str(env_file)
+    env["TEST_LOG_FILE"] = str(log_path)
+    env["TEST_STATUS_DIR"] = str(status_dir)
+    env["TEST_STATUS_WAIT_SECONDS"] = "5"
+
+    result = subprocess.run(
+        ["bash", str(SCRIPT_PATH)],
+        cwd=REPO_ROOT,
+        env=env,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0
+    assert "Waiting for test status files to flush..." in result.stdout
+    assert "One or more test processes failed:" not in result.stdout
