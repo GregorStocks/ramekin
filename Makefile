@@ -197,17 +197,12 @@ refilter-test-urls: ## Refilter existing test URLs through current filter logic
 	@cargo run -q --manifest-path cli/Cargo.toml -- generate-test-urls --refilter
 
 pipeline: ## Run the full pipeline over every URL in test-urls.json
-	@echo "[pipeline] cargo run starting" | $(TS)
-	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
-	{ time cargo run -q --release --manifest-path cli/Cargo.toml -- pipeline \
+	@./scripts/run-pipeline.sh \
 		$(if $(DELAY),--delay-ms $(DELAY),) \
 		$(if $(FORCE_REFETCH),--force-refetch,) \
 		$(if $(ON_FETCH_FAIL),--on-fetch-fail $(ON_FETCH_FAIL),) \
 		$(if $(TAGS_FILE),--tags-file $(TAGS_FILE),) \
-		$(if $(CONCURRENCY),--concurrency $(CONCURRENCY),); }
-	@echo "[pipeline] cargo run done, running ingredient-tests-generate" | $(TS)
-	@time $(MAKE) ingredient-tests-generate
-	@echo "[pipeline] ingredient-tests-generate done" | $(TS)
+		$(if $(CONCURRENCY),--concurrency $(CONCURRENCY),)
 
 pipeline-cache-stats: ## Show HTML cache statistics
 	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
