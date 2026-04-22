@@ -1,0 +1,34 @@
+{
+  "title": "Recipe card checkbox glyphs leak into ingredient text",
+  "description": "Some recipe-card ingredient lines are being captured with UI \
+checkbox glyphs still attached, leaving both `raw` and `item` values dirty \
+even though the source HTML contains clean ingredient text in structured \
+recipe markup.\n\
+\n\
+Concrete example from \
+`data/pipeline-snapshots/halfbakedharvest-com_easy-cheesy-eggs.json`, \
+cross-checked against cached HTML at \
+`~/.ramekin/http-cache/halfbakedharvest-com_easy-cheesy-eggs/response.bin`:\n\
+\n\
+The source page includes clean recipe data such as:\n\
+`\"recipeIngredient\":[\"1 tablespoons extra virgin olive oil\", \"2 \
+tablespoons salted butter\", \"1 clove garlic, chopped\", ...]`\n\
+\n\
+But the snapshot produces ingredient rows like:\n\
+`raw: \"▢ 1 tablespoons extra virgin olive oil\"`\n\
+`item: \"▢ 1 tablespoons extra virgin olive oil\"`\n\
+`raw: \"▢ 2 tablespoons salted butter\"`\n\
+`item: \"▢ 2 tablespoons salted butter\"`\n\
+\n\
+Expected behavior: strip recipe-card checkbox UI glyphs before parsing so the \
+ingredient text matches the recipe content. The current output leaves obvious \
+presentation junk in the parsed ingredient fields.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "ingredient-parser",
+  ],
+  "created_at": "2026-04-22T06:59:37-07:00",
+  "updated_at": "2026-04-22T06:59:37-07:00",
+}

@@ -14,11 +14,11 @@ Entries below were added from URLs seen in the 2026-04-22 `.paprikarecipes` expo
 that were missing from the pipeline allowlist and that `extract_recipe` can
 currently parse. Audit them ahead of the round-robin queue below.
 
-- [ ] 419. `smittenkitchen-com_2010-01-southwestern-pulled-brisket.json` (smittenkitchen-com)
-- [ ] 420. `smittenkitchen-com_2010-04-homemade-pop-tarts.json` (smittenkitchen-com)
-- [ ] 421. `smittenkitchen-com_2017-02-tomato-glazed-meatloaves-with-brown-butter-mashed-potatoes.json` (smittenkitchen-com)
-- [ ] 422. `smittenkitchen-com_2024-03-turkey-meatloaf-for-skeptics.json` (smittenkitchen-com)
-- [ ] 423. `sudachirecipes-com_spaghetti-napolitan-recipe.json` (sudachirecipes-com)
+- [x] 419. `smittenkitchen-com_2010-01-southwestern-pulled-brisket.json` (smittenkitchen-com) - 2026-04-22: no issue
+- [x] 420. `smittenkitchen-com_2010-04-homemade-pop-tarts.json` (smittenkitchen-com) - 2026-04-22: filed `p3-section-heading-flattened-into-ingredient-list.json5`
+- [x] 421. `smittenkitchen-com_2017-02-tomato-glazed-meatloaves-with-brown-butter-mashed-potatoes.json` (smittenkitchen-com) - 2026-04-22: no issue
+- [x] 422. `smittenkitchen-com_2024-03-turkey-meatloaf-for-skeptics.json` (smittenkitchen-com) - 2026-04-22: no issue
+- [x] 423. `sudachirecipes-com_spaghetti-napolitan-recipe.json` (sudachirecipes-com) - 2026-04-22: no issue
 
 ## Queue
 
@@ -47,11 +47,11 @@ currently parse. Audit them ahead of the round-robin queue below.
 - [x] 023. `thepioneerwoman-com_food-cooking-recipes-a40191717-grilled-salmon-recipe-how-to.json` (thepioneerwoman-com) - 2026-04-21: no issue
 - [x] 024. `allrecipes-com_recipe-228682-amazing-oven-roasted-potatoes.json` (allrecipes-com) - 2026-04-21: no issue
 - [x] 025. `altonbrown-com_recipes-semi-instant-pancake-mix.json` (altonbrown-com) - 2026-04-21: filed `p3-inline-sticky-notes-merge-into-instruction-text.json5`
-- [ ] 026. `americastestkitchen-com_recipes-15862-coddled-eggs.json` (americastestkitchen-com)
-- [ ] 027. `bonappetit-com_recipe-kimchi-udon-with-scallions.json` (bonappetit-com)
-- [ ] 028. `cooking-nytimes-com_recipes-1022063-brothy-cod-with-peas-and-mushrooms.json` (cooking-nytimes-com)
-- [ ] 029. `halfbakedharvest-com_easy-cheesy-eggs.json` (halfbakedharvest-com)
-- [ ] 030. `japanesecooking101-com_rice-cooker-cake-recipe.json` (japanesecooking101-com)
+- [x] 026. `americastestkitchen-com_recipes-15862-coddled-eggs.json` (americastestkitchen-com) - 2026-04-22: no issue
+- [x] 027. `bonappetit-com_recipe-kimchi-udon-with-scallions.json` (bonappetit-com) - 2026-04-22: no issue
+- [x] 028. `cooking-nytimes-com_recipes-1022063-brothy-cod-with-peas-and-mushrooms.json` (cooking-nytimes-com) - 2026-04-22: no issue
+- [x] 029. `halfbakedharvest-com_easy-cheesy-eggs.json` (halfbakedharvest-com) - 2026-04-22: filed `p3-recipe-card-checkbox-glyphs-leak-into-ingredient-text.json5`
+- [x] 030. `japanesecooking101-com_rice-cooker-cake-recipe.json` (japanesecooking101-com) - 2026-04-22: no issue
 - [ ] 031. `loveandlemons-com_mashed-sweet-potatoes.json` (loveandlemons-com)
 - [ ] 032. `seriouseats-com_rice-krispie-treats-recipe-7107746.json` (seriouseats-com)
 - [ ] 033. `smittenkitchen-com_2013-11-parsley-leaf-potatoes.json` (smittenkitchen-com)
