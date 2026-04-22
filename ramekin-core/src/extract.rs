@@ -1973,11 +1973,13 @@ fn extract_wprm_instructions(document: &Html, recipe_title: &str) -> Option<Stri
         }
     }
 
+    let require_title_match = !normalized_title.is_empty();
+
     let steps = if let Some(steps) = matching_steps {
         steps
-    } else if card_count == 1 {
+    } else if !require_title_match && card_count == 1 {
         only_card_steps?
-    } else {
+    } else if !require_title_match {
         let orphan_steps: Vec<String> = document
             .select(&instruction_selector)
             .filter_map(|el| {
@@ -2000,6 +2002,8 @@ fn extract_wprm_instructions(document: &Html, recipe_title: &str) -> Option<Stri
         } else {
             return None;
         }
+    } else {
+        return None;
     };
 
     Some(steps.join("\n\n"))
@@ -2996,19 +3000,22 @@ mod tests {
                 </script>
             </head>
             <body>
-                <li class="wprm-recipe-instruction">
-                    <div class="wprm-recipe-instruction-text">
-                        <span style="display: block;">
-                            <wprm-code>
-                                <span class="sticky-note-btn">Carefully flip</span>
-                                <span class="sticky-note">
-                                    <span class="sticky-note-text">The first cakes tend to be uglier than later ones, so feed the in-laws first.</span>
-                                </span>
-                                with a wide spatula and cook until golden brown on the bottom, another 2 to 3 minutes.
-                            </wprm-code>
-                        </span>
-                    </div>
-                </li>
+                <div class="wprm-recipe">
+                    <h2 class="wprm-recipe-name">Semi-Instant Pancakes</h2>
+                    <li class="wprm-recipe-instruction">
+                        <div class="wprm-recipe-instruction-text">
+                            <span style="display: block;">
+                                <wprm-code>
+                                    <span class="sticky-note-btn">Carefully flip</span>
+                                    <span class="sticky-note">
+                                        <span class="sticky-note-text">The first cakes tend to be uglier than later ones, so feed the in-laws first.</span>
+                                    </span>
+                                    with a wide spatula and cook until golden brown on the bottom, another 2 to 3 minutes.
+                                </wprm-code>
+                            </span>
+                        </div>
+                    </li>
+                </div>
             </body></html>
         "#;
 
@@ -3064,6 +3071,42 @@ mod tests {
 
         let result = extract_recipe(html, "https://example.com/pancakes").unwrap();
         assert_eq!(result.instructions, "Carefully flip with a wide spatula");
+    }
+
+    #[test]
+    fn test_wprm_instruction_supplement_does_not_use_unmatched_single_card() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Semi-Instant Pancakes",
+                    "recipeIngredient": ["1 cup flour"],
+                    "recipeInstructions": [
+                        {
+                            "@type": "HowToStep",
+                            "text": "Keep the original structured instruction."
+                        }
+                    ]
+                }
+                </script>
+            </head>
+            <body>
+                <div class="wprm-recipe">
+                    <h2 class="wprm-recipe-name">Different Recipe</h2>
+                    <li class="wprm-recipe-instruction">
+                        <div class="wprm-recipe-instruction-text">Wrong card step</div>
+                    </li>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/pancakes").unwrap();
+        assert_eq!(
+            result.instructions,
+            "Keep the original structured instruction."
+        );
     }
 
     #[test]
