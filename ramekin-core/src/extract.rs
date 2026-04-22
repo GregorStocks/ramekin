@@ -993,12 +993,13 @@ fn normalized_block_section_title(title: &str) -> Option<String> {
         return None;
     }
 
-    let mut candidates = vec![trimmed.to_string()];
+    let mut candidates = vec![trimmed.trim_end_matches(':').trim().to_string()];
     let stripped = TRAILING_TITLE_QUALIFIER_RE
         .replace(trimmed, "")
+        .trim_end_matches(':')
         .trim()
         .to_string();
-    if !stripped.is_empty() && stripped != trimmed {
+    if !stripped.is_empty() && stripped != candidates[0] {
         candidates.push(stripped);
     }
 
@@ -1020,20 +1021,22 @@ fn underlined_section_title(title: &str) -> Option<String> {
 
     let stripped = TRAILING_TITLE_QUALIFIER_RE
         .replace(trimmed, "")
+        .trim_end_matches(':')
         .trim()
         .to_string();
     let mut candidates = Vec::new();
     if !stripped.is_empty() {
         candidates.push(stripped);
     }
-    if trimmed != candidates.first().map(String::as_str).unwrap_or_default() {
-        candidates.push(trimmed.to_string());
+    let trimmed_without_colon = trimmed.trim_end_matches(':').trim();
+    if trimmed_without_colon != candidates.first().map(String::as_str).unwrap_or_default() {
+        candidates.push(trimmed_without_colon.to_string());
     }
 
     for candidate in candidates {
         let header = format!("{candidate}:");
-        if let Some(section_name) = detect_section_header(&header) {
-            return Some(section_name);
+        if detect_section_header(&header).is_some() {
+            return Some(candidate);
         }
     }
 
