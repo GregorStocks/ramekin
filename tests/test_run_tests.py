@@ -49,7 +49,7 @@ exit 1
     env["TEST_ENV_FILE"] = str(env_file)
     env["TEST_LOG_FILE"] = str(log_path)
     env["TEST_STATUS_DIR"] = str(status_dir)
-    env["TEST_LOCK_NAME"] = "tests-script-unit"
+    env["TEST_LOCK_NAME"] = "tests-script-failure-unit"
 
     result = subprocess.run(
         ["bash", str(SCRIPT_PATH)],
@@ -74,7 +74,7 @@ def test_run_tests_refuses_when_lock_is_held(tmp_path):
     marker_path = tmp_path / "process-compose-called"
     env_file = tmp_path / "test.env"
     env_file.write_text("PROCESS_COMPOSE_PORT=4317\n", encoding="utf-8")
-    lock_dir = tmp_path / "locks" / "tests-script-unit.lock"
+    lock_dir = tmp_path / "locks" / "tests-script-lock-held-unit.lock"
     lock_dir.mkdir(parents=True)
 
     lock_holder = subprocess.Popen(["sleep", "60"])
@@ -94,7 +94,7 @@ exit 0
         env["PATH"] = f"{bin_dir}:{env['PATH']}"
         env["TEST_ENV_FILE"] = str(env_file)
         env["REPO_LOCK_DIR"] = str(tmp_path / "locks")
-        env["TEST_LOCK_NAME"] = "tests-script-unit"
+        env["TEST_LOCK_NAME"] = "tests-script-lock-held-unit"
 
         result = subprocess.run(
             ["bash", str(SCRIPT_PATH)],
@@ -150,6 +150,7 @@ exit 1
     env["TEST_ENV_FILE"] = str(env_file)
     env["TEST_LOG_FILE"] = str(log_path)
     env["TEST_STATUS_DIR"] = str(status_dir)
+    env["TEST_LOCK_NAME"] = "tests-script-status-unit"
     env["TEST_STATUS_WAIT_SECONDS"] = "5"
 
     result = subprocess.run(
