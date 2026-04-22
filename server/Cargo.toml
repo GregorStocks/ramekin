@@ -13,6 +13,7 @@ bytes = "1"
 
 # Web framework
 axum = { version = "0.8", features = ["multipart"] }
+listenfd = "1.0.2"
 tower = "0.5"
 tower-http = { version = "0.6", features = ["cors", "trace"] }
 utoipa = { version = "5.3", features = ["axum_extras", "uuid", "chrono"] }

@@ -1,0 +1,11 @@
+version: "0.5"
+extends: compose/base.yaml
+
+log_location: ./logs/serve.log
+
+processes:
+  server:
+    command: ../scripts/serve-release.sh
+    working_dir: ./server
+    availability:
+      restart: ${SERVER_RESTART:-on_failure}

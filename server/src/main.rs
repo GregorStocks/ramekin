@@ -14,6 +14,7 @@ use axum::http::Request;
 use axum::middleware;
 use axum::routing::post;
 use axum::Router;
+use listenfd::ListenFd;
 use opentelemetry::trace::TracerProvider;
 use opentelemetry_appender_tracing::layer::OpenTelemetryTracingBridge;
 use opentelemetry_otlp::WithExportConfig;
@@ -32,6 +33,12 @@ use utoipa_swagger_ui::SwaggerUi;
 
 /// Application state shared across all handlers
 pub type AppState = Arc<db::DbPool>;
+
+#[derive(Clone, Copy, Debug, Eq, PartialEq)]
+enum ListenerSource {
+    DirectBind,
+    SocketActivation,
+}
 
 /// Initialize telemetry with optional OpenTelemetry export.
 /// If OTEL_EXPORTER_OTLP_ENDPOINT is set and reachable, traces are sent to the collector.
@@ -130,6 +137,55 @@ fn init_telemetry() {
 
         tracing::debug!("OTEL_EXPORTER_OTLP_ENDPOINT not set, using console logging only");
     }
+}
+
+async fn bind_listener(port: u16) -> (tokio::net::TcpListener, ListenerSource) {
+    let mut listenfd = ListenFd::from_env();
+    if let Some(listener) = listenfd
+        .take_tcp_listener(0)
+        .expect("failed to read externally managed listener")
+    {
+        listener
+            .set_nonblocking(true)
+            .expect("failed to make externally managed listener nonblocking");
+        let listener = tokio::net::TcpListener::from_std(listener)
+            .expect("failed to convert externally managed listener");
+        return (listener, ListenerSource::SocketActivation);
+    }
+
+    let bind_addr = format!("0.0.0.0:{}", port);
+    tracing::debug!("Attempting to bind to {}", bind_addr);
+    let listener = tokio::net::TcpListener::bind(&bind_addr)
+        .await
+        .unwrap_or_else(|e| panic!("Failed to bind to {}: {}", bind_addr, e));
+    (listener, ListenerSource::DirectBind)
+}
+
+async fn shutdown_signal() {
+    let ctrl_c = async {
+        tokio::signal::ctrl_c()
+            .await
+            .expect("failed to listen for ctrl-c signal");
+    };
+
+    #[cfg(unix)]
+    {
+        let mut terminate =
+            tokio::signal::unix::signal(tokio::signal::unix::SignalKind::terminate())
+                .expect("failed to listen for terminate signal");
+
+        tokio::select! {
+            _ = ctrl_c => {},
+            _ = terminate.recv() => {},
+        }
+    }
+
+    #[cfg(not(unix))]
+    {
+        ctrl_c.await;
+    }
+
+    tracing::info!("Shutdown signal received, draining existing connections");
 }
 
 #[tokio::main]
@@ -271,14 +327,15 @@ async fn main() {
         .expect("PORT environment variable required")
         .parse()
         .expect("PORT must be a valid port number");
-    let bind_addr = format!("0.0.0.0:{}", port);
-    tracing::debug!("Attempting to bind to {}", bind_addr);
-    let listener = tokio::net::TcpListener::bind(&bind_addr)
-        .await
-        .unwrap_or_else(|e| panic!("Failed to bind to {}: {}", bind_addr, e));
+    let (listener, listener_source) = bind_listener(port).await;
     let addr = listener.local_addr().unwrap();
 
-    tracing::info!("Server listening on {}", addr);
+    match listener_source {
+        ListenerSource::DirectBind => tracing::info!("Server listening on {}", addr),
+        ListenerSource::SocketActivation => {
+            tracing::info!("Server listening on {} via socket activation", addr)
+        }
+    }
     tracing::info!(
         "Swagger UI available at http://localhost:{}/swagger-ui/",
         addr.port()
@@ -289,5 +346,84 @@ async fn main() {
     );
     tracing::info!("Hot reload is enabled!");
 
-    axum::serve(listener, app).await.unwrap();
+    axum::serve(listener, app)
+        .with_graceful_shutdown(shutdown_signal())
+        .await
+        .unwrap();
+}
+
+#[cfg(test)]
+mod tests {
+    use super::{bind_listener, ListenerSource};
+    use std::sync::{Mutex, OnceLock};
+
+    fn env_lock() -> &'static Mutex<()> {
+        static LOCK: OnceLock<Mutex<()>> = OnceLock::new();
+        LOCK.get_or_init(|| Mutex::new(()))
+    }
+
+    #[test]
+    fn bind_listener_falls_back_to_direct_bind_without_socket_activation() {
+        let _guard = env_lock().lock().unwrap();
+        unsafe {
+            std::env::remove_var("LISTEN_FDS");
+            std::env::remove_var("LISTEN_PID");
+        }
+
+        let runtime = tokio::runtime::Runtime::new().unwrap();
+        let (listener, source) = runtime.block_on(bind_listener(0));
+        let addr = listener.local_addr().unwrap();
+
+        assert_eq!(source, ListenerSource::DirectBind);
+        assert!(addr.port() > 0);
+    }
+
+    #[cfg(unix)]
+    #[test]
+    fn bind_listener_uses_socket_activation_when_listener_is_present() {
+        use std::os::fd::AsRawFd;
+
+        unsafe extern "C" {
+            fn close(fd: i32) -> i32;
+            fn dup(fd: i32) -> i32;
+            fn dup2(src: i32, dst: i32) -> i32;
+        }
+
+        struct FdRestore(i32);
+
+        impl Drop for FdRestore {
+            fn drop(&mut self) {
+                unsafe {
+                    if self.0 >= 0 {
+                        assert!(dup2(self.0, 3) >= 0, "failed to restore fd 3");
+                        assert_eq!(close(self.0), 0, "failed to close duplicated fd");
+                    } else {
+                        assert_eq!(close(3), 0, "failed to close fd 3");
+                    }
+                    std::env::remove_var("LISTEN_FDS");
+                    std::env::remove_var("LISTEN_PID");
+                }
+            }
+        }
+
+        let _guard = env_lock().lock().unwrap();
+        let std_listener = std::net::TcpListener::bind("127.0.0.1:0").unwrap();
+        let expected_addr = std_listener.local_addr().unwrap();
+        let restore = FdRestore(unsafe { dup(3) });
+
+        unsafe {
+            assert!(dup2(std_listener.as_raw_fd(), 3) >= 0, "failed to set fd 3");
+            std::env::set_var("LISTEN_FDS", "1");
+            std::env::remove_var("LISTEN_PID");
+        }
+
+        let runtime = tokio::runtime::Runtime::new().unwrap();
+        let (listener, source) = runtime.block_on(bind_listener(1));
+
+        assert_eq!(source, ListenerSource::SocketActivation);
+        assert_eq!(listener.local_addr().unwrap(), expected_addr);
+
+        drop(listener);
+        drop(restore);
+    }
 }
