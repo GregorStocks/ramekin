@@ -2,32 +2,32 @@
 
 ## Overall
 
-- Total URLs: 5536
-- Completed: 5449 (98.4%)
+- Total URLs: 5693
+- Completed: 5606 (98.5%)
 - Failed at fetch: 9 (0.2%)
 - Failed at extract: 78 (1.4%)
 
 ## Extraction Methods
 
-- JSON-LD: 4269/5527 (77.2%)
-- Microdata: 537/5527 (9.7%)
-- Both: 0/5527 (0.0%)
-- Neither: 721/5527 (13.0%)
+- JSON-LD: 4425/5684 (77.9%)
+- Microdata: 537/5684 (9.4%)
+- Both: 0/5684 (0.0%)
+- Neither: 722/5684 (12.7%)
 
 ## Ingredient Parsing
 
-- Total ingredients: 60915
-- Volume-to-weight converted: 15621/37509 (41.6%)
-- Unknown ingredient (no density data): 13027
-- Already has weight: 8861
-- No volume unit (count-based): 23137
-- Metric converted (oz→g): 2543
-- Metric converted (lb→g): 1710
+- Total ingredients: 62688
+- Volume-to-weight converted: 18618/44088 (42.2%)
+- Unknown ingredient (no density data): 15418
+- Already has weight: 10052
+- No volume unit (count-based): 18280
+- Metric converted (oz→g): 2786
+- Metric converted (lb→g): 1884
 
 ## AI Cache
 
-- Cache hits: 5445/5448 (99.9%)
-- API calls: 3/5448 (0.1%)
+- Cache hits: 5604/5604 (100.0%)
+- API calls: 0/5604 (0.0%)
 
 ## By Site
 
@@ -129,6 +129,21 @@
 | virtualweberbullet.com | 0 | 4 | 0.0% |
 | wellplated.com | 35 | 35 | 100.0% |
 | whiteonricecouple.com | 83 | 83 | 100.0% |
+| www.allrecipes.com | 4 | 4 | 100.0% |
+| www.americastestkitchen.com | 58 | 58 | 100.0% |
+| www.bonappetit.com | 4 | 4 | 100.0% |
+| www.bowlofdelicious.com | 1 | 1 | 100.0% |
+| www.delish.com | 1 | 1 | 100.0% |
+| www.dinneratthezoo.com | 1 | 1 | 100.0% |
+| www.foodnetwork.com | 1 | 1 | 100.0% |
+| www.halfbakedharvest.com | 5 | 5 | 100.0% |
+| www.japanesecooking101.com | 6 | 6 | 100.0% |
+| www.kingarthurbaking.com | 1 | 1 | 100.0% |
+| www.loveandlemons.com | 2 | 2 | 100.0% |
+| www.recipetineats.com | 1 | 1 | 100.0% |
+| www.runningwithspoons.com | 1 | 1 | 100.0% |
+| www.seriouseats.com | 69 | 69 | 100.0% |
+| www.thepioneerwoman.com | 2 | 2 | 100.0% |
 | yellowblissroad.com | 31 | 31 | 100.0% |
 
 ## Failed URLs by Error
