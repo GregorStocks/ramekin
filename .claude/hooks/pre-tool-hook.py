@@ -141,7 +141,7 @@ def _match_redirect_operator(s: str, i: int) -> str | None:
         start += 1
     tail = s[start:]
     # Order matters: longer operators first.
-    for op in ("&>>", "&>", "<<<", "<<", "<>", ">>|", ">>", ">|", ">", "<"):
+    for op in ("&>>", "&>", "<<<", "<<", "<>", ">>|", ">>", ">|", ">&", ">", "<"):
         if tail.startswith(op):
             # Reject a bare digit prefix for operators that don't take one
             # (e.g. leading digit before `&>` is nonsensical; fall through).
@@ -528,11 +528,18 @@ def _git_subcommand(
             continue
         subcmd = token
         rest = args[index + 1 :]
-        if subcmd in aliases:
+        # Chase alias chains (`alias.x=p`, `alias.p=push` → push) up to a
+        # bounded depth to guard against cycles.
+        seen: set[str] = set()
+        for _ in range(16):
+            if subcmd not in aliases or subcmd in seen:
+                break
+            seen.add(subcmd)
             alias_tokens = _shell_tokens(aliases[subcmd]) or []
-            if alias_tokens and not alias_tokens[0].startswith("!"):
-                subcmd = alias_tokens[0]
-                rest = alias_tokens[1:] + rest
+            if not alias_tokens or alias_tokens[0].startswith("!"):
+                break
+            subcmd = alias_tokens[0]
+            rest = alias_tokens[1:] + rest
         return subcmd, rest
     return None, []
 
@@ -628,6 +635,7 @@ def _branch_switch_target_for_checkout(args: list[str]) -> str | None:
     while index < len(args):
         token = args[index]
         if token == "--":
+            # `git checkout -- <path>` restores files, not a branch switch.
             return None
         if token == "-":
             return "__UNKNOWN__"
@@ -641,8 +649,15 @@ def _branch_switch_target_for_checkout(args: list[str]) -> str | None:
         if token.startswith("-"):
             index += 1
             continue
-        if "--" in args[index + 1 :]:
-            return None
+        # Positional. Check whether `--` appears later AND has pathspecs
+        # after it — that's `git checkout <branch> -- <paths>` restoring
+        # files (not a branch change). A trailing `--` with nothing after
+        # is still a branch switch.
+        remaining = args[index + 1 :]
+        if "--" in remaining:
+            sep_index = remaining.index("--")
+            if sep_index + 1 < len(remaining):
+                return None
         # Plain `git checkout <thing>` is ambiguous, but treating it as a
         # branch-changing flow is safer than silently permitting branch hops.
         return token
@@ -1099,8 +1114,9 @@ def command_uses_git_push(command: str) -> bool:
 
 # Output-redirection operators: `>`, `>>`, `N>`, `N>>`, `&>`, `&>>`,
 # `>|` / `N>|` (force-clobber), `<>` / `N<>` (read-write, which can create
-# a file). Ordered so longer/more-specific forms match first.
-_REDIRECT_OP_RE = re.compile(r"&>{1,2}|\d*>\||\d*<>|\d*>{1,2}")
+# a file), `>&word` (stdout+stderr to word when word is a file, not a fd).
+# Ordered so longer/more-specific forms match first.
+_REDIRECT_OP_RE = re.compile(r"&>{1,2}|\d*>&|\d*>\||\d*<>|\d*>{1,2}")
 
 
 def _redirect_write_targets(segment: str) -> list[str]:
