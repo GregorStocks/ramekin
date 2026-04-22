@@ -1,0 +1,37 @@
+{
+  "title": "Add HTML fallback extraction for Serious Eats pages with bad or \
+missing schema",
+  "description": "The 2026-04-22 Paprika export surfaced five \
+`seriouseats.com` URLs that fetch successfully but still fail in \
+`extract_recipe` because the Recipe JSON-LD is absent or incomplete. Observed \
+examples: `canederli-di-pane-italian-bread-dumpling-recipe-11679155`, \
+`roasted-cauliflower-soup-curry-cream-8748572`, \
+`the-best-classic-chicken-salad-recipe`, `toad-in-the-hole-recipe-11746714` \
+(JSON-LD missing `name`), and `food-lab-complete-guide-to-sous-vide-steak` \
+(article page with no recipe schema).\n\
+\n\
+Split this site out of the old umbrella issue and make it stand on its own. \
+The goal is that Serious Eats pages in this broken-schema bucket can still \
+produce snapshots instead of dying on `Missing required field` errors.\n\
+\n\
+Expected shape of the fix:\n\
+\n\
+  - add a fallback extraction path for Serious Eats pages where JSON-LD is     \
+missing required fields or absent entirely\n\
+  - make sure tests/fixtures cover both failure shapes: partial Recipe JSON-LD \
+    and recipe-in-article-body with no usable schema\n\
+  - rerun `make pipeline` and commit the resulting `data/` diffs if the     \
+extraction/parsing behavior changes\n\
+\n\
+This issue is complete when the known Serious Eats failures stop dropping out \
+of snapshot generation and the coverage is locked in with tests.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "pipeline",
+    "extraction",
+  ],
+  "created_at": "2026-04-22T14:35:51-07:00",
+  "updated_at": "2026-04-22T14:35:51-07:00",
+}
