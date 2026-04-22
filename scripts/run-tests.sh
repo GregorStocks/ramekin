@@ -3,6 +3,10 @@ set -e
 
 cd "$(dirname "$0")/.."
 
+# shellcheck source=/dev/null
+source ./scripts/repo-lock.sh
+acquire_repo_lock "${TEST_LOCK_NAME:-tests}" "test run"
+
 ENV_FILE="${TEST_ENV_FILE:-test.env}"
 ORIG_PROCESS_COMPOSE_PORT="${PROCESS_COMPOSE_PORT:-}"
 TEST_LOG_FILE="${TEST_LOG_FILE:-logs/test.log}"
