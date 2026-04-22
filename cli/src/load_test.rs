@@ -135,15 +135,17 @@ async fn create_user_and_recipes(
     let num_recipes = rng.random_range(50..=5000);
     let mut recipe_ids = Vec::new();
 
-    println!(
+    tracing::info!(
         "User {} ({}): Creating {} recipes",
-        user_num, username, num_recipes
+        user_num,
+        username,
+        num_recipes
     );
 
     for i in 0..num_recipes {
         // Progress update every 100 recipes
         if i > 0 && i % 100 == 0 {
-            println!("  User {}: Created {}/{} recipes", user_num, i, num_recipes);
+            tracing::info!("  User {}: Created {}/{} recipes", user_num, i, num_recipes);
         }
 
         // Pick a recipe template deterministically
@@ -253,9 +255,10 @@ async fn create_user_and_recipes(
         .context("Failed to update recipe")?;
     }
 
-    println!(
+    tracing::info!(
         "  User {}: Finished creating {} recipes, now loading pages in browser...",
-        user_num, num_recipes
+        user_num,
+        num_recipes
     );
 
     // Load pages in headless browser to simulate real usage and test frontend performance
@@ -309,7 +312,7 @@ async fn create_user_and_recipes(
 
     let recipe_duration = recipe_start.elapsed();
 
-    println!(
+    tracing::info!(
         "  User {}: Loaded cookbook ({} recipes) in {:.2}s, recipe page in {:.2}s",
         user_num,
         num_recipes,
@@ -332,13 +335,13 @@ pub async fn load_test(
         .unwrap()
         .as_secs();
 
-    println!("Starting load test:");
-    println!("  Server: {}", server);
-    println!("  UI URL: {}", ui_url);
-    println!("  Users: {}", num_users);
-    println!("  Concurrency: {}", concurrency);
-    println!("  Run ID: {}", run_id);
-    println!();
+    tracing::info!("Starting load test:");
+    tracing::info!("  Server: {}", server);
+    tracing::info!("  UI URL: {}", ui_url);
+    tracing::info!("  Users: {}", num_users);
+    tracing::info!("  Concurrency: {}", concurrency);
+    tracing::info!("  Run ID: {}", run_id);
+    tracing::info!("");
 
     let successes = Arc::new(AtomicUsize::new(0));
     let failures = Arc::new(AtomicUsize::new(0));
@@ -372,7 +375,7 @@ pub async fn load_test(
 
                     if count.is_multiple_of(10) {
                         let total = count + failures.load(Ordering::Relaxed);
-                        println!(
+                        tracing::info!(
                             "Progress: {}/{} users processed ({} success, {} failed)",
                             total,
                             num_users,
@@ -406,19 +409,19 @@ pub async fn load_test(
     let final_successes = successes.load(Ordering::Relaxed);
     let final_failures = failures.load(Ordering::Relaxed);
 
-    println!();
-    println!("Load test complete!");
-    println!("  Total users: {}", num_users);
-    println!("  Successful: {}", final_successes);
-    println!("  Failed: {}", final_failures);
+    tracing::info!("");
+    tracing::info!("Load test complete!");
+    tracing::info!("  Total users: {}", num_users);
+    tracing::info!("  Successful: {}", final_successes);
+    tracing::info!("  Failed: {}", final_failures);
 
     // Print user with most recipes
     let max_user = user_with_most_recipes.lock().unwrap();
     if max_user.2 > 0 {
-        println!();
-        println!("User with most recipes ({} recipes):", max_user.2);
-        println!("  Username: {}", max_user.0);
-        println!("  Password: {}", max_user.1);
+        tracing::info!("");
+        tracing::info!("User with most recipes ({} recipes):", max_user.2);
+        tracing::info!("  Username: {}", max_user.0);
+        tracing::info!("  Password: {}", max_user.1);
     }
 
     Ok(())

@@ -138,7 +138,7 @@ pub async fn generate_test_urls(
         ranked_sites
     };
 
-    println!("Found {} known food blog sites", ranked_sites.len());
+    tracing::info!("Found {} known food blog sites", ranked_sites.len());
 
     // Process sites
     let sites_to_process: Vec<_> = ranked_sites.into_iter().take(num_sites).collect();
@@ -149,7 +149,7 @@ pub async fn generate_test_urls(
         if !no_limit && site_filter.is_none() {
             if let Some(existing) = existing_sites.get(&site.domain) {
                 if existing.urls.len() >= urls_per_site && existing.source != UrlSource::Failed {
-                    println!(
+                    tracing::info!(
                         "[{}/{}] {} - already have {} URLs, skipping",
                         site.rank,
                         sites_to_process.len(),
@@ -162,7 +162,7 @@ pub async fn generate_test_urls(
             }
         }
 
-        println!(
+        tracing::info!(
             "[{}/{}] Processing {}...",
             site.rank,
             sites_to_process.len(),
@@ -178,7 +178,7 @@ pub async fn generate_test_urls(
             result
         };
 
-        println!(
+        tracing::info!(
             "  -> {} URLs (source: {:?})",
             final_entry.urls.len(),
             final_entry.source
@@ -193,7 +193,7 @@ pub async fn generate_test_urls(
     if merge {
         for (domain, entry) in &existing_sites {
             if !results.iter().any(|r| r.domain == *domain) {
-                println!("Preserving {} from previous run", domain);
+                tracing::info!("Preserving {} from previous run", domain);
                 results.push(entry.clone());
             }
         }
@@ -221,7 +221,7 @@ pub async fn generate_test_urls(
     }
 
     std::fs::write(output, &json)?;
-    println!(
+    tracing::info!(
         "\nWrote {} sites to {}",
         output_data.sites.len(),
         output.display()
@@ -234,7 +234,7 @@ pub async fn generate_test_urls(
         .iter()
         .filter(|s| s.source == UrlSource::Failed)
         .count();
-    println!("Total URLs: {}, Failed sites: {}", total_urls, failed_count);
+    tracing::info!("Total URLs: {}, Failed sites: {}", total_urls, failed_count);
 
     Ok(())
 }
@@ -292,10 +292,10 @@ pub fn refilter_test_urls(path: &Path, _min_year: u32) -> Result<()> {
         });
 
         for url in &removed {
-            println!("  REMOVED [{}]: {}", site.domain, url);
+            tracing::info!("  REMOVED [{}]: {}", site.domain, url);
         }
         if deduped > 0 {
-            println!("  DEDUPED [{}]: {} duplicates", site.domain, deduped);
+            tracing::info!("  DEDUPED [{}]: {} duplicates", site.domain, deduped);
         }
 
         total_deduped += deduped;
@@ -303,15 +303,15 @@ pub fn refilter_test_urls(path: &Path, _min_year: u32) -> Result<()> {
     }
 
     let total_urls: usize = data.sites.iter().map(|s| s.urls.len()).sum();
-    println!();
-    println!("Deduped: {} URLs", total_deduped);
-    println!("Removed: {} URLs", total_removed);
-    println!("Total remaining: {}", total_urls);
+    tracing::info!("");
+    tracing::info!("Deduped: {} URLs", total_deduped);
+    tracing::info!("Removed: {} URLs", total_removed);
+    tracing::info!("Total remaining: {}", total_urls);
 
     // Write back
     let json = serde_json::to_string_pretty(&data)?;
     std::fs::write(path, &json)?;
-    println!("Wrote filtered URLs to {}", path.display());
+    tracing::info!("Wrote filtered URLs to {}", path.display());
 
     Ok(())
 }

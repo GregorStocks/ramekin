@@ -108,7 +108,7 @@ pub async fn run(
         + "\n";
     fs::write(titles_file, titles_blob)
         .with_context(|| format!("Failed to write {}", titles_file.display()))?;
-    println!(
+    tracing::info!(
         "Wrote {} titles to {}",
         entries.len(),
         titles_file.display()
@@ -129,7 +129,7 @@ pub async fn run(
         let normalized = result.normalized_title.trim();
         lines.push(format!("{} -> {}", entry.title, normalized));
         if (idx + 1) % 50 == 0 {
-            println!(
+            tracing::info!(
                 "  processed {}/{} ({} cached)",
                 idx + 1,
                 entries.len(),
@@ -144,7 +144,7 @@ pub async fn run(
     fs::write(output_file, lines.join("\n") + "\n")
         .with_context(|| format!("Failed to write {}", output_file.display()))?;
 
-    println!(
+    tracing::info!(
         "Wrote {} normalized titles to {} ({} cached, {} called AI)",
         lines.len(),
         output_file.display(),

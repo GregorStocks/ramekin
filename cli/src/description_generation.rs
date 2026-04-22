@@ -107,7 +107,7 @@ pub async fn run(paprika_file: &Path, output_file: &Path, limit: Option<usize>) 
         let description = result.description.trim();
         lines.push(format!("{} -> {}", entry.title, description));
         if (idx + 1) % 50 == 0 {
-            println!(
+            tracing::info!(
                 "  processed {}/{} ({} cached)",
                 idx + 1,
                 entries.len(),
@@ -122,7 +122,7 @@ pub async fn run(paprika_file: &Path, output_file: &Path, limit: Option<usize>) 
     fs::write(output_file, lines.join("\n") + "\n")
         .with_context(|| format!("Failed to write {}", output_file.display()))?;
 
-    println!(
+    tracing::info!(
         "Wrote {} descriptions to {} ({} cached, {} called AI)",
         lines.len(),
         output_file.display(),

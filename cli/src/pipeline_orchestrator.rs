@@ -231,7 +231,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         tags = user_tags.len(),
         "loaded tag allowlist"
     );
-    println!(
+    tracing::info!(
         "Loaded {} tags from {}",
         user_tags.len(),
         config.tags_file.display()
@@ -272,27 +272,27 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         "built step registry"
     );
 
-    println!("Pipeline Test Starting");
-    println!("======================");
-    println!("Run ID: {}", run_id);
-    println!("URLs to process: {}", total_urls);
-    println!();
+    tracing::info!("Pipeline Test Starting");
+    tracing::info!("======================");
+    tracing::info!("Run ID: {}", run_id);
+    tracing::info!("URLs to process: {}", total_urls);
+    tracing::info!("");
 
     // In prompt mode, ensure staging directory exists and is empty
     // Also force concurrency=1 since interactive prompts don't work well with parallelism
     let concurrency = if matches!(config.on_fetch_fail, OnFetchFail::Prompt) {
         ensure_staging_dir()?;
         clear_staging()?;
-        println!(
+        tracing::info!(
             "Interactive mode: save HTML files to {}",
             staging_dir().display()
         );
-        println!("(concurrency forced to 1 for interactive mode)");
-        println!();
+        tracing::info!("(concurrency forced to 1 for interactive mode)");
+        tracing::info!("");
         1
     } else {
-        println!("Concurrency: {}", config.concurrency);
-        println!();
+        tracing::info!("Concurrency: {}", config.concurrency);
+        tracing::info!("");
         config.concurrency
     };
 
@@ -336,11 +336,11 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
 
                 // Print progress
                 if force_refetch {
-                    println!("{} {} (force refetch)", progress, truncate_url(&url, 60));
+                    tracing::info!("{} {} (force refetch)", progress, truncate_url(&url, 60));
                 } else if needs_fetch {
-                    println!("{} {} (fetching...)", progress, truncate_url(&url, 60));
+                    tracing::info!("{} {} (fetching...)", progress, truncate_url(&url, 60));
                 } else {
-                    println!("{} {} (cached)", progress, truncate_url(&url, 60));
+                    tracing::info!("{} {} (cached)", progress, truncate_url(&url, 60));
                 }
 
                 // Run all steps
@@ -363,7 +363,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
                 if fetch_failed {
                     match on_fetch_fail {
                         OnFetchFail::Skip => {
-                            println!("  -> Skipped (fetch failed)");
+                            tracing::info!("  -> Skipped (fetch failed)");
                             return None;
                         }
                         OnFetchFail::Prompt => {
@@ -493,36 +493,36 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     save_manifest(&run_dir, &final_manifest)?;
 
     // Print summary
-    println!();
-    println!("Pipeline Test Results");
-    println!("=====================");
-    println!("Run ID: {}", run_id);
-    println!("Duration: {:.1}s", elapsed.as_secs_f64());
-    println!("URLs Processed: {}", results.total_urls);
-    println!();
-    println!("Phase Timing (wall clock):");
-    println!(
+    tracing::info!("");
+    tracing::info!("Pipeline Test Results");
+    tracing::info!("=====================");
+    tracing::info!("Run ID: {}", run_id);
+    tracing::info!("Duration: {:.1}s", elapsed.as_secs_f64());
+    tracing::info!("URLs Processed: {}", results.total_urls);
+    tracing::info!("");
+    tracing::info!("Phase Timing (wall clock):");
+    tracing::info!(
         "  {:26} {:>7.1}s",
         "URL processing",
         processing_elapsed.as_secs_f64()
     );
-    println!(
+    tracing::info!(
         "    (of which intermediate results.json writes held the mutex for {:.1}s)",
         intermediate_save_ms as f64 / 1000.0
     );
-    println!(
+    tracing::info!(
         "  {:26} {:>7.1}s",
         "Final results.json write",
         final_save_elapsed.as_secs_f64()
     );
-    println!(
+    tracing::info!(
         "  {:26} {:>7.1}s",
         "Snapshot write",
         snapshot_elapsed.as_secs_f64()
     );
     let accounted = processing_elapsed + final_save_elapsed + snapshot_elapsed;
     let unaccounted = elapsed.saturating_sub(accounted);
-    println!(
+    tracing::info!(
         "  {:26} {:>7.1}s  (setup + everything not covered above)",
         "Unaccounted",
         unaccounted.as_secs_f64()
@@ -537,7 +537,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         .sum();
     let wall_ms = processing_elapsed.as_millis() as u64;
     if wall_ms > 0 {
-        println!(
+        tracing::info!(
             "  {:26} {:>7.2}x  (sum of step times = {:.1}s; configured concurrency = {})",
             "Effective concurrency",
             sum_step_ms as f64 / wall_ms as f64,
@@ -545,9 +545,9 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             config.concurrency
         );
     }
-    println!();
-    println!("Cache Stats:");
-    println!(
+    tracing::info!("");
+    tracing::info!("Cache Stats:");
+    tracing::info!(
         "  HTML cache hits: {} ({:.1}%)",
         results.cache_hits,
         if results.total_urls > 0 {
@@ -556,19 +556,19 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             0.0
         }
     );
-    println!("  HTML cache misses: {} (fetched)", results.cache_misses);
+    tracing::info!("  HTML cache misses: {} (fetched)", results.cache_misses);
     let ai_total = results.ai_cache_hits + results.ai_cache_misses;
     if ai_total > 0 {
-        println!(
+        tracing::info!(
             "  AI cache hits: {} ({:.1}%)",
             results.ai_cache_hits,
             results.ai_cache_hits as f64 / ai_total as f64 * 100.0
         );
-        println!("  AI cache misses: {} (API calls)", results.ai_cache_misses);
+        tracing::info!("  AI cache misses: {} (API calls)", results.ai_cache_misses);
     }
-    println!();
-    println!("Overall Results:");
-    println!(
+    tracing::info!("");
+    tracing::info!("Overall Results:");
+    tracing::info!(
         "  Completed: {} ({:.1}%)",
         results.completed,
         if results.total_urls > 0 {
@@ -577,7 +577,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             0.0
         }
     );
-    println!(
+    tracing::info!(
         "  Failed at fetch_html: {} ({:.1}%)",
         results.failed_at_fetch,
         if results.total_urls > 0 {
@@ -586,7 +586,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             0.0
         }
     );
-    println!(
+    tracing::info!(
         "  Failed at extract_recipe: {} ({:.1}%)",
         results.failed_at_extract,
         if results.total_urls > 0 {
@@ -595,7 +595,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             0.0
         }
     );
-    println!(
+    tracing::info!(
         "  Failed at save_recipe: {} ({:.1}%)",
         results.failed_at_save,
         if results.total_urls > 0 {
@@ -604,8 +604,8 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             0.0
         }
     );
-    println!();
-    println!("Results by Site:");
+    tracing::info!("");
+    tracing::info!("Results by Site:");
 
     // Sort sites by completion rate
     let mut sites: Vec<_> = results.by_site.values().collect();
@@ -631,73 +631,77 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         } else {
             0.0
         };
-        println!(
+        tracing::info!(
             "  {}: {}/{} ({:.1}%)",
-            site.domain, site.completed, site.total, rate
+            site.domain,
+            site.completed,
+            site.total,
+            rate
         );
     }
 
-    println!();
-    println!("Extraction Method Stats:");
+    tracing::info!("");
+    tracing::info!("Extraction Method Stats:");
     let ems = &results.extraction_method_stats;
     if ems.urls_with_html > 0 {
-        println!(
+        tracing::info!(
             "  JSON-LD: {}/{} ({:.1}%)",
             ems.jsonld_success,
             ems.urls_with_html,
             ems.jsonld_success as f64 / ems.urls_with_html as f64 * 100.0
         );
-        println!(
+        tracing::info!(
             "  Microdata: {}/{} ({:.1}%)",
             ems.microdata_success,
             ems.urls_with_html,
             ems.microdata_success as f64 / ems.urls_with_html as f64 * 100.0
         );
-        println!(
+        tracing::info!(
             "  Both: {}/{} ({:.1}%)",
             ems.both_success,
             ems.urls_with_html,
             ems.both_success as f64 / ems.urls_with_html as f64 * 100.0
         );
-        println!(
+        tracing::info!(
             "  Neither: {}/{} ({:.1}%)",
             ems.neither_success,
             ems.urls_with_html,
             ems.neither_success as f64 / ems.urls_with_html as f64 * 100.0
         );
     } else {
-        println!("  (no HTML fetched)");
+        tracing::info!("  (no HTML fetched)");
     }
 
     // Print ingredient parsing stats
     let ips = &results.ingredient_stats;
     if ips.total_ingredients > 0 {
-        println!();
-        println!("Ingredient Parsing Stats:");
-        println!("  Total ingredients: {}", ips.total_ingredients);
+        tracing::info!("");
+        tracing::info!("Ingredient Parsing Stats:");
+        tracing::info!("  Total ingredients: {}", ips.total_ingredients);
 
         let volume_attempted =
             ips.volume_converted + ips.volume_unknown_ingredient + ips.volume_already_has_weight;
         if volume_attempted > 0 {
-            println!(
+            tracing::info!(
                 "  Volume→weight converted: {}/{} ({:.1}%)",
                 ips.volume_converted,
                 volume_attempted,
                 ips.volume_converted as f64 / volume_attempted as f64 * 100.0
             );
-            println!(
+            tracing::info!(
                 "  Unknown ingredient (no density): {}",
                 ips.volume_unknown_ingredient
             );
         }
-        println!("  Already has weight: {}", ips.volume_already_has_weight);
-        println!("  No volume unit: {}", ips.volume_no_volume);
+        tracing::info!("  Already has weight: {}", ips.volume_already_has_weight);
+        tracing::info!("  No volume unit: {}", ips.volume_no_volume);
 
         let metric_total = ips.metric_converted_oz + ips.metric_converted_lb;
         if metric_total > 0 {
-            println!(
+            tracing::info!(
                 "  Metric converted: {} oz→g, {} lb→g",
-                ips.metric_converted_oz, ips.metric_converted_lb
+                ips.metric_converted_oz,
+                ips.metric_converted_lb
             );
         }
     }
@@ -705,8 +709,8 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     // Print step timing summary
     print_timing_summary(&results);
 
-    println!();
-    println!("Artifacts saved to: {}", run_dir.display());
+    tracing::info!("");
+    tracing::info!("Artifacts saved to: {}", run_dir.display());
 
     Ok(results)
 }
@@ -891,8 +895,8 @@ fn print_timing_summary(results: &PipelineResults) {
         return;
     }
 
-    println!();
-    println!("Step Timing Summary:");
+    tracing::info!("");
+    tracing::info!("Step Timing Summary:");
 
     // Order for consistent display
     let step_order = [
@@ -920,7 +924,7 @@ fn print_timing_summary(results: &PipelineResults) {
             let p50 = percentile(times, 50);
             let p95 = percentile(times, 95);
 
-            println!(
+            tracing::info!(
                 "  {:30} avg={:>6.0}ms  p50={:>6.0}ms  p95={:>6.0}ms  max={:>6}ms  total={:>7.1}s  (n={})",
                 step_name,
                 avg,
@@ -933,7 +937,7 @@ fn print_timing_summary(results: &PipelineResults) {
         }
     }
 
-    println!(
+    tracing::info!(
         "  {:30} {:>54.1}s",
         "TOTAL (sum of step times)",
         grand_total_ms as f64 / 1000.0
@@ -963,19 +967,22 @@ async fn prompt_for_manual_cache(
 ) -> Result<Option<AllStepsResult>> {
     let staging = staging_dir();
 
-    println!();
-    println!("  ┌─────────────────────────────────────────────────────────────┐");
-    println!("  │ Fetch failed - manual cache needed                          │");
-    println!("  └─────────────────────────────────────────────────────────────┘");
-    println!();
-    println!("  URL: {}", url);
-    println!();
-    println!("  To cache this page:");
-    println!("  1. Open the URL above in your browser");
-    println!("  2. Save the page (Cmd+S / Ctrl+S) to:");
-    println!("     {}", staging.display());
-    println!();
-    print!("  Waiting for .html file... (or type 'skip' + Enter): ");
+    tracing::info!("");
+    tracing::info!("  ┌─────────────────────────────────────────────────────────────┐");
+    tracing::info!("  │ Fetch failed - manual cache needed                          │");
+    tracing::info!("  └─────────────────────────────────────────────────────────────┘");
+    tracing::info!("");
+    tracing::info!("  URL: {}", url);
+    tracing::info!("");
+    tracing::info!("  To cache this page:");
+    tracing::info!("  1. Open the URL above in your browser");
+    tracing::info!("  2. Save the page (Cmd+S / Ctrl+S) to:");
+    tracing::info!("     {}", staging.display());
+    tracing::info!("");
+    write!(
+        io::stdout(),
+        "  Waiting for .html file... (or type 'skip' + Enter): "
+    )?;
     io::stdout().flush()?;
 
     // Clear any existing files in staging
@@ -1005,25 +1012,25 @@ async fn prompt_for_manual_cache(
             stdin_handle.abort();
 
             // Import the file
-            println!();
-            println!("  Found: {}", staged_file.display());
+            tracing::info!("");
+            tracing::info!("  Found: {}", staged_file.display());
 
             // Read the HTML and inject into cache
             match fs::read_to_string(&staged_file) {
                 Ok(html) => {
                     if let Err(e) = client.inject_html(url, &html) {
                         tracing::warn!(error = %e, "Failed to cache HTML");
-                        println!("  Failed to cache: {}", e);
-                        println!("  Continuing with failed status...");
-                        println!();
+                        tracing::info!("  Failed to cache: {}", e);
+                        tracing::info!("  Continuing with failed status...");
+                        tracing::info!("");
                         return Ok(None);
                     }
 
                     // Remove the staged file
                     let _ = fs::remove_file(&staged_file);
 
-                    println!("  Cached successfully, retrying pipeline...");
-                    println!();
+                    tracing::info!("  Cached successfully, retrying pipeline...");
+                    tracing::info!("");
 
                     // Re-run all steps (should hit cache now)
                     let new_results =
@@ -1032,9 +1039,9 @@ async fn prompt_for_manual_cache(
                 }
                 Err(e) => {
                     tracing::warn!(error = %e, "Failed to read staged HTML file");
-                    println!("  Failed to read file: {}", e);
-                    println!("  Continuing with failed status...");
-                    println!();
+                    tracing::info!("  Failed to read file: {}", e);
+                    tracing::info!("  Continuing with failed status...");
+                    tracing::info!("");
                     return Ok(None);
                 }
             }
@@ -1044,9 +1051,9 @@ async fn prompt_for_manual_cache(
         match rx.try_recv() {
             Ok(line) => {
                 if line.trim().eq_ignore_ascii_case("skip") || line.trim().is_empty() {
-                    println!();
-                    println!("  Skipped by user");
-                    println!();
+                    tracing::info!("");
+                    tracing::info!("  Skipped by user");
+                    tracing::info!("");
                     return Ok(None);
                 }
             }
@@ -1072,12 +1079,12 @@ pub fn print_cache_stats(cache_dir: &Path) {
     let cache = DiskCache::new(cache_dir.to_path_buf());
     let stats = cache.stats();
 
-    println!("HTTP Cache Statistics");
-    println!("=====================");
-    println!("Cache directory: {}", cache_dir.display());
-    println!("Cached responses (success): {}", stats.cached_success);
-    println!("Cached errors: {}", stats.cached_errors);
-    println!(
+    tracing::info!("HTTP Cache Statistics");
+    tracing::info!("=====================");
+    tracing::info!("Cache directory: {}", cache_dir.display());
+    tracing::info!("Cached responses (success): {}", stats.cached_success);
+    tracing::info!("Cached errors: {}", stats.cached_errors);
+    tracing::info!(
         "Total entries: {}",
         stats.cached_success + stats.cached_errors
     );
@@ -1086,7 +1093,7 @@ pub fn print_cache_stats(cache_dir: &Path) {
 pub fn clear_cache(cache_dir: &Path) -> Result<()> {
     let cache = DiskCache::new(cache_dir.to_path_buf());
     cache.clear()?;
-    println!("Cache cleared: {}", cache_dir.display());
+    tracing::info!("Cache cleared: {}", cache_dir.display());
     Ok(())
 }
 

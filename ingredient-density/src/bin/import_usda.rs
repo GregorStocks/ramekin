@@ -1,3 +1,4 @@
+#![allow(clippy::print_stderr)]
 //! Import USDA FoodData Central data to generate usda.json.
 //!
 //! Usage:
