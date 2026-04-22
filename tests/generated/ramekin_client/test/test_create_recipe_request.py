@@ -47,7 +47,6 @@ class TestCreateRecipeRequest(unittest.TestCase):
                                 unit = '', )
                             ], 
                         note = '', 
-                        raw = '', 
                         section = '', )
                     ],
                 instructions = '',
@@ -78,7 +77,6 @@ class TestCreateRecipeRequest(unittest.TestCase):
                                 unit = '', )
                             ], 
                         note = '', 
-                        raw = '', 
                         section = '', )
                     ],
                 instructions = '',

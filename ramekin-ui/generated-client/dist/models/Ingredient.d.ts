@@ -35,12 +35,6 @@ export interface Ingredient {
      */
     note?: string | null;
     /**
-     * Original unparsed text for debugging
-     * @type {string}
-     * @memberof Ingredient
-     */
-    raw?: string | null;
-    /**
      * Section name for grouping (e.g., "For the sauce", "For the dough")
      * @type {string}
      * @memberof Ingredient

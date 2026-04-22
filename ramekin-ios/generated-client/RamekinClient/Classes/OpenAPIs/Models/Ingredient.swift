@@ -19,16 +19,13 @@ public struct Ingredient: Codable, JSONEncodable, Hashable {
     public var measurements: [Measurement]
     /** Preparation notes (e.g., \"chopped\", \"softened\", \"optional\") */
     public var note: String?
-    /** Original unparsed text for debugging */
-    public var raw: String?
     /** Section name for grouping (e.g., \"For the sauce\", \"For the dough\") */
     public var section: String?
 
-    public init(item: String, measurements: [Measurement], note: String? = nil, raw: String? = nil, section: String? = nil) {
+    public init(item: String, measurements: [Measurement], note: String? = nil, section: String? = nil) {
         self.item = item
         self.measurements = measurements
         self.note = note
-        self.raw = raw
         self.section = section
     }
 
@@ -36,7 +33,6 @@ public struct Ingredient: Codable, JSONEncodable, Hashable {
         case item
         case measurements
         case note
-        case raw
         case section
     }
 
@@ -47,7 +43,6 @@ public struct Ingredient: Codable, JSONEncodable, Hashable {
         try container.encode(item, forKey: .item)
         try container.encode(measurements, forKey: .measurements)
         try container.encodeIfPresent(note, forKey: .note)
-        try container.encodeIfPresent(raw, forKey: .raw)
         try container.encodeIfPresent(section, forKey: .section)
     }
 }

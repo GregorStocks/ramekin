@@ -33,7 +33,6 @@ export function IngredientFromJSONTyped(json, ignoreDiscriminator) {
         'item': json['item'],
         'measurements': (json['measurements'].map(MeasurementFromJSON)),
         'note': json['note'] == null ? undefined : json['note'],
-        'raw': json['raw'] == null ? undefined : json['raw'],
         'section': json['section'] == null ? undefined : json['section'],
     };
 }
@@ -48,7 +47,6 @@ export function IngredientToJSONTyped(value, ignoreDiscriminator = false) {
         'item': value['item'],
         'measurements': (value['measurements'].map(MeasurementToJSON)),
         'note': value['note'],
-        'raw': value['raw'],
         'section': value['section'],
     };
 }

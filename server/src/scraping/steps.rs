@@ -346,7 +346,6 @@ impl PipelineStep for SaveRecipeStep {
                         item: line.trim().to_string(),
                         measurements: vec![],
                         note: None,
-                        raw: None,
                         section: None,
                     })
                     .collect()

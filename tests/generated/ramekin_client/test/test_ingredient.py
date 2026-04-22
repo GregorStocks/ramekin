@@ -42,7 +42,6 @@ class TestIngredient(unittest.TestCase):
                         unit = '', )
                     ],
                 note = '',
-                raw = '',
                 section = ''
             )
         else:

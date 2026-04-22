@@ -52,7 +52,6 @@ class TestCustomEnrichRequest(unittest.TestCase):
                                     unit = '', )
                                 ], 
                             note = '', 
-                            raw = '', 
                             section = '', )
                         ], 
                     instructions = '', 
@@ -85,7 +84,6 @@ class TestCustomEnrichRequest(unittest.TestCase):
                                     unit = '', )
                                 ], 
                             note = '', 
-                            raw = '', 
                             section = '', )
                         ], 
                     instructions = '', 

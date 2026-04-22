@@ -3016,13 +3016,6 @@
             ],
             "description": "Preparation notes (e.g., \"chopped\", \"softened\", \"optional\")"
           },
-          "raw": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "Original unparsed text for debugging"
-          },
           "section": {
             "type": [
               "string",

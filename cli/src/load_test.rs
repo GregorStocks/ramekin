@@ -164,7 +164,6 @@ async fn create_user_and_recipes(
                     unit: Some(Some(unit.to_string())),
                 }],
                 note: None,
-                raw: None,
                 section: None,
             })
             .collect();
