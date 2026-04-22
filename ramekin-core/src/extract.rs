@@ -993,12 +993,13 @@ fn normalized_block_section_title(title: &str) -> Option<String> {
         return None;
     }
 
-    let mut candidates = vec![trimmed.to_string()];
+    let mut candidates = vec![trimmed.trim_end_matches(':').trim().to_string()];
     let stripped = TRAILING_TITLE_QUALIFIER_RE
         .replace(trimmed, "")
+        .trim_end_matches(':')
         .trim()
         .to_string();
-    if !stripped.is_empty() && stripped != trimmed {
+    if !stripped.is_empty() && stripped != candidates[0] {
         candidates.push(stripped);
     }
 
@@ -1010,6 +1011,48 @@ fn normalized_block_section_title(title: &str) -> Option<String> {
     }
 
     None
+}
+
+fn underlined_section_title(title: &str) -> Option<String> {
+    let trimmed = title.trim();
+    if trimmed.is_empty() {
+        return None;
+    }
+
+    let stripped = TRAILING_TITLE_QUALIFIER_RE
+        .replace(trimmed, "")
+        .trim_end_matches(':')
+        .trim()
+        .to_string();
+    let mut candidates = Vec::new();
+    if !stripped.is_empty() {
+        candidates.push(stripped);
+    }
+    let trimmed_without_colon = trimmed.trim_end_matches(':').trim();
+    if trimmed_without_colon != candidates.first().map(String::as_str).unwrap_or_default() {
+        candidates.push(trimmed_without_colon.to_string());
+    }
+
+    for candidate in candidates {
+        let header = format!("{candidate}:");
+        if detect_section_header(&header).is_some() {
+            return Some(candidate);
+        }
+    }
+
+    None
+}
+
+fn extract_underlined_section_title(part: &str, header: &str) -> Option<String> {
+    let text = HTML_TAG_REGEX.replace_all(part, "");
+    let text = decode_html_entities(text.trim());
+    let suffix = text.strip_prefix(header)?.trim();
+
+    if !suffix.is_empty() && !TRAILING_TITLE_QUALIFIER_RE.is_match(suffix) {
+        return None;
+    }
+
+    underlined_section_title(&text)
 }
 
 /// Extract a recipe from an unstructured blog post.
@@ -1335,25 +1378,35 @@ fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<String>) {
             // Empty/markup-only fragments before it (e.g. stray `<span>` or
             // `&nbsp;`) don't disqualify it — that's why we gate on whether
             // we've produced a text line yet, not the raw BR index.
-            // If there's non-empty text after the `</u>`, treat the `<u>` as
-            // inline emphasis (e.g. `<u>Note:</u> whisk well`).
-            if !seen_text_line && !header.is_empty() && after_text.is_empty() {
+            // If there's non-empty text after the `</u>`, only keep treating
+            // it as a header when the suffix is just a trailing qualifier
+            // like "(enough for 9 tarts)".
+            if !seen_text_line && !header.is_empty() {
                 let decoded = decode_html_entities(header);
-                if decoded.ends_with(':') {
-                    lines.push(decoded);
+                let section_title = if after_text.is_empty() {
+                    underlined_section_title(&decoded)
                 } else {
-                    lines.push(format!("{}:", decoded));
-                }
-                seen_text_line = true;
-            } else {
-                // Inline emphasis or non-leading <u>: keep as a plain
-                // ingredient line.
-                let text = HTML_TAG_REGEX.replace_all(part, "");
-                let text = text.trim();
-                if !text.is_empty() {
-                    lines.push(decode_html_entities(text));
+                    extract_underlined_section_title(part, &decoded)
+                };
+
+                if let Some(section_title) = section_title {
+                    if section_title.ends_with(':') {
+                        lines.push(section_title);
+                    } else {
+                        lines.push(format!("{section_title}:"));
+                    }
                     seen_text_line = true;
+                    continue;
                 }
+            }
+
+            // Inline emphasis or non-leading <u>: keep as a plain ingredient
+            // line.
+            let text = HTML_TAG_REGEX.replace_all(part, "");
+            let text = text.trim();
+            if !text.is_empty() {
+                lines.push(decode_html_entities(text));
+                seen_text_line = true;
             }
         } else {
             let text = HTML_TAG_REGEX.replace_all(part, "");
@@ -2409,6 +2462,62 @@ mod tests {
             !result.ingredients.contains("Olive oil:"),
             "<u> emphasis mid-chunk must not become a section header, got:\n{}",
             result.ingredients
+        );
+    }
+
+    #[test]
+    fn test_unstructured_blog_u_header_with_parenthetical_qualifier() {
+        let html = r#"
+            <html><body>
+                <p><b>Homemade Pop Tarts</b></p>
+                <p><u>Pastry</u><br />2 cups flour<br />1 egg</p>
+                <p><u>Cinnamon Filling</u> (enough for 9 tarts)<br />1/2 cup brown sugar<br />1 teaspoon cinnamon</p>
+                <p>Mix and bake.</p>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://smittenkitchen.com/recipe").unwrap();
+        let ingredient_lines: Vec<&str> = result.ingredients.lines().collect();
+
+        assert_eq!(ingredient_lines[0], "Pastry:");
+        assert_eq!(ingredient_lines[1], "2 cups flour");
+        assert_eq!(ingredient_lines[2], "1 egg");
+        assert_eq!(ingredient_lines[3], "Cinnamon Filling:");
+        assert_eq!(ingredient_lines[4], "1/2 cup brown sugar");
+        assert_eq!(ingredient_lines[5], "1 teaspoon cinnamon");
+        assert!(!result
+            .ingredients
+            .contains("Cinnamon Filling (enough for 9 tarts)"));
+    }
+
+    #[test]
+    fn test_unstructured_blog_u_header_preserves_existing_colon() {
+        let html = r#"
+            <html><body>
+                <p><b>Recipe</b></p>
+                <p><u>For the Sauce:</u><br />1 cup cream<br />1 teaspoon salt</p>
+                <p>Whisk everything together until combined.</p>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/r").unwrap();
+        assert!(
+            result.ingredients.contains("For the Sauce:\n1 cup cream"),
+            "expected a single colon in the emitted header, got:\n{}",
+            result.ingredients
+        );
+        assert!(!result.ingredients.contains("For the Sauce::"));
+    }
+
+    #[test]
+    fn test_underlined_section_title_returns_normalized_name() {
+        assert_eq!(
+            underlined_section_title("For the Sauce:"),
+            Some("For the Sauce".to_string())
+        );
+        assert_eq!(
+            underlined_section_title("Cinnamon Filling (enough for 9 tarts)"),
+            Some("Cinnamon Filling".to_string())
         );
     }
 
