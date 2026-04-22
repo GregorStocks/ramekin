@@ -402,10 +402,17 @@ impl Write for ChannelWriter {
 }
 
 /// Write every recipe in `recipes` as a .paprikarecipe entry to a streaming
-/// ZIP. Any per-recipe failure is logged and skipped; only a write error
-/// (client disconnect) aborts the stream.
+/// ZIP. Per-recipe content-level failures (e.g. DB error fetching photos,
+/// zip metadata rejection) are logged and skipped; writer IO errors (client
+/// disconnect surfacing as a broken pipe from ChannelWriter) abort the
+/// stream so we don't keep doing expensive DB/CPU work with nowhere to send
+/// the bytes.
+///
+/// A fresh DB connection is checked out per recipe and dropped before the
+/// (potentially slow, backpressured) zip write, so a slow client can't pin
+/// a pool connection for the whole download.
 fn write_zip_stream(
-    conn: &mut DbConn,
+    pool: &DbPool,
     user_id: Uuid,
     recipes: &[RecipeWithVersion],
     tx: mpsc::Sender<Result<Bytes, io::Error>>,
@@ -420,27 +427,50 @@ fn write_zip_stream(
 
     let mut total_entry_bytes: u64 = 0;
     for recipe in recipes {
-        let exported = match export_recipe_to_paprikarecipe(conn, user_id, recipe) {
-            Ok(e) => e,
+        // Short-lived per-recipe connection: held during the DB fetch and
+        // in-memory encoding, released before the slow zip write.
+        let exported = {
+            let mut conn = match pool.get() {
+                Ok(c) => c,
+                Err(e) => {
+                    tracing::warn!(
+                        recipe_id = %recipe.id,
+                        title = %recipe.version.title,
+                        error = %e,
+                        "failed to acquire db connection for recipe; skipping"
+                    );
+                    continue;
+                }
+            };
+            match export_recipe_to_paprikarecipe(&mut conn, user_id, recipe) {
+                Ok(e) => e,
+                Err(e) => {
+                    tracing::warn!(
+                        recipe_id = %recipe.id,
+                        title = %recipe.version.title,
+                        error = %e,
+                        "failed to export recipe; skipping"
+                    );
+                    continue;
+                }
+            }
+        };
+
+        // start_file writes the entry header via ChannelWriter, so an IO
+        // error here almost always means the client has gone away. Propagate
+        // it so we abort rather than spinning on the rest of the library.
+        match zip.start_file(&exported.filename, options) {
+            Ok(()) => {}
+            Err(zip::result::ZipError::Io(e)) => return Err(e),
             Err(e) => {
                 tracing::warn!(
                     recipe_id = %recipe.id,
                     title = %recipe.version.title,
                     error = %e,
-                    "failed to export recipe; skipping"
+                    "failed to start zip entry; skipping"
                 );
                 continue;
             }
-        };
-
-        if let Err(e) = zip.start_file(&exported.filename, options) {
-            tracing::warn!(
-                recipe_id = %recipe.id,
-                title = %recipe.version.title,
-                error = %e,
-                "failed to start zip entry; skipping"
-            );
-            continue;
         }
         let entry_bytes = exported.data.len() as u64;
         zip.write_all(&exported.data)?;
@@ -519,15 +549,7 @@ pub async fn export_all_recipes(
 
     let pool_for_write = Arc::clone(&pool);
     tokio::task::spawn_blocking(move || {
-        let mut conn = match pool_for_write.get() {
-            Ok(c) => c,
-            Err(e) => {
-                let _ = tx.blocking_send(Err(io::Error::other(format!("db pool: {}", e))));
-                return;
-            }
-        };
-
-        match write_zip_stream(&mut conn, user_id, &all_recipes, tx.clone()) {
+        match write_zip_stream(&pool_for_write, user_id, &all_recipes, tx.clone()) {
             Ok(bytes_written) => {
                 tracing::info!(
                     recipe_count,
