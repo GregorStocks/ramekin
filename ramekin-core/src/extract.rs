@@ -1993,8 +1993,28 @@ fn lowercase_wprm_text(text: &str) -> String {
         .collect()
 }
 
+fn canonicalize_wprm_title(text: &str) -> String {
+    let normalized = lowercase_wprm_text(text);
+
+    normalized
+        .split(['|', '•'])
+        .next()
+        .unwrap_or(&normalized)
+        .split(" - ")
+        .next()
+        .unwrap_or(&normalized)
+        .split(" – ")
+        .next()
+        .unwrap_or(&normalized)
+        .split(" — ")
+        .next()
+        .unwrap_or(&normalized)
+        .trim()
+        .to_string()
+}
+
 fn normalize_wprm_title_tokens(text: &str) -> Vec<String> {
-    normalize_wprm_text(text)
+    canonicalize_wprm_title(text)
         .split(|c: char| !c.is_alphanumeric())
         .filter_map(|part| {
             let part = part
@@ -2011,19 +2031,9 @@ fn normalize_wprm_title_tokens(text: &str) -> Vec<String> {
         .collect()
 }
 
-fn contains_wprm_title_subsequence(haystack: &[String], needle: &[String]) -> bool {
-    if needle.is_empty() || needle.len() > haystack.len() {
-        return false;
-    }
-
-    haystack
-        .windows(needle.len())
-        .any(|window| window == needle)
-}
-
 fn wprm_titles_match(recipe_title: &str, card_title: &str) -> bool {
-    let normalized_recipe = lowercase_wprm_text(recipe_title);
-    let normalized_card = lowercase_wprm_text(card_title);
+    let normalized_recipe = canonicalize_wprm_title(recipe_title);
+    let normalized_card = canonicalize_wprm_title(card_title);
 
     if !normalized_recipe.is_empty() && normalized_recipe == normalized_card {
         return true;
@@ -2036,19 +2046,7 @@ fn wprm_titles_match(recipe_title: &str, card_title: &str) -> bool {
         return false;
     }
 
-    if recipe_tokens == card_tokens {
-        return true;
-    }
-
-    let (longer, shorter) = if recipe_tokens.len() >= card_tokens.len() {
-        (&recipe_tokens, &card_tokens)
-    } else {
-        (&card_tokens, &recipe_tokens)
-    };
-
-    shorter.len() >= 2
-        && longer.len().saturating_sub(shorter.len()) <= 2
-        && contains_wprm_title_subsequence(longer, shorter)
+    recipe_tokens == card_tokens
 }
 
 fn extract_wprm_steps(root: ElementRef<'_>) -> Option<Vec<String>> {
@@ -3438,6 +3436,39 @@ mod tests {
 
         let result = extract_recipe(html, "https://example.com/creme-brulee").unwrap();
         assert_eq!(result.instructions, "Torch the sugar topping.");
+    }
+
+    #[test]
+    fn test_wprm_instruction_supplement_matches_title_with_site_qualifier() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Semi-Instant Pancakes | Alton Brown",
+                    "recipeIngredient": ["1 cup flour"],
+                    "recipeInstructions": [
+                        {
+                            "@type": "HowToStep",
+                            "text": "Polluted JSON-LD step"
+                        }
+                    ]
+                }
+                </script>
+            </head>
+            <body>
+                <div class="wprm-recipe">
+                    <h2 class="wprm-recipe-name">Semi-Instant Pancakes</h2>
+                    <li class="wprm-recipe-instruction">
+                        <div class="wprm-recipe-instruction-text">Correct card step</div>
+                    </li>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/pancakes").unwrap();
+        assert_eq!(result.instructions, "Correct card step");
     }
 
     #[test]
