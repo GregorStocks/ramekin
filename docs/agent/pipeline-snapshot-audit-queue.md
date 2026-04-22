@@ -8,6 +8,18 @@ This is the durable queue for `$audit-pipeline-snapshots`.
 - After each audit, flip the entry to `[x]` and append a short note with the audit date and any issue file(s) or `no issue`.
 - If new snapshots are added later, regenerate or extend this list instead of going back to fully random sampling.
 
+## Priority batch (paprika export 2026-04-22 — audit first)
+
+Entries below were added from URLs seen in the 2026-04-22 `.paprikarecipes` export
+that were missing from the pipeline allowlist and that `extract_recipe` can
+currently parse. Audit them ahead of the round-robin queue below.
+
+- [ ] 419. `smittenkitchen-com_2010-01-southwestern-pulled-brisket.json` (smittenkitchen-com)
+- [ ] 420. `smittenkitchen-com_2010-04-homemade-pop-tarts.json` (smittenkitchen-com)
+- [ ] 421. `smittenkitchen-com_2017-02-tomato-glazed-meatloaves-with-brown-butter-mashed-potatoes.json` (smittenkitchen-com)
+- [ ] 422. `smittenkitchen-com_2024-03-turkey-meatloaf-for-skeptics.json` (smittenkitchen-com)
+- [ ] 423. `sudachirecipes-com_spaghetti-napolitan-recipe.json` (sudachirecipes-com)
+
 ## Queue
 
 - [x] 001. `alexandracooks-com_2012-11-07-my-mothers-peasant-bread-the-best-easiest-bread-you-will-ever-make.json` (alexandracooks-com) - 2026-04-21: no issue

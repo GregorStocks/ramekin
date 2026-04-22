@@ -3,9 +3,11 @@
 //! After a pipeline run completes, this module reads the relevant per-step
 //! outputs from `run_dir/urls/<slug>/` for each allowlisted URL, assembles a
 //! `FinalRecipe` via `ramekin_core::final_recipe::build_final_recipe`, and
-//! writes the JSON to `snapshots_dir/<slug>.json`. If an allowlisted URL
-//! isn't present in the run directory, the function returns an error so the
-//! pipeline run fails fast.
+//! writes the JSON to `snapshots_dir/<slug>.json`. If an individual
+//! allowlisted URL didn't reach `extract_recipe` (fetch failed, JSON-LD
+//! missing, etc.), its snapshot is skipped with a warning — the rest of the
+//! snapshot phase still runs so one broken URL can't take down the whole
+//! allowlist.
 
 use std::path::Path;
 
@@ -19,6 +21,13 @@ use crate::pipeline_orchestrator::PipelineResults;
 
 /// Write snapshots for every URL in `allowlist_path` by reading step outputs
 /// under `run_dir` and writing JSON files under `snapshots_dir`.
+///
+/// A URL whose `extract_recipe` output is absent gets a warn log and is
+/// skipped — the allowlist may include URLs that sometimes fail extraction
+/// (missing JSON-LD, fetch 403, etc.) and we still want snapshots for the
+/// URLs that *did* succeed. Other errors — unreadable allowlist, mkdir
+/// failure, corrupt step output JSON, serialization failure, write failure —
+/// still propagate so real regressions aren't silently hidden.
 pub fn write_snapshots(run_dir: &Path, allowlist_path: &Path, snapshots_dir: &Path) -> Result<()> {
     let urls = read_allowlist(allowlist_path)?;
     if urls.is_empty() {
@@ -29,21 +38,65 @@ pub fn write_snapshots(run_dir: &Path, allowlist_path: &Path, snapshots_dir: &Pa
     std::fs::create_dir_all(snapshots_dir)
         .with_context(|| format!("Failed to create {}", snapshots_dir.display()))?;
 
+    let mut written = 0usize;
+    let mut skipped = 0usize;
+    let mut stale_removed = 0usize;
     for url in &urls {
         let slug = slugify_url(url);
-        let final_recipe = assemble_snapshot(run_dir, run_results.as_ref(), url, &slug)
-            .with_context(|| format!("Failed to assemble snapshot for allowlisted URL {url}"))?;
+        let path = snapshots_dir.join(format!("{slug}.json"));
+        let final_recipe = match assemble_snapshot(run_dir, run_results.as_ref(), url, &slug)? {
+            Some(recipe) => recipe,
+            None => {
+                let reason = describe_missing_extract(run_dir, run_results.as_ref(), url, &slug);
+                // If a prior run produced a snapshot for this URL and the
+                // current run can't refresh it, the on-disk file is stale —
+                // keeping it would let audit tooling keep consuming a stale
+                // artifact as if it were current. Delete and log so the
+                // regression is visible. A fresh run that re-succeeds will
+                // rewrite the file.
+                if path.exists() {
+                    std::fs::remove_file(&path).with_context(|| {
+                        format!("Failed to remove stale snapshot {}", path.display())
+                    })?;
+                    tracing::warn!(
+                        url = %url,
+                        slug = %slug,
+                        reason = %reason,
+                        path = %path.display(),
+                        "removed stale pipeline snapshot; extract_recipe output no longer available"
+                    );
+                    stale_removed += 1;
+                } else {
+                    tracing::warn!(
+                        url = %url,
+                        slug = %slug,
+                        reason = %reason,
+                        "skipping pipeline snapshot; extract_recipe output not present for allowlisted URL"
+                    );
+                }
+                skipped += 1;
+                continue;
+            }
+        };
 
         let mut json = serde_json::to_string_pretty(&final_recipe)
             .context("Failed to serialize FinalRecipe")?;
         json.push('\n');
 
-        let path = snapshots_dir.join(format!("{slug}.json"));
         std::fs::write(&path, json)
             .with_context(|| format!("Failed to write snapshot: {}", path.display()))?;
 
         tracing::info!("Wrote pipeline snapshot: {}", path.display());
+        written += 1;
     }
+
+    tracing::info!(
+        allowlisted = urls.len(),
+        written,
+        skipped,
+        stale_removed,
+        "pipeline snapshot phase complete"
+    );
 
     Ok(())
 }
@@ -89,12 +142,16 @@ fn read_step_output(
     Ok(Some(value))
 }
 
-fn missing_extract_recipe_error(
+/// Human-readable reason explaining why `extract_recipe` output was absent
+/// for `url`. Pulled from the pipeline `results.json` when available so the
+/// warn log in `write_snapshots` says *why* the URL was skipped (failed
+/// fetch, failed extract, never processed) rather than just "not present".
+fn describe_missing_extract(
     run_dir: &Path,
     run_results: Option<&PipelineResults>,
     url: &str,
     url_slug: &str,
-) -> anyhow::Error {
+) -> String {
     if let Some(url_result) =
         run_results.and_then(|results| results.url_results.iter().find(|result| result.url == url))
     {
@@ -103,7 +160,7 @@ fn missing_extract_recipe_error(
                 .error
                 .as_deref()
                 .unwrap_or("No step error message recorded");
-            return anyhow!(
+            return format!(
                 "No extract_recipe output for URL slug {url_slug} in {}. \
                  The pipeline processed this URL but it ended with final_status={:?} \
                  after step {:?} failed: {}",
@@ -114,7 +171,7 @@ fn missing_extract_recipe_error(
             );
         }
 
-        return anyhow!(
+        return format!(
             "No extract_recipe output for URL slug {url_slug} in {}. \
              The pipeline recorded this URL with final_status={:?}, but no failed \
              step was recorded.",
@@ -123,21 +180,30 @@ fn missing_extract_recipe_error(
         );
     }
 
-    anyhow!(
+    format!(
         "No extract_recipe output for URL slug {url_slug} in {}. \
          Either the URL wasn't in the pipeline run or the pipeline didn't reach extract_recipe.",
         run_dir.display()
     )
 }
 
+/// Build a `FinalRecipe` from this URL's step outputs.
+///
+/// Returns `Ok(None)` when `extract_recipe` produced no output for the slug —
+/// callers treat that as "skip this URL" rather than a hard failure, because
+/// it's the expected outcome for allowlisted URLs that fail fetch or extract.
+/// Any other problem (corrupt step-output JSON, missing `raw_recipe` field,
+/// deserialization mismatch) surfaces as `Err` so real regressions still
+/// break the phase.
 fn assemble_snapshot(
     run_dir: &Path,
-    run_results: Option<&PipelineResults>,
-    url: &str,
+    _run_results: Option<&PipelineResults>,
+    _url: &str,
     url_slug: &str,
-) -> Result<FinalRecipe> {
-    let extract = read_step_output(run_dir, url_slug, "extract_recipe")?
-        .ok_or_else(|| missing_extract_recipe_error(run_dir, run_results, url, url_slug))?;
+) -> Result<Option<FinalRecipe>> {
+    let Some(extract) = read_step_output(run_dir, url_slug, "extract_recipe")? else {
+        return Ok(None);
+    };
 
     let raw_recipe: RawRecipe =
         serde_json::from_value(extract.get("raw_recipe").cloned().ok_or_else(|| {
@@ -159,11 +225,11 @@ fn assemble_snapshot(
             .transpose()
             .context("Failed to deserialize enrich_auto_tag suggested_tags")?;
 
-    Ok(build_final_recipe(
+    Ok(Some(build_final_recipe(
         &raw_recipe,
         parsed_ingredients.as_deref(),
         suggested_tags.as_deref(),
-    ))
+    )))
 }
 
 #[cfg(test)]
@@ -275,8 +341,9 @@ mod tests {
             extract_output_body(),
         );
 
-        let fr =
-            assemble_snapshot(dir.path(), None, "https://example.com/r", "example-com_r").unwrap();
+        let fr = assemble_snapshot(dir.path(), None, "https://example.com/r", "example-com_r")
+            .unwrap()
+            .expect("extract_recipe output present");
         assert_eq!(fr.title, "Test");
         assert_eq!(fr.ingredients.len(), 2); // line-split fallback
         assert!(fr.suggested_tags.is_none());
@@ -310,7 +377,9 @@ mod tests {
             r#"{"suggested_tags": ["dinner", "breakfast"]}"#,
         );
 
-        let fr = assemble_snapshot(dir.path(), None, "https://example.com/r", slug).unwrap();
+        let fr = assemble_snapshot(dir.path(), None, "https://example.com/r", slug)
+            .unwrap()
+            .expect("extract_recipe output present");
         assert_eq!(fr.ingredients.len(), 1);
         assert_eq!(fr.ingredients[0].item, "flour");
         assert_eq!(
@@ -320,23 +389,52 @@ mod tests {
     }
 
     #[test]
-    fn errors_when_extract_recipe_output_missing() {
+    fn returns_none_when_extract_recipe_output_missing() {
         let dir = TempDir::new().unwrap();
-        let err = assemble_snapshot(dir.path(), None, "https://missing.example/", "missing-slug")
-            .unwrap_err();
-        let msg = err.to_string();
+        let got = assemble_snapshot(dir.path(), None, "https://missing.example/", "missing-slug")
+            .unwrap();
         assert!(
-            msg.contains("missing-slug"),
-            "error should name the slug: {msg}"
-        );
-        assert!(
-            msg.contains("extract_recipe"),
-            "error should mention extract_recipe: {msg}"
+            got.is_none(),
+            "missing extract_recipe output should map to Ok(None), got {got:?}"
         );
     }
 
     #[test]
-    fn reports_pipeline_failure_details_when_extract_recipe_output_missing() {
+    fn errors_when_extract_recipe_output_is_corrupt() {
+        let dir = TempDir::new().unwrap();
+        write_step_output(
+            dir.path(),
+            "example-com_r",
+            "extract_recipe",
+            "not valid json",
+        );
+        let err = assemble_snapshot(dir.path(), None, "https://example.com/r", "example-com_r")
+            .unwrap_err();
+        assert!(
+            err.to_string().contains("Failed to parse"),
+            "corrupt extract_recipe output should bubble up, got {err}"
+        );
+    }
+
+    #[test]
+    fn errors_when_extract_recipe_output_missing_raw_recipe_field() {
+        let dir = TempDir::new().unwrap();
+        write_step_output(
+            dir.path(),
+            "example-com_r",
+            "extract_recipe",
+            r#"{"method_used":"json_ld"}"#,
+        );
+        let err = assemble_snapshot(dir.path(), None, "https://example.com/r", "example-com_r")
+            .unwrap_err();
+        assert!(
+            err.to_string().contains("missing raw_recipe"),
+            "missing raw_recipe field should bubble up, got {err}"
+        );
+    }
+
+    #[test]
+    fn describes_missing_extract_with_pipeline_failure_details() {
         let dir = TempDir::new().unwrap();
         let run_dir = dir.path();
         let results = serde_json::json!({
@@ -391,14 +489,12 @@ mod tests {
         .unwrap();
 
         let run_results = read_run_results(run_dir).unwrap();
-        let err = assemble_snapshot(
+        let msg = describe_missing_extract(
             run_dir,
             run_results.as_ref(),
             "https://example.com/offline-miss",
             "example-com_offline-miss",
-        )
-        .unwrap_err();
-        let msg = err.to_string();
+        );
 
         assert!(msg.contains("final_status=FailedAtFetch"));
         assert!(msg.contains("step FetchHtml failed"));
@@ -431,7 +527,7 @@ mod tests {
     }
 
     #[test]
-    fn errors_when_allowlisted_url_missing_from_run() {
+    fn skips_allowlisted_url_missing_from_run_without_failing_phase() {
         let dir = TempDir::new().unwrap();
         let run_dir = dir.path().join("run");
         std::fs::create_dir_all(&run_dir).unwrap();
@@ -439,11 +535,89 @@ mod tests {
         let allowlist = dir.path().join("allowlist.json");
         std::fs::write(&allowlist, r#"["https://missing.example/"]"#).unwrap();
 
-        let err = write_snapshots(&run_dir, &allowlist, &snapshots_dir).unwrap_err();
-        let msg = err.to_string();
+        // The phase succeeds: a single allowlisted URL with no extract_recipe
+        // output is warned and skipped, not fatal.
+        write_snapshots(&run_dir, &allowlist, &snapshots_dir).unwrap();
+
+        let slug = slugify_url("https://missing.example/");
         assert!(
-            msg.contains("https://missing.example/"),
-            "error should name the URL: {msg}"
+            !snapshots_dir.join(format!("{slug}.json")).exists(),
+            "no snapshot should be written for a URL that didn't reach extract_recipe"
+        );
+    }
+
+    #[test]
+    fn writes_snapshots_for_successful_urls_even_when_one_fails() {
+        let dir = TempDir::new().unwrap();
+        let run_dir = dir.path().join("run");
+        let snapshots_dir = dir.path().join("snapshots");
+        let ok_url = "https://example.com/ok";
+        let ok_slug = slugify_url(ok_url);
+        write_step_output(&run_dir, &ok_slug, "extract_recipe", extract_output_body());
+
+        let allowlist = dir.path().join("allowlist.json");
+        std::fs::write(
+            &allowlist,
+            format!(r#"[{ok_url:?}, "https://missing.example/"]"#),
+        )
+        .unwrap();
+
+        write_snapshots(&run_dir, &allowlist, &snapshots_dir).unwrap();
+
+        assert!(
+            snapshots_dir.join(format!("{ok_slug}.json")).exists(),
+            "snapshot should still be written for the URL that extracted"
+        );
+        let missing_slug = slugify_url("https://missing.example/");
+        assert!(
+            !snapshots_dir.join(format!("{missing_slug}.json")).exists(),
+            "no snapshot for the URL that had no extract_recipe output"
+        );
+    }
+
+    #[test]
+    fn removes_stale_snapshot_when_url_no_longer_extracts() {
+        let dir = TempDir::new().unwrap();
+        let run_dir = dir.path().join("run");
+        std::fs::create_dir_all(&run_dir).unwrap();
+        let snapshots_dir = dir.path().join("snapshots");
+        std::fs::create_dir_all(&snapshots_dir).unwrap();
+
+        // A snapshot from a previous run exists on disk for a URL that the
+        // current run can't produce extract_recipe output for.
+        let url = "https://example.com/now-broken";
+        let slug = slugify_url(url);
+        let stale_path = snapshots_dir.join(format!("{slug}.json"));
+        std::fs::write(&stale_path, r#"{"title":"Stale"}"#).unwrap();
+
+        let allowlist = dir.path().join("allowlist.json");
+        std::fs::write(&allowlist, format!("[{url:?}]")).unwrap();
+
+        write_snapshots(&run_dir, &allowlist, &snapshots_dir).unwrap();
+
+        assert!(
+            !stale_path.exists(),
+            "stale snapshot should be removed when the current run can't refresh it"
+        );
+    }
+
+    #[test]
+    fn write_snapshots_propagates_corrupt_extract_output() {
+        let dir = TempDir::new().unwrap();
+        let run_dir = dir.path().join("run");
+        let snapshots_dir = dir.path().join("snapshots");
+        let url = "https://example.com/corrupt";
+        let slug = slugify_url(url);
+        write_step_output(&run_dir, &slug, "extract_recipe", "definitely not json");
+
+        let allowlist = dir.path().join("allowlist.json");
+        std::fs::write(&allowlist, format!("[{url:?}]")).unwrap();
+
+        let err = write_snapshots(&run_dir, &allowlist, &snapshots_dir).unwrap_err();
+        assert!(
+            err.to_string().contains("Failed to parse")
+                || format!("{err:?}").contains("Failed to parse"),
+            "corrupt extract_recipe output should fail the phase, got {err}"
         );
     }
 
