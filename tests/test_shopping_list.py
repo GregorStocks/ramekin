@@ -374,6 +374,42 @@ def test_sync_update_items(authed_api_client):
     assert list_response.items[0].is_checked is True
 
 
+def test_sync_update_multiple_same_item(authed_api_client):
+    """Sequential updates for the same id in one sync request should chain correctly."""
+    client, user_id = authed_api_client
+    api = ShoppingListApi(client)
+
+    create_response = api.create_items(
+        CreateShoppingListRequest(
+            items=[CreateShoppingListItemRequest(item="chain_test")]
+        )
+    )
+    item_id = create_response.ids[0]
+
+    list_response = api.list_items()
+    v1 = list_response.items[0].version
+
+    sync_response = api.sync_items(
+        SyncRequest(
+            updates=[
+                SyncUpdateItem(id=item_id, is_checked=True, expected_version=v1),
+                SyncUpdateItem(id=item_id, amount="2 lbs", expected_version=v1 + 1),
+            ]
+        )
+    )
+
+    assert len(sync_response.updated) == 2
+    assert sync_response.updated[0].success is True
+    assert sync_response.updated[0].version == v1 + 1
+    assert sync_response.updated[1].success is True
+    assert sync_response.updated[1].version == v1 + 2
+
+    list_response = api.list_items()
+    assert list_response.items[0].is_checked is True
+    assert list_response.items[0].amount == "2 lbs"
+    assert list_response.items[0].version == v1 + 2
+
+
 def test_sync_update_conflict(authed_api_client):
     """Test sync conflict detection."""
     client, user_id = authed_api_client

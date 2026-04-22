@@ -288,6 +288,19 @@ pub async fn sync_items(
                 .execute(conn)?;
 
                 if updated_rows == 1 {
+                    // Write-back so a later update for the same id in this batch sees
+                    // the new state instead of the stale prefetch.
+                    current_map.insert(
+                        update_req.id,
+                        (
+                            new_item,
+                            new_amount,
+                            new_note,
+                            new_checked,
+                            new_order,
+                            new_version,
+                        ),
+                    );
                     updated.push(SyncUpdatedItem {
                         id: update_req.id,
                         version: new_version,
