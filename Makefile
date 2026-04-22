@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import title-normalization-test description-generation-test server-release-build
+.PHONY: help dev dev-headless dev-down serve serve-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import title-normalization-test description-generation-test server-release-build
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -45,9 +45,19 @@ dev-headless: check-deps db-up $(CLIENT_MARKER) ## Start local dev environment w
 	@mkdir -p logs
 	@set -a && . ./dev.env && set +a && process-compose up -e dev.env -t=false --port "$${PROCESS_COMPOSE_PORT:-8180}"
 
+serve: check-deps db-up $(CLIENT_MARKER) ## Start release-mode server with socket activation and a memory cap
+	@echo "Starting release server..."
+	@mkdir -p logs
+	@set -a && . ./dev.env && set +a && process-compose up -e dev.env -f serve-compose.yaml -t=false --port "$${PROCESS_COMPOSE_PORT:-8180}"
+
 dev-down: ## Stop dev processes (not database)
 	@process-compose down 2>/dev/null || true
 	@pkill -f "cargo watch" 2>/dev/null || true
+
+serve-down: ## Stop release-mode serve processes
+	@process-compose down 2>/dev/null || true
+	@pkill -f "systemfd --no-pid" 2>/dev/null || true
+	@pkill -f "cargo watch -x run --release -q" 2>/dev/null || true
 
 # Generate OpenAPI spec from Rust source
 api/openapi.json: $(API_SOURCES)
