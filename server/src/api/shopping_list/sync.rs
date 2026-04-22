@@ -10,13 +10,14 @@ use diesel::prelude::*;
 use diesel::upsert::on_constraint;
 use ramekin_core::ingredient_categorizer;
 use serde::{Deserialize, Serialize};
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
 use std::sync::Arc;
 use utoipa::ToSchema;
 use uuid::Uuid;
 
 // Type aliases for complex tuple types
 type ItemUpdateRow = (String, Option<String>, Option<String>, bool, i32, i32);
+type ItemUpdateRowWithId = (Uuid, String, Option<String>, Option<String>, bool, i32, i32);
 type ServerChangeRow = (
     Uuid,
     String,
@@ -134,59 +135,91 @@ pub async fn sync_items(
     let mut conn = get_conn!(pool);
     let sync_timestamp = Utc::now();
 
-    let result = conn.transaction(|conn| {
-        // 1. Process creates
+    let result = conn.transaction::<_, diesel::result::Error, _>(|conn| {
+        // 1. Process creates — batch insert, fall back to a single SELECT for conflicts
         let mut created = Vec::with_capacity(request.creates.len());
-        for create_req in &request.creates {
-            let amount_ref = create_req.amount.as_deref();
-            let note_ref = create_req.note.as_deref();
-            let source_title_ref = create_req.source_recipe_title.as_deref();
+        if !request.creates.is_empty() {
+            let new_items: Vec<NewShoppingListItem> = request
+                .creates
+                .iter()
+                .map(|c| NewShoppingListItem {
+                    user_id: user.id,
+                    item: &c.item,
+                    amount: c.amount.as_deref(),
+                    note: c.note.as_deref(),
+                    source_recipe_id: c.source_recipe_id,
+                    source_recipe_title: c.source_recipe_title.as_deref(),
+                    is_checked: c.is_checked,
+                    sort_order: c.sort_order,
+                    client_id: Some(c.client_id),
+                })
+                .collect();
 
-            let new_item = NewShoppingListItem {
-                user_id: user.id,
-                item: &create_req.item,
-                amount: amount_ref,
-                note: note_ref,
-                source_recipe_id: create_req.source_recipe_id,
-                source_recipe_title: source_title_ref,
-                is_checked: create_req.is_checked,
-                sort_order: create_req.sort_order,
-                client_id: Some(create_req.client_id),
-            };
+            let inserted: Vec<(Option<Uuid>, Uuid, i32)> =
+                diesel::insert_into(shopping_list_items::table)
+                    .values(&new_items)
+                    .on_conflict(on_constraint("uq_shopping_list_client_id"))
+                    .do_nothing()
+                    .returning((
+                        shopping_list_items::client_id,
+                        shopping_list_items::id,
+                        shopping_list_items::version,
+                    ))
+                    .get_results(conn)?;
 
-            // Use the unique constraint for conflict detection (dedup offline syncs)
-            let (server_id, version) = match diesel::insert_into(shopping_list_items::table)
-                .values(&new_item)
-                .on_conflict(on_constraint("uq_shopping_list_client_id"))
-                .do_nothing()
-                .returning((shopping_list_items::id, shopping_list_items::version))
-                .get_result::<(Uuid, i32)>(conn)
-            {
-                Ok(result) => result,
-                Err(diesel::result::Error::NotFound) => shopping_list_items::table
+            let mut by_client_id: HashMap<Uuid, (Uuid, i32)> =
+                HashMap::with_capacity(request.creates.len());
+            for (cid, id, ver) in inserted {
+                if let Some(cid) = cid {
+                    by_client_id.insert(cid, (id, ver));
+                }
+            }
+
+            let missing_client_ids: Vec<Uuid> = request
+                .creates
+                .iter()
+                .map(|c| c.client_id)
+                .filter(|cid| !by_client_id.contains_key(cid))
+                .collect();
+
+            if !missing_client_ids.is_empty() {
+                let existing: Vec<(Option<Uuid>, Uuid, i32)> = shopping_list_items::table
                     .filter(shopping_list_items::user_id.eq(user.id))
-                    .filter(shopping_list_items::client_id.eq(create_req.client_id))
-                    .select((shopping_list_items::id, shopping_list_items::version))
-                    .first::<(Uuid, i32)>(conn)?,
-                Err(e) => return Err(e),
-            };
+                    .filter(shopping_list_items::client_id.eq_any(&missing_client_ids))
+                    .select((
+                        shopping_list_items::client_id,
+                        shopping_list_items::id,
+                        shopping_list_items::version,
+                    ))
+                    .load(conn)?;
+                for (cid, id, ver) in existing {
+                    if let Some(cid) = cid {
+                        by_client_id.insert(cid, (id, ver));
+                    }
+                }
+            }
 
-            created.push(SyncCreatedItem {
-                client_id: create_req.client_id,
-                server_id,
-                version,
-            });
+            for create_req in &request.creates {
+                if let Some((server_id, version)) = by_client_id.get(&create_req.client_id) {
+                    created.push(SyncCreatedItem {
+                        client_id: create_req.client_id,
+                        server_id: *server_id,
+                        version: *version,
+                    });
+                }
+            }
         }
 
-        // 2. Process updates (with optimistic locking)
+        // 2. Process updates — prefetch all current states in one query, then apply each
         let mut updated = Vec::with_capacity(request.updates.len());
-        for update_req in &request.updates {
-            // Fetch current state
-            let current: Option<ItemUpdateRow> = shopping_list_items::table
-                .filter(shopping_list_items::id.eq(update_req.id))
+        if !request.updates.is_empty() {
+            let update_ids: Vec<Uuid> = request.updates.iter().map(|u| u.id).collect();
+            let current_rows: Vec<ItemUpdateRowWithId> = shopping_list_items::table
+                .filter(shopping_list_items::id.eq_any(&update_ids))
                 .filter(shopping_list_items::user_id.eq(user.id))
                 .filter(shopping_list_items::deleted_at.is_null())
                 .select((
+                    shopping_list_items::id,
                     shopping_list_items::item,
                     shopping_list_items::amount,
                     shopping_list_items::note,
@@ -194,84 +227,88 @@ pub async fn sync_items(
                     shopping_list_items::sort_order,
                     shopping_list_items::version,
                 ))
-                .first(conn)
-                .optional()?;
+                .load(conn)?;
 
-            let Some((
-                current_item,
-                current_amount,
-                current_note,
-                current_checked,
-                current_order,
-                current_version,
-            )) = current
-            else {
-                updated.push(SyncUpdatedItem {
-                    id: update_req.id,
-                    version: 0,
-                    success: false,
-                });
-                continue;
-            };
-
-            // Check version for conflict
-            if current_version != update_req.expected_version {
-                // Conflict - server wins, return current version
-                updated.push(SyncUpdatedItem {
-                    id: update_req.id,
-                    version: current_version,
-                    success: false,
-                });
-                continue;
+            let mut current_map: HashMap<Uuid, ItemUpdateRow> =
+                HashMap::with_capacity(current_rows.len());
+            for (id, item, amount, note, is_checked, sort_order, version) in current_rows {
+                current_map.insert(id, (item, amount, note, is_checked, sort_order, version));
             }
 
-            // Apply update
-            let new_item = update_req.item.clone().unwrap_or(current_item);
-            let new_amount = update_req.amount.clone().or(current_amount);
-            let new_note = update_req.note.clone().or(current_note);
-            let new_checked = update_req.is_checked.unwrap_or(current_checked);
-            let new_order = update_req.sort_order.unwrap_or(current_order);
-            let new_version = current_version + 1;
+            for update_req in &request.updates {
+                let Some((
+                    current_item,
+                    current_amount,
+                    current_note,
+                    current_checked,
+                    current_order,
+                    current_version,
+                )) = current_map.get(&update_req.id).cloned()
+                else {
+                    updated.push(SyncUpdatedItem {
+                        id: update_req.id,
+                        version: 0,
+                        success: false,
+                    });
+                    continue;
+                };
 
-            let updated_rows = diesel::update(
-                shopping_list_items::table
-                    .filter(shopping_list_items::id.eq(update_req.id))
-                    .filter(shopping_list_items::user_id.eq(user.id))
-                    .filter(shopping_list_items::deleted_at.is_null())
-                    .filter(shopping_list_items::version.eq(update_req.expected_version)),
-            )
-            .set((
-                shopping_list_items::item.eq(&new_item),
-                shopping_list_items::amount.eq(&new_amount),
-                shopping_list_items::note.eq(&new_note),
-                shopping_list_items::is_checked.eq(new_checked),
-                shopping_list_items::sort_order.eq(new_order),
-                shopping_list_items::version.eq(new_version),
-                shopping_list_items::updated_at.eq(sync_timestamp),
-            ))
-            .execute(conn)?;
+                if current_version != update_req.expected_version {
+                    updated.push(SyncUpdatedItem {
+                        id: update_req.id,
+                        version: current_version,
+                        success: false,
+                    });
+                    continue;
+                }
 
-            if updated_rows == 1 {
-                updated.push(SyncUpdatedItem {
-                    id: update_req.id,
-                    version: new_version,
-                    success: true,
-                });
-            } else {
-                updated.push(SyncUpdatedItem {
-                    id: update_req.id,
-                    version: current_version,
-                    success: false,
-                });
+                let new_item = update_req.item.clone().unwrap_or(current_item);
+                let new_amount = update_req.amount.clone().or(current_amount);
+                let new_note = update_req.note.clone().or(current_note);
+                let new_checked = update_req.is_checked.unwrap_or(current_checked);
+                let new_order = update_req.sort_order.unwrap_or(current_order);
+                let new_version = current_version + 1;
+
+                let updated_rows = diesel::update(
+                    shopping_list_items::table
+                        .filter(shopping_list_items::id.eq(update_req.id))
+                        .filter(shopping_list_items::user_id.eq(user.id))
+                        .filter(shopping_list_items::deleted_at.is_null())
+                        .filter(shopping_list_items::version.eq(update_req.expected_version)),
+                )
+                .set((
+                    shopping_list_items::item.eq(&new_item),
+                    shopping_list_items::amount.eq(&new_amount),
+                    shopping_list_items::note.eq(&new_note),
+                    shopping_list_items::is_checked.eq(new_checked),
+                    shopping_list_items::sort_order.eq(new_order),
+                    shopping_list_items::version.eq(new_version),
+                    shopping_list_items::updated_at.eq(sync_timestamp),
+                ))
+                .execute(conn)?;
+
+                if updated_rows == 1 {
+                    updated.push(SyncUpdatedItem {
+                        id: update_req.id,
+                        version: new_version,
+                        success: true,
+                    });
+                } else {
+                    updated.push(SyncUpdatedItem {
+                        id: update_req.id,
+                        version: current_version,
+                        success: false,
+                    });
+                }
             }
         }
 
-        // 3. Process deletes
+        // 3. Process deletes — one batch UPDATE, then a single SELECT for any that didn't match
         let mut deleted_set: HashSet<Uuid> = HashSet::with_capacity(request.deletes.len());
-        for delete_id in &request.deletes {
-            let updated_rows = diesel::update(
+        if !request.deletes.is_empty() {
+            let newly_deleted: Vec<Uuid> = diesel::update(
                 shopping_list_items::table
-                    .filter(shopping_list_items::id.eq(delete_id))
+                    .filter(shopping_list_items::id.eq_any(&request.deletes))
                     .filter(shopping_list_items::user_id.eq(user.id))
                     .filter(shopping_list_items::deleted_at.is_null()),
             )
@@ -280,22 +317,25 @@ pub async fn sync_items(
                 shopping_list_items::updated_at.eq(sync_timestamp),
                 shopping_list_items::version.eq(shopping_list_items::version + 1),
             ))
-            .execute(conn)?;
+            .returning(shopping_list_items::id)
+            .get_results(conn)?;
 
-            if updated_rows == 1 {
-                deleted_set.insert(*delete_id);
-                continue;
-            }
+            deleted_set.extend(newly_deleted.iter().copied());
 
-            let exists = shopping_list_items::table
-                .filter(shopping_list_items::id.eq(delete_id))
-                .filter(shopping_list_items::user_id.eq(user.id))
-                .select(shopping_list_items::id)
-                .first::<Uuid>(conn)
-                .optional()?;
+            let remaining: Vec<Uuid> = request
+                .deletes
+                .iter()
+                .copied()
+                .filter(|id| !deleted_set.contains(id))
+                .collect();
 
-            if exists.is_some() {
-                deleted_set.insert(*delete_id);
+            if !remaining.is_empty() {
+                let already_deleted: Vec<Uuid> = shopping_list_items::table
+                    .filter(shopping_list_items::id.eq_any(&remaining))
+                    .filter(shopping_list_items::user_id.eq(user.id))
+                    .select(shopping_list_items::id)
+                    .load(conn)?;
+                deleted_set.extend(already_deleted);
             }
         }
 
