@@ -52,36 +52,36 @@ currently parse. Audit them ahead of the round-robin queue below.
 - [x] 028. `cooking-nytimes-com_recipes-1022063-brothy-cod-with-peas-and-mushrooms.json` (cooking-nytimes-com) - 2026-04-22: no issue
 - [x] 029. `halfbakedharvest-com_easy-cheesy-eggs.json` (halfbakedharvest-com) - 2026-04-22: filed `p3-recipe-card-checkbox-glyphs-leak-into-ingredient-text.json5`
 - [x] 030. `japanesecooking101-com_rice-cooker-cake-recipe.json` (japanesecooking101-com) - 2026-04-22: no issue
-- [ ] 031. `loveandlemons-com_mashed-sweet-potatoes.json` (loveandlemons-com)
-- [ ] 032. `seriouseats-com_rice-krispie-treats-recipe-7107746.json` (seriouseats-com)
-- [ ] 033. `smittenkitchen-com_2013-11-parsley-leaf-potatoes.json` (smittenkitchen-com)
-- [ ] 034. `sudachirecipes-com_teriyaki-meatballs.json` (sudachirecipes-com)
-- [ ] 035. `thepioneerwoman-com_food-cooking-recipes-a40188918-how-to-grill-asparagus.json` (thepioneerwoman-com)
-- [ ] 036. `allrecipes-com_recipe-13107-miso-soup.json` (allrecipes-com)
-- [ ] 037. `americastestkitchen-com_recipes-12368-pan-seared-strip-steaks.json` (americastestkitchen-com)
-- [ ] 038. `bonappetit-com_recipe-pork-tamales-rojas.json` (bonappetit-com)
-- [ ] 039. `cooking-nytimes-com_recipes-1019034-garlic-braised-short-ribs-with-red-wine.json` (cooking-nytimes-com)
-- [ ] 040. `halfbakedharvest-com_pesto-chicken-and-avocado-bacon-salad-wraps.json` (halfbakedharvest-com)
-- [ ] 041. `japanesecooking101-com_salmon-takikomi-gohan-recipe.json` (japanesecooking101-com)
-- [ ] 042. `seriouseats-com_better-no-knead-bread-recipe.json` (seriouseats-com)
-- [ ] 043. `smittenkitchen-com_2020-07-pasta-with-pesto-genovese.json` (smittenkitchen-com)
-- [ ] 044. `sudachirecipes-com_imo-mochi.json` (sudachirecipes-com)
-- [ ] 045. `allrecipes-com_recipe-240438-easy-roasted-broccoli.json` (allrecipes-com)
-- [ ] 046. `americastestkitchen-com_recipes-16183-grilled-ham-and-cheese-sandwiches-with-spicy-tomato-soup.json` (americastestkitchen-com)
-- [ ] 047. `bonappetit-com_recipe-spicy-sweet-sambal-pork-noodles.json` (bonappetit-com)
-- [ ] 048. `cooking-nytimes-com_recipes-1014721-shakshuka-with-feta.json` (cooking-nytimes-com)
-- [ ] 049. `halfbakedharvest-com_garlic-butter-smashed-potatoes.json` (halfbakedharvest-com)
-- [ ] 050. `japanesecooking101-com_spam-onigirazu-recipe.json` (japanesecooking101-com)
-- [ ] 051. `seriouseats-com_tartiflette-recipe-5217300.json` (seriouseats-com)
-- [ ] 052. `smittenkitchen-com_2018-10-crispy-spinach-pizza.json` (smittenkitchen-com)
-- [ ] 053. `americastestkitchen-com_recipes-13887-pajeon-korean-scallion-pancake.json` (americastestkitchen-com)
-- [ ] 054. `cooking-nytimes-com_recipes-1022244-tahini-parmesan-pasta-salad.json` (cooking-nytimes-com)
-- [ ] 055. `halfbakedharvest-com_crispy-bbq-salmon-tacos.json` (halfbakedharvest-com)
-- [ ] 056. `japanesecooking101-com_yaki-onigiri-chazuke-recipe.json` (japanesecooking101-com)
-- [ ] 057. `seriouseats-com_pasta-e-ceci-pasta-with-chickpeas.json` (seriouseats-com)
-- [ ] 058. `smittenkitchen-com_2009-09-grilled-lamb-kebabs-tzatziki.json` (smittenkitchen-com)
-- [ ] 059. `americastestkitchen-com_recipes-8574-pasta-e-ceci-pasta-with-chickpeas.json` (americastestkitchen-com)
-- [ ] 060. `cooking-nytimes-com_recipes-1021237-superiority-burgers-crispy-fried-tofu-sandwich.json` (cooking-nytimes-com)
+- [x] 031. `loveandlemons-com_mashed-sweet-potatoes.json` (loveandlemons-com) - 2026-04-22: no issue
+- [x] 032. `seriouseats-com_rice-krispie-treats-recipe-7107746.json` (seriouseats-com) - 2026-04-22: no issue
+- [x] 033. `smittenkitchen-com_2013-11-parsley-leaf-potatoes.json` (smittenkitchen-com) - 2026-04-22: no issue
+- [x] 034. `sudachirecipes-com_teriyaki-meatballs.json` (sudachirecipes-com) - 2026-04-22: no issue
+- [x] 035. `thepioneerwoman-com_food-cooking-recipes-a40188918-how-to-grill-asparagus.json` (thepioneerwoman-com) - 2026-04-22: no issue
+- [x] 036. `allrecipes-com_recipe-13107-miso-soup.json` (allrecipes-com) - 2026-04-22: no issue
+- [x] 037. `americastestkitchen-com_recipes-12368-pan-seared-strip-steaks.json` (americastestkitchen-com) - 2026-04-22: filed `p3-parenthetical-quantities-create-junk-measurements.json5`
+- [x] 038. `bonappetit-com_recipe-pork-tamales-rojas.json` (bonappetit-com) - 2026-04-22: no issue
+- [x] 039. `cooking-nytimes-com_recipes-1019034-garlic-braised-short-ribs-with-red-wine.json` (cooking-nytimes-com) - 2026-04-22: no issue
+- [x] 040. `halfbakedharvest-com_pesto-chicken-and-avocado-bacon-salad-wraps.json` (halfbakedharvest-com) - 2026-04-22: filed `p3-mixed-number-ranges-corrupt-ingredient-amounts.json5`
+- [x] 041. `japanesecooking101-com_salmon-takikomi-gohan-recipe.json` (japanesecooking101-com) - 2026-04-22: no issue
+- [x] 042. `seriouseats-com_better-no-knead-bread-recipe.json` (seriouseats-com) - 2026-04-22: no issue
+- [x] 043. `smittenkitchen-com_2020-07-pasta-with-pesto-genovese.json` (smittenkitchen-com) - 2026-04-22: no issue
+- [x] 044. `sudachirecipes-com_imo-mochi.json` (sudachirecipes-com) - 2026-04-22: no issue
+- [x] 045. `allrecipes-com_recipe-240438-easy-roasted-broccoli.json` (allrecipes-com) - 2026-04-22: no issue
+- [x] 046. `americastestkitchen-com_recipes-16183-grilled-ham-and-cheese-sandwiches-with-spicy-tomato-soup.json` (americastestkitchen-com) - 2026-04-22: no issue
+- [x] 047. `bonappetit-com_recipe-spicy-sweet-sambal-pork-noodles.json` (bonappetit-com) - 2026-04-22: no issue
+- [x] 048. `cooking-nytimes-com_recipes-1014721-shakshuka-with-feta.json` (cooking-nytimes-com) - 2026-04-22: no issue
+- [x] 049. `halfbakedharvest-com_garlic-butter-smashed-potatoes.json` (halfbakedharvest-com) - 2026-04-22: no issue
+- [x] 050. `japanesecooking101-com_spam-onigirazu-recipe.json` (japanesecooking101-com) - 2026-04-22: no issue
+- [x] 051. `seriouseats-com_tartiflette-recipe-5217300.json` (seriouseats-com) - 2026-04-22: filed `p3-parenthetical-quantities-create-junk-measurements.json5`
+- [x] 052. `smittenkitchen-com_2018-10-crispy-spinach-pizza.json` (smittenkitchen-com) - 2026-04-22: no issue
+- [x] 053. `americastestkitchen-com_recipes-13887-pajeon-korean-scallion-pancake.json` (americastestkitchen-com) - 2026-04-22: filed `p3-parenthetical-quantities-create-junk-measurements.json5`
+- [x] 054. `cooking-nytimes-com_recipes-1022244-tahini-parmesan-pasta-salad.json` (cooking-nytimes-com) - 2026-04-22: no issue
+- [x] 055. `halfbakedharvest-com_crispy-bbq-salmon-tacos.json` (halfbakedharvest-com) - 2026-04-22: no issue
+- [x] 056. `japanesecooking101-com_yaki-onigiri-chazuke-recipe.json` (japanesecooking101-com) - 2026-04-22: no issue
+- [x] 057. `seriouseats-com_pasta-e-ceci-pasta-with-chickpeas.json` (seriouseats-com) - 2026-04-22: no issue
+- [x] 058. `smittenkitchen-com_2009-09-grilled-lamb-kebabs-tzatziki.json` (smittenkitchen-com) - 2026-04-22: filed `p3-parenthetical-quantities-create-junk-measurements.json5`
+- [x] 059. `americastestkitchen-com_recipes-8574-pasta-e-ceci-pasta-with-chickpeas.json` (americastestkitchen-com) - 2026-04-22: no issue
+- [x] 060. `cooking-nytimes-com_recipes-1021237-superiority-burgers-crispy-fried-tofu-sandwich.json` (cooking-nytimes-com) - 2026-04-22: no issue
 - [ ] 061. `japanesecooking101-com_pan-fried-shumai-dumplings-recipe.json` (japanesecooking101-com)
 - [ ] 062. `seriouseats-com_loubia-moroccan-white-bean-stew-recipe-11685571.json` (seriouseats-com)
 - [ ] 063. `smittenkitchen-com_2007-07-from-insert-your-origin-here-with-love.json` (smittenkitchen-com)
