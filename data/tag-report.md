@@ -961,7 +961,7 @@
 | Hasselback Herbed Garlic Butter Sweet... | side dish, easy, healthy, vegetarian, gluten-free, potato, pantry | yes |
 | Basil Pesto | easy, vegetarian, italian, side dish, cheese, quick, pantry | yes |
 | Honey Lime Fruit Salad | dessert, snack, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, salad | yes |
-| Julia Child's Creamy Chicken + Mushroom | dinner, entree, healthy, comfort food, chicken, mushroom, french | no |
+| Julia Child's Creamy Chicken + Mushroom | dinner, entree, healthy, comfort food, chicken, mushroom, french | yes |
 | Low Fat Chocolate Mug Cake | dessert, snack, quick, easy, healthy, vegetarian, pantry | yes |
 | No Bake EggNog Berry Cheesecakes | dessert, easy, vegetarian, cheese, holiday | yes |
 | One Pan Tomato Basil Chicken and Rice | dinner, easy, comfort food, entree, chicken, rice, mediterranean | yes |
@@ -4498,7 +4498,7 @@
 | Beef Udon Noodle Soup (Authentic Niku... | lunch, dinner, easy, comfort food, asian, japanese, beef, soup | yes |
 | Black Sesame Ice Cream | dessert, vegetarian, japanese | yes |
 | Buta Kimuchi Itame (Pork and Kimchi S... | dinner, easy, comfort food, asian, japanese, pork, rice, greens, pantry | yes |
-| Japanese Basque Style Cheesecake (Law... | dessert, easy, comfort food, vegetarian, japanese, cheese, egg, pantry | no |
+| Japanese Basque Style Cheesecake (Law... | dessert, easy, comfort food, vegetarian, japanese, cheese, egg, pantry | yes |
 | Japanese Castella Cake (Kasutera) | dessert, vegetarian, japanese, egg, pantry | yes |
 | Chaliapin Steak Don (Food Wars! Shoku... | dinner, entree, comfort food, japanese, beef, rice | yes |
 | Chanko Nabe (Sumo Stew) | dinner, comfort food, asian, japanese, chicken, soup, greens, mushroom, tofu | yes |
@@ -4537,7 +4537,7 @@
 | Kinpira Gobo (Japanese Braised Burdoc... | side dish, easy, healthy, vegetarian, vegan, dairy-free, asian, japanese, pantry | yes |
 | Authentic Kitsune Udon Noodle Soup | lunch, dinner, easy, comfort food, vegetarian, asian, japanese, soup, tofu | yes |
 | Kelp-Cured Sea Bream Sashimi (Tai no ... | dinner, appetizer, healthy, japanese, seafood, fish | yes |
-| Kombu Onigiri (Kelp "Tsukudani" Rice ... | snack, vegetarian, vegan, dairy-free, asian, japanese, rice, pantry | no |
+| Kombu Onigiri (Kelp "Tsukudani" Rice ... | snack, vegetarian, vegan, dairy-free, asian, japanese, rice, pantry | yes |
 | Homemade Koshian (Smooth Sweet Red Be... | dessert, snack, vegetarian, vegan, gluten-free, dairy-free, asian, japanese, legumes, pantry | yes |
 | Devil's Onigiri Copycat Recipe (Lawso... | snack, easy, comfort food, asian, japanese, rice, pantry | yes |
 | Matcha Green Tea Ice Cream | dessert, easy, vegetarian, japanese | yes |
@@ -4550,7 +4550,7 @@
 | Nikuman (Japanese Steamed Pork Buns) | lunch, dinner, snack, comfort food, asian, japanese, pork, mushroom, bread | yes |
 | Okaka Onigiri (Seasoned Bonito Flake ... | snack, appetizer, quick, easy, asian, japanese, rice, fish, pantry | yes |
 | Authentic Osaka Style Okonomiyaki (Tr... | lunch, dinner, entree, comfort food, japanese, pork, egg, greens | yes |
-| Ootoya's Black Vinegar Sweet and Sour... | dinner, entree, asian, japanese, chicken | no |
+| Ootoya's Black Vinegar Sweet and Sour... | dinner, entree, asian, japanese, chicken | yes |
 | Pan Fried Japanese Teriyaki Salmon | dinner, entree, healthy, asian, japanese, seafood, fish, rice, greens | yes |
 | How to Make Perfect Sushi Rice | side dish, easy, vegetarian, vegan, gluten-free, dairy-free, asian, japanese, rice, pantry | yes |
 | Best Tonkatsu with Homemade Sauce (Ja... | dinner, entree, easy, comfort food, japanese, pork, rice | yes |
@@ -5447,7 +5447,7 @@
 
 - Total recipes processed: 5449
 - Recipes with tag suggestions: 5437
-- Cached responses: 5433
+- Cached responses: 5437
 
 ## Tag Frequency
 
