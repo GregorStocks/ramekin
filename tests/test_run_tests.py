@@ -114,6 +114,52 @@ exit 0
     assert not marker_path.exists()
 
 
+def test_run_tests_default_lock_excludes_other_top_level_runs(tmp_path):
+    bin_dir = tmp_path / "bin"
+    bin_dir.mkdir()
+
+    marker_path = tmp_path / "process-compose-called"
+    env_file = tmp_path / "test.env"
+    env_file.write_text("PROCESS_COMPOSE_PORT=4317\n", encoding="utf-8")
+    lock_dir = tmp_path / "locks" / "top-level-run.lock"
+    lock_dir.mkdir(parents=True)
+
+    lock_holder = subprocess.Popen(["sleep", "60"])
+    try:
+        (lock_dir / "pid").write_text(f"{lock_holder.pid}\n", encoding="utf-8")
+
+        _write_executable(
+            bin_dir / "process-compose",
+            f"""#!/bin/bash
+set -e
+touch "{marker_path}"
+exit 0
+""",
+        )
+
+        env = os.environ.copy()
+        env["PATH"] = f"{bin_dir}:{env['PATH']}"
+        env["TEST_ENV_FILE"] = str(env_file)
+        env["REPO_LOCK_DIR"] = str(tmp_path / "locks")
+
+        result = subprocess.run(
+            ["bash", str(SCRIPT_PATH)],
+            cwd=REPO_ROOT,
+            env=env,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    finally:
+        lock_holder.terminate()
+        lock_holder.wait(timeout=5)
+
+    assert result.returncode == 1
+    assert "Refusing to start test run" in result.stderr
+    assert "another top-level run is already running" in result.stderr
+    assert not marker_path.exists()
+
+
 def test_run_tests_waits_for_status_files_before_failing(tmp_path):
     bin_dir = tmp_path / "bin"
     bin_dir.mkdir()

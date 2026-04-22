@@ -24,6 +24,7 @@ release_repo_lock() {
 acquire_repo_lock() {
     local lock_name="$1"
     local human_name="$2"
+    local lock_owner_name="${3:-$human_name}"
     local lock_root="${REPO_LOCK_DIR:-logs/locks}"
     local lock_dir="${lock_root}/${lock_name}.lock"
     local lock_grace_seconds="${REPO_LOCK_STARTUP_GRACE_SECONDS:-30}"
@@ -47,19 +48,19 @@ acquire_repo_lock() {
             lock_mtime=$(repo_lock_mtime_epoch "$lock_dir" 2>/dev/null || echo 0)
             now_epoch=$(date +%s)
             if [ "$lock_mtime" -gt 0 ] && [ $((now_epoch - lock_mtime)) -lt "$lock_grace_seconds" ]; then
-                echo "[$(repo_lock_timestamp)] Refusing to start ${human_name}: another ${human_name} is still acquiring the lock." >&2
+                echo "[$(repo_lock_timestamp)] Refusing to start ${human_name}: another ${lock_owner_name} is still acquiring the lock." >&2
                 echo "[$(repo_lock_timestamp)] Active lock: ${lock_dir}" >&2
                 return 1
             fi
         fi
 
         if [ -n "$lock_pid" ] && kill -0 "$lock_pid" 2>/dev/null; then
-            echo "[$(repo_lock_timestamp)] Refusing to start ${human_name}: another ${human_name} is already running (pid ${lock_pid})." >&2
+            echo "[$(repo_lock_timestamp)] Refusing to start ${human_name}: another ${lock_owner_name} is already running (pid ${lock_pid})." >&2
             echo "[$(repo_lock_timestamp)] Active lock: ${lock_dir}" >&2
             return 1
         fi
 
-        echo "[$(repo_lock_timestamp)] Removing stale ${human_name} lock: ${lock_dir}" >&2
+        echo "[$(repo_lock_timestamp)] Removing stale ${lock_owner_name} lock: ${lock_dir}" >&2
         rm -rf "$lock_dir"
     done
 

@@ -64,6 +64,56 @@ exit 0
     assert not marker_path.exists()
 
 
+def test_run_pipeline_default_lock_excludes_other_top_level_runs(tmp_path):
+    bin_dir = tmp_path / "bin"
+    bin_dir.mkdir()
+
+    marker_path = tmp_path / "cargo-called"
+    lock_dir = tmp_path / "locks" / "top-level-run.lock"
+    lock_dir.mkdir(parents=True)
+
+    lock_holder = subprocess.Popen(["sleep", "60"])
+    try:
+        (lock_dir / "pid").write_text(f"{lock_holder.pid}\n", encoding="utf-8")
+
+        _write_executable(
+            bin_dir / "cargo",
+            f"""#!/bin/bash
+set -e
+touch "{marker_path}"
+exit 0
+""",
+        )
+        _write_executable(
+            bin_dir / "make",
+            """#!/bin/bash
+set -e
+exit 0
+""",
+        )
+
+        env = os.environ.copy()
+        env["PATH"] = f"{bin_dir}:{env['PATH']}"
+        env["REPO_LOCK_DIR"] = str(tmp_path / "locks")
+
+        result = subprocess.run(
+            ["bash", str(SCRIPT_PATH)],
+            cwd=REPO_ROOT,
+            env=env,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    finally:
+        lock_holder.terminate()
+        lock_holder.wait(timeout=5)
+
+    assert result.returncode == 1
+    assert "Refusing to start pipeline run" in result.stderr
+    assert "another top-level run is already running" in result.stderr
+    assert not marker_path.exists()
+
+
 def test_run_pipeline_removes_stale_lock_and_runs(tmp_path):
     bin_dir = tmp_path / "bin"
     bin_dir.mkdir()

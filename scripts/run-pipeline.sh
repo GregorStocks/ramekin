@@ -5,7 +5,12 @@ cd "$(dirname "$0")/.."
 
 # shellcheck source=/dev/null
 source ./scripts/repo-lock.sh
-acquire_repo_lock "${PIPELINE_LOCK_NAME:-pipeline}" "pipeline run"
+pipeline_lock_name="${PIPELINE_LOCK_NAME:-top-level-run}"
+pipeline_lock_owner_name="pipeline run"
+if [ -z "${PIPELINE_LOCK_NAME:-}" ]; then
+  pipeline_lock_owner_name="top-level run"
+fi
+acquire_repo_lock "$pipeline_lock_name" "pipeline run" "$pipeline_lock_owner_name"
 
 echo "[pipeline] cargo run starting" | ./scripts/ts
 
