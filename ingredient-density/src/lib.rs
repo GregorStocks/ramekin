@@ -1,3 +1,4 @@
+#![deny(clippy::print_stdout, clippy::print_stderr)]
 //! Ingredient density lookup for volume-to-weight conversion.
 //!
 //! This crate provides density data (grams per US cup) for common cooking

@@ -66,7 +66,7 @@ pub async fn export_recipe(
     file.write_all(&bytes)
         .with_context(|| format!("Failed to write to file: {}", output_path.display()))?;
 
-    println!(
+    tracing::info!(
         "Exported recipe to: {} ({} bytes)",
         output_path.display(),
         bytes.len()
@@ -98,7 +98,7 @@ pub async fn export_all(
 
     config.bearer_access_token = Some(login_response.token);
 
-    println!("Exporting all recipes... (this may take a while)");
+    tracing::info!("Exporting all recipes... (this may take a while)");
 
     // Download the exported recipes using the config's client
     let bytes = binary_get(&config, "/api/recipes/export").await?;
@@ -109,7 +109,7 @@ pub async fn export_all(
     file.write_all(&bytes)
         .with_context(|| format!("Failed to write to file: {}", output_path.display()))?;
 
-    println!(
+    tracing::info!(
         "Exported all recipes to: {} ({} bytes)",
         output_path.display(),
         bytes.len()

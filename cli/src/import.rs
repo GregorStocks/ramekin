@@ -257,7 +257,7 @@ pub async fn import(
     let mut archive = ZipArchive::new(file)
         .with_context(|| format!("Failed to read zip archive: {}", file_path.display()))?;
 
-    println!("Found {} recipes in archive", archive.len());
+    tracing::info!("Found {} recipes in archive", archive.len());
 
     let mut success_count = 0;
     let mut error_count = 0;
@@ -349,26 +349,28 @@ pub async fn import(
 
         match import_recipe(&config, raw_recipe, photo_ids).await {
             Ok(response) => {
-                println!(
+                tracing::info!(
                     "  Imported: {} (job_id: {}, status: {})",
-                    recipe_name, response.job_id, response.status
+                    recipe_name,
+                    response.job_id,
+                    response.status
                 );
                 success_count += 1;
             }
             Err(e) => {
-                println!("  Error importing '{}': {}", recipe_name, e);
+                tracing::info!("  Error importing '{}': {}", recipe_name, e);
                 error_count += 1;
             }
         }
     }
 
-    println!();
-    println!("{}", "=".repeat(50));
-    println!("IMPORT COMPLETE");
-    println!("{}", "=".repeat(50));
-    println!("Successful: {}", success_count);
-    println!("Errors: {}", error_count);
-    println!("{}", "=".repeat(50));
+    tracing::info!("");
+    tracing::info!("{}", "=".repeat(50));
+    tracing::info!("IMPORT COMPLETE");
+    tracing::info!("{}", "=".repeat(50));
+    tracing::info!("Successful: {}", success_count);
+    tracing::info!("Errors: {}", error_count);
+    tracing::info!("{}", "=".repeat(50));
 
     Ok(())
 }

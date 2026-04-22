@@ -136,7 +136,7 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
 
     // Find latest run
     let (run_id, run_dir) = find_latest_run(runs_dir)?;
-    println!("Generating from run: {}", run_id);
+    tracing::info!("Generating from run: {}", run_id);
 
     // Create directory if it doesn't exist (UPSERT: never delete existing)
     fs::create_dir_all(&pipeline_dir)?;
@@ -209,7 +209,7 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
         }
     }
 
-    println!(
+    tracing::info!(
         "Generated {} new recipes ({} ingredients) in {}",
         total_recipes,
         total_ingredients,
@@ -363,12 +363,12 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
                     unchanged += 1;
                 }
             } else {
-                println!("Skipping unknown format: {}", path.display());
+                tracing::info!("Skipping unknown format: {}", path.display());
             }
         }
     }
 
-    println!("\nSummary: {} updated, {} unchanged", updated, unchanged);
+    tracing::info!("\nSummary: {} updated, {} unchanged", updated, unchanged);
 
     Ok(())
 }
@@ -478,7 +478,7 @@ pub fn generate_from_paprika(paprika_file: &Path, fixtures_dir: Option<&Path>) -
     let mut archive = ZipArchive::new(file)
         .with_context(|| format!("Failed to read zip archive: {}", paprika_file.display()))?;
 
-    println!("Reading recipes from: {}", paprika_file.display());
+    tracing::info!("Reading recipes from: {}", paprika_file.display());
 
     let mut total_recipes = 0;
     let mut total_ingredients = 0;
@@ -557,7 +557,7 @@ pub fn generate_from_paprika(paprika_file: &Path, fixtures_dir: Option<&Path>) -
         }
     }
 
-    println!(
+    tracing::info!(
         "Generated {} new recipes ({} ingredients) in {}",
         total_recipes,
         total_ingredients,
@@ -628,7 +628,7 @@ pub fn migrate_curated(fixtures_dir: Option<&Path>) -> Result<()> {
     let curated_dir = fixtures_dir.join("curated");
 
     if !curated_dir.exists() {
-        println!("No curated directory found at {}", curated_dir.display());
+        tracing::info!("No curated directory found at {}", curated_dir.display());
         return Ok(());
     }
 
@@ -650,7 +650,7 @@ pub fn migrate_curated(fixtures_dir: Option<&Path>) -> Result<()> {
         // Parse filename: category--name--NN.json
         let parts: Vec<&str> = filename.split("--").collect();
         if parts.len() < 2 {
-            println!("Skipping file with unexpected format: {}", filename);
+            tracing::info!("Skipping file with unexpected format: {}", filename);
             continue;
         }
 
@@ -682,7 +682,7 @@ pub fn migrate_curated(fixtures_dir: Option<&Path>) -> Result<()> {
     }
 
     if categories.is_empty() {
-        println!("No curated test cases found to migrate");
+        tracing::info!("No curated test cases found to migrate");
         return Ok(());
     }
 
@@ -701,7 +701,7 @@ pub fn migrate_curated(fixtures_dir: Option<&Path>) -> Result<()> {
 
         let json = serde_json::to_string_pretty(&file)? + "\n";
         fs::write(&filepath, &json)?;
-        println!(
+        tracing::info!(
             "Created {} with {} test cases",
             filename,
             file.test_cases.len()
@@ -712,7 +712,7 @@ pub fn migrate_curated(fixtures_dir: Option<&Path>) -> Result<()> {
     for path in &files_to_delete {
         fs::remove_file(path)?;
     }
-    println!("\nDeleted {} old individual files", files_to_delete.len());
+    tracing::info!("\nDeleted {} old individual files", files_to_delete.len());
 
     Ok(())
 }

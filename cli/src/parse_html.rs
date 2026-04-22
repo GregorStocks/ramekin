@@ -1,5 +1,6 @@
 use anyhow::{Context, Result};
 use std::fs;
+use std::io::Write;
 use std::path::Path;
 
 /// Parse a recipe from an HTML file.
@@ -11,14 +12,18 @@ pub fn parse_html(file: &Path, source_url: &str) -> Result<()> {
     match ramekin_core::extract_recipe(&html, source_url) {
         Ok(recipe) => {
             let json = serde_json::to_string_pretty(&recipe)?;
-            println!("{}", json);
+            writeln!(std::io::stdout(), "{}", json)?;
             Ok(())
         }
         Err(e) => {
             let error_json = serde_json::json!({
                 "error": e.to_string()
             });
-            println!("{}", serde_json::to_string_pretty(&error_json)?);
+            writeln!(
+                std::io::stdout(),
+                "{}",
+                serde_json::to_string_pretty(&error_json)?
+            )?;
             // Return error so exit code is non-zero
             Err(anyhow::anyhow!("Failed to extract recipe: {}", e))
         }

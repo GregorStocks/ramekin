@@ -1,3 +1,5 @@
+#![deny(clippy::print_stdout, clippy::print_stderr)]
+
 mod description_generation;
 mod export;
 mod generate_test_urls;
@@ -384,7 +386,7 @@ async fn main() -> Result<()> {
             let extraction_report = pipeline_orchestrator::generate_summary_report(&results);
             let extraction_report_path = PathBuf::from("data/extraction-report.md");
             std::fs::write(&extraction_report_path, &extraction_report)?;
-            println!(
+            tracing::info!(
                 "Extraction report saved to: {}",
                 extraction_report_path.display()
             );
@@ -394,7 +396,7 @@ async fn main() -> Result<()> {
             let tag_report = pipeline_orchestrator::generate_tag_report(&run_dir)?;
             let tag_report_path = PathBuf::from("data/tag-report.md");
             std::fs::write(&tag_report_path, &tag_report)?;
-            println!(
+            tracing::info!(
                 "Tag report saved to: {} (from run: {})",
                 tag_report_path.display(),
                 run_id
@@ -404,7 +406,7 @@ async fn main() -> Result<()> {
             let density_report = pipeline_orchestrator::generate_density_gap_report(&results);
             let density_report_path = PathBuf::from("data/density-gap-report.txt");
             std::fs::write(&density_report_path, &density_report)?;
-            println!(
+            tracing::info!(
                 "Density gap report saved to: {}",
                 density_report_path.display()
             );
@@ -414,7 +416,7 @@ async fn main() -> Result<()> {
                 pipeline_orchestrator::generate_unique_ingredients_file(&run_dir)?;
             let unique_ingredients_path = PathBuf::from("data/unique-ingredients.txt");
             std::fs::write(&unique_ingredients_path, &unique_ingredients)?;
-            println!(
+            tracing::info!(
                 "Unique ingredients saved to: {} ({} ingredients)",
                 unique_ingredients_path.display(),
                 unique_ingredients.lines().count()
@@ -469,7 +471,8 @@ async fn ping(server: &str) -> Result<()> {
 
     let response = testing_api::unauthed_ping(&config).await?;
 
-    println!("{}", response.message);
+    use std::io::Write;
+    writeln!(std::io::stdout(), "{}", response.message)?;
 
     Ok(())
 }
@@ -489,9 +492,12 @@ fn init_tracing(
 ) -> Result<tracing_appender::non_blocking::WorkerGuard> {
     let console_filter =
         EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("info"));
+    // Plain output: tracing::info! calls should render just the message, so the
+    // CLI can replace println! without the user seeing "INFO" prefixes.
     let console_layer = fmt::layer()
         .with_writer(std::io::stderr)
         .with_target(false)
+        .with_level(false)
         .without_time()
         .with_filter(console_filter);
 
@@ -509,12 +515,13 @@ fn init_tracing(
         .with_ansi(false)
         .with_target(true)
         .with_filter(file_filter);
-    eprintln!("Logs: {}", path.display());
 
     tracing_subscriber::registry()
         .with(console_layer)
         .with(file_layer)
         .init();
+
+    tracing::info!("Logs: {}", path.display());
 
     // Route panics through tracing so they land in the log file too. Without this
     // the default hook writes directly to stderr and the log file ends up missing

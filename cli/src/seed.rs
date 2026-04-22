@@ -33,7 +33,7 @@ pub async fn seed(
     .await;
 
     if login_result.is_ok() {
-        println!("User '{}' already exists, skipping seed", username);
+        tracing::info!("User '{}' already exists, skipping seed", username);
         return Ok(());
     }
 
@@ -48,7 +48,7 @@ pub async fn seed(
     .await
     .context("Failed to create user")?;
 
-    println!("Created user '{}'", username);
+    tracing::info!("Created user '{}'", username);
 
     // Set up authenticated config for tag creation
     config.bearer_access_token = Some(login_response.token);
@@ -60,7 +60,7 @@ pub async fn seed(
         let tags_data: TagsFile =
             serde_json::from_str(&tags_content).context("Failed to parse tags file")?;
 
-        println!("Creating {} tags...", tags_data.tags.len());
+        tracing::info!("Creating {} tags...", tags_data.tags.len());
         for tag_name in &tags_data.tags {
             match tags_api::create_tag(
                 &config,
@@ -80,7 +80,7 @@ pub async fn seed(
                 }
             }
         }
-        println!("Tags created");
+        tracing::info!("Tags created");
     }
 
     // Import recipes from file

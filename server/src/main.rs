@@ -1,3 +1,5 @@
+#![deny(clippy::print_stdout, clippy::print_stderr)]
+
 mod api;
 mod auth;
 mod db;
@@ -193,7 +195,10 @@ async fn main() {
     // Check for --openapi flag to dump spec and exit
     if env::args().any(|arg| arg == "--openapi") {
         let spec = api::openapi().to_pretty_json().unwrap();
-        println!("{}", spec);
+        #[allow(clippy::print_stdout)]
+        {
+            println!("{}", spec);
+        }
         return;
     }
 
