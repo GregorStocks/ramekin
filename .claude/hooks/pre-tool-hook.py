@@ -41,6 +41,120 @@ _CARGO_TO_MAKE = {
 }
 
 
+def _extract_shell_heredoc_bodies(command: str) -> list[str]:
+    """Return bodies of heredocs whose target command is a shell interpreter.
+
+    `bash <<EOF\\n...\\nEOF` (or `sh`, `zsh`, etc.) feeds the heredoc body
+    to the shell's stdin and the shell executes it. Recurse into those
+    bodies so blocked commands inside can't hide there. Heredocs attached
+    to non-shell commands (e.g. `cat <<EOF`) are ignored.
+    """
+    bodies: list[str] = []
+    in_single = False
+    in_double = False
+    cmd_start = 0
+    i = 0
+    n = len(command)
+    while i < n:
+        ch = command[i]
+        if ch == "\\" and i + 1 < n and not in_single:
+            i += 2
+            continue
+        if ch == "'" and not in_double:
+            in_single = not in_single
+            i += 1
+            continue
+        if ch == '"' and not in_single:
+            in_double = not in_double
+            i += 1
+            continue
+        if in_single or in_double:
+            i += 1
+            continue
+        if command.startswith("&&", i) or command.startswith("||", i):
+            cmd_start = i + 2
+            i += 2
+            continue
+        if ch in "\n;|&":
+            cmd_start = i + 1
+            i += 1
+            continue
+        if not command.startswith("<<", i):
+            i += 1
+            continue
+        # Heredoc start. Parse the delimiter.
+        j = i + 2
+        if j < n and command[j] == "-":
+            j += 1
+        while j < n and command[j] in " \t":
+            j += 1
+        if j < n and command[j] in "\"'":
+            quote_ch = command[j]
+            end_quote = command.find(quote_ch, j + 1)
+            if end_quote == -1:
+                break
+            delim = command[j + 1 : end_quote]
+            j = end_quote + 1
+        else:
+            delim_start = j
+            while j < n and (command[j].isalnum() or command[j] in "_-"):
+                j += 1
+            delim = command[delim_start:j]
+        if not delim:
+            i += 1
+            continue
+        # Preceding command text on this segment — walk to the executable basename.
+        preceding = command[cmd_start:i]
+        tokens = _shell_tokens(preceding) or []
+        _env, idx = _leading_env_assignments(tokens)
+        while idx < len(tokens):
+            basename = os.path.basename(tokens[idx])
+            if basename in _SHELL_CONTROL_KEYWORDS:
+                idx += 1
+                continue
+            if basename in _WRAPPER_OPTS_WITH_ARG:
+                idx = _skip_wrapper_args(tokens, idx + 1, basename)
+                continue
+            break
+        is_shell = (
+            idx < len(tokens)
+            and os.path.basename(tokens[idx]) in _SHELL_WRAPPER_BASENAMES
+        )
+        # Locate the body: from the next newline to a line containing only delim.
+        nl = command.find("\n", j)
+        if nl == -1:
+            break
+        body_start = nl + 1
+        k = body_start
+        while k < n:
+            line_end = command.find("\n", k)
+            if line_end == -1:
+                line = command[k:]
+                line_end = n
+            else:
+                line = command[k:line_end]
+            if line.lstrip("\t") == delim:
+                break
+            k = line_end + 1 if line_end < n else n
+        body_end = k
+        if is_shell:
+            bodies.append(command[body_start:body_end])
+        # Resume parsing past the heredoc body and its terminator.
+        i = body_end
+        if i < n and command[i] != "\n":
+            # Past the delim line's newline.
+            i = command.find("\n", i)
+            if i == -1:
+                break
+            i += 1
+        else:
+            if i < n:
+                # Skip the delim line.
+                line_end = command.find("\n", i)
+                i = line_end + 1 if line_end != -1 else n
+    return bodies
+
+
 def _strip_heredocs(command: str) -> str:
     """Remove heredoc bodies so they don't confuse the parser.
 
@@ -439,6 +553,9 @@ def _walk_segment(
     env, index = _leading_env_assignments(tokens)
     while index < len(tokens):
         basename = os.path.basename(tokens[index])
+        if basename in _SHELL_CONTROL_KEYWORDS:
+            index += 1
+            continue
         if basename in _WRAPPER_OPTS_WITH_ARG:
             index = _skip_wrapper_args(tokens, index + 1, basename)
             continue
@@ -981,6 +1098,18 @@ def _segment_rejection(
 
 _SHELL_WRAPPER_BASENAMES = frozenset({"sh", "bash", "zsh", "dash", "ksh"})
 
+# Shell control-flow keywords that precede a real command in a segment
+# (`if CMD`, `then CMD`, `for VAR in ...; do CMD`, etc.). They must be
+# skipped so the walker can reach the actual executable.
+_SHELL_CONTROL_KEYWORDS = frozenset(
+    {
+        "if", "then", "else", "elif", "fi",
+        "for", "do", "done", "while", "until",
+        "case", "esac", "select",
+        "function",
+    }
+)
+
 
 def _find_env_s_in_args(args: list[str]) -> str | None:
     """Return the -S / --split-string payload in an env invocation's argv.
@@ -1104,6 +1233,8 @@ def _segment_uses_git_push(segment: str) -> bool:
         if payload is not None:
             return command_uses_git_push(payload)
         return False
+    if exe_basename == "eval":
+        return command_uses_git_push(" ".join(args))
     if exe_basename != "git":
         return False
     subcmd, _ = _git_subcommand(args, env)
@@ -1111,6 +1242,9 @@ def _segment_uses_git_push(segment: str) -> bool:
 
 
 def command_uses_git_push(command: str) -> bool:
+    # Heredoc bodies fed to a shell (`bash <<EOF ... EOF`) execute as commands.
+    if any(command_uses_git_push(b) for b in _extract_shell_heredoc_bodies(command)):
+        return True
     command = _strip_heredocs(command)
     if any(command_uses_git_push(sub) for sub in _extract_subshells(command)):
         return True
@@ -1287,8 +1421,14 @@ def _extract_subshells(command: str) -> list[str]:
 
 
 def rejection_message(command: str, dirty_pipeline_output: bool) -> str | None:
-    # Heredoc bodies are literal data (e.g. PR body markdown); don't try
-    # to re-parse them as commands.
+    # Shell-heredoc bodies (`bash <<EOF ... EOF`) are executed as commands
+    # by the target shell, so recurse into them before stripping.
+    for body in _extract_shell_heredoc_bodies(command):
+        inner = rejection_message(body, dirty_pipeline_output)
+        if inner is not None:
+            return inner
+    # Heredoc bodies for non-shell targets are literal data (e.g. PR body
+    # markdown); don't re-parse them.
     command = _strip_heredocs(command)
     # Recurse into $(...), <(...), >(...), and `...` subshells so the
     # subshell's invocation is subject to the same rules as a top-level command.
@@ -1326,6 +1466,15 @@ def rejection_message(command: str, dirty_pipeline_output: bool) -> str | None:
         if exe_basename in _SHELL_WRAPPER_BASENAMES:
             payload = _extract_shell_c_payload(args)
             if payload is not None:
+                inner = rejection_message(payload, dirty_pipeline_output)
+                if inner is not None:
+                    return inner
+                continue
+        # `eval ARGS...` concatenates its args and re-parses them as a shell
+        # command. Recurse on the joined payload.
+        if exe_basename == "eval":
+            payload = " ".join(args)
+            if payload:
                 inner = rejection_message(payload, dirty_pipeline_output)
                 if inner is not None:
                     return inner
