@@ -142,7 +142,13 @@ class ShoppingListStore: ObservableObject {
 
         do {
             let pending = try coreDataStack.viewContext.fetch(ShoppingItem.fetchPendingSync())
-            logger.log("syncWithServer: \(pending.count) pending items", source: "Shopping")
+            let creates = pending.filter { $0.syncStatusEnum == .pendingCreate }.count
+            let updates = pending.filter { $0.syncStatusEnum == .pendingUpdate }.count
+            let deletes = pending.filter { $0.syncStatusEnum == .pendingDelete }.count
+            logger.log(
+                "syncWithServer: \(pending.count) pending (\(creates) create, \(updates) update, \(deletes) delete)",
+                source: "Shopping"
+            )
             let request = buildSyncRequest(from: pending)
             let response = try await logger.timed("shopping sync API", source: "Shopping") {
                 try await ShoppingListAPI.syncItems(syncRequest: request)
