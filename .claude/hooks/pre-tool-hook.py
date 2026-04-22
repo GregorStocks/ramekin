@@ -494,29 +494,32 @@ def _aliases_from_env(env: dict[str, str] | None) -> dict[str, str]:
     return aliases
 
 
-def _git_subcommand(
-    args: list[str], env: dict[str, str] | None = None
-) -> tuple[str | None, list[str]]:
-    """Return (subcommand, remaining_args) for a git invocation.
-
-    Expands aliases defined inline via `-c alias.NAME=VALUE` AND via the
-    GIT_CONFIG_COUNT / GIT_CONFIG_KEY_N / GIT_CONFIG_VALUE_N env vars, so
-    `git -c alias.p=push p` and `GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=alias.p
-    GIT_CONFIG_VALUE_0=push git p` both report `push`.
-    """
+def _collect_git_aliases(
+    args: list[str], env: dict[str, str] | None
+) -> dict[str, str]:
+    """Return all aliases defined via env or via any `-c alias.NAME=VALUE` in args."""
     aliases = _aliases_from_env(env)
-    index = 0
-    while index < len(args):
-        token = args[index]
-        if token == "-c" and index + 1 < len(args):
-            val = args[index + 1]
+    i = 0
+    while i < len(args):
+        token = args[i]
+        if token == "-c" and i + 1 < len(args):
+            val = args[i + 1]
             if val.startswith("alias."):
                 rest = val[len("alias.") :]
                 if "=" in rest:
                     name, value = rest.split("=", 1)
                     aliases[name] = value
-            index += 2
+            i += 2
             continue
+        i += 1
+    return aliases
+
+
+def _skip_git_global_opts(args: list[str], start: int) -> int | None:
+    """Return the index of the first positional after git global options, or None."""
+    index = start
+    while index < len(args):
+        token = args[index]
         if token in _GIT_GLOBAL_OPTS_WITH_ARG:
             index += 2
             continue
@@ -526,22 +529,50 @@ def _git_subcommand(
         if token.startswith("-"):
             index += 1
             continue
-        subcmd = token
-        rest = args[index + 1 :]
-        # Chase alias chains (`alias.x=p`, `alias.p=push` → push) up to a
-        # bounded depth to guard against cycles.
-        seen: set[str] = set()
-        for _ in range(16):
-            if subcmd not in aliases or subcmd in seen:
-                break
-            seen.add(subcmd)
-            alias_tokens = _shell_tokens(aliases[subcmd]) or []
-            if not alias_tokens or alias_tokens[0].startswith("!"):
-                break
-            subcmd = alias_tokens[0]
-            rest = alias_tokens[1:] + rest
-        return subcmd, rest
-    return None, []
+        return index
+    return None
+
+
+def _resolve_git_subcommand(
+    args: list[str], env: dict[str, str] | None = None
+) -> tuple[str | None, list[str], str | None]:
+    """Fully resolve a git invocation through alias chains.
+
+    Returns `(subcmd, remaining_args, shell_alias_payload)`. If the
+    resolution terminates at a shell alias (`!CMD`), `shell_alias_payload`
+    is `CMD` (without the leading `!`); otherwise it is `None`. Handles
+    aliases whose expansion prefixes additional git global options
+    (`alias.p='-c color.ui=always push'` → push).
+    """
+    aliases = _collect_git_aliases(args, env)
+    current = list(args)
+    seen: set[str] = set()
+    for _ in range(16):
+        idx = _skip_git_global_opts(current, 0)
+        if idx is None:
+            return None, [], None
+        token = current[idx]
+        if token not in aliases or token in seen:
+            return token, current[idx + 1 :], None
+        seen.add(token)
+        value = aliases[token]
+        if value.startswith("!"):
+            return None, [], value[1:]
+        alias_tokens = _shell_tokens(value) or []
+        if not alias_tokens:
+            return token, current[idx + 1 :], None
+        current = current[:idx] + alias_tokens + current[idx + 1 :]
+    idx = _skip_git_global_opts(current, 0)
+    if idx is None:
+        return None, [], None
+    return current[idx], current[idx + 1 :], None
+
+
+def _git_subcommand(
+    args: list[str], env: dict[str, str] | None = None
+) -> tuple[str | None, list[str]]:
+    subcmd, rest, _ = _resolve_git_subcommand(args, env)
+    return subcmd, rest
 
 
 # git switch / checkout: options that consume the NEXT argv token as their
@@ -1017,37 +1048,13 @@ def _extract_env_s_payloads(command: str) -> list[str]:
 def _git_shell_alias_payload(
     args: list[str], env: dict[str, str] | None = None
 ) -> str | None:
-    """If this git invocation triggers a shell alias (`!CMD`), return CMD.
+    """If this git invocation resolves to a shell alias (`!CMD`), return CMD.
 
-    Covers both inline `-c 'alias.NAME=!CMD'` and env-defined aliases via
-    GIT_CONFIG_COUNT / GIT_CONFIG_KEY_N / GIT_CONFIG_VALUE_N.
+    Follows full alias chains, so `alias.x=p` / `alias.p=!git push` triggers
+    on `git x`.
     """
-    aliases: dict[str, str] = dict(_aliases_from_env(env))
-    index = 0
-    while index < len(args):
-        token = args[index]
-        if token == "-c" and index + 1 < len(args):
-            val = args[index + 1]
-            if val.startswith("alias."):
-                rest = val[len("alias.") :]
-                if "=" in rest:
-                    name, value = rest.split("=", 1)
-                    aliases[name] = value
-            index += 2
-            continue
-        if token in _GIT_GLOBAL_OPTS_WITH_ARG:
-            index += 2
-            continue
-        if any(token.startswith(p) for p in _GIT_GLOBAL_LONG_OPTS_WITH_VALUE):
-            index += 1
-            continue
-        if token.startswith("-"):
-            index += 1
-            continue
-        if token in aliases and aliases[token].startswith("!"):
-            return aliases[token][1:]
-        return None
-    return None
+    _subcmd, _rest, payload = _resolve_git_subcommand(args, env)
+    return payload
 
 
 def _extract_shell_c_payload(args: list[str]) -> str | None:
@@ -1219,10 +1226,23 @@ def _extract_subshells(command: str) -> list[str]:
         if is_dollar_paren or is_proc_sub:
             depth = 1
             j = i + 2
+            body_single = False
+            body_double = False
             while j < n and depth > 0:
                 c = command[j]
-                if c == "\\" and j + 1 < n:
+                if c == "\\" and j + 1 < n and not body_single:
                     j += 2
+                    continue
+                if c == "'" and not body_double:
+                    body_single = not body_single
+                    j += 1
+                    continue
+                if c == '"' and not body_single:
+                    body_double = not body_double
+                    j += 1
+                    continue
+                if body_single or body_double:
+                    j += 1
                     continue
                 if c == "(":
                     depth += 1
@@ -1237,10 +1257,23 @@ def _extract_subshells(command: str) -> list[str]:
                 continue
         if ch == "`":
             j = i + 1
+            body_single = False
+            body_double = False
             while j < n:
                 c = command[j]
-                if c == "\\" and j + 1 < n:
+                if c == "\\" and j + 1 < n and not body_single:
                     j += 2
+                    continue
+                if c == "'" and not body_double:
+                    body_single = not body_single
+                    j += 1
+                    continue
+                if c == '"' and not body_single:
+                    body_double = not body_double
+                    j += 1
+                    continue
+                if body_single or body_double:
+                    j += 1
                     continue
                 if c == "`":
                     break
