@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use std::fs;
 use std::io::{self, Write};
 use std::path::{Path, PathBuf};
@@ -195,16 +195,9 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     // Create run directory
     fs::create_dir_all(&run_dir)?;
 
-    // Load test URLs
+    // Load test URLs plus any snapshot-allowlisted URLs that must also run.
     let load_urls_start = Instant::now();
-    let test_urls_content = fs::read_to_string(&config.test_urls_file).with_context(|| {
-        format!(
-            "Failed to read test URLs from {}",
-            config.test_urls_file.display()
-        )
-    })?;
-    let test_urls: TestUrlsOutput =
-        serde_json::from_str(&test_urls_content).context("Failed to parse test URLs JSON")?;
+    let test_urls = load_pipeline_urls(&config.test_urls_file)?;
 
     // Collect URLs to process
     let mut urls_to_process: Vec<(String, String)> = Vec::new(); // (url, domain)
@@ -461,7 +454,8 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     // a terminal manifest status so external consumers aren't left observing a
     // run stuck in "running".
     let snapshot_start = Instant::now();
-    let snapshot_result = write_pipeline_snapshots(&run_dir);
+    let snapshot_allowlist = snapshot_allowlist_path(&config.test_urls_file);
+    let snapshot_result = write_pipeline_snapshots(&run_dir, &snapshot_allowlist);
     let snapshot_elapsed = snapshot_start.elapsed();
     tracing::info!(
         phase = "snapshots",
@@ -850,8 +844,82 @@ fn save_results(run_dir: &Path, results: &PipelineResults) -> Result<()> {
     Ok(())
 }
 
-fn write_pipeline_snapshots(run_dir: &Path) -> Result<()> {
-    let allowlist = PathBuf::from("data/pipeline-snapshot-urls.json");
+fn snapshot_allowlist_path(test_urls_path: &Path) -> PathBuf {
+    test_urls_path
+        .parent()
+        .unwrap_or_else(|| Path::new("."))
+        .join("pipeline-snapshot-urls.json")
+}
+
+fn load_pipeline_urls(test_urls_path: &Path) -> Result<TestUrlsOutput> {
+    let test_urls_content = fs::read_to_string(test_urls_path)
+        .with_context(|| format!("Failed to read test URLs from {}", test_urls_path.display()))?;
+    let mut test_urls: TestUrlsOutput =
+        serde_json::from_str(&test_urls_content).context("Failed to parse test URLs JSON")?;
+    let mut existing_urls: HashSet<String> = test_urls
+        .sites
+        .iter()
+        .flat_map(|site| site.urls.iter().cloned())
+        .collect();
+
+    let allowlist = snapshot_allowlist_path(test_urls_path);
+    if !allowlist.exists() {
+        return Ok(test_urls);
+    }
+
+    let allowlist_content = fs::read_to_string(&allowlist)
+        .with_context(|| format!("Failed to read snapshot allowlist {}", allowlist.display()))?;
+    let allowlisted_urls: Vec<String> = serde_json::from_str(&allowlist_content)
+        .with_context(|| format!("Failed to parse snapshot allowlist {}", allowlist.display()))?;
+
+    for url in allowlisted_urls {
+        if !existing_urls.insert(url.clone()) {
+            continue;
+        }
+
+        let domain = reqwest::Url::parse(&url)
+            .with_context(|| format!("Invalid URL in snapshot allowlist: {url}"))?
+            .host_str()
+            .ok_or_else(|| anyhow::anyhow!("Snapshot allowlist URL has no host: {url}"))?
+            .to_string();
+
+        if let Some(site) = test_urls
+            .sites
+            .iter_mut()
+            .find(|site| site.domain == domain)
+        {
+            if !site.urls.iter().any(|existing| existing == &url) {
+                site.urls.push(url);
+            }
+        } else {
+            test_urls.sites.push(crate::generate_test_urls::SiteEntry {
+                domain,
+                rank: usize::MAX,
+                urls: vec![url],
+                error: None,
+                source: crate::generate_test_urls::UrlSource::Merged,
+            });
+        }
+    }
+
+    for site in &mut test_urls.sites {
+        site.urls.sort();
+        site.urls.dedup();
+    }
+    test_urls
+        .sites
+        .sort_by_key(|site| (site.rank, site.domain.clone()));
+
+    let mut seen_urls = HashSet::new();
+    for site in &mut test_urls.sites {
+        site.urls.retain(|url| seen_urls.insert(url.clone()));
+    }
+    test_urls.sites.retain(|site| !site.urls.is_empty());
+
+    Ok(test_urls)
+}
+
+fn write_pipeline_snapshots(run_dir: &Path, allowlist: &Path) -> Result<()> {
     let snapshots_dir = PathBuf::from("data/pipeline-snapshots");
 
     if !allowlist.exists() {
@@ -862,7 +930,7 @@ fn write_pipeline_snapshots(run_dir: &Path) -> Result<()> {
         return Ok(());
     }
 
-    crate::pipeline::snapshots::write_snapshots(run_dir, &allowlist, &snapshots_dir)
+    crate::pipeline::snapshots::write_snapshots(run_dir, allowlist, &snapshots_dir)
 }
 
 fn truncate_url(url: &str, max_len: usize) -> String {
@@ -1525,5 +1593,150 @@ fn simplify_error(error: &str) -> String {
         } else {
             truncated
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use tempfile::TempDir;
+
+    fn sample_test_urls() -> &'static str {
+        r#"{
+          "generated_at": "2026-04-22T00:00:00Z",
+          "config": {
+            "num_sites": 1,
+            "urls_per_site": 2
+          },
+          "sites": [
+            {
+              "domain": "example.com",
+              "rank": 1,
+              "urls": [
+                "https://example.com/already-present"
+              ],
+              "source": "sitemap"
+            }
+          ]
+        }"#
+    }
+
+    #[test]
+    fn load_pipeline_urls_unions_snapshot_allowlist() {
+        let dir = TempDir::new().unwrap();
+        let data_dir = dir.path().join("data");
+        std::fs::create_dir_all(&data_dir).unwrap();
+        let test_urls_path = data_dir.join("test-urls.json");
+        std::fs::write(&test_urls_path, sample_test_urls()).unwrap();
+        std::fs::write(
+            data_dir.join("pipeline-snapshot-urls.json"),
+            r#"[
+              "https://example.com/already-present",
+              "https://example.com/from-allowlist",
+              "https://other.example/allowlisted-only"
+            ]"#,
+        )
+        .unwrap();
+
+        let loaded = load_pipeline_urls(&test_urls_path).unwrap();
+        assert_eq!(loaded.sites.len(), 2);
+
+        let example_site = loaded
+            .sites
+            .iter()
+            .find(|site| site.domain == "example.com")
+            .unwrap();
+        assert_eq!(
+            example_site.urls,
+            vec![
+                "https://example.com/already-present".to_string(),
+                "https://example.com/from-allowlist".to_string(),
+            ]
+        );
+
+        let allowlisted_only_site = loaded
+            .sites
+            .iter()
+            .find(|site| site.domain == "other.example")
+            .unwrap();
+        assert_eq!(allowlisted_only_site.rank, usize::MAX);
+        assert_eq!(
+            allowlisted_only_site.urls,
+            vec!["https://other.example/allowlisted-only".to_string()]
+        );
+        assert_eq!(
+            allowlisted_only_site.source,
+            crate::generate_test_urls::UrlSource::Merged
+        );
+    }
+
+    #[test]
+    fn load_pipeline_urls_without_allowlist_uses_test_urls_only() {
+        let dir = TempDir::new().unwrap();
+        let data_dir = dir.path().join("data");
+        std::fs::create_dir_all(&data_dir).unwrap();
+        let test_urls_path = data_dir.join("test-urls.json");
+        std::fs::write(&test_urls_path, sample_test_urls()).unwrap();
+
+        let loaded = load_pipeline_urls(&test_urls_path).unwrap();
+        assert_eq!(loaded.sites.len(), 1);
+        assert_eq!(loaded.sites[0].domain, "example.com");
+        assert_eq!(
+            loaded.sites[0].urls,
+            vec!["https://example.com/already-present".to_string()]
+        );
+    }
+
+    #[test]
+    fn load_pipeline_urls_deduplicates_global_url_matches() {
+        let dir = TempDir::new().unwrap();
+        let data_dir = dir.path().join("data");
+        std::fs::create_dir_all(&data_dir).unwrap();
+        let test_urls_path = data_dir.join("test-urls.json");
+        std::fs::write(
+            &test_urls_path,
+            r#"{
+              "generated_at": "2026-04-22T00:00:00Z",
+              "config": {
+                "num_sites": 1,
+                "urls_per_site": 1
+              },
+              "sites": [
+                {
+                  "domain": "seriouseats.com",
+                  "rank": 1,
+                  "urls": [
+                    "https://www.seriouseats.com/already-present"
+                  ],
+                  "source": "sitemap"
+                }
+              ]
+            }"#,
+        )
+        .unwrap();
+        std::fs::write(
+            data_dir.join("pipeline-snapshot-urls.json"),
+            r#"[
+              "https://www.seriouseats.com/already-present"
+            ]"#,
+        )
+        .unwrap();
+
+        let loaded = load_pipeline_urls(&test_urls_path).unwrap();
+        assert_eq!(loaded.sites.len(), 1);
+        assert_eq!(loaded.sites[0].domain, "seriouseats.com");
+        assert_eq!(
+            loaded.sites[0].urls,
+            vec!["https://www.seriouseats.com/already-present".to_string()]
+        );
+    }
+
+    #[test]
+    fn snapshot_allowlist_path_uses_test_urls_sibling_directory() {
+        let custom_test_urls = Path::new("/tmp/custom-inputs/test-urls.json");
+        assert_eq!(
+            snapshot_allowlist_path(custom_test_urls),
+            PathBuf::from("/tmp/custom-inputs/pipeline-snapshot-urls.json")
+        );
     }
 }
