@@ -8,6 +8,11 @@ pub use ramekin_core::image::{ALLOWED_FORMATS, MAX_FILE_SIZE};
 pub const THUMBNAIL_SIZE: u32 = 200;
 pub const MAX_THUMBNAIL_SIZE: u32 = 800;
 
+/// Max dimension (longest side) for photos embedded in paprikarecipes exports.
+/// Originals can be up to MAX_FILE_SIZE (10MB) each; for exports we trade full
+/// resolution for bounded memory/archive size.
+pub const EXPORT_PHOTO_MAX_DIMENSION: u32 = 1600;
+
 pub struct ProcessedImage {
     pub content_type: String,
     pub thumbnail: Vec<u8>,
@@ -76,6 +81,31 @@ pub fn generate_thumbnail(data: &[u8], size: u32) -> Result<Vec<u8>, String> {
     thumbnail_img
         .write_to(&mut buf, ImageFormat::Jpeg)
         .map_err(|e| format!("Failed to encode thumbnail: {}", e))?;
+
+    Ok(buf.into_inner())
+}
+
+/// Resize an image for inclusion in a paprikarecipes export.
+///
+/// Fits the image within `EXPORT_PHOTO_MAX_DIMENSION` on the longest side
+/// (preserving aspect ratio) and re-encodes as JPEG. If the original is
+/// already smaller, `thumbnail` is a no-op on dimensions but still re-encodes
+/// as JPEG — this is fine and keeps the Paprika consumer side simple.
+pub fn resize_for_export(data: &[u8]) -> Result<Vec<u8>, String> {
+    let reader = ImageReader::new(Cursor::new(data))
+        .with_guessed_format()
+        .map_err(|e| format!("Failed to read image: {}", e))?;
+
+    let img = reader
+        .decode()
+        .map_err(|e| format!("Failed to decode image: {}", e))?;
+
+    let resized = img.thumbnail(EXPORT_PHOTO_MAX_DIMENSION, EXPORT_PHOTO_MAX_DIMENSION);
+
+    let mut buf = Cursor::new(Vec::new());
+    resized
+        .write_to(&mut buf, ImageFormat::Jpeg)
+        .map_err(|e| format!("Failed to encode export image: {}", e))?;
 
     Ok(buf.into_inner())
 }

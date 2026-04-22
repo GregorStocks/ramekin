@@ -103,7 +103,7 @@ test-ui: check-deps $(CLIENT_MARKER) ## Run UI tests with Playwright (requires D
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/run-ui-tests.sh
 
 .venv/.installed: requirements-test.txt
-	@uv venv
+	@test -d .venv || uv venv
 	@uv pip install -r requirements-test.txt
 	@touch .venv/.installed
 
