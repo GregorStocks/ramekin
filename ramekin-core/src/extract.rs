@@ -1867,10 +1867,6 @@ fn extract_ingredients_from_div(document: &Html) -> Option<String> {
 /// Extract instructions from common recipe plugin HTML classes.
 /// Searches the entire document (not scoped to a microdata container).
 fn extract_instructions_from_html_classes(document: &Html) -> Option<String> {
-    if let Some(result) = extract_wprm_instructions(document, "") {
-        return Some(result);
-    }
-
     let selectors = [
         ".jetpack-recipe-directions",
         "div.instructions",
@@ -1896,7 +1892,7 @@ fn extract_instructions_from_html_classes(document: &Html) -> Option<String> {
         }
     }
 
-    None
+    extract_wprm_instructions(document, "")
 }
 
 static WPRM_STICKY_NOTE_TEXT_REGEX: LazyLock<Regex> = LazyLock::new(|| {
