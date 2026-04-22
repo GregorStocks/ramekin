@@ -1,15 +1,97 @@
 """Tests for Paprika export functionality."""
 
+import base64
 import gzip
 import json
 import zipfile
 from io import BytesIO
 
 import requests
+from PIL import Image
 
 from conftest import make_ingredient
-from ramekin_client.api import RecipesApi
+from ramekin_client.api import PhotosApi, RecipesApi
 from ramekin_client.models import CreateRecipeRequest
+
+# Must match server::photos::processing::EXPORT_PHOTO_MAX_DIMENSION
+EXPORT_PHOTO_MAX_DIMENSION = 1600
+
+
+def _export_zip_contents(server_url, client):
+    """Fetch /api/recipes/export and parse into a dict of filename → recipe JSON."""
+    token = client.configuration.access_token
+    response = requests.get(
+        f"{server_url}/api/recipes/export",
+        headers={"Authorization": f"Bearer {token}"},
+    )
+    assert response.status_code == 200
+    assert response.headers["content-type"] == "application/zip"
+    zip_buffer = BytesIO(response.content)
+    out = {}
+    with zipfile.ZipFile(zip_buffer, "r") as zf:
+        for name in zf.namelist():
+            with zf.open(name) as f:
+                out[name] = json.loads(gzip.decompress(f.read()))
+    return out
+
+
+def test_export_downscales_photos(authed_api_client, server_url):
+    """Photos embedded in a paprikarecipes export must be resized so the
+    longest side is <= EXPORT_PHOTO_MAX_DIMENSION (1600px).
+
+    The server originally embedded full-resolution photos (up to 10MB each)
+    as base64, which caused the server to OOM on bulk export of a real
+    library. This test guards the downscale path in
+    server::api::recipes::export::convert_to_paprika.
+    """
+    client, _user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+    photos_api = PhotosApi(client)
+
+    # 2400x1800 is well above the 1600 cap on the longest side.
+    large_jpeg = _make_large_jpeg(2400, 1800)
+    photo_id = str(photos_api.upload(file=("big.jpg", large_jpeg)).id)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Recipe With Big Photo",
+            instructions="Cook it",
+            ingredients=[make_ingredient(item="flour", amount="2", unit="cups")],
+            photo_ids=[photo_id],
+        )
+    )
+
+    contents = _export_zip_contents(server_url, client)
+    assert len(contents) == 1
+    recipe = next(iter(contents.values()))
+    assert recipe["name"] == "Recipe With Big Photo"
+    assert len(recipe["photos"]) == 1
+    photo_b64 = recipe["photos"][0]["data"]
+    photo_bytes = base64.b64decode(photo_b64)
+
+    # Resized output is JPEG and fits within the export cap.
+    assert photo_bytes[:3] == b"\xff\xd8\xff", "resized photo should be JPEG"
+    resized = Image.open(BytesIO(photo_bytes))
+    assert max(resized.size) <= EXPORT_PHOTO_MAX_DIMENSION, (
+        f"resized photo {resized.size} exceeds export cap {EXPORT_PHOTO_MAX_DIMENSION}"
+    )
+    # And it should actually be smaller than the original — if it were a
+    # no-op, this whole exercise would have been pointless.
+    assert len(photo_bytes) < len(large_jpeg)
+
+
+def _make_large_jpeg(width: int, height: int) -> bytes:
+    """Build a JPEG of the given dimensions for exercising photo resizing."""
+    img = Image.new("RGB", (width, height), color=(123, 45, 67))
+    # Add a diagonal gradient so the JPEG doesn't compress down to ~nothing
+    # and we get a realistic non-trivial file size.
+    px = img.load()
+    for y in range(height):
+        for x in range(0, width, 32):
+            px[x, y] = ((x + y) % 256, (x * 2) % 256, (y * 3) % 256)
+    buf = BytesIO()
+    img.save(buf, format="JPEG", quality=90)
+    return buf.getvalue()
 
 
 def test_export_single_recipe(authed_api_client, server_url):

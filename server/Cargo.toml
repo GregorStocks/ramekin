@@ -8,6 +8,8 @@ license = "LicenseRef-Proprietary"
 [dependencies]
 # Async runtime
 tokio = { version = "1.52", features = ["full"] }
+tokio-stream = "0.1"
+bytes = "1"
 
 # Web framework
 axum = { version = "0.8", features = ["multipart"] }

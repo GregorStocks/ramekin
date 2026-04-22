@@ -1,0 +1,47 @@
+{
+  "title": "Add zero-downtime release-build target for production-ish \
+deployment",
+  "description": "Right now the single \"production\" instance is running via \
+`make dev-headless`, which is a debug build under `cargo watch`. Downsides: \
+(1) debug builds are slow and memory-heavy, (2) any source change triggers a \
+full restart with a visible downtime window, (3) there is no process-level \
+memory cap so an OOM (e.g. the paprikarecipes export bug) silently takes the \
+server down and surfaces as a 502 at the reverse proxy.\n\
+\n\
+We want a new make target (e.g. `make serve` or `make prod`) that:\n\
+\n\
+  - Builds/runs the server in release mode.\n\
+  - Uses socket activation so restarts are ~zero-downtime: the recommended \
+setup is the `listenfd` crate in the server + `systemfd --no-pid -s \
+https::$PORT` in front of `cargo watch -x 'run --release'`. The kernel queues \
+incoming conns while the new binary boots, existing conns drain via axum's \
+graceful shutdown. Minimal code change (a small adapter around the axum \
+bind).\n\
+  - Sets a memory cap on the server process (systemd-run \
+--property=MemoryMax=..., ulimit -v via wrapper, or similar) so an OOM \
+surfaces as an immediate fast failure with a log line instead of a mystery \
+502.\n\
+  - Does NOT change the behavior of `make dev` / `make dev-headless`. Those \
+should stay debug+cargo-watch for iteration speed.\n\
+\n\
+Nice-to-haves:\n\
+\n\
+  - Fold it into `process-compose.yaml` as an alternate profile or a separate \
+compose file so the rest of the dev stack (UI, certs, seed) still composes \
+cleanly.\n\
+  - Add a `make serve-down` or equivalent.\n\
+\n\
+Context: originally surfaced while diagnosing a paprikarecipes-export OOM — \
+see also the export streaming/downscaling PR that fixes the immediate memory \
+blow-up. Memory cap here is defense in depth so future regressions fail \
+loudly.",
+  "status": "open",
+  "priority": 1,
+  "type": "task",
+  "labels": [
+    "ops",
+    "server",
+  ],
+  "created_at": "2026-04-21T16:38:13-07:00",
+  "updated_at": "2026-04-21T16:38:13-07:00",
+}
