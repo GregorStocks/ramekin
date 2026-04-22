@@ -17,7 +17,7 @@ if ! cargo watch --version >/dev/null 2>&1; then
     exit 1
 fi
 
-MEMORY_MAX_MB="${SERVER_MEMORY_MAX_MB:-2048}"
+MEMORY_MAX_MB="${SERVER_MEMORY_MAX_MB:-4096}"
 
 cd "$SERVER_DIR"
 
