@@ -471,7 +471,8 @@ async fn ping(server: &str) -> Result<()> {
 
     let response = testing_api::unauthed_ping(&config).await?;
 
-    tracing::info!("{}", response.message);
+    use std::io::Write;
+    writeln!(std::io::stdout(), "{}", response.message)?;
 
     Ok(())
 }
