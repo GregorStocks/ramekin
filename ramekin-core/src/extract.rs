@@ -1986,6 +1986,43 @@ fn normalize_wprm_text(text: &str) -> String {
     text.split_whitespace().collect::<Vec<_>>().join(" ")
 }
 
+fn normalize_wprm_title_tokens(text: &str) -> Vec<String> {
+    normalize_wprm_text(text)
+        .split(|c: char| !c.is_ascii_alphanumeric())
+        .filter_map(|part| {
+            let part = part.trim().to_ascii_lowercase();
+            if part.is_empty() || matches!(part.as_str(), "recipe" | "recipes") {
+                None
+            } else {
+                Some(part)
+            }
+        })
+        .collect()
+}
+
+fn contains_wprm_title_subsequence(haystack: &[String], needle: &[String]) -> bool {
+    if needle.is_empty() || needle.len() > haystack.len() {
+        return false;
+    }
+
+    haystack
+        .windows(needle.len())
+        .any(|window| window == needle)
+}
+
+fn wprm_titles_match(recipe_title: &str, card_title: &str) -> bool {
+    let recipe_tokens = normalize_wprm_title_tokens(recipe_title);
+    let card_tokens = normalize_wprm_title_tokens(card_title);
+
+    if recipe_tokens.is_empty() || card_tokens.is_empty() {
+        return false;
+    }
+
+    recipe_tokens == card_tokens
+        || contains_wprm_title_subsequence(&recipe_tokens, &card_tokens)
+        || contains_wprm_title_subsequence(&card_tokens, &recipe_tokens)
+}
+
 fn extract_wprm_steps(root: ElementRef<'_>) -> Option<Vec<String>> {
     let selector = Selector::parse(".wprm-recipe-instruction-text").ok()?;
     let steps: Vec<String> = root
@@ -2039,7 +2076,7 @@ fn extract_wprm_instructions(document: &Html, recipe_title: &str) -> Option<Stri
             .map(|el| normalize_wprm_text(&el.text().collect::<String>()));
 
         if let Some(card_title) = card_title {
-            if !normalized_title.is_empty() && card_title.eq_ignore_ascii_case(&normalized_title) {
+            if !normalized_title.is_empty() && wprm_titles_match(&normalized_title, &card_title) {
                 matching_steps = Some(steps);
                 break;
             }
@@ -3243,6 +3280,47 @@ mod tests {
                 </div>
                 <div class="wprm-recipe">
                     <h2 class="wprm-recipe-name">Semi-Instant Pancakes</h2>
+                    <li class="wprm-recipe-instruction">
+                        <div class="wprm-recipe-instruction-text">
+                            <wprm-code>
+                                <span class="sticky-note-btn">Carefully flip</span>
+                                <span class="sticky-note">
+                                    <span class="sticky-note-text">Ignore this note.</span>
+                                </span>
+                                with a wide spatula
+                            </wprm-code>
+                        </div>
+                    </li>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/pancakes").unwrap();
+        assert_eq!(result.instructions, "Carefully flip with a wide spatula");
+    }
+
+    #[test]
+    fn test_wprm_instruction_supplement_matches_common_title_variants() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Semi-Instant Pancakes",
+                    "recipeIngredient": ["1 cup flour"],
+                    "recipeInstructions": [
+                        {
+                            "@type": "HowToStep",
+                            "text": "Polluted JSON-LD step"
+                        }
+                    ]
+                }
+                </script>
+            </head>
+            <body>
+                <div class="wprm-recipe">
+                    <h2 class="wprm-recipe-name">Semi Instant Pancakes Recipe</h2>
                     <li class="wprm-recipe-instruction">
                         <div class="wprm-recipe-instruction-text">
                             <wprm-code>
