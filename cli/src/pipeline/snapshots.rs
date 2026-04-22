@@ -40,18 +40,40 @@ pub fn write_snapshots(run_dir: &Path, allowlist_path: &Path, snapshots_dir: &Pa
 
     let mut written = 0usize;
     let mut skipped = 0usize;
+    let mut stale_removed = 0usize;
     for url in &urls {
         let slug = slugify_url(url);
+        let path = snapshots_dir.join(format!("{slug}.json"));
         let final_recipe = match assemble_snapshot(run_dir, run_results.as_ref(), url, &slug)? {
             Some(recipe) => recipe,
             None => {
                 let reason = describe_missing_extract(run_dir, run_results.as_ref(), url, &slug);
-                tracing::warn!(
-                    url = %url,
-                    slug = %slug,
-                    reason = %reason,
-                    "skipping pipeline snapshot; extract_recipe output not present for allowlisted URL"
-                );
+                // If a prior run produced a snapshot for this URL and the
+                // current run can't refresh it, the on-disk file is stale —
+                // keeping it would let audit tooling keep consuming a stale
+                // artifact as if it were current. Delete and log so the
+                // regression is visible. A fresh run that re-succeeds will
+                // rewrite the file.
+                if path.exists() {
+                    std::fs::remove_file(&path).with_context(|| {
+                        format!("Failed to remove stale snapshot {}", path.display())
+                    })?;
+                    tracing::warn!(
+                        url = %url,
+                        slug = %slug,
+                        reason = %reason,
+                        path = %path.display(),
+                        "removed stale pipeline snapshot; extract_recipe output no longer available"
+                    );
+                    stale_removed += 1;
+                } else {
+                    tracing::warn!(
+                        url = %url,
+                        slug = %slug,
+                        reason = %reason,
+                        "skipping pipeline snapshot; extract_recipe output not present for allowlisted URL"
+                    );
+                }
                 skipped += 1;
                 continue;
             }
@@ -61,7 +83,6 @@ pub fn write_snapshots(run_dir: &Path, allowlist_path: &Path, snapshots_dir: &Pa
             .context("Failed to serialize FinalRecipe")?;
         json.push('\n');
 
-        let path = snapshots_dir.join(format!("{slug}.json"));
         std::fs::write(&path, json)
             .with_context(|| format!("Failed to write snapshot: {}", path.display()))?;
 
@@ -73,6 +94,7 @@ pub fn write_snapshots(run_dir: &Path, allowlist_path: &Path, snapshots_dir: &Pa
         allowlisted = urls.len(),
         written,
         skipped,
+        stale_removed,
         "pipeline snapshot phase complete"
     );
 
@@ -550,6 +572,32 @@ mod tests {
         assert!(
             !snapshots_dir.join(format!("{missing_slug}.json")).exists(),
             "no snapshot for the URL that had no extract_recipe output"
+        );
+    }
+
+    #[test]
+    fn removes_stale_snapshot_when_url_no_longer_extracts() {
+        let dir = TempDir::new().unwrap();
+        let run_dir = dir.path().join("run");
+        std::fs::create_dir_all(&run_dir).unwrap();
+        let snapshots_dir = dir.path().join("snapshots");
+        std::fs::create_dir_all(&snapshots_dir).unwrap();
+
+        // A snapshot from a previous run exists on disk for a URL that the
+        // current run can't produce extract_recipe output for.
+        let url = "https://example.com/now-broken";
+        let slug = slugify_url(url);
+        let stale_path = snapshots_dir.join(format!("{slug}.json"));
+        std::fs::write(&stale_path, r#"{"title":"Stale"}"#).unwrap();
+
+        let allowlist = dir.path().join("allowlist.json");
+        std::fs::write(&allowlist, format!("[{url:?}]")).unwrap();
+
+        write_snapshots(&run_dir, &allowlist, &snapshots_dir).unwrap();
+
+        assert!(
+            !stale_path.exists(),
+            "stale snapshot should be removed when the current run can't refresh it"
         );
     }
 
