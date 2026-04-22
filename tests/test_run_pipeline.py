@@ -155,3 +155,49 @@ exit 0
     assert "still acquiring the lock" in result.stderr
     assert not marker_path.exists()
     assert lock_dir.exists()
+
+
+def test_run_pipeline_refuses_empty_pid_lock_within_startup_grace(tmp_path):
+    bin_dir = tmp_path / "bin"
+    bin_dir.mkdir()
+
+    marker_path = tmp_path / "cargo-called"
+    lock_dir = tmp_path / "locks" / "pipeline-script-unit.lock"
+    lock_dir.mkdir(parents=True)
+    (lock_dir / "pid").write_text("", encoding="utf-8")
+
+    _write_executable(
+        bin_dir / "cargo",
+        f"""#!/bin/bash
+set -e
+touch "{marker_path}"
+exit 0
+""",
+    )
+    _write_executable(
+        bin_dir / "make",
+        """#!/bin/bash
+set -e
+exit 0
+""",
+    )
+
+    env = os.environ.copy()
+    env["PATH"] = f"{bin_dir}:{env['PATH']}"
+    env["REPO_LOCK_DIR"] = str(tmp_path / "locks")
+    env["PIPELINE_LOCK_NAME"] = "pipeline-script-unit"
+    env["REPO_LOCK_STARTUP_GRACE_SECONDS"] = "60"
+
+    result = subprocess.run(
+        ["bash", str(SCRIPT_PATH)],
+        cwd=REPO_ROOT,
+        env=env,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 1
+    assert "still acquiring the lock" in result.stderr
+    assert not marker_path.exists()
+    assert lock_dir.exists()

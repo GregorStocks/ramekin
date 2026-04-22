@@ -36,8 +36,14 @@ acquire_repo_lock() {
     while ! mkdir "$lock_dir" 2>/dev/null; do
         if [ -f "$lock_dir/pid" ]; then
             lock_pid=$(tr -d '[:space:]' < "$lock_dir/pid")
+            case "$lock_pid" in
+                ''|*[!0-9]*) lock_pid="" ;;
+            esac
         else
             lock_pid=""
+        fi
+
+        if [ -z "$lock_pid" ]; then
             lock_mtime=$(repo_lock_mtime_epoch "$lock_dir" 2>/dev/null || echo 0)
             now_epoch=$(date +%s)
             if [ "$lock_mtime" -gt 0 ] && [ $((now_epoch - lock_mtime)) -lt "$lock_grace_seconds" ]; then
