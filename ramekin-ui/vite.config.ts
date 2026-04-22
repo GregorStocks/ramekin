@@ -1,4 +1,4 @@
-import { defineConfig, type PluginOption } from 'vite'
+import { defineConfig, type PluginOption, type PreviewOptions, type ServerOptions } from 'vite'
 import solid from 'vite-plugin-solid'
 import { execSync } from 'child_process'
 import fs from 'fs'
@@ -17,36 +17,118 @@ const certsExist = fs.existsSync(certPath) && fs.existsSync(keyPath)
 
 const httpPort = process.env.UI_PORT_HTTP ? parseInt(process.env.UI_PORT_HTTP) : null
 
-// Plugin to serve HTTP mirror alongside HTTPS
+// Plugin to serve HTTP mirror alongside HTTPS. The mirror proxies UI traffic
+// to the vite server and routes /api straight to the backend, avoiding a
+// double-proxy chain (mirror -> vite -> /api proxy -> backend) that returns
+// 502s for API calls under `vite preview`.
 function httpMirrorPlugin(): PluginOption {
+  const attach = (httpServer: { once(event: 'listening', cb: () => void): unknown } | null | undefined) => {
+    if (!httpPort || !httpServer) return
+    httpServer.once('listening', () => {
+      const uiProtocol = certsExist ? 'https' : 'http'
+      const uiProxy = httpProxy.createProxyServer({
+        target: `${uiProtocol}://localhost:${process.env.UI_PORT}`,
+        secure: false, // Accept self-signed certs
+        ws: true, // WebSocket support for HMR
+      })
+      const apiProxy = httpProxy.createProxyServer({
+        target: `http://localhost:${process.env.PORT}`,
+        changeOrigin: true,
+      })
+      // Without an 'error' listener, http-proxy emits on a bare EventEmitter
+      // and Node crashes the whole preview process when the backend is down
+      // (e.g. during a restart). Return a 502 instead.
+      const onProxyError = (err: Error, _req: http.IncomingMessage, resOrSocket: http.ServerResponse | import('net').Socket) => {
+        console.error('[http-mirror] proxy error:', err.message)
+        if ('writeHead' in resOrSocket) {
+          if (!resOrSocket.headersSent && !resOrSocket.writableEnded) {
+            resOrSocket.writeHead(502, { 'Content-Type': 'text/plain' }).end('Bad Gateway')
+          }
+        } else {
+          resOrSocket.end()
+        }
+      }
+      apiProxy.on('error', onProxyError)
+      uiProxy.on('error', onProxyError)
+      apiProxy.on('proxyRes', (_proxyRes, req, res) => {
+        const origin = req.headers.origin
+        if (origin) {
+          res.setHeader('Access-Control-Allow-Origin', origin)
+          res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+          res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+          res.setHeader('Access-Control-Allow-Credentials', 'true')
+        }
+      })
+
+      const mirror = http.createServer((req, res) => {
+        if (req.url?.startsWith('/api')) {
+          apiProxy.web(req, res)
+        } else {
+          uiProxy.web(req, res)
+        }
+      })
+
+      mirror.on('upgrade', (req, socket, head) => {
+        uiProxy.ws(req, socket, head)
+      })
+
+      mirror.listen(httpPort, '0.0.0.0', () => {
+        console.log(`  HTTP mirror:  http://localhost:${httpPort}/`)
+      })
+    })
+  }
   return {
     name: 'http-mirror',
     configureServer(server) {
-      if (!httpPort) return
-
-      server.httpServer?.once('listening', () => {
-        const protocol = certsExist ? 'https' : 'http'
-        const proxy = httpProxy.createProxyServer({
-          target: `${protocol}://localhost:${process.env.UI_PORT}`,
-          secure: false, // Accept self-signed certs
-          ws: true, // WebSocket support for HMR
-        })
-
-        const httpServer = http.createServer((req, res) => {
-          proxy.web(req, res)
-        })
-
-        httpServer.on('upgrade', (req, socket, head) => {
-          proxy.ws(req, socket, head)
-        })
-
-        httpServer.listen(httpPort, '0.0.0.0', () => {
-          console.log(`  HTTP mirror:  http://localhost:${httpPort}/`)
-        })
-      })
+      attach(server.httpServer)
+    },
+    configurePreviewServer(server) {
+      attach(server.httpServer)
     },
   }
 }
+
+const sharedServerOptions = {
+  allowedHosts: [hostname],
+  host: '0.0.0.0',
+  port: parseInt(process.env.UI_PORT!),
+  https: certsExist
+    ? {
+        key: fs.readFileSync(keyPath),
+        cert: fs.readFileSync(certPath),
+      }
+    : undefined,
+  proxy: {
+    '/api': {
+      target: `http://localhost:${process.env.PORT}`,
+      changeOrigin: true,
+      configure: (proxy) => {
+        proxy.on('proxyReq', (_proxyReq, req) => {
+          console.log('[Vite Proxy] Request:', req.method, req.url);
+          console.log('[Vite Proxy] Origin header:', req.headers.origin);
+        });
+        proxy.on('proxyRes', (proxyRes, req, res) => {
+          console.log('[Vite Proxy] Response:', proxyRes.statusCode, req.url);
+          // Add CORS headers to response for cross-origin bookmarklet requests
+          const origin = req.headers.origin;
+          if (origin) {
+            res.setHeader('Access-Control-Allow-Origin', origin);
+            res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+            res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+            res.setHeader('Access-Control-Allow-Credentials', 'true');
+          }
+        });
+      },
+    },
+  },
+  // Handle CORS preflight for /api routes
+  cors: {
+    origin: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+  },
+} satisfies ServerOptions & PreviewOptions
 
 const buildCommit = execSync('git rev-parse --short HEAD').toString().trim()
 const buildTime = new Date().toISOString()
@@ -62,45 +144,6 @@ export default defineConfig({
     __EXTERNAL_URL__: JSON.stringify(externalUrl),
   },
   plugins: [solid(), httpMirrorPlugin()],
-  server: {
-    allowedHosts: [hostname],
-    host: '0.0.0.0',
-    port: parseInt(process.env.UI_PORT!),
-    https: certsExist
-      ? {
-          key: fs.readFileSync(keyPath),
-          cert: fs.readFileSync(certPath),
-        }
-      : undefined,
-    proxy: {
-      '/api': {
-        target: `http://localhost:${process.env.PORT}`,
-        changeOrigin: true,
-        configure: (proxy) => {
-          proxy.on('proxyReq', (_proxyReq, req) => {
-            console.log('[Vite Proxy] Request:', req.method, req.url);
-            console.log('[Vite Proxy] Origin header:', req.headers.origin);
-          });
-          proxy.on('proxyRes', (proxyRes, req, res) => {
-            console.log('[Vite Proxy] Response:', proxyRes.statusCode, req.url);
-            // Add CORS headers to response for cross-origin bookmarklet requests
-            const origin = req.headers.origin;
-            if (origin) {
-              res.setHeader('Access-Control-Allow-Origin', origin);
-              res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-              res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-              res.setHeader('Access-Control-Allow-Credentials', 'true');
-            }
-          });
-        },
-      },
-    },
-    // Handle CORS preflight for /api routes
-    cors: {
-      origin: true,
-      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-      allowedHeaders: ['Content-Type', 'Authorization'],
-      credentials: true,
-    },
-  },
+  server: sharedServerOptions,
+  preview: sharedServerOptions,
 })
