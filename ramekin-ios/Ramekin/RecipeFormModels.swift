@@ -8,7 +8,6 @@ struct EditableIngredient: Equatable, Identifiable {
     var measurements: [EditableMeasurement]
     var note: String
     var section: String
-    var raw: String?
 
     static func empty(section: String = "") -> EditableIngredient {
         EditableIngredient(
@@ -24,7 +23,6 @@ struct EditableIngredient: Equatable, Identifiable {
             item: item,
             measurements: measurements.map { $0.toMeasurement() },
             note: note.isEmpty ? nil : note,
-            raw: raw,
             section: section.isEmpty ? nil : section
         )
     }
@@ -34,8 +32,7 @@ struct EditableIngredient: Equatable, Identifiable {
             item: ingredient.item,
             measurements: ingredient.measurements.map { EditableMeasurement.from($0) },
             note: ingredient.note ?? "",
-            section: ingredient.section ?? "",
-            raw: ingredient.raw
+            section: ingredient.section ?? ""
         )
     }
 }

@@ -283,7 +283,6 @@ final class RecipeVersionSupportTests: XCTestCase {
                     item: "flour",
                     measurements: [Measurement(amount: "1", unit: "cup")],
                     note: "sifted",
-                    raw: "1 cup flour, sifted",
                     section: "Batter"
                 )
             ],
