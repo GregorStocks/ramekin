@@ -231,11 +231,6 @@ function SortableIngredient(props: {
           </Index>
         </div>
       </Show>
-      <Show when={props.ing.raw}>
-        <div class="ingredient-raw">
-          <span class="raw-label">Raw:</span> {props.ing.raw}
-        </div>
-      </Show>
     </div>
   );
 }

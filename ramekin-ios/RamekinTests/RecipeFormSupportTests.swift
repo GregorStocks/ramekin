@@ -15,7 +15,6 @@ final class RecipeFormSupportTests: XCTestCase {
                     item: "Flour",
                     measurements: [Measurement(amount: "2", unit: "cups")],
                     note: "sifted",
-                    raw: "2 cups flour",
                     section: "Cake"
                 )
             ],

@@ -46,12 +46,6 @@ export interface Ingredient {
      */
     note?: string | null;
     /**
-     * Original unparsed text for debugging
-     * @type {string}
-     * @memberof Ingredient
-     */
-    raw?: string | null;
-    /**
      * Section name for grouping (e.g., "For the sauce", "For the dough")
      * @type {string}
      * @memberof Ingredient
@@ -81,7 +75,6 @@ export function IngredientFromJSONTyped(json: any, ignoreDiscriminator: boolean)
         'item': json['item'],
         'measurements': ((json['measurements'] as Array<any>).map(MeasurementFromJSON)),
         'note': json['note'] == null ? undefined : json['note'],
-        'raw': json['raw'] == null ? undefined : json['raw'],
         'section': json['section'] == null ? undefined : json['section'],
     };
 }
@@ -100,7 +93,6 @@ export function IngredientToJSONTyped(value?: Ingredient | null, ignoreDiscrimin
         'item': value['item'],
         'measurements': ((value['measurements'] as Array<any>).map(MeasurementToJSON)),
         'note': value['note'],
-        'raw': value['raw'],
         'section': value['section'],
     };
 }

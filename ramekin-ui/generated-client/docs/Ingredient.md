@@ -10,7 +10,6 @@ Name | Type
 `item` | string
 `measurements` | [Array&lt;Measurement&gt;](Measurement.md)
 `note` | string
-`raw` | string
 `section` | string
 
 ## Example
@@ -23,7 +22,6 @@ const example = {
   "item": null,
   "measurements": null,
   "note": null,
-  "raw": null,
   "section": null,
 } satisfies Ingredient
 

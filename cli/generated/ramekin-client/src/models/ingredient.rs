@@ -28,14 +28,6 @@ pub struct Ingredient {
         skip_serializing_if = "Option::is_none"
     )]
     pub note: Option<Option<String>>,
-    /// Original unparsed text for debugging
-    #[serde(
-        rename = "raw",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub raw: Option<Option<String>>,
     /// Section name for grouping (e.g., \"For the sauce\", \"For the dough\")
     #[serde(
         rename = "section",
@@ -53,7 +45,6 @@ impl Ingredient {
             item,
             measurements,
             note: None,
-            raw: None,
             section: None,
         }
     }
