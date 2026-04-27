@@ -3,9 +3,9 @@
 ## Overall
 
 - Total URLs: 5535
-- Completed: 5463 (98.7%)
+- Completed: 5466 (98.8%)
 - Failed at fetch: 0 (0.0%)
-- Failed at extract: 72 (1.3%)
+- Failed at extract: 69 (1.2%)
 
 ## Extraction Methods
 
@@ -16,18 +16,18 @@
 
 ## Ingredient Parsing
 
-- Total ingredients: 60671
-- Volume-to-weight converted: 18158/42965 (42.3%)
-- Unknown ingredient (no density data): 15063
-- Already has weight: 9744
-- No volume unit (count-based): 17388
-- Metric converted (oz→g): 2715
+- Total ingredients: 61134
+- Volume-to-weight converted: 18176/42996 (42.3%)
+- Unknown ingredient (no density data): 15086
+- Already has weight: 9734
+- No volume unit (count-based): 17818
+- Metric converted (oz→g): 2709
 - Metric converted (lb→g): 1828
 
 ## AI Cache
 
-- Cache hits: 5446/5447 (100.0%)
-- API calls: 1/5447 (0.0%)
+- Cache hits: 5453/5454 (100.0%)
+- API calls: 1/5454 (0.0%)
 
 ## By Site
 
@@ -53,7 +53,7 @@
 | cafedelites.com | 55 | 55 | 100.0% |
 | chefspencil.com | 4 | 4 | 100.0% |
 | chopstickchronicles.com | 2 | 2 | 100.0% |
-| cocktailswithsuderman.substack.com | 1 | 4 | 25.0% |
+| cocktailswithsuderman.substack.com | 0 | 4 | 0.0% |
 | cookieandkate.com | 14 | 14 | 100.0% |
 | cooking.nytimes.com | 51 | 51 | 100.0% |
 | cookingclassy.com | 56 | 56 | 100.0% |
@@ -126,18 +126,19 @@
 | thestayathomechef.com | 12 | 12 | 100.0% |
 | thewoksoflife.com | 24 | 24 | 100.0% |
 | twopeasandtheirpod.com | 22 | 23 | 95.7% |
-| virtualweberbullet.com | 0 | 4 | 0.0% |
+| virtualweberbullet.com | 4 | 4 | 100.0% |
 | wellplated.com | 35 | 35 | 100.0% |
 | whiteonricecouple.com | 83 | 83 | 100.0% |
 | yellowblissroad.com | 31 | 31 | 100.0% |
 
 ## Failed URLs by Error
 
-### Missing required field: recipeIngredient (empty) (71 URLs)
+### Missing required field: recipeIngredient (empty) (68 URLs)
 
 - http://bakingbites.com/2017/02/how-to-use-freeze-dried-fruit-in-baking/
 - https://barefeetinthekitchen.com/diy-fruit-and-vegetable-wash-homemade-produce-wash-recipe/
 - https://cocktailswithsuderman.substack.com/p/a-question-about-the-clover-club
+- https://cocktailswithsuderman.substack.com/p/a-thanksgiving-sidecar-with-jellied
 - https://cocktailswithsuderman.substack.com/p/hot-chocolate-manhattan
 - https://cocktailswithsuderman.substack.com/p/lol-its-an-appletini
 - https://feedbin.com/entries/4967860190
@@ -202,10 +203,6 @@
 - https://www.sprinklebakes.com/2020/12/peppermint-stripe-mousse-cakes.html
 - https://www.sprinklebakes.com/2021/01/fancy-chocolate-covered-strawberries.html
 - https://www.twopeasandtheirpod.com/mixed-berry-cobbler-recipe/
-- https://www.virtualweberbullet.com/best-ribs-in-the-universe-mike-scrutchfield/
-- https://www.virtualweberbullet.com/brisket-high-heat/
-- https://www.virtualweberbullet.com/pork-butt-smoke-spice-renowned-mr-brown/
-- https://www.virtualweberbullet.com/spareribs-3-2-1-method/
 
 ### Missing required field: recipeInstructions (empty) (1 URLs)
 
