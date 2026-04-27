@@ -1417,7 +1417,28 @@ fn extract_recipe_from_virtualweberbullet(
     let mut current_section: Option<String> = None;
     let mut current_section_paras: Vec<String> = Vec::new();
     let mut state = State::BeforeSummary;
-    let mut pending_ingredient_header: Option<String> = None;
+    // A `<p><strong>X</strong></p>` followed by `<ul>` is the site's ingredient
+    // list pattern; `pending_strong_text` holds X until we see the next element
+    // and decide whether it's an ingredient header or a bold note paragraph.
+    let mut pending_strong_text: Option<String> = None;
+
+    // Restore a pending strong-only paragraph as plain prose. Used whenever the
+    // next element is something other than the `<ul>` that would consume it as
+    // an ingredient header — e.g. a bold "Note:" paragraph mid-instructions.
+    macro_rules! flush_pending_strong {
+        () => {
+            if let Some(text) = pending_strong_text.take() {
+                match state {
+                    State::BeforeSummary | State::InSummary | State::InDescription => {
+                        description_paragraphs.push(text);
+                    }
+                    State::InInstructions => {
+                        current_section_paras.push(text);
+                    }
+                }
+            }
+        };
+    }
 
     for child in post.children() {
         let el = match ElementRef::wrap(child) {
@@ -1427,6 +1448,7 @@ fn extract_recipe_from_virtualweberbullet(
         let tag = el.value().name();
         match tag {
             "h2" => {
+                flush_pending_strong!();
                 let raw: String = el.text().collect();
                 let h_text = decode_html_entities(raw.trim());
                 let lower = h_text.to_lowercase();
@@ -1443,7 +1465,6 @@ fn extract_recipe_from_virtualweberbullet(
 
                 if h_text.eq_ignore_ascii_case("Summary") {
                     state = State::InSummary;
-                    pending_ingredient_header = None;
                     continue;
                 }
 
@@ -1455,15 +1476,14 @@ fn extract_recipe_from_virtualweberbullet(
                 }
                 current_section = Some(h_text);
                 state = State::InInstructions;
-                pending_ingredient_header = None;
             }
             "ul" => {
                 if state == State::InSummary {
+                    flush_pending_strong!();
                     state = State::InDescription;
-                    pending_ingredient_header = None;
                     continue;
                 }
-                if let Some(header) = pending_ingredient_header.take() {
+                if let Some(header) = pending_strong_text.take() {
                     let mut header_emitted = false;
                     for li in el.select(&li_sel) {
                         let raw_li = collect_text_skipping_struck(li);
@@ -1491,7 +1511,7 @@ fn extract_recipe_from_virtualweberbullet(
                 let stripped = HTML_TAG_REGEX.replace_all(&inner, "");
                 let text = decode_html_entities(stripped.trim());
                 if text.is_empty() {
-                    pending_ingredient_header = None;
+                    flush_pending_strong!();
                     continue;
                 }
 
@@ -1501,11 +1521,14 @@ fn extract_recipe_from_virtualweberbullet(
                 });
                 if let Some(stext) = strong_text.as_ref() {
                     if !stext.is_empty() && stext == &text {
-                        pending_ingredient_header = Some(stext.clone());
+                        // A new strong-only paragraph supersedes the previous
+                        // candidate; flush the old one as prose first.
+                        flush_pending_strong!();
+                        pending_strong_text = Some(stext.clone());
                         continue;
                     }
                 }
-                pending_ingredient_header = None;
+                flush_pending_strong!();
 
                 let lower = text.to_lowercase();
                 if lower.starts_with("learn more later")
@@ -1528,10 +1551,11 @@ fn extract_recipe_from_virtualweberbullet(
                 }
             }
             _ => {
-                pending_ingredient_header = None;
+                flush_pending_strong!();
             }
         }
     }
+    flush_pending_strong!();
 
     if !current_section_paras.is_empty() {
         instruction_sections.push((current_section, current_section_paras));

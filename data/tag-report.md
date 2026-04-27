@@ -5294,9 +5294,9 @@
 | Stuffed French Toast with Brie and Be... | breakfast, easy, comfort food, vegetarian, sandwich, bread, egg, cheese, french | yes |
 | The Best Chocolate Chip Cookie Ever-A... | dessert, snack, easy, comfort food, american, pantry | yes |
 | Whole Wheat Noodles with Peanut Sauce... | lunch, dinner, easy, healthy, vegetarian, asian, thai, pasta, greens, pantry | yes |
-| Best Ribs In The Universe: Baby Back ... | dinner, entree, comfort food, american, pork, grill | no |
+| Best Ribs In The Universe: Baby Back ... | dinner, entree, comfort food, american, pork, grill | yes |
 | Brisket – High Heat | dinner, entree, comfort food, american, beef, grill | yes |
-| Pork Butt – Smoke & Spice The Renowne... | dinner, entree, comfort food, american, pork, grill | yes |
+| Pork Butt – Smoke & Spice The Renowne... | dinner, entree, comfort food, american, pork, grill | no |
 | Spareribs – 3-2-1 Method | dinner, entree, comfort food, american, pork, grill | yes |
 | Andes Mint Cookies | dessert, easy, comfort food, vegetarian, american, pantry | yes |
 | How to Bake a Sweet Potato | snack, side dish, easy, healthy, vegetarian, vegan, gluten-free, potato | yes |
