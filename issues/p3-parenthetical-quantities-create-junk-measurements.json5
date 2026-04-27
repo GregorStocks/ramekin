@@ -50,7 +50,57 @@ rest of the alternate metric quantity.\n\
 These malformed `measurements` are a parsing bug, not just awkward source \
 formatting. The parser should either preserve alternate quantities faithfully \
 with units or ignore parenthetical yield hints, but it should not emit \
-unitless fragments or conflicting derived values.",
+unitless fragments or conflicting derived values.\n\
+\n\
+Additional examples found 2026-04-27:\n\
+\n\
+  - \
+`data/pipeline-snapshots/americastestkitchen-com_recipes-12228-ultracreamy-hummus.json`\n\
+    Cached HTML: \
+`~/.ramekin/http-cache/americastestkitchen-com_recipes-12228-ultracreamy-hummus/response.bin`\n\
+    Source ingredient: `1/3 cup lemon juice (2 lemons), plus extra for \
+seasoning`\n\
+    Snapshot output: `measurements` includes `{ \"amount\": \"2\", \"unit\": \
+\"lemons\" }` alongside the real `1/3 cup`. `(2 lemons)` is a yield hint, not \
+an alternate quantity.\n\
+\n\
+  - \
+`data/pipeline-snapshots/americastestkitchen-com_recipes-16428-mesquite-grilled-tacos-rasurados.json`\n\
+    Cached HTML: \
+`~/.ramekin/http-cache/americastestkitchen-com_recipes-16428-mesquite-grilled-tacos-rasurados/response.bin`\n\
+    Source ingredient: `1 (3½- to 4-pound) rack beef back ribs (about 7 \
+bones)`\n\
+    Snapshot output: `measurements` is `[{ \"amount\": \"1\", \"unit\": null \
+}, { \"amount\": \"3\", \"unit\": null }, { \"amount\": \"7\", \"unit\": \
+\"bones\" }]`. The pound unit and range context are dropped; \"7 bones\" is a \
+yield hint that became a phantom measurement.\n\
+\n\
+  - Same snapshot: `12 (6-inch) flour tortillas , warmed` produced \
+`measurements` `[{ \"amount\": \"12\", \"unit\": null }, { \"amount\": \"6\", \
+\"unit\": \"inch\" }]`. The size descriptor `(6-inch)` should not be a \
+quantity.\n\
+\n\
+  - \
+`data/pipeline-snapshots/seriouseats-com_ultimate-fully-loaded-nachos.json`\n\
+    Cached HTML: \
+`~/.ramekin/http-cache/seriouseats-com_ultimate-fully-loaded-nachos/response.bin`\n\
+    Source ingredient: `1/2 cup cooked black beans from one (15-ounce) can, \
+drained and rinsed`\n\
+    Snapshot output: `measurements` is `[{ \"amount\": \"0.5\", \"unit\": \
+\"cup\" }, { \"amount\": \"15\", \"unit\": \"oz\" }, { \"amount\": \"425\", \
+\"unit\": \"g\" }]`. The 15-ounce can size is the package, not the amount of \
+beans called for; treating it as a measurement implies you need 15 oz of \
+beans.\n\
+\n\
+  - \
+`data/pipeline-snapshots/cooking-nytimes-com_recipes-1021971-potato-and-leek-focaccia.json`\n\
+    Cached HTML: \
+`~/.ramekin/http-cache/cooking-nytimes-com_recipes-1021971-potato-and-leek-focaccia/response.bin`\n\
+    Source ingredient: `1 3/4 cups/420 milliliters warm water (about 100 \
+degrees)`\n\
+    Snapshot output: `measurements` includes `{ \"amount\": \"100\", \"unit\": \
+\"degrees\" }`. The temperature parenthetical is a hint about how warm the \
+water should be, not a quantity to measure.",
   "status": "open",
   "priority": 3,
   "type": "bug",
@@ -59,5 +109,5 @@ unitless fragments or conflicting derived values.",
     "ingredient-parser",
   ],
   "created_at": "2026-04-22T14:33:50-07:00",
-  "updated_at": "2026-04-22T14:33:50-07:00",
+  "updated_at": "2026-04-27T11:43:15-07:00",
 }

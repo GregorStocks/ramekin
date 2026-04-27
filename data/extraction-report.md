@@ -2,10 +2,10 @@
 
 ## Overall
 
-- Total URLs: 5536
-- Completed: 5457 (98.6%)
-- Failed at fetch: 1 (0.0%)
-- Failed at extract: 78 (1.4%)
+- Total URLs: 5535
+- Completed: 5462 (98.7%)
+- Failed at fetch: 0 (0.0%)
+- Failed at extract: 73 (1.3%)
 
 ## Extraction Methods
 
@@ -16,18 +16,18 @@
 
 ## Ingredient Parsing
 
-- Total ingredients: 61011
-- Volume-to-weight converted: 18141/42904 (42.3%)
-- Unknown ingredient (no density data): 15047
-- Already has weight: 9716
-- No volume unit (count-based): 17786
+- Total ingredients: 61078
+- Volume-to-weight converted: 18151/42946 (42.3%)
+- Unknown ingredient (no density data): 15061
+- Already has weight: 9734
+- No volume unit (count-based): 17814
 - Metric converted (oz→g): 2709
-- Metric converted (lb→g): 1830
+- Metric converted (lb→g): 1828
 
 ## AI Cache
 
-- Cache hits: 5445/5445 (100.0%)
-- API calls: 0/5445 (0.0%)
+- Cache hits: 5442/5450 (99.9%)
+- API calls: 8/5450 (0.1%)
 
 ## By Site
 
@@ -94,7 +94,7 @@
 | momontimeout.com | 97 | 100 | 97.0% |
 | mybakingaddiction.com | 94 | 97 | 96.9% |
 | natashaskitchen.com | 100 | 100 | 100.0% |
-| nomnompaleo.com | 3 | 6 | 50.0% |
+| nomnompaleo.com | 3 | 5 | 60.0% |
 | norecipes.com | 101 | 101 | 100.0% |
 | ohmyveggies.com | 3 | 6 | 50.0% |
 | onceuponachef.com | 92 | 92 | 100.0% |
@@ -104,7 +104,7 @@
 | recipetineats.com | 10 | 10 | 100.0% |
 | runningwithspoons.com | 1 | 1 | 100.0% |
 | sallysbakingaddiction.com | 34 | 34 | 100.0% |
-| seriouseats.com | 162 | 168 | 96.4% |
+| seriouseats.com | 167 | 168 | 99.4% |
 | simplyrecipes.com | 99 | 100 | 99.0% |
 | skinnytaste.com | 2 | 2 | 100.0% |
 | slenderkitchen.com | 55 | 55 | 100.0% |
@@ -133,18 +133,7 @@
 
 ## Failed URLs by Error
 
-### Cached fetch error (1 URLs)
-
-- https://nomnompaleo.com/2017/08/15/6053
-
-### Missing required field: name (4 URLs)
-
-- https://www.seriouseats.com/canederli-di-pane-italian-bread-dumpling-recipe-11679155
-- https://www.seriouseats.com/roasted-cauliflower-soup-curry-cream-8748572
-- https://www.seriouseats.com/the-best-classic-chicken-salad-recipe
-- https://www.seriouseats.com/toad-in-the-hole-recipe-11746714
-
-### Missing required field: recipeIngredient (empty) (73 URLs)
+### Missing required field: recipeIngredient (empty) (72 URLs)
 
 - http://bakingbites.com/2017/02/how-to-use-freeze-dried-fruit-in-baking/
 - https://barefeetinthekitchen.com/diy-fruit-and-vegetable-wash-homemade-produce-wash-recipe/
@@ -178,7 +167,7 @@
 - https://smittenkitchen.com/2010/04/make-your-own-creme-fraiche/
 - https://smittenkitchen.com/2012/10/how-to-make-your-own-pumpkin-puree/
 - https://smittenkitchen.com/2013/07/grilled-bacon-salad-with-arugula-and-balsamic/
-- https://smittenkitchen.com/2015/08/crispy-peach-cobbler/
+- https://smittenkitchen.com/2015/06/crispy-frizzled-artichokes/
 - https://smittenkitchen.com/2016/08/even-more-perfect-blueberry-muffins/
 - https://smittenkitchen.com/2020/04/how-i-stock-the-smitten-kitchen/
 - https://www.averiecooks.com/raw-vegan-donut-holes-5-minute-recipe/
@@ -194,7 +183,6 @@
 - https://www.mybakingaddiction.com/smores-recipe/
 - https://www.mybakingaddiction.com/tollhouse-cookies-recipe/
 - https://www.seriouseats.com/food-lab-complete-guide-to-sous-vide-steak
-- https://www.seriouseats.com/new-orleans-bbq-shrimp-recipe-11891402
 - https://www.simplyrecipes.com/recipes/the_finger_test_to_check_the_doneness_of_meat/
 - https://www.sprinklebakes.com/2018/04/celebrate-like-royal-with-lemon.html
 - https://www.sprinklebakes.com/2018/05/rhubarb-pie-with-double-crust.html
