@@ -824,17 +824,28 @@ fn extract_microdata_images(recipe_element: &scraper::ElementRef) -> Vec<String>
         .collect()
 }
 
-/// Extract image URL from og:image meta tag.
-/// This is a fallback for sites that don't include image data in their recipe structured data
-/// (e.g., smittenkitchen.com uses Jetpack recipes which omit itemprop="image").
-fn extract_og_image(document: &Html) -> Option<String> {
-    let selector = Selector::parse(r#"meta[property="og:image"]"#).ok()?;
+static OG_IMAGE_SELECTOR: LazyLock<Selector> =
+    LazyLock::new(|| Selector::parse(r#"meta[property="og:image"]"#).expect("og:image selector"));
+
+static OG_DESCRIPTION_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse(r#"meta[property="og:description"]"#).expect("og:description selector")
+});
+
+/// Read an `og:<name>` meta tag's `content` attribute.
+fn extract_og_meta(document: &Html, selector: &Selector) -> Option<String> {
     document
-        .select(&selector)
+        .select(selector)
         .next()?
         .value()
         .attr("content")
         .map(decode_html_entities)
+}
+
+/// Extract image URL from og:image meta tag.
+/// This is a fallback for sites that don't include image data in their recipe structured data
+/// (e.g., smittenkitchen.com uses Jetpack recipes which omit itemprop="image").
+fn extract_og_image(document: &Html) -> Option<String> {
+    extract_og_meta(document, &OG_IMAGE_SELECTOR)
 }
 
 /// Regex to match footnote lines starting with asterisks inside `<li>` or `<p>` tags.
@@ -2344,6 +2355,12 @@ fn html_to_paragraphs(html: &str) -> Vec<String> {
         .collect()
 }
 
+static SUBSTACK_BODY_SELECTOR: LazyLock<Selector> =
+    LazyLock::new(|| Selector::parse("div.body.markup").expect("substack body markup selector"));
+
+static LI_SELECTOR: LazyLock<Selector> =
+    LazyLock::new(|| Selector::parse("li").expect("li selector"));
+
 /// Recipe block discovered while scanning a Substack post body.
 struct SubstackBlock {
     title: String,
@@ -2353,18 +2370,17 @@ struct SubstackBlock {
 
 /// Extract a recipe from a Substack post's `<div class="body markup">` body.
 ///
-/// Substack posts embed recipes as a heading (`<h2>..<h6>`) followed by
-/// single-line `<p>` ingredient paragraphs, an `INSTRUCTIONS`/`DIRECTIONS`
-/// marker `<p>`, and prose `<p>` instructions until the next heading. Posts
-/// can contain multiple recipe blocks (e.g. a sub-recipe plus the main drink);
-/// blocks join via section-header lines like the unstructured-blog path.
+/// Substack posts embed recipes as a heading (`<h2>..<h6>`) followed by an
+/// ingredient list (`<ul>` of `<li><p>...</p></li>`, or plain `<p>` lines on
+/// older posts), an `INSTRUCTIONS`/`DIRECTIONS` marker `<p>`, and an
+/// instruction list (`<ol>` or plain `<p>` paragraphs). Posts can contain
+/// multiple recipe blocks (e.g. a sub-recipe plus the main drink); blocks
+/// join via section-header lines like the unstructured-blog path.
 ///
 /// Returns None for paywalled posts: the body markup is present but stops at
 /// the teaser, so no block accumulates an `INSTRUCTIONS` marker.
 fn extract_recipe_from_substack(document: &Html, source_url: &str) -> Option<RawRecipe> {
-    let body_selector = Selector::parse("div.body.markup").ok()?;
-    let body = document.select(&body_selector).next()?;
-
+    let body = document.select(&SUBSTACK_BODY_SELECTOR).next()?;
     let blocks = scan_substack_blocks(body);
     if blocks.is_empty() {
         return None;
@@ -2373,33 +2389,29 @@ fn extract_recipe_from_substack(document: &Html, source_url: &str) -> Option<Raw
     // Substack tutorials typically build up to the main recipe, so the last
     // block is the primary one. Earlier blocks are sub-recipes (e.g. a custom
     // syrup or sugar mix that the main recipe uses).
-    let title = blocks.last()?.title.clone();
-    let multi_block = blocks.len() > 1;
     let last_idx = blocks.len() - 1;
+    let title = blocks[last_idx].title.clone();
+    let multi_block = blocks.len() > 1;
 
     let mut ingredient_lines: Vec<String> = Vec::new();
     let mut instruction_paragraphs: Vec<String> = Vec::new();
-    for (i, block) in blocks.iter().enumerate() {
-        let prefix_with_title = multi_block && i != last_idx;
-        if prefix_with_title {
+    for (i, block) in blocks.into_iter().enumerate() {
+        if multi_block && i != last_idx {
             ingredient_lines.push(format!("{}:", block.title));
             instruction_paragraphs.push(format!("{}:", block.title));
         }
-        ingredient_lines.extend(block.ingredients.iter().cloned());
-        instruction_paragraphs.extend(block.instructions.iter().cloned());
+        ingredient_lines.extend(block.ingredients);
+        instruction_paragraphs.extend(block.instructions);
     }
-
-    let image_urls = extract_og_image(document)
-        .map(|u| vec![u])
-        .unwrap_or_default();
-    let description = extract_og_description(document);
 
     Some(RawRecipe {
         title,
-        description,
+        description: extract_og_meta(document, &OG_DESCRIPTION_SELECTOR),
         ingredients: ingredient_lines.join("\n"),
         instructions: instruction_paragraphs.join("\n\n"),
-        image_urls,
+        image_urls: extract_og_image(document)
+            .map(|u| vec![u])
+            .unwrap_or_default(),
         source_url: Some(source_url.to_string()),
         source_name: extract_source_name(source_url),
         servings: None,
@@ -2426,10 +2438,8 @@ fn scan_substack_blocks(body: ElementRef<'_>) -> Vec<SubstackBlock> {
         let name = elem.value().name();
 
         if matches!(name, "h1" | "h2" | "h3" | "h4" | "h5" | "h6") {
-            if let Some(b) = current.take() {
-                if let Some(block) = b.finish() {
-                    blocks.push(block);
-                }
+            if let Some(block) = current.take().and_then(SubstackBlockBuilder::finish) {
+                blocks.push(block);
             }
             let title = substack_element_text(elem);
             if !title.is_empty() {
@@ -2441,64 +2451,68 @@ fn scan_substack_blocks(body: ElementRef<'_>) -> Vec<SubstackBlock> {
         let Some(builder) = current.as_mut() else {
             continue;
         };
-        if builder.is_closed() {
+        if matches!(builder.state, BlockState::Closed) {
             continue;
         }
 
         match name {
             "ul" => {
-                if !builder.saw_marker() {
+                if matches!(builder.state, BlockState::Ingredients { .. }) {
                     for item in substack_list_items(elem) {
-                        builder.add_ingredient(item);
+                        builder.ingredients.push(item);
                     }
-                    builder.lock_ingredients();
+                    builder.state = BlockState::Ingredients { locked: true };
                 }
             }
             "ol" => {
-                if builder.saw_marker() {
+                if matches!(builder.state, BlockState::Instructions) {
                     for item in substack_list_items(elem) {
-                        builder.add_instruction(item);
+                        builder.instructions.push(item);
                     }
-                    builder.close_instructions();
+                    builder.state = BlockState::Closed;
                 }
             }
             "p" => {
                 let text = substack_element_text(elem);
-                if text.is_empty() || is_substack_subscribe_widget(elem, &text) {
+                if text.is_empty() || is_substack_subscribe_widget(&text) {
                     continue;
                 }
-                if !builder.saw_marker() && is_instructions_marker(&text) {
-                    builder.mark_instructions();
+                if matches!(builder.state, BlockState::Ingredients { .. })
+                    && is_instructions_marker(&text)
+                {
+                    builder.state = BlockState::Instructions;
                     continue;
                 }
-                if builder.saw_marker() {
-                    builder.add_instruction(text);
-                } else if !builder.ingredients_locked() {
+                match builder.state {
                     // Older or simpler Substack posts use plain `<p>` for ingredients
                     // instead of a `<ul>`. Once a `<ul>` has been seen, subsequent
                     // `<p>` paragraphs are prose, not ingredients.
-                    builder.add_ingredient(text);
+                    BlockState::Ingredients { locked: false } => builder.ingredients.push(text),
+                    BlockState::Instructions => builder.instructions.push(text),
+                    BlockState::Ingredients { locked: true } | BlockState::Closed => {}
                 }
             }
             _ => {}
         }
     }
 
-    if let Some(b) = current {
-        if let Some(block) = b.finish() {
-            blocks.push(block);
-        }
+    if let Some(block) = current.and_then(SubstackBlockBuilder::finish) {
+        blocks.push(block);
     }
     blocks
+}
+
+enum BlockState {
+    Ingredients { locked: bool },
+    Instructions,
+    Closed,
 }
 
 struct SubstackBlockBuilder {
     title: String,
     ingredients: Vec<String>,
     instructions: Vec<String>,
-    saw_marker: bool,
-    ingredients_locked: bool,
-    closed: bool,
+    state: BlockState,
 }
 
 impl SubstackBlockBuilder {
@@ -2507,50 +2521,13 @@ impl SubstackBlockBuilder {
             title,
             ingredients: Vec::new(),
             instructions: Vec::new(),
-            saw_marker: false,
-            ingredients_locked: false,
-            closed: false,
-        }
-    }
-
-    fn saw_marker(&self) -> bool {
-        self.saw_marker
-    }
-
-    fn is_closed(&self) -> bool {
-        self.closed
-    }
-
-    fn ingredients_locked(&self) -> bool {
-        self.ingredients_locked
-    }
-
-    fn mark_instructions(&mut self) {
-        self.saw_marker = true;
-    }
-
-    fn lock_ingredients(&mut self) {
-        self.ingredients_locked = true;
-    }
-
-    fn close_instructions(&mut self) {
-        self.closed = true;
-    }
-
-    fn add_ingredient(&mut self, line: String) {
-        if !line.is_empty() {
-            self.ingredients.push(line);
-        }
-    }
-
-    fn add_instruction(&mut self, line: String) {
-        if !line.is_empty() {
-            self.instructions.push(line);
+            state: BlockState::Ingredients { locked: false },
         }
     }
 
     fn finish(self) -> Option<SubstackBlock> {
-        if !self.saw_marker || self.ingredients.is_empty() || self.instructions.is_empty() {
+        let saw_marker = !matches!(self.state, BlockState::Ingredients { .. });
+        if !saw_marker || self.ingredients.is_empty() || self.instructions.is_empty() {
             return None;
         }
         Some(SubstackBlock {
@@ -2562,15 +2539,11 @@ impl SubstackBlockBuilder {
 }
 
 fn substack_list_items(list_elem: ElementRef<'_>) -> Vec<String> {
-    let li_selector = match Selector::parse("li") {
-        Ok(s) => s,
-        Err(_) => return Vec::new(),
-    };
     list_elem
-        .select(&li_selector)
+        .select(&LI_SELECTOR)
         .filter_map(|li| {
             let text = substack_element_text(li);
-            if text.is_empty() || is_substack_subscribe_widget(li, &text) {
+            if text.is_empty() || is_substack_subscribe_widget(&text) {
                 None
             } else {
                 Some(text)
@@ -2612,19 +2585,9 @@ fn is_instructions_marker(text: &str) -> bool {
     trimmed.eq_ignore_ascii_case("instructions") || trimmed.eq_ignore_ascii_case("directions")
 }
 
-fn is_substack_subscribe_widget(_elem: ElementRef<'_>, text: &str) -> bool {
+fn is_substack_subscribe_widget(text: &str) -> bool {
     let lower = text.to_lowercase();
     lower == "subscribe" || lower == "subscribe now"
-}
-
-fn extract_og_description(document: &Html) -> Option<String> {
-    let selector = Selector::parse(r#"meta[property="og:description"]"#).ok()?;
-    document
-        .select(&selector)
-        .next()?
-        .value()
-        .attr("content")
-        .map(decode_html_entities)
 }
 
 /// Extract a recipe title from common HTML elements when structured data lacks a name.
