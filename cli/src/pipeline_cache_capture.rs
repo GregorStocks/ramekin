@@ -13,7 +13,7 @@ use std::path::PathBuf;
 use std::sync::Arc;
 
 use anyhow::{anyhow, Context, Result};
-use axum::extract::State;
+use axum::extract::{DefaultBodyLimit, State};
 use axum::http::StatusCode;
 use axum::response::Html;
 use axum::routing::{get, post};
@@ -24,6 +24,12 @@ use tower_http::cors::{Any, CorsLayer};
 
 /// Default port for the local capture server.
 pub const DEFAULT_PORT: u16 = 9876;
+
+/// Max accepted body size for `/capture`. Real-world bot-walled recipe pages
+/// (the ones this feature exists for) routinely push 5-15 MB once scripts and
+/// inlined assets are included; axum's default 2 MB cap on the `String`
+/// extractor would silently 413 the bookmarklet for exactly those URLs.
+const MAX_CAPTURE_BODY_BYTES: usize = 64 * 1024 * 1024;
 
 #[derive(Deserialize)]
 struct CapturePayload {
@@ -39,7 +45,10 @@ struct AppState {
 
 /// Run the capture server until the process is interrupted.
 pub async fn run(host: &str, port: u16, cache_dir: Option<PathBuf>) -> Result<()> {
-    let cache_dir = cache_dir.unwrap_or_else(DiskCache::default_dir);
+    let cache_dir = match cache_dir {
+        Some(dir) => dir,
+        None => resolve_cache_dir_from_env()?,
+    };
     std::fs::create_dir_all(&cache_dir)
         .with_context(|| format!("Failed to create cache dir {}", cache_dir.display()))?;
 
@@ -87,8 +96,27 @@ fn build_router(state: AppState) -> Router {
     Router::new()
         .route("/", get(root))
         .route("/capture", post(capture))
+        .layer(DefaultBodyLimit::max(MAX_CAPTURE_BODY_BYTES))
         .layer(cors)
         .with_state(state)
+}
+
+/// Resolve the HTTP cache directory the same way `CachingClientBuilder` does,
+/// so captures land in the same directory the pipeline reads from when the
+/// user has set `RAMEKIN_HTTP_CACHE` in `cli.env`.
+fn resolve_cache_dir_from_env() -> Result<PathBuf> {
+    resolve_cache_dir(std::env::var("RAMEKIN_HTTP_CACHE").ok().as_deref())
+}
+
+fn resolve_cache_dir(setting: Option<&str>) -> Result<PathBuf> {
+    match setting {
+        Some("none") => Err(anyhow!(
+            "RAMEKIN_HTTP_CACHE=none disables caching; capture has nowhere to write. \
+             Unset it or pass --cache-dir explicitly."
+        )),
+        Some("disk") | None => Ok(DiskCache::default_dir()),
+        Some(path) => Ok(PathBuf::from(path)),
+    }
 }
 
 async fn root(State(state): State<AppState>) -> Html<String> {
@@ -283,6 +311,48 @@ mod tests {
             .unwrap();
 
         assert_eq!(response.status(), StatusCode::BAD_REQUEST);
+    }
+
+    #[tokio::test]
+    async fn capture_accepts_large_body() {
+        // Real bot-walled recipe pages routinely exceed the 2 MB axum default;
+        // verify a 5 MB body still goes through.
+        let (state, tmp) = test_state();
+        let cache_dir = tmp.path().to_path_buf();
+        let app = build_router(state);
+
+        let url = "https://www.seriouseats.com/big-page";
+        let html = "x".repeat(5 * 1024 * 1024);
+        let body = serde_json::json!({"url": url, "html": html}).to_string();
+
+        let response = app
+            .oneshot(
+                Request::builder()
+                    .method("POST")
+                    .uri("/capture")
+                    .body(Body::from(body))
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+
+        assert_eq!(response.status(), StatusCode::OK);
+        let cache = DiskCache::new(cache_dir);
+        assert!(cache.get(url).is_some());
+    }
+
+    #[test]
+    fn resolve_cache_dir_matches_pipeline_semantics() {
+        assert_eq!(resolve_cache_dir(None).unwrap(), DiskCache::default_dir());
+        assert_eq!(
+            resolve_cache_dir(Some("disk")).unwrap(),
+            DiskCache::default_dir()
+        );
+        assert_eq!(
+            resolve_cache_dir(Some("/custom/cache")).unwrap(),
+            PathBuf::from("/custom/cache")
+        );
+        assert!(resolve_cache_dir(Some("none")).is_err());
     }
 
     #[tokio::test]

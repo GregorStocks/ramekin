@@ -217,7 +217,7 @@ enum Commands {
         /// Port to bind on
         #[arg(long, default_value_t = pipeline_cache_capture::DEFAULT_PORT)]
         port: u16,
-        /// Cache directory (defaults to ~/.ramekin/http-cache, matching the pipeline)
+        /// Cache directory (defaults to RAMEKIN_HTTP_CACHE / ~/.ramekin/http-cache, matching the pipeline)
         #[arg(long)]
         cache_dir: Option<PathBuf>,
     },
