@@ -1469,7 +1469,7 @@
 | Twice-baked Mashed Potatoes | side dish, easy, comfort food, american, potato, cheese | yes |
 | Vegan Bacon | breakfast, snack, easy, vegan, tofu, pantry | yes |
 | Whipped Cream Frosting | dessert, easy, vegetarian | yes |
-| Bless This Pickle Sandwich  | lunch, easy, comfort food, vegetarian, sandwich, cheese | no |
+| Bless This Pickle Sandwich  | lunch, easy, comfort food, vegetarian, sandwich, cheese | yes |
 | Air Fryer Pork Chops with Maple-Soy G... | dinner, entree, pork | yes |
 | Antipasto Salad with Bocconcini and G... | lunch, dinner, appetizer, easy, italian, mediterranean, salad, cheese, greens | yes |
 | Apple Cider–Braised Cabbage | dinner, side dish, comfort food, greens, pork | yes |
@@ -2224,12 +2224,12 @@
 | Berry Smoothie | breakfast, snack, quick, easy, healthy, vegetarian, gluten-free, greens | yes |
 | Butter Cookies (Homemade Hato Sabure) | dessert, snack, easy, vegetarian, japanese, egg, pantry | yes |
 | Chocolate Chip Cookies with Nutella | dessert, snack, comfort food, vegetarian, egg, pantry | yes |
-| Furikake Chex Mix | snack, easy, vegetarian, dairy-free, japanese, pantry, holiday | no |
+| Furikake Chex Mix | snack, easy, vegetarian, dairy-free, japanese, pantry, holiday | yes |
 | Hamburger Steak Bento | lunch, easy, asian, japanese, beef, rice, greens, pantry | yes |
-| Japanese Egg Sandwich (Tamago Sando) | lunch, snack, easy, comfort food, vegetarian, asian, japanese, sandwich, bread, egg | no |
-| Japanese Potato Salad | lunch, snack, appetizer, side dish, easy, comfort food, japanese, pork, egg, potato, salad | no |
+| Japanese Egg Sandwich (Tamago Sando) | lunch, snack, easy, comfort food, vegetarian, asian, japanese, sandwich, bread, egg | yes |
+| Japanese Potato Salad | lunch, snack, appetizer, side dish, easy, comfort food, japanese, pork, egg, potato, salad | yes |
 | Napolitan (Japanese Ketchup Spaghetti) | lunch, dinner, easy, comfort food, japanese, pasta, mushroom, cheese, pantry | yes |
-| Japanese Pizza Toast | breakfast, lunch, dinner, snack, easy, comfort food, japanese, bread, cheese | no |
+| Japanese Pizza Toast | breakfast, lunch, dinner, snack, easy, comfort food, japanese, bread, cheese | yes |
 | Menma (Seasoned Bamboo Shoot) | side dish, appetizer, asian, japanese | yes |
 | Homemade Rice Crackers (Kakimochi) | snack, appetizer, easy, vegetarian, vegan, dairy-free, japanese, rice, pantry | yes |
 | Salmon Fried Rice | lunch, dinner, easy, seafood, fish, rice, egg, asian, japanese | yes |
@@ -2239,7 +2239,7 @@
 | Homemade Takoyaki Sauce | quick, easy, vegetarian, asian, japanese, pantry | yes |
 | Tartar Sauce | side dish, easy, vegetarian, japanese, egg, pantry | yes |
 | Teriyaki Salmon | dinner, entree, healthy, asian, japanese, seafood, fish, rice | yes |
-| Japanese Milk Bread (Shokupan) | breakfast, snack, japanese, bread, pantry | no |
+| Japanese Milk Bread (Shokupan) | breakfast, snack, japanese, bread, pantry | yes |
 | Homemade Yakisoba Sauce | easy, vegetarian, dairy-free, asian, japanese, pantry | yes |
 | Aguachile Recipe | lunch, dinner, appetizer, quick, easy, healthy, gluten-free, dairy-free, low-carb, mexican, seafood, greens | yes |
 | Authentic Guacamole Recipe | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mexican | yes |
@@ -3129,7 +3129,7 @@
 | Daube de Boeuf à la Gasconne (Gascogn... | dinner, entree, comfort food, french, beef, potato | yes |
 | 3-Ingredient Devils on Horseback | snack, appetizer, easy, comfort food, pork, cheese, holiday | yes |
 | Dirty Martini Dip | snack, appetizer, easy, vegetarian, cheese, pantry | yes |
-| Easy, Creamy One-Pot Salmon Chowder | lunch, dinner, entree, easy, comfort food, american, seafood, fish, soup, potato, pork | no |
+| Easy, Creamy One-Pot Salmon Chowder | lunch, dinner, entree, easy, comfort food, american, seafood, fish, soup, potato, pork | yes |
 | Éclair Cake | dessert, comfort food, vegetarian | yes |
 | Éclair Paris-Brest | dessert, french | yes |
 | Espresso Martini | quick, easy, pantry | yes |
@@ -4056,7 +4056,7 @@
 | Oven Ribs, Even Better | dinner, entree, comfort food, american, pork, grill | yes |
 | Tomato and Fried Provolone Sandwich | lunch, easy, comfort food, vegetarian, sandwich, bread, cheese | yes |
 | Angel Hair Pasta with Raw Tomato Sauce | lunch, dinner, easy, healthy, vegetarian, dairy-free, italian, pasta, greens, cheese, pantry | yes |
-| Crispy Peach Cobbler | dessert, comfort food, vegetarian, american, pantry, holiday | no |
+| Crispy Peach Cobbler | dessert, comfort food, vegetarian, american, pantry, holiday | yes |
 | Raspberry Crushed Ice | dessert, easy, vegan, gluten-free, dairy-free, vegetarian | yes |
 | Takeout-Style Sesame Noodles with Cuc... | lunch, dinner, easy, vegetarian, dairy-free, asian, chinese, pasta, pantry | yes |
 | Broccoli Cheddar Soup | lunch, dinner, easy, comfort food, vegetarian, soup, cheese | yes |
@@ -5244,7 +5244,7 @@
 | Turkey Brine Recipe | dinner, entree, american, pantry, holiday | yes |
 | Tzatziki Sauce | snack, appetizer, side dish, easy, healthy, vegetarian, gluten-free, low-carb, mediterranean | yes |
 | Yellow Cake | dessert, easy, comfort food, vegetarian, american, egg, pantry | yes |
-| Classic French Aligot | side dish, comfort food, vegetarian, gluten-free, french, potato, cheese | no |
+| Classic French Aligot | side dish, comfort food, vegetarian, gluten-free, french, potato, cheese | yes |
 | The Most Amazing Lasagna | dinner, entree, comfort food, italian, beef, pasta, cheese | yes |
 | Easiest Crepe Recipe | breakfast, easy, vegetarian, egg, pantry | yes |
 | Granny's German Schnitzel | dinner, entree, comfort food, pork, eastern european | yes |
@@ -5455,58 +5455,58 @@
 ## Summary
 
 - Total recipes processed: 5462
-- Recipes with tag suggestions: 5450
-- Cached responses: 5442
+- Recipes with tag suggestions: 5446
+- Cached responses: 5446
 
 ## Tag Frequency
 
 | Tag | Count |
 |-----|-------|
-| easy | 3794 |
-| vegetarian | 3278 |
-| dinner | 2610 |
-| comfort food | 2602 |
-| pantry | 2384 |
-| lunch | 1358 |
-| dessert | 1355 |
-| healthy | 1339 |
-| cheese | 1335 |
+| easy | 3800 |
+| vegetarian | 3276 |
+| dinner | 2606 |
+| comfort food | 2603 |
+| pantry | 2391 |
+| lunch | 1363 |
+| dessert | 1356 |
+| healthy | 1342 |
+| cheese | 1334 |
 | snack | 1306 |
-| entree | 1203 |
-| gluten-free | 1100 |
-| side dish | 1087 |
-| dairy-free | 1062 |
-| american | 990 |
-| greens | 843 |
+| entree | 1200 |
+| gluten-free | 1099 |
+| side dish | 1085 |
+| dairy-free | 1064 |
+| american | 995 |
+| greens | 839 |
 | holiday | 837 |
-| vegan | 804 |
-| egg | 799 |
-| appetizer | 730 |
+| vegan | 807 |
+| egg | 793 |
+| appetizer | 729 |
 | quick | 605 |
-| bread | 602 |
-| breakfast | 551 |
-| italian | 550 |
-| asian | 531 |
+| bread | 601 |
+| breakfast | 552 |
+| italian | 549 |
+| asian | 530 |
 | chicken | 518 |
-| low-carb | 479 |
-| potato | 413 |
-| pasta | 395 |
+| low-carb | 477 |
+| potato | 414 |
 | legumes | 394 |
-| pork | 390 |
-| salad | 388 |
-| mediterranean | 387 |
+| pasta | 394 |
+| mediterranean | 388 |
+| pork | 388 |
+| salad | 386 |
 | beef | 379 |
 | soup | 357 |
-| rice | 348 |
+| rice | 347 |
 | japanese | 305 |
 | mexican | 303 |
 | seafood | 303 |
 | grill | 258 |
-| mushroom | 231 |
-| sandwich | 176 |
-| eastern european | 166 |
+| mushroom | 230 |
+| sandwich | 175 |
 | fish | 165 |
-| french | 114 |
+| eastern european | 164 |
+| french | 112 |
 | chinese | 101 |
 | indian | 86 |
 | thai | 74 |
