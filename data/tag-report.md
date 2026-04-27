@@ -985,7 +985,7 @@
 | Zebra Cake | dessert, easy, vegetarian, cheese, pantry | yes |
 | Ebi Katsu Sando (Panko Crumbed Shrimp... | lunch, dinner, entree, comfort food, asian, japanese, seafood, sandwich, bread | yes |
 | Japanese mochi ice cream 餅アイス | dessert, snack, easy, vegetarian, asian, japanese | yes |
-| Thanksgiving Sidecar | side dish, holiday, vegetarian, pantry | no |
+| Thanksgiving Sidecar | side dish, holiday, vegetarian, pantry | yes |
 | Apple Steel-Cut Oatmeal | breakfast, easy, healthy, vegetarian, gluten-free, pantry | yes |
 | Best Hummus | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, legumes, pantry | yes |
 | Best Lentil Soup | lunch, dinner, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, soup, legumes, greens | yes |
@@ -4057,7 +4057,7 @@
 | Oven Ribs, Even Better | dinner, entree, comfort food, american, pork, grill | yes |
 | Tomato and Fried Provolone Sandwich | lunch, easy, comfort food, vegetarian, sandwich, bread, cheese | yes |
 | Angel Hair Pasta with Raw Tomato Sauce | lunch, dinner, easy, healthy, vegetarian, dairy-free, italian, pasta, greens, cheese, pantry | yes |
-| Crispy Peach Cobbler | dessert, comfort food, vegetarian, american, pantry, holiday | no |
+| Crispy Peach Cobbler | dessert, comfort food, vegetarian, american, pantry, holiday | yes |
 | Raspberry Crushed Ice | dessert, easy, vegan, gluten-free, dairy-free, vegetarian | yes |
 | Takeout-Style Sesame Noodles with Cuc... | lunch, dinner, easy, vegetarian, dairy-free, asian, chinese, pasta, pantry | yes |
 | Broccoli Cheddar Soup | lunch, dinner, easy, comfort food, vegetarian, soup, cheese | yes |
@@ -5456,58 +5456,58 @@
 ## Summary
 
 - Total recipes processed: 5463
-- Recipes with tag suggestions: 5451
-- Cached responses: 5450
+- Recipes with tag suggestions: 5447
+- Cached responses: 5447
 
 ## Tag Frequency
 
 | Tag | Count |
 |-----|-------|
-| easy | 3794 |
-| vegetarian | 3279 |
-| dinner | 2610 |
-| comfort food | 2602 |
-| pantry | 2385 |
-| lunch | 1358 |
-| dessert | 1355 |
-| healthy | 1339 |
-| cheese | 1335 |
+| easy | 3800 |
+| vegetarian | 3277 |
+| dinner | 2606 |
+| comfort food | 2603 |
+| pantry | 2392 |
+| lunch | 1363 |
+| dessert | 1356 |
+| healthy | 1342 |
+| cheese | 1334 |
 | snack | 1306 |
-| entree | 1203 |
-| gluten-free | 1100 |
-| side dish | 1088 |
-| dairy-free | 1062 |
-| american | 990 |
-| greens | 843 |
+| entree | 1200 |
+| gluten-free | 1099 |
+| side dish | 1086 |
+| dairy-free | 1064 |
+| american | 995 |
+| greens | 839 |
 | holiday | 838 |
-| vegan | 804 |
-| egg | 799 |
-| appetizer | 730 |
+| vegan | 807 |
+| egg | 793 |
+| appetizer | 729 |
 | quick | 605 |
-| bread | 602 |
-| breakfast | 551 |
-| italian | 550 |
-| asian | 531 |
+| bread | 601 |
+| breakfast | 552 |
+| italian | 549 |
+| asian | 530 |
 | chicken | 518 |
-| low-carb | 479 |
-| potato | 413 |
-| pasta | 395 |
+| low-carb | 477 |
+| potato | 414 |
 | legumes | 394 |
-| pork | 390 |
-| salad | 388 |
-| mediterranean | 387 |
+| pasta | 394 |
+| mediterranean | 388 |
+| pork | 388 |
+| salad | 386 |
 | beef | 379 |
 | soup | 357 |
-| rice | 348 |
+| rice | 347 |
 | japanese | 305 |
 | mexican | 303 |
 | seafood | 303 |
 | grill | 258 |
-| mushroom | 231 |
-| sandwich | 176 |
-| eastern european | 166 |
+| mushroom | 230 |
+| sandwich | 175 |
 | fish | 165 |
-| french | 114 |
+| eastern european | 164 |
+| french | 112 |
 | chinese | 101 |
 | indian | 86 |
 | thai | 74 |
