@@ -2422,14 +2422,17 @@ fn extract_recipe_from_substack(document: &Html, source_url: &str) -> Option<Raw
     // Substack tutorials typically build up to the main recipe, so the last
     // block is the primary one. Earlier blocks are sub-recipes (e.g. a custom
     // syrup or sugar mix that the main recipe uses).
-    let last_idx = blocks.len() - 1;
-    let title = blocks[last_idx].title.clone();
+    let title = blocks.last()?.title.clone();
     let multi_block = blocks.len() > 1;
 
+    // For multi-block recipes every block needs a `<title>:` header line so
+    // downstream section-aware ingredient grouping attributes each line to
+    // the right sub-recipe. Skipping the last header would let its ingredients
+    // bleed into the prior section.
     let mut ingredient_lines: Vec<String> = Vec::new();
     let mut instruction_paragraphs: Vec<String> = Vec::new();
-    for (i, block) in blocks.into_iter().enumerate() {
-        if multi_block && i != last_idx {
+    for block in blocks {
+        if multi_block {
             ingredient_lines.push(format!("{}:", block.title));
             instruction_paragraphs.push(format!("{}:", block.title));
         }
@@ -4295,11 +4298,13 @@ mod tests {
         assert_eq!(result.title, "Main Drink");
         assert_eq!(
             result.ingredients,
-            "Spice Mix:\n1 teaspoon cinnamon\n5 teaspoons sugar\n2 ounces rye\n1 ounce lemon juice"
+            "Spice Mix:\n1 teaspoon cinnamon\n5 teaspoons sugar\n\
+             Main Drink:\n2 ounces rye\n1 ounce lemon juice"
         );
         assert_eq!(
             result.instructions,
-            "Spice Mix:\n\nCombine in a bowl.\n\nShake with ice.\n\nStrain."
+            "Spice Mix:\n\nCombine in a bowl.\n\n\
+             Main Drink:\n\nShake with ice.\n\nStrain."
         );
     }
 
