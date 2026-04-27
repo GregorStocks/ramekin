@@ -991,6 +991,37 @@ static LOOKBACK_LINK_REGEX: LazyLock<Regex> = LazyLock::new(|| {
         .expect("Invalid lookback link regex")
 });
 
+/// Regex to detect a single "lookback link" line such as "Six Months Ago:",
+/// "1.5 Years Ago:", or "Two Years Ago:". Used to identify chunks that are
+/// mostly cross-links to past posts rather than ingredient lists. Applied
+/// to plain text after stripping HTML tags.
+static LOOKBACK_LINK_LINE_REGEX: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(r"(?i)^\s*(one|two|three|four|five|six|seven|eight|nine|ten|\d+(?:\.\d+)?)\s+(years?|months?)\s+ago\s*:")
+        .expect("Invalid lookback link line regex")
+});
+
+/// Detect chunks that are dominated by "X Years/Months Ago:" cross-links to
+/// past posts. These can otherwise sneak past `looks_like_ingredient_list`
+/// when the digits in "1.5 Years Ago" satisfy the leading-digit quantity
+/// pattern.
+fn looks_like_lookback_links_chunk(chunk: &str) -> bool {
+    let lines: Vec<&str> = BR_TAG_REGEX.split(chunk).collect();
+    let mut lookback_lines = 0;
+    let mut text_lines = 0;
+    for line in &lines {
+        let text = HTML_TAG_REGEX.replace_all(line, "");
+        let text = text.trim();
+        if text.is_empty() {
+            continue;
+        }
+        text_lines += 1;
+        if LOOKBACK_LINK_LINE_REGEX.is_match(text) {
+            lookback_lines += 1;
+        }
+    }
+    lookback_lines >= 2 && lookback_lines * 100 / text_lines.max(1) >= 40
+}
+
 struct UnstructuredRecipeBlock {
     title: Option<String>,
     title_chunk_idx: Option<usize>,
@@ -1011,6 +1042,7 @@ fn has_instruction_paragraph_between(chunks: &[&str], start_idx: usize, end_idx:
         let chunk = chunk.trim();
         if chunk.is_empty()
             || LOOKBACK_LINK_REGEX.is_match(chunk)
+            || looks_like_lookback_links_chunk(chunk)
             || looks_like_ingredient_list(chunk)
         {
             continue;
@@ -1144,6 +1176,7 @@ fn extract_recipe_from_unstructured_blog(html: &str, source_url: &str) -> Option
             let trimmed = chunk.trim();
             !trimmed.is_empty()
                 && BR_TAG_REGEX.find_iter(trimmed).count() >= 2
+                && !looks_like_lookback_links_chunk(trimmed)
                 && looks_like_ingredient_list(trimmed)
         })
         .map(|(i, _)| i)
@@ -1264,7 +1297,7 @@ fn extract_recipe_from_unstructured_blog(html: &str, source_url: &str) -> Option
                 continue;
             }
 
-            if LOOKBACK_LINK_REGEX.is_match(chunk) {
+            if LOOKBACK_LINK_REGEX.is_match(chunk) || looks_like_lookback_links_chunk(chunk) {
                 continue;
             }
 
@@ -4320,5 +4353,72 @@ mod tests {
         let result = extract_recipe(html, "https://example.substack.com/p/test").unwrap();
         assert_eq!(result.ingredients, "1 dash bitters\n2 ounces rye");
         assert_eq!(result.instructions, "Combine and shake.");
+    }
+
+    /// Pre-schema Smitten Kitchen posts that are pure narrative (no formal
+    /// ingredient list anywhere in the HTML) should fail with a clear
+    /// `recipeIngredient (empty)` error rather than panicking, looping, or
+    /// inventing ingredients. The 2008 huevos-rancheros post is the
+    /// canonical example: it has Jetpack `hrecipe` markup with an empty
+    /// `.jetpack-recipe-content` block and prose-only directions.
+    #[test]
+    fn old_smitten_kitchen_prose_only_post_fails_cleanly() {
+        let path = format!(
+            "{}/../tests/scrape_fixtures/smittenkitchen/huevos_rancheros.html",
+            env!("CARGO_MANIFEST_DIR"),
+        );
+        let html = std::fs::read_to_string(&path).expect("fixture exists");
+        let err = extract_recipe(
+            &html,
+            "https://smittenkitchen.com/2008/07/huevos-rancheros/",
+        )
+        .expect_err("prose-only old SK post should not produce a recipe");
+        assert!(
+            err.to_string().contains("recipeIngredient"),
+            "expected ingredient-missing error, got: {err}",
+        );
+    }
+
+    /// Lookback link sections like "Six Months Ago" / "1.5 Years Ago" must
+    /// not be confused for ingredient lists by the unstructured-blog
+    /// fallback. The leading digits in "1.5" used to satisfy the quantity
+    /// regex, which polluted ingredient extraction and starved the
+    /// instruction extractor on real recipes (e.g. crispy peach cobbler).
+    #[test]
+    fn lookback_links_chunk_is_not_ingredient_list() {
+        let chunk = r#"<i>And for the other side of the world:</i><br />
+<b>Six Months Ago:</b> <a href="x">Pecan Sticky Buns</a><br />
+<b>1.5 Years Ago:</b> <a href="x">Chocolate Peanut Butter Cheesecake</a><br />
+<b>2.5 Years Ago:</b> <a href="x">Fried Egg Sandwich</a>"#;
+        assert!(
+            looks_like_lookback_links_chunk(chunk),
+            "lookback links chunk should be detected"
+        );
+    }
+
+    /// Lookback link chunks must be skipped during instruction extraction
+    /// too. The existing `LOOKBACK_LINK_REGEX` only catches "X year(s) ago"
+    /// at the start of the chunk, so chunks introduced by
+    /// `<i>And for the other side of the world:</i>` followed by month or
+    /// decimal-year lookbacks would otherwise leak into instructions.
+    #[test]
+    fn crispy_peach_cobbler_instructions_exclude_lookback_links() {
+        let path = format!(
+            "{}/../tests/scrape_fixtures/smittenkitchen/crispy_peach_cobbler.html",
+            env!("CARGO_MANIFEST_DIR"),
+        );
+        let html = std::fs::read_to_string(&path).expect("fixture exists");
+        let recipe = extract_recipe(
+            &html,
+            "https://smittenkitchen.com/2015/08/crispy-peach-cobbler/",
+        )
+        .expect("extraction should succeed");
+        for needle in ["Six Months Ago", "1.5 Years Ago", "Other side of the world"] {
+            assert!(
+                !recipe.instructions.contains(needle),
+                "instructions should not contain {needle:?}, got: {}",
+                recipe.instructions,
+            );
+        }
     }
 }
