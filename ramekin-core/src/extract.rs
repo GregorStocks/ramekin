@@ -1344,6 +1344,33 @@ fn extract_recipe_from_unstructured_blog(html: &str, source_url: &str) -> Option
     })
 }
 
+/// Collect text from an element, skipping the contents of `<del>` and `<s>`
+/// subtrees so struck-through ingredients (e.g. `<li><del>2 Tbsp sugar</del></li>`)
+/// don't end up in the recipe.
+fn collect_text_skipping_struck(el: ElementRef<'_>) -> String {
+    let mut out = String::new();
+    for descendant in el.descendants() {
+        if let Some(text) = descendant.value().as_text() {
+            let mut in_struck = false;
+            let mut ancestor = descendant.parent();
+            while let Some(node) = ancestor {
+                if let Some(elem) = node.value().as_element() {
+                    let name = elem.name();
+                    if name == "del" || name == "s" || name == "strike" {
+                        in_struck = true;
+                        break;
+                    }
+                }
+                ancestor = node.parent();
+            }
+            if !in_struck {
+                out.push_str(text);
+            }
+        }
+    }
+    out
+}
+
 /// Site-specific extractor for virtualweberbullet.com recipe pages.
 ///
 /// These pages are hand-authored HTML without Recipe JSON-LD. They share a
@@ -1432,12 +1459,17 @@ fn extract_recipe_from_virtualweberbullet(
                     continue;
                 }
                 if let Some(header) = pending_ingredient_header.take() {
-                    ingredient_lines.push(format!("{}:", header));
+                    let mut header_emitted = false;
                     for li in el.select(&li_sel) {
-                        let raw_li: String = li.text().collect();
-                        if let Some(text) = sanitize_extracted_ingredient(&raw_li) {
-                            ingredient_lines.push(text);
+                        let raw_li = collect_text_skipping_struck(li);
+                        let Some(text) = sanitize_extracted_ingredient(&raw_li) else {
+                            continue;
+                        };
+                        if !header_emitted {
+                            ingredient_lines.push(format!("{}:", header));
+                            header_emitted = true;
                         }
+                        ingredient_lines.push(text);
                     }
                 } else if state == State::InInstructions {
                     for li in el.select(&li_sel) {
