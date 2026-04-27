@@ -1572,6 +1572,45 @@ fn extract_amount(s: &str) -> (Option<String>, String) {
             return (Some(amount), remaining);
         }
 
+        // Hyphenated range with attached mixed number on the high end:
+        // "1-1 1/2 cups" → amount "1-1 1/2" (range from 1 to 1.5).
+        // Low side may be digits or a fraction; high side (after the hyphen
+        // in the first token) must be a non-empty digit run so we don't
+        // swallow forms like "1/2-pound" or stray "1- " tokens.
+        if first.contains('-') && !first.starts_with('-') && is_fraction(second) {
+            if let Some((low, high_whole)) = first.split_once('-') {
+                if is_amount_like(low)
+                    && !high_whole.is_empty()
+                    && high_whole.chars().all(|c| c.is_ascii_digit())
+                {
+                    let amount = format!("{} {}", first, second);
+                    let remaining = words[2..].join(" ");
+                    return (Some(amount), remaining);
+                }
+            }
+        }
+
+        // Hyphenated range with attached mixed number on the low end:
+        // "1 1/2-2 cups" → amount "1 1/2-2"
+        // "1 1/2-2 1/2 cups" → amount "1 1/2-2 1/2"
+        if first.chars().all(|c| c.is_ascii_digit()) {
+            if let Some((frac_low, after_hyphen)) = second.split_once('-') {
+                if is_fraction(frac_low)
+                    && !after_hyphen.is_empty()
+                    && after_hyphen.chars().all(|c| c.is_ascii_digit())
+                {
+                    let (high, consumed) = if words.len() >= 3 && is_fraction(words[2]) {
+                        (format!("{} {}", after_hyphen, words[2]), 3)
+                    } else {
+                        (after_hyphen.to_string(), 2)
+                    };
+                    let amount = format!("{} {}-{}", first, frac_low, high);
+                    let remaining = words[consumed..].join(" ");
+                    return (Some(amount), remaining);
+                }
+            }
+        }
+
         // Check if first is a whole number and second is a fraction
         if first.chars().all(|c| c.is_ascii_digit()) && is_fraction(second) {
             let amount = format!("{} {}", first, second);
@@ -3359,5 +3398,84 @@ mod tests {
         // The ** line should be filtered out
         assert_eq!(result.len(), 2);
         assert_eq!(result[1].item, "fresh mint leaves");
+    }
+
+    #[test]
+    fn test_mixed_number_range_high_end_attached() {
+        // "1-1 1/2 cups …" must parse the whole "1-1 1/2" as the amount,
+        // not split it as "1-1" amount + "1/2 cups …" item.
+        let raw = "1-1 1/2 cups grilled chicken, cubed or shredded";
+        let result = parse_ingredient(raw);
+        assert_eq!(result.item, "grilled chicken");
+        assert_eq!(result.note.as_deref(), Some("cubed or shredded"));
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("1-1 1/2".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+
+        let normalized = parse_ingredient(raw).normalize_amounts();
+        assert_eq!(normalized.measurements[0].amount, Some("1-1.5".to_string()));
+    }
+
+    #[test]
+    fn test_mixed_number_range_low_end_attached() {
+        // "1 1/2-2 cups …" must parse "1 1/2-2" as the amount.
+        let raw = "1 1/2-2 cups flour";
+        let result = parse_ingredient(raw);
+        assert_eq!(result.item, "flour");
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("1 1/2-2".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+
+        let normalized = parse_ingredient(raw).normalize_amounts();
+        assert_eq!(normalized.measurements[0].amount, Some("1.5-2".to_string()));
+    }
+
+    #[test]
+    fn test_mixed_number_range_both_ends_attached() {
+        // "1 1/2-2 1/2 tablespoons olive oil" should yield amount "1 1/2-2 1/2".
+        let result = parse_ingredient("1 1/2-2 1/2 tablespoons olive oil");
+        assert_eq!(result.item, "olive oil");
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(
+            result.measurements[0].amount,
+            Some("1 1/2-2 1/2".to_string())
+        );
+        assert_eq!(result.measurements[0].unit, Some("tbsp".to_string()));
+    }
+
+    #[test]
+    fn test_mixed_number_range_low_attached_pound_unit_unaffected() {
+        // "1 1/2-pound salmon fillet": after-hyphen is "pound" (not digits),
+        // so the new low-end range branch must NOT fire and steal "pound"
+        // into a numeric range. Whatever the rest of the parser does with
+        // this input, the amount must not become a "1 1/2-pound" range.
+        let result = parse_ingredient("1 1/2-pound salmon fillet");
+        let amount = result.measurements[0].amount.as_deref().unwrap_or("");
+        assert!(
+            !amount.contains("pound"),
+            "amount should not absorb 'pound' as part of a range, got {:?}",
+            result.measurements[0]
+        );
+    }
+
+    #[test]
+    fn test_simple_hyphenated_range_still_works() {
+        // Regression: plain integer hyphen ranges must still parse normally.
+        let result = parse_ingredient("6-8 cups water");
+        assert_eq!(result.item, "water");
+        assert_eq!(result.measurements[0].amount, Some("6-8".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+    }
+
+    #[test]
+    fn test_hyphenated_mixed_number_still_works() {
+        // Regression: "1-1/2" (no space, fraction after hyphen) is the
+        // existing hyphenated-mixed-number form. The new branches must not
+        // steal or transform it; behaviour matches pre-existing pipeline
+        // fixtures (amount stays as "1-1/2").
+        let result = parse_ingredient("1-1/2 cups sugar");
+        assert_eq!(result.item, "sugar");
+        assert_eq!(result.measurements[0].amount, Some("1-1/2".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
     }
 }

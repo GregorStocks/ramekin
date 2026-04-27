@@ -985,6 +985,7 @@
 | Zebra Cake | dessert, easy, vegetarian, cheese, pantry | yes |
 | Ebi Katsu Sando (Panko Crumbed Shrimp... | lunch, dinner, entree, comfort food, asian, japanese, seafood, sandwich, bread | yes |
 | Japanese mochi ice cream 餅アイス | dessert, snack, easy, vegetarian, asian, japanese | yes |
+| Thanksgiving Sidecar | holiday | yes |
 | Apple Steel-Cut Oatmeal | breakfast, easy, healthy, vegetarian, gluten-free, pantry | yes |
 | Best Hummus | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, legumes, pantry | yes |
 | Best Lentil Soup | lunch, dinner, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, soup, legumes, greens | yes |
