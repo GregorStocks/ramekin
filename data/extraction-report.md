@@ -3,9 +3,9 @@
 ## Overall
 
 - Total URLs: 5536
-- Completed: 5449 (98.4%)
+- Completed: 5453 (98.5%)
 - Failed at fetch: 9 (0.2%)
-- Failed at extract: 78 (1.4%)
+- Failed at extract: 74 (1.3%)
 
 ## Extraction Methods
 
@@ -16,18 +16,18 @@
 
 ## Ingredient Parsing
 
-- Total ingredients: 60919
-- Volume-to-weight converted: 18126/42826 (42.3%)
-- Unknown ingredient (no density data): 15020
+- Total ingredients: 60976
+- Volume-to-weight converted: 18152/42877 (42.3%)
+- Unknown ingredient (no density data): 15045
 - Already has weight: 9680
-- No volume unit (count-based): 17775
+- No volume unit (count-based): 17779
 - Metric converted (oz→g): 2709
 - Metric converted (lb→g): 1825
 
 ## AI Cache
 
-- Cache hits: 5437/5437 (100.0%)
-- API calls: 0/5437 (0.0%)
+- Cache hits: 5437/5441 (99.9%)
+- API calls: 4/5441 (0.1%)
 
 ## By Site
 
@@ -126,7 +126,7 @@
 | thestayathomechef.com | 12 | 12 | 100.0% |
 | thewoksoflife.com | 24 | 24 | 100.0% |
 | twopeasandtheirpod.com | 22 | 23 | 95.7% |
-| virtualweberbullet.com | 0 | 4 | 0.0% |
+| virtualweberbullet.com | 4 | 4 | 100.0% |
 | wellplated.com | 35 | 35 | 100.0% |
 | whiteonricecouple.com | 83 | 83 | 100.0% |
 | yellowblissroad.com | 31 | 31 | 100.0% |
@@ -152,7 +152,7 @@
 - https://www.seriouseats.com/the-best-classic-chicken-salad-recipe
 - https://www.seriouseats.com/toad-in-the-hole-recipe-11746714
 
-### Missing required field: recipeIngredient (empty) (73 URLs)
+### Missing required field: recipeIngredient (empty) (69 URLs)
 
 - http://bakingbites.com/2017/02/how-to-use-freeze-dried-fruit-in-baking/
 - https://barefeetinthekitchen.com/diy-fruit-and-vegetable-wash-homemade-produce-wash-recipe/
@@ -223,10 +223,6 @@
 - https://www.sprinklebakes.com/2020/12/peppermint-stripe-mousse-cakes.html
 - https://www.sprinklebakes.com/2021/01/fancy-chocolate-covered-strawberries.html
 - https://www.twopeasandtheirpod.com/mixed-berry-cobbler-recipe/
-- https://www.virtualweberbullet.com/best-ribs-in-the-universe-mike-scrutchfield/
-- https://www.virtualweberbullet.com/brisket-high-heat/
-- https://www.virtualweberbullet.com/pork-butt-smoke-spice-renowned-mr-brown/
-- https://www.virtualweberbullet.com/spareribs-3-2-1-method/
 
 ### Missing required field: recipeInstructions (empty) (1 URLs)
 
