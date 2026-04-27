@@ -3,9 +3,9 @@
 ## Overall
 
 - Total URLs: 5535
-- Completed: 5466 (98.8%)
+- Completed: 5467 (98.8%)
 - Failed at fetch: 0 (0.0%)
-- Failed at extract: 69 (1.2%)
+- Failed at extract: 68 (1.2%)
 
 ## Extraction Methods
 
@@ -16,18 +16,18 @@
 
 ## Ingredient Parsing
 
-- Total ingredients: 60711
-- Volume-to-weight converted: 18154/42729 (42.5%)
-- Unknown ingredient (no density data): 15124
-- Already has weight: 9451
-- No volume unit (count-based): 17663
-- Metric converted (oz→g): 2467
-- Metric converted (lb→g): 1810
+- Total ingredients: 60724
+- Volume-to-weight converted: 18158/42747 (42.5%)
+- Unknown ingredient (no density data): 15127
+- Already has weight: 9462
+- No volume unit (count-based): 17655
+- Metric converted (oz→g): 2473
+- Metric converted (lb→g): 1813
 
 ## AI Cache
 
-- Cache hits: 5450/5450 (100.0%)
-- API calls: 0/5450 (0.0%)
+- Cache hits: 5451/5451 (100.0%)
+- API calls: 0/5451 (0.0%)
 
 ## By Site
 
@@ -53,7 +53,7 @@
 | cafedelites.com | 55 | 55 | 100.0% |
 | chefspencil.com | 4 | 4 | 100.0% |
 | chopstickchronicles.com | 2 | 2 | 100.0% |
-| cocktailswithsuderman.substack.com | 0 | 4 | 0.0% |
+| cocktailswithsuderman.substack.com | 1 | 4 | 25.0% |
 | cookieandkate.com | 14 | 14 | 100.0% |
 | cooking.nytimes.com | 51 | 51 | 100.0% |
 | cookingclassy.com | 56 | 56 | 100.0% |
@@ -133,12 +133,11 @@
 
 ## Failed URLs by Error
 
-### Missing required field: recipeIngredient (empty) (68 URLs)
+### Missing required field: recipeIngredient (empty) (67 URLs)
 
 - http://bakingbites.com/2017/02/how-to-use-freeze-dried-fruit-in-baking/
 - https://barefeetinthekitchen.com/diy-fruit-and-vegetable-wash-homemade-produce-wash-recipe/
 - https://cocktailswithsuderman.substack.com/p/a-question-about-the-clover-club
-- https://cocktailswithsuderman.substack.com/p/a-thanksgiving-sidecar-with-jellied
 - https://cocktailswithsuderman.substack.com/p/hot-chocolate-manhattan
 - https://cocktailswithsuderman.substack.com/p/lol-its-an-appletini
 - https://feedbin.com/entries/4967860190
