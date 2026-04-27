@@ -16,18 +16,18 @@
 
 ## Ingredient Parsing
 
-- Total ingredients: 60919
-- Volume-to-weight converted: 18126/42826 (42.3%)
-- Unknown ingredient (no density data): 15020
-- Already has weight: 9680
-- No volume unit (count-based): 17775
+- Total ingredients: 60499
+- Volume-to-weight converted: 18129/42834 (42.3%)
+- Unknown ingredient (no density data): 15021
+- Already has weight: 9684
+- No volume unit (count-based): 17347
 - Metric converted (oz→g): 2709
 - Metric converted (lb→g): 1825
 
 ## AI Cache
 
-- Cache hits: 5437/5437 (100.0%)
-- API calls: 0/5437 (0.0%)
+- Cache hits: 5357/5433 (98.6%)
+- API calls: 76/5433 (1.4%)
 
 ## By Site
 
@@ -186,7 +186,7 @@
 - https://smittenkitchen.com/2010/04/make-your-own-creme-fraiche/
 - https://smittenkitchen.com/2012/10/how-to-make-your-own-pumpkin-puree/
 - https://smittenkitchen.com/2013/07/grilled-bacon-salad-with-arugula-and-balsamic/
-- https://smittenkitchen.com/2015/08/crispy-peach-cobbler/
+- https://smittenkitchen.com/2015/06/crispy-frizzled-artichokes/
 - https://smittenkitchen.com/2016/08/even-more-perfect-blueberry-muffins/
 - https://smittenkitchen.com/2020/04/how-i-stock-the-smitten-kitchen/
 - https://www.averiecooks.com/raw-vegan-donut-holes-5-minute-recipe/
