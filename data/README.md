@@ -91,9 +91,3 @@ This lets you incrementally grow the dataset over time without re-scraping every
 ## pipeline-snapshot-urls.json
 
 Committed allowlist of URLs that must produce recipe snapshots under `data/pipeline-snapshots/` when you run `make pipeline`.
-
-## pipeline-expected-extract-failures.json
-
-Committed list of curated URLs that intentionally stay in `data/test-urls.json` even though they are not expected to produce a recipe at `extract_recipe` time.
-
-These URLs are still processed by the pipeline, but `data/extraction-report.md` reports them in a separate "Expected Extract Failures" section instead of mixing them into normal regression buckets.

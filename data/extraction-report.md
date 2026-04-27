@@ -2,18 +2,17 @@
 
 ## Overall
 
-- Total URLs: 5535
+- Total URLs: 5534
 - Completed: 5467 (98.8%)
 - Failed at fetch: 0 (0.0%)
 - Failed at extract: 67 (1.2%)
-- Expected extract failures: 1 (0.0%)
 
 ## Extraction Methods
 
-- JSON-LD: 4276/5535 (77.3%)
-- Microdata: 537/5535 (9.7%)
-- Both: 0/5535 (0.0%)
-- Neither: 722/5535 (13.0%)
+- JSON-LD: 4276/5534 (77.3%)
+- Microdata: 537/5534 (9.7%)
+- Both: 0/5534 (0.0%)
+- Neither: 721/5534 (13.0%)
 
 ## Ingredient Parsing
 
@@ -32,105 +31,105 @@
 
 ## By Site
 
-| Site | Completed | Expected Extract | Failed | Total | Rate |
-|------|-----------|------------------|--------|-------|------|
-| 101cookbooks.com | 68 | 0 | 0 | 68 | 100.0% |
-| acouplecooks.com | 50 | 0 | 0 | 50 | 100.0% |
-| alexandracooks.com | 101 | 0 | 0 | 101 | 100.0% |
-| allrecipes.com | 104 | 0 | 0 | 104 | 100.0% |
-| altonbrown.com | 101 | 0 | 0 | 101 | 100.0% |
-| americastestkitchen.com | 58 | 0 | 0 | 58 | 100.0% |
-| asweetpeachef.com | 31 | 0 | 0 | 31 | 100.0% |
-| averiecooks.com | 1 | 0 | 2 | 3 | 33.3% |
-| bakerita.com | 7 | 0 | 0 | 7 | 100.0% |
-| bakingbites.com | 10 | 0 | 1 | 11 | 90.9% |
-| barefeetinthekitchen.com | 99 | 0 | 1 | 100 | 99.0% |
-| bbcgoodfood.com | 99 | 0 | 1 | 100 | 99.0% |
-| bonappetit.com | 45 | 0 | 0 | 45 | 100.0% |
-| bowlofdelicious.com | 1 | 0 | 0 | 1 | 100.0% |
-| browneyedbaker.com | 100 | 0 | 0 | 100 | 100.0% |
-| budgetbytes.com | 2 | 0 | 0 | 2 | 100.0% |
-| butterwithasideofbread.com | 44 | 0 | 0 | 44 | 100.0% |
-| cafedelites.com | 55 | 0 | 0 | 55 | 100.0% |
-| chefspencil.com | 4 | 0 | 0 | 4 | 100.0% |
-| chopstickchronicles.com | 2 | 0 | 0 | 2 | 100.0% |
-| cocktailswithsuderman.substack.com | 1 | 0 | 3 | 4 | 25.0% |
-| cookieandkate.com | 14 | 0 | 0 | 14 | 100.0% |
-| cooking.nytimes.com | 51 | 0 | 0 | 51 | 100.0% |
-| cookingclassy.com | 56 | 0 | 0 | 56 | 100.0% |
-| damndelicious.net | 26 | 0 | 0 | 26 | 100.0% |
-| davidlebovitz.com | 7 | 0 | 0 | 7 | 100.0% |
-| delish.com | 101 | 0 | 0 | 101 | 100.0% |
-| dinneratthezoo.com | 1 | 0 | 0 | 1 | 100.0% |
-| dinnerthendessert.com | 4 | 0 | 0 | 4 | 100.0% |
-| downshiftology.com | 100 | 0 | 0 | 100 | 100.0% |
-| eatingwell.com | 100 | 0 | 0 | 100 | 100.0% |
-| epicurious.com | 1 | 0 | 0 | 1 | 100.0% |
-| feedbin.com | 0 | 0 | 1 | 1 | 0.0% |
-| food.com | 24 | 0 | 3 | 27 | 88.9% |
-| food52.com | 1 | 0 | 0 | 1 | 100.0% |
-| foodandwine.com | 99 | 0 | 0 | 99 | 100.0% |
-| foodnetwork.com | 1 | 0 | 0 | 1 | 100.0% |
-| gimmesomeoven.com | 6 | 0 | 0 | 6 | 100.0% |
-| gonnawantseconds.com | 58 | 0 | 1 | 59 | 98.3% |
-| halfbakedharvest.com | 5 | 0 | 0 | 5 | 100.0% |
-| hostthetoast.com | 9 | 0 | 0 | 9 | 100.0% |
-| howsweeteats.com | 82 | 0 | 0 | 82 | 100.0% |
-| iamafoodblog.com | 99 | 0 | 1 | 100 | 99.0% |
-| indianhealthyrecipes.com | 25 | 0 | 0 | 25 | 100.0% |
-| inspiredtaste.net | 100 | 0 | 0 | 100 | 100.0% |
-| japanesecooking101.com | 106 | 0 | 0 | 106 | 100.0% |
-| jocooks.com | 77 | 0 | 0 | 77 | 100.0% |
-| joyfoodsunshine.com | 88 | 0 | 0 | 88 | 100.0% |
-| justonecookbook.com | 21 | 0 | 1 | 22 | 95.5% |
-| keviniscooking.com | 34 | 0 | 0 | 34 | 100.0% |
-| kingarthurbaking.com | 5 | 0 | 0 | 5 | 100.0% |
-| kiyafries.com | 1 | 0 | 0 | 1 | 100.0% |
-| lecremedelacrumb.com | 27 | 0 | 0 | 27 | 100.0% |
-| lifemadesweeter.com | 6 | 0 | 0 | 6 | 100.0% |
-| littlesweetbaker.com | 23 | 0 | 0 | 23 | 100.0% |
-| loveandlemons.com | 37 | 0 | 0 | 37 | 100.0% |
-| loveandoliveoil.com | 95 | 0 | 1 | 96 | 99.0% |
-| marthastewart.com | 6 | 0 | 1 | 7 | 85.7% |
-| momontimeout.com | 97 | 0 | 3 | 100 | 97.0% |
-| mybakingaddiction.com | 94 | 0 | 3 | 97 | 96.9% |
-| natashaskitchen.com | 100 | 0 | 0 | 100 | 100.0% |
-| nomnompaleo.com | 3 | 0 | 2 | 5 | 60.0% |
-| norecipes.com | 101 | 0 | 0 | 101 | 100.0% |
-| ohmyveggies.com | 3 | 0 | 3 | 6 | 50.0% |
-| onceuponachef.com | 92 | 0 | 0 | 92 | 100.0% |
-| onmykidsplate.com | 18 | 0 | 0 | 18 | 100.0% |
-| peasandcrayons.com | 51 | 0 | 1 | 52 | 98.1% |
-| pinchandswirl.com | 1 | 0 | 0 | 1 | 100.0% |
-| recipetineats.com | 10 | 0 | 0 | 10 | 100.0% |
-| runningwithspoons.com | 1 | 0 | 0 | 1 | 100.0% |
-| sallysbakingaddiction.com | 34 | 0 | 0 | 34 | 100.0% |
-| seriouseats.com | 167 | 1 | 0 | 168 | 100.0% |
-| simplyrecipes.com | 99 | 0 | 1 | 100 | 99.0% |
-| skinnytaste.com | 2 | 0 | 0 | 2 | 100.0% |
-| slenderkitchen.com | 55 | 0 | 0 | 55 | 100.0% |
-| smittenkitchen.com | 990 | 0 | 18 | 1008 | 98.2% |
-| spendwithpennies.com | 35 | 0 | 0 | 35 | 100.0% |
-| spoonforkbacon.com | 2 | 0 | 0 | 2 | 100.0% |
-| sprinklebakes.com | 74 | 0 | 18 | 92 | 80.4% |
-| sudachirecipes.com | 97 | 0 | 0 | 97 | 100.0% |
-| sweetandsavorymeals.com | 100 | 0 | 0 | 100 | 100.0% |
-| tasteofhome.com | 100 | 0 | 0 | 100 | 100.0% |
-| tastesbetterfromscratch.com | 3 | 0 | 0 | 3 | 100.0% |
-| tasty.co | 97 | 0 | 0 | 97 | 100.0% |
-| theforkedspoon.com | 100 | 0 | 0 | 100 | 100.0% |
-| themediterraneandish.com | 100 | 0 | 0 | 100 | 100.0% |
-| themodernproper.com | 14 | 0 | 0 | 14 | 100.0% |
-| thepioneerwoman.com | 102 | 0 | 0 | 102 | 100.0% |
-| therecipecritic.com | 34 | 0 | 0 | 34 | 100.0% |
-| thespruceeats.com | 1 | 0 | 0 | 1 | 100.0% |
-| thestayathomechef.com | 12 | 0 | 0 | 12 | 100.0% |
-| thewoksoflife.com | 24 | 0 | 0 | 24 | 100.0% |
-| twopeasandtheirpod.com | 22 | 0 | 1 | 23 | 95.7% |
-| virtualweberbullet.com | 4 | 0 | 0 | 4 | 100.0% |
-| wellplated.com | 35 | 0 | 0 | 35 | 100.0% |
-| whiteonricecouple.com | 83 | 0 | 0 | 83 | 100.0% |
-| yellowblissroad.com | 31 | 0 | 0 | 31 | 100.0% |
+| Site | Completed | Total | Rate |
+|------|-----------|-------|------|
+| 101cookbooks.com | 68 | 68 | 100.0% |
+| acouplecooks.com | 50 | 50 | 100.0% |
+| alexandracooks.com | 101 | 101 | 100.0% |
+| allrecipes.com | 104 | 104 | 100.0% |
+| altonbrown.com | 101 | 101 | 100.0% |
+| americastestkitchen.com | 58 | 58 | 100.0% |
+| asweetpeachef.com | 31 | 31 | 100.0% |
+| averiecooks.com | 1 | 3 | 33.3% |
+| bakerita.com | 7 | 7 | 100.0% |
+| bakingbites.com | 10 | 11 | 90.9% |
+| barefeetinthekitchen.com | 99 | 100 | 99.0% |
+| bbcgoodfood.com | 99 | 100 | 99.0% |
+| bonappetit.com | 45 | 45 | 100.0% |
+| bowlofdelicious.com | 1 | 1 | 100.0% |
+| browneyedbaker.com | 100 | 100 | 100.0% |
+| budgetbytes.com | 2 | 2 | 100.0% |
+| butterwithasideofbread.com | 44 | 44 | 100.0% |
+| cafedelites.com | 55 | 55 | 100.0% |
+| chefspencil.com | 4 | 4 | 100.0% |
+| chopstickchronicles.com | 2 | 2 | 100.0% |
+| cocktailswithsuderman.substack.com | 1 | 4 | 25.0% |
+| cookieandkate.com | 14 | 14 | 100.0% |
+| cooking.nytimes.com | 51 | 51 | 100.0% |
+| cookingclassy.com | 56 | 56 | 100.0% |
+| damndelicious.net | 26 | 26 | 100.0% |
+| davidlebovitz.com | 7 | 7 | 100.0% |
+| delish.com | 101 | 101 | 100.0% |
+| dinneratthezoo.com | 1 | 1 | 100.0% |
+| dinnerthendessert.com | 4 | 4 | 100.0% |
+| downshiftology.com | 100 | 100 | 100.0% |
+| eatingwell.com | 100 | 100 | 100.0% |
+| epicurious.com | 1 | 1 | 100.0% |
+| feedbin.com | 0 | 1 | 0.0% |
+| food.com | 24 | 27 | 88.9% |
+| food52.com | 1 | 1 | 100.0% |
+| foodandwine.com | 99 | 99 | 100.0% |
+| foodnetwork.com | 1 | 1 | 100.0% |
+| gimmesomeoven.com | 6 | 6 | 100.0% |
+| gonnawantseconds.com | 58 | 59 | 98.3% |
+| halfbakedharvest.com | 5 | 5 | 100.0% |
+| hostthetoast.com | 9 | 9 | 100.0% |
+| howsweeteats.com | 82 | 82 | 100.0% |
+| iamafoodblog.com | 99 | 100 | 99.0% |
+| indianhealthyrecipes.com | 25 | 25 | 100.0% |
+| inspiredtaste.net | 100 | 100 | 100.0% |
+| japanesecooking101.com | 106 | 106 | 100.0% |
+| jocooks.com | 77 | 77 | 100.0% |
+| joyfoodsunshine.com | 88 | 88 | 100.0% |
+| justonecookbook.com | 21 | 22 | 95.5% |
+| keviniscooking.com | 34 | 34 | 100.0% |
+| kingarthurbaking.com | 5 | 5 | 100.0% |
+| kiyafries.com | 1 | 1 | 100.0% |
+| lecremedelacrumb.com | 27 | 27 | 100.0% |
+| lifemadesweeter.com | 6 | 6 | 100.0% |
+| littlesweetbaker.com | 23 | 23 | 100.0% |
+| loveandlemons.com | 37 | 37 | 100.0% |
+| loveandoliveoil.com | 95 | 96 | 99.0% |
+| marthastewart.com | 6 | 7 | 85.7% |
+| momontimeout.com | 97 | 100 | 97.0% |
+| mybakingaddiction.com | 94 | 97 | 96.9% |
+| natashaskitchen.com | 100 | 100 | 100.0% |
+| nomnompaleo.com | 3 | 5 | 60.0% |
+| norecipes.com | 101 | 101 | 100.0% |
+| ohmyveggies.com | 3 | 6 | 50.0% |
+| onceuponachef.com | 92 | 92 | 100.0% |
+| onmykidsplate.com | 18 | 18 | 100.0% |
+| peasandcrayons.com | 51 | 52 | 98.1% |
+| pinchandswirl.com | 1 | 1 | 100.0% |
+| recipetineats.com | 10 | 10 | 100.0% |
+| runningwithspoons.com | 1 | 1 | 100.0% |
+| sallysbakingaddiction.com | 34 | 34 | 100.0% |
+| seriouseats.com | 167 | 167 | 100.0% |
+| simplyrecipes.com | 99 | 100 | 99.0% |
+| skinnytaste.com | 2 | 2 | 100.0% |
+| slenderkitchen.com | 55 | 55 | 100.0% |
+| smittenkitchen.com | 990 | 1008 | 98.2% |
+| spendwithpennies.com | 35 | 35 | 100.0% |
+| spoonforkbacon.com | 2 | 2 | 100.0% |
+| sprinklebakes.com | 74 | 92 | 80.4% |
+| sudachirecipes.com | 97 | 97 | 100.0% |
+| sweetandsavorymeals.com | 100 | 100 | 100.0% |
+| tasteofhome.com | 100 | 100 | 100.0% |
+| tastesbetterfromscratch.com | 3 | 3 | 100.0% |
+| tasty.co | 97 | 97 | 100.0% |
+| theforkedspoon.com | 100 | 100 | 100.0% |
+| themediterraneandish.com | 100 | 100 | 100.0% |
+| themodernproper.com | 14 | 14 | 100.0% |
+| thepioneerwoman.com | 102 | 102 | 100.0% |
+| therecipecritic.com | 34 | 34 | 100.0% |
+| thespruceeats.com | 1 | 1 | 100.0% |
+| thestayathomechef.com | 12 | 12 | 100.0% |
+| thewoksoflife.com | 24 | 24 | 100.0% |
+| twopeasandtheirpod.com | 22 | 23 | 95.7% |
+| virtualweberbullet.com | 4 | 4 | 100.0% |
+| wellplated.com | 35 | 35 | 100.0% |
+| whiteonricecouple.com | 83 | 83 | 100.0% |
+| yellowblissroad.com | 31 | 31 | 100.0% |
 
 ## Failed URLs by Error
 
@@ -206,7 +205,3 @@
 ### Missing required field: recipeInstructions (empty) (1 URLs)
 
 - https://www.momontimeout.com/perfect-pasta-salad-recipe/
-
-## Expected Extract Failures
-
-- https://www.seriouseats.com/food-lab-complete-guide-to-sous-vide-steak — Manually curated Serious Eats guide article kept in the pipeline corpus on purpose; it is not expected to extract as a recipe snapshot.

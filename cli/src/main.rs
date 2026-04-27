@@ -389,7 +389,6 @@ async fn main() -> Result<()> {
             tags_file,
             concurrency,
         } => {
-            let test_urls_file = test_urls.clone();
             let config = pipeline_orchestrator::OrchestratorConfig {
                 run_id: timestamp.clone(),
                 test_urls_file: test_urls,
@@ -401,14 +400,9 @@ async fn main() -> Result<()> {
                 concurrency,
             };
             let results = pipeline_orchestrator::run_pipeline_test(config).await?;
-            let expected_extract_failures =
-                pipeline_orchestrator::load_expected_extract_failures(&test_urls_file)?;
 
             // Generate and save extraction report
-            let extraction_report = pipeline_orchestrator::generate_summary_report(
-                &results,
-                &expected_extract_failures,
-            );
+            let extraction_report = pipeline_orchestrator::generate_summary_report(&results);
             let extraction_report_path = PathBuf::from("data/extraction-report.md");
             std::fs::write(&extraction_report_path, &extraction_report)?;
             tracing::info!(
