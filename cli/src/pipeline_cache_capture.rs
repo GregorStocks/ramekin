@@ -21,6 +21,7 @@ use axum::Router;
 use ramekin_core::http::DiskCache;
 use serde::Deserialize;
 use tower_http::cors::{Any, CorsLayer};
+use uuid::Uuid;
 
 /// Default port for the local capture server.
 pub const DEFAULT_PORT: u16 = 9876;
@@ -35,12 +36,17 @@ const MAX_CAPTURE_BODY_BYTES: usize = 64 * 1024 * 1024;
 struct CapturePayload {
     url: String,
     html: String,
+    token: String,
 }
 
 #[derive(Clone)]
 struct AppState {
     cache: Arc<DiskCache>,
     server_url: Arc<String>,
+    /// Random per-session token. The bookmarklet served from `/` embeds it,
+    /// so any other page hitting `/capture` (CORS is fully open) without it
+    /// gets 401 instead of being able to poison the pipeline cache.
+    token: Arc<String>,
 }
 
 /// Run the capture server until the process is interrupted.
@@ -53,9 +59,11 @@ pub async fn run(host: &str, port: u16, cache_dir: Option<PathBuf>) -> Result<()
         .with_context(|| format!("Failed to create cache dir {}", cache_dir.display()))?;
 
     let server_url = format!("http://{host}:{port}");
+    let token = Uuid::new_v4().to_string();
     let state = AppState {
         cache: Arc::new(DiskCache::new(cache_dir.clone())),
         server_url: Arc::new(server_url.clone()),
+        token: Arc::new(token),
     };
 
     let addr: SocketAddr = format!("{host}:{port}")
@@ -77,6 +85,10 @@ pub async fn run(host: &str, port: u16, cache_dir: Option<PathBuf>) -> Result<()
     );
     tracing::info!("     then click the bookmarklet to POST the rendered HTML back here.");
     tracing::info!("  3. Re-run `make pipeline` and the URL will hit cache instead of the wall.");
+    tracing::info!("");
+    tracing::info!(
+        "  The bookmarklet embeds a per-session token; re-drag it from / each time you restart."
+    );
     tracing::info!("");
     tracing::info!("  Ctrl+C to stop.");
 
@@ -120,7 +132,7 @@ fn resolve_cache_dir(setting: Option<&str>) -> Result<PathBuf> {
 }
 
 async fn root(State(state): State<AppState>) -> Html<String> {
-    Html(landing_html(&state.server_url))
+    Html(landing_html(&state.server_url, &state.token))
 }
 
 async fn capture(
@@ -131,6 +143,10 @@ async fn capture(
     // preflight) with a JSON body, so we parse the body ourselves.
     let payload: CapturePayload = serde_json::from_str(&body)
         .map_err(|e| (StatusCode::BAD_REQUEST, format!("invalid JSON body: {e}")))?;
+
+    if payload.token != *state.token {
+        return Err((StatusCode::UNAUTHORIZED, "invalid token".to_string()));
+    }
 
     if payload.url.is_empty() || payload.html.is_empty() {
         return Err((
@@ -162,22 +178,24 @@ async fn capture(
 
 /// Build the bookmarklet's JavaScript source. Kept ASCII-only and free of
 /// `"`, `<`, `>`, and `&` so it can be embedded verbatim in an `href` attribute.
-fn bookmarklet_js(server_url: &str) -> String {
-    // server_url is sourced from our own --host/--port flags; if a caller does
-    // something pathological with quotes the worst case is a broken bookmarklet.
-    let escaped = server_url.replace('\'', "");
+fn bookmarklet_js(server_url: &str, token: &str) -> String {
+    // server_url comes from our own --host/--port flags; token is a UUID we
+    // generated. If a caller does something pathological with quotes the worst
+    // case is a broken bookmarklet — strip them defensively.
+    let escaped_url = server_url.replace('\'', "");
+    let escaped_token = token.replace('\'', "");
     format!(
         "(function(){{\
-var u='{escaped}/capture';\
-var b=JSON.stringify({{url:location.href,html:document.documentElement.outerHTML}});\
+var u='{escaped_url}/capture';\
+var b=JSON.stringify({{url:location.href,html:document.documentElement.outerHTML,token:'{escaped_token}'}});\
 function t(m,c){{var d=document.createElement('div');d.textContent=m;d.style.cssText='position:fixed;top:12px;right:12px;z-index:2147483647;background:'+c+';color:#fff;padding:10px 14px;border-radius:6px;font:14px sans-serif;box-shadow:0 4px 12px rgba(0,0,0,.3);';document.body.appendChild(d);setTimeout(function(){{d.remove();}},5000);}}\
 fetch(u,{{method:'POST',headers:{{'Content-Type':'text/plain'}},body:b}}).then(function(r){{return r.text();}}).then(function(m){{t(m,'#1f6f3f');}}).catch(function(e){{t('Ramekin error: '+e,'#a00');}});\
 }})();"
     )
 }
 
-fn landing_html(server_url: &str) -> String {
-    let bookmarklet = format!("javascript:{}", bookmarklet_js(server_url));
+fn landing_html(server_url: &str, token: &str) -> String {
+    let bookmarklet = format!("javascript:{}", bookmarklet_js(server_url, token));
     let href = html_escape(&bookmarklet);
     let src = html_escape(&bookmarklet);
     format!(
@@ -233,12 +251,15 @@ mod tests {
     use tempfile::TempDir;
     use tower::ServiceExt;
 
+    const TEST_TOKEN: &str = "test-token-abcdef";
+
     fn test_state() -> (AppState, TempDir) {
         let tmp = TempDir::new().unwrap();
         let cache = Arc::new(DiskCache::new(tmp.path().to_path_buf()));
         let state = AppState {
             cache,
             server_url: Arc::new("http://127.0.0.1:9876".to_string()),
+            token: Arc::new(TEST_TOKEN.to_string()),
         };
         (state, tmp)
     }
@@ -251,7 +272,7 @@ mod tests {
 
         let url = "https://www.justonecookbook.com/example-recipe/";
         let html = "<html><body>example</body></html>";
-        let body = serde_json::json!({"url": url, "html": html}).to_string();
+        let body = serde_json::json!({"url": url, "html": html, "token": TEST_TOKEN}).to_string();
 
         let response = app
             .oneshot(
@@ -294,11 +315,41 @@ mod tests {
     }
 
     #[tokio::test]
+    async fn capture_rejects_wrong_token() {
+        let (state, tmp) = test_state();
+        let cache_dir = tmp.path().to_path_buf();
+        let app = build_router(state);
+
+        let url = "https://www.example.com/recipe";
+        let body = serde_json::json!({
+            "url": url,
+            "html": "<html></html>",
+            "token": "not-the-real-token",
+        })
+        .to_string();
+
+        let response = app
+            .oneshot(
+                Request::builder()
+                    .method("POST")
+                    .uri("/capture")
+                    .body(Body::from(body))
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+
+        assert_eq!(response.status(), StatusCode::UNAUTHORIZED);
+        let cache = DiskCache::new(cache_dir);
+        assert!(cache.get(url).is_none(), "cache must not be poisoned");
+    }
+
+    #[tokio::test]
     async fn capture_rejects_empty_fields() {
         let (state, _tmp) = test_state();
         let app = build_router(state);
 
-        let body = serde_json::json!({"url": "", "html": ""}).to_string();
+        let body = serde_json::json!({"url": "", "html": "", "token": TEST_TOKEN}).to_string();
         let response = app
             .oneshot(
                 Request::builder()
@@ -323,7 +374,7 @@ mod tests {
 
         let url = "https://www.seriouseats.com/big-page";
         let html = "x".repeat(5 * 1024 * 1024);
-        let body = serde_json::json!({"url": url, "html": html}).to_string();
+        let body = serde_json::json!({"url": url, "html": html, "token": TEST_TOKEN}).to_string();
 
         let response = app
             .oneshot(
@@ -373,5 +424,9 @@ mod tests {
         assert!(html.contains("Capture for Ramekin"));
         assert!(html.contains("javascript:"));
         assert!(html.contains("/capture"));
+        assert!(
+            html.contains(TEST_TOKEN),
+            "bookmarklet must embed the per-session token"
+        );
     }
 }
