@@ -59,14 +59,14 @@
     {
       "raw": "1/2 cup slivered almonds, well-toasted and cooled (300 degree oven for 7 to 10 minutes, tossing occasionally, usually works)",
       "expected": {
-        "item": "slivered almonds, well-toasted and cooled",
+        "item": "slivered almonds",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "300 degree oven for 7 to 10 minutes, tossing occasionally, usually works",
+        "note": "300 degree oven for 7 to 10 minutes, tossing occasionally, usually works, well-toasted and cooled",
         "category": "Nuts & Dried Fruit"
       }
     },

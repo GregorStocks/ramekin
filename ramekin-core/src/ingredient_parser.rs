@@ -719,6 +719,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // e.g., "1 stick (113g) butter" -> extract "(113g)" as alt measurement
     // e.g., "1/2 cup butter (softened)" -> extract "(softened)" as note
     let mut alt_measurements = Vec::new();
+    let mut deferred_parenthetical_note: Option<String> = None;
     while let Some(start) = remaining.find('(') {
         // Find ')' in the substring after '('
         let after_open = match remaining.get(start..) {
@@ -809,8 +810,10 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                 .trim_start_matches(',')
                 .trim()
                 .to_string();
-            if note.is_none() && trimmed_content.to_lowercase().contains("degree") {
-                note = Some(trimmed_content);
+            if deferred_parenthetical_note.is_none()
+                && trimmed_content.to_lowercase().contains("degree")
+            {
+                deferred_parenthetical_note = Some(trimmed_content);
             }
             let before = remaining
                 .get(..start)
@@ -1230,6 +1233,13 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                 remaining = before_or.to_string();
             }
         }
+    }
+
+    if let Some(parenthetical_note) = deferred_parenthetical_note {
+        note = Some(match note {
+            Some(existing_note) => format!("{}, {}", parenthetical_note, existing_note),
+            None => parenthetical_note,
+        });
     }
 
     // Step 5.7: Handle comma-separated conditional alternatives in remaining text
@@ -3414,6 +3424,21 @@ mod tests {
         assert_eq!(result.note, Some("about 100 degrees".to_string()));
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("1 3/4".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+    }
+
+    #[test]
+    fn test_parenthetical_temperature_hint_preserves_trailing_note() {
+        let result = parse_ingredient(
+            "2.5 cups warm water (85 degrees F), divided, plus more as needed for feeding",
+        );
+        assert_eq!(result.item, "warm water, divided");
+        assert_eq!(
+            result.note,
+            Some("85 degrees F, plus more as needed for feeding".to_string())
+        );
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("2.5".to_string()));
         assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
     }
 
