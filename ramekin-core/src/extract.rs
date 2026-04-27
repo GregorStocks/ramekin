@@ -1377,6 +1377,279 @@ fn extract_recipe_from_unstructured_blog(html: &str, source_url: &str) -> Option
     })
 }
 
+/// Collect text from an element, skipping the contents of `<del>` and `<s>`
+/// subtrees so struck-through ingredients (e.g. `<li><del>2 Tbsp sugar</del></li>`)
+/// don't end up in the recipe.
+fn collect_text_skipping_struck(el: ElementRef<'_>) -> String {
+    let mut out = String::new();
+    for descendant in el.descendants() {
+        if let Some(text) = descendant.value().as_text() {
+            let mut in_struck = false;
+            let mut ancestor = descendant.parent();
+            while let Some(node) = ancestor {
+                if let Some(elem) = node.value().as_element() {
+                    let name = elem.name();
+                    if name == "del" || name == "s" || name == "strike" {
+                        in_struck = true;
+                        break;
+                    }
+                }
+                ancestor = node.parent();
+            }
+            if !in_struck {
+                out.push_str(text);
+            }
+        }
+    }
+    out
+}
+
+/// Site-specific extractor for virtualweberbullet.com recipe pages.
+///
+/// These pages are hand-authored HTML without Recipe JSON-LD. They share a
+/// consistent layout: title in `h1.headline`, content in `div.post_content`,
+/// sections delimited by `<h2>` headers, ingredient lists marked by
+/// `<p><strong>Section Name</strong></p>` followed immediately by `<ul>`, and
+/// instructions as `<p>` paragraphs grouped under their `<h2>` section header.
+fn extract_recipe_from_virtualweberbullet(
+    html: &str,
+    document: &Html,
+    source_url: &str,
+) -> Option<RawRecipe> {
+    let host = url::Url::parse(source_url).ok()?.host_str()?.to_lowercase();
+    let host = host.strip_prefix("www.").unwrap_or(&host);
+    if host != "virtualweberbullet.com" {
+        return None;
+    }
+
+    let h1_sel = Selector::parse("h1.headline").ok()?;
+    let title_el = document.select(&h1_sel).next()?;
+    let raw_title: String = title_el.text().collect();
+    let title = decode_html_entities(raw_title.trim());
+    if title.is_empty() {
+        return None;
+    }
+
+    let post_sel = Selector::parse("div.post_content").ok()?;
+    let post = document.select(&post_sel).next()?;
+
+    let strong_sel = Selector::parse("strong").expect("strong selector");
+    let li_sel = Selector::parse("li").expect("li selector");
+
+    #[derive(PartialEq)]
+    enum State {
+        BeforeSummary,
+        InSummary,
+        InDescription,
+        InInstructions,
+    }
+
+    let mut description_paragraphs: Vec<String> = Vec::new();
+    let mut ingredient_lines: Vec<String> = Vec::new();
+    let mut instruction_sections: Vec<(Option<String>, Vec<String>)> = Vec::new();
+    let mut current_section: Option<String> = None;
+    let mut current_section_paras: Vec<String> = Vec::new();
+    let mut state = State::BeforeSummary;
+    // A `<p><strong>X</strong></p>` followed by `<ul>` is the site's ingredient
+    // list pattern; `pending_strong_text` holds X until we see the next element
+    // and decide whether it's an ingredient header or a bold note paragraph.
+    let mut pending_strong_text: Option<String> = None;
+
+    // Restore a pending strong-only paragraph as plain prose. Used whenever the
+    // next element is something other than the `<ul>` that would consume it as
+    // an ingredient header — e.g. a bold "Note:" paragraph mid-instructions.
+    macro_rules! flush_pending_strong {
+        () => {
+            if let Some(text) = pending_strong_text.take() {
+                match state {
+                    State::BeforeSummary | State::InSummary | State::InDescription => {
+                        description_paragraphs.push(text);
+                    }
+                    State::InInstructions => {
+                        current_section_paras.push(text);
+                    }
+                }
+            }
+        };
+    }
+
+    for child in post.children() {
+        let el = match ElementRef::wrap(child) {
+            Some(e) => e,
+            None => continue,
+        };
+        let tag = el.value().name();
+        match tag {
+            "h2" => {
+                flush_pending_strong!();
+                let raw: String = el.text().collect();
+                let h_text = decode_html_entities(raw.trim());
+                let lower = h_text.to_lowercase();
+
+                // Stop at post-recipe sections that follow the actual cooking
+                // instructions: footer link blocks, author bios, "learn more"
+                // pointers, and bonus interview/video content.
+                if lower.contains("links on tvwb")
+                    || lower.starts_with("about ")
+                    || lower.starts_with("learn more")
+                    || lower.contains("interview")
+                {
+                    break;
+                }
+
+                if h_text.eq_ignore_ascii_case("Summary") {
+                    state = State::InSummary;
+                    continue;
+                }
+
+                if !current_section_paras.is_empty() {
+                    instruction_sections.push((
+                        current_section.take(),
+                        std::mem::take(&mut current_section_paras),
+                    ));
+                }
+                current_section = Some(h_text);
+                state = State::InInstructions;
+            }
+            "ul" => {
+                if state == State::InSummary {
+                    flush_pending_strong!();
+                    state = State::InDescription;
+                    continue;
+                }
+                if let Some(header) = pending_strong_text.take() {
+                    let mut header_emitted = false;
+                    for li in el.select(&li_sel) {
+                        let raw_li = collect_text_skipping_struck(li);
+                        let Some(text) = sanitize_extracted_ingredient(&raw_li) else {
+                            continue;
+                        };
+                        if !header_emitted {
+                            ingredient_lines.push(format!("{}:", header));
+                            header_emitted = true;
+                        }
+                        ingredient_lines.push(text);
+                    }
+                } else if state == State::InInstructions {
+                    for li in el.select(&li_sel) {
+                        let raw_li: String = li.text().collect();
+                        let text = decode_html_entities(raw_li.trim());
+                        if !text.is_empty() {
+                            current_section_paras.push(text);
+                        }
+                    }
+                }
+            }
+            "p" => {
+                let inner = el.inner_html();
+                let stripped = HTML_TAG_REGEX.replace_all(&inner, "");
+                let text = decode_html_entities(stripped.trim());
+                if text.is_empty() {
+                    flush_pending_strong!();
+                    continue;
+                }
+
+                let strong_text = el.select(&strong_sel).next().map(|s| {
+                    let raw: String = s.text().collect();
+                    decode_html_entities(raw.trim())
+                });
+                if let Some(stext) = strong_text.as_ref() {
+                    if !stext.is_empty() && stext == &text {
+                        // A new strong-only paragraph supersedes the previous
+                        // candidate; flush the old one as prose first.
+                        flush_pending_strong!();
+                        pending_strong_text = Some(stext.clone());
+                        continue;
+                    }
+                }
+                flush_pending_strong!();
+
+                let lower = text.to_lowercase();
+                if lower.starts_with("learn more later")
+                    || lower.starts_with("notice:")
+                    || lower == "back to cooking topics"
+                    || lower == "."
+                    || lower.contains("adsbygoogle")
+                {
+                    continue;
+                }
+
+                match state {
+                    State::BeforeSummary | State::InSummary | State::InDescription => {
+                        description_paragraphs.push(text);
+                        state = State::InDescription;
+                    }
+                    State::InInstructions => {
+                        current_section_paras.push(text);
+                    }
+                }
+            }
+            _ => {
+                flush_pending_strong!();
+            }
+        }
+    }
+    flush_pending_strong!();
+
+    if !current_section_paras.is_empty() {
+        instruction_sections.push((current_section, current_section_paras));
+    }
+
+    if ingredient_lines.is_empty() || instruction_sections.is_empty() {
+        return None;
+    }
+
+    let mut instructions_out: Vec<String> = Vec::new();
+    for (section, paras) in instruction_sections {
+        if paras.is_empty() {
+            continue;
+        }
+        if let Some(s) = section {
+            instructions_out.push(format!("{}:", s));
+        }
+        for p in paras {
+            instructions_out.push(p);
+        }
+    }
+
+    if instructions_out.is_empty() {
+        return None;
+    }
+
+    let description = if description_paragraphs.is_empty() {
+        None
+    } else {
+        Some(description_paragraphs.join("\n\n"))
+    };
+
+    let mut image_urls: Vec<String> = extract_og_image_fast(html).into_iter().collect();
+    if image_urls.is_empty() {
+        if let Some(img) = extract_og_image(document) {
+            image_urls.push(img);
+        }
+    }
+
+    Some(RawRecipe {
+        title,
+        description,
+        ingredients: ingredient_lines.join("\n"),
+        instructions: instructions_out.join("\n\n"),
+        image_urls,
+        source_url: Some(source_url.to_string()),
+        source_name: extract_source_name(source_url),
+        servings: None,
+        prep_time: None,
+        cook_time: None,
+        total_time: None,
+        rating: None,
+        difficulty: None,
+        nutritional_info: None,
+        notes: None,
+        categories: None,
+        footnotes: None,
+    })
+}
+
 /// Regex to detect ingredient-like quantity patterns at the start of a line.
 static INGREDIENT_QUANTITY_REGEX: LazyLock<Regex> = LazyLock::new(|| {
     Regex::new(r"(?i)^(\d|½|⅓|¼|⅔|¾|⅛|a\s+(pinch|few|handful|dash|splash)|juice\s+of|zest\s+of|pinch\s+of|dash\s+of|kosher\s+salt|salt[,\s]|ground\s|fresh\s|sea\s+salt)")
@@ -1581,6 +1854,12 @@ fn extract_recipe_with_html_fallback(
             categories: None,
             footnotes,
         });
+    }
+
+    // Site-aware fallback for virtualweberbullet.com — pages are hand-authored HTML
+    // without Recipe JSON-LD or microdata, but follow a consistent layout.
+    if let Some(recipe) = extract_recipe_from_virtualweberbullet(html, document, source_url) {
+        return Ok(recipe);
     }
 
     // Last resort: try unstructured blog recipe extraction (handles older WordPress
