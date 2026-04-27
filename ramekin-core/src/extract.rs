@@ -2045,7 +2045,106 @@ fn extract_ingredients_from_html_classes(document: &Html) -> Option<String> {
         return Some(result);
     }
 
+    // Try Dotdash Meredith CMS (Serious Eats, Simply Recipes, Allrecipes, etc.)
+    if let Some(result) = extract_dotdash_meredith_ingredients(document) {
+        return Some(result);
+    }
+
     None
+}
+
+/// Extract ingredients from Dotdash Meredith CMS pages (Serious Eats, Simply Recipes,
+/// Allrecipes). Print pages frequently ship without JSON-LD; the recipe is rendered
+/// only via `.structured-ingredients__list-item` lists. Group headers appear as
+/// `.structured-ingredients__list-heading` paragraphs interleaved with the lists.
+fn extract_dotdash_meredith_ingredients(document: &Html) -> Option<String> {
+    let container_selector = Selector::parse(".structured-ingredients").ok()?;
+    let combined_selector = Selector::parse(
+        ".structured-ingredients__list-heading, .structured-ingredients__list-item",
+    )
+    .ok()?;
+
+    let mut lines: Vec<String> = Vec::new();
+    for container in document.select(&container_selector) {
+        for el in container.select(&combined_selector) {
+            let class_attr = el.value().attr("class").unwrap_or("");
+            if class_attr.contains("structured-ingredients__list-heading") {
+                let text = el.text().collect::<String>().trim().to_string();
+                if text.is_empty() {
+                    continue;
+                }
+                if text.ends_with(':') {
+                    lines.push(text);
+                } else {
+                    lines.push(format!("{}:", text));
+                }
+            } else {
+                let raw_text = dotdash_ingredient_item_text(&el);
+                if let Some(text) = sanitize_extracted_ingredient(&raw_text) {
+                    lines.push(text);
+                }
+            }
+        }
+    }
+
+    let lines = split_and_dedup_ingredients(lines);
+    if lines.is_empty() {
+        None
+    } else {
+        Some(lines.join("\n"))
+    }
+}
+
+/// Get the visible text of a Dotdash Meredith ingredient list-item, working
+/// around a CMS quirk: when an ingredient like "1 baguette" has no real unit,
+/// the page renders both `data-ingredient-unit` and `data-ingredient-name`
+/// spans with identical text ("1 baguette baguette"). When that pattern shows
+/// up, drop the duplicated word once.
+fn dotdash_ingredient_item_text(li: &ElementRef<'_>) -> String {
+    let raw_text = li.text().collect::<String>();
+    let mut result = raw_text.split_whitespace().collect::<Vec<_>>().join(" ");
+
+    let unit_selector = match Selector::parse("[data-ingredient-unit]") {
+        Ok(s) => s,
+        Err(_) => return result,
+    };
+    let name_selector = match Selector::parse("[data-ingredient-name]") {
+        Ok(s) => s,
+        Err(_) => return result,
+    };
+
+    let unit_texts: Vec<String> = li
+        .select(&unit_selector)
+        .map(|el| {
+            el.text()
+                .collect::<String>()
+                .split_whitespace()
+                .collect::<Vec<_>>()
+                .join(" ")
+        })
+        .filter(|s| !s.is_empty())
+        .collect();
+    let name_texts: Vec<String> = li
+        .select(&name_selector)
+        .map(|el| {
+            el.text()
+                .collect::<String>()
+                .split_whitespace()
+                .collect::<Vec<_>>()
+                .join(" ")
+        })
+        .filter(|s| !s.is_empty())
+        .collect();
+
+    for word in &unit_texts {
+        if name_texts.iter().any(|n| n == word) {
+            let dup = format!("{} {}", word, word);
+            if let Some(pos) = result.find(&dup) {
+                result.replace_range(pos..pos + dup.len(), word);
+            }
+        }
+    }
+    result
 }
 
 /// Extract WPRM ingredients with group headers (e.g. "Meatballs:", "Broth:").
@@ -2247,7 +2346,45 @@ fn extract_instructions_from_html_classes(
         }
     }
 
+    if let Some(result) = extract_dotdash_meredith_instructions(document) {
+        return Some(result);
+    }
+
     extract_wprm_instructions(document, recipe_title.unwrap_or_default())
+}
+
+/// Extract instructions from Dotdash Meredith CMS pages (Serious Eats, Simply Recipes,
+/// Allrecipes). The directions section uses `.section--instructions` containing
+/// `.structured-project__steps` with each step as `<li class="mntl-sc-block-group--LI">`
+/// holding one or more `<p class="mntl-sc-block-html">` paragraphs.
+fn extract_dotdash_meredith_instructions(document: &Html) -> Option<String> {
+    let li_selector =
+        Selector::parse(".structured-project__steps li.mntl-sc-block-group--LI").ok()?;
+    let p_selector = Selector::parse("p.mntl-sc-block-html").ok()?;
+
+    let mut steps: Vec<String> = Vec::new();
+    for li in document.select(&li_selector) {
+        let parts: Vec<String> = li
+            .select(&p_selector)
+            .map(|el| {
+                el.text()
+                    .collect::<String>()
+                    .split_whitespace()
+                    .collect::<Vec<_>>()
+                    .join(" ")
+            })
+            .filter(|s| !s.is_empty())
+            .collect();
+        if !parts.is_empty() {
+            steps.push(parts.join(" "));
+        }
+    }
+
+    if steps.is_empty() {
+        None
+    } else {
+        Some(steps.join("\n\n"))
+    }
 }
 
 static WPRM_STICKY_NOTE_TEXT_REGEX: LazyLock<Regex> = LazyLock::new(|| {
@@ -2488,6 +2625,7 @@ fn extract_title_from_html(document: &Html) -> Option<String> {
         ".wprm-recipe-name",
         "h1.entry-title",
         "h2.entry-title",
+        "h1.heading__title",
     ];
 
     for selector_str in selectors {
@@ -2783,6 +2921,139 @@ mod tests {
         assert!(result.ingredients.contains("3/4 pound ground chicken"));
         assert!(result.ingredients.contains("50 wonton wrappers"));
         assert!(result.instructions.contains("Combine chicken"));
+    }
+
+    #[test]
+    fn test_html_fallback_seriouseats_print_page() {
+        // Serious Eats `?print` pages ship with no JSON-LD or microdata at all —
+        // just the rendered Dotdash Meredith CMS HTML. Title comes from
+        // h1.heading__title, ingredients from .structured-ingredients with
+        // .structured-ingredients__list-heading group headers interleaved between
+        // .structured-ingredients__list-item entries, and instructions from
+        // .structured-project__steps li > p.mntl-sc-block-html.
+        let html = r#"
+            <!doctype html>
+            <html>
+            <body>
+                <h1 class="heading__title">Toad in the Hole</h1>
+                <section class="comp section--ingredients section">
+                    <div class="comp structured-ingredients">
+                        <p class="structured-ingredients__list-heading">For the Yorkshire Pudding Batter:</p>
+                        <ul class="structured-ingredients__list">
+                            <li class="structured-ingredients__list-item"><p>3 large eggs</p></li>
+                            <li class="structured-ingredients__list-item"><p>4 ounces all-purpose flour</p></li>
+                        </ul>
+                        <p class="structured-ingredients__list-heading">For the Red Onion Gravy</p>
+                        <ul class="structured-ingredients__list">
+                            <li class="structured-ingredients__list-item"><p>2 tablespoons beef drippings</p></li>
+                            <li class="structured-ingredients__list-item"><p>1 large red onion, thinly sliced</p></li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="comp section--instructions section">
+                    <div class="comp structured-project__steps">
+                        <ol class="comp mntl-sc-block-group--OL">
+                            <li class="comp mntl-sc-block-group--LI">
+                                <p class="comp mntl-sc-block-html"><strong>For the Batter:</strong> Whisk eggs, flour, and milk together. Let rest for 30 minutes.</p>
+                            </li>
+                            <li class="comp mntl-sc-block-group--LI">
+                                <p class="comp mntl-sc-block-html"><strong>For the Gravy:</strong> Melt drippings over medium-low heat. Add onions and cook until lightly caramelized.</p>
+                            </li>
+                            <li class="comp mntl-sc-block-group--LI">
+                                <p class="comp mntl-sc-block-html">Slice into wedges and smother each portion in onion gravy.</p>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://www.seriouseats.com/toad-in-the-hole").unwrap();
+        assert_eq!(result.title, "Toad in the Hole");
+        let ingredient_lines: Vec<&str> = result.ingredients.lines().collect();
+        assert_eq!(ingredient_lines[0], "For the Yorkshire Pudding Batter:");
+        assert_eq!(ingredient_lines[1], "3 large eggs");
+        assert_eq!(ingredient_lines[2], "4 ounces all-purpose flour");
+        assert_eq!(ingredient_lines[3], "For the Red Onion Gravy:");
+        assert_eq!(ingredient_lines[4], "2 tablespoons beef drippings");
+        assert_eq!(ingredient_lines[5], "1 large red onion, thinly sliced");
+        assert!(result.instructions.contains("For the Batter:"));
+        assert!(result.instructions.contains("Whisk eggs, flour, and milk"));
+        assert!(result.instructions.contains("For the Gravy:"));
+        assert!(result.instructions.contains("Slice into wedges"));
+    }
+
+    #[test]
+    fn test_html_fallback_seriouseats_dedupes_unit_name_quirk() {
+        // Dotdash Meredith CMS quirk: when an ingredient like "1 baguette"
+        // has no real unit, the page renders both `data-ingredient-unit` and
+        // `data-ingredient-name` spans with the same word, producing
+        // "1 baguette baguette". Strip the duplicate.
+        let html = r#"
+            <!doctype html>
+            <html>
+            <body>
+                <h1 class="heading__title">Crusty Bread</h1>
+                <div class="comp structured-ingredients">
+                    <ul class="structured-ingredients__list">
+                        <li class="structured-ingredients__list-item">
+                            <p>
+                                <span data-ingredient-quantity="true">1</span>
+                                <span data-ingredient-unit="true">baguette</span>
+                                <span data-ingredient-name="true">baguette</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="comp structured-project__steps">
+                    <ol>
+                        <li class="comp mntl-sc-block-group--LI">
+                            <p class="comp mntl-sc-block-html">Slice the baguette and serve.</p>
+                        </li>
+                    </ol>
+                </div>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://www.seriouseats.com/baguette").unwrap();
+        let ingredient_lines: Vec<&str> = result.ingredients.lines().collect();
+        assert_eq!(ingredient_lines, vec!["1 baguette"]);
+    }
+
+    #[test]
+    fn test_html_fallback_seriouseats_no_groups() {
+        // Print page with a single ingredient list and no group headings.
+        let html = r#"
+            <!doctype html>
+            <html>
+            <body>
+                <h1 class="heading__title">Simple Vinaigrette</h1>
+                <div class="comp structured-ingredients">
+                    <ul class="structured-ingredients__list">
+                        <li class="structured-ingredients__list-item"><p>3 tablespoons olive oil</p></li>
+                        <li class="structured-ingredients__list-item"><p>1 tablespoon vinegar</p></li>
+                    </ul>
+                </div>
+                <div class="comp structured-project__steps">
+                    <ol>
+                        <li class="comp mntl-sc-block-group--LI">
+                            <p class="comp mntl-sc-block-html">Whisk oil and vinegar together until emulsified.</p>
+                        </li>
+                    </ol>
+                </div>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://www.seriouseats.com/vinaigrette").unwrap();
+        assert_eq!(result.title, "Simple Vinaigrette");
+        assert!(result.ingredients.contains("3 tablespoons olive oil"));
+        assert!(result.ingredients.contains("1 tablespoon vinegar"));
+        // No spurious group header should appear.
+        assert!(!result.ingredients.contains(":"));
+        assert!(result.instructions.contains("Whisk oil and vinegar"));
     }
 
     #[test]
