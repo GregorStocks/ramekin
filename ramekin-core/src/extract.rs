@@ -1431,8 +1431,13 @@ fn extract_recipe_from_virtualweberbullet(
                 let h_text = decode_html_entities(raw.trim());
                 let lower = h_text.to_lowercase();
 
-                // Footer link sections at the end of every page — stop processing.
-                if lower.contains("links on tvwb") {
+                // Stop at post-recipe sections that follow the actual cooking
+                // instructions: footer link blocks, author bios, and bonus
+                // interview/video content.
+                if lower.contains("links on tvwb")
+                    || lower.starts_with("about ")
+                    || lower.contains("interview")
+                {
                     break;
                 }
 
