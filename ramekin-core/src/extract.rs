@@ -1454,10 +1454,11 @@ fn extract_recipe_from_virtualweberbullet(
                 let lower = h_text.to_lowercase();
 
                 // Stop at post-recipe sections that follow the actual cooking
-                // instructions: footer link blocks, author bios, and bonus
-                // interview/video content.
+                // instructions: footer link blocks, author bios, "learn more"
+                // pointers, and bonus interview/video content.
                 if lower.contains("links on tvwb")
                     || lower.starts_with("about ")
+                    || lower.starts_with("learn more")
                     || lower.contains("interview")
                 {
                     break;
