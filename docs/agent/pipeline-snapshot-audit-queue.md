@@ -82,26 +82,26 @@ currently parse. Audit them ahead of the round-robin queue below.
 - [x] 058. `smittenkitchen-com_2009-09-grilled-lamb-kebabs-tzatziki.json` (smittenkitchen-com) - 2026-04-22: filed `p3-parenthetical-quantities-create-junk-measurements.json5`
 - [x] 059. `americastestkitchen-com_recipes-8574-pasta-e-ceci-pasta-with-chickpeas.json` (americastestkitchen-com) - 2026-04-22: no issue
 - [x] 060. `cooking-nytimes-com_recipes-1021237-superiority-burgers-crispy-fried-tofu-sandwich.json` (cooking-nytimes-com) - 2026-04-22: no issue
-- [ ] 061. `japanesecooking101-com_pan-fried-shumai-dumplings-recipe.json` (japanesecooking101-com)
-- [ ] 062. `seriouseats-com_loubia-moroccan-white-bean-stew-recipe-11685571.json` (seriouseats-com)
-- [ ] 063. `smittenkitchen-com_2007-07-from-insert-your-origin-here-with-love.json` (smittenkitchen-com)
-- [ ] 064. `americastestkitchen-com_recipes-6294-garlic-knots-print.json` (americastestkitchen-com)
-- [ ] 065. `cooking-nytimes-com_recipes-1022590-microwave-steamed-eggs.json` (cooking-nytimes-com)
-- [ ] 066. `seriouseats-com_ultimate-fully-loaded-nachos.json` (seriouseats-com)
-- [ ] 067. `smittenkitchen-com_2024-02-crispy-potatoes-with-mushrooms.json` (smittenkitchen-com)
-- [ ] 068. `americastestkitchen-com_recipes-14919-san-diego-fish-tacos.json` (americastestkitchen-com)
-- [ ] 069. `cooking-nytimes-com_recipes-1021971-potato-and-leek-focaccia.json` (cooking-nytimes-com)
-- [ ] 070. `seriouseats-com_grilled-skirt-steak-fajitas-food-lab-recipe.json` (seriouseats-com)
-- [ ] 071. `smittenkitchen-com_2018-12-falafel.json` (smittenkitchen-com)
-- [ ] 072. `americastestkitchen-com_recipes-16428-mesquite-grilled-tacos-rasurados.json` (americastestkitchen-com)
-- [ ] 073. `cooking-nytimes-com_recipes-1023209-borani-yeh-esfenaj-spinach-yogurt-dip.json` (cooking-nytimes-com)
-- [ ] 074. `seriouseats-com_sweet-salty-puppy-chow-recipe-11870060.json` (seriouseats-com)
-- [ ] 075. `smittenkitchen-com_2008-03-alexs-chicken-and-mushroom-marsala.json` (smittenkitchen-com)
-- [ ] 076. `americastestkitchen-com_recipes-4955-pan-seared-scallops.json` (americastestkitchen-com)
-- [ ] 077. `cooking-nytimes-com_recipes-1013619-pasta-with-green-puttanesca.json` (cooking-nytimes-com)
-- [ ] 078. `seriouseats-com_soueupa-alla-valpellinentze-savoy-cabbage-soup-recipe-11831033.json` (seriouseats-com)
-- [ ] 079. `smittenkitchen-com_2023-05-smashed-chicken-meatball-sliders.json` (smittenkitchen-com)
-- [ ] 080. `americastestkitchen-com_recipes-12228-ultracreamy-hummus.json` (americastestkitchen-com)
+- [x] 061. `japanesecooking101-com_pan-fried-shumai-dumplings-recipe.json` (japanesecooking101-com) - 2026-04-27: no issue (parenthetical-quantities behavior already filed; brand-rewrite "presumably Diamond" is intentional per ramekin-core/src/volume_to_weight.rs)
+- [x] 062. `seriouseats-com_loubia-moroccan-white-bean-stew-recipe-11685571.json` (seriouseats-com) - 2026-04-27: no issue
+- [x] 063. `smittenkitchen-com_2007-07-from-insert-your-origin-here-with-love.json` (smittenkitchen-com) - 2026-04-27: no issue
+- [x] 064. `americastestkitchen-com_recipes-6294-garlic-knots-print.json` (americastestkitchen-com) - 2026-04-27: example added to p3-parenthetical-quantities-create-junk-measurements (10 oz/283 g flour pattern)
+- [x] 065. `cooking-nytimes-com_recipes-1022590-microwave-steamed-eggs.json` (cooking-nytimes-com) - 2026-04-27: no issue
+- [x] 066. `seriouseats-com_ultimate-fully-loaded-nachos.json` (seriouseats-com) - 2026-04-27: example added to p3-parenthetical-quantities-create-junk-measurements
+- [x] 067. `smittenkitchen-com_2024-02-crispy-potatoes-with-mushrooms.json` (smittenkitchen-com) - 2026-04-27: no issue
+- [x] 068. `americastestkitchen-com_recipes-14919-san-diego-fish-tacos.json` (americastestkitchen-com) - 2026-04-27: no issue
+- [x] 069. `cooking-nytimes-com_recipes-1021971-potato-and-leek-focaccia.json` (cooking-nytimes-com) - 2026-04-27: filed p3-slash-separated-alternate-units-leak-into-item-name; also example added to parenthetical issue
+- [x] 070. `seriouseats-com_grilled-skirt-steak-fajitas-food-lab-recipe.json` (seriouseats-com) - 2026-04-27: no issue
+- [x] 071. `smittenkitchen-com_2018-12-falafel.json` (smittenkitchen-com) - 2026-04-27: no issue
+- [x] 072. `americastestkitchen-com_recipes-16428-mesquite-grilled-tacos-rasurados.json` (americastestkitchen-com) - 2026-04-27: example added to p3-parenthetical-quantities-create-junk-measurements
+- [x] 073. `cooking-nytimes-com_recipes-1023209-borani-yeh-esfenaj-spinach-yogurt-dip.json` (cooking-nytimes-com) - 2026-04-27: no issue
+- [x] 074. `seriouseats-com_sweet-salty-puppy-chow-recipe-11870060.json` (seriouseats-com) - 2026-04-27: no issue (245 g miso typo is in source HTML)
+- [x] 075. `smittenkitchen-com_2008-03-alexs-chicken-and-mushroom-marsala.json` (smittenkitchen-com) - 2026-04-27: no issue
+- [x] 076. `americastestkitchen-com_recipes-4955-pan-seared-scallops.json` (americastestkitchen-com) - 2026-04-27: no issue
+- [x] 077. `cooking-nytimes-com_recipes-1013619-pasta-with-green-puttanesca.json` (cooking-nytimes-com) - 2026-04-27: no issue
+- [x] 078. `seriouseats-com_soueupa-alla-valpellinentze-savoy-cabbage-soup-recipe-11831033.json` (seriouseats-com) - 2026-04-27: no issue
+- [x] 079. `smittenkitchen-com_2023-05-smashed-chicken-meatball-sliders.json` (smittenkitchen-com) - 2026-04-27: no issue
+- [x] 080. `americastestkitchen-com_recipes-12228-ultracreamy-hummus.json` (americastestkitchen-com) - 2026-04-27: example added to p3-parenthetical-quantities-create-junk-measurements
 - [ ] 081. `cooking-nytimes-com_recipes-8357-spaghetti-with-fried-eggs.json` (cooking-nytimes-com)
 - [ ] 082. `seriouseats-com_the-best-yorkshire-pudding-popover-recipe.json` (seriouseats-com)
 - [ ] 083. `smittenkitchen-com_2014-02-dijon-and-cognac-beef-stew.json` (smittenkitchen-com)

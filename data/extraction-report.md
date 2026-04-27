@@ -2,32 +2,32 @@
 
 ## Overall
 
-- Total URLs: 5536
-- Completed: 5449 (98.4%)
-- Failed at fetch: 9 (0.2%)
-- Failed at extract: 78 (1.4%)
+- Total URLs: 5535
+- Completed: 5462 (98.7%)
+- Failed at fetch: 0 (0.0%)
+- Failed at extract: 73 (1.3%)
 
 ## Extraction Methods
 
-- JSON-LD: 4269/5527 (77.2%)
-- Microdata: 537/5527 (9.7%)
-- Both: 0/5527 (0.0%)
-- Neither: 721/5527 (13.0%)
+- JSON-LD: 4276/5535 (77.3%)
+- Microdata: 537/5535 (9.7%)
+- Both: 0/5535 (0.0%)
+- Neither: 722/5535 (13.0%)
 
 ## Ingredient Parsing
 
-- Total ingredients: 60499
-- Volume-to-weight converted: 18129/42834 (42.3%)
-- Unknown ingredient (no density data): 15021
-- Already has weight: 9684
-- No volume unit (count-based): 17347
+- Total ingredients: 61078
+- Volume-to-weight converted: 18151/42946 (42.3%)
+- Unknown ingredient (no density data): 15061
+- Already has weight: 9734
+- No volume unit (count-based): 17814
 - Metric converted (oz→g): 2709
-- Metric converted (lb→g): 1825
+- Metric converted (lb→g): 1828
 
 ## AI Cache
 
-- Cache hits: 5432/5433 (100.0%)
-- API calls: 1/5433 (0.0%)
+- Cache hits: 5442/5450 (99.9%)
+- API calls: 8/5450 (0.1%)
 
 ## By Site
 
@@ -67,7 +67,7 @@
 | epicurious.com | 1 | 1 | 100.0% |
 | feedbin.com | 0 | 1 | 0.0% |
 | food.com | 24 | 27 | 88.9% |
-| food52.com | 0 | 1 | 0.0% |
+| food52.com | 1 | 1 | 100.0% |
 | foodandwine.com | 99 | 99 | 100.0% |
 | foodnetwork.com | 1 | 1 | 100.0% |
 | gimmesomeoven.com | 6 | 6 | 100.0% |
@@ -81,7 +81,7 @@
 | japanesecooking101.com | 106 | 106 | 100.0% |
 | jocooks.com | 77 | 77 | 100.0% |
 | joyfoodsunshine.com | 88 | 88 | 100.0% |
-| justonecookbook.com | 16 | 22 | 72.7% |
+| justonecookbook.com | 21 | 22 | 95.5% |
 | keviniscooking.com | 34 | 34 | 100.0% |
 | kingarthurbaking.com | 5 | 5 | 100.0% |
 | kiyafries.com | 1 | 1 | 100.0% |
@@ -94,7 +94,7 @@
 | momontimeout.com | 97 | 100 | 97.0% |
 | mybakingaddiction.com | 94 | 97 | 96.9% |
 | natashaskitchen.com | 100 | 100 | 100.0% |
-| nomnompaleo.com | 3 | 6 | 50.0% |
+| nomnompaleo.com | 3 | 5 | 60.0% |
 | norecipes.com | 101 | 101 | 100.0% |
 | ohmyveggies.com | 3 | 6 | 50.0% |
 | onceuponachef.com | 92 | 92 | 100.0% |
@@ -104,7 +104,7 @@
 | recipetineats.com | 10 | 10 | 100.0% |
 | runningwithspoons.com | 1 | 1 | 100.0% |
 | sallysbakingaddiction.com | 34 | 34 | 100.0% |
-| seriouseats.com | 161 | 168 | 95.8% |
+| seriouseats.com | 167 | 168 | 99.4% |
 | simplyrecipes.com | 99 | 100 | 99.0% |
 | skinnytaste.com | 2 | 2 | 100.0% |
 | slenderkitchen.com | 55 | 55 | 100.0% |
@@ -122,7 +122,7 @@
 | themodernproper.com | 14 | 14 | 100.0% |
 | thepioneerwoman.com | 102 | 102 | 100.0% |
 | therecipecritic.com | 34 | 34 | 100.0% |
-| thespruceeats.com | 0 | 1 | 0.0% |
+| thespruceeats.com | 1 | 1 | 100.0% |
 | thestayathomechef.com | 12 | 12 | 100.0% |
 | thewoksoflife.com | 24 | 24 | 100.0% |
 | twopeasandtheirpod.com | 22 | 23 | 95.7% |
@@ -133,26 +133,7 @@
 
 ## Failed URLs by Error
 
-### Cached fetch error (9 URLs)
-
-- https://food52.com/recipes/85546-pickle-sandwich-recipe
-- https://nomnompaleo.com/2017/08/15/6053
-- https://www.justonecookbook.com/furikake-chex-mix/
-- https://www.justonecookbook.com/japanese-egg-sandwich-tamago-sando/
-- https://www.justonecookbook.com/japanese-potato-salad/
-- https://www.justonecookbook.com/pizza-toast/
-- https://www.justonecookbook.com/wprm_print/japanese-milk-bread-shokupan
-- https://www.seriouseats.com/easy-creamy-one-pot-weeknight-salmon-chowder-recipe
-- https://www.thespruceeats.com/classic-french-aligot-recipe-1375727
-
-### Missing required field: name (4 URLs)
-
-- https://www.seriouseats.com/canederli-di-pane-italian-bread-dumpling-recipe-11679155
-- https://www.seriouseats.com/roasted-cauliflower-soup-curry-cream-8748572
-- https://www.seriouseats.com/the-best-classic-chicken-salad-recipe
-- https://www.seriouseats.com/toad-in-the-hole-recipe-11746714
-
-### Missing required field: recipeIngredient (empty) (73 URLs)
+### Missing required field: recipeIngredient (empty) (72 URLs)
 
 - http://bakingbites.com/2017/02/how-to-use-freeze-dried-fruit-in-baking/
 - https://barefeetinthekitchen.com/diy-fruit-and-vegetable-wash-homemade-produce-wash-recipe/
@@ -202,7 +183,6 @@
 - https://www.mybakingaddiction.com/smores-recipe/
 - https://www.mybakingaddiction.com/tollhouse-cookies-recipe/
 - https://www.seriouseats.com/food-lab-complete-guide-to-sous-vide-steak
-- https://www.seriouseats.com/new-orleans-bbq-shrimp-recipe-11891402
 - https://www.simplyrecipes.com/recipes/the_finger_test_to_check_the_doneness_of_meat/
 - https://www.sprinklebakes.com/2018/04/celebrate-like-royal-with-lemon.html
 - https://www.sprinklebakes.com/2018/05/rhubarb-pie-with-double-crust.html
