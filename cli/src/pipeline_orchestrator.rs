@@ -183,15 +183,6 @@ pub enum FinalStatus {
     FailedAtSave,
 }
 
-struct UpdateResultsInput<'a> {
-    steps: &'a [StepResult],
-    final_status: &'a FinalStatus,
-    domain: &'a str,
-    extraction_stats: Option<&'a ExtractionStats>,
-    ingredient_stats: Option<&'a IngredientStats>,
-    ai_cached: Option<bool>,
-}
-
 // ============================================================================
 // Main orchestrator
 // ============================================================================
@@ -396,14 +387,12 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
                     let mut results = results.lock().await;
                     update_results(
                         &mut results,
-                        UpdateResultsInput {
-                            steps: &all_results.step_results,
-                            final_status: &final_status,
-                            domain: &domain,
-                            extraction_stats: all_results.extraction_stats.as_ref(),
-                            ingredient_stats: all_results.ingredient_stats.as_ref(),
-                            ai_cached: all_results.ai_cached,
-                        },
+                        &all_results.step_results,
+                        &final_status,
+                        &domain,
+                        all_results.extraction_stats.as_ref(),
+                        all_results.ingredient_stats.as_ref(),
+                        all_results.ai_cached,
                     );
 
                     // Save intermediate results periodically
@@ -747,9 +736,17 @@ fn determine_final_status(steps: &[StepResult]) -> FinalStatus {
     FinalStatus::Completed
 }
 
-fn update_results(results: &mut PipelineResults, input: UpdateResultsInput<'_>) {
+fn update_results(
+    results: &mut PipelineResults,
+    steps: &[StepResult],
+    final_status: &FinalStatus,
+    domain: &str,
+    extraction_stats: Option<&ExtractionStats>,
+    ingredient_stats: Option<&IngredientStats>,
+    ai_cached: Option<bool>,
+) {
     // Update HTML cache stats
-    for step in input.steps {
+    for step in steps {
         if step.step == PipelineStep::FetchHtml {
             if step.cached {
                 results.cache_hits += 1;
@@ -760,7 +757,7 @@ fn update_results(results: &mut PipelineResults, input: UpdateResultsInput<'_>) 
     }
 
     // Update AI cache stats
-    if let Some(cached) = input.ai_cached {
+    if let Some(cached) = ai_cached {
         if cached {
             results.ai_cache_hits += 1;
         } else {
@@ -769,7 +766,7 @@ fn update_results(results: &mut PipelineResults, input: UpdateResultsInput<'_>) 
     }
 
     // Update overall stats
-    match input.final_status {
+    match final_status {
         FinalStatus::Completed => results.completed += 1,
         FinalStatus::FailedAtFetch => results.failed_at_fetch += 1,
         FinalStatus::FailedAtExtract => results.failed_at_extract += 1,
@@ -778,15 +775,14 @@ fn update_results(results: &mut PipelineResults, input: UpdateResultsInput<'_>) 
 
     // Update extraction method stats
     // Count urls_with_html based on whether fetch succeeded (not just when extraction succeeds)
-    let fetch_succeeded = input
-        .steps
+    let fetch_succeeded = steps
         .iter()
         .any(|s| s.step == PipelineStep::FetchHtml && s.success);
 
     if fetch_succeeded {
         results.extraction_method_stats.urls_with_html += 1;
 
-        if let Some(stats) = input.extraction_stats {
+        if let Some(stats) = extraction_stats {
             // We have extraction stats - count which methods worked
             if stats.jsonld_success {
                 results.extraction_method_stats.jsonld_success += 1;
@@ -810,22 +806,22 @@ fn update_results(results: &mut PipelineResults, input: UpdateResultsInput<'_>) 
     // Update site stats
     let site_stats = results
         .by_site
-        .entry(input.domain.to_string())
+        .entry(domain.to_string())
         .or_insert_with(|| SiteResults {
-            domain: input.domain.to_string(),
+            domain: domain.to_string(),
             total: 0,
             completed: 0,
             failed: 0,
         });
 
     site_stats.total += 1;
-    match input.final_status {
+    match final_status {
         FinalStatus::Completed => site_stats.completed += 1,
         _ => site_stats.failed += 1,
     }
 
     // Update ingredient parsing stats
-    if let Some(stats) = input.ingredient_stats {
+    if let Some(stats) = ingredient_stats {
         results.ingredient_stats.total_ingredients += stats.total_ingredients;
         results.ingredient_stats.volume_converted += stats.volume_converted;
         results.ingredient_stats.volume_unknown_ingredient += stats.volume_unknown_ingredient;

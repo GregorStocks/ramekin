@@ -87,7 +87,3 @@ With `--merge`, the tool:
 - Preserves sites from previous runs even if rankings changed
 
 This lets you incrementally grow the dataset over time without re-scraping everything.
-
-## pipeline-snapshot-urls.json
-
-Committed allowlist of URLs that must produce recipe snapshots under `data/pipeline-snapshots/` when you run `make pipeline`.
