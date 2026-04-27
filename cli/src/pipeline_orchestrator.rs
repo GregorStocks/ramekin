@@ -108,6 +108,8 @@ pub struct PipelineResults {
     pub completed: usize,
     pub failed_at_fetch: usize,
     pub failed_at_extract: usize,
+    #[serde(default)]
+    pub expected_failed_at_extract: usize,
     pub failed_at_save: usize,
     pub cache_hits: usize,
     pub cache_misses: usize,
@@ -161,6 +163,8 @@ pub struct SiteResults {
     pub domain: String,
     pub total: usize,
     pub completed: usize,
+    #[serde(default)]
+    pub expected_extract_failures: usize,
     pub failed: usize,
 }
 
@@ -183,6 +187,22 @@ pub enum FinalStatus {
     FailedAtSave,
 }
 
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct ExpectedExtractFailure {
+    pub url: String,
+    pub reason: String,
+}
+
+struct UpdateResultsInput<'a> {
+    steps: &'a [StepResult],
+    final_status: &'a FinalStatus,
+    is_expected_extract_failure: bool,
+    domain: &'a str,
+    extraction_stats: Option<&'a ExtractionStats>,
+    ingredient_stats: Option<&'a IngredientStats>,
+    ai_cached: Option<bool>,
+}
+
 // ============================================================================
 // Main orchestrator
 // ============================================================================
@@ -198,6 +218,8 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     // Load test URLs plus any snapshot-allowlisted URLs that must also run.
     let load_urls_start = Instant::now();
     let test_urls = load_pipeline_urls(&config.test_urls_file)?;
+    let expected_extract_failures =
+        Arc::new(load_expected_extract_failures(&config.test_urls_file)?);
 
     // Collect URLs to process
     let mut urls_to_process: Vec<(String, String)> = Vec::new(); // (url, domain)
@@ -316,6 +338,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             let results = Arc::clone(&results);
             let completed_count = Arc::clone(&completed_count);
             let intermediate_save_total_ms = Arc::clone(&intermediate_save_total_ms);
+            let expected_extract_failures = Arc::clone(&expected_extract_failures);
             let on_fetch_fail = config.on_fetch_fail;
             let force_refetch = config.force_refetch;
 
@@ -381,18 +404,24 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
 
                 // Determine final status
                 let final_status = determine_final_status(&all_results.step_results);
+                let is_expected_extract_failure =
+                    matches!(final_status, FinalStatus::FailedAtExtract)
+                        && expected_extract_failures.contains_key(&url);
 
                 // Update shared results
                 {
                     let mut results = results.lock().await;
                     update_results(
                         &mut results,
-                        &all_results.step_results,
-                        &final_status,
-                        &domain,
-                        all_results.extraction_stats.as_ref(),
-                        all_results.ingredient_stats.as_ref(),
-                        all_results.ai_cached,
+                        UpdateResultsInput {
+                            steps: &all_results.step_results,
+                            final_status: &final_status,
+                            is_expected_extract_failure,
+                            domain: &domain,
+                            extraction_stats: all_results.extraction_stats.as_ref(),
+                            ingredient_stats: all_results.ingredient_stats.as_ref(),
+                            ai_cached: all_results.ai_cached,
+                        },
                     );
 
                     // Save intermediate results periodically
@@ -589,6 +618,17 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             0.0
         }
     );
+    if results.expected_failed_at_extract > 0 {
+        tracing::info!(
+            "  Expected extract failures: {} ({:.1}%)",
+            results.expected_failed_at_extract,
+            if results.total_urls > 0 {
+                results.expected_failed_at_extract as f64 / results.total_urls as f64 * 100.0
+            } else {
+                0.0
+            }
+        );
+    }
     tracing::info!(
         "  Failed at save_recipe: {} ({:.1}%)",
         results.failed_at_save,
@@ -736,17 +776,9 @@ fn determine_final_status(steps: &[StepResult]) -> FinalStatus {
     FinalStatus::Completed
 }
 
-fn update_results(
-    results: &mut PipelineResults,
-    steps: &[StepResult],
-    final_status: &FinalStatus,
-    domain: &str,
-    extraction_stats: Option<&ExtractionStats>,
-    ingredient_stats: Option<&IngredientStats>,
-    ai_cached: Option<bool>,
-) {
+fn update_results(results: &mut PipelineResults, input: UpdateResultsInput<'_>) {
     // Update HTML cache stats
-    for step in steps {
+    for step in input.steps {
         if step.step == PipelineStep::FetchHtml {
             if step.cached {
                 results.cache_hits += 1;
@@ -757,7 +789,7 @@ fn update_results(
     }
 
     // Update AI cache stats
-    if let Some(cached) = ai_cached {
+    if let Some(cached) = input.ai_cached {
         if cached {
             results.ai_cache_hits += 1;
         } else {
@@ -766,23 +798,30 @@ fn update_results(
     }
 
     // Update overall stats
-    match final_status {
+    match input.final_status {
         FinalStatus::Completed => results.completed += 1,
         FinalStatus::FailedAtFetch => results.failed_at_fetch += 1,
-        FinalStatus::FailedAtExtract => results.failed_at_extract += 1,
+        FinalStatus::FailedAtExtract => {
+            if input.is_expected_extract_failure {
+                results.expected_failed_at_extract += 1;
+            } else {
+                results.failed_at_extract += 1;
+            }
+        }
         FinalStatus::FailedAtSave => results.failed_at_save += 1,
     }
 
     // Update extraction method stats
     // Count urls_with_html based on whether fetch succeeded (not just when extraction succeeds)
-    let fetch_succeeded = steps
+    let fetch_succeeded = input
+        .steps
         .iter()
         .any(|s| s.step == PipelineStep::FetchHtml && s.success);
 
     if fetch_succeeded {
         results.extraction_method_stats.urls_with_html += 1;
 
-        if let Some(stats) = extraction_stats {
+        if let Some(stats) = input.extraction_stats {
             // We have extraction stats - count which methods worked
             if stats.jsonld_success {
                 results.extraction_method_stats.jsonld_success += 1;
@@ -806,22 +845,26 @@ fn update_results(
     // Update site stats
     let site_stats = results
         .by_site
-        .entry(domain.to_string())
+        .entry(input.domain.to_string())
         .or_insert_with(|| SiteResults {
-            domain: domain.to_string(),
+            domain: input.domain.to_string(),
             total: 0,
             completed: 0,
+            expected_extract_failures: 0,
             failed: 0,
         });
 
     site_stats.total += 1;
-    match final_status {
+    match input.final_status {
         FinalStatus::Completed => site_stats.completed += 1,
+        FinalStatus::FailedAtExtract if input.is_expected_extract_failure => {
+            site_stats.expected_extract_failures += 1;
+        }
         _ => site_stats.failed += 1,
     }
 
     // Update ingredient parsing stats
-    if let Some(stats) = ingredient_stats {
+    if let Some(stats) = input.ingredient_stats {
         results.ingredient_stats.total_ingredients += stats.total_ingredients;
         results.ingredient_stats.volume_converted += stats.volume_converted;
         results.ingredient_stats.volume_unknown_ingredient += stats.volume_unknown_ingredient;
@@ -853,6 +896,39 @@ fn snapshot_allowlist_path(test_urls_path: &Path) -> PathBuf {
         .parent()
         .unwrap_or_else(|| Path::new("."))
         .join("pipeline-snapshot-urls.json")
+}
+
+fn expected_extract_failures_path(test_urls_path: &Path) -> PathBuf {
+    test_urls_path
+        .parent()
+        .unwrap_or_else(|| Path::new("."))
+        .join("pipeline-expected-extract-failures.json")
+}
+
+pub fn load_expected_extract_failures(test_urls_path: &Path) -> Result<HashMap<String, String>> {
+    let path = expected_extract_failures_path(test_urls_path);
+    if !path.exists() {
+        return Ok(HashMap::new());
+    }
+
+    let content = fs::read_to_string(&path).with_context(|| {
+        format!(
+            "Failed to read expected extract failures from {}",
+            path.display()
+        )
+    })?;
+    let entries: Vec<ExpectedExtractFailure> =
+        serde_json::from_str(&content).with_context(|| {
+            format!(
+                "Failed to parse expected extract failures JSON: {}",
+                path.display()
+            )
+        })?;
+
+    Ok(entries
+        .into_iter()
+        .map(|entry| (entry.url, entry.reason))
+        .collect())
 }
 
 fn load_pipeline_urls(test_urls_path: &Path) -> Result<TestUrlsOutput> {
@@ -1312,7 +1388,10 @@ pub fn generate_tag_report(run_dir: &Path) -> Result<String> {
 }
 
 /// Generate a stable, diffable summary report from pipeline results
-pub fn generate_summary_report(results: &PipelineResults) -> String {
+pub fn generate_summary_report(
+    results: &PipelineResults,
+    expected_extract_failures: &HashMap<String, String>,
+) -> String {
     let mut report = String::new();
 
     // Overall stats
@@ -1334,6 +1413,13 @@ pub fn generate_summary_report(results: &PipelineResults) -> String {
         results.failed_at_extract,
         pct(results.failed_at_extract, results.total_urls)
     ));
+    if results.expected_failed_at_extract > 0 {
+        report.push_str(&format!(
+            "- Expected extract failures: {} ({:.1}%)\n",
+            results.expected_failed_at_extract,
+            pct(results.expected_failed_at_extract, results.total_urls)
+        ));
+    }
 
     // Extraction method stats
     let ems = &results.extraction_method_stats;
@@ -1429,19 +1515,22 @@ pub fn generate_summary_report(results: &PipelineResults) -> String {
 
     // Per-site results (sorted alphabetically for stable diffs)
     report.push_str("\n## By Site\n\n");
-    report.push_str("| Site | Completed | Total | Rate |\n");
-    report.push_str("|------|-----------|-------|------|\n");
+    report.push_str("| Site | Completed | Expected Extract | Failed | Total | Rate |\n");
+    report.push_str("|------|-----------|------------------|--------|-------|------|\n");
 
     let mut sites: Vec<_> = results.by_site.values().collect();
     sites.sort_by(|a, b| a.domain.cmp(&b.domain));
 
     for site in &sites {
+        let rate_denom = site.total.saturating_sub(site.expected_extract_failures);
         report.push_str(&format!(
-            "| {} | {} | {} | {:.1}% |\n",
+            "| {} | {} | {} | {} | {} | {:.1}% |\n",
             site.domain,
             site.completed,
+            site.expected_extract_failures,
+            site.failed,
             site.total,
-            pct(site.completed, site.total)
+            pct(site.completed, rate_denom)
         ));
     }
 
@@ -1451,6 +1540,11 @@ pub fn generate_summary_report(results: &PipelineResults) -> String {
 
     for url_result in &results.url_results {
         if !matches!(url_result.final_status, FinalStatus::Completed) {
+            if matches!(url_result.final_status, FinalStatus::FailedAtExtract)
+                && expected_extract_failures.contains_key(&url_result.url)
+            {
+                continue;
+            }
             // Find the error message from the failed step
             let error = url_result
                 .steps
@@ -1477,6 +1571,16 @@ pub fn generate_summary_report(results: &PipelineResults) -> String {
             for url in sorted_urls {
                 report.push_str(&format!("- {}\n", url));
             }
+        }
+    }
+
+    if !expected_extract_failures.is_empty() {
+        let mut expected_urls: Vec<_> = expected_extract_failures.iter().collect();
+        expected_urls.sort_by(|a, b| a.0.cmp(b.0));
+
+        report.push_str("\n## Expected Extract Failures\n\n");
+        for (url, reason) in expected_urls {
+            report.push_str(&format!("- {} — {}\n", url, reason));
         }
     }
 
@@ -1745,5 +1849,92 @@ mod tests {
             snapshot_allowlist_path(custom_test_urls),
             PathBuf::from("/tmp/custom-inputs/pipeline-snapshot-urls.json")
         );
+    }
+
+    #[test]
+    fn expected_extract_failures_path_uses_test_urls_sibling_directory() {
+        let custom_test_urls = Path::new("/tmp/custom-inputs/test-urls.json");
+        assert_eq!(
+            expected_extract_failures_path(custom_test_urls),
+            PathBuf::from("/tmp/custom-inputs/pipeline-expected-extract-failures.json")
+        );
+    }
+
+    #[test]
+    fn load_expected_extract_failures_reads_curated_list() {
+        let dir = TempDir::new().unwrap();
+        let data_dir = dir.path().join("data");
+        std::fs::create_dir_all(&data_dir).unwrap();
+        let test_urls_path = data_dir.join("test-urls.json");
+        std::fs::write(&test_urls_path, sample_test_urls()).unwrap();
+        std::fs::write(
+            data_dir.join("pipeline-expected-extract-failures.json"),
+            r#"[
+              {
+                "url": "https://example.com/guide",
+                "reason": "Curated guide article kept in the pipeline corpus on purpose"
+              }
+            ]"#,
+        )
+        .unwrap();
+
+        let loaded = load_expected_extract_failures(&test_urls_path).unwrap();
+        assert_eq!(loaded.len(), 1);
+        assert_eq!(
+            loaded.get("https://example.com/guide").map(String::as_str),
+            Some("Curated guide article kept in the pipeline corpus on purpose")
+        );
+    }
+
+    #[test]
+    fn summary_report_separates_expected_extract_failures() {
+        let mut results = PipelineResults {
+            total_urls: 2,
+            completed: 1,
+            failed_at_extract: 0,
+            expected_failed_at_extract: 1,
+            ..Default::default()
+        };
+        results.by_site.insert(
+            "seriouseats.com".to_string(),
+            SiteResults {
+                domain: "seriouseats.com".to_string(),
+                total: 2,
+                completed: 1,
+                expected_extract_failures: 1,
+                failed: 0,
+            },
+        );
+        results.url_results.push(UrlResult {
+            url: "https://www.seriouseats.com/ok-recipe".to_string(),
+            site: "seriouseats.com".to_string(),
+            steps: vec![],
+            final_status: FinalStatus::Completed,
+            extraction_stats: None,
+        });
+        results.url_results.push(UrlResult {
+            url: "https://www.seriouseats.com/guide".to_string(),
+            site: "seriouseats.com".to_string(),
+            steps: vec![StepResult {
+                step: PipelineStep::ExtractRecipe,
+                success: false,
+                duration_ms: 1,
+                error: Some("Missing required field".to_string()),
+                cached: false,
+            }],
+            final_status: FinalStatus::FailedAtExtract,
+            extraction_stats: None,
+        });
+
+        let expected = HashMap::from([(
+            "https://www.seriouseats.com/guide".to_string(),
+            "Curated guide article kept intentionally".to_string(),
+        )]);
+
+        let report = generate_summary_report(&results, &expected);
+        assert!(report.contains("Expected extract failures: 1"));
+        assert!(report.contains("## Expected Extract Failures"));
+        assert!(report.contains("https://www.seriouseats.com/guide"));
+        assert!(!report.contains("### Missing required field"));
     }
 }
