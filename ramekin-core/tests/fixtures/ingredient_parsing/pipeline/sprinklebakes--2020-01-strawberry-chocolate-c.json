@@ -263,11 +263,19 @@
     {
       "raw": "2  cups/1 lb unsalted butter (softened)",
       "expected": {
-        "item": "cups/1 lb unsalted butter",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
           }
         ],
         "note": "softened",

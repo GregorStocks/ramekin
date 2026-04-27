@@ -33,11 +33,15 @@
     {
       "raw": "2 cups/453 g cooked chickpeas (canned chickpeas are fine, drained and rinsed)",
       "expected": {
-        "item": "cups/453 g cooked chickpeas",
+        "item": "cooked chickpeas",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "cup"
+          },
+          {
+            "amount": "453",
+            "unit": "g"
           }
         ],
         "note": "canned chickpeas are fine, drained and rinsed",
@@ -61,11 +65,15 @@
     {
       "raw": "5 tbsp/85 g tahini paste",
       "expected": {
-        "item": "tbsp/85 g tahini paste",
+        "item": "tahini paste",
         "measurements": [
           {
             "amount": "5",
-            "unit": null
+            "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -75,11 +83,15 @@
     {
       "raw": "&nbsp;1 to 2 tsp/ 2 to 4 g sumac",
       "expected": {
-        "item": "tsp/ 2 to 4 g sumac",
+        "item": "sumac",
         "measurements": [
           {
             "amount": "1 to 2",
-            "unit": null
+            "unit": "tsp"
+          },
+          {
+            "amount": "2 to 4",
+            "unit": "g"
           }
         ],
         "note": null,

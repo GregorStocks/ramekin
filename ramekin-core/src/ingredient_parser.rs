@@ -1040,7 +1040,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // Loop to handle multiple: "3/4 cup / 4 oz / 115g toasted sunflower seeds"
     loop {
         let remaining_trimmed = remaining.trim_start();
-        let Some(after_slash) = remaining_trimmed.strip_prefix("/ ") else {
+        let Some(after_slash) = remaining_trimmed.strip_prefix('/') else {
             break;
         };
         let after_slash = after_slash.trim_start();
@@ -1842,6 +1842,15 @@ fn try_extract_hyphenated_descriptor_range(s: &str) -> Option<(String, String, S
 
 /// Extract a unit from the beginning of a string.
 /// Returns (unit, remaining_string).
+fn slash_starts_measurement(s: &str) -> bool {
+    let Some(after_slash) = s.strip_prefix('/') else {
+        return false;
+    };
+    let after_slash = after_slash.trim_start();
+    let (amount, _) = extract_amount(after_slash);
+    amount.is_some()
+}
+
 fn extract_unit(s: &str) -> (Option<String>, String) {
     let s = s.trim();
     let s_lower = s.to_lowercase();
@@ -1852,6 +1861,7 @@ fn extract_unit(s: &str) -> (Option<String>, String) {
             let after = s.get(unit.len()..).unwrap_or("");
             if after.is_empty()
                 || after.starts_with(|c: char| c.is_whitespace() || c == '.' || c == ',')
+                || slash_starts_measurement(after)
             {
                 // Skip any trailing period or whitespace
                 let mut remaining = after.trim_start_matches('.').trim();
@@ -3135,6 +3145,41 @@ mod tests {
         assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
         assert_eq!(result.measurements[1].amount, Some("2".to_string()));
         assert_eq!(result.measurements[1].unit, Some("lemons".to_string()));
+    }
+
+    #[test]
+    fn test_slash_separated_metric_alternate_after_primary_unit() {
+        let result = parse_ingredient("1 3/4 cups/420 milliliters warm water (about 100 degrees)");
+        assert_eq!(result.item, "warm water");
+        assert_eq!(result.measurements.len(), 3);
+        assert_eq!(result.measurements[0].amount, Some("1 3/4".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+        assert_eq!(result.measurements[1].amount, Some("100".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("degrees".to_string()));
+        assert_eq!(result.measurements[2].amount, Some("420".to_string()));
+        assert_eq!(result.measurements[2].unit, Some("ml".to_string()));
+    }
+
+    #[test]
+    fn test_slash_separated_metric_alternate_preserves_item_text() {
+        let result = parse_ingredient("1 3/4 cups/225 grams all-purpose or bread flour");
+        assert_eq!(result.item, "all-purpose or bread flour");
+        assert_eq!(result.measurements.len(), 2);
+        assert_eq!(result.measurements[0].amount, Some("1 3/4".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+        assert_eq!(result.measurements[1].amount, Some("225".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("g".to_string()));
+    }
+
+    #[test]
+    fn test_slash_inside_descriptor_is_not_treated_as_measurement_boundary() {
+        let result = parse_ingredient("4 or 5 small/medium zucchini/squash (about 2 1/2 lbs)");
+        assert_eq!(result.item, "small/medium zucchini/squash");
+        assert_eq!(result.measurements.len(), 2);
+        assert_eq!(result.measurements[0].amount, Some("4 or 5".to_string()));
+        assert_eq!(result.measurements[0].unit, None);
+        assert_eq!(result.measurements[1].amount, Some("2 1/2".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("lb".to_string()));
     }
 
     #[test]

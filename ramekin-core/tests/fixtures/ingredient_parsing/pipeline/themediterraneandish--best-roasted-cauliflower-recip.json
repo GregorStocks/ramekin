@@ -97,11 +97,15 @@
     {
       "raw": "1/4  cup/30 g toasted pine nuts (or toasted slivered almonds, optional)",
       "expected": {
-        "item": "cup/30 g toasted pine nuts",
+        "item": "toasted pine nuts",
         "measurements": [
           {
             "amount": "0.25",
-            "unit": null
+            "unit": "cup"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
         "note": "or toasted slivered almonds, optional",

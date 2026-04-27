@@ -69,11 +69,15 @@
     {
       "raw": "1 tsp/ 1.67 g ground coriander",
       "expected": {
-        "item": "tsp/ 1.67 g ground coriander",
+        "item": "ground coriander",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.67",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -83,11 +87,15 @@
     {
       "raw": "1 tsp/2.6 g ground cumin",
       "expected": {
-        "item": "tsp/2.6 g ground cumin",
+        "item": "ground cumin",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "tsp"
+          },
+          {
+            "amount": "2.6",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -97,11 +105,15 @@
     {
       "raw": "1/2 tsp/ 1.33 g Aleppo pepper",
       "expected": {
-        "item": "tsp/ 1.33 g Aleppo pepper",
+        "item": "Aleppo pepper",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "tsp"
+          },
+          {
+            "amount": "1.33",
+            "unit": "g"
           }
         ],
         "note": null,

@@ -28,11 +28,19 @@
     {
       "raw": "1/2  cup/120ml hot water",
       "expected": {
-        "item": "cup/120ml hot water",
+        "item": "hot water",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "ml"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -466,11 +474,15 @@
     {
       "raw": "2  cups/400 g white granulated sugar",
       "expected": {
-        "item": "cups/400 g white granulated sugar",
+        "item": "white granulated sugar",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "cup"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -480,11 +492,19 @@
     {
       "raw": "4  cups/ 32oz. unsalted butter (softened)",
       "expected": {
-        "item": "cups/ 32oz. unsalted butter",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "4",
-            "unit": null
+            "unit": "cup"
+          },
+          {
+            "amount": "32",
+            "unit": "oz"
+          },
+          {
+            "amount": "907",
+            "unit": "g"
           }
         ],
         "note": "softened",
