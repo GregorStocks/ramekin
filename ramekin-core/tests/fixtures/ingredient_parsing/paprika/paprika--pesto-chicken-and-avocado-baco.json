@@ -227,11 +227,11 @@
     {
       "raw": "1-1 1/2 cups grilled chicken, cubed or shredded",
       "expected": {
-        "item": "1/2 cups grilled chicken",
+        "item": "grilled chicken",
         "measurements": [
           {
-            "amount": "1-1",
-            "unit": null
+            "amount": "1-1.5",
+            "unit": "cup"
           }
         ],
         "note": "cubed or shredded",

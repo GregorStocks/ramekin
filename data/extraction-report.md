@@ -3,9 +3,9 @@
 ## Overall
 
 - Total URLs: 5535
-- Completed: 5466 (98.8%)
+- Completed: 5467 (98.8%)
 - Failed at fetch: 0 (0.0%)
-- Failed at extract: 68 (1.2%)
+- Failed at extract: 67 (1.2%)
 - Expected extract failures: 1 (0.0%)
 
 ## Extraction Methods
@@ -17,18 +17,18 @@
 
 ## Ingredient Parsing
 
-- Total ingredients: 60714
-- Volume-to-weight converted: 18179/43004 (42.3%)
-- Unknown ingredient (no density data): 15087
-- Already has weight: 9738
-- No volume unit (count-based): 17390
-- Metric converted (oz→g): 2709
-- Metric converted (lb→g): 1828
+- Total ingredients: 60727
+- Volume-to-weight converted: 18183/43022 (42.3%)
+- Unknown ingredient (no density data): 15090
+- Already has weight: 9749
+- No volume unit (count-based): 17382
+- Metric converted (oz→g): 2715
+- Metric converted (lb→g): 1831
 
 ## AI Cache
 
-- Cache hits: 5450/5450 (100.0%)
-- API calls: 0/5450 (0.0%)
+- Cache hits: 5451/5451 (100.0%)
+- API calls: 0/5451 (0.0%)
 
 ## By Site
 
@@ -54,7 +54,7 @@
 | cafedelites.com | 55 | 0 | 0 | 55 | 100.0% |
 | chefspencil.com | 4 | 0 | 0 | 4 | 100.0% |
 | chopstickchronicles.com | 2 | 0 | 0 | 2 | 100.0% |
-| cocktailswithsuderman.substack.com | 0 | 0 | 4 | 4 | 0.0% |
+| cocktailswithsuderman.substack.com | 1 | 0 | 3 | 4 | 25.0% |
 | cookieandkate.com | 14 | 0 | 0 | 14 | 100.0% |
 | cooking.nytimes.com | 51 | 0 | 0 | 51 | 100.0% |
 | cookingclassy.com | 56 | 0 | 0 | 56 | 100.0% |
@@ -134,12 +134,11 @@
 
 ## Failed URLs by Error
 
-### Missing required field: recipeIngredient (empty) (67 URLs)
+### Missing required field: recipeIngredient (empty) (66 URLs)
 
 - http://bakingbites.com/2017/02/how-to-use-freeze-dried-fruit-in-baking/
 - https://barefeetinthekitchen.com/diy-fruit-and-vegetable-wash-homemade-produce-wash-recipe/
 - https://cocktailswithsuderman.substack.com/p/a-question-about-the-clover-club
-- https://cocktailswithsuderman.substack.com/p/a-thanksgiving-sidecar-with-jellied
 - https://cocktailswithsuderman.substack.com/p/hot-chocolate-manhattan
 - https://cocktailswithsuderman.substack.com/p/lol-its-an-appletini
 - https://feedbin.com/entries/4967860190
