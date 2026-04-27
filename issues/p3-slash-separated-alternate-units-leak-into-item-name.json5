@@ -1,0 +1,50 @@
+{
+  "title": "Slash-separated alternate units leak into ingredient item name",
+  "description": "NYT Cooking recipes commonly format ingredient quantities as \
+\"<US quantity>/<metric quantity> <ingredient>\" (e.g. \"1 3/4 cups/420 \
+milliliters warm water\" or \"3 1/2 cups/448 grams all-purpose flour\"). The \
+pipeline parses the leading number but then treats the entire \"cups/420 \
+milliliters\" or \"cups/448 grams\" fragment as part of the item name, leaving \
+the metric quantity unrecorded as a measurement and producing a junk item \
+string.\n\
+\n\
+Concrete examples (audited 2026-04-27):\n\
+\n\
+  - \
+`data/pipeline-snapshots/cooking-nytimes-com_recipes-1021971-potato-and-leek-focaccia.json`\n\
+    Cached HTML: \
+`~/.ramekin/http-cache/cooking-nytimes-com_recipes-1021971-potato-and-leek-focaccia/response.bin`\n\
+    Source ingredient: `1 3/4 cups/420 milliliters warm water (about 100 \
+degrees)`\n\
+    Snapshot output: `item` is `cups/420 milliliters warm water`, \
+`measurements` are `[{\"amount\":\"1.75\",\"unit\":null}, \
+{\"amount\":\"100\",\"unit\":\"degrees\"}]`. The 420 ml alternate quantity is \
+dropped, the unit `cups` is lost, and the parenthetical water-temperature hint \
+becomes a phony measurement.\n\
+\n\
+  - Same snapshot, second example:\n\
+    Source ingredient: `3 1/2 cups/448 grams all-purpose flour`\n\
+    Snapshot output: `item` is `cups/448 grams all-purpose flour`, \
+`measurements` is just `[{\"amount\":\"3.5\",\"unit\":null}]`. Both `cups` and \
+`448 grams` are missing from measurements.\n\
+\n\
+  - \
+`data/pipeline-snapshots/cooking-nytimes-com_recipes-1021077-khachapuri-adjaruli-georgian-cheese-bread-boat.json`\n\
+    Cached HTML: \
+`~/.ramekin/http-cache/cooking-nytimes-com_recipes-1021077-khachapuri-adjaruli-georgian-cheese-bread-boat/response.bin`\n\
+    Snapshot output: `item` is `cups/225 grams all-purpose or bread flour` \
+(same shape — primary unit and metric alternate both lost).\n\
+\n\
+The parser should split on the slash and treat the metric value as an \
+alternate measurement, the same way it currently handles parenthetical metric \
+quantities like `1 cup (240 ml)`.",
+  "status": "open",
+  "priority": 3,
+  "type": "bug",
+  "labels": [
+    "pipeline",
+    "ingredient-parser",
+  ],
+  "created_at": "2026-04-27T11:43:15-07:00",
+  "updated_at": "2026-04-27T11:43:15-07:00",
+}
