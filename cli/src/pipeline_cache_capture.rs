@@ -44,13 +44,25 @@ struct AppState {
     cache: Arc<DiskCache>,
     server_url: Arc<String>,
     /// Random per-session token. The bookmarklet served from `/` embeds it,
-    /// so any other page hitting `/capture` (CORS is fully open) without it
-    /// gets 401 instead of being able to poison the pipeline cache.
+    /// so any other page hitting `/capture` (which is the only route with
+    /// permissive CORS) without it gets 401 instead of being able to poison
+    /// the pipeline cache.
     token: Arc<String>,
+    /// Optional URL to pin captures to. When set, every capture is written
+    /// under this URL instead of the bookmarklet's `location.href`, so the
+    /// pipeline (which keys cache lookups by the pre-redirect URL listed in
+    /// `test-urls.json`) finds the entry even if the recipe site redirected
+    /// the user during browsing.
+    target_url: Option<Arc<String>>,
 }
 
 /// Run the capture server until the process is interrupted.
-pub async fn run(host: &str, port: u16, cache_dir: Option<PathBuf>) -> Result<()> {
+pub async fn run(
+    host: &str,
+    port: u16,
+    cache_dir: Option<PathBuf>,
+    target_url: Option<String>,
+) -> Result<()> {
     let cache_dir = match cache_dir {
         Some(dir) => dir,
         None => resolve_cache_dir_from_env()?,
@@ -64,6 +76,7 @@ pub async fn run(host: &str, port: u16, cache_dir: Option<PathBuf>) -> Result<()
         cache: Arc::new(DiskCache::new(cache_dir.clone())),
         server_url: Arc::new(server_url.clone()),
         token: Arc::new(token),
+        target_url: target_url.map(Arc::new),
     };
 
     let addr: SocketAddr = format!("{host}:{port}")
@@ -86,6 +99,20 @@ pub async fn run(host: &str, port: u16, cache_dir: Option<PathBuf>) -> Result<()
     tracing::info!("     then click the bookmarklet to POST the rendered HTML back here.");
     tracing::info!("  3. Re-run `make pipeline` and the URL will hit cache instead of the wall.");
     tracing::info!("");
+    if let Some(target) = &state.target_url {
+        tracing::info!("  Captures will be cached under: {target}");
+        tracing::info!(
+            "  (set via --url; pins the cache key to the URL the pipeline tested in case the"
+        );
+        tracing::info!("   site redirected your browser to a different canonical URL.)");
+    } else {
+        tracing::info!("  Captures will be cached under the bookmarklet's location.href.");
+        tracing::info!(
+            "  If the site redirects your browser, pass --url <pre-redirect-URL> so the cache"
+        );
+        tracing::info!("  entry matches what `make pipeline` looks up.");
+    }
+    tracing::info!("");
     tracing::info!(
         "  The bookmarklet embeds a per-session token; re-drag it from / each time you restart."
     );
@@ -100,17 +127,25 @@ pub async fn run(host: &str, port: u16, cache_dir: Option<PathBuf>) -> Result<()
 }
 
 fn build_router(state: AppState) -> Router {
-    let cors = CorsLayer::new()
+    // Permissive CORS only on `/capture` — the bookmarklet POSTs cross-origin
+    // from any recipe site. `/` (which serves the bookmarklet + token) MUST
+    // stay same-origin so a malicious page can't `fetch('http://localhost:9876/')`,
+    // read the embedded token, and forge a capture call.
+    let capture_cors = CorsLayer::new()
         .allow_origin(Any)
         .allow_methods(Any)
         .allow_headers(Any);
 
-    Router::new()
-        .route("/", get(root))
+    // Build the two sub-routers separately and merge so router-level layers
+    // (CORS, body limit) are scoped to /capture only.
+    let capture_router: Router<AppState> = Router::new()
         .route("/capture", post(capture))
         .layer(DefaultBodyLimit::max(MAX_CAPTURE_BODY_BYTES))
-        .layer(cors)
-        .with_state(state)
+        .layer(capture_cors);
+
+    let root_router: Router<AppState> = Router::new().route("/", get(root));
+
+    root_router.merge(capture_router).with_state(state)
 }
 
 /// Resolve the HTTP cache directory the same way `CachingClientBuilder` does,
@@ -155,10 +190,20 @@ async fn capture(
         ));
     }
 
+    // If the server was launched with --url, write under that URL so the cache
+    // key matches the entry the pipeline looks up (which is the pre-redirect
+    // URL listed in test-urls.json). Otherwise key by the bookmarklet's
+    // location.href, which is correct for sites that don't redirect.
+    let cache_url: &str = state
+        .target_url
+        .as_ref()
+        .map(|s| s.as_str())
+        .unwrap_or(&payload.url);
+
     state
         .cache
         .put(
-            &payload.url,
+            cache_url,
             payload.html.as_bytes(),
             Some("text/html".to_string()),
             None,
@@ -172,8 +217,21 @@ async fn capture(
         })?;
 
     let bytes = payload.html.len();
-    tracing::info!("captured {} bytes for {}", bytes, payload.url);
-    Ok(format!("cached {} bytes for {}", bytes, payload.url))
+    if cache_url == payload.url {
+        tracing::info!("captured {} bytes for {}", bytes, cache_url);
+        Ok(format!("cached {} bytes for {}", bytes, cache_url))
+    } else {
+        tracing::info!(
+            "captured {} bytes from {} -> cached under {}",
+            bytes,
+            payload.url,
+            cache_url
+        );
+        Ok(format!(
+            "cached {} bytes from {} under {}",
+            bytes, payload.url, cache_url
+        ))
+    }
 }
 
 /// Build the bookmarklet's JavaScript source. Kept ASCII-only and free of
@@ -222,6 +280,7 @@ ol li {{ margin-bottom: 0.4rem; }}
 <li>Click the bookmarklet. The page's rendered HTML is POSTed to <code>{server_url}/capture</code> and written into the local pipeline cache.</li>
 <li>Re-run <code>make pipeline</code>. The URL now hits cache and goes through <code>extract_recipe</code> normally.</li>
 </ol>
+<p><em>Heads up:</em> the cache is keyed by URL. If the recipe site redirects your browser, the bookmarklet's <code>location.href</code> won't match the URL <code>make pipeline</code> looks up. Restart the server with <code>--url &lt;pre-redirect-URL&gt;</code> to pin captures to the original URL.</p>
 <h2>Bookmarklet source</h2>
 <pre><code>{src}</code></pre>
 </body>
@@ -254,12 +313,17 @@ mod tests {
     const TEST_TOKEN: &str = "test-token-abcdef";
 
     fn test_state() -> (AppState, TempDir) {
+        test_state_with(None)
+    }
+
+    fn test_state_with(target_url: Option<String>) -> (AppState, TempDir) {
         let tmp = TempDir::new().unwrap();
         let cache = Arc::new(DiskCache::new(tmp.path().to_path_buf()));
         let state = AppState {
             cache,
             server_url: Arc::new("http://127.0.0.1:9876".to_string()),
             token: Arc::new(TEST_TOKEN.to_string()),
+            target_url: target_url.map(Arc::new),
         };
         (state, tmp)
     }
@@ -362,6 +426,105 @@ mod tests {
             .unwrap();
 
         assert_eq!(response.status(), StatusCode::BAD_REQUEST);
+    }
+
+    #[tokio::test]
+    async fn capture_target_url_overrides_payload_url() {
+        let target = "https://www.justonecookbook.com/recipe-original/";
+        let (state, tmp) = test_state_with(Some(target.to_string()));
+        let cache_dir = tmp.path().to_path_buf();
+        let app = build_router(state);
+
+        let bookmarklet_url = "https://justonecookbook.com/recipe-redirected";
+        let body = serde_json::json!({
+            "url": bookmarklet_url,
+            "html": "<html>r</html>",
+            "token": TEST_TOKEN,
+        })
+        .to_string();
+
+        let response = app
+            .oneshot(
+                Request::builder()
+                    .method("POST")
+                    .uri("/capture")
+                    .body(Body::from(body))
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+
+        assert_eq!(response.status(), StatusCode::OK);
+        let cache = DiskCache::new(cache_dir);
+        assert!(
+            cache.get(target).is_some(),
+            "cache must be keyed by --url target"
+        );
+        assert!(
+            cache.get(bookmarklet_url).is_none(),
+            "cache must not be keyed by location.href when target is set"
+        );
+    }
+
+    #[tokio::test]
+    async fn root_has_no_cors_allow_origin() {
+        // The bookmarklet+token must not be readable cross-origin, otherwise
+        // any tab can fetch /, scrape the token, and forge captures.
+        let (state, _tmp) = test_state();
+        let app = build_router(state);
+
+        let response = app
+            .oneshot(
+                Request::builder()
+                    .uri("/")
+                    .header("origin", "https://evil.example.com")
+                    .body(Body::empty())
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+
+        assert_eq!(response.status(), StatusCode::OK);
+        assert!(
+            response
+                .headers()
+                .get("access-control-allow-origin")
+                .is_none(),
+            "/ must not advertise cross-origin readability"
+        );
+    }
+
+    #[tokio::test]
+    async fn capture_has_cors_allow_origin() {
+        // The bookmarklet legitimately fetches /capture cross-origin, so this
+        // route must advertise CORS so the browser exposes the response body.
+        let (state, _tmp) = test_state();
+        let app = build_router(state);
+
+        let body = serde_json::json!({
+            "url": "https://example.com/r",
+            "html": "<html></html>",
+            "token": TEST_TOKEN,
+        })
+        .to_string();
+
+        let response = app
+            .oneshot(
+                Request::builder()
+                    .method("POST")
+                    .uri("/capture")
+                    .header("origin", "https://recipe.example.com")
+                    .body(Body::from(body))
+                    .unwrap(),
+            )
+            .await
+            .unwrap();
+
+        assert_eq!(response.status(), StatusCode::OK);
+        assert!(response
+            .headers()
+            .get("access-control-allow-origin")
+            .is_some());
     }
 
     #[tokio::test]

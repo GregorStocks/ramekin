@@ -215,7 +215,8 @@ pipeline-cache-capture: ## Run a localhost server + bookmarklet to manually save
 	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
 	cargo run -q --manifest-path cli/Cargo.toml -- pipeline-cache-capture \
 		$(if $(HOST),--host $(HOST),) \
-		$(if $(PORT),--port $(PORT),)
+		$(if $(PORT),--port $(PORT),) \
+		$(if $(URL),--url $(URL),)
 
 ios-generate: ## Generate Xcode project for iOS app (requires xcodegen: brew install xcodegen)
 	@set -a && [ -f dev.env ] && . ./dev.env; set +a && \

@@ -220,6 +220,11 @@ enum Commands {
         /// Cache directory (defaults to RAMEKIN_HTTP_CACHE / ~/.ramekin/http-cache, matching the pipeline)
         #[arg(long)]
         cache_dir: Option<PathBuf>,
+        /// Pin captures to this URL instead of the bookmarklet's location.href.
+        /// Use when the recipe site redirects the browser, so the cache entry
+        /// matches the pre-redirect URL listed in test-urls.json.
+        #[arg(long)]
+        url: Option<String>,
     },
     /// Generate ingredient parsing test fixtures from pipeline run
     IngredientTestsGenerate {
@@ -448,8 +453,9 @@ async fn main() -> Result<()> {
             host,
             port,
             cache_dir,
+            url,
         } => {
-            pipeline_cache_capture::run(&host, port, cache_dir).await?;
+            pipeline_cache_capture::run(&host, port, cache_dir, url).await?;
         }
         Commands::IngredientTestsGenerate {
             runs_dir,
