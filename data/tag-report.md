@@ -5459,9 +5459,9 @@
 
 ## Summary
 
-- Total recipes processed: 5466
-- Recipes with tag suggestions: 5450
-- Cached responses: 5450
+- Total recipes processed: 5467
+- Recipes with tag suggestions: 5451
+- Cached responses: 5451
 
 ## Tag Frequency
 
@@ -5483,7 +5483,7 @@
 | dairy-free | 1064 |
 | american | 999 |
 | greens | 839 |
-| holiday | 837 |
+| holiday | 838 |
 | vegan | 807 |
 | egg | 793 |
 | appetizer | 729 |
