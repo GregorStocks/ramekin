@@ -1,0 +1,108 @@
+{
+  "source": "food52",
+  "recipe_slug": "recipes-85546-pickle-sandwich-",
+  "ingredients": [
+    {
+      "raw": "1 tablespoon minced half-sour pickle",
+      "expected": {
+        "item": "minced half-sour pickle",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "1 tablespoon mayonnaise",
+      "expected": {
+        "item": "mayonnaise",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 teaspoon grainy Dijon mustard",
+      "expected": {
+        "item": "grainy Dijon mustard",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1/2 teaspoon pickle brine",
+      "expected": {
+        "item": "pickle brine",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2  slices seedy bread, lightly toasted",
+      "expected": {
+        "item": "seedy bread",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "slice"
+          }
+        ],
+        "note": "lightly toasted",
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "1  half-sour pickle, thinly sliced lengthwise",
+      "expected": {
+        "item": "half-sour pickle",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": "thinly sliced lengthwise",
+        "category": "Canned Goods"
+      }
+    },
+    {
+      "raw": "2  layers sliced sharp white cheddar",
+      "expected": {
+        "item": "layers sliced sharp white cheddar",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Cheese"
+      }
+    }
+  ]
+}

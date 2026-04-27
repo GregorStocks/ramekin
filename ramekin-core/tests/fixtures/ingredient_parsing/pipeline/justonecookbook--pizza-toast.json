@@ -1,0 +1,190 @@
+{
+  "source": "justonecookbook",
+  "recipe_slug": "pizza-toast",
+  "ingredients": [
+    {
+      "raw": "1 Tbsp extra virgin olive oil",
+      "expected": {
+        "item": "extra virgin olive oil",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Oils & Vinegars"
+      }
+    },
+    {
+      "raw": "¼ tsp crushed red pepper (red pepper flakes) (plus more for serving, to taste)",
+      "expected": {
+        "item": "crushed red pepper (red pepper flakes) (plus more for serving",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "tsp"
+          }
+        ],
+        "note": "to taste)",
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 clove garlic (minced or crushed)",
+      "expected": {
+        "item": "garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "clove"
+          }
+        ],
+        "note": "minced or crushed",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 Tbsp ketchup (or 2 whole tomatoes, canned)",
+      "expected": {
+        "item": "ketchup",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
+          }
+        ],
+        "note": "or 2 whole tomatoes, canned",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "⅛ tsp Diamond Crystal kosher salt",
+      "expected": {
+        "item": "Diamond Crystal kosher salt",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          },
+          {
+            "amount": "0.4",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "⅛ tsp freshly ground black pepper",
+      "expected": {
+        "item": "freshly ground black pepper",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "3 slices shokupan (Japanese milk bread) (¾ inch, 1.5 cm thick per slice)",
+      "expected": {
+        "item": "shokupan (Japanese milk bread) (3/4 inch, 1.5 cm thick per slice)",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "slice"
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    },
+    {
+      "raw": "⅛ sweet onion",
+      "expected": {
+        "item": "sweet onion",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "⅛ green bell pepper",
+      "expected": {
+        "item": "green bell pepper",
+        "measurements": [
+          {
+            "amount": "0.13",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "4 cherry tomatoes",
+      "expected": {
+        "item": "cherry tomatoes",
+        "measurements": [
+          {
+            "amount": "4",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 slices ham",
+      "expected": {
+        "item": "ham",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "slice"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "6 Tbsp shredded mozzarella cheese (or more, if you'd like)",
+      "expected": {
+        "item": "shredded mozzarella cheese",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
+          }
+        ],
+        "note": "or more, if you'd like",
+        "category": "Cheese"
+      }
+    }
+  ]
+}
