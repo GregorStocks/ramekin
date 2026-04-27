@@ -3,9 +3,9 @@
 ## Overall
 
 - Total URLs: 5536
-- Completed: 5449 (98.4%)
+- Completed: 5454 (98.5%)
 - Failed at fetch: 9 (0.2%)
-- Failed at extract: 78 (1.4%)
+- Failed at extract: 73 (1.3%)
 
 ## Extraction Methods
 
@@ -16,18 +16,18 @@
 
 ## Ingredient Parsing
 
-- Total ingredients: 60919
-- Volume-to-weight converted: 18126/42826 (42.3%)
-- Unknown ingredient (no density data): 15020
-- Already has weight: 9680
-- No volume unit (count-based): 17775
+- Total ingredients: 60986
+- Volume-to-weight converted: 18136/42875 (42.3%)
+- Unknown ingredient (no density data): 15036
+- Already has weight: 9703
+- No volume unit (count-based): 17793
 - Metric converted (oz→g): 2709
-- Metric converted (lb→g): 1825
+- Metric converted (lb→g): 1826
 
 ## AI Cache
 
-- Cache hits: 5437/5437 (100.0%)
-- API calls: 0/5437 (0.0%)
+- Cache hits: 5438/5442 (99.9%)
+- API calls: 4/5442 (0.1%)
 
 ## By Site
 
@@ -104,7 +104,7 @@
 | recipetineats.com | 10 | 10 | 100.0% |
 | runningwithspoons.com | 1 | 1 | 100.0% |
 | sallysbakingaddiction.com | 34 | 34 | 100.0% |
-| seriouseats.com | 161 | 168 | 95.8% |
+| seriouseats.com | 166 | 168 | 98.8% |
 | simplyrecipes.com | 99 | 100 | 99.0% |
 | skinnytaste.com | 2 | 2 | 100.0% |
 | slenderkitchen.com | 55 | 55 | 100.0% |
@@ -145,14 +145,7 @@
 - https://www.seriouseats.com/easy-creamy-one-pot-weeknight-salmon-chowder-recipe
 - https://www.thespruceeats.com/classic-french-aligot-recipe-1375727
 
-### Missing required field: name (4 URLs)
-
-- https://www.seriouseats.com/canederli-di-pane-italian-bread-dumpling-recipe-11679155
-- https://www.seriouseats.com/roasted-cauliflower-soup-curry-cream-8748572
-- https://www.seriouseats.com/the-best-classic-chicken-salad-recipe
-- https://www.seriouseats.com/toad-in-the-hole-recipe-11746714
-
-### Missing required field: recipeIngredient (empty) (73 URLs)
+### Missing required field: recipeIngredient (empty) (72 URLs)
 
 - http://bakingbites.com/2017/02/how-to-use-freeze-dried-fruit-in-baking/
 - https://barefeetinthekitchen.com/diy-fruit-and-vegetable-wash-homemade-produce-wash-recipe/
@@ -202,7 +195,6 @@
 - https://www.mybakingaddiction.com/smores-recipe/
 - https://www.mybakingaddiction.com/tollhouse-cookies-recipe/
 - https://www.seriouseats.com/food-lab-complete-guide-to-sous-vide-steak
-- https://www.seriouseats.com/new-orleans-bbq-shrimp-recipe-11891402
 - https://www.simplyrecipes.com/recipes/the_finger_test_to_check_the_doneness_of_meat/
 - https://www.sprinklebakes.com/2018/04/celebrate-like-royal-with-lemon.html
 - https://www.sprinklebakes.com/2018/05/rhubarb-pie-with-double-crust.html
