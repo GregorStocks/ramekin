@@ -1031,6 +1031,7 @@ fn has_instruction_paragraph_between(chunks: &[&str], start_idx: usize, end_idx:
         let chunk = chunk.trim();
         if chunk.is_empty()
             || LOOKBACK_LINK_REGEX.is_match(chunk)
+            || looks_like_lookback_links_chunk(chunk)
             || looks_like_ingredient_list(chunk)
         {
             continue;
@@ -1285,7 +1286,7 @@ fn extract_recipe_from_unstructured_blog(html: &str, source_url: &str) -> Option
                 continue;
             }
 
-            if LOOKBACK_LINK_REGEX.is_match(chunk) {
+            if LOOKBACK_LINK_REGEX.is_match(chunk) || looks_like_lookback_links_chunk(chunk) {
                 continue;
             }
 
@@ -3738,5 +3739,31 @@ mod tests {
             looks_like_lookback_links_chunk(chunk),
             "lookback links chunk should be detected"
         );
+    }
+
+    /// Lookback link chunks must be skipped during instruction extraction
+    /// too. The existing `LOOKBACK_LINK_REGEX` only catches "X year(s) ago"
+    /// at the start of the chunk, so chunks introduced by
+    /// `<i>And for the other side of the world:</i>` followed by month or
+    /// decimal-year lookbacks would otherwise leak into instructions.
+    #[test]
+    fn crispy_peach_cobbler_instructions_exclude_lookback_links() {
+        let path = format!(
+            "{}/../tests/scrape_fixtures/smittenkitchen/crispy_peach_cobbler.html",
+            env!("CARGO_MANIFEST_DIR"),
+        );
+        let html = std::fs::read_to_string(&path).expect("fixture exists");
+        let recipe = extract_recipe(
+            &html,
+            "https://smittenkitchen.com/2015/08/crispy-peach-cobbler/",
+        )
+        .expect("extraction should succeed");
+        for needle in ["Six Months Ago", "1.5 Years Ago", "Other side of the world"] {
+            assert!(
+                !recipe.instructions.contains(needle),
+                "instructions should not contain {needle:?}, got: {}",
+                recipe.instructions,
+            );
+        }
     }
 }
