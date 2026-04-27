@@ -5,11 +5,15 @@
     {
       "raw": "2 ½-3 pounds boneless pork butt",
       "expected": {
-        "item": "1/2-3 pounds boneless pork butt",
+        "item": "boneless pork butt",
         "measurements": [
           {
-            "amount": "2",
-            "unit": null
+            "amount": "2.5-3",
+            "unit": "lb"
+          },
+          {
+            "amount": "1134-1361",
+            "unit": "g"
           }
         ],
         "note": null,
