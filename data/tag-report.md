@@ -3096,7 +3096,7 @@
 |  Bún Chả Hanoi | lunch, dinner, entree, asian, pork, grill | yes |
 | Caesar BLT | lunch, sandwich, cheese, pork, greens, american, comfort food | yes |
 | Savory Caesar Dip | snack, appetizer, easy, low-carb, cheese, pantry | yes |
-| Canederli di Pane (Northern Italian B... | dinner, entree, comfort food, italian, pork, soup, bread, cheese | no |
+| Canederli di Pane (Northern Italian B... | dinner, entree, comfort food, italian, pork, soup, bread, egg, cheese | no |
 | Cantonese-Style One-Pot Braised Brisket | dinner, entree, comfort food, asian, chinese, beef, rice, greens, pantry | yes |
 | Carne Asada Fries With Sliced Steak a... | dinner, entree, comfort food, mexican, beef, potato, cheese | yes |
 | Cheese Frenchee (Deep-Fried Grilled C... | lunch, snack, comfort food, vegetarian, sandwich, bread, egg, cheese, american | yes |
@@ -3177,7 +3177,7 @@
 | Muhammara (Syrian Red Bell Pepper Dip) | appetizer, side dish, vegetarian, vegan, mediterranean, pantry | yes |
 | Mushroom and Dumplings | dinner, entree, comfort food, vegetarian, soup, mushroom, pantry | yes |
 | Mushroom French Dip Sandwich | lunch, dinner, entree, comfort food, vegetarian, sandwich, bread, mushroom, cheese | yes |
-| New Orleans BBQ Shrimp | dinner, entree, seafood, american | no |
+| New Orleans BBQ Shrimp | dinner, entree, comfort food, seafood, american | no |
 | New York-Style Pizza Sauce | side dish, vegetarian, italian, pantry | yes |
 | Ohio Sauerkraut Balls | snack, appetizer, comfort food, pork, eastern european, holiday | yes |
 | Orange and Saffron Flan | dessert, vegetarian, egg | yes |
@@ -3194,7 +3194,7 @@
 | Rice Krispie Treats | dessert, snack, easy, comfort food, vegetarian, american, pantry | yes |
 | Armenian-Style Rice Pilaf | side dish, easy, comfort food, eastern european, rice, pasta, pantry | yes |
 | Rich and Creamy Slow-Cooker Beef Stro... | dinner, entree, comfort food, beef, pasta, mushroom, eastern european | yes |
-| Roasted Cauliflower Soup | lunch, dinner, appetizer, side dish, comfort food, vegetarian, soup, greens | no |
+| Roasted Cauliflower Soup | lunch, dinner, appetizer, side dish, comfort food, vegetarian, soup, greens | yes |
 | Slow-Roasted Fresh Ham With Maple-Bou... | dinner, entree, comfort food, american, pork, holiday | yes |
 | Roasted Oysters With Bacon and Parmesan | dinner, appetizer, comfort food, seafood, cheese, holiday | yes |
 | Roasted Sweet Potato Soup | lunch, dinner, appetizer, side dish, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, potato, soup, holiday | yes |
@@ -3231,7 +3231,7 @@
 | The Best Italian-American Tomato Sauce | dinner, entree, comfort food, vegetarian, italian, pasta, pantry | yes |
 | The Best Yorkshire Pudding | side dish, comfort food, bread, egg | yes |
 | The Food Lab's Buttermilk Biscuits Re... | breakfast, side dish, comfort food, vegetarian, american, bread, pantry | yes |
-| Toad in the Hole (Yorkshire Pudding W... | dinner, entree, comfort food, pork, egg, bread, eastern european | no |
+| Toad in the Hole (Yorkshire Pudding W... | dinner, entree, comfort food, pork, egg | no |
 | 2-Ingredient Cream Biscuits | breakfast, easy, vegetarian, american, bread | yes |
 | Two-Minute Aioli | quick, easy, vegetarian, egg, pantry | yes |
 | The Ultimate Fully Loaded Nachos Recipe | lunch, dinner, snack, appetizer, comfort food, mexican, cheese, legumes | yes |
@@ -5452,7 +5452,7 @@
 
 - Total recipes processed: 5454
 - Recipes with tag suggestions: 5442
-- Cached responses: 5437
+- Cached responses: 5438
 
 ## Tag Frequency
 
@@ -5461,7 +5461,7 @@
 | easy | 3788 |
 | vegetarian | 3274 |
 | dinner | 2608 |
-| comfort food | 2595 |
+| comfort food | 2596 |
 | pantry | 2382 |
 | dessert | 1355 |
 | lunch | 1353 |
@@ -5476,10 +5476,10 @@
 | greens | 843 |
 | holiday | 836 |
 | vegan | 804 |
-| egg | 796 |
+| egg | 797 |
 | appetizer | 729 |
 | quick | 605 |
-| bread | 600 |
+| bread | 599 |
 | italian | 550 |
 | breakfast | 549 |
 | asian | 530 |
@@ -5500,7 +5500,7 @@
 | grill | 258 |
 | mushroom | 231 |
 | sandwich | 174 |
-| eastern european | 167 |
+| eastern european | 166 |
 | fish | 164 |
 | french | 113 |
 | chinese | 101 |

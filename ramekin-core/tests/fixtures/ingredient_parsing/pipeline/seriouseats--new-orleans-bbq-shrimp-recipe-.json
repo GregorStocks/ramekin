@@ -171,7 +171,7 @@
       }
     },
     {
-      "raw": "1 teaspoon chopped fresh rosemary plus 1 whole sprig",
+      "raw": "1 teaspoon chopped fresh rosemary plus 1 whole sprig",
       "expected": {
         "item": "chopped fresh rosemary",
         "measurements": [
@@ -194,9 +194,9 @@
       }
     },
     {
-      "raw": "1 baguette baguette",
+      "raw": "1 baguette",
       "expected": {
-        "item": "baguette baguette",
+        "item": "baguette",
         "measurements": [
           {
             "amount": "1",

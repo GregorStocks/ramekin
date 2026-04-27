@@ -1790,19 +1790,21 @@ fn extract_dotdash_meredith_ingredients(document: &Html) -> Option<String> {
     for container in document.select(&container_selector) {
         for el in container.select(&combined_selector) {
             let class_attr = el.value().attr("class").unwrap_or("");
-            let raw_text = el.text().collect::<String>();
             if class_attr.contains("structured-ingredients__list-heading") {
-                let text = raw_text.trim();
+                let text = el.text().collect::<String>().trim().to_string();
                 if text.is_empty() {
                     continue;
                 }
                 if text.ends_with(':') {
-                    lines.push(text.to_string());
+                    lines.push(text);
                 } else {
                     lines.push(format!("{}:", text));
                 }
-            } else if let Some(text) = sanitize_extracted_ingredient(&raw_text) {
-                lines.push(text);
+            } else {
+                let raw_text = dotdash_ingredient_item_text(&el);
+                if let Some(text) = sanitize_extracted_ingredient(&raw_text) {
+                    lines.push(text);
+                }
             }
         }
     }
@@ -1813,6 +1815,58 @@ fn extract_dotdash_meredith_ingredients(document: &Html) -> Option<String> {
     } else {
         Some(lines.join("\n"))
     }
+}
+
+/// Get the visible text of a Dotdash Meredith ingredient list-item, working
+/// around a CMS quirk: when an ingredient like "1 baguette" has no real unit,
+/// the page renders both `data-ingredient-unit` and `data-ingredient-name`
+/// spans with identical text ("1 baguette baguette"). When that pattern shows
+/// up, drop the duplicated word once.
+fn dotdash_ingredient_item_text(li: &ElementRef<'_>) -> String {
+    let raw_text = li.text().collect::<String>();
+    let mut result = raw_text.split_whitespace().collect::<Vec<_>>().join(" ");
+
+    let unit_selector = match Selector::parse("[data-ingredient-unit]") {
+        Ok(s) => s,
+        Err(_) => return result,
+    };
+    let name_selector = match Selector::parse("[data-ingredient-name]") {
+        Ok(s) => s,
+        Err(_) => return result,
+    };
+
+    let unit_texts: Vec<String> = li
+        .select(&unit_selector)
+        .map(|el| {
+            el.text()
+                .collect::<String>()
+                .split_whitespace()
+                .collect::<Vec<_>>()
+                .join(" ")
+        })
+        .filter(|s| !s.is_empty())
+        .collect();
+    let name_texts: Vec<String> = li
+        .select(&name_selector)
+        .map(|el| {
+            el.text()
+                .collect::<String>()
+                .split_whitespace()
+                .collect::<Vec<_>>()
+                .join(" ")
+        })
+        .filter(|s| !s.is_empty())
+        .collect();
+
+    for word in &unit_texts {
+        if name_texts.iter().any(|n| n == word) {
+            let dup = format!("{} {}", word, word);
+            if let Some(pos) = result.find(&dup) {
+                result.replace_range(pos..pos + dup.len(), word);
+            }
+        }
+    }
+    result
 }
 
 /// Extract WPRM ingredients with group headers (e.g. "Meatballs:", "Broth:").
@@ -2650,6 +2704,44 @@ mod tests {
         assert!(result.instructions.contains("Whisk eggs, flour, and milk"));
         assert!(result.instructions.contains("For the Gravy:"));
         assert!(result.instructions.contains("Slice into wedges"));
+    }
+
+    #[test]
+    fn test_html_fallback_seriouseats_dedupes_unit_name_quirk() {
+        // Dotdash Meredith CMS quirk: when an ingredient like "1 baguette"
+        // has no real unit, the page renders both `data-ingredient-unit` and
+        // `data-ingredient-name` spans with the same word, producing
+        // "1 baguette baguette". Strip the duplicate.
+        let html = r#"
+            <!doctype html>
+            <html>
+            <body>
+                <h1 class="heading__title">Crusty Bread</h1>
+                <div class="comp structured-ingredients">
+                    <ul class="structured-ingredients__list">
+                        <li class="structured-ingredients__list-item">
+                            <p>
+                                <span data-ingredient-quantity="true">1</span>
+                                <span data-ingredient-unit="true">baguette</span>
+                                <span data-ingredient-name="true">baguette</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="comp structured-project__steps">
+                    <ol>
+                        <li class="comp mntl-sc-block-group--LI">
+                            <p class="comp mntl-sc-block-html">Slice the baguette and serve.</p>
+                        </li>
+                    </ol>
+                </div>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://www.seriouseats.com/baguette").unwrap();
+        let ingredient_lines: Vec<&str> = result.ingredients.lines().collect();
+        assert_eq!(ingredient_lines, vec!["1 baguette"]);
     }
 
     #[test]
