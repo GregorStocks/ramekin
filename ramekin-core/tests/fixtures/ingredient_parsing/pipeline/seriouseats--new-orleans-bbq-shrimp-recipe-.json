@@ -1,0 +1,211 @@
+{
+  "source": "seriouseats",
+  "recipe_slug": "new-orleans-bbq-shrimp-recipe-",
+  "ingredients": [
+    {
+      "raw": "24 tablespoons (3 sticks; 340 g) cold unsalted butter, cut into 1/2-inch cubes, divided",
+      "expected": {
+        "item": "cold unsalted butter, cut into 1/2-inch cubes",
+        "measurements": [
+          {
+            "amount": "24",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "3",
+            "unit": "stick"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
+          }
+        ],
+        "note": "divided",
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "1 1/2 pounds jumbo (16/20) shrimp (preferably Gulf), head-on and unpeeled (see notes)",
+      "expected": {
+        "item": "jumbo shrimp (preferably Gulf)",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "0.8",
+            "unit": null
+          },
+          {
+            "amount": "680",
+            "unit": "g"
+          }
+        ],
+        "note": "head-on and unpeeled (see notes)",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1/2 cup Worcestershire sauce",
+      "expected": {
+        "item": "Worcestershire sauce",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "cup"
+          },
+          {
+            "amount": "138",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "2 tablespoons fresh lemon juice",
+      "expected": {
+        "item": "fresh lemon juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1/4 cup dry white wine",
+      "expected": {
+        "item": "dry white wine",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          },
+          {
+            "amount": "59",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 teaspoons ground black pepper",
+      "expected": {
+        "item": "ground black pepper",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 teaspoons fresh cracked black pepper",
+      "expected": {
+        "item": "fresh cracked black pepper",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "2 teaspoons Cajun seasoning mix, such as Tony Chachere's or Slap Ya Mama (see notes)",
+      "expected": {
+        "item": "Cajun seasoning mix, such as Tony Chachere's or Slap Ya Mama (see notes)",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "Pinch smoked paprika",
+      "expected": {
+        "item": "smoked paprika",
+        "measurements": [
+          {
+            "amount": null,
+            "unit": "pinch"
+          }
+        ],
+        "note": null,
+        "category": "Spices & Seasonings"
+      }
+    },
+    {
+      "raw": "1 teaspoon minced garlic",
+      "expected": {
+        "item": "minced garlic",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "1 teaspoon chopped fresh rosemary plus 1 whole sprig",
+      "expected": {
+        "item": "chopped fresh rosemary",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": "tsp"
+          }
+        ],
+        "note": "plus 1 whole sprig",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "A few dashes of Louisiana-style hot sauce, such as Crystal or Louisiana Red Hot, to taste",
+      "expected": {
+        "item": "A few dashes of Louisiana-style hot sauce, such as Crystal or Louisiana Red Hot",
+        "measurements": [],
+        "note": "to taste",
+        "category": "Condiments & Sauces"
+      }
+    },
+    {
+      "raw": "1 baguette baguette",
+      "expected": {
+        "item": "baguette baguette",
+        "measurements": [
+          {
+            "amount": "1",
+            "unit": null
+          }
+        ],
+        "note": null,
+        "category": "Bakery & Bread"
+      }
+    }
+  ]
+}

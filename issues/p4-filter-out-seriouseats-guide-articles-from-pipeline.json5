@@ -1,0 +1,36 @@
+{
+  "title": "Filter out Serious Eats guide articles (Article schema, no Recipe) \
+from the recipe pipeline",
+  "description": "Some Serious Eats URLs in `data/test-urls.json` are \
+editorial guides rather than recipes — for example \
+`https://www.seriouseats.com/food-lab-complete-guide-to-sous-vide-steak`. The \
+page's only JSON-LD entry is `@type: Article`, with no embedded Recipe schema \
+and no `structured-ingredients` or `structured-project__steps` markup, so even \
+the HTML fallback added in #485 (split-out p3 issue) cannot recover a recipe — \
+there is no recipe in the body to extract.\n\
+\n\
+Today these guide URLs fail `extract_recipe` with `Missing required field` and \
+silently drop out of snapshot generation. They were probably scraped into the \
+Paprika export by mistake (a user clipped a guide instead of a recipe).\n\
+\n\
+Fix shape:\n\
+\n\
+  - decide where to filter. Either drop guide-style URLs at \
+`generate_test_urls`/`refilter-test-urls` time (heuristic on URL slug, e.g. \
+`/food-lab-complete-guide-`, `/food-lab-`, or detect Article-only schema \
+during the fetch step), or surface them as a distinct, expected \
+snapshot-skipped category instead of a hard error.\n\
+  - audit `data/test-urls.json` for similar guide URLs and drop or annotate \
+them.\n\
+  - document the chosen approach in `doc/` so the next time someone wonders \
+why a Serious Eats URL doesn't produce a snapshot they have a clear answer.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "pipeline",
+    "extraction",
+  ],
+  "created_at": "2026-04-27T12:03:51-07:00",
+  "updated_at": "2026-04-27T12:03:51-07:00",
+}
