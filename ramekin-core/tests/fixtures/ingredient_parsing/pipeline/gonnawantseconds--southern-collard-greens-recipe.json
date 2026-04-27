@@ -101,11 +101,11 @@
     {
       "raw": "2-2 1/2 pounds fresh collard greens,  (washed and trimmed)",
       "expected": {
-        "item": "1/2 pounds fresh collard greens",
+        "item": "fresh collard greens",
         "measurements": [
           {
-            "amount": "2-2",
-            "unit": null
+            "amount": "2-2.5",
+            "unit": "lb"
           }
         ],
         "note": "washed and trimmed",

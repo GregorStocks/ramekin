@@ -3,31 +3,31 @@
 ## Overall
 
 - Total URLs: 5536
-- Completed: 5449 (98.4%)
-- Failed at fetch: 9 (0.2%)
+- Completed: 5457 (98.6%)
+- Failed at fetch: 1 (0.0%)
 - Failed at extract: 78 (1.4%)
 
 ## Extraction Methods
 
-- JSON-LD: 4269/5527 (77.2%)
-- Microdata: 537/5527 (9.7%)
-- Both: 0/5527 (0.0%)
-- Neither: 721/5527 (13.0%)
+- JSON-LD: 4276/5535 (77.3%)
+- Microdata: 537/5535 (9.7%)
+- Both: 0/5535 (0.0%)
+- Neither: 722/5535 (13.0%)
 
 ## Ingredient Parsing
 
-- Total ingredients: 60919
-- Volume-to-weight converted: 18126/42826 (42.3%)
-- Unknown ingredient (no density data): 15020
-- Already has weight: 9680
-- No volume unit (count-based): 17775
+- Total ingredients: 61011
+- Volume-to-weight converted: 18141/42904 (42.3%)
+- Unknown ingredient (no density data): 15047
+- Already has weight: 9716
+- No volume unit (count-based): 17786
 - Metric converted (oz→g): 2709
-- Metric converted (lb→g): 1825
+- Metric converted (lb→g): 1830
 
 ## AI Cache
 
-- Cache hits: 5437/5437 (100.0%)
-- API calls: 0/5437 (0.0%)
+- Cache hits: 5445/5445 (100.0%)
+- API calls: 0/5445 (0.0%)
 
 ## By Site
 
@@ -67,7 +67,7 @@
 | epicurious.com | 1 | 1 | 100.0% |
 | feedbin.com | 0 | 1 | 0.0% |
 | food.com | 24 | 27 | 88.9% |
-| food52.com | 0 | 1 | 0.0% |
+| food52.com | 1 | 1 | 100.0% |
 | foodandwine.com | 99 | 99 | 100.0% |
 | foodnetwork.com | 1 | 1 | 100.0% |
 | gimmesomeoven.com | 6 | 6 | 100.0% |
@@ -81,7 +81,7 @@
 | japanesecooking101.com | 106 | 106 | 100.0% |
 | jocooks.com | 77 | 77 | 100.0% |
 | joyfoodsunshine.com | 88 | 88 | 100.0% |
-| justonecookbook.com | 16 | 22 | 72.7% |
+| justonecookbook.com | 21 | 22 | 95.5% |
 | keviniscooking.com | 34 | 34 | 100.0% |
 | kingarthurbaking.com | 5 | 5 | 100.0% |
 | kiyafries.com | 1 | 1 | 100.0% |
@@ -104,7 +104,7 @@
 | recipetineats.com | 10 | 10 | 100.0% |
 | runningwithspoons.com | 1 | 1 | 100.0% |
 | sallysbakingaddiction.com | 34 | 34 | 100.0% |
-| seriouseats.com | 161 | 168 | 95.8% |
+| seriouseats.com | 162 | 168 | 96.4% |
 | simplyrecipes.com | 99 | 100 | 99.0% |
 | skinnytaste.com | 2 | 2 | 100.0% |
 | slenderkitchen.com | 55 | 55 | 100.0% |
@@ -122,7 +122,7 @@
 | themodernproper.com | 14 | 14 | 100.0% |
 | thepioneerwoman.com | 102 | 102 | 100.0% |
 | therecipecritic.com | 34 | 34 | 100.0% |
-| thespruceeats.com | 0 | 1 | 0.0% |
+| thespruceeats.com | 1 | 1 | 100.0% |
 | thestayathomechef.com | 12 | 12 | 100.0% |
 | thewoksoflife.com | 24 | 24 | 100.0% |
 | twopeasandtheirpod.com | 22 | 23 | 95.7% |
@@ -133,17 +133,9 @@
 
 ## Failed URLs by Error
 
-### Cached fetch error (9 URLs)
+### Cached fetch error (1 URLs)
 
-- https://food52.com/recipes/85546-pickle-sandwich-recipe
 - https://nomnompaleo.com/2017/08/15/6053
-- https://www.justonecookbook.com/furikake-chex-mix/
-- https://www.justonecookbook.com/japanese-egg-sandwich-tamago-sando/
-- https://www.justonecookbook.com/japanese-potato-salad/
-- https://www.justonecookbook.com/pizza-toast/
-- https://www.justonecookbook.com/wprm_print/japanese-milk-bread-shokupan
-- https://www.seriouseats.com/easy-creamy-one-pot-weeknight-salmon-chowder-recipe
-- https://www.thespruceeats.com/classic-french-aligot-recipe-1375727
 
 ### Missing required field: name (4 URLs)
 
