@@ -8,6 +8,7 @@ mod ingredient_tests;
 mod load_test;
 mod parse_html;
 mod pipeline;
+mod pipeline_cache_capture;
 mod pipeline_orchestrator;
 mod seed;
 mod title_normalization;
@@ -204,6 +205,19 @@ enum Commands {
     /// Clear HTML cache
     PipelineCacheClear {
         /// Cache directory (defaults to ~/.ramekin/pipeline-cache/html)
+        #[arg(long)]
+        cache_dir: Option<PathBuf>,
+    },
+    /// Run a localhost server that accepts bookmarklet-driven HTML captures
+    /// and writes them into the pipeline HTML cache (for bot-walled URLs).
+    PipelineCacheCapture {
+        /// Host to bind on
+        #[arg(long, default_value = "127.0.0.1")]
+        host: String,
+        /// Port to bind on
+        #[arg(long, default_value_t = pipeline_cache_capture::DEFAULT_PORT)]
+        port: u16,
+        /// Cache directory (defaults to ~/.ramekin/http-cache, matching the pipeline)
         #[arg(long)]
         cache_dir: Option<PathBuf>,
     },
@@ -430,6 +444,13 @@ async fn main() -> Result<()> {
             let cache_dir = cache_dir.unwrap_or_else(ramekin_core::http::DiskCache::default_dir);
             pipeline_orchestrator::clear_cache(&cache_dir)?;
         }
+        Commands::PipelineCacheCapture {
+            host,
+            port,
+            cache_dir,
+        } => {
+            pipeline_cache_capture::run(&host, port, cache_dir).await?;
+        }
         Commands::IngredientTestsGenerate {
             runs_dir,
             fixtures_dir,
@@ -560,6 +581,7 @@ fn command_slug(cmd: &Commands) -> &'static str {
         Commands::Pipeline { .. } => "pipeline",
         Commands::PipelineCacheStats { .. } => "pipeline-cache-stats",
         Commands::PipelineCacheClear { .. } => "pipeline-cache-clear",
+        Commands::PipelineCacheCapture { .. } => "pipeline-cache-capture",
         Commands::IngredientTestsGenerate { .. } => "ingredient-tests-generate",
         Commands::IngredientTestsUpdate { .. } => "ingredient-tests-update",
         Commands::IngredientTestsGeneratePaprika { .. } => "ingredient-tests-generate-paprika",
