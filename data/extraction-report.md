@@ -167,7 +167,7 @@
 - https://smittenkitchen.com/2010/04/make-your-own-creme-fraiche/
 - https://smittenkitchen.com/2012/10/how-to-make-your-own-pumpkin-puree/
 - https://smittenkitchen.com/2013/07/grilled-bacon-salad-with-arugula-and-balsamic/
-- https://smittenkitchen.com/2015/08/crispy-peach-cobbler/
+- https://smittenkitchen.com/2015/06/crispy-frizzled-artichokes/
 - https://smittenkitchen.com/2016/08/even-more-perfect-blueberry-muffins/
 - https://smittenkitchen.com/2020/04/how-i-stock-the-smitten-kitchen/
 - https://www.averiecooks.com/raw-vegan-donut-holes-5-minute-recipe/
