@@ -101,19 +101,11 @@
     {
       "raw": "3 cups&nbsp; vegetable broth (can swap for chicken broth or water)",
       "expected": {
-        "item": "vegetable broth",
+        "item": "vegetable broth (can swap for chicken broth or water)",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": null,
-            "unit": "can"
-          },
-          {
-            "amount": "747",
-            "unit": "g"
           }
         ],
         "note": null,

@@ -205,11 +205,15 @@
     {
       "raw": "1 tbsp fresh lemon juice  (about half of one lemon)",
       "expected": {
-        "item": "fresh lemon juice  (about half of one lemon)",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
         "note": null,

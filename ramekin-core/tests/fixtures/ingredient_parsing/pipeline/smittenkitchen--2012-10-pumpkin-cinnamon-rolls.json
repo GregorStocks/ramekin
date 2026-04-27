@@ -41,15 +41,11 @@
     {
       "raw": "2 1/4 teaspoons active dry or instant yeast (from 1 .25-ounce or 7 gram envelope yeast)",
       "expected": {
-        "item": "active dry or instant yeast",
+        "item": "active dry or instant yeast (from 1 .25-ounce or 7 gram envelope yeast)",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "7",
-            "unit": "g"
           }
         ],
         "note": null,

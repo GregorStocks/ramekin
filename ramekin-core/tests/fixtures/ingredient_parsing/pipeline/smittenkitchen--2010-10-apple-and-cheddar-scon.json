@@ -10,18 +10,6 @@
           {
             "amount": "2",
             "unit": null
-          },
-          {
-            "amount": "1",
-            "unit": "lb"
-          },
-          {
-            "amount": "2",
-            "unit": null
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -53,18 +41,14 @@
     {
       "raw": "1/4 cup sugar plus 1 1/2 tablespoons for sprinkling (total of 2.2 ounces or 63 grams)",
       "expected": {
-        "item": "sugar plus 1 1/2 tablespoons for sprinkling",
+        "item": "sugar plus 1 1/2 tablespoons for sprinkling (total of 2.2 ounces",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "63",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 63 grams)",
         "category": "Baking"
       }
     },

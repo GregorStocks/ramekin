@@ -37,19 +37,11 @@
     {
       "raw": "1 1/4 cups flour (I use 1/2 cup wheat, 3/4 cup all-purpose flour)",
       "expected": {
-        "item": "flour",
+        "item": "flour (I use 1/2 cup wheat, 3/4 cup all-purpose flour)",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
-          },
-          {
-            "amount": "0.75",
-            "unit": "cup"
-          },
-          {
-            "amount": "156",
-            "unit": "g"
           }
         ],
         "note": null,

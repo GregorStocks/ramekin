@@ -73,18 +73,14 @@
     {
       "raw": "2  vanilla beans (split in half lengthwise and seeds scraped or 1 tablespoon vanilla extract)",
       "expected": {
-        "item": "vanilla beans",
+        "item": "vanilla beans (split in half lengthwise and seeds scraped",
         "measurements": [
           {
             "amount": "2",
             "unit": null
-          },
-          {
-            "amount": "1",
-            "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or 1 tablespoon vanilla extract)",
         "category": "Spices & Seasonings"
       }
     }

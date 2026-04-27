@@ -19,14 +19,6 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "14",
-            "unit": "oz"
-          },
-          {
-            "amount": "397",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -36,19 +28,11 @@
     {
       "raw": "1 cup half-and-half (or, 1/2 cup heavy cream + 1/2 cup milk)",
       "expected": {
-        "item": "half-and-half",
+        "item": "half-and-half (or, 1/2 cup heavy cream + 1/2 cup milk)",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "0.5",
-            "unit": "cup"
-          },
-          {
-            "amount": "242",
-            "unit": "g"
           }
         ],
         "note": null,

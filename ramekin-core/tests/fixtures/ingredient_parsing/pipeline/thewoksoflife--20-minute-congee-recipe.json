@@ -91,23 +91,15 @@
     {
       "raw": "7 cups water ((or chicken broth; 1.65 liters))",
       "expected": {
-        "item": "water",
+        "item": "water (or chicken broth; 1.65 liters)",
         "measurements": [
           {
             "amount": "7",
             "unit": "cup"
-          },
-          {
-            "amount": "1.65",
-            "unit": "l"
-          },
-          {
-            "amount": "1659",
-            "unit": "g"
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Canned Goods"
       }
     },
     {

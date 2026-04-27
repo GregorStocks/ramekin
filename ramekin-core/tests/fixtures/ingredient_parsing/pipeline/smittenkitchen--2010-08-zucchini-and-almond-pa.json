@@ -12,10 +12,6 @@
             "unit": "lb"
           },
           {
-            "amount": "2 to 3",
-            "unit": null
-          },
-          {
             "amount": "680",
             "unit": "g"
           }
@@ -63,18 +59,14 @@
     {
       "raw": "1/2 cup slivered almonds, well-toasted and cooled (300 degree oven for 7 to 10 minutes, tossing occasionally, usually works)",
       "expected": {
-        "item": "slivered almonds",
+        "item": "slivered almonds, well-toasted and cooled",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "300",
-            "unit": null
           }
         ],
-        "note": "well-toasted and cooled",
+        "note": "300 degree oven for 7 to 10 minutes, tossing occasionally, usually works",
         "category": "Nuts & Dried Fruit"
       }
     },

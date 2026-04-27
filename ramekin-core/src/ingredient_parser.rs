@@ -801,6 +801,34 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             } else {
                 format!("{} {}", before, after)
             };
+        } else if looks_like_ignorable_parenthetical_hint(paren_content) {
+            // Numeric parentheticals that fail strict alternate-measurement
+            // parsing are usually yield, size, or temperature hints.
+            let trimmed_content = paren_content
+                .trim()
+                .trim_start_matches(',')
+                .trim()
+                .to_string();
+            if note.is_none() && trimmed_content.to_lowercase().contains("degree") {
+                note = Some(trimmed_content);
+            }
+            let before = remaining
+                .get(..start)
+                .unwrap_or("")
+                .trim_end()
+                .trim_end_matches(',')
+                .trim_end();
+            let after = remaining
+                .get(start + end_offset + 1..)
+                .unwrap_or("")
+                .trim_start();
+            remaining = if before.is_empty() {
+                after.to_string()
+            } else if after.is_empty() {
+                before.to_string()
+            } else {
+                format!("{} {}", before, after)
+            };
         } else {
             // Not a measurement or prep note, leave it and stop looking for more
             break;
@@ -1338,9 +1366,10 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     }
 }
 
-/// Try to parse a string as a measurement (amount + optional unit).
-/// Preserves "each" qualifier as part of the unit (e.g., "8 ounces each" -> unit: "ounces each")
-fn try_parse_measurement(s: &str) -> Option<Measurement> {
+fn try_parse_measurement_with_options(
+    s: &str,
+    allow_custom_count_units: bool,
+) -> Option<Measurement> {
     let s = s.trim();
     let (mut amount, after_amount) = extract_amount(s);
     let (mut unit, mut remaining) = extract_unit(&after_amount);
@@ -1357,7 +1386,11 @@ fn try_parse_measurement(s: &str) -> Option<Measurement> {
         }
     }
 
-    if unit.is_none() && amount.is_some() && looks_like_parenthetical_count_unit(remaining.trim()) {
+    if allow_custom_count_units
+        && unit.is_none()
+        && amount.is_some()
+        && looks_like_parenthetical_count_unit(remaining.trim())
+    {
         unit = Some(remaining.trim().to_string());
         remaining = String::new();
     }
@@ -1389,7 +1422,7 @@ fn parse_parenthetical_measurements(content: &str) -> Vec<Measurement> {
         || content_lower.trim().ends_with(",each");
 
     // First, normalize " or " to ";" for splitting (but not "or" within words)
-    let normalized = content
+    let normalized = normalize_parenthetical_measurement_separators(content)
         .replace(" or ", ";")
         .replace(" Or ", ";")
         .replace(" OR ", ";");
@@ -1401,27 +1434,114 @@ fn parse_parenthetical_measurements(content: &str) -> Vec<Measurement> {
             continue;
         }
 
-        // Strip common qualifiers (but not "each" - handled separately)
-        let cleaned = strip_measurement_qualifiers(part);
-
-        if let Some(mut m) = try_parse_measurement(&cleaned) {
-            // Only add if we got a meaningful measurement (has amount or recognized unit)
-            if m.amount.is_some() || m.unit.is_some() {
-                // If the entire parenthetical had trailing "each", apply it to all measurements
-                // unless this measurement already has "each"
-                if has_trailing_each {
-                    if let Some(ref unit) = m.unit {
-                        if !unit.ends_with(" each") {
-                            m.unit = Some(format!("{} each", unit));
-                        }
+        if let Some(mut m) = try_parse_parenthetical_measurement(part) {
+            // If the entire parenthetical had trailing "each", apply it to all measurements
+            // unless this measurement already has "each"
+            if has_trailing_each {
+                if let Some(ref unit) = m.unit {
+                    if !unit.ends_with(" each") {
+                        m.unit = Some(format!("{} each", unit));
                     }
                 }
-                results.push(m);
             }
+            results.push(m);
+        } else {
+            return Vec::new();
         }
     }
 
     results
+}
+
+fn normalize_parenthetical_measurement_separators(content: &str) -> String {
+    let chars: Vec<char> = content.chars().collect();
+    let mut normalized = String::with_capacity(content.len() + 4);
+    let mut i = 0;
+
+    while i < chars.len() {
+        if chars[i] != '/' {
+            normalized.push(chars[i]);
+            i += 1;
+            continue;
+        }
+
+        let prev = chars[..i]
+            .iter()
+            .rev()
+            .find(|c| !c.is_whitespace())
+            .copied();
+        let next = chars[i + 1..].iter().find(|c| !c.is_whitespace()).copied();
+
+        let is_measurement_separator = prev.is_some_and(|c| c.is_ascii_alphabetic() || c == '.')
+            && next.is_some_and(|c| c.is_ascii_digit());
+
+        if is_measurement_separator {
+            while normalized.ends_with(' ') {
+                normalized.pop();
+            }
+            normalized.push(';');
+            normalized.push(' ');
+            i += 1;
+            while i < chars.len() && chars[i].is_whitespace() {
+                i += 1;
+            }
+            continue;
+        }
+
+        normalized.push('/');
+        i += 1;
+    }
+
+    normalized
+}
+
+fn try_parse_parenthetical_measurement(s: &str) -> Option<Measurement> {
+    let cleaned = strip_measurement_qualifiers(s);
+    let measurement = try_parse_measurement_with_options(&cleaned, false)?;
+    let (amount, unit) = match (measurement.amount, measurement.unit) {
+        (Some(amount), Some(unit)) => (amount, unit),
+        _ => return None,
+    };
+
+    let normalized_unit = normalize_unit(&unit);
+    let normalized_base = normalized_unit
+        .strip_suffix(" each")
+        .unwrap_or(&normalized_unit);
+    if normalized_base == "inch" {
+        return None;
+    }
+
+    if looks_like_bare_parenthetical_size_unit(&cleaned, normalized_base) {
+        return None;
+    }
+
+    Some(Measurement {
+        amount: Some(amount),
+        unit: Some(unit),
+    })
+}
+
+fn looks_like_bare_parenthetical_size_unit(s: &str, normalized_unit: &str) -> bool {
+    const BARE_PARENTHEICAL_SIZE_UNITS: &[&str] = &["oz", "lb", "inch", "fl oz"];
+
+    if !BARE_PARENTHEICAL_SIZE_UNITS.contains(&normalized_unit) {
+        return false;
+    }
+
+    let trimmed = s.trim().trim_end_matches('.').to_lowercase();
+    let words: Vec<&str> = trimmed.split_whitespace().collect();
+    if words.len() != 1 {
+        return false;
+    }
+
+    let Some((amount_part, unit_part)) = words[0].split_once('-') else {
+        return false;
+    };
+    if !is_amount_like(amount_part) {
+        return false;
+    }
+
+    normalize_unit(unit_part.trim_end_matches('.')) == normalized_unit
 }
 
 fn looks_like_parenthetical_count_unit(s: &str) -> bool {
@@ -1485,6 +1605,19 @@ fn looks_like_parenthetical_count_unit(s: &str) -> bool {
     }
 
     has_noun
+}
+
+fn looks_like_ignorable_parenthetical_hint(s: &str) -> bool {
+    let trimmed = s.trim().trim_start_matches(',').trim();
+    if trimmed.is_empty() {
+        return false;
+    }
+
+    let lower = trimmed.to_lowercase();
+    trimmed.chars().next().is_some_and(|c| c.is_ascii_digit())
+        || lower.starts_with("about ")
+        || lower.starts_with("approx ")
+        || lower.starts_with("approximately ")
 }
 
 /// Strip common qualifiers from measurement strings, but preserve "each" as a unit suffix.
@@ -1598,27 +1731,46 @@ fn extract_amount(s: &str) -> (Option<String>, String) {
         }
 
         // Check for range: "1 to 4" or "6 to 8"
-        if words.len() >= 3
-            && words[1].eq_ignore_ascii_case("to")
-            && is_amount_like(words[0])
-            && is_amount_like(words[2])
-        {
-            let amount = format!("{} to {}", words[0], words[2]);
-            // Find where the third word ends
-            let remaining_after_range = words[3..].join(" ");
-            return (Some(amount), remaining_after_range);
+        if words.len() >= 3 && words[1].eq_ignore_ascii_case("to") && is_amount_like(words[0]) {
+            if is_amount_like(words[2]) {
+                let amount = format!("{} to {}", words[0], words[2]);
+                let remaining_after_range = words[3..].join(" ");
+                return (Some(amount), remaining_after_range);
+            }
+            if let Some((attached_amount, attached_unit)) =
+                split_leading_attached_unit_token(words[2])
+            {
+                let amount = format!("{} to {}", words[0], attached_amount);
+                let trailing = words[3..].join(" ");
+                let remaining = if trailing.is_empty() {
+                    attached_unit.to_string()
+                } else {
+                    format!("{} {}", attached_unit, trailing)
+                };
+                return (Some(amount), remaining);
+            }
         }
 
         // Check for range with "or": "3 or 4" (meaning 3-4, not alternatives)
         // This handles "3 or 4 drops of Tabasco" → amount="3 or 4", unit="drops"
-        if words.len() >= 3
-            && words[1].eq_ignore_ascii_case("or")
-            && is_amount_like(words[0])
-            && is_amount_like(words[2])
-        {
-            let amount = format!("{} or {}", words[0], words[2]);
-            let remaining_after_range = words[3..].join(" ");
-            return (Some(amount), remaining_after_range);
+        if words.len() >= 3 && words[1].eq_ignore_ascii_case("or") && is_amount_like(words[0]) {
+            if is_amount_like(words[2]) {
+                let amount = format!("{} or {}", words[0], words[2]);
+                let remaining_after_range = words[3..].join(" ");
+                return (Some(amount), remaining_after_range);
+            }
+            if let Some((attached_amount, attached_unit)) =
+                split_leading_attached_unit_token(words[2])
+            {
+                let amount = format!("{} or {}", words[0], attached_amount);
+                let trailing = words[3..].join(" ");
+                let remaining = if trailing.is_empty() {
+                    attached_unit.to_string()
+                } else {
+                    format!("{} {}", attached_unit, trailing)
+                };
+                return (Some(amount), remaining);
+            }
         }
 
         // Check for hyphenated range: "6-8"
@@ -1711,6 +1863,41 @@ fn split_hyphenated_mixed_number(s: &str) -> Option<(&str, &str)> {
     let (whole, fraction) = s.split_once('-')?;
     if whole.chars().all(|c| c.is_ascii_digit()) && is_fraction(fraction) {
         Some((whole, fraction))
+    } else {
+        None
+    }
+}
+
+fn split_leading_attached_unit_token(s: &str) -> Option<(&str, &str)> {
+    let mut split_idx = 0;
+    let mut has_digit = false;
+    let mut has_dot = false;
+
+    for (i, c) in s.char_indices() {
+        if c.is_ascii_digit() {
+            has_digit = true;
+            split_idx = i + 1;
+        } else if c == '.' && has_digit && !has_dot {
+            has_dot = true;
+            split_idx = i + 1;
+        } else {
+            break;
+        }
+    }
+
+    if !has_digit || split_idx == 0 || split_idx >= s.len() {
+        return None;
+    }
+
+    let amount = s.get(..split_idx)?;
+    let unit = s.get(split_idx..)?.trim_end_matches('.');
+    if unit.is_empty() {
+        return None;
+    }
+
+    let normalized_unit = normalize_unit(unit);
+    if ATTACHED_METRIC_UNITS.contains(&normalized_unit.as_str()) {
+        Some((amount, unit))
     } else {
         None
     }
@@ -3127,14 +3314,68 @@ mod tests {
     }
 
     #[test]
-    fn test_parenthetical_equivalence_count_keeps_item_name_as_custom_unit() {
+    fn test_parenthetical_yield_hint_does_not_create_alt_measurement() {
         let result = parse_ingredient("1/4 cup freshly squeezed lemon juice (2 lemons)");
         assert_eq!(result.item, "freshly squeezed lemon juice");
-        assert_eq!(result.measurements.len(), 2);
+        assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("1/4".to_string()));
         assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
-        assert_eq!(result.measurements[1].amount, Some("2".to_string()));
-        assert_eq!(result.measurements[1].unit, Some("lemons".to_string()));
+    }
+
+    #[test]
+    fn test_parenthetical_slash_separated_weight_alternates_are_preserved() {
+        let result = parse_ingredient("1 cup (5 ounces/142 grams) all-purpose flour");
+        assert_eq!(result.item, "all-purpose flour");
+        assert_eq!(result.measurements.len(), 3);
+        assert_eq!(result.measurements[0].amount, Some("1".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+        assert_eq!(result.measurements[1].amount, Some("5".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("oz".to_string()));
+        assert_eq!(result.measurements[2].amount, Some("142".to_string()));
+        assert_eq!(result.measurements[2].unit, Some("g".to_string()));
+    }
+
+    #[test]
+    fn test_parenthetical_compact_metric_range_is_preserved() {
+        let result = parse_ingredient("1 to 2 tablespoons (15 to 30g) unsalted butter");
+        assert_eq!(result.item, "unsalted butter");
+        assert_eq!(result.measurements.len(), 2);
+        assert_eq!(result.measurements[0].amount, Some("1 to 2".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("tbsp".to_string()));
+        assert_eq!(result.measurements[1].amount, Some("15 to 30".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("g".to_string()));
+    }
+
+    #[test]
+    fn test_parenthetical_size_hint_is_stripped_from_measurements() {
+        let result = parse_ingredient("12 (6-inch) flour tortillas, warmed");
+        assert_eq!(result.item, "flour tortillas, warmed");
+        assert_eq!(result.note, None);
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("12".to_string()));
+        assert_eq!(result.measurements[0].unit, None);
+    }
+
+    #[test]
+    fn test_parenthetical_package_size_is_not_treated_as_recipe_amount() {
+        let result = parse_ingredient(
+            "1/2 cup cooked black beans from one (15-ounce) can, drained and rinsed",
+        );
+        assert_eq!(result.item, "cooked black beans from one can");
+        assert_eq!(result.note, Some("drained and rinsed".to_string()));
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("1/2".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+    }
+
+    #[test]
+    fn test_parenthetical_temperature_hint_becomes_note() {
+        let result = parse_ingredient("1 3/4 cups warm water (about 100 degrees)");
+        assert_eq!(result.item, "warm water");
+        assert_eq!(result.note, Some("about 100 degrees".to_string()));
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("1 3/4".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
     }
 
     #[test]

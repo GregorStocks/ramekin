@@ -95,19 +95,11 @@
     {
       "raw": "1 Persian cucumber (or ½ Japanese cucumber; 3 oz, 90 g)",
       "expected": {
-        "item": "Persian cucumber",
+        "item": "Persian cucumber (or 1/2 Japanese cucumber; 3 oz, 90 g)",
         "measurements": [
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "3",
-            "unit": "oz"
-          },
-          {
-            "amount": "90",
-            "unit": "g"
           }
         ],
         "note": null,

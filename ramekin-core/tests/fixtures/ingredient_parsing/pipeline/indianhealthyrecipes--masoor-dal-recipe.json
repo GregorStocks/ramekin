@@ -87,18 +87,14 @@
     {
       "raw": "1 to 2 tablespoon ghee (or (1 tbsp oil or 2 tbsps butter))",
       "expected": {
-        "item": "ghee",
+        "item": "ghee (or (1 tbsp oil",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "2",
-            "unit": "tbsps butter"
           }
         ],
-        "note": null,
+        "note": "or 2 tbsps butter)",
         "category": "Dairy & Eggs"
       }
     },

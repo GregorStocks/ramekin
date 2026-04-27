@@ -84,20 +84,7 @@
       "raw": "Seasonings: 1 bay leaf (6 black peppercorns, 6 allspice berries, 4 cloves)",
       "expected": {
         "item": "Seasonings: 1 bay leaf",
-        "measurements": [
-          {
-            "amount": "6",
-            "unit": "black peppercorns"
-          },
-          {
-            "amount": "6",
-            "unit": "allspice berries"
-          },
-          {
-            "amount": "4",
-            "unit": "clove"
-          }
-        ],
+        "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"
       }

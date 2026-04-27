@@ -19,15 +19,11 @@
     {
       "raw": "2 sheets nori roasted seaweed (large, cut into halves)",
       "expected": {
-        "item": "sheets nori roasted seaweed",
+        "item": "sheets nori roasted seaweed (large, cut into halves)",
         "measurements": [
           {
             "amount": "2",
             "unit": null
-          },
-          {
-            "amount": null,
-            "unit": "large"
           }
         ],
         "note": null,

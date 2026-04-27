@@ -33,15 +33,11 @@
     {
       "raw": "2 strips of lemon or orange zest (can use a peeler to get a larger piece)",
       "expected": {
-        "item": "strips of lemon or orange zest",
+        "item": "strips of lemon or orange zest (can use a peeler to get a larger piece)",
         "measurements": [
           {
             "amount": "2",
             "unit": null
-          },
-          {
-            "amount": null,
-            "unit": "can"
           }
         ],
         "note": null,
@@ -116,14 +112,6 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "12",
-            "unit": "oz"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
           }
         ],
         "note": null,

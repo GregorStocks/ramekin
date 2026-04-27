@@ -33,15 +33,11 @@
     {
       "raw": "1/4 small red onion ((cut into brunoise,1/8\" cubes))",
       "expected": {
-        "item": "red onion",
+        "item": "red onion (cut into brunoise,1/8\" cubes)",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "small"
-          },
-          {
-            "amount": "1",
-            "unit": null
           }
         ],
         "note": null,
@@ -51,15 +47,11 @@
     {
       "raw": "1/4 small jicama ((cut into brunoise, 1/8\" cubes))",
       "expected": {
-        "item": "jicama",
+        "item": "jicama (cut into brunoise, 1/8\" cubes)",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "small"
-          },
-          {
-            "amount": "1",
-            "unit": null
           }
         ],
         "note": null,

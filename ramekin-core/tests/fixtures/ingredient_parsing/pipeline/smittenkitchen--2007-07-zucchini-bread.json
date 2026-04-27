@@ -155,15 +155,11 @@
     {
       "raw": "2 cups grated, packed zucchini, not wrung out (from about 10 ounces or 2 smallish zucchini)",
       "expected": {
-        "item": "grated, packed zucchini, not wrung out",
+        "item": "grated, packed zucchini, not wrung out (from about 10 ounces or 2 smallish zucchini)",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "2",
-            "unit": "smallish zucchini"
           }
         ],
         "note": null,

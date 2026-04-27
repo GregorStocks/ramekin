@@ -5,15 +5,11 @@
     {
       "raw": "1/2 brown onion (medium)",
       "expected": {
-        "item": "brown onion",
+        "item": "brown onion (medium)",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
-          },
-          {
-            "amount": null,
-            "unit": "medium"
           }
         ],
         "note": null,

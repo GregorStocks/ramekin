@@ -87,22 +87,14 @@
     {
       "raw": "1 large or two small sweet bell peppers, diced (red or yellow, about 1/2 pound)",
       "expected": {
-        "item": "or two small sweet bell peppers",
+        "item": "or two small sweet bell peppers, diced (red or yellow, about 1/2 pound)",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
-          },
-          {
-            "amount": "0.5",
-            "unit": "lb"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
-        "note": "diced",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -114,14 +106,6 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "28",
-            "unit": "oz"
-          },
-          {
-            "amount": "794",
-            "unit": "g"
           }
         ],
         "note": null,

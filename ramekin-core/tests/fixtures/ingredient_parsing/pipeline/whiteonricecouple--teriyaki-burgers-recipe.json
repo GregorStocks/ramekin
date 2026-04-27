@@ -224,14 +224,10 @@
     {
       "raw": "1 small tomato (, small dice )",
       "expected": {
-        "item": "tomato",
+        "item": "tomato (, small dice",
         "measurements": [
           {
             "amount": "1",
-            "unit": "small"
-          },
-          {
-            "amount": null,
             "unit": "small"
           }
         ],

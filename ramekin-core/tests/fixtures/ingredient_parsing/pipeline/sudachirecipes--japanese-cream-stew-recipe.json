@@ -190,15 +190,11 @@
     {
       "raw": "150 g carrots (medium sized)",
       "expected": {
-        "item": "carrots",
+        "item": "carrots (medium sized)",
         "measurements": [
           {
             "amount": "150",
             "unit": "g"
-          },
-          {
-            "amount": null,
-            "unit": "medium"
           }
         ],
         "note": null,

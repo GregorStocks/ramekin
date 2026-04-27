@@ -229,15 +229,11 @@
     {
       "raw": "1 pinch salt (large)",
       "expected": {
-        "item": "salt, presumably Diamond",
+        "item": "salt (large)",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
-          },
-          {
-            "amount": null,
-            "unit": "large"
           }
         ],
         "note": null,

@@ -23,15 +23,11 @@
     {
       "raw": "1  large sweet onion (cut into 1/2\" pieces, about 1 cup's worth)",
       "expected": {
-        "item": "sweet onion",
+        "item": "sweet onion (cut into 1/2\" pieces, about 1 cup's worth)",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
-          },
-          {
-            "amount": "1",
-            "unit": null
           }
         ],
         "note": null,
@@ -41,15 +37,11 @@
     {
       "raw": "3  medium russet potatoes (cut into 1/2\" pieces, about 4 cup's worth)",
       "expected": {
-        "item": "russet potatoes",
+        "item": "russet potatoes (cut into 1/2\" pieces, about 4 cup's worth)",
         "measurements": [
           {
             "amount": "3",
             "unit": "medium"
-          },
-          {
-            "amount": "4",
-            "unit": null
           }
         ],
         "note": null,

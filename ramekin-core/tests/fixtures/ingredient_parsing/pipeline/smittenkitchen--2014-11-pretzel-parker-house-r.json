@@ -119,15 +119,11 @@
     {
       "raw": "1 1/4 teaspoons (half a 1/4-ounce or 7-gram packet) active dry yeast",
       "expected": {
-        "item": "active dry yeast",
+        "item": "(half a 1/4-ounce or 7-gram packet) active dry yeast",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "7",
-            "unit": "g"
           }
         ],
         "note": null,

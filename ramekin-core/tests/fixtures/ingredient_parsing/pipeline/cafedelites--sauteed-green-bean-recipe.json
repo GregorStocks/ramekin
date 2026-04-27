@@ -41,14 +41,10 @@
     {
       "raw": "1 pinch coarse salt (pinch of salt)",
       "expected": {
-        "item": "coarse salt",
+        "item": "coarse salt (pinch of salt)",
         "measurements": [
           {
             "amount": "1",
-            "unit": "pinch"
-          },
-          {
-            "amount": null,
             "unit": "pinch"
           }
         ],

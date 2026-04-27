@@ -23,15 +23,11 @@
     {
       "raw": "1 cup plain, full-fat yogurt (I use Greek; with Greek, 2% worked too)",
       "expected": {
-        "item": "plain, full-fat yogurt",
+        "item": "plain, full-fat yogurt (I use Greek; with Greek, 2% worked too)",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "2",
-            "unit": null
           }
         ],
         "note": null,

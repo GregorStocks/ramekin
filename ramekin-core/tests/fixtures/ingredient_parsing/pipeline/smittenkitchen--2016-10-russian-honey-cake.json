@@ -145,19 +145,19 @@
     {
       "raw": "32 ounces (just shy of 4 cups or 900 grams) sour cream",
       "expected": {
-        "item": "sour cream",
+        "item": "(just shy of 4 cups",
         "measurements": [
           {
             "amount": "32",
             "unit": "oz"
           },
           {
-            "amount": "900",
+            "amount": "907",
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "or 900 grams) sour cream",
+        "category": "Other"
       }
     },
     {

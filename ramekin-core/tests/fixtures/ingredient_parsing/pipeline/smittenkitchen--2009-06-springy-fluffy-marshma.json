@@ -114,19 +114,11 @@
     {
       "raw": "1 tablespoon vanilla (alternately: 1/2 of a scraped vanilla bean, 2 teaspoons almond or mint extract or maybe even some food coloring for tinting)",
       "expected": {
-        "item": "vanilla",
+        "item": "vanilla (alternately: 1/2 of a scraped vanilla bean, 2 teaspoons almond or mint extract or maybe even some food coloring for tinting)",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "2",
-            "unit": "tsp"
-          },
-          {
-            "amount": "13",
-            "unit": "g"
           }
         ],
         "note": null,

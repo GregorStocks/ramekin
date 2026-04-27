@@ -83,19 +83,11 @@
     {
       "raw": "1  small onion (cut into ½-inch pieces, about ⅔ cup)",
       "expected": {
-        "item": "onion",
+        "item": "onion (cut into 1/2-inch pieces, about 2/3 cup)",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
-          },
-          {
-            "amount": "0.67",
-            "unit": "cup"
-          },
-          {
-            "amount": "92",
-            "unit": "g"
           }
         ],
         "note": null,

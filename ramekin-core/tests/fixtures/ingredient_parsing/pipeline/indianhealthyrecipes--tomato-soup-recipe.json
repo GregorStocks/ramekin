@@ -65,15 +65,11 @@
     {
       "raw": "2 large garlic (cloves)",
       "expected": {
-        "item": "garlic",
+        "item": "garlic (cloves)",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
-          },
-          {
-            "amount": null,
-            "unit": "clove"
           }
         ],
         "note": null,
@@ -133,19 +129,11 @@
     {
       "raw": "¾  tablespoon corn starch ((corn flour or arrowroot powder or 1 small boiled potato))",
       "expected": {
-        "item": "corn starch",
+        "item": "corn starch (corn flour or arrowroot powder or 1 small boiled potato)",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tbsp"
-          },
-          {
-            "amount": "1",
-            "unit": "small"
-          },
-          {
-            "amount": "6",
-            "unit": "g"
           }
         ],
         "note": null,

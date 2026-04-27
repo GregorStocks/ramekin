@@ -69,15 +69,11 @@
     {
       "raw": "1 cup unsweetened almond milk ((can use any milk of your choice))",
       "expected": {
-        "item": "unsweetened almond milk",
+        "item": "unsweetened almond milk (can use any milk of your choice)",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": null,
-            "unit": "can"
           }
         ],
         "note": null,

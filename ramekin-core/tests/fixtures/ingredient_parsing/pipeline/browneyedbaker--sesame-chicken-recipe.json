@@ -209,19 +209,15 @@
     {
       "raw": "1 teaspoon chili paste (can substitute a couple pinches of red pepper flakes)",
       "expected": {
-        "item": "chili paste",
+        "item": "chili paste (can substitute a couple pinches of red pepper flakes)",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": null,
-            "unit": "can"
           }
         ],
         "note": null,
-        "category": "Other"
+        "category": "Spices & Seasonings"
       }
     },
     {

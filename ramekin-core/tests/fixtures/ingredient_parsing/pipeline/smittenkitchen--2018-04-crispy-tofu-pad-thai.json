@@ -23,19 +23,11 @@
     {
       "raw": "5 ounces dried rice noodles (sticks), about 1/8-inch (3mm) wide",
       "expected": {
-        "item": "dried rice noodles, about 1/8-inch wide",
+        "item": "dried rice noodles (sticks), about 1/8-inch (3mm) wide",
         "measurements": [
           {
             "amount": "5",
             "unit": "oz"
-          },
-          {
-            "amount": null,
-            "unit": "stick"
-          },
-          {
-            "amount": "3",
-            "unit": "mm"
           },
           {
             "amount": "142",
@@ -156,10 +148,6 @@
           {
             "amount": "2",
             "unit": "handful"
-          },
-          {
-            "amount": "1",
-            "unit": "cup"
           }
         ],
         "note": "plus more for garnish",

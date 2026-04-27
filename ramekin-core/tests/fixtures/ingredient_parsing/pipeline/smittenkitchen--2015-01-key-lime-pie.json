@@ -211,7 +211,7 @@
     {
       "raw": "2/3 cup (155 ml) fresh lime juice (from about 1 dozen tiny key limes or 4 persian/regular limes)",
       "expected": {
-        "item": "fresh lime juice",
+        "item": "fresh lime juice (from about 1 dozen tiny key limes or 4 persian/regular limes)",
         "measurements": [
           {
             "amount": "0.67",
@@ -220,14 +220,6 @@
           {
             "amount": "155",
             "unit": "ml"
-          },
-          {
-            "amount": "4",
-            "unit": null
-          },
-          {
-            "amount": "161",
-            "unit": "g"
           }
         ],
         "note": null,

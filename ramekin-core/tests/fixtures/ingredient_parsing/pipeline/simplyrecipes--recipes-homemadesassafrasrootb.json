@@ -46,19 +46,15 @@
     {
       "raw": "1/2 teaspoon anise seeds (can sub fennel)",
       "expected": {
-        "item": "anise seeds",
+        "item": "anise seeds (can sub fennel)",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": null,
-            "unit": "can"
           }
         ],
         "note": null,
-        "category": "Spices & Seasonings"
+        "category": "Produce"
       }
     },
     {

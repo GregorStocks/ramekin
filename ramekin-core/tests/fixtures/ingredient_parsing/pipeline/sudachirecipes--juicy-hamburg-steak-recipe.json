@@ -69,15 +69,11 @@
     {
       "raw": "200 g ground beef (or 50% beef and 50% pork, ~20% fat content recommended)",
       "expected": {
-        "item": "ground beef",
+        "item": "ground beef (or 50% beef and 50% pork, ~20% fat content recommended)",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
-          },
-          {
-            "amount": "20",
-            "unit": null
           }
         ],
         "note": null,
@@ -106,10 +102,6 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.8",
-            "unit": null
           },
           {
             "amount": "1.4",

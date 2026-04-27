@@ -32,19 +32,11 @@
     {
       "raw": "2 large sweet onions (such as Vidalia; about 1 lb.), quartered",
       "expected": {
-        "item": "sweet onions",
+        "item": "sweet onions (such as Vidalia; about 1 lb.)",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
-          },
-          {
-            "amount": "1",
-            "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "quartered",

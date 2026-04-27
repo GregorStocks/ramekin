@@ -109,10 +109,6 @@
           {
             "amount": "0.67",
             "unit": "cup"
-          },
-          {
-            "amount": "65",
-            "unit": null
           }
         ],
         "note": null,
@@ -317,15 +313,11 @@
     {
       "raw": "2 tablespoons dark rum (can be skipped or reduced)",
       "expected": {
-        "item": "dark rum",
+        "item": "dark rum (can be skipped or reduced)",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": null,
-            "unit": "can"
           }
         ],
         "note": null,

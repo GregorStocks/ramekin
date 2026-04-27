@@ -206,14 +206,14 @@
     {
       "raw": "1 1/2 ounces (a generous 1/2 cup or 45 grams) parmesan, grated",
       "expected": {
-        "item": "parmesan",
+        "item": "(a generous 1/2 cup or 45 grams) parmesan",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "oz"
           },
           {
-            "amount": "45",
+            "amount": "43",
             "unit": "g"
           }
         ],

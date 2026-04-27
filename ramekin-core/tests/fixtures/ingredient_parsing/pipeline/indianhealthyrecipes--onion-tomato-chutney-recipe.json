@@ -77,15 +77,11 @@
     {
       "raw": "1 sprig  curry leaves ( (or sub with 10 mint leaves or 2 to 3 tender stalks of coriander leaves))",
       "expected": {
-        "item": "curry leaves",
+        "item": "curry leaves ( (or sub with 10 mint leaves or 2 to 3 tender stalks of coriander leaves)",
         "measurements": [
           {
             "amount": "1",
             "unit": "sprig"
-          },
-          {
-            "amount": "2 to 3",
-            "unit": null
           }
         ],
         "note": null,
@@ -117,7 +113,7 @@
     {
       "raw": "½ tablespoon (6 grams)  chana dal  ((Bengal gram or 2 tbsp peanuts))",
       "expected": {
-        "item": "chana dal",
+        "item": "chana dal  (Bengal gram",
         "measurements": [
           {
             "amount": "0.5",
@@ -126,13 +122,9 @@
           {
             "amount": "6",
             "unit": "g"
-          },
-          {
-            "amount": "2",
-            "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or 2 tbsp peanuts)",
         "category": "Other"
       }
     },

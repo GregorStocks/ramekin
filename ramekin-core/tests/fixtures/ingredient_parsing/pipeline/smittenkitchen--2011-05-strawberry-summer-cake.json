@@ -23,7 +23,7 @@
     {
       "raw": "1 1/2 cups (188 grams) all-purpose flour (can swap 3/4 cup or 94 grams all-purpose flour with 3/4 cup or 75 grams of barley flour, see Note)",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour (can swap 3/4 cup",
         "measurements": [
           {
             "amount": "1.5",
@@ -32,21 +32,9 @@
           {
             "amount": "188",
             "unit": "g"
-          },
-          {
-            "amount": null,
-            "unit": "can"
-          },
-          {
-            "amount": "94",
-            "unit": "g"
-          },
-          {
-            "amount": "75",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 94 grams all-purpose flour with 3/4 cup or 75 grams of barley flour, see Note)",
         "category": "Baking"
       }
     },

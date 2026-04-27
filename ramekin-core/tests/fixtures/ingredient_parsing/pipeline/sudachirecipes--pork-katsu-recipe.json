@@ -83,15 +83,11 @@
     {
       "raw": "2  boneless pork chops (or loin/tenderloin - thick ones (2-2.5cm, 3/4-1 inch) work best)",
       "expected": {
-        "item": "boneless pork chops work best)",
+        "item": "boneless pork chops (or loin/tenderloin - thick ones (2-2.5cm, 3/4-1 inch) work best)",
         "measurements": [
           {
             "amount": "2",
             "unit": null
-          },
-          {
-            "amount": "0.75-1",
-            "unit": "inch"
           }
         ],
         "note": null,

@@ -12,10 +12,6 @@
             "unit": "lb"
           },
           {
-            "amount": "2",
-            "unit": "inch"
-          },
-          {
             "amount": "1361",
             "unit": "g"
           }
@@ -59,19 +55,11 @@
     {
       "raw": "1 cup sour cream (or 1/2 cup sour cream, 1/2 cup yogurt)",
       "expected": {
-        "item": "sour cream",
+        "item": "sour cream (or 1/2 cup sour cream, 1/2 cup yogurt)",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "0.5",
-            "unit": "cup"
-          },
-          {
-            "amount": "242",
-            "unit": "g"
           }
         ],
         "note": null,

@@ -59,15 +59,11 @@
     {
       "raw": "1 medium  butternut squash ((@ 1.25 lbs or 570g), peeled, seeded and cubed into 1-inch sized pieces)",
       "expected": {
-        "item": "butternut squash, peeled",
+        "item": "butternut squash (@ 1.25 lbs or 570g), peeled",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
-          },
-          {
-            "amount": "570",
-            "unit": "g"
           }
         ],
         "note": "seeded and cubed into 1-inch sized pieces)",
@@ -150,10 +146,6 @@
           {
             "amount": "1-2",
             "unit": "tsp"
-          },
-          {
-            "amount": "5",
-            "unit": null
           }
         ],
         "note": "optional",

@@ -161,23 +161,11 @@
     {
       "raw": "1 (3.5-ounce) sleeve round buttery crackers (such as Ritz; about 28 crackers), crumbled",
       "expected": {
-        "item": "sleeve round buttery crackers",
+        "item": "sleeve round buttery crackers (such as Ritz; about 28 crackers)",
         "measurements": [
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "3.5",
-            "unit": "oz"
-          },
-          {
-            "amount": "28",
-            "unit": "crackers"
-          },
-          {
-            "amount": "99",
-            "unit": "g"
           }
         ],
         "note": "crumbled",

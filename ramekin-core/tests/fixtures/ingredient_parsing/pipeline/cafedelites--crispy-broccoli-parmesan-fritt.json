@@ -5,15 +5,11 @@
     {
       "raw": "1  broccoli (large)",
       "expected": {
-        "item": "broccoli",
+        "item": "broccoli (large)",
         "measurements": [
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": null,
-            "unit": "large"
           }
         ],
         "note": null,
@@ -23,15 +19,11 @@
     {
       "raw": "1  egg (large)",
       "expected": {
-        "item": "egg",
+        "item": "egg (large)",
         "measurements": [
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": null,
-            "unit": "large"
           }
         ],
         "note": null,

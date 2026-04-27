@@ -5,7 +5,7 @@
     {
       "raw": "2 medium eggplants (about 3/4-pound each); use more if fairytale (small) eggplants",
       "expected": {
-        "item": "eggplants ; use more if fairytale eggplants",
+        "item": "eggplants ; use more if fairytale (small) eggplants",
         "measurements": [
           {
             "amount": "2",
@@ -14,10 +14,6 @@
           {
             "amount": "3",
             "unit": "lb each"
-          },
-          {
-            "amount": null,
-            "unit": "small"
           }
         ],
         "note": null,

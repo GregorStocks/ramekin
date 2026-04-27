@@ -143,15 +143,11 @@
     {
       "raw": "1  chicken bouillon (cube or powder)",
       "expected": {
-        "item": "chicken bouillon",
+        "item": "chicken bouillon (cube or powder)",
         "measurements": [
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": null,
-            "unit": "cube"
           }
         ],
         "note": null,

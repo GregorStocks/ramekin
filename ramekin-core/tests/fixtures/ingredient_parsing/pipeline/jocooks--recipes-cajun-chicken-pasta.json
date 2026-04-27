@@ -48,10 +48,6 @@
             "unit": "lb"
           },
           {
-            "amount": "2",
-            "unit": "chicken breasts"
-          },
-          {
             "amount": "454",
             "unit": "g"
           }
@@ -109,19 +105,11 @@
     {
       "raw": "2 links smoked sausage (cut into slices, about 8 ounces)",
       "expected": {
-        "item": "links smoked sausage",
+        "item": "links smoked sausage (cut into slices, about 8 ounces)",
         "measurements": [
           {
             "amount": "2",
             "unit": null
-          },
-          {
-            "amount": "8",
-            "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
         "note": null,

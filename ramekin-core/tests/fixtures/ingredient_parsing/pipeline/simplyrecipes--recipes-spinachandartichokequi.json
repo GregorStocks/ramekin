@@ -163,15 +163,11 @@
     {
       "raw": "4 eggs (large)",
       "expected": {
-        "item": "eggs",
+        "item": "eggs (large)",
         "measurements": [
           {
             "amount": "4",
             "unit": null
-          },
-          {
-            "amount": null,
-            "unit": "large"
           }
         ],
         "note": null,

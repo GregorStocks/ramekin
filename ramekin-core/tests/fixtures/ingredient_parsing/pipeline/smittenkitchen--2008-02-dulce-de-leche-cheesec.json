@@ -81,15 +81,11 @@
     {
       "raw": "1 teaspoon unflavored gelatin (from a 1/4-ounce or 7-gram envelope, will be just about half an envelope)",
       "expected": {
-        "item": "unflavored gelatin",
+        "item": "unflavored gelatin (from a 1/4-ounce or 7-gram envelope, will be just about half an envelope)",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "7",
-            "unit": "g"
           }
         ],
         "note": null,
@@ -176,14 +172,6 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "12",
-            "unit": null
-          },
-          {
-            "amount": "1",
-            "unit": "355-gram can"
           }
         ],
         "note": null,

@@ -252,19 +252,11 @@
     {
       "raw": "1 seedless cucumber (usually plastic-wrapped; about 1 lb), halved lengthwise and sliced diagonally 1/8 inch thick",
       "expected": {
-        "item": "seedless cucumber",
+        "item": "seedless cucumber (usually plastic-wrapped; about 1 lb)",
         "measurements": [
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "1",
-            "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
         "note": "halved lengthwise and sliced diagonally 1/8 inch thick",

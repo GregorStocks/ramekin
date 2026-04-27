@@ -16,10 +16,6 @@
             "unit": "ml"
           },
           {
-            "amount": "105",
-            "unit": null
-          },
-          {
             "amount": "178",
             "unit": "g"
           }
@@ -189,15 +185,11 @@
     {
       "raw": "2 teaspoons coarse sea salt (heads up: some are finding this too salty; if you’re worried, use less)",
       "expected": {
-        "item": "coarse sea salt",
+        "item": "coarse sea salt (heads up: some are finding this too salty; if you’re worried, use less)",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": null,
-            "unit": "head"
           }
         ],
         "note": null,

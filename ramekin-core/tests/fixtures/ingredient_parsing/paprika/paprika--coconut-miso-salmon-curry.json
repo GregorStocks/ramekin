@@ -48,10 +48,6 @@
             "unit": "piece"
           },
           {
-            "amount": "2",
-            "unit": "inch"
-          },
-          {
             "amount": "4",
             "unit": "tbsp"
           },
@@ -120,10 +116,6 @@
       "expected": {
         "item": "salmon fillet, cut into 2-inch pieces",
         "measurements": [
-          {
-            "amount": "1",
-            "unit": null
-          },
           {
             "amount": "1",
             "unit": null

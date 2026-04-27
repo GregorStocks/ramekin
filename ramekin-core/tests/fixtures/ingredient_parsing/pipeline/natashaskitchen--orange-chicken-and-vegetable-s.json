@@ -243,13 +243,8 @@
     {
       "raw": "Toasted sesame seeds (medium heat 2 minutes, tossing frequently)",
       "expected": {
-        "item": "Toasted sesame seeds",
-        "measurements": [
-          {
-            "amount": null,
-            "unit": "medium"
-          }
-        ],
+        "item": "Toasted sesame seeds (medium heat 2 minutes, tossing frequently)",
+        "measurements": [],
         "note": null,
         "category": "Spices & Seasonings"
       }

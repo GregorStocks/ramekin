@@ -185,15 +185,11 @@
     {
       "raw": "250 g shrimp (medium to large size, deshelled and deveined, black tiger or white shrimp)",
       "expected": {
-        "item": "shrimp",
+        "item": "shrimp (medium to large size, deshelled and deveined, black tiger or white shrimp)",
         "measurements": [
           {
             "amount": "250",
             "unit": "g"
-          },
-          {
-            "amount": null,
-            "unit": "medium"
           }
         ],
         "note": null,

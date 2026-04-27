@@ -233,15 +233,11 @@
     {
       "raw": "2 sprigs  fresh rosemary ((large))",
       "expected": {
-        "item": "fresh rosemary",
+        "item": "fresh rosemary (large)",
         "measurements": [
           {
             "amount": "2",
             "unit": "sprig"
-          },
-          {
-            "amount": null,
-            "unit": "large"
           }
         ],
         "note": null,

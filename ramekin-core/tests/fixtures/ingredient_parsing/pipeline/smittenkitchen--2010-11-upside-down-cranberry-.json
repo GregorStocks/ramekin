@@ -192,7 +192,7 @@
     {
       "raw": "2 cups (8 ounces or 230 grams) fresh or frozen cranberries (you could add a half-cup more, if you, too, can never have enough cranberries)",
       "expected": {
-        "item": "fresh or frozen cranberries",
+        "item": "fresh or frozen cranberries (you could add a half-cup more, if you, too, can never have enough cranberries)",
         "measurements": [
           {
             "amount": "2",
@@ -205,10 +205,6 @@
           {
             "amount": "230",
             "unit": "g"
-          },
-          {
-            "amount": null,
-            "unit": "can"
           }
         ],
         "note": null,
