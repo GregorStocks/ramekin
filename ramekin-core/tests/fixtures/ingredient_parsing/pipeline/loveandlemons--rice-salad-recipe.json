@@ -65,8 +65,13 @@
     {
       "raw": "⅓ cup toasted (chopped pistachios)",
       "expected": {
-        "item": "⅓ cup toasted (chopped pistachios)",
-        "measurements": [],
+        "item": "toasted chopped pistachios",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          }
+        ],
         "note": null,
         "category": "Nuts & Dried Fruit"
       }

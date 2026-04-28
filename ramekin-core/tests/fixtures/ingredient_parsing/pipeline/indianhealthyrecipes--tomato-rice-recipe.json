@@ -281,15 +281,15 @@
     {
       "raw": "3  cloves ((laung) )",
       "expected": {
-        "item": "3  cloves ((laung) )",
+        "item": "laung",
         "measurements": [
           {
             "amount": "3",
             "unit": "clove"
           }
         ],
-        "note": "laung",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     }
   ]

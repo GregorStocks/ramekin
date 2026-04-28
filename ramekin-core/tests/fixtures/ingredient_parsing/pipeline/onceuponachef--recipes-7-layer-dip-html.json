@@ -5,10 +5,15 @@
     {
       "raw": "2 cups cored, (seeded, and finely chopped tomatoes, from 2 to 3 large tomatoes (or 4 to 6 plum tomatoes))",
       "expected": {
-        "item": "2 cups cored, (seeded, and finely chopped tomatoes, from 2 to 3 large tomatoes (or 4 to 6 plum tomatoes))",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
+        "item": "cored seeded",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "and finely chopped tomatoes, from 2 to 3 large tomatoes (or 4 to 6 plum tomatoes)",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {

@@ -70,8 +70,13 @@
     {
       "raw": "¼ cup roasted, (salted pepitas)",
       "expected": {
-        "item": "¼ cup roasted, (salted pepitas)",
-        "measurements": [],
+        "item": "roasted salted pepitas",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "cup"
+          }
+        ],
         "note": null,
         "category": "Meat & Seafood"
       }

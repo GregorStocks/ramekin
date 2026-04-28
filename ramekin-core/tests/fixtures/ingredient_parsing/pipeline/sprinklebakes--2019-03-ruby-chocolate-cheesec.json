@@ -131,7 +131,7 @@
     {
       "raw": ".25 oz. (one envelope unflavored powdered gelatin)",
       "expected": {
-        "item": ".25 oz. (one envelope unflavored powdered gelatin)",
+        "item": "one envelope unflavored powdered gelatin",
         "measurements": [
           {
             "amount": ".25",
@@ -142,7 +142,7 @@
             "unit": "g"
           }
         ],
-        "note": "one envelope unflavored powdered gelatin",
+        "note": null,
         "category": "Baking"
       }
     },

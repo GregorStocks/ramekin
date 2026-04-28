@@ -5,14 +5,14 @@
     {
       "raw": "3  large (ripe bananas, well mashed (about 1 1/2 cups))",
       "expected": {
-        "item": "3  large (ripe bananas, well mashed (about 1 1/2 cups))",
+        "item": "ripe bananas",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": "ripe bananas, well mashed (about 1 1/2 cups)",
+        "note": "well mashed (about 1 1/2 cups)",
         "category": "Produce"
       }
     },

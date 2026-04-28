@@ -131,15 +131,15 @@
     {
       "raw": "4  cloves ((laung))",
       "expected": {
-        "item": "4  cloves ((laung))",
+        "item": "laung",
         "measurements": [
           {
             "amount": "4",
             "unit": "clove"
           }
         ],
-        "note": "laung",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     },
     {

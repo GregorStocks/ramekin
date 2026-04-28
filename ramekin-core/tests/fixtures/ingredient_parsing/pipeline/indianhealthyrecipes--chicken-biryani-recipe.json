@@ -161,15 +161,15 @@
     {
       "raw": "6  cloves ((lavang))",
       "expected": {
-        "item": "6  cloves ((lavang))",
+        "item": "lavang",
         "measurements": [
           {
             "amount": "6",
             "unit": "clove"
           }
         ],
-        "note": "lavang",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Other"
       }
     },
     {

@@ -124,14 +124,14 @@
     {
       "raw": "1/4  cup (thin red onion slices)",
       "expected": {
-        "item": "1/4  cup (thin red onion slices)",
+        "item": "thin red onion slices",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "thin red onion slices",
+        "note": null,
         "category": "Produce"
       }
     },

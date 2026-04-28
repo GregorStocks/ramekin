@@ -724,6 +724,29 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             None => break,
         };
 
+        let before_parenthetical = remaining
+            .get(..start)
+            .unwrap_or("")
+            .trim_end()
+            .trim_end_matches(',')
+            .trim_end();
+        let after_parenthetical = remaining.get(close_idx + 1..).unwrap_or("").trim_start();
+
+        if let Some((item_segment, note_segment)) = split_parenthetical_item_identity(paren_content)
+        {
+            let outside_text = join_segments(before_parenthetical, after_parenthetical);
+            if outside_lacks_item_identity(&outside_text) {
+                if let Some(note_segment) = note_segment {
+                    append_note_segment(&mut deferred_parenthetical_note, &note_segment);
+                }
+                remaining = join_segments(
+                    &join_segments(before_parenthetical, &item_segment),
+                    after_parenthetical,
+                );
+                continue;
+            }
+        }
+
         // First check if this is a prep note (like "softened", "chopped", etc.)
         // Skip if content starts with a digit AND has nested parens - that's a measurement, not prep note
         // e.g., "(15.5 oz (liquid reserved))" should parse as measurement, not prep note
@@ -745,20 +768,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             append_note_segment(&mut deferred_parenthetical_note, &trimmed_content);
             // Remove the parenthetical from remaining
             // Also strip trailing comma before the parenthetical (e.g., "onion, (diced)")
-            let before = remaining
-                .get(..start)
-                .unwrap_or("")
-                .trim_end()
-                .trim_end_matches(',')
-                .trim_end();
-            let after = remaining.get(close_idx + 1..).unwrap_or("").trim_start();
-            remaining = if before.is_empty() {
-                after.to_string()
-            } else if after.is_empty() {
-                before.to_string()
-            } else {
-                format!("{} {}", before, after)
-            };
+            remaining = join_segments(before_parenthetical, after_parenthetical);
             continue;
         }
 
@@ -770,20 +780,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             alt_measurements.extend(parsed_measurements);
             // Remove the parenthetical from remaining, preserving space
             // Also strip trailing comma before the parenthetical
-            let before = remaining
-                .get(..start)
-                .unwrap_or("")
-                .trim_end()
-                .trim_end_matches(',')
-                .trim_end();
-            let after = remaining.get(close_idx + 1..).unwrap_or("").trim_start();
-            remaining = if before.is_empty() {
-                after.to_string()
-            } else if after.is_empty() {
-                before.to_string()
-            } else {
-                format!("{} {}", before, after)
-            };
+            remaining = join_segments(before_parenthetical, after_parenthetical);
         } else {
             // Preserve any non-measurement parenthetical as ingredient-relevant note
             // instead of dropping it on the floor.
@@ -793,20 +790,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                 .trim()
                 .to_string();
             append_note_segment(&mut deferred_parenthetical_note, &trimmed_content);
-            let before = remaining
-                .get(..start)
-                .unwrap_or("")
-                .trim_end()
-                .trim_end_matches(',')
-                .trim_end();
-            let after = remaining.get(close_idx + 1..).unwrap_or("").trim_start();
-            remaining = if before.is_empty() {
-                after.to_string()
-            } else if after.is_empty() {
-                before.to_string()
-            } else {
-                format!("{} {}", before, after)
-            };
+            remaining = join_segments(before_parenthetical, after_parenthetical);
         }
     }
 
@@ -1601,6 +1585,97 @@ fn append_note_segment(note: &mut Option<String>, segment: &str) {
         }
         None => *note = Some(segment.to_string()),
     }
+}
+
+fn join_segments(left: &str, right: &str) -> String {
+    if left.is_empty() {
+        right.to_string()
+    } else if right.is_empty() {
+        left.to_string()
+    } else {
+        format!("{} {}", left, right)
+    }
+}
+
+fn split_parenthetical_item_identity(content: &str) -> Option<(String, Option<String>)> {
+    let cleaned = content.trim().trim_start_matches(',').trim();
+    if cleaned.is_empty() {
+        return None;
+    }
+
+    let split_idx = cleaned
+        .char_indices()
+        .find_map(|(idx, ch)| (ch == ',' || ch == ';').then_some(idx));
+    let (item_segment, note_segment) = match split_idx {
+        Some(idx) => {
+            let item_segment = cleaned.get(..idx).unwrap_or("").trim();
+            let note_segment = cleaned.get(idx + 1..).unwrap_or("").trim();
+            (item_segment, Some(note_segment))
+        }
+        None => (cleaned, None),
+    };
+
+    if item_segment.contains(['(', ')']) || !looks_like_parenthetical_count_unit(item_segment) {
+        return None;
+    }
+
+    Some((
+        item_segment.to_string(),
+        note_segment
+            .filter(|segment| !segment.is_empty())
+            .map(str::to_string),
+    ))
+}
+
+fn outside_lacks_item_identity(s: &str) -> bool {
+    let s = s.trim();
+    if s.is_empty() {
+        return true;
+    }
+
+    let (_, after_pre_amount_modifier) = strip_measurement_modifier(s);
+    let (_, after_amount) = extract_amount(&after_pre_amount_modifier);
+    let (_, after_pre_unit_modifier) = strip_measurement_modifier(&after_amount);
+    let (_, after_unit) = extract_unit(&after_pre_unit_modifier);
+    let candidate = after_unit.trim().trim_start_matches(',').trim();
+
+    candidate.is_empty() || is_only_descriptor_or_prep_words(candidate)
+}
+
+fn is_only_descriptor_or_prep_words(s: &str) -> bool {
+    const DESCRIPTOR_WORDS: &[&str] = &[
+        "big", "jumbo", "large", "medium", "meaty", "mini", "small", "tiny",
+    ];
+
+    let mut saw_word = false;
+    for part in s.split(',') {
+        let part = part.trim();
+        if part.is_empty() {
+            continue;
+        }
+        if is_only_prep_words(part) {
+            saw_word = true;
+            continue;
+        }
+
+        let words: Vec<&str> = part.split_whitespace().collect();
+        if words.is_empty() {
+            continue;
+        }
+
+        let all_descriptors = words.iter().all(|word| {
+            let normalized = word
+                .trim_matches(|c: char| !c.is_ascii_alphabetic())
+                .to_lowercase();
+            DESCRIPTOR_WORDS.contains(&normalized.as_str())
+        });
+        if !all_descriptors {
+            return false;
+        }
+        saw_word = true;
+    }
+
+    saw_word
 }
 
 fn unwrap_redundant_parentheses(s: &str) -> String {
@@ -3478,6 +3553,19 @@ mod tests {
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("2".to_string()));
         assert_eq!(result.measurements[0].unit, Some("tbsp".to_string()));
+    }
+
+    #[test]
+    fn test_parenthetical_item_identity_is_preserved_as_item_text() {
+        let result = parse_ingredient("3 large (ripe bananas, well mashed (about 1 1/2 cups))");
+        assert_eq!(result.item, "ripe bananas");
+        assert_eq!(
+            result.note,
+            Some("well mashed (about 1 1/2 cups)".to_string())
+        );
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("3".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("large".to_string()));
     }
 
     #[test]
