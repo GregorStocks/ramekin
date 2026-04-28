@@ -65,8 +65,6 @@
   "aliases": {
     "table salt": "salt, table",
     "salt": "diamond crystal kosher salt",
-    "salt, presumably diamond": "diamond crystal kosher salt",
-    "kosher salt, presumably diamond": "diamond crystal kosher salt",
     "sea salt": null,
     "fine salt": null,
 
@@ -234,6 +232,6 @@
     "kosher salt": "diamond crystal kosher salt"
   },
   "rewrites": {
-    "salt": "salt, presumably Diamond"
+    "salt": "kosher salt"
   }
 }

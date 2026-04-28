@@ -98,7 +98,7 @@
     {
       "raw": "salt (to taste)",
       "expected": {
-        "item": "salt, presumably Diamond",
+        "item": "kosher salt",
         "measurements": [],
         "note": "to taste",
         "category": "Spices & Seasonings"
@@ -216,7 +216,7 @@
     {
       "raw": "1/2 teaspoon  salt",
       "expected": {
-        "item": "salt, presumably Diamond",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.5",

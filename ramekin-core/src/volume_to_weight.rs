@@ -108,8 +108,8 @@ fn convert_volume_to_grams(amount: &str, unit: &str, grams_per_cup: f64) -> Opti
 
 /// Apply ingredient name rewrites from curated rules.
 ///
-/// Rewrites rename ingredient items to make assumptions visible
-/// (e.g. "salt" → "salt, presumably Diamond").
+/// Rewrites normalize ingredient items before measurement enrichment
+/// (e.g. "salt" -> "kosher salt").
 pub fn apply_ingredient_rewrites(mut ingredient: ParsedIngredient) -> ParsedIngredient {
     if let Some(rewritten) = rewrite_ingredient(&ingredient.item) {
         ingredient.item = rewritten.to_string();
