@@ -154,9 +154,9 @@
     {
       "raw": "A few gratings of fresh nutmeg, or a couple pinches of ground",
       "expected": {
-        "item": "A few gratings of fresh nutmeg",
+        "item": "A few gratings of fresh nutmeg, or a couple pinches of ground",
         "measurements": [],
-        "note": "or a couple pinches of ground",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
@@ -177,7 +177,7 @@
     {
       "raw": "1 tablespoon (15 grams) butter, cut into 6 pieces, kept cold",
       "expected": {
-        "item": "butter, cut into 6 pieces",
+        "item": "butter, cut into 6 pieces, kept cold",
         "measurements": [
           {
             "amount": "1",
@@ -188,7 +188,7 @@
             "unit": "g"
           }
         ],
-        "note": "kept cold",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

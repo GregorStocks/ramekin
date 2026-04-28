@@ -23,14 +23,14 @@
     {
       "raw": "4 dates, pitted and coarsely chopped",
       "expected": {
-        "item": "dates",
+        "item": "dates, pitted and coarsely chopped",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "pitted and coarsely chopped",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     },

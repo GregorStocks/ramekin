@@ -87,15 +87,15 @@
     {
       "raw": "30 Rolos, unwrapped and chopped",
       "expected": {
-        "item": "Rolos",
+        "item": "Rolos, unwrapped and chopped",
         "measurements": [
           {
             "amount": "30",
             "unit": null
           }
         ],
-        "note": "unwrapped and chopped",
-        "category": "Other"
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {

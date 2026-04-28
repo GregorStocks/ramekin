@@ -72,14 +72,14 @@
     {
       "raw": "1 (12-ounce; 340 g) package Hawaiian sweet rolls (such as King's Hawaiian), halved crosswise with buns all still attached",
       "expected": {
-        "item": "Hawaiian sweet rolls",
+        "item": "Hawaiian sweet rolls, halved crosswise with buns all still attached",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
           }
         ],
-        "note": "12-ounce; 340 g, such as King's Hawaiian, halved crosswise with buns all still attached",
+        "note": "12-ounce; 340 g, such as King's Hawaiian",
         "category": "Bakery & Bread"
       }
     },

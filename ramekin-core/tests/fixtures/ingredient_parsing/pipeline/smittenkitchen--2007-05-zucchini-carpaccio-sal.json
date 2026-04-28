@@ -67,7 +67,7 @@
     {
       "raw": "1 ounce parmesan, coarsely grated (on large holes of a box grater; about 1/2 cup) or shaved with a vegetable peeler",
       "expected": {
-        "item": "parmesan",
+        "item": "parmesan, coarsely grated or shaved with a vegetable peeler",
         "measurements": [
           {
             "amount": "1",
@@ -78,7 +78,7 @@
             "unit": "g"
           }
         ],
-        "note": "on large holes of a box grater; about 1/2 cup, coarsely grated or shaved with a vegetable peeler",
+        "note": "on large holes of a box grater; about 1/2 cup",
         "category": "Cheese"
       }
     },

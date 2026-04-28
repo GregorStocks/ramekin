@@ -51,14 +51,14 @@
     {
       "raw": "1 (8-inch) sprig rosemary, crushed roughly between your hands",
       "expected": {
-        "item": "rosemary",
+        "item": "rosemary, crushed roughly between your hands",
         "measurements": [
           {
             "amount": "1",
             "unit": "sprig"
           }
         ],
-        "note": "8-inch, crushed roughly between your hands",
+        "note": "8-inch",
         "category": "Spices & Seasonings"
       }
     },

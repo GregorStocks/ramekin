@@ -33,14 +33,14 @@
     {
       "raw": "3 small shallots, sliced into thin rings",
       "expected": {
-        "item": "shallots",
+        "item": "shallots, sliced into thin rings",
         "measurements": [
           {
             "amount": "3",
             "unit": "small"
           }
         ],
-        "note": "sliced into thin rings",
+        "note": null,
         "category": "Produce"
       }
     },

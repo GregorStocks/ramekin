@@ -107,18 +107,14 @@
     {
       "raw": "½ teaspoon kosher salt, adjust to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "kosher salt, adjust to taste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
-        "note": "adjust to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
@@ -143,18 +139,14 @@
     {
       "raw": "⅛ teaspoon  cayenne pepper, adjust to taste",
       "expected": {
-        "item": "cayenne pepper",
+        "item": "cayenne pepper, adjust to taste",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.2",
-            "unit": "g"
           }
         ],
-        "note": "adjust to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     }

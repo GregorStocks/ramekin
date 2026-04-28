@@ -46,9 +46,9 @@
     {
       "raw": "through root ends, thinly sliced crosswise",
       "expected": {
-        "item": "through root ends",
+        "item": "through root ends, thinly sliced crosswise",
         "measurements": [],
-        "note": "thinly sliced crosswise",
+        "note": null,
         "category": "Other"
       }
     },
@@ -73,7 +73,7 @@
     {
       "raw": "1 small head of radicchio (about 1 lb.), quartered through root",
       "expected": {
-        "item": "head of radicchio",
+        "item": "head of radicchio, quartered through root",
         "measurements": [
           {
             "amount": "1",
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": "quartered through root",
+        "note": null,
         "category": "Produce"
       }
     },

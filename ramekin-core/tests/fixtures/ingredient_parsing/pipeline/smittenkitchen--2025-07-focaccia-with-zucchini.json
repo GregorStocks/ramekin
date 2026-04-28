@@ -95,7 +95,7 @@
     {
       "raw": "8 ounces zucchini, sliced very thin",
       "expected": {
-        "item": "zucchini",
+        "item": "zucchini, sliced very thin",
         "measurements": [
           {
             "amount": "8",
@@ -106,14 +106,14 @@
             "unit": "g"
           }
         ],
-        "note": "sliced very thin",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "8 ounces Yukon Gold potatoes, full-sized or mini, sliced very thin",
       "expected": {
-        "item": "Yukon Gold potatoes, full-sized or mini",
+        "item": "Yukon Gold potatoes, full-sized or mini, sliced very thin",
         "measurements": [
           {
             "amount": "8",
@@ -124,7 +124,7 @@
             "unit": "g"
           }
         ],
-        "note": "sliced very thin",
+        "note": null,
         "category": "Produce"
       }
     },

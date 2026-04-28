@@ -37,15 +37,15 @@
     {
       "raw": "1 tablespoon minced ginger, or 1 inch fresh ginger root",
       "expected": {
-        "item": "minced ginger",
+        "item": "minced ginger, or 1 inch fresh ginger root",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or 1 inch fresh ginger root",
-        "category": "Beverages"
+        "note": null,
+        "category": "Produce"
       }
     },
     {

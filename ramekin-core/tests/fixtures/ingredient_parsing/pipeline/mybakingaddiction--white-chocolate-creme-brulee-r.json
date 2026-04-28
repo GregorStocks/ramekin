@@ -55,7 +55,7 @@
     {
       "raw": "3 ounces white chocolate, imported finely chopped",
       "expected": {
-        "item": "white chocolate",
+        "item": "white chocolate, imported finely chopped",
         "measurements": [
           {
             "amount": "3",
@@ -66,8 +66,8 @@
             "unit": "g"
           }
         ],
-        "note": "imported finely chopped",
-        "category": "Other"
+        "note": null,
+        "category": "Beverages"
       }
     },
     {

@@ -320,9 +320,9 @@
     {
       "raw": "cilantro, lettuce or sliced cucumber",
       "expected": {
-        "item": "cilantro",
+        "item": "cilantro, lettuce or sliced cucumber",
         "measurements": [],
-        "note": "lettuce or sliced cucumber",
+        "note": null,
         "category": "Produce"
       }
     },

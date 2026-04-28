@@ -19,14 +19,14 @@
     {
       "raw": "1 tablespoon plus 1 teaspoon thyme leaves, and 4 whole sprigs thyme",
       "expected": {
-        "item": "thyme leaves",
+        "item": "thyme leaves, and 4 whole sprigs thyme",
         "measurements": [
           {
             "amount": "1 tablespoon plus 1 teaspoon",
             "unit": null
           }
         ],
-        "note": "and 4 whole sprigs thyme",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

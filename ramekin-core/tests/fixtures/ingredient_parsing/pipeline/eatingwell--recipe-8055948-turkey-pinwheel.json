@@ -139,14 +139,14 @@
     {
       "raw": "3 medium plum tomatoes, seeded and thinly sliced",
       "expected": {
-        "item": "plum tomatoes",
+        "item": "plum tomatoes, seeded and thinly sliced",
         "measurements": [
           {
             "amount": "3",
             "unit": "medium"
           }
         ],
-        "note": "seeded and thinly sliced",
+        "note": null,
         "category": "Produce"
       }
     },

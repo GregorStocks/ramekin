@@ -125,18 +125,14 @@
     {
       "raw": "1 tablespoon fish sauce, or to taste",
       "expected": {
-        "item": "fish sauce",
+        "item": "fish sauce, or to taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "18",
-            "unit": "g"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },

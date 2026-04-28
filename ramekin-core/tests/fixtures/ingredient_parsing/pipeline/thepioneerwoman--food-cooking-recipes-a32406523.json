@@ -114,18 +114,14 @@
     {
       "raw": "1 c. chicken broth, or more as needed",
       "expected": {
-        "item": "chicken broth",
+        "item": "chicken broth, or more as needed",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "249",
-            "unit": "g"
           }
         ],
-        "note": "or more as needed",
+        "note": null,
         "category": "Canned Goods"
       }
     },

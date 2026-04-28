@@ -5,14 +5,14 @@
     {
       "raw": "8 slices of bacon, chopped as finely as possible",
       "expected": {
-        "item": "bacon",
+        "item": "bacon, chopped as finely as possible",
         "measurements": [
           {
             "amount": "8",
             "unit": "slice"
           }
         ],
-        "note": "chopped as finely as possible",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
@@ -46,9 +46,9 @@
     {
       "raw": "ice cream of your choice, slightly softened (I used vanilla)",
       "expected": {
-        "item": "ice cream of your choice",
+        "item": "ice cream of your choice, slightly softened",
         "measurements": [],
-        "note": "I used vanilla, slightly softened",
+        "note": "I used vanilla",
         "category": "Frozen"
       }
     }

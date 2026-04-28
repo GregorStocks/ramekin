@@ -37,7 +37,7 @@
     {
       "raw": "8 ounces dried cranberry beans (226 g; 1 1/4 cups), picked over and rinsed",
       "expected": {
-        "item": "dried cranberry beans",
+        "item": "dried cranberry beans, picked over and rinsed",
         "measurements": [
           {
             "amount": "8",
@@ -52,7 +52,7 @@
             "unit": "cup"
           }
         ],
-        "note": "picked over and rinsed",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     },

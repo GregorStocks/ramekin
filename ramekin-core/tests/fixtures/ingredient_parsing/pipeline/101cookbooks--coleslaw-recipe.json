@@ -47,14 +47,14 @@
     {
       "raw": "1  jalapeno chile, seeded and diced",
       "expected": {
-        "item": "jalapeno chile",
+        "item": "jalapeno chile, seeded and diced",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "seeded and diced",
+        "note": null,
         "category": "Produce"
       }
     },

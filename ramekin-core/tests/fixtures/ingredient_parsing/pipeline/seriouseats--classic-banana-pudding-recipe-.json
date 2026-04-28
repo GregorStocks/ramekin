@@ -161,7 +161,7 @@
     {
       "raw": "5 medium bananas (about 27 1/2 ounces; 775g), peeled and sliced in 1/2-inch rounds",
       "expected": {
-        "item": "bananas",
+        "item": "bananas, peeled and sliced in 1/2-inch rounds",
         "measurements": [
           {
             "amount": "5",
@@ -176,7 +176,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and sliced in 1/2-inch rounds",
+        "note": null,
         "category": "Produce"
       }
     },

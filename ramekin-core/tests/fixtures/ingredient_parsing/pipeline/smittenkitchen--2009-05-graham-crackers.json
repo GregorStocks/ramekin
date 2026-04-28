@@ -77,7 +77,7 @@
     {
       "raw": "7 tablespoons (3 1/2 ounces or 100 grams) unsalted butter, cut into 1-inch cubes and frozen",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, cut into 1-inch cubes and frozen",
         "measurements": [
           {
             "amount": "7",
@@ -92,7 +92,7 @@
             "unit": "g"
           }
         ],
-        "note": "cut into 1-inch cubes and frozen",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

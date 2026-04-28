@@ -19,7 +19,7 @@
     {
       "raw": "1 medium red onion, halved and sliced 1/2-inch thick (about 2 cups)",
       "expected": {
-        "item": "red onion",
+        "item": "red onion, halved and sliced 1/2-inch thick",
         "measurements": [
           {
             "amount": "1",
@@ -28,13 +28,9 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "275",
-            "unit": "g"
           }
         ],
-        "note": "halved and sliced 1/2-inch thick",
+        "note": null,
         "category": "Produce"
       }
     },

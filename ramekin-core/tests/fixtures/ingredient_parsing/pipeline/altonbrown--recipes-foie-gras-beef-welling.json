@@ -137,7 +137,7 @@
     {
       "raw": "2 pounds center-cut tenderloin of beef or chateaubriand, chilled in freezer for 20 minutes",
       "expected": {
-        "item": "center-cut tenderloin of beef or chateaubriand",
+        "item": "center-cut tenderloin of beef or chateaubriand, chilled in freezer for 20 minutes",
         "measurements": [
           {
             "amount": "2",
@@ -148,7 +148,7 @@
             "unit": "g"
           }
         ],
-        "note": "chilled in freezer for 20 minutes",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },

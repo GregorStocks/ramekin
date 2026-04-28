@@ -170,7 +170,7 @@
     {
       "raw": "14 oz can artichoke hearts, roughly chopped if needed",
       "expected": {
-        "item": "can artichoke hearts",
+        "item": "can artichoke hearts, roughly chopped if needed",
         "measurements": [
           {
             "amount": "14",
@@ -181,7 +181,7 @@
             "unit": "g"
           }
         ],
-        "note": "roughly chopped if needed",
+        "note": null,
         "category": "Canned Goods"
       }
     },
@@ -202,14 +202,14 @@
     {
       "raw": "15-20 fresh basil leaves, roughly chopped or torn; more for garnish",
       "expected": {
-        "item": "fresh basil leaves",
+        "item": "fresh basil leaves, roughly chopped or torn; more for garnish",
         "measurements": [
           {
             "amount": "15-20",
             "unit": null
           }
         ],
-        "note": "roughly chopped or torn; more for garnish",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -73,14 +73,14 @@
     {
       "raw": "1 large onion, halved lenghtwise and thinly sliced",
       "expected": {
-        "item": "onion",
+        "item": "onion, halved lenghtwise and thinly sliced",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "halved lenghtwise and thinly sliced",
+        "note": null,
         "category": "Produce"
       }
     },

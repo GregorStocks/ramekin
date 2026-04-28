@@ -184,9 +184,9 @@
     {
       "raw": "Fresh herbs such as chives or parsley, chopped for serving",
       "expected": {
-        "item": "Fresh herbs such as chives or parsley",
+        "item": "Fresh herbs such as chives or parsley, chopped for serving",
         "measurements": [],
-        "note": "chopped for serving",
+        "note": null,
         "category": "Produce"
       }
     },

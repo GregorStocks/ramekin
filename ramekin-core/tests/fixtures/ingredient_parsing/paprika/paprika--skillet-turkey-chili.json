@@ -179,9 +179,9 @@
     {
       "raw": "To serve: Sour cream, pickled red onions, pickled jalapenos, grated cheddar, cornbread, fresh cilantro, lime wedges, and/or thinly sliced scallions",
       "expected": {
-        "item": "To serve: Sour cream, pickled red onions, pickled jalapenos, grated cheddar, cornbread, fresh cilantro, lime wedges",
+        "item": "To serve: Sour cream, pickled red onions, pickled jalapenos, grated cheddar, cornbread, fresh cilantro, lime wedges, and/or thinly sliced scallions",
         "measurements": [],
-        "note": "and/or thinly sliced scallions",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     }

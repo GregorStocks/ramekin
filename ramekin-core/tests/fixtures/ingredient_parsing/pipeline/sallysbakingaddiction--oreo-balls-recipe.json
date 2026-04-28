@@ -27,7 +27,7 @@
     {
       "raw": "8 ounces (226g) full-fat brick cream cheese, softened to room temperature",
       "expected": {
-        "item": "full-fat brick cream cheese",
+        "item": "full-fat brick cream cheese, softened to room temperature",
         "measurements": [
           {
             "amount": "8",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "softened to room temperature",
+        "note": null,
         "category": "Cheese"
       }
     },
@@ -77,9 +77,9 @@
     {
       "raw": "optional for garnish: sprinkles, Oreo crumbs, additional melted chocolate",
       "expected": {
-        "item": "optional for garnish: sprinkles, Oreo crumbs",
+        "item": "optional for garnish: sprinkles, Oreo crumbs, additional melted chocolate",
         "measurements": [],
-        "note": "additional melted chocolate",
+        "note": null,
         "category": "Baking"
       }
     }

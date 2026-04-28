@@ -79,7 +79,7 @@
     {
       "raw": "1 baking potato (6 ounces), peeled and cut into 1-inch dice",
       "expected": {
-        "item": "baking potato",
+        "item": "baking potato, peeled and cut into 1-inch dice",
         "measurements": [
           {
             "amount": "1",
@@ -94,7 +94,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1-inch dice",
+        "note": null,
         "category": "Produce"
       }
     },

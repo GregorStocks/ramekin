@@ -5,7 +5,7 @@
     {
       "raw": "3 pounds celery root, peeled and cut into ¾‐inch pieces",
       "expected": {
-        "item": "celery root",
+        "item": "celery root, peeled and cut into 3/4‐inch pieces",
         "measurements": [
           {
             "amount": "3",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 3/4‐inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },

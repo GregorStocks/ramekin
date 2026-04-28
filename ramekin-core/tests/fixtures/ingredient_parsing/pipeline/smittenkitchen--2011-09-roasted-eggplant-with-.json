@@ -91,7 +91,7 @@
     {
       "raw": "3 seeded, diced medium tomatoes (1 1/2 cups)",
       "expected": {
-        "item": "seeded",
+        "item": "seeded, diced medium tomatoes",
         "measurements": [
           {
             "amount": "3",
@@ -102,8 +102,8 @@
             "unit": "cup"
           }
         ],
-        "note": "diced medium tomatoes",
-        "category": "Nuts & Dried Fruit"
+        "note": null,
+        "category": "Produce"
       }
     },
     {

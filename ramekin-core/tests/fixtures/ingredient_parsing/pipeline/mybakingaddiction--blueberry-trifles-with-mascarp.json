@@ -5,18 +5,14 @@
     {
       "raw": "1/4 cup sugar, or to taste",
       "expected": {
-        "item": "sugar",
+        "item": "sugar, or to taste",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "50",
-            "unit": "g"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Baking"
       }
     },

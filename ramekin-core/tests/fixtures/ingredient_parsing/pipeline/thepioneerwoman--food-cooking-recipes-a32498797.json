@@ -194,14 +194,14 @@
     {
       "raw": "1 tbsp. coarse sugar, like sugar in the raw",
       "expected": {
-        "item": "coarse sugar",
+        "item": "coarse sugar, like sugar in the raw",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "like sugar in the raw",
+        "note": null,
         "category": "Baking"
       }
     },

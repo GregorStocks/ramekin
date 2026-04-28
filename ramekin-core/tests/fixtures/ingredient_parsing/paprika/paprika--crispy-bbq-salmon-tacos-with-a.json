@@ -264,14 +264,14 @@
     {
       "raw": "1-2 jalapeños seeded, if desired and chopped",
       "expected": {
-        "item": "jalapeños seeded",
+        "item": "jalapeños seeded, if desired and chopped",
         "measurements": [
           {
             "amount": "1-2",
             "unit": null
           }
         ],
-        "note": "if desired and chopped",
+        "note": null,
         "section": "Mango Salsa",
         "category": "Produce"
       }

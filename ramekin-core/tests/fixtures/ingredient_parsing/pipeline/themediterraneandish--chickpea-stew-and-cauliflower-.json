@@ -119,14 +119,14 @@
     {
       "raw": "1 whole head cauliflower, divided into small florets",
       "expected": {
-        "item": "whole head cauliflower",
+        "item": "whole head cauliflower, divided into small florets",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "divided into small florets",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -197,7 +197,7 @@
     {
       "raw": "1 pound (455 grams) dried pasta, a bite-sized shape of your choosing (I used reginetti), cooked until 1 to 2 minutes before doneness and drained",
       "expected": {
-        "item": "dried pasta, a bite-sized shape of your choosing",
+        "item": "dried pasta, a bite-sized shape of your choosing, cooked until 1 to 2 minutes before doneness and drained",
         "measurements": [
           {
             "amount": "1",
@@ -208,7 +208,7 @@
             "unit": "g"
           }
         ],
-        "note": "I used reginetti, cooked until 1 to 2 minutes before doneness and drained",
+        "note": "I used reginetti",
         "category": "Pasta & Rice"
       }
     },
@@ -233,7 +233,7 @@
     {
       "raw": "1/2 cup (70 grams) pine nuts, well-toasted and cooled",
       "expected": {
-        "item": "pine nuts",
+        "item": "pine nuts, well-toasted and cooled",
         "measurements": [
           {
             "amount": "0.5",
@@ -244,7 +244,7 @@
             "unit": "g"
           }
         ],
-        "note": "well-toasted and cooled",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     },

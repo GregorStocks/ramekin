@@ -55,7 +55,7 @@
     {
       "raw": "8 ounces (usually 1 bundle) broccolini, trimmed and halved lengthwise or chopped into 1-inch pieces",
       "expected": {
-        "item": "broccolini",
+        "item": "broccolini, trimmed and halved lengthwise or chopped into 1-inch pieces",
         "measurements": [
           {
             "amount": "8",
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": "usually 1 bundle, trimmed and halved lengthwise or chopped into 1-inch pieces",
+        "note": "usually 1 bundle",
         "category": "Produce"
       }
     },

@@ -123,14 +123,14 @@
     {
       "raw": "1 large egg yolk, beaten with 1 tablespoon water",
       "expected": {
-        "item": "egg yolk",
+        "item": "egg yolk, beaten with 1 tablespoon water",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "beaten with 1 tablespoon water",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

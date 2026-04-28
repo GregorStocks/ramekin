@@ -119,18 +119,14 @@
     {
       "raw": "1/2 cup grated Parmesan cheese, more for serving",
       "expected": {
-        "item": "grated Parmesan cheese",
+        "item": "grated Parmesan cheese, more for serving",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "50",
-            "unit": "g"
           }
         ],
-        "note": "more for serving",
+        "note": null,
         "category": "Cheese"
       }
     },
@@ -165,21 +161,21 @@
     {
       "raw": "1/2 cup packed basil leaves, more for serving (optional)",
       "expected": {
-        "item": "packed basil leaves",
+        "item": "packed basil leaves, more for serving",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "optional, more for serving",
+        "note": "optional",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "3 ounces Prosciutto (optional), sliced into thin ribbons",
       "expected": {
-        "item": "Prosciutto",
+        "item": "Prosciutto, sliced into thin ribbons",
         "measurements": [
           {
             "amount": "3",
@@ -190,7 +186,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional, sliced into thin ribbons",
+        "note": "optional",
         "category": "Meat & Seafood"
       }
     },

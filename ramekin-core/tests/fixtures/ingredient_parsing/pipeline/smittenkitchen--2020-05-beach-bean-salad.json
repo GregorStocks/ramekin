@@ -97,15 +97,15 @@
     {
       "raw": "2 garlic cloves or 1 large, minced with a teaspoon or two of oregano",
       "expected": {
-        "item": "garlic cloves or 1 large",
+        "item": "garlic cloves or 1 large, minced with a teaspoon or two of oregano",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "minced with a teaspoon or two of oregano",
-        "category": "Produce"
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {

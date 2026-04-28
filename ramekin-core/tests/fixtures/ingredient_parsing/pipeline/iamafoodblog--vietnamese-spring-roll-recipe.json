@@ -23,7 +23,7 @@
     {
       "raw": "1/2 pound shrimp, peeled and de-veined",
       "expected": {
-        "item": "shrimp",
+        "item": "shrimp, peeled and de-veined",
         "measurements": [
           {
             "amount": "0.5",
@@ -34,21 +34,21 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and de-veined",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1/2 cup dried wood ear mushrooms, soaked in hot water and finely chopped",
       "expected": {
-        "item": "dried wood ear mushrooms",
+        "item": "dried wood ear mushrooms, soaked in hot water and finely chopped",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "soaked in hot water and finely chopped",
+        "note": null,
         "category": "Produce"
       }
     },

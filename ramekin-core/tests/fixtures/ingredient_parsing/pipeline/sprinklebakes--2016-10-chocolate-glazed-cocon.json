@@ -87,7 +87,7 @@
     {
       "raw": "1/2 cup 56g unsalted butter, melted and cooled slightly",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, melted and cooled slightly",
         "measurements": [
           {
             "amount": "0.5",
@@ -98,7 +98,7 @@
             "unit": "g"
           }
         ],
-        "note": "melted and cooled slightly",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

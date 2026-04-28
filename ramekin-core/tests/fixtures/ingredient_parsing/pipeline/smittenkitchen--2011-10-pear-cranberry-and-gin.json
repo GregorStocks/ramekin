@@ -132,7 +132,7 @@
     {
       "raw": "1/2 cup (4 ounces or 113 grams or 1 stick) unsalted butter, melted and cooled",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, melted and cooled",
         "measurements": [
           {
             "amount": "0.5",
@@ -151,7 +151,7 @@
             "unit": "stick"
           }
         ],
-        "note": "melted and cooled",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -167,7 +167,7 @@
     {
       "raw": "2 pounds (about 4 to 5) large ripe pears (I used Anjou, suggested in the original recipe) peeled, halved, cored and sliced 1/4 inch thick",
       "expected": {
-        "item": "large ripe pears peeled, halved",
+        "item": "large ripe pears peeled, halved, cored and sliced 1/4 inch thick",
         "measurements": [
           {
             "amount": "2",
@@ -178,7 +178,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 4 to 5, I used Anjou, suggested in the original recipe, cored and sliced 1/4 inch thick",
+        "note": "about 4 to 5, I used Anjou, suggested in the original recipe",
         "category": "Produce"
       }
     },

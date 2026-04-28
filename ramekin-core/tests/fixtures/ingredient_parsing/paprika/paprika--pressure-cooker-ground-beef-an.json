@@ -194,14 +194,14 @@
     {
       "raw": "1 (28-ounce; 794 g) can whole peeled tomatoes, tomatoes crushed by hand, juices drained and reserved",
       "expected": {
-        "item": "whole peeled tomatoes, tomatoes crushed by hand",
+        "item": "whole peeled tomatoes, tomatoes crushed by hand, juices drained and reserved",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": "28-ounce; 794 g, juices drained and reserved",
+        "note": "28-ounce; 794 g",
         "category": "Produce"
       }
     },

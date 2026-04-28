@@ -41,14 +41,14 @@
     {
       "raw": "2 onions, diced to yield about 4 cups",
       "expected": {
-        "item": "onions",
+        "item": "onions, diced to yield about 4 cups",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "diced to yield about 4 cups",
+        "note": null,
         "category": "Produce"
       }
     },

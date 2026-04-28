@@ -5,14 +5,14 @@
     {
       "raw": "4 hard boiled eggs, peeled, chilled and cut in half",
       "expected": {
-        "item": "hard boiled eggs, peeled",
+        "item": "hard boiled eggs, peeled, chilled and cut in half",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "chilled and cut in half",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

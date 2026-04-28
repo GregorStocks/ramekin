@@ -70,14 +70,14 @@
     {
       "raw": "1 egg, lightly beaten with 1 tablespoon of water",
       "expected": {
-        "item": "egg",
+        "item": "egg, lightly beaten with 1 tablespoon of water",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "lightly beaten with 1 tablespoon of water",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

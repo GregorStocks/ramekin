@@ -68,7 +68,7 @@
     {
       "raw": "1 1/2 lb. large shrimp, peeled, deveined, rinsed and patted dry",
       "expected": {
-        "item": "large shrimp, peeled, deveined",
+        "item": "large shrimp, peeled, deveined, rinsed and patted dry",
         "measurements": [
           {
             "amount": "1.5",
@@ -79,7 +79,7 @@
             "unit": "g"
           }
         ],
-        "note": "rinsed and patted dry",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },

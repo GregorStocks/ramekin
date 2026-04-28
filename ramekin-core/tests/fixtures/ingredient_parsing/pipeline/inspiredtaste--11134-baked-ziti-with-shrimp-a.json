@@ -97,7 +97,7 @@
     {
       "raw": "8 ounces medium shrimp, peeled and deveined",
       "expected": {
-        "item": "medium shrimp",
+        "item": "medium shrimp, peeled and deveined",
         "measurements": [
           {
             "amount": "8",
@@ -108,14 +108,14 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and deveined",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 (10-ounce) package frozen spinach, thawed and squeezed dry (about 1 1/4 cups)",
       "expected": {
-        "item": "frozen spinach",
+        "item": "frozen spinach, thawed and squeezed dry",
         "measurements": [
           {
             "amount": "1",
@@ -126,7 +126,7 @@
             "unit": "cup"
           }
         ],
-        "note": "10-ounce, thawed and squeezed dry",
+        "note": "10-ounce",
         "category": "Frozen"
       }
     },

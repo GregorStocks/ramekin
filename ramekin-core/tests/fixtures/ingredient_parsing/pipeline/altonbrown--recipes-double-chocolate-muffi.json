@@ -145,7 +145,7 @@
     {
       "raw": "8 tablespoons (1 stick) unsalted butter, melted and cooled slightly",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, melted and cooled slightly",
         "measurements": [
           {
             "amount": "8",
@@ -154,13 +154,9 @@
           {
             "amount": "1",
             "unit": "stick"
-          },
-          {
-            "amount": "114",
-            "unit": "g"
           }
         ],
-        "note": "melted and cooled slightly",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

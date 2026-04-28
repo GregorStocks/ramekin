@@ -41,7 +41,7 @@
     {
       "raw": "8 ounces shiitake mushrooms, stemmed and quartered",
       "expected": {
-        "item": "shiitake mushrooms",
+        "item": "shiitake mushrooms, stemmed and quartered",
         "measurements": [
           {
             "amount": "8",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": "stemmed and quartered",
+        "note": null,
         "category": "Produce"
       }
     },

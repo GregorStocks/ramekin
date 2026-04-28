@@ -55,7 +55,7 @@
     {
       "raw": "2 bunches baby bok choy, trimmed and cut into 1-inch pieces (about 2 cups)",
       "expected": {
-        "item": "baby bok choy",
+        "item": "baby bok choy, trimmed and cut into 1-inch pieces",
         "measurements": [
           {
             "amount": "2",
@@ -66,21 +66,21 @@
             "unit": "cup"
           }
         ],
-        "note": "trimmed and cut into 1-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "3/4 cup fresh baby carrots, halved diagonally",
       "expected": {
-        "item": "fresh baby carrots",
+        "item": "fresh baby carrots, halved diagonally",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "halved diagonally",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -129,14 +129,14 @@
     {
       "raw": "4 green onions, diagonally sliced",
       "expected": {
-        "item": "green onions",
+        "item": "green onions, diagonally sliced",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "diagonally sliced",
+        "note": null,
         "category": "Produce"
       }
     },

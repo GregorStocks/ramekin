@@ -27,14 +27,14 @@
     {
       "raw": "2 large tomatoes, seeded and diced",
       "expected": {
-        "item": "tomatoes",
+        "item": "tomatoes, seeded and diced",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "seeded and diced",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -111,14 +111,14 @@
     {
       "raw": "1 jalapeno pepper, seeded and chopped",
       "expected": {
-        "item": "jalapeno pepper",
+        "item": "jalapeno pepper, seeded and chopped",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "seeded and chopped",
+        "note": null,
         "category": "Produce"
       }
     },

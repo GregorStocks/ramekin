@@ -93,14 +93,14 @@
     {
       "raw": "1 lemon, seeded and roughly chopped",
       "expected": {
-        "item": "lemon",
+        "item": "lemon, seeded and roughly chopped",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "seeded and roughly chopped",
+        "note": null,
         "category": "Produce"
       }
     },

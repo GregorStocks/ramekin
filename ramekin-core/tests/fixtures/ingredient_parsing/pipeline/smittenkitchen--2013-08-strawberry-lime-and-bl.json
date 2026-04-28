@@ -5,7 +5,7 @@
     {
       "raw": "4 slightly heaped cups (about 20 ounces) fresh, ripe strawberries, hulled and quartered",
       "expected": {
-        "item": "fresh, ripe strawberries",
+        "item": "fresh, ripe strawberries, hulled and quartered",
         "measurements": [
           {
             "amount": "4",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "hulled and quartered",
+        "note": null,
         "category": "Produce"
       }
     },

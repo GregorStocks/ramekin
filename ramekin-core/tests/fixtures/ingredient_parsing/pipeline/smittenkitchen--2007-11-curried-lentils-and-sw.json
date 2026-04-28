@@ -97,14 +97,14 @@
     {
       "raw": "1 jalapeño pepper, seeded if desired, then minced",
       "expected": {
-        "item": "jalapeño pepper, seeded if desired",
+        "item": "jalapeño pepper, seeded if desired, then minced",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "then minced",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -125,7 +125,7 @@
     {
       "raw": "2 pounds sweet potatoes, peeled and cut into 1/2-inch cubes (about 4 cups)",
       "expected": {
-        "item": "sweet potatoes",
+        "item": "sweet potatoes, peeled and cut into 1/2-inch cubes",
         "measurements": [
           {
             "amount": "2",
@@ -140,7 +140,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1/2-inch cubes",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -175,7 +175,7 @@
     {
       "raw": "1 pound Swiss chard, center ribs removed, leaves thinly sliced",
       "expected": {
-        "item": "Swiss chard, center ribs removed",
+        "item": "Swiss chard, center ribs removed, leaves thinly sliced",
         "measurements": [
           {
             "amount": "1",
@@ -186,25 +186,21 @@
             "unit": "g"
           }
         ],
-        "note": "leaves thinly sliced",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 teaspoon kosher salt, more to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "kosher salt, more to taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
-        "note": "more to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

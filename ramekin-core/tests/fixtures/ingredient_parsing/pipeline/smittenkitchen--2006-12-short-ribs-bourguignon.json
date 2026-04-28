@@ -341,14 +341,14 @@
     {
       "raw": "8 medium fresh white mushrooms, trimmed and quartered lengthwise",
       "expected": {
-        "item": "fresh white mushrooms",
+        "item": "fresh white mushrooms, trimmed and quartered lengthwise",
         "measurements": [
           {
             "amount": "8",
             "unit": "medium"
           }
         ],
-        "note": "trimmed and quartered lengthwise",
+        "note": null,
         "category": "Produce"
       }
     }

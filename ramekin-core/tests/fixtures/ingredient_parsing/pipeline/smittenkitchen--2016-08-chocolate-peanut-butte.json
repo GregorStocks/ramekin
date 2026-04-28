@@ -109,7 +109,7 @@
     {
       "raw": "1/2 cup (115 grams) unsalted butter, cold is fine if using a food processor",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, cold is fine if using a food processor",
         "measurements": [
           {
             "amount": "0.5",
@@ -120,7 +120,7 @@
             "unit": "g"
           }
         ],
-        "note": "cold is fine if using a food processor",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -244,10 +244,10 @@
     {
       "raw": "Chocolate sprinkles, shavings, crunchy pearls or chopped chocolate-peanut butter candies",
       "expected": {
-        "item": "Chocolate sprinkles, shavings",
+        "item": "Chocolate sprinkles, shavings, crunchy pearls or chopped chocolate-peanut butter candies",
         "measurements": [],
-        "note": "crunchy pearls or chopped chocolate-peanut butter candies",
-        "category": "Baking"
+        "note": null,
+        "category": "Condiments & Sauces"
       }
     }
   ]

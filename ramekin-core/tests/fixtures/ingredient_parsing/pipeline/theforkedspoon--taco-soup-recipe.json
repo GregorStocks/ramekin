@@ -391,9 +391,9 @@
     {
       "raw": "Tortilla chips, sliced avocado, green onion, shredded cheese",
       "expected": {
-        "item": "Tortilla chips, sliced avocado, green onion",
+        "item": "Tortilla chips, sliced avocado, green onion, shredded cheese",
         "measurements": [],
-        "note": "shredded cheese",
+        "note": null,
         "category": "Produce"
       }
     }

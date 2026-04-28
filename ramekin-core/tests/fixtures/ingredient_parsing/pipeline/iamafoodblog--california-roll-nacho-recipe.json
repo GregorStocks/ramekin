@@ -19,14 +19,14 @@
     {
       "raw": "1/4 cup kewpie mayo, or to taste",
       "expected": {
-        "item": "kewpie mayo",
+        "item": "kewpie mayo, or to taste",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },

@@ -83,14 +83,14 @@
     {
       "raw": "2 cloves garlic, peeled but left whole",
       "expected": {
-        "item": "garlic",
+        "item": "garlic, peeled but left whole",
         "measurements": [
           {
             "amount": "2",
             "unit": "clove"
           }
         ],
-        "note": "peeled but left whole",
+        "note": null,
         "category": "Produce"
       }
     },

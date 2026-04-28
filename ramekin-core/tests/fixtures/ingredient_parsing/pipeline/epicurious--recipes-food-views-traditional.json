@@ -73,35 +73,35 @@
     {
       "raw": "1 zucchini, quartered lengthwise and thinly sliced",
       "expected": {
-        "item": "zucchini",
+        "item": "zucchini, quartered lengthwise and thinly sliced",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "quartered lengthwise and thinly sliced",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 red bell pepper, seeded and chopped",
       "expected": {
-        "item": "red bell pepper",
+        "item": "red bell pepper, seeded and chopped",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "seeded and chopped",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 pint cherry or grape tomatoes (about 12 oz.), halved or quartered if large",
       "expected": {
-        "item": "cherry or grape tomatoes",
+        "item": "cherry or grape tomatoes, halved or quartered if large",
         "measurements": [
           {
             "amount": "1",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": "halved or quartered if large",
+        "note": null,
         "category": "Produce"
       }
     },

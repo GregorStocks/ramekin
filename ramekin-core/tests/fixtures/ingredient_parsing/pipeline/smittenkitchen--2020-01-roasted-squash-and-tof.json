@@ -69,14 +69,14 @@
     {
       "raw": "1/2 to 2 teaspoons crushed red pepper flakes, or to taste",
       "expected": {
-        "item": "crushed red pepper flakes",
+        "item": "crushed red pepper flakes, or to taste",
         "measurements": [
           {
             "amount": "0.5 to 2",
             "unit": "tsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
@@ -148,14 +148,14 @@
     {
       "raw": "2 scallions, trimmed and thinly sliced on the diagonal",
       "expected": {
-        "item": "scallions",
+        "item": "scallions, trimmed and thinly sliced on the diagonal",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "trimmed and thinly sliced on the diagonal",
+        "note": null,
         "category": "Produce"
       }
     },

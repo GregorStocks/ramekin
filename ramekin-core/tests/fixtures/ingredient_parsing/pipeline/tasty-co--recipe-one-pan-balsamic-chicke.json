@@ -127,7 +127,7 @@
     {
       "raw": "1 lb fresh asparagus, trimmed of tough ends, chopped into 2-inch / 5cm pieces",
       "expected": {
-        "item": "fresh asparagus, trimmed of tough ends",
+        "item": "fresh asparagus, trimmed of tough ends, chopped into 2-inch / 5cm pieces",
         "measurements": [
           {
             "amount": "1",
@@ -138,7 +138,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped into 2-inch / 5cm pieces",
+        "note": null,
         "category": "Produce"
       }
     },

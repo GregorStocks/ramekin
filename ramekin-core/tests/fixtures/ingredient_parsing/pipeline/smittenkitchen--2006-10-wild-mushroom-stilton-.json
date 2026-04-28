@@ -227,7 +227,7 @@
     {
       "raw": "1/2 pound assorted fresh wild mushrooms, such as chanterelles, porcini and shiitakes, brushed clean and large mushrooms thinly sliced",
       "expected": {
-        "item": "assorted fresh wild mushrooms, such as chanterelles, porcini and shiitakes",
+        "item": "assorted fresh wild mushrooms, such as chanterelles, porcini and shiitakes, brushed clean and large mushrooms thinly sliced",
         "measurements": [
           {
             "amount": "0.5",
@@ -238,7 +238,7 @@
             "unit": "g"
           }
         ],
-        "note": "brushed clean and large mushrooms thinly sliced",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -290,14 +290,14 @@
     {
       "raw": "1 large egg yolk, whisked with 1/2 teaspoon water (optional)",
       "expected": {
-        "item": "egg yolk",
+        "item": "egg yolk, whisked with 1/2 teaspoon water",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "optional, whisked with 1/2 teaspoon water",
+        "note": "optional",
         "category": "Dairy & Eggs"
       }
     }

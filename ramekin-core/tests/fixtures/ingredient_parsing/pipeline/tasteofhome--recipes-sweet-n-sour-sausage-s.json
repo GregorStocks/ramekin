@@ -27,14 +27,14 @@
     {
       "raw": "2 small onions, quartered and separated",
       "expected": {
-        "item": "onions",
+        "item": "onions, quartered and separated",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
           }
         ],
-        "note": "quartered and separated",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -55,7 +55,7 @@
     {
       "raw": "1 can (8 ounces) unsweetened pineapple chunks, undrained",
       "expected": {
-        "item": "unsweetened pineapple chunks",
+        "item": "unsweetened pineapple chunks, undrained",
         "measurements": [
           {
             "amount": "1",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": "undrained",
+        "note": null,
         "category": "Produce"
       }
     },

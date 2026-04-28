@@ -110,14 +110,14 @@
     {
       "raw": "3 scallions, white and pale-green parts only, thinly sliced on a diagonal",
       "expected": {
-        "item": "scallions, white and pale-green parts only",
+        "item": "scallions, white and pale-green parts only, thinly sliced on a diagonal",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "thinly sliced on a diagonal",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -56,14 +56,14 @@
     {
       "raw": "1 pretzel roll, sliced lengthwise",
       "expected": {
-        "item": "pretzel roll",
+        "item": "pretzel roll, sliced lengthwise",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced lengthwise",
+        "note": null,
         "category": "Bakery & Bread"
       }
     },

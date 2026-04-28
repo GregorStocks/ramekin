@@ -198,14 +198,14 @@
     {
       "raw": "1/2 teaspoon chili flakes, or to taste",
       "expected": {
-        "item": "chili flakes",
+        "item": "chili flakes, or to taste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

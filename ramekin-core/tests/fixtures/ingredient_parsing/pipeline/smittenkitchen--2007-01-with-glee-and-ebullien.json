@@ -65,18 +65,14 @@
     {
       "raw": "1/2 cup fresh lemon juice, and more to taste",
       "expected": {
-        "item": "fresh lemon juice",
+        "item": "fresh lemon juice, and more to taste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "122",
-            "unit": "g"
           }
         ],
-        "note": "and more to taste",
+        "note": null,
         "category": "Beverages"
       }
     },

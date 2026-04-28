@@ -5,7 +5,7 @@
     {
       "raw": "1 1/2 pounds baking potatoes, peeled and cut into chunks",
       "expected": {
-        "item": "baking potatoes",
+        "item": "baking potatoes, peeled and cut into chunks",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into chunks",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -88,9 +88,9 @@
     {
       "raw": "Sour cream, melted butter or vinegar to serve",
       "expected": {
-        "item": "Sour cream",
+        "item": "Sour cream, melted butter or vinegar to serve",
         "measurements": [],
-        "note": "melted butter or vinegar to serve",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     }

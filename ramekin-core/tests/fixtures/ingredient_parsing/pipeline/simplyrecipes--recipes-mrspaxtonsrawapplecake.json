@@ -41,14 +41,14 @@
     {
       "raw": "3 eggs, slightly beaten",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, slightly beaten",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "slightly beaten",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

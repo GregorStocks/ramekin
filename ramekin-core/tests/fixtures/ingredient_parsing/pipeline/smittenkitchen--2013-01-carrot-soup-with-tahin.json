@@ -68,14 +68,14 @@
     {
       "raw": "4 regular or 6 small garlic cloves, peeled and smashed",
       "expected": {
-        "item": "regular or 6 small garlic cloves",
+        "item": "regular or 6 small garlic cloves, peeled and smashed",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "peeled and smashed",
+        "note": null,
         "category": "Produce"
       }
     },

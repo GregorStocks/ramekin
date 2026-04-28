@@ -19,14 +19,14 @@
     {
       "raw": "2 red onions, trimmed and cut into quarters",
       "expected": {
-        "item": "red onions",
+        "item": "red onions, trimmed and cut into quarters",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "trimmed and cut into quarters",
+        "note": null,
         "category": "Produce"
       }
     },

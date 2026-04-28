@@ -23,7 +23,7 @@
     {
       "raw": "4 oz (115 g), about 1 cup, finely grated pecorino, such as the pre-grated Locatelli brand",
       "expected": {
-        "item": "about 1 cup, finely grated pecorino",
+        "item": "about 1 cup, finely grated pecorino, such as the pre-grated Locatelli brand",
         "measurements": [
           {
             "amount": "4",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": "such as the pre-grated Locatelli brand",
+        "note": null,
         "category": "Cheese"
       }
     },

@@ -157,14 +157,14 @@
     {
       "raw": "2 peaches, pitted and thinly sliced (between 1/8 and 1/4-inch thick)",
       "expected": {
-        "item": "peaches",
+        "item": "peaches, pitted and thinly sliced",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "between 1/8 and 1/4-inch thick, pitted and thinly sliced",
+        "note": "between 1/8 and 1/4-inch thick",
         "category": "Produce"
       }
     }

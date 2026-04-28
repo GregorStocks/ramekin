@@ -5,14 +5,14 @@
     {
       "raw": "4 large egg yolks, cold or room temperature",
       "expected": {
-        "item": "egg yolks",
+        "item": "egg yolks, cold or room temperature",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": "cold or room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -77,7 +77,7 @@
     {
       "raw": "1 Tablespoon (14g) unsalted butter, softened to room temperature",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, softened to room temperature",
         "measurements": [
           {
             "amount": "1",
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": "softened to room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

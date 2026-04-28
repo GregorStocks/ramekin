@@ -37,14 +37,14 @@
     {
       "raw": "1 small avocado, peeled and cut into 1/2-inch pieces",
       "expected": {
-        "item": "avocado",
+        "item": "avocado, peeled and cut into 1/2-inch pieces",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "peeled and cut into 1/2-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "1 acorn squash, cut in half, seeds removed, sliced into ¼-inch pieces",
       "expected": {
-        "item": "acorn squash, cut in half, seeds removed",
+        "item": "acorn squash, cut in half, seeds removed, sliced into 1/4-inch pieces",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced into 1/4-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -220,28 +220,28 @@
     {
       "raw": "2 small kohlrabi bulbs, peeled and sliced paper thin (or 2 additional carrots)",
       "expected": {
-        "item": "kohlrabi bulbs",
+        "item": "kohlrabi bulbs, peeled and sliced paper thin",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
           }
         ],
-        "note": "or 2 additional carrots, peeled and sliced paper thin",
+        "note": "or 2 additional carrots",
         "category": "Produce"
       }
     },
     {
       "raw": "2 carrots, peeled into ribbons",
       "expected": {
-        "item": "carrots",
+        "item": "carrots, peeled into ribbons",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "peeled into ribbons",
+        "note": null,
         "category": "Produce"
       }
     },

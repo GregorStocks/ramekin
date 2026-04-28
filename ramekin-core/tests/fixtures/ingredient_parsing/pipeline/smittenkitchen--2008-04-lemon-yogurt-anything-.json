@@ -163,7 +163,7 @@
     {
       "raw": "1 1/2 cups (250 grams) blueberries, fresh or frozen [see Note]",
       "expected": {
-        "item": "blueberries",
+        "item": "blueberries, fresh or frozen [see Note]",
         "measurements": [
           {
             "amount": "1.5",
@@ -174,7 +174,7 @@
             "unit": "g"
           }
         ],
-        "note": "fresh or frozen [see Note]",
+        "note": null,
         "category": "Produce"
       }
     },

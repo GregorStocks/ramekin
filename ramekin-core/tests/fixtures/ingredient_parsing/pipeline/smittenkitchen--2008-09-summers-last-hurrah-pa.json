@@ -156,14 +156,14 @@
     {
       "raw": "1 hothouse cucumber, unpeeled, seeded, and sliced 1/2 inch thick",
       "expected": {
-        "item": "hothouse cucumber, unpeeled, seeded",
+        "item": "hothouse cucumber, unpeeled, seeded, and sliced 1/2 inch thick",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "and sliced 1/2 inch thick",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -184,14 +184,14 @@
     {
       "raw": "1/2 red onion, cut in half and thinly sliced",
       "expected": {
-        "item": "red onion",
+        "item": "red onion, cut in half and thinly sliced",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "cut in half and thinly sliced",
+        "note": null,
         "category": "Produce"
       }
     },

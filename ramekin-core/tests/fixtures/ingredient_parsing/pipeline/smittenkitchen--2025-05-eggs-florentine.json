@@ -19,7 +19,7 @@
     {
       "raw": "1/2 cup (8 tablespoons or 4 ounces) unsalted butter, melted but still warm",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, melted but still warm",
         "measurements": [
           {
             "amount": "0.5",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "melted but still warm",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

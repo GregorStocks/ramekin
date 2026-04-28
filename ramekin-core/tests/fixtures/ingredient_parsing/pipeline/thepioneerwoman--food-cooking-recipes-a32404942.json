@@ -69,7 +69,7 @@
     {
       "raw": "2 lb. large shrimp, peeled and deveined",
       "expected": {
-        "item": "large shrimp",
+        "item": "large shrimp, peeled and deveined",
         "measurements": [
           {
             "amount": "2",
@@ -80,7 +80,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and deveined",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
@@ -123,14 +123,14 @@
     {
       "raw": "1/2 jalapeño pepper, seeded and diced",
       "expected": {
-        "item": "jalapeño pepper",
+        "item": "jalapeño pepper, seeded and diced",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "seeded and diced",
+        "note": null,
         "category": "Produce"
       }
     },

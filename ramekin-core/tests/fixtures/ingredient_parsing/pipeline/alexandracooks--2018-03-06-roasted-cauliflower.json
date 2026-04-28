@@ -121,14 +121,14 @@
     {
       "raw": "2 to 3 garlic cloves, smashed and peeled",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic cloves, smashed and peeled",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": null
           }
         ],
-        "note": "smashed and peeled",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -208,9 +208,9 @@
     {
       "raw": "naan, pita, or other bread for serving",
       "expected": {
-        "item": "naan, pita",
+        "item": "naan, pita, or other bread for serving",
         "measurements": [],
-        "note": "or other bread for serving",
+        "note": null,
         "category": "Bakery & Bread"
       }
     }

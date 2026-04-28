@@ -19,14 +19,14 @@
     {
       "raw": "1 carrot, peeled and finely sliced diagonally",
       "expected": {
-        "item": "carrot",
+        "item": "carrot, peeled and finely sliced diagonally",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "peeled and finely sliced diagonally",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -88,7 +88,7 @@
     {
       "raw": "6 ounces asparagus, sugar snaps, or snow peas, trimmed and cut into 1- to 2-inch segments",
       "expected": {
-        "item": "asparagus, sugar snaps, or snow peas",
+        "item": "asparagus, sugar snaps, or snow peas, trimmed and cut into 1- to 2-inch segments",
         "measurements": [
           {
             "amount": "6",
@@ -99,7 +99,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and cut into 1- to 2-inch segments",
+        "note": null,
         "category": "Produce"
       }
     },

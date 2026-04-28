@@ -33,14 +33,14 @@
     {
       "raw": "0.25 cup chili paste, such as sambal oelek, or to taste",
       "expected": {
-        "item": "chili paste, such as sambal oelek",
+        "item": "chili paste, such as sambal oelek, or to taste",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },
@@ -135,7 +135,7 @@
     {
       "raw": "1 pound oyster mushrooms, shredded into strips with your fingers",
       "expected": {
-        "item": "oyster mushrooms",
+        "item": "oyster mushrooms, shredded into strips with your fingers",
         "measurements": [
           {
             "amount": "1",
@@ -146,7 +146,7 @@
             "unit": "g"
           }
         ],
-        "note": "shredded into strips with your fingers",
+        "note": null,
         "category": "Produce"
       }
     },

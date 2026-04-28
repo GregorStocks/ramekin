@@ -115,14 +115,14 @@
     {
       "raw": "1 (4-pound) beef chuck roast, trimmed of excess fat and cut into 1½-inch cubes (see note below)",
       "expected": {
-        "item": "beef chuck roast",
+        "item": "beef chuck roast, trimmed of excess fat and cut into 1 1/2-inch cubes",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "4-pound, see note below, trimmed of excess fat and cut into 1 1/2-inch cubes",
+        "note": "4-pound, see note below",
         "category": "Meat & Seafood"
       }
     },
@@ -197,14 +197,14 @@
     {
       "raw": "3  jalapeño chiles, cored, seeded and finely diced (see note)",
       "expected": {
-        "item": "jalapeño chiles, cored",
+        "item": "jalapeño chiles, cored, seeded and finely diced",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "see note, seeded and finely diced",
+        "note": "see note",
         "category": "Produce"
       }
     },

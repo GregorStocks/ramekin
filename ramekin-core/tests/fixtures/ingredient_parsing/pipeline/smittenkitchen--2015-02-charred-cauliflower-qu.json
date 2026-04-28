@@ -88,14 +88,14 @@
     {
       "raw": "1 small head cauliflower, cored and cut into rough 1-inch chunks",
       "expected": {
-        "item": "head cauliflower",
+        "item": "head cauliflower, cored and cut into rough 1-inch chunks",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "cored and cut into rough 1-inch chunks",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -298,14 +298,14 @@
     {
       "raw": "2 scallions, sliced thin",
       "expected": {
-        "item": "scallions",
+        "item": "scallions, sliced thin",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "sliced thin",
+        "note": null,
         "category": "Produce"
       }
     },

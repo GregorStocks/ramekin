@@ -14,14 +14,14 @@
     {
       "raw": "1 cup brown or green lentils, washed and picked over",
       "expected": {
-        "item": "brown or green lentils",
+        "item": "brown or green lentils, washed and picked over",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "washed and picked over",
+        "note": null,
         "category": "Canned Goods"
       }
     },
@@ -147,10 +147,10 @@
     {
       "raw": "Chopped fresh flat leaf parsley, cilantro or mint for garnish (optional)",
       "expected": {
-        "item": "Chopped fresh flat leaf parsley",
+        "item": "Chopped fresh flat leaf parsley, cilantro or mint for garnish",
         "measurements": [],
-        "note": "optional, cilantro or mint for garnish",
-        "category": "Spices & Seasonings"
+        "note": "optional",
+        "category": "Produce"
       }
     }
   ]

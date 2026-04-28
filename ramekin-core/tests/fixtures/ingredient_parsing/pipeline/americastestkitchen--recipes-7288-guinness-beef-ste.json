@@ -188,7 +188,7 @@
     {
       "raw": "1 pound carrots , peeled and cut into 1-inch pieces",
       "expected": {
-        "item": "carrots",
+        "item": "carrots, peeled and cut into 1-inch pieces",
         "measurements": [
           {
             "amount": "1",
@@ -199,7 +199,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },

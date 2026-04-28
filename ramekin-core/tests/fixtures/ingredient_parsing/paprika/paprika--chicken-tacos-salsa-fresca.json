@@ -125,28 +125,28 @@
     {
       "raw": "1/4 teaspoon minced raw garlic, or to taste",
       "expected": {
-        "item": "minced raw garlic",
+        "item": "minced raw garlic, or to taste",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 habanero or jalapeño pepper, stemmed, seeded and minced, or to taste",
       "expected": {
-        "item": "habanero or jalapeño pepper, stemmed, seeded and minced",
+        "item": "habanero or jalapeño pepper, stemmed, seeded and minced, or to taste",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Produce"
       }
     },

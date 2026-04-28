@@ -46,14 +46,14 @@
     {
       "raw": "1 garlic clove, minced or pressed through garlic press",
       "expected": {
-        "item": "garlic clove",
+        "item": "garlic clove, minced or pressed through garlic press",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "minced or pressed through garlic press",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -132,7 +132,7 @@
     {
       "raw": "1 pound cherry or grape tomatoes, mixed colors if you can find them",
       "expected": {
-        "item": "cherry or grape tomatoes",
+        "item": "cherry or grape tomatoes, mixed colors if you can find them",
         "measurements": [
           {
             "amount": "1",
@@ -143,7 +143,7 @@
             "unit": "g"
           }
         ],
-        "note": "mixed colors if you can find them",
+        "note": null,
         "category": "Produce"
       }
     },

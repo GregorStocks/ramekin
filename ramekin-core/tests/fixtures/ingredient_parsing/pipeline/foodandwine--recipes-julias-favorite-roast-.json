@@ -65,15 +65,15 @@
     {
       "raw": "1 teaspoon thyme, savory, or mixed herbs, or 2 fresh thyme or savory sprigs",
       "expected": {
-        "item": "thyme, savory, or mixed herbs",
+        "item": "thyme, savory, or mixed herbs, or 2 fresh thyme or savory sprigs",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or 2 fresh thyme or savory sprigs",
-        "category": "Spices & Seasonings"
+        "note": null,
+        "category": "Produce"
       }
     },
     {

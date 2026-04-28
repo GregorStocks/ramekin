@@ -109,14 +109,14 @@
     {
       "raw": "1/2 cup olive oil, coconut oil, melted butter or a mix of the above",
       "expected": {
-        "item": "olive oil, coconut oil",
+        "item": "olive oil, coconut oil, melted butter or a mix of the above",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "melted butter or a mix of the above",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
@@ -137,14 +137,14 @@
     {
       "raw": "3/4 cup plus 2 tablespoons whole wheat flour, or a wholegrain flour mix of your choice",
       "expected": {
-        "item": "whole wheat flour",
+        "item": "whole wheat flour, or a wholegrain flour mix of your choice",
         "measurements": [
           {
             "amount": "3/4 cup plus 2 tablespoons",
             "unit": null
           }
         ],
-        "note": "or a wholegrain flour mix of your choice",
+        "note": null,
         "category": "Baking"
       }
     },

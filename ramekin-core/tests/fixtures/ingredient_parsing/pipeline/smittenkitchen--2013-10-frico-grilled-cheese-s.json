@@ -5,14 +5,14 @@
     {
       "raw": "2 slices bread of your choice (I’m using a hearty country wheat bread), sliced 1/2-inch thick",
       "expected": {
-        "item": "bread of your choice",
+        "item": "bread of your choice, sliced 1/2-inch thick",
         "measurements": [
           {
             "amount": "2",
             "unit": "slice"
           }
         ],
-        "note": "I’m using a hearty country wheat bread, sliced 1/2-inch thick",
+        "note": "I’m using a hearty country wheat bread",
         "category": "Bakery & Bread"
       }
     },

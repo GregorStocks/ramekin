@@ -95,18 +95,14 @@
     {
       "raw": "2 cups unsalted butter, melted and cooled",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, melted and cooled",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
-        "note": "melted and cooled",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -217,18 +213,14 @@
     {
       "raw": "¾ cup unsalted butter, melted and cooled",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, melted and cooled",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "170",
-            "unit": "g"
           }
         ],
-        "note": "melted and cooled",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

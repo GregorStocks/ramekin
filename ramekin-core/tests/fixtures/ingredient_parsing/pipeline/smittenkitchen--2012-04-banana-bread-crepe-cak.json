@@ -205,7 +205,7 @@
     {
       "raw": "8 ounces (225 grams) cream cheese, well-softened",
       "expected": {
-        "item": "cream cheese",
+        "item": "cream cheese, well-softened",
         "measurements": [
           {
             "amount": "8",
@@ -216,7 +216,7 @@
             "unit": "g"
           }
         ],
-        "note": "well-softened",
+        "note": null,
         "category": "Cheese"
       }
     },
@@ -380,14 +380,14 @@
     {
       "raw": "1/4 teaspoon flaky sea salt, or to taste",
       "expected": {
-        "item": "flaky sea salt",
+        "item": "flaky sea salt, or to taste",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     }

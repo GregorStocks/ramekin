@@ -5,7 +5,7 @@
     {
       "raw": "1 1/2 pounds zucchini (2 to 3, depending on size), halved lenthwise and very thinly sliced",
       "expected": {
-        "item": "zucchini",
+        "item": "zucchini, halved lenthwise and very thinly sliced",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "2 to 3, depending on size, halved lenthwise and very thinly sliced",
+        "note": "2 to 3, depending on size",
         "category": "Produce"
       }
     },
@@ -41,7 +41,7 @@
     {
       "raw": "1 1/2 ounces parmesan or pecorino romano cheese, thinly sliced on a mandoline or with a peeler",
       "expected": {
-        "item": "parmesan or pecorino romano cheese",
+        "item": "parmesan or pecorino romano cheese, thinly sliced on a mandoline or with a peeler",
         "measurements": [
           {
             "amount": "1.5",
@@ -52,28 +52,28 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced on a mandoline or with a peeler",
+        "note": null,
         "category": "Cheese"
       }
     },
     {
       "raw": "1/2 cup slivered almonds, well-toasted and cooled (300 degree oven for 7 to 10 minutes, tossing occasionally, usually works)",
       "expected": {
-        "item": "slivered almonds",
+        "item": "slivered almonds, well-toasted and cooled",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "300 degree oven for 7 to 10 minutes, tossing occasionally, usually works, well-toasted and cooled",
+        "note": "300 degree oven for 7 to 10 minutes, tossing occasionally, usually works",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
       "raw": "1/2 pound pasta of your choice (I like the extra bite of whole wheat pasta in pasta salads), cooked, drained and cooled",
       "expected": {
-        "item": "pasta of your choice, cooked",
+        "item": "pasta of your choice, cooked, drained and cooled",
         "measurements": [
           {
             "amount": "0.5",
@@ -84,7 +84,7 @@
             "unit": "g"
           }
         ],
-        "note": "I like the extra bite of whole wheat pasta in pasta salads, drained and cooled",
+        "note": "I like the extra bite of whole wheat pasta in pasta salads",
         "category": "Pasta & Rice"
       }
     },

@@ -339,7 +339,7 @@
     {
       "raw": "8 ounces fresh jumbo lump crabmeat, drained and picked over",
       "expected": {
-        "item": "fresh jumbo lump crabmeat",
+        "item": "fresh jumbo lump crabmeat, drained and picked over",
         "measurements": [
           {
             "amount": "8",
@@ -350,14 +350,14 @@
             "unit": "g"
           }
         ],
-        "note": "drained and picked over",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 pound large peeled, deveined raw shrimp",
       "expected": {
-        "item": "large peeled",
+        "item": "large peeled, deveined raw shrimp",
         "measurements": [
           {
             "amount": "1",
@@ -368,8 +368,8 @@
             "unit": "g"
           }
         ],
-        "note": "deveined raw shrimp",
-        "category": "Other"
+        "note": null,
+        "category": "Meat & Seafood"
       }
     }
   ]

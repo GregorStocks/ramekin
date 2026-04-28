@@ -37,14 +37,14 @@
     {
       "raw": "1 teaspoon spicy korean seasoning, or crushed red pepper flakes",
       "expected": {
-        "item": "spicy korean seasoning",
+        "item": "spicy korean seasoning, or crushed red pepper flakes",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or crushed red pepper flakes",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
@@ -143,14 +143,14 @@
     {
       "raw": "10 x 10 inch sheet of frozen puff pastry, thawed and cut in half",
       "expected": {
-        "item": "x 10 inch sheet of frozen puff pastry",
+        "item": "x 10 inch sheet of frozen puff pastry, thawed and cut in half",
         "measurements": [
           {
             "amount": "10",
             "unit": null
           }
         ],
-        "note": "thawed and cut in half",
+        "note": null,
         "category": "Frozen"
       }
     }

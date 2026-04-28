@@ -177,14 +177,14 @@
     {
       "raw": "1-2 tablespoons pumpkin spice latte syrup, or to taste",
       "expected": {
-        "item": "pumpkin spice latte syrup",
+        "item": "pumpkin spice latte syrup, or to taste",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tbsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Produce"
       }
     },

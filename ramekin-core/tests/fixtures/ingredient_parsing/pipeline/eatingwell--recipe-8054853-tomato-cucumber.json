@@ -19,28 +19,28 @@
     {
       "raw": "2 medium tomatoes, cored and cut into thin wedges",
       "expected": {
-        "item": "tomatoes",
+        "item": "tomatoes, cored and cut into thin wedges",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": "cored and cut into thin wedges",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "0.5 medium red onion, thinly sliced into half moons",
       "expected": {
-        "item": "red onion",
+        "item": "red onion, thinly sliced into half moons",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "medium"
           }
         ],
-        "note": "thinly sliced into half moons",
+        "note": null,
         "category": "Produce"
       }
     },

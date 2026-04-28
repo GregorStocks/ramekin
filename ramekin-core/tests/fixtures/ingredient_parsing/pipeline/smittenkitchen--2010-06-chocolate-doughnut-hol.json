@@ -151,7 +151,7 @@
     {
       "raw": "3 tablespoons (1 1/2 ounces or 42 grams) butter, melted and cooled a bit",
       "expected": {
-        "item": "butter",
+        "item": "butter, melted and cooled a bit",
         "measurements": [
           {
             "amount": "3",
@@ -166,7 +166,7 @@
             "unit": "g"
           }
         ],
-        "note": "melted and cooled a bit",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

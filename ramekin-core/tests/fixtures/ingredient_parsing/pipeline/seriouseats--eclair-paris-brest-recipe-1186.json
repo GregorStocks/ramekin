@@ -55,7 +55,7 @@
     {
       "raw": "226g (8 ounces) unsalted butter, softened to about 68°F (20°C)",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, softened to about 68°F",
         "measurements": [
           {
             "amount": "226",
@@ -66,7 +66,7 @@
             "unit": "oz"
           }
         ],
-        "note": "20°C, softened to about 68°F",
+        "note": "20°C",
         "category": "Dairy & Eggs"
       }
     },

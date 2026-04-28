@@ -78,14 +78,14 @@
     {
       "raw": "3 large eggs, beaten to blend",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, beaten to blend",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": "beaten to blend",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -142,9 +142,9 @@
     {
       "raw": "Kosher salt, freshly ground pepper",
       "expected": {
-        "item": "Kosher salt",
+        "item": "Kosher salt, freshly ground pepper",
         "measurements": [],
-        "note": "freshly ground pepper",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

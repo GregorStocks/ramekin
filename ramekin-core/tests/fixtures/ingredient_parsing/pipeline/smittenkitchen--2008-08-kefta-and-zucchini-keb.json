@@ -69,15 +69,15 @@
     {
       "raw": "12 (10-inch) wooden skewers, soaked in cold water for 30 minutes",
       "expected": {
-        "item": "wooden skewers",
+        "item": "wooden skewers, soaked in cold water for 30 minutes",
         "measurements": [
           {
             "amount": "12",
             "unit": null
           }
         ],
-        "note": "10-inch, soaked in cold water for 30 minutes",
-        "category": "Other"
+        "note": "10-inch",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {

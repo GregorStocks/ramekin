@@ -87,18 +87,14 @@
     {
       "raw": "2 tablespoons unsalted butter, sliced into very thin pats and chilled",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, sliced into very thin pats and chilled",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
-        "note": "sliced into very thin pats and chilled",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

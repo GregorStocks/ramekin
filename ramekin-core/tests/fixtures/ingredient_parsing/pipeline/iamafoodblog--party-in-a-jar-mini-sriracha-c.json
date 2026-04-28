@@ -151,14 +151,14 @@
     {
       "raw": "2 teaspoons sriracha, or to taste",
       "expected": {
-        "item": "sriracha",
+        "item": "sriracha, or to taste",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },

@@ -151,14 +151,14 @@
     {
       "raw": "3 hard-boiled eggs, dyed red and fully dried",
       "expected": {
-        "item": "hard-boiled eggs",
+        "item": "hard-boiled eggs, dyed red and fully dried",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "dyed red and fully dried",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

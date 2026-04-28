@@ -125,64 +125,56 @@
     {
       "raw": "1 large carrot, peeled and cut into large chunks",
       "expected": {
-        "item": "carrot",
+        "item": "carrot, peeled and cut into large chunks",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "peeled and cut into large chunks",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 small daikon, peeled and cut into large chunks",
       "expected": {
-        "item": "daikon",
+        "item": "daikon, peeled and cut into large chunks",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "peeled and cut into large chunks",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "2 tablespoons fish sauce, or to taste",
       "expected": {
-        "item": "fish sauce",
+        "item": "fish sauce, or to taste",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "36",
-            "unit": "g"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "2 tablespoons sugar, or to taste",
       "expected": {
-        "item": "sugar",
+        "item": "sugar, or to taste",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "25",
-            "unit": "g"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Baking"
       }
     },

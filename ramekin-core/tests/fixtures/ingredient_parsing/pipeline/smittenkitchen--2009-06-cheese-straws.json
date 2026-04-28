@@ -27,7 +27,7 @@
     {
       "raw": "4 tablespoons (1/2 stick or 2 ounces) unsalted butter, softened and cut into 4 pieces",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, softened and cut into 4 pieces",
         "measurements": [
           {
             "amount": "4",
@@ -46,7 +46,7 @@
             "unit": "g"
           }
         ],
-        "note": "softened and cut into 4 pieces",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

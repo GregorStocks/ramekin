@@ -46,7 +46,7 @@
     {
       "raw": "2 lbs. Potatoes, such as Yukon Gold or whatever variety you have on hand, peeled and cut into 1-inch pieces",
       "expected": {
-        "item": "Potatoes, such as Yukon Gold or whatever variety you have on hand",
+        "item": "Potatoes, such as Yukon Gold or whatever variety you have on hand, peeled and cut into 1-inch pieces",
         "measurements": [
           {
             "amount": "2",
@@ -57,7 +57,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },

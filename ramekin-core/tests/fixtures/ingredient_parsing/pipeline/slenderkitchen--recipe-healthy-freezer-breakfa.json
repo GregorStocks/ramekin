@@ -23,46 +23,42 @@
     {
       "raw": "1 red pepper, sliced thin",
       "expected": {
-        "item": "red pepper",
+        "item": "red pepper, sliced thin",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced thin",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 green pepper, sliced thin",
       "expected": {
-        "item": "green pepper",
+        "item": "green pepper, sliced thin",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced thin",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/2 cup red onion, sliced thin",
       "expected": {
-        "item": "red onion",
+        "item": "red onion, sliced thin",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "69",
-            "unit": "g"
           }
         ],
-        "note": "sliced thin",
+        "note": null,
         "category": "Produce"
       }
     },

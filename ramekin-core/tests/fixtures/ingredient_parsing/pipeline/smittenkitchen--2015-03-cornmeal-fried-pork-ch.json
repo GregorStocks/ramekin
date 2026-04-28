@@ -97,9 +97,9 @@
     {
       "raw": "About 3 cups buttermilk, whole milk if you can find it",
       "expected": {
-        "item": "About 3 cups buttermilk",
+        "item": "About 3 cups buttermilk, whole milk if you can find it",
         "measurements": [],
-        "note": "whole milk if you can find it",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

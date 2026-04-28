@@ -5,7 +5,7 @@
     {
       "raw": "50 garlic cloves, peeled (1¼ cups), root ends trimmed",
       "expected": {
-        "item": "garlic cloves, peeled",
+        "item": "garlic cloves, peeled, root ends trimmed",
         "measurements": [
           {
             "amount": "50",
@@ -16,7 +16,7 @@
             "unit": "cup"
           }
         ],
-        "note": "root ends trimmed",
+        "note": null,
         "category": "Produce"
       }
     },

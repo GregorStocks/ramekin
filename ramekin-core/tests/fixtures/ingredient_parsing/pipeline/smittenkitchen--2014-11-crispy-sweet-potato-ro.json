@@ -111,7 +111,7 @@
     {
       "raw": "5 pounds sweet potatoes, peeled and sliced thin",
       "expected": {
-        "item": "sweet potatoes",
+        "item": "sweet potatoes, peeled and sliced thin",
         "measurements": [
           {
             "amount": "5",
@@ -122,21 +122,21 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and sliced thin",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "2 shallots, peeled and sliced thin",
       "expected": {
-        "item": "shallots",
+        "item": "shallots, peeled and sliced thin",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "peeled and sliced thin",
+        "note": null,
         "category": "Produce"
       }
     }

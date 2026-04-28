@@ -142,14 +142,14 @@
     {
       "raw": "1 garlic clove, minced or pressed",
       "expected": {
-        "item": "garlic clove",
+        "item": "garlic clove, minced or pressed",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "minced or pressed",
+        "note": null,
         "section": "For the Chicken",
         "category": "Produce"
       }
@@ -211,14 +211,14 @@
     {
       "raw": "1 large yellow or sweet onion, halved and sliced thin",
       "expected": {
-        "item": "yellow or sweet onion",
+        "item": "yellow or sweet onion, halved and sliced thin",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "halved and sliced thin",
+        "note": null,
         "section": "To Assemble",
         "category": "Produce"
       }

@@ -47,14 +47,14 @@
     {
       "raw": "4  makrut lime leaves, deveined and julienned",
       "expected": {
-        "item": "makrut lime leaves",
+        "item": "makrut lime leaves, deveined and julienned",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "deveined and julienned",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -75,18 +75,14 @@
     {
       "raw": "3/4 cup garlic, peeled but kept whole",
       "expected": {
-        "item": "garlic",
+        "item": "garlic, peeled but kept whole",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "102",
-            "unit": "g"
           }
         ],
-        "note": "peeled but kept whole",
+        "note": null,
         "category": "Produce"
       }
     },

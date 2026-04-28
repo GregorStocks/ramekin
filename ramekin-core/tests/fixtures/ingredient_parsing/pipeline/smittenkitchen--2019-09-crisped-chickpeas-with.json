@@ -19,14 +19,14 @@
     {
       "raw": "1 small garlic clove, minced or microplane-d",
       "expected": {
-        "item": "garlic clove",
+        "item": "garlic clove, minced or microplane-d",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "minced or microplane-d",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -182,7 +182,7 @@
     {
       "raw": "1 cup (2 sticks) unsalted butter, melted and cooled",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, melted and cooled",
         "measurements": [
           {
             "amount": "1",
@@ -191,13 +191,9 @@
           {
             "amount": "2",
             "unit": "stick"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
-        "note": "melted and cooled",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

@@ -115,14 +115,14 @@
     {
       "raw": "3 corn tortillas, sliced into strips",
       "expected": {
-        "item": "corn tortillas",
+        "item": "corn tortillas, sliced into strips",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "sliced into strips",
+        "note": null,
         "category": "Bakery & Bread"
       }
     },

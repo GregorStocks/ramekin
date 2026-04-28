@@ -128,28 +128,28 @@
     {
       "raw": "1 pint mixed cherry or grape tomatoes, sliced or cut into quarters",
       "expected": {
-        "item": "mixed cherry or grape tomatoes",
+        "item": "mixed cherry or grape tomatoes, sliced or cut into quarters",
         "measurements": [
           {
             "amount": "1",
             "unit": "pint"
           }
         ],
-        "note": "sliced or cut into quarters",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "2 stalks celery, halved lengthwise and very thinly sliced",
       "expected": {
-        "item": "celery",
+        "item": "celery, halved lengthwise and very thinly sliced",
         "measurements": [
           {
             "amount": "2",
             "unit": "stalk"
           }
         ],
-        "note": "halved lengthwise and very thinly sliced",
+        "note": null,
         "category": "Produce"
       }
     },

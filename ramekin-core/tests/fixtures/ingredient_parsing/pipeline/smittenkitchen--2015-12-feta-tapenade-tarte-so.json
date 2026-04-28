@@ -254,7 +254,7 @@
     {
       "raw": "2 ounces cream cheese, cold is fine",
       "expected": {
-        "item": "cream cheese",
+        "item": "cream cheese, cold is fine",
         "measurements": [
           {
             "amount": "2",
@@ -265,7 +265,7 @@
             "unit": "g"
           }
         ],
-        "note": "cold is fine",
+        "note": null,
         "category": "Cheese"
       }
     },

@@ -51,14 +51,14 @@
     {
       "raw": "1 bunch scallions, finely sliced, light and dark green parts divided",
       "expected": {
-        "item": "scallions, finely sliced",
+        "item": "scallions, finely sliced, light and dark green parts divided",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": "light and dark green parts divided",
+        "note": null,
         "category": "Produce"
       }
     },

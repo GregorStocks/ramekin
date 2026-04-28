@@ -119,14 +119,14 @@
     {
       "raw": "1 jalapeño, halved with seeds removed",
       "expected": {
-        "item": "jalapeño",
+        "item": "jalapeño, halved with seeds removed",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "halved with seeds removed",
+        "note": null,
         "category": "Produce"
       }
     },

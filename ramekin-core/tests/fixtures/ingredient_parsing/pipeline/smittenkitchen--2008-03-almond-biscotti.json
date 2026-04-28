@@ -159,14 +159,14 @@
     {
       "raw": "1 cup whole almonds, toasted, coarsely chopped or sliced almonds",
       "expected": {
-        "item": "whole almonds, toasted",
+        "item": "whole almonds, toasted, coarsely chopped or sliced almonds",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "coarsely chopped or sliced almonds",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     }

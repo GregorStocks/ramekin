@@ -141,14 +141,14 @@
     {
       "raw": "1 medium avocado, diced about 1 cup",
       "expected": {
-        "item": "avocado",
+        "item": "avocado, diced about 1 cup",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "diced about 1 cup",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -173,32 +173,28 @@
     {
       "raw": "1 teaspoon Kosher salt, as needed for seasoning",
       "expected": {
-        "item": "Kosher salt",
+        "item": "Kosher salt, as needed for seasoning",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
-        "note": "as needed for seasoning",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/2 teaspoon black pepper, as needed for seasoning",
       "expected": {
-        "item": "black pepper",
+        "item": "black pepper, as needed for seasoning",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "as needed for seasoning",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

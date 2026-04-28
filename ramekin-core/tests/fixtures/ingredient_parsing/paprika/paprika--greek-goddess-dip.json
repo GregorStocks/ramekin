@@ -107,14 +107,14 @@
     {
       "raw": "Pinch kosher salt, more to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "kosher salt, more to taste",
         "measurements": [
           {
             "amount": null,
             "unit": "pinch"
           }
         ],
-        "note": "more to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

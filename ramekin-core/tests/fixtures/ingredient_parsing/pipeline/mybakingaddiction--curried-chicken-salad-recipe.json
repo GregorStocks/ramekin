@@ -51,14 +51,14 @@
     {
       "raw": "1/2 cup grapes, sliced in half",
       "expected": {
-        "item": "grapes",
+        "item": "grapes, sliced in half",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "sliced in half",
+        "note": null,
         "category": "Produce"
       }
     },

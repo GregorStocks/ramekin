@@ -119,7 +119,7 @@
     {
       "raw": "2 pounds mixed heirloom tomatoes, some sliced, some halved",
       "expected": {
-        "item": "mixed heirloom tomatoes, some sliced",
+        "item": "mixed heirloom tomatoes, some sliced, some halved",
         "measurements": [
           {
             "amount": "2",
@@ -130,7 +130,7 @@
             "unit": "g"
           }
         ],
-        "note": "some halved",
+        "note": null,
         "category": "Produce"
       }
     },

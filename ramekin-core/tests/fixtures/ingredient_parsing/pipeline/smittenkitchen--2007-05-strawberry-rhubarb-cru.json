@@ -122,7 +122,7 @@
     {
       "raw": "1 1/2 cups rhubarb in 1-inch pieces (about 8 ounces or 225 grams), chopped into 1-inch pieces",
       "expected": {
-        "item": "rhubarb in 1-inch pieces",
+        "item": "rhubarb in 1-inch pieces, chopped into 1-inch pieces",
         "measurements": [
           {
             "amount": "1.5",
@@ -137,7 +137,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped into 1-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },

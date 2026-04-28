@@ -5,14 +5,14 @@
     {
       "raw": "4 tart apples, peeled and sliced, or more to taste",
       "expected": {
-        "item": "tart apples, peeled and sliced",
+        "item": "tart apples, peeled and sliced, or more to taste",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "or more to taste",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -81,7 +81,7 @@
     {
       "raw": "1 (15.25 ounce) can whole kernel sweet corn (such as Green Giant® Niblets®), undrained",
       "expected": {
-        "item": "whole kernel sweet corn",
+        "item": "whole kernel sweet corn, undrained",
         "measurements": [
           {
             "amount": "1",
@@ -96,7 +96,7 @@
             "unit": "g"
           }
         ],
-        "note": "such as Green Giant® Niblets®, undrained",
+        "note": "such as Green Giant® Niblets®",
         "category": "Other"
       }
     },
@@ -229,14 +229,14 @@
     {
       "raw": "1 tablespoon chopped fresh parsley, or to taste",
       "expected": {
-        "item": "chopped fresh parsley",
+        "item": "chopped fresh parsley, or to taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Produce"
       }
     }

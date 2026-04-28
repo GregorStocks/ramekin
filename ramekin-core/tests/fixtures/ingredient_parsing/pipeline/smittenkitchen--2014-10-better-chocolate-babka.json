@@ -177,7 +177,7 @@
     {
       "raw": "1/2 cup (120 grams) unsalted butter, cold is fine",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, cold is fine",
         "measurements": [
           {
             "amount": "0.5",
@@ -188,7 +188,7 @@
             "unit": "g"
           }
         ],
-        "note": "cold is fine",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

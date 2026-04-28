@@ -5,14 +5,14 @@
     {
       "raw": "4 large eggs, cold from refrigerator",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, cold from refrigerator",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": "cold from refrigerator",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

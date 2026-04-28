@@ -359,32 +359,28 @@
     {
       "raw": "3/4 cup pecans, toasted if you have the time",
       "expected": {
-        "item": "pecans",
+        "item": "pecans, toasted if you have the time",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "toasted if you have the time",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     },
     {
       "raw": "6 tablespoons unsalted butter, melted and cooled",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, melted and cooled",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
-        "note": "melted and cooled",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     }

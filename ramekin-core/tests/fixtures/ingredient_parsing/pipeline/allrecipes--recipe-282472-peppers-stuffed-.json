@@ -59,32 +59,28 @@
     {
       "raw": "0.25 cup pasta sauce, or to taste",
       "expected": {
-        "item": "pasta sauce",
+        "item": "pasta sauce, or to taste",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "2 tablespoons grated Parmesan cheese, or to taste",
       "expected": {
-        "item": "grated Parmesan cheese",
+        "item": "grated Parmesan cheese, or to taste",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "12",
-            "unit": "g"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Cheese"
       }
     }

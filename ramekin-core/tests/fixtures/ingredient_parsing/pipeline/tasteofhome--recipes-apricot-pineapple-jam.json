@@ -41,7 +41,7 @@
     {
       "raw": "1 can (20 ounces) crushed pineapple, undrained",
       "expected": {
-        "item": "crushed pineapple",
+        "item": "crushed pineapple, undrained",
         "measurements": [
           {
             "amount": "1",
@@ -56,7 +56,7 @@
             "unit": "g"
           }
         ],
-        "note": "undrained",
+        "note": null,
         "category": "Produce"
       }
     },

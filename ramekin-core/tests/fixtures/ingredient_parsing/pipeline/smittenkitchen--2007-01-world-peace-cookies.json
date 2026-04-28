@@ -5,7 +5,7 @@
     {
       "raw": "16 tablespoons (225 grams) unsalted butter, cold and diced for stand mixer or at room temp for a hand mixer",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, cold and diced for stand mixer or at room temp for a hand mixer",
         "measurements": [
           {
             "amount": "16",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "cold and diced for stand mixer or at room temp for a hand mixer",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

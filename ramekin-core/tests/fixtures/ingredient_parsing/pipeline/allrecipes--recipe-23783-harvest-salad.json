@@ -19,14 +19,14 @@
     {
       "raw": "1 bunch spinach, rinsed and torn into bite-size pieces",
       "expected": {
-        "item": "spinach",
+        "item": "spinach, rinsed and torn into bite-size pieces",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": "rinsed and torn into bite-size pieces",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -47,14 +47,14 @@
     {
       "raw": "1 avocado - peeled, pitted and diced",
       "expected": {
-        "item": "avocado - peeled",
+        "item": "avocado - peeled, pitted and diced",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "pitted and diced",
+        "note": null,
         "category": "Produce"
       }
     },

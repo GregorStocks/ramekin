@@ -318,14 +318,14 @@
     {
       "raw": "4       green cardamom pods, slightly crushed",
       "expected": {
-        "item": "green cardamom pods",
+        "item": "green cardamom pods, slightly crushed",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "slightly crushed",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
@@ -396,7 +396,7 @@
     {
       "raw": "1   ounce    blanched almond, toasted almonds",
       "expected": {
-        "item": "blanched almond",
+        "item": "blanched almond, toasted almonds",
         "measurements": [
           {
             "amount": "1",
@@ -407,7 +407,7 @@
             "unit": "g"
           }
         ],
-        "note": "toasted almonds",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     },

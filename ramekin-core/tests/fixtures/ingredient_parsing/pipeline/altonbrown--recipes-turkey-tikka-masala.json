@@ -301,9 +301,9 @@
     {
       "raw": "Fresh mint and cilantro, for garnishing",
       "expected": {
-        "item": "Fresh mint and cilantro",
+        "item": "Fresh mint and cilantro, for garnishing",
         "measurements": [],
-        "note": "for garnishing",
+        "note": null,
         "category": "Produce"
       }
     }

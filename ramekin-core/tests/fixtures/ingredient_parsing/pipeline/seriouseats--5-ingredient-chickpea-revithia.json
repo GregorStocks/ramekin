@@ -27,7 +27,7 @@
     {
       "raw": "2 medium carrots (12 ounces; 340 g total), roughly chopped into 1-inch pieces",
       "expected": {
-        "item": "carrots",
+        "item": "carrots, roughly chopped into 1-inch pieces",
         "measurements": [
           {
             "amount": "2",
@@ -42,7 +42,7 @@
             "unit": "g"
           }
         ],
-        "note": "roughly chopped into 1-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -109,7 +109,7 @@
     {
       "raw": "2 heaping tablespoons (45 g) miso paste, whisked into 1 cup warm water",
       "expected": {
-        "item": "miso paste",
+        "item": "miso paste, whisked into 1 cup warm water",
         "measurements": [
           {
             "amount": "2",
@@ -120,7 +120,7 @@
             "unit": "g"
           }
         ],
-        "note": "whisked into 1 cup warm water",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },

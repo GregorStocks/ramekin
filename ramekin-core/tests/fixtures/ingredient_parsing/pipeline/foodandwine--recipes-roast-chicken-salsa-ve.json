@@ -5,14 +5,14 @@
     {
       "raw": "One whole 4-pound chicken, backbone removed, chicken halved lengthwise",
       "expected": {
-        "item": "whole 4-pound chicken, backbone removed",
+        "item": "whole 4-pound chicken, backbone removed, chicken halved lengthwise",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "chicken halved lengthwise",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
@@ -51,14 +51,14 @@
     {
       "raw": "2 lemons, halved crosswise",
       "expected": {
-        "item": "lemons",
+        "item": "lemons, halved crosswise",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "halved crosswise",
+        "note": null,
         "category": "Produce"
       }
     },

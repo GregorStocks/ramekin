@@ -32,18 +32,14 @@
     {
       "raw": "3/4 cup whole milk, ideally at room temperature",
       "expected": {
-        "item": "whole milk",
+        "item": "whole milk, ideally at room temperature",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "184",
-            "unit": "g"
           }
         ],
-        "note": "ideally at room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -104,14 +100,14 @@
     {
       "raw": "2 large eggs, ideally at room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, ideally at room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "ideally at room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -145,18 +141,14 @@
     {
       "raw": "6 tablespoons unsalted butter, cold is fine",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, cold is fine",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
-        "note": "cold is fine",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -349,18 +341,14 @@
     {
       "raw": "2 tablespoons unsalted butter, cold is fine",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, cold is fine",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "28",
-            "unit": "g"
           }
         ],
-        "note": "cold is fine",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     }

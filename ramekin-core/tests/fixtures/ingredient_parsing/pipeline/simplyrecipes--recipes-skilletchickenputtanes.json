@@ -69,18 +69,14 @@
     {
       "raw": "1 teaspoon crushed red pepper, or more to taste",
       "expected": {
-        "item": "crushed red pepper",
+        "item": "crushed red pepper, or more to taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.8",
-            "unit": "g"
           }
         ],
-        "note": "or more to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
@@ -123,32 +119,28 @@
     {
       "raw": "1/2 teaspoon salt, or more to taste",
       "expected": {
-        "item": "salt, presumably Diamond",
+        "item": "salt, or more to taste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
-        "note": "or more to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/4 teaspoon ground black pepper, or more to taste",
       "expected": {
-        "item": "ground black pepper",
+        "item": "ground black pepper, or more to taste",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": "or more to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

@@ -33,14 +33,14 @@
     {
       "raw": "4 small garlic cloves, smashed and roughly chopped",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic cloves, smashed and roughly chopped",
         "measurements": [
           {
             "amount": "4",
             "unit": "small"
           }
         ],
-        "note": "smashed and roughly chopped",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -207,7 +207,7 @@
     {
       "raw": "4 medium scallions (about 2 ounces), trimmed and thinly sliced crosswise (about 3/4 cup)",
       "expected": {
-        "item": "scallions",
+        "item": "scallions, trimmed and thinly sliced crosswise",
         "measurements": [
           {
             "amount": "4",
@@ -226,7 +226,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and thinly sliced crosswise",
+        "note": null,
         "category": "Produce"
       }
     },

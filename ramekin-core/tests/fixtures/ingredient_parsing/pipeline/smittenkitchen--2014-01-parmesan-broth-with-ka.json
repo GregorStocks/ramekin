@@ -64,14 +64,14 @@
     {
       "raw": "3 cloves garlic, peeled and smashed",
       "expected": {
-        "item": "garlic",
+        "item": "garlic, peeled and smashed",
         "measurements": [
           {
             "amount": "3",
             "unit": "clove"
           }
         ],
-        "note": "peeled and smashed",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -124,7 +124,7 @@
     {
       "raw": "2 to 3 ounces tuscan kale (also known as black or lacinato kale; this is the thinner, flatter leaf variety), washed and patted dry (updated measurement)",
       "expected": {
-        "item": "tuscan kale",
+        "item": "tuscan kale, washed and patted dry",
         "measurements": [
           {
             "amount": "2 to 3",
@@ -135,21 +135,21 @@
             "unit": "g"
           }
         ],
-        "note": "also known as black or lacinato kale; this is the thinner, flatter leaf variety, updated measurement, washed and patted dry",
+        "note": "also known as black or lacinato kale; this is the thinner, flatter leaf variety, updated measurement",
         "category": "Produce"
       }
     },
     {
       "raw": "1 1/4 cups cooked white beans (from about 1/4 pound dried), with their cooking liquid if fresh (usually about 1 1/2 cups) (updated measurement)",
       "expected": {
-        "item": "cooked white beans",
+        "item": "cooked white beans, with their cooking liquid if fresh",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": "from about 1/4 pound dried, usually about 1 1/2 cups, updated measurement, with their cooking liquid if fresh",
+        "note": "from about 1/4 pound dried, usually about 1 1/2 cups, updated measurement",
         "category": "Canned Goods"
       }
     },

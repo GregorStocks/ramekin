@@ -179,14 +179,14 @@
     {
       "raw": "100 grams feta, crumbled or chopped into bits",
       "expected": {
-        "item": "feta",
+        "item": "feta, crumbled or chopped into bits",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": "crumbled or chopped into bits",
+        "note": null,
         "category": "Cheese"
       }
     }

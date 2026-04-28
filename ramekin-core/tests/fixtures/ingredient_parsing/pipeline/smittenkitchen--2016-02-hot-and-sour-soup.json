@@ -84,7 +84,7 @@
     {
       "raw": "1 ounce (1/2 cup) dried wood ear mushrooms or 5 fresh button or shiitake mushrooms, wiped clean and thinly sliced",
       "expected": {
-        "item": "dried wood ear mushrooms or 5 fresh button or shiitake mushrooms",
+        "item": "dried wood ear mushrooms or 5 fresh button or shiitake mushrooms, wiped clean and thinly sliced",
         "measurements": [
           {
             "amount": "1",
@@ -99,7 +99,7 @@
             "unit": "g"
           }
         ],
-        "note": "wiped clean and thinly sliced",
+        "note": null,
         "category": "Produce"
       }
     },

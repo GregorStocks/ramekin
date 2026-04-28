@@ -59,15 +59,15 @@
     {
       "raw": "2 cups lukewarm water, made by mixing 1/2 cup boiling water with 1 1/2 cups cold water",
       "expected": {
-        "item": "lukewarm water",
+        "item": "lukewarm water, made by mixing 1/2 cup boiling water with 1 1/2 cups cold water",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "made by mixing 1/2 cup boiling water with 1 1/2 cups cold water",
-        "category": "Other"
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {

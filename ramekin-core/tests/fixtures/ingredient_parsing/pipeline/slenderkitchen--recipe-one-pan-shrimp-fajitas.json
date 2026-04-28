@@ -23,28 +23,28 @@
     {
       "raw": "2 bell peppers, sliced thin",
       "expected": {
-        "item": "bell peppers",
+        "item": "bell peppers, sliced thin",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "sliced thin",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 onion, sliced thin",
       "expected": {
-        "item": "onion",
+        "item": "onion, sliced thin",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced thin",
+        "note": null,
         "category": "Produce"
       }
     },

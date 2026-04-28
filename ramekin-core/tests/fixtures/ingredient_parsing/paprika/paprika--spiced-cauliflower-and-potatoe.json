@@ -19,7 +19,7 @@
     {
       "raw": "1 1/4 lb Yukon Gold potatoes, peeled and cut into 1/2-inch cubes",
       "expected": {
-        "item": "Yukon Gold potatoes",
+        "item": "Yukon Gold potatoes, peeled and cut into 1/2-inch cubes",
         "measurements": [
           {
             "amount": "1.25",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1/2-inch cubes",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -411,14 +411,14 @@
     {
       "raw": "1 medium onion, peeled and cut into fine slices",
       "expected": {
-        "item": "onion",
+        "item": "onion, peeled and cut into fine slices",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "peeled and cut into fine slices",
+        "note": null,
         "category": "Produce"
       }
     },

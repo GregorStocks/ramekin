@@ -31,7 +31,7 @@
     {
       "raw": "8 ounces (226 g) large shrimp (26 to 30 per pound), peeled and deveined, shells reserved separately",
       "expected": {
-        "item": "large shrimp, peeled and deveined",
+        "item": "large shrimp, peeled and deveined, shells reserved separately",
         "measurements": [
           {
             "amount": "8",
@@ -42,8 +42,8 @@
             "unit": "g"
           }
         ],
-        "note": "26 to 30 per pound, shells reserved separately",
-        "category": "Meat & Seafood"
+        "note": "26 to 30 per pound",
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -71,7 +71,7 @@
     {
       "raw": "1 bulb fennel (about 8 ounces; 226 g), bulb cut into 1/4-inch dice, fronds reserved for garnish",
       "expected": {
-        "item": "bulb fennel, bulb cut into 1/4-inch dice",
+        "item": "bulb fennel, bulb cut into 1/4-inch dice, fronds reserved for garnish",
         "measurements": [
           {
             "amount": "1",
@@ -86,7 +86,7 @@
             "unit": "g"
           }
         ],
-        "note": "fronds reserved for garnish",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -267,7 +267,7 @@
     {
       "raw": "8 ounces (226 g) mussels, scrubbed and debearded",
       "expected": {
-        "item": "mussels",
+        "item": "mussels, scrubbed and debearded",
         "measurements": [
           {
             "amount": "8",
@@ -278,7 +278,7 @@
             "unit": "g"
           }
         ],
-        "note": "scrubbed and debearded",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },

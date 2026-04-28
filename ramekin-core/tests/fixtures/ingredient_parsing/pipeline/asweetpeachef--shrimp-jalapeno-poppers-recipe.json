@@ -23,7 +23,7 @@
     {
       "raw": "1/2 lb thick look for nitrate-free, uncooked bacon",
       "expected": {
-        "item": "thick look for nitrate-free",
+        "item": "thick look for nitrate-free, uncooked bacon",
         "measurements": [
           {
             "amount": "0.5",
@@ -34,8 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": "uncooked bacon",
-        "category": "Other"
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {

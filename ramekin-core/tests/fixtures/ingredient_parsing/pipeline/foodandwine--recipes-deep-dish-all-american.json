@@ -27,7 +27,7 @@
     {
       "raw": "1/2 cup unsalted butter (4 ounces), chilled and cut into 1/2-inch pieces",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, chilled and cut into 1/2-inch pieces",
         "measurements": [
           {
             "amount": "0.5",
@@ -42,7 +42,7 @@
             "unit": "g"
           }
         ],
-        "note": "chilled and cut into 1/2-inch pieces",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

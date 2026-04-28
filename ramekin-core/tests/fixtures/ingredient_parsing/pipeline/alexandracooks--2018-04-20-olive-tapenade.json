@@ -84,14 +84,14 @@
     {
       "raw": "2 cups (about) parsley, divided roughly into two 1-cup portions",
       "expected": {
-        "item": "parsley",
+        "item": "parsley, divided roughly into two 1-cup portions",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "about, divided roughly into two 1-cup portions",
+        "note": "about",
         "category": "Spices & Seasonings"
       }
     },

@@ -14,14 +14,14 @@
     {
       "raw": "1 medium-large sweet onion, diced or 1/2 a large onion",
       "expected": {
-        "item": "medium-large sweet onion",
+        "item": "medium-large sweet onion, diced or 1/2 a large onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "diced or 1/2 a large onion",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -83,14 +83,14 @@
     {
       "raw": "1/2 cup small red cherry or grape tomatoes, sliced 1/4-inch thick if large, halved if tiny",
       "expected": {
-        "item": "small red cherry or grape tomatoes, sliced 1/4-inch thick if large",
+        "item": "small red cherry or grape tomatoes, sliced 1/4-inch thick if large, halved if tiny",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "halved if tiny",
+        "note": null,
         "category": "Produce"
       }
     },

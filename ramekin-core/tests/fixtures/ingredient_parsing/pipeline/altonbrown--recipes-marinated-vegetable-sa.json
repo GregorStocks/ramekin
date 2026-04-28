@@ -79,28 +79,28 @@
     {
       "raw": "1 large golden beet, peeled and cut into wide matchsticks",
       "expected": {
-        "item": "golden beet",
+        "item": "golden beet, peeled and cut into wide matchsticks",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "peeled and cut into wide matchsticks",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 medium red onion, thinly sliced from end to end",
       "expected": {
-        "item": "red onion",
+        "item": "red onion, thinly sliced from end to end",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "thinly sliced from end to end",
+        "note": null,
         "category": "Produce"
       }
     },

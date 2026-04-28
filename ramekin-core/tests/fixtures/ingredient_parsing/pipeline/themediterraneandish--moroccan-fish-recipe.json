@@ -206,14 +206,14 @@
     {
       "raw": "1/2 lemon, sliced into thin rounds",
       "expected": {
-        "item": "lemon",
+        "item": "lemon, sliced into thin rounds",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "sliced into thin rounds",
+        "note": null,
         "category": "Produce"
       }
     }

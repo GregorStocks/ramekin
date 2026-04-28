@@ -121,10 +121,10 @@
     {
       "raw": "About 2 1/2 cups small diced fresh tomatoes, from 3 to 4 roma tomatoes, or 1 15-ounce can crushed tomatoes",
       "expected": {
-        "item": "About 2 1/2 cups small diced fresh tomatoes, from 3 to 4 roma tomatoes",
+        "item": "About 2 1/2 cups small diced fresh tomatoes, from 3 to 4 roma tomatoes, or 1 15-ounce can crushed tomatoes",
         "measurements": [],
-        "note": "or 1 15-ounce can crushed tomatoes",
-        "category": "Produce"
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -194,14 +194,14 @@
     {
       "raw": "1/2 to 1 teaspoon cayenne or a mild chile powder, such as kashmiri, or to taste",
       "expected": {
-        "item": "cayenne or a mild chile powder, such as kashmiri",
+        "item": "cayenne or a mild chile powder, such as kashmiri, or to taste",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "tsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

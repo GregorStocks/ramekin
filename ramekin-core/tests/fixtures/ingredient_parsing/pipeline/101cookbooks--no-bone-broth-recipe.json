@@ -147,14 +147,14 @@
     {
       "raw": "1  head garlic, unpeeled, halved crosswise",
       "expected": {
-        "item": "garlic, unpeeled",
+        "item": "garlic, unpeeled, halved crosswise",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": "halved crosswise",
+        "note": null,
         "category": "Produce"
       }
     },

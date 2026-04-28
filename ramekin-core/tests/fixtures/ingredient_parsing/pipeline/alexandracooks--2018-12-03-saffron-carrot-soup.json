@@ -56,7 +56,7 @@
     {
       "raw": "1.5 lbs carrots, peeled and cut into 1/2-inch chunks",
       "expected": {
-        "item": "carrots",
+        "item": "carrots, peeled and cut into 1/2-inch chunks",
         "measurements": [
           {
             "amount": "1.5",
@@ -67,7 +67,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1/2-inch chunks",
+        "note": null,
         "category": "Produce"
       }
     },

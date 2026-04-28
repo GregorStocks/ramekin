@@ -49,7 +49,7 @@
     {
       "raw": "2 medium carrots (8 ounces; 225 g), peeled and halved crosswise",
       "expected": {
-        "item": "carrots",
+        "item": "carrots, peeled and halved crosswise",
         "measurements": [
           {
             "amount": "2",
@@ -64,14 +64,14 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and halved crosswise",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "2 large celery sticks (3 1/2 ounces; 100 g), halved crosswise",
       "expected": {
-        "item": "celery sticks",
+        "item": "celery sticks, halved crosswise",
         "measurements": [
           {
             "amount": "2",
@@ -86,14 +86,14 @@
             "unit": "g"
           }
         ],
-        "note": "halved crosswise",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 bunch of cilantro stems (1 1/2 ounces; 40 g), thoroughly washed",
       "expected": {
-        "item": "cilantro stems",
+        "item": "cilantro stems, thoroughly washed",
         "measurements": [
           {
             "amount": "1",
@@ -108,7 +108,7 @@
             "unit": "g"
           }
         ],
-        "note": "thoroughly washed",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -222,14 +222,14 @@
     {
       "raw": "2 refrigerated pie crusts, softened as directed on package (we used Pillsbury)",
       "expected": {
-        "item": "refrigerated pie crusts",
+        "item": "refrigerated pie crusts, softened as directed on package",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "we used Pillsbury, softened as directed on package",
+        "note": "we used Pillsbury",
         "category": "Frozen"
       }
     },

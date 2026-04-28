@@ -5,7 +5,7 @@
     {
       "raw": "1 pound large, thick, firm asparagus, lower third of the stalks peeled with a vegetable peeler or snapped off",
       "expected": {
-        "item": "large, thick, firm asparagus",
+        "item": "large, thick, firm asparagus, lower third of the stalks peeled with a vegetable peeler or snapped off",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "lower third of the stalks peeled with a vegetable peeler or snapped off",
+        "note": null,
         "category": "Produce"
       }
     },

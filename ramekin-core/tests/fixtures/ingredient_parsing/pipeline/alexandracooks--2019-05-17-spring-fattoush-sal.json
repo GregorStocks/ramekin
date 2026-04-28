@@ -208,7 +208,7 @@
     {
       "raw": "1/2 lb. snap or snow peas, strings removed, sliced thinly on the bias",
       "expected": {
-        "item": "snap or snow peas, strings removed",
+        "item": "snap or snow peas, strings removed, sliced thinly on the bias",
         "measurements": [
           {
             "amount": "0.5",
@@ -219,7 +219,7 @@
             "unit": "g"
           }
         ],
-        "note": "sliced thinly on the bias",
+        "note": null,
         "category": "Produce"
       }
     },

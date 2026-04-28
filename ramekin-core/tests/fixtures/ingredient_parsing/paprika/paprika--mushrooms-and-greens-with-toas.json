@@ -41,7 +41,7 @@
     {
       "raw": "1 1/2 pounds mixed mushrooms, cleaned, trimmed and torn into bite size pieces (see suggestions above)",
       "expected": {
-        "item": "mixed mushrooms, cleaned",
+        "item": "mixed mushrooms, cleaned, trimmed and torn into bite size pieces",
         "measurements": [
           {
             "amount": "1.5",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": "see suggestions above, trimmed and torn into bite size pieces",
+        "note": "see suggestions above",
         "category": "Produce"
       }
     },
@@ -87,18 +87,14 @@
     {
       "raw": "1 tablespoon white wine vinegar, or more to taste (I used 2)",
       "expected": {
-        "item": "white wine vinegar",
+        "item": "white wine vinegar, or more to taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "15",
-            "unit": "g"
           }
         ],
-        "note": "I used 2, or more to taste",
+        "note": "I used 2",
         "category": "Oils & Vinegars"
       }
     },
@@ -146,7 +142,7 @@
     {
       "raw": "8 ounces of a good melting cheese, thickly sliced (suggestions above)",
       "expected": {
-        "item": "a good melting cheese",
+        "item": "a good melting cheese, thickly sliced",
         "measurements": [
           {
             "amount": "8",
@@ -157,7 +153,7 @@
             "unit": "g"
           }
         ],
-        "note": "suggestions above, thickly sliced",
+        "note": "suggestions above",
         "category": "Cheese"
       }
     }

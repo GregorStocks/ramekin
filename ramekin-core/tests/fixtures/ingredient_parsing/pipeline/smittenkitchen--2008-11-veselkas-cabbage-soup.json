@@ -171,14 +171,14 @@
     {
       "raw": "2 cups fresh cabbage, shredded thin",
       "expected": {
-        "item": "fresh cabbage",
+        "item": "fresh cabbage, shredded thin",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "shredded thin",
+        "note": null,
         "category": "Produce"
       }
     }

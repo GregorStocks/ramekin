@@ -5,7 +5,7 @@
     {
       "raw": "1 pound (4 sticks) unsalted butter, slightly softened",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, slightly softened",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "slightly softened",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

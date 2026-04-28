@@ -129,14 +129,14 @@
     {
       "raw": "1/2 cup | 4 oz | 115 g butter, melted and cooled",
       "expected": {
-        "item": "| 4 oz | 115 g butter",
+        "item": "| 4 oz | 115 g butter, melted and cooled",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "melted and cooled",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

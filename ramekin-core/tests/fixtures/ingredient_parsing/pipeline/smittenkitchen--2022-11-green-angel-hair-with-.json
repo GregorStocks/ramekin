@@ -5,7 +5,7 @@
     {
       "raw": "1/2 cup (4 ounces or 115 grams) salted or unsalted butter, sliced into a few pieces",
       "expected": {
-        "item": "salted or unsalted butter",
+        "item": "salted or unsalted butter, sliced into a few pieces",
         "measurements": [
           {
             "amount": "0.5",
@@ -20,21 +20,21 @@
             "unit": "g"
           }
         ],
-        "note": "sliced into a few pieces",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 large head garlic, halved crosswise",
       "expected": {
-        "item": "head garlic",
+        "item": "head garlic, halved crosswise",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "halved crosswise",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -32,7 +32,7 @@
     {
       "raw": "6 ounces (170 grams) bitter- or semisweet chocolate, coarsely chopped or 1 cup chips",
       "expected": {
-        "item": "bitter- or semisweet chocolate",
+        "item": "bitter- or semisweet chocolate, coarsely chopped or 1 cup chips",
         "measurements": [
           {
             "amount": "6",
@@ -43,8 +43,8 @@
             "unit": "g"
           }
         ],
-        "note": "coarsely chopped or 1 cup chips",
-        "category": "Other"
+        "note": null,
+        "category": "Snacks"
       }
     },
     {
@@ -68,7 +68,7 @@
     {
       "raw": "7 tablespoons (100 grams) unsalted butter, melted and still hot",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, melted and still hot",
         "measurements": [
           {
             "amount": "7",
@@ -79,7 +79,7 @@
             "unit": "g"
           }
         ],
-        "note": "melted and still hot",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

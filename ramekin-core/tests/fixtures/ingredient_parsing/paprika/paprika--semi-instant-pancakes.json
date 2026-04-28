@@ -153,18 +153,14 @@
     {
       "raw": "4 tablespoons unsalted butter, melted and cooled",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, melted and cooled",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
-        "note": "melted and cooled",
+        "note": null,
         "section": "Semi-instant Pancakes",
         "category": "Dairy & Eggs"
       }

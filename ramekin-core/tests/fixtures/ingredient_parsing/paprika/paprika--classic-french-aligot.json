@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds mashing potatoes, peeled and cut into quarters",
       "expected": {
-        "item": "mashing potatoes",
+        "item": "mashing potatoes, peeled and cut into quarters",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into quarters",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -101,14 +101,14 @@
     {
       "raw": "3 cups Cantal cheese, or substitute good-quality grated sharp cheddar",
       "expected": {
-        "item": "Cantal cheese",
+        "item": "Cantal cheese, or substitute good-quality grated sharp cheddar",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": "or substitute good-quality grated sharp cheddar",
+        "note": null,
         "category": "Cheese"
       }
     }

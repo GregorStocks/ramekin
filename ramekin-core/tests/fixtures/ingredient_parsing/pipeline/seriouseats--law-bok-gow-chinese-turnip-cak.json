@@ -23,7 +23,7 @@
     {
       "raw": "3 pounds daikon radish, peeled and finely grated on a box grater",
       "expected": {
-        "item": "daikon radish",
+        "item": "daikon radish, peeled and finely grated on a box grater",
         "measurements": [
           {
             "amount": "3",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and finely grated on a box grater",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -87,14 +87,14 @@
     {
       "raw": "1/4 cup small dried shrimp, rinsed and patted dry (see note)",
       "expected": {
-        "item": "small dried shrimp",
+        "item": "small dried shrimp, rinsed and patted dry",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "see note, rinsed and patted dry",
+        "note": "see note",
         "category": "Meat & Seafood"
       }
     },

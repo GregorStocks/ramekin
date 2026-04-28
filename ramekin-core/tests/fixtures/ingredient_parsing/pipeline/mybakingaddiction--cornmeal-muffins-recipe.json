@@ -179,14 +179,14 @@
     {
       "raw": "1 1/2 cups raspberries, rinsed, drained and patted dry",
       "expected": {
-        "item": "raspberries, rinsed",
+        "item": "raspberries, rinsed, drained and patted dry",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "drained and patted dry",
+        "note": null,
         "category": "Produce"
       }
     },

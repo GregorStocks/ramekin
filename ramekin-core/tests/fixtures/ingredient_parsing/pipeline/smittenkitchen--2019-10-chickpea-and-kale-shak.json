@@ -74,14 +74,14 @@
     {
       "raw": "1/2 a jalapeño pepper, de-seeded and finely chopped",
       "expected": {
-        "item": "a jalapeño pepper",
+        "item": "a jalapeño pepper, de-seeded and finely chopped",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "de-seeded and finely chopped",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -60,18 +60,14 @@
     {
       "raw": "1/8 teaspoon ground cayenne, or to taste",
       "expected": {
-        "item": "ground cayenne",
+        "item": "ground cayenne, or to taste",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.2",
-            "unit": "g"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

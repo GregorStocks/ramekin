@@ -138,21 +138,21 @@
     {
       "raw": "1 small red onion, peeled and sliced into paper-thin rings",
       "expected": {
-        "item": "red onion",
+        "item": "red onion, peeled and sliced into paper-thin rings",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "peeled and sliced into paper-thin rings",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 pound provolone (see Note about varieties), sliced 1/8-inch thick then cut into 1/4-inch ribbons",
       "expected": {
-        "item": "provolone",
+        "item": "provolone, sliced 1/8-inch thick then cut into 1/4-inch ribbons",
         "measurements": [
           {
             "amount": "0.5",
@@ -163,14 +163,14 @@
             "unit": "g"
           }
         ],
-        "note": "see Note about varieties, sliced 1/8-inch thick then cut into 1/4-inch ribbons",
+        "note": "see Note about varieties",
         "category": "Cheese"
       }
     },
     {
       "raw": "1/2 pound salami, peeled, sliced 1/8-inch thick then cut into 1/4-inch ribbons",
       "expected": {
-        "item": "salami, peeled",
+        "item": "salami, peeled, sliced 1/8-inch thick then cut into 1/4-inch ribbons",
         "measurements": [
           {
             "amount": "0.5",
@@ -181,14 +181,14 @@
             "unit": "g"
           }
         ],
-        "note": "sliced 1/8-inch thick then cut into 1/4-inch ribbons",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "4 medium or 8 small pickled pepperoncini, sliced into rings",
       "expected": {
-        "item": "pickled pepperoncini",
+        "item": "pickled pepperoncini, sliced into rings",
         "measurements": [
           {
             "amount": "4",
@@ -199,7 +199,7 @@
             "unit": "small"
           }
         ],
-        "note": "sliced into rings",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
@@ -247,14 +247,14 @@
     {
       "raw": "1 head radicchio, halved, cored and cut in 1/4-inch ribbons",
       "expected": {
-        "item": "radicchio, halved",
+        "item": "radicchio, halved, cored and cut in 1/4-inch ribbons",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": "cored and cut in 1/4-inch ribbons",
+        "note": null,
         "category": "Produce"
       }
     },

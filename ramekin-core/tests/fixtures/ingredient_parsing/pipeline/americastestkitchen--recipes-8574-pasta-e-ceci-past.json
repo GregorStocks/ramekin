@@ -23,14 +23,14 @@
     {
       "raw": "1 small carrot , peeled and cut into 1/2-inch pieces",
       "expected": {
-        "item": "carrot",
+        "item": "carrot, peeled and cut into 1/2-inch pieces",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "peeled and cut into 1/2-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -65,14 +65,14 @@
     {
       "raw": "1 onion , halved and cut into 1-inch pieces",
       "expected": {
-        "item": "onion",
+        "item": "onion, halved and cut into 1-inch pieces",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "halved and cut into 1-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },

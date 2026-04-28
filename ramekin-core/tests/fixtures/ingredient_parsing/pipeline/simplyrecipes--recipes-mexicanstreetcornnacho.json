@@ -23,7 +23,7 @@
     {
       "raw": "1 pound frozen corn (about 3 cups), still frozen",
       "expected": {
-        "item": "frozen corn",
+        "item": "frozen corn, still frozen",
         "measurements": [
           {
             "amount": "1",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "still frozen",
+        "note": null,
         "category": "Frozen"
       }
     },
@@ -205,14 +205,14 @@
     {
       "raw": "1/2 lime, sliced into wedges",
       "expected": {
-        "item": "lime",
+        "item": "lime, sliced into wedges",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "sliced into wedges",
+        "note": null,
         "category": "Produce"
       }
     },

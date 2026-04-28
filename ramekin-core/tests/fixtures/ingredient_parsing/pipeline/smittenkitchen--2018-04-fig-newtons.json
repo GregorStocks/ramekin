@@ -27,7 +27,7 @@
     {
       "raw": "1/2 cup (110 grams or 4 ounces) light brown sugar, gently packed",
       "expected": {
-        "item": "light brown sugar",
+        "item": "light brown sugar, gently packed",
         "measurements": [
           {
             "amount": "0.5",
@@ -42,7 +42,7 @@
             "unit": "oz"
           }
         ],
-        "note": "gently packed",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -163,7 +163,7 @@
     {
       "raw": "12 ounces (about 2 1/2 cups or 340 grams) plump, sticky dried mission figs, stems trimmed",
       "expected": {
-        "item": "plump, sticky dried mission figs",
+        "item": "plump, sticky dried mission figs, stems trimmed",
         "measurements": [
           {
             "amount": "12",
@@ -178,7 +178,7 @@
             "unit": "g"
           }
         ],
-        "note": "stems trimmed",
+        "note": null,
         "category": "Produce"
       }
     },

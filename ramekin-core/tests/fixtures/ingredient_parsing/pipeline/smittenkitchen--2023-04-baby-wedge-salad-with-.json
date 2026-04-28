@@ -145,14 +145,14 @@
     {
       "raw": "1 medium avocado, chopped in chunks",
       "expected": {
-        "item": "avocado",
+        "item": "avocado, chopped in chunks",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "chopped in chunks",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -177,14 +177,14 @@
     {
       "raw": "2 radishes, thinly sliced then cut into matchsticks",
       "expected": {
-        "item": "radishes",
+        "item": "radishes, thinly sliced then cut into matchsticks",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "thinly sliced then cut into matchsticks",
+        "note": null,
         "category": "Produce"
       }
     }

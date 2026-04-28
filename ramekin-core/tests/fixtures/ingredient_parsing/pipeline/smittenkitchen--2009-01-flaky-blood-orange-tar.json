@@ -73,14 +73,14 @@
     {
       "raw": "1/2 cup plus 1 tablespoon unsalted butter, the 1/2 cup cut into 1/2-inch pieces and chilled",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, the 1/2 cup cut into 1/2-inch pieces and chilled",
         "measurements": [
           {
             "amount": "1/2 cup plus 1 tablespoon",
             "unit": null
           }
         ],
-        "note": "the 1/2 cup cut into 1/2-inch pieces and chilled",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

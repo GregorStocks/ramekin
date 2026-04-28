@@ -115,9 +115,9 @@
     {
       "raw": "Hot sauce, chili paste, or chili crisp to taste",
       "expected": {
-        "item": "Hot sauce, chili paste",
+        "item": "Hot sauce, chili paste, or chili crisp to taste",
         "measurements": [],
-        "note": "or chili crisp to taste",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },

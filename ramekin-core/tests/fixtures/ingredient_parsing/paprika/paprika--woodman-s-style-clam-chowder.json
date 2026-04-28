@@ -5,7 +5,7 @@
     {
       "raw": "1¾ pounds russet potatoes, peeled and cut into ½-inch dice",
       "expected": {
-        "item": "russet potatoes",
+        "item": "russet potatoes, peeled and cut into 1/2-inch dice",
         "measurements": [
           {
             "amount": "1.75",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1/2-inch dice",
+        "note": null,
         "category": "Produce"
       }
     },

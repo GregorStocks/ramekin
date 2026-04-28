@@ -198,14 +198,14 @@
     {
       "raw": "2 scallions, sliced thinly at an angle",
       "expected": {
-        "item": "scallions",
+        "item": "scallions, sliced thinly at an angle",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "sliced thinly at an angle",
+        "note": null,
         "category": "Produce"
       }
     }

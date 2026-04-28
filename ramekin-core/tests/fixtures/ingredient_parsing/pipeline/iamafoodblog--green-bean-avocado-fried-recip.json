@@ -42,14 +42,14 @@
     {
       "raw": "handful long beans or green beans, should be about 2 cups when sliced",
       "expected": {
-        "item": "long beans or green beans",
+        "item": "long beans or green beans, should be about 2 cups when sliced",
         "measurements": [
           {
             "amount": null,
             "unit": "handful"
           }
         ],
-        "note": "should be about 2 cups when sliced",
+        "note": null,
         "category": "Produce"
       }
     },

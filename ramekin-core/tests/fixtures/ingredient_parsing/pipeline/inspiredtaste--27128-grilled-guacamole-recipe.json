@@ -5,14 +5,14 @@
     {
       "raw": "2 medium ripe avocados, halved with pits removed",
       "expected": {
-        "item": "ripe avocados",
+        "item": "ripe avocados, halved with pits removed",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": "halved with pits removed",
+        "note": null,
         "category": "Produce"
       }
     },

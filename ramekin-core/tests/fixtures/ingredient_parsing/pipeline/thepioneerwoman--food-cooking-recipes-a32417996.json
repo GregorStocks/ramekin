@@ -154,18 +154,14 @@
     {
       "raw": "2 c. strawberries, hulled and quartered",
       "expected": {
-        "item": "strawberries",
+        "item": "strawberries, hulled and quartered",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "347",
-            "unit": "g"
           }
         ],
-        "note": "hulled and quartered",
+        "note": null,
         "category": "Produce"
       }
     },

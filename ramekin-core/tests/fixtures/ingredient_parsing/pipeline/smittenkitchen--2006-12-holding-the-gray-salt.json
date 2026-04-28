@@ -92,14 +92,14 @@
     {
       "raw": "1 small red onion, sliced thinly lengthwise",
       "expected": {
-        "item": "red onion",
+        "item": "red onion, sliced thinly lengthwise",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "sliced thinly lengthwise",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -129,15 +129,15 @@
     {
       "raw": "4 cups peeled, seeded, and diced butternut squash (1/2-inch dice)",
       "expected": {
-        "item": "peeled, seeded",
+        "item": "peeled, seeded, and diced butternut squash",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": "1/2-inch dice, and diced butternut squash",
-        "category": "Nuts & Dried Fruit"
+        "note": "1/2-inch dice",
+        "category": "Produce"
       }
     },
     {
@@ -180,7 +180,7 @@
     {
       "raw": "1/2 pound Brussels sprouts, ends trimmed, then quartered",
       "expected": {
-        "item": "Brussels sprouts, ends trimmed",
+        "item": "Brussels sprouts, ends trimmed, then quartered",
         "measurements": [
           {
             "amount": "0.5",
@@ -191,7 +191,7 @@
             "unit": "g"
           }
         ],
-        "note": "then quartered",
+        "note": null,
         "category": "Produce"
       }
     },

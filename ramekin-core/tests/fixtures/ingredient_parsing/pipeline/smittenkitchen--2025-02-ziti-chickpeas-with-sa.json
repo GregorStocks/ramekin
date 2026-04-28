@@ -87,18 +87,14 @@
     {
       "raw": "1 teaspoon red pepper flakes, or less to taste",
       "expected": {
-        "item": "red pepper flakes",
+        "item": "red pepper flakes, or less to taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.8",
-            "unit": "g"
           }
         ],
-        "note": "or less to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

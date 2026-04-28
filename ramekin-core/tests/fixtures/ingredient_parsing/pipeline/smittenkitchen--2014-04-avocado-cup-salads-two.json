@@ -47,14 +47,14 @@
     {
       "raw": "1 small jalapeno, seeded and minced",
       "expected": {
-        "item": "jalapeno",
+        "item": "jalapeno, seeded and minced",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "seeded and minced",
+        "note": null,
         "category": "Produce"
       }
     },

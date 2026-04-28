@@ -37,28 +37,28 @@
     {
       "raw": "5 stalks celery, sliced on an angle",
       "expected": {
-        "item": "celery",
+        "item": "celery, sliced on an angle",
         "measurements": [
           {
             "amount": "5",
             "unit": "stalk"
           }
         ],
-        "note": "sliced on an angle",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "2 8-ounce bags baby bell peppers, halved and seeded",
       "expected": {
-        "item": "baby bell peppers",
+        "item": "baby bell peppers, halved and seeded",
         "measurements": [
           {
             "amount": "2",
             "unit": "8-ounce bags"
           }
         ],
-        "note": "halved and seeded",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -110,14 +110,14 @@
     {
       "raw": "2 fresh Thai chiles, halved, or dried red chiles",
       "expected": {
-        "item": "fresh Thai chiles, halved",
+        "item": "fresh Thai chiles, halved, or dried red chiles",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "or dried red chiles",
+        "note": null,
         "category": "Other"
       }
     },

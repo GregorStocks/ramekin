@@ -73,14 +73,14 @@
     {
       "raw": "2 large eggs, beaten in separate dishes&nbsp;",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, beaten in separate dishes",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "beaten in separate dishes",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

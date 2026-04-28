@@ -197,14 +197,14 @@
     {
       "raw": "1 large fresh jalapeno chile, seeded and minced",
       "expected": {
-        "item": "fresh jalapeno chile",
+        "item": "fresh jalapeno chile, seeded and minced",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "seeded and minced",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -238,7 +238,7 @@
     {
       "raw": "3/4 lb Chinese long beans (1 bunch) or green beans, trimmed and cut into 3-inch pieces",
       "expected": {
-        "item": "Chinese long beans or green beans",
+        "item": "Chinese long beans or green beans, trimmed and cut into 3-inch pieces",
         "measurements": [
           {
             "amount": "0.75",
@@ -253,21 +253,21 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and cut into 3-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 seedless cucumber (usually plastic-wrapped; about 1 lb), halved lengthwise and sliced diagonally 1/8 inch thick",
       "expected": {
-        "item": "seedless cucumber",
+        "item": "seedless cucumber, halved lengthwise and sliced diagonally 1/8 inch thick",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "usually plastic-wrapped; about 1 lb, halved lengthwise and sliced diagonally 1/8 inch thick",
+        "note": "usually plastic-wrapped; about 1 lb",
         "category": "Produce"
       }
     },

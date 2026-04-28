@@ -65,7 +65,7 @@
     {
       "raw": "2 pounds skirt steak, trimmed and cut crosswise into 6 equal pieces",
       "expected": {
-        "item": "skirt steak",
+        "item": "skirt steak, trimmed and cut crosswise into 6 equal pieces",
         "measurements": [
           {
             "amount": "2",
@@ -76,7 +76,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and cut crosswise into 6 equal pieces",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
@@ -97,14 +97,14 @@
     {
       "raw": "1 large red onion, sliced into 1/2-inch-thick rounds",
       "expected": {
-        "item": "red onion",
+        "item": "red onion, sliced into 1/2-inch-thick rounds",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "sliced into 1/2-inch-thick rounds",
+        "note": null,
         "category": "Produce"
       }
     },

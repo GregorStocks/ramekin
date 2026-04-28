@@ -37,14 +37,14 @@
     {
       "raw": "3+ cups sugar, mixed types (see headnotes)",
       "expected": {
-        "item": "+ cups sugar",
+        "item": "+ cups sugar, mixed types",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "see headnotes, mixed types",
+        "note": "see headnotes",
         "category": "Baking"
       }
     }

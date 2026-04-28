@@ -14,28 +14,28 @@
     {
       "raw": "Scant 1 cup dried green lentils (Puy or Casteluccio, if you can find them) lentils, picked and rinsed over",
       "expected": {
-        "item": "dried green lentils lentils",
+        "item": "dried green lentils lentils, picked and rinsed over",
         "measurements": [
           {
             "amount": "1",
             "unit": "scant cup"
           }
         ],
-        "note": "Puy or Casteluccio, if you can find them, picked and rinsed over",
+        "note": "Puy or Casteluccio, if you can find them",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "2 large garlic cloves, halved lengthwise",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic cloves, halved lengthwise",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "halved lengthwise",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -194,28 +194,28 @@
     {
       "raw": "1/2 small preserved lemon, pith and flesh discarded, rind finely diced (optional)",
       "expected": {
-        "item": "preserved lemon, pith and flesh discarded",
+        "item": "preserved lemon, pith and flesh discarded, rind finely diced",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "small"
           }
         ],
-        "note": "optional, rind finely diced",
+        "note": "optional",
         "category": "Produce"
       }
     },
     {
       "raw": "1 very small red onion, thinly sliced into half-moons",
       "expected": {
-        "item": "very small red onion",
+        "item": "very small red onion, thinly sliced into half-moons",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "thinly sliced into half-moons",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -240,14 +240,14 @@
     {
       "raw": "1 and 1/2 tablespoons raw sesame seeds, toasted in a dry pan until a shade or two darker",
       "expected": {
-        "item": "raw sesame seeds",
+        "item": "raw sesame seeds, toasted in a dry pan until a shade or two darker",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": "toasted in a dry pan until a shade or two darker",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     }

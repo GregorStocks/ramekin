@@ -5,14 +5,14 @@
     {
       "raw": "2 delicata squash, ends trimmed, seeds removed, sliced into 1/2-inch thick pieces",
       "expected": {
-        "item": "delicata squash, ends trimmed, seeds removed",
+        "item": "delicata squash, ends trimmed, seeds removed, sliced into 1/2-inch thick pieces",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "sliced into 1/2-inch thick pieces",
+        "note": null,
         "category": "Produce"
       }
     },

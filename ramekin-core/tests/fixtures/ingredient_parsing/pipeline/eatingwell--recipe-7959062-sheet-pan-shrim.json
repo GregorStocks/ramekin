@@ -161,7 +161,7 @@
     {
       "raw": "1 pound large shrimp (24-30 count), peeled and deveined, halved lengthwise",
       "expected": {
-        "item": "large shrimp, peeled and deveined",
+        "item": "large shrimp, peeled and deveined, halved lengthwise",
         "measurements": [
           {
             "amount": "1",
@@ -172,7 +172,7 @@
             "unit": "g"
           }
         ],
-        "note": "24-30 count, halved lengthwise",
+        "note": "24-30 count",
         "category": "Meat & Seafood"
       }
     },
@@ -211,9 +211,9 @@
     {
       "raw": "Lime wedges, chopped fresh cilantro, sour cream, avocado&nbsp; and/or &nbsp;pico de gallo for serving",
       "expected": {
-        "item": "Lime wedges, chopped fresh cilantro, sour cream",
+        "item": "Lime wedges, chopped fresh cilantro, sour cream, avocado  and/or  pico de gallo for serving",
         "measurements": [],
-        "note": "avocado  and/or  pico de gallo for serving",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     }

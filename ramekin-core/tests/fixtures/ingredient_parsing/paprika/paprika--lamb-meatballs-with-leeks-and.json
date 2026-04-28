@@ -192,7 +192,7 @@
     {
       "raw": "8 oz leeks, white and light green parts only, chopped and washed thoroughly",
       "expected": {
-        "item": "leeks, white and light green parts only",
+        "item": "leeks, white and light green parts only, chopped and washed thoroughly",
         "measurements": [
           {
             "amount": "8",
@@ -203,7 +203,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped and washed thoroughly",
+        "note": null,
         "category": "Produce"
       }
     },

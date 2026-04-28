@@ -109,7 +109,7 @@
     {
       "raw": "1/2 cup (115 grams) unsalted butter, cold is fine if using a food processor",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, cold is fine if using a food processor",
         "measurements": [
           {
             "amount": "0.5",
@@ -120,7 +120,7 @@
             "unit": "g"
           }
         ],
-        "note": "cold is fine if using a food processor",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -253,7 +253,7 @@
     {
       "raw": "4 ounces (115 grams) semi- or bittersweet chocolate, chopped, or chips (2/3 cup), (melted and cooled slightly",
       "expected": {
-        "item": "semi- or bittersweet chocolate, chopped, or chips",
+        "item": "semi- or bittersweet chocolate, chopped, or chips, (melted and cooled slightly",
         "measurements": [
           {
             "amount": "4",
@@ -268,7 +268,7 @@
             "unit": "cup"
           }
         ],
-        "note": "(melted and cooled slightly",
+        "note": null,
         "category": "Snacks"
       }
     },

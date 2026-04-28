@@ -209,7 +209,7 @@
     {
       "raw": "5 tablespoons (71 grams) unsalted butter, melted and cooled to lukewarm",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, melted and cooled to lukewarm",
         "measurements": [
           {
             "amount": "5",
@@ -220,7 +220,7 @@
             "unit": "g"
           }
         ],
-        "note": "melted and cooled to lukewarm",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

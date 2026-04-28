@@ -320,7 +320,7 @@
     {
       "raw": "1/3 cup (about 45 grams) pitted, chopped kalamata olives",
       "expected": {
-        "item": "pitted",
+        "item": "pitted, chopped kalamata olives",
         "measurements": [
           {
             "amount": "0.33",
@@ -331,8 +331,8 @@
             "unit": "g"
           }
         ],
-        "note": "chopped kalamata olives",
-        "category": "Other"
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {

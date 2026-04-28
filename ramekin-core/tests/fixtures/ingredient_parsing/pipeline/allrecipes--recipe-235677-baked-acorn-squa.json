@@ -23,14 +23,14 @@
     {
       "raw": "1 acorn squash, halved and seeded",
       "expected": {
-        "item": "acorn squash",
+        "item": "acorn squash, halved and seeded",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "halved and seeded",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -133,14 +133,14 @@
     {
       "raw": "1 pinch ground cinnamon, or to taste",
       "expected": {
-        "item": "ground cinnamon",
+        "item": "ground cinnamon, or to taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     }

@@ -79,14 +79,14 @@
     {
       "raw": "2 fresh poblano chile peppers, seeded and roughly chopped",
       "expected": {
-        "item": "fresh poblano chile peppers",
+        "item": "fresh poblano chile peppers, seeded and roughly chopped",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "seeded and roughly chopped",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -213,15 +213,15 @@
     {
       "raw": "1/2 to 1 finely chopped chipotle from a can, a rehydrated and finely chopped dried chipotle or in a pinch, chipotle powder to taste",
       "expected": {
-        "item": "finely chopped chipotle from a can, a rehydrated and finely chopped dried chipotle or in a pinch",
+        "item": "finely chopped chipotle from a can, a rehydrated and finely chopped dried chipotle or in a pinch, chipotle powder to taste",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": null
           }
         ],
-        "note": "chipotle powder to taste",
-        "category": "Snacks"
+        "note": null,
+        "category": "Spices & Seasonings"
       }
     },
     {

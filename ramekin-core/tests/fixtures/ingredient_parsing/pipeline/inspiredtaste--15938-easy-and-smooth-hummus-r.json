@@ -5,7 +5,7 @@
     {
       "raw": "1 (15-ounce) can chickpeas, drained or 1 ½ cups cooked chickpeas (250g)",
       "expected": {
-        "item": "chickpeas",
+        "item": "chickpeas, drained",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "15-ounce, drained or 1 1/2 cups cooked chickpeas",
+        "note": "15-ounce, or 1 1/2 cups cooked chickpeas",
         "category": "Canned Goods"
       }
     },
@@ -140,14 +140,14 @@
     {
       "raw": "Dash ground paprika, sumac, or Za&amp;#8217;atar for serving",
       "expected": {
-        "item": "ground paprika, sumac",
+        "item": "ground paprika, sumac, or Za’atar for serving",
         "measurements": [
           {
             "amount": null,
             "unit": "dash"
           }
         ],
-        "note": "or Za’atar for serving",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     }

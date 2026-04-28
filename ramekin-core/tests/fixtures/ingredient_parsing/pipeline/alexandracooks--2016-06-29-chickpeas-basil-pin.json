@@ -58,14 +58,14 @@
     {
       "raw": "1 onion, peeled and halved through the core",
       "expected": {
-        "item": "onion",
+        "item": "onion, peeled and halved through the core",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "peeled and halved through the core",
+        "note": null,
         "section": "Soaking and Cooking the Chickpeas",
         "category": "Produce"
       }

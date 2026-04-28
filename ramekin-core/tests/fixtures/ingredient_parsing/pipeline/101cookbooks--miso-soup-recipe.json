@@ -37,7 +37,7 @@
     {
       "raw": "2 - 3 ounces firm tofu (2 handfuls), chopped into 1/3-inch cubes",
       "expected": {
-        "item": "firm tofu",
+        "item": "firm tofu, chopped into 1/3-inch cubes",
         "measurements": [
           {
             "amount": "2-3",
@@ -52,30 +52,30 @@
             "unit": "g"
           }
         ],
-        "note": "chopped into 1/3-inch cubes",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "a handful of watercress or spinach, well washed and stems trimmed",
       "expected": {
-        "item": "a handful of watercress or spinach",
+        "item": "a handful of watercress or spinach, well washed and stems trimmed",
         "measurements": [],
-        "note": "well washed and stems trimmed",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "2  green onions, tops removed thinly sliced",
       "expected": {
-        "item": "green onions",
+        "item": "green onions, tops removed thinly sliced",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "tops removed thinly sliced",
+        "note": null,
         "category": "Produce"
       }
     },

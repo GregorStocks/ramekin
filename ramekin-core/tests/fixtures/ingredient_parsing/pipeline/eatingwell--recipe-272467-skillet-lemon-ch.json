@@ -73,7 +73,7 @@
     {
       "raw": "1 pound baby Yukon Gold potatoes, halved lengthwise",
       "expected": {
-        "item": "baby Yukon Gold potatoes",
+        "item": "baby Yukon Gold potatoes, halved lengthwise",
         "measurements": [
           {
             "amount": "1",
@@ -84,7 +84,7 @@
             "unit": "g"
           }
         ],
-        "note": "halved lengthwise",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -109,14 +109,14 @@
     {
       "raw": "1 large lemon, sliced and seeds removed",
       "expected": {
-        "item": "lemon",
+        "item": "lemon, sliced and seeds removed",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "sliced and seeds removed",
+        "note": null,
         "category": "Produce"
       }
     },

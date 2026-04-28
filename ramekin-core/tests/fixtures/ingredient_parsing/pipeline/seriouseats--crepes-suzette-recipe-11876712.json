@@ -77,7 +77,7 @@
     {
       "raw": "1 tablespoon unsalted butter (about 1/2 ounce; 14g), melted and cooled slightly",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, melted and cooled slightly",
         "measurements": [
           {
             "amount": "1",
@@ -92,7 +92,7 @@
             "unit": "g"
           }
         ],
-        "note": "melted and cooled slightly",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

@@ -115,7 +115,7 @@
     {
       "raw": "1 small head cauliflower (about 2 lb./907 g), cored and cut into bite-size florets",
       "expected": {
-        "item": "head cauliflower",
+        "item": "head cauliflower, cored and cut into bite-size florets",
         "measurements": [
           {
             "amount": "1",
@@ -130,7 +130,7 @@
             "unit": "g"
           }
         ],
-        "note": "cored and cut into bite-size florets",
+        "note": null,
         "category": "Produce"
       }
     },

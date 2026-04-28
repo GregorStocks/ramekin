@@ -5,7 +5,7 @@
     {
       "raw": "2 heads cauliflower (about 2 pounds/900g each), trimmed and cut into roughly 1-inch-thick florets",
       "expected": {
-        "item": "cauliflower",
+        "item": "cauliflower, trimmed and cut into roughly 1-inch-thick florets",
         "measurements": [
           {
             "amount": "2",
@@ -20,7 +20,7 @@
             "unit": "g each"
           }
         ],
-        "note": "trimmed and cut into roughly 1-inch-thick florets",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -269,14 +269,14 @@
     {
       "raw": "1/2 bunch watercress or spinach, ends trimmed (or baby watercress or spinach)",
       "expected": {
-        "item": "watercress or spinach",
+        "item": "watercress or spinach, ends trimmed",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "bunch"
           }
         ],
-        "note": "or baby watercress or spinach, ends trimmed",
+        "note": "or baby watercress or spinach",
         "category": "Produce"
       }
     },

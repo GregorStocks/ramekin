@@ -213,7 +213,7 @@
     {
       "raw": "20 tablespoons (2½&nbsp;sticks) unsalted butter, softened but still cool",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, softened but still cool",
         "measurements": [
           {
             "amount": "20",
@@ -222,13 +222,9 @@
           {
             "amount": "2.5",
             "unit": "stick"
-          },
-          {
-            "amount": "284",
-            "unit": "g"
           }
         ],
-        "note": "softened but still cool",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

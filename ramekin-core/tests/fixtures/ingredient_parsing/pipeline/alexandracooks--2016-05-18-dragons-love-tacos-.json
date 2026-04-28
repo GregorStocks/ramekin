@@ -19,14 +19,14 @@
     {
       "raw": "1 small onion, finely chopped to yield a scant cup",
       "expected": {
-        "item": "onion",
+        "item": "onion, finely chopped to yield a scant cup",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "finely chopped to yield a scant cup",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -88,7 +88,7 @@
     {
       "raw": "1 pound chicken thighs, ground or finely chopped or 1 lb. ground beef",
       "expected": {
-        "item": "chicken thighs",
+        "item": "chicken thighs, ground",
         "measurements": [
           {
             "amount": "1",
@@ -99,7 +99,7 @@
             "unit": "g"
           }
         ],
-        "note": "ground or finely chopped or 1 lb. ground beef",
+        "note": "or finely chopped or 1 lb. ground beef",
         "category": "Meat & Seafood"
       }
     },

@@ -69,14 +69,14 @@
     {
       "raw": "2 cloves garlic, pressed or minced",
       "expected": {
-        "item": "garlic",
+        "item": "garlic, pressed or minced",
         "measurements": [
           {
             "amount": "2",
             "unit": "clove"
           }
         ],
-        "note": "pressed or minced",
+        "note": null,
         "category": "Produce"
       }
     },

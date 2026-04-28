@@ -5,7 +5,7 @@
     {
       "raw": "8 ounces extra-sharp cheddar cheese (or a mix of cheddar and pepper Jack; see notes), grated on large holes of a box grater",
       "expected": {
-        "item": "extra-sharp cheddar cheese",
+        "item": "extra-sharp cheddar cheese, grated on large holes of a box grater",
         "measurements": [
           {
             "amount": "8",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "or a mix of cheddar and pepper Jack; see notes, grated on large holes of a box grater",
+        "note": "or a mix of cheddar and pepper Jack; see notes",
         "category": "Cheese"
       }
     },

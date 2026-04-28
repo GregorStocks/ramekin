@@ -41,14 +41,14 @@
     {
       "raw": "18 white mushrooms, stems pulled out and chopped fine and caps reserved",
       "expected": {
-        "item": "white mushrooms",
+        "item": "white mushrooms, stems pulled out and chopped fine and caps reserved",
         "measurements": [
           {
             "amount": "18",
             "unit": null
           }
         ],
-        "note": "stems pulled out and chopped fine and caps reserved",
+        "note": null,
         "category": "Produce"
       }
     },

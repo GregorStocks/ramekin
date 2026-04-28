@@ -23,7 +23,7 @@
     {
       "raw": "1 pound green beans, ends trimmed and cut into 1-inch pieces (about 4 cups)",
       "expected": {
-        "item": "green beans",
+        "item": "green beans, ends trimmed and cut into 1-inch pieces",
         "measurements": [
           {
             "amount": "1",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "ends trimmed and cut into 1-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },

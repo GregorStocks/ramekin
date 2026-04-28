@@ -67,14 +67,14 @@
     {
       "raw": "1 (15-ounce; 425 g) can black beans, undrained",
       "expected": {
-        "item": "black beans",
+        "item": "black beans, undrained",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": "15-ounce; 425 g, undrained",
+        "note": "15-ounce; 425 g",
         "category": "Canned Goods"
       }
     },

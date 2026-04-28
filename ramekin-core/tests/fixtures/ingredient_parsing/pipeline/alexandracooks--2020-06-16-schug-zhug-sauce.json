@@ -47,14 +47,14 @@
     {
       "raw": "2 to 3 garlic cloves, smashed and peeled",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic cloves, smashed and peeled",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": null
           }
         ],
-        "note": "smashed and peeled",
+        "note": null,
         "category": "Produce"
       }
     },

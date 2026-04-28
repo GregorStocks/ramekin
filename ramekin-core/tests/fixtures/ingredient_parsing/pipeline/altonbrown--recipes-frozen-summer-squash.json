@@ -59,7 +59,7 @@
     {
       "raw": "3 pounds summer squash, trimmed and cut into 1/2-inch slices",
       "expected": {
-        "item": "summer squash",
+        "item": "summer squash, trimmed and cut into 1/2-inch slices",
         "measurements": [
           {
             "amount": "3",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and cut into 1/2-inch slices",
+        "note": null,
         "category": "Produce"
       }
     }

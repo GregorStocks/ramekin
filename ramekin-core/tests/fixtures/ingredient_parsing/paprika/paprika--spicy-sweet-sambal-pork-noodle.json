@@ -41,14 +41,14 @@
     {
       "raw": "1 2\" piece fresh ginger, peeled, cut into thin matchsticks or finely chopped",
       "expected": {
-        "item": "2\" piece fresh ginger, peeled",
+        "item": "2\" piece fresh ginger, peeled, cut into thin matchsticks or finely chopped",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "cut into thin matchsticks or finely chopped",
+        "note": null,
         "category": "Produce"
       }
     },

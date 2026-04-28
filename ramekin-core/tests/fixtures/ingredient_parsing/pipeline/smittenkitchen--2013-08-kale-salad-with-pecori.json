@@ -107,14 +107,14 @@
     {
       "raw": "1 tiny clove garlic, minced or pressed",
       "expected": {
-        "item": "tiny clove garlic",
+        "item": "tiny clove garlic, minced or pressed",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "minced or pressed",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -148,7 +148,7 @@
     {
       "raw": "1 bunch (about 14 ounces or 400 grams) tuscan kale (also known as black or lacinato kale; this is the thinner, flatter leaf variety), washed and patted dry",
       "expected": {
-        "item": "tuscan kale",
+        "item": "tuscan kale, washed and patted dry",
         "measurements": [
           {
             "amount": "1",
@@ -163,7 +163,7 @@
             "unit": "g"
           }
         ],
-        "note": "also known as black or lacinato kale; this is the thinner, flatter leaf variety, washed and patted dry",
+        "note": "also known as black or lacinato kale; this is the thinner, flatter leaf variety",
         "category": "Produce"
       }
     },

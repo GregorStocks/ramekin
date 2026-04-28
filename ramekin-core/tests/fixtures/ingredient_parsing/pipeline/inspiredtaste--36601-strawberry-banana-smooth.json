@@ -5,7 +5,7 @@
     {
       "raw": "1 medium (125 grams) ripe banana, 1 cup chopped",
       "expected": {
-        "item": "ripe banana",
+        "item": "ripe banana, 1 cup chopped",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "1 cup chopped",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -129,9 +129,9 @@
     {
       "raw": "Honey, agave or other sweetener as needed",
       "expected": {
-        "item": "Honey",
+        "item": "Honey, agave or other sweetener as needed",
         "measurements": [],
-        "note": "agave or other sweetener as needed",
+        "note": null,
         "category": "Baking"
       }
     }

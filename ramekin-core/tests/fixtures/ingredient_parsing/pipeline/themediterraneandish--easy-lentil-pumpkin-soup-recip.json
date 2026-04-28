@@ -199,19 +199,15 @@
     {
       "raw": "1/4 cup pine nuts, toasted in olive oil",
       "expected": {
-        "item": "pine nuts",
+        "item": "pine nuts, toasted in olive oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "34",
-            "unit": "g"
           }
         ],
-        "note": "toasted in olive oil",
-        "category": "Nuts & Dried Fruit"
+        "note": null,
+        "category": "Oils & Vinegars"
       }
     },
     {

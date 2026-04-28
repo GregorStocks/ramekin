@@ -5,7 +5,7 @@
     {
       "raw": "1 11-ounce (311-gram) box Nilla Wafers, ground into crumbs",
       "expected": {
-        "item": "Nilla Wafers",
+        "item": "Nilla Wafers, ground into crumbs",
         "measurements": [
           {
             "amount": "1",
@@ -16,8 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": "ground into crumbs",
-        "category": "Other"
+        "note": null,
+        "category": "Beverages"
       }
     },
     {

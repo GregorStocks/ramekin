@@ -37,28 +37,28 @@
     {
       "raw": "3 quarter-sized coins fresh ginger, crushed with the side of a large knife",
       "expected": {
-        "item": "quarter-sized coins fresh ginger",
+        "item": "quarter-sized coins fresh ginger, crushed with the side of a large knife",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "crushed with the side of a large knife",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "3 cloves garlic, crushed with the side of a large knife",
       "expected": {
-        "item": "garlic",
+        "item": "garlic, crushed with the side of a large knife",
         "measurements": [
           {
             "amount": "3",
             "unit": "clove"
           }
         ],
-        "note": "crushed with the side of a large knife",
+        "note": null,
         "category": "Produce"
       }
     },

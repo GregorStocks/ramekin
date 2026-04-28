@@ -65,14 +65,14 @@
     {
       "raw": "1 pint mini heirloom or cherry tomatoes, sliced in half",
       "expected": {
-        "item": "mini heirloom or cherry tomatoes",
+        "item": "mini heirloom or cherry tomatoes, sliced in half",
         "measurements": [
           {
             "amount": "1",
             "unit": "pint"
           }
         ],
-        "note": "sliced in half",
+        "note": null,
         "category": "Produce"
       }
     },

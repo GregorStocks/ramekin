@@ -55,15 +55,15 @@
     {
       "raw": "1 cup seeded, chopped cucumber (peeled if the peels are thick and bitter, otherwise leave them on)",
       "expected": {
-        "item": "seeded",
+        "item": "seeded, chopped cucumber",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "peeled if the peels are thick and bitter, otherwise leave them on, chopped cucumber",
-        "category": "Nuts & Dried Fruit"
+        "note": "peeled if the peels are thick and bitter, otherwise leave them on",
+        "category": "Produce"
       }
     },
     {
@@ -97,14 +97,14 @@
     {
       "raw": "1 fresh jalapeno, seeded and minced (test for heat, if really hot, only use a small amount)",
       "expected": {
-        "item": "fresh jalapeno",
+        "item": "fresh jalapeno, seeded and minced",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "test for heat, if really hot, only use a small amount, seeded and minced",
+        "note": "test for heat, if really hot, only use a small amount",
         "category": "Produce"
       }
     },

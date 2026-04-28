@@ -55,14 +55,14 @@
     {
       "raw": "5 celery stalks, ends trimmed",
       "expected": {
-        "item": "celery stalks",
+        "item": "celery stalks, ends trimmed",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": "ends trimmed",
+        "note": null,
         "category": "Produce"
       }
     },

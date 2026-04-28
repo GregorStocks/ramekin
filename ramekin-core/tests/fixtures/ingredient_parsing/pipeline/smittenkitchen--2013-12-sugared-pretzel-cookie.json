@@ -131,14 +131,14 @@
     {
       "raw": "1 large egg white, lightly beaten with 1 teaspoon water",
       "expected": {
-        "item": "egg white",
+        "item": "egg white, lightly beaten with 1 teaspoon water",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "lightly beaten with 1 teaspoon water",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

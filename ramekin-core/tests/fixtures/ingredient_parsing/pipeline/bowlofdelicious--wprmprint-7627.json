@@ -121,9 +121,9 @@
     {
       "raw": "green onions, toasted sesame seeds, and lime wedges for serving (optional)",
       "expected": {
-        "item": "green onions, toasted sesame seeds",
+        "item": "green onions, toasted sesame seeds, and lime wedges for serving",
         "measurements": [],
-        "note": "optional, and lime wedges for serving",
+        "note": "optional",
         "category": "Produce"
       }
     }

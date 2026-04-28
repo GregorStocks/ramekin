@@ -64,14 +64,14 @@
     {
       "raw": "2 tablespoons coarse sugar, such as Turbinado or Sugar in the Raw; use granulated if you have neither",
       "expected": {
-        "item": "coarse sugar",
+        "item": "coarse sugar, such as Turbinado or Sugar in the Raw; use granulated if you have neither",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "such as Turbinado or Sugar in the Raw; use granulated if you have neither",
+        "note": null,
         "category": "Baking"
       }
     },

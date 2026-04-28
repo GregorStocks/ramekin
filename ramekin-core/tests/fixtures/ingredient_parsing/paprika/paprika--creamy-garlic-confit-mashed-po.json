@@ -5,7 +5,7 @@
     {
       "raw": "4 pounds Yukon gold potatoes, peeled and sliced into ¾-inch-thick rounds",
       "expected": {
-        "item": "Yukon gold potatoes",
+        "item": "Yukon gold potatoes, peeled and sliced into 3/4-inch-thick rounds",
         "measurements": [
           {
             "amount": "4",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and sliced into 3/4-inch-thick rounds",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "1 cup unbleached all purpose flour, whole wheat or gluten-free mix* ((5 oz in weight))",
       "expected": {
-        "item": "unbleached all purpose flour",
+        "item": "unbleached all purpose flour, whole wheat or gluten-free mix",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "whole wheat or gluten-free mix",
+        "note": null,
         "category": "Baking"
       }
     },

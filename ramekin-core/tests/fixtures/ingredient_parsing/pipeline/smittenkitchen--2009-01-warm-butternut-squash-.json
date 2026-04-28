@@ -27,14 +27,14 @@
     {
       "raw": "1 medium garlic clove, minced or pressed",
       "expected": {
-        "item": "garlic clove",
+        "item": "garlic clove, minced or pressed",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "minced or pressed",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -132,14 +132,14 @@
     {
       "raw": "1 medium garlic clove, finely minced with a pinch of salt",
       "expected": {
-        "item": "garlic clove",
+        "item": "garlic clove, finely minced with a pinch of salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "finely minced with a pinch of salt",
+        "note": null,
         "category": "Produce"
       }
     },

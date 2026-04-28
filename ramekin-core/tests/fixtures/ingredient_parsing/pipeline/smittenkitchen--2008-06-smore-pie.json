@@ -55,7 +55,7 @@
     {
       "raw": "1/2 cup (4 ounces or 115 grams) unsalted butter, melted and cooled slightly",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, melted and cooled slightly",
         "measurements": [
           {
             "amount": "0.5",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": "melted and cooled slightly",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -141,7 +141,7 @@
     {
       "raw": "1 3/4 cups (415 grams) heavy cream, cold is fine",
       "expected": {
-        "item": "heavy cream",
+        "item": "heavy cream, cold is fine",
         "measurements": [
           {
             "amount": "1.75",
@@ -152,7 +152,7 @@
             "unit": "g"
           }
         ],
-        "note": "cold is fine",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

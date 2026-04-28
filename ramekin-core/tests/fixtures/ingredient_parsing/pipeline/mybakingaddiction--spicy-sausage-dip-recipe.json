@@ -23,14 +23,14 @@
     {
       "raw": "1  10 ounce can diced tomatoes with mild green chilies, undrained",
       "expected": {
-        "item": "diced tomatoes with mild green chilies",
+        "item": "diced tomatoes with mild green chilies, undrained",
         "measurements": [
           {
             "amount": "1",
             "unit": "10 ounce can"
           }
         ],
-        "note": "undrained",
+        "note": null,
         "category": "Canned Goods"
       }
     },

@@ -47,15 +47,15 @@
     {
       "raw": "1/2 cup chopped mix-ins, like cooked meats and/or raw or cooked vegetables",
       "expected": {
-        "item": "chopped mix-ins",
+        "item": "chopped mix-ins, like cooked meats and/or raw or cooked vegetables",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "like cooked meats and/or raw or cooked vegetables",
-        "category": "Other"
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {

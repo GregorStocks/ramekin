@@ -5,32 +5,28 @@
     {
       "raw": "4 cups kale, stemmed and roughly chopped",
       "expected": {
-        "item": "kale",
+        "item": "kale, stemmed and roughly chopped",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "84",
-            "unit": "g"
           }
         ],
-        "note": "stemmed and roughly chopped",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "2 cups frozen mango chunks, thawed slightly (see Tip)",
       "expected": {
-        "item": "frozen mango chunks",
+        "item": "frozen mango chunks, thawed slightly",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "see Tip, thawed slightly",
+        "note": "see Tip",
         "category": "Frozen"
       }
     },

@@ -131,14 +131,14 @@
     {
       "raw": "about 1 tablespoon (9g) dates, chopped; for sprinkling*",
       "expected": {
-        "item": "about 1 tablespoon dates",
+        "item": "about 1 tablespoon dates, chopped; for sprinkling",
         "measurements": [
           {
             "amount": "9",
             "unit": "g"
           }
         ],
-        "note": "chopped; for sprinkling",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     },

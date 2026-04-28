@@ -32,14 +32,14 @@
     {
       "raw": "1 medium onion, halved lengthwise and thinly sliced crosswise",
       "expected": {
-        "item": "onion",
+        "item": "onion, halved lengthwise and thinly sliced crosswise",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "halved lengthwise and thinly sliced crosswise",
+        "note": null,
         "category": "Produce"
       }
     },

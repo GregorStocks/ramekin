@@ -41,7 +41,7 @@
     {
       "raw": "1/2 cup (115 grams) unsalted butter, at room temperature for a hand-mixer; cold is fine for a stand-mixer",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, at room temperature for a hand-mixer; cold is fine for a stand-mixer",
         "measurements": [
           {
             "amount": "0.5",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": "at room temperature for a hand-mixer; cold is fine for a stand-mixer",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -159,7 +159,7 @@
     {
       "raw": "1/4 cup (25 grams) wheat germ, wheat bran, oat bran, or a finely chopped nut of your choice (I like walnuts)",
       "expected": {
-        "item": "wheat germ, wheat bran, oat bran",
+        "item": "wheat germ, wheat bran, oat bran, or a finely chopped nut of your choice",
         "measurements": [
           {
             "amount": "0.25",
@@ -170,8 +170,8 @@
             "unit": "g"
           }
         ],
-        "note": "I like walnuts, or a finely chopped nut of your choice",
-        "category": "Snacks"
+        "note": "I like walnuts",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -195,7 +195,7 @@
     {
       "raw": "1 cup (6 ounces) chocolate chips, or semisweet chocolate, chopped into chunks",
       "expected": {
-        "item": "chocolate chips, or semisweet chocolate",
+        "item": "chocolate chips, or semisweet chocolate, chopped into chunks",
         "measurements": [
           {
             "amount": "1",
@@ -210,7 +210,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped into chunks",
+        "note": null,
         "category": "Baking"
       }
     },

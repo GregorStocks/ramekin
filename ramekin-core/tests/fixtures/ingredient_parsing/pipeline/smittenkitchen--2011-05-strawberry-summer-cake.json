@@ -157,7 +157,7 @@
     {
       "raw": "1 pound (450 grams) strawberries, hulled and halved",
       "expected": {
-        "item": "strawberries",
+        "item": "strawberries, hulled and halved",
         "measurements": [
           {
             "amount": "1",
@@ -168,7 +168,7 @@
             "unit": "g"
           }
         ],
-        "note": "hulled and halved",
+        "note": null,
         "category": "Produce"
       }
     }

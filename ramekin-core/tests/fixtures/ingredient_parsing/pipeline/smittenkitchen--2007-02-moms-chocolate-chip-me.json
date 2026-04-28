@@ -87,7 +87,7 @@
     {
       "raw": "6 ounces chocolate chips, miniature chips or finely diced semi or bittersweet chocolate",
       "expected": {
-        "item": "chocolate chips",
+        "item": "chocolate chips, miniature chips or finely diced semi or bittersweet chocolate",
         "measurements": [
           {
             "amount": "6",
@@ -98,21 +98,21 @@
             "unit": "g"
           }
         ],
-        "note": "miniature chips or finely diced semi or bittersweet chocolate",
+        "note": null,
         "category": "Baking"
       }
     },
     {
       "raw": "1/4 cup finely chopped pecans or walnuts, toasted first is even tastier (optional)",
       "expected": {
-        "item": "finely chopped pecans or walnuts",
+        "item": "finely chopped pecans or walnuts, toasted first is even tastier",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "optional, toasted first is even tastier",
+        "note": "optional",
         "category": "Nuts & Dried Fruit"
       }
     }

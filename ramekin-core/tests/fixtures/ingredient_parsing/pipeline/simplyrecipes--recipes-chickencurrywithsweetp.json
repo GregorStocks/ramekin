@@ -157,7 +157,7 @@
     {
       "raw": "1 1/4 pounds sweet potatoes (white or orange flesh), peeled and cut into 1-inch chunks",
       "expected": {
-        "item": "sweet potatoes",
+        "item": "sweet potatoes, peeled and cut into 1-inch chunks",
         "measurements": [
           {
             "amount": "1.25",
@@ -168,7 +168,7 @@
             "unit": "g"
           }
         ],
-        "note": "white or orange flesh, peeled and cut into 1-inch chunks",
+        "note": "white or orange flesh",
         "category": "Produce"
       }
     },

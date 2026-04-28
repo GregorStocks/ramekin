@@ -107,7 +107,7 @@
     {
       "raw": "1 pound / 16 ounces / 450g cavolo nero (lacinato kale, Tuscan kale), stems trimmed off and leaves well chopped",
       "expected": {
-        "item": "cavolo nero",
+        "item": "cavolo nero, stems trimmed off and leaves well chopped",
         "measurements": [
           {
             "amount": "1",
@@ -122,7 +122,7 @@
             "unit": "g"
           }
         ],
-        "note": "lacinato kale, Tuscan kale, stems trimmed off and leaves well chopped",
+        "note": "lacinato kale, Tuscan kale",
         "category": "Other"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "1 (3 inch) piece fresh ginger, halved lengthwise",
       "expected": {
-        "item": "fresh ginger",
+        "item": "fresh ginger, halved lengthwise",
         "measurements": [
           {
             "amount": "1",
             "unit": "piece"
           }
         ],
-        "note": "3 inch, halved lengthwise",
+        "note": "3 inch",
         "category": "Produce"
       }
     },
@@ -157,7 +157,7 @@
     {
       "raw": "12 ounces small peeled, deveined raw shrimp",
       "expected": {
-        "item": "small peeled",
+        "item": "small peeled, deveined raw shrimp",
         "measurements": [
           {
             "amount": "12",
@@ -168,8 +168,8 @@
             "unit": "g"
           }
         ],
-        "note": "deveined raw shrimp",
-        "category": "Other"
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {

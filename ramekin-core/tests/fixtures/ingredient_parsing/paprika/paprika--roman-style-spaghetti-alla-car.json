@@ -105,28 +105,28 @@
     {
       "raw": "1 (28-ounce; 795 g) can whole peeled tomatoes with liquid, thoroughly crushed",
       "expected": {
-        "item": "whole peeled tomatoes with liquid",
+        "item": "whole peeled tomatoes with liquid, thoroughly crushed",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": "28-ounce; 795 g, thoroughly crushed",
+        "note": "28-ounce; 795 g",
         "category": "Produce"
       }
     },
     {
       "raw": "1 (5-ounce; 140 g) olive oil-packed tuna, preferably ventresca (tuna belly; see notes), oil reserved",
       "expected": {
-        "item": "olive oil-packed tuna, preferably ventresca",
+        "item": "olive oil-packed tuna, preferably ventresca, oil reserved",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "5-ounce; 140 g, tuna belly; see notes, oil reserved",
+        "note": "5-ounce; 140 g, tuna belly; see notes",
         "category": "Oils & Vinegars"
       }
     },

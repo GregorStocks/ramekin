@@ -77,14 +77,14 @@
     {
       "raw": "2 stalks celery, trimmed, diced tiny",
       "expected": {
-        "item": "celery, trimmed",
+        "item": "celery, trimmed, diced tiny",
         "measurements": [
           {
             "amount": "2",
             "unit": "stalk"
           }
         ],
-        "note": "diced tiny",
+        "note": null,
         "category": "Produce"
       }
     },

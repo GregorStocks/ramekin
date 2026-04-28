@@ -115,28 +115,28 @@
     {
       "raw": "2-4  small mandarin oranges, peeled and sectioned",
       "expected": {
-        "item": "mandarin oranges",
+        "item": "mandarin oranges, peeled and sectioned",
         "measurements": [
           {
             "amount": "2-4",
             "unit": "small"
           }
         ],
-        "note": "peeled and sectioned",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "2/3  cup roasted beet, chopped bite-size",
       "expected": {
-        "item": "roasted beet",
+        "item": "roasted beet, chopped bite-size",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": "chopped bite-size",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },

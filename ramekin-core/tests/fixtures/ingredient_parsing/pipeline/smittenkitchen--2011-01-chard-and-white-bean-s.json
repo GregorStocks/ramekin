@@ -5,7 +5,7 @@
     {
       "raw": "1 pound Swiss chard (can also swap kale, spinach or another green), ribs and stems removed and cleaned",
       "expected": {
-        "item": "Swiss chard",
+        "item": "Swiss chard, ribs and stems removed and cleaned",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "can also swap kale, spinach or another green, ribs and stems removed and cleaned",
+        "note": "can also swap kale, spinach or another green",
         "category": "Produce"
       }
     },

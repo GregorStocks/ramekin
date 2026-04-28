@@ -5,7 +5,7 @@
     {
       "raw": "1/2 pound (225 grams) rhubarb, trimmed and sliced 1/2-inch thick",
       "expected": {
-        "item": "rhubarb",
+        "item": "rhubarb, trimmed and sliced 1/2-inch thick",
         "measurements": [
           {
             "amount": "0.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and sliced 1/2-inch thick",
+        "note": null,
         "category": "Produce"
       }
     },

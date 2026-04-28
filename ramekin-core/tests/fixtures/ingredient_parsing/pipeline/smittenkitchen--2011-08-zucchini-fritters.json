@@ -41,14 +41,14 @@
     {
       "raw": "2 scallions, split lengthwise and sliced thin",
       "expected": {
-        "item": "scallions",
+        "item": "scallions, split lengthwise and sliced thin",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "split lengthwise and sliced thin",
+        "note": null,
         "category": "Produce"
       }
     },

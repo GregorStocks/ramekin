@@ -69,7 +69,7 @@
     {
       "raw": "1 1/4 cup (130 grams) sliced almonds, blanched are more traditional",
       "expected": {
-        "item": "sliced almonds",
+        "item": "sliced almonds, blanched are more traditional",
         "measurements": [
           {
             "amount": "1.25",
@@ -80,14 +80,14 @@
             "unit": "g"
           }
         ],
-        "note": "blanched are more traditional",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     },
     {
       "raw": "6 ounces semi- or bittersweet chocolate, chopped or in chips (about 1 cup)",
       "expected": {
-        "item": "semi- or bittersweet chocolate",
+        "item": "semi- or bittersweet chocolate, chopped or in chips",
         "measurements": [
           {
             "amount": "6",
@@ -102,8 +102,8 @@
             "unit": "g"
           }
         ],
-        "note": "chopped or in chips",
-        "category": "Other"
+        "note": null,
+        "category": "Snacks"
       }
     },
     {

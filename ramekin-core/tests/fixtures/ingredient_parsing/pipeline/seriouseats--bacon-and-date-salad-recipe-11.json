@@ -135,7 +135,7 @@
     {
       "raw": "4 ounces (113 g) Tuscan or curly kale, tough stems removed and leaves roughly chopped (about 4 cups loosely packed)",
       "expected": {
-        "item": "Tuscan or curly kale",
+        "item": "Tuscan or curly kale, tough stems removed and leaves roughly chopped",
         "measurements": [
           {
             "amount": "4",
@@ -146,7 +146,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 4 cups loosely packed, tough stems removed and leaves roughly chopped",
+        "note": "about 4 cups loosely packed",
         "category": "Produce"
       }
     },
@@ -171,7 +171,7 @@
     {
       "raw": "12 ounces pitted Medjool dates (340 g; about 3 cups), halved lengthwise or quartered if large",
       "expected": {
-        "item": "pitted Medjool dates",
+        "item": "pitted Medjool dates, halved lengthwise or quartered if large",
         "measurements": [
           {
             "amount": "12",
@@ -186,7 +186,7 @@
             "unit": "cup"
           }
         ],
-        "note": "halved lengthwise or quartered if large",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     },

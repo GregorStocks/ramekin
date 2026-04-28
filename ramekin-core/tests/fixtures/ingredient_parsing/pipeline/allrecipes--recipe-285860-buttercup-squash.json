@@ -37,28 +37,28 @@
     {
       "raw": "0.5 teaspoon sea salt, or to taste",
       "expected": {
-        "item": "sea salt",
+        "item": "sea salt, or to taste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "0.125 teaspoon freshly ground black pepper, or to taste",
       "expected": {
-        "item": "freshly ground black pepper",
+        "item": "freshly ground black pepper, or to taste",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

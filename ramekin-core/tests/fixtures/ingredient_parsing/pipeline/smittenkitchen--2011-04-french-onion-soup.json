@@ -255,14 +255,14 @@
     {
       "raw": "12 to 16 1-inch thick rounds French bread, toasted until hard",
       "expected": {
-        "item": "1-inch thick rounds French bread",
+        "item": "1-inch thick rounds French bread, toasted until hard",
         "measurements": [
           {
             "amount": "12 to 16",
             "unit": null
           }
         ],
-        "note": "toasted until hard",
+        "note": null,
         "category": "Bakery & Bread"
       }
     }

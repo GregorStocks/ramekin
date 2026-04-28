@@ -197,14 +197,14 @@
     {
       "raw": "4 large carrots, peeled and cut into 1-inch chunks",
       "expected": {
-        "item": "carrots",
+        "item": "carrots, peeled and cut into 1-inch chunks",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": "peeled and cut into 1-inch chunks",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -261,14 +261,14 @@
     {
       "raw": "2 Kirby cucumbers, sliced 1/4 inch thick",
       "expected": {
-        "item": "Kirby cucumbers",
+        "item": "Kirby cucumbers, sliced 1/4 inch thick",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "sliced 1/4 inch thick",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -361,14 +361,14 @@
     {
       "raw": "1 baguette, halved lengthwise",
       "expected": {
-        "item": "baguette",
+        "item": "baguette, halved lengthwise",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "halved lengthwise",
+        "note": null,
         "category": "Bakery & Bread"
       }
     },

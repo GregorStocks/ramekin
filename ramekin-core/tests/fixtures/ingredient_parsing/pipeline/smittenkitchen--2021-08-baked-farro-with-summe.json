@@ -46,7 +46,7 @@
     {
       "raw": "1 1/2 pounds (680 grams) zucchini or other summer squash (about 4 medium), quartered lengthwise and sliced thin",
       "expected": {
-        "item": "zucchini or other summer squash",
+        "item": "zucchini or other summer squash, quartered lengthwise and sliced thin",
         "measurements": [
           {
             "amount": "1.5",
@@ -61,7 +61,7 @@
             "unit": "medium"
           }
         ],
-        "note": "quartered lengthwise and sliced thin",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -136,18 +136,14 @@
     {
       "raw": "1/4 teaspoon red pepper flakes, or more to taste",
       "expected": {
-        "item": "red pepper flakes",
+        "item": "red pepper flakes, or more to taste",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.4",
-            "unit": "g"
           }
         ],
-        "note": "or more to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

@@ -27,14 +27,14 @@
     {
       "raw": "1 serrano chile, stemmed and roughly chopped (remove seeds before chopping for a less hot result)",
       "expected": {
-        "item": "serrano chile",
+        "item": "serrano chile, stemmed and roughly chopped",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "remove seeds before chopping for a less hot result, stemmed and roughly chopped",
+        "note": "remove seeds before chopping for a less hot result",
         "category": "Produce"
       }
     },

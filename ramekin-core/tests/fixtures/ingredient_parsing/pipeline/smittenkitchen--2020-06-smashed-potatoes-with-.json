@@ -231,15 +231,15 @@
     {
       "raw": "1/2 teaspoon minced, seeded, minced jalapeño",
       "expected": {
-        "item": "minced, seeded",
+        "item": "minced, seeded, minced jalapeño",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "minced jalapeño",
-        "category": "Nuts & Dried Fruit"
+        "note": null,
+        "category": "Produce"
       }
     },
     {

@@ -5,7 +5,7 @@
     {
       "raw": "1.33 lbs boneless skinless chicken breasts, sliced thin",
       "expected": {
-        "item": "boneless skinless chicken breasts",
+        "item": "boneless skinless chicken breasts, sliced thin",
         "measurements": [
           {
             "amount": "1.33",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "sliced thin",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },

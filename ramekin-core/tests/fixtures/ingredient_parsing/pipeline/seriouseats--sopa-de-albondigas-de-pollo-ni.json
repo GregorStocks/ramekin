@@ -5,14 +5,14 @@
     {
       "raw": "1 (4-pound) chicken, rinsed and cut into 8 pieces",
       "expected": {
-        "item": "chicken",
+        "item": "chicken, rinsed and cut into 8 pieces",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "4-pound, rinsed and cut into 8 pieces",
+        "note": "4-pound",
         "category": "Meat & Seafood"
       }
     },
@@ -47,14 +47,14 @@
     {
       "raw": "5 garlic cloves, peeled and smashed",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic cloves, peeled and smashed",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": "peeled and smashed",
+        "note": null,
         "category": "Produce"
       }
     },

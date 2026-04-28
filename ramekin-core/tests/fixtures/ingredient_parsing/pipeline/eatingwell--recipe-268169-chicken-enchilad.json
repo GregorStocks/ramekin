@@ -227,10 +227,10 @@
     {
       "raw": "Fresh cilantro, sour cream and/or guacamole for garnish",
       "expected": {
-        "item": "Fresh cilantro",
+        "item": "Fresh cilantro, sour cream and/or guacamole for garnish",
         "measurements": [],
-        "note": "sour cream and/or guacamole for garnish",
-        "category": "Produce"
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     }
   ]

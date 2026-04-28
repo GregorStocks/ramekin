@@ -5,14 +5,14 @@
     {
       "raw": "1 medium Fuji apple, seeded and cubed",
       "expected": {
-        "item": "Fuji apple",
+        "item": "Fuji apple, seeded and cubed",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "seeded and cubed",
+        "note": null,
         "category": "Produce"
       }
     },

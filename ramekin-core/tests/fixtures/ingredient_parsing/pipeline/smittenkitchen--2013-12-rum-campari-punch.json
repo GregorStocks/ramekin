@@ -155,28 +155,28 @@
     {
       "raw": "1 orange, sliced thin",
       "expected": {
-        "item": "orange",
+        "item": "orange, sliced thin",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced thin",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 lime, sliced thin",
       "expected": {
-        "item": "lime",
+        "item": "lime, sliced thin",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced thin",
+        "note": null,
         "category": "Produce"
       }
     },

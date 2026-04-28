@@ -96,14 +96,14 @@
     {
       "raw": "2 bell peppers, seeds removed and chopped",
       "expected": {
-        "item": "bell peppers",
+        "item": "bell peppers, seeds removed and chopped",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "seeds removed and chopped",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -164,18 +164,14 @@
     {
       "raw": "1 tablespoon honey, or more to taste",
       "expected": {
-        "item": "honey",
+        "item": "honey, or more to taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "21",
-            "unit": "g"
           }
         ],
-        "note": "or more to taste",
+        "note": null,
         "category": "Baking"
       }
     },

@@ -110,14 +110,14 @@
     {
       "raw": "1 tablespoon fresh mint, chopped or cut into tiny slivers",
       "expected": {
-        "item": "fresh mint",
+        "item": "fresh mint, chopped or cut into tiny slivers",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "chopped or cut into tiny slivers",
+        "note": null,
         "category": "Produce"
       }
     }

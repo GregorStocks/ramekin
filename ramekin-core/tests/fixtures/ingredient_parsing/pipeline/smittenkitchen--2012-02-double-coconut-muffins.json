@@ -95,7 +95,7 @@
     {
       "raw": "1 cup (230 grams) full fat Greek-style yogurt, at room temperature is best",
       "expected": {
-        "item": "full fat Greek-style yogurt",
+        "item": "full fat Greek-style yogurt, at room temperature is best",
         "measurements": [
           {
             "amount": "1",
@@ -106,7 +106,7 @@
             "unit": "g"
           }
         ],
-        "note": "at room temperature is best",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -131,14 +131,14 @@
     {
       "raw": "1 large egg, at room temperature is best",
       "expected": {
-        "item": "egg",
+        "item": "egg, at room temperature is best",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "at room temperature is best",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

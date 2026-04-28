@@ -5,7 +5,7 @@
     {
       "raw": "1 pound cucumbers, sliced 1/4-inch thick — “pickling” or kirby cucumbers work best here",
       "expected": {
-        "item": "cucumbers",
+        "item": "cucumbers, sliced 1/4-inch thick - “pickling” or kirby cucumbers work best here",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "sliced 1/4-inch thick - “pickling” or kirby cucumbers work best here",
+        "note": null,
         "category": "Produce"
       }
     },

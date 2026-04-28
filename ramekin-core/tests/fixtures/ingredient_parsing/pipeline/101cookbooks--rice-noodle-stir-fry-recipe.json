@@ -23,14 +23,14 @@
     {
       "raw": "1  serrano pepper, sliced 1/8-inch thinly",
       "expected": {
-        "item": "serrano pepper",
+        "item": "serrano pepper, sliced 1/8-inch thinly",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced 1/8-inch thinly",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -115,21 +115,21 @@
     {
       "raw": "1/2  onion, sliced 1/4-inch thick",
       "expected": {
-        "item": "onion",
+        "item": "onion, sliced 1/4-inch thick",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "sliced 1/4-inch thick",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "8 ounces mushrooms, chopped in 1/2-inch pieces (optional)",
       "expected": {
-        "item": "mushrooms",
+        "item": "mushrooms, chopped in 1/2-inch pieces",
         "measurements": [
           {
             "amount": "8",
@@ -140,21 +140,21 @@
             "unit": "g"
           }
         ],
-        "note": "optional, chopped in 1/2-inch pieces",
+        "note": "optional",
         "category": "Produce"
       }
     },
     {
       "raw": "1  head of broccoli, trimmed into small florets",
       "expected": {
-        "item": "broccoli",
+        "item": "broccoli, trimmed into small florets",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": "trimmed into small florets",
+        "note": null,
         "category": "Produce"
       }
     },

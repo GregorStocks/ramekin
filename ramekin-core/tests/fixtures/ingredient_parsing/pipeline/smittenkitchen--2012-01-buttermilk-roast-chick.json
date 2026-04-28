@@ -23,14 +23,14 @@
     {
       "raw": "5 garlic cloves, peeled and smashed",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic cloves, peeled and smashed",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": "peeled and smashed",
+        "note": null,
         "category": "Produce"
       }
     },

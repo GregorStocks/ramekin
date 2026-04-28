@@ -27,7 +27,7 @@
     {
       "raw": "2 cups grape tomatoes (about 10 oz), halved if you like",
       "expected": {
-        "item": "grape tomatoes",
+        "item": "grape tomatoes, halved if you like",
         "measurements": [
           {
             "amount": "2",
@@ -42,7 +42,7 @@
             "unit": "g"
           }
         ],
-        "note": "halved if you like",
+        "note": null,
         "category": "Produce"
       }
     },

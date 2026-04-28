@@ -206,14 +206,14 @@
     {
       "raw": "1 baguette or loaf of Cuban bread (any structured, crusty, long bread will do), sliced in half lengthwise",
       "expected": {
-        "item": "baguette or loaf of Cuban bread",
+        "item": "baguette or loaf of Cuban bread, sliced in half lengthwise",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "any structured, crusty, long bread will do, sliced in half lengthwise",
+        "note": "any structured, crusty, long bread will do",
         "section": "For the Sandwich",
         "category": "Bakery & Bread"
       }
@@ -221,14 +221,14 @@
     {
       "raw": "half an english cucumber, sliced thin on the bias",
       "expected": {
-        "item": "an english cucumber",
+        "item": "an english cucumber, sliced thin on the bias",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "sliced thin on the bias",
+        "note": null,
         "section": "For the Sandwich",
         "category": "Produce"
       }
@@ -256,14 +256,14 @@
     {
       "raw": "1-2 jalapeños, sliced thin",
       "expected": {
-        "item": "jalapeños",
+        "item": "jalapeños, sliced thin",
         "measurements": [
           {
             "amount": "1-2",
             "unit": null
           }
         ],
-        "note": "sliced thin",
+        "note": null,
         "section": "For the Sandwich",
         "category": "Produce"
       }

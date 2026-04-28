@@ -159,14 +159,14 @@
     {
       "raw": "good bread, sliced thickly",
       "expected": {
-        "item": "bread",
+        "item": "bread, sliced thickly",
         "measurements": [
           {
             "amount": null,
             "unit": "good"
           }
         ],
-        "note": "sliced thickly",
+        "note": null,
         "category": "Bakery & Bread"
       }
     },

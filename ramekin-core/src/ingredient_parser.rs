@@ -1110,7 +1110,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                 let potential_item = remaining.get(..comma_idx).unwrap_or("").trim();
                 // Check if it looks like a prep note AND extracting it wouldn't
                 // leave only prep words as the item
-                if is_prep_note(potential_note) && !is_only_prep_words(potential_item) {
+                if is_trailing_prep_note(potential_note) && !is_only_prep_words(potential_item) {
                     note = Some(potential_note.to_string());
                     remaining = potential_item.to_string();
                 }
@@ -2590,6 +2590,45 @@ fn is_prep_note(s: &str) -> bool {
     PREP_NOTES.iter().any(|note| s_lower.contains(note))
 }
 
+fn is_trailing_prep_note(s: &str) -> bool {
+    const PREP_FILLER_WORDS: &[&str] = &[
+        "and", "coarsely", "fine", "finely", "firmly", "freshly", "lightly", "loosely", "or",
+        "roughly", "small", "thinly", "very", "well",
+    ];
+
+    let mut saw_prep = false;
+    for part in s.to_lowercase().split(',') {
+        let part = part
+            .trim()
+            .trim_matches(|c: char| !c.is_ascii_alphabetic() && !c.is_ascii_whitespace());
+        if part.is_empty() {
+            continue;
+        }
+        if PREP_NOTES.contains(&part) {
+            saw_prep = true;
+            continue;
+        }
+
+        for word in part.split_whitespace() {
+            let word = word.trim_matches(|c: char| !c.is_ascii_alphabetic());
+            if word.is_empty() || PREP_FILLER_WORDS.contains(&word) {
+                continue;
+            }
+
+            if PREP_NOTES
+                .iter()
+                .any(|note| word == *note || note.starts_with(&format!("{} ", word)))
+            {
+                saw_prep = true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    saw_prep
+}
+
 /// Check if a string consists only of prep words (comma-separated).
 /// e.g., "finely chopped" -> true, "cooked chicken" -> false, "sliced" -> true
 fn is_only_prep_words(s: &str) -> bool {
@@ -3483,6 +3522,15 @@ mod tests {
     }
 
     #[test]
+    fn test_trailing_prep_note_requires_prep_phrase_not_noun_phrase() {
+        assert!(is_trailing_prep_note("finely chopped"));
+        assert!(is_trailing_prep_note("peeled and chopped"));
+        assert!(is_trailing_prep_note("chopped very small"));
+        assert!(!is_trailing_prep_note("unseasoned dried breadcrumbs"));
+        assert!(!is_trailing_prep_note("cooked chicken meat"));
+    }
+
+    #[test]
     fn test_orphaned_prep_word_fallback() {
         // When the item would be just a prep word, return raw
         let result = parse_ingredient("sliced");
@@ -3497,6 +3545,23 @@ mod tests {
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("2".to_string()));
         assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+    }
+
+    #[test]
+    fn test_parenthetical_note_does_not_expose_comma_noun_phrase_to_prep_strip() {
+        let result = parse_ingredient(
+            "3/4 cup (40 grams) plain, unseasoned dried breadcrumbs (I used, and recommend, panko, see note above)",
+        );
+        assert_eq!(result.item, "plain, unseasoned dried breadcrumbs");
+        assert_eq!(
+            result.note,
+            Some("I used, and recommend, panko, see note above".to_string())
+        );
+        assert_eq!(result.measurements.len(), 2);
+        assert_eq!(result.measurements[0].amount, Some("3/4".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+        assert_eq!(result.measurements[1].amount, Some("40".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("g".to_string()));
     }
 
     #[test]

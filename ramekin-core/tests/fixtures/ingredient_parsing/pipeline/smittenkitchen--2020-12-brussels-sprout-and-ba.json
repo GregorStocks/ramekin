@@ -37,7 +37,7 @@
     {
       "raw": "3/4 pound brussels sprouts, halved and sliced 1/4 -nch thick",
       "expected": {
-        "item": "brussels sprouts",
+        "item": "brussels sprouts, halved and sliced 1/4 -nch thick",
         "measurements": [
           {
             "amount": "0.75",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": "halved and sliced 1/4 -nch thick",
+        "note": null,
         "category": "Produce"
       }
     },

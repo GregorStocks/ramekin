@@ -5,14 +5,14 @@
     {
       "raw": "10 small zucchini, ends trimmed",
       "expected": {
-        "item": "zucchini",
+        "item": "zucchini, ends trimmed",
         "measurements": [
           {
             "amount": "10",
             "unit": "small"
           }
         ],
-        "note": "ends trimmed",
+        "note": null,
         "category": "Produce"
       }
     },

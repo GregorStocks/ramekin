@@ -191,14 +191,14 @@
     {
       "raw": "3 carrots, peeled and sliced thinly on a diagonal",
       "expected": {
-        "item": "carrots",
+        "item": "carrots, peeled and sliced thinly on a diagonal",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "peeled and sliced thinly on a diagonal",
+        "note": null,
         "category": "Produce"
       }
     },

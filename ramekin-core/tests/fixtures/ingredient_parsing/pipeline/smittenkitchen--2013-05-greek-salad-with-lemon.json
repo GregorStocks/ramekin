@@ -123,18 +123,14 @@
     {
       "raw": "2 tablespoons olive oil, or more to taste",
       "expected": {
-        "item": "olive oil",
+        "item": "olive oil, or more to taste",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
-        "note": "or more to taste",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
@@ -150,14 +146,14 @@
     {
       "raw": "1 sprig oregano, leaves minced",
       "expected": {
-        "item": "oregano",
+        "item": "oregano, leaves minced",
         "measurements": [
           {
             "amount": "1",
             "unit": "sprig"
           }
         ],
-        "note": "leaves minced",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     }

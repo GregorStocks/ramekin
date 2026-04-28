@@ -199,9 +199,9 @@
     {
       "raw": "A few handfuls of arugula, frisée, or red mustard greens, carefully washed and dried",
       "expected": {
-        "item": "A few handfuls of arugula, frisée, or red mustard greens",
+        "item": "A few handfuls of arugula, frisée, or red mustard greens, carefully washed and dried",
         "measurements": [],
-        "note": "carefully washed and dried",
+        "note": null,
         "category": "Produce"
       }
     }

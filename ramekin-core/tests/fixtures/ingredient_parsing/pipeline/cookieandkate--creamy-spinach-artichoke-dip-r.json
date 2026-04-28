@@ -105,7 +105,7 @@
     {
       "raw": "8 ounces cream cheese, sliced into 4 even pieces",
       "expected": {
-        "item": "cream cheese",
+        "item": "cream cheese, sliced into 4 even pieces",
         "measurements": [
           {
             "amount": "8",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": "sliced into 4 even pieces",
+        "note": null,
         "category": "Cheese"
       }
     },

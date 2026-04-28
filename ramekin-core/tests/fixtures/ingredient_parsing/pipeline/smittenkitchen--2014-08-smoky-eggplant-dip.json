@@ -41,14 +41,14 @@
     {
       "raw": "1 teaspoon coarse or kosher salt, or to taste",
       "expected": {
-        "item": "coarse or kosher salt",
+        "item": "coarse or kosher salt, or to taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
@@ -69,14 +69,14 @@
     {
       "raw": "2 garlic cloves, peeled and minced or pressed",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic cloves, peeled and minced or pressed",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "peeled and minced or pressed",
+        "note": null,
         "category": "Produce"
       }
     },

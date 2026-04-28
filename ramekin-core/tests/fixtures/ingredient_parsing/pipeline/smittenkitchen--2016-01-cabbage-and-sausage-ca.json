@@ -129,7 +129,7 @@
     {
       "raw": "1 large green or Savoy cabbage (2 pounds), cored and thickly shredded",
       "expected": {
-        "item": "green or Savoy cabbage",
+        "item": "green or Savoy cabbage, cored and thickly shredded",
         "measurements": [
           {
             "amount": "1",
@@ -144,7 +144,7 @@
             "unit": "g"
           }
         ],
-        "note": "cored and thickly shredded",
+        "note": null,
         "category": "Produce"
       }
     },

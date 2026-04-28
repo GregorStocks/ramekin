@@ -45,7 +45,7 @@
     {
       "raw": "1/2 cup (125 ml) plain, whole-milk yogurt",
       "expected": {
-        "item": "plain",
+        "item": "plain, whole-milk yogurt",
         "measurements": [
           {
             "amount": "0.5",
@@ -56,8 +56,8 @@
             "unit": "ml"
           }
         ],
-        "note": "whole-milk yogurt",
-        "category": "Other"
+        "note": null,
+        "category": "Dairy & Eggs"
       }
     },
     {

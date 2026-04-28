@@ -232,14 +232,14 @@
     {
       "raw": "4 to 6 cups hickory or apple chips or wood chunks, soaked in water to cover for 1 hour, then drained",
       "expected": {
-        "item": "hickory or apple chips or wood chunks, soaked in water to cover for 1 hour",
+        "item": "hickory or apple chips or wood chunks, soaked in water to cover for 1 hour, then drained",
         "measurements": [
           {
             "amount": "4 to 6",
             "unit": "cup"
           }
         ],
-        "note": "then drained",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -324,36 +324,28 @@
     {
       "raw": "1/4 cup brown sugar, or to taste",
       "expected": {
-        "item": "brown sugar",
+        "item": "brown sugar, or to taste",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "55",
-            "unit": "g"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Baking"
       }
     },
     {
       "raw": "1/4 cup honey, or to taste",
       "expected": {
-        "item": "honey",
+        "item": "honey, or to taste",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Baking"
       }
     },

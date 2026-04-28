@@ -5,7 +5,7 @@
     {
       "raw": "1 pound large raw shrimp, peeled and deveined",
       "expected": {
-        "item": "large raw shrimp",
+        "item": "large raw shrimp, peeled and deveined",
         "measurements": [
           {
             "amount": "1",
@@ -16,14 +16,14 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and deveined",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "8 ounces fresh asparagus, trimmed and cut into 1 1/2-inch pieces",
       "expected": {
-        "item": "fresh asparagus",
+        "item": "fresh asparagus, trimmed and cut into 1 1/2-inch pieces",
         "measurements": [
           {
             "amount": "8",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and cut into 1 1/2-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },

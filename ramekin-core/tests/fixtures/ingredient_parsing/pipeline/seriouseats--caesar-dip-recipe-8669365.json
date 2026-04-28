@@ -198,10 +198,10 @@
     {
       "raw": "Fresh cut vegetables, romaine lettuce wedges, chips, or crackers for serving",
       "expected": {
-        "item": "Fresh cut vegetables, romaine lettuce wedges, chips",
+        "item": "Fresh cut vegetables, romaine lettuce wedges, chips, or crackers for serving",
         "measurements": [],
-        "note": "or crackers for serving",
-        "category": "Produce"
+        "note": null,
+        "category": "Snacks"
       }
     }
   ]

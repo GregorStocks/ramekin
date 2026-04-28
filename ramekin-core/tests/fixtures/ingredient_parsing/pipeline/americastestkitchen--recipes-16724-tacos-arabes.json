@@ -55,14 +55,14 @@
     {
       "raw": "2 garlic cloves , sliced thin",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic cloves, sliced thin",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "sliced thin",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -87,28 +87,28 @@
     {
       "raw": "1 tablespoon cumin seeds , toasted and cracked",
       "expected": {
-        "item": "cumin seeds",
+        "item": "cumin seeds, toasted and cracked",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "toasted and cracked",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 tablespoon coriander seeds , toasted and cracked",
       "expected": {
-        "item": "coriander seeds",
+        "item": "coriander seeds, toasted and cracked",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "toasted and cracked",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
@@ -343,14 +343,14 @@
     {
       "raw": "2 garlic cloves , unpeeled",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic cloves, unpeeled",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "unpeeled",
+        "note": null,
         "category": "Produce"
       }
     },

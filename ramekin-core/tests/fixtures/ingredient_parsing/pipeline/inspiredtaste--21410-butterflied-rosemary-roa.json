@@ -65,14 +65,14 @@
     {
       "raw": "4 carrots, peeled and cut into 1-inch chunks",
       "expected": {
-        "item": "carrots",
+        "item": "carrots, peeled and cut into 1-inch chunks",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "peeled and cut into 1-inch chunks",
+        "note": null,
         "category": "Produce"
       }
     },

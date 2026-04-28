@@ -107,7 +107,7 @@
     {
       "raw": "12 ounces unsalted butter (about 3 sticks; 340g), softened to about 70°F (21°C)",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, softened to about 70°F",
         "measurements": [
           {
             "amount": "12",
@@ -122,7 +122,7 @@
             "unit": "g"
           }
         ],
-        "note": "21°C, softened to about 70°F",
+        "note": "21°C",
         "category": "Dairy & Eggs"
       }
     }

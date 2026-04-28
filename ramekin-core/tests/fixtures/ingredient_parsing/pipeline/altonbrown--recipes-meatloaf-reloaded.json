@@ -241,14 +241,14 @@
     {
       "raw": "1 medium carrot, peeled and broken into a few large pieces",
       "expected": {
-        "item": "carrot",
+        "item": "carrot, peeled and broken into a few large pieces",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "peeled and broken into a few large pieces",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -269,7 +269,7 @@
     {
       "raw": "18 ounces chuck roast, trimmed of excess gristle and silver skin, cut into 1 1/2-inch cubes and chilled",
       "expected": {
-        "item": "chuck roast, trimmed of excess gristle and silver skin",
+        "item": "chuck roast, trimmed of excess gristle and silver skin, cut into 1 1/2-inch cubes and chilled",
         "measurements": [
           {
             "amount": "18",
@@ -280,14 +280,14 @@
             "unit": "g"
           }
         ],
-        "note": "cut into 1 1/2-inch cubes and chilled",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "18 ounces sirloin roast, cut into 1 1/2-inch cubes and chilled",
       "expected": {
-        "item": "sirloin roast",
+        "item": "sirloin roast, cut into 1 1/2-inch cubes and chilled",
         "measurements": [
           {
             "amount": "18",
@@ -298,7 +298,7 @@
             "unit": "g"
           }
         ],
-        "note": "cut into 1 1/2-inch cubes and chilled",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },

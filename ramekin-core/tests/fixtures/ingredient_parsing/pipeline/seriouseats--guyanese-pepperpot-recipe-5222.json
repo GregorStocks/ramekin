@@ -237,14 +237,14 @@
     {
       "raw": "One 1-inch strip orange peel, trimmed of excess white pith",
       "expected": {
-        "item": "1-inch strip orange peel",
+        "item": "1-inch strip orange peel, trimmed of excess white pith",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "trimmed of excess white pith",
+        "note": null,
         "category": "Produce"
       }
     }

@@ -5,7 +5,7 @@
     {
       "raw": "2 medium eggplants (about 1 1/2 lb), partially peeled and sliced length-wise",
       "expected": {
-        "item": "eggplants",
+        "item": "eggplants, partially peeled and sliced length-wise",
         "measurements": [
           {
             "amount": "2",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "partially peeled and sliced length-wise",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -36,28 +36,28 @@
     {
       "raw": "3 Russet potatoes, peeled and sliced lengthwise (1/2-inch in thickness)",
       "expected": {
-        "item": "Russet potatoes",
+        "item": "Russet potatoes, peeled and sliced lengthwise",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "1/2-inch in thickness, peeled and sliced lengthwise",
+        "note": "1/2-inch in thickness",
         "category": "Produce"
       }
     },
     {
       "raw": "2 large zucchini, sliced length-wise (1/2-inch in thickness)",
       "expected": {
-        "item": "zucchini",
+        "item": "zucchini, sliced length-wise",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "1/2-inch in thickness, sliced length-wise",
+        "note": "1/2-inch in thickness",
         "category": "Produce"
       }
     },

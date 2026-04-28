@@ -91,7 +91,7 @@
     {
       "raw": "1 pound uncooked shrimp (31-40 per pound), peeled and deveined",
       "expected": {
-        "item": "uncooked shrimp",
+        "item": "uncooked shrimp, peeled and deveined",
         "measurements": [
           {
             "amount": "1",
@@ -102,7 +102,7 @@
             "unit": "g"
           }
         ],
-        "note": "31-40 per pound, peeled and deveined",
+        "note": "31-40 per pound",
         "category": "Meat & Seafood"
       }
     },

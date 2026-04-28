@@ -142,7 +142,7 @@
     {
       "raw": "1 pound (455 grams) zucchini or summer squash, sliced into 1/4″ half-moons",
       "expected": {
-        "item": "zucchini or summer squash",
+        "item": "zucchini or summer squash, sliced into 1/4″ half-moons",
         "measurements": [
           {
             "amount": "1",
@@ -153,7 +153,7 @@
             "unit": "g"
           }
         ],
-        "note": "sliced into 1/4″ half-moons",
+        "note": null,
         "category": "Produce"
       }
     },

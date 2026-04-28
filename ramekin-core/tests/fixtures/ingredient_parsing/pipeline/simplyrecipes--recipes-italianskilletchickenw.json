@@ -5,7 +5,7 @@
     {
       "raw": "1 1/2 pounds boneless skinless chicken tenders, tenderloin, or thinly sliced chicken breasts",
       "expected": {
-        "item": "boneless skinless chicken tenders, tenderloin",
+        "item": "boneless skinless chicken tenders, tenderloin, or thinly sliced chicken breasts",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "or thinly sliced chicken breasts",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
@@ -206,14 +206,14 @@
     {
       "raw": "2 large handfuls spinach, about 2 packed cups",
       "expected": {
-        "item": "handfuls spinach",
+        "item": "handfuls spinach, about 2 packed cups",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "about 2 packed cups",
+        "note": null,
         "category": "Produce"
       }
     },

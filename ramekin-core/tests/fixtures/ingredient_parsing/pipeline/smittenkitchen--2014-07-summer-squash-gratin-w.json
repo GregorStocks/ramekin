@@ -203,14 +203,14 @@
     {
       "raw": "1 salt-packed anchovy, rinsed and bones removed",
       "expected": {
-        "item": "salt-packed anchovy",
+        "item": "salt-packed anchovy, rinsed and bones removed",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "rinsed and bones removed",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
@@ -249,14 +249,14 @@
     {
       "raw": "1/2 lemon, or more to taste",
       "expected": {
-        "item": "lemon",
+        "item": "lemon, or more to taste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "or more to taste",
+        "note": null,
         "category": "Produce"
       }
     }

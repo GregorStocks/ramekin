@@ -171,28 +171,28 @@
     {
       "raw": "1 red bell pepper, stem, ribbing and seeds removed, sliced into strips",
       "expected": {
-        "item": "red bell pepper, stem, ribbing and seeds removed",
+        "item": "red bell pepper, stem, ribbing and seeds removed, sliced into strips",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced into strips",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 green pepper, stem, ribbing and seeds removed, sliced into strips",
       "expected": {
-        "item": "green pepper, stem, ribbing and seeds removed",
+        "item": "green pepper, stem, ribbing and seeds removed, sliced into strips",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced into strips",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

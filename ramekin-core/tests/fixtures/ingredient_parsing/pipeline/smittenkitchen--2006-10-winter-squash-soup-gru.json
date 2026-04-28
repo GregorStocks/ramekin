@@ -337,14 +337,14 @@
     {
       "raw": "1-2 tablespoons sugar, or to taste",
       "expected": {
-        "item": "sugar",
+        "item": "sugar, or to taste",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tbsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Baking"
       }
     },

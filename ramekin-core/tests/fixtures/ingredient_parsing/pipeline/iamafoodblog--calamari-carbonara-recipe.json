@@ -78,14 +78,14 @@
     {
       "raw": "1 tbsp chopped flat leaf parsley, or to taste",
       "expected": {
-        "item": "chopped flat leaf parsley",
+        "item": "chopped flat leaf parsley, or to taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     }

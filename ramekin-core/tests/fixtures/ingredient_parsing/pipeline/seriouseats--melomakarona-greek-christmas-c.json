@@ -27,14 +27,14 @@
     {
       "raw": "1 large orange, unpeeled and quartered",
       "expected": {
-        "item": "orange",
+        "item": "orange, unpeeled and quartered",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "unpeeled and quartered",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -233,7 +233,7 @@
     {
       "raw": "3 ounces walnuts (85 g; 3/4 cup), finally chopped or gently pulsed in food processor",
       "expected": {
-        "item": "walnuts",
+        "item": "walnuts, finally chopped or gently pulsed in food processor",
         "measurements": [
           {
             "amount": "3",
@@ -248,7 +248,7 @@
             "unit": "cup"
           }
         ],
-        "note": "finally chopped or gently pulsed in food processor",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     },

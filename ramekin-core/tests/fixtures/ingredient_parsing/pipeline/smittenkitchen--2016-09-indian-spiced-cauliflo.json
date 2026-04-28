@@ -198,32 +198,28 @@
     {
       "raw": "2 medium tomatoes, peeled and chopped or 1 1/2 cups canned chopped tomatoes",
       "expected": {
-        "item": "tomatoes",
+        "item": "tomatoes, peeled and chopped",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": "peeled and chopped or 1 1/2 cups canned chopped tomatoes",
+        "note": "or 1 1/2 cups canned chopped tomatoes",
         "category": "Produce"
       }
     },
     {
       "raw": "1 1/2 teaspoons salt, or to taste (we wanted more)",
       "expected": {
-        "item": "salt, presumably Diamond",
+        "item": "salt, or to taste",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "4.3",
-            "unit": "g"
           }
         ],
-        "note": "we wanted more, or to taste",
+        "note": "we wanted more",
         "category": "Spices & Seasonings"
       }
     },

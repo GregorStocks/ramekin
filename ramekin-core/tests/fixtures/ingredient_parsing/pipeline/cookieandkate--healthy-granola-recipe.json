@@ -111,14 +111,14 @@
     {
       "raw": "&amp;#8532; cup dried fruit, chopped if large (I used dried cranberries)",
       "expected": {
-        "item": "dried fruit",
+        "item": "dried fruit, chopped if large",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": "I used dried cranberries, chopped if large",
+        "note": "I used dried cranberries",
         "category": "Nuts & Dried Fruit"
       }
     },

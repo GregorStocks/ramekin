@@ -102,14 +102,14 @@
     {
       "raw": "3 sun-dried tomatoes, dry-packed",
       "expected": {
-        "item": "sun-dried tomatoes",
+        "item": "sun-dried tomatoes, dry-packed",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "dry-packed",
+        "note": null,
         "category": "Canned Goods"
       }
     },

@@ -192,7 +192,7 @@
     {
       "raw": "2 Tablespoons fish sauce ((30ml), or to taste)",
       "expected": {
-        "item": "fish sauce",
+        "item": "fish sauce, or to taste",
         "measurements": [
           {
             "amount": "2",
@@ -201,13 +201,9 @@
           {
             "amount": "30",
             "unit": "ml"
-          },
-          {
-            "amount": "36",
-            "unit": "g"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },

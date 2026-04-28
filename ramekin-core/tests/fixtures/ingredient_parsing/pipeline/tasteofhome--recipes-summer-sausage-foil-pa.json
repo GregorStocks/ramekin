@@ -23,14 +23,14 @@
     {
       "raw": "4 medium potatoes, peeled and cut into 1/2-inch cubes",
       "expected": {
-        "item": "potatoes",
+        "item": "potatoes, peeled and cut into 1/2-inch cubes",
         "measurements": [
           {
             "amount": "4",
             "unit": "medium"
           }
         ],
-        "note": "peeled and cut into 1/2-inch cubes",
+        "note": null,
         "category": "Produce"
       }
     },

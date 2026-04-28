@@ -23,7 +23,7 @@
     {
       "raw": "1/2 cup (55 grams) sliced almonds, toasted or equivalent weight almond flour",
       "expected": {
-        "item": "sliced almonds",
+        "item": "sliced almonds, toasted or equivalent weight almond flour",
         "measurements": [
           {
             "amount": "0.5",
@@ -34,8 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": "toasted or equivalent weight almond flour",
-        "category": "Nuts & Dried Fruit"
+        "note": null,
+        "category": "Baking"
       }
     },
     {
@@ -91,7 +91,7 @@
     {
       "raw": "1/2 cup (4 ounces or 115 grams) unsalted butter, cold is fine",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, cold is fine",
         "measurements": [
           {
             "amount": "0.5",
@@ -106,7 +106,7 @@
             "unit": "g"
           }
         ],
-        "note": "cold is fine",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

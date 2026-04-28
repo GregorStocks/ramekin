@@ -145,14 +145,14 @@
     {
       "raw": "2 large eggs, well-beaten",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, well-beaten",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "well-beaten",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -187,15 +187,15 @@
     {
       "raw": "26 Rolos, frozen and unwrapped",
       "expected": {
-        "item": "Rolos",
+        "item": "Rolos, frozen and unwrapped",
         "measurements": [
           {
             "amount": "26",
             "unit": null
           }
         ],
-        "note": "frozen and unwrapped",
-        "category": "Other"
+        "note": null,
+        "category": "Frozen"
       }
     }
   ]

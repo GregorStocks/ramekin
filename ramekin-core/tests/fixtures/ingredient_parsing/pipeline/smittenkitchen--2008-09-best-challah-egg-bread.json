@@ -149,7 +149,7 @@
     {
       "raw": "1/2 cup raisins (about 70 grams) per challah, if using, plumped in hot water and drained",
       "expected": {
-        "item": "raisins per challah, if using",
+        "item": "raisins per challah, if using, plumped in hot water and drained",
         "measurements": [
           {
             "amount": "0.5",
@@ -160,7 +160,7 @@
             "unit": "g"
           }
         ],
-        "note": "plumped in hot water and drained",
+        "note": null,
         "category": "Bakery & Bread"
       }
     }

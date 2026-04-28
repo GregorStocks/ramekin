@@ -5,7 +5,7 @@
     {
       "raw": "1 1/2 pounds leeks (about 3 big leeks), lengthwise and white and pale green parts sliced 1/4-inch thick (about 3 generous cups of slices)",
       "expected": {
-        "item": "leeks",
+        "item": "leeks, lengthwise and white and pale green parts sliced 1/4-inch thick",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 3 big leeks, about 3 generous cups of slices, lengthwise and white and pale green parts sliced 1/4-inch thick",
+        "note": "about 3 big leeks, about 3 generous cups of slices",
         "category": "Produce"
       }
     },

@@ -19,7 +19,7 @@
     {
       "raw": "3 pounds ground beef, ideally coarse-ground",
       "expected": {
-        "item": "ground beef",
+        "item": "ground beef, ideally coarse-ground",
         "measurements": [
           {
             "amount": "3",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": "ideally coarse-ground",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
@@ -83,14 +83,14 @@
     {
       "raw": "1 teaspoon ground cayenne pepper, or to taste",
       "expected": {
-        "item": "ground cayenne pepper",
+        "item": "ground cayenne pepper, or to taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
@@ -409,28 +409,28 @@
     {
       "raw": "1 tablespoon apple-cider vinegar, or to taste",
       "expected": {
-        "item": "apple-cider vinegar",
+        "item": "apple-cider vinegar, or to taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "2 tablespoons hot sauce, or to taste",
       "expected": {
-        "item": "hot sauce",
+        "item": "hot sauce, or to taste",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     }

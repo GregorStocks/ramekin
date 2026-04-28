@@ -33,56 +33,56 @@
     {
       "raw": "2 cloves garlic, crushed then minced",
       "expected": {
-        "item": "garlic",
+        "item": "garlic, crushed then minced",
         "measurements": [
           {
             "amount": "2",
             "unit": "clove"
           }
         ],
-        "note": "crushed then minced",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 red bell pepper, cored and sliced into thin strips",
       "expected": {
-        "item": "red bell pepper",
+        "item": "red bell pepper, cored and sliced into thin strips",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "cored and sliced into thin strips",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 yellow bell pepper, cored and sliced into thin strips",
       "expected": {
-        "item": "yellow bell pepper",
+        "item": "yellow bell pepper, cored and sliced into thin strips",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "cored and sliced into thin strips",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 Anaheim or 1 jalapeño chile, cored and sliced into thin strips",
       "expected": {
-        "item": "Anaheim or 1 jalapeño chile",
+        "item": "Anaheim or 1 jalapeño chile, cored and sliced into thin strips",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "cored and sliced into thin strips",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -143,14 +143,14 @@
     {
       "raw": "1 14-ounce can crushed tomatoes, fire-roasted if you can get them",
       "expected": {
-        "item": "crushed tomatoes",
+        "item": "crushed tomatoes, fire-roasted if you can get them",
         "measurements": [
           {
             "amount": "1",
             "unit": "14-ounce can"
           }
         ],
-        "note": "fire-roasted if you can get them",
+        "note": null,
         "category": "Canned Goods"
       }
     },
@@ -331,7 +331,7 @@
     {
       "raw": "1/2 pound asparagus spears, trimmed of tough ends",
       "expected": {
-        "item": "asparagus spears",
+        "item": "asparagus spears, trimmed of tough ends",
         "measurements": [
           {
             "amount": "0.5",
@@ -342,7 +342,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed of tough ends",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -478,14 +478,14 @@
     {
       "raw": "2 to 3 slices of bacon, halved to approximate sandwich lengths",
       "expected": {
-        "item": "bacon",
+        "item": "bacon, halved to approximate sandwich lengths",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": "slice"
           }
         ],
-        "note": "halved to approximate sandwich lengths",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
@@ -811,18 +811,14 @@
     {
       "raw": "1 tablespoon unsalted butter, melted and cooled slightly",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, melted and cooled slightly",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "14",
-            "unit": "g"
           }
         ],
-        "note": "melted and cooled slightly",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

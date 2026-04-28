@@ -59,7 +59,7 @@
     {
       "raw": "1 (29 ounce) can kidney beans, undrained",
       "expected": {
-        "item": "kidney beans",
+        "item": "kidney beans, undrained",
         "measurements": [
           {
             "amount": "1",
@@ -74,14 +74,14 @@
             "unit": "g"
           }
         ],
-        "note": "undrained",
+        "note": null,
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1 (29 ounce) can pinto beans, undrained",
       "expected": {
-        "item": "pinto beans",
+        "item": "pinto beans, undrained",
         "measurements": [
           {
             "amount": "1",
@@ -96,7 +96,7 @@
             "unit": "g"
           }
         ],
-        "note": "undrained",
+        "note": null,
         "category": "Canned Goods"
       }
     },

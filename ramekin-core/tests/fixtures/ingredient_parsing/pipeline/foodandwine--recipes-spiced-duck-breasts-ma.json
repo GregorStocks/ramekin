@@ -129,14 +129,14 @@
     {
       "raw": "2 mandarin oranges, peeled and separated into segments",
       "expected": {
-        "item": "mandarin oranges",
+        "item": "mandarin oranges, peeled and separated into segments",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "peeled and separated into segments",
+        "note": null,
         "category": "Produce"
       }
     },

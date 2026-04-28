@@ -221,7 +221,7 @@
     {
       "raw": "1/2 cup plus 2 tablespoons (135 grams) heavy cream, cold is fine",
       "expected": {
-        "item": "heavy cream",
+        "item": "heavy cream, cold is fine",
         "measurements": [
           {
             "amount": "1/2 cup plus 2 tablespoons",
@@ -232,7 +232,7 @@
             "unit": "g"
           }
         ],
-        "note": "cold is fine",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -298,21 +298,21 @@
     {
       "raw": "3 large eggs, cold is fine",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, cold is fine",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": "cold is fine",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 1/2 cups milk (355 ml), whole or low-fat, cold is fine",
       "expected": {
-        "item": "milk, whole or low-fat",
+        "item": "milk, whole or low-fat, cold is fine",
         "measurements": [
           {
             "amount": "1.5",
@@ -323,7 +323,7 @@
             "unit": "ml"
           }
         ],
-        "note": "cold is fine",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -366,7 +366,7 @@
     {
       "raw": "1 1/4 pounds (20 ounces, 2 1/2 cups, or 570 grams) unsalted butter, slightly cooler than room temperature (firm-soft, not mushy)",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, slightly cooler than room temperature",
         "measurements": [
           {
             "amount": "1.25",
@@ -385,7 +385,7 @@
             "unit": "g"
           }
         ],
-        "note": "firm-soft, not mushy, slightly cooler than room temperature",
+        "note": "firm-soft, not mushy",
         "category": "Dairy & Eggs"
       }
     }

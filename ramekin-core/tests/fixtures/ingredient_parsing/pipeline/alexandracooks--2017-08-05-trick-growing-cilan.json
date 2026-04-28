@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds (about 8) Persian or Japanese cucumbers, stripey peeled",
       "expected": {
-        "item": "Persian or Japanese cucumbers",
+        "item": "Persian or Japanese cucumbers, stripey peeled",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 8, stripey peeled",
+        "note": "about 8",
         "category": "Produce"
       }
     },
@@ -51,14 +51,14 @@
     {
       "raw": "1 garlic clove, finely grated or pounded with a pinch of salt",
       "expected": {
-        "item": "garlic clove",
+        "item": "garlic clove, finely grated or pounded with a pinch of salt",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "finely grated or pounded with a pinch of salt",
+        "note": null,
         "category": "Produce"
       }
     },

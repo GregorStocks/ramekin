@@ -110,14 +110,14 @@
     {
       "raw": "1 28-ounce can crushed tomatoes, fire-roasted if you can find them or 2 10-ounce cans Ro-Tel (yield is a little less but not noticeable in final chili)",
       "expected": {
-        "item": "crushed tomatoes",
+        "item": "crushed tomatoes, fire-roasted if you can find them or 2 10-ounce cans Ro-Tel",
         "measurements": [
           {
             "amount": "1",
             "unit": "28-ounce can"
           }
         ],
-        "note": "yield is a little less but not noticeable in final chili, fire-roasted if you can find them or 2 10-ounce cans Ro-Tel",
+        "note": "yield is a little less but not noticeable in final chili",
         "category": "Canned Goods"
       }
     },

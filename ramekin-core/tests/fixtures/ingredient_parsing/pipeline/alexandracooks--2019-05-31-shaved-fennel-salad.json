@@ -28,14 +28,14 @@
     {
       "raw": "2 fennel bulbs, sliced thinly on a mandoline or with a knife",
       "expected": {
-        "item": "fennel bulbs",
+        "item": "fennel bulbs, sliced thinly on a mandoline or with a knife",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "sliced thinly on a mandoline or with a knife",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -56,7 +56,7 @@
     {
       "raw": "1/4 lb. asparagus, peeled with a peeler, see notes above or snap peas (100 g) snap peas, stemmed and sliced on the diagonal",
       "expected": {
-        "item": "asparagus, peeled with a peeler, see notes above or snap peas snap peas",
+        "item": "asparagus, peeled with a peeler, see notes above or snap peas snap peas, stemmed and sliced on the diagonal",
         "measurements": [
           {
             "amount": "0.25",
@@ -67,7 +67,7 @@
             "unit": "g"
           }
         ],
-        "note": "stemmed and sliced on the diagonal",
+        "note": null,
         "category": "Produce"
       }
     },

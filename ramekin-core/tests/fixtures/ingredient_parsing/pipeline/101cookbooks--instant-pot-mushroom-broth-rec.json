@@ -41,14 +41,14 @@
     {
       "raw": "6  medium cloves of garlic, peeled and smashed",
       "expected": {
-        "item": "cloves of garlic",
+        "item": "cloves of garlic, peeled and smashed",
         "measurements": [
           {
             "amount": "6",
             "unit": "medium"
           }
         ],
-        "note": "peeled and smashed",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -69,14 +69,14 @@
     {
       "raw": "1/2 teaspoon freshly ground pepper, or to taste",
       "expected": {
-        "item": "freshly ground pepper",
+        "item": "freshly ground pepper, or to taste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

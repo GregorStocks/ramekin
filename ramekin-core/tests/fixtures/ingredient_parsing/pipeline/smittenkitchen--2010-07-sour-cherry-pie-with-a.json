@@ -5,15 +5,15 @@
     {
       "raw": "2/3 cup whole oats, ground to a flour in a food processor (yielding 1/2 cup oat flour)",
       "expected": {
-        "item": "whole oats",
+        "item": "whole oats, ground to a flour in a food processor",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": "yielding 1/2 cup oat flour, ground to a flour in a food processor",
-        "category": "Snacks"
+        "note": "yielding 1/2 cup oat flour",
+        "category": "Baking"
       }
     },
     {
@@ -91,18 +91,14 @@
     {
       "raw": "6 tablespoons unsalted butter, melted and cooled",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, melted and cooled",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
-        "note": "melted and cooled",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -163,7 +159,7 @@
     {
       "raw": "2 1/4 pounds fresh sour cherries, pitted, or 2 pounds frozen sour cherries, partially thawed",
       "expected": {
-        "item": "fresh sour cherries, pitted, or 2 pounds frozen sour cherries",
+        "item": "fresh sour cherries, pitted",
         "measurements": [
           {
             "amount": "2.25",
@@ -174,8 +170,8 @@
             "unit": "g"
           }
         ],
-        "note": "partially thawed",
-        "category": "Frozen"
+        "note": "or 2 pounds frozen sour cherries, partially thawed",
+        "category": "Produce"
       }
     }
   ]

@@ -5,7 +5,7 @@
     {
       "raw": "4 ounces (about 8 large) medjool dates, pitted and roughly chopped",
       "expected": {
-        "item": "medjool dates",
+        "item": "medjool dates, pitted and roughly chopped",
         "measurements": [
           {
             "amount": "4",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "pitted and roughly chopped",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     },

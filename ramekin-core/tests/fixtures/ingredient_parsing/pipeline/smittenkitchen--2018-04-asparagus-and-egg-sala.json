@@ -5,14 +5,14 @@
     {
       "raw": "4 large eggs, cold from fridge",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, cold from fridge",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": "cold from fridge",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -95,7 +95,7 @@
     {
       "raw": "1 pound asparagus, any thickness, tough ends trimmed",
       "expected": {
-        "item": "asparagus, any thickness",
+        "item": "asparagus, any thickness, tough ends trimmed",
         "measurements": [
           {
             "amount": "1",
@@ -106,7 +106,7 @@
             "unit": "g"
           }
         ],
-        "note": "tough ends trimmed",
+        "note": null,
         "category": "Produce"
       }
     },

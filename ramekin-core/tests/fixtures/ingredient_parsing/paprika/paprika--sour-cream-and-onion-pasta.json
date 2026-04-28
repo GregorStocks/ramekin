@@ -55,7 +55,7 @@
     {
       "raw": "1 1/2 onions, sliced thin (1½ cups)",
       "expected": {
-        "item": "onions",
+        "item": "onions, sliced thin",
         "measurements": [
           {
             "amount": "1.5",
@@ -64,13 +64,9 @@
           {
             "amount": "1.5",
             "unit": "cup"
-          },
-          {
-            "amount": "206",
-            "unit": "g"
           }
         ],
-        "note": "sliced thin",
+        "note": null,
         "category": "Produce"
       }
     },

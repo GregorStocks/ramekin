@@ -5,7 +5,7 @@
     {
       "raw": "2 medium garlic cloves , minced or pressed through garlic press (about 2 teaspoons)",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic cloves, minced or pressed through garlic press",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "minced or pressed through garlic press",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -99,7 +99,7 @@
     {
       "raw": "1 large onion , halved and cut from pole to pole into 1/8-inch-thick slices (about 2 cups)",
       "expected": {
-        "item": "onion",
+        "item": "onion, halved and cut from pole to pole into 1/8-inch-thick slices",
         "measurements": [
           {
             "amount": "1",
@@ -108,20 +108,16 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "275",
-            "unit": "g"
           }
         ],
-        "note": "halved and cut from pole to pole into 1/8-inch-thick slices",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "4 medium carrots , peeled and cut into 1-inch pieces (about 2 cups)",
       "expected": {
-        "item": "carrots",
+        "item": "carrots, peeled and cut into 1-inch pieces",
         "measurements": [
           {
             "amount": "4",
@@ -132,7 +128,7 @@
             "unit": "cup"
           }
         ],
-        "note": "peeled and cut into 1-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -213,7 +209,7 @@
     {
       "raw": "4 ounces Salt pork , rinsed of excess salt (see note)",
       "expected": {
-        "item": "Salt pork",
+        "item": "Salt pork, rinsed of excess salt",
         "measurements": [
           {
             "amount": "4",
@@ -224,14 +220,14 @@
             "unit": "g"
           }
         ],
-        "note": "see note, rinsed of excess salt",
+        "note": "see note",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 pound Yukon Gold potatoes , scrubbed and cut into 1-inch pieces",
       "expected": {
-        "item": "Yukon Gold potatoes",
+        "item": "Yukon Gold potatoes, scrubbed and cut into 1-inch pieces",
         "measurements": [
           {
             "amount": "1",
@@ -242,7 +238,7 @@
             "unit": "g"
           }
         ],
-        "note": "scrubbed and cut into 1-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },

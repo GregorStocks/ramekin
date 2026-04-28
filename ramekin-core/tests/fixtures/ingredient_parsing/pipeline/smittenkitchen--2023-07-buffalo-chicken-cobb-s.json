@@ -202,7 +202,7 @@
     {
       "raw": "4 to 5 ounces romaine or baby gem lettuce, sliced or torn",
       "expected": {
-        "item": "romaine or baby gem lettuce",
+        "item": "romaine or baby gem lettuce, sliced or torn",
         "measurements": [
           {
             "amount": "4 to 5",
@@ -213,7 +213,7 @@
             "unit": "g"
           }
         ],
-        "note": "sliced or torn",
+        "note": null,
         "category": "Produce"
       }
     },

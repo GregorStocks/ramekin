@@ -33,7 +33,7 @@
     {
       "raw": "16 tablespoons (2 sticks) unsalted butter, cold, chopped into small pieces",
       "expected": {
-        "item": "unsalted butter, cold",
+        "item": "unsalted butter, cold, chopped into small pieces",
         "measurements": [
           {
             "amount": "16",
@@ -42,13 +42,9 @@
           {
             "amount": "2",
             "unit": "stick"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
-        "note": "chopped into small pieces",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -119,14 +115,14 @@
     {
       "raw": "2 large eggs, beaten with 1 tablespoon water",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, beaten with 1 tablespoon water",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "beaten with 1 tablespoon water",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

@@ -227,7 +227,7 @@
     {
       "raw": "4 oz bittersweet chocolate, chopped into very small pieces",
       "expected": {
-        "item": "bittersweet chocolate",
+        "item": "bittersweet chocolate, chopped into very small pieces",
         "measurements": [
           {
             "amount": "4",
@@ -238,7 +238,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped into very small pieces",
+        "note": null,
         "category": "Other"
       }
     },

@@ -165,14 +165,14 @@
     {
       "raw": "1 to 2 tablespoons capers, drained, chopped if they’re large",
       "expected": {
-        "item": "capers, drained",
+        "item": "capers, drained, chopped if they’re large",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tbsp"
           }
         ],
-        "note": "chopped if they’re large",
+        "note": null,
         "category": "Canned Goods"
       }
     },

@@ -255,18 +255,14 @@
     {
       "raw": "2 quarts strawberries, hulled and sliced (I sliced mine very thinly, but would do so more thickly next time, or double-layer the strawberries so that you get a higher fruit-to-bite ratio.)*",
       "expected": {
-        "item": "strawberries",
+        "item": "strawberries, hulled and sliced",
         "measurements": [
           {
             "amount": "2",
             "unit": "quart"
-          },
-          {
-            "amount": "1388",
-            "unit": "g"
           }
         ],
-        "note": "I sliced mine very thinly, but would do so more thickly next time, or double-layer the strawberries so that you get a higher fruit-to-bite ratio., hulled and sliced",
+        "note": "I sliced mine very thinly, but would do so more thickly next time, or double-layer the strawberries so that you get a higher fruit-to-bite ratio.",
         "section": "Cake Layers",
         "category": "Produce"
       }

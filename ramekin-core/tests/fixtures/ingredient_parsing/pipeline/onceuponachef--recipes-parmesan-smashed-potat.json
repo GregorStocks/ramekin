@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds baby red potatoes, sliced in half (they should all be about the same size so they cook evenly)",
       "expected": {
-        "item": "baby red potatoes",
+        "item": "baby red potatoes, sliced in half",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "they should all be about the same size so they cook evenly, sliced in half",
+        "note": "they should all be about the same size so they cook evenly",
         "category": "Produce"
       }
     },

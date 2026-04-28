@@ -41,14 +41,14 @@
     {
       "raw": "4 large ears or 5 medium-large fresh corn, kernels cut from cobs, cobs reserved",
       "expected": {
-        "item": "ears or 5 medium-large fresh corn, kernels cut from cobs",
+        "item": "ears or 5 medium-large fresh corn, kernels cut from cobs, cobs reserved",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": "cobs reserved",
+        "note": null,
         "category": "Other"
       }
     },

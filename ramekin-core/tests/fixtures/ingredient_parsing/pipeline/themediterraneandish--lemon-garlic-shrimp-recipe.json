@@ -109,14 +109,14 @@
     {
       "raw": "1 small onion, halved then sliced",
       "expected": {
-        "item": "onion",
+        "item": "onion, halved then sliced",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "halved then sliced",
+        "note": null,
         "category": "Produce"
       }
     },

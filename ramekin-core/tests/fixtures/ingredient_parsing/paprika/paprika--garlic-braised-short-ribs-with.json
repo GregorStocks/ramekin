@@ -50,14 +50,14 @@
     {
       "raw": "2 large heads garlic, halved crosswise",
       "expected": {
-        "item": "heads garlic",
+        "item": "heads garlic, halved crosswise",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "halved crosswise",
+        "note": null,
         "category": "Produce"
       }
     },

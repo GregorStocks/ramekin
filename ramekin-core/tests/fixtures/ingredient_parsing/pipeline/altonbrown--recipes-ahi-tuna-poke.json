@@ -61,14 +61,14 @@
     {
       "raw": "2  scallions, light and dark green parts, sliced thinly on the bias",
       "expected": {
-        "item": "scallions, light and dark green parts",
+        "item": "scallions, light and dark green parts, sliced thinly on the bias",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "sliced thinly on the bias",
+        "note": null,
         "category": "Produce"
       }
     },

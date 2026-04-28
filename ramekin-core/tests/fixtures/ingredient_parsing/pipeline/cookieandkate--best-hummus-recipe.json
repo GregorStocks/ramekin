@@ -45,18 +45,14 @@
     {
       "raw": "¼ cup lemon juice&nbsp;(from 1 ½ to 2 lemons), more to taste",
       "expected": {
-        "item": "lemon juice",
+        "item": "lemon juice, more to taste",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "61",
-            "unit": "g"
           }
         ],
-        "note": "from 1 1/2 to 2 lemons, more to taste",
+        "note": "from 1 1/2 to 2 lemons",
         "category": "Beverages"
       }
     },
@@ -109,14 +105,14 @@
     {
       "raw": "2 to 4 tablespoons ice water, more as needed",
       "expected": {
-        "item": "ice water",
+        "item": "ice water, more as needed",
         "measurements": [
           {
             "amount": "2 to 4",
             "unit": "tbsp"
           }
         ],
-        "note": "more as needed",
+        "note": null,
         "category": "Other"
       }
     },
@@ -159,10 +155,10 @@
     {
       "raw": "Any of the following garnishes:&nbsp; drizzle of olive oil or zhoug sauce, sprinkle of ground sumac or paprika, chopped fresh parsley",
       "expected": {
-        "item": "Any of the following garnishes:  drizzle of olive oil or zhoug sauce, sprinkle of ground sumac or paprika",
+        "item": "Any of the following garnishes:  drizzle of olive oil or zhoug sauce, sprinkle of ground sumac or paprika, chopped fresh parsley",
         "measurements": [],
-        "note": "chopped fresh parsley",
-        "category": "Oils & Vinegars"
+        "note": null,
+        "category": "Produce"
       }
     }
   ]

@@ -23,28 +23,28 @@
     {
       "raw": "1 cup pitted green olives (brine cured), chopped coarse",
       "expected": {
-        "item": "pitted green olives",
+        "item": "pitted green olives, chopped coarse",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "brine cured, chopped coarse",
+        "note": "brine cured",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1 cup pitted black olives (brine cured), chopped coarse",
       "expected": {
-        "item": "pitted black olives",
+        "item": "pitted black olives, chopped coarse",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "brine cured, chopped coarse",
+        "note": "brine cured",
         "category": "Canned Goods"
       }
     },
@@ -157,7 +157,7 @@
     {
       "raw": "¼ pound mortadella, thin-sliced (or other soft salami)",
       "expected": {
-        "item": "mortadella",
+        "item": "mortadella, thin-sliced",
         "measurements": [
           {
             "amount": "0.25",
@@ -168,14 +168,14 @@
             "unit": "g"
           }
         ],
-        "note": "or other soft salami, thin-sliced",
+        "note": "or other soft salami",
         "category": "Other"
       }
     },
     {
       "raw": "¼ pound provolone cheese or fresh mozzarella, thin-sliced",
       "expected": {
-        "item": "provolone cheese or fresh mozzarella",
+        "item": "provolone cheese or fresh mozzarella, thin-sliced",
         "measurements": [
           {
             "amount": "0.25",
@@ -186,14 +186,14 @@
             "unit": "g"
           }
         ],
-        "note": "thin-sliced",
+        "note": null,
         "category": "Cheese"
       }
     },
     {
       "raw": "¼ pound soppresatta, thin-sliced (or other hard salami)",
       "expected": {
-        "item": "soppresatta",
+        "item": "soppresatta, thin-sliced",
         "measurements": [
           {
             "amount": "0.25",
@@ -204,7 +204,7 @@
             "unit": "g"
           }
         ],
-        "note": "or other hard salami, thin-sliced",
+        "note": "or other hard salami",
         "category": "Other"
       }
     }

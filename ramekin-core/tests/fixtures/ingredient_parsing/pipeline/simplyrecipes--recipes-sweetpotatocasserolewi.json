@@ -27,14 +27,14 @@
     {
       "raw": "1/4 cup plus 1 tablespoon unsalted butter, softened at room temperature",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, softened at room temperature",
         "measurements": [
           {
             "amount": "1/4 cup plus 1 tablespoon",
             "unit": null
           }
         ],
-        "note": "softened at room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

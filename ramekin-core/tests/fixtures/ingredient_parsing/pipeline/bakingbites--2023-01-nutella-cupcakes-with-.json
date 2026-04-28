@@ -204,14 +204,14 @@
     {
       "raw": "24 whole raspberries, pref. fresh",
       "expected": {
-        "item": "whole raspberries",
+        "item": "whole raspberries, pref. fresh",
         "measurements": [
           {
             "amount": "24",
             "unit": null
           }
         ],
-        "note": "pref. fresh",
+        "note": null,
         "category": "Produce"
       }
     }

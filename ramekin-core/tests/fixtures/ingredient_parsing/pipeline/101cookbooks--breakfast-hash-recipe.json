@@ -74,14 +74,14 @@
     {
       "raw": "1  serrano chile, stemmed and thinly sliced",
       "expected": {
-        "item": "serrano chile",
+        "item": "serrano chile, stemmed and thinly sliced",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "stemmed and thinly sliced",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -116,10 +116,10 @@
     {
       "raw": "to serve: a favorite salsa, grated cheese",
       "expected": {
-        "item": "to serve: a favorite salsa",
+        "item": "to serve: a favorite salsa, grated cheese",
         "measurements": [],
-        "note": "grated cheese",
-        "category": "Condiments & Sauces"
+        "note": null,
+        "category": "Cheese"
       }
     }
   ]

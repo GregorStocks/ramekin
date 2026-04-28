@@ -42,14 +42,14 @@
     {
       "raw": "1 jalapeño, sliced into rounds (use more or less, depending on how spicy you prefer it)",
       "expected": {
-        "item": "jalapeño",
+        "item": "jalapeño, sliced into rounds",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "use more or less, depending on how spicy you prefer it, sliced into rounds",
+        "note": "use more or less, depending on how spicy you prefer it",
         "category": "Produce"
       }
     },
@@ -116,9 +116,9 @@
     {
       "raw": "Extra jalapeño slice, pineapple wedges, and lime wedges for garnish",
       "expected": {
-        "item": "Extra jalapeño slice, pineapple wedges",
+        "item": "Extra jalapeño slice, pineapple wedges, and lime wedges for garnish",
         "measurements": [],
-        "note": "and lime wedges for garnish",
+        "note": null,
         "category": "Produce"
       }
     }

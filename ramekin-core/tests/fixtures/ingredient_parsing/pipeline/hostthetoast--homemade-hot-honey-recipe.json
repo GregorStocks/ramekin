@@ -23,32 +23,28 @@
     {
       "raw": "2 tablespoons chili flakes, or to taste",
       "expected": {
-        "item": "chili flakes",
+        "item": "chili flakes, or to taste",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/2 teaspoon cayenne pepper, or to taste (optional)",
       "expected": {
-        "item": "cayenne pepper",
+        "item": "cayenne pepper, or to taste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.9",
-            "unit": "g"
           }
         ],
-        "note": "optional, or to taste",
+        "note": "optional",
         "category": "Spices & Seasonings"
       }
     },

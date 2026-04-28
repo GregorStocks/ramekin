@@ -32,7 +32,7 @@
     {
       "raw": "1-pound (455 grams) honeynut squash, peeled, seeded, and sliced thin (¼-inch)",
       "expected": {
-        "item": "honeynut squash, peeled, seeded",
+        "item": "honeynut squash, peeled, seeded, and sliced thin",
         "measurements": [
           {
             "amount": "1",
@@ -43,14 +43,14 @@
             "unit": "g"
           }
         ],
-        "note": "1/4-inch, and sliced thin",
+        "note": "1/4-inch",
         "category": "Produce"
       }
     },
     {
       "raw": "2 medium (4 ounces) shallots, halved lengthwise and peeled",
       "expected": {
-        "item": "shallots",
+        "item": "shallots, halved lengthwise and peeled",
         "measurements": [
           {
             "amount": "2",
@@ -65,14 +65,14 @@
             "unit": "g"
           }
         ],
-        "note": "halved lengthwise and peeled",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "8 ounces (225 grams) kale or spinach leaves, torn or chopped into bit-sized pieces",
       "expected": {
-        "item": "kale or spinach leaves",
+        "item": "kale or spinach leaves, torn or chopped into bit-sized pieces",
         "measurements": [
           {
             "amount": "8",
@@ -83,7 +83,7 @@
             "unit": "g"
           }
         ],
-        "note": "torn or chopped into bit-sized pieces",
+        "note": null,
         "category": "Produce"
       }
     },

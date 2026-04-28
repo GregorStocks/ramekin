@@ -5,14 +5,14 @@
     {
       "raw": "3 large shallots, peeled and sliced thinly lengthwise",
       "expected": {
-        "item": "shallots",
+        "item": "shallots, peeled and sliced thinly lengthwise",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": "peeled and sliced thinly lengthwise",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -37,28 +37,28 @@
     {
       "raw": "8 large eggs, hard-boiled and peeled",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, hard-boiled and peeled",
         "measurements": [
           {
             "amount": "8",
             "unit": "large"
           }
         ],
-        "note": "hard-boiled and peeled",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "½ cup of very finely-chopped palm sugar, packed or ¼ cup brown sugar",
       "expected": {
-        "item": "very finely-chopped palm sugar",
+        "item": "very finely-chopped palm sugar, packed",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "packed or 1/4 cup brown sugar",
+        "note": "or 1/4 cup brown sugar",
         "category": "Baking"
       }
     },

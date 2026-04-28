@@ -5,7 +5,7 @@
     {
       "raw": "1 1/2 pounds russet potatoes (about 3 medium sized potatoes), peeled and cut into 1-inch chunks",
       "expected": {
-        "item": "russet potatoes",
+        "item": "russet potatoes, peeled and cut into 1-inch chunks",
         "measurements": [
           {
             "amount": "1.5",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1-inch chunks",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -81,7 +81,7 @@
     {
       "raw": "1 large red onion (about 3/4 lb), peeled and sliced thin",
       "expected": {
-        "item": "red onion",
+        "item": "red onion, peeled and sliced thin",
         "measurements": [
           {
             "amount": "1",
@@ -96,7 +96,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and sliced thin",
+        "note": null,
         "category": "Produce"
       }
     },

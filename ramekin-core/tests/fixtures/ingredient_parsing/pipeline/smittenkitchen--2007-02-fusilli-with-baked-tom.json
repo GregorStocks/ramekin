@@ -124,14 +124,14 @@
     {
       "raw": "1/4 cup loosely packed fresh basil leaves, torn or sliced",
       "expected": {
-        "item": "loosely packed fresh basil leaves",
+        "item": "loosely packed fresh basil leaves, torn or sliced",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "torn or sliced",
+        "note": null,
         "category": "Produce"
       }
     }

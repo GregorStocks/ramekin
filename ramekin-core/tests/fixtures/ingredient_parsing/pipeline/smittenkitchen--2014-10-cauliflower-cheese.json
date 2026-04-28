@@ -168,7 +168,7 @@
     {
       "raw": "2 cups (475 ml) milk, whole is best but low-fat will probably work just fine",
       "expected": {
-        "item": "milk",
+        "item": "milk, whole is best but low-fat will probably work just fine",
         "measurements": [
           {
             "amount": "2",
@@ -177,13 +177,9 @@
           {
             "amount": "475",
             "unit": "ml"
-          },
-          {
-            "amount": "490",
-            "unit": "g"
           }
         ],
-        "note": "whole is best but low-fat will probably work just fine",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

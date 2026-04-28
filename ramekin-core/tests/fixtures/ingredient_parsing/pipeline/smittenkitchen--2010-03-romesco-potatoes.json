@@ -207,14 +207,14 @@
     {
       "raw": "4 to 5 cloves garlic, unpeeled",
       "expected": {
-        "item": "garlic",
+        "item": "garlic, unpeeled",
         "measurements": [
           {
             "amount": "4 to 5",
             "unit": "clove"
           }
         ],
-        "note": "unpeeled",
+        "note": null,
         "category": "Produce"
       }
     },

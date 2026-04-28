@@ -97,14 +97,14 @@
     {
       "raw": "1 large yellow or sweet-variety onion, chopped medium-small",
       "expected": {
-        "item": "yellow or sweet-variety onion",
+        "item": "yellow or sweet-variety onion, chopped medium-small",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "chopped medium-small",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -184,7 +184,7 @@
     {
       "raw": "6 ounces (about 1 cup) green olives, pitted and roughly chopped",
       "expected": {
-        "item": "green olives",
+        "item": "green olives, pitted and roughly chopped",
         "measurements": [
           {
             "amount": "6",
@@ -199,7 +199,7 @@
             "unit": "g"
           }
         ],
-        "note": "pitted and roughly chopped",
+        "note": null,
         "category": "Canned Goods"
       }
     },
@@ -284,18 +284,14 @@
     {
       "raw": "2 tablespoons pine nuts, toasted until golden and cooled",
       "expected": {
-        "item": "pine nuts",
+        "item": "pine nuts, toasted until golden and cooled",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "17",
-            "unit": "g"
           }
         ],
-        "note": "toasted until golden and cooled",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     }

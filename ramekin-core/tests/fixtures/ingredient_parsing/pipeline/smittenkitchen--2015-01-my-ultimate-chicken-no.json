@@ -5,28 +5,28 @@
     {
       "raw": "2 medium-large yellow onions, unpeeled, halved or 1 large onion plus 1 large leek, cleaned and cut lengthwise",
       "expected": {
-        "item": "medium-large yellow onions, unpeeled, halved or 1 large onion plus 1 large leek",
+        "item": "medium-large yellow onions, unpeeled, halved or 1 large onion plus 1 large leek, cleaned and cut lengthwise",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "cleaned and cut lengthwise",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "2 garlic cloves, peeled and smashed a little",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic cloves, peeled and smashed a little",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "peeled and smashed a little",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -225,14 +225,14 @@
     {
       "raw": "1 large leek, trimmed and sliced into 1/2-inch segments",
       "expected": {
-        "item": "leek",
+        "item": "leek, trimmed and sliced into 1/2-inch segments",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "trimmed and sliced into 1/2-inch segments",
+        "note": null,
         "category": "Produce"
       }
     },

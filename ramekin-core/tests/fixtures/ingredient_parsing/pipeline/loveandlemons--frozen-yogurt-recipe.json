@@ -97,14 +97,14 @@
     {
       "raw": "¾ cup tart cherries or raspberries, thawed if frozen",
       "expected": {
-        "item": "tart cherries or raspberries",
+        "item": "tart cherries or raspberries, thawed if frozen",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "thawed if frozen",
+        "note": null,
         "category": "Produce"
       }
     },

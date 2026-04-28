@@ -60,14 +60,14 @@
     {
       "raw": "2 small onions, sliced into thick rings",
       "expected": {
-        "item": "onions",
+        "item": "onions, sliced into thick rings",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
           }
         ],
-        "note": "sliced into thick rings",
+        "note": null,
         "category": "Produce"
       }
     },

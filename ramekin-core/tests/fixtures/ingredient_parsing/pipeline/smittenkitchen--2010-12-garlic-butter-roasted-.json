@@ -5,7 +5,7 @@
     {
       "raw": "1 pound mushrooms such as cremini or white, halved lengthwise if large",
       "expected": {
-        "item": "mushrooms such as cremini or white",
+        "item": "mushrooms such as cremini or white, halved lengthwise if large",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "halved lengthwise if large",
+        "note": null,
         "category": "Produce"
       }
     },

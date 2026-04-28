@@ -5,14 +5,14 @@
     {
       "raw": "1½ cups graham cracker crumbs, from about 12 whole crackers",
       "expected": {
-        "item": "graham cracker crumbs",
+        "item": "graham cracker crumbs, from about 12 whole crackers",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "from about 12 whole crackers",
+        "note": null,
         "category": "Snacks"
       }
     },

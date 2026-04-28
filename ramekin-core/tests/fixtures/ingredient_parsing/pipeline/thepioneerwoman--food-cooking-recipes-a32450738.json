@@ -5,7 +5,7 @@
     {
       "raw": "1 lb. carrots, peeled and cut into 1/2-inch pieces",
       "expected": {
-        "item": "carrots",
+        "item": "carrots, peeled and cut into 1/2-inch pieces",
         "measurements": [
           {
             "amount": "1",
@@ -16,14 +16,14 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1/2-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 lb. parsnips, peeled and cut into 1/2-inch pieces",
       "expected": {
-        "item": "parsnips",
+        "item": "parsnips, peeled and cut into 1/2-inch pieces",
         "measurements": [
           {
             "amount": "1",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1/2-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },

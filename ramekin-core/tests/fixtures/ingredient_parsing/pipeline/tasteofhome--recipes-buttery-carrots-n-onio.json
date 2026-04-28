@@ -51,14 +51,14 @@
     {
       "raw": "3 medium onions, sliced and separated into rings",
       "expected": {
-        "item": "onions",
+        "item": "onions, sliced and separated into rings",
         "measurements": [
           {
             "amount": "3",
             "unit": "medium"
           }
         ],
-        "note": "sliced and separated into rings",
+        "note": null,
         "category": "Produce"
       }
     },

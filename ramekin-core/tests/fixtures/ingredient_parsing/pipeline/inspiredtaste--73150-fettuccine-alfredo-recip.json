@@ -77,14 +77,14 @@
     {
       "raw": "1 small garlic clove, finely grated on a microplane",
       "expected": {
-        "item": "garlic clove",
+        "item": "garlic clove, finely grated on a microplane",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "finely grated on a microplane",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -78,14 +78,14 @@
     {
       "raw": "1 large or extra-large egg yolk, ideally at room temperature",
       "expected": {
-        "item": "or extra-large egg yolk",
+        "item": "or extra-large egg yolk, ideally at room temperature",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "ideally at room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

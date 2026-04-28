@@ -64,42 +64,42 @@
     {
       "raw": "1 medium green bell pepper, sliced into 1/4-inch strips",
       "expected": {
-        "item": "green bell pepper",
+        "item": "green bell pepper, sliced into 1/4-inch strips",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "sliced into 1/4-inch strips",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 medium red bell pepper, sliced into 1/4-inch strips",
       "expected": {
-        "item": "red bell pepper",
+        "item": "red bell pepper, sliced into 1/4-inch strips",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "sliced into 1/4-inch strips",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 yellow onion, thinly sliced lengthwise (root to top)",
       "expected": {
-        "item": "yellow onion",
+        "item": "yellow onion, thinly sliced lengthwise",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "root to top, thinly sliced lengthwise",
+        "note": "root to top",
         "category": "Produce"
       }
     },

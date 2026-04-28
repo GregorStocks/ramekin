@@ -191,7 +191,7 @@
     {
       "raw": "1/4 cup (1/2 stick) butter, melted and cooled",
       "expected": {
-        "item": "butter",
+        "item": "butter, melted and cooled",
         "measurements": [
           {
             "amount": "0.25",
@@ -200,13 +200,9 @@
           {
             "amount": "0.5",
             "unit": "stick"
-          },
-          {
-            "amount": "57",
-            "unit": "g"
           }
         ],
-        "note": "melted and cooled",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

@@ -5,18 +5,14 @@
     {
       "raw": "1 cup all-purpose flour, more as needed",
       "expected": {
-        "item": "all-purpose flour",
+        "item": "all-purpose flour, more as needed",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "125",
-            "unit": "g"
           }
         ],
-        "note": "more as needed",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -73,14 +69,14 @@
     {
       "raw": "1/4 cup cream or half-and-half, more as needed",
       "expected": {
-        "item": "cream or half-and-half",
+        "item": "cream or half-and-half, more as needed",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "more as needed",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

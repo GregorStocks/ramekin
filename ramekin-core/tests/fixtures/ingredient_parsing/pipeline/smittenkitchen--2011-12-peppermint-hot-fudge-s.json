@@ -111,14 +111,14 @@
     {
       "raw": "1/4 teaspoon peppermint extract, or to taste",
       "expected": {
-        "item": "peppermint extract",
+        "item": "peppermint extract, or to taste",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Baking"
       }
     },

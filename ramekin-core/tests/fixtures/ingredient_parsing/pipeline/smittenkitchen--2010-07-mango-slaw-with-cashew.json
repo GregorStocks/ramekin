@@ -5,14 +5,14 @@
     {
       "raw": "2 mangoes, peeled, pitted and julienned",
       "expected": {
-        "item": "mangoes, peeled",
+        "item": "mangoes, peeled, pitted and julienned",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "pitted and julienned",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -129,18 +129,14 @@
     {
       "raw": "1/4 teaspoon red pepper flakes, or to taste (or omit this and whisk in a chile paste to taste)",
       "expected": {
-        "item": "red pepper flakes",
+        "item": "red pepper flakes, or to taste",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.4",
-            "unit": "g"
           }
         ],
-        "note": "or omit this and whisk in a chile paste to taste, or to taste",
+        "note": "or omit this and whisk in a chile paste to taste",
         "category": "Spices & Seasonings"
       }
     },

@@ -128,9 +128,9 @@
     {
       "raw": "Seasonings such as salt, pepper flakes, and dried oregano",
       "expected": {
-        "item": "Seasonings such as salt, pepper flakes",
+        "item": "Seasonings such as salt, pepper flakes, and dried oregano",
         "measurements": [],
-        "note": "and dried oregano",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

@@ -107,29 +107,29 @@
     {
       "raw": "4 cloves of garlic, minced or pressed",
       "expected": {
-        "item": "garlic",
+        "item": "garlic, minced or pressed",
         "measurements": [
           {
             "amount": "4",
             "unit": "clove"
           }
         ],
-        "note": "minced or pressed",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 fresh green chili (I used a jalapeno), seeded and minced",
       "expected": {
-        "item": "fresh green chili",
+        "item": "fresh green chili, seeded and minced",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "I used a jalapeno, seeded and minced",
-        "category": "Other"
+        "note": "I used a jalapeno",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -167,14 +167,14 @@
     {
       "raw": "1/2 teaspoon chili powder or cayenne, or adjusted to taste (I used 1/4 teaspoon)",
       "expected": {
-        "item": "chili powder or cayenne",
+        "item": "chili powder or cayenne, or adjusted to taste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "I used 1/4 teaspoon, or adjusted to taste",
+        "note": "I used 1/4 teaspoon",
         "category": "Spices & Seasonings"
       }
     },
@@ -267,7 +267,7 @@
     {
       "raw": "2 pounds chicken thighs, drumsticks or halved chicken breasts (all skin-on, bone-in)",
       "expected": {
-        "item": "chicken thighs",
+        "item": "chicken thighs, drumsticks or halved chicken breasts",
         "measurements": [
           {
             "amount": "2",
@@ -278,7 +278,7 @@
             "unit": "g"
           }
         ],
-        "note": "all skin-on, bone-in, drumsticks or halved chicken breasts",
+        "note": "all skin-on, bone-in",
         "category": "Meat & Seafood"
       }
     },

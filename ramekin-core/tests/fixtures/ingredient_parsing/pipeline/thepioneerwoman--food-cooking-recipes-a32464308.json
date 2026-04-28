@@ -118,7 +118,7 @@
     {
       "raw": "2 small sweet potatoes (about 1 pound), peeled and cut into 1/2-inch pieces",
       "expected": {
-        "item": "sweet potatoes",
+        "item": "sweet potatoes, peeled and cut into 1/2-inch pieces",
         "measurements": [
           {
             "amount": "2",
@@ -133,7 +133,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1/2-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },

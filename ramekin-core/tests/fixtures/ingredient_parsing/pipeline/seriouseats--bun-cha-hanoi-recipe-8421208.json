@@ -130,7 +130,7 @@
     {
       "raw": "1 pound (456g) skin-on pork belly, frozen for 45 to 50 minutes",
       "expected": {
-        "item": "skin-on pork belly",
+        "item": "skin-on pork belly, frozen for 45 to 50 minutes",
         "measurements": [
           {
             "amount": "1",
@@ -141,8 +141,8 @@
             "unit": "g"
           }
         ],
-        "note": "frozen for 45 to 50 minutes",
-        "category": "Meat & Seafood"
+        "note": null,
+        "category": "Frozen"
       }
     },
     {
@@ -468,14 +468,14 @@
     {
       "raw": "1 head butter lettuce, leaves picked and washed",
       "expected": {
-        "item": "butter lettuce",
+        "item": "butter lettuce, leaves picked and washed",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": "leaves picked and washed",
+        "note": null,
         "category": "Produce"
       }
     },

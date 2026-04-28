@@ -45,7 +45,7 @@
     {
       "raw": "6 ounces haricots, verts, or other green beans, trimmed and cut into 2-inch segments",
       "expected": {
-        "item": "haricots, verts, or other green beans",
+        "item": "haricots, verts, or other green beans, trimmed and cut into 2-inch segments",
         "measurements": [
           {
             "amount": "6",
@@ -56,7 +56,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and cut into 2-inch segments",
+        "note": null,
         "category": "Produce"
       }
     },

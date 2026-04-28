@@ -23,7 +23,7 @@
     {
       "raw": "2 sweet potatoes, (about 1 pound total), peeled and cut into ¾-inch cubes",
       "expected": {
-        "item": "sweet potatoes",
+        "item": "sweet potatoes, peeled and cut into 3/4-inch cubes",
         "measurements": [
           {
             "amount": "2",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 3/4-inch cubes",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -87,32 +87,28 @@
     {
       "raw": "1 to 2 cups cooked meat, such as crumbled sausage, chopped bacon, shredded chicken or carnitas",
       "expected": {
-        "item": "cooked meat, such as crumbled sausage, chopped bacon",
+        "item": "cooked meat, such as crumbled sausage, chopped bacon, shredded chicken or carnitas",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "cup"
           }
         ],
-        "note": "shredded chicken or carnitas",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "½ teaspoon kosher salt, or to taste",
       "expected": {
-        "item": "kosher salt",
+        "item": "kosher salt, or to taste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1.4",
-            "unit": "g"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

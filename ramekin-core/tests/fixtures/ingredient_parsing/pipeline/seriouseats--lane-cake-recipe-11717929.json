@@ -512,7 +512,7 @@
     {
       "raw": "10 ounces unsalted butter (284 g; 20 tablespoons), softened cut into 1-inch size pieces",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, softened cut into 1-inch size pieces",
         "measurements": [
           {
             "amount": "10",
@@ -527,7 +527,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "softened cut into 1-inch size pieces",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     }

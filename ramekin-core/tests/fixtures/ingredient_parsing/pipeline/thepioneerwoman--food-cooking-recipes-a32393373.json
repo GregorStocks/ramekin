@@ -73,14 +73,14 @@
     {
       "raw": "1 large poblano chile pepper, halved lengthwise and seeded",
       "expected": {
-        "item": "poblano chile pepper",
+        "item": "poblano chile pepper, halved lengthwise and seeded",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "halved lengthwise and seeded",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -73,14 +73,14 @@
     {
       "raw": "1 pinch ground cinnamon, or to taste",
       "expected": {
-        "item": "ground cinnamon",
+        "item": "ground cinnamon, or to taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     }

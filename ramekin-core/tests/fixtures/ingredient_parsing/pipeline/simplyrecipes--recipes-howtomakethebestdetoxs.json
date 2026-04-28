@@ -75,14 +75,14 @@
     {
       "raw": "1/2 small avocado, pitted and peeled",
       "expected": {
-        "item": "avocado",
+        "item": "avocado, pitted and peeled",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "small"
           }
         ],
-        "note": "pitted and peeled",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -75,14 +75,14 @@
     {
       "raw": "3 peaches halved, stoned and finely sliced",
       "expected": {
-        "item": "peaches halved",
+        "item": "peaches halved, stoned and finely sliced",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "stoned and finely sliced",
+        "note": null,
         "category": "Produce"
       }
     }

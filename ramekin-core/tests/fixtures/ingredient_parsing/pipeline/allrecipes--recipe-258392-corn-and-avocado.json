@@ -37,14 +37,14 @@
     {
       "raw": "2 large avocados, peeled and pitted",
       "expected": {
-        "item": "avocados",
+        "item": "avocados, peeled and pitted",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "peeled and pitted",
+        "note": null,
         "category": "Produce"
       }
     },

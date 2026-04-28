@@ -41,7 +41,7 @@
     {
       "raw": "4 ounces unsalted butter, melted and cooled to room temperature",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, melted and cooled to room temperature",
         "measurements": [
           {
             "amount": "4",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": "melted and cooled to room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

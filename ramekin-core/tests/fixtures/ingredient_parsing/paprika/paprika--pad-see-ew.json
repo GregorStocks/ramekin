@@ -47,7 +47,7 @@
     {
       "raw": "4 fresh red chiles, such as Holland, Fresno, or Cayenne (2 1/2 ounces; 70g), stemmed and thinly sliced crosswise (see notes)",
       "expected": {
-        "item": "fresh red chiles, such as Holland, Fresno, or Cayenne",
+        "item": "fresh red chiles, such as Holland, Fresno, or Cayenne, stemmed and thinly sliced crosswise",
         "measurements": [
           {
             "amount": "4",
@@ -62,7 +62,7 @@
             "unit": "g"
           }
         ],
-        "note": "see notes, stemmed and thinly sliced crosswise",
+        "note": "see notes",
         "section": "For the Chile Vinegar",
         "category": "Spices & Seasonings"
       }
@@ -139,7 +139,7 @@
     {
       "raw": "8 ounces (225g) pork shoulder, sliced very thinly into roughly 1- by 1 1/2-inch pieces (see notes)",
       "expected": {
-        "item": "pork shoulder",
+        "item": "pork shoulder, sliced very thinly into roughly 1- by 1 1/2-inch pieces",
         "measurements": [
           {
             "amount": "8",
@@ -150,7 +150,7 @@
             "unit": "g"
           }
         ],
-        "note": "see notes, sliced very thinly into roughly 1- by 1 1/2-inch pieces",
+        "note": "see notes",
         "section": "For the Marinated Pork",
         "category": "Meat & Seafood"
       }
@@ -424,7 +424,7 @@
     {
       "raw": "8 1/2 ounces (240g) Chinese broccoli, sliced on a bias into 1-inch pieces (4 cups)",
       "expected": {
-        "item": "Chinese broccoli",
+        "item": "Chinese broccoli, sliced on a bias into 1-inch pieces",
         "measurements": [
           {
             "amount": "8.5",
@@ -439,7 +439,7 @@
             "unit": "cup"
           }
         ],
-        "note": "sliced on a bias into 1-inch pieces",
+        "note": null,
         "section": "For Par-cooking and the Stir Fry",
         "category": "Produce"
       }

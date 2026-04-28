@@ -140,7 +140,7 @@
     {
       "raw": "32 ounces (905 grams) cream cheese, very soft at room temperature",
       "expected": {
-        "item": "cream cheese",
+        "item": "cream cheese, very soft at room temperature",
         "measurements": [
           {
             "amount": "32",
@@ -151,7 +151,7 @@
             "unit": "g"
           }
         ],
-        "note": "very soft at room temperature",
+        "note": null,
         "category": "Cheese"
       }
     },

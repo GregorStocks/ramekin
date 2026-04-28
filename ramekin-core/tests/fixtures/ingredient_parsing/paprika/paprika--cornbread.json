@@ -5,7 +5,7 @@
     {
       "raw": "1/2 cup (4 ounces or 115 grams) unsalted butter, cold is fine",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, cold is fine",
         "measurements": [
           {
             "amount": "0.5",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "cold is fine",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -77,7 +77,7 @@
     {
       "raw": "1 cup (235 ml) buttermilk, well-shaken, cold is fine",
       "expected": {
-        "item": "buttermilk, well-shaken",
+        "item": "buttermilk, well-shaken, cold is fine",
         "measurements": [
           {
             "amount": "1",
@@ -88,7 +88,7 @@
             "unit": "ml"
           }
         ],
-        "note": "cold is fine",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

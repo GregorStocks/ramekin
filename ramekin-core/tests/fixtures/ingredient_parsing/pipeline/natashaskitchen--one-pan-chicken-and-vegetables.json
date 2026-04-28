@@ -127,14 +127,14 @@
     {
       "raw": "1/2  tsp Salt and Pepper, or to taste",
       "expected": {
-        "item": "Salt and Pepper",
+        "item": "Salt and Pepper, or to taste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

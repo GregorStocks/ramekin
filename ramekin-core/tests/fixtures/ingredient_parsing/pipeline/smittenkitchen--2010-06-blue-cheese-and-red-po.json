@@ -5,7 +5,7 @@
     {
       "raw": "1 pound small red potatoes, scrubbed and cut into 1/4-inch slices",
       "expected": {
-        "item": "small red potatoes",
+        "item": "small red potatoes, scrubbed and cut into 1/4-inch slices",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "scrubbed and cut into 1/4-inch slices",
+        "note": null,
         "category": "Produce"
       }
     },

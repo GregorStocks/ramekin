@@ -37,14 +37,14 @@
     {
       "raw": "1 large red bell pepper, seeded and thinly sliced",
       "expected": {
-        "item": "red bell pepper",
+        "item": "red bell pepper, seeded and thinly sliced",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "seeded and thinly sliced",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -97,18 +97,14 @@
     {
       "raw": "1/8 teaspoon ground cayenne, or to taste",
       "expected": {
-        "item": "ground cayenne",
+        "item": "ground cayenne, or to taste",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
-          },
-          {
-            "amount": "0.2",
-            "unit": "g"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

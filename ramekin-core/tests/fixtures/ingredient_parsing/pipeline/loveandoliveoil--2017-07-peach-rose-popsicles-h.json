@@ -5,7 +5,7 @@
     {
       "raw": "4 medium peaches (about 1 1/4 pounds), pitted and coarsely chopped (about 4 cups chopped)",
       "expected": {
-        "item": "peaches",
+        "item": "peaches, pitted and coarsely chopped",
         "measurements": [
           {
             "amount": "4",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 4 cups chopped, pitted and coarsely chopped",
+        "note": "about 4 cups chopped",
         "category": "Produce"
       }
     },

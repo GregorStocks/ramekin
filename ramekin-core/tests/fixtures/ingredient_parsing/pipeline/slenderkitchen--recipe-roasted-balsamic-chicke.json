@@ -51,42 +51,42 @@
     {
       "raw": "1 red onion, sliced thin",
       "expected": {
-        "item": "red onion",
+        "item": "red onion, sliced thin",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced thin",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 red bell pepper, sliced thin",
       "expected": {
-        "item": "red bell pepper",
+        "item": "red bell pepper, sliced thin",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced thin",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "1 green bell pepper, sliced thin",
       "expected": {
-        "item": "green bell pepper",
+        "item": "green bell pepper, sliced thin",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced thin",
+        "note": null,
         "category": "Produce"
       }
     },

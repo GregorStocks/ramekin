@@ -164,7 +164,7 @@
     {
       "raw": "1 pound ripe prune plums or greengages, halved, pitted, and halved again (i.e. quartered)",
       "expected": {
-        "item": "ripe prune plums or greengages, halved, pitted",
+        "item": "ripe prune plums or greengages, halved, pitted, and halved again",
         "measurements": [
           {
             "amount": "1",
@@ -175,14 +175,14 @@
             "unit": "g"
           }
         ],
-        "note": "i.e. quartered, and halved again",
+        "note": "i.e. quartered",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
       "raw": "1 pound apples, peeled, cored and cut into smaller chunks (than you see in my photos)",
       "expected": {
-        "item": "apples, peeled",
+        "item": "apples, peeled, cored and cut into smaller chunks",
         "measurements": [
           {
             "amount": "1",
@@ -193,7 +193,7 @@
             "unit": "g"
           }
         ],
-        "note": "than you see in my photos, cored and cut into smaller chunks",
+        "note": "than you see in my photos",
         "category": "Produce"
       }
     },

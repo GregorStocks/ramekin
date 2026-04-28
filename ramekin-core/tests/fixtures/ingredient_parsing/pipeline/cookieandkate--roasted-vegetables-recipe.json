@@ -19,14 +19,14 @@
     {
       "raw": "2 carrots, peeled and cut on the diagonal so each piece is about ½″ thick at the widest part",
       "expected": {
-        "item": "carrots",
+        "item": "carrots, peeled and cut on the diagonal so each piece is about 1/2″ thick at the widest part",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "peeled and cut on the diagonal so each piece is about 1/2″ thick at the widest part",
+        "note": null,
         "category": "Produce"
       }
     },

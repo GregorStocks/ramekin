@@ -33,14 +33,14 @@
     {
       "raw": "1/2&nbsp;cup finely diced red or white onion, trimmings reserved",
       "expected": {
-        "item": "finely diced red or white onion",
+        "item": "finely diced red or white onion, trimmings reserved",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "trimmings reserved",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -148,9 +148,9 @@
     {
       "raw": "Juice of 1 lime, or more to taste",
       "expected": {
-        "item": "Juice of 1 lime",
+        "item": "Juice of 1 lime, or more to taste",
         "measurements": [],
-        "note": "or more to taste",
+        "note": null,
         "category": "Beverages"
       }
     }

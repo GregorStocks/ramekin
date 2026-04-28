@@ -95,7 +95,7 @@
     {
       "raw": "1 stick (113 g/½ cup) unsalted butter, cold and cut into ½\" (1-cm) cubes",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, cold and cut into 1/2\" cubes",
         "measurements": [
           {
             "amount": "1",
@@ -110,7 +110,7 @@
             "unit": "cup"
           }
         ],
-        "note": "1-cm, cold and cut into 1/2\" cubes",
+        "note": "1-cm",
         "category": "Dairy & Eggs"
       }
     },

@@ -211,7 +211,7 @@
     {
       "raw": "1 russet potato (12 ounces; 340 g), peeled and cut into irregular chunks about 1/2 inch thick (read about this potato cutting method for more details)",
       "expected": {
-        "item": "russet potato",
+        "item": "russet potato, peeled and cut into irregular chunks about 1/2 inch thick",
         "measurements": [
           {
             "amount": "1",
@@ -226,7 +226,7 @@
             "unit": "g"
           }
         ],
-        "note": "read about this potato cutting method for more details, peeled and cut into irregular chunks about 1/2 inch thick",
+        "note": "read about this potato cutting method for more details",
         "category": "Produce"
       }
     },

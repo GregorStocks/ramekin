@@ -131,14 +131,14 @@
     {
       "raw": "1 cup sprinkles, chopped nuts, or finely shredded dried coconut",
       "expected": {
-        "item": "sprinkles, chopped nuts",
+        "item": "sprinkles, chopped nuts, or finely shredded dried coconut",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "or finely shredded dried coconut",
+        "note": null,
         "category": "Baking"
       }
     },

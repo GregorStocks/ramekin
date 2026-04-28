@@ -5,14 +5,14 @@
     {
       "raw": "1 cup coarsely chopped almonds, blanched if you can find them",
       "expected": {
-        "item": "coarsely chopped almonds",
+        "item": "coarsely chopped almonds, blanched if you can find them",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "blanched if you can find them",
+        "note": null,
         "category": "Nuts & Dried Fruit"
       }
     },

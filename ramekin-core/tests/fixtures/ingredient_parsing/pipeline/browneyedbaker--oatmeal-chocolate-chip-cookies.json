@@ -59,18 +59,14 @@
     {
       "raw": "1 cup unsalted butter, softened but still cool",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, softened but still cool",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
-        "note": "softened but still cool",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

@@ -50,14 +50,14 @@
     {
       "raw": "1 medium carrot, peeled and cut into 1/4-inch dice",
       "expected": {
-        "item": "carrot",
+        "item": "carrot, peeled and cut into 1/4-inch dice",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "peeled and cut into 1/4-inch dice",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -174,14 +174,14 @@
     {
       "raw": "1 teaspoon grated lemon zest or more to taste, up to the zest of a whole lemon",
       "expected": {
-        "item": "grated lemon zest or more to taste",
+        "item": "grated lemon zest or more to taste, up to the zest of a whole lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "up to the zest of a whole lemon",
+        "note": null,
         "category": "Produce"
       }
     },

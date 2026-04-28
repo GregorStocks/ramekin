@@ -119,14 +119,14 @@
     {
       "raw": "2 medium-large yellow onions, sliced in thin rings",
       "expected": {
-        "item": "medium-large yellow onions",
+        "item": "medium-large yellow onions, sliced in thin rings",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "sliced in thin rings",
+        "note": null,
         "category": "Produce"
       }
     },

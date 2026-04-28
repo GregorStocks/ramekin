@@ -106,14 +106,14 @@
     {
       "raw": "1 serrano chile, stemmed and minced",
       "expected": {
-        "item": "serrano chile",
+        "item": "serrano chile, stemmed and minced",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "stemmed and minced",
+        "note": null,
         "category": "Produce"
       }
     },

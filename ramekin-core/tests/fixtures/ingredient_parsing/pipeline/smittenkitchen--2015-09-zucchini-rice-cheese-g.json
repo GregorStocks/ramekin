@@ -50,7 +50,7 @@
     {
       "raw": "1/2 cup (90 grams) plain, uncooked white rice",
       "expected": {
-        "item": "plain",
+        "item": "plain, uncooked white rice",
         "measurements": [
           {
             "amount": "0.5",
@@ -61,8 +61,8 @@
             "unit": "g"
           }
         ],
-        "note": "uncooked white rice",
-        "category": "Other"
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -112,14 +112,14 @@
     {
       "raw": "2 large cloves garlic, mashed or finely minced",
       "expected": {
-        "item": "cloves garlic",
+        "item": "cloves garlic, mashed or finely minced",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "mashed or finely minced",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -60,15 +60,15 @@
     {
       "raw": "28-ounce can whole tomatoes with juices, chopped by you, or crushed tomatoes",
       "expected": {
-        "item": "whole tomatoes with juices, chopped by you",
+        "item": "whole tomatoes with juices, chopped by you, or crushed tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "28-ounce can"
           }
         ],
-        "note": "or crushed tomatoes",
-        "category": "Produce"
+        "note": null,
+        "category": "Canned Goods"
       }
     },
     {
@@ -101,7 +101,7 @@
     {
       "raw": "1 pound pasta, cooked al dente and drained",
       "expected": {
-        "item": "pasta",
+        "item": "pasta, cooked al dente and drained",
         "measurements": [
           {
             "amount": "1",
@@ -112,7 +112,7 @@
             "unit": "g"
           }
         ],
-        "note": "cooked al dente and drained",
+        "note": null,
         "category": "Pasta & Rice"
       }
     },

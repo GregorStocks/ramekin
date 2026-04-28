@@ -73,14 +73,14 @@
     {
       "raw": "2 medium carrots, peeled and sliced into half-moons or diced",
       "expected": {
-        "item": "carrots",
+        "item": "carrots, peeled and sliced into half-moons or diced",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": "peeled and sliced into half-moons or diced",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -119,14 +119,14 @@
     {
       "raw": "1 cup brown lentils, sorted and rinsed",
       "expected": {
-        "item": "brown lentils",
+        "item": "brown lentils, sorted and rinsed",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "sorted and rinsed",
+        "note": null,
         "category": "Canned Goods"
       }
     },

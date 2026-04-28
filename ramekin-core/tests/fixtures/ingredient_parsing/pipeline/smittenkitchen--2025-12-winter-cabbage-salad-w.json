@@ -117,7 +117,7 @@
     {
       "raw": "1 small or half a large fennel bulb, halved and sliced thin (about 1 cup)",
       "expected": {
-        "item": "or half a large fennel bulb",
+        "item": "or half a large fennel bulb, halved and sliced thin",
         "measurements": [
           {
             "amount": "1",
@@ -128,7 +128,7 @@
             "unit": "cup"
           }
         ],
-        "note": "halved and sliced thin",
+        "note": null,
         "category": "Produce"
       }
     },

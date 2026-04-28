@@ -93,7 +93,7 @@
     {
       "raw": "2 1/2 teaspoons (about 8 g) Diamond Crystal kosher salt, divided; for table salt use half as much by volume or the same weight",
       "expected": {
-        "item": "Diamond Crystal kosher salt",
+        "item": "Diamond Crystal kosher salt, divided; for table salt use half as much by volume or the same weight",
         "measurements": [
           {
             "amount": "2.5",
@@ -104,7 +104,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided; for table salt use half as much by volume or the same weight",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
@@ -221,7 +221,7 @@
     {
       "raw": "1 medium bunch Swiss Chard (10 ounces; 283 g), stemmed and chopped",
       "expected": {
-        "item": "bunch Swiss Chard",
+        "item": "bunch Swiss Chard, stemmed and chopped",
         "measurements": [
           {
             "amount": "1",
@@ -236,7 +236,7 @@
             "unit": "g"
           }
         ],
-        "note": "stemmed and chopped",
+        "note": null,
         "category": "Produce"
       }
     },

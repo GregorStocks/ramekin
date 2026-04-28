@@ -5,7 +5,7 @@
     {
       "raw": "1 pound cucumbers, unpeeled unless waxed",
       "expected": {
-        "item": "cucumbers",
+        "item": "cucumbers, unpeeled unless waxed",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "unpeeled unless waxed",
+        "note": null,
         "category": "Produce"
       }
     },

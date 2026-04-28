@@ -219,7 +219,7 @@
     {
       "raw": "2 cups (240 grams) powdered sugar, sifted if lumpy",
       "expected": {
-        "item": "powdered sugar",
+        "item": "powdered sugar, sifted if lumpy",
         "measurements": [
           {
             "amount": "2",
@@ -230,7 +230,7 @@
             "unit": "g"
           }
         ],
-        "note": "sifted if lumpy",
+        "note": null,
         "category": "Baking"
       }
     }

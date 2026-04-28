@@ -79,14 +79,14 @@
     {
       "raw": "2 poblano chiles, roasted, peeled and cut into strips",
       "expected": {
-        "item": "poblano chiles, roasted",
+        "item": "poblano chiles, roasted, peeled and cut into strips",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "peeled and cut into strips",
+        "note": null,
         "category": "Produce"
       }
     },

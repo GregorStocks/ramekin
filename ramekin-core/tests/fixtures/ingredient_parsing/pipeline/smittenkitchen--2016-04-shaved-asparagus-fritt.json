@@ -84,7 +84,7 @@
     {
       "raw": "1/2 pound asparagus, cleaned, not trimmed",
       "expected": {
-        "item": "asparagus, cleaned",
+        "item": "asparagus, cleaned, not trimmed",
         "measurements": [
           {
             "amount": "0.5",
@@ -95,7 +95,7 @@
             "unit": "g"
           }
         ],
-        "note": "not trimmed",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -175,14 +175,14 @@
     {
       "raw": "2 scallions, thinly sliced on the diagonal",
       "expected": {
-        "item": "scallions",
+        "item": "scallions, thinly sliced on the diagonal",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "thinly sliced on the diagonal",
+        "note": null,
         "category": "Produce"
       }
     },

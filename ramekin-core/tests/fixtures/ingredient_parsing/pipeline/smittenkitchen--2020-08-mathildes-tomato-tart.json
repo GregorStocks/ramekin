@@ -109,7 +109,7 @@
     {
       "raw": "3 large very ripe tomatoes, heirloom or other, sliced crosswise 1/4-inch thick (about 1.5 pounds)",
       "expected": {
-        "item": "very ripe tomatoes, heirloom or other",
+        "item": "very ripe tomatoes, heirloom or other, sliced crosswise 1/4-inch thick",
         "measurements": [
           {
             "amount": "3",
@@ -124,7 +124,7 @@
             "unit": "g"
           }
         ],
-        "note": "sliced crosswise 1/4-inch thick",
+        "note": null,
         "category": "Produce"
       }
     },

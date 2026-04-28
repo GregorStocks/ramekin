@@ -101,7 +101,7 @@
     {
       "raw": "1 1/2 pounds ripe (4 to 5 medium) yellow peaches, pitted and quartered",
       "expected": {
-        "item": "ripe yellow peaches",
+        "item": "ripe yellow peaches, pitted and quartered",
         "measurements": [
           {
             "amount": "1.5",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": "pitted and quartered",
+        "note": null,
         "category": "Produce"
       }
     },

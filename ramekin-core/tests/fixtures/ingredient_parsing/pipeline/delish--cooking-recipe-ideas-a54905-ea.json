@@ -5,7 +5,7 @@
     {
       "raw": "1/2 lb. asparagus, ends trimmed",
       "expected": {
-        "item": "asparagus",
+        "item": "asparagus, ends trimmed",
         "measurements": [
           {
             "amount": "0.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "ends trimmed",
+        "note": null,
         "category": "Produce"
       }
     },

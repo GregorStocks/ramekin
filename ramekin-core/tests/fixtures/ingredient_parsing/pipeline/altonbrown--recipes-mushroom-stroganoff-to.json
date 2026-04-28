@@ -73,7 +73,7 @@
     {
       "raw": "1 pound mixed meaty mushrooms, such as cremini and button, trimmed and sliced 1/4 inch thick",
       "expected": {
-        "item": "mixed meaty mushrooms, such as cremini and button",
+        "item": "mixed meaty mushrooms, such as cremini and button, trimmed and sliced 1/4 inch thick",
         "measurements": [
           {
             "amount": "1",
@@ -84,7 +84,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and sliced 1/4 inch thick",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -109,14 +109,14 @@
     {
       "raw": "4  scallions, thinly sliced on the bias and white and green parts separated",
       "expected": {
-        "item": "scallions",
+        "item": "scallions, thinly sliced on the bias and white and green parts separated",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "thinly sliced on the bias and white and green parts separated",
+        "note": null,
         "category": "Produce"
       }
     },

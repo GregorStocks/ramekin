@@ -31,14 +31,14 @@
     {
       "raw": "3 large garlic cloves, left unpeeled",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic cloves, left unpeeled",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": "left unpeeled",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -171,14 +171,14 @@
     {
       "raw": "1/2 cup Kalamata or other brine-cured black olives, pitted and chopped",
       "expected": {
-        "item": "Kalamata or other brine-cured black olives",
+        "item": "Kalamata or other brine-cured black olives, pitted and chopped",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "pitted and chopped",
+        "note": null,
         "category": "Canned Goods"
       }
     },

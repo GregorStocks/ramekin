@@ -155,14 +155,14 @@
     {
       "raw": "1 14-ounce can quartered artichoke hearts, drained and patted dry",
       "expected": {
-        "item": "quartered artichoke hearts",
+        "item": "quartered artichoke hearts, drained and patted dry",
         "measurements": [
           {
             "amount": "1",
             "unit": "14-ounce can"
           }
         ],
-        "note": "drained and patted dry",
+        "note": null,
         "category": "Canned Goods"
       }
     },
@@ -178,7 +178,7 @@
     {
       "raw": "6 ounces (170 grams) mozzarella, diced from a block or perlini (as shown here)",
       "expected": {
-        "item": "mozzarella",
+        "item": "mozzarella, diced from a block or perlini",
         "measurements": [
           {
             "amount": "6",
@@ -189,7 +189,7 @@
             "unit": "g"
           }
         ],
-        "note": "as shown here, diced from a block or perlini",
+        "note": "as shown here",
         "category": "Cheese"
       }
     },

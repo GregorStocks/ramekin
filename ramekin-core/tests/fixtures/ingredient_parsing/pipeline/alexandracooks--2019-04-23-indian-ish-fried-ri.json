@@ -102,14 +102,14 @@
     {
       "raw": "2 small hot chilies, halved lengthwise",
       "expected": {
-        "item": "hot chilies",
+        "item": "hot chilies, halved lengthwise",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
           }
         ],
-        "note": "halved lengthwise",
+        "note": null,
         "category": "Other"
       }
     },

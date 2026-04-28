@@ -5,7 +5,7 @@
     {
       "raw": "1.02 kg ( 2 1/2 pounds) russet potatoes, peeled and cut into 1-inch chunks",
       "expected": {
-        "item": "russet potatoes",
+        "item": "russet potatoes, peeled and cut into 1-inch chunks",
         "measurements": [
           {
             "amount": "1.02",
@@ -16,7 +16,7 @@
             "unit": "lb"
           }
         ],
-        "note": "peeled and cut into 1-inch chunks",
+        "note": null,
         "category": "Produce"
       }
     },

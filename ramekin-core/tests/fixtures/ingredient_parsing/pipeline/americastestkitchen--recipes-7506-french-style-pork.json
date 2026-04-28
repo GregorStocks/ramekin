@@ -33,14 +33,14 @@
     {
       "raw": "5 garlic cloves , unpeeled",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic cloves, unpeeled",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": "unpeeled",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -125,7 +125,7 @@
     {
       "raw": "3 pounds boneless pork butt roast, trimmed and cut into 1- to 1 1/2-inch pieces",
       "expected": {
-        "item": "boneless pork butt roast",
+        "item": "boneless pork butt roast, trimmed and cut into 1- to 1 1/2-inch pieces",
         "measurements": [
           {
             "amount": "3",
@@ -136,7 +136,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and cut into 1- to 1 1/2-inch pieces",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
@@ -179,14 +179,14 @@
     {
       "raw": "4 carrots , peeled, narrow end cut crosswise into 1/2-inch pieces, wide end halved lengthwise and cut into 1/2-inch pieces",
       "expected": {
-        "item": "carrots, peeled, narrow end cut crosswise into 1/2-inch pieces",
+        "item": "carrots, peeled, narrow end cut crosswise into 1/2-inch pieces, wide end halved lengthwise and cut into 1/2-inch pieces",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "wide end halved lengthwise and cut into 1/2-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -211,7 +211,7 @@
     {
       "raw": "12 ounces kielbasa sausage , halved lengthwise and then cut into 1/2-inch-thick slices",
       "expected": {
-        "item": "kielbasa sausage",
+        "item": "kielbasa sausage, halved lengthwise and then cut into 1/2-inch-thick slices",
         "measurements": [
           {
             "amount": "12",
@@ -222,7 +222,7 @@
             "unit": "g"
           }
         ],
-        "note": "halved lengthwise and then cut into 1/2-inch-thick slices",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },

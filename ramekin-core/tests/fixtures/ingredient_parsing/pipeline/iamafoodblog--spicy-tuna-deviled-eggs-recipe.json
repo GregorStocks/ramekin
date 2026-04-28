@@ -5,21 +5,21 @@
     {
       "raw": "4 hard boiled eggs, peeled and cut in half",
       "expected": {
-        "item": "hard boiled eggs",
+        "item": "hard boiled eggs, peeled and cut in half",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "peeled and cut in half",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "4 ounce can olive oil packed tuna, drained and flaked",
       "expected": {
-        "item": "can olive oil packed tuna",
+        "item": "can olive oil packed tuna, drained and flaked",
         "measurements": [
           {
             "amount": "4",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": "drained and flaked",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },

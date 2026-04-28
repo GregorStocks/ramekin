@@ -14,7 +14,7 @@
     {
       "raw": "1/2 small head cabbage, very thinly sliced (1 pound or 5 to 6 cups shreds) which will be easiest on a mandoline if you have one",
       "expected": {
-        "item": "head cabbage",
+        "item": "head cabbage, very thinly sliced which will be easiest on a mandoline if you have one",
         "measurements": [
           {
             "amount": "0.5",
@@ -33,21 +33,21 @@
             "unit": "g"
           }
         ],
-        "note": "very thinly sliced which will be easiest on a mandoline if you have one",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "4 medium carrots, peeled into ribbons with a vegetable peeler",
       "expected": {
-        "item": "carrots",
+        "item": "carrots, peeled into ribbons with a vegetable peeler",
         "measurements": [
           {
             "amount": "4",
             "unit": "medium"
           }
         ],
-        "note": "peeled into ribbons with a vegetable peeler",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -68,14 +68,14 @@
     {
       "raw": "4 scallions, thinly sliced on an angle",
       "expected": {
-        "item": "scallions",
+        "item": "scallions, thinly sliced on an angle",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "thinly sliced on an angle",
+        "note": null,
         "category": "Produce"
       }
     },

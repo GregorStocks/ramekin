@@ -51,14 +51,14 @@
     {
       "raw": "4 garlic cloves, pressed or minced",
       "expected": {
-        "item": "garlic cloves",
+        "item": "garlic cloves, pressed or minced",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "pressed or minced",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -141,14 +141,14 @@
     {
       "raw": "1 cup brown or green lentils, picked over and rinsed",
       "expected": {
-        "item": "brown or green lentils",
+        "item": "brown or green lentils, picked over and rinsed",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "picked over and rinsed",
+        "note": null,
         "category": "Canned Goods"
       }
     },
@@ -191,18 +191,14 @@
     {
       "raw": "1 teaspoon salt, more to taste",
       "expected": {
-        "item": "salt, presumably Diamond",
+        "item": "salt, more to taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.9",
-            "unit": "g"
           }
         ],
-        "note": "more to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

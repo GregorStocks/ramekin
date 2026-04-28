@@ -65,9 +65,9 @@
     {
       "raw": "Juice of half a lemon, or more to taste",
       "expected": {
-        "item": "Juice of half a lemon",
+        "item": "Juice of half a lemon, or more to taste",
         "measurements": [],
-        "note": "or more to taste",
+        "note": null,
         "category": "Beverages"
       }
     },

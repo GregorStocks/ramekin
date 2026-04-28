@@ -170,7 +170,7 @@
     {
       "raw": "1 1/2 pounds mixed mushrooms, wild are wonderful, but sliced cremini or white mushrooms will also work",
       "expected": {
-        "item": "mixed mushrooms, wild are wonderful",
+        "item": "mixed mushrooms, wild are wonderful, but sliced cremini or white mushrooms will also work",
         "measurements": [
           {
             "amount": "1.5",
@@ -181,7 +181,7 @@
             "unit": "g"
           }
         ],
-        "note": "but sliced cremini or white mushrooms will also work",
+        "note": null,
         "category": "Produce"
       }
     },

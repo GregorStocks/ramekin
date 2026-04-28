@@ -5,7 +5,7 @@
     {
       "raw": "5 ounces (about one heaping cup) hazelnuts, blanched to remove dark skins*",
       "expected": {
-        "item": "hazelnuts",
+        "item": "hazelnuts, blanched to remove dark skins",
         "measurements": [
           {
             "amount": "5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "about one heaping cup, blanched to remove dark skins",
+        "note": "about one heaping cup",
         "category": "Nuts & Dried Fruit"
       }
     },

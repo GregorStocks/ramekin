@@ -68,7 +68,7 @@
     {
       "raw": "2 tablespoons (25 grams) coarse sugar, such as turbinado or Sugar in the Raw; use granulated if you have neither",
       "expected": {
-        "item": "coarse sugar",
+        "item": "coarse sugar, such as turbinado or Sugar in the Raw; use granulated if you have neither",
         "measurements": [
           {
             "amount": "2",
@@ -79,7 +79,7 @@
             "unit": "g"
           }
         ],
-        "note": "such as turbinado or Sugar in the Raw; use granulated if you have neither",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -122,7 +122,7 @@
     {
       "raw": "6 tablespoons (85 grams) unsalted butter, melted and cooled slightly",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, melted and cooled slightly",
         "measurements": [
           {
             "amount": "6",
@@ -133,7 +133,7 @@
             "unit": "g"
           }
         ],
-        "note": "melted and cooled slightly",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -330,14 +330,14 @@
     {
       "raw": "4 large firm-ripe peaches (free stone, if you can find them, not that I ever do), halved and pitted",
       "expected": {
-        "item": "firm-ripe peaches",
+        "item": "firm-ripe peaches, halved and pitted",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": "free stone, if you can find them, not that I ever do, halved and pitted",
+        "note": "free stone, if you can find them, not that I ever do",
         "category": "Produce"
       }
     },

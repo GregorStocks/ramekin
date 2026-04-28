@@ -27,14 +27,14 @@
     {
       "raw": "1/2 cup pecans, toasted (350°F for 10 to 13 minutes, or until browned) and cooled",
       "expected": {
-        "item": "pecans",
+        "item": "pecans, toasted and cooled",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "350°F for 10 to 13 minutes, or until browned, toasted and cooled",
+        "note": "350°F for 10 to 13 minutes, or until browned",
         "category": "Nuts & Dried Fruit"
       }
     },

@@ -167,7 +167,7 @@
     {
       "raw": "1 pound boneless, skinless chicken thighs, trimmed and cut into 1/2-inch pieces",
       "expected": {
-        "item": "boneless, skinless chicken thighs",
+        "item": "boneless, skinless chicken thighs, trimmed and cut into 1/2-inch pieces",
         "measurements": [
           {
             "amount": "1",
@@ -178,7 +178,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and cut into 1/2-inch pieces",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },

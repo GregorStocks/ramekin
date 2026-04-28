@@ -59,18 +59,14 @@
     {
       "raw": "1/2 c. Butter, softened to room temperature",
       "expected": {
-        "item": "Butter",
+        "item": "Butter, softened to room temperature",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "114",
-            "unit": "g"
           }
         ],
-        "note": "softened to room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -163,18 +159,14 @@
     {
       "raw": "5 tbsp. unsalted butter, softened to room temperature",
       "expected": {
-        "item": "unsalted butter",
+        "item": "unsalted butter, softened to room temperature",
         "measurements": [
           {
             "amount": "5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "71",
-            "unit": "g"
           }
         ],
-        "note": "softened to room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

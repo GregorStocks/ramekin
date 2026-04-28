@@ -19,28 +19,28 @@
     {
       "raw": "4 medium carrots, 2 halved crosswise and 2 peeled and cut into half-moons",
       "expected": {
-        "item": "carrots",
+        "item": "carrots, 2 halved crosswise and 2 peeled and cut into half-moons",
         "measurements": [
           {
             "amount": "4",
             "unit": "medium"
           }
         ],
-        "note": "2 halved crosswise and 2 peeled and cut into half-moons",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "4 stalks celery, 2 halved crosswise and 2 cut into half-moons, with the leaves reserved for garnish",
       "expected": {
-        "item": "celery, 2 halved crosswise and 2 cut into half-moons",
+        "item": "celery, 2 halved crosswise and 2 cut into half-moons, with the leaves reserved for garnish",
         "measurements": [
           {
             "amount": "4",
             "unit": "stalk"
           }
         ],
-        "note": "with the leaves reserved for garnish",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -159,14 +159,14 @@
     {
       "raw": "2 medium parsnips, peeled and cut into quarter-moons",
       "expected": {
-        "item": "parsnips",
+        "item": "parsnips, peeled and cut into quarter-moons",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": "peeled and cut into quarter-moons",
+        "note": null,
         "category": "Produce"
       }
     },

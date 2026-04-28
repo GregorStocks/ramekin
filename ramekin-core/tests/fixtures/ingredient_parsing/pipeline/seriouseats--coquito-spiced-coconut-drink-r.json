@@ -41,14 +41,14 @@
     {
       "raw": "1 (2-inch long) piece ginger, peeled and sliced crosswise into 1/4-inch thick rounds",
       "expected": {
-        "item": "ginger",
+        "item": "ginger, peeled and sliced crosswise into 1/4-inch thick rounds",
         "measurements": [
           {
             "amount": "1",
             "unit": "piece"
           }
         ],
-        "note": "2-inch long, peeled and sliced crosswise into 1/4-inch thick rounds",
+        "note": "2-inch long",
         "category": "Beverages"
       }
     },

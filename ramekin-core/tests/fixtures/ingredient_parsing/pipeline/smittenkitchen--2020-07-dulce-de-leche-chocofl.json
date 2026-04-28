@@ -329,9 +329,9 @@
     {
       "raw": "Dulce de leche, chopped nuts, whipped cream, and/or ground cinnamon",
       "expected": {
-        "item": "Dulce de leche, chopped nuts, whipped cream",
+        "item": "Dulce de leche, chopped nuts, whipped cream, and/or ground cinnamon",
         "measurements": [],
-        "note": "and/or ground cinnamon",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     }

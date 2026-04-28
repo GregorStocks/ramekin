@@ -95,7 +95,7 @@
     {
       "raw": "1/3 cup (about 30 grams) dark cocoa powder, sifted if lumpy (Dutched or natural will work here; I use Dutched)",
       "expected": {
-        "item": "dark cocoa powder",
+        "item": "dark cocoa powder, sifted if lumpy",
         "measurements": [
           {
             "amount": "0.33",
@@ -106,7 +106,7 @@
             "unit": "g"
           }
         ],
-        "note": "Dutched or natural will work here; I use Dutched, sifted if lumpy",
+        "note": "Dutched or natural will work here; I use Dutched",
         "category": "Baking"
       }
     },

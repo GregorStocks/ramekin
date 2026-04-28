@@ -149,14 +149,14 @@
     {
       "raw": "1/8 teaspoon freshly grated orange zest, or more as desired",
       "expected": {
-        "item": "freshly grated orange zest",
+        "item": "freshly grated orange zest, or more as desired",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
           }
         ],
-        "note": "or more as desired",
+        "note": null,
         "category": "Produce"
       }
     },

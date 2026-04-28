@@ -19,18 +19,14 @@
     {
       "raw": "4 tablespoons mayonnaise, or more to taste",
       "expected": {
-        "item": "mayonnaise",
+        "item": "mayonnaise, or more to taste",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
-          },
-          {
-            "amount": "55",
-            "unit": "g"
           }
         ],
-        "note": "or more to taste",
+        "note": null,
         "category": "Condiments & Sauces"
       }
     },

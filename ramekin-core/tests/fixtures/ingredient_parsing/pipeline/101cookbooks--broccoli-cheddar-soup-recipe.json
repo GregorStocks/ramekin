@@ -107,7 +107,7 @@
     {
       "raw": "1  large potato, peeled and cut into 1/4-inch cubes (1 1/2 cups)",
       "expected": {
-        "item": "potato",
+        "item": "potato, peeled and cut into 1/4-inch cubes",
         "measurements": [
           {
             "amount": "1",
@@ -118,7 +118,7 @@
             "unit": "cup"
           }
         ],
-        "note": "peeled and cut into 1/4-inch cubes",
+        "note": null,
         "category": "Produce"
       }
     },

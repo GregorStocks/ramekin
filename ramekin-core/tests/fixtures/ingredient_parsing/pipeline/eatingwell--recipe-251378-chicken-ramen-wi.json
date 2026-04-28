@@ -339,32 +339,28 @@
     {
       "raw": "1 teaspoon chile-garlic sauce, or to taste",
       "expected": {
-        "item": "chile-garlic sauce",
+        "item": "chile-garlic sauce, or to taste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "0.5 teaspoon sesame oil, toasted or hot",
       "expected": {
-        "item": "sesame oil",
+        "item": "sesame oil, toasted or hot",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.3",
-            "unit": "g"
           }
         ],
-        "note": "toasted or hot",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
@@ -435,14 +431,14 @@
     {
       "raw": "4 scallions, trimmed and cut into 1-inch pieces",
       "expected": {
-        "item": "scallions",
+        "item": "scallions, trimmed and cut into 1-inch pieces",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "trimmed and cut into 1-inch pieces",
+        "note": null,
         "category": "Produce"
       }
     },

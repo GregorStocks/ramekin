@@ -88,14 +88,14 @@
     {
       "raw": "2 ripe avocados, pits removed and diced",
       "expected": {
-        "item": "ripe avocados",
+        "item": "ripe avocados, pits removed and diced",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "pits removed and diced",
+        "note": null,
         "category": "Produce"
       }
     },

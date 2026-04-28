@@ -41,28 +41,28 @@
     {
       "raw": "1/2 teaspoon fine sea or table salt, or to taste",
       "expected": {
-        "item": "fine sea or table salt",
+        "item": "fine sea or table salt, or to taste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "or to taste",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/2 teaspoon finely ground black pepper, or a larger amount coarsely ground",
       "expected": {
-        "item": "finely ground black pepper",
+        "item": "finely ground black pepper, or a larger amount coarsely ground",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "or a larger amount coarsely ground",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

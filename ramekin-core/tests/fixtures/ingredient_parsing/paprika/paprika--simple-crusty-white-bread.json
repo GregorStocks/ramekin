@@ -19,15 +19,15 @@
     {
       "raw": "350 grams room-temperature water, divided if using active dry yeast",
       "expected": {
-        "item": "room-temperature water",
+        "item": "room-temperature water, divided if using active dry yeast",
         "measurements": [
           {
             "amount": "350",
             "unit": "g"
           }
         ],
-        "note": "divided if using active dry yeast",
-        "category": "Other"
+        "note": null,
+        "category": "Baking"
       }
     },
     {

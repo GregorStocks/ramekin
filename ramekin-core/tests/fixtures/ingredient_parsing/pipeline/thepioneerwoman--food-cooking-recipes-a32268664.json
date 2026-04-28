@@ -137,7 +137,7 @@
     {
       "raw": "1 1/2 lb. large shrimp, peeled and deveined",
       "expected": {
-        "item": "large shrimp",
+        "item": "large shrimp, peeled and deveined",
         "measurements": [
           {
             "amount": "1.5",
@@ -148,7 +148,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and deveined",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
@@ -164,7 +164,7 @@
     {
       "raw": "8 oz. baby bell peppers, thinly sliced into rings",
       "expected": {
-        "item": "baby bell peppers",
+        "item": "baby bell peppers, thinly sliced into rings",
         "measurements": [
           {
             "amount": "8",
@@ -175,7 +175,7 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced into rings",
+        "note": null,
         "category": "Produce"
       }
     },

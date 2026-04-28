@@ -41,7 +41,7 @@
     {
       "raw": "1 lb. sirloin steak (3/4 inch thick), thinly sliced against the grain",
       "expected": {
-        "item": "sirloin steak",
+        "item": "sirloin steak, thinly sliced against the grain",
         "measurements": [
           {
             "amount": "1",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": "3/4 inch thick, thinly sliced against the grain",
+        "note": "3/4 inch thick",
         "category": "Meat & Seafood"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "1 pound small shrimp, shelled and deveined or pre-cooked and defrosted",
       "expected": {
-        "item": "small shrimp",
+        "item": "small shrimp, shelled and deveined or pre-cooked and defrosted",
         "measurements": [
           {
             "amount": "1",
@@ -16,35 +16,35 @@
             "unit": "g"
           }
         ],
-        "note": "shelled and deveined or pre-cooked and defrosted",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "2 firm-ripe avocados, halved, scored into a small dice",
       "expected": {
-        "item": "firm-ripe avocados, halved",
+        "item": "firm-ripe avocados, halved, scored into a small dice",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "scored into a small dice",
+        "note": null,
         "category": "Produce"
       }
     },
     {
       "raw": "2 cups grape tomatoes, quartered or 2 cups chopped tomatoes, drained a little",
       "expected": {
-        "item": "grape tomatoes, quartered or 2 cups chopped tomatoes",
+        "item": "grape tomatoes, quartered",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "drained a little",
+        "note": "or 2 cups chopped tomatoes, drained a little",
         "category": "Produce"
       }
     },
@@ -65,14 +65,14 @@
     {
       "raw": "1 small jalapeño, seeded and finely chopped (optional)",
       "expected": {
-        "item": "jalapeño",
+        "item": "jalapeño, seeded and finely chopped",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "optional, seeded and finely chopped",
+        "note": "optional",
         "category": "Produce"
       }
     },

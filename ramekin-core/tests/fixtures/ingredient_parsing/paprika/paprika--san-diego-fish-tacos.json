@@ -14,14 +14,14 @@
     {
       "raw": "1 red onion, halved and sliced thin",
       "expected": {
-        "item": "red onion",
+        "item": "red onion, halved and sliced thin",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "halved and sliced thin",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -485,14 +485,14 @@
     {
       "raw": "1 avocado, sliced thin",
       "expected": {
-        "item": "avocado",
+        "item": "avocado, sliced thin",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced thin",
+        "note": null,
         "category": "Produce"
       }
     }

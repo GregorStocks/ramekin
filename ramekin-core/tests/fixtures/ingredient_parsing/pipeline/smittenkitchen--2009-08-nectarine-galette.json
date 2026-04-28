@@ -159,7 +159,7 @@
     {
       "raw": "10 ounces galette dough, rolled into a 14-inch circle and chilled",
       "expected": {
-        "item": "galette dough",
+        "item": "galette dough, rolled into a 14-inch circle and chilled",
         "measurements": [
           {
             "amount": "10",
@@ -170,8 +170,8 @@
             "unit": "g"
           }
         ],
-        "note": "rolled into a 14-inch circle and chilled",
-        "category": "Other"
+        "note": null,
+        "category": "Bakery & Bread"
       }
     },
     {

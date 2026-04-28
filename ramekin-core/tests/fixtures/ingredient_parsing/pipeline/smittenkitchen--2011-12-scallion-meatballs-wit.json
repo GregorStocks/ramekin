@@ -205,18 +205,14 @@
     {
       "raw": "2 tablespoons sesame oil, toasted if you can find it",
       "expected": {
-        "item": "sesame oil",
+        "item": "sesame oil, toasted if you can find it",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
-        "note": "toasted if you can find it",
+        "note": null,
         "category": "Oils & Vinegars"
       }
     },
