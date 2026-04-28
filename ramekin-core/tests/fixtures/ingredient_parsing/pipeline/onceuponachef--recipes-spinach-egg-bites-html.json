@@ -107,7 +107,7 @@
     {
       "raw": "1 oz  baby spinach leaves, or ⅔ cup (packed), finely chopped",
       "expected": {
-        "item": "baby spinach leaves, or 2/3 cup, finely chopped",
+        "item": "baby spinach leaves, or 2/3 cup",
         "measurements": [
           {
             "amount": "1",
@@ -118,7 +118,7 @@
             "unit": "g"
           }
         ],
-        "note": "packed",
+        "note": "packed, finely chopped",
         "category": "Produce"
       }
     },

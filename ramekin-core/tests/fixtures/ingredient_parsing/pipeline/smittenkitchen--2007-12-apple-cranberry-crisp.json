@@ -162,14 +162,14 @@
     {
       "raw": "½ teaspoon aniseed (optional) or fennel seed, crushed",
       "expected": {
-        "item": "aniseed or fennel seed, crushed",
+        "item": "aniseed or fennel seed",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "optional",
+        "note": "optional, crushed",
         "category": "Spices & Seasonings"
       }
     },

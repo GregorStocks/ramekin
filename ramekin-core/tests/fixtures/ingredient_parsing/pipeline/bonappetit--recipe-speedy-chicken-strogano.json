@@ -56,14 +56,18 @@
     {
       "raw": "7 Tbsp. (or more) extra-virgin olive oil, divided",
       "expected": {
-        "item": "extra-virgin olive oil, divided",
+        "item": "extra-virgin olive oil",
         "measurements": [
           {
             "amount": "7",
             "unit": "tbsp"
+          },
+          {
+            "amount": "94",
+            "unit": "g"
           }
         ],
-        "note": "or more",
+        "note": "or more, divided",
         "category": "Oils & Vinegars"
       }
     },

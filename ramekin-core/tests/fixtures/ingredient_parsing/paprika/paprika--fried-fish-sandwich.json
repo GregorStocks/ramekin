@@ -65,14 +65,14 @@
     {
       "raw": "2 tablespoons (drained) capers, coarsely chopped",
       "expected": {
-        "item": "capers, coarsely chopped",
+        "item": "capers",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "drained",
+        "note": "drained, coarsely chopped",
         "category": "Canned Goods"
       }
     },

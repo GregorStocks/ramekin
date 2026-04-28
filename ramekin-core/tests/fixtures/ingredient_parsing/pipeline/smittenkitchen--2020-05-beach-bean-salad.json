@@ -33,14 +33,14 @@
     {
       "raw": "3 15-ounce cans cannellini beans, drained and rinsed (or 1 pound dried, cooked)",
       "expected": {
-        "item": "cannellini beans, drained and rinsed",
+        "item": "cannellini beans",
         "measurements": [
           {
             "amount": "3",
             "unit": "15-ounce cans"
           }
         ],
-        "note": "or 1 pound dried, cooked",
+        "note": "or 1 pound dried, cooked, drained and rinsed",
         "category": "Canned Goods"
       }
     },

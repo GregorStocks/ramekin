@@ -165,21 +165,21 @@
     {
       "raw": "1/2 cup packed basil leaves, more for serving (optional)",
       "expected": {
-        "item": "packed basil leaves, more for serving",
+        "item": "packed basil leaves",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "optional",
+        "note": "optional, more for serving",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "3 ounces Prosciutto (optional), sliced into thin ribbons",
       "expected": {
-        "item": "Prosciutto, sliced into thin ribbons",
+        "item": "Prosciutto",
         "measurements": [
           {
             "amount": "3",
@@ -190,7 +190,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, sliced into thin ribbons",
         "category": "Meat & Seafood"
       }
     },

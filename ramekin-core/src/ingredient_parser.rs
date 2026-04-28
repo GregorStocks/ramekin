@@ -735,15 +735,14 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             .next()
             .is_some_and(|c| c.is_ascii_digit());
         let skip_prep_note = has_nested_parens && starts_with_digit;
-        if is_prep_note(paren_content) && note.is_none() && !skip_prep_note {
+        if is_prep_note(paren_content) && !skip_prep_note {
             // Strip leading comma (e.g., from raw like "tomato (, sliced)")
-            note = Some(
-                paren_content
-                    .trim()
-                    .trim_start_matches(',')
-                    .trim()
-                    .to_string(),
-            );
+            let trimmed_content = paren_content
+                .trim()
+                .trim_start_matches(',')
+                .trim()
+                .to_string();
+            append_note_segment(&mut deferred_parenthetical_note, &trimmed_content);
             // Remove the parenthetical from remaining
             // Also strip trailing comma before the parenthetical (e.g., "onion, (diced)")
             let before = remaining

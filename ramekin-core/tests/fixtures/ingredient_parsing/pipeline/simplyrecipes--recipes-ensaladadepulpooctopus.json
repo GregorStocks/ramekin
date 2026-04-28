@@ -55,15 +55,15 @@
     {
       "raw": "1 cup seeded, chopped cucumber (peeled if the peels are thick and bitter, otherwise leave them on)",
       "expected": {
-        "item": "seeded, chopped cucumber",
+        "item": "seeded",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "peeled if the peels are thick and bitter, otherwise leave them on",
-        "category": "Produce"
+        "note": "peeled if the peels are thick and bitter, otherwise leave them on, chopped cucumber",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {

@@ -19,28 +19,28 @@
     {
       "raw": "⅓ cup  jarred roasted red peppers (drained and patted dry), thinly sliced",
       "expected": {
-        "item": "jarred roasted red peppers, thinly sliced",
+        "item": "jarred roasted red peppers",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": "drained and patted dry",
+        "note": "drained and patted dry, thinly sliced",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "⅓ cup  sun-dried tomatoes in oil (drained), thinly sliced",
       "expected": {
-        "item": "sun-dried tomatoes in oil, thinly sliced",
+        "item": "sun-dried tomatoes in oil",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": "drained",
+        "note": "drained, thinly sliced",
         "category": "Canned Goods"
       }
     },

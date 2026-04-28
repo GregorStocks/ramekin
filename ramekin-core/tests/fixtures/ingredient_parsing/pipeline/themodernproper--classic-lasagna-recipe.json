@@ -215,14 +215,14 @@
     {
       "raw": "¼ cup loosely packed fresh basil, minced (optional)",
       "expected": {
-        "item": "loosely packed fresh basil, minced",
+        "item": "loosely packed fresh basil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "optional",
+        "note": "optional, minced",
         "category": "Produce"
       }
     },

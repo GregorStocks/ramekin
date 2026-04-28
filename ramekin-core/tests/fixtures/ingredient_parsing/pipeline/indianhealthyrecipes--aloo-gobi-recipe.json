@@ -59,7 +59,7 @@
     {
       "raw": "¾ to 1 cup (2 medium)  tomatoes ((finely chopped) or ¼ cup tomato puree or 2 tbsp tomato paste mixed with 3 tbsps water)",
       "expected": {
-        "item": "tomatoes or 1/4 cup tomato puree or 2 tbsp tomato paste mixed with 3 tbsps water",
+        "item": "tomatoes",
         "measurements": [
           {
             "amount": "0.75 to 1",
@@ -70,8 +70,8 @@
             "unit": "medium"
           }
         ],
-        "note": "finely chopped",
-        "category": "Canned Goods"
+        "note": "finely chopped, or 1/4 cup tomato puree or 2 tbsp tomato paste mixed with 3 tbsps water",
+        "category": "Produce"
       }
     },
     {
@@ -273,7 +273,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "skip if you don't have, dried fenugreek leaves",
+        "note": "dried fenugreek leaves, skip if you don't have",
         "category": "Other"
       }
     },

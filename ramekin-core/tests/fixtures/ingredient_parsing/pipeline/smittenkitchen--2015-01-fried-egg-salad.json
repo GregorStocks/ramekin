@@ -222,14 +222,14 @@
     {
       "raw": "2 fresh Thai chiles, preferably green, thinly sliced (more or less to taste)",
       "expected": {
-        "item": "fresh Thai chiles, preferably green, thinly sliced",
+        "item": "fresh Thai chiles, preferably green",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "more or less to taste",
+        "note": "more or less to taste, thinly sliced",
         "category": "Other"
       }
     }

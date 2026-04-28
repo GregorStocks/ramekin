@@ -101,14 +101,14 @@
     {
       "raw": "1 small shallot, chopped (optional)",
       "expected": {
-        "item": "shallot, chopped",
+        "item": "shallot",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "optional",
+        "note": "optional, chopped",
         "category": "Produce"
       }
     },

@@ -175,18 +175,18 @@
     {
       "raw": "Cottage cheese, for serving (optional)",
       "expected": {
-        "item": "Cottage cheese, for serving",
+        "item": "Cottage cheese",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Sour cream, for serving (optional)",
       "expected": {
-        "item": "Sour cream, for serving",
+        "item": "Sour cream",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Dairy & Eggs"
       }
     }

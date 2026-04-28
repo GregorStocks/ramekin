@@ -111,14 +111,14 @@
     {
       "raw": "1 tablespoon chopped fresh Italian parsley, for garnish (optional)",
       "expected": {
-        "item": "chopped fresh Italian parsley, for garnish",
+        "item": "chopped fresh Italian parsley",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Spices & Seasonings"
       }
     }

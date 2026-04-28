@@ -27,14 +27,14 @@
     {
       "raw": "4 anchovy fillets, coarsely chopped (optional)",
       "expected": {
-        "item": "anchovy fillets, coarsely chopped",
+        "item": "anchovy fillets",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "optional, coarsely chopped",
         "category": "Meat & Seafood"
       }
     },

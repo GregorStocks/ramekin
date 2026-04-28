@@ -106,14 +106,14 @@
     {
       "raw": "1/2 yellow and 1/2 red bell pepper, seeded, de-stemmed, chopped (or sliced)",
       "expected": {
-        "item": "yellow and 1/2 red bell pepper, seeded, de-stemmed, chopped",
+        "item": "yellow and 1/2 red bell pepper, seeded, de-stemmed",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "or sliced",
+        "note": "or sliced, chopped",
         "category": "Produce"
       }
     },

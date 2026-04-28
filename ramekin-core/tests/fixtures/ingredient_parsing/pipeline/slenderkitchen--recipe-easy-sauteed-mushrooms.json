@@ -96,14 +96,14 @@
     {
       "raw": "1 tbsp fresh thyme, chopped (optional)",
       "expected": {
-        "item": "fresh thyme, chopped",
+        "item": "fresh thyme",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "optional",
+        "note": "optional, chopped",
         "category": "Produce"
       }
     }

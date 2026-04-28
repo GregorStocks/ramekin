@@ -96,14 +96,14 @@
     {
       "raw": "2 tablespoons capers (brine-packed), drained",
       "expected": {
-        "item": "capers, drained",
+        "item": "capers",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "brine-packed",
+        "note": "brine-packed, drained",
         "category": "Canned Goods"
       }
     },

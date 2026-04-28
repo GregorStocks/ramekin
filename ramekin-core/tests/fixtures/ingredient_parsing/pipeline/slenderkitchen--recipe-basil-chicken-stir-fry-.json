@@ -147,14 +147,14 @@
     {
       "raw": "1 cup fresh basil leaves, chopped (loosely packed)",
       "expected": {
-        "item": "fresh basil leaves, chopped",
+        "item": "fresh basil leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "loosely packed",
+        "note": "loosely packed, chopped",
         "category": "Produce"
       }
     }

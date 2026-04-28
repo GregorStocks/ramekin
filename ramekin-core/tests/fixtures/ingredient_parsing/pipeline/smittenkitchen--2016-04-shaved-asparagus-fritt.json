@@ -207,7 +207,7 @@
     {
       "raw": "2 to 4 ounces soft goat cheese, crumbled (to taste)",
       "expected": {
-        "item": "soft goat cheese, crumbled",
+        "item": "soft goat cheese",
         "measurements": [
           {
             "amount": "2 to 4",
@@ -218,7 +218,7 @@
             "unit": "g"
           }
         ],
-        "note": "to taste",
+        "note": "to taste, crumbled",
         "category": "Cheese"
       }
     }

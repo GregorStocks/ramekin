@@ -151,14 +151,14 @@
     {
       "raw": "1 cup coarsely chopped walnuts, toasted if desired (optional)",
       "expected": {
-        "item": "coarsely chopped walnuts, toasted if desired",
+        "item": "coarsely chopped walnuts",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "optional",
+        "note": "optional, toasted if desired",
         "category": "Nuts & Dried Fruit"
       }
     },

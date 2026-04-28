@@ -83,14 +83,14 @@
     {
       "raw": "1 teaspoon fresh chives, finely chopped (optional)",
       "expected": {
-        "item": "fresh chives, finely chopped",
+        "item": "fresh chives",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "optional",
+        "note": "optional, finely chopped",
         "category": "Produce"
       }
     }

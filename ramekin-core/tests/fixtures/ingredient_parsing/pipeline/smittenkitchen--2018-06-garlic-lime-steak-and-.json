@@ -167,7 +167,7 @@
     {
       "raw": "8 ounces (225 grams) cherry tomatoes, halved (mixed colors are lovely here)",
       "expected": {
-        "item": "cherry tomatoes, halved",
+        "item": "cherry tomatoes",
         "measurements": [
           {
             "amount": "8",
@@ -178,7 +178,7 @@
             "unit": "g"
           }
         ],
-        "note": "mixed colors are lovely here",
+        "note": "mixed colors are lovely here, halved",
         "category": "Produce"
       }
     },

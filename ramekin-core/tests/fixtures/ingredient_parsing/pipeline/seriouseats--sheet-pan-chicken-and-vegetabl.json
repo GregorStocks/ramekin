@@ -109,7 +109,7 @@
     {
       "raw": "12 ounces (340 g) carrots, peeled and cut crosswise into 3-inch lengths ( halved lengthwise if larger than 1 inch in diameter)",
       "expected": {
-        "item": "carrots, peeled and cut crosswise into 3-inch lengths",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "12",
@@ -120,7 +120,7 @@
             "unit": "g"
           }
         ],
-        "note": "halved lengthwise if larger than 1 inch in diameter",
+        "note": "halved lengthwise if larger than 1 inch in diameter, peeled and cut crosswise into 3-inch lengths",
         "category": "Produce"
       }
     },

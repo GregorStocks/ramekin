@@ -217,14 +217,14 @@
     {
       "raw": "1 tablespoon capers, drained (and rinsed, too, if salt-packed)",
       "expected": {
-        "item": "capers, drained",
+        "item": "capers",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "and rinsed, too, if salt-packed",
+        "note": "and rinsed, too, if salt-packed, drained",
         "category": "Canned Goods"
       }
     },

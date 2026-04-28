@@ -50,14 +50,14 @@
     {
       "raw": "3 1/2 cups (or more) unbleached all purpose flour, divided",
       "expected": {
-        "item": "unbleached all purpose flour, divided",
+        "item": "unbleached all purpose flour",
         "measurements": [
           {
             "amount": "3.5",
             "unit": "cup"
           }
         ],
-        "note": "or more",
+        "note": "or more, divided",
         "category": "Baking"
       }
     },

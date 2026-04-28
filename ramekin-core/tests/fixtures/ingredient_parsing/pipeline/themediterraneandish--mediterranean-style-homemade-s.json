@@ -79,28 +79,28 @@
     {
       "raw": "6 to 7&nbsp; pitted kalamata olives, chopped (optional)",
       "expected": {
-        "item": "pitted kalamata olives, chopped",
+        "item": "pitted kalamata olives",
         "measurements": [
           {
             "amount": "6 to 7",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "optional, chopped",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1 jalapeno pepper, finely chopped (optional if you want to add spice)",
       "expected": {
-        "item": "jalapeno pepper, finely chopped",
+        "item": "jalapeno pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional if you want to add spice",
+        "note": "optional if you want to add spice, finely chopped",
         "category": "Produce"
       }
     },

@@ -181,14 +181,14 @@
     {
       "raw": "1 tablespoon fresh thyme, minced (use 1 teaspoon only if dried/jarred)",
       "expected": {
-        "item": "fresh thyme, minced",
+        "item": "fresh thyme",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "use 1 teaspoon only if dried/jarred",
+        "note": "use 1 teaspoon only if dried/jarred, minced",
         "category": "Produce"
       }
     },

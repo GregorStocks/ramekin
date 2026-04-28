@@ -246,7 +246,7 @@
     {
       "raw": "1/2 cup (about 1 3/4 ounces or 50 grams) walnuts (optional), toasted, cooled, and chopped",
       "expected": {
-        "item": "walnuts, toasted, cooled, and chopped",
+        "item": "walnuts, toasted, cooled",
         "measurements": [
           {
             "amount": "0.5",
@@ -261,7 +261,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, and chopped",
         "category": "Nuts & Dried Fruit"
       }
     },

@@ -105,14 +105,14 @@
     {
       "raw": "1/4 cup finely chopped pecans or walnuts, toasted first is even tastier (optional)",
       "expected": {
-        "item": "finely chopped pecans or walnuts, toasted first is even tastier",
+        "item": "finely chopped pecans or walnuts",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "optional",
+        "note": "optional, toasted first is even tastier",
         "category": "Nuts & Dried Fruit"
       }
     }

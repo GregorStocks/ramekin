@@ -163,14 +163,14 @@
     {
       "raw": "1/2-1   cup   chopped pecans (optional) or 1/2-1   cup    walnuts (optional)",
       "expected": {
-        "item": "chopped pecans or 1/2-1 cup walnuts",
+        "item": "chopped pecans",
         "measurements": [
           {
             "amount": "0.5-1",
             "unit": "cup"
           }
         ],
-        "note": "optional, optional",
+        "note": "optional, optional, or 1/2-1 cup walnuts",
         "category": "Nuts & Dried Fruit"
       }
     }

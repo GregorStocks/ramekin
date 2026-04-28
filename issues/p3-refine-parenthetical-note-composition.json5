@@ -10,8 +10,8 @@ Example from the curated edge fixture:\n\
 \n\
   - Raw: `4 cups vegetable broth (for dried but soaked chickpeas), 1 1/2 cups \
 vegetable broth (for cooked chickpeas)`\n\
-  - Current note after #500 follow-up: `for cooked chickpeas, for dried but \
-soaked chickpeas; or 1 1/2 cup`\n\
+  - Current note after #500 follow-up: `for dried but soaked chickpeas, for \
+cooked chickpeas; or 1 1/2 cup`\n\
 \n\
 The parser should preserve the conditional association more clearly, ideally \
 keeping each note fragment next to the quantity it qualifies. A better result \

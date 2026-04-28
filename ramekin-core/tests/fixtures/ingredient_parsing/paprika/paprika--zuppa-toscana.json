@@ -186,7 +186,7 @@
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "optional, plus Grated Parmigiano-Reggiano, for serving",
         "category": "Cheese"
       }
     },
@@ -211,7 +211,7 @@
     {
       "raw": "1 russet potato (12 ounces; 340 g), peeled and cut into irregular chunks about 1/2 inch thick (read about this potato cutting method for more details)",
       "expected": {
-        "item": "russet potato, peeled and cut into irregular chunks about 1/2 inch thick",
+        "item": "russet potato",
         "measurements": [
           {
             "amount": "1",
@@ -226,7 +226,7 @@
             "unit": "g"
           }
         ],
-        "note": "read about this potato cutting method for more details",
+        "note": "read about this potato cutting method for more details, peeled and cut into irregular chunks about 1/2 inch thick",
         "category": "Produce"
       }
     },

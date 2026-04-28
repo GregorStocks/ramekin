@@ -110,7 +110,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, plus 2 tablespoons for whipped cream",
         "category": "Baking"
       }
     },
@@ -194,9 +194,9 @@
     {
       "raw": "Chocolate shavings, for garnish (optional)",
       "expected": {
-        "item": "Chocolate shavings, for garnish",
+        "item": "Chocolate shavings",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Other"
       }
     }

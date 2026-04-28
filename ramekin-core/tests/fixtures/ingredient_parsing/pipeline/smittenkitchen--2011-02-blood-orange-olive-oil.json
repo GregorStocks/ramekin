@@ -180,18 +180,18 @@
     {
       "raw": "Honey-blood orange compote, for serving (optional, below)",
       "expected": {
-        "item": "Honey-blood orange compote, for serving",
+        "item": "Honey-blood orange compote",
         "measurements": [],
-        "note": "optional, below",
+        "note": "optional, below, for serving",
         "category": "Produce"
       }
     },
     {
       "raw": "Whipped cream, for serving (optional)",
       "expected": {
-        "item": "Whipped cream, for serving",
+        "item": "Whipped cream",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Dairy & Eggs"
       }
     }

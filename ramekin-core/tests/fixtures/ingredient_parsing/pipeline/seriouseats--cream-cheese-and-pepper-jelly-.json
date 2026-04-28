@@ -103,18 +103,18 @@
     {
       "raw": "Thinly sliced scallions, for garnish (optional)",
       "expected": {
-        "item": "Thinly sliced scallions, for garnish",
+        "item": "Thinly sliced scallions",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Produce"
       }
     },
     {
       "raw": "Toasted white sesame seeds, for garnish (optional)",
       "expected": {
-        "item": "Toasted white sesame seeds, for garnish",
+        "item": "Toasted white sesame seeds",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Spices & Seasonings"
       }
     }

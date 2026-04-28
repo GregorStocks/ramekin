@@ -142,14 +142,14 @@
     {
       "raw": "2 hard-boiled eggs, peeled and thinly sliced (optional)",
       "expected": {
-        "item": "hard-boiled eggs, peeled and thinly sliced",
+        "item": "hard-boiled eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "optional, peeled and thinly sliced",
         "category": "Dairy & Eggs"
       }
     },

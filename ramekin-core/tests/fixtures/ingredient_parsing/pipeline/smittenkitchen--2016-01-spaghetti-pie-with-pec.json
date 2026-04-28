@@ -93,7 +93,7 @@
     {
       "raw": "1/2 pound broccoli rabe, toughest stems saved for another use, chopped into few-inch segments (optional)",
       "expected": {
-        "item": "broccoli rabe, toughest stems saved for another use, chopped into few-inch segments",
+        "item": "broccoli rabe, toughest stems saved for another use",
         "measurements": [
           {
             "amount": "0.5",
@@ -104,7 +104,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, chopped into few-inch segments",
         "category": "Produce"
       }
     },

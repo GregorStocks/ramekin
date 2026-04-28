@@ -267,9 +267,9 @@
     {
       "raw": "Toppings: shredded cheese (optional), sour cream (or cashew cream), hot sauce, sliced avocado or pickled jalapenos (optional), crushed tortilla chips",
       "expected": {
-        "item": "Toppings: shredded cheese, sour cream, hot sauce, sliced avocado or pickled jalapenos, crushed tortilla chips",
+        "item": "Toppings: shredded cheese, sour cream, hot sauce, sliced avocado or pickled jalapenos",
         "measurements": [],
-        "note": "or cashew cream, optional, optional",
+        "note": "optional, or cashew cream, optional, crushed tortilla chips",
         "category": "Dairy & Eggs"
       }
     }

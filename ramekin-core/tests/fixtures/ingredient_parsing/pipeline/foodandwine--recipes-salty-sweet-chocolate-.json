@@ -5,7 +5,7 @@
     {
       "raw": "14 ounces graham crackers (28 whole crackers), finely ground",
       "expected": {
-        "item": "graham crackers, finely ground",
+        "item": "graham crackers",
         "measurements": [
           {
             "amount": "14",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "28 whole crackers",
+        "note": "28 whole crackers, finely ground",
         "category": "Snacks"
       }
     },

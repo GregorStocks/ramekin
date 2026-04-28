@@ -115,14 +115,14 @@
     {
       "raw": "1 1/2 cup dried fruit, or a mix of dried fruit (I used chopped apricots, cranberries and raisins)",
       "expected": {
-        "item": "dried fruit, or a mix of dried fruit",
+        "item": "dried fruit",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "I used chopped apricots, cranberries and raisins",
+        "note": "I used chopped apricots, cranberries and raisins, or a mix of dried fruit",
         "category": "Nuts & Dried Fruit"
       }
     }

@@ -5,28 +5,28 @@
     {
       "raw": "1/4 cup Kosher or other high-quality salt, for garnish (optional)",
       "expected": {
-        "item": "Kosher or other high-quality salt, for garnish",
+        "item": "Kosher or other high-quality salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "3 teaspoons Tajín seasoning, for garnish (optional)",
       "expected": {
-        "item": "Tajín seasoning, for garnish",
+        "item": "Tajín seasoning",
         "measurements": [
           {
             "amount": "3",
             "unit": "tsp"
           }
         ],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Spices & Seasonings"
       }
     },
@@ -42,14 +42,14 @@
     {
       "raw": "1 jalapeño, sliced into rounds (use more or less, depending on how spicy you prefer it)",
       "expected": {
-        "item": "jalapeño, sliced into rounds",
+        "item": "jalapeño",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "use more or less, depending on how spicy you prefer it",
+        "note": "use more or less, depending on how spicy you prefer it, sliced into rounds",
         "category": "Produce"
       }
     },

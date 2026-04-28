@@ -199,9 +199,9 @@
     {
       "raw": "A few tablespoons chopped fresh parsley, for garnish (optional)",
       "expected": {
-        "item": "A few tablespoons chopped fresh parsley, for garnish",
+        "item": "A few tablespoons chopped fresh parsley",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Produce"
       }
     }

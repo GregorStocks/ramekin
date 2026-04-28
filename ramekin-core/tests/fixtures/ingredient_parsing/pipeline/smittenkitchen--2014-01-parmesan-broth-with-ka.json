@@ -142,14 +142,14 @@
     {
       "raw": "1 1/4 cups cooked white beans (from about 1/4 pound dried), with their cooking liquid if fresh (usually about 1 1/2 cups) (updated measurement)",
       "expected": {
-        "item": "cooked white beans, with their cooking liquid if fresh",
+        "item": "cooked white beans",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": "usually about 1 1/2 cups, updated measurement, from about 1/4 pound dried",
+        "note": "from about 1/4 pound dried, usually about 1 1/2 cups, updated measurement, with their cooking liquid if fresh",
         "category": "Canned Goods"
       }
     },

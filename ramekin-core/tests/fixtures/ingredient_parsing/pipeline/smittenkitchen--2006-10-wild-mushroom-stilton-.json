@@ -290,14 +290,14 @@
     {
       "raw": "1 large egg yolk, whisked with 1/2 teaspoon water (optional)",
       "expected": {
-        "item": "egg yolk, whisked with 1/2 teaspoon water",
+        "item": "egg yolk",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "optional",
+        "note": "optional, whisked with 1/2 teaspoon water",
         "category": "Dairy & Eggs"
       }
     }

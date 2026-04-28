@@ -55,28 +55,28 @@
     {
       "raw": "1/2 teaspoon caraway seeds or about half as much, ground (I used seeds but ground them first)",
       "expected": {
-        "item": "caraway seeds or about half as much, ground",
+        "item": "caraway seeds or about half as much",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "I used seeds but ground them first",
+        "note": "I used seeds but ground them first, ground",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "3/4 teaspoon cumin seeds or about half as much, ground (I used the seed but ground them first, again)",
       "expected": {
-        "item": "cumin seeds or about half as much, ground",
+        "item": "cumin seeds or about half as much",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
           }
         ],
-        "note": "I used the seed but ground them first, again",
+        "note": "I used the seed but ground them first, again, ground",
         "category": "Spices & Seasonings"
       }
     },

@@ -157,7 +157,7 @@
     {
       "raw": "1/2 cup (about 85 grams) blueberries, fresh or frozen (if frozen, do not defrost first as it tends to muddle in the batter)",
       "expected": {
-        "item": "blueberries, fresh or frozen",
+        "item": "blueberries",
         "measurements": [
           {
             "amount": "0.5",
@@ -168,7 +168,7 @@
             "unit": "g"
           }
         ],
-        "note": "if frozen, do not defrost first as it tends to muddle in the batter",
+        "note": "if frozen, do not defrost first as it tends to muddle in the batter, fresh or frozen",
         "category": "Produce"
       }
     },

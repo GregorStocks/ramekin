@@ -164,7 +164,7 @@
     {
       "raw": "1 pound ripe prune plums or greengages, halved, pitted, and halved again (i.e. quartered)",
       "expected": {
-        "item": "ripe prune plums or greengages, halved, pitted, and halved again",
+        "item": "ripe prune plums or greengages, halved, pitted",
         "measurements": [
           {
             "amount": "1",
@@ -175,7 +175,7 @@
             "unit": "g"
           }
         ],
-        "note": "i.e. quartered",
+        "note": "i.e. quartered, and halved again",
         "category": "Nuts & Dried Fruit"
       }
     },

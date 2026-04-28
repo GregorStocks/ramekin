@@ -107,7 +107,7 @@
     {
       "raw": "6 ounces kale or spinach, chopped (frozen is ok)",
       "expected": {
-        "item": "kale or spinach, chopped",
+        "item": "kale or spinach",
         "measurements": [
           {
             "amount": "6",
@@ -118,7 +118,7 @@
             "unit": "g"
           }
         ],
-        "note": "frozen is ok",
+        "note": "frozen is ok, chopped",
         "category": "Produce"
       }
     },

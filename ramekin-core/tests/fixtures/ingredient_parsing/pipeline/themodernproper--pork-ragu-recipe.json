@@ -217,27 +217,27 @@
     {
       "raw": "Cooked pappardelle, for serving (optional)",
       "expected": {
-        "item": "Cooked pappardelle, for serving",
+        "item": "Cooked pappardelle",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "Polenta, for serving (optional)",
       "expected": {
-        "item": "Polenta, for serving",
+        "item": "Polenta",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "freshly grated Parmesan cheese, for serving (optional)",
       "expected": {
-        "item": "freshly grated Parmesan cheese, for serving",
+        "item": "freshly grated Parmesan cheese",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Cheese"
       }
     }

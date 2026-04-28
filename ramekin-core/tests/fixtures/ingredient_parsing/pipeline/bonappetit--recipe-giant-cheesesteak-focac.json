@@ -133,14 +133,18 @@
     {
       "raw": "5 Tbsp. (or more) vegetable oil, divided",
       "expected": {
-        "item": "vegetable oil, divided",
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "68",
+            "unit": "g"
           }
         ],
-        "note": "or more",
+        "note": "or more, divided",
         "category": "Oils & Vinegars"
       }
     },

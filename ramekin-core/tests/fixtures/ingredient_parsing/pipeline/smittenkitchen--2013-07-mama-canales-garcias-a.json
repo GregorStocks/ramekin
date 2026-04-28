@@ -65,14 +65,14 @@
     {
       "raw": "1 small jalapeño, seeded and finely chopped (optional)",
       "expected": {
-        "item": "jalapeño, seeded and finely chopped",
+        "item": "jalapeño",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "optional",
+        "note": "optional, seeded and finely chopped",
         "category": "Produce"
       }
     },

@@ -111,14 +111,14 @@
     {
       "raw": "1 fresh hot green chili, chopped (more or less to taste)",
       "expected": {
-        "item": "fresh hot green chili, chopped",
+        "item": "fresh hot green chili",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "more or less to taste",
+        "note": "more or less to taste, chopped",
         "category": "Other"
       }
     },

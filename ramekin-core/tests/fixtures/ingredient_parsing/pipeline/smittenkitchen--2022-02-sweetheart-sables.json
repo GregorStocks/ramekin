@@ -77,7 +77,7 @@
     {
       "raw": "1 cup (8 ounces or 225 grams) unsalted butter, diced (cold is fine, at room temp if using a handmixer)",
       "expected": {
-        "item": "unsalted butter, diced",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
@@ -92,7 +92,7 @@
             "unit": "g"
           }
         ],
-        "note": "cold is fine, at room temp if using a handmixer",
+        "note": "cold is fine, at room temp if using a handmixer, diced",
         "category": "Dairy & Eggs"
       }
     },

@@ -159,14 +159,14 @@
     {
       "raw": "1 cup shredded sweetened coconut, toasted (toasting is optional)",
       "expected": {
-        "item": "shredded sweetened coconut, toasted",
+        "item": "shredded sweetened coconut",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "toasting is optional",
+        "note": "toasting is optional, toasted",
         "category": "Produce"
       }
     },

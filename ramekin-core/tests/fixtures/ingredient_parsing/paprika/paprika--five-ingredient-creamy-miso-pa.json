@@ -64,7 +64,7 @@
     {
       "raw": "4 ounces Parmesan, finely grated (1 packed cup)",
       "expected": {
-        "item": "Parmesan, finely grated",
+        "item": "Parmesan",
         "measurements": [
           {
             "amount": "4",
@@ -75,16 +75,16 @@
             "unit": "g"
           }
         ],
-        "note": "1 packed cup",
+        "note": "1 packed cup, finely grated",
         "category": "Cheese"
       }
     },
     {
       "raw": "Kizami nori, furikake or thinly sliced seaweed snacks, for garnish (optional)",
       "expected": {
-        "item": "Kizami nori, furikake or thinly sliced seaweed snacks, for garnish",
+        "item": "Kizami nori, furikake or thinly sliced seaweed snacks",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Other"
       }
     }

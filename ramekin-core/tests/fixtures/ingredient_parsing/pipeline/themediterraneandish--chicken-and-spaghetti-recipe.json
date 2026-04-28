@@ -192,7 +192,7 @@
     {
       "raw": "2.5 lb grape or cherry tomatoes, halved (you can leave some whole)",
       "expected": {
-        "item": "grape or cherry tomatoes, halved",
+        "item": "grape or cherry tomatoes",
         "measurements": [
           {
             "amount": "2.5",
@@ -203,7 +203,7 @@
             "unit": "g"
           }
         ],
-        "note": "you can leave some whole",
+        "note": "you can leave some whole, halved",
         "category": "Produce"
       }
     },
@@ -302,14 +302,14 @@
     {
       "raw": "2 tbsp toasted pine nuts, for garnish (optional)",
       "expected": {
-        "item": "toasted pine nuts, for garnish",
+        "item": "toasted pine nuts",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Nuts & Dried Fruit"
       }
     }

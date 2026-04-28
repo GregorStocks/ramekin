@@ -283,7 +283,7 @@
     {
       "raw": "1/2 teaspoon almond extract or 2 teaspoons (10 ml) brandy (optional)",
       "expected": {
-        "item": "almond extract or 2 teaspoons brandy",
+        "item": "almond extract",
         "measurements": [
           {
             "amount": "0.5",
@@ -292,9 +292,13 @@
           {
             "amount": "10",
             "unit": "ml"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, or 2 teaspoons brandy",
         "category": "Baking"
       }
     }

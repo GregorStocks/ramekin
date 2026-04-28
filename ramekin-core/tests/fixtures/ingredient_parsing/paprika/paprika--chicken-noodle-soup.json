@@ -128,14 +128,14 @@
     {
       "raw": "1 medium parsnip, diced (1/3-inch) (optional)",
       "expected": {
-        "item": "parsnip, diced",
+        "item": "parsnip",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "1/3-inch, optional",
+        "note": "1/3-inch, optional, diced",
         "category": "Produce"
       }
     },

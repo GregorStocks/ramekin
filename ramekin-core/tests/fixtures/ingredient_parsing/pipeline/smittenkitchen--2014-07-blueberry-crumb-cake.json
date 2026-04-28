@@ -262,7 +262,7 @@
     {
       "raw": "1/2 cup (55 grams) walnuts, chopped medium fine (optional)",
       "expected": {
-        "item": "walnuts, chopped medium fine",
+        "item": "walnuts",
         "measurements": [
           {
             "amount": "0.5",
@@ -273,7 +273,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, chopped medium fine",
         "category": "Nuts & Dried Fruit"
       }
     },

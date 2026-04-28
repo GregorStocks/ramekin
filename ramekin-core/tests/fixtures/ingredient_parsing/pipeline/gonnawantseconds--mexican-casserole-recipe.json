@@ -93,14 +93,14 @@
     {
       "raw": "3 cups Jack cheese, divided (shredded)",
       "expected": {
-        "item": "Jack cheese, divided",
+        "item": "Jack cheese",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": "shredded",
+        "note": "shredded, divided",
         "category": "Cheese"
       }
     },

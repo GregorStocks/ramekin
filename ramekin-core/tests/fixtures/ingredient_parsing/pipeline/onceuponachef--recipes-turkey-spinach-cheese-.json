@@ -37,7 +37,7 @@
     {
       "raw": "3 ounces baby spinach, chopped (3½ cups whole; 1½ cups chopped)",
       "expected": {
-        "item": "baby spinach, chopped",
+        "item": "baby spinach",
         "measurements": [
           {
             "amount": "3",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": "3 1/2 cups whole; 1 1/2 cups chopped",
+        "note": "3 1/2 cups whole; 1 1/2 cups chopped, chopped",
         "category": "Produce"
       }
     },

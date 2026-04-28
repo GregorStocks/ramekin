@@ -251,14 +251,14 @@
     {
       "raw": "1 Fresno chile pepper, thinly sliced&nbsp;(optional)",
       "expected": {
-        "item": "Fresno chile pepper, thinly sliced",
+        "item": "Fresno chile pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "optional, thinly sliced",
         "category": "Spices & Seasonings"
       }
     }

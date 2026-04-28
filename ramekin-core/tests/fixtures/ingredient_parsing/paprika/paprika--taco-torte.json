@@ -56,14 +56,14 @@
     {
       "raw": "1 fresh chile pepper, chopped small (optional)",
       "expected": {
-        "item": "fresh chile pepper, chopped small",
+        "item": "fresh chile pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "optional, chopped small",
         "category": "Spices & Seasonings"
       }
     },
@@ -249,10 +249,10 @@
     {
       "raw": "Chopped fresh cilantro, sour cream and/or salsa for serving (optional)",
       "expected": {
-        "item": "Chopped fresh cilantro, sour cream and/or salsa for serving",
+        "item": "Chopped fresh cilantro",
         "measurements": [],
-        "note": "optional",
-        "category": "Dairy & Eggs"
+        "note": "optional, sour cream and/or salsa for serving",
+        "category": "Produce"
       }
     }
   ]

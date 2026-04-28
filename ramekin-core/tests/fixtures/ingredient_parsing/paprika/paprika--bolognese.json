@@ -61,7 +61,7 @@
     {
       "raw": "2 ounces pancetta, diced (optional) or 2 to 3 tablespoons olive oil",
       "expected": {
-        "item": "pancetta, diced or 2 to 3 tablespoons olive oil",
+        "item": "pancetta",
         "measurements": [
           {
             "amount": "2",
@@ -72,8 +72,8 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
-        "category": "Oils & Vinegars"
+        "note": "optional, diced or 2 to 3 tablespoons olive oil",
+        "category": "Meat & Seafood"
       }
     },
     {

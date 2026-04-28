@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds Russet potatoes, boiled, peeled and finely diced (1/4- to 1/2-inch for this and all chopped ingredients)",
       "expected": {
-        "item": "Russet potatoes, boiled, peeled and finely diced",
+        "item": "Russet potatoes, boiled",
         "measurements": [
           {
             "amount": "2",
@@ -16,21 +16,21 @@
             "unit": "g"
           }
         ],
-        "note": "1/4- to 1/2-inch for this and all chopped ingredients",
+        "note": "1/4- to 1/2-inch for this and all chopped ingredients, peeled and finely diced",
         "category": "Produce"
       }
     },
     {
       "raw": "2 eggs, hard-boiled, finely diced (optional)",
       "expected": {
-        "item": "eggs, hard-boiled, finely diced",
+        "item": "eggs, hard-boiled",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "optional, finely diced",
         "category": "Dairy & Eggs"
       }
     },

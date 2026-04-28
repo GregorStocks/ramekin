@@ -30,21 +30,21 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, plus more to taste",
         "category": "Baking"
       }
     },
     {
       "raw": "1 lemon, sliced (optional)",
       "expected": {
-        "item": "lemon, sliced",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "optional, sliced",
         "category": "Produce"
       }
     }

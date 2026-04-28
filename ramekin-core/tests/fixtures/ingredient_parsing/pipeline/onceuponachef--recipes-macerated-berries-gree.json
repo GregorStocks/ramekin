@@ -5,7 +5,7 @@
     {
       "raw": "1 lb strawberries, hulled and halved (or quartered if very large)",
       "expected": {
-        "item": "strawberries, hulled and halved",
+        "item": "strawberries",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "or quartered if very large",
+        "note": "or quartered if very large, hulled and halved",
         "category": "Produce"
       }
     },

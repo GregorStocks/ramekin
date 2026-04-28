@@ -101,21 +101,21 @@
     {
       "raw": "2 tablespoons flat-leaf parsley, chopped (optional)",
       "expected": {
-        "item": "flat-leaf parsley, chopped",
+        "item": "flat-leaf parsley",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "optional",
+        "note": "optional, chopped",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/2 pound ball of mozzarella, sliced (this is a great place to use the really fresh stuff, if you can get it)",
       "expected": {
-        "item": "ball of mozzarella, sliced",
+        "item": "ball of mozzarella",
         "measurements": [
           {
             "amount": "0.5",
@@ -126,7 +126,7 @@
             "unit": "g"
           }
         ],
-        "note": "this is a great place to use the really fresh stuff, if you can get it",
+        "note": "this is a great place to use the really fresh stuff, if you can get it, sliced",
         "category": "Cheese"
       }
     }

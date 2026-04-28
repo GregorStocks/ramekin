@@ -217,7 +217,7 @@
     {
       "raw": "1 pound grilled chicken thighs, thinly sliced (optional, see Note)",
       "expected": {
-        "item": "grilled chicken thighs, thinly sliced",
+        "item": "grilled chicken thighs",
         "measurements": [
           {
             "amount": "1",
@@ -228,7 +228,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional, see Note",
+        "note": "optional, see Note, thinly sliced",
         "category": "Meat & Seafood"
       }
     }

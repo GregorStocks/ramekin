@@ -153,14 +153,14 @@
     {
       "raw": "1 Parmesan rind or 1 tablespoon nutritional yeast (optional)",
       "expected": {
-        "item": "Parmesan rind or 1 tablespoon nutritional yeast",
+        "item": "Parmesan rind",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "optional, or 1 tablespoon nutritional yeast",
         "category": "Cheese"
       }
     },

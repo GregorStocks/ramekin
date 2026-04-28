@@ -214,7 +214,7 @@
     {
       "raw": "2 tablespoons (5 grams) roughly chopped fresh flat-leaf parsley, for garnish (optional)",
       "expected": {
-        "item": "roughly chopped fresh flat-leaf parsley, for garnish",
+        "item": "roughly chopped fresh flat-leaf parsley",
         "measurements": [
           {
             "amount": "2",
@@ -225,7 +225,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Spices & Seasonings"
       }
     }

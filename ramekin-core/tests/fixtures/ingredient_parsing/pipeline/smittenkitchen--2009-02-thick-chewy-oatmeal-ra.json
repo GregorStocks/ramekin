@@ -185,7 +185,7 @@
     {
       "raw": "1/2 cup walnuts (65 grams), chopped (optional)",
       "expected": {
-        "item": "walnuts, chopped",
+        "item": "walnuts",
         "measurements": [
           {
             "amount": "0.5",
@@ -196,7 +196,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, chopped",
         "category": "Nuts & Dried Fruit"
       }
     }
