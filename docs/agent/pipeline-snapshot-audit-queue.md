@@ -102,7 +102,7 @@ currently parse. Audit them ahead of the round-robin queue below.
 - [x] 078. `seriouseats-com_soueupa-alla-valpellinentze-savoy-cabbage-soup-recipe-11831033.json` (seriouseats-com) - 2026-04-27: no issue
 - [x] 079. `smittenkitchen-com_2023-05-smashed-chicken-meatball-sliders.json` (smittenkitchen-com) - 2026-04-27: no issue
 - [x] 080. `americastestkitchen-com_recipes-12228-ultracreamy-hummus.json` (americastestkitchen-com) - 2026-04-27: example added to p3-parenthetical-quantities-create-junk-measurements
-- [ ] 081. `cooking-nytimes-com_recipes-8357-spaghetti-with-fried-eggs.json` (cooking-nytimes-com)
+- [x] 081. `cooking-nytimes-com_recipes-8357-spaghetti-with-fried-eggs.json` (cooking-nytimes-com) - 2026-04-28: no issue
 - [ ] 082. `seriouseats-com_the-best-yorkshire-pudding-popover-recipe.json` (seriouseats-com)
 - [ ] 083. `smittenkitchen-com_2014-02-dijon-and-cognac-beef-stew.json` (smittenkitchen-com)
 - [ ] 084. `americastestkitchen-com_recipes-17210-creamy-garlic-confit-mashed-potatoes.json` (americastestkitchen-com)
