@@ -3114,6 +3114,10 @@ const IGNORED_LINE_PATTERNS: &[&str] = &[
     "you will need",
     "you'll need",
     "ingredients list",
+    // Bare list/section labels that leak through when source markup omits a
+    // trailing colon. Matched case-insensitively, exact whole-line only.
+    "ingredients",
+    "serve with",
 ];
 
 /// Bare list/section labels that leak through `detect_section_header` when the
