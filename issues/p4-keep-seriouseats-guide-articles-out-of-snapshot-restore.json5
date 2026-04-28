@@ -1,0 +1,23 @@
+{
+  "title": "Keep Serious Eats guide articles out of snapshot restores",
+  "description": "While restoring URLs pruned from \
+`data/pipeline-snapshot-urls.json` in #482, `make pipeline` failed on \
+`https://www.seriouseats.com/food-lab-complete-guide-to-sous-vide-steak` with \
+`recipeIngredient (empty)`. This is a guide article, not a concrete recipe \
+page, and commit #498 already removed a Serious Eats guide from the corpus for \
+the same reason.\n\
+\n\
+Before re-adding this URL or similar guide pages to snapshot coverage, decide \
+whether they should be represented as unsupported/non-recipe URLs, replaced \
+with concrete recipe URLs, or filtered out when deriving snapshot candidates \
+from Paprika exports.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "extraction",
+    "pipeline",
+  ],
+  "created_at": "2026-04-28T11:35:08-07:00",
+  "updated_at": "2026-04-28T11:35:08-07:00",
+}
