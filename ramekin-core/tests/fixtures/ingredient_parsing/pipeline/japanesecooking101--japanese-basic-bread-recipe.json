@@ -5,14 +5,18 @@
     {
       "raw": "200 ml milk (lukewarm)",
       "expected": {
-        "item": "milk (lukewarm)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "200",
             "unit": "ml"
+          },
+          {
+            "amount": "207",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "lukewarm",
         "category": "Dairy & Eggs"
       }
     },

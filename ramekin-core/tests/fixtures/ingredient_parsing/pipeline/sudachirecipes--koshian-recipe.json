@@ -28,14 +28,14 @@
     {
       "raw": "175 g sugar (I use 60% white sugar, 40% light brown sugar)",
       "expected": {
-        "item": "sugar (I use 60% white sugar, 40% light brown sugar)",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "175",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use 60% white sugar, 40% light brown sugar",
         "category": "Baking"
       }
     },

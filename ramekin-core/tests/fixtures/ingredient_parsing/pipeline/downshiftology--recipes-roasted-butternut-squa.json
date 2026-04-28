@@ -60,15 +60,15 @@
     {
       "raw": "1 cup sprouts ((I used onion sprouts))",
       "expected": {
-        "item": "sprouts (I used onion sprouts)",
+        "item": "sprouts",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "I used onion sprouts",
+        "category": "Other"
       }
     },
     {

@@ -5,14 +5,14 @@
     {
       "raw": "3 cups vinegar (distilled white vinegar or white wine vinegar will work )",
       "expected": {
-        "item": "vinegar (distilled white vinegar or white wine vinegar will work",
+        "item": "vinegar",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "distilled white vinegar or white wine vinegar will work",
         "category": "Oils & Vinegars"
       }
     },
@@ -171,9 +171,9 @@
     {
       "raw": "Few sprigs of fresh dill (to your liking)",
       "expected": {
-        "item": "Few sprigs of fresh dill (to your liking)",
+        "item": "Few sprigs of fresh dill",
         "measurements": [],
-        "note": null,
+        "note": "to your liking",
         "category": "Produce"
       }
     }

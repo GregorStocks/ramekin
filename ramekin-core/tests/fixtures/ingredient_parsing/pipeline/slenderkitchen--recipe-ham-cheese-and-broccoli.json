@@ -19,14 +19,14 @@
     {
       "raw": "1/2 cup skim milk (or milk of choice)",
       "expected": {
-        "item": "skim milk (or milk of choice)",
+        "item": "skim milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or milk of choice",
         "category": "Dairy & Eggs"
       }
     },

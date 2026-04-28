@@ -19,14 +19,18 @@
     {
       "raw": "4 cups water (see notes)",
       "expected": {
-        "item": "water (see notes)",
+        "item": "water",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "948",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Other"
       }
     },
@@ -74,10 +78,10 @@
     {
       "raw": "Sweetener (honey, maple syrup, brown sugar)",
       "expected": {
-        "item": "Sweetener (honey, maple syrup, brown sugar)",
+        "item": "Sweetener",
         "measurements": [],
-        "note": null,
-        "category": "Baking"
+        "note": "honey, maple syrup, brown sugar",
+        "category": "Other"
       }
     },
     {
@@ -92,19 +96,19 @@
     {
       "raw": "Nut Butter (peanut butter, almond butter)",
       "expected": {
-        "item": "Nut Butter (peanut butter, almond butter)",
+        "item": "Nut Butter",
         "measurements": [],
-        "note": null,
+        "note": "peanut butter, almond butter",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "Milk (almond milk, oat milk, soy milk, cow milk, etc.)",
       "expected": {
-        "item": "Milk (almond milk, oat milk, soy milk, cow milk, etc.)",
+        "item": "Milk",
         "measurements": [],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "almond milk, oat milk, soy milk, cow milk, etc.",
+        "category": "Dairy & Eggs"
       }
     },
     {

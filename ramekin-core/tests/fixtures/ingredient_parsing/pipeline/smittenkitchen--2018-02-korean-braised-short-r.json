@@ -61,14 +61,14 @@
     {
       "raw": "1/4 cup mirin (sweet rice wine) or apple juice",
       "expected": {
-        "item": "mirin (sweet rice wine) or apple juice",
+        "item": "mirin or apple juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "sweet rice wine",
         "category": "Produce"
       }
     },
@@ -162,14 +162,14 @@
     {
       "raw": "1 tablespoon toasted sesame seeds (to garnish)",
       "expected": {
-        "item": "toasted sesame seeds (to garnish)",
+        "item": "toasted sesame seeds",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "to garnish",
         "category": "Spices & Seasonings"
       }
     },
@@ -183,7 +183,7 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced on the diagonal (to garnish)",
+        "note": "to garnish, thinly sliced on the diagonal",
         "category": "Produce"
       }
     }

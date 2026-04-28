@@ -45,14 +45,14 @@
     {
       "raw": "1/4 cup raspberry preserves  (or your favorite flavor)",
       "expected": {
-        "item": "raspberry preserves  (or your favorite flavor)",
+        "item": "raspberry preserves",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or your favorite flavor",
         "category": "Produce"
       }
     }

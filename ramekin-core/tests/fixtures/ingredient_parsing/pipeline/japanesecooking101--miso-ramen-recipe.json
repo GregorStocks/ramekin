@@ -265,10 +265,10 @@
     {
       "raw": "Yakibuta (roast pork)",
       "expected": {
-        "item": "Yakibuta (roast pork)",
+        "item": "Yakibuta",
         "measurements": [],
-        "note": null,
-        "category": "Meat & Seafood"
+        "note": "roast pork",
+        "category": "Other"
       }
     },
     {
@@ -283,19 +283,19 @@
     {
       "raw": "green onions (cut finely)",
       "expected": {
-        "item": "green onions (cut finely)",
+        "item": "green onions",
         "measurements": [],
-        "note": null,
+        "note": "cut finely",
         "category": "Produce"
       }
     },
     {
       "raw": "corn (pan-fried with butter and salt)",
       "expected": {
-        "item": "corn (pan-fried with butter and salt)",
+        "item": "corn",
         "measurements": [],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "pan-fried with butter and salt",
+        "category": "Other"
       }
     }
   ]

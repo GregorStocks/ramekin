@@ -23,7 +23,7 @@
     {
       "raw": "1 (10 ounce) can diced tomatoes with green chile peppers (such as RO*TEL®), drained",
       "expected": {
-        "item": "diced tomatoes with green chile peppers (such as RO*TEL®)",
+        "item": "diced tomatoes with green chile peppers",
         "measurements": [
           {
             "amount": "1",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "drained",
+        "note": "such as RO*TEL®, drained",
         "category": "Canned Goods"
       }
     },
@@ -67,7 +67,7 @@
     {
       "raw": "1 (8 ounce) package processed cheese (such as Velveeta®), cubed",
       "expected": {
-        "item": "processed cheese (such as Velveeta®)",
+        "item": "processed cheese",
         "measurements": [
           {
             "amount": "1",
@@ -82,7 +82,7 @@
             "unit": "g"
           }
         ],
-        "note": "cubed",
+        "note": "such as Velveeta®, cubed",
         "category": "Cheese"
       }
     }

@@ -81,14 +81,14 @@
     {
       "raw": "1 teaspoon unflavored gelatin (from a 1/4-ounce or 7-gram envelope, will be just about half an envelope)",
       "expected": {
-        "item": "unflavored gelatin (from a 1/4-ounce or 7-gram envelope, will be just about half an envelope)",
+        "item": "unflavored gelatin",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "from a 1/4-ounce or 7-gram envelope, will be just about half an envelope",
         "category": "Baking"
       }
     },
@@ -167,14 +167,18 @@
     {
       "raw": "1 cup dulce de leche (12 1/2-ounce or 355-gram can) (recipe follows)",
       "expected": {
-        "item": "dulce de leche (recipe follows)",
+        "item": "dulce de leche",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "304",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "12 1/2-ounce or 355-gram can, recipe follows",
         "category": "Other"
       }
     },
@@ -190,7 +194,7 @@
     {
       "raw": "3 ounces (85 grams) fine-quality bittersweet chocolate (not unsweetened), coarsely chopped",
       "expected": {
-        "item": "fine-quality bittersweet chocolate (not unsweetened)",
+        "item": "fine-quality bittersweet chocolate",
         "measurements": [
           {
             "amount": "3",
@@ -201,7 +205,7 @@
             "unit": "g"
           }
         ],
-        "note": "coarsely chopped",
+        "note": "not unsweetened, coarsely chopped",
         "category": "Other"
       }
     },

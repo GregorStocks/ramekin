@@ -61,14 +61,14 @@
     {
       "raw": "3 cloves of garlic (pressed)",
       "expected": {
-        "item": "garlic (pressed)",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "3",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "pressed",
         "category": "Produce"
       }
     },

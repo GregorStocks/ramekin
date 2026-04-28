@@ -5,7 +5,7 @@
     {
       "raw": "2  cut-up chickens, (2½ lbs (1.1 k) each, quartered, bone-in, skin-on (see note))",
       "expected": {
-        "item": "cut-up chickens each, quartered, bone-in, skin-on (see note)",
+        "item": "cut-up chickens each, quartered, bone-in, skin-on",
         "measurements": [
           {
             "amount": "2",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Meat & Seafood"
       }
     },
@@ -155,14 +155,14 @@
     {
       "raw": "¼ cup capers, (with a bit of juice)",
       "expected": {
-        "item": "capers, (with a bit of juice)",
+        "item": "capers",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "with a bit of juice",
         "category": "Canned Goods"
       }
     },

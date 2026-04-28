@@ -64,14 +64,14 @@
     {
       "raw": "1-2  green onions (thinly cut)",
       "expected": {
-        "item": "green onions (thinly cut)",
+        "item": "green onions",
         "measurements": [
           {
             "amount": "1-2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "thinly cut",
         "category": "Produce"
       }
     },

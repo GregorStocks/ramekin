@@ -37,14 +37,18 @@
     {
       "raw": "¼ cup Extra virgin olive oil&nbsp; (I used Private Reserve Greek olive oil)",
       "expected": {
-        "item": "Extra virgin olive oil  (I used Private Reserve Greek olive oil)",
+        "item": "Extra virgin olive oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used Private Reserve Greek olive oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -184,7 +188,7 @@
     {
       "raw": "1 1/2 lb boneless chicken breast cutlets (see notes)",
       "expected": {
-        "item": "boneless chicken breast cutlets (see notes)",
+        "item": "boneless chicken breast cutlets",
         "measurements": [
           {
             "amount": "1.5",
@@ -195,7 +199,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Meat & Seafood"
       }
     }

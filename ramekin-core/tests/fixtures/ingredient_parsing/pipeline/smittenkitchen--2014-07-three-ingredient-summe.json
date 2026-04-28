@@ -23,14 +23,14 @@
     {
       "raw": "1 or 2 jalapeños (depending on how hot you want the salsa), stemmed and cut in half",
       "expected": {
-        "item": "jalapeños (depending on how hot you want the salsa), stemmed and cut in half",
+        "item": "jalapeños, stemmed and cut in half",
         "measurements": [
           {
             "amount": "1 or 2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "depending on how hot you want the salsa",
         "category": "Produce"
       }
     },

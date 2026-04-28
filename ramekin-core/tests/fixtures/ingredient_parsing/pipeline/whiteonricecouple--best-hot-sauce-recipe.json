@@ -123,14 +123,18 @@
     {
       "raw": "1 Tablespoon Fish Sauce ((this is a vital ingredient for wonderful flavor, please don't skip it))",
       "expected": {
-        "item": "Fish Sauce (this is a vital ingredient for wonderful flavor, please don't skip it)",
+        "item": "Fish Sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "18",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "this is a vital ingredient for wonderful flavor, please don't skip it",
         "category": "Condiments & Sauces"
       }
     }

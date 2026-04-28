@@ -5,14 +5,14 @@
     {
       "raw": "2 large russet (baking) potatoes (preferably organic; 3/4 pound each, scrubbed",
       "expected": {
-        "item": "russet (baking) potatoes (preferably organic; 3/4 pound each",
+        "item": "russet potatoes (preferably organic; 3/4 pound each",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "scrubbed",
+        "note": "baking, scrubbed",
         "category": "Produce"
       }
     },
@@ -219,7 +219,7 @@
     {
       "raw": "5 cups salad greens (2 ounces)(we used arugula, which paired with the dijon sauce was deliciously kicky)",
       "expected": {
-        "item": "salad greens (we used arugula, which paired with the dijon sauce was deliciously kicky)",
+        "item": "salad greens",
         "measurements": [
           {
             "amount": "5",
@@ -234,8 +234,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "we used arugula, which paired with the dijon sauce was deliciously kicky",
+        "category": "Other"
       }
     }
   ]

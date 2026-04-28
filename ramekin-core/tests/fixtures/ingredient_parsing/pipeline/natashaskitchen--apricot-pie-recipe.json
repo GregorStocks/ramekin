@@ -5,14 +5,14 @@
     {
       "raw": "1  recipe for Flaky Cream Cheese Pastry Dough (Se Notes Section)",
       "expected": {
-        "item": "recipe for Flaky Cream Cheese Pastry Dough (Se Notes Section)",
+        "item": "recipe for Flaky Cream Cheese Pastry Dough",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "Se Notes Section",
         "category": "Cheese"
       }
     },

@@ -23,7 +23,7 @@
     {
       "raw": "8 ounces cream cheese (cut into 1\" cubes)",
       "expected": {
-        "item": "cream cheese (cut into 1\" cubes)",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "8",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1\" cubes",
         "category": "Cheese"
       }
     },
@@ -109,14 +109,18 @@
     {
       "raw": "1/4 teaspoon kosher salt (be careful not to over salt)",
       "expected": {
-        "item": "kosher salt (be careful not to over salt)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "be careful not to over salt",
         "category": "Spices & Seasonings"
       }
     }

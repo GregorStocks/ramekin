@@ -19,7 +19,7 @@
     {
       "raw": "5 oz x 2 fresh salmon fillets (skin off)",
       "expected": {
-        "item": "x 2 fresh salmon fillets (skin off)",
+        "item": "x 2 fresh salmon fillets",
         "measurements": [
           {
             "amount": "5",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skin off",
         "category": "Meat & Seafood"
       }
     },
@@ -69,15 +69,15 @@
     {
       "raw": "1/2 medium lemon (juiced)",
       "expected": {
-        "item": "lemon (juiced)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "medium"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {
@@ -97,14 +97,14 @@
     {
       "raw": "2 large eggs (poached or boiled)",
       "expected": {
-        "item": "eggs (poached or boiled)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "poached or boiled",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,28 +153,28 @@
     {
       "raw": "2 tablespoons whole egg mayo (full fat or reduced fat)",
       "expected": {
-        "item": "whole egg mayo (full fat or reduced fat)",
+        "item": "whole egg mayo",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "full fat or reduced fat",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "3 tablespoons Greek yogurt or sour cream (full fat or reduced fat)",
       "expected": {
-        "item": "Greek yogurt or sour cream (full fat or reduced fat)",
+        "item": "Greek yogurt or sour cream",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "full fat or reduced fat",
         "category": "Dairy & Eggs"
       }
     },
@@ -259,14 +259,14 @@
     {
       "raw": "1 pinch salt and pepper  (for seasoning)",
       "expected": {
-        "item": "salt and pepper  (for seasoning)",
+        "item": "salt and pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "for seasoning",
         "category": "Spices & Seasonings"
       }
     }

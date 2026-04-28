@@ -95,7 +95,7 @@
     {
       "raw": "1 cup (about 130 grams) chopped very ripe strawberries (I quarter small or medium ones and further chop larger ones)",
       "expected": {
-        "item": "chopped very ripe strawberries (I quarter small or medium ones and further chop larger ones)",
+        "item": "chopped very ripe strawberries",
         "measurements": [
           {
             "amount": "1",
@@ -106,7 +106,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I quarter small or medium ones and further chop larger ones",
         "category": "Produce"
       }
     },

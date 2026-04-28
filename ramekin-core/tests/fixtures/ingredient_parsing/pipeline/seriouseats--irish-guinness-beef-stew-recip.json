@@ -5,7 +5,7 @@
     {
       "raw": "1 cup (250ml) homemade chicken stock or low-sodium broth (see note)",
       "expected": {
-        "item": "homemade chicken stock or low-sodium broth (see note)",
+        "item": "homemade chicken stock or low-sodium broth",
         "measurements": [
           {
             "amount": "1",
@@ -16,14 +16,14 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "4 packets unflavored powdered gelatin (3 tablespoons plus 1 teaspoon; 30g) (see note)",
       "expected": {
-        "item": "packets unflavored powdered gelatin (see note)",
+        "item": "packets unflavored powdered gelatin",
         "measurements": [
           {
             "amount": "4",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Baking"
       }
     },
@@ -241,7 +241,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "15-ounce",
         "category": "Beverages"
       }
     },
@@ -255,7 +255,7 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "about 4 sprigs thyme, 3 sprigs parsley, and 1 bay leaf, tied together with kitchen twine",
         "category": "Other"
       }
     },
@@ -353,7 +353,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "225g; about 20",
         "category": "Produce"
       }
     },

@@ -41,7 +41,7 @@
     {
       "raw": "1 pound ground beef (extra lean)",
       "expected": {
-        "item": "ground beef (extra lean)",
+        "item": "ground beef",
         "measurements": [
           {
             "amount": "1",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "extra lean",
         "category": "Meat & Seafood"
       }
     },

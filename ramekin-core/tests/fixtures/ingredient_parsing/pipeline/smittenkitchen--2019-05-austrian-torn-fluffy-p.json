@@ -23,7 +23,7 @@
     {
       "raw": "2 tablespoons (30 ml) fruit juice or rum (only if using raisins)",
       "expected": {
-        "item": "fruit juice or rum (only if using raisins)",
+        "item": "fruit juice or rum",
         "measurements": [
           {
             "amount": "2",
@@ -34,8 +34,8 @@
             "unit": "ml"
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "only if using raisins",
+        "category": "Beverages"
       }
     },
     {
@@ -145,7 +145,7 @@
     {
       "raw": "2 to 3 tablespoons (30 to 40 grams) unsalted butter or ghee (clarified butter)",
       "expected": {
-        "item": "unsalted butter or ghee (clarified butter)",
+        "item": "unsalted butter or ghee",
         "measurements": [
           {
             "amount": "2 to 3",
@@ -156,7 +156,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "clarified butter",
         "category": "Dairy & Eggs"
       }
     },
@@ -172,9 +172,9 @@
     {
       "raw": "Jam, applesauce or another fruit sauce, or stewed plums/plum compote (recipe below) to serve",
       "expected": {
-        "item": "Jam, applesauce or another fruit sauce, or stewed plums/plum compote (recipe below) to serve",
+        "item": "Jam, applesauce or another fruit sauce, or stewed plums/plum compote to serve",
         "measurements": [],
-        "note": null,
+        "note": "recipe below",
         "category": "Produce"
       }
     }

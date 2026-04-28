@@ -79,7 +79,7 @@
     {
       "raw": "1 lb ground beef ((See Note 1))",
       "expected": {
-        "item": "ground beef (See Note 1)",
+        "item": "ground beef",
         "measurements": [
           {
             "amount": "1",
@@ -90,35 +90,39 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "See Note 1",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "3 tbsp chili powder ((mine in link or your favorite))",
       "expected": {
-        "item": "chili powder (mine in link or your favorite)",
+        "item": "chili powder",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "24",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "mine in link or your favorite",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "2 tbsp Chimayo chili powder ((See Note 2))",
       "expected": {
-        "item": "Chimayo chili powder (See Note 2)",
+        "item": "Chimayo chili powder",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "See Note 2",
         "category": "Spices & Seasonings"
       }
     },
@@ -289,14 +293,14 @@
     {
       "raw": "1 tbsp cider apple vinegar ((or white vinegar))",
       "expected": {
-        "item": "cider apple vinegar (or white vinegar)",
+        "item": "cider apple vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or white vinegar",
         "category": "Oils & Vinegars"
       }
     }

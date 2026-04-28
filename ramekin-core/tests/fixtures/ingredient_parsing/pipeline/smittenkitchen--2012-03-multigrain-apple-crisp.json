@@ -87,14 +87,18 @@
     {
       "raw": "1/2 cup whole wheat flour (or a mix; see Note up top)",
       "expected": {
-        "item": "whole wheat flour (or a mix; see Note up top)",
+        "item": "whole wheat flour",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or a mix; see Note up top",
         "category": "Baking"
       }
     },

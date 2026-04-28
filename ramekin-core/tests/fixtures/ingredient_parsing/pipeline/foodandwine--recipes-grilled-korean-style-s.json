@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1/2-inch-thick",
         "category": "Meat & Seafood"
       }
     },
@@ -77,14 +77,18 @@
     {
       "raw": "4 scallions (white parts and 2 inches of green parts only), finely chopped (about 1/3 cup)",
       "expected": {
-        "item": "scallions (white parts and 2 inches of green parts only)",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "4",
             "unit": null
+          },
+          {
+            "amount": "0.33",
+            "unit": "cup"
           }
         ],
-        "note": "finely chopped (about 1/3 cup)",
+        "note": "white parts and 2 inches of green parts only, finely chopped",
         "category": "Produce"
       }
     },

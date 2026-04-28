@@ -96,14 +96,14 @@
     {
       "raw": "2 1/4 teaspoons rapid-rise or instant yeast (from 1 envelope yeast)",
       "expected": {
-        "item": "rapid-rise or instant yeast (from 1 envelope yeast)",
+        "item": "rapid-rise or instant yeast",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "from 1 envelope yeast",
         "category": "Baking"
       }
     },

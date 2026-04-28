@@ -101,14 +101,14 @@
     {
       "raw": "2 tablespoons sherry vinegar (or red wine vinegar)",
       "expected": {
-        "item": "sherry vinegar (or red wine vinegar)",
+        "item": "sherry vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or red wine vinegar",
         "category": "Oils & Vinegars"
       }
     },
@@ -133,14 +133,18 @@
     {
       "raw": "1/4 teaspoon smoked paprika (pimenton)",
       "expected": {
-        "item": "smoked paprika (pimenton)",
+        "item": "smoked paprika",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "pimenton",
         "category": "Spices & Seasonings"
       }
     }

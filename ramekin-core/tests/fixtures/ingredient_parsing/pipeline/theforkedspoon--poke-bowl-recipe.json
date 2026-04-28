@@ -77,7 +77,7 @@
     {
       "raw": "1 pound sushi-grade ahi tuna or salmon (cut into 1/2-inch cubes)",
       "expected": {
-        "item": "sushi-grade ahi tuna or salmon (cut into 1/2-inch cubes)",
+        "item": "sushi-grade ahi tuna or salmon",
         "measurements": [
           {
             "amount": "1",
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -145,14 +145,14 @@
     {
       "raw": "6 cups cooked rice (sushi rice, white rice, or brown rice)",
       "expected": {
-        "item": "cooked rice (sushi rice, white rice, or brown rice)",
+        "item": "cooked rice",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "sushi rice, white rice, or brown rice",
         "category": "Pasta & Rice"
       }
     },

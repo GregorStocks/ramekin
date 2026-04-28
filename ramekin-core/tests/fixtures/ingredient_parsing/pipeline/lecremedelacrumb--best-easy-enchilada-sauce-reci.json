@@ -213,14 +213,14 @@
     {
       "raw": "1  chipotle pepper (in adobo sauce)",
       "expected": {
-        "item": "chipotle pepper (in adobo sauce)",
+        "item": "chipotle pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "in adobo sauce",
         "category": "Spices & Seasonings"
       }
     },

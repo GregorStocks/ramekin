@@ -116,14 +116,14 @@
     {
       "raw": "1 cup shredded Mexican cheese blend of your choice (I used Muenster, not Mexican but worked great!)",
       "expected": {
-        "item": "shredded Mexican cheese blend of your choice (I used Muenster, not Mexican but worked great!)",
+        "item": "shredded Mexican cheese blend of your choice",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used Muenster, not Mexican but worked great!",
         "category": "Cheese"
       }
     },
@@ -139,9 +139,9 @@
     {
       "raw": "Garnishes: Julienned radishes, crema or sour cream and/or salsa verde cruda (recipe below)",
       "expected": {
-        "item": "Garnishes: Julienned radishes, crema or sour cream and/or salsa verde cruda (recipe below)",
+        "item": "Garnishes: Julienned radishes, crema or sour cream and/or salsa verde cruda",
         "measurements": [],
-        "note": null,
+        "note": "recipe below",
         "category": "Dairy & Eggs"
       }
     },

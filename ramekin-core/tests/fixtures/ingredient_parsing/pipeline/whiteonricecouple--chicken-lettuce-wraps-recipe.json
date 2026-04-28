@@ -12,7 +12,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "30m",
         "category": "Oils & Vinegars"
       }
     },
@@ -163,14 +163,14 @@
     {
       "raw": "1 head fresh lettuce leaves (, (butter leaf, iceberg, or other similar lettuce, for wrapping))",
       "expected": {
-        "item": "fresh lettuce leaves (, (butter leaf, iceberg, or other similar lettuce, for wrapping)",
+        "item": "fresh lettuce leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "(butter leaf, iceberg, or other similar lettuce, for wrapping",
         "category": "Produce"
       }
     },

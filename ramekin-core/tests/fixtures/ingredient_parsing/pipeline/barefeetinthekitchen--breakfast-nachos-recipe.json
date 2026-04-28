@@ -69,23 +69,23 @@
     {
       "raw": "1/2 cup green chile enchilada sauce (store-bought is fine as well)",
       "expected": {
-        "item": "green chile enchilada sauce (store-bought is fine as well)",
+        "item": "green chile enchilada sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "store-bought is fine as well",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "sliced jalapenos (if desired for topping)",
       "expected": {
-        "item": "sliced jalapenos (if desired for topping)",
+        "item": "sliced jalapenos",
         "measurements": [],
-        "note": null,
+        "note": "if desired for topping",
         "category": "Produce"
       }
     },

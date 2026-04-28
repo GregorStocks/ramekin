@@ -5,7 +5,7 @@
     {
       "raw": "24 ounce pasta sauce (any variety will do)",
       "expected": {
-        "item": "pasta sauce (any variety will do)",
+        "item": "pasta sauce",
         "measurements": [
           {
             "amount": "24",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any variety will do",
         "category": "Condiments & Sauces"
       }
     },
@@ -65,7 +65,7 @@
     {
       "raw": "29 ounce beef broth (two 14.5 cans)",
       "expected": {
-        "item": "beef broth (two 14.5 cans)",
+        "item": "beef broth",
         "measurements": [
           {
             "amount": "29",
@@ -76,7 +76,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "two 14.5 cans",
         "category": "Canned Goods"
       }
     },

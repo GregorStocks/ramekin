@@ -114,7 +114,7 @@
     {
       "raw": "1/2 lb leftover turkey meat (dark and/or white meat)",
       "expected": {
-        "item": "leftover turkey meat (dark and/or white meat)",
+        "item": "leftover turkey meat",
         "measurements": [
           {
             "amount": "0.5",
@@ -125,7 +125,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "dark and/or white meat",
         "category": "Meat & Seafood"
       }
     },

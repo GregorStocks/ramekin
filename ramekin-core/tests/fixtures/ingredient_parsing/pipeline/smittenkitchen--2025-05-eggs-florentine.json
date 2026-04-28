@@ -122,14 +122,14 @@
     {
       "raw": "3 tablespoons minced shallot (from 1 small)",
       "expected": {
-        "item": "minced shallot (from 1 small)",
+        "item": "minced shallot",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from 1 small",
         "category": "Produce"
       }
     },

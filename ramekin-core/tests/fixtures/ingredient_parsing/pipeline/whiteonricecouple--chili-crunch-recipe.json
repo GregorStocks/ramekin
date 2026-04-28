@@ -5,15 +5,19 @@
     {
       "raw": "1/2 cup oil (, vegetable, grapeseed or neutral flavored oil)",
       "expected": {
-        "item": "oil (, vegetable, grapeseed or neutral flavored oil)",
+        "item": "oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "109",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "vegetable, grapeseed or neutral flavored oil",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -33,14 +37,14 @@
     {
       "raw": "2 Tablespoons red chili flakes (, or to personal taste. For medium spicy, you can start with 1 Tablespoon first, then add more. )",
       "expected": {
-        "item": "red chili flakes (, or to personal taste. For medium spicy, you can start with 1 Tablespoon first, then add more.",
+        "item": "red chili flakes",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or to personal taste. For medium spicy, you can start with 1 Tablespoon first, then add more.",
         "category": "Spices & Seasonings"
       }
     },
@@ -107,14 +111,18 @@
     {
       "raw": "1 teaspoon kosher salt (, if using table salt, use a little less)",
       "expected": {
-        "item": "kosher salt (, if using table salt, use a little less)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "if using table salt, use a little less",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,14 +165,18 @@
     {
       "raw": "2 teaspoons soy sauce (, or to personal taste. We like it very savory so will add an extra teaspoon or two. )",
       "expected": {
-        "item": "soy sauce (, or to personal taste. We like it very savory so will add an extra teaspoon or two.",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "11",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or to personal taste. We like it very savory so will add an extra teaspoon or two.",
         "category": "Condiments & Sauces"
       }
     }

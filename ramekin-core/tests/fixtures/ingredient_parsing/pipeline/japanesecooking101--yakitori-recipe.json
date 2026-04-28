@@ -95,14 +95,14 @@
     {
       "raw": "2  long white onions (or 5-6 green onions)",
       "expected": {
-        "item": "long white onions (or 5-6 green onions)",
+        "item": "long white onions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 5-6 green onions",
         "category": "Produce"
       }
     },

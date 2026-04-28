@@ -5,7 +5,7 @@
     {
       "raw": "1 cup (142g) all-purpose flour ((scoop and level to measure))",
       "expected": {
-        "item": "all-purpose flour (scoop and level to measure)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "scoop and level to measure",
         "category": "Baking"
       }
     },
@@ -113,14 +113,18 @@
     {
       "raw": "1/2 cup vegetable oil (or canola oil)",
       "expected": {
-        "item": "vegetable oil (or canola oil)",
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "109",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or canola oil",
         "category": "Oils & Vinegars"
       }
     },

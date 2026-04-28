@@ -120,14 +120,14 @@
     {
       "raw": "1 ½ cups cooked, shredded chicken (from a rotisserie)",
       "expected": {
-        "item": "cooked, shredded chicken (from a rotisserie)",
+        "item": "cooked, shredded chicken",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from a rotisserie",
         "category": "Meat & Seafood"
       }
     },
@@ -188,14 +188,18 @@
     {
       "raw": "6 tablespoons cold butter, (cut into tiny pieces)",
       "expected": {
-        "item": "cold butter, (cut into tiny pieces)",
+        "item": "cold butter",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into tiny pieces",
         "category": "Dairy & Eggs"
       }
     },

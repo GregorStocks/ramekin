@@ -59,14 +59,18 @@
     {
       "raw": "1/2 cup mayonnaise ((I like Kewpie brand))",
       "expected": {
-        "item": "mayonnaise (I like Kewpie brand)",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I like Kewpie brand",
         "category": "Condiments & Sauces"
       }
     },

@@ -41,28 +41,28 @@
     {
       "raw": "2  large carrots (cut into large chunks)",
       "expected": {
-        "item": "carrots (cut into large chunks)",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into large chunks",
         "category": "Produce"
       }
     },
     {
       "raw": "6 cloves garlic (smashed)",
       "expected": {
-        "item": "garlic (smashed)",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "6",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "smashed",
         "category": "Produce"
       }
     },
@@ -83,28 +83,28 @@
     {
       "raw": "1/2  lemon (for stuffing the chicken)",
       "expected": {
-        "item": "lemon (for stuffing the chicken)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Meat & Seafood"
+        "note": "for stuffing the chicken",
+        "category": "Produce"
       }
     },
     {
       "raw": "2  celery stalks (cut into large chunks)",
       "expected": {
-        "item": "celery stalks (cut into large chunks)",
+        "item": "celery stalks",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into large chunks",
         "category": "Produce"
       }
     },

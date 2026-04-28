@@ -5,28 +5,28 @@
     {
       "raw": "450 g kabocha squash (skin-on)",
       "expected": {
-        "item": "kabocha squash (skin-on)",
+        "item": "kabocha squash",
         "measurements": [
           {
             "amount": "450",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skin-on",
         "category": "Produce"
       }
     },
     {
       "raw": "300 ml dashi stock (use kombu/shiitake dashi for plant-based diets)",
       "expected": {
-        "item": "dashi stock (use kombu/shiitake dashi for plant-based diets)",
+        "item": "dashi stock",
         "measurements": [
           {
             "amount": "300",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "use kombu/shiitake dashi for plant-based diets",
         "category": "Canned Goods"
       }
     },
@@ -69,18 +69,14 @@
     {
       "raw": "2 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "32",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },

@@ -5,15 +5,15 @@
     {
       "raw": "1/2 cup almond milk  (milk, coconut milk or any other dairy alternative can easily be used in these pops!)",
       "expected": {
-        "item": "almond milk  (milk, coconut milk or any other dairy alternative can easily be used in these pops!)",
+        "item": "almond milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "milk, coconut milk or any other dairy alternative can easily be used in these pops!",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -42,10 +42,10 @@
     {
       "raw": "water (for sprinkles)",
       "expected": {
-        "item": "water (for sprinkles)",
+        "item": "water",
         "measurements": [],
-        "note": null,
-        "category": "Baking"
+        "note": "for sprinkles",
+        "category": "Other"
       }
     }
   ]

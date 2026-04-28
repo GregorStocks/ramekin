@@ -203,7 +203,7 @@
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "14-ounce",
         "category": "Canned Goods"
       }
     },
@@ -219,14 +219,14 @@
     {
       "raw": "1 to 4 large eggs (shown with 1)",
       "expected": {
-        "item": "eggs (shown with 1)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "1 to 4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "shown with 1",
         "category": "Dairy & Eggs"
       }
     },

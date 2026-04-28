@@ -19,56 +19,56 @@
     {
       "raw": "2 sheets nori roasted seaweed (large, cut into halves)",
       "expected": {
-        "item": "sheets nori roasted seaweed (large, cut into halves)",
+        "item": "sheets nori roasted seaweed",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "large, cut into halves",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1  can crab meat (seasoned with lemon juice and salt)",
       "expected": {
-        "item": "crab meat (seasoned with lemon juice and salt)",
+        "item": "crab meat",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "seasoned with lemon juice and salt",
+        "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1  avocado (cut into 1/2\" sticks)",
       "expected": {
-        "item": "avocado (cut into 1/2\" sticks)",
+        "item": "avocado",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1/2\" sticks",
         "category": "Produce"
       }
     },
     {
       "raw": "1  cucumber (cut into 1/2\" sticks)",
       "expected": {
-        "item": "cucumber (cut into 1/2\" sticks)",
+        "item": "cucumber",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1/2\" sticks",
         "category": "Produce"
       }
     },

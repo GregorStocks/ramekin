@@ -23,14 +23,14 @@
     {
       "raw": "1 cup chopped broccoli (crowns and stems)",
       "expected": {
-        "item": "chopped broccoli (crowns and stems)",
+        "item": "chopped broccoli",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "crowns and stems",
         "category": "Produce"
       }
     },
@@ -190,14 +190,18 @@
     {
       "raw": "1 tablespoon sesame oil (regular or spicy)",
       "expected": {
-        "item": "sesame oil (regular or spicy)",
+        "item": "sesame oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "regular or spicy",
         "category": "Oils & Vinegars"
       }
     },

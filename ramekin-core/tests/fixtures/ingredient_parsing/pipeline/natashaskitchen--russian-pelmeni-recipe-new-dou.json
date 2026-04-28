@@ -173,14 +173,14 @@
     {
       "raw": "3  garlic cloves (pressed)",
       "expected": {
-        "item": "garlic cloves (pressed)",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "pressed",
         "category": "Produce"
       }
     },
@@ -233,9 +233,9 @@
     {
       "raw": "Melted butter (sour cream, vinegar, ketchup)",
       "expected": {
-        "item": "Melted butter (sour cream, vinegar, ketchup)",
+        "item": "Melted butter",
         "measurements": [],
-        "note": null,
+        "note": "sour cream, vinegar, ketchup",
         "category": "Dairy & Eggs"
       }
     }

@@ -51,14 +51,14 @@
     {
       "raw": "2 to 3 oranges (count on 1 orange per person)",
       "expected": {
-        "item": "oranges (count on 1 orange per person)",
+        "item": "oranges",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "count on 1 orange per person",
         "category": "Produce"
       }
     },

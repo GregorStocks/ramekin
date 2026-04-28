@@ -187,14 +187,14 @@
     {
       "raw": "0.25 cup toasted pine nuts (see Tip)",
       "expected": {
-        "item": "toasted pine nuts (see Tip)",
+        "item": "toasted pine nuts",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Tip",
         "category": "Nuts & Dried Fruit"
       }
     },

@@ -16,7 +16,7 @@
             "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "6-8 thighs",
         "category": "Meat & Seafood"
       }
     },
@@ -137,14 +137,14 @@
     {
       "raw": "2 Parmesan rinds (if you have them)",
       "expected": {
-        "item": "Parmesan rinds (if you have them)",
+        "item": "Parmesan rinds",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "if you have them",
         "category": "Cheese"
       }
     },
@@ -190,7 +190,7 @@
       "expected": {
         "item": "Cooked jasmine rice",
         "measurements": [],
-        "note": "to taste (see Note)",
+        "note": "see Note, to taste",
         "category": "Pasta & Rice"
       }
     },

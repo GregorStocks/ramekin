@@ -105,15 +105,15 @@
     {
       "raw": "1 tablespoon rum (or other flavoring, such as a flavored liquer or vanilla extract)",
       "expected": {
-        "item": "rum (or other flavoring, such as a flavored liquer or vanilla extract)",
+        "item": "rum",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "or other flavoring, such as a flavored liquer or vanilla extract",
+        "category": "Beverages"
       }
     }
   ]

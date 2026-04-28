@@ -143,15 +143,15 @@
     {
       "raw": "1 1/2 tablespoons adobo sauce (from 1 can chipotle peppers in adobo sauce)",
       "expected": {
-        "item": "adobo sauce (from 1 can chipotle peppers in adobo sauce)",
+        "item": "adobo sauce",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "from 1 can chipotle peppers in adobo sauce",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -267,9 +267,9 @@
     {
       "raw": "Toppings: shredded cheese (optional), sour cream (or cashew cream), hot sauce, sliced avocado or pickled jalapenos (optional), crushed tortilla chips",
       "expected": {
-        "item": "Toppings: shredded cheese, sour cream (or cashew cream), hot sauce, sliced avocado or pickled jalapenos (optional), crushed tortilla chips",
+        "item": "Toppings: shredded cheese, sour cream, hot sauce, sliced avocado or pickled jalapenos, crushed tortilla chips",
         "measurements": [],
-        "note": "optional",
+        "note": "or cashew cream, optional, optional",
         "category": "Dairy & Eggs"
       }
     }

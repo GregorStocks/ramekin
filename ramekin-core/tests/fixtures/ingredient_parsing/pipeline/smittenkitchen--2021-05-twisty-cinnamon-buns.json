@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 packet or 7 grams",
         "category": "Baking"
       }
     },
@@ -59,14 +59,18 @@
     {
       "raw": "2 teaspoons kosher salt (I’m using Diamond; use 1.5t of other brands)",
       "expected": {
-        "item": "kosher salt (I’m using Diamond; use 1.5t of other brands)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I’m using Diamond; use 1.5t of other brands",
         "category": "Spices & Seasonings"
       }
     },
@@ -145,15 +149,15 @@
     {
       "raw": "Pinch or two of salt (if butter is unsalted)",
       "expected": {
-        "item": "or two of salt (if butter is unsalted)",
+        "item": "or two of salt",
         "measurements": [
           {
             "amount": null,
             "unit": "pinch"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "if butter is unsalted",
+        "category": "Spices & Seasonings"
       }
     },
     {

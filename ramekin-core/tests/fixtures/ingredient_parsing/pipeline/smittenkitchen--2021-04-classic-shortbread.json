@@ -59,9 +59,9 @@
     {
       "raw": "Flavoring of choice (see Note)",
       "expected": {
-        "item": "Flavoring of choice (see Note)",
+        "item": "Flavoring of choice",
         "measurements": [],
-        "note": null,
+        "note": "see Note",
         "category": "Other"
       }
     },

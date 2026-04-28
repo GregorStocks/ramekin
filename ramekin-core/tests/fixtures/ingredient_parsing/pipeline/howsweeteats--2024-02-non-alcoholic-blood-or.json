@@ -55,9 +55,9 @@
     {
       "raw": "lime seltzer, (to top off the drink)",
       "expected": {
-        "item": "lime seltzer, (to top off the drink)",
+        "item": "lime seltzer",
         "measurements": [],
-        "note": null,
+        "note": "to top off the drink",
         "category": "Produce"
       }
     },

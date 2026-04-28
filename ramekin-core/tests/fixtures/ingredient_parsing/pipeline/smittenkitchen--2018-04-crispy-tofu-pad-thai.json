@@ -5,7 +5,7 @@
     {
       "raw": "6 ounces firm or extra-firm tofu (not silken)",
       "expected": {
-        "item": "firm or extra-firm tofu (not silken)",
+        "item": "firm or extra-firm tofu",
         "measurements": [
           {
             "amount": "6",
@@ -16,14 +16,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not silken",
         "category": "Produce"
       }
     },
     {
       "raw": "5 ounces dried rice noodles (sticks), about 1/8-inch (3mm) wide",
       "expected": {
-        "item": "dried rice noodles (sticks), about 1/8-inch (3mm) wide",
+        "item": "dried rice noodles, about 1/8-inch wide",
         "measurements": [
           {
             "amount": "5",
@@ -34,21 +34,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sticks, 3mm",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "2 tablespoons fish sauce, regular (not vegetarian) or vegetarian, plus more to taste",
       "expected": {
-        "item": "fish sauce, regular (not vegetarian) or vegetarian",
+        "item": "fish sauce, regular or vegetarian",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "plus more to taste",
+        "note": "not vegetarian, plus more to taste",
         "category": "Condiments & Sauces"
       }
     },
@@ -150,7 +150,7 @@
             "unit": "handful"
           }
         ],
-        "note": "plus more for garnish",
+        "note": "about 1 cup, although it’s awkward to measure in cups, plus more for garnish",
         "category": "Produce"
       }
     },

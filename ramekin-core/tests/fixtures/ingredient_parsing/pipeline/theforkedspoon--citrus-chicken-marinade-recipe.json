@@ -5,28 +5,32 @@
     {
       "raw": "6  chicken breasts (or thighs)",
       "expected": {
-        "item": "chicken breasts (or thighs)",
+        "item": "chicken breasts",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or thighs",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1/4 cup fresh lime juice (approx. 2-3 limes)",
       "expected": {
-        "item": "fresh lime juice (approx. 2-3 limes)",
+        "item": "fresh lime juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "approx. 2-3 limes",
         "category": "Beverages"
       }
     },
@@ -47,14 +51,18 @@
     {
       "raw": "1/4 cup fresh lemon juice (approx. 2-3 lemons)",
       "expected": {
-        "item": "fresh lemon juice (approx. 2-3 lemons)",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "approx. 2-3 lemons",
         "category": "Beverages"
       }
     },
@@ -75,14 +83,14 @@
     {
       "raw": "1/2 cup fresh orange juice (approx. 2 large oranges)",
       "expected": {
-        "item": "fresh orange juice (approx. 2 large oranges)",
+        "item": "fresh orange juice",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "approx. 2 large oranges",
         "category": "Produce"
       }
     },

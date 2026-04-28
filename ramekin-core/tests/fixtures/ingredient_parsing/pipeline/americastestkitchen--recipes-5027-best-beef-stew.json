@@ -59,7 +59,7 @@
     {
       "raw": "1 boneless beef chuck-eye roast (about 4 pounds), trimmed of excess fat, cut into 1 1/2-inch pieces (see note and step by step below)",
       "expected": {
-        "item": "boneless beef chuck-eye roast, trimmed of excess fat, cut into 1 1/2-inch pieces (see note and step by step below)",
+        "item": "boneless beef chuck-eye roast, trimmed of excess fat, cut into 1 1/2-inch pieces",
         "measurements": [
           {
             "amount": "1",
@@ -74,7 +74,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note and step by step below",
         "category": "Meat & Seafood"
       }
     },
@@ -153,14 +153,14 @@
     {
       "raw": "2 cups red wine  (see note)",
       "expected": {
-        "item": "red wine  (see note)",
+        "item": "red wine",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Beverages"
       }
     },
@@ -224,7 +224,7 @@
             "unit": "g"
           }
         ],
-        "note": "rinsed of excess salt (see note)",
+        "note": "see note, rinsed of excess salt",
         "category": "Meat & Seafood"
       }
     },
@@ -270,7 +270,7 @@
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "about 1 packet",
         "category": "Baking"
       }
     },

@@ -115,14 +115,14 @@
     {
       "raw": "1 cup water or milk (dairy or non-dairy)",
       "expected": {
-        "item": "water or milk (dairy or non-dairy)",
+        "item": "water or milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "dairy or non-dairy",
         "category": "Dairy & Eggs"
       }
     },

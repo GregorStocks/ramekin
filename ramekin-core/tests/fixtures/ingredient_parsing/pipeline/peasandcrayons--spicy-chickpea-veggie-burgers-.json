@@ -5,14 +5,14 @@
     {
       "raw": "1.5 cup old-fashioned rolled oats ((not instant))",
       "expected": {
-        "item": "old-fashioned rolled oats (not instant)",
+        "item": "old-fashioned rolled oats",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "not instant",
         "category": "Bakery & Bread"
       }
     },
@@ -37,14 +37,14 @@
     {
       "raw": "1/3 cup finely diced bell pepper ((any color))",
       "expected": {
-        "item": "finely diced bell pepper (any color)",
+        "item": "finely diced bell pepper",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "any color",
         "category": "Produce"
       }
     },
@@ -79,14 +79,14 @@
     {
       "raw": "1-2 TBSP green onion ((white + green portions))",
       "expected": {
-        "item": "green onion (white + green portions)",
+        "item": "green onion",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "white + green portions",
         "category": "Produce"
       }
     },
@@ -193,14 +193,14 @@
     {
       "raw": "4  onion roll buns (see post for GF swaps)",
       "expected": {
-        "item": "onion roll buns (see post for GF swaps)",
+        "item": "onion roll buns",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "see post for GF swaps",
         "category": "Produce"
       }
     },

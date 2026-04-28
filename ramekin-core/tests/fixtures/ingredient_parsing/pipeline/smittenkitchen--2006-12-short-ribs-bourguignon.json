@@ -21,7 +21,7 @@
             "unit": "piece"
           }
         ],
-        "note": null,
+        "note": "8-oz",
         "category": "Meat & Seafood"
       }
     },
@@ -123,7 +123,7 @@
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "14-oz",
         "category": "Canned Goods"
       }
     },
@@ -160,7 +160,7 @@
             "unit": "cup"
           }
         ],
-        "note": "or 1/2 cup Demi-Glace Gold concentrate (concentrate requires a dilution ratio of 1:8; 1/2 cup concentrate to 4 cups water)",
+        "note": "concentrate requires a dilution ratio of 1:8; 1/2 cup concentrate to 4 cups water, or 1/2 cup Demi-Glace Gold concentrate",
         "category": "Canned Goods"
       }
     },
@@ -327,15 +327,15 @@
     {
       "raw": "3 thick bacon slices (preferably applewood-smoked; 1/4 lb total), cut crosswise into 1/4-inch pieces**",
       "expected": {
-        "item": "thick bacon slices (preferably applewood-smoked; 1/4 lb total), cut crosswise into 1/4-inch pieces",
+        "item": "thick bacon slices, cut crosswise into 1/4-inch pieces",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "preferably applewood-smoked; 1/4 lb total",
+        "category": "Meat & Seafood"
       }
     },
     {

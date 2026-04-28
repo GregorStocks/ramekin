@@ -23,42 +23,42 @@
     {
       "raw": "1 1/2 teaspoons to 2 tablespoons baking powder (using 1 1/2 teaspoons per pound)",
       "expected": {
-        "item": "baking powder (using 1 1/2 teaspoons per pound)",
+        "item": "baking powder",
         "measurements": [
           {
             "amount": "1 1/2 teaspoons to 2 tablespoons",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "using 1 1/2 teaspoons per pound",
         "category": "Baking"
       }
     },
     {
       "raw": "1 to 4 teaspoons kosher salt (using 1 teaspoon per pound; use less salt if you’re not using Diamond brand)",
       "expected": {
-        "item": "kosher salt (using 1 teaspoon per pound; use less salt if you’re not using Diamond brand)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1 to 4",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "using 1 teaspoon per pound; use less salt if you’re not using Diamond brand",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "2 tablespoons hot sauce (Frank’s RedHot is traditional) per pound of wings",
       "expected": {
-        "item": "hot sauce (Frank’s RedHot is traditional) per pound of wings",
+        "item": "hot sauce per pound of wings",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "Frank’s RedHot is traditional",
         "category": "Condiments & Sauces"
       }
     },
@@ -79,9 +79,9 @@
     {
       "raw": "To serve (optional): Homemade Blue Cheese Dressing (below), plus celery and carrot sticks",
       "expected": {
-        "item": "To serve : Homemade Blue Cheese Dressing (below)",
+        "item": "To serve : Homemade Blue Cheese Dressing",
         "measurements": [],
-        "note": "optional",
+        "note": "below, optional",
         "category": "Cheese"
       }
     }

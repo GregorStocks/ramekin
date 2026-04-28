@@ -141,7 +141,7 @@
             "unit": "l"
           }
         ],
-        "note": "plus more as needed (see notes)",
+        "note": "see notes, plus more as needed",
         "category": "Meat & Seafood"
       }
     },
@@ -219,7 +219,7 @@
     {
       "raw": "2 teaspoons (8g) curry powder (see notes)",
       "expected": {
-        "item": "curry powder (see notes)",
+        "item": "curry powder",
         "measurements": [
           {
             "amount": "2",
@@ -230,7 +230,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Spices & Seasonings"
       }
     },

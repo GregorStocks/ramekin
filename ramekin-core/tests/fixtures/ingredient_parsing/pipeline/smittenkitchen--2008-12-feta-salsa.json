@@ -5,7 +5,7 @@
     {
       "raw": "1/2 pound feta (cow’s milk)",
       "expected": {
-        "item": "feta (cow’s milk)",
+        "item": "feta",
         "measurements": [
           {
             "amount": "0.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cow’s milk",
         "category": "Cheese"
       }
     },

@@ -91,14 +91,14 @@
     {
       "raw": "1 cup chopped scallion (from 1 bunch)",
       "expected": {
-        "item": "chopped scallion (from 1 bunch)",
+        "item": "chopped scallion",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 1 bunch",
         "category": "Produce"
       }
     },
@@ -188,7 +188,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "14-oz",
         "category": "Canned Goods"
       }
     },

@@ -5,15 +5,15 @@
     {
       "raw": "3 slices shokupan (Japanese milk bread) (¾ inch, 1.5 cm thick per slice)",
       "expected": {
-        "item": "shokupan (Japanese milk bread) (3/4 inch, 1.5 cm thick per slice)",
+        "item": "shokupan",
         "measurements": [
           {
             "amount": "3",
             "unit": "slice"
           }
         ],
-        "note": null,
-        "category": "Bakery & Bread"
+        "note": "Japanese milk bread, 3/4 inch, 1.5 cm thick per slice",
+        "category": "Other"
       }
     },
     {

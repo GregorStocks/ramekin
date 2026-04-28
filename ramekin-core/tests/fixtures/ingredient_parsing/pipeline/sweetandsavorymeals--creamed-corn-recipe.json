@@ -41,14 +41,18 @@
     {
       "raw": "3 tablespoons white sugar (brown sugar can be used for a deeper caramely flavor)",
       "expected": {
-        "item": "white sugar (brown sugar can be used for a deeper caramely flavor)",
+        "item": "white sugar",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "38",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "brown sugar can be used for a deeper caramely flavor",
         "category": "Baking"
       }
     },
@@ -133,28 +137,32 @@
     {
       "raw": "1/2 cup to 1 cup Parmesan cheese (depends how thick and cheesy you want it)",
       "expected": {
-        "item": "Parmesan cheese (depends how thick and cheesy you want it)",
+        "item": "Parmesan cheese",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "depends how thick and cheesy you want it",
         "category": "Cheese"
       }
     },
     {
       "raw": "2 tablespoons cornstarch (or 3 tablespoons all purpose flour)",
       "expected": {
-        "item": "cornstarch (or 3 tablespoons all purpose flour)",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 3 tablespoons all purpose flour",
         "category": "Baking"
       }
     },

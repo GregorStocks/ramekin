@@ -65,14 +65,14 @@
     {
       "raw": "2-3 cups shredded cheese or your choice (I used a Mexican cheese blend, Monterrey jack and pepperjack on our separate plates)",
       "expected": {
-        "item": "shredded cheese or your choice (I used a Mexican cheese blend, Monterrey jack and pepperjack on our separate plates)",
+        "item": "shredded cheese or your choice",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used a Mexican cheese blend, Monterrey jack and pepperjack on our separate plates",
         "category": "Cheese"
       }
     },
@@ -88,10 +88,10 @@
     {
       "raw": "Optional toppings: sour cream (jalapenos, green onions, salsa, guacamole)",
       "expected": {
-        "item": "Optional toppings: sour cream (jalapenos, green onions, salsa, guacamole)",
+        "item": "Optional toppings: sour cream",
         "measurements": [],
-        "note": null,
-        "category": "Produce"
+        "note": "jalapenos, green onions, salsa, guacamole",
+        "category": "Dairy & Eggs"
       }
     }
   ]

@@ -5,14 +5,14 @@
     {
       "raw": "2 fillets salmon (thin), about 1 lb",
       "expected": {
-        "item": "fillets salmon (thin), about 1 lb",
+        "item": "fillets salmon, about 1 lb",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "thin",
         "category": "Meat & Seafood"
       }
     },
@@ -55,14 +55,14 @@
     {
       "raw": "2 cups rice (using 180 ml cup)",
       "expected": {
-        "item": "rice (using 180 ml cup)",
+        "item": "rice",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "using 180 ml cup",
         "category": "Pasta & Rice"
       }
     },
@@ -155,15 +155,15 @@
     {
       "raw": "4 Tbsp Ikura (salmon roe)",
       "expected": {
-        "item": "Ikura (salmon roe)",
+        "item": "Ikura",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Meat & Seafood"
+        "note": "salmon roe",
+        "category": "Other"
       }
     },
     {

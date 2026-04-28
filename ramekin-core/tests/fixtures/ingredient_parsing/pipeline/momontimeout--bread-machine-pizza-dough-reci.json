@@ -5,14 +5,18 @@
     {
       "raw": "2 cup flour (I like to use bread flour but all purpose and even a combination of AP and wheat flour works)",
       "expected": {
-        "item": "flour (I like to use bread flour but all purpose and even a combination of AP and wheat flour works)",
+        "item": "flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I like to use bread flour but all purpose and even a combination of AP and wheat flour works",
         "category": "Baking"
       }
     },
@@ -109,14 +113,18 @@
     {
       "raw": "2 tbsp water (additional)",
       "expected": {
-        "item": "water (additional)",
+        "item": "water",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "additional",
         "category": "Other"
       }
     },

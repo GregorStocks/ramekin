@@ -12,7 +12,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 cm thick, well-marbled ribeye/sirloin...etc",
         "category": "Meat & Seafood"
       }
     },
@@ -33,14 +33,14 @@
     {
       "raw": "1 tbsp cooking oil (neutral, high smoke point)",
       "expected": {
-        "item": "cooking oil (neutral, high smoke point)",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "neutral, high smoke point",
         "category": "Oils & Vinegars"
       }
     },
@@ -75,28 +75,32 @@
     {
       "raw": "1 tsp sake (or dry sherry)",
       "expected": {
-        "item": "sake (or dry sherry)",
+        "item": "sake",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or dry sherry",
         "category": "Beverages"
       }
     },
     {
       "raw": "½ tsp Chinese-style chicken bouillon powder (based on 1 tsp = 200ml soup ratio, scale to your brand's strength)",
       "expected": {
-        "item": "Chinese-style chicken bouillon powder (based on 1 tsp = 200ml soup ratio, scale to your brand's strength)",
+        "item": "Chinese-style chicken bouillon powder",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "based on 1 tsp = 200ml soup ratio, scale to your brand's strength",
         "category": "Spices & Seasonings"
       }
     },
@@ -121,32 +125,32 @@
     {
       "raw": "¼ tsp salt (fine sea or kosher)",
       "expected": {
-        "item": "salt (fine sea or kosher)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "fine sea or kosher",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.3",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },

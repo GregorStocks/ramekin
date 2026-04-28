@@ -125,15 +125,15 @@
     {
       "raw": "8 cups turkey broth (or chicken broth)",
       "expected": {
-        "item": "turkey broth (or chicken broth)",
+        "item": "turkey broth",
         "measurements": [
           {
             "amount": "8",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "or chicken broth",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -208,14 +208,14 @@
     {
       "raw": "2 cups fusilli noodles (dry)",
       "expected": {
-        "item": "fusilli noodles (dry)",
+        "item": "fusilli noodles",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "dry",
         "category": "Pasta & Rice"
       }
     },

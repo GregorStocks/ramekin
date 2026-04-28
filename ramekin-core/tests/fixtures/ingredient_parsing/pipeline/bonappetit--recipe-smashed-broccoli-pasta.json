@@ -46,7 +46,7 @@
     {
       "raw": "12 oz. short pasta (such as mezze rigatoni or cavatappi)",
       "expected": {
-        "item": "short pasta (such as mezze rigatoni or cavatappi)",
+        "item": "short pasta",
         "measurements": [
           {
             "amount": "12",
@@ -57,7 +57,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as mezze rigatoni or cavatappi",
         "category": "Pasta & Rice"
       }
     },

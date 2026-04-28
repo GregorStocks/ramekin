@@ -63,14 +63,14 @@
     {
       "raw": "1/4 cup kalamata olives (you can also serve these alongside)",
       "expected": {
-        "item": "kalamata olives (you can also serve these alongside)",
+        "item": "kalamata olives",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "you can also serve these alongside",
         "category": "Canned Goods"
       }
     },
@@ -105,7 +105,7 @@
     {
       "raw": "2 to 3 ounces feta (Bulgarian or French, if you can find them, are my favorites), in thick slices",
       "expected": {
-        "item": "feta (Bulgarian or French, if you can find them, are my favorites), in thick slices",
+        "item": "feta, in thick slices",
         "measurements": [
           {
             "amount": "2 to 3",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Bulgarian or French, if you can find them, are my favorites",
         "category": "Cheese"
       }
     },

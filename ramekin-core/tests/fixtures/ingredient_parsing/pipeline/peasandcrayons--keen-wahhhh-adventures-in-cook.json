@@ -83,15 +83,15 @@
     {
       "raw": "1 cup fresh or frozen veggies: (peas, carrots, and onion)",
       "expected": {
-        "item": "fresh or frozen veggies: (peas, carrots, and onion)",
+        "item": "fresh or frozen veggies:",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "peas, carrots, and onion",
+        "category": "Frozen"
       }
     },
     {
@@ -111,9 +111,9 @@
     {
       "raw": "oil or butter for sautéing ((I typically reach for the butter))",
       "expected": {
-        "item": "oil or butter for sautéing (I typically reach for the butter)",
+        "item": "oil or butter for sautéing",
         "measurements": [],
-        "note": null,
+        "note": "I typically reach for the butter",
         "category": "Dairy & Eggs"
       }
     },

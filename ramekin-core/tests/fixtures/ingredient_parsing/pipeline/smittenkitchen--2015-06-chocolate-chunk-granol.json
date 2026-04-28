@@ -70,7 +70,7 @@
     {
       "raw": "1 1/4 cups (100 grams) rolled oats (be sure that they’re labeled gluten-free if needed; I prefer old-fashioned but any will work)",
       "expected": {
-        "item": "rolled oats (be sure that they’re labeled gluten-free if needed; I prefer old-fashioned but any will work)",
+        "item": "rolled oats",
         "measurements": [
           {
             "amount": "1.25",
@@ -81,7 +81,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "be sure that they’re labeled gluten-free if needed; I prefer old-fashioned but any will work",
         "category": "Bakery & Bread"
       }
     },
@@ -106,7 +106,7 @@
     {
       "raw": "3/4 cup (60 grams) dried unsweetened shredded coconut (I used a medium grind)",
       "expected": {
-        "item": "dried unsweetened shredded coconut (I used a medium grind)",
+        "item": "dried unsweetened shredded coconut",
         "measurements": [
           {
             "amount": "0.75",
@@ -117,14 +117,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used a medium grind",
         "category": "Produce"
       }
     },
     {
       "raw": "1/3 cup (65 grams) uncooked millet (see alternatives up top)",
       "expected": {
-        "item": "uncooked millet (see alternatives up top)",
+        "item": "uncooked millet",
         "measurements": [
           {
             "amount": "0.33",
@@ -135,7 +135,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see alternatives up top",
         "category": "Other"
       }
     },

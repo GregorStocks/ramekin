@@ -19,29 +19,29 @@
     {
       "raw": "1  jalapeno (seeded)",
       "expected": {
-        "item": "jalapeno (seeded)",
+        "item": "jalapeno",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded",
         "category": "Produce"
       }
     },
     {
       "raw": "1  lime (juice from lime)",
       "expected": {
-        "item": "lime (juice from lime)",
+        "item": "lime",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juice from lime",
+        "category": "Produce"
       }
     },
     {

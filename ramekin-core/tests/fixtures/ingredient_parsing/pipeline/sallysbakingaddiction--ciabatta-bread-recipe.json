@@ -5,7 +5,7 @@
     {
       "raw": "1 cup (130g) bread flour (I use this),&nbsp;spooned &amp;amp; leveled",
       "expected": {
-        "item": "bread flour (I use this), spooned & leveled",
+        "item": "bread flour, spooned & leveled",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use this",
         "category": "Baking"
       }
     },
@@ -44,7 +44,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "120g/ml, about 70°F (21°C",
         "category": "Other"
       }
     },
@@ -80,14 +80,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "240g/ml, about 100-110°F (38°-43°C",
         "category": "Other"
       }
     },
     {
       "raw": "2 and 1/2 cups (325g) bread flour (spooned &amp;amp; leveled), plus more as needed",
       "expected": {
-        "item": "bread flour (spooned & leveled)",
+        "item": "bread flour",
         "measurements": [
           {
             "amount": "2.5",
@@ -98,7 +98,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more as needed",
+        "note": "spooned & leveled, plus more as needed",
         "category": "Baking"
       }
     },

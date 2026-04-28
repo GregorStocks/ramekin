@@ -83,7 +83,7 @@
     {
       "raw": "1.25 pounds 93/7 ground turkey (I use Shady Brook Farms)",
       "expected": {
-        "item": "93/7 ground turkey (I use Shady Brook Farms)",
+        "item": "93/7 ground turkey",
         "measurements": [
           {
             "amount": "1.25",
@@ -94,14 +94,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use Shady Brook Farms",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1.25 pounds Italian turkey sausage, removed from the casings (I use Shady Brook Farms)",
       "expected": {
-        "item": "Italian turkey sausage, removed from the casings (I use Shady Brook Farms)",
+        "item": "Italian turkey sausage, removed from the casings",
         "measurements": [
           {
             "amount": "1.25",
@@ -112,7 +112,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use Shady Brook Farms",
         "category": "Meat & Seafood"
       }
     },

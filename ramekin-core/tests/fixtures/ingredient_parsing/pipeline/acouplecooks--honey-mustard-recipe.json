@@ -5,14 +5,18 @@
     {
       "raw": "1/4 cup yellow mustard (or Dijon mustard for spicy)",
       "expected": {
-        "item": "yellow mustard (or Dijon mustard for spicy)",
+        "item": "yellow mustard",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "62",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Dijon mustard for spicy",
         "category": "Condiments & Sauces"
       }
     },

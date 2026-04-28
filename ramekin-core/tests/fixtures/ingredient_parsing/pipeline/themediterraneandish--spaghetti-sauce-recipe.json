@@ -5,14 +5,18 @@
     {
       "raw": "1/4 cup extra virgin olive oil (I used Private Reserve Greek extra virgin olive oil)",
       "expected": {
-        "item": "extra virgin olive oil (I used Private Reserve Greek extra virgin olive oil)",
+        "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used Private Reserve Greek extra virgin olive oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -54,7 +58,7 @@
             "unit": null
           }
         ],
-        "note": "finely grated (use a food processor or a grater)",
+        "note": "use a food processor or a grater, finely grated",
         "category": "Produce"
       }
     },
@@ -79,15 +83,19 @@
     {
       "raw": "1/2 cup water (pasta cooking water, preferred)",
       "expected": {
-        "item": "water (pasta cooking water, preferred)",
+        "item": "water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Pasta & Rice"
+        "note": "pasta cooking water, preferred",
+        "category": "Other"
       }
     },
     {

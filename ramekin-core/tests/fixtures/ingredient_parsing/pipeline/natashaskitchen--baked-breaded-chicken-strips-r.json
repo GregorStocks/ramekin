@@ -68,14 +68,14 @@
     {
       "raw": "2-3  small garlic cloves (pressed)",
       "expected": {
-        "item": "garlic cloves (pressed)",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "pressed",
         "category": "Produce"
       }
     },

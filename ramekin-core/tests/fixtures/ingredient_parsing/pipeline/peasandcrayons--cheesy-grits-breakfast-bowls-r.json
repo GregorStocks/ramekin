@@ -119,28 +119,32 @@
     {
       "raw": "2 TBSP milk (plus extra if desired to thin)",
       "expected": {
-        "item": "milk (plus extra if desired to thin)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plus extra if desired to thin",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "2-4  fried eggs ((I like adding 2 to each bowl))",
       "expected": {
-        "item": "fried eggs (I like adding 2 to each bowl)",
+        "item": "fried eggs",
         "measurements": [
           {
             "amount": "2-4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "I like adding 2 to each bowl",
         "category": "Dairy & Eggs"
       }
     },

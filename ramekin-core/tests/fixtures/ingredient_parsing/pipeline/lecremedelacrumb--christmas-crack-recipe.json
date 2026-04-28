@@ -12,7 +12,7 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "about 1 1/2 sleeves",
         "category": "Snacks"
       }
     },
@@ -55,28 +55,28 @@
     {
       "raw": "2 cups milk chocolate chips or dark chocolate chips (one 12-ounce bag)",
       "expected": {
-        "item": "milk chocolate chips or dark chocolate chips (one 12-ounce bag)",
+        "item": "milk chocolate chips or dark chocolate chips",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "one 12-ounce bag",
         "category": "Baking"
       }
     },
     {
       "raw": "1 cup toffee bits (from one 8-ounce bag)",
       "expected": {
-        "item": "toffee bits (from one 8-ounce bag)",
+        "item": "toffee bits",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from one 8-ounce bag",
         "category": "Other"
       }
     },

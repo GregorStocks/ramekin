@@ -196,7 +196,7 @@
     {
       "raw": "1 teaspoon (2 grams) freshly grated nutmeg (I used less, because I was nutmeg-wary, but wouldn’t have minded more)",
       "expected": {
-        "item": "freshly grated nutmeg (I used less, because I was nutmeg-wary, but wouldn’t have minded more)",
+        "item": "freshly grated nutmeg",
         "measurements": [
           {
             "amount": "1",
@@ -207,7 +207,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used less, because I was nutmeg-wary, but wouldn’t have minded more",
         "category": "Spices & Seasonings"
       }
     },

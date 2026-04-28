@@ -113,28 +113,32 @@
     {
       "raw": "2 tablespoons unsalted butter (or salted, but then ease up on the sea salt)",
       "expected": {
-        "item": "unsalted butter (or salted, but then ease up on the sea salt)",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "or salted, but then ease up on the sea salt",
+        "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1/4 teaspoon flaky sea salt (or half as much table salt)",
       "expected": {
-        "item": "flaky sea salt (or half as much table salt)",
+        "item": "flaky sea salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or half as much table salt",
         "category": "Spices & Seasonings"
       }
     },

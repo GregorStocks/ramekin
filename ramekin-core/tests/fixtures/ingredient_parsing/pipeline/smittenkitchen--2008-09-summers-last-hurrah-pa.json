@@ -23,14 +23,14 @@
     {
       "raw": "6 cups hearty sourdough or country bread in 1-inch cubes (from a small boule)",
       "expected": {
-        "item": "hearty sourdough or country bread in 1-inch cubes (from a small boule)",
+        "item": "hearty sourdough or country bread in 1-inch cubes",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from a small boule",
         "category": "Bakery & Bread"
       }
     },
@@ -170,14 +170,14 @@
     {
       "raw": "2 bell peppers, seeded and cut into 1-inch cubes (purple, orange, or yellow are nice for aesthetics if you can find them)",
       "expected": {
-        "item": "bell peppers, seeded and cut into 1-inch cubes (purple, orange, or yellow are nice for aesthetics if you can find them)",
+        "item": "bell peppers, seeded and cut into 1-inch cubes",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "purple, orange, or yellow are nice for aesthetics if you can find them",
         "category": "Produce"
       }
     },

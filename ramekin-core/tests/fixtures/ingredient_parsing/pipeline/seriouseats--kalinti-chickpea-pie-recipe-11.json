@@ -31,7 +31,7 @@
     {
       "raw": "2 cups finely milled chickpea flour (about 9 ounces; 250 g) (see notes)",
       "expected": {
-        "item": "finely milled chickpea flour (see notes)",
+        "item": "finely milled chickpea flour",
         "measurements": [
           {
             "amount": "2",
@@ -46,7 +46,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Canned Goods"
       }
     },
@@ -147,7 +147,7 @@
     {
       "raw": "1 1/2 teaspoons (7 1/2 ml) fresh lemon juice (from 1 lemon)",
       "expected": {
-        "item": "fresh lemon juice (from 1 lemon)",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "1.5",
@@ -156,18 +156,22 @@
           {
             "amount": "7.5",
             "unit": "ml"
+          },
+          {
+            "amount": "7.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 1 lemon",
         "category": "Beverages"
       }
     },
     {
       "raw": "Flaky sea salt (such as Maldon), to taste",
       "expected": {
-        "item": "Flaky sea salt (such as Maldon)",
+        "item": "Flaky sea salt",
         "measurements": [],
-        "note": "to taste",
+        "note": "such as Maldon, to taste",
         "category": "Spices & Seasonings"
       }
     },

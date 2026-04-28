@@ -5,14 +5,14 @@
     {
       "raw": "200 g salmon fillets (skin-on)",
       "expected": {
-        "item": "salmon fillets (skin-on)",
+        "item": "salmon fillets",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skin-on",
         "category": "Meat & Seafood"
       }
     },
@@ -87,18 +87,14 @@
     {
       "raw": "2 tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "11",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -141,9 +137,9 @@
     {
       "raw": "finely chopped green onions (to garnish)",
       "expected": {
-        "item": "finely chopped green onions (to garnish)",
+        "item": "finely chopped green onions",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "category": "Produce"
       }
     },

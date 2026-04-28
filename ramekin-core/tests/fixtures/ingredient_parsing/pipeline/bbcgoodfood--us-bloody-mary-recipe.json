@@ -78,10 +78,10 @@
     {
       "raw": "few shakes of Tabasco (chipotle Tabasco is nice)",
       "expected": {
-        "item": "few shakes of Tabasco (chipotle Tabasco is nice)",
+        "item": "few shakes of Tabasco",
         "measurements": [],
-        "note": null,
-        "category": "Snacks"
+        "note": "chipotle Tabasco is nice",
+        "category": "Other"
       }
     },
     {

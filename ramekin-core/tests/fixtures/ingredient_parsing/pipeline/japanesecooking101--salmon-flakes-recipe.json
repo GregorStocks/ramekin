@@ -23,15 +23,19 @@
     {
       "raw": "1 Tbsp Sake (rice wine)",
       "expected": {
-        "item": "Sake (rice wine)",
+        "item": "Sake",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Pasta & Rice"
+        "note": "rice wine",
+        "category": "Beverages"
       }
     },
     {

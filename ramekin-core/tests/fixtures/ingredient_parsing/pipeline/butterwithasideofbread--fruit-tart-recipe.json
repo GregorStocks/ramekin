@@ -5,14 +5,18 @@
     {
       "raw": "1/2 cup butter (one stick)",
       "expected": {
-        "item": "butter (one stick)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "one stick",
         "category": "Dairy & Eggs"
       }
     },

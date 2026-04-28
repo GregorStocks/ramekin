@@ -5,14 +5,14 @@
     {
       "raw": "1  large russet potato (baked and cooled)",
       "expected": {
-        "item": "russet potato (baked and cooled)",
+        "item": "russet potato",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "baked and cooled",
         "category": "Produce"
       }
     },

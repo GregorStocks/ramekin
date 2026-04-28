@@ -257,27 +257,27 @@
     {
       "raw": "greek yogurt,  (for topping)",
       "expected": {
-        "item": "greek yogurt,  (for topping)",
+        "item": "greek yogurt",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "sliced green onions, (for topping)",
       "expected": {
-        "item": "sliced green onions, (for topping)",
+        "item": "sliced green onions",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     },
     {
       "raw": "shredded cheddar cheese, (for topping)",
       "expected": {
-        "item": "shredded cheddar cheese, (for topping)",
+        "item": "shredded cheddar cheese",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Cheese"
       }
     }

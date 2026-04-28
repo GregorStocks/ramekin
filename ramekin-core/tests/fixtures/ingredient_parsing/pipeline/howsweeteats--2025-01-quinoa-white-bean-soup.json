@@ -199,7 +199,7 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "about 2 inches in size",
         "category": "Cheese"
       }
     },
@@ -220,9 +220,9 @@
     {
       "raw": "shaved parmesan cheese, (for topping)",
       "expected": {
-        "item": "shaved parmesan cheese, (for topping)",
+        "item": "shaved parmesan cheese",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Cheese"
       }
     },

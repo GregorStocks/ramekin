@@ -113,14 +113,18 @@
     {
       "raw": "1/4 cup honey (any variety you like to eat)",
       "expected": {
-        "item": "honey (any variety you like to eat)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any variety you like to eat",
         "category": "Baking"
       }
     },

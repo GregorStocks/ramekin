@@ -61,14 +61,14 @@
     {
       "raw": "150 g thinly sliced pork belly (cut into thin strips)",
       "expected": {
-        "item": "thinly sliced pork belly (cut into thin strips)",
+        "item": "thinly sliced pork belly",
         "measurements": [
           {
             "amount": "150",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into thin strips",
         "category": "Meat & Seafood"
       }
     },
@@ -89,14 +89,14 @@
     {
       "raw": "4 tbsp Japanese light soy sauce (usukuchi shoyu)",
       "expected": {
-        "item": "Japanese light soy sauce (usukuchi shoyu)",
+        "item": "Japanese light soy sauce",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "usukuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -130,9 +130,9 @@
     {
       "raw": "ground black pepper (garnish)",
       "expected": {
-        "item": "ground black pepper (garnish)",
+        "item": "ground black pepper",
         "measurements": [],
-        "note": null,
+        "note": "garnish",
         "category": "Spices & Seasonings"
       }
     }

@@ -169,14 +169,14 @@
     {
       "raw": "6 cups spiralized zucchini (from 2 [10.7-oz.] pkgs.)",
       "expected": {
-        "item": "spiralized zucchini (from 2 [10.7-oz.] pkgs.)",
+        "item": "spiralized zucchini",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 2 [10.7-oz.] pkgs.",
         "category": "Produce"
       }
     },

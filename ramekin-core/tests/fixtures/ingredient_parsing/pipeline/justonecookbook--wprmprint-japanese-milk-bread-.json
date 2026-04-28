@@ -76,7 +76,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 packet (7 g each",
         "section": "For 1 Rectangular Shokupan Loaf (1.5 Kin Size)",
         "category": "Baking"
       }
@@ -84,14 +84,14 @@
     {
       "raw": "350 g bread flour (I use King Arthur; do not use organic—see Notes below)",
       "expected": {
-        "item": "bread flour (I use King Arthur; do not use organic-see Notes below)",
+        "item": "bread flour",
         "measurements": [
           {
             "amount": "350",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use King Arthur; do not use organic-see Notes below",
         "section": "For 1 Rectangular Shokupan Loaf (1.5 Kin Size)",
         "category": "Baking"
       }
@@ -99,16 +99,16 @@
     {
       "raw": "20 g skim milk powder or nonfat dry milk powder (I use Bob’s Red Mill; for vegan, use coconut milk powder; avoid soy milk powder as the dough does not rise well)",
       "expected": {
-        "item": "skim milk powder or nonfat dry milk powder (I use Bob’s Red Mill; for vegan, use coconut milk powder; avoid soy milk powder as the dough does not rise well)",
+        "item": "skim milk powder or nonfat dry milk powder",
         "measurements": [
           {
             "amount": "20",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use Bob’s Red Mill; for vegan, use coconut milk powder; avoid soy milk powder as the dough does not rise well",
         "section": "For 1 Rectangular Shokupan Loaf (1.5 Kin Size)",
-        "category": "Canned Goods"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -129,14 +129,14 @@
     {
       "raw": "½ tsp neutral oil (for the bowl)",
       "expected": {
-        "item": "neutral oil (for the bowl)",
+        "item": "neutral oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "for the bowl",
         "section": "For 1 Rectangular Shokupan Loaf (1.5 Kin Size)",
         "category": "Oils & Vinegars"
       }

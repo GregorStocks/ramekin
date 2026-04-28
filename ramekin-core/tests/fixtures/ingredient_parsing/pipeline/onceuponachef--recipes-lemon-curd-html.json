@@ -37,28 +37,32 @@
     {
       "raw": "2 teaspoons lemon zest (from 2 lemons)",
       "expected": {
-        "item": "lemon zest (from 2 lemons)",
+        "item": "lemon zest",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "from 2 lemons",
         "category": "Produce"
       }
     },
     {
       "raw": "½ cup  lemon juice (from 3 lemons)",
       "expected": {
-        "item": "lemon juice (from 3 lemons)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 3 lemons",
         "category": "Beverages"
       }
     },

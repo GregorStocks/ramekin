@@ -123,14 +123,18 @@
     {
       "raw": "1¾ cups buttermilk (see note)",
       "expected": {
-        "item": "buttermilk (see note)",
+        "item": "buttermilk",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
+          },
+          {
+            "amount": "429",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Dairy & Eggs"
       }
     },

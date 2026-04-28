@@ -5,14 +5,14 @@
     {
       "raw": "2  large egg whites (room temp (if you forgot, put them in warm water for 15 min))",
       "expected": {
-        "item": "egg whites (room temp (if you forgot, put them in warm water for 15 min)",
+        "item": "egg whites",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "room temp (if you forgot, put them in warm water for 15 min",
         "category": "Dairy & Eggs"
       }
     },

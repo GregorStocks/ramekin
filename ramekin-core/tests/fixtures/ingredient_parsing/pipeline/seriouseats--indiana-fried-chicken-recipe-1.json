@@ -5,14 +5,14 @@
     {
       "raw": "1 small whole chicken (as close to 3 pounds as possible)",
       "expected": {
-        "item": "whole chicken (as close to 3 pounds as possible)",
+        "item": "whole chicken",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "as close to 3 pounds as possible",
         "category": "Meat & Seafood"
       }
     },

@@ -163,9 +163,9 @@
     {
       "raw": "chocolate sprinkles (for topping)",
       "expected": {
-        "item": "chocolate sprinkles (for topping)",
+        "item": "chocolate sprinkles",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Baking"
       }
     }

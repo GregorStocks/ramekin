@@ -126,14 +126,18 @@
     {
       "raw": "1 cup heavy cream (see Note up top)",
       "expected": {
-        "item": "heavy cream (see Note up top)",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note up top",
         "category": "Dairy & Eggs"
       }
     },
@@ -199,14 +203,14 @@
     {
       "raw": "2 1/2 cups coarse fresh breadcrumbs or panko (what I used)",
       "expected": {
-        "item": "coarse fresh breadcrumbs or panko (what I used)",
+        "item": "coarse fresh breadcrumbs or panko",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "what I used",
         "category": "Bakery & Bread"
       }
     },

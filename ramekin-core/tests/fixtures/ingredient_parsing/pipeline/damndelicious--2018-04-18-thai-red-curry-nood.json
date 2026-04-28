@@ -23,7 +23,7 @@
     {
       "raw": "1 1/2 pounds boneless, skinless chicken breasts (cut into 1/2-inch chunks)",
       "expected": {
-        "item": "boneless, skinless chicken breasts (cut into 1/2-inch chunks)",
+        "item": "boneless, skinless chicken breasts",
         "measurements": [
           {
             "amount": "1.5",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch chunks",
         "category": "Meat & Seafood"
       }
     },
@@ -141,7 +141,7 @@
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "13.5-ounce",
         "category": "Canned Goods"
       }
     },

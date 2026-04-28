@@ -83,23 +83,23 @@
     {
       "raw": "2 tsp lemon zest ((from 1 medium lemon))",
       "expected": {
-        "item": "lemon zest (from 1 medium lemon)",
+        "item": "lemon zest",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "from 1 medium lemon",
         "category": "Produce"
       }
     },
     {
       "raw": "Salt (and black pepper)",
       "expected": {
-        "item": "Salt (and black pepper)",
+        "item": "salt, presumably Diamond",
         "measurements": [],
-        "note": null,
+        "note": "and black pepper",
         "category": "Spices & Seasonings"
       }
     },

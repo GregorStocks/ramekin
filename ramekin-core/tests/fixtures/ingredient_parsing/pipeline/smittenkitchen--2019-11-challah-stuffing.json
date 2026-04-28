@@ -5,7 +5,7 @@
     {
       "raw": "1.5 pounds challah bread (storebought or 3/4 of one of these), cut into generous 1-inch cubes",
       "expected": {
-        "item": "challah bread (storebought or 3/4 of one of these), cut into generous 1-inch cubes",
+        "item": "challah bread, cut into generous 1-inch cubes",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "storebought or 3/4 of one of these",
         "category": "Bakery & Bread"
       }
     },
@@ -37,28 +37,28 @@
     {
       "raw": "2 cups small-diced celery (from about 3 large ribs)",
       "expected": {
-        "item": "small-diced celery (from about 3 large ribs)",
+        "item": "small-diced celery",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from about 3 large ribs",
         "category": "Produce"
       }
     },
     {
       "raw": "2 cups small-diced leeks or yellow onions (from about 2 large leeks or 1 large onion)",
       "expected": {
-        "item": "small-diced leeks or yellow onions (from about 2 large leeks or 1 large onion)",
+        "item": "small-diced leeks or yellow onions",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from about 2 large leeks or 1 large onion",
         "category": "Produce"
       }
     },

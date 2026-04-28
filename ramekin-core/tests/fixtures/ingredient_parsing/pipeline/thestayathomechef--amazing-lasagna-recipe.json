@@ -113,7 +113,7 @@
     {
       "raw": "1 (15 ounce can) tomato sauce (passata or tomato puree)",
       "expected": {
-        "item": "tomato sauce (passata or tomato puree)",
+        "item": "tomato sauce",
         "measurements": [
           {
             "amount": "1",
@@ -128,7 +128,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "passata or tomato puree",
         "category": "Canned Goods"
       }
     },

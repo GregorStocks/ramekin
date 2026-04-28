@@ -5,42 +5,42 @@
     {
       "raw": "½ cup urad dal ((skinned black gram))",
       "expected": {
-        "item": "urad dal (skinned black gram)",
+        "item": "urad dal",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "skinned black gram",
         "category": "Other"
       }
     },
     {
       "raw": "3 tablespoon chana dal  ((bengal gram) (or 2 tbsps chana dal &amp;amp; 1 tbsp toor dal))",
       "expected": {
-        "item": "chana dal  (bengal gram) (or 2 tbsps chana dal & 1 tbsp toor dal)",
+        "item": "chana dal",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "bengal gram, or 2 tbsps chana dal & 1 tbsp toor dal",
         "category": "Other"
       }
     },
     {
       "raw": "1½ cup raw sona masuri rice ((refer notes))",
       "expected": {
-        "item": "raw sona masuri rice (refer notes)",
+        "item": "raw sona masuri rice",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "refer notes",
         "category": "Pasta & Rice"
       }
     },
@@ -61,29 +61,29 @@
     {
       "raw": "3 tablespoon poha ((flattened rice))",
       "expected": {
-        "item": "poha (flattened rice)",
+        "item": "poha",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Pasta & Rice"
+        "note": "flattened rice",
+        "category": "Other"
       }
     },
     {
       "raw": "½ teaspoon methi seeds ((fenugreek seeds))",
       "expected": {
-        "item": "methi seeds (fenugreek seeds)",
+        "item": "methi seeds",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "fenugreek seeds",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -103,28 +103,28 @@
     {
       "raw": "1¼ cups water to blend dal ((adjust if needed))",
       "expected": {
-        "item": "water to blend dal (adjust if needed)",
+        "item": "water to blend dal",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "adjust if needed",
         "category": "Other"
       }
     },
     {
       "raw": "½ to ¾ cups water to blend rice ((refer notes))",
       "expected": {
-        "item": "water to blend rice (refer notes)",
+        "item": "water to blend rice",
         "measurements": [
           {
             "amount": "0.5 to 0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "refer notes",
         "category": "Pasta & Rice"
       }
     },
@@ -171,70 +171,74 @@
     {
       "raw": "¼ to ½ teaspoon mustard (seeds)",
       "expected": {
-        "item": "mustard (seeds)",
+        "item": "mustard",
         "measurements": [
           {
             "amount": "0.25 to 0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "seeds",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "½ teaspoon cumin  ((jeera))",
       "expected": {
-        "item": "cumin  (jeera)",
+        "item": "cumin",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "jeera",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 teaspoon chana dal ((bengal gram) (optional))",
       "expected": {
-        "item": "chana dal (bengal gram) (optional)",
+        "item": "chana dal",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "bengal gram, optional",
         "category": "Other"
       }
     },
     {
       "raw": "1 teaspoon urad dal ((skinned black gram) (optional))",
       "expected": {
-        "item": "urad dal (skinned black gram) (optional)",
+        "item": "urad dal",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "skinned black gram, optional",
         "category": "Other"
       }
     },
     {
       "raw": "1 pinch asafoetida  ((hing)(optional))",
       "expected": {
-        "item": "asafoetida  (hing)(optional)",
+        "item": "asafoetida",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "hing, optional",
         "category": "Other"
       }
     },
@@ -301,14 +305,18 @@
     {
       "raw": "¼ teaspoon turmeric ((haldi))",
       "expected": {
-        "item": "turmeric (haldi)",
+        "item": "turmeric",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.8",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "haldi",
         "category": "Spices & Seasonings"
       }
     },
@@ -343,9 +351,9 @@
     {
       "raw": "Butter as needed  ((preferably unsalted cultured butter))",
       "expected": {
-        "item": "Butter as needed  (preferably unsalted cultured butter)",
+        "item": "Butter as needed",
         "measurements": [],
-        "note": null,
+        "note": "preferably unsalted cultured butter",
         "category": "Dairy & Eggs"
       }
     }

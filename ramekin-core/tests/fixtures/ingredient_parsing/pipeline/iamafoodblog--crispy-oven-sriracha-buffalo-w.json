@@ -59,14 +59,14 @@
     {
       "raw": "1 recipe wing sauce (below)",
       "expected": {
-        "item": "recipe wing sauce (below)",
+        "item": "recipe wing sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "below",
         "category": "Condiments & Sauces"
       }
     },

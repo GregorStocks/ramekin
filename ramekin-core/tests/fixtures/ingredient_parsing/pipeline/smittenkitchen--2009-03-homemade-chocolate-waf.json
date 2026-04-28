@@ -27,7 +27,7 @@
     {
       "raw": "3/4 cup (2.4 ounces) unsweetened cocoa powder (see Note)",
       "expected": {
-        "item": "unsweetened cocoa powder (see Note)",
+        "item": "unsweetened cocoa powder",
         "measurements": [
           {
             "amount": "0.75",
@@ -42,7 +42,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Baking"
       }
     },
@@ -157,14 +157,14 @@
     {
       "raw": "1 batch of Chocolate Wafers (recipe above)",
       "expected": {
-        "item": "batch of Chocolate Wafers (recipe above)",
+        "item": "batch of Chocolate Wafers",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "recipe above",
         "category": "Other"
       }
     },
@@ -189,23 +189,23 @@
     {
       "raw": "1 to 2 spoons of powdered sugar (adjusted to your preferred sweetness; I like my whipped cream barely sweetened)",
       "expected": {
-        "item": "spoons of powdered sugar (adjusted to your preferred sweetness; I like my whipped cream barely sweetened)",
+        "item": "spoons of powdered sugar",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "adjusted to your preferred sweetness; I like my whipped cream barely sweetened",
         "category": "Baking"
       }
     },
     {
       "raw": "A dash of your favorite flavoring or extract (I use about 1/2 teaspoon vanilla)",
       "expected": {
-        "item": "A dash of your favorite flavoring or extract (I use about 1/2 teaspoon vanilla)",
+        "item": "A dash of your favorite flavoring or extract",
         "measurements": [],
-        "note": null,
+        "note": "I use about 1/2 teaspoon vanilla",
         "category": "Baking"
       }
     }

@@ -51,14 +51,14 @@
     {
       "raw": "1/4 to 1/2 teaspoon dried hot red pepper flakes (the latter will make them quite spicy, so using according to your preferences)",
       "expected": {
-        "item": "dried hot red pepper flakes (the latter will make them quite spicy, so using according to your preferences)",
+        "item": "dried hot red pepper flakes",
         "measurements": [
           {
             "amount": "0.25 to 0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "the latter will make them quite spicy, so using according to your preferences",
         "category": "Spices & Seasonings"
       }
     },

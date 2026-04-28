@@ -109,15 +109,15 @@
     {
       "raw": "2 teaspoons red food colouring (or 1 tablespoons beetroot juice)",
       "expected": {
-        "item": "red food colouring (or 1 tablespoons beetroot juice)",
+        "item": "red food colouring",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "or 1 tablespoons beetroot juice",
+        "category": "Other"
       }
     },
     {

@@ -155,7 +155,7 @@
     {
       "raw": "8 ounces (225 grams) fresh or (ideally) frozen raspberries (1 2/3 to 1 3/4 cups; see Note)",
       "expected": {
-        "item": "fresh or (ideally) frozen raspberries (1 2/3 to 1 3/4 cups; see Note)",
+        "item": "fresh or frozen raspberries",
         "measurements": [
           {
             "amount": "8",
@@ -166,7 +166,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "ideally, 1 2/3 to 1 3/4 cups; see Note",
         "category": "Produce"
       }
     }

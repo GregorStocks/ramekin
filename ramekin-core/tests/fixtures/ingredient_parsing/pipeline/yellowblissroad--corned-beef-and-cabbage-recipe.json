@@ -5,7 +5,7 @@
     {
       "raw": "3 to 4  pounds corned beef (flat cut with spice packet)",
       "expected": {
-        "item": "corned beef (flat cut with spice packet)",
+        "item": "corned beef",
         "measurements": [
           {
             "amount": "3 to 4",
@@ -16,14 +16,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "flat cut with spice packet",
+        "category": "Meat & Seafood"
       }
     },
     {
       "raw": "12 ounces beer ((amber ale or lager))",
       "expected": {
-        "item": "beer (amber ale or lager)",
+        "item": "beer",
         "measurements": [
           {
             "amount": "12",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "amber ale or lager",
         "category": "Beverages"
       }
     },
@@ -83,14 +83,14 @@
     {
       "raw": "1 head green cabbage (cut into wedges)",
       "expected": {
-        "item": "green cabbage (cut into wedges)",
+        "item": "green cabbage",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "cut into wedges",
         "category": "Produce"
       }
     }

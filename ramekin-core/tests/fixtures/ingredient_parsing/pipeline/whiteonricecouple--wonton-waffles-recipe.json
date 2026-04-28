@@ -5,21 +5,21 @@
     {
       "raw": "24-30  Wonton Wrappers (or Skins&nbsp;)",
       "expected": {
-        "item": "Wonton Wrappers (or Skins",
+        "item": "Wonton Wrappers",
         "measurements": [
           {
             "amount": "24-30",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or Skins",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "1/2 pound ground pork ( (or chicken, beef, shrimp, or vegan meat)&nbsp;)",
       "expected": {
-        "item": "ground pork ( (or chicken, beef, shrimp, or vegan meat)",
+        "item": "ground pork",
         "measurements": [
           {
             "amount": "0.5",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "(or chicken, beef, shrimp, or vegan meat",
         "category": "Meat & Seafood"
       }
     },
@@ -155,9 +155,9 @@
     {
       "raw": "cooking oil (, for spraying or brushing )",
       "expected": {
-        "item": "cooking oil (, for spraying or brushing",
+        "item": "cooking oil",
         "measurements": [],
-        "note": null,
+        "note": "for spraying or brushing",
         "category": "Oils & Vinegars"
       }
     },
@@ -196,14 +196,18 @@
     {
       "raw": "1 Tablespoon rice vinegar ( or distilled vinegar )",
       "expected": {
-        "item": "rice vinegar ( or distilled vinegar",
+        "item": "rice vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or distilled vinegar",
         "category": "Oils & Vinegars"
       }
     },
@@ -228,15 +232,19 @@
     {
       "raw": "2 Tablespoons hot water  (, this dissolves the sugar and makes sauce less salty )",
       "expected": {
-        "item": "hot water  (, this dissolves the sugar and makes sauce less salty",
+        "item": "hot water",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "this dissolves the sugar and makes sauce less salty",
+        "category": "Other"
       }
     },
     {
@@ -260,15 +268,15 @@
     {
       "raw": "1 Tablespoon  chili crunch ( / chili crisp , or your choice of hot sauce )",
       "expected": {
-        "item": "chili crunch ( / chili crisp, or your choice of hot sauce",
+        "item": "chili crunch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "/ chili crisp , or your choice of hot sauce",
+        "category": "Other"
       }
     }
   ]

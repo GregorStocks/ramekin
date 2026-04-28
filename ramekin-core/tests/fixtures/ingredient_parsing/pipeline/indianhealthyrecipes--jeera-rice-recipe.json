@@ -5,28 +5,28 @@
     {
       "raw": "1½ cups aged basmati rice  ((refer notes))",
       "expected": {
-        "item": "aged basmati rice  (refer notes)",
+        "item": "aged basmati rice",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "refer notes",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "2 tablespoon ghee ( or oil or butter)",
       "expected": {
-        "item": "ghee ( or oil or butter)",
+        "item": "ghee",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or oil or butter",
         "category": "Dairy & Eggs"
       }
     },
@@ -47,15 +47,15 @@
     {
       "raw": "2½ cups water to pressure cook (or (1¾ cups + 2 tbsps for instant pot) or (3 cups for regular pot, Cut down if not using aged rice))",
       "expected": {
-        "item": "water to pressure cook (or (1 3/4 cups + 2 tbsps for instant pot) or (3 cups for regular pot, Cut down if not using aged rice)",
+        "item": "water to pressure cook or",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Pasta & Rice"
+        "note": "or (1 3/4 cups + 2 tbsps for instant pot, 3 cups for regular pot, Cut down if not using aged rice",
+        "category": "Other"
       }
     },
     {
@@ -75,84 +75,84 @@
     {
       "raw": "2 teaspoons cumin seeds ((jeera))",
       "expected": {
-        "item": "cumin seeds (jeera)",
+        "item": "cumin seeds",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "jeera",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1  bay leaf ((tej patta))",
       "expected": {
-        "item": "bay leaf (tej patta)",
+        "item": "bay leaf",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "tej patta",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "4  green cardamoms ((elaichi))",
       "expected": {
-        "item": "green cardamoms (elaichi)",
+        "item": "green cardamoms",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "elaichi",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "2 inch cinnamon piece ((dalchini))",
       "expected": {
-        "item": "inch cinnamon piece (dalchini)",
+        "item": "inch cinnamon piece",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "dalchini",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "4  cloves ((laung))",
       "expected": {
-        "item": "(laung)",
+        "item": "4  cloves ((laung))",
         "measurements": [
           {
             "amount": "4",
             "unit": "clove"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "laung",
+        "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 strand mace ((javitri) (optional))",
       "expected": {
-        "item": "strand mace (javitri) (optional)",
+        "item": "strand mace",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "javitri, optional",
         "category": "Spices & Seasonings"
       }
     }

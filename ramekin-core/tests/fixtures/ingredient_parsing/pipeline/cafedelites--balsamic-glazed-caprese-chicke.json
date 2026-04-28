@@ -83,14 +83,18 @@
     {
       "raw": "1 tablespoon olive oil (or a light spray of cooking oil spray)",
       "expected": {
-        "item": "olive oil (or a light spray of cooking oil spray)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or a light spray of cooking oil spray",
         "category": "Oils & Vinegars"
       }
     },
@@ -165,7 +169,7 @@
     {
       "raw": "8 oz fresh mozzarella cheese (or Bocconcini, cut into 6x 1/2-inch slices)",
       "expected": {
-        "item": "fresh mozzarella cheese (or Bocconcini, cut into 6x 1/2-inch slices)",
+        "item": "fresh mozzarella cheese",
         "measurements": [
           {
             "amount": "8",
@@ -176,21 +180,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Bocconcini, cut into 6x 1/2-inch slices",
         "category": "Cheese"
       }
     },
     {
       "raw": "1/4 cup fresh basil leaves (chiffonade)",
       "expected": {
-        "item": "fresh basil leaves (chiffonade)",
+        "item": "fresh basil leaves",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "chiffonade",
         "category": "Produce"
       }
     },

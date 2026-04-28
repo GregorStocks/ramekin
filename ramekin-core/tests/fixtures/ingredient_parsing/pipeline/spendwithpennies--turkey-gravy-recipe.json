@@ -19,14 +19,14 @@
     {
       "raw": "2-3 tablespoons fresh herbs (parsley, thyme, sage)",
       "expected": {
-        "item": "fresh herbs (parsley, thyme, sage)",
+        "item": "fresh herbs",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "parsley, thyme, sage",
         "category": "Produce"
       }
     },

@@ -101,14 +101,14 @@
     {
       "raw": "1 Tbsp chopped fresh rosemary (or oregano)",
       "expected": {
-        "item": "chopped fresh rosemary (or oregano)",
+        "item": "chopped fresh rosemary",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or oregano",
         "category": "Produce"
       }
     },
@@ -138,7 +138,7 @@
     {
       "raw": "2 1/2 lbs Yukon gold potatoes, (cut into 2/3-inch cubes)",
       "expected": {
-        "item": "Yukon gold potatoes, (cut into 2/3-inch cubes)",
+        "item": "Yukon gold potatoes",
         "measurements": [
           {
             "amount": "2.5",
@@ -149,7 +149,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 2/3-inch cubes",
         "category": "Produce"
       }
     }

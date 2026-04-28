@@ -108,7 +108,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "1/4-inch",
         "category": "Produce"
       }
     },
@@ -204,21 +204,21 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "1/4-inch",
         "category": "Produce"
       }
     },
     {
       "raw": "0.75 cup coconut cream (see Tip)",
       "expected": {
-        "item": "coconut cream (see Tip)",
+        "item": "coconut cream",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Tip",
         "category": "Canned Goods"
       }
     },

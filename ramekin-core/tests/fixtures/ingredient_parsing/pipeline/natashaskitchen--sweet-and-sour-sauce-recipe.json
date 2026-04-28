@@ -95,15 +95,19 @@
     {
       "raw": "3/4 cup cold water (or half pineapple juice and half water)",
       "expected": {
-        "item": "cold water (or half pineapple juice and half water)",
+        "item": "cold water",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "178",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "or half pineapple juice and half water",
+        "category": "Other"
       }
     },
     {

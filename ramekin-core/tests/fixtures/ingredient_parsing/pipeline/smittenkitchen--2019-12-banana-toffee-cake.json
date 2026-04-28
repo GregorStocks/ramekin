@@ -235,7 +235,7 @@
     {
       "raw": "1 cup (235 ml) heavy cream, divided (half for sauce, half for whipping)",
       "expected": {
-        "item": "heavy cream, divided (half for sauce, half for whipping)",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "1",
@@ -244,9 +244,13 @@
           {
             "amount": "235",
             "unit": "ml"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "half for sauce, half for whipping, divided",
         "category": "Dairy & Eggs"
       }
     },

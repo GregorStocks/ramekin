@@ -111,7 +111,7 @@
     {
       "raw": "2 pounds pork tenderloin (cut into 1 1/2-inch pieces)",
       "expected": {
-        "item": "pork tenderloin (cut into 1 1/2-inch pieces)",
+        "item": "pork tenderloin",
         "measurements": [
           {
             "amount": "2",
@@ -122,7 +122,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1 1/2-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -165,14 +165,22 @@
     {
       "raw": "1 jar prepared tomatillo (green) salsa ((16 ounces) about 1 1/2 cups)",
       "expected": {
-        "item": "prepared tomatillo (green) salsa (16 ounces) about 1 1/2 cups)",
+        "item": "prepared tomatillo salsa about 1 1/2 cups)",
         "measurements": [
           {
             "amount": "1",
             "unit": "jar"
+          },
+          {
+            "amount": "16",
+            "unit": "oz"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "green",
         "category": "Produce"
       }
     },
@@ -265,9 +273,9 @@
     {
       "raw": "Plain nonfat Greek yogurt (or sour cream)",
       "expected": {
-        "item": "Plain nonfat Greek yogurt (or sour cream)",
+        "item": "Plain nonfat Greek yogurt",
         "measurements": [],
-        "note": null,
+        "note": "or sour cream",
         "category": "Dairy & Eggs"
       }
     }

@@ -313,14 +313,14 @@
     {
       "raw": "2 teaspoons maple extract (I like Frontier brand)",
       "expected": {
-        "item": "maple extract (I like Frontier brand)",
+        "item": "maple extract",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "I like Frontier brand",
         "category": "Baking"
       }
     },
@@ -681,23 +681,23 @@
     {
       "raw": "6  frozen soft pretzels with salt (baked)",
       "expected": {
-        "item": "frozen soft pretzels with salt (baked)",
+        "item": "frozen soft pretzels with salt",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "baked",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "Prepared funnel cake (see headnote)",
       "expected": {
-        "item": "Prepared funnel cake (see headnote)",
+        "item": "Prepared funnel cake",
         "measurements": [],
-        "note": null,
+        "note": "see headnote",
         "category": "Other"
       }
     },

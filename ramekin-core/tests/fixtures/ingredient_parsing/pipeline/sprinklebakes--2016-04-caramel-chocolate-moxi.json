@@ -485,15 +485,15 @@
     {
       "raw": "2  Alter Eco Truffles (velvet and salted caramel)",
       "expected": {
-        "item": "Alter Eco Truffles (velvet and salted caramel)",
+        "item": "Alter Eco Truffles",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "velvet and salted caramel",
+        "category": "Other"
       }
     }
   ]

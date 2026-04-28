@@ -5,7 +5,7 @@
     {
       "raw": "1 pound lean ground chicken, (I like to use 94% lean)",
       "expected": {
-        "item": "lean ground chicken, (I like to use 94% lean)",
+        "item": "lean ground chicken",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I like to use 94% lean",
         "category": "Meat & Seafood"
       }
     },
@@ -120,14 +120,14 @@
     {
       "raw": "4  ears of corn, (kernels cut from the cob)",
       "expected": {
-        "item": "ears of corn, (kernels cut from the cob)",
+        "item": "ears of corn",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "kernels cut from the cob",
         "category": "Other"
       }
     },

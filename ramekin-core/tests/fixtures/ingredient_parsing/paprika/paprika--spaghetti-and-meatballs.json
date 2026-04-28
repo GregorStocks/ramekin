@@ -5,7 +5,7 @@
     {
       "raw": "1 pound ground meat (see note up top for suggestions)",
       "expected": {
-        "item": "ground meat (see note up top for suggestions)",
+        "item": "ground meat",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note up top for suggestions",
         "category": "Meat & Seafood"
       }
     },

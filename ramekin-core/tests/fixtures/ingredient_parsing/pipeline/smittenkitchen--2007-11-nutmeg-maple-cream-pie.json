@@ -101,14 +101,14 @@
     {
       "raw": "1/4 teaspoon freshly grated nutmeg (see Note)",
       "expected": {
-        "item": "freshly grated nutmeg (see Note)",
+        "item": "freshly grated nutmeg",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Spices & Seasonings"
       }
     },

@@ -440,14 +440,14 @@
     {
       "raw": "1/2 cup toasted peanuts (or almonds)",
       "expected": {
-        "item": "toasted peanuts (or almonds)",
+        "item": "toasted peanuts",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or almonds",
         "category": "Nuts & Dried Fruit"
       }
     }

@@ -37,15 +37,15 @@
     {
       "raw": "1/4 cup of Truvia Baking Blend (see sugar substitution note below)",
       "expected": {
-        "item": "Truvia Baking Blend (see sugar substitution note below)",
+        "item": "Truvia Baking Blend",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "see sugar substitution note below",
+        "category": "Other"
       }
     },
     {
@@ -193,9 +193,9 @@
     {
       "raw": "Nonstick cooking spray (I use Coconut Oil Spray from Trader Joe's)",
       "expected": {
-        "item": "Nonstick cooking spray (I use Coconut Oil Spray from Trader Joe's)",
+        "item": "Nonstick cooking spray",
         "measurements": [],
-        "note": null,
+        "note": "I use Coconut Oil Spray from Trader Joe's",
         "category": "Oils & Vinegars"
       }
     }

@@ -82,7 +82,7 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "4-inch",
         "category": "Spices & Seasonings"
       }
     },
@@ -135,14 +135,14 @@
     {
       "raw": "1 cup plain whole milk yogurt (not Greek-style)",
       "expected": {
-        "item": "plain whole milk yogurt (not Greek-style)",
+        "item": "plain whole milk yogurt",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "not Greek-style",
         "category": "Dairy & Eggs"
       }
     },
@@ -262,7 +262,7 @@
             "unit": "can"
           }
         ],
-        "note": "drained and diced",
+        "note": "28-ounce, drained and diced",
         "category": "Produce"
       }
     },
@@ -276,7 +276,7 @@
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "13.5-ounce",
         "category": "Canned Goods"
       }
     },

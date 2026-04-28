@@ -5,14 +5,14 @@
     {
       "raw": "2 to 3  chicken breasts (boneless, skinless )",
       "expected": {
-        "item": "chicken breasts (boneless, skinless",
+        "item": "chicken breasts",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "boneless, skinless",
         "category": "Meat & Seafood"
       }
     },

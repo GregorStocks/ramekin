@@ -5,7 +5,7 @@
     {
       "raw": "8 ounces cream cheese, (preferably Philadelphia brand)",
       "expected": {
-        "item": "cream cheese, (preferably Philadelphia brand)",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "8",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably Philadelphia brand",
         "category": "Cheese"
       }
     },
@@ -241,14 +241,18 @@
     {
       "raw": "¾ cup all-purpose flour, (spooned into measuring cup and leveled-off with a knife)",
       "expected": {
-        "item": "all-purpose flour, (spooned into measuring cup and leveled-off with a knife)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "94",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "spooned into measuring cup and leveled-off with a knife",
         "category": "Baking"
       }
     },

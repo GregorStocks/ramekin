@@ -12,7 +12,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 18 16/20 shrimp",
         "category": "Meat & Seafood"
       }
     },
@@ -73,14 +73,14 @@
     {
       "raw": "1 whole plant cilantro ((leaves, stems and root))",
       "expected": {
-        "item": "whole plant cilantro (leaves, stems and root)",
+        "item": "whole plant cilantro",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "leaves, stems and root",
         "category": "Produce"
       }
     },
@@ -142,28 +142,28 @@
     {
       "raw": "1 small tomato ((cut into 1/4\" cubes))",
       "expected": {
-        "item": "tomato (cut into 1/4\" cubes)",
+        "item": "tomato",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4\" cubes",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 cups tomato sauce ((pureed stewed tomatoes))",
       "expected": {
-        "item": "tomato sauce (pureed stewed tomatoes)",
+        "item": "tomato sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "pureed stewed tomatoes",
         "category": "Canned Goods"
       }
     },

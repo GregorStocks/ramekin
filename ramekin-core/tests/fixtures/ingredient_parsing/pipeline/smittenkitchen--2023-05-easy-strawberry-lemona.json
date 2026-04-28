@@ -5,14 +5,14 @@
     {
       "raw": "4 large lemons (mine were 4 1/2 ounces each), plus a few slices for garnish",
       "expected": {
-        "item": "lemons (mine were 4 1/2 ounces each)",
+        "item": "lemons",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": "plus a few slices for garnish",
+        "note": "mine were 4 1/2 ounces each, plus a few slices for garnish",
         "category": "Produce"
       }
     },

@@ -5,42 +5,42 @@
     {
       "raw": "4 cups old-fashioned rolled oats (use certified gluten-free oats for gluten-free granola)",
       "expected": {
-        "item": "old-fashioned rolled oats (use certified gluten-free oats for gluten-free granola)",
+        "item": "old-fashioned rolled oats",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Snacks"
+        "note": "use certified gluten-free oats for gluten-free granola",
+        "category": "Bakery & Bread"
       }
     },
     {
       "raw": "1 &amp;frac12; cup raw nuts and/or seeds (I used 1 cup pecans and &amp;frac12; cup pepitas)",
       "expected": {
-        "item": "raw nuts and/or seeds (I used 1 cup pecans and 1/2 cup pepitas)",
+        "item": "raw nuts and/or seeds",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used 1 cup pecans and 1/2 cup pepitas",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
       "raw": "1 teaspoon fine-grain sea salt (if you&amp;#8217;re using standard table salt, scale back to &amp;frac34; teaspoon)",
       "expected": {
-        "item": "fine-grain sea salt (if you’re using standard table salt, scale back to 3/4 teaspoon)",
+        "item": "fine-grain sea salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "if you’re using standard table salt, scale back to 3/4 teaspoon",
         "category": "Spices & Seasonings"
       }
     },

@@ -149,14 +149,18 @@
     {
       "raw": "1 1/2 teaspoons baking powder (David recommends aluminum-free baking powders, such as Rumford or Bob’s Red Mill, as do I)",
       "expected": {
-        "item": "baking powder (David recommends aluminum-free baking powders, such as Rumford or Bob’s Red Mill, as do I)",
+        "item": "baking powder",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "6.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "David recommends aluminum-free baking powders, such as Rumford or Bob’s Red Mill, as do I",
         "category": "Baking"
       }
     },

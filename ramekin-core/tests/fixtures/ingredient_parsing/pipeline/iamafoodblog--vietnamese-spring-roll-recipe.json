@@ -193,14 +193,14 @@
     {
       "raw": "1 package spring roll wrappers (I like TYJ Spring Roll Pastry)",
       "expected": {
-        "item": "spring roll wrappers (I like TYJ Spring Roll Pastry)",
+        "item": "spring roll wrappers",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
           }
         ],
-        "note": null,
+        "note": "I like TYJ Spring Roll Pastry",
         "category": "Bakery & Bread"
       }
     }

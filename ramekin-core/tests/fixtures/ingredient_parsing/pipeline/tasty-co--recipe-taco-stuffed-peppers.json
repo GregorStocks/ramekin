@@ -55,14 +55,14 @@
     {
       "raw": "2 tablespoons taco seasoning mix, (see recipe below to make your own)",
       "expected": {
-        "item": "taco seasoning mix, (see recipe below to make your own)",
+        "item": "taco seasoning mix",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see recipe below to make your own",
         "category": "Spices & Seasonings"
       }
     },

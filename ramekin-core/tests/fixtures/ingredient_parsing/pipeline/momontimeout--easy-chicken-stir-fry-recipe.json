@@ -5,7 +5,7 @@
     {
       "raw": "1 lb boneless, skinless chicken breast (cut into 1 inch cubes)",
       "expected": {
-        "item": "boneless, skinless chicken breast (cut into 1 inch cubes)",
+        "item": "boneless, skinless chicken breast",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1 inch cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -64,28 +64,28 @@
     {
       "raw": "1/2  yellow bell pepper (cut into 1 inch pieces)",
       "expected": {
-        "item": "yellow bell pepper (cut into 1 inch pieces)",
+        "item": "yellow bell pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1 inch pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2  red bell pepper (cut into 1 inch pieces)",
       "expected": {
-        "item": "red bell pepper (cut into 1 inch pieces)",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1 inch pieces",
         "category": "Produce"
       }
     },

@@ -5,14 +5,18 @@
     {
       "raw": "½ cup soy sauce (low sodium )",
       "expected": {
-        "item": "soy sauce (low sodium",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "128",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Condiments & Sauces"
       }
     },
@@ -51,14 +55,14 @@
     {
       "raw": "3 tablespoons cooking wine (such as Shaoxing)",
       "expected": {
-        "item": "cooking wine (such as Shaoxing)",
+        "item": "cooking wine",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "such as Shaoxing",
         "category": "Beverages"
       }
     },
@@ -151,14 +155,18 @@
     {
       "raw": "½ cup beef broth (or chicken broth, low sodium or no sodium)",
       "expected": {
-        "item": "beef broth (or chicken broth, low sodium or no sodium)",
+        "item": "beef broth",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "124",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or chicken broth, low sodium or no sodium",
         "category": "Canned Goods"
       }
     },
@@ -201,14 +209,14 @@
     {
       "raw": "1 head broccoli (cut into small florets)",
       "expected": {
-        "item": "broccoli (cut into small florets)",
+        "item": "broccoli",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "cut into small florets",
         "category": "Produce"
       }
     }

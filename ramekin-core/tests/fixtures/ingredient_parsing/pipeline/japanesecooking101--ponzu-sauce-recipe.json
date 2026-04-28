@@ -41,14 +41,14 @@
     {
       "raw": "1/4 cup citrus juice (such as lemon or Yuzu)",
       "expected": {
-        "item": "citrus juice (such as lemon or Yuzu)",
+        "item": "citrus juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as lemon or Yuzu",
         "category": "Beverages"
       }
     }

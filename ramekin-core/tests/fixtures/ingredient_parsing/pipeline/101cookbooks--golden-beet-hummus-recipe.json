@@ -26,7 +26,7 @@
             "unit": "medium"
           }
         ],
-        "note": "raw",
+        "note": "4-inch diameter, raw",
         "category": "Produce"
       }
     },
@@ -40,7 +40,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "2 lemons",
         "category": "Beverages"
       }
     },
@@ -149,9 +149,9 @@
     {
       "raw": "to serve (all or some of the others): sesame seeds, hemp seeds, edible chive/flower blossoms, chopped chives, thread of toasted sesame oil",
       "expected": {
-        "item": "to serve (all or some of the others): sesame seeds, hemp seeds, edible chive/flower blossoms, chopped chives",
+        "item": "to serve : sesame seeds, hemp seeds, edible chive/flower blossoms, chopped chives",
         "measurements": [],
-        "note": "thread of toasted sesame oil",
+        "note": "all or some of the others, thread of toasted sesame oil",
         "category": "Spices & Seasonings"
       }
     }

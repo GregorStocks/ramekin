@@ -166,9 +166,9 @@
     {
       "raw": "Any vegetables you have stashed in your Stock Bag (described above)",
       "expected": {
-        "item": "Any vegetables you have stashed in your Stock Bag (described above)",
+        "item": "Any vegetables you have stashed in your Stock Bag",
         "measurements": [],
-        "note": null,
+        "note": "described above",
         "category": "Canned Goods"
       }
     },
@@ -258,14 +258,14 @@
     {
       "raw": "2 tablespoons chicken stock or seltzer (which both of our mothers swear by for making the balls extra light)",
       "expected": {
-        "item": "chicken stock or seltzer (which both of our mothers swear by for making the balls extra light)",
+        "item": "chicken stock or seltzer",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "which both of our mothers swear by for making the balls extra light",
         "category": "Meat & Seafood"
       }
     },
@@ -276,14 +276,14 @@
     {
       "raw": "2 to 3 quarts prepared chicken stock (recipe above)",
       "expected": {
-        "item": "prepared chicken stock (recipe above)",
+        "item": "prepared chicken stock",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": "quart"
           }
         ],
-        "note": null,
+        "note": "recipe above",
         "section": "For Soup",
         "category": "Meat & Seafood"
       }

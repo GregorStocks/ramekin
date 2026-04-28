@@ -41,14 +41,14 @@
     {
       "raw": "3 cups fresh corn kernels (from 3 to 4 cobs)",
       "expected": {
-        "item": "fresh corn kernels (from 3 to 4 cobs)",
+        "item": "fresh corn kernels",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 3 to 4 cobs",
         "category": "Other"
       }
     },

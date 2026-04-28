@@ -5,14 +5,14 @@
     {
       "raw": "140 g thinly sliced pork belly (leaner option: pork loin)",
       "expected": {
-        "item": "thinly sliced pork belly (leaner option: pork loin)",
+        "item": "thinly sliced pork belly",
         "measurements": [
           {
             "amount": "140",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "leaner option: pork loin",
         "category": "Meat & Seafood"
       }
     },
@@ -89,45 +89,41 @@
     {
       "raw": "red pickled ginger (benishoga) (optional topping)",
       "expected": {
-        "item": "red pickled ginger (benishoga) (optional topping)",
+        "item": "red pickled ginger",
         "measurements": [],
-        "note": null,
+        "note": "benishoga, optional topping",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "bonito flakes (katsuobushi) (optional topping)",
       "expected": {
-        "item": "bonito flakes (katsuobushi) (optional topping)",
+        "item": "bonito flakes",
         "measurements": [],
-        "note": null,
+        "note": "katsuobushi, optional topping",
         "category": "Other"
       }
     },
     {
       "raw": "aonori (dried green seaweed powder) (optional topping)",
       "expected": {
-        "item": "aonori (optional topping)",
+        "item": "aonori",
         "measurements": [],
-        "note": "dried green seaweed powder",
+        "note": "optional topping, dried green seaweed powder",
         "category": "Other"
       }
     },
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -170,14 +166,18 @@
     {
       "raw": "½ tbsp sake (or white wine)",
       "expected": {
-        "item": "sake (or white wine)",
+        "item": "sake",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "7.5",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or white wine",
         "category": "Beverages"
       }
     },

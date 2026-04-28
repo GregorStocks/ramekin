@@ -5,56 +5,60 @@
     {
       "raw": "4 cups broccoli florets (cut into small pieces)",
       "expected": {
-        "item": "broccoli florets (cut into small pieces)",
+        "item": "broccoli florets",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut into small pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1  green pepper (cut into 1” squares (about 1 cup))",
       "expected": {
-        "item": "green pepper (cut into 1” squares (about 1 cup)",
+        "item": "green pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1” squares (about 1 cup",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1  red pepper (cut into 1” squares (about 1 cup))",
       "expected": {
-        "item": "red pepper (cut into 1” squares (about 1 cup)",
+        "item": "red pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1” squares (about 1 cup",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 cup red onion (cut into 1” squares)",
       "expected": {
-        "item": "red onion (cut into 1” squares)",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "138",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1” squares",
         "category": "Produce"
       }
     },

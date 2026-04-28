@@ -41,15 +41,15 @@
     {
       "raw": "16 slices (from a 1-pound or 450 gram loaf) white sandwich bread",
       "expected": {
-        "item": "(from a 1-pound",
+        "item": "white sandwich bread",
         "measurements": [
           {
             "amount": "16",
             "unit": "slice"
           }
         ],
-        "note": "or 450 gram loaf) white sandwich bread",
-        "category": "Other"
+        "note": "from a 1-pound or 450 gram loaf",
+        "category": "Bakery & Bread"
       }
     },
     {

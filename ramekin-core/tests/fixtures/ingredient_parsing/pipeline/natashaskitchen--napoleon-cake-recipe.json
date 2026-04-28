@@ -37,14 +37,18 @@
     {
       "raw": "1 cup light brown sugar (or 1/2 brown sugar, 1/2 white sugar)",
       "expected": {
-        "item": "light brown sugar (or 1/2 brown sugar, 1/2 white sugar)",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "220",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 1/2 brown sugar, 1/2 white sugar",
         "category": "Baking"
       }
     },

@@ -87,14 +87,18 @@
     {
       "raw": "2 3/4 cup flour (all purpose or plain)",
       "expected": {
-        "item": "flour (all purpose or plain)",
+        "item": "flour",
         "measurements": [
           {
             "amount": "2.75",
             "unit": "cup"
+          },
+          {
+            "amount": "344",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "all purpose or plain",
         "category": "Baking"
       }
     },

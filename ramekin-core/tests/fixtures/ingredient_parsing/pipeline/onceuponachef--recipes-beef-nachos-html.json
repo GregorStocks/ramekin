@@ -5,14 +5,14 @@
     {
       "raw": "1 tablespoon minced jalapeño peppers, (from 1 pepper (seeded; see note))",
       "expected": {
-        "item": "minced jalapeño peppers, (from 1 pepper (seeded; see note)",
+        "item": "minced jalapeño peppers",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from 1 pepper (seeded; see note",
         "category": "Produce"
       }
     },
@@ -79,14 +79,18 @@
     {
       "raw": "1 tablespoon lime juice, (from 1 lime)",
       "expected": {
-        "item": "lime juice, (from 1 lime)",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 1 lime",
         "category": "Beverages"
       }
     },
@@ -172,7 +176,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "90 to 93%",
         "category": "Meat & Seafood"
       }
     },
@@ -294,7 +298,7 @@
             "unit": "bag"
           }
         ],
-        "note": null,
+        "note": "10-oz",
         "category": "Bakery & Bread"
       }
     },

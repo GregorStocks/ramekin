@@ -77,14 +77,18 @@
     {
       "raw": "1 tsp pumpkin pie spice (or cinnamon)",
       "expected": {
-        "item": "pumpkin pie spice (or cinnamon)",
+        "item": "pumpkin pie spice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or cinnamon",
         "category": "Spices & Seasonings"
       }
     },
@@ -177,21 +181,25 @@
     {
       "raw": "1/4 cup (half stick) unsalted butter (room temperature)",
       "expected": {
-        "item": "(half stick) unsalted butter (room temperature)",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "half stick, room temperature",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "4 oz (half block) cream cheese (room temperature)",
       "expected": {
-        "item": "(half block) cream cheese (room temperature)",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "4",
@@ -202,7 +210,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "half block, room temperature",
         "category": "Cheese"
       }
     },

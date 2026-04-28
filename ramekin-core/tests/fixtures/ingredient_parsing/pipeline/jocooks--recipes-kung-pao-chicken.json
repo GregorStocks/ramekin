@@ -5,7 +5,7 @@
     {
       "raw": "1 pound chicken breast (boneless and skinless, cut into small cubes)",
       "expected": {
-        "item": "chicken breast (boneless and skinless, cut into small cubes)",
+        "item": "chicken breast",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "boneless and skinless, cut into small cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -41,14 +41,18 @@
     {
       "raw": "2 tablespoons soy sauce (low sodium)",
       "expected": {
-        "item": "soy sauce (low sodium)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,14 +73,18 @@
     {
       "raw": "½ cup chicken broth (low sodium or no sodium added)",
       "expected": {
-        "item": "chicken broth (low sodium or no sodium added)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "124",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium or no sodium added",
         "category": "Canned Goods"
       }
     },
@@ -165,28 +173,28 @@
     {
       "raw": "1 medium red bell pepper (cut into small 3/4 inch cubes)",
       "expected": {
-        "item": "red bell pepper (cut into small 3/4 inch cubes)",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into small 3/4 inch cubes",
         "category": "Produce"
       }
     },
     {
       "raw": "1 large zucchini (cut into 3/4 inch cubes)",
       "expected": {
-        "item": "zucchini (cut into 3/4 inch cubes)",
+        "item": "zucchini",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into 3/4 inch cubes",
         "category": "Produce"
       }
     },
@@ -207,14 +215,14 @@
     {
       "raw": "3  green onions (thinly slices)",
       "expected": {
-        "item": "green onions (thinly slices)",
+        "item": "green onions",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "thinly slices",
         "category": "Produce"
       }
     },

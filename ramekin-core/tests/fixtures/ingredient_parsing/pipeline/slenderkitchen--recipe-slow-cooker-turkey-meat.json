@@ -5,7 +5,7 @@
     {
       "raw": "2.5 lbs 93% lean ground turkey (or 99% lean)",
       "expected": {
-        "item": "93% lean ground turkey (or 99% lean)",
+        "item": "93% lean ground turkey",
         "measurements": [
           {
             "amount": "2.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 99% lean",
         "category": "Meat & Seafood"
       }
     },
@@ -65,14 +65,14 @@
     {
       "raw": "1/2 cup seasoned Panko breadcrumbs (or regular)",
       "expected": {
-        "item": "seasoned Panko breadcrumbs (or regular)",
+        "item": "seasoned Panko breadcrumbs",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or regular",
         "category": "Bakery & Bread"
       }
     },
@@ -207,7 +207,7 @@
     {
       "raw": "28 oz marinara sauce (store-bought like Rao’s or homemade)",
       "expected": {
-        "item": "marinara sauce (store-bought like Rao’s or homemade)",
+        "item": "marinara sauce",
         "measurements": [
           {
             "amount": "28",
@@ -218,7 +218,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "store-bought like Rao’s or homemade",
         "category": "Condiments & Sauces"
       }
     }

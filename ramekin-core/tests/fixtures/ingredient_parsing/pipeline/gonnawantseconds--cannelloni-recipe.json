@@ -69,14 +69,14 @@
     {
       "raw": "2 (28-ounce) cans crushed tomatoes (including all the liquid)",
       "expected": {
-        "item": "crushed tomatoes (including all the liquid)",
+        "item": "crushed tomatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "28-ounce, including all the liquid",
         "category": "Canned Goods"
       }
     },
@@ -196,7 +196,7 @@
             "unit": "package"
           }
         ],
-        "note": "thawed and squeezed dry",
+        "note": "10-ounce, thawed and squeezed dry",
         "category": "Produce"
       }
     },

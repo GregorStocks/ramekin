@@ -5,7 +5,7 @@
     {
       "raw": "1 pound lean ground chicken, (I like to use 94% lean)",
       "expected": {
-        "item": "lean ground chicken, (I like to use 94% lean)",
+        "item": "lean ground chicken",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I like to use 94% lean",
         "category": "Meat & Seafood"
       }
     },
@@ -88,14 +88,14 @@
     {
       "raw": "3 tablespoons chopped fresh herbs, (like parsley or chives)",
       "expected": {
-        "item": "chopped fresh herbs, (like parsley or chives)",
+        "item": "chopped fresh herbs",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "like parsley or chives",
         "category": "Produce"
       }
     },

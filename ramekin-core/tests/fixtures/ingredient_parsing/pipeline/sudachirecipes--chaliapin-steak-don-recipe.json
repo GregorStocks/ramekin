@@ -5,14 +5,14 @@
     {
       "raw": "2  beef steaks (sirloin, fillet or similar. Thick cuts work best.)",
       "expected": {
-        "item": "beef steaks (sirloin, fillet or similar. Thick cuts work best.)",
+        "item": "beef steaks",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sirloin, fillet or similar. Thick cuts work best.",
         "category": "Meat & Seafood"
       }
     },
@@ -65,15 +65,15 @@
     {
       "raw": "1 tbsp beef suet (fat) (or a neutral oil with a high smoke point like vegetable oil or canola)",
       "expected": {
-        "item": "beef suet (fat) (or a neutral oil with a high smoke point like vegetable oil or canola)",
+        "item": "beef suet",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "fat, or a neutral oil with a high smoke point like vegetable oil or canola",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -93,42 +93,42 @@
     {
       "raw": "3  pickled plums (umeboshi) (optional)",
       "expected": {
-        "item": "pickled plums (umeboshi) (optional)",
+        "item": "pickled plums",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "umeboshi, optional",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "4  perilla leaves (shiso) (optional)",
       "expected": {
-        "item": "perilla leaves (shiso) (optional)",
+        "item": "perilla leaves",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "shiso, optional",
         "category": "Other"
       }
     },
     {
       "raw": "2 tbsp finely chopped green onions (to garnish)",
       "expected": {
-        "item": "finely chopped green onions (to garnish)",
+        "item": "finely chopped green onions",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "to garnish",
         "category": "Produce"
       }
     },
@@ -167,18 +167,14 @@
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -203,14 +199,18 @@
     {
       "raw": "1 tsp cornstarch (or potato starch)",
       "expected": {
-        "item": "cornstarch (or potato starch)",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or potato starch",
         "category": "Baking"
       }
     }

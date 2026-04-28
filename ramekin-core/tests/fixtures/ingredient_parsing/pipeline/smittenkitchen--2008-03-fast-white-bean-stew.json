@@ -40,7 +40,7 @@
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "14- to 15-oz",
         "category": "Produce"
       }
     },
@@ -72,7 +72,7 @@
             "unit": "cup"
           }
         ],
-        "note": "rinsed and drained",
+        "note": "19-oz, rinsed and drained",
         "category": "Canned Goods"
       }
     },
@@ -86,7 +86,7 @@
             "unit": "piece"
           }
         ],
-        "note": null,
+        "note": "1/2-lb, 1/2 to 3/4 inch thick",
         "category": "Meat & Seafood"
       }
     },
@@ -107,14 +107,14 @@
     {
       "raw": "1 (5-oz) bag baby romaine (er, what? I used spinach) or baby arugula (10 cups loosely packed)",
       "expected": {
-        "item": "baby romaine (er",
+        "item": "baby romaine or baby arugula",
         "measurements": [
           {
             "amount": "1",
             "unit": "bag"
           }
         ],
-        "note": "what? I used spinach) or baby arugula (10 cups loosely packed)",
+        "note": "5-oz, er, what? I used spinach, 10 cups loosely packed",
         "category": "Produce"
       }
     },
@@ -128,7 +128,7 @@
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "3/4-inch-thick",
         "category": "Bakery & Bread"
       }
     }

@@ -5,7 +5,7 @@
     {
       "raw": "2 cups (475 ml) milk, dairy or non-dairy (i.e. oat, almond, soy, etc.), warmed",
       "expected": {
-        "item": "milk, dairy or non-dairy (i.e. oat, almond, soy, etc.), warmed",
+        "item": "milk, dairy or non-dairy, warmed",
         "measurements": [
           {
             "amount": "2",
@@ -16,14 +16,14 @@
             "unit": "ml"
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "i.e. oat, almond, soy, etc.",
+        "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1/2 cup (115 grams) butter, dairy or non-dairy (i.e. margarine), melted and warm",
       "expected": {
-        "item": "butter, dairy or non-dairy (i.e. margarine)",
+        "item": "butter, dairy or non-dairy",
         "measurements": [
           {
             "amount": "0.5",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": "melted and warm",
+        "note": "i.e. margarine, melted and warm",
         "category": "Dairy & Eggs"
       }
     },
@@ -113,7 +113,7 @@
     {
       "raw": "1/2 cup (115 grams) butter, dairy or non-dairy (i.e. margarine), softened",
       "expected": {
-        "item": "butter, dairy or non-dairy (i.e. margarine)",
+        "item": "butter, dairy or non-dairy",
         "measurements": [
           {
             "amount": "0.5",
@@ -124,7 +124,7 @@
             "unit": "g"
           }
         ],
-        "note": "softened",
+        "note": "i.e. margarine, softened",
         "category": "Dairy & Eggs"
       }
     },

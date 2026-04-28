@@ -5,14 +5,14 @@
     {
       "raw": "1  pie crust (homemade or store-bought)",
       "expected": {
-        "item": "pie crust (homemade or store-bought)",
+        "item": "pie crust",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "homemade or store-bought",
         "category": "Frozen"
       }
     },

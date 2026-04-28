@@ -170,18 +170,18 @@
     {
       "raw": "parmesan cheese, (for topping)",
       "expected": {
-        "item": "parmesan cheese, (for topping)",
+        "item": "parmesan cheese",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Cheese"
       }
     },
     {
       "raw": "crushed red pepper, (for topping)",
       "expected": {
-        "item": "crushed red pepper, (for topping)",
+        "item": "crushed red pepper",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Spices & Seasonings"
       }
     }

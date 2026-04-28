@@ -55,14 +55,14 @@
     {
       "raw": "2 tbsp bourbon ((See Note 2))",
       "expected": {
-        "item": "bourbon (See Note 2)",
+        "item": "bourbon",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "See Note 2",
         "category": "Beverages"
       }
     },

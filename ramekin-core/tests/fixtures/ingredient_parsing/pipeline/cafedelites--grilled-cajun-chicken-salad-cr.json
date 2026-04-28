@@ -5,14 +5,14 @@
     {
       "raw": "4  boneless skinless chicken thighs (or breasts)",
       "expected": {
-        "item": "boneless skinless chicken thighs (or breasts)",
+        "item": "boneless skinless chicken thighs",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or breasts",
         "category": "Meat & Seafood"
       }
     },
@@ -109,42 +109,42 @@
     {
       "raw": "1 pinch freshly ground black pepper (adjust to your taste)",
       "expected": {
-        "item": "freshly ground black pepper (adjust to your taste)",
+        "item": "freshly ground black pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "adjust to your taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1-2 teaspoons cayenne pepper (adjust to your taste)",
       "expected": {
-        "item": "cayenne pepper (adjust to your taste)",
+        "item": "cayenne pepper",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "adjust to your taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "4 cups romaine lettuce (cos lettuce)",
       "expected": {
-        "item": "romaine lettuce (cos lettuce)",
+        "item": "romaine lettuce",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cos lettuce",
         "category": "Produce"
       }
     },
@@ -235,14 +235,14 @@
     {
       "raw": "2 tablespoons non fat plain greek yogurt (or sour cream)",
       "expected": {
-        "item": "non fat plain greek yogurt (or sour cream)",
+        "item": "non fat plain greek yogurt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or sour cream",
         "category": "Dairy & Eggs"
       }
     }

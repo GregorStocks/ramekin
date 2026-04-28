@@ -12,7 +12,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "1-inch cubes",
         "category": "Bakery & Bread"
       }
     },
@@ -33,14 +33,14 @@
     {
       "raw": "1 large pinch of coarse salt (Kosher or sea)",
       "expected": {
-        "item": "pinch of coarse salt (Kosher or sea)",
+        "item": "pinch of coarse salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "Kosher or sea",
         "category": "Spices & Seasonings"
       }
     },
@@ -107,14 +107,14 @@
     {
       "raw": "2 small Kirby (pickling) cucumbers, cored, seeded and diced",
       "expected": {
-        "item": "Kirby (pickling) cucumbers, cored",
+        "item": "Kirby cucumbers, cored",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
           }
         ],
-        "note": "seeded and diced",
+        "note": "pickling, seeded and diced",
         "category": "Produce"
       }
     },
@@ -214,14 +214,14 @@
     {
       "raw": "1 cup green or brown lentils (see Note)",
       "expected": {
-        "item": "green or brown lentils (see Note)",
+        "item": "green or brown lentils",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Canned Goods"
       }
     },
@@ -273,14 +273,14 @@
     {
       "raw": "2 tablespoon sherry vinegar, preferably aged (we, of course, used more)",
       "expected": {
-        "item": "sherry vinegar, preferably aged (we, of course, used more)",
+        "item": "sherry vinegar, preferably aged",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "we, of course, used more",
         "category": "Oils & Vinegars"
       }
     },
@@ -333,9 +333,9 @@
     {
       "raw": "Coarse salt (kosher or sea) and freshly ground black pepper",
       "expected": {
-        "item": "Coarse salt (kosher or sea) and freshly ground black pepper",
+        "item": "Coarse salt and freshly ground black pepper",
         "measurements": [],
-        "note": null,
+        "note": "kosher or sea",
         "category": "Spices & Seasonings"
       }
     },

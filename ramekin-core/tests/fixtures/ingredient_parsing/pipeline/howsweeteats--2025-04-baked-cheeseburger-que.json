@@ -109,36 +109,36 @@
     {
       "raw": "chopped tomatoes, (for topping)",
       "expected": {
-        "item": "chopped tomatoes, (for topping)",
+        "item": "chopped tomatoes",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     },
     {
       "raw": "shredded lettuce, (for topping)",
       "expected": {
-        "item": "shredded lettuce, (for topping)",
+        "item": "shredded lettuce",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     },
     {
       "raw": "pickled onions, (for topping)",
       "expected": {
-        "item": "pickled onions, (for topping)",
+        "item": "pickled onions",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "pickles or relish, (for topping)",
       "expected": {
-        "item": "pickles or relish, (for topping)",
+        "item": "pickles or relish",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Canned Goods"
       }
     },

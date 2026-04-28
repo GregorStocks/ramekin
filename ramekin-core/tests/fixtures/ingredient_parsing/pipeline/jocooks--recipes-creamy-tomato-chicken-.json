@@ -23,21 +23,25 @@
     {
       "raw": "3 tablespoons butter (unsalted)",
       "expected": {
-        "item": "butter (unsalted)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsalted",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 pound chicken breast (skinless and boneless, cut into bite size pieces)",
       "expected": {
-        "item": "chicken breast (skinless and boneless, cut into bite size pieces)",
+        "item": "chicken breast",
         "measurements": [
           {
             "amount": "1",
@@ -48,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skinless and boneless, cut into bite size pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -161,28 +165,36 @@
     {
       "raw": "1 cup heavy cream (or half and half)",
       "expected": {
-        "item": "heavy cream (or half and half)",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or half and half",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "½ cup chicken broth (low sodium or no sodium added)",
       "expected": {
-        "item": "chicken broth (low sodium or no sodium added)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "124",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium or no sodium added",
         "category": "Canned Goods"
       }
     },

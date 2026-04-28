@@ -59,14 +59,18 @@
     {
       "raw": "1 1/2 cups peanut butter (smooth)",
       "expected": {
-        "item": "peanut butter (smooth)",
+        "item": "peanut butter",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "387",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "smooth",
         "category": "Condiments & Sauces"
       }
     },

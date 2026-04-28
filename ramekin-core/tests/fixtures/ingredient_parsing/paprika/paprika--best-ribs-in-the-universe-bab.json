@@ -91,15 +91,15 @@
     {
       "raw": "1 teaspoon Accent (MSG)",
       "expected": {
-        "item": "Accent (MSG)",
+        "item": "Accent",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "MSG",
+        "category": "Other"
       }
     },
     {
@@ -247,15 +247,15 @@
     {
       "raw": "4 teaspoons Accent (MSG)",
       "expected": {
-        "item": "Accent (MSG)",
+        "item": "Accent",
         "measurements": [
           {
             "amount": "4",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "MSG",
+        "category": "Other"
       }
     },
     {

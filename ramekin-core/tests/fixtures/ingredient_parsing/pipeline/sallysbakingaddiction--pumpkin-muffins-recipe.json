@@ -5,7 +5,7 @@
     {
       "raw": "1 and 3/4 cups (219g) all-purpose flour (spooned &amp;amp; leveled)",
       "expected": {
-        "item": "all-purpose flour (spooned & leveled)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.75",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "spooned & leveled",
         "category": "Baking"
       }
     },
@@ -171,7 +171,7 @@
     {
       "raw": "1 and 1/2 cups (340g) canned pumpkin puree (not pumpkin pie filling)",
       "expected": {
-        "item": "canned pumpkin puree (not pumpkin pie filling)",
+        "item": "canned pumpkin puree",
         "measurements": [
           {
             "amount": "1.5",
@@ -182,7 +182,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not pumpkin pie filling",
         "category": "Produce"
       }
     },
@@ -203,7 +203,7 @@
     {
       "raw": "1/4 cup (60ml) milk (dairy or nondairy)",
       "expected": {
-        "item": "milk (dairy or nondairy)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.25",
@@ -212,9 +212,13 @@
           {
             "amount": "60",
             "unit": "ml"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "dairy or nondairy",
         "category": "Dairy & Eggs"
       }
     }

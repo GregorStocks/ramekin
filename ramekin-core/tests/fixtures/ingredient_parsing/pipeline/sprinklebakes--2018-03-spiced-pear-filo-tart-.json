@@ -105,14 +105,18 @@
     {
       "raw": "1 teaspoon cinnamon (plus extra for sprinkling)",
       "expected": {
-        "item": "cinnamon (plus extra for sprinkling)",
+        "item": "cinnamon",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plus extra for sprinkling",
         "category": "Spices & Seasonings"
       }
     },

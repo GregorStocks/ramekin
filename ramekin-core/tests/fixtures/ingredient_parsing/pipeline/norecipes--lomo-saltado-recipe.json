@@ -101,23 +101,23 @@
     {
       "raw": "vegetable oil ((for frying))",
       "expected": {
-        "item": "vegetable oil (for frying)",
+        "item": "vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "290 grams potatoes ((cut into 1/2-inch thick strips))",
       "expected": {
-        "item": "potatoes (cut into 1/2-inch thick strips)",
+        "item": "potatoes",
         "measurements": [
           {
             "amount": "290",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch thick strips",
         "category": "Produce"
       }
     },
@@ -252,14 +252,14 @@
     {
       "raw": "200 grams tomato ((cut into thin wedges, seeds removed))",
       "expected": {
-        "item": "tomato (cut into thin wedges, seeds removed)",
+        "item": "tomato",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into thin wedges, seeds removed",
         "category": "Produce"
       }
     },

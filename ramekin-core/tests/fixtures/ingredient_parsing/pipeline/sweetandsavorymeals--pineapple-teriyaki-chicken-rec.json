@@ -23,14 +23,14 @@
     {
       "raw": "1/4 cup teriyaki sauce (store-bough or homemade)",
       "expected": {
-        "item": "teriyaki sauce (store-bough or homemade)",
+        "item": "teriyaki sauce",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "store-bough or homemade",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,14 +55,18 @@
     {
       "raw": "2 tablespoons honey (or maple syrup)",
       "expected": {
-        "item": "honey (or maple syrup)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or maple syrup",
         "category": "Baking"
       }
     },

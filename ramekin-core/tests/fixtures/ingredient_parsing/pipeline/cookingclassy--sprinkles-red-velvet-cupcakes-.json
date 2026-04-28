@@ -173,14 +173,14 @@
     {
       "raw": "1  recipe Cream Cheese Frosting (, recipe follows)",
       "expected": {
-        "item": "recipe Cream Cheese Frosting (, recipe follows)",
+        "item": "recipe Cream Cheese Frosting",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "recipe follows",
         "category": "Cheese"
       }
     },

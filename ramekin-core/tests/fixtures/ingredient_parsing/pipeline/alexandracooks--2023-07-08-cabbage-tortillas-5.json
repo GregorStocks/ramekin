@@ -5,14 +5,14 @@
     {
       "raw": "6 to 7 cups shredded cabbage (from one small head, or roughly 1 pound of shreds)",
       "expected": {
-        "item": "shredded cabbage (from one small head",
+        "item": "shredded cabbage",
         "measurements": [
           {
             "amount": "6 to 7",
             "unit": "cup"
           }
         ],
-        "note": "or roughly 1 pound of shreds)",
+        "note": "from one small head, or roughly 1 pound of shreds",
         "category": "Produce"
       }
     },
@@ -83,14 +83,14 @@
     {
       "raw": "1 heaping cup sliced scallions (from 4 to 6, whites and light greens), optional",
       "expected": {
-        "item": "sliced scallions (from 4 to 6, whites and light greens)",
+        "item": "sliced scallions",
         "measurements": [
           {
             "amount": "1",
             "unit": "heaping cup"
           }
         ],
-        "note": "optional",
+        "note": "from 4 to 6, whites and light greens, optional",
         "category": "Produce"
       }
     }

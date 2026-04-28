@@ -69,14 +69,14 @@
     {
       "raw": "1/2 cup 1 stick cold unsalted butter (cut into cubes)",
       "expected": {
-        "item": "1 stick cold unsalted butter (cut into cubes)",
+        "item": "1 stick cold unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Dairy & Eggs"
       }
     },
@@ -254,7 +254,7 @@
             "unit": "cup"
           }
         ],
-        "note": "finely chopped",
+        "note": "50-70%, finely chopped",
         "category": "Other"
       }
     },

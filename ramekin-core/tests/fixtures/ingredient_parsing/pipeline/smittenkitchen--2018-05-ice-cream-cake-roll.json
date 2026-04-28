@@ -51,14 +51,14 @@
     {
       "raw": "Heaped 1/8 teaspoon cream of tartar (see Note)",
       "expected": {
-        "item": "cream of tartar (see Note)",
+        "item": "cream of tartar",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "heaped tsp"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Baking"
       }
     },
@@ -130,7 +130,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for dusting (see Note about using black cocoa)",
+        "note": "see Note about using black cocoa, plus more for dusting",
         "category": "Baking"
       }
     },
@@ -169,14 +169,14 @@
     {
       "raw": "2 to 2 1/4 cups slightly softened ice cream of your choice (I used cookies and cream)",
       "expected": {
-        "item": "slightly softened ice cream of your choice (I used cookies and cream)",
+        "item": "slightly softened ice cream of your choice",
         "measurements": [
           {
             "amount": "2 to 2.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used cookies and cream",
         "category": "Frozen"
       }
     },

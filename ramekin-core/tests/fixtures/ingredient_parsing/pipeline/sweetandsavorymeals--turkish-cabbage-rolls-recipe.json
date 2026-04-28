@@ -5,14 +5,14 @@
     {
       "raw": "1  head green cabbage (choose a larger one)",
       "expected": {
-        "item": "green cabbage (choose a larger one)",
+        "item": "green cabbage",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "choose a larger one",
         "category": "Produce"
       }
     },
@@ -205,14 +205,14 @@
     {
       "raw": "1/2 cup Turkish tomato sauce (or regular tomato sauce)",
       "expected": {
-        "item": "Turkish tomato sauce (or regular tomato sauce)",
+        "item": "Turkish tomato sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or regular tomato sauce",
         "category": "Canned Goods"
       }
     },
@@ -251,14 +251,14 @@
     {
       "raw": "1 cup bulgur wheat (soaked)",
       "expected": {
-        "item": "bulgur wheat (soaked)",
+        "item": "bulgur wheat",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "soaked",
         "category": "Pasta & Rice"
       }
     },
@@ -475,14 +475,18 @@
     {
       "raw": "1 cup Greek yogurt (full fat)",
       "expected": {
-        "item": "Greek yogurt (full fat)",
+        "item": "Greek yogurt",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "full fat",
         "category": "Dairy & Eggs"
       }
     },
@@ -535,14 +539,14 @@
     {
       "raw": "1 tablespoon chopped dill (very finely)",
       "expected": {
-        "item": "chopped dill (very finely)",
+        "item": "chopped dill",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "very finely",
         "category": "Spices & Seasonings"
       }
     },
@@ -558,9 +562,9 @@
     {
       "raw": "Chopped fresh parsley (dill, or mint)",
       "expected": {
-        "item": "Chopped fresh parsley (dill, or mint)",
+        "item": "Chopped fresh parsley",
         "measurements": [],
-        "note": null,
+        "note": "dill, or mint",
         "category": "Produce"
       }
     },

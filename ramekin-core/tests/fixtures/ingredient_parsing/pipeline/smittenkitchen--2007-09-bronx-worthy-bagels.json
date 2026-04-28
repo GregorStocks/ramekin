@@ -32,14 +32,14 @@
     {
       "raw": "4 cups unbleached high-gluten or bread flour (see note below)",
       "expected": {
-        "item": "unbleached high-gluten or bread flour (see note below)",
+        "item": "unbleached high-gluten or bread flour",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see note below",
         "category": "Baking"
       }
     },
@@ -130,7 +130,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "or 1 tablespoon dark or light malt syrup, honey, or brown sugar (see note below)",
+        "note": "see note below, or 1 tablespoon dark or light malt syrup, honey, or brown sugar",
         "category": "Other"
       }
     }

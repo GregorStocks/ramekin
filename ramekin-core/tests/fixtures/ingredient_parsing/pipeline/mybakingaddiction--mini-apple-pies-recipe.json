@@ -21,21 +21,21 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "1/4-inch",
         "category": "Produce"
       }
     },
     {
       "raw": "1 teaspoon apple pie spice (click link for recipe)",
       "expected": {
-        "item": "apple pie spice (click link for recipe)",
+        "item": "apple pie spice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "click link for recipe",
         "category": "Produce"
       }
     },
@@ -188,14 +188,14 @@
     {
       "raw": "1/2 cup salted caramel sauce (click link for recipe)",
       "expected": {
-        "item": "salted caramel sauce (click link for recipe)",
+        "item": "salted caramel sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "click link for recipe",
         "category": "Condiments & Sauces"
       }
     },

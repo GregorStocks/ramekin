@@ -133,14 +133,18 @@
     {
       "raw": "1 tablespoon orange juice ((or syrup from mandarins))",
       "expected": {
-        "item": "orange juice (or syrup from mandarins)",
+        "item": "orange juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or syrup from mandarins",
         "category": "Produce"
       }
     },
@@ -335,14 +339,14 @@
     {
       "raw": "30 grams cilantro ((leaves picked from stems))",
       "expected": {
-        "item": "cilantro (leaves picked from stems)",
+        "item": "cilantro",
         "measurements": [
           {
             "amount": "30",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "leaves picked from stems",
         "category": "Produce"
       }
     }

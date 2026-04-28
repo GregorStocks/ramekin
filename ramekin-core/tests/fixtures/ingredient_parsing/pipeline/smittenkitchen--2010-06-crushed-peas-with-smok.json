@@ -41,15 +41,19 @@
     {
       "raw": "2 tablespoons tahini (sesame seed paste)",
       "expected": {
-        "item": "tahini (sesame seed paste)",
+        "item": "tahini",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "sesame seed paste",
+        "category": "Condiments & Sauces"
       }
     },
     {

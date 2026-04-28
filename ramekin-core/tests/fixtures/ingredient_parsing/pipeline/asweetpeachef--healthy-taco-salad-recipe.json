@@ -129,14 +129,14 @@
     {
       "raw": "1 cup taco meat, (cooled (see recipe above))",
       "expected": {
-        "item": "taco meat, (cooled (see recipe above)",
+        "item": "taco meat",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cooled (see recipe above",
         "category": "Meat & Seafood"
       }
     },

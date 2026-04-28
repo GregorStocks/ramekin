@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds green (unripe) tomatoes (about 4)",
       "expected": {
-        "item": "green (unripe) tomatoes (about 4)",
+        "item": "green tomatoes",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unripe, about 4",
         "category": "Produce"
       }
     },

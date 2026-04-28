@@ -97,35 +97,35 @@
     {
       "raw": "2 bottles dry Spanish red wine (they recommend garnacha)",
       "expected": {
-        "item": "dry Spanish red wine (they recommend garnacha)",
+        "item": "dry Spanish red wine",
         "measurements": [
           {
             "amount": "2",
             "unit": "bottle"
           }
         ],
-        "note": null,
+        "note": "they recommend garnacha",
         "category": "Beverages"
       }
     },
     {
       "raw": "1 bottle dry Spanish rosé (they recommend this to lighten the body of the sangria)",
       "expected": {
-        "item": "dry Spanish rosé (they recommend this to lighten the body of the sangria)",
+        "item": "dry Spanish rosé",
         "measurements": [
           {
             "amount": "1",
             "unit": "bottle"
           }
         ],
-        "note": null,
+        "note": "they recommend this to lighten the body of the sangria",
         "category": "Other"
       }
     },
     {
       "raw": "1 ounce orange liqueur (such as Triple Sec or Torres)",
       "expected": {
-        "item": "orange liqueur (such as Triple Sec or Torres)",
+        "item": "orange liqueur",
         "measurements": [
           {
             "amount": "1",
@@ -136,7 +136,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Triple Sec or Torres",
         "category": "Beverages"
       }
     },
@@ -179,14 +179,14 @@
     {
       "raw": "2 apples, cored and diced, for garnish (I used one red and one green, for color)",
       "expected": {
-        "item": "apples, cored and diced, for garnish (I used one red and one green, for color)",
+        "item": "apples, cored and diced",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "I used one red and one green, for color, for garnish",
         "category": "Produce"
       }
     },
@@ -207,7 +207,7 @@
     {
       "raw": "12 ounces (1 can) orange soda (they recommend less sweet brands such as San Pellegrino aranciata)",
       "expected": {
-        "item": "orange soda (they recommend less sweet brands such as San Pellegrino aranciata)",
+        "item": "orange soda",
         "measurements": [
           {
             "amount": "12",
@@ -222,7 +222,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "they recommend less sweet brands such as San Pellegrino aranciata",
         "category": "Produce"
       }
     }

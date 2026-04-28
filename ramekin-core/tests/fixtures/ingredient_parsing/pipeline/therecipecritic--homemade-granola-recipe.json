@@ -37,14 +37,14 @@
     {
       "raw": "1 cups shelled pumpkin seeds (pepitas)",
       "expected": {
-        "item": "shelled pumpkin seeds (pepitas)",
+        "item": "shelled pumpkin seeds",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "pepitas",
         "category": "Produce"
       }
     },
@@ -101,28 +101,36 @@
     {
       "raw": "½ cup olive oil (or coconut oil)",
       "expected": {
-        "item": "olive oil (or coconut oil)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "108",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or coconut oil",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "½ cup maple syrup (or honey)",
       "expected": {
-        "item": "maple syrup (or honey)",
+        "item": "maple syrup",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "158",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or honey",
         "category": "Baking"
       }
     },

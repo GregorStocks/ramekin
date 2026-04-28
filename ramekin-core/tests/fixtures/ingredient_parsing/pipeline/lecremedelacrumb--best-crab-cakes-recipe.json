@@ -23,15 +23,19 @@
     {
       "raw": "⅓ cup mayo (I used reduced fat olive oil mayo)",
       "expected": {
-        "item": "mayo (I used reduced fat olive oil mayo)",
+        "item": "mayo",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "73",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "I used reduced fat olive oil mayo",
+        "category": "Condiments & Sauces"
       }
     },
     {

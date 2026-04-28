@@ -51,14 +51,14 @@
     {
       "raw": "1  small pomegranate (to yield 1/2 cup&nbsp;seeds)",
       "expected": {
-        "item": "pomegranate (to yield 1/2 cup seeds)",
+        "item": "pomegranate",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "to yield 1/2 cup seeds",
         "category": "Produce"
       }
     },

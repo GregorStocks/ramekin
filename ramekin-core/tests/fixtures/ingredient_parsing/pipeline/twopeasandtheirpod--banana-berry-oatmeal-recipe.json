@@ -101,9 +101,9 @@
     {
       "raw": "Banana (slices)",
       "expected": {
-        "item": "Banana (slices)",
+        "item": "Banana",
         "measurements": [],
-        "note": null,
+        "note": "slices",
         "section": "Toppings",
         "category": "Produce"
       }

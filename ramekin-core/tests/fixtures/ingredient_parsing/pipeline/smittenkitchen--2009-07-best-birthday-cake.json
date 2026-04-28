@@ -5,7 +5,7 @@
     {
       "raw": "4 cups plus 2 tablespoons (480 to 530 grams due to variance between brands) cake flour (not self-rising)",
       "expected": {
-        "item": "cake flour (not self-rising)",
+        "item": "cake flour",
         "measurements": [
           {
             "amount": "4 cups plus 2 tablespoons",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not self-rising",
         "category": "Baking"
       }
     },

@@ -250,14 +250,14 @@
     {
       "raw": "4 burger-sized pieces green-leaf lettuce (I used curly green leaf lettuce)",
       "expected": {
-        "item": "burger-sized pieces green-leaf lettuce (I used curly green leaf lettuce)",
+        "item": "burger-sized pieces green-leaf lettuce",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "I used curly green leaf lettuce",
         "category": "Produce"
       }
     }

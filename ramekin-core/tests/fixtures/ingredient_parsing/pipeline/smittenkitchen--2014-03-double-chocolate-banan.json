@@ -37,7 +37,7 @@
     {
       "raw": "3/4 cup (145 grams) dark or light brown sugar (I use dark)",
       "expected": {
-        "item": "dark or light brown sugar (I use dark)",
+        "item": "dark or light brown sugar",
         "measurements": [
           {
             "amount": "0.75",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use dark",
         "category": "Baking"
       }
     },

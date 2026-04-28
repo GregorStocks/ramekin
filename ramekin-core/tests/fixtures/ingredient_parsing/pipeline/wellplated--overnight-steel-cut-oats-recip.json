@@ -5,28 +5,36 @@
     {
       "raw": "1 3/4 cups milk (any kind you like (I use unsweetened almond milk))",
       "expected": {
-        "item": "milk (any kind you like (I use unsweetened almond milk)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
+          },
+          {
+            "amount": "429",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "any kind you like (I use unsweetened almond milk",
+        "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 1/2 tablespoons honey ( or maple syrup)",
       "expected": {
-        "item": "honey ( or maple syrup)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or maple syrup",
         "category": "Baking"
       }
     },
@@ -110,10 +118,10 @@
     {
       "raw": "Citrus zest (I love orange zest with honey and cinnamon!)",
       "expected": {
-        "item": "Citrus zest (I love orange zest with honey and cinnamon!)",
+        "item": "Citrus zest",
         "measurements": [],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "I love orange zest with honey and cinnamon!",
+        "category": "Other"
       }
     },
     {
@@ -137,18 +145,18 @@
     {
       "raw": "Toasted almonds (walnuts, or pecans (add just before serving to maintain the most crunch))",
       "expected": {
-        "item": "Toasted almonds (walnuts, or pecans (add just before serving to maintain the most crunch)",
+        "item": "Toasted almonds",
         "measurements": [],
-        "note": null,
+        "note": "walnuts, or pecans (add just before serving to maintain the most crunch",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
       "raw": "An extra drizzle of honey ( or maple syrup)",
       "expected": {
-        "item": "An extra drizzle of honey ( or maple syrup)",
+        "item": "An extra drizzle of honey",
         "measurements": [],
-        "note": null,
+        "note": "or maple syrup",
         "category": "Baking"
       }
     }

@@ -95,14 +95,14 @@
     {
       "raw": "1 ½ cups chopped yellow onion (aboud 1 medium onion)",
       "expected": {
-        "item": "chopped yellow onion (aboud 1 medium onion)",
+        "item": "chopped yellow onion",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "aboud 1 medium onion",
         "category": "Produce"
       }
     },

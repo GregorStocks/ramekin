@@ -19,14 +19,18 @@
     {
       "raw": "2 tablespoons coconut oil (see note)",
       "expected": {
-        "item": "coconut oil (see note)",
+        "item": "coconut oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Oils & Vinegars"
       }
     }

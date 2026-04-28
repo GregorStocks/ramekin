@@ -5,14 +5,14 @@
     {
       "raw": "4 large egg whites (save the yolks)",
       "expected": {
-        "item": "egg whites (save the yolks)",
+        "item": "egg whites",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "save the yolks",
         "category": "Dairy & Eggs"
       }
     },
@@ -149,14 +149,14 @@
     {
       "raw": "4 large egg yolks (I told you to save the yolks!)",
       "expected": {
-        "item": "egg yolks (I told you to save the yolks!)",
+        "item": "egg yolks",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "I told you to save the yolks!",
         "category": "Dairy & Eggs"
       }
     },

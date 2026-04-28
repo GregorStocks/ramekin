@@ -23,7 +23,7 @@
     {
       "raw": "2 tbsp/ 23 g Ghee (clarified butter)",
       "expected": {
-        "item": "Ghee (clarified butter)",
+        "item": "Ghee",
         "measurements": [
           {
             "amount": "2",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "clarified butter",
         "category": "Dairy & Eggs"
       }
     },
@@ -146,28 +146,28 @@
     {
       "raw": "1/2 tsp sweet paprika&nbsp; (or try 1/2 tsp harissa spice blend!)",
       "expected": {
-        "item": "sweet paprika  (or try 1/2 tsp harissa spice blend!)",
+        "item": "sweet paprika",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "or try 1/2 tsp harissa spice blend!",
+        "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 cup low-sodium broth (vegetable or chicken broth is fine)",
       "expected": {
-        "item": "low-sodium broth (vegetable or chicken broth is fine)",
+        "item": "low-sodium broth",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "vegetable or chicken broth is fine",
         "category": "Canned Goods"
       }
     },

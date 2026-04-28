@@ -19,14 +19,14 @@
     {
       "raw": "1 cup dark molasses (not blackstrap)",
       "expected": {
-        "item": "dark molasses (not blackstrap)",
+        "item": "dark molasses",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "not blackstrap",
         "category": "Baking"
       }
     },

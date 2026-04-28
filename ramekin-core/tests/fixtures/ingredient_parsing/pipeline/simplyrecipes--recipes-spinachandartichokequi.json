@@ -99,7 +99,7 @@
     {
       "raw": "6&nbsp;ounces cooked spinach (if using frozen, thaw&nbsp;first),&nbsp;squeezed to remove excess water (wrap in clean tea towel or several layers of paper towels and squeeze), finely chopped",
       "expected": {
-        "item": "cooked spinach, squeezed to remove excess water (wrap in clean tea towel or several layers of paper towels and squeeze), finely chopped",
+        "item": "cooked spinach, squeezed to remove excess water, finely chopped",
         "measurements": [
           {
             "amount": "6",
@@ -110,7 +110,7 @@
             "unit": "g"
           }
         ],
-        "note": "if using frozen, thaw first",
+        "note": "wrap in clean tea towel or several layers of paper towels and squeeze, if using frozen, thaw first",
         "category": "Produce"
       }
     },
@@ -163,14 +163,14 @@
     {
       "raw": "4 eggs (large)",
       "expected": {
-        "item": "eggs (large)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "large",
         "category": "Dairy & Eggs"
       }
     },

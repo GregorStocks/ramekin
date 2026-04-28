@@ -107,15 +107,15 @@
     {
       "raw": "2 tablespoons miso, preferably a chunky, hearty miso (country, chickpea, etc.)",
       "expected": {
-        "item": "miso, preferably a chunky, hearty miso (country, chickpea, etc.)",
+        "item": "miso, preferably a chunky, hearty miso",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "country, chickpea, etc.",
+        "category": "Condiments & Sauces"
       }
     },
     {

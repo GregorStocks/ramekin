@@ -5,14 +5,14 @@
     {
       "raw": "3 tablespoon clarified unsalted butter (see Note) or 2 tablespoon unsalted butter and 1 tablespoon peanut oil",
       "expected": {
-        "item": "clarified unsalted butter (see Note)",
+        "item": "clarified unsalted butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "or 2 tablespoon unsalted butter and 1 tablespoon peanut oil",
+        "note": "see Note, or 2 tablespoon unsalted butter and 1 tablespoon peanut oil",
         "category": "Dairy & Eggs"
       }
     },
@@ -40,7 +40,7 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "2 1/2- to 3-pound",
         "category": "Meat & Seafood"
       }
     },

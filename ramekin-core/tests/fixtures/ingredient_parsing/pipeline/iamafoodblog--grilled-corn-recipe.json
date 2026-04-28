@@ -19,15 +19,15 @@
     {
       "raw": "1/4 cup neutral oil (I used rice bran)",
       "expected": {
-        "item": "neutral oil (I used rice bran)",
+        "item": "neutral oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Pasta & Rice"
+        "note": "I used rice bran",
+        "category": "Oils & Vinegars"
       }
     },
     {

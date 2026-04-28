@@ -231,7 +231,7 @@
     {
       "raw": "3 ounces baby spinach leaves (a few handfuls)",
       "expected": {
-        "item": "baby spinach leaves (a few handfuls)",
+        "item": "baby spinach leaves",
         "measurements": [
           {
             "amount": "3",
@@ -242,7 +242,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "a few handfuls",
         "section": "To Finish",
         "category": "Produce"
       }

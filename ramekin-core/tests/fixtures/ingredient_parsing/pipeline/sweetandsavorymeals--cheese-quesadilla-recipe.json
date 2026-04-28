@@ -79,14 +79,14 @@
     {
       "raw": "1  jalapeno or chili (cut into rounds)",
       "expected": {
-        "item": "jalapeno or chili (cut into rounds)",
+        "item": "jalapeno or chili",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into rounds",
         "category": "Produce"
       }
     },
@@ -107,14 +107,18 @@
     {
       "raw": "6 tablespoons butter (for frying)",
       "expected": {
-        "item": "butter (for frying)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for frying",
         "category": "Dairy & Eggs"
       }
     }

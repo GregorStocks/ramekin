@@ -41,14 +41,18 @@
     {
       "raw": "1/2 c. fresh lime juice (from about 6 limes)",
       "expected": {
-        "item": "fresh lime juice (from about 6 limes)",
+        "item": "fresh lime juice",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "121",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 6 limes",
         "category": "Beverages"
       }
     },

@@ -69,15 +69,15 @@
     {
       "raw": "1  green (serrano) chile, seeds removed",
       "expected": {
-        "item": "green (serrano) chile, seeds removed",
+        "item": "green chile, seeds removed",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "serrano",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {

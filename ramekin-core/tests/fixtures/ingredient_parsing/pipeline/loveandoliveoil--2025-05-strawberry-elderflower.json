@@ -109,14 +109,14 @@
     {
       "raw": "1/2 teaspoon vanilla bean paste (or the seeds of 1/2 a vanilla bean)",
       "expected": {
-        "item": "vanilla bean paste (or the seeds of 1/2 a vanilla bean)",
+        "item": "vanilla bean paste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or the seeds of 1/2 a vanilla bean",
         "category": "Spices & Seasonings"
       }
     },
@@ -155,7 +155,7 @@
     {
       "raw": "7 oz ladyfinger cookies (from 1 package (24 cookies))",
       "expected": {
-        "item": "ladyfinger cookies (from 1 package (24 cookies)",
+        "item": "ladyfinger cookies",
         "measurements": [
           {
             "amount": "7",
@@ -166,7 +166,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 1 package (24 cookies",
         "category": "Other"
       }
     },

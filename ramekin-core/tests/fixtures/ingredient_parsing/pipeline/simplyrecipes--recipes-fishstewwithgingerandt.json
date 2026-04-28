@@ -185,7 +185,7 @@
     {
       "raw": "2 pounds (.90 kg) boneless firm-fleshed white fish, such as haddock, halibut, hake, flounder, pollock, whiting, or other local fish (it’s okay if the skin is still on)",
       "expected": {
-        "item": "boneless firm-fleshed white fish, such as haddock, halibut, hake, flounder, pollock, whiting, or other local fish (it’s okay if the skin is still on)",
+        "item": "boneless firm-fleshed white fish, such as haddock, halibut, hake, flounder, pollock, whiting, or other local fish",
         "measurements": [
           {
             "amount": "2",
@@ -196,7 +196,7 @@
             "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "it’s okay if the skin is still on",
         "category": "Meat & Seafood"
       }
     },

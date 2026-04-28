@@ -23,28 +23,28 @@
     {
       "raw": "2 cups chopped fruit ((apples, peaches, nectarines, melon, berries))",
       "expected": {
-        "item": "chopped fruit (apples, peaches, nectarines, melon, berries)",
+        "item": "chopped fruit",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "apples, peaches, nectarines, melon, berries",
+        "category": "Other"
       }
     },
     {
       "raw": "1 small orange (, cut into thin pieces)",
       "expected": {
-        "item": "orange (, cut into thin pieces)",
+        "item": "orange",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "cut into thin pieces",
         "category": "Produce"
       }
     },

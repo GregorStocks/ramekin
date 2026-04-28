@@ -5,9 +5,9 @@
     {
       "raw": "Cooking spray or vegetable oil (enough to grease pan)",
       "expected": {
-        "item": "Cooking spray or vegetable oil (enough to grease pan)",
+        "item": "Cooking spray or vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "enough to grease pan",
         "category": "Oils & Vinegars"
       }
     },
@@ -35,7 +35,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "3 packets",
         "category": "Baking"
       }
     },

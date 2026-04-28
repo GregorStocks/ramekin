@@ -109,14 +109,18 @@
     {
       "raw": "1 cup all-purpose flour* (plus 1 tablespoon)",
       "expected": {
-        "item": "all-purpose flour* (plus 1 tablespoon)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plus 1 tablespoon",
         "category": "Baking"
       }
     },

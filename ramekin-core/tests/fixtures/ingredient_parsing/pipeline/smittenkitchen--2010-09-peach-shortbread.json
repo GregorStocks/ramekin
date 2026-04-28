@@ -45,7 +45,7 @@
     {
       "raw": "2 3/4 cups plus 2 tablespoons (12 5/8 ounces or 359 grams) cups all-purpose flour (or you can measure 3 cups and remove 2 tablespoons flour)",
       "expected": {
-        "item": "cups all-purpose flour (or you can measure 3 cups and remove 2 tablespoons flour)",
+        "item": "cups all-purpose flour",
         "measurements": [
           {
             "amount": "2 3/4 cups plus 2 tablespoons",
@@ -60,7 +60,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or you can measure 3 cups and remove 2 tablespoons flour",
         "category": "Baking"
       }
     },
@@ -164,7 +164,7 @@
             "unit": null
           }
         ],
-        "note": "pitted and thinly sliced (between 1/8 and 1/4-inch thick)",
+        "note": "between 1/8 and 1/4-inch thick, pitted and thinly sliced",
         "category": "Produce"
       }
     }

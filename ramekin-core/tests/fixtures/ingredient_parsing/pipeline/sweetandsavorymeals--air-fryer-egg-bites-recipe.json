@@ -5,9 +5,9 @@
     {
       "raw": "Nonstick cooking spray (for the mold)",
       "expected": {
-        "item": "Nonstick cooking spray (for the mold)",
+        "item": "Nonstick cooking spray",
         "measurements": [],
-        "note": null,
+        "note": "for the mold",
         "category": "Oils & Vinegars"
       }
     },
@@ -142,14 +142,14 @@
     {
       "raw": "1/4 cup chopped crispy cooked bacon (or ham - substitute with veggies for vegetarian)",
       "expected": {
-        "item": "chopped crispy cooked bacon (or ham - substitute with veggies for vegetarian)",
+        "item": "chopped crispy cooked bacon",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or ham - substitute with veggies for vegetarian",
         "category": "Meat & Seafood"
       }
     }

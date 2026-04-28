@@ -83,28 +83,28 @@
     {
       "raw": "1 tablespoon minced mild or hot fresh chile (I used a jalapeno)",
       "expected": {
-        "item": "minced mild or hot fresh chile (I used a jalapeno)",
+        "item": "minced mild or hot fresh chile",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "I used a jalapeno",
+        "category": "Other"
       }
     },
     {
       "raw": "1 teaspoon cumin seeds, black or yellow mustard seeds or nigella seeds (I used black mustard seeds)",
       "expected": {
-        "item": "cumin seeds, black or yellow mustard seeds or nigella seeds (I used black mustard seeds)",
+        "item": "cumin seeds, black or yellow mustard seeds or nigella seeds",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "I used black mustard seeds",
         "category": "Spices & Seasonings"
       }
     },

@@ -69,14 +69,18 @@
     {
       "raw": "1 Tbsp Mirin (or 1/4 tsp sugar)",
       "expected": {
-        "item": "Mirin (or 1/4 tsp sugar)",
+        "item": "Mirin",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 1/4 tsp sugar",
         "category": "Condiments & Sauces"
       }
     },

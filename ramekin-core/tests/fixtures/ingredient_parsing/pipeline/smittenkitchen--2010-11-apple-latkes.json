@@ -135,9 +135,9 @@
     {
       "raw": "Butter (I used about 2 tablespoons)",
       "expected": {
-        "item": "Butter (I used about 2 tablespoons)",
+        "item": "Butter",
         "measurements": [],
-        "note": null,
+        "note": "I used about 2 tablespoons",
         "category": "Dairy & Eggs"
       }
     },
@@ -153,9 +153,9 @@
     {
       "raw": "Apple juice wrung from shredded apple (above) (I had 1/2 cup)",
       "expected": {
-        "item": "Apple juice wrung from shredded apple (above) (I had 1/2 cup)",
+        "item": "Apple juice wrung from shredded apple",
         "measurements": [],
-        "note": null,
+        "note": "above, I had 1/2 cup",
         "category": "Produce"
       }
     },

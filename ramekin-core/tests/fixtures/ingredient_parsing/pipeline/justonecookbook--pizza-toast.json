@@ -23,14 +23,18 @@
     {
       "raw": "¼ tsp crushed red pepper (red pepper flakes) (plus more for serving, to taste)",
       "expected": {
-        "item": "crushed red pepper (red pepper flakes) (plus more for serving",
+        "item": "crushed red pepper",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.4",
+            "unit": "g"
           }
         ],
-        "note": "to taste)",
+        "note": "red pepper flakes, plus more for serving, to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,15 +105,15 @@
     {
       "raw": "3 slices shokupan (Japanese milk bread) (¾ inch, 1.5 cm thick per slice)",
       "expected": {
-        "item": "shokupan (Japanese milk bread) (3/4 inch, 1.5 cm thick per slice)",
+        "item": "shokupan",
         "measurements": [
           {
             "amount": "3",
             "unit": "slice"
           }
         ],
-        "note": null,
-        "category": "Bakery & Bread"
+        "note": "Japanese milk bread, 3/4 inch, 1.5 cm thick per slice",
+        "category": "Other"
       }
     },
     {

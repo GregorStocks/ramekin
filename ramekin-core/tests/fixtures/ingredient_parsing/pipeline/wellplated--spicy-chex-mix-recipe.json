@@ -5,28 +5,28 @@
     {
       "raw": "1 cup crisp honey squares cereal (such as Honey Nut Chex)",
       "expected": {
-        "item": "crisp honey squares cereal (such as Honey Nut Chex)",
+        "item": "crisp honey squares cereal",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Honey Nut Chex",
         "category": "Snacks"
       }
     },
     {
       "raw": "1 cup crisp wheat cereal (such as Wheat Chex)",
       "expected": {
-        "item": "crisp wheat cereal (such as Wheat Chex)",
+        "item": "crisp wheat cereal",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Wheat Chex",
         "category": "Snacks"
       }
     },
@@ -103,14 +103,14 @@
     {
       "raw": "1  egg white (or 3 tablespoons liquid egg whites)",
       "expected": {
-        "item": "egg white (or 3 tablespoons liquid egg whites)",
+        "item": "egg white",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 3 tablespoons liquid egg whites",
         "category": "Dairy & Eggs"
       }
     },

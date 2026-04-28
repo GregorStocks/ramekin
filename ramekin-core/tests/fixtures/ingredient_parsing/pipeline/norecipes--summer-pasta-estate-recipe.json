@@ -5,14 +5,14 @@
     {
       "raw": "210 grams cherry tomatoes ((cut in half if large))",
       "expected": {
-        "item": "cherry tomatoes (cut in half if large)",
+        "item": "cherry tomatoes",
         "measurements": [
           {
             "amount": "210",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut in half if large",
         "category": "Produce"
       }
     },
@@ -26,7 +26,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 ear, kernels removed from cob",
         "category": "Other"
       }
     },

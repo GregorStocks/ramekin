@@ -238,14 +238,14 @@
     {
       "raw": "1 1/2 tablespoons ground whole espresso coffee beans (medium-coarse grind) (I skipped this, increased the espresso powder instead)",
       "expected": {
-        "item": "ground whole espresso coffee beans (medium-coarse grind) (I skipped this, increased the espresso powder instead)",
+        "item": "ground whole espresso coffee beans",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "medium-coarse grind, I skipped this, increased the espresso powder instead",
         "category": "Beverages"
       }
     },
@@ -270,14 +270,14 @@
     {
       "raw": "1 1/2 teaspoons mild-flavored (light) molasses",
       "expected": {
-        "item": "mild-flavored (light) molasses",
+        "item": "mild-flavored molasses",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "light",
         "category": "Baking"
       }
     },

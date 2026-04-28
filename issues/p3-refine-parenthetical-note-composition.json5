@@ -1,0 +1,33 @@
+{
+  "title": "Refine note composition for parenthetical ingredient hints",
+  "description": "PR #500 changed parenthetical parsing so non-measurement \
+parentheticals are preserved on the ingredient as `note` instead of being \
+dropped or left in the item name. The broad preservation is useful, especially \
+for yield and package-size hints, but it exposed a rough edge in how multiple \
+note sources are merged.\n\
+\n\
+Example from the curated edge fixture:\n\
+\n\
+  - Raw: `4 cups vegetable broth (for dried but soaked chickpeas), 1 1/2 cups \
+vegetable broth (for cooked chickpeas)`\n\
+  - Current note after #500 follow-up: `for cooked chickpeas, for dried but \
+soaked chickpeas; or 1 1/2 cup`\n\
+\n\
+The parser should preserve the conditional association more clearly, ideally \
+keeping each note fragment next to the quantity it qualifies. A better result \
+would read closer to `for dried but soaked chickpeas; or 1 1/2 cups for cooked \
+chickpeas`.\n\
+\n\
+When fixing this, add focused parser coverage and rerun `make pipeline` so the \
+snapshot diff shows whether note text became more readable across real \
+recipes.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+    "pipeline",
+  ],
+  "created_at": "2026-04-27T18:54:50-07:00",
+  "updated_at": "2026-04-27T18:54:50-07:00",
+}

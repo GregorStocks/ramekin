@@ -265,7 +265,7 @@
     {
       "raw": "2/3 cup (170 grams) smooth peanut butter, preferably a commercial brand (because oil doesn’t separate out)",
       "expected": {
-        "item": "smooth peanut butter, preferably a commercial brand (because oil doesn’t separate out)",
+        "item": "smooth peanut butter, preferably a commercial brand",
         "measurements": [
           {
             "amount": "0.67",
@@ -276,7 +276,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "because oil doesn’t separate out",
         "category": "Condiments & Sauces"
       }
     },

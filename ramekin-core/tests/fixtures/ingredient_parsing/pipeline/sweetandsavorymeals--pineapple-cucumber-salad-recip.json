@@ -5,28 +5,28 @@
     {
       "raw": "1  ripe pineapple (cut into 1-inch chunks)",
       "expected": {
-        "item": "ripe pineapple (cut into 1-inch chunks)",
+        "item": "ripe pineapple",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch chunks",
         "category": "Produce"
       }
     },
     {
       "raw": "1  English cucumber (seeded and cut into half moon pieces)",
       "expected": {
-        "item": "English cucumber (seeded and cut into half moon pieces)",
+        "item": "English cucumber",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded and cut into half moon pieces",
         "category": "Produce"
       }
     },

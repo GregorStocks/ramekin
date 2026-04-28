@@ -63,14 +63,14 @@
     {
       "raw": "1/2 cup almond milk (or milk of choice), (plus more, as needed, to thin)",
       "expected": {
-        "item": "almond milk (or milk of choice), (plus more, as needed, to thin)",
+        "item": "almond milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or milk of choice, plus more, as needed, to thin",
         "category": "Nuts & Dried Fruit"
       }
     }

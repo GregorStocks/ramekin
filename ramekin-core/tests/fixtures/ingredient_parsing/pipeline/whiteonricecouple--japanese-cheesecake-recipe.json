@@ -5,14 +5,14 @@
     {
       "raw": "6  eggs (, whites and yolks separated)",
       "expected": {
-        "item": "eggs (, whites and yolks separated)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "whites and yolks separated",
         "category": "Dairy & Eggs"
       }
     },

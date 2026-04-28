@@ -5,14 +5,14 @@
     {
       "raw": "1 cup raw pumpkin seeds (also called pepitas)",
       "expected": {
-        "item": "raw pumpkin seeds (also called pepitas)",
+        "item": "raw pumpkin seeds",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "also called pepitas",
         "category": "Produce"
       }
     },

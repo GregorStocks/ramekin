@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 to 1 1/2 in thickness",
         "category": "Meat & Seafood"
       }
     },
@@ -41,9 +41,9 @@
     {
       "raw": "Juice of ½ lemon (more for later)",
       "expected": {
-        "item": "Juice of 1/2 lemon (more for later)",
+        "item": "Juice of 1/2 lemon",
         "measurements": [],
-        "note": null,
+        "note": "more for later",
         "category": "Beverages"
       }
     },

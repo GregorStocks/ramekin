@@ -41,28 +41,28 @@
     {
       "raw": "1  white onion (small )",
       "expected": {
-        "item": "white onion (small",
+        "item": "white onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "small",
         "category": "Produce"
       }
     },
     {
       "raw": "1  roma tomato ((plum), seeded and chopped)",
       "expected": {
-        "item": "roma tomato (plum)",
+        "item": "roma tomato",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "seeded and chopped)",
+        "note": "plum, seeded and chopped)",
         "category": "Produce"
       }
     },

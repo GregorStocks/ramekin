@@ -137,14 +137,14 @@
     {
       "raw": "1/8 to 1/4 teaspoon cayenne (adjust to your heat preference)",
       "expected": {
-        "item": "cayenne (adjust to your heat preference)",
+        "item": "cayenne",
         "measurements": [
           {
             "amount": "0.13 to 0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "adjust to your heat preference",
         "category": "Spices & Seasonings"
       }
     },
@@ -187,14 +187,14 @@
     {
       "raw": "2 cups beef stock (unsalted or low salt)",
       "expected": {
-        "item": "beef stock (unsalted or low salt)",
+        "item": "beef stock",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "unsalted or low salt",
         "category": "Canned Goods"
       }
     },
@@ -219,28 +219,32 @@
     {
       "raw": "1 cup chili sauce* (I’m realizing from comments that there are many many types; I used Heinz, which is not exactly spicy)",
       "expected": {
-        "item": "chili sauce* (I’m realizing from comments that there are many many types; I used Heinz, which is not exactly spicy)",
+        "item": "chili sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I’m realizing from comments that there are many many types; I used Heinz, which is not exactly spicy",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1 cup brown sugar (light or dark)",
       "expected": {
-        "item": "brown sugar (light or dark)",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "220",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "light or dark",
         "category": "Baking"
       }
     },

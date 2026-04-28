@@ -41,14 +41,14 @@
     {
       "raw": "1/2  teaspoon    red chili powder (preferably kashmiri type)",
       "expected": {
-        "item": "red chili powder (preferably kashmiri type)",
+        "item": "red chili powder",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "preferably kashmiri type",
         "category": "Spices & Seasonings"
       }
     },
@@ -232,7 +232,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "crushed  (kasoori methi)",
+        "note": "kasoori methi, crushed",
         "category": "Spices & Seasonings"
       }
     },
@@ -248,14 +248,14 @@
     {
       "raw": "6   tablespoons    ghee (clarified butter)",
       "expected": {
-        "item": "ghee (clarified butter)",
+        "item": "ghee",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "clarified butter",
         "category": "Dairy & Eggs"
       }
     },

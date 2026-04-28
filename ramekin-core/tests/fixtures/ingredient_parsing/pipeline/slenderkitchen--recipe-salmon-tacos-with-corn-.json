@@ -5,7 +5,7 @@
     {
       "raw": "1 lb. wild salmon (or farm raised)",
       "expected": {
-        "item": "wild salmon (or farm raised)",
+        "item": "wild salmon",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or farm raised",
         "category": "Meat & Seafood"
       }
     },
@@ -59,14 +59,14 @@
     {
       "raw": "1 tbsp blackening seasoning (pr taco seasoning or Cajun seasoning)",
       "expected": {
-        "item": "blackening seasoning (pr taco seasoning or Cajun seasoning)",
+        "item": "blackening seasoning",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "pr taco seasoning or Cajun seasoning",
         "category": "Spices & Seasonings"
       }
     },

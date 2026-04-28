@@ -109,14 +109,14 @@
     {
       "raw": "1/2 cup wheat flour (you can sub in all white)",
       "expected": {
-        "item": "wheat flour (you can sub in all white)",
+        "item": "wheat flour",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "you can sub in all white",
         "category": "Baking"
       }
     },
@@ -177,29 +177,33 @@
     {
       "raw": "1/2 to 1 tsp ground cloves (I go with 1 full tsp)",
       "expected": {
-        "item": "ground cloves (I go with 1 full tsp)",
+        "item": "ground cloves",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "I go with 1 full tsp",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "3 cups old fashioned oats (or rolled oats)",
       "expected": {
-        "item": "old fashioned oats (or rolled oats)",
+        "item": "old fashioned oats",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Bakery & Bread"
+        "note": "or rolled oats",
+        "category": "Snacks"
       }
     },
     {

@@ -37,42 +37,42 @@
     {
       "raw": "3  chicken breasts (boneless and skinless, cut into long strips)",
       "expected": {
-        "item": "chicken breasts (boneless and skinless, cut into long strips)",
+        "item": "chicken breasts",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "boneless and skinless, cut into long strips",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 medium red bell pepper (cut into long strips)",
       "expected": {
-        "item": "red bell pepper (cut into long strips)",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into long strips",
         "category": "Produce"
       }
     },
     {
       "raw": "1 medium green bell pepper (cut into long strips)",
       "expected": {
-        "item": "green bell pepper (cut into long strips)",
+        "item": "green bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into long strips",
         "category": "Produce"
       }
     },
@@ -111,14 +111,14 @@
     {
       "raw": "1 cup Tex Mex cheese (or cheddar cheese)",
       "expected": {
-        "item": "Tex Mex cheese (or cheddar cheese)",
+        "item": "Tex Mex cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or cheddar cheese",
         "category": "Cheese"
       }
     },

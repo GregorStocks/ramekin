@@ -139,14 +139,14 @@
     {
       "raw": "5 sprigs fresh thyme ((tied with twine))",
       "expected": {
-        "item": "fresh thyme (tied with twine)",
+        "item": "fresh thyme",
         "measurements": [
           {
             "amount": "5",
             "unit": "sprig"
           }
         ],
-        "note": null,
+        "note": "tied with twine",
         "category": "Produce"
       }
     },

@@ -121,14 +121,14 @@
     {
       "raw": "3/4 cup fresh key lime juice (strained from about 1 1/2 lb Key limes) or bottled (Nellie and Joe’s is wonderful, as is Manhattan brand, if you can find it)",
       "expected": {
-        "item": "fresh key lime juice (strained from about 1 1/2 lb Key limes) or bottled (Nellie and Joe’s is wonderful, as is Manhattan brand, if you can find it)",
+        "item": "fresh key lime juice or bottled",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "strained from about 1 1/2 lb Key limes, Nellie and Joe’s is wonderful, as is Manhattan brand, if you can find it",
         "category": "Beverages"
       }
     },
@@ -244,14 +244,14 @@
     {
       "raw": "1 tablespoon fresh Key lime juice (strained) or bottled",
       "expected": {
-        "item": "fresh Key lime juice (strained) or bottled",
+        "item": "fresh Key lime juice or bottled",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "strained",
         "category": "Beverages"
       }
     },

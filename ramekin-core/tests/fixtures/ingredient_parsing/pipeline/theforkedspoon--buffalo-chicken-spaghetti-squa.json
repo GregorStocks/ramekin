@@ -5,14 +5,14 @@
     {
       "raw": "2  spaghetti squash (medium)",
       "expected": {
-        "item": "spaghetti squash (medium)",
+        "item": "spaghetti squash",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "medium",
         "category": "Pasta & Rice"
       }
     },

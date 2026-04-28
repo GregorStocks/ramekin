@@ -5,14 +5,14 @@
     {
       "raw": "2  cinnamon sticks, (broken into pieces)",
       "expected": {
-        "item": "cinnamon sticks, (broken into pieces)",
+        "item": "cinnamon sticks",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "broken into pieces",
         "category": "Spices & Seasonings"
       }
     },
@@ -107,14 +107,14 @@
     {
       "raw": "2 tbsp loose-leaf black tea (or 6 black tea bags)",
       "expected": {
-        "item": "loose-leaf black tea (or 6 black tea bags)",
+        "item": "loose-leaf black tea",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or 6 black tea bags",
         "category": "Beverages"
       }
     },
@@ -153,14 +153,14 @@
     {
       "raw": "2 cups chai tea ((see recipe above))",
       "expected": {
-        "item": "chai tea (see recipe above)",
+        "item": "chai tea",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see recipe above",
         "category": "Beverages"
       }
     },

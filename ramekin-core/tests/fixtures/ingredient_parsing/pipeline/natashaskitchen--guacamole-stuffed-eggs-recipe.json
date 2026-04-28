@@ -19,28 +19,32 @@
     {
       "raw": "1  medium (ripe avocado)",
       "expected": {
-        "item": "(ripe avocado)",
+        "item": "1  medium (ripe avocado)",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "ripe avocado",
         "category": "Produce"
       }
     },
     {
       "raw": "1 Tbsp fresh lime juice (juice of 1/2 lime)",
       "expected": {
-        "item": "fresh lime juice (juice of 1/2 lime)",
+        "item": "fresh lime juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "juice of 1/2 lime",
         "category": "Beverages"
       }
     },

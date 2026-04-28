@@ -23,14 +23,14 @@
     {
       "raw": "1 large onion  (I prefer sweet onion or Vidalia)",
       "expected": {
-        "item": "onion  (I prefer sweet onion or Vidalia)",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "I prefer sweet onion or Vidalia",
         "category": "Produce"
       }
     },
@@ -137,14 +137,14 @@
     {
       "raw": "2 cups broth (I prefer chicken broth but any broth works.)",
       "expected": {
-        "item": "broth (I prefer chicken broth but any broth works.)",
+        "item": "broth",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I prefer chicken broth but any broth works.",
         "category": "Canned Goods"
       }
     },

@@ -183,14 +183,14 @@
     {
       "raw": "2 bell peppers (any color), sliced",
       "expected": {
-        "item": "bell peppers (any color)",
+        "item": "bell peppers",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "sliced",
+        "note": "any color, sliced",
         "category": "Produce"
       }
     },

@@ -57,7 +57,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "2 sicks or 225 grams",
         "category": "Dairy & Eggs"
       }
     },
@@ -122,7 +122,7 @@
     {
       "raw": "2 pounds (905 grams) mushrooms (see Note up top for suggestions)",
       "expected": {
-        "item": "mushrooms (see Note up top for suggestions)",
+        "item": "mushrooms",
         "measurements": [
           {
             "amount": "2",
@@ -133,7 +133,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note up top for suggestions",
         "category": "Produce"
       }
     },
@@ -174,7 +174,7 @@
             "unit": null
           }
         ],
-        "note": "minced (I used 4 small because I’m a rebel)",
+        "note": "I used 4 small because I’m a rebel, minced",
         "category": "Produce"
       }
     },

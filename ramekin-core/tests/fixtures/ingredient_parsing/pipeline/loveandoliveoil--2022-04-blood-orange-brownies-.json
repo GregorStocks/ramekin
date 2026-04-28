@@ -19,15 +19,15 @@
     {
       "raw": "1/4 teaspoon citric acid (or 2 tablespoons lemon juice)",
       "expected": {
-        "item": "citric acid (or 2 tablespoons lemon juice)",
+        "item": "citric acid",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "or 2 tablespoons lemon juice",
+        "category": "Other"
       }
     },
     {

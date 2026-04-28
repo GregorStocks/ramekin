@@ -105,28 +105,28 @@
     {
       "raw": "1 cup chopped nuts (I used walnut)",
       "expected": {
-        "item": "chopped nuts (I used walnut)",
+        "item": "chopped nuts",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used walnut",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
       "raw": "1 cup chocolate chips (semi-sweet, milk, dark - whatever you have on hand)",
       "expected": {
-        "item": "chocolate chips (semi-sweet, milk, dark - whatever you have on hand)",
+        "item": "chocolate chips",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "semi-sweet, milk, dark - whatever you have on hand",
         "category": "Baking"
       }
     }

@@ -5,14 +5,14 @@
     {
       "raw": "6 hard-boiled eggs, cooked however you like (Instant Pot or stovetop), peeled and halved",
       "expected": {
-        "item": "hard-boiled eggs, cooked however you like (Instant Pot or stovetop)",
+        "item": "hard-boiled eggs, cooked however you like",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": "peeled and halved",
+        "note": "Instant Pot or stovetop, peeled and halved",
         "category": "Dairy & Eggs"
       }
     },

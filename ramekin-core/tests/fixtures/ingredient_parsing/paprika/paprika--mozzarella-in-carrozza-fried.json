@@ -42,14 +42,14 @@
     {
       "raw": "1 cup bread crumbs (preferably panko)",
       "expected": {
-        "item": "bread crumbs (preferably panko)",
+        "item": "bread crumbs",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "preferably panko",
         "category": "Bakery & Bread"
       }
     },

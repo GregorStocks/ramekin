@@ -23,15 +23,15 @@
     {
       "raw": "1/2 teaspoon fine sea or table salt (if using unsalted butter only)",
       "expected": {
-        "item": "fine sea or table salt (if using unsalted butter only)",
+        "item": "fine sea or table salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "if using unsalted butter only",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -131,14 +131,14 @@
     {
       "raw": "1 large egg white, ideally pasteurized (or use meringue or egg white powder as per label instructions)",
       "expected": {
-        "item": "egg white, ideally pasteurized (or use meringue or egg white powder as per label instructions)",
+        "item": "egg white, ideally pasteurized",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "or use meringue or egg white powder as per label instructions",
         "category": "Dairy & Eggs"
       }
     },
@@ -177,10 +177,10 @@
     {
       "raw": "A few drops of a flavoring of your choice (optional) (lemon, almond, vanilla)",
       "expected": {
-        "item": "A few drops of a flavoring of your choice (lemon, almond, vanilla)",
+        "item": "A few drops of a flavoring of your choice",
         "measurements": [],
-        "note": "optional",
-        "category": "Baking"
+        "note": "lemon, almond, vanilla, optional",
+        "category": "Other"
       }
     },
     {

@@ -37,14 +37,14 @@
     {
       "raw": "20 ml cooking oil (neutral flavor like canola etc.)",
       "expected": {
-        "item": "cooking oil (neutral flavor like canola etc.)",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "20",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "neutral flavor like canola etc.",
         "category": "Oils & Vinegars"
       }
     },
@@ -132,7 +132,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "36% or higher",
         "category": "Dairy & Eggs"
       }
     },
@@ -167,23 +167,23 @@
     {
       "raw": "12  strawberries (half for filling, half for decorating)",
       "expected": {
-        "item": "strawberries (half for filling, half for decorating)",
+        "item": "strawberries",
         "measurements": [
           {
             "amount": "12",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "half for filling, half for decorating",
         "category": "Produce"
       }
     },
     {
       "raw": "powdered sugar (or matcha powder for dusting)",
       "expected": {
-        "item": "powdered sugar (or matcha powder for dusting)",
+        "item": "powdered sugar",
         "measurements": [],
-        "note": null,
+        "note": "or matcha powder for dusting",
         "category": "Baking"
       }
     }

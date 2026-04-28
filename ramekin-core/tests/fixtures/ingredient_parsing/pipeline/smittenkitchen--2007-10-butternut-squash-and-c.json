@@ -145,14 +145,14 @@
     {
       "raw": "1 to 2 tablespoons butter (if you have only non-stick, the smaller amount will do)",
       "expected": {
-        "item": "butter (if you have only non-stick, the smaller amount will do)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "if you have only non-stick, the smaller amount will do",
         "category": "Dairy & Eggs"
       }
     },

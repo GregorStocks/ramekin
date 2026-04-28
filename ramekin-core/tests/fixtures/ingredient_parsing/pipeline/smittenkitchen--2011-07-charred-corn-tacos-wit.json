@@ -5,7 +5,7 @@
     {
       "raw": "1/2 pound red radishes (from about 2/3 of a bundle with stems and leaves), trimmed",
       "expected": {
-        "item": "red radishes (from about 2/3 of a bundle with stems and leaves)",
+        "item": "red radishes",
         "measurements": [
           {
             "amount": "0.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed",
+        "note": "from about 2/3 of a bundle with stems and leaves, trimmed",
         "category": "Produce"
       }
     },
@@ -146,21 +146,21 @@
     {
       "raw": "3 tablespoons chopped epazote (if you can find it), cilantro or pasley (for the cilantro-averse) leaves (optional)",
       "expected": {
-        "item": "chopped epazote (if you can find it)",
+        "item": "chopped epazote, cilantro or pasley leaves",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "cilantro or pasley (for the cilantro-averse) leaves (optional)",
-        "category": "Other"
+        "note": "if you can find it, for the cilantro-averse, optional",
+        "category": "Produce"
       }
     },
     {
       "raw": "1/2 cup (2 1/2 ounces or 70 grams) crumbled cotija cheese (or another salty, crumbly cheese such as ricotta salata or feta)",
       "expected": {
-        "item": "crumbled cotija cheese (or another salty, crumbly cheese such as ricotta salata or feta)",
+        "item": "crumbled cotija cheese",
         "measurements": [
           {
             "amount": "0.5",
@@ -175,7 +175,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or another salty, crumbly cheese such as ricotta salata or feta",
         "category": "Cheese"
       }
     },
@@ -207,7 +207,7 @@
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "6-inch",
         "category": "Bakery & Bread"
       }
     }

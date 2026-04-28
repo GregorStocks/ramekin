@@ -163,7 +163,7 @@
     {
       "raw": "1/4 cup (about 20 grams) dark cocoa powder (I use Dutched but any kind should work), sifted if lumpy",
       "expected": {
-        "item": "dark cocoa powder (I use Dutched but any kind should work)",
+        "item": "dark cocoa powder",
         "measurements": [
           {
             "amount": "0.25",
@@ -174,7 +174,7 @@
             "unit": "g"
           }
         ],
-        "note": "sifted if lumpy",
+        "note": "I use Dutched but any kind should work, sifted if lumpy",
         "category": "Baking"
       }
     },

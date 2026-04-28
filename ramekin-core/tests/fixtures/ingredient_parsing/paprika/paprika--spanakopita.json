@@ -27,14 +27,18 @@
     {
       "raw": "1 cup red onion (from 1 small or half a large), finely chopped",
       "expected": {
-        "item": "red onion (from 1 small or half a large)",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "138",
+            "unit": "g"
           }
         ],
-        "note": "finely chopped",
+        "note": "from 1 small or half a large, finely chopped",
         "category": "Produce"
       }
     },

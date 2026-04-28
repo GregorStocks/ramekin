@@ -255,14 +255,18 @@
     {
       "raw": "½ cup rolled oats (additional for GF version )",
       "expected": {
-        "item": "rolled oats (additional for GF version",
+        "item": "rolled oats",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "additional for GF version",
         "category": "Bakery & Bread"
       }
     },

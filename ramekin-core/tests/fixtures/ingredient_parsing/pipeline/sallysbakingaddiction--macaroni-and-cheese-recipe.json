@@ -185,7 +185,7 @@
     {
       "raw": "5 cups (560g) shredded cheese (I recommend 3 cups sharp white cheddar, 1 cup regular sharp cheddar, and 1 cup gouda)",
       "expected": {
-        "item": "shredded cheese (I recommend 3 cups sharp white cheddar, 1 cup regular sharp cheddar, and 1 cup gouda)",
+        "item": "shredded cheese",
         "measurements": [
           {
             "amount": "5",
@@ -196,7 +196,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I recommend 3 cups sharp white cheddar, 1 cup regular sharp cheddar, and 1 cup gouda",
         "category": "Cheese"
       }
     },

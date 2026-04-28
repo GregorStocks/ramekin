@@ -177,9 +177,9 @@
     {
       "raw": "Blue cheese dressing (from above)",
       "expected": {
-        "item": "Blue cheese dressing (from above)",
+        "item": "Blue cheese dressing",
         "measurements": [],
-        "note": null,
+        "note": "from above",
         "category": "Cheese"
       }
     },

@@ -51,14 +51,14 @@
     {
       "raw": "4  chicken breasts (skinless and boneless)",
       "expected": {
-        "item": "chicken breasts (skinless and boneless)",
+        "item": "chicken breasts",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "skinless and boneless",
         "category": "Meat & Seafood"
       }
     },

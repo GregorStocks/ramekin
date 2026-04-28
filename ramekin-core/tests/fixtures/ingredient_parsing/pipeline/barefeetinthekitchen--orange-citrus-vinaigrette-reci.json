@@ -65,14 +65,14 @@
     {
       "raw": "1/4 cup golden balsamic vinegar (champagne or white wine vinegar will work also)",
       "expected": {
-        "item": "golden balsamic vinegar (champagne or white wine vinegar will work also)",
+        "item": "golden balsamic vinegar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "champagne or white wine vinegar will work also",
         "category": "Oils & Vinegars"
       }
     },

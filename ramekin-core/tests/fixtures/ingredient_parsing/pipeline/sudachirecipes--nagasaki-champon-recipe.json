@@ -5,15 +5,19 @@
     {
       "raw": "1 tsp lard (or cooking oil)",
       "expected": {
-        "item": "lard (or cooking oil)",
+        "item": "lard",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "or cooking oil",
+        "category": "Other"
       }
     },
     {
@@ -33,14 +37,14 @@
     {
       "raw": "8  shrimp (deshelled, deveined with tails removed)",
       "expected": {
-        "item": "shrimp (deshelled, deveined with tails removed)",
+        "item": "shrimp",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "deshelled, deveined with tails removed",
         "category": "Meat & Seafood"
       }
     },
@@ -89,28 +93,28 @@
     {
       "raw": "50 g green cabbage (roughly cut)",
       "expected": {
-        "item": "green cabbage (roughly cut)",
+        "item": "green cabbage",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "roughly cut",
         "category": "Produce"
       }
     },
     {
       "raw": "8 slices kamaboko fish cake (kamaboko)",
       "expected": {
-        "item": "kamaboko fish cake (kamaboko)",
+        "item": "kamaboko fish cake",
         "measurements": [
           {
             "amount": "8",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "kamaboko",
         "category": "Meat & Seafood"
       }
     },
@@ -191,46 +195,42 @@
     {
       "raw": "½ tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1 tsp grated garlic (or garlic paste)",
       "expected": {
-        "item": "grated garlic (or garlic paste)",
+        "item": "grated garlic",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or garlic paste",
         "category": "Produce"
       }
     },
     {
       "raw": "1 tsp grated ginger root (or ginger paste)",
       "expected": {
-        "item": "grated ginger root (or ginger paste)",
+        "item": "grated ginger root",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or ginger paste",
         "category": "Produce"
       }
     },
@@ -255,14 +255,14 @@
     {
       "raw": "2 portions ramen noodles (preferably thick type)",
       "expected": {
-        "item": "portions ramen noodles (preferably thick type)",
+        "item": "portions ramen noodles",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "preferably thick type",
         "category": "Pasta & Rice"
       }
     },

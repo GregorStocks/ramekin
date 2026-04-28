@@ -51,14 +51,14 @@
     {
       "raw": "2 TBSP crumbled feta cheese ((skip for vegan))",
       "expected": {
-        "item": "crumbled feta cheese (skip for vegan)",
+        "item": "crumbled feta cheese",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "skip for vegan",
         "category": "Cheese"
       }
     },
@@ -79,14 +79,14 @@
     {
       "raw": "1-2 TBSP sweet balsamic glaze (or homemade balsamic reduction)",
       "expected": {
-        "item": "sweet balsamic glaze (or homemade balsamic reduction)",
+        "item": "sweet balsamic glaze",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or homemade balsamic reduction",
         "category": "Oils & Vinegars"
       }
     },

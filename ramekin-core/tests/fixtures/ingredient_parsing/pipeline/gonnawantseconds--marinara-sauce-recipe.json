@@ -101,14 +101,14 @@
     {
       "raw": "1 (28-ounce) can crushed tomatoes, (with juices)",
       "expected": {
-        "item": "crushed tomatoes, (with juices)",
+        "item": "crushed tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "28-ounce, with juices",
         "category": "Canned Goods"
       }
     },
@@ -122,7 +122,7 @@
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "6-ounce",
         "category": "Canned Goods"
       }
     },

@@ -69,14 +69,14 @@
     {
       "raw": "1 cup 7.5 oz. cola/soda pop (such as Coca-Cola)",
       "expected": {
-        "item": "7.5 oz. cola/soda pop (such as Coca-Cola)",
+        "item": "7.5 oz. cola/soda pop",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Coca-Cola",
         "category": "Beverages"
       }
     },

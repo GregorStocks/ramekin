@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds small new or fingerling potatoes (I used a mix of reds and yukon golds)",
       "expected": {
-        "item": "small new or fingerling potatoes (I used a mix of reds and yukon golds)",
+        "item": "small new or fingerling potatoes",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used a mix of reds and yukon golds",
         "category": "Produce"
       }
     },
@@ -140,14 +140,18 @@
     {
       "raw": "1 tablespoon kosher salt (I use Diamond brand; use less if you’re using Morton or table salt)",
       "expected": {
-        "item": "kosher salt (I use Diamond brand; use less if you’re using Morton or table salt)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "8.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use Diamond brand; use less if you’re using Morton or table salt",
         "category": "Spices & Seasonings"
       }
     },

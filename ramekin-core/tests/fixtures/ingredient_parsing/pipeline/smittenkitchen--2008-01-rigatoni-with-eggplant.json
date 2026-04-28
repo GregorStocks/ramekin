@@ -27,14 +27,14 @@
     {
       "raw": "2 heaped cups (or 12 ounces) cherry or grape tomatoes",
       "expected": {
-        "item": "(or 12 ounces) cherry or grape tomatoes",
+        "item": "cherry or grape tomatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "heaped cup"
           }
         ],
-        "note": null,
+        "note": "or 12 ounces",
         "category": "Produce"
       }
     },

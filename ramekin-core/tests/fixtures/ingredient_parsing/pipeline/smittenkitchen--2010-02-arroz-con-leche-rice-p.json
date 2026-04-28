@@ -33,14 +33,14 @@
     {
       "raw": "2 strips of lemon or orange zest (can use a peeler to get a larger piece)",
       "expected": {
-        "item": "strips of lemon or orange zest (can use a peeler to get a larger piece)",
+        "item": "strips of lemon or orange zest",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "can use a peeler to get a larger piece",
         "category": "Produce"
       }
     },
@@ -93,28 +93,32 @@
     {
       "raw": "3 cups whole milk (updated to note that many people, including my mother, successfully made this with lower fat milks)",
       "expected": {
-        "item": "whole milk (updated to note that many people, including my mother, successfully made this with lower fat milks)",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "735",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "updated to note that many people, including my mother, successfully made this with lower fat milks",
+        "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 (12-ounce) can sweetened condensed milk (I realized after the fact that my can had been 14 ounces, had no averse effect)",
       "expected": {
-        "item": "sweetened condensed milk (I realized after the fact that my can had been 14 ounces, had no averse effect)",
+        "item": "sweetened condensed milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "12-ounce, I realized after the fact that my can had been 14 ounces, had no averse effect",
         "category": "Canned Goods"
       }
     },

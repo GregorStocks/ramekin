@@ -37,14 +37,14 @@
     {
       "raw": "1/4 cup mayonaise ((See Note 2))",
       "expected": {
-        "item": "mayonaise (See Note 2)",
+        "item": "mayonaise",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "See Note 2",
         "category": "Condiments & Sauces"
       }
     },

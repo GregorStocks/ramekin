@@ -14,15 +14,15 @@
     {
       "raw": "2 cups root beer (I used Boylan because it was easy to find and made with cane sugar)",
       "expected": {
-        "item": "root beer (I used Boylan because it was easy to find and made with cane sugar)",
+        "item": "root beer",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "I used Boylan because it was easy to find and made with cane sugar",
+        "category": "Beverages"
       }
     },
     {
@@ -227,14 +227,14 @@
     {
       "raw": "Pint of vanilla ice cream (you’ll have leftover; you’re welcome)",
       "expected": {
-        "item": "vanilla ice cream (you’ll have leftover; you’re welcome)",
+        "item": "vanilla ice cream",
         "measurements": [
           {
             "amount": null,
             "unit": "pint"
           }
         ],
-        "note": null,
+        "note": "you’ll have leftover; you’re welcome",
         "category": "Frozen"
       }
     },

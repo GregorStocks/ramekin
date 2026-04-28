@@ -67,14 +67,14 @@
     {
       "raw": "1/2 to 3/4 teaspoon coarse kosher salt (Updated: for unsweetened coconut, the smaller amount; sweetened, the larger amount)",
       "expected": {
-        "item": "coarse kosher salt (Updated: for unsweetened coconut, the smaller amount; sweetened, the larger amount)",
+        "item": "coarse kosher salt",
         "measurements": [
           {
             "amount": "0.5 to 0.75",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "Updated: for unsweetened coconut, the smaller amount; sweetened, the larger amount",
         "category": "Spices & Seasonings"
       }
     },

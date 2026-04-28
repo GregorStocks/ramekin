@@ -47,9 +47,9 @@
     {
       "raw": "Fresh sage leaves (I slivered up about 5 of them)",
       "expected": {
-        "item": "Fresh sage leaves (I slivered up about 5 of them)",
+        "item": "Fresh sage leaves",
         "measurements": [],
-        "note": null,
+        "note": "I slivered up about 5 of them",
         "category": "Produce"
       }
     },
@@ -143,9 +143,9 @@
     {
       "raw": "Juice of 1 to 2 lemons (I always use 2)",
       "expected": {
-        "item": "Juice of 1 to 2 lemons (I always use 2)",
+        "item": "Juice of 1 to 2 lemons",
         "measurements": [],
-        "note": null,
+        "note": "I always use 2",
         "category": "Beverages"
       }
     }

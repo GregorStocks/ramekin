@@ -5,7 +5,7 @@
     {
       "raw": "½ cup (95 grams)  masoor dal ( (red lentils))",
       "expected": {
-        "item": "masoor dal ( (red lentils)",
+        "item": "masoor dal",
         "measurements": [
           {
             "amount": "0.5",
@@ -16,8 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "(red lentils",
+        "category": "Other"
       }
     },
     {
@@ -73,42 +73,42 @@
     {
       "raw": "1¼ to 1½ cup water ((or 1 cup for IP + ¼ cup if using moong dal))",
       "expected": {
-        "item": "water (or 1 cup for IP + 1/4 cup if using moong dal)",
+        "item": "water",
         "measurements": [
           {
             "amount": "1.25 to 1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or 1 cup for IP + 1/4 cup if using moong dal",
         "category": "Other"
       }
     },
     {
       "raw": "1 to 2 tablespoon ghee (or (1 tbsp oil or 2 tbsps butter))",
       "expected": {
-        "item": "ghee (or (1 tbsp oil",
+        "item": "ghee",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tbsp"
           }
         ],
-        "note": "or 2 tbsps butter)",
+        "note": "or (1 tbsp oil or 2 tbsps butter",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1  dried red chili (broken)",
       "expected": {
-        "item": "dried red chili (broken)",
+        "item": "dried red chili",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "broken",
         "category": "Other"
       }
     },
@@ -157,14 +157,14 @@
     {
       "raw": "1 pinch asafoetida ((hing))",
       "expected": {
-        "item": "asafoetida (hing)",
+        "item": "asafoetida",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "hing",
         "category": "Other"
       }
     },
@@ -221,14 +221,14 @@
     {
       "raw": "⅛ teaspoon garam masala ((more if you want))",
       "expected": {
-        "item": "garam masala (more if you want)",
+        "item": "garam masala",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "more if you want",
         "category": "Spices & Seasonings"
       }
     },
@@ -263,14 +263,14 @@
     {
       "raw": "1 to 2 tablespoons lemon juice (to serve)",
       "expected": {
-        "item": "lemon juice (to serve)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "to serve",
         "category": "Beverages"
       }
     }

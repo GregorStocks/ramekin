@@ -172,14 +172,14 @@
     {
       "raw": "3/4 cup stout beer (we use Guinness)",
       "expected": {
-        "item": "stout beer (we use Guinness)",
+        "item": "stout beer",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "we use Guinness",
         "category": "Beverages"
       }
     },
@@ -229,7 +229,7 @@
             "unit": null
           }
         ],
-        "note": "softened as directed on package (we used Pillsbury)",
+        "note": "we used Pillsbury, softened as directed on package",
         "category": "Frozen"
       }
     },

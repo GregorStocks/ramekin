@@ -5,7 +5,7 @@
     {
       "raw": "1 lb spicy Italian sausage, (casings removed)",
       "expected": {
-        "item": "spicy Italian sausage, (casings removed)",
+        "item": "spicy Italian sausage",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "casings removed",
         "category": "Meat & Seafood"
       }
     },
@@ -207,14 +207,14 @@
     {
       "raw": "7  large fresh basil leaves, (torn)",
       "expected": {
-        "item": "fresh basil leaves, (torn)",
+        "item": "fresh basil leaves",
         "measurements": [
           {
             "amount": "7",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "torn",
         "category": "Produce"
       }
     },

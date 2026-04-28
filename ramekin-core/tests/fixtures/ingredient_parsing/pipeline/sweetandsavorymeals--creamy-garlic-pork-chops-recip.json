@@ -5,14 +5,14 @@
     {
       "raw": "4  bone-in pork chops (or boneless pork chops)",
       "expected": {
-        "item": "bone-in pork chops (or boneless pork chops)",
+        "item": "bone-in pork chops",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or boneless pork chops",
         "category": "Meat & Seafood"
       }
     },

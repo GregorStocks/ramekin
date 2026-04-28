@@ -103,7 +103,7 @@
             "unit": "piece"
           }
         ],
-        "note": "peeled and julienned",
+        "note": "2-inch-by-1-inch, peeled and julienned",
         "category": "Produce"
       }
     },
@@ -124,15 +124,15 @@
     {
       "raw": "2 to 3 Thai chilies (or 1 serrano), stemmed and thinly sliced",
       "expected": {
-        "item": "Thai chilies (or 1 serrano)",
+        "item": "Thai chilies",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": null
           }
         ],
-        "note": "stemmed and thinly sliced",
-        "category": "Produce"
+        "note": "or 1 serrano, stemmed and thinly sliced",
+        "category": "Other"
       }
     },
     {

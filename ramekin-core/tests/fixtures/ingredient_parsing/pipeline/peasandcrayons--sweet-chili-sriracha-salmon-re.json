@@ -5,7 +5,7 @@
     {
       "raw": "12 oz Wild Alaskan salmon ((cut into four 3-inch portions))",
       "expected": {
-        "item": "Wild Alaskan salmon (cut into four 3-inch portions)",
+        "item": "Wild Alaskan salmon",
         "measurements": [
           {
             "amount": "12",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into four 3-inch portions",
         "category": "Meat & Seafood"
       }
     },
@@ -46,14 +46,14 @@
     {
       "raw": "2 TBSP low sodium soy sauce ((GF or regular))",
       "expected": {
-        "item": "low sodium soy sauce (GF or regular)",
+        "item": "low sodium soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "GF or regular",
         "category": "Condiments & Sauces"
       }
     },

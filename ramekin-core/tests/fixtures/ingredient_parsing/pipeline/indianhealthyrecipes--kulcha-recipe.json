@@ -45,7 +45,7 @@
     {
       "raw": "¼ cup (60 ml)  warm milk  ((+ more as required))",
       "expected": {
-        "item": "warm milk  (+ more as required)",
+        "item": "warm milk",
         "measurements": [
           {
             "amount": "0.25",
@@ -54,9 +54,13 @@
           {
             "amount": "60",
             "unit": "ml"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "+ more as required",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,14 +135,18 @@
     {
       "raw": "1 teaspoon baking powder  ((or ½ tsp baking powder + ½ tsp instant yeast, read notes))",
       "expected": {
-        "item": "baking powder  (or 1/2 tsp baking powder + 1/2 tsp instant yeast, read notes)",
+        "item": "baking powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "4.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 1/2 tsp baking powder + 1/2 tsp instant yeast, read notes",
         "category": "Baking"
       }
     },
@@ -315,14 +323,14 @@
     {
       "raw": "¼ to ½ teaspoon garam masala  ((omit if you don’t like))",
       "expected": {
-        "item": "garam masala (omit if you don’t like)",
+        "item": "garam masala",
         "measurements": [
           {
             "amount": "0.25 to 0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "omit if you don’t like",
         "category": "Spices & Seasonings"
       }
     },

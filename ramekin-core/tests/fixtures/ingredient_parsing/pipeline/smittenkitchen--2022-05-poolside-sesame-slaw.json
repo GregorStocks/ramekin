@@ -180,14 +180,14 @@
     {
       "raw": "1 cup thinly sliced scallion (white and green parts)",
       "expected": {
-        "item": "thinly sliced scallion (white and green parts)",
+        "item": "thinly sliced scallion",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "white and green parts",
         "category": "Produce"
       }
     },
@@ -208,9 +208,9 @@
     {
       "raw": "About 1 cup Miso-Sesame Dressing (above)",
       "expected": {
-        "item": "About 1 cup Miso-Sesame Dressing (above)",
+        "item": "About 1 cup Miso-Sesame Dressing",
         "measurements": [],
-        "note": null,
+        "note": "above",
         "category": "Condiments & Sauces"
       }
     },

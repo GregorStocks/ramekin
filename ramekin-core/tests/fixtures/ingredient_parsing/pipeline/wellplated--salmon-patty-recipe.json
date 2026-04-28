@@ -26,7 +26,7 @@
             "unit": "can"
           }
         ],
-        "note": "drained (wild-caught if possible",
+        "note": "15-ounce, drained (wild-caught if possible",
         "category": "Meat & Seafood"
       }
     },
@@ -47,14 +47,14 @@
     {
       "raw": "1/4 cup nonfat plain Greek yogurt (or sour cream)",
       "expected": {
-        "item": "nonfat plain Greek yogurt (or sour cream)",
+        "item": "nonfat plain Greek yogurt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or sour cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -161,14 +161,14 @@
     {
       "raw": "1–2 tablespoons extra-virgin olive oil (for cooking the patties)",
       "expected": {
-        "item": "extra-virgin olive oil (for cooking the patties)",
+        "item": "extra-virgin olive oil",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "for cooking the patties",
         "category": "Oils & Vinegars"
       }
     },

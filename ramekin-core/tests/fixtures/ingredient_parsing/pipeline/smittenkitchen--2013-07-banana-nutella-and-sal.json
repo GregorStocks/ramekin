@@ -33,18 +33,18 @@
     {
       "raw": "A scant 1/2 cup Nutella or another chocolate-hazelnut (gianduja) spread",
       "expected": {
-        "item": "A scant 1/2 cup Nutella or another chocolate-hazelnut (gianduja) spread",
+        "item": "A scant 1/2 cup Nutella or another chocolate-hazelnut spread",
         "measurements": [],
-        "note": null,
+        "note": "gianduja",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
       "raw": "Flavorings (see Note up top), if desired",
       "expected": {
-        "item": "Flavorings (see Note up top), if desired",
+        "item": "Flavorings, if desired",
         "measurements": [],
-        "note": null,
+        "note": "see Note up top",
         "category": "Other"
       }
     }

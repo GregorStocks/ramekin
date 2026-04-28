@@ -5,7 +5,7 @@
     {
       "raw": "1/2 cup 113g unsalted butter (one stick)",
       "expected": {
-        "item": "unsalted butter (one stick)",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "one stick",
         "category": "Dairy & Eggs"
       }
     },
@@ -195,7 +195,7 @@
     {
       "raw": "1 cup 180g caramel bits or candy caramels (Kraft recommended)",
       "expected": {
-        "item": "caramel bits or candy caramels (Kraft recommended)",
+        "item": "caramel bits or candy caramels",
         "measurements": [
           {
             "amount": "1",
@@ -206,7 +206,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Kraft recommended",
         "category": "Other"
       }
     },

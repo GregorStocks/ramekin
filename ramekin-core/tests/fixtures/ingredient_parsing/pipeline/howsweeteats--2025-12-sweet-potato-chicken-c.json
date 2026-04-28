@@ -263,10 +263,10 @@
     {
       "raw": "for topping: grated cheddar (green onions, chives, sour cream, fritos, tortilla chips, cilantro)",
       "expected": {
-        "item": "for topping: grated cheddar (green onions, chives, sour cream, fritos, tortilla chips, cilantro)",
+        "item": "for topping: grated cheddar",
         "measurements": [],
-        "note": null,
-        "category": "Produce"
+        "note": "green onions, chives, sour cream, fritos, tortilla chips, cilantro",
+        "category": "Cheese"
       }
     }
   ]

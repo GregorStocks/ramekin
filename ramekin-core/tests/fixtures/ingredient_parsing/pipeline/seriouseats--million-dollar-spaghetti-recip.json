@@ -64,14 +64,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "85/15",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "8 ounces (227 g) mild Italian sausage (bulk )",
       "expected": {
-        "item": "mild Italian sausage (bulk",
+        "item": "mild Italian sausage",
         "measurements": [
           {
             "amount": "8",
@@ -82,7 +82,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "bulk",
         "category": "Meat & Seafood"
       }
     },
@@ -164,7 +164,7 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "3-inch",
         "category": "Spices & Seasonings"
       }
     },
@@ -224,7 +224,7 @@
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "28-ounce; 794 g",
         "category": "Canned Goods"
       }
     },

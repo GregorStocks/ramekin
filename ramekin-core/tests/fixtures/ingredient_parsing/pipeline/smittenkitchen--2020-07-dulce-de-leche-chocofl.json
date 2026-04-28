@@ -20,7 +20,7 @@
             "unit": "ml"
           }
         ],
-        "note": "or 1 1/2 cups prepared dulce de leche (see directions at end)",
+        "note": "see directions at end, or 1 1/2 cups prepared dulce de leche",
         "category": "Other"
       }
     },
@@ -203,14 +203,18 @@
     {
       "raw": "1/2 teaspoon kosher salt (Diamond is specified but you’ll be fine with any here)",
       "expected": {
-        "item": "kosher salt (Diamond is specified but you’ll be fine with any here)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Diamond is specified but you’ll be fine with any here",
         "category": "Spices & Seasonings"
       }
     },

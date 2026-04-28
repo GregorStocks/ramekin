@@ -5,23 +5,23 @@
     {
       "raw": "Homemade Pizza Dough (or store-bought dough)",
       "expected": {
-        "item": "Homemade Pizza Dough (or store-bought dough)",
+        "item": "Homemade Pizza Dough",
         "measurements": [],
-        "note": null,
+        "note": "or store-bought dough",
         "category": "Other"
       }
     },
     {
       "raw": "1 cup Pizza Sauce  ((homemade or store bought))",
       "expected": {
-        "item": "Pizza Sauce  (homemade or store bought)",
+        "item": "Pizza Sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "homemade or store bought",
         "category": "Condiments & Sauces"
       }
     },

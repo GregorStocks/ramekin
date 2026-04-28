@@ -95,7 +95,7 @@
             "unit": "g"
           }
         ],
-        "note": "sliced very thin",
+        "note": "1 small head or half of a large one, sliced very thin",
         "category": "Produce"
       }
     },
@@ -120,23 +120,23 @@
     {
       "raw": "2 tablespoons lime or lemon juice (I use lime)",
       "expected": {
-        "item": "lime or lemon juice (I use lime)",
+        "item": "lime or lemon juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I use lime",
         "category": "Beverages"
       }
     },
     {
       "raw": "Salt and red pepper flakes (I used the mild Aleppo variety) to taste",
       "expected": {
-        "item": "Salt and red pepper flakes (I used the mild Aleppo variety) to taste",
+        "item": "Salt and red pepper flakes to taste",
         "measurements": [],
-        "note": null,
+        "note": "I used the mild Aleppo variety",
         "category": "Spices & Seasonings"
       }
     },

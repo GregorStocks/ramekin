@@ -5,15 +5,15 @@
     {
       "raw": "½ cup moong dal ((yellow mung lentils))",
       "expected": {
-        "item": "moong dal (yellow mung lentils)",
+        "item": "moong dal",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "yellow mung lentils",
+        "category": "Other"
       }
     },
     {
@@ -51,15 +51,19 @@
     {
       "raw": "1 tablespoon oil  (or ghee)",
       "expected": {
-        "item": "oil  (or ghee)",
+        "item": "oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "or ghee",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -111,14 +115,14 @@
     {
       "raw": "4 to 5  curry leaves ((or 1 bay leaf))",
       "expected": {
-        "item": "curry leaves (or 1 bay leaf)",
+        "item": "curry leaves",
         "measurements": [
           {
             "amount": "4 to 5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 1 bay leaf",
         "category": "Spices & Seasonings"
       }
     },
@@ -217,14 +221,14 @@
     {
       "raw": "1 tablespoon ghee  (or oil or butter)",
       "expected": {
-        "item": "ghee  (or oil or butter)",
+        "item": "ghee",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or oil or butter",
         "category": "Dairy & Eggs"
       }
     },

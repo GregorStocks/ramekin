@@ -5,23 +5,23 @@
     {
       "raw": "Flour based cooking spray (recommend Baker’s Joy)",
       "expected": {
-        "item": "Flour based cooking spray (recommend Baker’s Joy)",
+        "item": "Flour based cooking spray",
         "measurements": [],
-        "note": null,
+        "note": "recommend Baker’s Joy",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "4 tablespoons finely ground espresso (Wicked Joe’sWicked French Roast beans)",
       "expected": {
-        "item": "finely ground espresso (Wicked Joe’sWicked French Roast beans)",
+        "item": "finely ground espresso",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "Wicked Joe’sWicked French Roast beans",
         "category": "Beverages"
       }
     },
@@ -614,23 +614,23 @@
     {
       "raw": "3 tablespoons whole coffee beans (using Wicked Joe’s Wicked French Roast beans)",
       "expected": {
-        "item": "whole coffee beans (using Wicked Joe’s Wicked French Roast beans)",
+        "item": "whole coffee beans",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "using Wicked Joe’s Wicked French Roast beans",
         "category": "Beverages"
       }
     },
     {
       "raw": "Buttercream orbs (see blog post for details)",
       "expected": {
-        "item": "Buttercream orbs (see blog post for details)",
+        "item": "Buttercream orbs",
         "measurements": [],
-        "note": null,
+        "note": "see blog post for details",
         "category": "Dairy & Eggs"
       }
     }

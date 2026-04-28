@@ -89,14 +89,14 @@
     {
       "raw": "1 cup shredded cheese ((cheddar, gruyere, manchego, etc.))",
       "expected": {
-        "item": "shredded cheese (cheddar, gruyere, manchego, etc.)",
+        "item": "shredded cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cheddar, gruyere, manchego, etc.",
         "category": "Cheese"
       }
     },

@@ -19,7 +19,7 @@
     {
       "raw": "2 1/2 lb Kabocha (pumpkin)",
       "expected": {
-        "item": "Kabocha (pumpkin)",
+        "item": "Kabocha",
         "measurements": [
           {
             "amount": "2.5",
@@ -30,8 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "pumpkin",
+        "category": "Other"
       }
     },
     {

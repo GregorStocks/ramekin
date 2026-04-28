@@ -33,23 +33,23 @@
     {
       "raw": "1 fluid ounce Red Vermouth (sweet or semi-sweet)",
       "expected": {
-        "item": "Red Vermouth (sweet or semi-sweet)",
+        "item": "Red Vermouth",
         "measurements": [
           {
             "amount": "1",
             "unit": "fl oz"
           }
         ],
-        "note": null,
+        "note": "sweet or semi-sweet",
         "category": "Beverages"
       }
     },
     {
       "raw": "orange peel (to garnish)",
       "expected": {
-        "item": "orange peel (to garnish)",
+        "item": "orange peel",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "category": "Produce"
       }
     }

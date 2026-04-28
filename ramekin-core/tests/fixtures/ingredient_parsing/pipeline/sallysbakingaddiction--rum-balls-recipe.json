@@ -23,7 +23,7 @@
     {
       "raw": "38 Biscoff cookies (300g) or Nilla Wafers (*see Note)",
       "expected": {
-        "item": "Biscoff cookies or Nilla Wafers (*see Note)",
+        "item": "Biscoff cookies or Nilla Wafers",
         "measurements": [
           {
             "amount": "38",
@@ -34,14 +34,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "*see Note",
         "category": "Other"
       }
     },
     {
       "raw": "2 Tablespoons (10g) natural or dutch-process unsweetened cocoa powder* (I like this dutch-process cocoa)",
       "expected": {
-        "item": "natural or dutch-process unsweetened cocoa powder* (I like this dutch-process cocoa)",
+        "item": "natural or dutch-process unsweetened cocoa powder",
         "measurements": [
           {
             "amount": "2",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I like this dutch-process cocoa",
         "category": "Baking"
       }
     },
@@ -135,7 +135,7 @@
     {
       "raw": "1 cup desiccated unsweetened coconut (100g) OR finely chopped pecans (130g) (see Note)",
       "expected": {
-        "item": "desiccated unsweetened coconut OR finely chopped pecans (see Note)",
+        "item": "desiccated unsweetened coconut OR finely chopped pecans",
         "measurements": [
           {
             "amount": "1",
@@ -150,7 +150,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Produce"
       }
     }

@@ -37,15 +37,19 @@
     {
       "raw": "1/4 cup milk ((cow, almond, soy, etc))",
       "expected": {
-        "item": "milk (cow, almond, soy, etc)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "cow, almond, soy, etc",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -87,14 +91,18 @@
     {
       "raw": "1 cup Greek yogurt (plain or flavored)",
       "expected": {
-        "item": "Greek yogurt (plain or flavored)",
+        "item": "Greek yogurt",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plain or flavored",
         "category": "Dairy & Eggs"
       }
     },

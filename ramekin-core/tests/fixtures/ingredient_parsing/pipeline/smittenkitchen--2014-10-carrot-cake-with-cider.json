@@ -106,7 +106,7 @@
     {
       "raw": "2 teaspoons (10 grams) baking powder (I prefer aluminum-free)",
       "expected": {
-        "item": "baking powder (I prefer aluminum-free)",
+        "item": "baking powder",
         "measurements": [
           {
             "amount": "2",
@@ -117,7 +117,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I prefer aluminum-free",
         "category": "Baking"
       }
     },
@@ -235,7 +235,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "235 ml, see buying suggestions below",
         "category": "Other"
       }
     },
@@ -271,7 +271,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "2 to 2 1/2 meaty/large or 4 to 5 slim; about 255 grams",
         "category": "Produce"
       }
     },

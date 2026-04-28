@@ -171,7 +171,7 @@
     {
       "raw": "4 pounds bone-in chicken pieces (thighs, drumsticks and breasts)",
       "expected": {
-        "item": "bone-in chicken pieces (thighs, drumsticks and breasts)",
+        "item": "bone-in chicken pieces",
         "measurements": [
           {
             "amount": "4",
@@ -182,7 +182,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "thighs, drumsticks and breasts",
         "category": "Meat & Seafood"
       }
     },

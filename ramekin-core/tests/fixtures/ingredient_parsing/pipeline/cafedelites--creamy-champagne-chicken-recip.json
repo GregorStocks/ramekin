@@ -37,14 +37,14 @@
     {
       "raw": "1 pinch salt (to season)",
       "expected": {
-        "item": "salt (to season)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "to season",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,56 +101,64 @@
     {
       "raw": "1/2 cup champagne (or sparkling white wine)",
       "expected": {
-        "item": "champagne (or sparkling white wine)",
+        "item": "champagne",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "or sparkling white wine",
+        "category": "Meat & Seafood"
       }
     },
     {
       "raw": "2/3 cup milk (or heavy / thickened cream)",
       "expected": {
-        "item": "milk (or heavy / thickened cream)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "163",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or heavy / thickened cream",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 teaspoon cornstarch (corn flour - only if using milk)",
       "expected": {
-        "item": "cornstarch (corn flour - only if using milk)",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "corn flour - only if using milk",
         "category": "Baking"
       }
     },
     {
       "raw": "1 pinch fresh parsley (to garnish)",
       "expected": {
-        "item": "fresh parsley (to garnish)",
+        "item": "fresh parsley",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "to garnish",
         "category": "Produce"
       }
     }

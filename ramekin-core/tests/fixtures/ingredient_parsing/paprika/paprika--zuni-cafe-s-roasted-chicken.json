@@ -74,14 +74,14 @@
     {
       "raw": "Generous 8 ounces slightly stale open-crumbed, chewy, peasant-style bread (not sourdough)",
       "expected": {
-        "item": "slightly stale open-crumbed, chewy, peasant-style bread (not sourdough)",
+        "item": "slightly stale open-crumbed, chewy, peasant-style bread",
         "measurements": [
           {
             "amount": "8",
             "unit": "generous oz"
           }
         ],
-        "note": null,
+        "note": "not sourdough",
         "category": "Bakery & Bread"
       }
     },
@@ -178,7 +178,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 4 scallions",
         "category": "Produce"
       }
     },

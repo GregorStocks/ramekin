@@ -5,28 +5,32 @@
     {
       "raw": "1 1/2 tsp (between 2.5 and 3 g)&nbsp;ground coriander&nbsp;",
       "expected": {
-        "item": "(between 2.5 and 3 g) ground coriander",
+        "item": "ground coriander",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "between 2.5 and 3 g",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 1/2 tsp (between 2.5 and 3 g)&nbsp; ground cumin",
       "expected": {
-        "item": "(between 2.5 and 3 g)  ground cumin",
+        "item": "ground cumin",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "between 2.5 and 3 g",
         "category": "Spices & Seasonings"
       }
     },

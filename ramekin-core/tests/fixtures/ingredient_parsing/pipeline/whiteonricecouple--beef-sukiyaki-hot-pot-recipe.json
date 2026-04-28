@@ -5,14 +5,14 @@
     {
       "raw": "2 cups Dashi (, or water)",
       "expected": {
-        "item": "Dashi (, or water)",
+        "item": "Dashi",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or water",
         "category": "Other"
       }
     },
@@ -69,14 +69,18 @@
     {
       "raw": "1 Tablespoon Vegetable Oil (, or beef fat trimmings)",
       "expected": {
-        "item": "Vegetable Oil (, or beef fat trimmings)",
+        "item": "Vegetable Oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or beef fat trimmings",
         "category": "Oils & Vinegars"
       }
     },
@@ -129,14 +133,14 @@
     {
       "raw": "4  Green Onions or 1 Negi (Japanese Leek) (, sliced on angle in 2&amp;quot; pieces)",
       "expected": {
-        "item": "Green Onions or 1 Negi (Japanese Leek) (",
+        "item": "Green Onions or 1 Negi",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "sliced on angle in 2\" pieces)",
+        "note": "Japanese Leek, sliced on angle in 2\" pieces",
         "category": "Produce"
       }
     },
@@ -161,7 +165,7 @@
     {
       "raw": "6 ounces (about 1/2 package) Broiled Tofu (, cut into 1/2\" sticks)",
       "expected": {
-        "item": "Broiled Tofu (, cut into 1/2\" sticks)",
+        "item": "Broiled Tofu",
         "measurements": [
           {
             "amount": "6",
@@ -176,7 +180,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2\" sticks",
         "category": "Produce"
       }
     },
@@ -201,14 +205,14 @@
     {
       "raw": "2 cups Shungiku (a type of chrysanthemum leaf), Spinach, or Arugula",
       "expected": {
-        "item": "Shungiku (a type of chrysanthemum leaf), Spinach, or Arugula",
+        "item": "Shungiku, Spinach, or Arugula",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "a type of chrysanthemum leaf",
         "category": "Produce"
       }
     },

@@ -153,7 +153,7 @@
     {
       "raw": "1 cup (125 grams) small-diced rhubarb (from about 1 1/2 medium stalks)",
       "expected": {
-        "item": "small-diced rhubarb (from about 1 1/2 medium stalks)",
+        "item": "small-diced rhubarb",
         "measurements": [
           {
             "amount": "1",
@@ -164,7 +164,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 1 1/2 medium stalks",
         "category": "Produce"
       }
     },

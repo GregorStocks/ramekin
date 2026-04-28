@@ -105,7 +105,7 @@
     {
       "raw": "1 lb pasta (I used penne)",
       "expected": {
-        "item": "pasta (I used penne)",
+        "item": "pasta",
         "measurements": [
           {
             "amount": "1",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used penne",
         "category": "Pasta & Rice"
       }
     },

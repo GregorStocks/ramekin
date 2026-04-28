@@ -5,7 +5,7 @@
     {
       "raw": "1 pound dried beans (see below for cooking times for specific beans)",
       "expected": {
-        "item": "dried beans (see below for cooking times for specific beans)",
+        "item": "dried beans",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see below for cooking times for specific beans",
         "category": "Other"
       }
     },

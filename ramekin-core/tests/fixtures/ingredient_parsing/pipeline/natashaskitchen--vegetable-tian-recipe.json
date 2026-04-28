@@ -19,14 +19,14 @@
     {
       "raw": "2  large cloves of garlic (pressed)",
       "expected": {
-        "item": "cloves of garlic (pressed)",
+        "item": "cloves of garlic",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "pressed",
         "category": "Produce"
       }
     },
@@ -61,14 +61,14 @@
     {
       "raw": "2-3  russet potatoes (depending on their size)",
       "expected": {
-        "item": "russet potatoes (depending on their size)",
+        "item": "russet potatoes",
         "measurements": [
           {
             "amount": "2-3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "depending on their size",
         "category": "Produce"
       }
     },

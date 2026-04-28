@@ -115,9 +115,9 @@
     {
       "raw": "extra crumbled feta cheese (I'm guilty of this one! Yum!)",
       "expected": {
-        "item": "extra crumbled feta cheese (I'm guilty of this one! Yum!)",
+        "item": "extra crumbled feta cheese",
         "measurements": [],
-        "note": null,
+        "note": "I'm guilty of this one! Yum!",
         "category": "Cheese"
       }
     },

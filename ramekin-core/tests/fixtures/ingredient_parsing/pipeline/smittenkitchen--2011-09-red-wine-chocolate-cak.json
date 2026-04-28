@@ -212,14 +212,18 @@
     {
       "raw": "1/4 teaspoon ground cinnamon (this is a great place for that fancy Vietnamese stuff you stashed away)",
       "expected": {
-        "item": "ground cinnamon (this is a great place for that fancy Vietnamese stuff you stashed away)",
+        "item": "ground cinnamon",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "this is a great place for that fancy Vietnamese stuff you stashed away",
         "category": "Spices & Seasonings"
       }
     },

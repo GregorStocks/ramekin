@@ -23,7 +23,7 @@
     {
       "raw": "1/2 lb pork belly (cut into half inch pieces)",
       "expected": {
-        "item": "pork belly (cut into half inch pieces)",
+        "item": "pork belly",
         "measurements": [
           {
             "amount": "0.5",
@@ -34,14 +34,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into half inch pieces",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "2 lbs chicken thighs (bone-in, skin on)",
       "expected": {
-        "item": "chicken thighs (bone-in, skin on)",
+        "item": "chicken thighs",
         "measurements": [
           {
             "amount": "2",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "bone-in, skin on",
         "category": "Meat & Seafood"
       }
     },
@@ -77,7 +77,7 @@
     {
       "raw": "1 lb turkey sausage ((See Note 1))",
       "expected": {
-        "item": "turkey sausage (See Note 1)",
+        "item": "turkey sausage",
         "measurements": [
           {
             "amount": "1",
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "See Note 1",
         "category": "Meat & Seafood"
       }
     },
@@ -208,7 +208,7 @@
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "12 pieces, tied",
         "category": "Spices & Seasonings"
       }
     },

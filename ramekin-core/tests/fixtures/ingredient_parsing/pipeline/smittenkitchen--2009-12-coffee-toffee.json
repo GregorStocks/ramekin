@@ -67,28 +67,36 @@
     {
       "raw": "1 1/2 teaspoons molasses (can swap corn syrup or honey)",
       "expected": {
-        "item": "molasses (can swap corn syrup or honey)",
+        "item": "molasses",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "11",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "can swap corn syrup or honey",
         "category": "Baking"
       }
     },
     {
       "raw": "1/4 teaspoon salt (or a heaping 1/4 teaspoon flaky sea salt)",
       "expected": {
-        "item": "salt (or a heaping 1/4 teaspoon flaky sea salt)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or a heaping 1/4 teaspoon flaky sea salt",
         "category": "Spices & Seasonings"
       }
     },

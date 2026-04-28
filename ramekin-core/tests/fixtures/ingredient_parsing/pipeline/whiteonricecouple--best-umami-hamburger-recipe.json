@@ -96,14 +96,14 @@
     {
       "raw": "6  Hamburger buns ((or 8-12 slider buns))",
       "expected": {
-        "item": "Hamburger buns (or 8-12 slider buns)",
+        "item": "Hamburger buns",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 8-12 slider buns",
         "category": "Bakery & Bread"
       }
     },

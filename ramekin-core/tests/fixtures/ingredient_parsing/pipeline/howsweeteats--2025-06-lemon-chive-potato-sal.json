@@ -32,14 +32,14 @@
     {
       "raw": "½ cup shaved parmesan cheese, (plus more if desired)",
       "expected": {
-        "item": "shaved parmesan cheese, (plus more if desired)",
+        "item": "shaved parmesan cheese",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plus more if desired",
         "category": "Cheese"
       }
     },

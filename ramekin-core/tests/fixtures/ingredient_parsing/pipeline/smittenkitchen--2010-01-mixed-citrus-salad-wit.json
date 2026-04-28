@@ -19,14 +19,14 @@
     {
       "raw": "4 pieces of citrus, preferably a mix of grapefruits and oranges but use what you can get, and what you like to eat (spoiled by the spread at the store, I used 1 pink grapefruit, 1 cara cara and 1 blood orange, and 1 mineola)",
       "expected": {
-        "item": "citrus, preferably a mix of grapefruits and oranges but use what you can get, and what you like to eat (spoiled by the spread at the store, I used 1 pink grapefruit, 1 cara cara and 1 blood orange, and 1 mineola)",
+        "item": "citrus, preferably a mix of grapefruits and oranges but use what you can get, and what you like to eat",
         "measurements": [
           {
             "amount": "4",
             "unit": "piece"
           }
         ],
-        "note": null,
+        "note": "spoiled by the spread at the store, I used 1 pink grapefruit, 1 cara cara and 1 blood orange, and 1 mineola",
         "category": "Produce"
       }
     },

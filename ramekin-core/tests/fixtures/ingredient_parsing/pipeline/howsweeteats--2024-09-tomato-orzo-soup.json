@@ -115,9 +115,9 @@
     {
       "raw": "parmesan cheese, (for sprinkling)",
       "expected": {
-        "item": "parmesan cheese, (for sprinkling)",
+        "item": "parmesan cheese",
         "measurements": [],
-        "note": null,
+        "note": "for sprinkling",
         "category": "Cheese"
       }
     },

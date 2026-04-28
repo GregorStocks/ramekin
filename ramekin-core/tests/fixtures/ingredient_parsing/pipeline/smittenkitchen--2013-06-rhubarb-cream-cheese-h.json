@@ -104,14 +104,14 @@
     {
       "raw": "3/4 to 1 cup buttermilk (or, make your own buttermilk substitute)",
       "expected": {
-        "item": "buttermilk (or, make your own buttermilk substitute)",
+        "item": "buttermilk",
         "measurements": [
           {
             "amount": "0.75 to 1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or, make your own buttermilk substitute",
         "category": "Dairy & Eggs"
       }
     },
@@ -183,7 +183,7 @@
             "unit": "g"
           }
         ],
-        "note": "at room temperature (i.e. very soft)",
+        "note": "i.e. very soft, at room temperature",
         "category": "Cheese"
       }
     },

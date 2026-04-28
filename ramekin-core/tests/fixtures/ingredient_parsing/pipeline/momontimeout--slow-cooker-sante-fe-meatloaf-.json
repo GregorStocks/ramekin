@@ -159,15 +159,15 @@
     {
       "raw": "3 slices white (or wheat if that's what you have on hand sandwich bread, torn into small pieces)",
       "expected": {
-        "item": "white (or wheat if that's what you have on hand sandwich bread, torn into small pieces)",
+        "item": "white",
         "measurements": [
           {
             "amount": "3",
             "unit": "slice"
           }
         ],
-        "note": null,
-        "category": "Bakery & Bread"
+        "note": "or wheat if that's what you have on hand sandwich bread, torn into small pieces",
+        "category": "Other"
       }
     },
     {
@@ -251,7 +251,7 @@
     {
       "raw": "2 oz diced green chiles (half of 4 oz can )",
       "expected": {
-        "item": "diced green chiles (half of 4 oz can",
+        "item": "diced green chiles",
         "measurements": [
           {
             "amount": "2",
@@ -262,7 +262,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "half of 4 oz can",
         "category": "Other"
       }
     },

@@ -253,14 +253,18 @@
     {
       "raw": "3 tablespoons sesame seeds, toasted (white, black, or a mix thereof)",
       "expected": {
-        "item": "sesame seeds, toasted (white, black, or a mix thereof)",
+        "item": "sesame seeds",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "white, black, or a mix thereof, toasted",
         "category": "Spices & Seasonings"
       }
     }

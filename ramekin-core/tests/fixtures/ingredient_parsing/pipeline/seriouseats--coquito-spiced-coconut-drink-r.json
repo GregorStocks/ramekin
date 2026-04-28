@@ -48,7 +48,7 @@
             "unit": "piece"
           }
         ],
-        "note": "peeled and sliced crosswise into 1/4-inch thick rounds",
+        "note": "2-inch long, peeled and sliced crosswise into 1/4-inch thick rounds",
         "category": "Beverages"
       }
     },
@@ -91,7 +91,7 @@
     {
       "raw": "1 (13.5 ounce) can coconut milk (see notes)",
       "expected": {
-        "item": "coconut milk (see notes)",
+        "item": "coconut milk",
         "measurements": [
           {
             "amount": "1",
@@ -106,21 +106,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1/2 cup to 1 cup white rum (see notes)",
       "expected": {
-        "item": "white rum (see notes)",
+        "item": "white rum",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Beverages"
       }
     },

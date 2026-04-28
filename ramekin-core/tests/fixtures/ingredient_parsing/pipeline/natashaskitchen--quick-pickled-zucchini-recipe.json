@@ -12,7 +12,7 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "4 medium (green zucchini, yellow squash, or light green Mexican zucchini will work",
         "category": "Produce"
       }
     },
@@ -132,7 +132,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "5% acidity",
         "category": "Oils & Vinegars"
       }
     },
@@ -157,14 +157,18 @@
     {
       "raw": "1 Tbsp salt (we used sea salt, non-iodized)",
       "expected": {
-        "item": "salt (we used sea salt, non-iodized)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "8.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "we used sea salt, non-iodized",
         "category": "Spices & Seasonings"
       }
     },

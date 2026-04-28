@@ -33,28 +33,28 @@
     {
       "raw": "1 cup raw pepitas (pumpkin seeds)",
       "expected": {
-        "item": "raw pepitas (pumpkin seeds)",
+        "item": "raw pepitas",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "pumpkin seeds",
+        "category": "Bakery & Bread"
       }
     },
     {
       "raw": "1 cup coconut flakes (unsweetened)",
       "expected": {
-        "item": "coconut flakes (unsweetened)",
+        "item": "coconut flakes",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "unsweetened",
         "category": "Produce"
       }
     },

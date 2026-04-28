@@ -5,14 +5,14 @@
     {
       "raw": "1 1/2 cups plain kefir (this is not the same as buttermilk; found it at Fred Meyer)",
       "expected": {
-        "item": "plain kefir (this is not the same as buttermilk; found it at Fred Meyer)",
+        "item": "plain kefir",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "this is not the same as buttermilk; found it at Fred Meyer",
         "category": "Dairy & Eggs"
       }
     },
@@ -72,7 +72,7 @@
             "unit": "stick"
           }
         ],
-        "note": null,
+        "note": "8 Tbsp unsalted butter, melted (but not hot",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,14 +139,14 @@
     {
       "raw": "1/2 cup dried cranberries (craisins)",
       "expected": {
-        "item": "dried cranberries (craisins)",
+        "item": "dried cranberries",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "craisins",
         "category": "Nuts & Dried Fruit"
       }
     },

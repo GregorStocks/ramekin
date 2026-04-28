@@ -51,14 +51,14 @@
     {
       "raw": "4 Slices of your favorite cheese (for topping)",
       "expected": {
-        "item": "your favorite cheese (for topping)",
+        "item": "your favorite cheese",
         "measurements": [
           {
             "amount": "4",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "for topping",
         "category": "Cheese"
       }
     },
@@ -79,10 +79,10 @@
     {
       "raw": "Additional Condiments/Toppings like sliced tomato (lettuce, red onion, mayonnaise, ketchup, pickles)",
       "expected": {
-        "item": "Additional Condiments/Toppings like sliced tomato (lettuce, red onion, mayonnaise, ketchup, pickles)",
+        "item": "Additional Condiments/Toppings like sliced tomato",
         "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "lettuce, red onion, mayonnaise, ketchup, pickles",
+        "category": "Produce"
       }
     },
     {

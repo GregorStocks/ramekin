@@ -77,14 +77,18 @@
     {
       "raw": "1 3/4 cup milk ((See Note 1))",
       "expected": {
-        "item": "milk (See Note 1)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
+          },
+          {
+            "amount": "429",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "See Note 1",
         "category": "Dairy & Eggs"
       }
     },
@@ -141,9 +145,9 @@
     {
       "raw": "Cooking spray (butter or lard for making pancakes (Gramma's favorite was Crisco))",
       "expected": {
-        "item": "Cooking spray (butter or lard for making pancakes (Gramma's favorite was Crisco)",
+        "item": "Cooking spray",
         "measurements": [],
-        "note": null,
+        "note": "butter or lard for making pancakes (Gramma's favorite was Crisco",
         "category": "Oils & Vinegars"
       }
     }

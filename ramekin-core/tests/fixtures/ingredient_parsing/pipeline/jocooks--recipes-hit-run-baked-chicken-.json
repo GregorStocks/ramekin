@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds chicken (breasts, thighs or drumsticks)",
       "expected": {
-        "item": "chicken (breasts, thighs or drumsticks)",
+        "item": "chicken",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "breasts, thighs or drumsticks",
         "category": "Meat & Seafood"
       }
     },
@@ -37,28 +37,28 @@
     {
       "raw": "1 large onion (cut in wedges)",
       "expected": {
-        "item": "onion (cut in wedges)",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut in wedges",
         "category": "Produce"
       }
     },
     {
       "raw": "2 cups cherry tomatoes (or regular tomatoes cut into quarters)",
       "expected": {
-        "item": "cherry tomatoes (or regular tomatoes cut into quarters)",
+        "item": "cherry tomatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or regular tomatoes cut into quarters",
         "category": "Produce"
       }
     },

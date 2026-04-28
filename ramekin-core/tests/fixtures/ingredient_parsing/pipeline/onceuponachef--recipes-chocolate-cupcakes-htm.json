@@ -5,14 +5,18 @@
     {
       "raw": "1½ cups all-purpose flour, (spooned into measuring cup and leveled-off)",
       "expected": {
-        "item": "all-purpose flour, (spooned into measuring cup and leveled-off)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "188",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "spooned into measuring cup and leveled-off",
         "category": "Baking"
       }
     },
@@ -37,14 +41,14 @@
     {
       "raw": "¾ cup natural unsweetened cocoa powder, (such as Hershey’s)",
       "expected": {
-        "item": "natural unsweetened cocoa powder, (such as Hershey’s)",
+        "item": "natural unsweetened cocoa powder",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Hershey’s",
         "category": "Baking"
       }
     },
@@ -191,7 +195,7 @@
     {
       "raw": "8 ounces milk or semi-sweet chocolate, (broken into small pieces (see note))",
       "expected": {
-        "item": "milk or semi-sweet chocolate, (broken into small pieces (see note)",
+        "item": "milk or semi-sweet chocolate",
         "measurements": [
           {
             "amount": "8",
@@ -202,7 +206,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "broken into small pieces (see note",
         "category": "Dairy & Eggs"
       }
     },
@@ -249,14 +253,14 @@
     {
       "raw": "½ cup natural unsweetened cocoa powder, (such as Hershey's)",
       "expected": {
-        "item": "natural unsweetened cocoa powder, (such as Hershey's)",
+        "item": "natural unsweetened cocoa powder",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Hershey's",
         "category": "Baking"
       }
     },

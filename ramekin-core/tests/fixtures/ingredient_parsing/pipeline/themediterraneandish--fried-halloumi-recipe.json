@@ -14,7 +14,7 @@
     {
       "raw": "8 ounces Halloumi cheese,  (pat dry and cut into 1/2-inch sticks)",
       "expected": {
-        "item": "Halloumi cheese,  (pat dry and cut into 1/2-inch sticks)",
+        "item": "Halloumi cheese",
         "measurements": [
           {
             "amount": "8",
@@ -25,7 +25,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "pat dry and cut into 1/2-inch sticks",
         "category": "Cheese"
       }
     },
@@ -64,9 +64,9 @@
     {
       "raw": "crushed red pepper flakes ((I used Aleppo pepper))",
       "expected": {
-        "item": "crushed red pepper flakes (I used Aleppo pepper)",
+        "item": "crushed red pepper flakes",
         "measurements": [],
-        "note": null,
+        "note": "I used Aleppo pepper",
         "category": "Spices & Seasonings"
       }
     }

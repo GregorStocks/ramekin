@@ -83,14 +83,14 @@
     {
       "raw": "2  eggs (separated)",
       "expected": {
-        "item": "eggs (separated)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "separated",
         "category": "Dairy & Eggs"
       }
     },

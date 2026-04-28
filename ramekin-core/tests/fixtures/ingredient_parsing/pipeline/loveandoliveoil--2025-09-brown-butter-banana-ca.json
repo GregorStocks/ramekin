@@ -5,14 +5,18 @@
     {
       "raw": "1/2 cup salted butter (ideally European style)",
       "expected": {
-        "item": "salted butter (ideally European style)",
+        "item": "salted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "ideally European style",
         "category": "Dairy & Eggs"
       }
     },
@@ -73,28 +77,28 @@
     {
       "raw": "1/4 teaspoon fine sea salt (increase to 1/2 teaspoon if using unsalted butter)",
       "expected": {
-        "item": "fine sea salt (increase to 1/2 teaspoon if using unsalted butter)",
+        "item": "fine sea salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "increase to 1/2 teaspoon if using unsalted butter",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "3 large very ripe bananas (mashed (about 1 cup mashed))",
       "expected": {
-        "item": "very ripe bananas (mashed (about 1 cup mashed)",
+        "item": "very ripe bananas",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "mashed (about 1 cup mashed",
         "category": "Produce"
       }
     },
@@ -269,15 +273,15 @@
     {
       "raw": "2 tablespoons glucose syrup (or substitute corn syrup or golden syrup)",
       "expected": {
-        "item": "glucose syrup (or substitute corn syrup or golden syrup)",
+        "item": "glucose syrup",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "or substitute corn syrup or golden syrup",
+        "category": "Other"
       }
     },
     {

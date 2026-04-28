@@ -5,7 +5,7 @@
     {
       "raw": "3 1/4 cups plus 2 tablespoons (445 grams) all-purpose flour (see Note)",
       "expected": {
-        "item": "all-purpose flour (see Note)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "3 1/4 cups plus 2 tablespoons",
@@ -16,21 +16,25 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Baking"
       }
     },
     {
       "raw": "1 3/4 teaspoons baking powder (see Note)",
       "expected": {
-        "item": "baking powder (see Note)",
+        "item": "baking powder",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "tsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Baking"
       }
     },
@@ -55,14 +59,18 @@
     {
       "raw": "1 teaspoon kosher salt (see Note)",
       "expected": {
-        "item": "kosher salt (see Note)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Spices & Seasonings"
       }
     },
@@ -227,7 +235,7 @@
     {
       "raw": "1 cup (235 grams) warm coffee or strong tea (I use decaf)",
       "expected": {
-        "item": "warm coffee or strong tea (I use decaf)",
+        "item": "warm coffee or strong tea",
         "measurements": [
           {
             "amount": "1",
@@ -238,7 +246,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use decaf",
         "category": "Beverages"
       }
     },

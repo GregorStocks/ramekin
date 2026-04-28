@@ -142,15 +142,15 @@
     {
       "raw": "3-4 green falafel / beet hummus / toasted pita wedges / roasted carrots / chop salad (kale, cucumber, cilantro) tossed with a splash of olive oil &amp;amp; squeeze of lemon / sliced avocado",
       "expected": {
-        "item": "green falafel / beet hummus / toasted pita wedges / roasted carrots / chop salad (kale, cucumber",
+        "item": "green falafel / beet hummus / toasted pita wedges / roasted carrots / chop salad tossed with a splash of olive oil & squeeze of lemon / sliced avocado",
         "measurements": [
           {
             "amount": "3-4",
             "unit": null
           }
         ],
-        "note": "cilantro) tossed with a splash of olive oil & squeeze of lemon / sliced avocado",
-        "category": "Produce"
+        "note": "kale, cucumber, cilantro",
+        "category": "Oils & Vinegars"
       }
     }
   ]

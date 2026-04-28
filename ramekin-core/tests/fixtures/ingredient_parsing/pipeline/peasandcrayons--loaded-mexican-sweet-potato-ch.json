@@ -23,14 +23,14 @@
     {
       "raw": "1-2 cups shredded cheese ((Pepper Jack or Mexican Blend are my fav))",
       "expected": {
-        "item": "shredded cheese (Pepper Jack or Mexican Blend are my fav)",
+        "item": "shredded cheese",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "Pepper Jack or Mexican Blend are my fav",
         "category": "Cheese"
       }
     },
@@ -154,18 +154,18 @@
     {
       "raw": "Season the fries with chili powder, paprika, and garlic powder (before baking)",
       "expected": {
-        "item": "Season the fries with chili powder, paprika, and garlic powder (before baking)",
+        "item": "Season the fries with chili powder, paprika, and garlic powder",
         "measurements": [],
-        "note": null,
+        "note": "before baking",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Feeling the heat? You can even add cayenne pepper too! ((I always do))",
       "expected": {
-        "item": "Feeling the heat? You can even add cayenne pepper too! (I always do)",
+        "item": "Feeling the heat? You can even add cayenne pepper too!",
         "measurements": [],
-        "note": null,
+        "note": "I always do",
         "category": "Spices & Seasonings"
       }
     }

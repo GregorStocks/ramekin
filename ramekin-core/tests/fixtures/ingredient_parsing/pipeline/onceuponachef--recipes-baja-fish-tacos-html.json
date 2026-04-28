@@ -5,14 +5,14 @@
     {
       "raw": "5 cups (or one 10-oz/283-g bag) shredded red cabbage",
       "expected": {
-        "item": "(or one 10-oz/283-g bag) shredded red cabbage",
+        "item": "shredded red cabbage",
         "measurements": [
           {
             "amount": "5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or one 10-oz/283-g bag",
         "category": "Produce"
       }
     },
@@ -101,28 +101,36 @@
     {
       "raw": "¾ cup mayonnaise, (best quality such as Hellmann's)",
       "expected": {
-        "item": "mayonnaise, (best quality such as Hellmann's)",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "165",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "best quality such as Hellmann's",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "2 tablespoons lime juice, (from one lime)",
       "expected": {
-        "item": "lime juice, (from one lime)",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from one lime",
         "category": "Beverages"
       }
     },
@@ -221,7 +229,7 @@
     {
       "raw": "1½ pounds skinless cod, (cut into 1-inch (2.5-cm) wide x 4-inch (10-cm) long strips)",
       "expected": {
-        "item": "skinless cod, (cut into 1-inch (2.5-cm) wide x 4-inch (10-cm) long strips)",
+        "item": "skinless cod wide x 4-inch long strips)",
         "measurements": [
           {
             "amount": "1.5",
@@ -232,16 +240,16 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch (2.5-cm, 10-cm",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "Vegetable oil, (for frying)",
       "expected": {
-        "item": "Vegetable oil, (for frying)",
+        "item": "Vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -255,7 +263,7 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "6-in/15-cm",
         "category": "Bakery & Bread"
       }
     },

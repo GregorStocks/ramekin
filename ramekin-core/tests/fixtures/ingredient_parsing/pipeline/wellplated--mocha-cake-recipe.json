@@ -5,9 +5,9 @@
     {
       "raw": "Butter (for greasing the pan)",
       "expected": {
-        "item": "Butter (for greasing the pan)",
+        "item": "Butter",
         "measurements": [],
-        "note": null,
+        "note": "for greasing the pan",
         "category": "Dairy & Eggs"
       }
     },
@@ -32,14 +32,14 @@
     {
       "raw": "1/4 cup whole wheat pastry flour (plus 2 tablespoons)",
       "expected": {
-        "item": "whole wheat pastry flour (plus 2 tablespoons)",
+        "item": "whole wheat pastry flour",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plus 2 tablespoons",
         "category": "Baking"
       }
     },
@@ -64,14 +64,18 @@
     {
       "raw": "1/4 cup unsweetened cocoa powder (plus 2 tablespoons, plus extra for the pan)",
       "expected": {
-        "item": "unsweetened cocoa powder (plus 2 tablespoons",
+        "item": "unsweetened cocoa powder",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "22",
+            "unit": "g"
           }
         ],
-        "note": "plus extra for the pan)",
+        "note": "plus 2 tablespoons, plus extra for the pan",
         "category": "Baking"
       }
     },
@@ -360,9 +364,9 @@
     {
       "raw": "Chopped chocolate covered espresso beans (for decorating)",
       "expected": {
-        "item": "Chopped chocolate covered espresso beans (for decorating)",
+        "item": "Chopped chocolate covered espresso beans",
         "measurements": [],
-        "note": null,
+        "note": "for decorating",
         "category": "Beverages"
       }
     }

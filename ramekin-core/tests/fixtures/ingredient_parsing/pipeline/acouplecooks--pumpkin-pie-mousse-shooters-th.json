@@ -5,14 +5,14 @@
     {
       "raw": "1 can full-fat coconut milk (refrigerated overnight)",
       "expected": {
-        "item": "full-fat coconut milk (refrigerated overnight)",
+        "item": "full-fat coconut milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "refrigerated overnight",
         "category": "Canned Goods"
       }
     },
@@ -141,15 +141,15 @@
     {
       "raw": "1/4 cup roasted salted pepitas (pumpkin seeds)",
       "expected": {
-        "item": "roasted salted pepitas (pumpkin seeds)",
+        "item": "roasted salted pepitas",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "pumpkin seeds",
+        "category": "Meat & Seafood"
       }
     }
   ]

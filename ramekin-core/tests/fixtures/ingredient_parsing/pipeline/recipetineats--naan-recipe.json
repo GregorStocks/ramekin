@@ -5,28 +5,28 @@
     {
       "raw": "1 tsp instant / rapid rise yeast ((Note 1))",
       "expected": {
-        "item": "instant / rapid rise yeast (Note 1)",
+        "item": "instant / rapid rise yeast",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "Note 1",
         "category": "Baking"
       }
     },
     {
       "raw": "1/2 cup warm tap water ((~40°C/105°F in temperature))",
       "expected": {
-        "item": "warm tap water (~40°C/105°F in temperature)",
+        "item": "warm tap water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "~40°C/105°F in temperature",
         "category": "Other"
       }
     },
@@ -51,56 +51,68 @@
     {
       "raw": "2 tbsp milk (, full fat (low fat ok too))",
       "expected": {
-        "item": "milk (, full fat (low fat ok too)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "full fat (low fat ok too",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 1/2 tbsp whisked egg (, at room temp (around 1/2 an egg, Note 2))",
       "expected": {
-        "item": "whisked egg (, at room temp (around 1/2 an egg, Note 2)",
+        "item": "whisked egg",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "at room temp (around 1/2 an egg, Note 2",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1/2 tsp salt (, cooking / kosher)",
       "expected": {
-        "item": "salt (, cooking / kosher)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cooking / kosher",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 3/4 cups bread flour (, or all-purpose/plain (Note 3))",
       "expected": {
-        "item": "bread flour (, or all-purpose/plain (Note 3)",
+        "item": "bread flour",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
+          },
+          {
+            "amount": "222",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or all-purpose/plain (Note 3",
         "category": "Baking"
       }
     },
@@ -143,15 +155,15 @@
     {
       "raw": "1  small garlic clove (, for Garlic Butter option (Note 5))",
       "expected": {
-        "item": "garlic clove (, for Garlic Butter option (Note 5)",
+        "item": "garlic clove",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "for Garlic Butter option (Note 5",
+        "category": "Produce"
       }
     },
     {
@@ -175,9 +187,9 @@
     {
       "raw": "Shredded cheese ((for cheese naan) – Monterey Jack, cheddar, tasty, colby, anything that melts (shred yourself) (Note 6))",
       "expected": {
-        "item": "Shredded cheese (for cheese naan) - Monterey Jack, cheddar, tasty, colby, anything that melts (shred yourself) (Note 6)",
+        "item": "Shredded cheese - Monterey Jack, cheddar, tasty, colby, anything that melts",
         "measurements": [],
-        "note": null,
+        "note": "for cheese naan, shred yourself, Note 6",
         "category": "Cheese"
       }
     }

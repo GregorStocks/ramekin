@@ -40,21 +40,21 @@
             "unit": "cup"
           }
         ],
-        "note": "plus more to garnish (see Note)",
+        "note": "see Note, plus more to garnish",
         "category": "Cheese"
       }
     },
     {
       "raw": "0.75 cup freshly grated Pecorino Romano cheese (see Note)",
       "expected": {
-        "item": "freshly grated Pecorino Romano cheese (see Note)",
+        "item": "freshly grated Pecorino Romano cheese",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Cheese"
       }
     },

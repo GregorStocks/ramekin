@@ -108,21 +108,21 @@
             "unit": "can"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "15-ounces, drained and rinsed",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1 (15-ounces) can petite diced tomatoes with green chilies,  (including juices)",
       "expected": {
-        "item": "petite diced tomatoes with green chilies,  (including juices)",
+        "item": "petite diced tomatoes with green chilies",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "15-ounces, including juices",
         "category": "Canned Goods"
       }
     },
@@ -260,7 +260,7 @@
             "unit": "box"
           }
         ],
-        "note": null,
+        "note": "8.5-ounce",
         "category": "Bakery & Bread"
       }
     },

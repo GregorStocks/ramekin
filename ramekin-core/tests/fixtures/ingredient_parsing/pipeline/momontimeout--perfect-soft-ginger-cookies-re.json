@@ -145,14 +145,18 @@
     {
       "raw": "1/2 cup brown sugar (dark or light)",
       "expected": {
-        "item": "brown sugar (dark or light)",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "dark or light",
         "category": "Baking"
       }
     },

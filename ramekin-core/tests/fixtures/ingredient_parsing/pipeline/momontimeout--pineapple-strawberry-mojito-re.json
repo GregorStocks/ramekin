@@ -118,16 +118,16 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "8 to 12",
         "category": "Produce"
       }
     },
     {
       "raw": "soda water (club soda, lemon-lime soda)",
       "expected": {
-        "item": "soda water (club soda, lemon-lime soda)",
+        "item": "soda water",
         "measurements": [],
-        "note": null,
+        "note": "club soda, lemon-lime soda",
         "category": "Beverages"
       }
     }

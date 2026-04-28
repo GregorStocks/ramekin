@@ -84,14 +84,18 @@
     {
       "raw": "2 tablespoons paprika (sweet, hot or smoked, whichever variety you prefer)",
       "expected": {
-        "item": "paprika (sweet, hot or smoked, whichever variety you prefer)",
+        "item": "paprika",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sweet, hot or smoked, whichever variety you prefer",
         "category": "Spices & Seasonings"
       }
     },
@@ -134,23 +138,27 @@
     {
       "raw": "2 tablespoons kosher salt (Diamond brand; use 1 1/4T of other brands — more about why here)",
       "expected": {
-        "item": "kosher salt (Diamond brand; use 1 1/4T of other brands - more about why here)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "17",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Diamond brand; use 1 1/4T of other brands - more about why here",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Chipotle powder or ground red pepper (cayenne) to taste",
       "expected": {
-        "item": "Chipotle powder or ground red pepper (cayenne) to taste",
+        "item": "Chipotle powder or ground red pepper to taste",
         "measurements": [],
-        "note": null,
+        "note": "cayenne",
         "category": "Spices & Seasonings"
       }
     },

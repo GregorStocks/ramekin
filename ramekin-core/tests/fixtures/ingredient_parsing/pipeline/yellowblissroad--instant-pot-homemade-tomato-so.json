@@ -5,7 +5,7 @@
     {
       "raw": "3 pounds Roma tomatoes (cut in half horizontally)",
       "expected": {
-        "item": "Roma tomatoes (cut in half horizontally)",
+        "item": "Roma tomatoes",
         "measurements": [
           {
             "amount": "3",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut in half horizontally",
         "category": "Produce"
       }
     },
@@ -101,14 +101,18 @@
     {
       "raw": "3 cups&nbsp; vegetable broth (can swap for chicken broth or water)",
       "expected": {
-        "item": "vegetable broth (can swap for chicken broth or water)",
+        "item": "vegetable broth",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "747",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "can swap for chicken broth or water",
         "category": "Canned Goods"
       }
     },

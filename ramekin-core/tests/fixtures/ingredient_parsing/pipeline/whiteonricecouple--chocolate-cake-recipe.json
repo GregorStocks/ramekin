@@ -202,14 +202,18 @@
     {
       "raw": "1 teaspoon Kosher Salt ( or Sea Salt (5g) )",
       "expected": {
-        "item": "Kosher Salt ( or Sea Salt (5g)",
+        "item": "Kosher Salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Sea Salt (5g",
         "category": "Spices & Seasonings"
       }
     },
@@ -248,14 +252,14 @@
     {
       "raw": "1 cup Espresso ( or Strong Coffee (240ml) )",
       "expected": {
-        "item": "Espresso ( or Strong Coffee (240ml)",
+        "item": "Espresso",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or Strong Coffee (240ml",
         "category": "Beverages"
       }
     },

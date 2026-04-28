@@ -5,7 +5,7 @@
     {
       "raw": "2 pound ground beef (extra lean)",
       "expected": {
-        "item": "ground beef (extra lean)",
+        "item": "ground beef",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "extra lean",
         "category": "Meat & Seafood"
       }
     },
@@ -169,14 +169,18 @@
     {
       "raw": "2 cups beef broth (low sodium)",
       "expected": {
-        "item": "beef broth (low sodium)",
+        "item": "beef broth",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "498",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Canned Goods"
       }
     },

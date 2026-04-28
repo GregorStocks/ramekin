@@ -5,14 +5,14 @@
     {
       "raw": "6 large beef short ribs, about 14 to 16 ounces each (if ribs are tinier, buy by weight, not number)",
       "expected": {
-        "item": "beef short ribs, about 14 to 16 ounces each (if ribs are tinier, buy by weight, not number)",
+        "item": "beef short ribs, about 14 to 16 ounces each",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "if ribs are tinier, buy by weight, not number",
         "category": "Meat & Seafood"
       }
     },
@@ -280,7 +280,7 @@
             "unit": "g"
           }
         ],
-        "note": "scrubbed (I used Yukon Golds)",
+        "note": "I used Yukon Golds, scrubbed",
         "category": "Produce"
       }
     },

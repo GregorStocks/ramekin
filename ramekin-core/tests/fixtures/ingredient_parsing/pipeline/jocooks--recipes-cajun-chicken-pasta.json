@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "2 chicken breasts, boneless and skinless, cut into small pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -105,14 +105,14 @@
     {
       "raw": "2 links smoked sausage (cut into slices, about 8 ounces)",
       "expected": {
-        "item": "links smoked sausage (cut into slices, about 8 ounces)",
+        "item": "links smoked sausage",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into slices, about 8 ounces",
         "category": "Meat & Seafood"
       }
     },
@@ -147,14 +147,18 @@
     {
       "raw": "2 cups half and half (or heavy cream)",
       "expected": {
-        "item": "half and half (or heavy cream)",
+        "item": "half and half",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "484",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or heavy cream",
         "category": "Dairy & Eggs"
       }
     },

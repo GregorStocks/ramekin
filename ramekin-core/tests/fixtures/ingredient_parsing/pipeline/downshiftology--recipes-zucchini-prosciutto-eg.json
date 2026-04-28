@@ -107,14 +107,14 @@
     {
       "raw": "1/4 cup coconut milk (or nut milk)",
       "expected": {
-        "item": "coconut milk (or nut milk)",
+        "item": "coconut milk",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or nut milk",
         "category": "Canned Goods"
       }
     },

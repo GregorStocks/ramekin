@@ -59,14 +59,14 @@
     {
       "raw": "3 tablespoons Buffalo-style hot sauce (such as Frank's RedHot)",
       "expected": {
-        "item": "Buffalo-style hot sauce (such as Frank's RedHot)",
+        "item": "Buffalo-style hot sauce",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "such as Frank's RedHot",
         "category": "Condiments & Sauces"
       }
     },

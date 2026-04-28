@@ -139,15 +139,15 @@
     {
       "raw": "1/2 teaspoon sweet pimentón de la Vera (smoked Spanish paprika)",
       "expected": {
-        "item": "sweet pimentón de la Vera (smoked Spanish paprika)",
+        "item": "sweet pimentón de la Vera",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "smoked Spanish paprika",
+        "category": "Other"
       }
     },
     {

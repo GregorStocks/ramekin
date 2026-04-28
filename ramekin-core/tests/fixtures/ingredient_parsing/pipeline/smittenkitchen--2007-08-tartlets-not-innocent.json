@@ -203,15 +203,15 @@
     {
       "raw": "4 teaspoons framboise (raspberry liqueur) or brandy",
       "expected": {
-        "item": "framboise (raspberry liqueur) or brandy",
+        "item": "framboise or brandy",
         "measurements": [
           {
             "amount": "4",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "raspberry liqueur",
+        "category": "Beverages"
       }
     },
     {

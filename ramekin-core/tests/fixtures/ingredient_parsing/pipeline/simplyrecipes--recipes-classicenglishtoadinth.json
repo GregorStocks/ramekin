@@ -127,7 +127,7 @@
     {
       "raw": "1 pound (450 g) of bangers (an English sausage made with pork and breadcrumbs), or good quality pork or beef sausage links (in casings)",
       "expected": {
-        "item": "bangers (an English sausage made with pork and breadcrumbs), or good quality pork or beef sausage links (in casings)",
+        "item": "bangers, or good quality pork or beef sausage links",
         "measurements": [
           {
             "amount": "1",
@@ -138,8 +138,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Bakery & Bread"
+        "note": "an English sausage made with pork and breadcrumbs, in casings",
+        "category": "Meat & Seafood"
       }
     }
   ]

@@ -5,14 +5,14 @@
     {
       "raw": "15  radishes (small or medium)",
       "expected": {
-        "item": "radishes (small or medium)",
+        "item": "radishes",
         "measurements": [
           {
             "amount": "15",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "small or medium",
         "category": "Produce"
       }
     },

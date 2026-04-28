@@ -5,14 +5,14 @@
     {
       "raw": "4 cups cooked chicken (cut into cubes)",
       "expected": {
-        "item": "cooked chicken (cut into cubes)",
+        "item": "cooked chicken",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -147,28 +147,36 @@
     {
       "raw": "1 cup whole milk (or cream)",
       "expected": {
-        "item": "whole milk (or cream)",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or cream",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "2 1/2 cups chicken broth (more if needed)",
       "expected": {
-        "item": "chicken broth (more if needed)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "cup"
+          },
+          {
+            "amount": "622",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "more if needed",
         "category": "Canned Goods"
       }
     },

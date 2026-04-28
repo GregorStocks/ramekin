@@ -5,14 +5,14 @@
     {
       "raw": "1 cup whole rolled oats (not instant)",
       "expected": {
-        "item": "whole rolled oats (not instant)",
+        "item": "whole rolled oats",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "not instant",
         "category": "Bakery & Bread"
       }
     },
@@ -65,15 +65,15 @@
     {
       "raw": "3 soft Medjool dates, pitted (or 2 additional tablespoons of maple syrup)",
       "expected": {
-        "item": "soft Medjool dates, pitted (or 2 additional tablespoons of maple syrup)",
+        "item": "soft Medjool dates, pitted",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "or 2 additional tablespoons of maple syrup",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {

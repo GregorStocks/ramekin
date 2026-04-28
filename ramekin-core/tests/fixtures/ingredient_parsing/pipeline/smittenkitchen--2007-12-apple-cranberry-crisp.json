@@ -72,9 +72,9 @@
     {
       "raw": "Finely grated zest of 2 mini oranges (such as mandarins) or 1 regular one",
       "expected": {
-        "item": "Finely grated zest of 2 mini oranges (such as mandarins) or 1 regular one",
+        "item": "Finely grated zest of 2 mini oranges or 1 regular one",
         "measurements": [],
-        "note": null,
+        "note": "such as mandarins",
         "category": "Produce"
       }
     },
@@ -144,7 +144,7 @@
     {
       "raw": "½ cup (70 grams) polenta (cornmeal will work too)",
       "expected": {
-        "item": "polenta (cornmeal will work too)",
+        "item": "polenta",
         "measurements": [
           {
             "amount": "0.5",
@@ -155,8 +155,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "cornmeal will work too",
+        "category": "Pasta & Rice"
       }
     },
     {

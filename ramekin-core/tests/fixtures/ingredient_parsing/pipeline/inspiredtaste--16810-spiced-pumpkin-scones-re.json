@@ -207,14 +207,18 @@
     {
       "raw": "1 tablespoon molasses (we use Blackstrap Unsulphured Molasses)",
       "expected": {
-        "item": "molasses (we use Blackstrap Unsulphured Molasses)",
+        "item": "molasses",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "we use Blackstrap Unsulphured Molasses",
         "category": "Baking"
       }
     },

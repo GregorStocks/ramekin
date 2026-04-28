@@ -5,7 +5,7 @@
     {
       "raw": "1 pound dry white beans (haricot lingot beans, flageolet beans, Great Northern beans, or cannellini beans.)",
       "expected": {
-        "item": "dry white beans (haricot lingot beans, flageolet beans, Great Northern beans, or cannellini beans.)",
+        "item": "dry white beans",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "haricot lingot beans, flageolet beans, Great Northern beans, or cannellini beans.",
         "category": "Canned Goods"
       }
     },
@@ -37,14 +37,14 @@
     {
       "raw": "1  orange (zested)",
       "expected": {
-        "item": "orange (zested)",
+        "item": "orange",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "zested",
         "category": "Produce"
       }
     },
@@ -199,7 +199,7 @@
     {
       "raw": "1 pound pork belly (cut into 5-6 large pieces)",
       "expected": {
-        "item": "pork belly (cut into 5-6 large pieces)",
+        "item": "pork belly",
         "measurements": [
           {
             "amount": "1",
@@ -210,7 +210,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 5-6 large pieces",
         "category": "Meat & Seafood"
       }
     },

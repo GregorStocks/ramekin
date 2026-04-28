@@ -133,14 +133,14 @@
     {
       "raw": "¼ cup sofrito (homemade or store-bought)",
       "expected": {
-        "item": "sofrito (homemade or store-bought)",
+        "item": "sofrito",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "homemade or store-bought",
         "category": "Other"
       }
     },
@@ -193,14 +193,14 @@
     {
       "raw": "1 tablespoon Mexican oregano (or regular oregano)",
       "expected": {
-        "item": "Mexican oregano (or regular oregano)",
+        "item": "Mexican oregano",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or regular oregano",
         "category": "Spices & Seasonings"
       }
     },
@@ -249,7 +249,7 @@
     {
       "raw": "1½ pounds yellow potatoes (cut into 1-inch chunks)",
       "expected": {
-        "item": "yellow potatoes (cut into 1-inch chunks)",
+        "item": "yellow potatoes",
         "measurements": [
           {
             "amount": "1.5",
@@ -260,7 +260,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch chunks",
         "category": "Produce"
       }
     },

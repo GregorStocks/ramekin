@@ -77,28 +77,32 @@
     {
       "raw": "1/2 cup chicken stock/broth (veggie or beef stock work also)",
       "expected": {
-        "item": "chicken stock/broth (veggie or beef stock work also)",
+        "item": "chicken stock/broth",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "veggie or beef stock work also",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 cup milk (use whatever kind you have)",
       "expected": {
-        "item": "milk (use whatever kind you have)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "use whatever kind you have",
         "category": "Dairy & Eggs"
       }
     },

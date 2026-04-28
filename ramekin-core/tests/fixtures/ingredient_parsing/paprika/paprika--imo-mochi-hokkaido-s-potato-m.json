@@ -42,14 +42,14 @@
     {
       "raw": "2 tbsp potato starch (katakuriko) or tapioca starch",
       "expected": {
-        "item": "potato starch (katakuriko) or tapioca starch",
+        "item": "potato starch or tapioca starch",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "katakuriko",
         "category": "Baking"
       }
     },
@@ -138,18 +138,14 @@
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "section": "Sweet-savory Sauce",
         "category": "Condiments & Sauces"
       }

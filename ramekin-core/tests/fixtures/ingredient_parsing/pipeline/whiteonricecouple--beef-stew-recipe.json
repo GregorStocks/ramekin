@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds chuck roast (, cut into bite sized pieces or beef stew meat)",
       "expected": {
-        "item": "chuck roast (, cut into bite sized pieces or beef stew meat)",
+        "item": "chuck roast",
         "measurements": [
           {
             "amount": "2",
@@ -16,21 +16,25 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into bite sized pieces or beef stew meat",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 Tablespoon olive oil ( or butter)",
       "expected": {
-        "item": "olive oil ( or butter)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or butter",
         "category": "Oils & Vinegars"
       }
     },
@@ -65,21 +69,21 @@
     {
       "raw": "4  carrots (, cut into bite sized pieces)",
       "expected": {
-        "item": "carrots (, cut into bite sized pieces)",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into bite sized pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1 pound potatoes (, cut into bite sized pieces)",
       "expected": {
-        "item": "potatoes (, cut into bite sized pieces)",
+        "item": "potatoes",
         "measurements": [
           {
             "amount": "1",
@@ -90,7 +94,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into bite sized pieces",
         "category": "Produce"
       }
     },
@@ -151,28 +155,32 @@
     {
       "raw": "2 Tablespoons soy sauce ( or Worcestershire sauce)",
       "expected": {
-        "item": "soy sauce ( or Worcestershire sauce)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Worcestershire sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1 teaspoon dried basil ( or your favorite herb)",
       "expected": {
-        "item": "dried basil ( or your favorite herb)",
+        "item": "dried basil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or your favorite herb",
         "category": "Spices & Seasonings"
       }
     },
@@ -197,11 +205,15 @@
     {
       "raw": "1 teaspoon salt (,)",
       "expected": {
-        "item": "salt (,)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
         "note": null,

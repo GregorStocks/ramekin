@@ -111,14 +111,14 @@
     {
       "raw": "0.25 cup pomegranate arils (seeds)",
       "expected": {
-        "item": "pomegranate arils (seeds)",
+        "item": "pomegranate arils",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "seeds",
         "category": "Produce"
       }
     }

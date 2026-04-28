@@ -5,14 +5,14 @@
     {
       "raw": "2/3 cup unsweetened shredded coconut (not flaked coconut)",
       "expected": {
-        "item": "unsweetened shredded coconut (not flaked coconut)",
+        "item": "unsweetened shredded coconut",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "not flaked coconut",
         "category": "Produce"
       }
     },
@@ -108,7 +108,7 @@
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "14-ounce",
         "category": "Canned Goods"
       }
     },

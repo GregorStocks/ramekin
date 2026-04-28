@@ -106,56 +106,72 @@
     {
       "raw": "4 tbsp olive oil (marinade)",
       "expected": {
-        "item": "olive oil (marinade)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "marinade",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "2 tbsp lemon juice (marinade)",
       "expected": {
-        "item": "lemon juice (marinade)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "marinade",
         "category": "Beverages"
       }
     },
     {
       "raw": "2 tbsp balsamic vinegar (marinade)",
       "expected": {
-        "item": "balsamic vinegar (marinade)",
+        "item": "balsamic vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "marinade",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "1 tbsp Dijon mustard (marinade)",
       "expected": {
-        "item": "Dijon mustard (marinade)",
+        "item": "Dijon mustard",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "marinade",
         "category": "Condiments & Sauces"
       }
     },
@@ -187,21 +203,21 @@
             "unit": null
           }
         ],
-        "note": "minced (marinade)",
+        "note": "marinade, minced",
         "category": "Produce"
       }
     },
     {
       "raw": "1 tsp Italian seasoning (marinade)",
       "expected": {
-        "item": "Italian seasoning (marinade)",
+        "item": "Italian seasoning",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "marinade",
         "category": "Spices & Seasonings"
       }
     },
@@ -226,14 +242,14 @@
     {
       "raw": "1/2 tsp black pepper (marinade)",
       "expected": {
-        "item": "black pepper (marinade)",
+        "item": "black pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "marinade",
         "category": "Spices & Seasonings"
       }
     }

@@ -137,15 +137,15 @@
     {
       "raw": "1  lemon (juiced and zested)",
       "expected": {
-        "item": "lemon (juiced and zested)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced and zested",
+        "category": "Produce"
       }
     },
     {
@@ -187,14 +187,14 @@
     {
       "raw": "1/4 cup coconut butter (warmed, stirred and pourable)",
       "expected": {
-        "item": "coconut butter (warmed, stirred and pourable)",
+        "item": "coconut butter",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "warmed, stirred and pourable",
         "category": "Condiments & Sauces"
       }
     },
@@ -219,28 +219,32 @@
     {
       "raw": "2 tbsp water (to thin to desired consistency)",
       "expected": {
-        "item": "water (to thin to desired consistency)",
+        "item": "water",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "to thin to desired consistency",
         "category": "Other"
       }
     },
     {
       "raw": "1  lemon (zested for topping)",
       "expected": {
-        "item": "lemon (zested for topping)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "zested for topping",
         "category": "Produce"
       }
     }

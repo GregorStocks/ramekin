@@ -69,14 +69,18 @@
     {
       "raw": "1 1/2 tsp paprika (sweet or hot)",
       "expected": {
-        "item": "paprika (sweet or hot)",
+        "item": "paprika",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "3.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sweet or hot",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,14 +101,14 @@
     {
       "raw": "1 tbsp pomegranate molasses (or organic blackstrap molasses)",
       "expected": {
-        "item": "pomegranate molasses (or organic blackstrap molasses)",
+        "item": "pomegranate molasses",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or organic blackstrap molasses",
         "category": "Produce"
       }
     },

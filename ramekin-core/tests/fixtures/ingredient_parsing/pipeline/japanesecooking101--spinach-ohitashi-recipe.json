@@ -51,15 +51,19 @@
     {
       "raw": "1/2 tsp sugar (or Mirin or preferred sweetener)",
       "expected": {
-        "item": "sugar (or Mirin or preferred sweetener)",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.1",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "or Mirin or preferred sweetener",
+        "category": "Baking"
       }
     },
     {

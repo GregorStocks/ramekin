@@ -14,14 +14,18 @@
     {
       "raw": "1 cup plain yogurt (strained or Greek-style if you can find it)",
       "expected": {
-        "item": "plain yogurt (strained or Greek-style if you can find it)",
+        "item": "plain yogurt",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "strained or Greek-style if you can find it",
         "category": "Dairy & Eggs"
       }
     },

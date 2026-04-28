@@ -170,15 +170,15 @@
     {
       "raw": "2 soft buns (I used potato rolls)",
       "expected": {
-        "item": "soft buns (I used potato rolls)",
+        "item": "soft buns",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "I used potato rolls",
+        "category": "Bakery & Bread"
       }
     },
     {

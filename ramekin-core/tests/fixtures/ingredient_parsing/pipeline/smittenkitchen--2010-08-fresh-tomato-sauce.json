@@ -5,7 +5,7 @@
     {
       "raw": "4 pounds sad, unloved tomatoes (some swear by romas, I’ve had success with all varieties)",
       "expected": {
-        "item": "sad, unloved tomatoes (some swear by romas, I’ve had success with all varieties)",
+        "item": "sad, unloved tomatoes",
         "measurements": [
           {
             "amount": "4",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "some swear by romas, I’ve had success with all varieties",
         "category": "Produce"
       }
     },

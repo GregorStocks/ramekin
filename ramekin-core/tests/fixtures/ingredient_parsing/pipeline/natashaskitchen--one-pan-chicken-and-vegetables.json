@@ -41,14 +41,14 @@
     {
       "raw": "1 cup unseasoned bread crumbs (I used panko crumbs)",
       "expected": {
-        "item": "unseasoned bread crumbs (I used panko crumbs)",
+        "item": "unseasoned bread crumbs",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used panko crumbs",
         "category": "Bakery & Bread"
       }
     },
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "4 small/medium",
         "category": "Meat & Seafood"
       }
     },
@@ -102,7 +102,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1/2\" thick",
         "category": "Produce"
       }
     },

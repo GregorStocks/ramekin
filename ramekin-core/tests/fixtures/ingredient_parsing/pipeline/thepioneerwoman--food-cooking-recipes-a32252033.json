@@ -23,15 +23,15 @@
     {
       "raw": "1 tbsp. adobo sauce (from a can of chipotle peppers)",
       "expected": {
-        "item": "adobo sauce (from a can of chipotle peppers)",
+        "item": "adobo sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "from a can of chipotle peppers",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -98,7 +98,7 @@
             "unit": null
           }
         ],
-        "note": "extra fat trimmed",
+        "note": "1 1/2 inches thick, extra fat trimmed",
         "category": "Meat & Seafood"
       }
     },

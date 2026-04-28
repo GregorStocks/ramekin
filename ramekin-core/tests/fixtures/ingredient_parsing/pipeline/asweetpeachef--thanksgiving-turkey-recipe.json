@@ -61,14 +61,14 @@
     {
       "raw": "1  granny smith apple (no need to remove core, cut into eighths)",
       "expected": {
-        "item": "granny smith apple (no need to remove core, cut into eighths)",
+        "item": "granny smith apple",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "no need to remove core, cut into eighths",
         "category": "Produce"
       }
     },

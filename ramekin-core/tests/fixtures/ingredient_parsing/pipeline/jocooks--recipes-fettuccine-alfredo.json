@@ -23,14 +23,18 @@
     {
       "raw": "6 tablespoons butter (unsalted)",
       "expected": {
-        "item": "butter (unsalted)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsalted",
         "category": "Dairy & Eggs"
       }
     },

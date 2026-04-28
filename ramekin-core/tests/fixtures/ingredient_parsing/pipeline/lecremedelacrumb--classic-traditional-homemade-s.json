@@ -79,28 +79,28 @@
     {
       "raw": "3 teaspoons Italian blend seasoning (see note for substitution )",
       "expected": {
-        "item": "Italian blend seasoning (see note for substitution",
+        "item": "Italian blend seasoning",
         "measurements": [
           {
             "amount": "3",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "see note for substitution",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "2-3 cups chicken broth (If you like more dry stuffing, use 2 cups broth)",
       "expected": {
-        "item": "chicken broth (If you like more dry stuffing, use 2 cups broth)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "If you like more dry stuffing, use 2 cups broth",
         "category": "Canned Goods"
       }
     },

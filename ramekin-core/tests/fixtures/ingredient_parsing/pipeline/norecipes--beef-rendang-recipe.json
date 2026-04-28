@@ -129,42 +129,42 @@
     {
       "raw": "900 grams beef shanks (or shortribs (cut into large cubes))",
       "expected": {
-        "item": "beef shanks (or shortribs (cut into large cubes)",
+        "item": "beef shanks",
         "measurements": [
           {
             "amount": "900",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or shortribs (cut into large cubes",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "2 stalks lemongrass ((white part only, smashed))",
       "expected": {
-        "item": "lemongrass (white part only, smashed)",
+        "item": "lemongrass",
         "measurements": [
           {
             "amount": "2",
             "unit": "stalk"
           }
         ],
-        "note": null,
+        "note": "white part only, smashed",
         "category": "Produce"
       }
     },
     {
       "raw": "4  kaffir lime leaves ((or 1 teaspoon Makrut lime zest))",
       "expected": {
-        "item": "kaffir lime leaves (or 1 teaspoon Makrut lime zest)",
+        "item": "kaffir lime leaves",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 1 teaspoon Makrut lime zest",
         "category": "Produce"
       }
     },
@@ -185,29 +185,29 @@
     {
       "raw": "2 packs coconut cream powder ((or 1 can coconut milk))",
       "expected": {
-        "item": "packs coconut cream powder (or 1 can coconut milk)",
+        "item": "packs coconut cream powder",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 1 can coconut milk",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1 tablespoon coconut sugar ((brown sugar or palm sugar can be substituted))",
       "expected": {
-        "item": "coconut sugar (brown sugar or palm sugar can be substituted)",
+        "item": "coconut sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "brown sugar or palm sugar can be substituted",
+        "category": "Produce"
       }
     }
   ]

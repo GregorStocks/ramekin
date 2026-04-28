@@ -192,27 +192,27 @@
     {
       "raw": "fresh basil, (torn, for topping)",
       "expected": {
-        "item": "fresh basil, (torn, for topping)",
+        "item": "fresh basil",
         "measurements": [],
-        "note": null,
+        "note": "torn, for topping",
         "category": "Produce"
       }
     },
     {
       "raw": "shaved parmesan cheese, (for topping)",
       "expected": {
-        "item": "shaved parmesan cheese, (for topping)",
+        "item": "shaved parmesan cheese",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Cheese"
       }
     },
     {
       "raw": "crushed red pepper, (for topping)",
       "expected": {
-        "item": "crushed red pepper, (for topping)",
+        "item": "crushed red pepper",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Spices & Seasonings"
       }
     }

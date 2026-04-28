@@ -90,7 +90,7 @@
     {
       "raw": "4 cups (945 ml) vegetable broth (salted or low-sodium, if unsalted, add salt)",
       "expected": {
-        "item": "vegetable broth (salted or low-sodium, if unsalted, add salt)",
+        "item": "vegetable broth",
         "measurements": [
           {
             "amount": "4",
@@ -99,9 +99,13 @@
           {
             "amount": "945",
             "unit": "ml"
+          },
+          {
+            "amount": "996",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "salted or low-sodium, if unsalted, add salt",
         "category": "Canned Goods"
       }
     },
@@ -130,14 +134,14 @@
     {
       "raw": "2 cups frozen peas (from 1 10-ounce or 285-gram bag), no need to defrost",
       "expected": {
-        "item": "frozen peas (from 1 10-ounce or 285-gram bag), no need to defrost",
+        "item": "frozen peas, no need to defrost",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 1 10-ounce or 285-gram bag",
         "category": "Frozen"
       }
     },

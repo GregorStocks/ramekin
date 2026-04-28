@@ -113,7 +113,7 @@
     {
       "raw": "1/2 cup (45 grams) rye flour (medium or white will work)",
       "expected": {
-        "item": "rye flour (medium or white will work)",
+        "item": "rye flour",
         "measurements": [
           {
             "amount": "0.5",
@@ -124,7 +124,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "medium or white will work",
         "category": "Baking"
       }
     },

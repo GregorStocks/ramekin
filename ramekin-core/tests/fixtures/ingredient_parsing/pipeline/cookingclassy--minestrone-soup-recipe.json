@@ -84,7 +84,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "2 ribs",
         "category": "Produce"
       }
     },
@@ -109,14 +109,18 @@
     {
       "raw": "4 cups low-sodium chicken broth (or vegetable broth)",
       "expected": {
-        "item": "low-sodium chicken broth (or vegetable broth)",
+        "item": "low-sodium chicken broth",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "996",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or vegetable broth",
         "category": "Canned Goods"
       }
     },

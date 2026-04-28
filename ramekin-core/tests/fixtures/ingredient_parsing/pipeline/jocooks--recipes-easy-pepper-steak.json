@@ -5,14 +5,18 @@
     {
       "raw": "½ cup soy sauce (low sodium)",
       "expected": {
-        "item": "soy sauce (low sodium)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "128",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Condiments & Sauces"
       }
     },

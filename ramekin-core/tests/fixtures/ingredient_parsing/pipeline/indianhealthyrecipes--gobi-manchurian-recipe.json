@@ -32,7 +32,7 @@
     {
       "raw": "½ cup (65 grams)  all-purpose flour (( prefer organic or at least unbleached))",
       "expected": {
-        "item": "all-purpose flour ( prefer organic or at least unbleached)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.5",
@@ -43,14 +43,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "prefer organic or at least unbleached",
         "category": "Baking"
       }
     },
     {
       "raw": "¼ cup (32 grams)  cornstarch ((white corn flour or yellow corn flour))",
       "expected": {
-        "item": "cornstarch (white corn flour or yellow corn flour)",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "0.25",
@@ -61,21 +61,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "white corn flour or yellow corn flour",
         "category": "Baking"
       }
     },
     {
       "raw": "½ to 1 teaspoon Kashmiri red chili powder (or paste (less spicy variety) (optional))",
       "expected": {
-        "item": "Kashmiri red chili powder (or paste (less spicy variety) (optional)",
+        "item": "Kashmiri red chili powder",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or paste (less spicy variety, optional",
         "category": "Spices & Seasonings"
       }
     },
@@ -114,29 +114,37 @@
     {
       "raw": "½ cup water ((more if needed))",
       "expected": {
-        "item": "water (more if needed)",
+        "item": "water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "more if needed",
         "category": "Other"
       }
     },
     {
       "raw": "1½ tablespoons oil ((for sauce))",
       "expected": {
-        "item": "oil (for sauce)",
+        "item": "oil",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "for sauce",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -210,28 +218,28 @@
     {
       "raw": "¼ cup bell pepper  ((capsicum chopped fine) (optional))",
       "expected": {
-        "item": "bell pepper (optional)",
+        "item": "bell pepper",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "capsicum chopped fine",
+        "note": "optional, capsicum chopped fine",
         "category": "Produce"
       }
     },
     {
       "raw": "1 tablespoon soya sauce ((organic or naturally brewed)(or tamari))",
       "expected": {
-        "item": "soya sauce (organic or naturally brewed)(or tamari)",
+        "item": "soya sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "organic or naturally brewed, or tamari",
         "category": "Condiments & Sauces"
       }
     },
@@ -280,14 +288,18 @@
     {
       "raw": "½ tablespoon rice vinegar ((I used apple cider vinegar))",
       "expected": {
-        "item": "rice vinegar (I used apple cider vinegar)",
+        "item": "rice vinegar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "7.5",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used apple cider vinegar",
         "category": "Oils & Vinegars"
       }
     },

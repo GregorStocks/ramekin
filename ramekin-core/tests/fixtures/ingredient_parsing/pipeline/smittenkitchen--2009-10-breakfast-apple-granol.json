@@ -194,14 +194,14 @@
     {
       "raw": "1/2 cup shredded coconut (sweetened or unsweetened, as you wish; I used unsweetened)",
       "expected": {
-        "item": "shredded coconut (sweetened or unsweetened, as you wish; I used unsweetened)",
+        "item": "shredded coconut",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "sweetened or unsweetened, as you wish; I used unsweetened",
         "category": "Produce"
       }
     }

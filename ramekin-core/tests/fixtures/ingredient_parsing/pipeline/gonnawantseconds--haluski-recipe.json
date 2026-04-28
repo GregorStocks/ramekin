@@ -133,14 +133,18 @@
     {
       "raw": "8 cups cabbage, (cut into bite-size pieces)",
       "expected": {
-        "item": "cabbage, (cut into bite-size pieces)",
+        "item": "cabbage",
         "measurements": [
           {
             "amount": "8",
             "unit": "cup"
+          },
+          {
+            "amount": "636",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into bite-size pieces",
         "category": "Produce"
       }
     },

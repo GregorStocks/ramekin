@@ -79,14 +79,14 @@
     {
       "raw": "2 tablespoons finely chopped fresh ginger (see note)",
       "expected": {
-        "item": "finely chopped fresh ginger (see note)",
+        "item": "finely chopped fresh ginger",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Produce"
       }
     },
@@ -139,14 +139,14 @@
     {
       "raw": "1½ cups cooked broccoli florets (see note)",
       "expected": {
-        "item": "cooked broccoli florets (see note)",
+        "item": "cooked broccoli florets",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Produce"
       }
     },

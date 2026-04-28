@@ -177,14 +177,14 @@
     {
       "raw": "Just barely heaped 1/4 cup (22 grams) cocoa powder (any variety)",
       "expected": {
-        "item": "Just barely heaped 1/4 cup cocoa powder (any variety)",
+        "item": "Just barely heaped 1/4 cup cocoa powder",
         "measurements": [
           {
             "amount": "22",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any variety",
         "category": "Baking"
       }
     },
@@ -216,7 +216,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "3 1/2 ounces, or half of a 7-ounce bag",
         "category": "Produce"
       }
     },
@@ -277,7 +277,7 @@
     {
       "raw": "3/4 cup (175 ml) half-and-half (or a mixture of 1/2 cup milk and 1/4 cup heavy cream)",
       "expected": {
-        "item": "half-and-half (or a mixture of 1/2 cup milk and 1/4 cup heavy cream)",
+        "item": "half-and-half",
         "measurements": [
           {
             "amount": "0.75",
@@ -286,9 +286,13 @@
           {
             "amount": "175",
             "unit": "ml"
+          },
+          {
+            "amount": "182",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or a mixture of 1/2 cup milk and 1/4 cup heavy cream",
         "category": "Dairy & Eggs"
       }
     },

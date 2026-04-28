@@ -5,28 +5,32 @@
     {
       "raw": "1¼ cups all-purpose flour, (spooned into measuring cup and leveled-off)",
       "expected": {
-        "item": "all-purpose flour, (spooned into measuring cup and leveled-off)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "156",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "spooned into measuring cup and leveled-off",
         "category": "Baking"
       }
     },
     {
       "raw": "¼ cup natural unsweetened cocoa powder, (such as Hershey's (see note))",
       "expected": {
-        "item": "natural unsweetened cocoa powder, (such as Hershey's (see note)",
+        "item": "natural unsweetened cocoa powder",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Hershey's (see note",
         "category": "Baking"
       }
     },
@@ -123,14 +127,14 @@
     {
       "raw": "1 cup mashed very ripe bananas, (from 2 to 3 brown bananas)",
       "expected": {
-        "item": "mashed very ripe bananas, (from 2 to 3 brown bananas)",
+        "item": "mashed very ripe bananas",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 2 to 3 brown bananas",
         "category": "Produce"
       }
     },

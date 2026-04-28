@@ -177,14 +177,14 @@
     {
       "raw": "2 tbsp Peppermint Chocolate Creamer (or water)",
       "expected": {
-        "item": "Peppermint Chocolate Creamer (or water)",
+        "item": "Peppermint Chocolate Creamer",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or water",
         "category": "Spices & Seasonings"
       }
     },

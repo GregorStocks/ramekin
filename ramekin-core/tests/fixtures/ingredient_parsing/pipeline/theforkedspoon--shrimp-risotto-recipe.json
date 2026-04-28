@@ -188,15 +188,15 @@
     {
       "raw": "8 cups homemade shrimp stock ((or low-sodium chicken stock, vegetable broth, or water))",
       "expected": {
-        "item": "homemade shrimp stock (or low-sodium chicken stock, vegetable broth, or water)",
+        "item": "homemade shrimp stock",
         "measurements": [
           {
             "amount": "8",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "or low-sodium chicken stock, vegetable broth, or water",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -230,14 +230,14 @@
     {
       "raw": "2 cups arborio rice (do not wash)",
       "expected": {
-        "item": "arborio rice (do not wash)",
+        "item": "arborio rice",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "do not wash",
         "category": "Pasta & Rice"
       }
     },
@@ -280,9 +280,9 @@
     {
       "raw": "Fresh parsley (to garnish)",
       "expected": {
-        "item": "Fresh parsley (to garnish)",
+        "item": "Fresh parsley",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "category": "Produce"
       }
     },

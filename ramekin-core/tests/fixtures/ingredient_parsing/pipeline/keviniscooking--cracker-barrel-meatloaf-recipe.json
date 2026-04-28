@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "85/15",
         "category": "Meat & Seafood"
       }
     },
@@ -87,14 +87,18 @@
     {
       "raw": "1/2 cup milk (any variety)",
       "expected": {
-        "item": "milk (any variety)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any variety",
         "category": "Dairy & Eggs"
       }
     },

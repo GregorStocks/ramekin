@@ -41,14 +41,18 @@
     {
       "raw": "1 cup dry white wine (something crisp—sauvignon blanc or a Swiss chasselas if you're being traditional)",
       "expected": {
-        "item": "dry white wine (something crisp-sauvignon blanc or a Swiss chasselas if you're being traditional)",
+        "item": "dry white wine",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "236",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "something crisp-sauvignon blanc or a Swiss chasselas if you're being traditional",
         "category": "Beverages"
       }
     },

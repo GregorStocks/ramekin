@@ -5,14 +5,14 @@
     {
       "raw": "20  serrano peppers (stems removed)",
       "expected": {
-        "item": "serrano peppers (stems removed)",
+        "item": "serrano peppers",
         "measurements": [
           {
             "amount": "20",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "stems removed",
         "category": "Produce"
       }
     },

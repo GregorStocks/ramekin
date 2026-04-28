@@ -5,14 +5,14 @@
     {
       "raw": "1 cup dried chickpeas (soaked overnight (don&amp;#x27;t use canned chickpeas))",
       "expected": {
-        "item": "dried chickpeas (soaked overnight (don't use canned chickpeas)",
+        "item": "dried chickpeas",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "soaked overnight (don't use canned chickpeas",
         "category": "Canned Goods"
       }
     },
@@ -69,15 +69,15 @@
     {
       "raw": "1  small green chile pepper (serrano or jalapeno pepper)",
       "expected": {
-        "item": "green chile pepper (serrano or jalapeno pepper)",
+        "item": "green chile pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "serrano or jalapeno pepper",
+        "category": "Spices & Seasonings"
       }
     },
     {

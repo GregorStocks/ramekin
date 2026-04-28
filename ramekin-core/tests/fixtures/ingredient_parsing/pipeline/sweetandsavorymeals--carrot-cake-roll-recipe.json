@@ -227,14 +227,18 @@
     {
       "raw": "1/4 cup powdered sugar (for rolling)",
       "expected": {
-        "item": "powdered sugar (for rolling)",
+        "item": "powdered sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for rolling",
         "category": "Baking"
       }
     },

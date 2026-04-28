@@ -125,28 +125,32 @@
     {
       "raw": "8 cups low sodium chicken broth  (or vegetable broth)",
       "expected": {
-        "item": "low sodium chicken broth  (or vegetable broth)",
+        "item": "low sodium chicken broth",
         "measurements": [
           {
             "amount": "8",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or vegetable broth",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1 cup  heavy cream  (OR fat free half and half)",
       "expected": {
-        "item": "heavy cream  (OR fat free half and half)",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "OR fat free half and half",
         "category": "Dairy & Eggs"
       }
     },
@@ -189,14 +193,14 @@
     {
       "raw": "1 ½ cups freshly grated cheddar  (or white cheddar cheese)",
       "expected": {
-        "item": "freshly grated cheddar  (or white cheddar cheese)",
+        "item": "freshly grated cheddar",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or white cheddar cheese",
         "category": "Cheese"
       }
     },

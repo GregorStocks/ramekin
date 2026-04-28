@@ -154,14 +154,14 @@
     {
       "raw": "1 to 2 drops red food dye, if using (to make the pink color pop more)",
       "expected": {
-        "item": "red food dye, if using (to make the pink color pop more)",
+        "item": "red food dye, if using",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "drop"
           }
         ],
-        "note": null,
+        "note": "to make the pink color pop more",
         "category": "Other"
       }
     },

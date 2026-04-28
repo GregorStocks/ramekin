@@ -5,18 +5,18 @@
     {
       "raw": "▢ 125 g / 4oz  Chang’s Pad Thai dried rice sticks (Note 1)",
       "expected": {
-        "item": "▢ 125 g / 4oz  Chang’s Pad Thai dried rice sticks (Note 1)",
+        "item": "▢ 125 g / 4oz  Chang’s Pad Thai dried rice sticks",
         "measurements": [],
-        "note": null,
+        "note": "Note 1",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "▢ 1 1/2 tbsp tamarind puree , NOT concentrate (Note 2)",
       "expected": {
-        "item": "▢ 1 1/2 tbsp tamarind puree, NOT concentrate (Note 2)",
+        "item": "▢ 1 1/2 tbsp tamarind puree, NOT concentrate",
         "measurements": [],
-        "note": null,
+        "note": "Note 2",
         "category": "Condiments & Sauces"
       }
     },
@@ -32,18 +32,18 @@
     {
       "raw": "▢ 2 tbsp fish sauce (Note 3)",
       "expected": {
-        "item": "▢ 2 tbsp fish sauce (Note 3)",
+        "item": "▢ 2 tbsp fish sauce",
         "measurements": [],
-        "note": null,
+        "note": "Note 3",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "▢ 1 1/2 tbsp oyster sauce (Note 4)",
       "expected": {
-        "item": "▢ 1 1/2 tbsp oyster sauce (Note 4)",
+        "item": "▢ 1 1/2 tbsp oyster sauce",
         "measurements": [],
-        "note": null,
+        "note": "Note 4",
         "category": "Condiments & Sauces"
       }
     },
@@ -59,9 +59,9 @@
     {
       "raw": "▢ 1/2 onion , sliced (brown, yellow)",
       "expected": {
-        "item": "▢ 1/2 onion, sliced (brown, yellow)",
+        "item": "▢ 1/2 onion",
         "measurements": [],
-        "note": null,
+        "note": "brown, yellow, sliced",
         "category": "Produce"
       }
     },
@@ -77,9 +77,9 @@
     {
       "raw": "▢ 150 g/5oz  chicken breast (or thigh) , thinly sliced",
       "expected": {
-        "item": "▢ 150 g/5oz  chicken breast (or thigh)",
+        "item": "▢ 150 g/5oz  chicken breast",
         "measurements": [],
-        "note": "thinly sliced",
+        "note": "or thigh, thinly sliced",
         "category": "Meat & Seafood"
       }
     },
@@ -104,9 +104,9 @@
     {
       "raw": "▢ 1/2 cup firm tofu, cut into 3cm / 1 1/4″ batons (see photo)",
       "expected": {
-        "item": "▢ 1/2 cup firm tofu, cut into 3cm / 1 1/4″ batons (see photo)",
+        "item": "▢ 1/2 cup firm tofu, cut into 3cm / 1 1/4″ batons",
         "measurements": [],
-        "note": null,
+        "note": "see photo",
         "category": "Produce"
       }
     },
@@ -131,9 +131,9 @@
     {
       "raw": "▢ Lime wedges (essential)",
       "expected": {
-        "item": "▢ Lime wedges (essential)",
+        "item": "▢ Lime wedges",
         "measurements": [],
-        "note": null,
+        "note": "essential",
         "category": "Produce"
       }
     },

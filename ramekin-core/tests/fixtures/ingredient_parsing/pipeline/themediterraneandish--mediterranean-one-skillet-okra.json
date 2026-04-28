@@ -179,9 +179,9 @@
     {
       "raw": "Juice of ½ lime (more to your liking)",
       "expected": {
-        "item": "Juice of 1/2 lime (more to your liking)",
+        "item": "Juice of 1/2 lime",
         "measurements": [],
-        "note": null,
+        "note": "more to your liking",
         "category": "Beverages"
       }
     }

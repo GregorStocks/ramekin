@@ -23,14 +23,18 @@
     {
       "raw": "2 tablespoons butter (for tossing the pasta)",
       "expected": {
-        "item": "butter (for tossing the pasta)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for tossing the pasta",
         "category": "Dairy & Eggs"
       }
     },
@@ -206,7 +210,7 @@
     {
       "raw": "14.5 ounces diced tomatoes with green chilies (like Rotel)",
       "expected": {
-        "item": "diced tomatoes with green chilies (like Rotel)",
+        "item": "diced tomatoes with green chilies",
         "measurements": [
           {
             "amount": "14.5",
@@ -217,21 +221,25 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "like Rotel",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1 cup chicken broth (low sodium or no sodium added)",
       "expected": {
-        "item": "chicken broth (low sodium or no sodium added)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "249",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium or no sodium added",
         "category": "Canned Goods"
       }
     },

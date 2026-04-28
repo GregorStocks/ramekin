@@ -84,14 +84,14 @@
     {
       "raw": "4 medium Yukon Gold or 3 smallish Russet potatoes (I find these to be equivalent in size, although the specific size isn’t terribly important)",
       "expected": {
-        "item": "Yukon Gold or 3 smallish Russet potatoes (I find these to be equivalent in size, although the specific size isn’t terribly important)",
+        "item": "Yukon Gold or 3 smallish Russet potatoes",
         "measurements": [
           {
             "amount": "4",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "I find these to be equivalent in size, although the specific size isn’t terribly important",
         "category": "Produce"
       }
     },

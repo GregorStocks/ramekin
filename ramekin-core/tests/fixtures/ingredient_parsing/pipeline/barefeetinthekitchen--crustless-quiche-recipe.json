@@ -5,7 +5,7 @@
     {
       "raw": "1/2 lb breakfast sausage or hot sausage (whichever you like best)",
       "expected": {
-        "item": "breakfast sausage or hot sausage (whichever you like best)",
+        "item": "breakfast sausage or hot sausage",
         "measurements": [
           {
             "amount": "0.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "whichever you like best",
         "category": "Meat & Seafood"
       }
     },
@@ -93,14 +93,14 @@
     {
       "raw": "1/4 cup cream (half and half or milk *)",
       "expected": {
-        "item": "cream (half and half or milk *)",
+        "item": "cream",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "half and half or milk",
         "category": "Dairy & Eggs"
       }
     },

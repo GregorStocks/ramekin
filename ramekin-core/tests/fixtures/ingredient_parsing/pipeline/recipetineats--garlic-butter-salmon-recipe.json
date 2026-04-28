@@ -27,14 +27,18 @@
     {
       "raw": "1/2 tsp salt (, cooking / kosher)",
       "expected": {
-        "item": "salt (, cooking / kosher)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cooking / kosher",
         "category": "Spices & Seasonings"
       }
     },
@@ -95,7 +99,7 @@
     {
       "raw": "90g / 6 tbsp  salted butter (, cut into cubes (or unsalted + 1/4 tsp salt))",
       "expected": {
-        "item": "salted butter (, cut into cubes (or unsalted + 1/4 tsp salt)",
+        "item": "salted butter",
         "measurements": [
           {
             "amount": "90",
@@ -106,7 +110,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "cut into cubes (or unsalted + 1/4 tsp salt",
         "category": "Dairy & Eggs"
       }
     },

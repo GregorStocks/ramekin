@@ -32,14 +32,14 @@
     {
       "raw": "1 cup buffalo wing sauce, (frank’s red hot wing sauce is our favorite)",
       "expected": {
-        "item": "buffalo wing sauce, (frank’s red hot wing sauce is our favorite)",
+        "item": "buffalo wing sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "frank’s red hot wing sauce is our favorite",
         "category": "Condiments & Sauces"
       }
     },
@@ -116,14 +116,14 @@
     {
       "raw": "4 to 6 slices sharp cheddar cheese, (or however many thighs you have)",
       "expected": {
-        "item": "sharp cheddar cheese, (or however many thighs you have)",
+        "item": "sharp cheddar cheese",
         "measurements": [
           {
             "amount": "4 to 6",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "or however many thighs you have",
         "category": "Cheese"
       }
     }

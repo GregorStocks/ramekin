@@ -41,14 +41,18 @@
     {
       "raw": "1 teaspoon kosher salt (I use Diamond brand kosher salt; use half of other brands)",
       "expected": {
-        "item": "kosher salt (I use Diamond brand kosher salt; use half of other brands)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use Diamond brand kosher salt; use half of other brands",
         "category": "Spices & Seasonings"
       }
     },
@@ -62,7 +66,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "100° to 115°F",
         "category": "Other"
       }
     },
@@ -119,7 +123,7 @@
     {
       "raw": "1 bundle (about 1 pound) broccoli rabe (rapini), cut into 1-inch segments (florets and heavy stems)",
       "expected": {
-        "item": "bundle broccoli rabe (rapini), cut into 1-inch segments (florets and heavy stems)",
+        "item": "bundle broccoli rabe, cut into 1-inch segments",
         "measurements": [
           {
             "amount": "1",
@@ -134,7 +138,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "rapini, florets and heavy stems",
         "category": "Produce"
       }
     },

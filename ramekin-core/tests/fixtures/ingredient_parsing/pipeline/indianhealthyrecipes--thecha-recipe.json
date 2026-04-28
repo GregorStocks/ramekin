@@ -27,7 +27,7 @@
     {
       "raw": "8 (35 grams)  green chilies  ((Indian/ Thai/ serrano peppers, slightly slit or pricked with a fork))",
       "expected": {
-        "item": "green chilies  (Indian/ Thai/ serrano peppers, slightly slit or pricked with a fork)",
+        "item": "green chilies",
         "measurements": [
           {
             "amount": "8",
@@ -38,8 +38,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "Indian/ Thai/ serrano peppers, slightly slit or pricked with a fork",
+        "category": "Other"
       }
     },
     {
@@ -91,7 +91,7 @@
     {
       "raw": "½ cup (13 grams)  coriander leaves ( (with tender stalks, may double if you prefer))",
       "expected": {
-        "item": "coriander leaves ( (with tender stalks, may double if you prefer)",
+        "item": "coriander leaves",
         "measurements": [
           {
             "amount": "0.5",
@@ -102,7 +102,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "(with tender stalks, may double if you prefer",
         "category": "Spices & Seasonings"
       }
     },

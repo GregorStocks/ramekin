@@ -97,14 +97,18 @@
     {
       "raw": "¼  cup light brown sugar ((or honey, dark brown sugar, maple syrup, coconut sugar, etc.))",
       "expected": {
-        "item": "light brown sugar (or honey, dark brown sugar, maple syrup, coconut sugar, etc.)",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or honey, dark brown sugar, maple syrup, coconut sugar, etc.",
         "category": "Baking"
       }
     },

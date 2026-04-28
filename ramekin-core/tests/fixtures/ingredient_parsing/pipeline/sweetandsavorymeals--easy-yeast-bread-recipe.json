@@ -41,14 +41,18 @@
     {
       "raw": "2 teaspoons kosher salt (NOT table salt)",
       "expected": {
-        "item": "kosher salt (NOT table salt)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "NOT table salt",
         "category": "Spices & Seasonings"
       }
     },
@@ -80,7 +84,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 130°F",
         "category": "Other"
       }
     }

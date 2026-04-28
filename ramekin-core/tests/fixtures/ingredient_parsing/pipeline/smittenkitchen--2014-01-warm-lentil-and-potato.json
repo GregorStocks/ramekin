@@ -47,14 +47,14 @@
     {
       "raw": "1 cup dry small green lentils (see Note up top for varieties)",
       "expected": {
-        "item": "dry small green lentils (see Note up top for varieties)",
+        "item": "dry small green lentils",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Note up top for varieties",
         "category": "Canned Goods"
       }
     },
@@ -127,7 +127,7 @@
             "unit": null
           }
         ],
-        "note": "minced or smashed to a paste (I use less)",
+        "note": "I use less, minced or smashed to a paste",
         "category": "Produce"
       }
     },

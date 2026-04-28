@@ -5,7 +5,7 @@
     {
       "raw": "1 pound chicken tenders (or chicken breasts cut into 1-inch strips)",
       "expected": {
-        "item": "chicken tenders (or chicken breasts cut into 1-inch strips)",
+        "item": "chicken tenders",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or chicken breasts cut into 1-inch strips",
         "category": "Meat & Seafood"
       }
     },
@@ -330,23 +330,23 @@
     {
       "raw": "2 tablespoons chopped fresh parsley (for topping)",
       "expected": {
-        "item": "chopped fresh parsley (for topping)",
+        "item": "chopped fresh parsley",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     },
     {
       "raw": "parmesan cheese (for topping)",
       "expected": {
-        "item": "parmesan cheese (for topping)",
+        "item": "parmesan cheese",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Cheese"
       }
     }

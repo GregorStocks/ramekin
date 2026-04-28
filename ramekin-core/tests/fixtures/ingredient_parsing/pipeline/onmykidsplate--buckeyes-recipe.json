@@ -23,14 +23,18 @@
     {
       "raw": "1 cup peanut butter (creamy no stir version)",
       "expected": {
-        "item": "peanut butter (creamy no stir version)",
+        "item": "peanut butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "258",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "creamy no stir version",
         "category": "Condiments & Sauces"
       }
     },

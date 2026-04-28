@@ -23,9 +23,9 @@
     {
       "raw": "Extra-virgin olive oil (for drizzling)",
       "expected": {
-        "item": "Extra-virgin olive oil (for drizzling)",
+        "item": "Extra-virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for drizzling",
         "category": "Oils & Vinegars"
       }
     },
@@ -212,7 +212,7 @@
     {
       "raw": "4 ounces cold cream cheese (cut into 1/2-inch cubes)",
       "expected": {
-        "item": "cold cream cheese (cut into 1/2-inch cubes)",
+        "item": "cold cream cheese",
         "measurements": [
           {
             "amount": "4",
@@ -223,7 +223,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch cubes",
         "category": "Cheese"
       }
     }

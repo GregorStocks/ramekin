@@ -37,14 +37,18 @@
     {
       "raw": "1 tbsp sugar (any kind)",
       "expected": {
-        "item": "sugar (any kind)",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any kind",
         "category": "Baking"
       }
     },
@@ -69,15 +73,15 @@
     {
       "raw": "1½ cups plus 2 tbsp plant-based milk (such as oat, almond or soya)",
       "expected": {
-        "item": "plant-based milk (such as oat, almond or soya)",
+        "item": "plant-based milk",
         "measurements": [
           {
             "amount": "1 1/2 cups plus 2 tbsp",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "such as oat, almond or soya",
+        "category": "Dairy & Eggs"
       }
     },
     {

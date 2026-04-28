@@ -5,14 +5,14 @@
     {
       "raw": "300g pack meatball (we like Waitrose organic)",
       "expected": {
-        "item": "pack meatball (we like Waitrose organic)",
+        "item": "pack meatball",
         "measurements": [
           {
             "amount": "300",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "we like Waitrose organic",
         "category": "Meat & Seafood"
       }
     },

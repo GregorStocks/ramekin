@@ -5,29 +5,29 @@
     {
       "raw": "1 large orange (juiced)",
       "expected": {
-        "item": "orange (juiced)",
+        "item": "orange",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "juiced",
         "category": "Produce"
       }
     },
     {
       "raw": "1  lemon (juiced)",
       "expected": {
-        "item": "lemon (juiced)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {
@@ -161,7 +161,7 @@
     {
       "raw": "6 ounces raspberries ((see notes))",
       "expected": {
-        "item": "raspberries (see notes)",
+        "item": "raspberries",
         "measurements": [
           {
             "amount": "6",
@@ -172,7 +172,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Produce"
       }
     }

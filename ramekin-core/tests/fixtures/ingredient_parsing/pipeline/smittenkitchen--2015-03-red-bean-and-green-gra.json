@@ -93,14 +93,14 @@
     {
       "raw": "1 cup cilantro leaves (picked from 1 bunch)",
       "expected": {
-        "item": "cilantro leaves (picked from 1 bunch)",
+        "item": "cilantro leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "picked from 1 bunch",
         "category": "Produce"
       }
     },
@@ -114,7 +114,7 @@
             "unit": "medium"
           }
         ],
-        "note": "roughly chopped (I save the last 1/4 to finely mince as a topping)",
+        "note": "I save the last 1/4 to finely mince as a topping, roughly chopped",
         "category": "Produce"
       }
     },
@@ -135,14 +135,14 @@
     {
       "raw": "3 cups water or broth (amount needed for wheat berries, adjust if needed)",
       "expected": {
-        "item": "water or broth (amount needed for wheat berries, adjust if needed)",
+        "item": "water or broth",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "amount needed for wheat berries, adjust if needed",
         "category": "Canned Goods"
       }
     },

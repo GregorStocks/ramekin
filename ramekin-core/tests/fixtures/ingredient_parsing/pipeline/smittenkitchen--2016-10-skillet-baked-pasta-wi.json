@@ -157,14 +157,18 @@
     {
       "raw": "1 cup whole milk (see notes up top for adjustments)",
       "expected": {
-        "item": "whole milk (see notes up top for adjustments)",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes up top for adjustments",
         "category": "Dairy & Eggs"
       }
     },

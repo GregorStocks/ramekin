@@ -5,23 +5,23 @@
     {
       "raw": "350 g Japanese sweet potato (satsumaimo) ((satsumaimo))",
       "expected": {
-        "item": "Japanese sweet potato (satsumaimo) (satsumaimo)",
+        "item": "Japanese sweet potato",
         "measurements": [
           {
             "amount": "350",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "satsumaimo, satsumaimo",
         "category": "Produce"
       }
     },
     {
       "raw": "water (for soaking)",
       "expected": {
-        "item": "water (for soaking)",
+        "item": "water",
         "measurements": [],
-        "note": null,
+        "note": "for soaking",
         "category": "Other"
       }
     },
@@ -42,23 +42,23 @@
     {
       "raw": "cooking oil (for deep frying)",
       "expected": {
-        "item": "cooking oil (for deep frying)",
+        "item": "cooking oil",
         "measurements": [],
-        "note": null,
+        "note": "for deep frying",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "60 g white caster sugar (or granulated)",
       "expected": {
-        "item": "white caster sugar (or granulated)",
+        "item": "white caster sugar",
         "measurements": [
           {
             "amount": "60",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or granulated",
         "category": "Baking"
       }
     },
@@ -119,18 +119,14 @@
     {
       "raw": "½ tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.7",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },

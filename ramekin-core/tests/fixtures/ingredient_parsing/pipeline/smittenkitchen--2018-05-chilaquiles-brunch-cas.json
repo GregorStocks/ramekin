@@ -12,42 +12,42 @@
             "unit": "small"
           }
         ],
-        "note": "quartered and fried until crisp",
+        "note": "6-inch, quartered and fried until crisp",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "1 1/4 cups (from a 10-ounce can) red enchilada sauce [see Note]",
       "expected": {
-        "item": "(from a 10-ounce can) red enchilada sauce [see Note]",
+        "item": "red enchilada sauce [see Note]",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from a 10-ounce can",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1 3/4 cups (from a 15-ounce can) black beans, drained and rinsed",
       "expected": {
-        "item": "(from a 15-ounce can) black beans",
+        "item": "black beans",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "from a 15-ounce can, drained and rinsed",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "2 cups (8 ounces) coarsely grated shredded monterey jack or cheddar cheese (I used a mix)",
       "expected": {
-        "item": "coarsely grated shredded monterey jack or cheddar cheese (I used a mix)",
+        "item": "coarsely grated shredded monterey jack or cheddar cheese",
         "measurements": [
           {
             "amount": "2",
@@ -62,7 +62,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used a mix",
         "category": "Cheese"
       }
     },

@@ -63,7 +63,7 @@
     {
       "raw": "1/2 pound Italian sausage (we like 1/2 sweet and 1/2 hot Italian sausage), out of casing, broken into small pieces",
       "expected": {
-        "item": "Italian sausage (we like 1/2 sweet and 1/2 hot Italian sausage), out of casing, broken into small pieces",
+        "item": "Italian sausage, out of casing, broken into small pieces",
         "measurements": [
           {
             "amount": "0.5",
@@ -74,7 +74,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "we like 1/2 sweet and 1/2 hot Italian sausage",
         "category": "Meat & Seafood"
       }
     },

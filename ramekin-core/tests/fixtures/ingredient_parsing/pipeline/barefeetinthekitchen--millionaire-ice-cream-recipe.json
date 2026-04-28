@@ -73,14 +73,14 @@
     {
       "raw": "1  vanilla bean (scraped or 1 tablespoon vanilla extract)",
       "expected": {
-        "item": "vanilla bean (scraped",
+        "item": "vanilla bean",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "or 1 tablespoon vanilla extract)",
+        "note": "scraped or 1 tablespoon vanilla extract",
         "category": "Spices & Seasonings"
       }
     },

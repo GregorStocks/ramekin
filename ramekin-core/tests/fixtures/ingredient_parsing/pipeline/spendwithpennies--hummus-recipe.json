@@ -91,15 +91,15 @@
     {
       "raw": "½  lemon (juiced, about 2 tablespoons)",
       "expected": {
-        "item": "lemon (juiced, about 2 tablespoons)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced, about 2 tablespoons",
+        "category": "Produce"
       }
     },
     {

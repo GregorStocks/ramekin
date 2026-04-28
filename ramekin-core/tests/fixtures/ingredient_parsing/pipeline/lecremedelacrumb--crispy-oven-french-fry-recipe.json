@@ -5,7 +5,7 @@
     {
       "raw": "1 pound russet potatoes (or Idaho potatoes)",
       "expected": {
-        "item": "russet potatoes (or Idaho potatoes)",
+        "item": "russet potatoes",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Idaho potatoes",
         "category": "Produce"
       }
     },

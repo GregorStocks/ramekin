@@ -5,28 +5,36 @@
     {
       "raw": "1   cup    flour (whichever kind you prefer)",
       "expected": {
-        "item": "flour (whichever kind you prefer)",
+        "item": "flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "whichever kind you prefer",
         "category": "Baking"
       }
     },
     {
       "raw": "1   tablespoon    sugar (I used organic cane sugar)",
       "expected": {
-        "item": "sugar (I used organic cane sugar)",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used organic cane sugar",
         "category": "Baking"
       }
     },

@@ -141,14 +141,14 @@
     {
       "raw": "small flour or corn tortillas (warmed)",
       "expected": {
-        "item": "flour or corn tortillas (warmed)",
+        "item": "flour or corn tortillas",
         "measurements": [
           {
             "amount": null,
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "warmed",
         "category": "Bakery & Bread"
       }
     },

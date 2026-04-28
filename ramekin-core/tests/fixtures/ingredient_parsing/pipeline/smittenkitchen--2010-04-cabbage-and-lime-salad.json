@@ -73,14 +73,18 @@
     {
       "raw": "1/4 cup fresh lime juice (from about 2 small limes)",
       "expected": {
-        "item": "fresh lime juice (from about 2 small limes)",
+        "item": "fresh lime juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 2 small limes",
         "category": "Beverages"
       }
     },

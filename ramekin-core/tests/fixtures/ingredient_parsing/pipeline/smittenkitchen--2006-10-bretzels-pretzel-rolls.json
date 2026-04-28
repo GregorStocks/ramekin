@@ -73,14 +73,14 @@
     {
       "raw": "1 cup plus 2 tablespoons (about) hot water (125°F to 130°F)",
       "expected": {
-        "item": "(about) hot water (125°F to 130°F)",
+        "item": "hot water",
         "measurements": [
           {
             "amount": "1 cup plus 2 tablespoons",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "about, 125°F to 130°F",
         "category": "Other"
       }
     },
@@ -157,7 +157,7 @@
             "unit": null
           }
         ],
-        "note": "beaten to blend (glaze)",
+        "note": "glaze, beaten to blend",
         "category": "Dairy & Eggs"
       }
     },

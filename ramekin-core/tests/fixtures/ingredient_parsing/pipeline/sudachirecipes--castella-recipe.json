@@ -5,14 +5,14 @@
     {
       "raw": "1 tbsp coarse sugar (turbinado or similar)",
       "expected": {
-        "item": "coarse sugar (turbinado or similar)",
+        "item": "coarse sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "turbinado or similar",
         "category": "Baking"
       }
     },
@@ -137,14 +137,14 @@
     {
       "raw": "30 ml cooking oil (any neutral oil, I used canola)",
       "expected": {
-        "item": "cooking oil (any neutral oil, I used canola)",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "30",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "any neutral oil, I used canola",
         "category": "Oils & Vinegars"
       }
     }

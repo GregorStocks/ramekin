@@ -55,14 +55,14 @@
     {
       "raw": "1/2 tsp dark molasses (or 1 tsp instant coffee)",
       "expected": {
-        "item": "dark molasses (or 1 tsp instant coffee)",
+        "item": "dark molasses",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or 1 tsp instant coffee",
         "category": "Baking"
       }
     },

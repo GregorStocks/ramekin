@@ -153,14 +153,14 @@
     {
       "raw": "1 tablespoon Creole seasoning (such as Tony Chachere's)",
       "expected": {
-        "item": "Creole seasoning (such as Tony Chachere's)",
+        "item": "Creole seasoning",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "such as Tony Chachere's",
         "category": "Spices & Seasonings"
       }
     },

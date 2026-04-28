@@ -19,14 +19,14 @@
     {
       "raw": "2 heaping tablespoons chocolate-hazelnut spread&nbsp;(such as Nutella)",
       "expected": {
-        "item": "chocolate-hazelnut spread (such as Nutella)",
+        "item": "chocolate-hazelnut spread",
         "measurements": [
           {
             "amount": "2",
             "unit": "heaping tbsp"
           }
         ],
-        "note": null,
+        "note": "such as Nutella",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -40,7 +40,7 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "about 45",
         "category": "Snacks"
       }
     },

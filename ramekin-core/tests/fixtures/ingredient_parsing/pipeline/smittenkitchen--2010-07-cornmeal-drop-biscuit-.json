@@ -175,14 +175,14 @@
     {
       "raw": "1/4 cup fine stone-ground cornmeal (yellow or white)",
       "expected": {
-        "item": "fine stone-ground cornmeal (yellow or white)",
+        "item": "fine stone-ground cornmeal",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "yellow or white",
         "category": "Baking"
       }
     },

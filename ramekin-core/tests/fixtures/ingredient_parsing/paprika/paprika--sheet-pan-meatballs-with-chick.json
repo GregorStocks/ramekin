@@ -16,7 +16,7 @@
             "unit": "can"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "15-ounce, drained and rinsed",
         "section": "Chickpeas",
         "category": "Canned Goods"
       }
@@ -333,14 +333,18 @@
     {
       "raw": "3 tablespoons lemon juice (from about 3/4 of a lemon)",
       "expected": {
-        "item": "lemon juice (from about 3/4 of a lemon)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "46",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 3/4 of a lemon",
         "section": "To Serve",
         "category": "Beverages"
       }

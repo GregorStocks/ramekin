@@ -5,14 +5,18 @@
     {
       "raw": "1 cup freshly squeezed lemon juice  (Meyer lemons are preferred )",
       "expected": {
-        "item": "freshly squeezed lemon juice  (Meyer lemons are preferred",
+        "item": "freshly squeezed lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "244",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Meyer lemons are preferred",
         "category": "Beverages"
       }
     },
@@ -37,14 +41,18 @@
     {
       "raw": "1 cup honey  (or maple syrup / other sweeteners )",
       "expected": {
-        "item": "honey  (or maple syrup / other sweeteners",
+        "item": "honey",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or maple syrup / other sweeteners",
         "category": "Baking"
       }
     },

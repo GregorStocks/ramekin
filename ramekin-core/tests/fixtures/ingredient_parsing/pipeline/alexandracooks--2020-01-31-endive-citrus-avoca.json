@@ -70,14 +70,14 @@
     {
       "raw": "1 tablespoon white balsamic vinegar (or other)",
       "expected": {
-        "item": "white balsamic vinegar (or other)",
+        "item": "white balsamic vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or other",
         "category": "Oils & Vinegars"
       }
     },

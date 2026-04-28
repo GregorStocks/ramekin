@@ -37,14 +37,14 @@
     {
       "raw": "200 g cooked Japanese short-grain rice (or Calrose &amp;quot;sushi rice&amp;quot;)",
       "expected": {
-        "item": "cooked Japanese short-grain rice (or Calrose \"sushi rice\")",
+        "item": "cooked Japanese short-grain rice",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Calrose \"sushi rice\"",
         "category": "Pasta & Rice"
       }
     },
@@ -79,14 +79,14 @@
     {
       "raw": "¼  Japanese leek (naganegi) (white part only, finely diced (or regular leek/scallions))",
       "expected": {
-        "item": "Japanese leek (naganegi) (white part only",
+        "item": "Japanese leek",
         "measurements": [
           {
             "amount": "0.25",
             "unit": null
           }
         ],
-        "note": "finely diced (or regular leek/scallions)",
+        "note": "naganegi, white part only, finely diced (or regular leek/scallions",
         "category": "Produce"
       }
     },
@@ -114,7 +114,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1% of the rice quantity, approx 1/4 tsp per 200g",
         "category": "Spices & Seasonings"
       }
     },
@@ -149,9 +149,9 @@
     {
       "raw": "red pickled ginger (benishoga) (to garnish)",
       "expected": {
-        "item": "red pickled ginger (benishoga) (to garnish)",
+        "item": "red pickled ginger",
         "measurements": [],
-        "note": null,
+        "note": "benishoga, to garnish",
         "category": "Canned Goods"
       }
     }

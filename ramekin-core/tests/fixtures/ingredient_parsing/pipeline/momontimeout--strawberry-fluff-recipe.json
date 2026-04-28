@@ -5,7 +5,7 @@
     {
       "raw": "8 oz Cool Whip (can use lite)",
       "expected": {
-        "item": "Cool Whip (can use lite)",
+        "item": "Cool Whip",
         "measurements": [
           {
             "amount": "8",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "can use lite",
         "category": "Other"
       }
     },
@@ -77,14 +77,14 @@
     {
       "raw": "2 cups mini marshmallows (use the multi-colored ones if possible)",
       "expected": {
-        "item": "mini marshmallows (use the multi-colored ones if possible)",
+        "item": "mini marshmallows",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "use the multi-colored ones if possible",
         "category": "Other"
       }
     },

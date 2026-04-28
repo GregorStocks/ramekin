@@ -87,14 +87,14 @@
     {
       "raw": "Half of a seedless (English or hothouse) cucumber",
       "expected": {
-        "item": "seedless (English or hothouse) cucumber",
+        "item": "seedless cucumber",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "English or hothouse",
         "category": "Produce"
       }
     },

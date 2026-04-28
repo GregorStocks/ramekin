@@ -5,14 +5,14 @@
     {
       "raw": "2 large red peppers, roasted and skinned (great directions over here, if you’re new to this)",
       "expected": {
-        "item": "red peppers, roasted and skinned (great directions over here, if you’re new to this)",
+        "item": "red peppers",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "great directions over here, if you’re new to this, roasted and skinned",
         "category": "Spices & Seasonings"
       }
     },
@@ -26,7 +26,7 @@
             "unit": "cup"
           }
         ],
-        "note": "rinsed if canned",
+        "note": "about 2 15-ounce cans, rinsed if canned",
         "category": "Canned Goods"
       }
     },

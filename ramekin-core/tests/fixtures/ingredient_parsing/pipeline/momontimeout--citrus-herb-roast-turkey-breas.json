@@ -37,14 +37,14 @@
     {
       "raw": "1  onion (cut into wedges)",
       "expected": {
-        "item": "onion (cut into wedges)",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into wedges",
         "category": "Produce"
       }
     },

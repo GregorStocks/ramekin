@@ -85,7 +85,7 @@
     {
       "raw": "1/4 cup panko (15 grams or 1/2 ounce) or slightly coarse homemade breadcrumbs (from a thin slice of hearty bread)",
       "expected": {
-        "item": "panko or slightly coarse homemade breadcrumbs (from a thin slice of hearty bread)",
+        "item": "panko or slightly coarse homemade breadcrumbs",
         "measurements": [
           {
             "amount": "0.25",
@@ -100,7 +100,7 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "from a thin slice of hearty bread",
         "category": "Bakery & Bread"
       }
     },
@@ -148,7 +148,7 @@
     {
       "raw": "1 bunch (about 14 ounces or 400 grams) tuscan kale (also known as black or lacinato kale; this is the thinner, flatter leaf variety), washed and patted dry",
       "expected": {
-        "item": "tuscan kale (also known as black or lacinato kale; this is the thinner, flatter leaf variety)",
+        "item": "tuscan kale",
         "measurements": [
           {
             "amount": "1",
@@ -163,7 +163,7 @@
             "unit": "g"
           }
         ],
-        "note": "washed and patted dry",
+        "note": "also known as black or lacinato kale; this is the thinner, flatter leaf variety, washed and patted dry",
         "category": "Produce"
       }
     },

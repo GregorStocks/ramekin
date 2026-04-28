@@ -212,14 +212,14 @@
     {
       "raw": "1 tablespoon smooth Dijon mustard (double if it you like mustard; skip if you don’t)",
       "expected": {
-        "item": "smooth Dijon mustard (double if it you like mustard; skip if you don’t)",
+        "item": "smooth Dijon mustard",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "double if it you like mustard; skip if you don’t",
         "category": "Condiments & Sauces"
       }
     },
@@ -237,7 +237,7 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced or coarsely grated (see Note)",
+        "note": "see Note, thinly sliced or coarsely grated",
         "category": "Cheese"
       }
     },

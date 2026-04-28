@@ -55,7 +55,7 @@
     {
       "raw": "1 pound chicken thighs (boneless and skinless, cut into 1 inch cubes)",
       "expected": {
-        "item": "chicken thighs (boneless and skinless, cut into 1 inch cubes)",
+        "item": "chicken thighs",
         "measurements": [
           {
             "amount": "1",
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "boneless and skinless, cut into 1 inch cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -101,7 +101,7 @@
     {
       "raw": "12 ounce white mushrooms (cut in half)",
       "expected": {
-        "item": "white mushrooms (cut in half)",
+        "item": "white mushrooms",
         "measurements": [
           {
             "amount": "12",
@@ -112,35 +112,43 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut in half",
         "category": "Produce"
       }
     },
     {
       "raw": "½ cup white wine (I used Sauvignon Blanc)",
       "expected": {
-        "item": "white wine (I used Sauvignon Blanc)",
+        "item": "white wine",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used Sauvignon Blanc",
         "category": "Beverages"
       }
     },
     {
       "raw": "1 cup chicken broth (low sodium)",
       "expected": {
-        "item": "chicken broth (low sodium)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "249",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Canned Goods"
       }
     },
@@ -179,14 +187,18 @@
     {
       "raw": "2 tablespoon butter (unsalted)",
       "expected": {
-        "item": "butter (unsalted)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsalted",
         "category": "Dairy & Eggs"
       }
     },

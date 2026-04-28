@@ -265,7 +265,7 @@
     {
       "raw": "1 tablespoon (15 ml) amaretto, Kahlua, or brandy (Deb note: I used brandy)",
       "expected": {
-        "item": "amaretto, Kahlua, or brandy (Deb note: I used brandy)",
+        "item": "amaretto, Kahlua, or brandy",
         "measurements": [
           {
             "amount": "1",
@@ -276,7 +276,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "Deb note: I used brandy",
         "category": "Beverages"
       }
     },
@@ -341,7 +341,7 @@
     {
       "raw": "1 tablespoon (15 ml) amaretto, Kahlua, or brandy (Deb note: I used brandy)",
       "expected": {
-        "item": "amaretto, Kahlua, or brandy (Deb note: I used brandy)",
+        "item": "amaretto, Kahlua, or brandy",
         "measurements": [
           {
             "amount": "1",
@@ -352,7 +352,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "Deb note: I used brandy",
         "category": "Beverages"
       }
     },

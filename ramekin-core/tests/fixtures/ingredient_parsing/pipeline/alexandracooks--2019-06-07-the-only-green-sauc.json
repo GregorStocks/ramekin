@@ -99,14 +99,14 @@
     {
       "raw": "1/4 cup avocado (see notes above)",
       "expected": {
-        "item": "avocado (see notes above)",
+        "item": "avocado",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Produce"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "4 (28-ounce) cans whole peeled tomatoes, preferably imported D.O.P. San Marzano tomatoes (see notes)",
       "expected": {
-        "item": "whole peeled tomatoes, preferably imported D.O.P. San Marzano tomatoes (see notes)",
+        "item": "whole peeled tomatoes, preferably imported D.O.P. San Marzano tomatoes",
         "measurements": [
           {
             "amount": "4",
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "28-ounce, see notes",
         "category": "Canned Goods"
       }
     },
@@ -178,14 +178,14 @@
     {
       "raw": "1/2 cup minced fresh parsley or basil leaves (or a mix of the two)",
       "expected": {
-        "item": "minced fresh parsley or basil leaves (or a mix of the two)",
+        "item": "minced fresh parsley or basil leaves",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or a mix of the two",
         "category": "Produce"
       }
     }

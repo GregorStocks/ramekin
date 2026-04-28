@@ -175,7 +175,7 @@
     {
       "raw": "3/4 cup (about 4.75 ounces or 135 grams) orzo (rice-shaped pasta)",
       "expected": {
-        "item": "orzo (rice-shaped pasta)",
+        "item": "orzo",
         "measurements": [
           {
             "amount": "0.75",
@@ -190,7 +190,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "rice-shaped pasta",
         "category": "Pasta & Rice"
       }
     },

@@ -102,7 +102,7 @@
             "unit": null
           }
         ],
-        "note": "trimmed",
+        "note": "5- to 7-ounce each; 140 to 200 g each, trimmed",
         "category": "Meat & Seafood"
       }
     },
@@ -257,7 +257,7 @@
     {
       "raw": "2 tablespoons (30 ml) fresh lime juice (from 1 lime)",
       "expected": {
-        "item": "fresh lime juice (from 1 lime)",
+        "item": "fresh lime juice",
         "measurements": [
           {
             "amount": "2",
@@ -266,9 +266,13 @@
           {
             "amount": "30",
             "unit": "ml"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 1 lime",
         "category": "Beverages"
       }
     },

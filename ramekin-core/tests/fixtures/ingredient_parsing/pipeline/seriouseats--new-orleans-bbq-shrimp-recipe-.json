@@ -27,7 +27,7 @@
     {
       "raw": "1 1/2 pounds jumbo (16/20) shrimp (preferably Gulf), head-on and unpeeled (see notes)",
       "expected": {
-        "item": "jumbo shrimp (preferably Gulf)",
+        "item": "jumbo shrimp",
         "measurements": [
           {
             "amount": "1.5",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "head-on and unpeeled (see notes)",
+        "note": "16/20, preferably Gulf, see notes, head-on and unpeeled",
         "category": "Meat & Seafood"
       }
     },
@@ -127,14 +127,14 @@
     {
       "raw": "2 teaspoons Cajun seasoning mix, such as Tony Chachere's or Slap Ya Mama (see notes)",
       "expected": {
-        "item": "Cajun seasoning mix, such as Tony Chachere's or Slap Ya Mama (see notes)",
+        "item": "Cajun seasoning mix, such as Tony Chachere's or Slap Ya Mama",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Spices & Seasonings"
       }
     },

@@ -167,28 +167,28 @@
     {
       "raw": "1/4 cup Meyer lemon juice (from 2-3 lemons)",
       "expected": {
-        "item": "Meyer lemon juice (from 2-3 lemons)",
+        "item": "Meyer lemon juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 2-3 lemons",
         "category": "Beverages"
       }
     },
     {
       "raw": "1 teaspoon Meyer lemon zest (from 1 lemon)",
       "expected": {
-        "item": "Meyer lemon zest (from 1 lemon)",
+        "item": "Meyer lemon zest",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "from 1 lemon",
         "category": "Produce"
       }
     },
@@ -277,14 +277,14 @@
     {
       "raw": "pinch fine sea salt (omit if using salted butter)",
       "expected": {
-        "item": "fine sea salt (omit if using salted butter)",
+        "item": "fine sea salt",
         "measurements": [
           {
             "amount": null,
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "omit if using salted butter",
         "category": "Spices & Seasonings"
       }
     }

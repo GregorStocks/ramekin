@@ -33,14 +33,18 @@
     {
       "raw": "1 tbsp all-purpose flour (for dusting)",
       "expected": {
-        "item": "all-purpose flour (for dusting)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "7.8",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for dusting",
         "category": "Baking"
       }
     },
@@ -125,14 +129,14 @@
     {
       "raw": "200 g cabbage kimchi (napa cabbage kimchi, mild if possible)",
       "expected": {
-        "item": "cabbage kimchi (napa cabbage kimchi, mild if possible)",
+        "item": "cabbage kimchi",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "napa cabbage kimchi, mild if possible",
         "category": "Produce"
       }
     },
@@ -185,32 +189,28 @@
     {
       "raw": "2 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "32",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "2 tbsp yellow miso paste (awase) ((yellow))",
       "expected": {
-        "item": "yellow miso paste (awase) (yellow)",
+        "item": "yellow miso paste",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "awase, yellow",
         "category": "Condiments & Sauces"
       }
     },
@@ -253,56 +253,56 @@
     {
       "raw": "150 g firm tofu (or silken if you prefer)",
       "expected": {
-        "item": "firm tofu (or silken if you prefer)",
+        "item": "firm tofu",
         "measurements": [
           {
             "amount": "150",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or silken if you prefer",
         "category": "Produce"
       }
     },
     {
       "raw": "100 g enoki mushrooms (or mushroom of your choice)",
       "expected": {
-        "item": "enoki mushrooms (or mushroom of your choice)",
+        "item": "enoki mushrooms",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or mushroom of your choice",
         "category": "Produce"
       }
     },
     {
       "raw": "100 g green cabbage (or napa cabbage)",
       "expected": {
-        "item": "green cabbage (or napa cabbage)",
+        "item": "green cabbage",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or napa cabbage",
         "category": "Produce"
       }
     },
     {
       "raw": "30 g garlic chive(s) (cut into 5 cm)",
       "expected": {
-        "item": "garlic chive(s) (cut into 5 cm)",
+        "item": "garlic chive",
         "measurements": [
           {
             "amount": "30",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "s, cut into 5 cm",
         "category": "Produce"
       }
     },

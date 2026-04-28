@@ -147,14 +147,18 @@
     {
       "raw": "1 1/2 teaspoons molasses (you can swap this with additional honey, if desired)",
       "expected": {
-        "item": "molasses (you can swap this with additional honey, if desired)",
+        "item": "molasses",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "11",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "you can swap this with additional honey, if desired",
         "category": "Baking"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds white fish fillet ((cod, halibut, mahi mahi, tilapia, snapper, sea bass) chopped into small, bite-size square pieces)",
       "expected": {
-        "item": "white fish fillet (cod, halibut, mahi mahi, tilapia, snapper, sea bass) chopped into small, bite-size square pieces)",
+        "item": "white fish fillet chopped into small, bite-size square pieces)",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cod, halibut, mahi mahi, tilapia, snapper, sea bass",
         "category": "Meat & Seafood"
       }
     },
@@ -37,14 +37,14 @@
     {
       "raw": "4 cloves  garlic (smashed)",
       "expected": {
-        "item": "garlic (smashed)",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "4",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "smashed",
         "category": "Produce"
       }
     },
@@ -87,42 +87,42 @@
     {
       "raw": "10  limes (juiced (enough to fully cover the fish in lime juice))",
       "expected": {
-        "item": "limes (juiced (enough to fully cover the fish in lime juice)",
+        "item": "limes",
         "measurements": [
           {
             "amount": "10",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced (enough to fully cover the fish in lime juice",
+        "category": "Produce"
       }
     },
     {
       "raw": "1 large grapefruit (juiced)",
       "expected": {
-        "item": "grapefruit (juiced)",
+        "item": "grapefruit",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "juiced",
         "category": "Produce"
       }
     },
     {
       "raw": "2  oranges (juiced)",
       "expected": {
-        "item": "oranges (juiced)",
+        "item": "oranges",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "juiced",
         "category": "Produce"
       }
     },
@@ -198,15 +198,15 @@
     {
       "raw": "10  limes (juiced)",
       "expected": {
-        "item": "limes (juiced)",
+        "item": "limes",
         "measurements": [
           {
             "amount": "10",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {

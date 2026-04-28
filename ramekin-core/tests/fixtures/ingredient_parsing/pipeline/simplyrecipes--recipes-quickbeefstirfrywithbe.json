@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed",
+        "note": "about 1/2 inch thick, trimmed",
         "category": "Meat & Seafood"
       }
     },
@@ -99,7 +99,7 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced lengthwise (root to top)",
+        "note": "root to top, thinly sliced lengthwise",
         "category": "Produce"
       }
     },
@@ -134,14 +134,18 @@
     {
       "raw": "1 tablespoon soy sauce (use gluten-free soy sauce if cooking gluten-free)",
       "expected": {
-        "item": "soy sauce (use gluten-free soy sauce if cooking gluten-free)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "use gluten-free soy sauce if cooking gluten-free",
         "category": "Condiments & Sauces"
       }
     },

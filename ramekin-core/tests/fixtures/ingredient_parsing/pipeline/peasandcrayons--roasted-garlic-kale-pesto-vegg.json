@@ -118,14 +118,14 @@
     {
       "raw": "1/2  head of roasted garlic ((approx. 6 cloves))",
       "expected": {
-        "item": "roasted garlic (approx. 6 cloves)",
+        "item": "roasted garlic",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "approx. 6 cloves",
         "category": "Produce"
       }
     },
@@ -141,21 +141,21 @@
     {
       "raw": "pinch of black pepper (if desired)",
       "expected": {
-        "item": "black pepper (if desired)",
+        "item": "black pepper",
         "measurements": [
           {
             "amount": null,
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "if desired",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "8 oz pasta ((choose one with ridges + grooves))",
       "expected": {
-        "item": "pasta (choose one with ridges + grooves)",
+        "item": "pasta",
         "measurements": [
           {
             "amount": "8",
@@ -166,7 +166,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "choose one with ridges + grooves",
         "category": "Pasta & Rice"
       }
     },
@@ -209,7 +209,7 @@
     {
       "raw": "2-4 oz cheese (I used mozzarella + parmesan)",
       "expected": {
-        "item": "cheese (I used mozzarella + parmesan)",
+        "item": "cheese",
         "measurements": [
           {
             "amount": "2-4",
@@ -220,7 +220,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used mozzarella + parmesan",
         "category": "Cheese"
       }
     }

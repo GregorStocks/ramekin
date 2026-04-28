@@ -5,14 +5,14 @@
     {
       "raw": "3 1/2 cups of favorite chili (or two 14-ounce cans)",
       "expected": {
-        "item": "favorite chili (or two 14-ounce cans)",
+        "item": "favorite chili",
         "measurements": [
           {
             "amount": "3.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or two 14-ounce cans",
         "category": "Other"
       }
     },
@@ -78,9 +78,9 @@
     {
       "raw": "to serve, any/all of the following: scallions, salted yogurt (regular on non-dairy), cilantro, red onions, chopped olives",
       "expected": {
-        "item": "to serve, any/all of the following: scallions, salted yogurt (regular on non-dairy), cilantro, red onions",
+        "item": "to serve, any/all of the following: scallions, salted yogurt, cilantro, red onions",
         "measurements": [],
-        "note": "chopped olives",
+        "note": "regular on non-dairy, chopped olives",
         "category": "Produce"
       }
     }

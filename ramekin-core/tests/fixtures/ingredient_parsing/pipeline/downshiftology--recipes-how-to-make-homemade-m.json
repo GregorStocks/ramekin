@@ -37,14 +37,18 @@
     {
       "raw": "1 cup honey (or maple syrup)",
       "expected": {
-        "item": "honey (or maple syrup)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "340",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or maple syrup",
         "category": "Baking"
       }
     },
@@ -69,14 +73,14 @@
     {
       "raw": "1  vanilla bean (scraped (or 1 tsp vanilla extract))",
       "expected": {
-        "item": "vanilla bean (scraped (or 1 tsp vanilla extract)",
+        "item": "vanilla bean",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "scraped (or 1 tsp vanilla extract",
         "category": "Spices & Seasonings"
       }
     },

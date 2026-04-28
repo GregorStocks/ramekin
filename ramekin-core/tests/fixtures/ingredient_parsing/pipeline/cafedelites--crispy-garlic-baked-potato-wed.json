@@ -73,14 +73,18 @@
     {
       "raw": "2 teaspoons salt (adjust to your tastes)",
       "expected": {
-        "item": "salt (adjust to your tastes)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "adjust to your tastes",
         "category": "Spices & Seasonings"
       }
     },

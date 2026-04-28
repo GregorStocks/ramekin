@@ -93,14 +93,14 @@
     {
       "raw": "150 g ground pork (or beef, or a mixture of both)",
       "expected": {
-        "item": "ground pork (or beef, or a mixture of both)",
+        "item": "ground pork",
         "measurements": [
           {
             "amount": "150",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or beef, or a mixture of both",
         "category": "Meat & Seafood"
       }
     },

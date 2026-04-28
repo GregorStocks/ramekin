@@ -37,14 +37,14 @@
     {
       "raw": "1 tablespoon minced fresh ginger, from a 1-inch knob (see note)",
       "expected": {
-        "item": "minced fresh ginger, from a 1-inch knob (see note)",
+        "item": "minced fresh ginger, from a 1-inch knob",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Produce"
       }
     },

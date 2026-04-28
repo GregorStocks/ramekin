@@ -23,14 +23,14 @@
     {
       "raw": "2 tea bags (whatever you like for iced tea)",
       "expected": {
-        "item": "tea bags (whatever you like for iced tea)",
+        "item": "tea bags",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "whatever you like for iced tea",
         "category": "Beverages"
       }
     },
@@ -80,7 +80,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 3 well-squeezed oranges",
         "category": "Produce"
       }
     },
@@ -98,7 +98,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 lemons",
         "category": "Beverages"
       }
     },

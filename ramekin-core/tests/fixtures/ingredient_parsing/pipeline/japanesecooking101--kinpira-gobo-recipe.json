@@ -5,28 +5,28 @@
     {
       "raw": "1  Gobo (burdock root, Sasagaki cut)",
       "expected": {
-        "item": "Gobo (burdock root, Sasagaki cut)",
+        "item": "Gobo",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "burdock root, Sasagaki cut",
         "category": "Other"
       }
     },
     {
       "raw": "1  carrot (thinly cut)",
       "expected": {
-        "item": "carrot (thinly cut)",
+        "item": "carrot",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "thinly cut",
         "category": "Produce"
       }
     },
@@ -51,14 +51,14 @@
     {
       "raw": "1/4 cup Dashi (or water)",
       "expected": {
-        "item": "Dashi (or water)",
+        "item": "Dashi",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or water",
         "category": "Other"
       }
     },
@@ -155,10 +155,10 @@
     {
       "raw": "Shichimi Togarashi (red hot pepper)",
       "expected": {
-        "item": "Shichimi Togarashi (red hot pepper)",
+        "item": "Shichimi Togarashi",
         "measurements": [],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "red hot pepper",
+        "category": "Other"
       }
     }
   ]

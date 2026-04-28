@@ -52,7 +52,7 @@
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "1 packet or 1/4 ounce or 7 grams",
         "category": "Baking"
       }
     },
@@ -77,7 +77,7 @@
     {
       "raw": "2 cups (475 ml) milk, heavy cream or a combination thereof (see note up top), divided",
       "expected": {
-        "item": "milk, heavy cream or a combination thereof (see note up top)",
+        "item": "milk, heavy cream or a combination thereof",
         "measurements": [
           {
             "amount": "2",
@@ -88,14 +88,14 @@
             "unit": "ml"
           }
         ],
-        "note": "divided",
+        "note": "see note up top, divided",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1/4 to 1/2 cup (50 to 100 grams) granulated sugar (see note up top)",
       "expected": {
-        "item": "granulated sugar (see note up top)",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.25 to 0.5",
@@ -106,14 +106,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note up top",
         "category": "Baking"
       }
     },
     {
       "raw": "2 tablespoons (30 ml) freshly squeezed lemon juice (from about 1/2 lemon)",
       "expected": {
-        "item": "freshly squeezed lemon juice (from about 1/2 lemon)",
+        "item": "freshly squeezed lemon juice",
         "measurements": [
           {
             "amount": "2",
@@ -122,9 +122,13 @@
           {
             "amount": "30",
             "unit": "ml"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 1/2 lemon",
         "category": "Beverages"
       }
     },

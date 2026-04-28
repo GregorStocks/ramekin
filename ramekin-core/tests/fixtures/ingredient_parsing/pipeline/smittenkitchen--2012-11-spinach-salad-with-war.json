@@ -51,14 +51,14 @@
     {
       "raw": "1 large egg, hard-boiled (see above), chilled, peeled and thinly sliced",
       "expected": {
-        "item": "egg, hard-boiled (see above), chilled",
+        "item": "egg, hard-boiled, chilled",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "peeled and thinly sliced",
+        "note": "see above, peeled and thinly sliced",
         "category": "Dairy & Eggs"
       }
     },

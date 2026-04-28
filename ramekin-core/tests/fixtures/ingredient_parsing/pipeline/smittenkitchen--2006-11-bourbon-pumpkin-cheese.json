@@ -5,7 +5,7 @@
     {
       "raw": "3/4 cup (115 grams) graham cracker (from five full graham crackers) or gingersnap crumbs",
       "expected": {
-        "item": "graham cracker (from five full graham crackers) or gingersnap crumbs",
+        "item": "graham cracker or gingersnap crumbs",
         "measurements": [
           {
             "amount": "0.75",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from five full graham crackers",
         "category": "Snacks"
       }
     },
@@ -306,7 +306,7 @@
             "unit": "package"
           }
         ],
-        "note": "at room temperature",
+        "note": "8-ounce, at room temperature",
         "category": "Cheese"
       }
     },
@@ -367,9 +367,9 @@
     {
       "raw": "Pecan halves (to garnish)",
       "expected": {
-        "item": "Pecan halves (to garnish)",
+        "item": "Pecan halves",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "category": "Nuts & Dried Fruit"
       }
     }

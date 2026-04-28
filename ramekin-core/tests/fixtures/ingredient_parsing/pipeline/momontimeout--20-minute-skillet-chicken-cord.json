@@ -110,15 +110,19 @@
     {
       "raw": "1/2 cup white wine (can substitute chicken broth if desired)",
       "expected": {
-        "item": "white wine (can substitute chicken broth if desired)",
+        "item": "white wine",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "can substitute chicken broth if desired",
+        "category": "Beverages"
       }
     },
     {

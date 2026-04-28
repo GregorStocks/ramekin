@@ -182,7 +182,7 @@
             "unit": "can"
           }
         ],
-        "note": "drained",
+        "note": "15-ounce; 425 g, drained",
         "category": "Canned Goods"
       }
     },
@@ -196,7 +196,7 @@
             "unit": "can"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "15-ounce; 425 g each, drained and rinsed",
         "category": "Produce"
       }
     },
@@ -279,7 +279,7 @@
     {
       "raw": "1/4 cup (60 ml) plain whole-milk strained (Greek-style) yogurt",
       "expected": {
-        "item": "plain whole-milk strained (Greek-style) yogurt",
+        "item": "plain whole-milk strained yogurt",
         "measurements": [
           {
             "amount": "0.25",
@@ -290,7 +290,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "Greek-style",
         "category": "Dairy & Eggs"
       }
     }

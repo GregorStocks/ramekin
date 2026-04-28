@@ -5,7 +5,7 @@
     {
       "raw": "1 pound Swiss chard (can also swap kale, spinach or another green), ribs and stems removed and cleaned",
       "expected": {
-        "item": "Swiss chard (can also swap kale, spinach or another green)",
+        "item": "Swiss chard",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "ribs and stems removed and cleaned",
+        "note": "can also swap kale, spinach or another green, ribs and stems removed and cleaned",
         "category": "Produce"
       }
     },
@@ -139,14 +139,14 @@
     {
       "raw": "2 15-ounce cans (or about 3 3/4 cups) white beans, drained and rinsed",
       "expected": {
-        "item": "(or about 3 3/4 cups) white beans",
+        "item": "white beans",
         "measurements": [
           {
             "amount": "2",
             "unit": "15-ounce cans"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "or about 3 3/4 cups, drained and rinsed",
         "category": "Canned Goods"
       }
     },
@@ -171,14 +171,14 @@
     {
       "raw": "1 cup pureed tomatoes (from a can/carton/your jarred summer supply)",
       "expected": {
-        "item": "pureed tomatoes (from a can/carton/your jarred summer supply)",
+        "item": "pureed tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from a can/carton/your jarred summer supply",
         "category": "Produce"
       }
     },

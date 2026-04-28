@@ -5,14 +5,14 @@
     {
       "raw": "1 9x13 Lemon Cake  (box cake mix, prepared according to package instructions)",
       "expected": {
-        "item": "9x13 Lemon Cake  (box cake mix, prepared according to package instructions)",
+        "item": "9x13 Lemon Cake",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "box cake mix, prepared according to package instructions",
         "category": "Produce"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "6 bell peppers (if you can get a mix of colors, go for it)",
       "expected": {
-        "item": "bell peppers (if you can get a mix of colors, go for it)",
+        "item": "bell peppers",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "if you can get a mix of colors, go for it",
         "category": "Produce"
       }
     },

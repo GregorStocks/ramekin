@@ -5,14 +5,18 @@
     {
       "raw": "1 cup whole milk ((warm, 105 degrees F))",
       "expected": {
-        "item": "whole milk (warm, 105 degrees F)",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "warm, 105 degrees F",
         "category": "Dairy & Eggs"
       }
     },

@@ -19,9 +19,9 @@
     {
       "raw": "Extra-virgin olive oil (for drizzling)",
       "expected": {
-        "item": "Extra-virgin olive oil (for drizzling)",
+        "item": "Extra-virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for drizzling",
         "category": "Oils & Vinegars"
       }
     },
@@ -70,9 +70,9 @@
     {
       "raw": "Lemon wedge (for squeezing)",
       "expected": {
-        "item": "Lemon wedge (for squeezing)",
+        "item": "Lemon wedge",
         "measurements": [],
-        "note": null,
+        "note": "for squeezing",
         "category": "Produce"
       }
     },

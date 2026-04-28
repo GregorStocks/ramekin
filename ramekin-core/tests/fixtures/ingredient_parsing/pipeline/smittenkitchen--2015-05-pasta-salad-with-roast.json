@@ -93,14 +93,18 @@
     {
       "raw": "1 1/2 tablespoons dried oregano (if you can find it, Sicilian is my favorite)",
       "expected": {
-        "item": "dried oregano (if you can find it, Sicilian is my favorite)",
+        "item": "dried oregano",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "4.5",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "if you can find it, Sicilian is my favorite",
         "category": "Spices & Seasonings"
       }
     },
@@ -193,7 +197,7 @@
     {
       "raw": "1 pound (455 grams) dried pasta, a bite-sized shape of your choosing (I used reginetti), cooked until 1 to 2 minutes before doneness and drained",
       "expected": {
-        "item": "dried pasta, a bite-sized shape of your choosing (I used reginetti)",
+        "item": "dried pasta, a bite-sized shape of your choosing",
         "measurements": [
           {
             "amount": "1",
@@ -204,7 +208,7 @@
             "unit": "g"
           }
         ],
-        "note": "cooked until 1 to 2 minutes before doneness and drained",
+        "note": "I used reginetti, cooked until 1 to 2 minutes before doneness and drained",
         "category": "Pasta & Rice"
       }
     },
@@ -247,7 +251,7 @@
     {
       "raw": "1/2 cup (70 grams) pitted and rough-chopped olives of your choice (I used gaeta here, but like them even more when oil-cured)",
       "expected": {
-        "item": "pitted and rough-chopped olives of your choice (I used gaeta here, but like them even more when oil-cured)",
+        "item": "pitted and rough-chopped olives of your choice",
         "measurements": [
           {
             "amount": "0.5",
@@ -258,7 +262,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used gaeta here, but like them even more when oil-cured",
         "category": "Canned Goods"
       }
     },

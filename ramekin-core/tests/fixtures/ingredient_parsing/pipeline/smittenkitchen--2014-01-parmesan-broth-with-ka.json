@@ -124,7 +124,7 @@
     {
       "raw": "2 to 3 ounces tuscan kale (also known as black or lacinato kale; this is the thinner, flatter leaf variety), washed and patted dry (updated measurement)",
       "expected": {
-        "item": "tuscan kale (also known as black or lacinato kale; this is the thinner, flatter leaf variety)",
+        "item": "tuscan kale",
         "measurements": [
           {
             "amount": "2 to 3",
@@ -135,21 +135,21 @@
             "unit": "g"
           }
         ],
-        "note": "washed and patted dry (updated measurement)",
+        "note": "also known as black or lacinato kale; this is the thinner, flatter leaf variety, updated measurement, washed and patted dry",
         "category": "Produce"
       }
     },
     {
       "raw": "1 1/4 cups cooked white beans (from about 1/4 pound dried), with their cooking liquid if fresh (usually about 1 1/2 cups) (updated measurement)",
       "expected": {
-        "item": "cooked white beans, with their cooking liquid if fresh (usually about 1 1/2 cups) (updated measurement)",
+        "item": "cooked white beans, with their cooking liquid if fresh",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": "from about 1/4 pound dried",
+        "note": "usually about 1 1/2 cups, updated measurement, from about 1/4 pound dried",
         "category": "Canned Goods"
       }
     },

@@ -33,21 +33,21 @@
     {
       "raw": "3 cups diced fresh red, yellow and green bell peppers (I used all red)",
       "expected": {
-        "item": "diced fresh red, yellow and green bell peppers (I used all red)",
+        "item": "diced fresh red, yellow and green bell peppers",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used all red",
         "category": "Produce"
       }
     },
     {
       "raw": "1 (13.8 oz.) tube refrigerated pizza dough (I used 1lb of homemade crust)",
       "expected": {
-        "item": "tube refrigerated pizza dough (I used 1lb of homemade crust)",
+        "item": "tube refrigerated pizza dough",
         "measurements": [
           {
             "amount": "1",
@@ -62,7 +62,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used 1lb of homemade crust",
         "category": "Other"
       }
     },

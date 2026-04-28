@@ -19,14 +19,18 @@
     {
       "raw": "1/3 cup half and half (or milk)",
       "expected": {
-        "item": "half and half (or milk)",
+        "item": "half and half",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "81",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or milk",
         "category": "Dairy & Eggs"
       }
     },
@@ -61,14 +65,14 @@
     {
       "raw": "1/2 cup grated cheddar (gruyere works well, too)",
       "expected": {
-        "item": "grated cheddar (gruyere works well, too)",
+        "item": "grated cheddar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "gruyere works well, too",
         "category": "Cheese"
       }
     },

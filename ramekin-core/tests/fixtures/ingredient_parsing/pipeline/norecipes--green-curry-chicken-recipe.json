@@ -101,14 +101,14 @@
     {
       "raw": "550 grams boneless skin-on chicken thighs ((cut into bite-size pieces))",
       "expected": {
-        "item": "boneless skin-on chicken thighs (cut into bite-size pieces)",
+        "item": "boneless skin-on chicken thighs",
         "measurements": [
           {
             "amount": "550",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into bite-size pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -185,14 +185,14 @@
     {
       "raw": "25 grams Thai basil ((leaves picked from stems))",
       "expected": {
-        "item": "Thai basil (leaves picked from stems)",
+        "item": "Thai basil",
         "measurements": [
           {
             "amount": "25",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "leaves picked from stems",
         "category": "Spices & Seasonings"
       }
     }

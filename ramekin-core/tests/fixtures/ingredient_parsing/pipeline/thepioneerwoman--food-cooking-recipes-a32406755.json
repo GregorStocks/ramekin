@@ -65,14 +65,14 @@
     {
       "raw": "1 tbsp. adobo sauce (from a can of chipotles)",
       "expected": {
-        "item": "adobo sauce (from a can of chipotles)",
+        "item": "adobo sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from a can of chipotles",
         "category": "Condiments & Sauces"
       }
     },

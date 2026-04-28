@@ -14,14 +14,14 @@
     {
       "raw": "2 cups gingersnap crumbs (from 1 [12-ounce] package)",
       "expected": {
-        "item": "gingersnap crumbs (from 1 [12-ounce] package)",
+        "item": "gingersnap crumbs",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 1 [12-ounce] package",
         "category": "Beverages"
       }
     },
@@ -107,7 +107,7 @@
             "unit": "package"
           }
         ],
-        "note": "at room temperature",
+        "note": "8-ounce, at room temperature",
         "category": "Cheese"
       }
     },

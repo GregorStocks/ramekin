@@ -115,14 +115,18 @@
     {
       "raw": "4 cups vegetable broth (or water)",
       "expected": {
-        "item": "vegetable broth (or water)",
+        "item": "vegetable broth",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "996",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or water",
         "category": "Canned Goods"
       }
     },

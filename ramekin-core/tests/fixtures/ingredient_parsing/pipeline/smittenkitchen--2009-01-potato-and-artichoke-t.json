@@ -35,21 +35,21 @@
             "unit": "large"
           }
         ],
-        "note": "quartered and thinly sliced (a leftover potato works great here)",
+        "note": "a leftover potato works great here, quartered and thinly sliced",
         "category": "Produce"
       }
     },
     {
       "raw": "3 marinated artichoke hearts (from a can or jar), rinsed, patted dry, and thinly sliced",
       "expected": {
-        "item": "marinated artichoke hearts (from a can or jar), rinsed, patted dry",
+        "item": "marinated artichoke hearts, rinsed, patted dry",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "and thinly sliced",
+        "note": "from a can or jar, and thinly sliced",
         "category": "Canned Goods"
       }
     },
@@ -98,9 +98,9 @@
     {
       "raw": "Coarse salt (kosher or sea)",
       "expected": {
-        "item": "Coarse salt (kosher or sea)",
+        "item": "Coarse salt",
         "measurements": [],
-        "note": null,
+        "note": "kosher or sea",
         "category": "Spices & Seasonings"
       }
     }

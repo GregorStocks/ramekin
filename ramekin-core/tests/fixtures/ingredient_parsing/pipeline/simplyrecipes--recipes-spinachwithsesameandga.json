@@ -19,14 +19,18 @@
     {
       "raw": "3 tablespoons toasted (dark) sesame oil",
       "expected": {
-        "item": "toasted (dark) sesame oil",
+        "item": "toasted sesame oil",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "41",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "dark",
         "category": "Oils & Vinegars"
       }
     },
@@ -47,7 +51,7 @@
     {
       "raw": "1 pound fresh spinach (if using mature spinach, soak in water to clean, drain, squeeze out excess water, remove and discard large stems, roughly chop leaves)",
       "expected": {
-        "item": "fresh spinach (if using mature spinach, soak in water to clean, drain, squeeze out excess water, remove and discard large stems, roughly chop leaves)",
+        "item": "fresh spinach",
         "measurements": [
           {
             "amount": "1",
@@ -58,7 +62,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "if using mature spinach, soak in water to clean, drain, squeeze out excess water, remove and discard large stems, roughly chop leaves",
         "category": "Produce"
       }
     },
@@ -83,14 +87,18 @@
     {
       "raw": "1 tablespoon soy sauce (use gluten-free soy sauce for gluten-free version)",
       "expected": {
-        "item": "soy sauce (use gluten-free soy sauce for gluten-free version)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "use gluten-free soy sauce for gluten-free version",
         "category": "Condiments & Sauces"
       }
     },

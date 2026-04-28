@@ -5,7 +5,7 @@
     {
       "raw": "5 pounds (2.3 kg) beef short ribs, English- or flanken-cut (see note)",
       "expected": {
-        "item": "beef short ribs, English- or flanken-cut (see note)",
+        "item": "beef short ribs, English- or flanken-cut",
         "measurements": [
           {
             "amount": "5",
@@ -16,14 +16,14 @@
             "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1/4 cup (60 ml) tamarind paste (see notes)",
       "expected": {
-        "item": "tamarind paste (see notes)",
+        "item": "tamarind paste",
         "measurements": [
           {
             "amount": "0.25",
@@ -34,7 +34,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Condiments & Sauces"
       }
     },
@@ -77,7 +77,7 @@
     {
       "raw": "4 teaspoons (17 g) jaggery or dark brown sugar (see note)",
       "expected": {
-        "item": "jaggery or dark brown sugar (see note)",
+        "item": "jaggery or dark brown sugar",
         "measurements": [
           {
             "amount": "4",
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Baking"
       }
     },
@@ -298,7 +298,7 @@
     {
       "raw": "5 cups (1.2 L) homemade beef or chicken stock or store-bought low-sodium chicken broth (if using store-bought broth, pour 1 packet unflavored gelatin (2 1/2 teaspoons; 10 g) over it and let set for 5 minutes; see notes)",
       "expected": {
-        "item": "homemade beef or chicken stock or store-bought low-sodium chicken broth (if using store-bought broth, pour 1 packet unflavored gelatin (2 1/2 teaspoons; 10 g) over it and let set for 5 minutes; see notes)",
+        "item": "homemade beef or chicken stock or store-bought low-sodium chicken broth over it and let set for 5 minutes; see notes)",
         "measurements": [
           {
             "amount": "5",
@@ -309,7 +309,7 @@
             "unit": "l"
           }
         ],
-        "note": null,
+        "note": "if using store-bought broth, pour 1 packet unflavored gelatin (2 1/2 teaspoons; 10 g",
         "category": "Canned Goods"
       }
     },

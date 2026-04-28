@@ -5,14 +5,18 @@
     {
       "raw": "1⅔ cups all-purpose flour (plain flour)",
       "expected": {
-        "item": "all-purpose flour (plain flour)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.67",
             "unit": "cup"
+          },
+          {
+            "amount": "208",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plain flour",
         "category": "Baking"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "1 lb lean ground beef (the leaner the better)",
       "expected": {
-        "item": "lean ground beef (the leaner the better)",
+        "item": "lean ground beef",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "the leaner the better",
         "category": "Meat & Seafood"
       }
     },

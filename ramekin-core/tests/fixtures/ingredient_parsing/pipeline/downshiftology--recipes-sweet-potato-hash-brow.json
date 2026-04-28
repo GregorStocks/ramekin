@@ -42,15 +42,15 @@
     {
       "raw": "2 tbsp ghee (or avocado oil)",
       "expected": {
-        "item": "ghee (or avocado oil)",
+        "item": "ghee",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "or avocado oil",
+        "category": "Dairy & Eggs"
       }
     }
   ]

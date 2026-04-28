@@ -23,14 +23,14 @@
     {
       "raw": "1 split vanilla bean (for vanilla batch)",
       "expected": {
-        "item": "split vanilla bean (for vanilla batch)",
+        "item": "split vanilla bean",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "for vanilla batch",
         "category": "Spices & Seasonings"
       }
     },
@@ -44,7 +44,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "chopped (for chocolate batch)",
+        "note": "for chocolate batch, chopped",
         "category": "Baking"
       }
     },
@@ -292,14 +292,14 @@
     {
       "raw": "1/2 cup light corn syrup or golden syrup (honey should work as well, but I didn’t test it this time)",
       "expected": {
-        "item": "light corn syrup or golden syrup (honey should work as well, but I didn’t test it this time)",
+        "item": "light corn syrup or golden syrup",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "honey should work as well, but I didn’t test it this time",
         "category": "Baking"
       }
     },
@@ -348,7 +348,7 @@
     {
       "raw": "6 ounces bittersweet chocolate, chopped (or, about 1 cup bittersweet chocolate chips), divided",
       "expected": {
-        "item": "bittersweet chocolate, chopped (or, about 1 cup bittersweet chocolate chips)",
+        "item": "bittersweet chocolate, chopped",
         "measurements": [
           {
             "amount": "6",
@@ -359,8 +359,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
-        "category": "Baking"
+        "note": "or, about 1 cup bittersweet chocolate chips, divided",
+        "category": "Other"
       }
     },
     {

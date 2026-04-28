@@ -37,14 +37,18 @@
     {
       "raw": "1/2 cup sugar (plus extra for caramelizing)",
       "expected": {
-        "item": "sugar (plus extra for caramelizing)",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plus extra for caramelizing",
         "category": "Baking"
       }
     },

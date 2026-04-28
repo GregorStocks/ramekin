@@ -45,7 +45,7 @@
     {
       "raw": "1 cup (235 ml) cider vinegar or plain vinegar (the former makes a sweeter, milder brine)",
       "expected": {
-        "item": "cider vinegar or plain vinegar (the former makes a sweeter, milder brine)",
+        "item": "cider vinegar or plain vinegar",
         "measurements": [
           {
             "amount": "1",
@@ -56,7 +56,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "the former makes a sweeter, milder brine",
         "category": "Oils & Vinegars"
       }
     },

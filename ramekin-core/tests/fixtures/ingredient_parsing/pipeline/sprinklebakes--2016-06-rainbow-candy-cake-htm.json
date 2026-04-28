@@ -145,10 +145,10 @@
     {
       "raw": "Wilton or Americolor gel food colors: red (orange, yellow, green, blue, purple)",
       "expected": {
-        "item": "Wilton or Americolor gel food colors: red (orange, yellow, green, blue, purple)",
+        "item": "Wilton or Americolor gel food colors: red",
         "measurements": [],
-        "note": null,
-        "category": "Produce"
+        "note": "orange, yellow, green, blue, purple",
+        "category": "Other"
       }
     },
     {
@@ -258,14 +258,14 @@
     {
       "raw": "3 tablespoons rainbow sprinkles (jimmies)",
       "expected": {
-        "item": "rainbow sprinkles (jimmies)",
+        "item": "rainbow sprinkles",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "jimmies",
         "category": "Baking"
       }
     },

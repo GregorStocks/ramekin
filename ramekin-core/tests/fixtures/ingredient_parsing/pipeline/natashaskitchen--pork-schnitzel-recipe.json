@@ -41,15 +41,15 @@
     {
       "raw": "1 Tbsp garlic salt (or sub with equal parts salt and garlic powder)",
       "expected": {
-        "item": "garlic salt (or sub with equal parts salt and garlic powder)",
+        "item": "garlic salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "or sub with equal parts salt and garlic powder",
+        "category": "Produce"
       }
     },
     {
@@ -115,18 +115,18 @@
     {
       "raw": "olive oil (canola oil or any high heat cooking oil to sauté)",
       "expected": {
-        "item": "olive oil (canola oil or any high heat cooking oil to sauté)",
+        "item": "olive oil",
         "measurements": [],
-        "note": null,
+        "note": "canola oil or any high heat cooking oil to sauté",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "Lemon wedges to serve (don't skip the lemons!)",
       "expected": {
-        "item": "Lemon wedges to serve (don't skip the lemons!)",
+        "item": "Lemon wedges to serve",
         "measurements": [],
-        "note": null,
+        "note": "don't skip the lemons!",
         "category": "Produce"
       }
     }

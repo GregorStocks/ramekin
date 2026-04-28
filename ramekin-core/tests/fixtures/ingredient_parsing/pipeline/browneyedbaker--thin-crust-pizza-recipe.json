@@ -41,15 +41,15 @@
     {
       "raw": "½ teaspoon instant (rapid-rise yeast)",
       "expected": {
-        "item": "instant (rapid-rise yeast)",
+        "item": "instant",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "rapid-rise yeast",
+        "category": "Other"
       }
     },
     {

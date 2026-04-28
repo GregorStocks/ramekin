@@ -123,21 +123,21 @@
     {
       "raw": "1/4 cup chopped basil ribbons ((chiffonade))",
       "expected": {
-        "item": "chopped basil ribbons (chiffonade)",
+        "item": "chopped basil ribbons",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "chiffonade",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 (14.5 oz) loaf hearty french bread (such as La Brea), (sliced into 1/2-inch thick slices (about 12 slices))",
       "expected": {
-        "item": "loaf hearty french bread (such as La Brea)",
+        "item": "loaf hearty french bread",
         "measurements": [
           {
             "amount": "1",
@@ -152,7 +152,7 @@
             "unit": "g"
           }
         ],
-        "note": "(sliced into 1/2-inch thick slices (about 12 slices)",
+        "note": "such as La Brea, sliced into 1/2-inch thick slices (about 12 slices",
         "category": "Bakery & Bread"
       }
     }

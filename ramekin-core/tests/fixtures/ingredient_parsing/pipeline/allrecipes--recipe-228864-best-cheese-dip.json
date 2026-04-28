@@ -55,7 +55,7 @@
     {
       "raw": "1 (2 pound) loaf processed cheese food (such as Velveeta®), cubed",
       "expected": {
-        "item": "loaf processed cheese food (such as Velveeta®)",
+        "item": "loaf processed cheese food",
         "measurements": [
           {
             "amount": "1",
@@ -70,14 +70,14 @@
             "unit": "g"
           }
         ],
-        "note": "cubed",
+        "note": "such as Velveeta®, cubed",
         "category": "Cheese"
       }
     },
     {
       "raw": "1 (28 ounce) can diced tomatoes with green chile peppers (such as RO*TEL®)",
       "expected": {
-        "item": "diced tomatoes with green chile peppers (such as RO*TEL®)",
+        "item": "diced tomatoes with green chile peppers",
         "measurements": [
           {
             "amount": "1",
@@ -92,7 +92,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as RO*TEL®",
         "category": "Canned Goods"
       }
     },

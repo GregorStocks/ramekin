@@ -116,30 +116,30 @@
             "unit": "can"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "15-ounce, drained and rinsed",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "2 to 3 tablespoons fresh chopped herbs (parsley, cilantro, mint, dill, basil, or rosemary, or a mix)",
       "expected": {
-        "item": "fresh chopped herbs (parsley, cilantro, mint, dill, basil, or rosemary, or a mix)",
+        "item": "fresh chopped herbs",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "parsley, cilantro, mint, dill, basil, or rosemary, or a mix",
+        "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "Flatbread or toasted pita wedges (gluten-free, if needed), for serving",
       "expected": {
-        "item": "Flatbread or toasted pita wedges (gluten-free, if needed)",
+        "item": "Flatbread or toasted pita wedges",
         "measurements": [],
-        "note": "for serving",
+        "note": "gluten-free, if needed, for serving",
         "category": "Bakery & Bread"
       }
     }

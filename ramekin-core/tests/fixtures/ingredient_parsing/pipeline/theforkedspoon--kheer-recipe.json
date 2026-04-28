@@ -5,14 +5,14 @@
     {
       "raw": "1/4 cup basmati rice (or other long-grain rice)",
       "expected": {
-        "item": "basmati rice (or other long-grain rice)",
+        "item": "basmati rice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or other long-grain rice",
         "category": "Pasta & Rice"
       }
     },
@@ -55,14 +55,18 @@
     {
       "raw": "6 tablespoon granulated sugar ((reduce to 4 tablespoons for a less sweetened kheer))",
       "expected": {
-        "item": "granulated sugar (reduce to 4 tablespoons for a less sweetened kheer)",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "75",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "reduce to 4 tablespoons for a less sweetened kheer",
         "category": "Baking"
       }
     },
@@ -111,9 +115,9 @@
     {
       "raw": "raisins or dried cranberries (to garnish)",
       "expected": {
-        "item": "raisins or dried cranberries (to garnish)",
+        "item": "raisins or dried cranberries",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "category": "Nuts & Dried Fruit"
       }
     },

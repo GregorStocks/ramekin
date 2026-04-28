@@ -41,9 +41,9 @@
     {
       "raw": "▢ 300 g ground pork 20% fat content (increase lard if leaner), or ground chicken thigh",
       "expected": {
-        "item": "▢ 300 g ground pork 20% fat content (increase lard if leaner)",
+        "item": "▢ 300 g ground pork 20% fat content",
         "measurements": [],
-        "note": "or ground chicken thigh",
+        "note": "increase lard if leaner, or ground chicken thigh",
         "category": "Meat & Seafood"
       }
     },
@@ -77,9 +77,9 @@
     {
       "raw": "▢ 2 tbsp potato starch (katakuriko) or cornstarch/tapioca starch",
       "expected": {
-        "item": "▢ 2 tbsp potato starch (katakuriko) or cornstarch/tapioca starch",
+        "item": "▢ 2 tbsp potato starch or cornstarch/tapioca starch",
         "measurements": [],
-        "note": null,
+        "note": "katakuriko",
         "category": "Baking"
       }
     },
@@ -95,9 +95,9 @@
     {
       "raw": "▢ 1½ tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "▢ 1 1/2 tbsp Japanese soy sauce (koikuchi shoyu)",
+        "item": "▢ 1 1/2 tbsp Japanese soy sauce",
         "measurements": [],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },

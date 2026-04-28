@@ -37,14 +37,14 @@
     {
       "raw": "2 cups meringue topping (see note below)",
       "expected": {
-        "item": "meringue topping (see note below)",
+        "item": "meringue topping",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see note below",
         "category": "Other"
       }
     }

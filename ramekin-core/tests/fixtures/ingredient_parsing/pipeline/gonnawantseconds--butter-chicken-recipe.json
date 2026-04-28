@@ -275,7 +275,7 @@
     {
       "raw": "2 Pounds 2 Chicken Thighs (Boneless, Skinless, Cut Into Bite Size Pieces)",
       "expected": {
-        "item": "2 Chicken Thighs (Boneless, Skinless, Cut Into Bite Size Pieces)",
+        "item": "2 Chicken Thighs",
         "measurements": [
           {
             "amount": "2",
@@ -286,7 +286,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Boneless, Skinless, Cut Into Bite Size Pieces",
         "category": "Meat & Seafood"
       }
     },

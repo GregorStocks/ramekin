@@ -142,7 +142,7 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced (green and white parts)",
+        "note": "green and white parts, thinly sliced",
         "category": "Produce"
       }
     },
@@ -158,14 +158,14 @@
     {
       "raw": "3 mandarins (clementines and other small oranges work here), divided",
       "expected": {
-        "item": "mandarins (clementines and other small oranges work here)",
+        "item": "mandarins",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "divided",
+        "note": "clementines and other small oranges work here, divided",
         "category": "Produce"
       }
     },
@@ -257,9 +257,9 @@
     {
       "raw": "Spiced cashews (from above)",
       "expected": {
-        "item": "Spiced cashews (from above)",
+        "item": "Spiced cashews",
         "measurements": [],
-        "note": null,
+        "note": "from above",
         "category": "Nuts & Dried Fruit"
       }
     }

@@ -91,14 +91,14 @@
     {
       "raw": "3 large egg yolks (save the whites for the topping)",
       "expected": {
-        "item": "egg yolks (save the whites for the topping)",
+        "item": "egg yolks",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "save the whites for the topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -170,7 +170,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped",
+        "note": "60 percent range is perfect here, chopped",
         "category": "Other"
       }
     },

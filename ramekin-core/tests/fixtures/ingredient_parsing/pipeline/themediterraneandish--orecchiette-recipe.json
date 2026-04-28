@@ -184,14 +184,14 @@
     {
       "raw": "1/2 cup Pearls Kalamata Pitted Greek Olives (plus more to your liking)",
       "expected": {
-        "item": "Pearls Kalamata Pitted Greek Olives (plus more to your liking)",
+        "item": "Pearls Kalamata Pitted Greek Olives",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plus more to your liking",
         "category": "Canned Goods"
       }
     },

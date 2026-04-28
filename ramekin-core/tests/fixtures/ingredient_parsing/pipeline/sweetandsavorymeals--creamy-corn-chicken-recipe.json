@@ -83,14 +83,14 @@
     {
       "raw": "6  chicken thighs (skin-on bone-in)",
       "expected": {
-        "item": "chicken thighs (skin-on bone-in)",
+        "item": "chicken thighs",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "skin-on bone-in",
         "category": "Meat & Seafood"
       }
     },
@@ -167,15 +167,19 @@
     {
       "raw": "1 cup chicken stock (or chicken broth)",
       "expected": {
-        "item": "chicken stock (or chicken broth)",
+        "item": "chicken stock",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "249",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "or chicken broth",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -195,9 +199,9 @@
     {
       "raw": "Baby rocket leaves (to serve)",
       "expected": {
-        "item": "Baby rocket leaves (to serve)",
+        "item": "Baby rocket leaves",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Other"
       }
     }

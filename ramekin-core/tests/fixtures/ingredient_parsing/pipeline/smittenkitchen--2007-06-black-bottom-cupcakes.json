@@ -91,14 +91,14 @@
     {
       "raw": "5 tablespoons natural unsweetened cocoa powder (not Dutch-process)",
       "expected": {
-        "item": "natural unsweetened cocoa powder (not Dutch-process)",
+        "item": "natural unsweetened cocoa powder",
         "measurements": [
           {
             "amount": "5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "not Dutch-process",
         "category": "Baking"
       }
     },

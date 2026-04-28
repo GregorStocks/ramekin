@@ -32,14 +32,18 @@
     {
       "raw": "2 tbsp extra virgin olive oil (more for later)",
       "expected": {
-        "item": "extra virgin olive oil (more for later)",
+        "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "more for later",
         "category": "Oils & Vinegars"
       }
     },
@@ -279,18 +283,18 @@
     {
       "raw": "Pitted Kalamata olives,  (to your liking)",
       "expected": {
-        "item": "Pitted Kalamata olives,  (to your liking)",
+        "item": "Pitted Kalamata olives",
         "measurements": [],
-        "note": null,
+        "note": "to your liking",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "Quality Greek feta blocks,  (to your liking)",
       "expected": {
-        "item": "Quality Greek feta blocks,  (to your liking)",
+        "item": "Quality Greek feta blocks",
         "measurements": [],
-        "note": null,
+        "note": "to your liking",
         "category": "Cheese"
       }
     }

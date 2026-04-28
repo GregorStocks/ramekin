@@ -91,14 +91,14 @@
     {
       "raw": "0.5 cup Buffalo-style hot sauce (such as Frank's RedHot)",
       "expected": {
-        "item": "Buffalo-style hot sauce (such as Frank's RedHot)",
+        "item": "Buffalo-style hot sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Frank's RedHot",
         "category": "Condiments & Sauces"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "1 cup glutinous rice ((see notes))",
       "expected": {
-        "item": "glutinous rice (see notes)",
+        "item": "glutinous rice",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Pasta & Rice"
       }
     },
@@ -37,15 +37,15 @@
     {
       "raw": "6 cups low-sodium broth ((chicken, beef, or vegetable))",
       "expected": {
-        "item": "low-sodium broth (chicken, beef, or vegetable)",
+        "item": "low-sodium broth",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Meat & Seafood"
+        "note": "chicken, beef, or vegetable",
+        "category": "Canned Goods"
       }
     },
     {
@@ -83,9 +83,9 @@
     {
       "raw": "Sesame oil and soy sauce (to garnish)",
       "expected": {
-        "item": "Sesame oil and soy sauce (to garnish)",
+        "item": "Sesame oil and soy sauce",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "category": "Oils & Vinegars"
       }
     }

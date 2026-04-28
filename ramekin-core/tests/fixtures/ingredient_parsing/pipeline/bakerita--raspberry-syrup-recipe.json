@@ -37,14 +37,14 @@
     {
       "raw": "1/4&nbsp;to&nbsp;1/2&nbsp;cup&nbsp;maple syrup,&nbsp;honey, or&nbsp;sugar of choice&nbsp;(cane or coconut sugar both work)",
       "expected": {
-        "item": "maple syrup, honey, or sugar of choice (cane or coconut sugar both work)",
+        "item": "maple syrup, honey, or sugar of choice",
         "measurements": [
           {
             "amount": "0.25 to 0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cane or coconut sugar both work",
         "category": "Baking"
       }
     },

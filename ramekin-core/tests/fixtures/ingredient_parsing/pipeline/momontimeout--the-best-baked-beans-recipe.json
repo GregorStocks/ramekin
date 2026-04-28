@@ -5,7 +5,7 @@
     {
       "raw": "16 oz dried navy beans (any small white bean will work)",
       "expected": {
-        "item": "dried navy beans (any small white bean will work)",
+        "item": "dried navy beans",
         "measurements": [
           {
             "amount": "16",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any small white bean will work",
         "category": "Canned Goods"
       }
     },

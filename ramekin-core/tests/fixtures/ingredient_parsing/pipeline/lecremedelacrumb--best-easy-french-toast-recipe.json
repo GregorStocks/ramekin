@@ -5,14 +5,14 @@
     {
       "raw": "8  1-inch thick slices brioche bread (see note)",
       "expected": {
-        "item": "1-inch thick slices brioche bread (see note)",
+        "item": "1-inch thick slices brioche bread",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Bakery & Bread"
       }
     },
@@ -33,14 +33,18 @@
     {
       "raw": "¾ cup heavy cream (see note)",
       "expected": {
-        "item": "heavy cream (see note)",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "178",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Dairy & Eggs"
       }
     },

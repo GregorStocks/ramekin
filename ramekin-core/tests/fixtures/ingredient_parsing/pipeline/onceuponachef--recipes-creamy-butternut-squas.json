@@ -23,14 +23,14 @@
     {
       "raw": "1 cup very finely chopped yellow onion, (from one small onion)",
       "expected": {
-        "item": "very finely chopped yellow onion, (from one small onion)",
+        "item": "very finely chopped yellow onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from one small onion",
         "category": "Produce"
       }
     },
@@ -66,7 +66,7 @@
             "unit": "cup"
           }
         ],
-        "note": "thawed (see note)",
+        "note": "12-oz, see note, thawed",
         "category": "Produce"
       }
     },

@@ -51,14 +51,14 @@
     {
       "raw": "1/2 to 3/4 cups sugar (see note above)",
       "expected": {
-        "item": "sugar (see note above)",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "0.5 to 0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see note above",
         "category": "Baking"
       }
     },

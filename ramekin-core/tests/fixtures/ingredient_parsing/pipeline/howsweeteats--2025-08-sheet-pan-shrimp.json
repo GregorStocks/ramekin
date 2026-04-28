@@ -142,14 +142,14 @@
     {
       "raw": "3  ears of corn (kernels cut from the cob)",
       "expected": {
-        "item": "ears of corn (kernels cut from the cob)",
+        "item": "ears of corn",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "kernels cut from the cob",
         "category": "Other"
       }
     },

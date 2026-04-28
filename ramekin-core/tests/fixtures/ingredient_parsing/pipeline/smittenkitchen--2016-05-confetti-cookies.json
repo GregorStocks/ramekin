@@ -110,7 +110,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "2 ounces, 55 grams or 1/4 of an 8-ounce brick",
         "category": "Cheese"
       }
     },
@@ -149,14 +149,14 @@
     {
       "raw": "2 teaspoons vanilla extract or 1/2 a vanilla bean, split and scraped (see Note up top)",
       "expected": {
-        "item": "vanilla extract or 1/2 a vanilla bean, split and scraped (see Note up top)",
+        "item": "vanilla extract or 1/2 a vanilla bean, split and scraped",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "see Note up top",
         "category": "Spices & Seasonings"
       }
     },

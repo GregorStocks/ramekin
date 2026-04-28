@@ -14,7 +14,7 @@
     {
       "raw": "1 pound solid piece boneless pork butt (shoulder) or pork tenderloin",
       "expected": {
-        "item": "solid piece boneless pork butt (shoulder) or pork tenderloin",
+        "item": "solid piece boneless pork butt or pork tenderloin",
         "measurements": [
           {
             "amount": "1",
@@ -25,7 +25,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "shoulder",
         "category": "Meat & Seafood"
       }
     },
@@ -50,14 +50,18 @@
     {
       "raw": "1/4 cup soy sauce (low-sodium is best here)",
       "expected": {
-        "item": "soy sauce (low-sodium is best here)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "64",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low-sodium is best here",
         "category": "Condiments & Sauces"
       }
     },
@@ -106,14 +110,18 @@
     {
       "raw": "1/2 teaspoon salt (see Note below)",
       "expected": {
-        "item": "salt (see Note below)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note below",
         "category": "Spices & Seasonings"
       }
     },
@@ -212,7 +220,7 @@
     {
       "raw": "8 oz very thin bean-thread noodles (also known as cellophane, glass, or mung bean noodles)",
       "expected": {
-        "item": "very thin bean-thread noodles (also known as cellophane, glass, or mung bean noodles)",
+        "item": "very thin bean-thread noodles",
         "measurements": [
           {
             "amount": "8",
@@ -223,7 +231,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "also known as cellophane, glass, or mung bean noodles",
         "category": "Pasta & Rice"
       }
     },
@@ -252,14 +260,14 @@
     {
       "raw": "1 seedless cucumber (usually plastic-wrapped; about 1 lb), halved lengthwise and sliced diagonally 1/8 inch thick",
       "expected": {
-        "item": "seedless cucumber (usually plastic-wrapped; about 1 lb)",
+        "item": "seedless cucumber",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "halved lengthwise and sliced diagonally 1/8 inch thick",
+        "note": "usually plastic-wrapped; about 1 lb, halved lengthwise and sliced diagonally 1/8 inch thick",
         "category": "Produce"
       }
     },

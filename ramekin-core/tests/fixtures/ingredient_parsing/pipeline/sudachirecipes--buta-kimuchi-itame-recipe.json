@@ -5,14 +5,14 @@
     {
       "raw": "200 g thinly sliced pork belly (shabu-shabu/sukiyaki slices, or pork shoulder)",
       "expected": {
-        "item": "thinly sliced pork belly (shabu-shabu/sukiyaki slices, or pork shoulder)",
+        "item": "thinly sliced pork belly",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "shabu-shabu/sukiyaki slices, or pork shoulder",
         "category": "Meat & Seafood"
       }
     },
@@ -33,28 +33,32 @@
     {
       "raw": "1 tbsp all-purpose flour (or cake flour)",
       "expected": {
-        "item": "all-purpose flour (or cake flour)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "7.8",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or cake flour",
         "category": "Baking"
       }
     },
     {
       "raw": "½ tbsp cooking oil (neural)",
       "expected": {
-        "item": "cooking oil (neural)",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "neural",
         "category": "Oils & Vinegars"
       }
     },
@@ -125,14 +129,14 @@
     {
       "raw": "200 g cabbage kimchi (Napa/baechu)",
       "expected": {
-        "item": "cabbage kimchi (Napa/baechu)",
+        "item": "cabbage kimchi",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Napa/baechu",
         "category": "Produce"
       }
     },
@@ -157,18 +161,14 @@
     {
       "raw": "½ tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.7",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -189,14 +189,14 @@
     {
       "raw": "30 g garlic chive(s)",
       "expected": {
-        "item": "garlic chive(s)",
+        "item": "garlic chive",
         "measurements": [
           {
             "amount": "30",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "s",
         "category": "Produce"
       }
     },

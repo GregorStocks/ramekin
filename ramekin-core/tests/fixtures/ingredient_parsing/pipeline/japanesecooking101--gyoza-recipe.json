@@ -223,14 +223,14 @@
     {
       "raw": "1 tsp chili oil (Rayu or sesame oil)",
       "expected": {
-        "item": "chili oil (Rayu or sesame oil)",
+        "item": "chili oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "Rayu or sesame oil",
         "category": "Oils & Vinegars"
       }
     }

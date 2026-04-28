@@ -207,14 +207,18 @@
     {
       "raw": "10 cups cold water (or enough water to come 1-inch below MAX fill line)",
       "expected": {
-        "item": "cold water (or enough water to come 1-inch below MAX fill line)",
+        "item": "cold water",
         "measurements": [
           {
             "amount": "10",
             "unit": "cup"
+          },
+          {
+            "amount": "2370",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or enough water to come 1-inch below MAX fill line",
         "category": "Other"
       }
     }

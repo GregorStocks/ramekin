@@ -19,14 +19,14 @@
     {
       "raw": "70 g sugar (white granulated)",
       "expected": {
-        "item": "sugar (white granulated)",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "70",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "white granulated",
         "category": "Baking"
       }
     },
@@ -51,28 +51,32 @@
     {
       "raw": "⅛ tsp salt (fine sea salt preferred)",
       "expected": {
-        "item": "salt (fine sea salt preferred)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "fine sea salt preferred",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "120 g cake flour (low-protein, substitute with all-purpose)",
       "expected": {
-        "item": "cake flour (low-protein, substitute with all-purpose)",
+        "item": "cake flour",
         "measurements": [
           {
             "amount": "120",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low-protein, substitute with all-purpose",
         "category": "Baking"
       }
     },
@@ -97,15 +101,15 @@
     {
       "raw": "½ tsp cooking oil (for batter, flavorless neutral oil like vegetable, canola, rice bran works best)",
       "expected": {
-        "item": "cooking oil (for batter, flavorless neutral oil like vegetable, canola, rice bran works best)",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Pasta & Rice"
+        "note": "for batter, flavorless neutral oil like vegetable, canola, rice bran works best",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -129,23 +133,23 @@
     {
       "raw": "cooking oil (for frying)",
       "expected": {
-        "item": "cooking oil (for frying)",
+        "item": "cooking oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "300 g red bean paste (anko)",
       "expected": {
-        "item": "red bean paste (anko)",
+        "item": "red bean paste",
         "measurements": [
           {
             "amount": "300",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "anko",
         "category": "Other"
       }
     }

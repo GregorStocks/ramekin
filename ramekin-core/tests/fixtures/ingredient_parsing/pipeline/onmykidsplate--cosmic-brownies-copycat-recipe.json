@@ -23,14 +23,18 @@
     {
       "raw": "1 cup white sugar (granulated)",
       "expected": {
-        "item": "white sugar (granulated)",
+        "item": "white sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "granulated",
         "category": "Baking"
       }
     },
@@ -105,14 +109,18 @@
     {
       "raw": "3/4 cup cocoa powder (unsweetened)",
       "expected": {
-        "item": "cocoa powder (unsweetened)",
+        "item": "cocoa powder",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "64",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsweetened",
         "category": "Baking"
       }
     },

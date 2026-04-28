@@ -315,23 +315,23 @@
     {
       "raw": "¼ cup Casero Cheese (use feta as a substitute, omit to be dairy free)",
       "expected": {
-        "item": "Casero Cheese (use feta as a substitute, omit to be dairy free)",
+        "item": "Casero Cheese",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "use feta as a substitute, omit to be dairy free",
         "category": "Cheese"
       }
     },
     {
       "raw": "tortilla chips or wonton chips (for topping, omit to be gluten-free)",
       "expected": {
-        "item": "tortilla chips or wonton chips (for topping, omit to be gluten-free)",
+        "item": "tortilla chips or wonton chips",
         "measurements": [],
-        "note": null,
+        "note": "for topping, omit to be gluten-free",
         "category": "Bakery & Bread"
       }
     },

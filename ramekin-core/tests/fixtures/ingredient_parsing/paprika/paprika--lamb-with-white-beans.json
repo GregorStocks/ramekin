@@ -235,16 +235,16 @@
     {
       "raw": "2/3 cup stock (preferably unthickened lamb sauce, TODO)",
       "expected": {
-        "item": "stock (preferably unthickened lamb sauce, TODO)",
+        "item": "stock",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "preferably unthickened lamb sauce, TODO",
         "section": "White Beans",
-        "category": "Condiments & Sauces"
+        "category": "Canned Goods"
       }
     },
     {

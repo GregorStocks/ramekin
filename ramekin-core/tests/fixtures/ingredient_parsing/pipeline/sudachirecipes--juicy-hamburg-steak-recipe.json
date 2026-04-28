@@ -37,14 +37,14 @@
     {
       "raw": "4 tbsp panko breadcrumbs (or Western breadcrumbs, avoid seasoned types)",
       "expected": {
-        "item": "panko breadcrumbs (or Western breadcrumbs, avoid seasoned types)",
+        "item": "panko breadcrumbs",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or Western breadcrumbs, avoid seasoned types",
         "category": "Bakery & Bread"
       }
     },
@@ -69,14 +69,14 @@
     {
       "raw": "200 g ground beef (or 50% beef and 50% pork, ~20% fat content recommended)",
       "expected": {
-        "item": "ground beef (or 50% beef and 50% pork, ~20% fat content recommended)",
+        "item": "ground beef",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 50% beef and 50% pork, ~20% fat content recommended",
         "category": "Meat & Seafood"
       }
     },
@@ -108,7 +108,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "0.8-1.0% of meat weight",
         "category": "Spices & Seasonings"
       }
     },
@@ -271,18 +271,14 @@
     {
       "raw": "½ tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.7",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },

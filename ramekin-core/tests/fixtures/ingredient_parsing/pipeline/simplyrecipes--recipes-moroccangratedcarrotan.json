@@ -5,14 +5,14 @@
     {
       "raw": "2 cups grated carrots (from about 3 carrots)",
       "expected": {
-        "item": "grated carrots (from about 3 carrots)",
+        "item": "grated carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from about 3 carrots",
         "category": "Produce"
       }
     },
@@ -51,14 +51,18 @@
     {
       "raw": "1/2 teaspoon paprika (sweet, not hot)",
       "expected": {
-        "item": "paprika (sweet, not hot)",
+        "item": "paprika",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sweet, not hot",
         "category": "Spices & Seasonings"
       }
     },

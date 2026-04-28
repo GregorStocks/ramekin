@@ -118,7 +118,7 @@
     {
       "raw": "4 1/4 to 4 1/2 pounds baking apples, shown here with mutsu (which is like a mix of Granny Smith and Golden Delicious) but more suggestions here",
       "expected": {
-        "item": "baking apples, shown here with mutsu (which is like a mix of Granny Smith and Golden Delicious) but more suggestions here",
+        "item": "baking apples, shown here with mutsu but more suggestions here",
         "measurements": [
           {
             "amount": "4.25 to 4.5",
@@ -129,7 +129,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "which is like a mix of Granny Smith and Golden Delicious",
         "category": "Produce"
       }
     },

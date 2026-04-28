@@ -109,14 +109,14 @@
     {
       "raw": "10 slices Brioche or any thick cut artisan type bread (the thicker the better (about 8-10 slices))",
       "expected": {
-        "item": "Brioche or any thick cut artisan type bread (the thicker the better (about 8-10 slices)",
+        "item": "Brioche or any thick cut artisan type bread",
         "measurements": [
           {
             "amount": "10",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "the thicker the better (about 8-10 slices",
         "category": "Bakery & Bread"
       }
     },
@@ -223,14 +223,18 @@
     {
       "raw": "8 tbsp butter (for frying (bacon fat is also good here))",
       "expected": {
-        "item": "butter (for frying (bacon fat is also good here)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "8",
             "unit": "tbsp"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for frying (bacon fat is also good here",
         "category": "Dairy & Eggs"
       }
     }

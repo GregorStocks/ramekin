@@ -273,14 +273,18 @@
     {
       "raw": "1 tablespoon granulated sugar (for topping)",
       "expected": {
-        "item": "granulated sugar (for topping)",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for topping",
         "category": "Baking"
       }
     }

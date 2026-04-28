@@ -5,7 +5,7 @@
     {
       "raw": "6 ounces small pasta (I used a gluten free penne)",
       "expected": {
-        "item": "small pasta (I used a gluten free penne)",
+        "item": "small pasta",
         "measurements": [
           {
             "amount": "6",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used a gluten free penne",
         "category": "Pasta & Rice"
       }
     },
@@ -133,9 +133,9 @@
     {
       "raw": "feta cheese to sprinkle on top (or the alternative cheese of your preference)",
       "expected": {
-        "item": "feta cheese to sprinkle on top (or the alternative cheese of your preference)",
+        "item": "feta cheese to sprinkle on top",
         "measurements": [],
-        "note": null,
+        "note": "or the alternative cheese of your preference",
         "category": "Cheese"
       }
     }

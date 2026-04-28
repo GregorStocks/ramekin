@@ -77,14 +77,18 @@
     {
       "raw": "1 1/2 teaspoons kosher salt (I used Diamond brand; use half of another)",
       "expected": {
-        "item": "kosher salt (I used Diamond brand; use half of another)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used Diamond brand; use half of another",
         "category": "Spices & Seasonings"
       }
     },

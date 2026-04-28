@@ -5,14 +5,18 @@
     {
       "raw": "1 tbsp olive oil (or avocado oil)",
       "expected": {
-        "item": "olive oil (or avocado oil)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or avocado oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -58,7 +62,7 @@
             "unit": null
           }
         ],
-        "note": "diced (or yellow chile pepper)",
+        "note": "or yellow chile pepper, diced",
         "category": "Produce"
       }
     },

@@ -59,14 +59,14 @@
     {
       "raw": "1 medium  butternut squash ((@ 1.25 lbs or 570g), peeled, seeded and cubed into 1-inch sized pieces)",
       "expected": {
-        "item": "butternut squash (@ 1.25 lbs or 570g), peeled",
+        "item": "butternut squash, peeled",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "seeded and cubed into 1-inch sized pieces)",
+        "note": "@ 1.25 lbs or 570g, seeded and cubed into 1-inch sized pieces)",
         "category": "Produce"
       }
     },
@@ -141,14 +141,14 @@
     {
       "raw": "1-2 teaspoons (5-10ml) truffled olive oil, (optional) (or to taste (plus more for drizzling))",
       "expected": {
-        "item": "truffled olive oil (or to taste (plus more for drizzling)",
+        "item": "truffled olive oil",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tsp"
           }
         ],
-        "note": "optional",
+        "note": "5-10ml, or to taste (plus more for drizzling, optional",
         "category": "Oils & Vinegars"
       }
     },

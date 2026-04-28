@@ -27,14 +27,18 @@
     {
       "raw": "1 Tbsp miso ((I use koji miso or awase miso; you can use your favorite type))",
       "expected": {
-        "item": "miso (I use koji miso or awase miso; you can use your favorite type)",
+        "item": "miso",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "17",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use koji miso or awase miso; you can use your favorite type",
         "category": "Condiments & Sauces"
       }
     },
@@ -59,14 +63,18 @@
     {
       "raw": "1 Tbsp rice vinegar (unseasoned)",
       "expected": {
-        "item": "rice vinegar (unseasoned)",
+        "item": "rice vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unseasoned",
         "category": "Oils & Vinegars"
       }
     },

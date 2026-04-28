@@ -84,14 +84,14 @@
     {
       "raw": "1 Tbsp of chopped greens from a green onion (green part of the green onion) or chives",
       "expected": {
-        "item": "chopped greens from a green onion (green part of the green onion) or chives",
+        "item": "chopped greens from a green onion or chives",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "green part of the green onion",
         "category": "Produce"
       }
     },
@@ -112,14 +112,14 @@
     {
       "raw": "1/8 teaspoon (a pinch) of crushed red pepper flakes (or a small pinch of cayenne)",
       "expected": {
-        "item": "(a pinch) of crushed red pepper flakes (or a small pinch of cayenne)",
+        "item": "crushed red pepper flakes",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "a pinch, or a small pinch of cayenne",
         "category": "Spices & Seasonings"
       }
     },

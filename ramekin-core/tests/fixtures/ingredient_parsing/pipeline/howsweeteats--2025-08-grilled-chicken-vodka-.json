@@ -146,14 +146,14 @@
     {
       "raw": "¼ cup vodka, (I like Tito’s)",
       "expected": {
-        "item": "vodka, (I like Tito’s)",
+        "item": "vodka",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I like Tito’s",
         "category": "Beverages"
       }
     },
@@ -224,18 +224,18 @@
     {
       "raw": "crushed red pepper, (for topping)",
       "expected": {
-        "item": "crushed red pepper, (for topping)",
+        "item": "crushed red pepper",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "fresh basil, (for topping)",
       "expected": {
-        "item": "fresh basil, (for topping)",
+        "item": "fresh basil",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     }

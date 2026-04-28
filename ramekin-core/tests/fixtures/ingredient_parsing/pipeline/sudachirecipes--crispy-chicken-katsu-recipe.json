@@ -19,18 +19,14 @@
     {
       "raw": "2 tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "11",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -105,14 +101,14 @@
     {
       "raw": "600 g boneless chicken thigh (skin-on (or chicken breast))",
       "expected": {
-        "item": "boneless chicken thigh (skin-on (or chicken breast)",
+        "item": "boneless chicken thigh",
         "measurements": [
           {
             "amount": "600",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skin-on (or chicken breast",
         "category": "Meat & Seafood"
       }
     },
@@ -133,14 +129,14 @@
     {
       "raw": "45 g all-purpose flour (for coating)",
       "expected": {
-        "item": "all-purpose flour (for coating)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "45",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for coating",
         "category": "Baking"
       }
     },
@@ -193,23 +189,23 @@
     {
       "raw": "100 g all-purpose flour (for the batter)",
       "expected": {
-        "item": "all-purpose flour (for the batter)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for the batter",
         "category": "Baking"
       }
     },
     {
       "raw": "cooking oil (for deep frying)",
       "expected": {
-        "item": "cooking oil (for deep frying)",
+        "item": "cooking oil",
         "measurements": [],
-        "note": null,
+        "note": "for deep frying",
         "category": "Oils & Vinegars"
       }
     }

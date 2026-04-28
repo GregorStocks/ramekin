@@ -165,14 +165,14 @@
     {
       "raw": "12  sweet Italian sausage (pricked with a fork)",
       "expected": {
-        "item": "sweet Italian sausage (pricked with a fork)",
+        "item": "sweet Italian sausage",
         "measurements": [
           {
             "amount": "12",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "pricked with a fork",
         "category": "Meat & Seafood"
       }
     },

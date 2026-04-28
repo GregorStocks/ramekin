@@ -191,14 +191,14 @@
     {
       "raw": "2 cups grated zucchini, (drain of water)",
       "expected": {
-        "item": "grated zucchini, (drain of water)",
+        "item": "grated zucchini",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "drain of water",
         "category": "Produce"
       }
     },

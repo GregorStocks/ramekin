@@ -73,14 +73,14 @@
     {
       "raw": "3/4 cup thinly sliced shallots (from 4 to 5 medium)",
       "expected": {
-        "item": "thinly sliced shallots (from 4 to 5 medium)",
+        "item": "thinly sliced shallots",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 4 to 5 medium",
         "category": "Produce"
       }
     },
@@ -101,14 +101,14 @@
     {
       "raw": "1/4 cup salsa verde (below)",
       "expected": {
-        "item": "salsa verde (below)",
+        "item": "salsa verde",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "below",
         "category": "Condiments & Sauces"
       }
     },

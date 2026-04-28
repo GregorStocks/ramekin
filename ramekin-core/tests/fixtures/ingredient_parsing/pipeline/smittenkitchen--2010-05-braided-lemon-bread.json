@@ -103,9 +103,9 @@
     {
       "raw": "Sponge (above)",
       "expected": {
-        "item": "Sponge (above)",
+        "item": "Sponge",
         "measurements": [],
-        "note": null,
+        "note": "above",
         "category": "Other"
       }
     },
@@ -378,7 +378,7 @@
     {
       "raw": "1/4 cup (2 ounces) homemade (recipe below) or prepared lemon curd",
       "expected": {
-        "item": "homemade (recipe below) or prepared lemon curd",
+        "item": "homemade or prepared lemon curd",
         "measurements": [
           {
             "amount": "0.25",
@@ -393,7 +393,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "recipe below",
         "category": "Produce"
       }
     },

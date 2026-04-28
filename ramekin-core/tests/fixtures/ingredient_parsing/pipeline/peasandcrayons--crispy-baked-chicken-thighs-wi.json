@@ -115,14 +115,14 @@
     {
       "raw": "4  chicken thighs (bone-in + skin-on)",
       "expected": {
-        "item": "chicken thighs (bone-in + skin-on)",
+        "item": "chicken thighs",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "bone-in + skin-on",
         "category": "Meat & Seafood"
       }
     },

@@ -5,14 +5,18 @@
     {
       "raw": "2 tsp active dry yeast (or instant yeast (see notes*))",
       "expected": {
-        "item": "active dry yeast (or instant yeast (see notes*)",
+        "item": "active dry yeast",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or instant yeast (see notes",
         "category": "Baking"
       }
     },
@@ -37,15 +41,19 @@
     {
       "raw": "1 1/2 cups warm water, (heated to 110 - 115 degrees for active dry yeast, 120 - 130 degrees for instant yeast)",
       "expected": {
-        "item": "warm water, (heated to 110 - 115 degrees for active dry yeast, 120 - 130 degrees for instant yeast)",
+        "item": "warm water",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "356",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "heated to 110 - 115 degrees for active dry yeast, 120 - 130 degrees for instant yeast",
+        "category": "Other"
       }
     },
     {

@@ -5,28 +5,28 @@
     {
       "raw": "1  broccoli (large)",
       "expected": {
-        "item": "broccoli (large)",
+        "item": "broccoli",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "large",
         "category": "Produce"
       }
     },
     {
       "raw": "1  egg (large)",
       "expected": {
-        "item": "egg (large)",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "large",
         "category": "Dairy & Eggs"
       }
     },
@@ -65,28 +65,32 @@
     {
       "raw": "1/3 cup parmesan cheese (shaved)",
       "expected": {
-        "item": "parmesan cheese (shaved)",
+        "item": "parmesan cheese",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "shaved",
         "category": "Cheese"
       }
     },
     {
       "raw": "1/3 cup flour (or almond flour for a lower carb option)",
       "expected": {
-        "item": "flour (or almond flour for a lower carb option)",
+        "item": "flour",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or almond flour for a lower carb option",
         "category": "Baking"
       }
     },

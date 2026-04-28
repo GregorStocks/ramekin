@@ -5,88 +5,88 @@
     {
       "raw": "250 g boneless chicken thigh (boneless, skin-on)",
       "expected": {
-        "item": "boneless chicken thigh (boneless, skin-on)",
+        "item": "boneless chicken thigh",
         "measurements": [
           {
             "amount": "250",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "boneless, skin-on",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "2 tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "11",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1 tsp sake (or white wine)",
       "expected": {
-        "item": "sake (or white wine)",
+        "item": "sake",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or white wine",
         "category": "Beverages"
       }
     },
     {
       "raw": "½ tsp grated ginger root (or ginger paste)",
       "expected": {
-        "item": "grated ginger root (or ginger paste)",
+        "item": "grated ginger root",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or ginger paste",
         "category": "Produce"
       }
     },
     {
       "raw": "½ tsp grated garlic (or garlic paste)",
       "expected": {
-        "item": "grated garlic (or garlic paste)",
+        "item": "grated garlic",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or garlic paste",
         "category": "Produce"
       }
     },
     {
       "raw": "2 tbsp potato starch (katakuriko)",
       "expected": {
-        "item": "potato starch (katakuriko)",
+        "item": "potato starch",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "katakuriko",
         "category": "Produce"
       }
     },
@@ -125,32 +125,28 @@
     {
       "raw": "1 ½ tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "24",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "2 tsp Japanese black vinegar (kurozu) ((kurozu))",
       "expected": {
-        "item": "Japanese black vinegar (kurozu) (kurozu)",
+        "item": "Japanese black vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "kurozu, kurozu",
         "category": "Oils & Vinegars"
       }
     },
@@ -175,14 +171,18 @@
     {
       "raw": "1 tbsp sake (or white wine)",
       "expected": {
-        "item": "sake (or white wine)",
+        "item": "sake",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or white wine",
         "category": "Beverages"
       }
     },
@@ -225,9 +225,9 @@
     {
       "raw": "cooking oil (for shallow frying)",
       "expected": {
-        "item": "cooking oil (for shallow frying)",
+        "item": "cooking oil",
         "measurements": [],
-        "note": null,
+        "note": "for shallow frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -262,14 +262,14 @@
     {
       "raw": "50 g lotus root (renkon) ((renkon) optional)",
       "expected": {
-        "item": "lotus root (renkon) (renkon) optional)",
+        "item": "lotus root optional)",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "renkon, renkon",
         "category": "Other"
       }
     },

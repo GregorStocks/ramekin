@@ -103,14 +103,14 @@
     {
       "raw": "1/4 cup raw cane sugar (see Note)",
       "expected": {
-        "item": "raw cane sugar (see Note)",
+        "item": "raw cane sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Baking"
       }
     },
@@ -272,14 +272,14 @@
     {
       "raw": "16 small new potatoes (a little larger than a walnut is what Terry recommends)",
       "expected": {
-        "item": "new potatoes (a little larger than a walnut is what Terry recommends)",
+        "item": "new potatoes",
         "measurements": [
           {
             "amount": "16",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "a little larger than a walnut is what Terry recommends",
         "category": "Produce"
       }
     },

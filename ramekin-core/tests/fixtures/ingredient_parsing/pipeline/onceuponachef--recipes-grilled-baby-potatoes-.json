@@ -97,14 +97,14 @@
     {
       "raw": "2 teaspoons chopped fresh thyme (rosemary would also work well, or a combination)",
       "expected": {
-        "item": "chopped fresh thyme (rosemary would also work well, or a combination)",
+        "item": "chopped fresh thyme",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "rosemary would also work well, or a combination",
         "category": "Produce"
       }
     },

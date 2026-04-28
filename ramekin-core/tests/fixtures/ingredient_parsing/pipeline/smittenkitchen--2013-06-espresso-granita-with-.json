@@ -5,14 +5,14 @@
     {
       "raw": "2 cups freshly-brewed espresso (from about 14 single shots or 7 doubles)",
       "expected": {
-        "item": "freshly-brewed espresso (from about 14 single shots or 7 doubles)",
+        "item": "freshly-brewed espresso",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from about 14 single shots or 7 doubles",
         "category": "Beverages"
       }
     },

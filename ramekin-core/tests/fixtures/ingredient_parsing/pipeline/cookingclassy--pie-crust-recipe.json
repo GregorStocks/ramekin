@@ -5,7 +5,7 @@
     {
       "raw": "1 1/4 cups (178g) unbleached all-purpose flour ((scoop and sweep to measure))",
       "expected": {
-        "item": "unbleached all-purpose flour (scoop and sweep to measure)",
+        "item": "unbleached all-purpose flour",
         "measurements": [
           {
             "amount": "1.25",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "scoop and sweep to measure",
         "category": "Baking"
       }
     },
@@ -41,14 +41,18 @@
     {
       "raw": "1/2 tsp (scant) salt",
       "expected": {
-        "item": "(scant) salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "scant",
         "category": "Spices & Seasonings"
       }
     },

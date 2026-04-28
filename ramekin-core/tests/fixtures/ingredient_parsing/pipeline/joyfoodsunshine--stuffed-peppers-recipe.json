@@ -19,14 +19,14 @@
     {
       "raw": "6  bell peppers (cut in half lengthwise (4 if they are very large))",
       "expected": {
-        "item": "bell peppers (cut in half lengthwise (4 if they are very large)",
+        "item": "bell peppers",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut in half lengthwise (4 if they are very large",
         "category": "Produce"
       }
     },

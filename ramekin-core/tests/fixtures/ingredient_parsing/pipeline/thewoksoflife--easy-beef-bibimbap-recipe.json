@@ -138,14 +138,18 @@
     {
       "raw": "1 tablespoon soy sauce ((dark soy sauce, if you have it))",
       "expected": {
-        "item": "soy sauce (dark soy sauce, if you have it)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "dark soy sauce, if you have it",
         "category": "Condiments & Sauces"
       }
     },
@@ -180,14 +184,14 @@
     {
       "raw": "2 tablespoons gochujang ((Korean red pepper paste))",
       "expected": {
-        "item": "gochujang (Korean red pepper paste)",
+        "item": "gochujang",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "Korean red pepper paste",
         "category": "Condiments & Sauces"
       }
     },

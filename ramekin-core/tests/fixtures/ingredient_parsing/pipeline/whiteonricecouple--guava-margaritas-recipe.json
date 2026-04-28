@@ -59,7 +59,7 @@
     {
       "raw": "1/2 ounce Orange Liqueur ((triple sec, Grand Marnier, Cointreau, etc.))",
       "expected": {
-        "item": "Orange Liqueur (triple sec, Grand Marnier, Cointreau, etc.)",
+        "item": "Orange Liqueur",
         "measurements": [
           {
             "amount": "0.5",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "triple sec, Grand Marnier, Cointreau, etc.",
         "category": "Beverages"
       }
     },

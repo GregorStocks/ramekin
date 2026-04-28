@@ -5,14 +5,14 @@
     {
       "raw": "1 cup chocolate chips of choice (dark, milk or white)",
       "expected": {
-        "item": "chocolate chips of choice (dark, milk or white)",
+        "item": "chocolate chips of choice",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "dark, milk or white",
         "category": "Baking"
       }
     },
@@ -47,9 +47,9 @@
     {
       "raw": "Graham Crackers ((or Digestives) to serve)",
       "expected": {
-        "item": "Graham Crackers (or Digestives) to serve)",
+        "item": "Graham Crackers to serve)",
         "measurements": [],
-        "note": null,
+        "note": "or Digestives",
         "category": "Snacks"
       }
     }

@@ -255,7 +255,7 @@
     {
       "raw": "2 cups (5 ounces) shiitake (or white button) mushrooms, sliced",
       "expected": {
-        "item": "shiitake (or white button) mushrooms",
+        "item": "shiitake mushrooms",
         "measurements": [
           {
             "amount": "2",
@@ -270,7 +270,7 @@
             "unit": "g"
           }
         ],
-        "note": "sliced",
+        "note": "or white button, sliced",
         "category": "Produce"
       }
     },

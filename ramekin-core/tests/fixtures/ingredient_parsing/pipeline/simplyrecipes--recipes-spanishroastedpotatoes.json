@@ -69,14 +69,18 @@
     {
       "raw": "1/2 cup white wine (can substitute stock)",
       "expected": {
-        "item": "white wine (can substitute stock)",
+        "item": "white wine",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "can substitute stock",
         "category": "Beverages"
       }
     },

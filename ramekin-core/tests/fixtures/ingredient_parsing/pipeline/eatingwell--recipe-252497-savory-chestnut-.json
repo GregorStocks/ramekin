@@ -5,14 +5,14 @@
     {
       "raw": "1 14-ounce jar roasted chestnuts (see Tip)",
       "expected": {
-        "item": "roasted chestnuts (see Tip)",
+        "item": "roasted chestnuts",
         "measurements": [
           {
             "amount": "1",
             "unit": "14-ounce jar"
           }
         ],
-        "note": null,
+        "note": "see Tip",
         "category": "Nuts & Dried Fruit"
       }
     },

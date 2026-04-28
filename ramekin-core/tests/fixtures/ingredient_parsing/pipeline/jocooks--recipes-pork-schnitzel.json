@@ -83,23 +83,23 @@
     {
       "raw": "2 cups breadcrumbs (regular or Panko)",
       "expected": {
-        "item": "breadcrumbs (regular or Panko)",
+        "item": "breadcrumbs",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "regular or Panko",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "vegetable oil (for frying)",
       "expected": {
-        "item": "vegetable oil (for frying)",
+        "item": "vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     }

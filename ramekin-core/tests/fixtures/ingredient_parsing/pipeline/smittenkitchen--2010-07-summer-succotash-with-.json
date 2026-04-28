@@ -136,28 +136,28 @@
     {
       "raw": "1/4 cup packed small fresh basil leaves (I used less)",
       "expected": {
-        "item": "packed small fresh basil leaves (I used less)",
+        "item": "packed small fresh basil leaves",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used less",
         "category": "Produce"
       }
     },
     {
       "raw": "1/4 cup packed small fresh arugula leaves (I used more)",
       "expected": {
-        "item": "packed small fresh arugula leaves (I used more)",
+        "item": "packed small fresh arugula leaves",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used more",
         "category": "Produce"
       }
     },

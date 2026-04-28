@@ -120,7 +120,7 @@
     {
       "raw": "2 1/2 pounds (1kg) ground beef or lamb, or some combination (see note)",
       "expected": {
-        "item": "ground beef or lamb, or some combination (see note)",
+        "item": "ground beef or lamb, or some combination",
         "measurements": [
           {
             "amount": "2.5",
@@ -131,7 +131,7 @@
             "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Meat & Seafood"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "1½ cups tequila (such as Patrón)",
       "expected": {
-        "item": "tequila (such as Patrón)",
+        "item": "tequila",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Patrón",
         "category": "Beverages"
       }
     },
@@ -33,28 +33,32 @@
     {
       "raw": "1 cup fresh orange juice (from about 4 oranges)",
       "expected": {
-        "item": "fresh orange juice (from about 4 oranges)",
+        "item": "fresh orange juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from about 4 oranges",
         "category": "Produce"
       }
     },
     {
       "raw": "¼ cup fresh lime juice (from about 2 limes)",
       "expected": {
-        "item": "fresh lime juice (from about 2 limes)",
+        "item": "fresh lime juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 2 limes",
         "category": "Beverages"
       }
     },
@@ -75,14 +79,14 @@
     {
       "raw": "2 12-oz. bottles or cans Mexican beer (such as Corona)",
       "expected": {
-        "item": "or cans Mexican beer (such as Corona)",
+        "item": "or cans Mexican beer",
         "measurements": [
           {
             "amount": "2",
             "unit": "12-oz. bottles"
           }
         ],
-        "note": null,
+        "note": "such as Corona",
         "category": "Beverages"
       }
     },

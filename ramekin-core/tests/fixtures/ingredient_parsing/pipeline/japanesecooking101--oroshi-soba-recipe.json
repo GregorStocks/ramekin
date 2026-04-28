@@ -5,7 +5,7 @@
     {
       "raw": "7 oz dried Soba (buckwheat noodle)",
       "expected": {
-        "item": "dried Soba (buckwheat noodle)",
+        "item": "dried Soba",
         "measurements": [
           {
             "amount": "7",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "buckwheat noodle",
         "category": "Pasta & Rice"
       }
     },
@@ -37,14 +37,14 @@
     {
       "raw": "1/2 cup Tenkasu (fried Tempura bits)",
       "expected": {
-        "item": "Tenkasu (fried Tempura bits)",
+        "item": "Tenkasu",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "fried Tempura bits",
         "category": "Other"
       }
     },

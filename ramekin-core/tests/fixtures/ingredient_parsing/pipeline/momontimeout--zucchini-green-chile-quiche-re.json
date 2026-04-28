@@ -12,21 +12,21 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "1 for a standard size quiche, 2 if making mini quiches",
         "category": "Frozen"
       }
     },
     {
       "raw": "1  zucchini (medium size)",
       "expected": {
-        "item": "zucchini (medium size)",
+        "item": "zucchini",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "medium size",
         "category": "Produce"
       }
     },

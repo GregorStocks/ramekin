@@ -5,7 +5,7 @@
     {
       "raw": "2 lb carrots (pealed and cut on the diagonal)",
       "expected": {
-        "item": "carrots (pealed and cut on the diagonal)",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
@@ -16,16 +16,16 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "pealed and cut on the diagonal",
         "category": "Produce"
       }
     },
     {
       "raw": "Extra virgin olive oil (I used Private Reserve Greek extra virgin olive oil)",
       "expected": {
-        "item": "Extra virgin olive oil (I used Private Reserve Greek extra virgin olive oil)",
+        "item": "Extra virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "I used Private Reserve Greek extra virgin olive oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -73,15 +73,15 @@
     {
       "raw": "1/2  lime (juice of)",
       "expected": {
-        "item": "lime (juice of)",
+        "item": "lime",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juice of",
+        "category": "Produce"
       }
     },
     {

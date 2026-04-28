@@ -37,14 +37,14 @@
     {
       "raw": "2 teaspoons ginger garlic paste (see Tip)",
       "expected": {
-        "item": "ginger garlic paste (see Tip)",
+        "item": "ginger garlic paste",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "see Tip",
         "category": "Produce"
       }
     },
@@ -136,7 +136,7 @@
             "unit": "small"
           }
         ],
-        "note": "diced",
+        "note": "1/2-inch, diced",
         "category": "Produce"
       }
     },
@@ -150,22 +150,22 @@
             "unit": "medium"
           }
         ],
-        "note": "diced",
+        "note": "1/2-inch, diced",
         "category": "Produce"
       }
     },
     {
       "raw": "0.5 cup chana dal (split chickpeas or Bengal gram), soaked for 4 to 8 hours",
       "expected": {
-        "item": "chana dal (split chickpeas or Bengal gram), soaked for 4 to 8 hours",
+        "item": "chana dal, soaked for 4 to 8 hours",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "split chickpeas or Bengal gram",
+        "category": "Other"
       }
     },
     {

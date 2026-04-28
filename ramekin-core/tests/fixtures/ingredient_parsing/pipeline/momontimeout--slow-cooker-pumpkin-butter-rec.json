@@ -5,14 +5,14 @@
     {
       "raw": "4 cups of pumpkin puree (make your own!)",
       "expected": {
-        "item": "pumpkin puree (make your own!)",
+        "item": "pumpkin puree",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "make your own!",
         "category": "Produce"
       }
     },

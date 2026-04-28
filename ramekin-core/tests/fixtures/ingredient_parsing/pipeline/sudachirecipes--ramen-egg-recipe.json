@@ -23,32 +23,28 @@
     {
       "raw": "¼ tsp dashi granules (vegetarians can use kombu or shiitake dashi granules)",
       "expected": {
-        "item": "dashi granules (vegetarians can use kombu or shiitake dashi granules)",
+        "item": "dashi granules",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "vegetarians can use kombu or shiitake dashi granules",
         "category": "Other"
       }
     },
     {
       "raw": "2 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "32",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -91,28 +87,36 @@
     {
       "raw": "½ tsp honey (or the same amount of sugar)",
       "expected": {
-        "item": "honey (or the same amount of sugar)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "3.5",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or the same amount of sugar",
         "category": "Baking"
       }
     },
     {
       "raw": "⅛ tsp rice vinegar (unseasoned)",
       "expected": {
-        "item": "rice vinegar (unseasoned)",
+        "item": "rice vinegar",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unseasoned",
         "category": "Oils & Vinegars"
       }
     },
@@ -137,28 +141,28 @@
     {
       "raw": "1 slice ginger root (thick cut)",
       "expected": {
-        "item": "ginger root (thick cut)",
+        "item": "ginger root",
         "measurements": [
           {
             "amount": "1",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "thick cut",
         "category": "Produce"
       }
     },
     {
       "raw": "2 inch Japanese leek (naganegi) ((green part) or regular leek/shallots)",
       "expected": {
-        "item": "inch Japanese leek (naganegi) (green part) or regular leek/shallots)",
+        "item": "inch Japanese leek or regular leek/shallots)",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "naganegi, green part",
         "category": "Produce"
       }
     },
@@ -179,14 +183,18 @@
     {
       "raw": "1 tsp salt (for boiling)",
       "expected": {
-        "item": "salt (for boiling)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for boiling",
         "category": "Spices & Seasonings"
       }
     }

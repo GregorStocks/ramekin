@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": "quartered and very thinly sliced",
+        "note": "about 4, quartered and very thinly sliced",
         "category": "Produce"
       }
     },
@@ -73,9 +73,9 @@
     {
       "raw": "Herb bundle (see Note above)",
       "expected": {
-        "item": "Herb bundle (see Note above)",
+        "item": "Herb bundle",
         "measurements": [],
-        "note": null,
+        "note": "see Note above",
         "category": "Spices & Seasonings"
       }
     },

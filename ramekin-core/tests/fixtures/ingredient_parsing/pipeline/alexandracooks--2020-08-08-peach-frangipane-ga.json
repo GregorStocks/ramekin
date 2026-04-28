@@ -163,14 +163,14 @@
     {
       "raw": "1&nbsp;egg (small if possible)",
       "expected": {
-        "item": "egg (small if possible)",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "small if possible",
         "category": "Dairy & Eggs"
       }
     },
@@ -198,7 +198,7 @@
             "unit": null
           }
         ],
-        "note": "sliced thinly",
+        "note": "1/4-inch or smaller, sliced thinly",
         "category": "Produce"
       }
     },

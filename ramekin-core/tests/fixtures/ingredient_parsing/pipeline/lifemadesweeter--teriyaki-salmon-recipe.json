@@ -5,28 +5,32 @@
     {
       "raw": "1/2 cup coconut aminos (, you can also use gluten free tamari or low sodium soy sauce for a non paleo version)",
       "expected": {
-        "item": "coconut aminos (, you can also use gluten free tamari or low sodium soy sauce for a non paleo version)",
+        "item": "coconut aminos",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "you can also use gluten free tamari or low sodium soy sauce for a non paleo version",
+        "category": "Produce"
       }
     },
     {
       "raw": "2 tablespoons apple cider vinegar (OR 3 Tbs rice wine vinegar)",
       "expected": {
-        "item": "apple cider vinegar (OR 3 Tbs rice wine vinegar)",
+        "item": "apple cider vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "OR 3 Tbs rice wine vinegar",
         "category": "Oils & Vinegars"
       }
     },
@@ -161,7 +165,7 @@
     {
       "raw": "1 1/2 - 2 pound salmon filet (or 4 salmon (4-6 ounce) filets, skin on)",
       "expected": {
-        "item": "salmon filet (or 4 salmon (4-6 ounce) filets, skin on)",
+        "item": "salmon filet filets, skin on)",
         "measurements": [
           {
             "amount": "1.5-2",
@@ -172,7 +176,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 4 salmon (4-6 ounce",
         "category": "Meat & Seafood"
       }
     },

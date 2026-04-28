@@ -51,14 +51,14 @@
     {
       "raw": "1 cup breadcrumbs (regular or Italian breadcrumbs, can use panko bread crumbs which also makes the recipe gluten free.)",
       "expected": {
-        "item": "breadcrumbs (regular or Italian breadcrumbs, can use panko bread crumbs which also makes the recipe gluten free.)",
+        "item": "breadcrumbs",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "regular or Italian breadcrumbs, can use panko bread crumbs which also makes the recipe gluten free.",
         "category": "Bakery & Bread"
       }
     },

@@ -47,18 +47,14 @@
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -119,14 +115,14 @@
     {
       "raw": "6 strips roasted seaweed for sushi (nori) (nori)",
       "expected": {
-        "item": "strips roasted seaweed for sushi (nori) (nori)",
+        "item": "strips roasted seaweed for sushi",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "nori, nori",
         "category": "Meat & Seafood"
       }
     }

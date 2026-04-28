@@ -12,7 +12,7 @@
             "unit": "piece"
           }
         ],
-        "note": null,
+        "note": "2-inch",
         "category": "Other"
       }
     },
@@ -105,14 +105,14 @@
     {
       "raw": "1/2 cup dried porcini, chanterelle, or shiitake mushrooms (or a blend)",
       "expected": {
-        "item": "dried porcini, chanterelle, or shiitake mushrooms (or a blend)",
+        "item": "dried porcini, chanterelle, or shiitake mushrooms",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or a blend",
         "category": "Produce"
       }
     },
@@ -126,7 +126,7 @@
             "unit": "piece"
           }
         ],
-        "note": "chopped",
+        "note": "2-inch, chopped",
         "category": "Beverages"
       }
     },
@@ -140,7 +140,7 @@
             "unit": "piece"
           }
         ],
-        "note": "chopped",
+        "note": "2-inch, chopped",
         "category": "Spices & Seasonings"
       }
     },

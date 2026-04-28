@@ -12,14 +12,14 @@
             "unit": null
           }
         ],
-        "note": "unpeeled (from 3 10-ounce bags)",
+        "note": "from 3 10-ounce bags, unpeeled",
         "category": "Produce"
       }
     },
     {
       "raw": "2 1/2 ounces bacon (applewood-smoked is suggested), cut into a small dice",
       "expected": {
-        "item": "bacon (applewood-smoked is suggested), cut into a small dice",
+        "item": "bacon, cut into a small dice",
         "measurements": [
           {
             "amount": "2.5",
@@ -30,8 +30,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "applewood-smoked is suggested",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -99,7 +99,7 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": "to taste (I used 1 teaspoon of Diamond Kosher salt)",
+        "note": "I used 1 teaspoon of Diamond Kosher salt, to taste",
         "category": "Spices & Seasonings"
       }
     }

@@ -5,14 +5,14 @@
     {
       "raw": "1  flax egg (or one large egg)",
       "expected": {
-        "item": "flax egg (or one large egg)",
+        "item": "flax egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or one large egg",
         "category": "Dairy & Eggs"
       }
     },
@@ -221,14 +221,14 @@
     {
       "raw": "1 cup old-fashioned rolled oats ((not instant))",
       "expected": {
-        "item": "old-fashioned rolled oats (not instant)",
+        "item": "old-fashioned rolled oats",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "not instant",
         "category": "Bakery & Bread"
       }
     },

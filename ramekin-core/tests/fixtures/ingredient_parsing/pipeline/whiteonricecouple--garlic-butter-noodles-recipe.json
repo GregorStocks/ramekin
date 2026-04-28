@@ -5,7 +5,7 @@
     {
       "raw": "6 oz. dry noodles about 2 (3.5 oz packages) instant ramen noodles (- or any noodles like spaghetti )",
       "expected": {
-        "item": "dry noodles about 2 instant ramen noodles (- or any noodles like spaghetti",
+        "item": "dry noodles about 2 instant ramen noodles",
         "measurements": [
           {
             "amount": "6",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "- or any noodles like spaghetti",
         "category": "Pasta & Rice"
       }
     },
@@ -77,28 +77,36 @@
     {
       "raw": "1 Tablespoon Soy sauce  ( or Maggi seasoning, or fish sauce (start with 2 teaspoons first because these are extra salty))",
       "expected": {
-        "item": "Soy sauce  ( or Maggi seasoning, or fish sauce (start with 2 teaspoons first because these are extra salty)",
+        "item": "Soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Maggi seasoning, or fish sauce (start with 2 teaspoons first because these are extra salty",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1 Tablespoon oyster sauce (or hoisin or any bbq sauce )",
       "expected": {
-        "item": "oyster sauce (or hoisin or any bbq sauce",
+        "item": "oyster sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "18",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or hoisin or any bbq sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -119,23 +127,23 @@
     {
       "raw": "3 stalks  fresh chopped green onions  (or scallions )",
       "expected": {
-        "item": "fresh chopped green onions  (or scallions",
+        "item": "fresh chopped green onions",
         "measurements": [
           {
             "amount": "3",
             "unit": "stalk"
           }
         ],
-        "note": null,
+        "note": "or scallions",
         "category": "Produce"
       }
     },
     {
       "raw": "additional salt and pepper (to personal taste)",
       "expected": {
-        "item": "additional salt and pepper (to personal taste)",
+        "item": "additional salt and pepper",
         "measurements": [],
-        "note": null,
+        "note": "to personal taste",
         "category": "Spices & Seasonings"
       }
     }

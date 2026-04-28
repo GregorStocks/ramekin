@@ -54,7 +54,7 @@
             "unit": "bottle"
           }
         ],
-        "note": null,
+        "note": "750ml of Pinot Grigio, Sauvignon Blanc, or Chardonnay",
         "category": "Beverages"
       }
     },
@@ -129,9 +129,9 @@
     {
       "raw": "fresh rosemary (to garnish)",
       "expected": {
-        "item": "fresh rosemary (to garnish)",
+        "item": "fresh rosemary",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "category": "Produce"
       }
     }

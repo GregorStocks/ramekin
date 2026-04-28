@@ -33,7 +33,7 @@
     {
       "raw": "8 ounces fresh mozzarella (cut into 1/4-inch cubes)",
       "expected": {
-        "item": "fresh mozzarella (cut into 1/4-inch cubes)",
+        "item": "fresh mozzarella",
         "measurements": [
           {
             "amount": "8",
@@ -44,14 +44,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch cubes",
         "category": "Cheese"
       }
     },
     {
       "raw": "4 ounces dry Italian salami (cut into matchsticks)",
       "expected": {
-        "item": "dry Italian salami (cut into matchsticks)",
+        "item": "dry Italian salami",
         "measurements": [
           {
             "amount": "4",
@@ -62,7 +62,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into matchsticks",
         "category": "Meat & Seafood"
       }
     },
@@ -76,7 +76,7 @@
             "unit": "can"
           }
         ],
-        "note": "rinsed and drained",
+        "note": "15-ounce, rinsed and drained",
         "category": "Canned Goods"
       }
     },

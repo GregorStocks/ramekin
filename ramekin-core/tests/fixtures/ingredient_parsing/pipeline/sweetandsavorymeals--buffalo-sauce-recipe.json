@@ -95,14 +95,14 @@
     {
       "raw": "1 1/2 cups hot sauce (like Frank’s Hot Sauce)",
       "expected": {
-        "item": "hot sauce (like Frank’s Hot Sauce)",
+        "item": "hot sauce",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "like Frank’s Hot Sauce",
         "category": "Condiments & Sauces"
       }
     },

@@ -23,18 +23,18 @@
     {
       "raw": "kosher salt (, to season wings)",
       "expected": {
-        "item": "kosher salt (, to season wings)",
+        "item": "kosher salt",
         "measurements": [],
-        "note": null,
+        "note": "to season wings",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "ground black pepper (, to season wings)",
       "expected": {
-        "item": "ground black pepper (, to season wings)",
+        "item": "ground black pepper",
         "measurements": [],
-        "note": null,
+        "note": "to season wings",
         "category": "Spices & Seasonings"
       }
     },
@@ -133,14 +133,18 @@
     {
       "raw": "1 teaspoon fish sauce ( or soy sauce (choose fish sauce, it tastes better!))",
       "expected": {
-        "item": "fish sauce ( or soy sauce (choose fish sauce, it tastes better!)",
+        "item": "fish sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or soy sauce (choose fish sauce, it tastes better!",
         "category": "Condiments & Sauces"
       }
     },

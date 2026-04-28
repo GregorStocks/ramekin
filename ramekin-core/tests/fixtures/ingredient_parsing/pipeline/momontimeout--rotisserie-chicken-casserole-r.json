@@ -19,7 +19,7 @@
     {
       "raw": "10.5 oz cream of chicken soup  (can use low-sodium or Healthy Request; other cream soups can be used)",
       "expected": {
-        "item": "cream of chicken soup  (can use low-sodium or Healthy Request; other cream soups can be used)",
+        "item": "cream of chicken soup",
         "measurements": [
           {
             "amount": "10.5",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "can use low-sodium or Healthy Request; other cream soups can be used",
         "category": "Meat & Seafood"
       }
     },
@@ -51,29 +51,33 @@
     {
       "raw": "1/2 cup sliced almonds (or slivered almonds)",
       "expected": {
-        "item": "sliced almonds (or slivered almonds)",
+        "item": "sliced almonds",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or slivered almonds",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
       "raw": "1/2 cup mayonnaise (or Greek yogurt)",
       "expected": {
-        "item": "mayonnaise (or Greek yogurt)",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "or Greek yogurt",
+        "category": "Condiments & Sauces"
       }
     },
     {

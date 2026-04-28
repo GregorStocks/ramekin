@@ -59,28 +59,28 @@
     {
       "raw": "12 slices thick cut bacon (cut into 1 inch pieces)",
       "expected": {
-        "item": "thick cut bacon (cut into 1 inch pieces)",
+        "item": "thick cut bacon",
         "measurements": [
           {
             "amount": "12",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "cut into 1 inch pieces",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1  romaine lettuce heart (cut into 1 inch pieces)",
       "expected": {
-        "item": "romaine lettuce heart (cut into 1 inch pieces)",
+        "item": "romaine lettuce heart",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1 inch pieces",
         "category": "Produce"
       }
     },

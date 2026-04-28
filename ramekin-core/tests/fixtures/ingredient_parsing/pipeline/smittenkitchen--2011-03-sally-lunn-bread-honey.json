@@ -78,7 +78,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1/2 packet or 1/8 ounce",
         "category": "Baking"
       }
     },
@@ -165,15 +165,15 @@
     {
       "raw": "1 to 2 tablespoons honey (use less for lightly sweet, more for a more traditional honey butter)",
       "expected": {
-        "item": "honey (use less for lightly sweet, more for a more traditional honey butter)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "use less for lightly sweet, more for a more traditional honey butter",
+        "category": "Baking"
       }
     },
     {

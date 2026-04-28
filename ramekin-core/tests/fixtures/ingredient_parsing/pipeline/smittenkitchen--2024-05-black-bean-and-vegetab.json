@@ -132,7 +132,7 @@
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "28-ounce",
         "category": "Canned Goods"
       }
     },
@@ -155,7 +155,7 @@
             "unit": "can"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "15.5-ounce, drained and rinsed",
         "category": "Canned Goods"
       }
     },
@@ -171,14 +171,14 @@
     {
       "raw": "1 cup corn kernels, fresh (from 1 ear), canned and drained, or frozen (no need to thaw)",
       "expected": {
-        "item": "corn kernels, fresh (from 1 ear), canned and drained",
+        "item": "corn kernels, fresh, canned and drained",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "or frozen (no need to thaw)",
+        "note": "from 1 ear, no need to thaw, or frozen",
         "category": "Canned Goods"
       }
     },

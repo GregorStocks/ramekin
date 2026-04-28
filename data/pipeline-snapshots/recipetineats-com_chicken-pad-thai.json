@@ -13,7 +13,7 @@
   "source_name": "Recipetineats.com",
   "ingredients": [
     {
-      "item": "Chang’s Pad Thai dried rice sticks (Note 1)",
+      "item": "Chang’s Pad Thai dried rice sticks",
       "measurements": [
         {
           "amount": "125",
@@ -24,19 +24,19 @@
           "unit": "oz"
         }
       ],
-      "note": null,
+      "note": "Note 1",
       "raw": "125 g / 4oz  Chang’s Pad Thai dried rice sticks (Note 1)",
       "section": null
     },
     {
-      "item": "tamarind puree, NOT concentrate (Note 2)",
+      "item": "tamarind puree, NOT concentrate",
       "measurements": [
         {
           "amount": "1.5",
           "unit": "tbsp"
         }
       ],
-      "note": null,
+      "note": "Note 2",
       "raw": "1 1/2 tbsp tamarind puree , NOT concentrate (Note 2)",
       "section": "Sauce"
     },
@@ -57,26 +57,34 @@
       "section": "Sauce"
     },
     {
-      "item": "fish sauce (Note 3)",
+      "item": "fish sauce",
       "measurements": [
         {
           "amount": "2",
           "unit": "tbsp"
+        },
+        {
+          "amount": "36",
+          "unit": "g"
         }
       ],
-      "note": null,
+      "note": "Note 3",
       "raw": "2 tbsp fish sauce (Note 3)",
       "section": "Sauce"
     },
     {
-      "item": "oyster sauce (Note 4)",
+      "item": "oyster sauce",
       "measurements": [
         {
           "amount": "1.5",
           "unit": "tbsp"
+        },
+        {
+          "amount": "27",
+          "unit": "g"
         }
       ],
-      "note": null,
+      "note": "Note 4",
       "raw": "1 1/2 tbsp oyster sauce (Note 4)",
       "section": "Sauce"
     },
@@ -93,14 +101,14 @@
       "section": "Stir Fry"
     },
     {
-      "item": "onion, sliced (brown, yellow)",
+      "item": "onion",
       "measurements": [
         {
           "amount": "0.5",
           "unit": null
         }
       ],
-      "note": null,
+      "note": "brown, yellow, sliced",
       "raw": "1/2 onion , sliced (brown, yellow)",
       "section": "Stir Fry"
     },
@@ -117,7 +125,7 @@
       "section": "Stir Fry"
     },
     {
-      "item": "chicken breast (or thigh)",
+      "item": "chicken breast",
       "measurements": [
         {
           "amount": "150",
@@ -128,7 +136,7 @@
           "unit": "oz"
         }
       ],
-      "note": "thinly sliced",
+      "note": "or thigh, thinly sliced",
       "raw": "150 g/5oz  chicken breast (or thigh) , thinly sliced",
       "section": "Stir Fry"
     },
@@ -157,14 +165,14 @@
       "section": "Stir Fry"
     },
     {
-      "item": "firm tofu, cut into 3cm / 1 1/4″ batons (see photo)",
+      "item": "firm tofu, cut into 3cm / 1 1/4″ batons",
       "measurements": [
         {
           "amount": "0.5",
           "unit": "cup"
         }
       ],
-      "note": null,
+      "note": "see photo",
       "raw": "1/2 cup firm tofu, cut into 3cm / 1 1/4″ batons (see photo)",
       "section": "Stir Fry"
     },
@@ -193,9 +201,9 @@
       "section": "Stir Fry"
     },
     {
-      "item": "Lime wedges (essential)",
+      "item": "Lime wedges",
       "measurements": [],
-      "note": null,
+      "note": "essential",
       "raw": "Lime wedges (essential)",
       "section": "For Serving"
     },

@@ -47,15 +47,15 @@
     {
       "raw": "1  lemon ((zest + 2 tablespoons juice))",
       "expected": {
-        "item": "lemon (zest + 2 tablespoons juice)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "zest + 2 tablespoons juice",
+        "category": "Produce"
       }
     },
     {

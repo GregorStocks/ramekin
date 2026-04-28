@@ -5,14 +5,14 @@
     {
       "raw": "2  medium Hass avocados (ripe)",
       "expected": {
-        "item": "Hass avocados (ripe)",
+        "item": "Hass avocados",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "ripe",
         "category": "Produce"
       }
     },

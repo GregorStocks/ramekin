@@ -158,7 +158,7 @@
     {
       "raw": "2 1/4 cups (320 grams or 11.5 ounces) fresh or frozen blueberries (no need to defrost)",
       "expected": {
-        "item": "fresh or frozen blueberries (no need to defrost)",
+        "item": "fresh or frozen blueberries",
         "measurements": [
           {
             "amount": "2.25",
@@ -173,7 +173,7 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "no need to defrost",
         "category": "Produce"
       }
     },

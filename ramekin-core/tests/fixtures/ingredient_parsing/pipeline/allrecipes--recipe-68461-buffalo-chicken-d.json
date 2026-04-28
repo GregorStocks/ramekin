@@ -27,14 +27,14 @@
     {
       "raw": "0.75 cup hot pepper sauce (such as Frank's RedHot®)",
       "expected": {
-        "item": "hot pepper sauce (such as Frank's RedHot®)",
+        "item": "hot pepper sauce",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Frank's RedHot®",
         "category": "Spices & Seasonings"
       }
     },

@@ -37,7 +37,7 @@
     {
       "raw": "1 lb ground turkey (or chicken)",
       "expected": {
-        "item": "ground turkey (or chicken)",
+        "item": "ground turkey",
         "measurements": [
           {
             "amount": "1",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -97,21 +97,21 @@
     {
       "raw": "2 cloves garlic (pressed,)",
       "expected": {
-        "item": "garlic (pressed,)",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "2",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "pressed,",
         "category": "Produce"
       }
     },
     {
       "raw": "8 oz ricotta cheese (or 1/2 of the 15oz tub)",
       "expected": {
-        "item": "ricotta cheese (or 1/2 of the 15oz tub)",
+        "item": "ricotta cheese",
         "measurements": [
           {
             "amount": "8",
@@ -122,21 +122,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 1/2 of the 15oz tub",
         "category": "Cheese"
       }
     },
     {
       "raw": "4 Tbsp Light Olive oil (to saute)",
       "expected": {
-        "item": "Light Olive oil (to saute)",
+        "item": "Light Olive oil",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "to saute",
         "category": "Oils & Vinegars"
       }
     }

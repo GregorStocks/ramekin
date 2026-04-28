@@ -5,7 +5,7 @@
     {
       "raw": "8 oz white chocolate (broken into small pieces)",
       "expected": {
-        "item": "white chocolate (broken into small pieces)",
+        "item": "white chocolate",
         "measurements": [
           {
             "amount": "8",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "broken into small pieces",
         "category": "Other"
       }
     },
@@ -117,28 +117,28 @@
     {
       "raw": "1  vanilla bean (split and scraped OR 2 tsp vanilla extract)",
       "expected": {
-        "item": "vanilla bean (split and scraped",
+        "item": "vanilla bean",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "or 2 tsp vanilla extract)",
+        "note": "split and scraped OR 2 tsp vanilla extract",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/2 tsp ground cardamom ( OR 4 cardamom pods)",
       "expected": {
-        "item": "ground cardamom ( OR 4 cardamom pods)",
+        "item": "ground cardamom",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "OR 4 cardamom pods",
         "category": "Spices & Seasonings"
       }
     },

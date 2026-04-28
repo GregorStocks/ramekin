@@ -5,7 +5,7 @@
     {
       "raw": "1 cup (205 grams)  chana dal  ((Bengal gram))",
       "expected": {
-        "item": "chana dal  (Bengal gram)",
+        "item": "chana dal",
         "measurements": [
           {
             "amount": "1",
@@ -16,14 +16,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Bengal gram",
         "category": "Other"
       }
     },
     {
       "raw": "3 cups (710 ml)  water  (to pressure cook (more if using pot))",
       "expected": {
-        "item": "water  (to pressure cook (more if using pot)",
+        "item": "water",
         "measurements": [
           {
             "amount": "3",
@@ -32,9 +32,13 @@
           {
             "amount": "710",
             "unit": "ml"
+          },
+          {
+            "amount": "711",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "to pressure cook (more if using pot",
         "category": "Other"
       }
     },
@@ -163,28 +167,28 @@
     {
       "raw": "2 inch cinnamon piece  ((Ceylon/cassia, read notes))",
       "expected": {
-        "item": "inch cinnamon piece  (Ceylon/cassia, read notes)",
+        "item": "inch cinnamon piece",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "Ceylon/cassia, read notes",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1  black cardamom  ((omit if you don’t like))",
       "expected": {
-        "item": "black cardamom  (omit if you don’t like)",
+        "item": "black cardamom",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "omit if you don’t like",
         "category": "Spices & Seasonings"
       }
     },
@@ -275,29 +279,29 @@
     {
       "raw": "1 teaspoon dried fenugreek leaves ( (kasuri methi))",
       "expected": {
-        "item": "dried fenugreek leaves ( (kasuri methi)",
+        "item": "dried fenugreek leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "(kasuri methi",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "½ teaspoon amchur  ((mango powder or sub with chaat masala or 2 tbsps lemon juice while serving))",
       "expected": {
-        "item": "amchur  (mango powder",
+        "item": "amchur",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "or sub with chaat masala or 2 tbsps lemon juice while serving)",
-        "category": "Produce"
+        "note": "mango powder or sub with chaat masala or 2 tbsps lemon juice while serving",
+        "category": "Other"
       }
     },
     {
@@ -377,14 +381,14 @@
     {
       "raw": "½ inch ginger  (juliennes (4 grams))",
       "expected": {
-        "item": "inch ginger  (juliennes (4 grams)",
+        "item": "inch ginger",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "juliennes (4 grams",
         "category": "Beverages"
       }
     },

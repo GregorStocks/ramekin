@@ -100,14 +100,14 @@
     {
       "raw": "7 cups + about 6 Tbsp unbleached all-purpose flour (plus more to dust)",
       "expected": {
-        "item": "+ about 6 Tbsp unbleached all-purpose flour (plus more to dust)",
+        "item": "+ about 6 Tbsp unbleached all-purpose flour",
         "measurements": [
           {
             "amount": "7",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plus more to dust",
         "section": "For the Dough",
         "category": "Baking"
       }
@@ -115,7 +115,7 @@
     {
       "raw": "1 3/4 lb ground chicken thigh (leave the fat on if grinding it yourself)",
       "expected": {
-        "item": "ground chicken thigh (leave the fat on if grinding it yourself)",
+        "item": "ground chicken thigh",
         "measurements": [
           {
             "amount": "1.75",
@@ -126,7 +126,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "leave the fat on if grinding it yourself",
         "section": "For the Dough",
         "category": "Meat & Seafood"
       }
@@ -168,14 +168,14 @@
     {
       "raw": "2 Tbsp Cooking Oil (or mild olive oil)",
       "expected": {
-        "item": "Cooking Oil (or mild olive oil)",
+        "item": "Cooking Oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or mild olive oil",
         "section": "For the Dough",
         "category": "Oils & Vinegars"
       }
@@ -198,14 +198,14 @@
     {
       "raw": "3  garlic cloves (pressed)",
       "expected": {
-        "item": "garlic cloves (pressed)",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "pressed",
         "section": "For the Dough",
         "category": "Produce"
       }
@@ -238,9 +238,9 @@
     {
       "raw": "Sour cream (vinegar, ketchup)",
       "expected": {
-        "item": "Sour cream (vinegar, ketchup)",
+        "item": "Sour cream",
         "measurements": [],
-        "note": null,
+        "note": "vinegar, ketchup",
         "section": "For the Dough",
         "category": "Dairy & Eggs"
       }

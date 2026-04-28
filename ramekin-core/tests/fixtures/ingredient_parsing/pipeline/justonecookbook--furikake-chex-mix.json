@@ -97,29 +97,29 @@
     {
       "raw": "1 jar nori komi furikake (nori & sesame rice seasoning)",
       "expected": {
-        "item": "nori komi furikake (nori & sesame rice seasoning)",
+        "item": "nori komi furikake",
         "measurements": [
           {
             "amount": "1",
             "unit": "jar"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "nori & sesame rice seasoning",
+        "category": "Other"
       }
     },
     {
       "raw": "2 tsp shichimi togarashi (Japanese seven spice) (optional)",
       "expected": {
-        "item": "shichimi togarashi (Japanese seven spice) (optional)",
+        "item": "shichimi togarashi",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "Japanese seven spice, optional",
+        "category": "Other"
       }
     },
     {
@@ -151,14 +151,14 @@
     {
       "raw": "½ cup brown rice syrup (most recipes use corn syrup, but I use brown rice syrup for a healthier option with more neutral flavor)",
       "expected": {
-        "item": "brown rice syrup (most recipes use corn syrup, but I use brown rice syrup for a healthier option with more neutral flavor)",
+        "item": "brown rice syrup",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "most recipes use corn syrup, but I use brown rice syrup for a healthier option with more neutral flavor",
         "category": "Pasta & Rice"
       }
     },

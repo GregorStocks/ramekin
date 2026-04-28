@@ -166,7 +166,7 @@
     {
       "raw": "1 cup (6 7/8 ounces or 195 grams) packed light brown sugar (updated weight)",
       "expected": {
-        "item": "packed light brown sugar (updated weight)",
+        "item": "packed light brown sugar",
         "measurements": [
           {
             "amount": "1",
@@ -181,7 +181,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "updated weight",
         "category": "Baking"
       }
     },

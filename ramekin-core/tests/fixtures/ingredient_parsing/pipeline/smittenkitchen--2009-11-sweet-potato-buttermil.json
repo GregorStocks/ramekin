@@ -163,28 +163,28 @@
     {
       "raw": "3/4 cup full- or lowfat buttermilk (or, you can make your own)",
       "expected": {
-        "item": "full- or lowfat buttermilk (or, you can make your own)",
+        "item": "full- or lowfat buttermilk",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or, you can make your own",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 All-Butter, Really Flaky Pie Crust (a half recipe will yield a single crust), prebaked (instructions below)",
       "expected": {
-        "item": "All-Butter, Really Flaky Pie Crust (a half recipe will yield a single crust), prebaked (instructions below)",
+        "item": "All-Butter, Really Flaky Pie Crust, prebaked",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "a half recipe will yield a single crust, instructions below",
         "category": "Frozen"
       }
     },

@@ -136,14 +136,14 @@
     {
       "raw": "2  avocados (mashed)",
       "expected": {
-        "item": "avocados (mashed)",
+        "item": "avocados",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "mashed",
         "category": "Produce"
       }
     },

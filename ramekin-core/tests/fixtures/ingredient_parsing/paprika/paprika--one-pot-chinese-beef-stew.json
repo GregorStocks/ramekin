@@ -92,7 +92,7 @@
             "unit": "piece"
           }
         ],
-        "note": "peeled and thinly sliced",
+        "note": "3-inch, peeled and thinly sliced",
         "category": "Beverages"
       }
     },
@@ -120,14 +120,14 @@
             "unit": "piece"
           }
         ],
-        "note": null,
+        "note": "2-inch",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "3 tablespoons (45 ml) chu hou sauce (see notes)",
       "expected": {
-        "item": "chu hou sauce (see notes)",
+        "item": "chu hou sauce",
         "measurements": [
           {
             "amount": "3",
@@ -138,7 +138,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Condiments & Sauces"
       }
     },

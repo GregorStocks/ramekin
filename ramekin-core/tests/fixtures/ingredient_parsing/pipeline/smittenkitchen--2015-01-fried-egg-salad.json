@@ -158,14 +158,18 @@
     {
       "raw": "1 1/2 tablespoons lime juice (Key limes are recommended, but don’t fuss if you can’t find them)",
       "expected": {
-        "item": "lime juice (Key limes are recommended, but don’t fuss if you can’t find them)",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "23",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Key limes are recommended, but don’t fuss if you can’t find them",
         "category": "Beverages"
       }
     },

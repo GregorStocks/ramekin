@@ -5,37 +5,37 @@
     {
       "raw": "1 tsp cooking oil (neutral)",
       "expected": {
-        "item": "cooking oil (neutral)",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "neutral",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "300 g boneless chicken thigh (skin-on or skinless)",
       "expected": {
-        "item": "boneless chicken thigh (skin-on or skinless)",
+        "item": "boneless chicken thigh",
         "measurements": [
           {
             "amount": "300",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skin-on or skinless",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "salt (for seasoning chicken)",
       "expected": {
-        "item": "salt (for seasoning chicken)",
+        "item": "salt, presumably Diamond",
         "measurements": [],
-        "note": null,
+        "note": "for seasoning chicken",
         "category": "Spices & Seasonings"
       }
     },
@@ -70,28 +70,32 @@
     {
       "raw": "5  button mushrooms (white variety preferred)",
       "expected": {
-        "item": "button mushrooms (white variety preferred)",
+        "item": "button mushrooms",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "white variety preferred",
         "category": "Produce"
       }
     },
     {
       "raw": "3 tbsp white wine (for chicken mixture)",
       "expected": {
-        "item": "white wine (for chicken mixture)",
+        "item": "white wine",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "44",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for chicken mixture",
         "category": "Beverages"
       }
     },
@@ -116,28 +120,32 @@
     {
       "raw": "3 tbsp white wine (for sauce)",
       "expected": {
-        "item": "white wine (for sauce)",
+        "item": "white wine",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "44",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for sauce",
         "category": "Beverages"
       }
     },
     {
       "raw": "1 tsp chicken bouillon powder (or consomme powder)",
       "expected": {
-        "item": "chicken bouillon powder (or consomme powder)",
+        "item": "chicken bouillon powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or consomme powder",
         "category": "Spices & Seasonings"
       }
     },
@@ -176,42 +184,46 @@
     {
       "raw": "2  potatoes (waxy or all-purpose variety)",
       "expected": {
-        "item": "potatoes (waxy or all-purpose variety)",
+        "item": "potatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "waxy or all-purpose variety",
         "category": "Produce"
       }
     },
     {
       "raw": "150 g carrots (medium sized)",
       "expected": {
-        "item": "carrots (medium sized)",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "150",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "medium sized",
         "category": "Produce"
       }
     },
     {
       "raw": "2 tbsp cake flour (or all-purpose flour)",
       "expected": {
-        "item": "cake flour (or all-purpose flour)",
+        "item": "cake flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or all-purpose flour",
         "category": "Baking"
       }
     },
@@ -250,14 +262,18 @@
     {
       "raw": "100 ml heavy cream (I used 35% fat)",
       "expected": {
-        "item": "heavy cream (I used 35% fat)",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "100",
             "unit": "ml"
+          },
+          {
+            "amount": "101",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used 35% fat",
         "category": "Dairy & Eggs"
       }
     },
@@ -310,14 +326,14 @@
     {
       "raw": "1 tsp grated hard cheese (Parmesan, Pecorino, Grana padano)",
       "expected": {
-        "item": "grated hard cheese (Parmesan, Pecorino, Grana padano)",
+        "item": "grated hard cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "Parmesan, Pecorino, Grana padano",
         "category": "Cheese"
       }
     },

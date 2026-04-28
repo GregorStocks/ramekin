@@ -19,14 +19,18 @@
     {
       "raw": "2 Tbsp white sugar (organic for vegan-friendly)",
       "expected": {
-        "item": "white sugar (organic for vegan-friendly)",
+        "item": "white sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "organic for vegan-friendly",
         "category": "Baking"
       }
     },

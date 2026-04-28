@@ -107,14 +107,14 @@
     {
       "raw": "1 cup Edamame (shelled)",
       "expected": {
-        "item": "Edamame (shelled)",
+        "item": "Edamame",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "shelled",
         "category": "Produce"
       }
     },

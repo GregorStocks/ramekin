@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds chuck roast (or pot roast)",
       "expected": {
-        "item": "chuck roast (or pot roast)",
+        "item": "chuck roast",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or pot roast",
         "category": "Meat & Seafood"
       }
     },
@@ -41,7 +41,7 @@
     {
       "raw": "10.5 ounces beef broth (low sodium)",
       "expected": {
-        "item": "beef broth (low sodium)",
+        "item": "beef broth",
         "measurements": [
           {
             "amount": "10.5",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Canned Goods"
       }
     },
@@ -73,7 +73,7 @@
     {
       "raw": "10.5 ounces condensed French onion soup (or condensed onion soup)",
       "expected": {
-        "item": "condensed French onion soup (or condensed onion soup)",
+        "item": "condensed French onion soup",
         "measurements": [
           {
             "amount": "10.5",
@@ -84,7 +84,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or condensed onion soup",
         "category": "Produce"
       }
     },
@@ -137,7 +137,7 @@
     {
       "raw": "8 ounces sliced provolone (or American cheese)",
       "expected": {
-        "item": "sliced provolone (or American cheese)",
+        "item": "sliced provolone",
         "measurements": [
           {
             "amount": "8",
@@ -148,21 +148,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or American cheese",
         "category": "Cheese"
       }
     },
     {
       "raw": "8  hoagie rolls ( or sub rolls)",
       "expected": {
-        "item": "hoagie rolls ( or sub rolls)",
+        "item": "hoagie rolls",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or sub rolls",
         "category": "Bakery & Bread"
       }
     }

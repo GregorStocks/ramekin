@@ -5,14 +5,14 @@
     {
       "raw": "6  chicken thighs (skin on, bone in)",
       "expected": {
-        "item": "chicken thighs (skin on, bone in)",
+        "item": "chicken thighs",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "skin on, bone in",
         "category": "Meat & Seafood"
       }
     },
@@ -107,7 +107,7 @@
     {
       "raw": "14.5 ounce crushed tomatoes (with liquid)",
       "expected": {
-        "item": "crushed tomatoes (with liquid)",
+        "item": "crushed tomatoes",
         "measurements": [
           {
             "amount": "14.5",
@@ -118,49 +118,53 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "with liquid",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1 3/4 cups chicken broth (or chicken stock)",
       "expected": {
-        "item": "chicken broth (or chicken stock)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
+          },
+          {
+            "amount": "436",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or chicken stock",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1-2 teaspoons salt (adjust to your taste)",
       "expected": {
-        "item": "salt (adjust to your taste)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "adjust to your taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/2 teaspoon pepper (adjust to your taste)",
       "expected": {
-        "item": "pepper (adjust to your taste)",
+        "item": "pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "adjust to your taste",
         "category": "Spices & Seasonings"
       }
     },

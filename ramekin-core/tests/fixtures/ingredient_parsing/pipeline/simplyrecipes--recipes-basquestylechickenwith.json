@@ -5,15 +5,15 @@
     {
       "raw": "3 mild chili peppers (Anaheim, poblanos, Fresno, or another variety)",
       "expected": {
-        "item": "mild chili peppers (Anaheim, poblanos, Fresno, or another variety)",
+        "item": "mild chili peppers",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "Anaheim, poblanos, Fresno, or another variety",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -114,7 +114,7 @@
     {
       "raw": "1/4 pound (one thick piece) baked ham, cut into matchsticks",
       "expected": {
-        "item": "(one thick piece) baked ham, cut into matchsticks",
+        "item": "baked ham, cut into matchsticks",
         "measurements": [
           {
             "amount": "0.25",
@@ -125,7 +125,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "one thick piece",
         "category": "Meat & Seafood"
       }
     },
@@ -167,7 +167,7 @@
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "15-ounce",
         "category": "Produce"
       }
     },

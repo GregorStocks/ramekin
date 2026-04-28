@@ -5,14 +5,14 @@
     {
       "raw": "1/2 brown onion (medium)",
       "expected": {
-        "item": "brown onion (medium)",
+        "item": "brown onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "medium",
         "category": "Produce"
       }
     },
@@ -132,15 +132,15 @@
     {
       "raw": "3 Tbsp Katakuriko (potato starch )",
       "expected": {
-        "item": "Katakuriko (potato starch",
+        "item": "Katakuriko",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "potato starch",
+        "category": "Other"
       }
     },
     {

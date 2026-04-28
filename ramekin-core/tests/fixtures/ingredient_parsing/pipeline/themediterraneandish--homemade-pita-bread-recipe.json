@@ -69,28 +69,28 @@
     {
       "raw": "1 to 2 tsp kosher salt (I used Diamond Crystal kosher salt)",
       "expected": {
-        "item": "kosher salt (I used Diamond Crystal kosher salt)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "I used Diamond Crystal kosher salt",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "2 tbsp extra virgin olive oil (I used Private Reserve Greek extra virgin olive oil), more for the bowl",
       "expected": {
-        "item": "extra virgin olive oil (I used Private Reserve Greek extra virgin olive oil), more for the bowl",
+        "item": "extra virgin olive oil, more for the bowl",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I used Private Reserve Greek extra virgin olive oil",
         "category": "Oils & Vinegars"
       }
     }

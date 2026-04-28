@@ -32,14 +32,14 @@
     {
       "raw": "1 tsp avocado oil (or olive oil)",
       "expected": {
-        "item": "avocado oil (or olive oil)",
+        "item": "avocado oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or olive oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -78,9 +78,9 @@
     {
       "raw": "parsley (to garnish)",
       "expected": {
-        "item": "parsley (to garnish)",
+        "item": "parsley",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "category": "Spices & Seasonings"
       }
     }

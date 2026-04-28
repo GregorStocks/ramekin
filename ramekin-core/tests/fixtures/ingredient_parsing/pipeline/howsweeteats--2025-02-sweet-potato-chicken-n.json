@@ -204,18 +204,18 @@
     {
       "raw": "parmesan cheese, (for topping)",
       "expected": {
-        "item": "parmesan cheese, (for topping)",
+        "item": "parmesan cheese",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Cheese"
       }
     },
     {
       "raw": "lemon wedges, (for spritzing)",
       "expected": {
-        "item": "lemon wedges, (for spritzing)",
+        "item": "lemon wedges",
         "measurements": [],
-        "note": null,
+        "note": "for spritzing",
         "category": "Produce"
       }
     }

@@ -51,15 +51,15 @@
     {
       "raw": "1 cup finely diced vegetables (Spinach, bell pepper, broccoli, zucchini, tomatoes, etc.)",
       "expected": {
-        "item": "finely diced vegetables (Spinach, bell pepper, broccoli, zucchini, tomatoes, etc.)",
+        "item": "finely diced vegetables",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "Spinach, bell pepper, broccoli, zucchini, tomatoes, etc.",
+        "category": "Other"
       }
     },
     {

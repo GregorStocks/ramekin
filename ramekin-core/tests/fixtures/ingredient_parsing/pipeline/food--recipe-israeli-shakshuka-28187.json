@@ -79,7 +79,7 @@
     {
       "raw": "26 1/2  ounces   pomi brand chopped tomatoes (nothing works like this!)",
       "expected": {
-        "item": "pomi brand chopped tomatoes (nothing works like this!)",
+        "item": "pomi brand chopped tomatoes",
         "measurements": [
           {
             "amount": "26.5",
@@ -90,7 +90,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "nothing works like this!",
         "category": "Produce"
       }
     },
@@ -115,14 +115,14 @@
     {
       "raw": "6   large    eggs (or as many as will fit on your sautÃƒ pan)",
       "expected": {
-        "item": "eggs (or as many as will fit on your sautÃƒ pan)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "or as many as will fit on your sautÃƒ pan",
         "category": "Dairy & Eggs"
       }
     }

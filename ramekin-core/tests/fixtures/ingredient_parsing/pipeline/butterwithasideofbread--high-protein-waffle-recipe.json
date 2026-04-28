@@ -37,14 +37,14 @@
     {
       "raw": "2 cups cottage cheese (any variety)",
       "expected": {
-        "item": "cottage cheese (any variety)",
+        "item": "cottage cheese",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "any variety",
         "category": "Dairy & Eggs"
       }
     }

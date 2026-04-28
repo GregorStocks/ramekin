@@ -189,7 +189,7 @@
     {
       "raw": "1/2 cup (120ml) coffee (cooled)",
       "expected": {
-        "item": "coffee (cooled)",
+        "item": "coffee",
         "measurements": [
           {
             "amount": "0.5",
@@ -200,7 +200,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "cooled",
         "category": "Beverages"
       }
     },
@@ -229,7 +229,7 @@
     {
       "raw": "1 &amp;amp; 1/4 cup (8oz) good quality semi-sweet chocolate chips ((see notes below*))",
       "expected": {
-        "item": "good quality semi-sweet chocolate chips (see notes below*)",
+        "item": "good quality semi-sweet chocolate chips",
         "measurements": [
           {
             "amount": "1.25",
@@ -244,7 +244,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes below",
         "category": "Baking"
       }
     }

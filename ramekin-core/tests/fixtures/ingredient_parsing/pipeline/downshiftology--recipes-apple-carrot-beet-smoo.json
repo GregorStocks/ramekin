@@ -19,14 +19,14 @@
     {
       "raw": "1  apple (any variety, cut into 2-inch chunks)",
       "expected": {
-        "item": "apple (any variety, cut into 2-inch chunks)",
+        "item": "apple",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "any variety, cut into 2-inch chunks",
         "category": "Produce"
       }
     },
@@ -47,14 +47,14 @@
     {
       "raw": "1  orange (juiced)",
       "expected": {
-        "item": "orange (juiced)",
+        "item": "orange",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "juiced",
         "category": "Produce"
       }
     },

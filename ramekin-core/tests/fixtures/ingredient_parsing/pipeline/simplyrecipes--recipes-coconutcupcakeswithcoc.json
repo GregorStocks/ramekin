@@ -109,14 +109,14 @@
     {
       "raw": "1 cup of canned coconut milk (full fat is best)",
       "expected": {
-        "item": "canned coconut milk (full fat is best)",
+        "item": "canned coconut milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "full fat is best",
         "category": "Canned Goods"
       }
     },

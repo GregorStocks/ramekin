@@ -95,21 +95,25 @@
     {
       "raw": "1 1/2 teaspoons ground cinnamon (but I skipped this)",
       "expected": {
-        "item": "ground cinnamon (but I skipped this)",
+        "item": "ground cinnamon",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "3.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "but I skipped this",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "3 cups (300 grams) rolled oats (not quick-cooking)",
       "expected": {
-        "item": "rolled oats (not quick-cooking)",
+        "item": "rolled oats",
         "measurements": [
           {
             "amount": "3",
@@ -120,7 +124,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not quick-cooking",
         "category": "Bakery & Bread"
       }
     },

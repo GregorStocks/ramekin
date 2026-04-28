@@ -5,7 +5,7 @@
     {
       "raw": "2 medium eggplants (about 3/4-pound each); use more if fairytale (small) eggplants",
       "expected": {
-        "item": "eggplants ; use more if fairytale (small) eggplants",
+        "item": "eggplants ; use more if fairytale eggplants",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "lb each"
           }
         ],
-        "note": null,
+        "note": "small",
         "category": "Produce"
       }
     },
@@ -86,7 +86,7 @@
     {
       "raw": "1/2 pound ground sausage meat (I use mild Italian pork or chicken)",
       "expected": {
-        "item": "ground sausage meat (I use mild Italian pork or chicken)",
+        "item": "ground sausage meat",
         "measurements": [
           {
             "amount": "0.5",
@@ -97,21 +97,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use mild Italian pork or chicken",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 1/2 cups tomato marinara sauce, prepared (use your favorite brand or the recipe in Notes)",
       "expected": {
-        "item": "tomato marinara sauce, prepared (use your favorite brand or the recipe in Notes)",
+        "item": "tomato marinara sauce, prepared",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "use your favorite brand or the recipe in Notes",
         "category": "Condiments & Sauces"
       }
     },

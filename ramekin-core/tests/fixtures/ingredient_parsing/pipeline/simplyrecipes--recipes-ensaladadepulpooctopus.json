@@ -97,28 +97,28 @@
     {
       "raw": "1 fresh jalapeno, seeded and minced (test for heat, if really hot, only use a small amount)",
       "expected": {
-        "item": "fresh jalapeno, seeded and minced (test for heat, if really hot, only use a small amount)",
+        "item": "fresh jalapeno",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "test for heat, if really hot, only use a small amount, seeded and minced",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 cup (loose) chopped fresh cilantro, including tender stems",
       "expected": {
-        "item": "(loose) chopped fresh cilantro, including tender stems",
+        "item": "chopped fresh cilantro, including tender stems",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "loose",
         "category": "Produce"
       }
     },

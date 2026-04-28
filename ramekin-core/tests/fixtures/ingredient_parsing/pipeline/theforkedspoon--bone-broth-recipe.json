@@ -65,14 +65,14 @@
     {
       "raw": "6 stalks  celery (cut into 2-inch pieces)",
       "expected": {
-        "item": "celery (cut into 2-inch pieces)",
+        "item": "celery",
         "measurements": [
           {
             "amount": "6",
             "unit": "stalk"
           }
         ],
-        "note": null,
+        "note": "cut into 2-inch pieces",
         "category": "Produce"
       }
     },

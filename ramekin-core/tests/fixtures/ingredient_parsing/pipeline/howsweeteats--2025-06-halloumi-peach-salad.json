@@ -216,9 +216,9 @@
     {
       "raw": "quick pickled onions, (for topping)",
       "expected": {
-        "item": "quick pickled onions, (for topping)",
+        "item": "quick pickled onions",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Canned Goods"
       }
     }

@@ -163,14 +163,14 @@
     {
       "raw": "1 1/2 cups panko breadcrumbs, for breading (see notes)",
       "expected": {
-        "item": "panko breadcrumbs, for breading (see notes)",
+        "item": "panko breadcrumbs, for breading",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Bakery & Bread"
       }
     },

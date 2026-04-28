@@ -158,7 +158,7 @@
     {
       "raw": "12 oz. (3 3/4 cups) penne pasta ((tested with Barilla))",
       "expected": {
-        "item": "penne pasta (tested with Barilla)",
+        "item": "penne pasta",
         "measurements": [
           {
             "amount": "12",
@@ -173,7 +173,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "tested with Barilla",
         "category": "Pasta & Rice"
       }
     },

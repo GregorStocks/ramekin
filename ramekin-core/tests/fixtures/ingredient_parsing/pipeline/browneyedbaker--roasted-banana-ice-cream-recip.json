@@ -37,14 +37,18 @@
     {
       "raw": "1 tablespoon butter (salted or unsalted, cut into small pieces)",
       "expected": {
-        "item": "butter (salted or unsalted, cut into small pieces)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "salted or unsalted, cut into small pieces",
         "category": "Dairy & Eggs"
       }
     },

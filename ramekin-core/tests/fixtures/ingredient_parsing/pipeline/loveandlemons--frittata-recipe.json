@@ -5,28 +5,28 @@
     {
       "raw": "6  large eggs (use 8 eggs for a 12-inch skillet)",
       "expected": {
-        "item": "eggs (use 8 eggs for a 12-inch skillet)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "use 8 eggs for a 12-inch skillet",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "¼ cup unsweetened almond milk (or any milk)",
       "expected": {
-        "item": "unsweetened almond milk (or any milk)",
+        "item": "unsweetened almond milk",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or any milk",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -47,14 +47,14 @@
     {
       "raw": "¼ teaspoon sea salt (more for sprinkling)",
       "expected": {
-        "item": "sea salt (more for sprinkling)",
+        "item": "sea salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "more for sprinkling",
         "category": "Spices & Seasonings"
       }
     },
@@ -70,9 +70,9 @@
     {
       "raw": "Extra-virgin olive oil (for drizzling)",
       "expected": {
-        "item": "Extra-virgin olive oil (for drizzling)",
+        "item": "Extra-virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for drizzling",
         "category": "Oils & Vinegars"
       }
     },
@@ -222,14 +222,14 @@
     {
       "raw": "½ cup chopped asparagus (tender parts)",
       "expected": {
-        "item": "chopped asparagus (tender parts)",
+        "item": "chopped asparagus",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "tender parts",
         "category": "Produce"
       }
     },

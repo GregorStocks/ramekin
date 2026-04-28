@@ -5,14 +5,18 @@
     {
       "raw": "1 cup all purpose flour (make sure to spoon and level, don&amp;#039;t scoop)",
       "expected": {
-        "item": "all purpose flour (make sure to spoon and level, don't scoop)",
+        "item": "all purpose flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "make sure to spoon and level, don't scoop",
         "category": "Baking"
       }
     },
@@ -33,14 +37,18 @@
     {
       "raw": "1/3 cup sugar (can use brown sugar if you prefer)",
       "expected": {
-        "item": "sugar (can use brown sugar if you prefer)",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "67",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "can use brown sugar if you prefer",
         "category": "Baking"
       }
     },

@@ -133,14 +133,14 @@
     {
       "raw": "1/2 cup green olives (Castelvetrano), chopped",
       "expected": {
-        "item": "green olives (Castelvetrano)",
+        "item": "green olives",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "chopped",
+        "note": "Castelvetrano, chopped",
         "category": "Canned Goods"
       }
     },

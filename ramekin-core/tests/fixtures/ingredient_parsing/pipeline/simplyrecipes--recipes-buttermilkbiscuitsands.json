@@ -5,14 +5,14 @@
     {
       "raw": "2 1/2 cups self-rising flour (plus extra for flouring your surface)",
       "expected": {
-        "item": "self-rising flour (plus extra for flouring your surface)",
+        "item": "self-rising flour",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plus extra for flouring your surface",
         "category": "Baking"
       }
     },
@@ -55,14 +55,14 @@
     {
       "raw": "4 tablespoons vegetable shortening (see Baking Tips below)",
       "expected": {
-        "item": "vegetable shortening (see Baking Tips below)",
+        "item": "vegetable shortening",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see Baking Tips below",
         "category": "Baking"
       }
     },
@@ -261,14 +261,14 @@
     {
       "raw": "1-2 tablespoons butter or bacon grease (if needed)",
       "expected": {
-        "item": "butter or bacon grease (if needed)",
+        "item": "butter or bacon grease",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "if needed",
         "category": "Dairy & Eggs"
       }
     }

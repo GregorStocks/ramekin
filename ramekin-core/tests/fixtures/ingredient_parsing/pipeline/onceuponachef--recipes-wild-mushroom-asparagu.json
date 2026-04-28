@@ -109,7 +109,7 @@
     {
       "raw": "12 ounces  (5-6 cups) thinly sliced wild mushrooms (see note)",
       "expected": {
-        "item": "thinly sliced wild mushrooms (see note)",
+        "item": "thinly sliced wild mushrooms",
         "measurements": [
           {
             "amount": "12",
@@ -124,7 +124,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Produce"
       }
     },

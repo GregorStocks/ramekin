@@ -23,14 +23,18 @@
     {
       "raw": "1 cup cake flour (or, make your own)",
       "expected": {
-        "item": "cake flour (or, make your own)",
+        "item": "cake flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or, make your own",
         "category": "Baking"
       }
     },
@@ -91,14 +95,18 @@
     {
       "raw": "1 teaspoon table salt (this is 2/3 the original amount, which I found too salty)",
       "expected": {
-        "item": "table salt (this is 2/3 the original amount, which I found too salty)",
+        "item": "table salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "6.1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "this is 2/3 the original amount, which I found too salty",
         "category": "Spices & Seasonings"
       }
     },
@@ -123,14 +131,18 @@
     {
       "raw": "1 1/4 cups buttermilk (or, make your own)",
       "expected": {
-        "item": "buttermilk (or, make your own)",
+        "item": "buttermilk",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "306",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or, make your own",
         "category": "Dairy & Eggs"
       }
     },

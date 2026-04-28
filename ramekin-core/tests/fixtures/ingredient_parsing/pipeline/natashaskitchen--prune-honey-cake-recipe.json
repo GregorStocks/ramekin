@@ -5,14 +5,14 @@
     {
       "raw": "6  large eggs (room temp)",
       "expected": {
-        "item": "eggs (room temp)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "room temp",
         "category": "Dairy & Eggs"
       }
     },

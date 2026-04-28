@@ -14,14 +14,18 @@
     {
       "raw": "2 1/4 teaspoons (or 1 1/4-ounce package) instant yeast (not active dry) (also sold as rapid rise or bread machine yeast)",
       "expected": {
-        "item": "(or 1 1/4-ounce package) instant yeast (not active dry) (also sold as rapid rise or bread machine yeast)",
+        "item": "instant yeast",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 1 1/4-ounce package, not active dry, also sold as rapid rise or bread machine yeast",
         "category": "Baking"
       }
     },

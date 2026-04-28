@@ -258,14 +258,14 @@
     {
       "raw": "2 cups shredded lettuce of choice (I used iceberg)",
       "expected": {
-        "item": "shredded lettuce of choice (I used iceberg)",
+        "item": "shredded lettuce of choice",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used iceberg",
         "category": "Produce"
       }
     },

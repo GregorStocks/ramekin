@@ -23,14 +23,14 @@
     {
       "raw": "2 teaspoons chopped fresh thyme or rosemary leaves (I skipped because mine are under snow)",
       "expected": {
-        "item": "chopped fresh thyme or rosemary leaves (I skipped because mine are under snow)",
+        "item": "chopped fresh thyme or rosemary leaves",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "I skipped because mine are under snow",
         "category": "Produce"
       }
     },

@@ -87,14 +87,14 @@
     {
       "raw": "⅓ cup chopped scallions (green part only)",
       "expected": {
-        "item": "chopped scallions (green part only)",
+        "item": "chopped scallions",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "green part only",
         "category": "Produce"
       }
     }

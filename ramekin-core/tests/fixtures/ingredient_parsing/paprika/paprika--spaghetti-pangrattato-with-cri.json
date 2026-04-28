@@ -50,14 +50,14 @@
     {
       "raw": "1/2 cup fresh or stale coarse plain breadcrumbs (panko worked great here)",
       "expected": {
-        "item": "fresh or stale coarse plain breadcrumbs (panko worked great here)",
+        "item": "fresh or stale coarse plain breadcrumbs",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "panko worked great here",
         "category": "Bakery & Bread"
       }
     },

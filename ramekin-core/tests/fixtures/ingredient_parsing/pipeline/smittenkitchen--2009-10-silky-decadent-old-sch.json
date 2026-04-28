@@ -5,7 +5,7 @@
     {
       "raw": "8 ounces bittersweet chocolate (no more than 60% cacao), chopped",
       "expected": {
-        "item": "bittersweet chocolate (no more than 60% cacao)",
+        "item": "bittersweet chocolate",
         "measurements": [
           {
             "amount": "8",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped",
+        "note": "no more than 60% cacao, chopped",
         "category": "Other"
       }
     },
@@ -59,14 +59,14 @@
     {
       "raw": "1 tablespoon Cognac or other brandy (or swap with a liqueur of your choice)",
       "expected": {
-        "item": "Cognac or other brandy (or swap with a liqueur of your choice)",
+        "item": "Cognac or other brandy",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or swap with a liqueur of your choice",
         "category": "Beverages"
       }
     },

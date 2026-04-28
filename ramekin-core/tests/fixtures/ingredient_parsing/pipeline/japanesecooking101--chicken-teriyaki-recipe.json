@@ -73,28 +73,32 @@
     {
       "raw": "2 Tbsp sake (Japanese rice wine)",
       "expected": {
-        "item": "sake (Japanese rice wine)",
+        "item": "sake",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Pasta & Rice"
+        "note": "Japanese rice wine",
+        "category": "Beverages"
       }
     },
     {
       "raw": "2  green onions (cut diagonally)",
       "expected": {
-        "item": "green onions (cut diagonally)",
+        "item": "green onions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut diagonally",
         "category": "Produce"
       }
     }

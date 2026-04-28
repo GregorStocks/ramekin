@@ -109,14 +109,14 @@
     {
       "raw": "1  small cauliflower, (cut into 1 ½-inch florets (3 cups florets))",
       "expected": {
-        "item": "cauliflower, (cut into 1 1/2-inch florets (3 cups florets)",
+        "item": "cauliflower",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "cut into 1 1/2-inch florets (3 cups florets",
         "category": "Produce"
       }
     },
@@ -237,14 +237,14 @@
     {
       "raw": "½ tsp Aleppo pepper,  ((or ¼ tsp red pepper flakes))",
       "expected": {
-        "item": "Aleppo pepper,  (or 1/4 tsp red pepper flakes)",
+        "item": "Aleppo pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or 1/4 tsp red pepper flakes",
         "category": "Spices & Seasonings"
       }
     },

@@ -59,7 +59,7 @@
     {
       "raw": "2 1/2 pounds chicken thighs (bone-in and skin on)",
       "expected": {
-        "item": "chicken thighs (bone-in and skin on)",
+        "item": "chicken thighs",
         "measurements": [
           {
             "amount": "2.5",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "bone-in and skin on",
         "category": "Meat & Seafood"
       }
     },
@@ -113,7 +113,7 @@
     {
       "raw": "8 ounces sweet Italian sausage (casing removed)",
       "expected": {
-        "item": "sweet Italian sausage (casing removed)",
+        "item": "sweet Italian sausage",
         "measurements": [
           {
             "amount": "8",
@@ -124,7 +124,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "casing removed",
         "category": "Meat & Seafood"
       }
     },

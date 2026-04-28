@@ -103,14 +103,18 @@
     {
       "raw": "1 tablespoon half-and-half (I used cream, because I had it on hand; suspect milk would work just as well)",
       "expected": {
-        "item": "half-and-half (I used cream, because I had it on hand; suspect milk would work just as well)",
+        "item": "half-and-half",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used cream, because I had it on hand; suspect milk would work just as well",
         "category": "Dairy & Eggs"
       }
     }

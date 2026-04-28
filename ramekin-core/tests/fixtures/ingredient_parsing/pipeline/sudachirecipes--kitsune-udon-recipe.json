@@ -5,23 +5,23 @@
     {
       "raw": "4 pieces fried tofu pouch (aburaage)",
       "expected": {
-        "item": "fried tofu pouch (aburaage)",
+        "item": "fried tofu pouch",
         "measurements": [
           {
             "amount": "4",
             "unit": "piece"
           }
         ],
-        "note": null,
+        "note": "aburaage",
         "category": "Produce"
       }
     },
     {
       "raw": "water (for blanching, enough to fully submerge aburaage)",
       "expected": {
-        "item": "water (for blanching, enough to fully submerge aburaage)",
+        "item": "water",
         "measurements": [],
-        "note": null,
+        "note": "for blanching, enough to fully submerge aburaage",
         "category": "Other"
       }
     },
@@ -60,14 +60,18 @@
     {
       "raw": "2 tbsp mirin (hon-mirin best)",
       "expected": {
-        "item": "mirin (hon-mirin best)",
+        "item": "mirin",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "hon-mirin best",
         "category": "Condiments & Sauces"
       }
     },
@@ -110,14 +114,14 @@
     {
       "raw": "2 tbsp Japanese light soy sauce (usukuchi shoyu) (or regular soy sauce)",
       "expected": {
-        "item": "Japanese light soy sauce (usukuchi shoyu) (or regular soy sauce)",
+        "item": "Japanese light soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "usukuchi shoyu, or regular soy sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -138,14 +142,14 @@
     {
       "raw": "4 tbsp Japanese light soy sauce (usukuchi shoyu) (or regular soy sauce)",
       "expected": {
-        "item": "Japanese light soy sauce (usukuchi shoyu) (or regular soy sauce)",
+        "item": "Japanese light soy sauce",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "usukuchi shoyu, or regular soy sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -188,14 +192,14 @@
     {
       "raw": "4 portions udon noodles (thick or medium-thick preferred for texture)",
       "expected": {
-        "item": "portions udon noodles (thick or medium-thick preferred for texture)",
+        "item": "portions udon noodles",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "thick or medium-thick preferred for texture",
         "category": "Pasta & Rice"
       }
     },
@@ -211,14 +215,14 @@
     {
       "raw": "12 slices kamaboko fish cake (omit for plant-based diets)",
       "expected": {
-        "item": "kamaboko fish cake (omit for plant-based diets)",
+        "item": "kamaboko fish cake",
         "measurements": [
           {
             "amount": "12",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "omit for plant-based diets",
         "category": "Meat & Seafood"
       }
     }

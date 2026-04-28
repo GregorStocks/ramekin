@@ -41,14 +41,14 @@
     {
       "raw": "1 pinch coarse salt (pinch of salt)",
       "expected": {
-        "item": "coarse salt (pinch of salt)",
+        "item": "coarse salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "pinch of salt",
         "category": "Spices & Seasonings"
       }
     },
@@ -105,14 +105,14 @@
     {
       "raw": "1 pinch cracked pepper (to season)",
       "expected": {
-        "item": "cracked pepper (to season)",
+        "item": "cracked pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "to season",
         "category": "Spices & Seasonings"
       }
     },

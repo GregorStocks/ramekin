@@ -91,14 +91,14 @@
     {
       "raw": "1 to 2 thick slices bread (enough to make 1/2 cup coarse breadcrumbs)",
       "expected": {
-        "item": "thick slices bread (enough to make 1/2 cup coarse breadcrumbs)",
+        "item": "thick slices bread",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "enough to make 1/2 cup coarse breadcrumbs",
         "category": "Bakery & Bread"
       }
     },

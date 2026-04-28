@@ -93,15 +93,15 @@
     {
       "raw": "⅓ cup redcurrant jelly (or raspberry jelly)",
       "expected": {
-        "item": "redcurrant jelly (or raspberry jelly)",
+        "item": "redcurrant jelly",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "or raspberry jelly",
+        "category": "Condiments & Sauces"
       }
     }
   ]

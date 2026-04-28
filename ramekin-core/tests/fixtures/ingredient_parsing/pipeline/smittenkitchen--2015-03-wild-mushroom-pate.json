@@ -151,14 +151,14 @@
     {
       "raw": "1 1/2 cups diced yellow onion or a combination of chopped onions and shallots (I used 1 cup onion, 1/2 cup shallots)",
       "expected": {
-        "item": "diced yellow onion or a combination of chopped onions and shallots (I used 1 cup onion, 1/2 cup shallots)",
+        "item": "diced yellow onion or a combination of chopped onions and shallots",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used 1 cup onion, 1/2 cup shallots",
         "category": "Produce"
       }
     },
@@ -192,14 +192,14 @@
     {
       "raw": "1 teaspoon fresh thyme leaves (use half if dry)",
       "expected": {
-        "item": "fresh thyme leaves (use half if dry)",
+        "item": "fresh thyme leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "use half if dry",
         "category": "Produce"
       }
     },

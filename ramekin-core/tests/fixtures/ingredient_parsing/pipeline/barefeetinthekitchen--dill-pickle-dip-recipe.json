@@ -19,14 +19,14 @@
     {
       "raw": "1 1/2 cups chopped dill pickles (I use 10-12 baby dills)",
       "expected": {
-        "item": "chopped dill pickles (I use 10-12 baby dills)",
+        "item": "chopped dill pickles",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I use 10-12 baby dills",
         "category": "Canned Goods"
       }
     },
@@ -47,14 +47,14 @@
     {
       "raw": "1/4 cup pickle juice (use less for a thicker dip)",
       "expected": {
-        "item": "pickle juice (use less for a thicker dip)",
+        "item": "pickle juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "use less for a thicker dip",
         "category": "Canned Goods"
       }
     },

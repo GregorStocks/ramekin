@@ -77,7 +77,7 @@
     {
       "raw": "3 cups (680 grams) whole milk (for best taste) or 2% milk",
       "expected": {
-        "item": "whole milk (for best taste) or 2% milk",
+        "item": "whole milk or 2% milk",
         "measurements": [
           {
             "amount": "3",
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for best taste",
         "category": "Dairy & Eggs"
       }
     },
@@ -106,7 +106,7 @@
             "unit": "g"
           }
         ],
-        "note": "coarsely chopped (or 1 cup dark chocolate chips)",
+        "note": "or 1 cup dark chocolate chips, coarsely chopped",
         "category": "Other"
       }
     },

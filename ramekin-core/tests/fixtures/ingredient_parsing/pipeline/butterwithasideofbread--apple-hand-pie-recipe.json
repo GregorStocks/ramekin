@@ -5,7 +5,7 @@
     {
       "raw": "21 oz apple pie filling  (or 1 cup Fried Apples)",
       "expected": {
-        "item": "apple pie filling  (or 1 cup Fried Apples)",
+        "item": "apple pie filling",
         "measurements": [
           {
             "amount": "21",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 1 cup Fried Apples",
         "category": "Produce"
       }
     },

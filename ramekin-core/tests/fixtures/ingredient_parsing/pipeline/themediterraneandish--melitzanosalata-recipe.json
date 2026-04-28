@@ -118,28 +118,32 @@
     {
       "raw": "1  lemon (zested and juiced)",
       "expected": {
-        "item": "lemon (zested and juiced)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "zested and juiced",
+        "category": "Produce"
       }
     },
     {
       "raw": "¼ cup extra virgin olive oil (more for later )",
       "expected": {
-        "item": "extra virgin olive oil (more for later",
+        "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "more for later",
         "category": "Oils & Vinegars"
       }
     },

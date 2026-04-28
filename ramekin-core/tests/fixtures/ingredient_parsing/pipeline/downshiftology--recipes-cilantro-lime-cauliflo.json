@@ -74,15 +74,15 @@
     {
       "raw": "1  lime (juiced and zested)",
       "expected": {
-        "item": "lime (juiced and zested)",
+        "item": "lime",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced and zested",
+        "category": "Produce"
       }
     },
     {

@@ -50,14 +50,14 @@
     {
       "raw": "4  (6-ounce) salmon fillets, 1¼ in thick (I have my fish monger remove the skin, but it's fine to leave it on if you like)",
       "expected": {
-        "item": "salmon fillets, 1 1/4 in thick (I have my fish monger remove the skin, but it's fine to leave it on if you like)",
+        "item": "salmon fillets, 1 1/4 in thick",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "6-ounce, I have my fish monger remove the skin, but it's fine to leave it on if you like",
         "category": "Meat & Seafood"
       }
     }

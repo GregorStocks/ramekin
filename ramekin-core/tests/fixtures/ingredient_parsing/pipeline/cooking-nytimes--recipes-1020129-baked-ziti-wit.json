@@ -5,7 +5,7 @@
     {
       "raw": "1 pound sweet Italian sausage (pork, turkey or chicken), casing removed",
       "expected": {
-        "item": "sweet Italian sausage (pork, turkey or chicken), casing removed",
+        "item": "sweet Italian sausage, casing removed",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "pork, turkey or chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -104,7 +104,7 @@
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "28-ounce",
         "category": "Canned Goods"
       }
     },
@@ -163,7 +163,7 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "15-ounce",
         "category": "Cheese"
       }
     },
@@ -181,7 +181,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 scant cup",
         "category": "Dairy & Eggs"
       }
     },

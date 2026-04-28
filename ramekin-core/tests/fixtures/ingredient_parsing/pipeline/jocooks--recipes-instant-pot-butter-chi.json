@@ -5,14 +5,18 @@
     {
       "raw": "3 tablespoons butter (unsalted)",
       "expected": {
-        "item": "butter (unsalted)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsalted",
         "category": "Dairy & Eggs"
       }
     },
@@ -51,14 +55,14 @@
     {
       "raw": "1 cup tomato puree (or passata)",
       "expected": {
-        "item": "tomato puree (or passata)",
+        "item": "tomato puree",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or passata",
         "category": "Canned Goods"
       }
     },
@@ -197,7 +201,7 @@
     {
       "raw": "2 pounds chicken thighs (boneless and skinless, cut into pieces)",
       "expected": {
-        "item": "chicken thighs (boneless and skinless, cut into pieces)",
+        "item": "chicken thighs",
         "measurements": [
           {
             "amount": "2",
@@ -208,7 +212,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "boneless and skinless, cut into pieces",
         "category": "Meat & Seafood"
       }
     },

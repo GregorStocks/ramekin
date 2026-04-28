@@ -213,14 +213,18 @@
     {
       "raw": "1/4 c. lemon juice (from about 2 lemons)",
       "expected": {
-        "item": "lemon juice (from about 2 lemons)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 2 lemons",
         "category": "Beverages"
       }
     },

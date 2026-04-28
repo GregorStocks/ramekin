@@ -5,14 +5,14 @@
     {
       "raw": "1  scallion ((white part only))",
       "expected": {
-        "item": "scallion (white part only)",
+        "item": "scallion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "white part only",
         "category": "Produce"
       }
     },
@@ -142,14 +142,14 @@
     {
       "raw": "1  youtiao ((Chinese fried dough stick))",
       "expected": {
-        "item": "youtiao (Chinese fried dough stick)",
+        "item": "youtiao",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "Chinese fried dough stick",
         "category": "Other"
       }
     },
@@ -268,9 +268,9 @@
     {
       "raw": "vegetable or canola oil ((for brushing))",
       "expected": {
-        "item": "vegetable or canola oil (for brushing)",
+        "item": "vegetable or canola oil",
         "measurements": [],
-        "note": null,
+        "note": "for brushing",
         "category": "Oils & Vinegars"
       }
     }

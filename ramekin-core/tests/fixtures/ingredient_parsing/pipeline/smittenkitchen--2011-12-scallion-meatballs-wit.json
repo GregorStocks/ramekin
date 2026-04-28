@@ -64,28 +64,32 @@
     {
       "raw": "1/2 cup mirin (sweet rice wine), or 1/2 cup sake with 1/4 cup sugar",
       "expected": {
-        "item": "mirin (sweet rice wine)",
+        "item": "mirin",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
-        "note": "or 1/2 cup sake with 1/4 cup sugar",
+        "note": "sweet rice wine, or 1/2 cup sake with 1/4 cup sugar",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1/4 cup peeled, chopped ginger (I used half and it tasted like plenty to me; adjust to your preference)",
       "expected": {
-        "item": "peeled, chopped ginger (I used half and it tasted like plenty to me; adjust to your preference)",
+        "item": "peeled, chopped ginger",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used half and it tasted like plenty to me; adjust to your preference",
         "category": "Beverages"
       }
     },
@@ -106,14 +110,14 @@
     {
       "raw": "4 whole black peppercorns (no, I did not count how many I put in there)",
       "expected": {
-        "item": "whole black peppercorns (no, I did not count how many I put in there)",
+        "item": "whole black peppercorns",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "no, I did not count how many I put in there",
         "category": "Spices & Seasonings"
       }
     },
@@ -180,7 +184,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely chopped (the cilantro-averse can use flat-leaf parsley)",
+        "note": "the cilantro-averse can use flat-leaf parsley, finely chopped",
         "category": "Produce"
       }
     },

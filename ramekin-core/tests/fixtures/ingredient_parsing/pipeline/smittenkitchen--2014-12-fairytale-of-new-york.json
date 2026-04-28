@@ -97,14 +97,14 @@
     {
       "raw": "1 cup raw, demerara or turbinado sugar (granulated will do just fine if you do not have them)",
       "expected": {
-        "item": "raw, demerara or turbinado sugar (granulated will do just fine if you do not have them)",
+        "item": "raw, demerara or turbinado sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "granulated will do just fine if you do not have them",
         "category": "Baking"
       }
     },
@@ -211,14 +211,14 @@
             "unit": "piece"
           }
         ],
-        "note": null,
+        "note": "about 1 by 2 inches",
         "category": "Produce"
       }
     },
     {
       "raw": "3/4 ounce Winter Warmth Syrup (recipe above)",
       "expected": {
-        "item": "Winter Warmth Syrup (recipe above)",
+        "item": "Winter Warmth Syrup",
         "measurements": [
           {
             "amount": "0.75",
@@ -229,22 +229,22 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "recipe above",
         "category": "Other"
       }
     },
     {
       "raw": "2 dashes of bitters (Fee Brothers black walnut bitters are recommended, I used orange bitters)",
       "expected": {
-        "item": "bitters (Fee Brothers black walnut bitters are recommended, I used orange bitters)",
+        "item": "bitters",
         "measurements": [
           {
             "amount": "2",
             "unit": "dash"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "Fee Brothers black walnut bitters are recommended, I used orange bitters",
+        "category": "Other"
       }
     },
     {

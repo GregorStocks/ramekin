@@ -5,15 +5,15 @@
     {
       "raw": "6  aburaage ((thin fried tofu))",
       "expected": {
-        "item": "aburaage (thin fried tofu)",
+        "item": "aburaage",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "thin fried tofu",
+        "category": "Other"
       }
     },
     {

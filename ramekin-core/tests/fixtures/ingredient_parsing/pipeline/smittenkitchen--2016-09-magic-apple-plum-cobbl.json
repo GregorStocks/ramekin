@@ -131,15 +131,19 @@
     {
       "raw": "3 small (I used Italian prune plums) or 2 medium plums, no need to peel",
       "expected": {
-        "item": "(I used Italian prune plums) or 2 medium plums, no need to peel",
+        "item": "plums, no need to peel",
         "measurements": [
           {
             "amount": "3",
             "unit": "small"
+          },
+          {
+            "amount": "2",
+            "unit": "medium"
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "I used Italian prune plums",
+        "category": "Produce"
       }
     },
     {

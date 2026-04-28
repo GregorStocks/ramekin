@@ -91,14 +91,14 @@
     {
       "raw": "3/4 cup red wine (I used St. Chapelle Soft Red)",
       "expected": {
-        "item": "red wine (I used St. Chapelle Soft Red)",
+        "item": "red wine",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used St. Chapelle Soft Red",
         "category": "Beverages"
       }
     },

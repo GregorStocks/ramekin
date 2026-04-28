@@ -155,7 +155,7 @@
     {
       "raw": "14.5 ounces canned diced tomatoes (with juices)",
       "expected": {
-        "item": "canned diced tomatoes (with juices)",
+        "item": "canned diced tomatoes",
         "measurements": [
           {
             "amount": "14.5",
@@ -166,7 +166,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "with juices",
         "category": "Canned Goods"
       }
     },

@@ -155,14 +155,14 @@
     {
       "raw": "3/4 cup chopped green or orange bell pepper ((or a blend))",
       "expected": {
-        "item": "chopped green or orange bell pepper (or a blend)",
+        "item": "chopped green or orange bell pepper",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or a blend",
         "category": "Produce"
       }
     },

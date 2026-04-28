@@ -43,7 +43,7 @@
             "unit": "g"
           }
         ],
-        "note": "and sliced thin",
+        "note": "1/4-inch, and sliced thin",
         "category": "Produce"
       }
     },
@@ -150,7 +150,7 @@
     {
       "raw": "2 ounces (55 grams) soft goat cheese (chèvre), crumbled",
       "expected": {
-        "item": "soft goat cheese (chèvre)",
+        "item": "soft goat cheese",
         "measurements": [
           {
             "amount": "2",
@@ -161,14 +161,14 @@
             "unit": "g"
           }
         ],
-        "note": "crumbled",
+        "note": "chèvre, crumbled",
         "category": "Cheese"
       }
     },
     {
       "raw": "1/2 cup (60 grams) toasted, salted pepitas (see Note)",
       "expected": {
-        "item": "toasted, salted pepitas (see Note)",
+        "item": "toasted, salted pepitas",
         "measurements": [
           {
             "amount": "0.5",
@@ -179,7 +179,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Bakery & Bread"
       }
     }

@@ -77,7 +77,7 @@
     {
       "raw": "1 cup (240 grams) sour cream (I swapped some with yogurt when I realized I was short, to no ill-effect)",
       "expected": {
-        "item": "sour cream (I swapped some with yogurt when I realized I was short, to no ill-effect)",
+        "item": "sour cream",
         "measurements": [
           {
             "amount": "1",
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I swapped some with yogurt when I realized I was short, to no ill-effect",
         "category": "Dairy & Eggs"
       }
     },
@@ -136,9 +136,9 @@
     {
       "raw": "Maple syrup (or perhaps some Cranberry Syrup)",
       "expected": {
-        "item": "Maple syrup (or perhaps some Cranberry Syrup)",
+        "item": "Maple syrup",
         "measurements": [],
-        "note": null,
+        "note": "or perhaps some Cranberry Syrup",
         "category": "Baking"
       }
     }

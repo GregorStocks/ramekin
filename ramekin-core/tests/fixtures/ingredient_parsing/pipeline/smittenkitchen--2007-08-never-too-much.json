@@ -14,7 +14,7 @@
     {
       "raw": "8 ounces bittersweet (not unsweetened) or semisweet chocolate, chopped",
       "expected": {
-        "item": "bittersweet (not unsweetened) or semisweet chocolate",
+        "item": "bittersweet or semisweet chocolate",
         "measurements": [
           {
             "amount": "8",
@@ -25,7 +25,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped",
+        "note": "not unsweetened, chopped",
         "category": "Other"
       }
     },
@@ -209,7 +209,7 @@
     {
       "raw": "8 ounces bittersweet (not unsweetened) or semisweet chocolate, chopped",
       "expected": {
-        "item": "bittersweet (not unsweetened) or semisweet chocolate",
+        "item": "bittersweet or semisweet chocolate",
         "measurements": [
           {
             "amount": "8",
@@ -220,7 +220,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped",
+        "note": "not unsweetened, chopped",
         "category": "Other"
       }
     },

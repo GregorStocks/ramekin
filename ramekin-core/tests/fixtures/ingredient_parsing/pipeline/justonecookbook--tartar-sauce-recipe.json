@@ -37,14 +37,14 @@
     {
       "raw": "1  pickle ((you can also use 7 cornichons or 4 sweet gherkins))",
       "expected": {
-        "item": "pickle (you can also use 7 cornichons or 4 sweet gherkins)",
+        "item": "pickle",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "you can also use 7 cornichons or 4 sweet gherkins",
         "category": "Canned Goods"
       }
     },

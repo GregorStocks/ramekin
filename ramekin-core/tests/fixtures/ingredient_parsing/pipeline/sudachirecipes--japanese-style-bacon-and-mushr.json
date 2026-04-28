@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1.8mm",
         "category": "Pasta & Rice"
       }
     },
@@ -55,28 +55,28 @@
     {
       "raw": "40 g Oriental spinach (or other types of spinach)",
       "expected": {
-        "item": "Oriental spinach (or other types of spinach)",
+        "item": "Oriental spinach",
         "measurements": [
           {
             "amount": "40",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or other types of spinach",
         "category": "Produce"
       }
     },
     {
       "raw": "100 g mushroom of your choice (I used shimeji)",
       "expected": {
-        "item": "mushroom of your choice (I used shimeji)",
+        "item": "mushroom of your choice",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used shimeji",
         "category": "Produce"
       }
     },
@@ -129,18 +129,14 @@
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },

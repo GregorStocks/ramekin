@@ -5,14 +5,14 @@
     {
       "raw": "8 large eggs (hard-boiled and cooled)",
       "expected": {
-        "item": "eggs (hard-boiled and cooled)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "8",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "hard-boiled and cooled",
         "category": "Dairy & Eggs"
       }
     },
@@ -65,14 +65,18 @@
     {
       "raw": "1 teaspoon mustard (yellow or dijon)",
       "expected": {
-        "item": "mustard (yellow or dijon)",
+        "item": "mustard",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.2",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "yellow or dijon",
         "category": "Condiments & Sauces"
       }
     },

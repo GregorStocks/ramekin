@@ -37,14 +37,14 @@
     {
       "raw": "2 tablespoon teriyaki sauce (store-bought or homemade)",
       "expected": {
-        "item": "teriyaki sauce (store-bought or homemade)",
+        "item": "teriyaki sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "store-bought or homemade",
         "category": "Condiments & Sauces"
       }
     },
@@ -169,14 +169,14 @@
     {
       "raw": "1/4 cup teriyaki sauce (homemade or store-bought)",
       "expected": {
-        "item": "teriyaki sauce (homemade or store-bought)",
+        "item": "teriyaki sauce",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "homemade or store-bought",
         "category": "Condiments & Sauces"
       }
     },

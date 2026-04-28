@@ -19,14 +19,18 @@
     {
       "raw": "2 tablespoons lime juice ((juice of 1 lime))",
       "expected": {
-        "item": "lime juice (juice of 1 lime)",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "juice of 1 lime",
         "category": "Beverages"
       }
     },

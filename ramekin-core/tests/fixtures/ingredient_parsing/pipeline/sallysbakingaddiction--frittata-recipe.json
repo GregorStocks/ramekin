@@ -80,7 +80,7 @@
             "unit": "cup"
           }
         ],
-        "note": "divided",
+        "note": "about 100-120g, divided",
         "category": "Cheese"
       }
     },
@@ -133,7 +133,7 @@
     {
       "raw": "1 heaping cup (about 150g) chopped sweet potato (no need to peel)",
       "expected": {
-        "item": "chopped sweet potato (no need to peel)",
+        "item": "chopped sweet potato",
         "measurements": [
           {
             "amount": "1",
@@ -144,7 +144,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "no need to peel",
         "category": "Produce"
       }
     },

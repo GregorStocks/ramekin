@@ -88,15 +88,15 @@
     {
       "raw": "1  large lemon, (juice of)",
       "expected": {
-        "item": "lemon, (juice of)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juice of",
+        "category": "Produce"
       }
     },
     {
@@ -139,10 +139,10 @@
     {
       "raw": "Warm (pita bread)",
       "expected": {
-        "item": "Warm (pita bread)",
+        "item": "Warm",
         "measurements": [],
-        "note": null,
-        "category": "Bakery & Bread"
+        "note": "pita bread",
+        "category": "Other"
       }
     },
     {

@@ -230,9 +230,9 @@
     {
       "raw": "fresh basil, (for topping)",
       "expected": {
-        "item": "fresh basil, (for topping)",
+        "item": "fresh basil",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     }

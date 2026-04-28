@@ -115,14 +115,14 @@
     {
       "raw": "1/2 cup toasted almonds (I’m using marcona), roughly chopped",
       "expected": {
-        "item": "toasted almonds (I’m using marcona)",
+        "item": "toasted almonds",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "roughly chopped",
+        "note": "I’m using marcona, roughly chopped",
         "category": "Nuts & Dried Fruit"
       }
     },

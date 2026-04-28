@@ -129,15 +129,15 @@
     {
       "raw": "260 grams atsuage ((thick fried tofu))",
       "expected": {
-        "item": "atsuage (thick fried tofu)",
+        "item": "atsuage",
         "measurements": [
           {
             "amount": "260",
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "thick fried tofu",
+        "category": "Other"
       }
     },
     {
@@ -157,15 +157,15 @@
     {
       "raw": "500 grams assorted nerimono ((Japanese fish cakes))",
       "expected": {
-        "item": "assorted nerimono (Japanese fish cakes)",
+        "item": "assorted nerimono",
         "measurements": [
           {
             "amount": "500",
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Meat & Seafood"
+        "note": "Japanese fish cakes",
+        "category": "Other"
       }
     }
   ]

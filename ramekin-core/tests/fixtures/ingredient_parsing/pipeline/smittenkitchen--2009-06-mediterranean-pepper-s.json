@@ -77,28 +77,28 @@
     {
       "raw": "1/2 a red onion, cut into a 1/2-inch dice (use less if your onion is huge)",
       "expected": {
-        "item": "a red onion, cut into a 1/2-inch dice (use less if your onion is huge)",
+        "item": "a red onion, cut into a 1/2-inch dice",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "use less if your onion is huge",
         "category": "Produce"
       }
     },
     {
       "raw": "3 bell peppers, your choice of colors (I used one red, orange and yellow)",
       "expected": {
-        "item": "bell peppers, your choice of colors (I used one red, orange and yellow)",
+        "item": "bell peppers, your choice of colors",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "I used one red, orange and yellow",
         "category": "Produce"
       }
     },

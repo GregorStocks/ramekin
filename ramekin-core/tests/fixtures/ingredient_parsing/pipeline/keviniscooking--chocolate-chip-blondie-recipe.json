@@ -145,7 +145,7 @@
     {
       "raw": "8 ounces chocolate chips ((your choice milk, dark, semi-sweet))",
       "expected": {
-        "item": "chocolate chips (your choice milk, dark, semi-sweet)",
+        "item": "chocolate chips",
         "measurements": [
           {
             "amount": "8",
@@ -156,7 +156,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "your choice milk, dark, semi-sweet",
         "category": "Baking"
       }
     },

@@ -5,18 +5,14 @@
     {
       "raw": "2 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "32",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -151,15 +147,15 @@
     {
       "raw": "2  perilla leaves (shiso) (or nori / chopped green onion)",
       "expected": {
-        "item": "perilla leaves (shiso) (or nori / chopped green onion)",
+        "item": "perilla leaves",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "shiso, or nori / chopped green onion",
+        "category": "Other"
       }
     },
     {

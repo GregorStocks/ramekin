@@ -77,14 +77,14 @@
     {
       "raw": "3 tablespoons freshly grated pecorino Romano cheese (or Parmigiano Reggiano)",
       "expected": {
-        "item": "freshly grated pecorino Romano cheese (or Parmigiano Reggiano)",
+        "item": "freshly grated pecorino Romano cheese",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or Parmigiano Reggiano",
         "category": "Cheese"
       }
     }

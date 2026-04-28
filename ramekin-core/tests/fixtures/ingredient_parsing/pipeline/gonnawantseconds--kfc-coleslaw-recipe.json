@@ -59,14 +59,18 @@
     {
       "raw": "1/4 cup buttermilk (well shaken)",
       "expected": {
-        "item": "buttermilk (well shaken)",
+        "item": "buttermilk",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "well shaken",
         "category": "Dairy & Eggs"
       }
     },

@@ -5,29 +5,33 @@
     {
       "raw": "1½ cups aged basmati rice ((or any non-sticky rice, refer notes))",
       "expected": {
-        "item": "aged basmati rice (or any non-sticky rice, refer notes)",
+        "item": "aged basmati rice",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or any non-sticky rice, refer notes",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "2 tablespoons oil (or ghee)",
       "expected": {
-        "item": "oil (or ghee)",
+        "item": "oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "or ghee",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -111,14 +115,14 @@
     {
       "raw": "¾ to 1 teaspoon garam masala (powder or curry powder)",
       "expected": {
-        "item": "garam masala (powder or curry powder)",
+        "item": "garam masala",
         "measurements": [
           {
             "amount": "0.75 to 1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "powder or curry powder",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,14 +143,18 @@
     {
       "raw": "¼ teaspoon Turmeric ((haldi))",
       "expected": {
-        "item": "Turmeric (haldi)",
+        "item": "Turmeric",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.8",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "haldi",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,14 +179,14 @@
     {
       "raw": "3 tablespoon coriander leaves ((cilantro) finely chopped)",
       "expected": {
-        "item": "coriander leaves (cilantro) finely chopped)",
+        "item": "coriander leaves finely chopped)",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "cilantro",
         "category": "Spices & Seasonings"
       }
     },
@@ -203,84 +211,84 @@
     {
       "raw": "12  whole cashewnuts ((split &amp;amp; use) (optional))",
       "expected": {
-        "item": "whole cashewnuts (split & use) (optional)",
+        "item": "whole cashewnuts",
         "measurements": [
           {
             "amount": "12",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "split & use, optional",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
       "raw": "1 small bay leaf (or curry leaves)",
       "expected": {
-        "item": "bay leaf (or curry leaves)",
+        "item": "bay leaf",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "or curry leaves",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "¾ teaspoon cumin seeds ((jeera))",
       "expected": {
-        "item": "cumin seeds (jeera)",
+        "item": "cumin seeds",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "jeera",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 inch cinnamon piece ((dalchini))",
       "expected": {
-        "item": "inch cinnamon piece (dalchini)",
+        "item": "inch cinnamon piece",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "dalchini",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "3  green cardamoms  ((elaichi))",
       "expected": {
-        "item": "green cardamoms  (elaichi)",
+        "item": "green cardamoms",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "elaichi",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "3  cloves ((laung) )",
       "expected": {
-        "item": "(laung)",
+        "item": ")",
         "measurements": [
           {
             "amount": "3",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "laung",
         "category": "Other"
       }
     }

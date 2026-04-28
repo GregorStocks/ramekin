@@ -68,14 +68,14 @@
     {
       "raw": "1-2 teaspoons Sriracha (or other hot sauce)",
       "expected": {
-        "item": "Sriracha (or other hot sauce)",
+        "item": "Sriracha",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or other hot sauce",
         "category": "Condiments & Sauces"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "1 1/2 cups vanilla wafer cookie crumbs (from about 7 ounces cookies)",
       "expected": {
-        "item": "vanilla wafer cookie crumbs (from about 7 ounces cookies)",
+        "item": "vanilla wafer cookie crumbs",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from about 7 ounces cookies",
         "category": "Baking"
       }
     },
@@ -126,7 +126,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely chopped",
+        "note": "70-75%, finely chopped",
         "category": "Other"
       }
     },
@@ -183,9 +183,9 @@
     {
       "raw": "flake sea salt (such as Maldon), for topping",
       "expected": {
-        "item": "flake sea salt (such as Maldon), for topping",
+        "item": "flake sea salt, for topping",
         "measurements": [],
-        "note": null,
+        "note": "such as Maldon",
         "category": "Spices & Seasonings"
       }
     }

@@ -151,7 +151,7 @@
     {
       "raw": "4 ounces kale, stems removed (I use a package from the salad greens section)",
       "expected": {
-        "item": "kale, stems removed (I use a package from the salad greens section)",
+        "item": "kale, stems removed",
         "measurements": [
           {
             "amount": "4",
@@ -162,7 +162,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use a package from the salad greens section",
         "category": "Produce"
       }
     },
@@ -187,14 +187,14 @@
     {
       "raw": "4 to 6 large eggs (shown with 6)",
       "expected": {
-        "item": "eggs (shown with 6)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "4 to 6",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "shown with 6",
         "category": "Dairy & Eggs"
       }
     },

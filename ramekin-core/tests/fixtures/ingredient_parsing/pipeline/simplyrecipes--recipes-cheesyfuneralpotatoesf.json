@@ -77,14 +77,14 @@
     {
       "raw": "2 cups homemade cream of chicken soup (store-bought will also work)",
       "expected": {
-        "item": "homemade cream of chicken soup (store-bought will also work)",
+        "item": "homemade cream of chicken soup",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "store-bought will also work",
         "category": "Meat & Seafood"
       }
     },

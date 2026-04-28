@@ -157,14 +157,14 @@
     {
       "raw": "2 tablespoons finely chopped basil, divided (skipped this, no harm was done)",
       "expected": {
-        "item": "finely chopped basil, divided (skipped this, no harm was done)",
+        "item": "finely chopped basil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "skipped this, no harm was done, divided",
         "category": "Spices & Seasonings"
       }
     },

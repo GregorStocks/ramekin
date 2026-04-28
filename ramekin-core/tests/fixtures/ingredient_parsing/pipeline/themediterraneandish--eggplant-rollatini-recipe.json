@@ -28,9 +28,9 @@
     {
       "raw": "Extra virgin olive oil (I used Private Reserve Greek EVOO )",
       "expected": {
-        "item": "Extra virgin olive oil (I used Private Reserve Greek EVOO",
+        "item": "Extra virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "I used Private Reserve Greek EVOO",
         "category": "Oils & Vinegars"
       }
     },
@@ -79,14 +79,14 @@
     {
       "raw": "1/2 cup part-skim shredded Mozzarella (more for later)",
       "expected": {
-        "item": "part-skim shredded Mozzarella (more for later)",
+        "item": "part-skim shredded Mozzarella",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "more for later",
         "category": "Cheese"
       }
     },
@@ -111,14 +111,14 @@
     {
       "raw": "2 tbsp basil pesto (homemade or store-bought, more for later)",
       "expected": {
-        "item": "basil pesto (homemade or store-bought, more for later)",
+        "item": "basil pesto",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "homemade or store-bought, more for later",
         "category": "Spices & Seasonings"
       }
     },

@@ -55,7 +55,7 @@
     {
       "raw": "1/2 cup (1 stick) very cold unsalted butter (cut into cubes)",
       "expected": {
-        "item": "very cold unsalted butter (cut into cubes)",
+        "item": "very cold unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -66,7 +66,7 @@
             "unit": "stick"
           }
         ],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Dairy & Eggs"
       }
     },
@@ -105,14 +105,14 @@
     {
       "raw": "8  large ripe Fuyu* persimmons (enough to make 2 cups of puree)",
       "expected": {
-        "item": "ripe Fuyu* persimmons (enough to make 2 cups of puree)",
+        "item": "ripe Fuyu* persimmons",
         "measurements": [
           {
             "amount": "8",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "enough to make 2 cups of puree",
         "category": "Produce"
       }
     },

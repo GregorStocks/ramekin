@@ -5,7 +5,7 @@
     {
       "raw": "2 cups (283g) unbleached all-purpose flour ((scoop and level to measure))",
       "expected": {
-        "item": "unbleached all-purpose flour (scoop and level to measure)",
+        "item": "unbleached all-purpose flour",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "scoop and level to measure",
         "category": "Baking"
       }
     },

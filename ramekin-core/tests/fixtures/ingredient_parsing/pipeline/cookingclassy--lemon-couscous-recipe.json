@@ -41,14 +41,18 @@
     {
       "raw": "1 1/4 cups low-sodium chicken broth ((or vegetable broth))",
       "expected": {
-        "item": "low-sodium chicken broth (or vegetable broth)",
+        "item": "low-sodium chicken broth",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "311",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or vegetable broth",
         "category": "Canned Goods"
       }
     },
@@ -110,7 +114,7 @@
     {
       "raw": "1 cup (6 oz) couscous ((not pearl couscous))",
       "expected": {
-        "item": "couscous (not pearl couscous)",
+        "item": "couscous",
         "measurements": [
           {
             "amount": "1",
@@ -125,7 +129,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not pearl couscous",
         "category": "Pasta & Rice"
       }
     }

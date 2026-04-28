@@ -59,14 +59,14 @@
     {
       "raw": "0.25 cup refrigerated basil pesto (such as Buitoni)",
       "expected": {
-        "item": "refrigerated basil pesto (such as Buitoni)",
+        "item": "refrigerated basil pesto",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Buitoni",
         "category": "Spices & Seasonings"
       }
     },

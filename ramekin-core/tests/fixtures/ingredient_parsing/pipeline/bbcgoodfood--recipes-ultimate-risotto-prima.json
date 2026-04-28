@@ -121,14 +121,14 @@
     {
       "raw": "350g Carnaroli  rice (or Arborio or Vialone)",
       "expected": {
-        "item": "Carnaroli  rice (or Arborio or Vialone)",
+        "item": "Carnaroli  rice",
         "measurements": [
           {
             "amount": "350",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Arborio or Vialone",
         "category": "Pasta & Rice"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "1 (3-4 pounds) whole chicken (cut into 8 pieces)",
       "expected": {
-        "item": "whole chicken (cut into 8 pieces)",
+        "item": "whole chicken",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 8 pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -131,14 +131,14 @@
     {
       "raw": "1 teaspoon achiote paste (mashed up with a fork)",
       "expected": {
-        "item": "achiote paste (mashed up with a fork)",
+        "item": "achiote paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "mashed up with a fork",
         "category": "Other"
       }
     },

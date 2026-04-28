@@ -197,21 +197,21 @@
     {
       "raw": "12 to 24 brown-braised onions (recipe follows)",
       "expected": {
-        "item": "brown-braised onions (recipe follows)",
+        "item": "brown-braised onions",
         "measurements": [
           {
             "amount": "12 to 24",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "recipe follows",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 pound sautéed mushrooms (recipe follows)",
       "expected": {
-        "item": "sautéed mushrooms (recipe follows)",
+        "item": "sautéed mushrooms",
         "measurements": [
           {
             "amount": "0.5",
@@ -222,7 +222,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "recipe follows",
         "category": "Produce"
       }
     },
@@ -288,14 +288,14 @@
     {
       "raw": "1. Remove the rind of and cut the bacon into lardons (rectangles 1/4-inch across and 1 inch long). Simmer for 10 minutes in 2 quarts of water. Rinse in cold water. Dry. [Deb note: As noted, I’d totally skip this step next time.]",
       "expected": {
-        "item": "Remove the rind of and cut the bacon into lardons (rectangles 1/4-inch across and 1 inch long). Simmer for 10 minutes in 2 quarts of water. Rinse in cold water. Dry. [Deb note: As noted, I’d totally skip this step next time.]",
+        "item": "Remove the rind of and cut the bacon into lardons . Simmer for 10 minutes in 2 quarts of water. Rinse in cold water. Dry. [Deb note: As noted, I’d totally skip this step next time.]",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "rectangles 1/4-inch across and 1 inch long",
         "category": "Meat & Seafood"
       }
     },
@@ -372,14 +372,14 @@
     {
       "raw": "7. While the chicken is cooking, prepare the onions and mushrooms (recipe follows).",
       "expected": {
-        "item": "While the chicken is cooking, prepare the onions and mushrooms (recipe follows).",
+        "item": "While the chicken is cooking, prepare the onions and mushrooms .",
         "measurements": [
           {
             "amount": "7",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "recipe follows",
         "category": "Produce"
       }
     },
@@ -400,14 +400,14 @@
     {
       "raw": "9. Blend the butter and flour together into a smooth paste (buerre manie). Beat the paste into the hot liquid with a wire whip. Bring to the simmer, stirring, and simmer for a minute or two. The sauce should be thick enough to coat a spoon lightly.",
       "expected": {
-        "item": "Blend the butter and flour together into a smooth paste (buerre manie). Beat the paste into the hot liquid with a wire whip. Bring to the simmer, stirring, and simmer for a minute or two. The sauce should be thick enough to coat a spoon lightly.",
+        "item": "Blend the butter and flour together into a smooth paste . Beat the paste into the hot liquid with a wire whip. Bring to the simmer, stirring, and simmer for a minute or two. The sauce should be thick enough to coat a spoon lightly.",
         "measurements": [
           {
             "amount": "9",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "buerre manie",
         "category": "Dairy & Eggs"
       }
     },

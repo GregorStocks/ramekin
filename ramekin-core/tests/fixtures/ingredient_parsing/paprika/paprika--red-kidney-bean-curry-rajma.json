@@ -5,28 +5,32 @@
     {
       "raw": "1/3 cup extra virgin olive oil (we use less)",
       "expected": {
-        "item": "extra virgin olive oil (we use less)",
+        "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "72",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "we use less",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "2 tablespoons minced fresh ginger (reduced from original 4T)",
       "expected": {
-        "item": "minced fresh ginger (reduced from original 4T)",
+        "item": "minced fresh ginger",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "reduced from original 4T",
         "category": "Produce"
       }
     },
@@ -221,14 +225,14 @@
     {
       "raw": "1/2 cup chopped fresh cilantro (or parsley, if you’re cilantro-averse)",
       "expected": {
-        "item": "chopped fresh cilantro (or parsley, if you’re cilantro-averse)",
+        "item": "chopped fresh cilantro",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or parsley, if you’re cilantro-averse",
         "category": "Produce"
       }
     }

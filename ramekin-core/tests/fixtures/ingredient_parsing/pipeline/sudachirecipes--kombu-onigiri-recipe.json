@@ -5,14 +5,14 @@
     {
       "raw": "50 g rehydrated kombu ((kelp))",
       "expected": {
-        "item": "rehydrated kombu (kelp)",
+        "item": "rehydrated kombu",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "kelp",
         "category": "Other"
       }
     },
@@ -109,18 +109,14 @@
     {
       "raw": "2 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "32",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -173,14 +169,14 @@
     {
       "raw": "6 pieces roasted seaweed for sushi (nori) (cut to rice ball size, 1 sheet of sushi nori will be enough for approx 4 onigiri)",
       "expected": {
-        "item": "roasted seaweed for sushi (nori) (cut to rice ball size, 1 sheet of sushi nori will be enough for approx 4 onigiri)",
+        "item": "roasted seaweed for sushi",
         "measurements": [
           {
             "amount": "6",
             "unit": "piece"
           }
         ],
-        "note": null,
+        "note": "nori, cut to rice ball size, 1 sheet of sushi nori will be enough for approx 4 onigiri",
         "category": "Meat & Seafood"
       }
     }

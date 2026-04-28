@@ -141,28 +141,32 @@
     {
       "raw": "1/2 teaspoon cayenne (I used 1/4, thought it was plenty, although I may be a wuss.)",
       "expected": {
-        "item": "cayenne (I used 1/4, thought it was plenty, although I may be a wuss.)",
+        "item": "cayenne",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used 1/4, thought it was plenty, although I may be a wuss.",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/4 cup minced cilantro leaves (I abhor cilantro, and always replace it with flat-leaf parsley.)",
       "expected": {
-        "item": "minced cilantro leaves (I abhor cilantro, and always replace it with flat-leaf parsley.)",
+        "item": "minced cilantro leaves",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I abhor cilantro, and always replace it with flat-leaf parsley.",
         "category": "Produce"
       }
     },

@@ -41,14 +41,18 @@
     {
       "raw": "1/2 teaspoons ground allspice (I skip this)",
       "expected": {
-        "item": "ground allspice (I skip this)",
+        "item": "ground allspice",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I skip this",
         "category": "Spices & Seasonings"
       }
     },

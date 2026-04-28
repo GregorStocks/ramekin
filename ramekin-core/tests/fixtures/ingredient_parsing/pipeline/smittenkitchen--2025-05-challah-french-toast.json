@@ -212,16 +212,16 @@
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "1-lb",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "Butter for the pan, salted (my preference) or unsalted",
       "expected": {
-        "item": "Butter for the pan, salted (my preference) or unsalted",
+        "item": "Butter for the pan, salted or unsalted",
         "measurements": [],
-        "note": null,
+        "note": "my preference",
         "category": "Dairy & Eggs"
       }
     },

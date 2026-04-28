@@ -101,14 +101,14 @@
     {
       "raw": "1 slice white or whole wheat sandwich bread, (crusts removed and torn into ¼-inch (6-mm) pieces)",
       "expected": {
-        "item": "white or whole wheat sandwich bread, (crusts removed and torn into 1/4-inch (6-mm) pieces)",
+        "item": "white or whole wheat sandwich bread pieces)",
         "measurements": [
           {
             "amount": "1",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "crusts removed and torn into 1/4-inch (6-mm",
         "category": "Bakery & Bread"
       }
     },
@@ -133,14 +133,14 @@
     {
       "raw": "½ cup chopped scallions, (from 4 to 5 scallions)",
       "expected": {
-        "item": "chopped scallions, (from 4 to 5 scallions)",
+        "item": "chopped scallions",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 4 to 5 scallions",
         "category": "Produce"
       }
     },
@@ -170,28 +170,32 @@
     {
       "raw": "¾ cup mayonnaise, (best quality such as Hellmann's or Duke's)",
       "expected": {
-        "item": "mayonnaise, (best quality such as Hellmann's or Duke's)",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "165",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "best quality such as Hellmann's or Duke's",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "¼ cup Asian chili sauce, (such as Sambal Oelek (available in Asian aisle of most supermarkets))",
       "expected": {
-        "item": "Asian chili sauce, (such as Sambal Oelek (available in Asian aisle of most supermarkets)",
+        "item": "Asian chili sauce",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Sambal Oelek (available in Asian aisle of most supermarkets",
         "category": "Condiments & Sauces"
       }
     },

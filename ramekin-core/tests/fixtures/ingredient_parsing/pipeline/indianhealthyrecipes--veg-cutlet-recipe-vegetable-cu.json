@@ -5,14 +5,14 @@
     {
       "raw": "2 cups potatoes (peel &amp;amp; cube to ¾ inch (2 large) (or sweet potatoes))",
       "expected": {
-        "item": "potatoes (peel & cube to 3/4 inch (2 large) (or sweet potatoes)",
+        "item": "potatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "peel & cube to 3/4 inch (2 large, or sweet potatoes",
         "category": "Produce"
       }
     },
@@ -93,14 +93,14 @@
     {
       "raw": "¾ teaspoon ginger grated (or paste)",
       "expected": {
-        "item": "ginger grated (or paste)",
+        "item": "ginger grated",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or paste",
         "category": "Beverages"
       }
     },
@@ -167,28 +167,28 @@
     {
       "raw": "2 tablespoon besan (or gram flour or rice flour or corn flour)",
       "expected": {
-        "item": "besan (or gram flour or rice flour or corn flour)",
+        "item": "besan",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "or gram flour or rice flour or corn flour",
+        "category": "Other"
       }
     },
     {
       "raw": "½ cup bread crumbs ( or powdered poha for the crust)",
       "expected": {
-        "item": "bread crumbs ( or powdered poha for the crust)",
+        "item": "bread crumbs",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or powdered poha for the crust",
         "category": "Bakery & Bread"
       }
     }

@@ -73,14 +73,14 @@
     {
       "raw": "2/3 to 3/4 cup regular or superfine sugar (I use a bit less — a slightly heaped 1/2 cup)",
       "expected": {
-        "item": "regular or superfine sugar (I use a bit less - a slightly heaped 1/2 cup)",
+        "item": "regular or superfine sugar",
         "measurements": [
           {
             "amount": "0.67 to 0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I use a bit less - a slightly heaped 1/2 cup",
         "category": "Baking"
       }
     },

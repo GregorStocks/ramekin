@@ -54,14 +54,14 @@
     {
       "raw": "1 teaspoon finely grated orange (or mandarin or clementine) zest",
       "expected": {
-        "item": "finely grated orange (or mandarin or clementine) zest",
+        "item": "finely grated orange zest",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or mandarin or clementine",
         "category": "Produce"
       }
     },

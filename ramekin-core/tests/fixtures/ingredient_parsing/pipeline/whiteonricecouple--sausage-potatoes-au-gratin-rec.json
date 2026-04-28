@@ -41,7 +41,7 @@
     {
       "raw": "4 pounds Yukon Gold Potatoes (, or similar potato)",
       "expected": {
-        "item": "Yukon Gold Potatoes (, or similar potato)",
+        "item": "Yukon Gold Potatoes",
         "measurements": [
           {
             "amount": "4",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or similar potato",
         "category": "Produce"
       }
     },

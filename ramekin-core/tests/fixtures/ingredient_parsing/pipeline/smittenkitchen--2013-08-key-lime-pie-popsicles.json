@@ -21,21 +21,25 @@
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "14-ounce",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1 cup half-and-half (or, 1/2 cup heavy cream + 1/2 cup milk)",
       "expected": {
-        "item": "half-and-half (or, 1/2 cup heavy cream + 1/2 cup milk)",
+        "item": "half-and-half",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "242",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or, 1/2 cup heavy cream + 1/2 cup milk",
         "category": "Dairy & Eggs"
       }
     },

@@ -211,15 +211,15 @@
     {
       "raw": "1 28-ounce can tomatoes with herbs, including the liquid, tomatoes broken up (or your favorite tomato or pasta sauce)",
       "expected": {
-        "item": "tomatoes with herbs, including the liquid, tomatoes broken up (or your favorite tomato or pasta sauce)",
+        "item": "tomatoes with herbs, including the liquid, tomatoes broken up",
         "measurements": [
           {
             "amount": "1",
             "unit": "28-ounce can"
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "or your favorite tomato or pasta sauce",
+        "category": "Produce"
       }
     }
   ]

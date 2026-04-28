@@ -85,7 +85,7 @@
       "expected": {
         "item": "Seasonings: 1 bay leaf",
         "measurements": [],
-        "note": null,
+        "note": "6 black peppercorns, 6 allspice berries, 4 cloves",
         "category": "Spices & Seasonings"
       }
     },
@@ -138,7 +138,7 @@
     {
       "raw": "2 lbs cod fillets (cut into 3-inch pieces (drain well, and pat dry with paper towels))",
       "expected": {
-        "item": "cod fillets (cut into 3-inch pieces (drain well, and pat dry with paper towels)",
+        "item": "cod fillets",
         "measurements": [
           {
             "amount": "2",
@@ -149,7 +149,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 3-inch pieces (drain well, and pat dry with paper towels",
         "category": "Meat & Seafood"
       }
     },
@@ -174,14 +174,18 @@
     {
       "raw": "1 tsp salt (I used sea salt)",
       "expected": {
-        "item": "salt (I used sea salt)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used sea salt",
         "category": "Spices & Seasonings"
       }
     },
@@ -202,14 +206,14 @@
     {
       "raw": "1/4 cup light olive oil or avocado oil (to sautee fish)",
       "expected": {
-        "item": "light olive oil or avocado oil (to sautee fish)",
+        "item": "light olive oil or avocado oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "to sautee fish",
         "category": "Oils & Vinegars"
       }
     },
@@ -225,9 +229,9 @@
     {
       "raw": "a cheesecloth (or tea infuser, or spice ball for holding spices.)",
       "expected": {
-        "item": "a cheesecloth (or tea infuser, or spice ball for holding spices.)",
+        "item": "a cheesecloth",
         "measurements": [],
-        "note": null,
+        "note": "or tea infuser, or spice ball for holding spices.",
         "category": "Cheese"
       }
     }

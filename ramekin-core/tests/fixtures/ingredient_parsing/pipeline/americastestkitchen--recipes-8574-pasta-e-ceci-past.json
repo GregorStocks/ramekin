@@ -86,7 +86,7 @@
             "unit": "can"
           }
         ],
-        "note": "drained",
+        "note": "14-ounce, drained",
         "category": "Produce"
       }
     },
@@ -157,14 +157,14 @@
     {
       "raw": "2 (15-ounce) cans chickpeas  (do not drain)",
       "expected": {
-        "item": "chickpeas  (do not drain)",
+        "item": "chickpeas",
         "measurements": [
           {
             "amount": "2",
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "15-ounce, do not drain",
         "category": "Canned Goods"
       }
     },

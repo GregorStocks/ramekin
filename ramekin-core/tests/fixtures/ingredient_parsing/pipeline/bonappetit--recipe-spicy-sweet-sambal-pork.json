@@ -119,15 +119,15 @@
     {
       "raw": "⅓ cup hot chili paste (such as sambal oelek)",
       "expected": {
-        "item": "hot chili paste (such as sambal oelek)",
+        "item": "hot chili paste",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "such as sambal oelek",
+        "category": "Other"
       }
     },
     {

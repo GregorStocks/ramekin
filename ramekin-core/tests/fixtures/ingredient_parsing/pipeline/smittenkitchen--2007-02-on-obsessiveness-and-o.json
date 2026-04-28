@@ -107,14 +107,14 @@
     {
       "raw": "2 minced cloves garlic (Deb addition)",
       "expected": {
-        "item": "minced cloves garlic (Deb addition)",
+        "item": "minced cloves garlic",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "Deb addition",
         "category": "Produce"
       }
     },
@@ -157,14 +157,18 @@
     {
       "raw": "2 teaspoons toasted sesame oil (I replace 1 teaspoon with hot sesame oil — delicious)",
       "expected": {
-        "item": "toasted sesame oil (I replace 1 teaspoon with hot sesame oil - delicious)",
+        "item": "toasted sesame oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "9.1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I replace 1 teaspoon with hot sesame oil - delicious",
         "category": "Oils & Vinegars"
       }
     },
@@ -316,7 +320,7 @@
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "1/2-inch-thick",
         "category": "Produce"
       }
     },
@@ -351,14 +355,18 @@
     {
       "raw": "1/4 cup rice vinegar (not seasoned)",
       "expected": {
-        "item": "rice vinegar (not seasoned)",
+        "item": "rice vinegar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not seasoned",
         "category": "Oils & Vinegars"
       }
     },

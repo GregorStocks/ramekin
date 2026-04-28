@@ -19,28 +19,32 @@
     {
       "raw": "1/2 tbsp salt (fine sea salt is recommended)",
       "expected": {
-        "item": "salt (fine sea salt is recommended)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "fine sea salt is recommended",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "3 sheets roasted seaweed for sushi (nori) (cut into strips)",
       "expected": {
-        "item": "sheets roasted seaweed for sushi (nori) (cut into strips)",
+        "item": "sheets roasted seaweed for sushi",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "nori, cut into strips",
         "category": "Meat & Seafood"
       }
     },

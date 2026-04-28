@@ -149,14 +149,14 @@
     {
       "raw": "1 cup well-shaken buttermilk (or, you can make your own)",
       "expected": {
-        "item": "well-shaken buttermilk (or, you can make your own)",
+        "item": "well-shaken buttermilk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or, you can make your own",
         "category": "Dairy & Eggs"
       }
     }

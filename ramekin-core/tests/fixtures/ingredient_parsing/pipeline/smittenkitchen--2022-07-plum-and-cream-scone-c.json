@@ -32,7 +32,7 @@
     {
       "raw": "1/2 to 2/3 cup (100 to 130 grams) granulated sugar (see Note)",
       "expected": {
-        "item": "granulated sugar (see Note)",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.5 to 0.67",
@@ -43,7 +43,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Baking"
       }
     },

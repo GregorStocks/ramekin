@@ -19,14 +19,14 @@
     {
       "raw": "1/2 cup light corn syrup or golden syrup (see Note above)",
       "expected": {
-        "item": "light corn syrup or golden syrup (see Note above)",
+        "item": "light corn syrup or golden syrup",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Note above",
         "category": "Baking"
       }
     },
@@ -75,7 +75,7 @@
     {
       "raw": "6 ounces bittersweet chocolate, chopped (or, about 1 cup bittersweet chocolate chips), divided",
       "expected": {
-        "item": "bittersweet chocolate, chopped (or, about 1 cup bittersweet chocolate chips)",
+        "item": "bittersweet chocolate, chopped",
         "measurements": [
           {
             "amount": "6",
@@ -86,8 +86,8 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
-        "category": "Baking"
+        "note": "or, about 1 cup bittersweet chocolate chips, divided",
+        "category": "Other"
       }
     },
     {

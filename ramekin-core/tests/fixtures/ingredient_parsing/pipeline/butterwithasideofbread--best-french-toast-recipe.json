@@ -159,23 +159,23 @@
     {
       "raw": "1 loaf Sliced Soft Bread&nbsp; (Brioche is our fave! )",
       "expected": {
-        "item": "loaf Sliced Soft Bread  (Brioche is our fave!",
+        "item": "loaf Sliced Soft Bread",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "Brioche is our fave!",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "Berries/Powdered Sugar/Syrup (toppings)&nbsp;",
       "expected": {
-        "item": "Berries/Powdered Sugar/Syrup (toppings)",
+        "item": "Berries/Powdered Sugar/Syrup",
         "measurements": [],
-        "note": null,
+        "note": "toppings",
         "category": "Baking"
       }
     }

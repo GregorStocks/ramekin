@@ -144,9 +144,9 @@
     {
       "raw": "A splash of sherry vinegar (can’t find it? Use a mild wine or balsamic vinegar instead)",
       "expected": {
-        "item": "A splash of sherry vinegar (can’t find it? Use a mild wine or balsamic vinegar instead)",
+        "item": "A splash of sherry vinegar",
         "measurements": [],
-        "note": null,
+        "note": "can’t find it? Use a mild wine or balsamic vinegar instead",
         "category": "Oils & Vinegars"
       }
     },
@@ -171,7 +171,7 @@
     {
       "raw": "1 1/2 pounds Yukon Gold potatoes (full size or minis work)",
       "expected": {
-        "item": "Yukon Gold potatoes (full size or minis work)",
+        "item": "Yukon Gold potatoes",
         "measurements": [
           {
             "amount": "1.5",
@@ -182,7 +182,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "full size or minis work",
         "category": "Produce"
       }
     },
@@ -242,21 +242,21 @@
             "unit": null
           }
         ],
-        "note": "plus 2 teaspoons thyme leaves (I left this out, accidentally; it was fine without it)",
+        "note": "I left this out, accidentally; it was fine without it, plus 2 teaspoons thyme leaves",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 cup Romesco sauce (from above)",
       "expected": {
-        "item": "Romesco sauce (from above)",
+        "item": "Romesco sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from above",
         "category": "Condiments & Sauces"
       }
     },

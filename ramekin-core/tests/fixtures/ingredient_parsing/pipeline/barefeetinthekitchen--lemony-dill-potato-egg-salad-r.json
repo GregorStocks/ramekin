@@ -69,14 +69,18 @@
     {
       "raw": "2 tablespoons fresh lemon juice (half a lemon's worth)",
       "expected": {
-        "item": "fresh lemon juice (half a lemon's worth)",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "half a lemon's worth",
         "category": "Beverages"
       }
     },

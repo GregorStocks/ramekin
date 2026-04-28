@@ -30,21 +30,21 @@
             "unit": "cup"
           }
         ],
-        "note": "well washed and chopped (see head notes)",
+        "note": "see head notes, well washed and chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "2/3 cup whole wheat pastry flour (or apf flour)",
       "expected": {
-        "item": "whole wheat pastry flour (or apf flour)",
+        "item": "whole wheat pastry flour",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or apf flour",
         "category": "Baking"
       }
     },

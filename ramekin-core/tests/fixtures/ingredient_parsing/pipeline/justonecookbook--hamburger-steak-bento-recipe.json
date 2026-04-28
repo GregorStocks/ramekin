@@ -14,9 +14,9 @@
     {
       "raw": "hambagu (hamburger steak)",
       "expected": {
-        "item": "hambagu (hamburger steak)",
+        "item": "hambagu",
         "measurements": [],
-        "note": null,
+        "note": "hamburger steak",
         "category": "Meat & Seafood"
       }
     },
@@ -59,10 +59,10 @@
     {
       "raw": "furikake (rice seasoning)",
       "expected": {
-        "item": "furikake (rice seasoning)",
+        "item": "furikake",
         "measurements": [],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "rice seasoning",
+        "category": "Other"
       }
     }
   ]

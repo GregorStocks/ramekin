@@ -121,14 +121,14 @@
     {
       "raw": "1 cup French lentils (lentilles du Puy) or common brown or green lentils",
       "expected": {
-        "item": "French lentils (lentilles du Puy) or common brown or green lentils",
+        "item": "French lentils or common brown or green lentils",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "lentilles du Puy",
         "category": "Canned Goods"
       }
     },

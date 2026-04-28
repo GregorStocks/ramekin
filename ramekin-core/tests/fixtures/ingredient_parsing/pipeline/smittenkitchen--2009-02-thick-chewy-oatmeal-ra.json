@@ -167,7 +167,7 @@
     {
       "raw": "3/4 cup (120 grams) raisins (see Note)",
       "expected": {
-        "item": "raisins (see Note)",
+        "item": "raisins",
         "measurements": [
           {
             "amount": "0.75",
@@ -178,7 +178,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Nuts & Dried Fruit"
       }
     },

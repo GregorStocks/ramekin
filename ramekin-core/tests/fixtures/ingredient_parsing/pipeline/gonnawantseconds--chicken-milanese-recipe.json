@@ -5,14 +5,14 @@
     {
       "raw": "4  chicken breast (thin-cut, boneless. skinless)",
       "expected": {
-        "item": "chicken breast (thin-cut, boneless. skinless)",
+        "item": "chicken breast",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "thin-cut, boneless. skinless",
         "category": "Meat & Seafood"
       }
     },
@@ -161,14 +161,14 @@
     {
       "raw": "1  lemon (slices)",
       "expected": {
-        "item": "lemon (slices)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "slices",
         "category": "Produce"
       }
     }

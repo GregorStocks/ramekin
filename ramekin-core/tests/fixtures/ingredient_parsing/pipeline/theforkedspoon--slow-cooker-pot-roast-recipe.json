@@ -215,14 +215,14 @@
     {
       "raw": "2 teaspoon fresh thyme (stems removed)",
       "expected": {
-        "item": "fresh thyme (stems removed)",
+        "item": "fresh thyme",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "stems removed",
         "category": "Produce"
       }
     },

@@ -37,7 +37,7 @@
     {
       "raw": "4 ounces Spanish chorizo (but Portuguese chouriço will work as well), cut into 3/4-inch pieces",
       "expected": {
-        "item": "Spanish chorizo (but Portuguese chouriço will work as well), cut into 3/4-inch pieces",
+        "item": "Spanish chorizo, cut into 3/4-inch pieces",
         "measurements": [
           {
             "amount": "4",
@@ -48,21 +48,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "but Portuguese chouriço will work as well",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 1/2 cups 3/4-inch bread cubes (croutons), preferably from a baguette or country bread loaf",
       "expected": {
-        "item": "3/4-inch bread cubes (croutons), preferably from a baguette or country bread loaf",
+        "item": "3/4-inch bread cubes, preferably from a baguette or country bread loaf",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "croutons",
         "category": "Bakery & Bread"
       }
     },

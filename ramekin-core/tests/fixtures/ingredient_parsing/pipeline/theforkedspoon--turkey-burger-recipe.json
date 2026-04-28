@@ -5,7 +5,7 @@
     {
       "raw": "1 pound Ground turkey (preferably dark meat or between 80-90% lean)",
       "expected": {
-        "item": "Ground turkey (preferably dark meat or between 80-90% lean)",
+        "item": "Ground turkey",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably dark meat or between 80-90% lean",
         "category": "Meat & Seafood"
       }
     },
@@ -37,14 +37,18 @@
     {
       "raw": "1 teaspoon Worcestershire sauce (or soy sauce)",
       "expected": {
-        "item": "Worcestershire sauce (or soy sauce)",
+        "item": "Worcestershire sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or soy sauce",
         "category": "Condiments & Sauces"
       }
     },

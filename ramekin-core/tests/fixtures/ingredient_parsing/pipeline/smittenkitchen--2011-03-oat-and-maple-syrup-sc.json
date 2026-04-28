@@ -41,7 +41,7 @@
     {
       "raw": "1/2 cup (35 grams) rolled oats (I used quick-cooking)",
       "expected": {
-        "item": "rolled oats (I used quick-cooking)",
+        "item": "rolled oats",
         "measurements": [
           {
             "amount": "0.5",
@@ -52,35 +52,35 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used quick-cooking",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "1 very heaped tablespoon baking powder (I only slightly heaped; wish I’d heaped more!)",
       "expected": {
-        "item": "very heaped tablespoon baking powder (I only slightly heaped; wish I’d heaped more!)",
+        "item": "very heaped tablespoon baking powder",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "I only slightly heaped; wish I’d heaped more!",
         "category": "Baking"
       }
     },
     {
       "raw": "1 very heaped tablespoon superfine (caster) or granulated sugar",
       "expected": {
-        "item": "very heaped tablespoon superfine (caster) or granulated sugar",
+        "item": "very heaped tablespoon superfine or granulated sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "caster",
         "category": "Baking"
       }
     },
@@ -162,7 +162,7 @@
             "unit": null
           }
         ],
-        "note": "beaten (for glaze)",
+        "note": "for glaze, beaten",
         "category": "Dairy & Eggs"
       }
     }

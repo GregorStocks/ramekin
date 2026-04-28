@@ -5,14 +5,14 @@
     {
       "raw": "1 steak of choice (most people choose round steak and then pound it, I used chuck and didn’t pound)",
       "expected": {
-        "item": "steak of choice (most people choose round steak and then pound it, I used chuck and didn’t pound)",
+        "item": "steak of choice",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "most people choose round steak and then pound it, I used chuck and didn’t pound",
         "category": "Meat & Seafood"
       }
     },

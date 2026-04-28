@@ -19,14 +19,14 @@
     {
       "raw": "1 tablespoon sweet soy sauce ((Kecap Manis will work))",
       "expected": {
-        "item": "sweet soy sauce (Kecap Manis will work)",
+        "item": "sweet soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "Kecap Manis will work",
         "category": "Condiments & Sauces"
       }
     },
@@ -217,14 +217,14 @@
     {
       "raw": "40  wonton wrappers ((depends on the size of the wrapper))",
       "expected": {
-        "item": "wonton wrappers (depends on the size of the wrapper)",
+        "item": "wonton wrappers",
         "measurements": [
           {
             "amount": "40",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "depends on the size of the wrapper",
         "category": "Bakery & Bread"
       }
     },

@@ -204,7 +204,7 @@
     {
       "raw": "1 cup (210 grams) uncooked (semi-pearled) farro (see Note)",
       "expected": {
-        "item": "uncooked (semi-pearled) farro (see Note)",
+        "item": "uncooked farro",
         "measurements": [
           {
             "amount": "1",
@@ -215,7 +215,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "semi-pearled, see Note",
         "category": "Pasta & Rice"
       }
     },

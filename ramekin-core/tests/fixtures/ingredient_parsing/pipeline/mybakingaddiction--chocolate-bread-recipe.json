@@ -177,15 +177,15 @@
     {
       "raw": "2 cups semisweet chocolate morsels (plus 2 tablespoons flour)",
       "expected": {
-        "item": "semisweet chocolate morsels (plus 2 tablespoons flour)",
+        "item": "semisweet chocolate morsels",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "plus 2 tablespoons flour",
+        "category": "Other"
       }
     }
   ]

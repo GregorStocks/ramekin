@@ -96,14 +96,14 @@
     {
       "raw": "1 cup Panko bread crumbs (Japanese Style crumbs)",
       "expected": {
-        "item": "Panko bread crumbs (Japanese Style crumbs)",
+        "item": "Panko bread crumbs",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "Japanese Style crumbs",
         "category": "Bakery & Bread"
       }
     },

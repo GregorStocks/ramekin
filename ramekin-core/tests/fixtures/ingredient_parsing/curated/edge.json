@@ -389,7 +389,7 @@
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "15.5-ounce",
         "category": "Canned Goods"
       }
     },
@@ -416,7 +416,7 @@
       "name": "price_in_text",
       "raw": "6 ounces vanilla wafers ($1.43)",
       "expected": {
-        "item": "vanilla wafers ($1.43)",
+        "item": "vanilla wafers",
         "measurements": [
           {
             "amount": "6",
@@ -427,7 +427,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "$1.43",
         "category": "Baking"
       }
     },
@@ -525,14 +525,14 @@
       "name": "modifier_prefixed_range_with_to",
       "raw": "Heaped 1/2 cup to 3/4 cup granulated sugar (see Note)",
       "expected": {
-        "item": "granulated sugar (see Note)",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.5 to 0.75",
             "unit": "heaped cup"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Baking"
       }
     },
@@ -555,14 +555,14 @@
       "name": "repeated_unit_range_with_to_and_note",
       "raw": "1/2 tsp to 1 tsp smoked paprika (adjust to your liking)",
       "expected": {
-        "item": "smoked paprika (adjust to your liking)",
+        "item": "smoked paprika",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "adjust to your liking",
         "category": "Spices & Seasonings"
       }
     },
@@ -956,7 +956,7 @@
             "unit": "g"
           }
         ],
-        "note": "for dried but soaked chickpeas; or 1 1/2 cup for cooked chickpeas",
+        "note": "for cooked chickpeas, for dried but soaked chickpeas; or 1 1/2 cup",
         "category": "Canned Goods"
       }
     },

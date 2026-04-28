@@ -74,14 +74,14 @@
     {
       "raw": "1/2 cup rendered chicken fat (schmaltz) or vegetable oil",
       "expected": {
-        "item": "rendered chicken fat (schmaltz) or vegetable oil",
+        "item": "rendered chicken fat or vegetable oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "schmaltz",
         "category": "Oils & Vinegars"
       }
     },

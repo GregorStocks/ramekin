@@ -5,7 +5,7 @@
     {
       "raw": "2.2 lb dried salted cod fish (bacalao)",
       "expected": {
-        "item": "dried salted cod fish (bacalao)",
+        "item": "dried salted cod fish",
         "measurements": [
           {
             "amount": "2.2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "bacalao",
         "category": "Meat & Seafood"
       }
     },
@@ -41,7 +41,7 @@
     {
       "raw": "14 oz fire-roasted peppers (cut into strips)",
       "expected": {
-        "item": "fire-roasted peppers (cut into strips)",
+        "item": "fire-roasted peppers",
         "measurements": [
           {
             "amount": "14",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into strips",
         "category": "Canned Goods"
       }
     },

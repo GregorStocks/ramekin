@@ -5,28 +5,28 @@
     {
       "raw": "2 cups diced (1/4 inch) cantaloupe (from a 2 1/4-lb piece)",
       "expected": {
-        "item": "diced cantaloupe (from a 2 1/4-lb piece)",
+        "item": "diced cantaloupe",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "1/4 inch, from a 2 1/4-lb piece",
         "category": "Produce"
       }
     },
     {
       "raw": "1/4 cup diced (1/4 inch) sweet onion (such as Vidalia) or red onion",
       "expected": {
-        "item": "diced sweet onion (such as Vidalia) or red onion",
+        "item": "diced sweet onion or red onion",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "1/4 inch, such as Vidalia",
         "category": "Produce"
       }
     },
@@ -47,15 +47,15 @@
     {
       "raw": "1 (2-inch-long) fresh hot red or green chile (skip the seeds if you want to dim the heat), minced",
       "expected": {
-        "item": "fresh hot red or green chile (skip the seeds if you want to dim the heat)",
+        "item": "fresh hot red or green chile",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "minced",
-        "category": "Nuts & Dried Fruit"
+        "note": "2-inch-long, skip the seeds if you want to dim the heat, minced",
+        "category": "Other"
       }
     },
     {

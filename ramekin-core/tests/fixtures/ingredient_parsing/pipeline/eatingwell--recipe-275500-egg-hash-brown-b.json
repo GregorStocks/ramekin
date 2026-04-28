@@ -127,28 +127,28 @@
     {
       "raw": "0.25 cup chopped scallions (from 2 scallions)",
       "expected": {
-        "item": "chopped scallions (from 2 scallions)",
+        "item": "chopped scallions",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 2 scallions",
         "category": "Produce"
       }
     },
     {
       "raw": "1 teaspoon Mexican-style hot sauce (such as Cholula)",
       "expected": {
-        "item": "Mexican-style hot sauce (such as Cholula)",
+        "item": "Mexican-style hot sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "such as Cholula",
         "category": "Condiments & Sauces"
       }
     }

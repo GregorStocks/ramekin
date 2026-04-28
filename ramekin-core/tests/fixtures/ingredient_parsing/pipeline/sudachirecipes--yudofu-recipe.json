@@ -23,14 +23,14 @@
     {
       "raw": "5 g dried kelp (kombu)",
       "expected": {
-        "item": "dried kelp (kombu)",
+        "item": "dried kelp",
         "measurements": [
           {
             "amount": "5",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "kombu",
         "category": "Other"
       }
     },
@@ -69,41 +69,37 @@
     {
       "raw": "finely chopped green onions (to garnish)",
       "expected": {
-        "item": "finely chopped green onions (to garnish)",
+        "item": "finely chopped green onions",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "category": "Produce"
       }
     },
     {
       "raw": "1 ½ tbsp sesame paste (nerigoma)",
       "expected": {
-        "item": "sesame paste (nerigoma)",
+        "item": "sesame paste",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "nerigoma",
         "category": "Other"
       }
     },
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -128,14 +124,14 @@
     {
       "raw": "1 tsp chili oil (rayu)",
       "expected": {
-        "item": "chili oil (rayu)",
+        "item": "chili oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "rayu",
         "category": "Oils & Vinegars"
       }
     },

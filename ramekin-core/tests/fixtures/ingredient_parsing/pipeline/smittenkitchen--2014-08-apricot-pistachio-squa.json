@@ -99,15 +99,15 @@
     {
       "raw": "3/4 cup (a scant 4 ounces or 110 grams) shelled unsalted pistachios",
       "expected": {
-        "item": "(a scant 4 ounces",
+        "item": "shelled unsalted pistachios",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": "or 110 grams) shelled unsalted pistachios",
-        "category": "Other"
+        "note": "a scant 4 ounces or 110 grams",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {

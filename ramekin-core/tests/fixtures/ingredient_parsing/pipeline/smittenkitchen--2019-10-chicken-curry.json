@@ -23,14 +23,14 @@
     {
       "raw": "1 cup plain, full-fat yogurt (I use Greek; with Greek, 2% worked too)",
       "expected": {
-        "item": "plain, full-fat yogurt (I use Greek; with Greek, 2% worked too)",
+        "item": "plain, full-fat yogurt",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I use Greek; with Greek, 2% worked too",
         "category": "Dairy & Eggs"
       }
     },

@@ -5,28 +5,28 @@
     {
       "raw": "10 g dried sardines (niboshi) (niboshi )",
       "expected": {
-        "item": "dried sardines (niboshi) (niboshi",
+        "item": "dried sardines",
         "measurements": [
           {
             "amount": "10",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "niboshi, niboshi",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "10 g dried kelp (kombu) (kombu )",
       "expected": {
-        "item": "dried kelp (kombu) (kombu",
+        "item": "dried kelp",
         "measurements": [
           {
             "amount": "10",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "kombu, kombu",
         "category": "Other"
       }
     },
@@ -51,14 +51,14 @@
     {
       "raw": "15 g bonito flakes (katsuobushi) (katsuobushi)",
       "expected": {
-        "item": "bonito flakes (katsuobushi) (katsuobushi)",
+        "item": "bonito flakes",
         "measurements": [
           {
             "amount": "15",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "katsuobushi, katsuobushi",
         "category": "Other"
       }
     }

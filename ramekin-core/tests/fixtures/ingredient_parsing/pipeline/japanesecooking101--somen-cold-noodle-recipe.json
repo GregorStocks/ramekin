@@ -51,15 +51,15 @@
     {
       "raw": "1/4 cup Men-Tsuyu (dipping sauce)",
       "expected": {
-        "item": "Men-Tsuyu (dipping sauce)",
+        "item": "Men-Tsuyu",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "dipping sauce",
+        "category": "Other"
       }
     },
     {

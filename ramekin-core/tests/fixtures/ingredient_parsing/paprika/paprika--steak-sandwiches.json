@@ -51,14 +51,18 @@
     {
       "raw": "2 tablespoons sour cream (to make this dairy-free, just use additional mayo)",
       "expected": {
-        "item": "sour cream (to make this dairy-free, just use additional mayo)",
+        "item": "sour cream",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "to make this dairy-free, just use additional mayo",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,7 +85,7 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "16-ounce",
         "category": "Meat & Seafood"
       }
     },
@@ -129,14 +133,14 @@
     {
       "raw": "1/2 teaspoon fresh thyme leaves (if desired)",
       "expected": {
-        "item": "fresh thyme leaves (if desired)",
+        "item": "fresh thyme leaves",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "if desired",
         "category": "Produce"
       }
     },
@@ -154,7 +158,7 @@
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "about 6″",
         "category": "Bakery & Bread"
       }
     },

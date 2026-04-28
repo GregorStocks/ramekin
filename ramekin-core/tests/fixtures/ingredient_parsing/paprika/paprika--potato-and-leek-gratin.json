@@ -105,14 +105,14 @@
     {
       "raw": "1/2 cup plain breadcrumbs (panko or homemade are great here)",
       "expected": {
-        "item": "plain breadcrumbs (panko or homemade are great here)",
+        "item": "plain breadcrumbs",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "panko or homemade are great here",
         "category": "Bakery & Bread"
       }
     },

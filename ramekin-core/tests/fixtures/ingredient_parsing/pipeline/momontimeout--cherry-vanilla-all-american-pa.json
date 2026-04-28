@@ -73,9 +73,9 @@
     {
       "raw": "red and blue gel food coloring (start with a couple drops and add more until desired color is achieved)",
       "expected": {
-        "item": "red and blue gel food coloring (start with a couple drops and add more until desired color is achieved)",
+        "item": "red and blue gel food coloring",
         "measurements": [],
-        "note": null,
+        "note": "start with a couple drops and add more until desired color is achieved",
         "category": "Baking"
       }
     },
@@ -104,7 +104,7 @@
     {
       "raw": "10 oz white vanilla candy coating (I used CandiQuik)",
       "expected": {
-        "item": "white vanilla candy coating (I used CandiQuik)",
+        "item": "white vanilla candy coating",
         "measurements": [
           {
             "amount": "10",
@@ -115,7 +115,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used CandiQuik",
         "category": "Baking"
       }
     },

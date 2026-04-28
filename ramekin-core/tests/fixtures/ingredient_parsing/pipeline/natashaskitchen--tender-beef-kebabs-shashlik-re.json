@@ -5,7 +5,7 @@
     {
       "raw": "2 lbs good quality beef (I used top sirloin, cut into 1 1/2\" pieces)",
       "expected": {
-        "item": "good quality beef (I used top sirloin, cut into 1 1/2\" pieces)",
+        "item": "good quality beef",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used top sirloin, cut into 1 1/2\" pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -79,28 +79,36 @@
     {
       "raw": "1/2 cup fresh lemon juice (from 2 medium lemons)",
       "expected": {
-        "item": "fresh lemon juice (from 2 medium lemons)",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 2 medium lemons",
         "category": "Beverages"
       }
     },
     {
       "raw": "1 tsp salt (we love fine sea salt)",
       "expected": {
-        "item": "salt (we love fine sea salt)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "we love fine sea salt",
         "category": "Spices & Seasonings"
       }
     },
@@ -121,14 +129,14 @@
     {
       "raw": "4  garlic cloves (pressed)",
       "expected": {
-        "item": "garlic cloves (pressed)",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "pressed",
         "category": "Produce"
       }
     },

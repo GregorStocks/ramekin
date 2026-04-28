@@ -41,7 +41,7 @@
     {
       "raw": "1/4 cup (20 grams) black cocoa powder (just use more Dutched cocoa powder if you don’t have it)",
       "expected": {
-        "item": "black cocoa powder (just use more Dutched cocoa powder if you don’t have it)",
+        "item": "black cocoa powder",
         "measurements": [
           {
             "amount": "0.25",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "just use more Dutched cocoa powder if you don’t have it",
         "category": "Baking"
       }
     },
@@ -174,7 +174,7 @@
             "unit": "g"
           }
         ],
-        "note": "at room temperature",
+        "note": "3 8-ounce packages, at room temperature",
         "category": "Cheese"
       }
     },

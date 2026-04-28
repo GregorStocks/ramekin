@@ -51,14 +51,14 @@
     {
       "raw": "7 slices bacon (not thick-cut), cut into 3-inch lengths",
       "expected": {
-        "item": "bacon (not thick-cut), cut into 3-inch lengths",
+        "item": "bacon, cut into 3-inch lengths",
         "measurements": [
           {
             "amount": "7",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "not thick-cut",
         "category": "Meat & Seafood"
       }
     }

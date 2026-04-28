@@ -236,14 +236,14 @@
     {
       "raw": "6 to 8 (one per bowl) thick slices sourdough or country bread",
       "expected": {
-        "item": "(one per bowl) thick slices sourdough or country bread",
+        "item": "thick slices sourdough or country bread",
         "measurements": [
           {
             "amount": "6 to 8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "one per bowl",
         "category": "Bakery & Bread"
       }
     },

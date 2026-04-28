@@ -50,14 +50,14 @@
     {
       "raw": "4 chiltepin chiles (see note), plus more for serving",
       "expected": {
-        "item": "chiltepin chiles (see note)",
+        "item": "chiltepin chiles",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "plus more for serving",
+        "note": "see note, plus more for serving",
         "category": "Other"
       }
     },
@@ -236,14 +236,22 @@
     {
       "raw": "1 plum (Roma) tomato (4 ounces; 113 g), finely diced",
       "expected": {
-        "item": "plum (Roma) tomato (4 ounces; 113 g)",
+        "item": "plum tomato",
         "measurements": [
           {
             "amount": "1",
             "unit": null
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
           }
         ],
-        "note": "finely diced",
+        "note": "Roma, finely diced",
         "category": "Produce"
       }
     },

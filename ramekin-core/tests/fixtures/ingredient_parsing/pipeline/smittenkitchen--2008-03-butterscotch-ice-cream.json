@@ -87,29 +87,33 @@
     {
       "raw": "2 cups half-and-half (light cream)",
       "expected": {
-        "item": "half-and-half (light cream)",
+        "item": "half-and-half",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "484",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "light cream",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "6 large egg yolks (hint: if you make a hazelnut brown butter cake, you should have these in your fridge already!)",
       "expected": {
-        "item": "egg yolks (hint: if you make a hazelnut brown butter cake, you should have these in your fridge already!)",
+        "item": "egg yolks",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "hint: if you make a hazelnut brown butter cake, you should have these in your fridge already!",
+        "category": "Dairy & Eggs"
       }
     }
   ]

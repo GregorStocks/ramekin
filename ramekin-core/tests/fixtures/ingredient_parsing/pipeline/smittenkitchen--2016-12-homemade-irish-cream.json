@@ -48,7 +48,7 @@
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "14-ounce or 415 ml",
         "category": "Canned Goods"
       }
     },
@@ -73,7 +73,7 @@
     {
       "raw": "1 cup (235 ml) Irish whiskey (I used Jameson)",
       "expected": {
-        "item": "Irish whiskey (I used Jameson)",
+        "item": "Irish whiskey",
         "measurements": [
           {
             "amount": "1",
@@ -84,7 +84,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "I used Jameson",
         "category": "Beverages"
       }
     }

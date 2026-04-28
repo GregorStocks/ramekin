@@ -155,14 +155,14 @@
     {
       "raw": "1 egg (small if possible)",
       "expected": {
-        "item": "egg (small if possible)",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "small if possible",
         "category": "Dairy & Eggs"
       }
     },

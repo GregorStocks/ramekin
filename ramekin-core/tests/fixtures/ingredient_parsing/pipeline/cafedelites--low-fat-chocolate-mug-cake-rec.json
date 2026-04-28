@@ -33,14 +33,14 @@
     {
       "raw": "2  unsweetened cocoa powder (for a mild chocolate cake OR 1 tablespoon for a darker. Level teaspoons.)",
       "expected": {
-        "item": "unsweetened cocoa powder (for a mild chocolate cake",
+        "item": "unsweetened cocoa powder",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "or 1 tablespoon for a darker. Level teaspoons.)",
+        "note": "for a mild chocolate cake OR 1 tablespoon for a darker. Level teaspoons.",
         "category": "Baking"
       }
     },
@@ -93,14 +93,14 @@
     {
       "raw": "2 tablespoons unsweetened almond milk (or skim milk for an extra point. 2 1/2 tablespoons of milk if using 1 tablespoon cocoa powder.)",
       "expected": {
-        "item": "unsweetened almond milk (or skim milk for an extra point. 2 1/2 tablespoons of milk if using 1 tablespoon cocoa powder.)",
+        "item": "unsweetened almond milk",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or skim milk for an extra point. 2 1/2 tablespoons of milk if using 1 tablespoon cocoa powder.",
         "category": "Nuts & Dried Fruit"
       }
     },

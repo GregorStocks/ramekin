@@ -19,14 +19,14 @@
     {
       "raw": "5 sheets nori roasted seaweed (large, cut into quarters)",
       "expected": {
-        "item": "sheets nori roasted seaweed (large, cut into quarters)",
+        "item": "sheets nori roasted seaweed",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "large, cut into quarters",
         "category": "Meat & Seafood"
       }
     },
@@ -101,24 +101,24 @@
     {
       "raw": "1  Japanese or Persian cucumber (cut into julienne)",
       "expected": {
-        "item": "Japanese or Persian cucumber (cut into julienne)",
+        "item": "Japanese or Persian cucumber",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into julienne",
         "category": "Produce"
       }
     },
     {
       "raw": "Suggested other ingredients: smoked salmon (cream cheese, rolled omelet (tamago-yaki), etc.)",
       "expected": {
-        "item": "Suggested other ingredients: smoked salmon (cream cheese, rolled omelet (tamago-yaki), etc.)",
+        "item": "Suggested other ingredients: smoked salmon, etc.)",
         "measurements": [],
-        "note": null,
-        "category": "Cheese"
+        "note": "cream cheese, rolled omelet (tamago-yaki",
+        "category": "Meat & Seafood"
       }
     }
   ]

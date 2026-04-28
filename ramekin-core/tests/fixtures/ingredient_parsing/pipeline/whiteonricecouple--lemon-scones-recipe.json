@@ -5,14 +5,18 @@
     {
       "raw": "2 cups All-purpose Flour ((if measuring by volume - spoon and level the flour))",
       "expected": {
-        "item": "All-purpose Flour (if measuring by volume - spoon and level the flour)",
+        "item": "All-purpose Flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "if measuring by volume - spoon and level the flour",
         "category": "Baking"
       }
     },
@@ -119,14 +123,14 @@
     {
       "raw": "1/2 cup Heavy Cream ( (if your cream is extra thick you may need a touch more) + optional extra for brushing tops of scones)",
       "expected": {
-        "item": "Heavy Cream ( (if your cream is extra thick you may need a touch more) + optional extra for brushing tops of scones)",
+        "item": "Heavy Cream + optional extra for brushing tops of scones)",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "(if your cream is extra thick you may need a touch more",
         "category": "Dairy & Eggs"
       }
     },
@@ -165,28 +169,28 @@
     {
       "raw": "2 Tablespoons optional melted butter (or heavy cream for brushing tops of scones)",
       "expected": {
-        "item": "optional melted butter (or heavy cream for brushing tops of scones)",
+        "item": "optional melted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or heavy cream for brushing tops of scones",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1/4 cup Fresh Meyer Lemon Juice ((@ 2 meyer lemons))",
       "expected": {
-        "item": "Fresh Meyer Lemon Juice (@ 2 meyer lemons)",
+        "item": "Fresh Meyer Lemon Juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "@ 2 meyer lemons",
         "category": "Beverages"
       }
     },

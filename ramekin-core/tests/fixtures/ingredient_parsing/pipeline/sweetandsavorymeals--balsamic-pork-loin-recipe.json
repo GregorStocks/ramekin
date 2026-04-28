@@ -105,14 +105,18 @@
     {
       "raw": "¼ cup maple syrup (or honey)",
       "expected": {
-        "item": "maple syrup (or honey)",
+        "item": "maple syrup",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "79",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or honey",
         "category": "Baking"
       }
     },

@@ -37,7 +37,7 @@
     {
       "raw": "1/4 oz agar agar (this is 7 grams)",
       "expected": {
-        "item": "agar agar (this is 7 grams)",
+        "item": "agar agar",
         "measurements": [
           {
             "amount": "0.25",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "this is 7 grams",
         "category": "Other"
       }
     },

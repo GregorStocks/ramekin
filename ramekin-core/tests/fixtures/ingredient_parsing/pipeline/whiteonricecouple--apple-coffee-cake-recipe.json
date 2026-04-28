@@ -59,42 +59,46 @@
     {
       "raw": "Pinch Kosher Salt ( or sea Salt)",
       "expected": {
-        "item": "Kosher Salt ( or sea Salt)",
+        "item": "Kosher Salt",
         "measurements": [
           {
             "amount": null,
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "or sea Salt",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "6 Tablespoons cold Butter (, cut into small chunks)",
       "expected": {
-        "item": "cold Butter (, cut into small chunks)",
+        "item": "cold Butter",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small chunks",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 cup chopped Nuts ( (walnuts, pecans, hazelnuts, or almonds))",
       "expected": {
-        "item": "chopped Nuts ( (walnuts, pecans, hazelnuts, or almonds)",
+        "item": "chopped Nuts",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "(walnuts, pecans, hazelnuts, or almonds",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -205,28 +209,36 @@
     {
       "raw": "1/2 teaspoon Kosher salt ( or Sea Salt)",
       "expected": {
-        "item": "Kosher salt ( or Sea Salt)",
+        "item": "Kosher salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Sea Salt",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/2 cup Butter ((one stick) )",
       "expected": {
-        "item": "Butter (one stick)",
+        "item": "Butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "one stick",
         "category": "Dairy & Eggs"
       }
     },
@@ -283,14 +295,18 @@
     {
       "raw": "3/4 cup Sour Cream (, or Greek yogurt)",
       "expected": {
-        "item": "Sour Cream (, or Greek yogurt)",
+        "item": "Sour Cream",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "182",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Greek yogurt",
         "category": "Dairy & Eggs"
       }
     },
@@ -315,9 +331,9 @@
     {
       "raw": "(optional)  Powdered Sugar (, for dusting)",
       "expected": {
-        "item": "Powdered Sugar (, for dusting)",
+        "item": "Powdered Sugar",
         "measurements": [],
-        "note": "optional",
+        "note": "for dusting, optional",
         "category": "Baking"
       }
     }

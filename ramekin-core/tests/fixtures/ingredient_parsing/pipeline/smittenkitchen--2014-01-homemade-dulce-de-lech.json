@@ -19,14 +19,18 @@
     {
       "raw": "1 quart whole milk (cow or goat, or a combination thereof)",
       "expected": {
-        "item": "whole milk (cow or goat, or a combination thereof)",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "quart"
+          },
+          {
+            "amount": "980",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cow or goat, or a combination thereof",
         "category": "Dairy & Eggs"
       }
     },

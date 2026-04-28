@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds ground beef ((preferably a leaner meat, 85-93% lean))",
       "expected": {
-        "item": "ground beef (preferably a leaner meat, 85-93% lean)",
+        "item": "ground beef",
         "measurements": [
           {
             "amount": "2",
@@ -16,21 +16,25 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably a leaner meat, 85-93% lean",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 Tablespoon vegetable oil (, or preferred cooking oil)",
       "expected": {
-        "item": "vegetable oil (, or preferred cooking oil)",
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or preferred cooking oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -51,14 +55,18 @@
     {
       "raw": "1 cup ketchup (, *see head note)",
       "expected": {
-        "item": "ketchup (, *see head note)",
+        "item": "ketchup",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "*see head note",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,14 +105,18 @@
     {
       "raw": "2 Tablespoons fish sauce (, soy sauce, or Worcestershire sauce)",
       "expected": {
-        "item": "fish sauce (, soy sauce, or Worcestershire sauce)",
+        "item": "fish sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "36",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "soy sauce, or Worcestershire sauce",
         "category": "Condiments & Sauces"
       }
     },

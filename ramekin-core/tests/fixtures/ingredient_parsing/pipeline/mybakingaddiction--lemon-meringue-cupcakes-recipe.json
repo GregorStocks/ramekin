@@ -14,14 +14,18 @@
     {
       "raw": "2 1/4 cups cake flour (I used Swan’s Down brand)",
       "expected": {
-        "item": "cake flour (I used Swan’s Down brand)",
+        "item": "cake flour",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "cup"
+          },
+          {
+            "amount": "256",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used Swan’s Down brand",
         "category": "Baking"
       }
     },

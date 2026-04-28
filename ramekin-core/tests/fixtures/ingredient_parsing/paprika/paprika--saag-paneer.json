@@ -78,28 +78,28 @@
     {
       "raw": "1 tablespoon freshly grated peeled ginger (from a 2-inch piece)",
       "expected": {
-        "item": "freshly grated peeled ginger (from a 2-inch piece)",
+        "item": "freshly grated peeled ginger",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from a 2-inch piece",
         "category": "Beverages"
       }
     },
     {
       "raw": "2 teaspoons grated garlic (from about 3 cloves)",
       "expected": {
-        "item": "grated garlic (from about 3 cloves)",
+        "item": "grated garlic",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "from about 3 cloves",
         "category": "Produce"
       }
     },

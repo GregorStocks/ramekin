@@ -5,28 +5,28 @@
     {
       "raw": "500 g Japanese plums (ume) ((ume) before freezing)",
       "expected": {
-        "item": "Japanese plums (ume) (ume) before freezing)",
+        "item": "Japanese plums before freezing)",
         "measurements": [
           {
             "amount": "500",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "ume, ume",
         "category": "Produce"
       }
     },
     {
       "raw": "500 g rock sugar ((korizato))",
       "expected": {
-        "item": "rock sugar (korizato)",
+        "item": "rock sugar",
         "measurements": [
           {
             "amount": "500",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "korizato",
         "category": "Baking"
       }
     }

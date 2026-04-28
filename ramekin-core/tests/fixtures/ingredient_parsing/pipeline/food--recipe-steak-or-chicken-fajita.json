@@ -162,35 +162,35 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "8 inch/20 cm",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "1 -2       onion, we usually use approx. 1-2 depending on size  (however much you like,enough to make a good mix with the peppers)",
       "expected": {
-        "item": "-2       onion, we usually use approx. 1-2 depending on size  (however much you like,enough to make a good mix with the peppers)",
+        "item": "-2       onion, we usually use approx. 1-2 depending on size",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "however much you like,enough to make a good mix with the peppers",
+        "category": "Produce"
       }
     },
     {
       "raw": "2   small    sweet peppers, of your choice  (green, red, or yellow)",
       "expected": {
-        "item": "sweet peppers, of your choice  (green, red, or yellow)",
+        "item": "sweet peppers, of your choice",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "green, red, or yellow",
         "category": "Spices & Seasonings"
       }
     },

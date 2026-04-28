@@ -84,14 +84,18 @@
     {
       "raw": "2 tablespoons golden raisins (I had only dark ones on hand, nobody complained)",
       "expected": {
-        "item": "golden raisins (I had only dark ones on hand, nobody complained)",
+        "item": "golden raisins",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "19",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I had only dark ones on hand, nobody complained",
         "category": "Nuts & Dried Fruit"
       }
     },

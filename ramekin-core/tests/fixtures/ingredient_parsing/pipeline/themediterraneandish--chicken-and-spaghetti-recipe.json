@@ -110,9 +110,9 @@
     {
       "raw": "Extra virgin olive oil (see our olive oil options here)",
       "expected": {
-        "item": "Extra virgin olive oil (see our olive oil options here)",
+        "item": "Extra virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "see our olive oil options here",
         "category": "Oils & Vinegars"
       }
     },
@@ -183,9 +183,9 @@
     {
       "raw": "Extra virgin olive oil (see our olive oil options here)",
       "expected": {
-        "item": "Extra virgin olive oil (see our olive oil options here)",
+        "item": "Extra virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "see our olive oil options here",
         "category": "Oils & Vinegars"
       }
     },
@@ -224,14 +224,14 @@
     {
       "raw": "7-8 green onions (both white and green parts), trimmed and finely chopped",
       "expected": {
-        "item": "green onions (both white and green parts)",
+        "item": "green onions",
         "measurements": [
           {
             "amount": "7-8",
             "unit": null
           }
         ],
-        "note": "trimmed and finely chopped",
+        "note": "both white and green parts, trimmed and finely chopped",
         "category": "Produce"
       }
     },

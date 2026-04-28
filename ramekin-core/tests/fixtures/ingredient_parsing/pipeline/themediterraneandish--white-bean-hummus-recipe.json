@@ -5,14 +5,14 @@
     {
       "raw": "1 15- ounce can white beans,  ((I recommend butter beans), drained and rinsed)",
       "expected": {
-        "item": "15- ounce can white beans,  (I recommend butter beans)",
+        "item": "15- ounce can white beans",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "drained and rinsed)",
+        "note": "I recommend butter beans, drained and rinsed)",
         "category": "Canned Goods"
       }
     },
@@ -47,14 +47,18 @@
     {
       "raw": "¼ cup tahini, (I used Soom Tahini, well-stirred)",
       "expected": {
-        "item": "tahini, (I used Soom Tahini, well-stirred)",
+        "item": "tahini",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used Soom Tahini, well-stirred",
         "category": "Condiments & Sauces"
       }
     },
@@ -100,7 +104,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "or 1/2 teaspoon crushed red pepper flakes,  (more to your liking)",
+        "note": "more to your liking, or 1/2 teaspoon crushed red pepper flakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -116,18 +120,18 @@
     {
       "raw": "Juice of ½ lemon, (more to your liking)",
       "expected": {
-        "item": "Juice of 1/2 lemon, (more to your liking)",
+        "item": "Juice of 1/2 lemon",
         "measurements": [],
-        "note": null,
+        "note": "more to your liking",
         "category": "Beverages"
       }
     },
     {
       "raw": "Extra virgin olive oil, (to serve)",
       "expected": {
-        "item": "Extra virgin olive oil, (to serve)",
+        "item": "Extra virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Oils & Vinegars"
       }
     },

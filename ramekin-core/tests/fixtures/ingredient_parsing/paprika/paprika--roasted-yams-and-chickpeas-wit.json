@@ -19,28 +19,28 @@
     {
       "raw": "1 to 2 tablespoons honey (I used 1; 2 are called for)",
       "expected": {
-        "item": "honey (I used 1; 2 are called for)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I used 1; 2 are called for",
         "category": "Baking"
       }
     },
     {
       "raw": "1 tablespoon crushed red-pepper flakes (Espelette are called for; I used mild Aleppo)",
       "expected": {
-        "item": "crushed red-pepper flakes (Espelette are called for; I used mild Aleppo)",
+        "item": "crushed red-pepper flakes",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "Espelette are called for; I used mild Aleppo",
         "category": "Spices & Seasonings"
       }
     },
@@ -54,7 +54,7 @@
             "unit": "cup"
           }
         ],
-        "note": "drained and patted dry on towels",
+        "note": "1 15-ounce can, drained and patted dry on towels",
         "category": "Canned Goods"
       }
     },

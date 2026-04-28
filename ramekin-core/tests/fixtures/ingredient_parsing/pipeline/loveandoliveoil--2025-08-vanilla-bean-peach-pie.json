@@ -59,28 +59,28 @@
     {
       "raw": "1/2 cup 1 stick cold unsalted butter (cut into 1/4-inch pieces)",
       "expected": {
-        "item": "1 stick cold unsalted butter (cut into 1/4-inch pieces)",
+        "item": "1 stick cold unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch pieces",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1/2 cup cold vegetable shortening* (cut into pieces)",
       "expected": {
-        "item": "cold vegetable shortening* (cut into pieces)",
+        "item": "cold vegetable shortening",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Baking"
       }
     },
@@ -191,14 +191,18 @@
     {
       "raw": "2 tablespoons cold unsalted butter (cut into small pieces)",
       "expected": {
-        "item": "cold unsalted butter (cut into small pieces)",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small pieces",
         "category": "Dairy & Eggs"
       }
     },

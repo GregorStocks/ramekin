@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds chicken breasts boneless (skinless (4 medium sized))",
       "expected": {
-        "item": "chicken breasts boneless (skinless (4 medium sized)",
+        "item": "chicken breasts boneless",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skinless (4 medium sized",
         "category": "Meat & Seafood"
       }
     },

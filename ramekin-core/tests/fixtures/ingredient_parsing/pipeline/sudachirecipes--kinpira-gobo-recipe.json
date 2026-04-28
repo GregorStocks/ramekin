@@ -5,14 +5,14 @@
     {
       "raw": "200 g burdock root (gobo)",
       "expected": {
-        "item": "burdock root (gobo)",
+        "item": "burdock root",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "gobo",
         "category": "Other"
       }
     },
@@ -97,18 +97,14 @@
     {
       "raw": "1 ½ tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "24",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -147,18 +143,14 @@
     {
       "raw": "½ tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "8",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -183,28 +175,28 @@
     {
       "raw": "½ tsp Chinese-style chicken bouillon powder (or plant-based alternative)",
       "expected": {
-        "item": "Chinese-style chicken bouillon powder (or plant-based alternative)",
+        "item": "Chinese-style chicken bouillon powder",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or plant-based alternative",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "⅛ tsp dashi granules (use kombu dashi granules for plant-based diets)",
       "expected": {
-        "item": "dashi granules (use kombu dashi granules for plant-based diets)",
+        "item": "dashi granules",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "use kombu dashi granules for plant-based diets",
         "category": "Other"
       }
     }

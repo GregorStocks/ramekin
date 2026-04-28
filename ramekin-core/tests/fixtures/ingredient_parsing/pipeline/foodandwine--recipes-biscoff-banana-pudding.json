@@ -5,14 +5,14 @@
     {
       "raw": "1 (5.1-ounce) package instant vanilla pudding and pie filling mix (such as Jell-O)",
       "expected": {
-        "item": "instant vanilla pudding and pie filling mix (such as Jell-O)",
+        "item": "instant vanilla pudding and pie filling mix",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
           }
         ],
-        "note": null,
+        "note": "5.1-ounce, such as Jell-O",
         "category": "Baking"
       }
     },
@@ -84,7 +84,7 @@
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "14-ounce",
         "category": "Canned Goods"
       }
     },
@@ -116,21 +116,21 @@
             "unit": "package"
           }
         ],
-        "note": "divided",
+        "note": "11-ounce, divided",
         "category": "Baking"
       }
     },
     {
       "raw": "1 (8.8-ounce) package crisp gourmet cookies (such as Biscoff), divided",
       "expected": {
-        "item": "crisp gourmet cookies (such as Biscoff)",
+        "item": "crisp gourmet cookies",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
           }
         ],
-        "note": "divided",
+        "note": "8.8-ounce, such as Biscoff, divided",
         "category": "Other"
       }
     },

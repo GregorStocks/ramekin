@@ -159,23 +159,23 @@
     {
       "raw": "2 cups fresh blueberries (tossed in 1 teaspoon all-purpose flour)",
       "expected": {
-        "item": "fresh blueberries (tossed in 1 teaspoon all-purpose flour)",
+        "item": "fresh blueberries",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "tossed in 1 teaspoon all-purpose flour",
+        "category": "Produce"
       }
     },
     {
       "raw": "sugar (for topping)",
       "expected": {
-        "item": "sugar (for topping)",
+        "item": "sugar",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Baking"
       }
     }

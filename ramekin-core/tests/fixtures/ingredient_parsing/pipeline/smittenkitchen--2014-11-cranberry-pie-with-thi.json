@@ -182,14 +182,14 @@
     {
       "raw": "4 1/2 cups fresh or frozen cranberries (from 1 1/2 12-ounce bags)",
       "expected": {
-        "item": "fresh or frozen cranberries (from 1 1/2 12-ounce bags)",
+        "item": "fresh or frozen cranberries",
         "measurements": [
           {
             "amount": "4.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 1 1/2 12-ounce bags",
         "category": "Produce"
       }
     },
@@ -214,9 +214,9 @@
     {
       "raw": "A few gratings of orange zest (yes, clementine zest works great here too)",
       "expected": {
-        "item": "A few gratings of orange zest (yes, clementine zest works great here too)",
+        "item": "A few gratings of orange zest",
         "measurements": [],
-        "note": null,
+        "note": "yes, clementine zest works great here too",
         "category": "Produce"
       }
     },

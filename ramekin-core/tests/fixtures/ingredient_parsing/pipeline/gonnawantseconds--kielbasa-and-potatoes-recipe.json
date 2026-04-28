@@ -87,7 +87,7 @@
     {
       "raw": "2 (13.5-ounces each) packages  kielbasa or other smoked sausage,  (cut into ½-inch rounds)",
       "expected": {
-        "item": "kielbasa or other smoked sausage,  (cut into 1/2-inch rounds)",
+        "item": "kielbasa or other smoked sausage",
         "measurements": [
           {
             "amount": "2",
@@ -98,7 +98,7 @@
             "unit": "oz each"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch rounds",
         "category": "Meat & Seafood"
       }
     },
@@ -123,14 +123,14 @@
     {
       "raw": "1 cup carrots, (cut into small cubes)",
       "expected": {
-        "item": "carrots, (cut into small cubes)",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut into small cubes",
         "category": "Produce"
       }
     },

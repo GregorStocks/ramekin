@@ -83,15 +83,15 @@
     {
       "raw": "1  lemon (juiced)",
       "expected": {
-        "item": "lemon (juiced)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {
@@ -129,15 +129,19 @@
     {
       "raw": "1/4 cup tamari (or coconut aminos)",
       "expected": {
-        "item": "tamari (or coconut aminos)",
+        "item": "tamari",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "72",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "or coconut aminos",
+        "category": "Condiments & Sauces"
       }
     },
     {

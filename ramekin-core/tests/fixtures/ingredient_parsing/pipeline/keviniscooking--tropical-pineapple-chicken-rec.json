@@ -5,7 +5,7 @@
     {
       "raw": "2 lbs chicken ((See Note 1))",
       "expected": {
-        "item": "chicken (See Note 1)",
+        "item": "chicken",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "See Note 1",
         "category": "Meat & Seafood"
       }
     },
@@ -77,14 +77,14 @@
     {
       "raw": "3 cups pineapple ((See Note 2))",
       "expected": {
-        "item": "pineapple (See Note 2)",
+        "item": "pineapple",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "See Note 2",
         "category": "Produce"
       }
     },
@@ -341,14 +341,14 @@
     {
       "raw": "2  Scotch Bonnet pepper ((See Note 3))",
       "expected": {
-        "item": "Scotch Bonnet pepper (See Note 3)",
+        "item": "Scotch Bonnet pepper",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "See Note 3",
         "category": "Spices & Seasonings"
       }
     },

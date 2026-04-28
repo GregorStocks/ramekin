@@ -27,18 +27,18 @@
     {
       "raw": "salt (to season)",
       "expected": {
-        "item": "salt (to season)",
+        "item": "salt, presumably Diamond",
         "measurements": [],
-        "note": null,
+        "note": "to season",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "lemon pepper (to season)",
       "expected": {
-        "item": "lemon pepper (to season)",
+        "item": "lemon pepper",
         "measurements": [],
-        "note": null,
+        "note": "to season",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,15 +59,15 @@
     {
       "raw": "1  lemon (juiced)",
       "expected": {
-        "item": "lemon (juiced)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {

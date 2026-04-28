@@ -60,14 +60,14 @@
     {
       "raw": "3 to 6 tablespoons all-purpose flour (I needed the latter amount to get this into a crumble)",
       "expected": {
-        "item": "all-purpose flour (I needed the latter amount to get this into a crumble)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "3 to 6",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I needed the latter amount to get this into a crumble",
         "category": "Baking"
       }
     },

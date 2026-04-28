@@ -79,14 +79,14 @@
     {
       "raw": "Pinch freshly grated nutmeg (I skipped this)",
       "expected": {
-        "item": "freshly grated nutmeg (I skipped this)",
+        "item": "freshly grated nutmeg",
         "measurements": [
           {
             "amount": null,
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "I skipped this",
         "category": "Spices & Seasonings"
       }
     },
@@ -121,7 +121,7 @@
     {
       "raw": "1 pound sharp or extra-sharp cheddar cheese, grated (I usually use one from Cabot), see Note",
       "expected": {
-        "item": "sharp or extra-sharp cheddar cheese, grated (I usually use one from Cabot), see Note",
+        "item": "sharp or extra-sharp cheddar cheese, grated, see Note",
         "measurements": [
           {
             "amount": "1",
@@ -132,7 +132,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I usually use one from Cabot",
         "category": "Cheese"
       }
     },

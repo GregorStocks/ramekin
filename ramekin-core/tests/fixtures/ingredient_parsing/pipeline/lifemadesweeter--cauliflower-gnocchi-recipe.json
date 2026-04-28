@@ -23,14 +23,14 @@
     {
       "raw": "2-3 tbsp extra-virgin olive oil (OR avocado oil)",
       "expected": {
-        "item": "extra-virgin olive oil (OR avocado oil)",
+        "item": "extra-virgin olive oil",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "OR avocado oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -60,14 +60,14 @@
     {
       "raw": "1  7-ounce block Violife Vegan Feta Cheese  (, or use any feta of your choice)",
       "expected": {
-        "item": "7-ounce block Violife Vegan Feta Cheese  (, or use any feta of your choice)",
+        "item": "7-ounce block Violife Vegan Feta Cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or use any feta of your choice",
         "category": "Cheese"
       }
     },

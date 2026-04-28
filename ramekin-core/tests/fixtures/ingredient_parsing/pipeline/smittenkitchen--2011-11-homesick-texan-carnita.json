@@ -41,14 +41,18 @@
     {
       "raw": "1/4 cup lime juice (from about 2 to 3 limes)",
       "expected": {
-        "item": "lime juice (from about 2 to 3 limes)",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 2 to 3 limes",
         "category": "Beverages"
       }
     },

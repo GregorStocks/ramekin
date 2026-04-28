@@ -5,14 +5,14 @@
     {
       "raw": "3 cups fresh Corn Kernels ((from about 3 ears))",
       "expected": {
-        "item": "fresh Corn Kernels (from about 3 ears)",
+        "item": "fresh Corn Kernels",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from about 3 ears",
         "category": "Other"
       }
     },
@@ -47,14 +47,14 @@
     {
       "raw": "1/2 cup roughly chopped fresh Flat-Leaf (Italian) Parsley",
       "expected": {
-        "item": "roughly chopped fresh Flat-Leaf (Italian) Parsley",
+        "item": "roughly chopped fresh Flat-Leaf Parsley",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "Italian",
         "category": "Spices & Seasonings"
       }
     },
@@ -115,14 +115,14 @@
     {
       "raw": "1/2 teaspoon Black Pepper (, if possible)",
       "expected": {
-        "item": "Black Pepper (, if possible)",
+        "item": "Black Pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "if possible",
         "category": "Spices & Seasonings"
       }
     },
@@ -179,9 +179,9 @@
     {
       "raw": "Vegetable Oil (, for frying)",
       "expected": {
-        "item": "Vegetable Oil (, for frying)",
+        "item": "Vegetable Oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     }

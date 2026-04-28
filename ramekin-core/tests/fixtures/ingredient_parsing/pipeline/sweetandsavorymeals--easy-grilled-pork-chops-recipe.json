@@ -161,14 +161,18 @@
     {
       "raw": "2 tablespoons extra virgin olive oil (or canola oil)",
       "expected": {
-        "item": "extra virgin olive oil (or canola oil)",
+        "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or canola oil",
         "category": "Oils & Vinegars"
       }
     },

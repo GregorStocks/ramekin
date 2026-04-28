@@ -5,28 +5,36 @@
     {
       "raw": "1 cup creamy peanut butter (no sugar added; substitute sunflower butter for nut free)",
       "expected": {
-        "item": "creamy peanut butter (no sugar added; substitute sunflower butter for nut free)",
+        "item": "creamy peanut butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "258",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "no sugar added; substitute sunflower butter for nut free",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1/2 cup honey (or 1/2 cup agave syrup for vegan)",
       "expected": {
-        "item": "honey (or 1/2 cup agave syrup for vegan)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 1/2 cup agave syrup for vegan",
         "category": "Baking"
       }
     },

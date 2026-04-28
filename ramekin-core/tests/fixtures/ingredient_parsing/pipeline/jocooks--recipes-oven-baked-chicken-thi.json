@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds chicken thighs (bone-in skin-on)",
       "expected": {
-        "item": "chicken thighs (bone-in skin-on)",
+        "item": "chicken thighs",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "bone-in skin-on",
         "category": "Meat & Seafood"
       }
     },

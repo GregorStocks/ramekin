@@ -211,29 +211,33 @@
     {
       "raw": "8 cups vegetable broth (or chicken broth/water, see notes)",
       "expected": {
-        "item": "vegetable broth (or chicken broth/water, see notes)",
+        "item": "vegetable broth",
         "measurements": [
           {
             "amount": "8",
             "unit": "cup"
+          },
+          {
+            "amount": "1992",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or chicken broth/water, see notes",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1  lemon (zest and juice)",
       "expected": {
-        "item": "lemon (zest and juice)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "zest and juice",
+        "category": "Produce"
       }
     },
     {

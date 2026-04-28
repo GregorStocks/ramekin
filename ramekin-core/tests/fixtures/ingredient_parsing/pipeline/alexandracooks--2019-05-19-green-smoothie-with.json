@@ -75,7 +75,7 @@
     {
       "raw": "2 to 4 ounces spinach (I use 4 ounces)",
       "expected": {
-        "item": "spinach (I use 4 ounces)",
+        "item": "spinach",
         "measurements": [
           {
             "amount": "2 to 4",
@@ -86,7 +86,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use 4 ounces",
         "category": "Produce"
       }
     },

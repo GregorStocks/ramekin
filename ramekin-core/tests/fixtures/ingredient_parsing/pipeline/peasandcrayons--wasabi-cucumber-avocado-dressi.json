@@ -70,14 +70,14 @@
     {
       "raw": "2 TBSP&nbsp; avocado oil (or your favorite healthy oil)",
       "expected": {
-        "item": "avocado oil (or your favorite healthy oil)",
+        "item": "avocado oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or your favorite healthy oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -134,14 +134,14 @@
     {
       "raw": "2-4 cups greens ((I used spring mix))",
       "expected": {
-        "item": "greens (I used spring mix)",
+        "item": "greens",
         "measurements": [
           {
             "amount": "2-4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used spring mix",
         "category": "Other"
       }
     },

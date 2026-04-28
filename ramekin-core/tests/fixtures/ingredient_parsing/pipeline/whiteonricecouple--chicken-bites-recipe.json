@@ -5,7 +5,7 @@
     {
       "raw": "1 1/2 pounds boneless skinless chicken (, (breasts or thigh) , cut into about 1” bite sized pieces (approximately))",
       "expected": {
-        "item": "boneless skinless chicken (, (breasts or thigh)",
+        "item": "boneless skinless chicken, cut into about 1” bite sized pieces",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "cut into about 1” bite sized pieces (approximately)",
+        "note": "(breasts or thigh, approximately",
         "category": "Meat & Seafood"
       }
     },
@@ -104,14 +104,18 @@
     {
       "raw": "2 Tablespoons all-purpose flour (, or cornstarch)",
       "expected": {
-        "item": "all-purpose flour (, or cornstarch)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or cornstarch",
         "category": "Baking"
       }
     },

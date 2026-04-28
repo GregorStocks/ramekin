@@ -5,7 +5,7 @@
     {
       "raw": "2 cups (250g) all-purpose flour (spooned &amp;amp; leveled)",
       "expected": {
-        "item": "all-purpose flour (spooned & leveled)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "spooned & leveled",
         "category": "Baking"
       }
     },
@@ -113,7 +113,7 @@
     {
       "raw": "3/4 cup (180ml or 225g) unsulphured or dark molasses (do not use blackstrap; I prefer Grandma&amp;#8217;s brand)",
       "expected": {
-        "item": "unsulphured or dark molasses (do not use blackstrap; I prefer Grandma’s brand)",
+        "item": "unsulphured or dark molasses",
         "measurements": [
           {
             "amount": "0.75",
@@ -128,7 +128,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "do not use blackstrap; I prefer Grandma’s brand",
         "category": "Baking"
       }
     },
@@ -150,7 +150,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 100°F (38°C",
         "category": "Other"
       }
     },

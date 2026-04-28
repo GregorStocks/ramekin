@@ -332,14 +332,14 @@
     {
       "raw": "3/4 cup toasted (always) and coarsely chopped walnuts or pecans",
       "expected": {
-        "item": "toasted (always) and coarsely chopped walnuts or pecans",
+        "item": "toasted and coarsely chopped walnuts or pecans",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "always",
         "category": "Nuts & Dried Fruit"
       }
     },

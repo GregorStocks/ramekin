@@ -306,14 +306,14 @@
     {
       "raw": "3 tablespoons reserved chicken fat (or unsalted butter)",
       "expected": {
-        "item": "reserved chicken fat (or unsalted butter)",
+        "item": "reserved chicken fat",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or unsalted butter",
         "category": "Meat & Seafood"
       }
     }

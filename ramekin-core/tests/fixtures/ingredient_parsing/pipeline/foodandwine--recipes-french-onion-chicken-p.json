@@ -80,7 +80,7 @@
             "unit": null
           }
         ],
-        "note": "thawed (from 1 [17.3-ounce] package)",
+        "note": "from 1 [17.3-ounce] package, thawed",
         "category": "Frozen"
       }
     },
@@ -193,14 +193,14 @@
     {
       "raw": "1 tablespoon minced garlic (from 3 garlic cloves)",
       "expected": {
-        "item": "minced garlic (from 3 garlic cloves)",
+        "item": "minced garlic",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from 3 garlic cloves",
         "category": "Produce"
       }
     },

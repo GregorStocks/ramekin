@@ -14,14 +14,14 @@
     {
       "raw": "Scant 1 cup dried green lentils (Puy or Casteluccio, if you can find them) lentils, picked and rinsed over",
       "expected": {
-        "item": "dried green lentils (Puy or Casteluccio, if you can find them) lentils",
+        "item": "dried green lentils lentils",
         "measurements": [
           {
             "amount": "1",
             "unit": "scant cup"
           }
         ],
-        "note": "picked and rinsed over",
+        "note": "Puy or Casteluccio, if you can find them, picked and rinsed over",
         "category": "Canned Goods"
       }
     },
@@ -125,9 +125,9 @@
     {
       "raw": "Salt (Maldon or another flaky sea salt if you’ve got it)",
       "expected": {
-        "item": "Salt (Maldon or another flaky sea salt if you’ve got it)",
+        "item": "salt, presumably Diamond",
         "measurements": [],
-        "note": null,
+        "note": "Maldon or another flaky sea salt if you’ve got it",
         "category": "Spices & Seasonings"
       }
     },
@@ -180,14 +180,14 @@
     {
       "raw": "1 and 3/4 cups drained chickpeas (from a 15-ounce can), low sodium if you can find them",
       "expected": {
-        "item": "drained chickpeas (from a 15-ounce can), low sodium if you can find them",
+        "item": "drained chickpeas, low sodium if you can find them",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from a 15-ounce can",
         "category": "Canned Goods"
       }
     },
@@ -231,9 +231,9 @@
     {
       "raw": "A scant 1/4 cup feta (goat’s milk if you can find it, otherwise use what you can get)",
       "expected": {
-        "item": "A scant 1/4 cup feta (goat’s milk if you can find it, otherwise use what you can get)",
+        "item": "A scant 1/4 cup feta",
         "measurements": [],
-        "note": null,
+        "note": "goat’s milk if you can find it, otherwise use what you can get",
         "category": "Cheese"
       }
     },

@@ -19,14 +19,14 @@
     {
       "raw": "6 cups peeled, seeded and cubed butternut squash or sugar pumpkin (1-inch cubes) (from about a 2-pound squash)",
       "expected": {
-        "item": "peeled, seeded and cubed butternut squash or sugar pumpkin (from about a 2-pound squash)",
+        "item": "peeled, seeded and cubed butternut squash or sugar pumpkin",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "1-inch cubes, from about a 2-pound squash",
         "category": "Produce"
       }
     },
@@ -97,14 +97,14 @@
     {
       "raw": "4 cups baby arugula (I skipped this)",
       "expected": {
-        "item": "baby arugula (I skipped this)",
+        "item": "baby arugula",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I skipped this",
         "category": "Produce"
       }
     },

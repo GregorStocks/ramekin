@@ -27,14 +27,18 @@
     {
       "raw": "1 1/2 (or 2) cups blueberries, frozen or fresh",
       "expected": {
-        "item": "(or 2) cups blueberries",
+        "item": "blueberries",
         "measurements": [
           {
             "amount": "1.5",
-            "unit": null
+            "unit": "cup"
+          },
+          {
+            "amount": "222",
+            "unit": "g"
           }
         ],
-        "note": "frozen or fresh",
+        "note": "or 2, frozen or fresh",
         "category": "Produce"
       }
     },

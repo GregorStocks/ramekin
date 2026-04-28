@@ -5,14 +5,14 @@
     {
       "raw": "30 grams chili pepper flakes ((I used Korean Gochugaru))",
       "expected": {
-        "item": "chili pepper flakes (I used Korean Gochugaru)",
+        "item": "chili pepper flakes",
         "measurements": [
           {
             "amount": "30",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used Korean Gochugaru",
         "category": "Spices & Seasonings"
       }
     },

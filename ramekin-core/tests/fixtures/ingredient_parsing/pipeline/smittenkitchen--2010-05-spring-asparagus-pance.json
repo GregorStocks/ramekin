@@ -5,7 +5,7 @@
     {
       "raw": "1/4 pound pancetta (a cured pork that is less salty than proscuitto, and not smoked like bacon), cut into 1/4-inch dice",
       "expected": {
-        "item": "pancetta (a cured pork that is less salty than proscuitto, and not smoked like bacon), cut into 1/4-inch dice",
+        "item": "pancetta, cut into 1/4-inch dice",
         "measurements": [
           {
             "amount": "0.25",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "a cured pork that is less salty than proscuitto, and not smoked like bacon",
         "category": "Meat & Seafood"
       }
     },

@@ -124,15 +124,19 @@
     {
       "raw": "2 Tbsp butter (or olive oil)",
       "expected": {
-        "item": "butter (or olive oil)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "or olive oil",
+        "category": "Dairy & Eggs"
       }
     },
     {

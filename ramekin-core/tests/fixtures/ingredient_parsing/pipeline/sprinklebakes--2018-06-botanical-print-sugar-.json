@@ -149,15 +149,15 @@
     {
       "raw": "1/2 cup ready-made frosting (or homemade buttercream)",
       "expected": {
-        "item": "ready-made frosting (or homemade buttercream)",
+        "item": "ready-made frosting",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "or homemade buttercream",
+        "category": "Other"
       }
     },
     {
@@ -170,7 +170,7 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "4×6-inches each",
         "category": "Other"
       }
     },
@@ -202,7 +202,7 @@
       "expected": {
         "item": "Soft bristle art brushes",
         "measurements": [],
-        "note": null,
+        "note": "3-4",
         "category": "Other"
       }
     },
@@ -218,9 +218,9 @@
     {
       "raw": "Rubber stamp with script motif (new, unused)",
       "expected": {
-        "item": "Rubber stamp with script motif (new, unused)",
+        "item": "Rubber stamp with script motif",
         "measurements": [],
-        "note": null,
+        "note": "new, unused",
         "category": "Other"
       }
     },

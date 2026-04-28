@@ -5,7 +5,7 @@
     {
       "raw": "1 pound sweet potatoes (red skinned are my favorite)",
       "expected": {
-        "item": "sweet potatoes (red skinned are my favorite)",
+        "item": "sweet potatoes",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "red skinned are my favorite",
         "category": "Produce"
       }
     },

@@ -155,14 +155,14 @@
     {
       "raw": "1  lemon (cut into wedges to serve)",
       "expected": {
-        "item": "lemon (cut into wedges to serve)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into wedges to serve",
         "category": "Produce"
       }
     }

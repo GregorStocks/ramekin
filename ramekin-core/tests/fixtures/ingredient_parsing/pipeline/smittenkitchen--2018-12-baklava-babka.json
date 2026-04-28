@@ -177,7 +177,7 @@
     {
       "raw": "2 cups (about 250 grams or 9 ounces) mixed nuts (I use one cup each of pistachios and walnuts)",
       "expected": {
-        "item": "mixed nuts (I use one cup each of pistachios and walnuts)",
+        "item": "mixed nuts",
         "measurements": [
           {
             "amount": "2",
@@ -192,7 +192,7 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "I use one cup each of pistachios and walnuts",
         "category": "Nuts & Dried Fruit"
       }
     },

@@ -155,14 +155,14 @@
     {
       "raw": "1 cup mashed bananas (from about 2 medium bananas)",
       "expected": {
-        "item": "mashed bananas (from about 2 medium bananas)",
+        "item": "mashed bananas",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from about 2 medium bananas",
         "category": "Produce"
       }
     },

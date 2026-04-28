@@ -5,14 +5,14 @@
     {
       "raw": "2 green (unripe) plantains",
       "expected": {
-        "item": "green (unripe) plantains",
+        "item": "green plantains",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "unripe",
         "category": "Produce"
       }
     },

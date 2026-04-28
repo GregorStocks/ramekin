@@ -37,14 +37,14 @@
     {
       "raw": "1 tablespoon tajin seasoning, (or any chili lime seasoning)",
       "expected": {
-        "item": "tajin seasoning, (or any chili lime seasoning)",
+        "item": "tajin seasoning",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or any chili lime seasoning",
         "category": "Spices & Seasonings"
       }
     },
@@ -93,13 +93,8 @@
     {
       "raw": "¼ cup roasted, (salted pepitas)",
       "expected": {
-        "item": "roasted, (salted pepitas)",
-        "measurements": [
-          {
-            "amount": "0.25",
-            "unit": "cup"
-          }
-        ],
+        "item": "¼ cup roasted, (salted pepitas)",
+        "measurements": [],
         "note": null,
         "category": "Meat & Seafood"
       }

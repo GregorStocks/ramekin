@@ -23,7 +23,7 @@
     {
       "raw": "1/2 cup (120 ml) whole milk, warmed (but not over 116 degrees)",
       "expected": {
-        "item": "whole milk, warmed (but not over 116 degrees)",
+        "item": "whole milk, warmed",
         "measurements": [
           {
             "amount": "0.5",
@@ -34,21 +34,21 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "but not over 116 degrees",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "2 1/4 teaspoons active dry or instant yeast (from 1 .25-ounce or 7 gram envelope yeast)",
       "expected": {
-        "item": "active dry or instant yeast (from 1 .25-ounce or 7 gram envelope yeast)",
+        "item": "active dry or instant yeast",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "from 1 .25-ounce or 7 gram envelope yeast",
         "category": "Baking"
       }
     },
@@ -141,14 +141,18 @@
     {
       "raw": "1 1/2 teaspoons kosher salt (Diamond brand; use half of others)",
       "expected": {
-        "item": "kosher salt (Diamond brand; use half of others)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Diamond brand; use half of others",
         "category": "Spices & Seasonings"
       }
     },

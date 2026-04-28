@@ -30,7 +30,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "105 - 115F",
         "category": "Other"
       }
     },
@@ -171,9 +171,9 @@
     {
       "raw": "~3 1/4 cup / 15 oz / 425 g bread flour (or unbleached all -purpose flour), plus more for dusting",
       "expected": {
-        "item": "~3 1/4 cup / 15 oz / 425 g bread flour (or unbleached all -purpose flour)",
+        "item": "~3 1/4 cup / 15 oz / 425 g bread flour",
         "measurements": [],
-        "note": "plus more for dusting",
+        "note": "or unbleached all -purpose flour, plus more for dusting",
         "category": "Baking"
       }
     },

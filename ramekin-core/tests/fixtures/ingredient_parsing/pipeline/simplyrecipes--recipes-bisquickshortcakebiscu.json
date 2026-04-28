@@ -37,15 +37,19 @@
     {
       "raw": "1/2 cup milk (can sub unsweetened almond milk)",
       "expected": {
-        "item": "milk (can sub unsweetened almond milk)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "can sub unsweetened almond milk",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -62,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": "melted (can sub coconut oil)",
+        "note": "can sub coconut oil, melted",
         "category": "Dairy & Eggs"
       }
     }

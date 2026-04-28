@@ -129,14 +129,14 @@
     {
       "raw": "1/4 cup green onions (garnish)",
       "expected": {
-        "item": "green onions (garnish)",
+        "item": "green onions",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "garnish",
         "category": "Produce"
       }
     },

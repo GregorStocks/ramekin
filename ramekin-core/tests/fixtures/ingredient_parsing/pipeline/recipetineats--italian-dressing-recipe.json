@@ -23,42 +23,50 @@
     {
       "raw": "1 tbsp red or white wine vinegar ((Note 1))",
       "expected": {
-        "item": "red or white wine vinegar (Note 1)",
+        "item": "red or white wine vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "Note 1",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "2 tsp freshly grated parmesan ((Note 2))",
       "expected": {
-        "item": "freshly grated parmesan (Note 2)",
+        "item": "freshly grated parmesan",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "4.2",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Note 2",
         "category": "Cheese"
       }
     },
     {
       "raw": "1 tsp sugar ((any))",
       "expected": {
-        "item": "sugar (any)",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "4.2",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any",
         "category": "Baking"
       }
     },
@@ -83,62 +91,32 @@
     {
       "raw": "1/8 tsp each dried basil (, oregano and parsley (or a mix of choice))",
       "expected": {
-        "item": "dried basil (",
+        "item": "dried basil",
         "measurements": [
           {
             "amount": "0.13",
-            "unit": "tsp"
+            "unit": "tsp each"
           }
         ],
-        "note": null,
+        "note": "oregano and parsley (or a mix of choice",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/8 tsp each dried basil (, oregano and parsley (or a mix of choice))",
+      "raw": "1/8 tsp red pepper flakes ((Note 3))",
       "expected": {
-        "item": "oregano",
+        "item": "red pepper flakes",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
           },
           {
-            "amount": "0.1",
+            "amount": "0.2",
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "1/8 tsp each dried basil (, oregano and parsley (or a mix of choice))",
-      "expected": {
-        "item": "parsley (or a mix of choice)",
-        "measurements": [
-          {
-            "amount": "0.13",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "1/8 tsp red pepper flakes ((Note 3))",
-      "expected": {
-        "item": "red pepper flakes (Note 3)",
-        "measurements": [
-          {
-            "amount": "0.13",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
+        "note": "Note 3",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,42 +168,50 @@
     {
       "raw": "1/3 cup red or white wine vinegar ((Note 1))",
       "expected": {
-        "item": "red or white wine vinegar (Note 1)",
+        "item": "red or white wine vinegar",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "Note 1",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "2 tbsp freshly grated parmesan ((Note 2))",
       "expected": {
-        "item": "freshly grated parmesan (Note 2)",
+        "item": "freshly grated parmesan",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Note 2",
         "category": "Cheese"
       }
     },
     {
       "raw": "1 1/2 tbsp sugar ((any))",
       "expected": {
-        "item": "sugar (any)",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "19",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any",
         "category": "Baking"
       }
     },
@@ -250,62 +236,32 @@
     {
       "raw": "1/2 tsp each dried basil (, oregano and parsley (or a mix of choice))",
       "expected": {
-        "item": "dried basil (",
+        "item": "dried basil",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": "tsp"
+            "unit": "tsp each"
           }
         ],
-        "note": null,
+        "note": "oregano and parsley (or a mix of choice",
         "category": "Spices & Seasonings"
       }
     },
     {
-      "raw": "1/2 tsp each dried basil (, oregano and parsley (or a mix of choice))",
-      "expected": {
-        "item": "oregano",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "tsp"
-          },
-          {
-            "amount": "0.5",
-            "unit": "g"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      },
-      "expanded": true
-    },
-    {
-      "raw": "1/2 tsp each dried basil (, oregano and parsley (or a mix of choice))",
-      "expected": {
-        "item": "parsley (or a mix of choice)",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Spices & Seasonings"
-      },
-      "expanded": true
-    },
-    {
       "raw": "3/4 tsp red pepper flakes ((Note 3))",
       "expected": {
-        "item": "red pepper flakes (Note 3)",
+        "item": "red pepper flakes",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.3",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Note 3",
         "category": "Spices & Seasonings"
       }
     },

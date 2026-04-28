@@ -75,14 +75,18 @@
     {
       "raw": "1 teaspoon paprika (I used smoked, regular is fine)",
       "expected": {
-        "item": "paprika (I used smoked, regular is fine)",
+        "item": "paprika",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.3",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used smoked, regular is fine",
         "category": "Spices & Seasonings"
       }
     },

@@ -90,14 +90,14 @@
     {
       "raw": "1/4 to 1/2 teaspoon table salt (Heatter says 1/4, I really prefer this with 1/2)",
       "expected": {
-        "item": "table salt (Heatter says 1/4, I really prefer this with 1/2)",
+        "item": "table salt",
         "measurements": [
           {
             "amount": "0.25 to 0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "Heatter says 1/4, I really prefer this with 1/2",
         "category": "Spices & Seasonings"
       }
     },
@@ -253,7 +253,7 @@
     {
       "raw": "2/3 to 1 cup (75 to 115 grams) to slivered almonds (julienne-shaped pieces) (optional)",
       "expected": {
-        "item": "to slivered almonds (julienne-shaped pieces) (optional)",
+        "item": "to slivered almonds",
         "measurements": [
           {
             "amount": "0.67 to 1",
@@ -264,7 +264,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "julienne-shaped pieces, optional",
         "category": "Nuts & Dried Fruit"
       }
     }

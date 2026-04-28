@@ -77,14 +77,14 @@
     {
       "raw": "1/4 teaspoon dried herbs ((basil, oregano, thyme, etc.))",
       "expected": {
-        "item": "dried herbs (basil, oregano, thyme, etc.)",
+        "item": "dried herbs",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "basil, oregano, thyme, etc.",
         "category": "Spices & Seasonings"
       }
     },
@@ -105,15 +105,15 @@
     {
       "raw": "1 cup freshly grated Parmigiano-Reggiano ((or similar cheese))",
       "expected": {
-        "item": "freshly grated Parmigiano-Reggiano (or similar cheese)",
+        "item": "freshly grated Parmigiano-Reggiano",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Cheese"
+        "note": "or similar cheese",
+        "category": "Dairy & Eggs"
       }
     },
     {

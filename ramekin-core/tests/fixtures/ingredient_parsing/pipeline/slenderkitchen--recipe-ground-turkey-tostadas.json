@@ -97,14 +97,14 @@
     {
       "raw": "1/4 cup salsa (homemade or store bought)",
       "expected": {
-        "item": "salsa (homemade or store bought)",
+        "item": "salsa",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "homemade or store bought",
         "category": "Condiments & Sauces"
       }
     },

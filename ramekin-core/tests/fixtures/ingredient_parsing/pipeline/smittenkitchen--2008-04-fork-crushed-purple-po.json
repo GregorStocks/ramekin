@@ -51,14 +51,14 @@
     {
       "raw": "6 tablespoons good extra-virgin olive oil (we used half, and it was plenty for us)",
       "expected": {
-        "item": "good extra-virgin olive oil (we used half, and it was plenty for us)",
+        "item": "good extra-virgin olive oil",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "we used half, and it was plenty for us",
         "category": "Oils & Vinegars"
       }
     },

@@ -114,28 +114,28 @@
     {
       "raw": "2 tablespoons Tabasco sauce (see Note; I skipped this)",
       "expected": {
-        "item": "Tabasco sauce (see Note; I skipped this)",
+        "item": "Tabasco sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see Note; I skipped this",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1 teaspoon cayenne powder (I used much less)",
       "expected": {
-        "item": "cayenne powder (I used much less)",
+        "item": "cayenne powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "I used much less",
         "category": "Spices & Seasonings"
       }
     },
@@ -149,7 +149,7 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced (white and green parts)",
+        "note": "white and green parts, thinly sliced",
         "category": "Produce"
       }
     },
@@ -177,7 +177,7 @@
             "unit": null
           }
         ],
-        "note": "finely chopped (I skipped this)",
+        "note": "I skipped this, finely chopped",
         "category": "Produce"
       }
     },
@@ -191,7 +191,7 @@
             "unit": "medium"
           }
         ],
-        "note": "finely diced (and this)",
+        "note": "and this, finely diced",
         "category": "Produce"
       }
     },

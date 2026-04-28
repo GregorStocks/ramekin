@@ -192,7 +192,7 @@
     {
       "raw": "12  oz. hearty Italian bread, (or French Bread, cut into 3/4-inch cubes (8 cups))",
       "expected": {
-        "item": "hearty Italian bread, (or French Bread, cut into 3/4-inch cubes (8 cups)",
+        "item": "hearty Italian bread",
         "measurements": [
           {
             "amount": "12",
@@ -203,7 +203,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or French Bread, cut into 3/4-inch cubes (8 cups",
         "category": "Bakery & Bread"
       }
     },

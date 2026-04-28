@@ -65,15 +65,15 @@
     {
       "raw": "2  cans cannelini beans (or great northern beans)",
       "expected": {
-        "item": "cannelini beans (or great northern beans)",
+        "item": "cannelini beans",
         "measurements": [
           {
             "amount": "2",
             "unit": "can"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "or great northern beans",
+        "category": "Other"
       }
     },
     {

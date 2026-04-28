@@ -72,7 +72,7 @@
             "unit": "medium"
           }
         ],
-        "note": "halved and sliced",
+        "note": "1/4 inch, halved and sliced",
         "category": "Produce"
       }
     },
@@ -86,21 +86,21 @@
             "unit": "medium"
           }
         ],
-        "note": "halved and sliced",
+        "note": "1/4 inch, halved and sliced",
         "category": "Produce"
       }
     },
     {
       "raw": "1 cup fresh corn kernels (from 2 ears)",
       "expected": {
-        "item": "fresh corn kernels (from 2 ears)",
+        "item": "fresh corn kernels",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 2 ears",
         "category": "Other"
       }
     },

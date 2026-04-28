@@ -5,21 +5,21 @@
     {
       "raw": "2  pig trotters ((cut in half lengthwise))",
       "expected": {
-        "item": "pig trotters (cut in half lengthwise)",
+        "item": "pig trotters",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut in half lengthwise",
         "category": "Other"
       }
     },
     {
       "raw": "1.5 pounds pork leg bone ((cut into several pieces))",
       "expected": {
-        "item": "pork leg bone (cut into several pieces)",
+        "item": "pork leg bone",
         "measurements": [
           {
             "amount": "1.5",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into several pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -143,14 +143,14 @@
     {
       "raw": "3 cups Tonkotsu base ((from recipe above))",
       "expected": {
-        "item": "Tonkotsu base (from recipe above)",
+        "item": "Tonkotsu base",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from recipe above",
         "category": "Other"
       }
     },
@@ -291,14 +291,14 @@
     {
       "raw": "2 teaspoons mayu ((from recipe above))",
       "expected": {
-        "item": "mayu (from recipe above)",
+        "item": "mayu",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "from recipe above",
         "category": "Other"
       }
     },

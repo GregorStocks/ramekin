@@ -95,7 +95,7 @@
     {
       "raw": "1 and 3/4 cups (219g) all-purpose flour (spooned &amp;amp; leveled)",
       "expected": {
-        "item": "all-purpose flour (spooned & leveled)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.75",
@@ -106,7 +106,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "spooned & leveled",
         "category": "Baking"
       }
     },
@@ -293,7 +293,7 @@
     {
       "raw": "1/4 cup (60ml) milk (any kind), at room temperature",
       "expected": {
-        "item": "milk (any kind)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.25",
@@ -302,18 +302,22 @@
           {
             "amount": "60",
             "unit": "ml"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
           }
         ],
-        "note": "at room temperature",
+        "note": "any kind, at room temperature",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "add-ins of your choice (see Notes)*",
       "expected": {
-        "item": "add-ins of your choice (see Notes)",
+        "item": "add-ins of your choice",
         "measurements": [],
-        "note": null,
+        "note": "see Notes",
         "category": "Other"
       }
     },

@@ -19,7 +19,7 @@
     {
       "raw": "6-8 oz cheese (choose your favorite - see below)",
       "expected": {
-        "item": "cheese (choose your favorite - see below)",
+        "item": "cheese",
         "measurements": [
           {
             "amount": "6-8",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "choose your favorite - see below",
         "category": "Cheese"
       }
     },

@@ -52,35 +52,39 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "3 to 4 green onions",
         "category": "Produce"
       }
     },
     {
       "raw": "1 chopped poblano pepper (for some spice) or red bell pepper (for mild flavor)",
       "expected": {
-        "item": "chopped poblano pepper (for some spice) or red bell pepper (for mild flavor)",
+        "item": "chopped poblano pepper or red bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "for some spice, for mild flavor",
         "category": "Produce"
       }
     },
     {
       "raw": "½ teaspoon red pepper flakes (scale down or omit for mild flavor)",
       "expected": {
-        "item": "red pepper flakes (scale down or omit for mild flavor)",
+        "item": "red pepper flakes",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "scale down or omit for mild flavor",
         "category": "Spices & Seasonings"
       }
     },

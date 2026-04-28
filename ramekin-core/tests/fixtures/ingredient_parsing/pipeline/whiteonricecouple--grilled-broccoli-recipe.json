@@ -5,7 +5,7 @@
     {
       "raw": "1 pound broccoli (, cut into thick slices)",
       "expected": {
-        "item": "broccoli (, cut into thick slices)",
+        "item": "broccoli",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into thick slices",
         "category": "Produce"
       }
     },
@@ -69,14 +69,18 @@
     {
       "raw": "1/2 teaspoon dried thyme ((or herbs of choice))",
       "expected": {
-        "item": "dried thyme (or herbs of choice)",
+        "item": "dried thyme",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or herbs of choice",
         "category": "Spices & Seasonings"
       }
     },

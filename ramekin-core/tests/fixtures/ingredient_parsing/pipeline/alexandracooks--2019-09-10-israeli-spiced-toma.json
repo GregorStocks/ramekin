@@ -74,14 +74,14 @@
     {
       "raw": "1 teaspoon sumac (see notes above)",
       "expected": {
-        "item": "sumac (see notes above)",
+        "item": "sumac",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Spices & Seasonings"
       }
     },
@@ -217,15 +217,15 @@
     {
       "raw": "2 tablespoon vinegar (white balsamic, red wine, white wine, champagne)",
       "expected": {
-        "item": "vinegar (white balsamic, red wine, white wine, champagne)",
+        "item": "vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "white balsamic, red wine, white wine, champagne",
+        "category": "Oils & Vinegars"
       }
     },
     {

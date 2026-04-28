@@ -209,14 +209,18 @@
     {
       "raw": "1 cup milk (or cream or half-and-half)",
       "expected": {
-        "item": "milk (or cream or half-and-half)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or cream or half-and-half",
         "category": "Dairy & Eggs"
       }
     },

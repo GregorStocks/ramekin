@@ -99,28 +99,28 @@
     {
       "raw": "1 1-oz. packet ranch seasoning (such as Hidden Valley)",
       "expected": {
-        "item": "1-oz. packet ranch seasoning (such as Hidden Valley)",
+        "item": "1-oz. packet ranch seasoning",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "such as Hidden Valley",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "10 cups rice and/or corn cereal (such as Chex or Crispix)",
       "expected": {
-        "item": "rice and/or corn cereal (such as Chex or Crispix)",
+        "item": "rice and/or corn cereal",
         "measurements": [
           {
             "amount": "10",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Chex or Crispix",
         "category": "Snacks"
       }
     },
@@ -141,14 +141,14 @@
     {
       "raw": "2 cups mini windowpane pretzels (such as Snyder’s of Hanover Butter Snaps)",
       "expected": {
-        "item": "mini windowpane pretzels (such as Snyder’s of Hanover Butter Snaps)",
+        "item": "mini windowpane pretzels",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Snyder’s of Hanover Butter Snaps",
         "category": "Bakery & Bread"
       }
     },
@@ -183,14 +183,14 @@
     {
       "raw": "1 1.7-oz. bottle nori komi furikake (such as Ajishima)",
       "expected": {
-        "item": "nori komi furikake (such as Ajishima)",
+        "item": "nori komi furikake",
         "measurements": [
           {
             "amount": "1",
             "unit": "1.7-oz. bottle"
           }
         ],
-        "note": null,
+        "note": "such as Ajishima",
         "category": "Other"
       }
     }

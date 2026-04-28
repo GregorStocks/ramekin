@@ -5,7 +5,7 @@
     {
       "raw": "4 oz. guanciale (salt-cured pork jowl) or pancetta (Italian",
       "expected": {
-        "item": "guanciale (salt-cured pork jowl) or pancetta (Italian",
+        "item": "guanciale or pancetta (Italian",
         "measurements": [
           {
             "amount": "4",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "salt-cured pork jowl",
         "category": "Meat & Seafood"
       }
     },
@@ -32,14 +32,14 @@
     {
       "raw": "2 large sweet onions (such as Vidalia; about 1 lb.), quartered",
       "expected": {
-        "item": "sweet onions (such as Vidalia; about 1 lb.)",
+        "item": "sweet onions",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "quartered",
+        "note": "such as Vidalia; about 1 lb., quartered",
         "category": "Produce"
       }
     },
@@ -64,9 +64,9 @@
     {
       "raw": "Extra-virgin olive oil (for pan and drizzling)",
       "expected": {
-        "item": "Extra-virgin olive oil (for pan and drizzling)",
+        "item": "Extra-virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for pan and drizzling",
         "category": "Oils & Vinegars"
       }
     },

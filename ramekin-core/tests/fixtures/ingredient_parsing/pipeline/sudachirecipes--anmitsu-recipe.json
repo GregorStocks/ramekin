@@ -101,14 +101,14 @@
     {
       "raw": "65 g glutinous rice flour (shiratamako)",
       "expected": {
-        "item": "glutinous rice flour (shiratamako)",
+        "item": "glutinous rice flour",
         "measurements": [
           {
             "amount": "65",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "shiratamako",
         "category": "Baking"
       }
     },
@@ -133,14 +133,14 @@
     {
       "raw": "300 g red bean paste (anko)",
       "expected": {
-        "item": "red bean paste (anko)",
+        "item": "red bean paste",
         "measurements": [
           {
             "amount": "300",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "anko",
         "category": "Other"
       }
     },
@@ -161,14 +161,14 @@
     {
       "raw": "12 segments mandarin orange (mikan) (canned or fresh)",
       "expected": {
-        "item": "segments mandarin orange (mikan) (canned or fresh)",
+        "item": "segments mandarin orange",
         "measurements": [
           {
             "amount": "12",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "mikan, canned or fresh",
         "category": "Produce"
       }
     },
@@ -203,9 +203,9 @@
     {
       "raw": "whipped cream ((or ice cream) optional)",
       "expected": {
-        "item": "whipped cream (or ice cream) optional)",
+        "item": "whipped cream optional)",
         "measurements": [],
-        "note": null,
+        "note": "or ice cream",
         "category": "Dairy & Eggs"
       }
     }

@@ -150,14 +150,14 @@
     {
       "raw": "8  corn tortillas**,  (warmed)",
       "expected": {
-        "item": "corn tortillas**,  (warmed)",
+        "item": "corn tortillas",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "warmed",
         "category": "Bakery & Bread"
       }
     },

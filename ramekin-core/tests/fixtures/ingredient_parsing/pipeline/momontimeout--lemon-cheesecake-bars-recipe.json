@@ -91,14 +91,18 @@
     {
       "raw": "1 tbsp lemon juice (up to 2)",
       "expected": {
-        "item": "lemon juice (up to 2)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "up to 2",
         "category": "Beverages"
       }
     },
@@ -155,14 +159,18 @@
     {
       "raw": "1 tsp vanilla extract (or lemon extract)",
       "expected": {
-        "item": "vanilla extract (or lemon extract)",
+        "item": "vanilla extract",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or lemon extract",
         "category": "Baking"
       }
     },

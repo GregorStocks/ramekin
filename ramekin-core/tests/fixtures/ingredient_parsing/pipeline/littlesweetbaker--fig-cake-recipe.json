@@ -247,14 +247,14 @@
     {
       "raw": "8-10  fresh figs (depending on size cut in half)",
       "expected": {
-        "item": "fresh figs (depending on size cut in half)",
+        "item": "fresh figs",
         "measurements": [
           {
             "amount": "8-10",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "depending on size cut in half",
         "category": "Produce"
       }
     },

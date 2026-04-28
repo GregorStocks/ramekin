@@ -23,32 +23,28 @@
     {
       "raw": "2 tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "11",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "½ tsp chili oil (rayu)",
       "expected": {
-        "item": "chili oil (rayu)",
+        "item": "chili oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "rayu",
         "category": "Oils & Vinegars"
       }
     },

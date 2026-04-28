@@ -68,14 +68,14 @@
     {
       "raw": "2 large bell peppers (red and green)",
       "expected": {
-        "item": "bell peppers (red and green)",
+        "item": "bell peppers",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "red and green",
         "category": "Produce"
       }
     },

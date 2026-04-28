@@ -246,9 +246,9 @@
     {
       "raw": "chopped fresh parsley, (for topping)",
       "expected": {
-        "item": "chopped fresh parsley, (for topping)",
+        "item": "chopped fresh parsley",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     }

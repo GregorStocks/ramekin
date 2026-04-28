@@ -303,14 +303,14 @@
     {
       "raw": "1 cup dark corn syrup (see Note below for replacements)",
       "expected": {
-        "item": "dark corn syrup (see Note below for replacements)",
+        "item": "dark corn syrup",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Note below for replacements",
         "category": "Baking"
       }
     },

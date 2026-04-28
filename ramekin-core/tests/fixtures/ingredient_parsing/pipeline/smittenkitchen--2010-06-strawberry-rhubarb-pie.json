@@ -155,14 +155,14 @@
     {
       "raw": "1 large egg yolk beaten to blend with 1 teaspoon water (for glaze)",
       "expected": {
-        "item": "egg yolk beaten to blend with 1 teaspoon water (for glaze)",
+        "item": "egg yolk beaten to blend with 1 teaspoon water",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "for glaze",
         "category": "Dairy & Eggs"
       }
     }

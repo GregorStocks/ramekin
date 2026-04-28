@@ -5,14 +5,14 @@
     {
       "raw": "6  large eggs (separate yolks from whites)",
       "expected": {
-        "item": "eggs (separate yolks from whites)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "separate yolks from whites",
         "category": "Dairy & Eggs"
       }
     },

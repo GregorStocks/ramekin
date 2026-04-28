@@ -5,14 +5,18 @@
     {
       "raw": "2 tablespoons olive oil (extra virgin)",
       "expected": {
-        "item": "olive oil (extra virgin)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "extra virgin",
         "category": "Oils & Vinegars"
       }
     },
@@ -47,7 +51,7 @@
     {
       "raw": "12 ounces cherry tomatoes (cut in half)",
       "expected": {
-        "item": "cherry tomatoes (cut in half)",
+        "item": "cherry tomatoes",
         "measurements": [
           {
             "amount": "12",
@@ -58,7 +62,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut in half",
         "category": "Produce"
       }
     },
@@ -106,7 +110,7 @@
     {
       "raw": "12 ounces linguine (or spaghetti)",
       "expected": {
-        "item": "linguine (or spaghetti)",
+        "item": "linguine",
         "measurements": [
           {
             "amount": "12",
@@ -117,21 +121,25 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or spaghetti",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "4½ cups chicken broth (or vegetable broth, low sodium)",
       "expected": {
-        "item": "chicken broth (or vegetable broth, low sodium)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "4.5",
             "unit": "cup"
+          },
+          {
+            "amount": "1120",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or vegetable broth, low sodium",
         "category": "Canned Goods"
       }
     },

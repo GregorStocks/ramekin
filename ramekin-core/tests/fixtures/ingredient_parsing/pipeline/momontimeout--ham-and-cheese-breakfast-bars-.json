@@ -137,14 +137,14 @@
     {
       "raw": "1/2 cup low-fat milk (or fat free)",
       "expected": {
-        "item": "low-fat milk (or fat free)",
+        "item": "low-fat milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or fat free",
         "category": "Dairy & Eggs"
       }
     },

@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1/2 an orange",
         "category": "Produce"
       }
     },
@@ -34,14 +34,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1/2 a lemon",
         "category": "Beverages"
       }
     },
     {
       "raw": "1 oz. good bourbon ((knob creek))",
       "expected": {
-        "item": "good bourbon (knob creek)",
+        "item": "good bourbon",
         "measurements": [
           {
             "amount": "1",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "knob creek",
         "category": "Beverages"
       }
     },
@@ -91,7 +91,7 @@
     {
       "raw": "1 oz. Champagne or Prosecco (, to top cocktail)",
       "expected": {
-        "item": "Champagne or Prosecco (, to top cocktail)",
+        "item": "Champagne or Prosecco",
         "measurements": [
           {
             "amount": "1",
@@ -102,7 +102,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "to top cocktail",
         "category": "Meat & Seafood"
       }
     }

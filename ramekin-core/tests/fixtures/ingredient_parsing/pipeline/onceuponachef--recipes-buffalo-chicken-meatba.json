@@ -33,14 +33,14 @@
     {
       "raw": "1 tablespoon Frank&amp;#39;s Red Hot sauce ((or similar brand))",
       "expected": {
-        "item": "Frank's Red Hot sauce (or similar brand)",
+        "item": "Frank's Red Hot sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or similar brand",
         "category": "Condiments & Sauces"
       }
     },
@@ -175,14 +175,14 @@
     {
       "raw": "3 to 4 tablespoons Frank&amp;#39;s Red Hot sauce ((see note))",
       "expected": {
-        "item": "Frank's Red Hot sauce (see note)",
+        "item": "Frank's Red Hot sauce",
         "measurements": [
           {
             "amount": "3 to 4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Condiments & Sauces"
       }
     },

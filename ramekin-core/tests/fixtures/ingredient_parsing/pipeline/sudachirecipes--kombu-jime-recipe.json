@@ -37,14 +37,14 @@
     {
       "raw": "2 sheets dried kelp (kombu) (large enough to cover the surface of the sea bream)",
       "expected": {
-        "item": "sheets dried kelp (kombu) (large enough to cover the surface of the sea bream)",
+        "item": "sheets dried kelp",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "kombu, large enough to cover the surface of the sea bream",
         "category": "Other"
       }
     },
@@ -69,32 +69,28 @@
     {
       "raw": "1 ½ tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "24",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1 ½ tbsp dashi stock (liquid, not powder!)",
       "expected": {
-        "item": "dashi stock (liquid, not powder!)",
+        "item": "dashi stock",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "liquid, not powder!",
         "category": "Canned Goods"
       }
     },

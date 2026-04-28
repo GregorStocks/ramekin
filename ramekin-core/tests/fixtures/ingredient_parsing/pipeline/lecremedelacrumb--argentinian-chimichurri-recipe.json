@@ -147,14 +147,18 @@
     {
       "raw": "2 tablespoons red wine vinegar  (or apple cider vinegar)",
       "expected": {
-        "item": "red wine vinegar  (or apple cider vinegar)",
+        "item": "red wine vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or apple cider vinegar",
         "category": "Oils & Vinegars"
       }
     }

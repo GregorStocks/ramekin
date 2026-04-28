@@ -236,7 +236,7 @@
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "1-lb",
         "section": "French Toast",
         "category": "Bakery & Bread"
       }
@@ -244,9 +244,9 @@
     {
       "raw": "Butter for the pan, salted (my preference) or unsalted",
       "expected": {
-        "item": "Butter for the pan, salted (my preference) or unsalted",
+        "item": "Butter for the pan, salted or unsalted",
         "measurements": [],
-        "note": null,
+        "note": "my preference",
         "section": "French Toast",
         "category": "Dairy & Eggs"
       }

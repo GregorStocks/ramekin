@@ -41,7 +41,7 @@
     {
       "raw": "2/3 cup (160 ml) of a neutral oil (I use safflower), olive oil, or melted unsalted butter",
       "expected": {
-        "item": "a neutral oil (I use safflower), olive oil",
+        "item": "a neutral oil, olive oil",
         "measurements": [
           {
             "amount": "0.67",
@@ -52,7 +52,7 @@
             "unit": "ml"
           }
         ],
-        "note": "or melted unsalted butter",
+        "note": "I use safflower, or melted unsalted butter",
         "category": "Oils & Vinegars"
       }
     },

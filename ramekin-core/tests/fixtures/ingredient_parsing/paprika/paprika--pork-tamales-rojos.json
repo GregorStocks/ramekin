@@ -163,7 +163,7 @@
     {
       "raw": "1 pound boneless pork shoulder (Boston butt), fat trimmed, cut into 1-inch pieces",
       "expected": {
-        "item": "boneless pork shoulder (Boston butt), fat trimmed, cut into 1-inch pieces",
+        "item": "boneless pork shoulder, fat trimmed, cut into 1-inch pieces",
         "measurements": [
           {
             "amount": "1",
@@ -174,7 +174,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Boston butt",
         "category": "Meat & Seafood"
       }
     },
@@ -249,7 +249,7 @@
     {
       "raw": "3 pounds fresh coarse-grind corn masa for tamales (unprepared)",
       "expected": {
-        "item": "fresh coarse-grind corn masa for tamales (unprepared)",
+        "item": "fresh coarse-grind corn masa for tamales",
         "measurements": [
           {
             "amount": "3",
@@ -260,7 +260,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unprepared",
         "category": "Other"
       }
     },
@@ -317,14 +317,14 @@
     {
       "raw": "3¾ cups instant corn masa flour (such as Maseca Tamal Instant Corn Masa Mix)",
       "expected": {
-        "item": "instant corn masa flour (such as Maseca Tamal Instant Corn Masa Mix)",
+        "item": "instant corn masa flour",
         "measurements": [
           {
             "amount": "3.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Maseca Tamal Instant Corn Masa Mix",
         "category": "Baking"
       }
     },
@@ -395,14 +395,14 @@
     {
       "raw": "30 dried corn husks (from a 1-pound bag)",
       "expected": {
-        "item": "dried corn husks (from a 1-pound bag)",
+        "item": "dried corn husks",
         "measurements": [
           {
             "amount": "30",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "from a 1-pound bag",
         "category": "Other"
       }
     },

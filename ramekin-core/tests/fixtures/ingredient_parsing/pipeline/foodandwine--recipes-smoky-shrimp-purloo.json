@@ -41,14 +41,14 @@
     {
       "raw": "1/4 cup drained smoked baby clams (from one 3-ounce can)",
       "expected": {
-        "item": "drained smoked baby clams (from one 3-ounce can)",
+        "item": "drained smoked baby clams",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from one 3-ounce can",
         "category": "Meat & Seafood"
       }
     },
@@ -90,7 +90,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "10 ounces; see Note",
         "category": "Pasta & Rice"
       }
     },

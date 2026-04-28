@@ -28,14 +28,18 @@
     {
       "raw": "2 tablespoons lime juice (half a juicy lime)",
       "expected": {
-        "item": "lime juice (half a juicy lime)",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "half a juicy lime",
         "section": "For the Chicken",
         "category": "Beverages"
       }
@@ -174,7 +178,7 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "6-inch",
         "section": "To Assemble",
         "category": "Bakery & Bread"
       }
@@ -192,14 +196,14 @@
     {
       "raw": "2 large bell peppers, cut into thin strips (I use a mix of green, red and other colors, if I can find them)",
       "expected": {
-        "item": "bell peppers, cut into thin strips (I use a mix of green, red and other colors, if I can find them)",
+        "item": "bell peppers, cut into thin strips",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "I use a mix of green, red and other colors, if I can find them",
         "section": "To Assemble",
         "category": "Produce"
       }
@@ -251,9 +255,9 @@
     {
       "raw": "Salsa (or pico de gallo)",
       "expected": {
-        "item": "Salsa (or pico de gallo)",
+        "item": "Salsa",
         "measurements": [],
-        "note": null,
+        "note": "or pico de gallo",
         "section": "Fixings (Pick Your Favorites)",
         "category": "Condiments & Sauces"
       }
@@ -261,9 +265,9 @@
     {
       "raw": "Sliced avocado (or guacamole)",
       "expected": {
-        "item": "Sliced avocado (or guacamole)",
+        "item": "Sliced avocado",
         "measurements": [],
-        "note": null,
+        "note": "or guacamole",
         "section": "Fixings (Pick Your Favorites)",
         "category": "Produce"
       }

@@ -5,14 +5,14 @@
     {
       "raw": "1 large (mine was just over 1 1/4 pounds/570 grams) eggplant, cut into 3/4-inch dice",
       "expected": {
-        "item": "(mine was just over 1 1/4 pounds/570 grams) eggplant, cut into 3/4-inch dice",
+        "item": "eggplant, cut into 3/4-inch dice",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "mine was just over 1 1/4 pounds/570 grams",
         "category": "Produce"
       }
     },
@@ -206,7 +206,7 @@
     {
       "raw": "1 1/2 ounces (a generous 1/2 cup or 45 grams) parmesan, grated",
       "expected": {
-        "item": "(a generous 1/2 cup or 45 grams) parmesan",
+        "item": "parmesan",
         "measurements": [
           {
             "amount": "1.5",
@@ -217,7 +217,7 @@
             "unit": "g"
           }
         ],
-        "note": "grated",
+        "note": "a generous 1/2 cup or 45 grams, grated",
         "category": "Cheese"
       }
     },

@@ -193,14 +193,14 @@
     {
       "raw": "12 cups thick corn tortilla chips (such as Montes)",
       "expected": {
-        "item": "thick corn tortilla chips (such as Montes)",
+        "item": "thick corn tortilla chips",
         "measurements": [
           {
             "amount": "12",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Montes",
         "category": "Bakery & Bread"
       }
     },

@@ -103,14 +103,14 @@
             "unit": "g"
           }
         ],
-        "note": "diced into 1/2-inch cubes (no need to peel)",
+        "note": "no need to peel, diced into 1/2-inch cubes",
         "category": "Produce"
       }
     },
     {
       "raw": "5 ounces curly kale leaves (from a salad-ready container)",
       "expected": {
-        "item": "curly kale leaves (from a salad-ready container)",
+        "item": "curly kale leaves",
         "measurements": [
           {
             "amount": "5",
@@ -121,7 +121,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from a salad-ready container",
         "category": "Produce"
       }
     },

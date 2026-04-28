@@ -135,7 +135,7 @@
     {
       "raw": "1 cup (235 ml) whole milk (though buttermilk, which was all I had on hand, worked just great)",
       "expected": {
-        "item": "whole milk (though buttermilk, which was all I had on hand, worked just great)",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "1",
@@ -144,9 +144,13 @@
           {
             "amount": "235",
             "unit": "ml"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "though buttermilk, which was all I had on hand, worked just great",
         "category": "Dairy & Eggs"
       }
     },
@@ -191,7 +195,7 @@
             "unit": "g"
           }
         ],
-        "note": "fresh or frozen (do not defrost)",
+        "note": "do not defrost, fresh or frozen",
         "category": "Produce"
       }
     },

@@ -266,14 +266,18 @@
     {
       "raw": "1 teaspoon sugar (I skipped this)",
       "expected": {
-        "item": "sugar (I skipped this)",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "4.2",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I skipped this",
         "category": "Baking"
       }
     },

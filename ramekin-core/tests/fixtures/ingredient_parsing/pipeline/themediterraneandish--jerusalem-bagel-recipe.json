@@ -55,28 +55,36 @@
     {
       "raw": "1 ½ cups whole milk (or unsweetened almond milk for vegan option) (warm)",
       "expected": {
-        "item": "whole milk (or unsweetened almond milk for vegan option) (warm)",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "368",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "or unsweetened almond milk for vegan option, warm",
+        "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 tablespoon active dry yeast  (fast-action)",
       "expected": {
-        "item": "active dry yeast  (fast-action)",
+        "item": "active dry yeast",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "fast-action",
         "category": "Baking"
       }
     },

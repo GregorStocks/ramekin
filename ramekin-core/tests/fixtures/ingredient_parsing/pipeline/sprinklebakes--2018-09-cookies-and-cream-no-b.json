@@ -131,14 +131,18 @@
     {
       "raw": "1 1/4 cups heavy cream (whipped to firm peaks)",
       "expected": {
-        "item": "heavy cream (whipped to firm peaks)",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "298",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "whipped to firm peaks",
         "category": "Dairy & Eggs"
       }
     },

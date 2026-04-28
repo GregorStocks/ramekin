@@ -5,7 +5,7 @@
     {
       "raw": "1.5 ounces dried wild mushrooms (such as shiitake and porcini)",
       "expected": {
-        "item": "dried wild mushrooms (such as shiitake and porcini)",
+        "item": "dried wild mushrooms",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as shiitake and porcini",
         "category": "Produce"
       }
     },

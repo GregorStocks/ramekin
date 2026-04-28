@@ -41,14 +41,14 @@
     {
       "raw": "1 tablespoon&nbsp;sodium citrate (see Note)",
       "expected": {
-        "item": "sodium citrate (see Note)",
+        "item": "sodium citrate",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Other"
       }
     },

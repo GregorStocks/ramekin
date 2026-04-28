@@ -33,14 +33,14 @@
     {
       "raw": "3 g dried kelp (kombu) (3-5g is approx one small sheet)",
       "expected": {
-        "item": "dried kelp (kombu) (3-5g is approx one small sheet)",
+        "item": "dried kelp",
         "measurements": [
           {
             "amount": "3",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "kombu, 3-5g is approx one small sheet",
         "category": "Other"
       }
     },
@@ -65,14 +65,14 @@
     {
       "raw": "150 g boneless chicken thigh (skin on)",
       "expected": {
-        "item": "boneless chicken thigh (skin on)",
+        "item": "boneless chicken thigh",
         "measurements": [
           {
             "amount": "150",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skin on",
         "category": "Meat & Seafood"
       }
     },
@@ -93,14 +93,14 @@
     {
       "raw": "3 small sheets fried tofu pouch (aburaage) (approx 12g each, thinly sliced)",
       "expected": {
-        "item": "sheets fried tofu pouch (aburaage) (approx 12g each",
+        "item": "sheets fried tofu pouch",
         "measurements": [
           {
             "amount": "3",
             "unit": "small"
           }
         ],
-        "note": "thinly sliced)",
+        "note": "aburaage, approx 12g each, thinly sliced",
         "category": "Produce"
       }
     },
@@ -135,18 +135,14 @@
     {
       "raw": "3 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "48",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },

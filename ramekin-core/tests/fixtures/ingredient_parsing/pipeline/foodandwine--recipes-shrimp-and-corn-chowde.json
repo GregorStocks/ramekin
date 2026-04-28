@@ -138,14 +138,14 @@
     {
       "raw": "2 tablespoons Annatto oil (recipe follows)",
       "expected": {
-        "item": "Annatto oil (recipe follows)",
+        "item": "Annatto oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "recipe follows",
         "category": "Oils & Vinegars"
       }
     },
@@ -226,14 +226,14 @@
     {
       "raw": "1 unripe (green) plantain, peeled and coarsely grated",
       "expected": {
-        "item": "unripe (green) plantain",
+        "item": "unripe plantain",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "peeled and coarsely grated",
+        "note": "green, peeled and coarsely grated",
         "category": "Produce"
       }
     },

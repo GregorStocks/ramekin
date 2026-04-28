@@ -113,14 +113,18 @@
     {
       "raw": "2 tablespoon buttermilk, (for brushing)",
       "expected": {
-        "item": "buttermilk, (for brushing)",
+        "item": "buttermilk",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for brushing",
         "category": "Dairy & Eggs"
       }
     }

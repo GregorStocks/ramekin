@@ -12,7 +12,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 head, florets separated",
         "category": "Produce"
       }
     },
@@ -171,9 +171,9 @@
     {
       "raw": "vegetable oil ((for frying))",
       "expected": {
-        "item": "vegetable oil (for frying)",
+        "item": "vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -212,14 +212,14 @@
     {
       "raw": "1 teaspoon kalonji seeds ((aka nigella ))",
       "expected": {
-        "item": "kalonji seeds (aka nigella",
+        "item": "kalonji seeds",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "aka nigella",
         "category": "Nuts & Dried Fruit"
       }
     },

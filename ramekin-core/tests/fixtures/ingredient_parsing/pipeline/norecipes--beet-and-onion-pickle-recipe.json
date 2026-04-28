@@ -87,14 +87,18 @@
     {
       "raw": "1 teaspoon kosher salt ((halve if using regular salt))",
       "expected": {
-        "item": "kosher salt (halve if using regular salt)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "halve if using regular salt",
         "category": "Spices & Seasonings"
       }
     },

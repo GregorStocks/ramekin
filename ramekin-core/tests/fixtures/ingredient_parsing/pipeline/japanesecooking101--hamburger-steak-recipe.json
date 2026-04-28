@@ -192,14 +192,18 @@
     {
       "raw": "4 Tbsp sake (or wine)",
       "expected": {
-        "item": "sake (or wine)",
+        "item": "sake",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or wine",
         "category": "Beverages"
       }
     }

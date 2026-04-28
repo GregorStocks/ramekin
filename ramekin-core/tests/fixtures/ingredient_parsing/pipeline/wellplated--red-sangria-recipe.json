@@ -5,14 +5,14 @@
     {
       "raw": "1  bottle dry red wine (such as Rioja, Garnacha, or another Spanish red)",
       "expected": {
-        "item": "dry red wine (such as Rioja, Garnacha, or another Spanish red)",
+        "item": "dry red wine",
         "measurements": [
           {
             "amount": "1",
             "unit": "bottle"
           }
         ],
-        "note": null,
+        "note": "such as Rioja, Garnacha, or another Spanish red",
         "category": "Beverages"
       }
     },
@@ -26,7 +26,7 @@
             "unit": "cup"
           }
         ],
-        "note": "or 2 ounces gin (both are good! gin is dryer)",
+        "note": "both are good! gin is dryer, or 2 ounces gin",
         "category": "Beverages"
       }
     },

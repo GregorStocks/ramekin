@@ -46,21 +46,21 @@
     {
       "raw": "1/2 to 1 teaspoon red-pepper flakes (optional)(I used aleppo, which is milder and can therefore be used more generously)",
       "expected": {
-        "item": "red-pepper flakes (I used aleppo, which is milder and can therefore be used more generously)",
+        "item": "red-pepper flakes",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "tsp"
           }
         ],
-        "note": "optional",
+        "note": "I used aleppo, which is milder and can therefore be used more generously, optional",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "4 pounds russet potatoes, peeled (smaller diameter potatoes are great, if you can find them)",
       "expected": {
-        "item": "russet potatoes, peeled (smaller diameter potatoes are great, if you can find them)",
+        "item": "russet potatoes",
         "measurements": [
           {
             "amount": "4",
@@ -71,7 +71,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "smaller diameter potatoes are great, if you can find them, peeled",
         "category": "Produce"
       }
     },

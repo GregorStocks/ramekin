@@ -129,14 +129,18 @@
     {
       "raw": "½ tsp red pepper flakes (I used Aleppo pepper, more to your liking)",
       "expected": {
-        "item": "red pepper flakes (I used Aleppo pepper, more to your liking)",
+        "item": "red pepper flakes",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used Aleppo pepper, more to your liking",
         "category": "Spices & Seasonings"
       }
     },

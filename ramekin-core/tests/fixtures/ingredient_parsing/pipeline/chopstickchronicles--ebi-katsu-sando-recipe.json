@@ -19,14 +19,14 @@
     {
       "raw": "1 tbsp katakuriko potato starch  (*1)",
       "expected": {
-        "item": "katakuriko potato starch  (*1)",
+        "item": "katakuriko potato starch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "*1",
         "category": "Produce"
       }
     },
@@ -138,14 +138,14 @@
     {
       "raw": "4 slices white toast bread  (*2)",
       "expected": {
-        "item": "white toast bread  (*2)",
+        "item": "white toast bread",
         "measurements": [
           {
             "amount": "4",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "*2",
         "category": "Bakery & Bread"
       }
     },
@@ -166,14 +166,14 @@
     {
       "raw": "4 tbsp tartar sauce (*3)",
       "expected": {
-        "item": "tartar sauce (*3)",
+        "item": "tartar sauce",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "*3",
         "category": "Condiments & Sauces"
       }
     }

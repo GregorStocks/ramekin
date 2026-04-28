@@ -170,14 +170,14 @@
     {
       "raw": "1 cup diced red onion (from 1 small)",
       "expected": {
-        "item": "diced red onion (from 1 small)",
+        "item": "diced red onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 1 small",
         "category": "Produce"
       }
     },

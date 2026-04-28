@@ -47,15 +47,15 @@
     {
       "raw": "2 teaspoon simple syrup (or granulated sugar or honey)",
       "expected": {
-        "item": "simple syrup (or granulated sugar or honey)",
+        "item": "simple syrup",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "or granulated sugar or honey",
+        "category": "Other"
       }
     },
     {

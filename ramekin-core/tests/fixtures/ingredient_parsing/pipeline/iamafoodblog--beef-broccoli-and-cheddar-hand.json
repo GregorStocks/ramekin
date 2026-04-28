@@ -64,14 +64,18 @@
     {
       "raw": "1/4 cup beef broth (or water)",
       "expected": {
-        "item": "beef broth (or water)",
+        "item": "beef broth",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "62",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or water",
         "category": "Canned Goods"
       }
     },

@@ -12,7 +12,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "4 chilies",
         "category": "Other"
       }
     },
@@ -231,14 +231,14 @@
     {
       "raw": "580 grams beef chuck ((cut into 1.5-inch cubes))",
       "expected": {
-        "item": "beef chuck (cut into 1.5-inch cubes)",
+        "item": "beef chuck",
         "measurements": [
           {
             "amount": "580",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1.5-inch cubes",
         "category": "Meat & Seafood"
       }
     },

@@ -129,14 +129,18 @@
     {
       "raw": "1 cup vegetable oil ((or peanut oil))",
       "expected": {
-        "item": "vegetable oil (or peanut oil)",
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "218",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or peanut oil",
         "category": "Oils & Vinegars"
       }
     },

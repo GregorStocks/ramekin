@@ -33,28 +33,28 @@
     {
       "raw": "2 cups torn kale leaves ((removed from stem))",
       "expected": {
-        "item": "torn kale leaves (removed from stem)",
+        "item": "torn kale leaves",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "removed from stem",
         "category": "Produce"
       }
     },
     {
       "raw": "1 cup fresh spinach or basil ((use what you have handy!))",
       "expected": {
-        "item": "fresh spinach or basil (use what you have handy!)",
+        "item": "fresh spinach or basil",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "use what you have handy!",
         "category": "Produce"
       }
     },
@@ -79,14 +79,14 @@
     {
       "raw": "1  lemon, juiced ((approx. 2 TBSP lemon juice))",
       "expected": {
-        "item": "lemon, juiced (approx. 2 TBSP lemon juice)",
+        "item": "lemon, juiced",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "approx. 2 TBSP lemon juice",
         "category": "Beverages"
       }
     },

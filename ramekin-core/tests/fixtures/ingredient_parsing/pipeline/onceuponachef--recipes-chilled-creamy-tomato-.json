@@ -72,7 +72,7 @@
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "28-oz",
         "category": "Produce"
       }
     },
@@ -97,14 +97,18 @@
     {
       "raw": "1½ cups orange juice, (preferably not from concentrate)",
       "expected": {
-        "item": "orange juice, (preferably not from concentrate)",
+        "item": "orange juice",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "374",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably not from concentrate",
         "category": "Produce"
       }
     },

@@ -94,7 +94,7 @@
     {
       "raw": "1 (8 ounce) container frozen whipped topping (such as Cool Whip®), thawed",
       "expected": {
-        "item": "container frozen whipped topping (such as Cool Whip®)",
+        "item": "container frozen whipped topping",
         "measurements": [
           {
             "amount": "1",
@@ -109,7 +109,7 @@
             "unit": "g"
           }
         ],
-        "note": "thawed",
+        "note": "such as Cool Whip®, thawed",
         "category": "Frozen"
       }
     }

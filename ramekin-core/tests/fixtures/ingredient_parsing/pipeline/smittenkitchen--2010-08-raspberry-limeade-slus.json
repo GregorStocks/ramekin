@@ -110,14 +110,14 @@
     {
       "raw": "4 chilled glasses, if you’re feeling fancy (or are interested in your slushie staying slushy longer)",
       "expected": {
-        "item": "chilled glasses, if you’re feeling fancy (or are interested in your slushie staying slushy longer)",
+        "item": "chilled glasses, if you’re feeling fancy",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or are interested in your slushie staying slushy longer",
         "category": "Other"
       }
     }

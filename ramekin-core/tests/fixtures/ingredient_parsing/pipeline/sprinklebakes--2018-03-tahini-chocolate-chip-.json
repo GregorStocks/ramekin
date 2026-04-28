@@ -23,7 +23,7 @@
     {
       "raw": "1/2 cup 120ml tahini (well stirred)",
       "expected": {
-        "item": "tahini (well stirred)",
+        "item": "tahini",
         "measurements": [
           {
             "amount": "0.5",
@@ -32,9 +32,13 @@
           {
             "amount": "120",
             "unit": "ml"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "well stirred",
         "category": "Condiments & Sauces"
       }
     },
@@ -91,14 +95,14 @@
     {
       "raw": "1/2 teaspoon vanilla bean paste (or extract)",
       "expected": {
-        "item": "vanilla bean paste (or extract)",
+        "item": "vanilla bean paste",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or extract",
         "category": "Spices & Seasonings"
       }
     },

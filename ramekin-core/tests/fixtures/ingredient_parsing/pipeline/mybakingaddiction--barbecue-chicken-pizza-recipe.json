@@ -5,14 +5,14 @@
     {
       "raw": "1 store bought pizza crust or refrigerated crust (I used 1lb of homemade crust)",
       "expected": {
-        "item": "store bought pizza crust or refrigerated crust (I used 1lb of homemade crust)",
+        "item": "store bought pizza crust or refrigerated crust",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "I used 1lb of homemade crust",
         "category": "Other"
       }
     },

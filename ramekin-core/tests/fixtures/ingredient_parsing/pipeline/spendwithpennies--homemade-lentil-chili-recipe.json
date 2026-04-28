@@ -37,14 +37,14 @@
     {
       "raw": "1 cup diced green bell pepper (or red bell pepper)",
       "expected": {
-        "item": "diced green bell pepper (or red bell pepper)",
+        "item": "diced green bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or red bell pepper",
         "category": "Produce"
       }
     },
@@ -144,7 +144,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 can, with juice",
         "category": "Canned Goods"
       }
     },
@@ -165,14 +165,14 @@
     {
       "raw": "4 cups reduced sodium beef broth (or vegetable or chicken broth)",
       "expected": {
-        "item": "reduced sodium beef broth (or vegetable or chicken broth)",
+        "item": "reduced sodium beef broth",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or vegetable or chicken broth",
         "category": "Canned Goods"
       }
     }

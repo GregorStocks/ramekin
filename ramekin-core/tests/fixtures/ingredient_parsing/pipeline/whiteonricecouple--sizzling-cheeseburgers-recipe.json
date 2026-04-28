@@ -119,9 +119,9 @@
     {
       "raw": "salt (, to personal taste )",
       "expected": {
-        "item": "salt (, to personal taste",
+        "item": "salt, presumably Diamond",
         "measurements": [],
-        "note": null,
+        "note": "to personal taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -178,9 +178,9 @@
     {
       "raw": "fresh ground black pepper and salt (, to personal taste )",
       "expected": {
-        "item": "fresh ground black pepper and salt (, to personal taste",
+        "item": "fresh ground black pepper and salt",
         "measurements": [],
-        "note": null,
+        "note": "to personal taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -201,24 +201,24 @@
     {
       "raw": "4  hamburger buns  ((preferably brioche buns) )",
       "expected": {
-        "item": "hamburger buns  (preferably brioche buns)",
+        "item": "hamburger buns",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "preferably brioche buns",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "condiments of choice (, pickles, burger sauce, ketchup, mustard )",
       "expected": {
-        "item": "condiments of choice (, pickles, burger sauce, ketchup, mustard",
+        "item": "condiments of choice",
         "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "pickles, burger sauce, ketchup, mustard",
+        "category": "Other"
       }
     }
   ]

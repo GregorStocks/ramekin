@@ -5,7 +5,7 @@
     {
       "raw": "1 pound russet potato(es), peeled, and cut into 1-inch chunks",
       "expected": {
-        "item": "russet potato(es), peeled, and cut into 1-inch chunks",
+        "item": "russet potato, peeled, and cut into 1-inch chunks",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "es",
         "category": "Produce"
       }
     },

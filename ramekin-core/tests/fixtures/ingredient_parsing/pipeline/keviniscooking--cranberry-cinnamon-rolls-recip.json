@@ -5,7 +5,7 @@
     {
       "raw": "12 oz cranberries fresh or frozen (See Note 1)",
       "expected": {
-        "item": "cranberries fresh or frozen (See Note 1)",
+        "item": "cranberries fresh or frozen",
         "measurements": [
           {
             "amount": "12",
@@ -16,35 +16,39 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "See Note 1",
         "category": "Produce"
       }
     },
     {
       "raw": "1 cup sugar (See Note 2 for substitutions)",
       "expected": {
-        "item": "sugar (See Note 2 for substitutions)",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "See Note 2 for substitutions",
         "category": "Baking"
       }
     },
     {
       "raw": "1  orange (juice and zest)",
       "expected": {
-        "item": "orange (juice and zest)",
+        "item": "orange",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "juice and zest",
         "category": "Produce"
       }
     },
@@ -69,14 +73,14 @@
     {
       "raw": "1 tbsp grated ginger root (See Note 3 for substitutions)",
       "expected": {
-        "item": "grated ginger root (See Note 3 for substitutions)",
+        "item": "grated ginger root",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "See Note 3 for substitutions",
         "category": "Produce"
       }
     },

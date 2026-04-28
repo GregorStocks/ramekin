@@ -37,14 +37,14 @@
     {
       "raw": "1 to 2 peppers of your choice (see Notes, below), finely chopped",
       "expected": {
-        "item": "peppers of your choice (see Notes, below)",
+        "item": "peppers of your choice",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": null
           }
         ],
-        "note": "finely chopped",
+        "note": "see Notes, below, finely chopped",
         "category": "Spices & Seasonings"
       }
     },
@@ -165,14 +165,14 @@
     {
       "raw": "1 1/2 cups mixed dried beans (see Note)",
       "expected": {
-        "item": "mixed dried beans (see Note)",
+        "item": "mixed dried beans",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Other"
       }
     },

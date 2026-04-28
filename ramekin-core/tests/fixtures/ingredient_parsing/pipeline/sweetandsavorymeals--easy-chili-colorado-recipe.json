@@ -5,7 +5,7 @@
     {
       "raw": "2 1/2 pounds beef stew meat (cut into 1-inch cubes)",
       "expected": {
-        "item": "beef stew meat (cut into 1-inch cubes)",
+        "item": "beef stew meat",
         "measurements": [
           {
             "amount": "2.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -41,15 +41,15 @@
     {
       "raw": "8  dried chili Guajilo (stems removed and seeded)",
       "expected": {
-        "item": "dried chili Guajilo (stems removed and seeded)",
+        "item": "dried chili Guajilo",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "stems removed and seeded",
+        "category": "Other"
       }
     },
     {

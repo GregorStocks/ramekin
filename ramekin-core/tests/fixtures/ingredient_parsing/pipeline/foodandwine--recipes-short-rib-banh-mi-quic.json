@@ -115,7 +115,7 @@
     {
       "raw": "6 pounds English-cut beef short ribs (twelve 4-by-2-by-2-inch pieces)",
       "expected": {
-        "item": "English-cut beef short ribs (twelve 4-by-2-by-2-inch pieces)",
+        "item": "English-cut beef short ribs",
         "measurements": [
           {
             "amount": "6",
@@ -126,7 +126,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "twelve 4-by-2-by-2-inch pieces",
         "category": "Meat & Seafood"
       }
     },

@@ -86,7 +86,7 @@
     {
       "raw": "1 lb Italian sausage* ((can use mild or hot))",
       "expected": {
-        "item": "Italian sausage* (can use mild or hot)",
+        "item": "Italian sausage",
         "measurements": [
           {
             "amount": "1",
@@ -97,7 +97,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "can use mild or hot",
         "category": "Meat & Seafood"
       }
     },

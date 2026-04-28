@@ -5,14 +5,14 @@
     {
       "raw": "22  stalks asparagus ((I used asparagus tips as they're thinner))",
       "expected": {
-        "item": "asparagus (I used asparagus tips as they're thinner)",
+        "item": "asparagus",
         "measurements": [
           {
             "amount": "22",
             "unit": "stalk"
           }
         ],
-        "note": null,
+        "note": "I used asparagus tips as they're thinner",
         "category": "Produce"
       }
     },

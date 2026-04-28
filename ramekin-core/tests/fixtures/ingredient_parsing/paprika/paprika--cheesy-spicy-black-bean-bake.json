@@ -112,7 +112,7 @@
             "unit": "can"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "14-ounce, drained and rinsed",
         "category": "Canned Goods"
       }
     },
@@ -155,14 +155,14 @@
     {
       "raw": "1 1/2 cups grated Cheddar or Manchego cheese (from about a 6-ounce block)",
       "expected": {
-        "item": "grated Cheddar or Manchego cheese (from about a 6-ounce block)",
+        "item": "grated Cheddar or Manchego cheese",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from about a 6-ounce block",
         "category": "Cheese"
       }
     }

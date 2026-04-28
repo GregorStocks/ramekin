@@ -5,14 +5,14 @@
     {
       "raw": "1½ cups dry cannellini beans  (soaked overnight)",
       "expected": {
-        "item": "dry cannellini beans  (soaked overnight)",
+        "item": "dry cannellini beans",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "soaked overnight",
         "category": "Canned Goods"
       }
     },
@@ -152,23 +152,23 @@
     {
       "raw": "½ large lemon (zest and juice)",
       "expected": {
-        "item": "lemon (zest and juice)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "large"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "zest and juice",
+        "category": "Produce"
       }
     },
     {
       "raw": "freshly ground black pepper (to season)",
       "expected": {
-        "item": "freshly ground black pepper (to season)",
+        "item": "freshly ground black pepper",
         "measurements": [],
-        "note": null,
+        "note": "to season",
         "category": "Spices & Seasonings"
       }
     }

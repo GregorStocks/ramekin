@@ -5,14 +5,18 @@
     {
       "raw": "2/3 cup warm milk (see note)",
       "expected": {
-        "item": "warm milk (see note)",
+        "item": "warm milk",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "163",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Dairy & Eggs"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "1.1 lbs (½ kg)  Fish ((any firm fish))",
       "expected": {
-        "item": "Fish (any firm fish)",
+        "item": "Fish",
         "measurements": [
           {
             "amount": "1.1",
@@ -16,7 +16,7 @@
             "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "any firm fish",
         "category": "Meat & Seafood"
       }
     },
@@ -105,14 +105,14 @@
     {
       "raw": "½ tsp cumin seeds ((jeera))",
       "expected": {
-        "item": "cumin seeds (jeera)",
+        "item": "cumin seeds",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "jeera",
         "category": "Spices & Seasonings"
       }
     },
@@ -211,14 +211,14 @@
     {
       "raw": "½ tsp fennel seeds ((optional) (saunf))",
       "expected": {
-        "item": "fennel seeds (saunf)",
+        "item": "fennel seeds",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "optional",
+        "note": "saunf, optional",
         "category": "Spices & Seasonings"
       }
     },
@@ -239,28 +239,32 @@
     {
       "raw": "2 tbsp oil ((+1 tbsp to fry the fish))",
       "expected": {
-        "item": "oil (+1 tbsp to fry the fish)",
+        "item": "oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Meat & Seafood"
+        "note": "+1 tbsp to fry the fish",
+        "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "1 sprig  curry leaves ((pat dry or use a small bay leaf))",
       "expected": {
-        "item": "curry leaves (pat dry or use a small bay leaf)",
+        "item": "curry leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "sprig"
           }
         ],
-        "note": null,
+        "note": "pat dry or use a small bay leaf",
         "category": "Spices & Seasonings"
       }
     },

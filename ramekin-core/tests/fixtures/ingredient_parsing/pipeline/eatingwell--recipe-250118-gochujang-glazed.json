@@ -5,14 +5,14 @@
     {
       "raw": "2 tablespoons gochujang (Korean hot pepper paste)",
       "expected": {
-        "item": "gochujang (Korean hot pepper paste)",
+        "item": "gochujang",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "Korean hot pepper paste",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,7 +83,7 @@
     {
       "raw": "2 whole mackerel (about 1 1/2 pounds each) or 4 whole rainbow trout (about 5 ounces each), cleaned and butterflied, tails left on (see Notes)",
       "expected": {
-        "item": "whole mackerel or 4 whole rainbow trout, cleaned and butterflied, tails left on (see Notes)",
+        "item": "whole mackerel or 4 whole rainbow trout, cleaned and butterflied, tails left on",
         "measurements": [
           {
             "amount": "2",
@@ -98,7 +98,7 @@
             "unit": "oz each"
           }
         ],
-        "note": null,
+        "note": "see Notes",
         "category": "Meat & Seafood"
       }
     }

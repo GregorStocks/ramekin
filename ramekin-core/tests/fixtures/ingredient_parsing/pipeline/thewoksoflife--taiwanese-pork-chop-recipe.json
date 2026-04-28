@@ -161,9 +161,9 @@
     {
       "raw": "vegetable oil ((for frying))",
       "expected": {
-        "item": "vegetable oil (for frying)",
+        "item": "vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },

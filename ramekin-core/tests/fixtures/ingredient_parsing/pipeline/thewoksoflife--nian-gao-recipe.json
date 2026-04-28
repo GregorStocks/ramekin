@@ -23,14 +23,14 @@
     {
       "raw": "3½ to 4 cups of water ((depending on humidity levels where you are))",
       "expected": {
-        "item": "water (depending on humidity levels where you are)",
+        "item": "water",
         "measurements": [
           {
             "amount": "3.5 to 4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "depending on humidity levels where you are",
         "category": "Other"
       }
     },
@@ -51,14 +51,18 @@
     {
       "raw": "2 cups dark brown sugar (or brown rock sugar&nbsp;)",
       "expected": {
-        "item": "dark brown sugar (or brown rock sugar",
+        "item": "dark brown sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "440",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or brown rock sugar",
         "category": "Baking"
       }
     },
@@ -79,7 +83,7 @@
     {
       "raw": "1½ pounds glutinous rice flour ((one and a half bags, as they generally come in 1-pound bags))",
       "expected": {
-        "item": "glutinous rice flour (one and a half bags, as they generally come in 1-pound bags)",
+        "item": "glutinous rice flour",
         "measurements": [
           {
             "amount": "1.5",
@@ -90,7 +94,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "one and a half bags, as they generally come in 1-pound bags",
         "category": "Baking"
       }
     },

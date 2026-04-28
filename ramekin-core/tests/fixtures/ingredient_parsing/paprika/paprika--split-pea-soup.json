@@ -166,9 +166,9 @@
     {
       "raw": "Fresh herb sauce (instructions up top)",
       "expected": {
-        "item": "Fresh herb sauce (instructions up top)",
+        "item": "Fresh herb sauce",
         "measurements": [],
-        "note": null,
+        "note": "instructions up top",
         "section": "To Finish",
         "category": "Produce"
       }
@@ -186,14 +186,14 @@
     {
       "raw": "Two slices of crumbled crisp bacon (obviously would no longer be vegetarian)",
       "expected": {
-        "item": "crumbled crisp bacon (obviously would no longer be vegetarian)",
+        "item": "crumbled crisp bacon",
         "measurements": [
           {
             "amount": "2",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "obviously would no longer be vegetarian",
         "section": "To Finish",
         "category": "Meat & Seafood"
       }

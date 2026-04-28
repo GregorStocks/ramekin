@@ -19,14 +19,14 @@
     {
       "raw": "¼ cup + 2 tablespoons  freshly squeezed lemon juice (from about 3 lemons)",
       "expected": {
-        "item": "+ 2 tablespoons  freshly squeezed lemon juice (from about 3 lemons)",
+        "item": "+ 2 tablespoons  freshly squeezed lemon juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from about 3 lemons",
         "category": "Beverages"
       }
     },

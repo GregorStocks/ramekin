@@ -5,14 +5,14 @@
     {
       "raw": "24 ladyfingers (savioardi) cookies (storebought or from recipe below)",
       "expected": {
-        "item": "ladyfingers (savioardi) cookies (storebought or from recipe below)",
+        "item": "ladyfingers cookies",
         "measurements": [
           {
             "amount": "24",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "savioardi, storebought or from recipe below",
         "category": "Other"
       }
     },

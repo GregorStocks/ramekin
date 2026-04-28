@@ -77,14 +77,18 @@
     {
       "raw": "1/2 teaspoon vanilla extract (I used Beanilla Vanilla Paste)",
       "expected": {
-        "item": "vanilla extract (I used Beanilla Vanilla Paste)",
+        "item": "vanilla extract",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.2",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used Beanilla Vanilla Paste",
         "category": "Baking"
       }
     },
@@ -177,15 +181,15 @@
     {
       "raw": "1 cup peanut butter and chocolate swirl chips (your favorite chocolate chip will be just fine)",
       "expected": {
-        "item": "peanut butter and chocolate swirl chips (your favorite chocolate chip will be just fine)",
+        "item": "peanut butter and chocolate swirl chips",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "your favorite chocolate chip will be just fine",
+        "category": "Condiments & Sauces"
       }
     }
   ]

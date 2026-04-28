@@ -5,14 +5,14 @@
     {
       "raw": "1 cup 100-proof grain alcohol (such as moonshine)",
       "expected": {
-        "item": "100-proof grain alcohol (such as moonshine)",
+        "item": "100-proof grain alcohol",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as moonshine",
         "category": "Pasta & Rice"
       }
     },
@@ -89,28 +89,28 @@
     {
       "raw": "3 (3- x 1/2-inch) orange peel strips (from 1 orange; white pith completely removed)",
       "expected": {
-        "item": "orange peel strips (from 1 orange; white pith completely removed)",
+        "item": "orange peel strips",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "3- x 1/2-inch, from 1 orange; white pith completely removed",
         "category": "Produce"
       }
     },
     {
       "raw": "2 (3- x 1/2-inch) grapefruit peel strips (from 1 grapefruit; white pith completely removed)",
       "expected": {
-        "item": "grapefruit peel strips (from 1 grapefruit; white pith completely removed)",
+        "item": "grapefruit peel strips",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "3- x 1/2-inch, from 1 grapefruit; white pith completely removed",
         "category": "Produce"
       }
     },

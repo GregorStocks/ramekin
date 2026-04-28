@@ -5,14 +5,14 @@
     {
       "raw": "900 grams chicken wings ((wingtips and drumlets))",
       "expected": {
-        "item": "chicken wings (wingtips and drumlets)",
+        "item": "chicken wings",
         "measurements": [
           {
             "amount": "900",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "wingtips and drumlets",
         "category": "Meat & Seafood"
       }
     },
@@ -55,14 +55,14 @@
     {
       "raw": "1 tablespoon gochujang ((Korean sweet chili paste))",
       "expected": {
-        "item": "gochujang (Korean sweet chili paste)",
+        "item": "gochujang",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "Korean sweet chili paste",
         "category": "Condiments & Sauces"
       }
     },
@@ -87,15 +87,15 @@
     {
       "raw": "1/3 cup soju ((Korean liquor))",
       "expected": {
-        "item": "soju (Korean liquor)",
+        "item": "soju",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "Korean liquor",
+        "category": "Other"
       }
     },
     {
@@ -174,9 +174,9 @@
     {
       "raw": "vegetable oil ((for frying))",
       "expected": {
-        "item": "vegetable oil (for frying)",
+        "item": "vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },

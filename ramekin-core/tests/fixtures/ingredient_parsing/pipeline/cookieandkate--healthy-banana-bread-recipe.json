@@ -103,14 +103,18 @@
     {
       "raw": "1 teaspoon baking soda (NOT baking powder; they aren&amp;#8217;t the same!)",
       "expected": {
-        "item": "baking soda (NOT baking powder; they aren’t the same!)",
+        "item": "baking soda",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "4.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "NOT baking powder; they aren’t the same!",
         "category": "Baking"
       }
     },

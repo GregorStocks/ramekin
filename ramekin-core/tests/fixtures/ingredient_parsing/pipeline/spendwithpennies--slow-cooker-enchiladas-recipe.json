@@ -40,7 +40,7 @@
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "6-inch",
         "category": "Bakery & Bread"
       }
     },
@@ -119,14 +119,14 @@
     {
       "raw": "2 cups shredded cheddar cheese blend (or your favorite blend)",
       "expected": {
-        "item": "shredded cheddar cheese blend (or your favorite blend)",
+        "item": "shredded cheddar cheese blend",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or your favorite blend",
         "category": "Cheese"
       }
     }

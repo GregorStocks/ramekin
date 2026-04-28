@@ -78,9 +78,9 @@
     {
       "raw": "your favorite tomato sauce (recipe for red pepper tomato sauce is below, or whatever tomato sauce you love)",
       "expected": {
-        "item": "your favorite tomato sauce (recipe for red pepper tomato sauce is below, or whatever tomato sauce you love)",
+        "item": "your favorite tomato sauce",
         "measurements": [],
-        "note": null,
+        "note": "recipe for red pepper tomato sauce is below, or whatever tomato sauce you love",
         "category": "Canned Goods"
       }
     }

@@ -23,28 +23,28 @@
     {
       "raw": "1/4 cup veal demiglace (such as D’Artagnan)",
       "expected": {
-        "item": "veal demiglace (such as D’Artagnan)",
+        "item": "veal demiglace",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as D’Artagnan",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "2 cups of dry red wine (such as Burgundy)",
       "expected": {
-        "item": "dry red wine (such as Burgundy)",
+        "item": "dry red wine",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Burgundy",
         "category": "Beverages"
       }
     },
@@ -103,7 +103,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "6-ounce",
         "category": "Meat & Seafood"
       }
     },
@@ -192,14 +192,14 @@
     {
       "raw": "8 white bread slices (such as Pepperidge Farm), cut into 3-inch rounds and sautéed in butter and oil until browned",
       "expected": {
-        "item": "white bread slices (such as Pepperidge Farm), cut into 3-inch rounds and sautéed in butter and oil until browned",
+        "item": "white bread slices, cut into 3-inch rounds and sautéed in butter and oil until browned",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "such as Pepperidge Farm",
         "category": "Dairy & Eggs"
       }
     },

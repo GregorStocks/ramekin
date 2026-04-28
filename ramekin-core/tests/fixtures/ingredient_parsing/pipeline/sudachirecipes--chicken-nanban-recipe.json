@@ -5,14 +5,14 @@
     {
       "raw": "450 g chicken breast (skin on, or boneless chicken thigh)",
       "expected": {
-        "item": "chicken breast (skin on, or boneless chicken thigh)",
+        "item": "chicken breast",
         "measurements": [
           {
             "amount": "450",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skin on, or boneless chicken thigh",
         "category": "Meat & Seafood"
       }
     },
@@ -28,28 +28,36 @@
     {
       "raw": "3 tbsp cake flour (or all purpose)",
       "expected": {
-        "item": "cake flour (or all purpose)",
+        "item": "cake flour",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or all purpose",
         "category": "Baking"
       }
     },
     {
       "raw": "1 tbsp cornstarch (or potato starch)",
       "expected": {
-        "item": "cornstarch (or potato starch)",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or potato starch",
         "category": "Baking"
       }
     },
@@ -70,9 +78,9 @@
     {
       "raw": "cooking oil (for frying)",
       "expected": {
-        "item": "cooking oil (for frying)",
+        "item": "cooking oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -93,14 +101,14 @@
     {
       "raw": "¼  onion (rinse after mincing to reduce sharpness)",
       "expected": {
-        "item": "onion (rinse after mincing to reduce sharpness)",
+        "item": "onion",
         "measurements": [
           {
             "amount": "0.25",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "rinse after mincing to reduce sharpness",
         "category": "Produce"
       }
     },
@@ -121,14 +129,14 @@
     {
       "raw": "4 tbsp Japanese mayonnaise (or regular mayonnaise)",
       "expected": {
-        "item": "Japanese mayonnaise (or regular mayonnaise)",
+        "item": "Japanese mayonnaise",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or regular mayonnaise",
         "category": "Condiments & Sauces"
       }
     },
@@ -230,32 +238,32 @@
     {
       "raw": "3 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "48",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "3 tbsp rice vinegar (or apple cider vinegar)",
       "expected": {
-        "item": "rice vinegar (or apple cider vinegar)",
+        "item": "rice vinegar",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or apple cider vinegar",
         "category": "Oils & Vinegars"
       }
     },
@@ -298,14 +306,14 @@
     {
       "raw": "1  dried red chili pepper (split lengthways, deseeded)",
       "expected": {
-        "item": "dried red chili pepper (split lengthways, deseeded)",
+        "item": "dried red chili pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "split lengthways, deseeded",
         "category": "Spices & Seasonings"
       }
     }

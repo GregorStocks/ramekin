@@ -111,23 +111,23 @@
     {
       "raw": "Boiled octopus* (cut into 1/2&amp;quot; (1 cm) cubes)",
       "expected": {
-        "item": "Boiled octopus* (cut into 1/2\" (1 cm) cubes)",
+        "item": "Boiled octopus* cubes)",
         "measurements": [],
-        "note": null,
+        "note": "cut into 1/2\" (1 cm",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1/4 cup Tenkasu (Tempura bits) (homemade or store-bought  (optional) )",
       "expected": {
-        "item": "Tenkasu (Tempura bits) (homemade or store-bought  (optional)",
+        "item": "Tenkasu",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "Tempura bits, homemade or store-bought  (optional",
         "category": "Other"
       }
     },
@@ -143,9 +143,9 @@
     {
       "raw": "Takoyaki sauce (or Okonomiyaki sauce)",
       "expected": {
-        "item": "Takoyaki sauce (or Okonomiyaki sauce)",
+        "item": "Takoyaki sauce",
         "measurements": [],
-        "note": null,
+        "note": "or Okonomiyaki sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -179,9 +179,9 @@
     {
       "raw": "*Substitute octopus with sausage (cheese, ham, and etc.)",
       "expected": {
-        "item": "*Substitute octopus with sausage (cheese, ham, and etc.)",
+        "item": "*Substitute octopus with sausage",
         "measurements": [],
-        "note": null,
+        "note": "cheese, ham, and etc.",
         "category": "Meat & Seafood"
       }
     }

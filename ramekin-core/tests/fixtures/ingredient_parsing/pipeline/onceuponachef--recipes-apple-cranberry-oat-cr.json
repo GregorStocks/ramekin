@@ -41,14 +41,18 @@
     {
       "raw": "1½ cups all-purpose flour (spooned into measuring cup and leveled-off)",
       "expected": {
-        "item": "all-purpose flour (spooned into measuring cup and leveled-off)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "188",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "spooned into measuring cup and leveled-off",
         "category": "Baking"
       }
     },

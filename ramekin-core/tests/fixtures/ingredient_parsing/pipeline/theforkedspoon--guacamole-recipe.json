@@ -19,15 +19,15 @@
     {
       "raw": "2  limes (juiced)",
       "expected": {
-        "item": "limes (juiced)",
+        "item": "limes",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {

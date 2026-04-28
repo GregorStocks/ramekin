@@ -45,14 +45,14 @@
     {
       "raw": "1 teaspoon calcium water (this comes with every box of Pomona’s pectin)",
       "expected": {
-        "item": "calcium water (this comes with every box of Pomona’s pectin)",
+        "item": "calcium water",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "this comes with every box of Pomona’s pectin",
         "category": "Other"
       }
     },
@@ -77,14 +77,14 @@
     {
       "raw": "1/2 vanilla bean pod, seeds scraped (or use 1/2 teaspoon vanilla bean paste or extract)",
       "expected": {
-        "item": "vanilla bean pod, seeds scraped (or use 1/2 teaspoon vanilla bean paste or extract)",
+        "item": "vanilla bean pod, seeds scraped",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or use 1/2 teaspoon vanilla bean paste or extract",
         "category": "Spices & Seasonings"
       }
     }

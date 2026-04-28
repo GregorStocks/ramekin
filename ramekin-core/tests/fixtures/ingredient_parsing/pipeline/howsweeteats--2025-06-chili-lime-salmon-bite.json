@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds salmon, (cut into chunks)",
       "expected": {
-        "item": "salmon, (cut into chunks)",
+        "item": "salmon",
         "measurements": [
           {
             "amount": "2",
@@ -16,21 +16,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 ½ tablespoons tajin seasoning, (or any chili lime seasoning)",
       "expected": {
-        "item": "tajin seasoning, (or any chili lime seasoning)",
+        "item": "tajin seasoning",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or any chili lime seasoning",
         "category": "Spices & Seasonings"
       }
     },

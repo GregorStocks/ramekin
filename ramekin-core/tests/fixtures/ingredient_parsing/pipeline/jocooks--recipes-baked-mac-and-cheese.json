@@ -27,14 +27,18 @@
     {
       "raw": "4 tablespoons butter (unsalted)",
       "expected": {
-        "item": "butter (unsalted)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsalted",
         "category": "Dairy & Eggs"
       }
     },
@@ -91,14 +95,18 @@
     {
       "raw": "3 cups milk (lukewarm)",
       "expected": {
-        "item": "milk (lukewarm)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "735",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "lukewarm",
         "category": "Dairy & Eggs"
       }
     },

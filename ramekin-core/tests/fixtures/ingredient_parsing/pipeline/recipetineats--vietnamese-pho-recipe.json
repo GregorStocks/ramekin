@@ -79,14 +79,14 @@
     {
       "raw": "3  cloves ((the spice cloves!))",
       "expected": {
-        "item": "(the spice cloves!)",
+        "item": "3  cloves ((the spice cloves!))",
         "measurements": [
           {
             "amount": "3",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "the spice cloves!",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,7 +143,7 @@
     {
       "raw": "1kg / 2lb   marrow bones ((leg, knuckle), cut to reveal marrow)",
       "expected": {
-        "item": "marrow bones (leg, knuckle), cut to reveal marrow)",
+        "item": "marrow bones, cut to reveal marrow)",
         "measurements": [
           {
             "amount": "1",
@@ -154,7 +154,7 @@
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "leg, knuckle",
         "category": "Meat & Seafood"
       }
     },
@@ -223,7 +223,7 @@
     {
       "raw": "40 ml / 3 tbsp   fish sauce ((Note 2))",
       "expected": {
-        "item": "fish sauce (Note 2)",
+        "item": "fish sauce",
         "measurements": [
           {
             "amount": "40",
@@ -232,16 +232,20 @@
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "49",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Note 2",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "50g / 1.5 oz   dried rice sticks ((or 120g/4oz fresh) (Note 3))",
       "expected": {
-        "item": "dried rice sticks (Note 3)",
+        "item": "dried rice sticks",
         "measurements": [
           {
             "amount": "50",
@@ -252,7 +256,7 @@
             "unit": "oz"
           }
         ],
-        "note": "or 120g/4oz fresh",
+        "note": "Note 3, or 120g/4oz fresh",
         "category": "Pasta & Rice"
       }
     },
@@ -270,21 +274,21 @@
             "unit": "oz"
           }
         ],
-        "note": "very thinly sliced (Note 4)",
+        "note": "Note 4, very thinly sliced",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "3 - 5  brisket slices ((used for broth))",
       "expected": {
-        "item": "brisket slices (used for broth)",
+        "item": "brisket slices",
         "measurements": [
           {
             "amount": "3-5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "used for broth",
         "category": "Meat & Seafood"
       }
     },
@@ -345,9 +349,9 @@
     {
       "raw": "Sriracha* ((for spiciness))",
       "expected": {
-        "item": "Sriracha* (for spiciness)",
+        "item": "Sriracha",
         "measurements": [],
-        "note": null,
+        "note": "for spiciness",
         "category": "Condiments & Sauces"
       }
     }

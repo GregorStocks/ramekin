@@ -42,14 +42,14 @@
     {
       "raw": "6 Yukon gold potatoes (or any small potatoes), peeled, cubed",
       "expected": {
-        "item": "Yukon gold potatoes (or any small potatoes), peeled",
+        "item": "Yukon gold potatoes, peeled",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": "cubed",
+        "note": "or any small potatoes, cubed",
         "category": "Produce"
       }
     },
@@ -157,14 +157,14 @@
     {
       "raw": "1 1/2 tsp ras el hanout Moroccan spice blend (find it here)",
       "expected": {
-        "item": "ras el hanout Moroccan spice blend (find it here)",
+        "item": "ras el hanout Moroccan spice blend",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "find it here",
         "category": "Spices & Seasonings"
       }
     },

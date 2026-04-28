@@ -5,7 +5,7 @@
     {
       "raw": "1½ pound ground beef (lean)",
       "expected": {
-        "item": "ground beef (lean)",
+        "item": "ground beef",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,21 +16,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "lean",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "½ cup breadcrumbs (I used Panko)",
       "expected": {
-        "item": "breadcrumbs (I used Panko)",
+        "item": "breadcrumbs",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used Panko",
         "category": "Bakery & Bread"
       }
     },
@@ -69,14 +69,18 @@
     {
       "raw": "¼ cup mustard (coarse grain )",
       "expected": {
-        "item": "mustard (coarse grain",
+        "item": "mustard",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "62",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "coarse grain",
         "category": "Condiments & Sauces"
       }
     },
@@ -147,28 +151,36 @@
     {
       "raw": "2 tablespoons olive oil (for frying)",
       "expected": {
-        "item": "olive oil (for frying)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "2 tablespoons butter (unsalted)",
       "expected": {
-        "item": "butter (unsalted)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsalted",
         "category": "Dairy & Eggs"
       }
     },
@@ -189,28 +201,36 @@
     {
       "raw": "2 tablespoons all-purpose flour (or cornstarch)",
       "expected": {
-        "item": "all-purpose flour (or cornstarch)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or cornstarch",
         "category": "Baking"
       }
     },
     {
       "raw": "1 cup beef broth  (or chicken broth, low sodium or no sodium added)",
       "expected": {
-        "item": "beef broth  (or chicken broth, low sodium or no sodium added)",
+        "item": "beef broth",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "249",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or chicken broth, low sodium or no sodium added",
         "category": "Canned Goods"
       }
     },

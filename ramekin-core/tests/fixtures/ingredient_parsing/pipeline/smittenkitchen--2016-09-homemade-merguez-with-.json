@@ -23,9 +23,9 @@
     {
       "raw": "A small handful finely chopped leafy fresh herbs (parsley, cilantro, mint, chives, dill or a mix thereof) plus a few roughly chopped, to serve",
       "expected": {
-        "item": "A small handful finely chopped leafy fresh herbs (parsley, cilantro, mint, chives, dill or a mix thereof)",
+        "item": "A small handful finely chopped leafy fresh herbs",
         "measurements": [],
-        "note": "plus a few roughly chopped, to serve",
+        "note": "parsley, cilantro, mint, chives, dill or a mix thereof, plus a few roughly chopped, to serve",
         "category": "Produce"
       }
     },
@@ -165,14 +165,14 @@
     {
       "raw": "2 tablespoons harissa paste (I just used a small squeeze) or another hot sauce",
       "expected": {
-        "item": "harissa paste (I just used a small squeeze) or another hot sauce",
+        "item": "harissa paste or another hot sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I just used a small squeeze",
         "category": "Condiments & Sauces"
       }
     },

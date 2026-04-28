@@ -127,14 +127,14 @@
     {
       "raw": "1 tsp freshly ground black pepper ((crack a bit larger in grinder if possible))",
       "expected": {
-        "item": "freshly ground black pepper (crack a bit larger in grinder if possible)",
+        "item": "freshly ground black pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "crack a bit larger in grinder if possible",
         "category": "Spices & Seasonings"
       }
     },
@@ -150,14 +150,14 @@
     {
       "raw": "1 Tbsp light olive oil (or vegetable oil)",
       "expected": {
-        "item": "light olive oil (or vegetable oil)",
+        "item": "light olive oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or vegetable oil",
         "category": "Oils & Vinegars"
       }
     },

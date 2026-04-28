@@ -123,14 +123,14 @@
     {
       "raw": "1 1/2 teaspoons orange zest (not traditional, but just lovely in there)",
       "expected": {
-        "item": "orange zest (not traditional, but just lovely in there)",
+        "item": "orange zest",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "not traditional, but just lovely in there",
         "category": "Produce"
       }
     },

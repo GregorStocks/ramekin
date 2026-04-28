@@ -196,9 +196,9 @@
     {
       "raw": "Crusty bread, to serve (skip if serving gluten-free)",
       "expected": {
-        "item": "Crusty bread, to serve (skip if serving gluten-free)",
+        "item": "Crusty bread, to serve",
         "measurements": [],
-        "note": null,
+        "note": "skip if serving gluten-free",
         "category": "Bakery & Bread"
       }
     }

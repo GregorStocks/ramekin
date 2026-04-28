@@ -5,28 +5,32 @@
     {
       "raw": "3 cups granola (without the fruit or nuts)",
       "expected": {
-        "item": "granola (without the fruit or nuts)",
+        "item": "granola",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "without the fruit or nuts",
         "category": "Snacks"
       }
     },
     {
       "raw": "¾ cup raisins (regular or golden)",
       "expected": {
-        "item": "raisins (regular or golden)",
+        "item": "raisins",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "116",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "regular or golden",
         "category": "Nuts & Dried Fruit"
       }
     },

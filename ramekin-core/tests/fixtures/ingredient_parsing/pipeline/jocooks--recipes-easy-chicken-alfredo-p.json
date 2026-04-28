@@ -23,28 +23,32 @@
     {
       "raw": "3 tablespoon butter (unsalted)",
       "expected": {
-        "item": "butter (unsalted)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsalted",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1  chicken breast (cut into small pieces)",
       "expected": {
-        "item": "chicken breast (cut into small pieces)",
+        "item": "chicken breast",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into small pieces",
         "category": "Meat & Seafood"
       }
     },

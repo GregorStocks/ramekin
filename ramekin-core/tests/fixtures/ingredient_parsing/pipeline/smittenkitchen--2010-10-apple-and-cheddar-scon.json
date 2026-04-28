@@ -12,7 +12,7 @@
             "unit": null
           }
         ],
-        "note": null,
+        "note": "1 pound or 2 454 grams",
         "category": "Produce"
       }
     },
@@ -41,14 +41,14 @@
     {
       "raw": "1/4 cup sugar plus 1 1/2 tablespoons for sprinkling (total of 2.2 ounces or 63 grams)",
       "expected": {
-        "item": "sugar plus 1 1/2 tablespoons for sprinkling (total of 2.2 ounces",
+        "item": "sugar plus 1 1/2 tablespoons for sprinkling",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "or 63 grams)",
+        "note": "total of 2.2 ounces or 63 grams",
         "category": "Baking"
       }
     },
@@ -113,7 +113,7 @@
     {
       "raw": "1/2 cup (2.25 ounces or 65 grams) sharp cheddar, shredded (white is recommended, I assume for aesthetics)",
       "expected": {
-        "item": "sharp cheddar, shredded (white is recommended, I assume for aesthetics)",
+        "item": "sharp cheddar",
         "measurements": [
           {
             "amount": "0.5",
@@ -128,7 +128,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "white is recommended, I assume for aesthetics, shredded",
         "category": "Cheese"
       }
     },

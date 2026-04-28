@@ -41,7 +41,7 @@
     {
       "raw": "1/4 cup (20 grams) black cocoa powder (see Note; just use more Dutched cocoa powder if you don’t have it)",
       "expected": {
-        "item": "black cocoa powder (see Note; just use more Dutched cocoa powder if you don’t have it)",
+        "item": "black cocoa powder",
         "measurements": [
           {
             "amount": "0.25",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note; just use more Dutched cocoa powder if you don’t have it",
         "category": "Baking"
       }
     },

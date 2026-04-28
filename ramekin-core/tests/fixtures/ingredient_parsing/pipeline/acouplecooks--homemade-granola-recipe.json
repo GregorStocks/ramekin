@@ -37,14 +37,18 @@
     {
       "raw": "1/4 cup maple syrup (or honey)",
       "expected": {
-        "item": "maple syrup (or honey)",
+        "item": "maple syrup",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "79",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or honey",
         "category": "Baking"
       }
     },
@@ -155,14 +159,14 @@
     {
       "raw": "1/2 cup slivered almonds (or any nuts)",
       "expected": {
-        "item": "slivered almonds (or any nuts)",
+        "item": "slivered almonds",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or any nuts",
         "category": "Nuts & Dried Fruit"
       }
     },

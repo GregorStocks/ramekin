@@ -33,15 +33,15 @@
     {
       "raw": "1/4 cup almond milk (coconut milk or cashew milk)",
       "expected": {
-        "item": "almond milk (coconut milk or cashew milk)",
+        "item": "almond milk",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "coconut milk or cashew milk",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -97,14 +97,18 @@
     {
       "raw": "1 tbsp honey (or maple syrup)",
       "expected": {
-        "item": "honey (or maple syrup)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or maple syrup",
         "category": "Baking"
       }
     },
@@ -183,10 +187,10 @@
     {
       "raw": "butter (ghee or coconut oil, to coat the skillet)",
       "expected": {
-        "item": "butter (ghee or coconut oil, to coat the skillet)",
+        "item": "butter",
         "measurements": [],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "ghee or coconut oil, to coat the skillet",
+        "category": "Dairy & Eggs"
       }
     },
     {

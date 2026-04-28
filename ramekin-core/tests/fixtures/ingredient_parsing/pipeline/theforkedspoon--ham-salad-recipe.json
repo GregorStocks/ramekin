@@ -23,14 +23,18 @@
     {
       "raw": "1 tablespoon yellow mustard (or dijon mustard)",
       "expected": {
-        "item": "yellow mustard (or dijon mustard)",
+        "item": "yellow mustard",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or dijon mustard",
         "category": "Condiments & Sauces"
       }
     },
@@ -65,14 +69,14 @@
     {
       "raw": "1 (16-ounce) package cooked ham steak (or leftover holiday ham )",
       "expected": {
-        "item": "cooked ham steak (or leftover holiday ham",
+        "item": "cooked ham steak",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
           }
         ],
-        "note": null,
+        "note": "16-ounce, or leftover holiday ham",
         "category": "Meat & Seafood"
       }
     },

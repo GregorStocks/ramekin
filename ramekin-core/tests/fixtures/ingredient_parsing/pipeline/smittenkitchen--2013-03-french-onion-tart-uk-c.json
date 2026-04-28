@@ -262,14 +262,18 @@
     {
       "raw": "1/2 cup heavy cream (half-and-half and milk work too, but cream tastes best)",
       "expected": {
-        "item": "heavy cream (half-and-half and milk work too, but cream tastes best)",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "119",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "half-and-half and milk work too, but cream tastes best",
         "category": "Dairy & Eggs"
       }
     }

@@ -5,14 +5,14 @@
     {
       "raw": "1/2 cup prepared guacamole (homemade or store-bought)",
       "expected": {
-        "item": "prepared guacamole (homemade or store-bought)",
+        "item": "prepared guacamole",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "homemade or store-bought",
         "category": "Other"
       }
     },
@@ -37,14 +37,14 @@
     {
       "raw": "1/2 - 1 teaspoon Cholula hot sauce (or your favorite hot sauce)",
       "expected": {
-        "item": "Cholula hot sauce (or your favorite hot sauce)",
+        "item": "Cholula hot sauce",
         "measurements": [
           {
             "amount": "0.5-1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or your favorite hot sauce",
         "category": "Condiments & Sauces"
       }
     },
@@ -58,7 +58,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 2 ears worth",
         "category": "Other"
       }
     },

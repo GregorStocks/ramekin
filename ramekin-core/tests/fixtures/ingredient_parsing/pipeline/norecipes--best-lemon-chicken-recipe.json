@@ -5,14 +5,14 @@
     {
       "raw": "350 grams boneless skin-on chicken thighs ((cut into 1 1/2-inch pieces))",
       "expected": {
-        "item": "boneless skin-on chicken thighs (cut into 1 1/2-inch pieces)",
+        "item": "boneless skin-on chicken thighs",
         "measurements": [
           {
             "amount": "350",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1 1/2-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -78,9 +78,9 @@
     {
       "raw": "vegetable oil ((for frying))",
       "expected": {
-        "item": "vegetable oil (for frying)",
+        "item": "vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -137,14 +137,18 @@
     {
       "raw": "3 tablespoons sake ((or water))",
       "expected": {
-        "item": "sake (or water)",
+        "item": "sake",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "45",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or water",
         "category": "Beverages"
       }
     },

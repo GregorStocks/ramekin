@@ -221,14 +221,14 @@
     {
       "raw": "1/2 cup applesauce (unsweetened)",
       "expected": {
-        "item": "applesauce (unsweetened)",
+        "item": "applesauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "unsweetened",
         "category": "Produce"
       }
     },

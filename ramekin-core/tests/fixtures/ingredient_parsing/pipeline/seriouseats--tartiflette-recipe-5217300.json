@@ -89,7 +89,7 @@
             "unit": "medium"
           }
         ],
-        "note": "thinly sliced",
+        "note": "8-ounce; 225g, thinly sliced",
         "category": "Produce"
       }
     },
@@ -145,7 +145,7 @@
     {
       "raw": "1 pound (450g) Reblochon-style soft-rind cheese (see headnote for suggested cheeses)",
       "expected": {
-        "item": "Reblochon-style soft-rind cheese (see headnote for suggested cheeses)",
+        "item": "Reblochon-style soft-rind cheese",
         "measurements": [
           {
             "amount": "1",
@@ -156,7 +156,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see headnote for suggested cheeses",
         "category": "Cheese"
       }
     }

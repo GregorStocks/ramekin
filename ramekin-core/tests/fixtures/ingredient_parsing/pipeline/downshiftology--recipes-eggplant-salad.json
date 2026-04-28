@@ -37,14 +37,14 @@
     {
       "raw": "2-3 cups small heirloom tomatoes (cherry tomato sized)",
       "expected": {
-        "item": "small heirloom tomatoes (cherry tomato sized)",
+        "item": "small heirloom tomatoes",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cherry tomato sized",
         "category": "Produce"
       }
     },
@@ -115,14 +115,18 @@
     {
       "raw": "1 tbsp olive oil ((to grill the eggplant))",
       "expected": {
-        "item": "olive oil (to grill the eggplant)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "to grill the eggplant",
         "category": "Oils & Vinegars"
       }
     },

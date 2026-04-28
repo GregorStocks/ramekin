@@ -27,28 +27,36 @@
     {
       "raw": "&amp;frac12; teaspoon baking soda (if you&amp;#8217;re using canned chickpeas)",
       "expected": {
-        "item": "baking soda (if you’re using canned chickpeas)",
+        "item": "baking soda",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.3",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "if you’re using canned chickpeas",
         "category": "Baking"
       }
     },
     {
       "raw": "¼ cup lemon juice&nbsp;(from 1 ½ to 2 lemons), more to taste",
       "expected": {
-        "item": "lemon juice (from 1 1/2 to 2 lemons)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
           }
         ],
-        "note": "more to taste",
+        "note": "from 1 1/2 to 2 lemons, more to taste",
         "category": "Beverages"
       }
     },

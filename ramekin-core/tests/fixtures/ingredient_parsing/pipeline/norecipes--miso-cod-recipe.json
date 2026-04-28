@@ -65,14 +65,14 @@
     {
       "raw": "2 pieces Sablefish ((a.k.a. Black Cod))",
       "expected": {
-        "item": "Sablefish (a.k.a. Black Cod)",
+        "item": "Sablefish",
         "measurements": [
           {
             "amount": "2",
             "unit": "piece"
           }
         ],
-        "note": null,
+        "note": "a.k.a. Black Cod",
         "category": "Meat & Seafood"
       }
     }

@@ -23,28 +23,28 @@
     {
       "raw": "1 cup (updated) semi-pearled farro (see Note above for farro types)",
       "expected": {
-        "item": "(updated) semi-pearled farro (see Note above for farro types)",
+        "item": "semi-pearled farro",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "updated, see Note above for farro types",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "1/2 large onion (I usually use a white one, for mildness)",
       "expected": {
-        "item": "onion (I usually use a white one, for mildness)",
+        "item": "onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "I usually use a white one, for mildness",
         "category": "Produce"
       }
     },

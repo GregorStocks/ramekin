@@ -124,9 +124,9 @@
     {
       "raw": "other toppings: plain yogurt, toasted pepitas, lemon ginger rosemary butter* (and pulp)",
       "expected": {
-        "item": "other toppings: plain yogurt, toasted pepitas, lemon ginger rosemary butter* (and pulp)",
+        "item": "other toppings: plain yogurt, toasted pepitas, lemon ginger rosemary butter",
         "measurements": [],
-        "note": null,
+        "note": "and pulp",
         "category": "Spices & Seasonings"
       }
     }

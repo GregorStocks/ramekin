@@ -28,18 +28,18 @@
     {
       "raw": "Extra Virgin Olive Oil (I used Private Reserve Greek extra virgin olive oil)",
       "expected": {
-        "item": "Extra Virgin Olive Oil (I used Private Reserve Greek extra virgin olive oil)",
+        "item": "Extra Virgin Olive Oil",
         "measurements": [],
-        "note": null,
+        "note": "I used Private Reserve Greek extra virgin olive oil",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "Seasoning of your choice (I used a generous sprinkle of za&amp;#8217;atar and sumac)",
       "expected": {
-        "item": "Seasoning of your choice (I used a generous sprinkle of za’atar and sumac)",
+        "item": "Seasoning of your choice",
         "measurements": [],
-        "note": null,
+        "note": "I used a generous sprinkle of za’atar and sumac",
         "category": "Spices & Seasonings"
       }
     },
@@ -60,14 +60,14 @@
     {
       "raw": "1/2 cup pomegranate arils (seeds)",
       "expected": {
-        "item": "pomegranate arils (seeds)",
+        "item": "pomegranate arils",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "seeds",
         "category": "Produce"
       }
     },

@@ -19,9 +19,9 @@
     {
       "raw": "olive oil, (for drizzling)",
       "expected": {
-        "item": "olive oil, (for drizzling)",
+        "item": "olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for drizzling",
         "category": "Oils & Vinegars"
       }
     },
@@ -37,7 +37,7 @@
     {
       "raw": "1 pound lean ground beef, (or turkey)",
       "expected": {
-        "item": "lean ground beef, (or turkey)",
+        "item": "lean ground beef",
         "measurements": [
           {
             "amount": "1",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or turkey",
         "category": "Meat & Seafood"
       }
     },
@@ -123,46 +123,46 @@
     {
       "raw": "1 ½ cups shredded lettuce, (for topping)",
       "expected": {
-        "item": "shredded lettuce, (for topping)",
+        "item": "shredded lettuce",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     },
     {
       "raw": "1 cup chopped tomatoes, (for topping)",
       "expected": {
-        "item": "chopped tomatoes, (for topping)",
+        "item": "chopped tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     },
     {
       "raw": "pickled onions, (for topping)",
       "expected": {
-        "item": "pickled onions, (for topping)",
+        "item": "pickled onions",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "pickles, (for topping)",
       "expected": {
-        "item": "pickles, (for topping)",
+        "item": "pickles",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Canned Goods"
       }
     },

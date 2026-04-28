@@ -47,14 +47,14 @@
     {
       "raw": "1 cup dried banana chips (broken in half or quarters if large)",
       "expected": {
-        "item": "dried banana chips (broken in half or quarters if large)",
+        "item": "dried banana chips",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "broken in half or quarters if large",
         "category": "Produce"
       }
     },

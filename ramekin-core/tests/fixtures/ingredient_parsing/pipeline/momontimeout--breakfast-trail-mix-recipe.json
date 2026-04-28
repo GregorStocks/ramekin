@@ -47,15 +47,15 @@
     {
       "raw": "2 cups Honey Nut Cheerios (or your favorite cereal)",
       "expected": {
-        "item": "Honey Nut Cheerios (or your favorite cereal)",
+        "item": "Honey Nut Cheerios",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Snacks"
+        "note": "or your favorite cereal",
+        "category": "Baking"
       }
     },
     {

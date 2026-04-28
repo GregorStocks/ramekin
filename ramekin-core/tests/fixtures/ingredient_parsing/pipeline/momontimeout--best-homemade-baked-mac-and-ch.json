@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "cooked (or other tubular pasta)",
+        "note": "or other tubular pasta, cooked",
         "category": "Pasta & Rice"
       }
     },
@@ -196,14 +196,18 @@
     {
       "raw": "1/4 tsp smoked paprika  ((or regular paprika))",
       "expected": {
-        "item": "smoked paprika  (or regular paprika)",
+        "item": "smoked paprika",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or regular paprika",
         "category": "Spices & Seasonings"
       }
     }

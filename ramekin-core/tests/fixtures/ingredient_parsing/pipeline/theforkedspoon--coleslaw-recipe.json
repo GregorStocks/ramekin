@@ -65,15 +65,15 @@
     {
       "raw": "1/2 large lemon (juiced)",
       "expected": {
-        "item": "lemon (juiced)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "large"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {
@@ -111,14 +111,18 @@
     {
       "raw": "2/3 cup mayonnaise ((full-fat recommended))",
       "expected": {
-        "item": "mayonnaise (full-fat recommended)",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "147",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "full-fat recommended",
         "category": "Condiments & Sauces"
       }
     },

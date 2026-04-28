@@ -194,7 +194,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 3 large or 4 small/medium",
         "category": "Produce"
       }
     },
@@ -405,9 +405,9 @@
     {
       "raw": "toasted chopped pecans (or walnuts)",
       "expected": {
-        "item": "toasted chopped pecans (or walnuts)",
+        "item": "toasted chopped pecans",
         "measurements": [],
-        "note": null,
+        "note": "or walnuts",
         "category": "Nuts & Dried Fruit"
       }
     }

@@ -69,14 +69,14 @@
     {
       "raw": "1/4 cup Panko (bread crumbs)",
       "expected": {
-        "item": "Panko (bread crumbs)",
+        "item": "Panko",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "bread crumbs",
         "category": "Bakery & Bread"
       }
     },
@@ -165,23 +165,23 @@
     {
       "raw": "1 1/2 cups Panko (bread crumbs)",
       "expected": {
-        "item": "Panko (bread crumbs)",
+        "item": "Panko",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "bread crumbs",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "oil  (for deep-frying)",
       "expected": {
-        "item": "oil  (for deep-frying)",
+        "item": "oil",
         "measurements": [],
-        "note": null,
+        "note": "for deep-frying",
         "category": "Oils & Vinegars"
       }
     },

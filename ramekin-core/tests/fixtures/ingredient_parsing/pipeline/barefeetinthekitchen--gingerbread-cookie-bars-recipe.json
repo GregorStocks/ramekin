@@ -278,14 +278,14 @@
     {
       "raw": "1 teaspoon vanilla or 1 vanilla bean (scraped)",
       "expected": {
-        "item": "vanilla or 1 vanilla bean (scraped)",
+        "item": "vanilla or 1 vanilla bean",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "scraped",
         "section": "Optional Frosting Ingredients",
         "category": "Spices & Seasonings"
       }

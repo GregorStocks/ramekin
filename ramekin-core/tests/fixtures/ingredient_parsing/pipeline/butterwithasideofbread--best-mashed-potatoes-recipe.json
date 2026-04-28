@@ -23,7 +23,7 @@
     {
       "raw": "8 oz. cream cheese (cut into smaller pieces)",
       "expected": {
-        "item": "cream cheese (cut into smaller pieces)",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "8",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into smaller pieces",
         "category": "Cheese"
       }
     },

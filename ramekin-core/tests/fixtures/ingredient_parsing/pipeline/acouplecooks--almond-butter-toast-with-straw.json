@@ -19,14 +19,14 @@
     {
       "raw": "2 tablespoons Almond Butter (or any nut butter: peanut butter, cashew butter or nut butter)",
       "expected": {
-        "item": "Almond Butter (or any nut butter: peanut butter, cashew butter or nut butter)",
+        "item": "Almond Butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or any nut butter: peanut butter, cashew butter or nut butter",
         "category": "Condiments & Sauces"
       }
     },
@@ -106,18 +106,18 @@
     {
       "raw": "Shredded coconut (consider toasting on low heat it in a dry skillet)",
       "expected": {
-        "item": "Shredded coconut (consider toasting on low heat it in a dry skillet)",
+        "item": "Shredded coconut",
         "measurements": [],
-        "note": null,
+        "note": "consider toasting on low heat it in a dry skillet",
         "category": "Produce"
       }
     },
     {
       "raw": "Bee pollen (we love the confetti look)",
       "expected": {
-        "item": "Bee pollen (we love the confetti look)",
+        "item": "Bee pollen",
         "measurements": [],
-        "note": null,
+        "note": "we love the confetti look",
         "category": "Other"
       }
     },

@@ -59,7 +59,7 @@
     {
       "raw": "1 pound Italian sausage (casings removed)",
       "expected": {
-        "item": "Italian sausage (casings removed)",
+        "item": "Italian sausage",
         "measurements": [
           {
             "amount": "1",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "casings removed",
         "category": "Meat & Seafood"
       }
     },

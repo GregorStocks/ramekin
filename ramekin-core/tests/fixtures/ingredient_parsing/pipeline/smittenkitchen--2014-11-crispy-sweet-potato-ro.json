@@ -56,14 +56,14 @@
     {
       "raw": "3.5 Years Ago: Strawberry Summer Cake (Oh, I am so envious of anyone who gets to eat this now.)",
       "expected": {
-        "item": "Years Ago: Strawberry Summer Cake (Oh, I am so envious of anyone who gets to eat this now.)",
+        "item": "Years Ago: Strawberry Summer Cake",
         "measurements": [
           {
             "amount": "3.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "Oh, I am so envious of anyone who gets to eat this now.",
         "category": "Produce"
       }
     },

@@ -80,21 +80,25 @@
             "unit": "ml"
           }
         ],
-        "note": "or 2 tablespoons black vinegar and 2 tablespoons rice (see Note)",
+        "note": "see Note, or 2 tablespoons black vinegar and 2 tablespoons rice",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "2 tablespoons brown sugar (I use dark)",
       "expected": {
-        "item": "brown sugar (I use dark)",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use dark",
         "category": "Baking"
       }
     },

@@ -5,14 +5,18 @@
     {
       "raw": "1/2  cup    butter (or margarine)",
       "expected": {
-        "item": "butter (or margarine)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or margarine",
         "category": "Dairy & Eggs"
       }
     },
@@ -159,14 +163,14 @@
     {
       "raw": "1/2-1   cup   chopped pecans (optional) or 1/2-1   cup    walnuts (optional)",
       "expected": {
-        "item": "chopped pecans or 1/2-1 cup walnuts (optional)",
+        "item": "chopped pecans or 1/2-1 cup walnuts",
         "measurements": [
           {
             "amount": "0.5-1",
             "unit": "cup"
           }
         ],
-        "note": "optional",
+        "note": "optional, optional",
         "category": "Nuts & Dried Fruit"
       }
     }

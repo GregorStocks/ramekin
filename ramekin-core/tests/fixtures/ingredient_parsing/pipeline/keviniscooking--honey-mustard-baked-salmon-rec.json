@@ -5,7 +5,7 @@
     {
       "raw": "1.5 lbs fresh salmon filets ( skin on 1&amp;quot; thick (See Note 1))",
       "expected": {
-        "item": "fresh salmon filets ( skin on 1\" thick (See Note 1)",
+        "item": "fresh salmon filets",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skin on 1\" thick (See Note 1",
         "category": "Meat & Seafood"
       }
     },
@@ -109,14 +109,14 @@
     {
       "raw": "1 tsp horseradish sauce ((See Note 2))",
       "expected": {
-        "item": "horseradish sauce (See Note 2)",
+        "item": "horseradish sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "See Note 2",
         "category": "Condiments & Sauces"
       }
     },

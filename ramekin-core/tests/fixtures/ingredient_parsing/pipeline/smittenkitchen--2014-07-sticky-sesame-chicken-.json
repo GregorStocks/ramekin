@@ -5,7 +5,7 @@
     {
       "raw": "3 pounds chicken wingettes or chicken wings (see note up top)",
       "expected": {
-        "item": "chicken wingettes or chicken wings (see note up top)",
+        "item": "chicken wingettes or chicken wings",
         "measurements": [
           {
             "amount": "3",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note up top",
         "category": "Meat & Seafood"
       }
     },

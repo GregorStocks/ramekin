@@ -59,14 +59,18 @@
     {
       "raw": "1 tablespoon fresh lemon juice (from 1 lemon)",
       "expected": {
-        "item": "fresh lemon juice (from 1 lemon)",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 1 lemon",
         "category": "Beverages"
       }
     },

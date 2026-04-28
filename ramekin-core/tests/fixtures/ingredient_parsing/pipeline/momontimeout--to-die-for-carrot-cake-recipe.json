@@ -5,14 +5,14 @@
     {
       "raw": "1 ¼ cups unsweetened applesauce (or oil, this is what my Nana used)",
       "expected": {
-        "item": "unsweetened applesauce (or oil, this is what my Nana used)",
+        "item": "unsweetened applesauce",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or oil, this is what my Nana used",
         "category": "Produce"
       }
     },

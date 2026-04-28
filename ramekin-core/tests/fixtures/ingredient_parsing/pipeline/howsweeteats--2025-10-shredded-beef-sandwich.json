@@ -68,7 +68,7 @@
     {
       "raw": "6 ounces pumpkin beer, (for nonalcoholic you can use root beer)",
       "expected": {
-        "item": "pumpkin beer, (for nonalcoholic you can use root beer)",
+        "item": "pumpkin beer",
         "measurements": [
           {
             "amount": "6",
@@ -79,7 +79,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for nonalcoholic you can use root beer",
         "category": "Produce"
       }
     },

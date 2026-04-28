@@ -74,14 +74,14 @@
     {
       "raw": "5 to 6 (one per pizza) small eggs, if you can find them, or the next smallest that you can find",
       "expected": {
-        "item": "(one per pizza) small eggs, if you can find them, or the next smallest that you can find",
+        "item": "eggs, if you can find them, or the next smallest that you can find",
         "measurements": [
           {
             "amount": "5 to 6",
-            "unit": null
+            "unit": "small"
           }
         ],
-        "note": null,
+        "note": "one per pizza",
         "category": "Dairy & Eggs"
       }
     },

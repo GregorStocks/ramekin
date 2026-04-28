@@ -59,28 +59,28 @@
     {
       "raw": "4  large egg yolks (reserve the whites for the meringue)",
       "expected": {
-        "item": "egg yolks (reserve the whites for the meringue)",
+        "item": "egg yolks",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "reserve the whites for the meringue",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1  (14-oz) can Eagle sweetened condensed milk (see note)",
       "expected": {
-        "item": "Eagle sweetened condensed milk (see note)",
+        "item": "Eagle sweetened condensed milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "14-oz, see note",
         "category": "Canned Goods"
       }
     },

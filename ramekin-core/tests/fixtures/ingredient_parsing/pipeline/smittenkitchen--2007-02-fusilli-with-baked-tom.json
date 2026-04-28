@@ -106,7 +106,7 @@
     {
       "raw": "1 pound dried fusilli (corkscrew) or farfalline (butterfly) pasta",
       "expected": {
-        "item": "dried fusilli (corkscrew) or farfalline (butterfly) pasta",
+        "item": "dried fusilli or farfalline pasta",
         "measurements": [
           {
             "amount": "1",
@@ -117,7 +117,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "corkscrew, butterfly",
         "category": "Pasta & Rice"
       }
     },

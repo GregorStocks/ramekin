@@ -47,15 +47,15 @@
     {
       "raw": "1/4 cup pepitas (pumpkin&nbsp;seeds)",
       "expected": {
-        "item": "pepitas (pumpkin seeds)",
+        "item": "pepitas",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "pumpkin seeds",
+        "category": "Bakery & Bread"
       }
     },
     {
@@ -75,14 +75,14 @@
     {
       "raw": "2 tablespoons ground flaxseed meal (chia seeds, or additional hemp seed hearts)",
       "expected": {
-        "item": "ground flaxseed meal (chia seeds, or additional hemp seed hearts)",
+        "item": "ground flaxseed meal",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "chia seeds, or additional hemp seed hearts",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -197,14 +197,14 @@
     {
       "raw": "1/2 cup old fashioned rolled oats (gluten free if needed)",
       "expected": {
-        "item": "old fashioned rolled oats (gluten free if needed)",
+        "item": "old fashioned rolled oats",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "gluten free if needed",
         "category": "Bakery & Bread"
       }
     },

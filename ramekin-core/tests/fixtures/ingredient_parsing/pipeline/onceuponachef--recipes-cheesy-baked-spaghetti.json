@@ -63,14 +63,14 @@
     {
       "raw": "1¾ cups jarred marinara sauce, (best quality such as Rao's or Victoria)",
       "expected": {
-        "item": "jarred marinara sauce, (best quality such as Rao's or Victoria)",
+        "item": "jarred marinara sauce",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "best quality such as Rao's or Victoria",
         "category": "Condiments & Sauces"
       }
     },

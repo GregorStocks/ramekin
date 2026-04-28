@@ -189,14 +189,18 @@
     {
       "raw": "1 1/2 Tbsp unsalted butter  ((to dot the top))",
       "expected": {
-        "item": "unsalted butter  (to dot the top)",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "to dot the top",
         "category": "Dairy & Eggs"
       }
     }

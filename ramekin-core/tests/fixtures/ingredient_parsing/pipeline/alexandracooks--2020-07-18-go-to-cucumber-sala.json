@@ -39,7 +39,7 @@
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "about 6",
         "category": "Produce"
       }
     },
@@ -88,14 +88,14 @@
     {
       "raw": "3 tablespoons white balsamic vinegar (or other), plus more to taste",
       "expected": {
-        "item": "white balsamic vinegar (or other)",
+        "item": "white balsamic vinegar",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": "plus more to taste",
+        "note": "or other, plus more to taste",
         "category": "Oils & Vinegars"
       }
     },

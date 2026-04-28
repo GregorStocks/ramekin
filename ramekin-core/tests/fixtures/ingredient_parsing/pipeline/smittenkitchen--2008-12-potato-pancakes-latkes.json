@@ -5,7 +5,7 @@
     {
       "raw": "1 pound (about 1 large) Russet or Idaho (baking) potato, peeled",
       "expected": {
-        "item": "Russet or Idaho (baking) potato",
+        "item": "Russet or Idaho potato",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled",
+        "note": "baking, peeled",
         "category": "Produce"
       }
     },

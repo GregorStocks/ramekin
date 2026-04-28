@@ -5,9 +5,9 @@
     {
       "raw": "about a pound of red-skinned (or other) potatoes",
       "expected": {
-        "item": "about a pound of red-skinned (or other) potatoes",
+        "item": "about a pound of red-skinned potatoes",
         "measurements": [],
-        "note": null,
+        "note": "or other",
         "category": "Produce"
       }
     },

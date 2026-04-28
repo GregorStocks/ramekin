@@ -58,21 +58,21 @@
             "unit": "piece"
           }
         ],
-        "note": null,
+        "note": "approx 4 inches long",
         "category": "Other"
       }
     },
     {
       "raw": "1  sweet potato (spiralized)",
       "expected": {
-        "item": "sweet potato (spiralized)",
+        "item": "sweet potato",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "spiralized",
         "category": "Produce"
       }
     },

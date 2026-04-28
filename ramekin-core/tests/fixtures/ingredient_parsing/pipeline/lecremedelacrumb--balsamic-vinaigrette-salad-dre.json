@@ -37,14 +37,18 @@
     {
       "raw": "¼ cup  honey  (or 2-3 tablespoons sugar, see note)",
       "expected": {
-        "item": "honey  (or 2-3 tablespoons sugar, see note)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 2-3 tablespoons sugar, see note",
         "category": "Baking"
       }
     },

@@ -93,14 +93,18 @@
     {
       "raw": "1 tablespoon chili powder (see note)",
       "expected": {
-        "item": "chili powder (see note)",
+        "item": "chili powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note",
         "section": "For the Steak Fajita Marinade",
         "category": "Spices & Seasonings"
       }

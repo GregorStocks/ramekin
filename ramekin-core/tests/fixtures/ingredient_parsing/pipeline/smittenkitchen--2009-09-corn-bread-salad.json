@@ -5,14 +5,14 @@
     {
       "raw": "1 recipe Crispy Corn Bread (below) or 3 cups of 1-inch cornbread cubes",
       "expected": {
-        "item": "recipe Crispy Corn Bread (below)",
+        "item": "recipe Crispy Corn Bread",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "or 3 cups of 1-inch cornbread cubes",
+        "note": "below, or 3 cups of 1-inch cornbread cubes",
         "category": "Bakery & Bread"
       }
     },
@@ -83,14 +83,14 @@
     {
       "raw": "1 recipe Buttermilk-Lime Dressing (below)",
       "expected": {
-        "item": "recipe Buttermilk-Lime Dressing (below)",
+        "item": "recipe Buttermilk-Lime Dressing",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "below",
         "category": "Dairy & Eggs"
       }
     },
@@ -111,14 +111,14 @@
     {
       "raw": "5 tabespoons freshly squeezed lime juice (they say from 3 to 4 limes; I only needed 1 1/2)",
       "expected": {
-        "item": "tabespoons freshly squeezed lime juice (they say from 3 to 4 limes; I only needed 1 1/2)",
+        "item": "tabespoons freshly squeezed lime juice",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "they say from 3 to 4 limes; I only needed 1 1/2",
         "category": "Beverages"
       }
     },

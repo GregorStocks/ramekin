@@ -5,7 +5,7 @@
     {
       "raw": "5 pounds pork shoulder (Boston Butt) (best with bone and well-marbled with fat, cut into large 2-inch cubes)",
       "expected": {
-        "item": "pork shoulder (Boston Butt) (best with bone and well-marbled with fat, cut into large 2-inch cubes)",
+        "item": "pork shoulder",
         "measurements": [
           {
             "amount": "5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Boston Butt, best with bone and well-marbled with fat, cut into large 2-inch cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -233,27 +233,27 @@
     {
       "raw": "Thinly shredded cabbage (highly recommended)",
       "expected": {
-        "item": "Thinly shredded cabbage (highly recommended)",
+        "item": "Thinly shredded cabbage",
         "measurements": [],
-        "note": null,
+        "note": "highly recommended",
         "category": "Produce"
       }
     },
     {
       "raw": "Diced white onion (recommended)",
       "expected": {
-        "item": "Diced white onion (recommended)",
+        "item": "Diced white onion",
         "measurements": [],
-        "note": null,
+        "note": "recommended",
         "category": "Produce"
       }
     },
     {
       "raw": "Chopped cilantro (recommended)",
       "expected": {
-        "item": "Chopped cilantro (recommended)",
+        "item": "Chopped cilantro",
         "measurements": [],
-        "note": null,
+        "note": "recommended",
         "category": "Produce"
       }
     },

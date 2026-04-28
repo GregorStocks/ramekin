@@ -101,14 +101,14 @@
     {
       "raw": "2 pork tenderloins (each slightly over 1 pound)",
       "expected": {
-        "item": "pork tenderloins (each slightly over 1 pound)",
+        "item": "pork tenderloins",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "each slightly over 1 pound",
         "category": "Meat & Seafood"
       }
     },

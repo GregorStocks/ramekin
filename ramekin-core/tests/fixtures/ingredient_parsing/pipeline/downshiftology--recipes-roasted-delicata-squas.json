@@ -120,15 +120,15 @@
     {
       "raw": "4 tbsp raw pepitas ((pumpkin seeds))",
       "expected": {
-        "item": "raw pepitas (pumpkin seeds)",
+        "item": "raw pepitas",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "pumpkin seeds",
+        "category": "Bakery & Bread"
       }
     },
     {

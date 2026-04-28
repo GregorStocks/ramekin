@@ -55,14 +55,18 @@
     {
       "raw": "1/2 cup creamy peanut butter (I used Skippy Natural)",
       "expected": {
-        "item": "creamy peanut butter (I used Skippy Natural)",
+        "item": "creamy peanut butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "129",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used Skippy Natural",
         "category": "Condiments & Sauces"
       }
     },

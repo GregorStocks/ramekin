@@ -65,14 +65,14 @@
     {
       "raw": "1/2 cup gochujang (Korean chili paste)",
       "expected": {
-        "item": "gochujang (Korean chili paste)",
+        "item": "gochujang",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "Korean chili paste",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,14 +195,14 @@
     {
       "raw": "3 tablespoons Clear Jel or canning starch (see cook's notes)",
       "expected": {
-        "item": "Clear Jel or canning starch (see cook's notes)",
+        "item": "Clear Jel or canning starch",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see cook's notes",
         "category": "Other"
       }
     }

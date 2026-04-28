@@ -23,14 +23,14 @@
     {
       "raw": "2 cups (packed) fresh basil leaves (, or herb leaves of your choice)",
       "expected": {
-        "item": "fresh basil leaves (, or herb leaves of your choice)",
+        "item": "fresh basil leaves",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "packed",
+        "note": "or herb leaves of your choice, packed",
         "category": "Produce"
       }
     },

@@ -137,14 +137,14 @@
     {
       "raw": "2/3 cup shredded coconut (sweetened or unsweetened will work)",
       "expected": {
-        "item": "shredded coconut (sweetened or unsweetened will work)",
+        "item": "shredded coconut",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "sweetened or unsweetened will work",
         "category": "Produce"
       }
     },
