@@ -985,7 +985,10 @@
 | Zebra Cake | dessert, easy, vegetarian, cheese, pantry | yes |
 | Ebi Katsu Sando (Panko Crumbed Shrimp... | lunch, dinner, entree, comfort food, asian, japanese, seafood, sandwich, bread | yes |
 | Japanese mochi ice cream 餅アイス | dessert, snack, easy, vegetarian, asian, japanese | yes |
+| Clover Club (Raspberry Liqueur) | egg | no |
 | Thanksgiving Sidecar | holiday | yes |
+| Hot Chocolate Manhattan | comfort food, holiday | no |
+| Appletini | dairy-free, gluten-free, pantry | no |
 | Apple Steel-Cut Oatmeal | breakfast, easy, healthy, vegetarian, gluten-free, pantry | yes |
 | Best Hummus | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, legumes, pantry | yes |
 | Best Lentil Soup | lunch, dinner, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, soup, legumes, greens | yes |
@@ -5459,8 +5462,8 @@
 
 ## Summary
 
-- Total recipes processed: 5467
-- Recipes with tag suggestions: 5451
+- Total recipes processed: 5470
+- Recipes with tag suggestions: 5454
 - Cached responses: 5451
 
 ## Tag Frequency
@@ -5470,22 +5473,22 @@
 | easy | 3800 |
 | vegetarian | 3276 |
 | dinner | 2610 |
-| comfort food | 2607 |
-| pantry | 2391 |
+| comfort food | 2608 |
+| pantry | 2392 |
 | lunch | 1363 |
 | dessert | 1356 |
 | healthy | 1342 |
 | cheese | 1334 |
 | snack | 1306 |
 | entree | 1204 |
-| gluten-free | 1099 |
+| gluten-free | 1100 |
 | side dish | 1085 |
-| dairy-free | 1064 |
+| dairy-free | 1065 |
 | american | 999 |
 | greens | 839 |
-| holiday | 838 |
+| holiday | 839 |
 | vegan | 807 |
-| egg | 793 |
+| egg | 794 |
 | appetizer | 729 |
 | quick | 605 |
 | bread | 601 |
