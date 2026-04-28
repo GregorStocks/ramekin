@@ -117,11 +117,15 @@
       "section": "Stir Fry"
     },
     {
-      "item": "g/5oz  chicken breast (or thigh)",
+      "item": "chicken breast (or thigh)",
       "measurements": [
         {
           "amount": "150",
-          "unit": null
+          "unit": "g"
+        },
+        {
+          "amount": "5",
+          "unit": "oz"
         }
       ],
       "note": "thinly sliced",

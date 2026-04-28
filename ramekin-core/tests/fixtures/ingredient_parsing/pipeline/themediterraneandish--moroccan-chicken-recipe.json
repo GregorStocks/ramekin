@@ -83,11 +83,15 @@
     {
       "raw": "3 1/2 lb/1587.57 g whole chicken cut into bone-in pieces (or 7&nbsp; to 8 pieces of chicken with bone in. Leave skin on or remove it, up to you.)",
       "expected": {
-        "item": "lb/1587.57 g whole chicken cut into bone-in pieces (or 7  to 8 pieces of chicken with bone in. Leave skin on or remove it, up to you.)",
+        "item": "whole chicken cut into bone-in pieces (or 7  to 8 pieces of chicken with bone in. Leave skin on or remove it, up to you.)",
         "measurements": [
           {
             "amount": "3.5",
-            "unit": null
+            "unit": "lb"
+          },
+          {
+            "amount": "1587.57",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -143,11 +147,15 @@
     {
       "raw": "1 oz/28.3 g chopped fresh cilantro",
       "expected": {
-        "item": "oz/28.3 g chopped fresh cilantro",
+        "item": "chopped fresh cilantro",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "oz"
+          },
+          {
+            "amount": "28.3",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -171,11 +179,15 @@
     {
       "raw": "3/4 cup/ 58.5 g pitted green olives",
       "expected": {
-        "item": "cup/ 58.5 g pitted green olives",
+        "item": "pitted green olives",
         "measurements": [
           {
             "amount": "0.75",
-            "unit": null
+            "unit": "cup"
+          },
+          {
+            "amount": "58.5",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -185,11 +197,15 @@
     {
       "raw": "1/4 cup/37 g raisins (any kind)",
       "expected": {
-        "item": "cup/37 g raisins (any kind)",
+        "item": "raisins (any kind)",
         "measurements": [
           {
             "amount": "0.25",
-            "unit": null
+            "unit": "cup"
+          },
+          {
+            "amount": "37",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -199,11 +215,15 @@
     {
       "raw": "1/4 cup/ 47 g chopped dry apricots",
       "expected": {
-        "item": "cup/ 47 g chopped dry apricots",
+        "item": "chopped dry apricots",
         "measurements": [
           {
             "amount": "0.25",
-            "unit": null
+            "unit": "cup"
+          },
+          {
+            "amount": "47",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -213,11 +233,15 @@
     {
       "raw": "3 tbsp/49.14 g tomato paste",
       "expected": {
-        "item": "tbsp/49.14 g tomato paste",
+        "item": "tomato paste",
         "measurements": [
           {
             "amount": "3",
-            "unit": null
+            "unit": "tbsp"
+          },
+          {
+            "amount": "49.14",
+            "unit": "g"
           }
         ],
         "note": null,

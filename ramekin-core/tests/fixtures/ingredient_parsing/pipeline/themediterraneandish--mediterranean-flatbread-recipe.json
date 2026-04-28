@@ -32,11 +32,15 @@
     {
       "raw": "1 lb/ 453.59 g pizza dough (whole wheat dough, if you prefer) at room temperature (see note if you want to make dough from scratch)",
       "expected": {
-        "item": "lb/ 453.59 g pizza dough at room temperature (see note if you want to make dough from scratch)",
+        "item": "pizza dough at room temperature (see note if you want to make dough from scratch)",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "lb"
+          },
+          {
+            "amount": "453.59",
+            "unit": "g"
           }
         ],
         "note": "whole wheat dough, if you prefer",
@@ -96,11 +100,15 @@
     {
       "raw": "Scant 1 pint/400 g&nbsp; cherry tomatoes, halved",
       "expected": {
-        "item": "pint/400 g  cherry tomatoes",
+        "item": "cherry tomatoes",
         "measurements": [
           {
             "amount": "1",
-            "unit": "scant"
+            "unit": "scant pint"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
           }
         ],
         "note": "halved",
