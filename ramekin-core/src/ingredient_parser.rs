@@ -3114,11 +3114,26 @@ const IGNORED_LINE_PATTERNS: &[&str] = &[
     "you will need",
     "you'll need",
     "ingredients list",
-    // Bare list/section labels that leak through when source markup omits a
-    // trailing colon. Matched case-insensitively, exact whole-line only.
-    "ingredients",
-    "serve with",
 ];
+
+/// Bare list/section labels that leak through `detect_section_header` when the
+/// source omits a trailing colon. We only filter the mixed/lowercase form;
+/// all-caps versions like "SERVE WITH" are intentionally left for
+/// `detect_section_header` to consume as section transitions.
+const STANDALONE_LIST_LABELS: &[&str] = &["ingredients", "serve with"];
+
+fn is_standalone_list_label_line(trimmed: &str) -> bool {
+    if trimmed.chars().any(|c| c.is_alphabetic())
+        && trimmed
+            .chars()
+            .filter(|c| c.is_alphabetic())
+            .all(|c| c.is_uppercase())
+    {
+        return false;
+    }
+    let lower = trimmed.to_lowercase();
+    STANDALONE_LIST_LABELS.iter().any(|&p| lower == p)
+}
 
 /// Prefixes that indicate a line should be ignored (not an ingredient).
 const IGNORED_LINE_PREFIXES: &[&str] = &[
@@ -3283,6 +3298,10 @@ pub fn should_ignore_line(raw: &str) -> bool {
     }
 
     if is_standalone_yield_metadata_line(trimmed) {
+        return true;
+    }
+
+    if is_standalone_list_label_line(trimmed) {
         return true;
     }
 
@@ -3796,10 +3815,14 @@ mod tests {
         assert!(should_ignore_line("Serves 4 generously"));
         assert!(should_ignore_line("Makes 12 muffins"));
         assert!(should_ignore_line("Ingredients"));
-        assert!(should_ignore_line("INGREDIENTS"));
+        assert!(should_ignore_line("ingredients"));
         assert!(should_ignore_line("  ingredients  "));
         assert!(should_ignore_line("Serve with"));
-        assert!(should_ignore_line("SERVE WITH"));
+        assert!(should_ignore_line("serve with"));
+        // All-caps versions are intentionally NOT filtered so that
+        // detect_section_header can promote them to section transitions.
+        assert!(!should_ignore_line("INGREDIENTS"));
+        assert!(!should_ignore_line("SERVE WITH"));
 
         // Regular ingredients should not be ignored
         assert!(!should_ignore_line("1 cup flour"));
