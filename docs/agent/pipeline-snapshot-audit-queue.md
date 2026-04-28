@@ -103,16 +103,16 @@ currently parse. Audit them ahead of the round-robin queue below.
 - [x] 079. `smittenkitchen-com_2023-05-smashed-chicken-meatball-sliders.json` (smittenkitchen-com) - 2026-04-27: no issue
 - [x] 080. `americastestkitchen-com_recipes-12228-ultracreamy-hummus.json` (americastestkitchen-com) - 2026-04-27: example added to p3-parenthetical-quantities-create-junk-measurements
 - [x] 081. `cooking-nytimes-com_recipes-8357-spaghetti-with-fried-eggs.json` (cooking-nytimes-com) - 2026-04-28: no issue
-- [ ] 082. `seriouseats-com_the-best-yorkshire-pudding-popover-recipe.json` (seriouseats-com)
-- [ ] 083. `smittenkitchen-com_2014-02-dijon-and-cognac-beef-stew.json` (smittenkitchen-com)
-- [ ] 084. `americastestkitchen-com_recipes-17210-creamy-garlic-confit-mashed-potatoes.json` (americastestkitchen-com)
-- [ ] 085. `cooking-nytimes-com_recipes-1015803-prime-rib-roast.json` (cooking-nytimes-com)
-- [ ] 086. `seriouseats-com_croquetas-de-jamon-recipe-11680423.json` (seriouseats-com)
-- [ ] 087. `smittenkitchen-com_2023-11-olive-oil-brownies.json` (smittenkitchen-com)
-- [ ] 088. `americastestkitchen-com_recipes-13624-mushroom-risotto.json` (americastestkitchen-com)
-- [ ] 089. `cooking-nytimes-com_recipes-10571-sloppy-joes.json` (cooking-nytimes-com)
-- [ ] 090. `seriouseats-com_classic-pico-de-gallo-salsa-fresca-recipe.json` (seriouseats-com)
-- [ ] 091. `smittenkitchen-com_2022-06-strawberry-brita-cake.json` (smittenkitchen-com)
+- [x] 082. `seriouseats-com_the-best-yorkshire-pudding-popover-recipe.json` (seriouseats-com) - 2026-04-28: no issue
+- [x] 083. `smittenkitchen-com_2014-02-dijon-and-cognac-beef-stew.json` (smittenkitchen-com) - 2026-04-28: no issue
+- [x] 084. `americastestkitchen-com_recipes-17210-creamy-garlic-confit-mashed-potatoes.json` (americastestkitchen-com) - 2026-04-28: no issue
+- [x] 085. `cooking-nytimes-com_recipes-1015803-prime-rib-roast.json` (cooking-nytimes-com) - 2026-04-28: no issue
+- [x] 086. `seriouseats-com_croquetas-de-jamon-recipe-11680423.json` (seriouseats-com) - 2026-04-28: filed `p2-seriouseats-combined-flour-ingredient-dropped.json5`
+- [x] 087. `smittenkitchen-com_2023-11-olive-oil-brownies.json` (smittenkitchen-com) - 2026-04-28: no issue
+- [x] 088. `americastestkitchen-com_recipes-13624-mushroom-risotto.json` (americastestkitchen-com) - 2026-04-28: no issue
+- [x] 089. `cooking-nytimes-com_recipes-10571-sloppy-joes.json` (cooking-nytimes-com) - 2026-04-28: no issue
+- [x] 090. `seriouseats-com_classic-pico-de-gallo-salsa-fresca-recipe.json` (seriouseats-com) - 2026-04-28: no issue
+- [x] 091. `smittenkitchen-com_2022-06-strawberry-brita-cake.json` (smittenkitchen-com) - 2026-04-28: no issue
 - [ ] 092. `americastestkitchen-com_recipes-9123-mozzarella-sticks.json` (americastestkitchen-com)
 - [ ] 093. `cooking-nytimes-com_recipes-1022111-fried-fish-sandwich.json` (cooking-nytimes-com)
 - [ ] 094. `seriouseats-com_the-best-slow-cooked-italian-american-tomato-sauce-red-sauce-recipe.json` (seriouseats-com)
