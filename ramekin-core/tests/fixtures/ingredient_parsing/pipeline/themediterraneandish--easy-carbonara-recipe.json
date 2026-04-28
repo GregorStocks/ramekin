@@ -119,14 +119,18 @@
     {
       "raw": "1/2 cup grated Parmesan cheese, more for serving",
       "expected": {
-        "item": "grated Parmesan cheese, more for serving",
+        "item": "grated Parmesan cheese",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "more for serving",
         "category": "Cheese"
       }
     },
@@ -161,14 +165,14 @@
     {
       "raw": "1/2 cup packed basil leaves, more for serving (optional)",
       "expected": {
-        "item": "packed basil leaves, more for serving",
+        "item": "packed basil leaves",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "optional",
+        "note": "optional, more for serving",
         "category": "Spices & Seasonings"
       }
     },

@@ -92,18 +92,18 @@
     {
       "raw": "sriracha or hot sauce, if desired",
       "expected": {
-        "item": "sriracha or hot sauce, if desired",
+        "item": "sriracha or hot sauce",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "sour cream, if desired",
       "expected": {
-        "item": "sour cream, if desired",
+        "item": "sour cream",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Dairy & Eggs"
       }
     }

@@ -205,14 +205,18 @@
     {
       "raw": "1/4 teaspoon cayenne, or to taste",
       "expected": {
-        "item": "cayenne, or to taste",
+        "item": "cayenne",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Spices & Seasonings"
       }
     },

@@ -179,14 +179,18 @@
     {
       "raw": "1 teaspoon cayenne, or to taste",
       "expected": {
-        "item": "cayenne, or to taste",
+        "item": "cayenne",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.8",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Spices & Seasonings"
       }
     },

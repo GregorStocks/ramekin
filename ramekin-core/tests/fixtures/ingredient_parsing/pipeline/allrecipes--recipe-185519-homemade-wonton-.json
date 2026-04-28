@@ -229,14 +229,14 @@
     {
       "raw": "1 dash soy sauce, or to taste",
       "expected": {
-        "item": "soy sauce, or to taste",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "dash"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Condiments & Sauces"
       }
     },

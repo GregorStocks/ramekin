@@ -171,7 +171,7 @@
     {
       "raw": "6 tablespoons (85 grams) unsalted butter, melted or melted and browned, if desired",
       "expected": {
-        "item": "unsalted butter, melted or melted and browned, if desired",
+        "item": "unsalted butter, melted or melted and browned",
         "measurements": [
           {
             "amount": "6",
@@ -182,7 +182,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "if desired",
         "category": "Dairy & Eggs"
       }
     },

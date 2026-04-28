@@ -51,14 +51,18 @@
     {
       "raw": "2 tablespoons freshly squeezed lemon juice, or more to taste",
       "expected": {
-        "item": "freshly squeezed lemon juice, or more to taste",
+        "item": "freshly squeezed lemon juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or more to taste",
         "category": "Beverages"
       }
     },
@@ -79,14 +83,18 @@
     {
       "raw": "3/4 teaspoon table salt, or more to taste",
       "expected": {
-        "item": "table salt, or more to taste",
+        "item": "table salt",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
+          },
+          {
+            "amount": "4.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or more to taste",
         "category": "Spices & Seasonings"
       }
     },

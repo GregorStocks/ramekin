@@ -33,14 +33,14 @@
     {
       "raw": "0.25 cup chili paste, such as sambal oelek, or to taste",
       "expected": {
-        "item": "chili paste, such as sambal oelek, or to taste",
+        "item": "chili paste, such as sambal oelek",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Condiments & Sauces"
       }
     },

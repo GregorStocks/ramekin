@@ -89,23 +89,27 @@
     {
       "raw": "1 tablespoon red wine vinegar, or to taste",
       "expected": {
-        "item": "red wine vinegar, or to taste",
+        "item": "red wine vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "salt to taste, if desired",
       "expected": {
-        "item": "salt to taste, if desired",
+        "item": "salt to taste",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Spices & Seasonings"
       }
     },

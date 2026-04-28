@@ -121,18 +121,18 @@
     {
       "raw": "soft boiled eggs, if desired",
       "expected": {
-        "item": "soft boiled eggs, if desired",
+        "item": "soft boiled eggs",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "dark soy sauce and white pepper, if desired",
       "expected": {
-        "item": "dark soy sauce and white pepper, if desired",
+        "item": "dark soy sauce and white pepper",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Spices & Seasonings"
       }
     }

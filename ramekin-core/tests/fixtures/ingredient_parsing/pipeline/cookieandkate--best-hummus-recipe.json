@@ -45,14 +45,18 @@
     {
       "raw": "¼ cup lemon juice&nbsp;(from 1 ½ to 2 lemons), more to taste",
       "expected": {
-        "item": "lemon juice, more to taste",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
           }
         ],
-        "note": "from 1 1/2 to 2 lemons",
+        "note": "from 1 1/2 to 2 lemons, more to taste",
         "category": "Beverages"
       }
     },

@@ -158,14 +158,18 @@
     {
       "raw": "2 teaspoons honey, or to taste",
       "expected": {
-        "item": "honey, or to taste",
+        "item": "honey",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Baking"
       }
     },

@@ -153,28 +153,36 @@
     {
       "raw": "2 tablespoons fish sauce, or to taste",
       "expected": {
-        "item": "fish sauce, or to taste",
+        "item": "fish sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "36",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "2 tablespoons sugar, or to taste",
       "expected": {
-        "item": "sugar, or to taste",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Baking"
       }
     },

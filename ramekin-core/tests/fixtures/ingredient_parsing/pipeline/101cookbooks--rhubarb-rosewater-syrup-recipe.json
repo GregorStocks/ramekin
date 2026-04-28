@@ -67,28 +67,28 @@
     {
       "raw": "2-3 tablespoons freshly squeezed lime juice, or to taste",
       "expected": {
-        "item": "freshly squeezed lime juice, or to taste",
+        "item": "freshly squeezed lime juice",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Beverages"
       }
     },
     {
       "raw": "scant 2 teaspoons rosewater, or to taste",
       "expected": {
-        "item": "rosewater, or to taste",
+        "item": "rosewater",
         "measurements": [
           {
             "amount": "2",
             "unit": "scant tsp"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Other"
       }
     },

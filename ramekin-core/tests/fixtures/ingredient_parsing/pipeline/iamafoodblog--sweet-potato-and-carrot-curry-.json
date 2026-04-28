@@ -33,14 +33,18 @@
     {
       "raw": "2 cups vegetable broth, or more to taste",
       "expected": {
-        "item": "vegetable broth, or more to taste",
+        "item": "vegetable broth",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "498",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or more to taste",
         "category": "Canned Goods"
       }
     },

@@ -173,9 +173,9 @@
     {
       "raw": "To serve: Dollops of your favorite ricotta and slivers of basil leaves, if desired",
       "expected": {
-        "item": "To serve: Dollops of your favorite ricotta and slivers of basil leaves, if desired",
+        "item": "To serve: Dollops of your favorite ricotta and slivers of basil leaves",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Cheese"
       }
     }

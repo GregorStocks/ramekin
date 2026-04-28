@@ -154,7 +154,7 @@
     {
       "raw": "1/4 cup (60 ml) heavy cream, or more to taste",
       "expected": {
-        "item": "heavy cream, or more to taste",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.25",
@@ -163,9 +163,13 @@
           {
             "amount": "60",
             "unit": "ml"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or more to taste",
         "category": "Dairy & Eggs"
       }
     }

@@ -164,14 +164,18 @@
     {
       "raw": "1 tablespoon honey, or more to taste",
       "expected": {
-        "item": "honey, or more to taste",
+        "item": "honey",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or more to taste",
         "category": "Baking"
       }
     },

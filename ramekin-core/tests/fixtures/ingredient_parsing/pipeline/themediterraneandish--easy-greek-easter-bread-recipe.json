@@ -23,14 +23,18 @@
     {
       "raw": "5 1/2 cups all-purpose flour, more for dusting",
       "expected": {
-        "item": "all-purpose flour, more for dusting",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "5.5",
             "unit": "cup"
+          },
+          {
+            "amount": "688",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "more for dusting",
         "category": "Baking"
       }
     },

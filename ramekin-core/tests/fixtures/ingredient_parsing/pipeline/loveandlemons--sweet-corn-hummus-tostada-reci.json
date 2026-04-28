@@ -110,14 +110,18 @@
     {
       "raw": "½ teaspoon smoked paprika, or to taste",
       "expected": {
-        "item": "smoked paprika, or to taste",
+        "item": "smoked paprika",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Spices & Seasonings"
       }
     },

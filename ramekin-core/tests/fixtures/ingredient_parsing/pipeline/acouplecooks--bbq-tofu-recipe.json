@@ -78,14 +78,14 @@
     {
       "raw": "1/2 tablespoon chili garlic sauce, if desired",
       "expected": {
-        "item": "chili garlic sauce, if desired",
+        "item": "chili garlic sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "if desired",
         "category": "Condiments & Sauces"
       }
     }

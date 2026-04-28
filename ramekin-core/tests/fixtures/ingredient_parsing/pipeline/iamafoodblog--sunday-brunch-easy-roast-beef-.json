@@ -93,9 +93,9 @@
     {
       "raw": "eggs to serve, if desired",
       "expected": {
-        "item": "eggs to serve, if desired",
+        "item": "eggs to serve",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Dairy & Eggs"
       }
     }

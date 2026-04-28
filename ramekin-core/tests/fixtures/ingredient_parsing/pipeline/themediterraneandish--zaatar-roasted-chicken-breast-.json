@@ -116,14 +116,14 @@
     {
       "raw": "1 tbsp Sumac, more for later",
       "expected": {
-        "item": "Sumac, more for later",
+        "item": "Sumac",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "more for later",
         "category": "Spices & Seasonings"
       }
     },
@@ -166,14 +166,18 @@
     {
       "raw": "1 tsp paprika, more for later",
       "expected": {
-        "item": "paprika, more for later",
+        "item": "paprika",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.3",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "more for later",
         "category": "Spices & Seasonings"
       }
     },

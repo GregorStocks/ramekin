@@ -5,7 +5,7 @@
     {
       "raw": "2 tbsp/ 30 ml Early Harvest Greek extra virgin olive oil, more for later",
       "expected": {
-        "item": "Early Harvest Greek extra virgin olive oil, more for later",
+        "item": "Early Harvest Greek extra virgin olive oil",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "more for later",
         "category": "Oils & Vinegars"
       }
     },

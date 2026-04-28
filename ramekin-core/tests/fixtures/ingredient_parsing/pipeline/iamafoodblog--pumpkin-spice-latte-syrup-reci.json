@@ -177,23 +177,23 @@
     {
       "raw": "1-2 tablespoons pumpkin spice latte syrup, or to taste",
       "expected": {
-        "item": "pumpkin spice latte syrup, or to taste",
+        "item": "pumpkin spice latte syrup",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Produce"
       }
     },
     {
       "raw": "whipped cream and cinnamon, if desired",
       "expected": {
-        "item": "whipped cream and cinnamon, if desired",
+        "item": "whipped cream and cinnamon",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Dairy & Eggs"
       }
     }

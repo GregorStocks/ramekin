@@ -33,14 +33,14 @@
     {
       "raw": "scant 1/2 teaspoon fine sea salt, or to taste",
       "expected": {
-        "item": "fine sea salt, or to taste",
+        "item": "fine sea salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "scant tsp"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Spices & Seasonings"
       }
     },

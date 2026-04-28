@@ -51,14 +51,18 @@
     {
       "raw": "1 tablespoon lemon juice, or more to taste",
       "expected": {
-        "item": "lemon juice, or more to taste",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or more to taste",
         "category": "Beverages"
       }
     },

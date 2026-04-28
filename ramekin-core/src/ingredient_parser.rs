@@ -1134,8 +1134,19 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                 let potential_item = remaining.get(..comma_idx).unwrap_or("").trim();
                 // Check if it looks like a prep note AND extracting it wouldn't
                 // leave only prep words as the item
-                if is_trailing_prep_note(potential_note) && !is_only_prep_words(potential_item) {
-                    note = Some(potential_note.to_string());
+                if (is_trailing_prep_note(potential_note)
+                    || is_trailing_guidance_note(potential_note))
+                    && !is_only_prep_words(potential_item)
+                {
+                    let mut extracted_note = potential_note.to_string();
+                    if is_trailing_guidance_note(potential_note) {
+                        if let Some(branch_note) =
+                            take_last_or_parenthetical_note(&mut deferred_parenthetical_notes)
+                        {
+                            extracted_note = format!("{} ({})", extracted_note, branch_note);
+                        }
+                    }
+                    note = Some(extracted_note);
                     remaining = potential_item.to_string();
                 }
             }
@@ -2703,6 +2714,47 @@ fn is_trailing_prep_note(s: &str) -> bool {
     saw_prep
 }
 
+fn is_trailing_guidance_note(s: &str) -> bool {
+    let normalized = s
+        .trim()
+        .trim_matches(|c: char| !c.is_ascii_alphanumeric() && !c.is_ascii_whitespace())
+        .to_lowercase();
+
+    if normalized.is_empty() {
+        return false;
+    }
+
+    const EXACT_GUIDANCE_NOTES: &[&str] = &[
+        "as needed",
+        "for garnish",
+        "for serving",
+        "if desired",
+        "or less",
+        "or more",
+        "or to taste",
+        "to taste",
+    ];
+    if EXACT_GUIDANCE_NOTES.contains(&normalized.as_str()) {
+        return true;
+    }
+
+    const GUIDANCE_PREFIXES: &[&str] = &[
+        "and more for ",
+        "and more to taste",
+        "more for ",
+        "more to taste",
+        "or more for ",
+        "or more to taste",
+        "plus additional to taste",
+        "plus extra for ",
+        "plus more for ",
+        "plus more to taste",
+    ];
+    GUIDANCE_PREFIXES
+        .iter()
+        .any(|prefix| normalized.starts_with(prefix))
+}
+
 /// Check if a string consists only of prep words (comma-separated).
 /// e.g., "finely chopped" -> true, "cooked chicken" -> false, "sliced" -> true
 fn is_only_prep_words(s: &str) -> bool {
@@ -3607,6 +3659,15 @@ mod tests {
     }
 
     #[test]
+    fn test_trailing_guidance_note_allows_non_prep_suffixes() {
+        assert!(is_trailing_guidance_note("or to taste"));
+        assert!(is_trailing_guidance_note("or more to taste"));
+        assert!(is_trailing_guidance_note("more for serving"));
+        assert!(is_trailing_guidance_note("plus extra for seasoning"));
+        assert!(!is_trailing_guidance_note("unseasoned dried breadcrumbs"));
+    }
+
+    #[test]
     fn test_orphaned_prep_word_fallback() {
         // When the item would be just a prep word, return raw
         let result = parse_ingredient("sliced");
@@ -3648,6 +3709,16 @@ mod tests {
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("4".to_string()));
         assert_eq!(result.measurements[0].unit, None);
+    }
+
+    #[test]
+    fn test_trailing_guidance_suffix_is_note_not_item_identity() {
+        let result = parse_ingredient("0.25 cup pasta sauce, or to taste");
+        assert_eq!(result.item, "pasta sauce");
+        assert_eq!(result.note, Some("or to taste".to_string()));
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("0.25".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
     }
 
     #[test]

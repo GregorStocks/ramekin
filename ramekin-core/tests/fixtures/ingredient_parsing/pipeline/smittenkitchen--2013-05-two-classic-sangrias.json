@@ -88,9 +88,9 @@
     {
       "raw": "Sparkling water, if desired",
       "expected": {
-        "item": "Sparkling water, if desired",
+        "item": "Sparkling water",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Beverages"
       }
     },
@@ -161,14 +161,18 @@
     {
       "raw": "1 tablespoon sugar, or more to taste",
       "expected": {
-        "item": "sugar, or more to taste",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or more to taste",
         "category": "Baking"
       }
     },

@@ -113,14 +113,14 @@
     {
       "raw": "1 part simple syrup, or to taste (I will use perhaps 1/2 or 3/4 of a part next time, see Note above)",
       "expected": {
-        "item": "part simple syrup, or to taste",
+        "item": "part simple syrup",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "I will use perhaps 1/2 or 3/4 of a part next time, see Note above",
+        "note": "or to taste (I will use perhaps 1/2 or 3/4 of a part next time, see Note above)",
         "category": "Other"
       }
     },

@@ -251,9 +251,9 @@
     {
       "raw": "Additional honey, if desired",
       "expected": {
-        "item": "Additional honey, if desired",
+        "item": "Additional honey",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Baking"
       }
     }

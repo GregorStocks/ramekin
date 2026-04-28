@@ -194,14 +194,14 @@
     {
       "raw": "1/2 to 1 teaspoon cayenne or a mild chile powder, such as kashmiri, or to taste",
       "expected": {
-        "item": "cayenne or a mild chile powder, such as kashmiri, or to taste",
+        "item": "cayenne or a mild chile powder, such as kashmiri",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Spices & Seasonings"
       }
     },

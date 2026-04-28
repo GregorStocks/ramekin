@@ -152,14 +152,18 @@
     {
       "raw": "1 tablespoon white wine vinegar, or more to taste (I used 2)",
       "expected": {
-        "item": "white wine vinegar, or more to taste",
+        "item": "white wine vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": "I used 2",
+        "note": "or more to taste (I used 2)",
         "category": "Oils & Vinegars"
       }
     },

@@ -189,14 +189,18 @@
     {
       "raw": "3/4 teaspoon granulated sugar, or more to taste",
       "expected": {
-        "item": "granulated sugar, or more to taste",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
+          },
+          {
+            "amount": "3.1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or more to taste",
         "category": "Baking"
       }
     },

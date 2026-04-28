@@ -171,14 +171,14 @@
     {
       "raw": "1 Thai chili, if desired",
       "expected": {
-        "item": "Thai chili, if desired",
+        "item": "Thai chili",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "if desired",
         "category": "Other"
       }
     },

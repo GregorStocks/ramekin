@@ -37,14 +37,14 @@
     {
       "raw": "scant 1/4 teaspoon fine grain sea salt, or to taste",
       "expected": {
-        "item": "fine grain sea salt, or to taste",
+        "item": "fine grain sea salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "scant tsp"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Spices & Seasonings"
       }
     },

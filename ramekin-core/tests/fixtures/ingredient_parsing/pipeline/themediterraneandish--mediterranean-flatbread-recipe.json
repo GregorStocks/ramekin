@@ -64,14 +64,14 @@
     {
       "raw": "1 tsp za&amp;#8217;atar spice, more for later",
       "expected": {
-        "item": "za’atar spice, more for later",
+        "item": "za’atar spice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "more for later",
         "category": "Spices & Seasonings"
       }
     },

@@ -249,14 +249,14 @@
     {
       "raw": "1/2 lemon, or more to taste",
       "expected": {
-        "item": "lemon, or more to taste",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or more to taste",
         "category": "Produce"
       }
     }

@@ -77,14 +77,18 @@
     {
       "raw": "0.25 cup white sugar, or to taste",
       "expected": {
-        "item": "white sugar, or to taste",
+        "item": "white sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Baking"
       }
     },

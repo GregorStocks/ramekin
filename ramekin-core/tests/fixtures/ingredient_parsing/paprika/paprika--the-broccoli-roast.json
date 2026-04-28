@@ -114,14 +114,14 @@
     {
       "raw": "1 teaspoon coarse or kosher salt, and more to taste",
       "expected": {
-        "item": "coarse or kosher salt, and more to taste",
+        "item": "coarse or kosher salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "and more to taste",
         "category": "Spices & Seasonings"
       }
     },

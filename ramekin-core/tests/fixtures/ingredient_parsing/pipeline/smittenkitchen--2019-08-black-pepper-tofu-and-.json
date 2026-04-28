@@ -161,14 +161,14 @@
     {
       "raw": "1 tablespoon crushed or very coarsely ground black pepper, and more to taste",
       "expected": {
-        "item": "crushed or very coarsely ground black pepper, and more to taste",
+        "item": "crushed or very coarsely ground black pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "and more to taste",
         "category": "Spices & Seasonings"
       }
     },

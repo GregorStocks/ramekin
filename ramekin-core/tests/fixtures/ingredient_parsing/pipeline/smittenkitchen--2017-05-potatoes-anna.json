@@ -41,14 +41,14 @@
     {
       "raw": "1/2 teaspoon fine sea or table salt, or to taste",
       "expected": {
-        "item": "fine sea or table salt, or to taste",
+        "item": "fine sea or table salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Spices & Seasonings"
       }
     },

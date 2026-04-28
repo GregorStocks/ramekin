@@ -259,14 +259,14 @@
     {
       "raw": "1 recipe guacamole, for serving, if desired",
       "expected": {
-        "item": "recipe guacamole, for serving, if desired",
+        "item": "recipe guacamole, for serving",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "if desired",
         "section": "For the Fajitas",
         "category": "Other"
       }
@@ -274,14 +274,14 @@
     {
       "raw": "1 recipe pico de gallo, for serving, if desired",
       "expected": {
-        "item": "recipe pico de gallo, for serving, if desired",
+        "item": "recipe pico de gallo, for serving",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "if desired",
         "section": "For the Fajitas",
         "category": "Other"
       }
@@ -289,9 +289,9 @@
     {
       "raw": "Sour cream, shredded cheese, and salsa, for serving, if desired",
       "expected": {
-        "item": "Sour cream, shredded cheese, and salsa, for serving, if desired",
+        "item": "Sour cream, shredded cheese, and salsa, for serving",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "section": "For the Fajitas",
         "category": "Dairy & Eggs"
       }

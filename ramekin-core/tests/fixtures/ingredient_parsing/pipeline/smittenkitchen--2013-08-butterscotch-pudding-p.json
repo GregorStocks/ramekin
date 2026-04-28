@@ -73,14 +73,14 @@
     {
       "raw": "1/4 teaspoon flaky sea salt, or to taste (use less of a fine sea salt)",
       "expected": {
-        "item": "flaky sea salt, or to taste",
+        "item": "flaky sea salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": "use less of a fine sea salt",
+        "note": "or to taste (use less of a fine sea salt)",
         "category": "Spices & Seasonings"
       }
     },

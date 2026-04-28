@@ -151,14 +151,14 @@
     {
       "raw": "¾ cup Stonyfield Organic Plain Whole Milk Yogurt, more for serving",
       "expected": {
-        "item": "Stonyfield Organic Plain Whole Milk Yogurt, more for serving",
+        "item": "Stonyfield Organic Plain Whole Milk Yogurt",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "more for serving",
         "category": "Dairy & Eggs"
       }
     },

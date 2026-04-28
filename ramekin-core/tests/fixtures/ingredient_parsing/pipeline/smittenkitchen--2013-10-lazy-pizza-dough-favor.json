@@ -134,14 +134,14 @@
     {
       "raw": "Pinch of sugar, if desired",
       "expected": {
-        "item": "sugar, if desired",
+        "item": "sugar",
         "measurements": [
           {
             "amount": null,
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "if desired",
         "category": "Baking"
       }
     },

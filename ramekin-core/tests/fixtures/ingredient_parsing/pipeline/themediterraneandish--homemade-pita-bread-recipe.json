@@ -87,14 +87,18 @@
     {
       "raw": "2 tbsp extra virgin olive oil (I used Private Reserve Greek extra virgin olive oil), more for the bowl",
       "expected": {
-        "item": "extra virgin olive oil, more for the bowl",
+        "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
-        "note": "I used Private Reserve Greek extra virgin olive oil",
+        "note": "I used Private Reserve Greek extra virgin olive oil, more for the bowl",
         "category": "Oils & Vinegars"
       }
     }

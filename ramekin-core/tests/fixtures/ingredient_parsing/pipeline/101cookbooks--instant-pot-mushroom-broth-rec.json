@@ -69,14 +69,14 @@
     {
       "raw": "1/2 teaspoon freshly ground pepper, or to taste",
       "expected": {
-        "item": "freshly ground pepper, or to taste",
+        "item": "freshly ground pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Spices & Seasonings"
       }
     },

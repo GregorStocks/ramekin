@@ -101,14 +101,18 @@
     {
       "raw": "½ teaspoon kosher salt, or to taste",
       "expected": {
-        "item": "kosher salt, or to taste",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or to taste",
         "category": "Spices & Seasonings"
       }
     },

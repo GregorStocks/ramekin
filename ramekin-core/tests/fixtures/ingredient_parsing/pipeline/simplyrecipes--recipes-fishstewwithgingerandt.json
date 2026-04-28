@@ -113,28 +113,32 @@
     {
       "raw": "1/2 teaspoon salt, or more to taste",
       "expected": {
-        "item": "salt, or more to taste",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or more to taste",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/4 teaspoon black pepper, or more to taste",
       "expected": {
-        "item": "black pepper, or more to taste",
+        "item": "black pepper",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or more to taste",
         "category": "Spices & Seasonings"
       }
     },

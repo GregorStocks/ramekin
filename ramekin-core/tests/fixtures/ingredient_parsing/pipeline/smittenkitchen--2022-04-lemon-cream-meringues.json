@@ -219,7 +219,7 @@
     {
       "raw": "2 tablespoons (25 grams) granulated sugar, or more to taste",
       "expected": {
-        "item": "granulated sugar, or more to taste",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "2",
@@ -230,7 +230,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or more to taste",
         "category": "Baking"
       }
     },
