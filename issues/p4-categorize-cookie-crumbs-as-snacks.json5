@@ -1,0 +1,19 @@
+{
+  "title": "Categorize cookie crumbs as snacks",
+  "description": "While fixing ingredient categorizer substring false \
+positives, the curated `ampersand_mixed_number` fixture changed from an \
+accidental `Beverages` category to `Other` for `Oreo cookie crumbs`.\n\
+\n\
+That is better than the old `rum`-inside-`crumbs` match, but cookie crumbs \
+should probably categorize through an explicit `cookie` or `cookie crumb` \
+mapping rather than falling back to `Other`.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+    "categorization",
+  ],
+  "created_at": "2026-04-28T12:07:21-07:00",
+  "updated_at": "2026-04-28T12:07:21-07:00",
+}

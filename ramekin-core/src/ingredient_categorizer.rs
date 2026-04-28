@@ -63,12 +63,60 @@ pub fn categorize(item: &str) -> &'static str {
     let lower = item.to_lowercase();
 
     for (keyword, category) in INGREDIENT_MAP.iter() {
-        if lower.contains(keyword) {
+        if keyword_matches(&lower, keyword) {
             return category_to_static(category);
         }
     }
 
     "Other"
+}
+
+fn keyword_matches(item: &str, keyword: &str) -> bool {
+    let item_tokens = word_tokens(item);
+    let keyword_tokens = word_tokens(keyword);
+
+    if keyword_tokens.is_empty() || item_tokens.len() < keyword_tokens.len() {
+        return false;
+    }
+
+    item_tokens
+        .windows(keyword_tokens.len())
+        .any(|window| keyword_tokens_match(window, &keyword_tokens))
+}
+
+fn word_tokens(text: &str) -> Vec<&str> {
+    text.split(|c| !is_word_char(c))
+        .filter(|token| !token.is_empty())
+        .collect()
+}
+
+fn keyword_tokens_match(item_tokens: &[&str], keyword_tokens: &[&str]) -> bool {
+    let last_index = keyword_tokens.len() - 1;
+
+    item_tokens.iter().zip(keyword_tokens).enumerate().all(
+        |(index, (item_token, keyword_token))| {
+            if index == last_index {
+                token_matches_keyword(item_token, keyword_token)
+            } else {
+                item_token == keyword_token
+            }
+        },
+    )
+}
+
+fn token_matches_keyword(item_token: &str, keyword_token: &str) -> bool {
+    item_token == keyword_token
+        || item_token
+            .strip_prefix(keyword_token)
+            .is_some_and(is_allowed_inflection_suffix)
+}
+
+fn is_allowed_inflection_suffix(suffix: &str) -> bool {
+    matches!(suffix, "s" | "es" | "ies" | "y")
+}
+
+fn is_word_char(c: char) -> bool {
+    c.is_alphanumeric()
 }
 
 #[cfg(test)]
@@ -102,5 +150,28 @@ mod tests {
     fn test_unknown() {
         assert_eq!(categorize("xyzfoobar123"), "Other");
         assert_eq!(categorize(""), "Other");
+    }
+
+    #[test]
+    fn test_spirits_with_brand_guidance() {
+        assert_eq!(
+            categorize("London dry gin, such as Beefeater or Tanqueray"),
+            "Beverages"
+        );
+        assert_eq!(
+            categorize("rye whiskey, preferably Rittenhouse"),
+            "Beverages"
+        );
+        assert_eq!(
+            categorize("dark aged rum, preferably El Dorado 8"),
+            "Beverages"
+        );
+    }
+
+    #[test]
+    fn test_keywords_do_not_match_inside_words() {
+        assert_eq!(categorize("Beefeater"), "Other");
+        assert_eq!(categorize("ginger"), "Produce");
+        assert_eq!(categorize("graham cracker crumbs"), "Snacks");
     }
 }
