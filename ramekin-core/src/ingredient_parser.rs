@@ -730,13 +730,18 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     let mut alt_measurements = Vec::new();
     let mut deferred_parenthetical_notes = Vec::new();
     while let Some(start) = remaining.find('(') {
-        let Some(close_idx) = find_matching_closing_paren(&remaining, start) else {
+        let Some(close_idx) = find_matching_closing_paren(&remaining, start).or_else(|| {
+            remaining
+                .get(start + 1..)
+                .and_then(|tail| tail.find(')').map(|idx| start + 1 + idx))
+        }) else {
             break;
         };
         let paren_content = match remaining.get(start + 1..close_idx) {
             Some(s) => s,
             None => break,
         };
+        let paren_content = paren_content.trim_start_matches('(').trim();
 
         let raw_before_parenthetical = remaining.get(..start).unwrap_or("");
         let (follows_comma, follows_or) = parenthetical_branch_context(raw_before_parenthetical);

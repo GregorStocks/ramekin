@@ -5,14 +5,14 @@
     {
       "raw": "1  packet unflavored gelatin (1/4 oz (roughly 7 grams or 1 1/2 tsp per packet)",
       "expected": {
-        "item": "packet unflavored gelatin (1/4 oz (roughly 7 grams",
+        "item": "packet unflavored gelatin",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "or 1 1/2 tsp per packet)",
+        "note": "1/4 oz (roughly 7 grams or 1 1/2 tsp per packet",
         "category": "Baking"
       }
     },
