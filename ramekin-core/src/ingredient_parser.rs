@@ -1628,7 +1628,7 @@ fn push_deferred_parenthetical_note(
     follows_or: bool,
 ) {
     let segment = segment.trim();
-    if segment.is_empty() {
+    if segment.is_empty() || is_parenthetical_price_metadata(segment) {
         return;
     }
 
@@ -1637,6 +1637,35 @@ fn push_deferred_parenthetical_note(
         follows_comma,
         follows_or,
     });
+}
+
+fn is_parenthetical_price_metadata(segment: &str) -> bool {
+    let Some(price) = segment.trim().strip_prefix('$') else {
+        return false;
+    };
+    let Some((dollars, cents)) = price.split_once('.') else {
+        return is_valid_price_dollars(price);
+    };
+
+    is_valid_price_dollars(dollars) && cents.len() == 2 && cents.chars().all(|c| c.is_ascii_digit())
+}
+
+fn is_valid_price_dollars(dollars: &str) -> bool {
+    let mut saw_digit = false;
+    let mut last_was_comma = false;
+
+    for c in dollars.chars() {
+        if c.is_ascii_digit() {
+            saw_digit = true;
+            last_was_comma = false;
+        } else if c == ',' && saw_digit && !last_was_comma {
+            last_was_comma = true;
+        } else {
+            return false;
+        }
+    }
+
+    saw_digit && !last_was_comma
 }
 
 fn take_last_comma_parenthetical_note(
@@ -4251,6 +4280,36 @@ mod tests {
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("1".to_string()));
         assert_eq!(result.measurements[0].unit, None);
+    }
+
+    #[test]
+    fn test_parenthetical_price_metadata_is_not_preserved_as_note() {
+        let result = parse_ingredient("6 ounces vanilla wafers ($1.43)");
+        assert_eq!(result.item, "vanilla wafers");
+        assert_eq!(result.note, None);
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("6".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("oz".to_string()));
+    }
+
+    #[test]
+    fn test_parenthetical_price_metadata_does_not_pollute_other_notes() {
+        let result = parse_ingredient("5.5 lb. bone-in turkey breast (skin on)** ($19.25)");
+        assert_eq!(result.item, "bone-in turkey breast");
+        assert_eq!(result.note, Some("skin on".to_string()));
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("5.5".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("lb".to_string()));
+    }
+
+    #[test]
+    fn test_parenthetical_price_metadata_preserves_trailing_prep_note() {
+        let result = parse_ingredient("8 Tbsp butter, room temperature ($1.12)");
+        assert_eq!(result.item, "butter");
+        assert_eq!(result.note, Some("room temperature".to_string()));
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("8".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("tbsp".to_string()));
     }
 
     #[test]

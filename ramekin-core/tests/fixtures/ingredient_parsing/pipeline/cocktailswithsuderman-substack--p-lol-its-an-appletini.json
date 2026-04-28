@@ -1,0 +1,83 @@
+{
+  "source": "cocktailswithsuderman-substack",
+  "recipe_slug": "p-lol-its-an-appletini",
+  "ingredients": [
+    {
+      "raw": "(This makes a 12-ounce batch.)",
+      "expected": {
+        "item": "This makes a 12-ounce batch.",
+        "measurements": [],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "6 drops 20 percent saline solution*",
+      "expected": {
+        "item": "20 percent saline solution",
+        "measurements": [
+          {
+            "amount": "6",
+            "unit": "drop"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "2 ounces fresh Granny Smith apple juice",
+      "expected": {
+        "item": "fresh Granny Smith apple juice",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "3 ounces Dolin dry vermouth",
+      "expected": {
+        "item": "Dolin dry vermouth",
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "oz"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "7 ounces London dry gin, such as Beefeater or Tanqueray",
+      "expected": {
+        "item": "London dry gin, such as Beefeater or Tanqueray",
+        "measurements": [
+          {
+            "amount": "7",
+            "unit": "oz"
+          },
+          {
+            "amount": "198",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Meat & Seafood"
+      }
+    }
+  ]
+}

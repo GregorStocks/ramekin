@@ -1,0 +1,138 @@
+{
+  "source": "cocktailswithsuderman-substack",
+  "recipe_slug": "p-a-question-about-the-clover-",
+  "ingredients": [
+    {
+      "raw": "40 grams raspberries (about 10 raspberries)",
+      "expected": {
+        "item": "raspberries",
+        "measurements": [
+          {
+            "amount": "40",
+            "unit": "g"
+          }
+        ],
+        "note": "about 10 raspberries",
+        "category": "Produce"
+      }
+    },
+    {
+      "raw": "200 grams sugar",
+      "expected": {
+        "item": "sugar",
+        "measurements": [
+          {
+            "amount": "200",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Baking"
+      }
+    },
+    {
+      "raw": "100 grams water",
+      "expected": {
+        "item": "water",
+        "measurements": [
+          {
+            "amount": "100",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "½ ounce egg white",
+      "expected": {
+        "item": "egg white",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "½ ounce rich (2:1) syrup*",
+      "expected": {
+        "item": "rich syrup",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
+          }
+        ],
+        "note": "2:1",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "¼ ounce crème de framboise (preferably Giffard)*",
+      "expected": {
+        "item": "crème de framboise",
+        "measurements": [
+          {
+            "amount": "0.25",
+            "unit": "oz"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
+          }
+        ],
+        "note": "preferably Giffard",
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "¾ ounce fresh squeezed lemon juice",
+      "expected": {
+        "item": "fresh squeezed lemon juice",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 ounces dry gin (preferably Tanqueray)",
+      "expected": {
+        "item": "dry gin",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
+          }
+        ],
+        "note": "preferably Tanqueray",
+        "category": "Beverages"
+      }
+    }
+  ]
+}

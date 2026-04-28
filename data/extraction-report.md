@@ -3,9 +3,9 @@
 ## Overall
 
 - Total URLs: 5534
-- Completed: 5467 (98.8%)
+- Completed: 5470 (98.8%)
 - Failed at fetch: 0 (0.0%)
-- Failed at extract: 67 (1.2%)
+- Failed at extract: 64 (1.2%)
 
 ## Extraction Methods
 
@@ -16,18 +16,18 @@
 
 ## Ingredient Parsing
 
-- Total ingredients: 60725
-- Volume-to-weight converted: 18904/42754 (44.2%)
+- Total ingredients: 60743
+- Volume-to-weight converted: 18904/42769 (44.2%)
 - Unknown ingredient (no density data): 14330
-- Already has weight: 9520
-- No volume unit (count-based): 17604
-- Metric converted (oz→g): 2454
+- Already has weight: 9535
+- No volume unit (count-based): 17607
+- Metric converted (oz→g): 2466
 - Metric converted (lb→g): 1812
 
 ## AI Cache
 
-- Cache hits: 5451/5451 (100.0%)
-- API calls: 0/5451 (0.0%)
+- Cache hits: 5454/5454 (100.0%)
+- API calls: 0/5454 (0.0%)
 
 ## By Site
 
@@ -53,7 +53,7 @@
 | cafedelites.com | 55 | 55 | 100.0% |
 | chefspencil.com | 4 | 4 | 100.0% |
 | chopstickchronicles.com | 2 | 2 | 100.0% |
-| cocktailswithsuderman.substack.com | 1 | 4 | 25.0% |
+| cocktailswithsuderman.substack.com | 4 | 4 | 100.0% |
 | cookieandkate.com | 14 | 14 | 100.0% |
 | cooking.nytimes.com | 51 | 51 | 100.0% |
 | cookingclassy.com | 56 | 56 | 100.0% |
@@ -133,13 +133,10 @@
 
 ## Failed URLs by Error
 
-### Missing required field: recipeIngredient (empty) (66 URLs)
+### Missing required field: recipeIngredient (empty) (63 URLs)
 
 - http://bakingbites.com/2017/02/how-to-use-freeze-dried-fruit-in-baking/
 - https://barefeetinthekitchen.com/diy-fruit-and-vegetable-wash-homemade-produce-wash-recipe/
-- https://cocktailswithsuderman.substack.com/p/a-question-about-the-clover-club
-- https://cocktailswithsuderman.substack.com/p/hot-chocolate-manhattan
-- https://cocktailswithsuderman.substack.com/p/lol-its-an-appletini
 - https://feedbin.com/entries/4967860190
 - https://food.com/recipe/breaded-eggplant-oven-baked-160089
 - https://food.com/recipe/egg-in-a-basket-421172
