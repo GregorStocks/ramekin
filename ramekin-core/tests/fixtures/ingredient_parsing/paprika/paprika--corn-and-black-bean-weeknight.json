@@ -79,7 +79,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 8 ounces",
         "section": "Assembly",
         "category": "Cheese"
       }
@@ -102,7 +102,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 8 ounces",
         "section": "Assembly",
         "category": "Cheese"
       }
@@ -130,13 +130,8 @@
       "raw": "Thinly sliced jalapeno (1 used 1/2 a big one)",
       "expected": {
         "item": "Thinly sliced jalapeno",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": null
-          }
-        ],
-        "note": null,
+        "measurements": [],
+        "note": "1 used 1/2 a big one",
         "section": "Toppings",
         "category": "Produce"
       }
@@ -144,9 +139,9 @@
     {
       "raw": "Thinly sliced radishes (I used 2 medium)",
       "expected": {
-        "item": "Thinly sliced radishes (I used 2 medium)",
+        "item": "Thinly sliced radishes",
         "measurements": [],
-        "note": null,
+        "note": "I used 2 medium",
         "section": "Toppings",
         "category": "Produce"
       }
@@ -154,16 +149,16 @@
     {
       "raw": "1/2 a white onion, minced (you can toss it with a little lime juice and salt to lightly pickle it, if desired)",
       "expected": {
-        "item": "a white onion, minced (you can toss it with a little lime juice and salt to lightly pickle it, if desired)",
+        "item": "a white onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "you can toss it with a little lime juice and salt to lightly pickle it, if desired, minced",
         "section": "Toppings",
-        "category": "Canned Goods"
+        "category": "Produce"
       }
     },
     {

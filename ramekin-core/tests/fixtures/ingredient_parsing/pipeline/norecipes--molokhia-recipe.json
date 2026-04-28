@@ -5,14 +5,14 @@
     {
       "raw": "1/2 large chicken ((or 1 small about 750 grams))",
       "expected": {
-        "item": "chicken (or 1 small about 750 grams)",
+        "item": "chicken",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "or 1 small about 750 grams",
         "category": "Meat & Seafood"
       }
     },
@@ -203,14 +203,14 @@
     {
       "raw": "2 tablespoons ghee ((clarified butter))",
       "expected": {
-        "item": "ghee (clarified butter)",
+        "item": "ghee",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "clarified butter",
         "category": "Dairy & Eggs"
       }
     },

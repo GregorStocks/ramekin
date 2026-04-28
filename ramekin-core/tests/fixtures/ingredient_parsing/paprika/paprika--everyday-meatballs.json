@@ -9,21 +9,17 @@
         "measurements": [
           {
             "amount": "1.5",
-            "unit": "inch"
-          },
-          {
-            "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "about 1.5-inch or 1.5 tablespoon",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 pound ground meat (I use a mix of beef and pork)",
       "expected": {
-        "item": "ground meat (I use a mix of beef and pork)",
+        "item": "ground meat",
         "measurements": [
           {
             "amount": "1",
@@ -34,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use a mix of beef and pork",
         "category": "Meat & Seafood"
       }
     },

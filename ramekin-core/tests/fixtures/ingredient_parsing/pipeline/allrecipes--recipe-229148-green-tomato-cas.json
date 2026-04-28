@@ -5,42 +5,42 @@
     {
       "raw": "6 green tomatoes, cut into 1-inch cubes",
       "expected": {
-        "item": "green tomatoes, cut into 1-inch cubes",
+        "item": "green tomatoes",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch cubes",
         "category": "Produce"
       }
     },
     {
       "raw": "16 green onions (white and pale green parts only), chopped",
       "expected": {
-        "item": "green onions (white and pale green parts only)",
+        "item": "green onions",
         "measurements": [
           {
             "amount": "16",
             "unit": null
           }
         ],
-        "note": "chopped",
+        "note": "white and pale green parts only, chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "3 stalks celery, cut into 1/2-inch pieces",
       "expected": {
-        "item": "celery, cut into 1/2-inch pieces",
+        "item": "celery",
         "measurements": [
           {
             "amount": "3",
             "unit": "stalk"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Produce"
       }
     },

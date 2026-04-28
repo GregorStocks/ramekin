@@ -16,7 +16,7 @@
             "unit": "cup"
           }
         ],
-        "note": "rinsed and drained",
+        "note": "about 4 1/2 cups, rinsed and drained",
         "category": "Canned Goods"
       }
     },
@@ -172,7 +172,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 1 1/2 cups",
         "category": "Produce"
       }
     },
@@ -193,7 +193,7 @@
     {
       "raw": "1/2 pound cooked ham, cut into 1/8-inch dice",
       "expected": {
-        "item": "cooked ham, cut into 1/8-inch dice",
+        "item": "cooked ham",
         "measurements": [
           {
             "amount": "0.5",
@@ -204,7 +204,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/8-inch dice",
         "category": "Meat & Seafood"
       }
     },

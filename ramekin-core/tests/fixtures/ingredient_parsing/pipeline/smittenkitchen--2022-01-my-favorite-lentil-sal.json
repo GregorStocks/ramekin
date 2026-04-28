@@ -144,14 +144,14 @@
     {
       "raw": "2 cups (about a 12-ounce package) cherry tomatoes, halved or quartered",
       "expected": {
-        "item": "(about a 12-ounce package) cherry tomatoes",
+        "item": "cherry tomatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "halved or quartered",
+        "note": "about a 12-ounce package, halved or quartered",
         "category": "Produce"
       }
     },

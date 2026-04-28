@@ -25,7 +25,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed of excess fat and cut into 1-inch pieces (see note)",
+        "note": "see note, trimmed of excess fat and cut into 1-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -57,7 +57,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "3 peeled and smashed and 2 minced or pressed through garlic press",
+        "note": "about 2 teaspoons, 3 peeled and smashed and 2 minced or pressed through garlic press",
         "category": "Produce"
       }
     },
@@ -128,31 +128,23 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "14.5",
-            "unit": "oz"
-          },
-          {
-            "amount": "411",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "14.5-ounce",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1 tablespoon ground chipotle powder (see note)",
       "expected": {
-        "item": "ground chipotle powder (see note)",
+        "item": "ground chipotle powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Spices & Seasonings"
       }
     },
@@ -200,18 +192,14 @@
     {
       "raw": "12 (6-inch) corn tortillas (see note)",
       "expected": {
-        "item": "corn tortillas (see note)",
+        "item": "corn tortillas",
         "measurements": [
           {
             "amount": "12",
             "unit": null
-          },
-          {
-            "amount": "6",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "6-inch, see note",
         "category": "Bakery & Bread"
       }
     },

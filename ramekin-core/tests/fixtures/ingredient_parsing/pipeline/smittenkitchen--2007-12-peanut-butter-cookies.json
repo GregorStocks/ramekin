@@ -99,7 +99,7 @@
     {
       "raw": "1 cup (255 grams) peanut butter at room temperature (smooth is what we used, but I am pretty sure they use chunky at the bakery)",
       "expected": {
-        "item": "peanut butter at room temperature (smooth is what we used, but I am pretty sure they use chunky at the bakery)",
+        "item": "peanut butter at room temperature",
         "measurements": [
           {
             "amount": "1",
@@ -110,7 +110,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "smooth is what we used, but I am pretty sure they use chunky at the bakery",
         "category": "Condiments & Sauces"
       }
     },
@@ -135,7 +135,7 @@
     {
       "raw": "1/2 cup (110 grams) firmly packed light brown sugar (updated weight)",
       "expected": {
-        "item": "firmly packed light brown sugar (updated weight)",
+        "item": "firmly packed light brown sugar",
         "measurements": [
           {
             "amount": "0.5",
@@ -146,7 +146,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "updated weight",
         "category": "Baking"
       }
     },

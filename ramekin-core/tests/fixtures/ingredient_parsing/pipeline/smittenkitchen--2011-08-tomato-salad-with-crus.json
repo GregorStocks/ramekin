@@ -39,7 +39,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "minced",
+        "note": "about 2 tablespoons, minced",
         "category": "Produce"
       }
     },
@@ -168,14 +168,14 @@
     {
       "raw": "1 tablespoon mellow red wine vinegar (yours isn’t mellow? use less)",
       "expected": {
-        "item": "mellow red wine vinegar (yours isn’t mellow? use less)",
+        "item": "mellow red wine vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "yours isn’t mellow? use less",
         "category": "Oils & Vinegars"
       }
     },

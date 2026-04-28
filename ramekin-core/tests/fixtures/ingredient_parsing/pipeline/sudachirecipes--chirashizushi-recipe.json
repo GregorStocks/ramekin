@@ -5,14 +5,18 @@
     {
       "raw": "3  dried shiitake mushroom (or 2 medium/1 large)",
       "expected": {
-        "item": "dried shiitake mushroom (or 2 medium/1 large)",
+        "item": "dried shiitake mushroom",
         "measurements": [
           {
             "amount": "3",
             "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "large"
           }
         ],
-        "note": null,
+        "note": "or 2 medium/1 large",
         "category": "Produce"
       }
     },
@@ -37,32 +41,28 @@
     {
       "raw": "1  carrot ((medium size) julienned or decoratively cut)",
       "expected": {
-        "item": "carrot julienned or decoratively cut)",
+        "item": "carrot julienned or decoratively cut",
         "measurements": [
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": null,
-            "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "medium size",
         "category": "Produce"
       }
     },
     {
       "raw": "30 g fried tofu pouch (aburaage) (thinly sliced)",
       "expected": {
-        "item": "fried tofu pouch (aburaage) (thinly sliced)",
+        "item": "fried tofu pouch",
         "measurements": [
           {
             "amount": "30",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "aburaage, thinly sliced",
         "category": "Produce"
       }
     },
@@ -123,18 +123,14 @@
     {
       "raw": "2 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "32",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -245,18 +241,14 @@
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -319,56 +311,56 @@
     {
       "raw": "25 g lotus root (renkon) (sliced and boiled)",
       "expected": {
-        "item": "lotus root (renkon) (sliced and boiled)",
+        "item": "lotus root",
         "measurements": [
           {
             "amount": "25",
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "renkon, sliced and boiled",
+        "category": "Other"
       }
     },
     {
       "raw": "100 g shrimp (deshelled and boiled)",
       "expected": {
-        "item": "shrimp (deshelled and boiled)",
+        "item": "shrimp",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "deshelled and boiled",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "15 g marinated salmon roe (ikura)",
       "expected": {
-        "item": "marinated salmon roe (ikura)",
+        "item": "marinated salmon roe",
         "measurements": [
           {
             "amount": "15",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "ikura",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "2 tbsp sweet pink fish powder (sakura denbu) (optional)",
       "expected": {
-        "item": "sweet pink fish powder (sakura denbu) (optional)",
+        "item": "sweet pink fish powder",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "sakura denbu, optional",
         "category": "Meat & Seafood"
       }
     },

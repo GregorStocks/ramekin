@@ -87,28 +87,28 @@
     {
       "raw": "2 cups quick-cooking/instant oats, (such as Quaker Quick 1-Minute Oats (do not use regular old-fashioned oats))",
       "expected": {
-        "item": "quick-cooking/instant oats, (such as Quaker Quick 1-Minute Oats (do not use regular old-fashioned oats)",
+        "item": "quick-cooking/instant oats",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "such as Quaker Quick 1-Minute Oats (do not use regular old-fashioned oats)",
+        "category": "Snacks"
       }
     },
     {
       "raw": "1¾ cups crispy rice cereal, (such as Rice Krispies)",
       "expected": {
-        "item": "crispy rice cereal, (such as Rice Krispies)",
+        "item": "crispy rice cereal",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Rice Krispies",
         "category": "Snacks"
       }
     },

@@ -42,14 +42,14 @@
     {
       "raw": "1/2 cup plus 1 tablespoon natural cane sugar (I used a coarse Turbinado because I had it on hand)",
       "expected": {
-        "item": "natural cane sugar (I used a coarse Turbinado because I had it on hand)",
+        "item": "natural cane sugar",
         "measurements": [
           {
             "amount": "1/2 cup plus 1 tablespoon",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "I used a coarse Turbinado because I had it on hand",
         "category": "Baking"
       }
     },
@@ -150,7 +150,7 @@
             "unit": "g"
           }
         ],
-        "note": "halved (feel free to swap any berry/cherry you can find in season)",
+        "note": "feel free to swap any berry/cherry you can find in season, halved",
         "category": "Produce"
       }
     },

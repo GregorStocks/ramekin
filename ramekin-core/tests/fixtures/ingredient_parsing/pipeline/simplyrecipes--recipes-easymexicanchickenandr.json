@@ -92,17 +92,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "15",
-            "unit": "oz"
-          },
-          {
-            "amount": "425",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "15-ounce",
         "category": "Canned Goods"
       }
     },
@@ -155,14 +147,14 @@
     {
       "raw": "2 cups cooked and shredded chicken (See Recipe Note)",
       "expected": {
-        "item": "cooked and shredded chicken (See Recipe Note)",
+        "item": "cooked and shredded chicken",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "See Recipe Note",
         "category": "Meat & Seafood"
       }
     },

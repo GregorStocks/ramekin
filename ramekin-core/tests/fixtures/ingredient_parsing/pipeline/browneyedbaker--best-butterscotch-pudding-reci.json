@@ -5,14 +5,18 @@
     {
       "raw": "¾ cup unsalted butter (cut into ½-inch pieces)",
       "expected": {
-        "item": "unsalted butter (cut into 1/2-inch pieces)",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Dairy & Eggs"
       }
     },

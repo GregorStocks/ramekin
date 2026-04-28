@@ -10,13 +10,9 @@
           {
             "amount": "200",
             "unit": "g"
-          },
-          {
-            "amount": "1.6",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "1.6-1.8mm thickness recommended",
         "category": "Pasta & Rice"
       }
     },
@@ -59,14 +55,14 @@
     {
       "raw": "80 g spicy cod roe (mentaiko) (or plain tarako for non spicy option)",
       "expected": {
-        "item": "spicy cod roe (mentaiko) (or plain tarako for non spicy option)",
+        "item": "spicy cod roe",
         "measurements": [
           {
             "amount": "80",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "mentaiko, or plain tarako for non spicy option",
         "category": "Meat & Seafood"
       }
     },
@@ -105,18 +101,14 @@
     {
       "raw": "1 tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.3",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -155,14 +147,18 @@
     {
       "raw": "1 tsp grated parmesan cheese (or other hard cheese)",
       "expected": {
-        "item": "grated parmesan cheese (or other hard cheese)",
+        "item": "grated parmesan cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or other hard cheese",
         "category": "Cheese"
       }
     },
@@ -201,9 +197,9 @@
     {
       "raw": "perilla leaves (shiso) (shredded, or substitute with kizami nori)",
       "expected": {
-        "item": "perilla leaves (shiso) (shredded, or substitute with kizami nori)",
+        "item": "perilla leaves",
         "measurements": [],
-        "note": null,
+        "note": "shiso, shredded, or substitute with kizami nori",
         "category": "Other"
       }
     },

@@ -27,14 +27,18 @@
     {
       "raw": "1/2 teaspoon salt (, or to personal taste)",
       "expected": {
-        "item": "salt (, or to personal taste)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or to personal taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -79,7 +83,7 @@
             "unit": "g"
           }
         ],
-        "note": "softened (not melted",
+        "note": "softened (not melted)",
         "category": "Dairy & Eggs"
       }
     },
@@ -91,13 +95,9 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "3",
-            "unit": "large"
           }
         ],
-        "note": null,
+        "note": "about 3 large cloves",
         "category": "Produce"
       }
     },
@@ -118,9 +118,9 @@
     {
       "raw": "Olive oil (, for baking dish)",
       "expected": {
-        "item": "Olive oil (, for baking dish)",
+        "item": "Olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for baking dish",
         "category": "Oils & Vinegars"
       }
     },

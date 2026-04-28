@@ -54,7 +54,7 @@
             "unit": null
           }
         ],
-        "note": "halved and seeded (leave some of the seed if you like heat",
+        "note": "halved and seeded (leave some of the seed if you like heat)",
         "category": "Produce"
       }
     },
@@ -72,7 +72,7 @@
             "unit": "g"
           }
         ],
-        "note": "stems trimmed (cut most of the stem but leave some for extra flavor",
+        "note": "stems trimmed (cut most of the stem but leave some for extra flavor)",
         "category": "Produce"
       }
     },
@@ -133,14 +133,14 @@
     {
       "raw": "6  loaves of pita bread (you need the kind with pockets)",
       "expected": {
-        "item": "loaves of pita bread (you need the kind with pockets)",
+        "item": "loaves of pita bread",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "you need the kind with pockets",
         "category": "Bakery & Bread"
       }
     },

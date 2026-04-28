@@ -97,7 +97,7 @@
     {
       "raw": "1/2 tablespoon (4.6 grams) malt powder (or barley malt syrup or honey (10.5 grams), or sugar (6.2 grams))",
       "expected": {
-        "item": "malt powder (or barley malt syrup or honey (10.5 grams), or sugar (6.2 grams)",
+        "item": "malt powder",
         "measurements": [
           {
             "amount": "0.5",
@@ -108,9 +108,9 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or barley malt syrup or honey (10.5 grams), or sugar (6.2 grams)",
         "section": "Sponge",
-        "category": "Baking"
+        "category": "Other"
       }
     },
     {
@@ -185,7 +185,7 @@
     {
       "raw": "2 tablespoons (0.5 ounces, 14 grams) caraway seeds (you can grind these if you want to avoid the crunch)",
       "expected": {
-        "item": "caraway seeds (you can grind these if you want to avoid the crunch)",
+        "item": "caraway seeds",
         "measurements": [
           {
             "amount": "2",
@@ -200,7 +200,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "you can grind these if you want to avoid the crunch",
         "section": "Flour Mixture",
         "category": "Spices & Seasonings"
       }
@@ -275,7 +275,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 0.5 ounces, 16 grams",
         "section": "Flour Mixture",
         "category": "Baking"
       }

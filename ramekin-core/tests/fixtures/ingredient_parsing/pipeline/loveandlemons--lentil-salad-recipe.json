@@ -120,14 +120,14 @@
     {
       "raw": "1 to 2  serrano chiles ((blend with the dressing))",
       "expected": {
-        "item": "serrano chiles (blend with the dressing)",
+        "item": "serrano chiles",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "blend with the dressing",
         "category": "Produce"
       }
     },
@@ -161,9 +161,9 @@
     {
       "raw": "Extra-virgin olive oil (for drizzling)",
       "expected": {
-        "item": "Extra-virgin olive oil (for drizzling)",
+        "item": "Extra-virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for drizzling",
         "category": "Oils & Vinegars"
       }
     },

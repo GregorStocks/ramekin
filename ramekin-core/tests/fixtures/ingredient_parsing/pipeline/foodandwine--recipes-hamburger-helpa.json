@@ -237,14 +237,14 @@
     {
       "raw": "1/4 cup panko (Japanese-style breadcrumbs)",
       "expected": {
-        "item": "panko (Japanese-style breadcrumbs)",
+        "item": "panko",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "Japanese-style breadcrumbs",
         "category": "Bakery & Bread"
       }
     },

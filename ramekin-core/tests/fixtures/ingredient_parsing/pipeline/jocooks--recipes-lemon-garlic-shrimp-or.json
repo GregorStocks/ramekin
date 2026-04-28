@@ -83,14 +83,18 @@
     {
       "raw": "2½ cups chicken broth (low-sodium, or vegetable broth)",
       "expected": {
-        "item": "chicken broth (low-sodium, or vegetable broth)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "cup"
+          },
+          {
+            "amount": "622",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low-sodium, or vegetable broth",
         "category": "Canned Goods"
       }
     },
@@ -177,7 +181,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "about 3 tablespoons",
         "category": "Beverages"
       }
     },

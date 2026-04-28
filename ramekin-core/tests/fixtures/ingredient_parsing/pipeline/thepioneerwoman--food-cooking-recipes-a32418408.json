@@ -167,7 +167,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 2 cups",
         "category": "Cheese"
       }
     },
@@ -206,9 +206,9 @@
     {
       "raw": "Sour cream and hot sauce, for serving (optional)",
       "expected": {
-        "item": "Sour cream and hot sauce, for serving",
+        "item": "Sour cream and hot sauce",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Dairy & Eggs"
       }
     }

@@ -5,14 +5,18 @@
     {
       "raw": "12 tbsp. cold unsalted butter, cut into pieces",
       "expected": {
-        "item": "cold unsalted butter, cut into pieces",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "12",
             "unit": "tbsp"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,7 +175,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 4 ounces",
         "category": "Cheese"
       }
     },

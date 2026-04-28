@@ -65,14 +65,14 @@
     {
       "raw": "½ tsp Japanese light soy sauce (usukuchi shoyu) or regular Japanese soy sauce",
       "expected": {
-        "item": "Japanese light soy sauce (usukuchi shoyu) or regular Japanese soy sauce",
+        "item": "Japanese light soy sauce or regular Japanese soy sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "usukuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -130,28 +130,28 @@
     {
       "raw": "2 tbsp potato starch (katakuriko) or cornstarch, tapioca starch",
       "expected": {
-        "item": "potato starch (katakuriko) or cornstarch, tapioca starch",
+        "item": "potato starch or cornstarch, tapioca starch",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "katakuriko",
         "category": "Baking"
       }
     },
     {
       "raw": "4 tbsp potato starch (katakuriko) for final coating",
       "expected": {
-        "item": "potato starch (katakuriko) for final coating",
+        "item": "potato starch for final coating",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "katakuriko",
         "category": "Produce"
       }
     }

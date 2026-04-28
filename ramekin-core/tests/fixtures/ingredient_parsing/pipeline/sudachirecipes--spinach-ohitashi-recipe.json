@@ -33,18 +33,14 @@
     {
       "raw": "2 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "32",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -94,15 +90,11 @@
             "unit": "tbsp"
           },
           {
-            "amount": "1",
-            "unit": null
-          },
-          {
             "amount": "8.6",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1% the weight of cooking water",
         "category": "Spices & Seasonings"
       }
     },
@@ -118,10 +110,10 @@
     {
       "raw": "bonito flakes (katsuobushi) (optional garnish, replace with sesame seeds for plant-based diets)",
       "expected": {
-        "item": "bonito flakes (katsuobushi) (optional garnish, replace with sesame seeds for plant-based diets)",
+        "item": "bonito flakes",
         "measurements": [],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "katsuobushi, optional garnish, replace with sesame seeds for plant-based diets",
+        "category": "Other"
       }
     }
   ]

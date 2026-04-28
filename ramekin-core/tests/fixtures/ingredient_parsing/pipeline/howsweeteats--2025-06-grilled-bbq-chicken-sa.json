@@ -110,18 +110,18 @@
     {
       "raw": "pickled onions, (for topping)",
       "expected": {
-        "item": "pickled onions, (for topping)",
+        "item": "pickled onions",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "romaine lettuce, (for topping)",
       "expected": {
-        "item": "romaine lettuce, (for topping)",
+        "item": "romaine lettuce",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     },
@@ -142,15 +142,15 @@
     {
       "raw": "1 to 2  limes, (juiced)",
       "expected": {
-        "item": "limes, (juiced)",
+        "item": "limes",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {

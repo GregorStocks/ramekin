@@ -95,56 +95,56 @@
     {
       "raw": "1/2  Nappa cabbage (cut 2\" width)",
       "expected": {
-        "item": "Nappa cabbage (cut 2\" width)",
+        "item": "Nappa cabbage",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut 2\" width",
         "category": "Produce"
       }
     },
     {
       "raw": "2  long onions (cut diagonally)",
       "expected": {
-        "item": "long onions (cut diagonally)",
+        "item": "long onions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut diagonally",
         "category": "Produce"
       }
     },
     {
       "raw": "1  bunch Kikuna (cut 2\" long)",
       "expected": {
-        "item": "Kikuna (cut 2\" long)",
+        "item": "Kikuna",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "cut 2\" long",
         "category": "Other"
       }
     },
     {
       "raw": "1  package tofu (cut 1\" width)",
       "expected": {
-        "item": "tofu (cut 1\" width)",
+        "item": "tofu",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
           }
         ],
-        "note": null,
+        "note": "cut 1\" width",
         "category": "Produce"
       }
     },

@@ -28,13 +28,9 @@
           {
             "amount": "100",
             "unit": "g"
-          },
-          {
-            "amount": "0.5",
-            "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 1/2 cup plus 2 tablespoons",
         "category": "Baking"
       }
     },
@@ -81,7 +77,7 @@
     {
       "raw": "1/2 cup (120ml) warm whole milk (see notes)",
       "expected": {
-        "item": "warm whole milk (see notes)",
+        "item": "warm whole milk",
         "measurements": [
           {
             "amount": "0.5",
@@ -90,9 +86,13 @@
           {
             "amount": "120",
             "unit": "ml"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Dairy & Eggs"
       }
     },

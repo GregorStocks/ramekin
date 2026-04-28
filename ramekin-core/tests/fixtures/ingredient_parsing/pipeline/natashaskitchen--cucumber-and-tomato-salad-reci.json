@@ -5,48 +5,28 @@
     {
       "raw": "4-6  medium (2 lbs tomatoes)",
       "expected": {
-        "item": "4-6  medium (2 lbs tomatoes)",
+        "item": "tomatoes",
         "measurements": [
           {
             "amount": "4-6",
             "unit": "medium"
-          },
-          {
-            "amount": "2",
-            "unit": "lb"
-          },
-          {
-            "amount": "907",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "2 lbs tomatoes",
         "category": "Produce"
       }
     },
     {
       "raw": "4-5  small (1 lb cucumbers, or 1 english cucumber))",
       "expected": {
-        "item": "4-5  small (1 lb cucumbers, or 1 english cucumber))",
+        "item": "cucumbers",
         "measurements": [
           {
             "amount": "4-5",
             "unit": "small"
-          },
-          {
-            "amount": "1",
-            "unit": "lb"
-          },
-          {
-            "amount": "1",
-            "unit": "english cucumber"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 lb cucumbers, or 1 english cucumber",
         "category": "Produce"
       }
     },
@@ -60,7 +40,7 @@
             "unit": "small"
           }
         ],
-        "note": "thinly sliced (~1/4 lb",
+        "note": "thinly sliced (~1/4 lb)",
         "category": "Produce"
       }
     },
@@ -99,14 +79,14 @@
     {
       "raw": "1 tsp fine sea salt (or 3/4 tsp table salt)",
       "expected": {
-        "item": "fine sea salt (or 3/4 tsp table salt)",
+        "item": "fine sea salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or 3/4 tsp table salt",
         "category": "Spices & Seasonings"
       }
     },

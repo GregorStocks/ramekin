@@ -323,14 +323,18 @@
     {
       "raw": "1 tablespoon  olive oil (or butter)",
       "expected": {
-        "item": "olive oil (or butter)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or butter",
         "category": "Oils & Vinegars"
       }
     },

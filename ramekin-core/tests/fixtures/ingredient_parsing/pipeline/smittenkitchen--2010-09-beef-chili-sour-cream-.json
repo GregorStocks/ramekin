@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped",
+        "note": "about 3 cups, chopped",
         "category": "Produce"
       }
     },
@@ -59,14 +59,14 @@
     {
       "raw": "2 carrots, sliced thin (suggested by Gourmet) or in a small dice, as I’d chop them next time",
       "expected": {
-        "item": "carrots, sliced thin (suggested by Gourmet) or in a small dice, as I’d chop them next time",
+        "item": "carrots, sliced thin or in a small dice, as I’d chop them next time",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "suggested by Gourmet",
         "category": "Produce"
       }
     },
@@ -161,7 +161,7 @@
       "expected": {
         "item": "Dried red pepper flakes",
         "measurements": [],
-        "note": "to taste (Gourmet suggests 1 tablespoon; I used 1 teaspoon knowing that my flakes are very hot)",
+        "note": "Gourmet suggests 1 tablespoon; I used 1 teaspoon knowing that my flakes are very hot, to taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -336,14 +336,18 @@
     {
       "raw": "2 tablespoons cold unsalted butter, cut into bits",
       "expected": {
-        "item": "cold unsalted butter, cut into bits",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into bits",
         "category": "Dairy & Eggs"
       }
     },
@@ -365,7 +369,7 @@
             "unit": "g"
           }
         ],
-        "note": "coarsely grated",
+        "note": "about 1 1/2 cups, coarsely grated",
         "category": "Cheese"
       }
     },
@@ -374,7 +378,7 @@
       "expected": {
         "item": "Drained and chopped pickled jalapeños",
         "measurements": [],
-        "note": "to taste (I used about 2 tablespoons)",
+        "note": "I used about 2 tablespoons, to taste",
         "category": "Produce"
       }
     },

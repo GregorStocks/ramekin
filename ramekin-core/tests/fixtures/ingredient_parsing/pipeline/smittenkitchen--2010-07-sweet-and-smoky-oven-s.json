@@ -23,28 +23,32 @@
     {
       "raw": "2 tablespoons chili powder (ancho is recommended) or paprika",
       "expected": {
-        "item": "chili powder (ancho is recommended) or paprika",
+        "item": "chili powder or paprika",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "ancho is recommended",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "2 teaspoons salt (see Note above about increasing it)",
       "expected": {
-        "item": "salt (see Note above about increasing it)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note above about increasing it",
         "category": "Spices & Seasonings"
       }
     },
@@ -123,15 +127,15 @@
     {
       "raw": "2 teaspoons mild or hot pimentón (smoked Spanish paprika)",
       "expected": {
-        "item": "mild or hot pimentón (smoked Spanish paprika)",
+        "item": "mild or hot pimentón",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "smoked Spanish paprika",
+        "category": "Other"
       }
     },
     {

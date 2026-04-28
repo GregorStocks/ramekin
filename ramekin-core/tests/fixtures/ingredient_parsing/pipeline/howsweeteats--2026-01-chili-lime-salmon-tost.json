@@ -125,14 +125,14 @@
     {
       "raw": "1 to 2 teaspoons tajin seasoning, (or any chili lime seasoning)",
       "expected": {
-        "item": "tajin seasoning, (or any chili lime seasoning)",
+        "item": "tajin seasoning",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or any chili lime seasoning",
         "category": "Spices & Seasonings"
       }
     },

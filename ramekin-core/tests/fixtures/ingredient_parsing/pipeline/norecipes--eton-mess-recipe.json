@@ -76,29 +76,25 @@
             "unit": "cup"
           },
           {
-            "amount": "42",
-            "unit": null
-          },
-          {
             "amount": "178",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "42% butterfat",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "85 grams white chocolate ((I used Valrhona Ivoire))",
       "expected": {
-        "item": "white chocolate (I used Valrhona Ivoire)",
+        "item": "white chocolate",
         "measurements": [
           {
             "amount": "85",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used Valrhona Ivoire",
         "category": "Other"
       }
     },

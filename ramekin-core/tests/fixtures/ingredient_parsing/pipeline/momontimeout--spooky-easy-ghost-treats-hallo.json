@@ -59,23 +59,23 @@
     {
       "raw": "1 to 2 tsp your choice of extract (I used orange)",
       "expected": {
-        "item": "your choice of extract (I used orange)",
+        "item": "your choice of extract",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "I used orange",
         "category": "Baking"
       }
     },
     {
       "raw": "mini chocolate chips  (and/or regular chocolate chips)",
       "expected": {
-        "item": "mini chocolate chips  (and/or regular chocolate chips)",
+        "item": "mini chocolate chips",
         "measurements": [],
-        "note": null,
+        "note": "and/or regular chocolate chips",
         "category": "Baking"
       }
     }

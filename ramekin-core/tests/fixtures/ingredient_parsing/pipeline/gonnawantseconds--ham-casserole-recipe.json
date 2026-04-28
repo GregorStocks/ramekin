@@ -55,7 +55,7 @@
     {
       "raw": "1 1/2 pounds  ham (about 4 1/2-5 cups cubed), (cut into 1/2 cubes)",
       "expected": {
-        "item": "ham, (cut into 1/2 cubes)",
+        "item": "ham",
         "measurements": [
           {
             "amount": "1.5",
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 4 1/2-5 cups cubed",
+        "note": "about 4 1/2-5 cups cubed, cut into 1/2 cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -237,14 +237,14 @@
     {
       "raw": "1 tablespoon fresh thyme leaves, (stripped off stems)",
       "expected": {
-        "item": "fresh thyme leaves, (stripped off stems)",
+        "item": "fresh thyme leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "stripped off stems",
         "category": "Produce"
       }
     },

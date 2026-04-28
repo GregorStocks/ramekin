@@ -28,13 +28,9 @@
           {
             "amount": "1 cup plus 2 tablespoons",
             "unit": null
-          },
-          {
-            "amount": "225",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "225g granulated sugar",
         "category": "Baking"
       }
     },
@@ -105,59 +101,43 @@
     {
       "raw": "3  bags (12 ounces each green candy melting wafers)",
       "expected": {
-        "item": "3  bags (12 ounces each green candy melting wafers)",
+        "item": "green candy melting wafers",
         "measurements": [
           {
             "amount": "3",
-            "unit": "bag"
-          },
-          {
-            "amount": "12",
-            "unit": "oz"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
+            "unit": "bag each"
           }
         ],
-        "note": null,
+        "note": "12 ounces each green candy melting wafers",
         "category": "Other"
       }
     },
     {
       "raw": "1  bag (12 ounces bright white candy melting wafers)",
       "expected": {
-        "item": "1  bag (12 ounces bright white candy melting wafers)",
+        "item": "bright white candy melting wafers",
         "measurements": [
           {
             "amount": "1",
             "unit": "bag"
-          },
-          {
-            "amount": "12",
-            "unit": "oz"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "12 ounces bright white candy melting wafers",
         "category": "Other"
       }
     },
     {
       "raw": "1/2 cup ready-made frosting (or homemade buttercream)",
       "expected": {
-        "item": "ready-made frosting (or homemade buttercream)",
+        "item": "ready-made frosting",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "or homemade buttercream",
+        "category": "Other"
       }
     },
     {
@@ -168,13 +148,9 @@
           {
             "amount": "4",
             "unit": null
-          },
-          {
-            "amount": "4",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "4×6-inches each",
         "category": "Other"
       }
     },
@@ -205,13 +181,8 @@
       "raw": "Soft bristle art brushes (3-4)",
       "expected": {
         "item": "Soft bristle art brushes",
-        "measurements": [
-          {
-            "amount": "3",
-            "unit": null
-          }
-        ],
-        "note": null,
+        "measurements": [],
+        "note": "3-4",
         "category": "Other"
       }
     },
@@ -227,9 +198,9 @@
     {
       "raw": "Rubber stamp with script motif (new, unused)",
       "expected": {
-        "item": "Rubber stamp with script motif (new, unused)",
+        "item": "Rubber stamp with script motif",
         "measurements": [],
-        "note": null,
+        "note": "new, unused",
         "category": "Other"
       }
     },

@@ -197,7 +197,7 @@
     {
       "raw": "4 ounces smoked salmon, cut into 2-inch pieces",
       "expected": {
-        "item": "smoked salmon, cut into 2-inch pieces",
+        "item": "smoked salmon",
         "measurements": [
           {
             "amount": "4",
@@ -208,7 +208,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 2-inch pieces",
         "category": "Meat & Seafood"
       }
     }

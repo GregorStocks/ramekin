@@ -5,36 +5,36 @@
     {
       "raw": "1 pound loaf rustic bread, cut into 1-inch cubes (about 10 cups of cubes)",
       "expected": {
-        "item": "loaf rustic bread, cut into 1-inch cubes",
+        "item": "loaf rustic bread",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           },
           {
-            "amount": "10",
-            "unit": "cup"
-          },
-          {
             "amount": "454",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 10 cups of cubes, cut into 1-inch cubes",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "1 1/2 (or 2) cups blueberries, frozen or fresh",
       "expected": {
-        "item": "(or 2) cups blueberries",
+        "item": "blueberries",
         "measurements": [
           {
             "amount": "1.5",
-            "unit": null
+            "unit": "cup"
+          },
+          {
+            "amount": "222",
+            "unit": "g"
           }
         ],
-        "note": "frozen or fresh",
+        "note": "or 2, frozen or fresh",
         "category": "Produce"
       }
     },

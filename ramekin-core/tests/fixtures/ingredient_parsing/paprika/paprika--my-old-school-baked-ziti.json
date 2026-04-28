@@ -151,7 +151,7 @@
     {
       "raw": "1/4 pound (4 ounces) baby spinach or a few handfuls of another green, cut into thin ribbons",
       "expected": {
-        "item": "baby spinach or a few handfuls of another green, cut into thin ribbons",
+        "item": "baby spinach or a few handfuls of another green",
         "measurements": [
           {
             "amount": "0.25",
@@ -166,7 +166,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into thin ribbons",
         "category": "Produce"
       }
     }

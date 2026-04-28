@@ -74,13 +74,9 @@
           {
             "amount": "2",
             "unit": null
-          },
-          {
-            "amount": "4",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "4- to 5-inch",
         "category": "Spices & Seasonings"
       }
     },
@@ -101,28 +97,28 @@
     {
       "raw": "1  &nbsp;lemon, rind only, scraped clean of pith&nbsp;",
       "expected": {
-        "item": "lemon, rind only, scraped clean of pith",
+        "item": "lemon, rind only",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "scraped clean of pith",
         "category": "Produce"
       }
     },
     {
       "raw": "1  orange, rind only, scraped clean of pith&nbsp;",
       "expected": {
-        "item": "orange, rind only, scraped clean of pith",
+        "item": "orange, rind only",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "scraped clean of pith",
         "category": "Produce"
       }
     },

@@ -37,29 +37,37 @@
     {
       "raw": "1/4 cup granulated sugar (white or coconut is fine - a natural granulated sweetener may be used that measures 1:1 with sugar)",
       "expected": {
-        "item": "granulated sugar (white or coconut is fine - a natural granulated sweetener may be used that measures 1:1 with sugar)",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "50",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "white or coconut is fine - a natural granulated sweetener may be used that measures 1:1 with sugar",
         "category": "Baking"
       }
     },
     {
       "raw": "2 tablespoons lemon juice (or orange juice)",
       "expected": {
-        "item": "lemon juice (or orange juice)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "or orange juice",
+        "category": "Beverages"
       }
     },
     {

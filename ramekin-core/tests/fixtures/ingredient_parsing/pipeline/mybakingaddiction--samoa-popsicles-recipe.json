@@ -5,14 +5,14 @@
     {
       "raw": "1 cup pre-made coconut pudding (vanilla will work too)",
       "expected": {
-        "item": "pre-made coconut pudding (vanilla will work too)",
+        "item": "pre-made coconut pudding",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "vanilla will work too",
         "category": "Produce"
       }
     },

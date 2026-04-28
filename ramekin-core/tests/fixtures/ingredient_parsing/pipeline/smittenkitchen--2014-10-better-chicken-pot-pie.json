@@ -158,7 +158,7 @@
     {
       "raw": "3 1/2 to 4 pounds bone-in, skin-on chicken parts (breasts, thighs and drumsticks are ideal)",
       "expected": {
-        "item": "bone-in, skin-on chicken parts (breasts, thighs and drumsticks are ideal)",
+        "item": "bone-in, skin-on chicken parts",
         "measurements": [
           {
             "amount": "3.5 to 4",
@@ -169,7 +169,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "breasts, thighs and drumsticks are ideal",
         "category": "Meat & Seafood"
       }
     },
@@ -190,14 +190,14 @@
     {
       "raw": "2 medium leeks, white and light green parts only, cut in half lengthwise and then into 1/2-inch slices",
       "expected": {
-        "item": "leeks, white and light green parts only, cut in half lengthwise and then into 1/2-inch slices",
+        "item": "leeks, white and light green parts only",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut in half lengthwise and then into 1/2-inch slices",
         "category": "Produce"
       }
     },
@@ -328,14 +328,14 @@
     {
       "raw": "1 cup fresh or frozen green peas (no need to defrost)",
       "expected": {
-        "item": "fresh or frozen green peas (no need to defrost)",
+        "item": "fresh or frozen green peas",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "no need to defrost",
         "category": "Frozen"
       }
     },
@@ -347,13 +347,9 @@
           {
             "amount": "2",
             "unit": "large"
-          },
-          {
-            "amount": "1",
-            "unit": "cup"
           }
         ],
-        "note": "diced small",
+        "note": "about 1 cup carrots, diced small",
         "category": "Produce"
       }
     },

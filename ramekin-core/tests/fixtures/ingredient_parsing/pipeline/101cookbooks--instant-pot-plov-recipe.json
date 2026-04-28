@@ -58,7 +58,7 @@
             "unit": null
           }
         ],
-        "note": "rinsed (or equivalent)",
+        "note": "or equivalent, rinsed",
         "category": "Canned Goods"
       }
     },
@@ -107,7 +107,7 @@
     {
       "raw": "6 ounces kale or spinach, chopped (frozen is ok)",
       "expected": {
-        "item": "kale or spinach, chopped",
+        "item": "kale or spinach",
         "measurements": [
           {
             "amount": "6",
@@ -118,17 +118,17 @@
             "unit": "g"
           }
         ],
-        "note": "frozen is ok",
+        "note": "frozen is ok, chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "a couple handfuls chopped herbs (cilantro, dill, celery leaves)",
       "expected": {
-        "item": "a couple handfuls chopped herbs (cilantro, dill, celery leaves)",
+        "item": "a couple handfuls chopped herbs",
         "measurements": [],
-        "note": null,
-        "category": "Produce"
+        "note": "cilantro, dill, celery leaves",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -157,9 +157,9 @@
     {
       "raw": "to serve (some or all of the following): salted yogurt with saffron, toasted walnuts, chopped olives, herbs, lemon wedges",
       "expected": {
-        "item": "to serve (some or all of the following): salted yogurt with saffron, toasted walnuts, chopped olives, herbs, lemon wedges",
+        "item": "to serve : salted yogurt with saffron, toasted walnuts, chopped olives, herbs, lemon wedges",
         "measurements": [],
-        "note": null,
+        "note": "some or all of the following",
         "category": "Spices & Seasonings"
       }
     }

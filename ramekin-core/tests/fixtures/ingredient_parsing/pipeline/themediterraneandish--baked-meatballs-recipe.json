@@ -12,7 +12,7 @@
             "unit": null
           }
         ],
-        "note": "large, halved and thinly sliced (1/4-inch",
+        "note": "large, halved and thinly sliced (1/4-inch)",
         "category": "Produce"
       }
     },
@@ -37,14 +37,14 @@
     {
       "raw": "6  baby bell peppers ((any color, cut into 1/4 inch thick batons))",
       "expected": {
-        "item": "baby bell peppers (any color, cut into 1/4 inch thick batons)",
+        "item": "baby bell peppers",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "any color, cut into 1/4 inch thick batons",
         "category": "Produce"
       }
     },

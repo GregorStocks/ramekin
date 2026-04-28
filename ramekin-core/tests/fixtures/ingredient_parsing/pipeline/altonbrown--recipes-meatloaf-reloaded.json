@@ -227,14 +227,14 @@
     {
       "raw": "1/2 medium red bell pepper, seeded and cut into large pieces",
       "expected": {
-        "item": "red bell pepper, seeded and cut into large pieces",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "seeded and cut into large pieces",
         "category": "Produce"
       }
     },

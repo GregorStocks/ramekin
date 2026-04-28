@@ -10,13 +10,9 @@
           {
             "amount": "1",
             "unit": "piece"
-          },
-          {
-            "amount": "3",
-            "unit": "inch"
           }
         ],
-        "note": "halved lengthwise",
+        "note": "3 inch, halved lengthwise",
         "category": "Produce"
       }
     },
@@ -70,13 +66,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "3",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "3 inch",
         "category": "Spices & Seasonings"
       }
     },
@@ -165,7 +157,7 @@
     {
       "raw": "12 ounces small peeled, deveined raw shrimp",
       "expected": {
-        "item": "small peeled",
+        "item": "small peeled, deveined raw shrimp",
         "measurements": [
           {
             "amount": "12",
@@ -176,8 +168,8 @@
             "unit": "g"
           }
         ],
-        "note": "deveined raw shrimp",
-        "category": "Other"
+        "note": null,
+        "category": "Meat & Seafood"
       }
     },
     {

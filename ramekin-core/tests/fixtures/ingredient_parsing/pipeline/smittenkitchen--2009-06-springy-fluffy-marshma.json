@@ -19,13 +19,9 @@
           {
             "amount": "3.5",
             "unit": null
-          },
-          {
-            "amount": "2",
-            "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "2 tablespoons plus 2 1/2 teaspoons",
         "category": "Baking"
       }
     },
@@ -50,14 +46,18 @@
     {
       "raw": "2 cups granulated sugar (cane sugar worked just fine)",
       "expected": {
-        "item": "granulated sugar (cane sugar worked just fine)",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "400",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cane sugar worked just fine",
         "category": "Baking"
       }
     },
@@ -121,15 +121,11 @@
             "unit": "tbsp"
           },
           {
-            "amount": "2",
-            "unit": "tsp"
-          },
-          {
             "amount": "13",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "alternately: 1/2 of a scraped vanilla bean, 2 teaspoons almond or mint extract or maybe even some food coloring for tinting",
         "category": "Baking"
       }
     }

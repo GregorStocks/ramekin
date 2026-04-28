@@ -5,14 +5,14 @@
     {
       "raw": "3  large (ripe bananas, well mashed (about 1 1/2 cups))",
       "expected": {
-        "item": "(ripe bananas, well mashed (about 1 1/2 cups)",
+        "item": "ripe bananas",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "well mashed (about 1 1/2 cups)",
         "category": "Produce"
       }
     },
@@ -37,14 +37,18 @@
     {
       "raw": "1/4 cup coconut oil (barely warm - so it isn't solid (or alternately, olive oil))",
       "expected": {
-        "item": "coconut oil (barely warm - so it isn't solid (or alternately, olive oil)",
+        "item": "coconut oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "barely warm - so it isn't solid (or alternately, olive oil)",
         "category": "Oils & Vinegars"
       }
     },

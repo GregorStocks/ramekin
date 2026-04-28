@@ -184,7 +184,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 1/4 pounds",
         "category": "Meat & Seafood"
       }
     },
@@ -403,21 +403,21 @@
     {
       "raw": "8 small carrots, cut into 1-inch diagonal pieces",
       "expected": {
-        "item": "carrots, cut into 1-inch diagonal pieces",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "8",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch diagonal pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1 pound bok choy, cut into 1-inch pieces",
       "expected": {
-        "item": "bok choy, cut into 1-inch pieces",
+        "item": "bok choy",
         "measurements": [
           {
             "amount": "1",
@@ -428,7 +428,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Produce"
       }
     },

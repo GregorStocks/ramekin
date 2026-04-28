@@ -110,14 +110,18 @@
     {
       "raw": "2   cups    chicken stock (or a combination) or 2   cups    beef stock (or a combination)",
       "expected": {
-        "item": "chicken stock (or a combination)",
+        "item": "chicken stock",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "498",
+            "unit": "g"
           }
         ],
-        "note": "or 2   cups    beef stock (or a combination)",
+        "note": "or a combination; or 2   cups    beef stock (or a combination)",
         "category": "Meat & Seafood"
       }
     },

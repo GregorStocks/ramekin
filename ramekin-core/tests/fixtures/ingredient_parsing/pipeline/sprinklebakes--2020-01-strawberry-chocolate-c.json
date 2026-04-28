@@ -77,14 +77,18 @@
     {
       "raw": "1/2 cup vegetable oil (I like peanut oil)",
       "expected": {
-        "item": "vegetable oil (I like peanut oil)",
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "109",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I like peanut oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -353,9 +357,9 @@
     {
       "raw": "Decors and powder coating (see blog post for decor instructions)",
       "expected": {
-        "item": "Decors and powder coating (see blog post for decor instructions)",
+        "item": "Decors and powder coating",
         "measurements": [],
-        "note": null,
+        "note": "see blog post for decor instructions",
         "category": "Snacks"
       }
     },

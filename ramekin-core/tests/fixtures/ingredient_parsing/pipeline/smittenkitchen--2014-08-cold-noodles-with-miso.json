@@ -14,14 +14,14 @@
     {
       "raw": "2 to 3 tablespoons miso (red is recommend; white would be just fine)",
       "expected": {
-        "item": "miso (red is recommend; white would be just fine)",
+        "item": "miso",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "red is recommend; white would be just fine",
         "category": "Condiments & Sauces"
       }
     },
@@ -114,14 +114,18 @@
     {
       "raw": "2 tablespoons lime juice (from about 1 lime), plus lime wedges for serving",
       "expected": {
-        "item": "lime juice (from about 1 lime)",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": "plus lime wedges for serving",
+        "note": "from about 1 lime, plus lime wedges for serving",
         "category": "Beverages"
       }
     }

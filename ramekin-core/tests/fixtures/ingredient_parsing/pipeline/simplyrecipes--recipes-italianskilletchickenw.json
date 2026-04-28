@@ -206,14 +206,14 @@
     {
       "raw": "2 large handfuls spinach, about 2 packed cups",
       "expected": {
-        "item": "handfuls spinach",
+        "item": "handfuls spinach, about 2 packed cups",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "about 2 packed cups",
+        "note": null,
         "category": "Produce"
       }
     },

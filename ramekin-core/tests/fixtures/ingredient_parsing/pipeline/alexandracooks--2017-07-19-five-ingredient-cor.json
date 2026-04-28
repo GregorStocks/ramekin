@@ -84,7 +84,7 @@
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "about 1 medium",
         "category": "Produce"
       }
     },
@@ -137,28 +137,28 @@
     {
       "raw": "2 tablespoons very finely chopped scallions (green and white parts, see notes above)",
       "expected": {
-        "item": "very finely chopped scallions (green and white parts, see notes above)",
+        "item": "very finely chopped scallions",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "green and white parts, see notes above",
         "category": "Produce"
       }
     },
     {
       "raw": "1/4 cup neutral-tasting oil (I use olive oil)",
       "expected": {
-        "item": "neutral-tasting oil (I use olive oil)",
+        "item": "neutral-tasting oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I use olive oil",
         "category": "Oils & Vinegars"
       }
     },

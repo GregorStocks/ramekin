@@ -109,7 +109,7 @@
     {
       "raw": "3/4 cup (175 ml) milk, whole is preferred but all varieties have worked",
       "expected": {
-        "item": "milk",
+        "item": "milk, whole is preferred but all varieties have worked",
         "measurements": [
           {
             "amount": "0.75",
@@ -118,13 +118,9 @@
           {
             "amount": "175",
             "unit": "ml"
-          },
-          {
-            "amount": "184",
-            "unit": "g"
           }
         ],
-        "note": "whole is preferred but all varieties have worked",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

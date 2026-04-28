@@ -55,14 +55,14 @@
     {
       "raw": "2 anchovies, roughly chopped (optional, see note)",
       "expected": {
-        "item": "anchovies, roughly chopped",
+        "item": "anchovies",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "optional, see note",
+        "note": "optional, see note, roughly chopped",
         "category": "Meat & Seafood"
       }
     },
@@ -159,9 +159,9 @@
     {
       "raw": "Grated parmesan or pecorino romano to finish (see note)",
       "expected": {
-        "item": "Grated parmesan or pecorino romano to finish (see note)",
+        "item": "Grated parmesan or pecorino romano to finish",
         "measurements": [],
-        "note": null,
+        "note": "see note",
         "category": "Cheese"
       }
     }

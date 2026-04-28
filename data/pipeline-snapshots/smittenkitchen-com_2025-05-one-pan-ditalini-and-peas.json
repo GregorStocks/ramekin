@@ -29,7 +29,7 @@
       "section": null
     },
     {
-      "item": "thinly-sliced salami, cut into strips",
+      "item": "thinly-sliced salami",
       "measurements": [
         {
           "amount": "2",
@@ -40,7 +40,7 @@
           "unit": "g"
         }
       ],
-      "note": "optional",
+      "note": "optional, cut into strips",
       "raw": "2 ounces (55 grams) thinly-sliced salami, cut into strips (optional)",
       "section": null
     },
@@ -84,7 +84,7 @@
       "section": null
     },
     {
-      "item": "vegetable broth (salted or low-sodium, if unsalted, add salt)",
+      "item": "vegetable broth",
       "measurements": [
         {
           "amount": "4",
@@ -93,9 +93,13 @@
         {
           "amount": "945",
           "unit": "ml"
+        },
+        {
+          "amount": "996",
+          "unit": "g"
         }
       ],
-      "note": null,
+      "note": "salted or low-sodium, if unsalted, add salt",
       "raw": "4 cups (945 ml) vegetable broth (salted or low-sodium, if unsalted, add salt)",
       "section": null
     },
@@ -131,7 +135,7 @@
           "unit": "285-gram bag"
         }
       ],
-      "note": null,
+      "note": "from 1 10-ounce or 285-gram bag",
       "raw": "2 cups frozen peas (from 1 10-ounce or 285-gram bag), no need to defrost",
       "section": null
     },

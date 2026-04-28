@@ -5,14 +5,14 @@
     {
       "raw": "4  chicken breast (thin-cut, boneless. skinless)",
       "expected": {
-        "item": "chicken breast (thin-cut, boneless. skinless)",
+        "item": "chicken breast",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "thin-cut, boneless. skinless",
         "category": "Meat & Seafood"
       }
     },
@@ -166,13 +166,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": null,
-            "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "slices",
         "category": "Produce"
       }
     }

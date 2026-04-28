@@ -5,7 +5,7 @@
     {
       "raw": "10 tablespoons (140 grams or 5 ounces) unsalted butter, cold is fine, cut into small chunks",
       "expected": {
-        "item": "unsalted butter, cold is fine, cut into small chunks",
+        "item": "unsalted butter, cold is fine",
         "measurements": [
           {
             "amount": "10",
@@ -20,14 +20,14 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "cut into small chunks",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1/2 cup (110 grams or 4 ounces) light brown sugar, gently packed",
       "expected": {
-        "item": "light brown sugar",
+        "item": "light brown sugar, gently packed",
         "measurements": [
           {
             "amount": "0.5",
@@ -42,7 +42,7 @@
             "unit": "oz"
           }
         ],
-        "note": "gently packed",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -178,7 +178,7 @@
             "unit": "g"
           }
         ],
-        "note": "stems trimmed",
+        "note": "about 2 1/2 cups or 340 grams, stems trimmed",
         "category": "Produce"
       }
     },

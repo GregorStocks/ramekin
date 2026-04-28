@@ -14,16 +14,16 @@
     {
       "raw": "The baguettes or seeded sandwich rolls you’ll use for your sandwiches (see Note above for how to estimate)",
       "expected": {
-        "item": "The baguettes or seeded sandwich rolls you’ll use for your sandwiches (see Note above for how to estimate)",
+        "item": "The baguettes or seeded sandwich rolls you’ll use for your sandwiches",
         "measurements": [],
-        "note": null,
+        "note": "see Note above for how to estimate",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "2 pounds ground meat of your choice (I used pork but have in the past used beef, veal, chicken, turkey or a blend thereof)",
       "expected": {
-        "item": "ground meat of your choice (I used pork but have in the past used beef, veal, chicken, turkey or a blend thereof)",
+        "item": "ground meat of your choice",
         "measurements": [
           {
             "amount": "2",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used pork but have in the past used beef, veal, chicken, turkey or a blend thereof",
         "category": "Meat & Seafood"
       }
     },
@@ -174,14 +174,14 @@
     {
       "raw": "4 cups prepared tomato sauce (plus extra if you like a lot of extra sauce)",
       "expected": {
-        "item": "prepared tomato sauce (plus extra if you like a lot of extra sauce)",
+        "item": "prepared tomato sauce",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plus extra if you like a lot of extra sauce",
         "category": "Canned Goods"
       }
     },

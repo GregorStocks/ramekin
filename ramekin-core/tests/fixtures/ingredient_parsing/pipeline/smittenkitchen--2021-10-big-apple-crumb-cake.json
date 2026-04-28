@@ -5,7 +5,7 @@
     {
       "raw": "1 pound apples (3 medium or 2 large), peeled if you wish, cored, cut into 1/2-inch wedges",
       "expected": {
-        "item": "apples, peeled if you wish, cored, cut into 1/2-inch wedges",
+        "item": "apples, peeled if you wish, cored",
         "measurements": [
           {
             "amount": "1",
@@ -24,7 +24,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch wedges",
         "category": "Produce"
       }
     },

@@ -33,14 +33,14 @@
     {
       "raw": "1  can condensed cream of mushroom soup (or any kind of condensed cream soup)",
       "expected": {
-        "item": "condensed cream of mushroom soup (or any kind of condensed cream soup)",
+        "item": "condensed cream of mushroom soup",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "or any kind of condensed cream soup",
         "category": "Produce"
       }
     },

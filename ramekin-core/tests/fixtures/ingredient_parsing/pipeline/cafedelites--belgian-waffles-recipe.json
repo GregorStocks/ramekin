@@ -5,14 +5,18 @@
     {
       "raw": "2 cups flour (all purpose or plain)",
       "expected": {
-        "item": "flour (all purpose or plain)",
+        "item": "flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "all purpose or plain",
         "category": "Baking"
       }
     },
@@ -37,14 +41,18 @@
     {
       "raw": "4 teaspoons baking powder (aluminium-free)",
       "expected": {
-        "item": "baking powder (aluminium-free)",
+        "item": "baking powder",
         "measurements": [
           {
             "amount": "4",
             "unit": "tsp"
+          },
+          {
+            "amount": "18",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "aluminium-free",
         "category": "Baking"
       }
     },
@@ -119,14 +127,14 @@
     {
       "raw": "2 large eggs (separated)",
       "expected": {
-        "item": "eggs (separated)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "separated",
         "category": "Dairy & Eggs"
       }
     },

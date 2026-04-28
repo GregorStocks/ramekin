@@ -37,23 +37,23 @@
     {
       "raw": "Sea salt &amp; pepper ((or galic salt))",
       "expected": {
-        "item": "Sea salt & pepper (or galic salt)",
+        "item": "Sea salt & pepper",
         "measurements": [],
-        "note": null,
+        "note": "or galic salt",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "2  tomatoes (vine ripened)",
       "expected": {
-        "item": "tomatoes (vine ripened)",
+        "item": "tomatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "vine ripened",
         "category": "Produce"
       }
     },
@@ -167,13 +167,8 @@
       "raw": "fresh corn (1 ear)",
       "expected": {
         "item": "fresh corn",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "ear"
-          }
-        ],
-        "note": null,
+        "measurements": [],
+        "note": "1 ear",
         "category": "Other"
       }
     },
@@ -212,14 +207,18 @@
     {
       "raw": "3 Tablespoons balsamic vinegar ((or white whine vinegar, apple cider, etc.))",
       "expected": {
-        "item": "balsamic vinegar (or white whine vinegar, apple cider, etc.)",
+        "item": "balsamic vinegar",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "48",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or white whine vinegar, apple cider, etc.",
         "category": "Oils & Vinegars"
       }
     },

@@ -78,13 +78,9 @@
           {
             "amount": "1",
             "unit": "piece"
-          },
-          {
-            "amount": "3",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "3-inch",
         "category": "Produce"
       }
     },
@@ -105,7 +101,7 @@
     {
       "raw": "2 pounds curly kale (about 4 bunches), stemmed and torn (about 32 loosely packed cups)",
       "expected": {
-        "item": "curly kale, stemmed and torn",
+        "item": "curly kale",
         "measurements": [
           {
             "amount": "2",
@@ -120,14 +116,14 @@
             "unit": "g"
           }
         ],
-        "note": "about 32 loosely packed cups",
+        "note": "about 4 bunches, about 32 loosely packed cups, stemmed and torn",
         "category": "Produce"
       }
     },
     {
       "raw": "2 pounds collard greens, stemmed and torn (about 32 loosely packed cups)",
       "expected": {
-        "item": "collard greens, stemmed and torn",
+        "item": "collard greens",
         "measurements": [
           {
             "amount": "2",
@@ -138,7 +134,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 32 loosely packed cups",
+        "note": "about 32 loosely packed cups, stemmed and torn",
         "category": "Produce"
       }
     },

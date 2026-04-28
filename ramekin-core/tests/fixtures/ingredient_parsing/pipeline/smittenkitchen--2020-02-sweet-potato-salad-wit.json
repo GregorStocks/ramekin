@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 4 medium",
         "category": "Produce"
       }
     },
@@ -72,28 +72,28 @@
     {
       "raw": "1/4 cup pepitas (hulled pumpkin seeds), raw or roasted",
       "expected": {
-        "item": "pepitas (hulled pumpkin seeds)",
+        "item": "pepitas",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "raw or roasted",
-        "category": "Produce"
+        "note": "hulled pumpkin seeds, raw or roasted",
+        "category": "Bakery & Bread"
       }
     },
     {
       "raw": "1 teaspoon mild (Aleppo-style) or hot red pepper flakes, or less to taste",
       "expected": {
-        "item": "mild (Aleppo-style) or hot red pepper flakes",
+        "item": "mild or hot red pepper flakes",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or less to taste",
+        "note": "Aleppo-style; or less to taste",
         "category": "Spices & Seasonings"
       }
     },

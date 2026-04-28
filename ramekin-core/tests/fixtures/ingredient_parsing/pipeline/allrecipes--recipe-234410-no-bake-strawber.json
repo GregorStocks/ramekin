@@ -5,7 +5,7 @@
     {
       "raw": "1 (3 ounce) package strawberry-flavored gelatin (such as Jell-O®)",
       "expected": {
-        "item": "strawberry-flavored gelatin (such as Jell-O®)",
+        "item": "strawberry-flavored gelatin",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Jell-O®",
         "category": "Produce"
       }
     },
@@ -130,13 +130,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "9",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "9 inch",
         "category": "Snacks"
       }
     }

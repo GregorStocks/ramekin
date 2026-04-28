@@ -32,14 +32,14 @@
     {
       "raw": "2 bell peppers (yellow and/or red), chopped",
       "expected": {
-        "item": "bell peppers (yellow and/or red)",
+        "item": "bell peppers",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "chopped",
+        "note": "yellow and/or red, chopped",
         "category": "Produce"
       }
     },
@@ -61,7 +61,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and diced",
+        "note": "about 1 pound, peeled and diced",
         "category": "Produce"
       }
     },

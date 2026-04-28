@@ -5,28 +5,32 @@
     {
       "raw": "1/2 cup chickpea flour (also known as garbanzo bean flour or besan flour)",
       "expected": {
-        "item": "chickpea flour (also known as garbanzo bean flour or besan flour)",
+        "item": "chickpea flour",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "also known as garbanzo bean flour or besan flour",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1/2 cup water (plus extra for thinning if needed)",
       "expected": {
-        "item": "water (plus extra for thinning if needed)",
+        "item": "water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plus extra for thinning if needed",
         "category": "Other"
       }
     },
@@ -81,7 +85,7 @@
             "unit": "small"
           }
         ],
-        "note": "thinly sliced (approx 1/4 cup",
+        "note": "thinly sliced (approx 1/4 cup)",
         "category": "Produce"
       }
     },

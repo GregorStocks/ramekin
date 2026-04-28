@@ -102,7 +102,7 @@
     {
       "raw": "1/4 pound frisee (French curly endive) or another sturdy lettuce",
       "expected": {
-        "item": "frisee (French curly endive) or another sturdy lettuce",
+        "item": "frisee or another sturdy lettuce",
         "measurements": [
           {
             "amount": "0.25",
@@ -113,7 +113,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "French curly endive",
         "category": "Produce"
       }
     },

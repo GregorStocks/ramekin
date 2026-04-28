@@ -37,14 +37,14 @@
     {
       "raw": "1 cup nuts (I used peanuts, which weigh 140 grams)",
       "expected": {
-        "item": "nuts (I used peanuts, which weigh 140 grams)",
+        "item": "nuts",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used peanuts, which weigh 140 grams",
         "category": "Nuts & Dried Fruit"
       }
     },

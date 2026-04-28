@@ -93,14 +93,18 @@
     {
       "raw": "1 tablespoon chili powder (see note)",
       "expected": {
-        "item": "chili powder (see note)",
+        "item": "chili powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note",
         "section": "For the Steak Fajita Marinade",
         "category": "Spices & Seasonings"
       }
@@ -119,7 +123,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "finely minced",
+        "note": "about 1 tablespoon, finely minced",
         "section": "For the Steak Fajita Marinade",
         "category": "Produce"
       }
@@ -225,14 +229,14 @@
     {
       "raw": "1 white or yellow onion, cut into 1/2-inch slices",
       "expected": {
-        "item": "white or yellow onion, cut into 1/2-inch slices",
+        "item": "white or yellow onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch slices",
         "section": "For the Fajitas",
         "category": "Produce"
       }
@@ -255,14 +259,14 @@
     {
       "raw": "1 recipe guacamole, for serving, if desired",
       "expected": {
-        "item": "recipe guacamole, for serving, if desired",
+        "item": "recipe guacamole, for serving",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "if desired",
         "section": "For the Fajitas",
         "category": "Other"
       }
@@ -270,14 +274,14 @@
     {
       "raw": "1 recipe pico de gallo, for serving, if desired",
       "expected": {
-        "item": "recipe pico de gallo, for serving, if desired",
+        "item": "recipe pico de gallo, for serving",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "if desired",
         "section": "For the Fajitas",
         "category": "Other"
       }
@@ -285,9 +289,9 @@
     {
       "raw": "Sour cream, shredded cheese, and salsa, for serving, if desired",
       "expected": {
-        "item": "Sour cream, shredded cheese, and salsa, for serving, if desired",
+        "item": "Sour cream, shredded cheese, and salsa, for serving",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "section": "For the Fajitas",
         "category": "Dairy & Eggs"
       }

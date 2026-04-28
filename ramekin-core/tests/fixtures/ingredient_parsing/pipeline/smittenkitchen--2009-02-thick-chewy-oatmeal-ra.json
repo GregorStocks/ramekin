@@ -167,7 +167,7 @@
     {
       "raw": "3/4 cup (120 grams) raisins (see Note)",
       "expected": {
-        "item": "raisins (see Note)",
+        "item": "raisins",
         "measurements": [
           {
             "amount": "0.75",
@@ -178,14 +178,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
       "raw": "1/2 cup walnuts (65 grams), chopped (optional)",
       "expected": {
-        "item": "walnuts, chopped",
+        "item": "walnuts",
         "measurements": [
           {
             "amount": "0.5",
@@ -196,7 +196,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, chopped",
         "category": "Nuts & Dried Fruit"
       }
     }

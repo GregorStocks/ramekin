@@ -16,35 +16,39 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 2 cups",
         "category": "Baking"
       }
     },
     {
       "raw": "1/2 cup water (warm)",
       "expected": {
-        "item": "water (warm)",
+        "item": "water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "warm",
         "category": "Other"
       }
     },
     {
       "raw": "1 teaspoon kansui ((Potassium Carbonate &amp;amp; Sodium Bi-Carbonate))",
       "expected": {
-        "item": "kansui (Potassium Carbonate & Sodium Bi-Carbonate)",
+        "item": "kansui",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "Potassium Carbonate & Sodium Bi-Carbonate",
         "category": "Other"
       }
     }

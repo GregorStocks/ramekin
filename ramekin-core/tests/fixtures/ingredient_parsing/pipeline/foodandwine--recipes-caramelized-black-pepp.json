@@ -23,10 +23,10 @@
     {
       "raw": "About 1/4 cup nam pla (fish sauce)",
       "expected": {
-        "item": "About 1/4 cup nam pla (fish sauce)",
+        "item": "About 1/4 cup nam pla",
         "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "fish sauce",
+        "category": "Other"
       }
     },
     {
@@ -110,14 +110,14 @@
     {
       "raw": "2 fresh Thai chiles, halved, or dried red chiles",
       "expected": {
-        "item": "fresh Thai chiles, halved",
+        "item": "fresh Thai chiles, halved, or dried red chiles",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "or dried red chiles",
+        "note": null,
         "category": "Other"
       }
     },
@@ -156,7 +156,7 @@
     {
       "raw": "1 pound skinless, boneless chicken thighs, cut into 1-inch pieces",
       "expected": {
-        "item": "skinless, boneless chicken thighs, cut into 1-inch pieces",
+        "item": "skinless, boneless chicken thighs",
         "measurements": [
           {
             "amount": "1",
@@ -167,7 +167,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Meat & Seafood"
       }
     },

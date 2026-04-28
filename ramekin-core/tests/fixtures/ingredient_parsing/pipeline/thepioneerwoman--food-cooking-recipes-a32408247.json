@@ -16,7 +16,7 @@
             "unit": "oz each"
           }
         ],
-        "note": null,
+        "note": "about 5 ounces each",
         "category": "Meat & Seafood"
       }
     },
@@ -152,14 +152,14 @@
     {
       "raw": "2 lemons, cut into wedges",
       "expected": {
-        "item": "lemons, cut into wedges",
+        "item": "lemons",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into wedges",
         "category": "Produce"
       }
     }

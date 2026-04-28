@@ -146,23 +146,27 @@
     {
       "raw": "1/4 teaspoon vanilla extract (if desired)",
       "expected": {
-        "item": "vanilla extract (if desired)",
+        "item": "vanilla extract",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "if desired",
         "category": "Baking"
       }
     },
     {
       "raw": "Few gratings fresh lemon zest (if desired)",
       "expected": {
-        "item": "Few gratings fresh lemon zest (if desired)",
+        "item": "Few gratings fresh lemon zest",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Produce"
       }
     },

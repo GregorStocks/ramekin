@@ -33,14 +33,14 @@
     {
       "raw": "1 small leek ((cut into 4 pieces))",
       "expected": {
-        "item": "leek (cut into 4 pieces)",
+        "item": "leek",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "cut into 4 pieces",
         "category": "Produce"
       }
     },
@@ -75,9 +75,9 @@
     {
       "raw": "vegetable oil ((for frying the aromatics))",
       "expected": {
-        "item": "vegetable oil (for frying the aromatics)",
+        "item": "vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying the aromatics",
         "category": "Oils & Vinegars"
       }
     },
@@ -166,14 +166,14 @@
     {
       "raw": "1 cup soy milk (- unsweetened)",
       "expected": {
-        "item": "soy milk (- unsweetened)",
+        "item": "soy milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "- unsweetened",
         "category": "Dairy & Eggs"
       }
     },
@@ -216,14 +216,14 @@
     {
       "raw": "4 portions ramen noodles ((boiled according to package directions))",
       "expected": {
-        "item": "portions ramen noodles (boiled according to package directions)",
+        "item": "portions ramen noodles",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "boiled according to package directions",
         "category": "Pasta & Rice"
       }
     }

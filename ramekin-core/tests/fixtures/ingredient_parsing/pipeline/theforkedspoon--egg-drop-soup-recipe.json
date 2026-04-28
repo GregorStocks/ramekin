@@ -5,14 +5,18 @@
     {
       "raw": "4 cups chicken broth ((good-quality ))",
       "expected": {
-        "item": "chicken broth (good-quality",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "996",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "good-quality",
         "category": "Canned Goods"
       }
     },
@@ -55,14 +59,18 @@
     {
       "raw": "1 tablespoon soy sauce ((low-sodium))",
       "expected": {
-        "item": "soy sauce (low-sodium)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low-sodium",
         "category": "Condiments & Sauces"
       }
     },
@@ -137,14 +145,14 @@
     {
       "raw": "1/4 cup sliced green onions (to garnish)",
       "expected": {
-        "item": "sliced green onions (to garnish)",
+        "item": "sliced green onions",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "to garnish",
         "category": "Produce"
       }
     }

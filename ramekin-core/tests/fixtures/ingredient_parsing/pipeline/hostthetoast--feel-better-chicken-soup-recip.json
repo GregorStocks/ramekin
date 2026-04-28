@@ -258,7 +258,7 @@
     {
       "raw": "10 ounces pasta or noodles of choice (I used gemelli pasta)",
       "expected": {
-        "item": "pasta or noodles of choice (I used gemelli pasta)",
+        "item": "pasta or noodles of choice",
         "measurements": [
           {
             "amount": "10",
@@ -269,7 +269,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used gemelli pasta",
         "category": "Pasta & Rice"
       }
     },

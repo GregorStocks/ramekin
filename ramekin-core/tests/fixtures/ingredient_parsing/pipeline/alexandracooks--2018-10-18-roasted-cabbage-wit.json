@@ -5,14 +5,14 @@
     {
       "raw": "1 head Savoy cabbage, cut into 8 to 10 wedges",
       "expected": {
-        "item": "Savoy cabbage, cut into 8 to 10 wedges",
+        "item": "Savoy cabbage",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "cut into 8 to 10 wedges",
         "category": "Produce"
       }
     },
@@ -46,14 +46,14 @@
     {
       "raw": "1 tablespoon saba* (see notes) or 2 tablespoons balsamic, I like white balsamic",
       "expected": {
-        "item": "saba* (see notes)",
+        "item": "saba",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or 2 tablespoons balsamic, I like white balsamic",
+        "note": "see notes; or 2 tablespoons balsamic, I like white balsamic",
         "category": "Other"
       }
     },

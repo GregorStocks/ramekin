@@ -191,14 +191,14 @@
     {
       "raw": "3-4  chipotle chiles in adobo (add more if you want more heat)",
       "expected": {
-        "item": "chipotle chiles in adobo (add more if you want more heat)",
+        "item": "chipotle chiles in adobo",
         "measurements": [
           {
             "amount": "3-4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "add more if you want more heat",
         "category": "Snacks"
       }
     },

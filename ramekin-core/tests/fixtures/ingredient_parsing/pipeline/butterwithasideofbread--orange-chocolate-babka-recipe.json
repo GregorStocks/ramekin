@@ -37,14 +37,18 @@
     {
       "raw": "¾ cups sugar (separated)",
       "expected": {
-        "item": "sugar (separated)",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "separated",
         "category": "Baking"
       }
     },

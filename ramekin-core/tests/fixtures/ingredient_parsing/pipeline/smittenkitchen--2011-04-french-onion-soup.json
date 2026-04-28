@@ -93,7 +93,7 @@
     {
       "raw": "1/4 teaspoon (1 gram) granulated sugar (helps the onions to brown)",
       "expected": {
-        "item": "granulated sugar (helps the onions to brown)",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.25",
@@ -104,7 +104,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "helps the onions to brown",
         "category": "Baking"
       }
     },
@@ -223,14 +223,14 @@
     {
       "raw": "1 to 2 cups (to taste) grated Swiss (I often use Gruyere) or a mixture of Swiss and Parmesan cheese",
       "expected": {
-        "item": "grated Swiss (I often use Gruyere) or a mixture of Swiss and Parmesan cheese",
+        "item": "grated Swiss or a mixture of Swiss and Parmesan cheese",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "cup"
           }
         ],
-        "note": "to taste",
+        "note": "to taste, I often use Gruyere",
         "category": "Cheese"
       }
     },

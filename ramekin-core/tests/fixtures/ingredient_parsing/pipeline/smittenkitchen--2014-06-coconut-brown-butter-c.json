@@ -163,7 +163,7 @@
     {
       "raw": "4 cups (240 grams) dried, unsweetened coconut chips (I used these)",
       "expected": {
-        "item": "dried, unsweetened coconut chips (I used these)",
+        "item": "dried, unsweetened coconut chips",
         "measurements": [
           {
             "amount": "4",
@@ -174,7 +174,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used these",
         "category": "Produce"
       }
     }

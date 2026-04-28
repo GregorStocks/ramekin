@@ -73,28 +73,28 @@
     {
       "raw": "1/2 tsp Tabasco (or hot sauce of choice)",
       "expected": {
-        "item": "Tabasco (or hot sauce of choice)",
+        "item": "Tabasco",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "or hot sauce of choice",
+        "category": "Other"
       }
     },
     {
       "raw": "1/2 tsp Old Bay Seasoning ((See Note 1))",
       "expected": {
-        "item": "Old Bay Seasoning (See Note 1)",
+        "item": "Old Bay Seasoning",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "See Note 1",
         "category": "Spices & Seasonings"
       }
     },
@@ -119,14 +119,14 @@
     {
       "raw": "20  Ritz crackers (or Saltines)",
       "expected": {
-        "item": "Ritz crackers (or Saltines)",
+        "item": "Ritz crackers",
         "measurements": [
           {
             "amount": "20",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or Saltines",
         "category": "Snacks"
       }
     },

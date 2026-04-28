@@ -183,14 +183,14 @@
     {
       "raw": "1/4 cup apricot jelly (heated slightly)",
       "expected": {
-        "item": "apricot jelly (heated slightly)",
+        "item": "apricot jelly",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "heated slightly",
         "category": "Produce"
       }
     }

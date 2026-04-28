@@ -118,14 +118,14 @@
     {
       "raw": "3/4 cup dried lentils, any variety, but green (le puy) or brown (italian) are my favorites here",
       "expected": {
-        "item": "dried lentils, any variety, but green (le puy) or brown (italian) are my favorites here",
+        "item": "dried lentils, any variety, but green or brown are my favorites here",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "le puy, italian",
         "category": "Canned Goods"
       }
     },
@@ -141,14 +141,14 @@
     {
       "raw": "6 cups vegetable broth + splashes more, if needed",
       "expected": {
-        "item": "vegetable broth + splashes more, if needed",
+        "item": "vegetable broth + splashes more",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "if needed",
         "category": "Canned Goods"
       }
     },

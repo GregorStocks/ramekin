@@ -37,14 +37,14 @@
     {
       "raw": "1 medium onion, cut into 1/4-inch dice",
       "expected": {
-        "item": "onion, cut into 1/4-inch dice",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch dice",
         "category": "Produce"
       }
     },
@@ -109,15 +109,15 @@
     {
       "raw": "1 cup beans, canned or precooked (white would be great; I used some Red Nightfall Beans mostly because they were languishing in my cabinet)",
       "expected": {
-        "item": "beans",
+        "item": "beans, canned or precooked",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "canned or precooked (white would be great; I used some Red Nightfall Beans mostly because they were languishing in my cabinet)",
-        "category": "Other"
+        "note": "white would be great; I used some Red Nightfall Beans mostly because they were languishing in my cabinet",
+        "category": "Canned Goods"
       }
     },
     {

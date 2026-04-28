@@ -50,14 +50,14 @@
     {
       "raw": "0.25 cup freshly squeezed lime juice (from 2 limes)",
       "expected": {
-        "item": "freshly squeezed lime juice (from 2 limes)",
+        "item": "freshly squeezed lime juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 2 limes",
         "category": "Beverages"
       }
     },

@@ -104,14 +104,18 @@
     {
       "raw": "1/2 cup smooth peanut butter (national brand)",
       "expected": {
-        "item": "smooth peanut butter (national brand)",
+        "item": "smooth peanut butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "129",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "national brand",
         "category": "Condiments & Sauces"
       }
     },
@@ -209,14 +213,18 @@
     {
       "raw": "1 cup creamy peanut butter (national brand)",
       "expected": {
-        "item": "creamy peanut butter (national brand)",
+        "item": "creamy peanut butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "258",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "national brand",
         "category": "Condiments & Sauces"
       }
     },

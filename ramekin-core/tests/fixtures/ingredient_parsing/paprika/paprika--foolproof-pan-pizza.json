@@ -80,13 +80,9 @@
           {
             "amount": "9.5",
             "unit": "oz"
-          },
-          {
-            "amount": "1",
-            "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "9.5 ounces; about 1 cup plus 3 tablespoons",
         "category": "Other"
       }
     },
@@ -129,7 +125,7 @@
     {
       "raw": "12 ounces grated full-fat, low moisture (dry) mozzarella cheese (see note)",
       "expected": {
-        "item": "grated full-fat, low moisture (dry) mozzarella cheese (see note)",
+        "item": "grated full-fat, low moisture mozzarella cheese",
         "measurements": [
           {
             "amount": "12",
@@ -140,7 +136,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "dry, see note",
         "category": "Cheese"
       }
     },

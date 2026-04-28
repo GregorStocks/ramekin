@@ -79,14 +79,14 @@
     {
       "raw": "2 medium potatoes, cut into 1-inch chunks",
       "expected": {
-        "item": "potatoes, cut into 1-inch chunks",
+        "item": "potatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch chunks",
         "category": "Produce"
       }
     },

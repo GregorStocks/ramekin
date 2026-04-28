@@ -119,14 +119,14 @@
     {
       "raw": "1/2 teaspoon fine grain sea salt (plus 2-3 pinches additional fine grain sea salt)",
       "expected": {
-        "item": "fine grain sea salt (plus 2-3 pinches additional fine grain sea salt)",
+        "item": "fine grain sea salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "plus 2-3 pinches additional fine grain sea salt",
         "category": "Spices & Seasonings"
       }
     }

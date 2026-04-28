@@ -59,14 +59,18 @@
     {
       "raw": "2 1/4 teaspoons instant dry yeast (one packet)",
       "expected": {
-        "item": "instant dry yeast (one packet)",
+        "item": "instant dry yeast",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "one packet",
         "category": "Baking"
       }
     },

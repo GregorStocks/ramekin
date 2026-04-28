@@ -70,14 +70,14 @@
     {
       "raw": "12 scallions (mine were very thin; I’d use fewer if yours are on the thick side)",
       "expected": {
-        "item": "scallions (mine were very thin; I’d use fewer if yours are on the thick side)",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "12",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "mine were very thin; I’d use fewer if yours are on the thick side",
         "category": "Produce"
       }
     },
@@ -112,28 +112,28 @@
     {
       "raw": "1/4 teaspoon freshly ground nutmeg (I totally skipped this)",
       "expected": {
-        "item": "freshly ground nutmeg (I totally skipped this)",
+        "item": "freshly ground nutmeg",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "I totally skipped this",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/2 teaspoon coarse or kosher salt (use less if your mashed potatoes are already seasoned)",
       "expected": {
-        "item": "coarse or kosher salt (use less if your mashed potatoes are already seasoned)",
+        "item": "coarse or kosher salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "use less if your mashed potatoes are already seasoned",
         "category": "Spices & Seasonings"
       }
     },
@@ -149,14 +149,14 @@
     {
       "raw": "1/3 cup fresh bread crumbs or panko (plain and lightweight)",
       "expected": {
-        "item": "fresh bread crumbs or panko (plain and lightweight)",
+        "item": "fresh bread crumbs or panko",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plain and lightweight",
         "category": "Bakery & Bread"
       }
     },

@@ -119,14 +119,14 @@
     {
       "raw": "8  ice cream sugar cones (broken into pieces)",
       "expected": {
-        "item": "ice cream sugar cones (broken into pieces)",
+        "item": "ice cream sugar cones",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "broken into pieces",
         "section": "Crust Ingredients",
         "category": "Frozen"
       }

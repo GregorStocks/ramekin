@@ -55,7 +55,7 @@
     {
       "raw": "1/2 cup (4 ounces or 115 grams), cold unsalted butter, cut into 1-inch pieces",
       "expected": {
-        "item": "cold unsalted butter, cut into 1-inch pieces",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -124,7 +124,7 @@
             "unit": "g"
           }
         ],
-        "note": "sliced crosswise 1/4-inch thick",
+        "note": "about 1.5 pounds, sliced crosswise 1/4-inch thick",
         "category": "Produce"
       }
     },
@@ -212,14 +212,14 @@
     {
       "raw": "1 tablespoon smooth Dijon mustard (double if it you like mustard; skip if you don’t)",
       "expected": {
-        "item": "smooth Dijon mustard (double if it you like mustard; skip if you don’t)",
+        "item": "smooth Dijon mustard",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "double if it you like mustard; skip if you don’t",
         "category": "Condiments & Sauces"
       }
     },
@@ -237,7 +237,7 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced or coarsely grated (see Note)",
+        "note": "see Note, thinly sliced or coarsely grated",
         "category": "Cheese"
       }
     },

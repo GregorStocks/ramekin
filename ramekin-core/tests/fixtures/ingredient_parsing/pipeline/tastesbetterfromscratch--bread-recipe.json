@@ -12,15 +12,11 @@
             "unit": "cup"
           },
           {
-            "amount": "105-115",
-            "unit": "degrees"
-          },
-          {
             "amount": "474",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "105-115 degrees",
         "category": "Other"
       }
     },
@@ -50,17 +46,9 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
-          },
-          {
-            "amount": "50",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "85g honey, 50g sugar",
         "category": "Baking"
       }
     },
@@ -85,14 +73,22 @@
     {
       "raw": "2 Tablespoons oil (canola or vegetable) ((30 ml))",
       "expected": {
-        "item": "oil (canola",
+        "item": "oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
-        "note": "or vegetable) (30 ml)",
+        "note": "canola or vegetable",
         "category": "Oils & Vinegars"
       }
     },
@@ -104,13 +100,9 @@
           {
             "amount": "4-5",
             "unit": null
-          },
-          {
-            "amount": "500",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "500g-688g",
         "category": "Baking"
       }
     }

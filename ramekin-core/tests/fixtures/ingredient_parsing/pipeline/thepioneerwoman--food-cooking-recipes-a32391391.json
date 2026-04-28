@@ -23,14 +23,18 @@
     {
       "raw": "2 tbsp. lime juice (from about 1 lime)",
       "expected": {
-        "item": "lime juice (from about 1 lime)",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 1 lime",
         "category": "Beverages"
       }
     },
@@ -216,13 +220,9 @@
           {
             "amount": "1",
             "unit": "piece"
-          },
-          {
-            "amount": "1.5",
-            "unit": "inches"
           }
         ],
-        "note": "peeled and chopped",
+        "note": "1 1/2 inches, peeled and chopped",
         "category": "Produce"
       }
     },

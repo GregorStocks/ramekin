@@ -19,14 +19,14 @@
     {
       "raw": "1 cup instant or kombu dashi (see Tip), vegetable or chicken broth, or water",
       "expected": {
-        "item": "instant or kombu dashi (see Tip), vegetable or chicken broth, or water",
+        "item": "instant or kombu dashi, vegetable or chicken broth, or water",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Tip",
         "category": "Canned Goods"
       }
     },
@@ -83,14 +83,14 @@
     {
       "raw": "1 tablespoon finely snipped chives or scallion greens, for garnish (optional)",
       "expected": {
-        "item": "finely snipped chives or scallion greens, for garnish",
+        "item": "finely snipped chives or scallion greens",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Produce"
       }
     }

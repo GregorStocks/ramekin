@@ -5,18 +5,14 @@
     {
       "raw": "4 pita breads (5 to 8 inches in diameter), whole wheat or regular",
       "expected": {
-        "item": "pita breads",
+        "item": "pita breads, whole wheat or regular",
         "measurements": [
           {
             "amount": "4",
             "unit": null
-          },
-          {
-            "amount": "5 to 8",
-            "unit": "inches in diameter"
           }
         ],
-        "note": "whole wheat or regular",
+        "note": "5 to 8 inches in diameter",
         "category": "Bakery & Bread"
       }
     },

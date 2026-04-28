@@ -95,15 +95,11 @@
             "unit": "oz"
           },
           {
-            "amount": "0.25",
-            "unit": null
-          },
-          {
             "amount": "170",
             "unit": "g"
           }
         ],
-        "note": "peeled and diced very small",
+        "note": "about 6 ounces, 1/4 to 1/2-inch pieces, peeled and diced very small",
         "category": "Produce"
       }
     },
@@ -191,14 +187,14 @@
     {
       "raw": "6 slices hearty bread, your favorite kind (see Note up top for mine)",
       "expected": {
-        "item": "hearty bread, your favorite kind (see Note up top for mine)",
+        "item": "hearty bread, your favorite kind",
         "measurements": [
           {
             "amount": "6",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "see Note up top for mine",
         "category": "Bakery & Bread"
       }
     },

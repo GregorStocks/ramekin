@@ -23,15 +23,15 @@
     {
       "raw": "1 tsp mentsuyu (concentrated noodle soup base)",
       "expected": {
-        "item": "mentsuyu (concentrated noodle soup base)",
+        "item": "mentsuyu",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Pasta & Rice"
+        "note": "concentrated noodle soup base",
+        "category": "Other"
       }
     },
     {

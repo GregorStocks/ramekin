@@ -41,7 +41,7 @@
     {
       "raw": "1 ounce triple sec (or cointreau)",
       "expected": {
-        "item": "triple sec (or cointreau)",
+        "item": "triple sec",
         "measurements": [
           {
             "amount": "1",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or cointreau",
         "category": "Other"
       }
     },

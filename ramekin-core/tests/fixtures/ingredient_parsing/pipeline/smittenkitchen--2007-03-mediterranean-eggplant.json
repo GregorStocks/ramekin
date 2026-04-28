@@ -5,7 +5,7 @@
     {
       "raw": "1 1/2 lb eggplant, cut into 1/2-inch cubes",
       "expected": {
-        "item": "eggplant, cut into 1/2-inch cubes",
+        "item": "eggplant",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,14 +16,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch cubes",
         "category": "Produce"
       }
     },
     {
       "raw": "3/4 lb zucchini, cut into 1/2-inch cubes",
       "expected": {
-        "item": "zucchini, cut into 1/2-inch cubes",
+        "item": "zucchini",
         "measurements": [
           {
             "amount": "0.75",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch cubes",
         "category": "Produce"
       }
     },
@@ -91,14 +91,14 @@
     {
       "raw": "1 cup chopped scallion (from 1 bunch)",
       "expected": {
-        "item": "chopped scallion (from 1 bunch)",
+        "item": "chopped scallion",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 1 bunch",
         "category": "Produce"
       }
     },
@@ -184,19 +184,11 @@
             "unit": "can"
           },
           {
-            "amount": "14",
-            "unit": "oz"
-          },
-          {
             "amount": "1.75",
             "unit": "cup"
-          },
-          {
-            "amount": "397",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "14-oz",
         "category": "Canned Goods"
       }
     },

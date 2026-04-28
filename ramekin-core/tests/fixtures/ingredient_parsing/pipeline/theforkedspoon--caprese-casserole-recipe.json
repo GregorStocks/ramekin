@@ -83,9 +83,9 @@
     {
       "raw": "salt and pepper (to season)",
       "expected": {
-        "item": "salt and pepper (to season)",
+        "item": "salt and pepper",
         "measurements": [],
-        "note": null,
+        "note": "to season",
         "category": "Spices & Seasonings"
       }
     },
@@ -189,7 +189,7 @@
             "unit": "g"
           }
         ],
-        "note": "tough stems removed, chopped (note 1",
+        "note": "tough stems removed, chopped (note 1)",
         "category": "Produce"
       }
     },
@@ -245,7 +245,7 @@
             "unit": "cup"
           }
         ],
-        "note": "shredded (divided",
+        "note": "shredded (divided)",
         "category": "Cheese"
       }
     },

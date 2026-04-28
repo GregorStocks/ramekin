@@ -50,22 +50,18 @@
     {
       "raw": "1 cup (2 sicks or 225 grams) very cold unsalted butter, cut into a small dice",
       "expected": {
-        "item": "very cold unsalted butter, cut into a small dice",
+        "item": "very cold unsalted butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           },
           {
-            "amount": "2",
-            "unit": "sicks"
-          },
-          {
             "amount": "225",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "2 sicks or 225 grams, cut into a small dice",
         "category": "Dairy & Eggs"
       }
     },
@@ -130,7 +126,7 @@
     {
       "raw": "2 pounds (905 grams) mushrooms (see Note up top for suggestions)",
       "expected": {
-        "item": "mushrooms (see Note up top for suggestions)",
+        "item": "mushrooms",
         "measurements": [
           {
             "amount": "2",
@@ -141,7 +137,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note up top for suggestions",
         "category": "Produce"
       }
     },
@@ -182,21 +178,21 @@
             "unit": null
           }
         ],
-        "note": "minced (I used 4 small because I’m a rebel)",
+        "note": "I used 4 small because I’m a rebel, minced",
         "category": "Produce"
       }
     },
     {
       "raw": "1 tablespoon fresh thyme, minced (use 1 teaspoon only if dried/jarred)",
       "expected": {
-        "item": "fresh thyme, minced",
+        "item": "fresh thyme",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "use 1 teaspoon only if dried/jarred",
+        "note": "use 1 teaspoon only if dried/jarred, minced",
         "category": "Produce"
       }
     },

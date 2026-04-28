@@ -41,7 +41,7 @@
     {
       "raw": "18 ounces white candy melts (or white chocolate)",
       "expected": {
-        "item": "white candy melts (or white chocolate)",
+        "item": "white candy melts",
         "measurements": [
           {
             "amount": "18",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or white chocolate",
         "category": "Other"
       }
     },
@@ -77,7 +77,7 @@
     {
       "raw": "1 oz. dark chocolate fondant or 16 chocolate chews (Tootsie Rolls)",
       "expected": {
-        "item": "dark chocolate fondant or 16 chocolate chews (Tootsie Rolls)",
+        "item": "dark chocolate fondant or 16 chocolate chews",
         "measurements": [
           {
             "amount": "1",
@@ -88,8 +88,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Bakery & Bread"
+        "note": "Tootsie Rolls",
+        "category": "Other"
       }
     }
   ]

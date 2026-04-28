@@ -115,7 +115,7 @@
     {
       "raw": "10-ounces chopped frozen spinach, thawed, squeezed dry, chopped further (or 10 ounces chopped fresh spinach)",
       "expected": {
-        "item": "chopped frozen spinach, thawed, squeezed dry, chopped further",
+        "item": "chopped frozen spinach, thawed, squeezed dry",
         "measurements": [
           {
             "amount": "10",
@@ -126,7 +126,7 @@
             "unit": "g"
           }
         ],
-        "note": "or 10 ounces chopped fresh spinach",
+        "note": "or 10 ounces chopped fresh spinach, chopped further",
         "category": "Frozen"
       }
     },
@@ -211,15 +211,15 @@
     {
       "raw": "1 28-ounce can tomatoes with herbs, including the liquid, tomatoes broken up (or your favorite tomato or pasta sauce)",
       "expected": {
-        "item": "tomatoes with herbs, including the liquid, tomatoes broken up (or your favorite tomato or pasta sauce)",
+        "item": "tomatoes with herbs, including the liquid, tomatoes broken up",
         "measurements": [
           {
             "amount": "1",
             "unit": "28-ounce can"
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "or your favorite tomato or pasta sauce",
+        "category": "Produce"
       }
     }
   ]

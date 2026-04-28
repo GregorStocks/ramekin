@@ -55,7 +55,7 @@
     {
       "raw": "8 tablespoons (4 ounces or 115 grams) cold unsalted butter, cut into pieces",
       "expected": {
-        "item": "cold unsalted butter, cut into pieces",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "8",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -168,14 +168,14 @@
     {
       "raw": "1/2 to 1 1/2 tablespoons tapioca flour/starch (see Note, below)",
       "expected": {
-        "item": "tapioca flour/starch (see Note, below)",
+        "item": "tapioca flour/starch",
         "measurements": [
           {
             "amount": "0.5 to 1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see Note, below",
         "category": "Baking"
       }
     },

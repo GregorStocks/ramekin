@@ -5,7 +5,7 @@
     {
       "raw": "1 pound boneless skinless chicken thighs (cut into bite-sized pieces)",
       "expected": {
-        "item": "boneless skinless chicken thighs (cut into bite-sized pieces)",
+        "item": "boneless skinless chicken thighs",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into bite-sized pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -104,15 +104,11 @@
             "unit": "oz"
           },
           {
-            "amount": "1",
-            "unit": "packet"
-          },
-          {
             "amount": "28",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 packet",
         "category": "Spices & Seasonings"
       }
     },
@@ -196,14 +192,18 @@
     {
       "raw": "2 cups chicken broth (low-sodium )",
       "expected": {
-        "item": "chicken broth (low-sodium",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "498",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low-sodium",
         "category": "Canned Goods"
       }
     },
@@ -244,7 +244,7 @@
       "expected": {
         "item": "fresh cilantro",
         "measurements": [],
-        "note": "chopped (for garnish",
+        "note": "chopped (for garnish)",
         "category": "Produce"
       }
     }

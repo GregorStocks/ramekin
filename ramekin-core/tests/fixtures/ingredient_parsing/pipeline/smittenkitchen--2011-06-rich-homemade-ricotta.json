@@ -23,14 +23,18 @@
     {
       "raw": "1 cup heavy cream (see Note above about using less)",
       "expected": {
-        "item": "heavy cream (see Note above about using less)",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note above about using less",
         "category": "Dairy & Eggs"
       }
     },

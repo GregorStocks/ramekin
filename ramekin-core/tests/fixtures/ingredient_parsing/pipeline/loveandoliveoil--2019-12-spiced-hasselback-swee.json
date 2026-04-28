@@ -16,7 +16,7 @@
             "unit": "oz each"
           }
         ],
-        "note": null,
+        "note": "about 8oz each",
         "category": "Produce"
       }
     },
@@ -51,23 +51,27 @@
     {
       "raw": "1 teaspoon kosher salt (decrease to 1/2 teaspoon if using salted butter)",
       "expected": {
-        "item": "kosher salt (decrease to 1/2 teaspoon if using salted butter)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "decrease to 1/2 teaspoon if using salted butter",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "sliced green onions (for topping)",
       "expected": {
-        "item": "sliced green onions (for topping)",
+        "item": "sliced green onions",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     }

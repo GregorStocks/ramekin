@@ -5,14 +5,18 @@
     {
       "raw": "1 cup all-purpose flour  (or a gluten-free 1-to-1 baking flour)",
       "expected": {
-        "item": "all-purpose flour  (or a gluten-free 1-to-1 baking flour)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or a gluten-free 1-to-1 baking flour",
         "category": "Baking"
       }
     },
@@ -195,14 +199,18 @@
     {
       "raw": "1 cup all-purpose flour  (or gluten-free 1-to-1 baking flour)",
       "expected": {
-        "item": "all-purpose flour  (or gluten-free 1-to-1 baking flour)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or gluten-free 1-to-1 baking flour",
         "category": "Baking"
       }
     },

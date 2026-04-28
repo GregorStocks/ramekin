@@ -79,7 +79,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped",
+        "note": "about 10 ounces, chopped",
         "category": "Produce"
       }
     },
@@ -115,7 +115,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped",
+        "note": "about 6 ounces, chopped",
         "category": "Produce"
       }
     },
@@ -140,29 +140,29 @@
     {
       "raw": "2 cups dry red wine (about half a bottle)",
       "expected": {
-        "item": "dry red wine (about half a bottle)",
+        "item": "dry red wine",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about half a bottle",
         "category": "Beverages"
       }
     },
     {
       "raw": "2 cups beef stock or bone broth (use beef bouillon dissolved in water if unavailable; chicken stock will work in a pinch), plus more as needed",
       "expected": {
-        "item": "beef stock or bone broth (use beef bouillon dissolved in water if unavailable; chicken stock will work in a pinch)",
+        "item": "beef stock or bone broth",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "plus more as needed",
-        "category": "Spices & Seasonings"
+        "note": "use beef bouillon dissolved in water if unavailable; chicken stock will work in a pinch, plus more as needed",
+        "category": "Canned Goods"
       }
     },
     {

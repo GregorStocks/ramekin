@@ -82,14 +82,14 @@
     {
       "raw": "1 cup beef, chicken, or vegetable stock (Julia recommends beef)",
       "expected": {
-        "item": "beef, chicken, or vegetable stock (Julia recommends beef)",
+        "item": "beef, chicken, or vegetable stock",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "Julia recommends beef",
         "category": "Meat & Seafood"
       }
     },
@@ -114,14 +114,14 @@
     {
       "raw": "2 tablespoons fine, dry breadcrumbs (I use panko)",
       "expected": {
-        "item": "fine, dry breadcrumbs (I use panko)",
+        "item": "fine, dry breadcrumbs",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I use panko",
         "category": "Bakery & Bread"
       }
     }

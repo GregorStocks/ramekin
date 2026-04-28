@@ -5,50 +5,42 @@
     {
       "raw": "6 (1-inch) slices French Loaf, cut into cubes",
       "expected": {
-        "item": "French Loaf, cut into cubes",
+        "item": "French Loaf",
         "measurements": [
           {
             "amount": "6",
             "unit": "slice"
-          },
-          {
-            "amount": "1",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "1-inch, cut into cubes",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "6 (1-inch) slices Pumpernickel Loaf, cut into&nbsp;cubes",
       "expected": {
-        "item": "Pumpernickel Loaf, cut into cubes",
+        "item": "Pumpernickel Loaf",
         "measurements": [
           {
             "amount": "6",
             "unit": "slice"
-          },
-          {
-            "amount": "1",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "1-inch, cut into cubes",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "4 slices cooked bacon, cut into 1/2-inch pieces",
       "expected": {
-        "item": "cooked bacon, cut into 1/2-inch pieces",
+        "item": "cooked bacon",
         "measurements": [
           {
             "amount": "4",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Meat & Seafood"
       }
     },

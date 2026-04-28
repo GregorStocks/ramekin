@@ -80,7 +80,7 @@
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "about 6 cloves, pressed",
         "category": "Produce"
       }
     },
@@ -123,15 +123,15 @@
     {
       "raw": "1/2 Tbsp Mrs. Dash (or your favorite seasoning)",
       "expected": {
-        "item": "Mrs. Dash (or your favorite seasoning)",
+        "item": "Mrs. Dash",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "or your favorite seasoning",
+        "category": "Other"
       }
     },
     {
@@ -173,9 +173,9 @@
     {
       "raw": "Salt to taste (I added 1 tsp.)",
       "expected": {
-        "item": "Salt to taste (I added 1 tsp.)",
+        "item": "Salt to taste",
         "measurements": [],
-        "note": null,
+        "note": "I added 1 tsp.",
         "category": "Spices & Seasonings"
       }
     }

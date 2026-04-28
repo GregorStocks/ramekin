@@ -100,14 +100,14 @@
     {
       "raw": "1  orange, zest (you'll use about ¼ tsp) and juice",
       "expected": {
-        "item": "orange, zest (you'll use about 1/4 tsp) and juice",
+        "item": "orange, zest and juice",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "you'll use about 1/4 tsp",
         "category": "Produce"
       }
     },

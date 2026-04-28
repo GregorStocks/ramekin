@@ -136,14 +136,18 @@
     {
       "raw": "1/4 cup olive oil, preferably extra-virgin",
       "expected": {
-        "item": "olive oil, preferably extra-virgin",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably extra-virgin",
         "category": "Oils & Vinegars"
       }
     }

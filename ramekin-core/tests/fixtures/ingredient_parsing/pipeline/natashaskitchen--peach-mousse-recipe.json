@@ -59,14 +59,14 @@
     {
       "raw": "1 Tbsp unflavored gelatin (I used Knox brand)",
       "expected": {
-        "item": "unflavored gelatin (I used Knox brand)",
+        "item": "unflavored gelatin",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I used Knox brand",
         "category": "Baking"
       }
     },

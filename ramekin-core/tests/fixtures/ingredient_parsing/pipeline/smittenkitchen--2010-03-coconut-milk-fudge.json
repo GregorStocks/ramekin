@@ -37,14 +37,14 @@
     {
       "raw": "2 tablespoons salted or unsalted butter (salted will give the candy more contrast)",
       "expected": {
-        "item": "salted or unsalted butter (salted will give the candy more contrast)",
+        "item": "salted or unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "salted will give the candy more contrast",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,28 +83,28 @@
     {
       "raw": "1/3 cup ground pistachios (see Note below)",
       "expected": {
-        "item": "ground pistachios (see Note below)",
+        "item": "ground pistachios",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Note below",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
       "raw": "1/3 cup chocolate sprinkles or “vermicelli” (see Note below)",
       "expected": {
-        "item": "chocolate sprinkles or “vermicelli” (see Note below)",
+        "item": "chocolate sprinkles or “vermicelli”",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Note below",
         "category": "Pasta & Rice"
       }
     }

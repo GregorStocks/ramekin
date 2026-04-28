@@ -50,14 +50,18 @@
     {
       "raw": "1 tablespoon lemon juice (psst, skip ahead and zest it for the cake before you cut it)",
       "expected": {
-        "item": "lemon juice (psst, skip ahead and zest it for the cake before you cut it)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "psst, skip ahead and zest it for the cake before you cut it",
         "category": "Beverages"
       }
     },

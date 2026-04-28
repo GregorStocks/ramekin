@@ -32,14 +32,14 @@
     {
       "raw": "Approximately 1 1/4 cups (160 grams) mixed whole grains (see suggestions at end)",
       "expected": {
-        "item": "Approximately 1 1/4 cups mixed whole grains (see suggestions at end)",
+        "item": "Approximately 1 1/4 cups mixed whole grains",
         "measurements": [
           {
             "amount": "160",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see suggestions at end",
         "category": "Pasta & Rice"
       }
     },
@@ -64,7 +64,7 @@
     {
       "raw": "4 tablespoons (about 50 grams) granulated or brown sugar, or 2 1/2 tablespoons honey or agave nectar",
       "expected": {
-        "item": "granulated or brown sugar, or 2 1/2 tablespoons honey or agave nectar",
+        "item": "granulated or brown sugar",
         "measurements": [
           {
             "amount": "4",
@@ -75,7 +75,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 50 grams; or 2 1/2 tablespoons honey or agave nectar",
         "category": "Baking"
       }
     },
@@ -96,7 +96,7 @@
     {
       "raw": "1/4 cup (55 grams) vegetable oil or melted butter, cooled to lukewarm",
       "expected": {
-        "item": "vegetable oil or melted butter, cooled to lukewarm",
+        "item": "vegetable oil or melted butter",
         "measurements": [
           {
             "amount": "0.25",
@@ -107,7 +107,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cooled to lukewarm",
         "category": "Oils & Vinegars"
       }
     },
@@ -119,13 +119,9 @@
           {
             "amount": "1.25",
             "unit": "cup"
-          },
-          {
-            "amount": "95",
-            "unit": "degrees"
           }
         ],
-        "note": null,
+        "note": "about 95 degrees; err on cool side if you don’t have a thermometer",
         "category": "Other"
       }
     },
@@ -161,7 +157,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 13 grams",
         "category": "Baking"
       }
     },

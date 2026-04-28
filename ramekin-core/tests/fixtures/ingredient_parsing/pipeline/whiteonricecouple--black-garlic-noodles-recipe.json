@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "cooked to package directions (about 2 heaping cups of cooked noodles",
+        "note": "cooked to package directions (about 2 heaping cups of cooked noodles)",
         "category": "Pasta & Rice"
       }
     },
@@ -37,15 +37,15 @@
     {
       "raw": "1 tablespoon grape seed oil ( or vegetable oil)",
       "expected": {
-        "item": "grape seed oil ( or vegetable oil)",
+        "item": "grape seed oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "or vegetable oil",
+        "category": "Produce"
       }
     },
     {
@@ -69,14 +69,18 @@
     {
       "raw": "2 teaspoons fish sauce ( or soy sauce)",
       "expected": {
-        "item": "fish sauce ( or soy sauce)",
+        "item": "fish sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "12",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or soy sauce",
         "category": "Condiments & Sauces"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "1 cup semisweet chocolate chips ((or dark chocolate))",
       "expected": {
-        "item": "semisweet chocolate chips (or dark chocolate)",
+        "item": "semisweet chocolate chips",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or dark chocolate",
         "category": "Baking"
       }
     },

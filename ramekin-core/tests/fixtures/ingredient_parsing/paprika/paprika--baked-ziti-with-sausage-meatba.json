@@ -5,7 +5,7 @@
     {
       "raw": "1 pound sweet Italian sausage (pork, turkey or chicken), casing removed",
       "expected": {
-        "item": "sweet Italian sausage (pork, turkey or chicken), casing removed",
+        "item": "sweet Italian sausage, casing removed",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "pork, turkey or chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -102,17 +102,9 @@
           {
             "amount": "2",
             "unit": "can"
-          },
-          {
-            "amount": "28",
-            "unit": "oz"
-          },
-          {
-            "amount": "794",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "28-ounce",
         "category": "Canned Goods"
       }
     },
@@ -169,17 +161,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "15",
-            "unit": "oz"
-          },
-          {
-            "amount": "425",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "15-ounce",
         "category": "Cheese"
       }
     },
@@ -193,15 +177,11 @@
             "unit": "oz"
           },
           {
-            "amount": "1",
-            "unit": "scant cup"
-          },
-          {
             "amount": "198",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 scant cup",
         "category": "Dairy & Eggs"
       }
     },
@@ -222,7 +202,7 @@
     {
       "raw": "3/4 pound fresh mozzarella, cut or torn into 1/2-inch pieces",
       "expected": {
-        "item": "fresh mozzarella, cut or torn into 1/2-inch pieces",
+        "item": "fresh mozzarella",
         "measurements": [
           {
             "amount": "0.75",
@@ -233,7 +213,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut or torn into 1/2-inch pieces",
         "category": "Cheese"
       }
     }

@@ -5,7 +5,7 @@
     {
       "raw": "2 cups (470ml) milk ((I used 2%))",
       "expected": {
-        "item": "milk (I used 2%)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "2",
@@ -14,9 +14,13 @@
           {
             "amount": "470",
             "unit": "ml"
+          },
+          {
+            "amount": "490",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used 2%",
         "category": "Dairy & Eggs"
       }
     },
@@ -30,15 +34,11 @@
             "unit": "tbsp"
           },
           {
-            "amount": "2",
-            "unit": "packets"
-          },
-          {
             "amount": "18",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "2 packets",
         "category": "Baking"
       }
     },

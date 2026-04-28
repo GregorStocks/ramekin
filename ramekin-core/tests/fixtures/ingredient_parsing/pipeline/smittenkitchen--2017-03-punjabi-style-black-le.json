@@ -5,14 +5,14 @@
     {
       "raw": "2 tablespoons oil, butter (regular or ghee)",
       "expected": {
-        "item": "oil, butter (regular or ghee)",
+        "item": "oil, butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "regular or ghee",
         "category": "Dairy & Eggs"
       }
     },
@@ -121,10 +121,10 @@
     {
       "raw": "Ground chile powder, to taste (I started with a 1/2 teaspoon, but I have to keep things weak for kids)",
       "expected": {
-        "item": "Ground chile powder, to taste (I started with a 1/2 teaspoon, but I have to keep things weak for kids)",
+        "item": "Ground chile powder",
         "measurements": [],
-        "note": null,
-        "category": "Beverages"
+        "note": "I started with a 1/2 teaspoon, but I have to keep things weak for kids, to taste",
+        "category": "Other"
       }
     },
     {
@@ -190,14 +190,18 @@
     {
       "raw": "4 teaspoons butter (salted is lovely here)",
       "expected": {
-        "item": "butter (salted is lovely here)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "4",
             "unit": "tsp"
+          },
+          {
+            "amount": "19",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "salted is lovely here",
         "category": "Dairy & Eggs"
       }
     },

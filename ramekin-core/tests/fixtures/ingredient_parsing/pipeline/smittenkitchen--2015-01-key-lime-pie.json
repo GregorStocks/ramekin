@@ -88,7 +88,7 @@
     {
       "raw": "1 1/2 cups (155 grams) finely ground graham cracker crumbs (from about 10 crackers)",
       "expected": {
-        "item": "finely ground graham cracker crumbs (from about 10 crackers)",
+        "item": "finely ground graham cracker crumbs",
         "measurements": [
           {
             "amount": "1.5",
@@ -99,7 +99,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 10 crackers",
         "category": "Snacks"
       }
     },
@@ -179,14 +179,14 @@
     {
       "raw": "3 large egg yolks (though extra-large would do you no harm here)",
       "expected": {
-        "item": "egg yolks (though extra-large would do you no harm here)",
+        "item": "egg yolks",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "though extra-large would do you no harm here",
         "category": "Dairy & Eggs"
       }
     },
@@ -222,15 +222,11 @@
             "unit": "ml"
           },
           {
-            "amount": "4",
-            "unit": null
-          },
-          {
             "amount": "161",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 1 dozen tiny key limes or 4 persian/regular limes",
         "category": "Beverages"
       }
     },

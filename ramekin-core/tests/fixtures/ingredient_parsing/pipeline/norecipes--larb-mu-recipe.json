@@ -5,14 +5,14 @@
     {
       "raw": "1/4 cup long-grain sticky rice ((sometimes called glutinous rice))",
       "expected": {
-        "item": "long-grain sticky rice (sometimes called glutinous rice)",
+        "item": "long-grain sticky rice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "sometimes called glutinous rice",
         "category": "Pasta & Rice"
       }
     },
@@ -83,14 +83,14 @@
     {
       "raw": "1 small head butter lettuce ((leaves separated))",
       "expected": {
-        "item": "head butter lettuce (leaves separated)",
+        "item": "head butter lettuce",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "leaves separated",
         "category": "Produce"
       }
     },
@@ -153,14 +153,14 @@
     {
       "raw": "10 grams mint ((leaves only))",
       "expected": {
-        "item": "mint (leaves only)",
+        "item": "mint",
         "measurements": [
           {
             "amount": "10",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "leaves only",
         "category": "Spices & Seasonings"
       }
     },
@@ -178,7 +178,7 @@
             "unit": "1/2-inch slice"
           }
         ],
-        "note": null,
+        "note": "about 1/2-inch slice, smashed",
         "category": "Other"
       }
     },

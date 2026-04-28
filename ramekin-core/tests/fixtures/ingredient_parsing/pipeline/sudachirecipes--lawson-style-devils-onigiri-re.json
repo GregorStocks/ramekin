@@ -19,14 +19,14 @@
     {
       "raw": "5 tbsp tempura flakes (tenkasu)",
       "expected": {
-        "item": "tempura flakes (tenkasu)",
+        "item": "tempura flakes",
         "measurements": [
           {
             "amount": "5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "tenkasu",
         "category": "Other"
       }
     },
@@ -47,18 +47,14 @@
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },

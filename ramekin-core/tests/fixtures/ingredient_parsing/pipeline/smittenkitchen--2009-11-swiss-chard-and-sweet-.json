@@ -123,7 +123,7 @@
     {
       "raw": "2 pounds medium red-skinned sweet potatoes (yams), peeled and cut into 1/8-inch thick rounds",
       "expected": {
-        "item": "medium red-skinned sweet potatoes (yams)",
+        "item": "medium red-skinned sweet potatoes",
         "measurements": [
           {
             "amount": "2",
@@ -134,7 +134,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1/8-inch thick rounds",
+        "note": "yams, peeled and cut into 1/8-inch thick rounds",
         "category": "Produce"
       }
     },
@@ -202,7 +202,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 5 ounces",
         "category": "Cheese"
       }
     }

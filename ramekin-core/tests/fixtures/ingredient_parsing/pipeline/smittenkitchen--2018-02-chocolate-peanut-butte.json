@@ -185,7 +185,7 @@
     {
       "raw": "2/3 cup (55 grams) dutched cocoa powder (see note)",
       "expected": {
-        "item": "dutched cocoa powder (see note)",
+        "item": "dutched cocoa powder",
         "measurements": [
           {
             "amount": "0.67",
@@ -196,7 +196,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Baking"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "2 (2 quart) bottles chilled cranberry juice (no-sugar-added but sweetened with fruit juice)",
       "expected": {
-        "item": "chilled cranberry juice (no-sugar-added but sweetened with fruit juice)",
+        "item": "chilled cranberry juice",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "quart"
           }
         ],
-        "note": null,
+        "note": "no-sugar-added but sweetened with fruit juice",
         "category": "Produce"
       }
     },

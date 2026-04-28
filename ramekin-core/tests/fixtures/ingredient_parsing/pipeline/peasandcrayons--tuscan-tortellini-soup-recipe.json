@@ -61,14 +61,14 @@
     {
       "raw": "1 TBSP Italian seasoning blend (Mrs. Dash is my favorite)",
       "expected": {
-        "item": "Italian seasoning blend (Mrs. Dash is my favorite)",
+        "item": "Italian seasoning blend",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "Mrs. Dash is my favorite",
         "category": "Spices & Seasonings"
       }
     },

@@ -109,7 +109,7 @@
     {
       "raw": "14 ounces caramel candies (unwrapped)",
       "expected": {
-        "item": "caramel candies (unwrapped)",
+        "item": "caramel candies",
         "measurements": [
           {
             "amount": "14",
@@ -120,8 +120,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Bakery & Bread"
+        "note": "unwrapped",
+        "category": "Other"
       }
     },
     {

@@ -5,7 +5,7 @@
     {
       "raw": "12 ounces natural, uncured bacon ((not thick cut))",
       "expected": {
-        "item": "natural, uncured bacon (not thick cut)",
+        "item": "natural, uncured bacon",
         "measurements": [
           {
             "amount": "12",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not thick cut",
         "category": "Meat & Seafood"
       }
     },

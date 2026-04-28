@@ -28,13 +28,9 @@
           {
             "amount": "320-400",
             "unit": "ml"
-          },
-          {
-            "amount": "105",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "105 - 115F",
         "category": "Other"
       }
     },
@@ -115,14 +111,18 @@
     {
       "raw": "3 tablespoons unsalted butter, cut into pieces",
       "expected": {
-        "item": "unsalted butter, cut into pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -175,9 +175,9 @@
     {
       "raw": "~3 1/4 cup / 15 oz / 425 g bread flour (or unbleached all -purpose flour), plus more for dusting",
       "expected": {
-        "item": "~3 1/4 cup / 15 oz / 425 g bread flour (or unbleached all -purpose flour)",
+        "item": "~3 1/4 cup / 15 oz / 425 g bread flour",
         "measurements": [],
-        "note": "plus more for dusting",
+        "note": "or unbleached all -purpose flour, plus more for dusting",
         "category": "Baking"
       }
     },

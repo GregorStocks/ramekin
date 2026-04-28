@@ -5,14 +5,14 @@
     {
       "raw": "1/2 cup Hunt's Petite Diced Tomatoes (from a 14.5 oz can)",
       "expected": {
-        "item": "Hunt's Petite Diced Tomatoes (from a 14.5 oz can)",
+        "item": "Hunt's Petite Diced Tomatoes",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from a 14.5 oz can",
         "category": "Canned Goods"
       }
     },

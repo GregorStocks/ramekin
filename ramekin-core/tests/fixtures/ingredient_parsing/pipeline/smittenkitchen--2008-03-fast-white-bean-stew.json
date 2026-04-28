@@ -38,13 +38,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "14",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "14- to 15-oz",
         "category": "Produce"
       }
     },
@@ -72,45 +68,25 @@
             "unit": "can"
           },
           {
-            "amount": "19",
-            "unit": "oz"
-          },
-          {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "539",
-            "unit": "g"
           }
         ],
-        "note": "rinsed and drained",
+        "note": "19-oz, rinsed and drained",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1 (1/2-lb) piece baked ham (1/2 to 3/4 inch thick), cut into 1/2-inch cubes",
       "expected": {
-        "item": "baked ham, cut into 1/2-inch cubes",
+        "item": "baked ham",
         "measurements": [
           {
             "amount": "1",
             "unit": "piece"
-          },
-          {
-            "amount": "1",
-            "unit": "lb"
-          },
-          {
-            "amount": "0.5 to 0.75",
-            "unit": "inch thick"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1/2-lb, 1/2 to 3/4 inch thick, cut into 1/2-inch cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -131,22 +107,14 @@
     {
       "raw": "1 (5-oz) bag baby romaine (er, what? I used spinach) or baby arugula (10 cups loosely packed)",
       "expected": {
-        "item": "baby romaine (er",
+        "item": "baby romaine or baby arugula",
         "measurements": [
           {
             "amount": "1",
             "unit": "bag"
-          },
-          {
-            "amount": "5",
-            "unit": "oz"
-          },
-          {
-            "amount": "142",
-            "unit": "g"
           }
         ],
-        "note": "what? I used spinach) or baby arugula (10 cups loosely packed)",
+        "note": "5-oz, er, what? I used spinach, 10 cups loosely packed",
         "category": "Produce"
       }
     },
@@ -158,13 +126,9 @@
           {
             "amount": "8",
             "unit": "slice"
-          },
-          {
-            "amount": "3",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "3/4-inch-thick",
         "category": "Bakery & Bread"
       }
     }

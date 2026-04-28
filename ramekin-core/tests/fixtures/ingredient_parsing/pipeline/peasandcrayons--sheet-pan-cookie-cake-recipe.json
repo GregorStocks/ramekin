@@ -12,15 +12,11 @@
             "unit": null
           },
           {
-            "amount": "2",
-            "unit": null
-          },
-          {
             "amount": "480.25",
             "unit": "g"
           }
         ],
-        "note": "softened",
+        "note": "2 + 1/8 cups butter or 480.25 grams, softened",
         "category": "Dairy & Eggs"
       }
     },
@@ -191,14 +187,14 @@
     {
       "raw": "2 cups confectioner's sugar (powdered sugar)",
       "expected": {
-        "item": "confectioner's sugar (powdered sugar)",
+        "item": "confectioner's sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "powdered sugar",
         "category": "Baking"
       }
     },
@@ -237,14 +233,18 @@
     {
       "raw": "2 TBSP half and half ((milk works too + extra if needed))",
       "expected": {
-        "item": "half and half (milk works too + extra if needed)",
+        "item": "half and half",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "milk works too + extra if needed",
         "category": "Dairy & Eggs"
       }
     },

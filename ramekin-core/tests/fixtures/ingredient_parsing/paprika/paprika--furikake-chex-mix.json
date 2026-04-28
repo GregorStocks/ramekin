@@ -100,11 +100,11 @@
             "unit": "oz"
           },
           {
-            "amount": "73",
+            "amount": "71",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "2.5 oz, 73 g per bag",
         "category": "Meat & Seafood"
       }
     },
@@ -115,31 +115,31 @@
     {
       "raw": "1 jar nori komi furikake (nori & sesame rice seasoning)",
       "expected": {
-        "item": "nori komi furikake (nori & sesame rice seasoning)",
+        "item": "nori komi furikake",
         "measurements": [
           {
             "amount": "1",
             "unit": "jar"
           }
         ],
-        "note": null,
+        "note": "nori & sesame rice seasoning",
         "section": "For the Seasoning",
-        "category": "Spices & Seasonings"
+        "category": "Other"
       }
     },
     {
       "raw": "2 tsp shichimi togarashi (Japanese seven spice) (optional)",
       "expected": {
-        "item": "shichimi togarashi (Japanese seven spice) (optional)",
+        "item": "shichimi togarashi",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "Japanese seven spice, optional",
         "section": "For the Seasoning",
-        "category": "Spices & Seasonings"
+        "category": "Other"
       }
     },
     {
@@ -176,14 +176,14 @@
     {
       "raw": "½ cup brown rice syrup (most recipes use corn syrup, but I use brown rice syrup for a healthier option with more neutral flavor)",
       "expected": {
-        "item": "brown rice syrup (most recipes use corn syrup, but I use brown rice syrup for a healthier option with more neutral flavor)",
+        "item": "brown rice syrup",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "most recipes use corn syrup, but I use brown rice syrup for a healthier option with more neutral flavor",
         "section": "For the Syrup",
         "category": "Pasta & Rice"
       }

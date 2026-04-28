@@ -12,15 +12,11 @@
             "unit": "lb"
           },
           {
-            "amount": "4",
-            "unit": null
-          },
-          {
             "amount": "454",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "80/20",
         "category": "Meat & Seafood"
       }
     },
@@ -46,17 +42,9 @@
           {
             "amount": "1",
             "unit": "jar"
-          },
-          {
-            "amount": "16",
-            "unit": "oz"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "16-ounce",
         "category": "Condiments & Sauces"
       }
     },
@@ -96,27 +84,23 @@
           {
             "amount": "12",
             "unit": null
-          },
-          {
-            "amount": "6",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "6 inch",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "3 cups Jack cheese, divided (shredded)",
       "expected": {
-        "item": "Jack cheese, divided",
+        "item": "Jack cheese",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": "shredded",
+        "note": "shredded, divided",
         "category": "Cheese"
       }
     },
@@ -146,17 +130,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "2.25",
-            "unit": "oz"
-          },
-          {
-            "amount": "64",
-            "unit": "g"
           }
         ],
-        "note": "drained",
+        "note": "2.25-ounce, drained",
         "category": "Canned Goods"
       }
     },

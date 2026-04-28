@@ -5,14 +5,18 @@
     {
       "raw": "½ cup cold butter (cut into pieces)",
       "expected": {
-        "item": "cold butter (cut into pieces)",
+        "item": "cold butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -247,10 +251,10 @@
     {
       "raw": "Optional: kosher (course sea salt, or Maldon salt (if you have it))",
       "expected": {
-        "item": "kosher (course sea salt, or Maldon salt (if you have it)",
+        "item": "kosher",
         "measurements": [],
-        "note": "optional",
-        "category": "Spices & Seasonings"
+        "note": "optional, course sea salt, or Maldon salt (if you have it)",
+        "category": "Other"
       }
     }
   ]

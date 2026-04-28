@@ -14,15 +14,15 @@
     {
       "raw": "3 to 3 1/4 cups chopped spring vegetables (such as asparagus, favas, peas, lima beans or more) (I used 2 1/4 cups chopped asparagus from 12 ounces stalks plus 1 cup cooked favas from about 1 pound fresh in their pods)",
       "expected": {
-        "item": "chopped spring vegetables (I used 2 1/4 cups chopped asparagus from 12 ounces stalks plus 1 cup cooked favas from about 1 pound fresh in their pods)",
+        "item": "chopped spring vegetables",
         "measurements": [
           {
             "amount": "3 to 3.25",
             "unit": "cup"
           }
         ],
-        "note": "such as asparagus, favas, peas, lima beans or more",
-        "category": "Produce"
+        "note": "such as asparagus, favas, peas, lima beans or more, I used 2 1/4 cups chopped asparagus from 12 ounces stalks plus 1 cup cooked favas from about 1 pound fresh in their pods",
+        "category": "Other"
       }
     },
     {
@@ -57,7 +57,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 3/4 of a bundle, about 3 ounces",
         "category": "Produce"
       }
     },
@@ -78,14 +78,14 @@
     {
       "raw": "1 clove garlic, peeled minced (if using garlic chives, omit)",
       "expected": {
-        "item": "garlic, peeled minced (if using garlic chives, omit)",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "if using garlic chives, omit, peeled minced",
         "category": "Produce"
       }
     },
@@ -107,7 +107,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped small (see Note up top for alternative)",
+        "note": "about 6 ounces, see Note up top for alternative, chopped small",
         "category": "Produce"
       }
     },
@@ -209,14 +209,14 @@
     {
       "raw": "50 round dumpling wrappers (most packages contain 50)",
       "expected": {
-        "item": "round dumpling wrappers (most packages contain 50)",
+        "item": "round dumpling wrappers",
         "measurements": [
           {
             "amount": "50",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "most packages contain 50",
         "category": "Bakery & Bread"
       }
     },
@@ -232,14 +232,14 @@
     {
       "raw": "2 to 3 scallions (or, remainder of bundle used for potstickers), thinly sliced (use some in sauce, some for garnish)",
       "expected": {
-        "item": "scallions (or, remainder of bundle used for potstickers), thinly sliced (use some in sauce",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": null
           }
         ],
-        "note": "some for garnish)",
+        "note": "or, remainder of bundle used for potstickers, use some in sauce, some for garnish, thinly sliced",
         "category": "Produce"
       }
     },

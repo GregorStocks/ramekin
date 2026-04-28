@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds chicken breasts (boneless and skinless, cut into 1 inch pieces)",
       "expected": {
-        "item": "chicken breasts (boneless and skinless, cut into 1 inch pieces)",
+        "item": "chicken breasts",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "boneless and skinless, cut into 1 inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -55,23 +55,27 @@
     {
       "raw": "vegetable oil (for frying)",
       "expected": {
-        "item": "vegetable oil (for frying)",
+        "item": "vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "3 tablespoons butter (unsalted)",
       "expected": {
-        "item": "butter (unsalted)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsalted",
         "category": "Dairy & Eggs"
       }
     },
@@ -146,14 +150,18 @@
     {
       "raw": "2 tablespoons soy sauce (low sodium)",
       "expected": {
-        "item": "soy sauce (low sodium)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Condiments & Sauces"
       }
     },

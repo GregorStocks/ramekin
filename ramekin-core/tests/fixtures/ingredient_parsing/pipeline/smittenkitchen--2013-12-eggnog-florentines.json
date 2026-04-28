@@ -47,7 +47,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 55 grams",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -72,14 +72,18 @@
     {
       "raw": "1/8 teaspoon kosher salt (I recommend doubling this)",
       "expected": {
-        "item": "kosher salt (I recommend doubling this)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I recommend doubling this",
         "category": "Spices & Seasonings"
       }
     },
@@ -104,18 +108,18 @@
     {
       "raw": "2/3 cup (65, oops, sorry, it is 130 grams) granulated sugar (I would drop this by a tablespoon or two next time)",
       "expected": {
-        "item": "granulated sugar (I would drop this by a tablespoon or two next time)",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           },
           {
-            "amount": "65",
-            "unit": null
+            "amount": "133",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "65, oops, sorry, it is 130 grams, I would drop this by a tablespoon or two next time",
         "category": "Baking"
       }
     },
@@ -322,13 +326,9 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": null,
-            "unit": "can"
           }
         ],
-        "note": null,
+        "note": "can be skipped or reduced",
         "category": "Beverages"
       }
     }

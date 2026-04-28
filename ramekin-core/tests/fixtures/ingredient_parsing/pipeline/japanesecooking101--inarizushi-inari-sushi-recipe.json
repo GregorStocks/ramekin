@@ -63,29 +63,29 @@
     {
       "raw": "8  Aburaage squares (or 4 rectangle)",
       "expected": {
-        "item": "Aburaage squares (or 4 rectangle)",
+        "item": "Aburaage squares",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 4 rectangle",
         "category": "Other"
       }
     },
     {
       "raw": "1 cup Dashi (or liquid from rehydrating Shiitake mushroom)",
       "expected": {
-        "item": "Dashi (or liquid from rehydrating Shiitake mushroom)",
+        "item": "Dashi",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "or liquid from rehydrating Shiitake mushroom",
+        "category": "Other"
       }
     },
     {

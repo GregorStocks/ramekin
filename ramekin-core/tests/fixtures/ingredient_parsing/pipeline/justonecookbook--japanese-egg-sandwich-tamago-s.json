@@ -10,13 +10,9 @@
           {
             "amount": "3",
             "unit": "large"
-          },
-          {
-            "amount": "50",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "50 g w/o shell",
         "category": "Dairy & Eggs"
       }
     },
@@ -105,15 +101,15 @@
     {
       "raw": "4 slices shokupan (Japanese milk bread)",
       "expected": {
-        "item": "shokupan (Japanese milk bread)",
+        "item": "shokupan",
         "measurements": [
           {
             "amount": "4",
             "unit": "slice"
           }
         ],
-        "note": null,
-        "category": "Bakery & Bread"
+        "note": "Japanese milk bread",
+        "category": "Other"
       }
     },
     {

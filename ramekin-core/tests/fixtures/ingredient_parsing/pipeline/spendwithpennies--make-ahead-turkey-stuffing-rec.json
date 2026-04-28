@@ -69,15 +69,15 @@
     {
       "raw": "½ cup turkey broth (or chicken broth)",
       "expected": {
-        "item": "turkey broth (or chicken broth)",
+        "item": "turkey broth",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "or chicken broth",
+        "category": "Meat & Seafood"
       }
     },
     {

@@ -19,14 +19,18 @@
     {
       "raw": "2 1/2 cups chicken broth (or vegetable broth or water, (recipe note #1))",
       "expected": {
-        "item": "chicken broth (or vegetable broth or water, (recipe note #1)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "cup"
+          },
+          {
+            "amount": "622",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or vegetable broth or water, (recipe note #1)",
         "category": "Canned Goods"
       }
     },
@@ -97,14 +101,14 @@
     {
       "raw": "1  jalapeño (minced (stems, ribs, and seeds removed - gloves recommended!), optional (recipe note #2))",
       "expected": {
-        "item": "jalapeño, optional (recipe note #2)",
+        "item": "jalapeño",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "minced (stems, ribs, and seeds removed - gloves recommended!",
+        "note": "minced (stems, ribs, and seeds removed - gloves recommended!), optional (recipe note #2)",
         "category": "Produce"
       }
     },

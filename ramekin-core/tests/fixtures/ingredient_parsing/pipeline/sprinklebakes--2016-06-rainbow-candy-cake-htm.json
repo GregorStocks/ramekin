@@ -145,10 +145,10 @@
     {
       "raw": "Wilton or Americolor gel food colors: red (orange, yellow, green, blue, purple)",
       "expected": {
-        "item": "Wilton or Americolor gel food colors: red (orange, yellow, green, blue, purple)",
+        "item": "Wilton or Americolor gel food colors: red",
         "measurements": [],
-        "note": null,
-        "category": "Produce"
+        "note": "orange, yellow, green, blue, purple",
+        "category": "Other"
       }
     },
     {
@@ -236,36 +236,28 @@
     {
       "raw": "2  packages (12.4 ounces each Twizzler Rainbow Candy Twists)",
       "expected": {
-        "item": "2  packages (12.4 ounces each Twizzler Rainbow Candy Twists)",
+        "item": "Twizzler Rainbow Candy Twists",
         "measurements": [
           {
             "amount": "2",
-            "unit": "package"
-          },
-          {
-            "amount": "12.4",
-            "unit": "oz"
-          },
-          {
-            "amount": "352",
-            "unit": "g"
+            "unit": "package each"
           }
         ],
-        "note": null,
+        "note": "12.4 ounces each Twizzler Rainbow Candy Twists",
         "category": "Other"
       }
     },
     {
       "raw": "3 tablespoons rainbow sprinkles (jimmies)",
       "expected": {
-        "item": "rainbow sprinkles (jimmies)",
+        "item": "rainbow sprinkles",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "jimmies",
         "category": "Baking"
       }
     },

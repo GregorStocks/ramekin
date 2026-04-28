@@ -5,7 +5,7 @@
     {
       "raw": "1 1/2 pounds (680 grams) yukon gold potatoes, peeled and diced (weight is for whole potatoes)",
       "expected": {
-        "item": "yukon gold potatoes, peeled and diced",
+        "item": "yukon gold potatoes",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "weight is for whole potatoes",
+        "note": "weight is for whole potatoes, peeled and diced",
         "category": "Produce"
       }
     },
@@ -82,7 +82,7 @@
     {
       "raw": "1 1/2 pounds (680 grams) yukon gold potatoes, peeled and diced (weight is for whole potatoes)",
       "expected": {
-        "item": "yukon gold potatoes, peeled and diced",
+        "item": "yukon gold potatoes",
         "measurements": [
           {
             "amount": "1.5",
@@ -93,7 +93,7 @@
             "unit": "g"
           }
         ],
-        "note": "weight is for whole potatoes",
+        "note": "weight is for whole potatoes, peeled and diced",
         "category": "Produce"
       }
     },
@@ -209,14 +209,18 @@
     {
       "raw": "1 tablespoon kosher salt (Diamond brand, use half for any other brand)",
       "expected": {
-        "item": "kosher salt (Diamond brand, use half for any other brand)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "8.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Diamond brand, use half for any other brand",
         "category": "Spices & Seasonings"
       }
     },
@@ -251,9 +255,9 @@
     {
       "raw": "A combination or your choice of: Butter, plain vinegar, minced fresh dill, caramelized onions, sour cream (bonus if you find the extra-rich stuff from a Russian store). Shown up top is Kachka’s sauerkraut powder (their own recipe, dehydrated and ground) and I’d be remiss if I didn’t tell you that these are served with a caviar buerre blanc at the restaurant, the recipe is on p. 304 in the cookbook",
       "expected": {
-        "item": "A combination or your choice of: Butter, plain vinegar, minced fresh dill, caramelized onions, sour cream (bonus if you find the extra-rich stuff from a Russian store). Shown up top is Kachka’s sauerkraut powder (their own recipe, dehydrated and ground) and I’d be remiss if I didn’t tell you that these are served with a caviar buerre blanc at the restaurant, the recipe is on p. 304 in the cookbook",
+        "item": "A combination or your choice of: Butter, plain vinegar, minced fresh dill, caramelized onions, sour cream . Shown up top is Kachka’s sauerkraut powder and I’d be remiss if I didn’t tell you that these are served with a caviar buerre blanc at the restaurant, the recipe is on p. 304 in the cookbook",
         "measurements": [],
-        "note": null,
+        "note": "bonus if you find the extra-rich stuff from a Russian store, their own recipe, dehydrated and ground",
         "category": "Produce"
       }
     }

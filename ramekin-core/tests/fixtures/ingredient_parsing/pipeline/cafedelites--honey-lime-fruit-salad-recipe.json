@@ -137,14 +137,14 @@
     {
       "raw": "1 tablespoon pineapple juice (from the canned pineapple, if using)",
       "expected": {
-        "item": "pineapple juice (from the canned pineapple, if using)",
+        "item": "pineapple juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from the canned pineapple, if using",
         "category": "Produce"
       }
     }

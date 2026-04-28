@@ -5,23 +5,23 @@
     {
       "raw": "Extra Virgin Olive Oil (I used Private Reserve EVOO)",
       "expected": {
-        "item": "Extra Virgin Olive Oil (I used Private Reserve EVOO)",
+        "item": "Extra Virgin Olive Oil",
         "measurements": [],
-        "note": null,
+        "note": "I used Private Reserve EVOO",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "8 garlic cloves, divided (4 minced cloves and 4 sliced)",
       "expected": {
-        "item": "garlic cloves, divided",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": "4 minced cloves and 4 sliced",
+        "note": "4 minced cloves and 4 sliced, divided",
         "category": "Produce"
       }
     },
@@ -150,15 +150,11 @@
             "unit": "lb"
           },
           {
-            "amount": "0.5",
-            "unit": "inch in thickness"
-          },
-          {
             "amount": "680",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1/2 inch in thickness",
         "category": "Meat & Seafood"
       }
     },

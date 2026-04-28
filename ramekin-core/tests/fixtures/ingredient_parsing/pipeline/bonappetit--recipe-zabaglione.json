@@ -51,14 +51,14 @@
     {
       "raw": "½ cup sparkling white wine (such as prosecco)",
       "expected": {
-        "item": "sparkling white wine (such as prosecco)",
+        "item": "sparkling white wine",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as prosecco",
         "category": "Beverages"
       }
     },
@@ -83,9 +83,9 @@
     {
       "raw": "Cookies (such as biscotti, savoiardi, or amaretti) and/or sliced",
       "expected": {
-        "item": "Cookies (such as biscotti, savoiardi",
+        "item": "Cookies and/or sliced",
         "measurements": [],
-        "note": "or amaretti) and/or sliced",
+        "note": "such as biscotti, savoiardi, or amaretti",
         "category": "Other"
       }
     },

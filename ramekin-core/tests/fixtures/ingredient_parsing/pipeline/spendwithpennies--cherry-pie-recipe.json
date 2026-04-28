@@ -91,14 +91,14 @@
     {
       "raw": "5 cups cherries ( pitted)",
       "expected": {
-        "item": "cherries ( pitted)",
+        "item": "cherries",
         "measurements": [
           {
             "amount": "5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "pitted",
         "category": "Produce"
       }
     },

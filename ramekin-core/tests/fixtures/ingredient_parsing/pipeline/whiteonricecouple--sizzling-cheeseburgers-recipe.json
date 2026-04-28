@@ -119,9 +119,9 @@
     {
       "raw": "salt (, to personal taste )",
       "expected": {
-        "item": "salt (, to personal taste",
+        "item": "salt, presumably Diamond",
         "measurements": [],
-        "note": null,
+        "note": "to personal taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,7 +157,7 @@
             "unit": "g"
           }
         ],
-        "note": "(for more daring, savory depth, use 2 tablespoons",
+        "note": "(for more daring, savory depth, use 2 tablespoons)",
         "category": "Condiments & Sauces"
       }
     },
@@ -171,16 +171,16 @@
             "unit": "clove"
           }
         ],
-        "note": "minced (or 1 teaspoon garlic powder",
+        "note": "minced (or 1 teaspoon garlic powder)",
         "category": "Produce"
       }
     },
     {
       "raw": "fresh ground black pepper and salt (, to personal taste )",
       "expected": {
-        "item": "fresh ground black pepper and salt (, to personal taste",
+        "item": "fresh ground black pepper and salt",
         "measurements": [],
-        "note": null,
+        "note": "to personal taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -194,31 +194,31 @@
             "unit": null
           }
         ],
-        "note": "sliced (optional",
+        "note": "sliced (optional)",
         "category": "Produce"
       }
     },
     {
       "raw": "4  hamburger buns  ((preferably brioche buns) )",
       "expected": {
-        "item": "hamburger buns  (preferably brioche buns)",
+        "item": "hamburger buns",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "preferably brioche buns",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "condiments of choice (, pickles, burger sauce, ketchup, mustard )",
       "expected": {
-        "item": "condiments of choice (, pickles, burger sauce, ketchup, mustard",
+        "item": "condiments of choice",
         "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "pickles, burger sauce, ketchup, mustard",
+        "category": "Other"
       }
     }
   ]

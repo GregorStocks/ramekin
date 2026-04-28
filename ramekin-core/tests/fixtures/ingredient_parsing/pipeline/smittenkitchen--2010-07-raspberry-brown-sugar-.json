@@ -5,7 +5,7 @@
     {
       "raw": "1 pint (2 cups) fresh raspberries (or your choice of berry)",
       "expected": {
-        "item": "fresh raspberries (or your choice of berry)",
+        "item": "fresh raspberries",
         "measurements": [
           {
             "amount": "1",
@@ -16,14 +16,14 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or your choice of berry",
         "category": "Produce"
       }
     },
     {
       "raw": "1 pint (2 cups) sour cream (or crème fraîche)",
       "expected": {
-        "item": "sour cream (or crème fraîche)",
+        "item": "sour cream",
         "measurements": [
           {
             "amount": "1",
@@ -32,9 +32,13 @@
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "484",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or crème fraîche",
         "category": "Dairy & Eggs"
       }
     },

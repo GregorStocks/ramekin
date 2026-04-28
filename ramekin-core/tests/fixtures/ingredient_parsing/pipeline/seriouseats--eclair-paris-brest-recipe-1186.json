@@ -64,13 +64,9 @@
           {
             "amount": "8",
             "unit": "oz"
-          },
-          {
-            "amount": "20",
-            "unit": null
           }
         ],
-        "note": "softened to about 68°F",
+        "note": "20°C, softened to about 68°F",
         "category": "Dairy & Eggs"
       }
     },
@@ -82,13 +78,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "20",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "20°C",
         "category": "Dairy & Eggs"
       }
     },
@@ -117,7 +109,7 @@
     {
       "raw": "60g unsalted butter (2 ounces; 1/4 cup), cut into 1/2-inch cubes",
       "expected": {
-        "item": "unsalted butter, cut into 1/2-inch cubes",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "60",
@@ -132,7 +124,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch cubes",
         "category": "Dairy & Eggs"
       }
     },

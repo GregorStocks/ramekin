@@ -19,7 +19,7 @@
     {
       "raw": "1 pound seedless (English) or Persian cucumbers, unpeeled, cubed",
       "expected": {
-        "item": "seedless (English) or Persian cucumbers, unpeeled",
+        "item": "seedless or Persian cucumbers, unpeeled",
         "measurements": [
           {
             "amount": "1",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": "cubed",
+        "note": "English, cubed",
         "category": "Produce"
       }
     },
@@ -111,15 +111,15 @@
     {
       "raw": "6 large pitas, cut into eight wedges each, then each wedge split into two layers (for small chips) cut into six wedges and split (for large, scoopable chips)",
       "expected": {
-        "item": "pitas, cut into eight wedges each, then each wedge split into two layers (for small chips) cut into six wedges and split (for large, scoopable chips)",
+        "item": "pitas, cut into eight wedges each, then each wedge split into two layers cut into six wedges and split",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": null,
-        "category": "Snacks"
+        "note": "for small chips, for large, scoopable chips",
+        "category": "Bakery & Bread"
       }
     },
     {

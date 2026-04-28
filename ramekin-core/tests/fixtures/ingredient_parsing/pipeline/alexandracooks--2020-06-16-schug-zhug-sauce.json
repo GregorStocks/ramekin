@@ -38,13 +38,9 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "2 to 4",
-            "unit": null
           }
         ],
-        "note": "or less! see notes above",
+        "note": "or less! see notes above, 2 to 4",
         "category": "Produce"
       }
     },
@@ -79,14 +75,14 @@
     {
       "raw": "2 cups lightly packed flat-leaf parsley leaves and stems (rough stems removed)",
       "expected": {
-        "item": "lightly packed flat-leaf parsley leaves and stems (rough stems removed)",
+        "item": "lightly packed flat-leaf parsley leaves and stems",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "rough stems removed",
         "category": "Spices & Seasonings"
       }
     },

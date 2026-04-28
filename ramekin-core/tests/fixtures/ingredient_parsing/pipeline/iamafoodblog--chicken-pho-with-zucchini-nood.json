@@ -5,14 +5,14 @@
     {
       "raw": "2 whole chicken legs (drumstick and thigh)",
       "expected": {
-        "item": "whole chicken legs (drumstick and thigh)",
+        "item": "whole chicken legs",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "drumstick and thigh",
         "category": "Meat & Seafood"
       }
     },

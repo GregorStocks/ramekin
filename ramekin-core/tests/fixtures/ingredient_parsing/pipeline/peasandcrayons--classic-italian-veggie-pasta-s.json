@@ -5,14 +5,14 @@
     {
       "raw": "3 cups elbow macaroni ((one 12oz box))",
       "expected": {
-        "item": "elbow macaroni (one 12oz box)",
+        "item": "elbow macaroni",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "one 12oz box",
         "category": "Pasta & Rice"
       }
     },
@@ -75,18 +75,18 @@
     {
       "raw": "finely grated parmesan or feta cheese for topping ((choose your favorite))",
       "expected": {
-        "item": "finely grated parmesan or feta cheese for topping (choose your favorite)",
+        "item": "finely grated parmesan or feta cheese for topping",
         "measurements": [],
-        "note": null,
+        "note": "choose your favorite",
         "category": "Cheese"
       }
     },
     {
       "raw": "salt and pepper (if desired)",
       "expected": {
-        "item": "salt and pepper (if desired)",
+        "item": "salt and pepper",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Spices & Seasonings"
       }
     },
@@ -179,14 +179,14 @@
     {
       "raw": "1/8-1/4 tsp freshly ground black pepper (if desired)",
       "expected": {
-        "item": "freshly ground black pepper (if desired)",
+        "item": "freshly ground black pepper",
         "measurements": [
           {
             "amount": "1/8-1/4",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "if desired",
         "category": "Spices & Seasonings"
       }
     }

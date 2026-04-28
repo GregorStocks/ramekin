@@ -5,7 +5,7 @@
     {
       "raw": "2 lbs chicken thighs (boneless and skinless - cut into 1-2 inch cubes)",
       "expected": {
-        "item": "chicken thighs (boneless and skinless - cut into 1-2 inch cubes)",
+        "item": "chicken thighs",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "boneless and skinless - cut into 1-2 inch cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -41,28 +41,28 @@
     {
       "raw": "2  medium carrots (cut into thick rounds)",
       "expected": {
-        "item": "carrots (cut into thick rounds)",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into thick rounds",
         "category": "Produce"
       }
     },
     {
       "raw": "1  large onion (cut into wedges)",
       "expected": {
-        "item": "onion (cut into wedges)",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into wedges",
         "category": "Produce"
       }
     },

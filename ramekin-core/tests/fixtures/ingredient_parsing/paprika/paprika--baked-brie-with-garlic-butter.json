@@ -69,14 +69,18 @@
     {
       "raw": "1 teaspoon kosher salt (I’m using Diamond, use half of other brands)",
       "expected": {
-        "item": "kosher salt (I’m using Diamond, use half of other brands)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I’m using Diamond, use half of other brands",
         "category": "Spices & Seasonings"
       }
     },
@@ -92,14 +96,18 @@
     {
       "raw": "3 tablespoons cold unsalted butter, cut into pieces",
       "expected": {
-        "item": "cold unsalted butter, cut into pieces",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -129,14 +137,14 @@
     {
       "raw": "8-ounce wheel of brie (or camembert)",
       "expected": {
-        "item": "brie (or camembert)",
+        "item": "brie",
         "measurements": [
           {
             "amount": "1",
             "unit": "8-ounce wheel"
           }
         ],
-        "note": null,
+        "note": "or camembert",
         "category": "Cheese"
       }
     },

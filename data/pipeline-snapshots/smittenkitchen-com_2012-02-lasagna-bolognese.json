@@ -14,13 +14,9 @@
         {
           "amount": "1",
           "unit": "medium"
-        },
-        {
-          "amount": "1",
-          "unit": "1-inch pieces"
         }
       ],
-      "note": "coarsely chopped",
+      "note": "1-inch pieces are fine, coarsely chopped",
       "raw": "1 medium onion, coarsely chopped (1-inch pieces are fine)",
       "section": "Bolognese Sauce"
     },
@@ -103,14 +99,18 @@
       "section": "Bolognese Sauce"
     },
     {
-      "item": "tomato paste (from 2 6-ounce cans)",
+      "item": "tomato paste",
       "measurements": [
         {
           "amount": "1.25",
           "unit": "cup"
+        },
+        {
+          "amount": "329",
+          "unit": "g"
         }
       ],
-      "note": null,
+      "note": "from 2 6-ounce cans",
       "raw": "1 1/4 cups tomato paste (from 2 6-ounce cans)",
       "section": "Bolognese Sauce"
     },
@@ -193,14 +193,14 @@
       "section": "Pasta"
     },
     {
-      "item": "water, if needed",
+      "item": "water",
       "measurements": [
         {
           "amount": "1 to 2",
           "unit": "tbsp"
         }
       ],
-      "note": null,
+      "note": "if needed",
       "raw": "1 to 2 tablespoons water, if needed",
       "section": "Pasta"
     },

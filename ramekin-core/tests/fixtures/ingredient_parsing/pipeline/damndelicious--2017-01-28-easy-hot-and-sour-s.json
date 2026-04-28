@@ -74,17 +74,9 @@
           {
             "amount": "3",
             "unit": "package"
-          },
-          {
-            "amount": "3.5",
-            "unit": "oz"
-          },
-          {
-            "amount": "99",
-            "unit": "g"
           }
         ],
-        "note": "stemmed and sliced",
+        "note": "3.5-ounce, stemmed and sliced",
         "category": "Produce"
       }
     },
@@ -114,17 +106,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "8",
-            "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
-        "note": "drained and cut into slivers",
+        "note": "8-ounce, drained and cut into slivers",
         "category": "Canned Goods"
       }
     },
@@ -210,17 +194,9 @@
           {
             "amount": "1",
             "unit": "package"
-          },
-          {
-            "amount": "8",
-            "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
-        "note": "drained and cubed",
+        "note": "8-ounce, drained and cubed",
         "category": "Produce"
       }
     },
@@ -291,22 +267,14 @@
     {
       "raw": "1 (12-ounce) package wonton wrappers (cut into strips)",
       "expected": {
-        "item": "wonton wrappers (cut into strips)",
+        "item": "wonton wrappers",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
-          },
-          {
-            "amount": "12",
-            "unit": "oz"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "12-ounce, cut into strips",
         "category": "Bakery & Bread"
       }
     }

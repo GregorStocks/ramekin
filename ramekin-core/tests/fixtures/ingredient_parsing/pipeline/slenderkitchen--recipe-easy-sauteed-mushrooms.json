@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "sliced (or other white or brown mushroom)",
+        "note": "or other white or brown mushroom, sliced",
         "category": "Produce"
       }
     },
@@ -41,28 +41,32 @@
     {
       "raw": "1 tbsp butter (or ghee)",
       "expected": {
-        "item": "butter (or ghee)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or ghee",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 tbsp low sodium soy sauce (or coconut aminos or balsamic vinegar)",
       "expected": {
-        "item": "low sodium soy sauce (or coconut aminos or balsamic vinegar)",
+        "item": "low sodium soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or coconut aminos or balsamic vinegar",
         "category": "Condiments & Sauces"
       }
     },
@@ -92,14 +96,14 @@
     {
       "raw": "1 tbsp fresh thyme, chopped (optional)",
       "expected": {
-        "item": "fresh thyme, chopped",
+        "item": "fresh thyme",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "optional",
+        "note": "optional, chopped",
         "category": "Produce"
       }
     }

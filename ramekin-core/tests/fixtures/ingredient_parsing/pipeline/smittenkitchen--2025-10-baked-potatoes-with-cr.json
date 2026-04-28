@@ -20,7 +20,7 @@
             "unit": "g each"
           }
         ],
-        "note": "scrubbed clean",
+        "note": "about 8 ounces or 225 grams each, scrubbed clean",
         "category": "Produce"
       }
     },
@@ -45,7 +45,7 @@
     {
       "raw": "1 pound (455 grams) fresh broccoli, cut into 1-inch pieces",
       "expected": {
-        "item": "fresh broccoli, cut into 1-inch pieces",
+        "item": "fresh broccoli",
         "measurements": [
           {
             "amount": "1",
@@ -56,7 +56,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Produce"
       }
     },
@@ -78,7 +78,7 @@
             "unit": "slice"
           }
         ],
-        "note": "diced",
+        "note": "about 4 slices, diced",
         "category": "Meat & Seafood"
       }
     },

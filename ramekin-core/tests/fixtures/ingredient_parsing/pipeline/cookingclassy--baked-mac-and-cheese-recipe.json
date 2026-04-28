@@ -120,7 +120,7 @@
     {
       "raw": "2 1/2 cups (590ml) whole milk, (warmed**)",
       "expected": {
-        "item": "whole milk, (warmed**)",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "2.5",
@@ -129,16 +129,20 @@
           {
             "amount": "590",
             "unit": "ml"
+          },
+          {
+            "amount": "612",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "warmed",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 cup (235ml) half and half, (warmed**)",
       "expected": {
-        "item": "half and half, (warmed**)",
+        "item": "half and half",
         "measurements": [
           {
             "amount": "1",
@@ -147,9 +151,13 @@
           {
             "amount": "235",
             "unit": "ml"
+          },
+          {
+            "amount": "242",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "warmed",
         "category": "Dairy & Eggs"
       }
     },
@@ -171,7 +179,7 @@
             "unit": "g"
           }
         ],
-        "note": "shredded (I like to use Cracker Barrel",
+        "note": "shredded (I like to use Cracker Barrel)",
         "category": "Cheese"
       }
     },
@@ -193,7 +201,7 @@
             "unit": "g"
           }
         ],
-        "note": "shredded, divided (I like to use Murray's",
+        "note": "shredded, divided (I like to use Murray's)",
         "category": "Cheese"
       }
     }

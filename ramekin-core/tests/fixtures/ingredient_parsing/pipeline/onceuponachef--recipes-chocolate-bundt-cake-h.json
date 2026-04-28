@@ -5,14 +5,14 @@
     {
       "raw": "½ cup coffee ((any temperature is fine))",
       "expected": {
-        "item": "coffee (any temperature is fine)",
+        "item": "coffee",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "any temperature is fine",
         "category": "Beverages"
       }
     },
@@ -87,28 +87,36 @@
     {
       "raw": "2⅔  cups  all-purpose flour, (spooned into measuring cup and leveled-off)",
       "expected": {
-        "item": "all-purpose flour, (spooned into measuring cup and leveled-off)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2.67",
             "unit": "cup"
+          },
+          {
+            "amount": "333",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "spooned into measuring cup and leveled-off",
         "category": "Baking"
       }
     },
     {
       "raw": "⅓ cup natural cocoa powder, (such as Hershey's)",
       "expected": {
-        "item": "natural cocoa powder, (such as Hershey's)",
+        "item": "natural cocoa powder",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "29",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Hershey's",
         "category": "Baking"
       }
     },

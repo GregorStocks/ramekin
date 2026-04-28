@@ -100,16 +100,16 @@
     {
       "raw": "Freshly ground black pepper (more for later)",
       "expected": {
-        "item": "Freshly ground black pepper (more for later)",
+        "item": "Freshly ground black pepper",
         "measurements": [],
-        "note": null,
+        "note": "more for later",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "3 lb Top sirloin steak or beef tenderloin fillet, ( cut into 1 1/2-inch cubes)",
       "expected": {
-        "item": "Top sirloin steak or beef tenderloin fillet, ( cut into 1 1/2-inch cubes)",
+        "item": "Top sirloin steak or beef tenderloin fillet",
         "measurements": [
           {
             "amount": "3",
@@ -120,7 +120,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1 1/2-inch cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -183,15 +183,15 @@
     {
       "raw": "2  lemons, (juiced)",
       "expected": {
-        "item": "lemons, (juiced)",
+        "item": "lemons",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {

@@ -16,21 +16,25 @@
             "unit": "g"
           }
         ],
-        "note": "drained (or 1 1/2 cups cooked chickpeas",
+        "note": "drained (or 1 1/2 cups cooked chickpeas)",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1/2 teaspoon baking soda (for canned chickpeas only)",
       "expected": {
-        "item": "baking soda (for canned chickpeas only)",
+        "item": "baking soda",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.3",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for canned chickpeas only",
         "category": "Baking"
       }
     },
@@ -55,14 +59,14 @@
     {
       "raw": "2-3 tablespoons lemon juice (adjust to your tastes)",
       "expected": {
-        "item": "lemon juice (adjust to your tastes)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "adjust to your tastes",
         "category": "Beverages"
       }
     },

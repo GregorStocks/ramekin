@@ -80,15 +80,15 @@
             "unit": "cup"
           },
           {
-            "amount": "113",
-            "unit": "g"
-          },
-          {
             "amount": "1",
             "unit": "stick"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": "melted)",
+        "note": "113g - or 1 stick, melted",
         "category": "Dairy & Eggs"
       }
     },
@@ -135,14 +135,14 @@
     {
       "raw": "1 cup sweet potato puree ((see note below recipe))",
       "expected": {
-        "item": "sweet potato puree (see note below recipe)",
+        "item": "sweet potato puree",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see note below recipe",
         "category": "Produce"
       }
     },

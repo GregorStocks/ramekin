@@ -47,14 +47,18 @@
     {
       "raw": "1 teaspoon kosher salt (I use Diamond brand kosher salt; use half of other brands)",
       "expected": {
-        "item": "kosher salt (I use Diamond brand kosher salt; use half of other brands)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use Diamond brand kosher salt; use half of other brands",
         "section": "Crust",
         "category": "Spices & Seasonings"
       }
@@ -67,13 +71,9 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "100",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "100° to 115°F",
         "section": "Crust",
         "category": "Other"
       }
@@ -144,9 +144,9 @@
     {
       "raw": "Seasonings such as salt, pepper flakes, and dried oregano",
       "expected": {
-        "item": "Seasonings such as salt, pepper flakes",
+        "item": "Seasonings such as salt, pepper flakes, and dried oregano",
         "measurements": [],
-        "note": "and dried oregano",
+        "note": null,
         "section": "To Finish",
         "category": "Spices & Seasonings"
       }

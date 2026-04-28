@@ -5,7 +5,7 @@
     {
       "raw": "1 pound boneless, skinless chicken breasts, (cut into cubes)",
       "expected": {
-        "item": "boneless, skinless chicken breasts, (cut into cubes)",
+        "item": "boneless, skinless chicken breasts",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Meat & Seafood"
       }
     },

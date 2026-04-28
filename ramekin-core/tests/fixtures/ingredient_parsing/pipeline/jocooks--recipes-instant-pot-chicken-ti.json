@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds chicken (skinless and boneless, I used both chicken breast and thighs, cut into cubes)",
       "expected": {
-        "item": "chicken (skinless and boneless, I used both chicken breast and thighs, cut into cubes)",
+        "item": "chicken",
         "measurements": [
           {
             "amount": "2",
@@ -16,21 +16,25 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skinless and boneless, I used both chicken breast and thighs, cut into cubes",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1½ cups plain yogurt (I used Greek)",
       "expected": {
-        "item": "plain yogurt (I used Greek)",
+        "item": "plain yogurt",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "368",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used Greek",
         "category": "Dairy & Eggs"
       }
     },
@@ -283,14 +287,14 @@
     {
       "raw": "2 cups tomato sauce (or passata )",
       "expected": {
-        "item": "tomato sauce (or passata",
+        "item": "tomato sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or passata",
         "category": "Canned Goods"
       }
     },
@@ -329,14 +333,18 @@
     {
       "raw": "2 tablespoons butter (unsalted)",
       "expected": {
-        "item": "butter (unsalted)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsalted",
         "category": "Dairy & Eggs"
       }
     },

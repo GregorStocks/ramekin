@@ -77,14 +77,14 @@
     {
       "raw": "3 tablespoons Kahlua Peppermint Mocha liqueur (see step #2)",
       "expected": {
-        "item": "Kahlua Peppermint Mocha liqueur (see step #2)",
+        "item": "Kahlua Peppermint Mocha liqueur",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see step #2",
         "category": "Beverages"
       }
     },

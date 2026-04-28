@@ -101,29 +101,33 @@
     {
       "raw": "1/4 cup lemon zest (from 3-4 lemons)",
       "expected": {
-        "item": "lemon zest (from 3-4 lemons)",
+        "item": "lemon zest",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 3-4 lemons",
         "category": "Produce"
       }
     },
     {
       "raw": "1 cup lemon juice (from juicing 4 lemons)",
       "expected": {
-        "item": "lemon juice (from juicing 4 lemons)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "244",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "from juicing 4 lemons",
+        "category": "Beverages"
       }
     }
   ]

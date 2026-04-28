@@ -33,14 +33,14 @@
     {
       "raw": "2 tablespoons cognac (bourbon, or vodka)",
       "expected": {
-        "item": "cognac (bourbon, or vodka)",
+        "item": "cognac",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "bourbon, or vodka",
         "category": "Beverages"
       }
     },

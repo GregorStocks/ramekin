@@ -32,14 +32,14 @@
     {
       "raw": "¼ cup coffee-flavoured liqueur (such as Kahlúa)",
       "expected": {
-        "item": "coffee-flavoured liqueur (such as Kahlúa)",
+        "item": "coffee-flavoured liqueur",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Kahlúa",
         "category": "Beverages"
       }
     },

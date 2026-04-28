@@ -41,14 +41,14 @@
     {
       "raw": "1 thick or 2 slimmer leeks, halved, washed, cut into 1-inch segments",
       "expected": {
-        "item": "thick or 2 slimmer leeks, halved, washed, cut into 1-inch segments",
+        "item": "thick or 2 slimmer leeks, halved, washed",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch segments",
         "category": "Produce"
       }
     },
@@ -105,14 +105,14 @@
     {
       "raw": "1/2 cup plain breadcrumbs (panko or homemade are great here)",
       "expected": {
-        "item": "plain breadcrumbs (panko or homemade are great here)",
+        "item": "plain breadcrumbs",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "panko or homemade are great here",
         "category": "Bakery & Bread"
       }
     },

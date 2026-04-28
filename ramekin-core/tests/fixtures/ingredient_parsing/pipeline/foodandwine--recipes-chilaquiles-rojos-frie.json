@@ -20,63 +20,63 @@
             "unit": "g"
           }
         ],
-        "note": "halved lengthwise",
+        "note": "about 8 medium, halved lengthwise",
         "category": "Produce"
       }
     },
     {
       "raw": "1 medium-size white onion, cut into 1-inch wedges",
       "expected": {
-        "item": "medium-size white onion, cut into 1-inch wedges",
+        "item": "medium-size white onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch wedges",
         "category": "Produce"
       }
     },
     {
       "raw": "2 dried chiles de árbol, stemmed and seeded",
       "expected": {
-        "item": "dried chiles de árbol, stemmed and seeded",
+        "item": "dried chiles de árbol",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "stemmed and seeded",
+        "category": "Other"
       }
     },
     {
       "raw": "5 dried guajillo chiles, stemmed and seeded",
       "expected": {
-        "item": "dried guajillo chiles, stemmed and seeded",
+        "item": "dried guajillo chiles",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "stemmed and seeded",
+        "category": "Other"
       }
     },
     {
       "raw": "1 dried chipotle chile, stemmed and seeded",
       "expected": {
-        "item": "dried chipotle chile, stemmed and seeded",
+        "item": "dried chipotle chile",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "stemmed and seeded",
         "category": "Snacks"
       }
     },
@@ -193,14 +193,14 @@
     {
       "raw": "12 cups thick corn tortilla chips (such as Montes)",
       "expected": {
-        "item": "thick corn tortilla chips (such as Montes)",
+        "item": "thick corn tortilla chips",
         "measurements": [
           {
             "amount": "12",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Montes",
         "category": "Bakery & Bread"
       }
     },
@@ -236,7 +236,7 @@
             "unit": "g"
           }
         ],
-        "note": "crumbled",
+        "note": "about 2 cups, crumbled",
         "category": "Cheese"
       }
     },

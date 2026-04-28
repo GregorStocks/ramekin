@@ -5,14 +5,14 @@
     {
       "raw": "1  blind baked pie crust, (recipe here)",
       "expected": {
-        "item": "blind baked pie crust, (recipe here)",
+        "item": "blind baked pie crust",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "recipe here",
         "category": "Frozen"
       }
     },
@@ -26,22 +26,18 @@
             "unit": "oz"
           },
           {
-            "amount": "60 to 65",
-            "unit": "percent"
-          },
-          {
             "amount": "113",
             "unit": "g"
           }
         ],
-        "note": "chopped small)",
+        "note": "60 to 65 percent, chopped small",
         "category": "Other"
       }
     },
     {
       "raw": "3 Tbsp (42 g) unsalted butter, (cut into 1 Tbsp pieces)",
       "expected": {
-        "item": "unsalted butter, (cut into 1 Tbsp pieces)",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "3",
@@ -52,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1 Tbsp pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -95,7 +91,7 @@
     {
       "raw": "1/4 cup (24 g) Dutch process cocoa powder ((scoop and level to measure))",
       "expected": {
-        "item": "Dutch process cocoa powder (scoop and level to measure)",
+        "item": "Dutch process cocoa powder",
         "measurements": [
           {
             "amount": "0.25",
@@ -106,14 +102,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "scoop and level to measure",
         "category": "Baking"
       }
     },
     {
       "raw": "1/4 cup (33 g) cornstarch ((scoop and level to measure))",
       "expected": {
-        "item": "cornstarch (scoop and level to measure)",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "0.25",
@@ -124,7 +120,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "scoop and level to measure",
         "category": "Baking"
       }
     },

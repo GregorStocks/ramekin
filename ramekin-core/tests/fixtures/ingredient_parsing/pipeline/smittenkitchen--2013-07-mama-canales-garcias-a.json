@@ -23,14 +23,14 @@
     {
       "raw": "2 firm-ripe avocados, halved, scored into a small dice",
       "expected": {
-        "item": "firm-ripe avocados, halved",
+        "item": "firm-ripe avocados, halved, scored into a small dice",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "scored into a small dice",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -58,21 +58,21 @@
             "unit": "small"
           }
         ],
-        "note": "very finely chopped (use red if you can’t find white)",
+        "note": "use red if you can’t find white, very finely chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "1 small jalapeño, seeded and finely chopped (optional)",
       "expected": {
-        "item": "jalapeño, seeded and finely chopped",
+        "item": "jalapeño",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "optional",
+        "note": "optional, seeded and finely chopped",
         "category": "Produce"
       }
     },

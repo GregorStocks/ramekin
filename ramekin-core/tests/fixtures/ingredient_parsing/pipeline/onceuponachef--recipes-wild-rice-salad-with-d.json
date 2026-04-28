@@ -162,7 +162,7 @@
             "unit": "cup"
           }
         ],
-        "note": "toasted and coarsely chopped (see note)",
+        "note": "see note, toasted and coarsely chopped",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -211,29 +211,29 @@
     {
       "raw": "1 tart yet sweet apple (such as Honeycrisp or Fuji), peeled, cored, and diced",
       "expected": {
-        "item": "tart yet sweet apple (such as Honeycrisp or Fuji), peeled, cored",
+        "item": "tart yet sweet apple, peeled, cored",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "and diced",
+        "note": "such as Honeycrisp or Fuji, and diced",
         "category": "Produce"
       }
     },
     {
       "raw": "¼ cup roasted and salted pepitas (hulled pumpkin seeds)",
       "expected": {
-        "item": "roasted and salted pepitas (hulled pumpkin seeds)",
+        "item": "roasted and salted pepitas",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "hulled pumpkin seeds",
+        "category": "Meat & Seafood"
       }
     },
     {

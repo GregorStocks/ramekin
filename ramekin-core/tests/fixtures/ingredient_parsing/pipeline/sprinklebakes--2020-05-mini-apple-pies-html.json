@@ -209,15 +209,15 @@
     {
       "raw": "5  large (tart, firm apples, thinly sliced (tested with Granny Smith))",
       "expected": {
-        "item": "5  large (tart, firm apples, thinly sliced (tested with Granny Smith))",
+        "item": "tart",
         "measurements": [
           {
             "amount": "5",
             "unit": "large"
           }
         ],
-        "note": "tart, firm apples, thinly sliced (tested with Granny Smith",
-        "category": "Produce"
+        "note": "firm apples, thinly sliced (tested with Granny Smith)",
+        "category": "Other"
       }
     },
     {

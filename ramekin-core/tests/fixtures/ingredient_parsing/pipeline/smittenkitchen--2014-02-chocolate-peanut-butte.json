@@ -14,7 +14,7 @@
     {
       "raw": "9 ounces (255 grams) chocolate wafers (such as these; the cookie portion of these are best for homemade crumbs)",
       "expected": {
-        "item": "chocolate wafers (such as these; the cookie portion of these are best for homemade crumbs)",
+        "item": "chocolate wafers",
         "measurements": [
           {
             "amount": "9",
@@ -25,8 +25,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "such as these; the cookie portion of these are best for homemade crumbs",
+        "category": "Other"
       }
     },
     {

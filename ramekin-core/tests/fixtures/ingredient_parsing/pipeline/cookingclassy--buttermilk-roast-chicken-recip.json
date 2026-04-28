@@ -5,7 +5,7 @@
     {
       "raw": "4 to 4.5 lb whole chicken ((preferably organic or free range))",
       "expected": {
-        "item": "whole chicken (preferably organic or free range)",
+        "item": "whole chicken",
         "measurements": [
           {
             "amount": "4 to 4.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably organic or free range",
         "category": "Meat & Seafood"
       }
     },

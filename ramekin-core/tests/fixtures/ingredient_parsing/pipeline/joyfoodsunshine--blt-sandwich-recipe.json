@@ -58,15 +58,11 @@
             "unit": "oz"
           },
           {
-            "amount": "8",
-            "unit": "piece"
-          },
-          {
             "amount": "227",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "8 pieces - oven baked bacon",
         "category": "Meat & Seafood"
       }
     },
@@ -110,14 +106,14 @@
     {
       "raw": "2 pieces romaine lettuce (or red leaf, etc)",
       "expected": {
-        "item": "romaine lettuce (or red leaf, etc)",
+        "item": "romaine lettuce",
         "measurements": [
           {
             "amount": "2",
             "unit": "piece"
           }
         ],
-        "note": null,
+        "note": "or red leaf, etc",
         "category": "Produce"
       }
     }

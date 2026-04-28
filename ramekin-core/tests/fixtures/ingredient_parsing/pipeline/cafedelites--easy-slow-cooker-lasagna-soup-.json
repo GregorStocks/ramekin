@@ -101,21 +101,25 @@
     {
       "raw": "2 cups chicken stock (or broth)",
       "expected": {
-        "item": "chicken stock (or broth)",
+        "item": "chicken stock",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "498",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or broth",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "14 oz tomato sauce (Passata)",
       "expected": {
-        "item": "tomato sauce (Passata)",
+        "item": "tomato sauce",
         "measurements": [
           {
             "amount": "14",
@@ -126,14 +130,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Passata",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "14 oz crushed tomatoes (canned)",
       "expected": {
-        "item": "crushed tomatoes (canned)",
+        "item": "crushed tomatoes",
         "measurements": [
           {
             "amount": "14",
@@ -144,7 +148,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "canned",
         "category": "Canned Goods"
       }
     },
@@ -275,28 +279,32 @@
     {
       "raw": "8  large lasagna sheets (broken into bite size pieces)",
       "expected": {
-        "item": "lasagna sheets (broken into bite size pieces)",
+        "item": "lasagna sheets",
         "measurements": [
           {
             "amount": "8",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "broken into bite size pieces",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "1 cup shredded mozzarella cheese (reduced fat)",
       "expected": {
-        "item": "shredded mozzarella cheese (reduced fat)",
+        "item": "shredded mozzarella cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "86",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "reduced fat",
         "category": "Cheese"
       }
     },

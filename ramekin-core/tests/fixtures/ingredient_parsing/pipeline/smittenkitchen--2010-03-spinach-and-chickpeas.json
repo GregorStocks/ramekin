@@ -77,7 +77,7 @@
     {
       "raw": "1/2 cup (4 ounces) tomato sauce (I used canned stuff I keep around)",
       "expected": {
-        "item": "tomato sauce (I used canned stuff I keep around)",
+        "item": "tomato sauce",
         "measurements": [
           {
             "amount": "0.5",
@@ -92,7 +92,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used canned stuff I keep around",
         "category": "Canned Goods"
       }
     },

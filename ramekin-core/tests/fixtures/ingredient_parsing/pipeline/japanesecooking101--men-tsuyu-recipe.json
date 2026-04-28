@@ -41,15 +41,19 @@
     {
       "raw": "1/2 cup Sake (Japanese rice wine)",
       "expected": {
-        "item": "Sake (Japanese rice wine)",
+        "item": "Sake",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Pasta & Rice"
+        "note": "Japanese rice wine",
+        "category": "Beverages"
       }
     },
     {

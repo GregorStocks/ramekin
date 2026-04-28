@@ -43,7 +43,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1.5 pounds",
         "category": "Produce"
       }
     },
@@ -65,7 +65,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 pound",
         "category": "Produce"
       }
     },
@@ -169,28 +169,32 @@
     {
       "raw": "2 tablespoons white miso (the mildest kind)",
       "expected": {
-        "item": "white miso (the mildest kind)",
+        "item": "white miso",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "the mildest kind",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "2 tablespoons tahini (other nut butters can work in a pinch)",
       "expected": {
-        "item": "tahini (other nut butters can work in a pinch)",
+        "item": "tahini",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "other nut butters can work in a pinch",
         "category": "Condiments & Sauces"
       }
     },

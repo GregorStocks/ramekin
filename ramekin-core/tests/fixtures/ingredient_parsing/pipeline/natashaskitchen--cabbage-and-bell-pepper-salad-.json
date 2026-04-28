@@ -23,14 +23,14 @@
     {
       "raw": "1  yellow or orange or red bell pepper (or 5-6 mini peppers)",
       "expected": {
-        "item": "yellow or orange or red bell pepper (or 5-6 mini peppers)",
+        "item": "yellow or orange or red bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 5-6 mini peppers",
         "category": "Produce"
       }
     },
@@ -74,14 +74,14 @@
     {
       "raw": "3  Тbsp sunflower oil (olive oil works too but sunflower is better)",
       "expected": {
-        "item": "Тbsp sunflower oil (olive oil works too but sunflower is better)",
+        "item": "Тbsp sunflower oil",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "olive oil works too but sunflower is better",
         "category": "Oils & Vinegars"
       }
     },
@@ -134,14 +134,18 @@
     {
       "raw": "1/2 tsp garlic powder (or use 1 tsp of garlic salt instead of garlic powder and salt)",
       "expected": {
-        "item": "garlic powder (or use 1 tsp of garlic salt instead of garlic powder and salt)",
+        "item": "garlic powder",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or use 1 tsp of garlic salt instead of garlic powder and salt",
         "category": "Spices & Seasonings"
       }
     },

@@ -169,22 +169,18 @@
     {
       "raw": "6 to 7 lb. skin-on chicken drumsticks (about 24), patted dry",
       "expected": {
-        "item": "skin-on chicken drumsticks, patted dry",
+        "item": "skin-on chicken drumsticks",
         "measurements": [
           {
             "amount": "6 to 7",
             "unit": "lb"
           },
           {
-            "amount": "24",
-            "unit": null
-          },
-          {
             "amount": "2722 to 3175",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 24, patted dry",
         "category": "Meat & Seafood"
       }
     },

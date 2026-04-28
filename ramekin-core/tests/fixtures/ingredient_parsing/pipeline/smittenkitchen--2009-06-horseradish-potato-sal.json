@@ -5,22 +5,18 @@
     {
       "raw": "3 pounds small (2-inch) potatoes, your choice of variety (I found a rainbow-colored pack, and couldn’t resist, clearly)",
       "expected": {
-        "item": "small potatoes, your choice of variety (I found a rainbow-colored pack, and couldn’t resist, clearly)",
+        "item": "small potatoes, your choice of variety",
         "measurements": [
           {
             "amount": "3",
             "unit": "lb"
           },
           {
-            "amount": "2",
-            "unit": "inch"
-          },
-          {
             "amount": "1361",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "2-inch, I found a rainbow-colored pack, and couldn’t resist, clearly",
         "category": "Produce"
       }
     },
@@ -66,15 +62,11 @@
             "unit": "cup"
           },
           {
-            "amount": "0.5",
-            "unit": "cup"
-          },
-          {
             "amount": "242",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 1/2 cup sour cream, 1/2 cup yogurt",
         "category": "Dairy & Eggs"
       }
     },
@@ -95,14 +87,14 @@
     {
       "raw": "1/4 cup chopped fresh chives (frustratingly, couldn’t find these)",
       "expected": {
-        "item": "chopped fresh chives (frustratingly, couldn’t find these)",
+        "item": "chopped fresh chives",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "frustratingly, couldn’t find these",
         "category": "Produce"
       }
     },

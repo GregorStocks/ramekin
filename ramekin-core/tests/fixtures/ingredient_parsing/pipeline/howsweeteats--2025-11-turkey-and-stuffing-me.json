@@ -37,7 +37,7 @@
     {
       "raw": "1 pound lean ground turkey, (I like to use 94 %)",
       "expected": {
-        "item": "lean ground turkey, (I like to use 94 %)",
+        "item": "lean ground turkey",
         "measurements": [
           {
             "amount": "1",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I like to use 94 %",
         "category": "Meat & Seafood"
       }
     },

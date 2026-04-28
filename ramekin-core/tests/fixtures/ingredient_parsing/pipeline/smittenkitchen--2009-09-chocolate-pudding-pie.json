@@ -91,7 +91,7 @@
     {
       "raw": "4 ounces bittersweet chocolate (not more than 60% cacao), finely chopped",
       "expected": {
-        "item": "bittersweet chocolate (not more than 60% cacao)",
+        "item": "bittersweet chocolate",
         "measurements": [
           {
             "amount": "4",
@@ -102,7 +102,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely chopped",
+        "note": "not more than 60% cacao, finely chopped",
         "category": "Other"
       }
     },

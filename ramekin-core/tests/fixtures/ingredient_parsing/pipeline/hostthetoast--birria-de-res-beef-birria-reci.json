@@ -5,7 +5,7 @@
     {
       "raw": "5 pound chuck roast, cut into large chunks",
       "expected": {
-        "item": "chuck roast, cut into large chunks",
+        "item": "chuck roast",
         "measurements": [
           {
             "amount": "5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into large chunks",
         "category": "Meat & Seafood"
       }
     },

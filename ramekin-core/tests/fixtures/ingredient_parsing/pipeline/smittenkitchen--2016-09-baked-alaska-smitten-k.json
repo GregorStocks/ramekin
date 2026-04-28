@@ -14,14 +14,14 @@
     {
       "raw": "6 cups (from 3 pints) ice cream, one flavor or a mix of flavors you like",
       "expected": {
-        "item": "(from 3 pints) ice cream, one flavor or a mix of flavors you like",
+        "item": "ice cream, one flavor or a mix of flavors you like",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 3 pints",
         "category": "Frozen"
       }
     },
@@ -133,7 +133,7 @@
             "unit": "g"
           }
         ],
-        "note": "or 1/4 teaspoon table salt",
+        "note": "or 1/4 teaspoon table salt (about 2 grams)",
         "category": "Spices & Seasonings"
       }
     },

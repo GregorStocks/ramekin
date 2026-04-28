@@ -111,18 +111,14 @@
     {
       "raw": "1 ½ tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "24",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -233,14 +229,18 @@
     {
       "raw": "5 tbsp all-purpose flour (+ extra for dusting)",
       "expected": {
-        "item": "all-purpose flour (+ extra for dusting)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "39",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "+ extra for dusting",
         "category": "Baking"
       }
     },
@@ -261,9 +261,9 @@
     {
       "raw": "cooking oil (for deep frying)",
       "expected": {
-        "item": "cooking oil (for deep frying)",
+        "item": "cooking oil",
         "measurements": [],
-        "note": null,
+        "note": "for deep frying",
         "category": "Oils & Vinegars"
       }
     }

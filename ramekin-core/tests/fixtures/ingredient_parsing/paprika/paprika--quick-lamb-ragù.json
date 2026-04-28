@@ -129,17 +129,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "28",
-            "unit": "oz"
-          },
-          {
-            "amount": "794",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "28-ounce",
         "category": "Canned Goods"
       }
     },
@@ -173,9 +165,9 @@
     {
       "raw": "A small handful of marjoram, oregano or thyme, for serving (optional)",
       "expected": {
-        "item": "A small handful of marjoram, oregano or thyme, for serving",
+        "item": "A small handful of marjoram, oregano or thyme",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Spices & Seasonings"
       }
     }

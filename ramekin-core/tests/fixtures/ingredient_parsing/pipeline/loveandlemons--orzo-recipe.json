@@ -51,14 +51,18 @@
     {
       "raw": "½ tablespoon extra-virgin olive oil, more for drizzling",
       "expected": {
-        "item": "extra-virgin olive oil, more for drizzling",
+        "item": "extra-virgin olive oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "6.8",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "more for drizzling",
         "category": "Oils & Vinegars"
       }
     },

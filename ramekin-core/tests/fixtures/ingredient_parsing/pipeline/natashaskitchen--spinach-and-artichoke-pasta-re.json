@@ -41,7 +41,7 @@
     {
       "raw": "4 oz cream cheese (cut into pieces (reduced fat is ok))",
       "expected": {
-        "item": "cream cheese (cut into pieces (reduced fat is ok)",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "4",
@@ -52,21 +52,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces (reduced fat is ok)",
         "category": "Cheese"
       }
     },
     {
       "raw": "1 cup 8 oz sour cream (\"light\" sour cream is ok)",
       "expected": {
-        "item": "8 oz sour cream (\"light\" sour cream is ok)",
+        "item": "8 oz sour cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "\"light\" sour cream is ok",
         "category": "Dairy & Eggs"
       }
     },
@@ -91,11 +91,11 @@
     {
       "raw": "2  cans (15 oz each quartered artichoke hearts, well drained)",
       "expected": {
-        "item": "2  cans (15 oz each quartered artichoke hearts, well drained)",
+        "item": "quartered artichoke hearts",
         "measurements": [
           {
             "amount": "2",
-            "unit": "can"
+            "unit": "can each"
           }
         ],
         "note": "15 oz each quartered artichoke hearts, well drained",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": "drained (optional",
+        "note": "drained (optional)",
         "category": "Produce"
       }
     },

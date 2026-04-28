@@ -12,7 +12,7 @@
             "unit": "cup"
           }
         ],
-        "note": "ground to a flour in a food processor (yielding 1/2 cup oat flour)",
+        "note": "yielding 1/2 cup oat flour, ground to a flour in a food processor",
         "category": "Snacks"
       }
     },
@@ -73,14 +73,18 @@
     {
       "raw": "1/2 teaspoon kosher salt (you might want to first read up on kosher salts)",
       "expected": {
-        "item": "kosher salt (you might want to first read up on kosher salts)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "you might want to first read up on kosher salts",
         "category": "Spices & Seasonings"
       }
     },

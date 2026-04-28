@@ -51,14 +51,14 @@
     {
       "raw": "1/2 cup very finely-chopped palm sugar, packed or 1/4 cup brown sugar",
       "expected": {
-        "item": "very finely-chopped palm sugar",
+        "item": "very finely-chopped palm sugar, packed",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "packed or 1/4 cup brown sugar",
+        "note": "or 1/4 cup brown sugar",
         "category": "Baking"
       }
     },

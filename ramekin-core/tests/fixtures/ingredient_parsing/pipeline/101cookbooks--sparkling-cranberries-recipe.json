@@ -5,14 +5,18 @@
     {
       "raw": "2 cups cranberries, picked over",
       "expected": {
-        "item": "cranberries, picked over",
+        "item": "cranberries",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "210",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "picked over",
         "category": "Produce"
       }
     },
@@ -44,7 +48,7 @@
             "unit": null
           }
         ],
-        "note": "mixed types (see headnotes)",
+        "note": "see headnotes, mixed types",
         "category": "Baking"
       }
     }

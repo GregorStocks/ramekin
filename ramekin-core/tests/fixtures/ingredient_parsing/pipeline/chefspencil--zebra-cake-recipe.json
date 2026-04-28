@@ -5,15 +5,15 @@
     {
       "raw": "300 g chocolate graham crackers ((or European chocolate digestive biscuits))",
       "expected": {
-        "item": "chocolate graham crackers (or European chocolate digestive biscuits)",
+        "item": "chocolate graham crackers",
         "measurements": [
           {
             "amount": "300",
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Bakery & Bread"
+        "note": "or European chocolate digestive biscuits",
+        "category": "Snacks"
       }
     },
     {

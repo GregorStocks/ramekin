@@ -12,15 +12,11 @@
             "unit": "cup"
           },
           {
-            "amount": "100-110",
-            "unit": "degrees F"
-          },
-          {
             "amount": "356",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "100-110 degrees F",
         "category": "Other"
       }
     },
@@ -162,9 +158,9 @@
     {
       "raw": "Cinnamon Sugar ((I use 1/4 teaspoon cinnamon for each tablespoon sugar))",
       "expected": {
-        "item": "Cinnamon Sugar (I use 1/4 teaspoon cinnamon for each tablespoon sugar)",
+        "item": "Cinnamon Sugar",
         "measurements": [],
-        "note": null,
+        "note": "I use 1/4 teaspoon cinnamon for each tablespoon sugar",
         "category": "Spices & Seasonings"
       }
     },

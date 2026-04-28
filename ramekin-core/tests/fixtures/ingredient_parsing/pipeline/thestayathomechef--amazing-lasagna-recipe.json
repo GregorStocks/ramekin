@@ -74,17 +74,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "28",
-            "unit": "oz"
-          },
-          {
-            "amount": "794",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "28 ounce can",
         "category": "Canned Goods"
       }
     },
@@ -96,39 +88,23 @@
           {
             "amount": "2",
             "unit": null
-          },
-          {
-            "amount": "6",
-            "unit": "oz"
-          },
-          {
-            "amount": "170",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "6 ounce cans",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1 (15 ounce can) tomato sauce (passata or tomato puree)",
       "expected": {
-        "item": "tomato sauce (passata or tomato puree)",
+        "item": "tomato sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "15",
-            "unit": "oz"
-          },
-          {
-            "amount": "425",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "15 ounce can, passata or tomato puree",
         "category": "Canned Goods"
       }
     },
@@ -378,7 +354,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 24 slices",
         "category": "Cheese"
       }
     },

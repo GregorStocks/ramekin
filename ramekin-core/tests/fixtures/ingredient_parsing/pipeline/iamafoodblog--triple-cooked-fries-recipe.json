@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds baker’s potatoes, peeled and cut into fries (approximately 2x2x6 cm)",
       "expected": {
-        "item": "baker’s potatoes, peeled and cut into fries",
+        "item": "baker’s potatoes",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "approximately 2x2x6 cm",
+        "note": "approximately 2x2x6 cm, peeled and cut into fries",
         "category": "Produce"
       }
     },

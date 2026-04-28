@@ -19,9 +19,9 @@
     {
       "raw": "juice of 1 orange (or 2-4 TBSP orange juice)",
       "expected": {
-        "item": "juice of 1 orange (or 2-4 TBSP orange juice)",
+        "item": "juice of 1 orange",
         "measurements": [],
-        "note": null,
+        "note": "or 2-4 TBSP orange juice",
         "category": "Produce"
       }
     },

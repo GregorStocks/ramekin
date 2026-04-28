@@ -5,14 +5,14 @@
     {
       "raw": "6  medium russet potatoes (these need to be the same size)",
       "expected": {
-        "item": "russet potatoes (these need to be the same size)",
+        "item": "russet potatoes",
         "measurements": [
           {
             "amount": "6",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "these need to be the same size",
         "category": "Produce"
       }
     },

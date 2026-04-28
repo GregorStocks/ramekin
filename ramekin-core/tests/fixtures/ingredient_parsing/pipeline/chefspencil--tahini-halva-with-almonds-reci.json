@@ -33,14 +33,14 @@
     {
       "raw": "200 gr almonds (skinned)",
       "expected": {
-        "item": "gr almonds (skinned)",
+        "item": "gr almonds",
         "measurements": [
           {
             "amount": "200",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "skinned",
         "category": "Nuts & Dried Fruit"
       }
     },

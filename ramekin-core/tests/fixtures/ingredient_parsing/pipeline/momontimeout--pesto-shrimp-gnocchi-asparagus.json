@@ -41,7 +41,7 @@
     {
       "raw": "16 oz  asparagus, (ends removed, cut into bite-size pieces)",
       "expected": {
-        "item": "asparagus, (ends removed, cut into bite-size pieces)",
+        "item": "asparagus",
         "measurements": [
           {
             "amount": "16",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "ends removed, cut into bite-size pieces",
         "category": "Produce"
       }
     },

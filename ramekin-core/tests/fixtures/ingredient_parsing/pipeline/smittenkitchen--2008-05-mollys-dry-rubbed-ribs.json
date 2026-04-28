@@ -19,14 +19,18 @@
     {
       "raw": "1/2 cup paprika (sweet or hot)",
       "expected": {
-        "item": "paprika (sweet or hot)",
+        "item": "paprika",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sweet or hot",
         "category": "Spices & Seasonings"
       }
     },

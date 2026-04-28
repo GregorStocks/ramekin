@@ -5,7 +5,7 @@
     {
       "raw": "3 pounds chicken wings (or nibbles, tip removed, drumettes and flats separated)",
       "expected": {
-        "item": "chicken wings (or nibbles, tip removed, drumettes and flats separated)",
+        "item": "chicken wings",
         "measurements": [
           {
             "amount": "3",
@@ -16,21 +16,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or nibbles, tip removed, drumettes and flats separated",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1/2 - 1 tablespoon sea salt flakes (adjust to your taste)",
       "expected": {
-        "item": "sea salt flakes (adjust to your taste)",
+        "item": "sea salt flakes",
         "measurements": [
           {
             "amount": "0.5-1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "adjust to your taste",
         "category": "Spices & Seasonings"
       }
     },
@@ -51,15 +51,15 @@
     {
       "raw": "4 tablespoons coconut sugar (or brown sugar)",
       "expected": {
-        "item": "coconut sugar (or brown sugar)",
+        "item": "coconut sugar",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "or brown sugar",
+        "category": "Produce"
       }
     },
     {
@@ -83,14 +83,14 @@
     {
       "raw": "4 tablespoons rice wine vinegar (or white vinegar)",
       "expected": {
-        "item": "rice wine vinegar (or white vinegar)",
+        "item": "rice wine vinegar",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or white vinegar",
         "category": "Oils & Vinegars"
       }
     },
@@ -165,14 +165,18 @@
     {
       "raw": "2 teaspoons sesame oil (or peanut oil)",
       "expected": {
-        "item": "sesame oil (or peanut oil)",
+        "item": "sesame oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "9.1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or peanut oil",
         "category": "Oils & Vinegars"
       }
     },

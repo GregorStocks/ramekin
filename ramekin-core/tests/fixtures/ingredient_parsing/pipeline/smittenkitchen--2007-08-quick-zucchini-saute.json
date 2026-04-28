@@ -33,7 +33,7 @@
     {
       "raw": "1 medium or 2 small zucchinis, cut into 1/8-inch matchsticks",
       "expected": {
-        "item": "zucchinis, cut into 1/8-inch matchsticks",
+        "item": "zucchinis",
         "measurements": [
           {
             "amount": "1",
@@ -44,7 +44,7 @@
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "cut into 1/8-inch matchsticks",
         "category": "Produce"
       }
     },
@@ -60,9 +60,9 @@
     {
       "raw": "Peelings of pecorino romano or parmesan cheese, to taste (optional)",
       "expected": {
-        "item": "Peelings of pecorino romano or parmesan cheese, to taste",
+        "item": "Peelings of pecorino romano or parmesan cheese",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, to taste",
         "category": "Cheese"
       }
     }

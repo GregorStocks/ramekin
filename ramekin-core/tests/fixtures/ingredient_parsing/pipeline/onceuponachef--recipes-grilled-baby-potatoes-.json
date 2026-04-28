@@ -97,28 +97,28 @@
     {
       "raw": "2 teaspoons chopped fresh thyme (rosemary would also work well, or a combination)",
       "expected": {
-        "item": "chopped fresh thyme (rosemary would also work well, or a combination)",
+        "item": "chopped fresh thyme",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "rosemary would also work well, or a combination",
         "category": "Produce"
       }
     },
     {
       "raw": "1 tablespoon chopped fresh Italian parsley, for garnish (optional)",
       "expected": {
-        "item": "chopped fresh Italian parsley, for garnish",
+        "item": "chopped fresh Italian parsley",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Spices & Seasonings"
       }
     }

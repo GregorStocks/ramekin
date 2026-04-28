@@ -23,14 +23,18 @@
     {
       "raw": "2 Tablespoons salted butter ((cut into ½ Tablespoon portions))",
       "expected": {
-        "item": "salted butter (cut into 1/2 Tablespoon portions)",
+        "item": "salted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2 Tablespoon portions",
         "category": "Dairy & Eggs"
       }
     },
@@ -191,28 +195,28 @@
     {
       "raw": "1  red apple ((cut into large pieces))",
       "expected": {
-        "item": "red apple (cut into large pieces)",
+        "item": "red apple",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into large pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1  onion ((cut into large pieces))",
       "expected": {
-        "item": "onion (cut into large pieces)",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into large pieces",
         "category": "Produce"
       }
     },
@@ -238,13 +242,9 @@
           {
             "amount": "2",
             "unit": "sprig"
-          },
-          {
-            "amount": null,
-            "unit": "large"
           }
         ],
-        "note": null,
+        "note": "large",
         "category": "Produce"
       }
     },

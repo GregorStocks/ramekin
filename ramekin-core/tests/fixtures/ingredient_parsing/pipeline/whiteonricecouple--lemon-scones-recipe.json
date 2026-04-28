@@ -5,14 +5,18 @@
     {
       "raw": "2 cups All-purpose Flour ((if measuring by volume - spoon and level the flour))",
       "expected": {
-        "item": "All-purpose Flour (if measuring by volume - spoon and level the flour)",
+        "item": "All-purpose Flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "if measuring by volume - spoon and level the flour",
         "category": "Baking"
       }
     },
@@ -74,13 +78,8 @@
       "raw": "grated Zest from 2 Meyer Lemons ((about 1 Tablespoon (30ml)))",
       "expected": {
         "item": "grated Zest from 2 Meyer Lemons",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "tbsp"
-          }
-        ],
-        "note": null,
+        "measurements": [],
+        "note": "about 1 Tablespoon (30ml)",
         "category": "Produce"
       }
     },
@@ -98,7 +97,7 @@
             "unit": "g"
           }
         ],
-        "note": "cold (if using unsalted butter, add and extra 1/4 teaspoon of salt to the batter",
+        "note": "cold (if using unsalted butter, add and extra 1/4 teaspoon of salt to the batter)",
         "category": "Dairy & Eggs"
       }
     },
@@ -119,14 +118,18 @@
     {
       "raw": "1/2 cup Heavy Cream ( (if your cream is extra thick you may need a touch more) + optional extra for brushing tops of scones)",
       "expected": {
-        "item": "Heavy Cream ( (if your cream is extra thick you may need a touch more) + optional extra for brushing tops of scones)",
+        "item": "Heavy Cream",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "119",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "(if your cream is extra thick you may need a touch more) + optional extra for brushing tops of scones",
         "category": "Dairy & Eggs"
       }
     },
@@ -165,28 +168,28 @@
     {
       "raw": "2 Tablespoons optional melted butter (or heavy cream for brushing tops of scones)",
       "expected": {
-        "item": "optional melted butter (or heavy cream for brushing tops of scones)",
+        "item": "optional melted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or heavy cream for brushing tops of scones",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1/4 cup Fresh Meyer Lemon Juice ((@ 2 meyer lemons))",
       "expected": {
-        "item": "Fresh Meyer Lemon Juice (@ 2 meyer lemons)",
+        "item": "Fresh Meyer Lemon Juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "@ 2 meyer lemons",
         "category": "Beverages"
       }
     },

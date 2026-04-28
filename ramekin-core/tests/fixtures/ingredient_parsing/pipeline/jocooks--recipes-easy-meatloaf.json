@@ -5,14 +5,14 @@
     {
       "raw": "1 cup breadcrumbs (such as Panko or Italian)",
       "expected": {
-        "item": "breadcrumbs (such as Panko or Italian)",
+        "item": "breadcrumbs",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Panko or Italian",
         "category": "Bakery & Bread"
       }
     },
@@ -115,14 +115,14 @@
     {
       "raw": "1 cup barbecue sauce (use your favorite)",
       "expected": {
-        "item": "barbecue sauce (use your favorite)",
+        "item": "barbecue sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "use your favorite",
         "category": "Condiments & Sauces"
       }
     },

@@ -138,18 +138,18 @@
     {
       "raw": "crushed red pepper, (for topping)",
       "expected": {
-        "item": "crushed red pepper, (for topping)",
+        "item": "crushed red pepper",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "chopped fresh parsley, (for topping)",
       "expected": {
-        "item": "chopped fresh parsley, (for topping)",
+        "item": "chopped fresh parsley",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     }

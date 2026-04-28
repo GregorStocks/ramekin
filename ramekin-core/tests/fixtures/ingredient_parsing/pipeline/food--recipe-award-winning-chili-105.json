@@ -65,7 +65,7 @@
     {
       "raw": "1 (14   ounce) can   Mexican-style tomatoes (like Rotel)",
       "expected": {
-        "item": "Mexican-style tomatoes (like Rotel)",
+        "item": "Mexican-style tomatoes",
         "measurements": [
           {
             "amount": "1",
@@ -80,7 +80,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "like Rotel",
         "category": "Produce"
       }
     },
@@ -181,14 +181,18 @@
     {
       "raw": "1/2  teaspoon    paprika (smoked if you can find it)",
       "expected": {
-        "item": "paprika (smoked if you can find it)",
+        "item": "paprika",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "smoked if you can find it",
         "category": "Spices & Seasonings"
       }
     },

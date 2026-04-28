@@ -112,13 +112,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "2",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "2 inch",
         "category": "Spices & Seasonings"
       }
     },
@@ -162,31 +158,23 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "13",
-            "unit": "oz"
-          },
-          {
-            "amount": "369",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "13-ounce",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "0.25 cup tamarind water (see Notes) or 2 tablespoons lime juice",
       "expected": {
-        "item": "tamarind water (see Notes)",
+        "item": "tamarind water",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "or 2 tablespoons lime juice",
+        "note": "see Notes; or 2 tablespoons lime juice",
         "category": "Condiments & Sauces"
       }
     },
@@ -221,32 +209,28 @@
     {
       "raw": "2 (1/2-inch) slices galangal (see Notes) or fresh ginger",
       "expected": {
-        "item": "galangal (see Notes) or fresh ginger",
+        "item": "galangal or fresh ginger",
         "measurements": [
           {
             "amount": "2",
             "unit": "slice"
-          },
-          {
-            "amount": "1",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "1/2-inch, see Notes",
         "category": "Produce"
       }
     },
     {
       "raw": "2 tablespoons coconut palm sugar (see Notes) or dark brown sugar",
       "expected": {
-        "item": "coconut palm sugar (see Notes) or dark brown sugar",
+        "item": "coconut palm sugar or dark brown sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see Notes",
         "category": "Baking"
       }
     },

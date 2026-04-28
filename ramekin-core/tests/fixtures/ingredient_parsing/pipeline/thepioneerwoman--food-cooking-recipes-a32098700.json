@@ -5,28 +5,28 @@
     {
       "raw": "1 1/2 sticks cold salted butter, cut into pieces",
       "expected": {
-        "item": "cold salted butter, cut into pieces",
+        "item": "cold salted butter",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "stick"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "3/4 c. cold vegetable shortening, cut into pieces",
       "expected": {
-        "item": "cold vegetable shortening, cut into pieces",
+        "item": "cold vegetable shortening",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Baking"
       }
     },
@@ -152,7 +152,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 pounds",
         "category": "Produce"
       }
     },
@@ -213,14 +213,18 @@
     {
       "raw": "1/4 c. lemon juice (from about 2 lemons)",
       "expected": {
-        "item": "lemon juice (from about 2 lemons)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 2 lemons",
         "category": "Beverages"
       }
     },

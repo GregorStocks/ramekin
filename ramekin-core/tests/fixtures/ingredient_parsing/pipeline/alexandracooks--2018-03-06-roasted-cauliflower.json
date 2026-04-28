@@ -65,14 +65,14 @@
     {
       "raw": "1 head cauliflower, cut into florets",
       "expected": {
-        "item": "cauliflower, cut into florets",
+        "item": "cauliflower",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "cut into florets",
         "category": "Produce"
       }
     },
@@ -112,13 +112,9 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "2 to 4",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "2 to 4",
         "category": "Produce"
       }
     },

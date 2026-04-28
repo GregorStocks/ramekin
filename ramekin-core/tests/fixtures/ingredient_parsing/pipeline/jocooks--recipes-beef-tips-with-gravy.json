@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds cubed beef (chuck roast, sirloin, or other types of stewing beef.)",
       "expected": {
-        "item": "cubed beef (chuck roast, sirloin, or other types of stewing beef.)",
+        "item": "cubed beef",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "chuck roast, sirloin, or other types of stewing beef.",
         "category": "Meat & Seafood"
       }
     },
@@ -73,14 +73,18 @@
     {
       "raw": "3 tablespoon butter (unsalted)",
       "expected": {
-        "item": "butter (unsalted)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsalted",
         "category": "Dairy & Eggs"
       }
     },
@@ -115,14 +119,18 @@
     {
       "raw": "¼ cup flour (all-purpose)",
       "expected": {
-        "item": "flour (all-purpose)",
+        "item": "flour",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "all-purpose",
         "category": "Baking"
       }
     },

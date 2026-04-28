@@ -5,14 +5,14 @@
     {
       "raw": "1 large egg, hard-boiled and cooled",
       "expected": {
-        "item": "egg, hard-boiled and cooled",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "hard-boiled and cooled",
         "category": "Dairy & Eggs"
       }
     },
@@ -122,13 +122,9 @@
           {
             "amount": "45",
             "unit": "g"
-          },
-          {
-            "amount": null,
-            "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "medium or white will work",
         "category": "Baking"
       }
     },

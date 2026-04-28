@@ -61,14 +61,18 @@
     {
       "raw": "1/2 cup mayonnaise (real mayo or vegenaise)",
       "expected": {
-        "item": "mayonnaise (real mayo or vegenaise)",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "real mayo or vegenaise",
         "category": "Condiments & Sauces"
       }
     },

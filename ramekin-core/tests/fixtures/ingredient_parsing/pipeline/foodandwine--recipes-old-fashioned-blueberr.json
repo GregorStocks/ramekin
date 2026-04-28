@@ -59,7 +59,7 @@
     {
       "raw": "1 1/2 sticks (6 ounces) cold unsalted butter, cut into small pieces",
       "expected": {
-        "item": "cold unsalted butter, cut into small pieces",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "1.5",
@@ -74,7 +74,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small pieces",
         "category": "Dairy & Eggs"
       }
     },

@@ -106,7 +106,7 @@
     {
       "raw": "8 oz Block of quality feta cheese (do not crumble)",
       "expected": {
-        "item": "Block of quality feta cheese (do not crumble)",
+        "item": "Block of quality feta cheese",
         "measurements": [
           {
             "amount": "8",
@@ -117,7 +117,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "do not crumble",
         "category": "Cheese"
       }
     },

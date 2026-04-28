@@ -5,7 +5,7 @@
     {
       "raw": "500 grams (1.1 lbs)  Tomatoes ((ripe red tomatoes) cubed)",
       "expected": {
-        "item": "Tomatoes (ripe red tomatoes) cubed)",
+        "item": "Tomatoes cubed",
         "measurements": [
           {
             "amount": "500",
@@ -16,21 +16,25 @@
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "ripe red tomatoes",
         "category": "Produce"
       }
     },
     {
       "raw": "1 tablespoon olive oil (or butter)",
       "expected": {
-        "item": "olive oil (or butter)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or butter",
         "category": "Oils & Vinegars"
       }
     },
@@ -70,13 +74,9 @@
           {
             "amount": "2",
             "unit": "large"
-          },
-          {
-            "amount": null,
-            "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "cloves",
         "category": "Produce"
       }
     },
@@ -101,15 +101,15 @@
     {
       "raw": "1½ cup water ((or stock) more if needed)",
       "expected": {
-        "item": "water (or stock) more if needed)",
+        "item": "water more if needed",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "or stock",
+        "category": "Other"
       }
     },
     {
@@ -140,29 +140,25 @@
             "unit": "tbsp"
           },
           {
-            "amount": "1",
-            "unit": "small"
-          },
-          {
             "amount": "6",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "corn flour or arrowroot powder or 1 small boiled potato",
         "category": "Baking"
       }
     },
     {
       "raw": "½ teaspoon pepper (or as desired)",
       "expected": {
-        "item": "pepper (or as desired)",
+        "item": "pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or as desired",
         "category": "Spices & Seasonings"
       }
     },
@@ -197,28 +193,28 @@
     {
       "raw": "2 tablespoon cream ((or 25 cashew nuts))",
       "expected": {
-        "item": "cream (or 25 cashew nuts)",
+        "item": "cream",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "or 25 cashew nuts",
+        "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 small carrot ((optional) (diced))",
       "expected": {
-        "item": "carrot (diced)",
+        "item": "carrot",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "optional",
+        "note": "optional, diced",
         "category": "Produce"
       }
     }

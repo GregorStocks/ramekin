@@ -5,7 +5,7 @@
     {
       "raw": "1 1/2 lbs salmon (cut into fillets)",
       "expected": {
-        "item": "salmon (cut into fillets)",
+        "item": "salmon",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into fillets",
         "category": "Meat & Seafood"
       }
     },
@@ -108,25 +108,21 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "juiced, about 1/4 cup",
         "category": "Produce"
       }
     },
     {
       "raw": "1  orange (juiced, about 1/2 cup)",
       "expected": {
-        "item": "orange",
+        "item": "orange juiced",
         "measurements": [
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "0.5",
-            "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 1/2 cup",
         "category": "Produce"
       }
     },

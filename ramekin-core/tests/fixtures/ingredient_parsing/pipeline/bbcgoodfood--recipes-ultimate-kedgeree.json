@@ -61,14 +61,14 @@
     {
       "raw": "1 dried  red chilli (Angela used Kashmiri)",
       "expected": {
-        "item": "dried  red chilli (Angela used Kashmiri)",
+        "item": "dried  red chilli",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "Angela used Kashmiri",
         "category": "Other"
       }
     },

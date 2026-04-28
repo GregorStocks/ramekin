@@ -84,7 +84,7 @@
     {
       "raw": "4 ounces dried chiles (see suggestions above)",
       "expected": {
-        "item": "dried chiles (see suggestions above)",
+        "item": "dried chiles",
         "measurements": [
           {
             "amount": "4",
@@ -95,21 +95,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see suggestions above",
         "category": "Other"
       }
     },
     {
       "raw": "3 sun-dried tomatoes, dry-packed",
       "expected": {
-        "item": "sun-dried tomatoes",
+        "item": "sun-dried tomatoes, dry-packed",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "dry-packed",
+        "note": null,
         "category": "Canned Goods"
       }
     },

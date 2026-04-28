@@ -113,7 +113,7 @@
     {
       "raw": "2 1/2 cups (354g) unbleached all-purpose flour ((scoop and level to measure), plus more for dusting pan)",
       "expected": {
-        "item": "unbleached all-purpose flour (scoop and level to measure)",
+        "item": "unbleached all-purpose flour",
         "measurements": [
           {
             "amount": "2.5",
@@ -124,7 +124,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for dusting pan)",
+        "note": "scoop and level to measure, plus more for dusting pan",
         "category": "Baking"
       }
     }

@@ -58,15 +58,11 @@
             "unit": "lb"
           },
           {
-            "amount": "2",
-            "unit": null
-          },
-          {
             "amount": "454",
             "unit": "g"
           }
         ],
-        "note": "diced",
+        "note": "about 2 small/medium, diced",
         "category": "Produce"
       }
     },
@@ -147,15 +143,15 @@
     {
       "raw": "2 large eggs (for scrambled method) or 4 large eggs (for an egg on top of each portion)",
       "expected": {
-        "item": "eggs (for scrambled method) or 4 large eggs (for an egg on top of each portion)",
+        "item": "eggs or 4 large eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "for scrambled method, for an egg on top of each portion",
+        "category": "Dairy & Eggs"
       }
     }
   ]

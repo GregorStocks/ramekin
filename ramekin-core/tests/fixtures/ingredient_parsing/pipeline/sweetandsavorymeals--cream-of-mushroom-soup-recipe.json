@@ -5,14 +5,18 @@
     {
       "raw": "4 tablespoon butter (unsalted)",
       "expected": {
-        "item": "butter (unsalted)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsalted",
         "category": "Dairy & Eggs"
       }
     },
@@ -79,14 +83,18 @@
     {
       "raw": "4 cups chicken broth (vegetable broth or water)",
       "expected": {
-        "item": "chicken broth (vegetable broth or water)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "996",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "vegetable broth or water",
         "category": "Canned Goods"
       }
     },
@@ -111,14 +119,14 @@
     {
       "raw": "1/2 cup red wine (or use more broth for an alcohol-free version)",
       "expected": {
-        "item": "red wine (or use more broth for an alcohol-free version)",
+        "item": "red wine",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or use more broth for an alcohol-free version",
         "category": "Beverages"
       }
     },

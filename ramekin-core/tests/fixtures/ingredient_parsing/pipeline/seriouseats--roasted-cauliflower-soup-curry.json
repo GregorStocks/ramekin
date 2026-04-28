@@ -14,9 +14,13 @@
           {
             "amount": "2",
             "unit": "lb each"
+          },
+          {
+            "amount": "900",
+            "unit": "g each"
           }
         ],
-        "note": "trimmed and cut into roughly 1-inch-thick florets",
+        "note": "about 2 pounds/900g each, trimmed and cut into roughly 1-inch-thick florets",
         "category": "Produce"
       }
     },
@@ -137,7 +141,7 @@
             "unit": "l"
           }
         ],
-        "note": "plus more as needed (see notes)",
+        "note": "see notes, plus more as needed",
         "category": "Meat & Seafood"
       }
     },
@@ -215,7 +219,7 @@
     {
       "raw": "2 teaspoons (8g) curry powder (see notes)",
       "expected": {
-        "item": "curry powder (see notes)",
+        "item": "curry powder",
         "measurements": [
           {
             "amount": "2",
@@ -226,7 +230,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Spices & Seasonings"
       }
     },

@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced",
+        "note": "about 1/2 cup, thinly sliced",
         "category": "Produce"
       }
     },
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": "stemmed and sliced 1/4-inch thick",
+        "note": "about 2 cups, stemmed and sliced 1/4-inch thick",
         "category": "Produce"
       }
     },
@@ -123,24 +123,16 @@
           {
             "amount": "1",
             "unit": "bottle"
-          },
-          {
-            "amount": "8",
-            "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "8-ounce",
         "category": "Beverages"
       }
     },
     {
       "raw": "1 1/2 pounds skinless cod fillet, cut into 1 1/2-inch pieces",
       "expected": {
-        "item": "skinless cod fillet, cut into 1 1/2-inch pieces",
+        "item": "skinless cod fillet",
         "measurements": [
           {
             "amount": "1.5",
@@ -151,7 +143,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1 1/2-inch pieces",
         "category": "Meat & Seafood"
       }
     },

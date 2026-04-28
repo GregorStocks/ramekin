@@ -37,7 +37,7 @@
     {
       "raw": "2 cups (480ml) whole milk (do not use low-fat or nondairy)",
       "expected": {
-        "item": "whole milk (do not use low-fat or nondairy)",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "2",
@@ -46,9 +46,13 @@
           {
             "amount": "480",
             "unit": "ml"
+          },
+          {
+            "amount": "490",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "do not use low-fat or nondairy",
         "category": "Dairy & Eggs"
       }
     },
@@ -109,9 +113,9 @@
     {
       "raw": "seeds scraped from 1/2 vanilla bean (or extra 1/2 teaspoon vanilla extract)",
       "expected": {
-        "item": "seeds scraped from 1/2 vanilla bean (or extra 1/2 teaspoon vanilla extract)",
+        "item": "seeds scraped from 1/2 vanilla bean",
         "measurements": [],
-        "note": null,
+        "note": "or extra 1/2 teaspoon vanilla extract",
         "category": "Spices & Seasonings"
       }
     },

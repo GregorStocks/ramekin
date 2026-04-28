@@ -23,7 +23,7 @@
     {
       "raw": "¼ cup (55 grams)  rajma  ((red kidney beans, or sub with urad dal))",
       "expected": {
-        "item": "rajma  (red kidney beans, or sub with urad dal)",
+        "item": "rajma",
         "measurements": [
           {
             "amount": "0.25",
@@ -34,14 +34,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "red kidney beans, or sub with urad dal",
+        "category": "Other"
       }
     },
     {
       "raw": "4 cups (960 ml)  water to pressure cook the dal ( (more to cook in pot))",
       "expected": {
-        "item": "water to pressure cook the dal ( (more to cook in pot)",
+        "item": "water to pressure cook the dal",
         "measurements": [
           {
             "amount": "4",
@@ -52,14 +52,14 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "(more to cook in pot)",
         "category": "Other"
       }
     },
     {
       "raw": "2 tablespoons (30 ml)  ghee ((or use oil))",
       "expected": {
-        "item": "ghee (or use oil)",
+        "item": "ghee",
         "measurements": [
           {
             "amount": "2",
@@ -70,14 +70,14 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "or use oil",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "3 tablespoons (42 grams)  unsalted butter  ((cultured butter if you can))",
       "expected": {
-        "item": "unsalted butter  (cultured butter if you can)",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "3",
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cultured butter if you can",
         "category": "Dairy & Eggs"
       }
     },
@@ -113,7 +113,7 @@
     {
       "raw": "1 tablespoon (18 grams)  ginger garlic paste  ((or ¾ tbsp. (9 grams) each grated))",
       "expected": {
-        "item": "ginger garlic paste  (or 3/4 tbsp. (9 grams) each grated)",
+        "item": "ginger garlic paste",
         "measurements": [
           {
             "amount": "1",
@@ -124,7 +124,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 3/4 tbsp. (9 grams) each grated",
         "category": "Produce"
       }
     },
@@ -140,41 +140,37 @@
           {
             "amount": "220",
             "unit": "g"
-          },
-          {
-            "amount": "2 to 3",
-            "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "bottled or 2 to 3 medium tomatoes pureed in a blender",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "¾ to 1½ teaspoon Kashmiri red chili powder ((adjust to preference, I use 1 tsp))",
       "expected": {
-        "item": "Kashmiri red chili powder (adjust to preference, I use 1 tsp)",
+        "item": "Kashmiri red chili powder",
         "measurements": [
           {
             "amount": "0.75 to 1.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "adjust to preference, I use 1 tsp",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 teaspoon garam masala  ((+ ½ tsp more if you want at the finishing stage))",
       "expected": {
-        "item": "garam masala  (+ 1/2 tsp more if you want at the finishing stage)",
+        "item": "garam masala",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "+ 1/2 tsp more if you want at the finishing stage",
         "category": "Spices & Seasonings"
       }
     },
@@ -188,14 +184,14 @@
             "unit": "tsp"
           }
         ],
-        "note": "(adjust as needed",
+        "note": "(adjust as needed)",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "2 cups (480 ml)  hot water ( (to add later))",
       "expected": {
-        "item": "hot water ( (to add later)",
+        "item": "hot water",
         "measurements": [
           {
             "amount": "2",
@@ -204,9 +200,13 @@
           {
             "amount": "480",
             "unit": "ml"
+          },
+          {
+            "amount": "474",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "(to add later)",
         "category": "Other"
       }
     },
@@ -227,7 +227,7 @@
     {
       "raw": "¼ to ⅓ cup (60 to 80 ml)  heavy cream  ((cooking cream or whipping cream, more to garnish if you want))",
       "expected": {
-        "item": "heavy cream (cooking cream or whipping cream, more to garnish if you want)",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.25 to 0.33",
@@ -238,7 +238,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "cooking cream or whipping cream, more to garnish if you want",
         "category": "Dairy & Eggs"
       }
     },

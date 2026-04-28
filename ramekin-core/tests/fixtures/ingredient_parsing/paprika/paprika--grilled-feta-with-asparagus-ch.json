@@ -163,14 +163,14 @@
     {
       "raw": "1 large red onion, cut into thin wedges",
       "expected": {
-        "item": "red onion, cut into thin wedges",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into thin wedges",
         "section": "Assembly",
         "category": "Produce"
       }

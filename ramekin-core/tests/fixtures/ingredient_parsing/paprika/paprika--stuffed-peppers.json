@@ -75,7 +75,7 @@
     {
       "raw": "1 lb ground meat (beef, lamb, or bison)",
       "expected": {
-        "item": "ground meat (beef, lamb, or bison)",
+        "item": "ground meat",
         "measurements": [
           {
             "amount": "1",
@@ -86,7 +86,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "beef, lamb, or bison",
         "category": "Meat & Seafood"
       }
     },
@@ -179,15 +179,15 @@
     {
       "raw": "1 cup winter squash (butternut, acorn, etc)",
       "expected": {
-        "item": "winter squash (butternut, acorn, etc)",
+        "item": "winter squash",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "butternut, acorn, etc",
+        "category": "Produce"
       }
     },
     {

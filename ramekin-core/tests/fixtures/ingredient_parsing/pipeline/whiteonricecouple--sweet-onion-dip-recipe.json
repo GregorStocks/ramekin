@@ -16,35 +16,43 @@
             "unit": "g"
           }
         ],
-        "note": "(at room temperature",
+        "note": "(at room temperature)",
         "category": "Cheese"
       }
     },
     {
       "raw": "1 cup mayonnaise ( (preferably Best Foods/Hellmans brand))",
       "expected": {
-        "item": "mayonnaise ( (preferably Best Foods/Hellmans brand)",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "220",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "(preferably Best Foods/Hellmans brand)",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1 cup freshly grated Parmesan cheese ( (not the powdered cheese stuff in the green containers))",
       "expected": {
-        "item": "freshly grated Parmesan cheese ( (not the powdered cheese stuff in the green containers)",
+        "item": "freshly grated Parmesan cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "100",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "(not the powdered cheese stuff in the green containers)",
         "category": "Cheese"
       }
     },
@@ -58,7 +66,7 @@
             "unit": "cup"
           }
         ],
-        "note": "(sometimes we like to add extra 1/2 cup for more flavor and texture",
+        "note": "(sometimes we like to add extra 1/2 cup for more flavor and texture)",
         "category": "Produce"
       }
     },

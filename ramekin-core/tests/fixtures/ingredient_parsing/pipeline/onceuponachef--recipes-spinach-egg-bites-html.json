@@ -24,27 +24,23 @@
           {
             "amount": "1.25",
             "unit": "cup"
-          },
-          {
-            "amount": "4",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "4% milkfat",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1¼ cups  shredded Gruyère (or a blend of Gruyère and Cheddar or Monterey Jack)",
       "expected": {
-        "item": "shredded Gruyère (or a blend of Gruyère and Cheddar or Monterey Jack)",
+        "item": "shredded Gruyère",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or a blend of Gruyère and Cheddar or Monterey Jack",
         "category": "Cheese"
       }
     },
@@ -111,7 +107,7 @@
     {
       "raw": "1 oz  baby spinach leaves, or ⅔ cup (packed), finely chopped",
       "expected": {
-        "item": "baby spinach leaves, or 2/3 cup, finely chopped",
+        "item": "baby spinach leaves, or 2/3 cup",
         "measurements": [
           {
             "amount": "1",
@@ -122,7 +118,7 @@
             "unit": "g"
           }
         ],
-        "note": "packed",
+        "note": "packed, finely chopped",
         "category": "Produce"
       }
     },

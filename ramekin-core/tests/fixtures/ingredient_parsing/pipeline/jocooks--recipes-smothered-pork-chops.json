@@ -87,14 +87,18 @@
     {
       "raw": "1 teaspoon chili powder (mild)",
       "expected": {
-        "item": "chili powder (mild)",
+        "item": "chili powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "mild",
         "category": "Spices & Seasonings"
       }
     },
@@ -119,14 +123,14 @@
     {
       "raw": "4  pork chops (bone-in, at least 1-inch thick)",
       "expected": {
-        "item": "pork chops (bone-in, at least 1-inch thick)",
+        "item": "pork chops",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "bone-in, at least 1-inch thick",
         "category": "Meat & Seafood"
       }
     },
@@ -225,42 +229,50 @@
     {
       "raw": "1  chicken bouillon cube (or beef)",
       "expected": {
-        "item": "chicken bouillon cube (or beef)",
+        "item": "chicken bouillon cube",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or beef",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1½ cups chicken broth (low sodium, or vegetable broth)",
       "expected": {
-        "item": "chicken broth (low sodium, or vegetable broth)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "374",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium, or vegetable broth",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "½ cup heavy cream (or half and half)",
       "expected": {
-        "item": "heavy cream (or half and half)",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "119",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or half and half",
         "category": "Dairy & Eggs"
       }
     }

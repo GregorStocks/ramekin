@@ -14,13 +14,9 @@
           {
             "amount": "2.5",
             "unit": "oz"
-          },
-          {
-            "amount": "6",
-            "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "about 2 1/2 ounces; 6 tablespoons plus 1 teaspoon",
         "category": "Baking"
       }
     },
@@ -50,20 +46,16 @@
           {
             "amount": "209",
             "unit": "g"
-          },
-          {
-            "amount": "0.75",
-            "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "3/4 cup plus 2 tablespoons",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "42g (3 tablespoons) cold unsalted butter, cut into 1/2-inch cubes",
       "expected": {
-        "item": "cold unsalted butter, cut into 1/2-inch cubes",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "42",
@@ -74,7 +66,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch cubes",
         "category": "Dairy & Eggs"
       }
     },
@@ -122,13 +114,9 @@
           {
             "amount": "9.75",
             "unit": "oz"
-          },
-          {
-            "amount": "2",
-            "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 9 3/4 ounces; 2 cups plus 2 tablespoons",
         "category": "Baking"
       }
     },
@@ -153,14 +141,18 @@
     {
       "raw": "3/4 teaspoon instant yeast (see notes)",
       "expected": {
-        "item": "instant yeast (see notes)",
+        "item": "instant yeast",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Baking"
       }
     },

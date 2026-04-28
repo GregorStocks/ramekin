@@ -5,7 +5,7 @@
     {
       "raw": "4 oz. guanciale (salt-cured pork jowl) or pancetta (Italian",
       "expected": {
-        "item": "guanciale (salt-cured pork jowl) or pancetta (Italian",
+        "item": "guanciale or pancetta (Italian",
         "measurements": [
           {
             "amount": "4",
@@ -16,16 +16,16 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "salt-cured pork jowl",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "bacon), cut into ½\" pieces",
       "expected": {
-        "item": "bacon), cut into 1/2\" pieces",
+        "item": "bacon)",
         "measurements": [],
-        "note": null,
+        "note": "cut into 1/2\" pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -47,7 +47,7 @@
             "unit": "g"
           }
         ],
-        "note": "quartered",
+        "note": "such as Vidalia; about 1 lb., quartered",
         "category": "Produce"
       }
     },
@@ -72,9 +72,9 @@
     {
       "raw": "Extra-virgin olive oil (for pan and drizzling)",
       "expected": {
-        "item": "Extra-virgin olive oil (for pan and drizzling)",
+        "item": "Extra-virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for pan and drizzling",
         "category": "Oils & Vinegars"
       }
     },
@@ -96,7 +96,7 @@
             "unit": "g"
           }
         ],
-        "note": "quartered through root",
+        "note": "about 1 lb., quartered through root",
         "category": "Produce"
       }
     },
@@ -227,7 +227,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely grated",
+        "note": "about 1 1/2 cups, finely grated",
         "category": "Cheese"
       }
     },

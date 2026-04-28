@@ -14,32 +14,32 @@
     {
       "raw": "2 1/4 teaspoons (or 1 1/4-ounce package) instant yeast (not active dry) (also sold as rapid rise or bread machine yeast)",
       "expected": {
-        "item": "(or 1 1/4-ounce package) instant yeast (not active dry) (also sold as rapid rise or bread machine yeast)",
+        "item": "instant yeast",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 1 1/4-ounce package, not active dry, also sold as rapid rise or bread machine yeast",
         "category": "Baking"
       }
     },
     {
       "raw": "3/4 cup whole milk, ideally at room temperature",
       "expected": {
-        "item": "whole milk",
+        "item": "whole milk, ideally at room temperature",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "184",
-            "unit": "g"
           }
         ],
-        "note": "ideally at room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
@@ -100,14 +100,14 @@
     {
       "raw": "2 large eggs, ideally at room temperature",
       "expected": {
-        "item": "eggs",
+        "item": "eggs, ideally at room temperature",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "ideally at room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

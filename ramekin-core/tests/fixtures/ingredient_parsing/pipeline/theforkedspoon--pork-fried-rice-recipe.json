@@ -5,14 +5,18 @@
     {
       "raw": "½ cup soy sauce (regular or low-sodium)",
       "expected": {
-        "item": "soy sauce (regular or low-sodium)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "128",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "regular or low-sodium",
         "category": "Condiments & Sauces"
       }
     },
@@ -175,14 +179,14 @@
     {
       "raw": "6 cups cooked white rice (see notes)",
       "expected": {
-        "item": "cooked white rice (see notes)",
+        "item": "cooked white rice",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Pasta & Rice"
       }
     },
@@ -203,14 +207,18 @@
     {
       "raw": "6 tablespoons soy sauce (regular or low-sodium)",
       "expected": {
-        "item": "soy sauce (regular or low-sodium)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "96",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "regular or low-sodium",
         "category": "Condiments & Sauces"
       }
     },

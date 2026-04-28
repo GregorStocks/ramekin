@@ -55,15 +55,15 @@
     {
       "raw": "1/4 cup sweet liqueur (such as Chartreuse, amaretto, mandarin, or Grand Marnier)",
       "expected": {
-        "item": "sweet liqueur (such as Chartreuse, amaretto, mandarin, or Grand Marnier)",
+        "item": "sweet liqueur",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "such as Chartreuse, amaretto, mandarin, or Grand Marnier",
+        "category": "Beverages"
       }
     },
     {

@@ -84,14 +84,14 @@
     {
       "raw": "3 large yams or orange-fleshed sweet potatoes, cut into 4 lengthwise wedges, or 8, if your yams are very thick",
       "expected": {
-        "item": "yams or orange-fleshed sweet potatoes, cut into 4 lengthwise wedges, or 8, if your yams are very thick",
+        "item": "yams or orange-fleshed sweet potatoes, cut into 4 lengthwise wedges, or 8",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "if your yams are very thick",
         "category": "Produce"
       }
     },
@@ -103,27 +103,23 @@
           {
             "amount": "1 to 2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "2",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "I used 1; 2 are called for",
         "category": "Baking"
       }
     },
     {
       "raw": "1 tablespoon crushed red-pepper flakes (Espelette are called for; I used mild Aleppo)",
       "expected": {
-        "item": "crushed red-pepper flakes (Espelette are called for; I used mild Aleppo)",
+        "item": "crushed red-pepper flakes",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "Espelette are called for; I used mild Aleppo",
         "category": "Spices & Seasonings"
       }
     },
@@ -135,13 +131,9 @@
           {
             "amount": "1.75",
             "unit": "cup"
-          },
-          {
-            "amount": "1",
-            "unit": null
           }
         ],
-        "note": "drained and patted dry on towels",
+        "note": "1 15-ounce can, drained and patted dry on towels",
         "category": "Canned Goods"
       }
     },

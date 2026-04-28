@@ -33,14 +33,14 @@
     {
       "raw": "1 medium kohlrabi (substitute celery if not available)",
       "expected": {
-        "item": "kohlrabi (substitute celery if not available)",
+        "item": "kohlrabi",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "substitute celery if not available",
         "category": "Produce"
       }
     },
@@ -153,14 +153,14 @@
     {
       "raw": "1 Parmesan rind or 1 tablespoon nutritional yeast (optional)",
       "expected": {
-        "item": "Parmesan rind or 1 tablespoon nutritional yeast",
+        "item": "Parmesan rind",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "or 1 tablespoon nutritional yeast (optional)",
         "category": "Cheese"
       }
     },
@@ -199,9 +199,9 @@
     {
       "raw": "Chopped fresh herbs (za’atar, parsley, chives, or scallions), for garnish",
       "expected": {
-        "item": "Chopped fresh herbs (za’atar, parsley, chives, or scallions)",
+        "item": "Chopped fresh herbs",
         "measurements": [],
-        "note": "for garnish",
+        "note": "za’atar, parsley, chives, or scallions, for garnish",
         "category": "Produce"
       }
     }

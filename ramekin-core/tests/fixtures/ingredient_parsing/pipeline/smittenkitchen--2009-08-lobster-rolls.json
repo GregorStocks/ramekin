@@ -37,14 +37,18 @@
     {
       "raw": "1/4 cup mayonnaise (Charles insists on Hellman’s; I didn’t argue)",
       "expected": {
-        "item": "mayonnaise (Charles insists on Hellman’s; I didn’t argue)",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Charles insists on Hellman’s; I didn’t argue",
         "category": "Condiments & Sauces"
       }
     },
@@ -74,14 +78,14 @@
     {
       "raw": "2 top-loading hot dog buns or 64 miniature burger buns (described above) or small dinner rolls",
       "expected": {
-        "item": "top-loading hot dog buns or 64 miniature burger buns (described above) or small dinner rolls",
+        "item": "top-loading hot dog buns or 64 miniature burger buns or small dinner rolls",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "described above",
         "category": "Bakery & Bread"
       }
     },

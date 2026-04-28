@@ -136,13 +136,9 @@
           {
             "amount": "0.25",
             "unit": "heaped tsp"
-          },
-          {
-            "amount": "0.25",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "or, technically, 1/4 + 1/8 teaspoon",
         "category": "Spices & Seasonings"
       }
     },
@@ -167,7 +163,7 @@
     {
       "raw": "1/2 pound (225 grams) semi- or bittersweet chocolate, cut into roughly 1/2-inch chunks with a serrated knife",
       "expected": {
-        "item": "semi- or bittersweet chocolate, cut into roughly 1/2-inch chunks with a serrated knife",
+        "item": "semi- or bittersweet chocolate",
         "measurements": [
           {
             "amount": "0.5",
@@ -178,7 +174,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into roughly 1/2-inch chunks with a serrated knife",
         "category": "Other"
       }
     },

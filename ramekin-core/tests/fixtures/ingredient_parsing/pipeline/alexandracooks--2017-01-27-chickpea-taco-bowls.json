@@ -134,14 +134,18 @@
     {
       "raw": "1 tablespoon cider (or other) vinegar",
       "expected": {
-        "item": "cider (or other) vinegar",
+        "item": "cider vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or other",
         "category": "Oils & Vinegars"
       }
     },
@@ -176,9 +180,9 @@
     {
       "raw": "For serving: grated cheese, sour cream, finely shredded romaine lettuce, diced avocado, quick-pickled onions, (see notes above)",
       "expected": {
-        "item": "For serving: grated cheese, sour cream, finely shredded romaine lettuce, diced avocado, quick-pickled onions, (see notes above)",
+        "item": "For serving: grated cheese, sour cream, finely shredded romaine lettuce, diced avocado, quick-pickled onions",
         "measurements": [],
-        "note": null,
+        "note": "see notes above",
         "category": "Dairy & Eggs"
       }
     }

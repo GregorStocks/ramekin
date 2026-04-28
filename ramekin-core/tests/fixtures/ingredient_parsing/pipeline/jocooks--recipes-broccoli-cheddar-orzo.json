@@ -83,28 +83,32 @@
     {
       "raw": "3 cups chicken broth (low-sodium, or vegetable broth)",
       "expected": {
-        "item": "chicken broth (low-sodium, or vegetable broth)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "747",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low-sodium, or vegetable broth",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "2 cups broccoli florets (cut into small pieces)",
       "expected": {
-        "item": "broccoli florets (cut into small pieces)",
+        "item": "broccoli florets",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut into small pieces",
         "category": "Produce"
       }
     },
@@ -157,14 +161,18 @@
     {
       "raw": "½ cup milk  (or half-and-half)",
       "expected": {
-        "item": "milk  (or half-and-half)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or half-and-half",
         "category": "Dairy & Eggs"
       }
     },

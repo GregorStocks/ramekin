@@ -37,14 +37,14 @@
     {
       "raw": "50g slightly salted butter chilled, cut in small pieces",
       "expected": {
-        "item": "slightly salted butter chilled, cut in small pieces",
+        "item": "slightly salted butter chilled",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut in small pieces",
         "category": "Dairy & Eggs"
       }
     },

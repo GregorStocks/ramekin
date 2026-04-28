@@ -16,21 +16,25 @@
             "unit": "g"
           }
         ],
-        "note": "sliced in half (they should all be about the same size so they cook evenly)",
+        "note": "they should all be about the same size so they cook evenly, sliced in half",
         "category": "Produce"
       }
     },
     {
       "raw": "6 tablespoons unsalted butter, cut into tablespoons",
       "expected": {
-        "item": "unsalted butter, cut into tablespoons",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into tablespoons",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,14 +87,14 @@
     {
       "raw": "1 teaspoon fresh chives, finely chopped (optional)",
       "expected": {
-        "item": "fresh chives, finely chopped",
+        "item": "fresh chives",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "optional",
+        "note": "optional, finely chopped",
         "category": "Produce"
       }
     }

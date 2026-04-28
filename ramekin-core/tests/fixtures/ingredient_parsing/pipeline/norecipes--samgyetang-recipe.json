@@ -5,14 +5,14 @@
     {
       "raw": "1/2 cup sticky rice ((also known as \"sweet rice\" or \"glutinous rice\"))",
       "expected": {
-        "item": "sticky rice (also known as \"sweet rice\" or \"glutinous rice\")",
+        "item": "sticky rice",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "also known as \"sweet rice\" or \"glutinous rice\"",
         "category": "Pasta & Rice"
       }
     },
@@ -125,14 +125,14 @@
     {
       "raw": "4 cups low-sodium chicken stock ((preferably homemade))",
       "expected": {
-        "item": "low-sodium chicken stock (preferably homemade)",
+        "item": "low-sodium chicken stock",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "preferably homemade",
         "category": "Meat & Seafood"
       }
     },

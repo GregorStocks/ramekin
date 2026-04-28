@@ -37,7 +37,7 @@
     {
       "raw": "1 pound ground pork (or beef, or lamb, or a mix of the three)",
       "expected": {
-        "item": "ground pork (or beef, or lamb, or a mix of the three)",
+        "item": "ground pork",
         "measurements": [
           {
             "amount": "1",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or beef, or lamb, or a mix of the three",
         "category": "Meat & Seafood"
       }
     },
@@ -83,15 +83,15 @@
     {
       "raw": "1/3 cup freshly grated parmigiano-reggiano (Parmesan)",
       "expected": {
-        "item": "freshly grated parmigiano-reggiano (Parmesan)",
+        "item": "freshly grated parmigiano-reggiano",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Cheese"
+        "note": "Parmesan",
+        "category": "Dairy & Eggs"
       }
     },
     {

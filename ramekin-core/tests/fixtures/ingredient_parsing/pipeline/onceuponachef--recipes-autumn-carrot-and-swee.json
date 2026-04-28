@@ -55,7 +55,7 @@
     {
       "raw": "1 pound carrots, (peeled and chopped into 1-inch (2.5-cm) pieces)",
       "expected": {
-        "item": "carrots pieces)",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "1",
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and chopped into 1-inch (2.5-cm",
+        "note": "peeled and chopped into 1-inch (2.5-cm) pieces",
         "category": "Produce"
       }
     },
@@ -84,29 +84,29 @@
             "unit": "small"
           },
           {
-            "amount": "2.5",
-            "unit": "-cm"
-          },
-          {
             "amount": "680",
             "unit": "g"
           }
         ],
-        "note": "peeled and chopped into 1-inch pieces)",
+        "note": "about 2 small, 2.5-cm, peeled and chopped into 1-inch pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "8 cups chicken broth, (best quality such as Swanson)",
       "expected": {
-        "item": "chicken broth, (best quality such as Swanson)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "8",
             "unit": "cup"
+          },
+          {
+            "amount": "1992",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "best quality such as Swanson",
         "category": "Canned Goods"
       }
     },

@@ -6,13 +6,8 @@
       "raw": "Homemade Pie Crust or All Butter Pie Crust (both recipes make 2 crusts, 1 for bottom and 1 for top)",
       "expected": {
         "item": "Homemade Pie Crust or All Butter Pie Crust",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": null
-          }
-        ],
-        "note": null,
+        "measurements": [],
+        "note": "both recipes make 2 crusts, 1 for bottom and 1 for top",
         "category": "Frozen"
       }
     },
@@ -30,7 +25,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
+        "note": "about 435g, divided",
         "category": "Produce"
       }
     },
@@ -48,7 +43,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
+        "note": "about 188g, divided",
         "category": "Produce"
       }
     },
@@ -66,7 +61,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
+        "note": "about 240g, divided",
         "category": "Produce"
       }
     },

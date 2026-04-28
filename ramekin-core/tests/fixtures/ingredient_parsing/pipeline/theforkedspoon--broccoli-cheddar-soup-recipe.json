@@ -102,27 +102,27 @@
           {
             "amount": "8",
             "unit": "head"
-          },
-          {
-            "amount": "10-12",
-            "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "10-12 cups broccoli florets",
         "category": "Produce"
       }
     },
     {
       "raw": "4 cups vegetable broth ((or chicken broth, chicken stock, or bone broth))",
       "expected": {
-        "item": "vegetable broth (or chicken broth, chicken stock, or bone broth)",
+        "item": "vegetable broth",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "996",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or chicken broth, chicken stock, or bone broth",
         "category": "Canned Goods"
       }
     },
@@ -215,14 +215,14 @@
     {
       "raw": "2 cups shredded sharp cheddar cheese (plus more to garnish)",
       "expected": {
-        "item": "shredded sharp cheddar cheese (plus more to garnish)",
+        "item": "shredded sharp cheddar cheese",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plus more to garnish",
         "category": "Cheese"
       }
     }

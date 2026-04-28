@@ -5,10 +5,15 @@
     {
       "raw": "2 cups cored, (seeded, and finely chopped tomatoes, from 2 to 3 large tomatoes (or 4 to 6 plum tomatoes))",
       "expected": {
-        "item": "2 cups cored, (seeded, and finely chopped tomatoes, from 2 to 3 large tomatoes (or 4 to 6 plum tomatoes))",
-        "measurements": [],
-        "note": null,
-        "category": "Produce"
+        "item": "cored seeded",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "cup"
+          }
+        ],
+        "note": "and finely chopped tomatoes, from 2 to 3 large tomatoes (or 4 to 6 plum tomatoes)",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -21,7 +26,7 @@
             "unit": "bunch"
           }
         ],
-        "note": "thinly sliced, light and dark green parts separated (divided",
+        "note": "thinly sliced, light and dark green parts separated (divided)",
         "category": "Produce"
       }
     },
@@ -35,7 +40,7 @@
             "unit": null
           }
         ],
-        "note": "seeded and finely diced (divided",
+        "note": "seeded and finely diced (divided)",
         "category": "Produce"
       }
     },
@@ -53,7 +58,7 @@
             "unit": "g"
           }
         ],
-        "note": "from 2 limes (divided",
+        "note": "from 2 limes (divided)",
         "category": "Beverages"
       }
     },
@@ -112,7 +117,7 @@
             "unit": "clove"
           }
         ],
-        "note": "minced (divided",
+        "note": "minced (divided)",
         "category": "Produce"
       }
     },
@@ -124,17 +129,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "15",
-            "unit": "oz"
-          },
-          {
-            "amount": "425",
-            "unit": "g"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "15-oz, drained and rinsed",
         "category": "Canned Goods"
       }
     },
@@ -196,17 +193,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "8",
-            "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
-        "note": "shredded (see note)",
+        "note": "8-oz, see note, shredded",
         "category": "Cheese"
       }
     },
@@ -220,19 +209,11 @@
             "unit": null
           },
           {
-            "amount": "8",
-            "unit": "oz"
-          },
-          {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "8-oz",
         "category": "Dairy & Eggs"
       }
     },

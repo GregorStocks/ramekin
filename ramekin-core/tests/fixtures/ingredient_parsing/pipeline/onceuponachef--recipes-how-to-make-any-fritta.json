@@ -23,14 +23,14 @@
     {
       "raw": "¾ cup thinly sliced shallots, (from 2 to 3 shallots)",
       "expected": {
-        "item": "thinly sliced shallots, (from 2 to 3 shallots)",
+        "item": "thinly sliced shallots",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 2 to 3 shallots",
         "category": "Produce"
       }
     },
@@ -115,14 +115,14 @@
     {
       "raw": "1¼ cup shredded cheese, (such as Cheddar or Gruyere)",
       "expected": {
-        "item": "shredded cheese, (such as Cheddar or Gruyere)",
+        "item": "shredded cheese",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Cheddar or Gruyere",
         "category": "Cheese"
       }
     }

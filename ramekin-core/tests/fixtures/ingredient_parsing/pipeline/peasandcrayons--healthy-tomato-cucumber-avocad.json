@@ -79,14 +79,14 @@
     {
       "raw": "1/8-1/4 cup avocado oil (or your favorite healthy oil)",
       "expected": {
-        "item": "avocado oil (or your favorite healthy oil)",
+        "item": "avocado oil",
         "measurements": [
           {
             "amount": "1/8-1/4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or your favorite healthy oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -116,14 +116,14 @@
     {
       "raw": "2 TBSP fresh cilantro or parsley ((pick your favorite!))",
       "expected": {
-        "item": "fresh cilantro or parsley (pick your favorite!)",
+        "item": "fresh cilantro or parsley",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "pick your favorite!",
         "category": "Produce"
       }
     }

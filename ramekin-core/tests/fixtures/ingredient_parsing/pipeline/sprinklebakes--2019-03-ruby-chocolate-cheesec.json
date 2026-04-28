@@ -131,7 +131,7 @@
     {
       "raw": ".25 oz. (one envelope unflavored powdered gelatin)",
       "expected": {
-        "item": "(one envelope unflavored powdered gelatin)",
+        "item": "one envelope unflavored powdered gelatin",
         "measurements": [
           {
             "amount": ".25",
@@ -259,9 +259,9 @@
     {
       "raw": "Dried sea lavender petals and whole dried globe amaranth (see post for links)",
       "expected": {
-        "item": "Dried sea lavender petals and whole dried globe amaranth (see post for links)",
+        "item": "Dried sea lavender petals and whole dried globe amaranth",
         "measurements": [],
-        "note": null,
+        "note": "see post for links",
         "category": "Other"
       }
     },

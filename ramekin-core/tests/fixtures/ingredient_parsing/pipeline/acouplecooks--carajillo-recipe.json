@@ -5,14 +5,14 @@
     {
       "raw": "2 ounces* espresso (or very strong coffee), cooled slightly",
       "expected": {
-        "item": "ounces* espresso (or very strong coffee), cooled slightly",
+        "item": "ounces* espresso",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or very strong coffee, cooled slightly",
         "category": "Beverages"
       }
     },
@@ -39,7 +39,7 @@
       "expected": {
         "item": "Ice",
         "measurements": [],
-        "note": "for serving (try clear ice)",
+        "note": "try clear ice, for serving",
         "category": "Other"
       }
     }

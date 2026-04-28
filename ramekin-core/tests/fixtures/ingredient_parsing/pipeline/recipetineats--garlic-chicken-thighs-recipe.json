@@ -12,15 +12,11 @@
             "unit": "g"
           },
           {
-            "amount": "5 to 6",
-            "unit": null
-          },
-          {
             "amount": "1.2",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "5 to 6",
         "category": "Meat & Seafood"
       }
     },
@@ -72,7 +68,7 @@
     {
       "raw": "1/2 cup / 125 ml  dry white wine ((or broth or water))",
       "expected": {
-        "item": "dry white wine (or broth or water)",
+        "item": "dry white wine",
         "measurements": [
           {
             "amount": "0.5",
@@ -81,9 +77,13 @@
           {
             "amount": "125",
             "unit": "ml"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or broth or water",
         "category": "Beverages"
       }
     },

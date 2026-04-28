@@ -41,15 +41,15 @@
     {
       "raw": "2 tablespoons Chinese Shaoxing wine (rice vinegar or a dry sherry can be used instead)",
       "expected": {
-        "item": "Chinese Shaoxing wine (rice vinegar or a dry sherry can be used instead)",
+        "item": "Chinese Shaoxing wine",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "rice vinegar or a dry sherry can be used instead",
+        "category": "Beverages"
       }
     },
     {
@@ -152,21 +152,21 @@
             "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "about 2.2 pounds or 1kg",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1  shallot (to garnish)",
       "expected": {
-        "item": "shallot (to garnish)",
+        "item": "shallot",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "to garnish",
         "category": "Produce"
       }
     },
@@ -209,14 +209,14 @@
     {
       "raw": "1 tablespoon Chinese wine (Shaoxing - or dry sherry)",
       "expected": {
-        "item": "Chinese wine (Shaoxing - or dry sherry)",
+        "item": "Chinese wine",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "Shaoxing - or dry sherry",
         "category": "Beverages"
       }
     },

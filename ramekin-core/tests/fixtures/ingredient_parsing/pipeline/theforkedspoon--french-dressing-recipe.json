@@ -5,14 +5,14 @@
     {
       "raw": "½ cup neutral flavored oil (avocado oil or light olive oil)",
       "expected": {
-        "item": "neutral flavored oil (avocado oil or light olive oil)",
+        "item": "neutral flavored oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "avocado oil or light olive oil",
         "category": "Oils & Vinegars"
       }
     },

@@ -23,7 +23,7 @@
     {
       "raw": "2 pounds chicken breasts (skinless and boneless, cut into bite size pieces)",
       "expected": {
-        "item": "chicken breasts (skinless and boneless, cut into bite size pieces)",
+        "item": "chicken breasts",
         "measurements": [
           {
             "amount": "2",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skinless and boneless, cut into bite size pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -119,14 +119,18 @@
     {
       "raw": "1 cup chicken broth (low sodium)",
       "expected": {
-        "item": "chicken broth (low sodium)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "249",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Canned Goods"
       }
     },

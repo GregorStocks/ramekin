@@ -39,7 +39,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 2 cups",
         "category": "Other"
       }
     },
@@ -61,7 +61,7 @@
             "unit": "medium"
           }
         ],
-        "note": "quartered lengthwise and sliced thin",
+        "note": "about 4 medium, quartered lengthwise and sliced thin",
         "category": "Produce"
       }
     },
@@ -115,7 +115,7 @@
             "unit": "g"
           }
         ],
-        "note": "diced",
+        "note": "about 1 pound, about 2 1/3 cups, diced",
         "category": "Produce"
       }
     },
@@ -204,7 +204,7 @@
     {
       "raw": "1 cup (210 grams) uncooked (semi-pearled) farro (see Note)",
       "expected": {
-        "item": "uncooked (semi-pearled) farro (see Note)",
+        "item": "uncooked farro",
         "measurements": [
           {
             "amount": "1",
@@ -215,7 +215,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "semi-pearled, see Note",
         "category": "Pasta & Rice"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "1 pound plain yogurt (regular or lowfat)",
       "expected": {
-        "item": "plain yogurt (regular or lowfat)",
+        "item": "plain yogurt",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "regular or lowfat",
         "category": "Dairy & Eggs"
       }
     },
@@ -62,15 +62,11 @@
             "unit": "cup"
           },
           {
-            "amount": "2",
-            "unit": "lemons"
-          },
-          {
             "amount": "61",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "2 lemons",
         "category": "Beverages"
       }
     },

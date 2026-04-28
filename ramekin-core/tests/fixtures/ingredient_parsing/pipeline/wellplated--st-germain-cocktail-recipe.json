@@ -5,7 +5,7 @@
     {
       "raw": "1 1/2 ounces dry gin (such as Hendrick's or Tanqueray, or vodka)",
       "expected": {
-        "item": "dry gin (such as Hendrick's or Tanqueray, or vodka)",
+        "item": "dry gin",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Hendrick's or Tanqueray, or vodka",
         "category": "Beverages"
       }
     },
@@ -59,7 +59,7 @@
     {
       "raw": "3 ounces brut champagne (or prosecco, or other dry sparkling wine)",
       "expected": {
-        "item": "brut champagne (or prosecco, or other dry sparkling wine)",
+        "item": "brut champagne",
         "measurements": [
           {
             "amount": "3",
@@ -70,8 +70,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "or prosecco, or other dry sparkling wine",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -86,9 +86,9 @@
     {
       "raw": "Ice (for cocktail shaker)",
       "expected": {
-        "item": "Ice (for cocktail shaker)",
+        "item": "Ice",
         "measurements": [],
-        "note": null,
+        "note": "for cocktail shaker",
         "category": "Other"
       }
     }

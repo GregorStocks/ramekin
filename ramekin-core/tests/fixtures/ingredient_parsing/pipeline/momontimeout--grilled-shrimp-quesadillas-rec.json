@@ -37,7 +37,7 @@
     {
       "raw": "8 oz Mexican blend  (or Monterey Jack cheese)",
       "expected": {
-        "item": "Mexican blend  (or Monterey Jack cheese)",
+        "item": "Mexican blend",
         "measurements": [
           {
             "amount": "8",
@@ -48,21 +48,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Cheese"
+        "note": "or Monterey Jack cheese",
+        "category": "Other"
       }
     },
     {
       "raw": "8  flour tortillas (or corn)",
       "expected": {
-        "item": "flour tortillas (or corn)",
+        "item": "flour tortillas",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or corn",
         "category": "Bakery & Bread"
       }
     },

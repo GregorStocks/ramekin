@@ -72,15 +72,11 @@
             "unit": "lb"
           },
           {
-            "amount": "4",
-            "unit": null
-          },
-          {
             "amount": "907",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "80/20",
         "category": "Meat & Seafood"
       }
     },
@@ -137,22 +133,14 @@
     {
       "raw": "1 (28-ounce) can crushed tomatoes, (including all liquid)",
       "expected": {
-        "item": "crushed tomatoes, (including all liquid)",
+        "item": "crushed tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "28",
-            "unit": "oz"
-          },
-          {
-            "amount": "794",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "28-ounce, including all liquid",
         "category": "Canned Goods"
       }
     },

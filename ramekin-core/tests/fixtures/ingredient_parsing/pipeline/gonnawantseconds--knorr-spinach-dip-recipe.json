@@ -10,17 +10,9 @@
           {
             "amount": "1",
             "unit": "box"
-          },
-          {
-            "amount": "10",
-            "unit": "oz"
-          },
-          {
-            "amount": "283",
-            "unit": "g"
           }
         ],
-        "note": "thawed and well-drained",
+        "note": "10-ounce, thawed and well-drained",
         "category": "Frozen"
       }
     },
@@ -106,7 +98,7 @@
             "unit": "cup"
           }
         ],
-        "note": "thinly sliced",
+        "note": "thinly sliced, plus extra for garnish green onions",
         "category": "Produce"
       }
     },
@@ -145,9 +137,9 @@
     {
       "raw": "Hawaiian rolls, (cut into cubes)",
       "expected": {
-        "item": "Hawaiian rolls, (cut into cubes)",
+        "item": "Hawaiian rolls",
         "measurements": [],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Bakery & Bread"
       }
     }

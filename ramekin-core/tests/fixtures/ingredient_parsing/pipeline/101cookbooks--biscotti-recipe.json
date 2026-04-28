@@ -51,14 +51,18 @@
     {
       "raw": "2 teaspoons almond (or vanilla) extract",
       "expected": {
-        "item": "almond (or vanilla) extract",
+        "item": "almond extract",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "8.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or vanilla",
         "category": "Baking"
       }
     },

@@ -106,14 +106,14 @@
     {
       "raw": "1/2 cup crushed tomatoes (pureed or slightly chunky)",
       "expected": {
-        "item": "crushed tomatoes (pureed or slightly chunky)",
+        "item": "crushed tomatoes",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "pureed or slightly chunky",
         "category": "Canned Goods"
       }
     },
@@ -156,14 +156,18 @@
     {
       "raw": "2 teaspoons cider (or other) vinegar",
       "expected": {
-        "item": "cider (or other) vinegar",
+        "item": "cider vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or other",
         "category": "Oils & Vinegars"
       }
     },

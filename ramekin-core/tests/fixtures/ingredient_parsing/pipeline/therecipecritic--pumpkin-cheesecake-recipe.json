@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 10 ounces",
         "category": "Spices & Seasonings"
       }
     },
@@ -221,18 +221,18 @@
     {
       "raw": "whipped cream (for topping)",
       "expected": {
-        "item": "whipped cream (for topping)",
+        "item": "whipped cream",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "caramel sauce (for topping)",
       "expected": {
-        "item": "caramel sauce (for topping)",
+        "item": "caramel sauce",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Condiments & Sauces"
       }
     }

@@ -266,18 +266,14 @@
     {
       "raw": "1 (17 1/2-ounce) can chestnut spread (such as Clement Faugier)",
       "expected": {
-        "item": "chestnut spread (such as Clement Faugier)",
+        "item": "chestnut spread",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "17",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "17 1/2-ounce, such as Clement Faugier",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -396,9 +392,9 @@
     {
       "raw": "Flaky sea salt (such as Maldon), for serving",
       "expected": {
-        "item": "Flaky sea salt (such as Maldon)",
+        "item": "Flaky sea salt",
         "measurements": [],
-        "note": "for serving",
+        "note": "such as Maldon, for serving",
         "category": "Spices & Seasonings"
       }
     }

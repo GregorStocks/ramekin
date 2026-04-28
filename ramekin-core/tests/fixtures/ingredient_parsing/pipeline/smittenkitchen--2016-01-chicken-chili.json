@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds boneless skinless chicken parts, cut into 3 to 4 large chunks (I use a 50/50 mix of breasts and thighs)",
       "expected": {
-        "item": "boneless skinless chicken parts, cut into 3 to 4 large chunks (I use a 50/50 mix of breasts and thighs)",
+        "item": "boneless skinless chicken parts",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use a 50/50 mix of breasts and thighs, cut into 3 to 4 large chunks",
         "category": "Meat & Seafood"
       }
     },
@@ -117,22 +117,22 @@
             "unit": "28-ounce can"
           }
         ],
-        "note": "fire-roasted if you can find them or 2 10-ounce cans Ro-Tel (yield is a little less but not noticeable in final chili)",
+        "note": "yield is a little less but not noticeable in final chili, fire-roasted if you can find them or 2 10-ounce cans Ro-Tel",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "2 2/3 cups small dried beans (I use half black beans, half small red beans; I do not presoak but do read the updated note up top; read the note at the bottom if you’re using kidney beans)",
       "expected": {
-        "item": "small dried beans (I use half black beans, half small red beans; I do not presoak but do read the updated note up top; read the note at the bottom if you’re using kidney beans)",
+        "item": "small dried beans",
         "measurements": [
           {
             "amount": "2.67",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "I use half black beans, half small red beans; I do not presoak but do read the updated note up top; read the note at the bottom if you’re using kidney beans",
+        "category": "Other"
       }
     },
     {
@@ -145,15 +145,11 @@
             "unit": "cup"
           },
           {
-            "amount": null,
-            "unit": "can"
-          },
-          {
             "amount": "1264",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "can replace all or part with broth",
         "category": "Other"
       }
     },

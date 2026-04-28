@@ -85,7 +85,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 to 2 1/4 pounds",
         "category": "Produce"
       }
     },
@@ -168,7 +168,7 @@
     {
       "raw": "2 cups (475 ml) milk, whole is best but low-fat will probably work just fine",
       "expected": {
-        "item": "milk",
+        "item": "milk, whole is best but low-fat will probably work just fine",
         "measurements": [
           {
             "amount": "2",
@@ -177,20 +177,16 @@
           {
             "amount": "475",
             "unit": "ml"
-          },
-          {
-            "amount": "490",
-            "unit": "g"
           }
         ],
-        "note": "whole is best but low-fat will probably work just fine",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 1/4 cups plus 2 tablespoons (about 155 grams or 5 1/2 ounces total) grated cheddar, the strongest you can get, preferably English or Irish",
       "expected": {
-        "item": "grated cheddar, the strongest you can get, preferably English or Irish",
+        "item": "grated cheddar, the strongest you can get",
         "measurements": [
           {
             "amount": "1 1/4 cups plus 2 tablespoons",
@@ -205,16 +201,16 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "about 155 grams or 5 1/2 ounces total, preferably English or Irish",
         "category": "Cheese"
       }
     },
     {
       "raw": "Chopped chives or flat-leaf parsley, for garnish (optional)",
       "expected": {
-        "item": "Chopped chives or flat-leaf parsley, for garnish",
+        "item": "Chopped chives or flat-leaf parsley",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Spices & Seasonings"
       }
     }

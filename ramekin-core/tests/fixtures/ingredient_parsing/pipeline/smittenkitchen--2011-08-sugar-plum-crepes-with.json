@@ -14,14 +14,18 @@
     {
       "raw": "2 tablespoons butter, melted and cooled slightly (I browned this first, which probably won’t surprise you)",
       "expected": {
-        "item": "butter, melted and cooled slightly (I browned this first, which probably won’t surprise you)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I browned this first, which probably won’t surprise you, melted and cooled slightly",
         "category": "Dairy & Eggs"
       }
     },
@@ -214,14 +218,14 @@
     {
       "raw": "1 cup ricotta (ever wanted to make your own?)",
       "expected": {
-        "item": "ricotta (ever wanted to make your own?)",
+        "item": "ricotta",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "ever wanted to make your own?",
         "category": "Cheese"
       }
     },
@@ -251,9 +255,9 @@
     {
       "raw": "Additional honey, if desired",
       "expected": {
-        "item": "Additional honey, if desired",
+        "item": "Additional honey",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Baking"
       }
     }

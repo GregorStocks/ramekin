@@ -5,7 +5,7 @@
     {
       "raw": "3 cups (340g) cake flour ((not self-rising), plus additional for dusting pans)",
       "expected": {
-        "item": "cake flour (not self-rising)",
+        "item": "cake flour",
         "measurements": [
           {
             "amount": "3",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus additional for dusting pans)",
+        "note": "not self-rising, plus additional for dusting pans",
         "category": "Baking"
       }
     },
@@ -66,15 +66,11 @@
             "unit": "cup"
           },
           {
-            "amount": "2",
-            "unit": "stick"
-          },
-          {
             "amount": "227",
             "unit": "g"
           }
         ],
-        "note": "room temperature, plus additional for greasing pans",
+        "note": "2 sticks - 227g, room temperature, plus additional for greasing pans",
         "category": "Dairy & Eggs"
       }
     },
@@ -262,7 +258,7 @@
             "unit": "ml"
           }
         ],
-        "note": "(we used our homemade strawberry peach jam, but use whichever flavor you'd like",
+        "note": "(we used our homemade strawberry peach jam, but use whichever flavor you'd like)",
         "category": "Condiments & Sauces"
       }
     },
@@ -280,7 +276,7 @@
             "unit": "g"
           }
         ],
-        "note": "(or shredded sweetened coconut if you can't get desiccated coconut",
+        "note": "(or shredded sweetened coconut if you can't get desiccated coconut)",
         "category": "Produce"
       }
     }

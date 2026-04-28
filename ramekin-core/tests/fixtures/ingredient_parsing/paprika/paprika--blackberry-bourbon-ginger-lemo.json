@@ -87,7 +87,7 @@
     {
       "raw": "4 ounces bourbon (preferably Evan Williams Black)",
       "expected": {
-        "item": "bourbon (preferably Evan Williams Black)",
+        "item": "bourbon",
         "measurements": [
           {
             "amount": "4",
@@ -98,14 +98,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably Evan Williams Black",
         "category": "Beverages"
       }
     },
     {
       "raw": "12 ounces (so one can or one bottle) ginger beer",
       "expected": {
-        "item": "(so one can or one bottle) ginger beer",
+        "item": "ginger beer",
         "measurements": [
           {
             "amount": "12",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "so one can or one bottle",
         "category": "Beverages"
       }
     }

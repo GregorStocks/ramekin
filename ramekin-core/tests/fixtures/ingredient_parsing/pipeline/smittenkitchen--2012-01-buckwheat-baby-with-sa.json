@@ -32,15 +32,19 @@
     {
       "raw": "3 tablespoons unsalted butter (or, salted but ease up on the sea salt)",
       "expected": {
-        "item": "unsalted butter (or, salted but ease up on the sea salt)",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "or, salted but ease up on the sea salt",
+        "category": "Dairy & Eggs"
       }
     },
     {

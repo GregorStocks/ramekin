@@ -5,7 +5,7 @@
     {
       "raw": "1 pound plain yogurt (regular or lowfat)",
       "expected": {
-        "item": "plain yogurt (regular or lowfat)",
+        "item": "plain yogurt",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "regular or lowfat",
         "category": "Dairy & Eggs"
       }
     },
@@ -62,15 +62,11 @@
             "unit": "cup"
           },
           {
-            "amount": "2",
-            "unit": "lemons"
-          },
-          {
             "amount": "61",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "2 lemons",
         "category": "Beverages"
       }
     },
@@ -155,7 +151,7 @@
     {
       "raw": "14 ounces Greek yogurt (Ina recommends Fage Total; I recommend whatever you like best, and yes, I use full fat, always)",
       "expected": {
-        "item": "Greek yogurt (Ina recommends Fage Total; I recommend whatever you like best, and yes, I use full fat, always)",
+        "item": "Greek yogurt",
         "measurements": [
           {
             "amount": "14",
@@ -166,7 +162,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Ina recommends Fage Total; I recommend whatever you like best, and yes, I use full fat, always",
         "category": "Dairy & Eggs"
       }
     },

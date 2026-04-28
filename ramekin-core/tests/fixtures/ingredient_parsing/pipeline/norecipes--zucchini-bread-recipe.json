@@ -10,13 +10,9 @@
           {
             "amount": "325",
             "unit": "g"
-          },
-          {
-            "amount": "2",
-            "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "about 2 medium zucchinis",
         "category": "Produce"
       }
     },
@@ -177,14 +173,14 @@
     {
       "raw": "80 grams Cheddar cheese ((cut into 1/3-inch cubes))",
       "expected": {
-        "item": "Cheddar cheese (cut into 1/3-inch cubes)",
+        "item": "Cheddar cheese",
         "measurements": [
           {
             "amount": "80",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/3-inch cubes",
         "category": "Cheese"
       }
     }

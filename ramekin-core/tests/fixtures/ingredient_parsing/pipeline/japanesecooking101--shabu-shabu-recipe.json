@@ -115,14 +115,14 @@
     {
       "raw": "1/2  bunch Kikuna or Shungiku (edible chrysanthemum leaves)",
       "expected": {
-        "item": "Kikuna or Shungiku (edible chrysanthemum leaves)",
+        "item": "Kikuna or Shungiku",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "edible chrysanthemum leaves",
         "category": "Other"
       }
     },

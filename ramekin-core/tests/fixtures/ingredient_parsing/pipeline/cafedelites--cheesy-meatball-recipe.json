@@ -5,14 +5,14 @@
     {
       "raw": "3 slices white bread (crust removed)",
       "expected": {
-        "item": "white bread (crust removed)",
+        "item": "white bread",
         "measurements": [
           {
             "amount": "3",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "crust removed",
         "category": "Bakery & Bread"
       }
     },
@@ -175,14 +175,14 @@
     {
       "raw": "1 teaspoon beef bouillon powder (or vegetable stock powder)",
       "expected": {
-        "item": "beef bouillon powder (or vegetable stock powder)",
+        "item": "beef bouillon powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or vegetable stock powder",
         "category": "Spices & Seasonings"
       }
     },
@@ -267,7 +267,7 @@
     {
       "raw": "24 oz tomato puree (or passata)",
       "expected": {
-        "item": "tomato puree (or passata)",
+        "item": "tomato puree",
         "measurements": [
           {
             "amount": "24",
@@ -278,7 +278,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or passata",
         "category": "Canned Goods"
       }
     },

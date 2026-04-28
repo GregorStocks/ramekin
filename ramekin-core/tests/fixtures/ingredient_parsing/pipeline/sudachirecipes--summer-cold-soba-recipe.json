@@ -10,13 +10,9 @@
           {
             "amount": "2",
             "unit": null
-          },
-          {
-            "amount": "80",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "80g-100g per portion",
         "category": "Pasta & Rice"
       }
     },
@@ -43,7 +39,7 @@
             "unit": "g each"
           }
         ],
-        "note": null,
+        "note": "about 12g each",
         "category": "Produce"
       }
     },
@@ -66,15 +62,11 @@
             "unit": null
           },
           {
-            "amount": null,
-            "unit": "medium each"
-          },
-          {
             "amount": "100",
             "unit": "g each"
           }
         ],
-        "note": null,
+        "note": "medium, about 100g each",
         "category": "Produce"
       }
     },
@@ -92,21 +84,21 @@
             "unit": "g each"
           }
         ],
-        "note": null,
+        "note": "about 100g each",
         "category": "Produce"
       }
     },
     {
       "raw": "1 tsp cooking oil (for cooking)",
       "expected": {
-        "item": "cooking oil (for cooking)",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "for cooking",
         "category": "Oils & Vinegars"
       }
     },
@@ -145,32 +137,28 @@
     {
       "raw": "100 g ground pork (or beef)",
       "expected": {
-        "item": "ground pork (or beef)",
+        "item": "ground pork",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or beef",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 ½ tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "24",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -195,14 +183,14 @@
     {
       "raw": "1 tbsp yellow miso paste (awase) ()",
       "expected": {
-        "item": "yellow miso paste (awase) ()",
+        "item": "yellow miso paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "awase",
         "category": "Condiments & Sauces"
       }
     },
@@ -236,9 +224,9 @@
     {
       "raw": "bonito flakes (katsuobushi) (optional garnish)",
       "expected": {
-        "item": "bonito flakes (katsuobushi) (optional garnish)",
+        "item": "bonito flakes",
         "measurements": [],
-        "note": null,
+        "note": "katsuobushi, optional garnish",
         "category": "Other"
       }
     }

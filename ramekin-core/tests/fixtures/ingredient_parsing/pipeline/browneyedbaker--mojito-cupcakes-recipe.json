@@ -23,14 +23,14 @@
     {
       "raw": "½ cup mint leaves (bruised)",
       "expected": {
-        "item": "mint leaves (bruised)",
+        "item": "mint leaves",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "bruised",
         "category": "Spices & Seasonings"
       }
     },

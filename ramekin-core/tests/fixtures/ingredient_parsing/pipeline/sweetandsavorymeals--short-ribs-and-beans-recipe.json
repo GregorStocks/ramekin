@@ -5,14 +5,14 @@
     {
       "raw": "6  short ribs (fat removed)",
       "expected": {
-        "item": "short ribs (fat removed)",
+        "item": "short ribs",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "fat removed",
         "category": "Other"
       }
     },

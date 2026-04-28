@@ -5,14 +5,14 @@
     {
       "raw": "1&nbsp;cup quinoa (I like red for visual appeal)",
       "expected": {
-        "item": "quinoa (I like red for visual appeal)",
+        "item": "quinoa",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I like red for visual appeal",
         "category": "Pasta & Rice"
       }
     },
@@ -51,14 +51,14 @@
     {
       "raw": "4&nbsp;cups 1/2-inch cubes butternut squash (about), 1.25 lbs. post peeling",
       "expected": {
-        "item": "1/2-inch cubes butternut squash (about), 1.25 lbs. post peeling",
+        "item": "1/2-inch cubes butternut squash, 1.25 lbs. post peeling",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about",
         "category": "Produce"
       }
     },
@@ -122,7 +122,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 1/4 cups",
         "category": "Cheese"
       }
     },

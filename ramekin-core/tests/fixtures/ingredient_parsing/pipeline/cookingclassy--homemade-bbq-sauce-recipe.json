@@ -5,15 +5,19 @@
     {
       "raw": "3/4 cup ketchup ((preferably without corn syrup))",
       "expected": {
-        "item": "ketchup (preferably without corn syrup)",
+        "item": "ketchup",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "preferably without corn syrup",
+        "category": "Condiments & Sauces"
       }
     },
     {

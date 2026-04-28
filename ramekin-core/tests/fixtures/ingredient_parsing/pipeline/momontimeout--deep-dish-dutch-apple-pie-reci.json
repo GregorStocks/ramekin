@@ -285,14 +285,18 @@
     {
       "raw": "6 tbsp cold butter (cut into small piece)",
       "expected": {
-        "item": "cold butter (cut into small piece)",
+        "item": "cold butter",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small piece",
         "category": "Dairy & Eggs"
       }
     }

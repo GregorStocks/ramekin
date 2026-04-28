@@ -91,7 +91,7 @@
     {
       "raw": "1 pound yukon gold potatoes, peeled if desired, cut into 1/2-inch slices",
       "expected": {
-        "item": "yukon gold potatoes, peeled if desired, cut into 1/2-inch slices",
+        "item": "yukon gold potatoes, peeled if desired",
         "measurements": [
           {
             "amount": "1",
@@ -102,7 +102,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch slices",
         "category": "Produce"
       }
     },
@@ -155,14 +155,14 @@
     {
       "raw": "11 large eggs + 1 large egg white (you’ll use the yolk in a minute)",
       "expected": {
-        "item": "eggs + 1 large egg white (you’ll use the yolk in a minute)",
+        "item": "eggs + 1 large egg white",
         "measurements": [
           {
             "amount": "11",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "you’ll use the yolk in a minute",
         "category": "Dairy & Eggs"
       }
     },
@@ -201,14 +201,14 @@
     {
       "raw": "1 large egg yolk (leftover from filling)",
       "expected": {
-        "item": "egg yolk (leftover from filling)",
+        "item": "egg yolk",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "leftover from filling",
         "category": "Dairy & Eggs"
       }
     },

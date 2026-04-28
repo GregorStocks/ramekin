@@ -37,14 +37,14 @@
     {
       "raw": "2 tablespoons cream (or milk)",
       "expected": {
-        "item": "cream (or milk)",
+        "item": "cream",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or milk",
         "category": "Dairy & Eggs"
       }
     },

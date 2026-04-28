@@ -28,14 +28,14 @@
     {
       "raw": "1 large (will weigh 6 ounces/170 grams be about 6 inches long when unpeeled) speckly ripe banana (should yield a scant 1/2 cup peeled, pureed)",
       "expected": {
-        "item": "speckly ripe banana (should yield a scant 1/2 cup peeled, pureed)",
+        "item": "speckly ripe banana",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "will weigh 6 ounces/170 grams be about 6 inches long when unpeeled",
+        "note": "will weigh 6 ounces/170 grams be about 6 inches long when unpeeled, should yield a scant 1/2 cup peeled, pureed",
         "category": "Produce"
       }
     },
@@ -355,7 +355,7 @@
             "unit": "g"
           }
         ],
-        "note": "toasted",
+        "note": "about 50 grams, toasted",
         "category": "Nuts & Dried Fruit"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "2 1/2 pounds chicken breasts (skinless and boneless)",
       "expected": {
-        "item": "chicken breasts (skinless and boneless)",
+        "item": "chicken breasts",
         "measurements": [
           {
             "amount": "2.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skinless and boneless",
         "category": "Meat & Seafood"
       }
     },
@@ -55,14 +55,18 @@
     {
       "raw": "1/2 cup chicken broth (low-sodium)",
       "expected": {
-        "item": "chicken broth (low-sodium)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "124",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low-sodium",
         "category": "Canned Goods"
       }
     },
@@ -133,14 +137,14 @@
     {
       "raw": "1/2 cup chopped walnuts (or pecans)",
       "expected": {
-        "item": "chopped walnuts (or pecans)",
+        "item": "chopped walnuts",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or pecans",
         "category": "Nuts & Dried Fruit"
       }
     },

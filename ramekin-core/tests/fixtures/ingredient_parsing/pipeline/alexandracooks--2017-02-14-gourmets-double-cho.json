@@ -5,7 +5,7 @@
     {
       "raw": "1½ ounces fine-quality semisweet chocolate (chips are fine, too)",
       "expected": {
-        "item": "fine-quality semisweet chocolate (chips are fine, too)",
+        "item": "fine-quality semisweet chocolate",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,8 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Snacks"
+        "note": "chips are fine, too",
+        "category": "Other"
       }
     },
     {
@@ -73,7 +73,7 @@
     {
       "raw": "¾ cups (72 g) unsweetened cocoa powder (use high&nbsp;quality if you can)",
       "expected": {
-        "item": "unsweetened cocoa powder (use high quality if you can)",
+        "item": "unsweetened cocoa powder",
         "measurements": [
           {
             "amount": "0.75",
@@ -84,7 +84,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "use high quality if you can",
         "category": "Baking"
       }
     },
@@ -209,7 +209,7 @@
     {
       "raw": "8 ounces fine-quality semisweet chocolate (chips are fine, too)",
       "expected": {
-        "item": "fine-quality semisweet chocolate (chips are fine, too)",
+        "item": "fine-quality semisweet chocolate",
         "measurements": [
           {
             "amount": "8",
@@ -220,8 +220,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Snacks"
+        "note": "chips are fine, too",
+        "category": "Other"
       }
     },
     {
@@ -304,14 +304,14 @@
     {
       "raw": "small square of semi-sweet (or other) chocolate",
       "expected": {
-        "item": "square of semi-sweet (or other) chocolate",
+        "item": "square of semi-sweet chocolate",
         "measurements": [
           {
             "amount": null,
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "or other",
         "category": "Other"
       }
     }

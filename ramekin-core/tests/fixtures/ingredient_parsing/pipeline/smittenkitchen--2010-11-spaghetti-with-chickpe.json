@@ -5,7 +5,7 @@
     {
       "raw": "15 ounces canned chickpeas, rinsed and drained or about 2 cups, freshly cooked chickpeas",
       "expected": {
-        "item": "canned chickpeas, rinsed and drained or about 2 cups",
+        "item": "canned chickpeas, rinsed and drained",
         "measurements": [
           {
             "amount": "15",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "freshly cooked chickpeas",
+        "note": "or about 2 cups, freshly cooked chickpeas",
         "category": "Canned Goods"
       }
     },
@@ -66,7 +66,7 @@
             "unit": "cup"
           }
         ],
-        "note": "diced (a little shy of 2 ounces)",
+        "note": "a little shy of 2 ounces, diced",
         "category": "Meat & Seafood"
       }
     },

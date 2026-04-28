@@ -263,14 +263,14 @@
     {
       "raw": "6  hot dog franks (I use Ball Park all-beef franks, preferably grilled)",
       "expected": {
-        "item": "hot dog franks (I use Ball Park all-beef franks, preferably grilled)",
+        "item": "hot dog franks",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "I use Ball Park all-beef franks, preferably grilled",
         "category": "Meat & Seafood"
       }
     },

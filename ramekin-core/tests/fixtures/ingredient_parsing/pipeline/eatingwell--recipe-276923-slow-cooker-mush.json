@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 1/2 ounces",
         "category": "Produce"
       }
     },
@@ -160,7 +160,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 8 ounces",
         "category": "Produce"
       }
     },
@@ -178,7 +178,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "minced",
+        "note": "about 1 teaspoon, minced",
         "category": "Produce"
       }
     },
@@ -199,7 +199,7 @@
     {
       "raw": "3 pounds assorted fresh mushrooms (such as cremini, portobello, shiitake and button), sliced",
       "expected": {
-        "item": "assorted fresh mushrooms (such as cremini, portobello, shiitake and button)",
+        "item": "assorted fresh mushrooms",
         "measurements": [
           {
             "amount": "3",
@@ -210,7 +210,7 @@
             "unit": "g"
           }
         ],
-        "note": "sliced",
+        "note": "such as cremini, portobello, shiitake and button, sliced",
         "category": "Produce"
       }
     },

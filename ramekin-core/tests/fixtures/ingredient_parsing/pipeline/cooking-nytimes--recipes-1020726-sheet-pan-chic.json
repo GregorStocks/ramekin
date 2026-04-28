@@ -23,14 +23,18 @@
     {
       "raw": "2 tablespoons lemon juice (from about half a lemon)",
       "expected": {
-        "item": "lemon juice (from about half a lemon)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about half a lemon",
         "category": "Beverages"
       }
     },
@@ -85,22 +89,18 @@
             "unit": "lb"
           },
           {
-            "amount": "4 to 6",
-            "unit": "thighs"
-          },
-          {
             "amount": "680 to 907",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "4 to 6 thighs",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "4 small Yukon gold potatoes (about 1 pound), cut into 3/4-inch pieces",
       "expected": {
-        "item": "Yukon gold potatoes, cut into 3/4-inch pieces",
+        "item": "Yukon gold potatoes",
         "measurements": [
           {
             "amount": "4",
@@ -115,7 +115,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 pound, cut into 3/4-inch pieces",
         "category": "Produce"
       }
     },
@@ -137,7 +137,7 @@
             "unit": "g"
           }
         ],
-        "note": "crumbled",
+        "note": "about 1/2 cup, crumbled",
         "category": "Cheese"
       }
     },

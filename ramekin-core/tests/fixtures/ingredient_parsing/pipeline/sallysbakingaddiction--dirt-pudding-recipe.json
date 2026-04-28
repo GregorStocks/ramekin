@@ -84,10 +84,6 @@
             "unit": "cup"
           },
           {
-            "amount": "1",
-            "unit": null
-          },
-          {
             "amount": "80",
             "unit": "ml"
           },
@@ -96,7 +92,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1,080ml",
         "category": "Dairy & Eggs"
       }
     },
@@ -139,14 +135,14 @@
     {
       "raw": "24–30 Oreo cookies (or about 1 standard package)",
       "expected": {
-        "item": "Oreo cookies (or about 1 standard package)",
+        "item": "Oreo cookies",
         "measurements": [
           {
             "amount": "24-30",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or about 1 standard package",
         "category": "Other"
       }
     },

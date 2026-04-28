@@ -90,13 +90,9 @@
           {
             "amount": "1",
             "unit": "piece"
-          },
-          {
-            "amount": "1",
-            "unit": null
           }
         ],
-        "note": "peeled and finely chopped",
+        "note": "1 1/2-inch, peeled and finely chopped",
         "category": "Produce"
       }
     },
@@ -171,7 +167,7 @@
     {
       "raw": "1/2 head green cabbage (about 2 pounds; 907 g), cut into 3/4-inch pieces",
       "expected": {
-        "item": "green cabbage, cut into 3/4-inch pieces",
+        "item": "green cabbage",
         "measurements": [
           {
             "amount": "0.5",
@@ -186,14 +182,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 pounds; 907 g, cut into 3/4-inch pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "8 cups (1.9 L) homemade chicken stock or store-bought low-sodium chicken broth or vegetable broth (see notes)",
       "expected": {
-        "item": "homemade chicken stock or store-bought low-sodium chicken broth or vegetable broth (see notes)",
+        "item": "homemade chicken stock or store-bought low-sodium chicken broth or vegetable broth",
         "measurements": [
           {
             "amount": "8",
@@ -204,7 +200,7 @@
             "unit": "l"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Canned Goods"
       }
     },
@@ -218,15 +214,11 @@
             "unit": "can"
           },
           {
-            "amount": "15",
-            "unit": "oz"
-          },
-          {
             "amount": "425",
             "unit": "g"
           }
         ],
-        "note": "rinsed and drained",
+        "note": "15-ounce, 425 g, rinsed and drained",
         "category": "Canned Goods"
       }
     },
@@ -240,22 +232,18 @@
             "unit": "can"
           },
           {
-            "amount": "14.5",
-            "unit": "oz"
-          },
-          {
             "amount": "411",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "14.5-ounce; 411 g",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "10 ounces (283 g) cauliflower, cut into 1-inch florets (from 1 medium head)",
       "expected": {
-        "item": "cauliflower, cut into 1-inch florets (from 1 medium head)",
+        "item": "cauliflower",
         "measurements": [
           {
             "amount": "10",
@@ -266,7 +254,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 1 medium head, cut into 1-inch florets",
         "category": "Produce"
       }
     },
@@ -298,15 +286,11 @@
             "unit": "can"
           },
           {
-            "amount": "13.5",
-            "unit": "oz"
-          },
-          {
             "amount": "383",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "13.5-ounce; 383 g",
         "category": "Canned Goods"
       }
     },

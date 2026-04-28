@@ -64,9 +64,9 @@
     {
       "raw": "crumbled blue cheese, (for topping)",
       "expected": {
-        "item": "crumbled blue cheese, (for topping)",
+        "item": "crumbled blue cheese",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Cheese"
       }
     },
@@ -87,14 +87,14 @@
     {
       "raw": "2 to 3 tablespoons chopped fresh chives, (for topping)",
       "expected": {
-        "item": "chopped fresh chives, (for topping)",
+        "item": "chopped fresh chives",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     },

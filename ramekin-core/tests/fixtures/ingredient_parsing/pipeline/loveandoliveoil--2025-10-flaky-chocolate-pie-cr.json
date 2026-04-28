@@ -55,28 +55,36 @@
     {
       "raw": "1/2 teaspoon kosher salt (reduce or omit if using salted butter)",
       "expected": {
-        "item": "kosher salt (reduce or omit if using salted butter)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "reduce or omit if using salted butter",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "8 tablespoons cold unsalted butter (cut into cubes)",
       "expected": {
-        "item": "cold unsalted butter (cut into cubes)",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "8",
             "unit": "tbsp"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Dairy & Eggs"
       }
     },

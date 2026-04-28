@@ -61,15 +61,15 @@
     {
       "raw": "1/4 cup corn (frozen (thawed), canned (drained))",
       "expected": {
-        "item": "corn, canned (drained)",
+        "item": "corn",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "frozen (thawed",
-        "category": "Canned Goods"
+        "note": "frozen (thawed), canned (drained)",
+        "category": "Other"
       }
     },
     {
@@ -82,7 +82,7 @@
             "unit": "cup"
           }
         ],
-        "note": "rinsed and drained (optional",
+        "note": "rinsed and drained (optional)",
         "category": "Canned Goods"
       }
     },

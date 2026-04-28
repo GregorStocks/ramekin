@@ -34,14 +34,14 @@
             "unit": "g"
           }
         ],
-        "note": "divided)",
+        "note": "divided",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "1/2 pound peeled and de-veined shrimp ((225g)  or what ever protein you prefer)",
       "expected": {
-        "item": "peeled and de-veined shrimp or what ever protein you prefer)",
+        "item": "peeled and de-veined shrimp or what ever protein you prefer",
         "measurements": [
           {
             "amount": "0.5",
@@ -115,7 +115,7 @@
     {
       "raw": "2 cups  bean sprouts ((480ml) , about)",
       "expected": {
-        "item": "bean sprouts, about)",
+        "item": "bean sprouts, about",
         "measurements": [
           {
             "amount": "2",
@@ -174,14 +174,18 @@
     {
       "raw": "2 Tablespoons rice vinegar ( or distilled white vinegar (30ml) )",
       "expected": {
-        "item": "rice vinegar ( or distilled white vinegar (30ml)",
+        "item": "rice vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or distilled white vinegar (30ml)",
         "category": "Oils & Vinegars"
       }
     },
@@ -203,7 +207,7 @@
             "unit": "g"
           }
         ],
-        "note": "or to taste)",
+        "note": "or to taste",
         "category": "Condiments & Sauces"
       }
     },

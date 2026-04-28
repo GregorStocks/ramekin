@@ -23,7 +23,7 @@
     {
       "raw": "8 oz mejool dates (pitted)",
       "expected": {
-        "item": "mejool dates (pitted)",
+        "item": "mejool dates",
         "measurements": [
           {
             "amount": "8",
@@ -34,21 +34,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "pitted",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
       "raw": "1/2 cup dried cherries (or extra dates if desired)",
       "expected": {
-        "item": "dried cherries (or extra dates if desired)",
+        "item": "dried cherries",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or extra dates if desired",
         "category": "Produce"
       }
     },
@@ -97,14 +97,14 @@
     {
       "raw": "1-2 cups fresh fruit (see below)",
       "expected": {
-        "item": "fresh fruit (see below)",
+        "item": "fresh fruit",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see below",
         "category": "Other"
       }
     },

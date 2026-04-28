@@ -105,18 +105,18 @@
     {
       "raw": "grated gouda or cheddar cheese ((skip for vegan/dairy-free))",
       "expected": {
-        "item": "grated gouda or cheddar cheese (skip for vegan/dairy-free)",
+        "item": "grated gouda or cheddar cheese",
         "measurements": [],
-        "note": null,
+        "note": "skip for vegan/dairy-free",
         "category": "Cheese"
       }
     },
     {
       "raw": "chopped bacon (or vegan bacon bits)",
       "expected": {
-        "item": "chopped bacon (or vegan bacon bits)",
+        "item": "chopped bacon",
         "measurements": [],
-        "note": null,
+        "note": "or vegan bacon bits",
         "category": "Meat & Seafood"
       }
     },

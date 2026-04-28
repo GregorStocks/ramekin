@@ -5,7 +5,7 @@
     {
       "raw": "1 cup chopped Chili Peppers ((about 100 grams). *for a more mild hot sauce, start with less chilies)",
       "expected": {
-        "item": "chopped Chili Peppers . *for a more mild hot sauce, start with less chilies)",
+        "item": "chopped Chili Peppers . *for a more mild hot sauce, start with less chilies",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 100 grams",
         "category": "Condiments & Sauces"
       }
     },
@@ -62,7 +62,7 @@
             "unit": null
           }
         ],
-        "note": "medium size  (minced",
+        "note": "medium size  (minced)",
         "category": "Produce"
       }
     },
@@ -123,14 +123,18 @@
     {
       "raw": "1 Tablespoon Fish Sauce ((this is a vital ingredient for wonderful flavor, please don't skip it))",
       "expected": {
-        "item": "Fish Sauce (this is a vital ingredient for wonderful flavor, please don't skip it)",
+        "item": "Fish Sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "18",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "this is a vital ingredient for wonderful flavor, please don't skip it",
         "category": "Condiments & Sauces"
       }
     }

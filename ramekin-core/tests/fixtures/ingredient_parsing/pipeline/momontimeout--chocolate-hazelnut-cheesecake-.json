@@ -55,14 +55,18 @@
     {
       "raw": "1/2 cup Greek yogurt (plain or vanilla)",
       "expected": {
-        "item": "Greek yogurt (plain or vanilla)",
+        "item": "Greek yogurt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plain or vanilla",
         "category": "Dairy & Eggs"
       }
     },

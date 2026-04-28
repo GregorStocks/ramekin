@@ -5,14 +5,14 @@
     {
       "raw": "4  boneless chicken breast fillets (skinless)",
       "expected": {
-        "item": "boneless chicken breast fillets (skinless)",
+        "item": "boneless chicken breast fillets",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "skinless",
         "category": "Meat & Seafood"
       }
     },

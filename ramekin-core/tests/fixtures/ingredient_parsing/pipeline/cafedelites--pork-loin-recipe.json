@@ -41,14 +41,18 @@
     {
       "raw": "2 teaspoons paprika (mild or smoked)",
       "expected": {
-        "item": "paprika (mild or smoked)",
+        "item": "paprika",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "4.5",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "mild or smoked",
         "category": "Spices & Seasonings"
       }
     },
@@ -215,14 +219,14 @@
     {
       "raw": "2 tablespoons rice wine vinegar (or cider vinegar)",
       "expected": {
-        "item": "rice wine vinegar (or cider vinegar)",
+        "item": "rice wine vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or cider vinegar",
         "category": "Oils & Vinegars"
       }
     },
@@ -234,13 +238,9 @@
           {
             "amount": "1",
             "unit": "pinch"
-          },
-          {
-            "amount": null,
-            "unit": "large"
           }
         ],
-        "note": null,
+        "note": "large",
         "category": "Spices & Seasonings"
       }
     },
@@ -261,28 +261,32 @@
     {
       "raw": "½ cup low sodium beef stock (or chicken stock/broth, FOR OVEN METHOD ONLY)",
       "expected": {
-        "item": "low sodium beef stock (or chicken stock/broth, FOR OVEN METHOD ONLY)",
+        "item": "low sodium beef stock",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Meat & Seafood"
+        "note": "or chicken stock/broth, FOR OVEN METHOD ONLY",
+        "category": "Canned Goods"
       }
     },
     {
       "raw": "½ cup water (FOR OVEN METHOD ONLY)",
       "expected": {
-        "item": "water (FOR OVEN METHOD ONLY)",
+        "item": "water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "FOR OVEN METHOD ONLY",
         "category": "Other"
       }
     },

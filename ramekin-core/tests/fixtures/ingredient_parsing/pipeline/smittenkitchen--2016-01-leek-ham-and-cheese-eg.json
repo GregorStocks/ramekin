@@ -102,14 +102,14 @@
     {
       "raw": "6 medium-large leeks or 3 leeks and 2 small yellow onions, diced (just white and pale green parts from leeks; leeks washed well)",
       "expected": {
-        "item": "medium-large leeks or 3 leeks and 2 small yellow onions, diced",
+        "item": "medium-large leeks or 3 leeks and 2 small yellow onions",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": "just white and pale green parts from leeks; leeks washed well",
+        "note": "just white and pale green parts from leeks; leeks washed well, diced",
         "category": "Produce"
       }
     },
@@ -171,7 +171,7 @@
     {
       "raw": "3/4 pound grated cheese (I use a mix of gruyere and comte)",
       "expected": {
-        "item": "grated cheese (I use a mix of gruyere and comte)",
+        "item": "grated cheese",
         "measurements": [
           {
             "amount": "0.75",
@@ -182,7 +182,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use a mix of gruyere and comte",
         "category": "Cheese"
       }
     },

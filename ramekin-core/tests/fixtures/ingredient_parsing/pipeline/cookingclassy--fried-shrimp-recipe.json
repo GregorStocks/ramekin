@@ -23,14 +23,18 @@
     {
       "raw": "1/2 cup all-purpose flour ((preferably unbleached))",
       "expected": {
-        "item": "all-purpose flour (preferably unbleached)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "62",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably unbleached",
         "category": "Baking"
       }
     },
@@ -121,7 +125,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 8 cups",
         "category": "Oils & Vinegars"
       }
     },
@@ -149,7 +153,7 @@
             "unit": null
           }
         ],
-        "note": "cut into wedges (optional",
+        "note": "cut into wedges (optional)",
         "category": "Produce"
       }
     }

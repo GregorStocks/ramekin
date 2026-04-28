@@ -5,7 +5,7 @@
     {
       "raw": "3  large baking apples (about 1½ lbs), (peeled, cored and sliced ⅛-in (3-mm) thick (see note))",
       "expected": {
-        "item": "baking apples thick (see note)",
+        "item": "baking apples",
         "measurements": [
           {
             "amount": "3",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled, cored and sliced 1/8-in (3-mm",
+        "note": "about 1 1/2 lbs, peeled, cored and sliced 1/8-in (3-mm) thick (see note)",
         "category": "Produce"
       }
     },
@@ -128,13 +128,9 @@
           {
             "amount": "10",
             "unit": null
-          },
-          {
-            "amount": "9",
-            "unit": null
           }
         ],
-        "note": "thawed",
+        "note": "9x14-inch, thawed",
         "category": "Frozen"
       }
     },
@@ -177,9 +173,9 @@
     {
       "raw": "Confectioners&amp;#39; sugar, (for dusting)",
       "expected": {
-        "item": "Confectioners' sugar, (for dusting)",
+        "item": "Confectioners' sugar",
         "measurements": [],
-        "note": null,
+        "note": "for dusting",
         "category": "Baking"
       }
     }

@@ -5,7 +5,7 @@
     {
       "raw": "8 oz fresh or frozen strawberries (hulled)",
       "expected": {
-        "item": "fresh or frozen strawberries (hulled)",
+        "item": "fresh or frozen strawberries",
         "measurements": [
           {
             "amount": "8",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "hulled",
         "category": "Produce"
       }
     },
@@ -312,14 +312,14 @@
     {
       "raw": "1/2 quart strawberry buttermilk ice cream (half a batch of the ice cream recipe as listed, or store-bought)",
       "expected": {
-        "item": "strawberry buttermilk ice cream (half a batch of the ice cream recipe as listed, or store-bought)",
+        "item": "strawberry buttermilk ice cream",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "quart"
           }
         ],
-        "note": null,
+        "note": "half a batch of the ice cream recipe as listed, or store-bought",
         "category": "Dairy & Eggs"
       }
     }

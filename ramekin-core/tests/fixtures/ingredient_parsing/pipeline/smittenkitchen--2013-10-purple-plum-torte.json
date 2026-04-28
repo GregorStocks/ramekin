@@ -5,7 +5,7 @@
     {
       "raw": "1 cup (200 grams) plus 1 to 2 tablespoons granulated sugar (use less for sweeter plums)",
       "expected": {
-        "item": "granulated sugar (use less for sweeter plums)",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1 cup plus 1 to 2 tablespoons",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "use less for sweeter plums",
         "category": "Baking"
       }
     },
@@ -77,7 +77,7 @@
     {
       "raw": "1 teaspoon (5 grams) baking powder (ideally aluminum-free)",
       "expected": {
-        "item": "baking powder (ideally aluminum-free)",
+        "item": "baking powder",
         "measurements": [
           {
             "amount": "1",
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "ideally aluminum-free",
         "category": "Baking"
       }
     },

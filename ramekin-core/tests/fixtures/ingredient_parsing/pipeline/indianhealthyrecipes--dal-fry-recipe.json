@@ -5,15 +5,15 @@
     {
       "raw": "1 cup toor dal ((split pigeon peas) (or ¾ cup toor dal + ¼ cup moong dal or masoor dal))",
       "expected": {
-        "item": "toor dal (split pigeon peas) (or 3/4 cup toor dal + 1/4 cup moong dal or masoor dal)",
+        "item": "toor dal",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "split pigeon peas, or 3/4 cup toor dal + 1/4 cup moong dal or masoor dal",
+        "category": "Other"
       }
     },
     {
@@ -26,29 +26,25 @@
             "unit": "cup"
           },
           {
-            "amount": "3",
-            "unit": "cup"
-          },
-          {
             "amount": "592",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "3 cups for Instant pot, more for regular pot",
         "category": "Other"
       }
     },
     {
       "raw": "2 tablespoons ghee  ((or oil or butter))",
       "expected": {
-        "item": "ghee  (or oil or butter)",
+        "item": "ghee",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or oil or butter",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,14 +79,14 @@
     {
       "raw": "⅛ teaspoon hing ((asafoetida))",
       "expected": {
-        "item": "hing (asafoetida)",
+        "item": "hing",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "asafoetida",
         "category": "Other"
       }
     },
@@ -104,21 +100,21 @@
             "unit": null
           }
         ],
-        "note": "broken (optional",
+        "note": "broken (optional)",
         "category": "Other"
       }
     },
     {
       "raw": "1 to 2  green chilies ((slit or chopped) (optional))",
       "expected": {
-        "item": "green chilies (optional)",
+        "item": "green chilies",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": null
           }
         ],
-        "note": "slit or chopped",
+        "note": "slit or chopped, optional",
         "category": "Other"
       }
     },
@@ -227,14 +223,18 @@
     {
       "raw": "½  cup water ((to use for consistency))",
       "expected": {
-        "item": "water (to use for consistency)",
+        "item": "water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "to use for consistency",
         "category": "Other"
       }
     },
@@ -248,7 +248,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "crushed (dried fenugreek leaves",
+        "note": "crushed (dried fenugreek leaves)",
         "category": "Other"
       }
     },
@@ -276,7 +276,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or as needed (optional",
+        "note": "or as needed (optional)",
         "category": "Beverages"
       }
     }

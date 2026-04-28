@@ -55,14 +55,14 @@
     {
       "raw": "1 to 2 jalapeño peppers, seeds removed (depending on your spice tolerance)",
       "expected": {
-        "item": "jalapeño peppers, seeds removed (depending on your spice tolerance)",
+        "item": "jalapeño peppers, seeds removed",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "depending on your spice tolerance",
         "category": "Produce"
       }
     },

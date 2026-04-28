@@ -5,14 +5,18 @@
     {
       "raw": "½ cup sugar ((plus 2 tablespoons/18g))",
       "expected": {
-        "item": "sugar (plus 2 tablespoons/18g)",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "18",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plus 2 tablespoons/18g",
         "category": "Baking"
       }
     },

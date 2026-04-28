@@ -5,14 +5,14 @@
     {
       "raw": "1 TBSP avocado oil (or olive oil)",
       "expected": {
-        "item": "avocado oil (or olive oil)",
+        "item": "avocado oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or olive oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -145,7 +145,7 @@
       "expected": {
         "item": "salt and pepper",
         "measurements": [],
-        "note": "to taste (I added 1/4 tsp of each)",
+        "note": "I added 1/4 tsp of each, to taste",
         "category": "Spices & Seasonings"
       }
     },

@@ -81,13 +81,9 @@
           {
             "amount": "113",
             "unit": "g"
-          },
-          {
-            "amount": "16",
-            "unit": "storebought cookies"
           }
         ],
-        "note": null,
+        "note": "4 ounces or 113 grams or about 16 storebought cookies",
         "category": "Beverages"
       }
     },
@@ -179,22 +175,18 @@
     {
       "raw": "2 pounds (about 4 to 5) large ripe pears (I used Anjou, suggested in the original recipe) peeled, halved, cored and sliced 1/4 inch thick",
       "expected": {
-        "item": "large ripe pears (I used Anjou, suggested in the original recipe) peeled, halved",
+        "item": "large ripe pears peeled, halved",
         "measurements": [
           {
             "amount": "2",
             "unit": "lb"
           },
           {
-            "amount": "4 to 5",
-            "unit": null
-          },
-          {
             "amount": "907",
             "unit": "g"
           }
         ],
-        "note": "cored and sliced 1/4 inch thick",
+        "note": "about 4 to 5, I used Anjou, suggested in the original recipe, cored and sliced 1/4 inch thick",
         "category": "Produce"
       }
     },

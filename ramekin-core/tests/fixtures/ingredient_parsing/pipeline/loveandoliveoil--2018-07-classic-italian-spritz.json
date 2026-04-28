@@ -14,7 +14,7 @@
     {
       "raw": "3 ounces prosecco (or sparkling wine of your choice)",
       "expected": {
-        "item": "prosecco (or sparkling wine of your choice)",
+        "item": "prosecco",
         "measurements": [
           {
             "amount": "3",
@@ -25,14 +25,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "or sparkling wine of your choice",
+        "category": "Other"
       }
     },
     {
       "raw": "1 ounce aperitif (such as Aperol or Campari)",
       "expected": {
-        "item": "aperitif (such as Aperol or Campari)",
+        "item": "aperitif",
         "measurements": [
           {
             "amount": "1",
@@ -43,7 +43,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Aperol or Campari",
         "category": "Other"
       }
     },

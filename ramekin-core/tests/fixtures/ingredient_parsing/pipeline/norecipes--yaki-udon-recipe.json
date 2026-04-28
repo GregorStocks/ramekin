@@ -147,14 +147,14 @@
     {
       "raw": "600 grams pre-cooked frozen udon ((defrosted *see note))",
       "expected": {
-        "item": "pre-cooked frozen udon (defrosted *see note)",
+        "item": "pre-cooked frozen udon",
         "measurements": [
           {
             "amount": "600",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "defrosted *see note",
         "category": "Frozen"
       }
     },

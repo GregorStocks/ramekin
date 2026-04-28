@@ -72,13 +72,9 @@
           {
             "amount": "2.5",
             "unit": "medium"
-          },
-          {
-            "amount": "2",
-            "unit": "large"
           }
         ],
-        "note": null,
+        "note": "about 2 1/2 medium or 2 large bananas",
         "category": "Produce"
       }
     },
@@ -103,14 +99,18 @@
     {
       "raw": "1 teaspoon baking soda (NOT baking powder; they aren&amp;#8217;t the same!)",
       "expected": {
-        "item": "baking soda (NOT baking powder; they aren’t the same!)",
+        "item": "baking soda",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "4.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "NOT baking powder; they aren’t the same!",
         "category": "Baking"
       }
     },
@@ -189,9 +189,9 @@
     {
       "raw": "Totally optional: &amp;frac12; cup mix-ins like chopped walnuts or pecans, chocolate chips, raisins, chopped dried fruit, fresh banana slices&amp;#8230;",
       "expected": {
-        "item": "Totally optional: 1/2 cup mix-ins like chopped walnuts or pecans, chocolate chips, raisins, chopped dried fruit",
+        "item": "Totally optional: 1/2 cup mix-ins like chopped walnuts or pecans, chocolate chips, raisins, chopped dried fruit, fresh banana slices…",
         "measurements": [],
-        "note": "fresh banana slices…",
+        "note": null,
         "category": "Baking"
       }
     }

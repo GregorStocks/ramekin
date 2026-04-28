@@ -37,7 +37,7 @@
     {
       "raw": "3/4 to 1 cup (145 to 190 grams) light brown sugar (depending on the level of sweetness you prefer, I always use the smaller amount)",
       "expected": {
-        "item": "light brown sugar (depending on the level of sweetness you prefer, I always use the smaller amount)",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "0.75 to 1",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "depending on the level of sweetness you prefer, I always use the smaller amount",
         "category": "Baking"
       }
     },
@@ -160,13 +160,8 @@
       "raw": "Up to 1/2 teaspoon (1) nutmeg",
       "expected": {
         "item": "Up to 1/2 teaspoon nutmeg",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": null
-          }
-        ],
-        "note": null,
+        "measurements": [],
+        "note": "1",
         "category": "Spices & Seasonings"
       }
     },

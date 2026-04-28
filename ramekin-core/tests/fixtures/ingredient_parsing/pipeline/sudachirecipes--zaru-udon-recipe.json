@@ -19,18 +19,14 @@
     {
       "raw": "5 tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "5",
             "unit": "tsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -87,9 +83,9 @@
     {
       "raw": "kizami nori (shredded nori) (optional garnish)",
       "expected": {
-        "item": "kizami nori (optional garnish)",
+        "item": "kizami nori",
         "measurements": [],
-        "note": "shredded nori",
+        "note": "shredded nori, optional garnish",
         "category": "Other"
       }
     },
@@ -128,14 +124,14 @@
     {
       "raw": "2 tbsp tempura flakes (tenkasu) (store-bought or homemade)",
       "expected": {
-        "item": "tempura flakes (tenkasu) (store-bought or homemade)",
+        "item": "tempura flakes",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "tenkasu, store-bought or homemade",
         "category": "Other"
       }
     },

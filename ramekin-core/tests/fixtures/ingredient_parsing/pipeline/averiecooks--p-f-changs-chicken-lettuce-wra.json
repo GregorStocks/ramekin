@@ -130,7 +130,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or to taste (sriracha may be substituted",
+        "note": "or to taste (sriracha may be substituted)",
         "category": "Condiments & Sauces"
       }
     },
@@ -151,14 +151,18 @@
     {
       "raw": "1 teaspoon ground ginger or 2 teaspoons freshly grated ginger (or to taste)",
       "expected": {
-        "item": "ground ginger or 2 teaspoons freshly grated ginger",
+        "item": "ground ginger",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.7",
+            "unit": "g"
           }
         ],
-        "note": "or to taste",
+        "note": "or 2 teaspoons freshly grated ginger (or to taste)",
         "category": "Spices & Seasonings"
       }
     },

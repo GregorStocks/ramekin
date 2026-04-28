@@ -365,7 +365,7 @@
     {
       "raw": "6 tablespoons (85 grams) softened butter, cut into 8 pieces.",
       "expected": {
-        "item": "softened butter, cut into 8 pieces.",
+        "item": "softened butter",
         "measurements": [
           {
             "amount": "6",
@@ -376,7 +376,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 8 pieces.",
         "category": "Dairy & Eggs"
       }
     }

@@ -5,14 +5,14 @@
     {
       "raw": "1 1/2 cups vanilla wafer cookie crumbs (from about 7 ounces cookies)",
       "expected": {
-        "item": "vanilla wafer cookie crumbs (from about 7 ounces cookies)",
+        "item": "vanilla wafer cookie crumbs",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from about 7 ounces cookies",
         "category": "Baking"
       }
     },
@@ -69,14 +69,18 @@
     {
       "raw": "6 tablespoons unsalted butter, cut into chunks",
       "expected": {
-        "item": "unsalted butter, cut into chunks",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Dairy & Eggs"
       }
     },
@@ -122,15 +126,11 @@
             "unit": "oz"
           },
           {
-            "amount": "70",
-            "unit": null
-          },
-          {
             "amount": "170",
             "unit": "g"
           }
         ],
-        "note": "finely chopped",
+        "note": "70-75%, finely chopped",
         "category": "Other"
       }
     },
@@ -155,14 +155,18 @@
     {
       "raw": "1/4 cup unsalted butter, cut into chunks",
       "expected": {
-        "item": "unsalted butter, cut into chunks",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Dairy & Eggs"
       }
     },
@@ -187,9 +191,9 @@
     {
       "raw": "flake sea salt (such as Maldon), for topping",
       "expected": {
-        "item": "flake sea salt (such as Maldon), for topping",
+        "item": "flake sea salt, for topping",
         "measurements": [],
-        "note": null,
+        "note": "such as Maldon",
         "category": "Spices & Seasonings"
       }
     }

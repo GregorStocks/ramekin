@@ -19,14 +19,14 @@
     {
       "raw": "1 tablespoon ground annatto (or achiote, see notes)",
       "expected": {
-        "item": "ground annatto (or achiote, see notes)",
+        "item": "ground annatto",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or achiote, see notes",
         "category": "Other"
       }
     },

@@ -41,14 +41,14 @@
     {
       "raw": "4  large eggs (separated)",
       "expected": {
-        "item": "eggs (separated)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "separated",
         "category": "Dairy & Eggs"
       }
     },
@@ -127,7 +127,7 @@
     {
       "raw": "3/4 cup (75g) almond or hazelnut flour ((see Note below))",
       "expected": {
-        "item": "almond or hazelnut flour (see Note below)",
+        "item": "almond or hazelnut flour",
         "measurements": [
           {
             "amount": "0.75",
@@ -138,7 +138,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note below",
         "category": "Nuts & Dried Fruit"
       }
     },

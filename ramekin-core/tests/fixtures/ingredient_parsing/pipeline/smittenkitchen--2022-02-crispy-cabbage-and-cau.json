@@ -5,7 +5,7 @@
     {
       "raw": "1/2 pound savoy cabbage (from half a small head)",
       "expected": {
-        "item": "savoy cabbage (from half a small head)",
+        "item": "savoy cabbage",
         "measurements": [
           {
             "amount": "0.5",
@@ -16,14 +16,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from half a small head",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 pound cauliflower (from half a small head)",
       "expected": {
-        "item": "cauliflower (from half a small head)",
+        "item": "cauliflower",
         "measurements": [
           {
             "amount": "0.5",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from half a small head",
         "category": "Produce"
       }
     },

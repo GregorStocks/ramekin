@@ -60,14 +60,14 @@
     {
       "raw": "1 large rib celery, cut into large pieces",
       "expected": {
-        "item": "rib celery, cut into large pieces",
+        "item": "rib celery",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into large pieces",
         "category": "Produce"
       }
     },
@@ -179,14 +179,14 @@
     {
       "raw": "2 tablespoons (although I use more) grated or shaved parmesan or grana padano cheese",
       "expected": {
-        "item": "(although I use more) grated or shaved parmesan or grana padano cheese",
+        "item": "grated or shaved parmesan or grana padano cheese",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "although I use more",
         "category": "Cheese"
       }
     },

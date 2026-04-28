@@ -55,14 +55,18 @@
     {
       "raw": "2 tbsp honey (or replace with Stevia for lower carb)",
       "expected": {
-        "item": "honey (or replace with Stevia for lower carb)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or replace with Stevia for lower carb",
         "category": "Baking"
       }
     },

@@ -183,84 +183,88 @@
     {
       "raw": "1 red bell pepper, cut into matchsticks",
       "expected": {
-        "item": "red bell pepper, cut into matchsticks",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into matchsticks",
         "category": "Produce"
       }
     },
     {
       "raw": "1 yellow bell pepper, cut into matchsticks",
       "expected": {
-        "item": "yellow bell pepper, cut into matchsticks",
+        "item": "yellow bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into matchsticks",
         "category": "Produce"
       }
     },
     {
       "raw": "1 medium carrot, cut into matchsticks",
       "expected": {
-        "item": "carrot, cut into matchsticks",
+        "item": "carrot",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into matchsticks",
         "category": "Produce"
       }
     },
     {
       "raw": "Half a large or two small seedless cucumbers, cut into matchsticks",
       "expected": {
-        "item": "a large or two small seedless cucumbers, cut into matchsticks",
+        "item": "a large or two small seedless cucumbers",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into matchsticks",
         "category": "Produce"
       }
     },
     {
       "raw": "1 cup firm or extra-firm tofu, cut into thicker matchsticks",
       "expected": {
-        "item": "firm or extra-firm tofu, cut into thicker matchsticks",
+        "item": "firm or extra-firm tofu",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut into thicker matchsticks",
         "category": "Produce"
       }
     },
     {
       "raw": "3 tablespoons sesame seeds, toasted (white, black, or a mix thereof)",
       "expected": {
-        "item": "sesame seeds, toasted (white, black, or a mix thereof)",
+        "item": "sesame seeds",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "white, black, or a mix thereof, toasted",
         "category": "Spices & Seasonings"
       }
     }

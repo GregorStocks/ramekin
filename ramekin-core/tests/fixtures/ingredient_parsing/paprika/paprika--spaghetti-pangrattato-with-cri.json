@@ -50,14 +50,14 @@
     {
       "raw": "1/2 cup fresh or stale coarse plain breadcrumbs (panko worked great here)",
       "expected": {
-        "item": "fresh or stale coarse plain breadcrumbs (panko worked great here)",
+        "item": "fresh or stale coarse plain breadcrumbs",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "panko worked great here",
         "category": "Bakery & Bread"
       }
     },
@@ -187,14 +187,14 @@
     {
       "raw": "2 teaspoons small capers, drained (rinsed if salted), chopped",
       "expected": {
-        "item": "small capers, drained, chopped",
+        "item": "small capers, drained",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": "rinsed if salted",
+        "note": "rinsed if salted, chopped",
         "category": "Canned Goods"
       }
     },

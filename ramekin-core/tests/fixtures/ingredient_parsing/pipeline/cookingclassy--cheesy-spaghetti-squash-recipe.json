@@ -5,7 +5,7 @@
     {
       "raw": "6 - 6.5 lbs spaghetti squash ((3 medium or 2 large), halved, scoop out seeds and membranes*)",
       "expected": {
-        "item": "spaghetti squash, halved, scoop out seeds and membranes*)",
+        "item": "spaghetti squash, halved, scoop out seeds and membranes",
         "measurements": [
           {
             "amount": "6-6.5",
@@ -78,7 +78,7 @@
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "about 4 cloves",
         "category": "Produce"
       }
     },
@@ -103,14 +103,14 @@
     {
       "raw": "1 cup parmesan cheese ((imported))",
       "expected": {
-        "item": "parmesan cheese (imported)",
+        "item": "parmesan cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "imported",
         "category": "Cheese"
       }
     },
@@ -131,14 +131,18 @@
     {
       "raw": "1 1/4 cups half and half, (then a little more if needed)",
       "expected": {
-        "item": "half and half, (then a little more if needed)",
+        "item": "half and half",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "302",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "then a little more if needed",
         "category": "Dairy & Eggs"
       }
     },
@@ -161,7 +165,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "for garnish (optional",
+        "note": "for garnish (optional)",
         "category": "Spices & Seasonings"
       }
     }

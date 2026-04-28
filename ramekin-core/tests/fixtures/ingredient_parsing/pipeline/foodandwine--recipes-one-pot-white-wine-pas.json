@@ -59,14 +59,14 @@
     {
       "raw": "2 medium leeks, trimmed and thinly sliced (white and light green parts only), about 1 1 /2 cups",
       "expected": {
-        "item": "leeks, trimmed and thinly sliced (white and light green parts only), about 1 1 /2 cups",
+        "item": "leeks, trimmed and thinly sliced, about 1 1 /2 cups",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "white and light green parts only",
         "category": "Produce"
       }
     },
@@ -197,7 +197,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for serving",
+        "note": "about 2 ounces, plus more for serving",
         "category": "Cheese"
       }
     },
@@ -232,14 +232,14 @@
     {
       "raw": "1 teaspoon grated lemon zest plus 1 1/2 teaspoons fresh juice (from 1 lemon)",
       "expected": {
-        "item": "grated lemon zest plus 1 1/2 teaspoons fresh juice (from 1 lemon)",
+        "item": "grated lemon zest plus 1 1/2 teaspoons fresh juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "from 1 lemon",
         "category": "Beverages"
       }
     },

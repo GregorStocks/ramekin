@@ -5,7 +5,7 @@
     {
       "raw": "1 pound lean ground chicken, (I like to use 94% lean)",
       "expected": {
-        "item": "lean ground chicken, (I like to use 94% lean)",
+        "item": "lean ground chicken",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I like to use 94% lean",
         "category": "Meat & Seafood"
       }
     },
@@ -78,14 +78,14 @@
     {
       "raw": "⅓ cup chopped fresh herbs, (like parsley, basil and chives)",
       "expected": {
-        "item": "chopped fresh herbs, (like parsley, basil and chives)",
+        "item": "chopped fresh herbs",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "like parsley, basil and chives",
         "category": "Produce"
       }
     },
@@ -170,14 +170,14 @@
     {
       "raw": "¼ cup vodka, (I like Tito’s)",
       "expected": {
-        "item": "vodka, (I like Tito’s)",
+        "item": "vodka",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I like Tito’s",
         "category": "Beverages"
       }
     },
@@ -252,46 +252,46 @@
     {
       "raw": "¼ cup shaved parmesan cheese, (for topping)",
       "expected": {
-        "item": "shaved parmesan cheese, (for topping)",
+        "item": "shaved parmesan cheese",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "for topping",
         "category": "Cheese"
       }
     },
     {
       "raw": "crushed red pepper, (for topping)",
       "expected": {
-        "item": "crushed red pepper, (for topping)",
+        "item": "crushed red pepper",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "fresh basil, (for topping)",
       "expected": {
-        "item": "fresh basil, (for topping)",
+        "item": "fresh basil",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     },
     {
       "raw": "1  baguette, (cut into rounds)",
       "expected": {
-        "item": "baguette, (cut into rounds)",
+        "item": "baguette",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into rounds",
         "category": "Bakery & Bread"
       }
     },

@@ -27,7 +27,7 @@
     {
       "raw": "1 1/2 pounds (680 g) cremini, button, or portobello mushrooms, stemmed and cut into 1/4-inch thick slices",
       "expected": {
-        "item": "cremini, button, or portobello mushrooms, stemmed and cut into 1/4-inch thick slices",
+        "item": "cremini, button, or portobello mushrooms",
         "measurements": [
           {
             "amount": "1.5",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "stemmed and cut into 1/4-inch thick slices",
         "category": "Produce"
       }
     },
@@ -60,7 +60,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely chopped",
+        "note": "about 1 pound; 454 g, finely chopped",
         "category": "Produce"
       }
     },

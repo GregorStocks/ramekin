@@ -38,13 +38,9 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": null,
-            "unit": "small"
           }
         ],
-        "note": null,
+        "note": "small fish eggs",
         "category": "Other"
       }
     },
@@ -69,15 +65,15 @@
     {
       "raw": "1 tablespoon ikura (big fish eggs)",
       "expected": {
-        "item": "ikura (big fish eggs)",
+        "item": "ikura",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Meat & Seafood"
+        "note": "big fish eggs",
+        "category": "Other"
       }
     },
     {

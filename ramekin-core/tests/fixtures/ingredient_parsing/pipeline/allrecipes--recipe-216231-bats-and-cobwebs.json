@@ -5,7 +5,7 @@
     {
       "raw": "1 (8 ounce) package farfalle (bow tie) pasta",
       "expected": {
-        "item": "farfalle (bow tie) pasta",
+        "item": "farfalle pasta",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "bow tie",
         "category": "Pasta & Rice"
       }
     },
@@ -81,7 +81,7 @@
     {
       "raw": "8 ounces mozzarella cheese, cut into 1/2 inch cubes",
       "expected": {
-        "item": "mozzarella cheese, cut into 1/2 inch cubes",
+        "item": "mozzarella cheese",
         "measurements": [
           {
             "amount": "8",
@@ -92,7 +92,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2 inch cubes",
         "category": "Cheese"
       }
     },

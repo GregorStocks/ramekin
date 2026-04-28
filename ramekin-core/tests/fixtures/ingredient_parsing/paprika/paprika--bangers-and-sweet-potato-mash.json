@@ -220,16 +220,20 @@
     {
       "raw": "1/2 cup milk (or coconut milk)",
       "expected": {
-        "item": "milk (or coconut milk)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or coconut milk",
         "section": "Sweet Potato Mash",
-        "category": "Canned Goods"
+        "category": "Dairy & Eggs"
       }
     },
     {

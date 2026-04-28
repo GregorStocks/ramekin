@@ -181,14 +181,14 @@
     {
       "raw": "1 cup dark chocolate chips (I used Nestle Special Dark)",
       "expected": {
-        "item": "dark chocolate chips (I used Nestle Special Dark)",
+        "item": "dark chocolate chips",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used Nestle Special Dark",
         "category": "Baking"
       }
     },

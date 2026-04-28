@@ -110,14 +110,14 @@
     {
       "raw": "1 to 2  of your favorite meatballs, (or as many as you want, obvi)",
       "expected": {
-        "item": "your favorite meatballs, (or as many as you want, obvi)",
+        "item": "your favorite meatballs",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or as many as you want, obvi",
         "category": "Meat & Seafood"
       }
     },

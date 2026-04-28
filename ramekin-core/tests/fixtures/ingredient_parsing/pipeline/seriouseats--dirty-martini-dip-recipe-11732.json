@@ -20,7 +20,7 @@
             "unit": "ml"
           }
         ],
-        "note": "plus 5 tablespoons brine from jar, divided (see notes)",
+        "note": "see notes, plus 5 tablespoons brine from jar, divided",
         "category": "Canned Goods"
       }
     },
@@ -53,14 +53,10 @@
           },
           {
             "amount": "3",
-            "unit": "inch each"
-          },
-          {
-            "amount": "3",
             "unit": "g each"
           }
         ],
-        "note": null,
+        "note": "3-inch long; 3 g each",
         "category": "Produce"
       }
     },
@@ -139,7 +135,7 @@
     {
       "raw": "3 ounces blue cheese, preferably gorgonzola dolce, crumbled (about 3/4 cup crumbled; see notes)",
       "expected": {
-        "item": "blue cheese, preferably gorgonzola dolce, crumbled",
+        "item": "blue cheese, preferably gorgonzola dolce",
         "measurements": [
           {
             "amount": "3",
@@ -150,7 +146,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 3/4 cup crumbled; see notes",
+        "note": "about 3/4 cup crumbled; see notes, crumbled",
         "category": "Cheese"
       }
     },

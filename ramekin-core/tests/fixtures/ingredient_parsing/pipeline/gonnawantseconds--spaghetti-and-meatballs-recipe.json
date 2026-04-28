@@ -69,14 +69,14 @@
     {
       "raw": "4 slices hearty white sandwich bread,  (torn into small pieces)",
       "expected": {
-        "item": "hearty white sandwich bread,  (torn into small pieces)",
+        "item": "hearty white sandwich bread",
         "measurements": [
           {
             "amount": "4",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "torn into small pieces",
         "category": "Bakery & Bread"
       }
     },
@@ -172,15 +172,11 @@
             "unit": "lb"
           },
           {
-            "amount": "4",
-            "unit": null
-          },
-          {
             "amount": "1134",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "80/20",
         "category": "Meat & Seafood"
       }
     },
@@ -274,17 +270,9 @@
           {
             "amount": "2",
             "unit": "can"
-          },
-          {
-            "amount": "28",
-            "unit": "oz"
-          },
-          {
-            "amount": "794",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "28-ounce",
         "category": "Canned Goods"
       }
     },

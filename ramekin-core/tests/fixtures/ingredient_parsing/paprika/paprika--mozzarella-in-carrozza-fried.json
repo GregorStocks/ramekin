@@ -42,14 +42,14 @@
     {
       "raw": "1 cup bread crumbs (preferably panko)",
       "expected": {
-        "item": "bread crumbs (preferably panko)",
+        "item": "bread crumbs",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "preferably panko",
         "category": "Bakery & Bread"
       }
     },
@@ -70,7 +70,7 @@
     {
       "raw": "1 pound low-moisture mozzarella (not fresh mozzarella), chilled and cut into 1/4-inch slices",
       "expected": {
-        "item": "low-moisture mozzarella, chilled and cut into 1/4-inch slices",
+        "item": "low-moisture mozzarella",
         "measurements": [
           {
             "amount": "1",
@@ -81,7 +81,7 @@
             "unit": "g"
           }
         ],
-        "note": "not fresh mozzarella",
+        "note": "not fresh mozzarella, chilled and cut into 1/4-inch slices",
         "category": "Cheese"
       }
     },

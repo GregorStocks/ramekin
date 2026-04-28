@@ -19,14 +19,14 @@
     {
       "raw": "½ Tbsp potato starch or cornstarch ((to clean the shrimp))",
       "expected": {
-        "item": "potato starch or cornstarch (to clean the shrimp)",
+        "item": "potato starch or cornstarch",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "to clean the shrimp",
         "category": "Baking"
       }
     },
@@ -102,27 +102,23 @@
           {
             "amount": "2",
             "unit": "large"
-          },
-          {
-            "amount": "50",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "50 g each w/o shell",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1  Japanese or Persian cucumber ((I use Persian cucumber here))",
       "expected": {
-        "item": "Japanese or Persian cucumber (I use Persian cucumber here)",
+        "item": "Japanese or Persian cucumber",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "I use Persian cucumber here",
         "category": "Produce"
       }
     },
@@ -143,14 +139,18 @@
     {
       "raw": "1 tsp milk ((or heavy cream))",
       "expected": {
-        "item": "milk (or heavy cream)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or heavy cream",
         "category": "Dairy & Eggs"
       }
     },

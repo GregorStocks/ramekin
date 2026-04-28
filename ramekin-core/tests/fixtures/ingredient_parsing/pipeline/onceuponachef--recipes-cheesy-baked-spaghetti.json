@@ -14,9 +14,13 @@
           {
             "amount": "2.5",
             "unit": "lb each"
+          },
+          {
+            "amount": "1.1",
+            "unit": "kg each"
           }
         ],
-        "note": null,
+        "note": "about 2 1/2 lbs/1.1 kg each",
         "category": "Pasta & Rice"
       }
     },
@@ -59,14 +63,14 @@
     {
       "raw": "1¾ cups jarred marinara sauce, (best quality such as Rao's or Victoria)",
       "expected": {
-        "item": "jarred marinara sauce, (best quality such as Rao's or Victoria)",
+        "item": "jarred marinara sauce",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "best quality such as Rao's or Victoria",
         "category": "Condiments & Sauces"
       }
     },
@@ -80,7 +84,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "plus more for serving (or 3/4 teaspoon dried",
+        "note": "plus more for serving (or 3/4 teaspoon dried)",
         "category": "Produce"
       }
     },

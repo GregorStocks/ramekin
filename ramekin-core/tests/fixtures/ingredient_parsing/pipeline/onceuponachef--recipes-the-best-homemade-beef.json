@@ -5,14 +5,14 @@
     {
       "raw": "One 3-pound  eye of round roast (see note), trimmed of fat and silver skin",
       "expected": {
-        "item": "3-pound  eye of round roast (see note)",
+        "item": "3-pound  eye of round roast",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "trimmed of fat and silver skin",
+        "note": "see note, trimmed of fat and silver skin",
         "category": "Meat & Seafood"
       }
     },
@@ -91,14 +91,14 @@
     {
       "raw": "1 teaspoon unseasoned meat tenderizer (see note)",
       "expected": {
-        "item": "unseasoned meat tenderizer (see note)",
+        "item": "unseasoned meat tenderizer",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Meat & Seafood"
       }
     },

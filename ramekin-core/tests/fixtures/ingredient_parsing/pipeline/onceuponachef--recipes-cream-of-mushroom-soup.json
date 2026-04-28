@@ -23,14 +23,14 @@
     {
       "raw": "1 cup chopped shallots (from 4 medium shallots)",
       "expected": {
-        "item": "chopped shallots (from 4 medium shallots)",
+        "item": "chopped shallots",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 4 medium shallots",
         "category": "Produce"
       }
     },

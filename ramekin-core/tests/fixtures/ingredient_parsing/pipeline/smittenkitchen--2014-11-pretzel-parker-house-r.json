@@ -126,11 +126,11 @@
             "unit": "tsp"
           },
           {
-            "amount": "7",
+            "amount": "5",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "half a 1/4-ounce or 7-gram packet",
         "category": "Baking"
       }
     },
@@ -222,14 +222,14 @@
     {
       "raw": "1 1/2 teaspoons baking soda or food-grade lye (see Notes below)",
       "expected": {
-        "item": "baking soda or food-grade lye (see Notes below)",
+        "item": "baking soda or food-grade lye",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "see Notes below",
         "category": "Baking"
       }
     },

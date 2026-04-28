@@ -19,14 +19,18 @@
     {
       "raw": "1 ¼ cup granulated sugar (preferably organic)",
       "expected": {
-        "item": "granulated sugar (preferably organic)",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably organic",
         "category": "Baking"
       }
     },
@@ -51,14 +55,14 @@
     {
       "raw": "1 whole vanilla bean (split and seeds removed)",
       "expected": {
-        "item": "whole vanilla bean (split and seeds removed)",
+        "item": "whole vanilla bean",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "split and seeds removed",
         "category": "Spices & Seasonings"
       }
     },

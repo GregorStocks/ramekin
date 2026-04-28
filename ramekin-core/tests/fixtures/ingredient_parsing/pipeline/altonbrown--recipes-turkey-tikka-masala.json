@@ -80,13 +80,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "4",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "4-inch",
         "category": "Spices & Seasonings"
       }
     },
@@ -139,14 +135,14 @@
     {
       "raw": "1 cup plain whole milk yogurt (not Greek-style)",
       "expected": {
-        "item": "plain whole milk yogurt (not Greek-style)",
+        "item": "plain whole milk yogurt",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "not Greek-style",
         "category": "Dairy & Eggs"
       }
     },
@@ -264,17 +260,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "28",
-            "unit": "oz"
-          },
-          {
-            "amount": "794",
-            "unit": "g"
           }
         ],
-        "note": "drained and diced",
+        "note": "28-ounce, drained and diced",
         "category": "Produce"
       }
     },
@@ -286,17 +274,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "13.5",
-            "unit": "oz"
-          },
-          {
-            "amount": "383",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "13.5-ounce",
         "category": "Canned Goods"
       }
     },
@@ -321,9 +301,9 @@
     {
       "raw": "Fresh mint and cilantro, for garnishing",
       "expected": {
-        "item": "Fresh mint and cilantro",
+        "item": "Fresh mint and cilantro, for garnishing",
         "measurements": [],
-        "note": "for garnishing",
+        "note": null,
         "category": "Produce"
       }
     }

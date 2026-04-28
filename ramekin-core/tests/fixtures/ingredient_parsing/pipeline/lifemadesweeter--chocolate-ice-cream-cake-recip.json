@@ -33,21 +33,21 @@
     {
       "raw": "3 cups of chocolate crispy rice cereal (like Cocoa Rice Krispies, Cocoa Pebbles or Cap'N'Crunch)",
       "expected": {
-        "item": "chocolate crispy rice cereal (like Cocoa Rice Krispies, Cocoa Pebbles or Cap'N'Crunch)",
+        "item": "chocolate crispy rice cereal",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "like Cocoa Rice Krispies, Cocoa Pebbles or Cap'N'Crunch",
         "category": "Snacks"
       }
     },
     {
       "raw": "1 quart or 5 cups of no churn vanilla ice cream ((or use your favorite brand), softened)",
       "expected": {
-        "item": "no churn vanilla ice cream (or use your favorite brand)",
+        "item": "no churn vanilla ice cream",
         "measurements": [
           {
             "amount": "1",
@@ -58,7 +58,7 @@
             "unit": "cup"
           }
         ],
-        "note": "softened)",
+        "note": "or use your favorite brand, softened",
         "category": "Frozen"
       }
     }

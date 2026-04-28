@@ -5,28 +5,28 @@
     {
       "raw": "8 larger or to 10 smaller firm, fresh Kirby (pickling) cucumbers",
       "expected": {
-        "item": "larger or to 10 smaller firm",
+        "item": "larger or to 10 smaller firm, fresh Kirby cucumbers",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": "fresh Kirby (pickling) cucumbers",
-        "category": "Other"
+        "note": "pickling",
+        "category": "Produce"
       }
     },
     {
       "raw": "3 teaspoons kosher, coarse or pickling salt (if using a featherweight brand such as Diamond, use a little more)",
       "expected": {
-        "item": "kosher, coarse or pickling salt (if using a featherweight brand such as Diamond, use a little more)",
+        "item": "kosher, coarse or pickling salt",
         "measurements": [
           {
             "amount": "3",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "if using a featherweight brand such as Diamond, use a little more",
         "category": "Spices & Seasonings"
       }
     },

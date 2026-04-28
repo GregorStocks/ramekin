@@ -5,14 +5,14 @@
     {
       "raw": "150 g bell pepper (I used green piman and red bell pepper)",
       "expected": {
-        "item": "bell pepper (I used green piman and red bell pepper)",
+        "item": "bell pepper",
         "measurements": [
           {
             "amount": "150",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used green piman and red bell pepper",
         "category": "Produce"
       }
     },
@@ -61,157 +61,157 @@
     {
       "raw": "250 g boneless pork chop (or beef/chicken)",
       "expected": {
-        "item": "boneless pork chop (or beef/chicken)",
+        "item": "boneless pork chop",
         "measurements": [
           {
             "amount": "250",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or beef/chicken",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1½ tbsp cooking oil (neutral, high-heat, e.g., canola or rice bran)",
       "expected": {
-        "item": "cooking oil (neutral, high-heat, e.g., canola or rice bran)",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Pasta & Rice"
+        "note": "neutral, high-heat, e.g., canola or rice bran",
+        "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "½ tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.7",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "toasted sesame oil (a few drops to finish)",
       "expected": {
-        "item": "toasted sesame oil (a few drops to finish)",
+        "item": "toasted sesame oil",
         "measurements": [],
-        "note": null,
+        "note": "a few drops to finish",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "¼ tsp salt (fine)",
       "expected": {
-        "item": "salt (fine)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "fine",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 pinch ground white pepper (or black pepper)",
       "expected": {
-        "item": "ground white pepper (or black pepper)",
+        "item": "ground white pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "or black pepper",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "2 tsp sake (or dry sherry, white wine)",
       "expected": {
-        "item": "sake (or dry sherry, white wine)",
+        "item": "sake",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or dry sherry, white wine",
         "category": "Beverages"
       }
     },
     {
       "raw": "½ tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.7",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1  egg white (for velveting)",
       "expected": {
-        "item": "egg white (for velveting)",
+        "item": "egg white",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "for velveting",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "2 tbsp potato starch (katakuriko) (or cornstarch)",
       "expected": {
-        "item": "potato starch (katakuriko) (or cornstarch)",
+        "item": "potato starch",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "katakuriko, or cornstarch",
+        "category": "Produce"
       }
     },
     {
       "raw": "1 tsp cooking oil (to seal marinade)",
       "expected": {
-        "item": "cooking oil (to seal marinade)",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "to seal marinade",
         "category": "Oils & Vinegars"
       }
     },
@@ -236,18 +236,14 @@
     {
       "raw": "2 tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "11",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -304,15 +300,15 @@
     {
       "raw": "¼ tsp potato starch (katakuriko) (or cornstarch)",
       "expected": {
-        "item": "potato starch (katakuriko) (or cornstarch)",
+        "item": "potato starch",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "katakuriko, or cornstarch",
+        "category": "Produce"
       }
     }
   ]

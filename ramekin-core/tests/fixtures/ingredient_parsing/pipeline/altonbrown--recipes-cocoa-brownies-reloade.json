@@ -41,14 +41,18 @@
     {
       "raw": "2 cups natural cocoa powder ((not Dutch-process))",
       "expected": {
-        "item": "natural cocoa powder (not Dutch-process)",
+        "item": "natural cocoa powder",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "172",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not Dutch-process",
         "category": "Baking"
       }
     },

@@ -19,15 +19,15 @@
     {
       "raw": "1 cup corn ((steamed or canned))",
       "expected": {
-        "item": "corn (steamed or canned)",
+        "item": "corn",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "steamed or canned",
+        "category": "Other"
       }
     },
     {
@@ -110,13 +110,9 @@
           {
             "amount": "7",
             "unit": "large"
-          },
-          {
-            "amount": "8-9",
-            "unit": "inch diameter"
           }
         ],
-        "note": null,
+        "note": "8-9 inch diameter",
         "category": "Bakery & Bread"
       }
     },
@@ -132,7 +128,7 @@
     {
       "raw": "4 oz grated cheese (cheddar, colby, gouda, mozz)",
       "expected": {
-        "item": "grated cheese (cheddar, colby, gouda, mozz)",
+        "item": "grated cheese",
         "measurements": [
           {
             "amount": "4",
@@ -143,7 +139,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cheddar, colby, gouda, mozz",
         "category": "Cheese"
       }
     },
@@ -196,14 +192,14 @@
     {
       "raw": "2-4 TBSP Greek yogurt or sour cream (for topping guac)",
       "expected": {
-        "item": "Greek yogurt or sour cream (for topping guac)",
+        "item": "Greek yogurt or sour cream",
         "measurements": [
           {
             "amount": "2-4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "for topping guac",
         "category": "Dairy & Eggs"
       }
     },

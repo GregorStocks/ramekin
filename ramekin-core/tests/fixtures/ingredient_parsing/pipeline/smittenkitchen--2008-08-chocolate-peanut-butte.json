@@ -41,7 +41,7 @@
     {
       "raw": "3/4 cup (about 65 grams) unsweetened cocoa powder, preferably Dutch process",
       "expected": {
-        "item": "unsweetened cocoa powder, preferably Dutch process",
+        "item": "unsweetened cocoa powder",
         "measurements": [
           {
             "amount": "0.75",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 65 grams, preferably Dutch process",
         "category": "Baking"
       }
     },
@@ -265,7 +265,7 @@
     {
       "raw": "2/3 cup (170 grams) smooth peanut butter, preferably a commercial brand (because oil doesn’t separate out)",
       "expected": {
-        "item": "smooth peanut butter, preferably a commercial brand (because oil doesn’t separate out)",
+        "item": "smooth peanut butter",
         "measurements": [
           {
             "amount": "0.67",
@@ -276,7 +276,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "because oil doesn’t separate out, preferably a commercial brand",
         "category": "Condiments & Sauces"
       }
     },

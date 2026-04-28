@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "or prawns, peeled and deveined (if frozen, be sure to thaw first",
+        "note": "or prawns, peeled and deveined (if frozen, be sure to thaw first)",
         "category": "Meat & Seafood"
       }
     },
@@ -138,14 +138,18 @@
     {
       "raw": "1 tbsp butter (I prefer to use ghee clarified butter)",
       "expected": {
-        "item": "butter (I prefer to use ghee clarified butter)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I prefer to use ghee clarified butter",
         "category": "Dairy & Eggs"
       }
     },

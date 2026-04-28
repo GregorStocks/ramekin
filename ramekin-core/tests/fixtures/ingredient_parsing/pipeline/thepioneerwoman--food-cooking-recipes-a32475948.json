@@ -41,14 +41,14 @@
     {
       "raw": "1 c. chopped mixed fresh herbs (basil, mint, cilantro and/or parsley)",
       "expected": {
-        "item": "chopped mixed fresh herbs (basil, mint, cilantro and/or parsley)",
+        "item": "chopped mixed fresh herbs",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "basil, mint, cilantro and/or parsley",
         "category": "Produce"
       }
     },

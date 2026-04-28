@@ -74,29 +74,29 @@
             "unit": "tsp"
           },
           {
-            "amount": null,
-            "unit": "can"
-          },
-          {
             "amount": "11",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "can swap corn syrup or honey",
         "category": "Baking"
       }
     },
     {
       "raw": "1/4 teaspoon salt (or a heaping 1/4 teaspoon flaky sea salt)",
       "expected": {
-        "item": "salt (or a heaping 1/4 teaspoon flaky sea salt)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or a heaping 1/4 teaspoon flaky sea salt",
         "category": "Spices & Seasonings"
       }
     },

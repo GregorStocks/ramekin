@@ -5,14 +5,14 @@
     {
       "raw": "4 scoops vanilla ice cream (or hazelnut)",
       "expected": {
-        "item": "scoops vanilla ice cream (or hazelnut)",
+        "item": "scoops vanilla ice cream",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or hazelnut",
         "category": "Frozen"
       }
     },

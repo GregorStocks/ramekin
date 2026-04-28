@@ -41,14 +41,18 @@
     {
       "raw": "½ cup molasses ((unsulphured or light- not blackstrap))",
       "expected": {
-        "item": "molasses (unsulphured or light- not blackstrap)",
+        "item": "molasses",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "168",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsulphured or light- not blackstrap",
         "category": "Baking"
       }
     },

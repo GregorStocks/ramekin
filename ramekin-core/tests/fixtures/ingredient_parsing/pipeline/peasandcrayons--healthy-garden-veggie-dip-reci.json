@@ -125,14 +125,14 @@
     {
       "raw": "1/4 cup finely grated carrot ((approx. 1/2 a carrot))",
       "expected": {
-        "item": "finely grated carrot (approx. 1/2 a carrot)",
+        "item": "finely grated carrot",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "approx. 1/2 a carrot",
         "category": "Produce"
       }
     },

@@ -64,28 +64,32 @@
     {
       "raw": "1/2 cup plain yogurt (not Greek)",
       "expected": {
-        "item": "plain yogurt (not Greek)",
+        "item": "plain yogurt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not Greek",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1  bunch scallions, trimmed (including the root end and just 1/2 inch off the green tops), slice thinly on a sharp angle, soak in ice water for 20 minutes, drain well",
       "expected": {
-        "item": "scallions, trimmed (including the root end and just 1/2 inch off the green tops), slice thinly on a sharp angle, soak in ice water for 20 minutes, drain well",
+        "item": "scallions, trimmed, slice thinly on a sharp angle, soak in ice water for 20 minutes, drain well",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "including the root end and just 1/2 inch off the green tops",
         "category": "Produce"
       }
     },
@@ -127,7 +131,7 @@
             "unit": null
           }
         ],
-        "note": "fresh or dried (from unsprayed roses)",
+        "note": "from unsprayed roses, fresh or dried",
         "category": "Other"
       }
     },

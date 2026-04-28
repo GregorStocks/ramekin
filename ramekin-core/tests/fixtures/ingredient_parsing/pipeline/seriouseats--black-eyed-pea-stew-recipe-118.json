@@ -64,7 +64,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 5 ounces; 142 g",
         "category": "Produce"
       }
     },
@@ -104,7 +104,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided; for table salt use half as much by volume or the same weight",
+        "note": "about 8 g, divided; for table salt use half as much by volume or the same weight",
         "category": "Spices & Seasonings"
       }
     },
@@ -182,15 +182,11 @@
             "unit": "can"
           },
           {
-            "amount": "15",
-            "unit": "oz"
-          },
-          {
             "amount": "425",
             "unit": "g"
           }
         ],
-        "note": "drained",
+        "note": "15-ounce; 425 g, drained",
         "category": "Canned Goods"
       }
     },
@@ -204,15 +200,11 @@
             "unit": "can"
           },
           {
-            "amount": "15",
-            "unit": "oz each"
-          },
-          {
             "amount": "425",
             "unit": "g each"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "15-ounce; 425 g each, drained and rinsed",
         "category": "Produce"
       }
     },
@@ -295,7 +287,7 @@
     {
       "raw": "1/4 cup (60 ml) plain whole-milk strained (Greek-style) yogurt",
       "expected": {
-        "item": "plain whole-milk strained (Greek-style) yogurt",
+        "item": "plain whole-milk strained yogurt",
         "measurements": [
           {
             "amount": "0.25",
@@ -306,7 +298,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "Greek-style",
         "category": "Dairy & Eggs"
       }
     }

@@ -10,13 +10,9 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "0.67",
-            "unit": null
           }
         ],
-        "note": "drained",
+        "note": "about 2/3 of a 15-ounce can, drained",
         "category": "Canned Goods"
       }
     },
@@ -30,7 +26,7 @@
             "unit": "large"
           }
         ],
-        "note": "finely diced (I used a mix of colors because we keep them around for the kid)",
+        "note": "I used a mix of colors because we keep them around for the kid, finely diced",
         "category": "Produce"
       }
     },
@@ -83,14 +79,14 @@
     {
       "raw": "2 tablespoons freshly squeezed lime juice (from about 1 lime)",
       "expected": {
-        "item": "freshly squeezed lime juice (from about 1 lime)",
+        "item": "freshly squeezed lime juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from about 1 lime",
         "category": "Beverages"
       }
     },
@@ -171,27 +167,23 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "2",
-            "unit": "small"
           }
         ],
-        "note": null,
+        "note": "from about half a long English or 2 small Persian cukes",
         "category": "Produce"
       }
     },
     {
       "raw": "1 cup finely diced radishes (from about 4 large red ones)",
       "expected": {
-        "item": "finely diced radishes (from about 4 large red ones)",
+        "item": "finely diced radishes",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from about 4 large red ones",
         "category": "Produce"
       }
     },
@@ -230,14 +222,14 @@
     {
       "raw": "2 teaspoons white miso (shiromiso, which is more mild/less salty)",
       "expected": {
-        "item": "white miso (shiromiso, which is more mild/less salty)",
+        "item": "white miso",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "shiromiso, which is more mild/less salty",
         "category": "Condiments & Sauces"
       }
     },

@@ -23,14 +23,18 @@
     {
       "raw": "2 tablespoons soy sauce (low sodium)",
       "expected": {
-        "item": "soy sauce (low sodium)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Condiments & Sauces"
       }
     },
@@ -119,7 +123,7 @@
     {
       "raw": "1 pound chicken breasts (skinless and boneless, cut into small pieces)",
       "expected": {
-        "item": "chicken breasts (skinless and boneless, cut into small pieces)",
+        "item": "chicken breasts",
         "measurements": [
           {
             "amount": "1",
@@ -130,7 +134,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skinless and boneless, cut into small pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -279,7 +283,7 @@
     {
       "raw": "16 ounce lo mein noodles (or any other Asian style noodles)",
       "expected": {
-        "item": "lo mein noodles (or any other Asian style noodles)",
+        "item": "lo mein noodles",
         "measurements": [
           {
             "amount": "16",
@@ -290,7 +294,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or any other Asian style noodles",
         "category": "Pasta & Rice"
       }
     },

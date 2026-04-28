@@ -81,14 +81,18 @@
     {
       "raw": "1/4 teaspoon table salt (see Note)",
       "expected": {
-        "item": "table salt (see Note)",
+        "item": "table salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.5",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Spices & Seasonings"
       }
     },
@@ -113,14 +117,14 @@
     {
       "raw": "1 to 2 teaspoons ground cinnamon (Bill calls for 2 but I preferred 1, so that it didn’t dominate)",
       "expected": {
-        "item": "ground cinnamon (Bill calls for 2 but I preferred 1, so that it didn’t dominate)",
+        "item": "ground cinnamon",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "Bill calls for 2 but I preferred 1, so that it didn’t dominate",
         "category": "Spices & Seasonings"
       }
     },
@@ -160,14 +164,14 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 1 1/2 cups",
         "category": "Produce"
       }
     },
     {
       "raw": "6 tablespoons (85 grams) unsalted butter, melted or melted and browned, if desired",
       "expected": {
-        "item": "unsalted butter, melted or melted and browned, if desired",
+        "item": "unsalted butter, melted or melted and browned",
         "measurements": [
           {
             "amount": "6",
@@ -178,7 +182,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "if desired",
         "category": "Dairy & Eggs"
       }
     },

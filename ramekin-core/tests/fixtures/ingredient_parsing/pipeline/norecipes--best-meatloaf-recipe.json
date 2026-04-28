@@ -61,14 +61,14 @@
     {
       "raw": "1/2 cup panko ((Japanese bread crumbs))",
       "expected": {
-        "item": "panko (Japanese bread crumbs)",
+        "item": "panko",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "Japanese bread crumbs",
         "category": "Bakery & Bread"
       }
     },
@@ -193,15 +193,15 @@
     {
       "raw": "1 teaspoon pimentón ((smoked paprika))",
       "expected": {
-        "item": "pimentón (smoked paprika)",
+        "item": "pimentón",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "smoked paprika",
+        "category": "Other"
       }
     },
     {

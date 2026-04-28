@@ -5,7 +5,7 @@
     {
       "raw": "8 oz white chocolate (broken into small pieces)",
       "expected": {
-        "item": "white chocolate (broken into small pieces)",
+        "item": "white chocolate",
         "measurements": [
           {
             "amount": "8",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "broken into small pieces",
         "category": "Other"
       }
     },
@@ -122,13 +122,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "2",
-            "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "split and scraped OR 2 tsp vanilla extract",
         "category": "Spices & Seasonings"
       }
     },
@@ -140,13 +136,9 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "4",
-            "unit": "cardamom pods"
           }
         ],
-        "note": null,
+        "note": "OR 4 cardamom pods",
         "category": "Spices & Seasonings"
       }
     },

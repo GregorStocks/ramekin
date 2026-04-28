@@ -41,7 +41,7 @@
     {
       "raw": "2 pounds portobello mushrooms, in 1/4-inch slices (save the stems for another use) (you can use cremini instead, as well)",
       "expected": {
-        "item": "portobello mushrooms, in 1/4-inch slices (save the stems for another use) (you can use cremini instead, as well)",
+        "item": "portobello mushrooms, in 1/4-inch slices",
         "measurements": [
           {
             "amount": "2",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "save the stems for another use, you can use cremini instead, as well",
         "category": "Produce"
       }
     },
@@ -115,14 +115,14 @@
     {
       "raw": "2 cups beef or vegetable broth (beef broth is traditional but vegetable to make it vegetarian; it works with either)",
       "expected": {
-        "item": "beef or vegetable broth (beef broth is traditional but vegetable to make it vegetarian; it works with either)",
+        "item": "beef or vegetable broth",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "beef broth is traditional but vegetable to make it vegetarian; it works with either",
         "category": "Canned Goods"
       }
     },
@@ -179,14 +179,14 @@
     {
       "raw": "1 cup pearl onions, peeled (thawed if frozen)",
       "expected": {
-        "item": "pearl onions, peeled",
+        "item": "pearl onions",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "thawed if frozen",
+        "note": "thawed if frozen, peeled",
         "category": "Produce"
       }
     },
@@ -202,9 +202,9 @@
     {
       "raw": "Sour cream and chopped chives or parsley, for garnish (optional)",
       "expected": {
-        "item": "Sour cream and chopped chives or parsley, for garnish",
+        "item": "Sour cream and chopped chives or parsley",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Dairy & Eggs"
       }
     }

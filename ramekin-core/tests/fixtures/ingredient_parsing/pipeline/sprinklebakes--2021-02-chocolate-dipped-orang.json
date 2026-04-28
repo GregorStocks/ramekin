@@ -73,15 +73,19 @@
     {
       "raw": "1/8 teaspoon salt (fine grain)",
       "expected": {
-        "item": "salt (fine grain)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.4",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Pasta & Rice"
+        "note": "fine grain",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -137,14 +141,18 @@
     {
       "raw": "2 tablespoons olive oil (or vegetable oil)",
       "expected": {
-        "item": "olive oil (or vegetable oil)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or vegetable oil",
         "category": "Oils & Vinegars"
       }
     }

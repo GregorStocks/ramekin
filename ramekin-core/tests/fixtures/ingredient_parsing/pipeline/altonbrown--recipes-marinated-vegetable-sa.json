@@ -37,42 +37,42 @@
     {
       "raw": "2  broccoli crowns, cut into florets",
       "expected": {
-        "item": "broccoli crowns, cut into florets",
+        "item": "broccoli crowns",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into florets",
         "category": "Produce"
       }
     },
     {
       "raw": "1 head cauliflower, cut into florets",
       "expected": {
-        "item": "cauliflower, cut into florets",
+        "item": "cauliflower",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "cut into florets",
         "category": "Produce"
       }
     },
     {
       "raw": "3 large carrots, cut into rounds",
       "expected": {
-        "item": "carrots, cut into rounds",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into rounds",
         "category": "Produce"
       }
     },

@@ -48,15 +48,11 @@
             "unit": "lb"
           },
           {
-            "amount": "0.75",
-            "unit": "inch thick"
-          },
-          {
             "amount": "454",
             "unit": "g"
           }
         ],
-        "note": "thinly sliced against the grain",
+        "note": "3/4 inch thick, thinly sliced against the grain",
         "category": "Meat & Seafood"
       }
     },
@@ -90,14 +86,14 @@
     {
       "raw": "1 small head cauliflower, cut into small florets",
       "expected": {
-        "item": "head cauliflower, cut into small florets",
+        "item": "head cauliflower",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "cut into small florets",
         "category": "Produce"
       }
     },

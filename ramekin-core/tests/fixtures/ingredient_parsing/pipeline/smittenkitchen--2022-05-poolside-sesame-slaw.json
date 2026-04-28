@@ -180,44 +180,44 @@
     {
       "raw": "1 cup thinly sliced scallion (white and green parts)",
       "expected": {
-        "item": "thinly sliced scallion (white and green parts)",
+        "item": "thinly sliced scallion",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "white and green parts",
         "category": "Produce"
       }
     },
     {
       "raw": "Handful chopped fresh cilantro, if you wish",
       "expected": {
-        "item": "chopped fresh cilantro, if you wish",
+        "item": "chopped fresh cilantro",
         "measurements": [
           {
             "amount": null,
             "unit": "handful"
           }
         ],
-        "note": null,
+        "note": "if you wish",
         "category": "Produce"
       }
     },
     {
       "raw": "About 1 cup Miso-Sesame Dressing (above)",
       "expected": {
-        "item": "About 1 cup Miso-Sesame Dressing (above)",
+        "item": "About 1 cup Miso-Sesame Dressing",
         "measurements": [],
-        "note": null,
+        "note": "above",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1 pound grilled chicken thighs, thinly sliced (optional, see Note)",
       "expected": {
-        "item": "grilled chicken thighs, thinly sliced",
+        "item": "grilled chicken thighs",
         "measurements": [
           {
             "amount": "1",
@@ -228,7 +228,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional, see Note",
+        "note": "optional, see Note, thinly sliced",
         "category": "Meat & Seafood"
       }
     }

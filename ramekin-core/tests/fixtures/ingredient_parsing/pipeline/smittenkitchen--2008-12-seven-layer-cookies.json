@@ -44,15 +44,11 @@
             "unit": "can"
           },
           {
-            "amount": "8",
-            "unit": "oz"
-          },
-          {
             "amount": "225",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "8-ounce or 225-gram",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -178,22 +174,18 @@
             "unit": "jar"
           },
           {
-            "amount": "12",
-            "unit": "oz"
-          },
-          {
             "amount": "340",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "12-ounce or 340-gram",
         "category": "Produce"
       }
     },
     {
       "raw": "7 ounces (200 grams) bittersweet chocolate (not unsweetened), chopped",
       "expected": {
-        "item": "bittersweet chocolate (not unsweetened)",
+        "item": "bittersweet chocolate",
         "measurements": [
           {
             "amount": "7",
@@ -204,7 +196,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped",
+        "note": "not unsweetened, chopped",
         "category": "Other"
       }
     }

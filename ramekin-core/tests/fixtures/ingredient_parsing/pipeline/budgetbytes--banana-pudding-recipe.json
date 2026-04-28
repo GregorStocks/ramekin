@@ -5,7 +5,7 @@
     {
       "raw": "6  ounces vanilla wafers* ($1.43)",
       "expected": {
-        "item": "vanilla wafers* ($1.43)",
+        "item": "vanilla wafers",
         "measurements": [
           {
             "amount": "6",
@@ -16,35 +16,35 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "$1.43",
         "category": "Baking"
       }
     },
     {
       "raw": "3   bananas ($0.69)",
       "expected": {
-        "item": "bananas ($0.69)",
+        "item": "bananas",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "$0.69",
         "category": "Produce"
       }
     },
     {
       "raw": "3 cups vanilla pudding (homemade or store bought) ($2.79)",
       "expected": {
-        "item": "vanilla pudding (homemade or store bought) ($2.79)",
+        "item": "vanilla pudding",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "homemade or store bought, $2.79",
         "category": "Baking"
       }
     }

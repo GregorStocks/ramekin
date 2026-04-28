@@ -41,14 +41,14 @@
       "section": null
     },
     {
-      "item": "granulated sugar (use 1 for a more savory biscuit)",
+      "item": "granulated sugar",
       "measurements": [
         {
           "amount": "1 to 2",
           "unit": "tbsp"
         }
       ],
-      "note": null,
+      "note": "use 1 for a more savory biscuit",
       "raw": "1 to 2 tablespoons granulated sugar (use 1 for a more savory biscuit)",
       "section": null
     },
@@ -97,7 +97,7 @@
       "section": null
     },
     {
-      "item": "cold buttermilk (buttermilk substitutes)",
+      "item": "cold buttermilk",
       "measurements": [
         {
           "amount": "1",
@@ -106,9 +106,13 @@
         {
           "amount": "235",
           "unit": "ml"
+        },
+        {
+          "amount": "245",
+          "unit": "g"
         }
       ],
-      "note": null,
+      "note": "buttermilk substitutes",
       "raw": "1 cup (235 ml) cold buttermilk (buttermilk substitutes)",
       "section": null
     }

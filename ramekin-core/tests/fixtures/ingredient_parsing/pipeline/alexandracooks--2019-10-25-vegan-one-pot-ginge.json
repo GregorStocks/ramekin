@@ -5,14 +5,14 @@
     {
       "raw": "1 small head cabbage, preferably Savoy or Napa (for their softness)",
       "expected": {
-        "item": "head cabbage, preferably Savoy or Napa (for their softness)",
+        "item": "head cabbage",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "for their softness, preferably Savoy or Napa",
         "category": "Produce"
       }
     },
@@ -24,20 +24,16 @@
           {
             "amount": "2",
             "unit": "package"
-          },
-          {
-            "amount": "3",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "3-0z each",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "10 ounces Cremini (or other) mushrooms, see notes above",
       "expected": {
-        "item": "Cremini (or other) mushrooms, see notes above",
+        "item": "Cremini mushrooms, see notes above",
         "measurements": [
           {
             "amount": "10",
@@ -48,7 +44,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or other",
         "category": "Produce"
       }
     },

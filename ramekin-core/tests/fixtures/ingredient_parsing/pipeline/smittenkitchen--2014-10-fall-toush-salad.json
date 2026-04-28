@@ -5,9 +5,9 @@
     {
       "raw": "And for the other side of the world&#8230;(trying something new!)",
       "expected": {
-        "item": "And for the other side of the world…(trying something new!)",
+        "item": "And for the other side of the world…",
         "measurements": [],
-        "note": null,
+        "note": "trying something new!",
         "category": "Other"
       }
     },
@@ -93,7 +93,7 @@
     {
       "raw": "1 1/4 pound delicata squash (one medium)",
       "expected": {
-        "item": "delicata squash (one medium)",
+        "item": "delicata squash",
         "measurements": [
           {
             "amount": "1.25",
@@ -104,7 +104,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "one medium",
         "category": "Produce"
       }
     },
@@ -211,14 +211,14 @@
     {
       "raw": "2 teaspoons ground sumac or paprika (see Note above)",
       "expected": {
-        "item": "ground sumac or paprika (see Note above)",
+        "item": "ground sumac or paprika",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "see Note above",
         "category": "Spices & Seasonings"
       }
     },

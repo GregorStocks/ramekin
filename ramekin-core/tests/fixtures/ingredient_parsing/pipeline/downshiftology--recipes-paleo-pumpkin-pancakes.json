@@ -119,7 +119,7 @@
     {
       "raw": "1/3 cup almond milk ()",
       "expected": {
-        "item": "almond milk ()",
+        "item": "almond milk",
         "measurements": [
           {
             "amount": "0.33",
@@ -147,28 +147,36 @@
     {
       "raw": "1 tbsp honey (or maple syrup)",
       "expected": {
-        "item": "honey (or maple syrup)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or maple syrup",
         "category": "Baking"
       }
     },
     {
       "raw": "1 tsp white wine vinegar (or apple cider vinegar)",
       "expected": {
-        "item": "white wine vinegar (or apple cider vinegar)",
+        "item": "white wine vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or apple cider vinegar",
         "category": "Oils & Vinegars"
       }
     },
@@ -193,18 +201,18 @@
     {
       "raw": "ghee (butter or coconut oil (to coat skillet))",
       "expected": {
-        "item": "ghee (butter or coconut oil (to coat skillet)",
+        "item": "ghee",
         "measurements": [],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "butter or coconut oil (to coat skillet)",
+        "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "chopped pecans (to sprinkle on top)",
       "expected": {
-        "item": "chopped pecans (to sprinkle on top)",
+        "item": "chopped pecans",
         "measurements": [],
-        "note": null,
+        "note": "to sprinkle on top",
         "category": "Nuts & Dried Fruit"
       }
     },

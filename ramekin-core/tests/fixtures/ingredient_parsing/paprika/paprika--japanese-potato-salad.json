@@ -41,14 +41,18 @@
     {
       "raw": "2 tsp Diamond Crystal kosher salt (for cooking the potatoes)",
       "expected": {
-        "item": "Diamond Crystal kosher salt (for cooking the potatoes)",
+        "item": "Diamond Crystal kosher salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for cooking the potatoes",
         "category": "Spices & Seasonings"
       }
     },
@@ -96,13 +100,9 @@
           {
             "amount": "1",
             "unit": "large"
-          },
-          {
-            "amount": "50",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "50 g each w/o shell",
         "category": "Dairy & Eggs"
       }
     },
@@ -124,21 +124,25 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 1/2 Japanese cucumber; 3 oz, 90 g",
         "category": "Produce"
       }
     },
     {
       "raw": "½ tsp Diamond Crystal kosher salt (for the cucumber)",
       "expected": {
-        "item": "Diamond Crystal kosher salt (for the cucumber)",
+        "item": "Diamond Crystal kosher salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for the cucumber",
         "category": "Spices & Seasonings"
       }
     },
@@ -171,14 +175,18 @@
     {
       "raw": "1 Tbsp rice vinegar (unseasoned) (or use ½ Tbsp lemon juice/apple cider/Champagne vinegar/white wine vinegar)",
       "expected": {
-        "item": "rice vinegar (unseasoned) (or use 1/2 Tbsp lemon juice/apple cider/Champagne vinegar/white wine vinegar)",
+        "item": "rice vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unseasoned, or use 1/2 Tbsp lemon juice/apple cider/Champagne vinegar/white wine vinegar",
         "section": "For the Seasonings",
         "category": "Oils & Vinegars"
       }

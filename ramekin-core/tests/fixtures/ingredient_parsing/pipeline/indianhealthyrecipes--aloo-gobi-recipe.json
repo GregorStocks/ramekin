@@ -59,7 +59,7 @@
     {
       "raw": "¾ to 1 cup (2 medium)  tomatoes ((finely chopped) or ¼ cup tomato puree or 2 tbsp tomato paste mixed with 3 tbsps water)",
       "expected": {
-        "item": "tomatoes or 1/4 cup tomato puree or 2 tbsp tomato paste mixed with 3 tbsps water)",
+        "item": "tomatoes",
         "measurements": [
           {
             "amount": "0.75 to 1",
@@ -70,8 +70,8 @@
             "unit": "medium"
           }
         ],
-        "note": "finely chopped",
-        "category": "Canned Goods"
+        "note": "finely chopped; or 1/4 cup tomato puree or 2 tbsp tomato paste mixed with 3 tbsps water",
+        "category": "Produce"
       }
     },
     {
@@ -84,15 +84,11 @@
             "unit": "tbsp"
           },
           {
-            "amount": "0.5",
-            "unit": "inch"
-          },
-          {
             "amount": "2.6",
             "unit": "g"
           }
         ],
-        "note": "peeled & minced or grated",
+        "note": "1/2 inch, peeled & minced or grated",
         "category": "Beverages"
       }
     },
@@ -106,15 +102,11 @@
             "unit": "tbsp"
           },
           {
-            "amount": "3 to 4",
-            "unit": null
-          },
-          {
             "amount": "4.2",
             "unit": "g"
           }
         ],
-        "note": "cloves, peeled & minced or pressed",
+        "note": "3 to 4, cloves, peeled & minced or pressed",
         "category": "Produce"
       }
     },
@@ -128,7 +120,7 @@
             "unit": null
           }
         ],
-        "note": "slit or chopped (optional",
+        "note": "slit or chopped (optional)",
         "category": "Other"
       }
     },
@@ -186,14 +178,14 @@
     {
       "raw": "½ teaspoon cumin seeds ((jeera))",
       "expected": {
-        "item": "cumin seeds (jeera)",
+        "item": "cumin seeds",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "jeera",
         "category": "Spices & Seasonings"
       }
     },
@@ -260,28 +252,28 @@
     {
       "raw": "½ to ¾ teaspoon roasted cumin powder ((jeera powder) (updated))",
       "expected": {
-        "item": "roasted cumin powder (jeera powder) (updated)",
+        "item": "roasted cumin powder",
         "measurements": [
           {
             "amount": "0.5 to 0.75",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "jeera powder, updated",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 tablespoon kasuri methi  ((dried fenugreek leaves) (skip if you don&amp;#x27;t have))",
       "expected": {
-        "item": "kasuri methi (skip if you don't have)",
+        "item": "kasuri methi",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "dried fenugreek leaves",
+        "note": "dried fenugreek leaves, skip if you don't have",
         "category": "Other"
       }
     },

@@ -82,13 +82,9 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": "2",
-            "unit": "ribs"
           }
         ],
-        "note": null,
+        "note": "2 ribs",
         "category": "Produce"
       }
     },
@@ -113,14 +109,18 @@
     {
       "raw": "4 cups low-sodium chicken broth (or vegetable broth)",
       "expected": {
-        "item": "low-sodium chicken broth (or vegetable broth)",
+        "item": "low-sodium chicken broth",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "996",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or vegetable broth",
         "category": "Canned Goods"
       }
     },
@@ -174,7 +174,7 @@
             "unit": "small"
           }
         ],
-        "note": "diced (1 cup",
+        "note": "diced (1 cup)",
         "category": "Produce"
       }
     },
@@ -206,7 +206,7 @@
             "unit": "inches"
           }
         ],
-        "note": "plus shredded parmesan for serving",
+        "note": "about 4-inches, plus shredded parmesan for serving",
         "category": "Cheese"
       }
     },
@@ -268,7 +268,7 @@
       "expected": {
         "item": "Red pepper flakes",
         "measurements": [],
-        "note": "to taste (optional",
+        "note": "to taste (optional)",
         "category": "Spices & Seasonings"
       }
     }

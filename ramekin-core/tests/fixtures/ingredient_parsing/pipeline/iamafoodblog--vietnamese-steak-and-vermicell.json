@@ -14,14 +14,14 @@
     {
       "raw": "1 boneless rib eye steak (or steak of choice)",
       "expected": {
-        "item": "boneless rib eye steak (or steak of choice)",
+        "item": "boneless rib eye steak",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or steak of choice",
         "category": "Meat & Seafood"
       }
     },

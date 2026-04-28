@@ -38,7 +38,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "finely chopped",
+        "note": "about 2 tablespoons, finely chopped",
         "category": "Produce"
       }
     },
@@ -85,7 +85,7 @@
     {
       "raw": "2 tablespoons (30ml) fish sauce (see note)",
       "expected": {
-        "item": "fish sauce (see note)",
+        "item": "fish sauce",
         "measurements": [
           {
             "amount": "2",
@@ -94,9 +94,13 @@
           {
             "amount": "30",
             "unit": "ml"
+          },
+          {
+            "amount": "36",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Condiments & Sauces"
       }
     },
@@ -126,7 +130,7 @@
     {
       "raw": "1 pound (456g) skin-on pork belly, frozen for 45 to 50 minutes",
       "expected": {
-        "item": "skin-on pork belly",
+        "item": "skin-on pork belly, frozen for 45 to 50 minutes",
         "measurements": [
           {
             "amount": "1",
@@ -137,8 +141,8 @@
             "unit": "g"
           }
         ],
-        "note": "frozen for 45 to 50 minutes",
-        "category": "Meat & Seafood"
+        "note": null,
+        "category": "Frozen"
       }
     },
     {
@@ -213,7 +217,7 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced",
+        "note": "about 20g, thinly sliced",
         "category": "Produce"
       }
     },
@@ -424,7 +428,7 @@
     {
       "raw": "1/2 cup (120ml) fish sauce (see note)",
       "expected": {
-        "item": "fish sauce (see note)",
+        "item": "fish sauce",
         "measurements": [
           {
             "amount": "0.5",
@@ -433,16 +437,20 @@
           {
             "amount": "120",
             "unit": "ml"
+          },
+          {
+            "amount": "144",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "8 ounces (227g) uncooked rice vermicelli noodles (see note)",
       "expected": {
-        "item": "uncooked rice vermicelli noodles (see note)",
+        "item": "uncooked rice vermicelli noodles",
         "measurements": [
           {
             "amount": "8",
@@ -453,7 +461,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Pasta & Rice"
       }
     },
@@ -474,70 +482,70 @@
     {
       "raw": "1 bunch Thai basil (húng quế), leaves picked",
       "expected": {
-        "item": "Thai basil (húng quế), leaves picked",
+        "item": "Thai basil, leaves picked",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "húng quế",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 bunch Vietnamese coriander (rau răm), leaves picked",
       "expected": {
-        "item": "Vietnamese coriander (rau răm), leaves picked",
+        "item": "Vietnamese coriander, leaves picked",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "rau răm",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 bunch perilla (tiá tô), leaves picked",
       "expected": {
-        "item": "perilla (tiá tô), leaves picked",
+        "item": "perilla, leaves picked",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "tiá tô",
         "category": "Other"
       }
     },
     {
       "raw": "1 bunch peppermint (húng lủi), leaves picked",
       "expected": {
-        "item": "peppermint (húng lủi), leaves picked",
+        "item": "peppermint, leaves picked",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "húng lủi",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 bunch fish mint (dấp cá), leaves picked",
       "expected": {
-        "item": "fish mint (dấp cá), leaves picked",
+        "item": "fish mint, leaves picked",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "dấp cá",
         "category": "Meat & Seafood"
       }
     },

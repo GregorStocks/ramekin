@@ -80,7 +80,7 @@
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "6 cloves, pressed",
         "category": "Produce"
       }
     },
@@ -123,15 +123,15 @@
     {
       "raw": "1/2 Tbsp Mrs. Dash (our favorite salt-free seasoning)",
       "expected": {
-        "item": "Mrs. Dash (our favorite salt-free seasoning)",
+        "item": "Mrs. Dash",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "our favorite salt-free seasoning",
+        "category": "Other"
       }
     },
     {

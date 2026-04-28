@@ -152,14 +152,14 @@
     {
       "raw": "4 to 6 large eggs (you’ll want one per serving)",
       "expected": {
-        "item": "eggs (you’ll want one per serving)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "4 to 6",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "you’ll want one per serving",
         "category": "Dairy & Eggs"
       }
     },

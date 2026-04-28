@@ -45,14 +45,18 @@
     {
       "raw": "3/4 cup evaporated milk (aka unsweetened condensed milk)**",
       "expected": {
-        "item": "evaporated milk (aka unsweetened condensed milk)",
+        "item": "evaporated milk",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "189",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "aka unsweetened condensed milk",
         "category": "Canned Goods"
       }
     },
@@ -113,14 +117,14 @@
     {
       "raw": "2 teaspoons Mexican hot sauce (we like Cholula), plus more to taste",
       "expected": {
-        "item": "Mexican hot sauce (we like Cholula)",
+        "item": "Mexican hot sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": "plus more to taste",
+        "note": "we like Cholula, plus more to taste",
         "category": "Condiments & Sauces"
       }
     }

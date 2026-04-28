@@ -69,14 +69,14 @@
     {
       "raw": "2 cups shredded cheddar cheese (or Mexican blend cheese)",
       "expected": {
-        "item": "shredded cheddar cheese (or Mexican blend cheese)",
+        "item": "shredded cheddar cheese",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or Mexican blend cheese",
         "category": "Cheese"
       }
     },

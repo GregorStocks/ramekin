@@ -47,14 +47,14 @@
     {
       "raw": "1/4 cup thinly sliced red onion (oops, I forgot this)",
       "expected": {
-        "item": "thinly sliced red onion (oops, I forgot this)",
+        "item": "thinly sliced red onion",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "oops, I forgot this",
         "category": "Produce"
       }
     },

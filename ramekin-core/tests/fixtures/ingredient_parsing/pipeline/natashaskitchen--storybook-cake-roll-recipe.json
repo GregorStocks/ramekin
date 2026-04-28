@@ -37,14 +37,14 @@
     {
       "raw": "5  large eggs (room temp)",
       "expected": {
-        "item": "eggs (room temp)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "5",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "room temp",
         "category": "Dairy & Eggs"
       }
     },
@@ -219,15 +219,15 @@
     {
       "raw": "1/2 cup golden brown cookie crumbs (I used crumbs from 4 graham crackers)",
       "expected": {
-        "item": "golden brown cookie crumbs (I used crumbs from 4 graham crackers)",
+        "item": "golden brown cookie crumbs",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Snacks"
+        "note": "I used crumbs from 4 graham crackers",
+        "category": "Beverages"
       }
     },
     {

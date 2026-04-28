@@ -51,14 +51,14 @@
     {
       "raw": "20 basil leaves, more for the dressing",
       "expected": {
-        "item": "basil leaves, more for the dressing",
+        "item": "basil leaves",
         "measurements": [
           {
             "amount": "20",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "more for the dressing",
         "category": "Spices & Seasonings"
       }
     },

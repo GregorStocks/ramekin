@@ -59,9 +59,9 @@
     {
       "raw": "(optional) Simple Syrup (, to taste)",
       "expected": {
-        "item": "Simple Syrup (, to taste)",
+        "item": "Simple Syrup",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, to taste",
         "category": "Other"
       }
     },

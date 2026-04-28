@@ -5,14 +5,18 @@
     {
       "raw": "4 tablespoon butter (salted or unsalted)",
       "expected": {
-        "item": "butter (salted or unsalted)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "salted or unsalted",
         "category": "Dairy & Eggs"
       }
     },

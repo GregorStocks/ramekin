@@ -116,7 +116,7 @@
     {
       "raw": "1 tablespoon (15ml) 2:1 simple syrup (see note)",
       "expected": {
-        "item": "2:1 simple syrup (see note)",
+        "item": "2:1 simple syrup",
         "measurements": [
           {
             "amount": "1",
@@ -127,16 +127,16 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Other"
       }
     },
     {
       "raw": "Freshly grated nutmeg, for garnish (optional)",
       "expected": {
-        "item": "Freshly grated nutmeg, for garnish",
+        "item": "Freshly grated nutmeg",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Spices & Seasonings"
       }
     }

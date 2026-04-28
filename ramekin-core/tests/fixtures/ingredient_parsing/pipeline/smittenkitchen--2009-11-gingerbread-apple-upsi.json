@@ -293,9 +293,9 @@
     {
       "raw": "Very softly whipped cream (to serve)",
       "expected": {
-        "item": "Very softly whipped cream (to serve)",
+        "item": "Very softly whipped cream",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Dairy & Eggs"
       }
     }

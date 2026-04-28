@@ -26,15 +26,11 @@
             "unit": "cup"
           },
           {
-            "amount": "2",
-            "unit": null
-          },
-          {
             "amount": "368",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "almond, skim, full fat or 2%",
         "category": "Dairy & Eggs"
       }
     },
@@ -91,14 +87,18 @@
     {
       "raw": "2 cups plain flour (all purpose flour)",
       "expected": {
-        "item": "plain flour (all purpose flour)",
+        "item": "plain flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "all purpose flour",
         "category": "Baking"
       }
     },
@@ -164,28 +164,32 @@
     {
       "raw": "4 tablespoons vanilla Greek yogurt (or plain or blueberry flavoured, or whipping cream if you don&amp;#39;t like yoghurt)",
       "expected": {
-        "item": "vanilla Greek yogurt (or plain or blueberry flavoured, or whipping cream if you don't like yoghurt)",
+        "item": "vanilla Greek yogurt",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or plain or blueberry flavoured, or whipping cream if you don't like yoghurt",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "2 tablespoons granulated sugar  (or a natural granulated sweetener that measures 1:1 with sugar)",
       "expected": {
-        "item": "granulated sugar  (or a natural granulated sweetener that measures 1:1 with sugar)",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or a natural granulated sweetener that measures 1:1 with sugar",
         "category": "Baking"
       }
     }

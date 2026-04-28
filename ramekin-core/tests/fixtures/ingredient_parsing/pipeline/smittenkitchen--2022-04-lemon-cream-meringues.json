@@ -237,9 +237,9 @@
     {
       "raw": "Fresh berries and/or powdered sugar, if you wish",
       "expected": {
-        "item": "Fresh berries and/or powdered sugar, if you wish",
+        "item": "Fresh berries and/or powdered sugar",
         "measurements": [],
-        "note": null,
+        "note": "if you wish",
         "category": "Baking"
       }
     }

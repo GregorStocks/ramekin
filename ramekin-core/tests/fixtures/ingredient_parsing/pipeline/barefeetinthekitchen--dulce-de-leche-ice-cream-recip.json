@@ -5,7 +5,7 @@
     {
       "raw": "14 ounces&nbsp; Dulce De Leche caramel sauce (store-bought will work as well)",
       "expected": {
-        "item": "Dulce De Leche caramel sauce (store-bought will work as well)",
+        "item": "Dulce De Leche caramel sauce",
         "measurements": [
           {
             "amount": "14",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "store-bought will work as well",
         "category": "Condiments & Sauces"
       }
     },

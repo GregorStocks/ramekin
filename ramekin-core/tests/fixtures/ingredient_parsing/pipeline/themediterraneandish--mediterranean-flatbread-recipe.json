@@ -23,16 +23,16 @@
     {
       "raw": "Flour (any kind) for dusting",
       "expected": {
-        "item": "Flour (any kind) for dusting",
+        "item": "Flour for dusting",
         "measurements": [],
-        "note": null,
+        "note": "any kind",
         "category": "Baking"
       }
     },
     {
       "raw": "1 lb/ 453.59 g pizza dough (whole wheat dough, if you prefer) at room temperature (see note if you want to make dough from scratch)",
       "expected": {
-        "item": "pizza dough at room temperature (see note if you want to make dough from scratch)",
+        "item": "pizza dough at room temperature",
         "measurements": [
           {
             "amount": "1",
@@ -43,7 +43,7 @@
             "unit": "g"
           }
         ],
-        "note": "whole wheat dough, if you prefer",
+        "note": "whole wheat dough, if you prefer, see note if you want to make dough from scratch",
         "category": "Other"
       }
     },
@@ -64,14 +64,14 @@
     {
       "raw": "1 tsp za&amp;#8217;atar spice, more for later",
       "expected": {
-        "item": "za’atar spice, more for later",
+        "item": "za’atar spice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "more for later",
         "category": "Spices & Seasonings"
       }
     },
@@ -89,11 +89,11 @@
             "unit": "oz"
           },
           {
-            "amount": "113",
+            "amount": "113.4",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 4 oz/113.4 g",
         "category": "Produce"
       }
     },
@@ -127,14 +127,14 @@
     {
       "raw": "1/3 cup or so hummus (homemade from this recipe or store-bought)",
       "expected": {
-        "item": "or so hummus (homemade from this recipe or store-bought)",
+        "item": "or so hummus",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "homemade from this recipe or store-bought",
         "category": "Other"
       }
     },
@@ -157,7 +157,7 @@
             "unit": "oz"
           },
           {
-            "amount": "85 to 113",
+            "amount": "113",
             "unit": "g"
           }
         ],

@@ -117,14 +117,14 @@
     {
       "raw": "2 tablespoons red raspberry jam (with seeds)",
       "expected": {
-        "item": "red raspberry jam (with seeds)",
+        "item": "red raspberry jam",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "with seeds",
         "category": "Produce"
       }
     },

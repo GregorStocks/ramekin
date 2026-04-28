@@ -5,14 +5,14 @@
     {
       "raw": "2 to 3  medium zucchini, (cut into chunks)",
       "expected": {
-        "item": "zucchini, (cut into chunks)",
+        "item": "zucchini",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Produce"
       }
     },
@@ -28,14 +28,14 @@
     {
       "raw": "3 slices sourdough bread, (cut into cubes)",
       "expected": {
-        "item": "sourdough bread, (cut into cubes)",
+        "item": "sourdough bread",
         "measurements": [
           {
             "amount": "3",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Bakery & Bread"
       }
     },
@@ -220,15 +220,15 @@
     {
       "raw": "½  lemon, (juiced)",
       "expected": {
-        "item": "lemon, (juiced)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {

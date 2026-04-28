@@ -151,16 +151,16 @@
     {
       "raw": "Grated Parmigiano-Reggiano, for serving (optional)",
       "expected": {
-        "item": "Grated Parmigiano-Reggiano, for serving",
+        "item": "Grated Parmigiano-Reggiano",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "6 ounces (170g) lacinato or curly kale, stemmed and cut or torn into roughly 2-inch pieces",
       "expected": {
-        "item": "lacinato or curly kale, stemmed and cut or torn into roughly 2-inch pieces",
+        "item": "lacinato or curly kale",
         "measurements": [
           {
             "amount": "6",
@@ -171,7 +171,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "stemmed and cut or torn into roughly 2-inch pieces",
         "category": "Produce"
       }
     },

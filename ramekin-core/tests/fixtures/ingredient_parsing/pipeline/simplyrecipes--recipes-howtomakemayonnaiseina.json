@@ -51,29 +51,33 @@
     {
       "raw": "1 tablespoon water, if using only an egg yolk",
       "expected": {
-        "item": "water, if using only an egg yolk",
+        "item": "water",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "if using only an egg yolk",
+        "category": "Other"
       }
     },
     {
       "raw": "1 cup neutral oil (like vegetable, grapeseed, or canola)",
       "expected": {
-        "item": "neutral oil (like vegetable, grapeseed, or canola)",
+        "item": "neutral oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "like vegetable, grapeseed, or canola",
+        "category": "Oils & Vinegars"
       }
     },
     {

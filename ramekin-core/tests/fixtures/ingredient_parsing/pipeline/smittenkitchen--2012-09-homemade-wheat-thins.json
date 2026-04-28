@@ -77,7 +77,7 @@
     {
       "raw": "4 tablespoons (55 grams) unsalted butter, cold is fine, cut into small bits",
       "expected": {
-        "item": "unsalted butter, cold is fine, cut into small bits",
+        "item": "unsalted butter, cold is fine",
         "measurements": [
           {
             "amount": "4",
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small bits",
         "category": "Dairy & Eggs"
       }
     }

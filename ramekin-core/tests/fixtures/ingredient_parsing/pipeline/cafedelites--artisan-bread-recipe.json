@@ -5,14 +5,18 @@
     {
       "raw": "3 cups bread flour (or plain/all purpose)",
       "expected": {
-        "item": "bread flour (or plain/all purpose)",
+        "item": "bread flour",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "381",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or plain/all purpose",
         "category": "Baking"
       }
     },
@@ -33,14 +37,14 @@
     {
       "raw": "2 teaspoons dried yeast (instant or rapid rise)",
       "expected": {
-        "item": "dried yeast (instant or rapid rise)",
+        "item": "dried yeast",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "instant or rapid rise",
         "category": "Baking"
       }
     },

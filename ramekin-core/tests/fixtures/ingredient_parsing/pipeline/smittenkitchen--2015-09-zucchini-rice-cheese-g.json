@@ -25,28 +25,32 @@
             "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "about 1 1/8 kg",
         "category": "Produce"
       }
     },
     {
       "raw": "2 1/2 teaspoons kosher salt (I use Diamond brand, use 1 1/2 of other brands)",
       "expected": {
-        "item": "kosher salt (I use Diamond brand, use 1 1/2 of other brands)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use Diamond brand, use 1 1/2 of other brands",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/2 cup (90 grams) plain, uncooked white rice",
       "expected": {
-        "item": "plain",
+        "item": "plain, uncooked white rice",
         "measurements": [
           {
             "amount": "0.5",
@@ -57,8 +61,8 @@
             "unit": "g"
           }
         ],
-        "note": "uncooked white rice",
-        "category": "Other"
+        "note": null,
+        "category": "Pasta & Rice"
       }
     },
     {
@@ -79,7 +83,7 @@
             "unit": "g"
           }
         ],
-        "note": "minced",
+        "note": "about 1 cup, minced",
         "category": "Produce"
       }
     },

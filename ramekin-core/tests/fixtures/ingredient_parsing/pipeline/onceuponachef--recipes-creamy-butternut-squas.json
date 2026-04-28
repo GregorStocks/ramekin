@@ -23,14 +23,14 @@
     {
       "raw": "1 cup very finely chopped yellow onion, (from one small onion)",
       "expected": {
-        "item": "very finely chopped yellow onion, (from one small onion)",
+        "item": "very finely chopped yellow onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from one small onion",
         "category": "Produce"
       }
     },
@@ -62,19 +62,11 @@
             "unit": "package"
           },
           {
-            "amount": "12",
-            "unit": "oz"
-          },
-          {
             "amount": "1.5",
             "unit": "cup"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
           }
         ],
-        "note": "thawed (see note)",
+        "note": "12-oz, about 1 1/2 cups, see note, thawed",
         "category": "Produce"
       }
     },
@@ -143,7 +135,7 @@
       "expected": {
         "item": "Finely chopped fresh herbs",
         "measurements": [],
-        "note": "for serving (optional",
+        "note": "for serving (optional)",
         "category": "Produce"
       }
     }

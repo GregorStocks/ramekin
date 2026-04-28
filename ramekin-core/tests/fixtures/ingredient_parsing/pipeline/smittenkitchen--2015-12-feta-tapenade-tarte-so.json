@@ -185,28 +185,28 @@
     {
       "raw": "2 packages puffed pastry (leave in fridge overnight to thaw)",
       "expected": {
-        "item": "puffed pastry (leave in fridge overnight to thaw)",
+        "item": "puffed pastry",
         "measurements": [
           {
             "amount": "2",
             "unit": "package"
           }
         ],
-        "note": null,
+        "note": "leave in fridge overnight to thaw",
         "category": "Other"
       }
     },
     {
       "raw": "1 egg yolk beaten with 1 teaspoon water (for egg wash)",
       "expected": {
-        "item": "egg yolk beaten with 1 teaspoon water (for egg wash)",
+        "item": "egg yolk beaten with 1 teaspoon water",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "for egg wash",
         "category": "Dairy & Eggs"
       }
     },
@@ -308,9 +308,9 @@
     {
       "raw": "Coarse or kosher salt, to taste (changed from 1/2 teaspoon, which could be overkill if your feta is very salty)",
       "expected": {
-        "item": "Coarse or kosher salt, to taste (changed from 1/2 teaspoon, which could be overkill if your feta is very salty)",
+        "item": "Coarse or kosher salt",
         "measurements": [],
-        "note": null,
+        "note": "changed from 1/2 teaspoon, which could be overkill if your feta is very salty, to taste",
         "category": "Spices & Seasonings"
       }
     },

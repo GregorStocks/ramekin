@@ -5,7 +5,7 @@
     {
       "raw": "1 pound (454 g) country white bread, cut into 1 1/2-inch pieces",
       "expected": {
-        "item": "country white bread, cut into 1 1/2-inch pieces",
+        "item": "country white bread",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1 1/2-inch pieces",
         "category": "Bakery & Bread"
       }
     },
@@ -188,17 +188,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "4",
-            "unit": "oz"
-          },
-          {
-            "amount": "113",
-            "unit": "g"
           }
         ],
-        "note": "drained",
+        "note": "4-ounce, drained",
         "category": "Other"
       }
     },
@@ -301,7 +293,7 @@
             "unit": "cup"
           }
         ],
-        "note": "shredded",
+        "note": "about 1 cup, shredded",
         "category": "Cheese"
       }
     },
@@ -323,7 +315,7 @@
             "unit": "cup"
           }
         ],
-        "note": "shredded",
+        "note": "about 1 cup, shredded",
         "category": "Cheese"
       }
     },

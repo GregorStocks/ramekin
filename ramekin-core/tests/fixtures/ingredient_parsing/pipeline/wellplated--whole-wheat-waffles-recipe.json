@@ -19,14 +19,14 @@
     {
       "raw": "1 cup skim milk (or milk of choice)",
       "expected": {
-        "item": "skim milk (or milk of choice)",
+        "item": "skim milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or milk of choice",
         "category": "Dairy & Eggs"
       }
     },
@@ -115,14 +115,18 @@
     {
       "raw": "2 teaspoons baking powder (I prefer aluminum free)",
       "expected": {
-        "item": "baking powder (I prefer aluminum free)",
+        "item": "baking powder",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "9.2",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I prefer aluminum free",
         "category": "Baking"
       }
     },

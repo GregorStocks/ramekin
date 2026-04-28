@@ -5,14 +5,14 @@
     {
       "raw": "2-4  mackerel fillets (depending on the size)",
       "expected": {
-        "item": "mackerel fillets (depending on the size)",
+        "item": "mackerel fillets",
         "measurements": [
           {
             "amount": "2-4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "depending on the size",
         "category": "Meat & Seafood"
       }
     },
@@ -28,14 +28,18 @@
     {
       "raw": "150 ml water (for cooking)",
       "expected": {
-        "item": "water (for cooking)",
+        "item": "water",
         "measurements": [
           {
             "amount": "150",
             "unit": "ml"
+          },
+          {
+            "amount": "150",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for cooking",
         "category": "Other"
       }
     },
@@ -110,46 +114,42 @@
     {
       "raw": "2 tbsp yellow miso paste (awase)",
       "expected": {
-        "item": "yellow miso paste (awase)",
+        "item": "yellow miso paste",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "awase",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "2 tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "11",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "50 g Japanese leek (naganegi) (cut into 5cm pieces)",
       "expected": {
-        "item": "Japanese leek (naganegi) (cut into 5cm pieces)",
+        "item": "Japanese leek",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "naganegi, cut into 5cm pieces",
         "category": "Produce"
       }
     },

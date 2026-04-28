@@ -5,14 +5,18 @@
     {
       "raw": "1⅔ cups all-purpose flour (plain flour)",
       "expected": {
-        "item": "all-purpose flour (plain flour)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.67",
             "unit": "cup"
+          },
+          {
+            "amount": "208",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plain flour",
         "category": "Baking"
       }
     },
@@ -60,13 +64,9 @@
           {
             "amount": "1",
             "unit": "large"
-          },
-          {
-            "amount": "50",
-            "unit": "g"
           }
         ],
-        "note": "at room temperature; beaten",
+        "note": "50 g each w/o shell, at room temperature; beaten",
         "category": "Dairy & Eggs"
       }
     },

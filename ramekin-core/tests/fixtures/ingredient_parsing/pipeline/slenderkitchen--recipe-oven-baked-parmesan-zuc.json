@@ -5,14 +5,14 @@
     {
       "raw": "4 zucchini, cut into eighths",
       "expected": {
-        "item": "zucchini, cut into eighths",
+        "item": "zucchini",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into eighths",
         "category": "Produce"
       }
     },

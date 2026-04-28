@@ -79,7 +79,7 @@
     {
       "raw": "2 pound eggplant, cut into 1″ cubes",
       "expected": {
-        "item": "eggplant, cut into 1″ cubes",
+        "item": "eggplant",
         "measurements": [
           {
             "amount": "2",
@@ -90,7 +90,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1″ cubes",
         "category": "Produce"
       }
     },
@@ -199,7 +199,7 @@
             "unit": "g"
           }
         ],
-        "note": "pitted and roughly chopped",
+        "note": "about 1 cup, pitted and roughly chopped",
         "category": "Canned Goods"
       }
     },
@@ -224,14 +224,18 @@
     {
       "raw": "1⁄2 cup golden raisins (I used half for a less sweet caponata)",
       "expected": {
-        "item": "golden raisins (I used half for a less sweet caponata)",
+        "item": "golden raisins",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "78",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used half for a less sweet caponata",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -252,14 +256,14 @@
     {
       "raw": "1 to 2 tablespoons sugar (I used 1 tablespoon, but sweeter is more traditional)",
       "expected": {
-        "item": "sugar (I used 1 tablespoon, but sweeter is more traditional)",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I used 1 tablespoon, but sweeter is more traditional",
         "category": "Baking"
       }
     },

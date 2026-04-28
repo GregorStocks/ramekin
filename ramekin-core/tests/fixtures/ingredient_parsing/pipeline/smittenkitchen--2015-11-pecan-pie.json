@@ -121,14 +121,14 @@
     {
       "raw": "3. Golden syrup tastes amazing here, and is worth the trouble of tracking it down. (See more, below.)",
       "expected": {
-        "item": "Golden syrup tastes amazing here, and is worth the trouble of tracking it down. (See more, below.)",
+        "item": "Golden syrup tastes amazing here, and is worth the trouble of tracking it down.",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "See more, below.",
         "category": "Other"
       }
     },
@@ -149,28 +149,28 @@
     {
       "raw": "5. A tiny bit of cider vinegar (trust me) really helps balance out the aching sweetness of a gooey caramel pie.",
       "expected": {
-        "item": "A tiny bit of cider vinegar (trust me) really helps balance out the aching sweetness of a gooey caramel pie.",
+        "item": "A tiny bit of cider vinegar really helps balance out the aching sweetness of a gooey caramel pie.",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "trust me",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "6. Finally, if you gild the lily (of course you do), add some chocolate: After rolling out and parbaking your crust (if desired), place it in the freezer until solid, about 15 minutes. Melt 4 ounces of semi- or bittersweet chocolate chunks with 1/4 cup heavy or whipping cream until smooth. Spread over bottom of cooled crust. Freeze the crust again until the chocolate is solid, about another 20 minutes, before pouring in pecan mixture.",
       "expected": {
-        "item": "Finally, if you gild the lily (of course you do), add some chocolate: After rolling out and parbaking your crust (if desired), place it in the freezer until solid, about 15 minutes. Melt 4 ounces of semi-",
+        "item": "Finally, if you gild the lily, add some chocolate: After rolling out and parbaking your crust, place it in the freezer until solid, about 15 minutes. Melt 4 ounces of semi-",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": "or bittersweet chocolate chunks with 1/4 cup heavy or whipping cream until smooth. Spread over bottom of cooled crust. Freeze the crust again until the chocolate is solid, about another 20 minutes, before pouring in pecan mixture.",
+        "note": "of course you do, if desired; or bittersweet chocolate chunks with 1/4 cup heavy or whipping cream until smooth. Spread over bottom of cooled crust. Freeze the crust again until the chocolate is solid, about another 20 minutes, before pouring in pecan mixture.",
         "category": "Bakery & Bread"
       }
     },
@@ -231,7 +231,7 @@
     {
       "raw": "1 stick (4 ounces or 115 grams) cold unsalted butter, cut into chunks",
       "expected": {
-        "item": "cold unsalted butter, cut into chunks",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "1",
@@ -246,7 +246,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Dairy & Eggs"
       }
     },
@@ -312,14 +312,14 @@
     {
       "raw": "3/4 cup golden syrup (see Note up top)",
       "expected": {
-        "item": "golden syrup (see Note up top)",
+        "item": "golden syrup",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Note up top",
         "category": "Other"
       }
     },

@@ -19,14 +19,14 @@
     {
       "raw": "4 peperoncini, stemmed",
       "expected": {
-        "item": "peperoncini, stemmed",
+        "item": "peperoncini",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "stemmed",
         "category": "Other"
       }
     },
@@ -124,15 +124,15 @@
     {
       "raw": "1 teaspoon&nbsp;pimentón de la Vera (smoked sweet Spanish paprika)",
       "expected": {
-        "item": "pimentón de la Vera (smoked sweet Spanish paprika)",
+        "item": "pimentón de la Vera",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "smoked sweet Spanish paprika",
+        "category": "Other"
       }
     },
     {

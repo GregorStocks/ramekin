@@ -33,14 +33,14 @@
     {
       "raw": "4 tbsp Japanese mayonnaise (I use Kewpie Mayonnaise)",
       "expected": {
-        "item": "Japanese mayonnaise (I use Kewpie Mayonnaise)",
+        "item": "Japanese mayonnaise",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I use Kewpie Mayonnaise",
         "category": "Condiments & Sauces"
       }
     },
@@ -213,9 +213,9 @@
     {
       "raw": "cooking oil ( for deep frying)",
       "expected": {
-        "item": "cooking oil ( for deep frying)",
+        "item": "cooking oil",
         "measurements": [],
-        "note": null,
+        "note": "for deep frying",
         "category": "Oils & Vinegars"
       }
     }

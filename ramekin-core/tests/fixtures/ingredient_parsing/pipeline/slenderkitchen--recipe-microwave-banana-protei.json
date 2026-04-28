@@ -5,14 +5,14 @@
     {
       "raw": "1 banana (very ripe)",
       "expected": {
-        "item": "banana (very ripe)",
+        "item": "banana",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "very ripe",
         "category": "Produce"
       }
     },

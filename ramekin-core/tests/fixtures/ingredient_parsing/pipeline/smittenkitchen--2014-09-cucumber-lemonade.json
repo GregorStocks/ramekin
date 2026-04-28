@@ -5,7 +5,7 @@
     {
       "raw": "1 pound cucumber(s), peeled or unpeeled, cut into large chunks, plus a few extra thin cucumber slices for garnish",
       "expected": {
-        "item": "cucumber(s), peeled or unpeeled, cut into large chunks",
+        "item": "cucumber, peeled or unpeeled, cut into large chunks",
         "measurements": [
           {
             "amount": "1",
@@ -16,21 +16,25 @@
             "unit": "g"
           }
         ],
-        "note": "plus a few extra thin cucumber slices for garnish",
+        "note": "s, plus a few extra thin cucumber slices for garnish",
         "category": "Produce"
       }
     },
     {
       "raw": "1 cup lemon juice (from about 7 to 8 lemons, although juiciness will vary)",
       "expected": {
-        "item": "lemon juice (from about 7 to 8 lemons, although juiciness will vary)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "244",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 7 to 8 lemons, although juiciness will vary",
         "category": "Beverages"
       }
     },

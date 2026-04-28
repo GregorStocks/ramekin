@@ -30,7 +30,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "minced",
+        "note": "about 2 teaspoons, minced",
         "category": "Produce"
       }
     },
@@ -105,7 +105,7 @@
     {
       "raw": "8 ounces (225g) plain, full-fat cream cheese, softened, preferably Philadelphia brand",
       "expected": {
-        "item": "plain, full-fat cream cheese, softened, preferably Philadelphia brand",
+        "item": "plain, full-fat cream cheese, softened",
         "measurements": [
           {
             "amount": "8",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably Philadelphia brand",
         "category": "Cheese"
       }
     },
@@ -189,9 +189,9 @@
     {
       "raw": "Chopped parsley for garnish, if desired",
       "expected": {
-        "item": "Chopped parsley for garnish, if desired",
+        "item": "Chopped parsley for garnish",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Spices & Seasonings"
       }
     },

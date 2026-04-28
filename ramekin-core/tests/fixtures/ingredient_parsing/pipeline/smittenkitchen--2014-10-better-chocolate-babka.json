@@ -68,9 +68,9 @@
     {
       "raw": "Grated zest of 1 small lemon or half an orange (our preference)",
       "expected": {
-        "item": "Grated zest of 1 small lemon or half an orange (our preference)",
+        "item": "Grated zest of 1 small lemon or half an orange",
         "measurements": [],
-        "note": null,
+        "note": "our preference",
         "category": "Produce"
       }
     },
@@ -91,14 +91,14 @@
     {
       "raw": "1/2 cup water (cold is fine) and up to 1 to 2 tablespoons extra, if needed",
       "expected": {
-        "item": "water and up to 1 to 2 tablespoons extra, if needed",
+        "item": "water and up to 1 to 2 tablespoons extra",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "cold is fine",
+        "note": "cold is fine, if needed",
         "category": "Other"
       }
     },

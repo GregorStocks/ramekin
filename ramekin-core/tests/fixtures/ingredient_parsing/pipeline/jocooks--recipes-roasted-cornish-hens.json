@@ -16,7 +16,7 @@
             "unit": "lb each"
           }
         ],
-        "note": null,
+        "note": "about 1 1/2 lb each",
         "category": "Other"
       }
     },
@@ -51,14 +51,14 @@
     {
       "raw": "1 large onion (cut in quarters)",
       "expected": {
-        "item": "onion (cut in quarters)",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut in quarters",
         "category": "Produce"
       }
     },
@@ -79,14 +79,14 @@
     {
       "raw": "1  lemon (cut in slices)",
       "expected": {
-        "item": "lemon (cut in slices)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut in slices",
         "category": "Produce"
       }
     },

@@ -61,14 +61,14 @@
     {
       "raw": "2 tablespoons unrefined Ukrainian sunflower oil (see Note) or extra-virgin olive oil",
       "expected": {
-        "item": "unrefined Ukrainian sunflower oil (see Note) or extra-virgin olive oil",
+        "item": "unrefined Ukrainian sunflower oil or extra-virgin olive oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Oils & Vinegars"
       }
     },

@@ -19,15 +19,15 @@
     {
       "raw": "100g dark 'continental' chocolate (at least 65% cocoa solids)",
       "expected": {
-        "item": "dark 'continental' chocolate (at least 65% cocoa solids)",
+        "item": "dark 'continental' chocolate",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "at least 65% cocoa solids",
+        "category": "Other"
       }
     },
     {
@@ -61,14 +61,14 @@
     {
       "raw": "140g golden caster sugar (preferably vanilla infused)",
       "expected": {
-        "item": "golden caster sugar (preferably vanilla infused)",
+        "item": "golden caster sugar",
         "measurements": [
           {
             "amount": "140",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably vanilla infused",
         "category": "Baking"
       }
     },

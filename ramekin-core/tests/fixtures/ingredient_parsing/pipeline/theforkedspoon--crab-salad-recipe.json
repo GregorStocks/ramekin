@@ -65,28 +65,36 @@
     {
       "raw": "¾ cup mayonnaise (full-fat or low-fat)",
       "expected": {
-        "item": "mayonnaise (full-fat or low-fat)",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "165",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "full-fat or low-fat",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "¼ cup sour cream (or plain Greek yogurt)",
       "expected": {
-        "item": "sour cream (or plain Greek yogurt)",
+        "item": "sour cream",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or plain Greek yogurt",
         "category": "Dairy & Eggs"
       }
     },

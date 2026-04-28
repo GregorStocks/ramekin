@@ -51,14 +51,14 @@
     {
       "raw": "Generous pinch of cayenne pepper (I swapped this with 1/4 teaspoon of hot smoked paprika)",
       "expected": {
-        "item": "cayenne pepper (I swapped this with 1/4 teaspoon of hot smoked paprika)",
+        "item": "cayenne pepper",
         "measurements": [
           {
             "amount": null,
             "unit": "generous pinch"
           }
         ],
-        "note": null,
+        "note": "I swapped this with 1/4 teaspoon of hot smoked paprika",
         "category": "Spices & Seasonings"
       }
     },

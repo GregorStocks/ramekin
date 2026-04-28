@@ -65,15 +65,19 @@
     {
       "raw": "3 cup milk (any milk, including dairy-milk, cashew milk, almond milk or coconut milk will work)",
       "expected": {
-        "item": "milk (any milk, including dairy-milk, cashew milk, almond milk or coconut milk will work)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "735",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "any milk, including dairy-milk, cashew milk, almond milk or coconut milk will work",
+        "category": "Dairy & Eggs"
       }
     },
     {

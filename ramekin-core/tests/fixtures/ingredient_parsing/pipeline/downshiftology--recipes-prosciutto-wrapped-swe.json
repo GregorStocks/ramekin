@@ -5,14 +5,14 @@
     {
       "raw": "2  small-medium sweet potatoes (parboiled)",
       "expected": {
-        "item": "small-medium sweet potatoes (parboiled)",
+        "item": "small-medium sweet potatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "parboiled",
         "category": "Produce"
       }
     },

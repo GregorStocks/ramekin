@@ -5,14 +5,14 @@
     {
       "raw": "1 cup water or almond milk (original/unsweetened)",
       "expected": {
-        "item": "water or almond milk (original/unsweetened)",
+        "item": "water or almond milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "original/unsweetened",
         "category": "Nuts & Dried Fruit"
       }
     },

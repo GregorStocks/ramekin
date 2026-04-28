@@ -19,14 +19,14 @@
     {
       "raw": "1/4 cup pesto (homemade or store bought)",
       "expected": {
-        "item": "pesto (homemade or store bought)",
+        "item": "pesto",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "homemade or store bought",
         "category": "Condiments & Sauces"
       }
     },

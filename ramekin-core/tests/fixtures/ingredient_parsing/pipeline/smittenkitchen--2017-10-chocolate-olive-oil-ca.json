@@ -225,7 +225,7 @@
     {
       "raw": "1 tablespoon (20 grams) light corn syrup (for shine)",
       "expected": {
-        "item": "light corn syrup (for shine)",
+        "item": "light corn syrup",
         "measurements": [
           {
             "amount": "1",
@@ -236,7 +236,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for shine",
         "category": "Baking"
       }
     },

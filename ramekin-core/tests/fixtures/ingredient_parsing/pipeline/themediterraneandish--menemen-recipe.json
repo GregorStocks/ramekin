@@ -37,14 +37,14 @@
     {
       "raw": "1  green bell pepper (Anaheim or Holland peppers will work as well), (cored, seeded and chopped)",
       "expected": {
-        "item": "green bell pepper (Anaheim or Holland peppers will work as well), (cored",
+        "item": "green bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "seeded and chopped)",
+        "note": "Anaheim or Holland peppers will work as well, cored, seeded and chopped",
         "category": "Produce"
       }
     },
@@ -119,14 +119,14 @@
     {
       "raw": "1 teaspoon Aleppo pepper, (more for later)",
       "expected": {
-        "item": "Aleppo pepper, (more for later)",
+        "item": "Aleppo pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "more for later",
         "category": "Spices & Seasonings"
       }
     },
@@ -163,7 +163,7 @@
             "unit": null
           }
         ],
-        "note": "thickly sliced (optional",
+        "note": "thickly sliced (optional)",
         "category": "Bakery & Bread"
       }
     }

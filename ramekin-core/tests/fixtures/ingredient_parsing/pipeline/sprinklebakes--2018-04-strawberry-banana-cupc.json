@@ -5,7 +5,7 @@
     {
       "raw": "3.5 ounces 95g finely chopped fresh strawberries (generous 1/2 cup)",
       "expected": {
-        "item": "finely chopped fresh strawberries (generous 1/2 cup)",
+        "item": "finely chopped fresh strawberries",
         "measurements": [
           {
             "amount": "3.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "generous 1/2 cup",
         "category": "Produce"
       }
     },
@@ -42,13 +42,9 @@
           {
             "amount": "1 tablespoon plus 3/4 cup",
             "unit": null
-          },
-          {
-            "amount": "170",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "170g granulated sugar",
         "category": "Baking"
       }
     },
@@ -219,7 +215,7 @@
     {
       "raw": "3.5 ounces 95g finely chopped fresh strawberries (generous 1/2 cup)",
       "expected": {
-        "item": "finely chopped fresh strawberries (generous 1/2 cup)",
+        "item": "finely chopped fresh strawberries",
         "measurements": [
           {
             "amount": "3.5",
@@ -230,7 +226,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "generous 1/2 cup",
         "category": "Produce"
       }
     },

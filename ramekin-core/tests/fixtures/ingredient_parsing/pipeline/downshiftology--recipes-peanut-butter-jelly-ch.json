@@ -19,15 +19,15 @@
     {
       "raw": "2 cups cashew milk (almond milk or coconut milk)",
       "expected": {
-        "item": "cashew milk (almond milk or coconut milk)",
+        "item": "cashew milk",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "almond milk or coconut milk",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {

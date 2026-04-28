@@ -192,14 +192,14 @@
     {
       "raw": "1 cup finely chopped fresh herbs (parsley and/or cilantro)",
       "expected": {
-        "item": "finely chopped fresh herbs (parsley and/or cilantro)",
+        "item": "finely chopped fresh herbs",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "parsley and/or cilantro",
         "category": "Produce"
       }
     },
@@ -227,7 +227,7 @@
             "unit": "small"
           }
         ],
-        "note": "peeled and sliced paper thin (or 2 additional carrots)",
+        "note": "or 2 additional carrots, peeled and sliced paper thin",
         "category": "Produce"
       }
     },

@@ -23,14 +23,14 @@
     {
       "raw": "2 3/4 to 3 cups all-purpose flour, preferably unbleached",
       "expected": {
-        "item": "all-purpose flour, preferably unbleached",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2.75 to 3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "preferably unbleached",
         "category": "Baking"
       }
     },
@@ -79,9 +79,9 @@
     {
       "raw": "Water (only if absolutely needed)",
       "expected": {
-        "item": "Water (only if absolutely needed)",
+        "item": "Water",
         "measurements": [],
-        "note": null,
+        "note": "only if absolutely needed",
         "category": "Other"
       }
     },

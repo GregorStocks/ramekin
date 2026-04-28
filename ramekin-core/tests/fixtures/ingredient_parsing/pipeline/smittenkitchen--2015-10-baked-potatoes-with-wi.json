@@ -99,7 +99,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 pounds",
         "category": "Produce"
       }
     },
@@ -197,14 +197,14 @@
     {
       "raw": "1/2 cup white wine or vermouth, or 1/4 cup sherry or marsala (optional)",
       "expected": {
-        "item": "white wine or vermouth, or 1/4 cup sherry or marsala",
+        "item": "white wine or vermouth",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "optional",
+        "note": "optional; or 1/4 cup sherry or marsala",
         "category": "Beverages"
       }
     },

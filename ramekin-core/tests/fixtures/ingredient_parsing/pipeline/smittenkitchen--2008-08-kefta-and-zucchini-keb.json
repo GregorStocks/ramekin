@@ -5,14 +5,18 @@
     {
       "raw": "1 cup plain yogurt (preferably full-fat)",
       "expected": {
-        "item": "plain yogurt (preferably full-fat)",
+        "item": "plain yogurt",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably full-fat",
         "category": "Dairy & Eggs"
       }
     },
@@ -65,19 +69,15 @@
     {
       "raw": "12 (10-inch) wooden skewers, soaked in cold water for 30 minutes",
       "expected": {
-        "item": "wooden skewers",
+        "item": "wooden skewers, soaked in cold water for 30 minutes",
         "measurements": [
           {
             "amount": "12",
             "unit": null
-          },
-          {
-            "amount": "10",
-            "unit": "inch"
           }
         ],
-        "note": "soaked in cold water for 30 minutes",
-        "category": "Other"
+        "note": "10-inch",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -151,21 +151,25 @@
     {
       "raw": "3 tablespoons olive oil (we used about half of this)",
       "expected": {
-        "item": "olive oil (we used about half of this)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "we used about half of this",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "2 medium zucchini (1 1/4 lb total), cut crosswise into 1/2-inch-thick slices (don’t skim on their thickness, or you will have difficulty threading them)",
       "expected": {
-        "item": "zucchini, cut crosswise into 1/2-inch-thick slices (don’t skim on their thickness, or you will have difficulty threading them)",
+        "item": "zucchini, cut crosswise into 1/2-inch-thick slices",
         "measurements": [
           {
             "amount": "2",
@@ -180,7 +184,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "don’t skim on their thickness, or you will have difficulty threading them",
         "category": "Produce"
       }
     },
@@ -216,7 +220,7 @@
             "unit": "g"
           }
         ],
-        "note": "roughly chopped",
+        "note": "about 1 cup, roughly chopped",
         "category": "Produce"
       }
     },
@@ -269,7 +273,7 @@
     {
       "raw": "1 pound ground lamb or ground turkey, preferably dark meat",
       "expected": {
-        "item": "ground lamb or ground turkey, preferably dark meat",
+        "item": "ground lamb or ground turkey",
         "measurements": [
           {
             "amount": "1",
@@ -280,7 +284,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably dark meat",
         "category": "Meat & Seafood"
       }
     },

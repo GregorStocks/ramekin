@@ -5,14 +5,14 @@
     {
       "raw": "8 cups organic powdered sugar (or powdered coconut sugar, powdered succanat, etc)",
       "expected": {
-        "item": "organic powdered sugar (or powdered coconut sugar, powdered succanat, etc)",
+        "item": "organic powdered sugar",
         "measurements": [
           {
             "amount": "8",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or powdered coconut sugar, powdered succanat, etc",
         "category": "Baking"
       }
     },
@@ -33,29 +33,29 @@
     {
       "raw": "1 cup organic palm shortening (or vegan butter or a combination of both)",
       "expected": {
-        "item": "organic palm shortening (or vegan butter or a combination of both)",
+        "item": "organic palm shortening",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or vegan butter or a combination of both",
         "category": "Baking"
       }
     },
     {
       "raw": "1/2-3/4 cup almond milk (cashew milk or coconut milk)",
       "expected": {
-        "item": "almond milk (cashew milk or coconut milk)",
+        "item": "almond milk",
         "measurements": [
           {
             "amount": "1/2-3/4",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "cashew milk or coconut milk",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {

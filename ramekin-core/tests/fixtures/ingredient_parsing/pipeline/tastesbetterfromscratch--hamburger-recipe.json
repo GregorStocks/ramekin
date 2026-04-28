@@ -5,7 +5,7 @@
     {
       "raw": "1 ½ pounds ground chuck* (, (80/20))",
       "expected": {
-        "item": "ground chuck* (, (80/20)",
+        "item": "ground chuck",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "(80/20)",
         "category": "Other"
       }
     },
@@ -159,14 +159,14 @@
     {
       "raw": "6 slices American cheese* (, or your favorite cheese)",
       "expected": {
-        "item": "American cheese* (, or your favorite cheese)",
+        "item": "American cheese",
         "measurements": [
           {
             "amount": "6",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "or your favorite cheese",
         "category": "Cheese"
       }
     },

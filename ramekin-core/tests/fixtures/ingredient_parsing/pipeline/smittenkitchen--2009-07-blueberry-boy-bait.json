@@ -135,7 +135,7 @@
     {
       "raw": "1 cup (235 ml) whole milk (though buttermilk, which was all I had on hand, worked just great)",
       "expected": {
-        "item": "whole milk (though buttermilk, which was all I had on hand, worked just great)",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "1",
@@ -144,16 +144,20 @@
           {
             "amount": "235",
             "unit": "ml"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "though buttermilk, which was all I had on hand, worked just great",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1/2 cup (about 85 grams) blueberries, fresh or frozen (if frozen, do not defrost first as it tends to muddle in the batter)",
       "expected": {
-        "item": "blueberries, fresh or frozen",
+        "item": "blueberries",
         "measurements": [
           {
             "amount": "0.5",
@@ -164,7 +168,7 @@
             "unit": "g"
           }
         ],
-        "note": "if frozen, do not defrost first as it tends to muddle in the batter",
+        "note": "about 85 grams, if frozen, do not defrost first as it tends to muddle in the batter, fresh or frozen",
         "category": "Produce"
       }
     },
@@ -191,7 +195,7 @@
             "unit": "g"
           }
         ],
-        "note": "fresh or frozen (do not defrost)",
+        "note": "about 85 grams, do not defrost, fresh or frozen",
         "category": "Produce"
       }
     },

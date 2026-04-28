@@ -5,14 +5,14 @@
     {
       "raw": "4  chicken breasts (halves, boneless and skinless)",
       "expected": {
-        "item": "chicken breasts (halves, boneless and skinless)",
+        "item": "chicken breasts",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "halves, boneless and skinless",
         "category": "Meat & Seafood"
       }
     },
@@ -51,14 +51,18 @@
     {
       "raw": "¼ cup vegetable oil (or olive oil for frying)",
       "expected": {
-        "item": "vegetable oil (or olive oil for frying)",
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or olive oil for frying",
         "category": "Oils & Vinegars"
       }
     },

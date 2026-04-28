@@ -5,7 +5,7 @@
     {
       "raw": "1   lb    boneless chicken breast, cut into 1-inch cubes",
       "expected": {
-        "item": "boneless chicken breast, cut into 1-inch cubes",
+        "item": "boneless chicken breast",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -41,14 +41,14 @@
     {
       "raw": "1/2  teaspoon    red chili powder (preferably kashmiri type)",
       "expected": {
-        "item": "red chili powder (preferably kashmiri type)",
+        "item": "red chili powder",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "preferably kashmiri type",
         "category": "Spices & Seasonings"
       }
     },
@@ -232,7 +232,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "crushed  (kasoori methi)",
+        "note": "kasoori methi, crushed",
         "category": "Spices & Seasonings"
       }
     },
@@ -248,14 +248,14 @@
     {
       "raw": "6   tablespoons    ghee (clarified butter)",
       "expected": {
-        "item": "ghee (clarified butter)",
+        "item": "ghee",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "clarified butter",
         "category": "Dairy & Eggs"
       }
     },
@@ -346,7 +346,7 @@
     {
       "raw": "1 3/4  lbs    tomatoes, cut in half",
       "expected": {
-        "item": "tomatoes, cut in half",
+        "item": "tomatoes",
         "measurements": [
           {
             "amount": "1.75",
@@ -357,7 +357,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut in half",
         "category": "Produce"
       }
     },

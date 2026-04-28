@@ -5,15 +5,19 @@
     {
       "raw": "2 tablespoons butter (or olive oil)",
       "expected": {
-        "item": "butter (or olive oil)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "or olive oil",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -65,14 +69,14 @@
     {
       "raw": "1/2 cup sun dried tomato strips in oil (jarred, reserve 2 teaspoons of the jarred oil for cooking)",
       "expected": {
-        "item": "sun dried tomato strips in oil (jarred, reserve 2 teaspoons of the jarred oil for cooking)",
+        "item": "sun dried tomato strips in oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "jarred, reserve 2 teaspoons of the jarred oil for cooking",
         "category": "Produce"
       }
     },
@@ -97,14 +101,18 @@
     {
       "raw": "1 1/4 cups heavy cream (thickened cream or half andf half)",
       "expected": {
-        "item": "heavy cream (thickened cream or half andf half)",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "298",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "thickened cream or half andf half",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,14 +189,14 @@
     {
       "raw": "2 tablespoons fresh chopped basil (or parsley)",
       "expected": {
-        "item": "fresh chopped basil (or parsley)",
+        "item": "fresh chopped basil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or parsley",
         "category": "Spices & Seasonings"
       }
     },

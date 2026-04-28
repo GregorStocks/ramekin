@@ -261,14 +261,14 @@
     {
       "raw": "¼ cup reserved pasta water ((you may not need it; check your sauce and add gradually))",
       "expected": {
-        "item": "reserved pasta water (you may not need it; check your sauce and add gradually)",
+        "item": "reserved pasta water",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "you may not need it; check your sauce and add gradually",
         "category": "Pasta & Rice"
       }
     },

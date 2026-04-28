@@ -435,36 +435,28 @@
     {
       "raw": "1  package (50g Marich milk chocolate salted caramel popcorn)",
       "expected": {
-        "item": "1  package (50g Marich milk chocolate salted caramel popcorn)",
+        "item": "Marich milk chocolate salted caramel popcorn",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
-          },
-          {
-            "amount": "50",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "50g Marich milk chocolate salted caramel popcorn",
         "category": "Snacks"
       }
     },
     {
       "raw": "1  package (50 g Marich dark chocolate salted caramels)",
       "expected": {
-        "item": "1  package (50 g Marich dark chocolate salted caramels)",
+        "item": "Marich dark chocolate salted caramels",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
-          },
-          {
-            "amount": "50",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "50 g Marich dark chocolate salted caramels",
         "category": "Spices & Seasonings"
       }
     },
@@ -485,15 +477,15 @@
     {
       "raw": "2  Alter Eco Truffles (velvet and salted caramel)",
       "expected": {
-        "item": "Alter Eco Truffles (velvet and salted caramel)",
+        "item": "Alter Eco Truffles",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "velvet and salted caramel",
+        "category": "Other"
       }
     }
   ]

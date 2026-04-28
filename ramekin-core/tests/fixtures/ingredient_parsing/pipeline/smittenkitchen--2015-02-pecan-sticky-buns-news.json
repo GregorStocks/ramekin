@@ -403,15 +403,15 @@
     {
       "raw": "1 1/2 cups toasted and cooled, chopped pecans (divided)",
       "expected": {
-        "item": "toasted and cooled, chopped pecans",
+        "item": "toasted and cooled",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "divided",
-        "category": "Nuts & Dried Fruit"
+        "note": "divided, chopped pecans",
+        "category": "Other"
       }
     }
   ]

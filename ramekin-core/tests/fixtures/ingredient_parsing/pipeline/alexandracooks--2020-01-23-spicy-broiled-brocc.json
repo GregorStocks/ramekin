@@ -105,7 +105,7 @@
     {
       "raw": "1.25 lbs (roughly) broccoli",
       "expected": {
-        "item": "(roughly) broccoli",
+        "item": "broccoli",
         "measurements": [
           {
             "amount": "1.25",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "roughly",
         "category": "Produce"
       }
     },

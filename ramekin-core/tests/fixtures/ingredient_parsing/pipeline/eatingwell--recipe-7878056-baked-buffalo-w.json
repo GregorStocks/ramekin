@@ -59,14 +59,14 @@
     {
       "raw": "3 tablespoons Buffalo-style hot sauce (such as Frank's RedHot)",
       "expected": {
-        "item": "Buffalo-style hot sauce (such as Frank's RedHot)",
+        "item": "Buffalo-style hot sauce",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "such as Frank's RedHot",
         "category": "Condiments & Sauces"
       }
     },
@@ -127,9 +127,9 @@
     {
       "raw": "Blue cheese or ranch dressing, carrot and celery sticks for serving",
       "expected": {
-        "item": "Blue cheese or ranch dressing",
+        "item": "Blue cheese or ranch dressing, carrot and celery sticks for serving",
         "measurements": [],
-        "note": "carrot and celery sticks for serving",
+        "note": null,
         "category": "Cheese"
       }
     }

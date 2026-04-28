@@ -5,7 +5,7 @@
     {
       "raw": "1 1/2 ounces (3 tablespoons) gin (Hendricks is specified; Tanqueray was used)",
       "expected": {
-        "item": "gin (Hendricks is specified; Tanqueray was used)",
+        "item": "gin",
         "measurements": [
           {
             "amount": "1.5",
@@ -20,14 +20,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Hendricks is specified; Tanqueray was used",
         "category": "Beverages"
       }
     },
     {
       "raw": "1 1/2 ounces (3 tablespoons) Pimm’s No. 1 liqueur (what’s Pimm’s?)",
       "expected": {
-        "item": "Pimm’s No. 1 liqueur (what’s Pimm’s?)",
+        "item": "Pimm’s No. 1 liqueur",
         "measurements": [
           {
             "amount": "1.5",
@@ -42,14 +42,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "what’s Pimm’s?",
         "category": "Beverages"
       }
     },
     {
       "raw": "4 ounces (1/2 cup) homemade lemonade (recipe below)",
       "expected": {
-        "item": "homemade lemonade (recipe below)",
+        "item": "homemade lemonade",
         "measurements": [
           {
             "amount": "4",
@@ -64,7 +64,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "recipe below",
         "category": "Beverages"
       }
     },
@@ -85,14 +85,14 @@
     {
       "raw": "10 paper-thin half moon slices of cucumber (I used an “English”, unwaxed, cucumber)",
       "expected": {
-        "item": "paper-thin half moon slices of cucumber (I used an “English”, unwaxed, cucumber)",
+        "item": "paper-thin half moon slices of cucumber",
         "measurements": [
           {
             "amount": "10",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "I used an “English”, unwaxed, cucumber",
         "category": "Produce"
       }
     },
@@ -118,13 +118,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "0.75",
-            "unit": null
           }
         ],
-        "note": "or to taste",
+        "note": "I will use perhaps 1/2 or 3/4 of a part next time, see Note above; or to taste",
         "category": "Other"
       }
     },

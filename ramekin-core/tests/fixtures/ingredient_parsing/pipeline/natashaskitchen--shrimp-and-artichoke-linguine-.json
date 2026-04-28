@@ -5,7 +5,7 @@
     {
       "raw": "1 lb linguine (reserve 1 cup cooking liquid)",
       "expected": {
-        "item": "linguine (reserve 1 cup cooking liquid)",
+        "item": "linguine",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "reserve 1 cup cooking liquid",
         "category": "Pasta & Rice"
       }
     },
@@ -70,7 +70,7 @@
             "unit": "medium"
           }
         ],
-        "note": "pressed or minced (about 1 1/2 Tbsp",
+        "note": "pressed or minced (about 1 1/2 Tbsp)",
         "category": "Produce"
       }
     },
@@ -165,14 +165,18 @@
     {
       "raw": "1/4 cup freshly squeezed lemon juice (from 2 small lemons)",
       "expected": {
-        "item": "freshly squeezed lemon juice (from 2 small lemons)",
+        "item": "freshly squeezed lemon juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 2 small lemons",
         "category": "Beverages"
       }
     },

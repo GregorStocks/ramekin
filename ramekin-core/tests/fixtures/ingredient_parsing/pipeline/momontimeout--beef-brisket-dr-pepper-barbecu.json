@@ -49,14 +49,18 @@
     {
       "raw": "2 tsp salt (used smoked sea salt for a wonderful smoky flavor)",
       "expected": {
-        "item": "salt (used smoked sea salt for a wonderful smoky flavor)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "used smoked sea salt for a wonderful smoky flavor",
         "category": "Spices & Seasonings"
       }
     },
@@ -285,14 +289,18 @@
     {
       "raw": "1 tsp salt (smoked sea salt is great if you have it)",
       "expected": {
-        "item": "salt (smoked sea salt is great if you have it)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "smoked sea salt is great if you have it",
         "category": "Spices & Seasonings"
       }
     }

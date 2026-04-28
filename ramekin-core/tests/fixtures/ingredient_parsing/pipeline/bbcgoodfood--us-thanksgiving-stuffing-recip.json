@@ -19,14 +19,14 @@
     {
       "raw": "8 slices stale bread cut into 1.5-inch cubes (we used sourdough)",
       "expected": {
-        "item": "stale bread cut into 1.5-inch cubes (we used sourdough)",
+        "item": "stale bread cut into 1.5-inch cubes",
         "measurements": [
           {
             "amount": "8",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "we used sourdough",
         "category": "Bakery & Bread"
       }
     },

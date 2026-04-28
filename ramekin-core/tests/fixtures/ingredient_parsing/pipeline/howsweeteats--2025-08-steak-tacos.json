@@ -175,23 +175,23 @@
     {
       "raw": "¼ cup crumbled feta, (or cotija! for topping)",
       "expected": {
-        "item": "crumbled feta, (or cotija! for topping)",
+        "item": "crumbled feta",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or cotija! for topping",
         "category": "Cheese"
       }
     },
     {
       "raw": "pickled onions, (for topping)",
       "expected": {
-        "item": "pickled onions, (for topping)",
+        "item": "pickled onions",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Canned Goods"
       }
     }

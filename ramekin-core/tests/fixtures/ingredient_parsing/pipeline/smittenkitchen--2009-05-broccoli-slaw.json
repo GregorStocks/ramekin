@@ -41,7 +41,7 @@
     {
       "raw": "1/2 cup (120 ml or 125 grams) buttermilk, well-shaken",
       "expected": {
-        "item": "buttermilk, well-shaken",
+        "item": "buttermilk",
         "measurements": [
           {
             "amount": "0.5",
@@ -56,7 +56,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "well-shaken",
         "category": "Dairy & Eggs"
       }
     },

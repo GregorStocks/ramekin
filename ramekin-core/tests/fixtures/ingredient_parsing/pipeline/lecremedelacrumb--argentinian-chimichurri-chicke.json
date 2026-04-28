@@ -19,14 +19,14 @@
     {
       "raw": "4  medium-large boneless skinless chicken breasts (cut into 1 1/2 inch pieces)",
       "expected": {
-        "item": "medium-large boneless skinless chicken breasts (cut into 1 1/2 inch pieces)",
+        "item": "medium-large boneless skinless chicken breasts",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1 1/2 inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -51,14 +51,14 @@
     {
       "raw": "2 tablespoons fresh-squeezed lime juice (or lemon juice)",
       "expected": {
-        "item": "fresh-squeezed lime juice (or lemon juice)",
+        "item": "fresh-squeezed lime juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or lemon juice",
         "category": "Beverages"
       }
     },

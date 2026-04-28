@@ -23,14 +23,14 @@
     {
       "raw": "1 cup fresh whole-wheat breadcrumbs (see Tip)",
       "expected": {
-        "item": "fresh whole-wheat breadcrumbs (see Tip)",
+        "item": "fresh whole-wheat breadcrumbs",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Tip",
         "category": "Bakery & Bread"
       }
     },
@@ -172,7 +172,7 @@
             "unit": null
           }
         ],
-        "note": "diced (see Tip)",
+        "note": "see Tip, diced",
         "category": "Produce"
       }
     },
@@ -207,14 +207,14 @@
     {
       "raw": "0.5 cup instant brown rice, or cooked brown rice",
       "expected": {
-        "item": "instant brown rice",
+        "item": "instant brown rice, or cooked brown rice",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "or cooked brown rice",
+        "note": null,
         "category": "Pasta & Rice"
       }
     },

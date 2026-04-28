@@ -96,14 +96,18 @@
     {
       "raw": "1/4 cup dry white wine (or broth)",
       "expected": {
-        "item": "dry white wine (or broth)",
+        "item": "dry white wine",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "59",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or broth",
         "category": "Beverages"
       }
     },

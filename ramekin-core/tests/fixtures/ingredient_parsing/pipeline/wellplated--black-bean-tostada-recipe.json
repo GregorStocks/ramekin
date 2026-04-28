@@ -10,13 +10,9 @@
           {
             "amount": "4",
             "unit": null
-          },
-          {
-            "amount": "6",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "6-inch",
         "category": "Bakery & Bread"
       }
     },
@@ -73,7 +69,7 @@
     {
       "raw": "1 can reduced-sodium black beans ((15 ounces) rinsed and drained)",
       "expected": {
-        "item": "reduced-sodium black beans rinsed and drained)",
+        "item": "reduced-sodium black beans rinsed and drained",
         "measurements": [
           {
             "amount": "1",
@@ -136,18 +132,18 @@
     {
       "raw": "Shredded cheese ((I used queso fresco))",
       "expected": {
-        "item": "Shredded cheese (I used queso fresco)",
+        "item": "Shredded cheese",
         "measurements": [],
-        "note": null,
+        "note": "I used queso fresco",
         "category": "Cheese"
       }
     },
     {
       "raw": "Sour cream (or plain Greek yogurt)",
       "expected": {
-        "item": "Sour cream (or plain Greek yogurt)",
+        "item": "Sour cream",
         "measurements": [],
-        "note": null,
+        "note": "or plain Greek yogurt",
         "category": "Dairy & Eggs"
       }
     },

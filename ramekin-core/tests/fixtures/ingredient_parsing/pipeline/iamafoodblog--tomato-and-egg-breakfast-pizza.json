@@ -28,9 +28,9 @@
     {
       "raw": "cornmeal, if desired",
       "expected": {
-        "item": "cornmeal, if desired",
+        "item": "cornmeal",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Baking"
       }
     },
@@ -65,14 +65,14 @@
     {
       "raw": "1/2 cup cherry tomatoes, cut in half",
       "expected": {
-        "item": "cherry tomatoes, cut in half",
+        "item": "cherry tomatoes",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut in half",
         "category": "Produce"
       }
     },

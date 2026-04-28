@@ -5,14 +5,14 @@
     {
       "raw": "1 chicken carcass (from a cooked 2- to 3-pound chicken), or 1 pound bones",
       "expected": {
-        "item": "chicken carcass, or 1 pound bones",
+        "item": "chicken carcass",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "from a cooked 2- to 3-pound chicken",
+        "note": "from a cooked 2- to 3-pound chicken; or 1 pound bones",
         "category": "Meat & Seafood"
       }
     },

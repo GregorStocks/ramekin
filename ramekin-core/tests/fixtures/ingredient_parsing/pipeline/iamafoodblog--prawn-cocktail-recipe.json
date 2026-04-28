@@ -78,14 +78,14 @@
     {
       "raw": "1 cup cooked shelled prawns (I used baby shrimp)",
       "expected": {
-        "item": "cooked shelled prawns (I used baby shrimp)",
+        "item": "cooked shelled prawns",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used baby shrimp",
         "category": "Meat & Seafood"
       }
     },

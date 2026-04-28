@@ -37,14 +37,14 @@
     {
       "raw": "3/4 cup cream ((or half and half))",
       "expected": {
-        "item": "cream (or half and half)",
+        "item": "cream",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or half and half",
         "category": "Dairy & Eggs"
       }
     },
@@ -69,14 +69,14 @@
     {
       "raw": "1 cup leftover Mac &amp;amp; cheese ((I used Kraft))",
       "expected": {
-        "item": "leftover Mac & cheese (I used Kraft)",
+        "item": "leftover Mac & cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used Kraft",
         "category": "Cheese"
       }
     },
@@ -115,14 +115,14 @@
     {
       "raw": "1 cup panko ((you can also use regular bread crumbs))",
       "expected": {
-        "item": "panko (you can also use regular bread crumbs)",
+        "item": "panko",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "you can also use regular bread crumbs",
         "category": "Bakery & Bread"
       }
     },

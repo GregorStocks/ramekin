@@ -123,28 +123,32 @@
     {
       "raw": "1  egg whisked with 1 tsp water (for textured top)",
       "expected": {
-        "item": "egg whisked with 1 tsp water (for textured top)",
+        "item": "egg whisked with 1 tsp water",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "for textured top",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "2 TBSP melted butter (for brushing)",
       "expected": {
-        "item": "melted butter (for brushing)",
+        "item": "melted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for brushing",
         "category": "Dairy & Eggs"
       }
     }

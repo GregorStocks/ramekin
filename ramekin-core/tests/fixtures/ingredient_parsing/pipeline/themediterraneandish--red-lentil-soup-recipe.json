@@ -5,9 +5,9 @@
     {
       "raw": "Extra virgin olive oil (I used Early Harvest)",
       "expected": {
-        "item": "Extra virgin olive oil (I used Early Harvest)",
+        "item": "Extra virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "I used Early Harvest",
         "category": "Oils & Vinegars"
       }
     },
@@ -138,14 +138,14 @@
     {
       "raw": "1 cup crushed tomatoes (from a can)",
       "expected": {
-        "item": "crushed tomatoes (from a can)",
+        "item": "crushed tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from a can",
         "category": "Canned Goods"
       }
     },

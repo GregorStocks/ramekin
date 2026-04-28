@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds (900 grams) granny smith or another tart baking apple, peeled, cored, cut into 1-inch chunks",
       "expected": {
-        "item": "granny smith or another tart baking apple, peeled, cored, cut into 1-inch chunks",
+        "item": "granny smith or another tart baking apple, peeled, cored",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch chunks",
         "category": "Produce"
       }
     },
@@ -72,9 +72,9 @@
     {
       "raw": "Finely grated zest of 2 mini oranges (such as mandarins) or 1 regular one",
       "expected": {
-        "item": "Finely grated zest of 2 mini oranges (such as mandarins) or 1 regular one",
+        "item": "Finely grated zest of 2 mini oranges or 1 regular one",
         "measurements": [],
-        "note": null,
+        "note": "such as mandarins",
         "category": "Produce"
       }
     },
@@ -144,7 +144,7 @@
     {
       "raw": "½ cup (70 grams) polenta (cornmeal will work too)",
       "expected": {
-        "item": "polenta (cornmeal will work too)",
+        "item": "polenta",
         "measurements": [
           {
             "amount": "0.5",
@@ -155,21 +155,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "cornmeal will work too",
+        "category": "Pasta & Rice"
       }
     },
     {
       "raw": "½ teaspoon aniseed (optional) or fennel seed, crushed",
       "expected": {
-        "item": "aniseed or fennel seed, crushed",
+        "item": "aniseed or fennel seed",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "optional",
+        "note": "optional, crushed",
         "category": "Spices & Seasonings"
       }
     },
@@ -230,7 +230,7 @@
     {
       "raw": "½ cup (4 ounces or 115 grams) unsalted butter, cold, cut into pieces",
       "expected": {
-        "item": "unsalted butter, cold, cut into pieces",
+        "item": "unsalted butter, cold",
         "measurements": [
           {
             "amount": "0.5",
@@ -245,7 +245,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },

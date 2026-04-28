@@ -5,28 +5,36 @@
     {
       "raw": "2¼ teaspoon active dry yeast (or instant yeast)",
       "expected": {
-        "item": "active dry yeast (or instant yeast)",
+        "item": "active dry yeast",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or instant yeast",
         "category": "Baking"
       }
     },
     {
       "raw": "1 cup milk (lukewarm)",
       "expected": {
-        "item": "milk (lukewarm)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "lukewarm",
         "category": "Dairy & Eggs"
       }
     },
@@ -191,36 +199,36 @@
     {
       "raw": "1½ cups powdered sugar (also known as icing sugar, or confectioner's sugar)",
       "expected": {
-        "item": "powdered sugar (also known as icing sugar, or confectioner's sugar)",
+        "item": "powdered sugar",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "180",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "also known as icing sugar, or confectioner's sugar",
         "category": "Baking"
       }
     },
     {
       "raw": "8 ounces cream cheese ((1 block) at room temperature)",
       "expected": {
-        "item": "cream cheese at room temperature)",
+        "item": "cream cheese at room temperature",
         "measurements": [
           {
             "amount": "8",
             "unit": "oz"
           },
           {
-            "amount": "1",
-            "unit": "block"
-          },
-          {
             "amount": "227",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 block",
         "category": "Cheese"
       }
     },

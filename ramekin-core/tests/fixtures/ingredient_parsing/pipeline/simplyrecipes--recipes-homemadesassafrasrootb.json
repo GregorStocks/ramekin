@@ -5,9 +5,9 @@
     {
       "raw": "Several roots (including some green stems) from sassafras saplings, about 30-40 inches worth of 1/4-inch thick roots (enough to fill one cup when you chop them into 1/2-inch pieces)",
       "expected": {
-        "item": "Several roots (including some green stems) from sassafras saplings, about 30-40 inches worth of 1/4-inch thick roots (enough to fill one cup when you chop them into 1/2-inch pieces)",
+        "item": "Several roots from sassafras saplings, about 30-40 inches worth of 1/4-inch thick roots",
         "measurements": [],
-        "note": null,
+        "note": "including some green stems, enough to fill one cup when you chop them into 1/2-inch pieces",
         "category": "Other"
       }
     },
@@ -51,13 +51,9 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": null,
-            "unit": "can"
           }
         ],
-        "note": null,
+        "note": "can sub fennel",
         "category": "Spices & Seasonings"
       }
     },

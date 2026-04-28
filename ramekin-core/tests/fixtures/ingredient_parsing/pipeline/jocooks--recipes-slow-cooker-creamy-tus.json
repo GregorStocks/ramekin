@@ -5,14 +5,14 @@
     {
       "raw": "2  chicken breasts (boneless and skinless, cut into small cubes)",
       "expected": {
-        "item": "chicken breasts (boneless and skinless, cut into small cubes)",
+        "item": "chicken breasts",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "boneless and skinless, cut into small cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -95,21 +95,25 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped (not in oil",
+        "note": "chopped (not in oil)",
         "category": "Produce"
       }
     },
     {
       "raw": "½ cup chicken broth (low sodium)",
       "expected": {
-        "item": "chicken broth (low sodium)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "124",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Canned Goods"
       }
     },

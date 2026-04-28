@@ -33,14 +33,14 @@
     {
       "raw": "20 g rice flour (joshinko)",
       "expected": {
-        "item": "rice flour (joshinko)",
+        "item": "rice flour",
         "measurements": [
           {
             "amount": "20",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "joshinko",
         "category": "Baking"
       }
     },
@@ -89,14 +89,14 @@
     {
       "raw": "1 drop pink food coloring (or a smaller amount of red)",
       "expected": {
-        "item": "pink food coloring (or a smaller amount of red)",
+        "item": "pink food coloring",
         "measurements": [
           {
             "amount": "1",
             "unit": "drop"
           }
         ],
-        "note": null,
+        "note": "or a smaller amount of red",
         "category": "Baking"
       }
     },
@@ -110,17 +110,17 @@
             "unit": "drop"
           }
         ],
-        "note": "or flavoring of your choice (optional",
+        "note": "or flavoring of your choice (optional)",
         "category": "Baking"
       }
     },
     {
       "raw": "water (for boiling)",
       "expected": {
-        "item": "water (for boiling)",
+        "item": "water",
         "measurements": [],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "for boiling",
+        "category": "Other"
       }
     },
     {

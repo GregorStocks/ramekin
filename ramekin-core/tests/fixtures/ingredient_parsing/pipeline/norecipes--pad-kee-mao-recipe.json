@@ -226,13 +226,9 @@
           {
             "amount": "30",
             "unit": "g"
-          },
-          {
-            "amount": "8",
-            "unit": "thin slices"
           }
         ],
-        "note": null,
+        "note": "8 thin slices",
         "category": "Produce"
       }
     },
@@ -281,14 +277,14 @@
     {
       "raw": "20 grams Thai basil* ((leaves only))",
       "expected": {
-        "item": "Thai basil* (leaves only)",
+        "item": "Thai basil",
         "measurements": [
           {
             "amount": "20",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "leaves only",
         "category": "Spices & Seasonings"
       }
     }

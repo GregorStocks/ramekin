@@ -14,27 +14,27 @@
           {
             "amount": "1.1",
             "unit": "lb"
-          },
-          {
-            "amount": null,
-            "unit": "large"
           }
         ],
-        "note": null,
+        "note": "skinless bone-in or boneless, large pieces such as thighs, drumsticks, legs or mix of all",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "3 tablespoons plain yogurt ((curd or dahi))",
       "expected": {
-        "item": "plain yogurt (curd or dahi)",
+        "item": "plain yogurt",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "46",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "curd or dahi",
         "category": "Dairy & Eggs"
       }
     },
@@ -55,14 +55,14 @@
     {
       "raw": "½ to ¾ teaspoon salt ((adjust to tase))",
       "expected": {
-        "item": "salt (adjust to tase)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.5 to 0.75",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "adjust to tase",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,28 +87,28 @@
     {
       "raw": "½ to 1 teaspoon red chilli powder  ((or paprika) (use less spicy variety))",
       "expected": {
-        "item": "red chilli powder (or paprika) (use less spicy variety)",
+        "item": "red chilli powder",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "or paprika, use less spicy variety",
+        "category": "Other"
       }
     },
     {
       "raw": "½ to 1 tablespoon garam masala ((or biryani masala) (Refer notes))",
       "expected": {
-        "item": "garam masala (or biryani masala) (Refer notes)",
+        "item": "garam masala",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or biryani masala, Refer notes",
         "category": "Spices & Seasonings"
       }
     },
@@ -133,35 +133,35 @@
     {
       "raw": "1  bay leaf  ((tej patta))",
       "expected": {
-        "item": "bay leaf  (tej patta)",
+        "item": "bay leaf",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "tej patta",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "4  green cardamoms ((choti elaichi))",
       "expected": {
-        "item": "green cardamoms (choti elaichi)",
+        "item": "green cardamoms",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "choti elaichi",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "6  cloves ((lavang))",
       "expected": {
-        "item": "(lavang)",
+        "item": "lavang",
         "measurements": [
           {
             "amount": "6",
@@ -175,84 +175,84 @@
     {
       "raw": "1 inch cinnamon ((dalchini))",
       "expected": {
-        "item": "inch cinnamon (dalchini)",
+        "item": "inch cinnamon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "dalchini",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1  star anise ((chakri phool ))",
       "expected": {
-        "item": "star anise (chakri phool",
+        "item": "star anise",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "chakri phool",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "¾ teaspoon shahi jeera ((caraway seeds) (substitute with cumin))",
       "expected": {
-        "item": "shahi jeera (substitute with cumin)",
+        "item": "shahi jeera",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
           }
         ],
-        "note": "caraway seeds",
-        "category": "Spices & Seasonings"
+        "note": "caraway seeds, substitute with cumin",
+        "category": "Other"
       }
     },
     {
       "raw": "1 strand mace  ((javitri, omit if you don&amp;#39;t like))",
       "expected": {
-        "item": "strand mace  (javitri, omit if you don't like)",
+        "item": "strand mace",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "javitri, omit if you don't like",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "2 cups basmati rice ((aged rice only))",
       "expected": {
-        "item": "basmati rice (aged rice only)",
+        "item": "basmati rice",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "aged rice only",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "2 tablespoon ghee (or Oil)",
       "expected": {
-        "item": "ghee (or Oil)",
+        "item": "ghee",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or Oil",
         "category": "Dairy & Eggs"
       }
     },
@@ -280,7 +280,7 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped fine (about 15 leaves",
+        "note": "chopped fine (about 15 leaves)",
         "category": "Spices & Seasonings"
       }
     },
@@ -301,14 +301,18 @@
     {
       "raw": "¼ cup plain yogurt ((Indian curd))",
       "expected": {
-        "item": "plain yogurt (Indian curd)",
+        "item": "plain yogurt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "61",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Indian curd",
         "category": "Dairy & Eggs"
       }
     },
@@ -329,46 +333,50 @@
     {
       "raw": "1 teaspoon garam masala ((or biryani masala))",
       "expected": {
-        "item": "garam masala (or biryani masala)",
+        "item": "garam masala",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or biryani masala",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "3 cups water ((3½ cups for pot) (refer notes, more if needed ))",
       "expected": {
-        "item": "water (refer notes, more if needed",
+        "item": "water",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           },
           {
-            "amount": "3.5",
-            "unit": "cup"
+            "amount": "711",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "3 1/2 cups for pot, refer notes, more if needed",
         "category": "Other"
       }
     },
     {
       "raw": "¾ teaspoon salt ((to stir in water))",
       "expected": {
-        "item": "salt (to stir in water)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "to stir in water",
         "category": "Spices & Seasonings"
       }
     },
@@ -389,14 +397,14 @@
     {
       "raw": "1 pinch saffron ((optional)(soaked in 2 tbsps hot milk))",
       "expected": {
-        "item": "saffron (soaked in 2 tbsps hot milk)",
+        "item": "saffron",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": "optional",
+        "note": "optional, soaked in 2 tbsps hot milk",
         "category": "Spices & Seasonings"
       }
     }

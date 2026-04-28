@@ -97,14 +97,14 @@
     {
       "raw": "1 tablespoon juice from 1 small lemon (we use more)",
       "expected": {
-        "item": "juice from 1 small lemon (we use more)",
+        "item": "juice from 1 small lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "we use more",
         "category": "Beverages"
       }
     }

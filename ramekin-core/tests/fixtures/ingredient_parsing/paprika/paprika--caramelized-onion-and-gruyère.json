@@ -5,9 +5,9 @@
     {
       "raw": "Yield: 10 3-inch (big!) biscuits",
       "expected": {
-        "item": "Yield: 10 3-inch (big!) biscuits",
+        "item": "Yield: 10 3-inch biscuits",
         "measurements": [],
-        "note": null,
+        "note": "big!",
         "category": "Bakery & Bread"
       }
     },
@@ -165,21 +165,25 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 cup or 115 grams",
         "category": "Cheese"
       }
     },
     {
       "raw": "1 cup buttermilk (or make your own)",
       "expected": {
-        "item": "buttermilk (or make your own)",
+        "item": "buttermilk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or make your own",
         "category": "Dairy & Eggs"
       }
     },

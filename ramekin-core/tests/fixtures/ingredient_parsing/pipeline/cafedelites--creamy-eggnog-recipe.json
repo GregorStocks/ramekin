@@ -23,14 +23,18 @@
     {
       "raw": "2 cups heavy cream ((thickened cream))",
       "expected": {
-        "item": "heavy cream (thickened cream)",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "476",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "thickened cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -87,14 +91,14 @@
     {
       "raw": "5  eggs (separated)",
       "expected": {
-        "item": "eggs (separated)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "separated",
         "category": "Dairy & Eggs"
       }
     },

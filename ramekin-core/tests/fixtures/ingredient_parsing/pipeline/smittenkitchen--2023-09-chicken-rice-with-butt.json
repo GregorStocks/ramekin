@@ -12,15 +12,11 @@
             "unit": "lb"
           },
           {
-            "amount": "4 to 6",
-            "unit": null
-          },
-          {
             "amount": "907 to 1021",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "4 to 6",
         "category": "Meat & Seafood"
       }
     },
@@ -135,14 +131,14 @@
     {
       "raw": "2 cups chicken broth and up to 1/4 cup more if needed (updated)",
       "expected": {
-        "item": "chicken broth and up to 1/4 cup more if needed (updated)",
+        "item": "chicken broth and up to 1/4 cup more if needed",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "updated",
         "category": "Canned Goods"
       }
     }

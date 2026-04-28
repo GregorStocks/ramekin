@@ -48,7 +48,7 @@
             "unit": null
           }
         ],
-        "note": "peeled (I use 4 but adjust to your tastes)",
+        "note": "I use 4 but adjust to your tastes, peeled",
         "category": "Produce"
       }
     },
@@ -138,9 +138,9 @@
     {
       "raw": "To serve: Pitas, tahini sauce (below), tomato-cucumber salad, harissa (homemade or storebought) or another hot sauce (such as zhoug), and any pickled vegetables you wish, such as cucumbers, red onion, or mango (amba)",
       "expected": {
-        "item": "To serve: Pitas, tahini sauce (below), tomato-cucumber salad, harissa (homemade or storebought) or another hot sauce (such as zhoug), and any pickled vegetables you wish, such as cucumbers, red onion, or mango (amba)",
+        "item": "To serve: Pitas, tahini sauce, tomato-cucumber salad, harissa or another hot sauce, and any pickled vegetables you wish, such as cucumbers, red onion, or mango",
         "measurements": [],
-        "note": null,
+        "note": "below, homemade or storebought, such as zhoug, amba",
         "category": "Condiments & Sauces"
       }
     }

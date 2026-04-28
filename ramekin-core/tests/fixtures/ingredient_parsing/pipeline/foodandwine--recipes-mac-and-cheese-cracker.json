@@ -41,14 +41,14 @@
     {
       "raw": "1 tablespoon&nbsp;sodium citrate (see Note)",
       "expected": {
-        "item": "sodium citrate (see Note)",
+        "item": "sodium citrate",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Other"
       }
     },
@@ -105,14 +105,14 @@
     {
       "raw": "4 cups crumbled buttery crackers, preferably Ritz",
       "expected": {
-        "item": "crumbled buttery crackers, preferably Ritz",
+        "item": "crumbled buttery crackers",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "preferably Ritz",
         "category": "Snacks"
       }
     },

@@ -69,7 +69,7 @@
     {
       "raw": "4 ounces (113g) bacon, cut into 1/4-inch wide strips",
       "expected": {
-        "item": "bacon, cut into 1/4-inch wide strips",
+        "item": "bacon",
         "measurements": [
           {
             "amount": "4",
@@ -80,7 +80,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch wide strips",
         "category": "Meat & Seafood"
       }
     },
@@ -185,7 +185,7 @@
     {
       "raw": "1/4 cup (60ml) brandy (preferably Armagnac), see notes",
       "expected": {
-        "item": "brandy (preferably Armagnac), see notes",
+        "item": "brandy, see notes",
         "measurements": [
           {
             "amount": "0.25",
@@ -196,14 +196,14 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "preferably Armagnac",
         "category": "Beverages"
       }
     },
     {
       "raw": "One 750ml bottle full-bodied red wine (preferably Madiran or Cahors), see notes",
       "expected": {
-        "item": "bottle full-bodied red wine (preferably Madiran or Cahors), see notes",
+        "item": "bottle full-bodied red wine, see notes",
         "measurements": [
           {
             "amount": "1",
@@ -214,7 +214,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "preferably Madiran or Cahors",
         "category": "Beverages"
       }
     },
@@ -264,7 +264,7 @@
             "unit": "g"
           }
         ],
-        "note": "roughly chopped",
+        "note": "about 2 ounces, roughly chopped",
         "category": "Nuts & Dried Fruit"
       }
     },

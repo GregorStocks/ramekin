@@ -5,7 +5,7 @@
     {
       "raw": "1.75 lbs pork tenderloin (you can use two)",
       "expected": {
-        "item": "pork tenderloin (you can use two)",
+        "item": "pork tenderloin",
         "measurements": [
           {
             "amount": "1.75",
@@ -16,22 +16,26 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "you can use two",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 tablespoon olive oil (more if using two pieces of tenderloin)",
       "expected": {
-        "item": "olive oil (more if using two pieces of tenderloin)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Meat & Seafood"
+        "note": "more if using two pieces of tenderloin",
+        "category": "Oils & Vinegars"
       }
     },
     {

@@ -21,7 +21,7 @@
             "unit": "large"
           }
         ],
-        "note": "halved (unpeeled",
+        "note": "halved (unpeeled)",
         "category": "Produce"
       }
     },
@@ -42,14 +42,14 @@
     {
       "raw": "2  celery stalks (cut into large chunks)",
       "expected": {
-        "item": "celery stalks (cut into large chunks)",
+        "item": "celery stalks",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into large chunks",
         "category": "Produce"
       }
     },

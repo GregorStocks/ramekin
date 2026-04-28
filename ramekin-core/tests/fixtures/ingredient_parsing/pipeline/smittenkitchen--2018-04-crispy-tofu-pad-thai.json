@@ -5,7 +5,7 @@
     {
       "raw": "6 ounces firm or extra-firm tofu (not silken)",
       "expected": {
-        "item": "firm or extra-firm tofu (not silken)",
+        "item": "firm or extra-firm tofu",
         "measurements": [
           {
             "amount": "6",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not silken",
         "category": "Produce"
       }
     },
@@ -30,33 +30,25 @@
             "unit": "oz"
           },
           {
-            "amount": null,
-            "unit": "stick"
-          },
-          {
-            "amount": "3",
-            "unit": "mm"
-          },
-          {
             "amount": "142",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sticks, 3mm",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "2 tablespoons fish sauce, regular (not vegetarian) or vegetarian, plus more to taste",
       "expected": {
-        "item": "fish sauce, regular (not vegetarian) or vegetarian",
+        "item": "fish sauce, regular or vegetarian",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "plus more to taste",
+        "note": "not vegetarian, plus more to taste",
         "category": "Condiments & Sauces"
       }
     },
@@ -109,14 +101,14 @@
     {
       "raw": "1 small shallot, chopped (optional)",
       "expected": {
-        "item": "shallot, chopped",
+        "item": "shallot",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "optional",
+        "note": "optional, chopped",
         "category": "Produce"
       }
     },
@@ -162,7 +154,7 @@
             "unit": "cup"
           }
         ],
-        "note": "plus more for garnish",
+        "note": "about 1 cup, although it’s awkward to measure in cups, plus more for garnish",
         "category": "Produce"
       }
     },

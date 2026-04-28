@@ -5,14 +5,14 @@
     {
       "raw": "100 g Oriental spinach (or similar)",
       "expected": {
-        "item": "Oriental spinach (or similar)",
+        "item": "Oriental spinach",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or similar",
         "category": "Produce"
       }
     },
@@ -60,18 +60,14 @@
     {
       "raw": "1 ½ tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "24",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -132,42 +128,42 @@
     {
       "raw": "2-4  salmon fillets (skin-on, boneless)",
       "expected": {
-        "item": "salmon fillets (skin-on, boneless)",
+        "item": "salmon fillets",
         "measurements": [
           {
             "amount": "2-4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "skin-on, boneless",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 tbsp potato starch (katakuriko) (or corn starch)",
       "expected": {
-        "item": "potato starch (katakuriko) (or corn starch)",
+        "item": "potato starch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "katakuriko, or corn starch",
+        "category": "Produce"
       }
     },
     {
       "raw": "1 tbsp cooking oil (like vegetable oil or canola)",
       "expected": {
-        "item": "cooking oil (like vegetable oil or canola)",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "like vegetable oil or canola",
         "category": "Oils & Vinegars"
       }
     },

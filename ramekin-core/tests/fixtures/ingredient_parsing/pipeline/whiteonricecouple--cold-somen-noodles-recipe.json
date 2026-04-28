@@ -101,15 +101,15 @@
     {
       "raw": "1 teaspoon chili paste (, chili garlic sauce or chili flakes)",
       "expected": {
-        "item": "chili paste (, chili garlic sauce or chili flakes)",
+        "item": "chili paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "chili garlic sauce or chili flakes",
+        "category": "Other"
       }
     },
     {

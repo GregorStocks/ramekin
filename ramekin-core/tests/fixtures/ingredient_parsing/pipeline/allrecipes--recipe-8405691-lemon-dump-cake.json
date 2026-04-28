@@ -80,21 +80,25 @@
     {
       "raw": "0.5 cup salted butter, cut into small pieces",
       "expected": {
-        "item": "salted butter, cut into small pieces",
+        "item": "salted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small pieces",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 (8 ounce) container frozen whipped topping (such as Cool Whip®), thawed",
       "expected": {
-        "item": "container frozen whipped topping (such as Cool Whip®)",
+        "item": "container frozen whipped topping",
         "measurements": [
           {
             "amount": "1",
@@ -109,7 +113,7 @@
             "unit": "g"
           }
         ],
-        "note": "thawed",
+        "note": "such as Cool Whip®, thawed",
         "category": "Frozen"
       }
     }

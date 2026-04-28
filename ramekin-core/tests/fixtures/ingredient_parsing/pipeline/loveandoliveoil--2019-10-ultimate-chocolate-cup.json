@@ -41,7 +41,7 @@
     {
       "raw": "1/2 cup (60 grams) dark or dutch-processed cocoa powder (I used mostly Dutch processed, except 1 tablespoon black cocoa for color – do not use all black cocoa).",
       "expected": {
-        "item": "dark or dutch-processed cocoa powder (I used mostly Dutch processed, except 1 tablespoon black cocoa for color - do not use all black cocoa).",
+        "item": "dark or dutch-processed cocoa powder .",
         "measurements": [
           {
             "amount": "0.5",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used mostly Dutch processed, except 1 tablespoon black cocoa for color - do not use all black cocoa",
         "category": "Baking"
       }
     },
@@ -145,14 +145,14 @@
     {
       "raw": "3 tablespoons hot brewed coffee (or use plain hot water)",
       "expected": {
-        "item": "hot brewed coffee (or use plain hot water)",
+        "item": "hot brewed coffee",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or use plain hot water",
         "category": "Beverages"
       }
     },
@@ -231,7 +231,7 @@
     {
       "raw": "1/2 cup (60g) dark or Dutch processed cocoa powder (I used 2 tablespoons black cocoa and Dutch-processed for the rest), sifted",
       "expected": {
-        "item": "dark or Dutch processed cocoa powder (I used 2 tablespoons black cocoa and Dutch-processed for the rest)",
+        "item": "dark or Dutch processed cocoa powder",
         "measurements": [
           {
             "amount": "0.5",
@@ -242,7 +242,7 @@
             "unit": "g"
           }
         ],
-        "note": "sifted",
+        "note": "I used 2 tablespoons black cocoa and Dutch-processed for the rest, sifted",
         "category": "Baking"
       }
     },
@@ -320,15 +320,11 @@
             "unit": "oz"
           },
           {
-            "amount": "60",
-            "unit": null
-          },
-          {
             "amount": "142",
             "unit": "g"
           }
         ],
-        "note": "melted and cooled to lukewarm",
+        "note": "60-70%, melted and cooled to lukewarm",
         "category": "Other"
       }
     }

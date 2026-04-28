@@ -105,14 +105,18 @@
     {
       "raw": "¾ Cup unsweetened cocoa powder (not Dutch process)",
       "expected": {
-        "item": "unsweetened cocoa powder (not Dutch process)",
+        "item": "unsweetened cocoa powder",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "64",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not Dutch process",
         "category": "Baking"
       }
     },

@@ -155,9 +155,9 @@
     {
       "raw": "carrots, cut into sticks",
       "expected": {
-        "item": "carrots, cut into sticks",
+        "item": "carrots",
         "measurements": [],
-        "note": null,
+        "note": "cut into sticks",
         "category": "Produce"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "2 cup  steamed rice (using 8 oz-cup)",
       "expected": {
-        "item": "steamed rice (using 8 oz-cup)",
+        "item": "steamed rice",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "using 8 oz-cup",
         "category": "Pasta & Rice"
       }
     },

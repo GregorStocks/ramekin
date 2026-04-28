@@ -58,7 +58,7 @@
             "unit": null
           }
         ],
-        "note": "finely chopped (see Note about other heat options)",
+        "note": "see Note about other heat options, finely chopped",
         "category": "Produce"
       }
     },
@@ -83,14 +83,14 @@
     {
       "raw": "1 teaspoon ground chile powder (see Note about other heat options)",
       "expected": {
-        "item": "ground chile powder (see Note about other heat options)",
+        "item": "ground chile powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "see Note about other heat options",
         "category": "Other"
       }
     },
@@ -129,7 +129,7 @@
     {
       "raw": "1 pound boneless, skinless chicken thighs (see Note)",
       "expected": {
-        "item": "boneless, skinless chicken thighs (see Note)",
+        "item": "boneless, skinless chicken thighs",
         "measurements": [
           {
             "amount": "1",
@@ -140,7 +140,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Meat & Seafood"
       }
     },
@@ -225,9 +225,9 @@
     {
       "raw": "Second half of lime, cut into wedges",
       "expected": {
-        "item": "Second half of lime, cut into wedges",
+        "item": "Second half of lime",
         "measurements": [],
-        "note": null,
+        "note": "cut into wedges",
         "category": "Produce"
       }
     },
@@ -243,9 +243,9 @@
     {
       "raw": "Corn tortillas, cut into thin ribbons, to fry (instructions below)",
       "expected": {
-        "item": "Corn tortillas, cut into thin ribbons, to fry (instructions below)",
+        "item": "Corn tortillas, cut into thin ribbons, to fry",
         "measurements": [],
-        "note": null,
+        "note": "instructions below",
         "category": "Bakery & Bread"
       }
     },

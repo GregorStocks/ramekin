@@ -265,7 +265,7 @@
     {
       "raw": "1 tablespoon (15 ml) amaretto, Kahlua, or brandy (Deb note: I used brandy)",
       "expected": {
-        "item": "amaretto, Kahlua, or brandy (Deb note: I used brandy)",
+        "item": "amaretto, Kahlua, or brandy",
         "measurements": [
           {
             "amount": "1",
@@ -276,7 +276,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "Deb note: I used brandy",
         "category": "Beverages"
       }
     },
@@ -341,7 +341,7 @@
     {
       "raw": "1 tablespoon (15 ml) amaretto, Kahlua, or brandy (Deb note: I used brandy)",
       "expected": {
-        "item": "amaretto, Kahlua, or brandy (Deb note: I used brandy)",
+        "item": "amaretto, Kahlua, or brandy",
         "measurements": [
           {
             "amount": "1",
@@ -352,7 +352,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "Deb note: I used brandy",
         "category": "Beverages"
       }
     },
@@ -381,7 +381,7 @@
     {
       "raw": "2 1/2 ounces (70 grams) bittersweet or semisweet chocolate, finely chopped, or about 1/2 cup store-bought mini chocolate chips",
       "expected": {
-        "item": "bittersweet or semisweet chocolate, finely chopped, or about 1/2 cup store-bought mini chocolate chips",
+        "item": "bittersweet or semisweet chocolate, finely chopped",
         "measurements": [
           {
             "amount": "2.5",
@@ -392,8 +392,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "or about 1/2 cup store-bought mini chocolate chips",
+        "category": "Other"
       }
     }
   ]

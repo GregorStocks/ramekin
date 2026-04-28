@@ -41,14 +41,18 @@
     {
       "raw": "1 tablespoon honey (or granulated sugar)",
       "expected": {
-        "item": "honey (or granulated sugar)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or granulated sugar",
         "category": "Baking"
       }
     },

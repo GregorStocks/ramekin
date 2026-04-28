@@ -77,7 +77,7 @@
     {
       "raw": "2 pounds (907 g) russet potatoes (see notes), divided",
       "expected": {
-        "item": "russet potatoes (see notes)",
+        "item": "russet potatoes",
         "measurements": [
           {
             "amount": "2",
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
+        "note": "see notes, divided",
         "category": "Produce"
       }
     },
@@ -110,7 +110,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for garnish",
+        "note": "about 2 ounces; 56 g, plus more for garnish",
         "category": "Produce"
       }
     },
@@ -131,7 +131,7 @@
     {
       "raw": "1 cup (240 ml) buttermilk (see notes)",
       "expected": {
-        "item": "buttermilk (see notes)",
+        "item": "buttermilk",
         "measurements": [
           {
             "amount": "1",
@@ -140,9 +140,13 @@
           {
             "amount": "240",
             "unit": "ml"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Dairy & Eggs"
       }
     },

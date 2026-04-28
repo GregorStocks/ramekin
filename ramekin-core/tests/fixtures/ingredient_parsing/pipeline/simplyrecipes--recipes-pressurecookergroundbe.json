@@ -82,15 +82,11 @@
             "unit": "lb"
           },
           {
-            "amount": "85",
-            "unit": null
-          },
-          {
             "amount": "454",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "85% lean",
         "category": "Meat & Seafood"
       }
     },
@@ -174,27 +170,19 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "14",
-            "unit": "oz"
-          },
-          {
-            "amount": "397",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "14-ounce",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "Water or broth, as needed to make 1 cup liquid with the tomato juices",
       "expected": {
-        "item": "Water or broth",
+        "item": "Water or broth, as needed to make 1 cup liquid with the tomato juices",
         "measurements": [],
-        "note": "as needed to make 1 cup liquid with the tomato juices",
-        "category": "Canned Goods"
+        "note": null,
+        "category": "Produce"
       }
     },
     {
@@ -205,17 +193,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "15.5",
-            "unit": "oz"
-          },
-          {
-            "amount": "439",
-            "unit": "g"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "15.5-ounce, drained and rinsed",
         "category": "Canned Goods"
       }
     },

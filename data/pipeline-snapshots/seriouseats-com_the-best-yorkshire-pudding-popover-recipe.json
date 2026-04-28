@@ -39,18 +39,14 @@
         {
           "amount": "5.25",
           "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
         }
       ],
-      "note": null,
+      "note": "5.25 ounces; about 1 cup plus 2 teaspoons",
       "raw": "150g all-purpose flour (5.25 ounces; about 1 cup plus 2 teaspoons)",
       "section": null
     },
     {
-      "item": "whole milk (see note)",
+      "item": "whole milk",
       "measurements": [
         {
           "amount": "175",
@@ -65,7 +61,7 @@
           "unit": "cup"
         }
       ],
-      "note": null,
+      "note": "see note",
       "raw": "175g whole milk (6 ounces; 3/4 cup) (see note)",
       "section": null
     },
@@ -81,12 +77,12 @@
           "unit": "tsp"
         }
       ],
-      "note": null,
+      "note": "about 1/2 teaspoon",
       "raw": "2g kosher salt (about 1/2 teaspoon)",
       "section": null
     },
     {
-      "item": "water (see note)",
+      "item": "water",
       "measurements": [
         {
           "amount": "25",
@@ -95,13 +91,9 @@
         {
           "amount": ".85",
           "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "tbsp"
         }
       ],
-      "note": null,
+      "note": ".85 ounces; 1 tablespoon plus 2 teaspoons, see note",
       "raw": "25g water (.85 ounces; 1 tablespoon plus 2 teaspoons) (see note)",
       "section": null
     },
@@ -117,7 +109,7 @@
           "unit": "cup"
         }
       ],
-      "note": null,
+      "note": "about 1/2 cup",
       "raw": "100ml beef drippings, lard, shortening, or vegetable oil (about 1/2 cup)",
       "section": null
     }

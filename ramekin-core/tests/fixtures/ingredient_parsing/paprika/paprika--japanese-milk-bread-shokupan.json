@@ -69,14 +69,14 @@
     {
       "raw": "7 g instant yeast (I use 1 packet (7 g each) of Fleischmann’s® bread machine yeast; use every last granule; DO NOT use old yeast that‘s more than 6 months old; to substitute active dry yeast, use the same amount or up to 25% more and proof it first in some of the warm water from above)",
       "expected": {
-        "item": "instant yeast (I use 1 packet (7 g each) of Fleischmann’s® bread machine yeast; use every last granule; DO NOT use old yeast that‘s more than 6 months old; to substitute active dry yeast, use the same amount or up to 25% more and proof it first in some of the warm water from above)",
+        "item": "instant yeast",
         "measurements": [
           {
             "amount": "7",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use 1 packet (7 g each) of Fleischmann’s® bread machine yeast; use every last granule; DO NOT use old yeast that‘s more than 6 months old; to substitute active dry yeast, use the same amount or up to 25% more and proof it first in some of the warm water from above",
         "section": "For 1.5 _kin_",
         "category": "Baking"
       }
@@ -84,14 +84,14 @@
     {
       "raw": "350 g bread flour (I use King Arthur)",
       "expected": {
-        "item": "bread flour (I use King Arthur)",
+        "item": "bread flour",
         "measurements": [
           {
             "amount": "350",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use King Arthur",
         "section": "For 1.5 _kin_",
         "category": "Baking"
       }
@@ -99,16 +99,16 @@
     {
       "raw": "20 g skim milk powder or nonfat dry milk powder (I use Bob’s Red Mill; for vegan, use coconut milk powder; avoid soy milk powder as the dough does not rise well)",
       "expected": {
-        "item": "skim milk powder or nonfat dry milk powder (I use Bob’s Red Mill; for vegan, use coconut milk powder; avoid soy milk powder as the dough does not rise well)",
+        "item": "skim milk powder or nonfat dry milk powder",
         "measurements": [
           {
             "amount": "20",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use Bob’s Red Mill; for vegan, use coconut milk powder; avoid soy milk powder as the dough does not rise well",
         "section": "For 1.5 _kin_",
-        "category": "Canned Goods"
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -133,14 +133,14 @@
     {
       "raw": "½ tsp neutral oil (for the bowl)",
       "expected": {
-        "item": "neutral oil (for the bowl)",
+        "item": "neutral oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "for the bowl",
         "section": "For Greasing",
         "category": "Oils & Vinegars"
       }

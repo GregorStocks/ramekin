@@ -5,14 +5,14 @@
     {
       "raw": "½ cup Nutella ((if Nutella is hard enough, you can use two teaspoons to make dollops, instead of piping))",
       "expected": {
-        "item": "Nutella (if Nutella is hard enough, you can use two teaspoons to make dollops, instead of piping)",
+        "item": "Nutella",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "if Nutella is hard enough, you can use two teaspoons to make dollops, instead of piping",
         "category": "Condiments & Sauces"
       }
     },
@@ -41,14 +41,18 @@
     {
       "raw": "2 ¼ cups all-purpose flour (plain flour)",
       "expected": {
-        "item": "all-purpose flour (plain flour)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "cup"
+          },
+          {
+            "amount": "281",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plain flour",
         "category": "Baking"
       }
     },
@@ -128,13 +132,9 @@
           {
             "amount": "1",
             "unit": "large"
-          },
-          {
-            "amount": "50",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "50 g each w/o shell",
         "category": "Dairy & Eggs"
       }
     },
@@ -173,14 +173,18 @@
     {
       "raw": "1 Tbsp plain yogurt ((I used Greek yogurt))",
       "expected": {
-        "item": "plain yogurt (I used Greek yogurt)",
+        "item": "plain yogurt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used Greek yogurt",
         "category": "Dairy & Eggs"
       }
     },

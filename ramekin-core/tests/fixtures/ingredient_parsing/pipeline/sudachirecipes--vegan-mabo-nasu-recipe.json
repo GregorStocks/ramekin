@@ -19,14 +19,14 @@
     {
       "raw": "1 bowl cold water (for soaking)",
       "expected": {
-        "item": "bowl cold water (for soaking)",
+        "item": "bowl cold water",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "for soaking",
         "category": "Other"
       }
     },
@@ -61,14 +61,18 @@
     {
       "raw": "1 tbsp toasted sesame oil (for cooking)",
       "expected": {
-        "item": "toasted sesame oil (for cooking)",
+        "item": "toasted sesame oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for cooking",
         "category": "Oils & Vinegars"
       }
     },
@@ -107,28 +111,28 @@
     {
       "raw": "1 tbsp Japanese leek (naganegi) (or regular leek, white part, finely diced)",
       "expected": {
-        "item": "Japanese leek (naganegi) (or regular leek, white part",
+        "item": "Japanese leek",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "finely diced)",
+        "note": "naganegi, or regular leek, white part, finely diced",
         "category": "Produce"
       }
     },
     {
       "raw": "1 tbsp chili bean sauce (toban djan)",
       "expected": {
-        "item": "chili bean sauce (toban djan)",
+        "item": "chili bean sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "toban djan",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,14 +171,14 @@
     {
       "raw": "70 g soy meat (mince style)",
       "expected": {
-        "item": "soy meat (mince style)",
+        "item": "soy meat",
         "measurements": [
           {
             "amount": "70",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "mince style",
         "category": "Meat & Seafood"
       }
     },
@@ -199,32 +203,32 @@
     {
       "raw": "1 ½ tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "24",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1 tbsp toasted sesame oil (for drizzling)",
       "expected": {
-        "item": "toasted sesame oil (for drizzling)",
+        "item": "toasted sesame oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for drizzling",
         "category": "Oils & Vinegars"
       }
     },

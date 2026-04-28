@@ -55,7 +55,7 @@
     {
       "raw": "1/2 cup (4 ounces or 115 grams) unsalted butter, cut into chunks",
       "expected": {
-        "item": "unsalted butter, cut into chunks",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Dairy & Eggs"
       }
     },
@@ -119,7 +119,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 5 ounces or 140 grams",
         "category": "Produce"
       }
     },

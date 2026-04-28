@@ -59,28 +59,32 @@
     {
       "raw": "13 tablespoons unsalted butter, cold, cut into ¼-inch cubes",
       "expected": {
-        "item": "unsalted butter, cold, cut into 1/4-inch cubes",
+        "item": "unsalted butter, cold",
         "measurements": [
           {
             "amount": "13",
             "unit": "tbsp"
+          },
+          {
+            "amount": "184",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch cubes",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "7 tablespoons vegetable shortening, cold, cut into pieces",
       "expected": {
-        "item": "vegetable shortening, cold, cut into pieces",
+        "item": "vegetable shortening, cold",
         "measurements": [
           {
             "amount": "7",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Baking"
       }
     },
@@ -234,7 +238,7 @@
             "unit": "g"
           }
         ],
-        "note": "shredded (about 1 cup",
+        "note": "shredded (about 1 cup)",
         "category": "Cheese"
       }
     },
@@ -252,7 +256,7 @@
             "unit": "g"
           }
         ],
-        "note": "shredded (about 1 cup",
+        "note": "shredded (about 1 cup)",
         "category": "Cheese"
       }
     },

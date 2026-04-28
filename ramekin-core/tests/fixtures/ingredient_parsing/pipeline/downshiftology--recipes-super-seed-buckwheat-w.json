@@ -5,14 +5,14 @@
     {
       "raw": "1 cup buckwheat flour (I use this brand)",
       "expected": {
-        "item": "buckwheat flour (I use this brand)",
+        "item": "buckwheat flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I use this brand",
         "category": "Baking"
       }
     },

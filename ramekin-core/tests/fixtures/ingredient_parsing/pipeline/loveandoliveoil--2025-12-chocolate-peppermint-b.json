@@ -83,14 +83,18 @@
     {
       "raw": "1/2 teaspoon kosher salt (reduce to 1/4 teaspoon if using salted butter)",
       "expected": {
-        "item": "kosher salt (reduce to 1/4 teaspoon if using salted butter)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "reduce to 1/4 teaspoon if using salted butter",
         "category": "Spices & Seasonings"
       }
     },

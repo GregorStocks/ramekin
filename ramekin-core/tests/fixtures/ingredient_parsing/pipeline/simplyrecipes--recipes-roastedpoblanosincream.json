@@ -37,14 +37,14 @@
     {
       "raw": "1/2 white onion, sliced lengthwise (root to tip), 1/4-inch slices",
       "expected": {
-        "item": "white onion, sliced lengthwise (root to tip), 1/4-inch slices",
+        "item": "white onion, sliced lengthwise, 1/4-inch slices",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "root to tip",
         "category": "Produce"
       }
     },
@@ -69,14 +69,14 @@
     {
       "raw": "1/2 cup Mexcian crema (Mexican sour cream) or crème fraîche",
       "expected": {
-        "item": "Mexcian crema (Mexican sour cream) or crème fraîche",
+        "item": "Mexcian crema or crème fraîche",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "Mexican sour cream",
         "category": "Dairy & Eggs"
       }
     },

@@ -115,27 +115,23 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "1",
-            "unit": null
           }
         ],
-        "note": "trimmed and cut into 4 equal parts",
+        "note": "1 1/2-pound, trimmed and cut into 4 equal parts",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "2 medium zucchini, cut into 1/2-inch chunks",
       "expected": {
-        "item": "zucchini, cut into 1/2-inch chunks",
+        "item": "zucchini",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch chunks",
         "category": "Produce"
       }
     }

@@ -119,14 +119,14 @@
     {
       "raw": "¼ cup vodka, (I like Tito’s)",
       "expected": {
-        "item": "vodka, (I like Tito’s)",
+        "item": "vodka",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I like Tito’s",
         "category": "Beverages"
       }
     },

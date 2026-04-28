@@ -19,9 +19,9 @@
     {
       "raw": "Extra-virgin olive oil (for drizzling)",
       "expected": {
-        "item": "Extra-virgin olive oil (for drizzling)",
+        "item": "Extra-virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "for drizzling",
         "category": "Oils & Vinegars"
       }
     },
@@ -121,9 +121,9 @@
     {
       "raw": "Cilantro Lime Dressing (the creamy avocado variation)",
       "expected": {
-        "item": "Cilantro Lime Dressing (the creamy avocado variation)",
+        "item": "Cilantro Lime Dressing",
         "measurements": [],
-        "note": null,
+        "note": "the creamy avocado variation",
         "category": "Produce"
       }
     },

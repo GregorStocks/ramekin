@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "a 5 ounce bag or 3-4 cups",
         "category": "Produce"
       }
     },
@@ -104,7 +104,7 @@
             "unit": "cup"
           }
         ],
-        "note": "or crumbled feta (optional",
+        "note": "or crumbled feta (optional)",
         "category": "Cheese"
       }
     },
@@ -125,14 +125,18 @@
     {
       "raw": "1 TBSP white wine vinegar (or red wine vinegar)",
       "expected": {
-        "item": "white wine vinegar (or red wine vinegar)",
+        "item": "white wine vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or red wine vinegar",
         "category": "Oils & Vinegars"
       }
     },
@@ -157,14 +161,14 @@
     {
       "raw": "1 tsp Italian seasoning blend ((I love using Mrs. Dash’s salt-free blend))",
       "expected": {
-        "item": "Italian seasoning blend (I love using Mrs. Dash’s salt-free blend)",
+        "item": "Italian seasoning blend",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "I love using Mrs. Dash’s salt-free blend",
         "category": "Spices & Seasonings"
       }
     },
@@ -221,14 +225,14 @@
     {
       "raw": "¼ cup quality olive oil (or avocado oil)",
       "expected": {
-        "item": "quality olive oil (or avocado oil)",
+        "item": "quality olive oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or avocado oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -367,14 +371,14 @@
     {
       "raw": "¼ cup quality olive oil (or avocado oil)",
       "expected": {
-        "item": "quality olive oil (or avocado oil)",
+        "item": "quality olive oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or avocado oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -431,14 +435,18 @@
     {
       "raw": "2 tsp honey (or sweetener or choice if vegan)",
       "expected": {
-        "item": "honey (or sweetener or choice if vegan)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or sweetener or choice if vegan",
         "category": "Baking"
       }
     },

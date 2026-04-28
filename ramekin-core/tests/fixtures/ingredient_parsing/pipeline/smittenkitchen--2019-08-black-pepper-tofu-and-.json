@@ -19,9 +19,9 @@
     {
       "raw": "Neutral oil for roasting (I use safflower)",
       "expected": {
-        "item": "Neutral oil for roasting (I use safflower)",
+        "item": "Neutral oil for roasting",
         "measurements": [],
-        "note": null,
+        "note": "I use safflower",
         "category": "Meat & Seafood"
       }
     },
@@ -73,14 +73,14 @@
     {
       "raw": "3 to 4 tablespoons unsalted butter (the higher amount is slightly more rich)",
       "expected": {
-        "item": "unsalted butter (the higher amount is slightly more rich)",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "3 to 4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "the higher amount is slightly more rich",
         "category": "Dairy & Eggs"
       }
     },

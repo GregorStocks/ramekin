@@ -5,15 +5,19 @@
     {
       "raw": "3 cups milk ((coconut, almond, hemp, etc or water))",
       "expected": {
-        "item": "milk (coconut, almond, hemp, etc or water)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "735",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "coconut, almond, hemp, etc or water",
+        "category": "Dairy & Eggs"
       }
     },
     {

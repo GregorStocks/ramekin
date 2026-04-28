@@ -64,14 +64,14 @@
     {
       "raw": "2 tablespoons coarse sugar, such as Turbinado or Sugar in the Raw; use granulated if you have neither",
       "expected": {
-        "item": "coarse sugar",
+        "item": "coarse sugar, such as Turbinado or Sugar in the Raw; use granulated if you have neither",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "such as Turbinado or Sugar in the Raw; use granulated if you have neither",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -132,15 +132,19 @@
     {
       "raw": "1 1/2 teaspoons vanilla extract (or you can use bourbon; I’ll never tell)",
       "expected": {
-        "item": "vanilla extract (or you can use bourbon; I’ll never tell)",
+        "item": "vanilla extract",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "6.5",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "or you can use bourbon; I’ll never tell",
+        "category": "Baking"
       }
     },
     {

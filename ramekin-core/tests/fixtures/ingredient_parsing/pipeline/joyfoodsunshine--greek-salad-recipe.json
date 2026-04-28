@@ -44,7 +44,7 @@
             "unit": null
           }
         ],
-        "note": "peeled and diced (about 1 cup",
+        "note": "peeled and diced (about 1 cup)",
         "category": "Produce"
       }
     },
@@ -108,7 +108,7 @@
             "unit": null
           }
         ],
-        "note": "sliced into 1” pieces (1 pita = 85 g",
+        "note": "sliced into 1” pieces (1 pita = 85 g)",
         "category": "Bakery & Bread"
       }
     },
@@ -233,14 +233,18 @@
     {
       "raw": "2 teaspoons granulated sugar ((or honey))",
       "expected": {
-        "item": "granulated sugar (or honey)",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "8.3",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or honey",
         "category": "Baking"
       }
     },

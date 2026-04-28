@@ -5,7 +5,7 @@
     {
       "raw": "½ kg (1.2 lbs)  chicken  ((bone-in preferred but boneless is ok) )",
       "expected": {
-        "item": "chicken  (bone-in preferred but boneless is ok)",
+        "item": "chicken",
         "measurements": [
           {
             "amount": "0.5",
@@ -16,7 +16,7 @@
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "bone-in preferred but boneless is ok",
         "category": "Meat & Seafood"
       }
     },
@@ -41,15 +41,15 @@
     {
       "raw": "3 tablespoons curd ((plain yogurt or coconut milk))",
       "expected": {
-        "item": "curd (plain yogurt or coconut milk)",
+        "item": "curd",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "plain yogurt or coconut milk",
+        "category": "Other"
       }
     },
     {
@@ -69,28 +69,28 @@
     {
       "raw": "¾ to 1 teaspoon garam masala  (or korma masala)",
       "expected": {
-        "item": "garam masala (or korma masala)",
+        "item": "garam masala",
         "measurements": [
           {
             "amount": "0.75 to 1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or korma masala",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 to 1¼ teaspoon Kashmiri red chili powder  ((less spicy variety, minimum ½ tsp))",
       "expected": {
-        "item": "Kashmiri red chili powder (less spicy variety, minimum 1/2 tsp)",
+        "item": "Kashmiri red chili powder",
         "measurements": [
           {
             "amount": "1 to 1.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "less spicy variety, minimum 1/2 tsp",
         "category": "Spices & Seasonings"
       }
     },
@@ -150,49 +150,49 @@
             "unit": "g"
           }
         ],
-        "note": "sliced (2 medium yellow onions",
+        "note": "sliced (2 medium yellow onions)",
         "category": "Produce"
       }
     },
     {
       "raw": "10  whole cashew nuts (or almonds (or use 5 each))",
       "expected": {
-        "item": "whole cashew nuts (or almonds (or use 5 each)",
+        "item": "whole cashew nuts",
         "measurements": [
           {
             "amount": "10",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or almonds (or use 5 each)",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
       "raw": "¼ cup curd ((plain yogurt or coconut milk))",
       "expected": {
-        "item": "curd (plain yogurt or coconut milk)",
+        "item": "curd",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "plain yogurt or coconut milk",
+        "category": "Other"
       }
     },
     {
       "raw": "1 to 2 tablespoon oil or ghee ((use as per your preference))",
       "expected": {
-        "item": "oil or ghee (use as per your preference)",
+        "item": "oil or ghee",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "use as per your preference",
         "category": "Dairy & Eggs"
       }
     },
@@ -262,21 +262,25 @@
             "unit": null
           }
         ],
-        "note": "slit or chopped (optional, Thai/Indian or serrano peppers",
+        "note": "slit or chopped (optional, Thai/Indian or serrano peppers)",
         "category": "Other"
       }
     },
     {
       "raw": "½ cup hot water ((more if needed))",
       "expected": {
-        "item": "hot water (more if needed)",
+        "item": "hot water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "more if needed",
         "category": "Other"
       }
     },
@@ -343,14 +347,14 @@
     {
       "raw": "2 tablespoons coriander leaves ((cilantro) fine chopped to garnish)",
       "expected": {
-        "item": "coriander leaves (cilantro) fine chopped to garnish)",
+        "item": "coriander leaves fine chopped to garnish",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "cilantro",
         "category": "Spices & Seasonings"
       }
     }

@@ -23,14 +23,14 @@
     {
       "raw": "1/2 cup low sodium soy sauce (or tamari for a gluten-free alternative)",
       "expected": {
-        "item": "low sodium soy sauce (or tamari for a gluten-free alternative)",
+        "item": "low sodium soy sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or tamari for a gluten-free alternative",
         "category": "Condiments & Sauces"
       }
     },
@@ -55,14 +55,14 @@
     {
       "raw": "1/4 cup bourbon ((You don&amp;#39;t need top-shelf—just make sure it&amp;#39;s a brand you&amp;#39;d also enjoy drinking. I like Bulleit.))",
       "expected": {
-        "item": "bourbon (You don't need top-shelf-just make sure it's a brand you'd also enjoy drinking. I like Bulleit.)",
+        "item": "bourbon",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "You don't need top-shelf-just make sure it's a brand you'd also enjoy drinking. I like Bulleit.",
         "category": "Beverages"
       }
     },

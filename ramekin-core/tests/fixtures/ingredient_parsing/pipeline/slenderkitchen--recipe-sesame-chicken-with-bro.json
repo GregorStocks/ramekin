@@ -5,7 +5,7 @@
     {
       "raw": "1.33 lbs boneless skinless chicken breasts, cut into pieces",
       "expected": {
-        "item": "boneless skinless chicken breasts, cut into pieces",
+        "item": "boneless skinless chicken breasts",
         "measurements": [
           {
             "amount": "1.33",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Meat & Seafood"
       }
     },

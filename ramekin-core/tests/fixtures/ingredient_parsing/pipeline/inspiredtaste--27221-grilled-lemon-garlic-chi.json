@@ -53,15 +53,11 @@
             "unit": "cup"
           },
           {
-            "amount": "1 to 2",
-            "unit": "lemons"
-          },
-          {
             "amount": "61",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 to 2 lemons",
         "category": "Beverages"
       }
     },
@@ -209,14 +205,14 @@
     {
       "raw": "3 to 6 dashes hot sauce (we love Cholula)",
       "expected": {
-        "item": "hot sauce (we love Cholula)",
+        "item": "hot sauce",
         "measurements": [
           {
             "amount": "3 to 6",
             "unit": "dash"
           }
         ],
-        "note": null,
+        "note": "we love Cholula",
         "category": "Condiments & Sauces"
       }
     },

@@ -16,7 +16,7 @@
             "unit": "oz"
           },
           {
-            "amount": "298",
+            "amount": "300",
             "unit": "g"
           }
         ],
@@ -45,7 +45,7 @@
     {
       "raw": "1 teaspoon (6.6 grams) salt (the more authentic bialys I have had use a bit more salt, so feel free to dial it up if you like a saltier roll)",
       "expected": {
-        "item": "salt (the more authentic bialys I have had use a bit more salt, so feel free to dial it up if you like a saltier roll)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
@@ -56,8 +56,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Bakery & Bread"
+        "note": "the more authentic bialys I have had use a bit more salt, so feel free to dial it up if you like a saltier roll",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -134,14 +134,14 @@
     {
       "raw": "3/4 teaspoon poppy seeds (I love poppy seeds on a bialy, but this did seem more than I was used to; I might dial it back next time)",
       "expected": {
-        "item": "poppy seeds (I love poppy seeds on a bialy, but this did seem more than I was used to; I might dial it back next time)",
+        "item": "poppy seeds",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "I love poppy seeds on a bialy, but this did seem more than I was used to; I might dial it back next time",
         "category": "Spices & Seasonings"
       }
     },

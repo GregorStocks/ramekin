@@ -23,14 +23,14 @@
     {
       "raw": "1 cup finely chopped yellow onion ((from 1 medium onion))",
       "expected": {
-        "item": "finely chopped yellow onion (from 1 medium onion)",
+        "item": "finely chopped yellow onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 1 medium onion",
         "category": "Produce"
       }
     },
@@ -69,14 +69,14 @@
     {
       "raw": "1¾ cups half &amp;amp; half, (plus a few more tablespoons if needed)",
       "expected": {
-        "item": "half & half, (plus a few more tablespoons if needed)",
+        "item": "half & half",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plus a few more tablespoons if needed",
         "category": "Other"
       }
     },
@@ -88,17 +88,9 @@
           {
             "amount": "1",
             "unit": "box"
-          },
-          {
-            "amount": "10",
-            "unit": "oz"
-          },
-          {
-            "amount": "283",
-            "unit": "g"
           }
         ],
-        "note": "thawed, drained, and squeezed dry",
+        "note": "10-ounce, thawed, drained, and squeezed dry",
         "category": "Produce"
       }
     },
@@ -110,17 +102,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "14",
-            "unit": "oz"
-          },
-          {
-            "amount": "397",
-            "unit": "g"
           }
         ],
-        "note": "drained, rinsed, chopped, and blotted dry with paper towels (see note",
+        "note": "14-ounce, drained, rinsed, chopped, and blotted dry with paper towels (see note)",
         "category": "Canned Goods"
       }
     },
@@ -163,14 +147,14 @@
     {
       "raw": "½ cup grated Pecorino Romano (or Parmigiano Reggiano)",
       "expected": {
-        "item": "grated Pecorino Romano (or Parmigiano Reggiano)",
+        "item": "grated Pecorino Romano",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or Parmigiano Reggiano",
         "category": "Cheese"
       }
     },

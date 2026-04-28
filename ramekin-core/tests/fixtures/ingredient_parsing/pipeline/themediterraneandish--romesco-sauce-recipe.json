@@ -55,14 +55,14 @@
     {
       "raw": "1/4 cup raw blanched hazelnuts, toasted, (optional, you can use 1 cup almonds instead)",
       "expected": {
-        "item": "raw blanched hazelnuts, toasted",
+        "item": "raw blanched hazelnuts",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "optional, you can use 1 cup almonds instead",
+        "note": "optional, you can use 1 cup almonds instead, toasted",
         "category": "Nuts & Dried Fruit"
       }
     },

@@ -19,15 +19,15 @@
     {
       "raw": "1 cup chopped fresh fruit of choice ((apple, grape, stone fruit, etc.))",
       "expected": {
-        "item": "chopped fresh fruit of choice (apple, grape, stone fruit, etc.)",
+        "item": "chopped fresh fruit of choice",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "apple, grape, stone fruit, etc.",
+        "category": "Other"
       }
     },
     {
@@ -54,7 +54,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "thinly sliced (optional",
+        "note": "thinly sliced (optional)",
         "category": "Produce"
       }
     },

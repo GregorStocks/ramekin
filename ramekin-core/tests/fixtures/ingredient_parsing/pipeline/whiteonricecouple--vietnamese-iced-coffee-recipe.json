@@ -5,38 +5,42 @@
     {
       "raw": "2 Tablespoons Sweetened Condensed Milk  (*See Note 1)",
       "expected": {
-        "item": "Sweetened Condensed Milk  (*See Note 1)",
+        "item": "Sweetened Condensed Milk",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "38",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "*See Note 1",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1 1/2 Tablespoons coarse ground Coffee ((use a roast suitable for espresso, the grind the same as for a french press))",
       "expected": {
-        "item": "coarse ground Coffee (use a roast suitable for espresso, the grind the same as for a french press)",
+        "item": "coarse ground Coffee",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "use a roast suitable for espresso, the grind the same as for a french press",
         "category": "Beverages"
       }
     },
     {
       "raw": "Hot Water ((almost to a boil))",
       "expected": {
-        "item": "Hot Water (almost to a boil)",
+        "item": "Hot Water",
         "measurements": [],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "almost to a boil",
+        "category": "Other"
       }
     },
     {

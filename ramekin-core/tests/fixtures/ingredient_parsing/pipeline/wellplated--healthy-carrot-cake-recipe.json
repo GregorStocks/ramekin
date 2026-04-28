@@ -196,13 +196,9 @@
           {
             "amount": "3",
             "unit": "large"
-          },
-          {
-            "amount": "4",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "about 3 large or 4 small/medium",
         "category": "Produce"
       }
     },
@@ -280,7 +276,7 @@
             "unit": "g"
           }
         ],
-        "note": "golden raisins, or dried cranberries (optional",
+        "note": "golden raisins, or dried cranberries (optional)",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -413,9 +409,9 @@
     {
       "raw": "toasted chopped pecans (or walnuts)",
       "expected": {
-        "item": "toasted chopped pecans (or walnuts)",
+        "item": "toasted chopped pecans",
         "measurements": [],
-        "note": null,
+        "note": "or walnuts",
         "category": "Nuts & Dried Fruit"
       }
     }

@@ -122,13 +122,9 @@
           {
             "amount": "905",
             "unit": "g"
-          },
-          {
-            "amount": "5 to 6",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "about 5 to 6",
         "category": "Produce"
       }
     },
@@ -144,7 +140,7 @@
     {
       "raw": "1/3 cup (65 grams) granulated sugar or vanilla sugar (see note above)",
       "expected": {
-        "item": "granulated sugar or vanilla sugar (see note above)",
+        "item": "granulated sugar or vanilla sugar",
         "measurements": [
           {
             "amount": "0.33",
@@ -155,7 +151,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note above",
         "category": "Baking"
       }
     },
@@ -198,7 +194,7 @@
     {
       "raw": "3/4 cup (40 grams) plain, unseasoned dried breadcrumbs (I used, and recommend, panko, see note above)",
       "expected": {
-        "item": "plain, unseasoned dried breadcrumbs (I used, and recommend, panko, see note above)",
+        "item": "plain, unseasoned dried breadcrumbs",
         "measurements": [
           {
             "amount": "0.75",
@@ -209,7 +205,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used, and recommend, panko, see note above",
         "category": "Bakery & Bread"
       }
     },

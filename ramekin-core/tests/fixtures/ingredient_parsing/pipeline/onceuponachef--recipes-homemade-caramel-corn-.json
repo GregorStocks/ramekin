@@ -23,14 +23,14 @@
     {
       "raw": "⅔ cup popcorn kernels (see note)",
       "expected": {
-        "item": "popcorn kernels (see note)",
+        "item": "popcorn kernels",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Snacks"
       }
     },

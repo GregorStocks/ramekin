@@ -92,13 +92,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "3",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "3-inch",
         "category": "Spices & Seasonings"
       }
     },
@@ -183,17 +179,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "14",
-            "unit": "oz"
-          },
-          {
-            "amount": "397",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "14-ounce",
         "category": "Canned Goods"
       }
     },
@@ -228,14 +216,14 @@
     {
       "raw": "1 cup brined green olives (Aida recommended Cerignola)",
       "expected": {
-        "item": "brined green olives (Aida recommended Cerignola)",
+        "item": "brined green olives",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "Aida recommended Cerignola",
         "category": "Canned Goods"
       }
     },
@@ -244,7 +232,7 @@
       "expected": {
         "item": "Steamed couscous",
         "measurements": [],
-        "note": "for serving (directions here and elsewhere on the web)",
+        "note": "directions here and elsewhere on the web, for serving",
         "category": "Pasta & Rice"
       }
     },

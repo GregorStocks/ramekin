@@ -69,14 +69,14 @@
     {
       "raw": "1/2 cup 1 stick cold unsalted butter (cut into cubes)",
       "expected": {
-        "item": "1 stick cold unsalted butter (cut into cubes)",
+        "item": "1 stick cold unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Dairy & Eggs"
       }
     },
@@ -252,13 +252,9 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "50",
-            "unit": null
           }
         ],
-        "note": "finely chopped",
+        "note": "50-70%, finely chopped",
         "category": "Other"
       }
     },
@@ -349,7 +345,7 @@
       "expected": {
         "item": "chocolate curls",
         "measurements": [],
-        "note": "for garnish (optional",
+        "note": "for garnish (optional)",
         "category": "Other"
       }
     }

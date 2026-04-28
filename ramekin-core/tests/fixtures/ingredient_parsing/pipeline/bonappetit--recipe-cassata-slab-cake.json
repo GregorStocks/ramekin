@@ -5,9 +5,9 @@
     {
       "raw": "Nonstick vegetable oil spray (for pan)",
       "expected": {
-        "item": "Nonstick vegetable oil spray (for pan)",
+        "item": "Nonstick vegetable oil spray",
         "measurements": [],
-        "note": null,
+        "note": "for pan",
         "category": "Oils & Vinegars"
       }
     },
@@ -332,9 +332,9 @@
     {
       "raw": "Green food coloring (for marzipan)",
       "expected": {
-        "item": "Green food coloring (for marzipan)",
+        "item": "Green food coloring",
         "measurements": [],
-        "note": null,
+        "note": "for marzipan",
         "category": "Baking"
       }
     },
@@ -352,7 +352,7 @@
             "unit": "g"
           }
         ],
-        "note": "220 g; or more",
+        "note": "220 g; or more, plus more for dusting",
         "category": "Baking"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "1 28-ounce (800 grams) can whole peeled tomatoes (San Marzano, if you can find them)",
       "expected": {
-        "item": "whole peeled tomatoes (San Marzano, if you can find them)",
+        "item": "whole peeled tomatoes",
         "measurements": [
           {
             "amount": "1",
@@ -16,8 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "San Marzano, if you can find them",
+        "category": "Produce"
       }
     },
     {

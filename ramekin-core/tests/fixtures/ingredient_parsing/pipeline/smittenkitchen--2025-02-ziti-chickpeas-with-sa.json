@@ -133,14 +133,14 @@
     {
       "raw": "1 6-8-ounce bundle kale, stemmed, or 4 to 5 ounces kale leaves, cut into thin ribbons",
       "expected": {
-        "item": "6-8-ounce bundle kale, stemmed",
+        "item": "6-8-ounce bundle kale, stemmed, or 4 to 5 ounces kale leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "or 4 to 5 ounces kale leaves, cut into thin ribbons",
+        "note": "cut into thin ribbons",
         "category": "Produce"
       }
     },
@@ -158,7 +158,7 @@
             "unit": "g"
           }
         ],
-        "note": "coarsely grated (see Note)",
+        "note": "see Note, coarsely grated",
         "category": "Cheese"
       }
     },
@@ -179,9 +179,9 @@
     {
       "raw": "Garlic bread, for serving, if you wish",
       "expected": {
-        "item": "Garlic bread, for serving, if you wish",
+        "item": "Garlic bread, for serving",
         "measurements": [],
-        "note": null,
+        "note": "if you wish",
         "category": "Produce"
       }
     }

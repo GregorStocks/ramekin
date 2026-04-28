@@ -87,18 +87,14 @@
     {
       "raw": "½ tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.7",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -119,14 +115,14 @@
     {
       "raw": "1 tbsp grated daikon radish (daikon oroshi) (optional)",
       "expected": {
-        "item": "grated daikon radish (daikon oroshi) (optional)",
+        "item": "grated daikon radish",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "daikon oroshi, optional",
         "category": "Produce"
       }
     }

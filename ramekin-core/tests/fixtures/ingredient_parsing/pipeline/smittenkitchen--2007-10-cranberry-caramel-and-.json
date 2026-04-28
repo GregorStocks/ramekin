@@ -5,18 +5,18 @@
     {
       "raw": "13 tablespoons (1 stick plus 5 tablespoons) unsalted butter, cut into 1-inch pieces",
       "expected": {
-        "item": "unsalted butter, cut into 1-inch pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "13",
             "unit": "tbsp"
           },
           {
-            "amount": "1",
-            "unit": "stick"
+            "amount": "184",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 stick plus 5 tablespoons, cut into 1-inch pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -105,7 +105,7 @@
     {
       "raw": "1/2 cup (1 stick) unsalted butter, cut into eight pieces",
       "expected": {
-        "item": "unsalted butter, cut into eight pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -114,9 +114,13 @@
           {
             "amount": "1",
             "unit": "stick"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into eight pieces",
         "category": "Dairy & Eggs"
       }
     },

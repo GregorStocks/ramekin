@@ -23,14 +23,18 @@
     {
       "raw": "1 cup half and half (or heavy cream)",
       "expected": {
-        "item": "half and half (or heavy cream)",
+        "item": "half and half",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "242",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or heavy cream",
         "category": "Dairy & Eggs"
       }
     },

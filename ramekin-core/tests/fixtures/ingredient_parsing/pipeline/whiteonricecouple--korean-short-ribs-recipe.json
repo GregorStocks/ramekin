@@ -5,7 +5,7 @@
     {
       "raw": "4 lbs Beef Short Ribs (flanken cut) ((cut @ 1/2-3/4″ thick))",
       "expected": {
-        "item": "Beef Short Ribs (flanken cut) (cut @ 1/2-3/4″ thick)",
+        "item": "Beef Short Ribs",
         "measurements": [
           {
             "amount": "4",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "flanken cut, cut @ 1/2-3/4″ thick",
         "category": "Meat & Seafood"
       }
     },
@@ -41,14 +41,18 @@
     {
       "raw": "1/4 cup Oil (, high flash point oil is best like grapeseed oil)",
       "expected": {
-        "item": "Oil (, high flash point oil is best like grapeseed oil)",
+        "item": "Oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "high flash point oil is best like grapeseed oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,14 +73,14 @@
     {
       "raw": "2-3 Tablespoons Soy Sauce ((depending upon the saltiness of your preferred soy))",
       "expected": {
-        "item": "Soy Sauce (depending upon the saltiness of your preferred soy)",
+        "item": "Soy Sauce",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "depending upon the saltiness of your preferred soy",
         "category": "Condiments & Sauces"
       }
     },

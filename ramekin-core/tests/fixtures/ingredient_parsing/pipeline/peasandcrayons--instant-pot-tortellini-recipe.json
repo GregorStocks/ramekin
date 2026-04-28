@@ -125,7 +125,7 @@
     {
       "raw": "9 oz uncooked refrigerated tortellini (any variety; I used cheese filled)",
       "expected": {
-        "item": "uncooked refrigerated tortellini (any variety; I used cheese filled)",
+        "item": "uncooked refrigerated tortellini",
         "measurements": [
           {
             "amount": "9",
@@ -136,7 +136,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any variety; I used cheese filled",
         "category": "Pasta & Rice"
       }
     },

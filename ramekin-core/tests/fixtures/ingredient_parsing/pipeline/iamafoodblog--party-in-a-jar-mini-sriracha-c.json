@@ -96,7 +96,7 @@
     {
       "raw": "1 lb boneless skinless chicken thighs, cut into 1 inch pieces",
       "expected": {
-        "item": "boneless skinless chicken thighs, cut into 1 inch pieces",
+        "item": "boneless skinless chicken thighs",
         "measurements": [
           {
             "amount": "1",
@@ -107,7 +107,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1 inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -188,9 +188,9 @@
     {
       "raw": "fresh thyme, if desired",
       "expected": {
-        "item": "fresh thyme, if desired",
+        "item": "fresh thyme",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Produce"
       }
     }

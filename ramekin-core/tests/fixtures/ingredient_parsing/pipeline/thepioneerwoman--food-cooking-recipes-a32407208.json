@@ -68,14 +68,14 @@
     {
       "raw": "2 large bell peppers (red and green)",
       "expected": {
-        "item": "bell peppers (red and green)",
+        "item": "bell peppers",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "red and green",
         "category": "Produce"
       }
     },
@@ -124,7 +124,7 @@
     {
       "raw": "1 lb. white mushrooms, halved (or quartered if large)",
       "expected": {
-        "item": "white mushrooms, halved",
+        "item": "white mushrooms",
         "measurements": [
           {
             "amount": "1",
@@ -135,7 +135,7 @@
             "unit": "g"
           }
         ],
-        "note": "or quartered if large",
+        "note": "or quartered if large, halved",
         "category": "Produce"
       }
     },

@@ -173,25 +173,21 @@
     {
       "raw": "1 Tablespoon freshly grated Ginger (finely grated) ( or 1 teaspoon (5ml) ground Ginger Powder)",
       "expected": {
-        "item": "freshly grated Ginger ground Ginger Powder)",
+        "item": "freshly grated Ginger",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "1",
-            "unit": "tsp"
           }
         ],
-        "note": "finely grated",
-        "category": "Spices & Seasonings"
+        "note": "finely grated, or 1 teaspoon (5ml) ground Ginger Powder",
+        "category": "Beverages"
       }
     },
     {
       "raw": "8 oz Cream Cheese (, room temp.)",
       "expected": {
-        "item": "Cream Cheese (, room temp.)",
+        "item": "Cream Cheese",
         "measurements": [
           {
             "amount": "8",
@@ -202,21 +198,25 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "room temp.",
         "category": "Cheese"
       }
     },
     {
       "raw": "1/2 cup Butter (, room temp.)",
       "expected": {
-        "item": "Butter (, room temp.)",
+        "item": "Butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "room temp.",
         "category": "Dairy & Eggs"
       }
     },
@@ -241,23 +241,27 @@
     {
       "raw": "1 cup Powdered Sugar ( or to personal taste)",
       "expected": {
-        "item": "Powdered Sugar ( or to personal taste)",
+        "item": "Powdered Sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or to personal taste",
         "category": "Baking"
       }
     },
     {
       "raw": "sprinkle of ground cinnamon (, for topping cupcakes)",
       "expected": {
-        "item": "sprinkle of ground cinnamon (, for topping cupcakes)",
+        "item": "sprinkle of ground cinnamon",
         "measurements": [],
-        "note": null,
+        "note": "for topping cupcakes",
         "category": "Spices & Seasonings"
       }
     }

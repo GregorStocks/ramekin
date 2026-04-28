@@ -5,14 +5,14 @@
     {
       "raw": "1 tablespoon minced jalapeño peppers, (from 1 pepper (seeded; see note))",
       "expected": {
-        "item": "minced jalapeño peppers, (from 1 pepper (seeded; see note)",
+        "item": "minced jalapeño peppers",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from 1 pepper (seeded; see note)",
         "category": "Produce"
       }
     },
@@ -79,14 +79,18 @@
     {
       "raw": "1 tablespoon lime juice, (from 1 lime)",
       "expected": {
-        "item": "lime juice, (from 1 lime)",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 1 lime",
         "category": "Beverages"
       }
     },
@@ -98,17 +102,9 @@
           {
             "amount": "2",
             "unit": "small"
-          },
-          {
-            "amount": "0.75",
-            "unit": "lb"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
           }
         ],
-        "note": "cored and diced)",
+        "note": "about 3/4 pound (340 g), cored and diced",
         "category": "Produce"
       }
     },
@@ -168,15 +164,11 @@
             "unit": "lb"
           },
           {
-            "amount": "90",
-            "unit": null
-          },
-          {
             "amount": "454",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "90 to 93%",
         "category": "Meat & Seafood"
       }
     },
@@ -296,17 +288,9 @@
           {
             "amount": "1",
             "unit": "bag"
-          },
-          {
-            "amount": "10",
-            "unit": "oz"
-          },
-          {
-            "amount": "283",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "10-oz",
         "category": "Bakery & Bread"
       }
     },
@@ -346,7 +330,7 @@
             "unit": null
           }
         ],
-        "note": "thinly sliced into rounds (optional",
+        "note": "thinly sliced into rounds (optional)",
         "category": "Produce"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "2 1/2 cups (225g) rolled oats  ((Old Fashioned))",
       "expected": {
-        "item": "rolled oats  (Old Fashioned)",
+        "item": "rolled oats",
         "measurements": [
           {
             "amount": "2.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Old Fashioned",
         "category": "Bakery & Bread"
       }
     },

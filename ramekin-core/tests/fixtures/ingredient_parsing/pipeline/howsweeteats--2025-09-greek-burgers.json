@@ -59,14 +59,18 @@
     {
       "raw": "2 ½ cups all-purpose flour, (plus extra for your workspace/kneading)",
       "expected": {
-        "item": "all-purpose flour, (plus extra for your workspace/kneading)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "cup"
+          },
+          {
+            "amount": "312",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plus extra for your workspace/kneading",
         "category": "Baking"
       }
     },
@@ -264,36 +268,36 @@
     {
       "raw": "crumbled or sliced feta, (for topping (as much as you want!))",
       "expected": {
-        "item": "crumbled or sliced feta, (for topping (as much as you want!)",
+        "item": "crumbled or sliced feta",
         "measurements": [],
-        "note": null,
+        "note": "for topping (as much as you want!)",
         "category": "Cheese"
       }
     },
     {
       "raw": "roasted red peppers, (for topping)",
       "expected": {
-        "item": "roasted red peppers, (for topping)",
+        "item": "roasted red peppers",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "pickled onions, (for topping)",
       "expected": {
-        "item": "pickled onions, (for topping)",
+        "item": "pickled onions",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "lettuce, (for topping)",
       "expected": {
-        "item": "lettuce, (for topping)",
+        "item": "lettuce",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     }

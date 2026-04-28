@@ -19,18 +19,14 @@
     {
       "raw": "1  medium golden beet (raw), peeled, and quartered (4-inch diameter)",
       "expected": {
-        "item": "golden beet, peeled, and quartered",
+        "item": "golden beet, peeled",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
-          },
-          {
-            "amount": "4",
-            "unit": "inch"
           }
         ],
-        "note": "raw",
+        "note": "raw, 4-inch diameter, and quartered",
         "category": "Produce"
       }
     },
@@ -42,13 +38,9 @@
           {
             "amount": "4-6",
             "unit": "tbsp"
-          },
-          {
-            "amount": "2",
-            "unit": "lemons"
           }
         ],
-        "note": null,
+        "note": "2 lemons",
         "category": "Beverages"
       }
     },
@@ -157,9 +149,9 @@
     {
       "raw": "to serve (all or some of the others): sesame seeds, hemp seeds, edible chive/flower blossoms, chopped chives, thread of toasted sesame oil",
       "expected": {
-        "item": "to serve (all or some of the others): sesame seeds, hemp seeds, edible chive/flower blossoms, chopped chives",
+        "item": "to serve : sesame seeds, hemp seeds, edible chive/flower blossoms, chopped chives",
         "measurements": [],
-        "note": "thread of toasted sesame oil",
+        "note": "all or some of the others, thread of toasted sesame oil",
         "category": "Spices & Seasonings"
       }
     }

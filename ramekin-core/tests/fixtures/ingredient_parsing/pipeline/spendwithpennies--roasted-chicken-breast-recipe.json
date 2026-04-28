@@ -64,14 +64,14 @@
     {
       "raw": "4  split chicken breasts (bone-in, skin on)",
       "expected": {
-        "item": "split chicken breasts (bone-in, skin on)",
+        "item": "split chicken breasts",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "bone-in, skin on",
         "category": "Meat & Seafood"
       }
     }

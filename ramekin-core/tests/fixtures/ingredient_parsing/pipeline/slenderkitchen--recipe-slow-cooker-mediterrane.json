@@ -76,21 +76,21 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped (or peppadew peppers)",
+        "note": "or peppadew peppers, chopped",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 cup olives (any kind)",
       "expected": {
-        "item": "olives (any kind)",
+        "item": "olives",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "any kind",
         "category": "Canned Goods"
       }
     },

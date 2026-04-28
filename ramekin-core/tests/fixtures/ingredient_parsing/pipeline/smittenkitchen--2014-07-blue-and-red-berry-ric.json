@@ -77,7 +77,7 @@
     {
       "raw": "8 tablespoons (4 ounces or 113 grams) cold unsalted butter, cut into pieces",
       "expected": {
-        "item": "cold unsalted butter, cut into pieces",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "8",
@@ -92,7 +92,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -136,28 +136,28 @@
     {
       "raw": "2 cups berries or chopped fruit (I used raspberries and cherries on the red one, blueberries for on the blue)",
       "expected": {
-        "item": "berries or chopped fruit (I used raspberries and cherries on the red one, blueberries for on the blue)",
+        "item": "berries or chopped fruit",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "I used raspberries and cherries on the red one, blueberries for on the blue",
+        "category": "Other"
       }
     },
     {
       "raw": "3 to 4 tablespoons granulated sugar (use the lower amount if your fruit is especially sweet)",
       "expected": {
-        "item": "granulated sugar (use the lower amount if your fruit is especially sweet)",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "3 to 4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "use the lower amount if your fruit is especially sweet",
         "category": "Baking"
       }
     },

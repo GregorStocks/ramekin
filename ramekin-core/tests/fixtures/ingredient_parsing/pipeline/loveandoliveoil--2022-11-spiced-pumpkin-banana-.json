@@ -146,13 +146,9 @@
           {
             "amount": "2",
             "unit": null
-          },
-          {
-            "amount": "0.67",
-            "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 2/3 cup smashed",
         "category": "Produce"
       }
     },
@@ -223,14 +219,14 @@
     {
       "raw": "¼ cup pepitas or pumpkin seeds (for topping)",
       "expected": {
-        "item": "pepitas or pumpkin seeds (for topping)",
+        "item": "pepitas or pumpkin seeds",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     }

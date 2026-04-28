@@ -23,7 +23,7 @@
     {
       "raw": "1½ ounces freshly squeezed lime juice (from 2 limes)",
       "expected": {
-        "item": "freshly squeezed lime juice (from 2 limes)",
+        "item": "freshly squeezed lime juice",
         "measurements": [
           {
             "amount": "1.5",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 2 limes",
         "category": "Beverages"
       }
     },

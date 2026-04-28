@@ -64,14 +64,18 @@
     {
       "raw": "1 tablespoon Butter (, for flavor)",
       "expected": {
-        "item": "Butter (, for flavor)",
+        "item": "Butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for flavor",
         "category": "Dairy & Eggs"
       }
     },
@@ -92,14 +96,18 @@
     {
       "raw": "1 teaspoon Salt (, plus additional for final season later)",
       "expected": {
-        "item": "Salt (",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
-        "note": "plus additional for final season later)",
+        "note": "plus additional for final season later",
         "category": "Spices & Seasonings"
       }
     },

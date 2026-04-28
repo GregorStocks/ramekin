@@ -64,22 +64,18 @@
     {
       "raw": "2 1/4 to 2 1/2 pound (1 to 1 1/8 kgs) head of cauliflower, cut into small florets",
       "expected": {
-        "item": "head of cauliflower, cut into small florets",
+        "item": "head of cauliflower",
         "measurements": [
           {
             "amount": "2.25 to 2.5",
             "unit": "lb"
           },
           {
-            "amount": "1 to 1.13",
-            "unit": "kgs"
-          },
-          {
             "amount": "1021 to 1134",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 to 1 1/8 kgs, cut into small florets",
         "category": "Produce"
       }
     },
@@ -100,14 +96,14 @@
     {
       "raw": "2 tablespoons capers (brine-packed), drained",
       "expected": {
-        "item": "capers, drained",
+        "item": "capers",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "brine-packed",
+        "note": "brine-packed, drained",
         "category": "Canned Goods"
       }
     },
@@ -151,7 +147,7 @@
     {
       "raw": "2 cups (6 ounces or 170 grams) coarsely grated, lightly packed Italian Fontina (Val d’Aosta variety, if you can find it) (buy about 8 ounces with rind)",
       "expected": {
-        "item": "coarsely grated, lightly packed Italian Fontina (Val d’Aosta variety, if you can find it) (buy about 8 ounces with rind)",
+        "item": "coarsely grated, lightly packed Italian Fontina",
         "measurements": [
           {
             "amount": "2",
@@ -166,7 +162,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Val d’Aosta variety, if you can find it, buy about 8 ounces with rind",
         "category": "Cheese"
       }
     },
@@ -191,7 +187,7 @@
     {
       "raw": "1/2 cup (25 grams) panko (plain Japanese-style breadcrumbs)",
       "expected": {
-        "item": "panko (plain Japanese-style breadcrumbs)",
+        "item": "panko",
         "measurements": [
           {
             "amount": "0.5",
@@ -202,7 +198,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plain Japanese-style breadcrumbs",
         "category": "Bakery & Bread"
       }
     },

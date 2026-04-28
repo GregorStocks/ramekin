@@ -5,14 +5,14 @@
     {
       "raw": "1 box French Vanilla Cake Mix (I used Duncan Hines)",
       "expected": {
-        "item": "French Vanilla Cake Mix (I used Duncan Hines)",
+        "item": "French Vanilla Cake Mix",
         "measurements": [
           {
             "amount": "1",
             "unit": "box"
           }
         ],
-        "note": null,
+        "note": "I used Duncan Hines",
         "category": "Baking"
       }
     },
@@ -129,14 +129,14 @@
     {
       "raw": "1 1/2 teaspoons clear vanilla extract (this helps maintain the bright white color)",
       "expected": {
-        "item": "clear vanilla extract (this helps maintain the bright white color)",
+        "item": "clear vanilla extract",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "this helps maintain the bright white color",
         "category": "Baking"
       }
     },

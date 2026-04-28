@@ -123,23 +123,27 @@
     {
       "raw": "½ cup buttermilk (you may not use all of it)",
       "expected": {
-        "item": "buttermilk (you may not use all of it)",
+        "item": "buttermilk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "you may not use all of it",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "oil (for frying )",
       "expected": {
-        "item": "oil (for frying",
+        "item": "oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     }

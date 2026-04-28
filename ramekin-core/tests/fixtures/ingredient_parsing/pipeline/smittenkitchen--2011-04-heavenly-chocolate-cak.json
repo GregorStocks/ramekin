@@ -130,14 +130,14 @@
     {
       "raw": "2 to 3 tablespoons powdered sugar (use more if you prefer a sweeter filling)",
       "expected": {
-        "item": "powdered sugar (use more if you prefer a sweeter filling)",
+        "item": "powdered sugar",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "use more if you prefer a sweeter filling",
         "section": "Cake Layer",
         "category": "Baking"
       }

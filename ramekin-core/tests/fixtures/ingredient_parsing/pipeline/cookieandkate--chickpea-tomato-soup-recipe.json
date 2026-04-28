@@ -149,14 +149,18 @@
     {
       "raw": "2 tablespoons unsalted butter, cut into a few pieces",
       "expected": {
-        "item": "unsalted butter, cut into a few pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into a few pieces",
         "category": "Dairy & Eggs"
       }
     },

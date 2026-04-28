@@ -33,7 +33,7 @@
     {
       "raw": "3 ounces thin sliced salami, cut into ribbons",
       "expected": {
-        "item": "thin sliced salami, cut into ribbons",
+        "item": "thin sliced salami",
         "measurements": [
           {
             "amount": "3",
@@ -44,7 +44,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into ribbons",
         "category": "Meat & Seafood"
       }
     },
@@ -87,14 +87,14 @@
     {
       "raw": "1/2 cup feta cheese, blue cheese, or fresh mozzarella cheese",
       "expected": {
-        "item": "feta cheese, blue cheese",
+        "item": "feta cheese, blue cheese, or fresh mozzarella cheese",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "or fresh mozzarella cheese",
+        "note": null,
         "category": "Cheese"
       }
     },

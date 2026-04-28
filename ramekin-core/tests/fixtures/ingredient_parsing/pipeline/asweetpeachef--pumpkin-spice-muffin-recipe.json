@@ -37,14 +37,18 @@
     {
       "raw": "1/3 cup vegetable oil (plus more if greasing muffin tin)",
       "expected": {
-        "item": "vegetable oil (plus more if greasing muffin tin)",
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "73",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plus more if greasing muffin tin",
         "category": "Oils & Vinegars"
       }
     },

@@ -87,7 +87,7 @@
     {
       "raw": "8 oz raw Italian sausage (ideally bulk sausage, but if using links, remove casings first)",
       "expected": {
-        "item": "raw Italian sausage (ideally bulk sausage, but if using links, remove casings first)",
+        "item": "raw Italian sausage",
         "measurements": [
           {
             "amount": "8",
@@ -98,7 +98,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "ideally bulk sausage, but if using links, remove casings first",
         "category": "Meat & Seafood"
       }
     },
@@ -280,9 +280,9 @@
     {
       "raw": "chopped fresh cilantro (for topping)",
       "expected": {
-        "item": "chopped fresh cilantro (for topping)",
+        "item": "chopped fresh cilantro",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Produce"
       }
     }

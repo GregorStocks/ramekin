@@ -5,14 +5,18 @@
     {
       "raw": "2 tablespoon butter (unsalted)",
       "expected": {
-        "item": "butter (unsalted)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsalted",
         "category": "Dairy & Eggs"
       }
     },
@@ -277,14 +281,18 @@
     {
       "raw": "2 cups chicken broth (low sodium)",
       "expected": {
-        "item": "chicken broth (low sodium)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "498",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Canned Goods"
       }
     },
@@ -451,14 +459,18 @@
     {
       "raw": "1/4 cup melted butter (unsalted)",
       "expected": {
-        "item": "melted butter (unsalted)",
+        "item": "melted butter",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsalted",
         "category": "Dairy & Eggs"
       }
     },

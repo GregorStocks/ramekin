@@ -79,14 +79,14 @@
     {
       "raw": "1 grilled cheese, cut into small squares",
       "expected": {
-        "item": "grilled cheese, cut into small squares",
+        "item": "grilled cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into small squares",
         "category": "Cheese"
       }
     },

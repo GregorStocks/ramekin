@@ -5,7 +5,7 @@
     {
       "raw": "2 lbs boneless skinless chicken thighs (or chicken breast)",
       "expected": {
-        "item": "boneless skinless chicken thighs (or chicken breast)",
+        "item": "boneless skinless chicken thighs",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or chicken breast",
         "category": "Meat & Seafood"
       }
     },
@@ -91,14 +91,14 @@
     {
       "raw": "1 tbsp achiote paste (or powder)",
       "expected": {
-        "item": "achiote paste (or powder)",
+        "item": "achiote paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or powder",
         "category": "Other"
       }
     },
@@ -123,14 +123,18 @@
     {
       "raw": "1 tsp oregano (Mexican is best)",
       "expected": {
-        "item": "oregano (Mexican is best)",
+        "item": "oregano",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Mexican is best",
         "category": "Spices & Seasonings"
       }
     },

@@ -163,7 +163,7 @@
     {
       "raw": "1 pound fresh butternut squash, peeled and seeded, cut into chunks",
       "expected": {
-        "item": "fresh butternut squash, peeled and seeded, cut into chunks",
+        "item": "fresh butternut squash, peeled and seeded",
         "measurements": [
           {
             "amount": "1",
@@ -174,7 +174,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Produce"
       }
     },

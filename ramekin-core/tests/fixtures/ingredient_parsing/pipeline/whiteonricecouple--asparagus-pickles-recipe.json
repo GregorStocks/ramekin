@@ -120,14 +120,14 @@
     {
       "raw": "1 teaspoon Sea Salt (, or Kosher Salt)",
       "expected": {
-        "item": "Sea Salt (, or Kosher Salt)",
+        "item": "Sea Salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or Kosher Salt",
         "category": "Spices & Seasonings"
       }
     },

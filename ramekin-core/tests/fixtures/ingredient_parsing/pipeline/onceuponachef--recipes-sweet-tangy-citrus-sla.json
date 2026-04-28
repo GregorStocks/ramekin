@@ -61,14 +61,14 @@
     {
       "raw": "½ cup coarsely chopped fresh cilantro (parsley may be substituted)",
       "expected": {
-        "item": "coarsely chopped fresh cilantro (parsley may be substituted)",
+        "item": "coarsely chopped fresh cilantro",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "parsley may be substituted",
         "category": "Produce"
       }
     },
@@ -76,13 +76,8 @@
       "raw": "Zest and juice from 1 orange (about 1 teaspoon zest and ¼ cup juice)",
       "expected": {
         "item": "Zest and juice from 1 orange",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
+        "measurements": [],
+        "note": "about 1 teaspoon zest and 1/4 cup juice",
         "category": "Produce"
       }
     },

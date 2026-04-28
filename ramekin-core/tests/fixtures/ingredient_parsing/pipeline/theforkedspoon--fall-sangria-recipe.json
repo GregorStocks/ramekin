@@ -33,14 +33,14 @@
     {
       "raw": "1   orange (sliced and cut into quarters)",
       "expected": {
-        "item": "orange",
+        "item": "orange sliced and cut into quarters",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced and cut into quarters",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -52,17 +52,9 @@
           {
             "amount": "1",
             "unit": "bottle"
-          },
-          {
-            "amount": "750",
-            "unit": "ml"
-          },
-          {
-            "amount": "748",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "750ml of Pinot Grigio, Sauvignon Blanc, or Chardonnay",
         "category": "Beverages"
       }
     },
@@ -137,9 +129,9 @@
     {
       "raw": "fresh rosemary (to garnish)",
       "expected": {
-        "item": "fresh rosemary (to garnish)",
+        "item": "fresh rosemary",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "category": "Produce"
       }
     }

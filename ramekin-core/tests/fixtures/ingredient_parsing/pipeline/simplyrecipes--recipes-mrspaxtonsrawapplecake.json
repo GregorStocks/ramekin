@@ -145,14 +145,14 @@
     {
       "raw": "3 cups chopped, peeled apples (varieties that are good for baking - i.e. Granny Smith, Gravenstein, Fuji)",
       "expected": {
-        "item": "chopped, peeled apples (varieties that are good for baking - i.e. Granny Smith, Gravenstein, Fuji)",
+        "item": "chopped, peeled apples",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "varieties that are good for baking - i.e. Granny Smith, Gravenstein, Fuji",
         "category": "Produce"
       }
     },

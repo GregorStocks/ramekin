@@ -5,7 +5,7 @@
     {
       "raw": "1 small head of cauliflower (about 1 pound) or 1 pound of a larger head of cauliflower, cut into 1-inch flowerets (Romanesco cauliflower, especially orange or green, would be a pretty substitute)",
       "expected": {
-        "item": "head of cauliflower",
+        "item": "head of cauliflower or 1 pound of a larger head of cauliflower",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "or 1 pound of a larger head of cauliflower, cut into 1-inch flowerets (Romanesco cauliflower, especially orange or green, would be a pretty substitute)",
+        "note": "about 1 pound, Romanesco cauliflower, especially orange or green, would be a pretty substitute, cut into 1-inch flowerets",
         "category": "Produce"
       }
     },
@@ -45,28 +45,28 @@
     {
       "raw": "1 tablespoon truffle oil or a few pinches of truffle salt (optional) (see Notes below)",
       "expected": {
-        "item": "truffle oil or a few pinches of truffle salt (see Notes below)",
+        "item": "truffle oil or a few pinches of truffle salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "optional",
+        "note": "optional, see Notes below",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 refrigerated pie crust or a homemade tart shell (recipe below)",
       "expected": {
-        "item": "refrigerated pie crust or a homemade tart shell (recipe below)",
+        "item": "refrigerated pie crust or a homemade tart shell",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "recipe below",
         "category": "Frozen"
       }
     },
@@ -119,32 +119,32 @@
     {
       "raw": "1 (7- to 8- ounce) container mascarpone cheese (see Note below for suggested substitutions)",
       "expected": {
-        "item": "container mascarpone cheese (see Note below for suggested substitutions)",
+        "item": "container mascarpone cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "7",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "7- to 8- ounce, see Note below for suggested substitutions",
         "category": "Cheese"
       }
     },
     {
       "raw": "1/2 cup whipping cream (although any low- or full-fat milk or light cream will work as well)",
       "expected": {
-        "item": "whipping cream (although any low- or full-fat milk or light cream will work as well)",
+        "item": "whipping cream",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "119",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "although any low- or full-fat milk or light cream will work as well",
         "category": "Dairy & Eggs"
       }
     },
@@ -179,14 +179,14 @@
     {
       "raw": "1 cup grated Gruyère cheese (Swiss or Comté are great swaps)",
       "expected": {
-        "item": "grated Gruyère cheese (Swiss or Comté are great swaps)",
+        "item": "grated Gruyère cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "Swiss or Comté are great swaps",
         "category": "Cheese"
       }
     },

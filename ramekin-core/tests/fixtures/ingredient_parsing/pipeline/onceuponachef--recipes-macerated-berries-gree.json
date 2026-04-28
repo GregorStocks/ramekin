@@ -5,7 +5,7 @@
     {
       "raw": "1 lb strawberries, hulled and halved (or quartered if very large)",
       "expected": {
-        "item": "strawberries, hulled and halved",
+        "item": "strawberries",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "or quartered if very large",
+        "note": "or quartered if very large, hulled and halved",
         "category": "Produce"
       }
     },
@@ -131,14 +131,18 @@
     {
       "raw": "⅔ cup Greek yogurt (Gina recommends 0%; I used 2%)",
       "expected": {
-        "item": "Greek yogurt (Gina recommends 0%; I used 2%)",
+        "item": "Greek yogurt",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "163",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Gina recommends 0%; I used 2%",
         "category": "Dairy & Eggs"
       }
     }

@@ -5,14 +5,18 @@
     {
       "raw": "½ cup buttermilk, well-shaken",
       "expected": {
-        "item": "buttermilk, well-shaken",
+        "item": "buttermilk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "well-shaken",
         "category": "Dairy & Eggs"
       }
     },
@@ -161,7 +165,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 pound",
         "category": "Produce"
       }
     },
@@ -177,9 +181,9 @@
     {
       "raw": "Blue cheese dressing (from above)",
       "expected": {
-        "item": "Blue cheese dressing (from above)",
+        "item": "Blue cheese dressing",
         "measurements": [],
-        "note": null,
+        "note": "from above",
         "category": "Cheese"
       }
     },

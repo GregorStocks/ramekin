@@ -5,9 +5,9 @@
     {
       "raw": "Extra virgin olive oil (I used our Greek Early Harvest olive oil)",
       "expected": {
-        "item": "Extra virgin olive oil (I used our Greek Early Harvest olive oil)",
+        "item": "Extra virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "I used our Greek Early Harvest olive oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -97,9 +97,9 @@
     {
       "raw": "Pitted marinated olives, sliced (optional)",
       "expected": {
-        "item": "Pitted marinated olives, sliced",
+        "item": "Pitted marinated olives",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, sliced",
         "category": "Canned Goods"
       }
     },
@@ -120,28 +120,28 @@
     {
       "raw": "1 tsp za&amp;#8217;atar, more for later",
       "expected": {
-        "item": "za’atar, more for later",
+        "item": "za’atar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "more for later",
         "category": "Other"
       }
     },
     {
       "raw": "3/4 tsp to 1 tsp Aleppo pepper (start with less if you&amp;#8217;re not sure)",
       "expected": {
-        "item": "Aleppo pepper (start with less if you’re not sure)",
+        "item": "Aleppo pepper",
         "measurements": [
           {
             "amount": "0.75 to 1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "start with less if you’re not sure",
         "category": "Spices & Seasonings"
       }
     },

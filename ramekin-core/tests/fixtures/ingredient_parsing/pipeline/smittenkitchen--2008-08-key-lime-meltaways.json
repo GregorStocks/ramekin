@@ -98,7 +98,7 @@
     {
       "raw": "1 3/4 cup plus 2 tablespoons (235 grams) all-purpose flour (a.k.a. 2 cups minus 2 tablespoons)",
       "expected": {
-        "item": "all-purpose flour (a.k.a. 2 cups minus 2 tablespoons)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1 3/4 cup plus 2 tablespoons",
@@ -109,7 +109,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "a.k.a. 2 cups minus 2 tablespoons",
         "category": "Baking"
       }
     },

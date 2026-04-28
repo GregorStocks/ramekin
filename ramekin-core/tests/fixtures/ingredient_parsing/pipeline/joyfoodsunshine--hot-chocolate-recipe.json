@@ -59,7 +59,7 @@
     {
       "raw": "6 oz  bittersweet chocolate  ((or semisweet, milk, etc.))",
       "expected": {
-        "item": "bittersweet chocolate  (or semisweet, milk, etc.)",
+        "item": "bittersweet chocolate",
         "measurements": [
           {
             "amount": "6",
@@ -70,8 +70,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "or semisweet, milk, etc.",
+        "category": "Other"
       }
     },
     {

@@ -5,7 +5,7 @@
     {
       "raw": "3 pounds fruit (see options, below), cut into 1-inch chunks if large, stone fruit pitted",
       "expected": {
-        "item": "fruit (see options, below), cut into 1-inch chunks if large, stone fruit pitted",
+        "item": "fruit, cut into 1-inch chunks if large, stone fruit pitted",
         "measurements": [
           {
             "amount": "3",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see options, below",
         "category": "Other"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "24 oz. chocolate candy coating (almond bark or Ghiradelli chocolate wafers)",
       "expected": {
-        "item": "chocolate candy coating (almond bark or Ghiradelli chocolate wafers)",
+        "item": "chocolate candy coating",
         "measurements": [
           {
             "amount": "24",
@@ -16,8 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "almond bark or Ghiradelli chocolate wafers",
+        "category": "Snacks"
       }
     },
     {
@@ -55,14 +55,14 @@
     {
       "raw": "2/3 cup toffee bits (recommend Heath Bits o’ Brickle)",
       "expected": {
-        "item": "toffee bits (recommend Heath Bits o’ Brickle)",
+        "item": "toffee bits",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "recommend Heath Bits o’ Brickle",
         "category": "Other"
       }
     },

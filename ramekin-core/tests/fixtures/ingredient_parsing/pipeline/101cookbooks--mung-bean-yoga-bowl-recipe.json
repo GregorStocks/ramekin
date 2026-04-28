@@ -37,14 +37,14 @@
     {
       "raw": "1/2  small serrano chile, seeded",
       "expected": {
-        "item": "serrano chile, seeded",
+        "item": "serrano chile",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "seeded",
         "category": "Produce"
       }
     },

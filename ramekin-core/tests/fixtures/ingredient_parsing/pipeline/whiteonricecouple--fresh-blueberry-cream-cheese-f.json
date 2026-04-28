@@ -79,7 +79,7 @@
             "unit": "g"
           }
         ],
-        "note": "softened)",
+        "note": "softened",
         "category": "Cheese"
       }
     },
@@ -101,7 +101,7 @@
             "unit": "g"
           }
         ],
-        "note": "at room temperature)",
+        "note": "at room temperature",
         "category": "Dairy & Eggs"
       }
     },
@@ -144,14 +144,14 @@
     {
       "raw": "pinch kosher salt ( or sea salt)",
       "expected": {
-        "item": "kosher salt ( or sea salt)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": null,
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "or sea salt",
         "category": "Spices & Seasonings"
       }
     }

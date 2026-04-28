@@ -65,14 +65,14 @@
     {
       "raw": "2-3 tsp hot  chilli powder (depending on how you like your curries)",
       "expected": {
-        "item": "hot chilli powder (depending on how you like your curries)",
+        "item": "hot chilli powder",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "depending on how you like your curries",
         "category": "Other"
       }
     },
@@ -93,14 +93,14 @@
     {
       "raw": "100g creamed coconut (we used 2x50g sachets Bart's creamed coconut)",
       "expected": {
-        "item": "creamed coconut (we used 2x50g sachets Bart's creamed coconut)",
+        "item": "creamed coconut",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "we used 2x50g sachets Bart's creamed coconut",
         "category": "Produce"
       }
     },

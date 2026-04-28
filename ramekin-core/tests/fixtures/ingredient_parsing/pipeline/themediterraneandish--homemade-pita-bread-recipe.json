@@ -55,42 +55,50 @@
     {
       "raw": "3 cups all-purpose flour, divided (or 1 1/2 cup all-purpose flour and 1 1/2 cup whole wheat flour)",
       "expected": {
-        "item": "all-purpose flour, divided",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "375",
+            "unit": "g"
           }
         ],
-        "note": "or 1 1/2 cup all-purpose flour and 1 1/2 cup whole wheat flour",
+        "note": "or 1 1/2 cup all-purpose flour and 1 1/2 cup whole wheat flour, divided",
         "category": "Baking"
       }
     },
     {
       "raw": "1 to 2 tsp kosher salt (I used Diamond Crystal kosher salt)",
       "expected": {
-        "item": "kosher salt (I used Diamond Crystal kosher salt)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "I used Diamond Crystal kosher salt",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "2 tbsp extra virgin olive oil (I used Private Reserve Greek extra virgin olive oil), more for the bowl",
       "expected": {
-        "item": "extra virgin olive oil (I used Private Reserve Greek extra virgin olive oil), more for the bowl",
+        "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used Private Reserve Greek extra virgin olive oil, more for the bowl",
         "category": "Oils & Vinegars"
       }
     }

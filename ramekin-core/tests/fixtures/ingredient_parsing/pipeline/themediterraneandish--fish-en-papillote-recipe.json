@@ -5,22 +5,18 @@
     {
       "raw": "1 1/4 lb cod fish fillet ((1-inch thick) cut into 4 pieces)",
       "expected": {
-        "item": "cod fish fillet cut into 4 pieces)",
+        "item": "cod fish fillet cut into 4 pieces",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "lb"
           },
           {
-            "amount": "1",
-            "unit": "inch"
-          },
-          {
             "amount": "567",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1-inch thick",
         "category": "Meat & Seafood"
       }
     },

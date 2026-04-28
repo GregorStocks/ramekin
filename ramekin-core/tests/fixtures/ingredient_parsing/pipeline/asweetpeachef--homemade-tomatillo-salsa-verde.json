@@ -61,28 +61,32 @@
     {
       "raw": "1/3  sprig fresh cilantro (stems removed)",
       "expected": {
-        "item": "fresh cilantro (stems removed)",
+        "item": "fresh cilantro",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "sprig"
           }
         ],
-        "note": null,
+        "note": "stems removed",
         "category": "Produce"
       }
     },
     {
       "raw": "2 tbsp lime juice (approx. 1 lime)",
       "expected": {
-        "item": "lime juice (approx. 1 lime)",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "approx. 1 lime",
         "category": "Beverages"
       }
     },

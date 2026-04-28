@@ -91,7 +91,7 @@
     {
       "raw": "6 oz. (3/4 cup) cold unsalted butter, cut into 1/2-inch pieces",
       "expected": {
-        "item": "cold unsalted butter, cut into 1/2-inch pieces",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "6",
@@ -106,7 +106,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Dairy & Eggs"
       }
     },

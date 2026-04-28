@@ -73,15 +73,15 @@
     {
       "raw": "2 to 3 teaspoons adobo sauce (from canned chipotle peppers)",
       "expected": {
-        "item": "adobo sauce (from canned chipotle peppers)",
+        "item": "adobo sauce",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "from canned chipotle peppers",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -124,7 +124,7 @@
     {
       "raw": "12 oz. mozzarella (fresh or smoked), cut into small cubes",
       "expected": {
-        "item": "mozzarella, cut into small cubes",
+        "item": "mozzarella",
         "measurements": [
           {
             "amount": "12",
@@ -135,7 +135,7 @@
             "unit": "g"
           }
         ],
-        "note": "fresh or smoked",
+        "note": "fresh or smoked, cut into small cubes",
         "category": "Cheese"
       }
     },

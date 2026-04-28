@@ -36,14 +36,14 @@
     {
       "raw": "2 cups (1/4-inch-sliced) fennel, top and core, if thick, removed",
       "expected": {
-        "item": "fennel, top and core, if thick, removed",
+        "item": "fennel, top and core, if thick",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "1/4-inch-sliced",
+        "note": "1/4-inch-sliced, removed",
         "category": "Produce"
       }
     },
@@ -126,14 +126,18 @@
     {
       "raw": "1 cup heavy cream (see Note up top)",
       "expected": {
-        "item": "heavy cream (see Note up top)",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note up top",
         "category": "Dairy & Eggs"
       }
     },
@@ -159,17 +163,9 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "6",
-            "unit": "oz"
-          },
-          {
-            "amount": "170",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "6 ounces with rind",
         "category": "Cheese"
       }
     },
@@ -199,14 +195,14 @@
     {
       "raw": "2 1/2 cups coarse fresh breadcrumbs or panko (what I used)",
       "expected": {
-        "item": "coarse fresh breadcrumbs or panko (what I used)",
+        "item": "coarse fresh breadcrumbs or panko",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "what I used",
         "category": "Bakery & Bread"
       }
     },

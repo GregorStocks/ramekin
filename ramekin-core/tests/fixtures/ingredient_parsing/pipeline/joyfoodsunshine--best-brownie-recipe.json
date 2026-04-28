@@ -145,15 +145,15 @@
     {
       "raw": "½ cup of mix-ins ((chocolate chips, nuts, etc. if desired))",
       "expected": {
-        "item": "mix-ins (chocolate chips, nuts, etc. if desired)",
+        "item": "mix-ins",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "chocolate chips, nuts, etc. if desired",
+        "category": "Other"
       }
     }
   ]

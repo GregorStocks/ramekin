@@ -5,7 +5,7 @@
     {
       "raw": "10 ounces tuna (drained (preferably a good chunky tuna in olive oil),  (usually 2 cans that are 5 oz each))",
       "expected": {
-        "item": "tuna,  (usually 2 cans that are 5 oz each)",
+        "item": "tuna",
         "measurements": [
           {
             "amount": "10",
@@ -16,21 +16,25 @@
             "unit": "g"
           }
         ],
-        "note": "drained (preferably a good chunky tuna in olive oil",
+        "note": "drained (preferably a good chunky tuna in olive oil),  (usually 2 cans that are 5 oz each)",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 Tablespoon olive oil ( or butter)",
       "expected": {
-        "item": "olive oil ( or butter)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or butter",
         "category": "Oils & Vinegars"
       }
     },
@@ -69,14 +73,18 @@
     {
       "raw": "3 Tablespoons mayonnaise (, or to personal taste)",
       "expected": {
-        "item": "mayonnaise (, or to personal taste)",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "41",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or to personal taste",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,14 +105,14 @@
     {
       "raw": "2 Tablespoons diced pickles or relish ((sweet or dill depending on your preference))",
       "expected": {
-        "item": "diced pickles or relish (sweet or dill depending on your preference)",
+        "item": "diced pickles or relish",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "sweet or dill depending on your preference",
         "category": "Canned Goods"
       }
     },
@@ -239,28 +247,32 @@
     {
       "raw": "8 slices sourdough bread (or bread of choice)",
       "expected": {
-        "item": "sourdough bread (or bread of choice)",
+        "item": "sourdough bread",
         "measurements": [
           {
             "amount": "8",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "or bread of choice",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "4 Tablespoons olive oil ( or butter)",
       "expected": {
-        "item": "olive oil ( or butter)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or butter",
         "category": "Oils & Vinegars"
       }
     },

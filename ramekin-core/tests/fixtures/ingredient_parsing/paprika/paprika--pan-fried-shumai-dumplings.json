@@ -10,13 +10,9 @@
           {
             "amount": "0.5",
             "unit": null
-          },
-          {
-            "amount": null,
-            "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "medium",
         "category": "Produce"
       }
     },
@@ -136,15 +132,15 @@
     {
       "raw": "3 Tbsp Katakuriko (potato starch )",
       "expected": {
-        "item": "Katakuriko (potato starch",
+        "item": "Katakuriko",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "potato starch",
+        "category": "Other"
       }
     },
     {

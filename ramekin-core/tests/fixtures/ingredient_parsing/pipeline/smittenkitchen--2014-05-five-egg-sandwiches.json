@@ -588,22 +588,18 @@
     {
       "raw": "1 pound Yukon Gold potatoes, cut into small (about 1/2-inch) cubes",
       "expected": {
-        "item": "Yukon Gold potatoes, cut into small cubes",
+        "item": "Yukon Gold potatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "lb"
           },
           {
-            "amount": "1",
-            "unit": "inch"
-          },
-          {
             "amount": "454",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1/2-inch, cut into small cubes",
         "category": "Produce"
       }
     },

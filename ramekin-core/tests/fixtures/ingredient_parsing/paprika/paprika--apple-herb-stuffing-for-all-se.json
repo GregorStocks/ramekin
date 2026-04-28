@@ -14,14 +14,14 @@
     {
       "raw": "6 cups torn chunks French, sourdough or country loaf, torn into bits (I use 2 7-ounce demi-baguettes)",
       "expected": {
-        "item": "torn chunks French, sourdough or country loaf, torn into bits (I use 2 7-ounce demi-baguettes)",
+        "item": "torn chunks French, sourdough or country loaf, torn into bits",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I use 2 7-ounce demi-baguettes",
         "category": "Bakery & Bread"
       }
     },

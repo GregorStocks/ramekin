@@ -12,15 +12,11 @@
             "unit": "tsp"
           },
           {
-            "amount": "1",
-            "unit": "packet"
-          },
-          {
             "amount": "9",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 packet",
         "category": "Baking"
       }
     },
@@ -77,15 +73,15 @@
     {
       "raw": "1/2 cup mashed potatoes  (no milk or butter added)",
       "expected": {
-        "item": "mashed potatoes  (no milk or butter added)",
+        "item": "mashed potatoes",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "no milk or butter added",
+        "category": "Produce"
       }
     },
     {

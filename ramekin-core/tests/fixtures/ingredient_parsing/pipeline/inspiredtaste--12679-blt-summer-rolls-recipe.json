@@ -5,18 +5,14 @@
     {
       "raw": "4 (8-inch) rice paper (spring roll) wrappers",
       "expected": {
-        "item": "rice paper (spring roll) wrappers",
+        "item": "rice paper wrappers",
         "measurements": [
           {
             "amount": "4",
             "unit": null
-          },
-          {
-            "amount": "8",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "8-inch, spring roll",
         "category": "Pasta & Rice"
       }
     },
@@ -51,14 +47,14 @@
     {
       "raw": "1 large tomato, cut into 1/4-inch slices",
       "expected": {
-        "item": "tomato, cut into 1/4-inch slices",
+        "item": "tomato",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch slices",
         "category": "Produce"
       }
     },

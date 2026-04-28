@@ -62,14 +62,14 @@
     {
       "raw": "1-2 teaspoon chili flakes (or Aleppo pepper)",
       "expected": {
-        "item": "chili flakes (or Aleppo pepper)",
+        "item": "chili flakes",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or Aleppo pepper",
         "section": "Chili Butter",
         "category": "Spices & Seasonings"
       }

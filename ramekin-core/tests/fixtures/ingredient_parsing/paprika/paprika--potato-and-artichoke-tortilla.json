@@ -35,7 +35,7 @@
             "unit": "large"
           }
         ],
-        "note": "quartered and thinly sliced (a leftover potato works great here)",
+        "note": "a leftover potato works great here, quartered and thinly sliced",
         "category": "Produce"
       }
     },
@@ -47,13 +47,9 @@
           {
             "amount": "3",
             "unit": null
-          },
-          {
-            "amount": null,
-            "unit": "jar"
           }
         ],
-        "note": "and thinly sliced",
+        "note": "from a can or jar, and thinly sliced",
         "category": "Canned Goods"
       }
     },
@@ -74,14 +70,14 @@
     {
       "raw": "4 large, very fresh eggs, preferably organic",
       "expected": {
-        "item": "very fresh eggs, preferably organic",
+        "item": "very fresh eggs",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "preferably organic",
         "category": "Dairy & Eggs"
       }
     },
@@ -102,9 +98,9 @@
     {
       "raw": "Coarse salt (kosher or sea)",
       "expected": {
-        "item": "Coarse salt (kosher or sea)",
+        "item": "Coarse salt",
         "measurements": [],
-        "note": null,
+        "note": "kosher or sea",
         "category": "Spices & Seasonings"
       }
     }

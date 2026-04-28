@@ -33,14 +33,18 @@
     {
       "raw": "1/2 tablespoon flour (light spelt, all purpose or plain))",
       "expected": {
-        "item": "flour (light spelt, all purpose or plain)",
+        "item": "flour",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "3.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "light spelt, all purpose or plain",
         "category": "Baking"
       }
     },
@@ -65,14 +69,18 @@
     {
       "raw": "1 tablespoon light brown sugar (or coconut sugar)",
       "expected": {
-        "item": "light brown sugar (or coconut sugar)",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or coconut sugar",
         "category": "Baking"
       }
     },
@@ -97,14 +105,18 @@
     {
       "raw": "1/3 cup plain flour (or all purpose flour, light spelt to almond flour are fine to use)",
       "expected": {
-        "item": "plain flour (or all purpose flour, light spelt to almond flour are fine to use)",
+        "item": "plain flour",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or all purpose flour, light spelt to almond flour are fine to use",
         "category": "Baking"
       }
     },
@@ -157,14 +169,18 @@
     {
       "raw": "1 tablespoon light brown sugar (or coconut sugar)",
       "expected": {
-        "item": "light brown sugar (or coconut sugar)",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or coconut sugar",
         "category": "Baking"
       }
     },

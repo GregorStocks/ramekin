@@ -111,14 +111,14 @@
     {
       "raw": "3 cups low sodium chicken broth* ( (or vegetable broth if vegan/vegetarian))",
       "expected": {
-        "item": "low sodium chicken broth* ( (or vegetable broth if vegan/vegetarian)",
+        "item": "low sodium chicken broth",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "(or vegetable broth if vegan/vegetarian)",
         "category": "Canned Goods"
       }
     },
@@ -158,13 +158,9 @@
           {
             "amount": "0.75",
             "unit": "cup"
-          },
-          {
-            "amount": null,
-            "unit": "can"
           }
         ],
-        "note": null,
+        "note": "can sub for unsweetened almond milk",
         "category": "Canned Goods"
       }
     }

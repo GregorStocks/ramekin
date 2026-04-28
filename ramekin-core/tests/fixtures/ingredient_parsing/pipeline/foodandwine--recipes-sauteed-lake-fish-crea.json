@@ -28,17 +28,9 @@
           {
             "amount": "4",
             "unit": "piece"
-          },
-          {
-            "amount": "6",
-            "unit": "oz"
-          },
-          {
-            "amount": "170",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "6-ounces",
         "category": "Meat & Seafood"
       }
     },
@@ -77,14 +69,14 @@
     {
       "raw": "2 cups mixed mushrooms (hen-of-the-woods, cremini, enoki, or oyster), cut into bite-size pieces",
       "expected": {
-        "item": "mixed mushrooms (hen-of-the-woods, cremini, enoki, or oyster), cut into bite-size pieces",
+        "item": "mixed mushrooms",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "hen-of-the-woods, cremini, enoki, or oyster, cut into bite-size pieces",
         "category": "Produce"
       }
     },

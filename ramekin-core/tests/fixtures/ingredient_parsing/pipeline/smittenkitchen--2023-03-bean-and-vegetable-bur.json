@@ -130,17 +130,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "14",
-            "unit": "oz"
-          },
-          {
-            "amount": "397",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "14-ounce",
         "category": "Canned Goods"
       }
     },
@@ -161,31 +153,23 @@
           {
             "amount": "2",
             "unit": "can"
-          },
-          {
-            "amount": "15.5",
-            "unit": "oz"
-          },
-          {
-            "amount": "439",
-            "unit": "g"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "15.5-ounces, drained and rinsed",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1 1/2 cups corn kernels, fresh (from 2 ears), canned and drained, or frozen (no need to thaw)",
       "expected": {
-        "item": "corn kernels, fresh (from 2 ears), canned and drained",
+        "item": "corn kernels, fresh, canned and drained",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "or frozen (no need to thaw)",
+        "note": "from 2 ears, no need to thaw; or frozen",
         "category": "Canned Goods"
       }
     },
@@ -253,7 +237,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 cups",
         "category": "Cheese"
       }
     },

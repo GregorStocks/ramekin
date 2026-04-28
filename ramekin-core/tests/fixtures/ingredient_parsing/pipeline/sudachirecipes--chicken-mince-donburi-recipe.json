@@ -83,18 +83,14 @@
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -119,14 +115,18 @@
     {
       "raw": "1 tbsp sake (see note)",
       "expected": {
-        "item": "sake (see note)",
+        "item": "sake",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Beverages"
       }
     },
@@ -197,18 +197,14 @@
     {
       "raw": "1 tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.3",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -275,14 +271,14 @@
     {
       "raw": "1 tsp red pickled ginger (benishoga) (optional)",
       "expected": {
-        "item": "red pickled ginger (benishoga) (optional)",
+        "item": "red pickled ginger",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "benishoga, optional",
         "category": "Canned Goods"
       }
     }

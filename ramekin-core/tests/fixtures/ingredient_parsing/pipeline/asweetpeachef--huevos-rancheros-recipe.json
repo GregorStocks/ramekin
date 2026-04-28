@@ -165,15 +165,15 @@
     {
       "raw": "1 1/2 cups plum tomatoes (equals about 2 ½ tomatoes) with juices (or diced canned tomatoes, chopped)",
       "expected": {
-        "item": "plum tomatoes (equals about 2 1/2 tomatoes) with juices (or diced canned tomatoes",
+        "item": "plum tomatoes with juices",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "chopped)",
-        "category": "Canned Goods"
+        "note": "equals about 2 1/2 tomatoes, or diced canned tomatoes, chopped",
+        "category": "Produce"
       }
     },
     {

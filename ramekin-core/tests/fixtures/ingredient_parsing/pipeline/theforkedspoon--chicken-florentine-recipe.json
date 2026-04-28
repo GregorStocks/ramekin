@@ -5,37 +5,41 @@
     {
       "raw": "6  boneless skinless chicken breasts (see notes)",
       "expected": {
-        "item": "boneless skinless chicken breasts (see notes)",
+        "item": "boneless skinless chicken breasts",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "salt and pepper (to season)",
       "expected": {
-        "item": "salt and pepper (to season)",
+        "item": "salt and pepper",
         "measurements": [],
-        "note": null,
+        "note": "to season",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/2 cup all-purpose flour (for dredging, plus more if needed)",
       "expected": {
-        "item": "all-purpose flour (for dredging",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "62",
+            "unit": "g"
           }
         ],
-        "note": "plus more if needed)",
+        "note": "for dredging, plus more if needed",
         "category": "Baking"
       }
     },
@@ -232,14 +236,18 @@
     {
       "raw": "1 cup heavy whipping cream  ((or half-and-half))",
       "expected": {
-        "item": "heavy whipping cream  (or half-and-half)",
+        "item": "heavy whipping cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "238",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or half-and-half",
         "category": "Dairy & Eggs"
       }
     },
@@ -260,9 +268,9 @@
     {
       "raw": "freshly grated black pepper (to season)",
       "expected": {
-        "item": "freshly grated black pepper (to season)",
+        "item": "freshly grated black pepper",
         "measurements": [],
-        "note": null,
+        "note": "to season",
         "category": "Spices & Seasonings"
       }
     }

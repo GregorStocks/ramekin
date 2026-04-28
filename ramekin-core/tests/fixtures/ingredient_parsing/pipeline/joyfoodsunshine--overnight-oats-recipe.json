@@ -83,14 +83,14 @@
     {
       "raw": "Dash of cinnamon (up to 1/8 tsp)",
       "expected": {
-        "item": "cinnamon (up to 1/8 tsp)",
+        "item": "cinnamon",
         "measurements": [
           {
             "amount": null,
             "unit": "dash"
           }
         ],
-        "note": null,
+        "note": "up to 1/8 tsp",
         "category": "Spices & Seasonings"
       }
     },

@@ -45,7 +45,7 @@
     {
       "raw": "1 can (14-1/2 ounces) diced tomatoes, undrained",
       "expected": {
-        "item": "diced tomatoes",
+        "item": "diced tomatoes, undrained",
         "measurements": [
           {
             "amount": "1",
@@ -56,7 +56,7 @@
             "unit": "oz"
           }
         ],
-        "note": "undrained",
+        "note": null,
         "category": "Canned Goods"
       }
     },

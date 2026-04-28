@@ -5,14 +5,14 @@
     {
       "raw": "1/2 cup strong coffee* (or espresso)",
       "expected": {
-        "item": "strong coffee* (or espresso)",
+        "item": "strong coffee",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or espresso",
         "category": "Beverages"
       }
     },

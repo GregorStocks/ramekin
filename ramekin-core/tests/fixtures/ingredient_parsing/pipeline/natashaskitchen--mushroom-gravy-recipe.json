@@ -123,14 +123,18 @@
     {
       "raw": "1  and 1/2 cups milk (any kind)",
       "expected": {
-        "item": "milk (any kind)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "368",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any kind",
         "category": "Dairy & Eggs"
       }
     },

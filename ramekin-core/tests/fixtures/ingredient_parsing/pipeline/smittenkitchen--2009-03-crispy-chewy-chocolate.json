@@ -63,7 +63,7 @@
     {
       "raw": "1 tablespoon (15 ml) vanilla extract (yes, really!)",
       "expected": {
-        "item": "vanilla extract (yes, really!)",
+        "item": "vanilla extract",
         "measurements": [
           {
             "amount": "1",
@@ -72,9 +72,13 @@
           {
             "amount": "15",
             "unit": "ml"
+          },
+          {
+            "amount": "13",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "yes, really!",
         "category": "Baking"
       }
     },
@@ -168,13 +172,9 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "1",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "1 12-ounce bag",
         "category": "Baking"
       }
     }

@@ -37,14 +37,14 @@
     {
       "raw": "1 bunch thin asparagus spears, ends trimmed, cut into 1½-inch pieces on a diagonal",
       "expected": {
-        "item": "thin asparagus spears, ends trimmed, cut into 1 1/2-inch pieces on a diagonal",
+        "item": "thin asparagus spears, ends trimmed",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "cut into 1 1/2-inch pieces on a diagonal",
         "category": "Produce"
       }
     },

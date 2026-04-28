@@ -28,17 +28,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "16",
-            "unit": "oz"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "16-ounce",
         "category": "Canned Goods"
       }
     },
@@ -50,13 +42,9 @@
           {
             "amount": "8",
             "unit": null
-          },
-          {
-            "amount": "6",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "6-inch",
         "category": "Pasta & Rice"
       }
     },
@@ -119,14 +107,14 @@
     {
       "raw": "1 lime, cut into 8 wedges",
       "expected": {
-        "item": "lime, cut into 8 wedges",
+        "item": "lime",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 8 wedges",
         "category": "Produce"
       }
     },
@@ -151,14 +139,18 @@
     {
       "raw": "2 teaspoons fresh lime juice, (from 1 lime)",
       "expected": {
-        "item": "fresh lime juice, (from 1 lime)",
+        "item": "fresh lime juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "10",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 1 lime",
         "category": "Beverages"
       }
     },

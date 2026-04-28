@@ -37,7 +37,7 @@
     {
       "raw": "4 pounds beef chuck roast (cut into 1-inch cubes)",
       "expected": {
-        "item": "beef chuck roast (cut into 1-inch cubes)",
+        "item": "beef chuck roast",
         "measurements": [
           {
             "amount": "4",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -223,9 +223,9 @@
     {
       "raw": "Parsley to garnish (if desired)",
       "expected": {
-        "item": "Parsley to garnish (if desired)",
+        "item": "Parsley to garnish",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Spices & Seasonings"
       }
     }

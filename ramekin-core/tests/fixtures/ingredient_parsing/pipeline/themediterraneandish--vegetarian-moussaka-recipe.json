@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "partially peeled and sliced length-wise",
+        "note": "about 1 1/2 lb, partially peeled and sliced length-wise",
         "category": "Produce"
       }
     },
@@ -41,13 +41,9 @@
           {
             "amount": "3",
             "unit": null
-          },
-          {
-            "amount": "1",
-            "unit": "inch"
           }
         ],
-        "note": "peeled and sliced lengthwise",
+        "note": "1/2-inch in thickness, peeled and sliced lengthwise",
         "category": "Produce"
       }
     },
@@ -59,22 +55,18 @@
           {
             "amount": "2",
             "unit": "large"
-          },
-          {
-            "amount": "1",
-            "unit": "inch"
           }
         ],
-        "note": "sliced length-wise",
+        "note": "1/2-inch in thickness, sliced length-wise",
         "category": "Produce"
       }
     },
     {
       "raw": "Extra virgin olive oil (I used Private Reserve Greek extra virgin olive oil)",
       "expected": {
-        "item": "Extra virgin olive oil (I used Private Reserve Greek extra virgin olive oil)",
+        "item": "Extra virgin olive oil",
         "measurements": [],
-        "note": null,
+        "note": "I used Private Reserve Greek extra virgin olive oil",
         "category": "Oils & Vinegars"
       }
     },

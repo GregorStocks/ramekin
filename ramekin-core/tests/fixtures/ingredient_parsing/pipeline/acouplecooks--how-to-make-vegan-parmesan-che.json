@@ -60,14 +60,14 @@
     {
       "raw": "1 teaspoon Maldon flaked sea salt (or substitute kosher salt)",
       "expected": {
-        "item": "Maldon flaked sea salt (or substitute kosher salt)",
+        "item": "Maldon flaked sea salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or substitute kosher salt",
         "category": "Spices & Seasonings"
       }
     }

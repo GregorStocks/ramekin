@@ -12,15 +12,11 @@
             "unit": "oz"
           },
           {
-            "amount": "2",
-            "unit": "tubs"
-          },
-          {
             "amount": "227",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "2 tubs",
         "category": "Cheese"
       }
     },
@@ -77,14 +73,14 @@
     {
       "raw": "1-2 tablespoons Rum (adjust to your taste)",
       "expected": {
-        "item": "Rum (adjust to your taste)",
+        "item": "Rum",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "adjust to your taste",
         "category": "Beverages"
       }
     },
@@ -145,14 +141,18 @@
     {
       "raw": "1 teaspoon Nutmeg (for dusting)",
       "expected": {
-        "item": "Nutmeg (for dusting)",
+        "item": "Nutmeg",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.3",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for dusting",
         "category": "Spices & Seasonings"
       }
     },
@@ -173,14 +173,18 @@
     {
       "raw": "2 tablespoons caster sugar (fine sugar)",
       "expected": {
-        "item": "caster sugar (fine sugar)",
+        "item": "caster sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "fine sugar",
         "category": "Baking"
       }
     }

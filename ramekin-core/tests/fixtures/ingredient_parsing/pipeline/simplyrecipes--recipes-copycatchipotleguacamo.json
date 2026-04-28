@@ -93,14 +93,18 @@
     {
       "raw": "2 tablespoons fresh lime juice (squeezed from 1 large lime)",
       "expected": {
-        "item": "fresh lime juice (squeezed from 1 large lime)",
+        "item": "fresh lime juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "squeezed from 1 large lime",
         "category": "Beverages"
       }
     },

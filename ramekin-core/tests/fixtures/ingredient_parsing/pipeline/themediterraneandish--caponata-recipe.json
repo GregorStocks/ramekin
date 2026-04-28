@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 1/4 lb or so, cut into 1-inch cubes",
         "category": "Produce"
       }
     },
@@ -156,14 +156,18 @@
     {
       "raw": "2  teaspoons honey (more to your liking)",
       "expected": {
-        "item": "honey (more to your liking)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "more to your liking",
         "category": "Baking"
       }
     },

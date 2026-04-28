@@ -5,7 +5,7 @@
     {
       "raw": "5 tablespoons (70 grams) butter, melted (I used unsalted but if you want to use salted, just skip the added salt)",
       "expected": {
-        "item": "butter, melted (I used unsalted but if you want to use salted, just skip the added salt)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "5",
@@ -16,16 +16,16 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used unsalted but if you want to use salted, just skip the added salt, melted",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "About 7 sheets storebought filo, defrosted (mine were 12″x17″)",
       "expected": {
-        "item": "About 7 sheets storebought filo, defrosted (mine were 12″x17″)",
+        "item": "About 7 sheets storebought filo, defrosted",
         "measurements": [],
-        "note": null,
+        "note": "mine were 12″x17″",
         "category": "Other"
       }
     },
@@ -96,7 +96,7 @@
     {
       "raw": "1 1/2 cups (355 ml) whole (ideally) or lowfat (worked fine) milk",
       "expected": {
-        "item": "whole (ideally) or lowfat (worked fine) milk",
+        "item": "whole or lowfat milk",
         "measurements": [
           {
             "amount": "1.5",
@@ -107,7 +107,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "ideally, worked fine",
         "category": "Dairy & Eggs"
       }
     },

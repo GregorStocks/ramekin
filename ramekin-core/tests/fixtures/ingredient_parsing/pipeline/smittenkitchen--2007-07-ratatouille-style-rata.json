@@ -33,14 +33,14 @@
     {
       "raw": "1 cup tomato puree (such as Pomi)",
       "expected": {
-        "item": "tomato puree (such as Pomi)",
+        "item": "tomato puree",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Pomi",
         "category": "Canned Goods"
       }
     },
@@ -65,14 +65,14 @@
     {
       "raw": "1 small eggplant (my store sells these “Italian Eggplant” that are less than half the size of regular ones; it worked perfectly)",
       "expected": {
-        "item": "eggplant (my store sells these “Italian Eggplant” that are less than half the size of regular ones; it worked perfectly)",
+        "item": "eggplant",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "my store sells these “Italian Eggplant” that are less than half the size of regular ones; it worked perfectly",
         "category": "Produce"
       }
     },

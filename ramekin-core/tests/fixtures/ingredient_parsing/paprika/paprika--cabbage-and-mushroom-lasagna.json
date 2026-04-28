@@ -114,7 +114,7 @@
     {
       "raw": "1 pound (455 grams) assorted (shiitake, oyster, porcini, chanterelles, etc.) or just cremini mushrooms, thinly sliced",
       "expected": {
-        "item": "assorted (shiitake, oyster, porcini, chanterelles, etc.) or just cremini mushrooms",
+        "item": "assorted or just cremini mushrooms",
         "measurements": [
           {
             "amount": "1",
@@ -125,21 +125,21 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced",
+        "note": "shiitake, oyster, porcini, chanterelles, etc., thinly sliced",
         "category": "Produce"
       }
     },
     {
       "raw": "1 tablespoon finely chopped fresh sage (I used less)",
       "expected": {
-        "item": "finely chopped fresh sage (I used less)",
+        "item": "finely chopped fresh sage",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I used less",
         "category": "Produce"
       }
     },
@@ -195,20 +195,16 @@
           {
             "amount": "680",
             "unit": "g"
-          },
-          {
-            "amount": "4",
-            "unit": null
           }
         ],
-        "note": "sliced 1/8-inch thick",
+        "note": "680 grams, about 4, sliced 1/8-inch thick",
         "category": "Produce"
       }
     },
     {
       "raw": "1 cup (135 grams) grated Parmesan cheese, or Västerbotten (the chef’s preference).",
       "expected": {
-        "item": "grated Parmesan cheese, or Västerbotten (the chef’s preference).",
+        "item": "grated Parmesan cheese, or Västerbotten .",
         "measurements": [
           {
             "amount": "1",
@@ -219,7 +215,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "the chef’s preference",
         "category": "Cheese"
       }
     }

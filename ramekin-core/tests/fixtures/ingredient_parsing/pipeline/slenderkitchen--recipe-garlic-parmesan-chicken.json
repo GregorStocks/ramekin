@@ -5,7 +5,7 @@
     {
       "raw": "1.5 lbs boneless skinless chicken breast (cut into cutlets)",
       "expected": {
-        "item": "boneless skinless chicken breast (cut into cutlets)",
+        "item": "boneless skinless chicken breast",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into cutlets",
         "category": "Meat & Seafood"
       }
     },
@@ -220,14 +220,14 @@
     {
       "raw": "2 tbsp fresh chopped parsley (or basil)",
       "expected": {
-        "item": "fresh chopped parsley (or basil)",
+        "item": "fresh chopped parsley",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or basil",
         "category": "Spices & Seasonings"
       }
     },

@@ -93,7 +93,7 @@
     {
       "raw": "8 ounces mushrooms (white or baby bella)  (cleaned and sliced)",
       "expected": {
-        "item": "mushrooms (white or baby bella)  (cleaned and sliced)",
+        "item": "mushrooms",
         "measurements": [
           {
             "amount": "8",
@@ -104,7 +104,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "white or baby bella, cleaned and sliced",
         "category": "Produce"
       }
     },
@@ -157,14 +157,14 @@
     {
       "raw": "2 tbsp fresh chopped parsley (more for later)",
       "expected": {
-        "item": "fresh chopped parsley (more for later)",
+        "item": "fresh chopped parsley",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "more for later",
         "category": "Spices & Seasonings"
       }
     },

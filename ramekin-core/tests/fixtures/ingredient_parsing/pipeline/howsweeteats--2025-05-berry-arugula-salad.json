@@ -134,9 +134,9 @@
     {
       "raw": "crumbled goat cheese, (for topping)",
       "expected": {
-        "item": "crumbled goat cheese, (for topping)",
+        "item": "crumbled goat cheese",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Cheese"
       }
     },

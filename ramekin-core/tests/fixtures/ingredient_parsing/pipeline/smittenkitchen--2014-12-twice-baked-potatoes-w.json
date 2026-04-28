@@ -70,28 +70,36 @@
     {
       "raw": "3 russet potatoes (mine were 9 to 10 ounces each)",
       "expected": {
-        "item": "russet potatoes (mine were 9 to 10 ounces each)",
+        "item": "russet potatoes",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "mine were 9 to 10 ounces each",
         "category": "Produce"
       }
     },
     {
       "raw": "1 bundle lacinato kale (aka dinosaur, tuscan or black kale), swiss chard or spinach (10 ounces)",
       "expected": {
-        "item": "bundle lacinato kale (aka dinosaur, tuscan or black kale), swiss chard or spinach (10 ounces)",
+        "item": "bundle lacinato kale, swiss chard or spinach",
         "measurements": [
           {
             "amount": "1",
             "unit": null
+          },
+          {
+            "amount": "10",
+            "unit": "oz"
+          },
+          {
+            "amount": "283",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "aka dinosaur, tuscan or black kale",
         "category": "Produce"
       }
     },

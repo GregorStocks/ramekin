@@ -12,15 +12,11 @@
             "unit": "lb"
           },
           {
-            "amount": "5.67",
-            "unit": null
-          },
-          {
             "amount": "907",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "85/15",
         "category": "Meat & Seafood"
       }
     },
@@ -52,7 +48,7 @@
             "unit": "cup"
           }
         ],
-        "note": "finely diced or grated (optional, see Note 1",
+        "note": "finely diced or grated (optional, see Note 1)",
         "category": "Produce"
       }
     },
@@ -66,7 +62,7 @@
             "unit": null
           }
         ],
-        "note": "crushed (1 1/2 sleeves",
+        "note": "crushed (1 1/2 sleeves)",
         "category": "Snacks"
       }
     },
@@ -91,14 +87,18 @@
     {
       "raw": "1/2 cup milk (any variety)",
       "expected": {
-        "item": "milk (any variety)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any variety",
         "category": "Dairy & Eggs"
       }
     },

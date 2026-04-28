@@ -5,14 +5,14 @@
     {
       "raw": "350 g cooked Japanese short-grain rice (or medium-grain Calrose)",
       "expected": {
-        "item": "cooked Japanese short-grain rice (or medium-grain Calrose)",
+        "item": "cooked Japanese short-grain rice",
         "measurements": [
           {
             "amount": "350",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or medium-grain Calrose",
         "category": "Pasta & Rice"
       }
     },
@@ -33,18 +33,14 @@
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -65,14 +61,18 @@
     {
       "raw": "1 tsp butter (unsalted)",
       "expected": {
-        "item": "butter (unsalted)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "4.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsalted",
         "category": "Dairy & Eggs"
       }
     },
@@ -93,14 +93,14 @@
     {
       "raw": "4 strips roasted seaweed for sushi (nori) (cut to size if needed)",
       "expected": {
-        "item": "strips roasted seaweed for sushi (nori) (cut to size if needed)",
+        "item": "strips roasted seaweed for sushi",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "nori, cut to size if needed",
         "category": "Meat & Seafood"
       }
     }

@@ -5,7 +5,7 @@
     {
       "raw": "4 boneless, skinless chicken breasts (about 6 to 8 ounces each) (see notes)",
       "expected": {
-        "item": "boneless, skinless chicken breasts (see notes)",
+        "item": "boneless, skinless chicken breasts",
         "measurements": [
           {
             "amount": "4",
@@ -16,7 +16,7 @@
             "unit": "oz each"
           }
         ],
-        "note": null,
+        "note": "about 6 to 8 ounces each, see notes",
         "category": "Meat & Seafood"
       }
     },
@@ -167,7 +167,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely chopped",
+        "note": "about 65 g, finely chopped",
         "category": "Produce"
       }
     },

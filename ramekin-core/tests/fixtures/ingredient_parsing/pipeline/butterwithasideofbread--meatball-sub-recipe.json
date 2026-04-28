@@ -147,14 +147,14 @@
     {
       "raw": "5  rolls (I like to use French Rolls)",
       "expected": {
-        "item": "rolls (I like to use French Rolls)",
+        "item": "rolls",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "I like to use French Rolls",
         "category": "Bakery & Bread"
       }
     },

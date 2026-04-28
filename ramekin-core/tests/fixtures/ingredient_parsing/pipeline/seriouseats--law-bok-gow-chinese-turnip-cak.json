@@ -12,15 +12,11 @@
             "unit": "oz"
           },
           {
-            "amount": "10",
-            "unit": "mushrooms"
-          },
-          {
             "amount": "57",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 10 mushrooms",
         "category": "Produce"
       }
     },
@@ -59,7 +55,7 @@
     {
       "raw": "5 ounces Chinese bacon ( lap yuk ), diced (see note)",
       "expected": {
-        "item": "Chinese bacon ( lap yuk",
+        "item": "Chinese bacon",
         "measurements": [
           {
             "amount": "5",
@@ -70,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": "diced (see note)",
+        "note": "lap yuk, see note, diced",
         "category": "Meat & Seafood"
       }
     },
@@ -84,7 +80,7 @@
             "unit": null
           }
         ],
-        "note": "diced (see note)",
+        "note": "see note, diced",
         "category": "Meat & Seafood"
       }
     },
@@ -98,7 +94,7 @@
             "unit": "cup"
           }
         ],
-        "note": "rinsed and patted dry (see note)",
+        "note": "see note, rinsed and patted dry",
         "category": "Meat & Seafood"
       }
     },
@@ -178,9 +174,9 @@
     {
       "raw": "Toasted sesame seeds, for serving (optional)",
       "expected": {
-        "item": "Toasted sesame seeds, for serving",
+        "item": "Toasted sesame seeds",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Spices & Seasonings"
       }
     },

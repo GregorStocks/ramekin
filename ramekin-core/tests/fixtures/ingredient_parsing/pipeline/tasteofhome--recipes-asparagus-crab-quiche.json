@@ -5,7 +5,7 @@
     {
       "raw": "3/4 pound fresh asparagus, cut into 2-inch pieces",
       "expected": {
-        "item": "fresh asparagus, cut into 2-inch pieces",
+        "item": "fresh asparagus",
         "measurements": [
           {
             "amount": "0.75",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 2-inch pieces",
         "category": "Produce"
       }
     },
@@ -28,13 +28,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "9",
-            "unit": "inches"
           }
         ],
-        "note": null,
+        "note": "9 inches",
         "category": "Other"
       }
     },

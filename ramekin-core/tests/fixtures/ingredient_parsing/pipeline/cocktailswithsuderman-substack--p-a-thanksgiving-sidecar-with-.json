@@ -177,7 +177,7 @@
     {
       "raw": "¾ ounce rye, preferably Old Overholt",
       "expected": {
-        "item": "rye, preferably Old Overholt",
+        "item": "rye",
         "measurements": [
           {
             "amount": "0.75",
@@ -188,7 +188,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably Old Overholt",
         "category": "Other"
       }
     },

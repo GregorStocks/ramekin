@@ -79,14 +79,14 @@
     {
       "raw": "1  vanilla bean, split along the length (or 1 teaspoon vanilla extract)",
       "expected": {
-        "item": "vanilla bean, split along the length (or 1 teaspoon vanilla extract)",
+        "item": "vanilla bean, split along the length",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 1 teaspoon vanilla extract",
         "category": "Spices & Seasonings"
       }
     }

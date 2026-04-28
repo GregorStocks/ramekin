@@ -41,14 +41,14 @@
     {
       "raw": "1 large red onion, cut into 8 wedges",
       "expected": {
-        "item": "red onion, cut into 8 wedges",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into 8 wedges",
         "category": "Produce"
       }
     },
@@ -138,14 +138,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 8 ounces",
         "category": "Cheese"
       }
     },
     {
       "raw": "8 oz. processed cheese (Velveeta), cut into cubes",
       "expected": {
-        "item": "processed cheese (Velveeta), cut into cubes",
+        "item": "processed cheese",
         "measurements": [
           {
             "amount": "8",
@@ -156,7 +156,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Velveeta, cut into cubes",
         "category": "Cheese"
       }
     },

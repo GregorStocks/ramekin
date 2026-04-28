@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": "halved if tiny",
+        "note": "about 1 pound, halved if tiny",
         "category": "Produce"
       }
     },
@@ -141,28 +141,32 @@
     {
       "raw": "2 tablespoons unsalted butter, cut into small pieces",
       "expected": {
-        "item": "unsalted butter, cut into small pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small pieces",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 large egg yolk beaten to blend with 1 teaspoon water (for glaze)",
       "expected": {
-        "item": "egg yolk beaten to blend with 1 teaspoon water (for glaze)",
+        "item": "egg yolk beaten to blend with 1 teaspoon water",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "for glaze",
         "category": "Dairy & Eggs"
       }
     }

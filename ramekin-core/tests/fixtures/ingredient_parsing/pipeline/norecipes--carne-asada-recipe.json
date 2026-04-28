@@ -5,29 +5,29 @@
     {
       "raw": "1  skirt steak ((or 2 hanger steaks))",
       "expected": {
-        "item": "skirt steak (or 2 hanger steaks)",
+        "item": "skirt steak",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 2 hanger steaks",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1  limes ((juiced))",
       "expected": {
-        "item": "limes (juiced)",
+        "item": "limes",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {
@@ -76,7 +76,7 @@
             "unit": null
           }
         ],
-        "note": "minced (to taste",
+        "note": "minced (to taste)",
         "category": "Produce"
       }
     },
@@ -165,14 +165,18 @@
     {
       "raw": "2 teaspoons kosher salt ((less if using table salt))",
       "expected": {
-        "item": "kosher salt (less if using table salt)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "less if using table salt",
         "category": "Spices & Seasonings"
       }
     },
@@ -188,14 +192,14 @@
     {
       "raw": "1 tablespoons kiwi (pureed)",
       "expected": {
-        "item": "kiwi (pureed)",
+        "item": "kiwi",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "pureed",
         "category": "Produce"
       }
     },

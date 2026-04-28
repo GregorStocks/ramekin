@@ -41,7 +41,7 @@
     {
       "raw": "1 1/2 cups (185 grams) chopped zucchini (about half a medium zucchini)",
       "expected": {
-        "item": "chopped zucchini (about half a medium zucchini)",
+        "item": "chopped zucchini",
         "measurements": [
           {
             "amount": "1.5",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about half a medium zucchini",
         "category": "Produce"
       }
     },
@@ -115,23 +115,23 @@
     {
       "raw": "1 cup water or milk (dairy or non-dairy)",
       "expected": {
-        "item": "water or milk (dairy or non-dairy)",
+        "item": "water or milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "dairy or non-dairy",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Honey, agave or other sweetener as needed",
       "expected": {
-        "item": "Honey",
+        "item": "Honey, agave or other sweetener as needed",
         "measurements": [],
-        "note": "agave or other sweetener as needed",
+        "note": null,
         "category": "Baking"
       }
     }

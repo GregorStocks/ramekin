@@ -5,42 +5,50 @@
     {
       "raw": "1 1/2 cups frisée (French curly endive), torn into-bite size pieces (about 2 ounces)",
       "expected": {
-        "item": "frisée (French curly endive), torn into-bite size pieces (about 2 ounces)",
+        "item": "frisée, torn into-bite size pieces",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "French curly endive, about 2 ounces",
+        "category": "Other"
       }
     },
     {
       "raw": "1 bacon slice, preferably thick-cut",
       "expected": {
-        "item": "bacon slice, preferably thick-cut",
+        "item": "bacon slice",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "preferably thick-cut",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 tablespoon minced shallot (from 1 small)",
       "expected": {
-        "item": "minced shallot (from 1 small)",
+        "item": "minced shallot",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from 1 small",
         "category": "Produce"
       }
     },

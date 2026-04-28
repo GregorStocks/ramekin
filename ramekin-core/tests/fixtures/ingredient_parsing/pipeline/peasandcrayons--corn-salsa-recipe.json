@@ -19,28 +19,28 @@
     {
       "raw": "2 cups diced tomatoes ((roma or vine ripened))",
       "expected": {
-        "item": "diced tomatoes (roma or vine ripened)",
+        "item": "diced tomatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "roma or vine ripened",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "½ cup finely diced white onion (or red onion)",
       "expected": {
-        "item": "finely diced white onion (or red onion)",
+        "item": "finely diced white onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or red onion",
         "category": "Produce"
       }
     },
@@ -89,15 +89,15 @@
     {
       "raw": "1  lime ((juiced))",
       "expected": {
-        "item": "lime (juiced)",
+        "item": "lime",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {

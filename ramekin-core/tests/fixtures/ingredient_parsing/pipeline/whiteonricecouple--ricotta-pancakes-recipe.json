@@ -131,14 +131,14 @@
     {
       "raw": "2&nbsp;  large&nbsp;eggs&nbsp; ((separated))",
       "expected": {
-        "item": "eggs  (separated)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "separated",
         "category": "Dairy & Eggs"
       }
     },

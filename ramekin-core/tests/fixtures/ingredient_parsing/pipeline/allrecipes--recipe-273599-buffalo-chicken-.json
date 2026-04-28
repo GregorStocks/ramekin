@@ -33,14 +33,14 @@
     {
       "raw": "1 teaspoon dry ranch salad dressing mix (such as Hidden Valley Ranch®)",
       "expected": {
-        "item": "dry ranch salad dressing mix (such as Hidden Valley Ranch®)",
+        "item": "dry ranch salad dressing mix",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "such as Hidden Valley Ranch®",
         "category": "Condiments & Sauces"
       }
     },
@@ -141,14 +141,14 @@
     {
       "raw": "0.5 cup Buffalo wing sauce (such as Frank's RedHot®)",
       "expected": {
-        "item": "Buffalo wing sauce (such as Frank's RedHot®)",
+        "item": "Buffalo wing sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Frank's RedHot®",
         "category": "Condiments & Sauces"
       }
     },

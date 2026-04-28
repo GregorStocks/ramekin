@@ -45,7 +45,7 @@
     {
       "raw": "7 1/2 tablespoons (100 grams or 3.5 ounces) olive oil (I used 5 tablespoons, see Note up top)",
       "expected": {
-        "item": "olive oil (I used 5 tablespoons, see Note up top)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "7.5",
@@ -60,7 +60,7 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "I used 5 tablespoons, see Note up top",
         "category": "Oils & Vinegars"
       }
     },
@@ -194,7 +194,7 @@
             "unit": "oz"
           }
         ],
-        "note": "or about 1 generous cup of grated Romano cheese",
+        "note": "200 grams or 7 3/4 ounces, see Note up top; or about 1 generous cup of grated Romano cheese",
         "category": "Cheese"
       }
     },

@@ -14,7 +14,7 @@
     {
       "raw": "1 pound chunky pasta of your choice (I love bell shapes; see above for details)",
       "expected": {
-        "item": "chunky pasta of your choice (I love bell shapes; see above for details)",
+        "item": "chunky pasta of your choice",
         "measurements": [
           {
             "amount": "1",
@@ -25,28 +25,28 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I love bell shapes; see above for details",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "1 bundle broccoli rabe (see above for options), stems and leaves cut into 1-inch segments",
       "expected": {
-        "item": "bundle broccoli rabe (see above for options), stems and leaves cut into 1-inch segments",
+        "item": "bundle broccoli rabe, stems and leaves cut into 1-inch segments",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "see above for options",
         "category": "Produce"
       }
     },
     {
       "raw": "1 pound Italian sausage (sweet or spicy pork or chicken), casings removed",
       "expected": {
-        "item": "Italian sausage (sweet or spicy pork or chicken), casings removed",
+        "item": "Italian sausage, casings removed",
         "measurements": [
           {
             "amount": "1",
@@ -57,7 +57,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sweet or spicy pork or chicken",
         "category": "Meat & Seafood"
       }
     },
@@ -78,7 +78,7 @@
     {
       "raw": "6 ounces mozzarella, cut into small cubes",
       "expected": {
-        "item": "mozzarella, cut into small cubes",
+        "item": "mozzarella",
         "measurements": [
           {
             "amount": "6",
@@ -89,7 +89,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small cubes",
         "category": "Cheese"
       }
     },

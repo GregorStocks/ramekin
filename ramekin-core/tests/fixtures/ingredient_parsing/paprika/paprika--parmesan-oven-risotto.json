@@ -86,9 +86,9 @@
     {
       "raw": "A couple parmesan rinds, if you have (optional, see Note)",
       "expected": {
-        "item": "A couple parmesan rinds, if you have",
+        "item": "A couple parmesan rinds",
         "measurements": [],
-        "note": "optional, see Note",
+        "note": "optional, see Note, if you have",
         "category": "Cheese"
       }
     },
@@ -164,7 +164,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 85 to 90 grams",
         "category": "Cheese"
       }
     }

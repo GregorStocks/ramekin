@@ -207,14 +207,14 @@
     {
       "raw": "2 large red potatoes, cut into 1-inch chunks",
       "expected": {
-        "item": "red potatoes, cut into 1-inch chunks",
+        "item": "red potatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch chunks",
         "category": "Produce"
       }
     },
@@ -235,7 +235,7 @@
     {
       "raw": "8 oz. green beans, cut into pieces",
       "expected": {
-        "item": "green beans, cut into pieces",
+        "item": "green beans",
         "measurements": [
           {
             "amount": "8",
@@ -246,7 +246,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Produce"
       }
     }

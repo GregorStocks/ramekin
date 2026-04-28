@@ -229,7 +229,7 @@
     {
       "raw": "1 (8 ounce) package caprino (goat's milk) cheese",
       "expected": {
-        "item": "caprino (goat's milk) cheese",
+        "item": "caprino cheese",
         "measurements": [
           {
             "amount": "1",
@@ -244,7 +244,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "goat's milk",
         "category": "Cheese"
       }
     }

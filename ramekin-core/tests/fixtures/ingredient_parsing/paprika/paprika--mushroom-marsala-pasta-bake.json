@@ -49,7 +49,7 @@
     {
       "raw": "3/4 pounds (340 grams) fresh mushroom, sliced (I used pre-sliced cremini, my new favorite thing)",
       "expected": {
-        "item": "fresh mushroom, sliced",
+        "item": "fresh mushroom",
         "measurements": [
           {
             "amount": "0.75",
@@ -60,7 +60,7 @@
             "unit": "g"
           }
         ],
-        "note": "I used pre-sliced cremini, my new favorite thing",
+        "note": "I used pre-sliced cremini, my new favorite thing, sliced",
         "category": "Produce"
       }
     },
@@ -144,7 +144,7 @@
     {
       "raw": "1 1/2 cups (355 ml) stock or broth (chicken, vegetable or mushroom)",
       "expected": {
-        "item": "stock or broth (chicken, vegetable or mushroom)",
+        "item": "stock or broth",
         "measurements": [
           {
             "amount": "1.5",
@@ -155,8 +155,8 @@
             "unit": "ml"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "chicken, vegetable or mushroom",
+        "category": "Canned Goods"
       }
     },
     {
@@ -180,7 +180,7 @@
     {
       "raw": "4 ounces (115 grams) mozzarella, cut into small cubes",
       "expected": {
-        "item": "mozzarella, cut into small cubes",
+        "item": "mozzarella",
         "measurements": [
           {
             "amount": "4",
@@ -191,7 +191,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small cubes",
         "category": "Cheese"
       }
     },

@@ -19,14 +19,14 @@
     {
       "raw": "1/4 cup chopped cilantro (or flat-leaf parsley if you are cilantro-averse)",
       "expected": {
-        "item": "chopped cilantro (or flat-leaf parsley if you are cilantro-averse)",
+        "item": "chopped cilantro",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or flat-leaf parsley if you are cilantro-averse",
         "category": "Produce"
       }
     },
@@ -65,14 +65,18 @@
     {
       "raw": "2 tablespoons hoisin sauce (I accidentally doubled this and can only advise you do the same)",
       "expected": {
-        "item": "hoisin sauce (I accidentally doubled this and can only advise you do the same)",
+        "item": "hoisin sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I accidentally doubled this and can only advise you do the same",
         "category": "Condiments & Sauces"
       }
     },
@@ -125,7 +129,7 @@
     {
       "raw": "8 whole chicken legs, split, or 8 drumsticks and 8 thighs (about 5 pounds total)",
       "expected": {
-        "item": "whole chicken legs, split, or 8 drumsticks and 8 thighs",
+        "item": "whole chicken legs, split",
         "measurements": [
           {
             "amount": "8",
@@ -140,7 +144,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 5 pounds total; or 8 drumsticks and 8 thighs",
         "category": "Meat & Seafood"
       }
     },

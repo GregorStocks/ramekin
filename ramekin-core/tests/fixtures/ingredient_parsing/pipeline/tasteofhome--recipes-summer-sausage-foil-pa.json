@@ -5,7 +5,7 @@
     {
       "raw": "1 pound summer sausage, cut into 1-inch pieces",
       "expected": {
-        "item": "summer sausage, cut into 1-inch pieces",
+        "item": "summer sausage",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -65,28 +65,28 @@
     {
       "raw": "1 medium green pepper, cut into strips",
       "expected": {
-        "item": "green pepper, cut into strips",
+        "item": "green pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into strips",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 medium sweet red pepper, cut into strips",
       "expected": {
-        "item": "sweet red pepper, cut into strips",
+        "item": "sweet red pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into strips",
         "category": "Spices & Seasonings"
       }
     },
@@ -121,7 +121,7 @@
     {
       "raw": "1 pound chicken tenderloins, cut into 1-inch pieces",
       "expected": {
-        "item": "chicken tenderloins, cut into 1-inch pieces",
+        "item": "chicken tenderloins",
         "measurements": [
           {
             "amount": "1",
@@ -132,35 +132,39 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "2 medium tomatoes, cut into wedges",
       "expected": {
-        "item": "tomatoes, cut into wedges",
+        "item": "tomatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into wedges",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 cup butter, cut into eight cubes",
       "expected": {
-        "item": "butter, cut into eight cubes",
+        "item": "butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into eight cubes",
         "category": "Dairy & Eggs"
       }
     },

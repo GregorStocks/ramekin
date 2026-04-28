@@ -5,14 +5,14 @@
     {
       "raw": "1 banana, sliced and frozen (unfrozen is fine, too)",
       "expected": {
-        "item": "banana, sliced and frozen",
+        "item": "banana",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "unfrozen is fine, too",
+        "note": "unfrozen is fine, too, sliced and frozen",
         "category": "Produce"
       }
     },
@@ -75,7 +75,7 @@
     {
       "raw": "2 to 4 ounces spinach (I use 4 ounces)",
       "expected": {
-        "item": "spinach (I use 4 ounces)",
+        "item": "spinach",
         "measurements": [
           {
             "amount": "2 to 4",
@@ -86,7 +86,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use 4 ounces",
         "category": "Produce"
       }
     },

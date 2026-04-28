@@ -5,14 +5,14 @@
     {
       "raw": "3¾ cups chicken or vegetable broth (or miso soup mix)",
       "expected": {
-        "item": "chicken or vegetable broth (or miso soup mix)",
+        "item": "chicken or vegetable broth",
         "measurements": [
           {
             "amount": "3.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or miso soup mix",
         "category": "Canned Goods"
       }
     },

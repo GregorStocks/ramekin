@@ -5,14 +5,14 @@
     {
       "raw": "500 g boneless chicken thigh (preferably skin-on)",
       "expected": {
-        "item": "boneless chicken thigh (preferably skin-on)",
+        "item": "boneless chicken thigh",
         "measurements": [
           {
             "amount": "500",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably skin-on",
         "category": "Meat & Seafood"
       }
     },
@@ -47,15 +47,15 @@
     {
       "raw": "1 tbsp potato starch (katakuriko) (or cornstarch/tapioca starch)",
       "expected": {
-        "item": "potato starch (katakuriko) (or cornstarch/tapioca starch)",
+        "item": "potato starch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "katakuriko, or cornstarch/tapioca starch",
+        "category": "Produce"
       }
     },
     {
@@ -75,18 +75,14 @@
     {
       "raw": "2 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "32",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -147,28 +143,28 @@
     {
       "raw": "½ tbsp grated garlic (or garlic paste)",
       "expected": {
-        "item": "grated garlic (or garlic paste)",
+        "item": "grated garlic",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or garlic paste",
         "category": "Produce"
       }
     },
     {
       "raw": "2 tbsp dashi stock ((liquid, not powder) or water)",
       "expected": {
-        "item": "dashi stock (liquid, not powder) or water)",
+        "item": "dashi stock or water",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "liquid, not powder",
         "category": "Canned Goods"
       }
     },
@@ -225,14 +221,14 @@
     {
       "raw": "2  soft-boiled egg (boiled for 6 ½-8 minutes depending on preferred doneness.)",
       "expected": {
-        "item": "soft-boiled egg (boiled for 6 1/2-8 minutes depending on preferred doneness.)",
+        "item": "soft-boiled egg",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "boiled for 6 1/2-8 minutes depending on preferred doneness.",
         "category": "Dairy & Eggs"
       }
     }

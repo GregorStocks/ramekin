@@ -10,13 +10,9 @@
           {
             "amount": "4.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2",
-            "unit": "packets"
           }
         ],
-        "note": null,
+        "note": "2 packets",
         "category": "Baking"
       }
     },
@@ -95,14 +91,14 @@
     {
       "raw": "1 teaspoon vanilla bean paste (or substitute 1 more teaspoon vanilla extract)",
       "expected": {
-        "item": "vanilla bean paste (or substitute 1 more teaspoon vanilla extract)",
+        "item": "vanilla bean paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or substitute 1 more teaspoon vanilla extract",
         "category": "Spices & Seasonings"
       }
     },

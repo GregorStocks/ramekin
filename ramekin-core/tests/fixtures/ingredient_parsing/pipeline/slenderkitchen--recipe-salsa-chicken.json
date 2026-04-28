@@ -12,29 +12,25 @@
             "unit": "lb"
           },
           {
-            "amount": "4",
-            "unit": "filets"
-          },
-          {
             "amount": "907",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "4 filets",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "2 cups pico de gallo (store bought or homemade)",
       "expected": {
-        "item": "pico de gallo (store bought or homemade)",
+        "item": "pico de gallo",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "store bought or homemade",
         "category": "Other"
       }
     },

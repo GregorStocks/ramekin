@@ -37,14 +37,14 @@
     {
       "raw": "200 g shrimp or mixed seafood (cut into bitesize pieces)",
       "expected": {
-        "item": "shrimp or mixed seafood (cut into bitesize pieces)",
+        "item": "shrimp or mixed seafood",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into bitesize pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -101,18 +101,14 @@
     {
       "raw": "½ tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.7",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -179,14 +175,14 @@
     {
       "raw": "½  knorr chicken bouillon cube (use the other half for béchamel sauce)",
       "expected": {
-        "item": "knorr chicken bouillon cube (use the other half for béchamel sauce)",
+        "item": "knorr chicken bouillon cube",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "use the other half for béchamel sauce",
         "category": "Spices & Seasonings"
       }
     },
@@ -363,16 +359,16 @@
     {
       "raw": "preferred shredded melting cheese (cheddar, gouda, mozzarella, etc.)",
       "expected": {
-        "item": "preferred shredded melting cheese (cheddar, gouda, mozzarella, etc.)",
+        "item": "preferred shredded melting cheese",
         "measurements": [],
-        "note": null,
+        "note": "cheddar, gouda, mozzarella, etc.",
         "category": "Cheese"
       }
     },
     {
       "raw": "hard cheese ((optional) parmesan, pecorino, etc.)",
       "expected": {
-        "item": "hard cheese parmesan, pecorino, etc.)",
+        "item": "hard cheese parmesan, pecorino, etc.",
         "measurements": [],
         "note": "optional",
         "category": "Cheese"

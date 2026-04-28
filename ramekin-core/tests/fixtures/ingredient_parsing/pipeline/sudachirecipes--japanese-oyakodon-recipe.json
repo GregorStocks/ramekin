@@ -5,14 +5,14 @@
     {
       "raw": "300 g boneless chicken thigh (skin-on preferred, or breast possible)",
       "expected": {
-        "item": "boneless chicken thigh (skin-on preferred, or breast possible)",
+        "item": "boneless chicken thigh",
         "measurements": [
           {
             "amount": "300",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skin-on preferred, or breast possible",
         "category": "Meat & Seafood"
       }
     },
@@ -33,28 +33,32 @@
     {
       "raw": "1 tbsp all-purpose flour (for coating)",
       "expected": {
-        "item": "all-purpose flour (for coating)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "7.8",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for coating",
         "category": "Baking"
       }
     },
     {
       "raw": "1 tsp cooking oil (neutral flavor)",
       "expected": {
-        "item": "cooking oil (neutral flavor)",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "neutral flavor",
         "category": "Oils & Vinegars"
       }
     },
@@ -93,28 +97,32 @@
     {
       "raw": "1 tbsp light brown sugar (or granulated sugar)",
       "expected": {
-        "item": "light brown sugar (or granulated sugar)",
+        "item": "light brown sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or granulated sugar",
         "category": "Baking"
       }
     },
     {
       "raw": "1 tsp Chinese-style chicken bouillon powder (or regular chicken bouillon powder)",
       "expected": {
-        "item": "Chinese-style chicken bouillon powder (or regular chicken bouillon powder)",
+        "item": "Chinese-style chicken bouillon powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or regular chicken bouillon powder",
         "category": "Spices & Seasonings"
       }
     },
@@ -135,18 +143,14 @@
     {
       "raw": "2 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "32",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -167,32 +171,32 @@
     {
       "raw": "kizami nori (shredded nori) (optional garnish)",
       "expected": {
-        "item": "kizami nori (optional garnish)",
+        "item": "kizami nori",
         "measurements": [],
-        "note": "shredded nori",
+        "note": "shredded nori, optional garnish",
         "category": "Other"
       }
     },
     {
       "raw": "Japanese wild parsley (mitsuba) (or chopped green onion, optional garnish)",
       "expected": {
-        "item": "Japanese wild parsley (mitsuba) (or chopped green onion",
+        "item": "Japanese wild parsley",
         "measurements": [],
-        "note": "optional garnish)",
-        "category": "Produce"
+        "note": "mitsuba, or chopped green onion, optional garnish",
+        "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "2 portions cooked Japanese short-grain rice (or Calrose)",
       "expected": {
-        "item": "portions cooked Japanese short-grain rice (or Calrose)",
+        "item": "portions cooked Japanese short-grain rice",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or Calrose",
         "category": "Pasta & Rice"
       }
     }

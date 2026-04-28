@@ -121,14 +121,14 @@
     {
       "raw": "1 cup French lentils (lentilles du Puy) or common brown or green lentils",
       "expected": {
-        "item": "French lentils (lentilles du Puy) or common brown or green lentils",
+        "item": "French lentils or common brown or green lentils",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "lentilles du Puy",
         "category": "Canned Goods"
       }
     },
@@ -199,9 +199,9 @@
     {
       "raw": "A few tablespoons chopped fresh parsley, for garnish (optional)",
       "expected": {
-        "item": "A few tablespoons chopped fresh parsley, for garnish",
+        "item": "A few tablespoons chopped fresh parsley",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for garnish",
         "category": "Produce"
       }
     }

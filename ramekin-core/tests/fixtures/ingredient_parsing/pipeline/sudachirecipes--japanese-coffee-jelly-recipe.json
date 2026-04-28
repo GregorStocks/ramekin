@@ -5,70 +5,74 @@
     {
       "raw": "15 g gelatin powder (or)",
       "expected": {
-        "item": "gelatin powder (or)",
+        "item": "gelatin powder",
         "measurements": [
           {
             "amount": "15",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or",
         "category": "Baking"
       }
     },
     {
       "raw": "15 g agar agar powder (or)",
       "expected": {
-        "item": "agar agar powder (or)",
+        "item": "agar agar powder",
         "measurements": [
           {
             "amount": "15",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or",
         "category": "Other"
       }
     },
     {
       "raw": "2 g kanten agar powder ((each sachet is usually 4g))",
       "expected": {
-        "item": "kanten agar powder (each sachet is usually 4g)",
+        "item": "kanten agar powder",
         "measurements": [
           {
             "amount": "2",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "each sachet is usually 4g",
         "category": "Other"
       }
     },
     {
       "raw": "500 ml water (if using espresso shots, reduce the water by 30ml for each shot used (see note))",
       "expected": {
-        "item": "water (if using espresso shots, reduce the water by 30ml for each shot used (see note)",
+        "item": "water",
         "measurements": [
           {
             "amount": "500",
             "unit": "ml"
+          },
+          {
+            "amount": "501",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "if using espresso shots, reduce the water by 30ml for each shot used (see note)",
+        "category": "Other"
       }
     },
     {
       "raw": "2 tbsp instant coffee powder (preferably instant espresso powder or espresso shots)",
       "expected": {
-        "item": "instant coffee powder (preferably instant espresso powder or espresso shots)",
+        "item": "instant coffee powder",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "preferably instant espresso powder or espresso shots",
         "category": "Beverages"
       }
     },

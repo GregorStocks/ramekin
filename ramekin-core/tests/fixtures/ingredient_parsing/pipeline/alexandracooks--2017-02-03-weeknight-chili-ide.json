@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped fine",
+        "note": "about 2 cups, chopped fine",
         "category": "Produce"
       }
     },
@@ -164,14 +164,14 @@
     {
       "raw": "1 1/2&nbsp;cups chicken stock, homemade is best, or water (I always use water)",
       "expected": {
-        "item": "chicken stock, homemade is best, or water (I always use water)",
+        "item": "chicken stock, homemade is best, or water",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I always use water",
         "category": "Meat & Seafood"
       }
     },

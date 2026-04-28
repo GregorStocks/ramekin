@@ -24,13 +24,9 @@
           {
             "amount": "5",
             "unit": null
-          },
-          {
-            "amount": null,
-            "unit": "large"
           }
         ],
-        "note": null,
+        "note": "large, cut into quarters",
         "category": "Meat & Seafood"
       }
     },
@@ -105,24 +101,24 @@
     {
       "raw": "1  Japanese or Persian cucumber (cut into julienne)",
       "expected": {
-        "item": "Japanese or Persian cucumber (cut into julienne)",
+        "item": "Japanese or Persian cucumber",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into julienne",
         "category": "Produce"
       }
     },
     {
       "raw": "Suggested other ingredients: smoked salmon (cream cheese, rolled omelet (tamago-yaki), etc.)",
       "expected": {
-        "item": "Suggested other ingredients: smoked salmon (cream cheese, rolled omelet (tamago-yaki), etc.)",
+        "item": "Suggested other ingredients: smoked salmon",
         "measurements": [],
-        "note": null,
-        "category": "Cheese"
+        "note": "cream cheese, rolled omelet (tamago-yaki), etc.",
+        "category": "Meat & Seafood"
       }
     }
   ]

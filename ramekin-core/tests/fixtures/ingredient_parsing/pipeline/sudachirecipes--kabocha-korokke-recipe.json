@@ -5,14 +5,14 @@
     {
       "raw": "400 g kabocha squash ((before peeling))",
       "expected": {
-        "item": "kabocha squash (before peeling)",
+        "item": "kabocha squash",
         "measurements": [
           {
             "amount": "400",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "before peeling",
         "category": "Produce"
       }
     },
@@ -47,18 +47,14 @@
     {
       "raw": "1 tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "5.3",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,14 +107,14 @@
     {
       "raw": "2 tbsp preferred shredded melting cheese (Gouda, Emmental, and Gruyère, Cheddar, etc)",
       "expected": {
-        "item": "preferred shredded melting cheese (Gouda, Emmental, and Gruyère, Cheddar, etc)",
+        "item": "preferred shredded melting cheese",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "Gouda, Emmental, and Gruyère, Cheddar, etc",
         "category": "Cheese"
       }
     },
@@ -225,28 +221,36 @@
     {
       "raw": "5 tbsp all-purpose flour (for batter)",
       "expected": {
-        "item": "all-purpose flour (for batter)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "39",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for batter",
         "category": "Baking"
       }
     },
     {
       "raw": "3 tbsp all-purpose flour (for coating)",
       "expected": {
-        "item": "all-purpose flour (for coating)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "23",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for coating",
         "category": "Baking"
       }
     },
@@ -267,9 +271,9 @@
     {
       "raw": "cooking oil (for deep frying)",
       "expected": {
-        "item": "cooking oil (for deep frying)",
+        "item": "cooking oil",
         "measurements": [],
-        "note": null,
+        "note": "for deep frying",
         "category": "Oils & Vinegars"
       }
     },

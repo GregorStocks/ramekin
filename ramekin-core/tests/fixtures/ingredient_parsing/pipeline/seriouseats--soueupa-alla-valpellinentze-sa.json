@@ -5,7 +5,7 @@
     {
       "raw": "1 pound (453 g) hearty rye bread, cut into 1 1/2 to 2-inch pieces",
       "expected": {
-        "item": "hearty rye bread, cut into 1 1/2 to 2-inch pieces",
+        "item": "hearty rye bread",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1 1/2 to 2-inch pieces",
         "category": "Bakery & Bread"
       }
     },
@@ -130,7 +130,7 @@
             "unit": "g"
           }
         ],
-        "note": "cored and cut into 1-inch pieces",
+        "note": "about 1 head, cored and cut into 1-inch pieces",
         "category": "Produce"
       }
     },

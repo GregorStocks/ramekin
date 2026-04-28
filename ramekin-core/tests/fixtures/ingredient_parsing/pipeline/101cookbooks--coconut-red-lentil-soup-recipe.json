@@ -27,7 +27,7 @@
     {
       "raw": "1 cup / 7 oz / 200g red split lentils (masoor dal)",
       "expected": {
-        "item": "red split lentils (masoor dal)",
+        "item": "red split lentils",
         "measurements": [
           {
             "amount": "1",
@@ -42,7 +42,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "masoor dal",
         "category": "Canned Goods"
       }
     },
@@ -71,14 +71,14 @@
     {
       "raw": "1  medium carrot, (cut into 1/2-inch dice)",
       "expected": {
-        "item": "carrot, (cut into 1/2-inch dice)",
+        "item": "carrot",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch dice",
         "category": "Produce"
       }
     },
@@ -117,15 +117,19 @@
     {
       "raw": "2 tablespoons butter, (ghee, olive oil or coconut oil)",
       "expected": {
-        "item": "butter, (ghee, olive oil or coconut oil)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "ghee, olive oil or coconut oil",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -213,14 +217,14 @@
     {
       "raw": "one small handful  chopped cilantro (and/or lots of kale chips)",
       "expected": {
-        "item": "handful  chopped cilantro (and/or lots of kale chips)",
+        "item": "handful  chopped cilantro",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "and/or lots of kale chips",
         "category": "Produce"
       }
     }

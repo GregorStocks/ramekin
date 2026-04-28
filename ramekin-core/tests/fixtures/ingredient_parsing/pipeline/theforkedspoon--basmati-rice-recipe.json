@@ -69,15 +69,19 @@
     {
       "raw": "1.5 cups water ((vegetable broth, chicken broth, or chicken stock))",
       "expected": {
-        "item": "water (vegetable broth, chicken broth, or chicken stock)",
+        "item": "water",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "356",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "vegetable broth, chicken broth, or chicken stock",
+        "category": "Other"
       }
     },
     {

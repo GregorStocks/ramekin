@@ -56,7 +56,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 5 g",
         "category": "Spices & Seasonings"
       }
     },
@@ -131,14 +131,14 @@
     {
       "raw": "1 teaspoon lemon zest (from 1 medium lemon)",
       "expected": {
-        "item": "lemon zest (from 1 medium lemon)",
+        "item": "lemon zest",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "from 1 medium lemon",
         "category": "Produce"
       }
     },
@@ -173,9 +173,9 @@
     {
       "raw": "Flaky sea salt (such as Maldon), for garnish",
       "expected": {
-        "item": "Flaky sea salt (such as Maldon)",
+        "item": "Flaky sea salt",
         "measurements": [],
-        "note": "for garnish",
+        "note": "such as Maldon, for garnish",
         "category": "Spices & Seasonings"
       }
     },

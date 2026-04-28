@@ -5,18 +5,14 @@
     {
       "raw": "2 Tablespoons grapeseed oil ((30m) or other cooking oil)",
       "expected": {
-        "item": "grapeseed oil or other cooking oil)",
+        "item": "grapeseed oil or other cooking oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "30",
-            "unit": "m"
           }
         ],
-        "note": null,
+        "note": "30m",
         "category": "Oils & Vinegars"
       }
     },
@@ -62,7 +58,7 @@
             "unit": "g"
           }
         ],
-        "note": "diced small)",
+        "note": "diced small",
         "category": "Meat & Seafood"
       }
     },
@@ -105,7 +101,7 @@
     {
       "raw": "2 teaspoons fish sauce ((10ml)  or soy sauce)",
       "expected": {
-        "item": "fish sauce or soy sauce)",
+        "item": "fish sauce or soy sauce",
         "measurements": [
           {
             "amount": "2",
@@ -167,14 +163,14 @@
     {
       "raw": "1 head fresh lettuce leaves (, (butter leaf, iceberg, or other similar lettuce, for wrapping))",
       "expected": {
-        "item": "fresh lettuce leaves (, (butter leaf, iceberg, or other similar lettuce, for wrapping)",
+        "item": "fresh lettuce leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "(butter leaf, iceberg, or other similar lettuce, for wrapping)",
         "category": "Produce"
       }
     },

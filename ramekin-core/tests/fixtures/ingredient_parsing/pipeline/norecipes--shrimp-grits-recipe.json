@@ -144,7 +144,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "~1/2 cup",
         "category": "Other"
       }
     },
@@ -197,14 +197,14 @@
     {
       "raw": "90 grams Tasso ham ((or bacon, cut into 1/3-inch cubes))",
       "expected": {
-        "item": "Tasso ham (or bacon, cut into 1/3-inch cubes)",
+        "item": "Tasso ham",
         "measurements": [
           {
             "amount": "90",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or bacon, cut into 1/3-inch cubes",
         "category": "Meat & Seafood"
       }
     },

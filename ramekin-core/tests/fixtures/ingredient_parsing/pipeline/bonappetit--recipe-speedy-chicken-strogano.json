@@ -56,14 +56,18 @@
     {
       "raw": "7 Tbsp. (or more) extra-virgin olive oil, divided",
       "expected": {
-        "item": "extra-virgin olive oil, divided",
+        "item": "extra-virgin olive oil",
         "measurements": [
           {
             "amount": "7",
             "unit": "tbsp"
+          },
+          {
+            "amount": "94",
+            "unit": "g"
           }
         ],
-        "note": "or more",
+        "note": "or more, divided",
         "category": "Oils & Vinegars"
       }
     },
@@ -202,14 +206,18 @@
     {
       "raw": "3 Tbsp. unsalted butter, cut into pieces",
       "expected": {
-        "item": "unsalted butter, cut into pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },

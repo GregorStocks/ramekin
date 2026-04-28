@@ -60,21 +60,21 @@
     {
       "raw": "3 to 6 tablespoons all-purpose flour (I needed the latter amount to get this into a crumble)",
       "expected": {
-        "item": "all-purpose flour (I needed the latter amount to get this into a crumble)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "3 to 6",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I needed the latter amount to get this into a crumble",
         "category": "Baking"
       }
     },
     {
       "raw": "1/4 cup cold (1/2 stick) unsalted butter, cut into pieces",
       "expected": {
-        "item": "cold unsalted butter, cut into pieces",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "0.25",
@@ -83,9 +83,13 @@
           {
             "amount": "0.5",
             "unit": "stick"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },

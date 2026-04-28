@@ -170,7 +170,7 @@
             "unit": "g"
           }
         ],
-        "note": "or a finely chopped nut of your choice (I like walnuts)",
+        "note": "I like walnuts; or a finely chopped nut of your choice",
         "category": "Snacks"
       }
     },
@@ -217,9 +217,9 @@
     {
       "raw": "Flaky sea salt, if you wish",
       "expected": {
-        "item": "Flaky sea salt, if you wish",
+        "item": "Flaky sea salt",
         "measurements": [],
-        "note": null,
+        "note": "if you wish",
         "category": "Spices & Seasonings"
       }
     }

@@ -220,9 +220,9 @@
     {
       "raw": "mashed potatoes, if desired",
       "expected": {
-        "item": "mashed potatoes, if desired",
+        "item": "mashed potatoes",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Produce"
       }
     }

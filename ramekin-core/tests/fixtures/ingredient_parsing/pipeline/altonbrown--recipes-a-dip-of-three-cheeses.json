@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "pitted and roughly chopped",
+        "note": "about 8 large, pitted and roughly chopped",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -78,17 +78,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "8",
-            "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
-        "note": "at room temperature",
+        "note": "8-ounce, at room temperature",
         "category": "Cheese"
       }
     },
@@ -100,17 +92,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "8",
-            "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "8-ounce",
         "category": "Cheese"
       }
     },
@@ -177,7 +161,7 @@
     {
       "raw": "6 ounces brie cheese, cut into chunks",
       "expected": {
-        "item": "brie cheese, cut into chunks",
+        "item": "brie cheese",
         "measurements": [
           {
             "amount": "6",
@@ -188,7 +172,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Cheese"
       }
     },

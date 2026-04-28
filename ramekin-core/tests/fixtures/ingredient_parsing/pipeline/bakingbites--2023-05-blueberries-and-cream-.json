@@ -14,14 +14,14 @@
     {
       "raw": "6 cups cubed bread (preferably challah or brioche), about 1/2 large loaf",
       "expected": {
-        "item": "cubed bread (preferably challah or brioche), about 1/2 large loaf",
+        "item": "cubed bread, about 1/2 large loaf",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "preferably challah or brioche",
         "category": "Bakery & Bread"
       }
     },

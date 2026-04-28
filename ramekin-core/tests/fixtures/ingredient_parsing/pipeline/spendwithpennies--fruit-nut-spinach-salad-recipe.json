@@ -119,14 +119,14 @@
     {
       "raw": "1 cup crumbled feta cheese (or goat cheese)",
       "expected": {
-        "item": "crumbled feta cheese (or goat cheese)",
+        "item": "crumbled feta cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or goat cheese",
         "category": "Cheese"
       }
     },
@@ -147,14 +147,14 @@
     {
       "raw": "1 cup balsamic vinaigrette (such as Marzetti® Simply Dressed® Balsamic Salad Dressing)",
       "expected": {
-        "item": "balsamic vinaigrette (such as Marzetti® Simply Dressed® Balsamic Salad Dressing)",
+        "item": "balsamic vinaigrette",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Marzetti® Simply Dressed® Balsamic Salad Dressing",
         "category": "Oils & Vinegars"
       }
     }

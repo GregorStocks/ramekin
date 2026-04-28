@@ -10,13 +10,9 @@
           {
             "amount": "32",
             "unit": "g"
-          },
-          {
-            "amount": "2-3",
-            "unit": "scallions"
           }
         ],
-        "note": null,
+        "note": "2-3 scallions, white parts only",
         "category": "Produce"
       }
     },
@@ -46,13 +42,9 @@
           {
             "amount": "220",
             "unit": "g"
-          },
-          {
-            "amount": "2",
-            "unit": "Japanese cucumbers"
           }
         ],
-        "note": null,
+        "note": "2 Japanese cucumbers",
         "category": "Produce"
       }
     },
@@ -91,15 +83,15 @@
     {
       "raw": "1 tablespoon sesame paste ((tahini will work))",
       "expected": {
-        "item": "sesame paste (tahini will work)",
+        "item": "sesame paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "tahini will work",
+        "category": "Other"
       }
     },
     {

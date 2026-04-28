@@ -137,14 +137,18 @@
     {
       "raw": "2 tablespoons cocoa powder (for dusting)",
       "expected": {
-        "item": "cocoa powder (for dusting)",
+        "item": "cocoa powder",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "11",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for dusting",
         "category": "Baking"
       }
     }

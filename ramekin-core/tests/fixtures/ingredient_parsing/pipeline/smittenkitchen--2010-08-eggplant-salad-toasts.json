@@ -5,14 +5,14 @@
     {
       "raw": "1 medium eggplant, about 3/4 pound, cut into 1/2-inch cubes",
       "expected": {
-        "item": "eggplant, about 3/4 pound, cut into 1/2-inch cubes",
+        "item": "eggplant, about 3/4 pound",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch cubes",
         "category": "Produce"
       }
     },
@@ -110,14 +110,14 @@
     {
       "raw": "8 1/2-inch slices of baguette, brushed with olive oil (I used 1-inch slices in the photos, then decided they were too thick)",
       "expected": {
-        "item": "1/2-inch slices of baguette, brushed with olive oil (I used 1-inch slices in the photos, then decided they were too thick)",
+        "item": "1/2-inch slices of baguette, brushed with olive oil",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "I used 1-inch slices in the photos, then decided they were too thick",
         "category": "Oils & Vinegars"
       }
     },

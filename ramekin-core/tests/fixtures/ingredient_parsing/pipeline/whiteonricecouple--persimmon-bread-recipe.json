@@ -5,14 +5,18 @@
     {
       "raw": "1 1/4 cups cake flour ((or all-purpose flour-156g))",
       "expected": {
-        "item": "cake flour (or all-purpose flour-156g)",
+        "item": "cake flour",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or all-purpose flour-156g",
         "category": "Baking"
       }
     },
@@ -194,7 +198,7 @@
             "unit": "cup"
           }
         ],
-        "note": "optional (walnuts or pecans are our favorite choices",
+        "note": "optional (walnuts or pecans are our favorite choices)",
         "category": "Nuts & Dried Fruit"
       }
     },

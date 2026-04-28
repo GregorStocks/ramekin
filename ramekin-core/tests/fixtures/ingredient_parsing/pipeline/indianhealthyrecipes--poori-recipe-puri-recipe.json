@@ -5,56 +5,68 @@
     {
       "raw": "1 cup wheat flour ((atta))",
       "expected": {
-        "item": "wheat flour (atta)",
+        "item": "wheat flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "atta",
         "category": "Baking"
       }
     },
     {
       "raw": "¾ teaspoon semolina ((fine rava or chiroti rava) (optional))",
       "expected": {
-        "item": "semolina (fine rava or chiroti rava) (optional)",
+        "item": "semolina",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "fine rava or chiroti rava, optional",
         "category": "Baking"
       }
     },
     {
       "raw": "¾ teaspoon oil ((or ghee))",
       "expected": {
-        "item": "oil (or ghee)",
+        "item": "oil",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
+          },
+          {
+            "amount": "3.4",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "or ghee",
+        "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "¼ cup water ((plus 1 to 2 tbsp) (adjust as needed))",
       "expected": {
-        "item": "water (plus 1 to 2 tbsp) (adjust as needed)",
+        "item": "water",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "59",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plus 1 to 2 tbsp, adjust as needed",
         "category": "Other"
       }
     },
@@ -79,9 +91,9 @@
     {
       "raw": "oil ((for deep frying))",
       "expected": {
-        "item": "oil (for deep frying)",
+        "item": "oil",
         "measurements": [],
-        "note": null,
+        "note": "for deep frying",
         "category": "Oils & Vinegars"
       }
     }

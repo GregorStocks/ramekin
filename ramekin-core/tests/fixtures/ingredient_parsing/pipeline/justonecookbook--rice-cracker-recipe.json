@@ -5,14 +5,14 @@
     {
       "raw": "4  Japanese rice cake (kiri mochi)",
       "expected": {
-        "item": "Japanese rice cake (kiri mochi)",
+        "item": "Japanese rice cake",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "kiri mochi",
         "category": "Pasta & Rice"
       }
     },
@@ -28,19 +28,19 @@
     {
       "raw": "Diamond Crystal kosher salt ((I used Himalayan Pink Salt))",
       "expected": {
-        "item": "Diamond Crystal kosher salt (I used Himalayan Pink Salt)",
+        "item": "Diamond Crystal kosher salt",
         "measurements": [],
-        "note": null,
+        "note": "I used Himalayan Pink Salt",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "furikake (rice seasoning)",
       "expected": {
-        "item": "furikake (rice seasoning)",
+        "item": "furikake",
         "measurements": [],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "rice seasoning",
+        "category": "Other"
       }
     },
     {

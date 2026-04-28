@@ -137,14 +137,18 @@
     {
       "raw": "2 cups chicken broth (low sodium or no sodium added)",
       "expected": {
-        "item": "chicken broth (low sodium or no sodium added)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "498",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium or no sodium added",
         "category": "Canned Goods"
       }
     },

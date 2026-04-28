@@ -23,42 +23,42 @@
     {
       "raw": "2 large carrots, cut in half",
       "expected": {
-        "item": "carrots, cut in half",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut in half",
         "category": "Produce"
       }
     },
     {
       "raw": "1 onion, cut into wedges",
       "expected": {
-        "item": "onion, cut into wedges",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into wedges",
         "category": "Produce"
       }
     },
     {
       "raw": "2 celery ribs, cut in half",
       "expected": {
-        "item": "celery ribs, cut in half",
+        "item": "celery ribs",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut in half",
         "category": "Produce"
       }
     },

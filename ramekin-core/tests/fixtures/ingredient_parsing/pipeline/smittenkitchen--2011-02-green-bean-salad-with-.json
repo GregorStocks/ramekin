@@ -5,7 +5,7 @@
     {
       "raw": "1 pound green beans or haricot vert (skinny ones)",
       "expected": {
-        "item": "green beans or haricot vert (skinny ones)",
+        "item": "green beans or haricot vert",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "skinny ones",
         "category": "Produce"
       }
     },
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1/2 pound",
         "category": "Produce"
       }
     },
@@ -127,14 +127,18 @@
     {
       "raw": "1 tablespoon kosher salt (I use Diamond brand; use less if you’re using Morton or table salt)",
       "expected": {
-        "item": "kosher salt (I use Diamond brand; use less if you’re using Morton or table salt)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "8.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use Diamond brand; use less if you’re using Morton or table salt",
         "category": "Spices & Seasonings"
       }
     },
@@ -174,7 +178,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 ounces",
         "category": "Nuts & Dried Fruit"
       }
     },

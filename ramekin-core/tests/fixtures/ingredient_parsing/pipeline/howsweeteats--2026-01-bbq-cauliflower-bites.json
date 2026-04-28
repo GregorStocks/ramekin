@@ -5,14 +5,14 @@
     {
       "raw": "1 medium head of cauliflower, (cut into florets)",
       "expected": {
-        "item": "head of cauliflower, (cut into florets)",
+        "item": "head of cauliflower",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into florets",
         "category": "Produce"
       }
     },
@@ -137,9 +137,9 @@
     {
       "raw": "avocado oil, (for frying)",
       "expected": {
-        "item": "avocado oil, (for frying)",
+        "item": "avocado oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -228,15 +228,15 @@
     {
       "raw": "1  lemon, (juiced)",
       "expected": {
-        "item": "lemon, (juiced)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {

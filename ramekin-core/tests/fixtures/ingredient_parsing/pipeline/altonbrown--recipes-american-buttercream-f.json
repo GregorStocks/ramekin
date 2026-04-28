@@ -33,18 +33,14 @@
     {
       "raw": "18 tablespoons unsalted butter, cut into 1/2-inch pieces, at cool room temperature (about 65°F)",
       "expected": {
-        "item": "unsalted butter, cut into 1/2-inch pieces",
+        "item": "unsalted butter, cut into 1/2-inch pieces, at cool room temperature",
         "measurements": [
           {
             "amount": "18",
             "unit": "tbsp"
-          },
-          {
-            "amount": "65",
-            "unit": null
           }
         ],
-        "note": "at cool room temperature",
+        "note": "about 65°F",
         "category": "Dairy & Eggs"
       }
     },

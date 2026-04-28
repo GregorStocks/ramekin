@@ -5,14 +5,14 @@
     {
       "raw": "4 to 5 slices stale artisan bread, (crust removed)",
       "expected": {
-        "item": "stale artisan bread, (crust removed)",
+        "item": "stale artisan bread",
         "measurements": [
           {
             "amount": "4 to 5",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "crust removed",
         "category": "Bakery & Bread"
       }
     },
@@ -43,7 +43,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 pounds",
         "category": "Produce"
       }
     },

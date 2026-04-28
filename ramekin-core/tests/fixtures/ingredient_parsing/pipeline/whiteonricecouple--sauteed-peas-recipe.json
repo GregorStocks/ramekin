@@ -26,7 +26,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "minced (abot 1 large shallot",
+        "note": "minced (abot 1 large shallot)",
         "category": "Produce"
       }
     },
@@ -51,14 +51,18 @@
     {
       "raw": "1 teaspoon soy sauce ( or Tamari Gluten Free Soy Sauce)",
       "expected": {
-        "item": "soy sauce ( or Tamari Gluten Free Soy Sauce)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.3",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Tamari Gluten Free Soy Sauce",
         "category": "Condiments & Sauces"
       }
     },

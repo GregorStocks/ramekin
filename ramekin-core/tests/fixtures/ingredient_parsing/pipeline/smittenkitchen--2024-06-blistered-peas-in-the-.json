@@ -59,14 +59,14 @@
     {
       "raw": "Handful mint leaves, chopped (optional)",
       "expected": {
-        "item": "mint leaves, chopped",
+        "item": "mint leaves",
         "measurements": [
           {
             "amount": null,
             "unit": "handful"
           }
         ],
-        "note": "optional",
+        "note": "optional, chopped",
         "category": "Spices & Seasonings"
       }
     },

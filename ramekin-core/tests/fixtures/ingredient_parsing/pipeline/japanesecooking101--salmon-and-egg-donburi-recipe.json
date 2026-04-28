@@ -105,14 +105,14 @@
     {
       "raw": "3/4 cup cooked salmon (largely flaked)",
       "expected": {
-        "item": "cooked salmon (largely flaked)",
+        "item": "cooked salmon",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "largely flaked",
         "category": "Meat & Seafood"
       }
     },

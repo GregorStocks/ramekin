@@ -19,14 +19,14 @@
     {
       "raw": "1/2 cup shredded coconut (unsweetened)",
       "expected": {
-        "item": "shredded coconut (unsweetened)",
+        "item": "shredded coconut",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "unsweetened",
         "category": "Produce"
       }
     },
@@ -47,14 +47,14 @@
     {
       "raw": "8  Medjool dates (pitted)",
       "expected": {
-        "item": "Medjool dates (pitted)",
+        "item": "Medjool dates",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "pitted",
         "category": "Nuts & Dried Fruit"
       }
     },

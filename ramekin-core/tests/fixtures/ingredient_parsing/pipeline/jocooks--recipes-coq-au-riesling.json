@@ -12,7 +12,7 @@
             "unit": null
           }
         ],
-        "note": "(or 4 whole chicken legs",
+        "note": "(or 4 whole chicken legs)",
         "category": "Meat & Seafood"
       }
     },
@@ -143,14 +143,18 @@
     {
       "raw": "1 cup chicken broth (low-sodium )",
       "expected": {
-        "item": "chicken broth (low-sodium",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "249",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low-sodium",
         "category": "Canned Goods"
       }
     },

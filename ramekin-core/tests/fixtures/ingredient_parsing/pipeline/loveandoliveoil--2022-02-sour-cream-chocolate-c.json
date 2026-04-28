@@ -201,14 +201,18 @@
     {
       "raw": "1/4 cup unsalted butter (cut into chunks)",
       "expected": {
-        "item": "unsalted butter (cut into chunks)",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Dairy & Eggs"
       }
     },
@@ -222,15 +226,11 @@
             "unit": "oz"
           },
           {
-            "amount": "60",
-            "unit": null
-          },
-          {
             "amount": "57",
             "unit": "g"
           }
         ],
-        "note": "finely chopped",
+        "note": "60-70%, finely chopped",
         "category": "Other"
       }
     },

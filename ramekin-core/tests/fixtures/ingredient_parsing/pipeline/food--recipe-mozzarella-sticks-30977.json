@@ -69,7 +69,7 @@
     {
       "raw": "1   lb    mozzarella cheese, cut into 3/4 inch x 3/4 inch strips  (or you can use string cheese and cut each in half)",
       "expected": {
-        "item": "mozzarella cheese, cut into 3/4 inch x 3/4 inch strips  (or you can use string cheese and cut each in half)",
+        "item": "mozzarella cheese",
         "measurements": [
           {
             "amount": "1",
@@ -80,7 +80,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or you can use string cheese and cut each in half, cut into 3/4 inch x 3/4 inch strips",
         "category": "Cheese"
       }
     },

@@ -108,7 +108,7 @@
     {
       "raw": "12 ounces store-bought pizza dough, or homemade pizza dough completed through Step 2",
       "expected": {
-        "item": "store-bought pizza dough, or homemade pizza dough completed through Step 2",
+        "item": "store-bought pizza dough",
         "measurements": [
           {
             "amount": "12",
@@ -119,7 +119,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or homemade pizza dough completed through Step 2",
         "section": "Assemlby",
         "category": "Other"
       }
@@ -165,7 +165,7 @@
     {
       "raw": "1/3 cup/40 grams drained, finely crumbled brined feta (not low-fat or light)",
       "expected": {
-        "item": "drained, finely crumbled brined feta (not low-fat or light)",
+        "item": "drained, finely crumbled brined feta",
         "measurements": [
           {
             "amount": "0.33",
@@ -176,7 +176,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not low-fat or light",
         "section": "Assemlby",
         "category": "Cheese"
       }
@@ -195,7 +195,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, plus 2 tablespoons cold butter for serving",
         "section": "Assemlby",
         "category": "Dairy & Eggs"
       }

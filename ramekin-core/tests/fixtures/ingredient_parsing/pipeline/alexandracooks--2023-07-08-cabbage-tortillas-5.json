@@ -10,17 +10,9 @@
           {
             "amount": "6 to 7",
             "unit": "cup"
-          },
-          {
-            "amount": "1",
-            "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from one small head, or roughly 1 pound of shreds",
         "category": "Produce"
       }
     },
@@ -91,14 +83,14 @@
     {
       "raw": "1 heaping cup sliced scallions (from 4 to 6, whites and light greens), optional",
       "expected": {
-        "item": "sliced scallions (from 4 to 6, whites and light greens)",
+        "item": "sliced scallions",
         "measurements": [
           {
             "amount": "1",
             "unit": "heaping cup"
           }
         ],
-        "note": "optional",
+        "note": "from 4 to 6, whites and light greens, optional",
         "category": "Produce"
       }
     }

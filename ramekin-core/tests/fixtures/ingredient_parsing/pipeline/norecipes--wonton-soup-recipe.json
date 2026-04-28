@@ -5,42 +5,42 @@
     {
       "raw": "2 teaspoons kansui ((Potassium Carbonate &amp;amp; Sodium Bi-Carbonate))",
       "expected": {
-        "item": "kansui (Potassium Carbonate & Sodium Bi-Carbonate)",
+        "item": "kansui",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "Potassium Carbonate & Sodium Bi-Carbonate",
         "category": "Other"
       }
     },
     {
       "raw": "300 grams medium shrimp ((shelled))",
       "expected": {
-        "item": "medium shrimp (shelled)",
+        "item": "medium shrimp",
         "measurements": [
           {
             "amount": "300",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "shelled",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "250 grams shrimp shells ((including heads))",
       "expected": {
-        "item": "shrimp shells (including heads)",
+        "item": "shrimp shells",
         "measurements": [
           {
             "amount": "250",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "including heads",
         "category": "Pasta & Rice"
       }
     },
@@ -79,14 +79,14 @@
     {
       "raw": "3  scallions ((green and white parts seperated))",
       "expected": {
-        "item": "scallions (green and white parts seperated)",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "green and white parts seperated",
         "category": "Produce"
       }
     },
@@ -175,14 +175,14 @@
     {
       "raw": "1 + 1/2 teaspoons Shaoxing wine ((or dry sherry))",
       "expected": {
-        "item": "+ 1/2 teaspoons Shaoxing wine (or dry sherry)",
+        "item": "+ 1/2 teaspoons Shaoxing wine",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or dry sherry",
         "category": "Beverages"
       }
     },

@@ -270,14 +270,18 @@
     {
       "raw": "1/2 tsp salt (more if you like)",
       "expected": {
-        "item": "salt (more if you like)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "more if you like",
         "category": "Spices & Seasonings"
       }
     },
@@ -302,14 +306,14 @@
     {
       "raw": "4 cups 2% milk (warmed)",
       "expected": {
-        "item": "2% milk (warmed)",
+        "item": "2% milk",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "warmed",
         "category": "Dairy & Eggs"
       }
     },

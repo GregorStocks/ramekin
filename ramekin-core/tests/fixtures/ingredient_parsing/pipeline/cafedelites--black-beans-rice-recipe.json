@@ -69,28 +69,32 @@
     {
       "raw": "2 cup uncooked white rice (long grain or jasmine rice)",
       "expected": {
-        "item": "uncooked white rice (long grain or jasmine rice)",
+        "item": "uncooked white rice",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "long grain or jasmine rice",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "4 cups chicken broth (or stock)",
       "expected": {
-        "item": "chicken broth (or stock)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "996",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or stock",
         "category": "Canned Goods"
       }
     },
@@ -111,14 +115,14 @@
     {
       "raw": "3-4 tablespoons  lime juice ((adjust to your tastes))",
       "expected": {
-        "item": "lime juice (adjust to your tastes)",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "3-4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "adjust to your tastes",
         "category": "Beverages"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "4  medium kohlrabi (with greens (about 2.5lbs/1kg))",
       "expected": {
-        "item": "kohlrabi (with greens (about 2.5lbs/1kg)",
+        "item": "kohlrabi",
         "measurements": [
           {
             "amount": "4",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "with greens (about 2.5lbs/1kg)",
         "category": "Produce"
       }
     },
@@ -44,7 +44,7 @@
             "unit": "large"
           }
         ],
-        "note": "diced (about 3/4 cup diced",
+        "note": "diced (about 3/4 cup diced)",
         "category": "Produce"
       }
     },

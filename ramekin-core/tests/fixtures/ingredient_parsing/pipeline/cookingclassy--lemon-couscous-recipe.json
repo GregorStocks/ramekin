@@ -28,27 +28,27 @@
           {
             "amount": "1.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "large"
           }
         ],
-        "note": null,
+        "note": "1 large clove",
         "category": "Produce"
       }
     },
     {
       "raw": "1 1/4 cups low-sodium chicken broth ((or vegetable broth))",
       "expected": {
-        "item": "low-sodium chicken broth (or vegetable broth)",
+        "item": "low-sodium chicken broth",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "311",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or vegetable broth",
         "category": "Canned Goods"
       }
     },
@@ -96,21 +96,21 @@
     {
       "raw": "2 Tbsp chopped fresh parsley, (or more to taste (optional)*)",
       "expected": {
-        "item": "chopped fresh parsley *)",
+        "item": "chopped fresh parsley",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "or more to taste (optional",
+        "note": "or more to taste (optional)",
         "category": "Produce"
       }
     },
     {
       "raw": "1 cup (6 oz) couscous ((not pearl couscous))",
       "expected": {
-        "item": "couscous (not pearl couscous)",
+        "item": "couscous",
         "measurements": [
           {
             "amount": "1",
@@ -125,7 +125,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not pearl couscous",
         "category": "Pasta & Rice"
       }
     }

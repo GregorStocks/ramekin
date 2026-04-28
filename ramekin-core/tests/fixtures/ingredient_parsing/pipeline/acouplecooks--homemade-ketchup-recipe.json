@@ -193,14 +193,18 @@
     {
       "raw": "1 teaspoon cornstarch (or arrowroot powder)",
       "expected": {
-        "item": "cornstarch (or arrowroot powder)",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or arrowroot powder",
         "category": "Baking"
       }
     },

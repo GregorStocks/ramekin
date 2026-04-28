@@ -89,7 +89,7 @@
     {
       "raw": "8 ounces ahi tuna, cut into 1/2-inch cubes",
       "expected": {
-        "item": "ahi tuna, cut into 1/2-inch cubes",
+        "item": "ahi tuna",
         "measurements": [
           {
             "amount": "8",
@@ -100,7 +100,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch cubes",
         "category": "Meat & Seafood"
       }
     }

@@ -16,7 +16,7 @@
             "unit": "cup"
           }
         ],
-        "note": "sliced",
+        "note": "about 6-1/2 cups, sliced",
         "category": "Produce"
       }
     },
@@ -69,7 +69,7 @@
     {
       "raw": "1 can (28 ounces) diced tomatoes, undrained",
       "expected": {
-        "item": "diced tomatoes",
+        "item": "diced tomatoes, undrained",
         "measurements": [
           {
             "amount": "1",
@@ -84,7 +84,7 @@
             "unit": "g"
           }
         ],
-        "note": "undrained",
+        "note": null,
         "category": "Canned Goods"
       }
     },

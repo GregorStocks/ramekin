@@ -59,14 +59,18 @@
     {
       "raw": "1 tablespoon fresh lemon juice (from 1 lemon)",
       "expected": {
-        "item": "fresh lemon juice (from 1 lemon)",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 1 lemon",
         "category": "Beverages"
       }
     },
@@ -87,14 +91,18 @@
     {
       "raw": "6 tablespoons cold salted butter, cut into small pieces",
       "expected": {
-        "item": "cold salted butter, cut into small pieces",
+        "item": "cold salted butter",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small pieces",
         "category": "Dairy & Eggs"
       }
     },

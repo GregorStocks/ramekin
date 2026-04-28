@@ -97,14 +97,14 @@
     {
       "raw": "4 tbsp tomato ketchup (+ 2 tbsp for a finishing touch)",
       "expected": {
-        "item": "tomato ketchup (+ 2 tbsp for a finishing touch)",
+        "item": "tomato ketchup",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "+ 2 tbsp for a finishing touch",
         "category": "Condiments & Sauces"
       }
     },
@@ -170,13 +170,9 @@
           {
             "amount": "200",
             "unit": "g"
-          },
-          {
-            "amount": "1.7",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "1.7-1.8mm",
         "category": "Pasta & Rice"
       }
     },
@@ -229,9 +225,9 @@
     {
       "raw": "dried parsley (to garnish)",
       "expected": {
-        "item": "dried parsley (to garnish)",
+        "item": "dried parsley",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "category": "Spices & Seasonings"
       }
     }

@@ -90,7 +90,7 @@
             "unit": "g"
           }
         ],
-        "note": "diced (optional",
+        "note": "diced (optional)",
         "category": "Meat & Seafood"
       }
     },
@@ -119,14 +119,18 @@
     {
       "raw": "4 cups chicken broth (low sodium or no sodium added)",
       "expected": {
-        "item": "chicken broth (low sodium or no sodium added)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "996",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium or no sodium added",
         "category": "Canned Goods"
       }
     },
@@ -233,14 +237,14 @@
     {
       "raw": "1 cup ditalini pasta  (or other small pasta)",
       "expected": {
-        "item": "ditalini pasta  (or other small pasta)",
+        "item": "ditalini pasta",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or other small pasta",
         "category": "Pasta & Rice"
       }
     },

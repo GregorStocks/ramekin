@@ -5,7 +5,7 @@
     {
       "raw": "1 pound plum or roma tomatoes, stemmed and cut in half",
       "expected": {
-        "item": "plum or roma tomatoes, stemmed and cut in half",
+        "item": "plum or roma tomatoes",
         "measurements": [
           {
             "amount": "1",
@@ -16,21 +16,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "stemmed and cut in half",
         "category": "Produce"
       }
     },
     {
       "raw": "1 or 2 jalapeños (depending on how hot you want the salsa), stemmed and cut in half",
       "expected": {
-        "item": "jalapeños (depending on how hot you want the salsa), stemmed and cut in half",
+        "item": "jalapeños",
         "measurements": [
           {
             "amount": "1 or 2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "depending on how hot you want the salsa, stemmed and cut in half",
         "category": "Produce"
       }
     },

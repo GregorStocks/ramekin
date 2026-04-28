@@ -23,14 +23,18 @@
     {
       "raw": "2 teaspoons kosher salt (I use Diamond, use half of another brand, here’s why)",
       "expected": {
-        "item": "kosher salt (I use Diamond, use half of another brand, here’s why)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use Diamond, use half of another brand, here’s why",
         "category": "Spices & Seasonings"
       }
     },
@@ -55,14 +59,14 @@
     {
       "raw": "1 cup plain, full- or low-fat yogurt (Greek or regular)",
       "expected": {
-        "item": "plain, full- or low-fat yogurt (Greek or regular)",
+        "item": "plain, full- or low-fat yogurt",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "Greek or regular",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,14 +87,14 @@
     {
       "raw": "4 tablespoons melted, unsalted butter, olive oil, coconut oil, or ghee (for assembly)",
       "expected": {
-        "item": "melted, unsalted butter, olive oil, coconut oil, or ghee (for assembly)",
+        "item": "melted, unsalted butter, olive oil, coconut oil, or ghee",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "for assembly",
         "category": "Oils & Vinegars"
       }
     }

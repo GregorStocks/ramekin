@@ -10,13 +10,9 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "1",
-            "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "about 1 medium cucumber",
         "category": "Produce"
       }
     },
@@ -123,14 +119,18 @@
     {
       "raw": "2 tablespoons fresh lemon juice (about half of 1 medium lemon)",
       "expected": {
-        "item": "fresh lemon juice (about half of 1 medium lemon)",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about half of 1 medium lemon",
         "category": "Beverages"
       }
     },

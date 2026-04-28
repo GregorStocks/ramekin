@@ -285,18 +285,18 @@
     {
       "raw": "powdered sugar (for dusting)",
       "expected": {
-        "item": "powdered sugar (for dusting)",
+        "item": "powdered sugar",
         "measurements": [],
-        "note": null,
+        "note": "for dusting",
         "category": "Baking"
       }
     },
     {
       "raw": "ground cinnamon (for dusting)",
       "expected": {
-        "item": "ground cinnamon (for dusting)",
+        "item": "ground cinnamon",
         "measurements": [],
-        "note": null,
+        "note": "for dusting",
         "category": "Spices & Seasonings"
       }
     }

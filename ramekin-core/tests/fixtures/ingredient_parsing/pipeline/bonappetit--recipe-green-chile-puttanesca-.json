@@ -33,7 +33,7 @@
     {
       "raw": "can find), preferably bone-in (1½–2 lb.)",
       "expected": {
-        "item": "find), preferably bone-in",
+        "item": "find)",
         "measurements": [
           {
             "amount": null,
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably bone-in",
         "category": "Other"
       }
     },
@@ -179,14 +179,18 @@
     {
       "raw": "4 Tbsp. unsalted butter, cut into pieces",
       "expected": {
-        "item": "unsalted butter, cut into pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     }

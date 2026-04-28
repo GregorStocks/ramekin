@@ -125,22 +125,14 @@
     {
       "raw": "1 (28-ounce) can diced tomatoes, or 2 to 3 cans Rotel",
       "expected": {
-        "item": "diced tomatoes, or 2 to 3 cans Rotel",
+        "item": "diced tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "28",
-            "unit": "oz"
-          },
-          {
-            "amount": "794",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "28-ounce; or 2 to 3 cans Rotel",
         "category": "Canned Goods"
       }
     },
@@ -161,17 +153,9 @@
           {
             "amount": "2",
             "unit": "can"
-          },
-          {
-            "amount": "15.5",
-            "unit": "oz"
-          },
-          {
-            "amount": "439",
-            "unit": "g"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "15.5-ounce, drained and rinsed",
         "category": "Canned Goods"
       }
     },
@@ -187,14 +171,14 @@
     {
       "raw": "1 cup corn kernels, fresh (from 1 ear), canned and drained, or frozen (no need to thaw)",
       "expected": {
-        "item": "corn kernels, fresh (from 1 ear), canned and drained",
+        "item": "corn kernels, fresh, canned and drained",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "or frozen (no need to thaw)",
+        "note": "from 1 ear, no need to thaw; or frozen",
         "category": "Canned Goods"
       }
     },

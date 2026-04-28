@@ -164,7 +164,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 4 cups",
         "category": "Produce"
       }
     },
@@ -198,9 +198,9 @@
     {
       "raw": "Reserved butter from cake (above)",
       "expected": {
-        "item": "Reserved butter from cake (above)",
+        "item": "Reserved butter from cake",
         "measurements": [],
-        "note": null,
+        "note": "above",
         "category": "Dairy & Eggs"
       }
     },

@@ -27,14 +27,18 @@
     {
       "raw": "½ cup water (lukewarm)",
       "expected": {
-        "item": "water (lukewarm)",
+        "item": "water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "lukewarm",
         "category": "Other"
       }
     },
@@ -59,14 +63,18 @@
     {
       "raw": "1 ⅓ cups water (lukewarm)",
       "expected": {
-        "item": "water (lukewarm)",
+        "item": "water",
         "measurements": [
           {
             "amount": "1.33",
             "unit": "cup"
+          },
+          {
+            "amount": "316",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "lukewarm",
         "category": "Other"
       }
     },
@@ -109,14 +117,18 @@
     {
       "raw": "4 ½ cups all-purpose flour (up to 5 cups)",
       "expected": {
-        "item": "all-purpose flour (up to 5 cups)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "4.5",
             "unit": "cup"
+          },
+          {
+            "amount": "562",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "up to 5 cups",
         "category": "Baking"
       }
     },

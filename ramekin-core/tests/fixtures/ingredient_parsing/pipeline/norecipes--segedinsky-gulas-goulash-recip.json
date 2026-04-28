@@ -5,14 +5,14 @@
     {
       "raw": "1200 grams pork shoulder ((cut into 2-inch chunks))",
       "expected": {
-        "item": "pork shoulder (cut into 2-inch chunks)",
+        "item": "pork shoulder",
         "measurements": [
           {
             "amount": "1200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 2-inch chunks",
         "category": "Meat & Seafood"
       }
     },

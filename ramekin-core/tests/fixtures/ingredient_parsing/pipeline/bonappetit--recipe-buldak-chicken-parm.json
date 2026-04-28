@@ -5,43 +5,43 @@
     {
       "raw": "1 cup marinara sauce (such as Rao’s)",
       "expected": {
-        "item": "marinara sauce (such as Rao’s)",
+        "item": "marinara sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Rao’s",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "¼ cup gochujang (Korean hot pepper paste)",
       "expected": {
-        "item": "gochujang (Korean hot pepper paste)",
+        "item": "gochujang",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "Korean hot pepper paste",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1 tsp. (or more) gochugaru (coarse Korean red pepper powder) or",
       "expected": {
-        "item": "gochugaru (coarse Korean red pepper powder) or",
+        "item": "gochugaru or",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "or more",
-        "category": "Spices & Seasonings"
+        "note": "or more, coarse Korean red pepper powder",
+        "category": "Other"
       }
     },
     {
@@ -71,7 +71,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 lb. total",
         "category": "Meat & Seafood"
       }
     },
@@ -92,14 +92,14 @@
     {
       "raw": "1½ cups fine dry breadcrumbs, preferably seasoned or Italian-style",
       "expected": {
-        "item": "fine dry breadcrumbs, preferably seasoned or Italian-style",
+        "item": "fine dry breadcrumbs",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "preferably seasoned or Italian-style",
         "category": "Bakery & Bread"
       }
     },
@@ -166,7 +166,7 @@
             "unit": "g"
           }
         ],
-        "note": "coarsely grated",
+        "note": "about 2 cups, coarsely grated",
         "category": "Cheese"
       }
     },
@@ -188,7 +188,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely grated",
+        "note": "about 1 1/2 cups, finely grated",
         "category": "Cheese"
       }
     }

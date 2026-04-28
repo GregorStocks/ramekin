@@ -51,14 +51,14 @@
     {
       "raw": "¼ teaspoon&nbsp;apple pie spice,&nbsp;optional and to taste",
       "expected": {
-        "item": "apple pie spice",
+        "item": "apple pie spice, optional and to taste",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": "optional and to taste",
+        "note": null,
         "category": "Produce"
       }
     },

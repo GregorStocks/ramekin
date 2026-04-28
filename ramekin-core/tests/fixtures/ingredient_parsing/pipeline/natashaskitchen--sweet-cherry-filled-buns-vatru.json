@@ -12,15 +12,11 @@
             "unit": "cup"
           },
           {
-            "amount": "100",
-            "unit": null
-          },
-          {
             "amount": "245",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 100˚F, not hot!",
         "category": "Dairy & Eggs"
       }
     },
@@ -81,14 +77,14 @@
     {
       "raw": "1  egg (room temp (take it out of the fridge at the start of the recipe))",
       "expected": {
-        "item": "egg (room temp (take it out of the fridge at the start of the recipe)",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "room temp (take it out of the fridge at the start of the recipe)",
         "category": "Dairy & Eggs"
       }
     },
@@ -138,14 +134,14 @@
             "unit": null
           }
         ],
-        "note": "beaten with fork (for egg wash",
+        "note": "beaten with fork (for egg wash)",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 lb sweet red cherries (pitted)",
       "expected": {
-        "item": "sweet red cherries (pitted)",
+        "item": "sweet red cherries",
         "measurements": [
           {
             "amount": "1",
@@ -156,7 +152,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "pitted",
         "category": "Produce"
       }
     },
@@ -170,15 +166,11 @@
             "unit": "cup"
           },
           {
-            "amount": "0.5",
-            "unit": "tsp"
-          },
-          {
             "amount": "50",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1/2 tsp for each bun",
         "category": "Baking"
       }
     },

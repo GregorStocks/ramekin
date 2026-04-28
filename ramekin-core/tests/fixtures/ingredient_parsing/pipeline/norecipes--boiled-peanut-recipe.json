@@ -87,14 +87,14 @@
     {
       "raw": "1 clove garlic (mashed)",
       "expected": {
-        "item": "garlic (mashed)",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "mashed",
         "category": "Produce"
       }
     },
@@ -108,7 +108,7 @@
             "unit": null
           }
         ],
-        "note": "thai (sliced in half lengthwise",
+        "note": "thai (sliced in half lengthwise)",
         "category": "Other"
       }
     },

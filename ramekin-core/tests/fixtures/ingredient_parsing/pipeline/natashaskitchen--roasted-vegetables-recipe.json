@@ -79,14 +79,14 @@
     {
       "raw": "2  red (yellow or orange bell peppers, cut into 1\" pieces)",
       "expected": {
-        "item": "red (yellow or orange bell peppers, cut into 1\" pieces)",
+        "item": "red yellow or orange bell peppers",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1\" pieces",
         "category": "Produce"
       }
     },
@@ -116,9 +116,9 @@
     {
       "raw": "Extra light olive oil (or avocado oil, or vegetable oil)",
       "expected": {
-        "item": "Extra light olive oil (or avocado oil, or vegetable oil)",
+        "item": "Extra light olive oil",
         "measurements": [],
-        "note": null,
+        "note": "or avocado oil, or vegetable oil",
         "category": "Oils & Vinegars"
       }
     },

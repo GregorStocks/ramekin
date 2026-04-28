@@ -257,15 +257,11 @@
             "unit": null
           },
           {
-            "amount": "8.5",
-            "unit": "oz"
-          },
-          {
             "amount": "250",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "8.5-ounce or 250-gram",
         "section": "Assembly",
         "category": "Cheese"
       }
@@ -288,9 +284,9 @@
     {
       "raw": "Sesame seeds, ideally toasted (optional)",
       "expected": {
-        "item": "Sesame seeds, ideally toasted",
+        "item": "Sesame seeds",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, ideally toasted",
         "section": "Assembly",
         "category": "Spices & Seasonings"
       }

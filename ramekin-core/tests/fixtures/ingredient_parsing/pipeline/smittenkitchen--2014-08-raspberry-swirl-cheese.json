@@ -14,7 +14,7 @@
     {
       "raw": "2 cups (about 250 grams) finely ground chocolate cookie crumbs (from about 1 9-ounce sleeve chocolate wafers; see more suggestions below)",
       "expected": {
-        "item": "finely ground chocolate cookie crumbs (from about 1 9-ounce sleeve chocolate wafers; see more suggestions below)",
+        "item": "finely ground chocolate cookie crumbs",
         "measurements": [
           {
             "amount": "2",
@@ -25,7 +25,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 250 grams, from about 1 9-ounce sleeve chocolate wafers; see more suggestions below",
         "category": "Beverages"
       }
     },
@@ -140,7 +140,7 @@
     {
       "raw": "32 ounces (905 grams) cream cheese, very soft at room temperature",
       "expected": {
-        "item": "cream cheese",
+        "item": "cream cheese, very soft at room temperature",
         "measurements": [
           {
             "amount": "32",
@@ -151,7 +151,7 @@
             "unit": "g"
           }
         ],
-        "note": "very soft at room temperature",
+        "note": null,
         "category": "Cheese"
       }
     },

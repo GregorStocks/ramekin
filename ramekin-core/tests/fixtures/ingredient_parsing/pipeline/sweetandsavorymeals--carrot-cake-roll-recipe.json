@@ -200,13 +200,9 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "3",
-            "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "about 3 medium carrots",
         "category": "Produce"
       }
     },
@@ -227,14 +223,18 @@
     {
       "raw": "1/4 cup powdered sugar (for rolling)",
       "expected": {
-        "item": "powdered sugar (for rolling)",
+        "item": "powdered sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for rolling",
         "category": "Baking"
       }
     },

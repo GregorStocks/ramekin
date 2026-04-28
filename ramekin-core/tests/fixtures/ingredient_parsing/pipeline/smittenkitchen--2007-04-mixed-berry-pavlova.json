@@ -64,7 +64,7 @@
     {
       "raw": "1 cup (200 grams) superfine (castor) or granulated (regular) sugar",
       "expected": {
-        "item": "superfine (castor) or granulated (regular) sugar",
+        "item": "superfine or granulated sugar",
         "measurements": [
           {
             "amount": "1",
@@ -75,7 +75,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "castor, regular",
         "category": "Baking"
       }
     },

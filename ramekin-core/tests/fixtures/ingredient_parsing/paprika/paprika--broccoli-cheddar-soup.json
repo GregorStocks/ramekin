@@ -87,14 +87,14 @@
     {
       "raw": "4 cups low-sodium vegetable or chicken broth (here’s my favorite chicken stock)",
       "expected": {
-        "item": "low-sodium vegetable or chicken broth (here’s my favorite chicken stock)",
+        "item": "low-sodium vegetable or chicken broth",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "here’s my favorite chicken stock",
         "category": "Canned Goods"
       }
     },
@@ -161,7 +161,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped tiny",
+        "note": "about 6 ounces, chopped tiny",
         "category": "Produce"
       }
     },
@@ -183,7 +183,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus a pinch extra for garnish",
+        "note": "about 2 1/2 cups, plus a pinch extra for garnish",
         "category": "Cheese"
       }
     }

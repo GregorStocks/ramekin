@@ -19,28 +19,28 @@
     {
       "raw": "1 medium broccoli head (cut into florets)",
       "expected": {
-        "item": "broccoli head (cut into florets)",
+        "item": "broccoli head",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into florets",
         "category": "Produce"
       }
     },
     {
       "raw": "2 medium bell peppers (any color, cut into 1 inch pieces)",
       "expected": {
-        "item": "bell peppers (any color, cut into 1 inch pieces)",
+        "item": "bell peppers",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "any color, cut into 1 inch pieces",
         "category": "Produce"
       }
     },

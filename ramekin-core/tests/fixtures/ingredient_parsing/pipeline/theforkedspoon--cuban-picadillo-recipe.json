@@ -23,7 +23,7 @@
     {
       "raw": "2  yellow Idaho potatoes ((about 1 cup) peeled and cut into 1-inch cubes)",
       "expected": {
-        "item": "yellow Idaho potatoes peeled and cut into 1-inch cubes)",
+        "item": "yellow Idaho potatoes peeled and cut into 1-inch cubes",
         "measurements": [
           {
             "amount": "2",
@@ -34,7 +34,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 1 cup",
         "category": "Produce"
       }
     },
@@ -193,14 +193,14 @@
     {
       "raw": "1 cup low-sodium beef broth (plus more if needed)",
       "expected": {
-        "item": "low-sodium beef broth (plus more if needed)",
+        "item": "low-sodium beef broth",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plus more if needed",
         "category": "Canned Goods"
       }
     },

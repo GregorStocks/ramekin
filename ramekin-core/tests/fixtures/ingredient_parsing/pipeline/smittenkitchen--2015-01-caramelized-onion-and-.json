@@ -14,14 +14,14 @@
     {
       "raw": "Six Months Ago: Bourbon Slush Punch (mid-January Bourbon Snow Cone Punch, anyone?)",
       "expected": {
-        "item": "Months Ago: Bourbon Slush Punch (mid-January Bourbon Snow Cone Punch, anyone?)",
+        "item": "Months Ago: Bourbon Slush Punch",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "mid-January Bourbon Snow Cone Punch, anyone?",
         "category": "Beverages"
       }
     },
@@ -221,21 +221,25 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 cup or 115 grams",
         "category": "Cheese"
       }
     },
     {
       "raw": "1 cup buttermilk (or make your own)",
       "expected": {
-        "item": "buttermilk (or make your own)",
+        "item": "buttermilk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or make your own",
         "category": "Dairy & Eggs"
       }
     },

@@ -5,14 +5,18 @@
     {
       "raw": "½ cup plain yogurt (or Greek)",
       "expected": {
-        "item": "plain yogurt (or Greek)",
+        "item": "plain yogurt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Greek",
         "category": "Dairy & Eggs"
       }
     },

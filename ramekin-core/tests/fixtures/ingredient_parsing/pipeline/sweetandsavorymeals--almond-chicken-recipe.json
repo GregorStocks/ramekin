@@ -79,7 +79,7 @@
     {
       "raw": "2 pounds boneless skinless chicken thighs (cut into 1 inch pieces)",
       "expected": {
-        "item": "boneless skinless chicken thighs (cut into 1 inch pieces)",
+        "item": "boneless skinless chicken thighs",
         "measurements": [
           {
             "amount": "2",
@@ -90,7 +90,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1 inch pieces",
         "category": "Meat & Seafood"
       }
     },

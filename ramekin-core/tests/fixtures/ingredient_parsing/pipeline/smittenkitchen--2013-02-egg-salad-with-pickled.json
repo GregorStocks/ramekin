@@ -41,14 +41,18 @@
     {
       "raw": "2 teaspoons Kosher salt (you can go up to 1 tablespoon if using the lighter weight Diamond brand; here’s why)",
       "expected": {
-        "item": "Kosher salt (you can go up to 1 tablespoon if using the lighter weight Diamond brand; here’s why)",
+        "item": "Kosher salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "you can go up to 1 tablespoon if using the lighter weight Diamond brand; here’s why",
         "category": "Spices & Seasonings"
       }
     },

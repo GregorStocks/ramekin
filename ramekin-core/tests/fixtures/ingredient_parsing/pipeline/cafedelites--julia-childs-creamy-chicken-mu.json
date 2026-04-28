@@ -5,28 +5,32 @@
     {
       "raw": "4 medium-sized chicken breasts (boneless and skinless)",
       "expected": {
-        "item": "medium-sized chicken breasts (boneless and skinless)",
+        "item": "medium-sized chicken breasts",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "boneless and skinless",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 teaspoon lemon juice (original recipe: 1/2 teaspoon)",
       "expected": {
-        "item": "lemon juice (original recipe: 1/2 teaspoon)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "original recipe: 1/2 teaspoon",
         "category": "Beverages"
       }
     },
@@ -65,14 +69,14 @@
     {
       "raw": "2 tablespoons reduced fat butter (original recipe: 5 tablespoons full fat)",
       "expected": {
-        "item": "reduced fat butter (original recipe: 5 tablespoons full fat)",
+        "item": "reduced fat butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "original recipe: 5 tablespoons full fat",
         "category": "Dairy & Eggs"
       }
     },
@@ -147,14 +151,14 @@
     {
       "raw": "1/4 cup  port wine (or dry white vermouth)",
       "expected": {
-        "item": "port wine (or dry white vermouth)",
+        "item": "port wine",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or dry white vermouth",
         "category": "Beverages"
       }
     },

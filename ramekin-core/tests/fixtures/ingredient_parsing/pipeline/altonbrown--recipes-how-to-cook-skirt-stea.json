@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds inside skirt steak, cut into three equal pieces",
       "expected": {
-        "item": "inside skirt steak, cut into three equal pieces",
+        "item": "inside skirt steak",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into three equal pieces",
         "category": "Meat & Seafood"
       }
     },

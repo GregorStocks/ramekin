@@ -27,7 +27,7 @@
     {
       "raw": "1/2  cup (120ml) tahini (well stirred)",
       "expected": {
-        "item": "tahini (well stirred)",
+        "item": "tahini",
         "measurements": [
           {
             "amount": "0.5",
@@ -36,9 +36,13 @@
           {
             "amount": "120",
             "unit": "ml"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "well stirred",
         "category": "Condiments & Sauces"
       }
     },
@@ -177,7 +181,7 @@
     {
       "raw": "2 cups (280g) bittersweet or semisweet chocolate chunks (or chocolate chips)",
       "expected": {
-        "item": "bittersweet or semisweet chocolate chunks (or chocolate chips)",
+        "item": "bittersweet or semisweet chocolate chunks",
         "measurements": [
           {
             "amount": "2",
@@ -188,8 +192,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "or chocolate chips",
+        "category": "Other"
       }
     },
     {

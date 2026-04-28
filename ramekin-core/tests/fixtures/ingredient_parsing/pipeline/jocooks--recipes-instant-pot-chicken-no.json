@@ -5,14 +5,18 @@
     {
       "raw": "2 tablespoons butter (unsalted)",
       "expected": {
-        "item": "butter (unsalted)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsalted",
         "category": "Dairy & Eggs"
       }
     },
@@ -148,34 +152,34 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": null,
-            "unit": "cube"
           }
         ],
-        "note": null,
+        "note": "cube or powder",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "4 cups chicken broth (or vegetable broth, no sodium added)",
       "expected": {
-        "item": "chicken broth (or vegetable broth, no sodium added)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "996",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or vegetable broth, no sodium added",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "2 pounds chicken (with skin and bones, use at least 1 chicken breast)",
       "expected": {
-        "item": "chicken (with skin and bones, use at least 1 chicken breast)",
+        "item": "chicken",
         "measurements": [
           {
             "amount": "2",
@@ -186,7 +190,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "with skin and bones, use at least 1 chicken breast",
         "category": "Meat & Seafood"
       }
     },
@@ -222,7 +226,7 @@
             "unit": "g"
           }
         ],
-        "note": "uncooked, (about 2 cups",
+        "note": "uncooked, (about 2 cups)",
         "category": "Pasta & Rice"
       }
     }

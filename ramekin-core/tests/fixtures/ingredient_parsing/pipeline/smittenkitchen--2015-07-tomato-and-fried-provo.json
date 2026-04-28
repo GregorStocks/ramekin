@@ -69,14 +69,14 @@
     {
       "raw": "1 to 2 slices of provolone, pre-sliced is fine, per piece of bread (see Note at end)",
       "expected": {
-        "item": "provolone, pre-sliced is fine, per piece of bread (see Note at end)",
+        "item": "provolone, pre-sliced is fine, per piece of bread",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "see Note at end",
         "category": "Cheese"
       }
     }

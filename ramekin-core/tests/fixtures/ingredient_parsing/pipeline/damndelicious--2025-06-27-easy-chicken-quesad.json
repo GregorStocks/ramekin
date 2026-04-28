@@ -82,18 +82,14 @@
     {
       "raw": "6  (8-inch) flour tortillas (warmed)",
       "expected": {
-        "item": "flour tortillas (warmed)",
+        "item": "flour tortillas",
         "measurements": [
           {
             "amount": "6",
             "unit": null
-          },
-          {
-            "amount": "8",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "8-inch, warmed",
         "category": "Bakery & Bread"
       }
     },

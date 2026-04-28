@@ -77,7 +77,7 @@
     {
       "raw": "3.5 ounces / 100g celery root (celeriac), peeled and chopped",
       "expected": {
-        "item": "celery root (celeriac)",
+        "item": "celery root",
         "measurements": [
           {
             "amount": "3.5",
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and chopped",
+        "note": "celeriac, peeled and chopped",
         "category": "Produce"
       }
     },
@@ -181,7 +181,7 @@
     {
       "raw": "2 ounces / 60g cilantro (coriander), loosely chopped",
       "expected": {
-        "item": "cilantro (coriander)",
+        "item": "cilantro",
         "measurements": [
           {
             "amount": "2",
@@ -192,8 +192,8 @@
             "unit": "g"
           }
         ],
-        "note": "loosely chopped",
-        "category": "Spices & Seasonings"
+        "note": "coriander, loosely chopped",
+        "category": "Produce"
       }
     }
   ]

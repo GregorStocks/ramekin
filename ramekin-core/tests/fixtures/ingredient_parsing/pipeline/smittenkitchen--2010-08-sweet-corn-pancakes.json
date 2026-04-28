@@ -27,7 +27,7 @@
     {
       "raw": "3/4 cup kernels (cut from one large ear fresh corn), roughly chopped (130 grams)",
       "expected": {
-        "item": "kernels, roughly chopped",
+        "item": "kernels",
         "measurements": [
           {
             "amount": "0.75",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "cut from one large ear fresh corn",
+        "note": "cut from one large ear fresh corn, roughly chopped",
         "category": "Other"
       }
     },

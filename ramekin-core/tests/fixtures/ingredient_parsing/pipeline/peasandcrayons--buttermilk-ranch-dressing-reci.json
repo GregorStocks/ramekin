@@ -5,14 +5,14 @@
     {
       "raw": "1-2 cloves garlic ((garlic flavor will amp up next day))",
       "expected": {
-        "item": "garlic (garlic flavor will amp up next day)",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "garlic flavor will amp up next day",
         "category": "Produce"
       }
     },
@@ -129,14 +129,14 @@
     {
       "raw": "1/8-1/4 tsp hot sauce ((like Frank&amp;#039;s Red Hot or Crystal))",
       "expected": {
-        "item": "hot sauce (like Frank's Red Hot or Crystal)",
+        "item": "hot sauce",
         "measurements": [
           {
             "amount": "1/8-1/4",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "like Frank's Red Hot or Crystal",
         "category": "Condiments & Sauces"
       }
     },

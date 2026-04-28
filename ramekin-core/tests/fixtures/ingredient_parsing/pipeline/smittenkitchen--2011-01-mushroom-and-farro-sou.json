@@ -79,7 +79,7 @@
     {
       "raw": "1 pound mushrooms (you’ll prepare them shortly)",
       "expected": {
-        "item": "mushrooms (you’ll prepare them shortly)",
+        "item": "mushrooms",
         "measurements": [
           {
             "amount": "1",
@@ -90,7 +90,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "you’ll prepare them shortly",
         "category": "Produce"
       }
     },
@@ -111,14 +111,14 @@
     {
       "raw": "6 cups low sodium or salt-free beef broth or stock (vegetable, mushroom or chicken stock can be swapped)",
       "expected": {
-        "item": "low sodium or salt-free beef broth or stock (vegetable, mushroom or chicken stock can be swapped)",
+        "item": "low sodium or salt-free beef broth or stock",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "vegetable, mushroom or chicken stock can be swapped",
         "category": "Canned Goods"
       }
     },

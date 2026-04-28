@@ -33,28 +33,32 @@
     {
       "raw": "2 tbsp water (more if needed)",
       "expected": {
-        "item": "water (more if needed)",
+        "item": "water",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "more if needed",
         "category": "Other"
       }
     },
     {
       "raw": "1/4 cup reduced sodium soy sauce (GF if needed)",
       "expected": {
-        "item": "reduced sodium soy sauce (GF if needed)",
+        "item": "reduced sodium soy sauce",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "GF if needed",
         "category": "Condiments & Sauces"
       }
     },
@@ -97,15 +101,15 @@
     {
       "raw": "1 tsp. Asian garlic chili paste (like sambal olek or Sriracha)",
       "expected": {
-        "item": "Asian garlic chili paste (like sambal olek or Sriracha)",
+        "item": "Asian garlic chili paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "like sambal olek or Sriracha",
+        "category": "Produce"
       }
     },
     {

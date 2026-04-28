@@ -61,7 +61,7 @@
             "unit": "large"
           }
         ],
-        "note": "at room temperature (Ina calls for extra-large but large works fine here)",
+        "note": "Ina calls for extra-large but large works fine here, at room temperature",
         "category": "Dairy & Eggs"
       }
     },
@@ -144,7 +144,7 @@
     {
       "raw": "1/4 cup (60 ml) freshly squeezed orange juice (from about 2 oranges)",
       "expected": {
-        "item": "freshly squeezed orange juice (from about 2 oranges)",
+        "item": "freshly squeezed orange juice",
         "measurements": [
           {
             "amount": "0.25",
@@ -155,7 +155,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "from about 2 oranges",
         "category": "Produce"
       }
     },
@@ -246,7 +246,7 @@
     {
       "raw": "1/4 cup (60 ml) freshly squeezed orange juice (from about 2 oranges)",
       "expected": {
-        "item": "freshly squeezed orange juice (from about 2 oranges)",
+        "item": "freshly squeezed orange juice",
         "measurements": [
           {
             "amount": "0.25",
@@ -257,7 +257,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "from about 2 oranges",
         "category": "Produce"
       }
     },

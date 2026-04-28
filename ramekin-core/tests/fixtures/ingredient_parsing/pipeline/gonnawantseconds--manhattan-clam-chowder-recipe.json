@@ -5,14 +5,14 @@
     {
       "raw": "2 slices thick cut bacon (cut into 1/4-inch pieces)",
       "expected": {
-        "item": "thick cut bacon (cut into 1/4-inch pieces)",
+        "item": "thick cut bacon",
         "measurements": [
           {
             "amount": "2",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -134,17 +134,9 @@
           {
             "amount": "5",
             "unit": "bottle"
-          },
-          {
-            "amount": "8",
-            "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "8-ounce",
         "category": "Beverages"
       }
     },
@@ -198,17 +190,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "28",
-            "unit": "oz"
-          },
-          {
-            "amount": "794",
-            "unit": "g"
           }
         ],
-        "note": "roughly chopped",
+        "note": "28-ounce, roughly chopped",
         "category": "Canned Goods"
       }
     },
@@ -220,17 +204,9 @@
           {
             "amount": "6",
             "unit": "can"
-          },
-          {
-            "amount": "6.5",
-            "unit": "oz"
-          },
-          {
-            "amount": "184",
-            "unit": "g"
           }
         ],
-        "note": "drained",
+        "note": "6.5-ounce, drained",
         "category": "Meat & Seafood"
       }
     }

@@ -14,7 +14,7 @@
     {
       "raw": "1 cup (8 ounces or 225 grams) unsalted butter, cut into a few large pieces",
       "expected": {
-        "item": "unsalted butter, cut into a few large pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
@@ -29,7 +29,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into a few large pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -54,9 +54,9 @@
     {
       "raw": "Sea salt, preferably flaky",
       "expected": {
-        "item": "Sea salt, preferably flaky",
+        "item": "Sea salt",
         "measurements": [],
-        "note": null,
+        "note": "preferably flaky",
         "category": "Spices & Seasonings"
       }
     },

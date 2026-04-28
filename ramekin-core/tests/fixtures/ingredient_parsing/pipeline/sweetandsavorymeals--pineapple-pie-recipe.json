@@ -5,14 +5,14 @@
     {
       "raw": "9 inch pie crust (homemade or store-bought)",
       "expected": {
-        "item": "inch pie crust (homemade or store-bought)",
+        "item": "inch pie crust",
         "measurements": [
           {
             "amount": "9",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "homemade or store-bought",
         "category": "Frozen"
       }
     },

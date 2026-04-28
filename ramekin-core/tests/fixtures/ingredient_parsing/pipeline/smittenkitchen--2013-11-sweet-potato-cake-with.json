@@ -33,7 +33,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 to 3 medium or 2 large",
         "category": "Produce"
       }
     },
@@ -289,14 +289,18 @@
     {
       "raw": "1/4 teaspoon cream of tartar (will help stabilize egg whites, don’t worry if you don’t have it)",
       "expected": {
-        "item": "cream of tartar (will help stabilize egg whites, don’t worry if you don’t have it)",
+        "item": "cream of tartar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.8",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "will help stabilize egg whites, don’t worry if you don’t have it",
         "category": "Baking"
       }
     },

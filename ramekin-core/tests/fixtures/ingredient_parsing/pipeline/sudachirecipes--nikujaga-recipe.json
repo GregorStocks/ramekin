@@ -143,61 +143,57 @@
     {
       "raw": "100 g konjac noodles (shirataki) (optional)",
       "expected": {
-        "item": "konjac noodles (shirataki) (optional)",
+        "item": "konjac noodles",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "shirataki, optional",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "40 ml Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "40",
             "unit": "ml"
-          },
-          {
-            "amount": "43",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "8-10  snow peas (to garnish)",
       "expected": {
-        "item": "snow peas (to garnish)",
+        "item": "snow peas",
         "measurements": [
           {
             "amount": "8-10",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "to garnish",
         "category": "Produce"
       }
     },
     {
       "raw": "2 tsp Japanese soy sauce (koikuchi shoyu) (added seasoning at the end)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu) (added seasoning at the end)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "koikuchi shoyu, added seasoning at the end",
+        "category": "Condiments & Sauces"
       }
     }
   ]

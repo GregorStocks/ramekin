@@ -5,14 +5,14 @@
     {
       "raw": "4 boneless, skinless chicken breasts, halved horizontally (see Tip) and pounded 1/8-inch thick, or use 4 chicken cutlets (don’t split or pound)",
       "expected": {
-        "item": "boneless, skinless chicken breasts, halved horizontally (see Tip) and pounded 1/8-inch thick, or use 4 chicken cutlets (don’t split or pound)",
+        "item": "boneless, skinless chicken breasts, halved horizontally and pounded 1/8-inch thick",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "see Tip, don’t split or pound; or use 4 chicken cutlets",
         "category": "Meat & Seafood"
       }
     },
@@ -49,7 +49,7 @@
             "unit": "cup"
           }
         ],
-        "note": "or 1 tablespoon dried chives",
+        "note": "or 1 tablespoon dried chives, plus more for serving",
         "category": "Produce"
       }
     },
@@ -97,14 +97,14 @@
     {
       "raw": "1 lemon, cut into wedges",
       "expected": {
-        "item": "lemon, cut into wedges",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into wedges",
         "category": "Produce"
       }
     }

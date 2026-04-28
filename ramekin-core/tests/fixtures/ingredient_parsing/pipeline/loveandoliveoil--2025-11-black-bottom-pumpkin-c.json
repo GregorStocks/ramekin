@@ -5,14 +5,14 @@
     {
       "raw": "1 1/2 cups graham cracker crumbs (from about 26 squares)",
       "expected": {
-        "item": "graham cracker crumbs (from about 26 squares)",
+        "item": "graham cracker crumbs",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from about 26 squares",
         "category": "Snacks"
       }
     },
@@ -65,14 +65,18 @@
     {
       "raw": "6 tablespoons unsalted butter (cut into small cubes)",
       "expected": {
-        "item": "unsalted butter (cut into small cubes)",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small cubes",
         "category": "Dairy & Eggs"
       }
     },
@@ -100,15 +104,11 @@
             "unit": "oz"
           },
           {
-            "amount": "50",
-            "unit": null
-          },
-          {
             "amount": "113",
             "unit": "g"
           }
         ],
-        "note": "finely chopped",
+        "note": "50-70%, finely chopped",
         "category": "Other"
       }
     },
@@ -322,7 +322,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "optional (increase vanilla to 1 tablespoon if omitting",
+        "note": "optional (increase vanilla to 1 tablespoon if omitting)",
         "category": "Beverages"
       }
     },
@@ -417,7 +417,7 @@
       "expected": {
         "item": "chocolate curls or grated chocolate",
         "measurements": [],
-        "note": "for garnish (optional",
+        "note": "for garnish (optional)",
         "category": "Other"
       }
     }

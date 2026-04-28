@@ -5,14 +5,14 @@
     {
       "raw": "1/2  medium head of cauliflower (riced (approx 4 cups))",
       "expected": {
-        "item": "head of cauliflower (riced (approx 4 cups)",
+        "item": "head of cauliflower",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "riced (approx 4 cups)",
         "category": "Produce"
       }
     },
@@ -72,7 +72,7 @@
             "unit": "cup"
           }
         ],
-        "note": "roughly chopped (approx 2 large bunches",
+        "note": "roughly chopped (approx 2 large bunches)",
         "category": "Produce"
       }
     },
@@ -93,15 +93,15 @@
     {
       "raw": "2  lemons (zested and juiced)",
       "expected": {
-        "item": "lemons (zested and juiced)",
+        "item": "lemons",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "zested and juiced",
+        "category": "Produce"
       }
     },
     {

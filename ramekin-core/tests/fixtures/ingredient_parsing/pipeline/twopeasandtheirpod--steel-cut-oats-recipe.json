@@ -51,15 +51,19 @@
     {
       "raw": "1/2 cup milk (almond milk, or soy milk)",
       "expected": {
-        "item": "milk (almond milk, or soy milk)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "almond milk, or soy milk",
+        "category": "Dairy & Eggs"
       }
     },
     {

@@ -292,18 +292,14 @@
     {
       "raw": "1 (2- to 2 1/2–pound) skinless center-cut salmon fillet, bones removed (see notes)",
       "expected": {
-        "item": "skinless center-cut salmon fillet, bones removed (see notes)",
+        "item": "skinless center-cut salmon fillet, bones removed",
         "measurements": [
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "2",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "2- to 2 1/2-pound, see notes",
         "category": "Meat & Seafood"
       }
     },
@@ -315,13 +311,9 @@
           {
             "amount": "2",
             "unit": null
-          },
-          {
-            "amount": "9",
-            "unit": null
           }
         ],
-        "note": "thawed",
+        "note": "9 1/2- by 9-inch, thawed",
         "category": "Frozen"
       }
     },

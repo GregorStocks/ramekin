@@ -168,14 +168,14 @@
     {
       "raw": "4 cups fresh or day-old bread, cubed (sourdough, ciabatta, or a white country bread work well here)",
       "expected": {
-        "item": "fresh or day-old bread, cubed (sourdough, ciabatta, or a white country bread work well here)",
+        "item": "fresh or day-old bread",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "sourdough, ciabatta, or a white country bread work well here, cubed",
         "category": "Bakery & Bread"
       }
     },

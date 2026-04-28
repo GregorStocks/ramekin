@@ -5,14 +5,14 @@
     {
       "raw": "2 tablespoons old-fashioned rolled oats (gluten-free, if needed)",
       "expected": {
-        "item": "old-fashioned rolled oats (gluten-free, if needed)",
+        "item": "old-fashioned rolled oats",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "gluten-free, if needed",
         "category": "Bakery & Bread"
       }
     },
@@ -61,14 +61,14 @@
     {
       "raw": "1 teaspoon honey, maple syrup, or sweetener of your choice, to taste (optional)",
       "expected": {
-        "item": "honey, maple syrup, or sweetener of your choice, to taste",
+        "item": "honey, maple syrup, or sweetener of your choice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "optional",
+        "note": "optional, to taste",
         "category": "Baking"
       }
     },

@@ -105,14 +105,18 @@
     {
       "raw": "½ cup chicken broth (low sodium or no sodium added)",
       "expected": {
-        "item": "chicken broth (low sodium or no sodium added)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "124",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium or no sodium added",
         "category": "Canned Goods"
       }
     },
@@ -137,14 +141,18 @@
     {
       "raw": "1 tablespoon honey  (or brown sugar)",
       "expected": {
-        "item": "honey  (or brown sugar)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or brown sugar",
         "category": "Baking"
       }
     },

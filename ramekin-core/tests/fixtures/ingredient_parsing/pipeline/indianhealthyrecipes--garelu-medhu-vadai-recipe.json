@@ -5,14 +5,14 @@
     {
       "raw": "1 cup urad dal ((or skinned black gram))",
       "expected": {
-        "item": "urad dal (or skinned black gram)",
+        "item": "urad dal",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or skinned black gram",
         "category": "Other"
       }
     },
@@ -46,9 +46,9 @@
     {
       "raw": "Oil ( for deep frying)",
       "expected": {
-        "item": "Oil ( for deep frying)",
+        "item": "Oil",
         "measurements": [],
-        "note": null,
+        "note": "for deep frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -119,14 +119,14 @@
     {
       "raw": "½ teaspoon cumin seeds ((jeera))",
       "expected": {
-        "item": "cumin seeds (jeera)",
+        "item": "cumin seeds",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "jeera",
         "category": "Spices & Seasonings"
       }
     },

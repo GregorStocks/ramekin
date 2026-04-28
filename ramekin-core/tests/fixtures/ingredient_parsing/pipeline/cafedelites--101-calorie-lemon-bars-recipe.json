@@ -33,42 +33,54 @@
     {
       "raw": "1/4 cup powdered sugar (or powdered sweetener)",
       "expected": {
-        "item": "powdered sugar (or powdered sweetener)",
+        "item": "powdered sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or powdered sweetener",
         "category": "Baking"
       }
     },
     {
       "raw": "1 cup all-purpose flour (plain flour)",
       "expected": {
-        "item": "all-purpose flour (plain flour)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "125",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plain flour",
         "category": "Baking"
       }
     },
     {
       "raw": "2 tablespoons cornstarch (corn flour)",
       "expected": {
-        "item": "cornstarch (corn flour)",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "corn flour",
         "category": "Baking"
       }
     },
@@ -103,14 +115,14 @@
     {
       "raw": "1 cup superfine sugar (or caster sugar, or powdered sweetener)",
       "expected": {
-        "item": "superfine sugar (or caster sugar, or powdered sweetener)",
+        "item": "superfine sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or caster sugar, or powdered sweetener",
         "category": "Baking"
       }
     },
@@ -135,28 +147,32 @@
     {
       "raw": "2 tablespoons plain flour (all-purpose flour)",
       "expected": {
-        "item": "plain flour (all-purpose flour)",
+        "item": "plain flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "all-purpose flour",
         "category": "Baking"
       }
     },
     {
       "raw": "2-3 tablespoons powdered sugar (or powdered sweetener)",
       "expected": {
-        "item": "powdered sugar (or powdered sweetener)",
+        "item": "powdered sugar",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or powdered sweetener",
         "category": "Baking"
       }
     }

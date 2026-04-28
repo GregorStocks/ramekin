@@ -5,14 +5,18 @@
     {
       "raw": "3/4 cup rolled oats (quick-cooking or old-fashioned will work; instant might get a little dusty)",
       "expected": {
-        "item": "rolled oats (quick-cooking or old-fashioned will work; instant might get a little dusty)",
+        "item": "rolled oats",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "quick-cooking or old-fashioned will work; instant might get a little dusty",
         "category": "Bakery & Bread"
       }
     },
@@ -47,14 +51,14 @@
     {
       "raw": "1/4 cup dark or light brown sugar (for low-to-moderate sweetness)",
       "expected": {
-        "item": "dark or light brown sugar (for low-to-moderate sweetness)",
+        "item": "dark or light brown sugar",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "for low-to-moderate sweetness",
         "category": "Baking"
       }
     },
@@ -102,14 +106,18 @@
     {
       "raw": "2 teaspoons water (adjusted from 1 T)",
       "expected": {
-        "item": "water (adjusted from 1 T)",
+        "item": "water",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "9.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "adjusted from 1 T",
         "category": "Other"
       }
     },

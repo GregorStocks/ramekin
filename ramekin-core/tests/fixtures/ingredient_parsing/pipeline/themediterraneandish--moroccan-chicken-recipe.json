@@ -83,7 +83,7 @@
     {
       "raw": "3 1/2 lb/1587.57 g whole chicken cut into bone-in pieces (or 7&nbsp; to 8 pieces of chicken with bone in. Leave skin on or remove it, up to you.)",
       "expected": {
-        "item": "whole chicken cut into bone-in pieces (or 7  to 8 pieces of chicken with bone in. Leave skin on or remove it, up to you.)",
+        "item": "whole chicken cut into bone-in pieces",
         "measurements": [
           {
             "amount": "3.5",
@@ -94,7 +94,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 7  to 8 pieces of chicken with bone in. Leave skin on or remove it, up to you.",
         "category": "Meat & Seafood"
       }
     },
@@ -165,14 +165,14 @@
     {
       "raw": "1 lemon, thinly sliced (or 1 preserved lemon, cut up into small pieces)",
       "expected": {
-        "item": "lemon, thinly sliced",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "or 1 preserved lemon, cut up into small pieces",
+        "note": "or 1 preserved lemon, cut up into small pieces, thinly sliced",
         "category": "Produce"
       }
     },
@@ -197,7 +197,7 @@
     {
       "raw": "1/4 cup/37 g raisins (any kind)",
       "expected": {
-        "item": "raisins (any kind)",
+        "item": "raisins",
         "measurements": [
           {
             "amount": "0.25",
@@ -208,7 +208,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "any kind",
         "category": "Nuts & Dried Fruit"
       }
     },

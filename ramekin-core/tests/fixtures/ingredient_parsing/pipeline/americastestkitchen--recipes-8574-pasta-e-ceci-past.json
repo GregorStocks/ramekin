@@ -5,7 +5,7 @@
     {
       "raw": "2 ounces pancetta , cut into 1/2-inch pieces",
       "expected": {
-        "item": "pancetta, cut into 1/2-inch pieces",
+        "item": "pancetta",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -37,14 +37,14 @@
     {
       "raw": "1 small celery rib , cut into 1/2-inch pieces",
       "expected": {
-        "item": "celery rib, cut into 1/2-inch pieces",
+        "item": "celery rib",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Produce"
       }
     },
@@ -84,17 +84,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "14",
-            "unit": "oz"
-          },
-          {
-            "amount": "397",
-            "unit": "g"
           }
         ],
-        "note": "drained",
+        "note": "14-ounce, drained",
         "category": "Produce"
       }
     },
@@ -165,22 +157,14 @@
     {
       "raw": "2 (15-ounce) cans chickpeas  (do not drain)",
       "expected": {
-        "item": "chickpeas  (do not drain)",
+        "item": "chickpeas",
         "measurements": [
           {
             "amount": "2",
             "unit": "can"
-          },
-          {
-            "amount": "15",
-            "unit": "oz"
-          },
-          {
-            "amount": "425",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "15-ounce, do not drain",
         "category": "Canned Goods"
       }
     },

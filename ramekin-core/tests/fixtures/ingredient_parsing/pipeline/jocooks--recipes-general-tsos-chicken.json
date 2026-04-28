@@ -5,7 +5,7 @@
     {
       "raw": "1 pound chicken thighs (boneless, skinless and cut into bite-size pieces)",
       "expected": {
-        "item": "chicken thighs (boneless, skinless and cut into bite-size pieces)",
+        "item": "chicken thighs",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "boneless, skinless and cut into bite-size pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -55,14 +55,18 @@
     {
       "raw": "1 tablespoon soy sauce (low sodium)",
       "expected": {
-        "item": "soy sauce (low sodium)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Condiments & Sauces"
       }
     },
@@ -87,14 +91,18 @@
     {
       "raw": "½ cup vegetable oil (for frying)",
       "expected": {
-        "item": "vegetable oil (for frying)",
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "109",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -142,14 +150,18 @@
     {
       "raw": "¼ cup soy sauce (low sodium)",
       "expected": {
-        "item": "soy sauce (low sodium)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "64",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Condiments & Sauces"
       }
     },

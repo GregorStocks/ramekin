@@ -125,14 +125,18 @@
     {
       "raw": "3 tablespoons soy sauce (use low-sodium for a less salty sauce)",
       "expected": {
-        "item": "soy sauce (use low-sodium for a less salty sauce)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "48",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "use low-sodium for a less salty sauce",
         "category": "Condiments & Sauces"
       }
     },

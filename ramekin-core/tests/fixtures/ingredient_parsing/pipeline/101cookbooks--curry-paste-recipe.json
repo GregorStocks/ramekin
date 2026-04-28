@@ -33,14 +33,14 @@
     {
       "raw": "10  large dried chiles (I used 5 California + 5 new Mexico chiles)",
       "expected": {
-        "item": "dried chiles (I used 5 California + 5 new Mexico chiles)",
+        "item": "dried chiles",
         "measurements": [
           {
             "amount": "10",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "I used 5 California + 5 new Mexico chiles",
         "category": "Other"
       }
     },
@@ -93,28 +93,28 @@
     {
       "raw": "small splash of (thin) soy sauce, to taste",
       "expected": {
-        "item": "splash of (thin) soy sauce",
+        "item": "splash of soy sauce",
         "measurements": [
           {
             "amount": null,
             "unit": "small"
           }
         ],
-        "note": "to taste",
+        "note": "thin, to taste",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1/3 cup sunflower oil (or prefered veg. oil)",
       "expected": {
-        "item": "sunflower oil (or prefered veg. oil)",
+        "item": "sunflower oil",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or prefered veg. oil",
         "category": "Oils & Vinegars"
       }
     }

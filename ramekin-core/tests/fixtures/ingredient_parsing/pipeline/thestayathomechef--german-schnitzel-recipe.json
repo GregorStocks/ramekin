@@ -115,14 +115,18 @@
     {
       "raw": "2 cups vegetable oil (for frying)",
       "expected": {
-        "item": "vegetable oil (for frying)",
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "436",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },

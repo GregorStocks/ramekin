@@ -41,18 +41,14 @@
     {
       "raw": "4 tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "4",
             "unit": "tsp"
-          },
-          {
-            "amount": "21",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -215,37 +211,37 @@
     {
       "raw": "4 pieces pork chashu (or easy oven baked alternative)",
       "expected": {
-        "item": "pork chashu (or easy oven baked alternative)",
+        "item": "pork chashu",
         "measurements": [
           {
             "amount": "4",
             "unit": "piece"
           }
         ],
-        "note": null,
+        "note": "or easy oven baked alternative",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "2  ramen egg (or soft boiled egg)",
       "expected": {
-        "item": "ramen egg (or soft boiled egg)",
+        "item": "ramen egg",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or soft boiled egg",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "seasoned bamboo shoots (menma)",
       "expected": {
-        "item": "seasoned bamboo shoots (menma)",
+        "item": "seasoned bamboo shoots",
         "measurements": [],
-        "note": null,
+        "note": "menma",
         "category": "Canned Goods"
       }
     },
@@ -261,27 +257,27 @@
     {
       "raw": "roasted seaweed for sushi (nori) (to garnish)",
       "expected": {
-        "item": "roasted seaweed for sushi (nori) (to garnish)",
+        "item": "roasted seaweed for sushi",
         "measurements": [],
-        "note": null,
+        "note": "nori, to garnish",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "chili oil (rayu) (to garnish)",
       "expected": {
-        "item": "chili oil (rayu) (to garnish)",
+        "item": "chili oil",
         "measurements": [],
-        "note": null,
+        "note": "rayu, to garnish",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "rice vinegar (to garnish)",
       "expected": {
-        "item": "rice vinegar (to garnish)",
+        "item": "rice vinegar",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "category": "Oils & Vinegars"
       }
     }

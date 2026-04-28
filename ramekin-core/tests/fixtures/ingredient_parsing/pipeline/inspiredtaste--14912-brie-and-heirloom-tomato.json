@@ -19,7 +19,7 @@
     {
       "raw": "5 ounces Brie or Camembert cheese, cut into slices",
       "expected": {
-        "item": "Brie or Camembert cheese, cut into slices",
+        "item": "Brie or Camembert cheese",
         "measurements": [
           {
             "amount": "5",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into slices",
         "category": "Cheese"
       }
     },

@@ -23,7 +23,7 @@
     {
       "raw": "1  orange (juiced)",
       "expected": {
-        "item": "orange (juiced)",
+        "item": "orange juiced",
         "measurements": [
           {
             "amount": "1",
@@ -37,15 +37,15 @@
     {
       "raw": "3  limes (juiced)",
       "expected": {
-        "item": "limes (juiced)",
+        "item": "limes",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {

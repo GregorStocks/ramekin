@@ -109,14 +109,14 @@
     {
       "raw": "6 medium leeks (white portions only), halved lengthwise, cleaned and cut into 1-inch lengths",
       "expected": {
-        "item": "leeks (white portions only), halved lengthwise",
+        "item": "leeks, halved lengthwise",
         "measurements": [
           {
             "amount": "6",
             "unit": "medium"
           }
         ],
-        "note": "cleaned and cut into 1-inch lengths",
+        "note": "white portions only, cleaned and cut into 1-inch lengths",
         "category": "Produce"
       }
     },

@@ -175,14 +175,14 @@
     {
       "raw": "2 teaspoons lemongrass paste (or 2 stalks of lemongrass)",
       "expected": {
-        "item": "lemongrass paste (or 2 stalks of lemongrass)",
+        "item": "lemongrass paste",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or 2 stalks of lemongrass",
         "category": "Produce"
       }
     },

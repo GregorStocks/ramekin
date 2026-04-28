@@ -5,28 +5,28 @@
     {
       "raw": "1 flat uni ((sea urchin))",
       "expected": {
-        "item": "flat uni (sea urchin)",
+        "item": "flat uni",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sea urchin",
         "category": "Other"
       }
     },
     {
       "raw": "2  tomatoes (ripe)",
       "expected": {
-        "item": "tomatoes (ripe)",
+        "item": "tomatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "ripe",
         "category": "Produce"
       }
     },
@@ -38,13 +38,9 @@
           {
             "amount": "0.25",
             "unit": "small"
-          },
-          {
-            "amount": "1",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into brunoise,1/8\" cubes",
         "category": "Produce"
       }
     },
@@ -56,13 +52,9 @@
           {
             "amount": "0.25",
             "unit": "small"
-          },
-          {
-            "amount": "1",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into brunoise, 1/8\" cubes",
         "category": "Produce"
       }
     },

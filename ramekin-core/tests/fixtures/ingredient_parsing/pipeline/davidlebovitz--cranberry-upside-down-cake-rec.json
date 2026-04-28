@@ -14,6 +14,10 @@
           {
             "amount": "55",
             "unit": "g"
+          },
+          {
+            "amount": "2",
+            "unit": "oz"
           }
         ],
         "note": "cubed",
@@ -50,6 +54,10 @@
           {
             "amount": "280",
             "unit": "g"
+          },
+          {
+            "amount": "10",
+            "unit": "oz"
           }
         ],
         "note": null,
@@ -95,14 +103,18 @@
     {
       "raw": "1 1/2 teaspoons baking powder (preferably aluminum-free)",
       "expected": {
-        "item": "baking powder (preferably aluminum-free)",
+        "item": "baking powder",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "6.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably aluminum-free",
         "category": "Baking"
       }
     },
@@ -136,6 +148,10 @@
           {
             "amount": "115",
             "unit": "g"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
           }
         ],
         "note": "cubed, at room temperature",

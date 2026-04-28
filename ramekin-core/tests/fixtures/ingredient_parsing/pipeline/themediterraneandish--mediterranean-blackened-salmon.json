@@ -19,14 +19,14 @@
     {
       "raw": "1 large pomegranate, arils (seeds) of",
       "expected": {
-        "item": "pomegranate, arils (seeds) of",
+        "item": "pomegranate, arils of",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "seeds",
         "category": "Produce"
       }
     },
@@ -217,14 +217,14 @@
     {
       "raw": "1 1/2lb/680.389 g center-cut salmon fillet (skin on, if possible)",
       "expected": {
-        "item": "1/2lb/680.389 g center-cut salmon fillet (skin on, if possible)",
+        "item": "1/2lb/680.389 g center-cut salmon fillet",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "skin on, if possible",
         "category": "Meat & Seafood"
       }
     },

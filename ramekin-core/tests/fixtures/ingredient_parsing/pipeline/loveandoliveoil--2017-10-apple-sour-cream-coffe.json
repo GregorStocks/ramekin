@@ -41,14 +41,14 @@
     {
       "raw": "1/2 cup finely chopped pecans (almonds, or walnuts)",
       "expected": {
-        "item": "finely chopped pecans (almonds, or walnuts)",
+        "item": "finely chopped pecans",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "almonds, or walnuts",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -220,7 +220,7 @@
             "unit": "medium"
           }
         ],
-        "note": "peeled, cored, and finely diced (about 1 1/2 cups diced",
+        "note": "peeled, cored, and finely diced (about 1 1/2 cups diced)",
         "category": "Produce"
       }
     }

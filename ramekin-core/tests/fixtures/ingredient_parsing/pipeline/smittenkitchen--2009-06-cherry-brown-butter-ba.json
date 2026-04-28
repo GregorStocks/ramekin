@@ -195,7 +195,7 @@
     {
       "raw": "1 pound (455 grams) sweet cherries, which will yield 12 ounces of pitted cherries, which yielded some leftovers, perfect for snacking (alternately, you can use 12 ounces of the berry of your choice)",
       "expected": {
-        "item": "sweet cherries, which will yield 12 ounces of pitted cherries, which yielded some leftovers, perfect for snacking (alternately, you can use 12 ounces of the berry of your choice)",
+        "item": "sweet cherries, which will yield 12 ounces of pitted cherries, which yielded some leftovers, perfect for snacking",
         "measurements": [
           {
             "amount": "1",
@@ -206,7 +206,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "alternately, you can use 12 ounces of the berry of your choice",
         "category": "Produce"
       }
     }

@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "halved (you may use smaller vine-ripe or Roma tomatoes)",
+        "note": "you may use smaller vine-ripe or Roma tomatoes, halved",
         "category": "Produce"
       }
     },
@@ -87,7 +87,7 @@
     {
       "raw": "1 lb linguine pasta (you can also use spaghetti or fettuccine)",
       "expected": {
-        "item": "linguine pasta (you can also use spaghetti or fettuccine)",
+        "item": "linguine pasta",
         "measurements": [
           {
             "amount": "1",
@@ -98,7 +98,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "you can also use spaghetti or fettuccine",
         "category": "Pasta & Rice"
       }
     },
@@ -165,21 +165,21 @@
     {
       "raw": "1/2 cup packed basil leaves, more for serving (optional)",
       "expected": {
-        "item": "packed basil leaves, more for serving",
+        "item": "packed basil leaves",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "optional",
+        "note": "optional, more for serving",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "3 ounces Prosciutto (optional), sliced into thin ribbons",
       "expected": {
-        "item": "Prosciutto, sliced into thin ribbons",
+        "item": "Prosciutto",
         "measurements": [
           {
             "amount": "3",
@@ -190,7 +190,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, sliced into thin ribbons",
         "category": "Meat & Seafood"
       }
     },

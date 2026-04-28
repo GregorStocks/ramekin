@@ -5,14 +5,14 @@
     {
       "raw": "4 large egg whites (save the yolks)",
       "expected": {
-        "item": "egg whites (save the yolks)",
+        "item": "egg whites",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "save the yolks",
         "category": "Dairy & Eggs"
       }
     },
@@ -149,21 +149,21 @@
     {
       "raw": "4 large egg yolks (I told you to save the yolks!)",
       "expected": {
-        "item": "egg yolks (I told you to save the yolks!)",
+        "item": "egg yolks",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "I told you to save the yolks!",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "2 tablespoons (30 ml) espresso, cooled",
       "expected": {
-        "item": "espresso, cooled",
+        "item": "espresso",
         "measurements": [
           {
             "amount": "2",
@@ -174,7 +174,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "cooled",
         "category": "Beverages"
       }
     },
@@ -226,13 +226,9 @@
           {
             "amount": "225",
             "unit": "g"
-          },
-          {
-            "amount": "1.33",
-            "unit": "cup"
           }
         ],
-        "note": "finely chopped",
+        "note": "225 grams or 1 1/3 cups chocolate chips, finely chopped",
         "category": "Other"
       }
     },

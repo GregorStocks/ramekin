@@ -5,14 +5,14 @@
     {
       "raw": "2 cups cooked black beans ((See Note 1))",
       "expected": {
-        "item": "cooked black beans (See Note 1)",
+        "item": "cooked black beans",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "See Note 1",
         "category": "Canned Goods"
       }
     },
@@ -125,14 +125,18 @@
     {
       "raw": "1/2 cup vegetable oil (for frying)",
       "expected": {
-        "item": "vegetable oil (for frying)",
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "109",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -150,7 +154,7 @@
             "unit": "g"
           }
         ],
-        "note": "Oaxaca cheese or Monterey Jack cheese (crumbled or shredded",
+        "note": "Oaxaca cheese or Monterey Jack cheese (crumbled or shredded)",
         "category": "Cheese"
       }
     },

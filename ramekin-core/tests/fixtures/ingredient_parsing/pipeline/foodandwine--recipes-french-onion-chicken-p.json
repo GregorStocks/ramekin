@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 1/2 pounds total",
         "category": "Meat & Seafood"
       }
     },
@@ -80,7 +80,7 @@
             "unit": null
           }
         ],
-        "note": "thawed (from 1 [17.3-ounce] package)",
+        "note": "from 1 [17.3-ounce] package, thawed",
         "category": "Frozen"
       }
     },
@@ -142,7 +142,7 @@
             "unit": "g"
           }
         ],
-        "note": "halved lengthwise and sliced 1/4-inch-thick",
+        "note": "about 1 pound, 4 ounces total, halved lengthwise and sliced 1/4-inch-thick",
         "category": "Produce"
       }
     },
@@ -193,14 +193,14 @@
     {
       "raw": "1 tablespoon minced garlic (from 3 garlic cloves)",
       "expected": {
-        "item": "minced garlic (from 3 garlic cloves)",
+        "item": "minced garlic",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from 3 garlic cloves",
         "category": "Produce"
       }
     },

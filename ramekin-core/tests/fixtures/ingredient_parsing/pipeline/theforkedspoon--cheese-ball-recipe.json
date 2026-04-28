@@ -10,17 +10,9 @@
           {
             "amount": "2",
             "unit": null
-          },
-          {
-            "amount": "8",
-            "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
-        "note": "softened and at room temperature",
+        "note": "8-ounce, softened and at room temperature",
         "category": "Cheese"
       }
     },
@@ -123,14 +115,14 @@
     {
       "raw": "2  green onions ((green parts only), chopped)",
       "expected": {
-        "item": "green onions (green parts only)",
+        "item": "green onions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "chopped)",
+        "note": "green parts only, chopped",
         "category": "Produce"
       }
     }

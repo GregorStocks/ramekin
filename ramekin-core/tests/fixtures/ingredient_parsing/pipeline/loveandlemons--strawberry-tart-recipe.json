@@ -10,17 +10,9 @@
           {
             "amount": "2",
             "unit": "can"
-          },
-          {
-            "amount": "13.5",
-            "unit": "oz"
-          },
-          {
-            "amount": "383",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "13.5-ounce",
         "category": "Canned Goods"
       }
     },
@@ -179,14 +171,14 @@
     {
       "raw": "2 cups coconut whipped cream (recipe above)",
       "expected": {
-        "item": "coconut whipped cream (recipe above)",
+        "item": "coconut whipped cream",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "recipe above",
         "category": "Dairy & Eggs"
       }
     },

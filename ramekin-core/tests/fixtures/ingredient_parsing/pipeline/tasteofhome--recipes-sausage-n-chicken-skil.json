@@ -69,7 +69,7 @@
     {
       "raw": "1/4 pound smoked turkey kielbasa, cut into 1/4-inch slices",
       "expected": {
-        "item": "smoked turkey kielbasa, cut into 1/4-inch slices",
+        "item": "smoked turkey kielbasa",
         "measurements": [
           {
             "amount": "0.25",
@@ -80,7 +80,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch slices",
         "category": "Meat & Seafood"
       }
     },

@@ -23,7 +23,7 @@
     {
       "raw": "1  large yellow onions ((about 1 1/2 cups) finely chopped)",
       "expected": {
-        "item": "yellow onions finely chopped)",
+        "item": "yellow onions finely chopped",
         "measurements": [
           {
             "amount": "1",
@@ -34,21 +34,21 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 1 1/2 cups",
         "category": "Produce"
       }
     },
     {
       "raw": "6  medium garlic cloves (pressed)",
       "expected": {
-        "item": "garlic cloves (pressed)",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "6",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "pressed",
         "category": "Produce"
       }
     },
@@ -69,28 +69,28 @@
     {
       "raw": "2  15 oz cans diced tomatoes (Italian style)",
       "expected": {
-        "item": "diced tomatoes (Italian style)",
+        "item": "diced tomatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "15 oz cans"
           }
         ],
-        "note": null,
+        "note": "Italian style",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1 cup Red Wine (Soft Red, or Cabernet Sauvignon, most red wines will do)",
       "expected": {
-        "item": "Red Wine (Soft Red, or Cabernet Sauvignon, most red wines will do)",
+        "item": "Red Wine",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "Soft Red, or Cabernet Sauvignon, most red wines will do",
         "category": "Beverages"
       }
     },
@@ -111,14 +111,18 @@
     {
       "raw": "1 Tbsp Kosher Salt (or 3/4 Tbsp Sea Salt (started with 1/2 Tbsp sea salt))",
       "expected": {
-        "item": "Kosher Salt (or 3/4 Tbsp Sea Salt (started with 1/2 Tbsp sea salt)",
+        "item": "Kosher Salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "8.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or 3/4 Tbsp Sea Salt (started with 1/2 Tbsp sea salt)",
         "category": "Spices & Seasonings"
       }
     },

@@ -109,14 +109,18 @@
     {
       "raw": "½ cup whole milk (heated to 110 degrees F)",
       "expected": {
-        "item": "whole milk (heated to 110 degrees F)",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "heated to 110 degrees F",
         "category": "Dairy & Eggs"
       }
     },

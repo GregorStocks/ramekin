@@ -133,7 +133,7 @@
     {
       "raw": "1 stick (4 ounces or 115 grams) cold unsalted butter, cut into chunks",
       "expected": {
-        "item": "cold unsalted butter, cut into chunks",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "1",
@@ -148,7 +148,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Dairy & Eggs"
       }
     },
@@ -182,14 +182,14 @@
     {
       "raw": "4 1/2 cups fresh or frozen cranberries (from 1 1/2 12-ounce bags)",
       "expected": {
-        "item": "fresh or frozen cranberries (from 1 1/2 12-ounce bags)",
+        "item": "fresh or frozen cranberries",
         "measurements": [
           {
             "amount": "4.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 1 1/2 12-ounce bags",
         "category": "Produce"
       }
     },
@@ -214,9 +214,9 @@
     {
       "raw": "A few gratings of orange zest (yes, clementine zest works great here too)",
       "expected": {
-        "item": "A few gratings of orange zest (yes, clementine zest works great here too)",
+        "item": "A few gratings of orange zest",
         "measurements": [],
-        "note": null,
+        "note": "yes, clementine zest works great here too",
         "category": "Produce"
       }
     },

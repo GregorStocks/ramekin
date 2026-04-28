@@ -74,28 +74,32 @@
     {
       "raw": "3 Tbsp. chili sauce (such as sriracha)",
       "expected": {
-        "item": "chili sauce (such as sriracha)",
+        "item": "chili sauce",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "such as sriracha",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "2 Tbsp. soy sauce, preferably low-sodium",
       "expected": {
-        "item": "soy sauce, preferably low-sodium",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably low-sodium",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,9 +115,9 @@
     {
       "raw": "avocado, and sliced radishes (for serving)",
       "expected": {
-        "item": "avocado, and sliced radishes",
+        "item": "avocado",
         "measurements": [],
-        "note": "for serving",
+        "note": "for serving, and sliced radishes",
         "category": "Produce"
       }
     }

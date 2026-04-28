@@ -37,15 +37,15 @@
     {
       "raw": "½  lemon (zested and juiced)",
       "expected": {
-        "item": "lemon (zested and juiced)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "zested and juiced",
+        "category": "Produce"
       }
     },
     {
@@ -88,17 +88,9 @@
           {
             "amount": "2",
             "unit": "can"
-          },
-          {
-            "amount": "12",
-            "unit": "oz"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
           }
         ],
-        "note": "drained",
+        "note": "12-ounce, drained",
         "category": "Meat & Seafood"
       }
     },
@@ -140,7 +132,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "minced (optional",
+        "note": "minced (optional)",
         "category": "Produce"
       }
     }

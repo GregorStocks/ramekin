@@ -83,28 +83,28 @@
     {
       "raw": "2 medium zucchini, cut into 1/2-inch pieces",
       "expected": {
-        "item": "zucchini, cut into 1/2-inch pieces",
+        "item": "zucchini",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "2 medium yellow squash, cut into 1/2-inch pieces",
       "expected": {
-        "item": "yellow squash, cut into 1/2-inch pieces",
+        "item": "yellow squash",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Produce"
       }
     },
@@ -116,17 +116,9 @@
           {
             "amount": "1",
             "unit": "jar"
-          },
-          {
-            "amount": "12",
-            "unit": "oz"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "12-ounce",
         "category": "Spices & Seasonings"
       }
     },
@@ -138,17 +130,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "28",
-            "unit": "oz"
-          },
-          {
-            "amount": "794",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "28-oz",
         "category": "Canned Goods"
       }
     },
@@ -174,17 +158,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "15",
-            "unit": "oz"
-          },
-          {
-            "amount": "425",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "15-oz",
         "category": "Dairy & Eggs"
       }
     },

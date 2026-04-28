@@ -90,14 +90,14 @@
             "unit": null
           }
         ],
-        "note": "seeded and diced (optional",
+        "note": "seeded and diced (optional)",
         "category": "Produce"
       }
     },
     {
       "raw": "1  orange (juiced)",
       "expected": {
-        "item": "orange (juiced)",
+        "item": "orange juiced",
         "measurements": [
           {
             "amount": "1",
@@ -111,43 +111,43 @@
     {
       "raw": "1  grapefruit (juiced)",
       "expected": {
-        "item": "grapefruit (juiced)",
+        "item": "grapefruit",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "juiced",
         "category": "Produce"
       }
     },
     {
       "raw": "2  lemons (juiced)",
       "expected": {
-        "item": "lemons (juiced)",
+        "item": "lemons",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {
       "raw": "10  limes (juiced)",
       "expected": {
-        "item": "limes (juiced)",
+        "item": "limes",
         "measurements": [
           {
             "amount": "10",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {

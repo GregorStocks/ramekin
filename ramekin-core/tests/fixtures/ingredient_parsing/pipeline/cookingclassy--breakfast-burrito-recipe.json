@@ -83,13 +83,9 @@
           {
             "amount": "4",
             "unit": null
-          },
-          {
-            "amount": "10",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "10 to 11-inch",
         "category": "Bakery & Bread"
       }
     },
@@ -110,14 +106,14 @@
     {
       "raw": "1 cup fresh pico de gallo, (homemade or store-bought)",
       "expected": {
-        "item": "fresh pico de gallo, (homemade or store-bought)",
+        "item": "fresh pico de gallo",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "homemade or store-bought",
         "category": "Other"
       }
     },
@@ -140,7 +136,7 @@
       "expected": {
         "item": "Mexican hot sauce",
         "measurements": [],
-        "note": "such as Cholula or Tapatio, for serving (optional",
+        "note": "such as Cholula or Tapatio, for serving (optional)",
         "category": "Condiments & Sauces"
       }
     }

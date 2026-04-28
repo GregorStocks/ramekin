@@ -163,14 +163,18 @@
     {
       "raw": "1/2 cup water (if necessary)",
       "expected": {
-        "item": "water (if necessary)",
+        "item": "water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "if necessary",
         "category": "Other"
       }
     },

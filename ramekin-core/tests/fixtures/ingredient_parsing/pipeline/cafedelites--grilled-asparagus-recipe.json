@@ -5,7 +5,7 @@
     {
       "raw": "1 pound asparagus (wood ends removed)",
       "expected": {
-        "item": "asparagus (wood ends removed)",
+        "item": "asparagus",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "wood ends removed",
         "category": "Produce"
       }
     },
@@ -59,14 +59,18 @@
     {
       "raw": "3/4 teaspoon salt (to season)",
       "expected": {
-        "item": "salt (to season)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "to season",
         "category": "Spices & Seasonings"
       }
     },

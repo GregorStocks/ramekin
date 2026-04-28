@@ -5,29 +5,29 @@
     {
       "raw": "1 cup Japanese Curry (leftover)",
       "expected": {
-        "item": "Japanese Curry (leftover)",
+        "item": "Japanese Curry",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "leftover",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 cup Dashi (fish broth)",
       "expected": {
-        "item": "Dashi (fish broth)",
+        "item": "Dashi",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "fish broth",
+        "category": "Other"
       }
     },
     {
@@ -47,14 +47,18 @@
     {
       "raw": "1 tbsp corn starch (or poato starch)",
       "expected": {
-        "item": "corn starch (or poato starch)",
+        "item": "corn starch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "8",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or poato starch",
         "category": "Baking"
       }
     },

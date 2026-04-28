@@ -10,17 +10,9 @@
           {
             "amount": "2",
             "unit": "can"
-          },
-          {
-            "amount": "20",
-            "unit": "oz"
-          },
-          {
-            "amount": "567",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "20-ounce",
         "category": "Produce"
       }
     },
@@ -41,7 +33,7 @@
     {
       "raw": "12 tablespoons (1 1/2 Sticks)  butter (cut into 24 thin slices)",
       "expected": {
-        "item": "butter (cut into 24 thin slices)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "12",
@@ -50,9 +42,13 @@
           {
             "amount": "1.5",
             "unit": "stick"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 24 thin slices",
         "category": "Dairy & Eggs"
       }
     }

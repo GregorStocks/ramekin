@@ -55,15 +55,19 @@
     {
       "raw": "3/4 cup half and half ((approximately), (some folks also use coconut milk, whole milk, sweetened condensed milk))",
       "expected": {
-        "item": "half and half, (some folks also use coconut milk, whole milk, sweetened condensed milk)",
+        "item": "half and half",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "182",
+            "unit": "g"
           }
         ],
-        "note": "approximately",
-        "category": "Canned Goods"
+        "note": "approximately, some folks also use coconut milk, whole milk, sweetened condensed milk",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -142,14 +146,14 @@
     {
       "raw": "1  green cardamom pod (, smashed)",
       "expected": {
-        "item": "green cardamom pod (, smashed)",
+        "item": "green cardamom pod",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "smashed",
         "category": "Spices & Seasonings"
       }
     },
@@ -170,15 +174,19 @@
     {
       "raw": "3/4 cup half and half  ((approximately), (some folks also use coconut milk, whole milk, sweetened condensed milk))",
       "expected": {
-        "item": "half and half, (some folks also use coconut milk, whole milk, sweetened condensed milk)",
+        "item": "half and half",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "182",
+            "unit": "g"
           }
         ],
-        "note": "approximately",
-        "category": "Canned Goods"
+        "note": "approximately, some folks also use coconut milk, whole milk, sweetened condensed milk",
+        "category": "Dairy & Eggs"
       }
     },
     {

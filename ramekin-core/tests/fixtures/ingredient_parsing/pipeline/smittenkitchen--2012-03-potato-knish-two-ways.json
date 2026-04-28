@@ -82,14 +82,18 @@
     {
       "raw": "1/2 cup vegetable oil (Joe also recommends schmaltz, or rendered chicken fat, if you’ve got some)",
       "expected": {
-        "item": "vegetable oil (Joe also recommends schmaltz, or rendered chicken fat, if you’ve got some)",
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "109",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Joe also recommends schmaltz, or rendered chicken fat, if you’ve got some",
         "category": "Oils & Vinegars"
       }
     },
@@ -114,15 +118,19 @@
     {
       "raw": "1/2 cup water (see Update, above)",
       "expected": {
-        "item": "water (see Update, above)",
+        "item": "water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "118",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "see Update, above",
+        "category": "Other"
       }
     },
     {
@@ -152,7 +160,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and quartered",
+        "note": "about 3 medium, peeled and quartered",
         "category": "Produce"
       }
     },
@@ -280,15 +288,11 @@
             "unit": "lb"
           },
           {
-            "amount": "3 to 4",
-            "unit": null
-          },
-          {
             "amount": "680",
             "unit": "g"
           }
         ],
-        "note": "peeled and quartered",
+        "note": "about 3 to 4, peeled and quartered",
         "category": "Produce"
       }
     },
@@ -310,7 +314,7 @@
             "unit": "g"
           }
         ],
-        "note": "and thinly sliced (you’ll clean the grit out in a moment)",
+        "note": "about 1/2 pound, you’ll clean the grit out in a moment, and thinly sliced",
         "category": "Produce"
       }
     },
@@ -349,7 +353,7 @@
     {
       "raw": "1 generous cup lacinato kale ribbons (about 3 ounces or 1/4 to 1/3 bundle), tough stems and ribs removed and leaves cut into strips (you’ll wash it in a moment)",
       "expected": {
-        "item": "lacinato kale ribbons, tough stems and ribs removed and leaves cut into strips (you’ll wash it in a moment)",
+        "item": "lacinato kale ribbons, tough stems and ribs removed and leaves cut into strips",
         "measurements": [
           {
             "amount": "1",
@@ -360,15 +364,11 @@
             "unit": "oz"
           },
           {
-            "amount": "0.25 to 0.33",
-            "unit": "bundle"
-          },
-          {
             "amount": "85",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 3 ounces or 1/4 to 1/3 bundle, you’ll wash it in a moment",
         "category": "Produce"
       }
     },

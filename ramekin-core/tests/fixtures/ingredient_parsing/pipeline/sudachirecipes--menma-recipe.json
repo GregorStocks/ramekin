@@ -19,14 +19,18 @@
     {
       "raw": "½ tbsp toasted sesame oil (for frying)",
       "expected": {
-        "item": "toasted sesame oil (for frying)",
+        "item": "toasted sesame oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "6.8",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -79,18 +83,14 @@
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -151,28 +151,32 @@
     {
       "raw": "1 tsp Chinese-style chicken bouillon powder (based on 1 tsp = 200ml soup ratio, scale to your brand&amp;#39;s strength)",
       "expected": {
-        "item": "Chinese-style chicken bouillon powder (based on 1 tsp = 200ml soup ratio, scale to your brand's strength)",
+        "item": "Chinese-style chicken bouillon powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "based on 1 tsp = 200ml soup ratio, scale to your brand's strength",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "½ tbsp toasted sesame oil (for finishing)",
       "expected": {
-        "item": "toasted sesame oil (for finishing)",
+        "item": "toasted sesame oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "6.8",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for finishing",
         "category": "Oils & Vinegars"
       }
     }

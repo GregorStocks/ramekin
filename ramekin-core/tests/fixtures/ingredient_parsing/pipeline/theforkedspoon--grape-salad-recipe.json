@@ -23,14 +23,18 @@
     {
       "raw": "3/4 cup sour cream (or plain Greek yogurt)",
       "expected": {
-        "item": "sour cream (or plain Greek yogurt)",
+        "item": "sour cream",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "182",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or plain Greek yogurt",
         "category": "Dairy & Eggs"
       }
     },
@@ -73,7 +77,7 @@
     {
       "raw": "5 pounds seedless grapes (see notes)",
       "expected": {
-        "item": "seedless grapes (see notes)",
+        "item": "seedless grapes",
         "measurements": [
           {
             "amount": "5",
@@ -84,21 +88,25 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Produce"
       }
     },
     {
       "raw": "4 tablespoon brown sugar (for topping)",
       "expected": {
-        "item": "brown sugar (for topping)",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "55",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for topping",
         "category": "Baking"
       }
     },

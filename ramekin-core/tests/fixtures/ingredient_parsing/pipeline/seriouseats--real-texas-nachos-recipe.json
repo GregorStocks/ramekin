@@ -19,14 +19,14 @@
     {
       "raw": "6 corn tortillas, cut into quarters",
       "expected": {
-        "item": "corn tortillas, cut into quarters",
+        "item": "corn tortillas",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into quarters",
         "category": "Bakery & Bread"
       }
     },

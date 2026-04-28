@@ -12,15 +12,11 @@
             "unit": "lb"
           },
           {
-            "amount": "85",
-            "unit": null
-          },
-          {
             "amount": "454",
             "unit": "g"
           }
         ],
-        "note": "or whatever ground meat you like - chicken, turkey, pork, lamb, etc.",
+        "note": "85-90% lean, or whatever ground meat you like - chicken, turkey, pork, lamb, etc.",
         "category": "Meat & Seafood"
       }
     },
@@ -73,7 +69,7 @@
     {
       "raw": "30 ounces tomato sauce (, (two 15oz. cans or @ 4 cups) crushed, diced or regular depending on what texture you want)",
       "expected": {
-        "item": "tomato sauce (, (two 15oz. cans or @ 4 cups) crushed",
+        "item": "tomato sauce",
         "measurements": [
           {
             "amount": "30",
@@ -84,14 +80,14 @@
             "unit": "g"
           }
         ],
-        "note": "diced or regular depending on what texture you want)",
+        "note": "(two 15oz. cans or @ 4 cups) crushed, diced or regular depending on what texture you want",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "15 ounces canned beans ((black, pinto, cannellini, etc…), drained and rinsed)",
       "expected": {
-        "item": "canned beans (black, pinto, cannellini, etc…)",
+        "item": "canned beans",
         "measurements": [
           {
             "amount": "15",
@@ -102,7 +98,7 @@
             "unit": "g"
           }
         ],
-        "note": "drained and rinsed)",
+        "note": "black, pinto, cannellini, etc…, drained and rinsed",
         "category": "Canned Goods"
       }
     },

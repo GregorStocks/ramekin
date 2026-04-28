@@ -94,13 +94,8 @@
       "raw": "several sprigs of fresh flat-leaf parsley (about 1/3 of a bunch)",
       "expected": {
         "item": "several sprigs of fresh flat-leaf parsley",
-        "measurements": [
-          {
-            "amount": "0.33",
-            "unit": null
-          }
-        ],
-        "note": null,
+        "measurements": [],
+        "note": "about 1/3 of a bunch",
         "category": "Spices & Seasonings"
       }
     },

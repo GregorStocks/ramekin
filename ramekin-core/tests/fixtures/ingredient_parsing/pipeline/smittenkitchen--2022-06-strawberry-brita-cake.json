@@ -96,7 +96,7 @@
     {
       "raw": "3/4 cup (170 grams) milk, whole or lowfat, or buttermilk, well-shaken",
       "expected": {
-        "item": "milk, whole or lowfat, or buttermilk, well-shaken",
+        "item": "milk, whole or lowfat, or buttermilk",
         "measurements": [
           {
             "amount": "0.75",
@@ -107,7 +107,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "well-shaken",
         "category": "Dairy & Eggs"
       }
     },
@@ -245,9 +245,9 @@
     {
       "raw": "Confectioners’ sugar, for dusting, and mint leaves, for garnish (both optional)",
       "expected": {
-        "item": "Confectioners’ sugar, for dusting, and mint leaves, for garnish",
+        "item": "Confectioners’ sugar, for dusting, and mint leaves",
         "measurements": [],
-        "note": "both optional",
+        "note": "both optional, for garnish",
         "category": "Baking"
       }
     }

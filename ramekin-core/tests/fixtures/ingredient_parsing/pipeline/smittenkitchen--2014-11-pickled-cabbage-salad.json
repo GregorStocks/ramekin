@@ -206,14 +206,14 @@
     {
       "raw": "1 carrot (I used only 1/2 my very thick one)",
       "expected": {
-        "item": "carrot (I used only 1/2 my very thick one)",
+        "item": "carrot",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "I used only 1/2 my very thick one",
         "category": "Produce"
       }
     },

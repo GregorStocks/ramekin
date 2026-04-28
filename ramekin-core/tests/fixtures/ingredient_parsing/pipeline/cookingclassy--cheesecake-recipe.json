@@ -5,7 +5,7 @@
     {
       "raw": "2 cups (240g) graham cracker crumbs* ((from about 16 sheets))",
       "expected": {
-        "item": "graham cracker crumbs* (from about 16 sheets)",
+        "item": "graham cracker crumbs",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 16 sheets",
         "category": "Snacks"
       }
     },
@@ -74,7 +74,7 @@
             "unit": "g"
           }
         ],
-        "note": "softened through or at room temperature (preferably Philadelphia",
+        "note": "softened through or at room temperature (preferably Philadelphia)",
         "category": "Cheese"
       }
     },

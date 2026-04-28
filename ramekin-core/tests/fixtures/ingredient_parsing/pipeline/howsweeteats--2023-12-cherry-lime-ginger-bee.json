@@ -41,7 +41,7 @@
     {
       "raw": "6 ounces ginger beer, (or ginger ale)",
       "expected": {
-        "item": "ginger beer, (or ginger ale)",
+        "item": "ginger beer",
         "measurements": [
           {
             "amount": "6",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or ginger ale",
         "category": "Beverages"
       }
     },

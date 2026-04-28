@@ -331,9 +331,9 @@
     {
       "raw": "Scalloped edging fondant cutter (see blog post for sources)",
       "expected": {
-        "item": "Scalloped edging fondant cutter (see blog post for sources)",
+        "item": "Scalloped edging fondant cutter",
         "measurements": [],
-        "note": null,
+        "note": "see blog post for sources",
         "category": "Meat & Seafood"
       }
     },
@@ -354,14 +354,14 @@
     {
       "raw": "1/2  batch American buttercream (recipe here)",
       "expected": {
-        "item": "batch American buttercream (recipe here)",
+        "item": "batch American buttercream",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "recipe here",
         "category": "Dairy & Eggs"
       }
     },

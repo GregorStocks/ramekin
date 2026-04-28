@@ -14,6 +14,10 @@
           {
             "amount": "500",
             "unit": "g"
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
           }
         ],
         "note": null,
@@ -28,9 +32,13 @@
           {
             "amount": "200",
             "unit": "ml"
+          },
+          {
+            "amount": "7",
+            "unit": "fl oz"
           }
         ],
-        "note": null,
+        "note": "about 200ml/7fl oz",
         "category": "Beverages"
       }
     },

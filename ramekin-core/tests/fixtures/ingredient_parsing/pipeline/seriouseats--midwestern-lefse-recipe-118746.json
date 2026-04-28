@@ -23,7 +23,7 @@
     {
       "raw": "70 g (5 tablespoons) unsalted butter, cut into tablespoons",
       "expected": {
-        "item": "unsalted butter, cut into tablespoons",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "70",
@@ -34,7 +34,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "cut into tablespoons",
         "category": "Dairy & Eggs"
       }
     },

@@ -86,7 +86,7 @@
     {
       "raw": "3/4 cup (176 grams, 6 ounces, or 3/4 of an 8-ounce brick) cream cheese, soft at room temperature",
       "expected": {
-        "item": "cream cheese",
+        "item": "cream cheese, soft at room temperature",
         "measurements": [
           {
             "amount": "0.75",
@@ -99,13 +99,9 @@
           {
             "amount": "6",
             "unit": "oz"
-          },
-          {
-            "amount": "0.75",
-            "unit": null
           }
         ],
-        "note": "soft at room temperature",
+        "note": "176 grams, 6 ounces, or 3/4 of an 8-ounce brick",
         "category": "Cheese"
       }
     },
@@ -217,15 +213,11 @@
             "unit": "oz"
           },
           {
-            "amount": "8",
-            "unit": "thin green onions"
-          },
-          {
             "amount": "57 to 85",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "2 to 3 ounces or about 8 thin green onions",
         "category": "Bakery & Bread"
       }
     },

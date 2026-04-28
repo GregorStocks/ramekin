@@ -5,14 +5,14 @@
     {
       "raw": "1 tbsp coarse sugar (turbinado or similar)",
       "expected": {
-        "item": "coarse sugar (turbinado or similar)",
+        "item": "coarse sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "turbinado or similar",
         "category": "Baking"
       }
     },
@@ -56,9 +56,13 @@
           {
             "amount": "35",
             "unit": "g each"
+          },
+          {
+            "amount": "1.25",
+            "unit": "oz each"
           }
         ],
-        "note": null,
+        "note": "approx 35g/1.25oz each",
         "category": "Dairy & Eggs"
       }
     },
@@ -88,9 +92,13 @@
           {
             "amount": "17",
             "unit": "g each"
+          },
+          {
+            "amount": "0.6",
+            "unit": "oz each"
           }
         ],
-        "note": null,
+        "note": "approx 17g/0.6oz each",
         "category": "Dairy & Eggs"
       }
     },
@@ -129,14 +137,14 @@
     {
       "raw": "30 ml cooking oil (any neutral oil, I used canola)",
       "expected": {
-        "item": "cooking oil (any neutral oil, I used canola)",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "30",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "any neutral oil, I used canola",
         "category": "Oils & Vinegars"
       }
     }

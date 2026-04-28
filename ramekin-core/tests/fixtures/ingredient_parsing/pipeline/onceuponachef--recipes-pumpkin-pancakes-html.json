@@ -127,14 +127,14 @@
     {
       "raw": "½ cup  pure pumpkin (such as Libby’s)",
       "expected": {
-        "item": "pure pumpkin (such as Libby’s)",
+        "item": "pure pumpkin",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Libby’s",
         "category": "Produce"
       }
     },

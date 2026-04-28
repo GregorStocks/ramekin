@@ -19,28 +19,36 @@
     {
       "raw": "3/4 cup milk ((I used 1%))",
       "expected": {
-        "item": "milk (I used 1%)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "184",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used 1%",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "2 tablespoons butter (plus additional for cooking the pancakes)",
       "expected": {
-        "item": "butter (plus additional for cooking the pancakes)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plus additional for cooking the pancakes",
         "category": "Dairy & Eggs"
       }
     },
@@ -169,14 +177,14 @@
     {
       "raw": "3/4 cup pumpkin purée (pure pumpkin; NOT pumpkin pie filling)",
       "expected": {
-        "item": "pumpkin purée (pure pumpkin; NOT pumpkin pie filling)",
+        "item": "pumpkin purée",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "pure pumpkin; NOT pumpkin pie filling",
         "category": "Produce"
       }
     },
@@ -197,14 +205,18 @@
     {
       "raw": "2 tablespoons pure maple syrup (or granulated sugar or honey)",
       "expected": {
-        "item": "pure maple syrup (or granulated sugar or honey)",
+        "item": "pure maple syrup",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "39",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or granulated sugar or honey",
         "category": "Baking"
       }
     },

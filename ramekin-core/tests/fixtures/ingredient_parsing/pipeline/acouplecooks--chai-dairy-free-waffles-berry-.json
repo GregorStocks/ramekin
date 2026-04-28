@@ -234,14 +234,14 @@
     {
       "raw": "1 1/4 cups almond milk (we used Califia Farms)",
       "expected": {
-        "item": "almond milk (we used Califia Farms)",
+        "item": "almond milk",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "we used Califia Farms",
         "category": "Nuts & Dried Fruit"
       }
     },

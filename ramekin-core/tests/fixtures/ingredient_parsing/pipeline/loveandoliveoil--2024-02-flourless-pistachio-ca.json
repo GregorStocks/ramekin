@@ -87,14 +87,14 @@
     {
       "raw": "1 teaspoon orange zest (very finely garted)",
       "expected": {
-        "item": "orange zest (very finely garted)",
+        "item": "orange zest",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "very finely garted",
         "category": "Produce"
       }
     },
@@ -115,14 +115,18 @@
     {
       "raw": "10 tablespoons unsalted butter (cut into cubes)",
       "expected": {
-        "item": "unsalted butter (cut into cubes)",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "10",
             "unit": "tbsp"
+          },
+          {
+            "amount": "142",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Dairy & Eggs"
       }
     },

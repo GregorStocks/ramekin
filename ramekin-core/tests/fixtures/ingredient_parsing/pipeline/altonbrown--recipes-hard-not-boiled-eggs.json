@@ -5,14 +5,14 @@
     {
       "raw": "6 large eggs, preferably stored on their sides",
       "expected": {
-        "item": "eggs, preferably stored on their sides",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "preferably stored on their sides",
         "category": "Dairy & Eggs"
       }
     }

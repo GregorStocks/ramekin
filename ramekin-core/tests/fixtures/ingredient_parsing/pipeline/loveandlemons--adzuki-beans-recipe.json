@@ -12,21 +12,21 @@
             "unit": "large"
           }
         ],
-        "note": "sliced (6 1/2 cups",
+        "note": "sliced (6 1/2 cups)",
         "category": "Produce"
       }
     },
     {
       "raw": "3  small carrots (shaved with a vegetable peeler)",
       "expected": {
-        "item": "carrots (shaved with a vegetable peeler)",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "3",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "shaved with a vegetable peeler",
         "category": "Produce"
       }
     },

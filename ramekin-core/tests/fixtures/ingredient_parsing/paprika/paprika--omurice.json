@@ -23,7 +23,7 @@
     {
       "raw": "1/2 medium onion, cut in 1/2-inch dice (about 3/4 cup)",
       "expected": {
-        "item": "onion, cut in 1/2-inch dice",
+        "item": "onion",
         "measurements": [
           {
             "amount": "0.5",
@@ -32,16 +32,20 @@
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "103",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 3/4 cup, cut in 1/2-inch dice",
         "category": "Produce"
       }
     },
     {
       "raw": "1 medium carrot, peeled, cut in 1/4-inch dice (about 3/4 cup)",
       "expected": {
-        "item": "carrot, peeled, cut in 1/4-inch dice",
+        "item": "carrot, peeled",
         "measurements": [
           {
             "amount": "1",
@@ -52,21 +56,21 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 3/4 cup, cut in 1/4-inch dice",
         "category": "Produce"
       }
     },
     {
       "raw": "2 to 3 slices deli ham, cut into 1/2-inch pieces",
       "expected": {
-        "item": "deli ham, cut into 1/2-inch pieces",
+        "item": "deli ham",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Meat & Seafood"
       }
     },

@@ -254,15 +254,11 @@
             "unit": "lb"
           },
           {
-            "amount": "6",
-            "unit": null
-          },
-          {
             "amount": "567",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 6",
         "category": "Meat & Seafood"
       }
     },
@@ -287,28 +283,28 @@
     {
       "raw": "2 small cucumbers, cut in 1/4-inch half moons",
       "expected": {
-        "item": "cucumbers, cut in 1/4-inch half moons",
+        "item": "cucumbers",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "cut in 1/4-inch half moons",
         "category": "Produce"
       }
     },
     {
       "raw": "2 medium carrots, cut in thin julienne",
       "expected": {
-        "item": "carrots, cut in thin julienne",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut in thin julienne",
         "category": "Produce"
       }
     },
@@ -366,9 +362,9 @@
     {
       "raw": "Lime wedges (to serve)",
       "expected": {
-        "item": "Lime wedges (to serve)",
+        "item": "Lime wedges",
         "measurements": [],
-        "note": null,
+        "note": "to serve",
         "category": "Produce"
       }
     }

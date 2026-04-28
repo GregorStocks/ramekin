@@ -95,7 +95,7 @@
     {
       "raw": "6 tablespoons (3/4 stick or 3 ounces) cold unsalted butter, cut into 1/2-inch cubes",
       "expected": {
-        "item": "cold unsalted butter, cut into 1/2-inch cubes",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "6",
@@ -114,7 +114,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch cubes",
         "category": "Dairy & Eggs"
       }
     },
@@ -149,14 +149,14 @@
     {
       "raw": "1 cup well-shaken buttermilk (or, you can make your own)",
       "expected": {
-        "item": "well-shaken buttermilk (or, you can make your own)",
+        "item": "well-shaken buttermilk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or, you can make your own",
         "category": "Dairy & Eggs"
       }
     }

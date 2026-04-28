@@ -55,14 +55,14 @@
     {
       "raw": "1 ½ teaspoons matcha (we used Aiya Cooking Grade Matcha)",
       "expected": {
-        "item": "matcha (we used Aiya Cooking Grade Matcha)",
+        "item": "matcha",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "we used Aiya Cooking Grade Matcha",
         "category": "Other"
       }
     },
@@ -183,9 +183,9 @@
     {
       "raw": "Edible flowers for garnish, if desired (we used nasturtium flowers from our garden, only because we had them onhand)",
       "expected": {
-        "item": "Edible flowers for garnish, if desired (we used nasturtium flowers from our garden, only because we had them onhand)",
+        "item": "Edible flowers for garnish",
         "measurements": [],
-        "note": null,
+        "note": "we used nasturtium flowers from our garden, only because we had them onhand, if desired",
         "category": "Other"
       }
     }

@@ -194,22 +194,22 @@
             "unit": "tsp"
           }
         ],
-        "note": "optional (can replace with 1/4 teaspoon almond extract",
+        "note": "optional (can replace with 1/4 teaspoon almond extract)",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
       "raw": "40  chocolate kisses (or other similar candy, unwrapped (I prefer dark but milk chocolate works too))",
       "expected": {
-        "item": "chocolate kisses (or other similar candy, unwrapped (I prefer dark but milk chocolate works too)",
+        "item": "chocolate kisses",
         "measurements": [
           {
             "amount": "40",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "or other similar candy, unwrapped (I prefer dark but milk chocolate works too)",
+        "category": "Other"
       }
     }
   ]

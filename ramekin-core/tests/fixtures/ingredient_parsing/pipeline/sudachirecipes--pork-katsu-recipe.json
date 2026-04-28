@@ -37,18 +37,14 @@
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -83,18 +79,14 @@
     {
       "raw": "2  boneless pork chops (or loin/tenderloin - thick ones (2-2.5cm, 3/4-1 inch) work best)",
       "expected": {
-        "item": "boneless pork chops work best)",
+        "item": "boneless pork chops",
         "measurements": [
           {
             "amount": "2",
             "unit": null
-          },
-          {
-            "amount": "0.75-1",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "or loin/tenderloin - thick ones (2-2.5cm, 3/4-1 inch) work best",
         "category": "Meat & Seafood"
       }
     },
@@ -115,18 +107,18 @@
     {
       "raw": "cooking oil (for deep frying, I used rice bran oil)",
       "expected": {
-        "item": "cooking oil (for deep frying, I used rice bran oil)",
+        "item": "cooking oil",
         "measurements": [],
-        "note": null,
-        "category": "Pasta & Rice"
+        "note": "for deep frying, I used rice bran oil",
+        "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "all-purpose flour (for dusting)",
       "expected": {
-        "item": "all-purpose flour (for dusting)",
+        "item": "all-purpose flour",
         "measurements": [],
-        "note": null,
+        "note": "for dusting",
         "category": "Baking"
       }
     },
@@ -221,14 +213,14 @@
     {
       "raw": "2 slices lemon (to garnish)",
       "expected": {
-        "item": "lemon (to garnish)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "2",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "to garnish",
         "category": "Produce"
       }
     }

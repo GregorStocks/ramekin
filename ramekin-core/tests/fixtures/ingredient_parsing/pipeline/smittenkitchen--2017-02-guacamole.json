@@ -5,28 +5,28 @@
     {
       "raw": "2 tablespoons minced white onion (from about 1/8 large one)",
       "expected": {
-        "item": "minced white onion (from about 1/8 large one)",
+        "item": "minced white onion",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from about 1/8 large one",
         "category": "Produce"
       }
     },
     {
       "raw": "1 1/2 tablespoons minced, seeded jalapeño (from about half a medium one)",
       "expected": {
-        "item": "minced, seeded jalapeño (from about half a medium one)",
+        "item": "minced, seeded jalapeño",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from about half a medium one",
         "category": "Produce"
       }
     },

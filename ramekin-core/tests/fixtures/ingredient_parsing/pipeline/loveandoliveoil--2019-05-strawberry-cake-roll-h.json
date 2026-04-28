@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "softened (softer than room temp, but not melted",
+        "note": "softened (softer than room temp, but not melted)",
         "category": "Dairy & Eggs"
       }
     },
@@ -82,14 +82,14 @@
     {
       "raw": "3  large eggs (separated)",
       "expected": {
-        "item": "eggs (separated)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "separated",
         "category": "Dairy & Eggs"
       }
     },

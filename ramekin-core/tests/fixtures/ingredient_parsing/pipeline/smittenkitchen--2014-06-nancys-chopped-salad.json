@@ -28,14 +28,14 @@
     {
       "raw": "1 to 2 tablespoons dried oregano (Nancy recommends 2; I got nervous and used 1, but might not have minded more)",
       "expected": {
-        "item": "dried oregano (Nancy recommends 2; I got nervous and used 1, but might not have minded more)",
+        "item": "dried oregano",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "Nancy recommends 2; I got nervous and used 1, but might not have minded more",
         "category": "Spices & Seasonings"
       }
     },
@@ -69,14 +69,18 @@
     {
       "raw": "2 tablespoons lemon juice, or juice of 1 lemon",
       "expected": {
-        "item": "lemon juice, or juice of 1 lemon",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or juice of 1 lemon",
         "category": "Beverages"
       }
     },
@@ -129,17 +133,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "15",
-            "unit": "oz"
-          },
-          {
-            "amount": "425",
-            "unit": "g"
           }
         ],
-        "note": "drained",
+        "note": "15-ounce, drained",
         "category": "Canned Goods"
       }
     },
@@ -160,7 +156,7 @@
     {
       "raw": "1/2 pound provolone (see Note about varieties), sliced 1/8-inch thick then cut into 1/4-inch ribbons",
       "expected": {
-        "item": "provolone (see Note about varieties)",
+        "item": "provolone",
         "measurements": [
           {
             "amount": "0.5",
@@ -171,7 +167,7 @@
             "unit": "g"
           }
         ],
-        "note": "sliced 1/8-inch thick then cut into 1/4-inch ribbons",
+        "note": "see Note about varieties, sliced 1/8-inch thick then cut into 1/4-inch ribbons",
         "category": "Cheese"
       }
     },
@@ -241,14 +237,14 @@
     {
       "raw": "1 head iceberg lettuce (see Note about size), halved, cored, and cut in 1/2-inch ribbons",
       "expected": {
-        "item": "iceberg lettuce (see Note about size), halved, cored, and cut in 1/2-inch ribbons",
+        "item": "iceberg lettuce, halved, cored, and cut in 1/2-inch ribbons",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "see Note about size",
         "category": "Produce"
       }
     },

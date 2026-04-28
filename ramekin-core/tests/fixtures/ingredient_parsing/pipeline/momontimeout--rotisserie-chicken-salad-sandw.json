@@ -19,14 +19,14 @@
     {
       "raw": "1 cup diced apple (I use Gala)",
       "expected": {
-        "item": "diced apple (I use Gala)",
+        "item": "diced apple",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I use Gala",
         "category": "Produce"
       }
     },
@@ -88,9 +88,9 @@
     {
       "raw": "bread (your choice)",
       "expected": {
-        "item": "bread (your choice)",
+        "item": "bread",
         "measurements": [],
-        "note": null,
+        "note": "your choice",
         "category": "Bakery & Bread"
       }
     }

@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds Yukon gold or red potato, cut into 1/4-inch slices",
       "expected": {
-        "item": "Yukon gold or red potato, cut into 1/4-inch slices",
+        "item": "Yukon gold or red potato",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch slices",
         "category": "Produce"
       }
     },

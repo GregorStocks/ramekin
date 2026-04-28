@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds chicken thighs and drumsticks (bone-in skin-on )",
       "expected": {
-        "item": "chicken thighs and drumsticks (bone-in skin-on",
+        "item": "chicken thighs and drumsticks",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "bone-in skin-on",
         "category": "Meat & Seafood"
       }
     },
@@ -169,14 +169,18 @@
     {
       "raw": "2 cups chicken broth  (low sodium or no sodium added)",
       "expected": {
-        "item": "chicken broth  (low sodium or no sodium added)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "498",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium or no sodium added",
         "category": "Canned Goods"
       }
     },

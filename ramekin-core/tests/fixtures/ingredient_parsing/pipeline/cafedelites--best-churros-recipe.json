@@ -145,15 +145,15 @@
     {
       "raw": "1 1/4 cups all-purpose (or plain flour)",
       "expected": {
-        "item": "all-purpose (or plain flour)",
+        "item": "all-purpose",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "or plain flour",
+        "category": "Other"
       }
     },
     {

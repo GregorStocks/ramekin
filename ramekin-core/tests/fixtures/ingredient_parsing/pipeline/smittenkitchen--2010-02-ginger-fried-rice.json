@@ -70,14 +70,14 @@
     {
       "raw": "4 cups day-old cooked rice; Vongerichten recommends jasmine (I used brown jasmine) but this is the perfect way to use up any leftover rice you have, especially from Chinese delivery",
       "expected": {
-        "item": "day-old cooked rice; Vongerichten recommends jasmine (I used brown jasmine) but this is the perfect way to use up any leftover rice you have, especially from Chinese delivery",
+        "item": "day-old cooked rice; Vongerichten recommends jasmine but this is the perfect way to use up any leftover rice you have, especially from Chinese delivery",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used brown jasmine",
         "category": "Pasta & Rice"
       }
     },
@@ -98,14 +98,18 @@
     {
       "raw": "2 teaspoons sesame oil (for some heat but the same awesome flavor, use hot sesame oil)",
       "expected": {
-        "item": "sesame oil (for some heat but the same awesome flavor, use hot sesame oil)",
+        "item": "sesame oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "9.1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for some heat but the same awesome flavor, use hot sesame oil",
         "category": "Oils & Vinegars"
       }
     },

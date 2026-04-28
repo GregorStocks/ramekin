@@ -163,14 +163,18 @@
     {
       "raw": "1 cup granulated sugar (for rolling)",
       "expected": {
-        "item": "granulated sugar (for rolling)",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "200",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for rolling",
         "category": "Baking"
       }
     },

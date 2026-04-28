@@ -5,7 +5,7 @@
     {
       "raw": "12 ounces bacon (thinner is better), each strip cut into two segments",
       "expected": {
-        "item": "bacon (thinner is better), each strip cut into two segments",
+        "item": "bacon, each strip cut into two segments",
         "measurements": [
           {
             "amount": "12",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "thinner is better",
         "category": "Meat & Seafood"
       }
     },
@@ -30,15 +30,11 @@
             "unit": "oz"
           },
           {
-            "amount": "28",
-            "unit": null
-          },
-          {
             "amount": "170",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 28",
         "category": "Nuts & Dried Fruit"
       }
     },

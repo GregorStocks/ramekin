@@ -65,9 +65,9 @@
     {
       "raw": "red pepper flakes,  (or Aleppo pepper)",
       "expected": {
-        "item": "red pepper flakes,  (or Aleppo pepper)",
+        "item": "red pepper flakes",
         "measurements": [],
-        "note": null,
+        "note": "or Aleppo pepper",
         "category": "Spices & Seasonings"
       }
     },

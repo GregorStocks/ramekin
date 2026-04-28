@@ -33,19 +33,15 @@
     {
       "raw": "4 (6–7 inch) canoe-cut marrow bones, cleaned of any meat or fat on the exterior of the bone",
       "expected": {
-        "item": "canoe-cut marrow bones",
+        "item": "canoe-cut marrow bones, cleaned of any meat or fat on the exterior of the bone",
         "measurements": [
           {
             "amount": "4",
             "unit": null
-          },
-          {
-            "amount": "6-7",
-            "unit": "inch"
           }
         ],
-        "note": "cleaned of any meat or fat on the exterior of the bone",
-        "category": "Other"
+        "note": "6-7 inch",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -115,15 +111,15 @@
     {
       "raw": "1/4 cup packed chopped celery leaves ((or additional parsley leaves))",
       "expected": {
-        "item": "packed chopped celery leaves (or additional parsley leaves)",
+        "item": "packed chopped celery leaves",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "or additional parsley leaves",
+        "category": "Produce"
       }
     },
     {

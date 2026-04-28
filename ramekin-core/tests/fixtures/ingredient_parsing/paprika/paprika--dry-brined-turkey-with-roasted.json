@@ -115,15 +115,15 @@
     {
       "raw": "8 cups turkey or chicken stock (I either use homemade chicken or Better Than Bouillon’s turkey base)",
       "expected": {
-        "item": "turkey or chicken stock (I either use homemade chicken or Better Than Bouillon’s turkey base)",
+        "item": "turkey or chicken stock",
         "measurements": [
           {
             "amount": "8",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "I either use homemade chicken or Better Than Bouillon’s turkey base",
+        "category": "Meat & Seafood"
       }
     },
     {

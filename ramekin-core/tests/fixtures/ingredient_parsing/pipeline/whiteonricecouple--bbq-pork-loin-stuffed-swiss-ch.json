@@ -127,28 +127,28 @@
     {
       "raw": "3 Tablespoons Grapeseed Oil ( or olive oil )",
       "expected": {
-        "item": "Grapeseed Oil ( or olive oil",
+        "item": "Grapeseed Oil",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or olive oil",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "2 Tablespoons Grapeseed Oil ( or olive oil )",
       "expected": {
-        "item": "Grapeseed Oil ( or olive oil",
+        "item": "Grapeseed Oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or olive oil",
         "category": "Oils & Vinegars"
       }
     },

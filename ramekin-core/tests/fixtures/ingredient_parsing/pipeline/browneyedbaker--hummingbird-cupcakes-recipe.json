@@ -96,13 +96,9 @@
           {
             "amount": "1.33",
             "unit": "cup"
-          },
-          {
-            "amount": "2 to 3",
-            "unit": "large"
           }
         ],
-        "note": null,
+        "note": "2 to 3 large bananas",
         "category": "Produce"
       }
     },
@@ -116,7 +112,7 @@
             "unit": "cup"
           }
         ],
-        "note": "drained (about half of a 20-ounce can",
+        "note": "drained (about half of a 20-ounce can)",
         "category": "Produce"
       }
     },
@@ -137,14 +133,14 @@
     {
       "raw": "2/3 cup shredded coconut (sweetened or unsweetened will work)",
       "expected": {
-        "item": "shredded coconut (sweetened or unsweetened will work)",
+        "item": "shredded coconut",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "sweetened or unsweetened will work",
         "category": "Produce"
       }
     },

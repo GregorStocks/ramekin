@@ -203,14 +203,18 @@
     {
       "raw": "1/2 teaspoon kosher salt (Diamond is specified but you’ll be fine with any here)",
       "expected": {
-        "item": "kosher salt (Diamond is specified but you’ll be fine with any here)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Diamond is specified but you’ll be fine with any here",
         "category": "Spices & Seasonings"
       }
     },
@@ -253,7 +257,7 @@
     {
       "raw": "1/2 cup (120 ml) brewed coffee, cooled",
       "expected": {
-        "item": "brewed coffee, cooled",
+        "item": "brewed coffee",
         "measurements": [
           {
             "amount": "0.5",
@@ -264,7 +268,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "cooled",
         "category": "Beverages"
       }
     },

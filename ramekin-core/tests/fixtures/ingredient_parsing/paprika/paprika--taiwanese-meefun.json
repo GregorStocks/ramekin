@@ -92,7 +92,7 @@
     {
       "raw": "1 large carrot, cut into thin matchsticks (about 2 1/2 cups)",
       "expected": {
-        "item": "carrot, cut into thin matchsticks",
+        "item": "carrot",
         "measurements": [
           {
             "amount": "1",
@@ -103,7 +103,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 2 1/2 cups, cut into thin matchsticks",
         "category": "Produce"
       }
     },
@@ -121,14 +121,14 @@
             "unit": "cup"
           }
         ],
-        "note": "shredded",
+        "note": "about 2 1/2 cups, shredded",
         "category": "Produce"
       }
     },
     {
       "raw": "8 ounces baked or smoked tofu, cut into thin matchsticks (about 2 cups)",
       "expected": {
-        "item": "baked or smoked tofu, cut into thin matchsticks",
+        "item": "baked or smoked tofu",
         "measurements": [
           {
             "amount": "8",
@@ -143,7 +143,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 cups, cut into thin matchsticks",
         "category": "Produce"
       }
     },

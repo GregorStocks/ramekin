@@ -5,7 +5,7 @@
     {
       "raw": "1 3/4 cups (248g) all-purpose flour ((scoop and level to measure))",
       "expected": {
-        "item": "all-purpose flour (scoop and level to measure)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.75",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "scoop and level to measure",
         "category": "Baking"
       }
     },
@@ -109,7 +109,7 @@
     {
       "raw": "2/3 cup (63g) unsweetened cocoa powder ((not Dutch process, scoop and level to measure))",
       "expected": {
-        "item": "unsweetened cocoa powder (not Dutch process, scoop and level to measure)",
+        "item": "unsweetened cocoa powder",
         "measurements": [
           {
             "amount": "0.67",
@@ -120,7 +120,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not Dutch process, scoop and level to measure",
         "category": "Baking"
       }
     },
@@ -177,7 +177,7 @@
     {
       "raw": "4 oz. bittersweet chocolate (or semi-sweet chocolate)",
       "expected": {
-        "item": "bittersweet chocolate (or semi-sweet chocolate)",
+        "item": "bittersweet chocolate",
         "measurements": [
           {
             "amount": "4",
@@ -188,7 +188,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or semi-sweet chocolate",
         "category": "Other"
       }
     },

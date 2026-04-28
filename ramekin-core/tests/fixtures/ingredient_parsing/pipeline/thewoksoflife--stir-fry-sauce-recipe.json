@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or vegetable or mushroom stock; 350ml",
         "category": "Meat & Seafood"
       }
     },
@@ -45,14 +45,18 @@
     {
       "raw": "1 tablespoon brown sugar ((or granulated sugar))",
       "expected": {
-        "item": "brown sugar (or granulated sugar)",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or granulated sugar",
         "category": "Baking"
       }
     },
@@ -84,15 +88,11 @@
             "unit": "cup"
           },
           {
-            "amount": null,
-            "unit": "can"
-          },
-          {
             "amount": "64",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "can sub gluten-free soy sauce or tamari",
         "category": "Condiments & Sauces"
       }
     },
@@ -113,14 +113,18 @@
     {
       "raw": "2 tablespoons oyster sauce ((or vegetarian or gluten-free oyster sauce))",
       "expected": {
-        "item": "oyster sauce (or vegetarian or gluten-free oyster sauce)",
+        "item": "oyster sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "36",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or vegetarian or gluten-free oyster sauce",
         "category": "Condiments & Sauces"
       }
     },

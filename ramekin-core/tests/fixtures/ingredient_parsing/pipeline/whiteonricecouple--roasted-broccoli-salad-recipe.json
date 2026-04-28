@@ -5,7 +5,7 @@
     {
       "raw": "1 pound broccoli florets (, cut into bite sized pieces)",
       "expected": {
-        "item": "broccoli florets (, cut into bite sized pieces)",
+        "item": "broccoli florets",
         "measurements": [
           {
             "amount": "1",
@@ -16,21 +16,25 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into bite sized pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "3 Tablespoons olive oil (, for coating)",
       "expected": {
-        "item": "olive oil (, for coating)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for coating",
         "category": "Oils & Vinegars"
       }
     },
@@ -71,7 +75,7 @@
             "unit": "slice"
           }
         ],
-        "note": "cooked & cut into bite sized pieces (omit to make this salad vegetarian",
+        "note": "cooked & cut into bite sized pieces (omit to make this salad vegetarian)",
         "category": "Meat & Seafood"
       }
     },
@@ -106,15 +110,15 @@
     {
       "raw": "1/4 cup roasted nuts of choice ((pecans, almonds, cashews, etc. - chop larger nuts if desired))",
       "expected": {
-        "item": "roasted nuts of choice (pecans, almonds, cashews, etc. - chop larger nuts if desired)",
+        "item": "roasted nuts of choice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "pecans, almonds, cashews, etc. - chop larger nuts if desired",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -210,14 +214,14 @@
     {
       "raw": "1 teaspoon optional dried herbs ((thyme, basil, dill, etc.))",
       "expected": {
-        "item": "optional dried herbs (thyme, basil, dill, etc.)",
+        "item": "optional dried herbs",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "thyme, basil, dill, etc.",
         "category": "Spices & Seasonings"
       }
     },

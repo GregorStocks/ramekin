@@ -5,9 +5,9 @@
     {
       "raw": "fresh baguette, cut into 4 equal pieces",
       "expected": {
-        "item": "fresh baguette, cut into 4 equal pieces",
+        "item": "fresh baguette",
         "measurements": [],
-        "note": null,
+        "note": "cut into 4 equal pieces",
         "category": "Bakery & Bread"
       }
     },
@@ -78,9 +78,9 @@
     {
       "raw": "sliced jalapeños, if desired",
       "expected": {
-        "item": "sliced jalapeños, if desired",
+        "item": "sliced jalapeños",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Produce"
       }
     },

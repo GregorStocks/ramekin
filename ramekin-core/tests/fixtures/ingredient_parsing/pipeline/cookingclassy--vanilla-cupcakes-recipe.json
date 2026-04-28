@@ -5,7 +5,7 @@
     {
       "raw": "2/3 cup (86 g) cake flour ((scoop and level to measure))",
       "expected": {
-        "item": "cake flour (scoop and level to measure)",
+        "item": "cake flour",
         "measurements": [
           {
             "amount": "0.67",
@@ -16,14 +16,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "scoop and level to measure",
         "category": "Baking"
       }
     },
     {
       "raw": "2/3 cup (95 g) all-purpose flour ((scoop and level to measure))",
       "expected": {
-        "item": "all-purpose flour (scoop and level to measure)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.67",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "scoop and level to measure",
         "category": "Baking"
       }
     },
@@ -59,14 +59,18 @@
     {
       "raw": "1/4 tsp (heaping) salt",
       "expected": {
-        "item": "(heaping) salt",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "heaping",
         "category": "Spices & Seasonings"
       }
     },

@@ -127,14 +127,18 @@
     {
       "raw": "1 cup beef broth (low sodium)",
       "expected": {
-        "item": "beef broth (low sodium)",
+        "item": "beef broth",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "249",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Canned Goods"
       }
     },
@@ -233,7 +237,7 @@
       "expected": {
         "item": "parsley",
         "measurements": [],
-        "note": "chopped (optional",
+        "note": "chopped (optional)",
         "category": "Spices & Seasonings"
       }
     }

@@ -37,14 +37,18 @@
     {
       "raw": "2 tbsp fresh lemon juice, more for later",
       "expected": {
-        "item": "fresh lemon juice, more for later",
+        "item": "fresh lemon juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "more for later",
         "category": "Beverages"
       }
     },

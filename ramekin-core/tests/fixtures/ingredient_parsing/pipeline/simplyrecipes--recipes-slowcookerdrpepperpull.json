@@ -73,28 +73,28 @@
     {
       "raw": "2 red onions, cut into slices",
       "expected": {
-        "item": "red onions, cut into slices",
+        "item": "red onions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into slices",
         "category": "Produce"
       }
     },
     {
       "raw": "1 12-ounce can Dr Pepper (or any other cola-type soda you prefer)",
       "expected": {
-        "item": "Dr Pepper (or any other cola-type soda you prefer)",
+        "item": "Dr Pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "12-ounce can"
           }
         ],
-        "note": null,
+        "note": "or any other cola-type soda you prefer",
         "category": "Spices & Seasonings"
       }
     },

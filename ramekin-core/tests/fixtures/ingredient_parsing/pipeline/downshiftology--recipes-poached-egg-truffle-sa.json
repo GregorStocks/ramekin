@@ -19,14 +19,14 @@
     {
       "raw": "4  eggs (poached)",
       "expected": {
-        "item": "eggs (poached)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "poached",
         "category": "Dairy & Eggs"
       }
     },

@@ -38,16 +38,16 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "about 1 fluid ounce; 30ml",
         "category": "Beverages"
       }
     },
     {
       "raw": "Simple syrup, oleo-saccharum, to taste (optional, see notes)",
       "expected": {
-        "item": "Simple syrup, oleo-saccharum, to taste",
+        "item": "Simple syrup, oleo-saccharum",
         "measurements": [],
-        "note": "optional, see notes",
+        "note": "optional, see notes, to taste",
         "category": "Beverages"
       }
     },

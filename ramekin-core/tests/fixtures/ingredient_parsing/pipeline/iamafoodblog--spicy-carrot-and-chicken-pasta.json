@@ -51,14 +51,14 @@
     {
       "raw": "2 whole chicken legs (thigh and drumstick), skin removed and saved, meat cut into 1 inch pieces",
       "expected": {
-        "item": "whole chicken legs (thigh and drumstick), skin removed and saved, meat cut into 1 inch pieces",
+        "item": "whole chicken legs, skin removed and saved, meat cut into 1 inch pieces",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "thigh and drumstick",
         "category": "Meat & Seafood"
       }
     },
@@ -93,14 +93,14 @@
     {
       "raw": "2 cups of your favorite pasta (I used mini carrot farfalle**)",
       "expected": {
-        "item": "your favorite pasta (I used mini carrot farfalle**)",
+        "item": "your favorite pasta",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used mini carrot farfalle",
         "category": "Pasta & Rice"
       }
     },

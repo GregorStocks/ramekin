@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds chicken thighs (boneless and skinless cut into 1 inch cubes)",
       "expected": {
-        "item": "chicken thighs (boneless and skinless cut into 1 inch cubes)",
+        "item": "chicken thighs",
         "measurements": [
           {
             "amount": "2",
@@ -16,21 +16,25 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "boneless and skinless cut into 1 inch cubes",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "2 tablespoons soy sauce (low sodium)",
       "expected": {
-        "item": "soy sauce (low sodium)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Condiments & Sauces"
       }
     },
@@ -101,14 +105,14 @@
     {
       "raw": "1 large red bell pepper (cut into 1 small ½ inch pieces)",
       "expected": {
-        "item": "red bell pepper (cut into 1 small 1/2 inch pieces)",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into 1 small 1/2 inch pieces",
         "category": "Produce"
       }
     },
@@ -179,14 +183,18 @@
     {
       "raw": "¼ cup soy sauce (low sodium)",
       "expected": {
-        "item": "soy sauce (low sodium)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "64",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Condiments & Sauces"
       }
     },

@@ -5,14 +5,18 @@
     {
       "raw": "⅓ cup all-purpose flour (or brown rice flour)",
       "expected": {
-        "item": "all-purpose flour (or brown rice flour)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "42",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or brown rice flour",
         "category": "Baking"
       }
     },
@@ -47,7 +51,7 @@
     {
       "raw": "2 pounds beef chuck roast or stew meat (cut into ½-inch pieces)",
       "expected": {
-        "item": "beef chuck roast or stew meat (cut into 1/2-inch pieces)",
+        "item": "beef chuck roast or stew meat",
         "measurements": [
           {
             "amount": "2",
@@ -58,7 +62,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -98,7 +102,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces, about 2/3 cup",
         "category": "Produce"
       }
     },

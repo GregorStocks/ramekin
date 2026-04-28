@@ -12,11 +12,11 @@
             "unit": "can"
           },
           {
-            "amount": "14.5",
-            "unit": null
+            "amount": "411",
+            "unit": "g"
           }
         ],
-        "note": "drained (or 1 28-ounce/794g can)",
+        "note": "14.5-ounce/411g, or 1 28-ounce/794g can, drained",
         "category": "Canned Goods"
       }
     },
@@ -30,11 +30,11 @@
             "unit": "can"
           },
           {
-            "amount": "15",
-            "unit": null
+            "amount": "425",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "15-ounce/425g",
         "category": "Canned Goods"
       }
     },
@@ -56,25 +56,25 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1.5 lbs/680g",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 cup (240g/ml) chicken broth (I use reduced-sodium)",
       "expected": {
-        "item": "chicken broth (I use reduced-sodium)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           },
           {
-            "amount": "240",
-            "unit": null
+            "amount": "249",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "240g/ml, I use reduced-sodium",
         "category": "Canned Goods"
       }
     },
@@ -120,11 +120,11 @@
             "unit": "can"
           },
           {
-            "amount": "15",
-            "unit": null
+            "amount": "425",
+            "unit": "g"
           }
         ],
-        "note": "rinsed and drained",
+        "note": "15-ounce/425g, rinsed and drained",
         "category": "Frozen"
       }
     },
@@ -138,11 +138,11 @@
             "unit": "can"
           },
           {
-            "amount": "15",
-            "unit": null
+            "amount": "425",
+            "unit": "g"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "15-ounce/425g, drained and rinsed",
         "category": "Canned Goods"
       }
     },
@@ -156,7 +156,7 @@
             "unit": null
           }
         ],
-        "note": "minced (remove seeds and ribs)",
+        "note": "remove seeds and ribs, minced",
         "category": "Produce"
       }
     },

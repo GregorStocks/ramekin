@@ -23,7 +23,7 @@
     {
       "raw": "3 teaspoons (8 grams) kosher salt (I’m using Diamond brand; use half of any other), plus more for vegetables",
       "expected": {
-        "item": "kosher salt (I’m using Diamond brand; use half of any other)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "3",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for vegetables",
+        "note": "I’m using Diamond brand; use half of any other, plus more for vegetables",
         "category": "Spices & Seasonings"
       }
     },
@@ -59,7 +59,7 @@
     {
       "raw": "2 cups (475ml) lukewarm water (between 100 and 115°F, but warm-to-the-touch tap water is fine)",
       "expected": {
-        "item": "lukewarm water (between 100 and 115°F, but warm-to-the-touch tap water is fine)",
+        "item": "lukewarm water",
         "measurements": [
           {
             "amount": "2",
@@ -70,7 +70,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "between 100 and 115°F, but warm-to-the-touch tap water is fine",
         "category": "Other"
       }
     },
@@ -131,7 +131,7 @@
     {
       "raw": "2 ounces salami, cut into thin strips (optional; not shown here)",
       "expected": {
-        "item": "salami, cut into thin strips",
+        "item": "salami",
         "measurements": [
           {
             "amount": "2",
@@ -142,7 +142,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional; not shown here",
+        "note": "optional; not shown here, cut into thin strips",
         "category": "Meat & Seafood"
       }
     },

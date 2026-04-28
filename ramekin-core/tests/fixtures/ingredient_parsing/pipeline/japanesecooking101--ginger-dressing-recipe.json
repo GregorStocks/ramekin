@@ -95,15 +95,15 @@
     {
       "raw": "1/2 - 1 clove garlic (or 1/4 tsp garlic powder)",
       "expected": {
-        "item": "garlic (or 1/4 tsp garlic powder)",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "0.5-1",
             "unit": "clove"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "or 1/4 tsp garlic powder",
+        "category": "Produce"
       }
     },
     {

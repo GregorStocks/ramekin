@@ -67,7 +67,7 @@
     {
       "raw": "3 pounds (1.4 kg) beef brisket, cut with the grain into 3 steaks",
       "expected": {
-        "item": "beef brisket, cut with the grain into 3 steaks",
+        "item": "beef brisket",
         "measurements": [
           {
             "amount": "3",
@@ -78,7 +78,7 @@
             "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "cut with the grain into 3 steaks",
         "category": "Meat & Seafood"
       }
     },
@@ -90,13 +90,9 @@
           {
             "amount": "1",
             "unit": "piece"
-          },
-          {
-            "amount": "3",
-            "unit": "inch"
           }
         ],
-        "note": "peeled and thinly sliced",
+        "note": "3-inch, peeled and thinly sliced",
         "category": "Beverages"
       }
     },
@@ -122,20 +118,16 @@
           {
             "amount": "1",
             "unit": "piece"
-          },
-          {
-            "amount": "2",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "2-inch",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "3 tablespoons (45 ml) chu hou sauce (see notes)",
       "expected": {
-        "item": "chu hou sauce (see notes)",
+        "item": "chu hou sauce",
         "measurements": [
           {
             "amount": "3",
@@ -146,7 +138,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Condiments & Sauces"
       }
     },

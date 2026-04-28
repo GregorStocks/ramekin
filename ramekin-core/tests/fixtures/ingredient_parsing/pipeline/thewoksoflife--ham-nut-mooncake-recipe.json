@@ -50,14 +50,14 @@
     {
       "raw": "140 ml inverted sugar syrup ((which you bought or made in Part I))",
       "expected": {
-        "item": "inverted sugar syrup (which you bought or made in Part I)",
+        "item": "inverted sugar syrup",
         "measurements": [
           {
             "amount": "140",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "which you bought or made in Part I",
         "category": "Baking"
       }
     },
@@ -78,14 +78,14 @@
     {
       "raw": "1 teaspoon lye water ((available at your Chinese grocery store))",
       "expected": {
-        "item": "lye water (available at your Chinese grocery store)",
+        "item": "lye water",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "available at your Chinese grocery store",
         "category": "Other"
       }
     },
@@ -110,28 +110,28 @@
     {
       "raw": "100 grams jinhua ham ((京华火腿))",
       "expected": {
-        "item": "jinhua ham (京华火腿)",
+        "item": "jinhua ham",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "京华火腿",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "2 tablespoons ham juice ((from steaming the ham––see instructions below))",
       "expected": {
-        "item": "ham juice (from steaming the ham--see instructions below)",
+        "item": "ham juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from steaming the ham--see instructions below",
         "category": "Beverages"
       }
     },
@@ -247,7 +247,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "or corn oil, about 75 ml",
         "category": "Oils & Vinegars"
       }
     },
@@ -343,7 +343,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 120 ml",
         "category": "Other"
       }
     },

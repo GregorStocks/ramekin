@@ -37,21 +37,21 @@
     {
       "raw": "1/4 teaspoon Optional - kosher salt (, if using unsalted butter or you like desserts with a sweet/salty contrast like salted caramel)",
       "expected": {
-        "item": "Optional - kosher salt (, if using unsalted butter or you like desserts with a sweet/salty contrast like salted caramel)",
+        "item": "Optional - kosher salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "if using unsalted butter or you like desserts with a sweet/salty contrast like salted caramel",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "28 ounces sweetened condensed milk ((two 14 oz. cans) (not evaporated milk))",
       "expected": {
-        "item": "sweetened condensed milk (two 14 oz. cans) (not evaporated milk)",
+        "item": "sweetened condensed milk",
         "measurements": [
           {
             "amount": "28",
@@ -62,7 +62,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "two 14 oz. cans, not evaporated milk",
         "category": "Canned Goods"
       }
     },
@@ -83,23 +83,23 @@
     {
       "raw": "finely grated zest from about 4 meyer lemons ((or 3 large lemons))",
       "expected": {
-        "item": "finely grated zest from about 4 meyer lemons (or 3 large lemons)",
+        "item": "finely grated zest from about 4 meyer lemons",
         "measurements": [],
-        "note": null,
+        "note": "or 3 large lemons",
         "category": "Produce"
       }
     },
     {
       "raw": "1 cup meyer lemon juice (* use 3/4 cup if using regular lemon juice)",
       "expected": {
-        "item": "meyer lemon juice (* use 3/4 cup if using regular lemon juice)",
+        "item": "meyer lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "* use 3/4 cup if using regular lemon juice",
         "category": "Beverages"
       }
     },

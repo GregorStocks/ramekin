@@ -19,42 +19,46 @@
     {
       "raw": "1/4 cup maple syrup (honey or agave)",
       "expected": {
-        "item": "maple syrup (honey or agave)",
+        "item": "maple syrup",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "79",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "honey or agave",
         "category": "Baking"
       }
     },
     {
       "raw": "1  lime (juiced and zested)",
       "expected": {
-        "item": "lime (juiced and zested)",
+        "item": "lime",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced and zested",
+        "category": "Produce"
       }
     },
     {
       "raw": "1 cup of coconut cream (not coconut milk*)",
       "expected": {
-        "item": "coconut cream (not coconut milk*)",
+        "item": "coconut cream",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "not coconut milk",
         "category": "Canned Goods"
       }
     },

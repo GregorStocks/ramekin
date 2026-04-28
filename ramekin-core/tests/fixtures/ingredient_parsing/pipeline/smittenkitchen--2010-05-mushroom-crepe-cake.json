@@ -154,14 +154,14 @@
     {
       "raw": "2 tablespoons chives, thinly sliced (I skipped this, didn’t have them on hand)",
       "expected": {
-        "item": "chives, thinly sliced (I skipped this, didn’t have them on hand)",
+        "item": "chives",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I skipped this, didn’t have them on hand, thinly sliced",
         "category": "Produce"
       }
     },

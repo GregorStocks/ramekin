@@ -65,14 +65,18 @@
     {
       "raw": "1/4 cup Kosher salt (do NOT use table salt)",
       "expected": {
-        "item": "Kosher salt (do NOT use table salt)",
+        "item": "Kosher salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "34",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "do NOT use table salt",
         "category": "Spices & Seasonings"
       }
     },

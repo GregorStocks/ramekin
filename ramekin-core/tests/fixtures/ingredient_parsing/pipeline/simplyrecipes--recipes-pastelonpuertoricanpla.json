@@ -98,7 +98,7 @@
             "unit": "g"
           }
         ],
-        "note": "minced",
+        "note": "about 1 cup, minced",
         "category": "Produce"
       }
     },
@@ -116,21 +116,21 @@
             "unit": "cup"
           }
         ],
-        "note": "minced",
+        "note": "about 1 cup, minced",
         "category": "Produce"
       }
     },
     {
       "raw": "1 tablespoon recaito flavoring base ( store-bought &nbsp;or&nbsp; homemade ), or 2 tablespoons chopped cilantro",
       "expected": {
-        "item": "recaito flavoring base ( store-bought  or  homemade",
+        "item": "recaito flavoring base",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or 2 tablespoons chopped cilantro",
+        "note": "store-bought  or  homemade; or 2 tablespoons chopped cilantro",
         "category": "Other"
       }
     },

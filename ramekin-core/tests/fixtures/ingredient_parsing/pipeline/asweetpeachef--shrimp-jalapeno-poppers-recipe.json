@@ -5,7 +5,25 @@
     {
       "raw": "1/2 lb large shrimp (approx. 8-10 shrimp)",
       "expected": {
-        "item": "large shrimp (approx. 8-10 shrimp)",
+        "item": "large shrimp",
+        "measurements": [
+          {
+            "amount": "0.5",
+            "unit": "lb"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": "approx. 8-10 shrimp",
+        "category": "Meat & Seafood"
+      }
+    },
+    {
+      "raw": "1/2 lb thick look for nitrate-free, uncooked bacon",
+      "expected": {
+        "item": "thick look for nitrate-free, uncooked bacon",
         "measurements": [
           {
             "amount": "0.5",
@@ -18,24 +36,6 @@
         ],
         "note": null,
         "category": "Meat & Seafood"
-      }
-    },
-    {
-      "raw": "1/2 lb thick look for nitrate-free, uncooked bacon",
-      "expected": {
-        "item": "thick look for nitrate-free",
-        "measurements": [
-          {
-            "amount": "0.5",
-            "unit": "lb"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
-          }
-        ],
-        "note": "uncooked bacon",
-        "category": "Other"
       }
     },
     {

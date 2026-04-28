@@ -23,18 +23,14 @@
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -59,14 +55,18 @@
     {
       "raw": "½ tbsp sake (or white wine)",
       "expected": {
-        "item": "sake (or white wine)",
+        "item": "sake",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "7.5",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or white wine",
         "category": "Beverages"
       }
     },

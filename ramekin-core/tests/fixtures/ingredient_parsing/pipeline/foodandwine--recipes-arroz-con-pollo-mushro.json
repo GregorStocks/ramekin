@@ -37,14 +37,14 @@
     {
       "raw": "One 3 1/2-pound chicken, cut into 8 pieces",
       "expected": {
-        "item": "3 1/2-pound chicken, cut into 8 pieces",
+        "item": "3 1/2-pound chicken",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 8 pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -139,21 +139,21 @@
     {
       "raw": "1/2 teaspoon sweet pimentón de la Vera (smoked Spanish paprika)",
       "expected": {
-        "item": "sweet pimentón de la Vera (smoked Spanish paprika)",
+        "item": "sweet pimentón de la Vera",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "smoked Spanish paprika",
+        "category": "Other"
       }
     },
     {
       "raw": "1/2 pound oyster or cremini mushrooms, cut into 1-inch pieces",
       "expected": {
-        "item": "oyster or cremini mushrooms, cut into 1-inch pieces",
+        "item": "oyster or cremini mushrooms",
         "measurements": [
           {
             "amount": "0.5",
@@ -164,7 +164,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Produce"
       }
     },

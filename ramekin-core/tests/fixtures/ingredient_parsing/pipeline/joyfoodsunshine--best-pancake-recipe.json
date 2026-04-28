@@ -145,14 +145,18 @@
     {
       "raw": "¼ cup sour cream (or Greek yogurt)",
       "expected": {
-        "item": "sour cream (or Greek yogurt)",
+        "item": "sour cream",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Greek yogurt",
         "category": "Dairy & Eggs"
       }
     },
@@ -191,14 +195,18 @@
     {
       "raw": "3 Tablespoons salted butter (for cooking)",
       "expected": {
-        "item": "salted butter (for cooking)",
+        "item": "salted butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for cooking",
         "category": "Dairy & Eggs"
       }
     }

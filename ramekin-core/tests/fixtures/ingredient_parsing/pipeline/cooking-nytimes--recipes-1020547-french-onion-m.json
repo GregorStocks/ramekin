@@ -105,14 +105,14 @@
     {
       "raw": "1 baguette, cut into 1/2-inch slices",
       "expected": {
-        "item": "baguette, cut into 1/2-inch slices",
+        "item": "baguette",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch slices",
         "category": "Bakery & Bread"
       }
     },
@@ -198,7 +198,7 @@
             "unit": "g"
           }
         ],
-        "note": "grated",
+        "note": "about 5 cups, grated",
         "category": "Cheese"
       }
     },
@@ -220,7 +220,7 @@
             "unit": "g"
           }
         ],
-        "note": "grated",
+        "note": "about 4 cups, grated",
         "category": "Cheese"
       }
     }

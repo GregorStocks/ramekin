@@ -213,14 +213,14 @@
     {
       "raw": "4 slices cheese, American or whatever you like on burgers, if you’re making cheeseburgers",
       "expected": {
-        "item": "cheese, American or whatever you like on burgers, if you’re making cheeseburgers",
+        "item": "cheese, American or whatever you like on burgers",
         "measurements": [
           {
             "amount": "4",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "if you’re making cheeseburgers",
         "category": "Cheese"
       }
     },
@@ -241,23 +241,23 @@
     {
       "raw": "Thinly sliced pickles, if desired",
       "expected": {
-        "item": "Thinly sliced pickles, if desired",
+        "item": "Thinly sliced pickles",
         "measurements": [],
-        "note": null,
+        "note": "if desired",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "4 burger-sized pieces green-leaf lettuce (I used curly green leaf lettuce)",
       "expected": {
-        "item": "burger-sized pieces green-leaf lettuce (I used curly green leaf lettuce)",
+        "item": "burger-sized pieces green-leaf lettuce",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "I used curly green leaf lettuce",
         "category": "Produce"
       }
     }

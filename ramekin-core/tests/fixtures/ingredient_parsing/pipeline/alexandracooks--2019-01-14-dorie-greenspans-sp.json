@@ -28,14 +28,14 @@
     {
       "raw": "1 to 2 heads of garlic, cut in half horizontally",
       "expected": {
-        "item": "garlic, cut in half horizontally",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "cut in half horizontally",
         "category": "Produce"
       }
     },
@@ -152,14 +152,14 @@
     {
       "raw": "¾ teaspoon ground sumac or finely grated zest of one lemon (I use lemon)",
       "expected": {
-        "item": "ground sumac or finely grated zest of one lemon (I use lemon)",
+        "item": "ground sumac or finely grated zest of one lemon",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "I use lemon",
         "category": "Produce"
       }
     },

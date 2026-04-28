@@ -5,28 +5,28 @@
     {
       "raw": "70 g cake flour (lower protein content for lighter batter)",
       "expected": {
-        "item": "cake flour (lower protein content for lighter batter)",
+        "item": "cake flour",
         "measurements": [
           {
             "amount": "70",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "lower protein content for lighter batter",
         "category": "Baking"
       }
     },
     {
       "raw": "1 tbsp rice flour (or corn starch)",
       "expected": {
-        "item": "rice flour (or corn starch)",
+        "item": "rice flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or corn starch",
         "category": "Baking"
       }
     },
@@ -93,14 +93,18 @@
     {
       "raw": "1 tbsp condensed milk (sweetened, not evaporated milk)",
       "expected": {
-        "item": "condensed milk (sweetened, not evaporated milk)",
+        "item": "condensed milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "19",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sweetened, not evaporated milk",
         "category": "Canned Goods"
       }
     },
@@ -121,32 +125,32 @@
     {
       "raw": "1 tsp rice vinegar (unseasoned)",
       "expected": {
-        "item": "rice vinegar (unseasoned)",
+        "item": "rice vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unseasoned",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "½ tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.7",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -171,14 +175,14 @@
     {
       "raw": "½ tsp paprika powder (regular or smoked)",
       "expected": {
-        "item": "paprika powder (regular or smoked)",
+        "item": "paprika powder",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "regular or smoked",
         "category": "Spices & Seasonings"
       }
     },
@@ -190,55 +194,59 @@
           {
             "amount": "250",
             "unit": "g"
-          },
-          {
-            "amount": null,
-            "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "medium to large size, deshelled and deveined, black tiger or white shrimp",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 tsp cornstarch (for cleaning)",
       "expected": {
-        "item": "cornstarch (for cleaning)",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for cleaning",
         "category": "Baking"
       }
     },
     {
       "raw": "2 pinches salt (for cleaning)",
       "expected": {
-        "item": "salt (for cleaning)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "2",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "for cleaning",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "3 tbsp cornstarch (or potato starch)",
       "expected": {
-        "item": "cornstarch (or potato starch)",
+        "item": "cornstarch",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "24",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or potato starch",
         "category": "Baking"
       }
     },
@@ -259,18 +267,18 @@
     {
       "raw": "cooking oil (neutral with high smoke point)",
       "expected": {
-        "item": "cooking oil (neutral with high smoke point)",
+        "item": "cooking oil",
         "measurements": [],
-        "note": null,
+        "note": "neutral with high smoke point",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "dried parsley (to garnish)",
       "expected": {
-        "item": "dried parsley (to garnish)",
+        "item": "dried parsley",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "category": "Spices & Seasonings"
       }
     }

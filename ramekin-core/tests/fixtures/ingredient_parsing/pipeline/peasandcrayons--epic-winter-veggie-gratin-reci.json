@@ -59,14 +59,18 @@
     {
       "raw": "2 cups onion ((white or yellow))",
       "expected": {
-        "item": "onion (white or yellow)",
+        "item": "onion",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "275",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "white or yellow",
         "category": "Produce"
       }
     },

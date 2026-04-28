@@ -12,15 +12,11 @@
             "unit": "lb"
           },
           {
-            "amount": "1 to 1.5",
-            "unit": "in thickness"
-          },
-          {
             "amount": "680",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 to 1 1/2 in thickness",
         "category": "Meat & Seafood"
       }
     },
@@ -45,9 +41,9 @@
     {
       "raw": "Juice of ½ lemon (more for later)",
       "expected": {
-        "item": "Juice of 1/2 lemon (more for later)",
+        "item": "Juice of 1/2 lemon",
         "measurements": [],
-        "note": null,
+        "note": "more for later",
         "category": "Beverages"
       }
     },
@@ -83,7 +79,7 @@
             "unit": "g"
           }
         ],
-        "note": "halved (I used a combination of kalamata olives and green olives",
+        "note": "halved (I used a combination of kalamata olives and green olives)",
         "category": "Canned Goods"
       }
     },

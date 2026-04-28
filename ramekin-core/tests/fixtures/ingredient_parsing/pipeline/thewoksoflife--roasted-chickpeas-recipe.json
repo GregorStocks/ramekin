@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "two 15 oz. cans, 850g",
         "category": "Canned Goods"
       }
     },
@@ -55,14 +55,18 @@
     {
       "raw": "1 tablespoon dijon mustard ((yellow mustard works in a pinch too))",
       "expected": {
-        "item": "dijon mustard (yellow mustard works in a pinch too)",
+        "item": "dijon mustard",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "yellow mustard works in a pinch too",
         "category": "Condiments & Sauces"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "1.5 cups long-grain rice, rinsed well and drained (real cups, not rice cooker cups)",
       "expected": {
-        "item": "long-grain rice, rinsed well and drained (real cups, not rice cooker cups)",
+        "item": "long-grain rice",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "real cups, not rice cooker cups, rinsed well and drained",
         "category": "Pasta & Rice"
       }
     },
@@ -101,14 +101,14 @@
     {
       "raw": "1 jalapeno, minced (stems, ribs, and seeds removed)",
       "expected": {
-        "item": "jalapeno, minced (stems, ribs, and seeds removed)",
+        "item": "jalapeno",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "stems, ribs, and seeds removed, minced",
         "category": "Produce"
       }
     },

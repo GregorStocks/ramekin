@@ -5,7 +5,7 @@
     {
       "raw": "1 pound ripe plums (I used sugar plums, but any sweet red plum will work here)",
       "expected": {
-        "item": "ripe plums (I used sugar plums, but any sweet red plum will work here)",
+        "item": "ripe plums",
         "measurements": [
           {
             "amount": "1",
@@ -16,8 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "I used sugar plums, but any sweet red plum will work here",
+        "category": "Produce"
       }
     },
     {

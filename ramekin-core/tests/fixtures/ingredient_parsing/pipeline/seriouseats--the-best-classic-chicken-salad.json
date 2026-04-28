@@ -14,13 +14,9 @@
           {
             "amount": "800",
             "unit": "g"
-          },
-          {
-            "amount": "2 to 3",
-            "unit": "breast halves"
           }
         ],
-        "note": null,
+        "note": "2 to 3 breast halves",
         "category": "Meat & Seafood"
       }
     },
@@ -129,27 +125,23 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "0.5",
-            "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "about 1/2 medium onion",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 cup finely diced celery (from 1 to 2 stalks)",
       "expected": {
-        "item": "finely diced celery (from 1 to 2 stalks)",
+        "item": "finely diced celery",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 1 to 2 stalks",
         "category": "Produce"
       }
     },
@@ -167,7 +159,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "minced",
+        "note": "about 1 teaspoon, minced",
         "category": "Produce"
       }
     }

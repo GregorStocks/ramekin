@@ -101,21 +101,25 @@
     {
       "raw": "3 cups beef broth (low sodium)",
       "expected": {
-        "item": "beef broth (low sodium)",
+        "item": "beef broth",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "747",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "8 ounces pasta (like rotini or penne, dry)",
       "expected": {
-        "item": "pasta (like rotini or penne, dry)",
+        "item": "pasta",
         "measurements": [
           {
             "amount": "8",
@@ -126,7 +130,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "like rotini or penne, dry",
         "category": "Pasta & Rice"
       }
     },

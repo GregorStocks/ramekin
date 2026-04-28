@@ -101,14 +101,14 @@
     {
       "raw": "1/2 tsp dried mint (spearmint not peppermint)",
       "expected": {
-        "item": "dried mint (spearmint not peppermint)",
+        "item": "dried mint",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "spearmint not peppermint",
         "category": "Spices & Seasonings"
       }
     },

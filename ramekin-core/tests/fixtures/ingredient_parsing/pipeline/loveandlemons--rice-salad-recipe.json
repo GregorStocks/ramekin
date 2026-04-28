@@ -5,14 +5,14 @@
     {
       "raw": "4 cups cooked long grain rice (any kind - see options below)",
       "expected": {
-        "item": "cooked long grain rice (any kind - see options below)",
+        "item": "cooked long grain rice",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "any kind - see options below",
         "category": "Pasta & Rice"
       }
     },
@@ -65,8 +65,13 @@
     {
       "raw": "⅓ cup toasted (chopped pistachios)",
       "expected": {
-        "item": "⅓ cup toasted (chopped pistachios)",
-        "measurements": [],
+        "item": "toasted chopped pistachios",
+        "measurements": [
+          {
+            "amount": "0.33",
+            "unit": "cup"
+          }
+        ],
         "note": null,
         "category": "Nuts & Dried Fruit"
       }
@@ -170,14 +175,14 @@
     {
       "raw": "1 tablespoon fresh orange juice (plus 1 teaspoon zest)",
       "expected": {
-        "item": "fresh orange juice (plus 1 teaspoon zest)",
+        "item": "fresh orange juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "plus 1 teaspoon zest",
         "category": "Produce"
       }
     },

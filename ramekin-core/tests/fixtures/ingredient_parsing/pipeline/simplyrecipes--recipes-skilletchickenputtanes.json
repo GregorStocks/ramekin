@@ -27,14 +27,14 @@
     {
       "raw": "4 anchovy fillets, coarsely chopped (optional)",
       "expected": {
-        "item": "anchovy fillets, coarsely chopped",
+        "item": "anchovy fillets",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "optional, coarsely chopped",
         "category": "Meat & Seafood"
       }
     },
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 3 pounds",
         "category": "Meat & Seafood"
       }
     },
@@ -196,9 +196,9 @@
     {
       "raw": "Crusty bread, to serve (skip if serving gluten-free)",
       "expected": {
-        "item": "Crusty bread, to serve (skip if serving gluten-free)",
+        "item": "Crusty bread, to serve",
         "measurements": [],
-        "note": null,
+        "note": "skip if serving gluten-free",
         "category": "Bakery & Bread"
       }
     }

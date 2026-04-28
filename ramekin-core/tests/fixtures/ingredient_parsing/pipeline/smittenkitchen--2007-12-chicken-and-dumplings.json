@@ -81,14 +81,14 @@
     {
       "raw": "2 medium leeks , white and llight green parts only, cut in half lengthwise and then into 1-inch pieces",
       "expected": {
-        "item": "leeks, white and llight green parts only, cut in half lengthwise and then into 1-inch pieces",
+        "item": "leeks, white and llight green parts only",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut in half lengthwise and then into 1-inch pieces",
         "category": "Produce"
       }
     },
@@ -306,14 +306,14 @@
     {
       "raw": "3 tablespoons reserved chicken fat (or unsalted butter)",
       "expected": {
-        "item": "reserved chicken fat (or unsalted butter)",
+        "item": "reserved chicken fat",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or unsalted butter",
         "category": "Meat & Seafood"
       }
     }

@@ -16,15 +16,11 @@
             "unit": "ml"
           },
           {
-            "amount": "105",
-            "unit": null
-          },
-          {
             "amount": "178",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "105° to 110°F",
         "category": "Other"
       }
     },
@@ -143,14 +139,14 @@
     {
       "raw": "1 1/2 cups halved Concord, red or black grapes, seeded",
       "expected": {
-        "item": "halved Concord, red or black grapes, seeded",
+        "item": "halved Concord, red or black grapes",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "seeded",
         "category": "Produce"
       }
     },
@@ -194,13 +190,9 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": null,
-            "unit": "head"
           }
         ],
-        "note": null,
+        "note": "heads up: some are finding this too salty; if you’re worried, use less",
         "category": "Spices & Seasonings"
       }
     }

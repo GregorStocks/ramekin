@@ -37,28 +37,32 @@
     {
       "raw": "2 1/4 tsp active dry yeast (one package active dry yeast)",
       "expected": {
-        "item": "active dry yeast (one package active dry yeast)",
+        "item": "active dry yeast",
         "measurements": [
           {
             "amount": "2.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "one package active dry yeast",
         "category": "Baking"
       }
     },
     {
       "raw": "3 cups unbleached all-purpose flour (more for dusting)",
       "expected": {
-        "item": "unbleached all-purpose flour (more for dusting)",
+        "item": "unbleached all-purpose flour",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "more for dusting",
         "category": "Baking"
       }
     },
@@ -134,10 +138,10 @@
     {
       "raw": "Fresh garden vegetables (tomato, cucumbers, radish)",
       "expected": {
-        "item": "Fresh garden vegetables (tomato, cucumbers, radish)",
+        "item": "Fresh garden vegetables",
         "measurements": [],
-        "note": null,
-        "category": "Produce"
+        "note": "tomato, cucumbers, radish",
+        "category": "Other"
       }
     },
     {
@@ -152,9 +156,9 @@
     {
       "raw": "Homemade labneh or feta cheese (omit if vegan)",
       "expected": {
-        "item": "Homemade labneh or feta cheese (omit if vegan)",
+        "item": "Homemade labneh or feta cheese",
         "measurements": [],
-        "note": null,
+        "note": "omit if vegan",
         "category": "Cheese"
       }
     }

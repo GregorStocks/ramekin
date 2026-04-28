@@ -5,7 +5,7 @@
     {
       "raw": "40 dried lily buds (about 1/2 ounce) (see Note)",
       "expected": {
-        "item": "dried lily buds (see Note)",
+        "item": "dried lily buds",
         "measurements": [
           {
             "amount": "40",
@@ -20,21 +20,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1/2 ounce, see Note",
         "category": "Other"
       }
     },
     {
       "raw": "1/4 cup small dried tree ear mushrooms (see Note) or dried shiitake mushroom caps",
       "expected": {
-        "item": "small dried tree ear mushrooms (see Note) or dried shiitake mushroom caps",
+        "item": "small dried tree ear mushrooms or dried shiitake mushroom caps",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Produce"
       }
     },
@@ -255,14 +255,14 @@
     {
       "raw": "2 tablespoons thinly sliced scallions (from 1 medium scallion)",
       "expected": {
-        "item": "thinly sliced scallions (from 1 medium scallion)",
+        "item": "thinly sliced scallions",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from 1 medium scallion",
         "category": "Produce"
       }
     }

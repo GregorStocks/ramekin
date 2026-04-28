@@ -10,13 +10,9 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "110-115",
-            "unit": "degrees"
           }
         ],
-        "note": null,
+        "note": "110 - 115 degrees",
         "category": "Other"
       }
     },
@@ -59,14 +55,14 @@
     {
       "raw": "3 - 3 1/2 cups all-purpose flour ((scoop and level to measure))",
       "expected": {
-        "item": "1/2 cups all-purpose flour (scoop and level to measure)",
+        "item": "1/2 cups all-purpose flour",
         "measurements": [
           {
             "amount": "3-3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "scoop and level to measure",
         "category": "Baking"
       }
     },
@@ -91,14 +87,18 @@
     {
       "raw": "3 Tbsp vegetable oil (or olive oil)",
       "expected": {
-        "item": "vegetable oil (or olive oil)",
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "41",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or olive oil",
         "category": "Oils & Vinegars"
       }
     },

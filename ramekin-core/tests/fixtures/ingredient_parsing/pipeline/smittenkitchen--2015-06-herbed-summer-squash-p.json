@@ -124,15 +124,15 @@
     {
       "raw": "1 teaspoon finely grated lemon zest (you won’t need this yet, but better to zest before juicing, to avoid grumpiness)",
       "expected": {
-        "item": "finely grated lemon zest (you won’t need this yet, but better to zest before juicing, to avoid grumpiness)",
+        "item": "finely grated lemon zest",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "you won’t need this yet, but better to zest before juicing, to avoid grumpiness",
+        "category": "Produce"
       }
     },
     {
@@ -257,14 +257,14 @@
     {
       "raw": "1 tablespoon finely chopped mixed herbs of your choice (I used a mix of thyme, oregano and mint, but if you only have, say, thyme or oregano, a full tablespoon will likely overwhelm, so use less)",
       "expected": {
-        "item": "finely chopped mixed herbs of your choice (I used a mix of thyme, oregano and mint, but if you only have, say, thyme or oregano, a full tablespoon will likely overwhelm, so use less)",
+        "item": "finely chopped mixed herbs of your choice",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I used a mix of thyme, oregano and mint, but if you only have, say, thyme or oregano, a full tablespoon will likely overwhelm, so use less",
         "category": "Spices & Seasonings"
       }
     },
@@ -294,7 +294,7 @@
     {
       "raw": "4 ounces (115 grams) mozzarella, cut into small cubes",
       "expected": {
-        "item": "mozzarella, cut into small cubes",
+        "item": "mozzarella",
         "measurements": [
           {
             "amount": "4",
@@ -305,7 +305,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small cubes",
         "category": "Cheese"
       }
     }

@@ -215,14 +215,14 @@
     {
       "raw": "1 cup finely shredded coconut, (unsweetened)",
       "expected": {
-        "item": "finely shredded coconut, (unsweetened)",
+        "item": "finely shredded coconut",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "unsweetened",
         "category": "Produce"
       }
     },

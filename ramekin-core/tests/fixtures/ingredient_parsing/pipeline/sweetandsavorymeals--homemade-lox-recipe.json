@@ -5,7 +5,7 @@
     {
       "raw": "4 pounds salmon fillet (choose the thick belly cut)",
       "expected": {
-        "item": "salmon fillet (choose the thick belly cut)",
+        "item": "salmon fillet",
         "measurements": [
           {
             "amount": "4",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "choose the thick belly cut",
         "category": "Meat & Seafood"
       }
     },
@@ -41,14 +41,18 @@
     {
       "raw": "1 cup kosher salt (or sea salt)",
       "expected": {
-        "item": "kosher salt (or sea salt)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "137",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or sea salt",
         "category": "Spices & Seasonings"
       }
     },

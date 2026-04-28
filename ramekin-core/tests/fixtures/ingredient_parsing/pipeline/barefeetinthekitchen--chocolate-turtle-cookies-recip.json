@@ -111,14 +111,14 @@
     {
       "raw": "½ cup chopped pecans (plus a few more for topping if desired)",
       "expected": {
-        "item": "chopped pecans (plus a few more for topping if desired)",
+        "item": "chopped pecans",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "plus a few more for topping if desired",
         "category": "Nuts & Dried Fruit"
       }
     }

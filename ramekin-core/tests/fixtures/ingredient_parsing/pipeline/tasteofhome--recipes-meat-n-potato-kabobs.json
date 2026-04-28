@@ -5,7 +5,7 @@
     {
       "raw": "1 pound beef top sirloin steak, cut into 1-inch cubes",
       "expected": {
-        "item": "beef top sirloin steak, cut into 1-inch cubes",
+        "item": "beef top sirloin steak",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -80,7 +80,7 @@
             "unit": "g"
           }
         ],
-        "note": "cubed",
+        "note": "about 8 ounces, cubed",
         "category": "Produce"
       }
     },
@@ -119,14 +119,14 @@
     {
       "raw": "1 medium sweet orange pepper, cut into 1-inch pieces",
       "expected": {
-        "item": "sweet orange pepper, cut into 1-inch pieces",
+        "item": "sweet orange pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Produce"
       }
     },

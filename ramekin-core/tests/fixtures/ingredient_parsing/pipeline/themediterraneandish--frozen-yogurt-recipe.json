@@ -12,7 +12,7 @@
             "unit": "cup"
           }
         ],
-        "note": "or other frozen fruit of your choice (see notes",
+        "note": "or other frozen fruit of your choice (see notes)",
         "category": "Produce"
       }
     },
@@ -47,28 +47,28 @@
     {
       "raw": "2 tsp orange extract,  (or vanilla extract, if you like)",
       "expected": {
-        "item": "orange extract,  (or vanilla extract, if you like)",
+        "item": "orange extract",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or vanilla extract, if you like",
         "category": "Baking"
       }
     },
     {
       "raw": "4 to 6 tbsp honey, (more to your liking, I used Greek honey)",
       "expected": {
-        "item": "honey, (more to your liking, I used Greek honey)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "4 to 6",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "more to your liking, I used Greek honey",
         "category": "Baking"
       }
     },

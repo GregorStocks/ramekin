@@ -55,14 +55,14 @@
     {
       "raw": "2 tablespoons raw or roasted unsalted sunflower seed kernels (no shells)",
       "expected": {
-        "item": "raw or roasted unsalted sunflower seed kernels (no shells)",
+        "item": "raw or roasted unsalted sunflower seed kernels",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "no shells",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -111,14 +111,14 @@
     {
       "raw": "½ tablespoon black sesame seeds (you can also use all white)",
       "expected": {
-        "item": "black sesame seeds (you can also use all white)",
+        "item": "black sesame seeds",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "you can also use all white",
         "category": "Spices & Seasonings"
       }
     },

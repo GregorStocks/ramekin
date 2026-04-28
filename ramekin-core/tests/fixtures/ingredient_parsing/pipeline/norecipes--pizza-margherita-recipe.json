@@ -5,14 +5,18 @@
     {
       "raw": "1 1/2 cups water ((luke warm))",
       "expected": {
-        "item": "water (luke warm)",
+        "item": "water",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "356",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "luke warm",
         "category": "Other"
       }
     },
@@ -66,21 +70,21 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "~3 cups",
         "category": "Baking"
       }
     },
     {
       "raw": "3  tomatoes ((very ripe))",
       "expected": {
-        "item": "tomatoes (very ripe)",
+        "item": "tomatoes",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "very ripe",
         "category": "Produce"
       }
     },
@@ -110,14 +114,14 @@
     {
       "raw": "1 bunch basil ((leaves only))",
       "expected": {
-        "item": "basil (leaves only)",
+        "item": "basil",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "leaves only",
         "category": "Spices & Seasonings"
       }
     }

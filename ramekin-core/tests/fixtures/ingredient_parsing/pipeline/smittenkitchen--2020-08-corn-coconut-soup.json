@@ -60,13 +60,9 @@
           {
             "amount": "1",
             "unit": "piece"
-          },
-          {
-            "amount": "1",
-            "unit": "inch"
           }
         ],
-        "note": "peeled and thinly sliced",
+        "note": "1-inch, peeled and thinly sliced",
         "category": "Beverages"
       }
     },
@@ -130,19 +126,11 @@
             "unit": "can"
           },
           {
-            "amount": "13.5",
-            "unit": "oz"
-          },
-          {
             "amount": "400",
             "unit": "ml"
-          },
-          {
-            "amount": "383",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "13.5-ounce or 400-ml",
         "category": "Canned Goods"
       }
     },
@@ -158,9 +146,9 @@
     {
       "raw": "To garnish: Fresh cilantro leaves, lime wedges, toasted coconut flakes, (see below for next three) chile oil, pickled shallots, and/or crispy shallots",
       "expected": {
-        "item": "To garnish: Fresh cilantro leaves, lime wedges, toasted coconut flakes, (see below for next three) chile oil, pickled shallots, and/or crispy shallots",
+        "item": "To garnish: Fresh cilantro leaves, lime wedges, toasted coconut flakes chile oil, pickled shallots, and/or crispy shallots",
         "measurements": [],
-        "note": null,
+        "note": "see below for next three",
         "category": "Produce"
       }
     }

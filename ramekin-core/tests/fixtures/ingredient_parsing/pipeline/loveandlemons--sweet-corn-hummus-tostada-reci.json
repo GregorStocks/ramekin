@@ -96,15 +96,15 @@
     {
       "raw": "1 teaspoon chipotle paste (or chipotle powder)",
       "expected": {
-        "item": "chipotle paste (or chipotle powder)",
+        "item": "chipotle paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "or chipotle powder",
+        "category": "Snacks"
       }
     },
     {

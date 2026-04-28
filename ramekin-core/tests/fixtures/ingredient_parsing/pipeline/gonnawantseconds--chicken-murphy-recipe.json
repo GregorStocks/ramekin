@@ -5,7 +5,7 @@
     {
       "raw": "1 pound chicken (cut into 1 1/2 inch cubes)",
       "expected": {
-        "item": "chicken (cut into 1 1/2 inch cubes)",
+        "item": "chicken",
         "measurements": [
           {
             "amount": "1",
@@ -16,21 +16,25 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1 1/2 inch cubes",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1/4 cup (plus 1 tablespoon) all-purpose flour (divided)",
       "expected": {
-        "item": "(plus 1 tablespoon) all-purpose flour (divided)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plus 1 tablespoon, divided",
         "category": "Baking"
       }
     },
@@ -64,7 +68,7 @@
     {
       "raw": "1 pound Italian sausage (casing removed)",
       "expected": {
-        "item": "Italian sausage (casing removed)",
+        "item": "Italian sausage",
         "measurements": [
           {
             "amount": "1",
@@ -75,7 +79,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "casing removed",
         "category": "Meat & Seafood"
       }
     },
@@ -96,28 +100,28 @@
     {
       "raw": "1  red bell pepper (seeded, cut into 1 1/2 inch pieces)",
       "expected": {
-        "item": "red bell pepper (seeded, cut into 1 1/2 inch pieces)",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded, cut into 1 1/2 inch pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1  green bell pepper (seeded, cut into 1 1/2 inch pieces)",
       "expected": {
-        "item": "green bell pepper (seeded, cut into 1 1/2 inch pieces)",
+        "item": "green bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded, cut into 1 1/2 inch pieces",
         "category": "Produce"
       }
     },
@@ -234,14 +238,14 @@
     {
       "raw": "1 cup peppadew peppers (cut in half)",
       "expected": {
-        "item": "peppadew peppers (cut in half)",
+        "item": "peppadew peppers",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut in half",
         "category": "Spices & Seasonings"
       }
     },

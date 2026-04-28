@@ -77,14 +77,18 @@
     {
       "raw": "1 1/4 cup oil (I used light olive oil)",
       "expected": {
-        "item": "oil (I used light olive oil)",
+        "item": "oil",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "272",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used light olive oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -127,14 +131,14 @@
     {
       "raw": "2 Tbsp sea salt (best if it's not iodized)",
       "expected": {
-        "item": "sea salt (best if it's not iodized)",
+        "item": "sea salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "best if it's not iodized",
         "category": "Spices & Seasonings"
       }
     }

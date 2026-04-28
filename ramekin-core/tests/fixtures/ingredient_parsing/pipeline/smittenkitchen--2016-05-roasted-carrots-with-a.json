@@ -183,35 +183,43 @@
     {
       "raw": "2 tablespoons orange juice (from about 1/4 orange)",
       "expected": {
-        "item": "orange juice (from about 1/4 orange)",
+        "item": "orange juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 1/4 orange",
         "category": "Produce"
       }
     },
     {
       "raw": "2 tablespoons lemon juice (from about 1/2 lemon)",
       "expected": {
-        "item": "lemon juice (from about 1/2 lemon)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from about 1/2 lemon",
         "category": "Beverages"
       }
     },
     {
       "raw": "1 large or 2 medium firm-ripe avocados, cut in thin slices",
       "expected": {
-        "item": "firm-ripe avocados, cut in thin slices",
+        "item": "firm-ripe avocados",
         "measurements": [
           {
             "amount": "1",
@@ -222,7 +230,7 @@
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut in thin slices",
         "category": "Produce"
       }
     },

@@ -20,22 +20,26 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 cups",
         "category": "Baking"
       }
     },
     {
       "raw": "2 tablespoons sugar (if making sweet shortcake-style biscuits)",
       "expected": {
-        "item": "sugar (if making sweet shortcake-style biscuits)",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "25",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Bakery & Bread"
+        "note": "if making sweet shortcake-style biscuits",
+        "category": "Baking"
       }
     },
     {
@@ -56,7 +60,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for brushing",
+        "note": "about 1 1/4 cups, plus more for brushing",
         "category": "Dairy & Eggs"
       }
     }

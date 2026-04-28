@@ -36,20 +36,16 @@
           {
             "amount": "5.25",
             "unit": "oz"
-          },
-          {
-            "amount": "1",
-            "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "5.25 ounces; about 1 cup plus 2 teaspoons",
         "category": "Baking"
       }
     },
     {
       "raw": "175 g whole milk (6 ounces; 3/4 cup) (see notes)",
       "expected": {
-        "item": "whole milk (see notes)",
+        "item": "whole milk",
         "measurements": [
           {
             "amount": "175",
@@ -64,7 +60,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Dairy & Eggs"
       }
     },
@@ -82,14 +78,14 @@
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "about 1/2 teaspoon",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "25 g water (0.85 ounces; 1 tablespoon plus 2 teaspoons) (see notes)",
       "expected": {
-        "item": "water (see notes)",
+        "item": "water",
         "measurements": [
           {
             "amount": "25",
@@ -98,13 +94,9 @@
           {
             "amount": "0.85",
             "unit": "oz"
-          },
-          {
-            "amount": "1",
-            "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "0.85 ounces; 1 tablespoon plus 2 teaspoons, see notes",
         "category": "Other"
       }
     },
@@ -122,7 +114,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 1/2 cup",
         "category": "Oils & Vinegars"
       }
     }

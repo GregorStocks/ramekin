@@ -123,7 +123,7 @@
     {
       "raw": "1 small head cauliflower, cut into small florets (about 6 cups)",
       "expected": {
-        "item": "head cauliflower, cut into small florets",
+        "item": "head cauliflower",
         "measurements": [
           {
             "amount": "1",
@@ -134,7 +134,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 6 cups, cut into small florets",
         "category": "Produce"
       }
     },
@@ -270,13 +270,9 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "1",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "1/2-inch",
         "category": "Produce"
       }
     },
@@ -288,13 +284,9 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "1",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "1/2-inch",
         "category": "Produce"
       }
     },

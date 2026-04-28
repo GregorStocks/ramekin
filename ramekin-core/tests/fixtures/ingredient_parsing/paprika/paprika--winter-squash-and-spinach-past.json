@@ -113,7 +113,7 @@
     {
       "raw": "1 tablespoon (8.4 grams) kosher salt (I use Diamond; use less of other brands)",
       "expected": {
-        "item": "kosher salt (I use Diamond; use less of other brands)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1",
@@ -124,7 +124,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use Diamond; use less of other brands",
         "category": "Spices & Seasonings"
       }
     },
@@ -195,14 +195,14 @@
     {
       "raw": "2 tablespoons thinly-sliced sage leaves or 1 teaspoons chopped thyme leaves (optional)",
       "expected": {
-        "item": "thinly-sliced sage leaves or 1 teaspoons chopped thyme leaves",
+        "item": "thinly-sliced sage leaves",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "optional",
+        "note": "or 1 teaspoons chopped thyme leaves (optional)",
         "category": "Spices & Seasonings"
       }
     },
@@ -231,7 +231,7 @@
     {
       "raw": "8 ounces (225 grams) dried pasta (see Note), broken into pieces if large/long",
       "expected": {
-        "item": "dried pasta (see Note), broken into pieces if large/long",
+        "item": "dried pasta, broken into pieces if large/long",
         "measurements": [
           {
             "amount": "8",
@@ -242,7 +242,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Pasta & Rice"
       }
     }

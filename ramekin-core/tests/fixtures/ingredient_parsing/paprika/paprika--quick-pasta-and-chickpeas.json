@@ -96,7 +96,7 @@
     {
       "raw": "1/2 cup (2 ounces or 55 grams) uncooked ditalini pasta (or another small shape; I use annelini)",
       "expected": {
-        "item": "uncooked ditalini pasta (or another small shape; I use annelini)",
+        "item": "uncooked ditalini pasta",
         "measurements": [
           {
             "amount": "0.5",
@@ -111,14 +111,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or another small shape; I use annelini",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "2 cups (475 ml) boiling water (update: actually I just use tap, not boiled, water)",
       "expected": {
-        "item": "boiling water (update: actually I just use tap, not boiled, water)",
+        "item": "boiling water",
         "measurements": [
           {
             "amount": "2",
@@ -127,10 +127,14 @@
           {
             "amount": "475",
             "unit": "ml"
+          },
+          {
+            "amount": "474",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "update: actually I just use tap, not boiled, water",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -140,14 +144,14 @@
     {
       "raw": "2 to 3 tablespoons olive oil (estimate 1 per serving)",
       "expected": {
-        "item": "olive oil (estimate 1 per serving)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "estimate 1 per serving",
         "section": "To Finish",
         "category": "Oils & Vinegars"
       }

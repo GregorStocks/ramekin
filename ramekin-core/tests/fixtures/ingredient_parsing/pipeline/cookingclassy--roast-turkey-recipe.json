@@ -92,28 +92,28 @@
     {
       "raw": "1 medium yellow onion, (cut into quarters)",
       "expected": {
-        "item": "yellow onion, (cut into quarters)",
+        "item": "yellow onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into quarters",
         "category": "Produce"
       }
     },
     {
       "raw": "8  garlic cloves, (smashed)",
       "expected": {
-        "item": "garlic cloves, (smashed)",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "smashed",
         "category": "Produce"
       }
     },

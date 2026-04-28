@@ -135,14 +135,14 @@
     {
       "raw": "1 fresh chile pepper, chopped small (optional)",
       "expected": {
-        "item": "fresh chile pepper, chopped small",
+        "item": "fresh chile pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "optional, chopped small",
         "category": "Spices & Seasonings"
       }
     },
@@ -229,7 +229,7 @@
     {
       "raw": "2 cans (15.5 ounces each) black, red or kidney beans (or a mixture of any two), drained and rinsed",
       "expected": {
-        "item": "black, red or kidney beans (or a mixture of any two)",
+        "item": "black, red or kidney beans",
         "measurements": [
           {
             "amount": "2",
@@ -240,7 +240,7 @@
             "unit": "oz each"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "or a mixture of any two, drained and rinsed",
         "category": "Canned Goods"
       }
     },
@@ -256,14 +256,14 @@
     {
       "raw": "1 1/2 cups corn kernels, fresh (from 1 to 2 ears), from 1 15-ounce can, drained, or frozen and thawed",
       "expected": {
-        "item": "corn kernels, fresh (from 1 to 2 ears), from 1 15-ounce can, drained",
+        "item": "corn kernels, fresh, from 1 15-ounce can, drained",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "or frozen and thawed",
+        "note": "from 1 to 2 ears; or frozen and thawed",
         "category": "Other"
       }
     },
@@ -285,32 +285,28 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 3/4 ounces",
         "category": "Produce"
       }
     },
     {
       "raw": "6 medium-size (8-inch) flour tortillas (although corn should work too)",
       "expected": {
-        "item": "medium-size flour tortillas (although corn should work too)",
+        "item": "medium-size flour tortillas",
         "measurements": [
           {
             "amount": "6",
             "unit": null
-          },
-          {
-            "amount": "8",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "8-inch, although corn should work too",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "2 cups (8 ounces) shredded Monterey Jack or cheddar cheese (I used a mix)",
       "expected": {
-        "item": "shredded Monterey Jack or cheddar cheese (I used a mix)",
+        "item": "shredded Monterey Jack or cheddar cheese",
         "measurements": [
           {
             "amount": "2",
@@ -325,7 +321,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used a mix",
         "category": "Cheese"
       }
     },

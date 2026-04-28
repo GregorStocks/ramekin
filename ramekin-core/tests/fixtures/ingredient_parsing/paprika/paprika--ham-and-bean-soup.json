@@ -210,20 +210,16 @@
           {
             "amount": "1.1",
             "unit": "kg"
-          },
-          {
-            "amount": "2 to 3",
-            "unit": "large"
           }
         ],
-        "note": null,
+        "note": "about 2 to 3 large hocks",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "2 cups (473 ml) low-sodium chicken stock (or substitute with water)",
       "expected": {
-        "item": "low-sodium chicken stock (or substitute with water)",
+        "item": "low-sodium chicken stock",
         "measurements": [
           {
             "amount": "2",
@@ -234,7 +230,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "or substitute with water",
         "category": "Meat & Seafood"
       }
     },

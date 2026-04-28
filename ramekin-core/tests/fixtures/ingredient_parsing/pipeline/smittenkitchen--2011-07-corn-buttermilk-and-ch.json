@@ -5,28 +5,32 @@
     {
       "raw": "1 cup buttermilk (or make your own sour milk)",
       "expected": {
-        "item": "buttermilk (or make your own sour milk)",
+        "item": "buttermilk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or make your own sour milk",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1/2 cup corn kernels (from most of one cob)",
       "expected": {
-        "item": "corn kernels (from most of one cob)",
+        "item": "corn kernels",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from most of one cob",
         "category": "Other"
       }
     },

@@ -23,14 +23,18 @@
     {
       "raw": "3/4 cup unsalted butter, cut into cubes",
       "expected": {
-        "item": "unsalted butter, cut into cubes",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Dairy & Eggs"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "3 pounds chicken parts (thighs, drumsticks, and/or breasts), with skin and bones",
       "expected": {
-        "item": "chicken parts (thighs, drumsticks, and/or breasts), with skin and bones",
+        "item": "chicken parts, with skin and bones",
         "measurements": [
           {
             "amount": "3",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "thighs, drumsticks, and/or breasts",
         "category": "Meat & Seafood"
       }
     },

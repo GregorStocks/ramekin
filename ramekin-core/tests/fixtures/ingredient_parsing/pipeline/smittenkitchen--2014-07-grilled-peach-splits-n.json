@@ -68,7 +68,7 @@
     {
       "raw": "2 tablespoons (25 grams) coarse sugar, such as turbinado or Sugar in the Raw; use granulated if you have neither",
       "expected": {
-        "item": "coarse sugar",
+        "item": "coarse sugar, such as turbinado or Sugar in the Raw; use granulated if you have neither",
         "measurements": [
           {
             "amount": "2",
@@ -79,7 +79,7 @@
             "unit": "g"
           }
         ],
-        "note": "such as turbinado or Sugar in the Raw; use granulated if you have neither",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -140,15 +140,19 @@
     {
       "raw": "3/4 teaspoon vanilla extract (or you can use bourbon; I’ll never tell)",
       "expected": {
-        "item": "vanilla extract (or you can use bourbon; I’ll never tell)",
+        "item": "vanilla extract",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "tsp"
+          },
+          {
+            "amount": "3.2",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "or you can use bourbon; I’ll never tell",
+        "category": "Baking"
       }
     },
     {
@@ -326,14 +330,14 @@
     {
       "raw": "4 large firm-ripe peaches (free stone, if you can find them, not that I ever do), halved and pitted",
       "expected": {
-        "item": "firm-ripe peaches (free stone, if you can find them, not that I ever do)",
+        "item": "firm-ripe peaches",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": "halved and pitted",
+        "note": "free stone, if you can find them, not that I ever do, halved and pitted",
         "category": "Produce"
       }
     },

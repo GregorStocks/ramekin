@@ -5,14 +5,14 @@
     {
       "raw": "400 grams firm tofu ((cut into 1-inch cubes))",
       "expected": {
-        "item": "firm tofu (cut into 1-inch cubes)",
+        "item": "firm tofu",
         "measurements": [
           {
             "amount": "400",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch cubes",
         "category": "Produce"
       }
     },
@@ -218,7 +218,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "~1/3 cup",
         "category": "Nuts & Dried Fruit"
       }
     },

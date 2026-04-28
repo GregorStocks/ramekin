@@ -137,9 +137,9 @@
     {
       "raw": "Instant peanut butter cup hot cocoa mix (from recipe above)",
       "expected": {
-        "item": "Instant peanut butter cup hot cocoa mix (from recipe above)",
+        "item": "Instant peanut butter cup hot cocoa mix",
         "measurements": [],
-        "note": null,
+        "note": "from recipe above",
         "category": "Condiments & Sauces"
       }
     },
@@ -160,14 +160,14 @@
     {
       "raw": "6  mini Reese&amp;#039;s peanut butter cups (unwrapped)",
       "expected": {
-        "item": "mini Reese's peanut butter cups (unwrapped)",
+        "item": "mini Reese's peanut butter cups",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "unwrapped",
         "category": "Condiments & Sauces"
       }
     },

@@ -91,7 +91,7 @@
     {
       "raw": "6 tablespoons (85 grams or 3 ounces) unsalted butter, cold, cut into chunks",
       "expected": {
-        "item": "unsalted butter, cold, cut into chunks",
+        "item": "unsalted butter, cold",
         "measurements": [
           {
             "amount": "6",
@@ -106,7 +106,7 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Dairy & Eggs"
       }
     },

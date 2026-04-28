@@ -112,14 +112,14 @@
             "unit": "tbsp"
           }
         ],
-        "note": "optional",
+        "note": "optional, plus unmelted butter for cooking, or use neutral oil.",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1/2 pound frisee (French curly endive)",
       "expected": {
-        "item": "frisee (French curly endive)",
+        "item": "frisee",
         "measurements": [
           {
             "amount": "0.5",
@@ -130,8 +130,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "French curly endive",
+        "category": "Other"
       }
     },
     {

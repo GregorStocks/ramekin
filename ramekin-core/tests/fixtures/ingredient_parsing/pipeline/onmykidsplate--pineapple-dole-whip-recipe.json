@@ -5,15 +5,15 @@
     {
       "raw": "1/2 cup almond milk (I used unsweetened vanilla almond milk, you can use any milk of choice)",
       "expected": {
-        "item": "almond milk (I used unsweetened vanilla almond milk, you can use any milk of choice)",
+        "item": "almond milk",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "I used unsweetened vanilla almond milk, you can use any milk of choice",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {

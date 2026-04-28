@@ -5,14 +5,14 @@
     {
       "raw": "250 grams large shrimp (shelled)",
       "expected": {
-        "item": "large shrimp (shelled)",
+        "item": "large shrimp",
         "measurements": [
           {
             "amount": "250",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "shelled",
         "category": "Meat & Seafood"
       }
     },
@@ -24,13 +24,9 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "1",
-            "unit": "egg"
           }
         ],
-        "note": null,
+        "note": "about 1 egg",
         "category": "Dairy & Eggs"
       }
     },
@@ -83,14 +79,14 @@
     {
       "raw": "500 grams small shrimp (shelled)",
       "expected": {
-        "item": "small shrimp (shelled)",
+        "item": "small shrimp",
         "measurements": [
           {
             "amount": "500",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "shelled",
         "category": "Meat & Seafood"
       }
     },
@@ -144,13 +140,9 @@
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "1",
-            "unit": "egg"
           }
         ],
-        "note": null,
+        "note": "about 1 egg",
         "category": "Dairy & Eggs"
       }
     },
@@ -293,23 +285,23 @@
     {
       "raw": "32  Shumai wrappers ((or 24 wonton wrappers))",
       "expected": {
-        "item": "Shumai wrappers (or 24 wonton wrappers)",
+        "item": "Shumai wrappers",
         "measurements": [
           {
             "amount": "32",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 24 wonton wrappers",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "napa cabbage ((or lettuce, for lining steamer))",
       "expected": {
-        "item": "napa cabbage (or lettuce, for lining steamer)",
+        "item": "napa cabbage",
         "measurements": [],
-        "note": null,
+        "note": "or lettuce, for lining steamer",
         "category": "Produce"
       }
     }

@@ -357,7 +357,7 @@
     {
       "raw": "1 pound large peeled, deveined raw shrimp",
       "expected": {
-        "item": "large peeled",
+        "item": "large peeled, deveined raw shrimp",
         "measurements": [
           {
             "amount": "1",
@@ -368,8 +368,8 @@
             "unit": "g"
           }
         ],
-        "note": "deveined raw shrimp",
-        "category": "Other"
+        "note": null,
+        "category": "Meat & Seafood"
       }
     }
   ]

@@ -5,28 +5,36 @@
     {
       "raw": "1 Tbsp sake ((or substitute Chinese rice wine, dry sherry, or water))",
       "expected": {
-        "item": "sake (or substitute Chinese rice wine, dry sherry, or water)",
+        "item": "sake",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or substitute Chinese rice wine, dry sherry, or water",
         "category": "Beverages"
       }
     },
     {
       "raw": "1 Tbsp mirin ((or substitute 1 Tbsp sake or water + 1 tsp sugar))",
       "expected": {
-        "item": "mirin (or substitute 1 Tbsp sake",
+        "item": "mirin",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": "or water + 1 tsp sugar)",
+        "note": "or substitute 1 Tbsp sake or water + 1 tsp sugar",
         "category": "Condiments & Sauces"
       }
     },
@@ -69,7 +77,7 @@
     {
       "raw": "2  skin-on salmon fillets ((¾ lb, 340 g; ¾ inch (2 cm) thick))",
       "expected": {
-        "item": "skin-on salmon fillets thick)",
+        "item": "skin-on salmon fillets",
         "measurements": [
           {
             "amount": "2",
@@ -82,13 +90,9 @@
           {
             "amount": "340",
             "unit": "g"
-          },
-          {
-            "amount": "0.75",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "3/4 lb, 340 g; 3/4 inch (2 cm) thick",
         "category": "Meat & Seafood"
       }
     },
@@ -127,56 +131,68 @@
     {
       "raw": "1 Tbsp all-purpose flour (plain flour) ((use cornstarch or potato starch for gluten-free))",
       "expected": {
-        "item": "all-purpose flour (plain flour) (use cornstarch or potato starch for gluten-free)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "7.8",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plain flour, use cornstarch or potato starch for gluten-free",
         "category": "Baking"
       }
     },
     {
       "raw": "½ Tbsp neutral oil ((for cooking))",
       "expected": {
-        "item": "neutral oil (for cooking)",
+        "item": "neutral oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "for cooking",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "1 Tbsp unsalted butter ((for cooking))",
       "expected": {
-        "item": "unsalted butter (for cooking)",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for cooking",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 Tbsp sake ((for steaming; you can substitute Chinese rice wine, dry sherry, or water))",
       "expected": {
-        "item": "sake (for steaming; you can substitute Chinese rice wine, dry sherry, or water)",
+        "item": "sake",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for steaming; you can substitute Chinese rice wine, dry sherry, or water",
         "category": "Beverages"
       }
     }

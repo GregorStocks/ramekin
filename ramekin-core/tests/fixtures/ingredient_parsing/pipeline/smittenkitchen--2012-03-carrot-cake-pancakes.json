@@ -104,14 +104,14 @@
     {
       "raw": "1/2 teaspoon freshly grated nutmeg (I used a smidge less)",
       "expected": {
-        "item": "freshly grated nutmeg (I used a smidge less)",
+        "item": "freshly grated nutmeg",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "I used a smidge less",
         "category": "Spices & Seasonings"
       }
     },
@@ -211,7 +211,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus more if needed (updated, see note)",
+        "note": "updated, see note, plus more if needed",
         "category": "Dairy & Eggs"
       }
     },

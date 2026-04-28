@@ -5,7 +5,7 @@
     {
       "raw": "7 ounces extra-firm tofu (drained and cut into 4 (1/2-inch thick) slices)",
       "expected": {
-        "item": "extra-firm tofu slices)",
+        "item": "extra-firm tofu",
         "measurements": [
           {
             "amount": "7",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "drained and cut into 4 (1/2-inch thick",
+        "note": "drained and cut into 4 (1/2-inch thick) slices",
         "category": "Produce"
       }
     },
@@ -211,14 +211,14 @@
     {
       "raw": "1/3 cup frozen edamame (steamed)",
       "expected": {
-        "item": "frozen edamame (steamed)",
+        "item": "frozen edamame",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "steamed",
         "category": "Produce"
       }
     },
@@ -239,9 +239,9 @@
     {
       "raw": "tamari (for drizzling)",
       "expected": {
-        "item": "tamari (for drizzling)",
+        "item": "tamari",
         "measurements": [],
-        "note": null,
+        "note": "for drizzling",
         "category": "Condiments & Sauces"
       }
     }

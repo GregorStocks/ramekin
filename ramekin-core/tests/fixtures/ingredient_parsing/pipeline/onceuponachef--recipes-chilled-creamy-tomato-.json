@@ -37,14 +37,14 @@
     {
       "raw": "2  medium carrots, (peeled and sliced into ¼-in (6-mm) rounds)",
       "expected": {
-        "item": "carrots rounds)",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": "peeled and sliced into 1/4-in (6-mm",
+        "note": "peeled and sliced into 1/4-in (6-mm) rounds",
         "category": "Produce"
       }
     },
@@ -70,17 +70,9 @@
           {
             "amount": "2",
             "unit": "can"
-          },
-          {
-            "amount": "28",
-            "unit": "oz"
-          },
-          {
-            "amount": "794",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "28-oz",
         "category": "Produce"
       }
     },
@@ -105,14 +97,18 @@
     {
       "raw": "1½ cups orange juice, (preferably not from concentrate)",
       "expected": {
-        "item": "orange juice, (preferably not from concentrate)",
+        "item": "orange juice",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "374",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably not from concentrate",
         "category": "Produce"
       }
     },

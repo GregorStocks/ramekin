@@ -5,28 +5,28 @@
     {
       "raw": "10 cm Japanese leek (naganegi) (white part)",
       "expected": {
-        "item": "cm Japanese leek (naganegi) (white part)",
+        "item": "cm Japanese leek",
         "measurements": [
           {
             "amount": "10",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "naganegi, white part",
         "category": "Produce"
       }
     },
     {
       "raw": "1 tbsp turbinado sugar (or light brown sugar)",
       "expected": {
-        "item": "turbinado sugar (or light brown sugar)",
+        "item": "turbinado sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or light brown sugar",
         "category": "Baking"
       }
     },
@@ -51,18 +51,14 @@
     {
       "raw": "1 ½ tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
-          },
-          {
-            "amount": "24",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -123,14 +119,14 @@
     {
       "raw": "300 g slab skinless pork belly (or pork shoulder/butt)",
       "expected": {
-        "item": "slab skinless pork belly (or pork shoulder/butt)",
+        "item": "slab skinless pork belly",
         "measurements": [
           {
             "amount": "300",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or pork shoulder/butt",
         "category": "Meat & Seafood"
       }
     },
@@ -151,29 +147,29 @@
     {
       "raw": "1 tsp potato starch (or cornstarch, for light dusting)",
       "expected": {
-        "item": "potato starch (or cornstarch, for light dusting)",
+        "item": "potato starch",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "or cornstarch, for light dusting",
+        "category": "Produce"
       }
     },
     {
       "raw": "2 tsp cooking oil (canola, rice bran, etc.)",
       "expected": {
-        "item": "cooking oil (canola, rice bran, etc.)",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Pasta & Rice"
+        "note": "canola, rice bran, etc.",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -195,16 +191,16 @@
       "expected": {
         "item": "green peas",
         "measurements": [],
-        "note": "or edamame (precooked",
+        "note": "or edamame (precooked)",
         "category": "Produce"
       }
     },
     {
       "raw": "red pickled ginger (benishoga) (optional)",
       "expected": {
-        "item": "red pickled ginger (benishoga) (optional)",
+        "item": "red pickled ginger",
         "measurements": [],
-        "note": null,
+        "note": "benishoga, optional",
         "category": "Canned Goods"
       }
     }

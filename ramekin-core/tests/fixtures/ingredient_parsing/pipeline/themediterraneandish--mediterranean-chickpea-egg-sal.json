@@ -23,15 +23,15 @@
     {
       "raw": "1  large lemon, (zested and juiced)",
       "expected": {
-        "item": "lemon, (zested and juiced)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "zested and juiced",
+        "category": "Produce"
       }
     },
     {
@@ -169,7 +169,7 @@
             "unit": null
           }
         ],
-        "note": "trimmed, and chopped (both white and green parts",
+        "note": "trimmed, and chopped (both white and green parts)",
         "category": "Produce"
       }
     },
@@ -197,7 +197,7 @@
             "unit": null
           }
         ],
-        "note": "chopped (optional",
+        "note": "chopped (optional)",
         "category": "Produce"
       }
     },

@@ -19,28 +19,28 @@
     {
       "raw": "4  white fish filets (cut into 2\"-3\")",
       "expected": {
-        "item": "white fish filets (cut into 2\"-3\")",
+        "item": "white fish filets",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 2\"-3\"",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "4  chicken thighs (cut into 4 pieces)",
       "expected": {
-        "item": "chicken thighs (cut into 4 pieces)",
+        "item": "chicken thighs",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 4 pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -61,56 +61,56 @@
     {
       "raw": "1/2  Nappa cabbage (cut 2\" width)",
       "expected": {
-        "item": "Nappa cabbage (cut 2\" width)",
+        "item": "Nappa cabbage",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut 2\" width",
         "category": "Produce"
       }
     },
     {
       "raw": "2  Naganegi (long onions, cut diagonally)",
       "expected": {
-        "item": "Naganegi (long onions, cut diagonally)",
+        "item": "Naganegi",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "long onions, cut diagonally",
+        "category": "Other"
       }
     },
     {
       "raw": "1  bunch Kikuna (cut 2\" long)",
       "expected": {
-        "item": "Kikuna (cut 2\" long)",
+        "item": "Kikuna",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "cut 2\" long",
         "category": "Other"
       }
     },
     {
       "raw": "1  package tofu (cut 1\" width)",
       "expected": {
-        "item": "tofu (cut 1\" width)",
+        "item": "tofu",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
           }
         ],
-        "note": null,
+        "note": "cut 1\" width",
         "category": "Produce"
       }
     },
@@ -181,14 +181,14 @@
     {
       "raw": "1/4 cup citrus juice (such as lemon or Yuzu)",
       "expected": {
-        "item": "citrus juice (such as lemon or Yuzu)",
+        "item": "citrus juice",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as lemon or Yuzu",
         "category": "Beverages"
       }
     }

@@ -5,31 +5,23 @@
     {
       "raw": "Neutral-tasting vegetable oil for greasing mold (I used canola)",
       "expected": {
-        "item": "Neutral-tasting vegetable oil for greasing mold (I used canola)",
+        "item": "Neutral-tasting vegetable oil for greasing mold",
         "measurements": [],
-        "note": null,
+        "note": "I used canola",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "1  box (3 ounces Berry Blue Jello)",
       "expected": {
-        "item": "1  box (3 ounces Berry Blue Jello)",
+        "item": "Berry Blue Jello",
         "measurements": [
           {
             "amount": "1",
             "unit": "box"
-          },
-          {
-            "amount": "3",
-            "unit": "oz"
-          },
-          {
-            "amount": "85",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "3 ounces Berry Blue Jello",
         "category": "Other"
       }
     },
@@ -41,17 +33,9 @@
           {
             "amount": "7",
             "unit": null
-          },
-          {
-            "amount": ".25",
-            "unit": "oz"
-          },
-          {
-            "amount": "7.1",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": ".25 ounces each unflavored powdered gelatin",
         "category": "Other"
       }
     },

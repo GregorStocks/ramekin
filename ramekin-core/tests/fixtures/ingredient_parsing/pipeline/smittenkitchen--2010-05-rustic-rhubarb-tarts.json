@@ -79,7 +79,7 @@
     {
       "raw": "1 stick (4 ounces) cold unsalted butter, cut into small pieces",
       "expected": {
-        "item": "cold unsalted butter, cut into small pieces",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "1",
@@ -94,7 +94,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -129,14 +129,14 @@
     {
       "raw": "1 batch Rhubarb Vanilla Compote (recipe below)",
       "expected": {
-        "item": "batch Rhubarb Vanilla Compote (recipe below)",
+        "item": "batch Rhubarb Vanilla Compote",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "recipe below",
         "category": "Produce"
       }
     },
@@ -161,14 +161,14 @@
     {
       "raw": "1 cup minus 1 tablespoon dark brown sugar (i.e. 15 tablespoons, if you want to drive yourself mad)",
       "expected": {
-        "item": "minus 1 tablespoon dark brown sugar (i.e. 15 tablespoons, if you want to drive yourself mad)",
+        "item": "minus 1 tablespoon dark brown sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "i.e. 15 tablespoons, if you want to drive yourself mad",
         "category": "Baking"
       }
     },

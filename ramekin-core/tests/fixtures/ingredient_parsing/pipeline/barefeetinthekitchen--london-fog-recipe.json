@@ -49,10 +49,10 @@
     {
       "raw": "Optional: sweetener of your choice (or shot of Vanilla Coffee Syrup)",
       "expected": {
-        "item": "sweetener of your choice (or shot of Vanilla Coffee Syrup)",
+        "item": "sweetener of your choice",
         "measurements": [],
-        "note": "optional",
-        "category": "Baking"
+        "note": "optional, or shot of Vanilla Coffee Syrup",
+        "category": "Other"
       }
     }
   ]

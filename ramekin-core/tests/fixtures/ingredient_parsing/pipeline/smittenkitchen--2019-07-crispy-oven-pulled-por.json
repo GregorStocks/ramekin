@@ -5,28 +5,28 @@
     {
       "raw": "1 boneless pork shoulder (sometimes called Boston butt), about 3 3/4 pounds",
       "expected": {
-        "item": "boneless pork shoulder (sometimes called Boston butt), about 3 3/4 pounds",
+        "item": "boneless pork shoulder, about 3 3/4 pounds",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sometimes called Boston butt",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "3 tablespoons Diamond brand kosher salt (use half of any other brand)",
       "expected": {
-        "item": "Diamond brand kosher salt (use half of any other brand)",
+        "item": "Diamond brand kosher salt",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "use half of any other brand",
         "category": "Spices & Seasonings"
       }
     },
@@ -134,17 +134,9 @@
           {
             "amount": "1",
             "unit": "small"
-          },
-          {
-            "amount": "2",
-            "unit": "lb"
-          },
-          {
-            "amount": "907",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "2-pound",
         "category": "Produce"
       }
     },

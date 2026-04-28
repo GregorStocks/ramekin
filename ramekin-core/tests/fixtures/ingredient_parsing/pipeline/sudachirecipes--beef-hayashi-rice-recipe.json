@@ -5,28 +5,28 @@
     {
       "raw": "1  bell pepper (red or green)",
       "expected": {
-        "item": "bell pepper (red or green)",
+        "item": "bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "red or green",
         "category": "Produce"
       }
     },
     {
       "raw": "4  button mushrooms (or mushroom of your choice)",
       "expected": {
-        "item": "button mushrooms (or mushroom of your choice)",
+        "item": "button mushrooms",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or mushroom of your choice",
         "category": "Produce"
       }
     },
@@ -61,14 +61,14 @@
     {
       "raw": "200 g thinly sliced beef (beef round, boneless beef short-rib, or similar, avoid extremely lean cuts)",
       "expected": {
-        "item": "thinly sliced beef (beef round, boneless beef short-rib, or similar, avoid extremely lean cuts)",
+        "item": "thinly sliced beef",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "beef round, boneless beef short-rib, or similar, avoid extremely lean cuts",
         "category": "Meat & Seafood"
       }
     },
@@ -89,56 +89,64 @@
     {
       "raw": "½ tbsp all-purpose flour (for light coating, or cake flour)",
       "expected": {
-        "item": "all-purpose flour (for light coating, or cake flour)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "3.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for light coating, or cake flour",
         "category": "Baking"
       }
     },
     {
       "raw": "1 tsp cooking oil (neutral)",
       "expected": {
-        "item": "cooking oil (neutral)",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "neutral",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "4 tbsp red wine (dry type)",
       "expected": {
-        "item": "red wine (dry type)",
+        "item": "red wine",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "dry type",
         "category": "Beverages"
       }
     },
     {
       "raw": "½ tbsp all-purpose flour (to thicken hayashi sauce)",
       "expected": {
-        "item": "all-purpose flour (to thicken hayashi sauce)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "3.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "to thicken hayashi sauce",
         "category": "Baking"
       }
     },
@@ -177,32 +185,28 @@
     {
       "raw": "½ tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2.7",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "300 ml beef bouillon (or other bouillon)",
       "expected": {
-        "item": "beef bouillon (or other bouillon)",
+        "item": "beef bouillon",
         "measurements": [
           {
             "amount": "300",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "or other bouillon",
         "category": "Spices & Seasonings"
       }
     },
@@ -269,14 +273,14 @@
     {
       "raw": "2 portions cooked Japanese short-grain rice (approx. 150 g per person)",
       "expected": {
-        "item": "portions cooked Japanese short-grain rice (approx. 150 g per person)",
+        "item": "portions cooked Japanese short-grain rice",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "approx. 150 g per person",
         "category": "Pasta & Rice"
       }
     },
@@ -315,14 +319,14 @@
     {
       "raw": "1 tsp fresh parsley (or dry)",
       "expected": {
-        "item": "fresh parsley (or dry)",
+        "item": "fresh parsley",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or dry",
         "category": "Produce"
       }
     }

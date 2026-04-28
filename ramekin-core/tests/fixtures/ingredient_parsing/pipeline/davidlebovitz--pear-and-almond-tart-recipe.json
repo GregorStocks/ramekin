@@ -100,14 +100,14 @@
     {
       "raw": "1 1/2 teaspoons rum (Calvados, or kirsch)",
       "expected": {
-        "item": "rum (Calvados, or kirsch)",
+        "item": "rum",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "Calvados, or kirsch",
         "category": "Beverages"
       }
     },
@@ -133,13 +133,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "23",
-            "unit": "cm"
           }
         ],
-        "note": "at room temperature",
+        "note": "23 cm, at room temperature",
         "category": "Other"
       }
     }

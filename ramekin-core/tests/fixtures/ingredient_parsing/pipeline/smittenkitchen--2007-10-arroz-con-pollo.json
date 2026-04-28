@@ -115,7 +115,7 @@
     {
       "raw": "3 ounces Spanish chorizo (cured sausage), skin discarded and sausage cut into 1/4-inch-thick slices",
       "expected": {
-        "item": "Spanish chorizo (cured sausage), skin discarded and sausage cut into 1/4-inch-thick slices",
+        "item": "Spanish chorizo, skin discarded and sausage cut into 1/4-inch-thick slices",
         "measurements": [
           {
             "amount": "3",
@@ -126,7 +126,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cured sausage",
         "category": "Meat & Seafood"
       }
     },
@@ -275,14 +275,14 @@
     {
       "raw": "1 12-ounce. bottle beer (not dark)",
       "expected": {
-        "item": "beer (not dark)",
+        "item": "beer",
         "measurements": [
           {
             "amount": "1",
             "unit": "12-ounce. bottle"
           }
         ],
-        "note": null,
+        "note": "not dark",
         "category": "Beverages"
       }
     },

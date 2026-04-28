@@ -44,7 +44,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 3 cups",
         "category": "Pasta & Rice"
       }
     },
@@ -97,9 +97,9 @@
     {
       "raw": "Juice of half a lemon, more or less to taste",
       "expected": {
-        "item": "Juice of half a lemon",
+        "item": "Juice of half a lemon, more or less to taste",
         "measurements": [],
-        "note": "more or less to taste",
+        "note": null,
         "category": "Beverages"
       }
     },
@@ -115,9 +115,9 @@
     {
       "raw": "A few fresh mint leaves, cut into thin slivers",
       "expected": {
-        "item": "A few fresh mint leaves, cut into thin slivers",
+        "item": "A few fresh mint leaves",
         "measurements": [],
-        "note": null,
+        "note": "cut into thin slivers",
         "category": "Produce"
       }
     },

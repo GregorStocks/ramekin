@@ -12,7 +12,7 @@
             "unit": "small"
           }
         ],
-        "note": "diced (1 cup onion",
+        "note": "diced (1 cup onion)",
         "category": "Produce"
       }
     },
@@ -62,7 +62,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled (https://amzn.to/3p6c7Ra",
+        "note": "peeled (https://amzn.to/3p6c7Ra)",
         "category": "Produce"
       }
     },
@@ -129,14 +129,18 @@
     {
       "raw": "1 teaspoon granulated sugar (or honey)",
       "expected": {
-        "item": "granulated sugar (or honey)",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "4.2",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or honey",
         "category": "Baking"
       }
     }

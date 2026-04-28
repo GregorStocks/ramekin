@@ -205,23 +205,19 @@
           {
             "amount": "230",
             "unit": "g"
-          },
-          {
-            "amount": null,
-            "unit": "can"
           }
         ],
-        "note": null,
+        "note": "you could add a half-cup more, if you, too, can never have enough cranberries",
         "category": "Produce"
       }
     },
     {
       "raw": "Optional flavorings: 1/2 teaspoon vanilla extract, 1/4 teaspoon almond extract, 1 tablespoon orange or lemon juice or 1/4 teaspoon zest, 1/4 teaspoon ground cinnamon, few gratings of fresh nutmeg or a combination thereof",
       "expected": {
-        "item": "Optional flavorings: 1/2 teaspoon vanilla extract, 1/4 teaspoon almond extract, 1 tablespoon orange or lemon juice or 1/4 teaspoon zest, 1/4 teaspoon ground cinnamon",
+        "item": "Optional flavorings: 1/2 teaspoon vanilla extract, 1/4 teaspoon almond extract, 1 tablespoon orange",
         "measurements": [],
-        "note": "few gratings of fresh nutmeg or a combination thereof",
-        "category": "Spices & Seasonings"
+        "note": "or lemon juice or 1/4 teaspoon zest, 1/4 teaspoon ground cinnamon, few gratings of fresh nutmeg or a combination thereof",
+        "category": "Baking"
       }
     },
     {

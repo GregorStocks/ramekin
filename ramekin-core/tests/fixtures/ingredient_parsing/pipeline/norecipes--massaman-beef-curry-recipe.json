@@ -10,13 +10,9 @@
           {
             "amount": "25",
             "unit": "g"
-          },
-          {
-            "amount": "4",
-            "unit": "chilies"
           }
         ],
-        "note": null,
+        "note": "4 chilies",
         "category": "Other"
       }
     },
@@ -136,7 +132,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "about 1 tablespoon",
         "category": "Condiments & Sauces"
       }
     },
@@ -235,14 +231,14 @@
     {
       "raw": "580 grams beef chuck ((cut into 1.5-inch cubes))",
       "expected": {
-        "item": "beef chuck (cut into 1.5-inch cubes)",
+        "item": "beef chuck",
         "measurements": [
           {
             "amount": "580",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1.5-inch cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -254,17 +250,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "13.5",
-            "unit": "oz"
-          },
-          {
-            "amount": "383",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "13.5 ounce can",
         "category": "Canned Goods"
       }
     },
@@ -314,7 +302,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "~2 tablespoons",
         "category": "Produce"
       }
     },
@@ -332,7 +320,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "~1/2 cup",
         "category": "Nuts & Dried Fruit"
       }
     },

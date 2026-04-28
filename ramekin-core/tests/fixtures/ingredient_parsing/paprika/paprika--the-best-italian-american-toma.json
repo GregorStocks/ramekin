@@ -5,23 +5,15 @@
     {
       "raw": "4 (28-ounce) cans whole peeled tomatoes, preferably imported D.O.P. San Marzano tomatoes (see notes)",
       "expected": {
-        "item": "whole peeled tomatoes, preferably imported D.O.P. San Marzano tomatoes (see notes)",
+        "item": "whole peeled tomatoes",
         "measurements": [
           {
             "amount": "4",
             "unit": "can"
-          },
-          {
-            "amount": "28",
-            "unit": "oz"
-          },
-          {
-            "amount": "794",
-            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "28-ounce, see notes, preferably imported D.O.P. San Marzano tomatoes",
+        "category": "Produce"
       }
     },
     {
@@ -78,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": "minced",
+        "note": "about 3 tablespoons, minced",
         "category": "Produce"
       }
     },
@@ -121,14 +113,14 @@
     {
       "raw": "1 medium carrot, cut into large chunks",
       "expected": {
-        "item": "carrot, cut into large chunks",
+        "item": "carrot",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into large chunks",
         "category": "Produce"
       }
     },
@@ -186,14 +178,14 @@
     {
       "raw": "1/2 cup minced fresh parsley or basil leaves (or a mix of the two)",
       "expected": {
-        "item": "minced fresh parsley or basil leaves (or a mix of the two)",
+        "item": "minced fresh parsley or basil leaves",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or a mix of the two",
         "category": "Produce"
       }
     }

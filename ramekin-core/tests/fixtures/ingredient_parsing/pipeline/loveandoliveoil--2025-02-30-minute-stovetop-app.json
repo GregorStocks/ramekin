@@ -16,15 +16,11 @@
             "unit": "medium"
           },
           {
-            "amount": "3",
-            "unit": "large"
-          },
-          {
             "amount": "680",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 4 medium or 3 large apples",
         "category": "Produce"
       }
     },
@@ -59,14 +55,14 @@
     {
       "raw": "1-2 tablespoons lemon juice (from 1 lemon)",
       "expected": {
-        "item": "lemon juice (from 1 lemon)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from 1 lemon",
         "category": "Beverages"
       }
     },

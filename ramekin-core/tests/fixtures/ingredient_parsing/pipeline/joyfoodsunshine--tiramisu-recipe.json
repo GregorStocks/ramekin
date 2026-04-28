@@ -5,14 +5,14 @@
     {
       "raw": "6  eggs (separated)",
       "expected": {
-        "item": "eggs (separated)",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "separated",
         "category": "Dairy & Eggs"
       }
     },
@@ -205,14 +205,14 @@
     {
       "raw": "1 ¾ cups coffee (strong brewed, or espresso)",
       "expected": {
-        "item": "coffee (strong brewed, or espresso)",
+        "item": "coffee",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "strong brewed, or espresso",
         "category": "Beverages"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "3 cups (375 grams) all-purpose flour (bread flour works too)",
       "expected": {
-        "item": "all-purpose flour (bread flour works too)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "3",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "bread flour works too",
         "category": "Baking"
       }
     },
@@ -62,7 +62,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus an additional tablespoon or two if needed (updated)",
+        "note": "updated, plus an additional tablespoon or two if needed",
         "category": "Other"
       }
     },
@@ -134,21 +134,21 @@
     {
       "raw": "Pinch of sugar, if desired",
       "expected": {
-        "item": "sugar, if desired",
+        "item": "sugar",
         "measurements": [
           {
             "amount": null,
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "if desired",
         "category": "Baking"
       }
     },
     {
       "raw": "8 ounces aged mozzarella (sold in plastic, not water) (use more if you like your pizza with extra cheese)",
       "expected": {
-        "item": "aged mozzarella (sold in plastic, not water) (use more if you like your pizza with extra cheese)",
+        "item": "aged mozzarella",
         "measurements": [
           {
             "amount": "8",
@@ -159,7 +159,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sold in plastic, not water, use more if you like your pizza with extra cheese",
         "category": "Cheese"
       }
     },

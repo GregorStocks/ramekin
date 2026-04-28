@@ -23,14 +23,14 @@
     {
       "raw": "2 teaspoons chopped fresh thyme or rosemary leaves (I skipped because mine are under snow)",
       "expected": {
-        "item": "chopped fresh thyme or rosemary leaves (I skipped because mine are under snow)",
+        "item": "chopped fresh thyme or rosemary leaves",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "I skipped because mine are under snow",
         "category": "Produce"
       }
     },
@@ -69,7 +69,7 @@
     {
       "raw": "2 pounds yukon gold potatoes, peeled, cut into 1-inch slices",
       "expected": {
-        "item": "yukon gold potatoes, peeled, cut into 1-inch slices",
+        "item": "yukon gold potatoes, peeled",
         "measurements": [
           {
             "amount": "2",
@@ -80,7 +80,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch slices",
         "category": "Produce"
       }
     },

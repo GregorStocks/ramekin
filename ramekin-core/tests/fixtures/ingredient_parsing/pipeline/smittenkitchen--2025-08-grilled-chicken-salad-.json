@@ -5,14 +5,14 @@
     {
       "raw": "1 2-ounce bundle cilantro, leaves and stems (trim brown ends)",
       "expected": {
-        "item": "2-ounce bundle cilantro, leaves and stems (trim brown ends)",
+        "item": "2-ounce bundle cilantro, leaves and stems",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "trim brown ends",
         "category": "Produce"
       }
     },

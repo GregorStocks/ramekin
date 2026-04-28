@@ -79,7 +79,7 @@
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "about 1 bunch",
         "category": "Produce"
       }
     },
@@ -100,7 +100,7 @@
     {
       "raw": "1 (8.8 ounce) package cooked brown and wild rice (such as Minute Brand)",
       "expected": {
-        "item": "cooked brown and wild rice (such as Minute Brand)",
+        "item": "cooked brown and wild rice",
         "measurements": [
           {
             "amount": "1",
@@ -115,7 +115,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Minute Brand",
         "category": "Pasta & Rice"
       }
     },

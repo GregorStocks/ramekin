@@ -19,14 +19,14 @@
     {
       "raw": "1 can full fat coconut milk (refrigerate & scoop the solid part)",
       "expected": {
-        "item": "full fat coconut milk (refrigerate & scoop the solid part)",
+        "item": "full fat coconut milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
           }
         ],
-        "note": null,
+        "note": "refrigerate & scoop the solid part",
         "category": "Canned Goods"
       }
     },

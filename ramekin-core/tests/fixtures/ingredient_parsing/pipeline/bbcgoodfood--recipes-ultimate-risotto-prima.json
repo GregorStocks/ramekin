@@ -75,14 +75,14 @@
     {
       "raw": "1.3l good quality chicken or vegetable stock, preferably homemade",
       "expected": {
-        "item": "good quality chicken or vegetable stock, preferably homemade",
+        "item": "good quality chicken or vegetable stock",
         "measurements": [
           {
             "amount": "1.3",
             "unit": "l"
           }
         ],
-        "note": null,
+        "note": "preferably homemade",
         "category": "Meat & Seafood"
       }
     },
@@ -121,14 +121,14 @@
     {
       "raw": "350g Carnaroli  rice (or Arborio or Vialone)",
       "expected": {
-        "item": "Carnaroli  rice (or Arborio or Vialone)",
+        "item": "Carnaroli  rice",
         "measurements": [
           {
             "amount": "350",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Arborio or Vialone",
         "category": "Pasta & Rice"
       }
     },

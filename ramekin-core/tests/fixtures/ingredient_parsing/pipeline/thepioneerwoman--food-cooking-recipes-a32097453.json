@@ -109,14 +109,14 @@
     {
       "raw": "1 stick salted butter, cut into pieces",
       "expected": {
-        "item": "salted butter, cut into pieces",
+        "item": "salted butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "stick"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -144,15 +144,11 @@
             "unit": "lb"
           },
           {
-            "amount": "7 to 8",
-            "unit": null
-          },
-          {
             "amount": "1134",
             "unit": "g"
           }
         ],
-        "note": "peeled and sliced",
+        "note": "7 to 8, peeled and sliced",
         "category": "Produce"
       }
     },

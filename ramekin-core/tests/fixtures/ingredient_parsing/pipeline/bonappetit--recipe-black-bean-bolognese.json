@@ -86,29 +86,25 @@
             "unit": "lb"
           },
           {
-            "amount": "20",
-            "unit": null
-          },
-          {
             "amount": "454",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "20% fat",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "⅓ cup black bean garlic sauce (such as Kikkoman or Lee Kum Kee)",
       "expected": {
-        "item": "black bean garlic sauce (such as Kikkoman or Lee Kum Kee)",
+        "item": "black bean garlic sauce",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Kikkoman or Lee Kum Kee",
         "category": "Canned Goods"
       }
     },
@@ -165,14 +161,18 @@
     {
       "raw": "3 Tbsp. unsalted butter, cut into pieces",
       "expected": {
-        "item": "unsalted butter, cut into pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },

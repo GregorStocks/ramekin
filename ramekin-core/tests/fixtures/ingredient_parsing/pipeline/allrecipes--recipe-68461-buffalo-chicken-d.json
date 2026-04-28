@@ -27,14 +27,14 @@
     {
       "raw": "0.75 cup hot pepper sauce (such as Frank's RedHot®)",
       "expected": {
-        "item": "hot pepper sauce (such as Frank's RedHot®)",
+        "item": "hot pepper sauce",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Frank's RedHot®",
         "category": "Spices & Seasonings"
       }
     },
@@ -91,14 +91,14 @@
     {
       "raw": "1 bunch celery, cut into 4-inch pieces",
       "expected": {
-        "item": "celery, cut into 4-inch pieces",
+        "item": "celery",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "cut into 4-inch pieces",
         "category": "Produce"
       }
     },

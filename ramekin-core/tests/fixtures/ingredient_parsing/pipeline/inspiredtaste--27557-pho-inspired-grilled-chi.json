@@ -81,29 +81,29 @@
             "unit": "cup"
           },
           {
-            "amount": "1 to 2",
-            "unit": "limes"
-          },
-          {
             "amount": "60",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 to 2 limes",
         "category": "Beverages"
       }
     },
     {
       "raw": "2 tablespoons fish sauce (see notes below for our fish sauce buying guide)",
       "expected": {
-        "item": "fish sauce (see notes below for our fish sauce buying guide)",
+        "item": "fish sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "36",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes below for our fish sauce buying guide",
         "category": "Condiments & Sauces"
       }
     },

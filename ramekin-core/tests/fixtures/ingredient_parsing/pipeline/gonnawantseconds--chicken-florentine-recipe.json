@@ -5,14 +5,14 @@
     {
       "raw": "4  boneless chicken breast halves,  (pounded to 1/2 thick)",
       "expected": {
-        "item": "boneless chicken breast halves,  (pounded to 1/2 thick)",
+        "item": "boneless chicken breast halves",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "pounded to 1/2 thick",
         "category": "Meat & Seafood"
       }
     },
@@ -201,14 +201,14 @@
     {
       "raw": "4 cups fresh baby spinach, (stems removed)",
       "expected": {
-        "item": "fresh baby spinach, (stems removed)",
+        "item": "fresh baby spinach",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "stems removed",
         "category": "Produce"
       }
     },

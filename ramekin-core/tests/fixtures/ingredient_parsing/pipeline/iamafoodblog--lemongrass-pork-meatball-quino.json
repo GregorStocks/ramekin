@@ -171,14 +171,14 @@
     {
       "raw": "1 Thai chili, if desired",
       "expected": {
-        "item": "Thai chili, if desired",
+        "item": "Thai chili",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "if desired",
         "category": "Other"
       }
     },
@@ -258,14 +258,14 @@
     {
       "raw": "2 cups shredded lettuce of choice (I used iceberg)",
       "expected": {
-        "item": "shredded lettuce of choice (I used iceberg)",
+        "item": "shredded lettuce of choice",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used iceberg",
         "category": "Produce"
       }
     },

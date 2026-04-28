@@ -32,14 +32,14 @@
     {
       "raw": "12 soft mini brioche buns (or buns of your choice)",
       "expected": {
-        "item": "soft mini brioche buns (or buns of your choice)",
+        "item": "soft mini brioche buns",
         "measurements": [
           {
             "amount": "12",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or buns of your choice",
         "category": "Bakery & Bread"
       }
     },

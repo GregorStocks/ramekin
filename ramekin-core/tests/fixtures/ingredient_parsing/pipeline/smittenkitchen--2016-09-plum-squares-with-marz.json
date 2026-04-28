@@ -146,7 +146,7 @@
             "unit": "g"
           }
         ],
-        "note": "packed",
+        "note": "packed, about 3.5 ounces or half a 7-ounce tube",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -185,7 +185,7 @@
     {
       "raw": "4 tablespoons (2 ounces or 55 grams) chilled unsalted butter, cut into cubes",
       "expected": {
-        "item": "chilled unsalted butter, cut into cubes",
+        "item": "chilled unsalted butter",
         "measurements": [
           {
             "amount": "4",
@@ -200,7 +200,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Dairy & Eggs"
       }
     },
@@ -232,15 +232,11 @@
             "unit": "lb"
           },
           {
-            "amount": "6 to 7",
-            "unit": null
-          },
-          {
             "amount": "454",
             "unit": "g"
           }
         ],
-        "note": "thinly sliced",
+        "note": "about 6 to 7, thinly sliced",
         "category": "Produce"
       }
     },

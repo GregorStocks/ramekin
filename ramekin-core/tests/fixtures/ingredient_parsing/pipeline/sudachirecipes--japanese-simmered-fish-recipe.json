@@ -5,14 +5,14 @@
     {
       "raw": "200 g white fish fillets (flatfish, flounder, snapper or similar)",
       "expected": {
-        "item": "white fish fillets (flatfish, flounder, snapper or similar)",
+        "item": "white fish fillets",
         "measurements": [
           {
             "amount": "200",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "flatfish, flounder, snapper or similar",
         "category": "Meat & Seafood"
       }
     },
@@ -147,32 +147,28 @@
     {
       "raw": "3 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
-          },
-          {
-            "amount": "48",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "50 g Japanese mustard spinach (komatsuna) ((komatsuna) or regular spinach/bok choi)",
       "expected": {
-        "item": "Japanese mustard spinach (komatsuna) (komatsuna) or regular spinach/bok choi)",
+        "item": "Japanese mustard spinach or regular spinach/bok choi",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "komatsuna, komatsuna",
         "category": "Condiments & Sauces"
       }
     }

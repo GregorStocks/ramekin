@@ -5,42 +5,42 @@
     {
       "raw": "½ tbsp cooking oil (neutral)",
       "expected": {
-        "item": "cooking oil (neutral)",
+        "item": "cooking oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "neutral",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "1 tsp chili oil (rayu)",
       "expected": {
-        "item": "chili oil (rayu)",
+        "item": "chili oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "rayu",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "2 tsp chili bean sauce (toban djan)",
       "expected": {
-        "item": "chili bean sauce (toban djan)",
+        "item": "chili bean sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "toban djan",
         "category": "Condiments & Sauces"
       }
     },
@@ -75,98 +75,106 @@
     {
       "raw": "1 tsp grated ginger root (or ginger paste)",
       "expected": {
-        "item": "grated ginger root (or ginger paste)",
+        "item": "grated ginger root",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or ginger paste",
         "category": "Produce"
       }
     },
     {
       "raw": "1 tsp grated garlic (or garlic paste)",
       "expected": {
-        "item": "grated garlic (or garlic paste)",
+        "item": "grated garlic",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or garlic paste",
         "category": "Produce"
       }
     },
     {
       "raw": "30 g Japanese leek (naganegi) (white part finely diced, or onion/shallot)",
       "expected": {
-        "item": "Japanese leek (naganegi) (white part finely diced, or onion/shallot)",
+        "item": "Japanese leek",
         "measurements": [
           {
             "amount": "30",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "naganegi, white part finely diced, or onion/shallot",
         "category": "Produce"
       }
     },
     {
       "raw": "1 tsp sake (or Shaoxing wine, dry sherry, white wine)",
       "expected": {
-        "item": "sake (or Shaoxing wine, dry sherry, white wine)",
+        "item": "sake",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "5",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Shaoxing wine, dry sherry, white wine",
         "category": "Beverages"
       }
     },
     {
       "raw": "1 pinch ground white pepper (or black pepper)",
       "expected": {
-        "item": "ground white pepper (or black pepper)",
+        "item": "ground white pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "or black pepper",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "3 tbsp sesame paste (nerigoma) (or Chinese sesame paste, tahini)",
       "expected": {
-        "item": "sesame paste (nerigoma) (or Chinese sesame paste, tahini)",
+        "item": "sesame paste",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "nerigoma, or Chinese sesame paste, tahini",
+        "category": "Other"
       }
     },
     {
       "raw": "1 tbsp smooth peanut butter (unsweetened without bits)",
       "expected": {
-        "item": "smooth peanut butter (unsweetened without bits)",
+        "item": "smooth peanut butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "16",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsweetened without bits",
         "category": "Condiments & Sauces"
       }
     },
@@ -187,32 +195,28 @@
     {
       "raw": "2 tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "11",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "2 tsp chili oil (rayu)",
       "expected": {
-        "item": "chili oil (rayu)",
+        "item": "chili oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "rayu",
         "category": "Oils & Vinegars"
       }
     },
@@ -237,14 +241,14 @@
     {
       "raw": "500 ml kombu dashi stock (or plain water)",
       "expected": {
-        "item": "kombu dashi stock (or plain water)",
+        "item": "kombu dashi stock",
         "measurements": [
           {
             "amount": "500",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "or plain water",
         "category": "Canned Goods"
       }
     },
@@ -311,14 +315,14 @@
     {
       "raw": "1 bunch bok choy (pak choy) (or other greens)",
       "expected": {
-        "item": "bok choy (pak choy) (or other greens)",
+        "item": "bok choy",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "pak choy, or other greens",
         "category": "Produce"
       }
     },
@@ -343,9 +347,9 @@
     {
       "raw": "chili oil (rayu) (to taste)",
       "expected": {
-        "item": "chili oil (rayu) (to taste)",
+        "item": "chili oil",
         "measurements": [],
-        "note": null,
+        "note": "rayu, to taste",
         "category": "Oils & Vinegars"
       }
     }

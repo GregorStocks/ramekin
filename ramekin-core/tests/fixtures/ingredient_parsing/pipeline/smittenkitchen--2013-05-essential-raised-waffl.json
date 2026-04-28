@@ -12,15 +12,11 @@
             "unit": "cup"
           },
           {
-            "amount": "105 to 110",
-            "unit": "degrees"
-          },
-          {
             "amount": "118",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 105 to 110 degrees, so not too hot",
         "category": "Other"
       }
     },
@@ -184,9 +180,9 @@
     {
       "raw": "Powdered sugar, syrup or berries for serving",
       "expected": {
-        "item": "Powdered sugar",
+        "item": "Powdered sugar, syrup or berries for serving",
         "measurements": [],
-        "note": "syrup or berries for serving",
+        "note": null,
         "category": "Baking"
       }
     }

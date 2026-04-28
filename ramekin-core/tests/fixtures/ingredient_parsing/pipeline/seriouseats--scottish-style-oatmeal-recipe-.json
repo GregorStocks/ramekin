@@ -5,7 +5,7 @@
     {
       "raw": "1 cup (180g) steel-cut oats (also sold as pinhead or Irish oats; see note), such as Bob's Red Mill",
       "expected": {
-        "item": "steel-cut oats (also sold as pinhead or Irish oats; see note), such as Bob's Red Mill",
+        "item": "steel-cut oats, such as Bob's Red Mill",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "also sold as pinhead or Irish oats; see note",
         "category": "Snacks"
       }
     },
@@ -54,9 +54,9 @@
     {
       "raw": "Unsalted butter or cream, for serving (optional)",
       "expected": {
-        "item": "Unsalted butter or cream, for serving",
+        "item": "Unsalted butter or cream",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Dairy & Eggs"
       }
     },

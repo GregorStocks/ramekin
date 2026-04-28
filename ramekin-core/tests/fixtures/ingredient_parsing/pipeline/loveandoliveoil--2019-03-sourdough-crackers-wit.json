@@ -10,13 +10,9 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "100",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "100% hydration",
         "category": "Bakery & Bread"
       }
     },
@@ -119,9 +115,9 @@
     {
       "raw": "maldon flake salt (for topping)",
       "expected": {
-        "item": "maldon flake salt (for topping)",
+        "item": "maldon flake salt",
         "measurements": [],
-        "note": null,
+        "note": "for topping",
         "category": "Spices & Seasonings"
       }
     }

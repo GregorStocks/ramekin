@@ -91,14 +91,18 @@
     {
       "raw": "1 cup milk, scalded and cooled",
       "expected": {
-        "item": "milk, scalded and cooled",
+        "item": "milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "scalded and cooled",
         "category": "Dairy & Eggs"
       }
     },

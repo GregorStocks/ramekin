@@ -5,14 +5,14 @@
     {
       "raw": "2 cups fresh strawberries (hulled and cut in half)",
       "expected": {
-        "item": "fresh strawberries (hulled and cut in half)",
+        "item": "fresh strawberries",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "hulled and cut in half",
         "category": "Produce"
       }
     },
@@ -33,7 +33,7 @@
     {
       "raw": "5 ounces plain Greek yogurt (or regular plain or vanilla)",
       "expected": {
-        "item": "plain Greek yogurt (or regular plain or vanilla)",
+        "item": "plain Greek yogurt",
         "measurements": [
           {
             "amount": "5",
@@ -44,7 +44,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or regular plain or vanilla",
         "category": "Dairy & Eggs"
       }
     },

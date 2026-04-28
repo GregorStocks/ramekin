@@ -23,14 +23,14 @@
     {
       "raw": "1 package instant ramen (curly flash-fried type)",
       "expected": {
-        "item": "instant ramen (curly flash-fried type)",
+        "item": "instant ramen",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
           }
         ],
-        "note": null,
+        "note": "curly flash-fried type",
         "category": "Pasta & Rice"
       }
     },
@@ -65,14 +65,14 @@
     {
       "raw": "1 tablespoon Parmesan cheese (more for topping)",
       "expected": {
-        "item": "Parmesan cheese (more for topping)",
+        "item": "Parmesan cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "more for topping",
         "category": "Cheese"
       }
     },

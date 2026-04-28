@@ -55,15 +55,15 @@
     {
       "raw": "2 cups dashi (fish broth)",
       "expected": {
-        "item": "dashi (fish broth)",
+        "item": "dashi",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "fish broth",
+        "category": "Other"
       }
     },
     {

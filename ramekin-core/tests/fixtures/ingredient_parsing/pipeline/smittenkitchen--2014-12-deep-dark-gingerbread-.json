@@ -206,14 +206,14 @@
     {
       "raw": "1/2 cup buttermilk, yogurt thinned with a little milk, fresh apple cider or even stout beer",
       "expected": {
-        "item": "buttermilk, yogurt thinned with a little milk",
+        "item": "buttermilk, yogurt thinned with a little milk, fresh apple cider or even stout beer",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": "fresh apple cider or even stout beer",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

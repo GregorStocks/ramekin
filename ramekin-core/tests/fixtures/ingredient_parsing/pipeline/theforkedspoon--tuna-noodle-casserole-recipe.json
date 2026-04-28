@@ -222,15 +222,11 @@
             "unit": "cup"
           },
           {
-            "amount": "14.5",
-            "unit": "oz"
-          },
-          {
-            "amount": "411",
+            "amount": "436",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "14.5 ounce can",
         "category": "Canned Goods"
       }
     },
@@ -251,15 +247,15 @@
     {
       "raw": "1/2  lemon (juiced)",
       "expected": {
-        "item": "lemon (juiced)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {
@@ -270,17 +266,9 @@
           {
             "amount": "4",
             "unit": "can"
-          },
-          {
-            "amount": "5",
-            "unit": "oz"
-          },
-          {
-            "amount": "142",
-            "unit": "g"
           }
         ],
-        "note": "drained and roughly chopped",
+        "note": "5-ounce, drained and roughly chopped",
         "category": "Meat & Seafood"
       }
     },
@@ -308,7 +296,7 @@
             "unit": "cup"
           }
         ],
-        "note": "crushed (such as Ritz",
+        "note": "crushed (such as Ritz)",
         "category": "Snacks"
       }
     }

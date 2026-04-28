@@ -105,14 +105,14 @@
     {
       "raw": "1 teaspoon red pepper (adjust to your preference)",
       "expected": {
-        "item": "red pepper (adjust to your preference)",
+        "item": "red pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "adjust to your preference",
         "category": "Spices & Seasonings"
       }
     },

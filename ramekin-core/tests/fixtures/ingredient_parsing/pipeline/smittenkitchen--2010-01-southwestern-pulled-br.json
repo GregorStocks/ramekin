@@ -174,27 +174,23 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "14",
-            "unit": null
           }
         ],
-        "note": "or diced tomatoes",
+        "note": "14 1/2-ounce; or diced tomatoes",
         "category": "Produce"
       }
     },
     {
       "raw": "1 to 2 chipotle chiles en adobo, from a can [to taste]",
       "expected": {
-        "item": "chipotle chiles en adobo",
+        "item": "chipotle chiles en adobo, from a can [to taste]",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": null
           }
         ],
-        "note": "from a can [to taste]",
+        "note": null,
         "category": "Snacks"
       }
     },

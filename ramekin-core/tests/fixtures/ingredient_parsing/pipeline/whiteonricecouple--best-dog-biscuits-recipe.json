@@ -23,14 +23,14 @@
     {
       "raw": "1 teaspoon Beef Bouillon ( or Chicken Flavor)",
       "expected": {
-        "item": "Beef Bouillon ( or Chicken Flavor)",
+        "item": "Beef Bouillon",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or Chicken Flavor",
         "category": "Spices & Seasonings"
       }
     },

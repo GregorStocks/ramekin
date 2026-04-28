@@ -41,14 +41,14 @@
     {
       "raw": "One 3 1/2-pound chicken, cut into 8 pieces",
       "expected": {
-        "item": "3 1/2-pound chicken, cut into 8 pieces",
+        "item": "3 1/2-pound chicken",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 8 pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -214,7 +214,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely chopped",
+        "note": "about 1/2 cup, finely chopped",
         "category": "Produce"
       }
     },
@@ -235,14 +235,14 @@
     {
       "raw": "4 cups drained canned diced tomatoes (from three 14-ounce cans)",
       "expected": {
-        "item": "drained canned diced tomatoes (from three 14-ounce cans)",
+        "item": "drained canned diced tomatoes",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from three 14-ounce cans",
         "category": "Canned Goods"
       }
     },

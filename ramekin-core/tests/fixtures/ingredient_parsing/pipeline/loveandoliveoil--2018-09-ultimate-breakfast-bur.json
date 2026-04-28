@@ -5,14 +5,14 @@
     {
       "raw": "5 slices bacon (cut crosswise into thin strips)",
       "expected": {
-        "item": "bacon (cut crosswise into thin strips)",
+        "item": "bacon",
         "measurements": [
           {
             "amount": "5",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "cut crosswise into thin strips",
         "category": "Meat & Seafood"
       }
     },

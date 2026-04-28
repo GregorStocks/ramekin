@@ -14,18 +14,18 @@
     {
       "raw": "Corn tortillas (each tortilla will make 6 chips)",
       "expected": {
-        "item": "Corn tortillas (each tortilla will make 6 chips)",
+        "item": "Corn tortillas",
         "measurements": [],
-        "note": null,
+        "note": "each tortilla will make 6 chips",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "Kosher salt (or other coarse salt), to taste",
       "expected": {
-        "item": "Kosher salt (or other coarse salt)",
+        "item": "Kosher salt",
         "measurements": [],
-        "note": "to taste",
+        "note": "or other coarse salt, to taste",
         "category": "Spices & Seasonings"
       }
     }

@@ -12,15 +12,11 @@
             "unit": "oz"
           },
           {
-            "amount": null,
-            "unit": "medium"
-          },
-          {
             "amount": "28",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "mild or medium",
         "category": "Other"
       }
     },
@@ -171,7 +167,7 @@
     {
       "raw": "1 1/2 pound slab bacon, cut into 1-inch cubes",
       "expected": {
-        "item": "slab bacon, cut into 1-inch cubes",
+        "item": "slab bacon",
         "measurements": [
           {
             "amount": "1.5",
@@ -182,7 +178,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch cubes",
         "category": "Meat & Seafood"
       }
     }

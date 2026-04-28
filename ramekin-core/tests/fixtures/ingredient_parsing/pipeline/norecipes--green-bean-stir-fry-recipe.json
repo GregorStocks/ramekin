@@ -83,9 +83,9 @@
     {
       "raw": "vegetable oil ((for frying))",
       "expected": {
-        "item": "vegetable oil (for frying)",
+        "item": "vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
@@ -152,14 +152,14 @@
     {
       "raw": "1 teaspoon doubanjiang ((chili bean paste))",
       "expected": {
-        "item": "doubanjiang (chili bean paste)",
+        "item": "doubanjiang",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "chili bean paste",
         "category": "Other"
       }
     },

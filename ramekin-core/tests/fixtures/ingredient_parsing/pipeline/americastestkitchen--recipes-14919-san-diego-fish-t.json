@@ -123,15 +123,15 @@
     {
       "raw": "1 arbol chile , seeded",
       "expected": {
-        "item": "arbol chile, seeded",
+        "item": "arbol chile",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "seeded",
+        "category": "Other"
       }
     },
     {
@@ -284,13 +284,9 @@
           {
             "amount": "4",
             "unit": null
-          },
-          {
-            "amount": "6",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "6- to 8-ounce",
         "category": "Meat & Seafood"
       }
     },

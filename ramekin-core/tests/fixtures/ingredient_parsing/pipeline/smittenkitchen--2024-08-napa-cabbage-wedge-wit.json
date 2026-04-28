@@ -5,7 +5,7 @@
     {
       "raw": "1 to 1 1/2 pounds napa cabbage (often half of a large one)",
       "expected": {
-        "item": "napa cabbage (often half of a large one)",
+        "item": "napa cabbage",
         "measurements": [
           {
             "amount": "1 to 1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "often half of a large one",
         "category": "Produce"
       }
     },

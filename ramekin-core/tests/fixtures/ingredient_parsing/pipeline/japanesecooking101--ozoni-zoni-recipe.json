@@ -19,28 +19,28 @@
     {
       "raw": "1/2 cup Daikon radish (thin and skinny slices)",
       "expected": {
-        "item": "Daikon radish (thin and skinny slices)",
+        "item": "Daikon radish",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "thin and skinny slices",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 cup carrot (thin and skinny slices)",
       "expected": {
-        "item": "carrot (thin and skinny slices)",
+        "item": "carrot",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "thin and skinny slices",
         "category": "Produce"
       }
     },

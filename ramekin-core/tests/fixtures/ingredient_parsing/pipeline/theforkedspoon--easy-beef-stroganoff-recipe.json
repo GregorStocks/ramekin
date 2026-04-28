@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds boneless ribeye ((substitute boneless sirloin or beef tenderloin))",
       "expected": {
-        "item": "boneless ribeye (substitute boneless sirloin or beef tenderloin)",
+        "item": "boneless ribeye",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "substitute boneless sirloin or beef tenderloin",
         "category": "Meat & Seafood"
       }
     },
@@ -214,9 +214,9 @@
     {
       "raw": "chopped parsley or chives (to garnish)",
       "expected": {
-        "item": "chopped parsley or chives (to garnish)",
+        "item": "chopped parsley or chives",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "category": "Spices & Seasonings"
       }
     }

@@ -44,14 +44,14 @@
             "unit": "clove"
           }
         ],
-        "note": "smashed and peeled (see note",
+        "note": "smashed and peeled (see note)",
         "category": "Produce"
       }
     },
     {
       "raw": "1¾ pounds broccoli, (stems cut into ½-in (13-cm) pieces/florets cut into 1-in (2.5-cm) pieces, separated)",
       "expected": {
-        "item": "broccoli, (stems cut into 1/2-in (13-cm) pieces/florets cut into 1-in (2.5-cm) pieces, separated)",
+        "item": "broccoli",
         "measurements": [
           {
             "amount": "1.75",
@@ -62,7 +62,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "stems cut into 1/2-in (13-cm) pieces/florets cut into 1-in (2.5-cm) pieces, separated",
         "category": "Produce"
       }
     },
@@ -173,14 +173,14 @@
     {
       "raw": "2 cups shredded good-quality medium or sharp Cheddar cheese, (such as Cabot (from one 8-oz block))",
       "expected": {
-        "item": "shredded good-quality medium or sharp Cheddar cheese, (such as Cabot (from one 8-oz block)",
+        "item": "shredded good-quality medium or sharp Cheddar cheese",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Cabot (from one 8-oz block)",
         "category": "Cheese"
       }
     }

@@ -19,18 +19,14 @@
     {
       "raw": "5 tsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "5",
             "unit": "tsp"
-          },
-          {
-            "amount": "27",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -98,30 +94,30 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "approx 60g/2oz per portion",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "ice cubes (for cooling)",
       "expected": {
-        "item": "ice cubes (for cooling)",
+        "item": "ice cubes",
         "measurements": [],
-        "note": null,
+        "note": "for cooling",
         "category": "Other"
       }
     },
     {
       "raw": "2 tbsp kizami nori (shredded nori) (optional)",
       "expected": {
-        "item": "kizami nori (optional)",
+        "item": "kizami nori",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "shredded nori",
+        "note": "shredded nori, optional",
         "category": "Other"
       }
     },
@@ -156,14 +152,14 @@
     {
       "raw": "2 tbsp tempura flakes (tenkasu)",
       "expected": {
-        "item": "tempura flakes (tenkasu)",
+        "item": "tempura flakes",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "tenkasu",
         "category": "Other"
       }
     },

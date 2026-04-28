@@ -5,14 +5,18 @@
     {
       "raw": "3 cups old fashioned oats (not quick oats)",
       "expected": {
-        "item": "old fashioned oats (not quick oats)",
+        "item": "old fashioned oats",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "240",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not quick oats",
         "category": "Snacks"
       }
     },
@@ -33,28 +37,32 @@
     {
       "raw": "1 cup sliced almonds (or any other nut you prefer (pecans, walnuts, etc.))",
       "expected": {
-        "item": "sliced almonds (or any other nut you prefer (pecans, walnuts, etc.)",
+        "item": "sliced almonds",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or any other nut you prefer (pecans, walnuts, etc.)",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
       "raw": "3 tbsp honey (or real maple syrup)",
       "expected": {
-        "item": "honey (or real maple syrup)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "64",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or real maple syrup",
         "category": "Baking"
       }
     },
@@ -79,14 +87,18 @@
     {
       "raw": "1/4 cup coconut oil (or extra virgin olive oil)",
       "expected": {
-        "item": "coconut oil (or extra virgin olive oil)",
+        "item": "coconut oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or extra virgin olive oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -136,7 +148,7 @@
             "unit": "cup"
           }
         ],
-        "note": "or other dried fruit (raisins, apricots, cherries, etc.",
+        "note": "or other dried fruit (raisins, apricots, cherries, etc.)",
         "category": "Nuts & Dried Fruit"
       }
     }

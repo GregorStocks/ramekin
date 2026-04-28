@@ -5,14 +5,14 @@
     {
       "raw": "6  sweet peppers (deseeded and cut into pieces)",
       "expected": {
-        "item": "sweet peppers (deseeded and cut into pieces)",
+        "item": "sweet peppers",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "deseeded and cut into pieces",
         "category": "Spices & Seasonings"
       }
     },
@@ -33,28 +33,28 @@
     {
       "raw": "1  red bell pepper (deseeded and cut into large chunks)",
       "expected": {
-        "item": "red bell pepper (deseeded and cut into large chunks)",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "deseeded and cut into large chunks",
         "category": "Produce"
       }
     },
     {
       "raw": "1  green bell pepper (deseeded and cut into large chunks)",
       "expected": {
-        "item": "green bell pepper (deseeded and cut into large chunks)",
+        "item": "green bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "deseeded and cut into large chunks",
         "category": "Produce"
       }
     },
@@ -143,14 +143,14 @@
     {
       "raw": "1 large bunch cilantro (with the thicker stems removed)",
       "expected": {
-        "item": "bunch cilantro (with the thicker stems removed)",
+        "item": "bunch cilantro",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "with the thicker stems removed",
         "category": "Produce"
       }
     },

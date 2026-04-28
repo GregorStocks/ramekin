@@ -37,14 +37,14 @@
     {
       "raw": "1/2 cup 120 ml sparkling white wine (recommend spumante)",
       "expected": {
-        "item": "120 ml sparkling white wine (recommend spumante)",
+        "item": "120 ml sparkling white wine",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "recommend spumante",
         "category": "Beverages"
       }
     },
@@ -184,13 +184,9 @@
           {
             "amount": "1",
             "unit": "bottle"
-          },
-          {
-            "amount": "750",
-            "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "750 ml white wine (or remaining spumante from pastry cream)",
         "category": "Beverages"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "6 cups prepared mashed potatoes (homemade or store bought)",
       "expected": {
-        "item": "prepared mashed potatoes (homemade or store bought)",
+        "item": "prepared mashed potatoes",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "homemade or store bought",
         "category": "Produce"
       }
     },
@@ -37,7 +37,7 @@
     {
       "raw": "26 ounces frozen chicken nuggets (chopped) or popcorn chicken  (heated per package instructions)",
       "expected": {
-        "item": "frozen chicken nuggets or popcorn chicken  (heated per package instructions)",
+        "item": "frozen chicken nuggets or popcorn chicken",
         "measurements": [
           {
             "amount": "26",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped",
+        "note": "chopped, heated per package instructions",
         "category": "Meat & Seafood"
       }
     },
@@ -74,17 +74,9 @@
           {
             "amount": "1",
             "unit": "jar"
-          },
-          {
-            "amount": "12",
-            "unit": "oz"
-          },
-          {
-            "amount": "340",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "12-ounce",
         "category": "Meat & Seafood"
       }
     },

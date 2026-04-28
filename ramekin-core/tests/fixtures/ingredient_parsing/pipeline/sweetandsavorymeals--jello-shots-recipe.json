@@ -5,7 +5,7 @@
     {
       "raw": "3 ounces box Jello (pick your favorite flavor)",
       "expected": {
-        "item": "box Jello (pick your favorite flavor)",
+        "item": "box Jello",
         "measurements": [
           {
             "amount": "3",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "pick your favorite flavor",
         "category": "Other"
       }
     },

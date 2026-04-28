@@ -5,7 +5,7 @@
     {
       "raw": "1 cup (205 grams)  chana dal  ((Bengal gram))",
       "expected": {
-        "item": "chana dal  (Bengal gram)",
+        "item": "chana dal",
         "measurements": [
           {
             "amount": "1",
@@ -16,14 +16,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Bengal gram",
         "category": "Other"
       }
     },
     {
       "raw": "3 cups (710 ml)  water  (to pressure cook (more if using pot))",
       "expected": {
-        "item": "water  (to pressure cook (more if using pot)",
+        "item": "water",
         "measurements": [
           {
             "amount": "3",
@@ -32,9 +32,13 @@
           {
             "amount": "710",
             "unit": "ml"
+          },
+          {
+            "amount": "711",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "to pressure cook (more if using pot)",
         "category": "Other"
       }
     },
@@ -106,7 +110,7 @@
             "unit": "g"
           }
         ],
-        "note": "minced/grated (6 grams from 3/4 inch root",
+        "note": "minced/grated (6 grams from 3/4 inch root)",
         "category": "Beverages"
       }
     },
@@ -124,7 +128,7 @@
             "unit": "g"
           }
         ],
-        "note": "minced/ grated (11 grams from 4 to 5 medium cloves",
+        "note": "minced/ grated (11 grams from 4 to 5 medium cloves)",
         "category": "Produce"
       }
     },
@@ -142,7 +146,7 @@
             "unit": "g"
           }
         ],
-        "note": "(2 medium chopped finely",
+        "note": "(2 medium chopped finely)",
         "category": "Produce"
       }
     },
@@ -156,35 +160,35 @@
             "unit": null
           }
         ],
-        "note": "(optional",
+        "note": "(optional)",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "2 inch cinnamon piece  ((Ceylon/cassia, read notes))",
       "expected": {
-        "item": "inch cinnamon piece  (Ceylon/cassia, read notes)",
+        "item": "inch cinnamon piece",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "Ceylon/cassia, read notes",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1  black cardamom  ((omit if you don’t like))",
       "expected": {
-        "item": "black cardamom  (omit if you don’t like)",
+        "item": "black cardamom",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "omit if you don’t like",
         "category": "Spices & Seasonings"
       }
     },
@@ -198,7 +202,7 @@
             "unit": null
           }
         ],
-        "note": "(or use 1/4 tsp ground",
+        "note": "(or use 1/4 tsp ground)",
         "category": "Spices & Seasonings"
       }
     },
@@ -212,7 +216,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "(adjust to taste",
+        "note": "(adjust to taste)",
         "category": "Spices & Seasonings"
       }
     },
@@ -226,7 +230,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "(adjust to taste",
+        "note": "(adjust to taste)",
         "category": "Spices & Seasonings"
       }
     },
@@ -240,7 +244,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "(adjust to taste",
+        "note": "(adjust to taste)",
         "category": "Spices & Seasonings"
       }
     },
@@ -275,14 +279,14 @@
     {
       "raw": "1 teaspoon dried fenugreek leaves ( (kasuri methi))",
       "expected": {
-        "item": "dried fenugreek leaves ( (kasuri methi)",
+        "item": "dried fenugreek leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "(kasuri methi)",
         "category": "Spices & Seasonings"
       }
     },
@@ -294,13 +298,9 @@
           {
             "amount": "0.5",
             "unit": "tsp"
-          },
-          {
-            "amount": "2",
-            "unit": "tbsps lemon juice while serving"
           }
         ],
-        "note": null,
+        "note": "mango powder or sub with chaat masala or 2 tbsps lemon juice while serving",
         "category": "Other"
       }
     },
@@ -314,7 +314,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "(cilantro chopped finely",
+        "note": "(cilantro chopped finely)",
         "category": "Spices & Seasonings"
       }
     },
@@ -360,7 +360,7 @@
             "unit": null
           }
         ],
-        "note": "deseed & slit or dried red chilies (or both, omit if making for kids",
+        "note": "deseed & slit or dried red chilies (or both, omit if making for kids)",
         "category": "Other"
       }
     },
@@ -374,21 +374,21 @@
             "unit": null
           }
         ],
-        "note": "chopped (4 grams",
+        "note": "chopped (4 grams)",
         "category": "Produce"
       }
     },
     {
       "raw": "½ inch ginger  (juliennes (4 grams))",
       "expected": {
-        "item": "inch ginger  (juliennes (4 grams)",
+        "item": "inch ginger",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "juliennes (4 grams)",
         "category": "Beverages"
       }
     },
@@ -402,7 +402,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "(hing, optional",
+        "note": "(hing, optional)",
         "category": "Other"
       }
     },

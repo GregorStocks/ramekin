@@ -102,7 +102,7 @@
     {
       "raw": "1 1/4 cup (295 ml) milk (and sometimes a splash more)",
       "expected": {
-        "item": "milk (and sometimes a splash more)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "1.25",
@@ -111,9 +111,13 @@
           {
             "amount": "295",
             "unit": "ml"
+          },
+          {
+            "amount": "306",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "and sometimes a splash more",
         "category": "Dairy & Eggs"
       }
     },

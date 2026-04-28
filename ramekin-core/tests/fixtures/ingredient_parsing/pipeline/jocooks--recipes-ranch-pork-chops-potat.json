@@ -41,14 +41,14 @@
     {
       "raw": "6  pork chops (either boneless or bone-in will work)",
       "expected": {
-        "item": "pork chops (either boneless or bone-in will work)",
+        "item": "pork chops",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "either boneless or bone-in will work",
         "category": "Meat & Seafood"
       }
     },
@@ -62,15 +62,11 @@
             "unit": "oz"
           },
           {
-            "amount": "1",
-            "unit": "oz"
-          },
-          {
             "amount": "28",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 oz package",
         "category": "Condiments & Sauces"
       }
     },
@@ -95,14 +91,18 @@
     {
       "raw": "1 tablespoon oregano (dry)",
       "expected": {
-        "item": "oregano (dry)",
+        "item": "oregano",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "3",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "dry",
         "category": "Spices & Seasonings"
       }
     },

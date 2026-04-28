@@ -5,7 +5,7 @@
     {
       "raw": "3½ pounds boneless pork shoulder, cut into 3-inch pieces",
       "expected": {
-        "item": "boneless pork shoulder, cut into 3-inch pieces",
+        "item": "boneless pork shoulder",
         "measurements": [
           {
             "amount": "3.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 3-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -138,17 +138,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "28",
-            "unit": "oz"
-          },
-          {
-            "amount": "794",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "28-ounce",
         "category": "Canned Goods"
       }
     },
@@ -225,27 +217,27 @@
     {
       "raw": "Cooked pappardelle, for serving (optional)",
       "expected": {
-        "item": "Cooked pappardelle, for serving",
+        "item": "Cooked pappardelle",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "Polenta, for serving (optional)",
       "expected": {
-        "item": "Polenta, for serving",
+        "item": "Polenta",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "freshly grated Parmesan cheese, for serving (optional)",
       "expected": {
-        "item": "freshly grated Parmesan cheese, for serving",
+        "item": "freshly grated Parmesan cheese",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, for serving",
         "category": "Cheese"
       }
     }

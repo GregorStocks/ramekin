@@ -72,14 +72,14 @@
     {
       "raw": "2 cups unbleached all-purpose flour (I used King Arthur)",
       "expected": {
-        "item": "unbleached all-purpose flour (I used King Arthur)",
+        "item": "unbleached all-purpose flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used King Arthur",
         "category": "Baking"
       }
     },
@@ -113,14 +113,14 @@
     {
       "raw": "1 tablespoon unbleached all-purpose flour (I used King Arthur)",
       "expected": {
-        "item": "unbleached all-purpose flour (I used King Arthur)",
+        "item": "unbleached all-purpose flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I used King Arthur",
         "category": "Baking"
       }
     },
@@ -159,14 +159,14 @@
     {
       "raw": "1 cup shredded sweetened coconut, toasted (toasting is optional)",
       "expected": {
-        "item": "shredded sweetened coconut, toasted",
+        "item": "shredded sweetened coconut",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "toasting is optional",
+        "note": "toasting is optional, toasted",
         "category": "Produce"
       }
     },

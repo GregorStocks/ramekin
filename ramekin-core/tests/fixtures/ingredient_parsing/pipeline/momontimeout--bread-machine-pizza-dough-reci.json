@@ -5,14 +5,18 @@
     {
       "raw": "2 cup flour (I like to use bread flour but all purpose and even a combination of AP and wheat flour works)",
       "expected": {
-        "item": "flour (I like to use bread flour but all purpose and even a combination of AP and wheat flour works)",
+        "item": "flour",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "250",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I like to use bread flour but all purpose and even a combination of AP and wheat flour works",
         "category": "Baking"
       }
     },
@@ -98,29 +102,29 @@
             "unit": "cup"
           },
           {
-            "amount": "105-110",
-            "unit": "degrees"
-          },
-          {
             "amount": "118",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "105-110 degrees",
         "category": "Other"
       }
     },
     {
       "raw": "2 tbsp water (additional)",
       "expected": {
-        "item": "water (additional)",
+        "item": "water",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "additional",
         "category": "Other"
       }
     },
@@ -224,15 +228,11 @@
             "unit": "cup"
           },
           {
-            "amount": "105-110",
-            "unit": "degrees"
-          },
-          {
             "amount": "316",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "105-110 degrees",
         "category": "Other"
       }
     }

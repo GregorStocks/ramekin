@@ -37,28 +37,32 @@
     {
       "raw": "2 teaspoons lemon zest (from 2 lemons)",
       "expected": {
-        "item": "lemon zest (from 2 lemons)",
+        "item": "lemon zest",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "from 2 lemons",
         "category": "Produce"
       }
     },
     {
       "raw": "½ cup  lemon juice (from 3 lemons)",
       "expected": {
-        "item": "lemon juice (from 3 lemons)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 3 lemons",
         "category": "Beverages"
       }
     },
@@ -83,7 +87,7 @@
     {
       "raw": "1 stick (½ cup)  unsalted butter, cut into 8 pieces",
       "expected": {
-        "item": "unsalted butter, cut into 8 pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
@@ -92,9 +96,13 @@
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 8 pieces",
         "category": "Dairy & Eggs"
       }
     }

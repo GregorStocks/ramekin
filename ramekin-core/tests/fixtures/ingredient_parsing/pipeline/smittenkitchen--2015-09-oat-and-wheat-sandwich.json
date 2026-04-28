@@ -14,14 +14,14 @@
     {
       "raw": "Six Months Ago: Potatoes with Soft Eggs and Bacon Vinaigrette and The Consolation Prize (A Mocktail)",
       "expected": {
-        "item": "Months Ago: Potatoes with Soft Eggs and Bacon Vinaigrette and The Consolation Prize (A Mocktail)",
+        "item": "Months Ago: Potatoes with Soft Eggs and Bacon Vinaigrette and The Consolation Prize",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "A Mocktail",
         "category": "Produce"
       }
     },
@@ -102,7 +102,7 @@
     {
       "raw": "2 cups (160 grams) rolled oats (I used quick-cooking for the least noticable texture)",
       "expected": {
-        "item": "rolled oats (I used quick-cooking for the least noticable texture)",
+        "item": "rolled oats",
         "measurements": [
           {
             "amount": "2",
@@ -113,7 +113,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used quick-cooking for the least noticable texture",
         "category": "Bakery & Bread"
       }
     },
@@ -167,13 +167,9 @@
           {
             "amount": "0.25",
             "unit": "cup"
-          },
-          {
-            "amount": "55",
-            "unit": "g"
           }
         ],
-        "note": "plus a little more to coat bowl",
+        "note": "55 grams grams, plus a little more to coat bowl",
         "category": "Oils & Vinegars"
       }
     },
@@ -219,7 +215,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 14 grams",
         "category": "Baking"
       }
     }

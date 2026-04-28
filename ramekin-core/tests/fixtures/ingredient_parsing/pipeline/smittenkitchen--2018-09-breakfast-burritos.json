@@ -19,13 +19,9 @@
           {
             "amount": "2",
             "unit": "large"
-          },
-          {
-            "amount": "1",
-            "unit": "inch"
           }
         ],
-        "note": "diced small",
+        "note": "about 1/2-inch cubes, diced small",
         "category": "Produce"
       }
     },
@@ -74,7 +70,7 @@
     {
       "raw": "1/2 pound sausage (breakfast or another variety you like) removed from casings, crumbled into chunks, or bacon",
       "expected": {
-        "item": "sausage (breakfast or another variety you like) removed from casings, crumbled into chunks, or bacon",
+        "item": "sausage removed from casings, crumbled into chunks, or bacon",
         "measurements": [
           {
             "amount": "0.5",
@@ -85,7 +81,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "breakfast or another variety you like",
         "category": "Meat & Seafood"
       }
     },
@@ -110,7 +106,7 @@
     {
       "raw": "5 ounces baby spinach (I use a package from the salad greens section)",
       "expected": {
-        "item": "baby spinach (I use a package from the salad greens section)",
+        "item": "baby spinach",
         "measurements": [
           {
             "amount": "5",
@@ -121,7 +117,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I use a package from the salad greens section",
         "category": "Produce"
       }
     },
@@ -135,7 +131,7 @@
             "unit": "cup"
           }
         ],
-        "note": "drained and rinsed (from 1 15-ounce can)",
+        "note": "from 1 15-ounce can, drained and rinsed",
         "category": "Canned Goods"
       }
     },

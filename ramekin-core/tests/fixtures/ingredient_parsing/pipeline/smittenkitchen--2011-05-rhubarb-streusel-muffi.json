@@ -249,14 +249,14 @@
     {
       "raw": "1 cup (approx. 120 grams) white whole wheat flour or whole wheat pastry flour (see Note)",
       "expected": {
-        "item": "(approx. 120 grams) white whole wheat flour or whole wheat pastry flour (see Note)",
+        "item": "white whole wheat flour or whole wheat pastry flour",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "approx. 120 grams, see Note",
         "category": "Baking"
       }
     },
@@ -335,14 +335,14 @@
     {
       "raw": "1 cup diced rhubarb, in 1/2-inch pieces (from about 6 to 8 ounces of stalks)",
       "expected": {
-        "item": "diced rhubarb, in 1/2-inch pieces (from about 6 to 8 ounces of stalks)",
+        "item": "diced rhubarb, in 1/2-inch pieces",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from about 6 to 8 ounces of stalks",
         "category": "Produce"
       }
     }

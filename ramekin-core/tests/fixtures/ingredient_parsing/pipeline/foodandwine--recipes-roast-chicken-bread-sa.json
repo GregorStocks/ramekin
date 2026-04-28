@@ -10,13 +10,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "3",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "3 1/2- to 4-pound",
         "category": "Meat & Seafood"
       }
     },
@@ -28,13 +24,9 @@
           {
             "amount": "4",
             "unit": null
-          },
-          {
-            "amount": "4",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "4-inch",
         "category": "Spices & Seasonings"
       }
     },
@@ -90,15 +82,11 @@
             "unit": "tbsp"
           },
           {
-            "amount": "90",
-            "unit": null
-          },
-          {
             "amount": "15",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "90°F to 110°F",
         "category": "Other"
       }
     },
@@ -197,18 +185,22 @@
     {
       "raw": "1/2 pound day-old, open-crumb, chewy, rustic bread loaf (not sourdough), cut into large (2-inch) chunks (about 2 1/2 cups)",
       "expected": {
-        "item": "day-old, open-crumb, chewy, rustic bread loaf (not sourdough), cut into large (2-inch) chunks (about 2 1/2 cups)",
+        "item": "day-old, open-crumb, chewy, rustic bread loaf",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "lb"
           },
           {
+            "amount": "2.5",
+            "unit": "cup"
+          },
+          {
             "amount": "227",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not sourdough, 2-inch, about 2 1/2 cups, cut into large chunks",
         "category": "Bakery & Bread"
       }
     },
@@ -234,7 +226,7 @@
             "unit": "g"
           }
         ],
-        "note": "trimmed and thinly sliced crosswise",
+        "note": "about 2 ounces, about 3/4 cup, trimmed and thinly sliced crosswise",
         "category": "Produce"
       }
     },
@@ -252,7 +244,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "thinly sliced",
+        "note": "about 1 tablespoon, thinly sliced",
         "category": "Produce"
       }
     },
@@ -277,15 +269,23 @@
     {
       "raw": "4 cups lightly packed greens (such as chicory, escarole, or radicchio) (about 4 ounces)",
       "expected": {
-        "item": "lightly packed greens (such as chicory, escarole",
+        "item": "lightly packed greens",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "4",
+            "unit": "oz"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
           }
         ],
-        "note": "or radicchio) (about 4 ounces)",
-        "category": "Produce"
+        "note": "such as chicory, escarole, or radicchio, about 4 ounces",
+        "category": "Other"
       }
     }
   ]

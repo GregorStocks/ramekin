@@ -73,14 +73,14 @@
     {
       "raw": "2 tablespoons Heinz chili sauce (substitute with Buffalo sauce or  hot sauce to suit your heat preference)",
       "expected": {
-        "item": "Heinz chili sauce (substitute with Buffalo sauce or  hot sauce to suit your heat preference)",
+        "item": "Heinz chili sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "substitute with Buffalo sauce or  hot sauce to suit your heat preference",
         "category": "Condiments & Sauces"
       }
     },
@@ -119,14 +119,14 @@
     {
       "raw": "1-2 teaspoons sriracha (adjust to suit your heat preference)",
       "expected": {
-        "item": "sriracha (adjust to suit your heat preference)",
+        "item": "sriracha",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "adjust to suit your heat preference",
         "category": "Condiments & Sauces"
       }
     },
@@ -147,42 +147,46 @@
     {
       "raw": "1 pinch salt (to season)",
       "expected": {
-        "item": "salt (to season)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "to season",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 pinch pepper (to season)",
       "expected": {
-        "item": "pepper (to season)",
+        "item": "pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "to season",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/2 teaspoon paprika (mild, smoky or spicy)",
       "expected": {
-        "item": "paprika (mild, smoky or spicy)",
+        "item": "paprika",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "1.1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "mild, smoky or spicy",
         "category": "Spices & Seasonings"
       }
     },

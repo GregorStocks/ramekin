@@ -19,28 +19,28 @@
     {
       "raw": "3-4 cups taco filling ((choose from below))",
       "expected": {
-        "item": "taco filling (choose from below)",
+        "item": "taco filling",
         "measurements": [
           {
             "amount": "3-4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "choose from below",
         "category": "Other"
       }
     },
     {
       "raw": "3/4 cup shredded cheese (extra as desired)",
       "expected": {
-        "item": "shredded cheese (extra as desired)",
+        "item": "shredded cheese",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "extra as desired",
         "category": "Cheese"
       }
     },
@@ -75,9 +75,9 @@
     {
       "raw": "cilantro and lime (as a tasty garnish)",
       "expected": {
-        "item": "cilantro and lime (as a tasty garnish)",
+        "item": "cilantro and lime",
         "measurements": [],
-        "note": null,
+        "note": "as a tasty garnish",
         "category": "Produce"
       }
     },
@@ -102,15 +102,15 @@
     {
       "raw": "c. 3-4 cups Seasoned tofu (like chipotle-style sofritos)",
       "expected": {
-        "item": "3-4 cups Seasoned tofu (like chipotle-style sofritos)",
+        "item": "3-4 cups Seasoned tofu",
         "measurements": [
           {
             "amount": null,
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Snacks"
+        "note": "like chipotle-style sofritos",
+        "category": "Produce"
       }
     },
     {

@@ -19,14 +19,14 @@
     {
       "raw": "1/2 cup pitted green (what I used) or Cerignola (what Burrell recommends) olives",
       "expected": {
-        "item": "pitted green (what I used) or Cerignola (what Burrell recommends) olives",
+        "item": "pitted green or Cerignola olives",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "what I used, what Burrell recommends",
         "category": "Canned Goods"
       }
     },
@@ -61,14 +61,14 @@
     {
       "raw": "1 tablespoon freshly chopped oregano leaves (nixed because mine had gone bad)",
       "expected": {
-        "item": "freshly chopped oregano leaves (nixed because mine had gone bad)",
+        "item": "freshly chopped oregano leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "nixed because mine had gone bad",
         "category": "Spices & Seasonings"
       }
     },
@@ -117,13 +117,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "8",
-            "unit": "-rib"
           }
         ],
-        "note": null,
+        "note": "8-rib",
         "category": "Meat & Seafood"
       }
     },

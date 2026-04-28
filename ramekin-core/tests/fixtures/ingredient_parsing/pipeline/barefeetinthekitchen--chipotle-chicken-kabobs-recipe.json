@@ -25,13 +25,8 @@
       "raw": "juice of 2 limes (about 1/4 cup's worth)",
       "expected": {
         "item": "juice of 2 limes",
-        "measurements": [
-          {
-            "amount": "0.25",
-            "unit": null
-          }
-        ],
-        "note": null,
+        "measurements": [],
+        "note": "about 1/4 cup's worth",
         "section": "Marinade Ingredients",
         "category": "Beverages"
       }
@@ -183,7 +178,7 @@
     {
       "raw": "2 pounds boneless skinless chicken (thighs and/or breasts, cut into 1 1/2\" pieces)",
       "expected": {
-        "item": "boneless skinless chicken (thighs and/or breasts, cut into 1 1/2\" pieces)",
+        "item": "boneless skinless chicken",
         "measurements": [
           {
             "amount": "2",
@@ -194,7 +189,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "thighs and/or breasts, cut into 1 1/2\" pieces",
         "section": "Marinade Ingredients",
         "category": "Meat & Seafood"
       }

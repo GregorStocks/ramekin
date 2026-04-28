@@ -5,14 +5,14 @@
     {
       "raw": "1 unbaked pie crust (what I used) or&nbsp;all butter pie crust*",
       "expected": {
-        "item": "unbaked pie crust (what I used) or all butter pie crust",
+        "item": "unbaked pie crust or all butter pie crust",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "what I used",
         "category": "Frozen"
       }
     },
@@ -46,13 +46,9 @@
           {
             "amount": "65",
             "unit": "g"
-          },
-          {
-            "amount": "0.5",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "1/2 of a medium onion",
         "category": "Produce"
       }
     },
@@ -68,13 +64,9 @@
           {
             "amount": "120",
             "unit": "g"
-          },
-          {
-            "amount": "1-2",
-            "unit": "large"
           }
         ],
-        "note": null,
+        "note": "1-2 large carrots or a handful of baby carrots",
         "category": "Produce"
       }
     },
@@ -135,7 +127,7 @@
     {
       "raw": "1/4 cup (31g) all-purpose flour&nbsp;(spoon &amp;amp; leveled)",
       "expected": {
-        "item": "all-purpose flour (spoon & leveled)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.25",
@@ -146,7 +138,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "spoon & leveled",
         "category": "Baking"
       }
     },
@@ -253,21 +245,21 @@
     {
       "raw": "1 cup frozen peas (or other vegetable add-in, see Note)",
       "expected": {
-        "item": "frozen peas (or other vegetable add-in, see Note)",
+        "item": "frozen peas",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or other vegetable add-in, see Note",
         "category": "Frozen"
       }
     },
     {
       "raw": "3 cups (370g)&nbsp;chopped or shredded cooked turkey (or chicken)",
       "expected": {
-        "item": "chopped or shredded cooked turkey (or chicken)",
+        "item": "chopped or shredded cooked turkey",
         "measurements": [
           {
             "amount": "3",
@@ -278,7 +270,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or chicken",
         "category": "Meat & Seafood"
       }
     },

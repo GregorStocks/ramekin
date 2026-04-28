@@ -47,28 +47,28 @@
     {
       "raw": "3 dried chile arbol (ends removed and deseeded)",
       "expected": {
-        "item": "dried chile arbol (ends removed and deseeded)",
+        "item": "dried chile arbol",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "ends removed and deseeded",
+        "category": "Other"
       }
     },
     {
       "raw": "3 dried guajillo peppers (ends removed and deseeded)",
       "expected": {
-        "item": "dried guajillo peppers (ends removed and deseeded)",
+        "item": "dried guajillo peppers",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "ends removed and deseeded",
         "category": "Spices & Seasonings"
       }
     },
@@ -152,14 +152,14 @@
     {
       "raw": "30  corn tortillas (each cut into 9 pieces)",
       "expected": {
-        "item": "corn tortillas (each cut into 9 pieces)",
+        "item": "corn tortillas",
         "measurements": [
           {
             "amount": "30",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "each cut into 9 pieces",
         "category": "Bakery & Bread"
       }
     }

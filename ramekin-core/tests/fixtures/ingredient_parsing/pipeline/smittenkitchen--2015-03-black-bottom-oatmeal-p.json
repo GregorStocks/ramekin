@@ -124,7 +124,7 @@
     {
       "raw": "1 stick (4 ounces or 115 grams) cold unsalted butter, cut into chunks",
       "expected": {
-        "item": "cold unsalted butter, cut into chunks",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "1",
@@ -139,7 +139,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Dairy & Eggs"
       }
     },
@@ -303,14 +303,14 @@
     {
       "raw": "1 cup dark corn syrup (see Note below for replacements)",
       "expected": {
-        "item": "dark corn syrup (see Note below for replacements)",
+        "item": "dark corn syrup",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Note below for replacements",
         "category": "Baking"
       }
     },

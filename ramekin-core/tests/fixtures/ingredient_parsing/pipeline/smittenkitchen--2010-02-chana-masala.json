@@ -111,14 +111,14 @@
     {
       "raw": "1/2 teaspoon ground cayenne pepper (I used a quarter of this because my cayenne is extremely hot)",
       "expected": {
-        "item": "ground cayenne pepper (I used a quarter of this because my cayenne is extremely hot)",
+        "item": "ground cayenne pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "I used a quarter of this because my cayenne is extremely hot",
         "category": "Spices & Seasonings"
       }
     },
@@ -157,14 +157,14 @@
     {
       "raw": "1 tablespoon amchoor powder (see note)",
       "expected": {
-        "item": "amchoor powder (see note)",
+        "item": "amchoor powder",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Other"
       }
     },
@@ -240,17 +240,9 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "15",
-            "unit": "oz"
-          },
-          {
-            "amount": "425",
-            "unit": "g"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "15-ounce, drained and rinsed",
         "category": "Canned Goods"
       }
     },
@@ -275,15 +267,15 @@
     {
       "raw": "1/2 lemon (juiced) (see note; I used a whole lemon to swap for the amchoor powder)",
       "expected": {
-        "item": "lemon (juiced) (see note; I used a whole lemon to swap for the amchoor powder)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced, see note; I used a whole lemon to swap for the amchoor powder",
+        "category": "Produce"
       }
     }
   ]

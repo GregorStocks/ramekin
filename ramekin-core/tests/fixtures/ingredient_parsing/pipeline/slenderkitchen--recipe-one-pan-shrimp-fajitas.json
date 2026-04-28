@@ -51,14 +51,14 @@
     {
       "raw": "1 jalapeno pepper, sliced (optional)",
       "expected": {
-        "item": "jalapeno pepper, sliced",
+        "item": "jalapeno pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "optional, sliced",
         "category": "Produce"
       }
     },

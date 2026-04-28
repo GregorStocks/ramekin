@@ -141,14 +141,14 @@
     {
       "raw": "36  chocolate mint wafer candies (such as Andes Mints)",
       "expected": {
-        "item": "chocolate mint wafer candies (such as Andes Mints)",
+        "item": "chocolate mint wafer candies",
         "measurements": [
           {
             "amount": "36",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "such as Andes Mints",
         "category": "Spices & Seasonings"
       }
     }

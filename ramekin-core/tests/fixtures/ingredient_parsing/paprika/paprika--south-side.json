@@ -26,15 +26,11 @@
             "unit": "oz"
           },
           {
-            "amount": "2",
-            "unit": null
-          },
-          {
             "amount": "21",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "2:1",
         "category": "Other"
       }
     },
@@ -59,7 +55,7 @@
     {
       "raw": "2 ounces gin (Plymouth)",
       "expected": {
-        "item": "gin (Plymouth)",
+        "item": "gin",
         "measurements": [
           {
             "amount": "2",
@@ -70,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Plymouth",
         "category": "Beverages"
       }
     }

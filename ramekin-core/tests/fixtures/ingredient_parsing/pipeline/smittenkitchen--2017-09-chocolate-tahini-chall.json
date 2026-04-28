@@ -150,7 +150,7 @@
     {
       "raw": "4 ounces (115 grams) dark (semi- or bittersweet) chocolate (or approximately 3/4 cup chocolate chips)",
       "expected": {
-        "item": "dark (semi-",
+        "item": "dark chocolate",
         "measurements": [
           {
             "amount": "4",
@@ -161,7 +161,7 @@
             "unit": "g"
           }
         ],
-        "note": "or bittersweet) chocolate (or approximately 3/4 cup chocolate chips)",
+        "note": "semi- or bittersweet, or approximately 3/4 cup chocolate chips",
         "category": "Other"
       }
     },

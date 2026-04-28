@@ -41,28 +41,32 @@
     {
       "raw": "6 tablespoons hoisin sauce, best quality such as Lee Kum Kee or Kikkoman (use gluten-free if needed)",
       "expected": {
-        "item": "hoisin sauce, best quality such as Lee Kum Kee or Kikkoman (use gluten-free if needed)",
+        "item": "hoisin sauce, best quality such as Lee Kum Kee or Kikkoman",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "use gluten-free if needed",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "3 tablespoons soy sauce (use gluten-free if needed)",
       "expected": {
-        "item": "soy sauce (use gluten-free if needed)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "48",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "use gluten-free if needed",
         "category": "Condiments & Sauces"
       }
     },
@@ -173,14 +177,14 @@
     {
       "raw": "2 tablespoons chopped fresh ginger (see note)",
       "expected": {
-        "item": "chopped fresh ginger (see note)",
+        "item": "chopped fresh ginger",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Produce"
       }
     },

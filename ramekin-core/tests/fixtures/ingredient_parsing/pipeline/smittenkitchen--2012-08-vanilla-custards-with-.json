@@ -32,9 +32,9 @@
     {
       "raw": "Seeds from 1/4 to 1/2 vanilla bean (see Note) or 1 teaspoon pure vanilla extract",
       "expected": {
-        "item": "Seeds from 1/4 to 1/2 vanilla bean (see Note)",
+        "item": "Seeds from 1/4 to 1/2 vanilla bean",
         "measurements": [],
-        "note": "or 1 teaspoon pure vanilla extract",
+        "note": "see Note; or 1 teaspoon pure vanilla extract",
         "category": "Spices & Seasonings"
       }
     },
@@ -91,14 +91,14 @@
     {
       "raw": "1 to 2 tablespoons (see Note) unsalted butter",
       "expected": {
-        "item": "(see Note) unsalted butter",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Dairy & Eggs"
       }
     },

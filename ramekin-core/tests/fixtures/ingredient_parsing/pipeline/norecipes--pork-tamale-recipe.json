@@ -411,14 +411,14 @@
     {
       "raw": "1 1/3 cups manteca ((lard))",
       "expected": {
-        "item": "manteca (lard)",
+        "item": "manteca",
         "measurements": [
           {
             "amount": "1.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "lard",
         "category": "Other"
       }
     },
@@ -432,7 +432,7 @@
             "unit": "cup"
           }
         ],
-        "note": "(cooled to room temperature",
+        "note": "(cooled to room temperature)",
         "category": "Canned Goods"
       }
     },

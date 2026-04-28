@@ -5,7 +5,7 @@
     {
       "raw": "2 1/4 pounds boneless, skinless chicken thighs, cut into 2-inch pieces",
       "expected": {
-        "item": "boneless, skinless chicken thighs, cut into 2-inch pieces",
+        "item": "boneless, skinless chicken thighs",
         "measurements": [
           {
             "amount": "2.25",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 2-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -28,13 +28,9 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "2",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "I use Greek; with Greek, 2% worked too",
         "category": "Dairy & Eggs"
       }
     },

@@ -134,7 +134,7 @@
     {
       "raw": "16 ounces bucatini spaghetti ((or your preferred pasta))",
       "expected": {
-        "item": "bucatini spaghetti (or your preferred pasta)",
+        "item": "bucatini spaghetti",
         "measurements": [
           {
             "amount": "16",
@@ -145,7 +145,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or your preferred pasta",
         "category": "Pasta & Rice"
       }
     },

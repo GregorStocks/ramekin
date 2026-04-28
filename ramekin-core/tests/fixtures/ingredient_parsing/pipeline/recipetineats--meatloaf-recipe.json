@@ -5,14 +5,14 @@
     {
       "raw": "1 cup panko breadcrumbs ((Note 1))",
       "expected": {
-        "item": "panko breadcrumbs (Note 1)",
+        "item": "panko breadcrumbs",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "Note 1",
         "category": "Bakery & Bread"
       }
     },
@@ -26,14 +26,14 @@
             "unit": "large"
           }
         ],
-        "note": "grated (brown, yellow",
+        "note": "grated (brown, yellow)",
         "category": "Produce"
       }
     },
     {
       "raw": "1 kg / 2 lb   ground beef (mince) (, preferably not lean)",
       "expected": {
-        "item": "ground beef (mince) (, preferably not lean)",
+        "item": "ground beef",
         "measurements": [
           {
             "amount": "1",
@@ -44,7 +44,7 @@
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "mince, preferably not lean",
         "category": "Meat & Seafood"
       }
     },
@@ -111,14 +111,14 @@
     {
       "raw": "1/4 cup chopped parsley ((optional), or 2 tsp dried parsley or basil)",
       "expected": {
-        "item": "chopped parsley, or 2 tsp dried parsley or basil)",
+        "item": "chopped parsley",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": "optional",
+        "note": "optional; or 2 tsp dried parsley or basil",
         "category": "Spices & Seasonings"
       }
     },
@@ -150,7 +150,7 @@
             "unit": null
           }
         ],
-        "note": "crumbled or 2 tsp beef powder (Note 2",
+        "note": "crumbled or 2 tsp beef powder (Note 2)",
         "category": "Spices & Seasonings"
       }
     },

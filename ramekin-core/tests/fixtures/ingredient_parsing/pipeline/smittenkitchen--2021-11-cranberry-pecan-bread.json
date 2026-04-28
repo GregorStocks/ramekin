@@ -55,7 +55,7 @@
     {
       "raw": "6 tablespoons (85 grams) unsalted butter, melted, cooled",
       "expected": {
-        "item": "unsalted butter, melted, cooled",
+        "item": "unsalted butter, melted",
         "measurements": [
           {
             "amount": "6",
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cooled",
         "category": "Dairy & Eggs"
       }
     },
@@ -206,7 +206,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "about 1 1/2 tablespoons",
         "category": "Baking"
       }
     }

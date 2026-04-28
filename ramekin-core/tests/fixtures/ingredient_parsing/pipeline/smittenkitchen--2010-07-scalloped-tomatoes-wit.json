@@ -5,35 +5,39 @@
     {
       "raw": "3 tablespoons olive oil (reduced from original)",
       "expected": {
-        "item": "olive oil (reduced from original)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "reduced from original",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "2 cups bread from a French boule, in a 1/2-inch dice, crusts removed (I went closer to 3 cups, after buying a loaf of very puffy Italian bread by accident)",
       "expected": {
-        "item": "bread from a French boule, in a 1/2-inch dice, crusts removed (I went closer to 3 cups, after buying a loaf of very puffy Italian bread by accident)",
+        "item": "bread from a French boule, in a 1/2-inch dice, crusts removed",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I went closer to 3 cups, after buying a loaf of very puffy Italian bread by accident",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "2 1/2 pounds plum whatever good tomatoes you’ve got, cut into 1/2-inch dice",
       "expected": {
-        "item": "plum whatever good tomatoes you’ve got, cut into 1/2-inch dice",
+        "item": "plum whatever good tomatoes you’ve got",
         "measurements": [
           {
             "amount": "2.5",
@@ -44,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch dice",
         "category": "Produce"
       }
     },
@@ -66,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": "minced",
+        "note": "about 1 tablespoon, minced",
         "category": "Produce"
       }
     },
@@ -91,14 +95,18 @@
     {
       "raw": "2 teaspoons Kosher salt (read this)",
       "expected": {
-        "item": "Kosher salt (read this)",
+        "item": "Kosher salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "5.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "read this",
         "category": "Spices & Seasonings"
       }
     },

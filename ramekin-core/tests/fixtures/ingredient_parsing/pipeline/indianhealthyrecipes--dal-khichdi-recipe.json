@@ -5,14 +5,14 @@
     {
       "raw": "1 to 2 tablespoons ghee ((clarified butter) or oil)",
       "expected": {
-        "item": "ghee (clarified butter) or oil)",
+        "item": "ghee or oil",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "clarified butter",
         "category": "Dairy & Eggs"
       }
     },
@@ -40,7 +40,7 @@
             "unit": null
           }
         ],
-        "note": "or 1 sprig of curry leaves (optional",
+        "note": "or 1 sprig of curry leaves (optional)",
         "category": "Spices & Seasonings"
       }
     },
@@ -54,7 +54,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "grated or ginger paste (1 inch piece",
+        "note": "grated or ginger paste (1 inch piece)",
         "category": "Beverages"
       }
     },
@@ -72,7 +72,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely chopped (1 very small, optional",
+        "note": "finely chopped (1 very small, optional)",
         "category": "Produce"
       }
     },
@@ -84,13 +84,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "0.5",
-            "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "slit or 1/2 tsp red chili powder",
         "category": "Other"
       }
     },
@@ -104,7 +100,7 @@
             "unit": "cup"
           }
         ],
-        "note": "deseeded & fine chopped or pureed (1 medium",
+        "note": "deseeded & fine chopped or pureed (1 medium)",
         "category": "Produce"
       }
     },
@@ -147,70 +143,74 @@
     {
       "raw": "½ cup rice ((any kind or quinoa, steel cut oats, millets))",
       "expected": {
-        "item": "rice (any kind or quinoa, steel cut oats, millets)",
+        "item": "rice",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "any kind or quinoa, steel cut oats, millets",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "½ cup moong dal ((skinless petite yellow lentils) (or any other dal))",
       "expected": {
-        "item": "moong dal (skinless petite yellow lentils) (or any other dal)",
+        "item": "moong dal",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "skinless petite yellow lentils, or any other dal",
+        "category": "Other"
       }
     },
     {
       "raw": "4 cups water ((more to adjust, for porridge consistency))",
       "expected": {
-        "item": "water (more to adjust, for porridge consistency)",
+        "item": "water",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "948",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "more to adjust, for porridge consistency",
         "category": "Other"
       }
     },
     {
       "raw": "1 pinch asafoetida ((hing) (optional))",
       "expected": {
-        "item": "asafoetida (hing) (optional)",
+        "item": "asafoetida",
         "measurements": [
           {
             "amount": "1",
             "unit": "pinch"
           }
         ],
-        "note": null,
+        "note": "hing, optional",
         "category": "Other"
       }
     },
     {
       "raw": "½ tablespoon ghee (for topping)",
       "expected": {
-        "item": "ghee (for topping)",
+        "item": "ghee",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "for topping",
         "category": "Dairy & Eggs"
       }
     },
@@ -231,14 +231,14 @@
     {
       "raw": "8  french beans (cut to 1 inch length)",
       "expected": {
-        "item": "french beans (cut to 1 inch length)",
+        "item": "french beans",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut to 1 inch length",
         "category": "Other"
       }
     },

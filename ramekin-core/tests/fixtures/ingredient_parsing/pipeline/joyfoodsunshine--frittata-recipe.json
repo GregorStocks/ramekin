@@ -5,15 +5,15 @@
     {
       "raw": "4 slices bacon ((or 2 Tablespoons olive oil for vegetarian))",
       "expected": {
-        "item": "bacon (or 2 Tablespoons olive oil for vegetarian)",
+        "item": "bacon",
         "measurements": [
           {
             "amount": "4",
             "unit": "slice"
           }
         ],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "or 2 Tablespoons olive oil for vegetarian",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -51,15 +51,15 @@
     {
       "raw": "4 cups vegetables ((bell peppers, broccoli, zucchini, etc.))",
       "expected": {
-        "item": "vegetables (bell peppers, broccoli, zucchini, etc.)",
+        "item": "vegetables",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "bell peppers, broccoli, zucchini, etc.",
+        "category": "Other"
       }
     },
     {

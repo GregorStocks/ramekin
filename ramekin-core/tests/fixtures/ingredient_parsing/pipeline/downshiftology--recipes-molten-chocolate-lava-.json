@@ -129,7 +129,7 @@
     {
       "raw": "13.5 oz full fat coconut milk (refrigerated overnight)",
       "expected": {
-        "item": "full fat coconut milk (refrigerated overnight)",
+        "item": "full fat coconut milk",
         "measurements": [
           {
             "amount": "13.5",
@@ -140,7 +140,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "refrigerated overnight",
         "category": "Canned Goods"
       }
     },

@@ -19,14 +19,18 @@
     {
       "raw": "2 tablespoons butter, cut into small pieces",
       "expected": {
-        "item": "butter, cut into small pieces",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small pieces",
         "category": "Dairy & Eggs"
       }
     },

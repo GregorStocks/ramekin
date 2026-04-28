@@ -79,42 +79,46 @@
     {
       "raw": "1/8 teaspoon salt (omit if using salted butter)",
       "expected": {
-        "item": "salt (omit if using salted butter)",
+        "item": "salt, presumably Diamond",
         "measurements": [
           {
             "amount": "0.13",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.4",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "omit if using salted butter",
+        "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1/2 cup panko (Japanese bread crumbs, or make your own, below*)",
       "expected": {
-        "item": "panko (Japanese bread crumbs, or make your own, below*)",
+        "item": "panko",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "Japanese bread crumbs, or make your own, below",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "1 1/2 to 2 cups strawberries, stemmed and sliced (I forgot to jot down the weight, but it was less than a half pound of whole berries)",
       "expected": {
-        "item": "strawberries, stemmed and sliced",
+        "item": "strawberries",
         "measurements": [
           {
             "amount": "1.5 to 2",
             "unit": "cup"
           }
         ],
-        "note": "I forgot to jot down the weight, but it was less than a half pound of whole berries",
+        "note": "I forgot to jot down the weight, but it was less than a half pound of whole berries, stemmed and sliced",
         "category": "Produce"
       }
     },

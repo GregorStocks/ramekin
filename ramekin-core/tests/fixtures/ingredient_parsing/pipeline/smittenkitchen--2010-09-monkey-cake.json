@@ -198,14 +198,14 @@
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "about 8 large",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 cup plus 1 tablespoon (4 7/8 ounces or 136 grams) sour cream or (weight will vary) plain yogurt",
       "expected": {
-        "item": "sour cream or (weight will vary) plain yogurt",
+        "item": "sour cream or plain yogurt",
         "measurements": [
           {
             "amount": "1/2 cup plus 1 tablespoon",
@@ -220,7 +220,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "weight will vary",
         "category": "Dairy & Eggs"
       }
     },
@@ -445,7 +445,7 @@
     {
       "raw": "6 tablespoons (3 1/4 ounces or 91 grams) sour cream or (weight will vary) plain yogurt",
       "expected": {
-        "item": "sour cream or (weight will vary) plain yogurt",
+        "item": "sour cream or plain yogurt",
         "measurements": [
           {
             "amount": "6",
@@ -460,7 +460,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "weight will vary",
         "category": "Dairy & Eggs"
       }
     },
@@ -489,7 +489,7 @@
     {
       "raw": "6 3/4 cups (28 1/2 ounces or 810 grams) confectioners’ sugar (no need to sift)",
       "expected": {
-        "item": "confectioners’ sugar (no need to sift)",
+        "item": "confectioners’ sugar",
         "measurements": [
           {
             "amount": "6.75",
@@ -504,7 +504,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "no need to sift",
         "category": "Baking"
       }
     },
@@ -591,7 +591,7 @@
     {
       "raw": "4 1/2 cups (19 ounces or 540 grams) confectioners’ sugar (no need to sift)",
       "expected": {
-        "item": "confectioners’ sugar (no need to sift)",
+        "item": "confectioners’ sugar",
         "measurements": [
           {
             "amount": "4.5",
@@ -606,7 +606,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "no need to sift",
         "category": "Baking"
       }
     },

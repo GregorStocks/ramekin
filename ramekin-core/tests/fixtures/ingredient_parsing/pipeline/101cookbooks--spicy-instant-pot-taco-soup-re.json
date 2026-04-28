@@ -157,23 +157,23 @@
     {
       "raw": "1 cup favorite (red salsa)",
       "expected": {
-        "item": "favorite (red salsa)",
+        "item": "favorite",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "red salsa",
+        "category": "Other"
       }
     },
     {
       "raw": "toasted pepitas or almonds, cilantro, avocado, salted yogurt (use non-dairy to keep it vegan), lime wedges",
       "expected": {
-        "item": "toasted pepitas or almonds, cilantro, avocado, salted yogurt (use non-dairy to keep it vegan), lime wedges",
+        "item": "toasted pepitas or almonds, cilantro, avocado, salted yogurt, lime wedges",
         "measurements": [],
-        "note": null,
+        "note": "use non-dairy to keep it vegan",
         "category": "Produce"
       }
     }

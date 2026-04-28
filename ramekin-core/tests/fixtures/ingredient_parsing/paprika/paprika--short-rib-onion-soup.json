@@ -68,7 +68,7 @@
             "unit": "cup"
           }
         ],
-        "note": "chopped",
+        "note": "about 1 1/2 cups, chopped",
         "section": "Braise",
         "category": "Produce"
       }
@@ -227,12 +227,8 @@
             "unit": "lb"
           },
           {
-            "amount": "1.15",
-            "unit": null
-          },
-          {
-            "amount": "1134 to 1247",
-            "unit": "g"
+            "amount": "1.15 to 1.25",
+            "unit": "kg"
           }
         ],
         "note": "peeled and thinly sliced",
@@ -266,14 +262,14 @@
     {
       "raw": "6 to 8 (one per bowl) thick slices sourdough or country bread",
       "expected": {
-        "item": "(one per bowl) thick slices sourdough or country bread",
+        "item": "thick slices sourdough or country bread",
         "measurements": [
           {
             "amount": "6 to 8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "one per bowl",
         "section": "Toasts and Assembly",
         "category": "Bakery & Bread"
       }

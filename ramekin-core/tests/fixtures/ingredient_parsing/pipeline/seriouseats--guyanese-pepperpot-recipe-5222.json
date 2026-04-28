@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds (900g) cow foot, cut into roughly 1- by 2-inch pieces (see note)",
       "expected": {
-        "item": "cow foot, cut into roughly 1- by 2-inch pieces (see note)",
+        "item": "cow foot",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note, cut into roughly 1- by 2-inch pieces",
         "category": "Other"
       }
     },
@@ -106,13 +106,9 @@
           {
             "amount": "3",
             "unit": null
-          },
-          {
-            "amount": "3",
-            "unit": "inches each"
           }
         ],
-        "note": "divided",
+        "note": "about 3 inches each, divided",
         "category": "Spices & Seasonings"
       }
     },
@@ -137,7 +133,7 @@
     {
       "raw": "1 pound (450g) bone-in beef chuck, cut into roughly 2-inch pieces (see note)",
       "expected": {
-        "item": "bone-in beef chuck, cut into roughly 2-inch pieces (see note)",
+        "item": "bone-in beef chuck",
         "measurements": [
           {
             "amount": "1",
@@ -148,7 +144,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see note, cut into roughly 2-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -166,21 +162,21 @@
             "unit": "g"
           }
         ],
-        "note": "finely minced",
+        "note": "about 25g, finely minced",
         "category": "Produce"
       }
     },
     {
       "raw": "4 fresh wiri wiri peppers (see note)",
       "expected": {
-        "item": "fresh wiri wiri peppers (see note)",
+        "item": "fresh wiri wiri peppers",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Spices & Seasonings"
       }
     },
@@ -216,7 +212,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and grated",
+        "note": "about 30g, peeled and grated",
         "category": "Produce"
       }
     },

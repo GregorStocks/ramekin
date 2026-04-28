@@ -73,28 +73,28 @@
     {
       "raw": "1 tsp hot sauce (tapatio or cholula)",
       "expected": {
-        "item": "hot sauce (tapatio or cholula)",
+        "item": "hot sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "tapatio or cholula",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1  whole chicken (cut into pieces)",
       "expected": {
-        "item": "whole chicken (cut into pieces)",
+        "item": "whole chicken",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -223,14 +223,14 @@
     {
       "raw": "5-8 cups peanut oil (or enough to fill a deep stock pot or deep fryer)",
       "expected": {
-        "item": "peanut oil (or enough to fill a deep stock pot or deep fryer)",
+        "item": "peanut oil",
         "measurements": [
           {
             "amount": "5-8",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or enough to fill a deep stock pot or deep fryer",
         "category": "Oils & Vinegars"
       }
     }

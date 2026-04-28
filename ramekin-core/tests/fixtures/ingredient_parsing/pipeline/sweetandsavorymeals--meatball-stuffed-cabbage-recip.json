@@ -19,14 +19,14 @@
     {
       "raw": "1/2 cup cooked rice (you can use any rice that you like)",
       "expected": {
-        "item": "cooked rice (you can use any rice that you like)",
+        "item": "cooked rice",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "you can use any rice that you like",
         "category": "Pasta & Rice"
       }
     },
@@ -194,28 +194,32 @@
     {
       "raw": "2 cups water (or chicken broth)",
       "expected": {
-        "item": "water (or chicken broth)",
+        "item": "water",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "474",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "or chicken broth",
+        "category": "Other"
       }
     },
     {
       "raw": "2-3 cups cabbage (from inside the cabbage)",
       "expected": {
-        "item": "cabbage (from inside the cabbage)",
+        "item": "cabbage",
         "measurements": [
           {
             "amount": "2-3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from inside the cabbage",
         "category": "Produce"
       }
     },
@@ -259,9 +263,9 @@
     {
       "raw": "Vegetable oil (or olive oil)",
       "expected": {
-        "item": "Vegetable oil (or olive oil)",
+        "item": "Vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "or olive oil",
         "category": "Oils & Vinegars"
       }
     },

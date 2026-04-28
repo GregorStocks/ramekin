@@ -134,13 +134,9 @@
           {
             "amount": "600",
             "unit": "g"
-          },
-          {
-            "amount": "1.5",
-            "unit": "small"
           }
         ],
-        "note": null,
+        "note": "1 1/2 small cans",
         "category": "Produce"
       }
     },
@@ -274,7 +270,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 1/4 cup",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -299,14 +295,14 @@
     {
       "raw": "1 teaspoon dried fenugreek leaves ((kasuri methi))",
       "expected": {
-        "item": "dried fenugreek leaves (kasuri methi)",
+        "item": "dried fenugreek leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "kasuri methi",
         "category": "Spices & Seasonings"
       }
     },

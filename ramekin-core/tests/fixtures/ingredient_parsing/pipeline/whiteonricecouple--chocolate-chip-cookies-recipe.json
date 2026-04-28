@@ -73,14 +73,18 @@
     {
       "raw": "1 cup Butter (, at room temp.)",
       "expected": {
-        "item": "Butter (, at room temp.)",
+        "item": "Butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "at room temp.",
         "category": "Dairy & Eggs"
       }
     },
@@ -155,7 +159,7 @@
     {
       "raw": "12 oz. Dark Chocolate (cut into 1/2&amp;quot; chunks or smaller) (, or dark chocolate chips)",
       "expected": {
-        "item": "Dark Chocolate (cut into 1/2\" chunks or smaller) (, or dark chocolate chips)",
+        "item": "Dark Chocolate",
         "measurements": [
           {
             "amount": "12",
@@ -166,8 +170,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "cut into 1/2\" chunks or smaller, or dark chocolate chips",
+        "category": "Other"
       }
     }
   ]

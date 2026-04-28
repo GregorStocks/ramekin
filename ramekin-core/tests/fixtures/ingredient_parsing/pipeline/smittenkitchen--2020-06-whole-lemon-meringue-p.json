@@ -12,15 +12,11 @@
             "unit": null
           },
           {
-            "amount": "1",
-            "unit": "sleeve"
-          },
-          {
             "amount": "150",
             "unit": "g"
           }
         ],
-        "note": "or 1 1/2 cups crumbs",
+        "note": "1 sleeve; or 1 1/2 cups crumbs",
         "category": "Snacks"
       }
     },
@@ -59,28 +55,32 @@
     {
       "raw": "5 tablespoons unsalted butter, cut into cubes",
       "expected": {
-        "item": "unsalted butter, cut into cubes",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "71",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1 whole (preferably organic) lemon, any variety (see Note), scrubbed",
       "expected": {
-        "item": "whole (preferably organic) lemon, any variety (see Note)",
+        "item": "whole lemon, any variety",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "scrubbed",
+        "note": "preferably organic, see Note, scrubbed",
         "category": "Produce"
       }
     },
@@ -110,7 +110,7 @@
     {
       "raw": "8 tablespoons (4 ounces or 115 grams) unsalted butter, cut into cubes",
       "expected": {
-        "item": "unsalted butter, cut into cubes",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "8",
@@ -125,7 +125,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Dairy & Eggs"
       }
     },

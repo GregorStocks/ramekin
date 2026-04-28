@@ -95,14 +95,18 @@
     {
       "raw": "5 tablespoons cold unsalted butter (cut into ½-inch pieces)",
       "expected": {
-        "item": "cold unsalted butter (cut into 1/2-inch pieces)",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "71",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -123,14 +127,14 @@
     {
       "raw": "6 cups fresh cherries (pitted)",
       "expected": {
-        "item": "fresh cherries (pitted)",
+        "item": "fresh cherries",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "pitted",
         "category": "Produce"
       }
     },

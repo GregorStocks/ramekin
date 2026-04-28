@@ -93,15 +93,11 @@
             "unit": "package"
           },
           {
-            "amount": "10",
-            "unit": "oz"
-          },
-          {
             "amount": "283",
             "unit": "g"
           }
         ],
-        "note": "thawed and squeezed of excess liquid",
+        "note": "10-ounce or 283-gram, thawed and squeezed of excess liquid",
         "category": "Produce"
       }
     },
@@ -115,7 +111,7 @@
             "unit": null
           }
         ],
-        "note": "minced (white and green parts)",
+        "note": "white and green parts, minced",
         "category": "Produce"
       }
     },
@@ -144,9 +140,9 @@
     {
       "raw": "Arugula or another salad green, halved cherry tomatoes, and minced chives to serve (optional)",
       "expected": {
-        "item": "Arugula or another salad green, halved cherry tomatoes, and minced chives to serve",
+        "item": "Arugula or another salad green, halved cherry tomatoes",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, and minced chives to serve",
         "category": "Produce"
       }
     }

@@ -111,23 +111,23 @@
     {
       "raw": "cooking oil (for frying)",
       "expected": {
-        "item": "cooking oil (for frying)",
+        "item": "cooking oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "5 g dried kelp (kombu)",
       "expected": {
-        "item": "dried kelp (kombu)",
+        "item": "dried kelp",
         "measurements": [
           {
             "amount": "5",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "kombu",
         "category": "Other"
       }
     },
@@ -216,18 +216,14 @@
     {
       "raw": "2 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "32",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -262,9 +258,9 @@
     {
       "raw": "Japanese wild parsley (mitsuba) (optional to garnish)",
       "expected": {
-        "item": "Japanese wild parsley (mitsuba) (optional to garnish)",
+        "item": "Japanese wild parsley",
         "measurements": [],
-        "note": null,
+        "note": "mitsuba, optional to garnish",
         "category": "Spices & Seasonings"
       }
     }

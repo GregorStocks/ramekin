@@ -366,7 +366,7 @@
     {
       "raw": "1 1/4 pounds (20 ounces, 2 1/2 cups, or 570 grams) unsalted butter, slightly cooler than room temperature (firm-soft, not mushy)",
       "expected": {
-        "item": "unsalted butter, slightly cooler than room temperature (firm-soft, not mushy)",
+        "item": "unsalted butter, slightly cooler than room temperature",
         "measurements": [
           {
             "amount": "1.25",
@@ -385,7 +385,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "firm-soft, not mushy",
         "category": "Dairy & Eggs"
       }
     }

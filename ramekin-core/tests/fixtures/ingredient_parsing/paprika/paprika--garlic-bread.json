@@ -20,14 +20,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 12 ounces",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "8 tablespoons (115 grams or 4 ounces) unsalted or salted butter (if salted, skip the salt below), cut into chunks",
       "expected": {
-        "item": "unsalted or salted butter (if salted, skip the salt below), cut into chunks",
+        "item": "unsalted or salted butter",
         "measurements": [
           {
             "amount": "8",
@@ -42,7 +42,7 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "if salted, skip the salt below, cut into chunks",
         "category": "Dairy & Eggs"
       }
     },

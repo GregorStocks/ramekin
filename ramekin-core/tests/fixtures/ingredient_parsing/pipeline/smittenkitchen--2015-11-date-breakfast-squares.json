@@ -54,14 +54,14 @@
     {
       "raw": "1 teaspoon finely grated orange (or mandarin or clementine) zest",
       "expected": {
-        "item": "finely grated orange (or mandarin or clementine) zest",
+        "item": "finely grated orange zest",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or mandarin or clementine",
         "category": "Produce"
       }
     },
@@ -137,14 +137,14 @@
     {
       "raw": "3/4 cup plus 2 tablespoons whole wheat flour, or a wholegrain flour mix of your choice",
       "expected": {
-        "item": "whole wheat flour",
+        "item": "whole wheat flour, or a wholegrain flour mix of your choice",
         "measurements": [
           {
             "amount": "3/4 cup plus 2 tablespoons",
             "unit": null
           }
         ],
-        "note": "or a wholegrain flour mix of your choice",
+        "note": null,
         "category": "Baking"
       }
     },

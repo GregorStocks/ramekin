@@ -20,21 +20,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 10 ounces",
         "category": "Frozen"
       }
     },
     {
       "raw": "1  ripe banana (cut into chunks)",
       "expected": {
-        "item": "ripe banana (cut into chunks)",
+        "item": "ripe banana",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Produce"
       }
     },

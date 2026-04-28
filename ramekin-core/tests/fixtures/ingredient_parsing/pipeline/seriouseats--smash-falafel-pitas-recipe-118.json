@@ -12,10 +12,6 @@
             "unit": null
           },
           {
-            "amount": "6",
-            "unit": "inch"
-          },
-          {
             "amount": "9",
             "unit": "oz"
           },
@@ -24,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "6-inch",
         "category": "Bakery & Bread"
       }
     },
@@ -107,10 +103,10 @@
     {
       "raw": "Zhug (Yemenite Hot Sauce With Cilantro and Parsley) (optional)",
       "expected": {
-        "item": "Zhug (Yemenite Hot Sauce With Cilantro and Parsley) (optional)",
+        "item": "Zhug",
         "measurements": [],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "Yemenite Hot Sauce With Cilantro and Parsley, optional",
+        "category": "Other"
       }
     }
   ]

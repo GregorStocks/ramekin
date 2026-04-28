@@ -5,7 +5,7 @@
     {
       "raw": "1 cup (8 ounces or 225 grams) unsalted butter (see Note)",
       "expected": {
-        "item": "unsalted butter (see Note)",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
@@ -20,14 +20,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "3 tablespoons (45 grams) water (see Note)",
       "expected": {
-        "item": "water (see Note)",
+        "item": "water",
         "measurements": [
           {
             "amount": "3",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note",
         "category": "Other"
       }
     },
@@ -121,14 +121,18 @@
     {
       "raw": "1 1/2 teaspoons kosher salt (Diamond brand, use half of others)",
       "expected": {
-        "item": "kosher salt (Diamond brand, use half of others)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "4.3",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Diamond brand, use half of others",
         "category": "Spices & Seasonings"
       }
     },
@@ -148,13 +152,9 @@
           {
             "amount": "55",
             "unit": "g"
-          },
-          {
-            "amount": "0.25",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "2 ounces, 55 grams or 1/4 of an 8-ounce brick",
         "category": "Cheese"
       }
     },

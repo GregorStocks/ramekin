@@ -5,14 +5,14 @@
     {
       "raw": "1 3/4 cups diced leeks, white and light green only (from about 2 large leeks, although I think you can get away with one super-big leek)",
       "expected": {
-        "item": "diced leeks, white and light green only (from about 2 large leeks, although I think you can get away with one super-big leek)",
+        "item": "diced leeks, white and light green only",
         "measurements": [
           {
             "amount": "1.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from about 2 large leeks, although I think you can get away with one super-big leek",
         "category": "Produce"
       }
     },
@@ -33,14 +33,18 @@
     {
       "raw": "2 1/2 teaspoons olive oil (I needed a tad more)",
       "expected": {
-        "item": "olive oil (I needed a tad more)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "11",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I needed a tad more",
         "category": "Oils & Vinegars"
       }
     },
@@ -181,13 +185,9 @@
           {
             "amount": "1.5",
             "unit": "cup"
-          },
-          {
-            "amount": "0.25",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "1/4 -inch dice; I used about 1/2 pound",
         "category": "Meat & Seafood"
       }
     },

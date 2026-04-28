@@ -37,7 +37,7 @@
     {
       "raw": "4 cups small-diced (about 1/2-inch pieces) vegetables (see Note)",
       "expected": {
-        "item": "small-diced vegetables (see Note)",
+        "item": "small-diced vegetables",
         "measurements": [
           {
             "amount": "4",
@@ -48,7 +48,7 @@
             "unit": "1/2-inch pieces"
           }
         ],
-        "note": null,
+        "note": "about 1/2-inch pieces, see Note",
         "category": "Other"
       }
     },
@@ -142,17 +142,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "28",
-            "unit": "oz"
-          },
-          {
-            "amount": "794",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "28-ounce",
         "category": "Canned Goods"
       }
     },
@@ -173,7 +165,7 @@
     {
       "raw": "1 pound dried lasagna noodles (not no-boil type)",
       "expected": {
-        "item": "dried lasagna noodles (not no-boil type)",
+        "item": "dried lasagna noodles",
         "measurements": [
           {
             "amount": "1",
@@ -184,7 +176,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not no-boil type",
         "category": "Pasta & Rice"
       }
     },

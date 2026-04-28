@@ -24,7 +24,7 @@
             "unit": "g"
           }
         ],
-        "note": "roughly chopped",
+        "note": "about 3 cups, 3 ounces, roughly chopped",
         "category": "Produce"
       }
     },
@@ -46,7 +46,7 @@
             "unit": "g"
           }
         ],
-        "note": "roughly chopped",
+        "note": "about 1 ounce, roughly chopped",
         "category": "Produce"
       }
     },
@@ -60,7 +60,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus more to taste",
+        "note": "about 2 tablespoons, plus more to taste",
         "category": "Beverages"
       }
     },
@@ -99,14 +99,14 @@
     {
       "raw": "1/4 cup avocado (see notes above)",
       "expected": {
-        "item": "avocado (see notes above)",
+        "item": "avocado",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see notes above",
         "category": "Produce"
       }
     },

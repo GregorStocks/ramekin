@@ -100,14 +100,14 @@
     {
       "raw": "1 tbsp meyer lemon zest (from 1 large lemons)",
       "expected": {
-        "item": "meyer lemon zest (from 1 large lemons)",
+        "item": "meyer lemon zest",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "from 1 large lemons",
         "category": "Produce"
       }
     },

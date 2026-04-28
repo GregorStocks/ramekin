@@ -79,7 +79,7 @@
     {
       "raw": "12 oz tilapia fish fillets (cut into 1\" pieces)",
       "expected": {
-        "item": "tilapia fish fillets (cut into 1\" pieces)",
+        "item": "tilapia fish fillets",
         "measurements": [
           {
             "amount": "12",
@@ -90,7 +90,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1\" pieces",
         "category": "Meat & Seafood"
       }
     },

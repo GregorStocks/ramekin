@@ -59,14 +59,18 @@
     {
       "raw": "2 tablespoons lemon juice ((save the rinds to zest))",
       "expected": {
-        "item": "lemon juice (save the rinds to zest)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "save the rinds to zest",
         "category": "Beverages"
       }
     },

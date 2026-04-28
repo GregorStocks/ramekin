@@ -16,7 +16,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "minced or pressed through garlic press",
+        "note": "about 2 teaspoons, minced or pressed through garlic press",
         "category": "Produce"
       }
     },
@@ -34,7 +34,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "finely minced",
+        "note": "about 2 teaspoons, finely minced",
         "category": "Meat & Seafood"
       }
     },
@@ -59,7 +59,7 @@
     {
       "raw": "1 boneless beef chuck-eye roast (about 4 pounds), trimmed of excess fat, cut into 1 1/2-inch pieces (see note and step by step below)",
       "expected": {
-        "item": "boneless beef chuck-eye roast, trimmed of excess fat, cut into 1 1/2-inch pieces (see note and step by step below)",
+        "item": "boneless beef chuck-eye roast, trimmed of excess fat",
         "measurements": [
           {
             "amount": "1",
@@ -74,7 +74,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 4 pounds, see note and step by step below, cut into 1 1/2-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -114,7 +114,7 @@
             "unit": "g"
           }
         ],
-        "note": "halved and cut from pole to pole into 1/8-inch-thick slices",
+        "note": "about 2 cups, halved and cut from pole to pole into 1/8-inch-thick slices",
         "category": "Produce"
       }
     },
@@ -132,7 +132,7 @@
             "unit": "cup"
           }
         ],
-        "note": "peeled and cut into 1-inch pieces",
+        "note": "about 2 cups, peeled and cut into 1-inch pieces",
         "category": "Produce"
       }
     },
@@ -153,14 +153,14 @@
     {
       "raw": "2 cups red wine  (see note)",
       "expected": {
-        "item": "red wine  (see note)",
+        "item": "red wine",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Beverages"
       }
     },
@@ -224,7 +224,7 @@
             "unit": "g"
           }
         ],
-        "note": "rinsed of excess salt (see note)",
+        "note": "see note, rinsed of excess salt",
         "category": "Meat & Seafood"
       }
     },
@@ -268,13 +268,9 @@
           {
             "amount": "2",
             "unit": "tsp"
-          },
-          {
-            "amount": "1",
-            "unit": "packet"
           }
         ],
-        "note": null,
+        "note": "about 1 packet",
         "category": "Baking"
       }
     },

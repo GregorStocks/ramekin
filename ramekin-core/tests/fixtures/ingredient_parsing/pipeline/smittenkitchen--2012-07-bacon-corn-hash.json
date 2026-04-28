@@ -5,7 +5,7 @@
     {
       "raw": "1/2 pound thick-cut bacon, cut into small dice",
       "expected": {
-        "item": "thick-cut bacon, cut into small dice",
+        "item": "thick-cut bacon",
         "measurements": [
           {
             "amount": "0.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small dice",
         "category": "Meat & Seafood"
       }
     },
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "scrubbed clean and diced into 1/4- to 1/2-inch cubes",
+        "note": "about 3 to 3 1/4 cups, scrubbed clean and diced into 1/4- to 1/2-inch cubes",
         "category": "Produce"
       }
     },

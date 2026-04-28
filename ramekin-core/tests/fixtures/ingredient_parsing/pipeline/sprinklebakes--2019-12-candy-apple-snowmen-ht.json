@@ -33,7 +33,7 @@
     {
       "raw": "24 oz. 1 package white Almond Bark candy coating (such as Plymouth Pantry)",
       "expected": {
-        "item": "1 package white Almond Bark candy coating (such as Plymouth Pantry)",
+        "item": "1 package white Almond Bark candy coating",
         "measurements": [
           {
             "amount": "24",
@@ -44,21 +44,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "such as Plymouth Pantry",
         "category": "Nuts & Dried Fruit"
       }
     },
     {
       "raw": "1 cup black (white, and silver sprinkle medley)",
       "expected": {
-        "item": "black (white, and silver sprinkle medley)",
+        "item": "black",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "white, and silver sprinkle medley",
         "category": "Other"
       }
     },

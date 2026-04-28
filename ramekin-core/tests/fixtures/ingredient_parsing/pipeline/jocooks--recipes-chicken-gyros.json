@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds chicken thighs (boneless and skinless)",
       "expected": {
-        "item": "chicken thighs (boneless and skinless)",
+        "item": "chicken thighs",
         "measurements": [
           {
             "amount": "2",
@@ -16,21 +16,25 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "boneless and skinless",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "½ cup Greek yogurt (plain)",
       "expected": {
-        "item": "Greek yogurt (plain)",
+        "item": "Greek yogurt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "plain",
         "category": "Dairy & Eggs"
       }
     },

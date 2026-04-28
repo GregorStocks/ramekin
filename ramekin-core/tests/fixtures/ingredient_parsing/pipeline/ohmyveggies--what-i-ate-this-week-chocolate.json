@@ -23,14 +23,14 @@
     {
       "raw": "1 cup coconut milk (refrigerated kind, such as Silk)",
       "expected": {
-        "item": "coconut milk (refrigerated kind, such as Silk)",
+        "item": "coconut milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "refrigerated kind, such as Silk",
         "category": "Canned Goods"
       }
     },

@@ -5,14 +5,18 @@
     {
       "raw": "1⅔ cups all-purpose flour, (spooned into measuring cup and leveled-off)",
       "expected": {
-        "item": "all-purpose flour, (spooned into measuring cup and leveled-off)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "1.67",
             "unit": "cup"
+          },
+          {
+            "amount": "208",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "spooned into measuring cup and leveled-off",
         "category": "Baking"
       }
     },
@@ -123,14 +127,14 @@
     {
       "raw": "1 cup mashed bananas, (from 2 to 3 overripe bananas)",
       "expected": {
-        "item": "mashed bananas, (from 2 to 3 overripe bananas)",
+        "item": "mashed bananas",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 2 to 3 overripe bananas",
         "category": "Produce"
       }
     },
@@ -155,14 +159,14 @@
     {
       "raw": "⅓ cup sour cream or plain Greek yogurt ((low-fat is fine))",
       "expected": {
-        "item": "sour cream or plain Greek yogurt (low-fat is fine)",
+        "item": "sour cream or plain Greek yogurt",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "low-fat is fine",
         "category": "Dairy & Eggs"
       }
     },

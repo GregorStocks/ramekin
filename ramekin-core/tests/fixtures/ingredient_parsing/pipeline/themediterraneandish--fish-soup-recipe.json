@@ -37,14 +37,14 @@
     {
       "raw": "1 teaspoon Aleppo pepper flakes (or ½ teaspoon red pepper flakes)",
       "expected": {
-        "item": "Aleppo pepper flakes (or 1/2 teaspoon red pepper flakes)",
+        "item": "Aleppo pepper flakes",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or 1/2 teaspoon red pepper flakes",
         "category": "Spices & Seasonings"
       }
     },
@@ -87,7 +87,7 @@
     {
       "raw": "1 ½ pounds moderately firm fish fillet,  (I used a combination of sea bass and red snapper, cut into chunks (1 1/2 -inch pieces))",
       "expected": {
-        "item": "moderately firm fish fillet,  (I used a combination of sea bass and red snapper, cut into chunks (1 1/2 -inch pieces)",
+        "item": "moderately firm fish fillet",
         "measurements": [
           {
             "amount": "1.5",
@@ -98,7 +98,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used a combination of sea bass and red snapper, cut into chunks (1 1/2 -inch pieces)",
         "category": "Meat & Seafood"
       }
     },
@@ -211,14 +211,14 @@
     {
       "raw": "4 cups vegetable stock or chicken stock,  (preferably low-sodium )",
       "expected": {
-        "item": "vegetable stock or chicken stock,  (preferably low-sodium",
+        "item": "vegetable stock or chicken stock",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "preferably low-sodium",
         "category": "Meat & Seafood"
       }
     },
@@ -260,22 +260,22 @@
             "unit": null
           }
         ],
-        "note": "chopped (both white and green parts",
+        "note": "chopped (both white and green parts)",
         "category": "Produce"
       }
     },
     {
       "raw": "1  lemon, (juiced)",
       "expected": {
-        "item": "lemon, (juiced)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     }
   ]

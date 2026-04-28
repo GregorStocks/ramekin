@@ -5,7 +5,7 @@
       "name": "sausage",
       "raw": "1 lb Italian Sausage ((casings removed if necessary))",
       "expected": {
-        "item": "Italian Sausage (casings removed if necessary)",
+        "item": "Italian Sausage",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "casings removed if necessary",
         "category": "Meat & Seafood"
       }
     }

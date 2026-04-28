@@ -45,7 +45,7 @@
     {
       "raw": "1/2 cup (118 ml) maple syrup (Grade B is ideal here, but the original recipe suggested that Grade A with a few drops of maple extract would also work)",
       "expected": {
-        "item": "maple syrup (Grade B is ideal here, but the original recipe suggested that Grade A with a few drops of maple extract would also work)",
+        "item": "maple syrup",
         "measurements": [
           {
             "amount": "0.5",
@@ -54,9 +54,13 @@
           {
             "amount": "118",
             "unit": "ml"
+          },
+          {
+            "amount": "158",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Grade B is ideal here, but the original recipe suggested that Grade A with a few drops of maple extract would also work",
         "category": "Baking"
       }
     },

@@ -10,13 +10,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "12",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "12- to 15-oz",
         "category": "Produce"
       }
     },
@@ -100,14 +96,14 @@
     {
       "raw": "1 tablespoon toasted (or not) sesame seeds",
       "expected": {
-        "item": "toasted (or not) sesame seeds",
+        "item": "toasted sesame seeds",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or not",
         "category": "Spices & Seasonings"
       }
     },
@@ -121,7 +117,7 @@
             "unit": "cup"
           }
         ],
-        "note": "roasted (salted are fine)",
+        "note": "salted are fine, roasted",
         "category": "Nuts & Dried Fruit"
       }
     },

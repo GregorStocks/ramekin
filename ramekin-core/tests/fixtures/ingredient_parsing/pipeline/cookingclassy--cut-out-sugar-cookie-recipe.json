@@ -5,7 +5,7 @@
     {
       "raw": "2 1/2 cups (354g) all-purpose flour ((scoop and level to measure))",
       "expected": {
-        "item": "all-purpose flour (scoop and level to measure)",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "2.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "scoop and level to measure",
         "category": "Baking"
       }
     },
@@ -145,9 +145,9 @@
     {
       "raw": "Icing ((see below))",
       "expected": {
-        "item": "Icing (see below)",
+        "item": "Icing",
         "measurements": [],
-        "note": null,
+        "note": "see below",
         "category": "Baking"
       }
     }

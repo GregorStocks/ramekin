@@ -51,7 +51,7 @@
     {
       "raw": "2 pounds chopped beef ( (stew meat or top sirloin cut into 1-inch pieces))",
       "expected": {
-        "item": "chopped beef ( (stew meat or top sirloin cut into 1-inch pieces)",
+        "item": "chopped beef",
         "measurements": [
           {
             "amount": "2",
@@ -62,7 +62,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "(stew meat or top sirloin cut into 1-inch pieces)",
         "category": "Meat & Seafood"
       }
     },

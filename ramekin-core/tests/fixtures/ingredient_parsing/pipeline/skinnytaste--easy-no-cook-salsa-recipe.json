@@ -33,21 +33,21 @@
     {
       "raw": "1/2  jalapeño (seeded and membranes removed or leave in for spicy)",
       "expected": {
-        "item": "jalapeño (seeded and membranes removed or leave in for spicy)",
+        "item": "jalapeño",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded and membranes removed or leave in for spicy",
         "category": "Produce"
       }
     },
     {
       "raw": "14.5 ounce can diced tomatoes (not with basil I use Tuttorosso)",
       "expected": {
-        "item": "can diced tomatoes (not with basil I use Tuttorosso)",
+        "item": "can diced tomatoes",
         "measurements": [
           {
             "amount": "14.5",
@@ -58,7 +58,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not with basil I use Tuttorosso",
         "category": "Canned Goods"
       }
     },

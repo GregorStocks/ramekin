@@ -72,14 +72,14 @@
     {
       "raw": "1 large egg, brought to room temperature",
       "expected": {
-        "item": "egg",
+        "item": "egg, brought to room temperature",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "brought to room temperature",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     },

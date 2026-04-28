@@ -5,14 +5,14 @@
     {
       "raw": "2 fluid ounces Blanco tequila (or preferred spirit)",
       "expected": {
-        "item": "Blanco tequila (or preferred spirit)",
+        "item": "Blanco tequila",
         "measurements": [
           {
             "amount": "2",
             "unit": "fl oz"
           }
         ],
-        "note": null,
+        "note": "or preferred spirit",
         "category": "Beverages"
       }
     },
@@ -65,9 +65,9 @@
     {
       "raw": "Lime wedges (to garnish)",
       "expected": {
-        "item": "Lime wedges (to garnish)",
+        "item": "Lime wedges",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "category": "Produce"
       }
     },
@@ -76,7 +76,7 @@
       "expected": {
         "item": "Kosher salt",
         "measurements": [],
-        "note": "to rim each glass (optional",
+        "note": "to rim each glass (optional)",
         "category": "Spices & Seasonings"
       }
     }

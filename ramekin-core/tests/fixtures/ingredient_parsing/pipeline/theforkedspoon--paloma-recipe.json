@@ -59,9 +59,9 @@
     {
       "raw": "Chili Salt ((or just kosher salt))",
       "expected": {
-        "item": "Chili Salt (or just kosher salt)",
+        "item": "Chili Salt",
         "measurements": [],
-        "note": null,
+        "note": "or just kosher salt",
         "category": "Spices & Seasonings"
       }
     },
@@ -141,15 +141,15 @@
     {
       "raw": "2 fluid ounces club soda (or grapefruit soda)",
       "expected": {
-        "item": "club soda (or grapefruit soda)",
+        "item": "club soda",
         "measurements": [
           {
             "amount": "2",
             "unit": "fl oz"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "or grapefruit soda",
+        "category": "Beverages"
       }
     },
     {

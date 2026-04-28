@@ -23,14 +23,14 @@
     {
       "raw": "1 large and thick slice white bread (crust removed)",
       "expected": {
-        "item": "and thick slice white bread (crust removed)",
+        "item": "and thick slice white bread",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "crust removed",
         "category": "Bakery & Bread"
       }
     },
@@ -79,14 +79,14 @@
     {
       "raw": "1  jalapeño (for heat (optional) *)",
       "expected": {
-        "item": "jalapeño *)",
+        "item": "jalapeño",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "for heat (optional",
+        "note": "for heat (optional)",
         "category": "Produce"
       }
     },
@@ -107,14 +107,14 @@
     {
       "raw": "3  strawberries (stems removed *)",
       "expected": {
-        "item": "strawberries (stems removed *)",
+        "item": "strawberries",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "stems removed",
         "category": "Produce"
       }
     },
@@ -139,14 +139,14 @@
     {
       "raw": "2 tablespoon sherry vinegar ((or red wine vinegar))",
       "expected": {
-        "item": "sherry vinegar (or red wine vinegar)",
+        "item": "sherry vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or red wine vinegar",
         "category": "Oils & Vinegars"
       }
     },
@@ -203,9 +203,9 @@
     {
       "raw": "Diced bell pepper, cucumber, cherry tomatoes, and red onion (to garnish)",
       "expected": {
-        "item": "Diced bell pepper, cucumber, cherry tomatoes, and red onion (to garnish)",
+        "item": "Diced bell pepper, cucumber, cherry tomatoes, and red onion",
         "measurements": [],
-        "note": null,
+        "note": "to garnish",
         "category": "Produce"
       }
     },

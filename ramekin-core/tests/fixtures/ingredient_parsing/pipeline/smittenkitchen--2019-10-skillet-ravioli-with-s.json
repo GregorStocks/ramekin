@@ -37,7 +37,7 @@
     {
       "raw": "5 ounces baby spinach (from a salad-ready container)",
       "expected": {
-        "item": "baby spinach (from a salad-ready container)",
+        "item": "baby spinach",
         "measurements": [
           {
             "amount": "5",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from a salad-ready container",
         "category": "Produce"
       }
     },

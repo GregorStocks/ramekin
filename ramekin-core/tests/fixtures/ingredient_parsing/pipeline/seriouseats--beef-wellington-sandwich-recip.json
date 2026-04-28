@@ -125,7 +125,7 @@
     {
       "raw": "16 ounces (454 g) cremini or button mushrooms, stemmed and cut into 1/4-inch slices",
       "expected": {
-        "item": "cremini or button mushrooms, stemmed and cut into 1/4-inch slices",
+        "item": "cremini or button mushrooms",
         "measurements": [
           {
             "amount": "16",
@@ -136,7 +136,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "stemmed and cut into 1/4-inch slices",
         "category": "Produce"
       }
     },
@@ -189,7 +189,7 @@
     {
       "raw": "12 ounces (340 g) thinly sliced rare roast beef, homemade or store-bought (see notes)",
       "expected": {
-        "item": "thinly sliced rare roast beef, homemade or store-bought (see notes)",
+        "item": "thinly sliced rare roast beef, homemade or store-bought",
         "measurements": [
           {
             "amount": "12",
@@ -200,7 +200,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Meat & Seafood"
       }
     },

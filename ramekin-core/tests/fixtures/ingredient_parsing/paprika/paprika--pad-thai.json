@@ -5,7 +5,7 @@
     {
       "raw": "125 g / 4oz Chang’s Pad Thai dried rice sticks (Note 1)",
       "expected": {
-        "item": "Chang’s Pad Thai dried rice sticks (Note 1)",
+        "item": "Chang’s Pad Thai dried rice sticks",
         "measurements": [
           {
             "amount": "125",
@@ -16,7 +16,7 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "Note 1",
         "category": "Pasta & Rice"
       }
     },
@@ -27,14 +27,14 @@
     {
       "raw": "1 1/2 tbsp tamarind puree (Note 2)",
       "expected": {
-        "item": "tamarind puree (Note 2)",
+        "item": "tamarind puree",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "Note 2",
         "section": "Sauce",
         "category": "Condiments & Sauces"
       }
@@ -61,14 +61,18 @@
     {
       "raw": "2 tbsp fish sauce (Note 3)",
       "expected": {
-        "item": "fish sauce (Note 3)",
+        "item": "fish sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "36",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Note 3",
         "section": "Sauce",
         "category": "Condiments & Sauces"
       }
@@ -76,14 +80,18 @@
     {
       "raw": "1 1/2 tbsp oyster sauce (Note 4)",
       "expected": {
-        "item": "oyster sauce (Note 4)",
+        "item": "oyster sauce",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "Note 4",
         "section": "Sauce",
         "category": "Condiments & Sauces"
       }
@@ -110,14 +118,14 @@
     {
       "raw": "1/2 onion , sliced (brown, yellow)",
       "expected": {
-        "item": "onion, sliced (brown, yellow)",
+        "item": "onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "brown, yellow, sliced",
         "section": "Stir Fry",
         "category": "Produce"
       }
@@ -140,7 +148,7 @@
     {
       "raw": "150 g/5oz chicken breast (or thigh) , thinly sliced",
       "expected": {
-        "item": "chicken breast (or thigh)",
+        "item": "chicken breast",
         "measurements": [
           {
             "amount": "150",
@@ -151,7 +159,7 @@
             "unit": "oz"
           }
         ],
-        "note": "thinly sliced",
+        "note": "or thigh, thinly sliced",
         "section": "Stir Fry",
         "category": "Meat & Seafood"
       }
@@ -189,14 +197,14 @@
     {
       "raw": "1/2 cup firm tofu, cut into 3cm / 1 1/4″ batons (see photo)",
       "expected": {
-        "item": "firm tofu, cut into 3cm / 1 1/4″ batons (see photo)",
+        "item": "firm tofu",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see photo, cut into 3cm / 1 1/4″ batons",
         "section": "Stir Fry",
         "category": "Produce"
       }
@@ -204,14 +212,14 @@
     {
       "raw": "1/4 cup garlic chives , cut into 3cm / 1 1/4″ pieces",
       "expected": {
-        "item": "garlic chives, cut into 3cm / 1 1/4″ pieces",
+        "item": "garlic chives",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut into 3cm / 1 1/4″ pieces",
         "section": "Stir Fry",
         "category": "Produce"
       }
@@ -238,9 +246,9 @@
     {
       "raw": "Lime wedges (essential)",
       "expected": {
-        "item": "Lime wedges (essential)",
+        "item": "Lime wedges",
         "measurements": [],
-        "note": null,
+        "note": "essential",
         "section": "For Serving",
         "category": "Produce"
       }

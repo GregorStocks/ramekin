@@ -42,14 +42,14 @@
     {
       "raw": "270g jar hot salsa (we used Discovery)",
       "expected": {
-        "item": "jar hot salsa (we used Discovery)",
+        "item": "jar hot salsa",
         "measurements": [
           {
             "amount": "270",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "we used Discovery",
         "category": "Condiments & Sauces"
       }
     },

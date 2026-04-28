@@ -10,17 +10,9 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "4",
-            "unit": "lb"
-          },
-          {
-            "amount": "1814",
-            "unit": "g"
           }
         ],
-        "note": "rinsed and cut into 8 pieces",
+        "note": "4-pound, rinsed and cut into 8 pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -69,28 +61,28 @@
     {
       "raw": "1 sour orange, split in half (see notes)",
       "expected": {
-        "item": "sour orange, split in half (see notes)",
+        "item": "sour orange, split in half",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 cup packed culantro (see notes)",
       "expected": {
-        "item": "packed culantro (see notes)",
+        "item": "packed culantro",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Other"
       }
     },
@@ -274,7 +266,7 @@
             "unit": "cup"
           }
         ],
-        "note": "finely chopped (see notes)",
+        "note": "see notes, finely chopped",
         "category": "Other"
       }
     },
@@ -295,14 +287,14 @@
     {
       "raw": "2 tablespoons sour orange juice (see notes)",
       "expected": {
-        "item": "sour orange juice (see notes)",
+        "item": "sour orange juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "see notes",
         "category": "Produce"
       }
     },

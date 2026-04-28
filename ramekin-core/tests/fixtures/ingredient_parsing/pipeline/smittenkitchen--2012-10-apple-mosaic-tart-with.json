@@ -47,7 +47,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 1/4 pounds",
         "category": "Produce"
       }
     },
@@ -72,14 +72,18 @@
     {
       "raw": "2 tablespoons unsalted butter, cold, cut into small bits",
       "expected": {
-        "item": "unsalted butter, cold, cut into small bits",
+        "item": "unsalted butter, cold",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small bits",
         "category": "Dairy & Eggs"
       }
     },
@@ -113,28 +117,32 @@
     {
       "raw": "2 tablespoons unsalted butter (or salted, but then ease up on the sea salt)",
       "expected": {
-        "item": "unsalted butter (or salted, but then ease up on the sea salt)",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "or salted, but then ease up on the sea salt",
+        "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1/4 teaspoon flaky sea salt (or half as much table salt)",
       "expected": {
-        "item": "flaky sea salt (or half as much table salt)",
+        "item": "flaky sea salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or half as much table salt",
         "category": "Spices & Seasonings"
       }
     },

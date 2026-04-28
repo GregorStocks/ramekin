@@ -16,15 +16,11 @@
             "unit": "lb"
           },
           {
-            "amount": "2",
-            "unit": null
-          },
-          {
             "amount": "454",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 pound or 2 454 grams",
         "category": "Produce"
       }
     },
@@ -64,7 +60,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "total of 2.2 ounces or 63 grams",
         "category": "Baking"
       }
     },
@@ -129,7 +125,7 @@
     {
       "raw": "1/2 cup (2.25 ounces or 65 grams) sharp cheddar, shredded (white is recommended, I assume for aesthetics)",
       "expected": {
-        "item": "sharp cheddar, shredded (white is recommended, I assume for aesthetics)",
+        "item": "sharp cheddar",
         "measurements": [
           {
             "amount": "0.5",
@@ -144,7 +140,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "white is recommended, I assume for aesthetics, shredded",
         "category": "Cheese"
       }
     },

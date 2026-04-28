@@ -117,21 +117,25 @@
             "unit": "g"
           }
         ],
-        "note": "blackberries or sliced strawberries",
+        "note": "about 5 ounces, blackberries or sliced strawberries",
         "category": "Produce"
       }
     },
     {
       "raw": "1 cup lemon juice (from 4 to 6 lemons, depending on size and juicer efficiency)",
       "expected": {
-        "item": "lemon juice (from 4 to 6 lemons, depending on size and juicer efficiency)",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "244",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 4 to 6 lemons, depending on size and juicer efficiency",
         "category": "Beverages"
       }
     }

@@ -12,15 +12,11 @@
             "unit": "lb"
           },
           {
-            "amount": "99",
-            "unit": null
-          },
-          {
             "amount": "454",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "99% lean for WW",
         "category": "Meat & Seafood"
       }
     },
@@ -41,14 +37,18 @@
     {
       "raw": "3 tbsp onion, minced (or grated)",
       "expected": {
-        "item": "onion, minced",
+        "item": "onion",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "26",
+            "unit": "g"
           }
         ],
-        "note": "or grated",
+        "note": "or grated, minced",
         "category": "Produce"
       }
     },

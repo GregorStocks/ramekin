@@ -119,21 +119,21 @@
     {
       "raw": "1 8-ounce package halloumi, at room temperature so it’s easier to slice",
       "expected": {
-        "item": "halloumi",
+        "item": "halloumi, at room temperature so it’s easier to slice",
         "measurements": [
           {
             "amount": "1",
             "unit": "8-ounce package"
           }
         ],
-        "note": "at room temperature so it’s easier to slice",
+        "note": null,
         "category": "Cheese"
       }
     },
     {
       "raw": "1 to 1 1/4 pound green cabbage, cut into 1-to-2-inch chunks",
       "expected": {
-        "item": "green cabbage, cut into 1-to-2-inch chunks",
+        "item": "green cabbage",
         "measurements": [
           {
             "amount": "1 to 1.25",
@@ -144,7 +144,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-to-2-inch chunks",
         "category": "Produce"
       }
     }

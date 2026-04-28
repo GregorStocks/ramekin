@@ -221,7 +221,7 @@
     {
       "raw": "1 cup (130 grams) walnuts, chopped (optional and to be honest, we never use them)",
       "expected": {
-        "item": "walnuts, chopped",
+        "item": "walnuts",
         "measurements": [
           {
             "amount": "1",
@@ -232,7 +232,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional and to be honest, we never use them",
+        "note": "optional and to be honest, we never use them, chopped",
         "category": "Nuts & Dried Fruit"
       }
     }

@@ -125,14 +125,14 @@
     {
       "raw": "1 small/medium head of lettuce (I used Bibb)",
       "expected": {
-        "item": "small/medium head of lettuce (I used Bibb)",
+        "item": "small/medium head of lettuce",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "I used Bibb",
         "category": "Produce"
       }
     },

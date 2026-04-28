@@ -41,14 +41,14 @@
     {
       "raw": "1 c. orange liqueur (such as Cointreau)&nbsp;",
       "expected": {
-        "item": "orange liqueur (such as Cointreau)",
+        "item": "orange liqueur",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "such as Cointreau",
         "category": "Beverages"
       }
     },
@@ -83,14 +83,14 @@
     {
       "raw": "2 apples, cut into 1-inch pieces",
       "expected": {
-        "item": "apples, cut into 1-inch pieces",
+        "item": "apples",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Produce"
       }
     }

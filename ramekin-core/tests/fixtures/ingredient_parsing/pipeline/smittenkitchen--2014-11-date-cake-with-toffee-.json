@@ -306,7 +306,7 @@
     {
       "raw": "1 cup plus 2 tablespoons (215 grams) brown sugar (light is called for, but I’d like to use dark next time)",
       "expected": {
-        "item": "brown sugar (light is called for, but I’d like to use dark next time)",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "1 cup plus 2 tablespoons",
@@ -317,7 +317,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "light is called for, but I’d like to use dark next time",
         "category": "Baking"
       }
     },

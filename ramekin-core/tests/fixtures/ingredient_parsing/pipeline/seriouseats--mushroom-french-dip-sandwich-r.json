@@ -67,7 +67,7 @@
     {
       "raw": "2 large portobello mushrooms (about 3 ounces; 85 g each), stems and gills removed, cut into 1/4-inch thick slices",
       "expected": {
-        "item": "portobello mushrooms, stems and gills removed, cut into 1/4-inch thick slices",
+        "item": "portobello mushrooms, stems and gills removed",
         "measurements": [
           {
             "amount": "2",
@@ -82,7 +82,7 @@
             "unit": "g each"
           }
         ],
-        "note": null,
+        "note": "about 3 ounces; 85 g each, cut into 1/4-inch thick slices",
         "category": "Produce"
       }
     },
@@ -107,7 +107,7 @@
     {
       "raw": "1 medium yellow onion (8 ounces; 226 g), diced (1 cup diced)",
       "expected": {
-        "item": "yellow onion, diced",
+        "item": "yellow onion",
         "measurements": [
           {
             "amount": "1",
@@ -122,7 +122,7 @@
             "unit": "g"
           }
         ],
-        "note": "1 cup diced",
+        "note": "1 cup diced, diced",
         "category": "Produce"
       }
     },
@@ -250,15 +250,11 @@
             "unit": null
           },
           {
-            "amount": "7",
-            "unit": null
-          },
-          {
             "amount": "6",
             "unit": "oz each"
           }
         ],
-        "note": null,
+        "note": "7- to 8-inch long, about 6-ounces each",
         "category": "Bakery & Bread"
       }
     },
@@ -280,7 +276,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 6 ounces; 160 g total weight",
         "category": "Cheese"
       }
     }

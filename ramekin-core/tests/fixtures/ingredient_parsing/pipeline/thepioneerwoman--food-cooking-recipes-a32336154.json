@@ -74,14 +74,14 @@
     {
       "raw": "6 slices white cheddar&nbsp;or Monterey Jack cheese, cut in half",
       "expected": {
-        "item": "white cheddar or Monterey Jack cheese, cut in half",
+        "item": "white cheddar or Monterey Jack cheese",
         "measurements": [
           {
             "amount": "6",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "cut in half",
         "category": "Cheese"
       }
     },
@@ -106,15 +106,15 @@
     {
       "raw": "1 tsp. adobo sauce (from a can of chipotle peppers)",
       "expected": {
-        "item": "adobo sauce (from a can of chipotle peppers)",
+        "item": "adobo sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "from a can of chipotle peppers",
+        "category": "Condiments & Sauces"
       }
     },
     {

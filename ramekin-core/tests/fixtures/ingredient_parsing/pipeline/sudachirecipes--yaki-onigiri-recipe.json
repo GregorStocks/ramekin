@@ -5,14 +5,14 @@
     {
       "raw": "700 g cooked Japanese short-grain rice (or Calrose)",
       "expected": {
-        "item": "cooked Japanese short-grain rice (or Calrose)",
+        "item": "cooked Japanese short-grain rice",
         "measurements": [
           {
             "amount": "700",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Calrose",
         "category": "Pasta & Rice"
       }
     },
@@ -33,60 +33,64 @@
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu) (toasted)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu) (toasted)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu, toasted",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1 tbsp butter (or neutral oil)",
       "expected": {
-        "item": "butter (or neutral oil)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or neutral oil",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "2 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "32",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1 tbsp mirin (or cola)",
       "expected": {
-        "item": "mirin (or cola)",
+        "item": "mirin",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or cola",
         "category": "Condiments & Sauces"
       }
     },
@@ -111,14 +115,14 @@
     {
       "raw": "1 tsp yellow miso paste (awase)",
       "expected": {
-        "item": "yellow miso paste (awase)",
+        "item": "yellow miso paste",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "awase",
         "category": "Condiments & Sauces"
       }
     },

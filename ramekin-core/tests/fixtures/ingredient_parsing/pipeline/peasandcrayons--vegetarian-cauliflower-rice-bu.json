@@ -12,7 +12,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "or olive oil (divided",
+        "note": "or olive oil (divided)",
         "category": "Oils & Vinegars"
       }
     },
@@ -117,14 +117,14 @@
     {
       "raw": "1-2 TBSP salsa ((your fav jarred salsa))",
       "expected": {
-        "item": "salsa (your fav jarred salsa)",
+        "item": "salsa",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "your fav jarred salsa",
         "category": "Condiments & Sauces"
       }
     },
@@ -154,28 +154,28 @@
     {
       "raw": "1-2 cups Pico de Gallo ((see below for recipe))",
       "expected": {
-        "item": "Pico de Gallo (see below for recipe)",
+        "item": "Pico de Gallo",
         "measurements": [
           {
             "amount": "1-2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see below for recipe",
         "category": "Other"
       }
     },
     {
       "raw": "1 cup grated cheese ((Cheddar, Mex Blend, or Pepper Jack))",
       "expected": {
-        "item": "grated cheese (Cheddar, Mex Blend, or Pepper Jack)",
+        "item": "grated cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "Cheddar, Mex Blend, or Pepper Jack",
         "category": "Cheese"
       }
     },
@@ -203,7 +203,7 @@
             "unit": null
           }
         ],
-        "note": "cut into wedges (for an optional burst of citrus",
+        "note": "cut into wedges (for an optional burst of citrus)",
         "category": "Produce"
       }
     },
@@ -301,14 +301,14 @@
     {
       "raw": "1  jalapeño pepper ((seeds and stem removed))",
       "expected": {
-        "item": "jalapeño pepper (seeds and stem removed)",
+        "item": "jalapeño pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeds and stem removed",
         "category": "Produce"
       }
     },
@@ -331,7 +331,7 @@
       "expected": {
         "item": "fresh squeezed lime juice",
         "measurements": [],
-        "note": "to taste (approx 1/4 a lime",
+        "note": "to taste (approx 1/4 a lime)",
         "category": "Beverages"
       }
     },

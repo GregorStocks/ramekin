@@ -5,7 +5,7 @@
     {
       "raw": "2 1/2 pounds beef sirloin, cut into 1/2-inch strips",
       "expected": {
-        "item": "beef sirloin, cut into 1/2-inch strips",
+        "item": "beef sirloin",
         "measurements": [
           {
             "amount": "2.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch strips",
         "category": "Meat & Seafood"
       }
     },

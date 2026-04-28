@@ -18,13 +18,9 @@
           {
             "amount": "6-8",
             "unit": "medium"
-          },
-          {
-            "amount": "2.5",
-            "unit": "-cm"
           }
         ],
-        "note": "green tops reserved (see Topping)",
+        "note": "2.5-cm, see Topping, green tops reserved",
         "category": "Produce"
       }
     },
@@ -148,7 +144,7 @@
     {
       "raw": "¼ cup (20 g) finely chopped reserved carrot tops (see Pasta)",
       "expected": {
-        "item": "finely chopped reserved carrot tops (see Pasta)",
+        "item": "finely chopped reserved carrot tops",
         "measurements": [
           {
             "amount": "0.25",
@@ -159,7 +155,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Pasta",
         "category": "Produce"
       }
     },

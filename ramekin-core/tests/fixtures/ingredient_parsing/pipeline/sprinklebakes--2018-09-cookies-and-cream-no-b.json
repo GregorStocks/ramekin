@@ -55,22 +55,14 @@
     {
       "raw": "1  package (.25 ounce powdered gelatin)",
       "expected": {
-        "item": "1  package (.25 ounce powdered gelatin)",
+        "item": "powdered gelatin",
         "measurements": [
           {
             "amount": "1",
             "unit": "package"
-          },
-          {
-            "amount": ".25",
-            "unit": "oz"
-          },
-          {
-            "amount": "7.1",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": ".25 ounce powdered gelatin",
         "category": "Baking"
       }
     },
@@ -131,14 +123,18 @@
     {
       "raw": "1 1/4 cups heavy cream (whipped to firm peaks)",
       "expected": {
-        "item": "heavy cream (whipped to firm peaks)",
+        "item": "heavy cream",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "298",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "whipped to firm peaks",
         "category": "Dairy & Eggs"
       }
     },

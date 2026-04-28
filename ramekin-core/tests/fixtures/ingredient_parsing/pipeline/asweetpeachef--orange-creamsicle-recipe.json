@@ -5,28 +5,28 @@
     {
       "raw": "2  naval oranges, (plus zest)",
       "expected": {
-        "item": "naval oranges, (plus zest)",
+        "item": "naval oranges",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "plus zest",
         "category": "Produce"
       }
     },
     {
       "raw": "1 13.5 oz. can full fat coconut milk ((not refrigerated), divided)",
       "expected": {
-        "item": "full fat coconut milk (not refrigerated)",
+        "item": "full fat coconut milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "13.5 oz. can"
           }
         ],
-        "note": "divided)",
+        "note": "not refrigerated, divided",
         "category": "Canned Goods"
       }
     },

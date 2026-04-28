@@ -5,28 +5,28 @@
     {
       "raw": "1 cup warm water, heated to about 110°F (see note)",
       "expected": {
-        "item": "warm water, heated to about 110°F (see note)",
+        "item": "warm water, heated to about 110°F",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Other"
       }
     },
     {
       "raw": "1 tablespoon instant/rapid-rise or active dry yeast (note that this is more than 1 packet)",
       "expected": {
-        "item": "instant/rapid-rise or active dry yeast (note that this is more than 1 packet)",
+        "item": "instant/rapid-rise or active dry yeast",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "note that this is more than 1 packet",
         "category": "Baking"
       }
     },
@@ -151,9 +151,9 @@
     {
       "raw": "About 1 cup jam or jelly (or custard, Nutella, pudding, pumpkin butter, apple butter, dulce de leche, etc.), optional",
       "expected": {
-        "item": "About 1 cup jam or jelly (or custard, Nutella, pudding, pumpkin butter, apple butter, dulce de leche, etc.)",
+        "item": "About 1 cup jam or jelly",
         "measurements": [],
-        "note": "optional",
+        "note": "or custard, Nutella, pudding, pumpkin butter, apple butter, dulce de leche, etc., optional",
         "category": "Condiments & Sauces"
       }
     }

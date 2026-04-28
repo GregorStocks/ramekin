@@ -14,7 +14,7 @@
     {
       "raw": "(Heads up: I found I only needed half of this)",
       "expected": {
-        "item": "(Heads up: I found I only needed half of this)",
+        "item": "up: I found I only needed half of this",
         "measurements": [
           {
             "amount": null,
@@ -231,7 +231,7 @@
             "unit": "g"
           }
         ],
-        "note": "crumbled (we used a Stilton)",
+        "note": "we used a Stilton, crumbled",
         "category": "Cheese"
       }
     },

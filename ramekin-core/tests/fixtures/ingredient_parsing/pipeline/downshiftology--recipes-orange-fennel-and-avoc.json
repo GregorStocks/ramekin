@@ -138,14 +138,18 @@
     {
       "raw": "1 tsp honey (or maple)",
       "expected": {
-        "item": "honey (or maple)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "7.1",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or maple",
         "category": "Baking"
       }
     },

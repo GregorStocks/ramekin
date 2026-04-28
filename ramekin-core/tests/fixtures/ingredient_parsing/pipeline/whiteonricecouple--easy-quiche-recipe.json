@@ -5,9 +5,9 @@
     {
       "raw": "Homemade Pie Dough ( or Pre-made Dough)",
       "expected": {
-        "item": "Homemade Pie Dough ( or Pre-made Dough)",
+        "item": "Homemade Pie Dough",
         "measurements": [],
-        "note": null,
+        "note": "or Pre-made Dough",
         "category": "Other"
       }
     },
@@ -102,14 +102,18 @@
     {
       "raw": "1/4 teaspoon kosher salt (, or to tate)",
       "expected": {
-        "item": "kosher salt (, or to tate)",
+        "item": "kosher salt",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.7",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or to tate",
         "category": "Spices & Seasonings"
       }
     },

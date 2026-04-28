@@ -78,14 +78,14 @@
     {
       "raw": "1 tablespoon capers, drained and rinsed, if salted (or 1 to 2 anchovies, finely chopped)",
       "expected": {
-        "item": "capers, drained and rinsed, if salted",
+        "item": "capers, drained and rinsed",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "or 1 to 2 anchovies, finely chopped",
+        "note": "or 1 to 2 anchovies, finely chopped, if salted",
         "category": "Canned Goods"
       }
     },
@@ -107,7 +107,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 4 cups",
         "category": "Produce"
       }
     },

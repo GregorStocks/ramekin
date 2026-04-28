@@ -19,7 +19,7 @@
     {
       "raw": "1/2 small seedless watermelon, cut into 1-inch chunks (about 12 c.)",
       "expected": {
-        "item": "seedless watermelon, cut into 1-inch chunks",
+        "item": "seedless watermelon",
         "measurements": [
           {
             "amount": "0.5",
@@ -30,7 +30,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 12 c., cut into 1-inch chunks",
         "category": "Produce"
       }
     },
@@ -125,7 +125,7 @@
             "unit": "g"
           }
         ],
-        "note": "crumbled",
+        "note": "about 1 c., crumbled",
         "category": "Cheese"
       }
     },

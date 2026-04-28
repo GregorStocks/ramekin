@@ -5,7 +5,7 @@
     {
       "raw": "1¾ pounds zucchini ((preferably smaller zucchini, as they are less watery))",
       "expected": {
-        "item": "zucchini (preferably smaller zucchini, as they are less watery)",
+        "item": "zucchini",
         "measurements": [
           {
             "amount": "1.75",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably smaller zucchini, as they are less watery",
         "category": "Produce"
       }
     },

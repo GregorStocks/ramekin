@@ -33,7 +33,7 @@
     {
       "raw": "1  large or 2 medium cloves garlic (pressed)",
       "expected": {
-        "item": "cloves garlic (pressed)",
+        "item": "cloves garlic",
         "measurements": [
           {
             "amount": "1",
@@ -44,7 +44,7 @@
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "pressed",
         "category": "Produce"
       }
     },

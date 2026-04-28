@@ -123,14 +123,14 @@
     {
       "raw": "¾ cup creamy salted peanut butter (ideally unsweetened) (at room temperature)",
       "expected": {
-        "item": "creamy salted peanut butter (ideally unsweetened) (at room temperature)",
+        "item": "creamy salted peanut butter",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "ideally unsweetened, at room temperature",
         "category": "Condiments & Sauces"
       }
     },

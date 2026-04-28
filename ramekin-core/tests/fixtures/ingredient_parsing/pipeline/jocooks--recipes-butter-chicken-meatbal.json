@@ -129,28 +129,36 @@
     {
       "raw": "1 tablespoon olive oil (for frying the meatballs)",
       "expected": {
-        "item": "olive oil (for frying the meatballs)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "for frying the meatballs",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "¼ cup butter (unsalted)",
       "expected": {
-        "item": "butter (unsalted)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "unsalted",
         "category": "Dairy & Eggs"
       }
     },
@@ -189,15 +197,15 @@
     {
       "raw": "1 cup tomato passata (or tomato sauce)",
       "expected": {
-        "item": "tomato passata (or tomato sauce)",
+        "item": "tomato passata",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "or tomato sauce",
+        "category": "Produce"
       }
     },
     {
@@ -303,14 +311,18 @@
     {
       "raw": "1 cup chicken broth (low sodium)",
       "expected": {
-        "item": "chicken broth (low sodium)",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "249",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Canned Goods"
       }
     },

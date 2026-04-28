@@ -5,9 +5,9 @@
     {
       "raw": "Thick-cut beef steak(s), at least 1 1/2 to 2 inches thick, such as ribeye, strip, porterhouse, T-bone, tri-tip, or filet mignon",
       "expected": {
-        "item": "Thick-cut beef steak(s), at least 1 1/2 to 2 inches thick, such as ribeye, strip, porterhouse, T-bone, tri-tip, or filet mignon",
+        "item": "Thick-cut beef steak, at least 1 1/2 to 2 inches thick, such as ribeye, strip, porterhouse, T-bone, tri-tip, or filet mignon",
         "measurements": [],
-        "note": null,
+        "note": "s",
         "category": "Meat & Seafood"
       }
     },
@@ -23,16 +23,16 @@
     {
       "raw": "Vegetable oil (if finishing on the stovetop)",
       "expected": {
-        "item": "Vegetable oil (if finishing on the stovetop)",
+        "item": "Vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "if finishing on the stovetop",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "1 tablespoon (15g) butter (if finishing on the stovetop)",
       "expected": {
-        "item": "butter (if finishing on the stovetop)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1",
@@ -43,7 +43,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "if finishing on the stovetop",
         "category": "Dairy & Eggs"
       }
     }

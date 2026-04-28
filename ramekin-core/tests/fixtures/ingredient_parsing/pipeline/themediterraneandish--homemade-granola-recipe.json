@@ -89,14 +89,18 @@
     {
       "raw": "¾ cup honey (warmed up so it’s runny)",
       "expected": {
-        "item": "honey (warmed up so it’s runny)",
+        "item": "honey",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "255",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "warmed up so it’s runny",
         "category": "Baking"
       }
     },

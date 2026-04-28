@@ -9,7 +9,7 @@
     {
       "raw": "1 pound dried chickpeas (garbanzo beans) or 4 15-ounce cans cooked chickpeas",
       "expected": {
-        "item": "dried chickpeas (garbanzo beans) or 4 15-ounce cans cooked chickpeas",
+        "item": "dried chickpeas or 4 15-ounce cans cooked chickpeas",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "garbanzo beans",
         "section": "Chickpeas",
         "category": "Canned Goods"
       }
@@ -126,14 +126,14 @@
     {
       "raw": "1/2 teaspoon cayenne, spoonful of harissa or a couple shakes of your favorite hot sauce (all adjusted to your heat preference)",
       "expected": {
-        "item": "cayenne, spoonful of harissa or a couple shakes of your favorite hot sauce (all adjusted to your heat preference)",
+        "item": "cayenne, spoonful of harissa or a couple shakes of your favorite hot sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "all adjusted to your heat preference",
         "section": "Chickpeas",
         "category": "Condiments & Sauces"
       }
@@ -151,14 +151,14 @@
     {
       "raw": "2 teaspoons coarse sea or kosher salt (what I used for lightly salted broth, use more for unsalted, less for salted or canned beans)",
       "expected": {
-        "item": "coarse sea or kosher salt (what I used for lightly salted broth, use more for unsalted, less for salted or canned beans)",
+        "item": "coarse sea or kosher salt",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "what I used for lightly salted broth, use more for unsalted, less for salted or canned beans",
         "section": "Chickpeas",
         "category": "Spices & Seasonings"
       }
@@ -185,14 +185,14 @@
     {
       "raw": "1 cup or more of water (will likely only need if beans weren’t pre-soaked)",
       "expected": {
-        "item": "or more of water (will likely only need if beans weren’t pre-soaked)",
+        "item": "or more of water",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "will likely only need if beans weren’t pre-soaked",
         "section": "Chickpeas",
         "category": "Other"
       }
@@ -214,11 +214,11 @@
     {
       "raw": "Big handful of parsley (or a mix of parsley, cilantro and mint would be good too)",
       "expected": {
-        "item": "Big handful of parsley (or a mix of parsley, cilantro and mint would be good too)",
+        "item": "Big handful of parsley",
         "measurements": [],
-        "note": null,
+        "note": "or a mix of parsley, cilantro and mint would be good too",
         "section": "Fixings",
-        "category": "Produce"
+        "category": "Spices & Seasonings"
       }
     },
     {

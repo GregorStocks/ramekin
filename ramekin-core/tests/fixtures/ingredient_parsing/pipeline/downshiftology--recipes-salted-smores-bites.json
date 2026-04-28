@@ -181,28 +181,28 @@
     {
       "raw": "3 tbsp powdered gelatin (I use this brand)",
       "expected": {
-        "item": "powdered gelatin (I use this brand)",
+        "item": "powdered gelatin",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I use this brand",
         "category": "Baking"
       }
     },
     {
       "raw": "1 cup light colored honey (or maple syrup)",
       "expected": {
-        "item": "light colored honey (or maple syrup)",
+        "item": "light colored honey",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or maple syrup",
         "category": "Baking"
       }
     },
@@ -227,14 +227,14 @@
     {
       "raw": "1  vanilla bean (scraped (or 1 tsp vanilla extract))",
       "expected": {
-        "item": "vanilla bean (scraped (or 1 tsp vanilla extract)",
+        "item": "vanilla bean",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "scraped (or 1 tsp vanilla extract)",
         "category": "Spices & Seasonings"
       }
     },

@@ -91,14 +91,14 @@
     {
       "raw": "1 cup buffalo sauce (or other wing sauce, as desired)",
       "expected": {
-        "item": "buffalo sauce (or other wing sauce, as desired)",
+        "item": "buffalo sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or other wing sauce, as desired",
         "category": "Condiments & Sauces"
       }
     }

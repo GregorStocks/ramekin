@@ -23,7 +23,7 @@
     {
       "raw": "1 cup Brown Sugar ((220 g) , tightly packed)",
       "expected": {
-        "item": "Brown Sugar",
+        "item": "Brown Sugar, tightly packed",
         "measurements": [
           {
             "amount": "1",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": "tightly packed)",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -105,7 +105,7 @@
       "expected": {
         "item": "Sea Salt",
         "measurements": [],
-        "note": "to taste (@ 1 teaspoon (5 g",
+        "note": "to taste (@ 1 teaspoon (5 g))",
         "category": "Spices & Seasonings"
       }
     },
@@ -202,14 +202,18 @@
     {
       "raw": "1 teaspoon Kosher Salt ( or Sea Salt (5g) )",
       "expected": {
-        "item": "Kosher Salt ( or Sea Salt (5g)",
+        "item": "Kosher Salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or Sea Salt (5g)",
         "category": "Spices & Seasonings"
       }
     },
@@ -230,7 +234,7 @@
     {
       "raw": "1 cup Buttermilk ((240ml) *see note 1 for alternate)",
       "expected": {
-        "item": "Buttermilk *see note 1 for alternate)",
+        "item": "Buttermilk *see note 1 for alternate",
         "measurements": [
           {
             "amount": "1",
@@ -248,14 +252,14 @@
     {
       "raw": "1 cup Espresso ( or Strong Coffee (240ml) )",
       "expected": {
-        "item": "Espresso ( or Strong Coffee (240ml)",
+        "item": "Espresso",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or Strong Coffee (240ml)",
         "category": "Beverages"
       }
     },
@@ -306,7 +310,7 @@
     {
       "raw": "1/2 cup unsalted Butter ((115 g) , room temp.)",
       "expected": {
-        "item": "unsalted Butter, room temp.)",
+        "item": "unsalted Butter, room temp.",
         "measurements": [
           {
             "amount": "0.5",
@@ -324,7 +328,7 @@
     {
       "raw": "16 ounces Cream Cheese ((455g), room temp.)",
       "expected": {
-        "item": "Cream Cheese, room temp.)",
+        "item": "Cream Cheese, room temp.",
         "measurements": [
           {
             "amount": "16",
@@ -402,7 +406,7 @@
             "unit": "g"
           }
         ],
-        "note": "roughly chopped)",
+        "note": "roughly chopped",
         "category": "Nuts & Dried Fruit"
       }
     }

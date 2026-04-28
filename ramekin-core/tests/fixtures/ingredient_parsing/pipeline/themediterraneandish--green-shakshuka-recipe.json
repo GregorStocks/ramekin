@@ -5,14 +5,18 @@
     {
       "raw": "¼ cup extra virgin olive oil, (more for later)",
       "expected": {
-        "item": "extra virgin olive oil, (more for later)",
+        "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "more for later",
         "category": "Oils & Vinegars"
       }
     },
@@ -111,7 +115,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2.5 ounces",
         "category": "Produce"
       }
     },

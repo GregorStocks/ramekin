@@ -54,14 +54,14 @@
     {
       "raw": "1 whole chicken (shown here is 3 pounds)",
       "expected": {
-        "item": "whole chicken (shown here is 3 pounds)",
+        "item": "whole chicken",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "shown here is 3 pounds",
         "category": "Meat & Seafood"
       }
     },
@@ -88,7 +88,7 @@
       "expected": {
         "item": "A lemon, if you wish",
         "measurements": [],
-        "note": "for serving (we never used ours)",
+        "note": "we never used ours, for serving",
         "category": "Produce"
       }
     }

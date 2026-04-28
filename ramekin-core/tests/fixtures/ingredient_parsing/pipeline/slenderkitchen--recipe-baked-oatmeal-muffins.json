@@ -91,14 +91,14 @@
     {
       "raw": "2/3 cup unsweetened almond milk (or skim)",
       "expected": {
-        "item": "unsweetened almond milk (or skim)",
+        "item": "unsweetened almond milk",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or skim",
         "category": "Nuts & Dried Fruit"
       }
     },

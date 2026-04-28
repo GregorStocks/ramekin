@@ -51,14 +51,14 @@
     {
       "raw": "1 small clove garlic, minced (optional)",
       "expected": {
-        "item": "clove garlic, minced",
+        "item": "clove garlic",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": "optional",
+        "note": "optional, minced",
         "category": "Produce"
       }
     },

@@ -155,10 +155,10 @@
     {
       "raw": "Fresh fruit or jam (sour cream, powdered sugar; whatever you like!)",
       "expected": {
-        "item": "Fresh fruit or jam (sour cream, powdered sugar; whatever you like!)",
+        "item": "Fresh fruit or jam",
         "measurements": [],
-        "note": null,
-        "category": "Baking"
+        "note": "sour cream, powdered sugar; whatever you like!",
+        "category": "Condiments & Sauces"
       }
     }
   ]

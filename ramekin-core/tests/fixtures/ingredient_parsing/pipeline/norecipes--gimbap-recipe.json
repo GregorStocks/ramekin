@@ -88,13 +88,9 @@
           {
             "amount": "200",
             "unit": "g"
-          },
-          {
-            "amount": "1",
-            "unit": "large"
           }
         ],
-        "note": null,
+        "note": "1 large can",
         "category": "Canned Goods"
       }
     },
@@ -179,14 +175,14 @@
     {
       "raw": "4 sheets gim ((Korean nori))",
       "expected": {
-        "item": "sheets gim (Korean nori)",
+        "item": "sheets gim",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "Korean nori",
         "category": "Other"
       }
     },
@@ -225,29 +221,29 @@
     {
       "raw": "8 leaves kkaennip ((a.k.a. Korean perilla or wild sesame leaves))",
       "expected": {
-        "item": "leaves kkaennip (a.k.a. Korean perilla or wild sesame leaves)",
+        "item": "leaves kkaennip",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "a.k.a. Korean perilla or wild sesame leaves",
         "category": "Other"
       }
     },
     {
       "raw": "90 grams  Danmuji ((yellow pickled radish, cut into strips))",
       "expected": {
-        "item": "Danmuji (yellow pickled radish, cut into strips)",
+        "item": "Danmuji",
         "measurements": [
           {
             "amount": "90",
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "yellow pickled radish, cut into strips",
+        "category": "Other"
       }
     }
   ]

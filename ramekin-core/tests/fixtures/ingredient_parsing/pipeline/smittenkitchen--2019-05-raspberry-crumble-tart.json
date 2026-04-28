@@ -63,7 +63,7 @@
     {
       "raw": "3/4 cup (6 ounces, 12 tablespoons, or 170 grams) cold, unsalted butter, cut into cubes",
       "expected": {
-        "item": "cold, unsalted butter, cut into cubes",
+        "item": "cold, unsalted butter",
         "measurements": [
           {
             "amount": "0.75",
@@ -82,7 +82,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Dairy & Eggs"
       }
     },

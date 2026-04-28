@@ -5,18 +5,14 @@
     {
       "raw": "1 (1 3/4-lb) head cauliflower, cut into 3/4-inch-wide florets",
       "expected": {
-        "item": "cauliflower, cut into 3/4-inch-wide florets",
+        "item": "cauliflower",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
-          },
-          {
-            "amount": "1",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "1 3/4-lb, cut into 3/4-inch-wide florets",
         "category": "Produce"
       }
     },
@@ -251,15 +247,15 @@
     {
       "raw": "1/4 cup finely chopped English (seedless cucumber)",
       "expected": {
-        "item": "finely chopped English (seedless cucumber)",
+        "item": "finely chopped English",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "seedless cucumber",
+        "category": "Other"
       }
     },
     {
@@ -311,7 +307,7 @@
     {
       "raw": "200 grams (1 1/4 cups) red split lentils (masoor dal), picked over, washed and drained",
       "expected": {
-        "item": "red split lentils (masoor dal), picked over",
+        "item": "red split lentils, picked over",
         "measurements": [
           {
             "amount": "200",
@@ -322,7 +318,7 @@
             "unit": "cup"
           }
         ],
-        "note": "washed and drained",
+        "note": "masoor dal, washed and drained",
         "category": "Canned Goods"
       }
     },
@@ -479,14 +475,14 @@
     {
       "raw": "1 medium tomato, peeled (ahem, Deb did not peel her tomato) and finely chopped",
       "expected": {
-        "item": "tomato, peeled (ahem",
+        "item": "tomato",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": "Deb did not peel her tomato) and finely chopped",
+        "note": "ahem, Deb did not peel her tomato, peeled and finely chopped",
         "category": "Produce"
       }
     },

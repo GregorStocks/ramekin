@@ -177,14 +177,14 @@
     {
       "raw": "3  chicken breasts (boneless and skinless)",
       "expected": {
-        "item": "chicken breasts (boneless and skinless)",
+        "item": "chicken breasts",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "boneless and skinless",
         "category": "Meat & Seafood"
       }
     },
@@ -269,7 +269,7 @@
     {
       "raw": "1  egg white (*)",
       "expected": {
-        "item": "egg white (*)",
+        "item": "egg white",
         "measurements": [
           {
             "amount": "1",

@@ -48,7 +48,7 @@
             "unit": "clove"
           }
         ],
-        "note": "crushed or minced (optional",
+        "note": "crushed or minced (optional)",
         "category": "Produce"
       }
     },
@@ -105,9 +105,9 @@
     {
       "raw": "lettuce, tomato, pickles ( and other desired trimmings)",
       "expected": {
-        "item": "lettuce, tomato, pickles ( and other desired trimmings)",
+        "item": "lettuce, tomato, pickles",
         "measurements": [],
-        "note": null,
+        "note": "and other desired trimmings",
         "category": "Produce"
       }
     },
@@ -132,14 +132,18 @@
     {
       "raw": "1/4 cup sake (or water)",
       "expected": {
-        "item": "sake (or water)",
+        "item": "sake",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "60",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or water",
         "category": "Beverages"
       }
     },
@@ -164,14 +168,18 @@
     {
       "raw": "1 Tablespoon rice vinegar ((or apple cider))",
       "expected": {
-        "item": "rice vinegar (or apple cider)",
+        "item": "rice vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or apple cider",
         "category": "Oils & Vinegars"
       }
     },
@@ -229,13 +237,9 @@
           {
             "amount": "1",
             "unit": "small"
-          },
-          {
-            "amount": null,
-            "unit": "small"
           }
         ],
-        "note": null,
+        "note": "small dice",
         "category": "Produce"
       }
     },
@@ -256,14 +260,14 @@
     {
       "raw": "1  Tablespoon  minced jalapeno or serrano chili  (, or to personal taste )",
       "expected": {
-        "item": "minced jalapeno or serrano chili  (, or to personal taste",
+        "item": "minced jalapeno or serrano chili",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "or to personal taste",
         "category": "Produce"
       }
     },

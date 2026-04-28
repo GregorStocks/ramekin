@@ -129,28 +129,32 @@
     {
       "raw": "1 16-ounce can chickpeas (or 2 cups homemade chickpeas )",
       "expected": {
-        "item": "chickpeas (or 2 cups homemade chickpeas",
+        "item": "chickpeas",
         "measurements": [
           {
             "amount": "1",
             "unit": "16-ounce can"
           }
         ],
-        "note": null,
+        "note": "or 2 cups homemade chickpeas",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1/2 tablespoon paprika (either sweet or hot)",
       "expected": {
-        "item": "paprika (either sweet or hot)",
+        "item": "paprika",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "3.4",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "either sweet or hot",
         "category": "Spices & Seasonings"
       }
     },
@@ -267,14 +271,14 @@
     {
       "raw": "1/2 cup finely chopped fresh herbs (I like the combination of parsley, mint, and cilantro)",
       "expected": {
-        "item": "finely chopped fresh herbs (I like the combination of parsley, mint, and cilantro)",
+        "item": "finely chopped fresh herbs",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I like the combination of parsley, mint, and cilantro",
         "category": "Produce"
       }
     },
@@ -352,7 +356,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely diced",
+        "note": "about 2 tablespoons, finely diced",
         "category": "Produce"
       }
     },

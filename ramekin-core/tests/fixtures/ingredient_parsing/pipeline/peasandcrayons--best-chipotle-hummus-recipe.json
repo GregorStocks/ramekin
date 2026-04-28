@@ -10,17 +10,9 @@
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "15.5",
-            "unit": "oz"
-          },
-          {
-            "amount": "439",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "15.5 oz (liquid reserved)",
         "category": "Canned Goods"
       }
     },
@@ -137,9 +129,9 @@
     {
       "raw": "a hearty drizzle of olive oil  ((I used a spicy chili oil one!))",
       "expected": {
-        "item": "a hearty drizzle of olive oil  (I used a spicy chili oil one!)",
+        "item": "a hearty drizzle of olive oil",
         "measurements": [],
-        "note": null,
+        "note": "I used a spicy chili oil one!",
         "category": "Oils & Vinegars"
       }
     },
@@ -164,9 +156,9 @@
     {
       "raw": "minced chipotle pepper (for the chipotle lovers out there!)",
       "expected": {
-        "item": "minced chipotle pepper (for the chipotle lovers out there!)",
+        "item": "minced chipotle pepper",
         "measurements": [],
-        "note": null,
+        "note": "for the chipotle lovers out there!",
         "category": "Spices & Seasonings"
       }
     },

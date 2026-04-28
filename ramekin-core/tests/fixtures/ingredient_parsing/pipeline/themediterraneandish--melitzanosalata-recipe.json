@@ -81,7 +81,7 @@
             "unit": "g"
           }
         ],
-        "note": "(optional",
+        "note": "(optional)",
         "category": "Spices & Seasonings"
       }
     },
@@ -95,7 +95,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "(optional",
+        "note": "(optional)",
         "category": "Spices & Seasonings"
       },
       "expanded": true
@@ -110,7 +110,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "(optional",
+        "note": "(optional)",
         "category": "Other"
       },
       "expanded": true
@@ -118,28 +118,32 @@
     {
       "raw": "1  lemon (zested and juiced)",
       "expected": {
-        "item": "lemon (zested and juiced)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "zested and juiced",
+        "category": "Produce"
       }
     },
     {
       "raw": "¼ cup extra virgin olive oil (more for later )",
       "expected": {
-        "item": "extra virgin olive oil (more for later",
+        "item": "extra virgin olive oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "more for later",
         "category": "Oils & Vinegars"
       }
     },
@@ -157,7 +161,7 @@
       "expected": {
         "item": "Feta cheese",
         "measurements": [],
-        "note": "a sprinkle for garnish (optional",
+        "note": "a sprinkle for garnish (optional)",
         "category": "Cheese"
       }
     }

@@ -5,49 +5,49 @@
     {
       "raw": "2 large bell peppers (one red, one yellow, if you can find)",
       "expected": {
-        "item": "bell peppers (one red, one yellow, if you can find)",
+        "item": "bell peppers",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "one red, one yellow, if you can find",
         "category": "Produce"
       }
     },
     {
       "raw": "1 poblano pepper or a third bell pepper (mine was orange)",
       "expected": {
-        "item": "poblano pepper or a third bell pepper (mine was orange)",
+        "item": "poblano pepper or a third bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "mine was orange",
         "category": "Produce"
       }
     },
     {
       "raw": "3 15-ounce cans cannellini beans, drained and rinsed (or 1 pound dried, cooked)",
       "expected": {
-        "item": "cannellini beans, drained and rinsed",
+        "item": "cannellini beans",
         "measurements": [
           {
             "amount": "3",
             "unit": "15-ounce cans"
           }
         ],
-        "note": "or 1 pound dried, cooked",
+        "note": "or 1 pound dried, cooked, drained and rinsed",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "4 ounces very thinly sliced soppressata, cut into very thin strips (optional)",
       "expected": {
-        "item": "very thinly sliced soppressata, cut into very thin strips",
+        "item": "very thinly sliced soppressata",
         "measurements": [
           {
             "amount": "4",
@@ -58,7 +58,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, cut into very thin strips",
         "category": "Other"
       }
     },
@@ -139,14 +139,14 @@
     {
       "raw": "1 tablespoon roughly chopped fresh rosemary (I skipped this)",
       "expected": {
-        "item": "roughly chopped fresh rosemary (I skipped this)",
+        "item": "roughly chopped fresh rosemary",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "I skipped this",
         "category": "Produce"
       }
     },

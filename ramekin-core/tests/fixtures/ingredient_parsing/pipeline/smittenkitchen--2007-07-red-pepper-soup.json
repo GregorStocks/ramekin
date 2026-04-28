@@ -69,14 +69,14 @@
     {
       "raw": "12 large red bell peppers, cut into 1-inch pieces",
       "expected": {
-        "item": "red bell peppers, cut into 1-inch pieces",
+        "item": "red bell peppers",
         "measurements": [
           {
             "amount": "12",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Produce"
       }
     },

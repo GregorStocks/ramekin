@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "still frozen",
+        "note": "about 3 cups, still frozen",
         "category": "Frozen"
       }
     },
@@ -81,7 +81,7 @@
     {
       "raw": "1 pound Monterey jack cheese, grated (do not buy pre-grated, it won't melt properly)",
       "expected": {
-        "item": "Monterey jack cheese, grated",
+        "item": "Monterey jack cheese",
         "measurements": [
           {
             "amount": "1",
@@ -92,7 +92,7 @@
             "unit": "g"
           }
         ],
-        "note": "do not buy pre-grated, it won't melt properly",
+        "note": "do not buy pre-grated, it won't melt properly, grated",
         "category": "Cheese"
       }
     },
@@ -182,13 +182,9 @@
           {
             "amount": "0.13",
             "unit": "tsp"
-          },
-          {
-            "amount": null,
-            "unit": "can"
           }
         ],
-        "note": null,
+        "note": "can use regular chili powder or smoked paprika",
         "category": "Spices & Seasonings"
       }
     },

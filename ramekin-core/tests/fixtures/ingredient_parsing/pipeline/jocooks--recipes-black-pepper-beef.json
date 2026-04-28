@@ -5,7 +5,7 @@
     {
       "raw": "1½ pounds flank steak (cut into thin strips)",
       "expected": {
-        "item": "flank steak (cut into thin strips)",
+        "item": "flank steak",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into thin strips",
         "category": "Meat & Seafood"
       }
     },
@@ -41,14 +41,18 @@
     {
       "raw": "2 tablespoons soy sauce (low sodium)",
       "expected": {
-        "item": "soy sauce (low sodium)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Condiments & Sauces"
       }
     },
@@ -169,14 +173,18 @@
     {
       "raw": "2 tablespoons soy sauce (low sodium)",
       "expected": {
-        "item": "soy sauce (low sodium)",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "32",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Condiments & Sauces"
       }
     },
@@ -265,28 +273,28 @@
     {
       "raw": "2 medium onions (cut into 1 inch pieces)",
       "expected": {
-        "item": "onions (cut into 1 inch pieces)",
+        "item": "onions",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into 1 inch pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1 large red bell pepper (cut into 1 inch pieces)",
       "expected": {
-        "item": "red bell pepper (cut into 1 inch pieces)",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into 1 inch pieces",
         "category": "Produce"
       }
     }

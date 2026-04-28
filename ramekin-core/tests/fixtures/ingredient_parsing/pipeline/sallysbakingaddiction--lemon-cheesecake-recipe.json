@@ -14,13 +14,9 @@
           {
             "amount": "210",
             "unit": "g"
-          },
-          {
-            "amount": "14",
-            "unit": "full-sheet graham crackers"
           }
         ],
-        "note": null,
+        "note": "about 14 full-sheet graham crackers",
         "category": "Snacks"
       }
     },
@@ -86,13 +82,9 @@
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "1",
-            "unit": "lemon"
           }
         ],
-        "note": null,
+        "note": "about 1 lemon",
         "category": "Produce"
       }
     },
@@ -128,15 +120,11 @@
             "unit": "ml"
           },
           {
-            "amount": "3-4",
-            "unit": "lemons"
-          },
-          {
             "amount": "122",
             "unit": "g"
           }
         ],
-        "note": "at room temperature",
+        "note": "about 3-4 lemons, at room temperature",
         "category": "Beverages"
       }
     },
@@ -193,14 +181,14 @@
     {
       "raw": "3/4 cup lemon curd (highly recommended)",
       "expected": {
-        "item": "lemon curd (highly recommended)",
+        "item": "lemon curd",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "highly recommended",
         "category": "Produce"
       }
     },

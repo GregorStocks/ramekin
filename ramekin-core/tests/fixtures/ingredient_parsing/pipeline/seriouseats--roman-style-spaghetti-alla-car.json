@@ -112,37 +112,29 @@
             "unit": "can"
           },
           {
-            "amount": "28",
-            "unit": "oz"
-          },
-          {
             "amount": "795",
             "unit": "g"
           }
         ],
-        "note": "thoroughly crushed",
+        "note": "28-ounce; 795g, thoroughly crushed",
         "category": "Produce"
       }
     },
     {
       "raw": "One (5-ounce; 140g) olive oil-packed tuna, preferably ventresca (tuna belly; see note), oil reserved",
       "expected": {
-        "item": "olive oil-packed tuna, preferably ventresca (tuna belly; see note)",
+        "item": "olive oil-packed tuna, preferably ventresca",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           },
           {
-            "amount": "5",
-            "unit": "oz"
-          },
-          {
             "amount": "140",
             "unit": "g"
           }
         ],
-        "note": "oil reserved",
+        "note": "5-ounce; 140g, tuna belly; see note, oil reserved",
         "category": "Oils & Vinegars"
       }
     },

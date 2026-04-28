@@ -69,14 +69,14 @@
     {
       "raw": "1 teaspoon fine salt (see note)",
       "expected": {
-        "item": "fine salt (see note)",
+        "item": "fine salt",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Spices & Seasonings"
       }
     },

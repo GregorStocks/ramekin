@@ -5,14 +5,14 @@
     {
       "raw": "1  single pie crust (unbaked)",
       "expected": {
-        "item": "single pie crust (unbaked)",
+        "item": "single pie crust",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "unbaked",
         "category": "Frozen"
       }
     },
@@ -33,14 +33,18 @@
     {
       "raw": "¾ cup milk (or cream)",
       "expected": {
-        "item": "milk (or cream)",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "184",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or cream",
         "category": "Dairy & Eggs"
       }
     },

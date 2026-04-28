@@ -169,14 +169,18 @@
     {
       "raw": "1 Tbsp oil (canola or vegetable oil)",
       "expected": {
-        "item": "oil (canola or vegetable oil)",
+        "item": "oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "canola or vegetable oil",
         "category": "Oils & Vinegars"
       }
     },

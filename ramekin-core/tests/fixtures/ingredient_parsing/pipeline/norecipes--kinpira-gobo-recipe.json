@@ -83,14 +83,14 @@
     {
       "raw": "1 tablespoon vinegar ((anything acidic will work))",
       "expected": {
-        "item": "vinegar (anything acidic will work)",
+        "item": "vinegar",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "anything acidic will work",
         "category": "Oils & Vinegars"
       }
     },
@@ -102,13 +102,9 @@
           {
             "amount": "250",
             "unit": "g"
-          },
-          {
-            "amount": "2",
-            "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "2 medium roots",
         "category": "Other"
       }
     },
@@ -201,14 +197,14 @@
     {
       "raw": "2 teaspoons toasted sesame seeds ((to garnish))",
       "expected": {
-        "item": "toasted sesame seeds (to garnish)",
+        "item": "toasted sesame seeds",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "to garnish",
         "category": "Spices & Seasonings"
       }
     }

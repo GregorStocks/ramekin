@@ -5,10 +5,10 @@
     {
       "raw": "water (for boiling)",
       "expected": {
-        "item": "water (for boiling)",
+        "item": "water",
         "measurements": [],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "for boiling",
+        "category": "Other"
       }
     },
     {
@@ -28,14 +28,14 @@
     {
       "raw": "125 g silken tofu (+ 1-2 tsp extra if dough seems dry)",
       "expected": {
-        "item": "silken tofu (+ 1-2 tsp extra if dough seems dry)",
+        "item": "silken tofu",
         "measurements": [
           {
             "amount": "125",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "+ 1-2 tsp extra if dough seems dry",
         "category": "Produce"
       }
     },
@@ -51,18 +51,14 @@
     {
       "raw": "1 tbsp Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
-          },
-          {
-            "amount": "16",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },

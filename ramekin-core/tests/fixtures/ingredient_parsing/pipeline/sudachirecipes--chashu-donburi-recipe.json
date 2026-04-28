@@ -19,14 +19,14 @@
     {
       "raw": "50 g Japanese leek (naganegi) (green part)",
       "expected": {
-        "item": "Japanese leek (naganegi) (green part)",
+        "item": "Japanese leek",
         "measurements": [
           {
             "amount": "50",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "naganegi, green part",
         "category": "Produce"
       }
     },
@@ -61,14 +61,14 @@
     {
       "raw": "100 g onion (roughly cut)",
       "expected": {
-        "item": "onion (roughly cut)",
+        "item": "onion",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "roughly cut",
         "category": "Produce"
       }
     },
@@ -129,32 +129,28 @@
     {
       "raw": "250 ml pork stock (from part 1)",
       "expected": {
-        "item": "pork stock (from part 1)",
+        "item": "pork stock",
         "measurements": [
           {
             "amount": "250",
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "from part 1",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "150 ml Japanese soy sauce (koikuchi shoyu)",
       "expected": {
-        "item": "Japanese soy sauce (koikuchi shoyu)",
+        "item": "Japanese soy sauce",
         "measurements": [
           {
             "amount": "150",
             "unit": "ml"
-          },
-          {
-            "amount": "162",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "koikuchi shoyu",
         "category": "Condiments & Sauces"
       }
     },
@@ -212,9 +208,9 @@
     {
       "raw": "Japanese leek (naganegi) (white part, to make &amp;quot;shiraganegi&amp;quot;)",
       "expected": {
-        "item": "Japanese leek (naganegi) (white part, to make \"shiraganegi\")",
+        "item": "Japanese leek",
         "measurements": [],
-        "note": null,
+        "note": "naganegi, white part, to make \"shiraganegi\"",
         "category": "Produce"
       }
     },

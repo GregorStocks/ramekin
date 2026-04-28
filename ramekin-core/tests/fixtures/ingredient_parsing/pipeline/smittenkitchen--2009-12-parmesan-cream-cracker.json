@@ -41,14 +41,14 @@
     {
       "raw": "1/2 cup finely grated fresh Parmesan cheese (alternate: I think Romano could also work well here)",
       "expected": {
-        "item": "finely grated fresh Parmesan cheese (alternate: I think Romano could also work well here)",
+        "item": "finely grated fresh Parmesan cheese",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "alternate: I think Romano could also work well here",
         "category": "Cheese"
       }
     },

@@ -51,15 +51,23 @@
     {
       "raw": "1 1/2 cups bocconcini (mozzarella balls) (about 9 ounces)",
       "expected": {
-        "item": "bocconcini (mozzarella balls) (about 9 ounces)",
+        "item": "bocconcini",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "9",
+            "unit": "oz"
+          },
+          {
+            "amount": "255",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Cheese"
+        "note": "mozzarella balls, about 9 ounces",
+        "category": "Other"
       }
     },
     {
@@ -169,7 +177,7 @@
     {
       "raw": "6 ounces thinly sliced Genoa salami, cut into thin strips (1 1/2 cups)",
       "expected": {
-        "item": "thinly sliced Genoa salami, cut into thin strips",
+        "item": "thinly sliced Genoa salami",
         "measurements": [
           {
             "amount": "6",
@@ -184,7 +192,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into thin strips",
         "category": "Meat & Seafood"
       }
     },

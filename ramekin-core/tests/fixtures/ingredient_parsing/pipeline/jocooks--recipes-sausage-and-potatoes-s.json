@@ -5,14 +5,14 @@
     {
       "raw": "4-6  smoked sausages (such as kielbasa)",
       "expected": {
-        "item": "smoked sausages (such as kielbasa)",
+        "item": "smoked sausages",
         "measurements": [
           {
             "amount": "4-6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "such as kielbasa",
         "category": "Meat & Seafood"
       }
     },
@@ -42,13 +42,9 @@
           {
             "amount": "3",
             "unit": "medium"
-          },
-          {
-            "amount": "1",
-            "unit": "each red"
           }
         ],
-        "note": null,
+        "note": "1 each red, green and yellow",
         "category": "Produce"
       }
     },

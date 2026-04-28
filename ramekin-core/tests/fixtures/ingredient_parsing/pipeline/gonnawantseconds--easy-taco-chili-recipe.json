@@ -83,7 +83,7 @@
     {
       "raw": "1  Can (7 Ounces Diced Green Chilies)",
       "expected": {
-        "item": "1  Can (7 Ounces Diced Green Chilies)",
+        "item": "Diced Green Chilies",
         "measurements": [
           {
             "amount": "1",
@@ -97,7 +97,7 @@
     {
       "raw": "1  Can (15 Ounces Hominy, Drained and Rinsed)",
       "expected": {
-        "item": "1  Can (15 Ounces Hominy, Drained and Rinsed)",
+        "item": "Hominy",
         "measurements": [
           {
             "amount": "1",
@@ -111,51 +111,35 @@
     {
       "raw": "2  Cans (15 Ounces  Chili Beans With Sauce)",
       "expected": {
-        "item": "2  Cans (15 Ounces  Chili Beans With Sauce)",
+        "item": "Chili Beans With Sauce",
         "measurements": [
           {
             "amount": "2",
             "unit": "can"
-          },
-          {
-            "amount": "15",
-            "unit": "oz"
-          },
-          {
-            "amount": "425",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "15 Ounces  Chili Beans With Sauce",
         "category": "Condiments & Sauces"
       }
     },
     {
       "raw": "1  Can (15 Ounces Kidney Beans)",
       "expected": {
-        "item": "1  Can (15 Ounces Kidney Beans)",
+        "item": "Kidney Beans",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "15",
-            "unit": "oz"
-          },
-          {
-            "amount": "425",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "15 Ounces Kidney Beans",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "2  Cans (14.5 Ounces Petite Diced Tomatoes, Including Juice)",
       "expected": {
-        "item": "2  Cans (14.5 Ounces Petite Diced Tomatoes, Including Juice)",
+        "item": "Petite Diced Tomatoes",
         "measurements": [
           {
             "amount": "2",
@@ -169,22 +153,14 @@
     {
       "raw": "1  Can (10 Ounces Red Enchilada Sauce)",
       "expected": {
-        "item": "1  Can (10 Ounces Red Enchilada Sauce)",
+        "item": "Red Enchilada Sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "can"
-          },
-          {
-            "amount": "10",
-            "unit": "oz"
-          },
-          {
-            "amount": "283",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "10 Ounces Red Enchilada Sauce",
         "category": "Condiments & Sauces"
       }
     }

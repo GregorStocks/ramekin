@@ -28,14 +28,14 @@
     {
       "raw": "3/4 cup watermelon juice (see Tip)",
       "expected": {
-        "item": "watermelon juice (see Tip)",
+        "item": "watermelon juice",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Tip",
         "category": "Produce"
       }
     },

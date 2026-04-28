@@ -32,14 +32,18 @@
     {
       "raw": "2 tablespoons lime juice (half a juicy lime)",
       "expected": {
-        "item": "lime juice (half a juicy lime)",
+        "item": "lime juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "half a juicy lime",
         "category": "Beverages"
       }
     },
@@ -173,13 +177,9 @@
           {
             "amount": "8",
             "unit": null
-          },
-          {
-            "amount": "6",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "6-inch",
         "category": "Bakery & Bread"
       }
     },
@@ -195,14 +195,14 @@
     {
       "raw": "2 large bell peppers, cut into thin strips (I use a mix of green, red and other colors, if I can find them)",
       "expected": {
-        "item": "bell peppers, cut into thin strips (I use a mix of green, red and other colors, if I can find them)",
+        "item": "bell peppers",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "I use a mix of green, red and other colors, if I can find them, cut into thin strips",
         "category": "Produce"
       }
     },

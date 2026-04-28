@@ -27,14 +27,18 @@
     {
       "raw": "0.5 cup butter, cut into 8 pieces",
       "expected": {
-        "item": "butter, cut into 8 pieces",
+        "item": "butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 8 pieces",
         "category": "Dairy & Eggs"
       }
     },

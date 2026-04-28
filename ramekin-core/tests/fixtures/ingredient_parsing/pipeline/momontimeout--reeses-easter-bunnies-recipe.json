@@ -19,14 +19,14 @@
     {
       "raw": "10  pink marshmallows (from a Fun Mallows bag)",
       "expected": {
-        "item": "pink marshmallows (from a Fun Mallows bag)",
+        "item": "pink marshmallows",
         "measurements": [
           {
             "amount": "10",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "from a Fun Mallows bag",
         "category": "Other"
       }
     },
@@ -74,14 +74,14 @@
     {
       "raw": "20  mini M&amp;amp;M's (blue, green, brown)",
       "expected": {
-        "item": "mini M&M's (blue, green, brown)",
+        "item": "mini M&M's",
         "measurements": [
           {
             "amount": "20",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "blue, green, brown",
         "category": "Other"
       }
     },

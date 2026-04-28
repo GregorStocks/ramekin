@@ -33,14 +33,14 @@
     {
       "raw": "1  ripe heirloom tomato (cut into 1/2-inch thick slices (if tomatoes are not in season, use small on the vine tomatoes instead))",
       "expected": {
-        "item": "ripe heirloom tomato (cut into 1/2-inch thick slices (if tomatoes are not in season, use small on the vine tomatoes instead)",
+        "item": "ripe heirloom tomato",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch thick slices (if tomatoes are not in season, use small on the vine tomatoes instead)",
         "category": "Produce"
       }
     },
@@ -90,7 +90,7 @@
             "unit": "slice"
           }
         ],
-        "note": "sturdy whole wheat bread (I like sourdough",
+        "note": "sturdy whole wheat bread (I like sourdough)",
         "category": "Other"
       }
     },

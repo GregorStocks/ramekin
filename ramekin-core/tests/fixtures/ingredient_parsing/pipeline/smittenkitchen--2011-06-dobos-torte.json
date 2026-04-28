@@ -146,7 +146,7 @@
     {
       "raw": "1/2 pound (2 sticks or 226 grams) unsalted butter, cut into chunks",
       "expected": {
-        "item": "unsalted butter, cut into chunks",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -161,7 +161,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "section": "Cake Layers",
         "category": "Dairy & Eggs"
       }

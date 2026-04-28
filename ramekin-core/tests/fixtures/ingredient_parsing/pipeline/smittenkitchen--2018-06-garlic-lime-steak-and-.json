@@ -122,7 +122,7 @@
     {
       "raw": "8.8-ounce (250 grams) package thin rice noodles (I used these)",
       "expected": {
-        "item": "thin rice noodles (I used these)",
+        "item": "thin rice noodles",
         "measurements": [
           {
             "amount": "1",
@@ -133,7 +133,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "I used these",
         "category": "Pasta & Rice"
       }
     },
@@ -167,7 +167,7 @@
     {
       "raw": "8 ounces (225 grams) cherry tomatoes, halved (mixed colors are lovely here)",
       "expected": {
-        "item": "cherry tomatoes, halved",
+        "item": "cherry tomatoes",
         "measurements": [
           {
             "amount": "8",
@@ -178,7 +178,7 @@
             "unit": "g"
           }
         ],
-        "note": "mixed colors are lovely here",
+        "note": "mixed colors are lovely here, halved",
         "category": "Produce"
       }
     },

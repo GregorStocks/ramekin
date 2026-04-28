@@ -134,15 +134,11 @@
             "unit": "cup"
           },
           {
-            "amount": "2",
-            "unit": "limes"
-          },
-          {
             "amount": "60",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "2 limes",
         "category": "Beverages"
       }
     },
@@ -167,14 +163,14 @@
     {
       "raw": "1 tablespoon Mexican hot sauce (such as Cholula)",
       "expected": {
-        "item": "Mexican hot sauce (such as Cholula)",
+        "item": "Mexican hot sauce",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "such as Cholula",
         "category": "Condiments & Sauces"
       }
     },

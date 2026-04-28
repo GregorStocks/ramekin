@@ -5,14 +5,14 @@
     {
       "raw": "15 center-cut bacon slices, cut in half crosswise",
       "expected": {
-        "item": "center-cut bacon slices, cut in half crosswise",
+        "item": "center-cut bacon slices",
         "measurements": [
           {
             "amount": "15",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut in half crosswise",
         "category": "Meat & Seafood"
       }
     },
@@ -30,7 +30,7 @@
             "unit": "inches each"
           }
         ],
-        "note": "then drained",
+        "note": "about 2-inches each, then drained",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -52,16 +52,16 @@
             "unit": "g"
           }
         ],
-        "note": "crumbled",
+        "note": "about 3/4 cup, crumbled",
         "category": "Cheese"
       }
     },
     {
       "raw": "Metal or wooden toothpicks (see notes)",
       "expected": {
-        "item": "Metal or wooden toothpicks (see notes)",
+        "item": "Metal or wooden toothpicks",
         "measurements": [],
-        "note": null,
+        "note": "see notes",
         "category": "Other"
       }
     }

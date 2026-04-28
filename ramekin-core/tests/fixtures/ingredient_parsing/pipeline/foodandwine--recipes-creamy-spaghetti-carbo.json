@@ -80,7 +80,7 @@
             "unit": "g"
           }
         ],
-        "note": "divided",
+        "note": "about 1 1/3 cups, divided",
         "category": "Cheese"
       }
     },
@@ -110,17 +110,9 @@
           {
             "amount": "1",
             "unit": "package"
-          },
-          {
-            "amount": "8",
-            "unit": "oz"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "8-ounce",
         "category": "Meat & Seafood"
       }
     },
@@ -141,14 +133,14 @@
     {
       "raw": "1 cup shelled fresh (from 1 pound&nbsp;unshelled English peapods ) or frozen peas",
       "expected": {
-        "item": "shelled fresh (from 1 pound unshelled English peapods ) or frozen peas",
+        "item": "shelled fresh or frozen peas",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "from 1 pound unshelled English peapods",
         "category": "Frozen"
       }
     },

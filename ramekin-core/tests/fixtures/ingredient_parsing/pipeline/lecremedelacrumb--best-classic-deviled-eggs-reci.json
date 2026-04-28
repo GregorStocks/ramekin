@@ -37,15 +37,19 @@
     {
       "raw": "½ cup mayo (I used reduced fat olive oil mayo)",
       "expected": {
-        "item": "mayo (I used reduced fat olive oil mayo)",
+        "item": "mayo",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Oils & Vinegars"
+        "note": "I used reduced fat olive oil mayo",
+        "category": "Condiments & Sauces"
       }
     },
     {
@@ -78,14 +82,18 @@
     {
       "raw": "¼ teaspoon smoked paprika (or regular paprika)",
       "expected": {
-        "item": "smoked paprika (or regular paprika)",
+        "item": "smoked paprika",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or regular paprika",
         "category": "Spices & Seasonings"
       }
     }

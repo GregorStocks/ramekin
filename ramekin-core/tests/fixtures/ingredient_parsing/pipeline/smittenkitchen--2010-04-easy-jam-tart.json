@@ -163,7 +163,7 @@
     {
       "raw": "1 1/3 to 1 3/4 cups (450 grams) jam (see Note above; I used the smaller amount) or marmalade",
       "expected": {
-        "item": "jam (see Note above; I used the smaller amount) or marmalade",
+        "item": "jam or marmalade",
         "measurements": [
           {
             "amount": "1.33 to 1.75",
@@ -174,7 +174,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "see Note above; I used the smaller amount",
         "category": "Condiments & Sauces"
       }
     },

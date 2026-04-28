@@ -109,14 +109,14 @@
     {
       "raw": "½ teaspoon fine sea salt (or table salt)",
       "expected": {
-        "item": "fine sea salt (or table salt)",
+        "item": "fine sea salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or table salt",
         "category": "Spices & Seasonings"
       }
     },
@@ -209,9 +209,9 @@
     {
       "raw": "Vegetable oil, (for cooking)",
       "expected": {
-        "item": "Vegetable oil, (for cooking)",
+        "item": "Vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for cooking",
         "category": "Oils & Vinegars"
       }
     },
@@ -220,7 +220,7 @@
       "expected": {
         "item": "Lemon wedges",
         "measurements": [],
-        "note": "for serving (optional",
+        "note": "for serving (optional)",
         "category": "Produce"
       }
     }

@@ -23,7 +23,7 @@
     {
       "raw": "1 stick (½ cup) unsalted butter, cut into 8 pieces",
       "expected": {
-        "item": "unsalted butter, cut into 8 pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
@@ -32,9 +32,13 @@
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 8 pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -91,14 +95,14 @@
     {
       "raw": "1½ teaspoons instant/rapid-rise yeast (see note)",
       "expected": {
-        "item": "instant/rapid-rise yeast (see note)",
+        "item": "instant/rapid-rise yeast",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "see note",
         "category": "Baking"
       }
     },

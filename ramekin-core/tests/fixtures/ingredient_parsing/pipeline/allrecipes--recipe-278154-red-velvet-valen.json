@@ -119,14 +119,14 @@
     {
       "raw": "4 tablespoons dark cocoa powder (such as Hershey's® Special Dark®)",
       "expected": {
-        "item": "dark cocoa powder (such as Hershey's® Special Dark®)",
+        "item": "dark cocoa powder",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "such as Hershey's® Special Dark®",
         "category": "Baking"
       }
     },

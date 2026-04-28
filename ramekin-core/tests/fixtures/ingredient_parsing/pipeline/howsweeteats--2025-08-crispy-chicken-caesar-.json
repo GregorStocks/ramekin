@@ -202,15 +202,15 @@
     {
       "raw": "½  lemon, (juiced)",
       "expected": {
-        "item": "lemon, (juiced)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {

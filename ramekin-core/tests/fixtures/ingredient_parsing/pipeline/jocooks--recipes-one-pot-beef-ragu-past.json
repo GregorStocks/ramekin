@@ -111,14 +111,18 @@
     {
       "raw": "2 cups beef broth (low sodium or no sodium added)",
       "expected": {
-        "item": "beef broth (low sodium or no sodium added)",
+        "item": "beef broth",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "498",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium or no sodium added",
         "category": "Canned Goods"
       }
     },
@@ -189,14 +193,18 @@
     {
       "raw": "4 cups vegetable broth (low sodium)",
       "expected": {
-        "item": "vegetable broth (low sodium)",
+        "item": "vegetable broth",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "996",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "low sodium",
         "category": "Canned Goods"
       }
     },

@@ -9,7 +9,7 @@
   "source_name": "Smittenkitchen.com",
   "ingredients": [
     {
-      "item": "thinly sliced yellow onions (see Tip)",
+      "item": "thinly sliced yellow onions",
       "measurements": [
         {
           "amount": "3",
@@ -20,7 +20,7 @@
           "unit": "g"
         }
       ],
-      "note": null,
+      "note": "see Tip",
       "raw": "3 pounds thinly sliced yellow onions (see Tip)",
       "section": null
     },
@@ -72,7 +72,7 @@
       "section": null
     },
     {
-      "item": "beef, chicken, or vegetable (mushroom is excellent here) stock, the more robust the better",
+      "item": "beef, chicken, or vegetable stock, the more robust the better",
       "measurements": [
         {
           "amount": "2",
@@ -83,7 +83,7 @@
           "unit": "cup"
         }
       ],
-      "note": null,
+      "note": "mushroom is excellent here",
       "raw": "2 quarts (8 cups) beef, chicken, or vegetable (mushroom is excellent here) stock, the more robust the better",
       "section": null
     },
@@ -112,13 +112,9 @@
         {
           "amount": "1",
           "unit": null
-        },
-        {
-          "amount": "3",
-          "unit": null
         }
       ],
-      "note": null,
+      "note": "3/4- to 1-inch",
       "raw": "One (3/4- to 1-inch) thick slice of bread for each bowl of soup",
       "section": null
     },

@@ -65,15 +65,15 @@
     {
       "raw": "100 grams gailan (or other green vegetable, such as broccoli florets or Chinese broccoli)",
       "expected": {
-        "item": "gailan (or other green vegetable, such as broccoli florets or Chinese broccoli)",
+        "item": "gailan",
         "measurements": [
           {
             "amount": "100",
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "or other green vegetable, such as broccoli florets or Chinese broccoli",
+        "category": "Other"
       }
     },
     {

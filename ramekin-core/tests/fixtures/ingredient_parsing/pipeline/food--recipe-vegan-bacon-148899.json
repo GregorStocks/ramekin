@@ -5,7 +5,7 @@
     {
       "raw": "1   lb    firm tofu, cut into strips shaped like bacon",
       "expected": {
-        "item": "firm tofu, cut into strips shaped like bacon",
+        "item": "firm tofu",
         "measurements": [
           {
             "amount": "1",
@@ -16,8 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Meat & Seafood"
+        "note": "cut into strips shaped like bacon",
+        "category": "Produce"
       }
     },
     {

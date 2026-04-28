@@ -28,14 +28,14 @@
     {
       "raw": "1/2 cup shredded cheddar (I used a mix of sharp and white)",
       "expected": {
-        "item": "shredded cheddar (I used a mix of sharp and white)",
+        "item": "shredded cheddar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used a mix of sharp and white",
         "category": "Cheese"
       }
     }

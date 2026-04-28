@@ -5,7 +5,7 @@
     {
       "raw": "1 pound boneless, skinless chicken thighs, cut into 1/2-inch pieces",
       "expected": {
-        "item": "boneless, skinless chicken thighs, cut into 1/2-inch pieces",
+        "item": "boneless, skinless chicken thighs",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -106,13 +106,9 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "1",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "1/4-inch",
         "category": "Produce"
       }
     },
@@ -206,27 +202,23 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "1",
-            "unit": "inch"
           }
         ],
-        "note": null,
+        "note": "1/4-inch",
         "category": "Produce"
       }
     },
     {
       "raw": "0.75 cup coconut cream (see Tip)",
       "expected": {
-        "item": "coconut cream (see Tip)",
+        "item": "coconut cream",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "see Tip",
         "category": "Canned Goods"
       }
     },

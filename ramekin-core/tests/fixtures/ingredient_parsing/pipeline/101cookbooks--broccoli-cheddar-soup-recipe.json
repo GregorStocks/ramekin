@@ -5,7 +5,7 @@
     {
       "raw": "5-6 ounce chunk of artisan whole wheat bread, torn into little pieces (less than 1-inch), roughly 3 cups total",
       "expected": {
-        "item": "chunk of artisan whole wheat bread, torn into little pieces (less than 1-inch), roughly 3 cups total",
+        "item": "chunk of artisan whole wheat bread, torn into little pieces, roughly 3 cups total",
         "measurements": [
           {
             "amount": "5-6",
@@ -16,21 +16,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "less than 1-inch",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "1/4 cup melted butter or olive oil (I like 1/2 and 1/2)",
       "expected": {
-        "item": "melted butter or olive oil (I like 1/2 and 1/2)",
+        "item": "melted butter or olive oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I like 1/2 and 1/2",
         "category": "Oils & Vinegars"
       }
     },
@@ -153,7 +153,7 @@
     {
       "raw": "1  large head of broccoli (12 ounces or 3/4 lb.), cut into small florets",
       "expected": {
-        "item": "head of broccoli, cut into small florets",
+        "item": "head of broccoli",
         "measurements": [
           {
             "amount": "1",
@@ -172,7 +172,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small florets",
         "category": "Produce"
       }
     },

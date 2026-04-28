@@ -75,14 +75,14 @@
     {
       "raw": "1/2-1 cup ice ((depending on desired thickness))",
       "expected": {
-        "item": "ice (depending on desired thickness)",
+        "item": "ice",
         "measurements": [
           {
             "amount": "0.5-1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "depending on desired thickness",
         "category": "Other"
       }
     },

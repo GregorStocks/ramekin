@@ -253,14 +253,18 @@
     {
       "raw": "2 tablespoons butter (no substitutes)",
       "expected": {
-        "item": "butter (no substitutes)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "no substitutes",
         "category": "Dairy & Eggs"
       }
     },

@@ -55,14 +55,14 @@
     {
       "raw": "6 cups 1-inch-cubed crustless brioche or Pullman loaf (I used a little less than one loaf)",
       "expected": {
-        "item": "1-inch-cubed crustless brioche or Pullman loaf (I used a little less than one loaf)",
+        "item": "1-inch-cubed crustless brioche or Pullman loaf",
         "measurements": [
           {
             "amount": "6",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "I used a little less than one loaf",
         "category": "Bakery & Bread"
       }
     },

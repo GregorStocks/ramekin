@@ -61,14 +61,14 @@
     {
       "raw": "3 cloves of garlic (pressed)",
       "expected": {
-        "item": "garlic (pressed)",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "3",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "pressed",
         "category": "Produce"
       }
     },
@@ -86,7 +86,7 @@
             "unit": "g"
           }
         ],
-        "note": "or to taste (I'm keeping it healthier with a a vegenaise",
+        "note": "or to taste (I'm keeping it healthier with a a vegenaise)",
         "category": "Condiments & Sauces"
       }
     }

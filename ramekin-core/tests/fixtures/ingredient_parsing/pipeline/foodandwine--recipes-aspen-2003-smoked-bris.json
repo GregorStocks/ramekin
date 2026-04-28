@@ -87,7 +87,7 @@
     {
       "raw": "1 pound sliced bacon, preferably artisanal (optional)",
       "expected": {
-        "item": "sliced bacon, preferably artisanal",
+        "item": "sliced bacon",
         "measurements": [
           {
             "amount": "1",
@@ -98,7 +98,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, preferably artisanal",
         "category": "Meat & Seafood"
       }
     },
@@ -271,7 +271,7 @@
             "unit": null
           }
         ],
-        "note": "minced (enough to make 1 cup)",
+        "note": "enough to make 1 cup, minced",
         "category": "Produce"
       }
     },

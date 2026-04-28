@@ -12,15 +12,11 @@
             "unit": "lb"
           },
           {
-            "amount": "5.67",
-            "unit": null
-          },
-          {
             "amount": "907",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "85/15",
         "category": "Meat & Seafood"
       }
     },
@@ -87,15 +83,15 @@
     {
       "raw": "1 cup crushed crackers (quick cook oats or breadcrumbs)",
       "expected": {
-        "item": "crushed crackers (quick cook oats or breadcrumbs)",
+        "item": "crushed crackers",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Bakery & Bread"
+        "note": "quick cook oats or breadcrumbs",
+        "category": "Snacks"
       }
     },
     {

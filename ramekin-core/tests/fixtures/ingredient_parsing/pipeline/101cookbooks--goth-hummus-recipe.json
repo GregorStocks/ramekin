@@ -107,9 +107,9 @@
     {
       "raw": "to serve: edible flowers (sage, chive, thyme, etc.), and sesame seeds",
       "expected": {
-        "item": "to serve: edible flowers (sage, chive, thyme, etc.), and sesame seeds",
+        "item": "to serve: edible flowers, and sesame seeds",
         "measurements": [],
-        "note": null,
+        "note": "sage, chive, thyme, etc.",
         "category": "Spices & Seasonings"
       }
     }

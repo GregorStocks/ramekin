@@ -23,14 +23,18 @@
     {
       "raw": "½ cup brown sugar ((or honey))",
       "expected": {
-        "item": "brown sugar (or honey)",
+        "item": "brown sugar",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "110",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or honey",
         "category": "Baking"
       }
     },
@@ -105,7 +109,7 @@
     {
       "raw": "2 pounds chicken breasts ((or thighs))",
       "expected": {
-        "item": "chicken breasts (or thighs)",
+        "item": "chicken breasts",
         "measurements": [
           {
             "amount": "2",
@@ -116,7 +120,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or thighs",
         "category": "Meat & Seafood"
       }
     }

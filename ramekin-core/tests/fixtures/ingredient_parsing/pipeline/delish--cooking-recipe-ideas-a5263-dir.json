@@ -12,15 +12,11 @@
             "unit": "lb"
           },
           {
-            "amount": "96",
-            "unit": null
-          },
-          {
             "amount": "454",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "96% lean",
         "category": "Meat & Seafood"
       }
     },
@@ -101,14 +97,14 @@
     {
       "raw": "2 tsp. (or more) Cajun seasoning (or 1 tsp. salt-free Cajun seasoning plus 1 tsp. kosher salt)",
       "expected": {
-        "item": "Cajun seasoning (or 1 tsp. salt-free Cajun seasoning plus 1 tsp. kosher salt)",
+        "item": "Cajun seasoning",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": "or more",
+        "note": "or more, or 1 tsp. salt-free Cajun seasoning plus 1 tsp. kosher salt",
         "category": "Spices & Seasonings"
       }
     },

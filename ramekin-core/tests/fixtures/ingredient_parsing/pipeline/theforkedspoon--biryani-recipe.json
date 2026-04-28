@@ -19,14 +19,18 @@
     {
       "raw": "1½ cups oil ((sunflower oil or peanut oil))",
       "expected": {
-        "item": "oil (sunflower oil or peanut oil)",
+        "item": "oil",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "327",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sunflower oil or peanut oil",
         "category": "Oils & Vinegars"
       }
     },
@@ -89,14 +93,14 @@
     {
       "raw": "1 teaspoon black cumin seeds ((shah jeera))",
       "expected": {
-        "item": "black cumin seeds (shah jeera)",
+        "item": "black cumin seeds",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "shah jeera",
         "category": "Spices & Seasonings"
       }
     },
@@ -117,14 +121,14 @@
     {
       "raw": "5  chicken drumsticks (or chicken thighs)",
       "expected": {
-        "item": "chicken drumsticks (or chicken thighs)",
+        "item": "chicken drumsticks",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or chicken thighs",
         "category": "Meat & Seafood"
       }
     },
@@ -142,7 +146,7 @@
             "unit": "g"
           }
         ],
-        "note": "boneless or bone-in, chopped into large chunks (you may also use lamb chops or leg of lamb",
+        "note": "boneless or bone-in, chopped into large chunks (you may also use lamb chops or leg of lamb)",
         "category": "Meat & Seafood"
       }
     },
@@ -397,28 +401,28 @@
     {
       "raw": "1  lemon (juiced)",
       "expected": {
-        "item": "lemon (juiced)",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "juiced",
+        "category": "Produce"
       }
     },
     {
       "raw": "1 teaspoon good-quality saffron (soaked in 3 tbsp of hot water or warm milk)",
       "expected": {
-        "item": "good-quality saffron (soaked in 3 tbsp of hot water or warm milk)",
+        "item": "good-quality saffron",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "soaked in 3 tbsp of hot water or warm milk",
         "category": "Spices & Seasonings"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "4  chicken breast (boneless and skinless)",
       "expected": {
-        "item": "chicken breast (boneless and skinless)",
+        "item": "chicken breast",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "boneless and skinless",
         "category": "Meat & Seafood"
       }
     },
@@ -78,14 +78,14 @@
     {
       "raw": "2 cups breadcrumbs (preferably Panko)",
       "expected": {
-        "item": "breadcrumbs (preferably Panko)",
+        "item": "breadcrumbs",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "preferably Panko",
         "category": "Bakery & Bread"
       }
     },
@@ -142,9 +142,9 @@
     {
       "raw": "vegetable oil (for frying)",
       "expected": {
-        "item": "vegetable oil (for frying)",
+        "item": "vegetable oil",
         "measurements": [],
-        "note": null,
+        "note": "for frying",
         "category": "Oils & Vinegars"
       }
     }

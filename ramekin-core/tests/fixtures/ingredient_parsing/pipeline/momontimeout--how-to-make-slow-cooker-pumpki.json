@@ -5,14 +5,14 @@
     {
       "raw": "1 to 2  pumpkins  (meant for baking)",
       "expected": {
-        "item": "pumpkins (meant for baking)",
+        "item": "pumpkins",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "meant for baking",
         "category": "Produce"
       }
     }

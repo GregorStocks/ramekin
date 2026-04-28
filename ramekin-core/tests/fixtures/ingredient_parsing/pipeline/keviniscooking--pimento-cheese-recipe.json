@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "drained and rinsed (See Note 1",
+        "note": "drained and rinsed (See Note 1)",
         "category": "Spices & Seasonings"
       }
     },
@@ -37,14 +37,14 @@
     {
       "raw": "1/4 cup mayonaise ((See Note 2))",
       "expected": {
-        "item": "mayonaise (See Note 2)",
+        "item": "mayonaise",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "See Note 2",
         "category": "Condiments & Sauces"
       }
     },
@@ -144,7 +144,7 @@
             "unit": "slice"
           }
         ],
-        "note": "crumbled (optional",
+        "note": "crumbled (optional)",
         "category": "Meat & Seafood"
       }
     },

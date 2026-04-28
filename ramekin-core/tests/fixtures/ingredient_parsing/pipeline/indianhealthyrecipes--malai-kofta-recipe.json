@@ -12,7 +12,7 @@
             "unit": "heaped cup"
           }
         ],
-        "note": "crumbled (about 150 grams",
+        "note": "crumbled (about 150 grams)",
         "category": "Cheese"
       }
     },
@@ -30,21 +30,25 @@
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "about 2 large",
         "category": "Produce"
       }
     },
     {
       "raw": "2½ tablespoons corn starch ((same as white refined corn flour))",
       "expected": {
-        "item": "corn starch (same as white refined corn flour)",
+        "item": "corn starch",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "20",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "same as white refined corn flour",
         "category": "Baking"
       }
     },
@@ -109,7 +113,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "(optional",
+        "note": "(optional)",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -127,7 +131,7 @@
             "unit": "g"
           }
         ],
-        "note": "(optional",
+        "note": "(optional)",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -249,15 +253,19 @@
     {
       "raw": "2 tablespoons oil ((or 2 tbsp butter))",
       "expected": {
-        "item": "oil (or 2 tbsp butter)",
+        "item": "oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "or 2 tbsp butter",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -400,30 +408,26 @@
             "unit": "cup"
           },
           {
-            "amount": "0.25",
-            "unit": "cup"
-          },
-          {
             "amount": "118",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1/4 cup more if needed",
         "category": "Other"
       }
     },
     {
       "raw": "1 teaspoon kasuri methi ((fenugreek leaves))",
       "expected": {
-        "item": "kasuri methi (fenugreek leaves)",
+        "item": "kasuri methi",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "fenugreek leaves",
+        "category": "Other"
       }
     },
     {

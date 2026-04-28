@@ -23,14 +23,18 @@
     {
       "raw": "1 1/2 cups low-sodium chicken broth (or vegetable broth)",
       "expected": {
-        "item": "low-sodium chicken broth (or vegetable broth)",
+        "item": "low-sodium chicken broth",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "374",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or vegetable broth",
         "category": "Canned Goods"
       }
     },

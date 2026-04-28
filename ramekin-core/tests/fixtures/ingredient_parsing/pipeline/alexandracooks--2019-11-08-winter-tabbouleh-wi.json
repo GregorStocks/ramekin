@@ -143,14 +143,14 @@
     {
       "raw": "1 pomegranate, seeded",
       "expected": {
-        "item": "pomegranate, seeded",
+        "item": "pomegranate",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded",
         "category": "Produce"
       }
     },

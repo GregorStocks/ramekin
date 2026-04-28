@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": "at room temperature (or nondairy)",
+        "note": "or nondairy, at room temperature",
         "category": "Dairy & Eggs"
       }
     },
@@ -155,9 +155,9 @@
     {
       "raw": "optional toppings: berries, whipped cream, maple syrup, and/or strawberry sauce",
       "expected": {
-        "item": "optional toppings: berries, whipped cream, maple syrup",
+        "item": "optional toppings: berries, whipped cream, maple syrup, and/or strawberry sauce",
         "measurements": [],
-        "note": "and/or strawberry sauce",
+        "note": null,
         "category": "Dairy & Eggs"
       }
     }

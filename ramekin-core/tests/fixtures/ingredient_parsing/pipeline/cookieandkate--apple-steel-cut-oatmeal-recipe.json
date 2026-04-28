@@ -23,28 +23,28 @@
     {
       "raw": "1 cup steel-cut oats (certified gluten-free if necessary)",
       "expected": {
-        "item": "steel-cut oats (certified gluten-free if necessary)",
+        "item": "steel-cut oats",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "certified gluten-free if necessary",
         "category": "Snacks"
       }
     },
     {
       "raw": "3 medium-to-large apples (I used 2 Granny Smiths and 1 Honeycrisp), cored and sliced into 1-to-2&amp;#8243; chunks",
       "expected": {
-        "item": "medium-to-large apples (I used 2 Granny Smiths and 1 Honeycrisp)",
+        "item": "medium-to-large apples",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "cored and sliced into 1-to-2″ chunks",
+        "note": "I used 2 Granny Smiths and 1 Honeycrisp, cored and sliced into 1-to-2″ chunks",
         "category": "Produce"
       }
     },
@@ -83,18 +83,18 @@
     {
       "raw": "Maple syrup or honey, to taste (optional)",
       "expected": {
-        "item": "Maple syrup or honey, to taste",
+        "item": "Maple syrup or honey",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, to taste",
         "category": "Baking"
       }
     },
     {
       "raw": "Optional toppings: swirl of nut butter (pecan butter, almond butter or peanut butter), toasted pecans or pepitas, chopped fresh apples, dried cranberries, drizzle of additional maple syrup or honey, light sprinkle of ground cinnamon&amp;#8230;",
       "expected": {
-        "item": "Optional toppings: swirl of nut butter (pecan butter, almond butter or peanut butter), toasted pecans or pepitas, chopped fresh apples, dried cranberries, drizzle of additional maple syrup or honey",
+        "item": "Optional toppings: swirl of nut butter, toasted pecans or pepitas, chopped fresh apples, dried cranberries, drizzle of additional maple syrup or honey",
         "measurements": [],
-        "note": "light sprinkle of ground cinnamon…",
+        "note": "pecan butter, almond butter or peanut butter, light sprinkle of ground cinnamon…",
         "category": "Nuts & Dried Fruit"
       }
     }

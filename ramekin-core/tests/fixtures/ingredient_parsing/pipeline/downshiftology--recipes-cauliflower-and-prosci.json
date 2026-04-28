@@ -79,14 +79,18 @@
     {
       "raw": "3 tbsp olive oil (separated 2 tbs + 1 tbs)",
       "expected": {
-        "item": "olive oil (separated 2 tbs + 1 tbs)",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "40",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "separated 2 tbs + 1 tbs",
         "category": "Oils & Vinegars"
       }
     },

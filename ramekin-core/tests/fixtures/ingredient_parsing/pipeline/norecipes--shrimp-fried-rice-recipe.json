@@ -37,14 +37,14 @@
     {
       "raw": "360 grams cooked rice ((use leftover rice))",
       "expected": {
-        "item": "cooked rice (use leftover rice)",
+        "item": "cooked rice",
         "measurements": [
           {
             "amount": "360",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "use leftover rice",
         "category": "Pasta & Rice"
       }
     },

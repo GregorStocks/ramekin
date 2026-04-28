@@ -145,14 +145,14 @@
     {
       "raw": "Handful fresh basil leaves, cut into thin ribbons",
       "expected": {
-        "item": "fresh basil leaves, cut into thin ribbons",
+        "item": "fresh basil leaves",
         "measurements": [
           {
             "amount": null,
             "unit": "handful"
           }
         ],
-        "note": null,
+        "note": "cut into thin ribbons",
         "category": "Produce"
       }
     }

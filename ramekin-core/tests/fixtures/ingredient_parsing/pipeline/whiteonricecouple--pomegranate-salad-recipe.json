@@ -24,13 +24,9 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "1",
-            "unit": "small"
           }
         ],
-        "note": null,
+        "note": "1 small pomegranate",
         "category": "Produce"
       }
     },
@@ -123,7 +119,7 @@
     {
       "raw": "fresh thyme ((optional) or other herbs)",
       "expected": {
-        "item": "fresh thyme or other herbs)",
+        "item": "fresh thyme or other herbs",
         "measurements": [],
         "note": "optional",
         "category": "Produce"

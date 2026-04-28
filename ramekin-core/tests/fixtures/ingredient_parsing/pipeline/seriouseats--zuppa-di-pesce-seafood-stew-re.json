@@ -40,20 +40,16 @@
           {
             "amount": "226",
             "unit": "g"
-          },
-          {
-            "amount": "26 to 30",
-            "unit": null
           }
         ],
-        "note": "shells reserved separately",
+        "note": "26 to 30 per pound, shells reserved separately",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1/2 medium yellow onion (4 ounces; 113 g), cut into 1/4-inch dice",
       "expected": {
-        "item": "yellow onion, cut into 1/4-inch dice",
+        "item": "yellow onion",
         "measurements": [
           {
             "amount": "0.5",
@@ -68,7 +64,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch dice",
         "category": "Produce"
       }
     },
@@ -90,7 +86,7 @@
             "unit": "g"
           }
         ],
-        "note": "fronds reserved for garnish",
+        "note": "about 8 ounces; 226 g, fronds reserved for garnish",
         "category": "Produce"
       }
     },
@@ -200,19 +196,11 @@
             "unit": "bottle"
           },
           {
-            "amount": "8",
-            "unit": "oz"
-          },
-          {
             "amount": "237",
             "unit": "ml"
-          },
-          {
-            "amount": "227",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "8-ounce; 237 ml",
         "category": "Beverages"
       }
     },
@@ -226,22 +214,18 @@
             "unit": "bottle"
           },
           {
-            "amount": "24.5",
-            "unit": "oz"
-          },
-          {
             "amount": "700",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "24.5-ounce; 700 g",
         "category": "Produce"
       }
     },
     {
       "raw": "1 pound (454 g) squid, bodies sliced crosswise into 1/2-inch-thick rings, tentacles left whole, patted dry",
       "expected": {
-        "item": "squid, bodies sliced crosswise into 1/2-inch-thick rings, tentacles left whole, patted dry",
+        "item": "squid, bodies sliced crosswise into 1/2-inch-thick rings, tentacles left whole",
         "measurements": [
           {
             "amount": "1",
@@ -252,29 +236,25 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "patted dry",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 (1-pound; 454 g) skinless cod fillet, 3/4 to 1 inch thick, cut into 2-inch by 1-inch pieces",
       "expected": {
-        "item": "skinless cod fillet, 3/4 to 1 inch thick, cut into 2-inch by 1-inch pieces",
+        "item": "skinless cod fillet, 3/4 to 1 inch thick",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           },
           {
-            "amount": "1",
-            "unit": "lb"
-          },
-          {
             "amount": "454",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1-pound; 454 g, cut into 2-inch by 1-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -299,7 +279,7 @@
     {
       "raw": "8 ounces (226 g) mussels, scrubbed and debearded",
       "expected": {
-        "item": "mussels",
+        "item": "mussels, scrubbed and debearded",
         "measurements": [
           {
             "amount": "8",
@@ -310,7 +290,7 @@
             "unit": "g"
           }
         ],
-        "note": "scrubbed and debearded",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },

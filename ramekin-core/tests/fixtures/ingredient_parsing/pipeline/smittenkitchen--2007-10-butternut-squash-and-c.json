@@ -41,7 +41,7 @@
     {
       "raw": "8 tablespoons (1/2 cup or 115 grams) unsalted butter, cut into pieces",
       "expected": {
-        "item": "unsalted butter, cut into pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "8",
@@ -56,7 +56,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -113,14 +113,14 @@
     {
       "raw": "1 small butternut squash (about one pound)",
       "expected": {
-        "item": "butternut squash (about one pound)",
+        "item": "butternut squash",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "about one pound",
         "category": "Produce"
       }
     },
@@ -145,14 +145,14 @@
     {
       "raw": "1 to 2 tablespoons butter (if you have only non-stick, the smaller amount will do)",
       "expected": {
-        "item": "butter (if you have only non-stick, the smaller amount will do)",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "if you have only non-stick, the smaller amount will do",
         "category": "Dairy & Eggs"
       }
     },
@@ -238,7 +238,7 @@
             "unit": "g"
           }
         ],
-        "note": "grated or cut into small bits",
+        "note": "about 2 1/2 ounces, grated or cut into small bits",
         "category": "Cheese"
       }
     },

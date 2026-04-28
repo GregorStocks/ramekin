@@ -229,28 +229,28 @@
     {
       "raw": "1 tomato , cored and sliced thin (optional)",
       "expected": {
-        "item": "tomato, cored and sliced thin",
+        "item": "tomato",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "optional, cored and sliced thin",
         "category": "Produce"
       }
     },
     {
       "raw": "½ English cucumber , sliced thin (optional)",
       "expected": {
-        "item": "English cucumber, sliced thin",
+        "item": "English cucumber",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "optional, sliced thin",
         "category": "Produce"
       }
     },

@@ -78,13 +78,9 @@
           {
             "amount": "270",
             "unit": "g"
-          },
-          {
-            "amount": "2",
-            "unit": "small"
           }
         ],
-        "note": null,
+        "note": "2 small peppers",
         "category": "Produce"
       }
     },
@@ -119,14 +115,14 @@
     {
       "raw": "1 tablespoon Shatta ((Syrian chili paste))",
       "expected": {
-        "item": "Shatta (Syrian chili paste)",
+        "item": "Shatta",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "Syrian chili paste",
         "category": "Other"
       }
     },

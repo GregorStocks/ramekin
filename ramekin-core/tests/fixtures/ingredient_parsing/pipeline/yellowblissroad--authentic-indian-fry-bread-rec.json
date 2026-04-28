@@ -113,10 +113,10 @@
     {
       "raw": "Taco - beans (cheese, lettuce, tomato, olives &amp;amp; sour cream)",
       "expected": {
-        "item": "Taco - beans (cheese, lettuce, tomato, olives & sour cream)",
+        "item": "Taco - beans",
         "measurements": [],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "cheese, lettuce, tomato, olives & sour cream",
+        "category": "Other"
       }
     }
   ]

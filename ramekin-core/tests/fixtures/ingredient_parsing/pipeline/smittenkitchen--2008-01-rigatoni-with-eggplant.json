@@ -5,7 +5,7 @@
     {
       "raw": "1 medium (1 pound) eggplant, cut into 1-inch cubes",
       "expected": {
-        "item": "eggplant, cut into 1-inch cubes",
+        "item": "eggplant",
         "measurements": [
           {
             "amount": "1",
@@ -20,21 +20,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch cubes",
         "category": "Produce"
       }
     },
     {
       "raw": "2 heaped cups (or 12 ounces) cherry or grape tomatoes",
       "expected": {
-        "item": "(or 12 ounces) cherry or grape tomatoes",
+        "item": "cherry or grape tomatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "heaped cup"
           }
         ],
-        "note": null,
+        "note": "or 12 ounces",
         "category": "Produce"
       }
     },

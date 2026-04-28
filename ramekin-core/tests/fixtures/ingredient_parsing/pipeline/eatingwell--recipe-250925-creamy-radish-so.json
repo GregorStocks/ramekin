@@ -23,14 +23,14 @@
     {
       "raw": "2 cups sliced radishes (from 2 bunches), divided",
       "expected": {
-        "item": "sliced radishes (from 2 bunches)",
+        "item": "sliced radishes",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "divided",
+        "note": "from 2 bunches, divided",
         "category": "Produce"
       }
     },
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled and cut into 1-inch cubes",
+        "note": "about 8 ounces, peeled and cut into 1-inch cubes",
         "category": "Produce"
       }
     },

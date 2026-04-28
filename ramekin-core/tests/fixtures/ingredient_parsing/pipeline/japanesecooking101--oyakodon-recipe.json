@@ -105,14 +105,14 @@
     {
       "raw": "1  chicken thigh (cut into bite size pieces)",
       "expected": {
-        "item": "chicken thigh (cut into bite size pieces)",
+        "item": "chicken thigh",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into bite size pieces",
         "category": "Meat & Seafood"
       }
     },

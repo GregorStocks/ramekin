@@ -10,20 +10,16 @@
           {
             "amount": "1",
             "unit": null
-          },
-          {
-            "amount": "3",
-            "unit": null
           }
         ],
-        "note": null,
+        "note": "3 1/2- to 4-pound",
         "category": "Pasta & Rice"
       }
     },
     {
       "raw": "1/2 stick (4 tablespoons) unsalted butter, cut into pieces",
       "expected": {
-        "item": "unsalted butter, cut into pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -32,9 +28,13 @@
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -123,14 +123,14 @@
     {
       "raw": "2 tablespoons chopped fresh cilantro or flat-leaf parsley, if you’re cilantro-averse",
       "expected": {
-        "item": "chopped fresh cilantro or flat-leaf parsley, if you’re cilantro-averse",
+        "item": "chopped fresh cilantro or flat-leaf parsley",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "if you’re cilantro-averse",
         "category": "Produce"
       }
     }
