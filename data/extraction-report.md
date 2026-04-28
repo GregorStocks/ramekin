@@ -2,25 +2,25 @@
 
 ## Overall
 
-- Total URLs: 5534
-- Completed: 5470 (98.8%)
+- Total URLs: 5533
+- Completed: 5470 (98.9%)
 - Failed at fetch: 0 (0.0%)
-- Failed at extract: 64 (1.2%)
+- Failed at extract: 63 (1.1%)
 
 ## Extraction Methods
 
-- JSON-LD: 4276/5534 (77.3%)
-- Microdata: 537/5534 (9.7%)
-- Both: 0/5534 (0.0%)
-- Neither: 721/5534 (13.0%)
+- JSON-LD: 4276/5533 (77.3%)
+- Microdata: 537/5533 (9.7%)
+- Both: 0/5533 (0.0%)
+- Neither: 720/5533 (13.0%)
 
 ## Ingredient Parsing
 
-- Total ingredients: 60741
+- Total ingredients: 60739
 - Volume-to-weight converted: 18904/42769 (44.2%)
 - Unknown ingredient (no density data): 14330
 - Already has weight: 9535
-- No volume unit (count-based): 17605
+- No volume unit (count-based): 17603
 - Metric converted (oz→g): 2466
 - Metric converted (lb→g): 1812
 
@@ -108,7 +108,7 @@
 | simplyrecipes.com | 99 | 100 | 99.0% |
 | skinnytaste.com | 2 | 2 | 100.0% |
 | slenderkitchen.com | 55 | 55 | 100.0% |
-| smittenkitchen.com | 990 | 1008 | 98.2% |
+| smittenkitchen.com | 990 | 1007 | 98.3% |
 | spendwithpennies.com | 35 | 35 | 100.0% |
 | spoonforkbacon.com | 2 | 2 | 100.0% |
 | sprinklebakes.com | 74 | 92 | 80.4% |
@@ -133,7 +133,7 @@
 
 ## Failed URLs by Error
 
-### Missing required field: recipeIngredient (empty) (63 URLs)
+### Missing required field: recipeIngredient (empty) (62 URLs)
 
 - http://bakingbites.com/2017/02/how-to-use-freeze-dried-fruit-in-baking/
 - https://barefeetinthekitchen.com/diy-fruit-and-vegetable-wash-homemade-produce-wash-recipe/
@@ -151,7 +151,6 @@
 - https://smittenkitchen.com/2007/04/fish-tacos/
 - https://smittenkitchen.com/2007/05/homemade-oreoes/
 - https://smittenkitchen.com/2007/10/flan-flop/
-- https://smittenkitchen.com/2008/07/huevos-rancheros/
 - https://smittenkitchen.com/2008/07/project-wedding-cake-ta-da/
 - https://smittenkitchen.com/2008/08/cold-brewed-iced-coffee/
 - https://smittenkitchen.com/2008/08/how-to-poach-an-egg-smitten-kitchen-style/
