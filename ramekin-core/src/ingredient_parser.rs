@@ -3114,6 +3114,10 @@ const IGNORED_LINE_PATTERNS: &[&str] = &[
     "you will need",
     "you'll need",
     "ingredients list",
+    // Bare list/section labels that leak through when source markup omits a
+    // trailing colon. Matched case-insensitively, exact whole-line only.
+    "ingredients",
+    "serve with",
 ];
 
 /// Prefixes that indicate a line should be ignored (not an ingredient).
@@ -3791,6 +3795,11 @@ mod tests {
         assert!(should_ignore_line("Yields: 12 bars"));
         assert!(should_ignore_line("Serves 4 generously"));
         assert!(should_ignore_line("Makes 12 muffins"));
+        assert!(should_ignore_line("Ingredients"));
+        assert!(should_ignore_line("INGREDIENTS"));
+        assert!(should_ignore_line("  ingredients  "));
+        assert!(should_ignore_line("Serve with"));
+        assert!(should_ignore_line("SERVE WITH"));
 
         // Regular ingredients should not be ignored
         assert!(!should_ignore_line("1 cup flour"));
@@ -3800,7 +3809,9 @@ mod tests {
             "40 grams raspberries (about 10 raspberries)"
         ));
         assert!(!should_ignore_line("(about 10 raspberries)"));
-        assert!(!should_ignore_line("Serve with"));
+        // Longer phrases containing the same words must still pass through.
+        assert!(!should_ignore_line("Cake Ingredients:"));
+        assert!(!should_ignore_line("Serve with crackers"));
     }
 
     #[test]
