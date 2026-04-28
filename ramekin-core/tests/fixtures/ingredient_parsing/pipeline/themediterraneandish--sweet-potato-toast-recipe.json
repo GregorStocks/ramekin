@@ -5,14 +5,14 @@
     {
       "raw": "2 sweet potatoes of similar shape and size, scrubbed clean but not peeled",
       "expected": {
-        "item": "sweet potatoes of similar shape and size, scrubbed clean but not peeled",
+        "item": "sweet potatoes of similar shape and size",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "scrubbed clean but not peeled",
         "category": "Produce"
       }
     },

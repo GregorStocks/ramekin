@@ -84,7 +84,7 @@
     {
       "raw": "1/2 pound asparagus, cleaned, not trimmed",
       "expected": {
-        "item": "asparagus, cleaned, not trimmed",
+        "item": "asparagus, cleaned",
         "measurements": [
           {
             "amount": "0.5",
@@ -95,7 +95,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not trimmed",
         "category": "Produce"
       }
     },

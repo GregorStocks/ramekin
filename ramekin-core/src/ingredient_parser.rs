@@ -2592,8 +2592,8 @@ fn is_prep_note(s: &str) -> bool {
 
 fn is_trailing_prep_note(s: &str) -> bool {
     const PREP_FILLER_WORDS: &[&str] = &[
-        "and", "coarsely", "fine", "finely", "firmly", "freshly", "lightly", "loosely", "or",
-        "roughly", "small", "thinly", "very", "well",
+        "and", "but", "clean", "coarsely", "fine", "finely", "firmly", "freshly", "lightly",
+        "loosely", "not", "or", "roughly", "small", "thinly", "very", "well",
     ];
 
     let mut saw_prep = false;
@@ -3526,6 +3526,8 @@ mod tests {
         assert!(is_trailing_prep_note("finely chopped"));
         assert!(is_trailing_prep_note("peeled and chopped"));
         assert!(is_trailing_prep_note("chopped very small"));
+        assert!(is_trailing_prep_note("scrubbed clean"));
+        assert!(is_trailing_prep_note("scrubbed clean but not peeled"));
         assert!(!is_trailing_prep_note("unseasoned dried breadcrumbs"));
         assert!(!is_trailing_prep_note("cooked chicken meat"));
     }
@@ -3562,6 +3564,16 @@ mod tests {
         assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
         assert_eq!(result.measurements[1].amount, Some("40".to_string()));
         assert_eq!(result.measurements[1].unit, Some("g".to_string()));
+    }
+
+    #[test]
+    fn test_trailing_scrubbed_clean_is_note_not_item_identity() {
+        let result = parse_ingredient("4 russet potatoes, scrubbed clean");
+        assert_eq!(result.item, "russet potatoes");
+        assert_eq!(result.note, Some("scrubbed clean".to_string()));
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("4".to_string()));
+        assert_eq!(result.measurements[0].unit, None);
     }
 
     #[test]

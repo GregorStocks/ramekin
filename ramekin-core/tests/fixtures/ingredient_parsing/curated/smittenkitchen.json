@@ -5,7 +5,7 @@
       "name": "potatoes",
       "raw": "4 (about 8 ounces or 225 grams each) russet potatoes, scrubbed clean",
       "expected": {
-        "item": "russet potatoes, scrubbed clean",
+        "item": "russet potatoes",
         "measurements": [
           {
             "amount": "4",
@@ -20,7 +20,7 @@
             "unit": "g each"
           }
         ],
-        "note": null,
+        "note": "scrubbed clean",
         "category": "Produce"
       }
     }
