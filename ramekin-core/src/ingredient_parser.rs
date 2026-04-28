@@ -32,6 +32,7 @@ pub struct ParsedIngredient {
 struct DeferredParentheticalNote {
     segment: String,
     follows_comma: bool,
+    follows_or: bool,
 }
 
 impl ParsedIngredient {
@@ -733,6 +734,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         let raw_before_parenthetical = remaining.get(..start).unwrap_or("");
         let follows_comma = raw_before_parenthetical.trim_end().ends_with(',')
             || raw_before_parenthetical.contains(',');
+        let follows_or = raw_before_parenthetical.to_lowercase().contains(" or ");
         let before_parenthetical = raw_before_parenthetical
             .trim_end()
             .trim_end_matches(',')
@@ -748,6 +750,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                         &mut deferred_parenthetical_notes,
                         &note_segment,
                         follows_comma,
+                        follows_or,
                     );
                 }
                 remaining = join_segments(
@@ -780,6 +783,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                 &mut deferred_parenthetical_notes,
                 &trimmed_content,
                 follows_comma,
+                follows_or,
             );
             // Remove the parenthetical from remaining
             // Also strip trailing comma before the parenthetical (e.g., "onion, (diced)")
@@ -808,6 +812,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                 &mut deferred_parenthetical_notes,
                 &trimmed_content,
                 follows_comma,
+                follows_or,
             );
             remaining = join_segments(before_parenthetical, after_parenthetical);
         }
@@ -1204,7 +1209,12 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             let contains_measurement = has_unit && has_number;
 
             if !before_or.is_empty() && !after_or.is_empty() && contains_measurement {
-                note = Some(format!("or {}", after_or));
+                let alternative_note =
+                    take_last_or_parenthetical_note(&mut deferred_parenthetical_notes);
+                note = Some(match alternative_note {
+                    Some(alternative_note) => format!("or {} ({})", after_or, alternative_note),
+                    None => format!("or {}", after_or),
+                });
                 remaining = before_or.to_string();
             }
         }
@@ -1602,6 +1612,7 @@ fn push_deferred_parenthetical_note(
     notes: &mut Vec<DeferredParentheticalNote>,
     segment: &str,
     follows_comma: bool,
+    follows_or: bool,
 ) {
     let segment = segment.trim();
     if segment.is_empty() {
@@ -1611,6 +1622,7 @@ fn push_deferred_parenthetical_note(
     notes.push(DeferredParentheticalNote {
         segment: segment.to_string(),
         follows_comma,
+        follows_or,
     });
 }
 
@@ -1618,6 +1630,11 @@ fn take_last_comma_parenthetical_note(
     notes: &mut Vec<DeferredParentheticalNote>,
 ) -> Option<String> {
     let index = notes.iter().rposition(|note| note.follows_comma)?;
+    Some(notes.remove(index).segment)
+}
+
+fn take_last_or_parenthetical_note(notes: &mut Vec<DeferredParentheticalNote>) -> Option<String> {
+    let index = notes.iter().rposition(|note| note.follows_or)?;
     Some(notes.remove(index).segment)
 }
 
@@ -3645,6 +3662,20 @@ mod tests {
         );
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("4".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+    }
+
+    #[test]
+    fn test_or_alternative_keeps_parenthetical_note_with_branch() {
+        let result =
+            parse_ingredient("1/2-1 cup chopped pecans (optional) or 1/2-1 cup walnuts (optional)");
+        assert_eq!(result.item, "chopped pecans");
+        assert_eq!(
+            result.note,
+            Some("optional; or 1/2-1 cup walnuts (optional)".to_string())
+        );
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("1/2-1".to_string()));
         assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
     }
 
