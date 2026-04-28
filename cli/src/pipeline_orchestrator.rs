@@ -855,6 +855,21 @@ fn snapshot_allowlist_path(test_urls_path: &Path) -> PathBuf {
         .join("pipeline-snapshot-urls.json")
 }
 
+/// If `url` is a known non-recipe URL pattern that must not be added to the
+/// snapshot allowlist, return a short reason explaining why. Today this only
+/// catches Serious Eats "complete guide" articles (e.g. the food-lab guides),
+/// which have no concrete `recipeIngredient` and break `make pipeline`.
+fn unsupported_snapshot_url_reason(url: &str) -> Option<&'static str> {
+    let lower = url.to_lowercase();
+    if lower.contains("seriouseats.com") && lower.contains("complete-guide-to-") {
+        return Some(
+            "Serious Eats \"complete guide\" articles are not concrete recipes; \
+             use a specific recipe URL instead",
+        );
+    }
+    None
+}
+
 fn load_pipeline_urls(test_urls_path: &Path) -> Result<TestUrlsOutput> {
     let test_urls_content = fs::read_to_string(test_urls_path)
         .with_context(|| format!("Failed to read test URLs from {}", test_urls_path.display()))?;
@@ -877,6 +892,10 @@ fn load_pipeline_urls(test_urls_path: &Path) -> Result<TestUrlsOutput> {
         .with_context(|| format!("Failed to parse snapshot allowlist {}", allowlist.display()))?;
 
     for url in allowlisted_urls {
+        if let Some(reason) = unsupported_snapshot_url_reason(&url) {
+            anyhow::bail!("Snapshot allowlist URL is not a recipe page: {url} ({reason})");
+        }
+
         if !existing_urls.insert(url.clone()) {
             continue;
         }
@@ -1736,6 +1755,55 @@ mod tests {
             loaded.sites[0].urls,
             vec!["https://www.seriouseats.com/already-present".to_string()]
         );
+    }
+
+    #[test]
+    fn load_pipeline_urls_rejects_seriouseats_complete_guide() {
+        let dir = TempDir::new().unwrap();
+        let data_dir = dir.path().join("data");
+        std::fs::create_dir_all(&data_dir).unwrap();
+        let test_urls_path = data_dir.join("test-urls.json");
+        std::fs::write(&test_urls_path, sample_test_urls()).unwrap();
+        std::fs::write(
+            data_dir.join("pipeline-snapshot-urls.json"),
+            r#"[
+              "https://www.seriouseats.com/food-lab-complete-guide-to-sous-vide-steak"
+            ]"#,
+        )
+        .unwrap();
+
+        let err = load_pipeline_urls(&test_urls_path).unwrap_err();
+        let msg = format!("{err}");
+        assert!(
+            msg.contains("food-lab-complete-guide-to-sous-vide-steak"),
+            "error should name the offending URL: {msg}"
+        );
+        assert!(
+            msg.contains("complete guide"),
+            "error should explain the reason: {msg}"
+        );
+    }
+
+    #[test]
+    fn unsupported_snapshot_url_reason_allows_existing_recipe_urls() {
+        // Recipes that include "food-lab" must not be flagged — only "complete-guide-to-"
+        // guides are rejected.
+        assert!(unsupported_snapshot_url_reason(
+            "https://www.seriouseats.com/chorizo-potato-tacos-how-to-food-lab-recipe"
+        )
+        .is_none());
+        assert!(unsupported_snapshot_url_reason(
+            "https://www.seriouseats.com/grilled-skirt-steak-fajitas-food-lab-recipe"
+        )
+        .is_none());
+        assert!(unsupported_snapshot_url_reason(
+            "https://www.seriouseats.com/marinara-sauce-recipe"
+        )
+        .is_none());
+        assert!(unsupported_snapshot_url_reason(
+            "https://www.seriouseats.com/food-lab-complete-guide-to-sous-vide-steak"
+        )
+        .is_some());
     }
 
     #[test]
