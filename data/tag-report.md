@@ -985,10 +985,10 @@
 | Zebra Cake | dessert, easy, vegetarian, cheese, pantry | yes |
 | Ebi Katsu Sando (Panko Crumbed Shrimp... | lunch, dinner, entree, comfort food, asian, japanese, seafood, sandwich, bread | yes |
 | Japanese mochi ice cream 餅アイス | dessert, snack, easy, vegetarian, asian, japanese | yes |
-| Clover Club (Raspberry Liqueur) | egg | no |
+| Clover Club (Raspberry Liqueur) | egg | yes |
 | Thanksgiving Sidecar | holiday | yes |
-| Hot Chocolate Manhattan | comfort food, holiday | no |
-| Appletini | dairy-free, gluten-free, pantry | no |
+| Hot Chocolate Manhattan | comfort food, holiday | yes |
+| Appletini | dairy-free, gluten-free, pantry | yes |
 | Apple Steel-Cut Oatmeal | breakfast, easy, healthy, vegetarian, gluten-free, pantry | yes |
 | Best Hummus | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, legumes, pantry | yes |
 | Best Lentil Soup | lunch, dinner, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, soup, legumes, greens | yes |
@@ -5464,7 +5464,7 @@
 
 - Total recipes processed: 5470
 - Recipes with tag suggestions: 5454
-- Cached responses: 5451
+- Cached responses: 5454
 
 ## Tag Frequency
 
