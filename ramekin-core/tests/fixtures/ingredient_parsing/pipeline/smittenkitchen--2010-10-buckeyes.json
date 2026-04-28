@@ -90,7 +90,7 @@
     {
       "raw": "10 tablespoons (5 ounces or 140 grams) unsalted butter, melted and cooled",
       "expected": {
-        "item": "unsalted butter, melted and cooled",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "10",
@@ -105,7 +105,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "melted and cooled",
         "category": "Dairy & Eggs"
       }
     },

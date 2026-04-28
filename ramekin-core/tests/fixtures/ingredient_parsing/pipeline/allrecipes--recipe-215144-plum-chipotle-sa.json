@@ -5,14 +5,14 @@
     {
       "raw": "5 quarts very ripe plums, pitted, or as needed",
       "expected": {
-        "item": "very ripe plums, pitted, or as needed",
+        "item": "very ripe plums, pitted",
         "measurements": [
           {
             "amount": "5",
             "unit": "quart"
           }
         ],
-        "note": null,
+        "note": "or as needed",
         "category": "Produce"
       }
     },

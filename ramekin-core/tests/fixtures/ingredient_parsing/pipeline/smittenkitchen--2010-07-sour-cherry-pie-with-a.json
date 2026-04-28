@@ -91,14 +91,18 @@
     {
       "raw": "6 tablespoons unsalted butter, melted and cooled",
       "expected": {
-        "item": "unsalted butter, melted and cooled",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "melted and cooled",
         "category": "Dairy & Eggs"
       }
     },

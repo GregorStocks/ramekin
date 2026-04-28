@@ -93,14 +93,18 @@
     {
       "raw": "2 teaspoons butter, melted and cooled",
       "expected": {
-        "item": "butter, melted and cooled",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
+          },
+          {
+            "amount": "9.5",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "melted and cooled",
         "category": "Dairy & Eggs"
       }
     },

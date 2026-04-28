@@ -19,14 +19,14 @@
     {
       "raw": "1 1/2 cups cooked quinoa , cooled to room temperature (see Associated Recipes)",
       "expected": {
-        "item": "cooked quinoa, cooled to room temperature",
+        "item": "cooked quinoa",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "see Associated Recipes",
+        "note": "see Associated Recipes, cooled to room temperature",
         "category": "Pasta & Rice"
       }
     },

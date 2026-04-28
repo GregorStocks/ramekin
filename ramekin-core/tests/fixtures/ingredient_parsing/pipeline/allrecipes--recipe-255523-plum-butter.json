@@ -23,14 +23,18 @@
     {
       "raw": "0.25 cup water, or as needed",
       "expected": {
-        "item": "water, or as needed",
+        "item": "water",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "59",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or as needed",
         "category": "Other"
       }
     },

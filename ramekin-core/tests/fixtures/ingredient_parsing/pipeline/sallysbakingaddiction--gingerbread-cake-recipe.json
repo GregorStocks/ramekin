@@ -157,7 +157,7 @@
     {
       "raw": "1/2 cup (8 Tbsp; 113g) unsalted butter, softened to room temperature",
       "expected": {
-        "item": "unsalted butter, softened to room temperature",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -172,7 +172,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "softened to room temperature",
         "category": "Dairy & Eggs"
       }
     },
@@ -229,7 +229,7 @@
     {
       "raw": "8 ounces (226g) full-fat brick cream cheese, softened to room temperature",
       "expected": {
-        "item": "full-fat brick cream cheese, softened to room temperature",
+        "item": "full-fat brick cream cheese",
         "measurements": [
           {
             "amount": "8",
@@ -240,14 +240,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "softened to room temperature",
         "category": "Cheese"
       }
     },
     {
       "raw": "2 Tablespoons (28g) unsalted butter, softened to room temperature",
       "expected": {
-        "item": "unsalted butter, softened to room temperature",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "2",
@@ -258,7 +258,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "softened to room temperature",
         "category": "Dairy & Eggs"
       }
     },

@@ -46,14 +46,14 @@
     {
       "raw": "1/2 cup slivered almonds, very well toasted and cooled",
       "expected": {
-        "item": "slivered almonds, very well toasted and cooled",
+        "item": "slivered almonds",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "very well toasted and cooled",
         "category": "Nuts & Dried Fruit"
       }
     },

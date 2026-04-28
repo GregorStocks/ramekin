@@ -162,7 +162,7 @@
     {
       "raw": "1/2 to 3/4 cup (55 to 85 grams) walnuts, toasted, cooled and coarsely chopped",
       "expected": {
-        "item": "walnuts, toasted, cooled and coarsely chopped",
+        "item": "walnuts, toasted",
         "measurements": [
           {
             "amount": "0.5 to 0.75",
@@ -173,7 +173,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cooled and coarsely chopped",
         "category": "Nuts & Dried Fruit"
       }
     }

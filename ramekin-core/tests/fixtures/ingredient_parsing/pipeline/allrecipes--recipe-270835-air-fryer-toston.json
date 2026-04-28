@@ -28,14 +28,18 @@
     {
       "raw": "3 cups water, or as needed",
       "expected": {
-        "item": "water, or as needed",
+        "item": "water",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "711",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or as needed",
         "category": "Other"
       }
     },

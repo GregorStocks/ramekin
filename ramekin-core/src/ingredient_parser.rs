@@ -298,6 +298,7 @@ const PREP_NOTES: &[&str] = &[
     "uncooked",
     "combined",
     "reserved",
+    "cooled",
     "or more",
     "or less",
     "optional",
@@ -2678,7 +2679,7 @@ fn is_prep_note(s: &str) -> bool {
 fn is_trailing_prep_note(s: &str) -> bool {
     const PREP_FILLER_WORDS: &[&str] = &[
         "and", "but", "clean", "coarsely", "fine", "finely", "firmly", "freshly", "lightly",
-        "loosely", "not", "or", "roughly", "small", "thinly", "very", "well",
+        "loosely", "not", "or", "roughly", "small", "thinly", "to", "very", "well",
     ];
 
     let mut saw_prep = false;
@@ -2694,17 +2695,28 @@ fn is_trailing_prep_note(s: &str) -> bool {
             continue;
         }
 
-        for word in part.split_whitespace() {
-            let word = word.trim_matches(|c: char| !c.is_ascii_alphabetic());
-            if word.is_empty() || PREP_FILLER_WORDS.contains(&word) {
+        let words = part
+            .split_whitespace()
+            .map(|word| word.trim_matches(|c: char| !c.is_ascii_alphabetic()))
+            .filter(|word| !word.is_empty())
+            .collect::<Vec<_>>();
+        let mut word_index = 0;
+        while word_index < words.len() {
+            let word = words[word_index];
+            if PREP_FILLER_WORDS.contains(&word) {
+                word_index += 1;
                 continue;
             }
 
-            if PREP_NOTES
-                .iter()
-                .any(|note| word == *note || note.starts_with(&format!("{} ", word)))
-            {
+            if let Some(note_word_count) = PREP_NOTES.iter().find_map(|note| {
+                let note_words = note.split_whitespace().collect::<Vec<_>>();
+                words
+                    .get(word_index..word_index + note_words.len())
+                    .is_some_and(|candidate| candidate == note_words)
+                    .then_some(note_words.len())
+            }) {
                 saw_prep = true;
+                word_index += note_word_count;
             } else {
                 return false;
             }
@@ -3654,6 +3666,8 @@ mod tests {
         assert!(is_trailing_prep_note("chopped very small"));
         assert!(is_trailing_prep_note("scrubbed clean"));
         assert!(is_trailing_prep_note("scrubbed clean but not peeled"));
+        assert!(is_trailing_prep_note("thinly sliced for garnish"));
+        assert!(is_trailing_prep_note("cooled to room temperature"));
         assert!(!is_trailing_prep_note("unseasoned dried breadcrumbs"));
         assert!(!is_trailing_prep_note("cooked chicken meat"));
     }
@@ -3719,6 +3733,14 @@ mod tests {
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("0.25".to_string()));
         assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+    }
+
+    #[test]
+    fn test_mixed_trailing_prep_guidance_suffix_is_note_not_item_identity() {
+        let result = parse_ingredient("Oranges, thinly sliced for garnish");
+        assert_eq!(result.item, "Oranges");
+        assert_eq!(result.note, Some("thinly sliced for garnish".to_string()));
+        assert!(result.measurements.is_empty());
     }
 
     #[test]

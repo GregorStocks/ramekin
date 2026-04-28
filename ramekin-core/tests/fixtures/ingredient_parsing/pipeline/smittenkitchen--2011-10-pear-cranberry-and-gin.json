@@ -132,7 +132,7 @@
     {
       "raw": "1/2 cup (4 ounces or 113 grams or 1 stick) unsalted butter, melted and cooled",
       "expected": {
-        "item": "unsalted butter, melted and cooled",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -151,7 +151,7 @@
             "unit": "stick"
           }
         ],
-        "note": null,
+        "note": "melted and cooled",
         "category": "Dairy & Eggs"
       }
     },

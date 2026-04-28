@@ -573,7 +573,7 @@
     {
       "raw": "8 ounces (226 grams) unsweetened chocolate, melted and cooled",
       "expected": {
-        "item": "unsweetened chocolate, melted and cooled",
+        "item": "unsweetened chocolate",
         "measurements": [
           {
             "amount": "8",
@@ -584,7 +584,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "melted and cooled",
         "category": "Other"
       }
     },
@@ -679,7 +679,7 @@
     {
       "raw": "5 ounces (142 grams) unsweetened chocolate, melted and cooled",
       "expected": {
-        "item": "unsweetened chocolate, melted and cooled",
+        "item": "unsweetened chocolate",
         "measurements": [
           {
             "amount": "5",
@@ -690,7 +690,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "melted and cooled",
         "category": "Other"
       }
     }

@@ -179,14 +179,18 @@
     {
       "raw": "1 tablespoon extra-virgin olive oil, or as needed",
       "expected": {
-        "item": "extra-virgin olive oil, or as needed",
+        "item": "extra-virgin olive oil",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or as needed",
         "category": "Oils & Vinegars"
       }
     },

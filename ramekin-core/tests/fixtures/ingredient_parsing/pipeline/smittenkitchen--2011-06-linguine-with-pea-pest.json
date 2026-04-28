@@ -33,14 +33,18 @@
     {
       "raw": "2 tablespoons pine nuts, toasted and cooled",
       "expected": {
-        "item": "pine nuts, toasted and cooled",
+        "item": "pine nuts",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "17",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "toasted and cooled",
         "category": "Nuts & Dried Fruit"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "1 cup walnut halves and pieces, toasted and cooled",
       "expected": {
-        "item": "walnut halves and pieces, toasted and cooled",
+        "item": "walnut halves and pieces",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "toasted and cooled",
         "category": "Nuts & Dried Fruit"
       }
     },

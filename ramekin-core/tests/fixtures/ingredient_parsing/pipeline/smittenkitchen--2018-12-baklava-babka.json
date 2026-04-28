@@ -5,7 +5,7 @@
     {
       "raw": "6 tablespoons (85 grams) unsalted butter, melted and cooled",
       "expected": {
-        "item": "unsalted butter, melted and cooled",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "6",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "melted and cooled",
         "category": "Dairy & Eggs"
       }
     },

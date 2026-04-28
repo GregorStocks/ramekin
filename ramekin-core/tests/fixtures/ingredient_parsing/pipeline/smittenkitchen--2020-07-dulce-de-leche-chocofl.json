@@ -257,7 +257,7 @@
     {
       "raw": "1/2 cup (120 ml) brewed coffee, cooled",
       "expected": {
-        "item": "brewed coffee, cooled",
+        "item": "brewed coffee",
         "measurements": [
           {
             "amount": "0.5",
@@ -268,7 +268,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "cooled",
         "category": "Beverages"
       }
     },

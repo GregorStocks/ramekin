@@ -50,14 +50,18 @@
     {
       "raw": "¼ cup all-purpose flour, or as needed",
       "expected": {
-        "item": "all-purpose flour, or as needed",
+        "item": "all-purpose flour",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "31",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or as needed",
         "category": "Baking"
       }
     },

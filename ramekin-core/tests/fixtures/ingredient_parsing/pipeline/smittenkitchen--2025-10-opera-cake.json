@@ -163,7 +163,7 @@
     {
       "raw": "2 tablespoons (30 ml) espresso, cooled",
       "expected": {
-        "item": "espresso, cooled",
+        "item": "espresso",
         "measurements": [
           {
             "amount": "2",
@@ -174,7 +174,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "cooled",
         "category": "Beverages"
       }
     },

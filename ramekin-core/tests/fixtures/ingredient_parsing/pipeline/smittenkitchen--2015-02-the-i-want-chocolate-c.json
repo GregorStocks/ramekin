@@ -300,7 +300,7 @@
     {
       "raw": "2 ounces (55 grams) unsweetened chocolate, melted and cooled",
       "expected": {
-        "item": "unsweetened chocolate, melted and cooled",
+        "item": "unsweetened chocolate",
         "measurements": [
           {
             "amount": "2",
@@ -311,7 +311,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "melted and cooled",
         "category": "Other"
       }
     },

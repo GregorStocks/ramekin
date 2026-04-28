@@ -27,14 +27,18 @@
     {
       "raw": "2 cups vegetable oil, or as needed",
       "expected": {
-        "item": "vegetable oil, or as needed",
+        "item": "vegetable oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "436",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or as needed",
         "category": "Oils & Vinegars"
       }
     }

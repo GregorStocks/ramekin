@@ -23,7 +23,7 @@
     {
       "raw": "1 cup (8 ounces or 225 grams) butter, room temperature (for electric mixer) or cold (for food processor)",
       "expected": {
-        "item": "butter, room temperature or cold",
+        "item": "butter",
         "measurements": [
           {
             "amount": "1",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "for electric mixer, for food processor",
+        "note": "for electric mixer, for food processor, room temperature or cold",
         "category": "Dairy & Eggs"
       }
     },
