@@ -1647,7 +1647,9 @@ fn is_parenthetical_price_metadata(segment: &str) -> bool {
         return is_valid_price_dollars(price);
     };
 
-    is_valid_price_dollars(dollars) && cents.len() == 2 && cents.chars().all(|c| c.is_ascii_digit())
+    (dollars.is_empty() || is_valid_price_dollars(dollars))
+        && cents.len() == 2
+        && cents.chars().all(|c| c.is_ascii_digit())
 }
 
 fn is_valid_price_dollars(dollars: &str) -> bool {
@@ -4290,6 +4292,16 @@ mod tests {
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("6".to_string()));
         assert_eq!(result.measurements[0].unit, Some("oz".to_string()));
+    }
+
+    #[test]
+    fn test_parenthetical_cents_only_price_metadata_is_not_preserved_as_note() {
+        let result = parse_ingredient("3 bananas ($.99)");
+        assert_eq!(result.item, "bananas");
+        assert_eq!(result.note, None);
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("3".to_string()));
+        assert_eq!(result.measurements[0].unit, None);
     }
 
     #[test]
