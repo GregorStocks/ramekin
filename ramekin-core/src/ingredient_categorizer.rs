@@ -15,15 +15,37 @@ struct IngredientsData {
 
 /// Ingredient map loaded from JSON and sorted by keyword length (longest first).
 /// This ensures more specific matches are tried before general ones.
-static INGREDIENT_MAP: LazyLock<Vec<(String, String)>> = LazyLock::new(|| {
+struct IngredientRule {
+    keyword: String,
+    keyword_tokens: Vec<String>,
+    category: String,
+}
+
+static INGREDIENT_MAP: LazyLock<Vec<IngredientRule>> = LazyLock::new(|| {
     let json = include_str!("../../data/ingredients.json");
     let data: IngredientsData =
         serde_json::from_str(json).expect("Failed to parse ingredients.json");
 
-    let mut map: Vec<(String, String)> = data.categories.into_iter().collect();
+    let mut map: Vec<IngredientRule> = data
+        .categories
+        .into_iter()
+        .map(|(keyword, category)| IngredientRule {
+            keyword_tokens: word_tokens(&keyword)
+                .into_iter()
+                .map(str::to_string)
+                .collect(),
+            keyword,
+            category,
+        })
+        .collect();
     // Sort by keyword length descending so longer/more specific matches are tried first.
     // Secondary sort by keyword alphabetically for deterministic ordering.
-    map.sort_by(|a, b| b.0.len().cmp(&a.0.len()).then_with(|| a.0.cmp(&b.0)));
+    map.sort_by(|a, b| {
+        b.keyword
+            .len()
+            .cmp(&a.keyword.len())
+            .then_with(|| a.keyword.cmp(&b.keyword))
+    });
     map
 });
 
@@ -61,27 +83,25 @@ fn category_to_static(category: &str) -> &'static str {
 /// Matching is case-insensitive and looks for keyword containment.
 pub fn categorize(item: &str) -> &'static str {
     let lower = item.to_lowercase();
+    let item_tokens = word_tokens(&lower);
 
-    for (keyword, category) in INGREDIENT_MAP.iter() {
-        if keyword_matches(&lower, keyword) {
-            return category_to_static(category);
+    for rule in INGREDIENT_MAP.iter() {
+        if keyword_matches(&item_tokens, &rule.keyword_tokens) {
+            return category_to_static(&rule.category);
         }
     }
 
     "Other"
 }
 
-fn keyword_matches(item: &str, keyword: &str) -> bool {
-    let item_tokens = word_tokens(item);
-    let keyword_tokens = word_tokens(keyword);
-
+fn keyword_matches(item_tokens: &[&str], keyword_tokens: &[String]) -> bool {
     if keyword_tokens.is_empty() || item_tokens.len() < keyword_tokens.len() {
         return false;
     }
 
     item_tokens
         .windows(keyword_tokens.len())
-        .any(|window| keyword_tokens_match(window, &keyword_tokens))
+        .any(|window| keyword_tokens_match(window, keyword_tokens))
 }
 
 fn word_tokens(text: &str) -> Vec<&str> {
@@ -90,11 +110,13 @@ fn word_tokens(text: &str) -> Vec<&str> {
         .collect()
 }
 
-fn keyword_tokens_match(item_tokens: &[&str], keyword_tokens: &[&str]) -> bool {
+fn keyword_tokens_match(item_tokens: &[&str], keyword_tokens: &[String]) -> bool {
     let last_index = keyword_tokens.len() - 1;
 
     item_tokens.iter().zip(keyword_tokens).enumerate().all(
         |(index, (item_token, keyword_token))| {
+            let item_token = *item_token;
+            let keyword_token = keyword_token.as_str();
             if index == last_index {
                 token_matches_keyword(item_token, keyword_token)
             } else {
@@ -173,5 +195,12 @@ mod tests {
         assert_eq!(categorize("Beefeater"), "Other");
         assert_eq!(categorize("ginger"), "Produce");
         assert_eq!(categorize("graham cracker crumbs"), "Snacks");
+    }
+
+    #[test]
+    fn test_ginger_mixer_categories() {
+        assert_eq!(categorize("ginger beer"), "Beverages");
+        assert_eq!(categorize("ginger ale"), "Beverages");
+        assert_eq!(categorize("fresh ginger root"), "Produce");
     }
 }
