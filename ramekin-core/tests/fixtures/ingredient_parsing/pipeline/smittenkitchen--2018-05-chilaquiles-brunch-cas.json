@@ -5,14 +5,14 @@
     {
       "raw": "12 small (6-inch) corn tortillas, quartered and fried until crisp",
       "expected": {
-        "item": "corn tortillas, quartered and fried until crisp",
+        "item": "corn tortillas",
         "measurements": [
           {
             "amount": "12",
             "unit": "small"
           }
         ],
-        "note": "6-inch",
+        "note": "6-inch, quartered and fried until crisp",
         "category": "Bakery & Bread"
       }
     },

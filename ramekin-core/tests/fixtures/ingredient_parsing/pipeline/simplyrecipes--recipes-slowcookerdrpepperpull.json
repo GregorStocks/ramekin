@@ -73,14 +73,14 @@
     {
       "raw": "2 red onions, cut into slices",
       "expected": {
-        "item": "red onions, cut into slices",
+        "item": "red onions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into slices",
         "category": "Produce"
       }
     },

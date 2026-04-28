@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds (900 grams) granny smith or another tart baking apple, peeled, cored, cut into 1-inch chunks",
       "expected": {
-        "item": "granny smith or another tart baking apple, peeled, cored, cut into 1-inch chunks",
+        "item": "granny smith or another tart baking apple, peeled, cored",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch chunks",
         "category": "Produce"
       }
     },
@@ -230,7 +230,7 @@
     {
       "raw": "½ cup (4 ounces or 115 grams) unsalted butter, cold, cut into pieces",
       "expected": {
-        "item": "unsalted butter, cold, cut into pieces",
+        "item": "unsalted butter, cold",
         "measurements": [
           {
             "amount": "0.5",
@@ -245,7 +245,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },

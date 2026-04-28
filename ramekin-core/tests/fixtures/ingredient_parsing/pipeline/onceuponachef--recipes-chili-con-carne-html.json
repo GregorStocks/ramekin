@@ -115,21 +115,21 @@
     {
       "raw": "1 (4-pound) beef chuck roast, trimmed of excess fat and cut into 1½-inch cubes (see note below)",
       "expected": {
-        "item": "beef chuck roast, trimmed of excess fat and cut into 1 1/2-inch cubes",
+        "item": "beef chuck roast",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "4-pound, see note below",
+        "note": "4-pound, see note below, trimmed of excess fat and cut into 1 1/2-inch cubes",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "8 ounces (about 8 slices) bacon, cut into ¼-inch pieces (see tip below)",
       "expected": {
-        "item": "bacon, cut into 1/4-inch pieces",
+        "item": "bacon",
         "measurements": [
           {
             "amount": "8",
@@ -144,7 +144,7 @@
             "unit": "g"
           }
         ],
-        "note": "see tip below",
+        "note": "about 8 slices, see tip below, cut into 1/4-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -169,14 +169,14 @@
     {
       "raw": "2  small yellow onions, cut into 1-inch chunks",
       "expected": {
-        "item": "yellow onions, cut into 1-inch chunks",
+        "item": "yellow onions",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch chunks",
         "category": "Produce"
       }
     },
@@ -197,14 +197,14 @@
     {
       "raw": "3  jalapeño chiles, cored, seeded and finely diced (see note)",
       "expected": {
-        "item": "jalapeño chiles, cored, seeded and finely diced",
+        "item": "jalapeño chiles, cored",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "see note",
+        "note": "see note, seeded and finely diced",
         "category": "Produce"
       }
     },

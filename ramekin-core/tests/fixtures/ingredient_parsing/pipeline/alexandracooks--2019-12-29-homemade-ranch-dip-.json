@@ -128,9 +128,9 @@
     {
       "raw": "endive, quartered through the core or cut into sixths",
       "expected": {
-        "item": "endive, quartered through the core or cut into sixths",
+        "item": "endive",
         "measurements": [],
-        "note": null,
+        "note": "quartered through the core or cut into sixths",
         "category": "Produce"
       }
     },
@@ -155,9 +155,9 @@
     {
       "raw": "carrots, cut into sticks",
       "expected": {
-        "item": "carrots, cut into sticks",
+        "item": "carrots",
         "measurements": [],
-        "note": null,
+        "note": "cut into sticks",
         "category": "Produce"
       }
     },

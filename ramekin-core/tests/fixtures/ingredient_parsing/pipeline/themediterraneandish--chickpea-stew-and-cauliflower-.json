@@ -119,28 +119,28 @@
     {
       "raw": "1 whole head cauliflower, divided into small florets",
       "expected": {
-        "item": "whole head cauliflower, divided into small florets",
+        "item": "whole head cauliflower",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "divided into small florets",
         "category": "Produce"
       }
     },
     {
       "raw": "5 medium-sized bulk carrots, peeled, cut into 1 1/2&amp;#8243; pieces",
       "expected": {
-        "item": "medium-sized bulk carrots, peeled, cut into 1 1/2″ pieces",
+        "item": "medium-sized bulk carrots, peeled",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1 1/2″ pieces",
         "category": "Produce"
       }
     },

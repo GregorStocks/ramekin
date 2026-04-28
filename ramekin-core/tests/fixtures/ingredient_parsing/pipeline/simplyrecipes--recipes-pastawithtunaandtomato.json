@@ -92,14 +92,14 @@
     {
       "raw": "1/4 cup fresh basil, chopped or torn",
       "expected": {
-        "item": "fresh basil, chopped or torn",
+        "item": "fresh basil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "chopped or torn",
         "category": "Produce"
       }
     },

@@ -55,14 +55,14 @@
     {
       "raw": "¼ cup jarred sliced jalapeños, chopped coarse",
       "expected": {
-        "item": "jarred sliced jalapeños, chopped coarse",
+        "item": "jarred sliced jalapeños",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "chopped coarse",
         "category": "Produce"
       }
     },

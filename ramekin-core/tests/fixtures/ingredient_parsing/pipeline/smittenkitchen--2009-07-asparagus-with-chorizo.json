@@ -5,7 +5,7 @@
     {
       "raw": "1 pound large, thick, firm asparagus, lower third of the stalks peeled with a vegetable peeler or snapped off",
       "expected": {
-        "item": "large, thick, firm asparagus, lower third of the stalks peeled with a vegetable peeler or snapped off",
+        "item": "large, thick, firm asparagus",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "lower third of the stalks peeled with a vegetable peeler or snapped off",
         "category": "Produce"
       }
     },
@@ -37,7 +37,7 @@
     {
       "raw": "4 ounces Spanish chorizo (but Portuguese chouriço will work as well), cut into 3/4-inch pieces",
       "expected": {
-        "item": "Spanish chorizo, cut into 3/4-inch pieces",
+        "item": "Spanish chorizo",
         "measurements": [
           {
             "amount": "4",
@@ -48,21 +48,21 @@
             "unit": "g"
           }
         ],
-        "note": "but Portuguese chouriço will work as well",
+        "note": "but Portuguese chouriço will work as well, cut into 3/4-inch pieces",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 1/2 cups 3/4-inch bread cubes (croutons), preferably from a baguette or country bread loaf",
       "expected": {
-        "item": "3/4-inch bread cubes, preferably from a baguette or country bread loaf",
+        "item": "3/4-inch bread cubes",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "croutons",
+        "note": "croutons, preferably from a baguette or country bread loaf",
         "category": "Bakery & Bread"
       }
     },

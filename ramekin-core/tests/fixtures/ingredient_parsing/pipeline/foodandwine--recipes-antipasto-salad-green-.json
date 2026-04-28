@@ -19,14 +19,14 @@
     {
       "raw": "1/4 cup pepperoncini — stemmed, seeded and finely chopped",
       "expected": {
-        "item": "pepperoncini - stemmed, seeded and finely chopped",
+        "item": "pepperoncini - stemmed",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "seeded and finely chopped",
         "category": "Spices & Seasonings"
       }
     },
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": "mozzarella balls",
+        "note": "mozzarella balls, about 9 ounces",
         "category": "Other"
       }
     },
@@ -177,7 +177,7 @@
     {
       "raw": "6 ounces thinly sliced Genoa salami, cut into thin strips (1 1/2 cups)",
       "expected": {
-        "item": "thinly sliced Genoa salami, cut into thin strips",
+        "item": "thinly sliced Genoa salami",
         "measurements": [
           {
             "amount": "6",
@@ -192,7 +192,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into thin strips",
         "category": "Meat & Seafood"
       }
     },

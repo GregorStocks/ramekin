@@ -309,14 +309,14 @@
     {
       "raw": "3 “hearts” or 2 full heads of romaine, chopped to the size you like",
       "expected": {
-        "item": "“hearts” or 2 full heads of romaine, chopped to the size you like",
+        "item": "“hearts” or 2 full heads of romaine",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "chopped to the size you like",
         "category": "Produce"
       }
     },

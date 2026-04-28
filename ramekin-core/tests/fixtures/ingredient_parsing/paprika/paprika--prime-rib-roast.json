@@ -5,14 +5,14 @@
     {
       "raw": "1 3-to-4-rib roast of beef, approximately 8 to 10 pounds",
       "expected": {
-        "item": "3-to-4-rib roast of beef, approximately 8 to 10 pounds",
+        "item": "3-to-4-rib roast of beef",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "approximately 8 to 10 pounds",
         "category": "Meat & Seafood"
       }
     },

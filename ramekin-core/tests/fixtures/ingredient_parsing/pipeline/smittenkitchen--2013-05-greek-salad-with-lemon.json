@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped",
+        "note": "about 6 to 7 ounces, chopped",
         "category": "Produce"
       }
     },
@@ -56,7 +56,7 @@
             "unit": "g"
           }
         ],
-        "note": "halved",
+        "note": "about 6 ounces, halved",
         "category": "Produce"
       }
     },
@@ -150,14 +150,14 @@
     {
       "raw": "1 sprig oregano, leaves minced",
       "expected": {
-        "item": "oregano, leaves minced",
+        "item": "oregano",
         "measurements": [
           {
             "amount": "1",
             "unit": "sprig"
           }
         ],
-        "note": null,
+        "note": "leaves minced",
         "category": "Spices & Seasonings"
       }
     }

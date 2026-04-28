@@ -153,7 +153,7 @@
     {
       "raw": "6 cups (1.4 liters) vegetable broth + splashes more, if needed",
       "expected": {
-        "item": "vegetable broth + splashes more, if needed",
+        "item": "vegetable broth + splashes more",
         "measurements": [
           {
             "amount": "6",
@@ -164,7 +164,7 @@
             "unit": "l"
           }
         ],
-        "note": null,
+        "note": "if needed",
         "category": "Canned Goods"
       }
     },

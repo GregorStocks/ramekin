@@ -69,14 +69,18 @@
     {
       "raw": "1½ cups pure maple syrup, preferably Grade B (Grade A works fine too)",
       "expected": {
-        "item": "pure maple syrup, preferably Grade B",
+        "item": "pure maple syrup",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
+          },
+          {
+            "amount": "472",
+            "unit": "g"
           }
         ],
-        "note": "Grade A works fine too",
+        "note": "Grade A works fine too, preferably Grade B",
         "category": "Baking"
       }
     },
@@ -151,14 +155,14 @@
     {
       "raw": "1 cup coarsely chopped walnuts, toasted if desired (optional)",
       "expected": {
-        "item": "coarsely chopped walnuts, toasted if desired",
+        "item": "coarsely chopped walnuts",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "optional",
+        "note": "optional, toasted if desired",
         "category": "Nuts & Dried Fruit"
       }
     },

@@ -215,9 +215,9 @@
     {
       "raw": "Few leaves of fresh basil, torn or sliced",
       "expected": {
-        "item": "Few leaves of fresh basil, torn or sliced",
+        "item": "Few leaves of fresh basil",
         "measurements": [],
-        "note": null,
+        "note": "torn or sliced",
         "section": "Pizza",
         "category": "Produce"
       }

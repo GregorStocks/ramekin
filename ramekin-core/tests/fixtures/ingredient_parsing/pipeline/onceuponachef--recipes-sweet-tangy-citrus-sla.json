@@ -76,13 +76,8 @@
       "raw": "Zest and juice from 1 orange (about 1 teaspoon zest and ¼ cup juice)",
       "expected": {
         "item": "Zest and juice from 1 orange",
-        "measurements": [
-          {
-            "amount": "1",
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
+        "measurements": [],
+        "note": "about 1 teaspoon zest and 1/4 cup juice",
         "category": "Produce"
       }
     },

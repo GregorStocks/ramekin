@@ -9,7 +9,7 @@
     {
       "raw": "1 pound (454 g) dried Great Northern white beans or Cannellini white beans, picked off any debris and rinsed",
       "expected": {
-        "item": "dried Great Northern white beans or Cannellini white beans, picked off any debris and rinsed",
+        "item": "dried Great Northern white beans or Cannellini white beans",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "picked off any debris and rinsed",
         "section": "For the Beans",
         "category": "Canned Goods"
       }
@@ -256,7 +256,7 @@
     {
       "raw": "1 1/4 pounds (567 g) boneless lamb stew meat (lamb neck, leg, or shoulder, or a combination),trimmed of excess fat and cut into 2- to 3-inch pieces",
       "expected": {
-        "item": "boneless lamb stew meat,trimmed of excess fat and cut into 2- to 3-inch pieces",
+        "item": "boneless lamb stew meat",
         "measurements": [
           {
             "amount": "1.25",
@@ -267,7 +267,7 @@
             "unit": "g"
           }
         ],
-        "note": "lamb neck, leg, or shoulder, or a combination",
+        "note": "lamb neck, leg, or shoulder, or a combination, trimmed of excess fat and cut into 2- to 3-inch pieces",
         "section": "For the Stew",
         "category": "Meat & Seafood"
       }
@@ -300,7 +300,7 @@
             "unit": "g"
           }
         ],
-        "note": "alternatively use 7 ounces canned chopped tomatoes",
+        "note": "about 10 ounces; 285 g, alternatively use 7 ounces canned chopped tomatoes",
         "section": "For the Stew",
         "category": "Produce"
       }

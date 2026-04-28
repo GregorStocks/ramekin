@@ -23,7 +23,7 @@
     {
       "raw": "3/4 cup (60 grams) unsweetened cocoa, any variety, sifted if lumpy",
       "expected": {
-        "item": "unsweetened cocoa, any variety, sifted if lumpy",
+        "item": "unsweetened cocoa, any variety",
         "measurements": [
           {
             "amount": "0.75",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sifted if lumpy",
         "category": "Baking"
       }
     },

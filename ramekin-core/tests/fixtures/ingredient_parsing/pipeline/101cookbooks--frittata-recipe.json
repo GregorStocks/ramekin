@@ -37,14 +37,18 @@
     {
       "raw": "2 tablespoons lemon juice, freshly squeezed",
       "expected": {
-        "item": "lemon juice, freshly squeezed",
+        "item": "lemon juice",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "freshly squeezed",
         "category": "Beverages"
       }
     },

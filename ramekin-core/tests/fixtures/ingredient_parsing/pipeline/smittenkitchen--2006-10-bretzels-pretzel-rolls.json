@@ -150,14 +150,14 @@
     {
       "raw": "1 egg white, beaten to blend (glaze)",
       "expected": {
-        "item": "egg white, beaten to blend",
+        "item": "egg white",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "glaze",
+        "note": "glaze, beaten to blend",
         "category": "Dairy & Eggs"
       }
     },

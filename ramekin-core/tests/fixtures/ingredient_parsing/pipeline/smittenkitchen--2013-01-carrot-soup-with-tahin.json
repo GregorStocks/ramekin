@@ -68,14 +68,14 @@
     {
       "raw": "4 regular or 6 small garlic cloves, peeled and smashed",
       "expected": {
-        "item": "regular or 6 small garlic cloves, peeled and smashed",
+        "item": "regular or 6 small garlic cloves",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and smashed",
         "category": "Produce"
       }
     },
@@ -177,7 +177,7 @@
     {
       "raw": "1 3/4 cups cooked chickpeas, or 1 15-ounce (425-gram) can, drained, patted dry on paper towels",
       "expected": {
-        "item": "cooked chickpeas, or 1 15-ounce can, drained, patted dry on paper towels",
+        "item": "cooked chickpeas, or 1 15-ounce can, drained",
         "measurements": [
           {
             "amount": "1.75",
@@ -188,7 +188,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "patted dry on paper towels",
         "category": "Canned Goods"
       }
     },
@@ -210,7 +210,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "15 ml or so",
         "category": "Oils & Vinegars"
       }
     },
@@ -343,9 +343,9 @@
     {
       "raw": "A few large pitas, cut into 8 wedges",
       "expected": {
-        "item": "A few large pitas, cut into 8 wedges",
+        "item": "A few large pitas",
         "measurements": [],
-        "note": null,
+        "note": "cut into 8 wedges",
         "category": "Bakery & Bread"
       }
     },

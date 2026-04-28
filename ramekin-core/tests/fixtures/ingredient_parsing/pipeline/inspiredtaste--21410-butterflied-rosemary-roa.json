@@ -65,28 +65,28 @@
     {
       "raw": "4 carrots, peeled and cut into 1-inch chunks",
       "expected": {
-        "item": "carrots, peeled and cut into 1-inch chunks",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and cut into 1-inch chunks",
         "category": "Produce"
       }
     },
     {
       "raw": "2 medium potatoes, cut into 1-inch chunks",
       "expected": {
-        "item": "potatoes, cut into 1-inch chunks",
+        "item": "potatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch chunks",
         "category": "Produce"
       }
     },

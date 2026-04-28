@@ -41,7 +41,7 @@
     {
       "raw": "3/4 cup (175 ml) milk, ideally whole but lowfat should work",
       "expected": {
-        "item": "milk, ideally whole but lowfat should work",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.75",
@@ -50,9 +50,13 @@
           {
             "amount": "175",
             "unit": "ml"
+          },
+          {
+            "amount": "184",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "ideally whole but lowfat should work",
         "category": "Dairy & Eggs"
       }
     },

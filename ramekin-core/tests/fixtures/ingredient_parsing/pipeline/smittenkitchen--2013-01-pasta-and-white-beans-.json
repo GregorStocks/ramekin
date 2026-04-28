@@ -5,14 +5,14 @@
     {
       "raw": "1 medium onion, cut into big chunks",
       "expected": {
-        "item": "onion, cut into big chunks",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into big chunks",
         "category": "Produce"
       }
     },

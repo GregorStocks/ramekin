@@ -84,14 +84,14 @@
     {
       "raw": "¾ cup Almond Breeze Almondmilk Cashewmilk, more as needed",
       "expected": {
-        "item": "Almond Breeze Almondmilk Cashewmilk, more as needed",
+        "item": "Almond Breeze Almondmilk Cashewmilk",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "more as needed",
         "category": "Nuts & Dried Fruit"
       }
     }

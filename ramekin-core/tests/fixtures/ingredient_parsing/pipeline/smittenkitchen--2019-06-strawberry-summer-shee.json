@@ -163,7 +163,7 @@
     {
       "raw": "1 1/2 pounds (680 grams) of the freshest, even a touch overripe, strawberries, hulled and halved",
       "expected": {
-        "item": "the freshest, even a touch overripe, strawberries, hulled and halved",
+        "item": "the freshest, even a touch overripe, strawberries",
         "measurements": [
           {
             "amount": "1.5",
@@ -174,7 +174,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "hulled and halved",
         "category": "Produce"
       }
     }

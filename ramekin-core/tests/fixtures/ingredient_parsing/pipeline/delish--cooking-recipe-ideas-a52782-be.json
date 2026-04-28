@@ -123,7 +123,7 @@
     {
       "raw": "1 lb. asparagus, trimmed, cut into thirds, quartered if large",
       "expected": {
-        "item": "asparagus, trimmed, cut into thirds, quartered if large",
+        "item": "asparagus, trimmed, cut into thirds",
         "measurements": [
           {
             "amount": "1",
@@ -134,7 +134,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "quartered if large",
         "category": "Produce"
       }
     },
@@ -191,14 +191,14 @@
     {
       "raw": "2 lemons, 1 juiced, 1 sliced into half-moons",
       "expected": {
-        "item": "lemons, 1 juiced, 1 sliced into half-moons",
+        "item": "lemons, 1 juiced",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "1 sliced into half-moons",
         "category": "Beverages"
       }
     },

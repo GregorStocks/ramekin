@@ -5,7 +5,7 @@
     {
       "raw": "1.25 pounds skinless cod fillet, about 1 inch thick, cut into 8 portions",
       "expected": {
-        "item": "skinless cod fillet, about 1 inch thick, cut into 8 portions",
+        "item": "skinless cod fillet, about 1 inch thick",
         "measurements": [
           {
             "amount": "1.25",
@@ -16,8 +16,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Beverages"
+        "note": "cut into 8 portions",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -141,14 +141,14 @@
     {
       "raw": "0.75 cup beer, preferably lager",
       "expected": {
-        "item": "beer, preferably lager",
+        "item": "beer",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "preferably lager",
         "category": "Beverages"
       }
     },

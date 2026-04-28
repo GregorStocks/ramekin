@@ -5,7 +5,7 @@
     {
       "raw": "1 pound carrots, cut into 1/4-inch slices",
       "expected": {
-        "item": "carrots, cut into 1/4-inch slices",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch slices",
         "category": "Produce"
       }
     },
@@ -51,14 +51,14 @@
     {
       "raw": "3 medium onions, sliced and separated into rings",
       "expected": {
-        "item": "onions, sliced and separated into rings",
+        "item": "onions",
         "measurements": [
           {
             "amount": "3",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "sliced and separated into rings",
         "category": "Produce"
       }
     },

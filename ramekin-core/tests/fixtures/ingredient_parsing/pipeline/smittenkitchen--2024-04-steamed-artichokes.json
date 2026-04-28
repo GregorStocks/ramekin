@@ -33,9 +33,9 @@
     {
       "raw": "Salt, freshly ground black pepper",
       "expected": {
-        "item": "Salt, freshly ground black pepper",
+        "item": "salt, presumably Diamond",
         "measurements": [],
-        "note": null,
+        "note": "freshly ground black pepper",
         "category": "Spices & Seasonings"
       }
     },
@@ -51,9 +51,9 @@
     {
       "raw": "A few garlic cloves, halved lengthwise (optional)",
       "expected": {
-        "item": "A few garlic cloves, halved lengthwise",
+        "item": "A few garlic cloves",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, halved lengthwise",
         "category": "Produce"
       }
     },

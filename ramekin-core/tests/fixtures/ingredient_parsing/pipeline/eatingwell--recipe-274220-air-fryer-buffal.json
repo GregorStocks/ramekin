@@ -137,28 +137,28 @@
     {
       "raw": "2 carrots, cut into sticks",
       "expected": {
-        "item": "carrots, cut into sticks",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into sticks",
         "category": "Produce"
       }
     },
     {
       "raw": "1 stalk celery, cut into sticks",
       "expected": {
-        "item": "celery, cut into sticks",
+        "item": "celery",
         "measurements": [
           {
             "amount": "1",
             "unit": "stalk"
           }
         ],
-        "note": null,
+        "note": "cut into sticks",
         "category": "Produce"
       }
     }

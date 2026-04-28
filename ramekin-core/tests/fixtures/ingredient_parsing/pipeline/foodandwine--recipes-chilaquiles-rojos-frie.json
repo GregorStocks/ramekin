@@ -5,7 +5,7 @@
     {
       "raw": "1 1/2 pounds plum tomatoes (about 8 medium), halved lengthwise",
       "expected": {
-        "item": "plum tomatoes, halved lengthwise",
+        "item": "plum tomatoes",
         "measurements": [
           {
             "amount": "1.5",
@@ -20,77 +20,77 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 8 medium, halved lengthwise",
         "category": "Produce"
       }
     },
     {
       "raw": "1 medium-size white onion, cut into 1-inch wedges",
       "expected": {
-        "item": "medium-size white onion, cut into 1-inch wedges",
+        "item": "medium-size white onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch wedges",
         "category": "Produce"
       }
     },
     {
       "raw": "2 dried chiles de árbol, stemmed and seeded",
       "expected": {
-        "item": "dried chiles de árbol, stemmed and seeded",
+        "item": "dried chiles de árbol",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "stemmed and seeded",
+        "category": "Other"
       }
     },
     {
       "raw": "5 dried guajillo chiles, stemmed and seeded",
       "expected": {
-        "item": "dried guajillo chiles, stemmed and seeded",
+        "item": "dried guajillo chiles",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "stemmed and seeded",
+        "category": "Other"
       }
     },
     {
       "raw": "1 dried chipotle chile, stemmed and seeded",
       "expected": {
-        "item": "dried chipotle chile, stemmed and seeded",
+        "item": "dried chipotle chile",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "stemmed and seeded",
         "category": "Snacks"
       }
     },
     {
       "raw": "3 medium garlic cloves, unpeeled",
       "expected": {
-        "item": "garlic cloves, unpeeled",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "3",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "unpeeled",
         "category": "Produce"
       }
     },
@@ -236,7 +236,7 @@
             "unit": "g"
           }
         ],
-        "note": "crumbled",
+        "note": "about 2 cups, crumbled",
         "category": "Cheese"
       }
     },

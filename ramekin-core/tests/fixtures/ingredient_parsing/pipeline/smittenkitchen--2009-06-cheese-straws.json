@@ -20,14 +20,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 6 ounces",
         "category": "Cheese"
       }
     },
     {
       "raw": "4 tablespoons (1/2 stick or 2 ounces) unsalted butter, softened and cut into 4 pieces",
       "expected": {
-        "item": "unsalted butter, softened and cut into 4 pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "4",
@@ -46,7 +46,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "softened and cut into 4 pieces",
         "category": "Dairy & Eggs"
       }
     },

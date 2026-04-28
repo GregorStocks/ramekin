@@ -125,28 +125,28 @@
     {
       "raw": "1 large carrot, peeled and cut into large chunks",
       "expected": {
-        "item": "carrot, peeled and cut into large chunks",
+        "item": "carrot",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "peeled and cut into large chunks",
         "category": "Produce"
       }
     },
     {
       "raw": "1 small daikon, peeled and cut into large chunks",
       "expected": {
-        "item": "daikon, peeled and cut into large chunks",
+        "item": "daikon",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "peeled and cut into large chunks",
         "category": "Produce"
       }
     },

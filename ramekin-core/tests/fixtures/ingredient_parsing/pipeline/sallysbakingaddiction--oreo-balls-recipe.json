@@ -77,9 +77,9 @@
     {
       "raw": "optional for garnish: sprinkles, Oreo crumbs, additional melted chocolate",
       "expected": {
-        "item": "optional for garnish: sprinkles, Oreo crumbs, additional melted chocolate",
+        "item": "optional for garnish: sprinkles, Oreo crumbs",
         "measurements": [],
-        "note": null,
+        "note": "additional melted chocolate",
         "category": "Baking"
       }
     }

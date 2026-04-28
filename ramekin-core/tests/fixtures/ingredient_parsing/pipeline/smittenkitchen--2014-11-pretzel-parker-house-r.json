@@ -126,11 +126,11 @@
             "unit": "tsp"
           },
           {
-            "amount": "7",
+            "amount": "5",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "half a 1/4-ounce or 7-gram packet",
         "category": "Baking"
       }
     },
@@ -236,14 +236,14 @@
     {
       "raw": "1 egg, beaten with 1 teaspoon water",
       "expected": {
-        "item": "egg, beaten with 1 teaspoon water",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "beaten with 1 teaspoon water",
         "category": "Dairy & Eggs"
       }
     },

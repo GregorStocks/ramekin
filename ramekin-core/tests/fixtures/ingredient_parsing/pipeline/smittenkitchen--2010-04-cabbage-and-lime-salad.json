@@ -16,7 +16,7 @@
             "unit": "cup"
           }
         ],
-        "note": "and shredded",
+        "note": "about 6 cups, and shredded",
         "category": "Produce"
       }
     },
@@ -34,7 +34,7 @@
             "unit": "cup"
           }
         ],
-        "note": "and shredded",
+        "note": "about 6 cups, and shredded",
         "category": "Produce"
       }
     },
@@ -59,14 +59,14 @@
     {
       "raw": "1 bunch fresh baby spinach, stemmed and cut into 1/2-inch wide ribbons (about 4 cups loosely packed)",
       "expected": {
-        "item": "fresh baby spinach, stemmed and cut into 1/2-inch wide ribbons",
+        "item": "fresh baby spinach",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": "about 4 cups loosely packed",
+        "note": "about 4 cups loosely packed, stemmed and cut into 1/2-inch wide ribbons",
         "category": "Produce"
       }
     },

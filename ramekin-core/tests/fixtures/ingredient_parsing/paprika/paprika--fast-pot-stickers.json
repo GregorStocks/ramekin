@@ -65,14 +65,14 @@
     {
       "raw": "6 scallions, the white and green parts separated, both minced",
       "expected": {
-        "item": "scallions, the white and green parts separated, both minced",
+        "item": "scallions, the white and green parts separated",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "both minced",
         "category": "Produce"
       }
     },
@@ -107,28 +107,28 @@
     {
       "raw": "1 egg, lightly beaten in a bowl",
       "expected": {
-        "item": "egg, lightly beaten in a bowl",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "lightly beaten in a bowl",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "4 tablespoons peanut oil or vegetable oil, more or less",
       "expected": {
-        "item": "peanut oil or vegetable oil, more or less",
+        "item": "peanut oil or vegetable oil",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "more or less",
         "category": "Oils & Vinegars"
       }
     },

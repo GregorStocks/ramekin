@@ -49,14 +49,14 @@
     {
       "raw": "4 medium garlic cloves, unpeeled",
       "expected": {
-        "item": "garlic cloves, unpeeled",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "4",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "unpeeled",
         "category": "Produce"
       }
     },
@@ -281,7 +281,7 @@
     {
       "raw": "10 ounces fresh tomatoes (285g; about 3 medium), seeded and chopped (1 cup)",
       "expected": {
-        "item": "fresh tomatoes, seeded and chopped",
+        "item": "fresh tomatoes",
         "measurements": [
           {
             "amount": "10",
@@ -300,7 +300,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "seeded and chopped",
         "category": "Produce"
       }
     },
@@ -362,7 +362,7 @@
             "unit": "cup"
           }
         ],
-        "note": "shredded",
+        "note": "about 1 1/2 cups, shredded",
         "category": "Cheese"
       }
     }

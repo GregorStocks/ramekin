@@ -19,14 +19,18 @@
     {
       "raw": "4 tablespoons butter, cut into cubes",
       "expected": {
-        "item": "butter, cut into cubes",
+        "item": "butter",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Dairy & Eggs"
       }
     },

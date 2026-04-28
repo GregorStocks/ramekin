@@ -79,14 +79,14 @@
     {
       "raw": "2 poblano chiles, roasted, peeled and cut into strips",
       "expected": {
-        "item": "poblano chiles, roasted, peeled and cut into strips",
+        "item": "poblano chiles, roasted",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and cut into strips",
         "category": "Produce"
       }
     },
@@ -162,14 +162,14 @@
     {
       "raw": "1/2 bunch of scallions, roots and green ends trimmed, cut into big segements",
       "expected": {
-        "item": "scallions, roots and green ends trimmed, cut into big segements",
+        "item": "scallions, roots and green ends trimmed",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "cut into big segements",
         "category": "Produce"
       }
     },

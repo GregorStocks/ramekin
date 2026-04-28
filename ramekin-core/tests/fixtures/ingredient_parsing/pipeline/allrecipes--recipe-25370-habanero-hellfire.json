@@ -167,42 +167,42 @@
     {
       "raw": "8 Anaheim peppers, seeded and diced",
       "expected": {
-        "item": "Anaheim peppers, seeded and diced",
+        "item": "Anaheim peppers",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded and diced",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "6 jalapeno peppers, seeded and chopped",
       "expected": {
-        "item": "jalapeno peppers, seeded and chopped",
+        "item": "jalapeno peppers",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded and chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "6 habanero peppers, seeded and chopped",
       "expected": {
-        "item": "habanero peppers, seeded and chopped",
+        "item": "habanero peppers",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded and chopped",
         "category": "Produce"
       }
     },

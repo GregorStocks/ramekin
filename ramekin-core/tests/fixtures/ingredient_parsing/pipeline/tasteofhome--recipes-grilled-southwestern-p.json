@@ -5,14 +5,14 @@
     {
       "raw": "1-1/2 pounds large red potatoes, quartered lengthwise",
       "expected": {
-        "item": "large red potatoes, quartered lengthwise",
+        "item": "large red potatoes",
         "measurements": [
           {
             "amount": "1-1/2",
             "unit": "lb"
           }
         ],
-        "note": null,
+        "note": "quartered lengthwise",
         "category": "Produce"
       }
     },
@@ -119,14 +119,14 @@
     {
       "raw": "1 jalapeno pepper, seeded and minced",
       "expected": {
-        "item": "jalapeno pepper, seeded and minced",
+        "item": "jalapeno pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded and minced",
         "category": "Produce"
       }
     },

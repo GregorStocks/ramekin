@@ -23,14 +23,14 @@
     {
       "raw": "1 large bunch parsley, leaves removed and finely chopped to yield about 2 cups",
       "expected": {
-        "item": "bunch parsley, leaves removed and finely chopped to yield about 2 cups",
+        "item": "bunch parsley",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "leaves removed and finely chopped to yield about 2 cups",
         "category": "Spices & Seasonings"
       }
     },

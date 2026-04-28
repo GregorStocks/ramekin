@@ -56,14 +56,14 @@
     {
       "raw": "1 piece of thick-cut bacon, cut into lardons",
       "expected": {
-        "item": "thick-cut bacon, cut into lardons",
+        "item": "thick-cut bacon",
         "measurements": [
           {
             "amount": "1",
             "unit": "piece"
           }
         ],
-        "note": null,
+        "note": "cut into lardons",
         "category": "Meat & Seafood"
       }
     },
@@ -93,14 +93,14 @@
     {
       "raw": "1 lemon, seeded and roughly chopped",
       "expected": {
-        "item": "lemon, seeded and roughly chopped",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded and roughly chopped",
         "category": "Produce"
       }
     },

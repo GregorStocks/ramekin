@@ -63,7 +63,7 @@
     {
       "raw": "1 stick (4 ounces or 115 grams) unsalted butter, melted and cooled until lukewarm",
       "expected": {
-        "item": "unsalted butter, melted and cooled until lukewarm",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
@@ -78,7 +78,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "melted and cooled until lukewarm",
         "category": "Dairy & Eggs"
       }
     },

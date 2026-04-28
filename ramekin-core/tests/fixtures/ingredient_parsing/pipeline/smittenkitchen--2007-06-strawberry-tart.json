@@ -163,7 +163,7 @@
     {
       "raw": "1 1/2 pound (680 grams) fresh strawberries, the tinier the better, stemmed",
       "expected": {
-        "item": "fresh strawberries, the tinier the better, stemmed",
+        "item": "fresh strawberries, the tinier the better",
         "measurements": [
           {
             "amount": "1.5",
@@ -174,7 +174,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "stemmed",
         "category": "Produce"
       }
     },

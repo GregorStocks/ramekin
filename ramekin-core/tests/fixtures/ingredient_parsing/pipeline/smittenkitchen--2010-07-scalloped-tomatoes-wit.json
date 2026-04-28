@@ -37,7 +37,7 @@
     {
       "raw": "2 1/2 pounds plum whatever good tomatoes you’ve got, cut into 1/2-inch dice",
       "expected": {
-        "item": "plum whatever good tomatoes you’ve got, cut into 1/2-inch dice",
+        "item": "plum whatever good tomatoes you’ve got",
         "measurements": [
           {
             "amount": "2.5",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch dice",
         "category": "Produce"
       }
     },
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": "minced",
+        "note": "about 1 tablespoon, minced",
         "category": "Produce"
       }
     },

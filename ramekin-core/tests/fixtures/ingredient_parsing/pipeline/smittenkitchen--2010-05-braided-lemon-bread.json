@@ -160,15 +160,15 @@
     {
       "raw": "2 large eggs, 1 beaten for dough, 1 beaten with 1 teaspoon water for brushing bread",
       "expected": {
-        "item": "eggs, 1 beaten for dough, 1 beaten with 1 teaspoon water for brushing bread",
+        "item": "eggs, 1 beaten for dough",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
-        "category": "Bakery & Bread"
+        "note": "1 beaten with 1 teaspoon water for brushing bread",
+        "category": "Dairy & Eggs"
       }
     },
     {
@@ -464,14 +464,18 @@
     {
       "raw": "2 tablespoons unsalted butter, cut into small pieces",
       "expected": {
-        "item": "unsalted butter, cut into small pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small pieces",
         "category": "Dairy & Eggs"
       }
     }

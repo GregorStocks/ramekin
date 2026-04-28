@@ -59,7 +59,7 @@
     {
       "raw": "1/4 cup (56g) unsalted butter, cut into pieces",
       "expected": {
-        "item": "unsalted butter, cut into pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.25",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },

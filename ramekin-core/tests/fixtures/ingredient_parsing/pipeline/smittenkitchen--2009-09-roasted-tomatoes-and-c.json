@@ -82,14 +82,14 @@
     {
       "raw": "1 15-ounce can of white beans, drained and rinsed or 1 1/2 cups cooked beans of your choice",
       "expected": {
-        "item": "of white beans, drained and rinsed",
+        "item": "of white beans",
         "measurements": [
           {
             "amount": "1",
             "unit": "15-ounce can"
           }
         ],
-        "note": "or 1 1/2 cups cooked beans of your choice",
+        "note": "drained and rinsed or 1 1/2 cups cooked beans of your choice",
         "category": "Canned Goods"
       }
     },

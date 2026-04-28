@@ -51,14 +51,14 @@
     {
       "raw": "1 bunch scallions, trimmed and cut into 2-inch pieces",
       "expected": {
-        "item": "scallions, trimmed and cut into 2-inch pieces",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "trimmed and cut into 2-inch pieces",
         "category": "Produce"
       }
     },

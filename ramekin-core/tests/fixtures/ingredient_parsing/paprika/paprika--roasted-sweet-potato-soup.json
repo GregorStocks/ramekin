@@ -5,7 +5,7 @@
     {
       "raw": "4 pounds sweet potato, peeled and cut into 1/2-inch dice",
       "expected": {
-        "item": "sweet potato, peeled and cut into 1/2-inch dice",
+        "item": "sweet potato",
         "measurements": [
           {
             "amount": "4",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "peeled and cut into 1/2-inch dice",
         "category": "Produce"
       }
     },
@@ -130,14 +130,14 @@
     {
       "raw": "3/4 cup shelled roasted pistachios, crushed in a mortar and pestle or food processor",
       "expected": {
-        "item": "shelled roasted pistachios, crushed in a mortar and pestle or food processor",
+        "item": "shelled roasted pistachios",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "crushed in a mortar and pestle or food processor",
         "category": "Nuts & Dried Fruit"
       }
     },

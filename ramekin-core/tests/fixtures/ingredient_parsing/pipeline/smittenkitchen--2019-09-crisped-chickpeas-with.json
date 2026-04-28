@@ -19,14 +19,14 @@
     {
       "raw": "1 small garlic clove, minced or microplane-d",
       "expected": {
-        "item": "garlic clove, minced or microplane-d",
+        "item": "garlic clove",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "minced or microplane-d",
         "category": "Produce"
       }
     },
@@ -98,7 +98,7 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced",
+        "note": "about 6 ounces, thinly sliced",
         "category": "Produce"
       }
     },

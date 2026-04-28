@@ -41,7 +41,7 @@
     {
       "raw": "1 1/2 pounds mixed mushrooms, cleaned, trimmed and torn into bite size pieces (see suggestions above)",
       "expected": {
-        "item": "mixed mushrooms, cleaned, trimmed and torn into bite size pieces",
+        "item": "mixed mushrooms, cleaned",
         "measurements": [
           {
             "amount": "1.5",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": "see suggestions above",
+        "note": "see suggestions above, trimmed and torn into bite size pieces",
         "category": "Produce"
       }
     },
@@ -146,7 +146,7 @@
     {
       "raw": "8 ounces of a good melting cheese, thickly sliced (suggestions above)",
       "expected": {
-        "item": "a good melting cheese, thickly sliced",
+        "item": "a good melting cheese",
         "measurements": [
           {
             "amount": "8",
@@ -157,7 +157,7 @@
             "unit": "g"
           }
         ],
-        "note": "suggestions above",
+        "note": "suggestions above, thickly sliced",
         "category": "Cheese"
       }
     }

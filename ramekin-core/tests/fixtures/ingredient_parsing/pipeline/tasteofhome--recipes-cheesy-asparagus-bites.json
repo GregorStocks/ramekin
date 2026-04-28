@@ -167,7 +167,7 @@
     {
       "raw": "1 pound fresh asparagus, trimmed and cut into 1/2-inch pieces",
       "expected": {
-        "item": "fresh asparagus, trimmed and cut into 1/2-inch pieces",
+        "item": "fresh asparagus",
         "measurements": [
           {
             "amount": "1",
@@ -178,7 +178,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "trimmed and cut into 1/2-inch pieces",
         "category": "Produce"
       }
     }

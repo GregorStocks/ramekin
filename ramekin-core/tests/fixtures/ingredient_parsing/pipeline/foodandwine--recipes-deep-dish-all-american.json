@@ -20,14 +20,14 @@
             "unit": "g"
           }
         ],
-        "note": "plus more for work surface",
+        "note": "about 5 3/4 ounces, plus more for work surface",
         "category": "Baking"
       }
     },
     {
       "raw": "1/2 cup unsalted butter (4 ounces), chilled and cut into 1/2-inch pieces",
       "expected": {
-        "item": "unsalted butter, chilled and cut into 1/2-inch pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -42,7 +42,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "chilled and cut into 1/2-inch pieces",
         "category": "Dairy & Eggs"
       }
     },

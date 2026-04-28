@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 8 ounces",
         "category": "Meat & Seafood"
       }
     },
@@ -73,14 +73,14 @@
     {
       "raw": "2 medium carrots, peeled and sliced into half-moons or diced",
       "expected": {
-        "item": "carrots, peeled and sliced into half-moons or diced",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "peeled and sliced into half-moons or diced",
         "category": "Produce"
       }
     },
@@ -119,14 +119,14 @@
     {
       "raw": "1 cup brown lentils, sorted and rinsed",
       "expected": {
-        "item": "brown lentils, sorted and rinsed",
+        "item": "brown lentils",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "sorted and rinsed",
         "category": "Canned Goods"
       }
     },

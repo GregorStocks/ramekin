@@ -5,14 +5,14 @@
     {
       "raw": "2 mangoes, peeled, pitted and julienned",
       "expected": {
-        "item": "mangoes, peeled, pitted and julienned",
+        "item": "mangoes, peeled",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "pitted and julienned",
         "category": "Produce"
       }
     },

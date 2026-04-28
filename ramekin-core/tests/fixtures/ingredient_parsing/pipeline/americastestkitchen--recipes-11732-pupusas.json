@@ -81,7 +81,7 @@
     {
       "raw": "2 ounces cotija cheese , cut into 2 pieces",
       "expected": {
-        "item": "cotija cheese, cut into 2 pieces",
+        "item": "cotija cheese",
         "measurements": [
           {
             "amount": "2",
@@ -92,14 +92,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 2 pieces",
         "category": "Cheese"
       }
     },
     {
       "raw": "8 ounces Monterey Jack cheese , cut into 8 pieces",
       "expected": {
-        "item": "Monterey Jack cheese, cut into 8 pieces",
+        "item": "Monterey Jack cheese",
         "measurements": [
           {
             "amount": "8",
@@ -110,7 +110,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 8 pieces",
         "category": "Cheese"
       }
     }

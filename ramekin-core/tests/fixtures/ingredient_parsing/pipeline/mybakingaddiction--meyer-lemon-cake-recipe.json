@@ -5,14 +5,18 @@
     {
       "raw": "2 1/2 cups granulated sugar, divided use",
       "expected": {
-        "item": "granulated sugar, divided use",
+        "item": "granulated sugar",
         "measurements": [
           {
             "amount": "2.5",
             "unit": "cup"
+          },
+          {
+            "amount": "500",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "divided use",
         "category": "Baking"
       }
     },
@@ -24,13 +28,9 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "6 to 8",
-            "unit": "large"
           }
         ],
-        "note": null,
+        "note": "6 to 8 large Meyer lemons",
         "category": "Produce"
       }
     },
@@ -145,14 +145,14 @@
     {
       "raw": "3/4 cup freshly squeezed Meyer lemon juice, divided use",
       "expected": {
-        "item": "freshly squeezed Meyer lemon juice, divided use",
+        "item": "freshly squeezed Meyer lemon juice",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "divided use",
         "category": "Beverages"
       }
     },

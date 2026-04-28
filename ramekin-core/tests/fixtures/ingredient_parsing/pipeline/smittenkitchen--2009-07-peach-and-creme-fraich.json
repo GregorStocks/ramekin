@@ -74,7 +74,7 @@
     {
       "raw": "1/4 cup cold (1/2 stick) unsalted butter, cut into pieces",
       "expected": {
-        "item": "cold unsalted butter, cut into pieces",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "0.25",
@@ -83,9 +83,13 @@
           {
             "amount": "0.5",
             "unit": "stick"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -101,7 +105,7 @@
     {
       "raw": "1 1/2 pounds ripe (4 to 5 medium) yellow peaches, pitted and quartered",
       "expected": {
-        "item": "ripe yellow peaches, pitted and quartered",
+        "item": "ripe yellow peaches",
         "measurements": [
           {
             "amount": "1.5",
@@ -116,7 +120,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "pitted and quartered",
         "category": "Produce"
       }
     },

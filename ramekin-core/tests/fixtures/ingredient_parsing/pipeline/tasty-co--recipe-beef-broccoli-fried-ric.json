@@ -5,7 +5,7 @@
     {
       "raw": "1 lb flank steak, sliced into strips",
       "expected": {
-        "item": "flank steak, sliced into strips",
+        "item": "flank steak",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sliced into strips",
         "category": "Meat & Seafood"
       }
     },

@@ -76,7 +76,7 @@
             "unit": "cup"
           }
         ],
-        "note": "thinly sliced",
+        "note": "about 3/4 cup, thinly sliced",
         "category": "Produce"
       }
     },
@@ -92,7 +92,7 @@
     {
       "raw": "1 (6-ounce) bacon slab, cut into 1/2-inch cubes (about 1 1/4 cups)",
       "expected": {
-        "item": "bacon slab, cut into 1/2-inch cubes",
+        "item": "bacon slab",
         "measurements": [
           {
             "amount": "1",
@@ -103,7 +103,7 @@
             "unit": "cup"
           }
         ],
-        "note": "6-ounce",
+        "note": "6-ounce, about 1 1/4 cups, cut into 1/2-inch cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -192,15 +192,15 @@
     {
       "raw": "8 white bread slices (such as Pepperidge Farm), cut into 3-inch rounds and sautéed in butter and oil until browned",
       "expected": {
-        "item": "white bread slices, cut into 3-inch rounds and sautéed in butter and oil until browned",
+        "item": "white bread slices",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": "such as Pepperidge Farm",
-        "category": "Dairy & Eggs"
+        "note": "such as Pepperidge Farm, cut into 3-inch rounds and sautéed in butter and oil until browned",
+        "category": "Bakery & Bread"
       }
     },
     {

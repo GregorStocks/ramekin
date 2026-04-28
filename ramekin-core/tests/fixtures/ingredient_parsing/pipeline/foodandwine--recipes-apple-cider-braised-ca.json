@@ -59,14 +59,14 @@
     {
       "raw": "1 medium onion, halved through the core and thinly sliced lengthwise",
       "expected": {
-        "item": "onion, halved through the core and thinly sliced lengthwise",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "halved through the core and thinly sliced lengthwise",
         "category": "Produce"
       }
     },

@@ -83,14 +83,14 @@
     {
       "raw": "2 cloves garlic, peeled but left whole",
       "expected": {
-        "item": "garlic, peeled but left whole",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "2",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "peeled but left whole",
         "category": "Produce"
       }
     },
@@ -150,7 +150,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "about 3 tablespoons",
         "category": "Beverages"
       }
     },

@@ -51,14 +51,14 @@
     {
       "raw": "2-4 habanero peppers, or other small hot chile peppers, stemmed, halved and seeded",
       "expected": {
-        "item": "habanero peppers, or other small hot chile peppers, stemmed, halved and seeded",
+        "item": "habanero peppers, or other small hot chile peppers, stemmed",
         "measurements": [
           {
             "amount": "2-4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "halved and seeded",
         "category": "Produce"
       }
     },
@@ -94,7 +94,7 @@
             "unit": "g"
           }
         ],
-        "note": "diced",
+        "note": "about 3 cups, diced",
         "category": "Produce"
       }
     },

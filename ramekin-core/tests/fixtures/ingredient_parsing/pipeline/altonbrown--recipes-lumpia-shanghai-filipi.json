@@ -83,14 +83,14 @@
     {
       "raw": "2 small carrots, peeled and grated on large holes of box grater",
       "expected": {
-        "item": "carrots, peeled and grated on large holes of box grater",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "peeled and grated on large holes of box grater",
         "category": "Produce"
       }
     },

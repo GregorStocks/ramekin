@@ -5,7 +5,7 @@
     {
       "raw": "1 small head of cauliflower (about 1 pound) or 1 pound of a larger head of cauliflower, cut into 1-inch flowerets (Romanesco cauliflower, especially orange or green, would be a pretty substitute)",
       "expected": {
-        "item": "head of cauliflower",
+        "item": "head of cauliflower or 1 pound of a larger head of cauliflower",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "or 1 pound of a larger head of cauliflower, cut into 1-inch flowerets (Romanesco cauliflower, especially orange or green, would be a pretty substitute)",
+        "note": "about 1 pound, Romanesco cauliflower, especially orange or green, would be a pretty substitute, cut into 1-inch flowerets",
         "category": "Produce"
       }
     },
@@ -73,14 +73,14 @@
     {
       "raw": "1 large onion, halved lenghtwise and thinly sliced",
       "expected": {
-        "item": "onion, halved lenghtwise and thinly sliced",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "halved lenghtwise and thinly sliced",
         "category": "Produce"
       }
     },

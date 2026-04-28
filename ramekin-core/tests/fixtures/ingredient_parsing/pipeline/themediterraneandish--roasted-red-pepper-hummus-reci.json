@@ -19,14 +19,14 @@
     {
       "raw": "1 jalapeno pepper, sliced in half length wise (optional)",
       "expected": {
-        "item": "jalapeno pepper, sliced in half length wise",
+        "item": "jalapeno pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "optional, sliced in half length wise",
         "category": "Produce"
       }
     },

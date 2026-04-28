@@ -37,28 +37,28 @@
     {
       "raw": "1 medium onion, sliced into 1/4-inch half moons",
       "expected": {
-        "item": "onion, sliced into 1/4-inch half moons",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "sliced into 1/4-inch half moons",
         "category": "Produce"
       }
     },
     {
       "raw": "3 medium carrots, cut into 1/4-inch rounds",
       "expected": {
-        "item": "carrots, cut into 1/4-inch rounds",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "3",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch rounds",
         "category": "Produce"
       }
     },
@@ -136,7 +136,7 @@
             "unit": "bottle"
           }
         ],
-        "note": null,
+        "note": "about 3/4 bottle",
         "category": "Beverages"
       }
     },

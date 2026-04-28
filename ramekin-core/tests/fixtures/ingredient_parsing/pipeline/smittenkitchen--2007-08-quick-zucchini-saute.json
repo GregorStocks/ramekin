@@ -33,7 +33,7 @@
     {
       "raw": "1 medium or 2 small zucchinis, cut into 1/8-inch matchsticks",
       "expected": {
-        "item": "zucchinis, cut into 1/8-inch matchsticks",
+        "item": "zucchinis",
         "measurements": [
           {
             "amount": "1",
@@ -44,7 +44,7 @@
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "cut into 1/8-inch matchsticks",
         "category": "Produce"
       }
     },

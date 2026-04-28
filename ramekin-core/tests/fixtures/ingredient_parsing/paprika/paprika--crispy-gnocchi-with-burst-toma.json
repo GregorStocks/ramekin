@@ -120,7 +120,7 @@
     {
       "raw": "8 ounces fresh mozzarella, cut or torn into 1/2-inch pieces",
       "expected": {
-        "item": "fresh mozzarella, cut or torn into 1/2-inch pieces",
+        "item": "fresh mozzarella",
         "measurements": [
           {
             "amount": "8",
@@ -131,7 +131,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut or torn into 1/2-inch pieces",
         "category": "Cheese"
       }
     }

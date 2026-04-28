@@ -23,7 +23,7 @@
     {
       "raw": "2/3 cup (60 grams) unsweetened cocoa powder, any kind, sifted if lumpy",
       "expected": {
-        "item": "unsweetened cocoa powder, any kind, sifted if lumpy",
+        "item": "unsweetened cocoa powder, any kind",
         "measurements": [
           {
             "amount": "0.67",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sifted if lumpy",
         "category": "Baking"
       }
     },

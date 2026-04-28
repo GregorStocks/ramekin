@@ -231,7 +231,7 @@
     {
       "raw": "1 stick (4 ounces or 115 grams) cold unsalted butter, cut into chunks",
       "expected": {
-        "item": "cold unsalted butter, cut into chunks",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "1",
@@ -246,7 +246,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Dairy & Eggs"
       }
     },

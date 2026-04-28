@@ -69,14 +69,18 @@
     {
       "raw": "3 tablespoons cold butter, cut into small cubes",
       "expected": {
-        "item": "cold butter, cut into small cubes",
+        "item": "cold butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small cubes",
         "category": "Dairy & Eggs"
       }
     },

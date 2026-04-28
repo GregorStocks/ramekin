@@ -5,14 +5,14 @@
     {
       "raw": "3 plum tomatoes, halved lengthwise",
       "expected": {
-        "item": "plum tomatoes, halved lengthwise",
+        "item": "plum tomatoes",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "halved lengthwise",
         "category": "Produce"
       }
     },
@@ -37,14 +37,14 @@
     {
       "raw": "One 3 1/2-pound chicken, cut into 8 pieces",
       "expected": {
-        "item": "3 1/2-pound chicken, cut into 8 pieces",
+        "item": "3 1/2-pound chicken",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 8 pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -153,7 +153,7 @@
     {
       "raw": "1/2 pound oyster or cremini mushrooms, cut into 1-inch pieces",
       "expected": {
-        "item": "oyster or cremini mushrooms, cut into 1-inch pieces",
+        "item": "oyster or cremini mushrooms",
         "measurements": [
           {
             "amount": "0.5",
@@ -164,7 +164,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Produce"
       }
     },

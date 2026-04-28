@@ -14,14 +14,14 @@
     {
       "raw": "1 red onion, halved and sliced thin",
       "expected": {
-        "item": "red onion, halved and sliced thin",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "halved and sliced thin",
         "category": "Produce"
       }
     },
@@ -141,15 +141,15 @@
     {
       "raw": "1 arbol chile, seeded",
       "expected": {
-        "item": "arbol chile, seeded",
+        "item": "arbol chile",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "seeded",
+        "category": "Other"
       }
     },
     {
@@ -485,14 +485,14 @@
     {
       "raw": "1 avocado, sliced thin",
       "expected": {
-        "item": "avocado, sliced thin",
+        "item": "avocado",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced thin",
         "category": "Produce"
       }
     }

@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds boneless skinless chicken parts, cut into 3 to 4 large chunks (I use a 50/50 mix of breasts and thighs)",
       "expected": {
-        "item": "boneless skinless chicken parts, cut into 3 to 4 large chunks",
+        "item": "boneless skinless chicken parts",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "I use a 50/50 mix of breasts and thighs",
+        "note": "I use a 50/50 mix of breasts and thighs, cut into 3 to 4 large chunks",
         "category": "Meat & Seafood"
       }
     },
@@ -110,14 +110,14 @@
     {
       "raw": "1 28-ounce can crushed tomatoes, fire-roasted if you can find them or 2 10-ounce cans Ro-Tel (yield is a little less but not noticeable in final chili)",
       "expected": {
-        "item": "crushed tomatoes, fire-roasted if you can find them or 2 10-ounce cans Ro-Tel",
+        "item": "crushed tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "28-ounce can"
           }
         ],
-        "note": "yield is a little less but not noticeable in final chili",
+        "note": "yield is a little less but not noticeable in final chili, fire-roasted if you can find them or 2 10-ounce cans Ro-Tel",
         "category": "Canned Goods"
       }
     },

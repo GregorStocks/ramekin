@@ -23,28 +23,28 @@
     {
       "raw": "1 1/2 teaspoons teaspoon cumin seeds, toasted and cooled if you have the patience, ground will work here as well",
       "expected": {
-        "item": "teaspoon cumin seeds, toasted and cooled if you have the patience, ground will work here as well",
+        "item": "teaspoon cumin seeds, toasted and cooled if you have the patience",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "ground will work here as well",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 1/2 teaspoons coriander seeds, toasted and cooled if you have the patience, ground will work here as well",
       "expected": {
-        "item": "coriander seeds, toasted and cooled if you have the patience, ground will work here as well",
+        "item": "coriander seeds, toasted and cooled if you have the patience",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "ground will work here as well",
         "category": "Spices & Seasonings"
       }
     },
@@ -97,14 +97,14 @@
     {
       "raw": "4 garlic cloves, minced or pressed",
       "expected": {
-        "item": "garlic cloves, minced or pressed",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "minced or pressed",
         "category": "Produce"
       }
     },
@@ -147,7 +147,7 @@
     {
       "raw": "3 pounds thin-to-medium carrots, scrubbed, not peeled; mixed colors are prettier here but not essential",
       "expected": {
-        "item": "thin-to-medium carrots, scrubbed, not peeled; mixed colors are prettier here but not essential",
+        "item": "thin-to-medium carrots, scrubbed",
         "measurements": [
           {
             "amount": "3",
@@ -158,7 +158,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "not peeled; mixed colors are prettier here but not essential",
         "category": "Produce"
       }
     },
@@ -219,7 +219,7 @@
     {
       "raw": "1 large or 2 medium firm-ripe avocados, cut in thin slices",
       "expected": {
-        "item": "firm-ripe avocados, cut in thin slices",
+        "item": "firm-ripe avocados",
         "measurements": [
           {
             "amount": "1",
@@ -230,7 +230,7 @@
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut in thin slices",
         "category": "Produce"
       }
     },
@@ -278,14 +278,14 @@
     {
       "raw": "2 tablespoons roasted hulled pumpkin seeds, sunflower seeds, toasted sesame seeds or a mix thereof",
       "expected": {
-        "item": "roasted hulled pumpkin seeds, sunflower seeds, toasted sesame seeds or a mix thereof",
+        "item": "roasted hulled pumpkin seeds, sunflower seeds",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "toasted sesame seeds or a mix thereof",
         "category": "Nuts & Dried Fruit"
       }
     }

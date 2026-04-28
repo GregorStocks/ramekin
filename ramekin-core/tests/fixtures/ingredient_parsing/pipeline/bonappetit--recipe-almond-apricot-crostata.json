@@ -83,7 +83,7 @@
     {
       "raw": "1½ cups (3 sticks) chilled unsalted butter, cut into pieces",
       "expected": {
-        "item": "chilled unsalted butter, cut into pieces",
+        "item": "chilled unsalted butter",
         "measurements": [
           {
             "amount": "1.5",
@@ -94,7 +94,7 @@
             "unit": "stick"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },

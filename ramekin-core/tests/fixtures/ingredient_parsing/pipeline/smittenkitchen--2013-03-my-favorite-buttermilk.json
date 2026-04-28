@@ -95,7 +95,7 @@
     {
       "raw": "9 tablespoons (125 grams) chilled unsalted butter, cut into small chunks",
       "expected": {
-        "item": "chilled unsalted butter, cut into small chunks",
+        "item": "chilled unsalted butter",
         "measurements": [
           {
             "amount": "9",
@@ -106,7 +106,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small chunks",
         "category": "Dairy & Eggs"
       }
     },

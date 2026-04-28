@@ -23,14 +23,14 @@
     {
       "raw": "2 cloves garlic, grated on a microplane grater",
       "expected": {
-        "item": "garlic, grated on a microplane grater",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "2",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "grated on a microplane grater",
         "category": "Produce"
       }
     },
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely sliced",
+        "note": "about 1 cup, finely sliced",
         "category": "Produce"
       }
     },

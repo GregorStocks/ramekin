@@ -115,14 +115,14 @@
     {
       "raw": "1 28-ounce can crushed tomatoes, fire roasted if possible",
       "expected": {
-        "item": "crushed tomatoes, fire roasted if possible",
+        "item": "crushed tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "28-ounce can"
           }
         ],
-        "note": null,
+        "note": "fire roasted if possible",
         "category": "Canned Goods"
       }
     },
@@ -267,9 +267,9 @@
     {
       "raw": "Toppings: shredded cheese (optional), sour cream (or cashew cream), hot sauce, sliced avocado or pickled jalapenos (optional), crushed tortilla chips",
       "expected": {
-        "item": "Toppings: shredded cheese, sour cream, hot sauce, sliced avocado or pickled jalapenos, crushed tortilla chips",
+        "item": "Toppings: shredded cheese, sour cream, hot sauce, sliced avocado or pickled jalapenos",
         "measurements": [],
-        "note": "optional, or cashew cream, optional",
+        "note": "optional, or cashew cream, optional, crushed tortilla chips",
         "category": "Dairy & Eggs"
       }
     }

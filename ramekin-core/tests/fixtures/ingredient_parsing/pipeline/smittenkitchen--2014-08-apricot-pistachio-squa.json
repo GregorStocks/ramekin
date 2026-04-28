@@ -68,7 +68,7 @@
     {
       "raw": "1/2 cup (4 ounces or 115 grams) unsalted butter, cold is fine",
       "expected": {
-        "item": "unsalted butter, cold is fine",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -83,7 +83,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cold is fine",
         "category": "Dairy & Eggs"
       }
     },
@@ -110,7 +110,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "a scant 4 ounces or 110 grams",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -162,7 +162,7 @@
     {
       "raw": "5 tablespoons (70 grams) unsalted butter, cold is fine",
       "expected": {
-        "item": "unsalted butter, cold is fine",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "5",
@@ -173,7 +173,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cold is fine",
         "category": "Dairy & Eggs"
       }
     },

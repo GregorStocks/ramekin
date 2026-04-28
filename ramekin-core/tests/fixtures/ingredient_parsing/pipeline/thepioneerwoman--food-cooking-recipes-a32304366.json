@@ -33,14 +33,18 @@
     {
       "raw": "1 pt. strawberries, hulled and halved",
       "expected": {
-        "item": "strawberries, hulled and halved",
+        "item": "strawberries",
         "measurements": [
           {
             "amount": "1",
             "unit": "pint"
+          },
+          {
+            "amount": "347",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "hulled and halved",
         "category": "Produce"
       }
     },

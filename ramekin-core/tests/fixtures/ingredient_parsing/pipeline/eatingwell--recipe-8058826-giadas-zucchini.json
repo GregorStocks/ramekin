@@ -108,7 +108,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 1/2 pounds",
         "category": "Produce"
       }
     },
@@ -133,14 +133,14 @@
     {
       "raw": "2 cloves garlic, smashed and peeled",
       "expected": {
-        "item": "garlic, smashed and peeled",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "2",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "smashed and peeled",
         "category": "Produce"
       }
     },

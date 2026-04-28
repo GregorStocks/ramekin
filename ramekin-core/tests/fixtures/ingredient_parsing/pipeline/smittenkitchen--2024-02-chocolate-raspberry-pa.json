@@ -69,7 +69,7 @@
     {
       "raw": "1/4 cup (20 grams) unsweetened cocoa powder, any kind, sifted if lumpy",
       "expected": {
-        "item": "unsweetened cocoa powder, any kind, sifted if lumpy",
+        "item": "unsweetened cocoa powder, any kind",
         "measurements": [
           {
             "amount": "0.25",
@@ -80,7 +80,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sifted if lumpy",
         "category": "Baking"
       }
     },
@@ -120,7 +120,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 1/2 cups",
         "category": "Produce"
       }
     },

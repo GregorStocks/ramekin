@@ -19,15 +19,15 @@
     {
       "raw": "2 tablespoons pitted, halved and very thinly sliced black olives",
       "expected": {
-        "item": "pitted, halved and very thinly sliced black olives",
+        "item": "pitted",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "halved and very thinly sliced black olives",
+        "category": "Other"
       }
     },
     {

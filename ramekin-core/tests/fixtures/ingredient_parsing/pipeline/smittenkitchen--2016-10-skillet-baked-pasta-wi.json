@@ -56,7 +56,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 3 ounces",
         "category": "Cheese"
       }
     },
@@ -78,7 +78,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 3 ounces",
         "category": "Cheese"
       }
     },
@@ -114,7 +114,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 3 ounces",
         "category": "Cheese"
       }
     },
@@ -136,7 +136,7 @@
             "unit": "g"
           }
         ],
-        "note": "crumbled",
+        "note": "about 3 ounces, crumbled",
         "category": "Cheese"
       }
     },
@@ -198,14 +198,14 @@
     {
       "raw": "2 scallions, sliced thinly at an angle",
       "expected": {
-        "item": "scallions, sliced thinly at an angle",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced thinly at an angle",
         "category": "Produce"
       }
     }

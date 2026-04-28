@@ -33,7 +33,7 @@
     {
       "raw": "3 ounces thin sliced salami, cut into ribbons",
       "expected": {
-        "item": "thin sliced salami, cut into ribbons",
+        "item": "thin sliced salami",
         "measurements": [
           {
             "amount": "3",
@@ -44,7 +44,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into ribbons",
         "category": "Meat & Seafood"
       }
     },

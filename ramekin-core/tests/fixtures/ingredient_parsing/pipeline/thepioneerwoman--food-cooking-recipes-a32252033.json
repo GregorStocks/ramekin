@@ -91,14 +91,14 @@
     {
       "raw": "2 strip steaks (1 1/2 inches thick), extra fat trimmed",
       "expected": {
-        "item": "strip steaks, extra fat trimmed",
+        "item": "strip steaks",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "1 1/2 inches thick",
+        "note": "1 1/2 inches thick, extra fat trimmed",
         "category": "Meat & Seafood"
       }
     },
@@ -241,14 +241,14 @@
     {
       "raw": "1 pt. grape tomatoes, halved if large",
       "expected": {
-        "item": "grape tomatoes, halved if large",
+        "item": "grape tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "pint"
           }
         ],
-        "note": null,
+        "note": "halved if large",
         "category": "Produce"
       }
     },

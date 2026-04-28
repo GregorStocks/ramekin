@@ -65,7 +65,7 @@
     {
       "raw": "2.5 lb boneless leg of American lamb, fat trimmed, cut into cubes (Or American lamb shoulder, bones removed, fat-trimmed)",
       "expected": {
-        "item": "boneless leg of American lamb, fat trimmed, cut into cubes",
+        "item": "boneless leg of American lamb, fat trimmed",
         "measurements": [
           {
             "amount": "2.5",
@@ -76,7 +76,7 @@
             "unit": "g"
           }
         ],
-        "note": "Or American lamb shoulder, bones removed, fat-trimmed",
+        "note": "Or American lamb shoulder, bones removed, fat-trimmed, cut into cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -189,14 +189,14 @@
     {
       "raw": "6 plum tomatoes from a can, cut in halves",
       "expected": {
-        "item": "plum tomatoes from a can, cut in halves",
+        "item": "plum tomatoes from a can",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut in halves",
         "category": "Produce"
       }
     },

@@ -27,7 +27,7 @@
     {
       "raw": "1 1/2 pounds jumbo (16/20) shrimp (preferably Gulf), head-on and unpeeled (see notes)",
       "expected": {
-        "item": "jumbo shrimp, head-on and unpeeled",
+        "item": "jumbo shrimp",
         "measurements": [
           {
             "amount": "1.5",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "16/20, preferably Gulf, see notes",
+        "note": "16/20, preferably Gulf, see notes, head-on and unpeeled",
         "category": "Meat & Seafood"
       }
     },

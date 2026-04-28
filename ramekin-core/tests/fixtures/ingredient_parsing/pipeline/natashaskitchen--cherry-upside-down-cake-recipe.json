@@ -33,14 +33,14 @@
     {
       "raw": "2 cups 14 oz fresh cherries, pitted and halved",
       "expected": {
-        "item": "14 oz fresh cherries, pitted and halved",
+        "item": "14 oz fresh cherries",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "pitted and halved",
         "category": "Produce"
       }
     },
@@ -119,14 +119,14 @@
     {
       "raw": "1/2 cup 8 Tbsp unsalted butter, softened at room temp",
       "expected": {
-        "item": "8 Tbsp unsalted butter, softened at room temp",
+        "item": "8 Tbsp unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "softened at room temp",
         "category": "Dairy & Eggs"
       }
     },

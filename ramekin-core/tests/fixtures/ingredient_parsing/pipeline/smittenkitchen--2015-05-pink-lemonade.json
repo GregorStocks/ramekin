@@ -102,7 +102,7 @@
     {
       "raw": "1 cup (about 5 ounces) fresh raspberries, blackberries or sliced strawberries",
       "expected": {
-        "item": "fresh raspberries, blackberries or sliced strawberries",
+        "item": "fresh raspberries",
         "measurements": [
           {
             "amount": "1",
@@ -117,7 +117,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 5 ounces, blackberries or sliced strawberries",
         "category": "Produce"
       }
     },

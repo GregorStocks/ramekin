@@ -23,14 +23,14 @@
     {
       "raw": "1 acorn squash, halved and seeded",
       "expected": {
-        "item": "acorn squash, halved and seeded",
+        "item": "acorn squash",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "halved and seeded",
         "category": "Produce"
       }
     },

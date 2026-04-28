@@ -100,14 +100,18 @@
     {
       "raw": "1 cup broccoli, cut into small pieces",
       "expected": {
-        "item": "broccoli, cut into small pieces",
+        "item": "broccoli",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "88",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small pieces",
         "category": "Produce"
       }
     },

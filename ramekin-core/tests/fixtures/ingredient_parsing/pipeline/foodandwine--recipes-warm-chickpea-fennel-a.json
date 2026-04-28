@@ -5,7 +5,7 @@
     {
       "raw": "1 1/2 cups dried chickpeas (3/4 pound), soaked overnight and drained",
       "expected": {
-        "item": "dried chickpeas, soaked overnight and drained",
+        "item": "dried chickpeas",
         "measurements": [
           {
             "amount": "1.5",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "soaked overnight and drained",
         "category": "Canned Goods"
       }
     },

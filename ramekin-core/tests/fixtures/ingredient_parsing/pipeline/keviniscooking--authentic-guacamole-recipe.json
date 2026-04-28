@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 lbs",
         "category": "Produce"
       }
     },
@@ -55,14 +55,14 @@
     {
       "raw": "1  roma tomato ((plum), seeded and chopped)",
       "expected": {
-        "item": "roma tomato, seeded and chopped",
+        "item": "roma tomato",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "plum",
+        "note": "plum, seeded and chopped",
         "category": "Produce"
       }
     },

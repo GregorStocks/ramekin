@@ -55,14 +55,14 @@
     {
       "raw": "1 medium clove garlic, pressed or minced",
       "expected": {
-        "item": "clove garlic, pressed or minced",
+        "item": "clove garlic",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "pressed or minced",
         "category": "Produce"
       }
     },

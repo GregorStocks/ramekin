@@ -84,14 +84,14 @@
     {
       "raw": "1 handful kale leaves, rolled in a stack and sliced into very thin ribbons",
       "expected": {
-        "item": "kale leaves, rolled in a stack and sliced into very thin ribbons",
+        "item": "kale leaves",
         "measurements": [
           {
             "amount": "1",
             "unit": "handful"
           }
         ],
-        "note": null,
+        "note": "rolled in a stack and sliced into very thin ribbons",
         "category": "Produce"
       }
     },

@@ -92,7 +92,7 @@
     {
       "raw": "1 1/2 pounds yukon gold potatoes, diced into 1/2-inch cubes (no need to peel)",
       "expected": {
-        "item": "yukon gold potatoes, diced into 1/2-inch cubes",
+        "item": "yukon gold potatoes",
         "measurements": [
           {
             "amount": "1.5",
@@ -103,7 +103,7 @@
             "unit": "g"
           }
         ],
-        "note": "no need to peel",
+        "note": "no need to peel, diced into 1/2-inch cubes",
         "category": "Produce"
       }
     },

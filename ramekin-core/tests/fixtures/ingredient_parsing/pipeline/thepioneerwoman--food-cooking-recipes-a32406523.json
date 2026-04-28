@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 pounds",
         "category": "Meat & Seafood"
       }
     },
@@ -114,14 +114,18 @@
     {
       "raw": "1 c. chicken broth, or more as needed",
       "expected": {
-        "item": "chicken broth, or more as needed",
+        "item": "chicken broth",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "249",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or more as needed",
         "category": "Canned Goods"
       }
     },

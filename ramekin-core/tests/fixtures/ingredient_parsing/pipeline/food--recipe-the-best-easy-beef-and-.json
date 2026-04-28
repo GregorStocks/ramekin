@@ -73,7 +73,7 @@
     {
       "raw": "1   lb    boneless round steak or 1   lb   charcoal chuck steak, cut into thin 3-inch strips",
       "expected": {
-        "item": "boneless round steak",
+        "item": "boneless round steak or 1   lb   charcoal chuck steak",
         "measurements": [
           {
             "amount": "1",
@@ -84,7 +84,7 @@
             "unit": "g"
           }
         ],
-        "note": "or 1   lb   charcoal chuck steak, cut into thin 3-inch strips",
+        "note": "cut into thin 3-inch strips",
         "category": "Meat & Seafood"
       }
     },
@@ -123,14 +123,14 @@
     {
       "raw": "1   small    onion, cut into wedges",
       "expected": {
-        "item": "onion, cut into wedges",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "cut into wedges",
         "category": "Produce"
       }
     },

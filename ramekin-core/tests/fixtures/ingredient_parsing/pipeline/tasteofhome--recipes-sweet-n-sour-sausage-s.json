@@ -5,7 +5,7 @@
     {
       "raw": "1 package (14 ounces) smoked turkey sausage, cut into 1/2-inch slices",
       "expected": {
-        "item": "smoked turkey sausage, cut into 1/2-inch slices",
+        "item": "smoked turkey sausage",
         "measurements": [
           {
             "amount": "1",
@@ -20,21 +20,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch slices",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "2 small onions, quartered and separated",
       "expected": {
-        "item": "onions, quartered and separated",
+        "item": "onions",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "quartered and separated",
         "category": "Produce"
       }
     },

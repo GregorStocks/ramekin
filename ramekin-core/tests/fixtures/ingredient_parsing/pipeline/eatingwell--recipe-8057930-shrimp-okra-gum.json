@@ -161,7 +161,7 @@
     {
       "raw": "1 pound raw Gulf shrimp (31-40 count), peeled and deveined",
       "expected": {
-        "item": "raw Gulf shrimp, peeled and deveined",
+        "item": "raw Gulf shrimp",
         "measurements": [
           {
             "amount": "1",
@@ -172,7 +172,7 @@
             "unit": "g"
           }
         ],
-        "note": "31-40 count",
+        "note": "31-40 count, peeled and deveined",
         "category": "Meat & Seafood"
       }
     },
@@ -193,9 +193,9 @@
     {
       "raw": "Hot sauce, preferably Louisiana or Crystal (optional)",
       "expected": {
-        "item": "Hot sauce, preferably Louisiana or Crystal",
+        "item": "Hot sauce",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, preferably Louisiana or Crystal",
         "category": "Condiments & Sauces"
       }
     }

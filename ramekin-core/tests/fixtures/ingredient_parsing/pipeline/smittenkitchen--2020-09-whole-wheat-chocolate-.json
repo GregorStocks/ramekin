@@ -41,7 +41,7 @@
     {
       "raw": "1/2 cup (115 grams) unsalted butter, at room temperature for a hand-mixer; cold is fine for a stand-mixer",
       "expected": {
-        "item": "unsalted butter, at room temperature for a hand-mixer; cold is fine for a stand-mixer",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "at room temperature for a hand-mixer; cold is fine for a stand-mixer",
         "category": "Dairy & Eggs"
       }
     },
@@ -159,7 +159,7 @@
     {
       "raw": "1/4 cup (25 grams) wheat germ, wheat bran, oat bran, or a finely chopped nut of your choice (I like walnuts)",
       "expected": {
-        "item": "wheat germ, wheat bran, oat bran, or a finely chopped nut of your choice",
+        "item": "wheat germ, wheat bran, oat bran",
         "measurements": [
           {
             "amount": "0.25",
@@ -170,8 +170,8 @@
             "unit": "g"
           }
         ],
-        "note": "I like walnuts",
-        "category": "Nuts & Dried Fruit"
+        "note": "I like walnuts; or a finely chopped nut of your choice",
+        "category": "Snacks"
       }
     },
     {
@@ -195,7 +195,7 @@
     {
       "raw": "1 cup (6 ounces) chocolate chips, or semisweet chocolate, chopped into chunks",
       "expected": {
-        "item": "chocolate chips, or semisweet chocolate, chopped into chunks",
+        "item": "chocolate chips, or semisweet chocolate",
         "measurements": [
           {
             "amount": "1",
@@ -210,16 +210,16 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "chopped into chunks",
         "category": "Baking"
       }
     },
     {
       "raw": "Flaky sea salt, if you wish",
       "expected": {
-        "item": "Flaky sea salt, if you wish",
+        "item": "Flaky sea salt",
         "measurements": [],
-        "note": null,
+        "note": "if you wish",
         "category": "Spices & Seasonings"
       }
     }

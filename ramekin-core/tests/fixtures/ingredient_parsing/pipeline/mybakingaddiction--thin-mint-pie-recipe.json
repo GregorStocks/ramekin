@@ -5,14 +5,14 @@
     {
       "raw": "45 Thin Mint Cookies, divided use",
       "expected": {
-        "item": "Thin Mint Cookies, divided use",
+        "item": "Thin Mint Cookies",
         "measurements": [
           {
             "amount": "45",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "divided use",
         "category": "Spices & Seasonings"
       }
     },

@@ -65,7 +65,7 @@
             "unit": "g"
           }
         ],
-        "note": "diced",
+        "note": "about 3/4 cup, diced",
         "category": "Produce"
       }
     },
@@ -83,7 +83,7 @@
             "unit": "cup"
           }
         ],
-        "note": "diced",
+        "note": "about 1/2 cup, diced",
         "category": "Produce"
       }
     },
@@ -222,14 +222,14 @@
     {
       "raw": "2 refrigerated pie crusts, softened as directed on package (we used Pillsbury)",
       "expected": {
-        "item": "refrigerated pie crusts, softened as directed on package",
+        "item": "refrigerated pie crusts",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "we used Pillsbury",
+        "note": "we used Pillsbury, softened as directed on package",
         "category": "Frozen"
       }
     },

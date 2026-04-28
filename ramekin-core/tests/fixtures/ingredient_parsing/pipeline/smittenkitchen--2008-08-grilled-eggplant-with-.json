@@ -5,14 +5,14 @@
     {
       "raw": "1 12-ounce container grape or cherry tomatoes, quartered lengthwise",
       "expected": {
-        "item": "12-ounce container grape or cherry tomatoes, quartered lengthwise",
+        "item": "12-ounce container grape or cherry tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "quartered lengthwise",
         "category": "Produce"
       }
     },
@@ -58,7 +58,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "thinly sliced",
+        "note": "about 2 tablespoons, thinly sliced",
         "category": "Canned Goods"
       }
     },

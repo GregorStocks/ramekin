@@ -59,7 +59,7 @@
     {
       "raw": "1 stick plus 1 tablespoon (9 tablespoons, 4 1/2 ounces or 130 grams) very cold (or frozen) unsalted butter, cut into small pieces",
       "expected": {
-        "item": "very cold unsalted butter, cut into small pieces",
+        "item": "very cold unsalted butter",
         "measurements": [
           {
             "amount": "1 stick plus 1 tablespoon",
@@ -78,7 +78,7 @@
             "unit": "g"
           }
         ],
-        "note": "or frozen",
+        "note": "or frozen, cut into small pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -181,7 +181,7 @@
             "unit": "g"
           }
         ],
-        "note": "peeled",
+        "note": "each about 7 ounces or 200 grams, peeled",
         "category": "Produce"
       }
     },

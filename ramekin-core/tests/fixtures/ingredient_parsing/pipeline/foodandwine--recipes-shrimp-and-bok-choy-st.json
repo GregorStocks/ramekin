@@ -133,21 +133,21 @@
     {
       "raw": "1 large onion, thinly sliced crosswise",
       "expected": {
-        "item": "onion, thinly sliced crosswise",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "thinly sliced crosswise",
         "category": "Produce"
       }
     },
     {
       "raw": "1/4 pound shiitake mushrooms, stemmed and caps thinly sliced",
       "expected": {
-        "item": "shiitake mushrooms, stemmed and caps thinly sliced",
+        "item": "shiitake mushrooms",
         "measurements": [
           {
             "amount": "0.25",
@@ -158,14 +158,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "stemmed and caps thinly sliced",
         "category": "Produce"
       }
     },
     {
       "raw": "1 small head of bok choy (about 12 ounces), thinly sliced crosswise",
       "expected": {
-        "item": "head of bok choy, thinly sliced crosswise",
+        "item": "head of bok choy",
         "measurements": [
           {
             "amount": "1",
@@ -180,7 +180,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 12 ounces, thinly sliced crosswise",
         "category": "Produce"
       }
     },

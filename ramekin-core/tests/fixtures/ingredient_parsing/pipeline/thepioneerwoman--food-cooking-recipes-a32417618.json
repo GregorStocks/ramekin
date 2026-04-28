@@ -69,7 +69,7 @@
     {
       "raw": "1 lb. carrots, halved lengthwise and cut into 1 1/2-inch pieces",
       "expected": {
-        "item": "carrots, halved lengthwise and cut into 1 1/2-inch pieces",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "1",
@@ -80,7 +80,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "halved lengthwise and cut into 1 1/2-inch pieces",
         "category": "Produce"
       }
     },

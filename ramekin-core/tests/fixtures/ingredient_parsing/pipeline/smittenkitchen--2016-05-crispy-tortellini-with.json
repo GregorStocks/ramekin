@@ -44,7 +44,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 3 cups",
         "category": "Pasta & Rice"
       }
     },
@@ -115,9 +115,9 @@
     {
       "raw": "A few fresh mint leaves, cut into thin slivers",
       "expected": {
-        "item": "A few fresh mint leaves, cut into thin slivers",
+        "item": "A few fresh mint leaves",
         "measurements": [],
-        "note": null,
+        "note": "cut into thin slivers",
         "category": "Produce"
       }
     },

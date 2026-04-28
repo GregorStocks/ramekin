@@ -5,7 +5,7 @@
     {
       "raw": "▢ 4 (4-6 ounce) salmon or white fish filets, cut into bite-size chunks",
       "expected": {
-        "item": "▢ 4 salmon or white fish filets, cut into bite-size chunks",
+        "item": "▢ 4 salmon or white fish filets",
         "measurements": [
           {
             "amount": "4-6",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into bite-size chunks",
         "category": "Meat & Seafood"
       }
     },
@@ -158,9 +158,9 @@
     {
       "raw": "▢ 1-2 jalapeños seeded, if desired and chopped",
       "expected": {
-        "item": "▢ 1-2 jalapeños seeded, if desired and chopped",
+        "item": "▢ 1-2 jalapeños seeded",
         "measurements": [],
-        "note": null,
+        "note": "if desired and chopped",
         "category": "Produce"
       }
     },

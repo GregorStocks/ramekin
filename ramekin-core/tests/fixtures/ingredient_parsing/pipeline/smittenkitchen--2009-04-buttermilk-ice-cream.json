@@ -73,14 +73,14 @@
     {
       "raw": "2 teaspoons vanilla or half a vanilla bean, scraped and simmered with the cream",
       "expected": {
-        "item": "vanilla or half a vanilla bean, scraped and simmered with the cream",
+        "item": "vanilla or half a vanilla bean",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "scraped and simmered with the cream",
         "category": "Spices & Seasonings"
       }
     },

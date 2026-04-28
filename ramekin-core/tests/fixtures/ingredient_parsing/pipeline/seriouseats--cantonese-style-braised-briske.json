@@ -67,7 +67,7 @@
     {
       "raw": "3 pounds (1.4 kg) beef brisket, cut with the grain into 3 steaks",
       "expected": {
-        "item": "beef brisket, cut with the grain into 3 steaks",
+        "item": "beef brisket",
         "measurements": [
           {
             "amount": "3",
@@ -78,7 +78,7 @@
             "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "cut with the grain into 3 steaks",
         "category": "Meat & Seafood"
       }
     },
@@ -247,7 +247,7 @@
     {
       "raw": "1 pound daikon radish (16 ounces; 454 g), peeled and cut into 2-inch cubes",
       "expected": {
-        "item": "daikon radish, peeled and cut into 2-inch cubes",
+        "item": "daikon radish",
         "measurements": [
           {
             "amount": "1",
@@ -262,14 +262,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "peeled and cut into 2-inch cubes",
         "category": "Produce"
       }
     },
     {
       "raw": "3 large carrots (9 1/2 ounces; 300 g total), peeled and cut into 2-inch cubes",
       "expected": {
-        "item": "carrots, peeled and cut into 2-inch cubes",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "3",
@@ -284,7 +284,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "peeled and cut into 2-inch cubes",
         "category": "Produce"
       }
     }

@@ -104,18 +104,18 @@
     {
       "raw": "▢ 1/2 cup firm tofu, cut into 3cm / 1 1/4″ batons (see photo)",
       "expected": {
-        "item": "▢ 1/2 cup firm tofu, cut into 3cm / 1 1/4″ batons",
+        "item": "▢ 1/2 cup firm tofu",
         "measurements": [],
-        "note": "see photo",
+        "note": "see photo, cut into 3cm / 1 1/4″ batons",
         "category": "Produce"
       }
     },
     {
       "raw": "▢ 1/4 cup garlic chives , cut into 3cm / 1 1/4″ pieces",
       "expected": {
-        "item": "▢ 1/4 cup garlic chives, cut into 3cm / 1 1/4″ pieces",
+        "item": "▢ 1/4 cup garlic chives",
         "measurements": [],
-        "note": null,
+        "note": "cut into 3cm / 1 1/4″ pieces",
         "category": "Produce"
       }
     },

@@ -5,22 +5,14 @@
     {
       "raw": "1 small head cauliflower (1 pound florets, i.e. stems and leaves removed), cut into generous 1 to 2 inch chunks",
       "expected": {
-        "item": "head cauliflower, cut into generous 1 to 2 inch chunks",
+        "item": "head cauliflower",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
-          },
-          {
-            "amount": "1",
-            "unit": "lb"
-          },
-          {
-            "amount": "454",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 pound florets, i.e. stems and leaves removed, cut into generous 1 to 2 inch chunks",
         "category": "Produce"
       }
     },
@@ -79,7 +71,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1/2 cup",
         "category": "Cheese"
       }
     },

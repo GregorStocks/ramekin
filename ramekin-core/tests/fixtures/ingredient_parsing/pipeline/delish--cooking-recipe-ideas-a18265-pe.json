@@ -59,7 +59,7 @@
     {
       "raw": "4 tbsp. (1/2 stick) unsalted butter, cut into pieces",
       "expected": {
-        "item": "unsalted butter, cut into pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "4",
@@ -68,9 +68,13 @@
           {
             "amount": "0.5",
             "unit": "stick"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },

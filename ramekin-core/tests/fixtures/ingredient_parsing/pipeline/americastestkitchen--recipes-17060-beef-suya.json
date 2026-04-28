@@ -179,21 +179,21 @@
     {
       "raw": "½ red onion , sliced thin",
       "expected": {
-        "item": "red onion, sliced thin",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced thin",
         "category": "Produce"
       }
     },
     {
       "raw": "¼ small head green cabbage , sliced thin (1½ cups)",
       "expected": {
-        "item": "head green cabbage, sliced thin",
+        "item": "head green cabbage",
         "measurements": [
           {
             "amount": "0.25",
@@ -204,35 +204,35 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "sliced thin",
         "category": "Produce"
       }
     },
     {
       "raw": "1 tomato , cored and sliced thin (optional)",
       "expected": {
-        "item": "tomato, cored and sliced thin",
+        "item": "tomato",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "optional, cored and sliced thin",
         "category": "Produce"
       }
     },
     {
       "raw": "½ English cucumber , sliced thin (optional)",
       "expected": {
-        "item": "English cucumber, sliced thin",
+        "item": "English cucumber",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "optional",
+        "note": "optional, sliced thin",
         "category": "Produce"
       }
     },

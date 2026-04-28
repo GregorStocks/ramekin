@@ -5,7 +5,7 @@
     {
       "raw": "1 pound mushrooms such as cremini or white, halved lengthwise if large",
       "expected": {
-        "item": "mushrooms such as cremini or white, halved lengthwise if large",
+        "item": "mushrooms such as cremini or white",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "halved lengthwise if large",
         "category": "Produce"
       }
     },
@@ -69,14 +69,18 @@
     {
       "raw": "3 tablespoons unsalted butter, cut into pieces",
       "expected": {
-        "item": "unsalted butter, cut into pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },

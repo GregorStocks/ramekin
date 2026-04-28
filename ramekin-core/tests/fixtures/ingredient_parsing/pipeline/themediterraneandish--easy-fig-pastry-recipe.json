@@ -5,14 +5,14 @@
     {
       "raw": "1 sheet of good store-bought puff pastry, thawed in fridge for 3 hours or so",
       "expected": {
-        "item": "sheet of good store-bought puff pastry, thawed in fridge for 3 hours or so",
+        "item": "sheet of good store-bought puff pastry",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "thawed in fridge for 3 hours or so",
         "category": "Frozen"
       }
     },
@@ -55,14 +55,14 @@
     {
       "raw": "1/4 cup walnuts, roughly chopped; more for garnish if desired",
       "expected": {
-        "item": "walnuts, roughly chopped; more for garnish if desired",
+        "item": "walnuts",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "roughly chopped; more for garnish if desired",
         "category": "Nuts & Dried Fruit"
       }
     },

@@ -46,42 +46,42 @@
     {
       "raw": "1 medium white or yellow onion, peeled and cut into large pieces",
       "expected": {
-        "item": "white or yellow onion, peeled and cut into large pieces",
+        "item": "white or yellow onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "peeled and cut into large pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1 large rib celery, cut into large pieces",
       "expected": {
-        "item": "rib celery, cut into large pieces",
+        "item": "rib celery",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into large pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1 small fennel bulb, trimmed and cut into large pieces",
       "expected": {
-        "item": "fennel bulb, trimmed and cut into large pieces",
+        "item": "fennel bulb",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "trimmed and cut into large pieces",
         "category": "Produce"
       }
     },

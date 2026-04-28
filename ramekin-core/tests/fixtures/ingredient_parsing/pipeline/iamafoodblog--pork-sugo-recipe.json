@@ -55,42 +55,50 @@
     {
       "raw": "3 cups onion, rough diced",
       "expected": {
-        "item": "onion, rough diced",
+        "item": "onion",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
+          },
+          {
+            "amount": "412",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "rough diced",
         "category": "Produce"
       }
     },
     {
       "raw": "1 cup carrots, rough diced",
       "expected": {
-        "item": "carrots, rough diced",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "rough diced",
         "category": "Produce"
       }
     },
     {
       "raw": "1 cup celery, rough diced",
       "expected": {
-        "item": "celery, rough diced",
+        "item": "celery",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "120",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "rough diced",
         "category": "Produce"
       }
     },

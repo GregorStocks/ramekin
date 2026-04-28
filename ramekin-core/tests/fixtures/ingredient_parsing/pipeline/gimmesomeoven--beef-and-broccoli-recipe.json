@@ -233,14 +233,14 @@
     {
       "raw": "4 scallions, sliced into 2-inch pieces",
       "expected": {
-        "item": "scallions, sliced into 2-inch pieces",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced into 2-inch pieces",
         "category": "Produce"
       }
     },

@@ -91,14 +91,14 @@
     {
       "raw": "1 red bell pepper, seeded and sliced",
       "expected": {
-        "item": "red bell pepper, seeded and sliced",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded and sliced",
         "category": "Produce"
       }
     },

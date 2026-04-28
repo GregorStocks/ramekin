@@ -42,28 +42,28 @@
     {
       "raw": "2 carrots, sliced in 1/4-inch slices (about the same amount as onion)",
       "expected": {
-        "item": "carrots, sliced in 1/4-inch slices",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "about the same amount as onion",
+        "note": "about the same amount as onion, sliced in 1/4-inch slices",
         "category": "Produce"
       }
     },
     {
       "raw": "2 celery stalks, sliced in 1/4-inch slices (about the same amount as the onion)",
       "expected": {
-        "item": "celery stalks, sliced in 1/4-inch slices",
+        "item": "celery stalks",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "about the same amount as the onion",
+        "note": "about the same amount as the onion, sliced in 1/4-inch slices",
         "category": "Produce"
       }
     },

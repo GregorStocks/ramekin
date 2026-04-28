@@ -5,14 +5,14 @@
     {
       "raw": "1 5-pound boneless beef chuck-eye roast, pulled into 2 pieces at natural seam and trimmed of large pieces of fat",
       "expected": {
-        "item": "5-pound boneless beef chuck-eye roast, pulled into 2 pieces at natural seam and trimmed of large pieces of fat",
+        "item": "5-pound boneless beef chuck-eye roast",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "pulled into 2 pieces at natural seam and trimmed of large pieces of fat",
         "category": "Meat & Seafood"
       }
     },

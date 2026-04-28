@@ -142,7 +142,7 @@
     {
       "raw": "1 large carrot (about 6 ounces) or 2 slim ones, chopped tiny (1 cup)",
       "expected": {
-        "item": "carrot or 2 slim ones, chopped tiny",
+        "item": "carrot or 2 slim ones",
         "measurements": [
           {
             "amount": "1",
@@ -161,7 +161,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 6 ounces, chopped tiny",
         "category": "Produce"
       }
     },
@@ -183,7 +183,7 @@
             "unit": "g"
           }
         ],
-        "note": "plus a pinch extra for garnish",
+        "note": "about 2 1/2 cups, plus a pinch extra for garnish",
         "category": "Cheese"
       }
     }

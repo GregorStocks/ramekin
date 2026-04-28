@@ -39,21 +39,21 @@
             "unit": "tbsp"
           }
         ],
-        "note": "minced",
+        "note": "about 2 tablespoons, minced",
         "category": "Produce"
       }
     },
     {
       "raw": "1 garlic clove, minced or pressed through garlic press",
       "expected": {
-        "item": "garlic clove, minced or pressed through garlic press",
+        "item": "garlic clove",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "minced or pressed through garlic press",
         "category": "Produce"
       }
     },
@@ -132,7 +132,7 @@
     {
       "raw": "1 pound cherry or grape tomatoes, mixed colors if you can find them",
       "expected": {
-        "item": "cherry or grape tomatoes, mixed colors if you can find them",
+        "item": "cherry or grape tomatoes",
         "measurements": [
           {
             "amount": "1",
@@ -143,7 +143,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "mixed colors if you can find them",
         "category": "Produce"
       }
     },

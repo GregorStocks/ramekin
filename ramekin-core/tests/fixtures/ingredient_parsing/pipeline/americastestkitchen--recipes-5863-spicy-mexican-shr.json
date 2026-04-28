@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds boneless pork butt , trimmed of excess fat and cut into 1-inch pieces (see note)",
       "expected": {
-        "item": "boneless pork butt, trimmed of excess fat and cut into 1-inch pieces",
+        "item": "boneless pork butt",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "see note",
+        "note": "see note, trimmed of excess fat and cut into 1-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -37,7 +37,7 @@
     {
       "raw": "5 medium garlic cloves , 3 peeled and smashed and 2 minced or pressed through garlic press (about 2 teaspoons)",
       "expected": {
-        "item": "garlic cloves, 3 peeled and smashed and 2 minced or pressed through garlic press",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "5",
@@ -48,7 +48,7 @@
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "about 2 teaspoons, 3 peeled and smashed and 2 minced or pressed through garlic press",
         "category": "Produce"
       }
     },

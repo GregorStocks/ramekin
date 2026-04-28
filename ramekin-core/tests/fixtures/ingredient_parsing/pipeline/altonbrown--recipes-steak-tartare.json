@@ -121,14 +121,14 @@
     {
       "raw": "2 tablespoons small, brined capers, drained and unrinsed",
       "expected": {
-        "item": "small, brined capers, drained and unrinsed",
+        "item": "small, brined capers",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "drained and unrinsed",
         "category": "Canned Goods"
       }
     },

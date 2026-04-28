@@ -160,7 +160,7 @@
     {
       "raw": "1/2 a smallish zucchini (about 3 ounces), cut into matchsticks",
       "expected": {
-        "item": "a smallish zucchini, cut into matchsticks",
+        "item": "a smallish zucchini",
         "measurements": [
           {
             "amount": "0.5",
@@ -175,7 +175,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 3 ounces, cut into matchsticks",
         "category": "Produce"
       }
     },

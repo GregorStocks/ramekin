@@ -78,14 +78,14 @@
     {
       "raw": "1-2 tilapia filets, trimmed into 2 squares",
       "expected": {
-        "item": "tilapia filets, trimmed into 2 squares",
+        "item": "tilapia filets",
         "measurements": [
           {
             "amount": "1-2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "trimmed into 2 squares",
         "category": "Meat & Seafood"
       }
     },

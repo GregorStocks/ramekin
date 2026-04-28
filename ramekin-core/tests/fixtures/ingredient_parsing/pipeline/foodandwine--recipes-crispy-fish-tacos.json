@@ -264,7 +264,7 @@
     {
       "raw": "1 pound&nbsp;skinless white fish fillets, such as bass or cod, cut into 12 strips",
       "expected": {
-        "item": "skinless white fish fillets, such as bass or cod, cut into 12 strips",
+        "item": "skinless white fish fillets, such as bass or cod",
         "measurements": [
           {
             "amount": "1",
@@ -275,7 +275,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 12 strips",
         "category": "Meat & Seafood"
       }
     },
@@ -338,14 +338,14 @@
     {
       "raw": "3 limes, cut into wedges",
       "expected": {
-        "item": "limes, cut into wedges",
+        "item": "limes",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into wedges",
         "category": "Produce"
       }
     }

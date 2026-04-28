@@ -5,14 +5,14 @@
     {
       "raw": "8 bacon strips, cut into 1-inch pieces",
       "expected": {
-        "item": "bacon strips, cut into 1-inch pieces",
+        "item": "bacon strips",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -176,7 +176,7 @@
             "unit": "g"
           }
         ],
-        "note": "thawed",
+        "note": "about 42 ounces, thawed",
         "category": "Frozen"
       }
     }

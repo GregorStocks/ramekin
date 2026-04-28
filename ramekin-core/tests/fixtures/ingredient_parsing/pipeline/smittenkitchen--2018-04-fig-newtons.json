@@ -5,7 +5,7 @@
     {
       "raw": "10 tablespoons (140 grams or 5 ounces) unsalted butter, cold is fine, cut into small chunks",
       "expected": {
-        "item": "unsalted butter, cold is fine, cut into small chunks",
+        "item": "unsalted butter, cold is fine",
         "measurements": [
           {
             "amount": "10",
@@ -20,7 +20,7 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "cut into small chunks",
         "category": "Dairy & Eggs"
       }
     },
@@ -163,7 +163,7 @@
     {
       "raw": "12 ounces (about 2 1/2 cups or 340 grams) plump, sticky dried mission figs, stems trimmed",
       "expected": {
-        "item": "plump, sticky dried mission figs, stems trimmed",
+        "item": "plump, sticky dried mission figs",
         "measurements": [
           {
             "amount": "12",
@@ -178,7 +178,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 1/2 cups or 340 grams, stems trimmed",
         "category": "Produce"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "1 medium eggplant, about 3/4 pound, cut into 1/2-inch cubes",
       "expected": {
-        "item": "eggplant, about 3/4 pound, cut into 1/2-inch cubes",
+        "item": "eggplant, about 3/4 pound",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch cubes",
         "category": "Produce"
       }
     },

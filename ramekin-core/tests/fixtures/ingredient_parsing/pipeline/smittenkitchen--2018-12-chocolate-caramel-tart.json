@@ -163,7 +163,7 @@
     {
       "raw": "1/2 cup (115 grams) unsalted butter, cut into tablespoons",
       "expected": {
-        "item": "unsalted butter, cut into tablespoons",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -174,7 +174,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into tablespoons",
         "category": "Dairy & Eggs"
       }
     },

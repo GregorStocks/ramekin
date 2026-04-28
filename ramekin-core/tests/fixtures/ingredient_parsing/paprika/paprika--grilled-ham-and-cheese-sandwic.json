@@ -23,14 +23,14 @@
     {
       "raw": "1 small onion, sliced thin",
       "expected": {
-        "item": "onion, sliced thin",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "sliced thin",
         "category": "Produce"
       }
     },

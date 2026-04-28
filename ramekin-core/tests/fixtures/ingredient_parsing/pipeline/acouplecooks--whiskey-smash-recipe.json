@@ -27,14 +27,14 @@
     {
       "raw": "1/4 lemon, sliced into 2 wedges",
       "expected": {
-        "item": "lemon, sliced into 2 wedges",
+        "item": "lemon",
         "measurements": [
           {
             "amount": "0.25",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced into 2 wedges",
         "category": "Produce"
       }
     },

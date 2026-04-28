@@ -27,7 +27,7 @@
     {
       "raw": "2 ounces (55 grams) thinly-sliced salami, cut into strips (optional)",
       "expected": {
-        "item": "thinly-sliced salami, cut into strips",
+        "item": "thinly-sliced salami",
         "measurements": [
           {
             "amount": "2",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, cut into strips",
         "category": "Meat & Seafood"
       }
     },
@@ -145,7 +145,7 @@
             "unit": "285-gram bag"
           }
         ],
-        "note": null,
+        "note": "from 1 10-ounce or 285-gram bag",
         "category": "Frozen"
       }
     },

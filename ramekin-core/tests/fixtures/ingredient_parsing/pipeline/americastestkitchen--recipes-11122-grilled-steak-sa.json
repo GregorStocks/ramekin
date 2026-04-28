@@ -90,28 +90,28 @@
     {
       "raw": "1 (1-pound) skirt steak , cut crosswise into 4 equal pieces and trimmed",
       "expected": {
-        "item": "skirt steak, cut crosswise into 4 equal pieces and trimmed",
+        "item": "skirt steak",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "1-pound",
+        "note": "1-pound, cut crosswise into 4 equal pieces and trimmed",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "4 ciabatta sandwich rolls , halved lengthwise",
       "expected": {
-        "item": "ciabatta sandwich rolls, halved lengthwise",
+        "item": "ciabatta sandwich rolls",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "halved lengthwise",
         "category": "Bakery & Bread"
       }
     },
@@ -158,14 +158,14 @@
     {
       "raw": "1 small red onion , halved and sliced thin",
       "expected": {
-        "item": "red onion, halved and sliced thin",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "halved and sliced thin",
         "category": "Produce"
       }
     }

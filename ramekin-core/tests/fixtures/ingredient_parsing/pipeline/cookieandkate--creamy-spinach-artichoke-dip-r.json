@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 cup",
         "category": "Frozen"
       }
     },
@@ -105,7 +105,7 @@
     {
       "raw": "8 ounces cream cheese, sliced into 4 even pieces",
       "expected": {
-        "item": "cream cheese, sliced into 4 even pieces",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "8",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sliced into 4 even pieces",
         "category": "Cheese"
       }
     },

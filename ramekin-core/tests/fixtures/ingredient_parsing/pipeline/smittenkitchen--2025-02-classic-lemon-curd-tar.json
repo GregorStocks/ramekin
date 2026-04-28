@@ -149,7 +149,7 @@
     {
       "raw": "1/2 cup (4 ounces or 115 grams) unsalted butter, cold, cut into pieces",
       "expected": {
-        "item": "unsalted butter, cold, cut into pieces",
+        "item": "unsalted butter, cold",
         "measurements": [
           {
             "amount": "0.5",
@@ -164,7 +164,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },

@@ -137,7 +137,7 @@
     {
       "raw": "2 c. fresh Bing or other sweet cherries, pitted and halved (about 12 ounces)",
       "expected": {
-        "item": "fresh Bing or other sweet cherries, pitted and halved",
+        "item": "fresh Bing or other sweet cherries",
         "measurements": [
           {
             "amount": "2",
@@ -152,7 +152,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 12 ounces, pitted and halved",
         "category": "Produce"
       }
     },

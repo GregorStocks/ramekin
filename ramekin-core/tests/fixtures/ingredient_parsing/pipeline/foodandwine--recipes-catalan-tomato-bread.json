@@ -33,14 +33,14 @@
     {
       "raw": "2 very ripe tomatoes, halved crosswise",
       "expected": {
-        "item": "very ripe tomatoes, halved crosswise",
+        "item": "very ripe tomatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "halved crosswise",
         "category": "Produce"
       }
     },

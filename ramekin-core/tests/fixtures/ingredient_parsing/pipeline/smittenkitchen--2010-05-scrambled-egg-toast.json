@@ -83,14 +83,14 @@
     {
       "raw": "1 tablespoon goat cheese, softened a bit (though cream cheese is a great swap here)",
       "expected": {
-        "item": "goat cheese, softened a bit",
+        "item": "goat cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": "though cream cheese is a great swap here",
+        "note": "though cream cheese is a great swap here, softened a bit",
         "category": "Cheese"
       }
     },

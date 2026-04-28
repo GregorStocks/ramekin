@@ -69,14 +69,18 @@
     {
       "raw": "6 tablespoons unsalted butter, cut into chunks",
       "expected": {
-        "item": "unsalted butter, cut into chunks",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Dairy & Eggs"
       }
     },
@@ -151,14 +155,18 @@
     {
       "raw": "1/4 cup unsalted butter, cut into chunks",
       "expected": {
-        "item": "unsalted butter, cut into chunks",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Dairy & Eggs"
       }
     },

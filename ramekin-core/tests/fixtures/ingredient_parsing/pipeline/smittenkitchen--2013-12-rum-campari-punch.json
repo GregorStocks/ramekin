@@ -107,7 +107,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 3 1/4 cups",
         "category": "Beverages"
       }
     },
@@ -125,7 +125,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 3 1/4 cups",
         "category": "Beverages"
       }
     },
@@ -155,28 +155,28 @@
     {
       "raw": "1 orange, sliced thin",
       "expected": {
-        "item": "orange, sliced thin",
+        "item": "orange",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced thin",
         "category": "Produce"
       }
     },
     {
       "raw": "1 lime, sliced thin",
       "expected": {
-        "item": "lime, sliced thin",
+        "item": "lime",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced thin",
         "category": "Produce"
       }
     },

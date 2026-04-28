@@ -9,7 +9,7 @@
     {
       "raw": "1 1/2 pounds (680 grams) Yukon gold potatoes, peeled if you wish, cut into 1/4-inch slices",
       "expected": {
-        "item": "Yukon gold potatoes, peeled if you wish, cut into 1/4-inch slices",
+        "item": "Yukon gold potatoes, peeled if you wish",
         "measurements": [
           {
             "amount": "1.5",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch slices",
         "section": "Potatoes",
         "category": "Produce"
       }

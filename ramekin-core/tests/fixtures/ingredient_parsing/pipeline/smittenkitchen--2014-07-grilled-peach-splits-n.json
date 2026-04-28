@@ -122,7 +122,7 @@
     {
       "raw": "6 tablespoons (85 grams) unsalted butter, melted and cooled slightly",
       "expected": {
-        "item": "unsalted butter, melted and cooled slightly",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "6",
@@ -133,7 +133,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "melted and cooled slightly",
         "category": "Dairy & Eggs"
       }
     },
@@ -330,14 +330,14 @@
     {
       "raw": "4 large firm-ripe peaches (free stone, if you can find them, not that I ever do), halved and pitted",
       "expected": {
-        "item": "firm-ripe peaches, halved and pitted",
+        "item": "firm-ripe peaches",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": "free stone, if you can find them, not that I ever do",
+        "note": "free stone, if you can find them, not that I ever do, halved and pitted",
         "category": "Produce"
       }
     },

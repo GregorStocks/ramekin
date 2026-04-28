@@ -51,7 +51,7 @@
     {
       "raw": "1 large globe eggplant (about ¾ lb.), cut into ½\" pieces",
       "expected": {
-        "item": "globe eggplant, cut into 1/2\" pieces",
+        "item": "globe eggplant",
         "measurements": [
           {
             "amount": "1",
@@ -66,42 +66,42 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 3/4 lb., cut into 1/2\" pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1 zucchini, quartered lengthwise and thinly sliced",
       "expected": {
-        "item": "zucchini, quartered lengthwise and thinly sliced",
+        "item": "zucchini",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "quartered lengthwise and thinly sliced",
         "category": "Produce"
       }
     },
     {
       "raw": "1 red bell pepper, seeded and chopped",
       "expected": {
-        "item": "red bell pepper, seeded and chopped",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded and chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "1 pint cherry or grape tomatoes (about 12 oz.), halved or quartered if large",
       "expected": {
-        "item": "cherry or grape tomatoes, halved or quartered if large",
+        "item": "cherry or grape tomatoes",
         "measurements": [
           {
             "amount": "1",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 12 oz., halved or quartered if large",
         "category": "Produce"
       }
     },

@@ -83,28 +83,28 @@
     {
       "raw": "2 medium zucchini, cut into 1/2-inch pieces",
       "expected": {
-        "item": "zucchini, cut into 1/2-inch pieces",
+        "item": "zucchini",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "2 medium yellow squash, cut into 1/2-inch pieces",
       "expected": {
-        "item": "yellow squash, cut into 1/2-inch pieces",
+        "item": "yellow squash",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Produce"
       }
     },

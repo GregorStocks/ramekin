@@ -89,7 +89,7 @@
     {
       "raw": "1 2/3 pounds very ripe but firm tomatoes, cut into 3/4-inch cubes",
       "expected": {
-        "item": "very ripe but firm tomatoes, cut into 3/4-inch cubes",
+        "item": "very ripe but firm tomatoes",
         "measurements": [
           {
             "amount": "1.67",
@@ -100,21 +100,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 3/4-inch cubes",
         "category": "Produce"
       }
     },
     {
       "raw": "2 small Kirby (pickling) cucumbers, cored, seeded and diced",
       "expected": {
-        "item": "Kirby cucumbers, cored, seeded and diced",
+        "item": "Kirby cucumbers, cored",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
           }
         ],
-        "note": "pickling",
+        "note": "pickling, seeded and diced",
         "category": "Produce"
       }
     },
@@ -135,14 +135,14 @@
     {
       "raw": "1/2 cup seedless green grapes, cut in half",
       "expected": {
-        "item": "seedless green grapes, cut in half",
+        "item": "seedless green grapes",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut in half",
         "category": "Produce"
       }
     },
@@ -237,7 +237,7 @@
     {
       "raw": "1/2 pound sweet Spanish-style chorizo sausage, diced medium-fine",
       "expected": {
-        "item": "sweet Spanish-style chorizo sausage, diced medium-fine",
+        "item": "sweet Spanish-style chorizo sausage",
         "measurements": [
           {
             "amount": "0.5",
@@ -248,7 +248,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "diced medium-fine",
         "category": "Meat & Seafood"
       }
     },
@@ -273,14 +273,14 @@
     {
       "raw": "2 tablespoon sherry vinegar, preferably aged (we, of course, used more)",
       "expected": {
-        "item": "sherry vinegar, preferably aged",
+        "item": "sherry vinegar",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": "we, of course, used more",
+        "note": "we, of course, used more, preferably aged",
         "category": "Oils & Vinegars"
       }
     },
@@ -342,14 +342,14 @@
     {
       "raw": "3 medium-size firm tomatoes, peeled, seeded and chopped",
       "expected": {
-        "item": "medium-size firm tomatoes, peeled, seeded and chopped",
+        "item": "medium-size firm tomatoes, peeled",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded and chopped",
         "category": "Produce"
       }
     },

@@ -55,14 +55,14 @@
     {
       "raw": "1/2  cup    cocoa, sifted in with in the icing sugar",
       "expected": {
-        "item": "cocoa, sifted in with in the icing sugar",
+        "item": "cocoa",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "sifted in with in the icing sugar",
         "category": "Baking"
       }
     },

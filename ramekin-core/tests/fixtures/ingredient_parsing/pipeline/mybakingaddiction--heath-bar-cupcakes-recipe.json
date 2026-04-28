@@ -246,7 +246,7 @@
     {
       "raw": "4 oz bittersweet chocolate, chopped into very small pieces",
       "expected": {
-        "item": "bittersweet chocolate, chopped into very small pieces",
+        "item": "bittersweet chocolate",
         "measurements": [
           {
             "amount": "4",
@@ -257,7 +257,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "chopped into very small pieces",
         "category": "Other"
       }
     },
@@ -336,14 +336,14 @@
     {
       "raw": "5 1.4-ounce Heath Bars, chopped into large pieces",
       "expected": {
-        "item": "1.4-ounce Heath Bars, chopped into large pieces",
+        "item": "1.4-ounce Heath Bars",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "chopped into large pieces",
         "category": "Other"
       }
     }

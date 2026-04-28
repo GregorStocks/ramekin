@@ -23,9 +23,9 @@
     {
       "raw": "Kosher salt, freshly ground pepper",
       "expected": {
-        "item": "Kosher salt, freshly ground pepper",
+        "item": "Kosher salt",
         "measurements": [],
-        "note": null,
+        "note": "freshly ground pepper",
         "category": "Spices & Seasonings"
       }
     },
@@ -50,7 +50,7 @@
     {
       "raw": "1 lb. mini sweet peppers, sliced into ½\"-thick rings",
       "expected": {
-        "item": "mini sweet peppers, sliced into 1/2\"-thick rings",
+        "item": "mini sweet peppers",
         "measurements": [
           {
             "amount": "1",
@@ -61,7 +61,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sliced into 1/2\"-thick rings",
         "category": "Spices & Seasonings"
       }
     },
@@ -175,7 +175,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely grated",
+        "note": "about 1 1/2 cups, finely grated",
         "category": "Cheese"
       }
     },

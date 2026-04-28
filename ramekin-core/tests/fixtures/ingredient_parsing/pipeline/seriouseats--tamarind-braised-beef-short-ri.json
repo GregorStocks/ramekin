@@ -63,14 +63,14 @@
     {
       "raw": "1 serrano chile pepper, stemmed and chopped",
       "expected": {
-        "item": "serrano chile pepper, stemmed and chopped",
+        "item": "serrano chile pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "stemmed and chopped",
         "category": "Produce"
       }
     },
@@ -190,7 +190,7 @@
     {
       "raw": "1 large yellow onion (10 ounces; 283 g), cut into 1/2-inch dice",
       "expected": {
-        "item": "yellow onion, cut into 1/2-inch dice",
+        "item": "yellow onion",
         "measurements": [
           {
             "amount": "1",
@@ -205,14 +205,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch dice",
         "category": "Produce"
       }
     },
     {
       "raw": "2 large carrots (about 12 ounces; 450 g total), cut into 1/2-inch dice",
       "expected": {
-        "item": "carrots, cut into 1/2-inch dice",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
@@ -227,7 +227,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 12 ounces; 450 g total, cut into 1/2-inch dice",
         "category": "Produce"
       }
     },

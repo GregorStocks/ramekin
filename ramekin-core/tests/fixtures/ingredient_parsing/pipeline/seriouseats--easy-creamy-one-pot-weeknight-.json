@@ -5,7 +5,7 @@
     {
       "raw": "1/2 pound salt pork or bacon, cut into 1/2-inch pieces (225g)",
       "expected": {
-        "item": "salt pork or bacon, cut into 1/2-inch pieces",
+        "item": "salt pork or bacon",
         "measurements": [
           {
             "amount": "0.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -60,7 +60,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely chopped",
+        "note": "about 8 ounces; 225g, finely chopped",
         "category": "Produce"
       }
     },
@@ -82,7 +82,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely chopped",
+        "note": "about 6 ounces; 170g, finely chopped",
         "category": "Produce"
       }
     },
@@ -109,7 +109,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 20g",
         "category": "Baking"
       }
     },
@@ -156,7 +156,7 @@
     {
       "raw": "1 pound russet or Yukon gold potatoes, peeled and cut into 1/2-inch cubes (450g)",
       "expected": {
-        "item": "russet or Yukon gold potatoes, peeled and cut into 1/2-inch cubes",
+        "item": "russet or Yukon gold potatoes",
         "measurements": [
           {
             "amount": "1",
@@ -167,7 +167,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "peeled and cut into 1/2-inch cubes",
         "category": "Produce"
       }
     },
@@ -188,7 +188,7 @@
     {
       "raw": "3/4 to 1 pound boneless, skinless fish scraps, such as salmon, cod, or halibut, cut into 3/4-inch chunks (350-450g)",
       "expected": {
-        "item": "boneless, skinless fish scraps, such as salmon, cod, or halibut, cut into 3/4-inch chunks",
+        "item": "boneless, skinless fish scraps, such as salmon, cod, or halibut",
         "measurements": [
           {
             "amount": "0.75 to 1",
@@ -199,7 +199,7 @@
             "unit": "g"
           }
         ],
-        "note": "350-450g",
+        "note": "350-450g, cut into 3/4-inch chunks",
         "category": "Meat & Seafood"
       }
     },

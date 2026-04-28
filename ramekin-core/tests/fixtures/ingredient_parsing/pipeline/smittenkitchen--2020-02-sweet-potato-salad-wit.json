@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 4 medium",
         "category": "Produce"
       }
     },
@@ -86,14 +86,14 @@
     {
       "raw": "1 teaspoon mild (Aleppo-style) or hot red pepper flakes, or less to taste",
       "expected": {
-        "item": "mild or hot red pepper flakes, or less to taste",
+        "item": "mild or hot red pepper flakes",
         "measurements": [
           {
             "amount": "1",
             "unit": "tsp"
           }
         ],
-        "note": "Aleppo-style",
+        "note": "Aleppo-style; or less to taste",
         "category": "Spices & Seasonings"
       }
     },

@@ -78,7 +78,7 @@
     {
       "raw": "6 ounces mozzarella, cut into small cubes",
       "expected": {
-        "item": "mozzarella, cut into small cubes",
+        "item": "mozzarella",
         "measurements": [
           {
             "amount": "6",
@@ -89,7 +89,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small cubes",
         "category": "Cheese"
       }
     },

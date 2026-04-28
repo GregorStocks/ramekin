@@ -5,14 +5,14 @@
     {
       "raw": "10 small zucchini, ends trimmed",
       "expected": {
-        "item": "zucchini, ends trimmed",
+        "item": "zucchini",
         "measurements": [
           {
             "amount": "10",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "ends trimmed",
         "category": "Produce"
       }
     },
@@ -33,14 +33,14 @@
     {
       "raw": "1 red bell pepper, stemmed and seeded",
       "expected": {
-        "item": "red bell pepper, stemmed and seeded",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "stemmed and seeded",
         "category": "Produce"
       }
     },

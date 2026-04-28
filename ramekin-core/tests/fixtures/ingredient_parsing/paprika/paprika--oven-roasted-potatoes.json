@@ -5,14 +5,14 @@
     {
       "raw": "6 potatoes, cut into chunks",
       "expected": {
-        "item": "potatoes, cut into chunks",
+        "item": "potatoes",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Produce"
       }
     },

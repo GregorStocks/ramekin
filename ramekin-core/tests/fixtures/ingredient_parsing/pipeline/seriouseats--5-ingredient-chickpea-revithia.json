@@ -20,14 +20,14 @@
             "unit": "g"
           }
         ],
-        "note": "halved and thinly sliced",
+        "note": "about 4 ounces; 113 g total, halved and thinly sliced",
         "category": "Produce"
       }
     },
     {
       "raw": "2 medium carrots (12 ounces; 340 g total), roughly chopped into 1-inch pieces",
       "expected": {
-        "item": "carrots, roughly chopped into 1-inch pieces",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
@@ -42,7 +42,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "roughly chopped into 1-inch pieces",
         "category": "Produce"
       }
     },
@@ -109,7 +109,7 @@
     {
       "raw": "2 heaping tablespoons (45 g) miso paste, whisked into 1 cup warm water",
       "expected": {
-        "item": "miso paste, whisked into 1 cup warm water",
+        "item": "miso paste",
         "measurements": [
           {
             "amount": "2",
@@ -120,7 +120,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "whisked into 1 cup warm water",
         "category": "Condiments & Sauces"
       }
     },

@@ -47,14 +47,14 @@
     {
       "raw": "1 small jalapeno, seeded and minced",
       "expected": {
-        "item": "jalapeno, seeded and minced",
+        "item": "jalapeno",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "seeded and minced",
         "category": "Produce"
       }
     },
@@ -167,13 +167,9 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "2",
-            "unit": "small"
           }
         ],
-        "note": null,
+        "note": "from about half a long English or 2 small Persian cukes",
         "category": "Produce"
       }
     },

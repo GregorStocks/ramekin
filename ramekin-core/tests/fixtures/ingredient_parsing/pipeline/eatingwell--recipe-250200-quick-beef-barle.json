@@ -5,7 +5,7 @@
     {
       "raw": "8 ounces sirloin steak, trimmed and cut into bite-size pieces",
       "expected": {
-        "item": "sirloin steak, trimmed and cut into bite-size pieces",
+        "item": "sirloin steak",
         "measurements": [
           {
             "amount": "8",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "trimmed and cut into bite-size pieces",
         "category": "Meat & Seafood"
       }
     },

@@ -5,28 +5,28 @@
     {
       "raw": "2 Yukon Gold potatoes, peeled and cut into 1/2-inch pieces",
       "expected": {
-        "item": "Yukon Gold potatoes, peeled and cut into 1/2-inch pieces",
+        "item": "Yukon Gold potatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and cut into 1/2-inch pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1 medium carrot, peeled and cut into 1/4-inch pieces",
       "expected": {
-        "item": "carrot, peeled and cut into 1/4-inch pieces",
+        "item": "carrot",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "peeled and cut into 1/4-inch pieces",
         "category": "Produce"
       }
     },
@@ -148,14 +148,14 @@
     {
       "raw": "One 6-ounce can or jar solid white tuna in olive oil, preferably Spanish or Italian, drained and flaked",
       "expected": {
-        "item": "or jar solid white tuna in olive oil, preferably Spanish or Italian, drained and flaked",
+        "item": "or jar solid white tuna in olive oil, preferably Spanish or Italian",
         "measurements": [
           {
             "amount": "1",
             "unit": "6-ounce can"
           }
         ],
-        "note": null,
+        "note": "drained and flaked",
         "category": "Oils & Vinegars"
       }
     },

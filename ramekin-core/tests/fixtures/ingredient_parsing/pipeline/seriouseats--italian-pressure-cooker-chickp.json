@@ -50,7 +50,7 @@
     {
       "raw": "1 1/2 pounds (680g) baby back pork ribs, divided in half through the bones and separated into individual ribs (see notes)",
       "expected": {
-        "item": "baby back pork ribs, divided in half through the bones and separated into individual ribs",
+        "item": "baby back pork ribs",
         "measurements": [
           {
             "amount": "1.5",
@@ -61,7 +61,7 @@
             "unit": "g"
           }
         ],
-        "note": "see notes",
+        "note": "see notes, divided in half through the bones and separated into individual ribs",
         "category": "Meat & Seafood"
       }
     },
@@ -189,7 +189,7 @@
     {
       "raw": "12 ounces yellow potatoes (340g; about 2 medium potatoes), such as Yukon Gold, peeled and cut into irregular chunks about 1/2 inch thick (see headnote above)",
       "expected": {
-        "item": "yellow potatoes, such as Yukon Gold, peeled and cut into irregular chunks about 1/2 inch thick",
+        "item": "yellow potatoes, such as Yukon Gold",
         "measurements": [
           {
             "amount": "12",
@@ -198,13 +198,9 @@
           {
             "amount": "340",
             "unit": "g"
-          },
-          {
-            "amount": "2",
-            "unit": "medium"
           }
         ],
-        "note": "see headnote above",
+        "note": "340g; about 2 medium potatoes, see headnote above, peeled and cut into irregular chunks about 1/2 inch thick",
         "category": "Produce"
       }
     },

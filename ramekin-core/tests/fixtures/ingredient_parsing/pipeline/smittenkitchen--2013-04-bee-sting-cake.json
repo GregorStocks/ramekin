@@ -141,14 +141,18 @@
     {
       "raw": "6 tablespoons unsalted butter, cold is fine",
       "expected": {
-        "item": "unsalted butter, cold is fine",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "6",
             "unit": "tbsp"
+          },
+          {
+            "amount": "85",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cold is fine",
         "category": "Dairy & Eggs"
       }
     },
@@ -341,14 +345,18 @@
     {
       "raw": "2 tablespoons unsalted butter, cold is fine",
       "expected": {
-        "item": "unsalted butter, cold is fine",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cold is fine",
         "category": "Dairy & Eggs"
       }
     }

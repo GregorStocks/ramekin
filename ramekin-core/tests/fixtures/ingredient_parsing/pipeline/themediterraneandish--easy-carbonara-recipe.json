@@ -179,7 +179,7 @@
     {
       "raw": "3 ounces Prosciutto (optional), sliced into thin ribbons",
       "expected": {
-        "item": "Prosciutto, sliced into thin ribbons",
+        "item": "Prosciutto",
         "measurements": [
           {
             "amount": "3",
@@ -190,7 +190,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, sliced into thin ribbons",
         "category": "Meat & Seafood"
       }
     },

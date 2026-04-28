@@ -50,13 +50,9 @@
           {
             "amount": "12",
             "unit": "oz"
-          },
-          {
-            "amount": "1.5",
-            "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "12 ounces; about 1 1/2 cup plus 2 tablespoons",
         "category": "Baking"
       }
     },
@@ -110,14 +106,14 @@
             "unit": "g"
           }
         ],
-        "note": "cold",
+        "note": "about 7 1/2 ounces; 210g, cold",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "90g unsalted butter (3 ounces; 6 tablespoons), cut into 1/2-inch cubes",
       "expected": {
-        "item": "unsalted butter, cut into 1/2-inch cubes",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "90",
@@ -132,21 +128,21 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch cubes",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "Three 14 1/2- by 9 1/2-inch sheets puff pastry from three 14-ounce packages frozen puff pastry, thawed, preferably all-butter (such as Dufour)",
       "expected": {
-        "item": "14 1/2- by 9 1/2-inch sheets puff pastry from three 14-ounce packages frozen puff pastry, thawed, preferably all-butter",
+        "item": "14 1/2- by 9 1/2-inch sheets puff pastry from three 14-ounce packages frozen puff pastry, thawed",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": "such as Dufour",
+        "note": "such as Dufour, preferably all-butter",
         "category": "Frozen"
       }
     },

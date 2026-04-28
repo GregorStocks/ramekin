@@ -121,14 +121,14 @@
     {
       "raw": "1 small avocado, pitted and diced",
       "expected": {
-        "item": "avocado, pitted and diced",
+        "item": "avocado",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "pitted and diced",
         "category": "Produce"
       }
     },
@@ -176,14 +176,14 @@
     {
       "raw": "2 small garlic cloves, pressed or minced",
       "expected": {
-        "item": "garlic cloves, pressed or minced",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "pressed or minced",
         "category": "Produce"
       }
     },

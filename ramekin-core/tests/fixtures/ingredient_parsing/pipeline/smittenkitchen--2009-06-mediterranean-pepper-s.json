@@ -77,14 +77,14 @@
     {
       "raw": "1/2 a red onion, cut into a 1/2-inch dice (use less if your onion is huge)",
       "expected": {
-        "item": "a red onion, cut into a 1/2-inch dice",
+        "item": "a red onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "use less if your onion is huge",
+        "note": "use less if your onion is huge, cut into a 1/2-inch dice",
         "category": "Produce"
       }
     },

@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 5 oz",
         "category": "Produce"
       }
     },
@@ -55,14 +55,14 @@
     {
       "raw": "5 celery stalks, ends trimmed",
       "expected": {
-        "item": "celery stalks, ends trimmed",
+        "item": "celery stalks",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "ends trimmed",
         "category": "Produce"
       }
     },
@@ -98,7 +98,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 oz",
         "category": "Produce"
       }
     }

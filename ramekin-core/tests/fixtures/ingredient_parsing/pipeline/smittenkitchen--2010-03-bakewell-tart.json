@@ -5,14 +5,14 @@
     {
       "raw": "1 cup coarsely chopped almonds, blanched if you can find them",
       "expected": {
-        "item": "coarsely chopped almonds, blanched if you can find them",
+        "item": "coarsely chopped almonds",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "blanched if you can find them",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -62,15 +62,11 @@
             "unit": "tbsp"
           },
           {
-            "amount": "1",
-            "unit": "stick"
-          },
-          {
             "amount": "128",
             "unit": "g"
           }
         ],
-        "note": "at room temperature",
+        "note": "1 stick plus 1 tablespoon, at room temperature",
         "category": "Dairy & Eggs"
       }
     },

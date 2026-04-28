@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 8 oz.",
         "category": "Produce"
       }
     },
@@ -73,14 +73,18 @@
     {
       "raw": "3 Tbsp. unsalted butter, cut into pieces",
       "expected": {
-        "item": "unsalted butter, cut into pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "3",
             "unit": "tbsp"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -161,14 +165,14 @@
     {
       "raw": "1 8–10-oz. package Halloumi cheese, patted dry",
       "expected": {
-        "item": "8-10-oz. package Halloumi cheese, patted dry",
+        "item": "8-10-oz. package Halloumi cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "patted dry",
         "category": "Cheese"
       }
     },

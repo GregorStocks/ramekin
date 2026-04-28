@@ -78,7 +78,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 1/8 ounces",
         "category": "Baking"
       }
     },
@@ -96,7 +96,7 @@
             "unit": "cup"
           }
         ],
-        "note": "finely chopped",
+        "note": "about 3/4 cup, finely chopped",
         "category": "Produce"
       }
     },
@@ -114,7 +114,7 @@
             "unit": "cup"
           }
         ],
-        "note": "finely chopped",
+        "note": "about 1 cup, finely chopped",
         "category": "Produce"
       }
     },
@@ -132,7 +132,7 @@
             "unit": "cup"
           }
         ],
-        "note": "finely chopped",
+        "note": "about 1 1/4 cups, finely chopped",
         "category": "Produce"
       }
     },
@@ -195,7 +195,7 @@
     {
       "raw": ".5 pound fresh crabmeat, picked over",
       "expected": {
-        "item": "fresh crabmeat, picked over",
+        "item": "fresh crabmeat",
         "measurements": [
           {
             "amount": ".5",
@@ -206,7 +206,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "picked over",
         "category": "Meat & Seafood"
       }
     },

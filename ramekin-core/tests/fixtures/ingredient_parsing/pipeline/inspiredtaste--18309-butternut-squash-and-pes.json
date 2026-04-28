@@ -45,7 +45,7 @@
     {
       "raw": "Half of a medium butternut squash, seeds removed and diced (3 cups)",
       "expected": {
-        "item": "medium butternut squash, seeds removed and diced",
+        "item": "medium butternut squash",
         "measurements": [
           {
             "amount": "0.5",
@@ -56,7 +56,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "seeds removed and diced",
         "category": "Produce"
       }
     },
@@ -110,7 +110,7 @@
             "unit": "g"
           }
         ],
-        "note": "coarsely grated",
+        "note": "about 1 cup, coarsely grated",
         "category": "Cheese"
       }
     },

@@ -151,14 +151,14 @@
     {
       "raw": "1 28-ounce can crushed tomatoes, fire-roasted if you can find them",
       "expected": {
-        "item": "crushed tomatoes, fire-roasted if you can find them",
+        "item": "crushed tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "28-ounce can"
           }
         ],
-        "note": null,
+        "note": "fire-roasted if you can find them",
         "category": "Canned Goods"
       }
     },

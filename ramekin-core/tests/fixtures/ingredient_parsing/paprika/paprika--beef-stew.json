@@ -188,14 +188,14 @@
     {
       "raw": "6 large carrots, about 1 1/2 pounds, trimmed and scraped",
       "expected": {
-        "item": "carrots, about 1 1/2 pounds, trimmed and scraped",
+        "item": "carrots, about 1 1/2 pounds",
         "measurements": [
           {
             "amount": "6",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "trimmed and scraped",
         "category": "Produce"
       }
     }

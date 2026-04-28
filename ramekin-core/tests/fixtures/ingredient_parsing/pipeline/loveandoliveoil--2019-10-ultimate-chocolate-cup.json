@@ -313,7 +313,7 @@
     {
       "raw": "5 ounces dark chocolate (60-70%), melted and cooled to lukewarm",
       "expected": {
-        "item": "dark chocolate, melted and cooled to lukewarm",
+        "item": "dark chocolate",
         "measurements": [
           {
             "amount": "5",
@@ -324,7 +324,7 @@
             "unit": "g"
           }
         ],
-        "note": "60-70%",
+        "note": "60-70%, melted and cooled to lukewarm",
         "category": "Other"
       }
     }

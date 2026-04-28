@@ -132,28 +132,28 @@
     {
       "raw": "1 baguette, sliced 1/2-inch-thick on an angle",
       "expected": {
-        "item": "baguette, sliced 1/2-inch-thick on an angle",
+        "item": "baguette",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced 1/2-inch-thick on an angle",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "1 large red onion, cut into thin wedges",
       "expected": {
-        "item": "red onion, cut into thin wedges",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into thin wedges",
         "category": "Produce"
       }
     },

@@ -5,28 +5,28 @@
     {
       "raw": "6       potatoes, peeled and cut into large chunks",
       "expected": {
-        "item": "potatoes, peeled and cut into large chunks",
+        "item": "potatoes",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and cut into large chunks",
         "category": "Produce"
       }
     },
     {
       "raw": "5       carrots, peeled and cut into 2-inch slices",
       "expected": {
-        "item": "carrots, peeled and cut into 2-inch slices",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and cut into 2-inch slices",
         "category": "Produce"
       }
     },

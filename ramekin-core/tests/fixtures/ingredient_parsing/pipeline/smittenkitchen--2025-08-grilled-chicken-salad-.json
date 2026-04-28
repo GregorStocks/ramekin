@@ -47,14 +47,14 @@
     {
       "raw": "1 jalapeño, seeded and roughly chopped",
       "expected": {
-        "item": "jalapeño, seeded and roughly chopped",
+        "item": "jalapeño",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded and roughly chopped",
         "category": "Produce"
       }
     },
@@ -197,14 +197,14 @@
     {
       "raw": "1 firm-ripe avocado, sliced thin",
       "expected": {
-        "item": "firm-ripe avocado, sliced thin",
+        "item": "firm-ripe avocado",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced thin",
         "category": "Produce"
       }
     },

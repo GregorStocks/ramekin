@@ -5,7 +5,7 @@
     {
       "raw": "1 1/4 pounds (about 3 1/2 cups) fresh or frozen blueberries, rinsed and stems removed",
       "expected": {
-        "item": "fresh or frozen blueberries, rinsed and stems removed",
+        "item": "fresh or frozen blueberries",
         "measurements": [
           {
             "amount": "1.25",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 3 1/2 cups, rinsed and stems removed",
         "category": "Produce"
       }
     },

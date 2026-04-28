@@ -37,7 +37,7 @@
     {
       "raw": "1 1/2 pounds zucchini (about 3 medium), sliced 1/4-inch thick",
       "expected": {
-        "item": "zucchini, sliced 1/4-inch thick",
+        "item": "zucchini",
         "measurements": [
           {
             "amount": "1.5",
@@ -52,14 +52,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 3 medium, sliced 1/4-inch thick",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 pound plum tomatoes, sliced 1/4-inch thick",
       "expected": {
-        "item": "plum tomatoes, sliced 1/4-inch thick",
+        "item": "plum tomatoes",
         "measurements": [
           {
             "amount": "0.5",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sliced 1/4-inch thick",
         "category": "Produce"
       }
     },
@@ -86,14 +86,14 @@
     {
       "raw": "1 medium onion, halved lengthwise and thinly sliced",
       "expected": {
-        "item": "onion, halved lengthwise and thinly sliced",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "halved lengthwise and thinly sliced",
         "category": "Produce"
       }
     },

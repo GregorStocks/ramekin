@@ -5,7 +5,7 @@
     {
       "raw": "1 1/2 to 2 pounds of fillets of firm white fish such as halibut, swordfish, or cod, rinsed in cold water, pin bones removed, cut into large portions",
       "expected": {
-        "item": "fillets of firm white fish such as halibut, swordfish, or cod, rinsed in cold water, pin bones removed, cut into large portions",
+        "item": "fillets of firm white fish such as halibut, swordfish, or cod, rinsed in cold water, pin bones removed",
         "measurements": [
           {
             "amount": "1.5 to 2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into large portions",
         "category": "Meat & Seafood"
       }
     },
@@ -166,14 +166,14 @@
     {
       "raw": "1 large bunch of cilantro, chopped with some set aside for garnish",
       "expected": {
-        "item": "bunch of cilantro, chopped with some set aside for garnish",
+        "item": "bunch of cilantro",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "chopped with some set aside for garnish",
         "category": "Produce"
       }
     },

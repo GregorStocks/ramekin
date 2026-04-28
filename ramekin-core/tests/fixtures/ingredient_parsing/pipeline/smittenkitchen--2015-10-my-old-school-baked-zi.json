@@ -60,15 +60,15 @@
     {
       "raw": "28-ounce can whole tomatoes with juices, chopped by you, or crushed tomatoes",
       "expected": {
-        "item": "whole tomatoes with juices, chopped by you, or crushed tomatoes",
+        "item": "whole tomatoes with juices, chopped by you",
         "measurements": [
           {
             "amount": "1",
             "unit": "28-ounce can"
           }
         ],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "or crushed tomatoes",
+        "category": "Produce"
       }
     },
     {
@@ -101,7 +101,7 @@
     {
       "raw": "1 pound pasta, cooked al dente and drained",
       "expected": {
-        "item": "pasta, cooked al dente and drained",
+        "item": "pasta",
         "measurements": [
           {
             "amount": "1",
@@ -112,7 +112,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cooked al dente and drained",
         "category": "Pasta & Rice"
       }
     },
@@ -151,7 +151,7 @@
     {
       "raw": "1/4 pound (4 ounces) baby spinach or a few handfuls of another green, cut into thin ribbons",
       "expected": {
-        "item": "baby spinach or a few handfuls of another green, cut into thin ribbons",
+        "item": "baby spinach or a few handfuls of another green",
         "measurements": [
           {
             "amount": "0.25",
@@ -166,7 +166,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into thin ribbons",
         "category": "Produce"
       }
     },

@@ -84,7 +84,7 @@
     {
       "raw": "1 ounce (1/2 cup) dried wood ear mushrooms or 5 fresh button or shiitake mushrooms, wiped clean and thinly sliced",
       "expected": {
-        "item": "dried wood ear mushrooms or 5 fresh button or shiitake mushrooms, wiped clean and thinly sliced",
+        "item": "dried wood ear mushrooms or 5 fresh button or shiitake mushrooms",
         "measurements": [
           {
             "amount": "1",
@@ -99,7 +99,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "wiped clean and thinly sliced",
         "category": "Produce"
       }
     },
@@ -209,14 +209,14 @@
             "unit": "g"
           }
         ],
-        "note": "drained",
+        "note": "about 2 ounces, drained",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1/2 pound soft tofu, cut into 1/2-inch dice",
       "expected": {
-        "item": "soft tofu, cut into 1/2-inch dice",
+        "item": "soft tofu",
         "measurements": [
           {
             "amount": "0.5",
@@ -227,7 +227,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch dice",
         "category": "Produce"
       }
     },

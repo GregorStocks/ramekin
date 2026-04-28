@@ -109,7 +109,7 @@
     {
       "raw": "6 ounces (170 grams) semi- or bittersweet chocolate, chopped, or 1 cup semi- or bittersweet chocolate chips",
       "expected": {
-        "item": "semi- or bittersweet chocolate, chopped, or 1 cup semi- or bittersweet chocolate chips",
+        "item": "semi- or bittersweet chocolate, chopped",
         "measurements": [
           {
             "amount": "6",
@@ -120,8 +120,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "or 1 cup semi- or bittersweet chocolate chips",
+        "category": "Other"
       }
     },
     {

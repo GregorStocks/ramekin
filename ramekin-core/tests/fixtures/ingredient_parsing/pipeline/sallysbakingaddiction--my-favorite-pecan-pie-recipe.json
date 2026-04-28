@@ -114,7 +114,7 @@
     {
       "raw": "1/4 cup (4 Tbsp; 56g) unsalted butter, melted and slightly cooled",
       "expected": {
-        "item": "unsalted butter, melted and slightly cooled",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.25",
@@ -129,7 +129,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "melted and slightly cooled",
         "category": "Dairy & Eggs"
       }
     },

@@ -59,28 +59,32 @@
     {
       "raw": "5 garlic cloves, peeled and minced or pressed",
       "expected": {
-        "item": "garlic cloves, peeled and minced or pressed",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and minced or pressed",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 teaspoon red pepper flakes, or more or less to taste",
       "expected": {
-        "item": "red pepper flakes, or more or less to taste",
+        "item": "red pepper flakes",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "0.9",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or more or less to taste",
         "category": "Spices & Seasonings"
       }
     },

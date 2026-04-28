@@ -78,7 +78,7 @@
     {
       "raw": "1 pound broccoli florets, rinsed, patted dry, cut into bite-sized pieces",
       "expected": {
-        "item": "broccoli florets, rinsed, patted dry, cut into bite-sized pieces",
+        "item": "broccoli florets, rinsed, patted dry",
         "measurements": [
           {
             "amount": "1",
@@ -89,7 +89,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into bite-sized pieces",
         "category": "Produce"
       }
     },
@@ -125,7 +125,7 @@
             "unit": "g"
           }
         ],
-        "note": "minced",
+        "note": "about 1 Tbsp, minced",
         "category": "Produce"
       }
     }

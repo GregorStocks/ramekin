@@ -19,14 +19,14 @@
     {
       "raw": "12 ripe cherry tomatoes, cut into 1/8-inch-thick slices",
       "expected": {
-        "item": "ripe cherry tomatoes, cut into 1/8-inch-thick slices",
+        "item": "ripe cherry tomatoes",
         "measurements": [
           {
             "amount": "12",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1/8-inch-thick slices",
         "category": "Produce"
       }
     },
@@ -231,15 +231,15 @@
     {
       "raw": "1/2 teaspoon minced, seeded, minced jalapeño",
       "expected": {
-        "item": "minced, seeded, minced jalapeño",
+        "item": "minced, seeded",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "minced jalapeño",
+        "category": "Nuts & Dried Fruit"
       }
     },
     {
@@ -300,14 +300,14 @@
     {
       "raw": "2 large yellow onions, cut into 1/2-inch-thick slices",
       "expected": {
-        "item": "yellow onions, cut into 1/2-inch-thick slices",
+        "item": "yellow onions",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch-thick slices",
         "category": "Produce"
       }
     },

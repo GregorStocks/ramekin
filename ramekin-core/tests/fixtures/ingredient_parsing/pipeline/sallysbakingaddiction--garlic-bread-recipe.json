@@ -5,7 +5,7 @@
     {
       "raw": "12-ounce (340g) loaf of crusty bread, sliced in half horizontally",
       "expected": {
-        "item": "crusty bread, sliced in half horizontally",
+        "item": "crusty bread",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sliced in half horizontally",
         "category": "Bakery & Bread"
       }
     },
@@ -70,7 +70,7 @@
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "about 3 cloves",
         "category": "Produce"
       }
     },

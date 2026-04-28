@@ -163,7 +163,7 @@
     {
       "raw": "1 pound boneless pork shoulder (Boston butt), fat trimmed, cut into 1-inch pieces",
       "expected": {
-        "item": "boneless pork shoulder, fat trimmed, cut into 1-inch pieces",
+        "item": "boneless pork shoulder, fat trimmed",
         "measurements": [
           {
             "amount": "1",
@@ -174,14 +174,14 @@
             "unit": "g"
           }
         ],
-        "note": "Boston butt",
+        "note": "Boston butt, cut into 1-inch pieces",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 pound pork belly, cut into 1-inch pieces",
       "expected": {
-        "item": "pork belly, cut into 1-inch pieces",
+        "item": "pork belly",
         "measurements": [
           {
             "amount": "1",
@@ -192,7 +192,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Meat & Seafood"
       }
     },

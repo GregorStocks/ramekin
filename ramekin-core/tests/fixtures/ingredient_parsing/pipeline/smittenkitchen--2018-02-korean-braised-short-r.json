@@ -5,28 +5,28 @@
     {
       "raw": "1 yellow onion, peeled and cut into chunks",
       "expected": {
-        "item": "yellow onion, peeled and cut into chunks",
+        "item": "yellow onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and cut into chunks",
         "category": "Produce"
       }
     },
     {
       "raw": "1 Asian or Bosc pear, peeled and cut into chunks",
       "expected": {
-        "item": "Asian or Bosc pear, peeled and cut into chunks",
+        "item": "Asian or Bosc pear",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and cut into chunks",
         "category": "Produce"
       }
     },
@@ -116,7 +116,7 @@
     {
       "raw": "3 to 3 1/2 pounds boneless beef short ribs, rinsed and cut into 3-inch segments",
       "expected": {
-        "item": "boneless beef short ribs, rinsed and cut into 3-inch segments",
+        "item": "boneless beef short ribs",
         "measurements": [
           {
             "amount": "3 to 3.5",
@@ -127,35 +127,35 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "rinsed and cut into 3-inch segments",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "4 large carrots, peeled and cut into 1-inch pieces",
       "expected": {
-        "item": "carrots, peeled and cut into 1-inch pieces",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "peeled and cut into 1-inch pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1 medium daikon, peeled and cut into 1-inch pieces",
       "expected": {
-        "item": "daikon, peeled and cut into 1-inch pieces",
+        "item": "daikon",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "peeled and cut into 1-inch pieces",
         "category": "Produce"
       }
     },
@@ -176,14 +176,14 @@
     {
       "raw": "2 scallions, thinly sliced on the diagonal (to garnish)",
       "expected": {
-        "item": "scallions, thinly sliced on the diagonal",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "to garnish",
+        "note": "to garnish, thinly sliced on the diagonal",
         "category": "Produce"
       }
     }

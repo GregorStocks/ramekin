@@ -23,7 +23,7 @@
     {
       "raw": "1 pound peeled and deveined raw shrimp (21-25 per pound), cut into bite-size pieces",
       "expected": {
-        "item": "peeled and deveined raw shrimp, cut into bite-size pieces",
+        "item": "peeled and deveined raw shrimp",
         "measurements": [
           {
             "amount": "1",
@@ -34,21 +34,21 @@
             "unit": "g"
           }
         ],
-        "note": "21-25 per pound",
+        "note": "21-25 per pound, cut into bite-size pieces",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "4 cups sugar snap peas, cut into bite-size pieces",
       "expected": {
-        "item": "sugar snap peas, cut into bite-size pieces",
+        "item": "sugar snap peas",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut into bite-size pieces",
         "category": "Produce"
       }
     },

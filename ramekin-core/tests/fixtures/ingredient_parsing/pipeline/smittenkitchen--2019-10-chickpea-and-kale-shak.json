@@ -74,14 +74,14 @@
     {
       "raw": "1/2 a jalapeño pepper, de-seeded and finely chopped",
       "expected": {
-        "item": "a jalapeño pepper, de-seeded and finely chopped",
+        "item": "a jalapeño pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "de-seeded and finely chopped",
         "category": "Produce"
       }
     },
@@ -108,7 +108,7 @@
             "unit": "cup"
           }
         ],
-        "note": "drained and rinsed",
+        "note": "about 3 1/2 cups, drained and rinsed",
         "category": "Canned Goods"
       }
     },

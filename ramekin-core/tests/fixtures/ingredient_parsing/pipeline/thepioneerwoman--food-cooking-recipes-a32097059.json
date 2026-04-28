@@ -73,14 +73,14 @@
     {
       "raw": "2 large eggs, beaten in separate dishes&nbsp;",
       "expected": {
-        "item": "eggs, beaten in separate dishes",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "beaten in separate dishes",
         "category": "Dairy & Eggs"
       }
     },
@@ -152,7 +152,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped",
+        "note": "about 12 ounces, chopped",
         "category": "Produce"
       }
     },

@@ -14,7 +14,7 @@
     {
       "raw": "1 1/4 pound (565 grams) rhubarb, trimmed and cut into 1/2-inch lengths on the diagonal",
       "expected": {
-        "item": "rhubarb, trimmed and cut into 1/2-inch lengths on the diagonal",
+        "item": "rhubarb",
         "measurements": [
           {
             "amount": "1.25",
@@ -25,7 +25,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "trimmed and cut into 1/2-inch lengths on the diagonal",
         "category": "Produce"
       }
     },

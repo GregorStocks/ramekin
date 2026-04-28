@@ -5,7 +5,7 @@
     {
       "raw": "2 ounces pancetta , cut into 1/2-inch pieces",
       "expected": {
-        "item": "pancetta, cut into 1/2-inch pieces",
+        "item": "pancetta",
         "measurements": [
           {
             "amount": "2",
@@ -16,35 +16,35 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 small carrot , peeled and cut into 1/2-inch pieces",
       "expected": {
-        "item": "carrot, peeled and cut into 1/2-inch pieces",
+        "item": "carrot",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "peeled and cut into 1/2-inch pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1 small celery rib , cut into 1/2-inch pieces",
       "expected": {
-        "item": "celery rib, cut into 1/2-inch pieces",
+        "item": "celery rib",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Produce"
       }
     },
@@ -65,14 +65,14 @@
     {
       "raw": "1 onion , halved and cut into 1-inch pieces",
       "expected": {
-        "item": "onion, halved and cut into 1-inch pieces",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "halved and cut into 1-inch pieces",
         "category": "Produce"
       }
     },

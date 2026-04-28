@@ -182,14 +182,14 @@
     {
       "raw": "1/2 pint fresh strawberries, hulled and sliced",
       "expected": {
-        "item": "fresh strawberries, hulled and sliced",
+        "item": "fresh strawberries",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "pint"
           }
         ],
-        "note": null,
+        "note": "hulled and sliced",
         "category": "Produce"
       }
     },

@@ -135,7 +135,7 @@
     {
       "raw": "1 pound oyster mushrooms, shredded into strips with your fingers",
       "expected": {
-        "item": "oyster mushrooms, shredded into strips with your fingers",
+        "item": "oyster mushrooms",
         "measurements": [
           {
             "amount": "1",
@@ -146,7 +146,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "shredded into strips with your fingers",
         "category": "Produce"
       }
     },

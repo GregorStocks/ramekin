@@ -10,28 +10,28 @@
           {
             "amount": "3",
             "unit": "cup"
-          },
-          {
-            "amount": "12 to 14",
-            "unit": "large"
           }
         ],
-        "note": null,
+        "note": "about 12 to 14 large clementines, juiced",
         "category": "Produce"
       }
     },
     {
       "raw": "1/3 cup sugar, or to taste depending on sweetness of clementines",
       "expected": {
-        "item": "sugar, or to taste depending on sweetness of clementines",
+        "item": "sugar",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "67",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Produce"
+        "note": "or to taste depending on sweetness of clementines",
+        "category": "Baking"
       }
     },
     {

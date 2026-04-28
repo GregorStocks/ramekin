@@ -23,7 +23,7 @@
     {
       "raw": "2 (8-ounce) packages full-fat cream cheese (16 ounces; 454 g total), cut into 1-inch pieces",
       "expected": {
-        "item": "full-fat cream cheese, cut into 1-inch pieces",
+        "item": "full-fat cream cheese",
         "measurements": [
           {
             "amount": "2",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "8-ounce",
+        "note": "8-ounce, cut into 1-inch pieces",
         "category": "Cheese"
       }
     },
@@ -100,7 +100,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 5 ounces; 140 g",
         "category": "Bakery & Bread"
       }
     },

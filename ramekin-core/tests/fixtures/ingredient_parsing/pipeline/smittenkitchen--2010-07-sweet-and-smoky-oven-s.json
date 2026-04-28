@@ -109,7 +109,7 @@
     {
       "raw": "5 pounds spareribs, cut into 4 slabs, rinsed and patted dry",
       "expected": {
-        "item": "spareribs, cut into 4 slabs, rinsed and patted dry",
+        "item": "spareribs, cut into 4 slabs",
         "measurements": [
           {
             "amount": "5",
@@ -120,7 +120,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "rinsed and patted dry",
         "category": "Other"
       }
     },

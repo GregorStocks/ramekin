@@ -37,14 +37,14 @@
     {
       "raw": "1 large red bell pepper, seeded and thinly sliced",
       "expected": {
-        "item": "red bell pepper, seeded and thinly sliced",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "seeded and thinly sliced",
         "category": "Produce"
       }
     },
@@ -176,7 +176,7 @@
             "unit": "g"
           }
         ],
-        "note": "crumbled",
+        "note": "about 1 1/4 cups, crumbled",
         "category": "Cheese"
       }
     },

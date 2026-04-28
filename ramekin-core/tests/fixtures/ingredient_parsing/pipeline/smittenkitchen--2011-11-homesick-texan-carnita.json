@@ -5,7 +5,7 @@
     {
       "raw": "3 pounds boneless pork shoulder or pork butt, cut into 2-inch cubes",
       "expected": {
-        "item": "boneless pork shoulder or pork butt, cut into 2-inch cubes",
+        "item": "boneless pork shoulder or pork butt",
         "measurements": [
           {
             "amount": "3",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 2-inch cubes",
         "category": "Meat & Seafood"
       }
     },

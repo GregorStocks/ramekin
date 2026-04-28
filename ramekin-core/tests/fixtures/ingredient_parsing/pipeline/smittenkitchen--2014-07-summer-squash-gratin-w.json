@@ -203,14 +203,14 @@
     {
       "raw": "1 salt-packed anchovy, rinsed and bones removed",
       "expected": {
-        "item": "salt-packed anchovy, rinsed and bones removed",
+        "item": "salt-packed anchovy",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "rinsed and bones removed",
         "category": "Meat & Seafood"
       }
     },

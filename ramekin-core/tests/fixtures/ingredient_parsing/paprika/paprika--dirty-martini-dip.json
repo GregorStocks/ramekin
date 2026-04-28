@@ -5,7 +5,7 @@
     {
       "raw": "2/3 cup (100 g) pitted Spanish Queen olives, drained and quartered lengthwise",
       "expected": {
-        "item": "pitted Spanish Queen olives, drained and quartered lengthwise",
+        "item": "pitted Spanish Queen olives",
         "measurements": [
           {
             "amount": "0.67",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "drained and quartered lengthwise",
         "category": "Canned Goods"
       }
     },
@@ -70,7 +70,7 @@
             "unit": "g each"
           }
         ],
-        "note": null,
+        "note": "3-inch long; 3 g each",
         "category": "Produce"
       }
     },

@@ -36,14 +36,14 @@
     {
       "raw": "2 cups (1/4-inch-sliced) fennel, top and core, if thick, removed",
       "expected": {
-        "item": "fennel, top and core, if thick, removed",
+        "item": "fennel, top and core, if thick",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": "1/4-inch-sliced",
+        "note": "1/4-inch-sliced, removed",
         "category": "Produce"
       }
     },
@@ -72,7 +72,7 @@
     {
       "raw": "1 pound sweet potatoes, peeled and sliced 1/4-inch thick",
       "expected": {
-        "item": "sweet potatoes, peeled and sliced 1/4-inch thick",
+        "item": "sweet potatoes",
         "measurements": [
           {
             "amount": "1",
@@ -83,14 +83,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "peeled and sliced 1/4-inch thick",
         "category": "Produce"
       }
     },
     {
       "raw": "1 pound celery root, peeled and sliced 1/4-inch thick",
       "expected": {
-        "item": "celery root, peeled and sliced 1/4-inch thick",
+        "item": "celery root",
         "measurements": [
           {
             "amount": "1",
@@ -101,14 +101,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "peeled and sliced 1/4-inch thick",
         "category": "Produce"
       }
     },
     {
       "raw": "1 pound yukon gold, peeled and sliced 1/4-inch thick",
       "expected": {
-        "item": "yukon gold, peeled and sliced 1/4-inch thick",
+        "item": "yukon gold",
         "measurements": [
           {
             "amount": "1",
@@ -119,7 +119,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "peeled and sliced 1/4-inch thick",
         "category": "Other"
       }
     },
@@ -163,17 +163,9 @@
           {
             "amount": "2",
             "unit": "cup"
-          },
-          {
-            "amount": "6",
-            "unit": "oz"
-          },
-          {
-            "amount": "170",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "6 ounces with rind",
         "category": "Cheese"
       }
     },

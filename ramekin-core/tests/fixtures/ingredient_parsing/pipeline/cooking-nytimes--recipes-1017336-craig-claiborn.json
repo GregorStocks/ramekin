@@ -75,14 +75,18 @@
     {
       "raw": "3/4 cup mayonnaise, preferably homemade",
       "expected": {
-        "item": "mayonnaise, preferably homemade",
+        "item": "mayonnaise",
         "measurements": [
           {
             "amount": "0.75",
             "unit": "cup"
+          },
+          {
+            "amount": "165",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably homemade",
         "category": "Condiments & Sauces"
       }
     },
@@ -153,14 +157,14 @@
     {
       "raw": "8 to 12 slices rye bread, either freshly toasted or left untoasted",
       "expected": {
-        "item": "rye bread, either freshly toasted or left untoasted",
+        "item": "rye bread",
         "measurements": [
           {
             "amount": "8 to 12",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "either freshly toasted or left untoasted",
         "category": "Bakery & Bread"
       }
     },

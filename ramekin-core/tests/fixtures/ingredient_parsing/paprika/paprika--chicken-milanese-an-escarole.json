@@ -100,14 +100,14 @@
     {
       "raw": "1 red onion, sliced into very thin rings",
       "expected": {
-        "item": "red onion, sliced into very thin rings",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced into very thin rings",
         "section": "For the Pickled Onions",
         "category": "Produce"
       }
@@ -138,14 +138,14 @@
     {
       "raw": "2 eggs, beaten with 1 tablespoon of water",
       "expected": {
-        "item": "eggs, beaten with 1 tablespoon of water",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "beaten with 1 tablespoon of water",
         "section": "For the Chicken Milanese",
         "category": "Dairy & Eggs"
       }
@@ -267,14 +267,14 @@
     {
       "raw": "1 head escarole, washed, spun dry, cut into bite size pieces",
       "expected": {
-        "item": "escarole, washed, spun dry, cut into bite size pieces",
+        "item": "escarole, washed, spun dry",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "cut into bite size pieces",
         "section": "For the Escarole Salad",
         "category": "Produce"
       }

@@ -41,7 +41,7 @@
     {
       "raw": "8 tablespoons (1/2 cup, 4 ounces, or 115 grams) unsalted butter, cut into pieces",
       "expected": {
-        "item": "unsalted butter, cut into pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "8",
@@ -60,7 +60,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -227,7 +227,7 @@
     {
       "raw": "1/2 pound assorted fresh wild mushrooms, such as chanterelles, porcini and shiitakes, brushed clean and large mushrooms thinly sliced",
       "expected": {
-        "item": "assorted fresh wild mushrooms, such as chanterelles, porcini and shiitakes, brushed clean and large mushrooms thinly sliced",
+        "item": "assorted fresh wild mushrooms, such as chanterelles, porcini and shiitakes",
         "measurements": [
           {
             "amount": "0.5",
@@ -238,7 +238,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "brushed clean and large mushrooms thinly sliced",
         "category": "Produce"
       }
     },
@@ -290,14 +290,14 @@
     {
       "raw": "1 large egg yolk, whisked with 1/2 teaspoon water (optional)",
       "expected": {
-        "item": "egg yolk, whisked with 1/2 teaspoon water",
+        "item": "egg yolk",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "optional",
+        "note": "optional, whisked with 1/2 teaspoon water",
         "category": "Dairy & Eggs"
       }
     }

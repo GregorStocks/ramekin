@@ -102,13 +102,9 @@
           {
             "amount": "113",
             "unit": "g"
-          },
-          {
-            "amount": "1",
-            "unit": "large"
           }
         ],
-        "note": null,
+        "note": "about 1 large link",
         "category": "Meat & Seafood"
       }
     },
@@ -229,14 +225,14 @@
     {
       "raw": "15 picked fresh sage leaves, if making optional frizzled sage",
       "expected": {
-        "item": "picked fresh sage leaves, if making optional frizzled sage",
+        "item": "picked fresh sage leaves",
         "measurements": [
           {
             "amount": "15",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "if making optional frizzled sage",
         "category": "Produce"
       }
     }

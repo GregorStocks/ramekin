@@ -145,14 +145,14 @@
     {
       "raw": "2 bananas, sliced lengthwise 2/3 inch thick and cut to fit the pancakes",
       "expected": {
-        "item": "bananas, sliced lengthwise 2/3 inch thick and cut to fit the pancakes",
+        "item": "bananas",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced lengthwise 2/3 inch thick and cut to fit the pancakes",
         "category": "Produce"
       }
     },

@@ -79,14 +79,14 @@
     {
       "raw": "1/2 cup thinly sliced bell pepper, cut into 1-inch pieces",
       "expected": {
-        "item": "thinly sliced bell pepper, cut into 1-inch pieces",
+        "item": "thinly sliced bell pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Produce"
       }
     },

@@ -190,14 +190,14 @@
     {
       "raw": "2 medium leeks, white and light green parts only, cut in half lengthwise and then into 1/2-inch slices",
       "expected": {
-        "item": "leeks, white and light green parts only, cut in half lengthwise and then into 1/2-inch slices",
+        "item": "leeks, white and light green parts only",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut in half lengthwise and then into 1/2-inch slices",
         "category": "Produce"
       }
     },
@@ -347,13 +347,9 @@
           {
             "amount": "2",
             "unit": "large"
-          },
-          {
-            "amount": "1",
-            "unit": "cup"
           }
         ],
-        "note": "diced small",
+        "note": "about 1 cup carrots, diced small",
         "category": "Produce"
       }
     },

@@ -75,14 +75,14 @@
     {
       "raw": "1/4 cup blueberries, sliced strawberries, raspberries, or other chopped fruit of your choice",
       "expected": {
-        "item": "blueberries, sliced strawberries, raspberries, or other chopped fruit of your choice",
+        "item": "blueberries, sliced strawberries, raspberries",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or other chopped fruit of your choice",
         "category": "Produce"
       }
     },

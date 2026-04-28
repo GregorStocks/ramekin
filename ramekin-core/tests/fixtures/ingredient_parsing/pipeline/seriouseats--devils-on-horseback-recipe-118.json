@@ -5,21 +5,21 @@
     {
       "raw": "15 center-cut bacon slices, cut in half crosswise",
       "expected": {
-        "item": "center-cut bacon slices, cut in half crosswise",
+        "item": "center-cut bacon slices",
         "measurements": [
           {
             "amount": "15",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut in half crosswise",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "30 pitted Medjool dates (about 2-inches each), soaked in warm water for 5 minutes, then drained",
       "expected": {
-        "item": "pitted Medjool dates, soaked in warm water for 5 minutes, then drained",
+        "item": "pitted Medjool dates, soaked in warm water for 5 minutes",
         "measurements": [
           {
             "amount": "30",
@@ -30,7 +30,7 @@
             "unit": "inches each"
           }
         ],
-        "note": null,
+        "note": "about 2-inches each, then drained",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": "crumbled",
+        "note": "about 3/4 cup, crumbled",
         "category": "Cheese"
       }
     },

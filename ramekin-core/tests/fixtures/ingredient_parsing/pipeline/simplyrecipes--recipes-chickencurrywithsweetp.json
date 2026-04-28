@@ -47,14 +47,14 @@
     {
       "raw": "2 tablespoons Madras-style curry powder, preferably Sun brand",
       "expected": {
-        "item": "Madras-style curry powder, preferably Sun brand",
+        "item": "Madras-style curry powder",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "preferably Sun brand",
         "category": "Spices & Seasonings"
       }
     },
@@ -136,7 +136,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 3/4 pounds total",
         "category": "Meat & Seafood"
       }
     },
@@ -157,7 +157,7 @@
     {
       "raw": "1 1/4 pounds sweet potatoes (white or orange flesh), peeled and cut into 1-inch chunks",
       "expected": {
-        "item": "sweet potatoes, peeled and cut into 1-inch chunks",
+        "item": "sweet potatoes",
         "measurements": [
           {
             "amount": "1.25",
@@ -168,7 +168,7 @@
             "unit": "g"
           }
         ],
-        "note": "white or orange flesh",
+        "note": "white or orange flesh, peeled and cut into 1-inch chunks",
         "category": "Produce"
       }
     },

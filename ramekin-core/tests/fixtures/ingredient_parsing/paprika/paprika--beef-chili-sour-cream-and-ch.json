@@ -24,7 +24,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped",
+        "note": "about 3 cups, chopped",
         "section": "Chili",
         "category": "Produce"
       }
@@ -81,7 +81,7 @@
     {
       "raw": "3 pounds boneless beef chuck, ground coarse or 3 pounds ground beef",
       "expected": {
-        "item": "boneless beef chuck, ground coarse",
+        "item": "boneless beef chuck",
         "measurements": [
           {
             "amount": "3",
@@ -92,7 +92,7 @@
             "unit": "g"
           }
         ],
-        "note": "or 3 pounds ground beef",
+        "note": "ground coarse or 3 pounds ground beef",
         "section": "Chili",
         "category": "Meat & Seafood"
       }
@@ -345,14 +345,18 @@
     {
       "raw": "2 tablespoons cold unsalted butter, cut into bits",
       "expected": {
-        "item": "cold unsalted butter, cut into bits",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into bits",
         "section": "Sour Cream and Cheddar Biscuits",
         "category": "Dairy & Eggs"
       }
@@ -375,7 +379,7 @@
             "unit": "g"
           }
         ],
-        "note": "coarsely grated",
+        "note": "about 1 1/2 cups, coarsely grated",
         "section": "Sour Cream and Cheddar Biscuits",
         "category": "Cheese"
       }

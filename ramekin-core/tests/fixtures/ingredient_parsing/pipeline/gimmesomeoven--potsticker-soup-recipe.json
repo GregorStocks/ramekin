@@ -55,14 +55,14 @@
     {
       "raw": "4 cloves garlic, pressed or minced",
       "expected": {
-        "item": "garlic, pressed or minced",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "4",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "pressed or minced",
         "category": "Produce"
       }
     },
@@ -137,14 +137,14 @@
     {
       "raw": "3 baby bok choy, ends trimmed off and leaves separated",
       "expected": {
-        "item": "baby bok choy, ends trimmed off and leaves separated",
+        "item": "baby bok choy",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "ends trimmed off and leaves separated",
         "category": "Produce"
       }
     },

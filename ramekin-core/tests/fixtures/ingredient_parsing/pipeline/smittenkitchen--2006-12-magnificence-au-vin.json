@@ -560,7 +560,7 @@
     {
       "raw": "1/2 pound fresh mushrooms, washed, well dried, left whole if small, sliced or quartered if large",
       "expected": {
-        "item": "fresh mushrooms, washed, well dried, left whole if small, sliced or quartered if large",
+        "item": "fresh mushrooms, washed, well dried, left whole if small",
         "measurements": [
           {
             "amount": "0.5",
@@ -571,7 +571,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sliced or quartered if large",
         "category": "Produce"
       }
     },

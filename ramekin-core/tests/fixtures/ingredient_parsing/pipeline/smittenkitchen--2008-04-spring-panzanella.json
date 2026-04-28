@@ -201,14 +201,14 @@
     {
       "raw": "1 19-ounce can of white beans, rinsed and drained or 1 1/2 cups cooked white beans",
       "expected": {
-        "item": "of white beans, rinsed and drained",
+        "item": "of white beans",
         "measurements": [
           {
             "amount": "1",
             "unit": "19-ounce can"
           }
         ],
-        "note": "or 1 1/2 cups cooked white beans",
+        "note": "rinsed and drained or 1 1/2 cups cooked white beans",
         "category": "Canned Goods"
       }
     }

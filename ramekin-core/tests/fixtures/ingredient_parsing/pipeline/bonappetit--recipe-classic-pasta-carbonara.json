@@ -19,7 +19,7 @@
     {
       "raw": "4 oz. pancetta (Italian bacon), cut into ½” pieces",
       "expected": {
-        "item": "pancetta, cut into 1/2” pieces",
+        "item": "pancetta",
         "measurements": [
           {
             "amount": "4",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": "Italian bacon",
+        "note": "Italian bacon, cut into 1/2” pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -80,7 +80,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely grated",
+        "note": "about 2 cups, finely grated",
         "category": "Cheese"
       }
     },

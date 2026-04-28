@@ -96,14 +96,14 @@
     {
       "raw": "2 8-inch ciabatta rolls, baguettes, or 1 round pan de champagne",
       "expected": {
-        "item": "8-inch ciabatta rolls, baguettes, or 1 round pan de champagne",
+        "item": "8-inch ciabatta rolls, baguettes",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "or 1 round pan de champagne",
         "category": "Bakery & Bread"
       }
     },
@@ -165,14 +165,14 @@
     {
       "raw": "1 to 2 tablespoons capers, drained, chopped if they’re large",
       "expected": {
-        "item": "capers, drained, chopped if they’re large",
+        "item": "capers, drained",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "chopped if they’re large",
         "category": "Canned Goods"
       }
     },

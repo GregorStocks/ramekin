@@ -5,7 +5,7 @@
     {
       "raw": "1 pound small red potatoes, scrubbed and cut into 1/4-inch slices",
       "expected": {
-        "item": "small red potatoes, scrubbed and cut into 1/4-inch slices",
+        "item": "small red potatoes",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "scrubbed and cut into 1/4-inch slices",
         "category": "Produce"
       }
     },
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": "crumbled",
+        "note": "about 3/4 cup, crumbled",
         "category": "Cheese"
       }
     },

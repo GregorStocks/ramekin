@@ -154,14 +154,14 @@
     {
       "raw": "1 anchovy filet, minced, or more to taste, if you prefer a heap of them",
       "expected": {
-        "item": "anchovy filet, minced, or more to taste, if you prefer a heap of them",
+        "item": "anchovy filet, minced, or more to taste",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "if you prefer a heap of them",
         "category": "Meat & Seafood"
       }
     },

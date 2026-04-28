@@ -77,14 +77,18 @@
     {
       "raw": "1 cup cold unsalted butter, cut into small cubes",
       "expected": {
-        "item": "cold unsalted butter, cut into small cubes",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small cubes",
         "category": "Dairy & Eggs"
       }
     },
@@ -170,7 +174,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "about 3 tablespoons",
         "category": "Beverages"
       }
     }

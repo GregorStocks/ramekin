@@ -51,7 +51,7 @@
     {
       "raw": "1 ounce fresh kale, de-stemmed and thinly sliced (about 1 cup)",
       "expected": {
-        "item": "fresh kale, de-stemmed and thinly sliced",
+        "item": "fresh kale",
         "measurements": [
           {
             "amount": "1",
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 cup, de-stemmed and thinly sliced",
         "category": "Produce"
       }
     },

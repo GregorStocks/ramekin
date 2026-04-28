@@ -87,14 +87,14 @@
     {
       "raw": "1 pineapple, peeled, cored and cut into rings",
       "expected": {
-        "item": "pineapple, peeled, cored and cut into rings",
+        "item": "pineapple, peeled",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cored and cut into rings",
         "category": "Produce"
       }
     },
@@ -115,14 +115,14 @@
     {
       "raw": "3 thick slices deli ham, halved crosswise",
       "expected": {
-        "item": "thick slices deli ham, halved crosswise",
+        "item": "thick slices deli ham",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "halved crosswise",
         "category": "Meat & Seafood"
       }
     },

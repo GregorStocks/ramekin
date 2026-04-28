@@ -132,7 +132,7 @@
     {
       "raw": "6 tablespoons (85 grams) butter, melted and cooled to lukewarm",
       "expected": {
-        "item": "butter, melted and cooled to lukewarm",
+        "item": "butter",
         "measurements": [
           {
             "amount": "6",
@@ -143,7 +143,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "melted and cooled to lukewarm",
         "category": "Dairy & Eggs"
       }
     },
@@ -403,15 +403,15 @@
     {
       "raw": "1 1/2 cups toasted and cooled, chopped pecans (divided)",
       "expected": {
-        "item": "toasted and cooled, chopped pecans",
+        "item": "toasted and cooled",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "divided",
-        "category": "Nuts & Dried Fruit"
+        "note": "divided, chopped pecans",
+        "category": "Other"
       }
     }
   ]

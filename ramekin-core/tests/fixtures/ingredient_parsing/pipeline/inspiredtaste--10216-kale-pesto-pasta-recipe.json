@@ -5,14 +5,14 @@
     {
       "raw": "1 large bunch of kale, rinsed with stems and ribs removed",
       "expected": {
-        "item": "bunch of kale, rinsed with stems and ribs removed",
+        "item": "bunch of kale",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "rinsed with stems and ribs removed",
         "category": "Produce"
       }
     },

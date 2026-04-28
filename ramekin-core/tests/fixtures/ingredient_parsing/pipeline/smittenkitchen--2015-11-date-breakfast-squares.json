@@ -109,14 +109,14 @@
     {
       "raw": "1/2 cup olive oil, coconut oil, melted butter or a mix of the above",
       "expected": {
-        "item": "olive oil, coconut oil, melted butter or a mix of the above",
+        "item": "olive oil, coconut oil",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "melted butter or a mix of the above",
         "category": "Oils & Vinegars"
       }
     },

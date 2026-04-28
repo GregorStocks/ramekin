@@ -5,7 +5,7 @@
     {
       "raw": "3 1/2 pounds (1.6kg) butternut squash, peeled and seeded",
       "expected": {
-        "item": "butternut squash, peeled and seeded",
+        "item": "butternut squash",
         "measurements": [
           {
             "amount": "3.5",
@@ -16,7 +16,7 @@
             "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "peeled and seeded",
         "category": "Produce"
       }
     },

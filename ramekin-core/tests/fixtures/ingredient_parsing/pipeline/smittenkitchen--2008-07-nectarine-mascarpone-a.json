@@ -25,15 +25,11 @@
             "unit": "oz"
           },
           {
-            "amount": "3.25",
-            "unit": "cup"
-          },
-          {
             "amount": "255",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 9 ounces; about 3 1/4 cups plus 2 tablespoons of pieces",
         "category": "Beverages"
       }
     },
@@ -190,14 +186,14 @@
     {
       "raw": "4 to 5 small nectarines, halved, pitted, cut into thin slices",
       "expected": {
-        "item": "nectarines, halved, pitted, cut into thin slices",
+        "item": "nectarines, halved, pitted",
         "measurements": [
           {
             "amount": "4 to 5",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "cut into thin slices",
         "category": "Produce"
       }
     },

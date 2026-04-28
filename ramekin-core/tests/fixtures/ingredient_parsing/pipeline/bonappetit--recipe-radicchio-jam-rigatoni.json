@@ -23,9 +23,9 @@
     {
       "raw": "bacon), cut into ½\" pieces",
       "expected": {
-        "item": "bacon), cut into 1/2\" pieces",
+        "item": "bacon)",
         "measurements": [],
-        "note": null,
+        "note": "cut into 1/2\" pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -47,16 +47,16 @@
             "unit": "g"
           }
         ],
-        "note": "quartered",
+        "note": "such as Vidalia; about 1 lb., quartered",
         "category": "Produce"
       }
     },
     {
       "raw": "through root ends, thinly sliced crosswise",
       "expected": {
-        "item": "through root ends, thinly sliced crosswise",
+        "item": "through root ends",
         "measurements": [],
-        "note": null,
+        "note": "thinly sliced crosswise",
         "category": "Other"
       }
     },
@@ -81,7 +81,7 @@
     {
       "raw": "1 small head of radicchio (about 1 lb.), quartered through root",
       "expected": {
-        "item": "head of radicchio, quartered through root",
+        "item": "head of radicchio",
         "measurements": [
           {
             "amount": "1",
@@ -96,7 +96,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 lb., quartered through root",
         "category": "Produce"
       }
     },
@@ -227,7 +227,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely grated",
+        "note": "about 1 1/2 cups, finely grated",
         "category": "Cheese"
       }
     },

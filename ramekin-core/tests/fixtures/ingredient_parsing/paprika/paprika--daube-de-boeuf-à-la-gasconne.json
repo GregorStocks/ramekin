@@ -23,14 +23,18 @@
     {
       "raw": "1 1/4 teaspoons Diamond Crystal kosher salt, divided; for table salt use half as much by volume",
       "expected": {
-        "item": "Diamond Crystal kosher salt, divided; for table salt use half as much by volume",
+        "item": "Diamond Crystal kosher salt",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "tsp"
+          },
+          {
+            "amount": "3.6",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "divided; for table salt use half as much by volume",
         "category": "Spices & Seasonings"
       }
     },
@@ -65,7 +69,7 @@
     {
       "raw": "4 ounces (113g) bacon, cut into 1/4-inch wide strips",
       "expected": {
-        "item": "bacon, cut into 1/4-inch wide strips",
+        "item": "bacon",
         "measurements": [
           {
             "amount": "4",
@@ -76,7 +80,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch wide strips",
         "category": "Meat & Seafood"
       }
     },
@@ -105,7 +109,7 @@
     {
       "raw": "2 large carrots (8 ounces; 225g total), peeled and cut crosswise into 1/2-inch thick rounds",
       "expected": {
-        "item": "carrots, peeled and cut crosswise into 1/2-inch thick rounds",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
@@ -120,14 +124,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "peeled and cut crosswise into 1/2-inch thick rounds",
         "category": "Produce"
       }
     },
     {
       "raw": "2 large parsnips (8 ounces; 225g total), peeled and cut crosswise into 1/2-inch thick rounds",
       "expected": {
-        "item": "parsnips, peeled and cut crosswise into 1/2-inch thick rounds",
+        "item": "parsnips",
         "measurements": [
           {
             "amount": "2",
@@ -142,7 +146,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "peeled and cut crosswise into 1/2-inch thick rounds",
         "category": "Produce"
       }
     },
@@ -260,7 +264,7 @@
             "unit": "g"
           }
         ],
-        "note": "roughly chopped",
+        "note": "about 2 ounces, roughly chopped",
         "category": "Nuts & Dried Fruit"
       }
     },

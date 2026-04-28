@@ -84,22 +84,18 @@
     {
       "raw": "1 to 1 1/4 pounds red cabbage (1 small head or half of a large one), sliced very thin",
       "expected": {
-        "item": "red cabbage, sliced very thin",
+        "item": "red cabbage",
         "measurements": [
           {
             "amount": "1 to 1.25",
             "unit": "lb"
           },
           {
-            "amount": "1",
-            "unit": "small"
-          },
-          {
             "amount": "454 to 567",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 small head or half of a large one, sliced very thin",
         "category": "Produce"
       }
     },
@@ -156,7 +152,7 @@
     {
       "raw": "4 ounces feta, crumbled into chunks",
       "expected": {
-        "item": "feta, crumbled into chunks",
+        "item": "feta",
         "measurements": [
           {
             "amount": "4",
@@ -167,7 +163,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "crumbled into chunks",
         "category": "Cheese"
       }
     },

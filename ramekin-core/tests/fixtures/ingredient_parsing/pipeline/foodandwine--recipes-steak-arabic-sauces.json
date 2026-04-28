@@ -19,14 +19,14 @@
     {
       "raw": "4 peperoncini, stemmed",
       "expected": {
-        "item": "peperoncini, stemmed",
+        "item": "peperoncini",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "stemmed",
         "category": "Other"
       }
     },

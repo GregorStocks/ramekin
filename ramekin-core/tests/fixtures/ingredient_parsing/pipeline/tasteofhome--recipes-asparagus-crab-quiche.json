@@ -5,7 +5,7 @@
     {
       "raw": "3/4 pound fresh asparagus, cut into 2-inch pieces",
       "expected": {
-        "item": "fresh asparagus, cut into 2-inch pieces",
+        "item": "fresh asparagus",
         "measurements": [
           {
             "amount": "0.75",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 2-inch pieces",
         "category": "Produce"
       }
     },
@@ -37,7 +37,7 @@
     {
       "raw": "1 can (6 ounces) crabmeat, drained and flaked",
       "expected": {
-        "item": "crabmeat, drained and flaked",
+        "item": "crabmeat",
         "measurements": [
           {
             "amount": "1",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "drained and flaked",
         "category": "Meat & Seafood"
       }
     },

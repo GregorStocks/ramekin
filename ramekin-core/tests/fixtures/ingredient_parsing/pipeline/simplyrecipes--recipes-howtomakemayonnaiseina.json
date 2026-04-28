@@ -51,15 +51,19 @@
     {
       "raw": "1 tablespoon water, if using only an egg yolk",
       "expected": {
-        "item": "water, if using only an egg yolk",
+        "item": "water",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "15",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "if using only an egg yolk",
+        "category": "Other"
       }
     },
     {

@@ -47,14 +47,14 @@
     {
       "raw": "1 large delicata squash, halved, seeds removed, and sliced into 1/2-inch thick pieces",
       "expected": {
-        "item": "delicata squash, halved, seeds removed, and sliced into 1/2-inch thick pieces",
+        "item": "delicata squash, halved, seeds removed",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "and sliced into 1/2-inch thick pieces",
         "category": "Produce"
       }
     },
@@ -93,14 +93,14 @@
     {
       "raw": "1&nbsp;bunch parsley, finely minced to yield a heaping cup",
       "expected": {
-        "item": "parsley, finely minced to yield a heaping cup",
+        "item": "parsley",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "finely minced to yield a heaping cup",
         "category": "Spices & Seasonings"
       }
     },
@@ -143,14 +143,14 @@
     {
       "raw": "1 pomegranate, seeded",
       "expected": {
-        "item": "pomegranate, seeded",
+        "item": "pomegranate",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded",
         "category": "Produce"
       }
     },

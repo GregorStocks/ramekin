@@ -95,7 +95,7 @@
     {
       "raw": "1/2 cup (8 Tbsp; 113g) unsalted butter, melted and slightly cooled",
       "expected": {
-        "item": "unsalted butter, melted and slightly cooled",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -110,7 +110,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "melted and slightly cooled",
         "category": "Dairy & Eggs"
       }
     },

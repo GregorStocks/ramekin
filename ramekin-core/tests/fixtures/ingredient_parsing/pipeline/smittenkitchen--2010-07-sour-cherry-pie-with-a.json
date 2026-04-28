@@ -5,15 +5,15 @@
     {
       "raw": "2/3 cup whole oats, ground to a flour in a food processor (yielding 1/2 cup oat flour)",
       "expected": {
-        "item": "whole oats, ground to a flour in a food processor",
+        "item": "whole oats",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
           }
         ],
-        "note": "yielding 1/2 cup oat flour",
-        "category": "Baking"
+        "note": "yielding 1/2 cup oat flour, ground to a flour in a food processor",
+        "category": "Snacks"
       }
     },
     {
@@ -163,7 +163,7 @@
     {
       "raw": "2 1/4 pounds fresh sour cherries, pitted, or 2 pounds frozen sour cherries, partially thawed",
       "expected": {
-        "item": "fresh sour cherries, pitted",
+        "item": "fresh sour cherries, pitted, or 2 pounds frozen sour cherries",
         "measurements": [
           {
             "amount": "2.25",
@@ -174,8 +174,8 @@
             "unit": "g"
           }
         ],
-        "note": "or 2 pounds frozen sour cherries, partially thawed",
-        "category": "Produce"
+        "note": "partially thawed",
+        "category": "Frozen"
       }
     }
   ]

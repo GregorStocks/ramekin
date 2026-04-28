@@ -127,7 +127,7 @@
     {
       "raw": "1 pounds asparagus spears, tough ends trimmed or peeled",
       "expected": {
-        "item": "asparagus spears, tough ends trimmed or peeled",
+        "item": "asparagus spears",
         "measurements": [
           {
             "amount": "1",
@@ -138,7 +138,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "tough ends trimmed or peeled",
         "category": "Produce"
       }
     },

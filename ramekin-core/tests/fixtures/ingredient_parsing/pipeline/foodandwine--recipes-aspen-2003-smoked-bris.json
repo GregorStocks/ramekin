@@ -87,7 +87,7 @@
     {
       "raw": "1 pound sliced bacon, preferably artisanal (optional)",
       "expected": {
-        "item": "sliced bacon, preferably artisanal",
+        "item": "sliced bacon",
         "measurements": [
           {
             "amount": "1",
@@ -98,7 +98,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, preferably artisanal",
         "category": "Meat & Seafood"
       }
     },
@@ -232,14 +232,14 @@
     {
       "raw": "4 to 6 cups hickory or apple chips or wood chunks, soaked in water to cover for 1 hour, then drained",
       "expected": {
-        "item": "hickory or apple chips or wood chunks, soaked in water to cover for 1 hour, then drained",
+        "item": "hickory or apple chips or wood chunks, soaked in water to cover for 1 hour",
         "measurements": [
           {
             "amount": "4 to 6",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "then drained",
         "category": "Produce"
       }
     },

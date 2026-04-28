@@ -148,14 +148,14 @@
     {
       "raw": "2 scallions, trimmed and thinly sliced on the diagonal",
       "expected": {
-        "item": "scallions, trimmed and thinly sliced on the diagonal",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "trimmed and thinly sliced on the diagonal",
         "category": "Produce"
       }
     },

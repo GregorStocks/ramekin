@@ -127,14 +127,18 @@
     {
       "raw": "1 ¼ cups cold unsalted butter, cut into ½-inch (1 cm) thick slices",
       "expected": {
-        "item": "cold unsalted butter, cut into 1/2-inch thick slices",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "284",
+            "unit": "g"
           }
         ],
-        "note": "1 cm",
+        "note": "1 cm, cut into 1/2-inch thick slices",
         "category": "Dairy & Eggs"
       }
     },

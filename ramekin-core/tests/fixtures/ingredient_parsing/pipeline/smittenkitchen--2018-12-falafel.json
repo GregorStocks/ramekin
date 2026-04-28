@@ -27,14 +27,14 @@
     {
       "raw": "1/2 a large onion, roughly chopped or 1 cup chopped scallions",
       "expected": {
-        "item": "a large onion, roughly chopped",
+        "item": "a large onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "or 1 cup chopped scallions",
+        "note": "roughly chopped or 1 cup chopped scallions",
         "category": "Produce"
       }
     },

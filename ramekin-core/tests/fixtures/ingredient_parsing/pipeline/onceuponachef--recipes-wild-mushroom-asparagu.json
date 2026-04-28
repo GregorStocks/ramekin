@@ -5,7 +5,7 @@
     {
       "raw": "1 bunch (about 1 pound) asparagus spears, ends trimmed",
       "expected": {
-        "item": "asparagus spears, ends trimmed",
+        "item": "asparagus spears",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 pound, ends trimmed",
         "category": "Produce"
       }
     },

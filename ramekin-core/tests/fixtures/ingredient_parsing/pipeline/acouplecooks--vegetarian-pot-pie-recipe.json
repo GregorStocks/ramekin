@@ -95,14 +95,18 @@
     {
       "raw": "7 tablespoons ice water, more as needed",
       "expected": {
-        "item": "ice water, more as needed",
+        "item": "ice water",
         "measurements": [
           {
             "amount": "7",
             "unit": "tbsp"
+          },
+          {
+            "amount": "104",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "more as needed",
         "category": "Other"
       }
     },
@@ -311,14 +315,14 @@
     {
       "raw": "1/2 cup Parmesan cheese, large grated",
       "expected": {
-        "item": "Parmesan cheese, large grated",
+        "item": "Parmesan cheese",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "large grated",
         "category": "Cheese"
       }
     }

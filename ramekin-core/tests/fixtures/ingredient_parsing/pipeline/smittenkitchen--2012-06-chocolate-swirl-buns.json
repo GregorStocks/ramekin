@@ -14,7 +14,7 @@
     {
       "raw": "1/2 cup (120 ml) milk, preferably whole",
       "expected": {
-        "item": "milk, preferably whole",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.5",
@@ -23,9 +23,13 @@
           {
             "amount": "120",
             "unit": "ml"
+          },
+          {
+            "amount": "122",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably whole",
         "category": "Dairy & Eggs"
       }
     },

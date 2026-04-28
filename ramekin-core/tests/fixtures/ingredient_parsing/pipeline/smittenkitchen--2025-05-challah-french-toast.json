@@ -105,7 +105,7 @@
     {
       "raw": "2 cups (16 ounces or 455 grams) cottage cheese, whole or low-fat",
       "expected": {
-        "item": "cottage cheese, whole or low-fat",
+        "item": "cottage cheese",
         "measurements": [
           {
             "amount": "2",
@@ -120,7 +120,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "whole or low-fat",
         "category": "Dairy & Eggs"
       }
     },
@@ -205,14 +205,14 @@
     {
       "raw": "1 large (1-lb) loaf of challah bread, cut into 1 to 1.5-inch thick slices",
       "expected": {
-        "item": "loaf of challah bread, cut into 1 to 1.5-inch thick slices",
+        "item": "loaf of challah bread",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": "1-lb",
+        "note": "1-lb, cut into 1 to 1.5-inch thick slices",
         "category": "Bakery & Bread"
       }
     },

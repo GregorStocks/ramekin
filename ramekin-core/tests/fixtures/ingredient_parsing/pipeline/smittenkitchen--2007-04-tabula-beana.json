@@ -5,42 +5,42 @@
     {
       "raw": "2 15-ounce cans black beans, drained and well-rinsed",
       "expected": {
-        "item": "black beans, drained and well-rinsed",
+        "item": "black beans",
         "measurements": [
           {
             "amount": "2",
             "unit": "15-ounce cans"
           }
         ],
-        "note": null,
+        "note": "drained and well-rinsed",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "4 bell peppers, a mix of colors, chopped into a small dice",
       "expected": {
-        "item": "bell peppers, a mix of colors, chopped into a small dice",
+        "item": "bell peppers, a mix of colors",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "chopped into a small dice",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 super-large or 1 medium white onion, chopped into a small dice",
       "expected": {
-        "item": "super-large or 1 medium white onion, chopped into a small dice",
+        "item": "super-large or 1 medium white onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "chopped into a small dice",
         "category": "Produce"
       }
     },

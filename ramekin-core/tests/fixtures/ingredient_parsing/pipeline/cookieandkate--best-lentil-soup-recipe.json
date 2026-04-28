@@ -51,14 +51,14 @@
     {
       "raw": "4 garlic cloves, pressed or minced",
       "expected": {
-        "item": "garlic cloves, pressed or minced",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "pressed or minced",
         "category": "Produce"
       }
     },
@@ -141,14 +141,14 @@
     {
       "raw": "1 cup brown or green lentils, picked over and rinsed",
       "expected": {
-        "item": "brown or green lentils, picked over and rinsed",
+        "item": "brown or green lentils",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "picked over and rinsed",
         "category": "Canned Goods"
       }
     },
@@ -251,13 +251,9 @@
           {
             "amount": "1 to 2",
             "unit": "tbsp"
-          },
-          {
-            "amount": "0.5 to 1",
-            "unit": "medium"
           }
         ],
-        "note": "to taste",
+        "note": "1/2 to 1 medium lemon, to taste",
         "category": "Beverages"
       }
     }

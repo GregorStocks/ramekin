@@ -24,7 +24,7 @@
             "unit": "g"
           }
         ],
-        "note": "roughly chopped",
+        "note": "about 3 cups, 3 ounces, roughly chopped",
         "category": "Produce"
       }
     },
@@ -46,7 +46,7 @@
             "unit": "g"
           }
         ],
-        "note": "roughly chopped",
+        "note": "about 1 ounce, roughly chopped",
         "category": "Produce"
       }
     },
@@ -60,7 +60,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "plus more to taste",
+        "note": "about 2 tablespoons, plus more to taste",
         "category": "Beverages"
       }
     },
@@ -159,14 +159,14 @@
     {
       "raw": "good bread, sliced thickly",
       "expected": {
-        "item": "bread, sliced thickly",
+        "item": "bread",
         "measurements": [
           {
             "amount": null,
             "unit": "good"
           }
         ],
-        "note": null,
+        "note": "sliced thickly",
         "category": "Bakery & Bread"
       }
     },

@@ -113,14 +113,14 @@
     {
       "raw": "1 medium sweet red pepper, cut into thin strips",
       "expected": {
-        "item": "sweet red pepper, cut into thin strips",
+        "item": "sweet red pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into thin strips",
         "category": "Spices & Seasonings"
       }
     },

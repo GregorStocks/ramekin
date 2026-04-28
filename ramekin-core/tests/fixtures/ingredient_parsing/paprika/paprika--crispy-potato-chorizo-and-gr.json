@@ -5,7 +5,7 @@
     {
       "raw": "1 1/2 pounds russet or Yukon gold potatoes, cut into 3/4- to 1/2-inch dice (see notes)",
       "expected": {
-        "item": "russet or Yukon gold potatoes, cut into 3/4- to 1/2-inch dice",
+        "item": "russet or Yukon gold potatoes",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "see notes",
+        "note": "see notes, cut into 3/4- to 1/2-inch dice",
         "category": "Produce"
       }
     },
@@ -123,28 +123,28 @@
     {
       "raw": "6 scallions, white and light green parts cut into 1-inch lengths, greens sliced and reserved separately",
       "expected": {
-        "item": "scallions, white and light green parts cut into 1-inch lengths, greens sliced and reserved separately",
+        "item": "scallions, white and light green parts cut into 1-inch lengths",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "greens sliced and reserved separately",
         "category": "Produce"
       }
     },
     {
       "raw": "1 poblano pepper, cut into 1/2-inch dice",
       "expected": {
-        "item": "poblano pepper, cut into 1/2-inch dice",
+        "item": "poblano pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch dice",
         "category": "Produce"
       }
     },

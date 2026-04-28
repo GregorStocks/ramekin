@@ -50,14 +50,18 @@
     {
       "raw": "1/2 cup soy sauce, preferably Japanese or reduced sodium",
       "expected": {
-        "item": "soy sauce, preferably Japanese or reduced sodium",
+        "item": "soy sauce",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "128",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably Japanese or reduced sodium",
         "category": "Condiments & Sauces"
       }
     },
@@ -184,7 +188,7 @@
             "unit": "g"
           }
         ],
-        "note": "the cilantro-averse can use flat-leaf parsley, finely chopped",
+        "note": "about 1/2 cup, the cilantro-averse can use flat-leaf parsley, finely chopped",
         "category": "Produce"
       }
     },
@@ -205,14 +209,18 @@
     {
       "raw": "2 tablespoons sesame oil, toasted if you can find it",
       "expected": {
-        "item": "sesame oil, toasted if you can find it",
+        "item": "sesame oil",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "27",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "toasted if you can find it",
         "category": "Oils & Vinegars"
       }
     },

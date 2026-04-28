@@ -158,13 +158,9 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "0.5",
-            "unit": "cup"
           }
         ],
-        "note": "or 1/2 cup Demi-Glace Gold concentrate",
+        "note": "or 1/2 cup Demi-Glace Gold concentrate * (concentrate requires a dilution ratio of 1:8; 1/2 cup concentrate to 4 cups water)",
         "category": "Canned Goods"
       }
     },
@@ -346,21 +342,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably applewood-smoked; 1/4 lb total",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "8 medium fresh white mushrooms, trimmed and quartered lengthwise",
       "expected": {
-        "item": "fresh white mushrooms, trimmed and quartered lengthwise",
+        "item": "fresh white mushrooms",
         "measurements": [
           {
             "amount": "8",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "trimmed and quartered lengthwise",
         "category": "Produce"
       }
     }

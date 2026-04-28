@@ -197,14 +197,14 @@
     {
       "raw": "1 large fresh jalapeno chile, seeded and minced",
       "expected": {
-        "item": "fresh jalapeno chile, seeded and minced",
+        "item": "fresh jalapeno chile",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "seeded and minced",
         "category": "Produce"
       }
     },
@@ -238,7 +238,7 @@
     {
       "raw": "3/4 lb Chinese long beans (1 bunch) or green beans, trimmed and cut into 3-inch pieces",
       "expected": {
-        "item": "Chinese long beans or green beans, trimmed and cut into 3-inch pieces",
+        "item": "Chinese long beans or green beans",
         "measurements": [
           {
             "amount": "0.75",
@@ -253,14 +253,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "trimmed and cut into 3-inch pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1 seedless cucumber (usually plastic-wrapped; about 1 lb), halved lengthwise and sliced diagonally 1/8 inch thick",
       "expected": {
-        "item": "seedless cucumber, halved lengthwise and sliced diagonally 1/8 inch thick",
+        "item": "seedless cucumber",
         "measurements": [
           {
             "amount": "1",
@@ -275,21 +275,21 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "usually plastic-wrapped; about 1 lb, halved lengthwise and sliced diagonally 1/8 inch thick",
         "category": "Produce"
       }
     },
     {
       "raw": "1 bunch scallions, cut into matchsticks",
       "expected": {
-        "item": "scallions, cut into matchsticks",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "cut into matchsticks",
         "category": "Produce"
       }
     },
@@ -310,14 +310,14 @@
     {
       "raw": "2 thin carrots, cut into 1/8-inch-thick matchsticks",
       "expected": {
-        "item": "thin carrots, cut into 1/8-inch-thick matchsticks",
+        "item": "thin carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1/8-inch-thick matchsticks",
         "category": "Produce"
       }
     },

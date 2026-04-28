@@ -19,7 +19,7 @@
     {
       "raw": "1 lb shrimp, peeled and deveined",
       "expected": {
-        "item": "shrimp, peeled and deveined",
+        "item": "shrimp",
         "measurements": [
           {
             "amount": "1",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "peeled and deveined",
         "category": "Meat & Seafood"
       }
     },

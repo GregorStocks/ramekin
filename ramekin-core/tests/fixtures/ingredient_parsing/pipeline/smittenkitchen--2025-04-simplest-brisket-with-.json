@@ -25,7 +25,7 @@
             "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "6-pound or 2.75 kg",
         "category": "Meat & Seafood"
       }
     },
@@ -65,21 +65,21 @@
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "about 8 medium",
         "category": "Produce"
       }
     },
     {
       "raw": "6 garlic cloves, peeled and smashed",
       "expected": {
-        "item": "garlic cloves, peeled and smashed",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and smashed",
         "category": "Produce"
       }
     },

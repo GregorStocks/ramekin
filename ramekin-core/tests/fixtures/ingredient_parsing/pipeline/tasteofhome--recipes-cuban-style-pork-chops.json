@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 3 ounces",
         "category": "Meat & Seafood"
       }
     },
@@ -123,9 +123,9 @@
     {
       "raw": "Optional: Mayonnaise, additional Dijon mustard and thinly sliced dill pickles",
       "expected": {
-        "item": "Mayonnaise, additional Dijon mustard and thinly sliced dill pickles",
+        "item": "Mayonnaise",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, additional Dijon mustard and thinly sliced dill pickles",
         "category": "Condiments & Sauces"
       }
     }

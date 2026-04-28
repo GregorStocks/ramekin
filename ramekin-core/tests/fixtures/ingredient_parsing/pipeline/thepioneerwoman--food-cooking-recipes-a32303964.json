@@ -83,14 +83,14 @@
     {
       "raw": "2 apples, cut into 1-inch pieces",
       "expected": {
-        "item": "apples, cut into 1-inch pieces",
+        "item": "apples",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Produce"
       }
     }

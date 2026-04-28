@@ -34,7 +34,7 @@
             "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "about 3kg",
         "category": "Other"
       }
     },
@@ -83,14 +83,14 @@
     {
       "raw": "2 celery sticks, cut into small chunks",
       "expected": {
-        "item": "celery sticks, cut into small chunks",
+        "item": "celery sticks",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into small chunks",
         "category": "Produce"
       }
     },
@@ -176,14 +176,14 @@
     {
       "raw": "bunch basil leaves, removed",
       "expected": {
-        "item": "basil leaves, removed",
+        "item": "basil leaves",
         "measurements": [
           {
             "amount": null,
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "removed",
         "category": "Spices & Seasonings"
       }
     },

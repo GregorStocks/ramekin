@@ -146,7 +146,7 @@
     {
       "raw": "2 pounds (905 grams) Napa cabbage, 12 large leaves removed from the head, and reserved, the remainder sliced thin",
       "expected": {
-        "item": "Napa cabbage, 12 large leaves removed from the head, and reserved, the remainder sliced thin",
+        "item": "Napa cabbage, 12 large leaves removed from the head, and reserved",
         "measurements": [
           {
             "amount": "2",
@@ -157,7 +157,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "the remainder sliced thin",
         "category": "Produce"
       }
     },
@@ -186,7 +186,7 @@
     {
       "raw": "1 1/2 pounds (680 grams, about 4) yukon gold potatoes, sliced 1/8-inch thick",
       "expected": {
-        "item": "yukon gold potatoes, sliced 1/8-inch thick",
+        "item": "yukon gold potatoes",
         "measurements": [
           {
             "amount": "1.5",
@@ -197,7 +197,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "680 grams, about 4, sliced 1/8-inch thick",
         "category": "Produce"
       }
     },

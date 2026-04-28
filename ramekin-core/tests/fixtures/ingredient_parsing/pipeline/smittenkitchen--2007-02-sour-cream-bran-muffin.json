@@ -5,14 +5,18 @@
     {
       "raw": "1/2 cup unsalted butter, melted, cooled slightly or 1/2 cup vegetable oil",
       "expected": {
-        "item": "unsalted butter, melted, cooled slightly",
+        "item": "unsalted butter, melted",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": "or 1/2 cup vegetable oil",
+        "note": "cooled slightly or 1/2 cup vegetable oil",
         "category": "Dairy & Eggs"
       }
     },
@@ -161,15 +165,15 @@
     {
       "raw": "1/2 cup raisins, cranberries, or other chopped dried fruit",
       "expected": {
-        "item": "raisins, cranberries, or other chopped dried fruit",
+        "item": "raisins, cranberries",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "or other chopped dried fruit",
+        "category": "Produce"
       }
     }
   ]

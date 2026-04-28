@@ -91,7 +91,7 @@
     {
       "raw": "8 ounces (227 g) boneless pork loin chops, diced into 1-inch cubes",
       "expected": {
-        "item": "boneless pork loin chops, diced into 1-inch cubes",
+        "item": "boneless pork loin chops",
         "measurements": [
           {
             "amount": "8",
@@ -102,7 +102,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "diced into 1-inch cubes",
         "category": "Meat & Seafood"
       }
     },

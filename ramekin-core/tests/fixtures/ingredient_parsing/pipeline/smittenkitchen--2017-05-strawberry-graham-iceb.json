@@ -145,7 +145,7 @@
     {
       "raw": "1/2 cup (115 grams) unsalted butter, cold is fine if using a food processor, softened otherwise",
       "expected": {
-        "item": "unsalted butter, cold is fine if using a food processor, softened otherwise",
+        "item": "unsalted butter, cold is fine if using a food processor",
         "measurements": [
           {
             "amount": "0.5",
@@ -156,7 +156,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "softened otherwise",
         "category": "Dairy & Eggs"
       }
     },

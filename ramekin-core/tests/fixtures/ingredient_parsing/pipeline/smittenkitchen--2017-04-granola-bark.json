@@ -221,7 +221,7 @@
     {
       "raw": "1/3 cup (80 ml) olive, vegetable or coconut oil, or melted butter",
       "expected": {
-        "item": "olive, vegetable or coconut oil, or melted butter",
+        "item": "olive, vegetable or coconut oil",
         "measurements": [
           {
             "amount": "0.33",
@@ -232,21 +232,21 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "or melted butter",
         "category": "Oils & Vinegars"
       }
     },
     {
       "raw": "1 large egg white, whisked until frothy",
       "expected": {
-        "item": "egg white, whisked until frothy",
+        "item": "egg white",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "whisked until frothy",
         "category": "Dairy & Eggs"
       }
     }

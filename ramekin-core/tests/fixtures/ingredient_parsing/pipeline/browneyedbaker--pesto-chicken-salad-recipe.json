@@ -37,7 +37,7 @@
     {
       "raw": "10 ounce frozen chopped spinach, thawed and squeezed dry",
       "expected": {
-        "item": "frozen chopped spinach, thawed and squeezed dry",
+        "item": "frozen chopped spinach",
         "measurements": [
           {
             "amount": "10",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "thawed and squeezed dry",
         "category": "Produce"
       }
     },

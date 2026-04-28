@@ -55,14 +55,14 @@
     {
       "raw": "1/2 teaspoon finely ground black pepper, or a larger amount coarsely ground",
       "expected": {
-        "item": "finely ground black pepper, or a larger amount coarsely ground",
+        "item": "finely ground black pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or a larger amount coarsely ground",
         "category": "Spices & Seasonings"
       }
     },
@@ -98,7 +98,7 @@
             "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "roughly 1 kg",
         "category": "Produce"
       }
     },

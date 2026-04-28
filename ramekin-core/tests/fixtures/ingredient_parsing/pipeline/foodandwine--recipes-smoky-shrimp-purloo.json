@@ -5,7 +5,7 @@
     {
       "raw": "18 large head-on shrimp (about 2 1/4 pounds)—shelled and deveined, heads and shells reserved",
       "expected": {
-        "item": "head-on shrimp -shelled and deveined, heads and shells reserved",
+        "item": "head-on shrimp -shelled and deveined",
         "measurements": [
           {
             "amount": "18",
@@ -20,8 +20,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Pasta & Rice"
+        "note": "about 2 1/4 pounds, heads and shells reserved",
+        "category": "Meat & Seafood"
       }
     },
     {
@@ -98,7 +98,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "10 ounces; see Note",
         "category": "Pasta & Rice"
       }
     },

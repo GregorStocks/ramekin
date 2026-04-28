@@ -23,56 +23,56 @@
     {
       "raw": "3 celery ribs, cut into big chunks",
       "expected": {
-        "item": "celery ribs, cut into big chunks",
+        "item": "celery ribs",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into big chunks",
         "category": "Produce"
       }
     },
     {
       "raw": "3 carrots, scrubbed and cut into big chunks",
       "expected": {
-        "item": "carrots, scrubbed and cut into big chunks",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "scrubbed and cut into big chunks",
         "category": "Produce"
       }
     },
     {
       "raw": "2 parsnips, scrubbed and cut into big chunks",
       "expected": {
-        "item": "parsnips, scrubbed and cut into big chunks",
+        "item": "parsnips",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "scrubbed and cut into big chunks",
         "category": "Produce"
       }
     },
     {
       "raw": "2 onions, unpeeled and quartered",
       "expected": {
-        "item": "onions, unpeeled and quartered",
+        "item": "onions",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "unpeeled and quartered",
         "category": "Produce"
       }
     },

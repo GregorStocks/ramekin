@@ -23,14 +23,14 @@
     {
       "raw": "6 slices of bacon, cut into 1/2 inch pieces",
       "expected": {
-        "item": "bacon, cut into 1/2 inch pieces",
+        "item": "bacon",
         "measurements": [
           {
             "amount": "6",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2 inch pieces",
         "category": "Meat & Seafood"
       }
     },

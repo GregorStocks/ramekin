@@ -41,7 +41,7 @@
     {
       "raw": "4 oz bacon ((about 4 slices), diced into small pieces*)",
       "expected": {
-        "item": "bacon, diced into small pieces",
+        "item": "bacon",
         "measurements": [
           {
             "amount": "4",
@@ -56,7 +56,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 4 slices, diced into small pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -68,13 +68,9 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "1",
-            "unit": "small"
           }
         ],
-        "note": null,
+        "note": "about 1 small onion",
         "category": "Produce"
       }
     },

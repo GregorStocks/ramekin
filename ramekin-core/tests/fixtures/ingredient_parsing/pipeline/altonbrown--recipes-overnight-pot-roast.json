@@ -5,7 +5,7 @@
     {
       "raw": "3 1/2 pounds boneless chuck roast, cut into 3 to 4 pieces and any large pieces of fat removed",
       "expected": {
-        "item": "boneless chuck roast, cut into 3 to 4 pieces and any large pieces of fat removed",
+        "item": "boneless chuck roast",
         "measurements": [
           {
             "amount": "3.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 3 to 4 pieces and any large pieces of fat removed",
         "category": "Meat & Seafood"
       }
     },
@@ -179,7 +179,7 @@
     {
       "raw": "15 ounces baby red potatoes, cut into 1 1/2-inch pieces",
       "expected": {
-        "item": "baby red potatoes, cut into 1 1/2-inch pieces",
+        "item": "baby red potatoes",
         "measurements": [
           {
             "amount": "15",
@@ -190,7 +190,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1 1/2-inch pieces",
         "category": "Produce"
       }
     }

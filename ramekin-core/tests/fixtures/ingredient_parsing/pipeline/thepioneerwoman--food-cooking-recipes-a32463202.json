@@ -132,14 +132,14 @@
     {
       "raw": "6 skinless, boneless chicken thighs, cut into small pieces",
       "expected": {
-        "item": "skinless, boneless chicken thighs, cut into small pieces",
+        "item": "skinless, boneless chicken thighs",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into small pieces",
         "category": "Meat & Seafood"
       }
     },

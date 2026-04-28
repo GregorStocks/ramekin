@@ -59,7 +59,7 @@
     {
       "raw": "6 tablespoons (3/4 stick or 85 grams) unsalted butter, just softened, cut in 1/2-inch pieces",
       "expected": {
-        "item": "unsalted butter, just softened, cut in 1/2-inch pieces",
+        "item": "unsalted butter, just softened",
         "measurements": [
           {
             "amount": "6",
@@ -74,7 +74,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut in 1/2-inch pieces",
         "category": "Dairy & Eggs"
       }
     },

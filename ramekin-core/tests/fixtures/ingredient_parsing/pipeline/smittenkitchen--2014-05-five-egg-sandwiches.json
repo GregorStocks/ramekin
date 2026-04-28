@@ -33,56 +33,56 @@
     {
       "raw": "2 cloves garlic, crushed then minced",
       "expected": {
-        "item": "garlic, crushed then minced",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "2",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "crushed then minced",
         "category": "Produce"
       }
     },
     {
       "raw": "1 red bell pepper, cored and sliced into thin strips",
       "expected": {
-        "item": "red bell pepper, cored and sliced into thin strips",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cored and sliced into thin strips",
         "category": "Produce"
       }
     },
     {
       "raw": "1 yellow bell pepper, cored and sliced into thin strips",
       "expected": {
-        "item": "yellow bell pepper, cored and sliced into thin strips",
+        "item": "yellow bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cored and sliced into thin strips",
         "category": "Produce"
       }
     },
     {
       "raw": "1 Anaheim or 1 jalapeño chile, cored and sliced into thin strips",
       "expected": {
-        "item": "Anaheim or 1 jalapeño chile, cored and sliced into thin strips",
+        "item": "Anaheim or 1 jalapeño chile",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cored and sliced into thin strips",
         "category": "Produce"
       }
     },
@@ -143,14 +143,14 @@
     {
       "raw": "1 14-ounce can crushed tomatoes, fire-roasted if you can get them",
       "expected": {
-        "item": "crushed tomatoes, fire-roasted if you can get them",
+        "item": "crushed tomatoes",
         "measurements": [
           {
             "amount": "1",
             "unit": "14-ounce can"
           }
         ],
-        "note": null,
+        "note": "fire-roasted if you can get them",
         "category": "Canned Goods"
       }
     },
@@ -331,7 +331,7 @@
     {
       "raw": "1/2 pound asparagus spears, trimmed of tough ends",
       "expected": {
-        "item": "asparagus spears, trimmed of tough ends",
+        "item": "asparagus spears",
         "measurements": [
           {
             "amount": "0.5",
@@ -342,7 +342,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "trimmed of tough ends",
         "category": "Produce"
       }
     },
@@ -478,14 +478,14 @@
     {
       "raw": "2 to 3 slices of bacon, halved to approximate sandwich lengths",
       "expected": {
-        "item": "bacon, halved to approximate sandwich lengths",
+        "item": "bacon",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "halved to approximate sandwich lengths",
         "category": "Meat & Seafood"
       }
     },
@@ -588,7 +588,7 @@
     {
       "raw": "1 pound Yukon Gold potatoes, cut into small (about 1/2-inch) cubes",
       "expected": {
-        "item": "Yukon Gold potatoes, cut into small cubes",
+        "item": "Yukon Gold potatoes",
         "measurements": [
           {
             "amount": "1",
@@ -599,7 +599,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 1/2-inch",
+        "note": "about 1/2-inch, cut into small cubes",
         "category": "Produce"
       }
     },
@@ -811,14 +811,18 @@
     {
       "raw": "1 tablespoon unsalted butter, melted and cooled slightly",
       "expected": {
-        "item": "unsalted butter, melted and cooled slightly",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "melted and cooled slightly",
         "category": "Dairy & Eggs"
       }
     },

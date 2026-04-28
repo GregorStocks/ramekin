@@ -5,7 +5,7 @@
     {
       "raw": "3 pounds sugar pumpkin, seeded and halved",
       "expected": {
-        "item": "sugar pumpkin, seeded and halved",
+        "item": "sugar pumpkin",
         "measurements": [
           {
             "amount": "3",
@@ -16,14 +16,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "seeded and halved",
         "category": "Produce"
       }
     },
     {
       "raw": "4 ounces thick-cut smoked bacon, cut into 1/4-inch pieces",
       "expected": {
-        "item": "thick-cut smoked bacon, cut into 1/4-inch pieces",
+        "item": "thick-cut smoked bacon",
         "measurements": [
           {
             "amount": "4",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch pieces",
         "category": "Meat & Seafood"
       }
     },

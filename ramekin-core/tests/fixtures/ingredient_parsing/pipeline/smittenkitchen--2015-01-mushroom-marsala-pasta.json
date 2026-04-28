@@ -132,14 +132,14 @@
     {
       "raw": "1 small-to-medium yellow onion, halved and sliced thin",
       "expected": {
-        "item": "small-to-medium yellow onion, halved and sliced thin",
+        "item": "small-to-medium yellow onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "halved and sliced thin",
         "category": "Produce"
       }
     },
@@ -245,7 +245,7 @@
     {
       "raw": "4 ounces (115 grams) mozzarella, cut into small cubes",
       "expected": {
-        "item": "mozzarella, cut into small cubes",
+        "item": "mozzarella",
         "measurements": [
           {
             "amount": "4",
@@ -256,7 +256,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small cubes",
         "category": "Cheese"
       }
     },

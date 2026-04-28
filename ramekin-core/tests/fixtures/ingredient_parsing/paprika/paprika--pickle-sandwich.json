@@ -79,14 +79,14 @@
     {
       "raw": "1 half-sour pickle, thinly sliced lengthwise",
       "expected": {
-        "item": "half-sour pickle, thinly sliced lengthwise",
+        "item": "half-sour pickle",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "thinly sliced lengthwise",
         "category": "Canned Goods"
       }
     },

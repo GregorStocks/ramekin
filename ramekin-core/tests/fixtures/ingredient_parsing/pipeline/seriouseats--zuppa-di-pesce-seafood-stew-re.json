@@ -31,7 +31,7 @@
     {
       "raw": "8 ounces (226 g) large shrimp (26 to 30 per pound), peeled and deveined, shells reserved separately",
       "expected": {
-        "item": "large shrimp, peeled and deveined, shells reserved separately",
+        "item": "large shrimp, peeled and deveined",
         "measurements": [
           {
             "amount": "8",
@@ -42,14 +42,14 @@
             "unit": "g"
           }
         ],
-        "note": "26 to 30 per pound",
-        "category": "Pasta & Rice"
+        "note": "26 to 30 per pound, shells reserved separately",
+        "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1/2 medium yellow onion (4 ounces; 113 g), cut into 1/4-inch dice",
       "expected": {
-        "item": "yellow onion, cut into 1/4-inch dice",
+        "item": "yellow onion",
         "measurements": [
           {
             "amount": "0.5",
@@ -64,14 +64,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch dice",
         "category": "Produce"
       }
     },
     {
       "raw": "1 bulb fennel (about 8 ounces; 226 g), bulb cut into 1/4-inch dice, fronds reserved for garnish",
       "expected": {
-        "item": "bulb fennel, bulb cut into 1/4-inch dice, fronds reserved for garnish",
+        "item": "bulb fennel, bulb cut into 1/4-inch dice",
         "measurements": [
           {
             "amount": "1",
@@ -86,7 +86,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 8 ounces; 226 g, fronds reserved for garnish",
         "category": "Produce"
       }
     },
@@ -200,7 +200,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "8-ounce; 237 ml",
         "category": "Beverages"
       }
     },
@@ -218,14 +218,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "24.5-ounce; 700 g",
         "category": "Produce"
       }
     },
     {
       "raw": "1 pound (454 g) squid, bodies sliced crosswise into 1/2-inch-thick rings, tentacles left whole, patted dry",
       "expected": {
-        "item": "squid, bodies sliced crosswise into 1/2-inch-thick rings, tentacles left whole, patted dry",
+        "item": "squid, bodies sliced crosswise into 1/2-inch-thick rings, tentacles left whole",
         "measurements": [
           {
             "amount": "1",
@@ -236,14 +236,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "patted dry",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 (1-pound; 454 g) skinless cod fillet, 3/4 to 1 inch thick, cut into 2-inch by 1-inch pieces",
       "expected": {
-        "item": "skinless cod fillet, 3/4 to 1 inch thick, cut into 2-inch by 1-inch pieces",
+        "item": "skinless cod fillet, 3/4 to 1 inch thick",
         "measurements": [
           {
             "amount": "1",
@@ -254,7 +254,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1-pound; 454 g, cut into 2-inch by 1-inch pieces",
         "category": "Meat & Seafood"
       }
     },

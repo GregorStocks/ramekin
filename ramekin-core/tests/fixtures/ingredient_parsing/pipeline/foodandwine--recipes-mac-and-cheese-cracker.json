@@ -105,14 +105,14 @@
     {
       "raw": "4 cups crumbled buttery crackers, preferably Ritz",
       "expected": {
-        "item": "crumbled buttery crackers, preferably Ritz",
+        "item": "crumbled buttery crackers",
         "measurements": [
           {
             "amount": "4",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "preferably Ritz",
         "category": "Snacks"
       }
     },

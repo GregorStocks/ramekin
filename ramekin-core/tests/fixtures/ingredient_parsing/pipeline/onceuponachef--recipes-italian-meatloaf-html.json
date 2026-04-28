@@ -5,42 +5,42 @@
     {
       "raw": "1 small onion, cut into 1-inch pieces",
       "expected": {
-        "item": "onion, cut into 1-inch pieces",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1  carrot, cut into 1-inch pieces",
       "expected": {
-        "item": "carrot, cut into 1-inch pieces",
+        "item": "carrot",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1 stalk celery, cut into 1-inch pieces",
       "expected": {
-        "item": "celery, cut into 1-inch pieces",
+        "item": "celery",
         "measurements": [
           {
             "amount": "1",
             "unit": "stalk"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Produce"
       }
     },

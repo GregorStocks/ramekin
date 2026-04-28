@@ -5,56 +5,56 @@
     {
       "raw": "1 bell pepper (red, orange or yellow), cut into 1” squares",
       "expected": {
-        "item": "bell pepper, cut into 1” squares",
+        "item": "bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "red, orange or yellow",
+        "note": "red, orange or yellow, cut into 1” squares",
         "category": "Produce"
       }
     },
     {
       "raw": "2 carrots, peeled and cut on the diagonal so each piece is about ½″ thick at the widest part",
       "expected": {
-        "item": "carrots, peeled and cut on the diagonal so each piece is about 1/2″ thick at the widest part",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and cut on the diagonal so each piece is about 1/2″ thick at the widest part",
         "category": "Produce"
       }
     },
     {
       "raw": "1 crown of broccoli, cut into bite-sized florets",
       "expected": {
-        "item": "crown of broccoli, cut into bite-sized florets",
+        "item": "crown of broccoli",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into bite-sized florets",
         "category": "Produce"
       }
     },
     {
       "raw": "1 small red onion, cut into ½”-wide wedges",
       "expected": {
-        "item": "red onion, cut into 1/2”-wide wedges",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2”-wide wedges",
         "category": "Produce"
       }
     },

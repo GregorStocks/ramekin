@@ -64,14 +64,14 @@
     {
       "raw": "4 chicken breast halves with bone, halved crosswise",
       "expected": {
-        "item": "chicken breast halves with bone, halved crosswise",
+        "item": "chicken breast halves with bone",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "halved crosswise",
         "category": "Meat & Seafood"
       }
     },
@@ -257,7 +257,7 @@
     {
       "raw": "1 lb. tomatoes, seeded and chopped",
       "expected": {
-        "item": "tomatoes, seeded and chopped",
+        "item": "tomatoes",
         "measurements": [
           {
             "amount": "1",
@@ -268,7 +268,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "seeded and chopped",
         "category": "Produce"
       }
     },

@@ -78,15 +78,15 @@
     {
       "raw": "3 egg yolks, lightly beaten in a saucer",
       "expected": {
-        "item": "egg yolks, lightly beaten in a saucer",
+        "item": "egg yolks",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Condiments & Sauces"
+        "note": "lightly beaten in a saucer",
+        "category": "Dairy & Eggs"
       }
     },
     {

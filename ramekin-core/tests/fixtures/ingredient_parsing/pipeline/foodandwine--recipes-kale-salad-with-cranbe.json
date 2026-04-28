@@ -119,14 +119,14 @@
     {
       "raw": "2 bunches of kale, rinsed and dried, ribs and stems removed, leaves thinly sliced crosswise",
       "expected": {
-        "item": "kale, rinsed and dried, ribs and stems removed, leaves thinly sliced crosswise",
+        "item": "kale, rinsed and dried, ribs and stems removed",
         "measurements": [
           {
             "amount": "2",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "leaves thinly sliced crosswise",
         "category": "Produce"
       }
     },

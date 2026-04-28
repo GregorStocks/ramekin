@@ -106,28 +106,28 @@
     {
       "raw": "2 medium Italian eggplants, sliced into ½-inch rounds",
       "expected": {
-        "item": "Italian eggplants, sliced into 1/2-inch rounds",
+        "item": "Italian eggplants",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "sliced into 1/2-inch rounds",
         "category": "Produce"
       }
     },
     {
       "raw": "2 small zucchini, sliced in half lengthwise",
       "expected": {
-        "item": "zucchini, sliced in half lengthwise",
+        "item": "zucchini",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "sliced in half lengthwise",
         "category": "Produce"
       }
     },

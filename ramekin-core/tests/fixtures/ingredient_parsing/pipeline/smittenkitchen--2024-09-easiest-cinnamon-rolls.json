@@ -23,7 +23,7 @@
     {
       "raw": "1/2 cup (115 grams) butter, dairy or non-dairy (i.e. margarine), melted and warm",
       "expected": {
-        "item": "butter, dairy or non-dairy, melted and warm",
+        "item": "butter, dairy or non-dairy",
         "measurements": [
           {
             "amount": "0.5",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": "i.e. margarine",
+        "note": "i.e. margarine, melted and warm",
         "category": "Dairy & Eggs"
       }
     },

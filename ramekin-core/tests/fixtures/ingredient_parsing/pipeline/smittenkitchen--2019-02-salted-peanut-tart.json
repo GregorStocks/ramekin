@@ -55,7 +55,7 @@
     {
       "raw": "1/2 cup (4 ounces or 115 grams) unsalted butter, cold is fine, cut into a few chunks",
       "expected": {
-        "item": "unsalted butter, cold is fine, cut into a few chunks",
+        "item": "unsalted butter, cold is fine",
         "measurements": [
           {
             "amount": "0.5",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into a few chunks",
         "category": "Dairy & Eggs"
       }
     },
@@ -218,7 +218,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 10 ounces or 285 grams",
         "category": "Nuts & Dried Fruit"
       }
     },

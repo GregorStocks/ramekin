@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds eggplant, cut into generous 1/2-inch slices",
       "expected": {
-        "item": "eggplant, cut into generous 1/2-inch slices",
+        "item": "eggplant",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into generous 1/2-inch slices",
         "category": "Produce"
       }
     },

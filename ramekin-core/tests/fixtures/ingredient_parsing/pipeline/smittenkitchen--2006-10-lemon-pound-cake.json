@@ -64,13 +64,9 @@
           {
             "amount": "0.33",
             "unit": "cup"
-          },
-          {
-            "amount": "6 to 8",
-            "unit": "large"
           }
         ],
-        "note": null,
+        "note": "6 to 8 large lemons",
         "category": "Produce"
       }
     },
@@ -219,7 +215,7 @@
     {
       "raw": "2 cups (240 grams) powdered sugar, sifted if lumpy",
       "expected": {
-        "item": "powdered sugar, sifted if lumpy",
+        "item": "powdered sugar",
         "measurements": [
           {
             "amount": "2",
@@ -230,7 +226,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sifted if lumpy",
         "category": "Baking"
       }
     }

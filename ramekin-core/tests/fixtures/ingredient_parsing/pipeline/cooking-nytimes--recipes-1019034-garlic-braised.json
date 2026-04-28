@@ -50,14 +50,14 @@
     {
       "raw": "2 large heads garlic, halved crosswise",
       "expected": {
-        "item": "heads garlic, halved crosswise",
+        "item": "heads garlic",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "halved crosswise",
         "category": "Produce"
       }
     },
@@ -79,7 +79,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped",
+        "note": "about 10 ounces, chopped",
         "category": "Produce"
       }
     },
@@ -115,7 +115,7 @@
             "unit": "g"
           }
         ],
-        "note": "chopped",
+        "note": "about 6 ounces, chopped",
         "category": "Produce"
       }
     },

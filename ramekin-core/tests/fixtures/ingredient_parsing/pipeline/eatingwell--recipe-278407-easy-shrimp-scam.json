@@ -52,7 +52,7 @@
             "unit": "cup"
           }
         ],
-        "note": "finely chopped",
+        "note": "about 1/4 cup, finely chopped",
         "category": "Produce"
       }
     },
@@ -105,7 +105,7 @@
     {
       "raw": "1 pound large shrimp, peeled and deveined",
       "expected": {
-        "item": "large shrimp, peeled and deveined",
+        "item": "large shrimp",
         "measurements": [
           {
             "amount": "1",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "peeled and deveined",
         "category": "Meat & Seafood"
       }
     },

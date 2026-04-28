@@ -129,14 +129,14 @@
     {
       "raw": "½ small onion , halved through root end into 2 wedges",
       "expected": {
-        "item": "onion, halved through root end into 2 wedges",
+        "item": "onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "halved through root end into 2 wedges",
         "category": "Produce"
       }
     },

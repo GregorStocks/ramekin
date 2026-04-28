@@ -155,14 +155,14 @@
     {
       "raw": "1 10-ounce package cremini mushrooms, trimmed, halved if large",
       "expected": {
-        "item": "cremini mushrooms, trimmed, halved if large",
+        "item": "cremini mushrooms, trimmed",
         "measurements": [
           {
             "amount": "1",
             "unit": "10-ounce package"
           }
         ],
-        "note": null,
+        "note": "halved if large",
         "category": "Produce"
       }
     },
@@ -214,7 +214,7 @@
     {
       "raw": "1 3/4 lb. boneless sirloin steak, cut into 1 1/2-inch chunks",
       "expected": {
-        "item": "boneless sirloin steak, cut into 1 1/2-inch chunks",
+        "item": "boneless sirloin steak",
         "measurements": [
           {
             "amount": "1.75",
@@ -225,7 +225,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1 1/2-inch chunks",
         "category": "Meat & Seafood"
       }
     },

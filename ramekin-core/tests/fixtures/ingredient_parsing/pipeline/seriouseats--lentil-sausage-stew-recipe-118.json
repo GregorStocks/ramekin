@@ -229,7 +229,7 @@
     {
       "raw": "1 cup dried red lentils (about 7 ounces; 200 g), picked over and rinsed (see notes)",
       "expected": {
-        "item": "dried red lentils, picked over and rinsed",
+        "item": "dried red lentils",
         "measurements": [
           {
             "amount": "1",
@@ -244,7 +244,7 @@
             "unit": "g"
           }
         ],
-        "note": "see notes",
+        "note": "about 7 ounces; 200 g, see notes, picked over and rinsed",
         "category": "Canned Goods"
       }
     },
@@ -280,14 +280,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "14.5-ounce; 411 g",
         "category": "Canned Goods"
       }
     },
     {
       "raw": "1 medium bunch escarole (1 pound; 454 g), stem end trimmed, wilted leaves discarded, chopped into bite-size pieces, and washed very well in multiple changes of water (see notes)",
       "expected": {
-        "item": "bunch escarole, stem end trimmed, wilted leaves discarded, chopped into bite-size pieces, and washed very well in multiple changes of water",
+        "item": "bunch escarole, stem end trimmed, wilted leaves discarded, chopped into bite-size pieces",
         "measurements": [
           {
             "amount": "1",
@@ -302,7 +302,7 @@
             "unit": "g"
           }
         ],
-        "note": "see notes",
+        "note": "see notes, and washed very well in multiple changes of water",
         "category": "Produce"
       }
     },

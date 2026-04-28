@@ -84,14 +84,14 @@
     {
       "raw": "1 head Boston or Bibb lettuce, leaves roughly chopped or torn",
       "expected": {
-        "item": "Boston or Bibb lettuce, leaves roughly chopped or torn",
+        "item": "Boston or Bibb lettuce",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "leaves roughly chopped or torn",
         "category": "Produce"
       }
     },

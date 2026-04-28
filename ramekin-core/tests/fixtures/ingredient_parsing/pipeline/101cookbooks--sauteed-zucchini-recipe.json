@@ -60,14 +60,14 @@
     {
       "raw": "2  medium zucchini, sliced into 1/4-inch thick coins",
       "expected": {
-        "item": "zucchini, sliced into 1/4-inch thick coins",
+        "item": "zucchini",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "sliced into 1/4-inch thick coins",
         "category": "Produce"
       }
     },

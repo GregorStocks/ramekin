@@ -65,14 +65,18 @@
     {
       "raw": "1/4 cup chunky peanut butter, preferably natural",
       "expected": {
-        "item": "chunky peanut butter, preferably natural",
+        "item": "chunky peanut butter",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "64",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably natural",
         "category": "Condiments & Sauces"
       }
     },
@@ -188,7 +192,7 @@
     {
       "raw": "1 1/2 ounces prosciutto, sliced 1/8 inch thick, cut into matchsticks",
       "expected": {
-        "item": "prosciutto, sliced 1/8 inch thick, cut into matchsticks",
+        "item": "prosciutto, sliced 1/8 inch thick",
         "measurements": [
           {
             "amount": "1.5",
@@ -199,7 +203,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into matchsticks",
         "category": "Meat & Seafood"
       }
     },
@@ -220,14 +224,14 @@
     {
       "raw": "1 Kirby cucumber—peeled, seeded and cut into matchsticks",
       "expected": {
-        "item": "Kirby cucumber-peeled, seeded and cut into matchsticks",
+        "item": "Kirby cucumber-peeled",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded and cut into matchsticks",
         "category": "Produce"
       }
     }

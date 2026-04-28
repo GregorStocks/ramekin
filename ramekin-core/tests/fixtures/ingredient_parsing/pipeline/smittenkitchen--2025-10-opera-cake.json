@@ -181,7 +181,7 @@
     {
       "raw": "1 cup (8 ounces or 225 grams) unsalted butter, cut into cubes and softened",
       "expected": {
-        "item": "unsalted butter, cut into cubes and softened",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
@@ -196,7 +196,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into cubes and softened",
         "category": "Dairy & Eggs"
       }
     },
@@ -226,13 +226,9 @@
           {
             "amount": "225",
             "unit": "g"
-          },
-          {
-            "amount": "1.33",
-            "unit": "cup"
           }
         ],
-        "note": "finely chopped",
+        "note": "225 grams or 1 1/3 cups chocolate chips, finely chopped",
         "category": "Other"
       }
     },

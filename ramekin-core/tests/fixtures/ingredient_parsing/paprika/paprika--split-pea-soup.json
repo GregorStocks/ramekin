@@ -28,14 +28,14 @@
     {
       "raw": "3 leeks, halved and sliced into ribbons",
       "expected": {
-        "item": "leeks, halved and sliced into ribbons",
+        "item": "leeks",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "halved and sliced into ribbons",
         "section": "For the Soup",
         "category": "Produce"
       }
@@ -83,14 +83,14 @@
     {
       "raw": "4 cloves garlic, cloves peeled and sliced thin",
       "expected": {
-        "item": "garlic, cloves peeled and sliced thin",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "4",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "cloves peeled and sliced thin",
         "section": "For the Soup",
         "category": "Produce"
       }
@@ -98,7 +98,7 @@
     {
       "raw": "1 pound dried green split peas, rinsed and picked over",
       "expected": {
-        "item": "dried green split peas, rinsed and picked over",
+        "item": "dried green split peas",
         "measurements": [
           {
             "amount": "1",
@@ -109,7 +109,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "rinsed and picked over",
         "section": "For the Soup",
         "category": "Produce"
       }

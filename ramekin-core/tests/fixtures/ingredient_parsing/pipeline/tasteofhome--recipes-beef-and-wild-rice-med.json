@@ -59,7 +59,7 @@
     {
       "raw": "1 pound beef top sirloin steak, cut into 3/4-inch cubes",
       "expected": {
-        "item": "beef top sirloin steak, cut into 3/4-inch cubes",
+        "item": "beef top sirloin steak",
         "measurements": [
           {
             "amount": "1",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 3/4-inch cubes",
         "category": "Meat & Seafood"
       }
     },

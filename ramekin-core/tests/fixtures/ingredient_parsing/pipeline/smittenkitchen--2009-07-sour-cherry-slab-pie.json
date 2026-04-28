@@ -74,14 +74,14 @@
     {
       "raw": "2 tablespoons heavy cream or one egg, beaten with a tablespoon of water",
       "expected": {
-        "item": "heavy cream or one egg, beaten with a tablespoon of water",
+        "item": "heavy cream or one egg",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "beaten with a tablespoon of water",
         "category": "Dairy & Eggs"
       }
     },

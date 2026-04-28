@@ -14,7 +14,7 @@
     {
       "raw": "8 cups (about 1.4kg) peeled chopped peaches, cut into 1-inch chunks",
       "expected": {
-        "item": "peeled chopped peaches, cut into 1-inch chunks",
+        "item": "peeled chopped peaches",
         "measurements": [
           {
             "amount": "8",
@@ -25,7 +25,7 @@
             "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "about 1.4kg, cut into 1-inch chunks",
         "category": "Produce"
       }
     },
@@ -122,7 +122,7 @@
     {
       "raw": "2 Tablespoons (28g) cold unsalted butter, cut into small cubes",
       "expected": {
-        "item": "cold unsalted butter, cut into small cubes",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "2",
@@ -133,7 +133,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small cubes",
         "category": "Dairy & Eggs"
       }
     },

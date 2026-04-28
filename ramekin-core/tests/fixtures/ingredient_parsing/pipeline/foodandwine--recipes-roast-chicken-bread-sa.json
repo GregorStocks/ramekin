@@ -33,14 +33,14 @@
     {
       "raw": "4 small garlic cloves, smashed and roughly chopped",
       "expected": {
-        "item": "garlic cloves, smashed and roughly chopped",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "4",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "smashed and roughly chopped",
         "category": "Produce"
       }
     },
@@ -185,7 +185,7 @@
     {
       "raw": "1/2 pound day-old, open-crumb, chewy, rustic bread loaf (not sourdough), cut into large (2-inch) chunks (about 2 1/2 cups)",
       "expected": {
-        "item": "day-old, open-crumb, chewy, rustic bread loaf, cut into large chunks",
+        "item": "day-old, open-crumb, chewy, rustic bread loaf",
         "measurements": [
           {
             "amount": "0.5",
@@ -200,14 +200,14 @@
             "unit": "g"
           }
         ],
-        "note": "not sourdough, 2-inch",
+        "note": "not sourdough, 2-inch, about 2 1/2 cups, cut into large chunks",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "4 medium scallions (about 2 ounces), trimmed and thinly sliced crosswise (about 3/4 cup)",
       "expected": {
-        "item": "scallions, trimmed and thinly sliced crosswise",
+        "item": "scallions",
         "measurements": [
           {
             "amount": "4",
@@ -226,7 +226,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 ounces, about 3/4 cup, trimmed and thinly sliced crosswise",
         "category": "Produce"
       }
     },
@@ -244,7 +244,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "thinly sliced",
+        "note": "about 1 tablespoon, thinly sliced",
         "category": "Produce"
       }
     },
@@ -284,7 +284,7 @@
             "unit": "g"
           }
         ],
-        "note": "such as chicory, escarole, or radicchio",
+        "note": "such as chicory, escarole, or radicchio, about 4 ounces",
         "category": "Other"
       }
     }

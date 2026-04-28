@@ -284,7 +284,7 @@
     {
       "raw": "1/4 pound (4 ounces) milk or semi-sweet chocolate, chopped small or in chips",
       "expected": {
-        "item": "milk or semi-sweet chocolate, chopped small or in chips",
+        "item": "milk or semi-sweet chocolate",
         "measurements": [
           {
             "amount": "0.25",
@@ -299,8 +299,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Snacks"
+        "note": "chopped small or in chips",
+        "category": "Dairy & Eggs"
       }
     },
     {

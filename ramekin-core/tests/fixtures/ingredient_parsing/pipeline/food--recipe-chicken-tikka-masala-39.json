@@ -5,7 +5,7 @@
     {
       "raw": "1   lb    boneless chicken breast, cut into 1-inch cubes",
       "expected": {
-        "item": "boneless chicken breast, cut into 1-inch cubes",
+        "item": "boneless chicken breast",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -318,14 +318,14 @@
     {
       "raw": "4       green cardamom pods, slightly crushed",
       "expected": {
-        "item": "green cardamom pods, slightly crushed",
+        "item": "green cardamom pods",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "slightly crushed",
         "category": "Spices & Seasonings"
       }
     },
@@ -346,7 +346,7 @@
     {
       "raw": "1 3/4  lbs    tomatoes, cut in half",
       "expected": {
-        "item": "tomatoes, cut in half",
+        "item": "tomatoes",
         "measurements": [
           {
             "amount": "1.75",
@@ -357,7 +357,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut in half",
         "category": "Produce"
       }
     },
@@ -396,7 +396,7 @@
     {
       "raw": "1   ounce    blanched almond, toasted almonds",
       "expected": {
-        "item": "blanched almond, toasted almonds",
+        "item": "blanched almond",
         "measurements": [
           {
             "amount": "1",
@@ -407,7 +407,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "toasted almonds",
         "category": "Nuts & Dried Fruit"
       }
     },

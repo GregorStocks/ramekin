@@ -227,28 +227,28 @@
     {
       "raw": "1/2 medium red bell pepper, seeded and cut into large pieces",
       "expected": {
-        "item": "red bell pepper, seeded and cut into large pieces",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "seeded and cut into large pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1 medium carrot, peeled and broken into a few large pieces",
       "expected": {
-        "item": "carrot, peeled and broken into a few large pieces",
+        "item": "carrot",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "peeled and broken into a few large pieces",
         "category": "Produce"
       }
     },
@@ -269,7 +269,7 @@
     {
       "raw": "18 ounces chuck roast, trimmed of excess gristle and silver skin, cut into 1 1/2-inch cubes and chilled",
       "expected": {
-        "item": "chuck roast, trimmed of excess gristle and silver skin, cut into 1 1/2-inch cubes and chilled",
+        "item": "chuck roast, trimmed of excess gristle and silver skin",
         "measurements": [
           {
             "amount": "18",
@@ -280,14 +280,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1 1/2-inch cubes and chilled",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "18 ounces sirloin roast, cut into 1 1/2-inch cubes and chilled",
       "expected": {
-        "item": "sirloin roast, cut into 1 1/2-inch cubes and chilled",
+        "item": "sirloin roast",
         "measurements": [
           {
             "amount": "18",
@@ -298,7 +298,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1 1/2-inch cubes and chilled",
         "category": "Meat & Seafood"
       }
     },

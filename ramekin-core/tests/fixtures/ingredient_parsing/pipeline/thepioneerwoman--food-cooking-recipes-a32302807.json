@@ -5,7 +5,7 @@
     {
       "raw": "1 qt. strawberries, hulled and quartered (about 4 cups)&nbsp;",
       "expected": {
-        "item": "strawberries, hulled and quartered",
+        "item": "strawberries",
         "measurements": [
           {
             "amount": "1",
@@ -14,9 +14,13 @@
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "694",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 4 cups, hulled and quartered",
         "category": "Produce"
       }
     },

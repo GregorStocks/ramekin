@@ -16,7 +16,7 @@
             "unit": "lb each"
           }
         ],
-        "note": null,
+        "note": "about 1 pound each",
         "category": "Produce"
       }
     },
@@ -69,14 +69,14 @@
     {
       "raw": "2 garlic cloves, peeled and minced or pressed",
       "expected": {
-        "item": "garlic cloves, peeled and minced or pressed",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and minced or pressed",
         "category": "Produce"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "2 cups (280 grams) unbleached all-purpose flour, preferably a low-protein brand such as Gold Medal or Pillsbury",
       "expected": {
-        "item": "unbleached all-purpose flour, preferably a low-protein brand such as Gold Medal or Pillsbury",
+        "item": "unbleached all-purpose flour",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably a low-protein brand such as Gold Medal or Pillsbury",
         "category": "Baking"
       }
     },
@@ -77,7 +77,7 @@
     {
       "raw": "5 tablespoons (70 grams) chilled, unsalted butter, cut into 1/4-inch cubes",
       "expected": {
-        "item": "chilled, unsalted butter, cut into 1/4-inch cubes",
+        "item": "chilled, unsalted butter",
         "measurements": [
           {
             "amount": "5",
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch cubes",
         "category": "Dairy & Eggs"
       }
     },

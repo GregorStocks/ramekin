@@ -69,14 +69,14 @@
     {
       "raw": "1 large Vidalia onion, trimmed, peeled, sliced crosswise as thinly as possible and separated into rings",
       "expected": {
-        "item": "Vidalia onion, trimmed, peeled, sliced crosswise as thinly as possible and separated into rings",
+        "item": "Vidalia onion, trimmed, peeled",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "sliced crosswise as thinly as possible and separated into rings",
         "category": "Produce"
       }
     },

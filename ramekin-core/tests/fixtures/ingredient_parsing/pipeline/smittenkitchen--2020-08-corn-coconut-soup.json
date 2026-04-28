@@ -41,14 +41,14 @@
     {
       "raw": "4 large ears or 5 medium-large fresh corn, kernels cut from cobs, cobs reserved",
       "expected": {
-        "item": "ears or 5 medium-large fresh corn, kernels cut from cobs, cobs reserved",
+        "item": "ears or 5 medium-large fresh corn, kernels cut from cobs",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cobs reserved",
         "category": "Other"
       }
     },
@@ -130,7 +130,7 @@
             "unit": "ml"
           }
         ],
-        "note": null,
+        "note": "13.5-ounce or 400-ml",
         "category": "Canned Goods"
       }
     },

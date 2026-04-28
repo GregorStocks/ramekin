@@ -5,7 +5,7 @@
     {
       "raw": "3 to 3 1/2 pounds pork shoulder, cut into very large chunks (3 to 4 inches)",
       "expected": {
-        "item": "pork shoulder, cut into very large chunks",
+        "item": "pork shoulder",
         "measurements": [
           {
             "amount": "3 to 3.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "3 to 4 inches",
+        "note": "3 to 4 inches, cut into very large chunks",
         "category": "Meat & Seafood"
       }
     },

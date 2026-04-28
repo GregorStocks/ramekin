@@ -5,14 +5,14 @@
     {
       "raw": "One 3-pound  eye of round roast (see note), trimmed of fat and silver skin",
       "expected": {
-        "item": "3-pound  eye of round roast, trimmed of fat and silver skin",
+        "item": "3-pound  eye of round roast",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "see note",
+        "note": "see note, trimmed of fat and silver skin",
         "category": "Meat & Seafood"
       }
     },

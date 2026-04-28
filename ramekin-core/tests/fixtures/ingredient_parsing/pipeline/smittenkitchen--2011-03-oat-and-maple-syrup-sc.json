@@ -105,7 +105,7 @@
     {
       "raw": "Scant 3/4 cup (160 grams) unsalted butter, cut into pieces",
       "expected": {
-        "item": "unsalted butter, cut into pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.75",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },

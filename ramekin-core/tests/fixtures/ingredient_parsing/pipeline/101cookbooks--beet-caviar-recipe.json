@@ -19,14 +19,14 @@
     {
       "raw": "5  plump dates, pitted and chopped",
       "expected": {
-        "item": "plump dates, pitted and chopped",
+        "item": "plump dates",
         "measurements": [
           {
             "amount": "5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "pitted and chopped",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -47,14 +47,14 @@
     {
       "raw": "4  garlic cloves, peeled and smashed",
       "expected": {
-        "item": "garlic cloves, peeled and smashed",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "4",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and smashed",
         "category": "Produce"
       }
     },

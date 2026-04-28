@@ -55,14 +55,14 @@
     {
       "raw": "1 jalapeño, seeded and chopped",
       "expected": {
-        "item": "jalapeño, seeded and chopped",
+        "item": "jalapeño",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded and chopped",
         "category": "Produce"
       }
     },

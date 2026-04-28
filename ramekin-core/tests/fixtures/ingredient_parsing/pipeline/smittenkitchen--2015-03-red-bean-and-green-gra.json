@@ -79,14 +79,14 @@
     {
       "raw": "2 fresh poblano chile peppers, seeded and roughly chopped",
       "expected": {
-        "item": "fresh poblano chile peppers, seeded and roughly chopped",
+        "item": "fresh poblano chile peppers",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded and roughly chopped",
         "category": "Produce"
       }
     },

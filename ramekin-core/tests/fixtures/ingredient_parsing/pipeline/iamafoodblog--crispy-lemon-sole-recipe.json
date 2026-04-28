@@ -115,14 +115,14 @@
     {
       "raw": "1/4 cucumber, peeled, de-seeded and sliced",
       "expected": {
-        "item": "cucumber, peeled, de-seeded and sliced",
+        "item": "cucumber, peeled",
         "measurements": [
           {
             "amount": "0.25",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "de-seeded and sliced",
         "category": "Produce"
       }
     }

@@ -5,14 +5,14 @@
     {
       "raw": "4 medium baking potatoes, cut into 1/2 inch slices",
       "expected": {
-        "item": "baking potatoes, cut into 1/2 inch slices",
+        "item": "baking potatoes",
         "measurements": [
           {
             "amount": "4",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2 inch slices",
         "category": "Produce"
       }
     },

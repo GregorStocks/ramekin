@@ -381,7 +381,7 @@
     {
       "raw": "2 1/2 ounces (70 grams) bittersweet or semisweet chocolate, finely chopped, or about 1/2 cup store-bought mini chocolate chips",
       "expected": {
-        "item": "bittersweet or semisweet chocolate, finely chopped, or about 1/2 cup store-bought mini chocolate chips",
+        "item": "bittersweet or semisweet chocolate, finely chopped",
         "measurements": [
           {
             "amount": "2.5",
@@ -392,8 +392,8 @@
             "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Baking"
+        "note": "or about 1/2 cup store-bought mini chocolate chips",
+        "category": "Other"
       }
     }
   ]

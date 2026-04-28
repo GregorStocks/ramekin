@@ -68,7 +68,7 @@
     {
       "raw": "1/2 cup (1 stick) chilled unsalted butter, cut into 1/2-inch pieces",
       "expected": {
-        "item": "chilled unsalted butter, cut into 1/2-inch pieces",
+        "item": "chilled unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -79,7 +79,7 @@
             "unit": "stick"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -146,7 +146,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 ounces",
         "category": "Nuts & Dried Fruit"
       }
     },
@@ -217,7 +217,7 @@
     {
       "raw": "12 ounces ripe red-skinned plums, pitted, cut into 3/4-inch-thick wedges",
       "expected": {
-        "item": "ripe red-skinned plums, pitted, cut into 3/4-inch-thick wedges",
+        "item": "ripe red-skinned plums, pitted",
         "measurements": [
           {
             "amount": "12",
@@ -228,7 +228,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 3/4-inch-thick wedges",
         "category": "Produce"
       }
     },

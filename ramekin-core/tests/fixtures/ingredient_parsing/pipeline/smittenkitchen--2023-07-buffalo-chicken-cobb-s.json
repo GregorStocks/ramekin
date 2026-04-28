@@ -44,7 +44,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "about 1 1/2 tablespoons",
         "category": "Beverages"
       }
     },
@@ -202,7 +202,7 @@
     {
       "raw": "4 to 5 ounces romaine or baby gem lettuce, sliced or torn",
       "expected": {
-        "item": "romaine or baby gem lettuce, sliced or torn",
+        "item": "romaine or baby gem lettuce",
         "measurements": [
           {
             "amount": "4 to 5",
@@ -213,7 +213,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sliced or torn",
         "category": "Produce"
       }
     },

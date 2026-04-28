@@ -55,7 +55,7 @@
     {
       "raw": "1/2 cup (4 ounces or 115 grams), cold unsalted butter, cut into 1-inch pieces",
       "expected": {
-        "item": "cold unsalted butter, cut into 1-inch pieces",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -70,7 +70,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Dairy & Eggs"
       }
     },
@@ -109,7 +109,7 @@
     {
       "raw": "3 large very ripe tomatoes, heirloom or other, sliced crosswise 1/4-inch thick (about 1.5 pounds)",
       "expected": {
-        "item": "very ripe tomatoes, heirloom or other, sliced crosswise 1/4-inch thick",
+        "item": "very ripe tomatoes, heirloom or other",
         "measurements": [
           {
             "amount": "3",
@@ -124,7 +124,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1.5 pounds, sliced crosswise 1/4-inch thick",
         "category": "Produce"
       }
     },

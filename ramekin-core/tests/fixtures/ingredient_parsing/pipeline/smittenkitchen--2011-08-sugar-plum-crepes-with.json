@@ -14,14 +14,18 @@
     {
       "raw": "2 tablespoons butter, melted and cooled slightly (I browned this first, which probably won’t surprise you)",
       "expected": {
-        "item": "butter, melted and cooled slightly",
+        "item": "butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": "I browned this first, which probably won’t surprise you",
+        "note": "I browned this first, which probably won’t surprise you, melted and cooled slightly",
         "category": "Dairy & Eggs"
       }
     },

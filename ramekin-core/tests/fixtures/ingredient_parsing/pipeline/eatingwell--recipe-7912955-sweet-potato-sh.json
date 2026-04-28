@@ -127,14 +127,14 @@
     {
       "raw": "2 medium carrots, halved lengthwise and thinly sliced into half-moons",
       "expected": {
-        "item": "carrots, halved lengthwise and thinly sliced into half-moons",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "halved lengthwise and thinly sliced into half-moons",
         "category": "Produce"
       }
     },

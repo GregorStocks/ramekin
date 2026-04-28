@@ -79,14 +79,14 @@
     {
       "raw": "1 (1/2-lb) piece baked ham (1/2 to 3/4 inch thick), cut into 1/2-inch cubes",
       "expected": {
-        "item": "baked ham, cut into 1/2-inch cubes",
+        "item": "baked ham",
         "measurements": [
           {
             "amount": "1",
             "unit": "piece"
           }
         ],
-        "note": "1/2-lb, 1/2 to 3/4 inch thick",
+        "note": "1/2-lb, 1/2 to 3/4 inch thick, cut into 1/2-inch cubes",
         "category": "Meat & Seafood"
       }
     },

@@ -59,7 +59,7 @@
     {
       "raw": "1 cup (2 sticks or 230 grams) unsalted butter, softened slightly, cut into chunks",
       "expected": {
-        "item": "unsalted butter, softened slightly, cut into chunks",
+        "item": "unsalted butter, softened slightly",
         "measurements": [
           {
             "amount": "1",
@@ -74,7 +74,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Dairy & Eggs"
       }
     },

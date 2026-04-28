@@ -5,14 +5,14 @@
     {
       "raw": "3 large shallots, peeled and sliced thinly lengthwise",
       "expected": {
-        "item": "shallots, peeled and sliced thinly lengthwise",
+        "item": "shallots",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "peeled and sliced thinly lengthwise",
         "category": "Produce"
       }
     },
@@ -37,14 +37,14 @@
     {
       "raw": "8 large eggs, hard-boiled and peeled",
       "expected": {
-        "item": "eggs, hard-boiled and peeled",
+        "item": "eggs",
         "measurements": [
           {
             "amount": "8",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "hard-boiled and peeled",
         "category": "Dairy & Eggs"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "10 roma (plum) tomatoes - peeled, seeded and crushed",
       "expected": {
-        "item": "roma tomatoes - peeled, seeded and crushed",
+        "item": "roma tomatoes - peeled",
         "measurements": [
           {
             "amount": "10",
             "unit": null
           }
         ],
-        "note": "plum",
+        "note": "plum, seeded and crushed",
         "category": "Produce"
       }
     },

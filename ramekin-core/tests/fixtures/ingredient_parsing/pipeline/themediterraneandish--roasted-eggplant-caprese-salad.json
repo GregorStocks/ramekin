@@ -5,14 +5,14 @@
     {
       "raw": "1 eggplant, sliced into 1/2-inch rounds",
       "expected": {
-        "item": "eggplant, sliced into 1/2-inch rounds",
+        "item": "eggplant",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced into 1/2-inch rounds",
         "category": "Produce"
       }
     },
@@ -28,14 +28,14 @@
     {
       "raw": "3 large or steak tomatoes, sliced into 1/2-inch rounds",
       "expected": {
-        "item": "or steak tomatoes, sliced into 1/2-inch rounds",
+        "item": "or steak tomatoes",
         "measurements": [
           {
             "amount": "3",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "sliced into 1/2-inch rounds",
         "category": "Produce"
       }
     },

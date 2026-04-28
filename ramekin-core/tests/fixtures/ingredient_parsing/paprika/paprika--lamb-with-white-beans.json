@@ -24,14 +24,14 @@
     {
       "raw": "1 leg of lamb, shank end chopped off by the butcher",
       "expected": {
-        "item": "leg of lamb, shank end chopped off by the butcher",
+        "item": "leg of lamb",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "shank end chopped off by the butcher",
         "section": "Lamb",
         "category": "Meat & Seafood"
       }

@@ -185,7 +185,7 @@
     {
       "raw": "12 tablespoons (6 ounces or 170 grams) unsalted butter, cut into cubes (see temp note up top)",
       "expected": {
-        "item": "unsalted butter, cut into cubes",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "12",
@@ -200,7 +200,7 @@
             "unit": "g"
           }
         ],
-        "note": "see temp note up top",
+        "note": "see temp note up top, cut into cubes",
         "category": "Dairy & Eggs"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "1 1/2 pounds bottom round roast or chuck roast, cut into 2-inch chunks",
       "expected": {
-        "item": "bottom round roast or chuck roast, cut into 2-inch chunks",
+        "item": "bottom round roast or chuck roast",
         "measurements": [
           {
             "amount": "1.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 2-inch chunks",
         "category": "Meat & Seafood"
       }
     },

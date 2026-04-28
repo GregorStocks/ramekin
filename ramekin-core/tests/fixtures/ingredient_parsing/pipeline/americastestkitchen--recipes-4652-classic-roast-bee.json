@@ -5,7 +5,7 @@
     {
       "raw": "2 pound beef tenderloin , center-cut Chateaubriand, trimmed of fat and silver skin",
       "expected": {
-        "item": "beef tenderloin, center-cut Chateaubriand, trimmed of fat and silver skin",
+        "item": "beef tenderloin, center-cut Chateaubriand",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "trimmed of fat and silver skin",
         "category": "Meat & Seafood"
       }
     },

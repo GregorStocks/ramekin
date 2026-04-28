@@ -9,7 +9,7 @@
     {
       "raw": "6 ounces semisweet bittersweet chocolate, chopped or 1 cup semi- or bittersweet chocolate chips",
       "expected": {
-        "item": "semisweet bittersweet chocolate, chopped",
+        "item": "semisweet bittersweet chocolate",
         "measurements": [
           {
             "amount": "6",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "or 1 cup semi- or bittersweet chocolate chips",
+        "note": "chopped or 1 cup semi- or bittersweet chocolate chips",
         "section": "Cake Layer",
         "category": "Other"
       }

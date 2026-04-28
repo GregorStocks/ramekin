@@ -10,13 +10,9 @@
           {
             "amount": "4 cups plus 2 tablespoons",
             "unit": null
-          },
-          {
-            "amount": "480 to 530",
-            "unit": "g"
           }
         ],
-        "note": "not self-rising",
+        "note": "480 to 530 grams due to variance between brands, not self-rising",
         "category": "Baking"
       }
     },
@@ -157,7 +153,7 @@
     {
       "raw": "2 cups buttermilk (475 ml), well-shaken",
       "expected": {
-        "item": "buttermilk, well-shaken",
+        "item": "buttermilk",
         "measurements": [
           {
             "amount": "2",
@@ -166,9 +162,13 @@
           {
             "amount": "475",
             "unit": "ml"
+          },
+          {
+            "amount": "490",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "well-shaken",
         "category": "Dairy & Eggs"
       }
     },

@@ -170,14 +170,14 @@
     {
       "raw": "4 medium carrots, peeled and cut into half-moon slices",
       "expected": {
-        "item": "carrots, peeled and cut into half-moon slices",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "4",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "peeled and cut into half-moon slices",
         "category": "Produce"
       }
     },

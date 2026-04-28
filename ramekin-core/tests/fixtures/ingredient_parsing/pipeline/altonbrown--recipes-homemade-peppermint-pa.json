@@ -69,14 +69,18 @@
     {
       "raw": "1/2 teaspoon water, if needed",
       "expected": {
-        "item": "water, if needed",
+        "item": "water",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
+          },
+          {
+            "amount": "2.5",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "if needed",
         "category": "Other"
       }
     },
@@ -97,7 +101,7 @@
     {
       "raw": "1 1/4 pounds high-quality bittersweet (around 70% cocoa) chocolate, in couverture discs or finely chopped",
       "expected": {
-        "item": "high-quality bittersweet chocolate, in couverture discs or finely chopped",
+        "item": "high-quality bittersweet chocolate",
         "measurements": [
           {
             "amount": "1.25",
@@ -108,7 +112,7 @@
             "unit": "g"
           }
         ],
-        "note": "around 70% cocoa",
+        "note": "around 70% cocoa, in couverture discs or finely chopped",
         "category": "Other"
       }
     }

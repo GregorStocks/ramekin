@@ -87,14 +87,14 @@
     {
       "raw": "1 1/2 cups vanilla ice cream, frozen yogurt or non-dairy vanilla ice cream of your choice, slightly softened (think: soft-serve consistency)",
       "expected": {
-        "item": "vanilla ice cream, frozen yogurt or non-dairy vanilla ice cream of your choice, slightly softened",
+        "item": "vanilla ice cream, frozen yogurt or non-dairy vanilla ice cream of your choice",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "cup"
           }
         ],
-        "note": "think: soft-serve consistency",
+        "note": "think: soft-serve consistency, slightly softened",
         "category": "Frozen"
       }
     }

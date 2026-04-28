@@ -109,14 +109,18 @@
     {
       "raw": "0.33333334326744 cup milk, or more as needed",
       "expected": {
-        "item": "milk, or more as needed",
+        "item": "milk",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
+          },
+          {
+            "amount": "82",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "or more as needed",
         "category": "Dairy & Eggs"
       }
     },

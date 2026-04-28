@@ -65,14 +65,14 @@
     {
       "raw": "1 head cauliflower, cut into florets",
       "expected": {
-        "item": "cauliflower, cut into florets",
+        "item": "cauliflower",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "cut into florets",
         "category": "Produce"
       }
     },
@@ -121,14 +121,14 @@
     {
       "raw": "2 to 3 garlic cloves, smashed and peeled",
       "expected": {
-        "item": "garlic cloves, smashed and peeled",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "smashed and peeled",
         "category": "Produce"
       }
     },
@@ -208,9 +208,9 @@
     {
       "raw": "naan, pita, or other bread for serving",
       "expected": {
-        "item": "naan, pita, or other bread for serving",
+        "item": "naan, pita",
         "measurements": [],
-        "note": null,
+        "note": "or other bread for serving",
         "category": "Bakery & Bread"
       }
     }

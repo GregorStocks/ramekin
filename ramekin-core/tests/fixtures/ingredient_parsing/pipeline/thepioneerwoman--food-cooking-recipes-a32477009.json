@@ -5,7 +5,7 @@
     {
       "raw": "1 large bunch broccoli (about 1 1/2 pounds), cut into florets, stalks peeled and thinly sliced",
       "expected": {
-        "item": "bunch broccoli, cut into florets, stalks peeled and thinly sliced",
+        "item": "bunch broccoli, cut into florets",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 1/2 pounds, stalks peeled and thinly sliced",
         "category": "Produce"
       }
     },

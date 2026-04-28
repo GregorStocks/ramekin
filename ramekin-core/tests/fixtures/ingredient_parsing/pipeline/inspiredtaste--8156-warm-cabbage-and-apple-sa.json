@@ -46,13 +46,9 @@
           {
             "amount": "4",
             "unit": "cup"
-          },
-          {
-            "amount": "1",
-            "unit": "small"
           }
         ],
-        "note": null,
+        "note": "1 small head",
         "category": "Produce"
       }
     },
@@ -73,14 +69,14 @@
     {
       "raw": "1 apple, cored and sliced into 1/4 inch matchsticks",
       "expected": {
-        "item": "apple, cored and sliced into 1/4 inch matchsticks",
+        "item": "apple",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cored and sliced into 1/4 inch matchsticks",
         "category": "Produce"
       }
     },

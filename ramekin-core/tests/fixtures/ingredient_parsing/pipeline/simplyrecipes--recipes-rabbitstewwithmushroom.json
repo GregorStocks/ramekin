@@ -179,14 +179,14 @@
     {
       "raw": "1 large parsnip, peeled and chopped into large pieces",
       "expected": {
-        "item": "parsnip, peeled and chopped into large pieces",
+        "item": "parsnip",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "peeled and chopped into large pieces",
         "category": "Produce"
       }
     },

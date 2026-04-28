@@ -120,14 +120,14 @@
     {
       "raw": "1 to 2 garlic cloves, minced or smashed to a paste (I use less)",
       "expected": {
-        "item": "garlic cloves, minced or smashed to a paste",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": null
           }
         ],
-        "note": "I use less",
+        "note": "I use less, minced or smashed to a paste",
         "category": "Produce"
       }
     },

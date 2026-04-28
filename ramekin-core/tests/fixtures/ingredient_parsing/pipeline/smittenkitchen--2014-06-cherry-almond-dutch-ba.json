@@ -137,14 +137,14 @@
     {
       "raw": "1/2 cup sliced almonds, well-toasted",
       "expected": {
-        "item": "sliced almonds, well-toasted",
+        "item": "sliced almonds",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "well-toasted",
         "category": "Nuts & Dried Fruit"
       }
     },

@@ -23,7 +23,7 @@
     {
       "raw": "8 ounces (225 grams) spaghetti, cooked al dente",
       "expected": {
-        "item": "spaghetti, cooked al dente",
+        "item": "spaghetti",
         "measurements": [
           {
             "amount": "8",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cooked al dente",
         "category": "Pasta & Rice"
       }
     },
@@ -145,14 +145,14 @@
     {
       "raw": "Handful fresh basil leaves, cut into thin ribbons",
       "expected": {
-        "item": "fresh basil leaves, cut into thin ribbons",
+        "item": "fresh basil leaves",
         "measurements": [
           {
             "amount": null,
             "unit": "handful"
           }
         ],
-        "note": null,
+        "note": "cut into thin ribbons",
         "category": "Produce"
       }
     }

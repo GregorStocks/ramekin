@@ -113,14 +113,14 @@
     {
       "raw": "12 smallish purple Italian purple plums, halved and pitted",
       "expected": {
-        "item": "smallish purple Italian purple plums, halved and pitted",
+        "item": "smallish purple Italian purple plums",
         "measurements": [
           {
             "amount": "12",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "halved and pitted",
         "category": "Produce"
       }
     },

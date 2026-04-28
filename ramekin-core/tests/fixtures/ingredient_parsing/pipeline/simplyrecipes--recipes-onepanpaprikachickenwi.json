@@ -100,14 +100,14 @@
     {
       "raw": "1 red onion, cut into 8 wedges",
       "expected": {
-        "item": "red onion, cut into 8 wedges",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 8 wedges",
         "category": "Produce"
       }
     },

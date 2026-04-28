@@ -157,7 +157,7 @@
     {
       "raw": "2 pounds chicken breasts ((approx. 3-4 chicken breasts), cut into 1 ½-inch cubes)",
       "expected": {
-        "item": "chicken breasts, cut into 1 1/2-inch cubes",
+        "item": "chicken breasts",
         "measurements": [
           {
             "amount": "2",
@@ -168,7 +168,7 @@
             "unit": "g"
           }
         ],
-        "note": "approx. 3-4 chicken breasts",
+        "note": "approx. 3-4 chicken breasts, cut into 1 1/2-inch cubes",
         "category": "Meat & Seafood"
       }
     }

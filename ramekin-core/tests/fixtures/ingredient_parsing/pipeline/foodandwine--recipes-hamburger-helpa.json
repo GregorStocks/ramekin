@@ -251,14 +251,14 @@
     {
       "raw": "1 scallion, green part sliced",
       "expected": {
-        "item": "scallion, green part sliced",
+        "item": "scallion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "green part sliced",
         "category": "Produce"
       }
     }

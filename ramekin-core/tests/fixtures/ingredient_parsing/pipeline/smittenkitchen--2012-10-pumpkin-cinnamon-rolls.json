@@ -5,7 +5,7 @@
     {
       "raw": "7 tablespoons (100 grams) unsalted butter, to be divided",
       "expected": {
-        "item": "unsalted butter, to be divided",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "7",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "to be divided",
         "category": "Dairy & Eggs"
       }
     },
@@ -46,13 +46,9 @@
           {
             "amount": "2.25",
             "unit": "tsp"
-          },
-          {
-            "amount": "7",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from 1 .25-ounce or 7 gram envelope yeast",
         "category": "Baking"
       }
     },

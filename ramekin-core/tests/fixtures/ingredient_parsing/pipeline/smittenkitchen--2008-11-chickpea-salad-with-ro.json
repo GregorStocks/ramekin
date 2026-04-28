@@ -5,28 +5,28 @@
     {
       "raw": "2 large red peppers, roasted and skinned (great directions over here, if you’re new to this)",
       "expected": {
-        "item": "red peppers, roasted and skinned",
+        "item": "red peppers",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": "great directions over here, if you’re new to this",
+        "note": "great directions over here, if you’re new to this, roasted and skinned",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "3 cups of cooked chickpeas, rinsed if canned (about 2 15-ounce cans)",
       "expected": {
-        "item": "cooked chickpeas, rinsed if canned",
+        "item": "cooked chickpeas",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": "about 2 15-ounce cans",
+        "note": "about 2 15-ounce cans, rinsed if canned",
         "category": "Canned Goods"
       }
     },

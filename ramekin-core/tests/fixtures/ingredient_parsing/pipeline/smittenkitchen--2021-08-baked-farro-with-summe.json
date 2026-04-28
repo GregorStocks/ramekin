@@ -39,14 +39,14 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 2 cups",
         "category": "Other"
       }
     },
     {
       "raw": "1 1/2 pounds (680 grams) zucchini or other summer squash (about 4 medium), quartered lengthwise and sliced thin",
       "expected": {
-        "item": "zucchini or other summer squash, quartered lengthwise and sliced thin",
+        "item": "zucchini or other summer squash",
         "measurements": [
           {
             "amount": "1.5",
@@ -61,7 +61,7 @@
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "about 4 medium, quartered lengthwise and sliced thin",
         "category": "Produce"
       }
     },
@@ -115,7 +115,7 @@
             "unit": "g"
           }
         ],
-        "note": "diced",
+        "note": "about 1 pound, about 2 1/3 cups, diced",
         "category": "Produce"
       }
     },

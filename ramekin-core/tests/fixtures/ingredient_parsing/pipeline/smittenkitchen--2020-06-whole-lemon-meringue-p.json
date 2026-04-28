@@ -55,14 +55,18 @@
     {
       "raw": "5 tablespoons unsalted butter, cut into cubes",
       "expected": {
-        "item": "unsalted butter, cut into cubes",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "5",
             "unit": "tbsp"
+          },
+          {
+            "amount": "71",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Dairy & Eggs"
       }
     },
@@ -106,7 +110,7 @@
     {
       "raw": "8 tablespoons (4 ounces or 115 grams) unsalted butter, cut into cubes",
       "expected": {
-        "item": "unsalted butter, cut into cubes",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "8",
@@ -121,7 +125,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Dairy & Eggs"
       }
     },

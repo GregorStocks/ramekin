@@ -64,7 +64,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 3/8 ounce or 10 grams",
         "category": "Baking"
       }
     },
@@ -86,7 +86,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1/8 ounces or 4 grams",
         "category": "Spices & Seasonings"
       }
     },
@@ -151,7 +151,7 @@
     {
       "raw": "3 tablespoons (1 1/2 ounces or 42 grams) butter, melted and cooled a bit",
       "expected": {
-        "item": "butter, melted and cooled a bit",
+        "item": "butter",
         "measurements": [
           {
             "amount": "3",
@@ -166,7 +166,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "melted and cooled a bit",
         "category": "Dairy & Eggs"
       }
     },

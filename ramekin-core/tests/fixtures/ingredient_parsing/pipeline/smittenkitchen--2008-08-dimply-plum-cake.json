@@ -168,14 +168,14 @@
     {
       "raw": "8 purple or red plums, halved and pitted [see Note about size]",
       "expected": {
-        "item": "purple or red plums, halved and pitted [see Note about size]",
+        "item": "purple or red plums",
         "measurements": [
           {
             "amount": "8",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "halved and pitted [see Note about size]",
         "category": "Produce"
       }
     }

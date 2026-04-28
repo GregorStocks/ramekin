@@ -5,14 +5,14 @@
     {
       "raw": "1/2 cup pistachios, shelled and toasted",
       "expected": {
-        "item": "pistachios, shelled and toasted",
+        "item": "pistachios",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "shelled and toasted",
         "category": "Nuts & Dried Fruit"
       }
     },

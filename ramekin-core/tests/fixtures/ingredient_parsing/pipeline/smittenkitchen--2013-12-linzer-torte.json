@@ -104,7 +104,7 @@
     {
       "raw": "2 1/2 sticks (10 ounces or 285 grams) cold, unsalted butter, cut into chunks",
       "expected": {
-        "item": "cold, unsalted butter, cut into chunks",
+        "item": "cold, unsalted butter",
         "measurements": [
           {
             "amount": "2.5",
@@ -119,7 +119,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Dairy & Eggs"
       }
     },
@@ -187,7 +187,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 20 to 25 grams",
         "category": "Bakery & Bread"
       }
     },
@@ -205,7 +205,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 575 grams",
         "category": "Produce"
       }
     },

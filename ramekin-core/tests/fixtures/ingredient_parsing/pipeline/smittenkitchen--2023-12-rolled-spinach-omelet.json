@@ -86,7 +86,7 @@
     {
       "raw": "1 package (10-ounce or 283-gram) frozen chopped spinach, thawed and squeezed of excess liquid",
       "expected": {
-        "item": "frozen chopped spinach, thawed and squeezed of excess liquid",
+        "item": "frozen chopped spinach",
         "measurements": [
           {
             "amount": "1",
@@ -97,7 +97,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "10-ounce or 283-gram, thawed and squeezed of excess liquid",
         "category": "Produce"
       }
     },
@@ -140,9 +140,9 @@
     {
       "raw": "Arugula or another salad green, halved cherry tomatoes, and minced chives to serve (optional)",
       "expected": {
-        "item": "Arugula or another salad green, halved cherry tomatoes, and minced chives to serve",
+        "item": "Arugula or another salad green, halved cherry tomatoes",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, and minced chives to serve",
         "category": "Produce"
       }
     }

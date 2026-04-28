@@ -208,9 +208,9 @@
     {
       "raw": "salt and freshly ground pepper, if needed",
       "expected": {
-        "item": "salt and freshly ground pepper, if needed",
+        "item": "salt and freshly ground pepper",
         "measurements": [],
-        "note": null,
+        "note": "if needed",
         "category": "Spices & Seasonings"
       }
     }

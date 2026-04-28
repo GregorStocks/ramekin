@@ -35,6 +35,12 @@ struct DeferredParentheticalNote {
     follows_or: bool,
 }
 
+#[derive(Debug, Clone, PartialEq)]
+struct ParentheticalMeasurementParse {
+    measurements: Vec<Measurement>,
+    has_non_measurement_content: bool,
+}
+
 impl ParsedIngredient {
     /// Normalize fraction amounts to decimal form across all measurements.
     /// Should be called after metric/volume enrichment to avoid rounding errors.
@@ -792,10 +798,23 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
 
         // Try to parse the parenthetical content as one or more measurements
         // Split by semicolons or commas to handle "8 ounces; 227 g each"
-        let parsed_measurements = parse_parenthetical_measurements(paren_content);
+        let parsed_measurements = parse_parenthetical_measurement_details(paren_content);
 
-        if !parsed_measurements.is_empty() {
-            alt_measurements.extend(parsed_measurements);
+        if !parsed_measurements.measurements.is_empty() {
+            alt_measurements.extend(parsed_measurements.measurements);
+            if parsed_measurements.has_non_measurement_content {
+                let trimmed_content = paren_content
+                    .trim()
+                    .trim_start_matches(',')
+                    .trim()
+                    .to_string();
+                push_deferred_parenthetical_note(
+                    &mut deferred_parenthetical_notes,
+                    &trimmed_content,
+                    follows_comma,
+                    follows_or,
+                );
+            }
             // Remove the parenthetical from remaining, preserving space
             // Also strip trailing comma before the parenthetical
             remaining = join_segments(before_parenthetical, after_parenthetical);
@@ -1377,53 +1396,16 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     }
 }
 
-fn try_parse_measurement_with_options(
-    s: &str,
-    allow_custom_count_units: bool,
-) -> Option<Measurement> {
-    let s = s.trim();
-    let (mut amount, after_amount) = extract_amount(s);
-    let (mut unit, mut remaining) = extract_unit(&after_amount);
-
-    if unit.is_none() {
-        if let Some(amount_str) = amount.as_deref() {
-            if let Some(((replacement_amount, recovered_unit), after_recovered)) =
-                try_extract_hyphenated_unit_tail(amount_str, &after_amount)
-            {
-                amount = Some(replacement_amount);
-                unit = Some(recovered_unit);
-                remaining = after_recovered;
-            }
-        }
-    }
-
-    if allow_custom_count_units
-        && unit.is_none()
-        && amount.is_some()
-        && looks_like_parenthetical_count_unit(remaining.trim())
-    {
-        unit = Some(remaining.trim().to_string());
-        remaining = String::new();
-    }
-
-    // Check if remaining is "each" - if so, append it to the unit
-    // This preserves important semantic info like "8 ounces each" vs "8 ounces total"
-    let unit = match (unit, remaining.trim().to_lowercase().as_str()) {
-        (Some(u), "each") => Some(format!("{} each", u)),
-        (u, _) => u,
-    };
-
-    if amount.is_some() || unit.is_some() {
-        Some(Measurement { amount, unit })
-    } else {
-        None
-    }
-}
-
 /// Parse parenthetical content that may contain multiple measurements.
 /// Handles formats like "8 ounces; 227 g each" or "113g, 1/2 cup" or "8 ounces or 225 grams"
+#[cfg(test)]
 fn parse_parenthetical_measurements(content: &str) -> Vec<Measurement> {
+    parse_parenthetical_measurement_details(content).measurements
+}
+
+fn parse_parenthetical_measurement_details(content: &str) -> ParentheticalMeasurementParse {
     let mut results = Vec::new();
+    let mut has_non_measurement_content = parenthetical_measurement_has_note_qualifier(content);
 
     // Check if the content ends with "each" - this applies to ALL measurements
     // e.g., "8 ounces; 227 g each" means both are per-item
@@ -1456,10 +1438,25 @@ fn parse_parenthetical_measurements(content: &str) -> Vec<Measurement> {
                 }
             }
             results.push(m);
+        } else {
+            has_non_measurement_content = true;
         }
     }
 
-    results
+    ParentheticalMeasurementParse {
+        measurements: results,
+        has_non_measurement_content,
+    }
+}
+
+fn parenthetical_measurement_has_note_qualifier(content: &str) -> bool {
+    let normalized = content.trim_start().to_lowercase();
+    normalized.starts_with('@')
+        || normalized.starts_with('~')
+        || normalized.starts_with("about ")
+        || normalized.starts_with("approx ")
+        || normalized.starts_with("approximately ")
+        || normalized.starts_with("roughly ")
 }
 
 fn normalize_parenthetical_measurement_separators(content: &str) -> String {
@@ -1506,10 +1503,35 @@ fn normalize_parenthetical_measurement_separators(content: &str) -> String {
 
 fn try_parse_parenthetical_measurement(s: &str) -> Option<Measurement> {
     let cleaned = strip_measurement_qualifiers(s);
-    let measurement = try_parse_measurement_with_options(&cleaned, false)?;
-    let (amount, unit) = match (measurement.amount, measurement.unit) {
+    let (mut amount, after_amount) = extract_amount(&cleaned);
+    let (mut unit, mut remaining) = extract_unit(&after_amount);
+
+    if unit.is_none() {
+        if let Some(amount_str) = amount.as_deref() {
+            if let Some(((replacement_amount, recovered_unit), after_recovered)) =
+                try_extract_hyphenated_unit_tail(amount_str, &after_amount)
+            {
+                amount = Some(replacement_amount);
+                unit = Some(recovered_unit);
+                remaining = after_recovered;
+            }
+        }
+    }
+
+    let (amount, unit) = match (amount, unit) {
         (Some(amount), Some(unit)) => (amount, unit),
         _ => return None,
+    };
+
+    let remaining = remaining.trim();
+    let has_each_suffix = remaining.eq_ignore_ascii_case("each");
+    if !remaining.is_empty() && !has_each_suffix {
+        return None;
+    }
+    let unit = if has_each_suffix && !unit.ends_with(" each") {
+        format!("{} each", unit)
+    } else {
+        unit
     };
 
     let normalized_unit = normalize_unit(&unit);
@@ -1587,69 +1609,6 @@ fn segment_contains_measurement(segment: &str) -> bool {
     }
 
     false
-}
-
-fn looks_like_parenthetical_count_unit(s: &str) -> bool {
-    if s.is_empty() || s.contains(['(', ')', '[', ']', ':', ';', ',']) {
-        return false;
-    }
-
-    const DISALLOWED_WORDS: &[&str] = &[
-        "a",
-        "an",
-        "and",
-        "approx",
-        "approximately",
-        "around",
-        "as",
-        "at",
-        "about",
-        "by",
-        "depending",
-        "extra",
-        "for",
-        "from",
-        "if",
-        "more",
-        "of",
-        "or",
-        "per",
-        "plus",
-        "see",
-        "to",
-        "with",
-    ];
-    const DESCRIPTOR_WORDS: &[&str] = &[
-        "big", "jumbo", "large", "medium", "meaty", "mini", "small", "tiny",
-    ];
-
-    let words: Vec<&str> = s.split_whitespace().collect();
-    if words.is_empty() {
-        return false;
-    }
-
-    let mut has_noun = false;
-    for word in words {
-        if !word.chars().all(|c| c.is_ascii_alphabetic() || c == '-') {
-            return false;
-        }
-
-        let normalized = word.to_lowercase();
-        if normalized.is_empty() {
-            return false;
-        }
-        if DISALLOWED_WORDS.contains(&normalized.as_str()) {
-            return false;
-        }
-        if normalized.chars().any(|c| c.is_ascii_digit()) {
-            return false;
-        }
-        if !DESCRIPTOR_WORDS.contains(&normalized.as_str()) {
-            has_noun = true;
-        }
-    }
-
-    has_noun
 }
 
 fn push_deferred_parenthetical_note(
@@ -2709,6 +2668,22 @@ fn is_prep_note(s: &str) -> bool {
 }
 
 fn is_trailing_prep_note(s: &str) -> bool {
+    if is_strict_trailing_prep_note(s) {
+        return true;
+    }
+
+    if is_trailing_prep_note_with_context(s) {
+        return true;
+    }
+
+    if !is_prep_note(s) {
+        return false;
+    }
+
+    contains_active_prep_note(s) || ambiguous_prep_note_has_allowed_context(s)
+}
+
+fn is_strict_trailing_prep_note(s: &str) -> bool {
     const PREP_FILLER_WORDS: &[&str] = &[
         "and", "but", "clean", "coarsely", "fine", "finely", "firmly", "freshly", "lightly",
         "loosely", "not", "or", "roughly", "small", "thinly", "to", "very", "well",
@@ -2758,6 +2733,164 @@ fn is_trailing_prep_note(s: &str) -> bool {
     saw_prep
 }
 
+fn is_trailing_prep_note_with_context(s: &str) -> bool {
+    let normalized = s
+        .trim()
+        .trim_matches(|c: char| !c.is_ascii_alphanumeric() && !c.is_ascii_whitespace())
+        .to_lowercase();
+    if normalized.is_empty() {
+        return false;
+    }
+
+    ACTIVE_PREP_PREFIXES.iter().any(|prefix| {
+        normalized
+            .strip_prefix(prefix)
+            .is_some_and(is_allowed_trailing_prep_context)
+    })
+}
+
+const ACTIVE_PREP_PREFIXES: &[&str] = &[
+    "adjusted",
+    "bagged",
+    "beaten",
+    "blanched",
+    "chilled",
+    "chopped",
+    "combined",
+    "cooled",
+    "cored",
+    "crumbled",
+    "crushed",
+    "cubed",
+    "cut",
+    "diced",
+    "divided",
+    "drained",
+    "grated",
+    "grilled",
+    "ground",
+    "halved",
+    "julienned",
+    "melted",
+    "minced",
+    "mixed",
+    "patted dry",
+    "peeled",
+    "picked over",
+    "quartered",
+    "removed",
+    "reserved",
+    "rinsed",
+    "roasted",
+    "scraped",
+    "seeded",
+    "shredded",
+    "sifted",
+    "sliced",
+    "softened",
+    "stemmed",
+    "thawed",
+    "toasted",
+    "trimmed",
+    "unpeeled",
+    "washed",
+    "well-shaken",
+    "whisked",
+    "squeezed",
+];
+
+fn contains_active_prep_note(s: &str) -> bool {
+    let normalized = s.to_lowercase();
+    ACTIVE_PREP_PREFIXES.iter().any(|prefix| {
+        normalized
+            .match_indices(prefix)
+            .any(|(idx, _)| has_word_boundaries(&normalized, idx, prefix.len()))
+    })
+}
+
+fn has_word_boundaries(s: &str, start: usize, len: usize) -> bool {
+    let before = s.get(..start).and_then(|prefix| prefix.chars().next_back());
+    let after = s
+        .get(start + len..)
+        .and_then(|suffix| suffix.chars().next());
+    before.is_none_or(|c| !c.is_ascii_alphabetic())
+        && after.is_none_or(|c| !c.is_ascii_alphabetic())
+}
+
+fn ambiguous_prep_note_has_allowed_context(s: &str) -> bool {
+    const AMBIGUOUS_PREP_WORDS: &[&str] = &[
+        "cold", "cooked", "dried", "fresh", "frozen", "uncooked", "whole",
+    ];
+
+    let normalized = s.to_lowercase();
+    AMBIGUOUS_PREP_WORDS.iter().any(|word| {
+        normalized.match_indices(word).any(|(idx, _)| {
+            has_word_boundaries(&normalized, idx, word.len())
+                && normalized
+                    .get(idx + word.len()..)
+                    .is_some_and(is_allowed_ambiguous_prep_context)
+        })
+    })
+}
+
+fn is_allowed_ambiguous_prep_context(tail: &str) -> bool {
+    let tail = tail.trim_start();
+    if tail.is_empty() {
+        return true;
+    }
+
+    const ALLOWED_CONTEXT_PREFIXES: &[&str] = &[
+        "and ", "al dente", "but ", "from ", "if ", "is fine", "or ", "to ", "until ", "with ",
+    ];
+    ALLOWED_CONTEXT_PREFIXES
+        .iter()
+        .any(|prefix| tail.starts_with(prefix))
+}
+
+fn is_allowed_trailing_prep_context(tail: &str) -> bool {
+    let tail = tail.trim_start();
+    if tail.is_empty() {
+        return true;
+    }
+    if tail.starts_with(|c: char| !c.is_ascii_alphanumeric()) {
+        return true;
+    }
+
+    const ALLOWED_CONTEXT_PREFIXES: &[&str] = &[
+        "and ",
+        "but ",
+        "clean",
+        "coarse",
+        "coarsely ",
+        "fine",
+        "finely ",
+        "for ",
+        "freshly ",
+        "in ",
+        "into ",
+        "lightly ",
+        "not ",
+        "of ",
+        "on ",
+        "or ",
+        "over ",
+        "roughly ",
+        "small",
+        "then ",
+        "thin",
+        "thinly ",
+        "to ",
+        "until ",
+        "very ",
+        "well ",
+        "with ",
+    ];
+
+    ALLOWED_CONTEXT_PREFIXES
+        .iter()
+        .any(|prefix| tail.starts_with(prefix))
+}
+
 fn is_trailing_guidance_note(s: &str) -> bool {
     let normalized = s
         .trim()
@@ -2773,6 +2906,8 @@ fn is_trailing_guidance_note(s: &str) -> bool {
         "for garnish",
         "for serving",
         "if desired",
+        "more as needed",
+        "more or less",
         "or less",
         "or more",
         "or to taste",
@@ -2785,18 +2920,36 @@ fn is_trailing_guidance_note(s: &str) -> bool {
     const GUIDANCE_PREFIXES: &[&str] = &[
         "and more for ",
         "and more to taste",
+        "approximately ",
+        "from approximately ",
+        "if ",
         "more for ",
+        "more as needed",
         "more to taste",
+        "preferably ",
         "or more for ",
         "or more to taste",
+        "or substitute ",
         "plus additional to taste",
         "plus extra for ",
         "plus more for ",
         "plus more to taste",
     ];
-    GUIDANCE_PREFIXES
+    if GUIDANCE_PREFIXES
         .iter()
         .any(|prefix| normalized.starts_with(prefix))
+    {
+        return true;
+    }
+
+    (normalized.starts_with("or ")
+        && (normalized.contains(" for serving")
+            || normalized.contains(" for garnish")
+            || normalized.chars().any(|c| c.is_ascii_digit())
+            || normalized.contains(" to taste")
+            || normalized.contains(" if desired")
+            || normalized.contains(" as needed")))
+        || normalized.starts_with("or less ")
 }
 
 /// Check if a string consists only of prep words (comma-separated).
@@ -3726,6 +3879,27 @@ mod tests {
         assert_eq!(result[0].unit, Some("lbs".to_string()));
         assert_eq!(result[1].amount, Some("570".to_string()));
         assert_eq!(result[1].unit, Some("g".to_string()));
+    }
+
+    #[test]
+    fn test_mixed_parenthetical_measurements_keep_note_content() {
+        let result = parse_ingredient("1 (15-ounce/425g) can tomato sauce");
+        assert_eq!(result.item, "tomato sauce");
+        assert_eq!(result.note, Some("15-ounce/425g".to_string()));
+        assert_eq!(result.measurements.len(), 2);
+        assert_eq!(result.measurements[0].amount, Some("1".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("can".to_string()));
+        assert_eq!(result.measurements[1].amount, Some("425".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("g".to_string()));
+
+        let result = parse_ingredient("1 medium (@ 1.25 lbs or 570g) butternut squash");
+        assert_eq!(result.item, "butternut squash");
+        assert_eq!(result.note, Some("@ 1.25 lbs or 570g".to_string()));
+        assert_eq!(result.measurements.len(), 3);
+        assert_eq!(result.measurements[1].amount, Some("1.25".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("lb".to_string()));
+        assert_eq!(result.measurements[2].amount, Some("570".to_string()));
+        assert_eq!(result.measurements[2].unit, Some("g".to_string()));
     }
 
     #[test]

@@ -59,28 +59,32 @@
     {
       "raw": "12 tablespoons cold unsalted butter, cut into ¼-inch slices",
       "expected": {
-        "item": "cold unsalted butter, cut into 1/4-inch slices",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "12",
             "unit": "tbsp"
+          },
+          {
+            "amount": "170",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch slices",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "½ cup chilled solid vegetable shortening, cut into 2 pieces",
       "expected": {
-        "item": "chilled solid vegetable shortening, cut into 2 pieces",
+        "item": "chilled solid vegetable shortening",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "cut into 2 pieces",
         "category": "Baking"
       }
     },

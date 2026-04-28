@@ -55,7 +55,7 @@
     {
       "raw": "4 pounds boneless pork shoulder, cut into 2-inch-by-3-inch chunks",
       "expected": {
-        "item": "boneless pork shoulder, cut into 2-inch-by-3-inch chunks",
+        "item": "boneless pork shoulder",
         "measurements": [
           {
             "amount": "4",
@@ -66,7 +66,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 2-inch-by-3-inch chunks",
         "category": "Meat & Seafood"
       }
     },
@@ -124,14 +124,14 @@
     {
       "raw": "2 to 3 Thai chilies (or 1 serrano), stemmed and thinly sliced",
       "expected": {
-        "item": "Thai chilies, stemmed and thinly sliced",
+        "item": "Thai chilies",
         "measurements": [
           {
             "amount": "2 to 3",
             "unit": null
           }
         ],
-        "note": "or 1 serrano",
+        "note": "or 1 serrano, stemmed and thinly sliced",
         "category": "Other"
       }
     },

@@ -5,42 +5,42 @@
     {
       "raw": "2 medium zucchini, sliced into long 1/4-inch strips",
       "expected": {
-        "item": "zucchini, sliced into long 1/4-inch strips",
+        "item": "zucchini",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "sliced into long 1/4-inch strips",
         "category": "Produce"
       }
     },
     {
       "raw": "1 red onion, sliced into 1/4-inch rings",
       "expected": {
-        "item": "red onion, sliced into 1/4-inch rings",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced into 1/4-inch rings",
         "category": "Produce"
       }
     },
     {
       "raw": "2 bell peppers, seeds removed and quartered",
       "expected": {
-        "item": "bell peppers, seeds removed and quartered",
+        "item": "bell peppers",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeds removed and quartered",
         "category": "Produce"
       }
     },

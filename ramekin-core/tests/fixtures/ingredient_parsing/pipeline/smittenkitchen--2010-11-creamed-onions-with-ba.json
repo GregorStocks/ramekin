@@ -5,21 +5,21 @@
     {
       "raw": "100 or so pearl onions, unpeeled (from 3 10-ounce bags)",
       "expected": {
-        "item": "or so pearl onions, unpeeled",
+        "item": "or so pearl onions",
         "measurements": [
           {
             "amount": "100",
             "unit": null
           }
         ],
-        "note": "from 3 10-ounce bags",
+        "note": "from 3 10-ounce bags, unpeeled",
         "category": "Produce"
       }
     },
     {
       "raw": "2 1/2 ounces bacon (applewood-smoked is suggested), cut into a small dice",
       "expected": {
-        "item": "bacon, cut into a small dice",
+        "item": "bacon",
         "measurements": [
           {
             "amount": "2.5",
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": "applewood-smoked is suggested",
+        "note": "applewood-smoked is suggested, cut into a small dice",
         "category": "Meat & Seafood"
       }
     },
@@ -83,14 +83,14 @@
     {
       "raw": "1/2 bunch chives, cut into 1/2-inch segments",
       "expected": {
-        "item": "chives, cut into 1/2-inch segments",
+        "item": "chives",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch segments",
         "category": "Produce"
       }
     },

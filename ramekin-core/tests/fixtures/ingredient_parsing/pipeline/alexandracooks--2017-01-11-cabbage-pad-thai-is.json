@@ -37,14 +37,14 @@
     {
       "raw": "1&nbsp;14-oz block extra-firm tofu, patted dry, cut into 1-inch cubes",
       "expected": {
-        "item": "14-oz block extra-firm tofu, patted dry, cut into 1-inch cubes",
+        "item": "14-oz block extra-firm tofu, patted dry",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch cubes",
         "category": "Produce"
       }
     },
@@ -128,13 +128,9 @@
           {
             "amount": "1",
             "unit": "cup"
-          },
-          {
-            "amount": "1",
-            "unit": "small"
           }
         ],
-        "note": null,
+        "note": "1 small onion",
         "category": "Produce"
       }
     },
@@ -170,7 +166,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "minced",
+        "note": "about 2 tablespoons, minced",
         "category": "Produce"
       }
     },

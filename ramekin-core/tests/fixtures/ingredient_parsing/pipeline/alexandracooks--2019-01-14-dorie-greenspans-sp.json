@@ -28,14 +28,14 @@
     {
       "raw": "1 to 2 heads of garlic, cut in half horizontally",
       "expected": {
-        "item": "garlic, cut in half horizontally",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "1 to 2",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "cut in half horizontally",
         "category": "Produce"
       }
     },

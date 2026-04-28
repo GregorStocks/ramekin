@@ -27,7 +27,7 @@
     {
       "raw": "1 1/2 pounds (680 g) cremini, button, or portobello mushrooms, stemmed and cut into 1/4-inch thick slices",
       "expected": {
-        "item": "cremini, button, or portobello mushrooms, stemmed and cut into 1/4-inch thick slices",
+        "item": "cremini, button, or portobello mushrooms",
         "measurements": [
           {
             "amount": "1.5",
@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "stemmed and cut into 1/4-inch thick slices",
         "category": "Produce"
       }
     },
@@ -60,7 +60,7 @@
             "unit": "g"
           }
         ],
-        "note": "finely chopped",
+        "note": "about 1 pound; 454 g, finely chopped",
         "category": "Produce"
       }
     },
@@ -364,7 +364,7 @@
     {
       "raw": "3 tablespoons unsalted butter (1 1/2 ounces; 42 g), melted and slightly cooled",
       "expected": {
-        "item": "unsalted butter, melted and slightly cooled",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "3",
@@ -379,7 +379,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "melted and slightly cooled",
         "category": "Dairy & Eggs"
       }
     }

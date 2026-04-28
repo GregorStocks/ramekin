@@ -5,14 +5,14 @@
     {
       "raw": "2 medium cucumbers, thinly sliced or cut into spears",
       "expected": {
-        "item": "cucumbers, thinly sliced or cut into spears",
+        "item": "cucumbers",
         "measurements": [
           {
             "amount": "2",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "thinly sliced or cut into spears",
         "category": "Produce"
       }
     },

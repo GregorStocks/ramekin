@@ -219,14 +219,14 @@
     {
       "raw": "1 (1-pound) center-cut salmon fillet, sliced crosswise into 6 strips",
       "expected": {
-        "item": "center-cut salmon fillet, sliced crosswise into 6 strips",
+        "item": "center-cut salmon fillet",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "1-pound",
+        "note": "1-pound, sliced crosswise into 6 strips",
         "category": "Meat & Seafood"
       }
     },

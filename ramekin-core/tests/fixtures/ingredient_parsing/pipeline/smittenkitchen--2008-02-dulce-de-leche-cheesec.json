@@ -86,13 +86,9 @@
           {
             "amount": "1",
             "unit": "tsp"
-          },
-          {
-            "amount": "7",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "from a 1/4-ounce or 7-gram envelope, will be just about half an envelope",
         "category": "Baking"
       }
     },
@@ -186,7 +182,7 @@
             "unit": "g"
           }
         ],
-        "note": "recipe follows",
+        "note": "12 1/2-ounce or 355-gram can, recipe follows",
         "category": "Other"
       }
     },
@@ -220,7 +216,7 @@
     {
       "raw": "1/2 stick (2 ounces or 55 grams) unsalted butter, cut into pieces",
       "expected": {
-        "item": "unsalted butter, cut into pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -235,7 +231,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     },

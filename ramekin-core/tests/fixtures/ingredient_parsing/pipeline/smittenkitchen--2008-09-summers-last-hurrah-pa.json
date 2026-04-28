@@ -142,56 +142,56 @@
     {
       "raw": "2 large ripe tomatoes, cut into 1-inch cubes",
       "expected": {
-        "item": "ripe tomatoes, cut into 1-inch cubes",
+        "item": "ripe tomatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch cubes",
         "category": "Produce"
       }
     },
     {
       "raw": "1 hothouse cucumber, unpeeled, seeded, and sliced 1/2 inch thick",
       "expected": {
-        "item": "hothouse cucumber, unpeeled, seeded, and sliced 1/2 inch thick",
+        "item": "hothouse cucumber, unpeeled, seeded",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "and sliced 1/2 inch thick",
         "category": "Produce"
       }
     },
     {
       "raw": "2 bell peppers, seeded and cut into 1-inch cubes (purple, orange, or yellow are nice for aesthetics if you can find them)",
       "expected": {
-        "item": "bell peppers, seeded and cut into 1-inch cubes",
+        "item": "bell peppers",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "purple, orange, or yellow are nice for aesthetics if you can find them",
+        "note": "purple, orange, or yellow are nice for aesthetics if you can find them, seeded and cut into 1-inch cubes",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 red onion, cut in half and thinly sliced",
       "expected": {
-        "item": "red onion, cut in half and thinly sliced",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut in half and thinly sliced",
         "category": "Produce"
       }
     },

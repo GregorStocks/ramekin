@@ -207,7 +207,7 @@
     {
       "raw": "1 1/4 cups (150 grams) powdered sugar, sifted if lumpy",
       "expected": {
-        "item": "powdered sugar, sifted if lumpy",
+        "item": "powdered sugar",
         "measurements": [
           {
             "amount": "1.25",
@@ -218,7 +218,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sifted if lumpy",
         "category": "Baking"
       }
     },

@@ -33,7 +33,7 @@
     {
       "raw": "1 lb skin-on salmon fillet (such as wild Alaskan), cut into 4 portions",
       "expected": {
-        "item": "skin-on salmon fillet, cut into 4 portions",
+        "item": "skin-on salmon fillet",
         "measurements": [
           {
             "amount": "1",
@@ -44,7 +44,7 @@
             "unit": "g"
           }
         ],
-        "note": "such as wild Alaskan",
+        "note": "such as wild Alaskan, cut into 4 portions",
         "category": "Meat & Seafood"
       }
     },
@@ -153,7 +153,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 28 g",
         "category": "Produce"
       }
     },

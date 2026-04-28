@@ -47,7 +47,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 1/4 pounds",
         "category": "Produce"
       }
     },
@@ -72,14 +72,18 @@
     {
       "raw": "2 tablespoons unsalted butter, cold, cut into small bits",
       "expected": {
-        "item": "unsalted butter, cold, cut into small bits",
+        "item": "unsalted butter, cold",
         "measurements": [
           {
             "amount": "2",
             "unit": "tbsp"
+          },
+          {
+            "amount": "28",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small bits",
         "category": "Dairy & Eggs"
       }
     },

@@ -107,14 +107,14 @@
     {
       "raw": "1 lime, cut into 8 wedges",
       "expected": {
-        "item": "lime, cut into 8 wedges",
+        "item": "lime",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 8 wedges",
         "category": "Produce"
       }
     },

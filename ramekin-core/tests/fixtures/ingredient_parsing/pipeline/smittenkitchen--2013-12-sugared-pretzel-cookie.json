@@ -5,14 +5,14 @@
     {
       "raw": "1 large egg, hard-boiled and cooled",
       "expected": {
-        "item": "egg, hard-boiled and cooled",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "hard-boiled and cooled",
         "category": "Dairy & Eggs"
       }
     },
@@ -131,14 +131,14 @@
     {
       "raw": "1 large egg white, lightly beaten with 1 teaspoon water",
       "expected": {
-        "item": "egg white, lightly beaten with 1 teaspoon water",
+        "item": "egg white",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "lightly beaten with 1 teaspoon water",
         "category": "Dairy & Eggs"
       }
     },

@@ -51,7 +51,7 @@
     {
       "raw": "1/2 cup (120 ml) vegetable or another neutral oil, or melted butter",
       "expected": {
-        "item": "vegetable or another neutral oil, or melted butter",
+        "item": "vegetable or another neutral oil",
         "measurements": [
           {
             "amount": "0.5",
@@ -62,8 +62,8 @@
             "unit": "ml"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
+        "note": "or melted butter",
+        "category": "Oils & Vinegars"
       }
     },
     {
@@ -168,7 +168,7 @@
     {
       "raw": "1/2 cup (115 grams) unsalted butter, cold is fine",
       "expected": {
-        "item": "unsalted butter, cold is fine",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -179,7 +179,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cold is fine",
         "category": "Dairy & Eggs"
       }
     },

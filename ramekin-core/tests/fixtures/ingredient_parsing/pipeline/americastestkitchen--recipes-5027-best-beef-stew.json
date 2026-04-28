@@ -5,7 +5,7 @@
     {
       "raw": "2 medium garlic cloves , minced or pressed through garlic press (about 2 teaspoons)",
       "expected": {
-        "item": "garlic cloves, minced or pressed through garlic press",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "about 2 teaspoons, minced or pressed through garlic press",
         "category": "Produce"
       }
     },
@@ -34,7 +34,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "finely minced",
+        "note": "about 2 teaspoons, finely minced",
         "category": "Meat & Seafood"
       }
     },
@@ -59,7 +59,7 @@
     {
       "raw": "1 boneless beef chuck-eye roast (about 4 pounds), trimmed of excess fat, cut into 1 1/2-inch pieces (see note and step by step below)",
       "expected": {
-        "item": "boneless beef chuck-eye roast, trimmed of excess fat, cut into 1 1/2-inch pieces",
+        "item": "boneless beef chuck-eye roast, trimmed of excess fat",
         "measurements": [
           {
             "amount": "1",
@@ -74,7 +74,7 @@
             "unit": "g"
           }
         ],
-        "note": "see note and step by step below",
+        "note": "about 4 pounds, see note and step by step below, cut into 1 1/2-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -99,7 +99,7 @@
     {
       "raw": "1 large onion , halved and cut from pole to pole into 1/8-inch-thick slices (about 2 cups)",
       "expected": {
-        "item": "onion, halved and cut from pole to pole into 1/8-inch-thick slices",
+        "item": "onion",
         "measurements": [
           {
             "amount": "1",
@@ -108,16 +108,20 @@
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "275",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 cups, halved and cut from pole to pole into 1/8-inch-thick slices",
         "category": "Produce"
       }
     },
     {
       "raw": "4 medium carrots , peeled and cut into 1-inch pieces (about 2 cups)",
       "expected": {
-        "item": "carrots, peeled and cut into 1-inch pieces",
+        "item": "carrots",
         "measurements": [
           {
             "amount": "4",
@@ -128,7 +132,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "about 2 cups, peeled and cut into 1-inch pieces",
         "category": "Produce"
       }
     },
@@ -209,7 +213,7 @@
     {
       "raw": "4 ounces Salt pork , rinsed of excess salt (see note)",
       "expected": {
-        "item": "Salt pork, rinsed of excess salt",
+        "item": "Salt pork",
         "measurements": [
           {
             "amount": "4",
@@ -220,14 +224,14 @@
             "unit": "g"
           }
         ],
-        "note": "see note",
+        "note": "see note, rinsed of excess salt",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 pound Yukon Gold potatoes , scrubbed and cut into 1-inch pieces",
       "expected": {
-        "item": "Yukon Gold potatoes, scrubbed and cut into 1-inch pieces",
+        "item": "Yukon Gold potatoes",
         "measurements": [
           {
             "amount": "1",
@@ -238,7 +242,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "scrubbed and cut into 1-inch pieces",
         "category": "Produce"
       }
     },

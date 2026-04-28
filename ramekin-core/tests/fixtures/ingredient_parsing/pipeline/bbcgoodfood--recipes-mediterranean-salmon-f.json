@@ -5,14 +5,14 @@
     {
       "raw": "1 whole salmon fillet about 800g, skin-on and well trimmed  (organic farmed salmon is best)",
       "expected": {
-        "item": "whole salmon fillet about 800g, skin-on and well trimmed",
+        "item": "whole salmon fillet about 800g",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "organic farmed salmon is best",
+        "note": "organic farmed salmon is best, skin-on and well trimmed",
         "category": "Meat & Seafood"
       }
     },

@@ -123,14 +123,14 @@
     {
       "raw": "1 vanilla bean, halved and scraped",
       "expected": {
-        "item": "vanilla bean, halved and scraped",
+        "item": "vanilla bean",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "halved and scraped",
         "category": "Spices & Seasonings"
       }
     },

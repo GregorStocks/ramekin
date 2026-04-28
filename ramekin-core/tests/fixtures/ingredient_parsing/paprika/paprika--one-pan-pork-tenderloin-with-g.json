@@ -37,14 +37,14 @@
     {
       "raw": "1 garlic clove, minced to paste",
       "expected": {
-        "item": "garlic clove, minced to paste",
+        "item": "garlic clove",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "minced to paste",
         "category": "Produce"
       }
     },
@@ -155,7 +155,7 @@
     {
       "raw": "1 ½ pounds fingerling potatoes, unpeeled, halved lengthwise",
       "expected": {
-        "item": "fingerling potatoes, unpeeled, halved lengthwise",
+        "item": "fingerling potatoes, unpeeled",
         "measurements": [
           {
             "amount": "1.5",
@@ -166,7 +166,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "halved lengthwise",
         "category": "Produce"
       }
     }

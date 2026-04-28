@@ -5,22 +5,18 @@
     {
       "raw": "1 1/2 pounds sweet potatoes (about 2 medium potatoes), peeled and chopped into a 1/2-inch dice",
       "expected": {
-        "item": "sweet potatoes, peeled and chopped into a 1/2-inch dice",
+        "item": "sweet potatoes",
         "measurements": [
           {
             "amount": "1.5",
             "unit": "lb"
           },
           {
-            "amount": "2",
-            "unit": "medium"
-          },
-          {
             "amount": "680",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 medium potatoes, peeled and chopped into a 1/2-inch dice",
         "category": "Produce"
       }
     },

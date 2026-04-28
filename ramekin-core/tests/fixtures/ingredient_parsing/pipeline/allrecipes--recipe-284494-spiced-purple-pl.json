@@ -5,7 +5,7 @@
     {
       "raw": "3 pounds plums, pitted and chopped",
       "expected": {
-        "item": "plums, pitted and chopped",
+        "item": "plums",
         "measurements": [
           {
             "amount": "3",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "pitted and chopped",
         "category": "Produce"
       }
     },

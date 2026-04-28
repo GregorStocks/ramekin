@@ -60,7 +60,7 @@
     {
       "raw": "3 1/4 pounds Yukon Gold potatoes (about 10 medium), unpeeled",
       "expected": {
-        "item": "Yukon Gold potatoes, unpeeled",
+        "item": "Yukon Gold potatoes",
         "measurements": [
           {
             "amount": "3.25",
@@ -75,7 +75,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 10 medium, unpeeled",
         "category": "Produce"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "3 medium ripe avocados, peeled and pitted",
       "expected": {
-        "item": "ripe avocados, peeled and pitted",
+        "item": "ripe avocados",
         "measurements": [
           {
             "amount": "3",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "peeled and pitted",
         "category": "Produce"
       }
     },
@@ -33,14 +33,14 @@
     {
       "raw": "1 small tomato, seeded and chopped",
       "expected": {
-        "item": "tomato, seeded and chopped",
+        "item": "tomato",
         "measurements": [
           {
             "amount": "1",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "seeded and chopped",
         "category": "Produce"
       }
     },

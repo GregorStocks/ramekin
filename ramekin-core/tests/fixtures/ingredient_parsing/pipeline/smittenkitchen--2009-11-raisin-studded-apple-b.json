@@ -5,7 +5,7 @@
     {
       "raw": "1 pound bakery white or challah bread, crusts removed if you wish, cut into 1-inch cubes",
       "expected": {
-        "item": "bakery white or challah bread, crusts removed if you wish, cut into 1-inch cubes",
+        "item": "bakery white or challah bread, crusts removed if you wish",
         "measurements": [
           {
             "amount": "1",
@@ -16,35 +16,35 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch cubes",
         "category": "Bakery & Bread"
       }
     },
     {
       "raw": "1 Granny Smith apple, peeled, cored and cut into 1/2-inch pieces",
       "expected": {
-        "item": "Granny Smith apple, peeled, cored and cut into 1/2-inch pieces",
+        "item": "Granny Smith apple, peeled",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cored and cut into 1/2-inch pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1/2 to 1 cup golden raisins, plumped in hot water for 15 minutes, if necessary (see Note)",
       "expected": {
-        "item": "golden raisins, plumped in hot water for 15 minutes, if necessary",
+        "item": "golden raisins, plumped in hot water for 15 minutes",
         "measurements": [
           {
             "amount": "0.5 to 1",
             "unit": "cup"
           }
         ],
-        "note": "see Note",
+        "note": "see Note, if necessary",
         "category": "Nuts & Dried Fruit"
       }
     },

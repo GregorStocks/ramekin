@@ -23,7 +23,7 @@
     {
       "raw": "2 pounds potatoes, cut into 1 1/2-inch chunks",
       "expected": {
-        "item": "potatoes, cut into 1 1/2-inch chunks",
+        "item": "potatoes",
         "measurements": [
           {
             "amount": "2",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1 1/2-inch chunks",
         "category": "Produce"
       }
     }

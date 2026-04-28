@@ -119,7 +119,7 @@
     {
       "raw": "1 1/2 pounds pork loin, trimmed of silver skin and excess fat, cut into 1-inch cubes",
       "expected": {
-        "item": "pork loin, trimmed of silver skin and excess fat, cut into 1-inch cubes",
+        "item": "pork loin, trimmed of silver skin and excess fat",
         "measurements": [
           {
             "amount": "1.5",
@@ -130,7 +130,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch cubes",
         "category": "Meat & Seafood"
       }
     },

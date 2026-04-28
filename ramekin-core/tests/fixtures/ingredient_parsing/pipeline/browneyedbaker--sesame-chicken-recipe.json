@@ -145,7 +145,7 @@
     {
       "raw": "1½ pounds  boneless skinless chicken breast, cut into 1-inch chunks (skinless chicken breast, cut into 1-inch chunks)",
       "expected": {
-        "item": "boneless skinless chicken breast, cut into 1-inch chunks",
+        "item": "boneless skinless chicken breast",
         "measurements": [
           {
             "amount": "1.5",
@@ -156,7 +156,7 @@
             "unit": "g"
           }
         ],
-        "note": "skinless chicken breast, cut into 1-inch chunks",
+        "note": "skinless chicken breast, cut into 1-inch chunks, cut into 1-inch chunks",
         "category": "Meat & Seafood"
       }
     },

@@ -5,14 +5,14 @@
     {
       "raw": "Two 28-ounce cans good quality whole tomatoes, crushed by hand",
       "expected": {
-        "item": "good quality whole tomatoes, crushed by hand",
+        "item": "good quality whole tomatoes",
         "measurements": [
           {
             "amount": "2",
             "unit": "28-ounce cans"
           }
         ],
-        "note": null,
+        "note": "crushed by hand",
         "category": "Produce"
       }
     },

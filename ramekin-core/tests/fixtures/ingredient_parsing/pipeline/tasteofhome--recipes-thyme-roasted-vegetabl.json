@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": "cubed",
+        "note": "about 9 cups, cubed",
         "category": "Produce"
       }
     },
@@ -38,7 +38,7 @@
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "about 1-1/2 large",
         "category": "Produce"
       }
     },
@@ -77,28 +77,28 @@
     {
       "raw": "1 large sweet red pepper, cut into 1-1/2-inch pieces",
       "expected": {
-        "item": "sweet red pepper, cut into 1-1/2-inch pieces",
+        "item": "sweet red pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into 1-1/2-inch pieces",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "1 large sweet yellow pepper, cut into 1-1/2-inch pieces",
       "expected": {
-        "item": "sweet yellow pepper, cut into 1-1/2-inch pieces",
+        "item": "sweet yellow pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into 1-1/2-inch pieces",
         "category": "Spices & Seasonings"
       }
     },

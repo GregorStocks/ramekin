@@ -65,28 +65,28 @@
     {
       "raw": "3-4 slices bacon, chopped and cooked until crisp",
       "expected": {
-        "item": "bacon, chopped and cooked until crisp",
+        "item": "bacon",
         "measurements": [
           {
             "amount": "3-4",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "chopped and cooked until crisp",
         "category": "Meat & Seafood"
       }
     },
     {
       "raw": "1 grilled cheese, cut into small squares",
       "expected": {
-        "item": "grilled cheese, cut into small squares",
+        "item": "grilled cheese",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into small squares",
         "category": "Cheese"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "1 beef sirloin tip roast (3 pounds), cut in half",
       "expected": {
-        "item": "beef sirloin tip roast, cut in half",
+        "item": "beef sirloin tip roast",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut in half",
         "category": "Meat & Seafood"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "1 cup (230 grams or 8 ounces) unsalted butter, cut into chunks",
       "expected": {
-        "item": "unsalted butter, cut into chunks",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Dairy & Eggs"
       }
     },

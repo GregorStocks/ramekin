@@ -5,7 +5,7 @@
     {
       "raw": "12 tablespoons (6 ounces or 170 grams) unsalted butter, melted and still warm",
       "expected": {
-        "item": "unsalted butter, melted and still warm",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "12",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "melted and still warm",
         "category": "Dairy & Eggs"
       }
     },

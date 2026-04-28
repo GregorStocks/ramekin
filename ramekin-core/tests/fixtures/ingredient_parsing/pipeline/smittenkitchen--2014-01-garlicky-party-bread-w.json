@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 pound",
         "category": "Bakery & Bread"
       }
     },
@@ -49,14 +49,14 @@
     {
       "raw": "1/2 teaspoon coarse or flaky salt, or 1/4 teaspoon table salt (if butter is unsalted)",
       "expected": {
-        "item": "coarse or flaky salt, or 1/4 teaspoon table salt",
+        "item": "coarse or flaky salt",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "tsp"
           }
         ],
-        "note": "if butter is unsalted",
+        "note": "or 1/4 teaspoon table salt (if butter is unsalted)",
         "category": "Spices & Seasonings"
       }
     },

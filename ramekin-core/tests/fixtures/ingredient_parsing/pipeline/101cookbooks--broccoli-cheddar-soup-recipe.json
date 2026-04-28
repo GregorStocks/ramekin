@@ -107,7 +107,7 @@
     {
       "raw": "1  large potato, peeled and cut into 1/4-inch cubes (1 1/2 cups)",
       "expected": {
-        "item": "potato, peeled and cut into 1/4-inch cubes",
+        "item": "potato",
         "measurements": [
           {
             "amount": "1",
@@ -118,7 +118,7 @@
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "peeled and cut into 1/4-inch cubes",
         "category": "Produce"
       }
     },
@@ -153,7 +153,7 @@
     {
       "raw": "1  large head of broccoli (12 ounces or 3/4 lb.), cut into small florets",
       "expected": {
-        "item": "head of broccoli, cut into small florets",
+        "item": "head of broccoli",
         "measurements": [
           {
             "amount": "1",
@@ -172,7 +172,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small florets",
         "category": "Produce"
       }
     },

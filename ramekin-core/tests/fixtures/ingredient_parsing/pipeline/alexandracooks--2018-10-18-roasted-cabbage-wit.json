@@ -5,14 +5,14 @@
     {
       "raw": "1 head Savoy cabbage, cut into 8 to 10 wedges",
       "expected": {
-        "item": "Savoy cabbage, cut into 8 to 10 wedges",
+        "item": "Savoy cabbage",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "cut into 8 to 10 wedges",
         "category": "Produce"
       }
     },

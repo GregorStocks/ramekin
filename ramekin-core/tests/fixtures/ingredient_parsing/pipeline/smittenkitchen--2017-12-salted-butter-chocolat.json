@@ -5,7 +5,7 @@
     {
       "raw": "1 cup (8 ounces or 225 grams) salted butter, cold, cut into small pieces",
       "expected": {
-        "item": "salted butter, cold, cut into small pieces",
+        "item": "salted butter, cold",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small pieces",
         "category": "Dairy & Eggs"
       }
     },

@@ -41,21 +41,21 @@
     {
       "raw": "2 teaspoons flaky sea salt, such as Maldon, or less of a finer one",
       "expected": {
-        "item": "flaky sea salt, such as Maldon, or less of a finer one",
+        "item": "flaky sea salt, such as Maldon",
         "measurements": [
           {
             "amount": "2",
             "unit": "tsp"
           }
         ],
-        "note": null,
+        "note": "or less of a finer one",
         "category": "Spices & Seasonings"
       }
     },
     {
       "raw": "8 tablespoons (115 grams or 1 stick) unsalted butter, cut into chunks",
       "expected": {
-        "item": "unsalted butter, cut into chunks",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "8",
@@ -70,7 +70,7 @@
             "unit": "stick"
           }
         ],
-        "note": null,
+        "note": "cut into chunks",
         "category": "Dairy & Eggs"
       }
     },

@@ -88,14 +88,14 @@
     {
       "raw": "1 whole vanilla bean, minced or 1 teaspoon vanilla extract",
       "expected": {
-        "item": "whole vanilla bean, minced",
+        "item": "whole vanilla bean",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "or 1 teaspoon vanilla extract",
+        "note": "minced or 1 teaspoon vanilla extract",
         "category": "Spices & Seasonings"
       }
     },

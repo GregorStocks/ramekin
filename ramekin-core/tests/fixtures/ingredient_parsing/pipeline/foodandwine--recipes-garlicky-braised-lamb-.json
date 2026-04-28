@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 5 pounds",
         "category": "Meat & Seafood"
       }
     },
@@ -133,28 +133,28 @@
     {
       "raw": "1 large red bell pepper, cut into 1/4-inch strips",
       "expected": {
-        "item": "red bell pepper, cut into 1/4-inch strips",
+        "item": "red bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch strips",
         "category": "Produce"
       }
     },
     {
       "raw": "1 medium-size yellow bell pepper, cut into 1/4-inch strips",
       "expected": {
-        "item": "medium-size yellow bell pepper, cut into 1/4-inch strips",
+        "item": "medium-size yellow bell pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cut into 1/4-inch strips",
         "category": "Produce"
       }
     },

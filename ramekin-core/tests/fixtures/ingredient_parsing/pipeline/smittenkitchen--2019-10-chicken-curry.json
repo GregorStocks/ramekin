@@ -5,7 +5,7 @@
     {
       "raw": "2 1/4 pounds boneless, skinless chicken thighs, cut into 2-inch pieces",
       "expected": {
-        "item": "boneless, skinless chicken thighs, cut into 2-inch pieces",
+        "item": "boneless, skinless chicken thighs",
         "measurements": [
           {
             "amount": "2.25",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 2-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -121,10 +121,10 @@
     {
       "raw": "About 2 1/2 cups small diced fresh tomatoes, from 3 to 4 roma tomatoes, or 1 15-ounce can crushed tomatoes",
       "expected": {
-        "item": "About 2 1/2 cups small diced fresh tomatoes, from 3 to 4 roma tomatoes, or 1 15-ounce can crushed tomatoes",
+        "item": "About 2 1/2 cups small diced fresh tomatoes, from 3 to 4 roma tomatoes",
         "measurements": [],
-        "note": null,
-        "category": "Canned Goods"
+        "note": "or 1 15-ounce can crushed tomatoes",
+        "category": "Produce"
       }
     },
     {

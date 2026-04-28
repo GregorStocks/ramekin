@@ -45,7 +45,7 @@
     {
       "raw": "8 chicken drumsticks (about 2 1/2 pounds; 1.1kg), patted dry with paper towels",
       "expected": {
-        "item": "chicken drumsticks, patted dry with paper towels",
+        "item": "chicken drumsticks",
         "measurements": [
           {
             "amount": "8",
@@ -60,7 +60,7 @@
             "unit": "kg"
           }
         ],
-        "note": null,
+        "note": "about 2 1/2 pounds; 1.1kg, patted dry with paper towels",
         "category": "Meat & Seafood"
       }
     },
@@ -105,7 +105,7 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced",
+        "note": "about 3 ounces; 85g, thinly sliced",
         "category": "Produce"
       }
     },
@@ -188,14 +188,14 @@
     {
       "raw": "1 scallion, ends trimmed and sliced thinly on a bias for garnish, trimmings reserved",
       "expected": {
-        "item": "scallion, ends trimmed and sliced thinly on a bias for garnish, trimmings reserved",
+        "item": "scallion, ends trimmed and sliced thinly on a bias for garnish",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "trimmings reserved",
         "category": "Produce"
       }
     },
@@ -217,7 +217,7 @@
             "unit": "g"
           }
         ],
-        "note": "and thinly sliced",
+        "note": "about 14 ounces; 400g, and thinly sliced",
         "category": "Produce"
       }
     },

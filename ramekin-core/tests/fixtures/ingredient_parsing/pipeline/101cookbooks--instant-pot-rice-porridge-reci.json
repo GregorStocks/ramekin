@@ -75,14 +75,14 @@
     {
       "raw": "6  chlorella tablets, crushed in m+p (optional boost!)",
       "expected": {
-        "item": "chlorella tablets, crushed in m+p",
+        "item": "chlorella tablets",
         "measurements": [
           {
             "amount": "6",
             "unit": null
           }
         ],
-        "note": "optional boost!",
+        "note": "optional boost!, crushed in m+p",
         "category": "Other"
       }
     },
@@ -103,10 +103,10 @@
     {
       "raw": "toppings pictured: lime, crushed kale chips and toasted nori, toasted pepitas, hemp seeds, and jungle peanuts. The tofu is sliced thinly and drizzled with shoyu",
       "expected": {
-        "item": "toppings pictured: lime, crushed kale chips and toasted nori, toasted pepitas, hemp seeds, and jungle peanuts. The tofu is sliced thinly and drizzled with shoyu",
+        "item": "toppings pictured: lime, crushed kale chips and toasted nori, toasted pepitas, hemp seeds",
         "measurements": [],
-        "note": null,
-        "category": "Nuts & Dried Fruit"
+        "note": "and jungle peanuts. The tofu is sliced thinly and drizzled with shoyu",
+        "category": "Snacks"
       }
     }
   ]

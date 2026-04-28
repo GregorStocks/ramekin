@@ -5,28 +5,28 @@
     {
       "raw": "½ English cucumber , sliced thin",
       "expected": {
-        "item": "English cucumber, sliced thin",
+        "item": "English cucumber",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced thin",
         "category": "Produce"
       }
     },
     {
       "raw": "½ small red onion , sliced thin",
       "expected": {
-        "item": "red onion, sliced thin",
+        "item": "red onion",
         "measurements": [
           {
             "amount": "0.5",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "sliced thin",
         "category": "Produce"
       }
     },
@@ -147,14 +147,14 @@
     {
       "raw": "2 hard-cooked eggs , sliced thin",
       "expected": {
-        "item": "hard-cooked eggs, sliced thin",
+        "item": "hard-cooked eggs",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced thin",
         "category": "Dairy & Eggs"
       }
     },

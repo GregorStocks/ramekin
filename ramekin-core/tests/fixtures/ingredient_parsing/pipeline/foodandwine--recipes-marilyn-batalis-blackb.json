@@ -167,14 +167,18 @@
     {
       "raw": "1 tablespoon cold unsalted butter, cut into cubes",
       "expected": {
-        "item": "cold unsalted butter, cut into cubes",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into cubes",
         "category": "Dairy & Eggs"
       }
     }

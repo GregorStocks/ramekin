@@ -95,7 +95,7 @@
     {
       "raw": "6 tablespoons (3/4 stick or 3 ounces) cold unsalted butter, cut into 1/2-inch cubes",
       "expected": {
-        "item": "cold unsalted butter, cut into 1/2-inch cubes",
+        "item": "cold unsalted butter",
         "measurements": [
           {
             "amount": "6",
@@ -114,7 +114,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch cubes",
         "category": "Dairy & Eggs"
       }
     },

@@ -169,7 +169,7 @@
     {
       "raw": "8 ounces snow peas, cut into thirds",
       "expected": {
-        "item": "snow peas, cut into thirds",
+        "item": "snow peas",
         "measurements": [
           {
             "amount": "8",
@@ -180,7 +180,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into thirds",
         "category": "Produce"
       }
     },

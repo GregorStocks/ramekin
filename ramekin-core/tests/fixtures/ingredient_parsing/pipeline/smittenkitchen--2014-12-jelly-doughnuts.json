@@ -77,15 +77,11 @@
             "unit": "tsp"
           },
           {
-            "amount": "1",
-            "unit": "oz"
-          },
-          {
-            "amount": "28",
+            "amount": "10",
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1 7-gram or 1/4-ounce packet",
         "category": "Baking"
       }
     },
@@ -205,14 +201,14 @@
     {
       "raw": "1 egg white, whisked until frothy (for peskier filling method)",
       "expected": {
-        "item": "egg white, whisked until frothy",
+        "item": "egg white",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "for peskier filling method",
+        "note": "for peskier filling method, whisked until frothy",
         "category": "Dairy & Eggs"
       }
     },

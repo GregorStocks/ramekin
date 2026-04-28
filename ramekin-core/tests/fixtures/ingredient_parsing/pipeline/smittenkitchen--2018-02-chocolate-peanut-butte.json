@@ -55,7 +55,7 @@
     {
       "raw": "1/2 cup (115 grams or 4 ounces) unsalted butter, at room temperature for a mixer, cold is fine for food processor",
       "expected": {
-        "item": "unsalted butter, at room temperature for a mixer, cold is fine for food processor",
+        "item": "unsalted butter, at room temperature for a mixer",
         "measurements": [
           {
             "amount": "0.5",
@@ -70,7 +70,7 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "cold is fine for food processor",
         "category": "Dairy & Eggs"
       }
     },

@@ -214,7 +214,7 @@
     {
       "raw": "1.5 lbs cod, sliced into 2 inch pieces",
       "expected": {
-        "item": "cod, sliced into 2 inch pieces",
+        "item": "cod",
         "measurements": [
           {
             "amount": "1.5",
@@ -225,7 +225,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sliced into 2 inch pieces",
         "category": "Meat & Seafood"
       }
     },

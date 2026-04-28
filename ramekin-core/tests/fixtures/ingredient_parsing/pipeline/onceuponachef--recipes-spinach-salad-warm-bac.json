@@ -5,14 +5,14 @@
     {
       "raw": "8  slices bacon, cut into ½-inch pieces",
       "expected": {
-        "item": "bacon, cut into 1/2-inch pieces",
+        "item": "bacon",
         "measurements": [
           {
             "amount": "8",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch pieces",
         "category": "Meat & Seafood"
       }
     },
@@ -125,7 +125,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 8 cups",
         "category": "Produce"
       }
     },
@@ -147,21 +147,21 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced",
+        "note": "about 2 cups, thinly sliced",
         "category": "Produce"
       }
     },
     {
       "raw": "3 hard or soft boiled eggs, thinly sliced or cut into wedges",
       "expected": {
-        "item": "hard or soft boiled eggs, thinly sliced or cut into wedges",
+        "item": "hard or soft boiled eggs",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "thinly sliced or cut into wedges",
         "category": "Dairy & Eggs"
       }
     }

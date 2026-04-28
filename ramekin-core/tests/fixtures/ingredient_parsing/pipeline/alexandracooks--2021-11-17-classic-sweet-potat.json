@@ -5,7 +5,7 @@
     {
       "raw": "4 lbs. sweet potatoes, washed if very dirty",
       "expected": {
-        "item": "sweet potatoes, washed if very dirty",
+        "item": "sweet potatoes",
         "measurements": [
           {
             "amount": "4",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "washed if very dirty",
         "category": "Produce"
       }
     },
@@ -32,14 +32,18 @@
     {
       "raw": "2/3 cup orange juice, freshly squeezed if you are up for it",
       "expected": {
-        "item": "orange juice, freshly squeezed if you are up for it",
+        "item": "orange juice",
         "measurements": [
           {
             "amount": "0.67",
             "unit": "cup"
+          },
+          {
+            "amount": "166",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "freshly squeezed if you are up for it",
         "category": "Produce"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "2 pounds mashing potatoes, peeled and cut into quarters",
       "expected": {
-        "item": "mashing potatoes, peeled and cut into quarters",
+        "item": "mashing potatoes",
         "measurements": [
           {
             "amount": "2",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "peeled and cut into quarters",
         "category": "Produce"
       }
     },
@@ -73,14 +73,14 @@
     {
       "raw": "1/4 cup crème fraîche, or substitute equal parts sour cream and heavy cream",
       "expected": {
-        "item": "crème fraîche, or substitute equal parts sour cream and heavy cream",
+        "item": "crème fraîche",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or substitute equal parts sour cream and heavy cream",
         "category": "Dairy & Eggs"
       }
     },
@@ -101,14 +101,14 @@
     {
       "raw": "3 cups Cantal cheese, or substitute good-quality grated sharp cheddar",
       "expected": {
-        "item": "Cantal cheese, or substitute good-quality grated sharp cheddar",
+        "item": "Cantal cheese",
         "measurements": [
           {
             "amount": "3",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "or substitute good-quality grated sharp cheddar",
         "category": "Cheese"
       }
     }

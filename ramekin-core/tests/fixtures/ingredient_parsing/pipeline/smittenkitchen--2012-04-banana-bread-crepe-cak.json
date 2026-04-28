@@ -205,7 +205,7 @@
     {
       "raw": "8 ounces (225 grams) cream cheese, well-softened",
       "expected": {
-        "item": "cream cheese, well-softened",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "8",
@@ -216,7 +216,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "well-softened",
         "category": "Cheese"
       }
     },
@@ -355,7 +355,7 @@
             "unit": "g"
           }
         ],
-        "note": "toasted",
+        "note": "about 50 grams, toasted",
         "category": "Nuts & Dried Fruit"
       }
     },

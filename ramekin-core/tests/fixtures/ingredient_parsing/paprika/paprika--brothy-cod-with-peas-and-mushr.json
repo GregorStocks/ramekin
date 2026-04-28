@@ -38,7 +38,7 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced",
+        "note": "about 1/2 cup, thinly sliced",
         "category": "Produce"
       }
     },
@@ -73,7 +73,7 @@
     {
       "raw": "6 ounces fresh shiitake mushrooms, stemmed and sliced 1/4-inch thick (about 2 cups)",
       "expected": {
-        "item": "fresh shiitake mushrooms, stemmed and sliced 1/4-inch thick",
+        "item": "fresh shiitake mushrooms",
         "measurements": [
           {
             "amount": "6",
@@ -88,7 +88,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 cups, stemmed and sliced 1/4-inch thick",
         "category": "Produce"
       }
     },
@@ -132,7 +132,7 @@
     {
       "raw": "1 1/2 pounds skinless cod fillet, cut into 1 1/2-inch pieces",
       "expected": {
-        "item": "skinless cod fillet, cut into 1 1/2-inch pieces",
+        "item": "skinless cod fillet",
         "measurements": [
           {
             "amount": "1.5",
@@ -143,7 +143,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1 1/2-inch pieces",
         "category": "Meat & Seafood"
       }
     },

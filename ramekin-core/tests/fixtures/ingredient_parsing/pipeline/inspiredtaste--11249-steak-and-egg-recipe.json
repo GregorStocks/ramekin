@@ -5,14 +5,14 @@
     {
       "raw": "1 bunch asparagus, rinsed and ends cut off",
       "expected": {
-        "item": "asparagus, rinsed and ends cut off",
+        "item": "asparagus",
         "measurements": [
           {
             "amount": "1",
             "unit": "bunch"
           }
         ],
-        "note": null,
+        "note": "rinsed and ends cut off",
         "category": "Produce"
       }
     },

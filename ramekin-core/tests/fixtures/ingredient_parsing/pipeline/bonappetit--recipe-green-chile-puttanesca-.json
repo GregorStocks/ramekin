@@ -33,7 +33,7 @@
     {
       "raw": "can find), preferably bone-in (1½–2 lb.)",
       "expected": {
-        "item": "find), preferably bone-in",
+        "item": "find)",
         "measurements": [
           {
             "amount": null,
@@ -48,16 +48,16 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably bone-in",
         "category": "Other"
       }
     },
     {
       "raw": "Kosher salt, freshly ground pepper",
       "expected": {
-        "item": "Kosher salt, freshly ground pepper",
+        "item": "Kosher salt",
         "measurements": [],
-        "note": null,
+        "note": "freshly ground pepper",
         "category": "Spices & Seasonings"
       }
     },
@@ -82,14 +82,14 @@
     {
       "raw": "1 large shallot, thinly sliced into rings",
       "expected": {
-        "item": "shallot, thinly sliced into rings",
+        "item": "shallot",
         "measurements": [
           {
             "amount": "1",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "thinly sliced into rings",
         "category": "Produce"
       }
     },
@@ -179,14 +179,18 @@
     {
       "raw": "4 Tbsp. unsalted butter, cut into pieces",
       "expected": {
-        "item": "unsalted butter, cut into pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "4",
             "unit": "tbsp"
+          },
+          {
+            "amount": "57",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into pieces",
         "category": "Dairy & Eggs"
       }
     }

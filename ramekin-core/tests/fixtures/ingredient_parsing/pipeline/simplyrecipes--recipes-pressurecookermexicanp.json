@@ -181,7 +181,7 @@
     {
       "raw": "3 1/2 pound boneless pork shoulder roast, cut into two pieces",
       "expected": {
-        "item": "boneless pork shoulder roast, cut into two pieces",
+        "item": "boneless pork shoulder roast",
         "measurements": [
           {
             "amount": "3.5",
@@ -192,7 +192,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into two pieces",
         "category": "Meat & Seafood"
       }
     },

@@ -5,7 +5,7 @@
     {
       "raw": "1 large (mine was just over 1 1/4 pounds/570 grams) eggplant, cut into 3/4-inch dice",
       "expected": {
-        "item": "eggplant, cut into 3/4-inch dice",
+        "item": "eggplant",
         "measurements": [
           {
             "amount": "1",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "mine was just over 1 1/4 pounds/570 grams, cut into 3/4-inch dice",
         "category": "Produce"
       }
     },
@@ -54,14 +54,14 @@
     {
       "raw": "1 medium carrot, peeled and cut into 1/4-inch dice",
       "expected": {
-        "item": "carrot, peeled and cut into 1/4-inch dice",
+        "item": "carrot",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "peeled and cut into 1/4-inch dice",
         "category": "Produce"
       }
     },
@@ -192,7 +192,7 @@
     {
       "raw": "4 ounces (115 grams) mozzarella, firmer is better here, cut into 1/3-inch dice",
       "expected": {
-        "item": "mozzarella, firmer is better here, cut into 1/3-inch dice",
+        "item": "mozzarella, firmer is better here",
         "measurements": [
           {
             "amount": "4",
@@ -203,7 +203,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1/3-inch dice",
         "category": "Cheese"
       }
     },
@@ -221,7 +221,7 @@
             "unit": "g"
           }
         ],
-        "note": "grated",
+        "note": "a generous 1/2 cup or 45 grams, grated",
         "category": "Cheese"
       }
     },

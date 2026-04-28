@@ -5,7 +5,7 @@
     {
       "raw": "12 oz cherry tomatoes, cut into quarters",
       "expected": {
-        "item": "cherry tomatoes, cut into quarters",
+        "item": "cherry tomatoes",
         "measurements": [
           {
             "amount": "12",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into quarters",
         "category": "Produce"
       }
     },

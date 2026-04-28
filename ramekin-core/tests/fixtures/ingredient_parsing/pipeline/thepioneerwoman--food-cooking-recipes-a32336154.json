@@ -60,28 +60,28 @@
     {
       "raw": "2 small onions, sliced into thick rings",
       "expected": {
-        "item": "onions, sliced into thick rings",
+        "item": "onions",
         "measurements": [
           {
             "amount": "2",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "sliced into thick rings",
         "category": "Produce"
       }
     },
     {
       "raw": "6 slices white cheddar&nbsp;or Monterey Jack cheese, cut in half",
       "expected": {
-        "item": "white cheddar or Monterey Jack cheese, cut in half",
+        "item": "white cheddar or Monterey Jack cheese",
         "measurements": [
           {
             "amount": "6",
             "unit": "slice"
           }
         ],
-        "note": null,
+        "note": "cut in half",
         "category": "Cheese"
       }
     },

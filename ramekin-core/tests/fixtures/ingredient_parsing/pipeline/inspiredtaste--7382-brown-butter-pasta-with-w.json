@@ -41,14 +41,14 @@
     {
       "raw": "1 garlic clove, lightly crushed and skin removed",
       "expected": {
-        "item": "garlic clove, lightly crushed and skin removed",
+        "item": "garlic clove",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "lightly crushed and skin removed",
         "category": "Produce"
       }
     },

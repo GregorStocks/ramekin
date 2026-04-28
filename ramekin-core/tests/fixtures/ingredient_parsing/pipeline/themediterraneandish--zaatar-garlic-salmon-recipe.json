@@ -20,14 +20,14 @@
             "unit": "g"
           }
         ],
-        "note": "scrubbed",
+        "note": "about 12 oz, scrubbed",
         "category": "Produce"
       }
     },
     {
       "raw": "2 cups grape tomatoes (about 10 oz), halved if you like",
       "expected": {
-        "item": "grape tomatoes, halved if you like",
+        "item": "grape tomatoes",
         "measurements": [
           {
             "amount": "2",
@@ -42,7 +42,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 10 oz, halved if you like",
         "category": "Produce"
       }
     },
@@ -78,7 +78,7 @@
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "about 5 to 6 cloves",
         "category": "Produce"
       }
     },

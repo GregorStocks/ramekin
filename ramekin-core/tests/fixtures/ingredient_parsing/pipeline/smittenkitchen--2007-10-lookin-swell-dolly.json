@@ -5,7 +5,7 @@
     {
       "raw": "1/2 cup (1 stick) salted butter, cut into large pieces",
       "expected": {
-        "item": "salted butter, cut into large pieces",
+        "item": "salted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -14,9 +14,13 @@
           {
             "amount": "1",
             "unit": "stick"
+          },
+          {
+            "amount": "114",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into large pieces",
         "category": "Dairy & Eggs"
       }
     },

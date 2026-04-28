@@ -62,7 +62,7 @@
             "unit": "cup"
           }
         ],
-        "note": "15-ounce",
+        "note": "15-ounce, about 3 cups",
         "category": "Canned Goods"
       }
     },
@@ -83,14 +83,14 @@
     {
       "raw": "4 cloves garlic, minced or pressed with a garlic press",
       "expected": {
-        "item": "garlic, minced or pressed with a garlic press",
+        "item": "garlic",
         "measurements": [
           {
             "amount": "4",
             "unit": "clove"
           }
         ],
-        "note": null,
+        "note": "minced or pressed with a garlic press",
         "category": "Produce"
       }
     },

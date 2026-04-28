@@ -50,7 +50,7 @@
     {
       "raw": "1 cup (2 sicks or 225 grams) very cold unsalted butter, cut into a small dice",
       "expected": {
-        "item": "very cold unsalted butter, cut into a small dice",
+        "item": "very cold unsalted butter",
         "measurements": [
           {
             "amount": "1",
@@ -61,14 +61,14 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "2 sicks or 225 grams, cut into a small dice",
         "category": "Dairy & Eggs"
       }
     },
     {
       "raw": "1/4 cup (60 ml) water, ice cold",
       "expected": {
-        "item": "water, ice cold",
+        "item": "water",
         "measurements": [
           {
             "amount": "0.25",
@@ -77,9 +77,13 @@
           {
             "amount": "60",
             "unit": "ml"
+          },
+          {
+            "amount": "59",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "ice cold",
         "category": "Other"
       }
     },

@@ -252,14 +252,14 @@
     {
       "raw": "3 hard-boiled eggs, peeled and cut into 1/2-inch cubes",
       "expected": {
-        "item": "hard-boiled eggs, peeled and cut into 1/2-inch cubes",
+        "item": "hard-boiled eggs",
         "measurements": [
           {
             "amount": "3",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and cut into 1/2-inch cubes",
         "category": "Dairy & Eggs"
       }
     },
@@ -280,14 +280,14 @@
     {
       "raw": "1 boneless skinless chicken breast, cooked and cut into 1/2-inch cubes",
       "expected": {
-        "item": "boneless skinless chicken breast, cooked and cut into 1/2-inch cubes",
+        "item": "boneless skinless chicken breast",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "cooked and cut into 1/2-inch cubes",
         "category": "Meat & Seafood"
       }
     },

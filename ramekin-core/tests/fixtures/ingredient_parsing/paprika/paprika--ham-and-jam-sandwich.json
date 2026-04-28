@@ -74,7 +74,7 @@
     {
       "raw": "8 ounces sliced ham, preferably smoked or Black Forest",
       "expected": {
-        "item": "sliced ham, preferably smoked or Black Forest",
+        "item": "sliced ham",
         "measurements": [
           {
             "amount": "8",
@@ -85,7 +85,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably smoked or Black Forest",
         "category": "Meat & Seafood"
       }
     },

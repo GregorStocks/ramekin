@@ -5,7 +5,7 @@
     {
       "raw": "1/2 pound (225 grams) rhubarb, trimmed and sliced 1/2-inch thick",
       "expected": {
-        "item": "rhubarb, trimmed and sliced 1/2-inch thick",
+        "item": "rhubarb",
         "measurements": [
           {
             "amount": "0.5",
@@ -16,7 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "trimmed and sliced 1/2-inch thick",
         "category": "Produce"
       }
     },
@@ -365,7 +365,7 @@
     {
       "raw": "6 tablespoons (85 grams) softened butter, cut into 8 pieces.",
       "expected": {
-        "item": "softened butter, cut into 8 pieces.",
+        "item": "softened butter",
         "measurements": [
           {
             "amount": "6",
@@ -376,7 +376,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 8 pieces.",
         "category": "Dairy & Eggs"
       }
     }

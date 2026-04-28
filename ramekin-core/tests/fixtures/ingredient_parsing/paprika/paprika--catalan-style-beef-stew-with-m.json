@@ -187,7 +187,7 @@
     {
       "raw": "2 ½ pounds boneless beef short ribs, trimmed and cut into 2-inch cubes",
       "expected": {
-        "item": "boneless beef short ribs, trimmed and cut into 2-inch cubes",
+        "item": "boneless beef short ribs",
         "measurements": [
           {
             "amount": "2.5",
@@ -198,7 +198,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "trimmed and cut into 2-inch cubes",
         "category": "Meat & Seafood"
       }
     },

@@ -143,7 +143,7 @@
     {
       "raw": "1kg / 2lb   marrow bones ((leg, knuckle), cut to reveal marrow)",
       "expected": {
-        "item": "marrow bones, cut to reveal marrow",
+        "item": "marrow bones",
         "measurements": [
           {
             "amount": "1",
@@ -154,8 +154,8 @@
             "unit": "lb"
           }
         ],
-        "note": "leg, knuckle",
-        "category": "Meat & Seafood"
+        "note": "leg, knuckle, cut to reveal marrow",
+        "category": "Other"
       }
     },
     {

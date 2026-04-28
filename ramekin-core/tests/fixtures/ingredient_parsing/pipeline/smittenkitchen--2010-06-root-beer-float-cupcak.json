@@ -42,7 +42,7 @@
     {
       "raw": "1/2 cup (1 stick or 4 ounces) unsalted butter, cut into 1-inch pieces",
       "expected": {
-        "item": "unsalted butter, cut into 1-inch pieces",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -61,7 +61,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into 1-inch pieces",
         "category": "Dairy & Eggs"
       }
     },

@@ -261,7 +261,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "8.5-ounce or 250-gram",
         "section": "Assembly",
         "category": "Cheese"
       }
@@ -269,14 +269,14 @@
     {
       "raw": "1 egg, beaten with 1 teaspoon water",
       "expected": {
-        "item": "egg, beaten with 1 teaspoon water",
+        "item": "egg",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "beaten with 1 teaspoon water",
         "section": "Assembly",
         "category": "Dairy & Eggs"
       }
@@ -284,9 +284,9 @@
     {
       "raw": "Sesame seeds, ideally toasted (optional)",
       "expected": {
-        "item": "Sesame seeds, ideally toasted",
+        "item": "Sesame seeds",
         "measurements": [],
-        "note": "optional",
+        "note": "optional, ideally toasted",
         "section": "Assembly",
         "category": "Spices & Seasonings"
       }

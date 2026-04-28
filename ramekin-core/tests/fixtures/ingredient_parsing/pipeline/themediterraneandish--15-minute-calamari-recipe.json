@@ -37,7 +37,7 @@
     {
       "raw": "1.5 lb calamari, sliced into rings",
       "expected": {
-        "item": "calamari, sliced into rings",
+        "item": "calamari",
         "measurements": [
           {
             "amount": "1.5",
@@ -48,7 +48,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "sliced into rings",
         "category": "Meat & Seafood"
       }
     },

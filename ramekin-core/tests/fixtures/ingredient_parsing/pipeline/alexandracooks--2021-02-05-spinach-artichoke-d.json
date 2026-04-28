@@ -114,7 +114,7 @@
     {
       "raw": "8 ounces cream cheese, cut into small cubes",
       "expected": {
-        "item": "cream cheese, cut into small cubes",
+        "item": "cream cheese",
         "measurements": [
           {
             "amount": "8",
@@ -125,7 +125,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "cut into small cubes",
         "category": "Cheese"
       }
     },
@@ -137,17 +137,9 @@
           {
             "amount": "0.5",
             "unit": "cup"
-          },
-          {
-            "amount": "1.3",
-            "unit": "oz"
-          },
-          {
-            "amount": "37",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "1.3 ounces | 38 g",
         "category": "Dairy & Eggs"
       }
     },

@@ -41,7 +41,7 @@
     {
       "raw": "1/2 cup (8 tablespoons, 113 grams, or 4 ounces), unsalted butter, cold and cut into cubes",
       "expected": {
-        "item": "unsalted butter, cold and cut into cubes",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "0.5",
@@ -60,7 +60,7 @@
             "unit": "oz"
           }
         ],
-        "note": null,
+        "note": "cold and cut into cubes",
         "category": "Dairy & Eggs"
       }
     },
@@ -129,7 +129,7 @@
     {
       "raw": "1 large or 2 small zucchinis (about 1 pound or 455 grams), sliced into 1/4-inch thick rounds",
       "expected": {
-        "item": "zucchinis, sliced into 1/4-inch thick rounds",
+        "item": "zucchinis",
         "measurements": [
           {
             "amount": "1",
@@ -148,7 +148,7 @@
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "about 1 pound or 455 grams, sliced into 1/4-inch thick rounds",
         "category": "Produce"
       }
     },

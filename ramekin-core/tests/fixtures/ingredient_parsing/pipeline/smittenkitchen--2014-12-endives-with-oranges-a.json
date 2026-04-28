@@ -116,14 +116,14 @@
     {
       "raw": "1/3 cup sliced almonds or chopped marcona almonds, well-toasted",
       "expected": {
-        "item": "sliced almonds or chopped marcona almonds, well-toasted",
+        "item": "sliced almonds or chopped marcona almonds",
         "measurements": [
           {
             "amount": "0.33",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "well-toasted",
         "category": "Nuts & Dried Fruit"
       }
     },

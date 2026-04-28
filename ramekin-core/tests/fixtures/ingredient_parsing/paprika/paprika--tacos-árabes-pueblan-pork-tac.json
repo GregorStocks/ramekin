@@ -62,14 +62,14 @@
     {
       "raw": "2 garlic cloves, sliced thin",
       "expected": {
-        "item": "garlic cloves, sliced thin",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "sliced thin",
         "section": "Pork and Onions",
         "category": "Produce"
       }
@@ -96,14 +96,14 @@
     {
       "raw": "1 tablespoon cumin seeds, toasted and cracked",
       "expected": {
-        "item": "cumin seeds, toasted and cracked",
+        "item": "cumin seeds",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "toasted and cracked",
         "section": "Pork and Onions",
         "category": "Spices & Seasonings"
       }
@@ -111,14 +111,14 @@
     {
       "raw": "1 tablespoon coriander seeds, toasted and cracked",
       "expected": {
-        "item": "coriander seeds, toasted and cracked",
+        "item": "coriander seeds",
         "measurements": [
           {
             "amount": "1",
             "unit": "tbsp"
           }
         ],
-        "note": null,
+        "note": "toasted and cracked",
         "section": "Pork and Onions",
         "category": "Spices & Seasonings"
       }
@@ -376,14 +376,14 @@
     {
       "raw": "2 garlic cloves, unpeeled",
       "expected": {
-        "item": "garlic cloves, unpeeled",
+        "item": "garlic cloves",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "unpeeled",
         "section": "Yogurt Sauce",
         "category": "Produce"
       }
@@ -507,14 +507,14 @@
     {
       "raw": "2 cups fresh cilantro sprigs, trimmed Lime wedges",
       "expected": {
-        "item": "fresh cilantro sprigs, trimmed Lime wedges",
+        "item": "fresh cilantro sprigs",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
           }
         ],
-        "note": null,
+        "note": "trimmed Lime wedges",
         "section": "Serving",
         "category": "Produce"
       }

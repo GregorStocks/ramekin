@@ -5,7 +5,7 @@
     {
       "raw": "1 medium head cauliflower (about 2½ pounds), cut into florets about 1½\" wide*",
       "expected": {
-        "item": "head cauliflower, cut into florets about 1 1/2\" wide",
+        "item": "head cauliflower",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 2 1/2 pounds, cut into florets about 1 1/2\" wide",
         "category": "Produce"
       }
     },

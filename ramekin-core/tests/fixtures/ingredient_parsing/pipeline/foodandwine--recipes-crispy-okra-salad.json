@@ -91,14 +91,14 @@
     {
       "raw": "1 medium tomato — cored, seeded and sliced into thin strips",
       "expected": {
-        "item": "tomato - cored, seeded and sliced into thin strips",
+        "item": "tomato - cored",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "seeded and sliced into thin strips",
         "category": "Produce"
       }
     },

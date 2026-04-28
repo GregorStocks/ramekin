@@ -106,14 +106,14 @@
     {
       "raw": "Handful breadcrumbs, if using (unless using gluten-free breadcrumbs, this will of course negate the dish’s gluten-free status)",
       "expected": {
-        "item": "breadcrumbs, if using",
+        "item": "breadcrumbs",
         "measurements": [
           {
             "amount": null,
             "unit": "handful"
           }
         ],
-        "note": "unless using gluten-free breadcrumbs, this will of course negate the dish’s gluten-free status",
+        "note": "unless using gluten-free breadcrumbs, this will of course negate the dish’s gluten-free status, if using",
         "category": "Bakery & Bread"
       }
     }

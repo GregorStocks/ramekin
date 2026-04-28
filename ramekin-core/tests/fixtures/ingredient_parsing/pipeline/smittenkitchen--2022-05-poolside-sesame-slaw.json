@@ -194,14 +194,14 @@
     {
       "raw": "Handful chopped fresh cilantro, if you wish",
       "expected": {
-        "item": "chopped fresh cilantro, if you wish",
+        "item": "chopped fresh cilantro",
         "measurements": [
           {
             "amount": null,
             "unit": "handful"
           }
         ],
-        "note": null,
+        "note": "if you wish",
         "category": "Produce"
       }
     },

@@ -110,21 +110,21 @@
     {
       "raw": "1 English cucumber, quartered lengthwise and chopped",
       "expected": {
-        "item": "English cucumber, quartered lengthwise and chopped",
+        "item": "English cucumber",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "quartered lengthwise and chopped",
         "category": "Produce"
       }
     },
     {
       "raw": "12 oz. mozzarella (fresh or smoked), cut into small cubes",
       "expected": {
-        "item": "mozzarella, cut into small cubes",
+        "item": "mozzarella",
         "measurements": [
           {
             "amount": "12",
@@ -135,7 +135,7 @@
             "unit": "g"
           }
         ],
-        "note": "fresh or smoked",
+        "note": "fresh or smoked, cut into small cubes",
         "category": "Cheese"
       }
     },

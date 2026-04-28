@@ -47,7 +47,7 @@
     {
       "raw": "4 ounces very thinly sliced soppressata, cut into very thin strips (optional)",
       "expected": {
-        "item": "very thinly sliced soppressata, cut into very thin strips",
+        "item": "very thinly sliced soppressata",
         "measurements": [
           {
             "amount": "4",
@@ -58,7 +58,7 @@
             "unit": "g"
           }
         ],
-        "note": "optional",
+        "note": "optional, cut into very thin strips",
         "category": "Other"
       }
     },
@@ -97,15 +97,15 @@
     {
       "raw": "2 garlic cloves or 1 large, minced with a teaspoon or two of oregano",
       "expected": {
-        "item": "garlic cloves or 1 large, minced with a teaspoon or two of oregano",
+        "item": "garlic cloves or 1 large",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": null,
-        "category": "Spices & Seasonings"
+        "note": "minced with a teaspoon or two of oregano",
+        "category": "Produce"
       }
     },
     {

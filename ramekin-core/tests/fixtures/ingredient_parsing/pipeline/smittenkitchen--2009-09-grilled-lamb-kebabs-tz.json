@@ -169,14 +169,14 @@
     {
       "raw": "1 hothouse cucumber, unpeeled and seeded",
       "expected": {
-        "item": "hothouse cucumber, unpeeled and seeded",
+        "item": "hothouse cucumber",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "unpeeled and seeded",
         "category": "Produce"
       }
     },

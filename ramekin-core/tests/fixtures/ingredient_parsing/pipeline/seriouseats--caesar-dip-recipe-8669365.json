@@ -30,7 +30,7 @@
             "unit": "tsp"
           }
         ],
-        "note": "minced",
+        "note": "about 2 teaspoons, minced",
         "category": "Produce"
       }
     },
@@ -105,7 +105,7 @@
     {
       "raw": "8 ounces (225g) plain, full-fat cream cheese, softened, preferably Philadelphia brand",
       "expected": {
-        "item": "plain, full-fat cream cheese, softened, preferably Philadelphia brand",
+        "item": "plain, full-fat cream cheese, softened",
         "measurements": [
           {
             "amount": "8",
@@ -116,7 +116,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "preferably Philadelphia brand",
         "category": "Cheese"
       }
     },
@@ -198,10 +198,10 @@
     {
       "raw": "Fresh cut vegetables, romaine lettuce wedges, chips, or crackers for serving",
       "expected": {
-        "item": "Fresh cut vegetables, romaine lettuce wedges, chips, or crackers for serving",
+        "item": "Fresh cut vegetables, romaine lettuce wedges, chips",
         "measurements": [],
-        "note": null,
-        "category": "Snacks"
+        "note": "or crackers for serving",
+        "category": "Produce"
       }
     }
   ]

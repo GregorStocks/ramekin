@@ -5,14 +5,14 @@
     {
       "raw": "4 large Cubanelle peppers, stemmed and seeded",
       "expected": {
-        "item": "Cubanelle peppers, stemmed and seeded",
+        "item": "Cubanelle peppers",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "stemmed and seeded",
         "category": "Spices & Seasonings"
       }
     },

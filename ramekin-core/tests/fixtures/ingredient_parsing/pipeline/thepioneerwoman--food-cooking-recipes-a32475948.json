@@ -69,14 +69,14 @@
     {
       "raw": "1 serrano chile pepper, seeded and finely chopped",
       "expected": {
-        "item": "serrano chile pepper, seeded and finely chopped",
+        "item": "serrano chile pepper",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded and finely chopped",
         "category": "Produce"
       }
     },

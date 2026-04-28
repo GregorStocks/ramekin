@@ -5,28 +5,28 @@
     {
       "raw": "1 medium eggplant, cut into 3/4” pieces",
       "expected": {
-        "item": "eggplant, cut into 3/4” pieces",
+        "item": "eggplant",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into 3/4” pieces",
         "category": "Produce"
       }
     },
     {
       "raw": "1 medium zucchini, cut into 1/2-inch thick bite-sized chunks",
       "expected": {
-        "item": "zucchini, cut into 1/2-inch thick bite-sized chunks",
+        "item": "zucchini",
         "measurements": [
           {
             "amount": "1",
             "unit": "medium"
           }
         ],
-        "note": null,
+        "note": "cut into 1/2-inch thick bite-sized chunks",
         "category": "Produce"
       }
     },

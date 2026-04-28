@@ -5,7 +5,7 @@
     {
       "raw": "1 medium baking potato ( 1/2 pound), peeled and cut into 1-inch dice",
       "expected": {
-        "item": "baking potato, peeled and cut into 1-inch dice",
+        "item": "baking potato",
         "measurements": [
           {
             "amount": "1",
@@ -20,7 +20,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "peeled and cut into 1-inch dice",
         "category": "Produce"
       }
     },
@@ -91,14 +91,18 @@
     {
       "raw": "1 cup milk, scalded and cooled",
       "expected": {
-        "item": "milk, scalded and cooled",
+        "item": "milk",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
+          },
+          {
+            "amount": "245",
+            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "scalded and cooled",
         "category": "Dairy & Eggs"
       }
     },

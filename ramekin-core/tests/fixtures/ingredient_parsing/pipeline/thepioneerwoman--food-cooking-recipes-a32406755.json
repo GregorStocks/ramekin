@@ -107,14 +107,14 @@
     {
       "raw": "1 10-ounce package frozen corn, thawed and patted dry",
       "expected": {
-        "item": "frozen corn, thawed and patted dry",
+        "item": "frozen corn",
         "measurements": [
           {
             "amount": "1",
             "unit": "10-ounce package"
           }
         ],
-        "note": null,
+        "note": "thawed and patted dry",
         "category": "Frozen"
       }
     },

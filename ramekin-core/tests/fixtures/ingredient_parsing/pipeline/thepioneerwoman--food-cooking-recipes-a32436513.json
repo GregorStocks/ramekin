@@ -118,7 +118,7 @@
     {
       "raw": "1 1/4 lb. sirloin steak (about 3/4 inch thick), thinly sliced against the grain",
       "expected": {
-        "item": "sirloin steak, thinly sliced against the grain",
+        "item": "sirloin steak",
         "measurements": [
           {
             "amount": "1.25",
@@ -129,7 +129,7 @@
             "unit": "g"
           }
         ],
-        "note": "about 3/4 inch thick",
+        "note": "about 3/4 inch thick, thinly sliced against the grain",
         "category": "Meat & Seafood"
       }
     },
@@ -172,14 +172,14 @@
     {
       "raw": "1 head broccoli, cut into small florets (peel and thinly slice the stalks, too)",
       "expected": {
-        "item": "broccoli, cut into small florets",
+        "item": "broccoli",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": "peel and thinly slice the stalks, too",
+        "note": "peel and thinly slice the stalks, too, cut into small florets",
         "category": "Produce"
       }
     },

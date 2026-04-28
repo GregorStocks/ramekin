@@ -196,7 +196,7 @@
     {
       "raw": "10 1/2 ounces (1 1/2 cups) red lentils , picked over and rinsed",
       "expected": {
-        "item": "red lentils, picked over and rinsed",
+        "item": "red lentils",
         "measurements": [
           {
             "amount": "10.5",
@@ -211,7 +211,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "picked over and rinsed",
         "category": "Canned Goods"
       }
     },

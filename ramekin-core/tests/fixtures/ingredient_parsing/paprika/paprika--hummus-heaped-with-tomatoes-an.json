@@ -5,14 +5,14 @@
     {
       "raw": "4 large pitas, toasted, cut into wedges",
       "expected": {
-        "item": "pitas, toasted, cut into wedges",
+        "item": "pitas, toasted",
         "measurements": [
           {
             "amount": "4",
             "unit": "large"
           }
         ],
-        "note": null,
+        "note": "cut into wedges",
         "category": "Bakery & Bread"
       }
     },

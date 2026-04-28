@@ -229,28 +229,28 @@
     {
       "raw": "1 pink grapefruit, peeled and sliced crosswise",
       "expected": {
-        "item": "pink grapefruit, peeled and sliced crosswise",
+        "item": "pink grapefruit",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and sliced crosswise",
         "category": "Produce"
       }
     },
     {
       "raw": "1 orange, peeled and sliced crosswise",
       "expected": {
-        "item": "orange, peeled and sliced crosswise",
+        "item": "orange",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "peeled and sliced crosswise",
         "category": "Produce"
       }
     },
@@ -271,14 +271,14 @@
     {
       "raw": "0.5 pomegranate, seeded",
       "expected": {
-        "item": "pomegranate, seeded",
+        "item": "pomegranate",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": null,
+        "note": "seeded",
         "category": "Produce"
       }
     }

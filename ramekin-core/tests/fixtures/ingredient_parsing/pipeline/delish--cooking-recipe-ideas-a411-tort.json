@@ -233,14 +233,14 @@
     {
       "raw": "4 small corn tortillas, sliced into thin strips",
       "expected": {
-        "item": "corn tortillas, sliced into thin strips",
+        "item": "corn tortillas",
         "measurements": [
           {
             "amount": "4",
             "unit": "small"
           }
         ],
-        "note": null,
+        "note": "sliced into thin strips",
         "category": "Bakery & Bread"
       }
     },

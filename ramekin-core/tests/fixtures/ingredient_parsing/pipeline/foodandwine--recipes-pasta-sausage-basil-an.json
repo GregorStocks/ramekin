@@ -41,7 +41,7 @@
     {
       "raw": "8 hot Italian sausages, meat removed from casings and crumbled (about 1 1/2 pounds)",
       "expected": {
-        "item": "hot Italian sausages, meat removed from casings and crumbled",
+        "item": "hot Italian sausages",
         "measurements": [
           {
             "amount": "8",
@@ -56,7 +56,7 @@
             "unit": "g"
           }
         ],
-        "note": null,
+        "note": "about 1 1/2 pounds, meat removed from casings and crumbled",
         "category": "Meat & Seafood"
       }
     },

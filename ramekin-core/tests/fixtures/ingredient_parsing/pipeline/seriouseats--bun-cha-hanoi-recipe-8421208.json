@@ -38,7 +38,7 @@
             "unit": "tbsp"
           }
         ],
-        "note": "finely chopped",
+        "note": "about 2 tablespoons, finely chopped",
         "category": "Produce"
       }
     },
@@ -217,7 +217,7 @@
             "unit": "g"
           }
         ],
-        "note": "thinly sliced",
+        "note": "about 20g, thinly sliced",
         "category": "Produce"
       }
     },
@@ -468,14 +468,14 @@
     {
       "raw": "1 head butter lettuce, leaves picked and washed",
       "expected": {
-        "item": "butter lettuce, leaves picked and washed",
+        "item": "butter lettuce",
         "measurements": [
           {
             "amount": "1",
             "unit": "head"
           }
         ],
-        "note": null,
+        "note": "leaves picked and washed",
         "category": "Produce"
       }
     },
