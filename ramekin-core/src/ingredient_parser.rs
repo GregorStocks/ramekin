@@ -28,6 +28,12 @@ pub struct ParsedIngredient {
     pub section: Option<String>,
 }
 
+#[derive(Debug, Clone, PartialEq, Eq)]
+struct DeferredParentheticalNote {
+    segment: String,
+    follows_comma: bool,
+}
+
 impl ParsedIngredient {
     /// Normalize fraction amounts to decimal form across all measurements.
     /// Should be called after metric/volume enrichment to avoid rounding errors.
@@ -714,7 +720,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // e.g., "1 stick (113g) butter" -> extract "(113g)" as alt measurement
     // e.g., "1/2 cup butter (softened)" -> extract "(softened)" as note
     let mut alt_measurements = Vec::new();
-    let mut deferred_parenthetical_note: Option<String> = None;
+    let mut deferred_parenthetical_notes = Vec::new();
     while let Some(start) = remaining.find('(') {
         let Some(close_idx) = find_matching_closing_paren(&remaining, start) else {
             break;
@@ -724,9 +730,10 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             None => break,
         };
 
-        let before_parenthetical = remaining
-            .get(..start)
-            .unwrap_or("")
+        let raw_before_parenthetical = remaining.get(..start).unwrap_or("");
+        let follows_comma = raw_before_parenthetical.trim_end().ends_with(',')
+            || raw_before_parenthetical.contains(',');
+        let before_parenthetical = raw_before_parenthetical
             .trim_end()
             .trim_end_matches(',')
             .trim_end();
@@ -737,7 +744,11 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             let outside_text = join_segments(before_parenthetical, after_parenthetical);
             if outside_lacks_item_identity(&outside_text) {
                 if let Some(note_segment) = note_segment {
-                    append_note_segment(&mut deferred_parenthetical_note, &note_segment);
+                    push_deferred_parenthetical_note(
+                        &mut deferred_parenthetical_notes,
+                        &note_segment,
+                        follows_comma,
+                    );
                 }
                 remaining = join_segments(
                     &join_segments(before_parenthetical, &item_segment),
@@ -765,7 +776,11 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                 .trim_start_matches(',')
                 .trim()
                 .to_string();
-            append_note_segment(&mut deferred_parenthetical_note, &trimmed_content);
+            push_deferred_parenthetical_note(
+                &mut deferred_parenthetical_notes,
+                &trimmed_content,
+                follows_comma,
+            );
             // Remove the parenthetical from remaining
             // Also strip trailing comma before the parenthetical (e.g., "onion, (diced)")
             remaining = join_segments(before_parenthetical, after_parenthetical);
@@ -789,7 +804,11 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                 .trim_start_matches(',')
                 .trim()
                 .to_string();
-            append_note_segment(&mut deferred_parenthetical_note, &trimmed_content);
+            push_deferred_parenthetical_note(
+                &mut deferred_parenthetical_notes,
+                &trimmed_content,
+                follows_comma,
+            );
             remaining = join_segments(before_parenthetical, after_parenthetical);
         }
     }
@@ -1191,13 +1210,6 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
     }
 
-    if let Some(parenthetical_note) = deferred_parenthetical_note {
-        note = Some(match note {
-            Some(existing_note) => format!("{}, {}", parenthetical_note, existing_note),
-            None => parenthetical_note,
-        });
-    }
-
     // Step 5.7: Handle comma-separated conditional alternatives in remaining text
     // e.g., remaining = "vegetable broth, 1 1/2 cups vegetable broth (for cooked chickpeas)"
     // Pattern: [item], [amount] [unit] [same item] ([condition])
@@ -1225,10 +1237,21 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                         .trim_end_matches(')')
                         .trim();
 
-                    let fragment = if conditional_part.is_empty() {
-                        format!("or {} {}", amt, normalize_unit(unit))
+                    let alternate_condition = if conditional_part.is_empty() {
+                        take_last_comma_parenthetical_note(&mut deferred_parenthetical_notes)
                     } else {
-                        format!("or {} {} {}", amt, normalize_unit(unit), conditional_part)
+                        Some(conditional_part.to_string())
+                    };
+
+                    let fragment = if let Some(alternate_condition) = alternate_condition {
+                        format!(
+                            "or {} {} {}",
+                            amt,
+                            normalize_unit(unit),
+                            alternate_condition
+                        )
+                    } else {
+                        format!("or {} {}", amt, normalize_unit(unit))
                     };
 
                     remaining = before_comma.to_string();
@@ -1240,6 +1263,8 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             }
         }
     }
+
+    prepend_deferred_parenthetical_notes(&mut note, &deferred_parenthetical_notes);
 
     // Step 6: Build measurements list
     if primary_amount.is_some() || primary_unit.is_some() {
@@ -1573,18 +1598,50 @@ fn looks_like_parenthetical_count_unit(s: &str) -> bool {
     has_noun
 }
 
-fn append_note_segment(note: &mut Option<String>, segment: &str) {
+fn push_deferred_parenthetical_note(
+    notes: &mut Vec<DeferredParentheticalNote>,
+    segment: &str,
+    follows_comma: bool,
+) {
+    let segment = segment.trim();
     if segment.is_empty() {
         return;
     }
 
-    match note {
-        Some(existing) => {
-            existing.push_str(", ");
-            existing.push_str(segment);
-        }
-        None => *note = Some(segment.to_string()),
+    notes.push(DeferredParentheticalNote {
+        segment: segment.to_string(),
+        follows_comma,
+    });
+}
+
+fn take_last_comma_parenthetical_note(
+    notes: &mut Vec<DeferredParentheticalNote>,
+) -> Option<String> {
+    let index = notes.iter().rposition(|note| note.follows_comma)?;
+    Some(notes.remove(index).segment)
+}
+
+fn prepend_deferred_parenthetical_notes(
+    note: &mut Option<String>,
+    deferred_notes: &[DeferredParentheticalNote],
+) {
+    let parenthetical_note = deferred_notes
+        .iter()
+        .map(|note| note.segment.as_str())
+        .collect::<Vec<_>>()
+        .join(", ");
+
+    if parenthetical_note.is_empty() {
+        return;
     }
+
+    *note = Some(match note.take() {
+        Some(existing_note) if existing_note.starts_with("or ") => {
+            format!("{}; {}", parenthetical_note, existing_note)
+        }
+        Some(existing_note) => format!("{}, {}", parenthetical_note, existing_note),
+        None => parenthetical_note,
+    });
 }
 
 fn join_segments(left: &str, right: &str) -> String {
@@ -3574,6 +3631,21 @@ mod tests {
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("4".to_string()));
         assert_eq!(result.measurements[0].unit, None);
+    }
+
+    #[test]
+    fn test_conditional_alternate_keeps_parenthetical_condition_with_amount() {
+        let result = parse_ingredient(
+            "4 cups vegetable broth (for dried but soaked chickpeas), 1 1/2 cups vegetable broth (for cooked chickpeas)",
+        );
+        assert_eq!(result.item, "vegetable broth");
+        assert_eq!(
+            result.note,
+            Some("for dried but soaked chickpeas; or 1 1/2 cup for cooked chickpeas".to_string())
+        );
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("4".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
     }
 
     #[test]
