@@ -1615,7 +1615,14 @@ fn split_parenthetical_item_identity(content: &str) -> Option<(String, Option<St
         None => (cleaned, None),
     };
 
-    if !looks_like_parenthetical_item_identity(item_segment) {
+    let identity_check_segment = item_segment
+        .strip_prefix("or ")
+        .or_else(|| item_segment.strip_prefix("Or "))
+        .or_else(|| item_segment.strip_prefix("OR "))
+        .map(str::trim)
+        .unwrap_or(item_segment);
+
+    if !looks_like_parenthetical_item_identity(identity_check_segment) {
         return None;
     }
 
@@ -1639,6 +1646,8 @@ fn looks_like_parenthetical_item_identity(s: &str) -> bool {
         "for",
         "from",
         "if",
+        "less",
+        "more",
         "note",
         "or",
         "per",
@@ -1648,8 +1657,9 @@ fn looks_like_parenthetical_item_identity(s: &str) -> bool {
         "with",
     ];
     const NON_NOUN_WORDS: &[&str] = &[
-        "a", "an", "and", "big", "chopped", "diced", "large", "mashed", "medium", "mini", "ripe",
-        "small", "the", "tiny", "well",
+        "a", "an", "and", "big", "black", "brown", "chopped", "diced", "green", "large", "mashed",
+        "medium", "mini", "orange", "purple", "red", "ripe", "small", "sweet", "the", "tiny",
+        "well", "white", "yellow",
     ];
 
     if s.contains(['(', ')']) {
@@ -1718,7 +1728,8 @@ fn outside_lacks_item_identity(s: &str) -> bool {
 
 fn is_only_descriptor_or_prep_words(s: &str) -> bool {
     const DESCRIPTOR_WORDS: &[&str] = &[
-        "big", "jumbo", "large", "medium", "meaty", "mini", "small", "tiny",
+        "big", "black", "brown", "green", "jumbo", "large", "medium", "meaty", "mini", "orange",
+        "purple", "red", "ripe", "small", "sweet", "tiny", "white", "yellow",
     ];
 
     let mut saw_word = false;
@@ -3650,6 +3661,26 @@ mod tests {
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("3".to_string()));
         assert_eq!(result.measurements[0].unit, Some("clove".to_string()));
+    }
+
+    #[test]
+    fn test_parenthetical_item_identity_promotes_after_color_descriptor() {
+        let result = parse_ingredient("2 red (yellow or orange bell peppers, stemmed and seeded)");
+        assert_eq!(result.item, "red yellow or orange bell peppers");
+        assert_eq!(result.note, Some("stemmed and seeded".to_string()));
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("2".to_string()));
+        assert_eq!(result.measurements[0].unit, None);
+    }
+
+    #[test]
+    fn test_parenthetical_item_identity_promotes_after_color_with_unit() {
+        let result = parse_ingredient("3 slices white (or wheat sandwich bread, crusts removed)");
+        assert_eq!(result.item, "white or wheat sandwich bread");
+        assert_eq!(result.note, Some("crusts removed".to_string()));
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("3".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("slice".to_string()));
     }
 
     #[test]

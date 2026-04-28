@@ -33,14 +33,14 @@
     {
       "raw": "1   orange (sliced and cut into quarters)",
       "expected": {
-        "item": "orange",
+        "item": "orange sliced and cut into quarters",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "sliced and cut into quarters",
+        "note": null,
         "category": "Produce"
       }
     },

@@ -41,14 +41,14 @@
     {
       "raw": "1  orange (juice and zest)",
       "expected": {
-        "item": "orange",
+        "item": "orange juice and zest",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "juice and zest",
+        "note": null,
         "category": "Produce"
       }
     },

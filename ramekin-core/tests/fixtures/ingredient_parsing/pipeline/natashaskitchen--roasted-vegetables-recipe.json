@@ -79,15 +79,15 @@
     {
       "raw": "2  red (yellow or orange bell peppers, cut into 1\" pieces)",
       "expected": {
-        "item": "red",
+        "item": "red yellow or orange bell peppers",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "yellow or orange bell peppers, cut into 1\" pieces",
-        "category": "Other"
+        "note": "cut into 1\" pieces",
+        "category": "Produce"
       }
     },
     {

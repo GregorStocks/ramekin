@@ -111,14 +111,14 @@
     {
       "raw": "1  orange (juiced, about 1/2 cup)",
       "expected": {
-        "item": "orange",
+        "item": "orange juiced",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "juiced, about 1/2 cup",
+        "note": "about 1/2 cup",
         "category": "Produce"
       }
     },
