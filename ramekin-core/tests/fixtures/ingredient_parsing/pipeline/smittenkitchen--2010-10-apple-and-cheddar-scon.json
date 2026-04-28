@@ -10,9 +10,17 @@
           {
             "amount": "2",
             "unit": null
+          },
+          {
+            "amount": "1",
+            "unit": "lb"
+          },
+          {
+            "amount": "454",
+            "unit": "g"
           }
         ],
-        "note": "1 pound or 2 454 grams",
+        "note": null,
         "category": "Produce"
       }
     },
@@ -46,9 +54,13 @@
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "63",
+            "unit": "g"
           }
         ],
-        "note": "total of 2.2 ounces or 63 grams",
+        "note": null,
         "category": "Baking"
       }
     },

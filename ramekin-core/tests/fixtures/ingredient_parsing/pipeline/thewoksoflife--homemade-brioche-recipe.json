@@ -116,11 +116,15 @@
             "unit": "cup"
           },
           {
+            "amount": "120",
+            "unit": "ml"
+          },
+          {
             "amount": "118",
             "unit": "g"
           }
         ],
-        "note": "120 ml, about 120 degrees F/49 degrees C",
+        "note": null,
         "category": "Other"
       }
     },
@@ -134,11 +138,15 @@
             "unit": "tsp"
           },
           {
-            "amount": "8.3",
+            "amount": "10",
             "unit": "g"
+          },
+          {
+            "amount": "15",
+            "unit": "ml"
           }
         ],
-        "note": "10g, dissolved in 1 tablespoon/15 ml water",
+        "note": null,
         "category": "Baking"
       }
     }

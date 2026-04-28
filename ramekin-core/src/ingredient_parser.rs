@@ -733,9 +733,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         };
 
         let raw_before_parenthetical = remaining.get(..start).unwrap_or("");
-        let follows_comma = raw_before_parenthetical.trim_end().ends_with(',')
-            || raw_before_parenthetical.contains(',');
-        let follows_or = raw_before_parenthetical.to_lowercase().contains(" or ");
+        let (follows_comma, follows_or) = parenthetical_branch_context(raw_before_parenthetical);
         let before_parenthetical = raw_before_parenthetical
             .trim_end()
             .trim_end_matches(',')
@@ -1458,8 +1456,6 @@ fn parse_parenthetical_measurements(content: &str) -> Vec<Measurement> {
                 }
             }
             results.push(m);
-        } else {
-            return Vec::new();
         }
     }
 
@@ -1555,6 +1551,42 @@ fn looks_like_bare_parenthetical_size_unit(s: &str, normalized_unit: &str) -> bo
     }
 
     normalize_unit(unit_part.trim_end_matches('.')) == normalized_unit
+}
+
+fn parenthetical_branch_context(raw_before_parenthetical: &str) -> (bool, bool) {
+    let follows_comma = raw_before_parenthetical
+        .rfind(',')
+        .and_then(|comma_idx| raw_before_parenthetical.get(comma_idx + 1..))
+        .is_some_and(segment_starts_with_measurement);
+
+    let before_lower = raw_before_parenthetical.to_lowercase();
+    let follows_or = before_lower
+        .rfind(" or ")
+        .and_then(|or_idx| raw_before_parenthetical.get(or_idx + 4..))
+        .is_some_and(segment_contains_measurement);
+
+    (follows_comma, follows_or)
+}
+
+fn segment_starts_with_measurement(segment: &str) -> bool {
+    let (_, after_pre_amount_modifier) = strip_measurement_modifier(segment);
+    let (amount, after_amount) = extract_amount(&after_pre_amount_modifier);
+    let (_, after_pre_unit_modifier) = strip_measurement_modifier(&after_amount);
+    let (unit, _) = extract_unit(&after_pre_unit_modifier);
+    amount.is_some() && unit.is_some()
+}
+
+fn segment_contains_measurement(segment: &str) -> bool {
+    let before_comma = segment.split(',').next().unwrap_or(segment);
+    let words = before_comma.split_whitespace().collect::<Vec<_>>();
+
+    for start in 0..words.len() {
+        if segment_starts_with_measurement(&words[start..].join(" ")) {
+            return true;
+        }
+    }
+
+    false
 }
 
 fn looks_like_parenthetical_count_unit(s: &str) -> bool {
@@ -1911,7 +1943,7 @@ fn strip_measurement_qualifiers(s: &str) -> String {
     }
 
     // Also handle qualifiers at the start
-    let start_qualifiers = ["about ", "approximately ", "approx ", "roughly ", "~"];
+    let start_qualifiers = ["about ", "approximately ", "approx ", "roughly ", "~", "@"];
     let lower = result.to_lowercase();
     for q in start_qualifiers {
         if lower.starts_with(q) {
@@ -3679,6 +3711,41 @@ mod tests {
         assert!(is_trailing_guidance_note("more for serving"));
         assert!(is_trailing_guidance_note("plus extra for seasoning"));
         assert!(!is_trailing_guidance_note("unseasoned dried breadcrumbs"));
+    }
+
+    #[test]
+    fn test_mixed_parenthetical_measurements_preserve_valid_segments() {
+        let result = parse_parenthetical_measurements("8-ounce; 225g");
+        assert_eq!(result.len(), 1);
+        assert_eq!(result[0].amount, Some("225".to_string()));
+        assert_eq!(result[0].unit, Some("g".to_string()));
+
+        let result = parse_parenthetical_measurements("@ 1.25 lbs or 570g");
+        assert_eq!(result.len(), 2);
+        assert_eq!(result[0].amount, Some("1.25".to_string()));
+        assert_eq!(result[0].unit, Some("lbs".to_string()));
+        assert_eq!(result[1].amount, Some("570".to_string()));
+        assert_eq!(result[1].unit, Some("g".to_string()));
+    }
+
+    #[test]
+    fn test_parenthetical_branch_context_uses_nearest_branch_text() {
+        assert_eq!(
+            parenthetical_branch_context("4 cups vegetable broth, 1 1/2 cups vegetable broth "),
+            (true, false)
+        );
+        assert_eq!(
+            parenthetical_branch_context("1/2 cup chopped pecans or 1/2 cup walnuts "),
+            (false, true)
+        );
+        assert_eq!(
+            parenthetical_branch_context("1 cup chicken or vegetable stock "),
+            (false, false)
+        );
+        assert_eq!(
+            parenthetical_branch_context("1 cup onions, finely chopped "),
+            (false, false)
+        );
     }
 
     #[test]

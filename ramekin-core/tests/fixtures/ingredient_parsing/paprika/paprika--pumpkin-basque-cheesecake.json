@@ -134,11 +134,15 @@
             "unit": "lb"
           },
           {
+            "amount": "1",
+            "unit": "227-gram packages"
+          },
+          {
             "amount": "454",
             "unit": "g"
           }
         ],
-        "note": "2 8-ounce/227-gram packages, see Note",
+        "note": "see Note",
         "category": "Cheese"
       }
     },
@@ -164,9 +168,13 @@
           {
             "amount": "1.25",
             "unit": "cup"
+          },
+          {
+            "amount": "1",
+            "unit": "425-gram can"
           }
         ],
-        "note": "less than a 15-ounce/425-gram can",
+        "note": null,
         "category": "Produce"
       }
     }

@@ -86,9 +86,13 @@
           {
             "amount": "1",
             "unit": "tsp"
+          },
+          {
+            "amount": "7",
+            "unit": "g"
           }
         ],
-        "note": "from a 1/4-ounce or 7-gram envelope, will be just about half an envelope",
+        "note": null,
         "category": "Baking"
       }
     },
@@ -174,11 +178,15 @@
             "unit": "cup"
           },
           {
+            "amount": "1",
+            "unit": "355-gram can"
+          },
+          {
             "amount": "304",
             "unit": "g"
           }
         ],
-        "note": "12 1/2-ounce or 355-gram can, recipe follows",
+        "note": "recipe follows",
         "category": "Other"
       }
     },

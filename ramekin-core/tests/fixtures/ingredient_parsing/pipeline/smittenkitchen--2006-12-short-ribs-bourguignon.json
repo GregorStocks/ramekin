@@ -158,9 +158,13 @@
           {
             "amount": "4",
             "unit": "cup"
+          },
+          {
+            "amount": "0.5",
+            "unit": "cup"
           }
         ],
-        "note": "or 1/2 cup Demi-Glace Gold concentrate * (concentrate requires a dilution ratio of 1:8; 1/2 cup concentrate to 4 cups water)",
+        "note": "or 1/2 cup Demi-Glace Gold concentrate",
         "category": "Canned Goods"
       }
     },
@@ -332,9 +336,17 @@
           {
             "amount": "3",
             "unit": null
+          },
+          {
+            "amount": "0.25",
+            "unit": "lb"
+          },
+          {
+            "amount": "113",
+            "unit": "g"
           }
         ],
-        "note": "preferably applewood-smoked; 1/4 lb total",
+        "note": null,
         "category": "Meat & Seafood"
       }
     },

@@ -124,11 +124,15 @@
           "unit": "lb"
         },
         {
+          "amount": "1",
+          "unit": "227-gram packages"
+        },
+        {
           "amount": "454",
           "unit": "g"
         }
       ],
-      "note": "2 8-ounce/227-gram packages, see Note",
+      "note": "see Note",
       "raw": "1 pound cream cheese (2 8-ounce/227-gram packages) (see Note)",
       "section": null
     },
@@ -150,9 +154,13 @@
         {
           "amount": "1.25",
           "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": "425-gram can"
         }
       ],
-      "note": "less than a 15-ounce/425-gram can",
+      "note": null,
       "raw": "1 ¼ cups canned pumpkin puree (less than a 15-ounce/425-gram can)",
       "section": null
     }
