@@ -1,0 +1,26 @@
+{
+  "title": "Decide snapshot coverage for prose-only Smitten Kitchen posts",
+  "description": "While restoring the URLs pruned from \
+`data/pipeline-snapshot-urls.json` in #482, `make pipeline` still failed on \
+`https://smittenkitchen.com/2008/07/huevos-rancheros/` because the page has \
+Jetpack `hrecipe` metadata with an empty recipe body and prose-only \
+directions. Commit #493 intentionally pinned this exact page with \
+`old_smitten_kitchen_prose_only_post_fails_cleanly` so we fail with \
+`recipeIngredient (empty)` instead of inventing ingredients from narrative \
+text.\n\
+\n\
+Decide whether this kind of page should remain excluded from snapshot \
+coverage, be handled by a manually reviewed site-specific extraction rule, or \
+be represented some other way. Do not re-add the URL to \
+`data/pipeline-snapshot-urls.json` until `make pipeline` can regenerate it \
+without contradicting the #493 correctness decision.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "extraction",
+    "pipeline",
+  ],
+  "created_at": "2026-04-28T11:35:08-07:00",
+  "updated_at": "2026-04-28T11:35:08-07:00",
+}
