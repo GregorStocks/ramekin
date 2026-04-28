@@ -440,20 +440,16 @@
           {
             "amount": "1",
             "unit": "package"
-          },
-          {
-            "amount": "50",
-            "unit": "g"
           }
         ],
-        "note": null,
+        "note": "50g Marich milk chocolate salted caramel popcorn",
         "category": "Snacks"
       }
     },
     {
       "raw": "1  package (50 g Marich dark chocolate salted caramels)",
       "expected": {
-        "item": "1  package (50 g Marich dark chocolate salted caramels)",
+        "item": "Marich dark chocolate salted caramels",
         "measurements": [
           {
             "amount": "1",

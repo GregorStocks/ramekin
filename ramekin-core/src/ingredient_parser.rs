@@ -744,7 +744,12 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             .trim_end()
             .trim_end_matches(',')
             .trim_end();
-        let after_parenthetical = remaining.get(close_idx + 1..).unwrap_or("").trim_start();
+        let after_parenthetical = remaining
+            .get(close_idx + 1..)
+            .unwrap_or("")
+            .trim_start()
+            .trim_start_matches(')')
+            .trim_start();
 
         if let Some((item_segment, note_segment)) = split_parenthetical_item_identity(paren_content)
         {
@@ -1680,6 +1685,10 @@ fn split_parenthetical_item_identity(content: &str) -> Option<(String, Option<St
         return None;
     }
 
+    if let Some(measured_identity) = split_measured_parenthetical_item_identity(cleaned) {
+        return Some(measured_identity);
+    }
+
     let split_idx = cleaned
         .char_indices()
         .find_map(|(idx, ch)| (ch == ',' || ch == ';').then_some(idx));
@@ -1709,6 +1718,28 @@ fn split_parenthetical_item_identity(content: &str) -> Option<(String, Option<St
             .filter(|segment| !segment.is_empty())
             .map(str::to_string),
     ))
+}
+
+fn split_measured_parenthetical_item_identity(content: &str) -> Option<(String, Option<String>)> {
+    let (_, after_pre_amount_modifier) = strip_measurement_modifier(content);
+    let (amount, after_amount) = extract_amount(&after_pre_amount_modifier);
+    let (_, after_pre_unit_modifier) = strip_measurement_modifier(&after_amount);
+    let (unit, after_unit) = extract_unit(&after_pre_unit_modifier);
+    if amount.is_none() || unit.is_none() {
+        return None;
+    }
+
+    let item_and_note = after_unit.trim().trim_start_matches(',').trim();
+    if item_and_note.is_empty() {
+        return None;
+    }
+
+    let item_segment = item_and_note.split([',', ';']).next().unwrap_or("").trim();
+    if !looks_like_parenthetical_item_identity(item_segment) {
+        return None;
+    }
+
+    Some((item_segment.to_string(), Some(content.to_string())))
 }
 
 fn looks_like_parenthetical_item_identity(s: &str) -> bool {

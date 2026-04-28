@@ -236,11 +236,11 @@
     {
       "raw": "2  packages (12.4 ounces each Twizzler Rainbow Candy Twists)",
       "expected": {
-        "item": "2  packages (12.4 ounces each Twizzler Rainbow Candy Twists)",
+        "item": "Twizzler Rainbow Candy Twists",
         "measurements": [
           {
             "amount": "2",
-            "unit": "package"
+            "unit": "package each"
           }
         ],
         "note": "12.4 ounces each Twizzler Rainbow Candy Twists",

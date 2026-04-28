@@ -5,7 +5,7 @@
     {
       "raw": "4-6  medium (2 lbs tomatoes)",
       "expected": {
-        "item": "4-6  medium (2 lbs tomatoes)",
+        "item": "tomatoes",
         "measurements": [
           {
             "amount": "4-6",
@@ -19,7 +19,7 @@
     {
       "raw": "4-5  small (1 lb cucumbers, or 1 english cucumber))",
       "expected": {
-        "item": ")",
+        "item": "cucumbers",
         "measurements": [
           {
             "amount": "4-5",
@@ -27,7 +27,7 @@
           }
         ],
         "note": "1 lb cucumbers, or 1 english cucumber",
-        "category": "Other"
+        "category": "Produce"
       }
     },
     {
