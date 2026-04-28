@@ -198,6 +198,13 @@ mod tests {
     }
 
     #[test]
+    fn test_cookie_snacks() {
+        assert_eq!(categorize("Oreo cookie crumbs"), "Snacks");
+        assert_eq!(categorize("cookie crumbs"), "Snacks");
+        assert_eq!(categorize("cookies"), "Snacks");
+    }
+
+    #[test]
     fn test_ginger_mixer_categories() {
         assert_eq!(categorize("ginger beer"), "Beverages");
         assert_eq!(categorize("ginger ale"), "Beverages");
