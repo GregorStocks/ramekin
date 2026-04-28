@@ -13,15 +13,23 @@
   "source_name": "Cooking.nytimes.com",
   "ingredients": [
     {
-      "item": "cups/420 milliliters warm water",
+      "item": "warm water",
       "measurements": [
         {
           "amount": "1.75",
-          "unit": null
+          "unit": "cup"
         },
         {
           "amount": "100",
           "unit": "degrees"
+        },
+        {
+          "amount": "420",
+          "unit": "ml"
+        },
+        {
+          "amount": "415",
+          "unit": "g"
         }
       ],
       "note": null,
@@ -61,11 +69,15 @@
       "section": null
     },
     {
-      "item": "cups/448 grams all-purpose flour",
+      "item": "all-purpose flour",
       "measurements": [
         {
           "amount": "3.5",
-          "unit": null
+          "unit": "cup"
+        },
+        {
+          "amount": "448",
+          "unit": "g"
         }
       ],
       "note": null,
@@ -136,7 +148,7 @@
         },
         {
           "amount": "1",
-          "unit": null
+          "unit": "cup"
         }
       ],
       "note": "thinly sliced and cut into half moons",

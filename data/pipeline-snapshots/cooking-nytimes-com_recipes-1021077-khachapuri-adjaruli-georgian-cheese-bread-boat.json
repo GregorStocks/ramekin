@@ -13,11 +13,15 @@
   "source_name": "Cooking.nytimes.com",
   "ingredients": [
     {
-      "item": "cups/225 grams all-purpose or bread flour",
+      "item": "all-purpose or bread flour",
       "measurements": [
         {
           "amount": "1.75",
-          "unit": null
+          "unit": "cup"
+        },
+        {
+          "amount": "225",
+          "unit": "g"
         }
       ],
       "note": null,
@@ -105,11 +109,15 @@
       "section": null
     },
     {
-      "item": "cup/100 grams shredded whole milk, low-moisture mozzarella",
+      "item": "shredded whole milk, low-moisture mozzarella",
       "measurements": [
         {
           "amount": "1",
-          "unit": null
+          "unit": "cup"
+        },
+        {
+          "amount": "100",
+          "unit": "g"
         }
       ],
       "note": "not fresh mozzarella",
@@ -117,11 +125,15 @@
       "section": null
     },
     {
-      "item": "cup/40 grams goat cheese",
+      "item": "goat cheese",
       "measurements": [
         {
           "amount": "0.33",
-          "unit": null
+          "unit": "cup"
+        },
+        {
+          "amount": "40",
+          "unit": "g"
         }
       ],
       "note": "finely crumbled",
@@ -129,14 +141,18 @@
       "section": null
     },
     {
-      "item": "cup/40 grams drained",
+      "item": "drained, finely crumbled brined feta (not low-fat or light)",
       "measurements": [
         {
           "amount": "0.33",
-          "unit": null
+          "unit": "cup"
+        },
+        {
+          "amount": "40",
+          "unit": "g"
         }
       ],
-      "note": "finely crumbled brined feta (not low-fat or light)",
+      "note": null,
       "raw": "1/3 cup/40 grams drained, finely crumbled brined feta (not low-fat or light)",
       "section": null
     },

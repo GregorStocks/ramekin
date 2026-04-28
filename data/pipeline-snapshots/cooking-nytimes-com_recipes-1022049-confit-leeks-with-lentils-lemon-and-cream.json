@@ -21,11 +21,15 @@
         },
         {
           "amount": "2.5",
-          "unit": null
+          "unit": "lb"
         },
         {
           "amount": "6",
-          "unit": null
+          "unit": "cup"
+        },
+        {
+          "amount": "1134",
+          "unit": "g"
         }
       ],
       "note": null,
@@ -64,23 +68,35 @@
       "section": null
     },
     {
-      "item": "3/4 cup plus 2 tablespoons/200 milliliters extra-virgin olive oil",
+      "item": "extra-virgin olive oil",
       "measurements": [
         {
-          "amount": "0.75",
-          "unit": "cup"
+          "amount": "3/4 cup plus 2 tablespoons",
+          "unit": null
+        },
+        {
+          "amount": "200",
+          "unit": "ml"
+        },
+        {
+          "amount": "183",
+          "unit": "g"
         }
       ],
-      "note": "plus 2 tablespoons/200 milliliters extra-virgin olive oil",
+      "note": null,
       "raw": "3/4 cup plus 2 tablespoons/200 milliliters extra-virgin olive oil",
       "section": null
     },
     {
-      "item": "cup/150 grams dried French (Le Puy) lentils",
+      "item": "dried French (Le Puy) lentils",
       "measurements": [
         {
           "amount": "0.75",
-          "unit": null
+          "unit": "cup"
+        },
+        {
+          "amount": "150",
+          "unit": "g"
         }
       ],
       "note": "washed",
@@ -88,14 +104,18 @@
       "section": null
     },
     {
-      "item": "1/3 cup plus 1 tablespoon/100 milliliters heavy cream (double cream)",
+      "item": "heavy cream (double cream)",
       "measurements": [
         {
-          "amount": "0.33",
-          "unit": "cup"
+          "amount": "1/3 cup plus 1 tablespoon",
+          "unit": null
+        },
+        {
+          "amount": "100",
+          "unit": "ml"
         }
       ],
-      "note": "plus 1 tablespoon/100 milliliters heavy cream (double cream)",
+      "note": null,
       "raw": "1/3 cup plus 1 tablespoon/100 milliliters heavy cream (double cream)",
       "section": null
     },
@@ -116,11 +136,15 @@
       "section": null
     },
     {
-      "item": "tablespoons/75 milliliters fresh lemon juice (from 2 medium lemons)",
+      "item": "fresh lemon juice (from 2 medium lemons)",
       "measurements": [
         {
           "amount": "5",
-          "unit": null
+          "unit": "tbsp"
+        },
+        {
+          "amount": "75",
+          "unit": "ml"
         }
       ],
       "note": null,

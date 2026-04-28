@@ -5,11 +5,15 @@
     {
       "raw": "2 tbsp/ 30 ml Early Harvest Greek extra virgin olive oil, more for later",
       "expected": {
-        "item": "tbsp/ 30 ml Early Harvest Greek extra virgin olive oil, more for later",
+        "item": "Early Harvest Greek extra virgin olive oil, more for later",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "tbsp"
+          },
+          {
+            "amount": "30",
+            "unit": "ml"
           }
         ],
         "note": null,
@@ -19,11 +23,15 @@
     {
       "raw": "2 tbsp/ 23 g Ghee (clarified butter)",
       "expected": {
-        "item": "tbsp/ 23 g Ghee (clarified butter)",
+        "item": "Ghee (clarified butter)",
         "measurements": [
           {
             "amount": "2",
-            "unit": null
+            "unit": "tbsp"
+          },
+          {
+            "amount": "23",
+            "unit": "g"
           }
         ],
         "note": null,
@@ -33,11 +41,15 @@
     {
       "raw": "1 lb/ 453 g shallots, peeled",
       "expected": {
-        "item": "lb/ 453 g shallots",
+        "item": "shallots",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "lb"
+          },
+          {
+            "amount": "453",
+            "unit": "g"
           }
         ],
         "note": "peeled",
@@ -89,11 +101,15 @@
     {
       "raw": "1 lb/ 453 g baby bella mushrooms, cleaned and halved",
       "expected": {
-        "item": "lb/ 453 g baby bella mushrooms",
+        "item": "baby bella mushrooms",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "lb"
+          },
+          {
+            "amount": "453",
+            "unit": "g"
           }
         ],
         "note": "cleaned and halved",
@@ -103,11 +119,15 @@
     {
       "raw": "1/2 lb/ 226 g white mushrooms, cleaned and halved",
       "expected": {
-        "item": "lb/ 226 g white mushrooms",
+        "item": "white mushrooms",
         "measurements": [
           {
             "amount": "0.5",
-            "unit": null
+            "unit": "lb"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
           }
         ],
         "note": "cleaned and halved",
