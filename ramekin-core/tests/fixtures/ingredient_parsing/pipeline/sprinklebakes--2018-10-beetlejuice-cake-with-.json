@@ -333,14 +333,18 @@
     {
       "raw": "2  sticks (226g unsalted butter, softened)",
       "expected": {
-        "item": "2  sticks (226g unsalted butter, softened)",
+        "item": "unsalted butter",
         "measurements": [
           {
             "amount": "2",
             "unit": "stick"
+          },
+          {
+            "amount": "226",
+            "unit": "g"
           }
         ],
-        "note": "226g unsalted butter, softened",
+        "note": "softened",
         "category": "Dairy & Eggs"
       }
     },

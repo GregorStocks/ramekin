@@ -240,8 +240,13 @@
       "raw": "3  cloves ((optional))",
       "expected": {
         "item": "3  cloves ((optional))",
-        "measurements": [],
-        "note": null,
+        "measurements": [
+          {
+            "amount": "3",
+            "unit": "clove"
+          }
+        ],
+        "note": "optional",
         "category": "Spices & Seasonings"
       }
     },

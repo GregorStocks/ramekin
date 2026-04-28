@@ -79,14 +79,14 @@
     {
       "raw": "3  cloves ((the spice cloves!))",
       "expected": {
-        "item": "3  cloves ((the spice cloves!))",
+        "item": "the spice cloves!",
         "measurements": [
           {
             "amount": "3",
             "unit": "clove"
           }
         ],
-        "note": "the spice cloves!",
+        "note": null,
         "category": "Spices & Seasonings"
       }
     },

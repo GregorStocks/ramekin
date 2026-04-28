@@ -1615,7 +1615,7 @@ fn split_parenthetical_item_identity(content: &str) -> Option<(String, Option<St
         None => (cleaned, None),
     };
 
-    if item_segment.contains(['(', ')']) || !looks_like_parenthetical_count_unit(item_segment) {
+    if !looks_like_parenthetical_item_identity(item_segment) {
         return None;
     }
 
@@ -1625,6 +1625,80 @@ fn split_parenthetical_item_identity(content: &str) -> Option<(String, Option<St
             .filter(|segment| !segment.is_empty())
             .map(str::to_string),
     ))
+}
+
+fn looks_like_parenthetical_item_identity(s: &str) -> bool {
+    const GUIDANCE_PREFIXES: &[&str] = &[
+        "about",
+        "approx",
+        "approximately",
+        "around",
+        "as",
+        "at",
+        "depending",
+        "for",
+        "from",
+        "if",
+        "note",
+        "or",
+        "per",
+        "plus",
+        "see",
+        "to",
+        "with",
+    ];
+    const NON_NOUN_WORDS: &[&str] = &[
+        "a", "an", "and", "big", "chopped", "diced", "large", "mashed", "medium", "mini", "ripe",
+        "small", "the", "tiny", "well",
+    ];
+
+    if s.contains(['(', ')']) {
+        return false;
+    }
+
+    let mut words = s.split_whitespace().peekable();
+    let Some(first_word) = words.peek() else {
+        return false;
+    };
+    let first_normalized = normalize_identity_word(first_word);
+    if first_normalized.is_empty() || GUIDANCE_PREFIXES.contains(&first_normalized.as_str()) {
+        return false;
+    }
+
+    let mut has_noun = false;
+    for word in s.split_whitespace() {
+        let normalized = normalize_identity_word(word);
+        if normalized.is_empty() {
+            continue;
+        }
+        if normalized.chars().any(|c| c.is_ascii_digit()) {
+            return false;
+        }
+        if !normalized
+            .chars()
+            .all(|c| c.is_ascii_alphabetic() || c == '-')
+        {
+            return false;
+        }
+        if NON_NOUN_WORDS.contains(&normalized.as_str()) {
+            continue;
+        }
+        if PREP_NOTES
+            .iter()
+            .any(|note| normalized == *note || note.starts_with(&format!("{} ", normalized)))
+        {
+            continue;
+        }
+
+        has_noun = true;
+    }
+
+    has_noun
+}
+
+fn normalize_identity_word(word: &str) -> String {
+    word.trim_matches(|c: char| !c.is_ascii_alphabetic() && c != '-')
+        .to_lowercase()
 }
 
 fn outside_lacks_item_identity(s: &str) -> bool {
@@ -3566,6 +3640,16 @@ mod tests {
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("3".to_string()));
         assert_eq!(result.measurements[0].unit, Some("large".to_string()));
+    }
+
+    #[test]
+    fn test_parenthetical_item_identity_allows_punctuation() {
+        let result = parse_ingredient("3 cloves ((the spice cloves!))");
+        assert_eq!(result.item, "the spice cloves!");
+        assert_eq!(result.note, None);
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("3".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("clove".to_string()));
     }
 
     #[test]
