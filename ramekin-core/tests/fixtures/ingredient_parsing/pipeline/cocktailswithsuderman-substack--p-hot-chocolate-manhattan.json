@@ -1,0 +1,92 @@
+{
+  "source": "cocktailswithsuderman-substack",
+  "recipe_slug": "p-hot-chocolate-manhattan",
+  "ingredients": [
+    {
+      "raw": "1 ½ ounces semi-sweet chocolate",
+      "expected": {
+        "item": "semi-sweet chocolate",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    },
+    {
+      "raw": "8 ounces whole milk",
+      "expected": {
+        "item": "whole milk",
+        "measurements": [
+          {
+            "amount": "8",
+            "unit": "oz"
+          },
+          {
+            "amount": "227",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Dairy & Eggs"
+      }
+    },
+    {
+      "raw": "¾ ounce sweet vermouth, preferably Carpano Antica formula",
+      "expected": {
+        "item": "sweet vermouth",
+        "measurements": [
+          {
+            "amount": "0.75",
+            "unit": "oz"
+          },
+          {
+            "amount": "21",
+            "unit": "g"
+          }
+        ],
+        "note": "preferably Carpano Antica formula",
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "1 ½ ounces whiskey, such as Wild Turkey 101 bourbon",
+      "expected": {
+        "item": "whiskey, such as Wild Turkey 101 bourbon",
+        "measurements": [
+          {
+            "amount": "1.5",
+            "unit": "oz"
+          },
+          {
+            "amount": "43",
+            "unit": "g"
+          }
+        ],
+        "note": null,
+        "category": "Beverages"
+      }
+    },
+    {
+      "raw": "2 dashes Angostura Aromatic bitters",
+      "expected": {
+        "item": "Angostura Aromatic bitters",
+        "measurements": [
+          {
+            "amount": "2",
+            "unit": "dash"
+          }
+        ],
+        "note": null,
+        "category": "Other"
+      }
+    }
+  ]
+}
