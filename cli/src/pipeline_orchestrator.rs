@@ -860,8 +860,10 @@ fn snapshot_allowlist_path(test_urls_path: &Path) -> PathBuf {
 /// catches Serious Eats "complete guide" articles (e.g. the food-lab guides),
 /// which have no concrete `recipeIngredient` and break `make pipeline`.
 fn unsupported_snapshot_url_reason(url: &str) -> Option<&'static str> {
-    let lower = url.to_lowercase();
-    if lower.contains("seriouseats.com") && lower.contains("complete-guide-to-") {
+    let parsed = reqwest::Url::parse(url).ok()?;
+    let host = parsed.host_str()?.to_lowercase();
+    let host = host.strip_prefix("www.").unwrap_or(&host);
+    if host == "seriouseats.com" && parsed.path().to_lowercase().contains("complete-guide-to-") {
         return Some(
             "Serious Eats \"complete guide\" articles are not concrete recipes; \
              use a specific recipe URL instead",
@@ -1787,7 +1789,7 @@ mod tests {
     #[test]
     fn unsupported_snapshot_url_reason_allows_existing_recipe_urls() {
         // Recipes that include "food-lab" must not be flagged — only "complete-guide-to-"
-        // guides are rejected.
+        // guides on the Serious Eats host are rejected.
         assert!(unsupported_snapshot_url_reason(
             "https://www.seriouseats.com/chorizo-potato-tacos-how-to-food-lab-recipe"
         )
@@ -1804,6 +1806,31 @@ mod tests {
             "https://www.seriouseats.com/food-lab-complete-guide-to-sous-vide-steak"
         )
         .is_some());
+    }
+
+    #[test]
+    fn unsupported_snapshot_url_reason_only_matches_seriouseats_host() {
+        // Other hosts whose name happens to embed "seriouseats.com" or whose path
+        // contains "complete-guide-to-" must not be flagged.
+        assert!(unsupported_snapshot_url_reason(
+            "https://notseriouseats.com/food-lab-complete-guide-to-sous-vide-steak"
+        )
+        .is_none());
+        assert!(
+            unsupported_snapshot_url_reason("https://example.com/complete-guide-to-pizza")
+                .is_none()
+        );
+        // The host check accepts both bare and www. variants.
+        assert!(unsupported_snapshot_url_reason(
+            "https://seriouseats.com/food-lab-complete-guide-to-sous-vide-steak"
+        )
+        .is_some());
+        // Query strings or fragments that mention the pattern but aren't in the path
+        // must not trigger.
+        assert!(unsupported_snapshot_url_reason(
+            "https://www.seriouseats.com/marinara-sauce-recipe?ref=complete-guide-to-pizza"
+        )
+        .is_none());
     }
 
     #[test]
