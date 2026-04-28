@@ -45,7 +45,7 @@ struct CuratedDataFile {
     ingredients: HashMap<String, CuratedIngredient>,
     /// Aliases can be null to indicate "explicitly ambiguous, do not resolve"
     aliases: HashMap<String, Option<String>>,
-    /// Rewrites rename ingredient items before density lookup (e.g. "salt" → "salt, presumably Diamond")
+    /// Rewrites rename ingredient items before density lookup (e.g. "salt" -> "kosher salt")
     #[serde(default)]
     rewrites: HashMap<String, String>,
 }
@@ -56,7 +56,7 @@ struct MergedData {
     ingredients: HashMap<String, f64>,
     /// Alias -> canonical name (or None if explicitly ambiguous)
     aliases: HashMap<String, Option<String>>,
-    /// Rewrites rename ingredient items (e.g. "salt" → "salt, presumably Diamond")
+    /// Rewrites rename ingredient items (e.g. "salt" -> "kosher salt")
     rewrites: HashMap<String, String>,
 }
 
@@ -200,8 +200,8 @@ fn normalize_ingredient_name(s: &str) -> String {
 
 /// Rewrite an ingredient name using curated rewrite rules.
 ///
-/// Rewrites rename ingredients to make assumptions visible
-/// (e.g. "salt" → "salt, presumably Diamond").
+/// Rewrites normalize ingredients before display and density lookup
+/// (e.g. "salt" -> "kosher salt").
 /// Returns the rewritten name if a rule matches, otherwise None.
 pub fn rewrite_ingredient(name: &str) -> Option<&'static str> {
     let normalized = normalize_ingredient_name(name);
@@ -371,15 +371,11 @@ mod tests {
 
     #[test]
     fn test_salt_density() {
-        // "salt" maps to Diamond Crystal kosher salt (137.0 g/cup)
+        // "salt" maps to the curated kosher salt density (137.0 g/cup)
         let density = find_density("salt").unwrap();
         assert!((density - 137.0).abs() < 0.1);
 
-        // "salt, presumably diamond" also resolves
-        let density = find_density("salt, presumably Diamond").unwrap();
-        assert!((density - 137.0).abs() < 0.1);
-
-        // "kosher salt" resolves via alias without rewriting the visible item name
+        // "kosher salt" resolves via alias
         let density = find_density("kosher salt").unwrap();
         assert!((density - 137.0).abs() < 0.1);
 
@@ -390,8 +386,8 @@ mod tests {
 
     #[test]
     fn test_rewrite_ingredient() {
-        assert_eq!(rewrite_ingredient("salt"), Some("salt, presumably Diamond"));
-        assert_eq!(rewrite_ingredient("Salt"), Some("salt, presumably Diamond"));
+        assert_eq!(rewrite_ingredient("salt"), Some("kosher salt"));
+        assert_eq!(rewrite_ingredient("Salt"), Some("kosher salt"));
         assert_eq!(rewrite_ingredient("kosher salt"), None);
         assert_eq!(rewrite_ingredient("Kosher Salt"), None);
         assert_eq!(rewrite_ingredient("flour"), None);

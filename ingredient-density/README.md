@@ -36,9 +36,7 @@ if let Some(grams_per_cup) = find_density("all-purpose flour") {
 3. Plural/singular variations (e.g., "onion" → "onions")
 4. After stripping temperature modifiers (e.g., "softened butter" → "butter")
 
-Returns `None` for unknown ingredients or explicitly ambiguous terms (like
-"kosher salt" which could be Diamond Crystal or Morton, with very different
-densities).
+Returns `None` for unknown ingredients or explicitly ambiguous terms.
 
 ## Adding Curated Data
 
@@ -55,7 +53,7 @@ Edit `src/data/curated.json` to add verified density values:
   },
   "aliases": {
     "table salt": "salt, table",
-    "kosher salt": null  // null = ambiguous, returns None
+    "sea salt": null  // null = ambiguous, returns None
   }
 }
 ```
