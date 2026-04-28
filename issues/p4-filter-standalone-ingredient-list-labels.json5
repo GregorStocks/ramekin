@@ -1,0 +1,23 @@
+{
+  "title": "Filter standalone ingredient list labels from ingredient lines",
+  "description": "While fixing standalone yield/count metadata filtering, the \
+pipeline still showed bare non-ingredient list labels being parsed as \
+ingredients:\n\
+\n\
+  - Raw: `Ingredients`; current item: `Ingredients`\n\
+  - Raw: `Serve with`; current item: `Serve with`\n\
+\n\
+These are list headings or serving-section labels, not ingredients. Audit \
+similar standalone label lines and filter them without dropping real \
+ingredient items that include the same words as part of a longer ingredient \
+phrase.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+    "pipeline",
+  ],
+  "created_at": "2026-04-28T11:40:01-07:00",
+  "updated_at": "2026-04-28T11:40:01-07:00",
+}

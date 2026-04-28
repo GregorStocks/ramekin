@@ -3232,6 +3232,41 @@ fn is_equipment_line(lower: &str) -> bool {
     true
 }
 
+fn is_standalone_yield_metadata_line(raw: &str) -> bool {
+    let trimmed = raw.trim();
+    let unwrapped = if trimmed.starts_with('(') && trimmed.ends_with(')') {
+        let closing_idx = trimmed.len() - 1;
+        if find_matching_closing_paren(trimmed, 0) == Some(closing_idx) {
+            trimmed.get(1..closing_idx).unwrap_or(trimmed).trim()
+        } else {
+            trimmed
+        }
+    } else {
+        trimmed
+    };
+    let normalized = unwrapped.trim().trim_end_matches(['.', '!', ';']).trim();
+    let lower = normalized.to_lowercase();
+
+    if !lower.chars().any(|c| c.is_ascii_digit()) {
+        return false;
+    }
+
+    const PREFIXES: &[&str] = &[
+        "yield ",
+        "yield:",
+        "yields ",
+        "yields:",
+        "serves ",
+        "serves:",
+        "makes ",
+        "makes:",
+        "this makes ",
+        "this recipe makes ",
+    ];
+
+    PREFIXES.iter().any(|prefix| lower.starts_with(prefix))
+}
+
 /// Check if a line should be completely ignored (scraper artifact or equipment).
 /// Returns true if the line should be skipped entirely.
 pub fn should_ignore_line(raw: &str) -> bool {
@@ -3240,6 +3275,10 @@ pub fn should_ignore_line(raw: &str) -> bool {
 
     // Skip lines that are only asterisks (footnote section dividers, e.g., "**")
     if !trimmed.is_empty() && trimmed.chars().all(|c| c == '*') {
+        return true;
+    }
+
+    if is_standalone_yield_metadata_line(trimmed) {
         return true;
     }
 
@@ -3746,11 +3785,22 @@ mod tests {
         assert!(should_ignore_line("Special equipment: Spice grinder"));
         assert!(should_ignore_line("Equipment: Stand mixer"));
         assert!(should_ignore_line("Notes: See recipe headnotes"));
+        assert!(should_ignore_line("(This makes a 12-ounce batch.)"));
+        assert!(should_ignore_line("Yield: 10 3-inch biscuits"));
+        assert!(should_ignore_line("Yield 26 to 28 cookies"));
+        assert!(should_ignore_line("Yields: 12 bars"));
+        assert!(should_ignore_line("Serves 4 generously"));
+        assert!(should_ignore_line("Makes 12 muffins"));
 
         // Regular ingredients should not be ignored
         assert!(!should_ignore_line("1 cup flour"));
         assert!(!should_ignore_line("salt to taste"));
         assert!(!should_ignore_line("For the sauce:"));
+        assert!(!should_ignore_line(
+            "40 grams raspberries (about 10 raspberries)"
+        ));
+        assert!(!should_ignore_line("(about 10 raspberries)"));
+        assert!(!should_ignore_line("Serve with"));
     }
 
     #[test]
