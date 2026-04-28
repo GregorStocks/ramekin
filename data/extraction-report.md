@@ -2,27 +2,27 @@
 
 ## Overall
 
-- Total URLs: 5535
+- Total URLs: 5534
 - Completed: 5467 (98.8%)
 - Failed at fetch: 0 (0.0%)
-- Failed at extract: 68 (1.2%)
+- Failed at extract: 67 (1.2%)
 
 ## Extraction Methods
 
-- JSON-LD: 4276/5535 (77.3%)
-- Microdata: 537/5535 (9.7%)
-- Both: 0/5535 (0.0%)
-- Neither: 722/5535 (13.0%)
+- JSON-LD: 4276/5534 (77.3%)
+- Microdata: 537/5534 (9.7%)
+- Both: 0/5534 (0.0%)
+- Neither: 721/5534 (13.0%)
 
 ## Ingredient Parsing
 
 - Total ingredients: 60727
-- Volume-to-weight converted: 18183/43015 (42.3%)
-- Unknown ingredient (no density data): 15088
-- Already has weight: 9744
-- No volume unit (count-based): 17392
+- Volume-to-weight converted: 18183/43022 (42.3%)
+- Unknown ingredient (no density data): 15090
+- Already has weight: 9749
+- No volume unit (count-based): 17382
 - Metric converted (oz→g): 2715
-- Metric converted (lb→g): 1828
+- Metric converted (lb→g): 1831
 
 ## AI Cache
 
@@ -104,7 +104,7 @@
 | recipetineats.com | 10 | 10 | 100.0% |
 | runningwithspoons.com | 1 | 1 | 100.0% |
 | sallysbakingaddiction.com | 34 | 34 | 100.0% |
-| seriouseats.com | 167 | 168 | 99.4% |
+| seriouseats.com | 167 | 167 | 100.0% |
 | simplyrecipes.com | 99 | 100 | 99.0% |
 | skinnytaste.com | 2 | 2 | 100.0% |
 | slenderkitchen.com | 55 | 55 | 100.0% |
@@ -133,7 +133,7 @@
 
 ## Failed URLs by Error
 
-### Missing required field: recipeIngredient (empty) (67 URLs)
+### Missing required field: recipeIngredient (empty) (66 URLs)
 
 - http://bakingbites.com/2017/02/how-to-use-freeze-dried-fruit-in-baking/
 - https://barefeetinthekitchen.com/diy-fruit-and-vegetable-wash-homemade-produce-wash-recipe/
@@ -181,7 +181,6 @@
 - https://www.mybakingaddiction.com/apple-cinnamon-cheesecake-recipe/
 - https://www.mybakingaddiction.com/smores-recipe/
 - https://www.mybakingaddiction.com/tollhouse-cookies-recipe/
-- https://www.seriouseats.com/food-lab-complete-guide-to-sous-vide-steak
 - https://www.simplyrecipes.com/recipes/the_finger_test_to_check_the_doneness_of_meat/
 - https://www.sprinklebakes.com/2018/04/celebrate-like-royal-with-lemon.html
 - https://www.sprinklebakes.com/2018/05/rhubarb-pie-with-double-crust.html
