@@ -810,9 +810,10 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                 .trim_start_matches(',')
                 .trim()
                 .to_string();
-            if deferred_parenthetical_note.is_none()
-                && trimmed_content.to_lowercase().contains("degree")
-            {
+            let lower_trimmed = trimmed_content.to_lowercase();
+            let preserve_as_note = lower_trimmed.contains("degree")
+                || starts_with_approximate_guidance_note(&trimmed_content);
+            if deferred_parenthetical_note.is_none() && preserve_as_note {
                 deferred_parenthetical_note = Some(trimmed_content);
             }
             let before = remaining
@@ -1628,6 +1629,25 @@ fn looks_like_ignorable_parenthetical_hint(s: &str) -> bool {
         || lower.starts_with("about ")
         || lower.starts_with("approx ")
         || lower.starts_with("approximately ")
+}
+
+fn starts_with_approximate_guidance_note(s: &str) -> bool {
+    let trimmed = s.trim().trim_start_matches(',').trim();
+    let lower = trimmed.to_lowercase();
+    let remainder = if lower.starts_with("about ") {
+        trimmed.get(6..).unwrap_or("").trim_start()
+    } else if lower.starts_with("approx ") {
+        trimmed.get(7..).unwrap_or("").trim_start()
+    } else if lower.starts_with("approximately ") {
+        trimmed.get(14..).unwrap_or("").trim_start()
+    } else {
+        return false;
+    };
+
+    remainder
+        .chars()
+        .next()
+        .is_some_and(|c| !c.is_ascii_digit())
 }
 
 /// Strip common qualifiers from measurement strings, but preserve "each" as a unit suffix.
@@ -3450,6 +3470,26 @@ mod tests {
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("2.5".to_string()));
         assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+    }
+
+    #[test]
+    fn test_parenthetical_approximate_quantity_guidance_becomes_note() {
+        let result = parse_ingredient("5 cups thinly sliced cabbage (about half a small head)");
+        assert_eq!(result.item, "thinly sliced cabbage");
+        assert_eq!(result.note, Some("about half a small head".to_string()));
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("5".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+    }
+
+    #[test]
+    fn test_parenthetical_approximate_yield_hint_is_ignored() {
+        let result = parse_ingredient("1 rack beef back ribs (about 7 bones)");
+        assert_eq!(result.item, "rack beef back ribs");
+        assert_eq!(result.note, None);
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("1".to_string()));
+        assert_eq!(result.measurements[0].unit, None);
     }
 
     #[test]
