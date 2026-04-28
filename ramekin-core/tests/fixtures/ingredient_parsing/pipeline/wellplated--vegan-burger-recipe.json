@@ -175,7 +175,7 @@
     {
       "raw": "1 can black beans, ((15 ounces) rinsed and drained)",
       "expected": {
-        "item": "black beans rinsed and drained)",
+        "item": "black beans rinsed and drained",
         "measurements": [
           {
             "amount": "1",
@@ -220,10 +220,10 @@
     {
       "raw": "Sliced tomatoes, (avocado, arugula, sliced red onions, avocado, plain yogurt (dairy-free if needed), mustard)",
       "expected": {
-        "item": "Sliced tomatoes, mustard)",
+        "item": "Sliced tomatoes",
         "measurements": [],
-        "note": "avocado, arugula, sliced red onions, avocado, plain yogurt (dairy-free if needed",
-        "category": "Condiments & Sauces"
+        "note": "avocado, arugula, sliced red onions, avocado, plain yogurt (dairy-free if needed), mustard",
+        "category": "Produce"
       }
     }
   ]

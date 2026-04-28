@@ -37,14 +37,18 @@
     {
       "raw": "2 cup cabbage (cut into about 2&amp;quot; (5 cm) squares)",
       "expected": {
-        "item": "cabbage squares)",
+        "item": "cabbage",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "159",
+            "unit": "g"
           }
         ],
-        "note": "cut into about 2\" (5 cm",
+        "note": "cut into about 2\" (5 cm) squares",
         "category": "Produce"
       }
     },

@@ -23,7 +23,7 @@
     {
       "raw": "8 oz white chocolate ((discs, bars etc. (use real white chocolate))*)",
       "expected": {
-        "item": "white chocolate *)",
+        "item": "white chocolate",
         "measurements": [
           {
             "amount": "8",
@@ -34,7 +34,7 @@
             "unit": "g"
           }
         ],
-        "note": "discs, bars etc. (use real white chocolate",
+        "note": "discs, bars etc. (use real white chocolate)",
         "category": "Other"
       }
     },

@@ -5,15 +5,15 @@
     {
       "raw": "1 cup Thai red chili peppers  (*Start with less (about half) if you want a more mild, gentle hot sauce)",
       "expected": {
-        "item": "Thai red chili peppers if you want a more mild, gentle hot sauce)",
+        "item": "Thai red chili peppers",
         "measurements": [
           {
             "amount": "1",
             "unit": "cup"
           }
         ],
-        "note": "*Start with less (about half",
-        "category": "Condiments & Sauces"
+        "note": "*Start with less (about half) if you want a more mild, gentle hot sauce",
+        "category": "Spices & Seasonings"
       }
     },
     {
@@ -58,7 +58,7 @@
             "unit": "medium"
           }
         ],
-        "note": "minced (@ 1/2 cup minced",
+        "note": "minced (@ 1/2 cup minced)",
         "category": "Produce"
       }
     },
@@ -83,7 +83,7 @@
     {
       "raw": "1 Tablespoon Fish Sauce ((don't skimp out on this!) or use Soy Sauce, if you can, try to use the Fish Sauce.)",
       "expected": {
-        "item": "Fish Sauce or use Soy Sauce, if you can, try to use the Fish Sauce.)",
+        "item": "Fish Sauce or use Soy Sauce, if you can, try to use the Fish Sauce.",
         "measurements": [
           {
             "amount": "1",

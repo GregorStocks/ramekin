@@ -648,14 +648,9 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         optional_prefix = true;
     }
 
-    // Issue 5: Normalize double parentheses to single
+    // Issue 5: Normalize double-wrapped parentheticals to single
     // e.g., "((about 4 cloves))" -> "(about 4 cloves)"
-    while remaining.contains("((") {
-        remaining = remaining.replace("((", "(");
-    }
-    while remaining.contains("))") {
-        remaining = remaining.replace("))", ")");
-    }
+    remaining = unwrap_redundant_parentheses(&remaining);
 
     // Strip placeholder parentheticals: TK ("to come") and TODO markers
     // e.g., "1/2 cup (TK g) panko bread crumbs" -> "1/2 cup panko bread crumbs"
@@ -721,16 +716,10 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     let mut alt_measurements = Vec::new();
     let mut deferred_parenthetical_note: Option<String> = None;
     while let Some(start) = remaining.find('(') {
-        // Find ')' in the substring after '('
-        let after_open = match remaining.get(start..) {
-            Some(s) => s,
-            None => break,
-        };
-        let Some(end_offset) = after_open.find(')') else {
+        let Some(close_idx) = find_matching_closing_paren(&remaining, start) else {
             break;
         };
-        // end_offset is relative to start, so absolute close paren is at start + end_offset
-        let paren_content = match remaining.get(start + 1..start + end_offset) {
+        let paren_content = match remaining.get(start + 1..close_idx) {
             Some(s) => s,
             None => break,
         };
@@ -763,10 +752,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                 .trim_end()
                 .trim_end_matches(',')
                 .trim_end();
-            let after = remaining
-                .get(start + end_offset + 1..)
-                .unwrap_or("")
-                .trim_start();
+            let after = remaining.get(close_idx + 1..).unwrap_or("").trim_start();
             remaining = if before.is_empty() {
                 after.to_string()
             } else if after.is_empty() {
@@ -791,10 +777,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                 .trim_end()
                 .trim_end_matches(',')
                 .trim_end();
-            let after = remaining
-                .get(start + end_offset + 1..)
-                .unwrap_or("")
-                .trim_start();
+            let after = remaining.get(close_idx + 1..).unwrap_or("").trim_start();
             remaining = if before.is_empty() {
                 after.to_string()
             } else if after.is_empty() {
@@ -817,10 +800,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                 .trim_end()
                 .trim_end_matches(',')
                 .trim_end();
-            let after = remaining
-                .get(start + end_offset + 1..)
-                .unwrap_or("")
-                .trim_start();
+            let after = remaining.get(close_idx + 1..).unwrap_or("").trim_start();
             remaining = if before.is_empty() {
                 after.to_string()
             } else if after.is_empty() {
@@ -1622,6 +1602,47 @@ fn append_note_segment(note: &mut Option<String>, segment: &str) {
         }
         None => *note = Some(segment.to_string()),
     }
+}
+
+fn unwrap_redundant_parentheses(s: &str) -> String {
+    let mut result = String::with_capacity(s.len());
+    let mut cursor = 0;
+
+    while let Some(relative_start) = s.get(cursor..).and_then(|tail| tail.find("((")) {
+        let start = cursor + relative_start;
+        let Some(close_idx) = find_matching_closing_paren(s, start) else {
+            break;
+        };
+
+        result.push_str(s.get(cursor..start).unwrap_or(""));
+        result.push_str(s.get(start + 1..close_idx).unwrap_or(""));
+        cursor = close_idx + 1;
+    }
+
+    result.push_str(s.get(cursor..).unwrap_or(""));
+    result
+}
+
+fn find_matching_closing_paren(s: &str, open_idx: usize) -> Option<usize> {
+    if !s.get(open_idx..)?.starts_with('(') {
+        return None;
+    }
+
+    let mut depth = 0;
+    for (offset, ch) in s.get(open_idx..)?.char_indices() {
+        match ch {
+            '(' => depth += 1,
+            ')' => {
+                depth -= 1;
+                if depth == 0 {
+                    return Some(open_idx + offset);
+                }
+            }
+            _ => {}
+        }
+    }
+
+    None
 }
 
 /// Strip common qualifiers from measurement strings, but preserve "each" as a unit suffix.
@@ -3448,6 +3469,16 @@ mod tests {
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("2.5".to_string()));
         assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+    }
+
+    #[test]
+    fn test_nested_parenthetical_note_is_preserved() {
+        let result = parse_ingredient("2 tbsp milk (, full fat (low fat ok too))");
+        assert_eq!(result.item, "milk");
+        assert_eq!(result.note, Some("full fat (low fat ok too)".to_string()));
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("2".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("tbsp".to_string()));
     }
 
     #[test]

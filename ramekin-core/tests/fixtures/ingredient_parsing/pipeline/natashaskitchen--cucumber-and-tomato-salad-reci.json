@@ -27,7 +27,7 @@
     {
       "raw": "4-5  small (1 lb cucumbers, or 1 english cucumber))",
       "expected": {
-        "item": "4-5  small (1 lb cucumbers, or 1 english cucumber))",
+        "item": ")",
         "measurements": [
           {
             "amount": "4-5",
@@ -35,7 +35,7 @@
           }
         ],
         "note": "1 lb cucumbers, or 1 english cucumber",
-        "category": "Produce"
+        "category": "Other"
       }
     },
     {
@@ -48,7 +48,7 @@
             "unit": "small"
           }
         ],
-        "note": "thinly sliced (~1/4 lb",
+        "note": "thinly sliced (~1/4 lb)",
         "category": "Produce"
       }
     },

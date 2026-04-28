@@ -77,14 +77,14 @@
     {
       "raw": "2  skin-on salmon fillets ((¾ lb, 340 g; ¾ inch (2 cm) thick))",
       "expected": {
-        "item": "skin-on salmon fillets thick)",
+        "item": "skin-on salmon fillets",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "3/4 lb, 340 g; 3/4 inch (2 cm",
+        "note": "3/4 lb, 340 g; 3/4 inch (2 cm) thick",
         "category": "Meat & Seafood"
       }
     },

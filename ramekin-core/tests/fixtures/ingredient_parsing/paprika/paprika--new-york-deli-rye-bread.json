@@ -97,7 +97,7 @@
     {
       "raw": "1/2 tablespoon (4.6 grams) malt powder (or barley malt syrup or honey (10.5 grams), or sugar (6.2 grams))",
       "expected": {
-        "item": "malt powder, or sugar",
+        "item": "malt powder",
         "measurements": [
           {
             "amount": "0.5",
@@ -106,15 +106,11 @@
           {
             "amount": "4.6",
             "unit": "g"
-          },
-          {
-            "amount": "6.2",
-            "unit": "g"
           }
         ],
-        "note": "or barley malt syrup or honey (10.5 grams",
+        "note": "or barley malt syrup or honey (10.5 grams), or sugar (6.2 grams)",
         "section": "Sponge",
-        "category": "Baking"
+        "category": "Other"
       }
     },
     {

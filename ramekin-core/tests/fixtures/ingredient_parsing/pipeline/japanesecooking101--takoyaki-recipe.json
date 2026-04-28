@@ -111,9 +111,9 @@
     {
       "raw": "Boiled octopus* (cut into 1/2&amp;quot; (1 cm) cubes)",
       "expected": {
-        "item": "Boiled octopus* cubes)",
+        "item": "Boiled octopus",
         "measurements": [],
-        "note": "cut into 1/2\" (1 cm",
+        "note": "cut into 1/2\" (1 cm) cubes",
         "category": "Meat & Seafood"
       }
     },
@@ -127,7 +127,7 @@
             "unit": "cup"
           }
         ],
-        "note": "Tempura bits, homemade or store-bought  (optional",
+        "note": "Tempura bits, homemade or store-bought  (optional)",
         "category": "Other"
       }
     },

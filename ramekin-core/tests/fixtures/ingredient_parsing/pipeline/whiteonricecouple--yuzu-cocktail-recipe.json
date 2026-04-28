@@ -5,15 +5,15 @@
     {
       "raw": "1  whole Yuzu ((or @ 1 1/2 Tablespoons (3/4 oz. - 22ml) yuzu juice))",
       "expected": {
-        "item": "whole Yuzu yuzu juice)",
+        "item": "whole Yuzu",
         "measurements": [
           {
             "amount": "1",
             "unit": null
           }
         ],
-        "note": "or @ 1 1/2 Tablespoons (3/4 oz. - 22ml",
-        "category": "Beverages"
+        "note": "or @ 1 1/2 Tablespoons (3/4 oz. - 22ml) yuzu juice",
+        "category": "Other"
       }
     },
     {
@@ -30,7 +30,7 @@
             "unit": "g"
           }
         ],
-        "note": "(preferably Hendricks or Tanqueray Rangpur or similar",
+        "note": "(preferably Hendricks or Tanqueray Rangpur or similar)",
         "category": "Beverages"
       }
     },

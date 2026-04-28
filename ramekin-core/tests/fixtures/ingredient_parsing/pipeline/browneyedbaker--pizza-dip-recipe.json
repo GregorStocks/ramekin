@@ -23,7 +23,7 @@
     {
       "raw": "4 ounces mozzarella cheese (shredded (about 1 cup), divided)",
       "expected": {
-        "item": "mozzarella cheese, divided)",
+        "item": "mozzarella cheese",
         "measurements": [
           {
             "amount": "4",
@@ -34,14 +34,14 @@
             "unit": "g"
           }
         ],
-        "note": "shredded (about 1 cup",
+        "note": "shredded (about 1 cup), divided",
         "category": "Cheese"
       }
     },
     {
       "raw": "4 ounces Parmesan cheese (shredded (about 1 cup), divided)",
       "expected": {
-        "item": "Parmesan cheese, divided)",
+        "item": "Parmesan cheese",
         "measurements": [
           {
             "amount": "4",
@@ -52,7 +52,7 @@
             "unit": "g"
           }
         ],
-        "note": "shredded (about 1 cup",
+        "note": "shredded (about 1 cup), divided",
         "category": "Cheese"
       }
     },

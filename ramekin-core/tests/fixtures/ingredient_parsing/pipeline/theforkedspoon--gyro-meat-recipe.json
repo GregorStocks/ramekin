@@ -141,14 +141,14 @@
     {
       "raw": "½  English cucumber (peeled (optional) and grated)",
       "expected": {
-        "item": "English cucumber and grated)",
+        "item": "English cucumber",
         "measurements": [
           {
             "amount": "0.5",
             "unit": null
           }
         ],
-        "note": "peeled (optional",
+        "note": "peeled (optional) and grated",
         "category": "Produce"
       }
     },

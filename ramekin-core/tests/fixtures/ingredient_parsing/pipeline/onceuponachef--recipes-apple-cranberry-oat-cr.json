@@ -117,14 +117,14 @@
     {
       "raw": "8  large baking apples, (peeled, cored and sliced ¼-inch (6-mm) thick)",
       "expected": {
-        "item": "baking apples thick)",
+        "item": "baking apples",
         "measurements": [
           {
             "amount": "8",
             "unit": "large"
           }
         ],
-        "note": "peeled, cored and sliced 1/4-inch (6-mm",
+        "note": "peeled, cored and sliced 1/4-inch (6-mm) thick",
         "category": "Produce"
       }
     },
