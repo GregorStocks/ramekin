@@ -2,18 +2,21 @@ import { createSignal, createEffect, For, Show } from "solid-js";
 import { useAuth } from "../context/AuthContext";
 import Modal from "./Modal";
 import { extractApiError } from "../utils/recipeFormHelpers";
+import { scaleAmount } from "../utils/scaleAmount";
 import type { RecipeResponse, Ingredient } from "ramekin-client";
 
 interface AddToShoppingListModalProps {
   isOpen: () => boolean;
   onClose: () => void;
   recipe: RecipeResponse;
+  scale?: () => number;
 }
 
-function formatIngredient(ing: Ingredient): string {
+function formatIngredient(ing: Ingredient, scale: number): string {
   const parts: string[] = [];
-  if (ing.measurements[0]?.amount) {
-    parts.push(ing.measurements[0].amount);
+  const amount = scaleAmount(ing.measurements[0]?.amount, scale);
+  if (amount) {
+    parts.push(amount);
   }
   if (ing.measurements[0]?.unit) {
     parts.push(ing.measurements[0].unit);
@@ -25,10 +28,11 @@ function formatIngredient(ing: Ingredient): string {
   return parts.join(" ");
 }
 
-function formatAmount(ing: Ingredient): string | undefined {
+function formatAmount(ing: Ingredient, scale: number): string | undefined {
   const parts: string[] = [];
-  if (ing.measurements[0]?.amount) {
-    parts.push(ing.measurements[0].amount);
+  const amount = scaleAmount(ing.measurements[0]?.amount, scale);
+  if (amount) {
+    parts.push(amount);
   }
   if (ing.measurements[0]?.unit) {
     parts.push(ing.measurements[0].unit);
@@ -48,6 +52,7 @@ export default function AddToShoppingListModal(
   const [error, setError] = createSignal<string | null>(null);
   const [showSuccess, setShowSuccess] = createSignal(false);
 
+  const scale = () => props.scale?.() ?? 1;
   const ingredients = () => props.recipe.ingredients ?? [];
 
   // Select all ingredients by default when modal opens
@@ -93,7 +98,7 @@ export default function AddToShoppingListModal(
         .filter((_, i) => selected.has(i))
         .map((ing) => ({
           item: ing.item,
-          amount: formatAmount(ing),
+          amount: formatAmount(ing, scale()),
           sourceRecipeId: props.recipe.id,
           sourceRecipeTitle: props.recipe.title,
         }));
@@ -172,7 +177,9 @@ export default function AddToShoppingListModal(
                     checked={selectedIndices().has(index())}
                     onChange={() => toggleIngredient(index())}
                   />
-                  <span class="ingredient-text">{formatIngredient(ing)}</span>
+                  <span class="ingredient-text">
+                    {formatIngredient(ing, scale())}
+                  </span>
                 </label>
               )}
             </For>

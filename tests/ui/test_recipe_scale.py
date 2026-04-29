@@ -10,7 +10,7 @@ import pytest
 from playwright.sync_api import Page, expect
 
 from ramekin_client import ApiClient, Configuration
-from ramekin_client.api import AuthApi, RecipesApi
+from ramekin_client.api import AuthApi, RecipesApi, ShoppingListApi
 from ramekin_client.models import (
     CreateRecipeRequest,
     Ingredient,
@@ -175,3 +175,33 @@ def test_clicking_1x_clears_badge(scale_recipe, page: Page):
     page.locator(".scale-preset", has_text="1×").click()
     page.wait_for_url(lambda url: "scale=" not in url)
     expect(page.locator(".scale-badge")).to_have_count(0)
+
+
+def test_shopping_list_uses_scaled_amounts(scale_recipe, api_url, page: Page):
+    _recipe_id, token = scale_recipe
+
+    page.locator(".scale-preset", has_text="2×").click()
+    page.wait_for_url(lambda url: "scale=2" in url)
+    page.locator("button", has_text="Add to Shopping List").click()
+    page.wait_for_selector(".add-shopping-modal")
+
+    modal_text = page.locator(".add-shopping-modal").inner_text()
+    assert "4 cups flour" in modal_text  # 2 → 4
+    assert "1 cup sugar" in modal_text  # 1/2 → 1
+
+    page.locator(".modal-actions button.btn-primary").click()
+    page.wait_for_selector(".add-shopping-success")
+
+    config = Configuration(host=api_url)
+    config.access_token = token
+    with ApiClient(config) as client:
+        items = ShoppingListApi(client).list_items().items
+
+    by_item = {it.item: it.amount for it in items}
+    assert by_item["flour"] == "4 cups"
+    assert by_item["sugar"] == "1 cup"
+    assert by_item["butter"] == "3 sticks"
+    assert by_item["milk"] == "5 cups"
+    assert by_item["eggs"] == "6"
+    assert by_item["salt"] == "to taste"
+    assert by_item["bay leaves"] == "6-8"

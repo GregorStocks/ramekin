@@ -1125,6 +1125,7 @@ export default function ViewRecipePage() {
               isOpen={showShoppingListModal}
               onClose={() => setShowShoppingListModal(false)}
               recipe={r()}
+              scale={scale}
             />
 
             {/* Delete Confirmation Modal */}
