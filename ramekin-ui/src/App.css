@@ -2860,7 +2860,7 @@ textarea:focus-visible {
 
 .meal-plan-header {
   display: grid;
-  grid-template-columns: 100px repeat(7, 1fr);
+  grid-template-columns: 100px repeat(7, minmax(0, 1fr));
   background: var(--surface-1);
   border-bottom: 1px solid var(--border-hairline);
 }
@@ -2884,7 +2884,7 @@ textarea:focus-visible {
 
 .meal-row {
   display: grid;
-  grid-template-columns: 100px repeat(7, 1fr);
+  grid-template-columns: 100px repeat(7, minmax(0, 1fr));
   border-bottom: 1px solid var(--border-hairline);
 }
 
@@ -2924,6 +2924,7 @@ textarea:focus-visible {
   border-radius: 4px;
   border: 1px solid var(--border-hairline);
   position: relative;
+  min-width: 0;
 }
 
 .meal-card:hover {
@@ -2946,6 +2947,7 @@ textarea:focus-visible {
 
 .meal-title {
   flex: 1;
+  min-width: 0;
   font-size: 0.8rem;
   color: var(--text-secondary);
   text-decoration: none;
