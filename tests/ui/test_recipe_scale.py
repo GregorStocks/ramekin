@@ -127,3 +127,51 @@ def test_custom_input_overrides_presets(scale_recipe, page: Page):
         expect(page.locator(".scale-preset", has_text=preset_label)).not_to_have_class(
             "scale-preset active"
         )
+
+
+def test_scale_2x_doubles_amounts(scale_recipe, page: Page):
+    _recipe_id, _token = scale_recipe
+    page.locator(".scale-preset", has_text="2×").click()
+    page.wait_for_url(lambda url: "scale=2" in url)
+
+    amounts = _amount_texts(page)
+    # 2 → 4, 1/2 → 1, 1 1/2 → 3, 2.5 → 5, 3 → 6
+    assert "4" in amounts
+    assert "1" in amounts
+    assert "3" in amounts
+    assert "5" in amounts
+    assert "6" in amounts
+    # Unparseable amounts pass through unchanged.
+    page_text = page.locator(".ingredients-list").inner_text()
+    assert "to taste" in page_text
+    assert "6-8" in page_text
+    # Serves: 4 → 8
+    expect(page.locator(".recipe-metadata")).to_contain_text("8")
+    # Badge is shown (one near Ingredients heading, one near Serves: line).
+    assert page.locator(".scale-badge").count() == 2
+    expect(page.locator(".scale-badge").first).to_contain_text("scaled 2×")
+
+
+def test_scale_half_halves_amounts(scale_recipe, page: Page):
+    _recipe_id, _token = scale_recipe
+    page.locator(".scale-preset", has_text="½×").click()
+    page.wait_for_url(lambda url: "scale=0.5" in url)
+
+    amounts = _amount_texts(page)
+    # 2 → 1, 1/2 → 1/4, 1 1/2 → 0.75, 2.5 → 1.25, 3 → 1.5
+    assert "1" in amounts
+    assert "1/4" in amounts
+    assert "0.75" in amounts
+    assert "1.25" in amounts
+    assert "1.5" in amounts
+
+
+def test_clicking_1x_clears_badge(scale_recipe, page: Page):
+    _recipe_id, _token = scale_recipe
+    page.locator(".scale-preset", has_text="2×").click()
+    page.wait_for_url(lambda url: "scale=2" in url)
+    assert page.locator(".scale-badge").count() == 2
+
+    page.locator(".scale-preset", has_text="1×").click()
+    page.wait_for_url(lambda url: "scale=" not in url)
+    expect(page.locator(".scale-badge")).to_have_count(0)
