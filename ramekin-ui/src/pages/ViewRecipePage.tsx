@@ -17,6 +17,7 @@ import AddToShoppingListModal from "../components/AddToShoppingListModal";
 import { extractApiError } from "../utils/recipeFormHelpers";
 import { parseTag } from "../utils/tagHierarchy";
 import { usePageTitle } from "../utils/pageTitle";
+import { scaleAmount } from "../utils/scaleAmount";
 import {
   MEAL_TYPES,
   MEAL_TYPE_LABELS,
@@ -97,6 +98,46 @@ export default function ViewRecipePage() {
     typeof searchParams.version_id === "string"
       ? searchParams.version_id
       : null;
+
+  const SCALE_PRESETS = [
+    { value: 0.25, label: "¼×" },
+    { value: 0.5, label: "½×" },
+    { value: 1, label: "1×" },
+    { value: 2, label: "2×" },
+    { value: 3, label: "3×" },
+  ];
+
+  const scale = () => {
+    const raw = searchParams.scale;
+    const v = typeof raw === "string" ? Number(raw) : NaN;
+    return Number.isFinite(v) && v > 0 ? v : 1;
+  };
+
+  const setScale = (v: number) => {
+    if (!Number.isFinite(v) || v <= 0) return;
+    setSearchParams({ scale: v === 1 ? undefined : String(v) });
+  };
+
+  const [customScaleInput, setCustomScaleInput] = createSignal("");
+  const applyCustomScale = () => {
+    const v = Number(customScaleInput());
+    if (Number.isFinite(v) && v > 0) {
+      setScale(v);
+    }
+  };
+
+  const formatScaleLabel = (v: number): string => {
+    const pretty: Record<string, string> = {
+      "0.25": "¼",
+      "0.5": "½",
+      "0.3333333333333333": "⅓",
+      "0.6666666666666666": "⅔",
+    };
+    const key = String(v);
+    if (key in pretty) return `${pretty[key]}×`;
+    const trimmed = v.toFixed(2).replace(/\.?0+$/, "");
+    return `${trimmed}×`;
+  };
 
   const [recipe, setRecipe] = createSignal<RecipeResponse | null>(null);
   usePageTitle(() => recipe()?.title);
@@ -835,7 +876,14 @@ export default function ViewRecipePage() {
                   <Show when={r().servings}>
                     <div class="recipe-metadata-item">
                       <span class="label">Serves:</span>
-                      <span class="value">{r().servings}</span>
+                      <span class="value">
+                        {scaleAmount(r().servings, scale())}
+                      </span>
+                      <Show when={scale() !== 1}>
+                        <span class="scale-badge">
+                          scaled {formatScaleLabel(scale())}
+                        </span>
+                      </Show>
                     </div>
                   </Show>
                   <Show when={r().prepTime}>
@@ -874,7 +922,51 @@ export default function ViewRecipePage() {
               <Show when={r().ingredients && r().ingredients.length > 0}>
                 <div class="recipe-left">
                   <section class="recipe-section">
-                    <h3>Ingredients</h3>
+                    <h3>
+                      Ingredients
+                      <Show when={scale() !== 1}>
+                        {" "}
+                        <span class="scale-badge">
+                          scaled {formatScaleLabel(scale())}
+                        </span>
+                      </Show>
+                    </h3>
+                    <div class="scale-controls">
+                      <span class="scale-label">Scale:</span>
+                      <For each={SCALE_PRESETS}>
+                        {(preset) => (
+                          <button
+                            type="button"
+                            class={
+                              scale() === preset.value
+                                ? "scale-preset active"
+                                : "scale-preset"
+                            }
+                            onClick={() => {
+                              setCustomScaleInput("");
+                              setScale(preset.value);
+                            }}
+                          >
+                            {preset.label}
+                          </button>
+                        )}
+                      </For>
+                      <input
+                        type="number"
+                        step="0.25"
+                        min="0"
+                        class="scale-custom-input"
+                        placeholder="Custom"
+                        value={customScaleInput()}
+                        onInput={(e) =>
+                          setCustomScaleInput(e.currentTarget.value)
+                        }
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter") applyCustomScale();
+                        }}
+                        onBlur={applyCustomScale}
+                      />
+                    </div>
                     <For
                       each={groupIngredientsBySection(r().ingredients ?? [])}
                     >
@@ -891,7 +983,10 @@ export default function ViewRecipePage() {
                                 <li>
                                   <Show when={ing.measurements[0]?.amount}>
                                     <span class="amount">
-                                      {ing.measurements[0]?.amount}
+                                      {scaleAmount(
+                                        ing.measurements[0]?.amount,
+                                        scale(),
+                                      )}
                                     </span>{" "}
                                   </Show>
                                   <Show when={ing.measurements[0]?.unit}>
@@ -905,7 +1000,10 @@ export default function ViewRecipePage() {
                                       {ing.measurements
                                         .slice(1)
                                         .map((m) =>
-                                          [m.amount, m.unit]
+                                          [
+                                            scaleAmount(m.amount, scale()),
+                                            m.unit,
+                                          ]
                                             .filter(Boolean)
                                             .join(" "),
                                         )
@@ -1027,6 +1125,7 @@ export default function ViewRecipePage() {
               isOpen={showShoppingListModal}
               onClose={() => setShowShoppingListModal(false)}
               recipe={r()}
+              scale={scale}
             />
 
             {/* Delete Confirmation Modal */}
