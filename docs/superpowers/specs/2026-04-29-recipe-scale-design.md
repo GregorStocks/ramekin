@@ -87,24 +87,26 @@ Rationale: per the agreed rule, output is whole numbers, unit-fraction divisors,
 
 ## Files touched
 
-- `ramekin-ui/src/utils/scaleAmount.ts` — new module (parser + formatter + tests).
-- `ramekin-ui/src/utils/scaleAmount.test.ts` — unit tests (Vitest, matching existing UI test conventions).
+- `ramekin-ui/src/utils/scaleAmount.ts` — new module (parser + formatter, exporting `scaleAmount`).
 - `ramekin-ui/src/pages/ViewRecipePage.tsx` — scale signal, URL plumbing, `<ScaleControls>` strip above ingredients, scaled rendering for amounts and `Serves:`, scale badge.
 - `ramekin-ui/src/components/AddToShoppingListModal.tsx` — accept `scale` prop, run amounts through `scaleAmount` before posting.
 - `ramekin-ui/src/App.css` — styles for `.scale-controls`, `.scale-preset`, `.scale-preset.active`, `.scale-badge`.
+- `tests/ui/test_recipe_scale.py` — new Playwright test covering scale UI and shopping-list integration.
 
 No Rust, no DB migrations, no OpenAPI spec change.
 
 ## Testing
 
-- **Unit**: `scaleAmount.test.ts` covers integer × integer, fraction × integer, mixed × fraction, decimal × decimal, Unicode fractions, floating-point fuzz, range strings (passed through), free-text strings (passed through), `factor ≤ 0` / `NaN` (passed through), empty string.
-- **UI (Playwright)**: extend `tests/ui/` with a recipe-scale test that:
+The project has no JS unit test framework — UI behavior is verified via Python Playwright tests under `tests/ui/`. Coverage:
+
+- **Parser/formatter behavior** is covered indirectly via Playwright assertions on rendered amounts. We exercise enough representative inputs (integer, decimal, vulgar fraction, Unicode fraction, mixed number, free-text, range, empty) by constructing a fixture recipe with one ingredient per case and reading back the rendered amounts at multiple scale factors.
+- **Scale controls** test (`tests/ui/test_recipe_scale.py`):
   1. Loads a recipe with known ingredients.
-  2. Clicks `2×` and asserts amounts doubled and the `(scaled 2×)` badge appears.
-  3. Clicks `1×` and asserts amounts revert.
+  2. Clicks `2×` and asserts amounts doubled, the `(scaled 2×)` badge appears, and the URL contains `?scale=2`.
+  3. Clicks `1×` and asserts amounts revert and the badge disappears.
   4. Enters a custom `0.5` and asserts amounts halve.
-  5. Verifies the URL contains `?scale=2` after clicking `2×`.
-- **UI (Playwright)**: extend the existing shopping-list test (or add one) to scale a recipe to `2×`, add to shopping list, and assert the posted amounts are doubled.
+  5. Asserts unparseable amounts (`"to taste"`, ranges) pass through unchanged at every factor.
+- **Shopping list integration** in the same file: scale to `2×`, add to shopping list, then read items back via the API and assert posted amounts are doubled.
 
 ## Open questions
 
