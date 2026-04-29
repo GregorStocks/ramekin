@@ -79,11 +79,13 @@ fn should_parse_html_for_supplements(html: &str) -> bool {
     html.contains("wprm-recipe-group-name")
         || html.contains("jetpack-recipe-ingredients")
         || html.contains("wprm-recipe-instruction")
+        || html.contains("structured-ingredients__list-item")
 }
 
 /// Try to replace flat ingredients or polluted instructions with cleaner HTML-derived content.
 fn supplement_recipe_from_html(recipe: &mut RawRecipe, document: &Html) {
     supplement_ingredient_groups(recipe, document);
+    supplement_dotdash_meredith_ingredients(recipe, document);
     supplement_instructions(recipe, document);
 }
 
@@ -94,6 +96,17 @@ fn supplement_ingredient_groups(recipe: &mut RawRecipe, document: &Html) {
         .or_else(|| extract_jetpack_ingredients_with_groups(document))
     {
         recipe.ingredients = grouped;
+    }
+}
+
+/// On Dotdash Meredith CMS pages (Serious Eats, Simply Recipes, Allrecipes),
+/// the visible `.structured-ingredients` block is the source of truth.
+/// JSON-LD is auto-generated and demonstrably loses content when an editor
+/// uses "X plus Y, divided" phrasing in a single ingredient row. Replace
+/// with the visible HTML when it produces a non-empty list.
+fn supplement_dotdash_meredith_ingredients(recipe: &mut RawRecipe, document: &Html) {
+    if let Some(ingredients) = extract_dotdash_meredith_ingredients(document) {
+        recipe.ingredients = ingredients;
     }
 }
 
@@ -4068,6 +4081,59 @@ mod tests {
         // Should use JSON-LD ingredients (no group headers injected)
         assert!(!result.ingredients.contains(':'));
         assert!(result.ingredients.contains("1 cup flour"));
+    }
+
+    #[test]
+    fn test_dotdash_meredith_ingredients_supplement_jsonld() {
+        // Real Serious Eats bug: JSON-LD drops the filling flour quantity when
+        // an editor combines two flour entries into a single visible row using
+        // "X plus Y, divided" phrasing. The visible structured-ingredients
+        // block carries the full row, so we prefer it over JSON-LD.
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Croquetas de Jamón",
+                    "recipeIngredient": [
+                        "2 cups (473ml) whole milk",
+                        "1 cup all-purpose flour, for dredging",
+                        "Kosher salt"
+                    ],
+                    "recipeInstructions": "Make croquetas."
+                }
+                </script>
+            </head>
+            <body>
+                <div class="comp structured-ingredients">
+                    <ul class="structured-ingredients__list">
+                        <li class="structured-ingredients__list-item">
+                            <p><span data-ingredient-quantity="true">2</span> <span data-ingredient-unit="true">cups</span> (<span data-ingredient-quantity="true">473</span> <span data-ingredient-unit="true">ml</span>) <span data-ingredient-name="true">whole milk</span></p>
+                        </li>
+                        <li class="structured-ingredients__list-item">
+                            <p><span data-ingredient-quantity="true">1/2</span> <span data-ingredient-unit="true">cup</span> plus <span data-ingredient-quantity="true">2</span> <span data-ingredient-unit="true">tablespoons</span> all-purpose flour (<span data-ingredient-quantity="true">80</span> <span data-ingredient-unit="true">g</span>), plus <span data-ingredient-quantity="true">1</span> <span data-ingredient-unit="true">cup</span> <span data-ingredient-name="true">all-purpose flour</span> (for dredging), divided</p>
+                        </li>
+                        <li class="structured-ingredients__list-item">
+                            <p><span data-ingredient-name="true">Kosher salt</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://www.seriouseats.com/croquetas").unwrap();
+        // The combined row from the visible HTML must be preserved in full,
+        // including the 80 g of flour the JSON-LD entry lost.
+        assert!(
+            result
+                .ingredients
+                .contains("1/2 cup plus 2 tablespoons all-purpose flour"),
+            "expected combined flour row in ingredients, got: {}",
+            result.ingredients
+        );
+        assert!(result.ingredients.contains("80 g"));
+        assert!(result.ingredients.contains("for dredging"));
     }
 
     #[test]

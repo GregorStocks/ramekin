@@ -53,15 +53,20 @@
           "unit": "g"
         }
       ],
-      "note": "or 10 grams fresh yeast (see note)",
-      "raw": "4 grams instant yeast, 5 grams active dry yeast, or 10 grams fresh yeast (see note)",
+      "note": "or 10 grams fresh yeast (see notes)",
+      "raw": "4 grams instant yeast, 5 grams active dry yeast, or 10 grams fresh yeast (see notes)",
       "section": null
     },
     {
-      "item": "Vegetable, canola, or other neutral oil, for greasing",
-      "measurements": [],
+      "item": "vegetable, canola, or other neutral oil, for greasing",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
       "note": null,
-      "raw": "Vegetable, canola, or other neutral oil, for greasing",
+      "raw": "1 teaspoon vegetable, canola, or other neutral oil, for greasing",
       "section": null
     }
   ],
@@ -70,6 +75,6 @@
     "vegetarian",
     "vegan",
     "pantry",
-    "easy"
+    "side dish"
   ]
 }

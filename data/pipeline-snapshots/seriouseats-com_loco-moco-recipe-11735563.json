@@ -23,7 +23,7 @@
       ],
       "note": "80% lean/20% fat",
       "raw": "1 pound (453 g) ground beef, (80% lean/20% fat)",
-      "section": null
+      "section": "For the Burger Patties"
     },
     {
       "item": "panko breadcrumbs",
@@ -39,7 +39,7 @@
       ],
       "note": null,
       "raw": "2 tablespoons (12 g) panko breadcrumbs",
-      "section": null
+      "section": "For the Burger Patties"
     },
     {
       "item": "Worcestershire sauce",
@@ -59,7 +59,7 @@
       ],
       "note": null,
       "raw": "1 tablespoon (15 ml) Worcestershire sauce",
-      "section": null
+      "section": "For the Burger Patties"
     },
     {
       "item": "garlic powder",
@@ -75,7 +75,7 @@
       ],
       "note": null,
       "raw": "1 teaspoon garlic powder",
-      "section": null
+      "section": "For the Burger Patties"
     },
     {
       "item": "canola oil",
@@ -95,7 +95,7 @@
       ],
       "note": null,
       "raw": "2 teaspoons (10 ml) canola oil",
-      "section": null
+      "section": "For the Burger Patties"
     },
     {
       "item": "Diamond Crystal kosher salt; for table salt use half as much by volume",
@@ -107,7 +107,7 @@
       ],
       "note": null,
       "raw": "1/4 teaspoon Diamond Crystal kosher salt; for table salt use half as much by volume",
-      "section": null
+      "section": "For the Burger Patties"
     },
     {
       "item": "freshly ground black pepper",
@@ -119,7 +119,7 @@
       ],
       "note": null,
       "raw": "1/4 teaspoon freshly ground black pepper",
-      "section": null
+      "section": "For the Burger Patties"
     },
     {
       "item": "yellow onion",
@@ -139,7 +139,7 @@
       ],
       "note": "thinly sliced",
       "raw": "1/2 medium yellow onion (4 ounces; 113 g), thinly sliced",
-      "section": null
+      "section": "For the Gravy"
     },
     {
       "item": "store-bought low-sodium beef stock",
@@ -153,9 +153,9 @@
           "unit": "ml"
         }
       ],
-      "note": "or 2 teaspoons jarred beef stock base dissolved in 2 cups tap water",
-      "raw": "2 cups (480 ml) store-bought low-sodium beef stock or 2 teaspoons jarred beef stock base dissolved in 2 cups tap water",
-      "section": null
+      "note": "or 2 teaspoons reduced-sodium jarred beef stock base such as Better Than Bouillon brand dissolved in 2 cups tap water",
+      "raw": "2 cups (480 ml) store-bought low-sodium beef stock or 2 teaspoons reduced-sodium jarred beef stock base such as Better Than Bouillon brand dissolved in 2 cups tap water",
+      "section": "For the Gravy"
     },
     {
       "item": "cornstarch",
@@ -171,7 +171,7 @@
       ],
       "note": null,
       "raw": "2 tablespoons (14 g) cornstarch",
-      "section": null
+      "section": "For the Gravy"
     },
     {
       "item": "soy sauce",
@@ -191,7 +191,7 @@
       ],
       "note": null,
       "raw": "2 tablespoons (30 ml) soy sauce",
-      "section": null
+      "section": "For the Gravy"
     },
     {
       "item": "tomato ketchup",
@@ -207,7 +207,7 @@
       ],
       "note": null,
       "raw": "2 tablespoons (30 ml) tomato ketchup",
-      "section": null
+      "section": "For the Gravy"
     },
     {
       "item": "Worcestershire sauce",
@@ -227,7 +227,7 @@
       ],
       "note": null,
       "raw": "1 teaspoon (5 ml) Worcestershire sauce",
-      "section": null
+      "section": "For the Gravy"
     },
     {
       "item": "sugar",
@@ -243,19 +243,19 @@
       ],
       "note": null,
       "raw": "1/2 teaspoon sugar",
-      "section": null
+      "section": "For the Gravy"
     },
     {
-      "item": "teaspoonDiamond Crystal kosher salt; for table salt use half as much by volume",
+      "item": "Diamond Crystal kosher salt; for table salt use half as much by volume",
       "measurements": [
         {
           "amount": "0.25",
-          "unit": null
+          "unit": "tsp"
         }
       ],
       "note": null,
-      "raw": "1/4 teaspoonDiamond Crystal kosher salt; for table salt use half as much by volume",
-      "section": null
+      "raw": "1/4 teaspoon Diamond Crystal kosher salt; for table salt use half as much by volume",
+      "section": "For the Gravy"
     },
     {
       "item": "recipe warm cooked white rice for serving",
@@ -267,7 +267,7 @@
       ],
       "note": null,
       "raw": "1 recipe warm cooked white rice for serving",
-      "section": null
+      "section": "For the Gravy"
     },
     {
       "item": "crispy fried eggs for serving",
@@ -279,7 +279,7 @@
       ],
       "note": null,
       "raw": "4 crispy fried eggs for serving",
-      "section": null
+      "section": "For the Gravy"
     }
   ],
   "suggested_tags": [
@@ -287,9 +287,9 @@
     "dinner",
     "entree",
     "comfort food",
+    "american",
     "beef",
     "rice",
-    "egg",
-    "american"
+    "egg"
   ]
 }

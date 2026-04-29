@@ -36,20 +36,20 @@
       "item": "baking soda",
       "measurements": [
         {
-          "amount": "3",
+          "amount": "2.5",
           "unit": "tsp"
         },
         {
-          "amount": "15",
+          "amount": "13",
           "unit": "g"
         }
       ],
       "note": "divided",
-      "raw": "3 teaspoons (15g) baking soda, divided",
+      "raw": "2 1/2 teaspoons (13g) baking soda, divided",
       "section": null
     },
     {
-      "item": "baby back pork ribs",
+      "item": "baby back pork ribs or spare ribs",
       "measurements": [
         {
           "amount": "1.5",
@@ -61,7 +61,7 @@
         }
       ],
       "note": "see notes, divided in half through the bones and separated into individual ribs",
-      "raw": "1 1/2 pounds (680g) baby back pork ribs, divided in half through the bones and separated into individual ribs (see notes)",
+      "raw": "1 1/2 pounds (680g) baby back pork ribs or spare ribs, divided in half through the bones and separated into individual ribs (see notes)",
       "section": null
     },
     {
@@ -112,7 +112,7 @@
       "section": null
     },
     {
-      "item": "celery rib ; minced",
+      "item": "celery rib",
       "measurements": [
         {
           "amount": "1",
@@ -127,8 +127,8 @@
           "unit": "g"
         }
       ],
-      "note": null,
-      "raw": "1 large celery rib (2 ounces; 57g); minced",
+      "note": "minced",
+      "raw": "1 large celery rib (2 ounces; 57g), minced",
       "section": null
     },
     {
@@ -197,11 +197,11 @@
   ],
   "suggested_tags": [
     "dinner",
-    "entree",
     "comfort food",
     "italian",
     "pork",
     "potato",
-    "legumes"
+    "legumes",
+    "entree"
   ]
 }

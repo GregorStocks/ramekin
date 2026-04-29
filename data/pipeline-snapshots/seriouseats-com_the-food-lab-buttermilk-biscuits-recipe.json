@@ -17,12 +17,16 @@
           "unit": "cup"
         },
         {
+          "amount": "120",
+          "unit": "ml"
+        },
+        {
           "amount": "122",
           "unit": "g"
         }
       ],
       "note": null,
-      "raw": "1/2 cup buttermilk",
+      "raw": "1/2 cup (120 ml) buttermilk",
       "section": null
     },
     {
@@ -33,12 +37,16 @@
           "unit": "cup"
         },
         {
-          "amount": "121",
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
           "unit": "g"
         }
       ],
       "note": null,
-      "raw": "1/2 cup sour cream",
+      "raw": "1/2 cup sour cream (4 ounces; 113 g)",
       "section": null
     },
     {
@@ -49,16 +57,16 @@
           "unit": "oz"
         },
         {
-          "amount": "2",
+          "amount": "2.25",
           "unit": "cup"
         },
         {
-          "amount": "283",
+          "amount": "284",
           "unit": "g"
         }
       ],
       "note": "plus additional for dusting",
-      "raw": "10 ounces (2 cups) all-purpose flour, plus additional for dusting",
+      "raw": "10 ounces all-purpose flour (2 1/4 cups; 284 g), plus additional for dusting",
       "section": null
     },
     {
@@ -69,12 +77,12 @@
           "unit": "tbsp"
         },
         {
-          "amount": "14",
+          "amount": "12",
           "unit": "g"
         }
       ],
       "note": null,
-      "raw": "1 tablespoon baking powder",
+      "raw": "1 tablespoon (12 g) baking powder",
       "section": null
     },
     {
@@ -94,19 +102,15 @@
       "section": null
     },
     {
-      "item": "kosher salt",
+      "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume",
       "measurements": [
         {
           "amount": "1.5",
           "unit": "tsp"
-        },
-        {
-          "amount": "4.3",
-          "unit": "g"
         }
       ],
       "note": null,
-      "raw": "1 1/2 teaspoons kosher salt",
+      "raw": "1 1/2 teaspoons Diamond Crystal kosher salt; for table salt, use half as much by volume",
       "section": null
     },
     {
@@ -117,22 +121,31 @@
           "unit": "tbsp"
         },
         {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        },
+        {
           "amount": "1",
-          "unit": "stick"
+          "unit": "oz"
+        },
+        {
+          "amount": "28",
+          "unit": "g"
         }
       ],
       "note": "plus 2 tablespoons melted unsalted butter for brushing",
-      "raw": "8 tablespoons (1 stick) cold unsalted butter, cut into 1/4-inch pats, plus 2 tablespoons melted unsalted butter for brushing",
+      "raw": "8 tablespoons cold unsalted butter (4 ounces; 113 g), cut into 1/4-inch pats, plus 2 tablespoons (1 ounce; 28 g) melted unsalted butter for brushing",
       "section": null
     }
   ],
   "suggested_tags": [
     "breakfast",
-    "side dish",
     "comfort food",
-    "vegetarian",
     "american",
-    "bread",
-    "pantry"
+    "bread"
   ]
 }
