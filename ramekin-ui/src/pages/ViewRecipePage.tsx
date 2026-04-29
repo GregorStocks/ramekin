@@ -98,6 +98,33 @@ export default function ViewRecipePage() {
       ? searchParams.version_id
       : null;
 
+  const SCALE_PRESETS = [
+    { value: 0.25, label: "¼×" },
+    { value: 0.5, label: "½×" },
+    { value: 1, label: "1×" },
+    { value: 2, label: "2×" },
+    { value: 3, label: "3×" },
+  ];
+
+  const scale = () => {
+    const raw = searchParams.scale;
+    const v = typeof raw === "string" ? Number(raw) : NaN;
+    return Number.isFinite(v) && v > 0 ? v : 1;
+  };
+
+  const setScale = (v: number) => {
+    if (!Number.isFinite(v) || v <= 0) return;
+    setSearchParams({ scale: v === 1 ? undefined : String(v) });
+  };
+
+  const [customScaleInput, setCustomScaleInput] = createSignal("");
+  const applyCustomScale = () => {
+    const v = Number(customScaleInput());
+    if (Number.isFinite(v) && v > 0) {
+      setScale(v);
+    }
+  };
+
   const [recipe, setRecipe] = createSignal<RecipeResponse | null>(null);
   usePageTitle(() => recipe()?.title);
   const [currentVersionId, setCurrentVersionId] = createSignal<string | null>(
@@ -875,6 +902,42 @@ export default function ViewRecipePage() {
                 <div class="recipe-left">
                   <section class="recipe-section">
                     <h3>Ingredients</h3>
+                    <div class="scale-controls">
+                      <span class="scale-label">Scale:</span>
+                      <For each={SCALE_PRESETS}>
+                        {(preset) => (
+                          <button
+                            type="button"
+                            class={
+                              scale() === preset.value
+                                ? "scale-preset active"
+                                : "scale-preset"
+                            }
+                            onClick={() => {
+                              setCustomScaleInput("");
+                              setScale(preset.value);
+                            }}
+                          >
+                            {preset.label}
+                          </button>
+                        )}
+                      </For>
+                      <input
+                        type="number"
+                        step="0.25"
+                        min="0"
+                        class="scale-custom-input"
+                        placeholder="Custom"
+                        value={customScaleInput()}
+                        onInput={(e) =>
+                          setCustomScaleInput(e.currentTarget.value)
+                        }
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter") applyCustomScale();
+                        }}
+                        onBlur={applyCustomScale}
+                      />
+                    </div>
                     <For
                       each={groupIngredientsBySection(r().ingredients ?? [])}
                     >

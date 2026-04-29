@@ -10,7 +10,7 @@ import pytest
 from playwright.sync_api import Page, expect
 
 from ramekin_client import ApiClient, Configuration
-from ramekin_client.api import AuthApi, RecipesApi, ShoppingListApi
+from ramekin_client.api import AuthApi, RecipesApi
 from ramekin_client.models import (
     CreateRecipeRequest,
     Ingredient,
@@ -30,9 +30,7 @@ SCALE_TEST_INGREDIENTS: List[Ingredient] = [
     Ingredient(item="milk", measurements=[Measurement(amount="2.5", unit="cups")]),
     Ingredient(item="eggs", measurements=[Measurement(amount="3", unit=None)]),
     Ingredient(item="salt", measurements=[Measurement(amount="to taste", unit=None)]),
-    Ingredient(
-        item="bay leaves", measurements=[Measurement(amount="6-8", unit=None)]
-    ),
+    Ingredient(item="bay leaves", measurements=[Measurement(amount="6-8", unit=None)]),
 ]
 
 
@@ -99,3 +97,33 @@ def test_recipe_loads_with_original_amounts(scale_recipe, page: Page):
     assert "3" in amounts
     expect(page.locator(".recipe-metadata")).to_contain_text("Serves:")
     expect(page.locator(".recipe-metadata")).to_contain_text("4")
+
+
+def test_clicking_preset_updates_url_and_active_state(scale_recipe, page: Page):
+    _recipe_id, _token = scale_recipe
+    assert "scale=" not in page.url
+    one_x = page.locator(".scale-preset", has_text="1×")
+    expect(one_x).to_have_class("scale-preset active")
+
+    page.locator(".scale-preset", has_text="2×").click()
+    page.wait_for_url(lambda url: "scale=2" in url)
+    expect(page.locator(".scale-preset", has_text="2×")).to_have_class(
+        "scale-preset active"
+    )
+    expect(one_x).not_to_have_class("scale-preset active")
+
+    one_x.click()
+    page.wait_for_url(lambda url: "scale=" not in url)
+    expect(one_x).to_have_class("scale-preset active")
+
+
+def test_custom_input_overrides_presets(scale_recipe, page: Page):
+    _recipe_id, _token = scale_recipe
+    custom = page.locator(".scale-custom-input")
+    custom.fill("1.5")
+    custom.press("Enter")
+    page.wait_for_url(lambda url: "scale=1.5" in url)
+    for preset_label in ["¼×", "½×", "1×", "2×", "3×"]:
+        expect(page.locator(".scale-preset", has_text=preset_label)).not_to_have_class(
+            "scale-preset active"
+        )
