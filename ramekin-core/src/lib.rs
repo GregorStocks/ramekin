@@ -27,10 +27,9 @@ pub use tags::{
     format_tag, parse_tag, validate_tag_name, ParsedTag, TagNameError, SEEDED_NAMESPACES,
 };
 pub use types::{
-    EnrichAutoTagOutput, EnrichGeneratePhotoOutput, EnrichNormalizeIngredientsOutput,
-    ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod, FailedImageFetch, FetchHtmlOutput,
-    FetchImagesOutput, ParseIngredientsOutput, PipelineStep, RawRecipe, SaveRecipeOutput,
-    StepOutput,
+    EnrichAutoTagOutput, ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod,
+    FailedImageFetch, FetchHtmlOutput, FetchImagesOutput, ParseIngredientsOutput, PipelineStep,
+    RawRecipe, SaveRecipeOutput, StepOutput,
 };
 pub use volume_to_weight::enrich_ingredient_measurements;
 

@@ -8,7 +8,9 @@ use serde::Serialize;
 use serde_json::json;
 
 use crate::ai::{suggest_tags, AiClient};
-use crate::pipeline::{PipelineStep, StepContext, StepMetadata, StepResult};
+use crate::pipeline::{
+    step_after_scrape_auto_applied_ai_step, PipelineStep, StepContext, StepMetadata, StepResult,
+};
 
 /// Step that automatically tags recipes based on user's existing tags.
 ///
@@ -64,7 +66,8 @@ impl PipelineStep for EnrichAutoTagStep {
                     output: json!({ "error": "No extract_recipe output found" }),
                     error: Some("No extract_recipe output found".to_string()),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: Some("apply_auto_tags".to_string()),
+                    next_step: step_after_scrape_auto_applied_ai_step(Self::NAME)
+                        .map(str::to_string),
                 };
             }
         };
@@ -78,7 +81,8 @@ impl PipelineStep for EnrichAutoTagStep {
                     output: json!({ "error": "No raw_recipe in extract output" }),
                     error: Some("No raw_recipe in extract output".to_string()),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: Some("apply_auto_tags".to_string()),
+                    next_step: step_after_scrape_auto_applied_ai_step(Self::NAME)
+                        .map(str::to_string),
                 };
             }
         };
@@ -115,7 +119,8 @@ impl PipelineStep for EnrichAutoTagStep {
                     output: json!({ "error": format!("AI call failed: {}", e) }),
                     error: Some(format!("AI call failed: {}", e)),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: Some("apply_auto_tags".to_string()),
+                    next_step: step_after_scrape_auto_applied_ai_step(Self::NAME)
+                        .map(str::to_string),
                 };
             }
         };
@@ -132,7 +137,7 @@ impl PipelineStep for EnrichAutoTagStep {
             output: serde_json::to_value(output).unwrap_or(json!({})),
             error: None,
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: Some("apply_auto_tags".to_string()),
+            next_step: step_after_scrape_auto_applied_ai_step(Self::NAME).map(str::to_string),
         }
     }
 }

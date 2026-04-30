@@ -16,10 +16,11 @@ use std::sync::Arc;
 use ramekin_core::ai::{AiClient, AiConfig, CachingAiClient};
 use ramekin_core::http::HttpClient;
 use ramekin_core::pipeline::steps::{
-    EnrichAutoTagStep, EnrichGeneratePhotoStep, EnrichNormalizeIngredientsStep, ExtractRecipeStep,
-    FetchHtmlStep, ParseIngredientsStep,
+    EnrichAutoTagStep, ExtractRecipeStep, FetchHtmlStep, ParseIngredientsStep,
 };
-use ramekin_core::pipeline::StepRegistry;
+use ramekin_core::pipeline::{
+    scrape_auto_applied_ai_enrichments, ScrapeAutoAppliedAiEnrichment, StepRegistry,
+};
 
 pub use runners::{
     run_all_steps, AllStepsResult, ExtractionStats, IngredientStats, PipelineStep, StepResult,
@@ -44,16 +45,22 @@ pub fn build_registry<C: HttpClient + Clone + Send + Sync + 'static>(
     registry.register(Box::new(FetchImagesStep::new(client)));
     registry.register(Box::new(ParseIngredientsStep));
     registry.register(Box::new(SaveRecipeStep));
-    registry.register(Box::new(EnrichNormalizeIngredientsStep));
 
-    // Create AI client for auto-tagging
-    let mut ai_config = AiConfig::from_env().expect("OPENROUTER_API_KEY must be set in cli.env");
-    ai_config.rate_limit_ms = 0;
-    let ai_client: Arc<dyn AiClient> = Arc::new(CachingAiClient::new(ai_config));
-    registry.register(Box::new(EnrichAutoTagStep::new(ai_client, user_tags)));
-    registry.register(Box::new(ApplyAutoTagsStep));
-
-    registry.register(Box::new(EnrichGeneratePhotoStep));
+    for enrichment in scrape_auto_applied_ai_enrichments() {
+        match enrichment {
+            ScrapeAutoAppliedAiEnrichment::AutoTag => {
+                let mut ai_config =
+                    AiConfig::from_env().expect("OPENROUTER_API_KEY must be set in cli.env");
+                ai_config.rate_limit_ms = 0;
+                let ai_client: Arc<dyn AiClient> = Arc::new(CachingAiClient::new(ai_config));
+                registry.register(Box::new(EnrichAutoTagStep::new(
+                    ai_client,
+                    user_tags.clone(),
+                )));
+                registry.register(Box::new(ApplyAutoTagsStep));
+            }
+        }
+    }
 
     registry
 }

@@ -18,6 +18,7 @@ import { extractApiError } from "../utils/recipeFormHelpers";
 import { parseTag } from "../utils/tagHierarchy";
 import { usePageTitle } from "../utils/pageTitle";
 import { scaleAmount } from "../utils/scaleAmount";
+import { AI_ENRICHMENTS } from "../utils/aiEnrichments";
 import {
   MEAL_TYPES,
   MEAL_TYPE_LABELS,
@@ -174,6 +175,7 @@ export default function ViewRecipePage() {
   // Rescrape state
   const [rescraping, setRescraping] = createSignal(false);
   const [generatingPhoto, setGeneratingPhoto] = createSignal(false);
+  const [normalizingTitle, setNormalizingTitle] = createSignal(false);
 
   // Generate description state
   const [generatingDescription, setGeneratingDescription] = createSignal(false);
@@ -436,6 +438,25 @@ export default function ViewRecipePage() {
     }
   };
 
+  const handleNormalizeTitle = async () => {
+    if (!recipe()) return;
+
+    setNormalizingTitle(true);
+    setError(null);
+    try {
+      const res = await getRecipesApi().normalizeTitle({ id: params.id });
+      if (res.changed) {
+        setSearchParams({ version_id: undefined });
+        await loadRecipe();
+      }
+    } catch (err) {
+      const message = await extractApiError(err, "Failed to normalize title");
+      setError(message);
+    } finally {
+      setNormalizingTitle(false);
+    }
+  };
+
   const handleCustomEnrich = async () => {
     const r = recipe();
     const instruction = customInstruction();
@@ -686,6 +707,20 @@ export default function ViewRecipePage() {
                 <button
                   type="button"
                   class="btn"
+                  onClick={handleNormalizeTitle}
+                  disabled={
+                    normalizingTitle() ||
+                    isViewingHistoricalVersion() ||
+                    loading()
+                  }
+                >
+                  {normalizingTitle()
+                    ? "Renaming..."
+                    : AI_ENRICHMENTS.normalizeTitle.individualLabel}
+                </button>
+                <button
+                  type="button"
+                  class="btn"
                   onClick={handleGenerateDescription}
                   disabled={
                     generatingDescription() ||
@@ -695,7 +730,7 @@ export default function ViewRecipePage() {
                 >
                   {generatingDescription()
                     ? "Generating..."
-                    : "Generate Description"}
+                    : AI_ENRICHMENTS.generateDescription.individualLabel}
                 </button>
                 <button
                   type="button"
@@ -703,7 +738,9 @@ export default function ViewRecipePage() {
                   onClick={handleEnrich}
                   disabled={enriching() || isViewingHistoricalVersion()}
                 >
-                  {enriching() ? "Enriching..." : "Enrich with AI"}
+                  {enriching()
+                    ? "Enriching..."
+                    : AI_ENRICHMENTS.enrichRecipe.individualLabel}
                 </button>
                 <button
                   type="button"
@@ -713,7 +750,7 @@ export default function ViewRecipePage() {
                   }
                   disabled={enriching() || isViewingHistoricalVersion()}
                 >
-                  Customize with AI
+                  {AI_ENRICHMENTS.customEnrich.individualLabel}
                 </button>
                 <button
                   type="button"
@@ -723,7 +760,7 @@ export default function ViewRecipePage() {
                 >
                   {generatingPhoto()
                     ? "Generating Photo..."
-                    : "Generate AI Photo"}
+                    : AI_ENRICHMENTS.generatePhoto.individualLabel}
                 </button>
                 <button
                   type="button"

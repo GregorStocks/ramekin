@@ -724,9 +724,7 @@ fn determine_final_status(steps: &[StepResult]) -> FinalStatus {
                     // FetchImages is skipped in CLI, ParseIngredients runs before save
                     return FinalStatus::FailedAtSave;
                 }
-                PipelineStep::EnrichNormalizeIngredients
-                | PipelineStep::EnrichAutoTag
-                | PipelineStep::EnrichGeneratePhoto => {
+                PipelineStep::EnrichAutoTag | PipelineStep::ApplyAutoTags => {
                     // Enrichment failures are expected - don't fail the job
                     // Continue to check remaining steps
                 }
@@ -994,9 +992,8 @@ fn print_timing_summary(results: &PipelineResults) {
         "FetchImages",
         "ParseIngredients",
         "SaveRecipe",
-        "EnrichNormalizeIngredients",
         "EnrichAutoTag",
-        "EnrichGeneratePhoto",
+        "ApplyAutoTags",
     ];
 
     let mut grand_total_ms: u64 = 0;

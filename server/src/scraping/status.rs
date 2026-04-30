@@ -16,6 +16,7 @@ use uuid::Uuid;
 use crate::db::DbPool;
 use crate::schema::step_outputs;
 use crate::scraping::ScrapeError;
+use ramekin_core::pipeline::scrape_pipeline_step_names;
 
 /// Row shape read by `build_step_states_from_outputs`:
 /// `(step_name, created_at, duration_ms, summary, success, error)`. The full
@@ -30,19 +31,6 @@ type StepOutputRow = (
     bool,
     Option<String>,
 );
-
-/// Canonical pipeline step names, in the order they run in `build_registry`.
-pub const PIPELINE_STEPS: &[&str] = &[
-    "fetch_html",
-    "extract_recipe",
-    "fetch_images",
-    "parse_ingredients",
-    "save_recipe",
-    "enrich_normalize_ingredients",
-    "enrich_auto_tag",
-    "apply_auto_tags",
-    "enrich_generate_photo",
-];
 
 /// A single pipeline step's state for the status API response.
 #[derive(Debug, Clone, Serialize, ToSchema)]
@@ -137,7 +125,7 @@ pub fn step_summary(step_name: &str, output: &JsonValue) -> Option<String> {
 }
 
 /// Produce a synthetic `StepState` for a `failed_at_step` value that isn't
-/// one of the canonical `PIPELINE_STEPS` (e.g. `photo_extract` for the
+/// one of the canonical scrape pipeline steps (e.g. `photo_extract` for the
 /// photo-only import path). Without this, the status API would render every
 /// canonical step as `"pending"` and silently hide the real failure.
 ///
@@ -153,7 +141,7 @@ pub fn extra_failed_state_for_unknown_step(
     job_error_message: Option<&str>,
 ) -> Option<StepState> {
     let name = failed_at_step?;
-    if PIPELINE_STEPS.contains(&name) {
+    if scrape_pipeline_step_names().contains(&name) {
         return None;
     }
     Some(StepState {
@@ -170,7 +158,7 @@ pub fn extra_failed_state_for_unknown_step(
 
 /// Build the ordered list of step states for a job.
 ///
-/// Reads all step outputs for the job, then walks `PIPELINE_STEPS` in order
+/// Reads all step outputs for the job, then walks canonical scrape steps in order
 /// and emits a `StepState` per step derived from:
 /// - the step's stored output (completed), or
 /// - the job's `current_step` (running) / `failed_at_step` (failed), or
@@ -181,7 +169,7 @@ pub fn extra_failed_state_for_unknown_step(
 /// `DbOutputStore::save_output`). `started_at` is derived as
 /// `finished_at - duration_ms` when duration is available.
 ///
-/// If `failed_at_step` is not one of `PIPELINE_STEPS`, a synthetic failed
+/// If `failed_at_step` is not one of the canonical scrape steps, a synthetic failed
 /// entry is prepended — these represent steps that run outside the canonical
 /// scrape pipeline (e.g. `photo_extract` in photo-only imports).
 pub fn build_step_states(
@@ -225,7 +213,7 @@ pub fn build_step_states(
     ))
 }
 
-/// Pure helper: walk PIPELINE_STEPS and emit a `StepState` per step from the
+/// Pure helper: walk canonical scrape steps and emit a `StepState` per step from the
 /// given `step_outputs` rows plus the job's live state. Separated from
 /// `build_step_states` so it can be unit-tested without a DB.
 fn build_step_states_from_outputs(
@@ -257,10 +245,11 @@ fn build_step_states_from_outputs(
     }
 
     let terminal = matches!(job_status, "completed" | "failed");
-    let mut states = Vec::with_capacity(PIPELINE_STEPS.len());
+    let pipeline_steps = scrape_pipeline_step_names();
+    let mut states = Vec::with_capacity(pipeline_steps.len());
 
-    for step_name in PIPELINE_STEPS {
-        let name = (*step_name).to_string();
+    for step_name in pipeline_steps {
+        let name = step_name.to_string();
         // Branch order matters:
         //   1. failed_at_step — a failed step must render as "failed" even if
         //      execute_step_with_tracing persisted a partial output row for
@@ -450,21 +439,17 @@ mod tests {
     #[test]
     fn pipeline_steps_matches_build_registry_order() {
         // Sanity check: the canonical list must match what `build_registry`
-        // actually registers, in order. If someone reorders steps in
-        // `scraping::mod::build_registry` without updating this list, the
-        // status API will be wrong — keep them in lockstep.
+        // actually registers, in order.
         assert_eq!(
-            PIPELINE_STEPS,
-            &[
+            scrape_pipeline_step_names(),
+            vec![
                 "fetch_html",
                 "extract_recipe",
                 "fetch_images",
                 "parse_ingredients",
                 "save_recipe",
-                "enrich_normalize_ingredients",
                 "enrich_auto_tag",
                 "apply_auto_tags",
-                "enrich_generate_photo",
             ]
         );
     }
@@ -486,10 +471,9 @@ mod tests {
 
     #[test]
     fn build_step_states_synthetic_entry_for_non_canonical_failed_step() {
-        // `photo_extract` is the photo-only import path's step name and is
-        // NOT in PIPELINE_STEPS; without the fallback the status list would
-        // render all 9 canonical steps as "pending" and silently hide the
-        // real failure.
+        // `photo_extract` is the photo-only import path's step name; without
+        // the fallback the status list would render canonical steps as
+        // "pending" and silently hide the real failure.
         let started = DateTime::parse_from_rfc3339("2025-01-01T00:00:00Z")
             .unwrap()
             .with_timezone(&Utc);
@@ -570,17 +554,13 @@ mod tests {
 
     #[test]
     fn continues_on_failure_enrichment_renders_as_failed() {
-        // Enrichment steps (enrich_normalize_ingredients, enrich_auto_tag,
-        // enrich_generate_photo) have `continues_on_failure = true`, so the
-        // pipeline continues past their failure and the job completes. The
-        // step_outputs row is persisted with `success = false`, and the
-        // status page must render that step as "failed" with the stored
-        // error — otherwise the failure is silently hidden.
+        // Auto-applied enrichment steps can fail after save_recipe; the status
+        // page must still render that step as "failed" with the stored error.
         let finished = DateTime::parse_from_rfc3339("2025-01-01T00:00:05Z")
             .unwrap()
             .with_timezone(&Utc);
         let outputs = vec![(
-            "enrich_normalize_ingredients".to_string(),
+            "apply_auto_tags".to_string(),
             finished,
             Some(500),
             None,
@@ -590,8 +570,8 @@ mod tests {
         let states = build_step_states_from_outputs(outputs, "completed", None, None, None, None);
         let enrich = states
             .iter()
-            .find(|s| s.name == "enrich_normalize_ingredients")
-            .expect("enrich_normalize_ingredients state present");
+            .find(|s| s.name == "apply_auto_tags")
+            .expect("apply_auto_tags state present");
         assert_eq!(enrich.status, "failed");
         assert_eq!(enrich.error.as_deref(), Some("boom"));
         assert_eq!(enrich.finished_at, Some(finished));

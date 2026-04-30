@@ -11,6 +11,7 @@ use serde_json::json;
 
 use ramekin_core::http::HttpClient;
 use ramekin_core::pipeline::{
+    first_scrape_auto_applied_ai_step_name, step_after_scrape_auto_applied_ai_step,
     steps::{FetchImagesStepMeta, SaveRecipeStepMeta},
     PipelineStep, StepContext, StepMetadata, StepResult,
 };
@@ -148,7 +149,7 @@ impl PipelineStep for ApplyAutoTagsStep {
             }),
             error: None,
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: Some("enrich_generate_photo".to_string()),
+            next_step: step_after_scrape_auto_applied_ai_step(Self::NAME).map(str::to_string),
         }
     }
 }
@@ -209,7 +210,7 @@ impl PipelineStep for SaveRecipeStep {
             output: serde_json::to_value(&save_output).unwrap_or_default(),
             error: None,
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: Some("enrich_normalize_ingredients".to_string()),
+            next_step: first_scrape_auto_applied_ai_step_name().map(str::to_string),
         }
     }
 }
