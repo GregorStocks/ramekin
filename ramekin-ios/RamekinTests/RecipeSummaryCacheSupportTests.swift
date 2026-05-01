@@ -50,6 +50,12 @@ final class RecipeSummaryCacheSupportTests: XCTestCase {
     func testSourceFilterAndRandomSortUseNetwork() {
         XCTAssertFalse(
             RecipeSummaryCacheSupport.canServeFromCache(
+                filterState: RecipeListFilterState(searchText: "hidden ingredient"),
+                sortOrder: .newest
+            )
+        )
+        XCTAssertFalse(
+            RecipeSummaryCacheSupport.canServeFromCache(
                 filterState: RecipeListFilterState(source: "NYT"),
                 sortOrder: .newest
             )

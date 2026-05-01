@@ -2,7 +2,9 @@ import Foundation
 
 enum RecipeSummaryCacheSupport {
     static func canServeFromCache(filterState: RecipeListFilterState, sortOrder: RecipeSortOrder) -> Bool {
-        RecipeListFilterSupport.normalizedSource(filterState.source).isEmpty && sortOrder != .random
+        filterState.searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            && RecipeListFilterSupport.normalizedSource(filterState.source).isEmpty
+            && sortOrder != .random
     }
 
     static func filteredAndSorted(

@@ -89,6 +89,25 @@ def test_recipe_sync_returns_updates_and_deletions_since_last_sync(
     assert str(deleted.id) in response["deleted"]
 
 
+def test_recipe_sync_full_response_includes_deleted_ids(authed_api_client, server_url):
+    client, _user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    deleted = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Deleted Before Full Sync",
+            instructions="Cook it.",
+            ingredients=[make_ingredient(item="lentils")],
+        )
+    )
+    recipes_api.delete_recipe(deleted.id)
+
+    response = _sync(client, server_url)
+
+    assert str(deleted.id) in response["deleted"]
+    assert str(deleted.id) not in {recipe["id"] for recipe in response["recipes"]}
+
+
 def test_recipe_sync_requires_auth(unauthed_api_client, server_url):
     response = requests.get(
         f"{server_url}/api/recipes/sync",

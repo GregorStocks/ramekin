@@ -108,29 +108,28 @@ pub async fn sync_recipes(
         }
     };
 
-    let deleted = if let Some(last_sync_at) = params.last_sync_at {
-        match recipes::table
-            .filter(recipes::user_id.eq(user.id))
-            .filter(recipes::deleted_at.is_not_null())
-            .filter(recipes::deleted_at.gt(last_sync_at))
-            .filter(recipes::deleted_at.le(sync_timestamp))
-            .select(recipes::id)
-            .load(&mut conn)
-        {
-            Ok(ids) => ids,
-            Err(e) => {
-                tracing::error!("Failed to sync deleted recipes: {}", e);
-                return (
-                    StatusCode::INTERNAL_SERVER_ERROR,
-                    Json(ErrorResponse {
-                        error: "Failed to sync recipes".to_string(),
-                    }),
-                )
-                    .into_response();
-            }
+    let mut deleted_query = recipes::table
+        .filter(recipes::user_id.eq(user.id))
+        .filter(recipes::deleted_at.is_not_null())
+        .filter(recipes::deleted_at.le(sync_timestamp))
+        .into_boxed();
+
+    if let Some(last_sync_at) = params.last_sync_at {
+        deleted_query = deleted_query.filter(recipes::deleted_at.gt(last_sync_at));
+    }
+
+    let deleted = match deleted_query.select(recipes::id).load(&mut conn) {
+        Ok(ids) => ids,
+        Err(e) => {
+            tracing::error!("Failed to sync deleted recipes: {}", e);
+            return (
+                StatusCode::INTERNAL_SERVER_ERROR,
+                Json(ErrorResponse {
+                    error: "Failed to sync recipes".to_string(),
+                }),
+            )
+                .into_response();
         }
-    } else {
-        Vec::new()
     };
 
     let recipes = rows
