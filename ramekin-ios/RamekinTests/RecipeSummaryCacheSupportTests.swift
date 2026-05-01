@@ -47,6 +47,25 @@ final class RecipeSummaryCacheSupportTests: XCTestCase {
         XCTAssertEqual(result.map(\.id), [five.id, three.id, unrated.id])
     }
 
+    func testCreatedDateFilterUsesUtcDayBoundaries() {
+        let originalTimeZone = NSTimeZone.default
+        NSTimeZone.default = TimeZone(identifier: "America/Los_Angeles")!
+        defer { NSTimeZone.default = originalTimeZone }
+
+        let justAfterUtcMidnight = makeRecipe(
+            title: "UTC Match",
+            createdAt: dateTime(year: 2024, month: 2, day: 1, hour: 1)
+        )
+
+        let result = RecipeSummaryCacheSupport.filteredAndSorted(
+            [justAfterUtcMidnight],
+            filterState: RecipeListFilterState(createdAfter: "2024-02-01"),
+            sortOrder: .newest
+        )
+
+        XCTAssertEqual(result.map(\.id), [justAfterUtcMidnight.id])
+    }
+
     func testSourceFilterAndRandomSortUseNetwork() {
         XCTAssertFalse(
             RecipeSummaryCacheSupport.canServeFromCache(
@@ -97,5 +116,17 @@ final class RecipeSummaryCacheSupportTests: XCTestCase {
 
     private func date(_ value: String) -> Date {
         RecipeListFilterSupport.date(from: value)!
+    }
+
+    private func dateTime(year: Int, month: Int, day: Int, hour: Int) -> Date {
+        var calendar = Calendar(identifier: .iso8601)
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        return calendar.date(from: DateComponents(
+            timeZone: TimeZone(secondsFromGMT: 0)!,
+            year: year,
+            month: month,
+            day: day,
+            hour: hour
+        ))!
     }
 }

@@ -80,16 +80,24 @@ enum RecipeSummaryCacheSupport {
         createdAfter: String,
         createdBefore: String
     ) -> Bool {
-        let calendar = Calendar.autoupdatingCurrent
-        if let after = RecipeListFilterSupport.date(from: createdAfter),
-           calendar.startOfDay(for: recipe.createdAt) < calendar.startOfDay(for: after) {
+        if let after = utcDate(from: createdAfter),
+           utcCalendar.startOfDay(for: recipe.createdAt) < utcCalendar.startOfDay(for: after) {
             return false
         }
-        if let before = RecipeListFilterSupport.date(from: createdBefore),
-           calendar.startOfDay(for: recipe.createdAt) > calendar.startOfDay(for: before) {
+        if let before = utcDate(from: createdBefore),
+           utcCalendar.startOfDay(for: recipe.createdAt) > utcCalendar.startOfDay(for: before) {
             return false
         }
         return true
+    }
+
+    private static func utcDate(from rawValue: String) -> Date? {
+        let normalizedValue = RecipeListFilterSupport.normalizedDateValue(rawValue)
+        guard !normalizedValue.isEmpty else {
+            return nil
+        }
+
+        return utcDateFormatter.date(from: normalizedValue)
     }
 
     private static func compareDatesDescending(_ lhs: Date, _ rhs: Date, _ lhsID: UUID, _ rhsID: UUID) -> Bool {
@@ -120,4 +128,19 @@ enum RecipeSummaryCacheSupport {
             return lhsID.uuidString < rhsID.uuidString
         }
     }
+
+    private static let utcCalendar: Calendar = {
+        var calendar = Calendar(identifier: .iso8601)
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        return calendar
+    }()
+
+    private static let utcDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.calendar = utcCalendar
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)!
+        return formatter
+    }()
 }
