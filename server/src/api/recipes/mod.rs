@@ -8,6 +8,7 @@ pub mod list;
 pub mod normalize_title;
 pub mod rescrape;
 pub mod rescrape_photo;
+pub mod sync;
 pub mod update;
 pub mod versions;
 
@@ -21,6 +22,7 @@ pub fn router() -> Router<AppState> {
     Router::new()
         .route("/", get(list::list_recipes).post(create::create_recipe))
         .route("/export", get(export::export_all_recipes))
+        .route("/sync", get(sync::sync_recipes))
         .route(
             "/{id}",
             get(get::get_recipe)
@@ -47,6 +49,7 @@ pub fn router() -> Router<AppState> {
     paths(
         create::create_recipe,
         list::list_recipes,
+        sync::sync_recipes,
         get::get_recipe,
         update::update_recipe,
         delete::delete_recipe,
@@ -64,6 +67,7 @@ pub fn router() -> Router<AppState> {
         create::CreateRecipeResponse,
         list::ListRecipesResponse,
         list::RecipeSummary,
+        sync::SyncRecipesResponse,
         list::SortBy,
         list::Direction,
         get::RecipeResponse,

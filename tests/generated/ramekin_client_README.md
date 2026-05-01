@@ -88,6 +88,7 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**normalize_title**](ramekin_client/docs/RecipesApi.md#normalize_title) | **POST** /api/recipes/{id}/normalize-title | 
 *RecipesApi* | [**rescrape**](ramekin_client/docs/RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 *RecipesApi* | [**rescrape_photo**](ramekin_client/docs/RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
+*RecipesApi* | [**sync_recipes**](ramekin_client/docs/RecipesApi.md#sync_recipes) | **GET** /api/recipes/sync | 
 *RecipesApi* | [**update_recipe**](ramekin_client/docs/RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
 *ScrapeApi* | [**capture**](ramekin_client/docs/ScrapeApi.md#capture) | **POST** /api/scrape/capture | 
 *ScrapeApi* | [**create_scrape**](ramekin_client/docs/ScrapeApi.md#create_scrape) | **POST** /api/scrape | 
@@ -161,6 +162,7 @@ Class | Method | HTTP request | Description
  - [StepState](ramekin_client/docs/StepState.md)
  - [SyncCreateItem](ramekin_client/docs/SyncCreateItem.md)
  - [SyncCreatedItem](ramekin_client/docs/SyncCreatedItem.md)
+ - [SyncRecipesResponse](ramekin_client/docs/SyncRecipesResponse.md)
  - [SyncRequest](ramekin_client/docs/SyncRequest.md)
  - [SyncResponse](ramekin_client/docs/SyncResponse.md)
  - [SyncServerChange](ramekin_client/docs/SyncServerChange.md)

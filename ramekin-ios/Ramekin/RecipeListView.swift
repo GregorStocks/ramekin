@@ -1,5 +1,4 @@
 import SwiftUI
-
 struct RecipeListView: View {
     @EnvironmentObject var appState: AppState
 
@@ -13,7 +12,7 @@ struct RecipeListView: View {
     @State private var totalCount = 0
     @State private var activeQuery: String?
     @State private var searchTask: Task<Void, Never>?
-
+    @State private var isUsingLocalCache = false
     @AppStorage("recipeSortOrder") private var sortOrder = RecipeSortOrder.newest
     @AppStorage("recipePhotoFilter") private var photoFilter = PhotoFilter.any
     @AppStorage("recipeSourceFilter") private var sourceFilter = ""
@@ -22,8 +21,8 @@ struct RecipeListView: View {
     @State private var selectedTags: Set<String> = []
     @State private var availableTags: [TagItem] = []
     @State private var showingAdvancedFilters = false
-
     private let pageSize: Int64 = 20
+    private let recipeCacheStore = RecipeCacheStore.shared
 
     private var hasActiveFilters: Bool {
         currentFilterState.hasAnyFilters
@@ -97,12 +96,14 @@ struct RecipeListView: View {
         .task {
             loadPersistedTags()
             loadPersistedAvailableTags()
+            loadCachedRecipesForCurrentQuery()
             await loadTags()
             await loadRecipes(reset: true)
         }
         .onReceive(NotificationCenter.default.publisher(for: .tagsDidChange)) { _ in
             loadPersistedTags()
             loadPersistedAvailableTags()
+            invalidateRecipeCacheSync()
             reloadRecipes()
         }
         .onReceive(NotificationCenter.default.publisher(for: .recipeDeleted)) { _ in
@@ -118,8 +119,6 @@ struct RecipeListView: View {
             }
         }
     }
-
-    // MARK: - Sort Menu
 
     private var sortMenu: some View {
         Menu {
@@ -139,8 +138,6 @@ struct RecipeListView: View {
             Image(systemName: "arrow.up.arrow.down")
         }
     }
-
-    // MARK: - Filter Bar
 
     private var filterBar: some View {
         RecipeListFilterBar(
@@ -322,10 +319,17 @@ extension RecipeListView {
         }
     }
 
-    fileprivate func loadRecipes(reset: Bool) async {
+    fileprivate func loadRecipes(reset: Bool, forceNetwork: Bool = false) async {
         let logger = DebugLogger.shared
         let queryValue = buildQuery()
         logger.log("loadRecipes called (reset=\(reset), query=\(queryValue ?? "nil"))", source: "RecipeList")
+
+        if !forceNetwork,
+           reset,
+           RecipeSummaryCacheSupport.canServeFromCache(filterState: currentFilterState, sortOrder: sortOrder) {
+            await syncCachedRecipes(queryValue: queryValue)
+            return
+        }
 
         await MainActor.run {
             if reset {
@@ -333,6 +337,7 @@ extension RecipeListView {
                 loadMoreFailed = false
                 isLoadingMore = false
                 activeQuery = queryValue
+                isUsingLocalCache = false
             }
 
             isLoading = true
@@ -376,7 +381,7 @@ extension RecipeListView {
     }
 
     private func loadMore() async {
-        guard !isLoading && !isLoadingMore && hasMore else { return }
+        guard !isUsingLocalCache && !isLoading && !isLoadingMore && hasMore else { return }
 
         await MainActor.run {
             isLoadingMore = true
@@ -406,5 +411,90 @@ extension RecipeListView {
                 isLoadingMore = false
             }
         }
+    }
+
+    private func loadCachedRecipesForCurrentQuery() {
+        guard RecipeSummaryCacheSupport.canServeFromCache(filterState: currentFilterState, sortOrder: sortOrder),
+              let accountKey = recipeCacheStore.currentAccountKey()
+        else {
+            return
+        }
+
+        do {
+            let cachedRecipes = try recipeCacheStore.loadRecipes(accountKey: accountKey)
+            applyCachedRecipes(cachedRecipes)
+        } catch {
+            DebugLogger.shared.log("loadCachedRecipes error: \(error.localizedDescription)", source: "RecipeList")
+        }
+    }
+
+    private func invalidateRecipeCacheSync() {
+        guard let accountKey = recipeCacheStore.currentAccountKey() else { return }
+        recipeCacheStore.clearLastSyncAt(accountKey: accountKey)
+    }
+
+    private func syncCachedRecipes(queryValue: String?) async {
+        let logger = DebugLogger.shared
+
+        await MainActor.run {
+            activeQuery = queryValue
+            isUsingLocalCache = true
+            hasMore = false
+            loadMoreFailed = false
+            isLoadingMore = false
+            isLoading = recipes.isEmpty
+            error = nil
+        }
+
+        guard let accountKey = recipeCacheStore.currentAccountKey() else {
+            await loadRecipes(reset: true, forceNetwork: true)
+            return
+        }
+
+        do {
+            let cachedBeforeSync = try recipeCacheStore.loadRecipes(accountKey: accountKey)
+            let lastSyncAt = cachedBeforeSync.isEmpty ? nil : recipeCacheStore.lastSyncAt(accountKey: accountKey)
+            let response = try await logger.timed("syncRecipeCache API", source: "RecipeList") {
+                try await RecipesAPI.syncRecipes(lastSyncAt: lastSyncAt)
+            }
+            try recipeCacheStore.apply(syncResponse: response, accountKey: accountKey)
+            let cachedRecipes = try recipeCacheStore.loadRecipes(accountKey: accountKey)
+
+            await MainActor.run {
+                guard activeQuery == queryValue else {
+                    logger.log("syncCachedRecipes: stale query, discarding results", source: "RecipeList")
+                    return
+                }
+                applyCachedRecipes(cachedRecipes)
+                logger.log("syncCachedRecipes: cache has \(cachedRecipes.count) recipes", source: "RecipeList")
+            }
+        } catch is CancellationError {
+            logger.log("syncCachedRecipes: cancelled", source: "RecipeList")
+        } catch {
+            logger.log("syncCachedRecipes: error - \(error.localizedDescription)", source: "RecipeList")
+            await MainActor.run {
+                guard activeQuery == queryValue else { return }
+                if recipes.isEmpty {
+                    self.error = "Could not load recipes. Please try again."
+                }
+                isLoading = false
+            }
+        }
+    }
+
+    private func applyCachedRecipes(_ cachedRecipes: [RecipeSummary]) {
+        let visibleRecipes = RecipeSummaryCacheSupport.filteredAndSorted(
+            cachedRecipes,
+            filterState: currentFilterState,
+            sortOrder: sortOrder
+        )
+        recipes = visibleRecipes
+        totalCount = visibleRecipes.count
+        hasMore = false
+        isLoading = false
+        isLoadingMore = false
+        loadMoreFailed = false
+        isUsingLocalCache = true
+        activeQuery = buildQuery()
     }
 }

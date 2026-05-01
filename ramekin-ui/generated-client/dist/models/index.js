@@ -51,6 +51,7 @@ export * from './SortBy';
 export * from './StepState';
 export * from './SyncCreateItem';
 export * from './SyncCreatedItem';
+export * from './SyncRecipesResponse';
 export * from './SyncRequest';
 export * from './SyncResponse';
 export * from './SyncServerChange';
