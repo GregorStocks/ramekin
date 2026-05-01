@@ -2,8 +2,9 @@ use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
-use crate::models::{NewRecipe, NewRecipeVersion, NewUserTag, RecipeVersionTag};
-use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
+use crate::models::{NewRecipe, NewRecipeVersion, RecipeVersionTag};
+use crate::schema::{recipe_version_tags, recipe_versions, recipes};
+use crate::tags::upsert_user_tag;
 use crate::types::RecipeContent;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
@@ -149,17 +150,7 @@ pub async fn create_recipe(
 
         // 4. Handle tags: upsert into user_tags and insert into junction table
         for tag_name in &tags {
-            // Upsert the tag into user_tags
-            let tag_id: Uuid = diesel::insert_into(user_tags::table)
-                .values(NewUserTag {
-                    user_id: user.id,
-                    name: tag_name,
-                })
-                .on_conflict((user_tags::user_id, user_tags::name))
-                .do_update()
-                .set(user_tags::deleted_at.eq(None::<chrono::DateTime<chrono::Utc>>)) // Revive soft-deleted tags
-                .returning(user_tags::id)
-                .get_result(conn)?;
+            let tag_id = upsert_user_tag(conn, user.id, tag_name)?;
 
             // Insert into junction table
             diesel::insert_into(recipe_version_tags::table)
