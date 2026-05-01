@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**normalize_title**](RecipesApi.md#normalize_title) | **POST** /api/recipes/{id}/normalize-title | 
 [**rescrape**](RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 [**rescrape_photo**](RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
+[**sync_recipes**](RecipesApi.md#sync_recipes) | **GET** /api/recipes/sync | 
 [**update_recipe**](RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
 
 
@@ -345,6 +346,34 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::RescrapeResponse**](RescrapeResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sync_recipes
+
+> models::SyncRecipesResponse sync_recipes(last_sync_at)
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**last_sync_at** | Option<**String**> | Last sync timestamp - server will return changes since this time. |  |
+
+### Return type
+
+[**models::SyncRecipesResponse**](SyncRecipesResponse.md)
 
 ### Authorization
 

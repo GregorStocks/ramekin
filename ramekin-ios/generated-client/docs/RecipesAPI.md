@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**normalizeTitle**](RecipesAPI.md#normalizetitle) | **POST** /api/recipes/{id}/normalize-title | 
 [**rescrape**](RecipesAPI.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 [**rescrapePhoto**](RecipesAPI.md#rescrapephoto) | **POST** /api/recipes/{id}/rescrape-photo | 
+[**syncRecipes**](RecipesAPI.md#syncrecipes) | **GET** /api/recipes/sync | 
 [**updateRecipe**](RecipesAPI.md#updaterecipe) | **PUT** /api/recipes/{id} | 
 
 
@@ -577,6 +578,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RescrapeResponse**](RescrapeResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **syncRecipes**
+```swift
+    open class func syncRecipes(lastSyncAt: Date? = nil, completion: @escaping (_ data: SyncRecipesResponse?, _ error: Error?) -> Void)
+```
+
+
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import RamekinClient
+
+let lastSyncAt = Date() // Date | Last sync timestamp - server will return changes since this time. (optional)
+
+RecipesAPI.syncRecipes(lastSyncAt: lastSyncAt) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **lastSyncAt** | **Date** | Last sync timestamp - server will return changes since this time. | [optional] 
+
+### Return type
+
+[**SyncRecipesResponse**](SyncRecipesResponse.md)
 
 ### Authorization
 

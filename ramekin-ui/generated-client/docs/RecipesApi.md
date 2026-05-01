@@ -16,6 +16,7 @@ All URIs are relative to *http://localhost*
 | [**normalizeTitle**](RecipesApi.md#normalizetitle) | **POST** /api/recipes/{id}/normalize-title |  |
 | [**rescrape**](RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape |  |
 | [**rescrapePhoto**](RecipesApi.md#rescrapephoto) | **POST** /api/recipes/{id}/rescrape-photo |  |
+| [**syncRecipes**](RecipesApi.md#syncrecipes) | **GET** /api/recipes/sync |  |
 | [**updateRecipe**](RecipesApi.md#updaterecipeoperation) | **PUT** /api/recipes/{id} |  |
 
 
@@ -881,6 +882,76 @@ example().catch(console.error);
 | **400** | Recipe has no source URL |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Recipe not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## syncRecipes
+
+> SyncRecipesResponse syncRecipes(lastSyncAt)
+
+
+
+### Example
+
+```ts
+import {
+  Configuration,
+  RecipesApi,
+} from '';
+import type { SyncRecipesRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearer_auth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new RecipesApi(config);
+
+  const body = {
+    // Date | Last sync timestamp - server will return changes since this time. (optional)
+    lastSyncAt: 2013-10-20T19:20:30+01:00,
+  } satisfies SyncRecipesRequest;
+
+  try {
+    const data = await api.syncRecipes(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **lastSyncAt** | `Date` | Last sync timestamp - server will return changes since this time. | [Optional] [Defaults to `undefined`] |
+
+### Return type
+
+[**SyncRecipesResponse**](SyncRecipesResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Recipe changes for local cache sync |  -  |
+| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

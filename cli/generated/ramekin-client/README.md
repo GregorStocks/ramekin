@@ -51,6 +51,7 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**normalize_title**](docs/RecipesApi.md#normalize_title) | **POST** /api/recipes/{id}/normalize-title | 
 *RecipesApi* | [**rescrape**](docs/RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 *RecipesApi* | [**rescrape_photo**](docs/RecipesApi.md#rescrape_photo) | **POST** /api/recipes/{id}/rescrape-photo | 
+*RecipesApi* | [**sync_recipes**](docs/RecipesApi.md#sync_recipes) | **GET** /api/recipes/sync | 
 *RecipesApi* | [**update_recipe**](docs/RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
 *ScrapeApi* | [**capture**](docs/ScrapeApi.md#capture) | **POST** /api/scrape/capture | 
 *ScrapeApi* | [**create_scrape**](docs/ScrapeApi.md#create_scrape) | **POST** /api/scrape | 
@@ -124,6 +125,7 @@ Class | Method | HTTP request | Description
  - [StepState](docs/StepState.md)
  - [SyncCreateItem](docs/SyncCreateItem.md)
  - [SyncCreatedItem](docs/SyncCreatedItem.md)
+ - [SyncRecipesResponse](docs/SyncRecipesResponse.md)
  - [SyncRequest](docs/SyncRequest.md)
  - [SyncResponse](docs/SyncResponse.md)
  - [SyncServerChange](docs/SyncServerChange.md)

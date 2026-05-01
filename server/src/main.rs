@@ -8,6 +8,7 @@ mod photos;
 mod raw_sql;
 mod schema;
 mod scraping;
+mod tags;
 mod telemetry;
 mod types;
 

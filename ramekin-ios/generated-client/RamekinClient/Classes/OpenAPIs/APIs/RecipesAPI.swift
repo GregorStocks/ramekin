@@ -491,6 +491,45 @@ open class RecipesAPI {
 
     /**
 
+     - parameter lastSyncAt: (query) Last sync timestamp - server will return changes since this time. (optional)
+     - returns: SyncRecipesResponse
+     */
+    @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    open class func syncRecipes(lastSyncAt: Date? = nil) async throws -> SyncRecipesResponse {
+        return try await syncRecipesWithRequestBuilder(lastSyncAt: lastSyncAt).execute().body
+    }
+
+    /**
+     - GET /api/recipes/sync
+     - Bearer Token:
+       - type: http
+       - name: bearer_auth
+     - parameter lastSyncAt: (query) Last sync timestamp - server will return changes since this time. (optional)
+     - returns: RequestBuilder<SyncRecipesResponse> 
+     */
+    open class func syncRecipesWithRequestBuilder(lastSyncAt: Date? = nil) -> RequestBuilder<SyncRecipesResponse> {
+        let localVariablePath = "/api/recipes/sync"
+        let localVariableURLString = RamekinClientAPI.basePath + localVariablePath
+        let localVariableParameters: [String: Any]? = nil
+
+        var localVariableUrlComponents = URLComponents(string: localVariableURLString)
+        localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
+            "last_sync_at": (wrappedValue: lastSyncAt?.encodeToJSON(), isExplode: true),
+        ])
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<SyncRecipesResponse>.Type = RamekinClientAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
+    }
+
+    /**
+
      - parameter id: (path) Recipe ID 
      - parameter updateRecipeRequest: (body)  
      - returns: Void

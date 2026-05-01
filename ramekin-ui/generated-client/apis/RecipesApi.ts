@@ -26,6 +26,7 @@ import type {
   RecipeResponse,
   RescrapeResponse,
   SortBy,
+  SyncRecipesResponse,
   UpdateRecipeRequest,
   VersionListResponse,
 } from '../models/index';
@@ -52,6 +53,8 @@ import {
     RescrapeResponseToJSON,
     SortByFromJSON,
     SortByToJSON,
+    SyncRecipesResponseFromJSON,
+    SyncRecipesResponseToJSON,
     UpdateRecipeRequestFromJSON,
     UpdateRecipeRequestToJSON,
     VersionListResponseFromJSON,
@@ -105,6 +108,10 @@ export interface RescrapeRequest {
 
 export interface RescrapePhotoRequest {
     id: string;
+}
+
+export interface SyncRecipesRequest {
+    lastSyncAt?: Date | null;
 }
 
 export interface UpdateRecipeOperationRequest {
@@ -637,6 +644,45 @@ export class RecipesApi extends runtime.BaseAPI {
      */
     async rescrapePhoto(requestParameters: RescrapePhotoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RescrapeResponse> {
         const response = await this.rescrapePhotoRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async syncRecipesRaw(requestParameters: SyncRecipesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SyncRecipesResponse>> {
+        const queryParameters: any = {};
+
+        if (requestParameters['lastSyncAt'] != null) {
+            queryParameters['last_sync_at'] = (requestParameters['lastSyncAt'] as any).toISOString();
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/api/recipes/sync`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => SyncRecipesResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async syncRecipes(requestParameters: SyncRecipesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SyncRecipesResponse> {
+        const response = await this.syncRecipesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

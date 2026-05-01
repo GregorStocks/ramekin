@@ -961,6 +961,56 @@
         ]
       }
     },
+    "/api/recipes/sync": {
+      "get": {
+        "tags": [
+          "recipes"
+        ],
+        "operationId": "sync_recipes",
+        "parameters": [
+          {
+            "name": "last_sync_at",
+            "in": "query",
+            "description": "Last sync timestamp - server will return changes since this time.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Recipe changes for local cache sync",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SyncRecipesResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/recipes/{id}": {
       "get": {
         "tags": [
@@ -3873,6 +3923,36 @@
           "version": {
             "type": "integer",
             "format": "int32"
+          }
+        }
+      },
+      "SyncRecipesResponse": {
+        "type": "object",
+        "required": [
+          "recipes",
+          "deleted",
+          "sync_timestamp"
+        ],
+        "properties": {
+          "deleted": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Recipe IDs deleted since last_sync_at."
+          },
+          "recipes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RecipeSummary"
+            },
+            "description": "Active recipes created or updated since last_sync_at. All active recipes are returned when last_sync_at is absent."
+          },
+          "sync_timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "New sync timestamp to use for the next sync."
           }
         }
       },

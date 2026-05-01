@@ -19,11 +19,10 @@ use ramekin_core::pipeline::{
 use ramekin_core::{ExtractionMethod, FailedImageFetch, FetchImagesOutput, RawRecipe};
 
 use crate::db::DbPool;
-use crate::models::{
-    Ingredient, NewPhoto, NewRecipe, NewRecipeVersion, NewUserTag, RecipeVersionTag,
-};
+use crate::models::{Ingredient, NewPhoto, NewRecipe, NewRecipeVersion, RecipeVersionTag};
 use crate::photos::processing::{process_image, MAX_FILE_SIZE};
-use crate::schema::{photos, recipe_version_tags, recipe_versions, recipes, user_tags};
+use crate::schema::{photos, recipe_version_tags, recipe_versions, recipes};
+use crate::tags::upsert_user_tag;
 
 use super::is_host_allowed;
 
@@ -470,17 +469,7 @@ impl SaveRecipeStep {
                     if tag_name.is_empty() {
                         continue;
                     }
-                    // Upsert the tag into user_tags
-                    let tag_id: Uuid = diesel::insert_into(user_tags::table)
-                        .values(NewUserTag {
-                            user_id: self.user_id,
-                            name: tag_name,
-                        })
-                        .on_conflict((user_tags::user_id, user_tags::name))
-                        .do_update()
-                        .set(user_tags::deleted_at.eq(None::<chrono::DateTime<chrono::Utc>>)) // Revive soft-deleted tags
-                        .returning(user_tags::id)
-                        .get_result(conn)?;
+                    let tag_id = upsert_user_tag(conn, self.user_id, tag_name)?;
 
                     // Insert into junction table
                     diesel::insert_into(recipe_version_tags::table)
@@ -734,7 +723,7 @@ impl PipelineStep for ApplyAutoTagsStep {
 
 impl ApplyAutoTagsStep {
     fn apply_tags(&self, recipe_id: Uuid, new_tags: &[String]) -> Result<Uuid, String> {
-        use crate::models::{NewUserTag, Recipe, RecipeVersion, RecipeVersionTag};
+        use crate::models::{Recipe, RecipeVersion, RecipeVersionTag};
 
         let mut conn = self.pool.get().map_err(|e| e.to_string())?;
 
@@ -807,17 +796,7 @@ impl ApplyAutoTagsStep {
 
             // 4. Add new AI-suggested tags
             for tag_name in new_tags {
-                // Upsert the tag into user_tags
-                let tag_id: Uuid = diesel::insert_into(user_tags::table)
-                    .values(NewUserTag {
-                        user_id: recipe.user_id,
-                        name: tag_name,
-                    })
-                    .on_conflict((user_tags::user_id, user_tags::name))
-                    .do_update()
-                    .set(user_tags::name.eq(user_tags::name)) // No-op update to return the id
-                    .returning(user_tags::id)
-                    .get_result(conn)?;
+                let tag_id = upsert_user_tag(conn, recipe.user_id, tag_name)?;
 
                 // Insert into junction table (skip if already exists from copied tags)
                 diesel::insert_into(recipe_version_tags::table)

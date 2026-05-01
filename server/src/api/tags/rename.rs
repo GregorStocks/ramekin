@@ -9,6 +9,7 @@ use axum::{
     response::IntoResponse,
     Json,
 };
+use chrono::Utc;
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
@@ -89,12 +90,13 @@ pub async fn rename_tag(
     // CITEXT comparison handles case-insensitivity
     if current_name.eq_ignore_ascii_case(new_name) {
         // Update to preserve the new casing
+        let now = Utc::now();
         let result: Result<(Uuid, String), _> = diesel::update(
             user_tags::table
                 .filter(user_tags::id.eq(id))
                 .filter(user_tags::user_id.eq(user.id)),
         )
-        .set(user_tags::name.eq(new_name))
+        .set((user_tags::name.eq(new_name), user_tags::updated_at.eq(now)))
         .returning((user_tags::id, user_tags::name))
         .get_result(&mut conn);
 
@@ -137,12 +139,13 @@ pub async fn rename_tag(
     }
 
     // Perform the rename
+    let now = Utc::now();
     let result: Result<(Uuid, String), _> = diesel::update(
         user_tags::table
             .filter(user_tags::id.eq(id))
             .filter(user_tags::user_id.eq(user.id)),
     )
-    .set(user_tags::name.eq(new_name))
+    .set((user_tags::name.eq(new_name), user_tags::updated_at.eq(now)))
     .returning((user_tags::id, user_tags::name))
     .get_result(&mut conn);
 
