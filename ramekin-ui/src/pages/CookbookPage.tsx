@@ -13,6 +13,7 @@ import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 import PhotoThumbnail from "../components/PhotoThumbnail";
 import PdfExportModal from "../components/PdfExportModal";
+import { AI_ENRICHMENTS } from "../utils/aiEnrichments";
 import type { RecipeSummary, SortBy, Direction } from "ramekin-client";
 import { groupTags, parseTag } from "../utils/tagHierarchy";
 
@@ -293,6 +294,10 @@ export default function CookbookPage() {
     total: number;
   } | null>(null);
   const [descriptionProgress, setDescriptionProgress] = createSignal<{
+    done: number;
+    total: number;
+  } | null>(null);
+  const [generatePhotoProgress, setGeneratePhotoProgress] = createSignal<{
     done: number;
     total: number;
   } | null>(null);
@@ -815,6 +820,40 @@ export default function CookbookPage() {
     }
   };
 
+  const bulkGeneratePhoto = async () => {
+    const ids = Array.from(selected());
+    if (ids.length === 0) return;
+    const confirmMsg =
+      ids.length === 1
+        ? "Generate an AI photo for this recipe?"
+        : `Generate AI photos for ${ids.length} recipes? Each one calls the image model.`;
+    if (!window.confirm(confirmMsg)) return;
+
+    setGeneratePhotoProgress({ done: 0, total: ids.length });
+    const api = getRecipesApi();
+    let done = 0;
+    const errors: string[] = [];
+    for (const id of ids) {
+      try {
+        await api.generatePhoto({ id });
+      } catch (e) {
+        const msg = await extractApiError(e, "photo generation failed");
+        errors.push(`${id.slice(0, 8)}: ${msg}`);
+      }
+      done += 1;
+      setGeneratePhotoProgress({ done, total: ids.length });
+    }
+    setGeneratePhotoProgress(null);
+    await loadRecipes();
+    if (errors.length > 0) {
+      setError(
+        `${ids.length - errors.length}/${ids.length} photos generated. Errors: ${errors.slice(0, 3).join("; ")}${errors.length > 3 ? "…" : ""}`,
+      );
+    } else {
+      setError(`Generated AI photos for ${ids.length} recipes.`);
+    }
+  };
+
   const bulkRescrapePhoto = async () => {
     const ids = Array.from(selected());
     if (ids.length === 0) return;
@@ -984,9 +1023,13 @@ export default function CookbookPage() {
               selected().size === 0 || normalizeTitleProgress() !== null
             }
           >
-            <Show when={normalizeTitleProgress()} fallback={<>Auto-rename</>}>
-              Renaming {normalizeTitleProgress()!.done}/
-              {normalizeTitleProgress()!.total}…
+            <Show
+              when={normalizeTitleProgress()}
+              fallback={<>{AI_ENRICHMENTS.normalizeTitle.bulkLabel}</>}
+            >
+              {AI_ENRICHMENTS.normalizeTitle.progressVerb}{" "}
+              {normalizeTitleProgress()!.done}/{normalizeTitleProgress()!.total}
+              …
             </Show>
           </button>
           <button
@@ -997,10 +1040,24 @@ export default function CookbookPage() {
           >
             <Show
               when={descriptionProgress()}
-              fallback={<>Generate descriptions</>}
+              fallback={<>{AI_ENRICHMENTS.generateDescription.bulkLabel}</>}
             >
-              Describing {descriptionProgress()!.done}/
-              {descriptionProgress()!.total}…
+              {AI_ENRICHMENTS.generateDescription.progressVerb}{" "}
+              {descriptionProgress()!.done}/{descriptionProgress()!.total}…
+            </Show>
+          </button>
+          <button
+            type="button"
+            class="btn btn-small"
+            onClick={bulkGeneratePhoto}
+            disabled={selected().size === 0 || generatePhotoProgress() !== null}
+          >
+            <Show
+              when={generatePhotoProgress()}
+              fallback={<>{AI_ENRICHMENTS.generatePhoto.bulkLabel}</>}
+            >
+              {AI_ENRICHMENTS.generatePhoto.progressVerb}{" "}
+              {generatePhotoProgress()!.done}/{generatePhotoProgress()!.total}…
             </Show>
           </button>
         </div>

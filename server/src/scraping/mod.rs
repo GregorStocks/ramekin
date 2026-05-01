@@ -10,10 +10,13 @@ use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use ramekin_core::ai::{AiClient, CachingAiClient};
 use ramekin_core::pipeline::steps::{
-    EnrichAutoTagStep, EnrichGeneratePhotoStep, EnrichNormalizeIngredientsStep, ExtractRecipeStep,
-    FetchImagesStepMeta, ParseIngredientsStep, SaveRecipeStepMeta,
+    EnrichAutoTagStep, ExtractRecipeStep, FetchImagesStepMeta, ParseIngredientsStep,
+    SaveRecipeStepMeta,
 };
-use ramekin_core::pipeline::{PipelineStep, StepContext, StepOutputStore, StepRegistry};
+use ramekin_core::pipeline::{
+    scrape_auto_applied_ai_enrichments, scrape_pipeline_step_names, PipelineStep,
+    ScrapeAutoAppliedAiEnrichment, StepContext, StepOutputStore, StepRegistry,
+};
 use ramekin_core::{
     ExtractRecipeOutput, ExtractionMethod, FetchHtmlOutput, FetchImagesOutput, RawRecipe, BUILD_ID,
 };
@@ -170,18 +173,20 @@ pub fn build_registry(
     };
     registry.register(Box::new(save_step));
 
-    registry.register(Box::new(EnrichNormalizeIngredientsStep));
+    for enrichment in scrape_auto_applied_ai_enrichments() {
+        match enrichment {
+            ScrapeAutoAppliedAiEnrichment::AutoTag => {
+                let ai_client: Arc<dyn AiClient> = Arc::new(CachingAiClient::from_env()?);
+                let user_tags = fetch_user_tags(&pool, user_id).unwrap_or_else(|e| {
+                    tracing::warn!("Failed to fetch user tags: {}", e);
+                    vec![]
+                });
 
-    // Create AI client and fetch user tags for auto-tagging
-    let ai_client: Arc<dyn AiClient> = Arc::new(CachingAiClient::from_env()?);
-    let user_tags = fetch_user_tags(&pool, user_id).unwrap_or_else(|e| {
-        tracing::warn!("Failed to fetch user tags: {}", e);
-        vec![]
-    });
-
-    registry.register(Box::new(EnrichAutoTagStep::new(ai_client, user_tags)));
-    registry.register(Box::new(ApplyAutoTagsStep::new(pool.clone())));
-    registry.register(Box::new(EnrichGeneratePhotoStep));
+                registry.register(Box::new(EnrichAutoTagStep::new(ai_client, user_tags)));
+                registry.register(Box::new(ApplyAutoTagsStep::new(pool.clone())));
+            }
+        }
+    }
     Ok(registry)
 }
 
@@ -956,7 +961,7 @@ async fn execute_step_with_tracing(
                     }
                 }
             }
-            "enrich_normalize_ingredients" | "enrich_auto_tag" | "enrich_generate_photo" => {
+            "enrich_auto_tag" | "apply_auto_tags" => {
                 // Get recipe_id from save_recipe output
                 if let Some(save_output) = store.get_output("save_recipe") {
                     if let Some(recipe_id) = save_output.get("recipe_id").and_then(|v| v.as_str()) {
@@ -998,7 +1003,7 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
     let mut resume_step: String = job
         .failed_at_step
         .as_deref()
-        .filter(|name| status::PIPELINE_STEPS.contains(name))
+        .filter(|name| scrape_pipeline_step_names().contains(name))
         .unwrap_or(FetchHtmlStep::NAME)
         .to_string();
 
@@ -1013,10 +1018,11 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
     // so it actually retries the image download. Narrowly scoped to
     // photo-only jobs; full scrapes have their own empty-photo handling.
     if job.photo_only {
-        let resume_idx = status::PIPELINE_STEPS
+        let pipeline_steps = scrape_pipeline_step_names();
+        let resume_idx = pipeline_steps
             .iter()
             .position(|s| *s == resume_step.as_str());
-        let save_idx = status::PIPELINE_STEPS
+        let save_idx = pipeline_steps
             .iter()
             .position(|s| *s == SaveRecipeStepMeta::NAME);
         if let (Some(ri), Some(si)) = (resume_idx, save_idx) {
