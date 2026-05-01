@@ -17,6 +17,10 @@ use std::sync::Arc;
 use utoipa::ToSchema;
 use uuid::Uuid;
 
+/// Allow the multipart request body to carry a MAX_FILE_SIZE image plus
+/// ordinary multipart headers and boundaries.
+pub const MAX_UPLOAD_BODY_SIZE: usize = MAX_FILE_SIZE + 64 * 1024;
+
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct UploadPhotoResponse {
     pub id: Uuid,
@@ -63,7 +67,7 @@ pub async fn upload(
         Err(e) => {
             tracing::warn!("Multipart read error: {}", e);
             let error_msg = if e.status() == StatusCode::PAYLOAD_TOO_LARGE {
-                "File too large. Maximum size is 2MB".to_string()
+                format!("File too large. Maximum size is {} bytes", MAX_FILE_SIZE)
             } else {
                 format!("Failed to read multipart data: {}", e.body_text())
             };
@@ -77,7 +81,7 @@ pub async fn upload(
         Err(e) => {
             tracing::warn!("Field read error: {}", e);
             let error_msg = if e.status() == StatusCode::PAYLOAD_TOO_LARGE {
-                "File too large. Maximum size is 2MB".to_string()
+                format!("File too large. Maximum size is {} bytes", MAX_FILE_SIZE)
             } else {
                 format!("Failed to read file data: {}", e.body_text())
             };
