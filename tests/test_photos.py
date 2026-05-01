@@ -1,7 +1,13 @@
+from io import BytesIO
+
 import pytest
+from PIL import Image
 
 from ramekin_client.api import PhotosApi
 from ramekin_client.exceptions import ApiException
+
+DEFAULT_AXUM_BODY_LIMIT = 2 * 1024 * 1024
+MAX_IMAGE_FILE_SIZE = 10 * 1024 * 1024
 
 
 def test_photo_upload_and_download_roundtrip(authed_api_client, test_image):
@@ -22,6 +28,23 @@ def test_photo_upload_and_download_roundtrip(authed_api_client, test_image):
     # Verify roundtrip - read the data from the response
     downloaded_data = download_response.data
     assert downloaded_data == test_image
+
+
+def test_photo_upload_accepts_image_over_default_body_limit(authed_api_client):
+    """Valid pasted images over Axum's 2 MiB default body limit should upload."""
+    client, user_id = authed_api_client
+    photos_api = PhotosApi(client)
+    large_image = _make_noisy_png(1500, 1500)
+    assert DEFAULT_AXUM_BODY_LIMIT < len(large_image) < MAX_IMAGE_FILE_SIZE
+
+    upload_response = photos_api.upload(file=("clipboard.png", large_image))
+
+    download_response = photos_api.get_photo_without_preload_content(
+        id=str(upload_response.id)
+    )
+    assert download_response.status == 200
+    assert download_response.headers.get("content-type") == "image/png"
+    assert download_response.data == large_image
 
 
 def test_photo_not_found(authed_api_client):
@@ -45,6 +68,13 @@ def test_photo_upload_requires_auth(unauthed_api_client):
         photos_api.upload(file=("test.png", b"fake"))
 
     assert exc_info.value.status == 401
+
+
+def _make_noisy_png(width: int, height: int) -> bytes:
+    img = Image.effect_noise((width, height), 100).convert("RGB")
+    buf = BytesIO()
+    img.save(buf, format="PNG")
+    return buf.getvalue()
 
 
 def test_photo_download_requires_auth(unauthed_api_client):
