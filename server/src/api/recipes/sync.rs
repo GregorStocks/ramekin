@@ -4,7 +4,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
 use crate::raw_sql;
-use crate::schema::{recipe_versions, recipes};
+use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
 use axum::{
     extract::{Query, State},
     http::StatusCode,
@@ -12,6 +12,7 @@ use axum::{
     Json,
 };
 use chrono::{DateTime, Utc};
+use diesel::dsl::exists;
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
@@ -78,7 +79,14 @@ pub async fn sync_recipes(
         .into_boxed();
 
     if let Some(last_sync_at) = params.last_sync_at {
-        query = query.filter(recipe_versions::created_at.gt(last_sync_at));
+        let tag_changed = exists(
+            recipe_version_tags::table
+                .inner_join(user_tags::table)
+                .filter(recipe_version_tags::recipe_version_id.eq(recipe_versions::id))
+                .filter(user_tags::updated_at.gt(last_sync_at))
+                .filter(user_tags::updated_at.le(sync_timestamp)),
+        );
+        query = query.filter(recipe_versions::created_at.gt(last_sync_at).or(tag_changed));
     }
 
     let rows: Vec<RecipeSyncRow> = match query

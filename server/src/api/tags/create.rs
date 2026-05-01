@@ -69,8 +69,12 @@ pub async fn create_tag(
     if let Some((id, existing_name, deleted_at)) = existing {
         if deleted_at.is_some() {
             // Revive the soft-deleted tag
+            let now = Utc::now();
             let result = diesel::update(user_tags::table.filter(user_tags::id.eq(id)))
-                .set(user_tags::deleted_at.eq(None::<DateTime<Utc>>))
+                .set((
+                    user_tags::deleted_at.eq(None::<DateTime<Utc>>),
+                    user_tags::updated_at.eq(now),
+                ))
                 .execute(&mut conn);
 
             return match result {

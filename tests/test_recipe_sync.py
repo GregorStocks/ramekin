@@ -1,8 +1,12 @@
 import requests
 
 from conftest import make_ingredient
-from ramekin_client.api import RecipesApi
-from ramekin_client.models import CreateRecipeRequest, UpdateRecipeRequest
+from ramekin_client.api import RecipesApi, TagsApi
+from ramekin_client.models import (
+    CreateRecipeRequest,
+    RenameTagRequest,
+    UpdateRecipeRequest,
+)
 
 
 def _auth_headers(client):
@@ -106,6 +110,60 @@ def test_recipe_sync_full_response_includes_deleted_ids(authed_api_client, serve
 
     assert str(deleted.id) in response["deleted"]
     assert str(deleted.id) not in {recipe["id"] for recipe in response["recipes"]}
+
+
+def test_recipe_sync_includes_recipes_after_tag_rename(authed_api_client, server_url):
+    client, _user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+    tags_api = TagsApi(client)
+
+    created = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Tagged Recipe",
+            instructions="Cook it.",
+            ingredients=[make_ingredient(item="chickpeas")],
+            tags=["before-rename"],
+        )
+    )
+    baseline = _sync(client, server_url)
+    last_sync_at = baseline["sync_timestamp"]
+
+    tag = next(
+        tag for tag in tags_api.list_all_tags().tags if tag.name == "before-rename"
+    )
+    tags_api.rename_tag(tag.id, RenameTagRequest(name="after-rename"))
+
+    response = _sync(client, server_url, last_sync_at=last_sync_at)
+
+    recipes_by_id = {recipe["id"]: recipe for recipe in response["recipes"]}
+    assert recipes_by_id[str(created.id)]["tags"] == ["after-rename"]
+
+
+def test_recipe_sync_includes_recipes_after_tag_delete(authed_api_client, server_url):
+    client, _user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+    tags_api = TagsApi(client)
+
+    created = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Delete Tagged Recipe",
+            instructions="Cook it.",
+            ingredients=[make_ingredient(item="mushrooms")],
+            tags=["delete-from-sync"],
+        )
+    )
+    baseline = _sync(client, server_url)
+    last_sync_at = baseline["sync_timestamp"]
+
+    tag = next(
+        tag for tag in tags_api.list_all_tags().tags if tag.name == "delete-from-sync"
+    )
+    tags_api.delete_tag(tag.id)
+
+    response = _sync(client, server_url, last_sync_at=last_sync_at)
+
+    recipes_by_id = {recipe["id"]: recipe for recipe in response["recipes"]}
+    assert recipes_by_id[str(created.id)]["tags"] == []
 
 
 def test_recipe_sync_requires_auth(unauthed_api_client, server_url):

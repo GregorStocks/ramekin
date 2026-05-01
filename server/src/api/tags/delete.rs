@@ -36,6 +36,7 @@ pub async fn delete_tag(
     Path(id): Path<Uuid>,
 ) -> impl IntoResponse {
     let mut conn = get_conn!(pool);
+    let now = Utc::now();
 
     // Soft delete - set deleted_at timestamp
     let updated = diesel::update(
@@ -44,7 +45,10 @@ pub async fn delete_tag(
             .filter(user_tags::user_id.eq(user.id))
             .filter(user_tags::deleted_at.is_null()),
     )
-    .set(user_tags::deleted_at.eq(Some(Utc::now())))
+    .set((
+        user_tags::deleted_at.eq(Some(now)),
+        user_tags::updated_at.eq(now),
+    ))
     .execute(&mut conn);
 
     match updated {

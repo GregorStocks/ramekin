@@ -150,6 +150,7 @@ diesel::table! {
         name -> Citext,
         created_at -> Timestamptz,
         deleted_at -> Nullable<Timestamptz>,
+        updated_at -> Timestamptz,
     }
 }
 
