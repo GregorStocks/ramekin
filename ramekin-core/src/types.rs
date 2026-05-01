@@ -10,9 +10,8 @@ pub enum PipelineStep {
     FetchImages,
     ParseIngredients,
     SaveRecipe,
-    EnrichNormalizeIngredients,
     EnrichAutoTag,
-    EnrichGeneratePhoto,
+    ApplyAutoTags,
 }
 
 impl PipelineStep {
@@ -23,18 +22,15 @@ impl PipelineStep {
         PipelineStep::FetchImages,
         PipelineStep::ParseIngredients,
         PipelineStep::SaveRecipe,
-        PipelineStep::EnrichNormalizeIngredients,
         PipelineStep::EnrichAutoTag,
-        PipelineStep::EnrichGeneratePhoto,
+        PipelineStep::ApplyAutoTags,
     ];
 
     /// Steps that should continue on failure (don't fail the overall job)
     pub fn continues_on_failure(&self) -> bool {
         matches!(
             self,
-            PipelineStep::EnrichNormalizeIngredients
-                | PipelineStep::EnrichAutoTag
-                | PipelineStep::EnrichGeneratePhoto
+            PipelineStep::EnrichAutoTag | PipelineStep::ApplyAutoTags
         )
     }
 
@@ -50,9 +46,8 @@ impl PipelineStep {
             PipelineStep::FetchImages => "fetch_images",
             PipelineStep::ParseIngredients => "parse_ingredients",
             PipelineStep::SaveRecipe => "save_recipe",
-            PipelineStep::EnrichNormalizeIngredients => "enrich_normalize_ingredients",
             PipelineStep::EnrichAutoTag => "enrich_auto_tag",
-            PipelineStep::EnrichGeneratePhoto => "enrich_generate_photo",
+            PipelineStep::ApplyAutoTags => "apply_auto_tags",
         }
     }
 
@@ -64,33 +59,16 @@ impl PipelineStep {
             "fetch_images" => Some(PipelineStep::FetchImages),
             "parse_ingredients" => Some(PipelineStep::ParseIngredients),
             "save_recipe" => Some(PipelineStep::SaveRecipe),
-            "enrich_normalize_ingredients" => Some(PipelineStep::EnrichNormalizeIngredients),
             "enrich_auto_tag" => Some(PipelineStep::EnrichAutoTag),
-            "enrich_generate_photo" => Some(PipelineStep::EnrichGeneratePhoto),
+            "apply_auto_tags" => Some(PipelineStep::ApplyAutoTags),
             _ => None,
         }
     }
 }
 
-/// Output from the enrich_normalize_ingredients step
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct EnrichNormalizeIngredientsOutput {
-    pub success: bool,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub error: Option<String>,
-}
-
 /// Output from the enrich_auto_tag step
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct EnrichAutoTagOutput {
-    pub success: bool,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub error: Option<String>,
-}
-
-/// Output from the enrich_generate_photo step
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct EnrichGeneratePhotoOutput {
     pub success: bool,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub error: Option<String>,

@@ -6,10 +6,16 @@
 //! - CLI and server build their own registries with appropriate implementations
 //! - DB-specific steps are abstract here (metadata only), implemented in cli/server
 
+mod auto_enrichments;
 mod executor;
 mod step;
 pub mod steps;
 
+pub use auto_enrichments::{
+    first_scrape_auto_applied_ai_step_name, scrape_auto_applied_ai_enrichments,
+    scrape_auto_applied_ai_step_names, scrape_pipeline_step_names,
+    step_after_scrape_auto_applied_ai_step, ScrapeAutoAppliedAiEnrichment,
+};
 pub use executor::{run_pipeline, StepRegistry};
 pub use step::{PipelineStep, StepContext, StepMetadata, StepOutputStore, StepResult};
 
@@ -18,8 +24,8 @@ mod tests {
     use std::collections::HashSet;
 
     use super::steps::{
-        EnrichAutoTagStep, EnrichGeneratePhotoStep, EnrichNormalizeIngredientsStep,
-        ExtractRecipeStep, FetchHtmlStep, FetchImagesStepMeta, SaveRecipeStepMeta,
+        EnrichAutoTagStep, ExtractRecipeStep, FetchHtmlStep, FetchImagesStepMeta,
+        SaveRecipeStepMeta,
     };
     use crate::MockClient;
 
@@ -35,8 +41,6 @@ mod tests {
             FetchImagesStepMeta::NAME,
             SaveRecipeStepMeta::NAME,
             EnrichAutoTagStep::NAME,
-            EnrichGeneratePhotoStep::NAME,
-            EnrichNormalizeIngredientsStep::NAME,
         ];
 
         let unique: HashSet<_> = names.iter().collect();

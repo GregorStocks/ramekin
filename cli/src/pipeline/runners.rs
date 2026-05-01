@@ -353,16 +353,12 @@ mod tests {
             Some(PipelineStep::SaveRecipe)
         );
         assert_eq!(
-            PipelineStep::from_str("enrich_normalize_ingredients"),
-            Some(PipelineStep::EnrichNormalizeIngredients)
-        );
-        assert_eq!(
             PipelineStep::from_str("enrich_auto_tag"),
             Some(PipelineStep::EnrichAutoTag)
         );
         assert_eq!(
-            PipelineStep::from_str("enrich_generate_photo"),
-            Some(PipelineStep::EnrichGeneratePhoto)
+            PipelineStep::from_str("apply_auto_tags"),
+            Some(PipelineStep::ApplyAutoTags)
         );
         assert_eq!(PipelineStep::from_str("invalid"), None);
     }

@@ -12,6 +12,7 @@ use serde_json::json;
 use uuid::Uuid;
 
 use ramekin_core::pipeline::{
+    first_scrape_auto_applied_ai_step_name, step_after_scrape_auto_applied_ai_step,
     steps::{FetchImagesStepMeta, SaveRecipeStepMeta},
     PipelineStep, StepContext, StepMetadata, StepResult,
 };
@@ -385,13 +386,11 @@ impl PipelineStep for SaveRecipeStep {
                 output: json!({ "recipe_id": recipe_id.to_string() }),
                 error: None,
                 duration_ms: start.elapsed().as_millis() as u64,
-                // Photo-only rescrape must not run the post-save enrichment
-                // chain: enrich_auto_tag / apply_auto_tags would create yet
-                // another version with newly applied tags, breaking the
-                // endpoint's promise that *only* photo_ids change.
+                // Photo-only rescrape must not run post-save enrichments:
+                // they can create another version after the photo-only update.
                 next_step: match self.mode {
                     SaveMode::PhotoOnly(_) => None,
-                    _ => Some("enrich_normalize_ingredients".to_string()),
+                    _ => first_scrape_auto_applied_ai_step_name().map(str::to_string),
                 },
             },
             Err(e) => StepResult {
@@ -682,7 +681,8 @@ impl PipelineStep for ApplyAutoTagsStep {
                     output: json!({ "error": "No recipe_id in save_recipe output" }),
                     error: Some("No recipe_id in save_recipe output".to_string()),
                     duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: Some("enrich_generate_photo".to_string()),
+                    next_step: step_after_scrape_auto_applied_ai_step(Self::NAME)
+                        .map(str::to_string),
                 };
             }
         };
@@ -703,7 +703,7 @@ impl PipelineStep for ApplyAutoTagsStep {
                 output: json!({ "message": "No tags to apply", "tags_applied": [] }),
                 error: None,
                 duration_ms: start.elapsed().as_millis() as u64,
-                next_step: Some("enrich_generate_photo".to_string()),
+                next_step: step_after_scrape_auto_applied_ai_step(Self::NAME).map(str::to_string),
             };
         }
 
@@ -718,7 +718,7 @@ impl PipelineStep for ApplyAutoTagsStep {
                 }),
                 error: None,
                 duration_ms: start.elapsed().as_millis() as u64,
-                next_step: Some("enrich_generate_photo".to_string()),
+                next_step: step_after_scrape_auto_applied_ai_step(Self::NAME).map(str::to_string),
             },
             Err(e) => StepResult {
                 step_name: Self::NAME.to_string(),
@@ -726,7 +726,7 @@ impl PipelineStep for ApplyAutoTagsStep {
                 output: json!({ "error": e }),
                 error: Some(e),
                 duration_ms: start.elapsed().as_millis() as u64,
-                next_step: Some("enrich_generate_photo".to_string()),
+                next_step: step_after_scrape_auto_applied_ai_step(Self::NAME).map(str::to_string),
             },
         }
     }
@@ -835,5 +835,4 @@ impl ApplyAutoTagsStep {
     }
 }
 
-// Enrich steps use generic implementations from ramekin-core
-// (EnrichNormalizeIngredientsStep, EnrichAutoTagStep, EnrichGeneratePhotoStep)
+// Enrich steps use generic implementations from ramekin-core.
