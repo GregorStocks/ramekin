@@ -36,6 +36,7 @@ pub fn write_snapshots(run_dir: &Path, allowlist_path: &Path, snapshots_dir: &Pa
         .with_context(|| format!("Failed to create {}", snapshots_dir.display()))?;
 
     let mut written = 0usize;
+    let mut missing: Vec<(String, String)> = Vec::new();
     for url in &urls {
         let slug = slugify_url(url);
         let path = snapshots_dir.join(format!("{slug}.json"));
@@ -52,10 +53,11 @@ pub fn write_snapshots(run_dir: &Path, allowlist_path: &Path, snapshots_dir: &Pa
                         slug = %slug,
                         reason = %reason,
                         path = %path.display(),
-                        "removed stale pipeline snapshot before failing missing allowlisted extract output"
+                        "removed stale pipeline snapshot for missing allowlisted extract output"
                     );
                 }
-                anyhow::bail!("Allowlisted URL is missing extract_recipe output: {url}. {reason}");
+                missing.push((url.clone(), reason));
+                continue;
             }
         };
 
@@ -73,8 +75,20 @@ pub fn write_snapshots(run_dir: &Path, allowlist_path: &Path, snapshots_dir: &Pa
     tracing::info!(
         allowlisted = urls.len(),
         written,
+        missing = missing.len(),
         "pipeline snapshot phase complete"
     );
+
+    if !missing.is_empty() {
+        let mut message = format!(
+            "Allowlisted URLs missing extract_recipe output ({}):",
+            missing.len()
+        );
+        for (url, reason) in &missing {
+            message.push_str(&format!("\n  - {url}: {reason}"));
+        }
+        anyhow::bail!(message);
+    }
 
     Ok(())
 }
@@ -545,9 +559,9 @@ mod tests {
             !snapshots_dir.join(format!("{slug}.json")).exists(),
             "no snapshot should be written for a URL that didn't reach extract_recipe"
         );
-        assert!(err
-            .to_string()
-            .contains("Allowlisted URL is missing extract_recipe output"));
+        let msg = err.to_string();
+        assert!(msg.contains("Allowlisted URLs missing extract_recipe output"));
+        assert!(msg.contains("https://missing.example/"));
     }
 
     #[test]
@@ -570,7 +584,7 @@ mod tests {
 
         assert!(
             snapshots_dir.join(format!("{ok_slug}.json")).exists(),
-            "successful snapshots written before the failure should remain on disk"
+            "successful snapshots should be written even when other allowlisted URLs fail"
         );
         let missing_slug = slugify_url("https://missing.example/");
         assert!(
@@ -578,6 +592,49 @@ mod tests {
             "no snapshot for the URL that had no extract_recipe output"
         );
         assert!(err.to_string().contains("https://missing.example/"));
+    }
+
+    #[test]
+    fn lists_all_missing_urls_in_error() {
+        let dir = TempDir::new().unwrap();
+        let run_dir = dir.path().join("run");
+        std::fs::create_dir_all(&run_dir).unwrap();
+        let snapshots_dir = dir.path().join("snapshots");
+
+        // One URL that did extract successfully, sandwiched between three that
+        // didn't, to verify we keep iterating past every kind of position.
+        let ok_url = "https://example.com/ok";
+        let ok_slug = slugify_url(ok_url);
+        write_step_output(&run_dir, &ok_slug, "extract_recipe", extract_output_body());
+
+        let missing_a = "https://missing.example/a";
+        let missing_b = "https://missing.example/b";
+        let missing_c = "https://missing.example/c";
+
+        let allowlist = dir.path().join("allowlist.json");
+        std::fs::write(
+            &allowlist,
+            format!(r#"[{missing_a:?}, {ok_url:?}, {missing_b:?}, {missing_c:?}]"#),
+        )
+        .unwrap();
+
+        let err = write_snapshots(&run_dir, &allowlist, &snapshots_dir).unwrap_err();
+        let msg = err.to_string();
+
+        for url in [missing_a, missing_b, missing_c] {
+            assert!(
+                msg.contains(url),
+                "missing URL not reported in error: {url}\nerror was: {msg}"
+            );
+        }
+        assert!(
+            msg.contains("(3)"),
+            "error should report a count of missing URLs; got: {msg}"
+        );
+        assert!(
+            snapshots_dir.join(format!("{ok_slug}.json")).exists(),
+            "the one successful URL should still get a snapshot"
+        );
     }
 
     #[test]
@@ -606,7 +663,7 @@ mod tests {
         );
         assert!(err
             .to_string()
-            .contains("Allowlisted URL is missing extract_recipe output"));
+            .contains("Allowlisted URLs missing extract_recipe output"));
     }
 
     #[test]
