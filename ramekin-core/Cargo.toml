@@ -51,8 +51,11 @@ tracing = "0.1"
 # UUIDs for photo IDs
 uuid = { version = "1.23", features = ["v4", "serde"] }
 
-# AI client (OpenAI-compatible API for OpenRouter)
-async-openai = { version = "0.36", features = ["chat-completion"] }
+# AI client (OpenAI-compatible API for OpenRouter).
+# We use openai-api-rs rather than async-openai because async-openai
+# strict-types OpenAI's exact spec (e.g. ServiceTier enum) and breaks on
+# OpenRouter's extension values like service_tier="standard".
+openai-api-rs = "10"
 
 # Hashing for cache keys
 sha2 = "0.11"

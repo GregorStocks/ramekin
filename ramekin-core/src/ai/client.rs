@@ -1,9 +1,12 @@
 //! AI client implementation using OpenRouter (OpenAI-compatible API).
 
 use async_trait::async_trait;
-use reqwest::Client;
-use serde::Deserialize;
-use serde_json::{json, Value};
+use openai_api_rs::v1::api::OpenAIClient;
+use openai_api_rs::v1::chat_completion::chat_completion::ChatCompletionRequest;
+use openai_api_rs::v1::chat_completion::{
+    ChatCompletionMessage, Content, ContentType, ImageUrl, ImageUrlType, MessageRole,
+};
+use serde_json::json;
 use std::sync::Arc;
 use std::time::Duration;
 use thiserror::Error;
@@ -42,33 +45,10 @@ pub trait AiClient: Send + Sync {
 
 /// AI client with caching and rate limiting, using OpenRouter.
 pub struct CachingAiClient {
-    client: Client,
+    client: OpenAIClient,
     cache: AiCache,
     config: AiConfig,
     last_request: Arc<Mutex<Option<Instant>>>,
-}
-
-#[derive(Debug, Deserialize)]
-struct CompletionResponse {
-    choices: Vec<CompletionChoice>,
-    usage: Option<CompletionUsage>,
-}
-
-#[derive(Debug, Deserialize)]
-struct CompletionChoice {
-    message: CompletionMessage,
-}
-
-#[derive(Debug, Deserialize)]
-struct CompletionMessage {
-    content: Option<String>,
-}
-
-#[derive(Debug, Deserialize)]
-struct CompletionUsage {
-    prompt_tokens: u32,
-    completion_tokens: u32,
-    total_tokens: u32,
 }
 
 impl CachingAiClient {
@@ -80,10 +60,14 @@ impl CachingAiClient {
 
     /// Create a new client with the given configuration.
     pub fn new(config: AiConfig) -> Self {
-        let client = Client::builder()
-            .timeout(Duration::from_secs(config.request_timeout_secs))
+        // OpenAIClient::builder().build() is fallible in signature only — given
+        // a valid api_key and endpoint, the underlying impl never errors.
+        let client = OpenAIClient::builder()
+            .with_api_key(&config.api_key)
+            .with_endpoint(&config.base_url)
             .build()
-            .expect("failed to build AI HTTP client");
+            .expect("OpenAIClient::build cannot fail with provided api_key and endpoint");
+
         let cache = AiCache::new(config.cache_dir.clone());
 
         Self {
@@ -110,49 +94,44 @@ impl CachingAiClient {
         *last = Some(Instant::now());
     }
 
-    /// Convert our ChatMessage to an OpenAI-compatible JSON message.
-    fn to_api_message(msg: &ChatMessage) -> Value {
+    /// Convert our ChatMessage to openai-api-rs's format.
+    fn to_openai_message(msg: &ChatMessage) -> ChatCompletionMessage {
         let role = match msg.role {
-            Role::System => "system",
-            Role::User => "user",
-            Role::Assistant => "assistant",
+            Role::System => MessageRole::system,
+            Role::User => MessageRole::user,
+            Role::Assistant => MessageRole::assistant,
         };
 
-        match msg.role {
-            Role::System | Role::Assistant => json!({
-                "role": role,
-                "content": msg.content,
-            }),
-            Role::User => {
-                if msg.images.is_empty() {
-                    json!({
-                        "role": role,
-                        "content": msg.content,
-                    })
-                } else {
-                    let mut parts = vec![json!({
-                        "type": "text",
-                        "text": msg.content,
-                    })];
+        let content = if msg.images.is_empty() {
+            Content::Text(msg.content.clone())
+        } else {
+            // Vision message: heterogeneous content array with text + image parts.
+            let mut parts: Vec<ImageUrl> = Vec::with_capacity(1 + msg.images.len());
 
-                    for image in &msg.images {
-                        let data_url =
-                            format!("data:{};base64,{}", image.content_type, image.base64);
-                        parts.push(json!({
-                            "type": "image_url",
-                            "image_url": {
-                                "url": data_url,
-                                "detail": "high",
-                            },
-                        }));
-                    }
+            parts.push(ImageUrl {
+                r#type: ContentType::text,
+                text: Some(msg.content.clone()),
+                image_url: None,
+            });
 
-                    json!({
-                        "role": role,
-                        "content": parts,
-                    })
-                }
+            for image in &msg.images {
+                let data_url = format!("data:{};base64,{}", image.content_type, image.base64);
+                parts.push(ImageUrl {
+                    r#type: ContentType::image_url,
+                    text: None,
+                    image_url: Some(ImageUrlType { url: data_url }),
+                });
             }
+
+            Content::ImageUrl(parts)
+        };
+
+        ChatCompletionMessage {
+            role,
+            content,
+            name: None,
+            tool_calls: None,
+            tool_call_id: None,
         }
     }
 }
@@ -175,32 +154,27 @@ impl AiClient for CachingAiClient {
         // Apply rate limiting
         self.rate_limit().await;
 
-        let messages: Vec<Value> = request.messages.iter().map(Self::to_api_message).collect();
+        // Build the request
+        let messages: Vec<ChatCompletionMessage> = request
+            .messages
+            .iter()
+            .map(Self::to_openai_message)
+            .collect();
 
-        let mut request_body = json!({
-            "model": self.config.model,
-            "messages": messages,
-        });
-
-        let body = request_body
-            .as_object_mut()
-            .expect("chat completion request must be an object");
+        let mut openai_request = ChatCompletionRequest::new(self.config.model.clone(), messages);
 
         if let Some(max_tokens) = request.max_tokens {
-            body.insert("max_completion_tokens".to_string(), json!(max_tokens));
+            // openai-api-rs hasn't surfaced max_completion_tokens yet; OpenRouter
+            // still accepts the deprecated max_tokens alias.
+            openai_request.max_tokens = Some(max_tokens as i64);
         }
 
         if let Some(temperature) = request.temperature {
-            body.insert("temperature".to_string(), json!(temperature));
+            openai_request.temperature = Some(temperature as f64);
         }
 
         if request.json_response {
-            body.insert(
-                "response_format".to_string(),
-                json!({
-                    "type": "json_object",
-                }),
-            );
+            openai_request.response_format = Some(json!({"type": "json_object"}));
         }
 
         tracing::debug!(
@@ -209,49 +183,20 @@ impl AiClient for CachingAiClient {
             "Calling AI API"
         );
 
-        // Make the API call with a hard client-level timeout to avoid hanging
-        // the pipeline while sending or reading the response body.
-        let url = format!(
-            "{}/chat/completions",
-            self.config.base_url.trim_end_matches('/')
-        );
-        let response = self
-            .client
-            .post(url)
-            .bearer_auth(&self.config.api_key)
-            .json(&request_body)
-            .send()
-            .await
-            .map_err(|e| {
-                if e.is_timeout() {
-                    AiError::Api(format!(
-                        "Request timed out after {}s",
-                        self.config.request_timeout_secs
-                    ))
-                } else {
-                    AiError::Api(e.to_string())
-                }
-            })?;
-
-        if !response.status().is_success() {
-            let status = response.status();
-            let body = response.text().await.unwrap_or_default();
-            return Err(AiError::Api(format!(
-                "Request failed with {}: {}",
-                status, body
-            )));
-        }
-
-        let response: CompletionResponse = response.json().await.map_err(|e| {
-            if e.is_timeout() {
-                AiError::Api(format!(
-                    "Request timed out after {}s",
-                    self.config.request_timeout_secs
-                ))
-            } else {
-                AiError::ParseError(format!("Failed to parse AI response: {}", e))
-            }
-        })?;
+        // Make the API call with a hard timeout to avoid hanging the pipeline.
+        let response = tokio::time::timeout(
+            Duration::from_secs(self.config.request_timeout_secs),
+            self.client.chat_completion(openai_request),
+        )
+        .await
+        .map_err(|_| {
+            AiError::Api(format!(
+                "Request timed out after {}s",
+                self.config.request_timeout_secs
+            ))
+        })?
+        .map_err(|e| AiError::Api(e.to_string()))?
+        .inner;
 
         // Extract the response content
         let content = response
@@ -260,14 +205,11 @@ impl AiClient for CachingAiClient {
             .and_then(|c| c.message.content.clone())
             .unwrap_or_default();
 
-        let usage = response
-            .usage
-            .map(|u| Usage {
-                prompt_tokens: u.prompt_tokens,
-                completion_tokens: u.completion_tokens,
-                total_tokens: u.total_tokens,
-            })
-            .unwrap_or_default();
+        let usage = Usage {
+            prompt_tokens: response.usage.prompt_tokens.max(0) as u32,
+            completion_tokens: response.usage.completion_tokens.max(0) as u32,
+            total_tokens: response.usage.total_tokens.max(0) as u32,
+        };
 
         let chat_response = ChatResponse {
             content,
