@@ -3,6 +3,8 @@
 /// AI enrichments that scrape jobs should run and apply without user review.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum ScrapeAutoAppliedAiEnrichment {
+    NormalizeTitle,
+    GenerateDescription,
     AutoTag,
 }
 
@@ -15,14 +17,22 @@ const CORE_SCRAPE_STEP_NAMES: &[&str] = &[
 ];
 
 const AUTO_TAG_STEP_NAMES: &[&str] = &["enrich_auto_tag", "apply_auto_tags"];
+const NORMALIZE_TITLE_STEP_NAMES: &[&str] = &["enrich_normalize_title", "apply_normalized_title"];
+const GENERATE_DESCRIPTION_STEP_NAMES: &[&str] =
+    &["enrich_generate_description", "apply_generated_description"];
 
 /// Add to this list when a new AI enrichment should be auto-applied at scrape time.
-pub const SCRAPE_AUTO_APPLIED_AI_ENRICHMENTS: &[ScrapeAutoAppliedAiEnrichment] =
-    &[ScrapeAutoAppliedAiEnrichment::AutoTag];
+pub const SCRAPE_AUTO_APPLIED_AI_ENRICHMENTS: &[ScrapeAutoAppliedAiEnrichment] = &[
+    ScrapeAutoAppliedAiEnrichment::NormalizeTitle,
+    ScrapeAutoAppliedAiEnrichment::GenerateDescription,
+    ScrapeAutoAppliedAiEnrichment::AutoTag,
+];
 
 impl ScrapeAutoAppliedAiEnrichment {
     pub fn step_names(self) -> &'static [&'static str] {
         match self {
+            ScrapeAutoAppliedAiEnrichment::NormalizeTitle => NORMALIZE_TITLE_STEP_NAMES,
+            ScrapeAutoAppliedAiEnrichment::GenerateDescription => GENERATE_DESCRIPTION_STEP_NAMES,
             ScrapeAutoAppliedAiEnrichment::AutoTag => AUTO_TAG_STEP_NAMES,
         }
     }

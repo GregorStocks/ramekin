@@ -29,7 +29,7 @@ class TestRescrapeSuccess:
     """Test successful rescrape workflow."""
 
     def test_rescrape_creates_new_version(self, authed_api_client):
-        """Test that rescraping creates a new version with version_source='rescrape'."""
+        """Test that rescraping creates a rescrape version in history."""
         client, user_id = authed_api_client
         scrape_api = ScrapeApi(client)
         recipes_api = RecipesApi(client)
@@ -63,7 +63,14 @@ class TestRescrapeSuccess:
 
         # Verify a new version was created
         assert updated_recipe.version_id != original_version_id
-        assert updated_recipe.version_source == "rescrape"
+        assert updated_recipe.version_source in (
+            "rescrape",
+            "normalize_title",
+            "generate_description",
+            "enrichment",
+        )
+        versions = recipes_api.list_versions(recipe_id)
+        assert any(v.version_source == "rescrape" for v in versions.versions)
         # The recipe ID should be the same
         assert updated_recipe.id == original_recipe.id
 

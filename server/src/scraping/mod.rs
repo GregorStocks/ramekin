@@ -27,7 +27,10 @@ use tracing::Instrument;
 use uuid::Uuid;
 
 use output_store::DbOutputStore;
-use steps::{ApplyAutoTagsStep, FetchHtmlStep, FetchImagesStep, SaveRecipeStep};
+use steps::{
+    ApplyAutoTagsStep, ApplyGeneratedDescriptionStep, ApplyNormalizedTitleStep, FetchHtmlStep,
+    FetchImagesStep, SaveRecipeStep,
+};
 
 #[derive(Error, Debug)]
 pub enum ScrapeError {
@@ -175,6 +178,20 @@ pub fn build_registry(
 
     for enrichment in scrape_auto_applied_ai_enrichments() {
         match enrichment {
+            ScrapeAutoAppliedAiEnrichment::NormalizeTitle => {
+                let ai_client: Arc<dyn AiClient> = Arc::new(CachingAiClient::from_env()?);
+                registry.register(Box::new(
+                    ramekin_core::pipeline::steps::EnrichNormalizeTitleStep::new(ai_client),
+                ));
+                registry.register(Box::new(ApplyNormalizedTitleStep::new(pool.clone())));
+            }
+            ScrapeAutoAppliedAiEnrichment::GenerateDescription => {
+                let ai_client: Arc<dyn AiClient> = Arc::new(CachingAiClient::from_env()?);
+                registry.register(Box::new(
+                    ramekin_core::pipeline::steps::EnrichGenerateDescriptionStep::new(ai_client),
+                ));
+                registry.register(Box::new(ApplyGeneratedDescriptionStep::new(pool.clone())));
+            }
             ScrapeAutoAppliedAiEnrichment::AutoTag => {
                 let ai_client: Arc<dyn AiClient> = Arc::new(CachingAiClient::from_env()?);
                 let user_tags = fetch_user_tags(&pool, user_id).unwrap_or_else(|e| {

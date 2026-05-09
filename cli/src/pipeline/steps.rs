@@ -154,6 +154,100 @@ impl PipelineStep for ApplyAutoTagsStep {
     }
 }
 
+/// CLI implementation of ApplyNormalizedTitle step.
+///
+/// No-op for CLI - snapshots read the enrich_normalize_title output directly.
+pub struct ApplyNormalizedTitleStep;
+
+impl ApplyNormalizedTitleStep {
+    pub const NAME: &'static str = "apply_normalized_title";
+}
+
+#[async_trait]
+impl PipelineStep for ApplyNormalizedTitleStep {
+    fn metadata(&self) -> StepMetadata {
+        StepMetadata {
+            name: Self::NAME,
+            description: "Apply normalized title (no-op for CLI)",
+            continues_on_failure: false,
+        }
+    }
+
+    async fn execute(&self, ctx: &StepContext<'_>) -> StepResult {
+        let start = Instant::now();
+        let normalized_title = ctx
+            .outputs
+            .get_output("enrich_normalize_title")
+            .and_then(|o| o.get("normalized_title").cloned())
+            .unwrap_or(serde_json::Value::Null);
+        let changed = ctx
+            .outputs
+            .get_output("enrich_normalize_title")
+            .and_then(|o| o.get("changed").and_then(|v| v.as_bool()))
+            .unwrap_or(false);
+
+        StepResult {
+            step_name: Self::NAME.to_string(),
+            success: true,
+            output: json!({
+                "message": "No-op for CLI (no database to update)",
+                "normalized_title": normalized_title,
+                "changed": changed,
+            }),
+            error: None,
+            duration_ms: start.elapsed().as_millis() as u64,
+            next_step: step_after_scrape_auto_applied_ai_step(Self::NAME).map(str::to_string),
+        }
+    }
+}
+
+/// CLI implementation of ApplyGeneratedDescription step.
+///
+/// No-op for CLI - snapshots read the enrich_generate_description output directly.
+pub struct ApplyGeneratedDescriptionStep;
+
+impl ApplyGeneratedDescriptionStep {
+    pub const NAME: &'static str = "apply_generated_description";
+}
+
+#[async_trait]
+impl PipelineStep for ApplyGeneratedDescriptionStep {
+    fn metadata(&self) -> StepMetadata {
+        StepMetadata {
+            name: Self::NAME,
+            description: "Apply generated description (no-op for CLI)",
+            continues_on_failure: false,
+        }
+    }
+
+    async fn execute(&self, ctx: &StepContext<'_>) -> StepResult {
+        let start = Instant::now();
+        let generated_description = ctx
+            .outputs
+            .get_output("enrich_generate_description")
+            .and_then(|o| o.get("generated_description").cloned())
+            .unwrap_or(serde_json::Value::Null);
+        let changed = ctx
+            .outputs
+            .get_output("enrich_generate_description")
+            .and_then(|o| o.get("changed").and_then(|v| v.as_bool()))
+            .unwrap_or(false);
+
+        StepResult {
+            step_name: Self::NAME.to_string(),
+            success: true,
+            output: json!({
+                "message": "No-op for CLI (no database to update)",
+                "generated_description": generated_description,
+                "changed": changed,
+            }),
+            error: None,
+            duration_ms: start.elapsed().as_millis() as u64,
+            next_step: step_after_scrape_auto_applied_ai_step(Self::NAME).map(str::to_string),
+        }
+    }
+}
+
 /// CLI implementation of SaveRecipe step.
 ///
 /// Saves the extracted recipe to the output directory as JSON.

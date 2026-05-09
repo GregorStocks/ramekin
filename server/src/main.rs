@@ -387,7 +387,7 @@ mod tests {
     #[cfg(unix)]
     #[test]
     fn bind_listener_uses_socket_activation_when_listener_is_present() {
-        use std::os::fd::AsRawFd;
+        use std::os::fd::IntoRawFd;
 
         unsafe extern "C" {
             fn close(fd: i32) -> i32;
@@ -404,7 +404,7 @@ mod tests {
                         assert!(dup2(self.0, 3) >= 0, "failed to restore fd 3");
                         assert_eq!(close(self.0), 0, "failed to close duplicated fd");
                     } else {
-                        assert_eq!(close(3), 0, "failed to close fd 3");
+                        let _ = close(3);
                     }
                     std::env::remove_var("LISTEN_FDS");
                     std::env::remove_var("LISTEN_PID");
@@ -413,12 +413,19 @@ mod tests {
         }
 
         let _guard = env_lock().lock().unwrap();
+        let restore = FdRestore(unsafe { dup(3) });
+        unsafe {
+            close(3);
+        }
         let std_listener = std::net::TcpListener::bind("127.0.0.1:0").unwrap();
         let expected_addr = std_listener.local_addr().unwrap();
-        let restore = FdRestore(unsafe { dup(3) });
+        let listener_fd = std_listener.into_raw_fd();
 
         unsafe {
-            assert!(dup2(std_listener.as_raw_fd(), 3) >= 0, "failed to set fd 3");
+            if listener_fd != 3 {
+                assert!(dup2(listener_fd, 3) >= 0, "failed to set fd 3");
+                assert_eq!(close(listener_fd), 0, "failed to close listener fd");
+            }
             std::env::set_var("LISTEN_FDS", "1");
             std::env::remove_var("LISTEN_PID");
         }

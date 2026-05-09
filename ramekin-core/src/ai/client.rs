@@ -1,16 +1,9 @@
 //! AI client implementation using OpenRouter (OpenAI-compatible API).
 
-use async_openai::{
-    config::OpenAIConfig,
-    types::chat::{
-        ChatCompletionRequestMessage, ChatCompletionRequestMessageContentPartImage,
-        ChatCompletionRequestMessageContentPartText, ChatCompletionRequestSystemMessageArgs,
-        ChatCompletionRequestUserMessageContent, ChatCompletionRequestUserMessageContentPart,
-        CreateChatCompletionRequestArgs, ImageDetail, ImageUrl, ResponseFormat,
-    },
-    Client,
-};
 use async_trait::async_trait;
+use reqwest::Client;
+use serde::Deserialize;
+use serde_json::{json, Value};
 use std::sync::Arc;
 use std::time::Duration;
 use thiserror::Error;
@@ -49,10 +42,33 @@ pub trait AiClient: Send + Sync {
 
 /// AI client with caching and rate limiting, using OpenRouter.
 pub struct CachingAiClient {
-    client: Client<OpenAIConfig>,
+    client: Client,
     cache: AiCache,
     config: AiConfig,
     last_request: Arc<Mutex<Option<Instant>>>,
+}
+
+#[derive(Debug, Deserialize)]
+struct CompletionResponse {
+    choices: Vec<CompletionChoice>,
+    usage: Option<CompletionUsage>,
+}
+
+#[derive(Debug, Deserialize)]
+struct CompletionChoice {
+    message: CompletionMessage,
+}
+
+#[derive(Debug, Deserialize)]
+struct CompletionMessage {
+    content: Option<String>,
+}
+
+#[derive(Debug, Deserialize)]
+struct CompletionUsage {
+    prompt_tokens: u32,
+    completion_tokens: u32,
+    total_tokens: u32,
 }
 
 impl CachingAiClient {
@@ -64,12 +80,7 @@ impl CachingAiClient {
 
     /// Create a new client with the given configuration.
     pub fn new(config: AiConfig) -> Self {
-        // Configure async-openai to use OpenRouter
-        let openai_config = OpenAIConfig::new()
-            .with_api_key(&config.api_key)
-            .with_api_base(&config.base_url);
-
-        let client = Client::with_config(openai_config);
+        let client = Client::new();
         let cache = AiCache::new(config.cache_dir.clone());
 
         Self {
@@ -96,57 +107,48 @@ impl CachingAiClient {
         *last = Some(Instant::now());
     }
 
-    /// Convert our ChatMessage to async-openai's format.
-    fn to_openai_message(msg: &ChatMessage) -> Result<ChatCompletionRequestMessage, AiError> {
+    /// Convert our ChatMessage to an OpenAI-compatible JSON message.
+    fn to_api_message(msg: &ChatMessage) -> Value {
+        let role = match msg.role {
+            Role::System => "system",
+            Role::User => "user",
+            Role::Assistant => "assistant",
+        };
+
         match msg.role {
-            Role::System => ChatCompletionRequestSystemMessageArgs::default()
-                .content(msg.content.clone())
-                .build()
-                .map(Into::into)
-                .map_err(|e| AiError::Api(format!("Failed to build system message: {}", e))),
+            Role::System | Role::Assistant => json!({
+                "role": role,
+                "content": msg.content,
+            }),
             Role::User => {
-                use async_openai::types::chat::ChatCompletionRequestUserMessage;
-
-                let content: ChatCompletionRequestUserMessageContent = if msg.images.is_empty() {
-                    msg.content.clone().into()
+                if msg.images.is_empty() {
+                    json!({
+                        "role": role,
+                        "content": msg.content,
+                    })
                 } else {
-                    // Vision message: build content array with text + image parts
-                    let mut parts: Vec<ChatCompletionRequestUserMessageContentPart> = Vec::new();
-
-                    parts.push(
-                        ChatCompletionRequestMessageContentPartText {
-                            text: msg.content.clone(),
-                        }
-                        .into(),
-                    );
+                    let mut parts = vec![json!({
+                        "type": "text",
+                        "text": msg.content,
+                    })];
 
                     for image in &msg.images {
                         let data_url =
                             format!("data:{};base64,{}", image.content_type, image.base64);
-                        parts.push(
-                            ChatCompletionRequestMessageContentPartImage {
-                                image_url: ImageUrl {
-                                    url: data_url,
-                                    detail: Some(ImageDetail::High),
-                                },
-                            }
-                            .into(),
-                        );
+                        parts.push(json!({
+                            "type": "image_url",
+                            "image_url": {
+                                "url": data_url,
+                                "detail": "high",
+                            },
+                        }));
                     }
 
-                    parts.into()
-                };
-
-                let user_msg = ChatCompletionRequestUserMessage::from(content);
-                Ok(user_msg.into())
-            }
-            Role::Assistant => {
-                use async_openai::types::chat::ChatCompletionRequestAssistantMessageArgs;
-                ChatCompletionRequestAssistantMessageArgs::default()
-                    .content(msg.content.clone())
-                    .build()
-                    .map(Into::into)
-                    .map_err(|e| AiError::Api(format!("Failed to build assistant message: {}", e)))
+                    json!({
+                        "role": role,
+                        "content": parts,
+                    })
+                }
             }
         }
     }
@@ -170,31 +172,33 @@ impl AiClient for CachingAiClient {
         // Apply rate limiting
         self.rate_limit().await;
 
-        // Build the request
-        let messages: Vec<ChatCompletionRequestMessage> = request
-            .messages
-            .iter()
-            .map(Self::to_openai_message)
-            .collect::<Result<Vec<_>, _>>()?;
+        let messages: Vec<Value> = request.messages.iter().map(Self::to_api_message).collect();
 
-        let mut req_builder = CreateChatCompletionRequestArgs::default();
-        req_builder.model(&self.config.model).messages(messages);
+        let mut request_body = json!({
+            "model": self.config.model,
+            "messages": messages,
+        });
+
+        let body = request_body
+            .as_object_mut()
+            .expect("chat completion request must be an object");
 
         if let Some(max_tokens) = request.max_tokens {
-            req_builder.max_completion_tokens(max_tokens);
+            body.insert("max_completion_tokens".to_string(), json!(max_tokens));
         }
 
         if let Some(temperature) = request.temperature {
-            req_builder.temperature(temperature);
+            body.insert("temperature".to_string(), json!(temperature));
         }
 
         if request.json_response {
-            req_builder.response_format(ResponseFormat::JsonObject);
+            body.insert(
+                "response_format".to_string(),
+                json!({
+                    "type": "json_object",
+                }),
+            );
         }
-
-        let openai_request = req_builder
-            .build()
-            .map_err(|e| AiError::Api(e.to_string()))?;
 
         tracing::debug!(
             prompt_name = prompt_name,
@@ -203,9 +207,17 @@ impl AiClient for CachingAiClient {
         );
 
         // Make the API call with a hard timeout to avoid hanging the pipeline.
+        let url = format!(
+            "{}/chat/completions",
+            self.config.base_url.trim_end_matches('/')
+        );
         let response = tokio::time::timeout(
             Duration::from_secs(self.config.request_timeout_secs),
-            self.client.chat().create(openai_request),
+            self.client
+                .post(url)
+                .bearer_auth(&self.config.api_key)
+                .json(&request_body)
+                .send(),
         )
         .await
         .map_err(|_| {
@@ -215,6 +227,20 @@ impl AiClient for CachingAiClient {
             ))
         })?
         .map_err(|e| AiError::Api(e.to_string()))?;
+
+        if !response.status().is_success() {
+            let status = response.status();
+            let body = response.text().await.unwrap_or_default();
+            return Err(AiError::Api(format!(
+                "Request failed with {}: {}",
+                status, body
+            )));
+        }
+
+        let response: CompletionResponse = response
+            .json()
+            .await
+            .map_err(|e| AiError::ParseError(format!("Failed to parse AI response: {}", e)))?;
 
         // Extract the response content
         let content = response

@@ -103,6 +103,54 @@ pub fn step_summary(step_name: &str, output: &JsonValue) -> Option<String> {
             let id = output.get("recipe_id").and_then(|v| v.as_str())?;
             Some(format!("saved recipe {}", id))
         }
+        // EnrichNormalizeTitleStep stores `{ changed, normalized_title, ... }`.
+        "enrich_normalize_title" => {
+            let changed = output
+                .get("changed")
+                .and_then(|v| v.as_bool())
+                .unwrap_or(false);
+            Some(if changed {
+                "title normalized".to_string()
+            } else {
+                "title unchanged".to_string()
+            })
+        }
+        // ApplyNormalizedTitleStep stores `{ changed, new_version_id? }`.
+        "apply_normalized_title" => {
+            let changed = output
+                .get("changed")
+                .and_then(|v| v.as_bool())
+                .unwrap_or(false);
+            Some(if changed {
+                "normalized title applied".to_string()
+            } else {
+                "no title change applied".to_string()
+            })
+        }
+        // EnrichGenerateDescriptionStep stores `{ changed, generated_description, ... }`.
+        "enrich_generate_description" => {
+            let changed = output
+                .get("changed")
+                .and_then(|v| v.as_bool())
+                .unwrap_or(false);
+            Some(if changed {
+                "description generated".to_string()
+            } else {
+                "description unchanged".to_string()
+            })
+        }
+        // ApplyGeneratedDescriptionStep stores `{ changed, new_version_id? }`.
+        "apply_generated_description" => {
+            let changed = output
+                .get("changed")
+                .and_then(|v| v.as_bool())
+                .unwrap_or(false);
+            Some(if changed {
+                "generated description applied".to_string()
+            } else {
+                "no description change applied".to_string()
+            })
+        }
         // EnrichAutoTagStep stores `{ suggested_tags, cached, usage }`.
         "enrich_auto_tag" => {
             let count = output
@@ -448,6 +496,10 @@ mod tests {
                 "fetch_images",
                 "parse_ingredients",
                 "save_recipe",
+                "enrich_normalize_title",
+                "apply_normalized_title",
+                "enrich_generate_description",
+                "apply_generated_description",
                 "enrich_auto_tag",
                 "apply_auto_tags",
             ]

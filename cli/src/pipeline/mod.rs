@@ -16,7 +16,8 @@ use std::sync::Arc;
 use ramekin_core::ai::{AiClient, AiConfig, CachingAiClient};
 use ramekin_core::http::HttpClient;
 use ramekin_core::pipeline::steps::{
-    EnrichAutoTagStep, ExtractRecipeStep, FetchHtmlStep, ParseIngredientsStep,
+    EnrichAutoTagStep, EnrichGenerateDescriptionStep, EnrichNormalizeTitleStep, ExtractRecipeStep,
+    FetchHtmlStep, ParseIngredientsStep,
 };
 use ramekin_core::pipeline::{
     scrape_auto_applied_ai_enrichments, ScrapeAutoAppliedAiEnrichment, StepRegistry,
@@ -27,7 +28,10 @@ pub use runners::{
 };
 pub use staging::{clear_staging, ensure_staging_dir, find_staged_html, staging_dir};
 
-use steps::{ApplyAutoTagsStep, FetchImagesStep, SaveRecipeStep};
+use steps::{
+    ApplyAutoTagsStep, ApplyGeneratedDescriptionStep, ApplyNormalizedTitleStep, FetchImagesStep,
+    SaveRecipeStep,
+};
 
 /// Build a step registry with all CLI pipeline steps.
 ///
@@ -48,6 +52,22 @@ pub fn build_registry<C: HttpClient + Clone + Send + Sync + 'static>(
 
     for enrichment in scrape_auto_applied_ai_enrichments() {
         match enrichment {
+            ScrapeAutoAppliedAiEnrichment::NormalizeTitle => {
+                let mut ai_config =
+                    AiConfig::from_env().expect("OPENROUTER_API_KEY must be set in cli.env");
+                ai_config.rate_limit_ms = 0;
+                let ai_client: Arc<dyn AiClient> = Arc::new(CachingAiClient::new(ai_config));
+                registry.register(Box::new(EnrichNormalizeTitleStep::new(ai_client)));
+                registry.register(Box::new(ApplyNormalizedTitleStep));
+            }
+            ScrapeAutoAppliedAiEnrichment::GenerateDescription => {
+                let mut ai_config =
+                    AiConfig::from_env().expect("OPENROUTER_API_KEY must be set in cli.env");
+                ai_config.rate_limit_ms = 0;
+                let ai_client: Arc<dyn AiClient> = Arc::new(CachingAiClient::new(ai_config));
+                registry.register(Box::new(EnrichGenerateDescriptionStep::new(ai_client)));
+                registry.register(Box::new(ApplyGeneratedDescriptionStep));
+            }
             ScrapeAutoAppliedAiEnrichment::AutoTag => {
                 let mut ai_config =
                     AiConfig::from_env().expect("OPENROUTER_API_KEY must be set in cli.env");

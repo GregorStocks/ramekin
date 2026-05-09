@@ -3,7 +3,7 @@
 ## Overall
 
 - Total URLs: 5533
-- Completed: 5470 (98.9%)
+- Completed: 5435 (98.2%)
 - Failed at fetch: 0 (0.0%)
 - Failed at extract: 63 (1.1%)
 
@@ -26,8 +26,8 @@
 
 ## AI Cache
 
-- Cache hits: 5454/5454 (100.0%)
-- API calls: 0/5454 (0.0%)
+- Cache hits: 16315/16315 (100.0%)
+- API calls: 0/16315 (0.0%)
 
 ## By Site
 
@@ -35,7 +35,7 @@
 |------|-----------|-------|------|
 | 101cookbooks.com | 68 | 68 | 100.0% |
 | acouplecooks.com | 50 | 50 | 100.0% |
-| alexandracooks.com | 101 | 101 | 100.0% |
+| alexandracooks.com | 99 | 101 | 98.0% |
 | allrecipes.com | 104 | 104 | 100.0% |
 | altonbrown.com | 101 | 101 | 100.0% |
 | americastestkitchen.com | 58 | 58 | 100.0% |
@@ -43,27 +43,27 @@
 | averiecooks.com | 1 | 3 | 33.3% |
 | bakerita.com | 7 | 7 | 100.0% |
 | bakingbites.com | 10 | 11 | 90.9% |
-| barefeetinthekitchen.com | 99 | 100 | 99.0% |
+| barefeetinthekitchen.com | 97 | 100 | 97.0% |
 | bbcgoodfood.com | 99 | 100 | 99.0% |
 | bonappetit.com | 45 | 45 | 100.0% |
 | bowlofdelicious.com | 1 | 1 | 100.0% |
-| browneyedbaker.com | 100 | 100 | 100.0% |
+| browneyedbaker.com | 98 | 100 | 98.0% |
 | budgetbytes.com | 2 | 2 | 100.0% |
 | butterwithasideofbread.com | 44 | 44 | 100.0% |
-| cafedelites.com | 55 | 55 | 100.0% |
+| cafedelites.com | 54 | 55 | 98.2% |
 | chefspencil.com | 4 | 4 | 100.0% |
 | chopstickchronicles.com | 2 | 2 | 100.0% |
 | cocktailswithsuderman.substack.com | 4 | 4 | 100.0% |
 | cookieandkate.com | 14 | 14 | 100.0% |
 | cooking.nytimes.com | 51 | 51 | 100.0% |
-| cookingclassy.com | 56 | 56 | 100.0% |
+| cookingclassy.com | 54 | 56 | 96.4% |
 | damndelicious.net | 26 | 26 | 100.0% |
 | davidlebovitz.com | 7 | 7 | 100.0% |
 | delish.com | 101 | 101 | 100.0% |
 | dinneratthezoo.com | 1 | 1 | 100.0% |
 | dinnerthendessert.com | 4 | 4 | 100.0% |
-| downshiftology.com | 100 | 100 | 100.0% |
-| eatingwell.com | 100 | 100 | 100.0% |
+| downshiftology.com | 99 | 100 | 99.0% |
+| eatingwell.com | 99 | 100 | 99.0% |
 | epicurious.com | 1 | 1 | 100.0% |
 | feedbin.com | 0 | 1 | 0.0% |
 | food.com | 24 | 27 | 88.9% |
@@ -75,10 +75,10 @@
 | halfbakedharvest.com | 5 | 5 | 100.0% |
 | hostthetoast.com | 9 | 9 | 100.0% |
 | howsweeteats.com | 82 | 82 | 100.0% |
-| iamafoodblog.com | 99 | 100 | 99.0% |
+| iamafoodblog.com | 97 | 100 | 97.0% |
 | indianhealthyrecipes.com | 25 | 25 | 100.0% |
-| inspiredtaste.net | 100 | 100 | 100.0% |
-| japanesecooking101.com | 106 | 106 | 100.0% |
+| inspiredtaste.net | 99 | 100 | 99.0% |
+| japanesecooking101.com | 105 | 106 | 99.1% |
 | jocooks.com | 77 | 77 | 100.0% |
 | joyfoodsunshine.com | 88 | 88 | 100.0% |
 | justonecookbook.com | 21 | 22 | 95.5% |
@@ -89,38 +89,38 @@
 | lifemadesweeter.com | 6 | 6 | 100.0% |
 | littlesweetbaker.com | 23 | 23 | 100.0% |
 | loveandlemons.com | 37 | 37 | 100.0% |
-| loveandoliveoil.com | 95 | 96 | 99.0% |
+| loveandoliveoil.com | 94 | 96 | 97.9% |
 | marthastewart.com | 6 | 7 | 85.7% |
-| momontimeout.com | 97 | 100 | 97.0% |
+| momontimeout.com | 96 | 100 | 96.0% |
 | mybakingaddiction.com | 94 | 97 | 96.9% |
 | natashaskitchen.com | 100 | 100 | 100.0% |
 | nomnompaleo.com | 3 | 5 | 60.0% |
 | norecipes.com | 101 | 101 | 100.0% |
 | ohmyveggies.com | 3 | 6 | 50.0% |
 | onceuponachef.com | 92 | 92 | 100.0% |
-| onmykidsplate.com | 18 | 18 | 100.0% |
-| peasandcrayons.com | 51 | 52 | 98.1% |
+| onmykidsplate.com | 17 | 18 | 94.4% |
+| peasandcrayons.com | 50 | 52 | 96.2% |
 | pinchandswirl.com | 1 | 1 | 100.0% |
 | recipetineats.com | 10 | 10 | 100.0% |
 | runningwithspoons.com | 1 | 1 | 100.0% |
-| sallysbakingaddiction.com | 34 | 34 | 100.0% |
-| seriouseats.com | 167 | 167 | 100.0% |
+| sallysbakingaddiction.com | 33 | 34 | 97.1% |
+| seriouseats.com | 165 | 167 | 98.8% |
 | simplyrecipes.com | 99 | 100 | 99.0% |
 | skinnytaste.com | 2 | 2 | 100.0% |
 | slenderkitchen.com | 55 | 55 | 100.0% |
-| smittenkitchen.com | 990 | 1007 | 98.3% |
+| smittenkitchen.com | 983 | 1007 | 97.6% |
 | spendwithpennies.com | 35 | 35 | 100.0% |
 | spoonforkbacon.com | 2 | 2 | 100.0% |
 | sprinklebakes.com | 74 | 92 | 80.4% |
 | sudachirecipes.com | 97 | 97 | 100.0% |
-| sweetandsavorymeals.com | 100 | 100 | 100.0% |
-| tasteofhome.com | 100 | 100 | 100.0% |
+| sweetandsavorymeals.com | 99 | 100 | 99.0% |
+| tasteofhome.com | 98 | 100 | 98.0% |
 | tastesbetterfromscratch.com | 3 | 3 | 100.0% |
 | tasty.co | 97 | 97 | 100.0% |
-| theforkedspoon.com | 100 | 100 | 100.0% |
+| theforkedspoon.com | 98 | 100 | 98.0% |
 | themediterraneandish.com | 100 | 100 | 100.0% |
 | themodernproper.com | 14 | 14 | 100.0% |
-| thepioneerwoman.com | 102 | 102 | 100.0% |
+| thepioneerwoman.com | 101 | 102 | 99.0% |
 | therecipecritic.com | 34 | 34 | 100.0% |
 | thespruceeats.com | 1 | 1 | 100.0% |
 | thestayathomechef.com | 12 | 12 | 100.0% |
@@ -132,6 +132,44 @@
 | yellowblissroad.com | 31 | 31 | 100.0% |
 
 ## Failed URLs by Error
+
+### AI call failed: Failed to parse response: Failed t... (35 URLs)
+
+- https://alexandracooks.com/2017/02/14/gourmets-double-chocolate-cake-revisited/
+- https://alexandracooks.com/2019/06/21/fish-en-papillote/
+- https://barefeetinthekitchen.com/crunchy-brownie-crisps-recipe/
+- https://barefeetinthekitchen.com/how-to-grill-tri-tip-recipe/
+- https://cafedelites.com/grilled-cajun-chicken-salad-creamy-cajun-dressing-recipe/
+- https://downshiftology.com/recipes/mini-skillet-brownies-mint-chocolate-chip-ice-cream-gluten-free-paleo/
+- https://iamafoodblog.com/party-in-a-jar-mini-sriracha-chicken-pot-pies-recipe/
+- https://iamafoodblog.com/spicy-sausage-roll-recipe/
+- https://onmykidsplate.com/instant-pot-pork-tenderloin-honey-balsamic-recipe/
+- https://peasandcrayons.com/healthy-no-bake-coconut-lime-fruit-yogurt-tarts-recipe/
+- https://sallysbakingaddiction.com/peach-pie-recipe/
+- https://smittenkitchen.com/2006/10/wild-mushroom-stilton-galette/
+- https://smittenkitchen.com/2007/05/zucchini-carpaccio-salad/
+- https://smittenkitchen.com/2008/02/big-crumb-rhubarb-coffee-cake/
+- https://smittenkitchen.com/2008/07/chocolate-sorbet/
+- https://smittenkitchen.com/2010/07/thai-style-chicken-legs/
+- https://smittenkitchen.com/2010/08/eggplant-salad-toasts/
+- https://smittenkitchen.com/2018/02/korean-braised-short-ribs/
+- https://sweetandsavorymeals.com/sweet-bread-rolls-recipe/
+- https://theforkedspoon.com/buffalo-chicken-dip-recipe/
+- https://theforkedspoon.com/guacamole-recipe/
+- https://www.browneyedbaker.com/hamburger-buns-recipe/
+- https://www.browneyedbaker.com/hummingbird-cupcakes-recipe/
+- https://www.cookingclassy.com/easy-chocolate-cake-recipe/
+- https://www.cookingclassy.com/pizza-dough-recipe/
+- https://www.eatingwell.com/recipe/8076888/how-to-peel-garlic/
+- https://www.inspiredtaste.net/68652/chopped-salad-recipe/
+- https://www.japanesecooking101.com/shogayu-ginger-tea-recipe/
+- https://www.loveandoliveoil.com/2025/11/black-bottom-pumpkin-cream-pie-with-chocolate-ganache.html
+- https://www.momontimeout.com/slow-cooker-cocktail-meatballs-recipe/
+- https://www.seriouseats.com/beef-wellington-sandwich-recipe-11875196
+- https://www.seriouseats.com/espresso-tonic-recipe-8652925
+- https://www.tasteofhome.com/recipes/cheddar-cheese-batter-bread/
+- https://www.tasteofhome.com/recipes/festive-fall-tortellini-toss/
+- https://www.thepioneerwoman.com/food-cooking/recipes/a32097059/fried-peach-ginger-hand-pies-recipe/
 
 ### Missing required field: recipeIngredient (empty) (62 URLs)
 

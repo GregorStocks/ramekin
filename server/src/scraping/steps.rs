@@ -625,6 +625,337 @@ impl SaveRecipeStep {
     }
 }
 
+fn copy_recipe_version_tags(
+    conn: &mut diesel::PgConnection,
+    old_version_id: Uuid,
+    new_version_id: Uuid,
+) -> Result<(), diesel::result::Error> {
+    let existing_tag_ids: Vec<Uuid> = recipe_version_tags::table
+        .filter(recipe_version_tags::recipe_version_id.eq(old_version_id))
+        .select(recipe_version_tags::tag_id)
+        .load(conn)?;
+
+    for tag_id in existing_tag_ids {
+        diesel::insert_into(recipe_version_tags::table)
+            .values(RecipeVersionTag {
+                recipe_version_id: new_version_id,
+                tag_id,
+            })
+            .on_conflict_do_nothing()
+            .execute(conn)?;
+    }
+
+    Ok(())
+}
+
+/// Server implementation of ApplyNormalizedTitle step.
+pub struct ApplyNormalizedTitleStep {
+    pool: Arc<DbPool>,
+}
+
+impl ApplyNormalizedTitleStep {
+    pub const NAME: &'static str = "apply_normalized_title";
+
+    pub fn new(pool: Arc<DbPool>) -> Self {
+        Self { pool }
+    }
+}
+
+#[async_trait]
+impl PipelineStep for ApplyNormalizedTitleStep {
+    fn metadata(&self) -> StepMetadata {
+        StepMetadata {
+            name: Self::NAME,
+            description: "Apply normalized recipe title",
+            continues_on_failure: false,
+        }
+    }
+
+    async fn execute(&self, ctx: &StepContext<'_>) -> StepResult {
+        let start = Instant::now();
+
+        let recipe_id = match recipe_id_from_save_output(ctx) {
+            Ok(id) => id,
+            Err(result) => return result.with_step(Self::NAME, start, Self::NAME),
+        };
+
+        let normalize_output = ctx.outputs.get_output("enrich_normalize_title");
+        let changed = normalize_output
+            .as_ref()
+            .and_then(|o| o.get("changed"))
+            .and_then(|v| v.as_bool())
+            .unwrap_or(false);
+        let normalized_title = normalize_output
+            .as_ref()
+            .and_then(|o| o.get("normalized_title"))
+            .and_then(|v| v.as_str())
+            .unwrap_or("")
+            .trim()
+            .to_string();
+
+        if !changed || normalized_title.is_empty() {
+            return StepResult {
+                step_name: Self::NAME.to_string(),
+                success: true,
+                output: json!({ "changed": false, "message": "No title change to apply" }),
+                error: None,
+                duration_ms: start.elapsed().as_millis() as u64,
+                next_step: step_after_scrape_auto_applied_ai_step(Self::NAME).map(str::to_string),
+            };
+        }
+
+        match self.apply_title(recipe_id, &normalized_title) {
+            Ok(version_id) => StepResult {
+                step_name: Self::NAME.to_string(),
+                success: true,
+                output: json!({
+                    "changed": true,
+                    "normalized_title": normalized_title,
+                    "new_version_id": version_id.to_string(),
+                }),
+                error: None,
+                duration_ms: start.elapsed().as_millis() as u64,
+                next_step: step_after_scrape_auto_applied_ai_step(Self::NAME).map(str::to_string),
+            },
+            Err(e) => StepResult {
+                step_name: Self::NAME.to_string(),
+                success: false,
+                output: json!({ "error": e }),
+                error: Some(e),
+                duration_ms: start.elapsed().as_millis() as u64,
+                next_step: step_after_scrape_auto_applied_ai_step(Self::NAME).map(str::to_string),
+            },
+        }
+    }
+}
+
+impl ApplyNormalizedTitleStep {
+    fn apply_title(&self, recipe_id: Uuid, normalized_title: &str) -> Result<Uuid, String> {
+        use crate::models::{Recipe, RecipeVersion};
+
+        let mut conn = self.pool.get().map_err(|e| e.to_string())?;
+
+        conn.transaction(|conn| {
+            let recipe: Recipe = recipes::table.find(recipe_id).first(conn)?;
+            let current_version_id = recipe
+                .current_version_id
+                .ok_or_else(|| diesel::result::Error::RollbackTransaction)?;
+            let current: RecipeVersion = recipe_versions::table
+                .find(current_version_id)
+                .first(conn)?;
+
+            if current.title == normalized_title {
+                return Ok(current_version_id);
+            }
+
+            let new_version = NewRecipeVersion {
+                recipe_id,
+                title: normalized_title,
+                description: current.description.as_deref(),
+                ingredients: current.ingredients.clone(),
+                instructions: &current.instructions,
+                source_url: current.source_url.as_deref(),
+                source_name: current.source_name.as_deref(),
+                photo_ids: &current.photo_ids,
+                servings: current.servings.as_deref(),
+                prep_time: current.prep_time.as_deref(),
+                cook_time: current.cook_time.as_deref(),
+                total_time: current.total_time.as_deref(),
+                rating: current.rating,
+                difficulty: current.difficulty.as_deref(),
+                nutritional_info: current.nutritional_info.as_deref(),
+                notes: current.notes.as_deref(),
+                version_source: "normalize_title",
+            };
+
+            let new_version_id: Uuid = diesel::insert_into(recipe_versions::table)
+                .values(&new_version)
+                .returning(recipe_versions::id)
+                .get_result(conn)?;
+
+            diesel::update(recipes::table.find(recipe_id))
+                .set(recipes::current_version_id.eq(new_version_id))
+                .execute(conn)?;
+
+            copy_recipe_version_tags(conn, current_version_id, new_version_id)?;
+
+            Ok(new_version_id)
+        })
+        .map_err(|e: diesel::result::Error| e.to_string())
+    }
+}
+
+/// Server implementation of ApplyGeneratedDescription step.
+pub struct ApplyGeneratedDescriptionStep {
+    pool: Arc<DbPool>,
+}
+
+impl ApplyGeneratedDescriptionStep {
+    pub const NAME: &'static str = "apply_generated_description";
+
+    pub fn new(pool: Arc<DbPool>) -> Self {
+        Self { pool }
+    }
+}
+
+#[async_trait]
+impl PipelineStep for ApplyGeneratedDescriptionStep {
+    fn metadata(&self) -> StepMetadata {
+        StepMetadata {
+            name: Self::NAME,
+            description: "Apply generated recipe description",
+            continues_on_failure: false,
+        }
+    }
+
+    async fn execute(&self, ctx: &StepContext<'_>) -> StepResult {
+        let start = Instant::now();
+
+        let recipe_id = match recipe_id_from_save_output(ctx) {
+            Ok(id) => id,
+            Err(result) => return result.with_step(Self::NAME, start, Self::NAME),
+        };
+
+        let description_output = ctx.outputs.get_output("enrich_generate_description");
+        let changed = description_output
+            .as_ref()
+            .and_then(|o| o.get("changed"))
+            .and_then(|v| v.as_bool())
+            .unwrap_or(false);
+        let generated_description = description_output
+            .as_ref()
+            .and_then(|o| o.get("generated_description"))
+            .and_then(|v| v.as_str())
+            .unwrap_or("")
+            .trim()
+            .to_string();
+
+        if !changed || generated_description.is_empty() {
+            return StepResult {
+                step_name: Self::NAME.to_string(),
+                success: true,
+                output: json!({ "changed": false, "message": "No description change to apply" }),
+                error: None,
+                duration_ms: start.elapsed().as_millis() as u64,
+                next_step: step_after_scrape_auto_applied_ai_step(Self::NAME).map(str::to_string),
+            };
+        }
+
+        match self.apply_description(recipe_id, &generated_description) {
+            Ok(version_id) => StepResult {
+                step_name: Self::NAME.to_string(),
+                success: true,
+                output: json!({
+                    "changed": true,
+                    "generated_description": generated_description,
+                    "new_version_id": version_id.to_string(),
+                }),
+                error: None,
+                duration_ms: start.elapsed().as_millis() as u64,
+                next_step: step_after_scrape_auto_applied_ai_step(Self::NAME).map(str::to_string),
+            },
+            Err(e) => StepResult {
+                step_name: Self::NAME.to_string(),
+                success: false,
+                output: json!({ "error": e }),
+                error: Some(e),
+                duration_ms: start.elapsed().as_millis() as u64,
+                next_step: step_after_scrape_auto_applied_ai_step(Self::NAME).map(str::to_string),
+            },
+        }
+    }
+}
+
+impl ApplyGeneratedDescriptionStep {
+    fn apply_description(&self, recipe_id: Uuid, description: &str) -> Result<Uuid, String> {
+        use crate::models::{Recipe, RecipeVersion};
+
+        let mut conn = self.pool.get().map_err(|e| e.to_string())?;
+
+        conn.transaction(|conn| {
+            let recipe: Recipe = recipes::table.find(recipe_id).first(conn)?;
+            let current_version_id = recipe
+                .current_version_id
+                .ok_or_else(|| diesel::result::Error::RollbackTransaction)?;
+            let current: RecipeVersion = recipe_versions::table
+                .find(current_version_id)
+                .first(conn)?;
+
+            if current.description.as_deref() == Some(description) {
+                return Ok(current_version_id);
+            }
+
+            let new_version = NewRecipeVersion {
+                recipe_id,
+                title: &current.title,
+                description: Some(description),
+                ingredients: current.ingredients.clone(),
+                instructions: &current.instructions,
+                source_url: current.source_url.as_deref(),
+                source_name: current.source_name.as_deref(),
+                photo_ids: &current.photo_ids,
+                servings: current.servings.as_deref(),
+                prep_time: current.prep_time.as_deref(),
+                cook_time: current.cook_time.as_deref(),
+                total_time: current.total_time.as_deref(),
+                rating: current.rating,
+                difficulty: current.difficulty.as_deref(),
+                nutritional_info: current.nutritional_info.as_deref(),
+                notes: current.notes.as_deref(),
+                version_source: "generate_description",
+            };
+
+            let new_version_id: Uuid = diesel::insert_into(recipe_versions::table)
+                .values(&new_version)
+                .returning(recipe_versions::id)
+                .get_result(conn)?;
+
+            diesel::update(recipes::table.find(recipe_id))
+                .set(recipes::current_version_id.eq(new_version_id))
+                .execute(conn)?;
+
+            copy_recipe_version_tags(conn, current_version_id, new_version_id)?;
+
+            Ok(new_version_id)
+        })
+        .map_err(|e: diesel::result::Error| e.to_string())
+    }
+}
+
+enum SaveOutputReadError {
+    MissingRecipeId,
+}
+
+trait SaveOutputReadErrorExt {
+    fn with_step(self, step_name: &str, start: Instant, next_from: &str) -> StepResult;
+}
+
+impl SaveOutputReadErrorExt for SaveOutputReadError {
+    fn with_step(self, step_name: &str, start: Instant, next_from: &str) -> StepResult {
+        let message = match self {
+            SaveOutputReadError::MissingRecipeId => "No recipe_id in save_recipe output",
+        };
+        StepResult {
+            step_name: step_name.to_string(),
+            success: false,
+            output: json!({ "error": message }),
+            error: Some(message.to_string()),
+            duration_ms: start.elapsed().as_millis() as u64,
+            next_step: step_after_scrape_auto_applied_ai_step(next_from).map(str::to_string),
+        }
+    }
+}
+
+fn recipe_id_from_save_output(ctx: &StepContext<'_>) -> Result<Uuid, SaveOutputReadError> {
+    ctx.outputs
+        .get_output("save_recipe")
+        .as_ref()
+        .and_then(|o| o.get("recipe_id"))
+        .and_then(|v| v.as_str())
+        .and_then(|s| Uuid::parse_str(s).ok())
+        .ok_or(SaveOutputReadError::MissingRecipeId)
+}
+
 /// Server implementation of ApplyAutoTags step.
 ///
 /// Takes the suggested tags from enrich_auto_tag output and creates a new
