@@ -15,6 +15,10 @@ CANONICAL_STEP_NAMES = [
     "fetch_images",
     "parse_ingredients",
     "save_recipe",
+    "enrich_normalize_title",
+    "apply_normalized_title",
+    "enrich_generate_description",
+    "apply_generated_description",
     "enrich_auto_tag",
     "apply_auto_tags",
 ]

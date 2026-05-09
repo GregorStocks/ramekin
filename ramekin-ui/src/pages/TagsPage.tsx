@@ -266,6 +266,13 @@ export default function TagsPage() {
         </div>
       </div>
 
+      <p class="tags-hierarchy-help">
+        Use <code>namespace:value</code> names to build the tag hierarchy.
+        Rename existing tags into the desired namespace, such as{" "}
+        <code>course:breakfast</code>, <code>cuisine:mexican</code>, or{" "}
+        <code>diet:vegetarian</code>.
+      </p>
+
       <Show when={bulkEditing()}>
         <p class="tags-bulk-help">
           Edit tag names in place, including namespace changes like{" "}

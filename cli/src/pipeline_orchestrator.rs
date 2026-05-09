@@ -392,7 +392,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
                         &domain,
                         all_results.extraction_stats.as_ref(),
                         all_results.ingredient_stats.as_ref(),
-                        all_results.ai_cached,
+                        &all_results.ai_cache_events,
                     );
 
                     // Save intermediate results periodically
@@ -724,6 +724,12 @@ fn determine_final_status(steps: &[StepResult]) -> FinalStatus {
                     // FetchImages is skipped in CLI, ParseIngredients runs before save
                     return FinalStatus::FailedAtSave;
                 }
+                PipelineStep::EnrichNormalizeTitle
+                | PipelineStep::ApplyNormalizedTitle
+                | PipelineStep::EnrichGenerateDescription
+                | PipelineStep::ApplyGeneratedDescription => {
+                    return FinalStatus::FailedAtSave;
+                }
                 PipelineStep::EnrichAutoTag | PipelineStep::ApplyAutoTags => {
                     // Enrichment failures are expected - don't fail the job
                     // Continue to check remaining steps
@@ -741,7 +747,7 @@ fn update_results(
     domain: &str,
     extraction_stats: Option<&ExtractionStats>,
     ingredient_stats: Option<&IngredientStats>,
-    ai_cached: Option<bool>,
+    ai_cache_events: &[bool],
 ) {
     // Update HTML cache stats
     for step in steps {
@@ -755,8 +761,8 @@ fn update_results(
     }
 
     // Update AI cache stats
-    if let Some(cached) = ai_cached {
-        if cached {
+    for cached in ai_cache_events {
+        if *cached {
             results.ai_cache_hits += 1;
         } else {
             results.ai_cache_misses += 1;
@@ -992,6 +998,10 @@ fn print_timing_summary(results: &PipelineResults) {
         "FetchImages",
         "ParseIngredients",
         "SaveRecipe",
+        "EnrichNormalizeTitle",
+        "ApplyNormalizedTitle",
+        "EnrichGenerateDescription",
+        "ApplyGeneratedDescription",
         "EnrichAutoTag",
         "ApplyAutoTags",
     ];

@@ -202,9 +202,35 @@ fn assemble_snapshot(
             .transpose()
             .context("Failed to deserialize enrich_auto_tag suggested_tags")?;
 
+    let normalized_title: Option<String> =
+        read_step_output(run_dir, url_slug, "enrich_normalize_title")?.and_then(|v| {
+            let changed = v.get("changed").and_then(|v| v.as_bool()).unwrap_or(false);
+            if changed {
+                v.get("normalized_title")
+                    .and_then(|v| v.as_str())
+                    .map(str::to_string)
+            } else {
+                None
+            }
+        });
+
+    let generated_description: Option<String> =
+        read_step_output(run_dir, url_slug, "enrich_generate_description")?.and_then(|v| {
+            let changed = v.get("changed").and_then(|v| v.as_bool()).unwrap_or(false);
+            if changed {
+                v.get("generated_description")
+                    .and_then(|v| v.as_str())
+                    .map(str::to_string)
+            } else {
+                None
+            }
+        });
+
     Ok(Some(build_final_recipe(
         &raw_recipe,
         parsed_ingredients.as_deref(),
+        normalized_title.as_deref(),
+        generated_description.as_deref(),
         suggested_tags.as_deref(),
     )))
 }

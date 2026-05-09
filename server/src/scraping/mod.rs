@@ -27,7 +27,10 @@ use tracing::Instrument;
 use uuid::Uuid;
 
 use output_store::DbOutputStore;
-use steps::{ApplyAutoTagsStep, FetchHtmlStep, FetchImagesStep, SaveRecipeStep};
+use steps::{
+    ApplyAutoTagsStep, ApplyGeneratedDescriptionStep, ApplyNormalizedTitleStep, FetchHtmlStep,
+    FetchImagesStep, SaveRecipeStep,
+};
 
 #[derive(Error, Debug)]
 pub enum ScrapeError {
@@ -173,16 +176,50 @@ pub fn build_registry(
     };
     registry.register(Box::new(save_step));
 
-    for enrichment in scrape_auto_applied_ai_enrichments() {
+    let auto_enrichments = scrape_auto_applied_ai_enrichments();
+    let ai_client = if auto_enrichments.is_empty() {
+        None
+    } else {
+        Some(Arc::new(CachingAiClient::from_env()?) as Arc<dyn AiClient>)
+    };
+
+    for enrichment in auto_enrichments {
         match enrichment {
+            ScrapeAutoAppliedAiEnrichment::NormalizeTitle => {
+                registry.register(Box::new(
+                    ramekin_core::pipeline::steps::EnrichNormalizeTitleStep::new(
+                        ai_client
+                            .as_ref()
+                            .expect("AI client exists for auto enrichment")
+                            .clone(),
+                    ),
+                ));
+                registry.register(Box::new(ApplyNormalizedTitleStep::new(pool.clone())));
+            }
+            ScrapeAutoAppliedAiEnrichment::GenerateDescription => {
+                registry.register(Box::new(
+                    ramekin_core::pipeline::steps::EnrichGenerateDescriptionStep::new(
+                        ai_client
+                            .as_ref()
+                            .expect("AI client exists for auto enrichment")
+                            .clone(),
+                    ),
+                ));
+                registry.register(Box::new(ApplyGeneratedDescriptionStep::new(pool.clone())));
+            }
             ScrapeAutoAppliedAiEnrichment::AutoTag => {
-                let ai_client: Arc<dyn AiClient> = Arc::new(CachingAiClient::from_env()?);
                 let user_tags = fetch_user_tags(&pool, user_id).unwrap_or_else(|e| {
                     tracing::warn!("Failed to fetch user tags: {}", e);
                     vec![]
                 });
 
-                registry.register(Box::new(EnrichAutoTagStep::new(ai_client, user_tags)));
+                registry.register(Box::new(EnrichAutoTagStep::new(
+                    ai_client
+                        .as_ref()
+                        .expect("AI client exists for auto enrichment")
+                        .clone(),
+                    user_tags,
+                )));
                 registry.register(Box::new(ApplyAutoTagsStep::new(pool.clone())));
             }
         }
@@ -705,6 +742,39 @@ pub fn spawn_scrape_job(pool: Arc<DbPool>, job_id: Uuid, url: &str, operation: &
     );
 }
 
+#[derive(Debug, PartialEq, Eq)]
+enum ScrapeFinalOutcome {
+    Completed(Uuid),
+    Failed { step_name: String, error: String },
+}
+
+fn determine_final_outcome(
+    recipe_id: Option<Uuid>,
+    terminal_error: Option<(String, String)>,
+    last_step_name: &str,
+    last_error: Option<String>,
+) -> ScrapeFinalOutcome {
+    if let Some((step_name, error)) = terminal_error {
+        return ScrapeFinalOutcome::Failed { step_name, error };
+    }
+
+    if let Some(id) = recipe_id {
+        return ScrapeFinalOutcome::Completed(id);
+    }
+
+    if let Some(error) = last_error {
+        return ScrapeFinalOutcome::Failed {
+            step_name: last_step_name.to_string(),
+            error,
+        };
+    }
+
+    ScrapeFinalOutcome::Failed {
+        step_name: last_step_name.to_string(),
+        error: "Pipeline ended without creating recipe".to_string(),
+    }
+}
+
 /// Run the scrape job state machine.
 /// This processes the job through its states: pending -> scraping -> parsing -> completed
 pub async fn run_scrape_job(pool: Arc<DbPool>, job_id: Uuid) {
@@ -754,6 +824,7 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
     // `scrape_jobs.failed_at_step` if the pipeline ends without a recipe.
     let mut last_step_name: String = first_step.to_string();
     let mut last_error: Option<String> = None;
+    let mut terminal_error: Option<(String, String)> = None;
 
     while let Some(step_name) = current_step_name.take() {
         let step = match registry.get(&step_name) {
@@ -827,6 +898,13 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
         }
 
         if !should_continue {
+            terminal_error = Some((
+                step_name.clone(),
+                result
+                    .error
+                    .clone()
+                    .unwrap_or_else(|| "Step failed".to_string()),
+            ));
             break;
         }
 
@@ -843,23 +921,15 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
         })
         .and_then(|s| Uuid::parse_str(&s).ok());
 
-    if let Some(id) = recipe_id {
-        // Pipeline completed through save_recipe
-        tracing::info!("Job {} completed successfully, recipe_id={}", job_id, id);
-        mark_completed(&pool, job_id, id)?;
-    } else if let Some(error) = last_error {
-        // Pipeline failed
-        tracing::warn!("Job {} failed at '{}': {}", job_id, last_step_name, error);
-        mark_failed(&pool, job_id, &last_step_name, &error)?;
-    } else {
-        // Pipeline ended without a recipe (shouldn't happen in normal flow)
-        tracing::warn!("Job {} ended without recipe", job_id);
-        mark_failed(
-            &pool,
-            job_id,
-            &last_step_name,
-            "Pipeline ended without creating recipe",
-        )?;
+    match determine_final_outcome(recipe_id, terminal_error, &last_step_name, last_error) {
+        ScrapeFinalOutcome::Completed(id) => {
+            tracing::info!("Job {} completed successfully, recipe_id={}", job_id, id);
+            mark_completed(&pool, job_id, id)?;
+        }
+        ScrapeFinalOutcome::Failed { step_name, error } => {
+            tracing::warn!("Job {} failed at '{}': {}", job_id, step_name, error);
+            mark_failed(&pool, job_id, &step_name, &error)?;
+        }
     }
 
     Ok(())
@@ -1107,5 +1177,28 @@ mod tests {
             "::1",
             "::1:57565"
         ));
+    }
+
+    #[test]
+    fn terminal_failure_wins_over_saved_recipe() {
+        let recipe_id = Uuid::new_v4();
+
+        let outcome = determine_final_outcome(
+            Some(recipe_id),
+            Some((
+                "apply_normalized_title".to_string(),
+                "database exploded".to_string(),
+            )),
+            "apply_normalized_title",
+            Some("database exploded".to_string()),
+        );
+
+        assert_eq!(
+            outcome,
+            ScrapeFinalOutcome::Failed {
+                step_name: "apply_normalized_title".to_string(),
+                error: "database exploded".to_string(),
+            }
+        );
     }
 }

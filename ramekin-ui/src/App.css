@@ -2729,6 +2729,7 @@ textarea:focus-visible {
   flex-wrap: wrap;
 }
 
+.tags-hierarchy-help,
 .tags-bulk-help {
   margin: 0 0 1rem;
   color: var(--text-muted);
