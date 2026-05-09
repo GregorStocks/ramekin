@@ -80,7 +80,10 @@ impl CachingAiClient {
 
     /// Create a new client with the given configuration.
     pub fn new(config: AiConfig) -> Self {
-        let client = Client::new();
+        let client = Client::builder()
+            .timeout(Duration::from_secs(config.request_timeout_secs))
+            .build()
+            .expect("failed to build AI HTTP client");
         let cache = AiCache::new(config.cache_dir.clone());
 
         Self {
@@ -206,27 +209,29 @@ impl AiClient for CachingAiClient {
             "Calling AI API"
         );
 
-        // Make the API call with a hard timeout to avoid hanging the pipeline.
+        // Make the API call with a hard client-level timeout to avoid hanging
+        // the pipeline while sending or reading the response body.
         let url = format!(
             "{}/chat/completions",
             self.config.base_url.trim_end_matches('/')
         );
-        let response = tokio::time::timeout(
-            Duration::from_secs(self.config.request_timeout_secs),
-            self.client
-                .post(url)
-                .bearer_auth(&self.config.api_key)
-                .json(&request_body)
-                .send(),
-        )
-        .await
-        .map_err(|_| {
-            AiError::Api(format!(
-                "Request timed out after {}s",
-                self.config.request_timeout_secs
-            ))
-        })?
-        .map_err(|e| AiError::Api(e.to_string()))?;
+        let response = self
+            .client
+            .post(url)
+            .bearer_auth(&self.config.api_key)
+            .json(&request_body)
+            .send()
+            .await
+            .map_err(|e| {
+                if e.is_timeout() {
+                    AiError::Api(format!(
+                        "Request timed out after {}s",
+                        self.config.request_timeout_secs
+                    ))
+                } else {
+                    AiError::Api(e.to_string())
+                }
+            })?;
 
         if !response.status().is_success() {
             let status = response.status();
@@ -237,10 +242,16 @@ impl AiClient for CachingAiClient {
             )));
         }
 
-        let response: CompletionResponse = response
-            .json()
-            .await
-            .map_err(|e| AiError::ParseError(format!("Failed to parse AI response: {}", e)))?;
+        let response: CompletionResponse = response.json().await.map_err(|e| {
+            if e.is_timeout() {
+                AiError::Api(format!(
+                    "Request timed out after {}s",
+                    self.config.request_timeout_secs
+                ))
+            } else {
+                AiError::ParseError(format!("Failed to parse AI response: {}", e))
+            }
+        })?;
 
         // Extract the response content
         let content = response

@@ -176,30 +176,50 @@ pub fn build_registry(
     };
     registry.register(Box::new(save_step));
 
-    for enrichment in scrape_auto_applied_ai_enrichments() {
+    let auto_enrichments = scrape_auto_applied_ai_enrichments();
+    let ai_client = if auto_enrichments.is_empty() {
+        None
+    } else {
+        Some(Arc::new(CachingAiClient::from_env()?) as Arc<dyn AiClient>)
+    };
+
+    for enrichment in auto_enrichments {
         match enrichment {
             ScrapeAutoAppliedAiEnrichment::NormalizeTitle => {
-                let ai_client: Arc<dyn AiClient> = Arc::new(CachingAiClient::from_env()?);
                 registry.register(Box::new(
-                    ramekin_core::pipeline::steps::EnrichNormalizeTitleStep::new(ai_client),
+                    ramekin_core::pipeline::steps::EnrichNormalizeTitleStep::new(
+                        ai_client
+                            .as_ref()
+                            .expect("AI client exists for auto enrichment")
+                            .clone(),
+                    ),
                 ));
                 registry.register(Box::new(ApplyNormalizedTitleStep::new(pool.clone())));
             }
             ScrapeAutoAppliedAiEnrichment::GenerateDescription => {
-                let ai_client: Arc<dyn AiClient> = Arc::new(CachingAiClient::from_env()?);
                 registry.register(Box::new(
-                    ramekin_core::pipeline::steps::EnrichGenerateDescriptionStep::new(ai_client),
+                    ramekin_core::pipeline::steps::EnrichGenerateDescriptionStep::new(
+                        ai_client
+                            .as_ref()
+                            .expect("AI client exists for auto enrichment")
+                            .clone(),
+                    ),
                 ));
                 registry.register(Box::new(ApplyGeneratedDescriptionStep::new(pool.clone())));
             }
             ScrapeAutoAppliedAiEnrichment::AutoTag => {
-                let ai_client: Arc<dyn AiClient> = Arc::new(CachingAiClient::from_env()?);
                 let user_tags = fetch_user_tags(&pool, user_id).unwrap_or_else(|e| {
                     tracing::warn!("Failed to fetch user tags: {}", e);
                     vec![]
                 });
 
-                registry.register(Box::new(EnrichAutoTagStep::new(ai_client, user_tags)));
+                registry.register(Box::new(EnrichAutoTagStep::new(
+                    ai_client
+                        .as_ref()
+                        .expect("AI client exists for auto enrichment")
+                        .clone(),
+                    user_tags,
+                )));
                 registry.register(Box::new(ApplyAutoTagsStep::new(pool.clone())));
             }
         }
