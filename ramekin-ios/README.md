@@ -15,10 +15,15 @@ iOS app and Safari Share Extension for saving recipes to Ramekin.
    brew install xcodegen
    ```
 
-2. Generate the Xcode project:
+2. Generate the Xcode project from the repository root:
    ```bash
-   cd ramekin-ios
-   xcodegen generate
+   make ios-generate
+   ```
+
+   The Associated Domains entitlement defaults to `applinks:ramekin.app`.
+   For a different app-link host, pass `RAMEKIN_IOS_APPLINKS_URL`:
+   ```bash
+   make ios-generate RAMEKIN_IOS_APPLINKS_URL=https://example.com
    ```
 
 3. Open the project in Xcode:
