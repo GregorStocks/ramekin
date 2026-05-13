@@ -1,7 +1,46 @@
 import SwiftUI
+import UIKit
+
+private extension Notification.Name {
+    static let universalLinkReceived = Notification.Name("RamekinUniversalLinkReceived")
+}
+
+private final class UniversalLinkStore {
+    static let shared = UniversalLinkStore()
+
+    private var pendingURL: URL?
+
+    private init() {}
+
+    func submit(_ url: URL) {
+        pendingURL = url
+        NotificationCenter.default.post(name: .universalLinkReceived, object: url)
+    }
+
+    func consumePendingURL() -> URL? {
+        defer { pendingURL = nil }
+        return pendingURL
+    }
+}
+
+final class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(
+        _ application: UIApplication,
+        continue userActivity: NSUserActivity,
+        restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void
+    ) -> Bool {
+        guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+              let url = userActivity.webpageURL else {
+            return false
+        }
+        UniversalLinkStore.shared.submit(url)
+        return true
+    }
+}
 
 @main
 struct RamekinApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @StateObject private var appState = AppState()
 
     var body: some Scene {
@@ -18,9 +57,29 @@ class AppState: ObservableObject {
     @Published var username: String = ""
     @Published var serverURL: String = ""
     @Published var pendingRecipeId: UUID?
+    private var lastHandledUniversalLink: URL?
+    private var lastHandledUniversalLinkAt = Date.distantPast
+    private var universalLinkObserver: NSObjectProtocol?
 
     init() {
         refreshState()
+        universalLinkObserver = NotificationCenter.default.addObserver(
+            forName: .universalLinkReceived,
+            object: nil,
+            queue: .main
+        ) { [weak self] notification in
+            guard let url = notification.object as? URL else { return }
+            self?.handleUniversalLink(url)
+        }
+        if let url = UniversalLinkStore.shared.consumePendingURL() {
+            handleUniversalLink(url)
+        }
+    }
+
+    deinit {
+        if let universalLinkObserver {
+            NotificationCenter.default.removeObserver(universalLinkObserver)
+        }
     }
 
     func refreshState() {
@@ -42,6 +101,12 @@ class AppState: ObservableObject {
         guard parts.count == 2, parts[0] == "recipes", let id = UUID(uuidString: String(parts[1])) else {
             return
         }
+        let now = Date()
+        if lastHandledUniversalLink == url, now.timeIntervalSince(lastHandledUniversalLinkAt) < 1 {
+            return
+        }
+        lastHandledUniversalLink = url
+        lastHandledUniversalLinkAt = now
         pendingRecipeId = id
     }
 }
