@@ -13,6 +13,7 @@ API_SOURCES := $(shell find server/src/api -type f -name '*.rs' 2>/dev/null) ser
 # Marker file for generated clients
 CLIENT_MARKER := cli/generated/ramekin-client/Cargo.toml
 SERVER_RELEASE_BIN := server/target/release/ramekin-server
+RAMEKIN_IOS_APPLINKS_URL ?= https://ramekin.app
 
 # Simulator destination for iOS tests. Leave empty to auto-detect the newest
 # iPhone on the newest installed iOS runtime via scripts/find-ios-simulator.py.
@@ -219,12 +220,11 @@ pipeline-cache-capture: ## Run a localhost server + bookmarklet to manually save
 		$(if $(URL),--url $(URL),)
 
 ios-generate: ## Generate Xcode project for iOS app (requires xcodegen: brew install xcodegen)
-	@set -a && [ -f dev.env ] && . ./dev.env; set +a && \
-	if [ -n "$$RAMEKIN_EXTERNAL_URL" ]; then \
-	  RAMEKIN_EXTERNAL_HOST=$$(echo "$$RAMEKIN_EXTERNAL_URL" | sed -E 's|^[a-z]+://||; s|[:/].*$$||'); \
-	else \
-	  RAMEKIN_EXTERNAL_HOST=ramekin.invalid; \
-	  echo "RAMEKIN_EXTERNAL_URL unset; using placeholder applinks host '$$RAMEKIN_EXTERNAL_HOST' (universal links won't work until this is set)" >&2; \
+	@APPLINKS_URL="$(RAMEKIN_IOS_APPLINKS_URL)" && \
+	RAMEKIN_EXTERNAL_HOST=$$(echo "$$APPLINKS_URL" | sed -E 's|^[a-z]+://||; s|[:/].*$$||') && \
+	if [ -z "$$RAMEKIN_EXTERNAL_HOST" ]; then \
+	  echo "RAMEKIN_IOS_APPLINKS_URL must include a host" >&2; \
+	  exit 1; \
 	fi && \
 	export RAMEKIN_EXTERNAL_HOST && \
 	echo "Using applinks host: $$RAMEKIN_EXTERNAL_HOST" && \

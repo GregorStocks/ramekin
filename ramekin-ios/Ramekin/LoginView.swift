@@ -1,9 +1,11 @@
 import SwiftUI
 
+private let defaultServerURL = "https://ramekin.app"
+
 struct LoginView: View {
     @EnvironmentObject var appState: AppState
 
-    @State private var serverURL: String = "https://media.noodles:5173"
+    @State private var serverURL: String = defaultServerURL
     @State private var username: String = "t"
     @State private var password: String = "t"
     @State private var accessClientId: String = ""
@@ -41,7 +43,7 @@ struct LoginView: View {
             }
 
             Section("Server") {
-                TextField("https://media.noodles:5173", text: $serverURL)
+                TextField(defaultServerURL, text: $serverURL)
                     .textContentType(.URL)
                     .keyboardType(.URL)
                     .autocapitalization(.none)

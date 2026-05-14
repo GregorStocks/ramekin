@@ -27,7 +27,7 @@ final class RecipeFlowTests: XCTestCase {
         // MARK: - Login
 
         // Find and fill server URL field (clear default value first)
-        let serverField = app.textFields["https://media.noodles:5173"]
+        let serverField = app.textFields["https://ramekin.app"]
         XCTAssertTrue(serverField.waitForExistence(timeout: 5), "Server URL field should exist")
         clearField(serverField)
         serverField.typeText("http://localhost:55000")
@@ -94,7 +94,7 @@ final class RecipeFlowTests: XCTestCase {
 
     /// Test that login fails with invalid credentials
     func testLoginFailure() throws {
-        let serverField = app.textFields["https://media.noodles:5173"]
+        let serverField = app.textFields["https://ramekin.app"]
         XCTAssertTrue(serverField.waitForExistence(timeout: 5))
         clearField(serverField)
         serverField.typeText("http://localhost:55000")
