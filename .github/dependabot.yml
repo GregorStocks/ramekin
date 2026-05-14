@@ -12,6 +12,8 @@ updates:
       day: "wednesday"
       time: "04:00"
       timezone: "America/Los_Angeles"
+    cooldown:
+      default-days: 7
     groups:
       rust-deps:
         patterns: ["*"]
@@ -23,6 +25,8 @@ updates:
       day: "wednesday"
       time: "04:00"
       timezone: "America/Los_Angeles"
+    cooldown:
+      default-days: 7
     groups:
       npm-deps:
         patterns: ["*"]
@@ -34,3 +38,5 @@ updates:
       day: "wednesday"
       time: "04:00"
       timezone: "America/Los_Angeles"
+    cooldown:
+      default-days: 7
