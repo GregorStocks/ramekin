@@ -36,14 +36,50 @@ let insecureSession: URLSession = {
     URLSession(configuration: .default, delegate: InsecureSessionDelegate(), delegateQueue: nil)
 }()
 
+extension Notification.Name {
+    /// Posted when a bearer-authenticated API request returns 401, signalling
+    /// that the stored session token is no longer valid and the user must
+    /// sign in again.
+    static let ramekinAuthExpired = Notification.Name("ramekinAuthExpired")
+}
+
+private func notifyIfAuthExpired<T>(_ result: Swift.Result<Response<T>, ErrorResponse>) {
+    guard case let .failure(.error(statusCode, _, _, _)) = result, statusCode == 401 else {
+        return
+    }
+    NotificationCenter.default.post(name: .ramekinAuthExpired, object: nil)
+}
+
 /// Request builder that accepts self-signed certificates.
 class InsecureRequestBuilder<T>: URLSessionRequestBuilder<T> {
     override func createURLSession() -> URLSessionProtocol { insecureSession }
+
+    @discardableResult
+    override func execute(
+        _ apiResponseQueue: DispatchQueue = RamekinClientAPI.apiResponseQueue,
+        _ completion: @escaping (_ result: Swift.Result<Response<T>, ErrorResponse>) -> Void
+    ) -> RequestTask {
+        super.execute(apiResponseQueue) { result in
+            notifyIfAuthExpired(result)
+            completion(result)
+        }
+    }
 }
 
 /// Decodable request builder that accepts self-signed certificates.
 class InsecureDecodableBuilder<T: Decodable>: URLSessionDecodableRequestBuilder<T> {
     override func createURLSession() -> URLSessionProtocol { insecureSession }
+
+    @discardableResult
+    override func execute(
+        _ apiResponseQueue: DispatchQueue = RamekinClientAPI.apiResponseQueue,
+        _ completion: @escaping (_ result: Swift.Result<Response<T>, ErrorResponse>) -> Void
+    ) -> RequestTask {
+        super.execute(apiResponseQueue) { result in
+            notifyIfAuthExpired(result)
+            completion(result)
+        }
+    }
 }
 
 /// Factory for insecure request builders.

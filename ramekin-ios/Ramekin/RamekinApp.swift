@@ -60,6 +60,7 @@ class AppState: ObservableObject {
     private var lastHandledUniversalLink: URL?
     private var lastHandledUniversalLinkAt = Date.distantPast
     private var universalLinkObserver: NSObjectProtocol?
+    private var authExpiredObserver: NSObjectProtocol?
 
     init() {
         refreshState()
@@ -71,6 +72,13 @@ class AppState: ObservableObject {
             guard let url = notification.object as? URL else { return }
             self?.handleUniversalLink(url)
         }
+        authExpiredObserver = NotificationCenter.default.addObserver(
+            forName: .ramekinAuthExpired,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            self?.handleAuthExpired()
+        }
         if let url = UniversalLinkStore.shared.consumePendingURL() {
             handleUniversalLink(url)
         }
@@ -80,6 +88,16 @@ class AppState: ObservableObject {
         if let universalLinkObserver {
             NotificationCenter.default.removeObserver(universalLinkObserver)
         }
+        if let authExpiredObserver {
+            NotificationCenter.default.removeObserver(authExpiredObserver)
+        }
+    }
+
+    private func handleAuthExpired() {
+        // Only act when we still think we're logged in — repeated 401s in a
+        // single burst shouldn't each schedule a redundant logout.
+        guard isLoggedIn else { return }
+        logout()
     }
 
     func refreshState() {

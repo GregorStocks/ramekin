@@ -45,13 +45,26 @@ pub fn create_session_with_token(
 pub async fn get_user_from_token(pool: &DbPool, token: &str) -> Option<User> {
     let mut conn = pool.get().ok()?;
     let token_hash = hash_token(token);
+    let now = Utc::now();
 
-    sessions::table
+    let user = sessions::table
         .inner_join(users::table)
         .filter(sessions::token_hash.eq(&token_hash))
-        .filter(sessions::expires_at.gt(Utc::now()))
+        .filter(sessions::expires_at.gt(now))
         .filter(users::deleted_at.is_null())
         .select(User::as_select())
         .first(&mut conn)
-        .ok()
+        .ok()?;
+
+    // Sliding expiry: bump the session's expires_at when it's aged at least a
+    // day past its last touch. The filter caps writes at one per session per
+    // day while keeping active sessions from hitting the 30-day wall.
+    let new_expiry = now + Duration::days(30);
+    let _ = diesel::update(sessions::table)
+        .filter(sessions::token_hash.eq(&token_hash))
+        .filter(sessions::expires_at.lt(new_expiry - Duration::days(1)))
+        .set(sessions::expires_at.eq(new_expiry))
+        .execute(&mut conn);
+
+    Some(user)
 }
