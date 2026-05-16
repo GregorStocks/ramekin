@@ -1,7 +1,47 @@
 import SwiftUI
 
+enum AddToShoppingListSheetSupport {
+    static func ingredientsForShoppingList(
+        recipe: RecipeResponse,
+        selectedIngredients: Set<Int>,
+        scale: Double
+    ) -> [(name: String, amount: String?)] {
+        recipe.ingredients.enumerated().compactMap { index, ingredient in
+            guard selectedIngredients.contains(index) else {
+                return nil
+            }
+
+            return (
+                name: ingredient.item,
+                amount: formattedAmount(ingredient, scale: scale)
+            )
+        }
+    }
+
+    static func formattedAmount(_ ingredient: Ingredient, scale: Double) -> String? {
+        guard let measurement = ingredient.measurements.first else {
+            return nil
+        }
+
+        let scaledAmount = RecipeScaleSupport.scaleAmount(measurement.amount, by: scale)
+        let amount = [scaledAmount, measurement.unit]
+            .compactMap { value -> String? in
+                guard let value else {
+                    return nil
+                }
+
+                let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
+                return trimmed.isEmpty ? nil : trimmed
+            }
+            .joined(separator: " ")
+
+        return amount.isEmpty ? nil : amount
+    }
+}
+
 struct AddToShoppingListSheet: View {
     let recipe: RecipeResponse
+    let scale: Double
     @Binding var isPresented: Bool
 
     @State private var selectedIngredients: Set<Int> = []
@@ -26,7 +66,7 @@ struct AddToShoppingListSheet: View {
                                     .font(.title3)
 
                                 VStack(alignment: .leading, spacing: 2) {
-                                    Text(ingredient.formatted())
+                                    Text(ingredient.formatted(scale: scale))
                                         .foregroundColor(.primary)
 
                                     if let note = ingredient.note, !note.isEmpty {
@@ -110,14 +150,11 @@ struct AddToShoppingListSheet: View {
     private func addToShoppingList() {
         error = nil
 
-        let ingredients = selectedIngredients.compactMap { index -> (name: String, amount: String?)? in
-            guard index < recipe.ingredients.count else { return nil }
-            let ingredient = recipe.ingredients[index]
-            let amount = ingredient.measurements.first.flatMap { measurement in
-                [measurement.amount, measurement.unit].compactMap { $0 }.joined(separator: " ")
-            }
-            return (name: ingredient.item, amount: amount?.isEmpty == true ? nil : amount)
-        }
+        let ingredients = AddToShoppingListSheetSupport.ingredientsForShoppingList(
+            recipe: recipe,
+            selectedIngredients: selectedIngredients,
+            scale: scale
+        )
 
         do {
             try ShoppingListStore.shared.addItemsFromRecipe(

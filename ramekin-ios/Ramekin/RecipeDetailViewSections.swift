@@ -94,9 +94,14 @@ extension RecipeDetailView {
             }
 
             if let servings = recipe.servings, !servings.isEmpty {
-                Text("Servings: \(servings)")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
+                HStack(spacing: 6) {
+                    Text("Servings: \(RecipeScaleSupport.scaleAmount(servings, by: recipeScale))")
+                    if recipeScale != 1 {
+                        scaleBadge
+                    }
+                }
+                .font(.subheadline)
+                .foregroundColor(.secondary)
             }
 
             if let rating = recipe.rating, (1...5).contains(rating) {
@@ -129,9 +134,16 @@ extension RecipeDetailView {
 
     func ingredientsSection(_ ingredients: [Ingredient]) -> some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Ingredients")
-                .font(.title2)
-                .fontWeight(.bold)
+            HStack(spacing: 8) {
+                Text("Ingredients")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                if recipeScale != 1 {
+                    scaleBadge
+                }
+            }
+
+            scaleControls
 
             let grouped = groupIngredientsBySection(ingredients)
 
@@ -143,13 +155,66 @@ extension RecipeDetailView {
                 }
 
                 ForEach(Array(group.items.enumerated()), id: \.offset) { _, ingredient in
-                    ingredientRow(ingredient)
+                    ingredientRow(ingredient, scale: recipeScale)
                 }
             }
         }
     }
 
-    func ingredientRow(_ ingredient: Ingredient) -> some View {
+    var scaleControls: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 8) {
+                Text("Scale:")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+
+                ForEach(RecipeScaleSupport.presets, id: \.value) { preset in
+                    Button {
+                        customScaleInput = ""
+                        setRecipeScale(preset.value)
+                    } label: {
+                        Text(preset.label)
+                            .font(.subheadline)
+                            .fontWeight(recipeScale == preset.value ? .semibold : .regular)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 6)
+                            .background(
+                                Capsule()
+                                    .fill(recipeScale == preset.value ? Color.orange : Color(.secondarySystemBackground))
+                            )
+                            .foregroundColor(recipeScale == preset.value ? .white : .primary)
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+
+            HStack(spacing: 8) {
+                TextField("Custom", text: $customScaleInput)
+                    .keyboardType(.decimalPad)
+                    .textFieldStyle(.roundedBorder)
+                    .frame(width: 100)
+                    .onSubmit(applyCustomScale)
+
+                Button("Apply") {
+                    applyCustomScale()
+                }
+                .buttonStyle(.bordered)
+            }
+        }
+    }
+
+    var scaleBadge: some View {
+        Text("scaled \(RecipeScaleSupport.formatScaleLabel(recipeScale))")
+            .font(.caption)
+            .fontWeight(.semibold)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 3)
+            .background(Color.orange.opacity(0.16))
+            .foregroundColor(.orange)
+            .clipShape(Capsule())
+    }
+
+    func ingredientRow(_ ingredient: Ingredient, scale: Double) -> some View {
         HStack(alignment: .top, spacing: 8) {
             Circle()
                 .fill(Color.orange)
@@ -157,7 +222,7 @@ extension RecipeDetailView {
                 .padding(.top, 6)
 
             VStack(alignment: .leading, spacing: 2) {
-                Text(ingredient.formatted())
+                Text(ingredient.formatted(scale: scale, includeAlternatives: true))
                     .font(.body)
 
                 if let note = ingredient.note, !note.isEmpty {
