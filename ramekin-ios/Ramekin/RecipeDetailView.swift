@@ -247,7 +247,9 @@ struct RecipeDetailView: View {
     }
 
     func applyCustomScale() {
-        guard let value = Double(customScaleInput), value.isFinite, value > 0 else {
+        guard let value = RecipeScaleSupport.parseDecimal(customScaleInput),
+              value.isFinite,
+              value > 0 else {
             return
         }
         setRecipeScale(value)

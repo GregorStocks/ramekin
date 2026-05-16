@@ -4,6 +4,7 @@ import XCTest
 final class RecipeScaleSupportTests: XCTestCase {
     func testScaleAmountDoublesRepresentativeAmounts() {
         XCTAssertEqual(RecipeScaleSupport.scaleAmount("1", by: 2), "2")
+        XCTAssertEqual(RecipeScaleSupport.scaleAmount("1,5", by: 2), "3")
         XCTAssertEqual(RecipeScaleSupport.scaleAmount("1/2", by: 2), "1")
         XCTAssertEqual(RecipeScaleSupport.scaleAmount("1 1/2", by: 2), "3")
         XCTAssertEqual(RecipeScaleSupport.scaleAmount(".5", by: 2), "1")
@@ -21,6 +22,12 @@ final class RecipeScaleSupportTests: XCTestCase {
         XCTAssertEqual(RecipeScaleSupport.scaleAmount("to taste", by: 2), "to taste")
         XCTAssertEqual(RecipeScaleSupport.scaleAmount("1", by: 1), "1")
         XCTAssertEqual(RecipeScaleSupport.scaleAmount("1", by: 0), "1")
+    }
+
+    func testParseDecimalAcceptsCommaDecimalInput() {
+        XCTAssertEqual(RecipeScaleSupport.parseDecimal("1.5"), 1.5)
+        XCTAssertEqual(RecipeScaleSupport.parseDecimal("1,5"), 1.5)
+        XCTAssertNil(RecipeScaleSupport.parseDecimal("1,2,3"))
     }
 
     func testIngredientFormattingScalesPrimaryAndAlternativeMeasurements() {

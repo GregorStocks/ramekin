@@ -44,13 +44,39 @@ enum RecipeScaleSupport {
         return "\(formatter.string(from: NSNumber(value: value)) ?? String(value))x"
     }
 
+    static func parseDecimal(_ raw: String) -> Double? {
+        let amount = raw.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !amount.isEmpty else {
+            return nil
+        }
+
+        if let value = Double(amount) {
+            return value
+        }
+
+        let formatter = NumberFormatter()
+        formatter.locale = .current
+        formatter.numberStyle = .decimal
+        if let value = formatter.number(from: amount)?.doubleValue {
+            return value
+        }
+
+        guard amount.contains(","),
+              !amount.contains("."),
+              amount.filter({ $0 == "," }).count == 1 else {
+            return nil
+        }
+
+        return Double(amount.replacingOccurrences(of: ",", with: "."))
+    }
+
     private static func parseAmount(_ raw: String) -> Double? {
         let amount = normalizeFractions(raw).trimmingCharacters(in: .whitespacesAndNewlines)
         guard !amount.isEmpty else { return nil }
 
         let mixedParts = amount.split(separator: " ", omittingEmptySubsequences: true)
         if mixedParts.count == 2,
-           let whole = Double(mixedParts[0]),
+           let whole = parseDecimal(String(mixedParts[0])),
            let fraction = parseFraction(String(mixedParts[1])) {
             return whole + fraction
         }
@@ -60,20 +86,20 @@ enum RecipeScaleSupport {
         }
 
         guard amount.range(
-            of: #"^\d+(\.\d+)?$|^\.\d+$"#,
+            of: #"^\d+([\.,]\d+)?$|^[\.,]\d+$"#,
             options: .regularExpression
         ) != nil else {
             return nil
         }
 
-        return Double(amount)
+        return parseDecimal(amount)
     }
 
     private static func parseFraction(_ amount: String) -> Double? {
         let parts = amount.split(separator: "/", omittingEmptySubsequences: false)
         guard parts.count == 2,
-              let numerator = Double(parts[0]),
-              let denominator = Double(parts[1]),
+              let numerator = parseDecimal(String(parts[0])),
+              let denominator = parseDecimal(String(parts[1])),
               denominator != 0 else {
             return nil
         }
