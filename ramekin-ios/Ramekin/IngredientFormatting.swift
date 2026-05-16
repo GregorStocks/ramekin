@@ -2,21 +2,16 @@ import Foundation
 
 extension Ingredient {
     func formatted(
+        scale: Double = 1,
         includeAlternatives: Bool = false,
         includeNote: Bool = false
     ) -> String {
         var parts: [String] = []
 
         if let measurement = measurements.first {
-            let primary = [measurement.amount, measurement.unit]
-                .compactMap { value -> String? in
-                    guard let value else {
-                        return nil
-                    }
-
-                    let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
-                    return trimmed.isEmpty ? nil : trimmed
-                }
+            let amount = RecipeScaleSupport.scaleAmount(measurement.amount, by: scale)
+            let primary = [amount, measurement.unit]
+                .compactMap(Self.trimmedValue)
 
             if !primary.isEmpty {
                 parts.append(primary.joined(separator: " "))
@@ -25,15 +20,9 @@ extension Ingredient {
 
         if includeAlternatives {
             let alternatives = measurements.dropFirst().compactMap { measurement -> String? in
-                let values = [measurement.amount, measurement.unit]
-                    .compactMap { value -> String? in
-                        guard let value else {
-                            return nil
-                        }
-
-                        let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
-                        return trimmed.isEmpty ? nil : trimmed
-                    }
+                let amount = RecipeScaleSupport.scaleAmount(measurement.amount, by: scale)
+                let values = [amount, measurement.unit]
+                    .compactMap(Self.trimmedValue)
 
                 guard !values.isEmpty else {
                     return nil
@@ -57,5 +46,14 @@ extension Ingredient {
         }
 
         return parts.joined(separator: " ")
+    }
+
+    private static func trimmedValue(_ value: String?) -> String? {
+        guard let value else {
+            return nil
+        }
+
+        let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmed.isEmpty ? nil : trimmed
     }
 }

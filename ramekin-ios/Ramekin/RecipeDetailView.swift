@@ -33,6 +33,8 @@ struct RecipeDetailView: View {
     @State var rescrapeError: String?
     @State var showingRescrapeConfirmation = false
     @State var rescrapeTask: Task<Void, Never>?
+    @State var recipeScale: Double = 1
+    @State var customScaleInput = ""
 
     var isViewingHistoricalVersion: Bool {
         RecipeVersionSupport.isViewingHistoricalVersion(
@@ -118,7 +120,11 @@ struct RecipeDetailView: View {
         }
         .sheet(isPresented: $showingAddToShoppingList) {
             if let recipe {
-                AddToShoppingListSheet(recipe: recipe, isPresented: $showingAddToShoppingList)
+                AddToShoppingListSheet(
+                    recipe: recipe,
+                    scale: recipeScale,
+                    isPresented: $showingAddToShoppingList
+                )
             }
         }
         .sheet(isPresented: $showingAddToMealPlan) {
@@ -233,6 +239,21 @@ struct RecipeDetailView: View {
         }
     }
 
+    func setRecipeScale(_ value: Double) {
+        guard value.isFinite, value > 0 else {
+            return
+        }
+        recipeScale = value
+    }
+
+    func applyCustomScale() {
+        guard let value = RecipeScaleSupport.parseDecimal(customScaleInput),
+              value.isFinite,
+              value > 0 else {
+            return
+        }
+        setRecipeScale(value)
+    }
 }
 
 struct PhotoCarouselView: View {
