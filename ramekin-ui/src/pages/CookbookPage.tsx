@@ -240,7 +240,7 @@ function formatRelativeDate(date: Date): string {
 
 export default function CookbookPage() {
   usePageTitle(() => "Cookbook");
-  const { getRecipesApi, tags: availableTags, token } = useAuth();
+  const { getRecipesApi, tags: availableTags, token, authedFetch } = useAuth();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -1387,6 +1387,7 @@ export default function CookbookPage() {
         onClose={() => setShowPdfModal(false)}
         recipes={selectedRecipes}
         token={token}
+        authedFetch={authedFetch}
       />
     </div>
   );

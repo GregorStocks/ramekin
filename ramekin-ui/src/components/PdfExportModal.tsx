@@ -11,6 +11,10 @@ interface Props {
   onClose: () => void;
   recipes: () => RecipeSummary[];
   token: () => string | null;
+  authedFetch: (
+    input: RequestInfo | URL,
+    init?: RequestInit,
+  ) => Promise<Response>;
 }
 
 type ImageData = {
@@ -157,14 +161,21 @@ function drawCutGuides(
 async function fetchThumbnail(
   photoId: string,
   token: string,
+  authedFetch: (
+    input: RequestInfo | URL,
+    init?: RequestInit,
+  ) => Promise<Response>,
 ): Promise<ImageData> {
   const maxAttempts = 4;
   let lastErr: unknown;
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
-      const resp = await fetch(`/api/photos/${photoId}/thumbnail?size=1200`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const resp = await authedFetch(
+        `/api/photos/${photoId}/thumbnail?size=1200`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        },
+      );
       if (!resp.ok) {
         throw new Error(
           `Failed to fetch thumbnail ${photoId}: ${resp.status} ${resp.statusText}`,
@@ -418,7 +429,11 @@ export default function PdfExportModal(props: Props) {
 
         const img: ImageData | null = recipe.thumbnailPhotoId
           ? await cropImageToAspectRatio(
-              await fetchThumbnail(recipe.thumbnailPhotoId, tok),
+              await fetchThumbnail(
+                recipe.thumbnailPhotoId,
+                tok,
+                props.authedFetch,
+              ),
               PHOTO_ASPECT_RATIO,
             )
           : null;

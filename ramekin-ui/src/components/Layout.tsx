@@ -11,7 +11,7 @@ const startTime = new Date().toLocaleString();
 const formatBuildTime = (iso: string) => new Date(iso).toLocaleString();
 
 const Layout: ParentComponent = (props) => {
-  const { setToken, token } = useAuth();
+  const { setToken, token, authedFetch } = useAuth();
   const [searchParams] = useSearchParams();
   const [isMobileNavOpen, setIsMobileNavOpen] = createSignal(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = createSignal(false);
@@ -40,9 +40,7 @@ const Layout: ParentComponent = (props) => {
     try {
       const t = token();
       if (!t) throw new Error("not authenticated");
-      const response = await fetch("/api/recipes/export", {
-        headers: { Authorization: `Bearer ${t}` },
-      });
+      const response = await authedFetch("/api/recipes/export");
       if (!response.ok) {
         throw new Error(`export failed: ${response.status}`);
       }
