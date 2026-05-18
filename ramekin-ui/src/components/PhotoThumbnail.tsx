@@ -1,4 +1,5 @@
 import { createSignal, Show, onMount, onCleanup } from "solid-js";
+import { useAuth } from "../context/AuthContext";
 
 interface PhotoThumbnailProps {
   photoId: string;
@@ -10,6 +11,7 @@ interface PhotoThumbnailProps {
 }
 
 export default function PhotoThumbnail(props: PhotoThumbnailProps) {
+  const { authedFetch } = useAuth();
   const [src, setSrc] = createSignal<string | null>(null);
   const [error, setError] = createSignal(false);
 
@@ -18,7 +20,7 @@ export default function PhotoThumbnail(props: PhotoThumbnailProps) {
       const url = props.thumbnailSize
         ? `/api/photos/${props.photoId}/thumbnail?size=${props.thumbnailSize}`
         : `/api/photos/${props.photoId}`;
-      const response = await fetch(url, {
+      const response = await authedFetch(url, {
         headers: { Authorization: `Bearer ${props.token}` },
       });
       if (response.ok) {

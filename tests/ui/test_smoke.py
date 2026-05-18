@@ -162,6 +162,18 @@ def test_login_and_view_cookbook(logged_in_page: Page):
     expect(recipe_cards.first).to_be_visible()
 
 
+def test_expired_token_redirects_to_login(page: Page, ui_url: str):
+    """Verify an invalid stored token logs the user out on the next API call."""
+    page.goto(ui_url)
+    page.evaluate("localStorage.setItem('token', 'expired-token')")
+
+    page.goto(ui_url)
+
+    expect(page.locator("input[type='password']")).to_be_visible()
+    expect(page).to_have_url(re.compile(r"/login$"))
+    assert page.evaluate("localStorage.getItem('token')") is None
+
+
 def test_view_recipe_detail(logged_in_page: Page):
     """Verify clicking a recipe shows the detail page."""
     # Click first recipe card

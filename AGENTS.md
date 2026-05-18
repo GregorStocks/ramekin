@@ -2,6 +2,8 @@ Read through the makefile first. Always do things via existing makefile commands
 
 We use uv and npx for the linter and code generation. Never use system Python or NPM because those are presumably always broken.
 
+When adding features or fixing bugs, handle both the web and iOS clients by default. Only scope work to one client after the user explicitly confirms the other client does not need the change.
+
 We plan to never actually delete any data from the DB - everything will be soft-deletes.
 
 When adding new dependencies, make sure you're getting the latest version - you were trained several months ago so you probably don't know what the state of the art is.

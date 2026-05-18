@@ -33,6 +33,10 @@ interface AuthContextValue {
   tags: Accessor<string[]>;
   tagsLoading: Accessor<boolean>;
   refreshTags: () => Promise<void>;
+  authedFetch: (
+    input: RequestInfo | URL,
+    init?: RequestInit,
+  ) => Promise<Response>;
 }
 
 const AuthContext = createContext<AuthContextValue>();
@@ -48,6 +52,28 @@ export const AuthProvider: ParentComponent = (props) => {
     setTokenInternal(newToken);
   };
 
+  const handleAuthExpired = () => {
+    if (!token()) return;
+    setToken(null);
+  };
+
+  const authedFetch = async (
+    input: RequestInfo | URL,
+    init?: RequestInit,
+  ): Promise<Response> => {
+    const headers = new Headers(init?.headers);
+    const t = token();
+    if (t && !headers.has("Authorization")) {
+      headers.set("Authorization", `Bearer ${t}`);
+    }
+
+    const response = await fetch(input, { ...init, headers });
+    if (response.status === 401) {
+      handleAuthExpired();
+    }
+    return response;
+  };
+
   createEffect(() => {
     const t = token();
     if (t) {
@@ -61,6 +87,7 @@ export const AuthProvider: ParentComponent = (props) => {
     new Configuration({
       basePath: "",
       accessToken: () => token() ?? "",
+      fetchApi: authedFetch,
     });
 
   const getRecipesApi = () => new RecipesApi(getAuthedConfig());
@@ -112,6 +139,7 @@ export const AuthProvider: ParentComponent = (props) => {
     tags,
     tagsLoading,
     refreshTags,
+    authedFetch,
   };
 
   return (

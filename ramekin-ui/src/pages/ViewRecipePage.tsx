@@ -58,10 +58,11 @@ function groupIngredientsBySection(
 }
 
 function PhotoImage(props: { photoId: string; token: string; alt: string }) {
+  const { authedFetch } = useAuth();
   const [src, setSrc] = createSignal<string | null>(null);
 
   onMount(async () => {
-    const response = await fetch(`/api/photos/${props.photoId}`, {
+    const response = await authedFetch(`/api/photos/${props.photoId}`, {
       headers: { Authorization: `Bearer ${props.token}` },
     });
     if (response.ok) {
