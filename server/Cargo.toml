@@ -49,11 +49,11 @@ tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 
 # OpenTelemetry (traces and logs)
-opentelemetry = { version = "0.31", features = ["logs"] }
-opentelemetry_sdk = { version = "0.31", features = ["rt-tokio", "logs"] }
-opentelemetry-otlp = { version = "0.31", features = ["grpc-tonic", "logs"] }
+opentelemetry = { version = "0.32", features = ["logs"] }
+opentelemetry_sdk = { version = "0.32", features = ["rt-tokio", "logs"] }
+opentelemetry-otlp = { version = "0.32", features = ["grpc-tonic", "logs"] }
 tracing-opentelemetry = "0.32"
-opentelemetry-appender-tracing = "0.31"
+opentelemetry-appender-tracing = "0.32"
 
 # Image processing
 image = "0.25"
@@ -67,5 +67,5 @@ zip = "8.6"
 
 # Web scraping
 reqwest = { version = "0.13", default-features = false, features = ["rustls", "json"] }
-scraper = "0.26"
+scraper = "0.27"
 ramekin-core = { path = "../ramekin-core" }
