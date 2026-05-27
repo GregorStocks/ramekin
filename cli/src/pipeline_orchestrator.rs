@@ -308,7 +308,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     // clock even when individual saves are small, because it serializes the
     // workers.
     let intermediate_save_total_ms = Arc::new(AtomicUsize::new(0));
-    let url_results: Vec<Option<UrlResult>> = stream::iter(urls_to_process.into_iter())
+    let url_results: Vec<Option<UrlResult>> = stream::iter(urls_to_process)
         .map(|(url, domain)| {
             let client = Arc::clone(&client);
             let registry = Arc::clone(&registry);

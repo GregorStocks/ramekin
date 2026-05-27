@@ -2686,10 +2686,8 @@ fn try_extract_multiplier_unit(s: &str) -> Option<(String, String)> {
     let s = s.trim_start();
     let after_marker = if let Some(rest) = s.strip_prefix('x') {
         rest
-    } else if let Some(rest) = s.strip_prefix('×') {
-        rest
     } else {
-        return None;
+        s.strip_prefix('×')?
     };
 
     let next_char = after_marker.chars().next()?;
