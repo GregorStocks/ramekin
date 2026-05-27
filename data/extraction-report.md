@@ -2,32 +2,32 @@
 
 ## Overall
 
-- Total URLs: 5533
-- Completed: 5435 (98.2%)
+- Total URLs: 5534
+- Completed: 5438 (98.3%)
 - Failed at fetch: 1 (0.0%)
 - Failed at extract: 75 (1.4%)
 
 ## Extraction Methods
 
-- JSON-LD: 4260/5532 (77.0%)
-- Microdata: 542/5532 (9.8%)
-- Both: 0/5532 (0.0%)
-- Neither: 730/5532 (13.2%)
+- JSON-LD: 4261/5533 (77.0%)
+- Microdata: 542/5533 (9.8%)
+- Both: 0/5533 (0.0%)
+- Neither: 730/5533 (13.2%)
 
 ## Ingredient Parsing
 
-- Total ingredients: 60624
-- Volume-to-weight converted: 18860/42698 (44.2%)
-- Unknown ingredient (no density data): 14297
-- Already has weight: 9541
-- No volume unit (count-based): 17559
-- Metric converted (oz→g): 2460
+- Total ingredients: 60636
+- Volume-to-weight converted: 18867/42709 (44.2%)
+- Unknown ingredient (no density data): 14299
+- Already has weight: 9543
+- No volume unit (count-based): 17560
+- Metric converted (oz→g): 2462
 - Metric converted (lb→g): 1812
 
 ## AI Cache
 
-- Cache hits: 16278/16290 (99.9%)
-- API calls: 12/16290 (0.1%)
+- Cache hits: 14806/16299 (90.8%)
+- API calls: 1493/16299 (9.2%)
 
 ## By Site
 
@@ -38,7 +38,7 @@
 | alexandracooks.com | 101 | 101 | 100.0% |
 | allrecipes.com | 104 | 104 | 100.0% |
 | altonbrown.com | 101 | 101 | 100.0% |
-| americastestkitchen.com | 57 | 58 | 98.3% |
+| americastestkitchen.com | 58 | 58 | 100.0% |
 | asweetpeachef.com | 21 | 31 | 67.7% |
 | averiecooks.com | 1 | 3 | 33.3% |
 | bakerita.com | 7 | 7 | 100.0% |
@@ -50,7 +50,7 @@
 | browneyedbaker.com | 98 | 100 | 98.0% |
 | budgetbytes.com | 2 | 2 | 100.0% |
 | butterwithasideofbread.com | 44 | 44 | 100.0% |
-| cafedelites.com | 54 | 55 | 98.2% |
+| cafedelites.com | 55 | 55 | 100.0% |
 | chefspencil.com | 4 | 4 | 100.0% |
 | chopstickchronicles.com | 2 | 2 | 100.0% |
 | cocktailswithsuderman.substack.com | 4 | 4 | 100.0% |
@@ -81,7 +81,7 @@
 | japanesecooking101.com | 104 | 106 | 98.1% |
 | jocooks.com | 77 | 77 | 100.0% |
 | joyfoodsunshine.com | 88 | 88 | 100.0% |
-| justonecookbook.com | 21 | 22 | 95.5% |
+| justonecookbook.com | 22 | 23 | 95.7% |
 | keviniscooking.com | 34 | 34 | 100.0% |
 | kingarthurbaking.com | 5 | 5 | 100.0% |
 | kiyafries.com | 1 | 1 | 100.0% |
@@ -133,9 +133,8 @@
 
 ## Failed URLs by Error
 
-### AI call failed: Failed to parse response: Failed t... (22 URLs)
+### AI call failed: Failed to parse response: Failed t... (20 URLs)
 
-- https://cafedelites.com/buttery-garlic-naan-recipe/
 - https://natashaskitchen.com/cucumber-and-tomato-salad-recipe/
 - https://peasandcrayons.com/sheet-pan-cookie-cake-recipe/
 - https://smittenkitchen.com/2007/11/lemon-ricotta-pancakes-with-sauteed-apples/
@@ -146,7 +145,6 @@
 - https://sweetandsavorymeals.com/buckeye-recipe/
 - https://www.101cookbooks.com/instant-pot-congee-recipe/
 - https://www.acouplecooks.com/freekah-vegetable-soup-recipe/
-- https://www.americastestkitchen.com/recipes/16724-tacos-arabes
 - https://www.bbcgoodfood.com/recipes/slow-cooked-tomatoes-basil
 - https://www.browneyedbaker.com/caramel-apple-cheesecake-pie-recipe/
 - https://www.browneyedbaker.com/oatmeal-carmelita-bars-recipe/
@@ -158,7 +156,7 @@
 - https://www.seriouseats.com/loubia-moroccan-white-bean-stew-recipe-11685571
 - https://www.thepioneerwoman.com/food-cooking/recipes/a32097998/cherry-topped-cheesecake-recipe/
 
-### HTTP request failed: HTTP status client error (404... (1 URLs)
+### Cached fetch error (1 URLs)
 
 - https://theforkedspoon.com/chicken-fajita-meal-prep-recipe/
 

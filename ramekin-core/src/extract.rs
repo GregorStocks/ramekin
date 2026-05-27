@@ -562,39 +562,59 @@ fn extract_instructions(recipe: &serde_json::Value) -> Result<String, ExtractErr
     match instructions_raw {
         serde_json::Value::String(s) => Ok(s.trim().to_string()),
         serde_json::Value::Array(arr) => {
-            let steps: Vec<String> = arr
-                .iter()
-                .filter_map(|item| {
-                    // Handle HowToStep objects
-                    if let Some(text) = item.get("text").and_then(|v| v.as_str()) {
-                        return Some(text.trim().to_string());
+            // Collect every step (and section header) into a flat list joined by blank
+            // lines, so a recipe that mixes top-level HowToSteps with HowToSection groups
+            // uses one consistent separator instead of single newlines within sections.
+            let mut parts: Vec<String> = Vec::new();
+            for item in arr {
+                // Handle HowToStep objects
+                if let Some(text) = item.get("text").and_then(|v| v.as_str()) {
+                    let text = text.trim();
+                    if !text.is_empty() {
+                        parts.push(text.to_string());
                     }
-                    // Handle plain strings
-                    if let Some(s) = item.as_str() {
-                        return Some(s.trim().to_string());
+                    continue;
+                }
+                // Handle plain strings
+                if let Some(s) = item.as_str() {
+                    let s = s.trim();
+                    if !s.is_empty() {
+                        parts.push(s.to_string());
                     }
-                    // Handle HowToSection with itemListElement
-                    if let Some(items) = item.get("itemListElement").and_then(|v| v.as_array()) {
-                        let section_steps: Vec<String> = items
-                            .iter()
-                            .filter_map(|step| step.get("text").and_then(|v| v.as_str()))
-                            .map(|s| s.trim().to_string())
-                            .collect();
-                        if !section_steps.is_empty() {
-                            return Some(section_steps.join("\n"));
+                    continue;
+                }
+                // Handle HowToSection with itemListElement
+                if let Some(items) = item.get("itemListElement").and_then(|v| v.as_array()) {
+                    // Emit the section name as a colon-terminated header so the structure
+                    // is preserved rather than silently flattened.
+                    if let Some(name) = item.get("name").and_then(|v| v.as_str()) {
+                        let name = name.trim();
+                        if !name.is_empty() {
+                            if name.ends_with(':') {
+                                parts.push(name.to_string());
+                            } else {
+                                parts.push(format!("{name}:"));
+                            }
                         }
                     }
-                    None
-                })
-                .collect();
+                    for step in items {
+                        if let Some(text) = step.get("text").and_then(|v| v.as_str()) {
+                            let text = text.trim();
+                            if !text.is_empty() {
+                                parts.push(text.to_string());
+                            }
+                        }
+                    }
+                }
+            }
 
-            if steps.is_empty() {
+            if parts.is_empty() {
                 return Err(ExtractError::MissingField(
                     "recipeInstructions (empty)".to_string(),
                 ));
             }
 
-            Ok(steps.join("\n\n"))
+            Ok(parts.join("\n\n"))
         }
         _ => Err(ExtractError::InvalidJson(
             "recipeInstructions is not a string or array".to_string(),
@@ -2447,8 +2467,36 @@ static WPRM_STICKY_NOTE_WRAPPER_REGEX: LazyLock<Regex> = LazyLock::new(|| {
         .expect("Invalid WPRM sticky note wrapper regex")
 });
 
+/// Block-level boundaries inside a WPRM instruction. WPRM renders each visual line
+/// as a `display: block` span and separates them with `wprm-spacer` divs or `<br>`.
+/// Stripping these tags to nothing glues adjacent blocks together (e.g. a step and
+/// its inline "Nami's Tip:" run on without a space), so we turn the boundaries into
+/// spaces before stripping the remaining inline tags.
+static WPRM_BLOCK_BOUNDARY_REGEX: LazyLock<Regex> = LazyLock::new(|| {
+    Regex::new(
+        r#"(?is)<div[^>]*\bwprm-spacer\b[^>]*>\s*</div>|<br\s*/?>|<span[^>]*style="[^"]*display:\s*block[^"]*"[^>]*>"#,
+    )
+    .expect("Invalid WPRM block boundary regex")
+});
+
 fn normalize_wprm_text(text: &str) -> String {
     text.split_whitespace().collect::<Vec<_>>().join(" ")
+}
+
+/// Convert the inner HTML of a `.wprm-recipe-instruction-text` element to clean text,
+/// preserving spaces at block boundaries so inline tips don't glue onto the step text.
+fn clean_wprm_instruction_text(inner_html: &str) -> Option<String> {
+    let html = WPRM_STICKY_NOTE_TEXT_REGEX.replace_all(inner_html, "");
+    let html = WPRM_STICKY_NOTE_WRAPPER_REGEX.replace_all(&html, "");
+    let html = WPRM_BLOCK_BOUNDARY_REGEX.replace_all(&html, " ");
+    let text = HTML_TAG_REGEX.replace_all(&html, "");
+    let text = decode_html_entities(text.trim());
+    let text = normalize_wprm_text(&text);
+    if text.is_empty() {
+        None
+    } else {
+        Some(text)
+    }
 }
 
 fn lowercase_wprm_text(text: &str) -> String {
@@ -2515,28 +2563,46 @@ fn wprm_titles_match(recipe_title: &str, card_title: &str) -> bool {
 }
 
 fn extract_wprm_steps(root: ElementRef<'_>) -> Option<Vec<String>> {
-    let selector = Selector::parse(".wprm-recipe-instruction-text").ok()?;
-    let steps: Vec<String> = root
-        .select(&selector)
-        .filter_map(|el| {
-            let html = el.inner_html();
-            let html = WPRM_STICKY_NOTE_TEXT_REGEX.replace_all(&html, "");
-            let html = WPRM_STICKY_NOTE_WRAPPER_REGEX.replace_all(&html, "");
-            let text = HTML_TAG_REGEX.replace_all(&html, "");
-            let text = decode_html_entities(text.trim());
-            let text = normalize_wprm_text(&text);
-            if text.is_empty() {
-                None
-            } else {
-                Some(text)
-            }
-        })
-        .collect();
+    let group_selector = Selector::parse(".wprm-recipe-instruction-group").ok()?;
+    let name_selector = Selector::parse(".wprm-recipe-instruction-group-name").ok()?;
+    let text_selector = Selector::parse(".wprm-recipe-instruction-text").ok()?;
 
-    if steps.is_empty() {
+    let mut lines: Vec<String> = Vec::new();
+
+    let groups: Vec<_> = root.select(&group_selector).collect();
+    if groups.is_empty() {
+        // No group wrappers; emit the steps directly under the card.
+        for el in root.select(&text_selector) {
+            if let Some(text) = clean_wprm_instruction_text(&el.inner_html()) {
+                lines.push(text);
+            }
+        }
+    } else {
+        for group in &groups {
+            // Emit the group name as a colon-terminated section header (matching the
+            // ingredient-group convention) so downstream parsing treats it as a header.
+            if let Some(name_el) = group.select(&name_selector).next() {
+                let name = normalize_wprm_text(&name_el.text().collect::<String>());
+                if !name.is_empty() {
+                    if name.ends_with(':') {
+                        lines.push(name);
+                    } else {
+                        lines.push(format!("{name}:"));
+                    }
+                }
+            }
+            for el in group.select(&text_selector) {
+                if let Some(text) = clean_wprm_instruction_text(&el.inner_html()) {
+                    lines.push(text);
+                }
+            }
+        }
+    }
+
+    if lines.is_empty() {
         None
     } else {
-        Some(steps)
+        Some(lines)
     }
 }
 
@@ -2583,19 +2649,7 @@ fn extract_wprm_instructions(document: &Html, recipe_title: &str) -> Option<Stri
     } else if !require_title_match {
         let orphan_steps: Vec<String> = document
             .select(&instruction_selector)
-            .filter_map(|el| {
-                let html = el.inner_html();
-                let html = WPRM_STICKY_NOTE_TEXT_REGEX.replace_all(&html, "");
-                let html = WPRM_STICKY_NOTE_WRAPPER_REGEX.replace_all(&html, "");
-                let text = HTML_TAG_REGEX.replace_all(&html, "");
-                let text = decode_html_entities(text.trim());
-                let text = normalize_wprm_text(&text);
-                if text.is_empty() {
-                    None
-                } else {
-                    Some(text)
-                }
-            })
+            .filter_map(|el| clean_wprm_instruction_text(&el.inner_html()))
             .collect();
 
         if orphan_steps.len() == 1 {
@@ -4704,5 +4758,86 @@ mod tests {
                 recipe.instructions,
             );
         }
+    }
+
+    #[test]
+    fn test_jsonld_howto_sections_use_consistent_separators_and_headers() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Sectioned Recipe",
+                    "recipeIngredient": ["1 cup flour"],
+                    "recipeInstructions": [
+                        {"@type": "HowToStep", "text": "Gather all the ingredients."},
+                        {
+                            "@type": "HowToSection",
+                            "name": "To Cook",
+                            "itemListElement": [
+                                {"@type": "HowToStep", "text": "Brown the chicken."},
+                                {"@type": "HowToStep", "text": "Add the potatoes."}
+                            ]
+                        },
+                        {
+                            "@type": "HowToSection",
+                            "name": "To Serve",
+                            "itemListElement": [
+                                {"@type": "HowToStep", "text": "Plate and garnish."}
+                            ]
+                        }
+                    ]
+                }
+                </script>
+            </head><body></body></html>
+        "#;
+
+        let recipe = extract_recipe(html, "https://example.com/sectioned").unwrap();
+        assert_eq!(
+            recipe.instructions,
+            "Gather all the ingredients.\n\nTo Cook:\n\nBrown the chicken.\n\nAdd the potatoes.\n\nTo Serve:\n\nPlate and garnish."
+        );
+    }
+
+    #[test]
+    fn test_wprm_instruction_groups_add_headers_and_inline_tips() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Simmered Potatoes",
+                    "recipeIngredient": ["14 oz potatoes"],
+                    "recipeInstructions": [
+                        {"@type": "HowToStep", "text": "Place a drop lid and simmer.Nami&#39;s Tip: It keeps the potatoes from breaking."}
+                    ]
+                }
+                </script>
+            </head>
+            <body>
+                <div class="wprm-recipe">
+                    <h2 class="wprm-recipe-name">Simmered Potatoes</h2>
+                    <div class="wprm-recipe-instruction-group">
+                        <li class="wprm-recipe-instruction">
+                            <div class="wprm-recipe-instruction-text"><span style="display: block;">Gather all the ingredients.</span></div>
+                        </li>
+                    </div>
+                    <div class="wprm-recipe-instruction-group">
+                        <h4 class="wprm-recipe-instruction-group-name">To Cook the Potatoes</h4>
+                        <li class="wprm-recipe-instruction">
+                            <div class="wprm-recipe-instruction-text"><span style="display: block;">Place a drop lid and simmer.</span><div class="wprm-spacer"></div><span style="display: block;"><strong>Nami's Tip:</strong> It keeps the potatoes from breaking.</span></div>
+                        </li>
+                    </div>
+                </div>
+            </body></html>
+        "#;
+
+        let recipe = extract_recipe(html, "https://example.com/simmered").unwrap();
+        assert_eq!(
+            recipe.instructions,
+            "Gather all the ingredients.\n\nTo Cook the Potatoes:\n\nPlace a drop lid and simmer. Nami's Tip: It keeps the potatoes from breaking."
+        );
     }
 }
