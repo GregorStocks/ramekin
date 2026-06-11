@@ -174,7 +174,7 @@ class RamekinAPI {
     /// failures into `APIError`. Returns the raw response body on success;
     /// callers decode as needed.
     @discardableResult
-    fileprivate func performRequest(
+    func performRequest(
         method: String,
         path: String,
         body: Data? = nil,
@@ -183,6 +183,29 @@ class RamekinAPI {
         timeoutInterval: TimeInterval? = nil,
         logBody: Bool = true
     ) async throws -> Data {
+        let (data, _) = try await performRequestWithResponse(
+            method: method,
+            path: path,
+            body: body,
+            requiresAuth: requiresAuth,
+            acceptedStatusCodes: acceptedStatusCodes,
+            timeoutInterval: timeoutInterval,
+            logBody: logBody
+        )
+        return data
+    }
+
+    /// Like `performRequest`, but also returns the `HTTPURLResponse` so callers
+    /// can inspect response headers (e.g. Content-Disposition for downloads).
+    func performRequestWithResponse(
+        method: String,
+        path: String,
+        body: Data? = nil,
+        requiresAuth: Bool = true,
+        acceptedStatusCodes: Set<Int> = [200, 201, 204],
+        timeoutInterval: TimeInterval? = nil,
+        logBody: Bool = true
+    ) async throws -> (Data, HTTPURLResponse) {
         guard let baseURL = serverURL else {
             logger.log("ERROR: No server URL configured")
             throw APIError.noServerURL
@@ -235,7 +258,7 @@ class RamekinAPI {
         guard acceptedStatusCodes.contains(httpResponse.statusCode) else {
             throw parseError(from: data, statusCode: httpResponse.statusCode)
         }
-        return data
+        return (data, httpResponse)
     }
 
     private func logRequestBody(_ body: Data?, logBody: Bool) {
@@ -247,7 +270,7 @@ class RamekinAPI {
         }
     }
 
-    fileprivate func parseError(from data: Data, statusCode: Int) -> APIError {
+    func parseError(from data: Data, statusCode: Int) -> APIError {
         if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
             return .httpError(statusCode, errorResponse.errorMessage)
         }
