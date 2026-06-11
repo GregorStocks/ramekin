@@ -227,6 +227,7 @@ Name | Type | Description  | Notes
 **201** | Photo uploaded successfully |  -  |
 **400** | Invalid request |  -  |
 **401** | Unauthorized |  -  |
+**413** | File too large |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

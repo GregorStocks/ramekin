@@ -41,7 +41,8 @@ pub struct UploadPhotoRequest {
     responses(
         (status = 201, description = "Photo uploaded successfully", body = UploadPhotoResponse),
         (status = 400, description = "Invalid request", body = ErrorResponse),
-        (status = 401, description = "Unauthorized", body = ErrorResponse)
+        (status = 401, description = "Unauthorized", body = ErrorResponse),
+        (status = 413, description = "File too large", body = ErrorResponse)
     ),
     security(
         ("bearer_auth" = [])

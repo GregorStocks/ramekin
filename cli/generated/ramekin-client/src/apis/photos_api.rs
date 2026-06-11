@@ -37,6 +37,7 @@ pub enum GetPhotoThumbnailError {
 pub enum UploadError {
     Status400(models::ErrorResponse),
     Status401(models::ErrorResponse),
+    Status413(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
