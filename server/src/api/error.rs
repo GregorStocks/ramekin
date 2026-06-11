@@ -164,6 +164,13 @@ pub async fn ensure_coded_errors(request: Request, next: Next) -> Response {
     }
 
     let (parts, body) = response.into_parts();
+    // Normalize to the code's canonical status so the documented 1:1 code->status
+    // invariant holds even for framework statuses we don't map directly (e.g. an
+    // unsupported-media-type 415 or unprocessable-entity 422 both become a 400
+    // `invalid_request`).
+    let code = ErrorCode::for_status(status);
+    let status = code.status();
+
     let body = to_bytes(body, usize::MAX).await.unwrap_or_default();
     let message = String::from_utf8_lossy(&body).trim().to_string();
     let message = if message.is_empty() {
@@ -178,7 +185,7 @@ pub async fn ensure_coded_errors(request: Request, next: Next) -> Response {
     let mut coded = (
         status,
         Json(ErrorResponse {
-            code: ErrorCode::for_status(status),
+            code,
             error: message,
         }),
     )
