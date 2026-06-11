@@ -1,5 +1,8 @@
 use axum::{
-    http::StatusCode,
+    body::to_bytes,
+    extract::Request,
+    http::{header, StatusCode},
+    middleware::Next,
     response::{IntoResponse, Response},
     Json,
 };
@@ -42,6 +45,22 @@ impl ErrorCode {
             ErrorCode::PayloadTooLarge => StatusCode::PAYLOAD_TOO_LARGE,
             ErrorCode::ServiceUnavailable => StatusCode::SERVICE_UNAVAILABLE,
             ErrorCode::Internal => StatusCode::INTERNAL_SERVER_ERROR,
+        }
+    }
+
+    /// Best-fit code for an HTTP status produced outside a handler (e.g. an
+    /// Axum extractor rejection or routing fallback). Other 4xx statuses map to
+    /// `InvalidRequest` and 5xx to `Internal`.
+    pub fn for_status(status: StatusCode) -> ErrorCode {
+        match status {
+            StatusCode::NOT_FOUND => ErrorCode::NotFound,
+            StatusCode::BAD_REQUEST => ErrorCode::InvalidRequest,
+            StatusCode::CONFLICT => ErrorCode::Conflict,
+            StatusCode::UNAUTHORIZED => ErrorCode::Unauthorized,
+            StatusCode::PAYLOAD_TOO_LARGE => ErrorCode::PayloadTooLarge,
+            StatusCode::SERVICE_UNAVAILABLE => ErrorCode::ServiceUnavailable,
+            s if s.is_server_error() => ErrorCode::Internal,
+            _ => ErrorCode::InvalidRequest,
         }
     }
 }
@@ -119,4 +138,50 @@ impl IntoResponse for ApiError {
         )
             .into_response()
     }
+}
+
+/// Middleware guaranteeing every error response carries the structured
+/// `{ code, error }` body — including framework-level failures that never reach
+/// a handler, such as `Path`/`Json` extractor rejections and routing fallbacks,
+/// which otherwise return Axum's default `text/plain` body. Error responses that
+/// already have a JSON body (everything built via [`ApiError`]) pass through
+/// untouched.
+pub async fn ensure_coded_errors(request: Request, next: Next) -> Response {
+    let response = next.run(request).await;
+
+    let status = response.status();
+    if !status.is_client_error() && !status.is_server_error() {
+        return response;
+    }
+
+    let already_json = response
+        .headers()
+        .get(header::CONTENT_TYPE)
+        .and_then(|value| value.to_str().ok())
+        .is_some_and(|value| value.starts_with("application/json"));
+    if already_json {
+        return response;
+    }
+
+    let body = to_bytes(response.into_body(), usize::MAX)
+        .await
+        .unwrap_or_default();
+    let message = String::from_utf8_lossy(&body).trim().to_string();
+    let message = if message.is_empty() {
+        status
+            .canonical_reason()
+            .unwrap_or("Request failed")
+            .to_string()
+    } else {
+        message
+    };
+
+    (
+        status,
+        Json(ErrorResponse {
+            code: ErrorCode::for_status(status),
+            error: message,
+        }),
+    )
+        .into_response()
 }

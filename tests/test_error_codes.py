@@ -9,6 +9,7 @@ import json
 import uuid
 
 import pytest
+import requests
 
 from ramekin_client.api import RecipesApi, TagsApi
 from ramekin_client.exceptions import ApiException
@@ -90,3 +91,24 @@ def test_unauthorized_code(unauthed_api_client):
 
     assert exc_info.value.status == 401
     assert error_body(exc_info.value)["code"] == "unauthorized"
+
+
+def test_extractor_rejection_is_coded(authed_api_client):
+    """A framework-level rejection (malformed path param that never reaches a
+    handler) still returns the structured `{code, error}` body.
+
+    Sent as a raw request because the typed client validates the UUID before it
+    would ever hit the server's `Path<Uuid>` extractor.
+    """
+    client, _ = authed_api_client
+    config = client.configuration
+
+    response = requests.get(
+        f"{config.host}/api/recipes/not-a-uuid",
+        headers={"Authorization": f"Bearer {config.access_token}"},
+    )
+
+    assert response.status_code == 400
+    body = response.json()
+    assert body["code"] == "invalid_request"
+    assert body["error"]

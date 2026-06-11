@@ -327,7 +327,10 @@ async fn main() {
         .layer(middleware::from_fn(
             telemetry::db_query_count_header_middleware,
         ))
-        .layer(middleware::from_fn(telemetry::query_counting_middleware));
+        .layer(middleware::from_fn(telemetry::query_counting_middleware))
+        // Outermost: reshape any framework-level error (extractor rejections,
+        // routing fallbacks) into the structured `{ code, error }` body.
+        .layer(middleware::from_fn(api::error::ensure_coded_errors));
 
     let port: u16 = env::var("PORT")
         .expect("PORT environment variable required")
