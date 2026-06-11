@@ -105,10 +105,16 @@ def test_extractor_rejection_is_coded(authed_api_client):
 
     response = requests.get(
         f"{config.host}/api/recipes/not-a-uuid",
-        headers={"Authorization": f"Bearer {config.access_token}"},
+        headers={
+            "Authorization": f"Bearer {config.access_token}",
+            "Origin": "https://example.com",
+        },
     )
 
     assert response.status_code == 400
     body = response.json()
     assert body["code"] == "invalid_request"
     assert body["error"]
+    # Headers added by inner layers (CORS) must survive the body reshaping, or
+    # browser clients can't read the structured error on a cross-origin failure.
+    assert response.headers.get("access-control-allow-origin") == "*"

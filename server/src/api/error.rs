@@ -163,9 +163,8 @@ pub async fn ensure_coded_errors(request: Request, next: Next) -> Response {
         return response;
     }
 
-    let body = to_bytes(response.into_body(), usize::MAX)
-        .await
-        .unwrap_or_default();
+    let (parts, body) = response.into_parts();
+    let body = to_bytes(body, usize::MAX).await.unwrap_or_default();
     let message = String::from_utf8_lossy(&body).trim().to_string();
     let message = if message.is_empty() {
         status
@@ -176,12 +175,24 @@ pub async fn ensure_coded_errors(request: Request, next: Next) -> Response {
         message
     };
 
-    (
+    let mut coded = (
         status,
         Json(ErrorResponse {
             code: ErrorCode::for_status(status),
             error: message,
         }),
     )
-        .into_response()
+        .into_response();
+
+    // Preserve headers added by inner layers (e.g. CORS), but keep the
+    // Content-Type/Content-Length that match the new JSON body.
+    let headers = coded.headers_mut();
+    for (name, value) in parts.headers.iter() {
+        if name == header::CONTENT_TYPE || name == header::CONTENT_LENGTH {
+            continue;
+        }
+        headers.append(name, value.clone());
+    }
+
+    coded
 }
