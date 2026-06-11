@@ -128,13 +128,18 @@ def test_unmatched_route_is_coded(authed_api_client):
 
     response = requests.get(
         f"{config.host}/api/does-not-exist",
-        headers={"Authorization": f"Bearer {config.access_token}"},
+        headers={
+            "Authorization": f"Bearer {config.access_token}",
+            "Origin": "https://example.com",
+        },
     )
 
     assert response.status_code == 404
     body = response.json()
     assert body["code"] == "not_found"
     assert body["error"]
+    # CORS must reach the fallback too, or browsers can't read the coded 404.
+    assert response.headers.get("access-control-allow-origin") == "*"
 
 
 def test_method_not_allowed_is_coded(server_url):

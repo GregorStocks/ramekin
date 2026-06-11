@@ -249,8 +249,7 @@ async fn main() {
         .layer(middleware::from_fn_with_state(
             pool.clone(),
             auth::require_auth,
-        ))
-        .layer(cors);
+        ));
 
     let swagger_ui = SwaggerUi::new("/swagger-ui").url("/api-docs/openapi.json", api::openapi());
 
@@ -337,9 +336,13 @@ async fn main() {
             telemetry::db_query_count_header_middleware,
         ))
         .layer(middleware::from_fn(telemetry::query_counting_middleware))
-        // Outermost: reshape any framework-level error (extractor rejections,
-        // routing fallbacks) into the structured `{ code, error }` body.
-        .layer(middleware::from_fn(api::error::ensure_coded_errors));
+        // Reshape any framework-level error (extractor rejections) into the
+        // structured `{ code, error }` body.
+        .layer(middleware::from_fn(api::error::ensure_coded_errors))
+        // Outermost so CORS headers reach every response — including the coded
+        // 404 fallback and reshaped errors — across all routes, not just the
+        // authenticated ones.
+        .layer(cors);
 
     let port: u16 = env::var("PORT")
         .expect("PORT environment variable required")

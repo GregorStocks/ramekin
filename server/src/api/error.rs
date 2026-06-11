@@ -197,8 +197,8 @@ pub async fn ensure_coded_errors(request: Request, next: Next) -> Response {
     )
         .into_response();
 
-    // Preserve headers added by inner layers (e.g. CORS), but keep the
-    // Content-Type/Content-Length that match the new JSON body.
+    // Preserve headers from the original response (e.g. the `Allow` header on a
+    // 405), but keep the Content-Type/Content-Length that match the new JSON body.
     let headers = coded.headers_mut();
     for (name, value) in parts.headers.iter() {
         if name == header::CONTENT_TYPE || name == header::CONTENT_LENGTH {
