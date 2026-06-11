@@ -87,3 +87,34 @@ With `--merge`, the tool:
 - Preserves sites from previous runs even if rankings changed
 
 This lets you incrementally grow the dataset over time without re-scraping everything.
+
+## shopping-list-items.txt / shopping-list-categories.tsv
+
+A small corpus of real shopping-list usage from the prod server, used to score the
+ingredient categorizer (`ramekin-core/src/ingredient_categorizer.rs`) against
+hand-typed items — including non-recipe store items (household goods, snacks) that
+never appear in `unique-ingredients.txt`.
+
+- `shopping-list-items.txt` — every distinct item ever added to the prod
+  `shopping_list_items` table (including soft-deleted rows), one `count<TAB>item`
+  per line, ordered by count descending.
+- `shopping-list-categories.tsv` — the same items labeled with their expected
+  grocery-aisle category, one `expected_category<TAB>item` per line.
+
+`make shopping-list-categorizer-test` runs the categorizer over the labeled corpus
+and reports accuracy, the per-item mismatches, and the "Other" rate
+(`ramekin-core/tests/shopping_list_categorizer_tests.rs`). The follow-up issue
+`p2-expand-ingredient-categorizer-keywords` mines this corpus to expand
+`data/ingredients.json`.
+
+### Regenerating the corpus
+
+The corpus is a one-off, read-only extraction from prod (not wired into a Makefile
+target). To refresh it, re-run the extraction against the prod database and re-label
+any new items so `make shopping-list-categorizer-test` passes:
+
+```bash
+psql "$PROD_DATABASE_URL" -tAF $'\t' -c \
+  "SELECT count(*) AS n, item FROM shopping_list_items GROUP BY item ORDER BY n DESC, item" \
+  > data/shopping-list-items.txt
+```

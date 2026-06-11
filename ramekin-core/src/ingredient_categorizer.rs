@@ -49,32 +49,33 @@ static INGREDIENT_MAP: LazyLock<Vec<IngredientRule>> = LazyLock::new(|| {
     map
 });
 
-/// Convert a category string to a static str.
-/// We cache the static strings to avoid allocation on every call.
-fn category_to_static(category: &str) -> &'static str {
-    static STATIC_CATEGORIES: LazyLock<HashMap<String, &'static str>> = LazyLock::new(|| {
-        let categories = [
-            "Produce",
-            "Meat & Seafood",
-            "Dairy & Eggs",
-            "Cheese",
-            "Bakery & Bread",
-            "Frozen",
-            "Pasta & Rice",
-            "Canned Goods",
-            "Baking",
-            "Spices & Seasonings",
-            "Condiments & Sauces",
-            "Oils & Vinegars",
-            "Nuts & Dried Fruit",
-            "Beverages",
-            "Snacks",
-            "Other",
-        ];
-        categories.iter().map(|&c| (c.to_string(), c)).collect()
-    });
+/// The canonical set of grocery-aisle categories the categorizer can return.
+/// `categorize` always returns one of these (defaulting to "Other").
+pub const CATEGORIES: [&str; 16] = [
+    "Produce",
+    "Meat & Seafood",
+    "Dairy & Eggs",
+    "Cheese",
+    "Bakery & Bread",
+    "Frozen",
+    "Pasta & Rice",
+    "Canned Goods",
+    "Baking",
+    "Spices & Seasonings",
+    "Condiments & Sauces",
+    "Oils & Vinegars",
+    "Nuts & Dried Fruit",
+    "Beverages",
+    "Snacks",
+    "Other",
+];
 
-    STATIC_CATEGORIES.get(category).copied().unwrap_or("Other")
+/// Map a category string to its canonical `&'static str`, or "Other" if unknown.
+fn category_to_static(category: &str) -> &'static str {
+    CATEGORIES
+        .into_iter()
+        .find(|&c| c == category)
+        .unwrap_or("Other")
 }
 
 /// Categorize an ingredient by name.
