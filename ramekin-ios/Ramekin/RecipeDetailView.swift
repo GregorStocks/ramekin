@@ -110,6 +110,7 @@ struct RecipeDetailView: View {
                         }
 
                         exportMenu(for: recipe)
+                            .disabled(actionsDisabledForHistoricalVersion)
                         Divider()
                         Button(role: .destructive) {
                             showingDeleteConfirmation = true
