@@ -1,0 +1,27 @@
+{
+  "title": "Add a parity drift detector for generated-client endpoint usage",
+  "description": "Nothing currently flags when one client starts using an API \
+endpoint the other doesn't. Today's audit found the gap matrix by \
+hand-grepping call sites (e.g. iOS never calls ImportAPI at all; web never \
+calls the sync endpoints).\n\
+\n\
+Add a cheap lint step (scripts/lint.py is the natural home) that scans which \
+generated-client methods each client references — generated method names are \
+mechanically greppable in ramekin-ui/src and ramekin-ios (excluding \
+generated-client dirs) — and diffs the two sets against a checked-in parity \
+matrix file with explicit allowances (e.g. 'syncItems: ios-only, web is \
+online-only by design'). A new endpoint used on only one side fails lint until \
+either the other client adopts it or the exception is recorded deliberately.\n\
+\n\
+This turns silent parity drift into a reviewed decision.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "parity",
+    "lint",
+    "architecture",
+  ],
+  "created_at": "2026-06-11T07:01:52-07:00",
+  "updated_at": "2026-06-11T07:01:52-07:00",
+}

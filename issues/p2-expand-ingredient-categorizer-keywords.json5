@@ -1,0 +1,43 @@
+{
+  "title": "Expand ingredient categorizer keyword coverage",
+  "description": "data/ingredients.json has 640 keyword-to-category mappings. \
+Measured against data/unique-ingredients.txt (16,411 historical parsed \
+ingredient strings), ~10.7% of items fall through to 'Other'. The misses split \
+into two buckets:\n\
+\n\
+1. Genuine vocabulary gaps: marshmallows, dulce de leche, pie filling, \
+applesauce, candy melting wafers, chili beans, simple syrup, plain 'water', \
+chocolate morsels, Heath bars, etc.\n\
+2. Ingredient-parsing junk that no keyword list can fix ('+ 2 Tbsp warm \
+water', '(440-gram) cans', ')'). Don't try to fix these with keywords — file \
+separate parser issues if a pattern is common.\n\
+\n\
+Task: mine the most frequent 'Other' items and add keywords to \
+data/ingredients.json until the Other rate is substantially down \
+(frequency-weighted). To reproduce the measurement, run the categorizer \
+(ramekin-core/src/ingredient_categorizer.rs) over the corpus and tally \
+categories.\n\
+\n\
+Notes:\n\
+- The matcher is longest-keyword-first token matching with plural inflection \
+(s/es/ies/y), so prefer the shortest distinctive keyword and watch for \
+collisions with existing longer keywords (e.g. 'dried basil' vs 'basil').\n\
+- data/unique-ingredients.txt is the primary corpus. If \
+p2-shopping-list-prod-items-corpus has landed, also cover its (small) \
+prod-derived corpus — its main value is hand-typed non-recipe store items \
+(household goods etc.), which may motivate adding new categories beyond the \
+current food-oriented 16 (e.g. Household, Personal Care). Adding a category \
+touches the hardcoded lists in web and iOS too (see \
+p3-shopping-list-category-order-from-api).\n\
+- Keep the existing unit tests in ingredient_categorizer.rs green; add tests \
+for newly handled tricky cases.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "shopping-list",
+    "categorizer",
+  ],
+  "created_at": "2026-06-11T07:01:52-07:00",
+  "updated_at": "2026-06-11T07:01:52-07:00",
+}

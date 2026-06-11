@@ -1,0 +1,29 @@
+{
+  "title": "Remaining small iOS parity gaps: meal plan editing, advanced photo \
+filters",
+  "description": "Smaller iOS gaps vs web, fine to do together or split:\n\
+\n\
+1. Meal plan entries can't be edited on iOS — only created/deleted \
+(MealPlanView.swift, AddToMealPlanSheet.swift). Web supports editing entries \
+(updateMealPlan). Add edit support (change date/meal type/notes).\n\
+\n\
+2. Advanced photo filters missing on iOS — web's cookbook supports filtering \
+by photo file size and dimensions thresholds \
+(ramekin-ui/src/pages/CookbookPage.tsx); iOS RecipeAdvancedFiltersSheet.swift \
+only has has/no-photo. Add the size/dimension filters to the iOS filter \
+sheet.\n\
+\n\
+Note: iOS meal plan calls currently go through the hand-written \
+Shared/RamekinAPI.swift rather than the generated client — if \
+p3-ios-replace-handwritten-api-client lands first, build on the generated \
+client.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ios",
+    "parity",
+  ],
+  "created_at": "2026-06-11T07:01:52-07:00",
+  "updated_at": "2026-06-11T07:01:52-07:00",
+}
