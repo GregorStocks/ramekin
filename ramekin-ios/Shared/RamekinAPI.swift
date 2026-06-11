@@ -107,7 +107,9 @@ class RamekinAPI {
         case noAuthToken
         case invalidURL
         case invalidResponse
-        case httpError(Int, String?)
+        /// An HTTP error: status, machine-readable code (if the server returned
+        /// one), and human-readable message.
+        case httpError(Int, ErrorCode?, String?)
         case networkError(Error)
         case decodingError(Error)
 
@@ -121,13 +123,22 @@ class RamekinAPI {
                 return "Invalid URL"
             case .invalidResponse:
                 return "Invalid response from server"
-            case .httpError(let code, let message):
-                return message ?? "HTTP error \(code)"
+            case .httpError(let status, _, let message):
+                return message ?? "HTTP error \(status)"
             case .networkError(let error):
                 return "Network error: \(error.localizedDescription)"
             case .decodingError(let error):
                 return "Failed to parse response: \(error.localizedDescription)"
             }
+        }
+
+        /// The structured error code the server returned, if any. Branch on this
+        /// rather than the HTTP status or the message text.
+        var code: ErrorCode? {
+            if case let .httpError(_, code, _) = self {
+                return code
+            }
+            return nil
         }
     }
 
@@ -161,9 +172,15 @@ class RamekinAPI {
     struct ErrorResponse: Decodable {
         let error: String?
         let message: String?
+        let code: String?
 
         var errorMessage: String {
             error ?? message ?? "Unknown error"
+        }
+
+        /// The structured error code, if the server returned a recognized one.
+        var errorCode: ErrorCode? {
+            code.flatMap(ErrorCode.init(rawValue:))
         }
     }
 
@@ -249,9 +266,9 @@ class RamekinAPI {
 
     fileprivate func parseError(from data: Data, statusCode: Int) -> APIError {
         if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
-            return .httpError(statusCode, errorResponse.errorMessage)
+            return .httpError(statusCode, errorResponse.errorCode, errorResponse.errorMessage)
         }
-        return .httpError(statusCode, String(data: data, encoding: .utf8))
+        return .httpError(statusCode, nil, String(data: data, encoding: .utf8))
     }
 
     // MARK: - Authentication
@@ -324,13 +341,9 @@ class RamekinAPI {
 
             return loginResponse.token
         } else {
-            let errorMessage: String?
-            if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
-                errorMessage = errorResponse.errorMessage
-            } else {
-                errorMessage = String(data: data, encoding: .utf8)
-            }
-            throw APIError.httpError(httpResponse.statusCode, errorMessage)
+            let parsed = try? JSONDecoder().decode(ErrorResponse.self, from: data)
+            let errorMessage = parsed?.errorMessage ?? String(data: data, encoding: .utf8)
+            throw APIError.httpError(httpResponse.statusCode, parsed?.errorCode, errorMessage)
         }
     }
 

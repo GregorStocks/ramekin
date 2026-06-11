@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -512,13 +512,7 @@ pub async fn sync_items(
         Ok(response) => (StatusCode::OK, Json(response)).into_response(),
         Err(e) => {
             tracing::error!("Failed to sync shopping list: {}", e);
-            (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to sync shopping list".to_string(),
-                }),
-            )
-                .into_response()
+            ApiError::internal("Failed to sync shopping list").into_response()
         }
     }
 }

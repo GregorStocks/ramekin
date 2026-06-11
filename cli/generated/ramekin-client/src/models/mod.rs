@@ -28,6 +28,8 @@ pub mod custom_enrich_request;
 pub use self::custom_enrich_request::CustomEnrichRequest;
 pub mod direction;
 pub use self::direction::Direction;
+pub mod error_code;
+pub use self::error_code::ErrorCode;
 pub mod error_response;
 pub use self::error_response::ErrorResponse;
 pub mod generate_description_response;

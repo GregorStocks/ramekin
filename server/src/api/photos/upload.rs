@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -55,23 +55,21 @@ pub async fn upload(
     // Get the file from multipart
     let field = match multipart.next_field().await {
         Ok(Some(field)) => field,
-        Ok(None) => {
-            return (
-                StatusCode::BAD_REQUEST,
-                Json(ErrorResponse {
-                    error: "No file provided".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Ok(None) => return ApiError::invalid_request("No file provided").into_response(),
         Err(e) => {
             tracing::warn!("Multipart read error: {}", e);
-            let error_msg = if e.status() == StatusCode::PAYLOAD_TOO_LARGE {
-                format!("File too large. Maximum size is {} bytes", MAX_FILE_SIZE)
+            let err = if e.status() == StatusCode::PAYLOAD_TOO_LARGE {
+                ApiError::payload_too_large(format!(
+                    "File too large. Maximum size is {} bytes",
+                    MAX_FILE_SIZE
+                ))
             } else {
-                format!("Failed to read multipart data: {}", e.body_text())
+                ApiError::invalid_request(format!(
+                    "Failed to read multipart data: {}",
+                    e.body_text()
+                ))
             };
-            return (e.status(), Json(ErrorResponse { error: error_msg })).into_response();
+            return err.into_response();
         }
     };
 
@@ -80,32 +78,31 @@ pub async fn upload(
         Ok(bytes) => bytes,
         Err(e) => {
             tracing::warn!("Field read error: {}", e);
-            let error_msg = if e.status() == StatusCode::PAYLOAD_TOO_LARGE {
-                format!("File too large. Maximum size is {} bytes", MAX_FILE_SIZE)
+            let err = if e.status() == StatusCode::PAYLOAD_TOO_LARGE {
+                ApiError::payload_too_large(format!(
+                    "File too large. Maximum size is {} bytes",
+                    MAX_FILE_SIZE
+                ))
             } else {
-                format!("Failed to read file data: {}", e.body_text())
+                ApiError::invalid_request(format!("Failed to read file data: {}", e.body_text()))
             };
-            return (e.status(), Json(ErrorResponse { error: error_msg })).into_response();
+            return err.into_response();
         }
     };
 
     // Check file size
     if data.len() > MAX_FILE_SIZE {
-        return (
-            StatusCode::BAD_REQUEST,
-            Json(ErrorResponse {
-                error: format!("File too large. Maximum size is {} bytes", MAX_FILE_SIZE),
-            }),
-        )
-            .into_response();
+        return ApiError::invalid_request(format!(
+            "File too large. Maximum size is {} bytes",
+            MAX_FILE_SIZE
+        ))
+        .into_response();
     }
 
     // Process image: detect format from bytes, validate, and generate thumbnail
     let processed = match process_image(&data) {
         Ok(result) => result,
-        Err(e) => {
-            return (StatusCode::BAD_REQUEST, Json(ErrorResponse { error: e })).into_response()
-        }
+        Err(e) => return ApiError::invalid_request(e).into_response(),
     };
 
     // Get database connection
@@ -128,15 +125,7 @@ pub async fn upload(
         .get_result(&mut conn)
     {
         Ok(id) => id,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to save photo".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(_) => return ApiError::internal("Failed to save photo").into_response(),
     };
 
     (

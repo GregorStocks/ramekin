@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::ApiError;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::models::Ingredient;
@@ -72,13 +72,7 @@ pub async fn enrich_recipe(
         Ok(v) => v,
         Err(e) => {
             tracing::error!("Failed to enrich ingredients: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to enrich ingredients".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to enrich ingredients").into_response();
         }
     };
 
@@ -189,13 +183,7 @@ pub async fn custom_enrich_recipe(
         Ok(c) => c,
         Err(e) => {
             tracing::warn!("AI client unavailable: {}", e);
-            return (
-                StatusCode::SERVICE_UNAVAILABLE,
-                Json(ErrorResponse {
-                    error: "AI service unavailable".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::service_unavailable("AI service unavailable").into_response();
         }
     };
 
@@ -204,36 +192,21 @@ pub async fn custom_enrich_recipe(
         Ok(j) => j,
         Err(e) => {
             tracing::error!("Failed to serialize recipe for AI: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to serialize recipe".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to serialize recipe").into_response();
         }
     };
 
     let images = match load_photo_images(&pool, user.id, &request.photo_ids) {
         Ok(images) => images,
         Err(PhotoImageLoadError::NotFound) => {
-            return (
-                StatusCode::BAD_REQUEST,
-                Json(ErrorResponse {
-                    error: "One or more photo_ids not found or don't belong to user".to_string(),
-                }),
+            return ApiError::invalid_request(
+                "One or more photo_ids not found or don't belong to user",
             )
-                .into_response();
+            .into_response();
         }
         Err(PhotoImageLoadError::Database(e)) => {
             tracing::error!("Failed to load custom enrich photos: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to load photos".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to load photos").into_response();
         }
     };
 
@@ -242,12 +215,7 @@ pub async fn custom_enrich_recipe(
         Ok(r) => r,
         Err(e) => {
             tracing::warn!("Custom enrich AI call failed: {}", e);
-            return (
-                StatusCode::SERVICE_UNAVAILABLE,
-                Json(ErrorResponse {
-                    error: format!("AI service error: {}", e),
-                }),
-            )
+            return ApiError::service_unavailable(format!("AI service error: {}", e))
                 .into_response();
         }
     };
@@ -257,12 +225,7 @@ pub async fn custom_enrich_recipe(
         Ok(r) => r,
         Err(e) => {
             tracing::warn!("Failed to parse AI response: {}", e);
-            return (
-                StatusCode::SERVICE_UNAVAILABLE,
-                Json(ErrorResponse {
-                    error: format!("Failed to parse AI response: {}", e),
-                }),
-            )
+            return ApiError::service_unavailable(format!("Failed to parse AI response: {}", e))
                 .into_response();
         }
     };

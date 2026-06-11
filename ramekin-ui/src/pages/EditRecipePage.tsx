@@ -3,7 +3,12 @@ import { createStore, reconcile } from "solid-js/store";
 import { useParams, useNavigate, A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import RecipeForm from "../components/RecipeForm";
-import { extractApiError, extractImageFile } from "../utils/recipeFormHelpers";
+import {
+  extractApiError,
+  extractImageFile,
+  parseApiError,
+} from "../utils/recipeFormHelpers";
+import { ErrorCode } from "ramekin-client";
 import { usePageTitle } from "../utils/pageTitle";
 import type { Ingredient, RecipeResponse } from "ramekin-client";
 
@@ -65,11 +70,12 @@ export default function EditRecipePage() {
       setNutritionalInfo(response.nutritionalInfo || "");
       setNotes(response.notes || "");
     } catch (err) {
-      if (err instanceof Response && err.status === 404) {
-        setError("Recipe not found");
-      } else {
-        setError("Failed to load recipe");
-      }
+      const parsed = await parseApiError(err, "Failed to load recipe");
+      setError(
+        parsed.code === ErrorCode.NotFound
+          ? "Recipe not found"
+          : "Failed to load recipe",
+      );
     } finally {
       setLoading(false);
     }

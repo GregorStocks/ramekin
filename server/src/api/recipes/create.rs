@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -45,38 +45,18 @@ pub async fn create_recipe(
     Json(request): Json<CreateRecipeRequest>,
 ) -> impl IntoResponse {
     if request.content.title.trim().is_empty() {
-        return (
-            StatusCode::BAD_REQUEST,
-            Json(ErrorResponse {
-                error: "Title cannot be empty".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::invalid_request("Title cannot be empty").into_response();
     }
 
     if request.content.instructions.trim().is_empty() {
-        return (
-            StatusCode::BAD_REQUEST,
-            Json(ErrorResponse {
-                error: "Instructions cannot be empty".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::invalid_request("Instructions cannot be empty").into_response();
     }
 
     let mut conn = get_conn!(pool);
 
     let ingredients_json = match serde_json::to_value(&request.content.ingredients) {
         Ok(v) => v,
-        Err(_) => {
-            return (
-                StatusCode::BAD_REQUEST,
-                Json(ErrorResponse {
-                    error: "Invalid ingredients format".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(_) => return ApiError::invalid_request("Invalid ingredients format").into_response(),
     };
 
     let photo_ids: Vec<Option<Uuid>> = request
@@ -97,13 +77,7 @@ pub async fn create_recipe(
         .collect();
     for tag_name in &tags {
         if let Err(err) = ramekin_core::validate_tag_name(tag_name) {
-            return (
-                StatusCode::BAD_REQUEST,
-                Json(ErrorResponse {
-                    error: err.message().to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::invalid_request(err.message().to_string()).into_response();
         }
     }
 
@@ -173,13 +147,7 @@ pub async fn create_recipe(
             .into_response(),
         Err(e) => {
             tracing::error!("Failed to create recipe: {}", e);
-            (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to create recipe".to_string(),
-                }),
-            )
-                .into_response()
+            ApiError::internal("Failed to create recipe").into_response()
         }
     }
 }

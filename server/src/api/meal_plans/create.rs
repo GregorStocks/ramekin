@@ -1,5 +1,5 @@
 use super::list::MealType;
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -59,24 +59,12 @@ pub async fn create_meal_plan(
         Ok(record) => record.is_some(),
         Err(e) => {
             tracing::error!("Failed to verify recipe ownership: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to verify recipe".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to verify recipe").into_response();
         }
     };
 
     if !recipe_exists {
-        return (
-            StatusCode::BAD_REQUEST,
-            Json(ErrorResponse {
-                error: "Recipe not found".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::invalid_request("Recipe not found").into_response();
     }
 
     // Insert the meal plan
@@ -94,22 +82,12 @@ pub async fn create_meal_plan(
 
     match result {
         Ok(id) => (StatusCode::CREATED, Json(CreateMealPlanResponse { id })).into_response(),
-        Err(DieselError::DatabaseError(DatabaseErrorKind::UniqueViolation, _)) => (
-            StatusCode::CONFLICT,
-            Json(ErrorResponse {
-                error: "This recipe is already planned for this meal".to_string(),
-            }),
-        )
-            .into_response(),
+        Err(DieselError::DatabaseError(DatabaseErrorKind::UniqueViolation, _)) => {
+            ApiError::conflict("This recipe is already planned for this meal").into_response()
+        }
         Err(e) => {
             tracing::error!("Failed to create meal plan: {}", e);
-            (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to create meal plan".to_string(),
-                }),
-            )
-                .into_response()
+            ApiError::internal("Failed to create meal plan").into_response()
         }
     }
 }

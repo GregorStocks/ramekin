@@ -89,6 +89,7 @@ Class | Method | HTTP request | Description
  - [CreateTagResponse](docs/CreateTagResponse.md)
  - [CustomEnrichRequest](docs/CustomEnrichRequest.md)
  - [Direction](docs/Direction.md)
+ - [ErrorCode](docs/ErrorCode.md)
  - [ErrorResponse](docs/ErrorResponse.md)
  - [GenerateDescriptionResponse](docs/GenerateDescriptionResponse.md)
  - [GeneratePhotoResponse](docs/GeneratePhotoResponse.md)

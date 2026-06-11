@@ -13,6 +13,7 @@ export * from './CreateTagRequest';
 export * from './CreateTagResponse';
 export * from './CustomEnrichRequest';
 export * from './Direction';
+export * from './ErrorCode';
 export * from './ErrorResponse';
 export * from './GenerateDescriptionResponse';
 export * from './GeneratePhotoResponse';

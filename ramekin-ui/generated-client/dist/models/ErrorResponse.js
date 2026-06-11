@@ -11,10 +11,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { ErrorCodeFromJSON, ErrorCodeToJSON, } from './ErrorCode';
 /**
  * Check if a given object implements the ErrorResponse interface.
  */
 export function instanceOfErrorResponse(value) {
+    if (!('code' in value) || value['code'] === undefined)
+        return false;
     if (!('error' in value) || value['error'] === undefined)
         return false;
     return true;
@@ -27,6 +30,7 @@ export function ErrorResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        'code': ErrorCodeFromJSON(json['code']),
         'error': json['error'],
     };
 }
@@ -38,6 +42,7 @@ export function ErrorResponseToJSONTyped(value, ignoreDiscriminator = false) {
         return value;
     }
     return {
+        'code': ErrorCodeToJSON(value['code']),
         'error': value['error'],
     };
 }

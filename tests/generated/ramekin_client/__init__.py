@@ -52,6 +52,7 @@ __all__ = [
     "CreateTagResponse",
     "CustomEnrichRequest",
     "Direction",
+    "ErrorCode",
     "ErrorResponse",
     "GenerateDescriptionResponse",
     "GeneratePhotoResponse",
@@ -144,6 +145,7 @@ from ramekin_client.models.create_tag_request import CreateTagRequest as CreateT
 from ramekin_client.models.create_tag_response import CreateTagResponse as CreateTagResponse
 from ramekin_client.models.custom_enrich_request import CustomEnrichRequest as CustomEnrichRequest
 from ramekin_client.models.direction import Direction as Direction
+from ramekin_client.models.error_code import ErrorCode as ErrorCode
 from ramekin_client.models.error_response import ErrorResponse as ErrorResponse
 from ramekin_client.models.generate_description_response import GenerateDescriptionResponse as GenerateDescriptionResponse
 from ramekin_client.models.generate_photo_response import GeneratePhotoResponse as GeneratePhotoResponse

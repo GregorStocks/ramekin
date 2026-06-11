@@ -3,6 +3,7 @@ import { useNavigate } from "@solidjs/router";
 import { AuthApi, Configuration } from "ramekin-client";
 import { useAuth } from "../context/AuthContext";
 import { usePageTitle } from "../utils/pageTitle";
+import { extractApiError } from "../utils/recipeFormHelpers";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -36,12 +37,7 @@ export default function LoginPage() {
       }
       navigate("/");
     } catch (err) {
-      if (err instanceof Response) {
-        const body = await err.json();
-        setError(body.error || "Request failed");
-      } else {
-        setError("Request failed");
-      }
+      setError(await extractApiError(err, "Request failed"));
     } finally {
       setLoading(false);
     }

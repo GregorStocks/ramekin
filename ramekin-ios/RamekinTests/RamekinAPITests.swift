@@ -80,8 +80,8 @@ final class RamekinAPITests: XCTestCase {
             .noAuthToken,
             .invalidURL,
             .invalidResponse,
-            .httpError(401, "Unauthorized"),
-            .httpError(500, nil),
+            .httpError(401, .unauthorized, "Unauthorized"),
+            .httpError(500, nil, nil),
             .networkError(URLError(.notConnectedToInternet)),
             .decodingError(DecodingError.dataCorrupted(.init(codingPath: [], debugDescription: "test")))
         ]
@@ -93,13 +93,15 @@ final class RamekinAPITests: XCTestCase {
     }
 
     func testHTTPErrorWithMessage() {
-        let error = RamekinAPI.APIError.httpError(401, "Invalid credentials")
+        let error = RamekinAPI.APIError.httpError(401, .unauthorized, "Invalid credentials")
         XCTAssertEqual(error.errorDescription, "Invalid credentials")
+        XCTAssertEqual(error.code, .unauthorized)
     }
 
     func testHTTPErrorWithoutMessage() {
-        let error = RamekinAPI.APIError.httpError(500, nil)
+        let error = RamekinAPI.APIError.httpError(500, nil, nil)
         XCTAssertEqual(error.errorDescription, "HTTP error 500")
+        XCTAssertNil(error.code)
     }
 
     func testInsecureSessionUsesInsecureSessionDelegate() {
@@ -291,6 +293,7 @@ final class RamekinAPITests: XCTestCase {
         let data1 = json1.data(using: .utf8)!
         let response1 = try JSONDecoder().decode(RamekinAPI.ErrorResponse.self, from: data1)
         XCTAssertEqual(response1.errorMessage, "Something went wrong")
+        XCTAssertNil(response1.errorCode)
 
         let json2 = """
         {"message": "Another error"}
@@ -298,6 +301,25 @@ final class RamekinAPITests: XCTestCase {
         let data2 = json2.data(using: .utf8)!
         let response2 = try JSONDecoder().decode(RamekinAPI.ErrorResponse.self, from: data2)
         XCTAssertEqual(response2.errorMessage, "Another error")
+    }
+
+    func testErrorResponseDecodesStructuredCode() throws {
+        let json = """
+        {"code": "not_found", "error": "Recipe not found"}
+        """
+        let data = json.data(using: .utf8)!
+        let response = try JSONDecoder().decode(RamekinAPI.ErrorResponse.self, from: data)
+        XCTAssertEqual(response.errorMessage, "Recipe not found")
+        XCTAssertEqual(response.errorCode, .notFound)
+    }
+
+    func testErrorResponseUnknownCodeIsNil() throws {
+        let json = """
+        {"code": "teapot", "error": "I'm a teapot"}
+        """
+        let data = json.data(using: .utf8)!
+        let response = try JSONDecoder().decode(RamekinAPI.ErrorResponse.self, from: data)
+        XCTAssertNil(response.errorCode)
     }
 }
 

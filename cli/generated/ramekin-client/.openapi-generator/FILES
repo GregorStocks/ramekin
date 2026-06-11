@@ -20,6 +20,7 @@ docs/CreateTagResponse.md
 docs/CustomEnrichRequest.md
 docs/Direction.md
 docs/EnrichApi.md
+docs/ErrorCode.md
 docs/ErrorResponse.md
 docs/GenerateDescriptionResponse.md
 docs/GeneratePhotoResponse.md
@@ -108,6 +109,7 @@ src/models/create_tag_request.rs
 src/models/create_tag_response.rs
 src/models/custom_enrich_request.rs
 src/models/direction.rs
+src/models/error_code.rs
 src/models/error_response.rs
 src/models/generate_description_response.rs
 src/models/generate_photo_response.rs

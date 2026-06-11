@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -48,13 +48,7 @@ pub async fn clear_checked(
         Ok(count) => count,
         Err(e) => {
             tracing::error!("Failed to clear checked items: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to clear checked items".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to clear checked items").into_response();
         }
     };
 
