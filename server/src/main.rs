@@ -233,6 +233,7 @@ async fn main() {
         .nest("/api/tags", api::tags::router())
         .nest("/api/meal-plans", api::meal_plans::router())
         .nest("/api/shopping-list", api::shopping_list::router())
+        .nest("/api/users", api::users::router())
         .route("/api/enrich", post(api::enrich::enrich_recipe))
         .route(
             "/api/enrich/custom",

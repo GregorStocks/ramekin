@@ -17,6 +17,7 @@ RamekinClient/Classes/OpenAPIs/APIs/ScrapeAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/ShoppingListAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/TagsAPI.swift
 RamekinClient/Classes/OpenAPIs/APIs/TestingAPI.swift
+RamekinClient/Classes/OpenAPIs/APIs/UsersAPI.swift
 RamekinClient/Classes/OpenAPIs/CodableHelper.swift
 RamekinClient/Classes/OpenAPIs/Configuration.swift
 RamekinClient/Classes/OpenAPIs/Extensions.swift
@@ -50,6 +51,7 @@ RamekinClient/Classes/OpenAPIs/Models/Ingredient.swift
 RamekinClient/Classes/OpenAPIs/Models/ListRecipesResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/LoginRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/LoginResponse.swift
+RamekinClient/Classes/OpenAPIs/Models/MeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/MealPlanItem.swift
 RamekinClient/Classes/OpenAPIs/Models/MealPlanListResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/MealType.swift
@@ -123,6 +125,7 @@ docs/Ingredient.md
 docs/ListRecipesResponse.md
 docs/LoginRequest.md
 docs/LoginResponse.md
+docs/MeResponse.md
 docs/MealPlanItem.md
 docs/MealPlanListResponse.md
 docs/MealPlansAPI.md
@@ -167,6 +170,7 @@ docs/UpdateMealPlanRequest.md
 docs/UpdateRecipeRequest.md
 docs/UpdateShoppingListItemRequest.md
 docs/UploadPhotoResponse.md
+docs/UsersAPI.md
 docs/VersionListResponse.md
 docs/VersionSummary.md
 git_push.sh

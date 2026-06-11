@@ -107,6 +107,7 @@ Class | Method | HTTP request | Description
 *TagsApi* | [**rename_tag**](ramekin_client/docs/TagsApi.md#rename_tag) | **PATCH** /api/tags/{id} | 
 *TestingApi* | [**ping**](ramekin_client/docs/TestingApi.md#ping) | **GET** /api/test/ping | 
 *TestingApi* | [**unauthed_ping**](ramekin_client/docs/TestingApi.md#unauthed_ping) | **GET** /api/test/unauthed-ping | 
+*UsersApi* | [**me**](ramekin_client/docs/UsersApi.md#me) | **GET** /api/users/me | 
 
 
 ## Documentation For Models
@@ -139,6 +140,7 @@ Class | Method | HTTP request | Description
  - [ListRecipesResponse](ramekin_client/docs/ListRecipesResponse.md)
  - [LoginRequest](ramekin_client/docs/LoginRequest.md)
  - [LoginResponse](ramekin_client/docs/LoginResponse.md)
+ - [MeResponse](ramekin_client/docs/MeResponse.md)
  - [MealPlanItem](ramekin_client/docs/MealPlanItem.md)
  - [MealPlanListResponse](ramekin_client/docs/MealPlanListResponse.md)
  - [MealType](ramekin_client/docs/MealType.md)

@@ -123,5 +123,6 @@ pub mod scrape_api;
 pub mod shopping_list_api;
 pub mod tags_api;
 pub mod testing_api;
+pub mod users_api;
 
 pub mod configuration;

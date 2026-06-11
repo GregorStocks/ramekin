@@ -2523,6 +2523,41 @@
           }
         }
       }
+    },
+    "/api/users/me": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "operationId": "me",
+        "responses": {
+          "200": {
+            "description": "The currently authenticated user",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
     }
   },
   "components": {
@@ -3115,6 +3150,17 @@
         ],
         "properties": {
           "token": {
+            "type": "string"
+          }
+        }
+      },
+      "MeResponse": {
+        "type": "object",
+        "required": [
+          "username"
+        ],
+        "properties": {
+          "username": {
             "type": "string"
           }
         }

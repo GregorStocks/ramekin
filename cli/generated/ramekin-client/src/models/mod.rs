@@ -54,6 +54,8 @@ pub mod login_request;
 pub use self::login_request::LoginRequest;
 pub mod login_response;
 pub use self::login_response::LoginResponse;
+pub mod me_response;
+pub use self::me_response::MeResponse;
 pub mod meal_plan_item;
 pub use self::meal_plan_item::MealPlanItem;
 pub mod meal_plan_list_response;
