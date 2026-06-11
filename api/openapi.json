@@ -2808,6 +2808,7 @@
           "invalid_request",
           "conflict",
           "unauthorized",
+          "method_not_allowed",
           "payload_too_large",
           "service_unavailable",
           "internal"

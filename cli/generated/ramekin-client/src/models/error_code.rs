@@ -23,6 +23,8 @@ pub enum ErrorCode {
     Conflict,
     #[serde(rename = "unauthorized")]
     Unauthorized,
+    #[serde(rename = "method_not_allowed")]
+    MethodNotAllowed,
     #[serde(rename = "payload_too_large")]
     PayloadTooLarge,
     #[serde(rename = "service_unavailable")]
@@ -38,6 +40,7 @@ impl std::fmt::Display for ErrorCode {
             Self::InvalidRequest => write!(f, "invalid_request"),
             Self::Conflict => write!(f, "conflict"),
             Self::Unauthorized => write!(f, "unauthorized"),
+            Self::MethodNotAllowed => write!(f, "method_not_allowed"),
             Self::PayloadTooLarge => write!(f, "payload_too_large"),
             Self::ServiceUnavailable => write!(f, "service_unavailable"),
             Self::Internal => write!(f, "internal"),

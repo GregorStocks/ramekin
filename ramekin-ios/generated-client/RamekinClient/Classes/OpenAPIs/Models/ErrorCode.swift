@@ -16,6 +16,7 @@ public enum ErrorCode: String, Codable, CaseIterable {
     case invalidRequest = "invalid_request"
     case conflict = "conflict"
     case unauthorized = "unauthorized"
+    case methodNotAllowed = "method_not_allowed"
     case payloadTooLarge = "payload_too_large"
     case serviceUnavailable = "service_unavailable"
     case _internal = "internal"

@@ -135,3 +135,16 @@ def test_unmatched_route_is_coded(authed_api_client):
     body = response.json()
     assert body["code"] == "not_found"
     assert body["error"]
+
+
+def test_method_not_allowed_is_coded(server_url):
+    """A method mismatch on an existing route keeps its 405 status and Allow
+    header while still carrying a structured code. `/api/auth/login` is POST-only."""
+    response = requests.get(f"{server_url}/api/auth/login")
+
+    assert response.status_code == 405
+    body = response.json()
+    assert body["code"] == "method_not_allowed"
+    assert body["error"]
+    # The method-mismatch signal (Allow header) must survive the reshaping.
+    assert "allow" in {k.lower() for k in response.headers}

@@ -26,6 +26,8 @@ pub enum ErrorCode {
     Conflict,
     /// Authentication is missing, malformed, or expired.
     Unauthorized,
+    /// The HTTP method is not allowed for this route.
+    MethodNotAllowed,
     /// The request body was larger than the server accepts.
     PayloadTooLarge,
     /// An upstream dependency (LLM, scraping target, ...) was unavailable.
@@ -42,6 +44,7 @@ impl ErrorCode {
             ErrorCode::InvalidRequest => StatusCode::BAD_REQUEST,
             ErrorCode::Conflict => StatusCode::CONFLICT,
             ErrorCode::Unauthorized => StatusCode::UNAUTHORIZED,
+            ErrorCode::MethodNotAllowed => StatusCode::METHOD_NOT_ALLOWED,
             ErrorCode::PayloadTooLarge => StatusCode::PAYLOAD_TOO_LARGE,
             ErrorCode::ServiceUnavailable => StatusCode::SERVICE_UNAVAILABLE,
             ErrorCode::Internal => StatusCode::INTERNAL_SERVER_ERROR,
@@ -57,6 +60,7 @@ impl ErrorCode {
             StatusCode::BAD_REQUEST => ErrorCode::InvalidRequest,
             StatusCode::CONFLICT => ErrorCode::Conflict,
             StatusCode::UNAUTHORIZED => ErrorCode::Unauthorized,
+            StatusCode::METHOD_NOT_ALLOWED => ErrorCode::MethodNotAllowed,
             StatusCode::PAYLOAD_TOO_LARGE => ErrorCode::PayloadTooLarge,
             StatusCode::SERVICE_UNAVAILABLE => ErrorCode::ServiceUnavailable,
             s if s.is_server_error() => ErrorCode::Internal,

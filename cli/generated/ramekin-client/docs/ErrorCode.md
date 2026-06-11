@@ -8,6 +8,7 @@
 | InvalidRequest | invalid_request |
 | Conflict | conflict |
 | Unauthorized | unauthorized |
+| MethodNotAllowed | method_not_allowed |
 | PayloadTooLarge | payload_too_large |
 | ServiceUnavailable | service_unavailable |
 | Internal | internal |
