@@ -109,12 +109,12 @@ and reports accuracy, the per-item mismatches, and the "Other" rate
 
 ### Regenerating the corpus
 
-The corpus is a one-off, read-only extraction from prod (not wired into a Makefile
-target). To refresh it, re-run the extraction against the prod database and re-label
-any new items so `make shopping-list-categorizer-test` passes:
-
-```bash
-psql "$PROD_DATABASE_URL" -tAF $'\t' -c \
-  "SELECT count(*) AS n, item FROM shopping_list_items GROUP BY item ORDER BY n DESC, item" \
-  > data/shopping-list-items.txt
-```
+The corpus is a deliberate one-off, read-only extraction from the prod database. It
+is intentionally **not** a Makefile target and the extraction query is intentionally
+**not** checked into the repo — it needs prod access, and per `AGENTS.md` a one-off
+prod query should be confirmed with the maintainer rather than baked into the
+codebase. To refresh it, ask Gregor to run a read-only extraction of the distinct
+`shopping_list_items` (grouped by item with usage counts, including soft-deleted
+rows, ordered by count descending) into `data/shopping-list-items.txt` as
+`count<TAB>item`, then re-label any new items so `make shopping-list-categorizer-test`
+passes.
