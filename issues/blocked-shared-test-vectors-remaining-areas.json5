@@ -14,9 +14,10 @@ group ordering (seeded namespaces first in seeded order, then extras \
 alphabetically, Uncategorized last; in-group value sort order). Consumed by \
 Rust tests too, following the existing \
 ramekin-core/tests/fixtures/ingredient_parsing pattern. Known divergences to \
-reconcile: web sorts group members by raw name with localeCompare while iOS \
-sorts by parsed value case-insensitively; web knownNamespaces() sorts seeded \
-and discovered namespaces together while iOS keeps seeded order first.\n\
+reconcile: web sorts group members by raw name with a plain lexicographic sort \
+while iOS sorts by parsed value case-insensitively; web knownNamespaces() \
+sorts seeded and discovered namespaces together while iOS keeps seeded order \
+first.\n\
 \n\
 2. Meal-plan week start — narrow vectors of {local date string -> Monday date \
 string} plus YYYY-MM-DD formatting, covering year/month boundaries and a \
