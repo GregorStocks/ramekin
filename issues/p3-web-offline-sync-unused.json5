@@ -1,0 +1,26 @@
+{
+  "title": "Web never uses the sync endpoints (no offline/caching story)",
+  "description": "iOS is offline-first: it calls RecipesAPI.syncRecipes and \
+ShoppingListAPI.syncItems with local stores (RecipeCacheStore.swift, \
+ShoppingListStore.swift, ShoppingListSyncSupport.swift). Web calls neither \
+sync endpoint and refetches everything on navigation.\n\
+\n\
+Decide whether web should adopt the sync endpoints (e.g. cache recipe \
+summaries / shopping list in localStorage or IndexedDB, sync on focus) for \
+faster loads and basic offline tolerance — or explicitly document that web is \
+online-only and why.\n\
+\n\
+If adopting: the sync protocol is already exercised end-to-end by iOS and by \
+tests/test_shopping_list.py, so this is web-side work against existing \
+endpoints.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "web",
+    "parity",
+    "sync",
+  ],
+  "created_at": "2026-06-11T07:01:52-07:00",
+  "updated_at": "2026-06-11T07:01:52-07:00",
+}

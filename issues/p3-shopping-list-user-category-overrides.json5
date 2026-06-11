@@ -1,0 +1,35 @@
+{
+  "title": "Let users override shopping list item categories (and persist \
+corrections)",
+  "description": "Categories are computed server-side at response time \
+(server/src/api/shopping_list/list.rs, sync.rs call \
+ingredient_categorizer::categorize) and never stored. There is no way for a \
+user to fix a miscategorized item, and corrections have nowhere to go.\n\
+\n\
+Add a persisted per-item category override:\n\
+- DB: nullable category column (or override column) on shopping_list_items via \
+migration.\n\
+- API: allow setting/clearing it in UpdateShoppingListItemRequest and the sync \
+endpoint; when set, it wins over the computed category in responses.\n\
+- UI: recategorize affordance on BOTH web \
+(ramekin-ui/src/pages/ShoppingListPage.tsx) and iOS \
+(ramekin-ios/Ramekin/ShoppingListView.swift + ShoppingListMutationSupport/sync \
+path).\n\
+- End-to-end tests for the new API behavior before wiring up the UIs (per repo \
+policy).\n\
+\n\
+Besides the UX fix, the stored overrides become a permanent labeled-data \
+feedback loop for improving data/ingredients.json (see \
+p2-shopping-list-category-golden-set-from-prod).",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "shopping-list",
+    "categorizer",
+    "web",
+    "ios",
+  ],
+  "created_at": "2026-06-11T07:01:52-07:00",
+  "updated_at": "2026-06-11T07:01:52-07:00",
+}

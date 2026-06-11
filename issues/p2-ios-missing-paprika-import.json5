@@ -1,0 +1,28 @@
+{
+  "title": "iOS has no bulk import (Paprika archive)",
+  "description": "Web has a full import flow \
+(ramekin-ui/src/pages/ImportPage.tsx + ramekin-ui/src/utils/paprikaImport.ts) \
+that parses .paprikarecipes archives client-side, extracts photos, and pushes \
+recipes via ImportApi. iOS never calls any ImportAPI method — there is no \
+import UI at all.\n\
+\n\
+Add a Paprika archive import flow to iOS: pick the archive via the document \
+picker, parse (gzip-per-recipe inside a zip — mirror the logic in \
+paprikaImport.ts), and submit through the generated ImportAPI, with progress \
+and per-recipe error reporting consistent with how web handles it.\n\
+\n\
+Worth considering as part of implementation: if client-side archive parsing in \
+Swift is painful, evaluate moving archive parsing server-side so both clients \
+just upload the file — that would delete the web-side parsing code too and \
+prevent future drift (see p3-shared-client-business-logic-strategy).",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "ios",
+    "parity",
+    "import",
+  ],
+  "created_at": "2026-06-11T07:01:52-07:00",
+  "updated_at": "2026-06-11T07:01:52-07:00",
+}
