@@ -102,8 +102,9 @@ never appear in `unique-ingredients.txt`.
   grocery-aisle category, one `expected_category<TAB>item` per line.
 
 `make shopping-list-categorizer-test` runs the categorizer over the labeled corpus
-and reports accuracy, the per-item mismatches, and the "Other" rate
-(`ramekin-core/tests/shopping_list_categorizer_tests.rs`). The follow-up issue
+and reports accuracy, the mismatches, and the "Other" rate — both per distinct item
+and weighted by usage count (`ramekin-core/tests/shopping_list_categorizer_tests.rs`),
+so a regression on frequently-added items can't hide. The follow-up issue
 `p2-expand-ingredient-categorizer-keywords` mines this corpus to expand
 `data/ingredients.json`.
 

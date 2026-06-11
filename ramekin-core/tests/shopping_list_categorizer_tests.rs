@@ -7,26 +7,31 @@
 //! `expected_category<TAB>item`.
 //!
 //! This test runs `ingredient_categorizer::categorize` over the labeled corpus and
-//! reports the accuracy, the mismatches, and the "Other" rate (how much real usage the
-//! categorizer fails to place). It is a regression guard via upper bounds on the
-//! mismatch count and the Other count: improvements (fewer mismatches/Others) keep
-//! passing, regressions fail. Tighten the bounds as the categorizer improves — see the
-//! follow-up issue p2-expand-ingredient-categorizer-keywords, which uses this corpus.
+//! reports accuracy, the mismatches, and the "Other" rate (how much real usage the
+//! categorizer fails to place). It reports two ways: per distinct item, and weighted
+//! by usage count — so a regression on frequently-added items can't hide behind
+//! improvements on one-off items. It is a regression guard via upper bounds on the
+//! distinct and weighted mismatch/Other counts: improvements keep passing, regressions
+//! fail. Tighten the bounds as the categorizer improves — see the follow-up issue
+//! p2-expand-ingredient-categorizer-keywords, which uses this corpus.
 //!
 //! Run `make shopping-list-categorizer-test` to see the full report.
 
 use ramekin_core::ingredient_categorizer::{categorize, CATEGORIES};
-use std::collections::BTreeSet;
+use std::collections::{BTreeSet, HashMap};
 use std::fs;
 use std::path::{Path, PathBuf};
 
-/// Upper bound on mismatches (categorizer disagrees with the expected label).
-/// This is the current measured value; lower it as the categorizer improves.
+/// Upper bound on distinct-item mismatches (categorizer disagrees with the label).
+/// These are the current measured values; lower them as the categorizer improves.
 const MAX_MISMATCHES: usize = 50;
-/// Upper bound on items the categorizer returns "Other" for. Some of these are
-/// genuinely non-food/uncategorizable items (household goods, etc.); others are
-/// coverage gaps. Lower it as the categorizer improves.
+/// Upper bound on distinct items the categorizer returns "Other" for. Some are
+/// genuinely non-food/uncategorizable (household goods, etc.); others are coverage gaps.
 const MAX_OTHER: usize = 29;
+/// Upper bound on usage-weighted mismatches (mismatches × times the item was added).
+const MAX_WEIGHTED_MISMATCHES: u64 = 68;
+/// Upper bound on usage-weighted "Other" results (Other × times the item was added).
+const MAX_WEIGHTED_OTHER: u64 = 39;
 
 /// Project root (`ramekin-core/..`).
 fn project_root() -> PathBuf {
@@ -62,10 +67,21 @@ fn shopping_list_categorizer_scorecard() {
     let labeled = read_tsv(&root.join("data/shopping-list-categories.tsv"));
     let corpus = read_tsv(&root.join("data/shopping-list-items.txt"));
 
+    // `corpus` is `count<TAB>item`; build item -> usage count.
+    let counts: HashMap<&str, u64> = corpus
+        .iter()
+        .map(|(count, item)| {
+            let n = count
+                .parse::<u64>()
+                .unwrap_or_else(|_| panic!("non-numeric count for {item:?}: {count:?}"));
+            (item.as_str(), n)
+        })
+        .collect();
+
     // The labeled fixture and the raw corpus must cover exactly the same items, so the
     // labels can't silently drift from the extracted corpus.
     let labeled_items: BTreeSet<&str> = labeled.iter().map(|(_, item)| item.as_str()).collect();
-    let corpus_items: BTreeSet<&str> = corpus.iter().map(|(_, item)| item.as_str()).collect();
+    let corpus_items: BTreeSet<&str> = counts.keys().copied().collect();
     assert_eq!(
         labeled_items, corpus_items,
         "data/shopping-list-categories.tsv and data/shopping-list-items.txt must label the same items"
@@ -80,22 +96,31 @@ fn shopping_list_categorizer_scorecard() {
     }
 
     let total = labeled.len();
+    let weighted_total: u64 = counts.values().sum();
     let mut mismatches: Vec<(String, String, String)> = Vec::new();
     let mut other_items: Vec<String> = Vec::new();
+    let mut weighted_mismatches: u64 = 0;
+    let mut weighted_other: u64 = 0;
 
     for (expected, item) in &labeled {
         let actual = categorize(item);
+        let weight = counts[item.as_str()];
         if actual == "Other" {
             other_items.push(item.clone());
+            weighted_other += weight;
         }
         if actual != expected {
             mismatches.push((item.clone(), expected.clone(), actual.to_string()));
+            weighted_mismatches += weight;
         }
     }
 
     let correct = total - mismatches.len();
     let accuracy = 100.0 * correct as f64 / total as f64;
     let other_rate = 100.0 * other_items.len() as f64 / total as f64;
+    let weighted_accuracy =
+        100.0 * (weighted_total - weighted_mismatches) as f64 / weighted_total as f64;
+    let weighted_other_rate = 100.0 * weighted_other as f64 / weighted_total as f64;
 
     // Split the "Other" results into genuine coverage gaps (expected a real category
     // but got "Other") and items that are legitimately uncategorizable (expected Other).
@@ -108,35 +133,56 @@ fn shopping_list_categorizer_scorecard() {
     mismatches.sort();
 
     println!("\n=== Shopping-list categorizer scorecard ===");
-    println!("items:      {total}");
-    println!("correct:    {correct} ({accuracy:.1}%)");
+    println!("distinct items: {total}");
+    println!("  correct:    {correct} ({accuracy:.1}%)");
     println!(
-        "mismatches: {} ({:.1}%)",
+        "  mismatches: {} ({:.1}%)",
         mismatches.len(),
         100.0 - accuracy
     );
     println!(
-        "Other:      {} ({other_rate:.1}%) — {expected_other} expected Other, {coverage_gaps} coverage gaps",
+        "  Other:      {} ({other_rate:.1}%) — {expected_other} expected Other, {coverage_gaps} coverage gaps",
         other_items.len()
     );
+    println!("usage-weighted ({weighted_total} adds):");
+    println!(
+        "  correct:    {} ({weighted_accuracy:.1}%)",
+        weighted_total - weighted_mismatches
+    );
+    println!(
+        "  mismatches: {weighted_mismatches} ({:.1}%)",
+        100.0 - weighted_accuracy
+    );
+    println!("  Other:      {weighted_other} ({weighted_other_rate:.1}%)");
 
     if !mismatches.is_empty() {
-        println!("\n--- mismatches (item | expected | got) ---");
+        println!("\n--- mismatches (count | item | expected | got) ---");
         for (item, expected, actual) in &mismatches {
-            println!("  {item}  |  {expected}  ->  {actual}");
+            println!(
+                "  {:>3}  {item}  |  {expected}  ->  {actual}",
+                counts[item.as_str()]
+            );
         }
     }
 
     assert!(
         mismatches.len() <= MAX_MISMATCHES,
-        "categorizer mismatches regressed: {} > {} (lower MAX_MISMATCHES once intentional)",
+        "distinct mismatches regressed: {} > {} (lower MAX_MISMATCHES once intentional)",
         mismatches.len(),
         MAX_MISMATCHES
     );
     assert!(
         other_items.len() <= MAX_OTHER,
-        "categorizer 'Other' count regressed: {} > {} (lower MAX_OTHER once intentional)",
+        "distinct 'Other' count regressed: {} > {} (lower MAX_OTHER once intentional)",
         other_items.len(),
         MAX_OTHER
+    );
+    assert!(
+        weighted_mismatches <= MAX_WEIGHTED_MISMATCHES,
+        "weighted mismatches regressed: {weighted_mismatches} > {MAX_WEIGHTED_MISMATCHES} (lower once intentional)"
+    );
+    assert!(
+        weighted_other <= MAX_WEIGHTED_OTHER,
+        "weighted 'Other' regressed: {weighted_other} > {MAX_WEIGHTED_OTHER} (lower once intentional)"
     );
 }
