@@ -92,7 +92,7 @@ pub async fn upload(
 
     // Check file size
     if data.len() > MAX_FILE_SIZE {
-        return ApiError::invalid_request(format!(
+        return ApiError::payload_too_large(format!(
             "File too large. Maximum size is {} bytes",
             MAX_FILE_SIZE
         ))
