@@ -33,6 +33,11 @@ struct RecipeDetailView: View {
     @State var rescrapeError: String?
     @State var showingRescrapeConfirmation = false
     @State var rescrapeTask: Task<Void, Never>?
+    @State var isEnriching = false
+    @State var isGeneratingPhoto = false
+    @State var isGeneratingDescription = false
+    @State var isNormalizingTitle = false
+    @State var autoEnrichError: String?
     @State var recipeScale: Double = 1
     @State var customScaleInput = ""
 
@@ -44,7 +49,11 @@ struct RecipeDetailView: View {
     }
 
     var actionsDisabledForHistoricalVersion: Bool {
-        isViewingHistoricalVersion || isReverting || isRescraping
+        isViewingHistoricalVersion || isReverting || isRescraping || isAutoEnrichmentRunning
+    }
+
+    var isAutoEnrichmentRunning: Bool {
+        isEnriching || isGeneratingPhoto || isGeneratingDescription || isNormalizingTitle
     }
 
     var canCompareSelectedVersions: Bool {
@@ -75,9 +84,37 @@ struct RecipeDetailView: View {
                         }
                         .disabled(actionsDisabledForHistoricalVersion)
                         Button {
+                            Task { await enrichWithAI() }
+                        } label: {
+                            Label("Enrich with AI", systemImage: "wand.and.stars")
+                        }
+                        .disabled(actionsDisabledForHistoricalVersion)
+
+                        Button {
                             showingCustomEnrich = true
                         } label: {
-                            Label("Customize with AI", systemImage: "wand.and.stars")
+                            Label("Customize with AI", systemImage: "wand.and.stars.inverse")
+                        }
+                        .disabled(actionsDisabledForHistoricalVersion)
+
+                        Button {
+                            Task { await normalizeTitle() }
+                        } label: {
+                            Label("Auto-rename", systemImage: "textformat")
+                        }
+                        .disabled(actionsDisabledForHistoricalVersion)
+
+                        Button {
+                            Task { await generateDescription() }
+                        } label: {
+                            Label("Generate Description", systemImage: "text.bubble")
+                        }
+                        .disabled(actionsDisabledForHistoricalVersion)
+
+                        Button {
+                            Task { await generatePhoto() }
+                        } label: {
+                            Label("Generate AI Photo", systemImage: "photo.badge.plus")
                         }
                         .disabled(actionsDisabledForHistoricalVersion)
 
@@ -203,6 +240,14 @@ struct RecipeDetailView: View {
             Button("OK", role: .cancel) {}
         } message: {
             Text(rescrapeError ?? "")
+        }
+        .alert("AI Enrichment Failed", isPresented: Binding(
+            get: { autoEnrichError != nil },
+            set: { if !$0 { autoEnrichError = nil } }
+        )) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(autoEnrichError ?? "")
         }
         .alert(
             "Revert to this version?",
