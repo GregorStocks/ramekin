@@ -191,6 +191,12 @@ async fn shutdown_signal() {
     tracing::info!("Shutdown signal received, draining existing connections");
 }
 
+/// Fallback for requests that match no route: a coded 404 instead of Axum's
+/// default plain-text 404.
+async fn not_found_fallback() -> impl axum::response::IntoResponse {
+    api::error::ApiError::not_found("Not found")
+}
+
 #[tokio::main]
 async fn main() {
     // Check for --openapi flag to dump spec and exit
@@ -252,6 +258,9 @@ async fn main() {
         .merge(public_router)
         .merge(protected_router)
         .merge(swagger_ui)
+        // Unmatched routes never reach a layer-wrapped service, so give them an
+        // explicit coded 404 instead of Axum's default plain-text body.
+        .fallback(not_found_fallback)
         .with_state(pool)
         .layer(
             TraceLayer::new_for_http()

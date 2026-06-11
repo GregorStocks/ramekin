@@ -118,3 +118,20 @@ def test_extractor_rejection_is_coded(authed_api_client):
     # Headers added by inner layers (CORS) must survive the body reshaping, or
     # browser clients can't read the structured error on a cross-origin failure.
     assert response.headers.get("access-control-allow-origin") == "*"
+
+
+def test_unmatched_route_is_coded(authed_api_client):
+    """A completely unmatched URL (which never reaches a layer-wrapped service)
+    returns a coded 404 via the explicit fallback, not Axum's plain-text 404."""
+    client, _ = authed_api_client
+    config = client.configuration
+
+    response = requests.get(
+        f"{config.host}/api/does-not-exist",
+        headers={"Authorization": f"Bearer {config.access_token}"},
+    )
+
+    assert response.status_code == 404
+    body = response.json()
+    assert body["code"] == "not_found"
+    assert body["error"]

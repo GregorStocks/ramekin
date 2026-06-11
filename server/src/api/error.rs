@@ -142,10 +142,12 @@ impl IntoResponse for ApiError {
 
 /// Middleware guaranteeing every error response carries the structured
 /// `{ code, error }` body — including framework-level failures that never reach
-/// a handler, such as `Path`/`Json` extractor rejections and routing fallbacks,
-/// which otherwise return Axum's default `text/plain` body. Error responses that
-/// already have a JSON body (everything built via [`ApiError`]) pass through
-/// untouched.
+/// a handler, such as `Path`/`Json` extractor rejections, which otherwise return
+/// Axum's default `text/plain` body. Error responses that already have a JSON
+/// body (everything built via [`ApiError`]) pass through untouched.
+///
+/// Note: `Router::layer` only runs for matched routes, so unmatched URLs are
+/// handled by an explicit coded `fallback` rather than this middleware.
 pub async fn ensure_coded_errors(request: Request, next: Next) -> Response {
     let response = next.run(request).await;
 
