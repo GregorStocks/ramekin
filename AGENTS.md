@@ -4,6 +4,8 @@ We use uv and npx for the linter and code generation. Never use system Python or
 
 When adding features or fixing bugs, handle both the web and iOS clients by default. Only scope work to one client after the user explicitly confirms the other client does not need the change.
 
+When that means implementing the same pure logic on both clients (scaling, formatting, ordering, date math — anything with deterministic input/output pairs), follow doc/client-logic-sharing.md: push the logic to the server when it fits, otherwise pin both copies with shared test vectors in the same PR. Until the vector harness from that doc lands, at minimum mirror the unit tests on both sides and call out the duplication in the PR description.
+
 We plan to never actually delete any data from the DB - everything will be soft-deletes.
 
 When adding new dependencies, make sure you're getting the latest version - you were trained several months ago so you probably don't know what the state of the art is.

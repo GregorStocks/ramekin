@@ -102,6 +102,35 @@ of leaving them latent.
 | Ingredient display formatting | **Centralize web first** (it's scattered across three files; iOS already has the right shape), then add vectors for `formatted()`-equivalence in the same series as the other areas. |
 | Meal plan date helpers | **Option 3, narrow** — vectors for week-start (date string → Monday date string) and `YYYY-MM-DD` formatting only. Display formatting (day headers) is allowed to differ per platform-idiom; don't vector it. |
 
+## Preventing future drift
+
+The decisions above clean up today's duplication; new features can quietly
+re-create it. Three mechanisms keep the pattern alive:
+
+1. **AGENTS.md rule.** Development in this repo is largely agent-driven, and
+   AGENTS.md is loaded at the start of every session — it is the closest
+   thing we have to authoring-time enforcement. It now requires new
+   dual-client pure logic to either live on the server or ship with shared
+   test vectors in the same PR (and, until the vector harness lands, to at
+   least mirror unit tests on both sides and flag the duplication in the PR
+   description).
+
+2. **The vectors themselves are the regression net.** Once an area is
+   vectored, changing behavior on one client fails that client's tests until
+   the vector file is updated, and updating the vector file exercises the
+   other client's tests. For that second half to actually fire, CI wiring
+   matters: iOS CI (`.github/workflows/ios.yml`) only triggers on PRs
+   touching `ramekin-ios/**`, so `shared-test-vectors/` must be added to its
+   trigger paths. This is part of the pilot issue — without it, a vector
+   edit merges without ever running the Swift side.
+
+3. **Review-time check.** When a PR adds parallel logic to `ramekin-ui/src`
+   and `ramekin-ios` without touching `shared-test-vectors/`, that is the
+   smell to look for in review. If drift keeps slipping through anyway, the
+   escalation is a periodic parity audit (compare the support files listed
+   in the inventory above) — not worth automating until there's evidence
+   it's needed.
+
 ## Follow-up issues filed
 
 1. `p3-web-unit-test-runner` — add Vitest to ramekin-ui, wire into

@@ -27,6 +27,11 @@ side loses: decide whether \",\" decimals parse (recommend yes on both, \
 matching Swift), and make output formatting canonical \".\" on both (pin the \
 Swift NumberFormatter to a fixed locale rather than the device locale so \
 vectors are deterministic).\n\
+- CI wiring so one-sided edits actually fail: add shared-test-vectors/ to the \
+trigger paths of .github/workflows/ios.yml (today it only fires on \
+ramekin-ios/** changes, so a vector edit would merge without running the Swift \
+side). The Vitest side runs in main CI already once p3-web-unit-test-runner \
+lands.\n\
 \n\
 Blocked on p3-web-unit-test-runner landing first.",
   "status": "open",
