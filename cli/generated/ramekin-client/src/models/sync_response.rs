@@ -13,6 +13,9 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct SyncResponse {
+    /// Canonical category display order for grouping items; every item's `category` is guaranteed to appear in this list.
+    #[serde(rename = "category_order")]
+    pub category_order: Vec<String>,
     /// Items that were created (maps client_id to server_id)
     #[serde(rename = "created")]
     pub created: Vec<models::SyncCreatedItem>,
@@ -32,6 +35,7 @@ pub struct SyncResponse {
 
 impl SyncResponse {
     pub fn new(
+        category_order: Vec<String>,
         created: Vec<models::SyncCreatedItem>,
         deleted: Vec<uuid::Uuid>,
         server_changes: Vec<models::SyncServerChange>,
@@ -39,6 +43,7 @@ impl SyncResponse {
         updated: Vec<models::SyncUpdatedItem>,
     ) -> SyncResponse {
         SyncResponse {
+            category_order,
             created,
             deleted,
             server_changes,

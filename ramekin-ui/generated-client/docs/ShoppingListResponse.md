@@ -6,6 +6,7 @@
 
 Name | Type
 ------------ | -------------
+`categoryOrder` | Array&lt;string&gt;
 `items` | [Array&lt;ShoppingListItemResponse&gt;](ShoppingListItemResponse.md)
 
 ## Example
@@ -15,6 +16,7 @@ import type { ShoppingListResponse } from ''
 
 // TODO: Update the object below with actual values
 const example = {
+  "categoryOrder": null,
   "items": null,
 } satisfies ShoppingListResponse
 

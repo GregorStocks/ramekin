@@ -17,6 +17,13 @@ import type { ShoppingListItemResponse } from './ShoppingListItemResponse';
  */
 export interface ShoppingListResponse {
     /**
+     * Canonical category display order for grouping items; every item's
+     * `category` is guaranteed to appear in this list.
+     * @type {Array<string>}
+     * @memberof ShoppingListResponse
+     */
+    categoryOrder: Array<string>;
+    /**
      *
      * @type {Array<ShoppingListItemResponse>}
      * @memberof ShoppingListResponse

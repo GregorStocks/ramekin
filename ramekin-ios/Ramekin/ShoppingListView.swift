@@ -8,26 +8,6 @@ struct ShoppingListView: View {
     @State private var addedCount = 0
     @FocusState private var addFieldFocused: Bool
 
-    /// Category display order for grouping
-    private static let categoryOrder = [
-        "Produce",
-        "Meat & Seafood",
-        "Dairy & Eggs",
-        "Cheese",
-        "Bakery & Bread",
-        "Frozen",
-        "Pasta & Rice",
-        "Canned Goods",
-        "Baking",
-        "Spices & Seasonings",
-        "Condiments & Sauces",
-        "Oils & Vinegars",
-        "Nuts & Dried Fruit",
-        "Beverages",
-        "Snacks",
-        "Other"
-    ]
-
     var body: some View {
         NavigationStack {
             Group {
@@ -103,13 +83,17 @@ struct ShoppingListView: View {
         .padding()
     }
 
-    /// Groups unchecked items by category in display order
+    /// Groups unchecked items by category in the server-provided display order
     private var groupedUncheckedItems: [(category: String, items: [ShoppingItem])] {
         let unchecked = store.items.filter { !$0.isChecked }
         let grouped = Dictionary(grouping: unchecked) { $0.category ?? "Other" }
+        let ordered = ShoppingListGroupingSupport.orderedCategories(
+            present: Set(grouped.keys),
+            categoryOrder: store.categoryOrder
+        )
 
-        return Self.categoryOrder.compactMap { category in
-            guard let items = grouped[category], !items.isEmpty else { return nil }
+        return ordered.compactMap { category in
+            guard let items = grouped[category] else { return nil }
             return (category: category, items: items)
         }
     }

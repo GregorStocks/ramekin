@@ -18,6 +18,8 @@ import { SyncServerChangeFromJSON, SyncServerChangeToJSON, } from './SyncServerC
  * Check if a given object implements the SyncResponse interface.
  */
 export function instanceOfSyncResponse(value) {
+    if (!('categoryOrder' in value) || value['categoryOrder'] === undefined)
+        return false;
     if (!('created' in value) || value['created'] === undefined)
         return false;
     if (!('deleted' in value) || value['deleted'] === undefined)
@@ -38,6 +40,7 @@ export function SyncResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        'categoryOrder': json['category_order'],
         'created': (json['created'].map(SyncCreatedItemFromJSON)),
         'deleted': json['deleted'],
         'serverChanges': (json['server_changes'].map(SyncServerChangeFromJSON)),
@@ -53,6 +56,7 @@ export function SyncResponseToJSONTyped(value, ignoreDiscriminator = false) {
         return value;
     }
     return {
+        'category_order': value['categoryOrder'],
         'created': (value['created'].map(SyncCreatedItemToJSON)),
         'deleted': value['deleted'],
         'server_changes': (value['serverChanges'].map(SyncServerChangeToJSON)),

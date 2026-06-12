@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**category_order** | **Vec<String>** | Canonical category display order for grouping items; every item's `category` is guaranteed to appear in this list. | 
 **created** | [**Vec<models::SyncCreatedItem>**](SyncCreatedItem.md) | Items that were created (maps client_id to server_id) | 
 **deleted** | [**Vec<uuid::Uuid>**](uuid::Uuid.md) | IDs of items that were deleted | 
 **server_changes** | [**Vec<models::SyncServerChange>**](SyncServerChange.md) | Server-side changes since last_sync_at | 

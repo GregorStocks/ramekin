@@ -6,30 +6,12 @@ import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 import type { ShoppingListItemResponse } from "ramekin-client";
 
-const CATEGORY_ORDER = [
-  "Produce",
-  "Meat & Seafood",
-  "Dairy & Eggs",
-  "Cheese",
-  "Bakery & Bread",
-  "Frozen",
-  "Pasta & Rice",
-  "Canned Goods",
-  "Baking",
-  "Spices & Seasonings",
-  "Condiments & Sauces",
-  "Oils & Vinegars",
-  "Nuts & Dried Fruit",
-  "Beverages",
-  "Snacks",
-  "Other",
-];
-
 export default function ShoppingListPage() {
   usePageTitle(() => "Shopping List");
   const { getShoppingListApi } = useAuth();
 
   const [items, setItems] = createSignal<ShoppingListItemResponse[]>([]);
+  const [categoryOrder, setCategoryOrder] = createSignal<string[]>([]);
   const [loading, setLoading] = createSignal(true);
   const [error, setError] = createSignal<string | null>(null);
   const [deletingItem, setDeletingItem] =
@@ -52,10 +34,12 @@ export default function ShoppingListPage() {
       if (!grouped.has(cat)) grouped.set(cat, []);
       grouped.get(cat)!.push(item);
     }
-    return CATEGORY_ORDER.filter((cat) => grouped.has(cat)).map((cat) => ({
-      category: cat,
-      items: grouped.get(cat)!,
-    }));
+    return categoryOrder()
+      .filter((cat) => grouped.has(cat))
+      .map((cat) => ({
+        category: cat,
+        items: grouped.get(cat)!,
+      }));
   });
 
   const checkedItems = createMemo(() =>
@@ -70,6 +54,7 @@ export default function ShoppingListPage() {
     try {
       const response = await getShoppingListApi().listItems();
       setItems(response.items);
+      setCategoryOrder(response.categoryOrder);
     } catch (err) {
       const message = await extractApiError(
         err,

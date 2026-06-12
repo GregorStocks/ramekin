@@ -114,6 +114,9 @@ pub struct SyncResponse {
     pub server_changes: Vec<SyncServerChange>,
     /// New sync timestamp to use for next sync
     pub sync_timestamp: DateTime<Utc>,
+    /// Canonical category display order for grouping items; every item's
+    /// `category` is guaranteed to appear in this list.
+    pub category_order: Vec<String>,
 }
 
 #[utoipa::path(
@@ -505,6 +508,7 @@ pub async fn sync_items(
             deleted: deleted_set.into_iter().collect(),
             server_changes,
             sync_timestamp,
+            category_order: super::list::category_order(),
         })
     });
 

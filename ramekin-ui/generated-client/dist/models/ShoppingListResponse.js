@@ -16,6 +16,8 @@ import { ShoppingListItemResponseFromJSON, ShoppingListItemResponseToJSON, } fro
  * Check if a given object implements the ShoppingListResponse interface.
  */
 export function instanceOfShoppingListResponse(value) {
+    if (!('categoryOrder' in value) || value['categoryOrder'] === undefined)
+        return false;
     if (!('items' in value) || value['items'] === undefined)
         return false;
     return true;
@@ -28,6 +30,7 @@ export function ShoppingListResponseFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
+        'categoryOrder': json['category_order'],
         'items': (json['items'].map(ShoppingListItemResponseFromJSON)),
     };
 }
@@ -39,6 +42,7 @@ export function ShoppingListResponseToJSONTyped(value, ignoreDiscriminator = fal
         return value;
     }
     return {
+        'category_order': value['categoryOrder'],
         'items': (value['items'].map(ShoppingListItemResponseToJSON)),
     };
 }

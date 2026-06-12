@@ -610,6 +610,57 @@ def test_items_have_category(authed_api_client):
     assert items_by_name["unknown_xyz_ingredient"].category == "Other"
 
 
+EXPECTED_CATEGORY_ORDER = [
+    "Produce",
+    "Meat & Seafood",
+    "Dairy & Eggs",
+    "Cheese",
+    "Bakery & Bread",
+    "Frozen",
+    "Pasta & Rice",
+    "Canned Goods",
+    "Baking",
+    "Spices & Seasonings",
+    "Condiments & Sauces",
+    "Oils & Vinegars",
+    "Nuts & Dried Fruit",
+    "Beverages",
+    "Snacks",
+    "Other",
+]
+
+
+def test_list_includes_category_order(authed_api_client):
+    """Test that the list response includes the canonical category order."""
+    client, user_id = authed_api_client
+    api = ShoppingListApi(client)
+
+    api.create_items(
+        CreateShoppingListRequest(
+            items=[
+                CreateShoppingListItemRequest(item="chicken breast"),
+                CreateShoppingListItemRequest(item="unknown_xyz_ingredient"),
+            ]
+        )
+    )
+
+    list_response = api.list_items()
+    assert list_response.category_order == EXPECTED_CATEGORY_ORDER
+
+    # Every item's category must be groupable using the served order
+    for item in list_response.items:
+        assert item.category in list_response.category_order
+
+
+def test_sync_includes_category_order(authed_api_client):
+    """Test that the sync response includes the canonical category order."""
+    client, user_id = authed_api_client
+    api = ShoppingListApi(client)
+
+    sync_response = api.sync_items(SyncRequest())
+    assert sync_response.category_order == EXPECTED_CATEGORY_ORDER
+
+
 def test_sync_server_changes_have_category(authed_api_client):
     """Test that sync response includes category in server_changes."""
     client, user_id = authed_api_client

@@ -35,6 +35,9 @@ class TestShoppingListResponse(unittest.TestCase):
         model = ShoppingListResponse()
         if include_optional:
             return ShoppingListResponse(
+                category_order = [
+                    ''
+                    ],
                 items = [
                     ramekin_client.models.shopping_list_item_response.ShoppingListItemResponse(
                         amount = '', 
@@ -52,6 +55,9 @@ class TestShoppingListResponse(unittest.TestCase):
             )
         else:
             return ShoppingListResponse(
+                category_order = [
+                    ''
+                    ],
                 items = [
                     ramekin_client.models.shopping_list_item_response.ShoppingListItemResponse(
                         amount = '', 

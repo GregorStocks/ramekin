@@ -6,6 +6,7 @@
 
 Name | Type
 ------------ | -------------
+`categoryOrder` | Array&lt;string&gt;
 `created` | [Array&lt;SyncCreatedItem&gt;](SyncCreatedItem.md)
 `deleted` | Array&lt;string&gt;
 `serverChanges` | [Array&lt;SyncServerChange&gt;](SyncServerChange.md)
@@ -19,6 +20,7 @@ import type { SyncResponse } from ''
 
 // TODO: Update the object below with actual values
 const example = {
+  "categoryOrder": null,
   "created": null,
   "deleted": null,
   "serverChanges": null,
