@@ -1,0 +1,30 @@
+{
+  "title": "Ingredient extraction emits '+ ...' continuation fragments as \
+separate ingredients",
+  "description": "data/unique-ingredients.txt (the historical parsed \
+ingredient corpus) contains 51 lines that start with '+ ', e.g. '+ 1 1/4 \
+teaspoons salt', '+ 1 Tbsp warm water', '+ 1 tablespoon all-purpose flour'. \
+These look like continuations of a preceding ingredient ('1 cup sugar + 1 \
+tablespoon sugar' style, or a site listing an addition on its own line) that \
+get extracted as standalone ingredients with a leading '+ '.\n\
+\n\
+Related smaller artifacts in the same corpus: 3 lines that are just \
+parenthesized fragments or a bare ')' (e.g. '(440-gram) cans'), and 4 lines \
+starting with '*' that are footnotes, not ingredients (e.g. '*Substitute \
+octopus with sausage').\n\
+\n\
+Found while mining categorizer keyword gaps (these fragments mostly land in \
+'Other' and no keyword list can fix them). Worth investigating where the split \
+happens (extraction vs parsing) and either merging continuations into the \
+prior ingredient, stripping the marker, or dropping footnote lines. Rerun \
+`make pipeline` after any fix and check the data/ diffs.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+    "extraction",
+  ],
+  "created_at": "2026-06-11T19:53:01-07:00",
+  "updated_at": "2026-06-11T19:53:01-07:00",
+}
