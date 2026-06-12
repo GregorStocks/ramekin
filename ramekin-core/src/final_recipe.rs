@@ -30,8 +30,6 @@ pub struct FinalRecipe {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub source_name: Option<String>,
     pub ingredients: Vec<ParsedIngredient>,
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub suggested_tags: Option<Vec<String>>,
 }
 
 /// Build a `FinalRecipe` from the outputs of the relevant pipeline steps.
@@ -40,7 +38,6 @@ pub fn build_final_recipe(
     parsed_ingredients: Option<&[ParsedIngredient]>,
     normalized_title: Option<&str>,
     generated_description: Option<&str>,
-    suggested_tags: Option<&[String]>,
 ) -> FinalRecipe {
     // Match the server's SaveRecipeStep behaviour: if the parse_ingredients
     // step produced output (even an empty vec), use it; only fall back to
@@ -76,7 +73,6 @@ pub fn build_final_recipe(
         source_url: raw_recipe.source_url.clone(),
         source_name: raw_recipe.source_name.clone(),
         ingredients,
-        suggested_tags: suggested_tags.map(<[String]>::to_vec),
     }
 }
 
@@ -109,7 +105,7 @@ mod tests {
     #[test]
     fn copies_raw_recipe_fields() {
         let raw = raw_recipe_fixture();
-        let fr = build_final_recipe(&raw, None, None, None, None);
+        let fr = build_final_recipe(&raw, None, None, None);
         assert_eq!(fr.title, "Test Recipe");
         assert_eq!(fr.description.as_deref(), Some("A test"));
         assert_eq!(fr.instructions, "Mix and bake.");
@@ -135,7 +131,7 @@ mod tests {
             raw: Some("1 cup flour".to_string()),
             section: None,
         }];
-        let fr = build_final_recipe(&raw, Some(&parsed), None, None, None);
+        let fr = build_final_recipe(&raw, Some(&parsed), None, None);
         assert_eq!(fr.ingredients.len(), 1);
         assert_eq!(fr.ingredients[0].item, "flour");
     }
@@ -143,7 +139,7 @@ mod tests {
     #[test]
     fn falls_back_to_line_split_when_parsed_absent() {
         let raw = raw_recipe_fixture();
-        let fr = build_final_recipe(&raw, None, None, None, None);
+        let fr = build_final_recipe(&raw, None, None, None);
         assert_eq!(fr.ingredients.len(), 2);
         assert_eq!(fr.ingredients[0].item, "1 cup flour");
         assert_eq!(fr.ingredients[0].measurements, Vec::new());
@@ -157,7 +153,7 @@ mod tests {
         // text here would invent ingredients that aren't really in the recipe.
         let raw = raw_recipe_fixture();
         let empty: Vec<ParsedIngredient> = Vec::new();
-        let fr = build_final_recipe(&raw, Some(&empty), None, None, None);
+        let fr = build_final_recipe(&raw, Some(&empty), None, None);
         assert!(fr.ingredients.is_empty());
     }
 
@@ -165,36 +161,28 @@ mod tests {
     fn line_split_skips_blank_lines() {
         let mut raw = raw_recipe_fixture();
         raw.ingredients = "1 cup flour\n\n   \n2 eggs".to_string();
-        let fr = build_final_recipe(&raw, None, None, None, None);
+        let fr = build_final_recipe(&raw, None, None, None);
         assert_eq!(fr.ingredients.len(), 2);
         assert_eq!(fr.ingredients[0].item, "1 cup flour");
         assert_eq!(fr.ingredients[1].item, "2 eggs");
     }
 
     #[test]
-    fn passes_suggested_tags_through() {
-        let raw = raw_recipe_fixture();
-        let suggested = vec!["dinner".to_string(), "mexican".to_string()];
-        let fr = build_final_recipe(&raw, None, None, None, Some(&suggested));
-        assert_eq!(fr.suggested_tags.as_deref(), Some(&suggested[..]));
-    }
-
-    #[test]
     fn serializes_without_null_fields_for_missing_optionals() {
-        let raw = raw_recipe_fixture();
-        let fr = build_final_recipe(&raw, None, None, None, None);
+        let mut raw = raw_recipe_fixture();
+        raw.prep_time = None;
+        let fr = build_final_recipe(&raw, None, None, None);
         let json = serde_json::to_string(&fr).unwrap();
         assert!(
-            !json.contains("\"suggested_tags\""),
-            "unexpected suggested_tags in {json}"
+            !json.contains("\"prep_time\""),
+            "unexpected prep_time in {json}"
         );
     }
 
     #[test]
     fn round_trips_through_serde() {
         let raw = raw_recipe_fixture();
-        let suggested = vec!["dinner".to_string()];
-        let fr = build_final_recipe(&raw, None, None, None, Some(&suggested));
+        let fr = build_final_recipe(&raw, None, None, None);
         let json = serde_json::to_string_pretty(&fr).unwrap();
         let decoded: FinalRecipe = serde_json::from_str(&json).unwrap();
         assert_eq!(decoded, fr);

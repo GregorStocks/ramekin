@@ -209,13 +209,6 @@ fn assemble_snapshot(
             .transpose()
             .context("Failed to deserialize parse_ingredients output")?;
 
-    let suggested_tags: Option<Vec<String>> =
-        read_step_output(run_dir, url_slug, "enrich_auto_tag")?
-            .and_then(|v| v.get("suggested_tags").cloned())
-            .map(serde_json::from_value)
-            .transpose()
-            .context("Failed to deserialize enrich_auto_tag suggested_tags")?;
-
     let normalized_title: Option<String> =
         read_step_output(run_dir, url_slug, "enrich_normalize_title")?.and_then(|v| {
             let changed = v.get("changed").and_then(|v| v.as_bool()).unwrap_or(false);
@@ -245,7 +238,6 @@ fn assemble_snapshot(
         parsed_ingredients.as_deref(),
         normalized_title.as_deref(),
         generated_description.as_deref(),
-        suggested_tags.as_deref(),
     )))
 }
 
@@ -363,11 +355,10 @@ mod tests {
             .expect("extract_recipe output present");
         assert_eq!(fr.title, "Test");
         assert_eq!(fr.ingredients.len(), 2); // line-split fallback
-        assert!(fr.suggested_tags.is_none());
     }
 
     #[test]
-    fn assembles_with_parse_ingredients_and_tags() {
+    fn assembles_with_parse_ingredients_ignoring_auto_tags() {
         let dir = TempDir::new().unwrap();
         let slug = "example-com_r";
         write_step_output(dir.path(), slug, "extract_recipe", extract_output_body());
@@ -387,6 +378,8 @@ mod tests {
               ]
             }"#,
         );
+        // Auto-tag output exists on disk but must not leak into snapshots:
+        // tags come from an AI call, so they churn across machines/caches.
         write_step_output(
             dir.path(),
             slug,
@@ -399,9 +392,10 @@ mod tests {
             .expect("extract_recipe output present");
         assert_eq!(fr.ingredients.len(), 1);
         assert_eq!(fr.ingredients[0].item, "flour");
-        assert_eq!(
-            fr.suggested_tags.as_deref(),
-            Some(&["dinner".to_string(), "breakfast".to_string()][..]),
+        let json = serde_json::to_string(&fr).unwrap();
+        assert!(
+            !json.contains("suggested_tags"),
+            "snapshot unexpectedly contains tags: {json}"
         );
     }
 

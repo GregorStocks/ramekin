@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down serve serve-down check-deps lint clean clean-api generate-schema test test-ui ui-unit-test venv venv-clean db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import shopping-list-categorizer-test title-normalization-test description-generation-test server-release-build
+.PHONY: help dev dev-headless dev-down serve serve-down check-deps lint clean clean-api generate-schema test test-core test-ui ui-unit-test venv venv-clean db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import shopping-list-categorizer-test title-normalization-test description-generation-test server-release-build
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -108,6 +108,9 @@ cli/target/debug/ramekin-cli: $(CLIENT_MARKER)
 
 test: check-deps $(CLIENT_MARKER) cli/target/debug/ramekin-cli server-release-build ## Run API tests
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/run-tests.sh
+
+test-core: ## Run ramekin-core unit and fixture tests (no dev environment required)
+	@cargo test -q --manifest-path ramekin-core/Cargo.toml
 
 test-ui: check-deps $(CLIENT_MARKER) ## Run UI tests with Playwright (requires DATABASE_URL)
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/run-ui-tests.sh
