@@ -2,42 +2,17 @@ import { createSignal, createEffect, For, Show } from "solid-js";
 import { useAuth } from "../context/AuthContext";
 import Modal from "./Modal";
 import { extractApiError } from "../utils/recipeFormHelpers";
-import { scaleAmount } from "../utils/scaleAmount";
-import type { RecipeResponse, Ingredient } from "ramekin-client";
+import {
+  formatIngredient,
+  formatIngredientAmount,
+} from "../utils/ingredientFormatting";
+import type { RecipeResponse } from "ramekin-client";
 
 interface AddToShoppingListModalProps {
   isOpen: () => boolean;
   onClose: () => void;
   recipe: RecipeResponse;
   scale?: () => number;
-}
-
-function formatIngredient(ing: Ingredient, scale: number): string {
-  const parts: string[] = [];
-  const amount = scaleAmount(ing.measurements[0]?.amount, scale);
-  if (amount) {
-    parts.push(amount);
-  }
-  if (ing.measurements[0]?.unit) {
-    parts.push(ing.measurements[0].unit);
-  }
-  parts.push(ing.item);
-  if (ing.note) {
-    parts.push(`(${ing.note})`);
-  }
-  return parts.join(" ");
-}
-
-function formatAmount(ing: Ingredient, scale: number): string | undefined {
-  const parts: string[] = [];
-  const amount = scaleAmount(ing.measurements[0]?.amount, scale);
-  if (amount) {
-    parts.push(amount);
-  }
-  if (ing.measurements[0]?.unit) {
-    parts.push(ing.measurements[0].unit);
-  }
-  return parts.length > 0 ? parts.join(" ") : undefined;
 }
 
 export default function AddToShoppingListModal(
@@ -98,7 +73,7 @@ export default function AddToShoppingListModal(
         .filter((_, i) => selected.has(i))
         .map((ing) => ({
           item: ing.item,
-          amount: formatAmount(ing, scale()),
+          amount: formatIngredientAmount(ing, scale()),
           sourceRecipeId: props.recipe.id,
           sourceRecipeTitle: props.recipe.title,
         }));
@@ -178,7 +153,10 @@ export default function AddToShoppingListModal(
                     onChange={() => toggleIngredient(index())}
                   />
                   <span class="ingredient-text">
-                    {formatIngredient(ing, scale())}
+                    {formatIngredient(ing, {
+                      scale: scale(),
+                      includeNote: true,
+                    })}
                   </span>
                 </label>
               )}

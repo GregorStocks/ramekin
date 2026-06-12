@@ -28,12 +28,12 @@ use std::path::Path;
 /// "finely chopped laver seaweed" (labeled Other, categorized Produce).
 const MAX_MISMATCHES: usize = 2;
 /// Upper bound on distinct items the categorizer returns "Other" for. The remaining
-/// ones are genuinely non-food/uncategorizable (household goods, pharmacy, pet).
-const MAX_OTHER: usize = 8;
+/// ones are genuinely uncategorizable ("Cold salad", "Dip", "Go humans").
+const MAX_OTHER: usize = 3;
 /// Upper bound on usage-weighted mismatches (mismatches × times the item was added).
 const MAX_WEIGHTED_MISMATCHES: u64 = 2;
 /// Upper bound on usage-weighted "Other" results (Other × times the item was added).
-const MAX_WEIGHTED_OTHER: u64 = 8;
+const MAX_WEIGHTED_OTHER: u64 = 3;
 
 /// One labeled corpus entry from `data/shopping-list-categories.json`.
 #[derive(Deserialize)]

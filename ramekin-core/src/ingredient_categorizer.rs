@@ -29,13 +29,19 @@ static INGREDIENT_MAP: LazyLock<Vec<IngredientRule>> = LazyLock::new(|| {
     let mut map: Vec<IngredientRule> = data
         .categories
         .into_iter()
-        .map(|(keyword, category)| IngredientRule {
-            keyword_tokens: word_tokens(&keyword)
-                .into_iter()
-                .map(str::to_string)
-                .collect(),
-            keyword,
-            category,
+        .map(|(keyword, category)| {
+            assert!(
+                CATEGORIES.contains(&category.as_str()),
+                "ingredients.json keyword {keyword:?} has unknown category {category:?}"
+            );
+            IngredientRule {
+                keyword_tokens: word_tokens(&keyword)
+                    .into_iter()
+                    .map(str::to_string)
+                    .collect(),
+                keyword,
+                category,
+            }
         })
         .collect();
     // Sort by keyword length descending so longer/more specific matches are tried first.
@@ -51,7 +57,7 @@ static INGREDIENT_MAP: LazyLock<Vec<IngredientRule>> = LazyLock::new(|| {
 
 /// The canonical set of grocery-aisle categories the categorizer can return.
 /// `categorize` always returns one of these (defaulting to "Other").
-pub const CATEGORIES: [&str; 16] = [
+pub const CATEGORIES: [&str; 19] = [
     "Produce",
     "Meat & Seafood",
     "Dairy & Eggs",
@@ -67,15 +73,18 @@ pub const CATEGORIES: [&str; 16] = [
     "Nuts & Dried Fruit",
     "Beverages",
     "Snacks",
+    "Household",
+    "Personal Care",
+    "Pet",
     "Other",
 ];
 
-/// Map a category string to its canonical `&'static str`, or "Other" if unknown.
+/// Map a category string to its canonical `&'static str`.
 fn category_to_static(category: &str) -> &'static str {
     CATEGORIES
         .into_iter()
         .find(|&c| c == category)
-        .unwrap_or("Other")
+        .expect("ingredient rule categories are validated when INGREDIENT_MAP loads")
 }
 
 /// Categorize an ingredient by name.
@@ -309,6 +318,36 @@ mod tests {
         assert_eq!(categorize("vegetable or chicken stock"), "Canned Goods");
         assert_eq!(categorize("vegetable oil"), "Oils & Vinegars");
         assert_eq!(categorize("vegetable broth"), "Canned Goods");
+    }
+
+    #[test]
+    fn test_household() {
+        assert_eq!(categorize("Dish soap"), "Household");
+        assert_eq!(categorize("Palmolive ultra strength"), "Household");
+        assert_eq!(categorize("Dishwasher detergent"), "Household");
+        assert_eq!(categorize("Cascade Platinum"), "Household");
+        assert_eq!(categorize("paper towels"), "Household");
+        assert_eq!(categorize("toilet paper"), "Household");
+        assert_eq!(categorize("trash bags"), "Household");
+        assert_eq!(categorize("aluminum foil"), "Household");
+    }
+
+    #[test]
+    fn test_personal_care() {
+        assert_eq!(categorize("Ibuprofen"), "Personal Care");
+        assert_eq!(categorize("Tylenol"), "Personal Care");
+        assert_eq!(categorize("toothpaste"), "Personal Care");
+        assert_eq!(categorize("shampoo"), "Personal Care");
+    }
+
+    #[test]
+    fn test_pet() {
+        assert_eq!(categorize("Dog treats"), "Pet");
+        assert_eq!(categorize("dog food"), "Pet");
+        assert_eq!(categorize("cat food"), "Pet");
+        assert_eq!(categorize("cat litter"), "Pet");
+        // Bare "dog"/"cat" are not keywords; hot dogs stay food.
+        assert_eq!(categorize("hot dogs"), "Meat & Seafood");
     }
 
     #[test]

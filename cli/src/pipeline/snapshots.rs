@@ -209,35 +209,9 @@ fn assemble_snapshot(
             .transpose()
             .context("Failed to deserialize parse_ingredients output")?;
 
-    let normalized_title: Option<String> =
-        read_step_output(run_dir, url_slug, "enrich_normalize_title")?.and_then(|v| {
-            let changed = v.get("changed").and_then(|v| v.as_bool()).unwrap_or(false);
-            if changed {
-                v.get("normalized_title")
-                    .and_then(|v| v.as_str())
-                    .map(str::to_string)
-            } else {
-                None
-            }
-        });
-
-    let generated_description: Option<String> =
-        read_step_output(run_dir, url_slug, "enrich_generate_description")?.and_then(|v| {
-            let changed = v.get("changed").and_then(|v| v.as_bool()).unwrap_or(false);
-            if changed {
-                v.get("generated_description")
-                    .and_then(|v| v.as_str())
-                    .map(str::to_string)
-            } else {
-                None
-            }
-        });
-
     Ok(Some(build_final_recipe(
         &raw_recipe,
         parsed_ingredients.as_deref(),
-        normalized_title.as_deref(),
-        generated_description.as_deref(),
     )))
 }
 
@@ -397,6 +371,33 @@ mod tests {
             !json.contains("suggested_tags"),
             "snapshot unexpectedly contains tags: {json}"
         );
+    }
+
+    #[test]
+    fn assembles_ignoring_ai_title_and_description_enrichments() {
+        let dir = TempDir::new().unwrap();
+        let slug = "example-com_r";
+        write_step_output(dir.path(), slug, "extract_recipe", extract_output_body());
+        // Enrichment outputs exist on disk but must not leak into snapshots:
+        // both are AI calls, so they churn across machines/caches.
+        write_step_output(
+            dir.path(),
+            slug,
+            "enrich_normalize_title",
+            r#"{"changed": true, "normalized_title": "AI Rewritten Title"}"#,
+        );
+        write_step_output(
+            dir.path(),
+            slug,
+            "enrich_generate_description",
+            r#"{"changed": true, "generated_description": "AI-generated description."}"#,
+        );
+
+        let fr = assemble_snapshot(dir.path(), None, "https://example.com/r", slug)
+            .unwrap()
+            .expect("extract_recipe output present");
+        assert_eq!(fr.title, "Test");
+        assert_eq!(fr.description, None);
     }
 
     #[test]
