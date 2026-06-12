@@ -113,6 +113,14 @@ impl AiCache {
         fs::write(&path, json)
     }
 
+    /// Remove a cached response. Removing an entry that doesn't exist is a no-op.
+    pub fn remove(&self, key: &CacheKey) -> std::io::Result<()> {
+        match fs::remove_file(self.cache_dir.join(key.to_path())) {
+            Err(e) if e.kind() == std::io::ErrorKind::NotFound => Ok(()),
+            result => result,
+        }
+    }
+
     /// Get cache statistics.
     pub fn stats(&self) -> CacheStats {
         let mut stats = CacheStats::default();
@@ -152,6 +160,44 @@ impl AiCache {
 #[derive(Debug, Clone, Default)]
 pub struct CacheStats {
     pub cached_responses: usize,
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn test_key() -> CacheKey {
+        CacheKey::new("test_prompt", "test/model", &[ChatMessage::user("hi")])
+    }
+
+    fn test_response() -> ChatResponse {
+        ChatResponse {
+            content: "{}".to_string(),
+            usage: Usage::default(),
+            cached: false,
+        }
+    }
+
+    #[test]
+    fn remove_deletes_cached_entry() {
+        let dir = tempfile::TempDir::new().unwrap();
+        let cache = AiCache::new(dir.path().to_path_buf());
+        let key = test_key();
+        cache.put(&key, &test_response(), "test/model").unwrap();
+        assert!(cache.get(&key).is_some());
+
+        cache.remove(&key).unwrap();
+
+        assert!(cache.get(&key).is_none());
+    }
+
+    #[test]
+    fn remove_is_ok_for_missing_entry() {
+        let dir = tempfile::TempDir::new().unwrap();
+        let cache = AiCache::new(dir.path().to_path_buf());
+
+        cache.remove(&test_key()).unwrap();
+    }
 }
 
 /// Compute SHA256 hash and return as hex string.

@@ -3,7 +3,7 @@
 use crate::ai::prompts::custom_enrich::{
     render_custom_enrich_system_prompt, render_custom_enrich_user_prompt, CUSTOM_ENRICH_PROMPT_NAME,
 };
-use crate::ai::{AiClient, AiError, ChatMessage, ChatRequest, ImageData, Usage};
+use crate::ai::{complete_json, AiClient, AiError, ChatMessage, ChatRequest, ImageData, Usage};
 
 /// Result of custom enrichment.
 pub struct CustomEnrichResult {
@@ -38,9 +38,10 @@ pub async fn custom_enrich(
         temperature: Some(0.7),
     };
 
-    let response = ai_client
-        .complete(CUSTOM_ENRICH_PROMPT_NAME, request)
-        .await?;
+    // The recipe shape is the caller's concern, but validating that the content
+    // is well-formed JSON here keeps truncated responses out of the cache.
+    let (_, response): (serde_json::Value, _) =
+        complete_json(ai_client, CUSTOM_ENRICH_PROMPT_NAME, request).await?;
 
     Ok(CustomEnrichResult {
         recipe_json: response.content,

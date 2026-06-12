@@ -3,7 +3,7 @@
 use serde::Deserialize;
 
 use crate::ai::prompts::auto_tag::{render_auto_tag_prompt, AUTO_TAG_PROMPT_NAME};
-use crate::ai::{AiClient, AiError, ChatMessage, ChatRequest, Usage};
+use crate::ai::{complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage};
 
 /// Response format from the AI.
 #[derive(Debug, Deserialize)]
@@ -46,10 +46,8 @@ pub async fn suggest_tags(
         temperature: Some(0.3),
     };
 
-    let response = ai_client.complete(AUTO_TAG_PROMPT_NAME, request).await?;
-
-    let ai_response: AutoTagResponse = serde_json::from_str(&response.content)
-        .map_err(|e| AiError::ParseError(format!("Failed to parse auto-tag response: {}", e)))?;
+    let (ai_response, response): (AutoTagResponse, _) =
+        complete_json(ai_client, AUTO_TAG_PROMPT_NAME, request).await?;
 
     // Filter to valid existing tags (case-insensitive, preserve user's casing)
     let valid_tags: Vec<String> = ai_response

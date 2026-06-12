@@ -3,7 +3,7 @@
 use serde::Deserialize;
 
 use crate::ai::prompts::photo_extract::{render_photo_extract_prompt, PHOTO_EXTRACT_PROMPT_NAME};
-use crate::ai::{AiClient, AiError, ChatMessage, ChatRequest, ImageData, Usage};
+use crate::ai::{complete_json, AiClient, AiError, ChatMessage, ChatRequest, ImageData, Usage};
 use crate::types::RawRecipe;
 
 #[derive(Debug, Deserialize)]
@@ -43,13 +43,8 @@ pub async fn extract_recipe_from_photos(
         temperature: Some(0.1),
     };
 
-    let response = ai_client
-        .complete(PHOTO_EXTRACT_PROMPT_NAME, request)
-        .await?;
-
-    let extracted: PhotoExtractResponse = serde_json::from_str(&response.content).map_err(|e| {
-        AiError::ParseError(format!("Failed to parse photo extraction response: {}", e))
-    })?;
+    let (extracted, response): (PhotoExtractResponse, _) =
+        complete_json(ai_client, PHOTO_EXTRACT_PROMPT_NAME, request).await?;
 
     let raw_recipe = RawRecipe {
         title: extracted.title,

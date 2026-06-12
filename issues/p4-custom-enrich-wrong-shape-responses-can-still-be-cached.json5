@@ -1,0 +1,27 @@
+{
+  "title": "Custom-enrich responses with valid JSON but wrong shape can still \
+be cached forever",
+  "description": "The fix for p3-ai-cache-stores-unparseable-responses-forever \
+added complete_json(), which evicts AI cache entries whose content fails to \
+parse. custom_enrich (ramekin-core/src/ai/custom_enrich.rs) only validates \
+that the response is well-formed JSON (serde_json::Value) because the expected \
+recipe shape (RecipeContent) lives in the server crate — the actual shape \
+parse happens in server/src/api/enrich.rs after the response is already \
+cached. A response that is valid JSON but the wrong shape (e.g. missing \
+fields, an {\"error\": ...} object) would therefore still be pinned in the \
+cache.\n\
+\n\
+Low priority because custom enrich is interactive: the user's retry almost \
+always changes the instruction text, which changes the cache key. Possible \
+fixes: move a RecipeContent-shaped DTO into ramekin-core so custom_enrich can \
+parse it via complete_json, or expose the rendered messages so the server can \
+call AiClient::forget on shape-parse failure.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "ai",
+  ],
+  "created_at": "2026-06-12T07:33:44-07:00",
+  "updated_at": "2026-06-12T07:33:44-07:00",
+}

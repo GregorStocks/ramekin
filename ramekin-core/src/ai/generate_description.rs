@@ -5,7 +5,7 @@ use serde::Deserialize;
 use crate::ai::prompts::generate_description::{
     render_generate_description_prompt, GENERATE_DESCRIPTION_PROMPT_NAME,
 };
-use crate::ai::{AiClient, AiError, ChatMessage, ChatRequest, Usage};
+use crate::ai::{complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage};
 
 #[derive(Debug, Deserialize)]
 struct GenerateDescriptionResponse {
@@ -37,17 +37,8 @@ pub async fn generate_description(
         temperature: Some(0.0),
     };
 
-    let response = ai_client
-        .complete(GENERATE_DESCRIPTION_PROMPT_NAME, request)
-        .await?;
-
-    let parsed: GenerateDescriptionResponse =
-        serde_json::from_str(&response.content).map_err(|e| {
-            AiError::ParseError(format!(
-                "Failed to parse generate-description response: {}",
-                e
-            ))
-        })?;
+    let (parsed, response): (GenerateDescriptionResponse, _) =
+        complete_json(ai_client, GENERATE_DESCRIPTION_PROMPT_NAME, request).await?;
 
     let description = parsed.description.trim().to_string();
 
