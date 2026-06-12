@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "test": "vitest run",
     "generate-client": "./generate-client.sh"
   },
   "dependencies": {
@@ -30,6 +31,7 @@
     "stylelint-config-standard": "^40.0.0",
     "typescript": "~6.0.3",
     "vite": "^8.0.14",
-    "vite-plugin-solid": "^2.11.12"
+    "vite-plugin-solid": "^2.11.12",
+    "vitest": "^4.1.8"
   }
 }

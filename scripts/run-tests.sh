@@ -22,6 +22,7 @@ TARGET_PROCESSES=(
   rust-tests-cli
   rust-tests-core
   api-tests
+  ui-unit-tests
 )
 
 # Source env file to get PROCESS_COMPOSE_PORT
