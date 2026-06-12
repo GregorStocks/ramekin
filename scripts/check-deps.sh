@@ -1,8 +1,9 @@
 #!/bin/bash
 # Check for required development and test dependencies.
 #
-# Usage: check-deps.sh [--lint]
+# Usage: check-deps.sh [--lint|--venv]
 #   --lint  Only check the tools needed by `make lint`.
+#   --venv  Only check the tools needed to build the venv (uv).
 #
 # Reports every missing dependency with install instructions for the
 # current platform (macOS, Fedora, Arch, or generic Linux). Never
@@ -11,10 +12,11 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
-LINT_ONLY=false
-if [ "$1" = "--lint" ]; then
-    LINT_ONLY=true
-fi
+MODE=full
+case "${1:-}" in
+    --lint) MODE=lint ;;
+    --venv) MODE=venv ;;
+esac
 
 # Keep in sync with .github/actions/setup/action.yml
 SWIFTLINT_VERSION=0.63.2
@@ -57,29 +59,34 @@ require() {
 
 SWIFTLINT_LINUX="curl -fsSL https://github.com/realm/SwiftLint/releases/download/${SWIFTLINT_VERSION}/swiftlint_linux_amd64.zip -o /tmp/swiftlint.zip && unzip -o /tmp/swiftlint.zip -d /tmp/swiftlint && install -D -m 0755 /tmp/swiftlint/swiftlint ~/.local/bin/swiftlint"
 
-# --- Tools needed by both `make lint` and the dev/test environment ---
-
-require cargo "install Rust: https://rustup.rs"
-require npm "$(hint \
-    "brew install node" \
-    "sudo dnf install nodejs npm" \
-    "sudo pacman -S nodejs npm" \
-    "install Node.js 22+: https://nodejs.org")"
+# uv is checked in every mode: `make venv` runs --venv before building the
+# virtualenv, since the venv recipe itself needs uv.
 require uv "$(hint \
     "brew install uv" \
     "sudo dnf install uv" \
     "sudo pacman -S uv" \
     "curl -LsSf https://astral.sh/uv/install.sh | sh")"
-require python3 "$(hint \
-    "brew install python" \
-    "sudo dnf install python3" \
-    "sudo pacman -S python" \
-    "install Python 3 via your package manager")"
-require ast-grep "cargo install ast-grep"
+
+# --- Tools needed by both `make lint` and the dev/test environment ---
+
+if [ "$MODE" != "venv" ]; then
+    require cargo "install Rust: https://rustup.rs"
+    require npm "$(hint \
+        "brew install node" \
+        "sudo dnf install nodejs npm" \
+        "sudo pacman -S nodejs npm" \
+        "install Node.js 22+: https://nodejs.org")"
+    require python3 "$(hint \
+        "brew install python" \
+        "sudo dnf install python3" \
+        "sudo pacman -S python" \
+        "install Python 3 via your package manager")"
+    require ast-grep "cargo install ast-grep"
+fi
 
 # --- Tools needed only by `make lint` ---
 
-if $LINT_ONLY; then
+if [ "$MODE" = "lint" ]; then
     require shellcheck "$(hint \
         "brew install shellcheck" \
         "sudo dnf install ShellCheck" \
@@ -94,7 +101,7 @@ fi
 
 # --- Everything else (dev/test environment) ---
 
-if ! $LINT_ONLY; then
+if [ "$MODE" = "full" ]; then
     require diesel "cargo install diesel_cli --no-default-features --features postgres"
 
     # cargo-watch for dev (not needed in CI)
