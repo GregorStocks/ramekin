@@ -211,4 +211,89 @@ mod tests {
         assert_eq!(categorize("ginger ale"), "Beverages");
         assert_eq!(categorize("fresh ginger root"), "Produce");
     }
+
+    #[test]
+    fn test_chocolate_forms() {
+        // Bare "chocolate" on a shopping list is candy; qualified baking forms
+        // and chip/chunk/morsel formats are baking aisle.
+        assert_eq!(categorize("chocolate"), "Snacks");
+        assert_eq!(categorize("bittersweet chocolate, chopped"), "Baking");
+        assert_eq!(categorize("semisweet chocolate"), "Baking");
+        assert_eq!(categorize("white chocolate"), "Baking");
+        assert_eq!(categorize("chocolate chips"), "Baking");
+        assert_eq!(categorize("chocolate morsels"), "Baking");
+        assert_eq!(categorize("hot chocolate"), "Beverages");
+        assert_eq!(categorize("chocolate milk"), "Dairy & Eggs");
+    }
+
+    #[test]
+    fn test_water_and_fresh_citrus_juice() {
+        assert_eq!(categorize("warm water"), "Beverages");
+        // Recipe lemon/lime juice means fresh fruit, not the juice aisle.
+        assert_eq!(categorize("freshly squeezed lemon juice"), "Produce");
+        assert_eq!(categorize("lime juice from 1 lime"), "Produce");
+        assert_eq!(categorize("juice of 1/2 lemon"), "Produce");
+        assert_eq!(categorize("apple juice"), "Beverages");
+        // "water" must not hijack items that merely mention it.
+        assert_eq!(
+            categorize("egg wash: 1 egg beaten with water"),
+            "Dairy & Eggs"
+        );
+        assert_eq!(categorize("tuna in water"), "Meat & Seafood");
+    }
+
+    #[test]
+    fn test_frozen_collisions() {
+        // Longer produce keywords used to beat "frozen".
+        assert_eq!(categorize("frozen strawberries"), "Frozen");
+        assert_eq!(categorize("strawberries"), "Produce");
+        assert_eq!(categorize("french fries"), "Frozen");
+        assert_eq!(categorize("tater tots"), "Frozen");
+    }
+
+    #[test]
+    fn test_snack_forms_beat_base_ingredient() {
+        assert_eq!(categorize("potato chips"), "Snacks");
+        assert_eq!(categorize("potatoes"), "Produce");
+        assert_eq!(categorize("tortilla chips"), "Snacks");
+        assert_eq!(categorize("tortillas"), "Bakery & Bread");
+        assert_eq!(categorize("pretzel twists"), "Snacks");
+        assert_eq!(categorize("pretzel buns"), "Bakery & Bread");
+    }
+
+    #[test]
+    fn test_cereal_brands() {
+        assert_eq!(categorize("Rice Chex"), "Snacks");
+        assert_eq!(categorize("Lucky Charms"), "Snacks");
+        assert_eq!(categorize("M&Ms"), "Snacks");
+        assert_eq!(categorize("Rice Krispies"), "Snacks");
+        assert_eq!(categorize("rice"), "Pasta & Rice");
+    }
+
+    #[test]
+    fn test_chiles() {
+        assert_eq!(categorize("fresh red chiles, thinly sliced"), "Produce");
+        assert_eq!(categorize("ancho chile powder"), "Spices & Seasonings");
+        assert_eq!(categorize("chili beans"), "Canned Goods");
+        assert_eq!(categorize("chili oil"), "Oils & Vinegars");
+        assert_eq!(categorize("Thai sweet chilli sauce"), "Condiments & Sauces");
+    }
+
+    #[test]
+    fn test_fermented_condiments() {
+        assert_eq!(categorize("sauerkraut"), "Condiments & Sauces");
+        assert_eq!(categorize("kimchi"), "Condiments & Sauces");
+        assert_eq!(categorize("pickles"), "Condiments & Sauces");
+        assert_eq!(categorize("pickled ginger"), "Condiments & Sauces");
+    }
+
+    #[test]
+    fn test_brand_collisions() {
+        // Campari the aperitif vs Campari tomatoes.
+        assert_eq!(categorize("Campari"), "Beverages");
+        assert_eq!(categorize("Campari tomatoes"), "Produce");
+        // Scotch the whisky vs scotch bonnet peppers.
+        assert_eq!(categorize("scotch"), "Beverages");
+        assert_eq!(categorize("scotch bonnet chiles"), "Produce");
+    }
 }

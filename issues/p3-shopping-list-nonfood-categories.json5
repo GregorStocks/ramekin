@@ -1,0 +1,37 @@
+{
+  "title": "Add non-food shopping list categories (Household, Personal Care, \
+Pet)",
+  "description": "The prod shopping-list corpus \
+(data/shopping-list-categories.json) contains hand-typed non-recipe store \
+items that have no sensible home in the current food-oriented 16-category \
+taxonomy and are labeled 'Other': dish soap, 'Palmolive ultra strength', \
+dishwasher detergent, Cascade Platinum (Household/Cleaning); Ibuprofen \
+(Personal Care/Pharmacy); dog treats (Pet). After the \
+expand-ingredient-categorizer-keywords pass these are the bulk of what's left \
+in 'Other' (8 distinct items).\n\
+\n\
+Adding categories means touching the hardcoded category lists in \
+ramekin-core/src/ingredient_categorizer.rs (CATEGORIES), \
+ramekin-ui/src/pages/ShoppingListPage.tsx, and \
+ramekin-ios/Ramekin/ShoppingListView.swift — see \
+p3-shopping-list-category-order-from-api, which would reduce that to one place \
+and is worth doing first (not a hard blocker, just ordering).\n\
+\n\
+When adding the categories, also add starter keywords to data/ingredients.json \
+(soap, detergent, paper towel, toilet paper, trash bag, ibuprofen, tylenol, \
+advil, toothpaste, shampoo, dog food, dog treat, cat food, cat litter, etc.) \
+and update the expected labels for those items in \
+data/shopping-list-categories.json, then tighten the MAX_OTHER bounds in \
+ramekin-core/tests/shopping_list_categorizer_tests.rs.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "shopping-list",
+    "categorizer",
+    "web",
+    "ios",
+  ],
+  "created_at": "2026-06-11T19:53:01-07:00",
+  "updated_at": "2026-06-11T19:53:01-07:00",
+}

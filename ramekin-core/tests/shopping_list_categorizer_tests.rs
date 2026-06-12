@@ -12,8 +12,7 @@
 //! by usage count — so a regression on frequently-added items can't hide behind
 //! improvements on one-off items. It is a regression guard via upper bounds on the
 //! distinct and weighted mismatch/Other counts: improvements keep passing, regressions
-//! fail. Tighten the bounds as the categorizer improves — see the follow-up issue
-//! p2-expand-ingredient-categorizer-keywords, which uses this corpus.
+//! fail. Tighten the bounds as the categorizer improves.
 //!
 //! Run `make shopping-list-categorizer-test` to see the full report.
 
@@ -25,14 +24,16 @@ use std::path::Path;
 
 /// Upper bound on distinct-item mismatches (categorizer disagrees with the label).
 /// These are the current measured values; lower them as the categorizer improves.
-const MAX_MISMATCHES: usize = 50;
-/// Upper bound on distinct items the categorizer returns "Other" for. Some are
-/// genuinely non-food/uncategorizable (household goods, etc.); others are coverage gaps.
-const MAX_OTHER: usize = 29;
+/// The two remaining mismatches: "Banning soda" (typo for baking soda) and
+/// "finely chopped laver seaweed" (labeled Other, categorized Produce).
+const MAX_MISMATCHES: usize = 2;
+/// Upper bound on distinct items the categorizer returns "Other" for. The remaining
+/// ones are genuinely non-food/uncategorizable (household goods, pharmacy, pet).
+const MAX_OTHER: usize = 8;
 /// Upper bound on usage-weighted mismatches (mismatches × times the item was added).
-const MAX_WEIGHTED_MISMATCHES: u64 = 68;
+const MAX_WEIGHTED_MISMATCHES: u64 = 2;
 /// Upper bound on usage-weighted "Other" results (Other × times the item was added).
-const MAX_WEIGHTED_OTHER: u64 = 39;
+const MAX_WEIGHTED_OTHER: u64 = 8;
 
 /// One labeled corpus entry from `data/shopping-list-categories.json`.
 #[derive(Deserialize)]
