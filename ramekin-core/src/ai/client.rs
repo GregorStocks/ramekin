@@ -4,7 +4,7 @@ use async_trait::async_trait;
 use openai_api_rs::v1::api::OpenAIClient;
 use openai_api_rs::v1::chat_completion::chat_completion::ChatCompletionRequest;
 use openai_api_rs::v1::chat_completion::{
-    ChatCompletionMessage, Content, ContentType, ImageUrl, ImageUrlType, MessageRole,
+    ChatCompletionMessage, Content, ContentType, FinishReason, ImageUrl, ImageUrlType, MessageRole,
 };
 use serde_json::json;
 use std::sync::Arc;
@@ -189,6 +189,25 @@ impl CachingAiClient {
     }
 }
 
+/// Whether a model response's content is usable by callers.
+///
+/// JSON-mode requests need content that parses as JSON: reasoning models can
+/// burn the entire `max_tokens` budget on hidden thinking and emit truncated
+/// JSON like `{"`, which would otherwise fail every downstream parse.
+/// Non-JSON requests just need non-empty content.
+fn response_content_usable(json_response: bool, content: &str) -> bool {
+    if json_response {
+        serde_json::from_str::<serde_json::Value>(content).is_ok()
+    } else {
+        !content.trim().is_empty()
+    }
+}
+
+/// First ~200 chars of a response, for inclusion in error messages.
+fn content_snippet(content: &str) -> String {
+    content.chars().take(200).collect()
+}
+
 #[async_trait]
 impl AiClient for CachingAiClient {
     async fn complete(
@@ -200,8 +219,18 @@ impl AiClient for CachingAiClient {
         let cache_key = CacheKey::new(prompt_name, &self.config.model, &request.messages);
 
         if let Some(cached) = self.cache.get(&cache_key) {
-            tracing::debug!(prompt_name = prompt_name, "AI response found in cache");
-            return Ok(cached.into());
+            if response_content_usable(request.json_response, &cached.content) {
+                tracing::debug!(prompt_name = prompt_name, "AI response found in cache");
+                return Ok(cached.into());
+            }
+            // A poisoned entry (e.g. truncated JSON cached before validation
+            // existed) would otherwise fail deterministically forever. Refetch
+            // and overwrite it.
+            tracing::warn!(
+                prompt_name = prompt_name,
+                content = %cached.content,
+                "Ignoring unusable cached AI response; refetching"
+            );
         }
 
         // Apply rate limiting
@@ -252,11 +281,29 @@ impl AiClient for CachingAiClient {
         .inner;
 
         // Extract the response content
-        let content = response
-            .choices
-            .first()
+        let choice = response.choices.first();
+        let finish_reason = choice.and_then(|c| c.finish_reason.clone());
+        let content = choice
             .and_then(|c| c.message.content.clone())
             .unwrap_or_default();
+
+        // An unusable response must fail fast and must NOT be cached: caching
+        // it would turn a transient provider problem into a permanent,
+        // deterministic failure for this prompt.
+        if finish_reason == Some(FinishReason::length) {
+            return Err(AiError::Api(format!(
+                "Response truncated by max_tokens (finish_reason=length); partial content: {:?}",
+                content_snippet(&content)
+            )));
+        }
+
+        if !response_content_usable(request.json_response, &content) {
+            return Err(AiError::ParseError(format!(
+                "Unusable model response (finish_reason={:?}): {:?}",
+                finish_reason,
+                content_snippet(&content)
+            )));
+        }
 
         let usage = Usage {
             prompt_tokens: response.usage.prompt_tokens.max(0) as u32,
@@ -445,5 +492,30 @@ mod tests {
         let path = key.to_path();
         assert!(path.starts_with("auto_tag/google--gemini-2.5-flash/"));
         assert!(path.to_string_lossy().ends_with(".json"));
+    }
+
+    #[test]
+    fn test_response_content_usable_json_mode() {
+        assert!(response_content_usable(
+            true,
+            r#"{"normalized_title": "Mushroom Pasta"}"#
+        ));
+
+        // Truncated JSON — what gemini-2.5-flash cached on 2026-05-09 after
+        // burning its max_tokens budget on hidden reasoning.
+        assert!(!response_content_usable(true, r#"{""#));
+        assert!(!response_content_usable(true, r#"{"normalized_title": ""#));
+        assert!(!response_content_usable(true, ""));
+        assert!(!response_content_usable(
+            true,
+            "```json\n{\"normalized_title\": \"Tuna Boats\"}\n```"
+        ));
+    }
+
+    #[test]
+    fn test_response_content_usable_text_mode() {
+        assert!(response_content_usable(false, "plain text answer"));
+        assert!(!response_content_usable(false, ""));
+        assert!(!response_content_usable(false, "   \n"));
     }
 }

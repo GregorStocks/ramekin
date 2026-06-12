@@ -33,7 +33,10 @@ pub async fn normalize_title(
     let request = ChatRequest {
         messages: vec![ChatMessage::user(prompt)],
         json_response: true,
-        max_tokens: Some(128),
+        // Generous budget: reasoning models spend output tokens on hidden
+        // thinking before the short JSON answer, and a too-small cap truncates
+        // the answer itself.
+        max_tokens: Some(4096),
         temperature: Some(0.0),
     };
 
