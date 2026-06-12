@@ -631,6 +631,133 @@ mod tests {
     }
 
     #[test]
+    fn test_dotdash_visible_ingredients_supplement_jsonld() {
+        // Dotdash Meredith (Serious Eats) JSON-LD simplifies combined ingredient
+        // rows, dropping quantities the visible page keeps. The visible
+        // .structured-ingredients rows should win.
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Croquetas de Jamón",
+                    "recipeIngredient": [
+                        "2 cups (473ml) whole milk",
+                        "1 cup all-purpose flour, for dredging"
+                    ],
+                    "recipeInstructions": "Stir in flour, then dredge and fry."
+                }
+                </script>
+            </head>
+            <body>
+                <div class="comp structured-ingredients">
+                    <ul class="structured-ingredients__list">
+                        <li class="structured-ingredients__list-item"><p>2 cups (473 ml) whole milk</p></li>
+                        <li class="structured-ingredients__list-item"><p>1/2 cup plus 2 tablespoons all-purpose flour (80 g), plus 1 cup all-purpose flour (for dredging), divided</p></li>
+                    </ul>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://www.seriouseats.com/croquetas").unwrap();
+        let lines: Vec<&str> = result.ingredients.lines().collect();
+        assert_eq!(
+            lines,
+            vec![
+                "2 cups (473 ml) whole milk",
+                "1/2 cup plus 2 tablespoons all-purpose flour (80 g), plus 1 cup all-purpose flour (for dredging), divided",
+            ]
+        );
+    }
+
+    #[test]
+    fn test_dotdash_normalized_visible_ingredients_keep_jsonld() {
+        // Some Dotdash pages render nutrition-database normalized rows instead
+        // of the author's text ("454 g pork breakfast sausage" for "1 pound
+        // (454g) pork breakfast sausage, casings removed"). Those rows sit
+        // entirely inside data-ingredient-* spans with no free text outside;
+        // keep the JSON-LD version, which has the author's rows.
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Biscuits and Gravy",
+                    "recipeIngredient": [
+                        "1 pound (454g) pork breakfast sausage, casings removed",
+                        "Freshly ground black pepper"
+                    ],
+                    "recipeInstructions": "Brown the sausage and make the gravy."
+                }
+                </script>
+            </head>
+            <body>
+                <div class="comp structured-ingredients">
+                    <ul class="structured-ingredients__list">
+                        <li class="structured-ingredients__list-item">
+                            <p><span data-ingredient-quantity="true">454</span> <span data-ingredient-unit="true">g</span> <span data-ingredient-name="true">pork breakfast sausage</span></p>
+                        </li>
+                        <li class="structured-ingredients__list-item">
+                            <p><span data-ingredient-quantity="true">1</span> <span data-ingredient-unit="true">tsp, ground</span> <span data-ingredient-name="true">ground black pepper</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://www.seriouseats.com/biscuits").unwrap();
+        let lines: Vec<&str> = result.ingredients.lines().collect();
+        assert_eq!(
+            lines,
+            vec![
+                "1 pound (454g) pork breakfast sausage, casings removed",
+                "Freshly ground black pepper",
+            ]
+        );
+    }
+
+    #[test]
+    fn test_dotdash_visible_ingredients_fewer_rows_keeps_jsonld() {
+        // If the rendered page shows fewer ingredient rows than the structured
+        // data (e.g. a partially rendered list), keep the JSON-LD version.
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Croquetas de Jamón",
+                    "recipeIngredient": [
+                        "2 cups (473ml) whole milk",
+                        "1 cup all-purpose flour, for dredging"
+                    ],
+                    "recipeInstructions": "Stir in flour, then dredge and fry."
+                }
+                </script>
+            </head>
+            <body>
+                <div class="comp structured-ingredients">
+                    <ul class="structured-ingredients__list">
+                        <li class="structured-ingredients__list-item"><p>2 cups (473 ml) whole milk</p></li>
+                    </ul>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://www.seriouseats.com/croquetas").unwrap();
+        let lines: Vec<&str> = result.ingredients.lines().collect();
+        assert_eq!(
+            lines,
+            vec![
+                "2 cups (473ml) whole milk",
+                "1 cup all-purpose flour, for dredging",
+            ]
+        );
+    }
+
+    #[test]
     fn test_html_fallback_jetpack_ingredients() {
         // Jetpack recipe with ingredients in .jetpack-recipe-ingredient class
         let html = r#"

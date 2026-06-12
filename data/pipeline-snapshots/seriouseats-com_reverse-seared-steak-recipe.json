@@ -1,6 +1,6 @@
 {
   "title": "Reverse-Seared Steak",
-  "description": "Slow-cooked then seared beef with a rich, savory crust.",
+  "description": "Slow-cooked beef steak, seared to a perfect crust.",
   "servings": "2",
   "instructions": "Generously season steak(s) all over with salt and pepper. If desired, set steak(s) on a wire rack set in a rimmed baking sheet and refrigerate, uncovered, overnight to dry out the exterior. Otherwise, proceed with the next step.\n\nIf Cooking in the Oven: Set steak(s) on a wire rack set in a rimmed baking sheet. Preheat oven to anywhere between 200 and 275°F (93 and 135°C); if your oven goes lower, you can set it to an even lower temperature, though it will take longer to cook.\n\nPlace steak(s) in the oven and cook until an instant-read thermometer registers 105°F (41°C) for rare, 115°F (46°C) for medium-rare, 125°F (52°C) for medium, or 135°F (57°C) for medium-well. This will take about 20 minutes for rare steak and up to about 40 minutes for medium-well; cooking time can vary dramatically depending on many factors, so check often. (For approximate cooking times, see the chart above .)\n\nJust before steak(s) come out of the oven, add 1 tablespoon (15ml) oil to a cast iron, carbon steel, or heavy stainless steel skillet and heat over high heat until smoking. Add steak(s) and butter to skillet and cook until each side is well browned, about 45 seconds per side. Using tongs, hold steak(s) sideways to sear edges. Serve right away; there's no need to let reverse-seared steaks rest.\n\nIf Cooking on the Grill: Light one chimney full of charcoal. When all the charcoal is lit and covered with gray ash, pour out and spread the coals evenly over half of coal grate. Alternatively, set half the burners of a gas grill to high heat. Set cooking grate in place, cover grill, and allow to preheat for 5 minutes. Clean and oil grilling grate .\n\nSet steak(s) on cooler side of grill and let cook uncovered, turning occasionally, until an instant-read thermometer registers 105°F (41°C) for rare, 115°F (46°C) for medium-rare, 125°F (52°C) for medium, or 135°F (57°C) for medium-well. Cooking time can vary greatly, so check the steaks often.\n\nTransfer steak(s) to a platter and tent with foil. If you are using a charcoal grill and your coals have died down, build up the biggest fire you can. If using a gas grill, make sure all burners are turned to their highest heat and allow the grill to preheat with the lid closed.\n\nReturn steak(s) to the hottest part of the grill and cook, turning frequently, until crisp and charred all over, about 1 1/2 minutes total. Serve right away.",
   "image_urls": [
@@ -11,9 +11,14 @@
   "ingredients": [
     {
       "item": "Thick-cut beef steak, at least 1 1/2 to 2 inches thick, such as ribeye, strip, porterhouse, T-bone, tri-tip, or filet mignon",
-      "measurements": [],
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": null
+        }
+      ],
       "note": "s",
-      "raw": "Thick-cut beef steak(s), at least 1 1/2 to 2 inches thick, such as ribeye, strip, porterhouse, T-bone, tri-tip, or filet mignon",
+      "raw": "1 to 2 Thick-cut beef steak(s), at least 1 1/2 to 2 inches thick, such as ribeye, strip, porterhouse, T-bone, tri-tip, or filet mignon",
       "section": null
     },
     {
@@ -26,12 +31,12 @@
     {
       "item": "Vegetable oil",
       "measurements": [],
-      "note": "if finishing on the stovetop",
-      "raw": "Vegetable oil (if finishing on the stovetop)",
+      "note": "if finishing on the stovetop; optional",
+      "raw": "Vegetable oil (if finishing on the stovetop; optional)",
       "section": null
     },
     {
-      "item": "butter",
+      "item": "unsalted butter",
       "measurements": [
         {
           "amount": "1",
@@ -42,8 +47,8 @@
           "unit": "g"
         }
       ],
-      "note": "if finishing on the stovetop",
-      "raw": "1 tablespoon (15g) butter (if finishing on the stovetop)",
+      "note": "if finishing on the stovetop; optional",
+      "raw": "1 tablespoon (15 g) unsalted butter (if finishing on the stovetop; optional)",
       "section": null
     }
   ]

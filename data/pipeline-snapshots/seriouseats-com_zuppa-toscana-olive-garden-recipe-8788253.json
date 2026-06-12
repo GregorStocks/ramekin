@@ -1,6 +1,6 @@
 {
-  "title": "Zuppa Toscana (Tuscan Sausage, Potato, and Kale Soup)",
-  "description": "Creamy Tuscan soup with sausage, potato, and tender kale.",
+  "title": "Zuppa Toscana",
+  "description": "Creamy sausage and potato soup with kale and fennel.",
   "servings": "8",
   "instructions": "In a 5-quart soup pot or Dutch oven, heat olive oil over medium heat until shimmering. Add sausage and cook, stirring to break up the meat and scraping bottom of pot, until well browned, 6 to 8 minutes. Using a slotted spoon, remove sausage from pot; set aside. If meat has rendered an excessive amount of fat, use a metal or other heat-safe spoon to ladle most of it out, leaving 2 to 3 tablespoons in the pot. (If, conversely, you have less than about 2 tablespoons of fat left, add extra olive oil.) Add onion, garlic, celery, fennel, fennel seeds, and crushed red pepper flakes, and cook, stirring and scraping bottom of pot, until vegetables are softened and release some moisture, about 8 minutes.\n\nSlowly pour in stock or broth along with Parmesan rind(s) (if using). Bring to a boil over medium-high heat. Add kale and simmer until kale has softened slightly, about 10 minutes.\n\nAdd potato and continue to simmer, stirring occasionally, until kale is very tender and potato is fully cooked through and its exterior has sloughed off (the potato nubbins should be rounded and smaller and the soup should be thickened with the released potato starch), about 30 minutes (if the potato is slow to wear down, stir more to agitate it and help it along).\n\nReturn sausage to soup and simmer until flavors have melded, skimming any excess fat that pools on the surface, about 10 minutes. Remove soup from heat and stir in heavy cream. Season to taste with salt and pepper; if soup is too thick, thin with additional warm stock until proper consistency is reached. Divide into bowls and serve with grated Parmigiano-Reggiano to sprinkle on top at the table.",
   "image_urls": [
@@ -26,7 +26,7 @@
         }
       ],
       "note": null,
-      "raw": "1 tablespoon (15ml) extra-virgin olive oil",
+      "raw": "1 tablespoon (15 ml) extra-virgin olive oil",
       "section": null
     },
     {
@@ -42,19 +42,27 @@
         }
       ],
       "note": null,
-      "raw": "1 1/2 pounds mild or spicy Italian sausage, removed from casing",
+      "raw": "1 1/2 pounds (680 g) mild or spicy Italian sausage, removed from casing",
       "section": null
     },
     {
-      "item": "onion",
+      "item": "onions",
       "measurements": [
         {
-          "amount": "1",
+          "amount": "2",
           "unit": "medium"
+        },
+        {
+          "amount": "8",
+          "unit": "oz each"
+        },
+        {
+          "amount": "227",
+          "unit": "g each"
         }
       ],
       "note": "finely chopped",
-      "raw": "1 medium onion, finely chopped",
+      "raw": "2 medium onions (8 ounces; 227 g each), finely chopped",
       "section": null
     },
     {
@@ -63,10 +71,18 @@
         {
           "amount": "3",
           "unit": "medium"
+        },
+        {
+          "amount": "0.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "15",
+          "unit": "g"
         }
       ],
       "note": "finely chopped",
-      "raw": "3 medium cloves garlic, finely chopped",
+      "raw": "3 medium cloves garlic (1/2 ounce; 15 g), finely chopped",
       "section": null
     },
     {
@@ -75,10 +91,18 @@
         {
           "amount": "3",
           "unit": "medium"
+        },
+        {
+          "amount": "5.75",
+          "unit": "oz"
+        },
+        {
+          "amount": "165",
+          "unit": "g"
         }
       ],
-      "note": "finely chopped",
-      "raw": "3 medium celery ribs with leaves, finely chopped",
+      "note": "about 5 3/4 ounces; 165 g, finely chopped",
+      "raw": "3 medium celery ribs (about 5 3/4 ounces; 165 g) with leaves, finely chopped",
       "section": null
     },
     {
@@ -98,7 +122,7 @@
         }
       ],
       "note": "finely chopped",
-      "raw": "1 medium fennel bulb (8 ounces; 226g), finely chopped",
+      "raw": "1 medium fennel bulb (8 ounces; 226 g), finely chopped",
       "section": null
     },
     {
@@ -110,7 +134,7 @@
         }
       ],
       "note": null,
-      "raw": "1 1/2 teaspoon fennel seeds",
+      "raw": "1 1/2 teaspoons fennel seeds",
       "section": null
     },
     {
@@ -121,27 +145,36 @@
           "unit": "tsp"
         }
       ],
-      "note": "optional",
-      "raw": "1/4 teaspoon crushed red pepper flakes (optional)",
+      "note": null,
+      "raw": "1/4 teaspoon crushed red pepper flakes",
       "section": null
     },
     {
-      "item": "homemade chicken or vegetable stock or store-bought low-sodium broth",
+      "item": "homemade chicken stock or store-bought low-sodium broth",
       "measurements": [
         {
-          "amount": "6",
+          "amount": "10",
           "unit": "cup"
+        },
+        {
+          "amount": "2.4",
+          "unit": "l"
         }
       ],
       "note": null,
-      "raw": "6 cups homemade chicken or vegetable stock or store-bought low-sodium broth",
+      "raw": "10 cups (2.4 L) homemade chicken stock or store-bought low-sodium broth",
       "section": null
     },
     {
-      "item": "Grated Parmigiano-Reggiano",
-      "measurements": [],
-      "note": "optional, for serving",
-      "raw": "Grated Parmigiano-Reggiano, for serving (optional)",
+      "item": "Parmigiano-Reggiano cheese rinds",
+      "measurements": [
+        {
+          "amount": "1 or 2",
+          "unit": null
+        }
+      ],
+      "note": "optional, plus Grated Parmigiano-Reggiano, for serving",
+      "raw": "1 or 2 Parmigiano-Reggiano cheese rinds (optional), plus Grated Parmigiano-Reggiano, for serving",
       "section": null
     },
     {
@@ -157,7 +190,7 @@
         }
       ],
       "note": "stemmed and cut or torn into roughly 2-inch pieces",
-      "raw": "6 ounces (170g) lacinato or curly kale, stemmed and cut or torn into roughly 2-inch pieces",
+      "raw": "6 ounces (170 g) lacinato or curly kale, stemmed and cut or torn into roughly 2-inch pieces",
       "section": null
     },
     {
@@ -176,28 +209,28 @@
           "unit": "g"
         }
       ],
-      "note": "peeled",
-      "raw": "1 russet potato (12 ounces; 340g), peeled",
+      "note": "read about this potato cutting method for more details, peeled and cut into irregular chunks about 1/2 inch thick",
+      "raw": "1 russet potato (12 ounces; 340 g), peeled and cut into irregular chunks about 1/2 inch thick (read about this potato cutting method for more details)",
       "section": null
     },
     {
       "item": "heavy cream",
       "measurements": [
         {
-          "amount": "1",
+          "amount": "0.5",
           "unit": "cup"
         },
         {
-          "amount": "240",
+          "amount": "120",
           "unit": "ml"
         },
         {
-          "amount": "238",
+          "amount": "119",
           "unit": "g"
         }
       ],
       "note": null,
-      "raw": "1 cup (240ml) heavy cream",
+      "raw": "1/2 cup (120 ml) heavy cream",
       "section": null
     }
   ]

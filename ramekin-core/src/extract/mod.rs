@@ -75,11 +75,13 @@ fn should_parse_html_for_supplements(html: &str) -> bool {
     html.contains("wprm-recipe-group-name")
         || html.contains("jetpack-recipe-ingredients")
         || html.contains("wprm-recipe-instruction")
+        || html.contains("structured-ingredients__list-item")
 }
 
 /// Try to replace flat ingredients or polluted instructions with cleaner HTML-derived content.
 fn supplement_recipe_from_html(recipe: &mut RawRecipe, document: &Html) {
     supplement_ingredient_groups(recipe, document);
+    supplement_dotdash_ingredients(recipe, document);
     supplement_instructions(recipe, document);
 }
 
@@ -91,6 +93,70 @@ fn supplement_ingredient_groups(recipe: &mut RawRecipe, document: &Html) {
     {
         recipe.ingredients = grouped;
     }
+}
+
+/// Prefer the visible Dotdash Meredith (Serious Eats, Simply Recipes, Allrecipes)
+/// ingredient rows over the structured data. Dotdash JSON-LD simplifies combined
+/// rows, dropping quantities the rendered page keeps — e.g. the visible
+/// "1/2 cup plus 2 tablespoons all-purpose flour (80 g), plus 1 cup all-purpose
+/// flour (for dredging), divided" becomes just "1 cup all-purpose flour, for
+/// dredging". Only replace when the visible list covers at least as many
+/// ingredients as the structured data, so a partially rendered page can't drop
+/// rows that JSON-LD has.
+fn supplement_dotdash_ingredients(recipe: &mut RawRecipe, document: &Html) {
+    if dotdash_ingredients_look_normalized(document) {
+        return;
+    }
+    let Some(html_ingredients) = extract_dotdash_meredith_ingredients(document) else {
+        return;
+    };
+    let html_count = html_ingredients
+        .lines()
+        .filter(|line| !line.ends_with(':'))
+        .count();
+    let structured_count = recipe
+        .ingredients
+        .lines()
+        .filter(|line| !line.trim().is_empty())
+        .count();
+    if html_count >= structured_count {
+        recipe.ingredients = html_ingredients;
+    }
+}
+
+/// Detect Dotdash pages whose visible ingredient rows are nutrition-database
+/// normalized (e.g. "454 g pork breakfast sausage", "1 tsp, ground ground black
+/// pepper") rather than the author's text. On those pages every row's text sits
+/// entirely inside data-ingredient-* spans, with no free text (parentheticals,
+/// "divided", "see notes") outside them; the author's rows live only in the
+/// JSON-LD, so the visible rows must not replace it.
+fn dotdash_ingredients_look_normalized(document: &Html) -> bool {
+    let Ok(item_selector) = Selector::parse(".structured-ingredients__list-item") else {
+        return false;
+    };
+    let Ok(span_selector) = Selector::parse(
+        "[data-ingredient-quantity], [data-ingredient-unit], [data-ingredient-name]",
+    ) else {
+        return false;
+    };
+
+    // Whitespace is stripped entirely (not normalized to single spaces) so the
+    // comparison is insensitive to how whitespace falls between text nodes.
+    let mut saw_item = false;
+    for item in document.select(&item_selector) {
+        saw_item = true;
+        let full_text: String = item.text().collect::<String>().split_whitespace().collect();
+        let spanned_text: String = item
+            .select(&span_selector)
+            .flat_map(|el| el.text())
+            .collect::<String>()
+            .split_whitespace()
+            .collect();
+        if full_text != spanned_text {
+            return false;
+        }
+    }
+    saw_item
 }
 
 /// Prefer cleaned HTML instructions when the rendered recipe card is more accurate than

@@ -1,6 +1,6 @@
 {
   "title": "Loubia (Moroccan Stewed White Beans With Lamb)",
-  "description": "This creamy Moroccan white bean stew is studded with spoon-tender morsels of lamb and infused with sweet and earthy flavors from onion, tomatoes, cumin, paprika, ginger, and turmeric. It requires just one pot and minimal effort to prepare.",
+  "description": "Slow-simmered lamb and white beans with aromatic spices and tomato.",
   "servings": "8",
   "instructions": "For the Beans: In a large bowl, cover beans with 8 1/2 cups (2 L) water. Add salt and baking soda, stir briefly to combine, then cover loosely and let soak at room temperature at least 8 and up to 12 hours. Drain the beans, then rinse well under running tap water.\n\nFor the Stew: In a large pot or Dutch oven, heat oil over medium heat until shimmering. Add onion, garlic, tomato paste, cumin, paprika, turmeric, ginger, salt, and pepper, and cook, stirring occasionally, until fragrant, about 3 minutes.\n\nAdd lamb and mix to combine, then let cook, stirring occasionally, until meat is lightly browned, about 5 minutes.\n\nAdd drained and rinsed white beans, grated tomatoes, and stock. If beans aren’t completely covered with liquid, add enough water to just cover them. Bring to a boil over high heat, then reduce heat to low; cover, and cook, stirring occasionally and adjusting heat as needed to maintain a gentle simmer, until lamb is tender and beans are fully cooked and creamy, 1 1/2 to 2 hours. As beans cook, add water if needed to avoid scorching and to maintain a stew-like consistency.\n\nSeason to taste with salt. Serve in shallow bowls with crusty bread on the side. Drizzle with olive oil and garnish with cilantro, if desired.",
   "image_urls": [
@@ -10,7 +10,7 @@
   "source_name": "Seriouseats.com",
   "ingredients": [
     {
-      "item": "dried Great Northern white beans or Cannellini white beans",
+      "item": "dried Great Northern or cannellini beans",
       "measurements": [
         {
           "amount": "1",
@@ -21,9 +21,9 @@
           "unit": "g"
         }
       ],
-      "note": "picked off any debris and rinsed",
-      "raw": "1 pound dried Great Northern white beans or Cannellini white beans, picked off any debris and rinsed",
-      "section": null
+      "note": "picked over to remove debris and rinsed",
+      "raw": "1 pound (454 g) dried Great Northern or cannellini beans, picked over to remove debris and rinsed",
+      "section": "For the Beans"
     },
     {
       "item": "Diamond Crystal kosher salt; for table salt, use about half as much by volume or the same weight",
@@ -39,7 +39,7 @@
       ],
       "note": null,
       "raw": "3 tablespoons (36 g) Diamond Crystal kosher salt; for table salt, use about half as much by volume or the same weight",
-      "section": null
+      "section": "For the Beans"
     },
     {
       "item": "baking soda",
@@ -55,7 +55,7 @@
       ],
       "note": null,
       "raw": "1 3/4 teaspoons (10 g) baking soda",
-      "section": null
+      "section": "For the Beans"
     },
     {
       "item": "olive oil",
@@ -75,7 +75,7 @@
       ],
       "note": "plus more for serving",
       "raw": "3 tablespoons (45 ml) olive oil, plus more for serving",
-      "section": null
+      "section": "For the Stew"
     },
     {
       "item": "yellow onion",
@@ -95,7 +95,7 @@
       ],
       "note": "chopped",
       "raw": "1 large yellow onion (10 ounces; 285 g), chopped",
-      "section": null
+      "section": "For the Stew"
     },
     {
       "item": "garlic",
@@ -111,7 +111,7 @@
       ],
       "note": "minced",
       "raw": "3 cloves garlic (15 g), minced",
-      "section": null
+      "section": "For the Stew"
     },
     {
       "item": "tomato paste",
@@ -127,7 +127,7 @@
       ],
       "note": null,
       "raw": "2 1/2 tablespoons tomato paste",
-      "section": null
+      "section": "For the Stew"
     },
     {
       "item": "ground cumin",
@@ -143,7 +143,7 @@
       ],
       "note": null,
       "raw": "1 1/2 teaspoon ground cumin",
-      "section": null
+      "section": "For the Stew"
     },
     {
       "item": "sweet paprika",
@@ -155,7 +155,7 @@
       ],
       "note": null,
       "raw": "1 1/2 teaspoon sweet paprika",
-      "section": null
+      "section": "For the Stew"
     },
     {
       "item": "ground turmeric",
@@ -171,7 +171,7 @@
       ],
       "note": null,
       "raw": "1 teaspoon ground turmeric",
-      "section": null
+      "section": "For the Stew"
     },
     {
       "item": "ground ginger",
@@ -187,7 +187,7 @@
       ],
       "note": null,
       "raw": "1 teaspoon ground ginger",
-      "section": null
+      "section": "For the Stew"
     },
     {
       "item": "Diamond Crystal kosher salt; for table salt use half as much by volume",
@@ -199,7 +199,7 @@
       ],
       "note": null,
       "raw": "4 teaspoons Diamond Crystal kosher salt; for table salt use half as much by volume",
-      "section": null
+      "section": "For the Stew"
     },
     {
       "item": "freshly ground black pepper",
@@ -211,7 +211,7 @@
       ],
       "note": null,
       "raw": "1/2 teaspoon freshly ground black pepper",
-      "section": null
+      "section": "For the Stew"
     },
     {
       "item": "boneless lamb stew meat",
@@ -227,14 +227,14 @@
       ],
       "note": "lamb neck, leg, or shoulder, or a combination, trimmed of excess fat and cut into 2- to 3-inch pieces",
       "raw": "1 1/4 pounds (567 g) boneless lamb stew meat (lamb neck, leg, or shoulder, or a combination),trimmed of excess fat and cut into 2- to 3-inch pieces",
-      "section": null
+      "section": "For the Stew"
     },
     {
       "item": "Drained brined white beans from above",
       "measurements": [],
       "note": null,
       "raw": "Drained brined white beans from above",
-      "section": null
+      "section": "For the Stew"
     },
     {
       "item": "tomatoes, halved and grated on the large holes of a box grater, with their juices",
@@ -254,7 +254,7 @@
       ],
       "note": "about 10 ounces; 285 g, alternatively use 7 ounces canned chopped tomatoes",
       "raw": "2 large tomatoes (about 10 ounces; 285 g), halved and grated on the large holes of a box grater, with their juices (alternatively use 7 ounces canned chopped tomatoes)",
-      "section": null
+      "section": "For the Stew"
     },
     {
       "item": "homemade chicken or vegetable stock or store-bought low-sodium chicken or vegetable broth",
@@ -270,14 +270,14 @@
       ],
       "note": null,
       "raw": "1 quart (960 ml) homemade chicken or vegetable stock or store-bought low-sodium chicken or vegetable broth",
-      "section": null
+      "section": "For the Stew"
     },
     {
       "item": "Chopped cilantro, for garnish",
       "measurements": [],
       "note": "if desired",
       "raw": "Chopped cilantro, for garnish, if desired",
-      "section": null
+      "section": "For the Stew"
     }
   ]
 }
