@@ -25,25 +25,31 @@ def _load_module():
     return mod
 
 
-def _make_openapi(ops: dict[str, str]) -> dict:
-    """Build a minimal OpenAPI spec. ops maps operationId to a tag name.
+def _make_openapi(ops: dict[str, str], paths: dict[str, str] | None = None) -> dict:
+    """Build a minimal OpenAPI spec.
 
-    The tag determines the generated API class the detector scopes to —
-    e.g. tag `shopping_list` → `ShoppingListApi` (TS) / `ShoppingListAPI`
-    (Swift). Use a tag that matches the API class your stub sources name.
+    `ops` maps operationId to its tag. The tag determines the generated
+    API class the detector scopes to — e.g. tag `shopping_list` →
+    `ShoppingListApi` (TS) / `ShoppingListAPI` (Swift).
+
+    `paths` optionally overrides the URL path per operationId (defaults to
+    a unique `/api/op-{i}` for each op). Provide the same path under two
+    operationIds to exercise path-collision handling.
     """
+    paths = paths or {}
     spec: dict = {
         "openapi": "3.0.0",
         "info": {"title": "t", "version": "0"},
         "paths": {},
     }
     for i, (op_id, tag) in enumerate(ops.items()):
-        spec["paths"][f"/api/op-{i}"] = {
-            "get": {
-                "operationId": op_id,
-                "tags": [tag],
-                "responses": {"200": {"description": "ok"}},
-            },
+        path = paths.get(op_id, f"/api/op-{i}")
+        verb = ["get", "post", "put", "delete"][i % 4]
+        bucket = spec["paths"].setdefault(path, {})
+        bucket[verb] = {
+            "operationId": op_id,
+            "tags": [tag],
+            "responses": {"200": {"description": "ok"}},
         }
     return spec
 
@@ -55,6 +61,7 @@ def _make_fake_repo(
     web_source: str = "",
     ios_source: str = "",
     exceptions_text: str | None,
+    op_paths: dict[str, str] | None = None,
 ) -> Path:
     """Lay out a fake repo with openapi.json, exceptions file, and stub sources.
 
@@ -65,7 +72,7 @@ def _make_fake_repo(
     """
     root = tmp_path / "repo"
     (root / "api").mkdir(parents=True)
-    (root / "api" / "openapi.json").write_text(json.dumps(_make_openapi(ops)))
+    (root / "api" / "openapi.json").write_text(json.dumps(_make_openapi(ops, op_paths)))
     if exceptions_text is not None:
         (root / "api" / "client-parity-exceptions.json5").write_text(exceptions_text)
 
@@ -307,6 +314,81 @@ def test_ios_wrapper_receiver_is_counted_as_ios_usage(tmp_path):
             "_ = try await RamekinAPI.shared.listMealPlans()\n"
         ),
         exceptions_text="{}",
+    )
+    result = _run(repo)
+    assert result.returncode == 0, result.stdout + result.stderr
+
+
+def test_url_path_match_counts_wrapper_alias(tmp_path):
+    # When the iOS wrapper renames a method (e.g. `captureHTML(...)` posts
+    # to `/api/scrape/capture`), the camelCase scan misses it but the URL
+    # path appears as a literal string — that should still count.
+    # Regression test for the second Codex review on PR #551.
+    repo = _make_fake_repo(
+        tmp_path,
+        ops={"capture": "scrape"},
+        op_paths={"capture": "/api/scrape/capture"},
+        web_source=_ts_call("capture", api_class="ScrapeApi"),
+        ios_source=(
+            "// no ScrapeAPI reference; wrapper renames it\n"
+            'request(method: "POST", path: "/api/scrape/capture")\n'
+        ),
+        exceptions_text="{}",
+    )
+    result = _run(repo)
+    assert result.returncode == 0, result.stdout + result.stderr
+
+
+def test_url_path_match_respects_path_boundary(tmp_path):
+    # `/api/scrape` (POST create_scrape) must NOT match a string like
+    # `/api/scrape/capture` — those are different operations.
+    repo = _make_fake_repo(
+        tmp_path,
+        ops={"create_scrape": "scrape", "capture": "scrape"},
+        op_paths={"create_scrape": "/api/scrape", "capture": "/api/scrape/capture"},
+        web_source="",
+        ios_source='request(path: "/api/scrape/capture")\n',
+        exceptions_text="""{
+          create_scrape: {
+            platforms: "neither",
+            reason: "Not yet used by either client",
+          },
+          capture: { platforms: "ios-only", reason: "Wrapper alias" },
+        }""",
+    )
+    result = _run(repo)
+    assert result.returncode == 0, result.stdout + result.stderr
+
+
+def test_url_detection_skipped_for_paths_shared_by_multiple_ops(tmp_path):
+    # PUT and DELETE on `/api/meal-plans/{id}` share the same path string;
+    # URL detection can't disambiguate them without HTTP-verb context, so
+    # it must NOT auto-detect usage for either via URL.
+    repo = _make_fake_repo(
+        tmp_path,
+        ops={"update_meal_plan": "meal_plans", "delete_meal_plan": "meal_plans"},
+        op_paths={
+            "update_meal_plan": "/api/meal-plans/{id}",
+            "delete_meal_plan": "/api/meal-plans/{id}",
+        },
+        web_source="",
+        # Wrapper uses `RamekinAPI.shared.deleteMealPlan(...)` and the URL,
+        # but never calls `update_meal_plan`. URL-only detection would have
+        # falsely attributed iOS usage to both.
+        ios_source=(
+            "let r = RamekinAPI.shared.deleteMealPlan(id: x)\n"
+            'request(method: "DELETE", path: "/api/meal-plans/\\(x.uuidString)")\n'
+        ),
+        exceptions_text="""{
+          delete_meal_plan: {
+            platforms: "ios-only",
+            reason: "Wrapper deletes only",
+          },
+          update_meal_plan: {
+            platforms: "neither",
+            reason: "Path collides with delete; no client truly updates yet",
+          },
+        }""",
     )
     result = _run(repo)
     assert result.returncode == 0, result.stdout + result.stderr

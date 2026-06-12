@@ -53,11 +53,11 @@ def snake_to_camel(name: str) -> str:
     return parts[0] + "".join(p[:1].upper() + p[1:] for p in parts[1:])
 
 
-def load_operations(root: Path) -> list[tuple[str, str]]:
-    """Return sorted (operationId, primary_tag) tuples from openapi.json."""
+def load_operations(root: Path) -> list[tuple[str, str, str]]:
+    """Return sorted (operationId, primary_tag, path) tuples from openapi.json."""
     spec = json.loads((root / "api" / "openapi.json").read_text())
-    ops: list[tuple[str, str]] = []
-    for methods in spec["paths"].values():
+    ops: list[tuple[str, str, str]] = []
+    for path, methods in spec["paths"].items():
         for verb, op in methods.items():
             if verb not in {"get", "post", "put", "delete", "patch"}:
                 continue
@@ -65,7 +65,7 @@ def load_operations(root: Path) -> list[tuple[str, str]]:
             tags = op.get("tags") or []
             if not op_id or not tags:
                 raise SystemExit(f"OpenAPI op missing operationId/tag: {op}")
-            ops.append((op_id, tags[0]))
+            ops.append((op_id, tags[0], path))
     return sorted(ops)
 
 
@@ -111,28 +111,71 @@ def any_file_has_call(files: list[str], method_name: str) -> bool:
 IOS_WRAPPER_RECEIVER = "RamekinAPI.shared"
 
 
-def observed_platforms(root: Path, tag: str, method_name: str) -> str:
+def path_regex(path: str) -> str:
+    """Build a regex that matches an OpenAPI path with `{x}` placeholders.
+
+    Placeholders accept any non-empty run of non-slash/non-quote/non-space
+    characters that contains at least one non-identifier char — so
+    `/api/scrape/{id}` matches `\\(id)`, `${jobId}`, or `{id}` but not a
+    literal segment like `capture` (a more-specific operation).
+
+    A trailing lookahead anchors the end of the path so `/api/scrape`
+    doesn't match `/api/scrape/capture` etc.
+    """
+    parts = re.split(r"\{[^}]+\}", path)
+    placeholder = r"[^\"/\s]*[^A-Za-z0-9_-][^\"/\s]*"
+    body = placeholder.join(re.escape(p) for p in parts)
+    # POSIX ERE has no lookahead, so we consume the followup char (or
+    # anchor to end-of-line). The followup char isn't returned anywhere
+    # — we only care whether the pattern matched.
+    return body + r"([^/A-Za-z0-9_-]|$)"
+
+
+def any_file_has_path(roots: list[Path], path: str, suffixes: tuple[str, ...]) -> bool:
+    """True if any file under `roots` mentions a string matching the
+    OpenAPI path (with `{x}` placeholders accepting variable interpolation)."""
+    existing = [str(r) for r in roots if r.exists()]
+    if not existing:
+        return False
+    includes = [f"--include=*{s}" for s in suffixes]
+    result = _grep(["grep", "-rlE", *includes, path_regex(path), *existing])
+    return result.returncode == 0
+
+
+def observed_platforms(
+    root: Path, tag: str, method_name: str, path: str, path_is_unique: bool
+) -> str:
     """Detect whether each client uses the API operation.
 
-    Matches are scoped to files that actually name an API surface — the
-    generated class (e.g. `ShoppingListApi` in TS, `ShoppingListAPI` in
-    Swift), or the iOS hand-rolled wrapper `RamekinAPI.shared` that
-    forwards a subset of calls to the same endpoints. Scoping eliminates
-    false positives from same-named helpers on local types (e.g.
-    `store.clearChecked()` on a CoreData wrapper) — those files don't
-    name any of the API surfaces.
+    Two complementary signals per side:
+
+    1. **Receiver-class match.** A `.<method>(` call in a file that names
+       the generated API class (`ShoppingListApi` in TS, `ShoppingListAPI`
+       in Swift) or the iOS hand-rolled wrapper `RamekinAPI.shared` (which
+       forwards a subset of endpoints from `Shared/RamekinAPI.swift`).
+       Scoping eliminates same-named-helper false positives (e.g.
+       `store.clearChecked()` on a CoreData store).
+    2. **URL-path match.** The OpenAPI path appears as a literal string
+       in a source file. Catches wrapper aliases (e.g. the iOS
+       `captureHTML(...)` helper that hits `/api/scrape/capture`, or web
+       raw-fetch calls like `authedFetch("/api/recipes/export")`).
     """
     pascal = tag_to_pascal(tag)
-    web_files = files_referencing(
-        [root / r for r in WEB_ROOTS], (f"{pascal}Api",), (".ts", ".tsx")
-    )
-    ios_files = files_referencing(
-        [root / r for r in IOS_ROOTS],
-        (f"{pascal}API", IOS_WRAPPER_RECEIVER),
-        (".swift",),
-    )
+    web_roots = [root / r for r in WEB_ROOTS]
+    ios_roots = [root / r for r in IOS_ROOTS]
+
+    web_files = files_referencing(web_roots, (f"{pascal}Api",), (".ts", ".tsx"))
     web = any_file_has_call(web_files, method_name)
+    if not web and path_is_unique:
+        web = any_file_has_path(web_roots, path, (".ts", ".tsx"))
+
+    ios_files = files_referencing(
+        ios_roots, (f"{pascal}API", IOS_WRAPPER_RECEIVER), (".swift",)
+    )
     ios = any_file_has_call(ios_files, method_name)
+    if not ios and path_is_unique:
+        ios = any_file_has_path(ios_roots, path, (".swift",))
+
     if web and ios:
         return "both"
     if web:
@@ -169,9 +212,18 @@ def check(root: Path) -> tuple[list[str], dict[str, str]]:
     """Return (errors, observed_map). observed_map is op_id -> platforms."""
     errors: list[str] = []
     ops = load_operations(root)
+    # A path "collides" when multiple operations share it (e.g. PUT and
+    # DELETE on the same URL). URL-based detection can't disambiguate
+    # those without HTTP-verb context, so we restrict URL detection to
+    # paths that map to exactly one operation.
+    path_counts: dict[str, int] = {}
+    for _, _, p in ops:
+        path_counts[p] = path_counts.get(p, 0) + 1
     observed = {
-        op_id: observed_platforms(root, tag, snake_to_camel(op_id))
-        for op_id, tag in ops
+        op_id: observed_platforms(
+            root, tag, snake_to_camel(op_id), path, path_counts[path] == 1
+        )
+        for op_id, tag, path in ops
     }
 
     exceptions_path = root / EXCEPTIONS_FILE

@@ -18,16 +18,12 @@
 // or removal, run `./scripts/check_client_parity.py --update`
 // and commit the diff with a note explaining the change.
 {
-  capture: { platforms: "web-only", reason: "Scrape debugging page; iOS has no scrape inspector UI." },
   clear_checked: { platforms: "web-only", reason: "iOS clears checked items in CoreData and flushes through sync_items." },
   create_items: { platforms: "web-only", reason: "iOS mutates shopping list items via sync_items only." },
   create_scrape: { platforms: "web-only", reason: "Scrape debugging page; iOS has no scrape inspector UI." },
   create_tag: { platforms: "neither", reason: "Tags are created implicitly via update_recipe; no client surfaces a standalone create-tag flow." },
   delete_item: { platforms: "web-only", reason: "iOS marks shopping items deleted in CoreData and flushes through sync_items." },
-  export_all_recipes: { platforms: "ios-only", reason: "iOS uses the generated client for Paprika/PDF export; web still triggers downloads via a plain <a> / fetch." },
   export_recipe: { platforms: "ios-only", reason: "iOS uses the generated client for single-recipe export; web still triggers downloads via a plain <a> / fetch." },
-  get_photo: { platforms: "neither", reason: "Photos are loaded by URL in <img>/AsyncImage, not via the generated client." },
-  get_photo_thumbnail: { platforms: "neither", reason: "Thumbnails are loaded by URL in <img>/AsyncImage, not via the generated client." },
   get_step_output: { platforms: "web-only", reason: "Scrape-step debug viewer; web-only." },
   import_from_photos: { platforms: "neither", reason: "Endpoint exists server-side but no client surfaces it yet." },
   import_recipe: { platforms: "web-only", reason: "URL/text import flow not yet ported to iOS." },
@@ -39,7 +35,7 @@
   signup: { platforms: "web-only", reason: "Account creation happens on the web; iOS users sign in to an existing account." },
   sync_items: { platforms: "ios-only", reason: "Web is online-only by design; offline shopping-list sync is iOS-specific." },
   sync_recipes: { platforms: "ios-only", reason: "Web is online-only by design; iOS keeps a local recipe cache via incremental sync." },
-  unauthed_ping: { platforms: "neither", reason: "Health check used by infra/curl; not called from either client." },
+  unauthed_ping: { platforms: "ios-only", reason: "iOS hits this via the RamekinAPI.testConnection() health-check; web doesn't call it." },
   update_item: { platforms: "web-only", reason: "iOS mutates shopping list items via sync_items only." },
   update_meal_plan: { platforms: "neither", reason: "Meal plan entries are immutable in current UI; edit flow not built on either client." },
 }
