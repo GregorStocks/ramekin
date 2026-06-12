@@ -224,6 +224,11 @@ mod tests {
         assert_eq!(categorize("chocolate morsels"), "Baking");
         assert_eq!(categorize("hot chocolate"), "Beverages");
         assert_eq!(categorize("chocolate milk"), "Dairy & Eggs");
+        // Bare "chocolate" must not hijack longer non-candy forms.
+        assert_eq!(categorize("German Chocolate cake mix"), "Baking");
+        assert_eq!(categorize("chocolate frosting"), "Baking");
+        assert_eq!(categorize("chocolate ice cream"), "Frozen");
+        assert_eq!(categorize("chocolate sauce"), "Condiments & Sauces");
     }
 
     #[test]
@@ -314,5 +319,9 @@ mod tests {
         // Scotch the whisky vs scotch bonnet peppers.
         assert_eq!(categorize("scotch"), "Beverages");
         assert_eq!(categorize("scotch bonnet chiles"), "Produce");
+        // Fruit the produce vs canning/juice forms.
+        assert_eq!(categorize("fresh fruit"), "Produce");
+        assert_eq!(categorize("Sure-Jell fruit pectin"), "Baking");
+        assert_eq!(categorize("fruit juice"), "Beverages");
     }
 }
