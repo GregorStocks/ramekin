@@ -1,0 +1,49 @@
+{
+  "title": "AI enrichment parse failures are deterministic, uncached, and untraceable",
+  "description": "Pipeline runs on 2026-06-11 (after purging the mock-poisoned AI cache) \
+showed 22 URLs failing with \"AI call failed: Failed to parse response: \
+Failed t...\" (see data/extraction-report.md). At the previous commit only 1 \
+URL (sweetandsavorymeals.com/buckeye-recipe) failed this way. The failures \
+are deterministic: two back-to-back runs failed the exact same URLs at the \
+exact same steps (some at enrich_normalize_title, some at \
+enrich_generate_description; EnrichAutoTag also drops ~32 URLs per the step \
+timing counts). One affected snapshot \
+(smittenkitchen-com_2022-04-simplest-mushroom-pasta.json) lost its \
+normalized title and description as a result.\n\
+\n\
+Three sub-problems, in increasing order of weirdness:\n\
+\n\
+1. Observability: the full error string is never logged anywhere. \
+simplify_error() truncates to 50 chars in the report, failed steps write no \
+output.json in the run dir, and nothing reaches stdout. Root-causing is \
+basically impossible without re-instrumenting. At minimum, log the full \
+enrichment error (tracing::warn) and persist failed step output like \
+successful ones.\n\
+\n\
+2. The failing responses are NOT in the cache, but the code says they should \
+be: CachingAiClient::complete() caches the response BEFORE the wrapper \
+(normalize_title/generate_description/auto_tag) parses the content, and the \
+parse error text (\"Failed to parse response: Failed t...\" = \
+AiError::ParseError) proves the wrapper was reached. Yet exhaustive scans of \
+the cache (invalid JSON, empty content, missing key, null value, wrong type) \
+found zero unparseable entries. Something in that story is wrong.\n\
+\n\
+3. The same prompt inputs succeed when replayed via curl against the real \
+OpenRouter endpoint (response_format json_object, temperature 0), albeit \
+with an approximated prompt.\n\
+\n\
+Repro: purge/ignore the AI cache entries for the failing URLs (list in \
+data/extraction-report.md under 'AI call failed') and run make pipeline; the \
+same URLs fail every time. Worth fixing because each affected URL silently \
+ships a degraded snapshot (raw title, no description).",
+  "status": "open",
+  "priority": 2,
+  "type": "bug",
+  "labels": [
+    "pipeline",
+    "ai",
+    "observability",
+  ],
+  "created_at": "2026-06-11T22:10:00-07:00",
+  "updated_at": "2026-06-11T22:10:00-07:00",
+}
