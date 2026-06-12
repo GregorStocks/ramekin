@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::schema::{scrape_jobs, step_outputs};
@@ -39,13 +39,7 @@ pub async fn get_step_output(
         Ok(c) => c,
         Err(e) => {
             tracing::error!("Failed to get DB connection: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Database error".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Database error").into_response();
         }
     };
 
@@ -58,26 +52,14 @@ pub async fn get_step_output(
         Ok(o) => o,
         Err(e) => {
             tracing::error!("Failed to look up scrape job owner: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Database error".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Database error").into_response();
         }
     };
 
     match owner {
         Some(uid) if uid == user.id => {}
         _ => {
-            return (
-                StatusCode::NOT_FOUND,
-                Json(ErrorResponse {
-                    error: "Step output not found".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::not_found("Step output not found").into_response();
         }
     }
 
@@ -92,24 +74,12 @@ pub async fn get_step_output(
         Ok(o) => o,
         Err(e) => {
             tracing::error!("Failed to load step output: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Database error".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Database error").into_response();
         }
     };
 
     match output {
         Some(o) => (StatusCode::OK, Json(o)).into_response(),
-        None => (
-            StatusCode::NOT_FOUND,
-            Json(ErrorResponse {
-                error: "Step output not found".to_string(),
-            }),
-        )
-            .into_response(),
+        None => ApiError::not_found("Step output not found").into_response(),
     }
 }

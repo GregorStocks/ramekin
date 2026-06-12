@@ -35,10 +35,12 @@ class TestErrorResponse(unittest.TestCase):
         model = ErrorResponse()
         if include_optional:
             return ErrorResponse(
+                code = 'not_found',
                 error = ''
             )
         else:
             return ErrorResponse(
+                code = 'not_found',
                 error = '',
         )
         """

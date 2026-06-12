@@ -28,6 +28,7 @@ docs/CreateTagResponse.md
 docs/CustomEnrichRequest.md
 docs/Direction.md
 docs/EnrichApi.md
+docs/ErrorCode.md
 docs/ErrorResponse.md
 docs/GenerateDescriptionResponse.md
 docs/GeneratePhotoResponse.md
@@ -105,6 +106,7 @@ models/CreateTagRequest.ts
 models/CreateTagResponse.ts
 models/CustomEnrichRequest.ts
 models/Direction.ts
+models/ErrorCode.ts
 models/ErrorResponse.ts
 models/GenerateDescriptionResponse.ts
 models/GeneratePhotoResponse.ts

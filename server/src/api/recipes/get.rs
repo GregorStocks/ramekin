@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -166,15 +166,7 @@ pub async fn get_recipe(
 
     let row = match result {
         Some(r) => r,
-        None => {
-            return (
-                StatusCode::NOT_FOUND,
-                Json(ErrorResponse {
-                    error: "Recipe not found".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        None => return ApiError::not_found("Recipe not found").into_response(),
     };
 
     let (

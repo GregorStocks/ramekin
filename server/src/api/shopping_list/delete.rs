@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -7,7 +7,6 @@ use axum::{
     extract::{Path, State},
     http::StatusCode,
     response::IntoResponse,
-    Json,
 };
 use chrono::Utc;
 use diesel::prelude::*;
@@ -52,13 +51,7 @@ pub async fn delete_item(
         Ok(count) => count,
         Err(e) => {
             tracing::error!("Failed to delete shopping list item: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to delete item".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to delete item").into_response();
         }
     };
 
@@ -73,24 +66,12 @@ pub async fn delete_item(
             Ok(result) => result,
             Err(e) => {
                 tracing::error!("Failed to check shopping list item: {}", e);
-                return (
-                    StatusCode::INTERNAL_SERVER_ERROR,
-                    Json(ErrorResponse {
-                        error: "Failed to delete item".to_string(),
-                    }),
-                )
-                    .into_response();
+                return ApiError::internal("Failed to delete item").into_response();
             }
         };
 
         if exists.is_none() {
-            return (
-                StatusCode::NOT_FOUND,
-                Json(ErrorResponse {
-                    error: "Item not found".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::not_found("Item not found").into_response();
         }
     }
 

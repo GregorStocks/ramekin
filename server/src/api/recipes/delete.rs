@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -7,7 +7,6 @@ use axum::{
     extract::{Path, State},
     http::StatusCode,
     response::IntoResponse,
-    Json,
 };
 use chrono::Utc;
 use diesel::prelude::*;
@@ -50,24 +49,12 @@ pub async fn delete_recipe(
         Ok(count) => count,
         Err(e) => {
             tracing::error!("Failed to delete recipe: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to delete recipe".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to delete recipe").into_response();
         }
     };
 
     if updated == 0 {
-        return (
-            StatusCode::NOT_FOUND,
-            Json(ErrorResponse {
-                error: "Recipe not found".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::not_found("Recipe not found").into_response();
     }
 
     StatusCode::NO_CONTENT.into_response()

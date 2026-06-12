@@ -643,6 +643,7 @@ class PhotosApi:
             '201': "UploadPhotoResponse",
             '400': "ErrorResponse",
             '401': "ErrorResponse",
+            '413': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -711,6 +712,7 @@ class PhotosApi:
             '201': "UploadPhotoResponse",
             '400': "ErrorResponse",
             '401': "ErrorResponse",
+            '413': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -779,6 +781,7 @@ class PhotosApi:
             '201': "UploadPhotoResponse",
             '400': "ErrorResponse",
             '401': "ErrorResponse",
+            '413': "ErrorResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

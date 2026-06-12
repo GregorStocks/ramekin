@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::scraping;
@@ -47,48 +47,24 @@ pub async fn retry_scrape(
     let job = match scraping::get_job(&pool, job_id) {
         Ok(j) => j,
         Err(scraping::ScrapeError::JobNotFound) => {
-            return (
-                StatusCode::NOT_FOUND,
-                Json(ErrorResponse {
-                    error: "Scrape job not found".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::not_found("Scrape job not found").into_response();
         }
         Err(e) => {
             tracing::error!("Failed to get scrape job: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to get scrape job".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to get scrape job").into_response();
         }
     };
 
     // Check ownership
     if job.user_id != user.id {
-        return (
-            StatusCode::NOT_FOUND,
-            Json(ErrorResponse {
-                error: "Scrape job not found".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::not_found("Scrape job not found").into_response();
     }
 
     // Retry only makes sense for jobs with a URL (scrape jobs, not imports)
     let url = match &job.url {
         Some(u) => u,
         None => {
-            return (
-                StatusCode::BAD_REQUEST,
-                Json(ErrorResponse {
-                    error: "Cannot retry import jobs".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::invalid_request("Cannot retry import jobs").into_response();
         }
     };
 
@@ -96,17 +72,11 @@ pub async fn retry_scrape(
     let new_status = match scraping::retry_job(&pool, job_id) {
         Ok(s) => s,
         Err(scraping::ScrapeError::InvalidState(msg)) => {
-            return (StatusCode::BAD_REQUEST, Json(ErrorResponse { error: msg })).into_response();
+            return ApiError::invalid_request(msg).into_response();
         }
         Err(e) => {
             tracing::error!("Failed to retry scrape job: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to retry scrape job".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to retry scrape job").into_response();
         }
     };
 

@@ -1,5 +1,5 @@
 use crate::api::scrape::create::CreateScrapeResponse;
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::scraping;
@@ -37,13 +37,7 @@ pub async fn capture(
 ) -> impl IntoResponse {
     // Validate URL format
     if let Err(e) = reqwest::Url::parse(&request.source_url) {
-        return (
-            StatusCode::BAD_REQUEST,
-            Json(ErrorResponse {
-                error: format!("Invalid URL: {}", e),
-            }),
-        )
-            .into_response();
+        return ApiError::invalid_request(format!("Invalid URL: {}", e)).into_response();
     }
 
     // Create job with pre-existing HTML
@@ -52,13 +46,7 @@ pub async fn capture(
             Ok(j) => j,
             Err(e) => {
                 tracing::error!("Failed to create capture job: {}", e);
-                return (
-                    StatusCode::INTERNAL_SERVER_ERROR,
-                    Json(ErrorResponse {
-                        error: "Failed to create capture job".to_string(),
-                    }),
-                )
-                    .into_response();
+                return ApiError::internal("Failed to create capture job").into_response();
             }
         };
 

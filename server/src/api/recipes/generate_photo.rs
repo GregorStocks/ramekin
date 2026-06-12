@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -161,24 +161,10 @@ pub async fn generate_photo(
         .first(&mut conn)
     {
         Ok(r) => r,
-        Err(diesel::NotFound) => {
-            return (
-                StatusCode::NOT_FOUND,
-                Json(ErrorResponse {
-                    error: "Recipe not found".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(diesel::NotFound) => return ApiError::not_found("Recipe not found").into_response(),
         Err(e) => {
             tracing::error!("Failed to fetch recipe for photo generation: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch recipe".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to fetch recipe").into_response();
         }
     };
 
@@ -209,13 +195,7 @@ pub async fn generate_photo(
                 "Recipe {} had no current version during photo generation",
                 recipe_id
             );
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch recipe".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to fetch recipe").into_response();
         }
     };
 
@@ -223,13 +203,7 @@ pub async fn generate_photo(
         Ok(c) => c,
         Err(e) => {
             tracing::warn!("AI config unavailable for recipe photo generation: {}", e);
-            return (
-                StatusCode::SERVICE_UNAVAILABLE,
-                Json(ErrorResponse {
-                    error: "AI service unavailable".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::service_unavailable("AI service unavailable").into_response();
         }
     };
 
@@ -246,12 +220,7 @@ pub async fn generate_photo(
         Ok(result) => result,
         Err(e) => {
             tracing::warn!("Recipe photo generation failed: {}", e);
-            return (
-                StatusCode::SERVICE_UNAVAILABLE,
-                Json(ErrorResponse {
-                    error: format!("Photo generation failed: {}", e),
-                }),
-            )
+            return ApiError::service_unavailable(format!("Photo generation failed: {}", e))
                 .into_response();
         }
     };
@@ -260,13 +229,7 @@ pub async fn generate_photo(
         Ok(data) => data,
         Err(e) => {
             tracing::warn!("Generated photo payload was invalid: {}", e);
-            return (
-                StatusCode::SERVICE_UNAVAILABLE,
-                Json(ErrorResponse {
-                    error: "AI returned an invalid image".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::service_unavailable("AI returned an invalid image").into_response();
         }
     };
 
@@ -276,26 +239,14 @@ pub async fn generate_photo(
             raw_image.len(),
             MAX_FILE_SIZE
         );
-        return (
-            StatusCode::SERVICE_UNAVAILABLE,
-            Json(ErrorResponse {
-                error: "AI returned an invalid image".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::service_unavailable("AI returned an invalid image").into_response();
     }
 
     let processed = match process_image(&raw_image) {
         Ok(processed) => processed,
         Err(e) => {
             tracing::warn!("Generated photo failed validation: {}", e);
-            return (
-                StatusCode::SERVICE_UNAVAILABLE,
-                Json(ErrorResponse {
-                    error: "AI returned an invalid image".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::service_unavailable("AI returned an invalid image").into_response();
         }
     };
 
@@ -448,22 +399,12 @@ pub async fn generate_photo(
             }),
         )
             .into_response(),
-        Err(GeneratePhotoWriteError::StaleVersion) => (
-            StatusCode::CONFLICT,
-            Json(ErrorResponse {
-                error: "Recipe changed while generating photo; try again".to_string(),
-            }),
-        )
-            .into_response(),
+        Err(GeneratePhotoWriteError::StaleVersion) => {
+            ApiError::conflict("Recipe changed while generating photo; try again").into_response()
+        }
         Err(GeneratePhotoWriteError::Db(e)) => {
             tracing::error!("Failed to persist generated recipe photo: {}", e);
-            (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to save generated photo".to_string(),
-                }),
-            )
-                .into_response()
+            ApiError::internal("Failed to save generated photo").into_response()
         }
     }
 }

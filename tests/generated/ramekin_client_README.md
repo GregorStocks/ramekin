@@ -127,6 +127,7 @@ Class | Method | HTTP request | Description
  - [CreateTagResponse](ramekin_client/docs/CreateTagResponse.md)
  - [CustomEnrichRequest](ramekin_client/docs/CustomEnrichRequest.md)
  - [Direction](ramekin_client/docs/Direction.md)
+ - [ErrorCode](ramekin_client/docs/ErrorCode.md)
  - [ErrorResponse](ramekin_client/docs/ErrorResponse.md)
  - [GenerateDescriptionResponse](ramekin_client/docs/GenerateDescriptionResponse.md)
  - [GeneratePhotoResponse](ramekin_client/docs/GeneratePhotoResponse.md)

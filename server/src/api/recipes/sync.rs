@@ -1,5 +1,5 @@
 use crate::api::recipes::list::RecipeSummary;
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -106,13 +106,7 @@ pub async fn sync_recipes(
         Ok(rows) => rows,
         Err(e) => {
             tracing::error!("Failed to sync recipes: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to sync recipes".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to sync recipes").into_response();
         }
     };
 
@@ -130,13 +124,7 @@ pub async fn sync_recipes(
         Ok(ids) => ids,
         Err(e) => {
             tracing::error!("Failed to sync deleted recipes: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to sync recipes".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to sync recipes").into_response();
         }
     };
 

@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -439,13 +439,7 @@ pub async fn list_recipes(
         Ok(r) => r,
         Err(e) => {
             tracing::error!("Failed to fetch recipes: {:?}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch recipes".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to fetch recipes").into_response();
         }
     };
 

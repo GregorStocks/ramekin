@@ -323,8 +323,11 @@ struct MealPlanView: View {
             // ignored
         } catch {
             logger.log("addMealPlan error: \(error.localizedDescription)", source: "MealPlan")
+            let message = APIErrorFormatter.code(from: error) == .conflict
+                ? "This recipe is already planned for this meal."
+                : APIErrorFormatter.userMessage(from: error, fallback: "Failed to add to meal plan")
             await MainActor.run {
-                self.error = error.localizedDescription
+                self.error = message
             }
         }
     }
