@@ -38,7 +38,7 @@ pub async fn normalize_title(
     };
 
     let (parsed, response): (NormalizeTitleResponse, _) =
-        complete_json(ai_client, NORMALIZE_TITLE_PROMPT_NAME, request).await?;
+        complete_json(ai_client, NORMALIZE_TITLE_PROMPT_NAME, &request).await?;
 
     let normalized = parsed.normalized_title.trim().to_string();
     let normalized = if normalized.is_empty() {

@@ -38,7 +38,7 @@ pub async fn generate_description(
     };
 
     let (parsed, response): (GenerateDescriptionResponse, _) =
-        complete_json(ai_client, GENERATE_DESCRIPTION_PROMPT_NAME, request).await?;
+        complete_json(ai_client, GENERATE_DESCRIPTION_PROMPT_NAME, &request).await?;
 
     let description = parsed.description.trim().to_string();
 

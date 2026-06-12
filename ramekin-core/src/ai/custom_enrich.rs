@@ -41,7 +41,7 @@ pub async fn custom_enrich(
     // The recipe shape is the caller's concern, but validating that the content
     // is well-formed JSON here keeps truncated responses out of the cache.
     let (_, response): (serde_json::Value, _) =
-        complete_json(ai_client, CUSTOM_ENRICH_PROMPT_NAME, request).await?;
+        complete_json(ai_client, CUSTOM_ENRICH_PROMPT_NAME, &request).await?;
 
     Ok(CustomEnrichResult {
         recipe_json: response.content,

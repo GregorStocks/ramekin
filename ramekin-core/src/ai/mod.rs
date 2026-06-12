@@ -31,7 +31,7 @@
 //!     ..Default::default()
 //! };
 //!
-//! let response = client.complete("test", "v1", request).await?;
+//! let response = client.complete("test", &request).await?;
 //! println!("Response: {}", response.content);
 //! ```
 

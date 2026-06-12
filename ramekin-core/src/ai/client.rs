@@ -39,7 +39,7 @@ pub trait AiClient: Send + Sync {
     async fn complete(
         &self,
         prompt_name: &str,
-        request: ChatRequest,
+        request: &ChatRequest,
     ) -> Result<ChatResponse, AiError>;
 
     /// Remove any cached response for this request so the next call re-queries
@@ -57,9 +57,9 @@ pub trait AiClient: Send + Sync {
 pub async fn complete_json<T: serde::de::DeserializeOwned>(
     ai_client: &dyn AiClient,
     prompt_name: &str,
-    request: ChatRequest,
+    request: &ChatRequest,
 ) -> Result<(T, ChatResponse), AiError> {
-    let response = ai_client.complete(prompt_name, request.clone()).await?;
+    let response = ai_client.complete(prompt_name, request).await?;
 
     let parse_err = match serde_json::from_str::<T>(&response.content) {
         Ok(parsed) => return Ok((parsed, response)),
@@ -78,7 +78,7 @@ pub async fn complete_json<T: serde::de::DeserializeOwned>(
         "Evicted unparseable cached AI response, retrying: {}",
         parse_err
     );
-    let retry = ai_client.complete(prompt_name, request.clone()).await?;
+    let retry = ai_client.complete(prompt_name, request).await?;
     match serde_json::from_str::<T>(&retry.content) {
         Ok(parsed) => Ok((parsed, retry)),
         Err(e) => {
@@ -194,7 +194,7 @@ impl AiClient for CachingAiClient {
     async fn complete(
         &self,
         prompt_name: &str,
-        request: ChatRequest,
+        request: &ChatRequest,
     ) -> Result<ChatResponse, AiError> {
         // Check cache first
         let cache_key = CacheKey::new(prompt_name, &self.config.model, &request.messages);
@@ -320,7 +320,7 @@ mod tests {
         async fn complete(
             &self,
             _prompt_name: &str,
-            _request: ChatRequest,
+            _request: &ChatRequest,
         ) -> Result<ChatResponse, AiError> {
             Ok(self
                 .responses
@@ -362,7 +362,7 @@ mod tests {
         let client = FakeClient::new(vec![response(r#"{"value": "ok"}"#, false)]);
 
         let (parsed, resp): (TestPayload, _) =
-            complete_json(&client, "p", request()).await.unwrap();
+            complete_json(&client, "p", &request()).await.unwrap();
 
         assert_eq!(parsed.value, "ok");
         assert!(!resp.cached);
@@ -374,7 +374,7 @@ mod tests {
         // Truncated JSON, like gemini-2.5-flash stopping after a few tokens.
         let client = FakeClient::new(vec![response(r#"{"value": ""#, false)]);
 
-        let result = complete_json::<TestPayload>(&client, "p", request()).await;
+        let result = complete_json::<TestPayload>(&client, "p", &request()).await;
 
         assert!(matches!(result, Err(AiError::ParseError(_))));
         assert_eq!(*client.forgotten.lock().unwrap(), vec!["p"]);
@@ -388,7 +388,7 @@ mod tests {
         ]);
 
         let (parsed, resp): (TestPayload, _) =
-            complete_json(&client, "p", request()).await.unwrap();
+            complete_json(&client, "p", &request()).await.unwrap();
 
         assert_eq!(parsed.value, "fresh");
         assert!(!resp.cached);
@@ -402,7 +402,7 @@ mod tests {
             response("garbage", false),
         ]);
 
-        let result = complete_json::<TestPayload>(&client, "p", request()).await;
+        let result = complete_json::<TestPayload>(&client, "p", &request()).await;
 
         assert!(matches!(result, Err(AiError::ParseError(_))));
         assert_eq!(*client.forgotten.lock().unwrap(), vec!["p", "p"]);

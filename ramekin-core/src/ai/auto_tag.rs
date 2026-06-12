@@ -47,7 +47,7 @@ pub async fn suggest_tags(
     };
 
     let (ai_response, response): (AutoTagResponse, _) =
-        complete_json(ai_client, AUTO_TAG_PROMPT_NAME, request).await?;
+        complete_json(ai_client, AUTO_TAG_PROMPT_NAME, &request).await?;
 
     // Filter to valid existing tags (case-insensitive, preserve user's casing)
     let valid_tags: Vec<String> = ai_response

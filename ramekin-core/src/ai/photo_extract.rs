@@ -44,7 +44,7 @@ pub async fn extract_recipe_from_photos(
     };
 
     let (extracted, response): (PhotoExtractResponse, _) =
-        complete_json(ai_client, PHOTO_EXTRACT_PROMPT_NAME, request).await?;
+        complete_json(ai_client, PHOTO_EXTRACT_PROMPT_NAME, &request).await?;
 
     let raw_recipe = RawRecipe {
         title: extracted.title,
