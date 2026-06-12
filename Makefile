@@ -112,7 +112,7 @@ test: check-deps $(CLIENT_MARKER) cli/target/debug/ramekin-cli server-release-bu
 test-ui: check-deps $(CLIENT_MARKER) ## Run UI tests with Playwright (requires DATABASE_URL)
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/run-ui-tests.sh
 
-ui-unit-test: ## Run web unit tests (Vitest)
+ui-unit-test: $(CLIENT_MARKER) ## Run web unit tests (Vitest)
 	@cd ramekin-ui && if [ ! -x node_modules/.bin/vitest ]; then npx --yes -p npm@latest npm ci --silent; fi && npx vitest run
 
 .venv/.installed: requirements-test.txt
