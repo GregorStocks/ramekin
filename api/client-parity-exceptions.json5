@@ -19,9 +19,11 @@
 // and commit the diff with a note explaining the change.
 {
   capture: { platforms: "web-only", reason: "Scrape debugging page; iOS has no scrape inspector UI." },
+  clear_checked: { platforms: "web-only", reason: "iOS clears checked items in CoreData and flushes through sync_items." },
   create_items: { platforms: "web-only", reason: "iOS mutates shopping list items via sync_items only." },
   create_scrape: { platforms: "web-only", reason: "Scrape debugging page; iOS has no scrape inspector UI." },
   create_tag: { platforms: "neither", reason: "Tags are created implicitly via update_recipe; no client surfaces a standalone create-tag flow." },
+  delete_item: { platforms: "web-only", reason: "iOS marks shopping items deleted in CoreData and flushes through sync_items." },
   enrich_recipe: { platforms: "web-only", reason: "iOS uses custom_enrich_recipe for AI assists; the implicit-prompt variant is web-only." },
   export_all_recipes: { platforms: "neither", reason: "Browser-only download; web triggers it via a plain <a> / fetch, not the generated client." },
   export_recipe: { platforms: "neither", reason: "Browser-only download; same as export_all_recipes." },

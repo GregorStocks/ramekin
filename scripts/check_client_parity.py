@@ -53,45 +53,86 @@ def snake_to_camel(name: str) -> str:
     return parts[0] + "".join(p[:1].upper() + p[1:] for p in parts[1:])
 
 
-def load_operation_ids(root: Path) -> list[str]:
+def load_operations(root: Path) -> list[tuple[str, str]]:
+    """Return sorted (operationId, primary_tag) tuples from openapi.json."""
     spec = json.loads((root / "api" / "openapi.json").read_text())
-    ops: list[str] = []
+    ops: list[tuple[str, str]] = []
     for methods in spec["paths"].values():
         for verb, op in methods.items():
             if verb not in {"get", "post", "put", "delete", "patch"}:
                 continue
             op_id = op.get("operationId")
-            if not op_id:
-                raise SystemExit(f"OpenAPI op missing operationId: {op}")
-            ops.append(op_id)
+            tags = op.get("tags") or []
+            if not op_id or not tags:
+                raise SystemExit(f"OpenAPI op missing operationId/tag: {op}")
+            ops.append((op_id, tags[0]))
     return sorted(ops)
 
 
-def grep_any(roots: list[Path], pattern: str) -> bool:
+def tag_to_pascal(tag: str) -> str:
+    return "".join(p[:1].upper() + p[1:] for p in tag.split("_"))
+
+
+def _grep(args: list[str]) -> subprocess.CompletedProcess:
+    return subprocess.run(args, capture_output=True, text=True, check=False)
+
+
+def files_referencing(
+    roots: list[Path], tokens: tuple[str, ...], suffixes: tuple[str, ...]
+) -> list[str]:
+    """Return paths of files (within roots) that contain ANY of the tokens."""
     existing = [str(r) for r in roots if r.exists()]
-    if not existing:
+    if not existing or not tokens:
+        return []
+    includes = [f"--include=*{s}" for s in suffixes]
+    # `-F` makes each pattern a literal string; with `-e` we OR them together.
+    token_args: list[str] = []
+    for t in tokens:
+        token_args += ["-e", t]
+    result = _grep(["grep", "-rlF", *includes, *token_args, *existing])
+    seen: set[str] = set()
+    out: list[str] = []
+    for line in result.stdout.splitlines():
+        if line and line not in seen:
+            seen.add(line)
+            out.append(line)
+    return out
+
+
+def any_file_has_call(files: list[str], method_name: str) -> bool:
+    """True if any of `files` contains a `.<method_name>(` call site."""
+    if not files:
         return False
-    result = subprocess.run(
-        [
-            "grep",
-            "-rE",
-            "--include=*.ts",
-            "--include=*.tsx",
-            "--include=*.swift",
-            pattern,
-            *existing,
-        ],
-        capture_output=True,
-        text=True,
-        check=False,
-    )
+    pattern = rf"\.{re.escape(method_name)}\("
+    result = _grep(["grep", "-lE", pattern, *files])
     return result.returncode == 0
 
 
-def observed_platforms(root: Path, method_name: str) -> str:
-    pattern = rf"\.{re.escape(method_name)}\("
-    web = grep_any([root / r for r in WEB_ROOTS], pattern)
-    ios = grep_any([root / r for r in IOS_ROOTS], pattern)
+IOS_WRAPPER_RECEIVER = "RamekinAPI.shared"
+
+
+def observed_platforms(root: Path, tag: str, method_name: str) -> str:
+    """Detect whether each client uses the API operation.
+
+    Matches are scoped to files that actually name an API surface — the
+    generated class (e.g. `ShoppingListApi` in TS, `ShoppingListAPI` in
+    Swift), or the iOS hand-rolled wrapper `RamekinAPI.shared` that
+    forwards a subset of calls to the same endpoints. Scoping eliminates
+    false positives from same-named helpers on local types (e.g.
+    `store.clearChecked()` on a CoreData wrapper) — those files don't
+    name any of the API surfaces.
+    """
+    pascal = tag_to_pascal(tag)
+    web_files = files_referencing(
+        [root / r for r in WEB_ROOTS], (f"{pascal}Api",), (".ts", ".tsx")
+    )
+    ios_files = files_referencing(
+        [root / r for r in IOS_ROOTS],
+        (f"{pascal}API", IOS_WRAPPER_RECEIVER),
+        (".swift",),
+    )
+    web = any_file_has_call(web_files, method_name)
+    ios = any_file_has_call(ios_files, method_name)
     if web and ios:
         return "both"
     if web:
@@ -127,8 +168,11 @@ def parse_entry(entry) -> tuple[str, str | None]:
 def check(root: Path) -> tuple[list[str], dict[str, str]]:
     """Return (errors, observed_map). observed_map is op_id -> platforms."""
     errors: list[str] = []
-    op_ids = load_operation_ids(root)
-    observed = {op: observed_platforms(root, snake_to_camel(op)) for op in op_ids}
+    ops = load_operations(root)
+    observed = {
+        op_id: observed_platforms(root, tag, snake_to_camel(op_id))
+        for op_id, tag in ops
+    }
 
     exceptions_path = root / EXCEPTIONS_FILE
     if not exceptions_path.exists():

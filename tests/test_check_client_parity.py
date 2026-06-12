@@ -26,7 +26,12 @@ def _load_module():
 
 
 def _make_openapi(ops: dict[str, str]) -> dict:
-    """Build a minimal OpenAPI spec with the given {operationId: tag} map."""
+    """Build a minimal OpenAPI spec. ops maps operationId to a tag name.
+
+    The tag determines the generated API class the detector scopes to —
+    e.g. tag `shopping_list` → `ShoppingListApi` (TS) / `ShoppingListAPI`
+    (Swift). Use a tag that matches the API class your stub sources name.
+    """
     spec: dict = {
         "openapi": "3.0.0",
         "info": {"title": "t", "version": "0"},
@@ -47,11 +52,17 @@ def _make_fake_repo(
     tmp_path: Path,
     *,
     ops: dict[str, str],
-    web_uses: list[str],
-    ios_uses: list[str],
+    web_source: str = "",
+    ios_source: str = "",
     exceptions_text: str | None,
 ) -> Path:
-    """Lay out a fake repo with openapi.json, exceptions file, and stub sources."""
+    """Lay out a fake repo with openapi.json, exceptions file, and stub sources.
+
+    web_source / ios_source are the literal contents of the per-side
+    source files (no automatic API-class header is added). Tests that
+    want a method call counted must include both the API-class token
+    AND the `.method(` call in their source.
+    """
     root = tmp_path / "repo"
     (root / "api").mkdir(parents=True)
     (root / "api" / "openapi.json").write_text(json.dumps(_make_openapi(ops)))
@@ -59,29 +70,41 @@ def _make_fake_repo(
         (root / "api" / "client-parity-exceptions.json5").write_text(exceptions_text)
 
     (root / "ramekin-ui" / "src").mkdir(parents=True)
-    (root / "ramekin-ui" / "src" / "use.ts").write_text(
-        "// stub web usage\n" + "\n".join(f"x.{m}();" for m in web_uses)
-    )
+    (root / "ramekin-ui" / "src" / "use.ts").write_text(web_source)
 
     (root / "ramekin-ios" / "Ramekin").mkdir(parents=True)
-    (root / "ramekin-ios" / "Ramekin" / "Use.swift").write_text(
-        "// stub ios usage\n" + "\n".join(f"x.{m}()" for m in ios_uses)
-    )
+    (root / "ramekin-ios" / "Ramekin" / "Use.swift").write_text(ios_source)
 
     # Drop a generated-client dir on each side that also references the method —
     # the detector must NOT count these as real usage.
     (root / "ramekin-ui" / "generated-client").mkdir(parents=True)
     (root / "ramekin-ui" / "generated-client" / "noise.ts").write_text(
-        "\n".join(f"x.{op}();" for op in ops)
+        "// looks like API class but is in generated-client\n"
+        + "".join(
+            f"export class {_pascal(t)}Api {{ {snake_to_camel(o)}() {{}} }};\n"
+            for o, t in ops.items()
+        )
     )
     (root / "ramekin-ios" / "generated-client").mkdir(parents=True)
     (root / "ramekin-ios" / "generated-client" / "Noise.swift").write_text(
-        "\n".join(f"x.{op}()" for op in ops)
+        "".join(
+            f"class {_pascal(t)}API {{ func {snake_to_camel(o)}() {{}} }};\n"
+            for o, t in ops.items()
+        )
     )
 
     (root / "scripts").mkdir()
     shutil.copy(SCRIPT_PATH, root / "scripts" / "check_client_parity.py")
     return root
+
+
+def _pascal(tag: str) -> str:
+    return "".join(p[:1].upper() + p[1:] for p in tag.split("_"))
+
+
+def snake_to_camel(s: str) -> str:
+    parts = s.split("_")
+    return parts[0] + "".join(p[:1].upper() + p[1:] for p in parts[1:])
 
 
 def _run(repo: Path, *args: str) -> subprocess.CompletedProcess:
@@ -94,12 +117,26 @@ def _run(repo: Path, *args: str) -> subprocess.CompletedProcess:
     )
 
 
+def _ts_call(method: str, api_class: str = "ThingsApi") -> str:
+    """A TS callsite that the detector should count.
+
+    Both the API class token and the `.method(` call must appear in the
+    same file (the detector scopes per-file).
+    """
+    return f"import {{ {api_class} }} from 'ramekin-client';\nx.{method}();\n"
+
+
+def _ios_call(method: str, api_class: str = "ThingsAPI") -> str:
+    """A Swift callsite that the detector should count."""
+    return f"// uses {api_class}\nx.{method}()\n"
+
+
 def test_both_is_the_default_no_entry_needed(tmp_path):
     repo = _make_fake_repo(
         tmp_path,
         ops={"list_things": "things"},
-        web_uses=["listThings"],
-        ios_uses=["listThings"],
+        web_source=_ts_call("listThings"),
+        ios_source=_ios_call("listThings"),
         exceptions_text="{}",
     )
     result = _run(repo)
@@ -111,8 +148,8 @@ def test_passes_with_documented_exception(tmp_path):
     repo = _make_fake_repo(
         tmp_path,
         ops={"list_things": "things", "sync_things": "things"},
-        web_uses=["listThings"],
-        ios_uses=["listThings", "syncThings"],
+        web_source=_ts_call("listThings"),
+        ios_source=_ios_call("listThings") + _ios_call("syncThings"),
         exceptions_text="""{
           sync_things: {
             platforms: "ios-only",
@@ -128,8 +165,8 @@ def test_fails_when_asymmetric_op_is_missing_from_exceptions(tmp_path):
     repo = _make_fake_repo(
         tmp_path,
         ops={"new_op": "things"},
-        web_uses=["newOp"],
-        ios_uses=[],
+        web_source=_ts_call("newOp"),
+        ios_source="",
         exceptions_text="{}",
     )
     result = _run(repo)
@@ -142,8 +179,8 @@ def test_fails_when_exception_lists_an_op_that_is_now_both(tmp_path):
     repo = _make_fake_repo(
         tmp_path,
         ops={"adopted": "things"},
-        web_uses=["adopted"],
-        ios_uses=["adopted"],
+        web_source=_ts_call("adopted"),
+        ios_source=_ios_call("adopted"),
         exceptions_text="""{
           adopted: { platforms: "web-only", reason: "iOS adoption pending" },
         }""",
@@ -158,8 +195,8 @@ def test_fails_when_exception_platforms_mismatch_source(tmp_path):
     repo = _make_fake_repo(
         tmp_path,
         ops={"diverged": "things"},
-        web_uses=[],
-        ios_uses=["diverged"],
+        web_source="",
+        ios_source=_ios_call("diverged"),
         exceptions_text="""{
           diverged: { platforms: "web-only", reason: "ios pending" },
         }""",
@@ -175,8 +212,8 @@ def test_fails_when_exception_references_unknown_op(tmp_path):
     repo = _make_fake_repo(
         tmp_path,
         ops={"list_things": "things"},
-        web_uses=["listThings"],
-        ios_uses=["listThings"],
+        web_source=_ts_call("listThings"),
+        ios_source=_ios_call("listThings"),
         exceptions_text="""{
           removed_op: { platforms: "neither", reason: "old endpoint" },
         }""",
@@ -193,8 +230,8 @@ def test_fails_when_exception_has_no_reason(tmp_path):
     repo = _make_fake_repo(
         tmp_path,
         ops={"sync_things": "things"},
-        web_uses=[],
-        ios_uses=["syncThings"],
+        web_source="",
+        ios_source=_ios_call("syncThings"),
         exceptions_text="""{
           sync_things: { platforms: "ios-only" },
         }""",
@@ -205,12 +242,13 @@ def test_fails_when_exception_has_no_reason(tmp_path):
 
 
 def test_generated_client_dirs_are_excluded(tmp_path):
-    # ops referenced ONLY inside generated-client must come back as "neither".
+    # The fixture writes a generated-client noise file that defines the
+    # class and method; the detector must not count those as real usage.
     repo = _make_fake_repo(
         tmp_path,
         ops={"only_in_generated": "things"},
-        web_uses=[],
-        ios_uses=[],
+        web_source="",
+        ios_source="",
         exceptions_text="""{
           only_in_generated: { platforms: "neither", reason: "infra-only" },
         }""",
@@ -223,8 +261,8 @@ def test_fails_when_exceptions_file_is_missing(tmp_path):
     repo = _make_fake_repo(
         tmp_path,
         ops={"list_things": "things"},
-        web_uses=["listThings"],
-        ios_uses=["listThings"],
+        web_source=_ts_call("listThings"),
+        ios_source=_ios_call("listThings"),
         exceptions_text=None,
     )
     result = _run(repo)
@@ -232,12 +270,54 @@ def test_fails_when_exceptions_file_is_missing(tmp_path):
     assert "Missing api/client-parity-exceptions.json5" in result.stderr
 
 
+def test_same_named_helper_on_local_type_is_not_counted(tmp_path):
+    # `store.clearChecked()` is a CoreData helper, not a generated-client
+    # call — the file does NOT mention the API class, so it must not
+    # count as iOS usage. Regression test for the Codex review on PR #551.
+    repo = _make_fake_repo(
+        tmp_path,
+        ops={"clear_checked": "shopping_list"},
+        web_source=_ts_call("clearChecked", api_class="ShoppingListApi"),
+        ios_source=(
+            "// purely-local CoreData helper, no generated-client receiver.\n"
+            "class ShoppingListStore { func clearChecked() {} }\n"
+            "store.clearChecked()\n"
+        ),
+        exceptions_text="""{
+          clear_checked: {
+            platforms: "web-only",
+            reason: "iOS clears in CoreData, flushes via sync_items",
+          },
+        }""",
+    )
+    result = _run(repo)
+    assert result.returncode == 0, result.stdout + result.stderr
+
+
+def test_ios_wrapper_receiver_is_counted_as_ios_usage(tmp_path):
+    # iOS wraps a subset of endpoints behind `RamekinAPI.shared.<method>()`.
+    # The file doesn't name the generated `MealPlansAPI`, but should still
+    # count as iOS usage of the endpoint.
+    repo = _make_fake_repo(
+        tmp_path,
+        ops={"list_meal_plans": "meal_plans"},
+        web_source=_ts_call("listMealPlans", api_class="MealPlansApi"),
+        ios_source=(
+            "// uses the iOS hand-rolled wrapper, not the generated class\n"
+            "_ = try await RamekinAPI.shared.listMealPlans()\n"
+        ),
+        exceptions_text="{}",
+    )
+    result = _run(repo)
+    assert result.returncode == 0, result.stdout + result.stderr
+
+
 def test_update_omits_both_ops_and_writes_only_exceptions(tmp_path):
     repo = _make_fake_repo(
         tmp_path,
         ops={"list_things": "things", "sync_things": "things"},
-        web_uses=["listThings"],
-        ios_uses=["listThings", "syncThings"],
+        web_source=_ts_call("listThings"),
+        ios_source=_ios_call("listThings") + _ios_call("syncThings"),
         exceptions_text="""{
           sync_things: {
             platforms: "ios-only",
@@ -257,8 +337,8 @@ def test_update_drops_entry_when_op_becomes_both(tmp_path):
     repo = _make_fake_repo(
         tmp_path,
         ops={"list_things": "things"},
-        web_uses=["listThings"],
-        ios_uses=["listThings"],
+        web_source=_ts_call("listThings"),
+        ios_source=_ios_call("listThings"),
         exceptions_text="""{
           list_things: { platforms: "ios-only", reason: "old reason" },
         }""",
