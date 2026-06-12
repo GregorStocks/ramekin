@@ -1,0 +1,36 @@
+{
+  "title": "Remove AI title/description rewrites from pipeline snapshots",
+  "description": "PR #559 dropped AI-suggested tags from pipeline snapshots \
+because they churn across machines whenever the AI cache differs. The same \
+problem remains for the other two AI enrichments that assemble_snapshot \
+(cli/src/pipeline/snapshots.rs) folds into snapshots: enrich_normalize_title \
+overrides the snapshot's title and enrich_generate_description overrides its \
+description. Both are AI calls, so two machines with different \
+~/.ramekin/ai-cache contents produce different committed snapshots even with \
+identical code and scrape cache. (The AI-cache poisoning incident on \
+2026-06-11 made this vivid: descriptions flipped to mock text purely from \
+cache state.)\n\
+\n\
+Fix: stop reading enrich_normalize_title and enrich_generate_description in \
+assemble_snapshot, so snapshots carry only the extracted title/description. \
+After this, FinalRecipe is fully deterministic given the scrape cache: \
+extraction and ingredient parsing are pure functions of the cached HTML. \
+build_final_recipe's normalized_title/generated_description parameters can \
+likely go away entirely (FinalRecipe is snapshot-only).\n\
+\n\
+Related committed outputs that stay non-deterministic and may deserve their \
+own pass (probably separate changes): data/tag-report.md is entirely \
+AI-derived, and data/extraction-report.md's 'AI Cache' hit/miss counts and \
+'Completed' counts vary with per-machine cache state (enrichment failures \
+count against completion). The title-normalization and description-generation \
+eval reports under data/ have the same property.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "pipeline",
+    "ai",
+  ],
+  "created_at": "2026-06-11T21:11:52-07:00",
+  "updated_at": "2026-06-11T21:11:52-07:00",
+}
