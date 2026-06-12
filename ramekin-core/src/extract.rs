@@ -79,11 +79,13 @@ fn should_parse_html_for_supplements(html: &str) -> bool {
     html.contains("wprm-recipe-group-name")
         || html.contains("jetpack-recipe-ingredients")
         || html.contains("wprm-recipe-instruction")
+        || html.contains("structured-ingredients__list-item")
 }
 
 /// Try to replace flat ingredients or polluted instructions with cleaner HTML-derived content.
 fn supplement_recipe_from_html(recipe: &mut RawRecipe, document: &Html) {
     supplement_ingredient_groups(recipe, document);
+    supplement_dotdash_ingredients(recipe, document);
     supplement_instructions(recipe, document);
 }
 
@@ -94,6 +96,32 @@ fn supplement_ingredient_groups(recipe: &mut RawRecipe, document: &Html) {
         .or_else(|| extract_jetpack_ingredients_with_groups(document))
     {
         recipe.ingredients = grouped;
+    }
+}
+
+/// Prefer the visible Dotdash Meredith (Serious Eats, Simply Recipes, Allrecipes)
+/// ingredient rows over the structured data. Dotdash JSON-LD simplifies combined
+/// rows, dropping quantities the rendered page keeps — e.g. the visible
+/// "1/2 cup plus 2 tablespoons all-purpose flour (80 g), plus 1 cup all-purpose
+/// flour (for dredging), divided" becomes just "1 cup all-purpose flour, for
+/// dredging". Only replace when the visible list covers at least as many
+/// ingredients as the structured data, so a partially rendered page can't drop
+/// rows that JSON-LD has.
+fn supplement_dotdash_ingredients(recipe: &mut RawRecipe, document: &Html) {
+    let Some(html_ingredients) = extract_dotdash_meredith_ingredients(document) else {
+        return;
+    };
+    let html_count = html_ingredients
+        .lines()
+        .filter(|line| !line.ends_with(':'))
+        .count();
+    let structured_count = recipe
+        .ingredients
+        .lines()
+        .filter(|line| !line.trim().is_empty())
+        .count();
+    if html_count >= structured_count {
+        recipe.ingredients = html_ingredients;
     }
 }
 
@@ -4090,6 +4118,86 @@ mod tests {
         assert_eq!(lines[3], "Broth:");
         assert_eq!(lines[4], "1 can coconut milk");
         assert_eq!(lines[5], "2 cups chicken stock");
+    }
+
+    #[test]
+    fn test_dotdash_visible_ingredients_supplement_jsonld() {
+        // Dotdash Meredith (Serious Eats) JSON-LD simplifies combined ingredient
+        // rows, dropping quantities the visible page keeps. The visible
+        // .structured-ingredients rows should win.
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Croquetas de Jamón",
+                    "recipeIngredient": [
+                        "2 cups (473ml) whole milk",
+                        "1 cup all-purpose flour, for dredging"
+                    ],
+                    "recipeInstructions": "Stir in flour, then dredge and fry."
+                }
+                </script>
+            </head>
+            <body>
+                <div class="comp structured-ingredients">
+                    <ul class="structured-ingredients__list">
+                        <li class="structured-ingredients__list-item"><p>2 cups (473 ml) whole milk</p></li>
+                        <li class="structured-ingredients__list-item"><p>1/2 cup plus 2 tablespoons all-purpose flour (80 g), plus 1 cup all-purpose flour (for dredging), divided</p></li>
+                    </ul>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://www.seriouseats.com/croquetas").unwrap();
+        let lines: Vec<&str> = result.ingredients.lines().collect();
+        assert_eq!(
+            lines,
+            vec![
+                "2 cups (473 ml) whole milk",
+                "1/2 cup plus 2 tablespoons all-purpose flour (80 g), plus 1 cup all-purpose flour (for dredging), divided",
+            ]
+        );
+    }
+
+    #[test]
+    fn test_dotdash_visible_ingredients_fewer_rows_keeps_jsonld() {
+        // If the rendered page shows fewer ingredient rows than the structured
+        // data (e.g. a partially rendered list), keep the JSON-LD version.
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Croquetas de Jamón",
+                    "recipeIngredient": [
+                        "2 cups (473ml) whole milk",
+                        "1 cup all-purpose flour, for dredging"
+                    ],
+                    "recipeInstructions": "Stir in flour, then dredge and fry."
+                }
+                </script>
+            </head>
+            <body>
+                <div class="comp structured-ingredients">
+                    <ul class="structured-ingredients__list">
+                        <li class="structured-ingredients__list-item"><p>2 cups (473 ml) whole milk</p></li>
+                    </ul>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://www.seriouseats.com/croquetas").unwrap();
+        let lines: Vec<&str> = result.ingredients.lines().collect();
+        assert_eq!(
+            lines,
+            vec![
+                "2 cups (473ml) whole milk",
+                "1 cup all-purpose flour, for dredging",
+            ]
+        );
     }
 
     #[test]
