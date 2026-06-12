@@ -11,4 +11,5 @@ from ramekin_client.api.scrape_api import ScrapeApi
 from ramekin_client.api.shopping_list_api import ShoppingListApi
 from ramekin_client.api.tags_api import TagsApi
 from ramekin_client.api.testing_api import TestingApi
+from ramekin_client.api.users_api import UsersApi
 

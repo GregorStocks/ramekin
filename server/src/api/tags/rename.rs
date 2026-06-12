@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -55,13 +55,7 @@ pub async fn rename_tag(
     let new_name = request.name.trim();
 
     if let Err(err) = ramekin_core::validate_tag_name(new_name) {
-        return (
-            StatusCode::BAD_REQUEST,
-            Json(ErrorResponse {
-                error: err.message().to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::invalid_request(err.message().to_string()).into_response();
     }
 
     let mut conn = get_conn!(pool);
@@ -77,13 +71,7 @@ pub async fn rename_tag(
         .unwrap_or(None);
 
     let Some((_tag_id, current_name)) = existing_tag else {
-        return (
-            StatusCode::NOT_FOUND,
-            Json(ErrorResponse {
-                error: "Tag not found".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::not_found("Tag not found").into_response();
     };
 
     // If renaming to the same name (possibly different case), just return success
@@ -106,13 +94,7 @@ pub async fn rename_tag(
             }
             Err(e) => {
                 tracing::error!("Failed to rename tag: {}", e);
-                (
-                    StatusCode::INTERNAL_SERVER_ERROR,
-                    Json(ErrorResponse {
-                        error: "Failed to rename tag".to_string(),
-                    }),
-                )
-                    .into_response()
+                ApiError::internal("Failed to rename tag").into_response()
             }
         };
     }
@@ -129,13 +111,7 @@ pub async fn rename_tag(
         .unwrap_or(None);
 
     if duplicate.is_some() {
-        return (
-            StatusCode::CONFLICT,
-            Json(ErrorResponse {
-                error: "Tag with that name already exists".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::conflict("Tag with that name already exists").into_response();
     }
 
     // Perform the rename
@@ -153,13 +129,7 @@ pub async fn rename_tag(
         Ok((id, name)) => (StatusCode::OK, Json(RenameTagResponse { id, name })).into_response(),
         Err(e) => {
             tracing::error!("Failed to rename tag: {}", e);
-            (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to rename tag".to_string(),
-                }),
-            )
-                .into_response()
+            ApiError::internal("Failed to rename tag").into_response()
         }
     }
 }

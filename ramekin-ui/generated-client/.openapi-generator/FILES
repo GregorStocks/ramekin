@@ -9,6 +9,7 @@ apis/ScrapeApi.ts
 apis/ShoppingListApi.ts
 apis/TagsApi.ts
 apis/TestingApi.ts
+apis/UsersApi.ts
 apis/index.ts
 docs/AuthApi.md
 docs/CaptureRequest.md
@@ -27,6 +28,7 @@ docs/CreateTagResponse.md
 docs/CustomEnrichRequest.md
 docs/Direction.md
 docs/EnrichApi.md
+docs/ErrorCode.md
 docs/ErrorResponse.md
 docs/GenerateDescriptionResponse.md
 docs/GeneratePhotoResponse.md
@@ -41,6 +43,7 @@ docs/Ingredient.md
 docs/ListRecipesResponse.md
 docs/LoginRequest.md
 docs/LoginResponse.md
+docs/MeResponse.md
 docs/MealPlanItem.md
 docs/MealPlanListResponse.md
 docs/MealPlansApi.md
@@ -84,6 +87,7 @@ docs/UpdateMealPlanRequest.md
 docs/UpdateRecipeRequest.md
 docs/UpdateShoppingListItemRequest.md
 docs/UploadPhotoResponse.md
+docs/UsersApi.md
 docs/VersionListResponse.md
 docs/VersionSummary.md
 index.ts
@@ -102,6 +106,7 @@ models/CreateTagRequest.ts
 models/CreateTagResponse.ts
 models/CustomEnrichRequest.ts
 models/Direction.ts
+models/ErrorCode.ts
 models/ErrorResponse.ts
 models/GenerateDescriptionResponse.ts
 models/GeneratePhotoResponse.ts
@@ -115,6 +120,7 @@ models/Ingredient.ts
 models/ListRecipesResponse.ts
 models/LoginRequest.ts
 models/LoginResponse.ts
+models/MeResponse.ts
 models/MealPlanItem.ts
 models/MealPlanListResponse.ts
 models/MealType.ts

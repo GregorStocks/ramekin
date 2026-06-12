@@ -70,6 +70,7 @@ Class | Method | HTTP request | Description
 *TagsApi* | [**rename_tag**](docs/TagsApi.md#rename_tag) | **PATCH** /api/tags/{id} | 
 *TestingApi* | [**ping**](docs/TestingApi.md#ping) | **GET** /api/test/ping | 
 *TestingApi* | [**unauthed_ping**](docs/TestingApi.md#unauthed_ping) | **GET** /api/test/unauthed-ping | 
+*UsersApi* | [**me**](docs/UsersApi.md#me) | **GET** /api/users/me | 
 
 
 ## Documentation For Models
@@ -89,6 +90,7 @@ Class | Method | HTTP request | Description
  - [CreateTagResponse](docs/CreateTagResponse.md)
  - [CustomEnrichRequest](docs/CustomEnrichRequest.md)
  - [Direction](docs/Direction.md)
+ - [ErrorCode](docs/ErrorCode.md)
  - [ErrorResponse](docs/ErrorResponse.md)
  - [GenerateDescriptionResponse](docs/GenerateDescriptionResponse.md)
  - [GeneratePhotoResponse](docs/GeneratePhotoResponse.md)
@@ -102,6 +104,7 @@ Class | Method | HTTP request | Description
  - [ListRecipesResponse](docs/ListRecipesResponse.md)
  - [LoginRequest](docs/LoginRequest.md)
  - [LoginResponse](docs/LoginResponse.md)
+ - [MeResponse](docs/MeResponse.md)
  - [MealPlanItem](docs/MealPlanItem.md)
  - [MealPlanListResponse](docs/MealPlanListResponse.md)
  - [MealType](docs/MealType.md)

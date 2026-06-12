@@ -23,13 +23,7 @@ macro_rules! get_conn {
         match $pool.get() {
             Ok(c) => c,
             Err(_) => {
-                return (
-                    axum::http::StatusCode::INTERNAL_SERVER_ERROR,
-                    axum::Json($crate::api::ErrorResponse {
-                        error: "Database connection failed".to_string(),
-                    }),
-                )
-                    .into_response()
+                return $crate::api::ApiError::internal("Database connection failed").into_response()
             }
         }
     };

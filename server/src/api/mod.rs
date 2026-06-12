@@ -1,4 +1,5 @@
 pub mod enrich;
+pub mod error;
 pub mod import;
 pub mod meal_plans;
 pub mod photos;
@@ -8,24 +9,20 @@ pub mod scrape;
 pub mod shopping_list;
 pub mod tags;
 pub mod testing;
+pub mod users;
 
-use serde::Serialize;
 use utoipa::openapi::security::{Http, HttpAuthScheme, SecurityScheme};
-use utoipa::{OpenApi, ToSchema};
+use utoipa::OpenApi;
 
 use crate::models::Ingredient;
 
-/// Shared error response used by all endpoints
-#[derive(Debug, Clone, Serialize, ToSchema)]
-pub struct ErrorResponse {
-    pub error: String,
-}
+pub use error::{ApiError, ErrorCode, ErrorResponse};
 
 /// Generate the complete OpenAPI spec by merging all module specs
 pub fn openapi() -> utoipa::openapi::OpenApi {
     // Base spec with shared components and security
     #[derive(OpenApi)]
-    #[openapi(components(schemas(ErrorResponse, Ingredient)))]
+    #[openapi(components(schemas(ErrorResponse, ErrorCode, Ingredient)))]
     struct BaseApi;
 
     let mut spec = BaseApi::openapi();
@@ -50,6 +47,7 @@ pub fn openapi() -> utoipa::openapi::OpenApi {
         import::ApiDoc::openapi(),
         meal_plans::ApiDoc::openapi(),
         shopping_list::ApiDoc::openapi(),
+        users::ApiDoc::openapi(),
     ];
 
     for module_spec in modules {

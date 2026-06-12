@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::scraping;
@@ -66,35 +66,17 @@ pub async fn get_scrape(
     let job = match scraping::get_job(&pool, job_id) {
         Ok(j) => j,
         Err(scraping::ScrapeError::JobNotFound) => {
-            return (
-                StatusCode::NOT_FOUND,
-                Json(ErrorResponse {
-                    error: "Scrape job not found".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::not_found("Scrape job not found").into_response();
         }
         Err(e) => {
             tracing::error!("Failed to get scrape job: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to get scrape job".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to get scrape job").into_response();
         }
     };
 
     // Check ownership
     if job.user_id != user.id {
-        return (
-            StatusCode::NOT_FOUND,
-            Json(ErrorResponse {
-                error: "Scrape job not found".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::not_found("Scrape job not found").into_response();
     }
 
     let can_retry = job.status == scraping::STATUS_FAILED;
@@ -114,13 +96,7 @@ pub async fn get_scrape(
         Ok(s) => s,
         Err(e) => {
             tracing::error!("Failed to build step states: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to build step states".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to build step states").into_response();
         }
     };
 

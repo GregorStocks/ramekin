@@ -8,3 +8,4 @@ export * from './ScrapeApi';
 export * from './ShoppingListApi';
 export * from './TagsApi';
 export * from './TestingApi';
+export * from './UsersApi';

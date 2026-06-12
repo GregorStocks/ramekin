@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::scraping;
@@ -43,24 +43,12 @@ pub async fn create_scrape(
 ) -> impl IntoResponse {
     // Validate URL format
     if let Err(e) = reqwest::Url::parse(&request.url) {
-        return (
-            StatusCode::BAD_REQUEST,
-            Json(ErrorResponse {
-                error: format!("Invalid URL: {}", e),
-            }),
-        )
-            .into_response();
+        return ApiError::invalid_request(format!("Invalid URL: {}", e)).into_response();
     }
 
     // Check if host is allowed (for early failure)
     if let Err(e) = scraping::is_host_allowed(&request.url) {
-        return (
-            StatusCode::BAD_REQUEST,
-            Json(ErrorResponse {
-                error: e.to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::invalid_request(e.to_string()).into_response();
     }
 
     // Create job
@@ -68,13 +56,7 @@ pub async fn create_scrape(
         Ok(j) => j,
         Err(e) => {
             tracing::error!("Failed to create scrape job: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to create scrape job".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to create scrape job").into_response();
         }
     };
 

@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -124,24 +124,10 @@ pub async fn normalize_title(
         .first(&mut conn)
     {
         Ok(r) => r,
-        Err(diesel::NotFound) => {
-            return (
-                StatusCode::NOT_FOUND,
-                Json(ErrorResponse {
-                    error: "Recipe not found".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(diesel::NotFound) => return ApiError::not_found("Recipe not found").into_response(),
         Err(e) => {
             tracing::error!("Failed to fetch recipe: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch recipe".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to fetch recipe").into_response();
         }
     };
 
@@ -168,13 +154,7 @@ pub async fn normalize_title(
         Ok(c) => c,
         Err(e) => {
             tracing::error!("AI client unavailable: {}", e);
-            return (
-                StatusCode::SERVICE_UNAVAILABLE,
-                Json(ErrorResponse {
-                    error: "AI service unavailable".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::service_unavailable("AI service unavailable").into_response();
         }
     };
 
@@ -191,12 +171,7 @@ pub async fn normalize_title(
         Ok(r) => r,
         Err(e) => {
             tracing::error!("normalize_title call failed: {}", e);
-            return (
-                StatusCode::SERVICE_UNAVAILABLE,
-                Json(ErrorResponse {
-                    error: format!("Title normalization failed: {}", e),
-                }),
-            )
+            return ApiError::service_unavailable(format!("Title normalization failed: {}", e))
                 .into_response();
         }
     };
@@ -275,13 +250,7 @@ pub async fn normalize_title(
 
     if let Err(e) = write_result {
         tracing::error!("Failed to persist normalized title: {}", e);
-        return (
-            StatusCode::INTERNAL_SERVER_ERROR,
-            Json(ErrorResponse {
-                error: "Failed to persist normalized title".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::internal("Failed to persist normalized title").into_response();
     }
 
     (

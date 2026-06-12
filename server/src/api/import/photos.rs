@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::schema::photos;
@@ -45,13 +45,7 @@ pub async fn import_from_photos(
 ) -> impl IntoResponse {
     // Validate: must have at least one photo
     if request.photo_ids.is_empty() {
-        return (
-            StatusCode::BAD_REQUEST,
-            Json(ErrorResponse {
-                error: "At least one photo_id is required".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::invalid_request("At least one photo_id is required").into_response();
     }
 
     // Verify all photos exist and belong to this user
@@ -59,13 +53,7 @@ pub async fn import_from_photos(
         let mut conn = match pool.get() {
             Ok(c) => c,
             Err(e) => {
-                return (
-                    StatusCode::INTERNAL_SERVER_ERROR,
-                    Json(ErrorResponse {
-                        error: format!("Database error: {}", e),
-                    }),
-                )
-                    .into_response();
+                return ApiError::internal(format!("Database error: {}", e)).into_response();
             }
         };
 
@@ -78,24 +66,15 @@ pub async fn import_from_photos(
         {
             Ok(count) => count,
             Err(e) => {
-                return (
-                    StatusCode::INTERNAL_SERVER_ERROR,
-                    Json(ErrorResponse {
-                        error: format!("Database error: {}", e),
-                    }),
-                )
-                    .into_response();
+                return ApiError::internal(format!("Database error: {}", e)).into_response();
             }
         };
 
         if found_count != request.photo_ids.len() as i64 {
-            return (
-                StatusCode::BAD_REQUEST,
-                Json(ErrorResponse {
-                    error: "One or more photo_ids not found or don't belong to user".to_string(),
-                }),
+            return ApiError::invalid_request(
+                "One or more photo_ids not found or don't belong to user",
             )
-                .into_response();
+            .into_response();
         }
     }
 
@@ -104,13 +83,7 @@ pub async fn import_from_photos(
         Ok(j) => j,
         Err(e) => {
             tracing::error!("Failed to create photo import job: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to create import job".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to create import job").into_response();
         }
     };
 

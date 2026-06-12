@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::{create_session_with_token, hash_password, DEV_TEST_TOKEN};
 use crate::db::DbPool;
 use crate::get_conn;
@@ -42,15 +42,7 @@ pub async fn signup(
 
     let password_hash = match hash_password(&req.password) {
         Ok(h) => h,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to hash password".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(_) => return ApiError::internal("Failed to hash password").into_response(),
     };
 
     let new_user = NewUser {
@@ -67,24 +59,8 @@ pub async fn signup(
         Err(diesel::result::Error::DatabaseError(
             diesel::result::DatabaseErrorKind::UniqueViolation,
             _,
-        )) => {
-            return (
-                StatusCode::CONFLICT,
-                Json(ErrorResponse {
-                    error: "Username already exists".to_string(),
-                }),
-            )
-                .into_response()
-        }
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to create user".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        )) => return ApiError::conflict("Username already exists").into_response(),
+        Err(_) => return ApiError::internal("Failed to create user").into_response(),
     };
 
     // Use fixed token for test user "t" so session persists across DB resets
@@ -95,15 +71,7 @@ pub async fn signup(
     };
     let token = match create_session_with_token(&mut conn, user.id, fixed_token) {
         Ok(t) => t,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to create session".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(_) => return ApiError::internal("Failed to create session").into_response(),
     };
 
     (

@@ -28,6 +28,7 @@ from ramekin_client.models.create_tag_request import CreateTagRequest
 from ramekin_client.models.create_tag_response import CreateTagResponse
 from ramekin_client.models.custom_enrich_request import CustomEnrichRequest
 from ramekin_client.models.direction import Direction
+from ramekin_client.models.error_code import ErrorCode
 from ramekin_client.models.error_response import ErrorResponse
 from ramekin_client.models.generate_description_response import GenerateDescriptionResponse
 from ramekin_client.models.generate_photo_response import GeneratePhotoResponse
@@ -41,6 +42,7 @@ from ramekin_client.models.ingredient import Ingredient
 from ramekin_client.models.list_recipes_response import ListRecipesResponse
 from ramekin_client.models.login_request import LoginRequest
 from ramekin_client.models.login_response import LoginResponse
+from ramekin_client.models.me_response import MeResponse
 from ramekin_client.models.meal_plan_item import MealPlanItem
 from ramekin_client.models.meal_plan_list_response import MealPlanListResponse
 from ramekin_client.models.meal_type import MealType

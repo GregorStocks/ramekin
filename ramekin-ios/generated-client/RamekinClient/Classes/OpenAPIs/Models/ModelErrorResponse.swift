@@ -10,16 +10,21 @@ import Foundation
 import AnyCodable
 #endif
 
-/** Shared error response used by all endpoints */
+/** Shared error response body returned by every endpoint. */
 public struct ModelErrorResponse: Codable, JSONEncodable, Hashable {
 
+    /** Machine-readable error code; branch on this, not on `error`. */
+    public var code: ErrorCode
+    /** Human-readable message for display and debugging. */
     public var error: String
 
-    public init(error: String) {
+    public init(code: ErrorCode, error: String) {
+        self.code = code
         self.error = error
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
+        case code
         case error
     }
 
@@ -27,6 +32,7 @@ public struct ModelErrorResponse: Codable, JSONEncodable, Hashable {
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(code, forKey: .code)
         try container.encode(error, forKey: .error)
     }
 }
