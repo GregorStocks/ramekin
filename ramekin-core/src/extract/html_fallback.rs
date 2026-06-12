@@ -161,11 +161,12 @@ pub(super) fn extract_ingredients_from_html_classes(document: &Html) -> Option<S
 /// only via `.structured-ingredients__list-item` lists. Group headers appear as
 /// `.structured-ingredients__list-heading` paragraphs interleaved with the lists.
 pub(super) fn extract_dotdash_meredith_ingredients(document: &Html) -> Option<String> {
-    let container_selector = Selector::parse(".structured-ingredients").ok()?;
+    let container_selector =
+        Selector::parse(".structured-ingredients").expect("structured ingredients selector");
     let combined_selector = Selector::parse(
         ".structured-ingredients__list-heading, .structured-ingredients__list-item",
     )
-    .ok()?;
+    .expect("structured ingredients heading/item selector");
 
     let mut lines: Vec<String> = Vec::new();
     for container in document.select(&container_selector) {
@@ -207,14 +208,10 @@ pub(super) fn dotdash_ingredient_item_text(li: &ElementRef<'_>) -> String {
     let raw_text = li.text().collect::<String>();
     let mut result = raw_text.split_whitespace().collect::<Vec<_>>().join(" ");
 
-    let unit_selector = match Selector::parse("[data-ingredient-unit]") {
-        Ok(s) => s,
-        Err(_) => return result,
-    };
-    let name_selector = match Selector::parse("[data-ingredient-name]") {
-        Ok(s) => s,
-        Err(_) => return result,
-    };
+    let unit_selector =
+        Selector::parse("[data-ingredient-unit]").expect("data-ingredient-unit selector");
+    let name_selector =
+        Selector::parse("[data-ingredient-name]").expect("data-ingredient-name selector");
 
     let unit_texts: Vec<String> = li
         .select(&unit_selector)
@@ -258,10 +255,11 @@ pub(super) fn dotdash_ingredient_item_text(li: &ElementRef<'_>) -> String {
 /// the `[itemprop]` items, losing the headings. This function walks the container's
 /// children to recover the group structure.
 pub(super) fn extract_jetpack_ingredients_with_groups(document: &Html) -> Option<String> {
-    let container_selector = Selector::parse(".jetpack-recipe-ingredients").ok()?;
+    let container_selector =
+        Selector::parse(".jetpack-recipe-ingredients").expect("jetpack ingredients selector");
     let container = document.select(&container_selector).next()?;
 
-    let heading_selector = Selector::parse("h1, h2, h3, h4, h5, h6").ok()?;
+    let heading_selector = Selector::parse("h1, h2, h3, h4, h5, h6").expect("heading selector");
 
     // Check if there are any headings inside the container
     let has_headings = container.select(&heading_selector).next().is_some();
@@ -272,8 +270,8 @@ pub(super) fn extract_jetpack_ingredients_with_groups(document: &Html) -> Option
     // Walk all descendant elements in document order, emitting headings and
     // ingredient items as we encounter them.
     let mut lines: Vec<String> = Vec::new();
-    let all_selector =
-        Selector::parse("h1, h2, h3, h4, h5, h6, .jetpack-recipe-ingredient").ok()?;
+    let all_selector = Selector::parse("h1, h2, h3, h4, h5, h6, .jetpack-recipe-ingredient")
+        .expect("jetpack heading/ingredient selector");
     for el in container.select(&all_selector) {
         let tag = el.value().name();
         let raw_text = el.text().collect::<String>();
@@ -306,7 +304,7 @@ pub(super) fn extract_ingredient_items_from_selector(
     document: &Html,
     selector_str: &str,
 ) -> Option<String> {
-    let selector = Selector::parse(selector_str).ok()?;
+    let selector = Selector::parse(selector_str).expect("ingredient items selector");
     let items: Vec<String> = document
         .select(&selector)
         .filter_map(|el| sanitize_extracted_ingredient(&el.text().collect::<String>()))
@@ -324,7 +322,7 @@ pub(super) fn extract_ingredient_items_from_selector(
 /// Handles the old WordPress recipe format where ingredients are in `<p>` tags
 /// separated by `<br>` elements, with optional `<h4>` section headers.
 pub(super) fn extract_ingredients_from_div(document: &Html) -> Option<String> {
-    let selector = Selector::parse("div.ingredients").ok()?;
+    let selector = Selector::parse("div.ingredients").expect("div.ingredients selector");
     let div = document.select(&selector).next()?;
 
     // Get the inner HTML and split on <br> tags to get individual lines
@@ -378,10 +376,7 @@ pub(super) fn extract_instructions_from_html_classes(
     ];
 
     for selector_str in selectors {
-        let selector = match Selector::parse(selector_str) {
-            Ok(s) => s,
-            Err(_) => continue,
-        };
+        let selector = Selector::parse(selector_str).expect("instructions fallback selector");
 
         let steps: Vec<String> = document
             .select(&selector)
@@ -406,9 +401,10 @@ pub(super) fn extract_instructions_from_html_classes(
 /// `.structured-project__steps` with each step as `<li class="mntl-sc-block-group--LI">`
 /// holding one or more `<p class="mntl-sc-block-html">` paragraphs.
 pub(super) fn extract_dotdash_meredith_instructions(document: &Html) -> Option<String> {
-    let li_selector =
-        Selector::parse(".structured-project__steps li.mntl-sc-block-group--LI").ok()?;
-    let p_selector = Selector::parse("p.mntl-sc-block-html").ok()?;
+    let li_selector = Selector::parse(".structured-project__steps li.mntl-sc-block-group--LI")
+        .expect("dotdash steps selector");
+    let p_selector =
+        Selector::parse("p.mntl-sc-block-html").expect("dotdash step paragraph selector");
 
     let mut steps: Vec<String> = Vec::new();
     for li in document.select(&li_selector) {

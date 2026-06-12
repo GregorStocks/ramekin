@@ -134,7 +134,7 @@ impl PipelineStep for EnrichAutoTagStep {
         StepResult {
             step_name: Self::NAME.to_string(),
             success: true,
-            output: serde_json::to_value(output).unwrap_or(json!({})),
+            output: serde_json::to_value(output).expect("AutoTagOutput serializes to JSON"),
             error: None,
             duration_ms: start.elapsed().as_millis() as u64,
             next_step: step_after_scrape_auto_applied_ai_step(Self::NAME).map(str::to_string),

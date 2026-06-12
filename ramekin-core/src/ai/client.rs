@@ -285,7 +285,9 @@ impl AiClient for CachingAiClient {
         let finish_reason = choice.and_then(|c| c.finish_reason.clone());
         let content = choice
             .and_then(|c| c.message.content.clone())
-            .unwrap_or_default();
+            .ok_or_else(|| {
+                AiError::ParseError("AI response contained no message content".to_string())
+            })?;
 
         // An unusable response must fail fast and must NOT be cached: caching
         // it would turn a transient provider problem into a permanent,

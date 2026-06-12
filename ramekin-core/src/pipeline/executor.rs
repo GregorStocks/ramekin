@@ -59,7 +59,7 @@ pub async fn run_pipeline(
             url,
             outputs: store,
         };
-        let result = step.execute(&ctx).await;
+        let mut result = step.execute(&ctx).await;
 
         if !result.success {
             // The per-URL report truncates errors for grouping, so this is the
@@ -74,7 +74,6 @@ pub async fn run_pipeline(
 
         // Save output for both success and failure - failure output is needed
         // to root-cause failed runs. The store decides how to record failures.
-        // TODO: Confirm that we want to continue on save failure (vs failing the step)
         if let Err(e) = store.save_output(
             meta.name,
             &result.output,
@@ -82,8 +81,16 @@ pub async fn run_pipeline(
             result.success,
             result.error.as_deref(),
         ) {
-            // Log error but continue - we still have the result
-            tracing::warn!("Failed to save output for step {}: {}", meta.name, e);
+            tracing::error!("Failed to save output for step {}: {}", meta.name, e);
+            // A successful step whose output can't be saved is treated as
+            // failed: later steps read their inputs from the output store, so
+            // continuing would run them against silently missing data. An
+            // already-failed step keeps its original (more useful) error and
+            // stops the pipeline anyway.
+            if result.success {
+                result.success = false;
+                result.error = Some(format!("Failed to save step output: {}", e));
+            }
         }
 
         let should_continue = result.success || meta.continues_on_failure;

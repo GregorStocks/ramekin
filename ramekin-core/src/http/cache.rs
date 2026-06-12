@@ -7,6 +7,31 @@ use std::path::PathBuf;
 
 use super::slugify_url;
 
+/// Unwrap a cache file read, warning (rather than silently missing) on IO errors.
+fn read_or_warn<T>(path: &std::path::Path, result: std::io::Result<T>) -> Option<T> {
+    match result {
+        Ok(v) => Some(v),
+        Err(e) => {
+            tracing::warn!(path = %path.display(), error = %e, "failed to read HTTP cache file; treating as miss");
+            None
+        }
+    }
+}
+
+/// Parse a cache file's JSON, warning (rather than silently missing) on corruption.
+fn parse_or_warn<T: serde::de::DeserializeOwned>(
+    path: &std::path::Path,
+    content: &str,
+) -> Option<T> {
+    match serde_json::from_str(content) {
+        Ok(v) => Some(v),
+        Err(e) => {
+            tracing::warn!(path = %path.display(), error = %e, "corrupt HTTP cache file; treating as miss");
+            None
+        }
+    }
+}
+
 /// Disk-based HTTP response cache.
 pub struct DiskCache {
     cache_dir: PathBuf,
@@ -68,15 +93,19 @@ impl DiskCache {
     }
 
     /// Get cached response if it exists.
+    ///
+    /// Corrupt or unreadable entries are treated as cache misses (the caller
+    /// falls back to the network), but loudly: silent misses would hide cache
+    /// corruption behind re-fetches.
     pub fn get(&self, url: &str) -> Option<CachedResponse> {
         let dir = self.url_dir(url);
         let response_path = dir.join("response.bin");
         let metadata_path = dir.join("metadata.json");
 
         if response_path.exists() && metadata_path.exists() {
-            let data = fs::read(&response_path).ok()?;
-            let metadata_str = fs::read_to_string(&metadata_path).ok()?;
-            let metadata: CacheMetadata = serde_json::from_str(&metadata_str).ok()?;
+            let data = read_or_warn(&response_path, fs::read(&response_path))?;
+            let metadata_str = read_or_warn(&metadata_path, fs::read_to_string(&metadata_path))?;
+            let metadata: CacheMetadata = parse_or_warn(&metadata_path, &metadata_str)?;
             Some(CachedResponse { data, metadata })
         } else {
             None
@@ -89,8 +118,8 @@ impl DiskCache {
         let error_path = dir.join("error.txt");
 
         if error_path.exists() {
-            let error_str = fs::read_to_string(&error_path).ok()?;
-            serde_json::from_str(&error_str).ok()
+            let error_str = read_or_warn(&error_path, fs::read_to_string(&error_path))?;
+            parse_or_warn(&error_path, &error_str)
         } else {
             None
         }
@@ -102,8 +131,8 @@ impl DiskCache {
         let metadata_path = dir.join("metadata.json");
 
         if metadata_path.exists() {
-            let metadata_str = fs::read_to_string(&metadata_path).ok()?;
-            serde_json::from_str(&metadata_str).ok()
+            let metadata_str = read_or_warn(&metadata_path, fs::read_to_string(&metadata_path))?;
+            parse_or_warn(&metadata_path, &metadata_str)
         } else {
             None
         }

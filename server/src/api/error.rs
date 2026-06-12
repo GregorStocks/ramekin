@@ -177,7 +177,13 @@ pub async fn ensure_coded_errors(request: Request, next: Next) -> Response {
     let code = ErrorCode::for_status(status);
     let status = code.status();
 
-    let body = to_bytes(body, usize::MAX).await.unwrap_or_default();
+    let body = match to_bytes(body, usize::MAX).await {
+        Ok(b) => b,
+        Err(e) => {
+            tracing::warn!(error = %e, "failed to read error response body; using canonical reason");
+            Default::default()
+        }
+    };
     let message = String::from_utf8_lossy(&body).trim().to_string();
     let message = if message.is_empty() {
         status

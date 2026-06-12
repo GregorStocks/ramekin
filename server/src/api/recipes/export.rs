@@ -74,12 +74,12 @@ fn convert_to_paprika(
     recipe: &RecipeWithVersion,
     photos_data: Vec<(Uuid, Vec<u8>)>,
     tags: Vec<String>,
-) -> PaprikaRecipe {
+) -> Result<PaprikaRecipe, String> {
     let version = &recipe.version;
 
     // Parse ingredients back to newline-separated format
-    let ingredients: Vec<Ingredient> =
-        serde_json::from_value(version.ingredients.clone()).unwrap_or_default();
+    let ingredients: Vec<Ingredient> = serde_json::from_value(version.ingredients.clone())
+        .map_err(|e| format!("stored ingredients JSON failed to deserialize: {}", e))?;
     let ingredients_str = ingredients
         .iter()
         .map(|i| i.item.clone())
@@ -160,7 +160,7 @@ fn convert_to_paprika(
     hasher.update(recipe_content.as_bytes());
     let hash = hex::encode_upper(hasher.finalize());
 
-    PaprikaRecipe {
+    Ok(PaprikaRecipe {
         uid: recipe.id.to_string().to_uppercase(),
         name: version.title.clone(),
         ingredients: ingredients_str,
@@ -181,7 +181,7 @@ fn convert_to_paprika(
         photos: paprika_photos,
         photo_data,
         hash,
-    }
+    })
 }
 
 /// Compress a recipe to gzip format (for .paprikarecipe files)
@@ -199,10 +199,10 @@ fn fetch_recipe_photos(
     conn: &mut diesel::PgConnection,
     user_id: Uuid,
     photo_ids: &[Option<Uuid>],
-) -> Vec<(Uuid, Vec<u8>)> {
+) -> Result<Vec<(Uuid, Vec<u8>)>, String> {
     let ids: Vec<Uuid> = photo_ids.iter().filter_map(|id| *id).collect();
     if ids.is_empty() {
-        return Vec::new();
+        return Ok(Vec::new());
     }
 
     photos::table
@@ -211,7 +211,7 @@ fn fetch_recipe_photos(
         .filter(photos::deleted_at.is_null())
         .select((photos::id, photos::data))
         .load::<(Uuid, Vec<u8>)>(conn)
-        .unwrap_or_default()
+        .map_err(|e| format!("failed to fetch photos: {}", e))
 }
 
 /// Exported single recipe data (gzipped .paprikarecipe content)
@@ -228,7 +228,7 @@ pub fn export_recipe_to_paprikarecipe(
     recipe: &RecipeWithVersion,
 ) -> Result<ExportedRecipe, String> {
     // Fetch photos for this recipe
-    let photos_data = fetch_recipe_photos(conn, user_id, &recipe.version.photo_ids);
+    let photos_data = fetch_recipe_photos(conn, user_id, &recipe.version.photo_ids)?;
     let photo_count = photos_data.len();
     let photo_bytes: usize = photos_data.iter().map(|(_, d)| d.len()).sum();
 
@@ -240,10 +240,10 @@ pub fn export_recipe_to_paprikarecipe(
         .select(user_tags::name)
         .order(user_tags::name.asc())
         .load(conn)
-        .unwrap_or_default();
+        .map_err(|e| format!("failed to fetch tags: {}", e))?;
 
     // Convert to Paprika format
-    let paprika_recipe = convert_to_paprika(recipe, photos_data, tags);
+    let paprika_recipe = convert_to_paprika(recipe, photos_data, tags)?;
 
     // Gzip compress
     let data = gzip_recipe(&paprika_recipe)?;

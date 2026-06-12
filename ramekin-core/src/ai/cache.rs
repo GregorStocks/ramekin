@@ -47,7 +47,7 @@ impl CacheKey {
     /// Since the messages include the full rendered prompt, any changes to the prompt
     /// template will automatically invalidate the cache (no manual version bumping needed).
     pub fn new(prompt_name: &str, model: &str, messages: &[ChatMessage]) -> Self {
-        let input_json = serde_json::to_string(messages).unwrap_or_default();
+        let input_json = serde_json::to_string(messages).expect("chat messages serialize to JSON");
         let input_hash = sha256_hex(&input_json);
 
         Self {
@@ -80,14 +80,29 @@ impl AiCache {
     }
 
     /// Get a cached response if it exists.
+    ///
+    /// A corrupt or unreadable entry is treated as a cache miss (the caller
+    /// re-fetches from the API), but loudly: silent misses would hide cache
+    /// corruption behind extra API spend.
     pub fn get(&self, key: &CacheKey) -> Option<CachedAiResponse> {
         let path = self.cache_dir.join(key.to_path());
 
-        if path.exists() {
-            let content = fs::read_to_string(&path).ok()?;
-            serde_json::from_str(&content).ok()
-        } else {
-            None
+        if !path.exists() {
+            return None;
+        }
+        let content = match fs::read_to_string(&path) {
+            Ok(c) => c,
+            Err(e) => {
+                tracing::warn!(path = %path.display(), error = %e, "failed to read AI cache entry; treating as miss");
+                return None;
+            }
+        };
+        match serde_json::from_str(&content) {
+            Ok(r) => Some(r),
+            Err(e) => {
+                tracing::warn!(path = %path.display(), error = %e, "corrupt AI cache entry; treating as miss");
+                None
+            }
         }
     }
 

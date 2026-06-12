@@ -90,7 +90,8 @@ pub(super) fn extract_recipe_from_microdata(
 
 /// Extract text content from an element with the given itemprop.
 pub(super) fn extract_microdata_text(element: &scraper::ElementRef, prop: &str) -> Option<String> {
-    let selector = Selector::parse(&format!(r#"[itemprop="{}"]"#, prop)).ok()?;
+    let selector =
+        Selector::parse(&format!(r#"[itemprop="{}"]"#, prop)).expect("itemprop selector");
     element.select(&selector).next().map(|el| {
         // Check for content attribute first (common for meta tags)
         if let Some(content) = el.value().attr("content") {
@@ -115,11 +116,10 @@ pub(super) fn extract_microdata_instructions(
         .select(&step_selector)
         .map(|el| {
             // Check for text property inside HowToStep
-            let text_selector = Selector::parse(r#"[itemprop="text"]"#).ok();
-            if let Some(selector) = text_selector {
-                if let Some(text_el) = el.select(&selector).next() {
-                    return text_el.text().collect::<String>().trim().to_string();
-                }
+            let text_selector =
+                Selector::parse(r#"[itemprop="text"]"#).expect("itemprop text selector");
+            if let Some(text_el) = el.select(&text_selector).next() {
+                return text_el.text().collect::<String>().trim().to_string();
             }
             el.text().collect::<String>().trim().to_string()
         })
