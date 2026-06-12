@@ -56,4 +56,6 @@ pub use generate_description::{generate_description, GenerateDescriptionResult};
 pub use generate_recipe_photo::{generate_recipe_photo, GenerateRecipePhotoResult};
 pub use normalize_title::{normalize_title, NormalizeTitleResult};
 pub use photo_extract::{extract_recipe_from_photos, PhotoExtractResult};
-pub use types::{ChatMessage, ChatRequest, ChatResponse, ImageData, Role, Usage};
+pub use types::{
+    ChatMessage, ChatRequest, ChatResponse, ImageData, Role, Usage, SHORT_JSON_ANSWER_MAX_TOKENS,
+};
