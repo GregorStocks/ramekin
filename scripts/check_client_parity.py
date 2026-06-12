@@ -1,15 +1,24 @@
 #!/usr/bin/env python3
 """Detect generated-client endpoint usage drift between the web and iOS clients.
 
-Reads api/openapi.json for the canonical list of operationIds, greps each
-client tree (minus its generated-client dir) for the camelCase method name,
-and diffs the observed set of (web, ios) flags against api/client-parity.json5.
+Default contract: every OpenAPI operation is expected to be used by BOTH
+clients. `api/client-parity-exceptions.json5` only lists the deliberate
+exceptions to that rule.
 
-Failures: an operation is used on a side the matrix doesn't allow, an entry
-in the matrix doesn't match what's in the source tree, or an entry is missing
-from the matrix entirely. Re-run with --update to rewrite the matrix from
-observed state (preserving existing reasons where the platforms haven't
-changed).
+The script reads `api/openapi.json` for the canonical operationId list,
+greps each client tree (minus its generated-client dir) for the camelCase
+method name, and compares observed `(web, ios)` flags to the exceptions
+file. Failure modes:
+
+- An op is `web-only`, `ios-only`, or unused, but isn't listed as an
+  exception → either the other client needs to adopt it, or you should
+  record the exception with a reason.
+- An op is listed as an exception but is actually used by both clients
+  now → drop the exception.
+- An exception's recorded `platforms` doesn't match what's observed.
+
+Re-run with `--update` to rewrite the exceptions file from observed
+state, preserving existing reasons where the platform set didn't change.
 """
 
 import argparse
@@ -20,8 +29,8 @@ import sys
 from pathlib import Path
 
 
-VALID_PLATFORMS = {"both", "web-only", "ios-only", "neither"}
-NEEDS_REASON = {"web-only", "ios-only", "neither"}
+# Exception platforms — "both" is implicit (default) and not a valid exception.
+EXCEPTION_PLATFORMS = {"web-only", "ios-only", "neither"}
 
 WEB_ROOTS = ["ramekin-ui/src"]
 IOS_ROOTS = [
@@ -31,6 +40,8 @@ IOS_ROOTS = [
     "ramekin-ios/RamekinUITests",
     "ramekin-ios/Shared",
 ]
+
+EXCEPTIONS_FILE = "api/client-parity-exceptions.json5"
 
 
 def project_root() -> Path:
@@ -91,14 +102,14 @@ def observed_platforms(root: Path, method_name: str) -> str:
 
 
 # Tiny JSON5 reader: strips // and /* */ comments and trailing commas before
-# handing off to json. Good enough for our hand-edited matrix file.
+# handing off to json. Good enough for our hand-edited exceptions file.
 _LINE_COMMENT = re.compile(r"//[^\n]*")
 _BLOCK_COMMENT = re.compile(r"/\*.*?\*/", re.DOTALL)
 _TRAILING_COMMA = re.compile(r",(\s*[}\]])")
 _UNQUOTED_KEY = re.compile(r"([{,]\s*)([A-Za-z_][A-Za-z0-9_]*)\s*:")
 
 
-def load_parity(path: Path) -> dict:
+def load_exceptions(path: Path) -> dict:
     text = path.read_text()
     text = _BLOCK_COMMENT.sub("", text)
     text = _LINE_COMMENT.sub("", text)
@@ -108,12 +119,8 @@ def load_parity(path: Path) -> dict:
 
 
 def parse_entry(entry) -> tuple[str, str | None]:
-    if isinstance(entry, str):
-        return entry, None
     if isinstance(entry, dict):
-        platforms = entry.get("platforms")
-        reason = entry.get("reason")
-        return platforms, reason
+        return entry.get("platforms"), entry.get("reason")
     return "<invalid>", None
 
 
@@ -123,106 +130,112 @@ def check(root: Path) -> tuple[list[str], dict[str, str]]:
     op_ids = load_operation_ids(root)
     observed = {op: observed_platforms(root, snake_to_camel(op)) for op in op_ids}
 
-    parity_path = root / "api" / "client-parity.json5"
-    if not parity_path.exists():
-        errors.append(
-            f"Missing {parity_path.relative_to(root)} — create it with one "
-            "entry per OpenAPI operationId."
-        )
+    exceptions_path = root / EXCEPTIONS_FILE
+    if not exceptions_path.exists():
+        errors.append(f"Missing {EXCEPTIONS_FILE} — create it (use --update to seed).")
         return errors, observed
 
-    parity = load_parity(parity_path)
-    declared = parity.get("operations") or {}
-
-    declared_keys = set(declared)
+    declared = load_exceptions(exceptions_path)
     observed_keys = set(observed)
 
-    for missing in sorted(observed_keys - declared_keys):
-        errors.append(
-            f"{missing}: present in api/openapi.json but missing from "
-            f"api/client-parity.json5 (observed: {observed[missing]})"
-        )
-
-    for stale in sorted(declared_keys - observed_keys):
-        errors.append(
-            f"{stale}: listed in api/client-parity.json5 but not in "
-            "api/openapi.json (delete it)"
-        )
-
-    for op_id in sorted(observed_keys & declared_keys):
-        declared_platforms, reason = parse_entry(declared[op_id])
-        if declared_platforms not in VALID_PLATFORMS:
+    for op_id in sorted(declared):
+        if op_id not in observed_keys:
             errors.append(
-                f"{op_id}: invalid platforms value '{declared_platforms}' "
-                f"(must be one of {sorted(VALID_PLATFORMS)})"
+                f"{op_id}: listed in {EXCEPTIONS_FILE} but not in "
+                "api/openapi.json (delete the entry)."
             )
             continue
-        if declared_platforms in NEEDS_REASON and not reason:
+
+        declared_platforms, reason = parse_entry(declared[op_id])
+        if declared_platforms not in EXCEPTION_PLATFORMS:
             errors.append(
-                f"{op_id}: '{declared_platforms}' requires a reason — "
-                "use {{ platforms: ..., reason: ... }} form"
+                f"{op_id}: invalid platforms value '{declared_platforms}' "
+                f"(must be one of {sorted(EXCEPTION_PLATFORMS)})."
             )
-        if declared_platforms != observed[op_id]:
+            continue
+        if not reason:
             errors.append(
-                f"{op_id}: parity drift — matrix says '{declared_platforms}' "
-                f"but source says '{observed[op_id]}'. Either update the "
-                "other client to match, or change the matrix entry (with "
-                "a reason explaining why)."
+                f"{op_id}: every exception must include a reason — "
+                "use { platforms: ..., reason: ... }."
+            )
+
+        actual = observed[op_id]
+        if actual == "both":
+            errors.append(
+                f"{op_id}: {EXCEPTIONS_FILE} lists this as "
+                f"'{declared_platforms}', but both clients now use it. "
+                "Delete the exception entry."
+            )
+        elif declared_platforms != actual:
+            errors.append(
+                f"{op_id}: parity drift — exception says "
+                f"'{declared_platforms}' but source shows '{actual}'. "
+                "Either align the clients or update the exception entry."
+            )
+
+    for op_id in sorted(observed_keys - set(declared)):
+        actual = observed[op_id]
+        if actual != "both":
+            errors.append(
+                f"{op_id}: only used by '{actual}' but missing from "
+                f"{EXCEPTIONS_FILE}. Either adopt it in the other client, "
+                "or add an exception with a reason."
             )
 
     return errors, observed
 
 
 def write_seed(root: Path, observed: dict[str, str]) -> None:
-    """Write a fresh matrix from observed state, preserving existing reasons.
+    """Rewrite the exceptions file from observed state, preserving reasons.
 
-    When --update is invoked, we want to keep human-written reasons for
-    entries whose platforms didn't change, but drop reasons that no longer
-    apply (because the platform set shifted).
+    Reasons whose recorded platforms still match the observed state are
+    kept. Reasons for ops that are now `both` are dropped (the entry is
+    removed entirely). Newly-non-both ops are written with a TODO reason.
     """
-    path = root / "api" / "client-parity.json5"
+    path = root / EXCEPTIONS_FILE
     existing: dict[str, dict] = {}
     if path.exists():
-        prev = load_parity(path).get("operations") or {}
-        for op_id, entry in prev.items():
+        for op_id, entry in load_exceptions(path).items():
             platforms, reason = parse_entry(entry)
             existing[op_id] = {"platforms": platforms, "reason": reason}
 
     lines = [
-        "// Generated-client endpoint parity matrix.",
-        "// One entry per OpenAPI operationId. See scripts/check_client_parity.py.",
+        "// Generated-client endpoint parity exceptions.",
+        "// See scripts/check_client_parity.py.",
         "//",
-        "// Each entry is one of:",
-        '//   "both"      — used by both web (ramekin-ui) and ios (ramekin-ios)',
+        "// The default contract is: every OpenAPI operation is used by",
+        "// BOTH clients (ramekin-ui and ramekin-ios). This file only",
+        "// lists deliberate exceptions to that rule.",
+        "//",
+        "// Each entry's `platforms` is one of:",
         '//   "web-only"  — referenced only in the web client',
         '//   "ios-only"  — referenced only in the iOS client',
-        '//   "neither"   — not referenced by either client (e.g. infra/health',
-        "//                  endpoint, or fetched via URL rather than the",
-        "//                  generated client)",
+        '//   "neither"   — not referenced by either client (e.g. infra/',
+        "//                  health endpoint, or fetched via URL rather",
+        "//                  than the generated client)",
         "//",
-        '// Non-"both" entries must include a reason via the object form:',
-        '//   { platforms: "ios-only", reason: "..." }',
+        "// Every entry must include a non-empty `reason`.",
+        "//",
+        "// To regenerate from the source tree after a deliberate adoption",
+        "// or removal, run `./scripts/check_client_parity.py --update`",
+        "// and commit the diff with a note explaining the change.",
         "{",
-        "  operations: {",
     ]
 
     for op_id in sorted(observed):
         platforms = observed[op_id]
+        if platforms == "both":
+            continue
         prior = existing.get(op_id)
         reason = (
             prior["reason"]
             if prior and prior.get("platforms") == platforms and prior.get("reason")
-            else None
+            else "TODO: explain why"
         )
-        if platforms == "both":
-            lines.append(f'    {op_id}: "both",')
-        else:
-            reason_text = reason if reason else "TODO: explain why"
-            lines.append(
-                f'    {op_id}: {{ platforms: "{platforms}", '
-                f"reason: {json.dumps(reason_text)} }},"
-            )
-    lines += ["  },", "}", ""]
+        lines.append(
+            f'  {op_id}: {{ platforms: "{platforms}", reason: {json.dumps(reason)} }},'
+        )
+    lines += ["}", ""]
     path.write_text("\n".join(lines))
 
 
@@ -231,8 +244,10 @@ def main() -> int:
     parser.add_argument(
         "--update",
         action="store_true",
-        help="Rewrite api/client-parity.json5 from observed state. "
-        "Existing reasons are preserved when the platforms haven't changed.",
+        help=(
+            f"Rewrite {EXCEPTIONS_FILE} from observed state. Existing "
+            "reasons are preserved where the platforms haven't changed."
+        ),
     )
     args = parser.parse_args()
 
@@ -241,7 +256,8 @@ def main() -> int:
 
     if args.update:
         write_seed(root, observed)
-        print(f"Wrote api/client-parity.json5 with {len(observed)} entries.")
+        non_both = sum(1 for v in observed.values() if v != "both")
+        print(f"Wrote {EXCEPTIONS_FILE} with {non_both} exception(s).")
         return 0
 
     if errors:
@@ -249,15 +265,19 @@ def main() -> int:
         for err in errors:
             print(f"  - {err}", file=sys.stderr)
         print(
-            "\nTo update the matrix from observed state (e.g. after a "
-            "deliberate adoption):\n"
+            f"\nTo reseed {EXCEPTIONS_FILE} from observed state (after a "
+            "deliberate change):\n"
             "  ./scripts/check_client_parity.py --update\n"
             "Then commit the diff with a note explaining the change.",
             file=sys.stderr,
         )
         return 1
 
-    print(f"Client parity OK ({len(observed)} operations checked).")
+    exceptions = sum(1 for v in observed.values() if v != "both")
+    print(
+        f"Client parity OK ({len(observed)} operations, "
+        f"{exceptions} listed exception(s))."
+    )
     return 0
 
 

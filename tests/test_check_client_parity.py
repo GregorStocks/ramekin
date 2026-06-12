@@ -1,8 +1,8 @@
 """Tests for scripts/check_client_parity.py.
 
-We drive the script against a synthetic fake-repo laid out in tmp_path so we
-can assert that drift, missing entries, missing reasons, and stale entries
-all surface as errors.
+We drive the script against a synthetic fake-repo in tmp_path. The detector's
+contract is: every OpenAPI op is expected to be used by BOTH clients; the
+exceptions file only lists deliberate non-`both` cases.
 """
 
 import importlib.util
@@ -49,13 +49,14 @@ def _make_fake_repo(
     ops: dict[str, str],
     web_uses: list[str],
     ios_uses: list[str],
-    parity_text: str,
+    exceptions_text: str | None,
 ) -> Path:
-    """Lay out a fake repo with openapi.json, parity file, and stub client sources."""
+    """Lay out a fake repo with openapi.json, exceptions file, and stub sources."""
     root = tmp_path / "repo"
     (root / "api").mkdir(parents=True)
     (root / "api" / "openapi.json").write_text(json.dumps(_make_openapi(ops)))
-    (root / "api" / "client-parity.json5").write_text(parity_text)
+    if exceptions_text is not None:
+        (root / "api" / "client-parity-exceptions.json5").write_text(exceptions_text)
 
     (root / "ramekin-ui" / "src").mkdir(parents=True)
     (root / "ramekin-ui" / "src" / "use.ts").write_text(
@@ -78,7 +79,6 @@ def _make_fake_repo(
         "\n".join(f"x.{op}()" for op in ops)
     )
 
-    # Copy the script into the fake repo so its project_root() resolves there.
     (root / "scripts").mkdir()
     shutil.copy(SCRIPT_PATH, root / "scripts" / "check_client_parity.py")
     return root
@@ -94,87 +94,114 @@ def _run(repo: Path, *args: str) -> subprocess.CompletedProcess:
     )
 
 
-def test_passes_when_matrix_matches_observed(tmp_path):
+def test_both_is_the_default_no_entry_needed(tmp_path):
     repo = _make_fake_repo(
         tmp_path,
-        ops={"list_things": "things", "sync_things": "things"},
+        ops={"list_things": "things"},
         web_uses=["listThings"],
-        ios_uses=["listThings", "syncThings"],
-        parity_text="""{
-          operations: {
-            list_things: "both",
-            sync_things: {
-              platforms: "ios-only",
-              reason: "offline sync is ios-specific",
-            },
-          },
-        }""",
+        ios_uses=["listThings"],
+        exceptions_text="{}",
     )
     result = _run(repo)
     assert result.returncode == 0, result.stdout + result.stderr
     assert "Client parity OK" in result.stdout
 
 
-def test_fails_on_drift_when_matrix_disagrees_with_source(tmp_path):
+def test_passes_with_documented_exception(tmp_path):
     repo = _make_fake_repo(
         tmp_path,
-        ops={"list_things": "things"},
-        web_uses=["listThings"],  # only web uses it
+        ops={"list_things": "things", "sync_things": "things"},
+        web_uses=["listThings"],
+        ios_uses=["listThings", "syncThings"],
+        exceptions_text="""{
+          sync_things: {
+            platforms: "ios-only",
+            reason: "offline sync is ios-specific",
+          },
+        }""",
+    )
+    result = _run(repo)
+    assert result.returncode == 0, result.stdout + result.stderr
+
+
+def test_fails_when_asymmetric_op_is_missing_from_exceptions(tmp_path):
+    repo = _make_fake_repo(
+        tmp_path,
+        ops={"new_op": "things"},
+        web_uses=["newOp"],
         ios_uses=[],
-        parity_text="""{ operations: { list_things: "both" } }""",
+        exceptions_text="{}",
     )
     result = _run(repo)
     assert result.returncode == 1
-    assert "list_things: parity drift" in result.stderr
-    assert "matrix says 'both'" in result.stderr
-    assert "source says 'web-only'" in result.stderr
+    assert "new_op: only used by 'web-only'" in result.stderr
+    assert "missing from api/client-parity-exceptions.json5" in result.stderr
 
 
-def test_fails_when_operation_is_missing_from_matrix(tmp_path):
+def test_fails_when_exception_lists_an_op_that_is_now_both(tmp_path):
     repo = _make_fake_repo(
         tmp_path,
-        ops={"list_things": "things", "new_op": "things"},
-        web_uses=["listThings", "newOp"],
-        ios_uses=["listThings", "newOp"],
-        parity_text="""{ operations: { list_things: "both" } }""",
+        ops={"adopted": "things"},
+        web_uses=["adopted"],
+        ios_uses=["adopted"],
+        exceptions_text="""{
+          adopted: { platforms: "web-only", reason: "iOS adoption pending" },
+        }""",
     )
     result = _run(repo)
     assert result.returncode == 1
-    assert "new_op: present in api/openapi.json but missing" in result.stderr
+    assert "both clients now use it" in result.stderr
+    assert "Delete the exception entry" in result.stderr
 
 
-def test_fails_when_matrix_entry_is_stale(tmp_path):
+def test_fails_when_exception_platforms_mismatch_source(tmp_path):
+    repo = _make_fake_repo(
+        tmp_path,
+        ops={"diverged": "things"},
+        web_uses=[],
+        ios_uses=["diverged"],
+        exceptions_text="""{
+          diverged: { platforms: "web-only", reason: "ios pending" },
+        }""",
+    )
+    result = _run(repo)
+    assert result.returncode == 1
+    assert "parity drift" in result.stderr
+    assert "exception says 'web-only'" in result.stderr
+    assert "source shows 'ios-only'" in result.stderr
+
+
+def test_fails_when_exception_references_unknown_op(tmp_path):
     repo = _make_fake_repo(
         tmp_path,
         ops={"list_things": "things"},
         web_uses=["listThings"],
         ios_uses=["listThings"],
-        parity_text="""{
-          operations: {
-            list_things: "both",
-            removed_op: { platforms: "neither", reason: "old endpoint" },
-          },
+        exceptions_text="""{
+          removed_op: { platforms: "neither", reason: "old endpoint" },
         }""",
     )
     result = _run(repo)
     assert result.returncode == 1
     assert (
-        "removed_op: listed in api/client-parity.json5 but not in api/openapi.json"
-        in result.stderr
+        "removed_op: listed in api/client-parity-exceptions.json5 but not in "
+        "api/openapi.json" in result.stderr
     )
 
 
-def test_fails_when_asymmetric_entry_has_no_reason(tmp_path):
+def test_fails_when_exception_has_no_reason(tmp_path):
     repo = _make_fake_repo(
         tmp_path,
         ops={"sync_things": "things"},
         web_uses=[],
         ios_uses=["syncThings"],
-        parity_text="""{ operations: { sync_things: "ios-only" } }""",
+        exceptions_text="""{
+          sync_things: { platforms: "ios-only" },
+        }""",
     )
     result = _run(repo)
     assert result.returncode == 1
-    assert "sync_things: 'ios-only' requires a reason" in result.stderr
+    assert "every exception must include a reason" in result.stderr
 
 
 def test_generated_client_dirs_are_excluded(tmp_path):
@@ -184,58 +211,62 @@ def test_generated_client_dirs_are_excluded(tmp_path):
         ops={"only_in_generated": "things"},
         web_uses=[],
         ios_uses=[],
-        parity_text="""{
-          operations: {
-            only_in_generated: { platforms: "neither", reason: "infra-only" },
-          },
+        exceptions_text="""{
+          only_in_generated: { platforms: "neither", reason: "infra-only" },
         }""",
     )
     result = _run(repo)
     assert result.returncode == 0, result.stdout + result.stderr
 
 
-def test_update_seeds_matrix_from_observed_and_preserves_reasons(tmp_path):
-    repo = _make_fake_repo(
-        tmp_path,
-        ops={"list_things": "things", "sync_things": "things"},
-        web_uses=["listThings"],
-        ios_uses=["listThings", "syncThings"],
-        # Pre-existing matrix with a reason on sync_things; --update keeps it.
-        parity_text="""{
-          operations: {
-            list_things: "both",
-            sync_things: {
-              platforms: "ios-only",
-              reason: "offline sync is ios-specific",
-            },
-          },
-        }""",
-    )
-    result = _run(repo, "--update")
-    assert result.returncode == 0, result.stdout + result.stderr
-    out = (repo / "api" / "client-parity.json5").read_text()
-    assert 'list_things: "both"' in out
-    assert "sync_things:" in out
-    assert "offline sync is ios-specific" in out
-
-
-def test_update_drops_reason_when_platforms_change(tmp_path):
+def test_fails_when_exceptions_file_is_missing(tmp_path):
     repo = _make_fake_repo(
         tmp_path,
         ops={"list_things": "things"},
         web_uses=["listThings"],
         ios_uses=["listThings"],
-        # Old matrix said ios-only with a reason; both clients now use it.
-        parity_text="""{
-          operations: {
-            list_things: { platforms: "ios-only", reason: "old reason" },
+        exceptions_text=None,
+    )
+    result = _run(repo)
+    assert result.returncode == 1
+    assert "Missing api/client-parity-exceptions.json5" in result.stderr
+
+
+def test_update_omits_both_ops_and_writes_only_exceptions(tmp_path):
+    repo = _make_fake_repo(
+        tmp_path,
+        ops={"list_things": "things", "sync_things": "things"},
+        web_uses=["listThings"],
+        ios_uses=["listThings", "syncThings"],
+        exceptions_text="""{
+          sync_things: {
+            platforms: "ios-only",
+            reason: "offline sync is ios-specific",
           },
         }""",
     )
     result = _run(repo, "--update")
     assert result.returncode == 0, result.stdout + result.stderr
-    out = (repo / "api" / "client-parity.json5").read_text()
-    assert 'list_things: "both"' in out
+    out = (repo / "api" / "client-parity-exceptions.json5").read_text()
+    assert "list_things" not in out  # both-by-default, omitted
+    assert "sync_things" in out
+    assert "offline sync is ios-specific" in out
+
+
+def test_update_drops_entry_when_op_becomes_both(tmp_path):
+    repo = _make_fake_repo(
+        tmp_path,
+        ops={"list_things": "things"},
+        web_uses=["listThings"],
+        ios_uses=["listThings"],
+        exceptions_text="""{
+          list_things: { platforms: "ios-only", reason: "old reason" },
+        }""",
+    )
+    result = _run(repo, "--update")
+    assert result.returncode == 0, result.stdout + result.stderr
+    out = (repo / "api" / "client-parity-exceptions.json5").read_text()
+    assert "list_things" not in out
     assert "old reason" not in out
 
 
