@@ -12,7 +12,9 @@
 //!
 //! - `OPENROUTER_API_KEY` (required): Your OpenRouter API key
 //! - `RAMEKIN_AI_MODEL` (optional): Model name, e.g., "google/gemini-2.5-flash"
-//! - `RAMEKIN_AI_BASE_URL` (optional): API base URL
+//! - `RAMEKIN_AI_BASE_URL` (optional): API base URL. Non-default endpoints
+//!   (e.g. a mock server) cache under an `endpoints/<base-url>/` subdirectory
+//!   so they never share entries with the real provider.
 //! - `RAMEKIN_AI_CACHE_DIR` (optional): Cache directory path
 //! - `RAMEKIN_AI_RATE_LIMIT_MS` (optional): Delay between requests in ms
 //! - `RAMEKIN_AI_TIMEOUT_SECS` (optional): Request timeout in seconds
