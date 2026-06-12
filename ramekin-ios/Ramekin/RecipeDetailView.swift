@@ -40,6 +40,9 @@ struct RecipeDetailView: View {
     @State var autoEnrichError: String?
     @State var recipeScale: Double = 1
     @State var customScaleInput = ""
+    @State var isExporting = false
+    @State var exportShareItem: ShareItem?
+    @State var exportError: String?
 
     var isViewingHistoricalVersion: Bool {
         RecipeVersionSupport.isViewingHistoricalVersion(
@@ -142,6 +145,9 @@ struct RecipeDetailView: View {
                             }
                             .disabled(actionsDisabledForHistoricalVersion || isRescraping)
                         }
+
+                        exportMenu(for: recipe)
+                            .disabled(actionsDisabledForHistoricalVersion)
                         Divider()
                         Button(role: .destructive) {
                             showingDeleteConfirmation = true
@@ -270,6 +276,10 @@ struct RecipeDetailView: View {
                     + "The current version will remain in history."
             )
         }
+        .modifier(ExportPresentationModifier(
+            shareItem: $exportShareItem,
+            errorMessage: $exportError
+        ))
         .task {
             await loadRecipe()
         }

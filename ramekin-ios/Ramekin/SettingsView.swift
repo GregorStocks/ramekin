@@ -7,6 +7,9 @@ struct SettingsView: View {
     @State private var connectionStatus: ConnectionStatus = .unknown
     @State private var showingDebugLogs = false
     @State private var debugLogs = ""
+    @State private var isExportingAll = false
+    @State private var exportShareItem: ShareItem?
+    @State private var exportError: String?
 
     enum ConnectionStatus {
         case unknown
@@ -84,6 +87,19 @@ struct SettingsView: View {
                 } label: {
                     Label("Manage Tags", systemImage: "tag")
                 }
+
+                Button {
+                    Task { await exportAllRecipes() }
+                } label: {
+                    HStack {
+                        Label("Export All Recipes", systemImage: "square.and.arrow.up.on.square")
+                        Spacer()
+                        if isExportingAll {
+                            ProgressView()
+                        }
+                    }
+                }
+                .disabled(isExportingAll)
             }
 
             Section("Account") {
@@ -184,6 +200,29 @@ struct SettingsView: View {
         }
         .refreshable {
             await checkConnectionAsync()
+        }
+        .modifier(ExportPresentationModifier(
+            shareItem: $exportShareItem,
+            errorMessage: $exportError
+        ))
+    }
+
+    @MainActor
+    private func exportAllRecipes() async {
+        guard !isExportingAll else { return }
+        isExportingAll = true
+        defer { isExportingAll = false }
+        do {
+            let download = try await RamekinAPI.shared.exportAllRecipes()
+            let url = try RecipeExportSupport.writeToTempFile(
+                data: download.data,
+                filename: download.filename
+            )
+            exportShareItem = ShareItem(url: url)
+        } catch let apiError as RamekinAPI.APIError {
+            exportError = apiError.errorDescription ?? "Export failed"
+        } catch {
+            exportError = error.localizedDescription
         }
     }
 
