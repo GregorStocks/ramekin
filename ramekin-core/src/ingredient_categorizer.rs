@@ -288,6 +288,25 @@ mod tests {
     }
 
     #[test]
+    fn test_vegetable_option_lists() {
+        // Plural "vegetables" means produce; singular "vegetable ..." is
+        // usually the first option in an oil/broth list and must not win.
+        assert_eq!(categorize("mixed vegetables"), "Produce");
+        assert_eq!(categorize("steamed vegetables"), "Produce");
+        assert_eq!(
+            categorize("vegetable or other neutral-flavored oil"),
+            "Oils & Vinegars"
+        );
+        assert_eq!(
+            categorize("vegetable, chicken, or turkey broth"),
+            "Canned Goods"
+        );
+        assert_eq!(categorize("vegetable or chicken stock"), "Canned Goods");
+        assert_eq!(categorize("vegetable oil"), "Oils & Vinegars");
+        assert_eq!(categorize("vegetable broth"), "Canned Goods");
+    }
+
+    #[test]
     fn test_brand_collisions() {
         // Campari the aperitif vs Campari tomatoes.
         assert_eq!(categorize("Campari"), "Beverages");
