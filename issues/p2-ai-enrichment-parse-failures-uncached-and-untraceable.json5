@@ -36,7 +36,12 @@ an approximated prompt.\n\
 Repro: purge/ignore the AI cache entries for the failing URLs (list in \
 data/extraction-report.md under 'AI call failed') and run make pipeline; the \
 same URLs fail every time. Worth fixing because each affected URL silently \
-ships a degraded snapshot (raw title, no description).",
+ships a degraded snapshot (raw title, no description).\n\
+\n\
+Note: the post-purge pipeline regeneration was deliberately NOT committed with \
+the cache-poisoning fix (PR #567) because it would have baked these 22 \
+failures into the committed baseline. After fixing this, rerun make pipeline \
+and commit the data diff.",
   "status": "open",
   "priority": 2,
   "type": "bug",
