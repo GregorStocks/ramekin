@@ -626,6 +626,9 @@ EXPECTED_CATEGORY_ORDER = [
     "Nuts & Dried Fruit",
     "Beverages",
     "Snacks",
+    "Household",
+    "Personal Care",
+    "Pet",
     "Other",
 ]
 
