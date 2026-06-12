@@ -55,7 +55,7 @@ require() {
     command -v "$1" >/dev/null 2>&1 || MISSING+=("$1 ($2)")
 }
 
-SWIFTLINT_LINUX="curl -fsSL https://github.com/realm/SwiftLint/releases/download/${SWIFTLINT_VERSION}/swiftlint_linux_amd64.zip -o /tmp/swiftlint.zip && unzip -o /tmp/swiftlint.zip -d /tmp/swiftlint && install -m 0755 /tmp/swiftlint/swiftlint ~/.local/bin/swiftlint"
+SWIFTLINT_LINUX="curl -fsSL https://github.com/realm/SwiftLint/releases/download/${SWIFTLINT_VERSION}/swiftlint_linux_amd64.zip -o /tmp/swiftlint.zip && unzip -o /tmp/swiftlint.zip -d /tmp/swiftlint && install -D -m 0755 /tmp/swiftlint/swiftlint ~/.local/bin/swiftlint"
 
 # --- Tools needed by `make lint` ---
 
