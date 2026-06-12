@@ -213,6 +213,19 @@ mod tests {
 
         cache.remove(&test_key()).unwrap();
     }
+
+    #[test]
+    fn corrupt_entry_is_a_cache_miss() {
+        let dir = tempfile::TempDir::new().unwrap();
+        let cache = AiCache::new(dir.path().to_path_buf());
+        let key = test_key();
+        cache.put(&key, &test_response(), "test/model").unwrap();
+        assert!(cache.get(&key).is_some());
+
+        fs::write(dir.path().join(key.to_path()), "not json").unwrap();
+
+        assert!(cache.get(&key).is_none());
+    }
 }
 
 /// Compute SHA256 hash and return as hex string.

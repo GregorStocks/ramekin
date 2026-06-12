@@ -222,3 +222,43 @@ impl DiskCache {
         Ok(())
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    const URL: &str = "https://example.com/recipe";
+
+    #[test]
+    fn corrupt_metadata_is_a_cache_miss() {
+        let dir = tempfile::tempdir().unwrap();
+        let cache = DiskCache::new(dir.path().to_path_buf());
+        cache.put(URL, b"body", None, None, None).unwrap();
+        assert!(cache.get(URL).is_some());
+
+        fs::write(
+            dir.path().join(slugify_url(URL)).join("metadata.json"),
+            "not json",
+        )
+        .unwrap();
+
+        assert!(cache.get(URL).is_none());
+        assert!(cache.get_metadata(URL).is_none());
+    }
+
+    #[test]
+    fn corrupt_cached_error_is_a_cache_miss() {
+        let dir = tempfile::tempdir().unwrap();
+        let cache = DiskCache::new(dir.path().to_path_buf());
+        cache.put_error(URL, "boom").unwrap();
+        assert!(cache.get_error(URL).is_some());
+
+        fs::write(
+            dir.path().join(slugify_url(URL)).join("error.txt"),
+            "not json",
+        )
+        .unwrap();
+
+        assert!(cache.get_error(URL).is_none());
+    }
+}

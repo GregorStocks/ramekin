@@ -144,6 +144,26 @@ mod tests {
         }
     }
 
+    /// Store whose save_output always fails.
+    struct FailingStore;
+
+    impl StepOutputStore for FailingStore {
+        fn get_output(&self, _step_name: &str) -> Option<JsonValue> {
+            None
+        }
+
+        fn save_output(
+            &mut self,
+            _step_name: &str,
+            _output: &JsonValue,
+            _duration_ms: i64,
+            _success: bool,
+            _error: Option<&str>,
+        ) -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
+            Err("disk full".into())
+        }
+    }
+
     /// Step with a fixed result.
     struct FixedStep {
         name: &'static str,
@@ -173,6 +193,49 @@ mod tests {
                 duration_ms: 1,
                 next_step: None,
             }
+        }
+    }
+
+    /// Step that always succeeds and chains to a second step.
+    struct AlwaysOkStep;
+
+    #[async_trait]
+    impl PipelineStep for AlwaysOkStep {
+        fn metadata(&self) -> StepMetadata {
+            StepMetadata {
+                name: "always_ok",
+                description: "succeeds",
+                continues_on_failure: false,
+            }
+        }
+
+        async fn execute(&self, _ctx: &StepContext<'_>) -> StepResult {
+            StepResult {
+                step_name: "always_ok".to_string(),
+                success: true,
+                output: json!({"ok": true}),
+                error: None,
+                duration_ms: 0,
+                next_step: Some("never_reached".to_string()),
+            }
+        }
+    }
+
+    /// Step that panics if executed — used to assert the pipeline stopped.
+    struct UnreachableStep;
+
+    #[async_trait]
+    impl PipelineStep for UnreachableStep {
+        fn metadata(&self) -> StepMetadata {
+            StepMetadata {
+                name: "never_reached",
+                description: "must not run",
+                continues_on_failure: false,
+            }
+        }
+
+        async fn execute(&self, _ctx: &StepContext<'_>) -> StepResult {
+            panic!("pipeline continued past a step whose output failed to save");
         }
     }
 
@@ -215,5 +278,23 @@ mod tests {
         );
         assert!(!*success);
         assert_eq!(error.as_deref(), Some("AI call failed: something specific"));
+    }
+
+    #[tokio::test]
+    async fn save_failure_fails_the_step_and_stops_the_pipeline() {
+        let mut registry = StepRegistry::new();
+        registry.register(Box::new(AlwaysOkStep));
+        registry.register(Box::new(UnreachableStep));
+        let mut store = FailingStore;
+
+        let results = run_pipeline("always_ok", "http://example.com", &mut store, &registry).await;
+
+        assert_eq!(results.len(), 1);
+        let result = &results[0];
+        assert!(!result.success);
+        assert_eq!(
+            result.error.as_deref(),
+            Some("Failed to save step output: disk full")
+        );
     }
 }

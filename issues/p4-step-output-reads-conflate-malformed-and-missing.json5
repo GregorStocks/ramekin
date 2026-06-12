@@ -1,5 +1,6 @@
 {
-  "title": "Pipeline step-output reads conflate malformed JSON with missing fields",
+  "title": "Pipeline step-output reads conflate malformed JSON with missing \
+fields",
   "description": "Steps that read prior step outputs use `.and_then(|v| \
 serde_json::from_value(v.clone()).ok())` followed by a None branch whose error \
 message claims the field is absent. A malformed-but-present value is \
