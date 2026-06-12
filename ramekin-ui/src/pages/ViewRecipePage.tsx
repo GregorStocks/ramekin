@@ -1,6 +1,7 @@
 import {
   createSignal,
   createEffect,
+  createMemo,
   Show,
   For,
   onMount,
@@ -14,10 +15,15 @@ import VersionHistoryPanel from "../components/VersionHistoryPanel";
 import EnrichPreviewModal from "../components/EnrichPreviewModal";
 import VersionCompareModal from "../components/VersionCompareModal";
 import AddToShoppingListModal from "../components/AddToShoppingListModal";
-import { extractApiError, parseApiError } from "../utils/recipeFormHelpers";
+import {
+  extractApiError,
+  parseApiError,
+  groupIngredientsBySection,
+} from "../utils/recipeFormHelpers";
 import { parseTag } from "../utils/tagHierarchy";
 import { usePageTitle } from "../utils/pageTitle";
 import { scaleAmount } from "../utils/scaleAmount";
+import { formatIngredientParts } from "../utils/ingredientFormatting";
 import { AI_ENRICHMENTS } from "../utils/aiEnrichments";
 import {
   MEAL_TYPES,
@@ -30,33 +36,9 @@ import type {
   RecipeResponse,
   RecipeContent,
   VersionSummary,
-  Ingredient,
   MealType,
 } from "ramekin-client";
 import { ErrorCode } from "ramekin-client";
-
-/** Group ingredients by contiguous sections (preserving order). */
-function groupIngredientsBySection(
-  ingredients: Ingredient[],
-): Array<{ section: string | null; ingredients: Ingredient[] }> {
-  const groups: Array<{ section: string | null; ingredients: Ingredient[] }> =
-    [];
-
-  for (const ing of ingredients) {
-    const section = ing.section ?? null;
-    const lastGroup = groups[groups.length - 1];
-
-    // If this ingredient has the same section as the last group, add to it
-    if (lastGroup && lastGroup.section === section) {
-      lastGroup.ingredients.push(ing);
-    } else {
-      // Start a new group
-      groups.push({ section, ingredients: [ing] });
-    }
-  }
-
-  return groups;
-}
 
 function PhotoImage(props: { photoId: string; token: string; alt: string }) {
   const { authedFetch } = useAuth();
@@ -1016,44 +998,41 @@ export default function ViewRecipePage() {
                           </Show>
                           <ul class="ingredients-list">
                             <For each={group.ingredients}>
-                              {(ing) => (
-                                <li>
-                                  <Show when={ing.measurements[0]?.amount}>
-                                    <span class="amount">
-                                      {scaleAmount(
-                                        ing.measurements[0]?.amount,
-                                        scale(),
-                                      )}
-                                    </span>{" "}
-                                  </Show>
-                                  <Show when={ing.measurements[0]?.unit}>
-                                    <span class="unit">
-                                      {ing.measurements[0]?.unit}
-                                    </span>{" "}
-                                  </Show>
-                                  <Show when={ing.measurements.length > 1}>
-                                    <span class="alt-measurement">
-                                      (
-                                      {ing.measurements
-                                        .slice(1)
-                                        .map((m) =>
-                                          [
-                                            scaleAmount(m.amount, scale()),
-                                            m.unit,
-                                          ]
-                                            .filter(Boolean)
-                                            .join(" "),
-                                        )
-                                        .join(", ")}
-                                      ){" "}
-                                    </span>
-                                  </Show>
-                                  <span class="item">{ing.item}</span>
-                                  <Show when={ing.note}>
-                                    <span class="note"> ({ing.note})</span>
-                                  </Show>
-                                </li>
-                              )}
+                              {(ing) => {
+                                const parts = createMemo(() =>
+                                  formatIngredientParts(ing, {
+                                    scale: scale(),
+                                    includeAlternatives: true,
+                                    includeNote: true,
+                                  }),
+                                );
+                                return (
+                                  <li>
+                                    <Show when={parts().amount}>
+                                      <span class="amount">
+                                        {parts().amount}
+                                      </span>{" "}
+                                    </Show>
+                                    <Show when={parts().unit}>
+                                      <span class="unit">
+                                        {parts().unit}
+                                      </span>{" "}
+                                    </Show>
+                                    <Show when={parts().alternatives}>
+                                      <span class="alt-measurement">
+                                        ({parts().alternatives}){" "}
+                                      </span>
+                                    </Show>
+                                    <span class="item">{parts().item}</span>
+                                    <Show when={parts().note}>
+                                      <span class="note">
+                                        {" "}
+                                        ({parts().note})
+                                      </span>
+                                    </Show>
+                                  </li>
+                                );
+                              }}
                             </For>
                           </ul>
                         </>

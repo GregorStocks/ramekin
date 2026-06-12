@@ -1,27 +1,32 @@
+// Mirrors ramekin-ios/Ramekin/RecipeVersionSupport.swift formatIngredients/
+// formatTags. Keep the two in sync (see doc/client-logic-sharing.md) until
+// the shared-test-vector harness pins them.
 import type { Ingredient } from "ramekin-client";
 
+import { formatIngredient } from "./ingredientFormatting";
+
 export function formatIngredients(ingredients: Ingredient[]): string {
-  return ingredients
-    .map((ing) => {
-      const primary = ing.measurements[0];
-      const altMeasurements =
-        ing.measurements.length > 1
-          ? `(${ing.measurements
-              .slice(1)
-              .map((m) => [m.amount, m.unit].filter(Boolean).join(" "))
-              .join(", ")})`
-          : "";
-      return [
-        primary?.amount,
-        primary?.unit,
-        altMeasurements,
-        ing.item,
-        ing.note ? `(${ing.note})` : "",
-      ]
-        .filter(Boolean)
-        .join(" ");
-    })
-    .join("\n");
+  const lines: string[] = [];
+  let currentSection: string | null = null;
+
+  for (const ingredient of ingredients) {
+    const section = ingredient.section ?? null;
+    if (section !== currentSection) {
+      currentSection = section;
+      if (currentSection) {
+        lines.push(`[${currentSection}]`);
+      }
+    }
+
+    lines.push(
+      formatIngredient(ingredient, {
+        includeAlternatives: true,
+        includeNote: true,
+      }),
+    );
+  }
+
+  return lines.join("\n");
 }
 
 export function formatTags(tags: string[] | undefined | null): string {
