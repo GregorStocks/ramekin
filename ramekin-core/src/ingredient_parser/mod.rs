@@ -957,36 +957,35 @@ pub fn expand_each_ingredients(ingredient: ParsedIngredient) -> Vec<ParsedIngred
         .collect()
 }
 
-/// True if the line opens a parenthesis it never closes.
-fn has_unclosed_paren(s: &str) -> bool {
+/// Scan a line's parenthesis balance: the depth left open at the end, and
+/// whether the balance ever dipped below zero (a ')' with no matching '(').
+fn scan_paren_balance(s: &str) -> (i32, bool) {
     let mut depth: i32 = 0;
-    for c in s.chars() {
-        match c {
-            '(' => depth += 1,
-            ')' => depth = (depth - 1).max(0),
-            _ => {}
-        }
-    }
-    depth > 0
-}
-
-/// True if the line closes a parenthesis opened on a previous line, i.e. its
-/// running paren balance dips below zero.
-fn closes_open_paren(s: &str) -> bool {
-    let mut depth: i32 = 0;
+    let mut dipped_negative = false;
     for c in s.chars() {
         match c {
             '(' => depth += 1,
             ')' => {
                 depth -= 1;
                 if depth < 0 {
-                    return true;
+                    dipped_negative = true;
+                    depth = 0;
                 }
             }
             _ => {}
         }
     }
-    false
+    (depth, dipped_negative)
+}
+
+/// True if the line opens a parenthesis it never closes.
+fn has_unclosed_paren(s: &str) -> bool {
+    scan_paren_balance(s).0 > 0
+}
+
+/// True if the line closes a parenthesis opened on a previous line.
+fn closes_open_paren(s: &str) -> bool {
+    scan_paren_balance(s).1
 }
 
 /// Parse multiple ingredient lines (separated by newlines).
