@@ -40,6 +40,18 @@ processes:
     availability:
       restart: "no"
 
+  ui-unit-tests:
+    command: |
+      echo "[TIMING] ui-unit-tests starting at $(date +%H:%M:%S)"
+      START=$(date +%s)
+      make ui-unit-test
+      EXIT_CODE=$?
+      printf '%s\n' "$EXIT_CODE" > ${TEST_STATUS_DIR}/ui-unit-tests.exit
+      echo "[TIMING] ui-unit-tests completed in $(($(date +%s) - START))s"
+      exit $EXIT_CODE
+    availability:
+      restart: "no"
+
   fixture:
     command: python3 ../fixture_server.py ${FIXTURE_PORT}
     working_dir: ./tests/scrape_fixtures
@@ -103,4 +115,6 @@ processes:
       rust-tests-core:
         condition: process_completed_successfully
       api-tests:
+        condition: process_completed_successfully
+      ui-unit-tests:
         condition: process_completed_successfully
