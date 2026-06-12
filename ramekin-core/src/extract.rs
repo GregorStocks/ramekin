@@ -144,14 +144,12 @@ fn dotdash_ingredients_look_normalized(document: &Html) -> bool {
         return false;
     };
 
+    // Whitespace is stripped entirely (not normalized to single spaces) so the
+    // comparison is insensitive to how whitespace falls between text nodes.
     let mut saw_item = false;
     for item in document.select(&item_selector) {
         saw_item = true;
-        let full_text: String = item
-            .text()
-            .collect::<String>()
-            .split_whitespace()
-            .collect();
+        let full_text: String = item.text().collect::<String>().split_whitespace().collect();
         let spanned_text: String = item
             .select(&span_selector)
             .flat_map(|el| el.text())
