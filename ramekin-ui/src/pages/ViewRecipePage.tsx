@@ -1,6 +1,7 @@
 import {
   createSignal,
   createEffect,
+  createMemo,
   Show,
   For,
   onMount,
@@ -998,12 +999,13 @@ export default function ViewRecipePage() {
                           <ul class="ingredients-list">
                             <For each={group.ingredients}>
                               {(ing) => {
-                                const parts = () =>
+                                const parts = createMemo(() =>
                                   formatIngredientParts(ing, {
                                     scale: scale(),
                                     includeAlternatives: true,
                                     includeNote: true,
-                                  });
+                                  }),
+                                );
                                 return (
                                   <li>
                                     <Show when={parts().amount}>
