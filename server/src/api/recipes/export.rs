@@ -399,11 +399,12 @@ impl Write for ChannelWriter {
 }
 
 /// Write every recipe in `recipes` as a .paprikarecipe entry to a streaming
-/// ZIP. Per-recipe content-level failures (e.g. DB error fetching photos,
-/// zip metadata rejection) are logged and skipped; writer IO errors (client
-/// disconnect surfacing as a broken pipe from ChannelWriter) abort the
-/// stream so we don't keep doing expensive DB/CPU work with nowhere to send
-/// the bytes.
+/// ZIP. Any per-recipe failure (DB error fetching photos/tags, corrupt
+/// stored data, zip metadata rejection) aborts the stream: an export is a
+/// backup, and a 200 archive that silently omits a recipe is partial data
+/// loss the client has no way to notice. Writer IO errors (client disconnect
+/// surfacing as a broken pipe from ChannelWriter) also abort so we don't
+/// keep doing expensive DB/CPU work with nowhere to send the bytes.
 ///
 /// A fresh DB connection is checked out per recipe and dropped before the
 /// (potentially slow, backpressured) zip write, so a slow client can't pin
@@ -426,11 +427,6 @@ fn write_zip_stream(
     for recipe in recipes {
         // Short-lived per-recipe connection: held during the DB fetch and
         // in-memory encoding, released before the slow zip write.
-        //
-        // Pool checkout failures abort the stream rather than silently
-        // skipping the recipe — an export is meant as a backup, so silently
-        // omitting recipes under pool pressure is partial data loss the
-        // client would have no way to notice.
         let exported = {
             let mut conn = pool.get().map_err(|e| {
                 tracing::error!(
@@ -441,36 +437,32 @@ fn write_zip_stream(
                 );
                 io::Error::other(format!("db pool: {}", e))
             })?;
-            match export_recipe_to_paprikarecipe(&mut conn, user_id, recipe) {
-                Ok(e) => e,
-                Err(e) => {
-                    tracing::warn!(
-                        recipe_id = %recipe.id,
-                        title = %recipe.version.title,
-                        error = %e,
-                        "failed to export recipe; skipping"
-                    );
-                    continue;
-                }
-            }
-        };
-
-        // start_file writes the entry header via ChannelWriter, so an IO
-        // error here almost always means the client has gone away. Propagate
-        // it so we abort rather than spinning on the rest of the library.
-        match zip.start_file(&exported.filename, options) {
-            Ok(()) => {}
-            Err(zip::result::ZipError::Io(e)) => return Err(e),
-            Err(e) => {
-                tracing::warn!(
+            export_recipe_to_paprikarecipe(&mut conn, user_id, recipe).map_err(|e| {
+                tracing::error!(
                     recipe_id = %recipe.id,
                     title = %recipe.version.title,
                     error = %e,
-                    "failed to start zip entry; skipping"
+                    "failed to export recipe; aborting stream"
                 );
-                continue;
+                io::Error::other(format!("export recipe {}: {}", recipe.id, e))
+            })?
+        };
+
+        zip.start_file(&exported.filename, options).map_err(|e| {
+            // IO errors here almost always mean the client has gone away;
+            // anything else (zip metadata rejection) is still a recipe we
+            // would otherwise silently drop from the backup.
+            tracing::error!(
+                recipe_id = %recipe.id,
+                title = %recipe.version.title,
+                error = %e,
+                "failed to start zip entry; aborting stream"
+            );
+            match e {
+                zip::result::ZipError::Io(e) => e,
+                e => io::Error::other(format!("zip entry for {}: {}", recipe.id, e)),
             }
-        }
+        })?;
         let entry_bytes = exported.data.len() as u64;
         zip.write_all(&exported.data)?;
         total_entry_bytes += entry_bytes;
