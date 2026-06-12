@@ -57,7 +57,7 @@ require() {
 
 SWIFTLINT_LINUX="curl -fsSL https://github.com/realm/SwiftLint/releases/download/${SWIFTLINT_VERSION}/swiftlint_linux_amd64.zip -o /tmp/swiftlint.zip && unzip -o /tmp/swiftlint.zip -d /tmp/swiftlint && install -D -m 0755 /tmp/swiftlint/swiftlint ~/.local/bin/swiftlint"
 
-# --- Tools needed by `make lint` ---
+# --- Tools needed by both `make lint` and the dev/test environment ---
 
 require cargo "install Rust: https://rustup.rs"
 require npm "$(hint \
@@ -76,16 +76,21 @@ require python3 "$(hint \
     "sudo pacman -S python" \
     "install Python 3 via your package manager")"
 require ast-grep "cargo install ast-grep"
-require shellcheck "$(hint \
-    "brew install shellcheck" \
-    "sudo dnf install ShellCheck" \
-    "sudo pacman -S shellcheck" \
-    "sudo apt-get install shellcheck")"
-require swiftlint "$(hint \
-    "brew install swiftlint" \
-    "$SWIFTLINT_LINUX" \
-    "$SWIFTLINT_LINUX" \
-    "$SWIFTLINT_LINUX")"
+
+# --- Tools needed only by `make lint` ---
+
+if $LINT_ONLY; then
+    require shellcheck "$(hint \
+        "brew install shellcheck" \
+        "sudo dnf install ShellCheck" \
+        "sudo pacman -S shellcheck" \
+        "sudo apt-get install shellcheck")"
+    require swiftlint "$(hint \
+        "brew install swiftlint" \
+        "$SWIFTLINT_LINUX" \
+        "$SWIFTLINT_LINUX" \
+        "$SWIFTLINT_LINUX")"
+fi
 
 # --- Everything else (dev/test environment) ---
 
