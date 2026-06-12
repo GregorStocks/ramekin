@@ -1,15 +1,16 @@
 {
-  "title": "AI enrichment parse failures are deterministic, uncached, and untraceable",
-  "description": "Pipeline runs on 2026-06-11 (after purging the mock-poisoned AI cache) \
-showed 22 URLs failing with \"AI call failed: Failed to parse response: \
-Failed t...\" (see data/extraction-report.md). At the previous commit only 1 \
-URL (sweetandsavorymeals.com/buckeye-recipe) failed this way. The failures \
-are deterministic: two back-to-back runs failed the exact same URLs at the \
-exact same steps (some at enrich_normalize_title, some at \
+  "title": "AI enrichment parse failures are deterministic, uncached, and \
+untraceable",
+  "description": "Pipeline runs on 2026-06-11 (after purging the mock-poisoned \
+AI cache) showed 22 URLs failing with \"AI call failed: Failed to parse \
+response: Failed t...\" (see data/extraction-report.md). At the previous \
+commit only 1 URL (sweetandsavorymeals.com/buckeye-recipe) failed this way. \
+The failures are deterministic: two back-to-back runs failed the exact same \
+URLs at the exact same steps (some at enrich_normalize_title, some at \
 enrich_generate_description; EnrichAutoTag also drops ~32 URLs per the step \
 timing counts). One affected snapshot \
-(smittenkitchen-com_2022-04-simplest-mushroom-pasta.json) lost its \
-normalized title and description as a result.\n\
+(smittenkitchen-com_2022-04-simplest-mushroom-pasta.json) lost its normalized \
+title and description as a result.\n\
 \n\
 Three sub-problems, in increasing order of weirdness:\n\
 \n\
@@ -29,8 +30,8 @@ the cache (invalid JSON, empty content, missing key, null value, wrong type) \
 found zero unparseable entries. Something in that story is wrong.\n\
 \n\
 3. The same prompt inputs succeed when replayed via curl against the real \
-OpenRouter endpoint (response_format json_object, temperature 0), albeit \
-with an approximated prompt.\n\
+OpenRouter endpoint (response_format json_object, temperature 0), albeit with \
+an approximated prompt.\n\
 \n\
 Repro: purge/ignore the AI cache entries for the failing URLs (list in \
 data/extraction-report.md under 'AI call failed') and run make pipeline; the \
