@@ -3,7 +3,7 @@
 ## Overall
 
 - Total URLs: 5534
-- Completed: 5457 (98.6%)
+- Completed: 5438 (98.3%)
 - Failed at fetch: 1 (0.0%)
 - Failed at extract: 75 (1.4%)
 
@@ -17,24 +17,24 @@
 ## Ingredient Parsing
 
 - Total ingredients: 60636
-- Volume-to-weight converted: 18865/42721 (44.2%)
-- Unknown ingredient (no density data): 14294
-- Already has weight: 9562
-- No volume unit (count-based): 17546
-- Metric converted (oz→g): 2451
-- Metric converted (lb→g): 1806
+- Volume-to-weight converted: 18867/42709 (44.2%)
+- Unknown ingredient (no density data): 14299
+- Already has weight: 9543
+- No volume unit (count-based): 17560
+- Metric converted (oz→g): 2462
+- Metric converted (lb→g): 1812
 
 ## AI Cache
 
-- Cache hits: 16372/16372 (100.0%)
-- API calls: 0/16372 (0.0%)
+- Cache hits: 16299/16299 (100.0%)
+- API calls: 0/16299 (0.0%)
 
 ## By Site
 
 | Site | Completed | Total | Rate |
 |------|-----------|-------|------|
-| 101cookbooks.com | 68 | 68 | 100.0% |
-| acouplecooks.com | 50 | 50 | 100.0% |
+| 101cookbooks.com | 67 | 68 | 98.5% |
+| acouplecooks.com | 49 | 50 | 98.0% |
 | alexandracooks.com | 101 | 101 | 100.0% |
 | allrecipes.com | 104 | 104 | 100.0% |
 | altonbrown.com | 101 | 101 | 100.0% |
@@ -44,10 +44,10 @@
 | bakerita.com | 7 | 7 | 100.0% |
 | bakingbites.com | 10 | 11 | 90.9% |
 | barefeetinthekitchen.com | 99 | 100 | 99.0% |
-| bbcgoodfood.com | 99 | 100 | 99.0% |
+| bbcgoodfood.com | 98 | 100 | 98.0% |
 | bonappetit.com | 45 | 45 | 100.0% |
 | bowlofdelicious.com | 1 | 1 | 100.0% |
-| browneyedbaker.com | 100 | 100 | 100.0% |
+| browneyedbaker.com | 98 | 100 | 98.0% |
 | budgetbytes.com | 2 | 2 | 100.0% |
 | butterwithasideofbread.com | 44 | 44 | 100.0% |
 | cafedelites.com | 55 | 55 | 100.0% |
@@ -71,14 +71,14 @@
 | foodandwine.com | 99 | 99 | 100.0% |
 | foodnetwork.com | 1 | 1 | 100.0% |
 | gimmesomeoven.com | 6 | 6 | 100.0% |
-| gonnawantseconds.com | 58 | 59 | 98.3% |
+| gonnawantseconds.com | 57 | 59 | 96.6% |
 | halfbakedharvest.com | 5 | 5 | 100.0% |
 | hostthetoast.com | 7 | 9 | 77.8% |
 | howsweeteats.com | 82 | 82 | 100.0% |
 | iamafoodblog.com | 99 | 100 | 99.0% |
 | indianhealthyrecipes.com | 25 | 25 | 100.0% |
 | inspiredtaste.net | 100 | 100 | 100.0% |
-| japanesecooking101.com | 106 | 106 | 100.0% |
+| japanesecooking101.com | 104 | 106 | 98.1% |
 | jocooks.com | 77 | 77 | 100.0% |
 | joyfoodsunshine.com | 88 | 88 | 100.0% |
 | justonecookbook.com | 22 | 23 | 95.7% |
@@ -88,31 +88,31 @@
 | lecremedelacrumb.com | 27 | 27 | 100.0% |
 | lifemadesweeter.com | 6 | 6 | 100.0% |
 | littlesweetbaker.com | 23 | 23 | 100.0% |
-| loveandlemons.com | 37 | 37 | 100.0% |
-| loveandoliveoil.com | 95 | 96 | 99.0% |
+| loveandlemons.com | 36 | 37 | 97.3% |
+| loveandoliveoil.com | 94 | 96 | 97.9% |
 | marthastewart.com | 6 | 7 | 85.7% |
 | momontimeout.com | 97 | 100 | 97.0% |
 | mybakingaddiction.com | 94 | 97 | 96.9% |
-| natashaskitchen.com | 100 | 100 | 100.0% |
+| natashaskitchen.com | 99 | 100 | 99.0% |
 | nomnompaleo.com | 3 | 5 | 60.0% |
 | norecipes.com | 101 | 101 | 100.0% |
 | ohmyveggies.com | 3 | 6 | 50.0% |
 | onceuponachef.com | 92 | 92 | 100.0% |
 | onmykidsplate.com | 18 | 18 | 100.0% |
-| peasandcrayons.com | 51 | 52 | 98.1% |
+| peasandcrayons.com | 50 | 52 | 96.2% |
 | pinchandswirl.com | 1 | 1 | 100.0% |
 | recipetineats.com | 10 | 10 | 100.0% |
 | runningwithspoons.com | 1 | 1 | 100.0% |
 | sallysbakingaddiction.com | 34 | 34 | 100.0% |
-| seriouseats.com | 167 | 167 | 100.0% |
+| seriouseats.com | 166 | 167 | 99.4% |
 | simplyrecipes.com | 99 | 100 | 99.0% |
 | skinnytaste.com | 2 | 2 | 100.0% |
 | slenderkitchen.com | 55 | 55 | 100.0% |
-| smittenkitchen.com | 991 | 1007 | 98.4% |
+| smittenkitchen.com | 987 | 1007 | 98.0% |
 | spendwithpennies.com | 35 | 35 | 100.0% |
 | spoonforkbacon.com | 2 | 2 | 100.0% |
 | sprinklebakes.com | 74 | 92 | 80.4% |
-| sudachirecipes.com | 97 | 97 | 100.0% |
+| sudachirecipes.com | 96 | 97 | 99.0% |
 | sweetandsavorymeals.com | 99 | 100 | 99.0% |
 | tasteofhome.com | 100 | 100 | 100.0% |
 | tastesbetterfromscratch.com | 3 | 3 | 100.0% |
@@ -120,7 +120,7 @@
 | theforkedspoon.com | 99 | 100 | 99.0% |
 | themediterraneandish.com | 100 | 100 | 100.0% |
 | themodernproper.com | 14 | 14 | 100.0% |
-| thepioneerwoman.com | 102 | 102 | 100.0% |
+| thepioneerwoman.com | 101 | 102 | 99.0% |
 | therecipecritic.com | 34 | 34 | 100.0% |
 | thespruceeats.com | 1 | 1 | 100.0% |
 | thestayathomechef.com | 12 | 12 | 100.0% |
@@ -133,9 +133,28 @@
 
 ## Failed URLs by Error
 
-### AI call failed: Failed to parse response: Failed t... (1 URLs)
+### AI call failed: Failed to parse response: Failed t... (20 URLs)
 
+- https://natashaskitchen.com/cucumber-and-tomato-salad-recipe/
+- https://peasandcrayons.com/sheet-pan-cookie-cake-recipe/
+- https://smittenkitchen.com/2007/11/lemon-ricotta-pancakes-with-sauteed-apples/
+- https://smittenkitchen.com/2010/07/raspberry-brown-sugar-gratin/
+- https://smittenkitchen.com/2013/06/pickled-vegetable-sandwich-slaw/
+- https://smittenkitchen.com/2022/04/simplest-mushroom-pasta/
+- https://sudachirecipes.com/sawaniwan-recipe/
 - https://sweetandsavorymeals.com/buckeye-recipe/
+- https://www.101cookbooks.com/instant-pot-congee-recipe/
+- https://www.acouplecooks.com/freekah-vegetable-soup-recipe/
+- https://www.bbcgoodfood.com/recipes/slow-cooked-tomatoes-basil
+- https://www.browneyedbaker.com/caramel-apple-cheesecake-pie-recipe/
+- https://www.browneyedbaker.com/oatmeal-carmelita-bars-recipe/
+- https://www.gonnawantseconds.com/chicken-murphy-recipe/
+- https://www.japanesecooking101.com/asparagus-ohitashi-recipe/
+- https://www.japanesecooking101.com/pork-shigureni-with-sesame-recipe/
+- https://www.loveandlemons.com/burrito-bowl-recipe/
+- https://www.loveandoliveoil.com/2016/03/homemade-cultured-butter.html
+- https://www.seriouseats.com/loubia-moroccan-white-bean-stew-recipe-11685571
+- https://www.thepioneerwoman.com/food-cooking/recipes/a32097998/cherry-topped-cheesecake-recipe/
 
 ### Cached fetch error (1 URLs)
 
