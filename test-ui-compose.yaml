@@ -26,6 +26,7 @@ processes:
     environment:
       - OPENROUTER_API_KEY=test-api-key
       - RAMEKIN_AI_BASE_URL=http://localhost:${MOCK_OPENROUTER_PORT}/v1
+      - RAMEKIN_AI_CACHE_DIR=../logs/test-ai-cache
       - SCRAPE_ALLOWED_HOSTS=localhost:${FIXTURE_PORT}
     depends_on:
       fixture-server:
