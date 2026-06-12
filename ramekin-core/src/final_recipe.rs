@@ -1,7 +1,9 @@
 //! Consolidated end-of-pipeline recipe view.
 //!
 //! Assembles the final state of a scraped recipe by combining the outputs of
-//! `extract_recipe`, `parse_ingredients`, and auto-applied enrichment steps.
+//! `extract_recipe` and `parse_ingredients`. AI enrichment outputs are
+//! deliberately excluded: they vary with per-machine AI cache state, and the
+//! result must be deterministic given the scrape cache.
 //! Used by the CLI snapshot writer and (eventually) the server scrape-status view.
 
 use serde::{Deserialize, Serialize};
@@ -36,8 +38,6 @@ pub struct FinalRecipe {
 pub fn build_final_recipe(
     raw_recipe: &RawRecipe,
     parsed_ingredients: Option<&[ParsedIngredient]>,
-    normalized_title: Option<&str>,
-    generated_description: Option<&str>,
 ) -> FinalRecipe {
     // Match the server's SaveRecipeStep behaviour: if the parse_ingredients
     // step produced output (even an empty vec), use it; only fall back to
@@ -60,10 +60,8 @@ pub fn build_final_recipe(
             .collect(),
     };
     FinalRecipe {
-        title: normalized_title.unwrap_or(&raw_recipe.title).to_string(),
-        description: generated_description
-            .map(str::to_string)
-            .or_else(|| raw_recipe.description.clone()),
+        title: raw_recipe.title.clone(),
+        description: raw_recipe.description.clone(),
         servings: raw_recipe.servings.clone(),
         prep_time: raw_recipe.prep_time.clone(),
         cook_time: raw_recipe.cook_time.clone(),
@@ -105,7 +103,7 @@ mod tests {
     #[test]
     fn copies_raw_recipe_fields() {
         let raw = raw_recipe_fixture();
-        let fr = build_final_recipe(&raw, None, None, None);
+        let fr = build_final_recipe(&raw, None);
         assert_eq!(fr.title, "Test Recipe");
         assert_eq!(fr.description.as_deref(), Some("A test"));
         assert_eq!(fr.instructions, "Mix and bake.");
@@ -131,7 +129,7 @@ mod tests {
             raw: Some("1 cup flour".to_string()),
             section: None,
         }];
-        let fr = build_final_recipe(&raw, Some(&parsed), None, None);
+        let fr = build_final_recipe(&raw, Some(&parsed));
         assert_eq!(fr.ingredients.len(), 1);
         assert_eq!(fr.ingredients[0].item, "flour");
     }
@@ -139,7 +137,7 @@ mod tests {
     #[test]
     fn falls_back_to_line_split_when_parsed_absent() {
         let raw = raw_recipe_fixture();
-        let fr = build_final_recipe(&raw, None, None, None);
+        let fr = build_final_recipe(&raw, None);
         assert_eq!(fr.ingredients.len(), 2);
         assert_eq!(fr.ingredients[0].item, "1 cup flour");
         assert_eq!(fr.ingredients[0].measurements, Vec::new());
@@ -153,7 +151,7 @@ mod tests {
         // text here would invent ingredients that aren't really in the recipe.
         let raw = raw_recipe_fixture();
         let empty: Vec<ParsedIngredient> = Vec::new();
-        let fr = build_final_recipe(&raw, Some(&empty), None, None);
+        let fr = build_final_recipe(&raw, Some(&empty));
         assert!(fr.ingredients.is_empty());
     }
 
@@ -161,7 +159,7 @@ mod tests {
     fn line_split_skips_blank_lines() {
         let mut raw = raw_recipe_fixture();
         raw.ingredients = "1 cup flour\n\n   \n2 eggs".to_string();
-        let fr = build_final_recipe(&raw, None, None, None);
+        let fr = build_final_recipe(&raw, None);
         assert_eq!(fr.ingredients.len(), 2);
         assert_eq!(fr.ingredients[0].item, "1 cup flour");
         assert_eq!(fr.ingredients[1].item, "2 eggs");
@@ -171,7 +169,7 @@ mod tests {
     fn serializes_without_null_fields_for_missing_optionals() {
         let mut raw = raw_recipe_fixture();
         raw.prep_time = None;
-        let fr = build_final_recipe(&raw, None, None, None);
+        let fr = build_final_recipe(&raw, None);
         let json = serde_json::to_string(&fr).unwrap();
         assert!(
             !json.contains("\"prep_time\""),
@@ -182,7 +180,7 @@ mod tests {
     #[test]
     fn round_trips_through_serde() {
         let raw = raw_recipe_fixture();
-        let fr = build_final_recipe(&raw, None, None, None);
+        let fr = build_final_recipe(&raw, None);
         let json = serde_json::to_string_pretty(&fr).unwrap();
         let decoded: FinalRecipe = serde_json::from_str(&json).unwrap();
         assert_eq!(decoded, fr);

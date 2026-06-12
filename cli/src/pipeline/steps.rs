@@ -156,7 +156,8 @@ impl PipelineStep for ApplyAutoTagsStep {
 
 /// CLI implementation of ApplyNormalizedTitle step.
 ///
-/// No-op for CLI - snapshots read the enrich_normalize_title output directly.
+/// No-op for CLI - the output is only echoed into the run dir for reporting;
+/// snapshots deliberately ignore it so they stay deterministic across AI caches.
 pub struct ApplyNormalizedTitleStep;
 
 impl ApplyNormalizedTitleStep {
@@ -203,7 +204,8 @@ impl PipelineStep for ApplyNormalizedTitleStep {
 
 /// CLI implementation of ApplyGeneratedDescription step.
 ///
-/// No-op for CLI - snapshots read the enrich_generate_description output directly.
+/// No-op for CLI - the output is only echoed into the run dir for reporting;
+/// snapshots deliberately ignore it so they stay deterministic across AI caches.
 pub struct ApplyGeneratedDescriptionStep;
 
 impl ApplyGeneratedDescriptionStep {
