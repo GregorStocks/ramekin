@@ -1,0 +1,36 @@
+{
+  "title": "Mock OpenRouter responses poison the shared AI cache",
+  "description": "The real AI cache (~/.ramekin/ai-cache) contains hundreds of \
+responses that came from tests/mock_openrouter.py rather than the real \
+provider: descriptions like \"A delicious test recipe.\", normalize-title \
+responses that echo the input title, and mock auto-tags. They are \
+identifiable by the mock's fixed usage fingerprint (prompt_tokens: 10, \
+completion_tokens: 5, total_tokens: 15); a scan on 2026-06-11 found 916 such \
+entries, written around 2026-05-18 to 2026-05-26. Something ran the pipeline \
+(or another enrichment path) with the AI base URL pointed at the mock server \
+while using the default cache dir, so mock output was cached under the real \
+model name (google/gemini-2.5-flash).\n\
+\n\
+Impact: any pipeline run whose enrichment inputs hash to one of the poisoned \
+keys silently gets mock data in committed snapshots (e.g. description \
+\"A delicious test recipe.\"). This bit the Dotdash ingredient-supplementation \
+work on 2026-06-11: changed ingredient lists produced cache keys that \
+collided with poisoned entries from a prior run of the same idea.\n\
+\n\
+Suggested fixes:\n\
+1. Purge the poisoned entries (delete cache files whose usage is exactly \
+10/5/15).\n\
+2. Prevent recurrence: when RAMEKIN_AI_BASE_URL points at a mock/localhost, \
+use a separate cache dir (or disable the cache), e.g. derive the cache \
+namespace from the base URL the way it is already derived from the model.",
+  "status": "open",
+  "priority": 2,
+  "type": "task",
+  "labels": [
+    "pipeline",
+    "ai",
+    "infrastructure",
+  ],
+  "created_at": "2026-06-11T17:46:01-07:00",
+  "updated_at": "2026-06-11T17:46:01-07:00",
+}
