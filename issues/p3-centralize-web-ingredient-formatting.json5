@@ -1,0 +1,33 @@
+{
+  "title": "Centralize ingredient display formatting in the web client",
+  "description": "iOS has ingredient display formatting in one place \
+(ramekin-ios/Ramekin/IngredientFormatting.swift: \
+formatted(scale:includeAlternatives:includeNote:)), with section grouping in \
+IngredientSectionGrouping.swift. The web equivalent is scattered: inline JSX \
+in ViewRecipePage.tsx (~lines 1018-1062), formatIngredient()/formatAmount() in \
+components/AddToShoppingListModal.tsx, and formatIngredients() in \
+utils/formatRecipeForDiff.ts. They already disagree — e.g. the iOS diff \
+formatter emits [Section] headers, the web one doesn't.\n\
+\n\
+Refactor web to a single utility (e.g. \
+ramekin-ui/src/utils/ingredientFormatting.ts) mirroring the iOS shape: one \
+function taking the ingredient plus options for scale, alternatives, and note, \
+used by the recipe view, shopping list modal, and diff formatter. Reconcile \
+the [Section]-header divergence in the diff output while doing so (prefer the \
+iOS behavior; sections are real data and diffs should show them).\n\
+\n\
+This is a web-only refactor and is not blocked on the test-runner work, but it \
+is the prerequisite for vectoring ingredient formatting in \
+blocked-shared-test-vectors-remaining-areas (see doc/client-logic-sharing.md). \
+iOS only needs changes if reconciling a divergence lands on the iOS side \
+losing.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "web",
+    "parity",
+  ],
+  "created_at": "2026-06-11T09:45:49-07:00",
+  "updated_at": "2026-06-11T09:45:49-07:00",
+}
