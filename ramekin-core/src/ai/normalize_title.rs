@@ -5,7 +5,7 @@ use serde::Deserialize;
 use crate::ai::prompts::normalize_title::{
     render_normalize_title_prompt, NORMALIZE_TITLE_PROMPT_NAME,
 };
-use crate::ai::{AiClient, AiError, ChatMessage, ChatRequest, Usage};
+use crate::ai::{complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage};
 
 #[derive(Debug, Deserialize)]
 struct NormalizeTitleResponse {
@@ -37,13 +37,8 @@ pub async fn normalize_title(
         temperature: Some(0.0),
     };
 
-    let response = ai_client
-        .complete(NORMALIZE_TITLE_PROMPT_NAME, request)
-        .await?;
-
-    let parsed: NormalizeTitleResponse = serde_json::from_str(&response.content).map_err(|e| {
-        AiError::ParseError(format!("Failed to parse normalize-title response: {}", e))
-    })?;
+    let (parsed, response): (NormalizeTitleResponse, _) =
+        complete_json(ai_client, NORMALIZE_TITLE_PROMPT_NAME, &request).await?;
 
     let normalized = parsed.normalized_title.trim().to_string();
     let normalized = if normalized.is_empty() {

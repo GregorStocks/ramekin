@@ -31,7 +31,7 @@
 //!     ..Default::default()
 //! };
 //!
-//! let response = client.complete("test", "v1", request).await?;
+//! let response = client.complete("test", &request).await?;
 //! println!("Response: {}", response.content);
 //! ```
 
@@ -49,7 +49,7 @@ mod types;
 
 pub use auto_tag::{suggest_tags, AutoTagResult};
 pub use cache::{AiCache, CacheKey, CacheStats, CachedAiResponse};
-pub use client::{AiClient, AiError, CachingAiClient};
+pub use client::{complete_json, AiClient, AiError, CachingAiClient};
 pub use config::{AiConfig, ConfigError};
 pub use custom_enrich::{custom_enrich, CustomEnrichResult};
 pub use generate_description::{generate_description, GenerateDescriptionResult};
