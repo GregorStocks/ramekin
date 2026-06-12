@@ -92,10 +92,8 @@ struct ShoppingListView: View {
             categoryOrder: store.categoryOrder
         )
 
-        return ordered.compactMap { category in
-            guard let items = grouped[category] else { return nil }
-            return (category: category, items: items)
-        }
+        // orderedCategories only returns categories present in `grouped`
+        return ordered.map { (category: $0, items: grouped[$0]!) }
     }
 
     private var addItemSection: some View {
