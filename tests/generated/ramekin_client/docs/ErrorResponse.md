@@ -1,12 +1,13 @@
 # ErrorResponse
 
-Shared error response used by all endpoints
+Shared error response body returned by every endpoint.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error** | **str** |  | 
+**code** | [**ErrorCode**](ErrorCode.md) | Machine-readable error code; branch on this, not on &#x60;error&#x60;. | 
+**error** | **str** | Human-readable message for display and debugging. | 
 
 ## Example
 

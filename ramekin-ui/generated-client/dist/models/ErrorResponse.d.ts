@@ -9,14 +9,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import type { ErrorCode } from './ErrorCode';
 /**
- * Shared error response used by all endpoints
+ * Shared error response body returned by every endpoint.
  * @export
  * @interface ErrorResponse
  */
 export interface ErrorResponse {
     /**
-     *
+     * Machine-readable error code; branch on this, not on `error`.
+     * @type {ErrorCode}
+     * @memberof ErrorResponse
+     */
+    code: ErrorCode;
+    /**
+     * Human-readable message for display and debugging.
      * @type {string}
      * @memberof ErrorResponse
      */

@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::{create_session_with_token, verify_password, DEV_TEST_TOKEN};
 use crate::db::DbPool;
 use crate::get_conn;
@@ -49,25 +49,11 @@ pub async fn login(
         .first(&mut conn)
     {
         Ok(u) => u,
-        Err(_) => {
-            return (
-                StatusCode::UNAUTHORIZED,
-                Json(ErrorResponse {
-                    error: "Invalid credentials".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(_) => return ApiError::unauthorized("Invalid credentials").into_response(),
     };
 
     if !verify_password(&req.password, &user.password_hash) {
-        return (
-            StatusCode::UNAUTHORIZED,
-            Json(ErrorResponse {
-                error: "Invalid credentials".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::unauthorized("Invalid credentials").into_response();
     }
 
     // For test user "t", use the fixed dev token so it's predictable
@@ -78,15 +64,7 @@ pub async fn login(
     };
     let token = match create_session_with_token(&mut conn, user.id, fixed_token) {
         Ok(t) => t,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to create session".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(_) => return ApiError::internal("Failed to create session").into_response(),
     };
 
     (StatusCode::OK, Json(LoginResponse { token })).into_response()

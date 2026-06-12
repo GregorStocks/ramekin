@@ -13,24 +13,41 @@
  */
 
 import { mapValues } from '../runtime';
+import type { ErrorCode } from './ErrorCode';
+import {
+    ErrorCodeFromJSON,
+    ErrorCodeFromJSONTyped,
+    ErrorCodeToJSON,
+    ErrorCodeToJSONTyped,
+} from './ErrorCode';
+
 /**
- * Shared error response used by all endpoints
+ * Shared error response body returned by every endpoint.
  * @export
  * @interface ErrorResponse
  */
 export interface ErrorResponse {
     /**
-     * 
+     * Machine-readable error code; branch on this, not on `error`.
+     * @type {ErrorCode}
+     * @memberof ErrorResponse
+     */
+    code: ErrorCode;
+    /**
+     * Human-readable message for display and debugging.
      * @type {string}
      * @memberof ErrorResponse
      */
     error: string;
 }
 
+
+
 /**
  * Check if a given object implements the ErrorResponse interface.
  */
 export function instanceOfErrorResponse(value: object): value is ErrorResponse {
+    if (!('code' in value) || value['code'] === undefined) return false;
     if (!('error' in value) || value['error'] === undefined) return false;
     return true;
 }
@@ -45,6 +62,7 @@ export function ErrorResponseFromJSONTyped(json: any, ignoreDiscriminator: boole
     }
     return {
         
+        'code': ErrorCodeFromJSON(json['code']),
         'error': json['error'],
     };
 }
@@ -60,6 +78,7 @@ export function ErrorResponseToJSONTyped(value?: ErrorResponse | null, ignoreDis
 
     return {
         
+        'code': ErrorCodeToJSON(value['code']),
         'error': value['error'],
     };
 }

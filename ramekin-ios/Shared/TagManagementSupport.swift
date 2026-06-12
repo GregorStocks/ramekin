@@ -98,6 +98,27 @@ enum APIErrorFormatter {
         let description = error.localizedDescription.trimmingCharacters(in: .whitespacesAndNewlines)
         return description.isEmpty ? fallback : description
     }
+
+    /// Extract the server's machine-readable error code from any API error,
+    /// whether it came through `RamekinAPI.APIError` or the generated client's
+    /// `ErrorResponse`. Branch on this rather than the HTTP status or message.
+    static func code(from error: Error) -> ErrorCode? {
+        if let apiError = error as? RamekinAPI.APIError {
+            return apiError.code
+        }
+
+        if let generatedError = error as? ErrorResponse {
+            switch generatedError {
+            case .error(_, let data, _, _):
+                if let data,
+                   let errorResponse = try? JSONDecoder().decode(RamekinAPI.ErrorResponse.self, from: data) {
+                    return errorResponse.errorCode
+                }
+            }
+        }
+
+        return nil
+    }
 }
 
 enum TagManagementSupport {

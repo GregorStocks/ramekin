@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -110,25 +110,13 @@ pub async fn update_recipe(
 ) -> impl IntoResponse {
     if let Some(ref title) = request.title {
         if title.trim().is_empty() {
-            return (
-                StatusCode::BAD_REQUEST,
-                Json(ErrorResponse {
-                    error: "Title cannot be empty".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::invalid_request("Title cannot be empty").into_response();
         }
     }
 
     if let Some(ref instructions) = request.instructions {
         if instructions.trim().is_empty() {
-            return (
-                StatusCode::BAD_REQUEST,
-                Json(ErrorResponse {
-                    error: "Instructions cannot be empty".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::invalid_request("Instructions cannot be empty").into_response();
         }
     }
 
@@ -166,24 +154,8 @@ pub async fn update_recipe(
         .first(&mut conn)
     {
         Ok(r) => r,
-        Err(diesel::NotFound) => {
-            return (
-                StatusCode::NOT_FOUND,
-                Json(ErrorResponse {
-                    error: "Recipe not found".to_string(),
-                }),
-            )
-                .into_response()
-        }
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch recipe".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(diesel::NotFound) => return ApiError::not_found("Recipe not found").into_response(),
+        Err(_) => return ApiError::internal("Failed to fetch recipe").into_response(),
     };
 
     let (
@@ -213,13 +185,7 @@ pub async fn update_recipe(
         Some(ingredients) => match serde_json::to_value(&ingredients) {
             Ok(v) => v,
             Err(_) => {
-                return (
-                    StatusCode::BAD_REQUEST,
-                    Json(ErrorResponse {
-                        error: "Invalid ingredients format".to_string(),
-                    }),
-                )
-                    .into_response()
+                return ApiError::invalid_request("Invalid ingredients format").into_response()
             }
         },
         None => cur_ingredients,
@@ -238,13 +204,7 @@ pub async fn update_recipe(
             let tags: Vec<String> = tags.into_iter().map(|t| t.trim().to_string()).collect();
             for tag_name in &tags {
                 if let Err(err) = ramekin_core::validate_tag_name(tag_name) {
-                    return (
-                        StatusCode::BAD_REQUEST,
-                        Json(ErrorResponse {
-                            error: err.message().to_string(),
-                        }),
-                    )
-                        .into_response();
+                    return ApiError::invalid_request(err.message().to_string()).into_response();
                 }
             }
             tags
@@ -313,13 +273,7 @@ pub async fn update_recipe(
         Ok(()) => StatusCode::OK.into_response(),
         Err(e) => {
             tracing::error!("Failed to update recipe: {}", e);
-            (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to update recipe".to_string(),
-                }),
-            )
-                .into_response()
+            ApiError::internal("Failed to update recipe").into_response()
         }
     }
 }

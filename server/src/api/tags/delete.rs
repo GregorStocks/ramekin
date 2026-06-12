@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -7,7 +7,6 @@ use axum::{
     extract::{Path, State},
     http::StatusCode,
     response::IntoResponse,
-    Json,
 };
 use chrono::Utc;
 use diesel::prelude::*;
@@ -52,23 +51,11 @@ pub async fn delete_tag(
     .execute(&mut conn);
 
     match updated {
-        Ok(0) => (
-            StatusCode::NOT_FOUND,
-            Json(ErrorResponse {
-                error: "Tag not found".to_string(),
-            }),
-        )
-            .into_response(),
+        Ok(0) => ApiError::not_found("Tag not found").into_response(),
         Ok(_) => StatusCode::NO_CONTENT.into_response(),
         Err(e) => {
             tracing::error!("Failed to delete tag: {}", e);
-            (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to delete tag".to_string(),
-                }),
-            )
-                .into_response()
+            ApiError::internal("Failed to delete tag").into_response()
         }
     }
 }

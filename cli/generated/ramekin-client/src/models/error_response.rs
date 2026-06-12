@@ -11,16 +11,20 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// ErrorResponse : Shared error response used by all endpoints
+/// ErrorResponse : Shared error response body returned by every endpoint.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ErrorResponse {
+    /// Machine-readable error code; branch on this, not on `error`.
+    #[serde(rename = "code")]
+    pub code: models::ErrorCode,
+    /// Human-readable message for display and debugging.
     #[serde(rename = "error")]
     pub error: String,
 }
 
 impl ErrorResponse {
-    /// Shared error response used by all endpoints
-    pub fn new(error: String) -> ErrorResponse {
-        ErrorResponse { error }
+    /// Shared error response body returned by every endpoint.
+    pub fn new(code: models::ErrorCode, error: String) -> ErrorResponse {
+        ErrorResponse { code, error }
     }
 }

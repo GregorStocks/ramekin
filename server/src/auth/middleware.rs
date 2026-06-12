@@ -1,12 +1,11 @@
-use crate::api::ErrorResponse;
+use crate::api::ApiError;
 use crate::db::DbPool;
 use axum::{
     body::Body,
     extract::State,
-    http::{header, Method, Request, StatusCode},
+    http::{header, Method, Request},
     middleware::Next,
     response::{IntoResponse, Response},
-    Json,
 };
 use std::sync::Arc;
 
@@ -26,52 +25,24 @@ pub async fn require_auth(
 
     let auth_header = match request.headers().get(header::AUTHORIZATION) {
         Some(h) => h,
-        None => {
-            return (
-                StatusCode::UNAUTHORIZED,
-                Json(ErrorResponse {
-                    error: "Missing Authorization header".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        None => return ApiError::unauthorized("Missing Authorization header").into_response(),
     };
 
     let auth_str = match auth_header.to_str() {
         Ok(s) => s,
-        Err(_) => {
-            return (
-                StatusCode::UNAUTHORIZED,
-                Json(ErrorResponse {
-                    error: "Invalid Authorization header".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(_) => return ApiError::unauthorized("Invalid Authorization header").into_response(),
     };
 
     let token = match auth_str.strip_prefix("Bearer ") {
         Some(t) => t,
         None => {
-            return (
-                StatusCode::UNAUTHORIZED,
-                Json(ErrorResponse {
-                    error: "Invalid Authorization header format".to_string(),
-                }),
-            )
-                .into_response()
+            return ApiError::unauthorized("Invalid Authorization header format").into_response()
         }
     };
 
     // Validate token
     if get_user_from_token(&pool, token).await.is_none() {
-        return (
-            StatusCode::UNAUTHORIZED,
-            Json(ErrorResponse {
-                error: "Invalid or expired token".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::unauthorized("Invalid or expired token").into_response();
     }
 
     next.run(request).await

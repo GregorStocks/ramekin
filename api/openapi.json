@@ -645,6 +645,16 @@
                 }
               }
             }
+          },
+          "413": {
+            "description": "File too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -2523,6 +2533,41 @@
           }
         }
       }
+    },
+    "/api/users/me": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "operationId": "me",
+        "responses": {
+          "200": {
+            "description": "The currently authenticated user",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
     }
   },
   "components": {
@@ -2790,15 +2835,35 @@
           "asc"
         ]
       },
+      "ErrorCode": {
+        "type": "string",
+        "description": "Machine-readable error code surfaced in every error response.\n\nClients branch on this instead of parsing the human-readable `error`\nmessage or guessing from the HTTP status, so changing the wording of a\nmessage is never a contract change. Each code maps to exactly one HTTP\nstatus (see [`ErrorCode::status`]).",
+        "enum": [
+          "not_found",
+          "invalid_request",
+          "conflict",
+          "unauthorized",
+          "method_not_allowed",
+          "payload_too_large",
+          "service_unavailable",
+          "internal"
+        ]
+      },
       "ErrorResponse": {
         "type": "object",
-        "description": "Shared error response used by all endpoints",
+        "description": "Shared error response body returned by every endpoint.",
         "required": [
+          "code",
           "error"
         ],
         "properties": {
+          "code": {
+            "$ref": "#/components/schemas/ErrorCode",
+            "description": "Machine-readable error code; branch on this, not on `error`."
+          },
           "error": {
-            "type": "string"
+            "type": "string",
+            "description": "Human-readable message for display and debugging."
           }
         }
       },
@@ -3115,6 +3180,17 @@
         ],
         "properties": {
           "token": {
+            "type": "string"
+          }
+        }
+      },
+      "MeResponse": {
+        "type": "object",
+        "required": [
+          "username"
+        ],
+        "properties": {
+          "username": {
             "type": "string"
           }
         }

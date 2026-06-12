@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::{DbConn, DbPool};
 use crate::get_conn;
@@ -10,7 +10,6 @@ use axum::{
     extract::{Path, State},
     http::{header, StatusCode},
     response::{IntoResponse, Response},
-    Json,
 };
 use base64::Engine;
 use bytes::Bytes;
@@ -351,24 +350,8 @@ pub async fn export_recipe(
     // Fetch the recipe with its current version
     let recipe = match fetch_recipe_with_version(&mut conn, user.id, id) {
         Ok(r) => r,
-        Err(diesel::NotFound) => {
-            return (
-                StatusCode::NOT_FOUND,
-                Json(ErrorResponse {
-                    error: "Recipe not found".to_string(),
-                }),
-            )
-                .into_response()
-        }
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch recipe".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(diesel::NotFound) => return ApiError::not_found("Recipe not found").into_response(),
+        Err(_) => return ApiError::internal("Failed to fetch recipe").into_response(),
     };
 
     // Export to .paprikarecipe format (gzipped JSON)
@@ -376,13 +359,7 @@ pub async fn export_recipe(
         Ok(e) => e,
         Err(e) => {
             tracing::error!("Failed to export recipe: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to export recipe".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to export recipe").into_response();
         }
     };
 
@@ -536,23 +513,11 @@ pub async fn export_all_recipes(
         Ok(Ok(r)) => r,
         Ok(Err(e)) => {
             tracing::error!(error = %e, "failed to fetch recipes for export");
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch recipes".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to fetch recipes").into_response();
         }
         Err(e) => {
             tracing::error!(error = %e, "export fetch task panicked");
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch recipes".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to fetch recipes").into_response();
         }
     };
 

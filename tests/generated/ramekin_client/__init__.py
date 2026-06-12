@@ -28,6 +28,7 @@ __all__ = [
     "ShoppingListApi",
     "TagsApi",
     "TestingApi",
+    "UsersApi",
     "ApiResponse",
     "ApiClient",
     "Configuration",
@@ -52,6 +53,7 @@ __all__ = [
     "CreateTagResponse",
     "CustomEnrichRequest",
     "Direction",
+    "ErrorCode",
     "ErrorResponse",
     "GenerateDescriptionResponse",
     "GeneratePhotoResponse",
@@ -65,6 +67,7 @@ __all__ = [
     "ListRecipesResponse",
     "LoginRequest",
     "LoginResponse",
+    "MeResponse",
     "MealPlanItem",
     "MealPlanListResponse",
     "MealType",
@@ -116,6 +119,7 @@ from ramekin_client.api.scrape_api import ScrapeApi as ScrapeApi
 from ramekin_client.api.shopping_list_api import ShoppingListApi as ShoppingListApi
 from ramekin_client.api.tags_api import TagsApi as TagsApi
 from ramekin_client.api.testing_api import TestingApi as TestingApi
+from ramekin_client.api.users_api import UsersApi as UsersApi
 
 # import ApiClient
 from ramekin_client.api_response import ApiResponse as ApiResponse
@@ -144,6 +148,7 @@ from ramekin_client.models.create_tag_request import CreateTagRequest as CreateT
 from ramekin_client.models.create_tag_response import CreateTagResponse as CreateTagResponse
 from ramekin_client.models.custom_enrich_request import CustomEnrichRequest as CustomEnrichRequest
 from ramekin_client.models.direction import Direction as Direction
+from ramekin_client.models.error_code import ErrorCode as ErrorCode
 from ramekin_client.models.error_response import ErrorResponse as ErrorResponse
 from ramekin_client.models.generate_description_response import GenerateDescriptionResponse as GenerateDescriptionResponse
 from ramekin_client.models.generate_photo_response import GeneratePhotoResponse as GeneratePhotoResponse
@@ -157,6 +162,7 @@ from ramekin_client.models.ingredient import Ingredient as Ingredient
 from ramekin_client.models.list_recipes_response import ListRecipesResponse as ListRecipesResponse
 from ramekin_client.models.login_request import LoginRequest as LoginRequest
 from ramekin_client.models.login_response import LoginResponse as LoginResponse
+from ramekin_client.models.me_response import MeResponse as MeResponse
 from ramekin_client.models.meal_plan_item import MealPlanItem as MealPlanItem
 from ramekin_client.models.meal_plan_list_response import MealPlanListResponse as MealPlanListResponse
 from ramekin_client.models.meal_type import MealType as MealType

@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -9,7 +9,6 @@ use axum::{
     extract::{Path, State},
     http::{header, StatusCode},
     response::{IntoResponse, Response},
-    Json,
 };
 use diesel::prelude::*;
 use std::sync::Arc;
@@ -47,23 +46,9 @@ pub async fn get_photo(
     {
         Ok(p) => p,
         Err(diesel::result::Error::NotFound) => {
-            return (
-                StatusCode::NOT_FOUND,
-                Json(ErrorResponse {
-                    error: "Photo not found".to_string(),
-                }),
-            )
-                .into_response()
+            return ApiError::not_found("Photo not found").into_response()
         }
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch photo".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(_) => return ApiError::internal("Failed to fetch photo").into_response(),
     };
 
     Response::builder()

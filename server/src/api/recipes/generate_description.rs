@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -128,23 +128,11 @@ pub async fn generate_description(
         {
             Ok(r) => r,
             Err(diesel::NotFound) => {
-                return (
-                    StatusCode::NOT_FOUND,
-                    Json(ErrorResponse {
-                        error: "Recipe not found".to_string(),
-                    }),
-                )
-                    .into_response()
+                return ApiError::not_found("Recipe not found").into_response()
             }
             Err(e) => {
                 tracing::error!("Failed to fetch recipe: {}", e);
-                return (
-                    StatusCode::INTERNAL_SERVER_ERROR,
-                    Json(ErrorResponse {
-                        error: "Failed to fetch recipe".to_string(),
-                    }),
-                )
-                    .into_response();
+                return ApiError::internal("Failed to fetch recipe").into_response();
             }
         }
     };
@@ -174,32 +162,22 @@ pub async fn generate_description(
         Ok(c) => c,
         Err(e) => {
             tracing::error!("AI client unavailable: {}", e);
-            return (
-                StatusCode::SERVICE_UNAVAILABLE,
-                Json(ErrorResponse {
-                    error: "AI service unavailable".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::service_unavailable("AI service unavailable").into_response();
         }
     };
 
     let ingredients_str = format_ingredients_for_prompt(&ingredients);
 
-    let result =
-        match ai_generate_description(&ai_client, &title, &ingredients_str, &instructions).await {
-            Ok(r) => r,
-            Err(e) => {
-                tracing::error!("generate_description call failed: {}", e);
-                return (
-                    StatusCode::SERVICE_UNAVAILABLE,
-                    Json(ErrorResponse {
-                        error: format!("Description generation failed: {}", e),
-                    }),
-                )
-                    .into_response();
-            }
-        };
+    let result = match ai_generate_description(&ai_client, &title, &ingredients_str, &instructions)
+        .await
+    {
+        Ok(r) => r,
+        Err(e) => {
+            tracing::error!("generate_description call failed: {}", e);
+            return ApiError::service_unavailable(format!("Description generation failed: {}", e))
+                .into_response();
+        }
+    };
 
     let new_description = result.description.trim().to_string();
     let changed =
@@ -282,23 +260,13 @@ pub async fn generate_description(
 
     if let Err(e) = write_result {
         if matches!(e, diesel::result::Error::RollbackTransaction) {
-            return (
-                StatusCode::CONFLICT,
-                Json(ErrorResponse {
-                    error: "Recipe was modified while generating description; try again"
-                        .to_string(),
-                }),
+            return ApiError::conflict(
+                "Recipe was modified while generating description; try again",
             )
-                .into_response();
+            .into_response();
         }
         tracing::error!("Failed to persist generated description: {}", e);
-        return (
-            StatusCode::INTERNAL_SERVER_ERROR,
-            Json(ErrorResponse {
-                error: "Failed to persist generated description".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::internal("Failed to persist generated description").into_response();
     }
 
     (
