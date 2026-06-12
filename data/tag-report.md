@@ -5,7 +5,7 @@
 | Recipe | Tags | Cached |
 |--------|------|--------|
 | A Vibrant Beet Caviar | appetizer, side dish, easy, healthy, vegetarian, gluten-free, dairy-free, mediterranean, greens | yes |
-| The Best Waffles | breakfast, vegetarian, egg, bread | no |
+| The Best Waffles | breakfast, vegetarian, egg, bread | yes |
 | Better Breakfast Cereal | breakfast, easy, healthy, vegetarian, vegan, dairy-free, pantry | yes |
 | Chocolate Dipped Biscotti | dessert, snack, vegetarian, italian, egg, pantry | yes |
 | Black Bread | bread, vegetarian, dairy-free, eastern european, pantry | yes |
@@ -14,7 +14,7 @@
 | Chocolate Devil's Food Cake | dessert, comfort food, vegetarian | yes |
 | Citrus Salt | easy, vegan, gluten-free, dairy-free, pantry | yes |
 | Coconut Red Lentil Soup (Esalen Ayurv... | lunch, dinner, healthy, vegetarian, vegan, gluten-free, dairy-free, indian, soup, legumes, pantry | yes |
-| Lime & Blistered Peanut Coleslaw | lunch, dinner, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, salad, greens | no |
+| Lime & Blistered Peanut Coleslaw | lunch, dinner, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, salad, greens | yes |
 | Joshua McFadden's Cucumber Salad | lunch, dinner, side dish, easy, healthy, vegetarian, gluten-free, low-carb, mediterranean, salad, greens, legumes | yes |
 | Night + Market All-Purpose Curry Paste | thai, asian, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | Kombucha Dark and Stormy | quick, easy, vegan, gluten-free, dairy-free, low-carb | yes |
@@ -22,14 +22,15 @@
 | Green Falafel Bowl | lunch, dinner, easy, healthy, vegetarian, mediterranean, egg, greens, legumes, cheese | yes |
 | Five Minute Tomato Sauce Recipe | quick, easy, vegetarian, vegan, gluten-free, dairy-free, pasta, pantry, side dish, italian | yes |
 | A Tasty Frittata Recipe | breakfast, lunch, dinner, easy, vegetarian, gluten-free, egg, potato, cheese | yes |
-| Gnocchi Recipe | dinner, entree, comfort food, vegetarian, italian, potato, pantry | no |
+| Gnocchi Recipe | dinner, entree, comfort food, vegetarian, italian, potato, pantry | yes |
 | Golden Beet Hummus | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, legumes, pantry | yes |
 | Goth Hummus | lunch, dinner, snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, legumes, pantry | yes |
 | Super Green Juice Recipe | breakfast, snack, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, greens | yes |
 | Nikki's Healthy Cookie Recipe | dessert, snack, easy, healthy, vegetarian, vegan, gluten-free, dairy-free | yes |
 | Homemade Bouillon | easy, healthy, vegetarian, vegan, gluten-free, dairy-free, pantry, soup, greens | yes |
 | Creamy Four Ingredient Chili Mac | lunch, dinner, quick, easy, comfort food, vegan, dairy-free, pasta, pantry | yes |
-| Instant Pot Fiasco Beans (Fagioli al ... | lunch, dinner, side dish, entree, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, italian, legumes, greens, pantry | no |
+| Instant Pot Congee with Brown Rice an... | breakfast, lunch, dinner, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, asian, chinese, rice, soup, greens, legumes, mushroom, pantry | yes |
+| Instant Pot Fiasco Beans (Fagioli al ... | lunch, dinner, side dish, entree, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, italian, legumes, greens, pantry | yes |
 | Melissa Clark's Instant Pot Hummus | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, legumes, greens, pantry | yes |
 | Instant Pot Minestrone Soup | lunch, dinner, easy, healthy, comfort food, vegetarian, italian, soup, potato, greens, legumes | yes |
 | 10 Minute Instant Pot Mushroom Broth | quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, soup, mushroom, pantry | yes |
@@ -37,33 +38,34 @@
 | Life Changing Green Rice Porridge | breakfast, lunch, dinner, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, asian, rice, soup, greens, tofu, pantry | yes |
 | Instant Pot Indian-spiced Simmer Sauce | side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, indian, pantry | yes |
 | Homemade Labneh | snack, appetizer, side dish, easy, vegetarian, gluten-free, low-carb, mediterranean, pantry | yes |
-| Last Minute Red Lasagna | dinner, easy, comfort food, vegetarian, pasta, legumes, cheese, italian | no |
+| Last Minute Red Lasagna | dinner, easy, comfort food, vegetarian, pasta, legumes, cheese, italian | yes |
 | Roasted Lemon Chutney | side dish, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | Summer Melon Salad | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, salad | yes |
 | Miso Soup Recipe | lunch, dinner, quick, easy, healthy, vegetarian, vegan, dairy-free, asian, japanese, soup, greens, tofu | yes |
 | Mung Bean Yoga Bowl | lunch, dinner, easy, healthy, vegetarian, gluten-free, legumes, greens | yes |
-| No Bake Chocolate Cake | dessert, easy, vegetarian, vegan, gluten-free, dairy-free, pantry | no |
+| No Bake Chocolate Cake | dessert, easy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | CAP Beauty No Bone Broth | vegan, vegetarian, gluten-free, dairy-free, healthy, soup, mushroom, side dish, easy | yes |
 | Okonomiyaki Recipe | lunch, dinner, easy, healthy, vegetarian, japanese, egg, greens | yes |
 | Skinny Omelette | breakfast, lunch, quick, easy, healthy, vegetarian, gluten-free, low-carb, egg, greens, cheese | yes |
 | Sunshine Pad Thai (Vegetarian) | lunch, dinner, entree, quick, easy, vegetarian, asian, thai, egg, greens, tofu, pantry | yes |
 | The Perfect Healthy Granola | breakfast, snack, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
-| Homemade Pesto | easy, vegetarian, italian, cheese, pantry | no |
+| Homemade Pesto | easy, vegetarian, italian, cheese, pantry | yes |
+| Pumpkin and Rice Soup | lunch, dinner, healthy, comfort food, vegetarian, gluten-free, rice, soup | no |
 | Rhubarb Rosewater Syrup | dessert, snack, easy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | Ribollita | lunch, dinner, easy, healthy, comfort food, vegetarian, vegan, dairy-free, italian, soup, greens, legumes, pantry | yes |
 | A Favorite Rice Noodle Stir Fry | lunch, dinner, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, asian, thai, rice, tofu, mushroom, pantry | yes |
 | Salad Booster | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, japanese, greens, pantry | yes |
-| Roasted Tomato Salsa | appetizer, side dish, easy, vegetarian, vegan, gluten-free, dairy-free, mexican, pantry | no |
+| Roasted Tomato Salsa | appetizer, side dish, easy, vegetarian, vegan, gluten-free, dairy-free, mexican, pantry | yes |
 | Simple Sautéed Zucchini | side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mediterranean, greens | yes |
 | Seed Pate | snack, appetizer, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, pantry | yes |
-| Seeded Flatbread | snack, appetizer, side dish, vegetarian, vegan, dairy-free, bread, pantry | no |
+| Seeded Flatbread | snack, appetizer, side dish, vegetarian, vegan, dairy-free, bread, pantry | yes |
 | Golden-crusted Sesame Seeded Tofu | lunch, dinner, snack, appetizer, side dish, entree, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, asian, tofu | yes |
 | Vegan Shepherd's Pie | dinner, entree, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, potato, legumes, mushroom | yes |
 | A Simple Tomato Soup | lunch, dinner, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, indian, soup, pantry | yes |
 | Six Seed Soda Bread | side dish, easy, vegetarian, bread, pantry | yes |
 | Sparkling Cranberries | dessert, snack, appetizer, side dish, easy, vegetarian, vegan, gluten-free, dairy-free, pantry, holiday | yes |
 | Spicy Instant Pot Taco Soup | lunch, dinner, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mexican, soup, legumes | yes |
-| Stuffed Shells Recipe | dinner, entree, comfort food, vegetarian, italian, pasta, cheese | no |
+| Stuffed Shells Recipe | dinner, entree, comfort food, vegetarian, italian, pasta, cheese | yes |
 | Summer Corn Salad | lunch, dinner, snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mexican, salad, pantry | yes |
 | Tapioca Pudding | dessert, easy, comfort food, vegetarian, gluten-free, egg, pantry | yes |
 | Turmeric Cashews | snack, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, asian, pantry | yes |
@@ -83,6 +85,7 @@
 | Easy Mint Water Recipe | easy, healthy, vegan, gluten-free, dairy-free, quick | yes |
 | Easy Peanut Butter Granola | breakfast, snack, easy, healthy, vegetarian, dairy-free, pantry | yes |
 | Easy Taco Soup Recipe | lunch, dinner, easy, comfort food, vegetarian, mexican, beef, soup, legumes, pantry | yes |
+| Freekah Vegetable Soup Recipe | lunch, dinner, healthy, vegetarian, soup, greens, pantry, mediterranean | yes |
 | Easy Frittata Recipe | breakfast, lunch, dinner, easy, healthy, vegetarian, low-carb, egg, greens, cheese | yes |
 | Frozen Piña Colada Recipe | easy, vegan, dairy-free, pantry | yes |
 | Fruit Infused Water Recipe | quick, easy, healthy, vegan, gluten-free, dairy-free, low-carb | yes |
@@ -144,7 +147,7 @@
 | Super Easy Weeknight Chili | dinner, easy, comfort food, american, beef, legumes, cheese | yes |
 | Gourmet's Double Chocolate Cake with ... | dessert, comfort food, vegetarian, pantry, holiday | yes |
 | ‘Nduja Grilled Cheese with Wisconsin ... | lunch, snack, comfort food, sandwich, cheese, bread, italian, grill | yes |
-| Five Ingredient Corn Soup with Herb S... | lunch, dinner, side dish, entree, vegetarian, soup, greens | no |
+| Five Ingredient Corn Soup with Herb S... | lunch, dinner, side dish, entree, vegetarian, soup, greens | yes |
 | Deborah Madison's Curried Coconut Cor... | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, indian, thai, soup, greens, pantry | yes |
 | Vietnamese Cucumber Salad | lunch, dinner, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, asian, salad, greens | yes |
 | Favorite Roasted Eggplant Lasagna  | dinner, entree, comfort food, vegetarian, italian, pasta, greens, cheese | yes |
@@ -154,10 +157,10 @@
 | Crispy Tofu and Broccoli with Sesame-... | dinner, entree, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, asian, tofu, greens | yes |
 | Perfect Instant Pot Soft-Boiled Eggs | breakfast, quick, easy, vegetarian, egg | yes |
 | Roasted Cauliflower with Schug & Yogu... | dinner, appetizer, side dish, healthy, vegetarian, gluten-free, low-carb, indian, mediterranean, greens | yes |
-| Favorite Kale Salad with Parmigiano R... | lunch, dinner, side dish, easy, healthy, vegetarian, salad, greens, cheese, pantry | no |
+| Favorite Kale Salad with Parmigiano R... | lunch, dinner, side dish, easy, healthy, vegetarian, salad, greens, cheese, pantry | yes |
 | Lemon-Coconut Date Balls | dessert, snack, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | Olive Tapenade with Capers & Parsley | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, pantry | yes |
-| Mind-Blowing, Three-Ingredient Trader... | lunch, dinner, easy, healthy, vegetarian, salad, legumes, cheese | no |
+| Mind-Blowing, Three-Ingredient Trader... | lunch, dinner, easy, healthy, vegetarian, salad, legumes, cheese | yes |
 | Large or Small Batch Basil Pesto | quick, easy, vegetarian, italian, cheese, pantry | yes |
 | Rhubarb Schnapps (Double or Single Re... | easy, pantry, eastern european, holiday | yes |
 | Apple Cobbler with Hot Sugar Crust | dessert, easy, comfort food, vegetarian, pantry | yes |
@@ -165,7 +168,8 @@
 | Saffron-Carrot Soup (Vegan) with Toas... | lunch, dinner, appetizer, side dish, healthy, vegan, gluten-free, dairy-free, soup, pantry | yes |
 | Stamped Christmas Cookies: Brown Butt... | dessert, comfort food, vegetarian, pantry, holiday | yes |
 | Dukkah (My favorite!), | breakfast, lunch, dinner, snack, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, italian, soup, salad, pantry, holiday | yes |
-| Perfect Poached Eggs | breakfast, easy, healthy, vegetarian, low-carb, egg | no |
+| How to Cook Bacon on a Sheet Pan | breakfast, easy, pork, side dish, quick | no |
+| Perfect Poached Eggs | breakfast, easy, healthy, vegetarian, low-carb, egg | yes |
 | Spatchcock Chicken Recipe with Za'ata... | dinner, entree, chicken, mediterranean | yes |
 | Teri's Sliced Orange Salad with Arugu... | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, gluten-free, low-carb, mediterranean, salad, greens, cheese | yes |
 | Leftover Roasted Chicken Salad | lunch, dinner, easy, healthy, chicken, salad, greens, cheese | yes |
@@ -210,10 +214,11 @@
 | Classic Sweet Potato Casserole  | side dish, vegetarian, american, potato, holiday | yes |
 | Vermont Cheddar Cheese Soup (Vegetarian) | lunch, dinner, comfort food, vegetarian, american, soup, potato, cheese, bread | yes |
 | Simple Sautéed Greens | side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, greens | yes |
-| Easy Homemade Ricotta Gnocchi | lunch, dinner, easy, comfort food, vegetarian, italian, pasta, mushroom, cheese | no |
+| All-Purpose Lemon Vinaigrette | quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, side dish, salad, pantry | no |
+| Easy Homemade Ricotta Gnocchi | lunch, dinner, easy, comfort food, vegetarian, italian, pasta, mushroom, cheese | yes |
 | Smooth and Creamy 5-Ingredient Homema... | lunch, snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, legumes, pantry | yes |
 | Homemade Bruschetta Sauce (Trader Joe... | appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, italian | yes |
-| Butternut Squash Lasagna with Greens ... | dinner, entree, comfort food, vegetarian, italian, pasta, greens, mushroom, cheese, holiday | no |
+| Butternut Squash Lasagna with Greens ... | dinner, entree, comfort food, vegetarian, italian, pasta, greens, mushroom, cheese, holiday | yes |
 | Better Than Classic Pound Cake (One B... | dessert, easy, comfort food, vegetarian, american, bread, pantry | yes |
 | Cauliflower Couscous Salad with Almon... | lunch, dinner, side dish, healthy, vegetarian, vegan, gluten-free, low-carb, salad, greens | yes |
 | Cabbage Tortillas (5-Ingredients, Glu... | lunch, dinner, snack, appetizer, side dish, easy, healthy, vegetarian, gluten-free, low-carb, egg, greens, cheese | yes |
@@ -413,7 +418,7 @@
 | Buttermilk Biscuits: Reloaded | breakfast, snack, side dish, comfort food, vegetarian, american, bread | yes |
 | Spicy Saltine Crackers | snack, appetizer, quick, easy, vegetarian, pantry | yes |
 | Steak Tartare | lunch, dinner, appetizer, entree, low-carb, french, beef, egg | yes |
-| Sticky Toffee Pudding | dessert, comfort food, vegetarian, holiday, pantry | no |
+| Sticky Toffee Pudding | dessert, comfort food, vegetarian, holiday, pantry | yes |
 | Sweet Potato Waffles | breakfast, vegetarian, american, egg, potato, pantry | yes |
 | Thanksgiving Turkey Pot Pie | dinner, entree, comfort food, american, chicken, potato, mushroom, holiday | yes |
 | The Un-Pumpkin Pie Spice | quick, easy, vegan, gluten-free, dairy-free, pantry, holiday | yes |
@@ -431,45 +436,45 @@
 | Buckeye Candies | dessert, snack, comfort food, vegetarian, american, pantry, holiday | yes |
 | Pupusas | lunch, dinner, snack, appetizer, easy, comfort food, vegetarian, mexican, cheese | yes |
 | Sheet-Pan Hash Browns | breakfast, side dish, easy, vegetarian, gluten-free, dairy-free, potato | yes |
-| Spinach-Artichoke Dip | appetizer, snack, easy, comfort food, vegetarian, cheese, greens | no |
+| Spinach-Artichoke Dip | appetizer, snack, easy, comfort food, vegetarian, cheese, greens | yes |
 | Ultracreamy Hummus | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, legumes, pantry | yes |
 | Pan-Seared Strip Steaks | dinner, entree, easy, beef, american | yes |
 | One-Pot Mushroom Risotto | dinner, entree, comfort food, vegetarian, italian, rice, mushroom, cheese | yes |
-| Pajeon (Korean Scallion Pancake) | lunch, dinner, snack, appetizer, side dish, easy, vegetarian, dairy-free, asian, pantry | no |
-| Breakfast Burritos with Chorizo and C... | breakfast, comfort food, mexican, egg, potato, cheese, pork, entree | no |
+| Pajeon (Korean Scallion Pancake) | lunch, dinner, snack, appetizer, side dish, easy, vegetarian, dairy-free, asian, pantry | yes |
+| Breakfast Burritos with Chorizo and C... | breakfast, comfort food, mexican, egg, potato, cheese, pork, entree | yes |
 | Woodman's-Style Clam Chowder | lunch, dinner, entree, comfort food, american, seafood, soup, potato | yes |
 | Spaghetti al Tonno | dinner, easy, comfort food, italian, seafood, fish, pasta, pantry | yes |
-| San Diego Fish Tacos | dinner, entree, mexican, seafood, fish | no |
-| Slow-Roasted Medium-Rare Beef Short Ribs | dinner, entree, comfort food, beef, holiday | no |
-| Pepperoni Sheet-Pan Pizza | lunch, dinner, entree, easy, comfort food, italian, cheese, pantry | no |
-| Make-Way-Ahead Dinner Rolls | side dish, comfort food, vegetarian, american, bread, pantry, holiday | no |
+| San Diego Fish Tacos | dinner, entree, mexican, seafood, fish | yes |
+| Slow-Roasted Medium-Rare Beef Short Ribs | dinner, entree, comfort food, beef, holiday | yes |
+| Pepperoni Sheet-Pan Pizza | lunch, dinner, entree, easy, comfort food, italian, cheese, pantry | yes |
+| Make-Way-Ahead Dinner Rolls | side dish, comfort food, vegetarian, american, bread, pantry, holiday | yes |
 | Thai Curry Butter Fan Rolls | snack, appetizer, side dish, comfort food, vegetarian, asian, thai, bread, pantry | yes |
-| Kimchi Jeon | lunch, dinner, snack, appetizer, side dish, easy, comfort food, vegetarian, asian | no |
+| Kimchi Jeon | lunch, dinner, snack, appetizer, side dish, easy, comfort food, vegetarian, asian | yes |
 | Braised Chicken and Lentils | dinner, entree, healthy, comfort food, chicken, legumes, pantry | yes |
 | Chickpea Salad Sandwiches with Quick ... | lunch, easy, healthy, vegetarian, sandwich, bread, egg, legumes | yes |
 | Muffuletta | lunch, dinner, entree, comfort food, italian, sandwich, bread, cheese, greens | yes |
 | Coddled Eggs | breakfast, easy, vegetarian, egg | yes |
 | Grilled Ham and Cheese Sandwiches wit... | lunch, dinner, comfort food, american, soup, sandwich, bread, cheese, pantry, grill | yes |
 | Sour Cream and Onion Pasta | dinner, entree, easy, comfort food, vegetarian, american, pasta, pantry | yes |
-| Mesquite-Grilled Tacos Rasurados | dinner, entree, mexican, beef, grill | no |
+| Mesquite-Grilled Tacos Rasurados | dinner, entree, mexican, beef, grill | yes |
 | Fiskisúpa (Icelandic Fish Soup) | dinner, entree, comfort food, seafood, fish, soup, potato | yes |
-| Tacos Árabes (Pueblan Pork Tacos with... | dinner, entree, comfort food, mexican, pork | no |
+| Tacos Árabes (Pueblan Pork Tacos with... | dinner, entree, comfort food, mexican, pork | yes |
 | Tallarines Verdes (Peruvian Green Noo... | lunch, dinner, easy, comfort food, vegetarian, pasta, greens, cheese | yes |
-| Beef Suya (Nigerian Spice-Rubbed Gril... | dinner, entree, beef, grill | no |
+| Beef Suya (Nigerian Spice-Rubbed Gril... | dinner, entree, beef, grill | yes |
 | Easy Garlic Confit | easy, vegetarian, vegan, gluten-free, dairy-free, pantry, side dish | yes |
 | Creamy Garlic Confit Mashed Potatoes | side dish, comfort food, vegetarian, gluten-free, american, potato, pantry, holiday | yes |
 | Roasted Coffee and Fennel–Rubbed Shor... | dinner, entree, comfort food, beef, salad | yes |
 | Crème Brûlée for Two | dessert, comfort food, vegetarian, egg, french | yes |
-| Classic Roast Beef Tenderloin | dinner, entree, comfort food, beef, american, holiday | no |
+| Classic Roast Beef Tenderloin | dinner, entree, comfort food, beef, american, holiday | yes |
 | Pan-Seared Scallops | dinner, entree, quick, easy, healthy, gluten-free, dairy-free, low-carb, seafood | yes |
 | Best Beef Stew | dinner, entree, comfort food, beef, potato, soup | yes |
-| Spicy Mexican Shredded Pork Tostadas ... | dinner, entree, comfort food, mexican, pork | no |
-| Garlic Knots | snack, appetizer, side dish, easy, comfort food, vegetarian, italian, bread, pantry | no |
+| Spicy Mexican Shredded Pork Tostadas ... | dinner, entree, comfort food, mexican, pork | yes |
+| Garlic Knots | snack, appetizer, side dish, easy, comfort food, vegetarian, italian, bread, pantry | yes |
 | Weeknight Roast Chicken | dinner, entree, easy, comfort food, chicken, american | yes |
-| Catalan-Style Beef Stew with Mushrooms | dinner, entree, comfort food, beef, mushroom | no |
+| Catalan-Style Beef Stew with Mushrooms | dinner, entree, comfort food, beef, mushroom | yes |
 | Guinness Beef Stew | dinner, entree, comfort food, beef, potato, soup | yes |
 | French-Style Pork Stew | dinner, entree, comfort food, pork, potato, french, eastern european, soup | yes |
-| Grilled Beef Kofte | dinner, entree, beef, mediterranean, grill | no |
+| Grilled Beef Kofte | dinner, entree, beef, mediterranean, grill | yes |
 | One-Pan Pork Tenderloin with Green Be... | dinner, entree, pork, potato, greens | yes |
 | Best Ground Beef Chili | dinner, entree, comfort food, american, mexican, beef, soup, legumes | yes |
 | Pasta e Ceci (Pasta with Chickpeas) | dinner, entree, comfort food, italian, pasta, legumes, pantry | yes |
@@ -478,7 +483,7 @@
 | Pan-Seared Skirt Steak with Zucchini ... | dinner, entree, quick, easy, beef, greens, low-carb | yes |
 | Foolproof Boiled Corn | side dish, easy, healthy, vegetarian, vegan, gluten-free, quick | yes |
 | Mozzarella Sticks | snack, appetizer, easy, comfort food, vegetarian, italian, cheese, pantry | yes |
-| Pub-Style Steak and Ale Pie | dinner, entree, comfort food, beef, mushroom | no |
+| Pub-Style Steak and Ale Pie | dinner, entree, comfort food, beef, mushroom | yes |
 | Grilled Steak Fajitas | dinner, entree, mexican, beef, grill | yes |
 | Best Baked Sweet Potatoes | side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, potato | yes |
 | Best Buttermilk Fried Chicken Recipe | dinner, entree, comfort food, american, chicken | yes |
@@ -488,7 +493,7 @@
 | Homemade Sea Salt Popcorn | snack, appetizer, side dish, quick, easy, vegetarian, italian, cheese, pantry | yes |
 | Healthy Taco Salad | lunch, dinner, easy, healthy, low-carb, mexican, beef, greens, cheese, salad | yes |
 | Vanilla Latte | quick, easy, healthy, vegan, gluten-free, dairy-free, pantry | yes |
-| Homemade Bagel Recipe | breakfast, easy, healthy, vegetarian, bread, egg, pantry | no |
+| Homemade Bagel Recipe | breakfast, easy, healthy, vegetarian, bread, egg, pantry | yes |
 | Mocha Latte | quick, easy, healthy, vegan, gluten-free, dairy-free, pantry | yes |
 | Horchata Recipe | easy, vegan, gluten-free, dairy-free, mexican, rice, pantry | yes |
 | Huevos Rancheros Recipe | breakfast, lunch, dinner, easy, comfort food, vegetarian, mexican, egg | yes |
@@ -539,7 +544,7 @@
 | Cheddar Chive Waffles | breakfast, easy, comfort food, american, egg, cheese, pantry | yes |
 | Cheesy Broccoli and Bacon Scramble | breakfast, quick, easy, low-carb, american, egg, cheese | yes |
 | Chipotle Chicken Kabobs with Avocado ... | lunch, dinner, entree, easy, healthy, mexican, chicken, grill | yes |
-| Chocolate Cherry Ice Cream | dessert, vegetarian, comfort food, holiday | no |
+| Chocolate Cherry Ice Cream | dessert, vegetarian, comfort food, holiday | yes |
 | Chocolate Chip Toffee Bits Ice Cream | dessert, easy, comfort food, vegetarian, american, pantry | yes |
 | Chocolate Covered Blueberries | dessert, snack, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free | yes |
 | Flourless Chocolate Turtle Cookies | dessert, snack, easy, comfort food, vegetarian, gluten-free, pantry, holiday | yes |
@@ -548,7 +553,7 @@
 | Fresh Corn Dip with Bacon, Avocado an... | snack, appetizer, quick, easy, gluten-free, american, pork | yes |
 | Cranberry Apple Tart | dessert, vegetarian, gluten-free, holiday | yes |
 | Creamed Corn with Peppers and Bacon | side dish, easy, comfort food, american, pork, cheese | yes |
-| Creamy Peanut Butter Fudge | dessert, snack, easy, comfort food, vegetarian, pantry | no |
+| Creamy Peanut Butter Fudge | dessert, snack, easy, comfort food, vegetarian, pantry | yes |
 | Crunchy Brownie Crisps | dessert, snack, easy, vegetarian, pantry | yes |
 | Crustless Quiche with Vegetables and ... | breakfast, lunch, dinner, easy, comfort food, low-carb, egg, mushroom, cheese | yes |
 | Dill Pickle Dip | snack, appetizer, easy, vegetarian, low-carb, american, cheese | yes |
@@ -561,8 +566,9 @@
 | Gingerbread Cookie Bars | dessert, easy, comfort food, vegetarian, pantry, holiday | yes |
 | Green Chile Chicken and Potato Soup | lunch, dinner, entree, easy, comfort food, american, mexican, chicken, soup, potato | yes |
 | Green Chile Guacamole | snack, appetizer, easy, vegetarian, vegan, gluten-free, dairy-free, mexican, greens | yes |
+| Hawaiian Banana Bread with Pineapple ... | breakfast, dessert, snack, easy, vegetarian, gluten-free, american, bread, pantry | no |
 | Hawaiian Oatmeal | breakfast, quick, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
-| Homemade Butter Mints & Chocolate But... | dessert, snack, easy, vegetarian, pantry, holiday | no |
+| Homemade Butter Mints & Chocolate But... | dessert, snack, easy, vegetarian, pantry, holiday | yes |
 | Homemade Magic Shell & Chocolate Cove... | dessert, snack, quick, easy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | Honey Balsamic Vinaigrette | quick, easy, vegetarian, vegan, gluten-free, dairy-free, pantry, side dish | yes |
 | How To Grill Tri-Tip | dinner, entree, easy, comfort food, low-carb, american, beef, grill | yes |
@@ -659,6 +665,7 @@
 | Slow-cooked bean casserole | dinner, entree, comfort food, legumes, pork | yes |
 | Slow-cooked summer blush | dinner, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, greens, pantry | yes |
 | Slow-cooked tomatoes | side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, pantry | yes |
+| Slow-cooked tomatoes with basil | vegetarian, side dish, mediterranean, healthy, easy, pantry | yes |
 | Smoked salmon with grapefruit salad | lunch, dinner, easy, healthy, gluten-free, dairy-free, low-carb, mediterranean, seafood, fish, salad | yes |
 | Spiced rice & lentils with cauliflower | lunch, dinner, easy, healthy, vegetarian, indian, rice, legumes, pantry | yes |
 | Spiced smoky barbecued chicken | dinner, easy, chicken, grill, indian | yes |
@@ -774,9 +781,10 @@
 | Blueberry Crumb Bars | dessert, snack, easy, comfort food, vegetarian, american, pantry | yes |
 | Bourbon Slush | pantry, holiday | yes |
 | No-Bake Butterfinger Pie | dessert, easy, comfort food, vegetarian, american, cheese, pantry | yes |
+| Salted Caramel Apple Cheesecake Pie | dessert, comfort food, vegetarian, cheese, holiday | yes |
 | Cheese Ball Recipe | snack, appetizer, easy, vegetarian, cheese, holiday | yes |
 | Cherry Crisp | dessert, comfort food, vegetarian, american, pantry, holiday | yes |
-| Cherry Pie | dessert, vegetarian, comfort food, holiday | no |
+| Cherry Pie | dessert, vegetarian, comfort food, holiday | yes |
 | Chicken Parmesan | dinner, entree, easy, comfort food, italian, chicken, pasta, cheese | yes |
 | Chile con Queso | appetizer, side dish, easy, comfort food, vegetarian, mexican, cheese | yes |
 | Chocolate Lover's Cheesecake | dessert, vegetarian, cheese, holiday | yes |
@@ -824,6 +832,7 @@
 | Moon Pies | dessert, snack, comfort food, vegetarian, american, egg, pantry | yes |
 | Mushroom Lasagna | dinner, entree, comfort food, vegetarian, italian, pasta, mushroom, cheese | yes |
 | Nut Roll Recipe | dessert, comfort food, vegetarian, bread, holiday, eastern european | yes |
+| Oatmeal Carmelita Bars | dessert, snack, easy, comfort food, vegetarian, american, pantry, holiday | yes |
 | Oatmeal Chocolate Chip Cookies | dessert, snack, easy, comfort food, vegetarian, american, pantry | yes |
 | Oil & Vinegar Coleslaw | side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, greens, pantry | yes |
 | Fresh Orange Sherbet | dessert, vegetarian, gluten-free | yes |
@@ -862,18 +871,18 @@
 | Zucchini Pineapple Bread | dessert, snack, easy, comfort food, vegetarian, bread, pantry | yes |
 | Banana Pudding | dessert, easy, vegetarian, american, pantry | yes |
 | Roasted Turkey Breast Recipe | dinner, entree, easy, comfort food, american, holiday | yes |
-| Glazed Apple Hand Pies | dessert, snack, easy, comfort food, vegetarian, american, bread, pantry, holiday | no |
-| BBQ Dry Rub | easy, pantry | no |
-| Berry Dump Cake | dessert, easy, comfort food, vegetarian, pantry | no |
+| Glazed Apple Hand Pies | dessert, snack, easy, comfort food, vegetarian, american, bread, pantry, holiday | yes |
+| BBQ Dry Rub | easy, pantry | yes |
+| Berry Dump Cake | dessert, easy, comfort food, vegetarian, pantry | yes |
 | Berry Lemon Bars | dessert, snack, easy, vegetarian, pantry | yes |
 | Best Carrot Cake | dessert, easy, vegetarian, american, cheese, pantry, holiday | yes |
 | Best French Toast Recipe | breakfast, easy, comfort food, vegetarian, american, french, bread, egg | yes |
-| Best Lemon Curd Recipe | dessert, easy, vegetarian, egg, pantry | no |
+| Best Lemon Curd Recipe | dessert, easy, vegetarian, egg, pantry | yes |
 | Best Mashed Potatoes | side dish, easy, comfort food, vegetarian, potato, cheese, holiday | yes |
-| Streusel Topped Pumpkin Bread | dessert, snack, easy, comfort food, vegetarian, american, bread, holiday, pantry | no |
+| Streusel Topped Pumpkin Bread | dessert, snack, easy, comfort food, vegetarian, american, bread, holiday, pantry | yes |
 | Best Quiche Recipe | lunch, dinner, comfort food, italian, egg, mushroom, cheese | yes |
 | Loaded Breakfast Burrito Recipe | breakfast, comfort food, american, pork, egg, potato, cheese | yes |
-| Challah Bread Recipe | bread, egg, eastern european, vegetarian, comfort food, holiday | no |
+| Challah Bread Recipe | bread, egg, eastern european, vegetarian, comfort food, holiday | yes |
 | Christmas Cheesecake | dessert, easy, comfort food, vegetarian, cheese, pantry, holiday | yes |
 | Cinnamon Roll Cake | dessert, easy, comfort food, vegetarian, american, egg, pantry | yes |
 | Buttery Soft Dinner Rolls | side dish, easy, comfort food, vegetarian, bread, pantry, holiday | yes |
@@ -894,11 +903,11 @@
 | Lemon Blueberry Quick Bread | breakfast, snack, easy, vegetarian, bread, pantry | yes |
 | Lemon Lush Dessert | dessert, easy, vegetarian, cheese, pantry | yes |
 | Lemon Poke Cake Recipe | dessert, easy, american, pantry | yes |
-| Meatball Sub recipe | lunch, dinner, entree, easy, comfort food, italian, beef, sandwich, bread, cheese | no |
-| Moist Banana Bread | snack, easy, comfort food, vegetarian, bread, egg | no |
+| Meatball Sub recipe | lunch, dinner, entree, easy, comfort food, italian, beef, sandwich, bread, cheese | yes |
+| Moist Banana Bread | snack, easy, comfort food, vegetarian, bread, egg | yes |
 | Salisbury Steak | dinner, entree, comfort food, american, beef, mushroom | yes |
-| AirFryer Orange Chicken | dinner, easy, comfort food, asian, chicken, rice, pantry | no |
-| Orange Chocolate Babka | dessert, comfort food, eastern european, bread, pantry, holiday | no |
+| AirFryer Orange Chicken | dinner, easy, comfort food, asian, chicken, rice, pantry | yes |
+| Orange Chocolate Babka | dessert, comfort food, eastern european, bread, pantry, holiday | yes |
 | Pasta Fagioli | lunch, dinner, comfort food, italian, pork, pasta, soup, legumes, cheese, pantry | yes |
 | Pepperoni Pizza Dip | appetizer, easy, comfort food, italian, pork, cheese, pantry | yes |
 | Pumpkin Roll | dessert, easy, vegetarian, american, egg, cheese, holiday | yes |
@@ -907,19 +916,19 @@
 | Strawberry Bread with Glaze | breakfast, dessert, snack, easy, comfort food, vegetarian, american, bread, egg, pantry | yes |
 | Turkey Pot Pie | dinner, entree, easy, comfort food, american, chicken, egg, pantry, holiday | yes |
 | Lemon Bars | dessert, snack, easy, vegetarian, pantry | yes |
-| 2 Ingredient Pesto Chicken | dinner, entree, easy, healthy, gluten-free, low-carb, italian, chicken, grill | no |
+| 2 Ingredient Pesto Chicken | dinner, entree, easy, healthy, gluten-free, low-carb, italian, chicken, grill | yes |
 | No Knead Artisan Bread | easy, vegetarian, vegan, bread, pantry | yes |
-| Balsamic Glazed Caprese Chicken | dinner, easy, italian, chicken, cheese, entree | no |
+| Balsamic Glazed Caprese Chicken | dinner, easy, italian, chicken, cheese, entree | yes |
 | Belgian Waffle Recipe | breakfast, easy, comfort food, vegetarian, egg, pantry | yes |
-| Churros Recipe | dessert, snack, easy, comfort food, vegetarian, pantry | no |
+| Churros Recipe | dessert, snack, easy, comfort food, vegetarian, pantry | yes |
 | Hummus | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, legumes, pantry | yes |
 | Black Beans & Rice Recipe | lunch, dinner, easy, healthy, comfort food, vegetarian, gluten-free, dairy-free, mexican, rice, legumes, pantry | yes |
 | Blueberry Sauce | vegetarian, vegan, gluten-free, dairy-free, side dish, easy, pantry | yes |
-| Garlic Naan Bread | easy, vegetarian, indian, bread, pantry | no |
+| Garlic Naan Bread | easy, vegetarian, indian, bread, pantry | yes |
 | Candy Cane S'mores Dip | dessert, snack, easy, comfort food, vegetarian, holiday, grill | yes |
-| Carrot Cake Cheesecake | dessert, easy, healthy, vegetarian, cheese, holiday | no |
+| Carrot Cake Cheesecake | dessert, easy, healthy, vegetarian, cheese, holiday | yes |
 | Cheesy Meatball Recipe | dinner, entree, comfort food, italian, beef, pork, pasta, cheese, grill | yes |
-| Blueberry Lemon Cheesecake Waffles | breakfast, dessert, easy, vegetarian, egg, cheese | no |
+| Blueberry Lemon Cheesecake Waffles | breakfast, dessert, easy, vegetarian, egg, cheese | yes |
 | Cornbread Recipe | side dish, comfort food, american, bread, pantry | yes |
 | Creamy Champagne Chicken | lunch, dinner, easy, comfort food, chicken, mushroom, french | yes |
 | Creamy Eggnog Recipe | dessert, easy, comfort food, vegetarian, egg, pantry, holiday | yes |
@@ -935,38 +944,38 @@
 | Satay Dipping Sauce | side dish, easy, vegetarian, dairy-free, asian, thai, pantry | yes |
 | Slow Cooker Lasagna Soup | dinner, easy, comfort food, italian, beef, pasta, soup, cheese | yes |
 | Easy Thai Satay Chicken | dinner, easy, entree, asian, thai, chicken, pantry | yes |
-| Firecracker Salmon | dinner, easy, healthy, seafood, fish, asian | no |
+| Firecracker Salmon | dinner, easy, healthy, seafood, fish, asian | yes |
 | Grilled Asparagus | side dish, easy, healthy, vegetarian, vegan, gluten-free, low-carb, greens, grill | yes |
 | Grilled Cajun Chicken Salad with Crea... | lunch, dinner, easy, healthy, entree, chicken, salad, greens, grill | yes |
 | Lemon Herb Mediterranean Chicken Salad | lunch, dinner, easy, healthy, gluten-free, dairy-free, low-carb, mediterranean, chicken, salad, greens, grill | yes |
-| Hasselback Herbed Garlic Butter Sweet... | dinner, side dish, easy, healthy, vegetarian, gluten-free, potato, pantry | no |
+| Hasselback Herbed Garlic Butter Sweet... | dinner, side dish, easy, healthy, vegetarian, gluten-free, potato, pantry | yes |
 | Basil Pesto | easy, vegetarian, italian, side dish, cheese, quick, pantry | yes |
 | Honey Lime Fruit Salad | dessert, snack, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, salad | yes |
 | Julia Child's Creamy Chicken + Mushroom | dinner, entree, easy, healthy, comfort food, chicken, mushroom, cheese, french | yes |
-| Low Fat Chocolate Mug Cake | dessert, snack, quick, easy, healthy, vegetarian | no |
+| Low Fat Chocolate Mug Cake | dessert, snack, quick, easy, healthy, vegetarian | yes |
 | No Bake EggNog Berry Cheesecakes | dessert, easy, vegetarian, cheese, holiday | yes |
 | One Pan Tomato Basil Chicken and Rice | dinner, entree, easy, comfort food, chicken, rice | yes |
-| Pork Loin Roast Recipe | dinner, entree, comfort food, pork | no |
-| Portuguese BBQ Peri Peri Chicken (Hom... | dinner, easy, comfort food, chicken, grill, entree | no |
+| Pork Loin Roast Recipe | dinner, entree, comfort food, pork | yes |
+| Portuguese BBQ Peri Peri Chicken (Hom... | dinner, easy, comfort food, chicken, grill, entree | yes |
 | The Best Red Velvet Churros (Baked) | dessert, snack, easy, comfort food, vegetarian, egg, pantry | yes |
 | Salmon and Avocado Caesar Salad | lunch, dinner, easy, healthy, low-carb, mediterranean, seafood, fish, salad, egg, greens, cheese, grill | yes |
 | Salsa Recipe | appetizer, side dish, easy, vegetarian, vegan, gluten-free, dairy-free, mexican | yes |
 | Buttery Sautéed Green Beans | side dish, quick, easy, healthy, vegetarian, gluten-free, low-carb, greens | yes |
-| Chicken Bacon Corn Chowder (Slow Cook... | lunch, dinner, easy, comfort food, american, chicken, soup, potato, cheese | no |
-| Soft Snickerdoodle Cookie Recipe | dessert, snack, easy, comfort food, vegetarian, american, pantry, holiday | no |
+| Chicken Bacon Corn Chowder (Slow Cook... | lunch, dinner, easy, comfort food, american, chicken, soup, potato, cheese | yes |
+| Soft Snickerdoodle Cookie Recipe | dessert, snack, easy, comfort food, vegetarian, american, pantry, holiday | yes |
 | Spicy Garlic Sun Dried Tomato Shrimp | dinner, entree, quick, easy, seafood, low-carb, mediterranean | yes |
 | Sticky Chinese BBQ Pork Belly Ribs (C... | dinner, entree, comfort food, asian, chinese, pork, grill | yes |
 | Sticky Thai Chicken Wings | dinner, snack, appetizer, entree, easy, comfort food, asian, thai, chicken, grill | yes |
 | Strawberry Cheesecake Donut Holes | dessert, snack, easy, vegetarian, cheese, pantry | yes |
-| The Best Swedish Meatballs Recipe | dinner, entree, comfort food, pork, beef, potato, eastern european | no |
+| The Best Swedish Meatballs Recipe | dinner, entree, comfort food, pork, beef, potato, eastern european | yes |
 | Teriyaki Chicken | dinner, easy, asian, japanese, chicken, rice | yes |
-| Homemade White Peach Iced Tea | easy, vegetarian, vegan, gluten-free, dairy-free, pantry | no |
+| Homemade White Peach Iced Tea | easy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | Bacalao a La Mexicana (Mexican Cod) | dinner, entree, mexican, seafood, fish, potato, pantry | yes |
 | Tahini Halva with Almonds | dessert, snack, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
-| Walnut Crescent Cookies | dessert, snack, easy, comfort food, vegetarian, pantry, holiday, eastern european | no |
-| Zebra Cake | dessert, easy, vegetarian, cheese, pantry | no |
-| Ebi Katsu Sando (Panko Crumbed Shrimp... | lunch, dinner, entree, asian, japanese, seafood, sandwich, bread | no |
-| Japanese mochi ice cream 餅アイス | dessert, snack, easy, vegetarian, japanese, pantry | no |
+| Walnut Crescent Cookies | dessert, snack, easy, comfort food, vegetarian, pantry, holiday, eastern european | yes |
+| Zebra Cake | dessert, easy, vegetarian, cheese, pantry | yes |
+| Ebi Katsu Sando (Panko Crumbed Shrimp... | lunch, dinner, entree, asian, japanese, seafood, sandwich, bread | yes |
+| Japanese mochi ice cream 餅アイス | dessert, snack, easy, vegetarian, japanese, pantry | yes |
 | Clover Club (Raspberry Liqueur) | _none_ | yes |
 | Thanksgiving Sidecar | holiday | yes |
 | Hot Chocolate Manhattan | dessert, comfort food, pantry, holiday | yes |
@@ -1057,7 +1066,7 @@
 | Cut Out Sugar Cookie Recipe | dessert, snack, easy, comfort food, vegetarian, pantry, holiday | yes |
 | Easy Chocolate Cake Recipe | dessert, easy, comfort food, vegetarian, pantry | yes |
 | Fiesta Rice Recipe | lunch, dinner, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mexican, rice, salad, legumes | yes |
-| Fish Tacos | lunch, dinner, easy, healthy, seafood, fish, mexican, grill | no |
+| Fish Tacos | lunch, dinner, easy, healthy, seafood, fish, mexican, grill | yes |
 | Flan | dessert, easy, comfort food, vegetarian, egg, cheese, pantry | yes |
 | Fried Rice | lunch, dinner, easy, comfort food, asian, chinese, rice, egg, pork, pantry | yes |
 | Fried Shrimp Recipe | dinner, appetizer, easy, comfort food, american, seafood, pantry | yes |
@@ -1075,7 +1084,7 @@
 | Pancake Recipe | breakfast, easy, vegetarian, american, egg, pantry | yes |
 | Pie Crust Recipe {+ How to Blind Bake} | easy, vegetarian, pantry, bread | yes |
 | Pizza Dough Recipe | italian, bread, vegetarian, pantry | yes |
-| Pork Loin Roast | dinner, entree, comfort food, pork, holiday | no |
+| Pork Loin Roast | dinner, entree, comfort food, pork, holiday | yes |
 | Pound Cake | dessert, comfort food, american, holiday, egg, cheese, pantry | yes |
 | Pumpkin Roll | dessert, easy, comfort food, vegetarian, american, egg, cheese, pantry, holiday | yes |
 | Risotto | dinner, entree, comfort food, italian, rice, mushroom, cheese | yes |
@@ -1083,7 +1092,7 @@
 | Rosemary Bread {Macaroni Grill Copyca... | side dish, vegetarian, italian, bread, pantry | yes |
 | Shortbread Cookies Recipe | dessert, snack, easy, comfort food, vegetarian, pantry, holiday | yes |
 | Shrimp and Rice {One Pot} | dinner, entree, easy, seafood, rice, cheese | yes |
-| Sprinkles Red Velvet Cupcakes with Cr... | dessert, comfort food, american, holiday, cheese | no |
+| Sprinkles Red Velvet Cupcakes with Cr... | dessert, comfort food, american, holiday, cheese | yes |
 | Yellow Squash Casserole | dinner, side dish, easy, comfort food, vegetarian, american, cheese | yes |
 | Strata | breakfast, lunch, dinner, easy, comfort food, american, pork, egg, cheese, bread, greens, holiday | yes |
 | Stuffing Recipe | side dish, comfort food, american, egg, bread, holiday | yes |
@@ -1092,11 +1101,11 @@
 | Tzatziki | snack, appetizer, side dish, quick, easy, healthy, vegetarian, gluten-free, low-carb, mediterranean | yes |
 | Vanilla Cupcakes | dessert, easy, comfort food, vegetarian, american, egg, pantry, holiday | yes |
 | Zuppa Toscana Soup {Olive Garden Copy... | lunch, dinner, easy, comfort food, italian, pork, soup, potato, greens, cheese | yes |
-| Easy Hot and Sour Soup | lunch, dinner, easy, comfort food, asian, chinese, soup, egg, mushroom, tofu | no |
+| Easy Hot and Sour Soup | lunch, dinner, easy, comfort food, asian, chinese, soup, egg, mushroom, tofu | yes |
 | Slow Cooker French Onion Soup | lunch, dinner, comfort food, french, beef, soup, bread, cheese | yes |
 | Thai Red Curry Noodle Soup | dinner, easy, comfort food, dairy-free, asian, thai, chicken, soup, pantry | yes |
 | Baked Garlic Herb Potato Wedges | lunch, dinner, snack, appetizer, side dish, easy, vegetarian, vegan, gluten-free, dairy-free, potato, pantry | yes |
-| Peanut Chicken Lettuce Wraps | lunch, dinner, entree, easy, healthy, asian, chicken, mushroom, greens | no |
+| Peanut Chicken Lettuce Wraps | lunch, dinner, entree, easy, healthy, asian, chicken, mushroom, greens | yes |
 | Honey Mustard Chicken Salad | lunch, dinner, easy, healthy, entree, chicken, salad, greens, grill | yes |
 | Korean Beef Bulgogi | dinner, easy, comfort food, dairy-free, asian, beef, grill | yes |
 | Quick Ramen Noodle Stir Fry | dinner, quick, easy, comfort food, asian, beef, pasta, pantry | yes |
@@ -1105,18 +1114,18 @@
 | Slow Cooker Olive Garden Pasta e Fagioli | lunch, dinner, easy, comfort food, italian, pork, pasta, soup, legumes, cheese, pantry | yes |
 | Weeknight Lemon Chicken Breasts | dinner, entree, easy, chicken | yes |
 | Glazed Carrots | side dish, easy, healthy, vegetarian, gluten-free, greens, pantry | yes |
-| Chinese Chicken Salad | lunch, dinner, easy, asian, chinese, chicken, salad, greens | no |
-| Italian Chopped Salad | lunch, dinner, appetizer, side dish, easy, healthy, italian, salad, greens, legumes, cheese | no |
+| Chinese Chicken Salad | lunch, dinner, easy, asian, chinese, chicken, salad, greens | yes |
+| Italian Chopped Salad | lunch, dinner, appetizer, side dish, easy, healthy, italian, salad, greens, legumes, cheese | yes |
 | Homemade Sloppy Joes | lunch, dinner, easy, comfort food, american, beef, sandwich, pantry | yes |
-| Mushroom Risotto | dinner, entree, comfort food, vegetarian, italian, rice, mushroom, cheese | no |
+| Mushroom Risotto | dinner, entree, comfort food, vegetarian, italian, rice, mushroom, cheese | yes |
 | One Pot Greek Chicken and Orzo | dinner, easy, comfort food, mediterranean, chicken, pasta, greens, cheese | yes |
 | Ravioli with Sage Butter Sauce | dinner, easy, comfort food, vegetarian, italian, pasta, cheese | yes |
 | Slow Cooker Chicken Tortilla Soup | dinner, easy, comfort food, mexican, chicken, soup, legumes | yes |
 | Slow Cooker Tortellini Soup | dinner, easy, comfort food, italian, pork, pasta, soup, greens, cheese | yes |
 | Easy Chicken Quesadillas | lunch, dinner, easy, comfort food, mexican, chicken, cheese | yes |
 | Quick Pasta with Tomato Cream Sauce | lunch, dinner, entree, quick, easy, comfort food, vegetarian, italian, pasta, cheese, pantry | yes |
-| Pumpkin Cream Cheese Muffins (Starbuc... | breakfast, snack, easy, comfort food, vegetarian, american, bread, egg, cheese, pantry, holiday | no |
-| Chicken Harvest Bowl | lunch, dinner, healthy, entree, chicken, potato, greens, rice, grill | no |
+| Pumpkin Cream Cheese Muffins (Starbuc... | breakfast, snack, easy, comfort food, vegetarian, american, bread, egg, cheese, pantry, holiday | yes |
+| Chicken Harvest Bowl | lunch, dinner, healthy, entree, chicken, potato, greens, rice, grill | yes |
 | Ravioli with Sun Dried Tomato Cream S... | lunch, dinner, entree, easy, comfort food, italian, pasta, cheese, pantry | yes |
 | Chocolate-Buckwheat Cake | dessert, vegetarian, gluten-free, pantry | yes |
 | Cranberry Upside Down Cake | dessert, vegetarian, holiday | yes |
@@ -1141,7 +1150,7 @@
 | Lemon-Blueberry Mini Cheesecakes | dessert, easy, vegetarian, cheese, pantry | yes |
 | Parmesan Zucchini Fritters | lunch, dinner, snack, appetizer, side dish, easy, vegetarian, italian, cheese | yes |
 | Copycat Nutter Butters | dessert, snack, easy, comfort food, vegetarian, american, pantry, holiday | yes |
-| Bloomin' Apples | dessert, snack, comfort food, vegetarian, holiday | no |
+| Bloomin' Apples | dessert, snack, comfort food, vegetarian, holiday | yes |
 | Goddess Bowls | lunch, dinner, easy, healthy, entree, chicken, rice, greens | yes |
 | Bacon Jam | snack, appetizer, side dish, easy, comfort food, pork, pantry, holiday | yes |
 | Wonton Soup | lunch, dinner, appetizer, entree, easy, comfort food, asian, chinese, pork, soup | yes |
@@ -1154,7 +1163,7 @@
 | Shrimp Cocktail | appetizer, quick, easy, seafood, dinner, lunch | yes |
 | Lemon Curd | dessert, easy, vegetarian, egg, pantry | yes |
 | Americano Cocktail | easy, italian, pantry | yes |
-| Strawberry-Lemonade Bars | dessert, snack, vegetarian, egg, pantry | no |
+| Strawberry-Lemonade Bars | dessert, snack, vegetarian, egg, pantry | yes |
 | Paula Deen's Famous Foolproof Standin... | dinner, entree, easy, comfort food, american, beef, holiday | yes |
 | Almond Joy Martini | dessert, easy, pantry | yes |
 | Strawberry Phyllo Dough Stacks | dessert, snack, easy, vegetarian, pantry | yes |
@@ -1174,7 +1183,7 @@
 | Lunch Kebabs | lunch, quick, easy, sandwich, bread, cheese, pantry | yes |
 | Tropical Mermaid Lemonade | easy, pantry, holiday | yes |
 | Campfire Potatoes | side dish, easy, comfort food, vegetarian, potato, cheese, grill | yes |
-| Fish Tacos | dinner, entree, easy, seafood, fish, mexican | no |
+| Fish Tacos | dinner, entree, easy, seafood, fish, mexican | yes |
 | Watermelon Caprese | lunch, dinner, snack, appetizer, side dish, quick, easy, healthy, vegetarian, gluten-free, low-carb, italian, salad, cheese, pantry | yes |
 | Pull-Apart Cuban Sliders | lunch, dinner, snack, appetizer, easy, comfort food, sandwich, bread, cheese, pork | yes |
 | Mermaid Petal Cake | dessert, easy, holiday, pantry | yes |
@@ -1207,7 +1216,7 @@
 | Pumpkin Cheesecake Bites | dessert, snack, easy, vegetarian, cheese, holiday | yes |
 | Nantucket Corn Pudding | side dish, easy, comfort food, vegetarian, american, egg, cheese | yes |
 | Strawberry Dressing | lunch, dinner, side dish, easy, healthy, vegetarian, gluten-free, salad, greens | yes |
-| Giant Twinkie Bundt Cake | dessert, easy, comfort food, vegetarian, american, pantry, holiday | no |
+| Giant Twinkie Bundt Cake | dessert, easy, comfort food, vegetarian, american, pantry, holiday | yes |
 | Stuffed Eggplant Parm | dinner, entree, easy, comfort food, vegetarian, italian, cheese | yes |
 | Garlic Butter Potatoes | side dish, easy, comfort food, vegetarian, potato, cheese | yes |
 | Pumpkin Spice Slow-Cooker Oatmeal | breakfast, easy, healthy, comfort food, vegetarian, pantry, holiday | yes |
@@ -1217,7 +1226,7 @@
 | Garlic Rosemary Chicken | dinner, entree, comfort food, chicken, potato, greens, mushroom | yes |
 | Death By Chocolate French Toast | breakfast, dessert, easy, comfort food, vegetarian, american, bread, egg, pantry | yes |
 | Garlicky Italian Bread | side dish, vegetarian, italian, bread, cheese | yes |
-| Buttermilk Onion Rings | snack, appetizer, side dish, comfort food, vegetarian, american, potato, pantry | no |
+| Buttermilk Onion Rings | snack, appetizer, side dish, comfort food, vegetarian, american, potato, pantry | yes |
 | Best Bolognese Sauce | dinner, entree, comfort food, italian, beef, pasta | yes |
 | Ribollita | lunch, dinner, easy, healthy, comfort food, vegetarian, italian, soup, greens, legumes, bread, pantry | yes |
 | Gribiche Sauce | side dish, vegetarian, egg, french | yes |
@@ -1245,7 +1254,7 @@
 | Black Forest Mug Cake | dessert, snack, quick, easy, vegetarian, dairy-free | yes |
 | Blueberry Chia Pudding with Figs, Haz... | breakfast, snack, easy, healthy, vegetarian, vegan, gluten-free, dairy-free | yes |
 | Easy Broccoli Rice | side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, greens | yes |
-| Brownie Trifle | dessert, easy, healthy, vegetarian, vegan, gluten-free, dairy-free | no |
+| Brownie Trifle | dessert, easy, healthy, vegetarian, vegan, gluten-free, dairy-free | yes |
 | Carnitas Burrito Bowl (Chipotle Copycat) | lunch, dinner, easy, healthy, comfort food, mexican, pork, rice, salad, greens, legumes, cheese | yes |
 | Carrot Parsnip Mash | side dish, easy, healthy, vegetarian, gluten-free, dairy-free, low-carb, potato | yes |
 | Warm Cauliflower and Prosciutto Salad... | lunch, dinner, side dish, easy, healthy, low-carb, mediterranean, salad, greens, cheese | yes |
@@ -1565,20 +1574,21 @@
 | Alton Brown Meatloaf Recipe | dinner, entree, comfort food, american, beef | yes |
 | American Chop Suey Recipe | dinner, entree, easy, comfort food, american, beef, pasta, cheese | yes |
 | Apple Dump Cake Recipe | dessert, easy, comfort food, american, pantry | yes |
-| Beer Brats Recipe | dinner, entree, comfort food, american, pork, sandwich, bread, grill | no |
+| Beer Brats Recipe | dinner, entree, comfort food, american, pork, sandwich, bread, grill | yes |
 | Beer Cheese Dip | snack, appetizer, easy, comfort food, vegetarian, cheese, pantry | yes |
-| Berry Chantilly Cake Recipe | dessert, comfort food, american, cheese, egg, holiday, pantry | no |
+| Berry Chantilly Cake Recipe | dessert, comfort food, american, cheese, egg, holiday, pantry | yes |
 | Bisquick Drop Biscuits | breakfast, side dish, quick, easy, comfort food, vegetarian, american, bread, pantry | yes |
 | Blackened Chicken Recipe | lunch, dinner, easy, chicken, american, entree, low-carb | yes |
 | Blueberry Coffee Cake | dessert, comfort food, vegetarian, american, bread, pantry, holiday | yes |
-| Butter Chicken Recipe | dinner, entree, comfort food, indian, chicken | no |
-| Cannelloni Recipe | dinner, entree, comfort food, vegetarian, italian, pasta, cheese | no |
+| Butter Chicken Recipe | dinner, entree, comfort food, indian, chicken | yes |
+| Cannelloni Recipe | dinner, entree, comfort food, vegetarian, italian, pasta, cheese | yes |
 | Chicken Bacon Ranch Pasta | dinner, easy, comfort food, american, chicken, pasta, cheese, pantry | yes |
 | Chicken Florentine Recipe | dinner, entree, easy, comfort food, italian, chicken, greens, cheese | yes |
 | Chicken Gyro Recipe | lunch, dinner, entree, easy, healthy, mediterranean, chicken, sandwich, greens, cheese, grill | yes |
 | Chicken Milanese | lunch, dinner, entree, easy, comfort food, italian, chicken, cheese | yes |
+| Chicken Murphy Recipe | dinner, entree, comfort food, italian, chicken, potato, mushroom, pasta | yes |
 | Chicken Scarpariello | dinner, entree, comfort food, italian, chicken, potato | yes |
-| Chocoflan Recipe | dessert, comfort food, vegetarian, mexican, egg, pantry, holiday | no |
+| Chocoflan Recipe | dessert, comfort food, vegetarian, mexican, egg, pantry, holiday | yes |
 | Crab Rangoon Dip Recipe | snack, appetizer, easy, comfort food, american, asian, seafood, cheese, pantry | yes |
 | Creamy Cucumber Salad | lunch, side dish, easy, vegetarian, gluten-free, low-carb, salad, greens | yes |
 | Blackberry Pie Recipe | dessert, easy, comfort food, vegetarian, pantry, holiday | yes |
@@ -1615,102 +1625,102 @@
 | Southern Meatloaf Recipe | dinner, entree, comfort food, american, beef, pork | yes |
 | Spaghetti And Meatballs Recipe | dinner, entree, comfort food, italian, beef, pasta, cheese | yes |
 | Steak Pizzaiola | dinner, entree, comfort food, italian, beef, mushroom, cheese | yes |
-| Tamale Pie | dinner, entree, comfort food, american, mexican, beef, pantry | no |
-| Traditional Meatloaf Recipe | dinner, entree, comfort food, american, beef, pork | no |
+| Tamale Pie | dinner, entree, comfort food, american, mexican, beef, pantry | yes |
+| Traditional Meatloaf Recipe | dinner, entree, comfort food, american, beef, pork | yes |
 | Tzatziki Sauce Recipe | side dish, appetizer, easy, healthy, vegetarian, low-carb, mediterranean | yes |
 | Watergate Salad Recipe | dessert, snack, easy, vegetarian, american, salad, pantry, holiday | yes |
-| Crispy BBQ Salmon Tacos with Avocado ... | lunch, dinner, easy, healthy, seafood, fish, mexican | no |
+| Crispy BBQ Salmon Tacos with Avocado ... | lunch, dinner, easy, healthy, seafood, fish, mexican | yes |
 | Dad's Easy Cheesy Eggs with Chili Butter | breakfast, easy, comfort food, vegetarian, egg, cheese, bread | yes |
-| Roasted Garlic Butter Smashed Potatoes | side dish, easy, comfort food, vegetarian, gluten-free, potato, pantry | no |
-| Pesto Chicken and Avocado Bacon Salad... | lunch, dinner, easy, chicken, salad, greens, cheese, grill | no |
-| One Pot Spinach and Sun-Dried Tomato ... | dinner, easy, comfort food, vegetarian, italian, pasta, greens, cheese, pantry | no |
+| Roasted Garlic Butter Smashed Potatoes | side dish, easy, comfort food, vegetarian, gluten-free, potato, pantry | yes |
+| Pesto Chicken and Avocado Bacon Salad... | lunch, dinner, easy, chicken, salad, greens, cheese, grill | yes |
+| One Pot Spinach and Sun-Dried Tomato ... | dinner, easy, comfort food, vegetarian, italian, pasta, greens, cheese, pantry | yes |
 | Birria de Res (Beef Birria Recipe) | dinner, entree, comfort food, mexican, beef, soup | yes |
 | Clafoutis Recipe | dessert, easy, comfort food, vegetarian, french, egg | yes |
 | Easy Candied Pecans (10-Minute Stovet... | dessert, snack, easy, vegetarian, pantry, holiday | yes |
 | Homemade Bread (White Bread Recipe) | bread, easy, comfort food, vegetarian, american, egg, pantry | yes |
 | Homemade Hot Honey Recipe | easy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
-| Jack Daniels Burgers (T.G.I. Friday's... | lunch, dinner, entree, comfort food, american, beef, sandwich, cheese, grill | no |
-| S'mores Martini | dessert, easy, comfort food, vegetarian, pantry | no |
+| Jack Daniels Burgers (T.G.I. Friday's... | lunch, dinner, entree, comfort food, american, beef, sandwich, cheese, grill | yes |
+| S'mores Martini | dessert, easy, comfort food, vegetarian, pantry | yes |
 | Hocus Pocus Punch | quick, easy, vegetarian, dairy-free, pantry, holiday | yes |
 | Merry Cherry Lime Ginger Beer | quick, easy, vegetarian, vegan, gluten-free, dairy-free, pantry, holiday | yes |
 | Jalapeño Blood Orange Spritzer | quick, easy, vegan, vegetarian, dairy-free, gluten-free | yes |
-| Tomato Orzo Soup with Crunchy Cheddar... | lunch, dinner, entree, easy, comfort food, italian, soup, pasta, cheese, bread | no |
+| Tomato Orzo Soup with Crunchy Cheddar... | lunch, dinner, entree, easy, comfort food, italian, soup, pasta, cheese, bread | yes |
 | Our Favorite Cheeseburger Soup | lunch, dinner, easy, comfort food, american, beef, soup, potato, cheese | yes |
 | Black Bean Chicken Chili | dinner, easy, comfort food, mexican, chicken, soup, legumes, cheese, pantry | yes |
 | Spicy Honeynut Squash Soup with Butte... | lunch, dinner, appetizer, side dish, entree, easy, comfort food, soup, pork | yes |
-| Roasted Cauliflower Winter Kale Salad | lunch, dinner, side dish, healthy, vegetarian, gluten-free, salad, greens, cheese | no |
-| Halloumi and Blood Orange Panzanella ... | lunch, dinner, side dish, entree, easy, healthy, vegetarian, salad, greens, cheese | no |
+| Roasted Cauliflower Winter Kale Salad | lunch, dinner, side dish, healthy, vegetarian, gluten-free, salad, greens, cheese | yes |
+| Halloumi and Blood Orange Panzanella ... | lunch, dinner, side dish, entree, easy, healthy, vegetarian, salad, greens, cheese | yes |
 | Chicken Parmesan Gnocchi Soup | dinner, entree, easy, comfort food, italian, chicken, soup, pasta, cheese | yes |
-| Fire-Roasted Quinoa White Bean Soup | lunch, dinner, entree, easy, healthy, comfort food, vegetarian, italian, soup, legumes, cheese, pantry | no |
+| Fire-Roasted Quinoa White Bean Soup | lunch, dinner, entree, easy, healthy, comfort food, vegetarian, italian, soup, legumes, cheese, pantry | yes |
 | My Favorite Green Chile Taco Soup | lunch, dinner, easy, comfort food, beef, soup, legumes, pantry, mexican | yes |
 | Sweet Potato Chicken Noodle Soup | lunch, dinner, easy, healthy, comfort food, chicken, pasta, soup, potato, cheese | yes |
 | Cozy White Bean & Greens Soup | lunch, dinner, entree, easy, healthy, comfort food, vegetarian, soup, greens, legumes, cheese, pantry | yes |
-| Crispy Baked Cheeseburger Quesadillas | lunch, dinner, easy, comfort food, american, mexican, beef, cheese | no |
+| Crispy Baked Cheeseburger Quesadillas | lunch, dinner, easy, comfort food, american, mexican, beef, cheese | yes |
 | Cherry Jalapeno Chicken Salad | lunch, easy, healthy, gluten-free, chicken, salad | yes |
-| Red, White and Berry Salad with Pista... | lunch, dinner, snack, appetizer, side dish, easy, healthy, vegetarian, gluten-free, salad, greens, cheese | no |
+| Red, White and Berry Salad with Pista... | lunch, dinner, snack, appetizer, side dish, easy, healthy, vegetarian, gluten-free, salad, greens, cheese | yes |
 | Roasted Red Pepper and Salami Tortell... | lunch, dinner, easy, italian, pasta, salad, cheese, greens | yes |
 | Broccoli Pesto Tortellini Salad | lunch, dinner, easy, healthy, vegetarian, italian, pasta, salad, greens, cheese | yes |
 | Bruschetta Balsamic Salmon | dinner, easy, healthy, italian, seafood, fish, greens | yes |
 | Lemon Chicken Bites & Spaghetti | dinner, entree, quick, easy, comfort food, italian, chicken, pasta, cheese | yes |
-| Lettuce Wrap Blue Cheese Burgers with... | lunch, dinner, easy, comfort food, low-carb, american, beef, greens, cheese | no |
-| Chili Lime Salmon Bites with Mango Slaw | lunch, dinner, easy, healthy, gluten-free, dairy-free, seafood, fish, rice, salad | no |
-| Seared Salmon with Chimichurri | dinner, easy, healthy, gluten-free, dairy-free, low-carb, mediterranean, seafood, fish | no |
-| Chopped Wedge Salad | lunch, dinner, appetizer, side dish, easy, comfort food, gluten-free, low-carb, american, pork, salad, greens, cheese | no |
-| Grilled BBQ Chicken Guacamole Sandwiches | lunch, dinner, quick, easy, comfort food, american, chicken, sandwich, bread, cheese, greens, grill | no |
-| Grilled Halloumi Corn and Peach Summe... | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, gluten-free, low-carb, mediterranean, salad, greens, cheese, grill | no |
-| Jalapeno Cheddar Chicken Meatballs | lunch, dinner, appetizer, entree, easy, comfort food, chicken, cheese | no |
-| Lemony Chive Potato Salad with Parmesan | lunch, dinner, side dish, easy, vegetarian, gluten-free, potato, cheese, salad | no |
-| Summer Sweet Potato Arugula Salad wit... | lunch, dinner, side dish, easy, healthy, vegetarian, gluten-free, salad, greens, potato | no |
-| BLT Wraps with Jalapeno Ranch | lunch, dinner, easy, american, sandwich, greens | no |
+| Lettuce Wrap Blue Cheese Burgers with... | lunch, dinner, easy, comfort food, low-carb, american, beef, greens, cheese | yes |
+| Chili Lime Salmon Bites with Mango Slaw | lunch, dinner, easy, healthy, gluten-free, dairy-free, seafood, fish, rice, salad | yes |
+| Seared Salmon with Chimichurri | dinner, easy, healthy, gluten-free, dairy-free, low-carb, mediterranean, seafood, fish | yes |
+| Chopped Wedge Salad | lunch, dinner, appetizer, side dish, easy, comfort food, gluten-free, low-carb, american, pork, salad, greens, cheese | yes |
+| Grilled BBQ Chicken Guacamole Sandwiches | lunch, dinner, quick, easy, comfort food, american, chicken, sandwich, bread, cheese, greens, grill | yes |
+| Grilled Halloumi Corn and Peach Summe... | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, gluten-free, low-carb, mediterranean, salad, greens, cheese, grill | yes |
+| Jalapeno Cheddar Chicken Meatballs | lunch, dinner, appetizer, entree, easy, comfort food, chicken, cheese | yes |
+| Lemony Chive Potato Salad with Parmesan | lunch, dinner, side dish, easy, vegetarian, gluten-free, potato, cheese, salad | yes |
+| Summer Sweet Potato Arugula Salad wit... | lunch, dinner, side dish, easy, healthy, vegetarian, gluten-free, salad, greens, potato | yes |
+| BLT Wraps with Jalapeno Ranch | lunch, dinner, easy, american, sandwich, greens | yes |
 | Grilled Buffalo Chicken with Scallion... | dinner, entree, easy, comfort food, american, chicken, salad, cheese, grill | yes |
-| Grilled Zucchini Caesar | lunch, dinner, side dish, easy, healthy, vegetarian, low-carb, mediterranean, salad, greens, cheese, grill | no |
+| Grilled Zucchini Caesar | lunch, dinner, side dish, easy, healthy, vegetarian, low-carb, mediterranean, salad, greens, cheese, grill | yes |
 | Grilled Sourdough Pizza with Italian ... | lunch, dinner, entree, easy, comfort food, italian, salad, bread, cheese, grill | yes |
 | Summer Salmon Spread | lunch, snack, appetizer, easy, healthy, seafood, fish, sandwich, cheese, grill | yes |
 | Summer Salmon Spaghetti | dinner, entree, easy, healthy, seafood, fish, pasta, grill | yes |
 | Grilled Cacio e Pepe Pizza | lunch, dinner, easy, comfort food, vegetarian, italian, salad, bread, cheese, grill | yes |
-| Basil Chicken Meatballs with Summer C... | dinner, easy, healthy, italian, chicken, pasta, cheese | no |
+| Basil Chicken Meatballs with Summer C... | dinner, easy, healthy, italian, chicken, pasta, cheese | yes |
 | Crispy Chicken Caesar Sandwiches | lunch, dinner, entree, easy, comfort food, american, chicken, sandwich, greens, cheese | yes |
 | Grilled Chicken Vodka Pasta | dinner, entree, easy, comfort food, italian, chicken, pasta, cheese, grill | yes |
 | Summer Bucatini with No Cook Tomato S... | lunch, dinner, easy, vegetarian, italian, pasta, cheese, pantry | yes |
 | Summer Sheet Pan Shrimp and Rice Bowls | lunch, dinner, easy, healthy, seafood, rice, gluten-free, dairy-free | yes |
-| Grilled Steak Tacos with Chimichurri | lunch, dinner, entree, easy, mexican, beef, grill | no |
+| Grilled Steak Tacos with Chimichurri | lunch, dinner, entree, easy, mexican, beef, grill | yes |
 | Summer Tuna Chop | lunch, dinner, snack, appetizer, side dish, quick, easy, healthy, gluten-free, dairy-free, low-carb, mediterranean, seafood, fish, salad, greens, pantry | yes |
 | Spicy Cheesy Toasty Garlic Bread | snack, appetizer, side dish, easy, comfort food, vegetarian, italian, bread, cheese | yes |
 | Chicken Meatball Orzo Soup | lunch, dinner, easy, comfort food, italian, chicken, pasta, soup, cheese | yes |
-| Grilled Taco Chicken with Frito Slaw | dinner, entree, easy, comfort food, mexican, chicken, salad, greens, grill | no |
-| Creamy Feta Burgers on Pillowy Pita | dinner, easy, comfort food, mediterranean, beef, sandwich, bread, cheese, grill | no |
-| Salmon Aglio e Olio with Lemon Parmes... | dinner, entree, easy, healthy, italian, seafood, fish, pasta, cheese | no |
-| Cheesy Chicken Parmesan Meatballs in ... | dinner, entree, comfort food, italian, chicken, cheese, bread | no |
-| Caramelized Zucchini Pasta Salad | lunch, dinner, easy, vegetarian, pasta, salad, cheese | no |
+| Grilled Taco Chicken with Frito Slaw | dinner, entree, easy, comfort food, mexican, chicken, salad, greens, grill | yes |
+| Creamy Feta Burgers on Pillowy Pita | dinner, easy, comfort food, mediterranean, beef, sandwich, bread, cheese, grill | yes |
+| Salmon Aglio e Olio with Lemon Parmes... | dinner, entree, easy, healthy, italian, seafood, fish, pasta, cheese | yes |
+| Cheesy Chicken Parmesan Meatballs in ... | dinner, entree, comfort food, italian, chicken, cheese, bread | yes |
+| Caramelized Zucchini Pasta Salad | lunch, dinner, easy, vegetarian, pasta, salad, cheese | yes |
 | Baked Butternut Squash, Spicy Sausage... | dinner, comfort food, italian, pasta, cheese | yes |
 | Broccoli Cheddar Orzo Soup | lunch, dinner, easy, comfort food, vegetarian, american, soup, pasta, cheese | yes |
-| Autumn Chopped Salad with Salted Mapl... | lunch, dinner, easy, healthy, vegetarian, gluten-free, salad, greens, cheese | no |
+| Autumn Chopped Salad with Salted Mapl... | lunch, dinner, easy, healthy, vegetarian, gluten-free, salad, greens, cheese | yes |
 | Cheddar Scallion Beer Bread | snack, side dish, easy, comfort food, vegetarian, american, bread, cheese, pantry | yes |
-| Cheeseburger Spaghetti Squash | dinner, easy, comfort food, low-carb, american, beef, cheese, pantry | no |
+| Cheeseburger Spaghetti Squash | dinner, easy, comfort food, low-carb, american, beef, cheese, pantry | yes |
 | Quick and Easy Smoky Skillet Chili | dinner, easy, comfort food, american, beef, soup, legumes, pantry | yes |
 | Creamy Tomato Soup with Toasted Quinoa | lunch, dinner, entree, comfort food, vegetarian, soup, cheese, pantry | yes |
 | Hot Honey Chipotle Chicken Tacos | dinner, easy, chicken, mexican, grill, entree | yes |
 | One Pot Smoked Sausage and Rice | lunch, dinner, easy, comfort food, rice, pantry | yes |
 | Pumpkin Beer Shredded Beef Sandwiches... | dinner, comfort food, american, beef, sandwich, cheese, holiday | yes |
 | Smoky Chili Stuffed Peppers | dinner, entree, easy, comfort food, american, beef, cheese | yes |
-| Sticky Apple Cider Chicken with Autum... | dinner, entree, chicken, salad, side dish, american | no |
+| Sticky Apple Cider Chicken with Autum... | dinner, entree, chicken, salad, side dish, american | yes |
 | Baked Broccoli Sausage Tortellini | dinner, easy, comfort food, italian, pork, pasta, cheese | yes |
 | Make Ahead Gravy | side dish, comfort food, holiday, pantry | yes |
-| Thanksgiving House Salad with Salted ... | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, gluten-free, salad, greens, cheese, holiday | no |
+| Thanksgiving House Salad with Salted ... | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, gluten-free, salad, greens, cheese, holiday | yes |
 | Turkey and Stuffing Meatballs | dinner, entree, comfort food, american, potato, holiday | yes |
 | Whole Roasted Christmas Chicken | dinner, entree, easy, comfort food, chicken, holiday | yes |
-| Eggnog Sparkle Sheet Cake | dessert, easy, vegetarian, holiday, egg | no |
+| Eggnog Sparkle Sheet Cake | dessert, easy, vegetarian, holiday, egg | yes |
 | Pistachio, Pear & Gruyere Puff Pastry | snack, appetizer, quick, easy, vegetarian, cheese | yes |
 | Scalloped Hasselback Potatoes | dinner, side dish, easy, comfort food, vegetarian, potato, cheese, holiday | yes |
 | Sweet Potato Chicken Chili | dinner, easy, healthy, comfort food, gluten-free, american, chicken, soup, potato, legumes | yes |
-| Shaved Asiago Winter Pear Salad | lunch, dinner, easy, healthy, vegetarian, gluten-free, salad, greens, cheese | no |
+| Shaved Asiago Winter Pear Salad | lunch, dinner, easy, healthy, vegetarian, gluten-free, salad, greens, cheese | yes |
 | Sticky BBQ Cauliflower Bites | snack, appetizer, side dish, easy, vegetarian, american, cheese | yes |
 | Chicken and Biscuit Crumble | dinner, entree, comfort food, american, chicken | yes |
 | Chili Lime Salmon Tostadas | dinner, easy, healthy, gluten-free, mexican, seafood, fish, greens | yes |
-| Green Goddess Turkey Burgers | lunch, dinner, easy, healthy, american, sandwich, greens, grill | no |
+| Green Goddess Turkey Burgers | lunch, dinner, easy, healthy, american, sandwich, greens, grill | yes |
 | Meatball Salad | lunch, dinner, quick, easy, healthy, italian, salad, greens, cheese | yes |
 | Shrimp Taco Soup | dinner, easy, healthy, comfort food, dairy-free, mexican, seafood, soup, legumes, pantry | yes |
-| Sticky Honey Mustard Chicken with Cru... | lunch, dinner, easy, healthy, entree, chicken, salad, greens | no |
+| Sticky Honey Mustard Chicken with Cru... | lunch, dinner, easy, healthy, entree, chicken, salad, greens | yes |
 | Vodka Sauce Baked White Beans | dinner, easy, comfort food, vegetarian, italian, legumes, cheese, pantry | yes |
 | White Chocolate Raspberry Granola | breakfast, snack, easy, vegetarian, pantry | yes |
 | Acorn Squash Breakfast Pudding Recipe | breakfast, dinner, comfort food, american, pork, egg, cheese, holiday | yes |
@@ -1812,59 +1822,61 @@
 | Turkey Pho Recipe | lunch, dinner, entree, comfort food, asian, soup | yes |
 | Vietnamese Spring Roll Recipe | lunch, dinner, snack, appetizer, entree, comfort food, asian, thai, pork, seafood, mushroom | yes |
 | Vietnamese Steak and Vermicelli Bowl ... | lunch, dinner, entree, easy, healthy, asian, beef, rice, salad, pantry | yes |
-| Aloo Gobi Recipe (Cauliflower Potato ... | dinner, entree, vegetarian, vegan, gluten-free, dairy-free, indian, potato | no |
-| Chana Dal Recipe (Bengal Gram Dal) | lunch, dinner, entree, vegetarian, indian, legumes, pantry | no |
-| Chicken Biryani Recipe | dinner, entree, comfort food, indian, chicken, rice, pantry | no |
+| Aloo Gobi Recipe (Cauliflower Potato ... | dinner, entree, vegetarian, vegan, gluten-free, dairy-free, indian, potato | yes |
+| Chana Dal Recipe (Bengal Gram Dal) | lunch, dinner, entree, vegetarian, indian, legumes, pantry | yes |
+| Chicken Biryani Recipe | dinner, entree, comfort food, indian, chicken, rice, pantry | yes |
 | Chicken Korma Recipe | dinner, entree, comfort food, indian, chicken, rice | yes |
-| Dal Fry Recipe (Restaurant Style) | lunch, dinner, easy, comfort food, vegetarian, indian, rice, soup, legumes, pantry | no |
-| Khichdi Recipe | Moong Dal Khichdi | lunch, dinner, easy, healthy, comfort food, vegetarian, indian, rice, soup, legumes, pantry | no |
-| Dal Makhani Recipe (Restaurant Style) | dinner, entree, comfort food, vegetarian, indian, legumes, rice, pantry | no |
-| Fish Curry Recipe | Indian Fish Masala | dinner, entree, indian, seafood, fish | no |
-| Medu Vada Recipe (Garelu) | snack, appetizer, side dish, vegetarian, indian, legumes | no |
-| Gobi Manchurian Recipe | Cauliflower ... | lunch, dinner, appetizer, side dish, vegetarian, asian, indian | no |
-| Jalebi recipe | dessert, snack, vegetarian, indian, pantry | no |
-| Jeera Rice Recipe | lunch, dinner, side dish, easy, vegetarian, gluten-free, indian, rice, pantry | no |
-| Kulcha Recipe | lunch, dinner, vegetarian, indian, bread, potato, pantry | no |
-| Malai Kofta (Paneer Kofta Curry) | lunch, dinner, entree, comfort food, vegetarian, indian, potato, cheese, pantry | no |
-| Masala Dosa Recipe (Restaurant Style) | vegetarian, indian, rice, potato, legumes, breakfast, lunch, dinner, snack, easy | no |
-| Masoor Dal Recipe (Red Lentil Dal) | lunch, dinner, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, indian, rice, legumes, pantry | no |
-| Moong Dal Recipe | lunch, dinner, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, indian, legumes, pantry | no |
-| Tomato Chutney (Restaurant Style Recipe) | vegetarian, vegan, gluten-free, indian, side dish, pantry, easy, quick | no |
-| Poori Recipe, How to Make Puri | indian, vegetarian, bread, side dish, snack, breakfast, lunch, dinner, easy, pantry | no |
-| Rava Idli Recipe (Restaurant Style) | breakfast, easy, vegetarian, indian | no |
-| Tandoori Chicken Recipe (Smoky Restau... | dinner, entree, indian, chicken, grill | no |
-| Thecha Recipe | side dish, easy, vegetarian, vegan, gluten-free, dairy-free, indian, pantry | no |
-| Tomato Rice Recipe (Indian Style) | lunch, dinner, easy, comfort food, vegetarian, indian, rice, pantry | no |
-| Tomato Soup Recipe with Fresh Tomatoes | lunch, dinner, appetizer, side dish, easy, healthy, comfort food, vegetarian, gluten-free, italian, soup, pantry | no |
-| Veg Cutlet Recipe (Vegetable Cutlet) | snack, appetizer, side dish, easy, healthy, vegetarian, indian, potato, pantry | no |
+| Dal Fry Recipe (Restaurant Style) | lunch, dinner, easy, comfort food, vegetarian, indian, rice, soup, legumes, pantry | yes |
+| Khichdi Recipe | Moong Dal Khichdi | lunch, dinner, easy, healthy, comfort food, vegetarian, indian, rice, soup, legumes, pantry | yes |
+| Dal Makhani Recipe (Restaurant Style) | dinner, entree, comfort food, vegetarian, indian, legumes, rice, pantry | yes |
+| Fish Curry Recipe | Indian Fish Masala | dinner, entree, indian, seafood, fish | yes |
+| Medu Vada Recipe (Garelu) | snack, appetizer, side dish, vegetarian, indian, legumes | yes |
+| Gobi Manchurian Recipe | Cauliflower ... | lunch, dinner, appetizer, side dish, vegetarian, asian, indian | yes |
+| Jalebi recipe | dessert, snack, vegetarian, indian, pantry | yes |
+| Jeera Rice Recipe | lunch, dinner, side dish, easy, vegetarian, gluten-free, indian, rice, pantry | yes |
+| Kulcha Recipe | lunch, dinner, vegetarian, indian, bread, potato, pantry | yes |
+| Malai Kofta (Paneer Kofta Curry) | lunch, dinner, entree, comfort food, vegetarian, indian, potato, cheese, pantry | yes |
+| Masala Dosa Recipe (Restaurant Style) | vegetarian, indian, rice, potato, legumes, breakfast, lunch, dinner, snack, easy | yes |
+| Masoor Dal Recipe (Red Lentil Dal) | lunch, dinner, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, indian, rice, legumes, pantry | yes |
+| Moong Dal Recipe | lunch, dinner, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, indian, legumes, pantry | yes |
+| Tomato Chutney (Restaurant Style Recipe) | vegetarian, vegan, gluten-free, indian, side dish, pantry, easy, quick | yes |
+| Poori Recipe, How to Make Puri | indian, vegetarian, bread, side dish, snack, breakfast, lunch, dinner, easy, pantry | yes |
+| Rava Idli Recipe (Restaurant Style) | breakfast, easy, vegetarian, indian | yes |
+| Tandoori Chicken Recipe (Smoky Restau... | dinner, entree, indian, chicken, grill | yes |
+| Thecha Recipe | side dish, easy, vegetarian, vegan, gluten-free, dairy-free, indian, pantry | yes |
+| Tomato Rice Recipe (Indian Style) | lunch, dinner, easy, comfort food, vegetarian, indian, rice, pantry | yes |
+| Tomato Soup Recipe with Fresh Tomatoes | lunch, dinner, appetizer, side dish, easy, healthy, comfort food, vegetarian, gluten-free, italian, soup, pantry | yes |
+| Veg Cutlet Recipe (Vegetable Cutlet) | snack, appetizer, side dish, easy, healthy, vegetarian, indian, potato, pantry | yes |
 | Easy Taco Stuffed Shells Recipe | dinner, easy, comfort food, beef, pasta, cheese, mexican, entree | yes |
 | Easy Black Bean Pizza Topped with Salad | lunch, dinner, entree, quick, easy, vegetarian, cheese, pantry, legumes, greens | yes |
 | Easy Mint Green Iced Tea | easy, quick, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | Crispy Beer Battered Fried Apples Recipe | dessert, snack, appetizer, easy, comfort food, vegetarian, egg, pantry | yes |
-| Kale and Almond Pesto Pasta | lunch, dinner, easy, healthy, vegetarian, italian, pasta, greens, cheese | no |
+| Kale and Almond Pesto Pasta | lunch, dinner, easy, healthy, vegetarian, italian, pasta, greens, cheese | yes |
 | Goat Cheese Chicken Meatballs | dinner, easy, comfort food, italian, chicken, cheese | yes |
-| Buffalo Chicken Stuffed Shells | dinner, entree, comfort food, american, chicken, pasta, cheese | no |
+| Buffalo Chicken Stuffed Shells | dinner, entree, comfort food, american, chicken, pasta, cheese | yes |
 | Mini Cream Cheese and Jam Sandwiches | snack, appetizer, quick, easy, vegetarian, sandwich, bread, cheese | yes |
 | Best Juicy Pork Tenderloin | dinner, entree, pork | yes |
 | Mini Upside Down Blueberry Cakes | dessert, snack, easy, vegetarian, pantry | yes |
 | Perfect Homemade Caramel Sauce | dessert, easy, vegetarian, pantry | yes |
+| Breakfast Pizza Recipe with Tomatoes ... | breakfast, easy, vegetarian, italian, egg, cheese | no |
 | Easy Baked Ziti Recipe with Shrimp an... | dinner, easy, comfort food, italian, seafood, pasta, greens, cheese | yes |
-| Mini Beef and Guinness Pies | dinner, entree, comfort food, beef, pantry | no |
-| Steak and Eggs with Roasted Asparagus | dinner, entree, healthy, low-carb, beef, egg, greens | no |
-| Blackberry Baked Oatmeal | breakfast, easy, comfort food, vegetarian, egg | no |
+| Mini Beef and Guinness Pies | dinner, entree, comfort food, beef, pantry | yes |
+| Steak and Eggs with Roasted Asparagus | dinner, entree, healthy, low-carb, beef, egg, greens | yes |
+| Blackberry Baked Oatmeal | breakfast, easy, comfort food, vegetarian, egg | yes |
 | Goat Cheese and Artichoke Pasta Recipe | dinner, entree, quick, easy, comfort food, vegetarian, italian, pasta, greens, cheese | yes |
 | Banana Shortcake | dessert, snack, easy, comfort food, vegetarian, american, bread, pantry | yes |
 | Rosemary Marinated Olives with Clemen... | snack, appetizer, easy, vegetarian, vegan, gluten-free, mediterranean, bread, pantry | yes |
 | Bourbon Manhattan Cocktail | quick, easy | yes |
-| Sausage, Cheddar and Guinness Pie Recipe | dinner, entree, comfort food, pork, cheese | no |
-| Meatless Black Bean, Egg and Corn Wraps | breakfast, lunch, dinner, quick, easy, healthy, vegetarian, mexican, egg, legumes, cheese, pantry | no |
-| BLT Rice Paper Rolls | lunch, snack, appetizer, easy, asian, pork, greens | no |
+| Sausage, Cheddar and Guinness Pie Recipe | dinner, entree, comfort food, pork, cheese | yes |
+| Meatless Black Bean, Egg and Corn Wraps | breakfast, lunch, dinner, quick, easy, healthy, vegetarian, mexican, egg, legumes, cheese, pantry | yes |
+| BLT Rice Paper Rolls | lunch, snack, appetizer, easy, asian, pork, greens | yes |
 | Blackberry Lemon Scones | breakfast, snack, easy, vegetarian, american, bread | yes |
-| Roasted Asparagus, Ricotta and Pesto ... | snack, appetizer, easy, vegetarian, italian, bread, cheese, greens | no |
+| Roasted Asparagus, Ricotta and Pesto ... | snack, appetizer, easy, vegetarian, italian, bread, cheese, greens | yes |
 | Brown Butter Kale Pasta Recipe | lunch, dinner, easy, comfort food, vegetarian, pasta, greens, cheese | yes |
 | Arugula Fennel Salad with Orange | lunch, side dish, quick, easy, healthy, vegetarian, gluten-free, low-carb, mediterranean, salad, greens, cheese | yes |
 | Roasted Thai Curry Cauliflower | lunch, dinner, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, asian, thai, side dish | yes |
 | Crispy Baked Portobello Mushroom Fries | snack, appetizer, side dish, easy, vegetarian, mushroom | yes |
+| Dreamy Red Wine Pasta | dinner, easy, comfort food, vegetarian, italian, pasta, cheese, pantry | no |
 | Open-Faced Brie and Tomato Sandwiches | lunch, snack, appetizer, quick, easy, vegetarian, sandwich, bread, cheese | yes |
 | Perfectly Baked Fish Recipe with Scal... | dinner, entree, easy, healthy, gluten-free, dairy-free, low-carb, seafood, fish | yes |
 | Creamy Pasta with Yogurt, Bacon and S... | lunch, dinner, easy, comfort food, italian, pasta, cheese | yes |
@@ -1872,36 +1884,36 @@
 | Curried Coconut Apple Carrot Soup | lunch, dinner, easy, healthy, comfort food, soup, potato, pantry | yes |
 | Slow Cooker Fire Roasted Tomato and B... | dinner, easy, comfort food, mexican, beef, entree | yes |
 | Honey Soy Slow Cooker Pepper Steak Re... | dinner, easy, comfort food, beef, rice, pantry | yes |
-| Spiced Pumpkin Scones | breakfast, snack, comfort food, vegetarian, bread, egg, holiday, pantry | no |
-| Mint Chocolate Cookies | dessert, comfort food, vegetarian, pantry, holiday | no |
+| Spiced Pumpkin Scones | breakfast, snack, comfort food, vegetarian, bread, egg, holiday, pantry | yes |
+| Mint Chocolate Cookies | dessert, comfort food, vegetarian, pantry, holiday | yes |
 | Cheese Dip | snack, appetizer, easy, comfort food, vegetarian, cheese, pantry | yes |
-| Ginger Chocolate Chip Cookies | dessert, snack, easy, comfort food, vegetarian, pantry, holiday | no |
+| Ginger Chocolate Chip Cookies | dessert, snack, easy, comfort food, vegetarian, pantry, holiday | yes |
 | Granola Crusted Apple and Turkey Pani... | lunch, easy, comfort food, sandwich, bread, cheese, grill | yes |
 | Easy Garlic Basil Cheese Bread | snack, appetizer, side dish, easy, comfort food, vegetarian, bread, cheese | yes |
 | Butternut Squash and Pesto Pizza Recipe | dinner, entree, easy, vegetarian, italian, cheese, pantry | yes |
 | Quick and Easy Caesar Salad Pizza Recipe | lunch, dinner, quick, easy, vegetarian, italian, greens, cheese | yes |
 | Easy Blueberry Muffins | breakfast, easy, vegetarian, bread, pantry | yes |
 | Lemon Roasted Spatchcock Chicken | dinner, entree, healthy, comfort food, chicken, potato, holiday | yes |
-| Soft and Chewy Granola Bars | snack, easy, healthy, vegetarian, pantry | no |
+| Soft and Chewy Granola Bars | snack, easy, healthy, vegetarian, pantry | yes |
 | Double Chocolate Cupcakes | dessert, comfort food, vegetarian, pantry | yes |
-| Easy Vegetable Lasagna | dinner, entree, easy, comfort food, vegetarian, italian, pasta, cheese | no |
-| Green Bean Potato Salad with Feta and... | lunch, dinner, side dish, easy, healthy, vegetarian, gluten-free, mediterranean, potato, greens, legumes, cheese, salad | no |
-| Lemon Basil Pasta Salad Recipe with V... | lunch, dinner, easy, healthy, vegetarian, dairy-free, italian, mediterranean, pasta, salad, greens, grill | no |
+| Easy Vegetable Lasagna | dinner, entree, easy, comfort food, vegetarian, italian, pasta, cheese | yes |
+| Green Bean Potato Salad with Feta and... | lunch, dinner, side dish, easy, healthy, vegetarian, gluten-free, mediterranean, potato, greens, legumes, cheese, salad | yes |
+| Lemon Basil Pasta Salad Recipe with V... | lunch, dinner, easy, healthy, vegetarian, dairy-free, italian, mediterranean, pasta, salad, greens, grill | yes |
 | Strawberry Iceberg Salad with Blue Ch... | lunch, dinner, appetizer, side dish, easy, gluten-free, low-carb, american, salad, greens, cheese | yes |
 | Easy Peach Cobbler | dessert, easy, comfort food, vegetarian | yes |
-| Orange Coconut Bread Recipe | breakfast, dessert, snack, easy, vegetarian, bread, pantry | no |
-| Easy Pumpkin Pie | dessert, easy, comfort food, vegetarian, american, egg, pantry, holiday | no |
-| Easy Chocolate Cookies with Dried Fru... | dessert, snack, easy, vegetarian, pantry | no |
+| Orange Coconut Bread Recipe | breakfast, dessert, snack, easy, vegetarian, bread, pantry | yes |
+| Easy Pumpkin Pie | dessert, easy, comfort food, vegetarian, american, egg, pantry, holiday | yes |
+| Easy Chocolate Cookies with Dried Fru... | dessert, snack, easy, vegetarian, pantry | yes |
 | Easy Banana Bread Recipe | dessert, snack, easy, comfort food, vegetarian, american, bread, pantry | yes |
-| Easy Carrot Cake | dessert, easy, vegetarian, holiday | no |
-| Grilled Avocado Guacamole | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mexican, greens, grill | no |
-| Lemon Garlic Grilled Chicken Wings | dinner, appetizer, easy, chicken, grill | no |
-| Bacon Bourbon Barbecue Sauce Recipe | side dish, comfort food, american, pork, pantry | no |
-| Bacon Bourbon Oven Baked Ribs Recipe | dinner, entree, comfort food, american, pork, grill | no |
-| Pho Inspired Grilled Chicken Wings Re... | dinner, appetizer, entree, easy, comfort food, asian, thai, chicken, grill | no |
-| Ginger Blueberry Oatmeal Muffins | breakfast, snack, easy, vegetarian, bread, pantry | no |
-| Creamy White Chicken Lasagna Recipe | dinner, entree, comfort food, italian, chicken, pasta, cheese, greens | no |
-| Pesto Soba Noodles with Shrimp | lunch, dinner, easy, healthy, seafood, pasta, asian | no |
+| Easy Carrot Cake | dessert, easy, vegetarian, holiday | yes |
+| Grilled Avocado Guacamole | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mexican, greens, grill | yes |
+| Lemon Garlic Grilled Chicken Wings | dinner, appetizer, easy, chicken, grill | yes |
+| Bacon Bourbon Barbecue Sauce Recipe | side dish, comfort food, american, pork, pantry | yes |
+| Bacon Bourbon Oven Baked Ribs Recipe | dinner, entree, comfort food, american, pork, grill | yes |
+| Pho Inspired Grilled Chicken Wings Re... | dinner, appetizer, entree, easy, comfort food, asian, thai, chicken, grill | yes |
+| Ginger Blueberry Oatmeal Muffins | breakfast, snack, easy, vegetarian, bread, pantry | yes |
+| Creamy White Chicken Lasagna Recipe | dinner, entree, comfort food, italian, chicken, pasta, cheese, greens | yes |
+| Pesto Soba Noodles with Shrimp | lunch, dinner, easy, healthy, seafood, pasta, asian | yes |
 | Chicken Caprese Salad | lunch, dinner, easy, healthy, italian, chicken, salad, greens, cheese | yes |
 | Veggie Tofu Scramble | breakfast, lunch, dinner, quick, easy, healthy, vegetarian, vegan, dairy-free, greens, tofu, pantry | yes |
 | Our Favorite Oven Roasted Vegetables | dinner, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, potato, greens | yes |
@@ -1917,24 +1929,25 @@
 | Brown Butter Pasta with Walnuts and F... | lunch, dinner, easy, comfort food, vegetarian, italian, pasta, egg, cheese | yes |
 | Sun-Dried Tomato and Goat Cheese Riga... | lunch, dinner, entree, comfort food, vegetarian, italian, pasta, cheese | yes |
 | Blueberry Buttermilk Panna Cotta | dessert, vegetarian | yes |
-| Braised Kale, Bacon and Egg on Toast ... | breakfast, lunch, dinner, easy, comfort food, egg, greens, cheese, bread, pork, entree | no |
+| Braised Kale, Bacon and Egg on Toast ... | breakfast, lunch, dinner, easy, comfort food, egg, greens, cheese, bread, pork, entree | yes |
 | Chilled Spicy Spiked Cider Cocktail | quick, easy, vegetarian, dairy-free, holiday | yes |
-| Warm Apple Cabbage Salad with Pecans | lunch, dinner, easy, healthy, vegetarian, salad, greens, cheese | no |
+| Warm Apple Cabbage Salad with Pecans | lunch, dinner, easy, healthy, vegetarian, salad, greens, cheese | yes |
 | Sweet and Spicy Roasted Butternut Squ... | side dish, easy, healthy, vegetarian, gluten-free, potato, holiday | yes |
-| Apple Cider and Smoked Olive Oil Vina... | lunch, dinner, easy, salad, egg, greens | no |
+| Apple Cider and Smoked Olive Oil Vina... | lunch, dinner, easy, salad, egg, greens | yes |
 | Pumpkin Mousse Parfait | dessert, easy, vegetarian, holiday | yes |
 | Maple Butter Roasted Endive Recipe | side dish, easy, healthy, vegetarian, gluten-free, greens | yes |
 | Cardamom Roasted Tomato Pasta Recipe | dinner, easy, comfort food, vegetarian, italian, pasta, pantry | yes |
 | Baked Pumpkin French Toast Casserole | breakfast, easy, comfort food, american, bread, egg, holiday | yes |
-| Roasted Tomato Soup with Lemon and Thyme | lunch, dinner, easy, comfort food, vegetarian, soup, pantry | no |
+| Roasted Tomato Soup with Lemon and Thyme | lunch, dinner, easy, comfort food, vegetarian, soup, pantry | yes |
 | Chocolate Truffle Peanut Butter Cooki... | dessert, snack, easy, vegetarian, american, pantry, holiday | yes |
 | Homemade Spiced Fried Chicken Recipe | dinner, entree, comfort food, american, chicken | yes |
-| Ginger Butter Sauteed Green Beans | side dish, easy, healthy, vegetarian, gluten-free, low-carb, asian, greens, pantry | no |
+| Ginger Butter Sauteed Green Beans | side dish, easy, healthy, vegetarian, gluten-free, low-carb, asian, greens, pantry | yes |
 | Easy Baked Fish in Parchment with Ora... | lunch, dinner, easy, healthy, seafood, fish, mediterranean | yes |
-| Dark Chocolate Bark with Coconut and ... | dessert, snack, easy, vegetarian, pantry, holiday | no |
+| Dark Chocolate Bark with Coconut and ... | dessert, snack, easy, vegetarian, pantry, holiday | yes |
 | White Chocolate Cranberry Oatmeal Coo... | dessert, snack, easy, comfort food, vegetarian, american, pantry, holiday | yes |
 | Ham and Broccoli Pizza Pockets Recipe | lunch, dinner, easy, comfort food, pork, cheese, sandwich, snack | yes |
 | Honey Glazed Lavender Chicken | dinner, entree, chicken | yes |
+| Asparagus Ohitashi Recipe | side dish, easy, healthy, vegetarian, gluten-free, dairy-free, low-carb, asian, japanese, greens, pantry | yes |
 | Avocado Salad with Wasabi Dressing | lunch, dinner, appetizer, side dish, quick, easy, healthy, vegetarian, gluten-free, dairy-free, low-carb, asian, japanese, salad, greens, pantry | yes |
 | Broccoli with Sesame Sauce Recipe | side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, asian, japanese, greens, pantry, quick | yes |
 | California Roll | lunch, dinner, appetizer, easy, asian, japanese, seafood, fish, rice | yes |
@@ -1972,7 +1985,7 @@
 | Kazunoko Recipe | appetizer, side dish, easy, asian, japanese, seafood, fish | yes |
 | Kinpira Gobo Recipe | side dish, easy, healthy, vegetarian, vegan, dairy-free, asian, japanese, pantry | yes |
 | Kinshi Tamago Recipe | easy, vegetarian, egg, japanese, side dish, quick | yes |
-| Kuromame (Simmered Black Beans) Recipe | vegetarian, vegan, gluten-free, dairy-free, japanese, legumes, pantry, side dish, dessert, holiday | no |
+| Kuromame (Simmered Black Beans) Recipe | vegetarian, vegan, gluten-free, dairy-free, japanese, legumes, pantry, side dish, dessert, holiday | yes |
 | Multipurpose sauce (for noodles and t... | easy, asian, japanese, pantry | yes |
 | Menchi Katsu Recipe | lunch, dinner, entree, comfort food, asian, japanese, beef, pork | yes |
 | Miso Cookies | dessert, snack, easy, vegetarian, japanese, pantry | yes |
@@ -1994,11 +2007,13 @@
 | Ozoni (Zouni) Recipe | breakfast, soup, japanese, asian, easy, healthy | yes |
 | Pan-Fried Shumai Dumplings | lunch, dinner, appetizer, easy, comfort food, asian, japanese, pork | yes |
 | Ponzu Sauce Recipe | easy, vegan, gluten-free, dairy-free, asian, japanese, pantry | yes |
+| Pork Shigureni with Sesame | dinner, entree, pork, asian, japanese | yes |
 | Pork Shogayaki | dinner, easy, pork, asian, japanese | yes |
 | Potato Korokke (croquette) | dinner, appetizer, side dish, comfort food, japanese, beef, potato | yes |
 | Potato Salad Recipe | lunch, dinner, side dish, easy, comfort food, japanese, egg, potato, salad | yes |
-| Purin Recipe | dessert, easy, vegetarian, egg, japanese, pantry | no |
+| Purin Recipe | dessert, easy, vegetarian, egg, japanese, pantry | yes |
 | Rice Ball (Onigiri) Recipe | lunch, snack, easy, asian, japanese, rice, fish, pantry | yes |
+| Rice Cooker Cake Recipe | dessert, easy, vegetarian, egg, pantry | no |
 | Salmon and Egg Donburi | lunch, dinner, easy, comfort food, asian, japanese, seafood, fish, rice, egg | yes |
 | Salmon Flakes Recipe | lunch, dinner, easy, healthy, gluten-free, dairy-free, low-carb, japanese, seafood, fish | yes |
 | Salmon Takikomi Gohan (Salmon Rice) | dinner, entree, easy, healthy, asian, japanese, seafood, fish, rice | yes |
@@ -2035,7 +2050,7 @@
 | Yaki Onigiri Chazuke | lunch, dinner, snack, easy, healthy, asian, japanese, rice, soup, pantry | yes |
 | Yakibuta Recipe | dinner, entree, pork, asian, japanese | yes |
 | Yakisoba Recipe | lunch, dinner, easy, comfort food, asian, japanese, pork, pasta | yes |
-| Yakitori Recipe | dinner, entree, easy, asian, japanese, chicken, grill | no |
+| Yakitori Recipe | dinner, entree, easy, asian, japanese, chicken, grill | yes |
 | Stir Fry Vegetables | lunch, dinner, easy, pork, asian, chinese, greens, healthy, quick, entree | yes |
 | Yudofu Recipe | dinner, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, asian, japanese, soup, tofu | yes |
 | Baked Mac and Cheese | lunch, dinner, entree, easy, comfort food, vegetarian, american, pasta, cheese | yes |
@@ -2054,6 +2069,7 @@
 | Chicken Fajita Quesadillas | lunch, dinner, easy, comfort food, mexican, chicken, cheese | yes |
 | Chicken Fajita Rice Skillet | dinner, easy, comfort food, mexican, chicken, rice, cheese, pantry | yes |
 | Chicken Gyros | lunch, dinner, entree, easy, healthy, chicken, sandwich, mediterranean | yes |
+| Chicken Lo Mein | lunch, dinner, easy, comfort food, asian, chinese, chicken, pasta, mushroom | no |
 | Chicken Paprikash | dinner, entree, comfort food, eastern european, chicken | yes |
 | Chicken Parmesan | dinner, entree, easy, comfort food, italian, chicken, pasta, cheese | yes |
 | Chicken Schnitzel | dinner, entree, easy, comfort food, chicken, potato, eastern european | yes |
@@ -2090,13 +2106,14 @@
 | One Pot Pasta | lunch, dinner, quick, easy, comfort food, italian, pasta, cheese, pantry | yes |
 | Orecchiette With Sausage And Broccoli | dinner, entree, easy, comfort food, italian, pork, pasta, cheese, greens | yes |
 | Oven Baked Chicken Thighs | dinner, easy, comfort food, chicken, pantry | yes |
-| Easy Oven Roasted Chicken Shawarma | dinner, easy, mediterranean, chicken, sandwich | no |
+| Easy Oven Roasted Chicken Shawarma | dinner, easy, mediterranean, chicken, sandwich | yes |
 | Pasta alla Norma | dinner, entree, easy, comfort food, vegetarian, italian, pasta, cheese | yes |
 | Pasta e Fagioli | dinner, entree, comfort food, italian, pasta, soup, legumes, pantry | yes |
 | Pasta Puttanesca | lunch, dinner, easy, comfort food, italian, pasta, pantry | yes |
 | Pork Schnitzel | dinner, easy, comfort food, pork, potato, eastern european, entree | yes |
 | Pozole Rojo Recipe | dinner, entree, comfort food, mexican, pork, soup, pantry | yes |
-| Prime Rib Roast | dinner, entree, comfort food, american, beef, potato, holiday | no |
+| Prime Rib Roast | dinner, entree, comfort food, american, beef, potato, holiday | yes |
+| Ranch Pork Chops and Potatoes Sheet P... | dinner, easy, comfort food, pork, potato, american, entree, quick | no |
 | Roasted Cornish Hens | dinner, entree, easy, comfort food, chicken, potato | yes |
 | Salisbury Steak | dinner, entree, easy, comfort food, american, beef, mushroom, pantry | yes |
 | Salisbury Steak Meatballs | dinner, entree, easy, comfort food, american, beef | yes |
@@ -2117,123 +2134,123 @@
 | Homemade Apple Cider Recipe | easy, vegetarian, vegan, gluten-free, dairy-free, holiday, pantry | yes |
 | Best Banana Bread Recipe | breakfast, dessert, snack, easy, comfort food, vegetarian, american, bread, pantry | yes |
 | Best Homemade Brownie Recipe (from Sc... | dessert, easy, comfort food, vegetarian, pantry | yes |
-| Best Cheesecake Recipe | dessert, comfort food, vegetarian, cheese, pantry | no |
+| Best Cheesecake Recipe | dessert, comfort food, vegetarian, cheese, pantry | yes |
 | Best Chicken Salad Recipe | lunch, easy, healthy, gluten-free, low-carb, american, chicken, salad, sandwich, greens | yes |
 | Best Easy Coleslaw Recipe | side dish, easy, vegetarian, gluten-free, dairy-free, low-carb, salad, greens, pantry | yes |
 | Best Homemade Cornbread Recipe | snack, side dish, easy, comfort food, vegetarian, american, bread | yes |
-| Best Crepe Recipe | breakfast, easy, vegetarian, french, egg | no |
-| The Best Cut Out Sugar Cookie Recipe | dessert, snack, easy, comfort food, vegetarian, pantry, holiday | no |
+| Best Crepe Recipe | breakfast, easy, vegetarian, french, egg | yes |
+| The Best Cut Out Sugar Cookie Recipe | dessert, snack, easy, comfort food, vegetarian, pantry, holiday | yes |
 | Best Pancake Recipe (Homemade Pancake... | breakfast, easy, comfort food, vegetarian, american, egg, pantry | yes |
-| Best Scones Recipe | breakfast, snack, easy, comfort food, vegetarian, bread, egg, pantry | no |
+| Best Scones Recipe | breakfast, snack, easy, comfort food, vegetarian, bread, egg, pantry | yes |
 | Homemade Biscuits Recipe | breakfast, easy, comfort food, vegetarian, american, bread, pantry | yes |
 | Best Blondies Recipe | dessert, snack, easy, comfort food, vegetarian, american, pantry | yes |
-| BLT Sandwich Recipe | lunch, easy, sandwich, bread, american | no |
-| Blueberry Pie | dessert, easy, comfort food, vegetarian, american, egg, pantry, holiday | no |
-| Homemade Breadsticks Recipe | snack, appetizer, side dish, easy, comfort food, vegetarian, italian, bread, pantry | no |
-| Easy Tomato Bruschetta Recipe | appetizer, side dish, easy, vegetarian, italian, bread, cheese | no |
+| BLT Sandwich Recipe | lunch, easy, sandwich, bread, american | yes |
+| Blueberry Pie | dessert, easy, comfort food, vegetarian, american, egg, pantry, holiday | yes |
+| Homemade Breadsticks Recipe | snack, appetizer, side dish, easy, comfort food, vegetarian, italian, bread, pantry | yes |
+| Easy Tomato Bruschetta Recipe | appetizer, side dish, easy, vegetarian, italian, bread, cheese | yes |
 | Homemade Butter Popcorn Recipe | snack, easy, vegetarian, pantry | yes |
 | Cheese Pizza Recipe | dinner, easy, comfort food, vegetarian, italian, cheese, pantry | yes |
-| Chia Pudding Recipe | breakfast, snack, easy, healthy, vegetarian, vegan, gluten-free, dairy-free | no |
+| Chia Pudding Recipe | breakfast, snack, easy, healthy, vegetarian, vegan, gluten-free, dairy-free | yes |
 | Best Chocolate Cupcake Recipe | dessert, easy, comfort food, pantry | yes |
-| Chocolate Peanut Butter Balls Recipe | dessert, snack, easy, comfort food, vegetarian, american, pantry, holiday | no |
-| Best Cinnamon Rolls Recipe (Better th... | breakfast, comfort food, vegetarian, bread, egg, cheese, pantry, holiday | no |
+| Chocolate Peanut Butter Balls Recipe | dessert, snack, easy, comfort food, vegetarian, american, pantry, holiday | yes |
+| Best Cinnamon Rolls Recipe (Better th... | breakfast, comfort food, vegetarian, bread, egg, cheese, pantry, holiday | yes |
 | Best Cinnamon Scones (with Cinnamon C... | breakfast, easy, vegetarian, american, bread, egg | yes |
 | Dark Chocolate Puppy Chow | dessert, snack, easy, comfort food, vegetarian, gluten-free, pantry | yes |
-| Best Deviled Eggs Recipe | snack, appetizer, side dish, easy, comfort food, vegetarian, gluten-free, low-carb, american, egg, pantry, holiday | no |
+| Best Deviled Eggs Recipe | snack, appetizer, side dish, easy, comfort food, vegetarian, gluten-free, low-carb, american, egg, pantry, holiday | yes |
 | Best Easy Chili Recipe | dinner, easy, comfort food, american, beef, soup, legumes, pantry | yes |
 | Easy Homemade Pizza Sauce Recipe | easy, vegetarian, vegan, gluten-free, dairy-free, italian, pantry | yes |
 | Easy Homemade Salsa Recipe | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mexican, pantry | yes |
 | Easy Risotto Recipe | dinner, easy, comfort food, italian, rice, cheese | yes |
 | Egg Bites Recipe | breakfast, easy, healthy, low-carb, egg, cheese | yes |
-| Best Egg Salad Recipe (Egg Salad Sand... | lunch, snack, easy, comfort food, vegetarian, american, sandwich, egg | no |
+| Best Egg Salad Recipe (Egg Salad Sand... | lunch, snack, easy, comfort food, vegetarian, american, sandwich, egg | yes |
 | Breakfast Egg Sandwich Recipe | breakfast, easy, comfort food, american, pork, sandwich, egg, cheese | yes |
 | Homemade Eggnog Recipe | dessert, easy, comfort food, vegetarian, american, egg, holiday | yes |
 | Homemade French Bread Recipe | bread, french, vegetarian, easy, snack, side dish, pantry | yes |
 | Frittata Recipe | breakfast, lunch, dinner, easy, comfort food, vegetarian, low-carb, egg, cheese | yes |
-| Gingerbread Cookies (Gingerbread Man ... | dessert, snack, easy, comfort food, vegetarian, holiday | no |
+| Gingerbread Cookies (Gingerbread Man ... | dessert, snack, easy, comfort food, vegetarian, holiday | yes |
 | Gingerbread Recipe | dessert, comfort food, holiday, vegetarian, egg, pantry | yes |
-| Best Greek Salad Recipe | lunch, dinner, side dish, easy, healthy, vegetarian, mediterranean, salad, greens, cheese | no |
+| Best Greek Salad Recipe | lunch, dinner, side dish, easy, healthy, vegetarian, mediterranean, salad, greens, cheese | yes |
 | Best Homemade Hamburgers Recipe | lunch, dinner, easy, comfort food, american, beef, sandwich, cheese, grill | yes |
 | Homemade Applesauce Recipe | snack, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free | yes |
 | Homemade Chili Seasoning | quick, easy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | How to Make Homemade Peanut Butter | snack, quick, easy, healthy, vegan, gluten-free, dairy-free, low-carb, pantry | yes |
-| Homemade Pizza Recipe | dinner, entree, easy, comfort food, vegetarian, italian, cheese, pantry | no |
-| Homemade Soft Pretzel Recipe | snack, appetizer, comfort food, vegetarian, bread, pantry, easy | no |
+| Homemade Pizza Recipe | dinner, entree, easy, comfort food, vegetarian, italian, cheese, pantry | yes |
+| Homemade Soft Pretzel Recipe | snack, appetizer, comfort food, vegetarian, bread, pantry, easy | yes |
 | Homemade Trail Mix Recipe | snack, easy, vegetarian, pantry | yes |
 | Homemade Hot Chocolate Recipe (Hot Co... | dessert, easy, comfort food, vegetarian, pantry | yes |
-| Hummingbird Cake Recipe | dessert, easy, vegetarian, american, pantry | no |
+| Hummingbird Cake Recipe | dessert, easy, vegetarian, american, pantry | yes |
 | Baked Hummus Chicken Recipe | dinner, entree, easy, healthy, low-carb, mediterranean, chicken | yes |
 | Immune Boosting Tea | quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | Kale Salad Recipe | lunch, dinner, side dish, easy, healthy, vegetarian, salad, greens, cheese | yes |
 | M & M Cookies Recipe | dessert, snack, easy, comfort food, vegetarian, american, pantry | yes |
 | Easy Homemade Marinara Sauce Recipe | dinner, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, italian, pasta, pantry | yes |
-| Best Meatloaf Recipe | dinner, entree, easy, comfort food, american, beef | no |
-| Millionaire Shortbread Recipe (Carame... | dessert, comfort food, vegetarian, holiday | no |
+| Best Meatloaf Recipe | dinner, entree, easy, comfort food, american, beef | yes |
+| Millionaire Shortbread Recipe (Carame... | dessert, comfort food, vegetarian, holiday | yes |
 | Homemade Naan Bread Recipe | easy, vegetarian, bread, pantry | yes |
-| Best Mexican Beef Nachos Recipe | dinner, easy, comfort food, mexican, beef, cheese, appetizer | no |
-| Best Omelette Recipe | breakfast, quick, easy, comfort food, egg, cheese | no |
+| Best Mexican Beef Nachos Recipe | dinner, easy, comfort food, mexican, beef, cheese, appetizer | yes |
+| Best Omelette Recipe | breakfast, quick, easy, comfort food, egg, cheese | yes |
 | Best Overnight Oats Recipe (6 Ways) | breakfast, easy, healthy, vegetarian, snack | yes |
-| Panzanella Salad Recipe | lunch, dinner, side dish, easy, healthy, vegetarian, italian, mediterranean, salad, bread, greens, cheese | no |
-| Homemade Peppermint Bark | dessert, easy, vegetarian, holiday, pantry | no |
+| Panzanella Salad Recipe | lunch, dinner, side dish, easy, healthy, vegetarian, italian, mediterranean, salad, bread, greens, cheese | yes |
+| Homemade Peppermint Bark | dessert, easy, vegetarian, holiday, pantry | yes |
 | Homemade Pepperoni Pizza Recipe | lunch, dinner, easy, comfort food, italian, cheese | yes |
-| Pesto Pasta Recipe | lunch, dinner, easy, comfort food, vegetarian, italian, pasta, cheese | no |
-| Pesto Tortellini Recipe | lunch, dinner, easy, comfort food, vegetarian, italian, pasta, cheese | no |
+| Pesto Pasta Recipe | lunch, dinner, easy, comfort food, vegetarian, italian, pasta, cheese | yes |
+| Pesto Tortellini Recipe | lunch, dinner, easy, comfort food, vegetarian, italian, pasta, cheese | yes |
 | Homemade Pita Bread Recipe | snack, side dish, easy, vegetarian, vegan, bread, pantry, mediterranean | yes |
 | Best Potato Soup Recipe | lunch, dinner, comfort food, american, pork, soup, potato, cheese | yes |
 | Homemade Pumpkin Pie Spice Recipe | easy, vegetarian, vegan, gluten-free, dairy-free, pantry, holiday | yes |
 | Puppy Chow Recipe (Muddy Buddies) | dessert, snack, quick, easy, vegetarian, gluten-free, pantry | yes |
-| Best Easy Quiche Recipe | breakfast, lunch, dinner, easy, comfort food, vegetarian, egg, cheese | no |
-| Oven Roasted Turkey Recipe | dinner, entree, american, holiday, chicken | no |
+| Best Easy Quiche Recipe | breakfast, lunch, dinner, easy, comfort food, vegetarian, egg, cheese | yes |
+| Oven Roasted Turkey Recipe | dinner, entree, american, holiday, chicken | yes |
 | Oven Roasted Vegetables Recipe | side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, greens | yes |
-| Shirley Temple Drink Recipe | easy, quick, vegetarian, vegan, gluten-free, dairy-free, pantry | no |
+| Shirley Temple Drink Recipe | easy, quick, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | Smoothie Bowl Recipe - 3 Ways | breakfast, snack, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, greens | yes |
-| Best Snickerdoodles Recipe | dessert, snack, easy, comfort food, vegetarian, american, pantry, holiday | no |
+| Best Snickerdoodles Recipe | dessert, snack, easy, comfort food, vegetarian, american, pantry, holiday | yes |
 | Fresh Spring Rolls Recipe | lunch, dinner, snack, appetizer, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, asian, thai, greens, legumes | yes |
-| Stuffed Manicotti Recipe | dinner, easy, comfort food, vegetarian, italian, pasta, cheese | no |
-| Stuffed Bell Peppers Recipe | dinner, easy, comfort food, american, beef, rice, cheese | no |
-| Easy Tabbouleh Recipe | lunch, dinner, side dish, easy, healthy, vegetarian, vegan, dairy-free, mediterranean, salad, greens, pantry | no |
-| Teriyaki Chicken Recipe and Marinade | dinner, entree, easy, comfort food, asian, japanese, chicken, grill | no |
+| Stuffed Manicotti Recipe | dinner, easy, comfort food, vegetarian, italian, pasta, cheese | yes |
+| Stuffed Bell Peppers Recipe | dinner, easy, comfort food, american, beef, rice, cheese | yes |
+| Easy Tabbouleh Recipe | lunch, dinner, side dish, easy, healthy, vegetarian, vegan, dairy-free, mediterranean, salad, greens, pantry | yes |
+| Teriyaki Chicken Recipe and Marinade | dinner, entree, easy, comfort food, asian, japanese, chicken, grill | yes |
 | Homemade Teriyaki Sauce Recipe | easy, asian, japanese, pantry | yes |
-| Tiramisu Recipe | dessert, easy, comfort food, vegetarian, italian, egg, cheese, pantry, holiday | no |
-| Best Homemade Tomato Soup Recipe | lunch, dinner, easy, comfort food, vegetarian, soup, pantry | no |
+| Tiramisu Recipe | dessert, easy, comfort food, vegetarian, italian, egg, cheese, pantry, holiday | yes |
+| Best Homemade Tomato Soup Recipe | lunch, dinner, easy, comfort food, vegetarian, soup, pantry | yes |
 | Healthy Tropical Smoothie Recipe | breakfast, snack, easy, healthy, vegetarian, vegan, gluten-free, dairy-free | yes |
 | Vanilla Cupcakes Recipe | dessert, easy, comfort food, vegetarian, american, egg, pantry | yes |
 | Homemade Vanilla Pudding Recipe | dessert, easy, comfort food, vegetarian, american, egg, pantry | yes |
 | Slow Cooker White Bean Chicken Chili | dinner, easy, comfort food, american, chicken, soup, legumes, cheese, pantry | yes |
 | Best Yellow Cake Recipe (From scratch) | dessert, easy, comfort food, american, pantry | yes |
-| 10-Minute Meal – Instant Ramen Recipe | lunch, dinner, quick, easy, comfort food, asian, japanese, seafood, fish, soup, egg, pantry | no |
+| 10-Minute Meal – Instant Ramen Recipe | lunch, dinner, quick, easy, comfort food, asian, japanese, seafood, fish, soup, egg, pantry | yes |
 | Berry Smoothie | breakfast, snack, quick, easy, healthy, vegetarian, gluten-free, greens | yes |
-| Butter Cookies (Homemade Hato Sabure) | dessert, snack, easy, vegetarian, japanese, egg, pantry | no |
-| Chocolate Chip Cookies with Nutella | dessert, snack, comfort food, american, egg, pantry | no |
-| Furikake Chex Mix | snack, easy, vegetarian, japanese, pantry, holiday | no |
+| Butter Cookies (Homemade Hato Sabure) | dessert, snack, easy, vegetarian, japanese, egg, pantry | yes |
+| Chocolate Chip Cookies with Nutella | dessert, snack, comfort food, american, egg, pantry | yes |
+| Furikake Chex Mix | snack, easy, vegetarian, japanese, pantry, holiday | yes |
 | Hamburger Steak Bento | lunch, easy, asian, japanese, beef, rice, greens | yes |
-| Japanese Egg Sandwich (Tamago Sando) | lunch, snack, easy, comfort food, vegetarian, asian, japanese, sandwich, bread, egg | no |
-| Japanese Potato Salad | lunch, side dish, easy, comfort food, japanese, pork, egg, potato, salad | no |
-| Napolitan (Japanese Ketchup Spaghetti) | lunch, dinner, easy, comfort food, japanese, pasta, mushroom, cheese | no |
-| Japanese Pizza Toast | lunch, dinner, snack, quick, easy, comfort food, japanese, bread, cheese | no |
-| Menma (Seasoned Bamboo Shoot) | side dish, easy, vegetarian, japanese, pantry | no |
-| Homemade Rice Crackers (Kakimochi) | snack, appetizer, easy, vegetarian, vegan, gluten-free, dairy-free, japanese, rice, pantry | no |
-| Salmon Fried Rice | lunch, dinner, easy, asian, japanese, seafood, fish, rice, egg | no |
+| Japanese Egg Sandwich (Tamago Sando) | lunch, snack, easy, comfort food, vegetarian, asian, japanese, sandwich, bread, egg | yes |
+| Japanese Potato Salad | lunch, side dish, easy, comfort food, japanese, pork, egg, potato, salad | yes |
+| Napolitan (Japanese Ketchup Spaghetti) | lunch, dinner, easy, comfort food, japanese, pasta, mushroom, cheese | yes |
+| Japanese Pizza Toast | lunch, dinner, snack, quick, easy, comfort food, japanese, bread, cheese | yes |
+| Menma (Seasoned Bamboo Shoot) | side dish, easy, vegetarian, japanese, pantry | yes |
+| Homemade Rice Crackers (Kakimochi) | snack, appetizer, easy, vegetarian, vegan, gluten-free, dairy-free, japanese, rice, pantry | yes |
+| Salmon Fried Rice | lunch, dinner, easy, asian, japanese, seafood, fish, rice, egg | yes |
 | Seaweed Salad | lunch, dinner, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, asian, japanese, salad, pantry | yes |
-| Shrimp and Broccoli Salad | lunch, dinner, easy, healthy, seafood, salad, egg | no |
-| Simmered Potato and Chicken | dinner, entree, comfort food, asian, japanese, chicken, potato | no |
-| Smoked Soy Sauce | easy, asian, japanese, pantry | no |
-| Homemade Takoyaki Sauce | quick, easy, japanese, pantry | no |
-| Tartar Sauce | side dish, easy, japanese, egg, pantry | no |
-| Teriyaki Salmon | dinner, entree, easy, healthy, asian, japanese, seafood, fish, rice | no |
-| Japanese Milk Bread (Shokupan) | breakfast, snack, japanese, bread, pantry | no |
-| Homemade Yakisoba Sauce | quick, easy, vegetarian, dairy-free, asian, japanese, pantry | no |
-| Aguachile Recipe | lunch, dinner, appetizer, quick, easy, healthy, gluten-free, dairy-free, low-carb, mexican, seafood, salad | no |
+| Shrimp and Broccoli Salad | lunch, dinner, easy, healthy, seafood, salad, egg | yes |
+| Simmered Potato and Chicken | dinner, entree, comfort food, asian, japanese, chicken, potato | yes |
+| Smoked Soy Sauce | easy, asian, japanese, pantry | yes |
+| Homemade Takoyaki Sauce | quick, easy, japanese, pantry | yes |
+| Tartar Sauce | side dish, easy, japanese, egg, pantry | yes |
+| Teriyaki Salmon | dinner, entree, easy, healthy, asian, japanese, seafood, fish, rice | yes |
+| Japanese Milk Bread (Shokupan) | breakfast, snack, japanese, bread, pantry | yes |
+| Homemade Yakisoba Sauce | quick, easy, vegetarian, dairy-free, asian, japanese, pantry | yes |
+| Aguachile Recipe | lunch, dinner, appetizer, quick, easy, healthy, gluten-free, dairy-free, low-carb, mexican, seafood, salad | yes |
 | Authentic Guacamole Recipe | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mexican | yes |
-| Prime Rib (Boneless Rib Roast) | dinner, entree, comfort food, american, beef, holiday | no |
+| Prime Rib (Boneless Rib Roast) | dinner, entree, comfort food, american, beef, holiday | yes |
 | Chicken Stock vs Broth + Recipe and V... | soup, chicken, easy, healthy, dairy-free, gluten-free | yes |
 | Chocolate Chip Blondie Recipe | dessert, snack, easy, comfort food, vegetarian, american, egg, pantry | yes |
 | Corned Beef Hash Recipe | breakfast, lunch, dinner, easy, comfort food, american, beef, potato | yes |
 | Crab Cakes Recipe | lunch, dinner, appetizer, entree, easy, comfort food, american, seafood, egg | yes |
 | Cracker Barrel Meatloaf Recipe | dinner, entree, easy, comfort food, american, beef, cheese | yes |
-| Cranberry Cinnamon Rolls Recipe | breakfast, dessert, comfort food, vegetarian, bread, holiday | no |
+| Cranberry Cinnamon Rolls Recipe | breakfast, dessert, comfort food, vegetarian, bread, holiday | yes |
 | Creamed Corn Recipe | side dish, easy, comfort food, vegetarian, american, pantry | yes |
-| Lobster Bisque Soup | dinner, entree, comfort food, seafood, soup, rice, french | no |
+| Lobster Bisque Soup | dinner, entree, comfort food, seafood, soup, rice, french | yes |
 | Dirty Rice (Cajun Rice Recipe) + Video | dinner, entree, comfort food, beef, rice, pantry | yes |
 | Easy French Cassoulet Recipe | dinner, easy, comfort food, french, chicken, pork, legumes, entree | yes |
 | Enfrijoladas Recipe | lunch, dinner, easy, comfort food, vegetarian, gluten-free, mexican, legumes, cheese | yes |
@@ -2244,7 +2261,7 @@
 | 20-Minute Baked Salmon Recipe + Video | dinner, easy, healthy, gluten-free, dairy-free, low-carb, seafood, fish | yes |
 | How to Cook Pinto Beans Recipe | lunch, dinner, side dish, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, mexican, soup, legumes, pantry | yes |
 | Mexican Flan Recipe | dessert, vegetarian, mexican, egg, comfort food, holiday | yes |
-| Original Tommy's Chili (Copycat recipe) | dinner, entree, comfort food, american, mexican, beef, soup, pantry | no |
+| Original Tommy's Chili (Copycat recipe) | dinner, entree, comfort food, american, mexican, beef, soup, pantry | yes |
 | Pan Fried Tajin Chicken Recipe | dinner, entree, quick, easy, healthy, chicken, pantry | yes |
 | Pickled Jalapenos Recipe | snack, appetizer, side dish, easy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mexican, pantry | yes |
 | Pimento Cheese Recipe | snack, appetizer, easy, comfort food, vegetarian, cheese, american, pantry | yes |
@@ -2256,7 +2273,7 @@
 | Guacamole Recipe without Cilantro | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mexican | yes |
 | Smoked Salmon Brine | seafood, fish, pantry | yes |
 | Southern Tomato Gravy Recipe | breakfast, side dish, easy, comfort food, american, pork, egg, pantry | yes |
-| Tropical Pineapple Chicken | dinner, entree, chicken, grill | no |
+| Tropical Pineapple Chicken | dinner, entree, chicken, grill | yes |
 | Classic Sourdough Pancakes | breakfast, easy, comfort food, vegetarian, american, egg, pantry | yes |
 | Flaky Puff Crust Pizza | dinner, entree, comfort food, italian, cheese, pantry | yes |
 | French-Style Baguettes | bread, french, vegetarian, vegan, dairy-free, pantry | yes |
@@ -2280,28 +2297,28 @@
 | Crispy Baked Chicken Wings Recipe | dinner, appetizer, easy, comfort food, american, chicken | yes |
 | Crispy Oven French Fry Recipe | snack, side dish, easy, vegetarian, vegan, gluten-free, dairy-free, potato, pantry | yes |
 | Easy Homemade Garlic Parmesan Knots | snack, appetizer, side dish, easy, comfort food, vegetarian, italian, bread, cheese, pantry | yes |
-| Freezer Breakfast Burritos Recipe | breakfast, easy, comfort food, mexican, pork, egg, potato, cheese | no |
+| Freezer Breakfast Burritos Recipe | breakfast, easy, comfort food, mexican, pork, egg, potato, cheese | yes |
 | Homemade Buffalo Sauce Recipe | quick, easy, vegetarian, gluten-free, side dish, pantry | yes |
 | Instant Pot Baked Potatoes | dinner, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, potato | yes |
 | Instant Pot Beef Tips Recipe | dinner, entree, comfort food, american, beef, rice, potato, mushroom | yes |
 | Olive Garden Salad and Dressing Copyc... | lunch, dinner, easy, vegetarian, italian, salad, greens, cheese | yes |
 | One Pot Chicken Parmesan Pasta | dinner, easy, comfort food, italian, chicken, pasta, cheese | yes |
-| Easy Thanksgiving Turkey Recipe | dinner, easy, comfort food, american, holiday | no |
+| Easy Thanksgiving Turkey Recipe | dinner, easy, comfort food, american, holiday | yes |
 | Easy Creamy Potato Soup Recipe | lunch, dinner, easy, comfort food, american, soup, potato, cheese | yes |
 | Tartar Sauce (The Best Crab Cake Sauc... | side dish, easy, vegetarian, gluten-free, dairy-free, low-carb, pantry | yes |
 | Tex-Mex Turkey Burger Recipe | lunch, dinner, easy, american, mexican, sandwich, cheese, grill | yes |
 | Vegan Buckeyes | dessert, snack, easy, vegan, gluten-free, dairy-free, low-carb, pantry | yes |
-| Cauliflower Gnocchi Recipe | lunch, dinner, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, italian, pasta, greens, cheese | no |
+| Cauliflower Gnocchi Recipe | lunch, dinner, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, italian, pasta, greens, cheese | yes |
 | Chocolate Ice Cream Cake Recipe with ... | dessert, easy, comfort food | yes |
 | Cookie Cereal | dessert, snack, easy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
-| Easy Fudge | dessert, snack, easy, healthy, vegan, gluten-free, dairy-free, pantry | no |
+| Easy Fudge | dessert, snack, easy, healthy, vegan, gluten-free, dairy-free, pantry | yes |
 | Teriyaki Salmon | dinner, entree, easy, healthy, gluten-free, dairy-free, low-carb, asian, seafood, fish | yes |
 | Easy Fresh Apple Cake | dessert, easy, vegetarian, american, pantry | yes |
 | Apple Cobbler Recipe | dessert, easy, comfort food, vegetarian, american, pantry | yes |
 | Best Blueberry Muffin | breakfast, snack, easy, vegetarian, american, bread | yes |
 | Sweet Buttermilk Cornbread | easy, vegetarian, american, bread, egg, pantry | yes |
 | Chocolate Cheesecake | dessert, comfort food, vegetarian, cheese, holiday | yes |
-| Easy Moist Chocolate Cupcakes | dessert, easy, comfort food, vegetarian, pantry | no |
+| Easy Moist Chocolate Cupcakes | dessert, easy, comfort food, vegetarian, pantry | yes |
 | Homemade Cosmic Brownies (better than... | dessert, snack, easy, comfort food, vegetarian, pantry, holiday | yes |
 | Easy Banana Bread Recipe | dessert, snack, easy, vegetarian, bread | yes |
 | Easy Bread Pudding | dessert, easy, comfort food, vegetarian, bread, egg | yes |
@@ -2310,11 +2327,11 @@
 | Easy Pecan Pie Recipe | dessert, easy, comfort food, american, holiday, pantry | yes |
 | Fig Cake Recipe | dessert, vegetarian, comfort food, pantry | yes |
 | Leftover Turkey Biscuit Casserole | dinner, easy, comfort food, american, mushroom, pantry, entree | yes |
-| Easy Lemon Bars Recipe | dessert, easy, vegetarian, pantry | no |
+| Easy Lemon Bars Recipe | dessert, easy, vegetarian, pantry | yes |
 | Mango Pudding {video recipe} | dessert, easy, vegetarian, gluten-free, pantry | yes |
 | Mini Cheesecakes Recipe | dessert, easy, vegetarian, comfort food, cheese | yes |
 | Vanilla Panna Cotta | dessert, easy, vegetarian, gluten-free, italian | yes |
-| Homemade Pecan Pie | dessert, easy, comfort food, vegetarian, american, egg, pantry, holiday | no |
+| Homemade Pecan Pie | dessert, easy, comfort food, vegetarian, american, egg, pantry, holiday | yes |
 | Best Pumpkin Cheesecake | dessert, easy, comfort food, vegetarian, american, cheese, holiday | yes |
 | Pumpkin Cupcakes with Cream Cheese Fr... | dessert, snack, easy, comfort food, vegetarian, cheese, holiday | yes |
 | Snickerdoodle Cookies | dessert, snack, easy, comfort food, vegetarian, american, pantry, holiday | yes |
@@ -2326,6 +2343,7 @@
 | Bibimbap | lunch, dinner, easy, healthy, vegetarian, asian, rice, egg, greens, legumes, mushroom, tofu | yes |
 | Best Homemade Brownies | dessert, snack, easy, comfort food, vegetarian, pantry | yes |
 | Best Buddha Bowl | lunch, dinner, easy, healthy, vegetarian, vegan, gluten-free, rice, greens, legumes, potato | yes |
+| Cauliflower Rice Burrito Bowl | lunch, dinner, easy, healthy, vegan, gluten-free, dairy-free, low-carb, mexican, rice, greens, legumes | yes |
 | Caramelized Onions | side dish, easy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | Easy Coconut Curry | dinner, entree, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, asian, thai, rice, greens, pantry | yes |
 | Oatmeal Energy Balls | snack, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
@@ -2347,7 +2365,7 @@
 | Yogurt Pound Cake | dessert, snack, easy, vegetarian, bread | yes |
 | Quesadilla Recipe | lunch, dinner, snack, appetizer, easy, comfort food, vegetarian, mexican, cheese, legumes | yes |
 | Pomegranate Rice Salad | lunch, dinner, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, rice, salad, pantry | yes |
-| Crispy Sesame Tofu | dinner, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, asian, tofu, pantry | no |
+| Crispy Sesame Tofu | dinner, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, asian, tofu, pantry | yes |
 | Shakshuka Recipe | breakfast, lunch, dinner, easy, healthy, comfort food, vegetarian, egg, cheese, pantry, mediterranean | yes |
 | Simple Syrup | easy, vegan, vegetarian, pantry | yes |
 | Strawberry Tart | dessert, easy, healthy, vegan, gluten-free, dairy-free, pantry | yes |
@@ -2359,6 +2377,7 @@
 | Mint Chocolate Dessert Soup | dessert, easy, comfort food, vegetarian, soup, pantry | yes |
 | Salted Vanilla Hot Chocolate | dessert, snack, easy, comfort food, vegetarian | yes |
 | My Big Fat Greek Yogurt & Meyer Lemon... | dessert, easy, vegetarian, pantry | yes |
+| Homemade European-Style Cultured Butter | pantry, vegetarian | yes |
 | Ginger Plum Granita | dessert, easy, vegetarian, vegan, gluten-free, dairy-free | yes |
 | Canning 101 and Blueberry Vanilla Jam | dessert, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | Fresh Fig Ice Cream with Chocolate Fl... | dessert, vegetarian | yes |
@@ -2377,7 +2396,7 @@
 | Sweet Potato Crumb Cake with Pecan Ci... | dessert, snack, comfort food, vegetarian, american, bread, egg, potato, pantry, holiday | yes |
 | Bourbon Delight Bars | dessert, snack, comfort food, holiday, pantry | yes |
 | Classic Italian Spritz Cocktail | quick, easy, italian | yes |
-| Mini Blueberry Mousse Cakes with Mirr... | dessert, vegetarian, holiday | no |
+| Mini Blueberry Mousse Cakes with Mirr... | dessert, vegetarian, holiday | yes |
 | Ultimate Breakfast Burritos | breakfast, comfort food, mexican, pork, egg, potato, cheese | yes |
 | Soft Amaretti Cookies | dessert, snack, easy, vegetarian, gluten-free, italian, pantry, holiday | yes |
 | Crispy Oven-Roasted Broccolini | side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, greens | yes |
@@ -2386,17 +2405,17 @@
 | Saucy Chicken Tinga Tacos | dinner, entree, easy, comfort food, mexican, chicken, cheese | yes |
 | Strawberry Cake Roll | dessert, vegetarian, egg, pantry, holiday | yes |
 | Ultimate Chocolate Cupcakes with Choc... | dessert, comfort food, vegetarian | yes |
-| Mirror Glaze Christmas Ornament Cakes | dessert, holiday | no |
+| Mirror Glaze Christmas Ornament Cakes | dessert, holiday | yes |
 | Spiced Hasselback Sweet Potatoes | dinner, side dish, easy, healthy, vegetarian, gluten-free, indian, potato, holiday | yes |
 | Sourdough Ice Cream | dessert, egg, bread | yes |
-| Chocolate Covered Strawberry Mousse C... | dessert, vegetarian, holiday | no |
+| Chocolate Covered Strawberry Mousse C... | dessert, vegetarian, holiday | yes |
 | Strawberry Funfetti Ice Cream Cake | dessert, holiday | yes |
 | Bread & Butter Refrigerator Pickles | snack, appetizer, side dish, quick, easy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | Easy Refried Black Bean Tacos | lunch, dinner, quick, easy, vegetarian, mexican, legumes, pantry | yes |
 | Almond Bundt Cake with Amaretto Ganache | dessert, vegetarian, comfort food, pantry, holiday | yes |
 | Hungarian Stuffed Kohlrabi | dinner, entree, comfort food, eastern european, pork, rice, soup, greens | yes |
-| Sour Cream Chocolate Cake | dessert, comfort food, vegetarian, pantry | no |
-| Brown Butter Cinnamon Rolls | breakfast, dessert, comfort food, vegetarian, american, bread, egg, cheese, pantry | no |
+| Sour Cream Chocolate Cake | dessert, comfort food, vegetarian, pantry | yes |
+| Brown Butter Cinnamon Rolls | breakfast, dessert, comfort food, vegetarian, american, bread, egg, cheese, pantry | yes |
 | Panko Sesame Chicken Tenders | lunch, dinner, snack, appetizer, entree, easy, comfort food, asian, chicken | yes |
 | Salted Pistachio & Dark Chocolate Chu... | dessert, snack, vegetarian, comfort food, pantry | yes |
 | Blood Orange Curd Brownies | dessert, comfort food, vegetarian, egg, pantry | yes |
@@ -2413,20 +2432,20 @@
 | Malted Fudge Brownie Ice Cream Sandwi... | dessert, comfort food | yes |
 | Sausage & Corn Chowder | lunch, dinner, entree, comfort food, american, soup, potato, pork | yes |
 | Amaretto Chocolate Chip Cookies | dessert, snack, comfort food, vegetarian, pantry, holiday | yes |
-| Caramel Apple & Almond Cream Entremet... | dessert, holiday, vegetarian | no |
+| Caramel Apple & Almond Cream Entremet... | dessert, holiday, vegetarian | yes |
 | Passionfruit Cheesecake Bars | dessert, vegetarian, cheese | yes |
 | Pistachio Crème Brûlée | dessert, vegetarian, egg, french | yes |
 | Spiced Pumpkin Banana Bread | breakfast, snack, easy, comfort food, vegetarian, american, bread, pantry, holiday | yes |
 | Gingerbread Amaretti | dessert, snack, easy, vegetarian, gluten-free, holiday, pantry | yes |
 | Glazed Matcha Sugar Cookies | dessert, snack, easy, vegetarian, japanese, pantry, holiday | yes |
-| Persimmon Pie | dessert, vegetarian, comfort food, holiday | no |
+| Persimmon Pie | dessert, vegetarian, comfort food, holiday | yes |
 | Creamy Garlic Chicken Pasta | dinner, entree, comfort food, italian, chicken, pasta, cheese | yes |
-| Pistachio & Meyer Lemon Mousse Cakes ... | dessert, vegetarian, holiday | no |
-| Flourless Pistachio Cake with Chocola... | dessert, vegetarian, gluten-free, holiday, pantry | no |
-| Meyer Lemon Curd | dessert, easy, vegetarian, egg, pantry | no |
+| Pistachio & Meyer Lemon Mousse Cakes ... | dessert, vegetarian, holiday | yes |
+| Flourless Pistachio Cake with Chocola... | dessert, vegetarian, gluten-free, holiday, pantry | yes |
+| Meyer Lemon Curd | dessert, easy, vegetarian, egg, pantry | yes |
 | 30-Minute Stovetop Applesauce | dessert, snack, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | Homemade Caramelized Candied Hazelnuts | dessert, snack, vegetarian, vegan, gluten-free, pantry, holiday | yes |
-| Flourless Hazelnut Cake with Whipped ... | dessert, vegetarian, gluten-free, holiday | no |
+| Flourless Hazelnut Cake with Whipped ... | dessert, vegetarian, gluten-free, holiday | yes |
 | Meyer Lemon Cheesecake Bars | dessert, easy, comfort food, vegetarian, cheese, holiday | yes |
 | Pistachio Butter Blossom Cookies | dessert, snack, easy, comfort food, vegetarian, pantry, holiday | yes |
 | Sweet & Spicy Sesame Snack Mix | snack, appetizer, easy, vegetarian, asian, pantry | yes |
@@ -2441,9 +2460,10 @@
 | Boozy Banana Bread Eggnog | dessert, easy, comfort food, vegetarian, egg, pantry, holiday | yes |
 | Brown Butter Banana Cake with Chocola... | dessert, comfort food, vegetarian, american, bread, egg, pantry | yes |
 | Chocolate Banana Cream Pie | dessert, easy, comfort food, vegetarian, pantry | yes |
+| Crispy Oven-Roasted Okra | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, asian, greens | no |
 | Flaky Chocolate Pie Crust | dessert, easy, vegetarian, pantry, bread | yes |
 | Old-Fashioned Green Tomato Jam with L... | vegetarian, snack, side dish, pantry | yes |
-| Chocolate Pumpkin Cream Pie | dessert, comfort food, vegetarian, american, holiday | no |
+| Chocolate Pumpkin Cream Pie | dessert, comfort food, vegetarian, american, holiday | yes |
 | Pecan Pie Shortbread Cookie Bars | dessert, snack, comfort food, vegetarian, american, pantry, holiday | yes |
 | Chewy Brown Butter Maple Sugar Cookies | dessert, snack, comfort food, vegetarian, pantry | yes |
 | Chocolate Peppermint Bark Cookies | dessert, snack, comfort food, american, holiday, pantry | yes |
@@ -2456,11 +2476,11 @@
 | Glazed Chocolate Cake | dessert, easy, comfort food, vegetarian, pantry | yes |
 | 20 Minute Skillet Chicken Cordon Bleu | dinner, entree, quick, easy, comfort food, american, chicken, cheese | yes |
 | 5 Minute S'mores Cereal Bars | dessert, snack, quick, easy, comfort food, vegetarian, pantry | yes |
-| Bacon Potato and Cheese Waffles | breakfast, easy, comfort food, american, egg, potato, cheese, pork | no |
+| Bacon Potato and Cheese Waffles | breakfast, easy, comfort food, american, egg, potato, cheese, pork | yes |
 | Banana Blueberry Bread | breakfast, dessert, snack, easy, comfort food, vegetarian, bread | yes |
-| Beef Brisket with Dr Pepper Barbecue ... | dinner, entree, comfort food, american, beef, grill | no |
-| The BEST Homemade Baked Mac and Cheese | dinner, entree, easy, comfort food, vegetarian, american, pasta, cheese | no |
-| Best Key Lime Pie | dessert, easy, vegetarian, american, pantry | no |
+| Beef Brisket with Dr Pepper Barbecue ... | dinner, entree, comfort food, american, beef, grill | yes |
+| The BEST Homemade Baked Mac and Cheese | dinner, entree, easy, comfort food, vegetarian, american, pasta, cheese | yes |
+| Best Key Lime Pie | dessert, easy, vegetarian, american, pantry | yes |
 | The BEST Stuffed French Toast | breakfast, easy, comfort food, vegetarian, american, bread, egg, cheese, holiday | yes |
 | Blueberry Pie Cheese Ball | dessert, snack, appetizer, easy, vegetarian, american, cheese, pantry, holiday | yes |
 | Bread Machine Pizza Dough {Recipe} | easy, vegetarian, italian, bread, pantry | yes |
@@ -2468,7 +2488,7 @@
 | Broccoli, Bacon & Cheese Soup | lunch, dinner, entree, easy, comfort food, american, soup, greens, cheese | yes |
 | Buffalo Wing Pretzel Sticks | snack, appetizer, easy, comfort food, american, pantry | yes |
 | Buttermilk Ranch Oven-Fried Chicken | dinner, easy, comfort food, american, chicken, entree | yes |
-| Carrot Zucchini Apple Bread | breakfast, dessert, easy, vegetarian, american, bread, pantry | no |
+| Carrot Zucchini Apple Bread | breakfast, dessert, easy, vegetarian, american, bread, pantry | yes |
 | Red, White, and Blue Patriotic Candies | dessert, easy, vegetarian, pantry, holiday | yes |
 | Copycat Chipotle-Inspired Pico de Gal... | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mexican | yes |
 | Chocolate Chip Pancakes | breakfast, easy, comfort food, vegetarian, american, egg, pantry | yes |
@@ -2476,10 +2496,10 @@
 | Citrus Herb Turkey Breast | dinner, entree, easy, healthy, low-carb, holiday | yes |
 | Cranberry Pecan Pinwheel Cookies | dessert, easy, vegetarian, holiday, pantry | yes |
 | Crescent Veggie Christmas Tree Recipe | snack, appetizer, easy, vegetarian, american, bread, cheese, holiday | yes |
-| 5 Minute Dark Chocolate Raspberry Fudge | dessert, easy, vegetarian, pantry, holiday | no |
-| Deep Dish Dutch Apple Pie | dessert, comfort food, vegetarian, american, pantry, holiday | no |
+| 5 Minute Dark Chocolate Raspberry Fudge | dessert, easy, vegetarian, pantry, holiday | yes |
+| Deep Dish Dutch Apple Pie | dessert, comfort food, vegetarian, american, pantry, holiday | yes |
 | Cherry Almond Crisp | dessert, easy, comfort food, vegetarian, pantry | yes |
-| Chicken Stir Fry Recipe | dinner, easy, healthy, asian, chinese, chicken, rice | no |
+| Chicken Stir Fry Recipe | dinner, easy, healthy, asian, chinese, chicken, rice | yes |
 | Easy Garden Blender Salsa | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mexican, greens | yes |
 | Easy Homemade Granola | breakfast, snack, easy, healthy, vegetarian, gluten-free, dairy-free, pantry | yes |
 | Easy Potato Herb Wheat Rolls | easy, vegetarian, american, bread, potato, side dish, comfort food | yes |
@@ -2490,22 +2510,22 @@
 | Grilled Shrimp Quesadillas | lunch, dinner, easy, comfort food, mexican, seafood, cheese, grill | yes |
 | Ham and Cheese Breakfast Bars | breakfast, easy, egg, cheese, pork, quick, snack | yes |
 | Ham and Cheese Hashbrown Breakfast Ca... | breakfast, easy, comfort food, american, pork, egg, potato, cheese, holiday | yes |
-| Heavenly Hash Truffle Bars | dessert, easy, vegetarian, pantry, holiday | no |
+| Heavenly Hash Truffle Bars | dessert, easy, vegetarian, pantry, holiday | yes |
 | Apple Pie Spice Recipe | easy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | Homemade Cornbread | side dish, easy, comfort food, vegetarian, american, bread, pantry | yes |
 | Homemade Flour Tortilla Chips | snack, appetizer, side dish, quick, easy, vegetarian, vegan, mexican, pantry | yes |
-| Mocha Chip Brownies | dessert, easy, comfort food, vegetarian, pantry | no |
+| Mocha Chip Brownies | dessert, easy, comfort food, vegetarian, pantry | yes |
 | The BEST Honey Butter | snack, easy, vegetarian, bread, pantry, holiday | yes |
 | Slow Cooker Pumpkin Puree | easy, healthy, vegetarian, vegan, gluten-free, dairy-free, side dish, pantry, holiday | yes |
-| Inside Out Chicken Cordon Bleu | dinner, entree, comfort food, chicken, cheese | no |
+| Inside Out Chicken Cordon Bleu | dinner, entree, comfort food, chicken, cheese | yes |
 | Layered Popcorn Shrimp Taco Salad | lunch, dinner, easy, mexican, seafood, salad, greens, legumes, cheese, pantry | yes |
-| Lemon Cheesecake Bars | dessert, easy, vegetarian, comfort food, cheese, holiday | no |
+| Lemon Cheesecake Bars | dessert, easy, vegetarian, comfort food, cheese, holiday | yes |
 | Lemon-Lime (HULK) Party Punch Recipe | easy, vegetarian, dairy-free, snack, dessert, quick, pantry | yes |
 | Lemon-Lime Jello Salad a.k.a. Dad’s G... | dessert, easy, vegetarian, salad, cheese, pantry, holiday | yes |
 | Mexican Beef and Corn Casserole | dinner, easy, healthy, comfort food, mexican, beef, legumes, cheese | yes |
 | Midori Sour | easy, quick, vegetarian, dairy-free, pantry | yes |
 | Mocha No Bake Granola Bars | breakfast, snack, easy, vegetarian, pantry | yes |
-| No Bake S'mores Cheesecake Bars | dessert, easy, comfort food, vegetarian, american, cheese, pantry, holiday | no |
+| No Bake S'mores Cheesecake Bars | dessert, easy, comfort food, vegetarian, american, cheese, pantry, holiday | yes |
 | Nutter Butter Peanut Butter Fudge | dessert, snack, easy, comfort food, vegetarian, pantry, holiday | yes |
 | Oatmeal Cranberry Cheesecake Bars | dessert, snack, easy, vegetarian, pantry, holiday, cheese | yes |
 | Outrageous Peanut Butter Fudge with M&Ms | dessert, snack, easy, vegetarian, american, pantry | yes |
@@ -2517,14 +2537,14 @@
 | Perfect Homemade Biscuits | breakfast, side dish, easy, comfort food, vegetarian, american, bread, pantry | yes |
 | Perfect Soft Ginger Cookies | dessert, snack, easy, comfort food, vegetarian, pantry, holiday | yes |
 | Pesto Shrimp with Gnocchi and Asparagus | dinner, entree, quick, easy, seafood, pasta, potato, greens, cheese, italian | yes |
-| Pina Colada Banana Bread | breakfast, dessert, snack, easy, vegetarian, bread, pantry | no |
-| Pineapple Strawberry Mojito | easy, vegetarian, dairy-free | no |
+| Pina Colada Banana Bread | breakfast, dessert, snack, easy, vegetarian, bread, pantry | yes |
+| Pineapple Strawberry Mojito | easy, vegetarian, dairy-free | yes |
 | Popcorn Balls {Recipe} | dessert, snack, easy, comfort food, holiday, pantry | yes |
 | Pumpkin Pie Walnut Oatmeal Raisin Coo... | dessert, snack, comfort food, vegetarian, american, egg, pantry, holiday | yes |
 | Quick and Easy Carmelitas | dessert, snack, easy, comfort food, vegetarian, pantry | yes |
 | Raspberry Marshmallow Fruit Dip | dessert, snack, appetizer, quick, easy, vegetarian, cheese, pantry | yes |
-| Reese's Bunnies | dessert, snack, easy, vegetarian, american, holiday | no |
-| Reese's Peanut Butter Banana Cake | dessert, easy, comfort food, vegetarian, american, pantry | no |
+| Reese's Bunnies | dessert, snack, easy, vegetarian, american, holiday | yes |
+| Reese's Peanut Butter Banana Cake | dessert, easy, comfort food, vegetarian, american, pantry | yes |
 | Rotisserie Chicken and Rice Casserole | dinner, easy, comfort food, american, chicken, rice, pantry | yes |
 | Rotisserie Chicken Salad Sandwich | lunch, easy, chicken, salad, sandwich, bread | yes |
 | Skinny Red Velvet Shake | dessert, snack, easy, healthy, vegetarian | yes |
@@ -2537,24 +2557,24 @@
 | Slow Cooker Spiced White Hot Chocolate | easy, comfort food, vegetarian, dessert, holiday | yes |
 | Small Batch Perfect Biscuits | breakfast, easy, comfort food, vegetarian, american, bread, egg, pantry | yes |
 | Spiced Oatmeal Raisin Cookies | dessert, snack, easy, comfort food, vegetarian, american, pantry | yes |
-| Grilled Jalapeno Popper Pulled Pork S... | lunch, dinner, comfort food, american, pork, sandwich, bread, cheese, grill | no |
+| Grilled Jalapeno Popper Pulled Pork S... | lunch, dinner, comfort food, american, pork, sandwich, bread, cheese, grill | yes |
 | Spinach Artichoke Dip with Roasted Ga... | snack, appetizer, easy, comfort food, vegetarian, cheese, greens | yes |
 | Spooky Easy Ghost Treats | dessert, snack, easy, vegetarian, pantry, holiday | yes |
 | Strawberry Fluff | dessert, snack, easy, vegetarian, pantry | yes |
-| Strawberry Spinach Salad | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, gluten-free, salad, greens, cheese | no |
+| Strawberry Spinach Salad | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, gluten-free, salad, greens, cheese | yes |
 | Taco Seasoning | quick, easy, vegetarian, vegan, gluten-free, dairy-free, mexican, pantry | yes |
 | Teriyaki Meatballs | dinner, appetizer, easy, comfort food, pork, beef, asian, japanese | yes |
-| Texas Sheet Cake | dessert, easy, comfort food, vegetarian, american, pantry, holiday | no |
+| Texas Sheet Cake | dessert, easy, comfort food, vegetarian, american, pantry, holiday | yes |
 | Crockpot Baked Beans | lunch, dinner, side dish, easy, comfort food, american, legumes, pantry, holiday | yes |
-| To Die For Carrot Cake | dessert, easy, comfort food, vegetarian, american, pantry, holiday | no |
+| To Die For Carrot Cake | dessert, easy, comfort food, vegetarian, american, pantry, holiday | yes |
 | Totally Nutty Peanut Butter Candy Bars | dessert, snack, easy, comfort food, vegetarian, pantry | yes |
-| Turtle Cheesecake Trifle | dessert, easy, vegetarian, comfort food, cheese, pantry | no |
+| Turtle Cheesecake Trifle | dessert, easy, vegetarian, comfort food, cheese, pantry | yes |
 | Valentine's Day Popcorn Balls | dessert, snack, easy, comfort food, vegetarian, american, holiday, pantry | yes |
 | Zucchini & Green Chile Quiche | lunch, dinner, easy, vegetarian, american, egg, cheese | yes |
 | Apple Bars | dessert, snack, easy, comfort food, vegetarian, american, cheese, pantry | yes |
 | Apple Pear Crisp | dessert, vegetarian, comfort food, pantry, holiday | yes |
-| Apple Pie Bars | dessert, comfort food, vegetarian, pantry | no |
-| Apple Cinnamon Muffins with Streusel ... | breakfast, snack, easy, comfort food, vegetarian, american, bread, pantry | no |
+| Apple Pie Bars | dessert, comfort food, vegetarian, pantry | yes |
+| Apple Cinnamon Muffins with Streusel ... | breakfast, snack, easy, comfort food, vegetarian, american, bread, pantry | yes |
 | Asian Chicken Kebabs | dinner, easy, healthy, asian, chicken, grill | yes |
 | Banana Bars with Cream Cheese Frosting | dessert, snack, easy, comfort food, vegetarian, american, cheese, pantry | yes |
 | Banana Bundt Cake with Chocolate Ganache | dessert, comfort food, vegetarian, american, bread, pantry | yes |
@@ -2572,9 +2592,9 @@
 | Holiday Recipe Exchange | Chocolate C... | dessert, comfort food, vegetarian, pantry, holiday | yes |
 | Chocolate Chip Blondies | dessert, snack, easy, comfort food, vegetarian, american, pantry | yes |
 | Must-Make Chocolate Chip Cookies | dessert, snack, easy, comfort food, american, pantry, holiday | yes |
-| Chocolate Zucchini Cake | dessert, comfort food, vegetarian, pantry | no |
+| Chocolate Zucchini Cake | dessert, comfort food, vegetarian, pantry | yes |
 | Clementine-Rum Granita | dessert, easy, vegan, gluten-free, dairy-free, pantry | yes |
-| Clothespin Cookies | dessert, easy, comfort food, vegetarian, eastern european, egg, pantry, holiday | no |
+| Clothespin Cookies | dessert, easy, comfort food, vegetarian, eastern european, egg, pantry, holiday | yes |
 | Coconut Chocolate Chunk Blondies | dessert, snack, easy, comfort food, vegetarian, pantry | yes |
 | Hostess Inspired Chocolate Cupcakes | dessert, easy, american, pantry, holiday | yes |
 | Raspberry Lemon Cornmeal Muffins | breakfast, snack, easy, vegetarian, bread, egg, pantry | yes |
@@ -2584,7 +2604,7 @@
 | Orange Fruit Dip | dessert, snack, appetizer, easy, vegetarian, cheese, pantry | yes |
 | Chocolate Crinkle Cookies | dessert, easy, comfort food, vegetarian, pantry | yes |
 | Easy Crockpot Pulled Pork | dinner, entree, easy, comfort food, american, pork | yes |
-| Eggs Benedict | breakfast, lunch, dinner, easy, comfort food, egg, american | no |
+| Eggs Benedict | breakfast, lunch, dinner, easy, comfort food, egg, american | yes |
 | Fresh Basil Pesto | lunch, dinner, appetizer, side dish, easy, vegetarian, italian, cheese, greens | yes |
 | Frozen Cherry Mojitos | easy, vegetarian, dairy-free, pantry | yes |
 | Fruit and Cheese Kabobs | snack, appetizer, easy, healthy, vegetarian, cheese | yes |
@@ -2635,22 +2655,23 @@
 | Soft Ginger Cookies | dessert, snack, easy, comfort food, vegetarian, pantry, holiday | yes |
 | Southern Comfort Cupcakes | dessert, comfort food, american, holiday, pantry | yes |
 | Spicy Chicken and Pepper Jack Pizza | dinner, easy, comfort food, american, chicken, cheese | yes |
-| Spicy Sausage Dip | snack, appetizer, quick, easy, comfort food, pork, cheese, pantry | no |
+| Spicy Sausage Dip | snack, appetizer, quick, easy, comfort food, pork, cheese, pantry | yes |
 | Strawberry Cream Cheese Icing | dessert, easy, vegetarian, cheese, pantry | yes |
-| Strawberry Rice Krispie Treats | dessert, snack, easy, comfort food, vegetarian, american, pantry | no |
+| Strawberry Rice Krispie Treats | dessert, snack, easy, comfort food, vegetarian, american, pantry | yes |
 | Pretty in Pink Sugar Cookies | dessert, snack, easy, vegetarian, pantry, holiday | yes |
 | Sweet Potato Casserole with Streusel ... | side dish, easy, comfort food, vegetarian, american, potato, holiday | yes |
 | Sweet & Spicy Snack Mix | snack, appetizer, easy, vegetarian, pantry | yes |
 | Thin Mint Pie | dessert, easy, vegetarian, american, cheese, pantry | yes |
 | Easy Tiramisu Trifles | dessert, easy, italian, cheese | yes |
+| White Chocolate Cr&egrave;me Brulee | dessert, easy, comfort food, vegetarian, gluten-free, egg | no |
 | Zucchini Cookies | dessert, snack, easy, vegetarian, pantry | yes |
 | Apple Tart Recipe (Apple Rose Tart) | dessert, easy, vegetarian, holiday | yes |
-| Apricot Pie Recipe | dessert, vegetarian, pantry, holiday | no |
-| Baked Breaded Chicken Strips Recipe w... | dinner, entree, easy, comfort food, american, chicken, pantry | no |
+| Apricot Pie Recipe | dessert, vegetarian, pantry, holiday | yes |
+| Baked Breaded Chicken Strips Recipe w... | dinner, entree, easy, comfort food, american, chicken, pantry | yes |
 | Baked Honey Glazed Chicken Recipe | dinner, easy, comfort food, chicken, asian, entree | yes |
 | Beef and Mushroom Pot Roast (a Slow C... | dinner, entree, comfort food, beef, mushroom | yes |
 | Birds Milk Jello Recipe | dessert, easy, vegetarian, eastern european | yes |
-| Biskvit; Russian Cake Recipe with Rus... | dessert, comfort food, eastern european, egg | no |
+| Biskvit; Russian Cake Recipe with Rus... | dessert, comfort food, eastern european, egg | yes |
 | BLT Salad Recipe | lunch, dinner, easy, american, salad, greens | yes |
 | Blueberry Pierogi Recipe (VIDEO) | dessert, comfort food, vegetarian, eastern european, egg | yes |
 | Cabbage and Beet Salad Recipe | lunch, dinner, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, eastern european, salad, greens, pantry | yes |
@@ -2661,27 +2682,28 @@
 | Caprese Crostini (Canapes) | snack, appetizer, easy, vegetarian, italian, bread, cheese | yes |
 | Cauliflower Cucumber and Tomato Salad... | lunch, dinner, side dish, easy, healthy, vegetarian, low-carb, salad, greens | yes |
 | Cauliflower Cucumber Salad Recipe | lunch, dinner, side dish, easy, healthy, vegetarian, gluten-free, low-carb, salad, greens | yes |
-| Cheesecake Danish Recipe | dessert, snack, easy, vegetarian, egg, cheese, holiday | no |
+| Cheesecake Danish Recipe | dessert, snack, easy, vegetarian, egg, cheese, holiday | yes |
 | Cherry Summer Soup (Kissel) Recipe | dessert, snack, quick, easy, vegetarian, vegan, gluten-free, dairy-free, eastern european, soup | yes |
-| Cherry Upside-Down Cake Recipe | dessert, vegetarian, american | no |
+| Cherry Upside-Down Cake Recipe | dessert, vegetarian, american | yes |
 | Chicken Kotleti Recipe | dinner, easy, comfort food, eastern european, chicken, egg | yes |
 | Chicken Stuffed Mushrooms Recipe | lunch, dinner, snack, appetizer, side dish, easy, comfort food, low-carb, chicken, mushroom, cheese | yes |
 | Chicken Zucchini Fritters Recipe | lunch, dinner, easy, healthy, low-carb, chicken, egg, cheese | yes |
-| Chocolate Cherry Cake Recipe | dessert, comfort food, holiday, eastern european | no |
+| Chocolate Cherry Cake Recipe | dessert, comfort food, holiday, eastern european | yes |
 | Chocolate Cherry Roll with Rum Cream ... | dessert, easy, comfort food, eastern european, egg, pantry, holiday | yes |
-| Chocolate Spartak Cake Recipe | dessert, comfort food, eastern european, egg, cheese | no |
+| Chocolate Spartak Cake Recipe | dessert, comfort food, eastern european, egg, cheese | yes |
 | Cod Fish in Tomato Sauce | dinner, entree, comfort food, seafood, fish | yes |
 | Crab Salad with Cucumber and Tomato R... | lunch, dinner, easy, healthy, seafood, salad | yes |
 | Cranberry Apricot Loaf (A Keks Recipe) | snack, vegetarian, bread, pantry, holiday | yes |
 | Cream Cheese Chocolate Truffles Recipe | dessert, snack, easy, vegetarian, cheese, pantry, holiday | yes |
 | Crisp Sautéed Red Potatoes Recipe | side dish, easy, vegetarian, gluten-free, potato | yes |
+| Cucumber and Tomato Salad | lunch, dinner, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, salad, greens | yes |
 | Cucumber Salad Recipe with Feta | lunch, dinner, snack, appetizer, side dish, quick, easy, healthy, vegetarian, gluten-free, low-carb, mediterranean, salad, greens, cheese | yes |
 | Easter Breads | bread, egg, holiday, eastern european, vegetarian | yes |
 | Easy Mushroom Gravy Recipe | easy, comfort food, vegetarian, side dish, mushroom, pantry | yes |
 | Easy Overnight Sauerkraut Recipe | easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, eastern european, side dish, greens | yes |
 | Eggplant Spread Recipe (Baklazhannaia... | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, eastern european, bread, pantry | yes |
 | Fall off the Bone Ribs Recipe | dinner, easy, comfort food, american, pork, holiday | yes |
-| Farmers Cheese with Greek Yogurt (Tvo... | vegetarian, eastern european, cheese, pantry | no |
+| Farmers Cheese with Greek Yogurt (Tvo... | vegetarian, eastern european, cheese, pantry | yes |
 | Shrimp and Fish Soup (Ukha) | lunch, dinner, entree, easy, healthy, seafood, fish, soup, potato, eastern european | yes |
 | Fresh Cucumber Salad Recipe | lunch, dinner, snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, eastern european, salad, greens | yes |
 | Peach Salsa Recipe | appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, mexican | yes |
@@ -2689,34 +2711,35 @@
 | Green Beans with Mushrooms Recipe | side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, asian, greens, legumes, mushroom | yes |
 | Guacamole Stuffed Eggs Recipe | snack, appetizer, side dish, easy, healthy, vegetarian, gluten-free, dairy-free, low-carb, mexican, egg | yes |
 | Iced Coffee with Condensed Milk Recipe | breakfast, easy, pantry | yes |
-| Kievsky aka Kiev Cake Recipe | dessert, eastern european, holiday | no |
+| Kievsky aka Kiev Cake Recipe | dessert, eastern european, holiday | yes |
 | Lamb Stew Recipe | dinner, entree, comfort food, potato, mushroom | yes |
-| Loaded Cheeseburger Recipe | dinner, easy, comfort food, american, beef, sandwich, cheese, grill | no |
-| Meringue Mushrooms Recipe | dessert, snack, easy, vegetarian, egg, mushroom, holiday | no |
-| Mini Strawberry Cheesecakes Recipe | dessert, easy, vegetarian, american, cheese, holiday | no |
+| Loaded Cheeseburger Recipe | dinner, easy, comfort food, american, beef, sandwich, cheese, grill | yes |
+| Meringue Mushrooms Recipe | dessert, snack, easy, vegetarian, egg, mushroom, holiday | yes |
+| Mini Strawberry Cheesecakes Recipe | dessert, easy, vegetarian, american, cheese, holiday | yes |
 | Mom's Cream Horn (Trubochki) Recipe | dessert, snack, easy, vegetarian, eastern european, cheese, pantry, holiday | yes |
-| Mom's Pryaniki with Mint Glaze Recipe... | dessert, snack, comfort food, vegetarian, eastern european, egg, pantry, holiday | no |
+| Mom's Pryaniki with Mint Glaze Recipe... | dessert, snack, comfort food, vegetarian, eastern european, egg, pantry, holiday | yes |
 | Mushroom and Egg Salad Recipe | lunch, dinner, easy, healthy, vegetarian, gluten-free, low-carb, salad, egg, mushroom | yes |
 | Mushroom Gravy Recipe | side dish, easy, comfort food, vegetarian, mushroom | yes |
 | Mushroom Marinara Sauce Recipe | dinner, easy, healthy, comfort food, vegetarian, italian, pasta, soup, mushroom, pantry | yes |
-| Napoleon Cake Recipe | dessert, eastern european, egg, pantry | no |
-| One Pan Chicken and Vegetables Dinner | dinner, entree, easy, chicken, potato | no |
+| Napoleon Cake Recipe | dessert, eastern european, egg, pantry | yes |
+| One Pan Chicken and Vegetables Dinner | dinner, entree, easy, chicken, potato | yes |
 | Orange Chicken and Vegetable Stir Fry | dinner, easy, healthy, asian, chinese, chicken, rice | yes |
-| Parsley Rice Recipe | lunch, dinner, side dish, easy, comfort food, vegetarian, american, rice, egg, cheese | no |
-| Peach Mousse Recipe | dessert, easy, vegetarian | no |
+| Parsley Rice Recipe | lunch, dinner, side dish, easy, comfort food, vegetarian, american, rice, egg, cheese | yes |
+| Peach Mousse Recipe | dessert, easy, vegetarian | yes |
 | Pineapple Fried Rice | lunch, dinner, easy, vegetarian, dairy-free, asian, thai, rice, pantry | yes |
-| Plum Good Pie Recipe | dessert, vegetarian, pantry, eastern european | no |
+| Plum Good Pie Recipe | dessert, vegetarian, pantry, eastern european | yes |
 | Pork Schnitzel Recipe | dinner, entree, easy, comfort food, pork, eastern european | yes |
-| Prune Honey Cake Recipe | dessert, vegetarian, egg, holiday, eastern european | no |
-| Pumpkin Creme Brulee Recipe | dessert, vegetarian, comfort food, holiday, egg | no |
-| Pumpkin Mousse Recipe | dessert, easy, vegetarian, holiday | no |
+| Prune Honey Cake Recipe | dessert, vegetarian, egg, holiday, eastern european | yes |
+| Pumpkin Creme Brulee Recipe | dessert, vegetarian, comfort food, holiday, egg | yes |
+| Pumpkin Mousse Recipe | dessert, easy, vegetarian, holiday | yes |
 | Carrot Apple Salad Recipe | lunch, side dish, quick, easy, healthy, vegetarian, gluten-free, dairy-free, salad, greens | yes |
 | Quick Pickled Zucchini Recipe | side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, greens, pantry | yes |
-| Roasted Vegetables Recipe | dinner, side dish, easy, healthy, vegetarian, gluten-free, potato, cheese, pantry | no |
-| Russian Apple Kvas Recipе - Квас | easy, healthy, vegan, gluten-free, dairy-free, eastern european, pantry | no |
-| Russian Chicken Pelmeni Recipe | dinner, entree, comfort food, eastern european, chicken, pasta | no |
+| Roasted Vegetables Recipe | dinner, side dish, easy, healthy, vegetarian, gluten-free, potato, cheese, pantry | yes |
+| Russian Apple Kvas Recipе - Квас | easy, healthy, vegan, gluten-free, dairy-free, eastern european, pantry | yes |
+| Russian Chicken Pelmeni Recipe | dinner, entree, comfort food, eastern european, chicken, pasta | yes |
 | Russian Hren Horseradish Recipe | side dish, easy, vegetarian, gluten-free, dairy-free, low-carb, eastern european, greens | yes |
-| Russian Pelmeni Recipe + New Dough Re... | lunch, dinner, comfort food, eastern european, pork | no |
+| Russian Kvas Recipe | easy, pantry, eastern european, bread | no |
+| Russian Pelmeni Recipe + New Dough Re... | lunch, dinner, comfort food, eastern european, pork | yes |
 | Russian Style Crab Salad Recipe - Кра... | lunch, dinner, appetizer, easy, comfort food, eastern european, seafood, salad, egg, legumes | yes |
 | Salmon Cakes Recipe (Salmon Patties) | lunch, dinner, appetizer, entree, easy, healthy, seafood, fish | yes |
 | Shrimp and Artichoke Linguine | dinner, entree, easy, seafood, pasta, italian | yes |
@@ -2724,21 +2747,21 @@
 | Shredded Pork in a Mushroom Sauce; A ... | dinner, entree, easy, comfort food, pork, mushroom | yes |
 | Spicy Eggplant Recipe (Ogoniok) | side dish, appetizer, easy, vegetarian, vegan, gluten-free, dairy-free, low-carb, eastern european | yes |
 | Spinach and Artichoke Pasta Recipe | dinner, easy, comfort food, vegetarian, italian, pasta, greens, cheese | yes |
-| Storybook Cake Roll Recipe | dessert, holiday, egg, pantry | no |
+| Storybook Cake Roll Recipe | dessert, holiday, egg, pantry | yes |
 | Strawberry Salad with Honey Vinaigrette | lunch, dinner, side dish, quick, easy, healthy, vegetarian, gluten-free, salad, greens, cheese | yes |
-| Stuffed Bell Peppers Recipe | dinner, entree, comfort food, eastern european, pork, rice, mushroom | no |
-| Sweet and Sour Chicken Recipe | dinner, easy, comfort food, chicken, rice, asian, chinese, entree | no |
+| Stuffed Bell Peppers Recipe | dinner, entree, comfort food, eastern european, pork, rice, mushroom | yes |
+| Sweet and Sour Chicken Recipe | dinner, easy, comfort food, chicken, rice, asian, chinese, entree | yes |
 | Sweet and Sour Sauce Recipe | quick, easy, vegetarian, vegan, gluten-free, dairy-free, pantry, asian, chinese | yes |
-| Sweet Cherry Filled Buns (Vatrushki R... | dessert, snack, comfort food, vegetarian, eastern european, bread, egg, pantry, holiday | no |
+| Sweet Cherry Filled Buns (Vatrushki R... | dessert, snack, comfort food, vegetarian, eastern european, bread, egg, pantry, holiday | yes |
 | Tender Beef Kabobs (Shashlik) Recipe | dinner, entree, easy, beef, grill, eastern european | yes |
 | Teriyaki Meatballs Recipe | dinner, easy, healthy, asian, japanese, rice, pantry | yes |
-| Teriyaki Salmon Recipe | dinner, easy, healthy, asian, japanese, seafood, fish | no |
+| Teriyaki Salmon Recipe | dinner, easy, healthy, asian, japanese, seafood, fish | yes |
 | Tortellini Salad Recipe | lunch, dinner, easy, vegetarian, italian, pasta, salad, cheese, quick | yes |
 | Tropical Mango Pineapple Smoothie Recipe | breakfast, snack, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free | yes |
-| Turkey Crepes (Savory Nalesniki) | lunch, dinner, easy, comfort food, eastern european, mushroom | no |
+| Turkey Crepes (Savory Nalesniki) | lunch, dinner, easy, comfort food, eastern european, mushroom | yes |
 | Ukrainian Pan Fried Potatoes Recipe | lunch, dinner, side dish, easy, comfort food, vegetarian, gluten-free, eastern european, potato | yes |
 | Ukrainian Syrniki Recipe (Cheese Panc... | breakfast, snack, easy, comfort food, vegetarian, eastern european, egg, cheese | yes |
-| Vegetable Tian Recipe | side dish, easy, healthy, vegetarian, potato, cheese, mediterranean | no |
+| Vegetable Tian Recipe | side dish, easy, healthy, vegetarian, potato, cheese, mediterranean | yes |
 | Antioxidant Rich Blueberry Smoothie | breakfast, snack, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free | yes |
 | Zesty Mini Bell Pepper Salad Recipe | lunch, dinner, snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mediterranean, salad, greens | yes |
 | Zucchini Dip Recipe | snack, appetizer, vegetarian, cheese, easy | yes |
@@ -2784,6 +2807,7 @@
 | Green Bean Curry | dinner, easy, healthy, vegetarian, indian, rice, greens | yes |
 | Green Bean Stir-Fry with Garlic Black... | dinner, entree, easy, asian, chinese, pork, greens | yes |
 | Green Curry Chicken | lunch, dinner, entree, easy, comfort food, dairy-free, asian, thai, chicken, rice | yes |
+| Thai Green Curry Paste | thai, asian, pantry | no |
 | Green Papaya Salad | lunch, dinner, appetizer, side dish, easy, healthy, vegan, gluten-free, dairy-free, low-carb, asian, thai, seafood, salad, greens | yes |
 | Guanciale & Mandarin Sugo Recipe | dinner, entree, comfort food, italian, pork, pasta | yes |
 | Hawaiian Macaroni Salad | lunch, dinner, side dish, easy, comfort food, american, pork, pasta, salad | yes |
@@ -2839,7 +2863,7 @@
 | Pasta Estate (Summer Pasta) | lunch, dinner, quick, easy, healthy, vegetarian, dairy-free, italian, pasta, greens | yes |
 | Sweet Potato Poutine | lunch, dinner, side dish, comfort food, potato, cheese | yes |
 | Thai Basil Chicken (Pad Kraprow Gai) | lunch, dinner, entree, easy, asian, thai, chicken, egg | yes |
-| Tonkotsu Ramen | dinner, comfort food, asian, japanese, pork, soup | no |
+| Tonkotsu Ramen | dinner, comfort food, asian, japanese, pork, soup | yes |
 | Tosilog | breakfast, easy, comfort food, asian, pork, rice, egg, pantry | yes |
 | Homemade Vanilla Extract | easy, pantry | yes |
 | Wonton Soup | lunch, dinner, entree, comfort food, asian, chinese, seafood, soup | yes |
@@ -2857,16 +2881,16 @@
 | Hoisin Beef Bowls | dinner, easy, comfort food, dairy-free, asian, beef, rice | yes |
 | Asparagus Salad with Hard-Boiled Eggs... | lunch, appetizer, side dish, easy, healthy, vegetarian, gluten-free, low-carb, salad, egg, greens | yes |
 | Autumn Carrot and Sweet Potato Soup | lunch, dinner, easy, healthy, comfort food, gluten-free, indian, soup, potato, pantry | yes |
-| Baileys Cheesecake-Marbled Brownies | dessert, comfort food, vegetarian, cheese, pantry | no |
+| Baileys Cheesecake-Marbled Brownies | dessert, comfort food, vegetarian, cheese, pantry | yes |
 | Baja Fish Tacos | lunch, dinner, entree, mexican, seafood, fish | yes |
-| Baked Apple French Toast | breakfast, comfort food, vegetarian, american, bread, egg, holiday | no |
+| Baked Apple French Toast | breakfast, comfort food, vegetarian, american, bread, egg, holiday | yes |
 | Baked Ziti | dinner, entree, comfort food, italian, pasta, cheese | yes |
 | Balsamic Vinaigrette | quick, easy, vegetarian, vegan, gluten-free, dairy-free, pantry, salad | yes |
 | Banana Chocolate Chip Muffins | breakfast, snack, easy, vegetarian, american, bread, egg, pantry | yes |
 | Basil Vinaigrette | side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, salad, greens, pantry | yes |
-| Beef Nachos | lunch, dinner, snack, appetizer, entree, easy, comfort food, mexican, beef, cheese | no |
+| Beef Nachos | lunch, dinner, snack, appetizer, entree, easy, comfort food, mexican, beef, cheese | yes |
 | Beer Cheese Dip | snack, appetizer, easy, comfort food, vegetarian, american, cheese, pantry | yes |
-| Blistered Shishito Peppers | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb | no |
+| Blistered Shishito Peppers | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb | yes |
 | Buffalo Chicken Meatballs | dinner, appetizer, easy, comfort food, american, chicken, cheese | yes |
 | Chai-Spiced Banana Bread | breakfast, dessert, snack, easy, comfort food, vegetarian, american, bread, pantry | yes |
 | Cheesy Baked Spaghetti Squash with Ma... | dinner, entree, easy, comfort food, vegetarian, low-carb, italian, cheese | yes |
@@ -2877,14 +2901,14 @@
 | Chilled Creamy Tomato-Basil Soup | lunch, dinner, appetizer, side dish, easy, vegetarian, soup, greens, pantry | yes |
 | Chocolate Banana Bread | dessert, snack, easy, comfort food, vegetarian, bread | yes |
 | Chocolate Bundt Cake | dessert, comfort food, pantry, holiday | yes |
-| Chocolate Cupcakes | dessert, comfort food, american, pantry | no |
+| Chocolate Cupcakes | dessert, comfort food, american, pantry | yes |
 | Cilantro Lime Sweet Corn | side dish, easy, vegetarian, gluten-free, mexican, pantry | yes |
 | Cream of Broccoli Soup with Cheddar | lunch, dinner, appetizer, side dish, entree, easy, comfort food, vegetarian, soup, cheese | yes |
 | Easy Cream of Mushroom Soup | lunch, dinner, appetizer, side dish, entree, easy, comfort food, vegetarian, soup, mushroom | yes |
 | Creamed Zucchini with Garlic & Basil | side dish, easy, vegetarian, low-carb, greens | yes |
 | Creamy Butternut Squash Polenta | lunch, dinner, side dish, easy, comfort food, vegetarian, gluten-free, italian, cheese | yes |
 | Creamy Feta Dressing | side dish, easy, vegetarian, mediterranean, cheese | yes |
-| Easy Lemon Meringue Pie | dessert, easy, vegetarian, american, egg, pantry | no |
+| Easy Lemon Meringue Pie | dessert, easy, vegetarian, american, egg, pantry | yes |
 | Gramercy Tavern Bar Nuts | snack, appetizer, easy, vegetarian, pantry, holiday | yes |
 | Grilled Baby Potatoes with Dijon Must... | side dish, easy, vegetarian, gluten-free, dairy-free, potato, grill | yes |
 | Grilled Shrimp Skewers with Tomato, G... | dinner, appetizer, quick, easy, healthy, gluten-free, dairy-free, seafood, grill | yes |
@@ -2894,11 +2918,11 @@
 | Best Basic Frittata Recipe | breakfast, lunch, dinner, easy, comfort food, vegetarian, egg, greens, cheese | yes |
 | Irish Soda Bread | breakfast, snack, easy, comfort food, vegetarian, bread, egg, pantry, holiday | yes |
 | Italian Meatloaf | dinner, entree, comfort food, italian, beef, pork, cheese | yes |
-| Beef Bulgogi Burgers | dinner, entree, easy, comfort food, asian, beef, sandwich, bread, grill | no |
+| Beef Bulgogi Burgers | dinner, entree, easy, comfort food, asian, beef, sandwich, bread, grill | yes |
 | Lemon Curd | dessert, easy, vegetarian, egg, pantry | yes |
 | Lemon Ice | dessert, easy, vegetarian, gluten-free | yes |
 | Lentil Soup | lunch, dinner, easy, healthy, comfort food, dairy-free, mediterranean, pork, soup, legumes, pantry | yes |
-| Gina Homolka's Macerated Berries with... | dessert, easy, healthy, vegetarian, gluten-free | no |
+| Gina Homolka's Macerated Berries with... | dessert, easy, healthy, vegetarian, gluten-free | yes |
 | Maple Muffins | breakfast, snack, easy, comfort food, vegetarian, american, bread, pantry | yes |
 | Marbled Banana Bread | dessert, snack, comfort food, vegetarian, bread | yes |
 | Oat Muffins with Pecan Streusel Topping | breakfast, snack, comfort food, vegetarian, bread, pantry | yes |
@@ -2941,15 +2965,15 @@
 | Zesty Homemade Italian Dressing | easy, vegetarian, vegan, gluten-free, dairy-free, low-carb, italian, salad, greens, pantry | yes |
 | Zucchini & Cheddar Frittata | breakfast, lunch, dinner, easy, vegetarian, egg, cheese | yes |
 | 3 Ingredient Easy Banana Popsicles Re... | dessert, snack, easy, healthy, vegetarian, vegan, gluten-free, dairy-free | yes |
-| Buckeyes | dessert, snack, easy, vegetarian, american, pantry, holiday | no |
+| Buckeyes | dessert, snack, easy, vegetarian, american, pantry, holiday | yes |
 | Smoked Chicken Sausage And Roasted Ve... | dinner, easy, healthy, gluten-free, dairy-free, low-carb, chicken, greens | yes |
 | Cheery Orange Creamsicle Muffins | breakfast, snack, easy, vegetarian, bread, egg, pantry | yes |
-| Cosmic Brownies (Copycat Recipe) | dessert, snack, easy, comfort food, vegetarian, american, pantry, holiday | no |
+| Cosmic Brownies (Copycat Recipe) | dessert, snack, easy, comfort food, vegetarian, american, pantry, holiday | yes |
 | Easy Mini Cornbread Muffin Recipe | breakfast, snack, side dish, easy, vegetarian, american, bread, egg, pantry | yes |
 | Ground Turkey Chili | lunch, dinner, easy, healthy, comfort food, gluten-free, dairy-free, american, soup, legumes, pantry | yes |
 | The Very Best Homemade Trail Mix Recipe | snack, quick, easy, vegetarian, pantry | yes |
 | Simple Homemade Pork Roast Gravy From... | dinner, easy, comfort food, pork, side dish, pantry | yes |
-| Instant Pot Pork Tenderloin With A Ho... | dinner, easy, pork, entree, quick | no |
+| Instant Pot Pork Tenderloin With A Ho... | dinner, easy, pork, entree, quick | yes |
 | Easy Oven Baked Pork And Zucchini Mea... | dinner, easy, healthy, pork, entree, quick | yes |
 | Pineapple Dole Whip Smoothie | snack, easy, healthy, vegetarian, vegan, gluten-free, dairy-free | yes |
 | Super Simple Boneless Pork Loin In Th... | dinner, entree, easy, comfort food, pork | yes |
@@ -2961,7 +2985,7 @@
 | Almond Blueberry Scones | breakfast, snack, easy, vegetarian, bread, pantry | yes |
 | Baked Bell Pepper Tacos | dinner, easy, healthy, vegetarian, gluten-free, low-carb, mexican, beef, chicken, legumes, cheese, tofu | yes |
 | Chipotle Hummus | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, legumes, pantry | yes |
-| Black Bean Veggie Burgers with Chipot... | lunch, dinner, easy, healthy, vegetarian, american, sandwich, legumes, grill | no |
+| Black Bean Veggie Burgers with Chipot... | lunch, dinner, easy, healthy, vegetarian, american, sandwich, legumes, grill | yes |
 | Buttermilk Ranch Dressing Recipe | side dish, easy, vegetarian, american, salad, greens, pantry | yes |
 | Cheesy Baked Black Bean Flautas | lunch, dinner, snack, appetizer, easy, comfort food, vegetarian, mexican, legumes, cheese, pantry | yes |
 | Cheesy Baked Shrimp and Spinach Dip | appetizer, easy, comfort food, seafood, cheese, greens | yes |
@@ -2969,7 +2993,7 @@
 | Cheese Grits Breakfast Bowls | breakfast, easy, comfort food, vegetarian, american, egg, greens, cheese | yes |
 | Classic Italian Veggie Pasta Salad | lunch, dinner, side dish, easy, healthy, vegetarian, italian, pasta, salad, cheese | yes |
 | Classic Slow Cooker Stuffing | dinner, side dish, easy, comfort food, vegetarian, american, mushroom, holiday | yes |
-| Corn Salsa Recipe | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mexican | no |
+| Corn Salsa Recipe | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mexican | yes |
 | Cranberry Cilantro Quinoa Salad | lunch, dinner, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, salad | yes |
 | Crispy Baked Chicken Thighs with Garl... | dinner, easy, healthy, entree, chicken, rice | yes |
 | Easy Chicken Gyros with Greek Feta Sauce | lunch, dinner, quick, easy, healthy, mediterranean, chicken, sandwich, greens, cheese | yes |
@@ -2978,12 +3002,12 @@
 | Broccoli Cauliflower Brussels Sprout ... | dinner, side dish, comfort food, vegetarian, cheese, greens, holiday | yes |
 | Spicy Garlic Chili Oil Recipe | appetizer, side dish, easy, vegetarian, vegan, gluten-free, dairy-free, asian, chinese, pantry | yes |
 | Greek Quinoa Bowls | lunch, dinner, easy, healthy, vegetarian, gluten-free, mediterranean, rice, salad, greens, pantry | yes |
-| Banana Split Parfaits | breakfast, dessert, snack, easy, healthy, vegetarian, pantry | no |
+| Banana Split Parfaits | breakfast, dessert, snack, easy, healthy, vegetarian, pantry | yes |
 | Healthy Garden Veggie Dip | snack, appetizer, side dish, easy, healthy, vegetarian, low-carb, greens | yes |
 | Healthy Homemade Granola Recipe | breakfast, snack, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | Healthy No-Bake Coconut Lime Tarts wi... | dessert, snack, easy, healthy, vegetarian, gluten-free | yes |
 | Tomato Cucumber Salad | lunch, dinner, snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, salad, greens | yes |
-| Homemade Bacon Avocado Sushi Rolls | lunch, dinner, easy, asian, japanese, seafood, fish, rice | no |
+| Homemade Bacon Avocado Sushi Rolls | lunch, dinner, easy, asian, japanese, seafood, fish, rice | yes |
 | Homemade Caesar Dressing | easy, side dish, appetizer, cheese, pantry | yes |
 | Instant Pot Tortellini with Basil and... | lunch, dinner, easy, comfort food, vegetarian, italian, pasta, cheese, pantry | yes |
 | Kale Pesto Recipe | lunch, dinner, easy, healthy, vegetarian, italian, pasta, greens, cheese | yes |
@@ -2995,10 +3019,11 @@
 | Mediterranean Bruschetta Hummus Platter | snack, appetizer, easy, healthy, vegetarian, mediterranean, legumes, cheese, pantry | yes |
 | Mexican Quinoa Salad with Chili Lime ... | lunch, dinner, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mexican, salad, legumes, pantry | yes |
 | Peachy Green Smoothie | breakfast, snack, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, greens | yes |
-| Roasted Garlic Kale Pesto Pasta | dinner, easy, healthy, comfort food, vegetarian, italian, pasta, greens, mushroom, cheese | no |
+| Roasted Garlic Kale Pesto Pasta | dinner, easy, healthy, comfort food, vegetarian, italian, pasta, greens, mushroom, cheese | yes |
+| Sheet Pan Cookie Cake Recipe | dessert, comfort food, american, pantry | yes |
 | Simple Side Salad Recipe | lunch, dinner, side dish, easy, healthy, vegetarian, salad, greens, cheese | yes |
 | Slow Cooker Carrot Butternut Soup | lunch, dinner, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, soup, greens | yes |
-| Spicy Chickpea Veggie Burgers with Ja... | lunch, dinner, easy, healthy, vegetarian, sandwich, legumes, greens | no |
+| Spicy Chickpea Veggie Burgers with Ja... | lunch, dinner, easy, healthy, vegetarian, sandwich, legumes, greens | yes |
 | Spicy Ranch Fire Crackers Recipe | snack, appetizer, side dish, quick, easy, vegetarian, pantry | yes |
 | Sriracha Glazed Seared Scallops Recipe | dinner, entree, quick, easy, seafood | yes |
 | Strawberry Salsa Recipe | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mexican | yes |
@@ -3010,15 +3035,15 @@
 | Wasabi Cucumber Avocado Dressing + Sp... | lunch, dinner, snack, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, asian, japanese, salad, greens | yes |
 | Rice Cooker Mexican Rice | lunch, dinner, side dish, easy, comfort food, vegetarian, gluten-free, mexican, rice, pantry | yes |
 | Pad Thai | dinner, easy, entree, asian, thai, chicken, tofu, pantry | yes |
-| Roasted Cauliflower with Almond Sauce... | lunch, dinner, side dish, entree, easy, healthy, vegetarian, gluten-free, dairy-free, low-carb, mediterranean, greens, pantry, grill | no |
+| Roasted Cauliflower with Almond Sauce... | lunch, dinner, side dish, entree, easy, healthy, vegetarian, gluten-free, dairy-free, low-carb, mediterranean, greens, pantry, grill | yes |
 | Garlic Butter Salmon recipe | dinner, easy, healthy, low-carb, seafood, fish | yes |
 | Crispy Garlic Chicken Thighs | dinner, easy, comfort food, chicken, low-carb, entree, quick | yes |
 | Italian Dressing | quick, easy, vegetarian, gluten-free, italian, salad, greens, pantry | yes |
-| Bacon Tart with Pumpkin and Maple | lunch, dinner, easy, comfort food, pork | no |
+| Bacon Tart with Pumpkin and Maple | lunch, dinner, easy, comfort food, pork | yes |
 | Meatloaf recipe | dinner, entree, comfort food, american, beef | yes |
-| Naan recipe – fluffy, bubbly, chewy! | bread, indian, vegetarian, cheese, side dish | no |
-| Pizza Dough recipe | dinner, easy, italian, bread, cheese, pantry | no |
-| Vietnamese Pho recipe | dinner, entree, comfort food, asian, thai, beef, soup, rice | no |
+| Naan recipe – fluffy, bubbly, chewy! | bread, indian, vegetarian, cheese, side dish | yes |
+| Pizza Dough recipe | dinner, easy, italian, bread, cheese, pantry | yes |
+| Vietnamese Pho recipe | dinner, entree, comfort food, asian, thai, beef, soup, rice | yes |
 | Baked Egg Stuffed Sweet Potatoes | breakfast, lunch, dinner, easy, healthy, vegetarian, gluten-free, egg, potato, cheese | yes |
 | Healthy Bran Muffins Recipe | breakfast, snack, easy, healthy, vegetarian | yes |
 | Homemade Ciabatta Bread | bread, vegetarian, vegan, dairy-free, side dish, italian | yes |
@@ -3028,7 +3053,7 @@
 | Favorite Double Chocolate Chip Cookie... | dessert, snack, easy, comfort food, vegetarian, pantry | yes |
 | Dutch Baby Pancake Recipe | breakfast, easy, vegetarian, egg, pantry | yes |
 | Breakfast Egg Muffins (Frittata Muffins) | breakfast, easy, healthy, vegetarian, gluten-free, low-carb, egg, greens, cheese | yes |
-| Easy Frittata Recipe (Choose Your Add... | breakfast, lunch, dinner, easy, vegetarian, low-carb, mediterranean, egg, potato, greens, cheese | no |
+| Easy Frittata Recipe (Choose Your Add... | breakfast, lunch, dinner, easy, vegetarian, low-carb, mediterranean, egg, potato, greens, cheese | yes |
 | Homemade Garlic Bread | snack, appetizer, side dish, easy, comfort food, vegetarian, italian, bread, cheese, pantry | yes |
 | Spiced Gingerbread Cake | dessert, comfort food, vegetarian, holiday, pantry | yes |
 | How to Make Homemade Croutons | snack, side dish, easy, vegetarian, italian, bread, pantry | yes |
@@ -3055,10 +3080,11 @@
 | Turkey Pot Pie Recipe | dinner, entree, comfort food, american, chicken, mushroom | yes |
 | Zucchini Casserole Side Dish | side dish, easy, vegetarian, low-carb, mediterranean, egg, cheese | yes |
 | 15-Minute Creamy Tomato Soup (Vegan) | lunch, dinner, quick, easy, comfort food, vegetarian, vegan, dairy-free, italian, soup, pantry | yes |
-| 5-Ingredient Black Bean Soup | lunch, dinner, easy, healthy, vegetarian, gluten-free, dairy-free, mexican, soup, legumes, pantry | yes |
+| 5-Ingredient Black Bean Soup | lunch, dinner, quick, easy, healthy, comfort food, vegetarian, gluten-free, dairy-free, mexican, soup, legumes, pantry | yes |
+| 5-Ingredient Greek Chickpea Stew (Rev... | lunch, dinner, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, mediterranean, legumes, soup | no |
 | Crispy Air-Fryer French Fries | snack, side dish, easy, vegetarian, potato, pantry | yes |
 | Apple Chestnut Tart With Salted Caramel | dessert, vegetarian, holiday | yes |
-| Bacon and Date Salad | lunch, dinner, side dish, salad, greens, cheese | yes |
+| Bacon and Date Salad | lunch, dinner, side dish, entree, salad, greens, cheese | no |
 | Beef Bourguignon Pot Pie | dinner, entree, comfort food, beef, mushroom, french | yes |
 | Italian-American Beef Braciole  | dinner, entree, comfort food, italian, beef | yes |
 | Beef Tongue Tacos With Consomé (Tacos... | dinner, entree, comfort food, mexican, beef, soup | yes |
@@ -3067,257 +3093,260 @@
 | Beurre d'Escargot (Garlic-and-Herb "E... | appetizer, side dish, easy, vegetarian, french, pantry | yes |
 | Binakol na Manok (Filipino Chicken an... | dinner, entree, healthy, comfort food, dairy-free, asian, chicken, soup, greens | yes |
 | Biscuits and Gravy | breakfast, comfort food, american, pork, bread | yes |
-| Easy One-Pot Black-Eyed Pea Stew With... | dinner, easy, healthy, comfort food, vegetarian, dairy-free, mediterranean, soup, legumes, greens, pantry | yes |
+| Easy One-Pot Black-Eyed Pea Stew With... | dinner, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, mediterranean, soup, greens, legumes, pantry | yes |
 | Creamy Bolognese Lasagna Rolls (Roset... | dinner, entree, comfort food, italian, beef, pork, pasta, cheese | yes |
-| Boxty (Irish Potato Pancakes) | breakfast, lunch, dinner, snack, side dish, comfort food, eastern european, egg, potato, cheese | yes |
+| Boxty (Irish Potato Pancakes) | lunch, dinner, side dish, comfort food, vegetarian, egg, potato, eastern european | yes |
 | Braised Asparagus Recipe | side dish, quick, easy, healthy, vegetarian, gluten-free, low-carb, greens | yes |
-| The Simplest White Bread Ever Recipe ... | easy, comfort food, vegetarian, bread, pantry | yes |
+| The Simplest White Bread Ever Recipe ... | easy, vegetarian, bread, pantry | yes |
 | Breakfast Bars | breakfast, snack, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
-|  Bún Chả Hanoi | dinner, entree, asian, pork, grill | yes |
+|  Bún Chả Hanoi | dinner, entree, asian, pork, rice, grill | yes |
 | Caesar BLT | lunch, sandwich, cheese, pork, greens, american | yes |
-| Savory Caesar Dip | snack, appetizer, easy, low-carb, cheese, pantry | yes |
+| Savory Caesar Dip | snack, appetizer, easy, comfort food, vegetarian, low-carb, italian, cheese, pantry | yes |
 | Canederli di Pane (Northern Italian B... | lunch, dinner, entree, comfort food, italian, pork, bread, egg, cheese, soup | yes |
 | Cantonese-Style One-Pot Braised Brisket | dinner, entree, comfort food, asian, chinese, beef, rice, greens | yes |
-| Carne Asada Fries With Sliced Steak a... | dinner, entree, comfort food, mexican, beef, potato, cheese | yes |
+| Carne Asada Fries With Sliced Steak a... | dinner, entree, comfort food, mexican, beef, potato, cheese, grill | yes |
 | Cheese Frenchee (Deep-Fried Grilled C... | lunch, snack, comfort food, vegetarian, american, sandwich, bread, egg, cheese | yes |
-| Cheese Sauce for Cheese Fries and Nac... | snack, appetizer, side dish, quick, easy, comfort food, vegetarian, cheese | yes |
+| Cheese Sauce for Cheese Fries and Nac... | snack, appetizer, side dish, easy, comfort food, vegetarian, american, cheese, pantry | yes |
 | Chicken Francese (Rochester-Style Chi... | dinner, entree, italian, chicken | yes |
 | Cabbage Soup With Cauliflower, Chickp... | lunch, dinner, entree, healthy, vegan, gluten-free, dairy-free, soup, greens, legumes, pantry | yes |
 | 3-Ingredient Chinese Ginger Milk Curd | dessert, snack, quick, easy, vegetarian, asian, chinese | yes |
-| Chocolate Peppermint Sandwich Cookies | dessert, snack, comfort food, vegetarian, holiday | yes |
+| Chocolate Peppermint Sandwich Cookies | dessert, vegetarian, holiday, snack | yes |
 | Chocolate Pot de Crèmes | dessert, vegetarian, egg | yes |
-| Crispy Potato and Chorizo Tacos Recipe | lunch, dinner, comfort food, mexican, pork, potato | yes |
+| Crispy Potato and Chorizo Tacos Recipe | lunch, dinner, entree, comfort food, mexican, pork, potato | no |
 | Churrasco Steak | dinner, entree, beef, grill | yes |
-| Classic Pico de Gallo | appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mexican | yes |
-| Buttery Pull-Apart Cloverleaf Dinner ... | side dish, comfort food, vegetarian, american, bread, potato, pantry, holiday | yes |
+| Classic Banana Pudding | dessert, comfort food, vegetarian, american, egg, pantry | no |
+| Classic Pico de Gallo | appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, low-carb, mexican, salad, greens | yes |
+| Buttery Pull-Apart Cloverleaf Dinner ... | side dish, comfort food, vegetarian, bread, potato, pantry, holiday | yes |
 | Malted Cocoa Rice Krispies Treats | dessert, snack, easy, comfort food, vegetarian, pantry | yes |
 | Colcannon (Irish Mashed Potatoes With... | side dish, comfort food, vegetarian, potato, greens, eastern european, holiday | yes |
-| Coquito (Creamy Puerto Rican Spiced C... | dessert, comfort food, vegetarian, egg, pantry, holiday | yes |
+| Coquito (Creamy Puerto Rican Spiced C... | holiday, pantry | yes |
 | Cream Cheese and Pepper Jelly Puff Pa... | snack, appetizer, easy, vegetarian, cheese, pantry, holiday | yes |
 | Creamy Eggless Chocolate Frosting | dessert, vegetarian, pantry | yes |
 | Crepes Suzette | dessert, vegetarian, french, egg | yes |
-| Crispy Potato, Chorizo, and Green Chi... | breakfast, lunch, dinner, comfort food, mexican, pork, egg, potato, greens | yes |
-| Buttery, Flaky Croissants | breakfast, bread, french, comfort food | no |
-| Croquetas de Jamón | snack, appetizer, comfort food, pork, pantry | yes |
-| Daube de Boeuf à la Gasconne (Gascogn... | dinner, entree, comfort food, french, beef, potato | yes |
+| Crispy Potato, Chorizo, and Green Chi... | breakfast, lunch, dinner, entree, comfort food, gluten-free, american, mexican, pork, egg, potato, greens | yes |
+| Buttery, Flaky Croissants | breakfast, dessert, snack, comfort food, vegetarian, french, bread | yes |
+| Croquetas de Jamón | snack, appetizer, comfort food, pork | yes |
+| Daube de Boeuf à la Gasconne (Gascogn... | dinner, entree, comfort food, beef, potato, french | yes |
 | 3-Ingredient Devils on Horseback | snack, appetizer, easy, comfort food, pork, cheese, holiday | yes |
-| Dirty Martini Dip | snack, appetizer, easy, vegetarian, cheese, pantry | yes |
-| Easy, Creamy One-Pot Salmon Chowder | lunch, dinner, easy, comfort food, seafood, fish, soup, potato | yes |
+| Dirty Martini Dip | snack, appetizer, easy, vegetarian, cheese, holiday | yes |
+| Easy, Creamy One-Pot Salmon Chowder | lunch, dinner, easy, comfort food, american, seafood, fish, soup, potato | yes |
 | Éclair Cake | dessert, easy, comfort food, vegetarian, pantry | yes |
 | Éclair Paris-Brest | dessert, french | yes |
 | Espresso Martini | quick, easy, pantry | yes |
-| Espresso Tonic | quick, easy, vegan, dairy-free, pantry | yes |
+| Espresso Tonic | quick, easy, vegan, vegetarian, dairy-free, pantry | yes |
 | Eton Mess | dessert, easy, vegetarian, quick | yes |
 | Everything Nice (Spiced-Rum Coffee Wi... | dessert, comfort food, pantry | yes |
-| Dirty, Sopping-Wet Martini Recipe | appetizer, quick, easy, pantry | yes |
-| Kenyan Chapati (Kenyan Flatbread) | side dish, vegetarian, bread, pantry | yes |
-| Foolproof Pan Pizza | dinner, entree, comfort food, vegetarian, italian, bread, cheese, pantry | yes |
-| French-Style Brown Butter New Potatoe... | side dish, vegetarian, gluten-free, french, potato, comfort food | yes |
+| Dirty, Sopping-Wet Martini Recipe | appetizer, quick, easy | yes |
+| Kenyan Chapati (Kenyan Flatbread) | lunch, dinner, side dish, easy, vegetarian, bread, pantry | yes |
+| Foolproof Pan Pizza | dinner, easy, comfort food, vegetarian, italian, bread, cheese, pantry | yes |
+| French-Style Brown Butter New Potatoe... | side dish, vegetarian, french, potato | yes |
 | Crispy Deep-Fried Jalapeño Poppers Re... | snack, appetizer, comfort food, vegetarian, mexican, cheese | yes |
-| Fried Mozzarella Stick Dip | snack, appetizer, comfort food, vegetarian, italian, cheese, pantry | yes |
+| Fried Mozzarella Stick Dip | snack, appetizer, comfort food, vegetarian, italian, cheese, bread | yes |
 | Fried Pickle Dip | snack, appetizer, easy, comfort food, vegetarian, american, potato, pantry | yes |
-| Fried Pickles | snack, appetizer, side dish, comfort food, american, pork, pantry, grill | yes |
+| Fried Pickles | snack, appetizer, side dish, comfort food, american | yes |
 | Garlic Mashed Potatoes | side dish, comfort food, vegetarian, potato | yes |
-| Easy Air-Fryer Meatballs with Sweet-a... | dinner, appetizer, easy, comfort food, beef, pork | yes |
-| Gochujang Scallion Cornbread With Hon... | snack, side dish, vegetarian, bread, pantry, comfort food, asian | yes |
+| Easy Air-Fryer Meatballs with Sweet-a... | dinner, easy, comfort food, beef, pork, appetizer, entree | yes |
+| Gochujang Scallion Cornbread With Hon... | snack, side dish, comfort food, vegetarian, american, asian, bread | no |
 | Grilled Skirt Steak Fajitas Recipe | dinner, entree, mexican, beef, grill | yes |
 | Pork Souvlaki With Pita and Tzatziki | dinner, entree, mediterranean, pork, grill | yes |
-| Guyanese Pepperpot | dinner, entree, comfort food, beef | yes |
+| Guyanese Pepperpot | dinner, entree, comfort food, beef, soup, pantry | yes |
 | Ham and Bean Soup | dinner, entree, comfort food, pork, soup, legumes | yes |
+| Ham and Cheese Sliders | lunch, snack, appetizer, easy, comfort food, american, pork, sandwich, bread, cheese | no |
 | Homemade Phyllo Dough Recipe | bread, vegan, dairy-free, pantry, easy | yes |
 | Hong Kong Milk Tea | breakfast, easy, asian | yes |
 | Hot Milk Cake | dessert, easy, vegetarian, egg, pantry | yes |
 | Hot-Water Pie Crust | pantry, side dish, vegetarian | yes |
-| Hummus B'Tahini (Hummus With Tahini) | lunch, snack, appetizer, side dish, easy, healthy, vegetarian, vegan, dairy-free, mediterranean, legumes, pantry | yes |
+| Hummus B'Tahini (Hummus With Tahini) | lunch, dinner, snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, legumes, pantry | yes |
 | Indiana Fried Chicken | dinner, entree, comfort food, american, chicken, potato, greens | yes |
-| Rich and Flavorful Guinness Beef Stew... | dinner, entree, comfort food, beef, potato, soup | yes |
-| Northern Italian Barley and Cranberry... | lunch, dinner, entree, comfort food, italian, soup, legumes | yes |
-| Italian Pressure-Cooker Chickpea and ... | dinner, entree, comfort food, italian, pork, potato, legumes, soup | yes |
-| Kalinti (Crispy North African Chickpe... | lunch, dinner, entree, vegetarian, gluten-free, dairy-free, mediterranean, sandwich, bread, egg, greens, legumes | yes |
+| Rich and Flavorful Guinness Beef Stew... | dinner, entree, comfort food, beef, potato, soup, eastern european | yes |
+| Northern Italian Barley and Cranberry... | lunch, dinner, entree, comfort food, italian, soup, legumes, pantry | yes |
+| Italian Pressure-Cooker Chickpea and ... | dinner, comfort food, italian, pork, potato, legumes, entree | yes |
+| Kalinti (Crispy North African Chickpe... | lunch, dinner, appetizer, side dish, entree, easy, healthy, vegetarian, gluten-free, dairy-free, mediterranean, salad, sandwich, bread, egg, greens, legumes, pantry | yes |
 | Kimchi Jam | snack, appetizer, side dish, easy, vegetarian, vegan, dairy-free, asian, pantry | yes |
 | Alabama Lane Cake | dessert, comfort food, american, egg, holiday | yes |
-| Law Bok Gow (Chinese Turnip Cake) | lunch, dinner, appetizer, side dish, comfort food, asian, chinese, pork, seafood, mushroom | yes |
-| Lemon Sugar Cookies | dessert, snack, easy, vegetarian, american, bread, pantry | yes |
+| Law Bok Gow (Chinese Turnip Cake) | appetizer, side dish, comfort food, asian, chinese, pork, seafood, rice, mushroom, holiday | yes |
+| Lemon Sugar Cookies | dessert, snack, easy, vegetarian, pantry, holiday | yes |
 | 30-Minute Sausage and Lentil Stew Wit... | dinner, entree, comfort food, soup, greens, legumes, pork | yes |
-| Juicy Less-Meat Meatloaf | dinner, entree, comfort food, american, beef, pork, legumes, cheese | yes |
+| Juicy Less-Meat Meatloaf | dinner, entree, comfort food, american, beef, pork, legumes, cheese, pantry | yes |
 | Loaded Baked Sweet Potatoes | dinner, side dish, easy, comfort food, potato, cheese, american | yes |
 | Loco Moco (White Rice With Hamburger ... | lunch, dinner, entree, comfort food, beef, rice, egg, american | yes |
-| Marinara Sauce Recipe | Sauced | vegetarian, vegan, gluten-free, dairy-free, italian, pantry | yes |
-| Matcha Chiffon Cake | dessert, vegetarian, asian, japanese, egg | yes |
-| Melomakarona (Greek Christmas Cookies) | dessert, snack, vegetarian, vegan, mediterranean, holiday | yes |
+| Loubia (Moroccan Stewed White Beans W... | dinner, entree, comfort food, mediterranean, legumes, soup | yes |
+| Marinara Sauce Recipe | Sauced | side dish, easy, vegetarian, vegan, gluten-free, dairy-free, italian, pasta, pantry | yes |
+| Matcha Chiffon Cake | dessert, vegetarian, japanese, egg | yes |
+| Melomakarona (Greek Christmas Cookies) | dessert, snack, easy, vegetarian, dairy-free, mediterranean, pantry, holiday | yes |
 | Melting Cabbage | dinner, side dish, comfort food, vegetarian, greens | yes |
-| Brown Bag Microwave Popcorn | snack, quick, easy, vegan, gluten-free, dairy-free, pantry | yes |
+| Brown Bag Microwave Popcorn | snack, quick, easy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | Midwestern Potato Lefse (Norwegian-Am... | side dish, comfort food, vegetarian, american, eastern european, potato, bread, pantry, holiday | yes |
-| Mille-Feuille | dessert, vegetarian, french, egg | yes |
+| Mille-Feuille | dessert, easy, vegetarian, french, egg, pantry | yes |
 | Million Dollar Spaghetti | dinner, entree, comfort food, italian, beef, pasta, cheese | yes |
 | Mole Poblano Recipe | dinner, entree, comfort food, mexican, chicken, pantry, holiday | yes |
-| Moroccan Egg Drop Harira (Vegetable a... | lunch, dinner, healthy, comfort food, vegetarian, dairy-free, mediterranean, soup, rice, legumes, egg, pantry | yes |
+| Moroccan Egg Drop Harira (Vegetable a... | lunch, dinner, entree, healthy, comfort food, vegetarian, mediterranean, soup, egg, legumes, pantry | yes |
 | Muhammara (Syrian Red Bell Pepper Dip) | appetizer, side dish, vegetarian, vegan, mediterranean, pantry | yes |
-| Mushroom and Dumplings | dinner, comfort food, vegetarian, soup, mushroom, pantry, eastern european | yes |
-| Mushroom French Dip Sandwich | lunch, dinner, entree, comfort food, vegetarian, sandwich, bread, mushroom, cheese | yes |
+| Mushroom and Dumplings | dinner, entree, comfort food, vegetarian, mushroom, soup | yes |
+| Mushroom French Dip Sandwich | lunch, dinner, entree, comfort food, vegetarian, sandwich, mushroom, cheese | yes |
 | New Orleans BBQ Shrimp | dinner, entree, comfort food, american, seafood, bread | yes |
-| New York-Style Pizza Sauce | side dish, vegetarian, italian, pantry | yes |
-| Ohio Sauerkraut Balls | snack, appetizer, comfort food, pork, eastern european, holiday | yes |
-| Orange and Saffron Flan | dessert, vegetarian, egg | yes |
+| New York-Style Pizza Sauce | side dish, easy, vegetarian, italian, pantry | yes |
+| Ohio Sauerkraut Balls | snack, appetizer, comfort food, american, pork, holiday | yes |
+| Orange and Saffron Flan | dessert, vegetarian, egg, pantry, holiday | yes |
 | Pad See Ew (Thai Stir-Fried Noodles) | dinner, entree, asian, thai, pork, egg, greens | yes |
-| Pasta e Ceci (Pasta With Chickpeas) | lunch, dinner, entree, comfort food, vegetarian, italian, pasta, soup, legumes, cheese, pantry | yes |
+| Pasta e Ceci (Pasta With Chickpeas) | lunch, dinner, comfort food, vegetarian, italian, pasta, soup, legumes, cheese, pantry | yes |
 | Pear and Almond Tart | dessert, vegetarian, pantry | yes |
-| A Southern Holiday Classic, Perfected... | dessert, comfort food, holiday | yes |
-| Perfect Buttery Snowball Cookies | dessert, snack, easy, comfort food, vegetarian, pantry, holiday | yes |
+| A Southern Holiday Classic, Perfected... | dessert, snack, vegetarian, american, holiday | yes |
+| Perfect Buttery Snowball Cookies | dessert, snack, vegetarian, comfort food, pantry, holiday | yes |
 | Pressure Cooker Butternut Squash Riso... | dinner, entree, comfort food, vegetarian, italian, rice, cheese | yes |
-| Pressure Cooker Corn Risotto | dinner, entree, comfort food, vegetarian, italian, rice, cheese | yes |
-| Pressure Cooker Ground Beef and Bean ... | dinner, entree, comfort food, american, beef, legumes | yes |
+| Pressure Cooker Corn Risotto | dinner, side dish, entree, easy, comfort food, vegetarian, italian, rice, cheese, pantry | yes |
+| Pressure Cooker Ground Beef and Bean ... | lunch, dinner, comfort food, american, beef, legumes | yes |
 | Real Texas Nachos Recipe | snack, appetizer, easy, comfort food, vegetarian, mexican, cheese | yes |
-| Reverse-Seared Steak  | dinner, entree, beef, grill | yes |
-| Rice Krispie Treats | dessert, snack, easy, comfort food, vegetarian, american, pantry | yes |
-| Armenian-Style Rice Pilaf | side dish, easy, comfort food, eastern european, rice, pasta, pantry | yes |
+| Reverse-Seared Steak  | dinner, entree, comfort food, beef, grill, american | yes |
+| Rice Krispie Treats | dessert, snack, easy, comfort food, vegetarian, american, rice, pantry | yes |
+| Armenian-Style Rice Pilaf | side dish, comfort food, rice, pasta, pantry, eastern european | yes |
 | Rich and Creamy Slow-Cooker Beef Stro... | dinner, entree, comfort food, beef, pasta, mushroom, eastern european | yes |
 | Roasted Cauliflower Soup | lunch, dinner, appetizer, side dish, comfort food, vegetarian, soup, greens | yes |
 | Slow-Roasted Fresh Ham With Maple-Bou... | dinner, entree, pork, holiday, american | yes |
-| Roasted Oysters With Bacon and Parmesan | dinner, appetizer, comfort food, seafood, cheese, holiday | yes |
+| Roasted Oysters With Bacon and Parmesan | appetizer, seafood, cheese, comfort food, dinner, lunch | yes |
 | Roasted Sweet Potato Soup | lunch, dinner, appetizer, side dish, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, potato, soup, holiday | yes |
-| Roman-Style Spaghetti Alla Carrettier... | dinner, easy, comfort food, italian, seafood, fish, pasta, mushroom, pantry | yes |
-| Sahlab (A Creamy Levantine Winter Drink) | dessert, snack, comfort food, vegetarian, mediterranean, pantry | yes |
-| Salmon Wellington (Salmon en Croûte W... | dinner, entree, comfort food, seafood, fish, mushroom, french, holiday | yes |
+| Roman-Style Spaghetti Alla Carrettier... | lunch, dinner, entree, comfort food, italian, seafood, fish, pasta, mushroom, pantry | yes |
+| Sahlab (A Creamy Levantine Winter Drink) | vegetarian, comfort food, snack, dessert | yes |
+| Salmon Wellington (Salmon en Croûte W... | dinner, entree, seafood, fish, mushroom, french, holiday | no |
 | Salty Brown Sugar Shortbread | dessert, snack, comfort food, vegetarian, pantry | yes |
 | Scottish Oatcakes | snack, side dish, easy, vegetarian, dairy-free, pantry, bread | yes |
-| Scottish-Style Oatmeal | breakfast, easy, healthy, comfort food, vegetarian, dairy-free, pantry | yes |
-| Sheet-Pan Chicken and Vegetables With... | dinner, easy, healthy, entree, thai, chicken | yes |
-| Classic, Savory Shepherd's Pie (With ... | dinner, entree, comfort food, beef, potato, pantry, eastern european | yes |
+| Scottish-Style Oatmeal | breakfast, easy, healthy, comfort food, vegetarian, vegan, gluten-free, pantry | yes |
+| Sheet-Pan Chicken and Vegetables With... | dinner, entree, chicken, thai, asian, dairy-free, gluten-free | yes |
+| Classic, Savory Shepherd's Pie (With ... | dinner, entree, comfort food, beef, potato | yes |
 | Shokupan (Japanese Milk Bread) | bread, japanese, snack, breakfast, comfort food | yes |
 | Shortbread Cookies | dessert, snack, easy, comfort food, vegetarian, pantry, holiday | yes |
-| Simple Crusty White Bread Recipe | bread, vegetarian, vegan, pantry | yes |
-| Smash Falafel Pitas | lunch, dinner, quick, easy, vegetarian, mediterranean, sandwich, bread, legumes | yes |
-| Sopa de Albóndigas de Pollo (Nicaragu... | lunch, dinner, comfort food, chicken, soup | yes |
+| Simple Crusty White Bread Recipe | bread, vegetarian, vegan, pantry, side dish | yes |
+| Smash Falafel Pitas | lunch, dinner, quick, easy, vegetarian, vegan, dairy-free, mediterranean, sandwich, bread, legumes | yes |
+| Sopa de Albóndigas de Pollo (Nicaragu... | lunch, dinner, comfort food, chicken, soup, pantry | yes |
 | Soubise (French Onion Sauce) | side dish, vegetarian, french | yes |
-| Seupa Vapellenentse (Savoy Cabbage Soup) | dinner, entree, comfort food, italian, eastern european, soup, bread, cheese, greens | yes |
-| Sous Vide Carnitas for Tacos (Crispy ... | dinner, comfort food, mexican, pork, entree | yes |
+| Seupa Vapellenentse (Savoy Cabbage Soup) | dinner, entree, comfort food, italian, eastern european, pork, soup, bread, greens, cheese | yes |
+| Sous Vide Carnitas for Tacos (Crispy ... | dinner, entree, comfort food, mexican, pork, grill | yes |
 | Sous Vide Pork Chops | dinner, entree, pork, grill | yes |
 | Classic Southern Cheese Straws | snack, appetizer, easy, comfort food, vegetarian, american, cheese, pantry, holiday | yes |
-| Southwest-Style Cheesy Breakfast Strata | breakfast, comfort food, american, egg, cheese, pantry | yes |
+| Southwest-Style Cheesy Breakfast Strata | breakfast, comfort food, american, pork, egg, cheese | yes |
 | Spice Bag | dinner, entree, comfort food, asian, chicken, potato | yes |
-| Spinach, Black Bean, and Chipotle Que... | lunch, dinner, snack, easy, vegetarian, mexican, greens, legumes, cheese | yes |
-| Homemade Sriracha | vegan, vegetarian, gluten-free, dairy-free, pantry | yes |
+| Spinach, Black Bean, and Chipotle Que... | lunch, dinner, snack, appetizer, easy, comfort food, vegetarian, mexican, greens, legumes, cheese | yes |
+| Homemade Sriracha | vegetarian, vegan, gluten-free, dairy-free, pantry, side dish | yes |
 | Sweet and Salty Puppy Chow Recipe (Ch... | snack, easy, comfort food, vegetarian, american, pantry | yes |
-| Taco Soup | dinner, comfort food, mexican, beef, soup, cheese | yes |
-| Tamarind-Braised Beef Short Ribs | dinner, entree, comfort food, beef | yes |
+| Taco Soup | dinner, comfort food, mexican, beef, soup, cheese, legumes, entree | yes |
+| Tamarind-Braised Beef Short Ribs | dinner, entree, comfort food, beef, indian | no |
 | Tartiflette | dinner, entree, comfort food, french, pork, potato, cheese, holiday | yes |
-| Son-in-Law Eggs: Thai Fried Hard-Boil... | lunch, dinner, appetizer, entree, easy, comfort food, asian, thai, egg, pantry | yes |
-| Classic Guacamole Recipe | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mexican | yes |
+| Son-in-Law Eggs: Thai Fried Hard-Boil... | dinner, entree, easy, comfort food, asian, thai, egg, rice | yes |
+| Classic Guacamole Recipe | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mexican | yes |
 | The Best Classic Chicken Salad Sandwich | lunch, entree, easy, comfort food, american, chicken, sandwich, salad | yes |
-| The Best Crispy Roast Potatoes Ever | dinner, side dish, comfort food, vegetarian, gluten-free, potato | yes |
-| The Best Italian-American Tomato Sauce | dinner, side dish, comfort food, vegetarian, italian, pasta, pantry | yes |
-| The Best Yorkshire Pudding | side dish, comfort food, egg, bread | yes |
-| The Food Lab's Buttermilk Biscuits Re... | breakfast, side dish, comfort food, vegetarian, american, bread, pantry | yes |
+| The Best Crispy Roast Potatoes Ever | side dish, comfort food, vegetarian, gluten-free, dairy-free, potato | yes |
+| The Best Italian-American Tomato Sauce | dinner, comfort food, vegetarian, italian, pantry | yes |
+| The Best Yorkshire Pudding | side dish, comfort food, bread, egg | yes |
+| The Food Lab's Buttermilk Biscuits Re... | breakfast, comfort food, vegetarian, american, bread, pantry | yes |
 | Toad in the Hole (Yorkshire Pudding W... | dinner, entree, comfort food, pork, egg | yes |
 | 2-Ingredient Cream Biscuits | breakfast, easy, vegetarian, american, bread, pantry | yes |
-| Two-Minute Aioli | quick, easy, vegetarian, egg, pantry | yes |
-| The Ultimate Fully Loaded Nachos Recipe | lunch, dinner, snack, appetizer, comfort food, mexican, legumes, cheese | yes |
+| Two-Minute Aioli | easy, vegetarian, egg, pantry | yes |
+| The Ultimate Fully Loaded Nachos Recipe | lunch, dinner, snack, appetizer, comfort food, mexican, cheese, legumes | yes |
 | Whipped Ricotta With Caramelized Shal... | snack, appetizer, side dish, easy, vegetarian, italian, cheese, bread | yes |
 | Akron White French Dressing
  | side dish, easy, vegetarian, american, french, pantry | yes |
-| Zuppa di Pesce (Hearty Italian Seafoo... | dinner, entree, comfort food, italian, seafood, fish, soup | yes |
+| Zuppa di Pesce (Hearty Italian Seafoo... | dinner, entree, healthy, comfort food, italian, mediterranean, seafood, fish, soup | yes |
 | Zuppa Toscana | dinner, entree, comfort food, italian, pork, soup, potato, greens, cheese | yes |
-| African Chicken Peanut Stew | dinner, entree, comfort food, chicken, soup, potato | yes |
-| Air Fryer Crispy Cauliflower | snack, appetizer, side dish, easy, vegetarian, low-carb, cheese, pantry | yes |
-| Angel Hair Pasta With Garlic, Herbs, ... | lunch, dinner, side dish, easy, comfort food, vegetarian, italian, pasta, cheese, pantry | yes |
-| Bacon-Wrapped Stuffed Pork Tenderloin | dinner, entree, pork, american, comfort food, holiday | yes |
-| Baked Blueberry French Toast Casserole | breakfast, easy, comfort food, vegetarian, american, bread, egg, holiday | yes |
-| Baked Lingcod with Lemon-Garlic Butte... | dinner, entree, seafood, fish | yes |
-| Barbecued Pork Shoulder on a Gas Grill | dinner, entree, comfort food, american, pork, grill | no |
-| Basque-Style Chicken With Peppers and... | dinner, entree, comfort food, chicken, mediterranean | yes |
-| Bisquick Apple Coffee Cake | breakfast, dessert, snack, easy, vegetarian, american, egg, pantry | yes |
+| African Chicken Peanut Stew | dinner, entree, comfort food, chicken, soup, potato, pantry | yes |
+| Air Fryer Crispy Cauliflower | snack, appetizer, side dish, easy, vegetarian, cheese | yes |
+| Angel Hair Pasta With Garlic, Herbs, ... | lunch, dinner, side dish, quick, easy, comfort food, vegetarian, italian, pasta, cheese, pantry | yes |
+| Bacon-Wrapped Stuffed Pork Tenderloin | dinner, entree, comfort food, pork, american | yes |
+| Baked Blueberry French Toast Casserole | breakfast, comfort food, vegetarian, american, bread, egg, holiday, pantry | yes |
+| Baked Lingcod with Lemon-Garlic Butte... | dinner, entree, healthy, seafood, fish | yes |
+| Barbecued Pork Shoulder on a Gas Grill | dinner, comfort food, american, pork, grill, entree | yes |
+| Basque-Style Chicken With Peppers and... | dinner, entree, comfort food, mediterranean, chicken, pantry | yes |
+| Bisquick Apple Coffee Cake | breakfast, dessert, easy, comfort food, vegetarian, american, egg, pantry | yes |
 | Bisquick Shortcake Biscuits | dessert, snack, easy, vegetarian, american, bread, pantry | yes |
-| Broccoli Stir-Fry With Ginger and Sesame | dinner, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, asian, greens, pantry | yes |
-| Biscuits and Gravy | breakfast, comfort food, american, pork, bread | no |
-| Soft Pretzels | snack, appetizer, easy, comfort food, vegetarian, bread, pantry | yes |
-| Semi-Homemade Cheesy Funeral Potatoes | dinner, side dish, comfort food, american, potato, cheese, holiday | yes |
+| Broccoli Stir-Fry With Ginger and Sesame | dinner, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, asian, chinese, greens, pantry | no |
+| Biscuits and Gravy | breakfast, comfort food, american, pork, bread | yes |
+| Soft Pretzels | snack, easy, comfort food, vegetarian, bread, pantry | yes |
+| Semi-Homemade Cheesy Funeral Potatoes | dinner, side dish, comfort food, american, chicken, potato, cheese, holiday | yes |
 | Cà Ri Gà (Vietnamese Chicken Curry) | dinner, entree, comfort food, dairy-free, asian, chicken, potato | yes |
 | Tarragon Chicken Salad | lunch, easy, chicken, salad, sandwich | yes |
-| Sour Cream Chocolate Cake | dessert, easy, comfort food, vegetarian, american, pantry, holiday | yes |
+| Sour Cream Chocolate Cake | dessert, comfort food, american, pantry | yes |
 | Easy Buttermilk Waffles | breakfast, easy, comfort food, vegetarian, american, egg, pantry | yes |
-| Classic English Toad-in-the-Hole | dinner, entree, comfort food, pork, egg | yes |
-| Coconut Cupcakes with Coconut Cream C... | dessert, easy, vegetarian, cheese | yes |
-| Copycat Chipotle Guacamole | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mexican | yes |
-| Easy Brazilian Cheese Bread (Pão de Q... | snack, appetizer, side dish, easy, comfort food, vegetarian, gluten-free, bread, egg, cheese, potato | yes |
+| Classic English Toad-in-the-Hole | dinner, entree, comfort food, pork, egg | no |
+| Coconut Cupcakes with Coconut Cream C... | dessert, easy, comfort food, vegetarian, cheese, pantry, holiday | yes |
+| Copycat Chipotle Guacamole | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mexican | yes |
+| Easy Brazilian Cheese Bread (Pão de Q... | snack, appetizer, easy, vegetarian, gluten-free, bread, egg, cheese | yes |
 | Easy Mexican Chicken and Rice Soup | lunch, dinner, easy, comfort food, mexican, chicken, rice, soup | yes |
-| Easy Vanilla Buttercream Frosting | dessert, easy, vegetarian, pantry | yes |
-| Easy Vegetable Fried Rice | lunch, dinner, easy, healthy, vegetarian, dairy-free, asian, chinese, rice, egg, greens, legumes, pantry, quick | yes |
-| Octopus Salad (Ensalada de Pulpo) | lunch, dinner, appetizer, side dish, healthy, gluten-free, dairy-free, mediterranean, seafood, salad, greens | yes |
-| Fesenjan (Persian Pomegranate Chicken) | dinner, entree, comfort food, chicken, rice | yes |
-| Fish Stew with Ginger and Tomatoes | dinner, entree, healthy, seafood, fish, soup, potato | yes |
-| Grab-and-Go Oatmeal Chia Cups | breakfast, snack, quick, easy, healthy, vegetarian, gluten-free, dairy-free | yes |
-| Grilled Japanese Eggplant with Tahini... | dinner, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, japanese, asian, grill | yes |
-| Homemade Sassafras Root Beer | vegetarian, vegan, dairy-free, pantry | yes |
-| How To Boil and Eat Lobster | dinner, easy, comfort food, seafood, grill | yes |
+| Easy Vanilla Buttercream Frosting | easy, vegetarian, dessert, pantry | yes |
+| Easy Vegetable Fried Rice | lunch, dinner, easy, healthy, vegetarian, asian, chinese, rice, egg, greens | yes |
+| Octopus Salad (Ensalada de Pulpo) | lunch, dinner, appetizer, side dish, healthy, gluten-free, dairy-free, low-carb, mediterranean, seafood, salad, greens | yes |
+| Fesenjan (Persian Pomegranate Chicken) | dinner, entree, comfort food, chicken, rice, mediterranean | yes |
+| Fish Stew with Ginger and Tomatoes | dinner, entree, easy, healthy, dairy-free, mediterranean, seafood, fish, soup, potato, pantry | yes |
+| Grab-and-Go Oatmeal Chia Cups | breakfast, snack, quick, easy, healthy, vegetarian, gluten-free, dairy-free, pantry | yes |
+| Grilled Japanese Eggplant with Tahini... | dinner, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, japanese, asian, greens, grill | yes |
+| Homemade Sassafras Root Beer | vegetarian, vegan, dairy-free, american | yes |
+| How To Boil and Eat Lobster | dinner, entree, easy, comfort food, seafood, holiday | yes |
 | How To Cook Potatoes in the Instant Pot | side dish, easy, vegetarian, vegan, gluten-free, dairy-free, potato | yes |
 | How to Cut and De-Seed a Pomegranate | easy, healthy, vegan, vegetarian, gluten-free, dairy-free, snack, side dish, quick | yes |
 | How To Cut and Prepare Prickly Pears | vegan, vegetarian, gluten-free, dairy-free, healthy, easy, quick, snack | yes |
 | Instant Pot Chicken Stock  | easy, healthy, chicken, soup, pantry | yes |
-| Easy Dump Cake from Scratch | dessert, easy, vegetarian, comfort food, pantry | yes |
-| How To Make Fast, No-Soak Beans in th... | easy, healthy, vegetarian, vegan, gluten-free, dairy-free, legumes, pantry | yes |
+| Easy Dump Cake from Scratch | dessert, easy, comfort food, vegetarian, american | yes |
+| How To Make Fast, No-Soak Beans in th... | side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, legumes, pantry | yes |
 | How to Make the Best Scrambled Eggs | breakfast, quick, easy, comfort food, vegetarian, egg | yes |
 | How to Make Ginger Switchel | easy, healthy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | How to Make Homemade Sausage | dinner, entree, comfort food, italian, pork | yes |
 | How to Make Homemade Tortilla Chips | snack, appetizer, side dish, easy, vegetarian, vegan, gluten-free, dairy-free, mexican, pantry | yes |
-| How to Make Jam in the Microwave | dessert, snack, easy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
+| How to Make Jam in the Microwave | snack, easy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
 | How To Make Kombucha at Home | easy, healthy, vegan, dairy-free, pantry | yes |
 | How To Make Mayonnaise in a Blender o... | easy, vegetarian, dairy-free, egg, pantry | yes |
 | The Best Microwave Oatmeal Ever | breakfast, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
-| For the Easiest Egg Bites, Reach for ... | breakfast, snack, appetizer, easy, healthy, vegetarian, gluten-free, low-carb, egg, cheese | yes |
-| How To Make Stock from Chicken Feet | soup, chicken, easy, healthy | yes |
+| For the Easiest Egg Bites, Reach for ... | breakfast, easy, vegetarian, low-carb, egg, cheese | yes |
+| How To Make Stock from Chicken Feet | chicken, soup | yes |
 | How To Make Swiss Meringue | dessert, easy, vegetarian, egg, pantry | yes |
 | How to Make the Best Detox Smoothie | breakfast, snack, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, greens | yes |
 | Instant Pot BBQ Baby Back Ribs | dinner, entree, easy, comfort food, american, pork, grill | yes |
-| Italian Grilled Cheese Sandwiches | lunch, dinner, quick, easy, comfort food, italian, sandwich, bread, cheese, grill | yes |
-| Italian Skillet Chicken with Spinach,... | dinner, easy, healthy, comfort food, italian, chicken, greens | yes |
-| Mediterranean Chickpea Bowls with Tah... | lunch, dinner, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, rice, salad, greens, legumes, pantry | yes |
+| Italian Grilled Cheese Sandwiches | lunch, dinner, easy, comfort food, italian, sandwich, bread, cheese, grill | yes |
+| Italian Skillet Chicken with Spinach,... | dinner, entree, easy, healthy, italian, chicken, greens | yes |
+| Mediterranean Chickpea Bowls with Tah... | lunch, dinner, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, rice, legumes, greens | yes |
 | Mexican Street Corn Nachos | lunch, dinner, snack, appetizer, easy, comfort food, vegetarian, mexican, cheese | yes |
-| Mom's Cold-Season Chicken Soup | lunch, dinner, easy, healthy, comfort food, chicken, soup, greens | yes |
-| Pan-Fried London Broil Steak | dinner, entree, beef, american | yes |
+| Mom's Cold-Season Chicken Soup | lunch, dinner, easy, healthy, comfort food, dairy-free, chicken, soup | yes |
+| Pan-Fried London Broil Steak | dinner, easy, comfort food, low-carb, american, beef | yes |
 | Moo Goo Gai Pan (Chinese Chicken and ... | lunch, dinner, entree, easy, healthy, asian, chinese, chicken, rice, mushroom | yes |
-| Moqueca (Brazilian Fish Stew) | dinner, entree, healthy, dairy-free, seafood, fish, soup, rice | yes |
-| Moroccan Grated Carrot and Beet Salad | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, salad, greens | yes |
-| Fresh Apple Bundt Cake | dessert, comfort food, vegetarian, pantry, holiday | yes |
-| One-Pan Paprika Chicken with Potatoes... | dinner, easy, healthy, comfort food, entree, chicken, potato, mediterranean | yes |
-| One-Pot Chicken and Rice Soup | lunch, dinner, easy, comfort food, chicken, rice, soup, pantry | yes |
-| Orange Butter Sauce (Beurre Blanc) fo... | side dish, easy, french, seafood | yes |
+| Moqueca (Brazilian Fish Stew) | dinner, entree, healthy, seafood, fish, rice, soup | yes |
+| Moroccan Grated Carrot and Beet Salad | lunch, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, salad, greens | yes |
+| Fresh Apple Bundt Cake | dessert, easy, comfort food, vegetarian, american, bread, pantry | yes |
+| One-Pan Paprika Chicken with Potatoes... | dinner, entree, easy, healthy, chicken, potato, mediterranean | yes |
+| One-Pot Chicken and Rice Soup | lunch, dinner, easy, comfort food, chicken, rice, soup, entree, healthy, pantry | yes |
+| Orange Butter Sauce (Beurre Blanc) fo... | side dish, easy, seafood, french | yes |
 | Pasta and Bean Picnic Salad | lunch, dinner, side dish, easy, healthy, vegetarian, vegan, dairy-free, italian, pasta, salad, legumes, pantry | yes |
-| Tuna and Tomato Pasta Casserole | dinner, easy, comfort food, seafood, fish, pasta, cheese, pantry, italian | yes |
-| Pastelón (Puerto Rican Plantain Lasagna) | dinner, entree, comfort food, beef, cheese, pantry | yes |
-| Pineapple Jalapeño Pitcher Margaritas | mexican | yes |
+| Tuna and Tomato Pasta Casserole | lunch, dinner, easy, comfort food, italian, seafood, fish, pasta, cheese, pantry | yes |
+| Pastelón (Puerto Rican Plantain Lasagna) | dinner, entree, comfort food, beef, egg, cheese | yes |
+| Pineapple Jalapeño Pitcher Margaritas | easy, mexican | yes |
 | Pork Chops with Dijon Sauce | dinner, entree, pork | yes |
 | Potato and Sausage Casserole | dinner, entree, comfort food, italian, pork, potato, greens, cheese | yes |
-| Instant Pot Chicken and Rice | dinner, entree, easy, comfort food, chicken, rice, mushroom | yes |
+| Instant Pot Chicken and Rice | dinner, entree, comfort food, chicken, rice, mushroom | yes |
 | Instant Pot Beef Chili | dinner, entree, easy, comfort food, american, beef, soup, legumes, cheese, pantry | yes |
 | Instant Pot Mexican Pulled Pork | dinner, entree, comfort food, mexican, pork | yes |
 | Quick and Easy Corned Beef Omelet | breakfast, lunch, quick, easy, comfort food, american, beef, egg, potato, cheese | yes |
-| Quick Beef Stir-Fry with Bell Peppers | dinner, entree, quick, easy, healthy, gluten-free, dairy-free, low-carb, asian, beef, rice | yes |
-| Rabbit Stew with Mushrooms | dinner, entree, comfort food, mushroom, soup | yes |
-| Roasted Curried Cauliflower | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb | yes |
+| Quick Beef Stir-Fry with Bell Peppers | dinner, entree, quick, easy, low-carb, asian, beef, rice | yes |
+| Rabbit Stew with Mushrooms | dinner, entree, comfort food, mushroom, soup, pantry | yes |
+| Roasted Curried Cauliflower | lunch, dinner, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, indian, greens, pantry | yes |
 | How to Harvest and Roast (In Shell) S... | snack, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
-| Roasted Poblanos in Cream Sauce (Raja... | lunch, dinner, side dish, easy, comfort food, vegetarian, mexican, cheese | yes |
-| Sausage, Spinach, Ricotta Stuffed Pas... | dinner, entree, easy, comfort food, italian, pork, pasta, cheese, greens | yes |
-| Scrambled Eggs with Kale and Mozzarella | breakfast, lunch, dinner, quick, easy, healthy, vegetarian, egg, greens, cheese | yes |
-| Skillet Chicken Puttanesca | dinner, easy, entree, italian, chicken, pantry | yes |
-| Skirt Steak with Avocado Chimichurri | dinner, entree, beef, grill | yes |
+| Roasted Poblanos in Cream Sauce (Raja... | side dish, comfort food, vegetarian, mexican, cheese | yes |
+| Sausage, Spinach, Ricotta Stuffed Pas... | dinner, entree, easy, comfort food, italian, pork, pasta, greens, cheese | yes |
+| Scrambled Eggs with Kale and Mozzarella | breakfast, lunch, dinner, quick, easy, healthy, vegetarian, low-carb, italian, egg, greens, cheese | yes |
+| Skillet Chicken Puttanesca | dinner, entree, easy, healthy, italian, chicken, pantry | yes |
+| Skirt Steak with Avocado Chimichurri | dinner, entree, easy, healthy, gluten-free, dairy-free, low-carb, beef, grill | yes |
 | Slow Cooker Beef Stroganoff | dinner, entree, comfort food, beef, pasta, mushroom, eastern european | yes |
-| Slow Cooker Chickpea Curry With Sweet... | dinner, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, indian, legumes, potato, greens, pantry | yes |
-| Slow Cooker Pulled Pork With 5-Spice | dinner, easy, comfort food, asian, chinese, pork, sandwich, pantry | yes |
-| Slow Cooker Dr Pepper Pulled Pork | dinner, easy, comfort food, dairy-free, american, pork, entree | yes |
-| Easy Slow Cooker Chicken Chili | lunch, dinner, easy, comfort food, american, chicken, soup, legumes | yes |
-| Patatas Bravas (Spanish Roasted Potat... | appetizer, side dish, easy, vegetarian, gluten-free, dairy-free, potato, pantry | yes |
-| Spinach and Artichoke Quiche | lunch, dinner, entree, comfort food, vegetarian, egg, greens, cheese | yes |
-| Spinach With Sesame and Garlic | side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, asian, greens, pantry | yes |
-| Stovetop Double-Stack Cheeseburgers | lunch, dinner, easy, comfort food, american, beef, sandwich, cheese | yes |
-| Strawberry-Rhubarb Crumble Bars | dessert, snack, easy, vegetarian, comfort food | yes |
-| Mushroom Stir-Fry With Peas | dinner, easy, healthy, vegetarian, dairy-free, asian, chinese, rice, greens, mushroom, pantry | yes |
-| Sweet Potato Casserole With Marshmallows | side dish, comfort food, vegetarian, potato, holiday | yes |
+| Slow Cooker Chickpea Curry With Sweet... | dinner, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, indian, rice, greens, legumes, pantry | yes |
+| Slow Cooker Pulled Pork With 5-Spice | dinner, easy, comfort food, asian, chinese, pork, sandwich | yes |
+| Slow Cooker Dr Pepper Pulled Pork | dinner, entree, comfort food, american, pork | yes |
+| Easy Slow Cooker Chicken Chili | dinner, easy, comfort food, american, chicken, soup, legumes, pantry | no |
+| Patatas Bravas (Spanish Roasted Potat... | appetizer, side dish, comfort food, vegetarian, gluten-free, dairy-free, potato, pantry | yes |
+| Spinach and Artichoke Quiche | lunch, dinner, entree, easy, comfort food, vegetarian, egg, greens, cheese | yes |
+| Spinach With Sesame and Garlic | lunch, dinner, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, asian, greens, pantry | yes |
+| Stovetop Double-Stack Cheeseburgers | lunch, dinner, easy, comfort food, american, beef, sandwich, cheese | no |
+| Strawberry-Rhubarb Crumble Bars | dessert, snack, vegetarian, pantry | yes |
+| Mushroom Stir-Fry With Peas | dinner, entree, easy, vegetarian, asian, chinese, rice, mushroom, greens | no |
+| Sweet Potato Casserole With Marshmallows | side dish, comfort food, vegetarian, american, potato, holiday | yes |
 | The Best Dry Rub for Steak | side dish, easy, pantry, gluten-free, dairy-free, low-carb, vegan, vegetarian, quick | yes |
-| Ultimate Club Sandwich  | lunch, dinner, entree, comfort food, american, sandwich, bread, cheese | yes |
-| Vietnamese Pickled Carrots and Daikon... | side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, asian, pantry | yes |
-| Zucchini Bread with Pineapple | breakfast, dessert, snack, easy, vegetarian, bread, pantry | yes |
-| Easy Bagel Recipe | breakfast, easy, healthy, vegetarian, bread, egg | no |
+| Ultimate Club Sandwich  | lunch, dinner, entree, comfort food, american, sandwich, cheese, pork | yes |
+| Vietnamese Pickled Carrots and Daikon... | side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, asian | yes |
+| Zucchini Bread with Pineapple | dessert, snack, easy, vegetarian, bread, pantry | yes |
+| Easy Bagel Recipe | breakfast, easy, healthy, vegetarian, bread, egg | yes |
 | Easy No-Cook Salsa Recipe | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mexican, pantry | yes |
 | Almond Flour Pancakes with Flax | breakfast, easy, healthy, vegetarian, gluten-free, dairy-free, low-carb, egg, pantry | yes |
 | Asian Ground Beef Lettuce Wraps | lunch, dinner, easy, healthy, gluten-free, dairy-free, low-carb, asian, beef, mushroom, greens | yes |
@@ -3470,6 +3499,7 @@
 | Sweet Potato and Sausage Soup | dinner, entree, easy, comfort food, soup, potato, greens | yes |
 | Black Bean Pumpkin Soup | lunch, dinner, entree, comfort food, soup, legumes, pantry | yes |
 | Curried Lentils With Sweet Potatoes a... | lunch, dinner, entree, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, indian, potato, greens, legumes, pantry | yes |
+| Lemon Ricotta Pancakes with Sautéed A... | breakfast, vegetarian, comfort food, egg | yes |
 | Nutmeg Maple Cream Pie | dessert, vegetarian, holiday | yes |
 | Pumpkin Waffles | breakfast, easy, comfort food, vegetarian, american, egg, pantry, holiday | yes |
 | Alice Waters’s Apple Tart | dessert, vegetarian, pantry | yes |
@@ -3650,6 +3680,7 @@
 | Cauliflower and Caramelized Onion Tart | lunch, dinner, side dish, entree, vegetarian, cheese, egg, pantry | yes |
 | Chana Masala | lunch, dinner, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, indian, legumes, pantry | yes |
 | Chocolate Soufflé Cupcakes with White... | dessert, comfort food, vegetarian, holiday | yes |
+| Ginger Fried Rice | lunch, dinner, easy, asian, chinese, rice, egg | no |
 | Monkey Bread with Cream Cheese Glaze | breakfast, dessert, comfort food, vegetarian, american, bread, cheese, pantry, holiday | yes |
 | Spaghetti with Cheese and Pepper [Spa... | lunch, dinner, easy, comfort food, vegetarian, italian, pasta, cheese, pantry | yes |
 | Thick, Chewy Granola Bars | breakfast, snack, easy, healthy, vegetarian, gluten-free, dairy-free, pantry | yes |
@@ -3696,6 +3727,7 @@
 | Mango Slaw with Cashews and Mint | lunch, dinner, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, salad, greens | yes |
 | Nectarine Brown Butter Buckle | dessert, snack, vegetarian, comfort food | yes |
 | Porch Swing | easy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
+| Raspberry Brown Sugar Gratin (Russian... | dessert, quick, easy, vegetarian, comfort food, eastern european | yes |
 | Scalloped Tomatoes with Croutons | lunch, dinner, side dish, easy, comfort food, vegetarian, italian, bread, cheese | yes |
 | Sour Cherry Pie with Almond Crumble | dessert, vegetarian, comfort food, pantry, eastern european | yes |
 | Summer Succotash with Bacon and Garli... | lunch, dinner, side dish, easy, american, pork, legumes, greens, grill | yes |
@@ -3785,6 +3817,7 @@
 | Peach Butter | vegetarian, vegan, gluten-free, dairy-free, snack, dessert, pantry | yes |
 | Red Wine Chocolate Cake with Whipped ... | dessert, vegetarian, cheese | yes |
 | Roasted Eggplant with Ricotta and Mint | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, gluten-free, low-carb, mediterranean, egg, cheese, grill | yes |
+| Roasted Tomato Soup with Broiled Cheddar | lunch, dinner, appetizer, entree, comfort food, vegetarian, soup, cheese, bread | no |
 | Cumin Seed Roasted Cauliflower with Y... | lunch, dinner, side dish, easy, healthy, vegetarian, gluten-free, low-carb, mediterranean, greens, cheese | yes |
 | Pear, Cranberry and Gingersnap Crumble | dessert, vegetarian, holiday, comfort food | yes |
 | Gingersnaps | dessert, snack, vegetarian, pantry, holiday | yes |
@@ -3879,6 +3912,7 @@
 | Classic Sangria | easy, vegetarian, dairy-free, pantry, holiday | yes |
 | Bowties with Sugar Snaps, Ricotta and... | lunch, dinner, easy, vegetarian, italian, pasta, cheese, greens | yes |
 | Espresso Granita with Whipped Cream [... | dessert, easy, vegetarian, italian, pantry | yes |
+| Pickled Vegetable Sandwich Slaw with ... | lunch, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, sandwich, greens, pantry, grill | yes |
 | Rhubarb Cream Cheese Hand Pies | dessert, snack, vegetarian, cheese, holiday, eastern european | yes |
 | Banana, Nutella and Salted Pistachio ... | dessert, snack, easy, vegetarian, pantry | yes |
 | Part 1: Make Chocolate and Vanilla Ic... | dessert, comfort food, holiday, pantry | yes |
@@ -4018,6 +4052,7 @@
 | Potato, Scallion and Kale Cakes | lunch, dinner, side dish, appetizer, easy, comfort food, vegetarian, egg, potato, greens | yes |
 | Salted Chocolate Chunk Cookies | dessert, snack, easy, comfort food, vegetarian, american, pantry | yes |
 | Fake Shack Burger | lunch, dinner, comfort food, american, beef, sandwich, cheese, potato, greens | yes |
+| Mushrooms and Greens with Toast | lunch, dinner, entree, easy, comfort food, vegetarian, bread, greens, mushroom, cheese | no |
 | Pasta Salad with Roasted Tomatoes | lunch, dinner, side dish, entree, easy, vegetarian, pasta, salad, cheese, mediterranean | yes |
 | Pink Lemonade | easy, vegan, gluten-free, dairy-free | yes |
 | Swirled Berry Yogurt Popsicles | dessert, snack, easy, healthy, vegetarian | yes |
@@ -4045,6 +4080,7 @@
 | Pecan Pie | dessert, comfort food, vegetarian, american, holiday | yes |
 | Feta Tapenade Tarte Soleil | snack, appetizer, easy, vegetarian, mediterranean, cheese, pantry | yes |
 | Cabbage and Sausage Casserole | dinner, entree, comfort food, pork, greens, eastern european | yes |
+| Chicken Chili | dinner, entree, comfort food, mexican, chicken, legumes, soup | no |
 | Leek, Ham and Cheese Egg Bake | lunch, dinner, comfort food, egg, cheese, holiday, entree | yes |
 | Spaghetti Pie with Pecorino and Black... | dinner, entree, comfort food, vegetarian, italian, pasta, greens, cheese | yes |
 | Swiss Chard Pancakes [Farçous] | lunch, dinner, side dish, easy, vegetarian, greens, pantry | yes |
@@ -4168,6 +4204,7 @@
 | Cozy Cabbage and Farro Soup | lunch, dinner, easy, comfort food, vegetarian, soup, greens, cheese, pantry | yes |
 | Crispy Rice and Egg Bowl with Ginger-... | lunch, dinner, easy, healthy, vegetarian, rice, egg, asian | yes |
 | Plush Coconut Cake | dessert, easy, comfort food, vegetarian, vegan, dairy-free, pantry | yes |
+| Bodega-Style Egg and Cheese Sandwich | breakfast, quick, easy, comfort food, vegetarian, american, sandwich, bread, egg, cheese | no |
 | Cauliflower and Tomato Masala with Pe... | dinner, entree, healthy, vegetarian, vegan, gluten-free, dairy-free, indian, rice, greens, legumes, pantry | yes |
 | Salted Peanut Tart | dessert, comfort food, vegetarian, pantry, holiday | yes |
 | Essential French Onion Soup | lunch, dinner, appetizer, entree, comfort food, french, beef, soup, bread, cheese | yes |
@@ -4249,6 +4286,7 @@
 | Chocolate Ice Cream Sandwiches | dessert, snack, comfort food, vegetarian, sandwich, pantry | yes |
 | Perfect, Forever Cornbread | side dish, comfort food, vegetarian, american, bread | yes |
 | Zucchini Butter Spaghetti | lunch, dinner, easy, comfort food, vegetarian, italian, pasta, cheese | yes |
+| Deviled Eggs | snack, appetizer, side dish, easy, vegetarian, low-carb, american, egg, holiday | no |
 | Baked Farro with Summer Vegetables | lunch, dinner, entree, healthy, comfort food, vegetarian, italian, cheese, legumes | yes |
 | Big Apple Crumb Cake | dessert, snack, vegetarian, american, pantry, holiday | yes |
 | Old-School Dinner Rolls | dinner, side dish, comfort food, vegetarian, american, bread, pantry, holiday | yes |
@@ -4269,6 +4307,7 @@
 | Simple Chicken Tortilla Soup | lunch, dinner, easy, comfort food, chicken, soup, mexican, legumes | yes |
 | Chicken Liver Pâté | appetizer, comfort food, chicken, pantry | yes |
 | Lemon Cream Meringues | dessert, easy, vegetarian, gluten-free, egg, pantry, holiday | yes |
+| Simplest Mushroom Pasta | dinner, easy, comfort food, vegetarian, italian, pasta, mushroom, cheese | yes |
 | Snacky Asparagus | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, greens | yes |
 | Double Chocolate Chip Muffins | breakfast, snack, easy, comfort food, vegetarian, pantry | yes |
 | Poolside Sesame Slaw | lunch, dinner, side dish, easy, healthy, vegetarian, dairy-free, asian, salad, greens, pantry, grill | yes |
@@ -4361,20 +4400,21 @@
 | Beef Stew Recipe | dinner, entree, easy, comfort food, american, beef, potato, soup | yes |
 | Easy Blondie Recipe | dessert, snack, easy, comfort food, vegetarian, american, pantry | yes |
 | Cheesy Ranch Spinach Dip Recipe | snack, appetizer, side dish, easy, comfort food, vegetarian, american, greens, cheese | yes |
-| Homemade Cherry Pie Recipe | dessert, comfort food, vegetarian, american, pantry, holiday | no |
+| Homemade Cherry Pie Recipe | dessert, comfort food, vegetarian, american, pantry, holiday | yes |
 | Classic Cheese Ball Recipe | snack, appetizer, easy, comfort food, american, cheese, holiday | yes |
 | Classic Martini Recipe | quick, easy, appetizer | yes |
 | Cosmopolitan Drink Recipe | easy, quick, pantry | yes |
 | Copy Cat Cracker Barrel Hashbrown Cas... | lunch, dinner, side dish, easy, comfort food, american, potato, cheese, pantry, holiday | yes |
-| Cranberry Trifle Recipe | dessert, vegetarian, holiday | no |
+| Cranberry Trifle Recipe | dessert, vegetarian, holiday | yes |
 | Easy Hush Puppies Recipe | snack, side dish, easy, comfort food, vegetarian, american, egg, pantry | yes |
 | Easy Quiche Recipe | breakfast, lunch, dinner, easy, comfort food, american, egg, cheese | yes |
 | Easy Sopapilla Cheesecake Recipe | dessert, easy, comfort food, vegetarian, american, cheese, pantry, holiday | yes |
 | Homemade Falafel Recipe | lunch, dinner, snack, appetizer, side dish, easy, healthy, vegetarian, vegan, mediterranean, legumes, pantry | yes |
+| Fruit & Nut Spinach Salad Recipe | lunch, dinner, side dish, quick, easy, healthy, vegetarian, gluten-free, low-carb, salad, greens, cheese | no |
 | Garlic Butter Portobello Mushroom Recipe | dinner, side dish, easy, vegetarian, low-carb, mushroom, cheese | yes |
 | Green Smoothie Recipe | breakfast, quick, easy, healthy, vegetarian, greens | yes |
 | Our Favorite Gumbo Recipe | dinner, entree, comfort food, american, chicken, pork, soup, rice | yes |
-| Lamb Gyro Recipe | lunch, dinner, easy, mediterranean, sandwich, bread, cheese | no |
+| Lamb Gyro Recipe | lunch, dinner, easy, mediterranean, sandwich, bread, cheese | yes |
 | Homemade Potato Gnocchi Recipe | lunch, dinner, side dish, comfort food, vegetarian, italian, potato | yes |
 | Homemade Lentil Chili Recipe | lunch, dinner, easy, healthy, comfort food, vegetarian, dairy-free, american, soup, legumes, pantry | yes |
 | Garlic Bacon Kale Recipe (How to Cook... | dinner, easy, healthy, low-carb, pork, greens, side dish | yes |
@@ -4387,10 +4427,10 @@
 | Crockpot Philly Cheesesteak Sandwiches | lunch, dinner, entree, easy, comfort food, american, beef, sandwich, bread, cheese | yes |
 | Crock Pot Chicken Enchiladas Recipe | dinner, easy, comfort food, mexican, chicken, cheese, pantry | yes |
 | The Best Chili Recipe | lunch, dinner, entree, comfort food, american, beef, soup, legumes, pantry | yes |
-| Easy Turkey Gravy | side dish, easy, holiday, pantry | no |
+| Easy Turkey Gravy | side dish, easy, holiday, pantry | yes |
 | Zucchini Orzo Recipe | lunch, dinner, easy, comfort food, italian, pasta, cheese, pantry | yes |
 | French Toast Recipe (with Ricotta + H... | breakfast, comfort food, vegetarian, american, french, bread, egg, cheese | yes |
-| Taco Dip Recipe | dinner, snack, appetizer, easy, comfort food, mexican, beef, cheese, greens | no |
+| Taco Dip Recipe | dinner, snack, appetizer, easy, comfort food, mexican, beef, cheese, greens | yes |
 | Vanilla Cake | dessert, easy, vegetarian, egg, pantry | yes |
 | Caramel Chocolate Moxie Cake | dessert, comfort food, holiday | yes |
 | Lego Cookies | dessert, snack, easy, vegetarian, pantry, holiday | yes |
@@ -4403,26 +4443,26 @@
 | Tropical Ambrosia Salad | dessert, snack, side dish, easy, vegetarian, salad, pantry, holiday | yes |
 | Neapolitan Marbled Cupcakes | dessert, easy, comfort food, vegetarian | yes |
 | Sour Cream Pumpkin Muffins with Coffe... | breakfast, dessert, snack, easy, comfort food, vegetarian, bread, holiday | yes |
-| State Fair Sampler Cake | dessert, comfort food, american, egg, pantry, holiday | no |
+| State Fair Sampler Cake | dessert, comfort food, american, egg, pantry, holiday | yes |
 | Chocolate-Glazed Coconut Flour Doughn... | dessert, snack, easy, comfort food, gluten-free, egg, pantry | yes |
 | Cola Candied Apples | dessert, snack, vegetarian, pantry, holiday | yes |
 | Monster Popcorn Balls | dessert, snack, easy, vegetarian, holiday, pantry | yes |
 | Pumpkin Biscuits | breakfast, snack, side dish, easy, comfort food, vegetarian, american, bread, pantry | yes |
-| Spirograph Sugar Cookies | dessert, snack, easy, comfort food, vegetarian, american, egg, pantry, holiday | no |
+| Spirograph Sugar Cookies | dessert, snack, easy, comfort food, vegetarian, american, egg, pantry, holiday | yes |
 | Spiced Pear Tart | dessert, easy, vegetarian, pantry | yes |
 | Tahini Chocolate Chip Cookies | dessert, snack, easy, comfort food, vegetarian, pantry | yes |
 | Strawberry-Banana Cupcakes | dessert, vegetarian | yes |
 | Creamy Orange Marbled Fudge (Creamsic... | dessert, snack, easy, vegetarian, pantry, holiday | yes |
 | Fruity Marshmallow Cheesecake | dessert, comfort food, vegetarian, cheese, holiday | yes |
 | White Rose Tea and Coconut Milk Panna... | dessert, vegan, dairy-free | yes |
-| Botanical Print Sugar Cookies | dessert, holiday, easy, pantry | no |
-| Dark Chocolate Coconut Fudge Brownies | dessert, snack, comfort food, vegetarian, pantry, holiday | no |
+| Botanical Print Sugar Cookies | dessert, holiday, easy, pantry | yes |
+| Dark Chocolate Coconut Fudge Brownies | dessert, snack, comfort food, vegetarian, pantry, holiday | yes |
 | Smoky Chocolate Cigars | dessert, vegetarian, holiday, pantry | yes |
 | Quick Berry Tiramisu | dessert, easy, vegetarian, italian, cheese | yes |
 | Pineapple Upside-Down Coconut-Rum Cor... | dessert, comfort food, vegetarian, holiday | yes |
 | No-Bake Cookies and Cream Cheesecake | dessert, easy, vegetarian, cheese, pantry | yes |
 | Apple-Pecan Granola | breakfast, snack, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
-| Wicked Espresso Layer Cake | dessert, comfort food, pantry, holiday | no |
+| Wicked Espresso Layer Cake | dessert, comfort food, pantry, holiday | yes |
 | Vanilla Sheet Cake with Zagnut Filling | dessert, comfort food, vegetarian, american, egg, pantry | yes |
 | Homemade Lemon Extract | easy, pantry | yes |
 | Pumpkin Graham Truffles | dessert, snack, easy, vegetarian, holiday | yes |
@@ -4431,17 +4471,17 @@
 | Spicy Rosemary Roasted Party Nuts | snack, appetizer, easy, vegetarian, vegan, gluten-free, dairy-free, pantry, holiday | yes |
 | Chocolate-Tahini Fudge | dessert, easy, vegetarian, pantry, holiday | yes |
 | Eggs Benedict Bake | breakfast, lunch, dinner, easy, comfort food, american, egg, bread, pork, holiday | yes |
-| Gourmet Smoked Tea Marshmallows | dessert, snack, vegetarian, pantry, holiday | no |
+| Gourmet Smoked Tea Marshmallows | dessert, snack, vegetarian, pantry, holiday | yes |
 | Mediterranean Cheese Ball Bites | snack, appetizer, easy, vegetarian, gluten-free, low-carb, mediterranean, cheese, holiday | yes |
 | Mocha Latte Cheesecake Bars with Ging... | dessert, easy, comfort food, vegetarian, cheese, pantry | yes |
 | Dark Chocolate Avocado Truffles | dessert, snack, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
-| Classic French Mont Blanc | dessert, vegetarian, french, egg, holiday | no |
+| Classic French Mont Blanc | dessert, vegetarian, french, egg, holiday | yes |
 | Frosted Circus Animal Layer Cake | dessert, american, pantry, holiday | yes |
 | Grits Quiche in Phyllo Crust with Sau... | breakfast, lunch, dinner, comfort food, american, pork, egg, greens, cheese | yes |
 | Savory Ham and Swiss Dutch Baby | breakfast, lunch, dinner, easy, comfort food, american, egg, greens, cheese | yes |
 | Ruby Chocolate Cheesecake | dessert, vegetarian, cheese, holiday | yes |
 | Carrot Cake Swirl Cheesecake | dessert, vegetarian, comfort food, cheese, holiday, pantry | yes |
-| Limoncello-Almond Cake Roll | dessert, italian, holiday | no |
+| Limoncello-Almond Cake Roll | dessert, italian, holiday | yes |
 | Easy Patriotic Petit Fours | dessert, easy, american, holiday, pantry | yes |
 | Zucchini-Olive Oil Muffins | breakfast, dessert, snack, easy, vegetarian, bread, pantry | yes |
 | Hot Dog Snack Cakes | snack, dessert, american, egg, pantry, holiday | yes |
@@ -4453,90 +4493,91 @@
 | Gorgonzola Walnut Tartlets | snack, appetizer, easy, vegetarian, cheese, holiday | yes |
 | Peppermint Snowball Cookies | dessert, snack, easy, comfort food, vegetarian, pantry, holiday | yes |
 | Swirled Swedish Saffron Bread with Re... | bread, vegetarian, comfort food, holiday, eastern european, dessert, snack, breakfast | yes |
-| Strawberry-Chocolate Chip Love Spell ... | dessert, comfort food, holiday | no |
+| Strawberry-Chocolate Chip Love Spell ... | dessert, comfort food, holiday | yes |
 | Whiskey Butter Toffee | dessert, snack, easy, comfort food, vegetarian, pantry, holiday | yes |
-| Mini Apple Pies | dessert, snack, comfort food, vegetarian, american, holiday | no |
+| Mini Apple Pies | dessert, snack, comfort food, vegetarian, american, holiday | yes |
 | Almond Genoise Mini Cakes | dessert, vegetarian, egg, holiday | yes |
-| Poached Pear Vol au Vents | dessert, vegetarian, egg, pantry, french | no |
+| Poached Pear Vol au Vents | dessert, vegetarian, egg, pantry, french | yes |
 | Chocolate Dipped Toffee Graham Crackers | dessert, snack, easy, vegetarian, pantry, holiday | yes |
 | Festive Black and White Cookies | dessert, snack, vegetarian, american, holiday, pantry | yes |
 | Toasted Hazelnut Fudge | dessert, easy, vegetarian, pantry, holiday | yes |
-| Bread Slice Sugar Cookies | dessert, snack, comfort food, vegetarian, bread, egg, holiday | no |
+| Bread Slice Sugar Cookies | dessert, snack, comfort food, vegetarian, bread, egg, holiday | yes |
 | Dark Chocolate Sumac Brownies | dessert, snack, comfort food, vegetarian, pantry | yes |
-| Chocolate-Dipped Orange Madeleines | dessert, snack, easy, vegetarian, pantry, french | no |
-| Peanut Butter Cup Hot Cocoa Bombs | dessert, snack, comfort food, vegetarian, pantry, holiday | no |
-| Abura Soba (Soupless Ramen) | lunch, dinner, easy, comfort food, asian, japanese, pork, pasta, egg, pantry | no |
-| Anmitsu (Japanese Kanten Jelly Desser... | dessert, snack, vegetarian, japanese, pantry | no |
+| Chocolate-Dipped Orange Madeleines | dessert, snack, easy, vegetarian, pantry, french | yes |
+| Peanut Butter Cup Hot Cocoa Bombs | dessert, snack, comfort food, vegetarian, pantry, holiday | yes |
+| Abura Soba (Soupless Ramen) | lunch, dinner, easy, comfort food, asian, japanese, pork, pasta, egg, pantry | yes |
+| Anmitsu (Japanese Kanten Jelly Desser... | dessert, snack, vegetarian, japanese, pantry | yes |
 | Authentic Yakisoba (Japanese Stir-fri... | lunch, dinner, easy, comfort food, asian, japanese, pork | yes |
 | Hayashi Rice (Japanese Hashed Beef wi... | dinner, entree, comfort food, asian, japanese, beef, rice, mushroom | yes |
-| Beef Udon Noodle Soup (Authentic Niku... | lunch, dinner, entree, comfort food, asian, japanese, beef, soup | no |
-| Black Sesame Ice Cream | dessert, vegetarian, asian, japanese | no |
+| Beef Udon Noodle Soup (Authentic Niku... | lunch, dinner, entree, comfort food, asian, japanese, beef, soup | yes |
+| Black Sesame Ice Cream | dessert, vegetarian, asian, japanese | yes |
 | Buta Kimuchi Itame (Pork and Kimchi S... | lunch, dinner, easy, comfort food, asian, japanese, pork, rice, pantry | yes |
-| Japanese Basque Style Cheesecake (Law... | dessert, snack, vegetarian, japanese, cheese, egg | no |
+| Japanese Basque Style Cheesecake (Law... | dessert, snack, vegetarian, japanese, cheese, egg | yes |
 | Japanese Castella Cake (Kasutera) | dessert, snack, vegetarian, japanese, egg, pantry | yes |
-| Chaliapin Steak Don (Food Wars! Shoku... | dinner, entree, comfort food, asian, japanese, beef, rice | no |
-| Chanko Nabe (Sumo Stew) | dinner, easy, healthy, comfort food, asian, japanese, chicken, soup, greens, mushroom, tofu | no |
-| Pork Chashu Donburi (Rice Bowl) | lunch, dinner, entree, comfort food, asian, japanese, pork, rice, egg | no |
+| Chaliapin Steak Don (Food Wars! Shoku... | dinner, entree, comfort food, asian, japanese, beef, rice | yes |
+| Chanko Nabe (Sumo Stew) | dinner, easy, healthy, comfort food, asian, japanese, chicken, soup, greens, mushroom, tofu | yes |
+| Pork Chashu Donburi (Rice Bowl) | lunch, dinner, entree, comfort food, asian, japanese, pork, rice, egg | yes |
 | Sanshoku Soboro Donburi (Tricolor Chi... | lunch, dinner, easy, comfort food, asian, japanese, chicken, rice, egg, greens | yes |
-| Authentic Chicken Nanban (with Japane... | dinner, entree, asian, japanese, chicken | no |
+| Authentic Chicken Nanban (with Japane... | dinner, entree, asian, japanese, chicken | yes |
 | Chicken Soboro Onigiri (Japanese Grou... | lunch, snack, easy, asian, japanese, chicken, rice | yes |
 | Garlic Teriyaki Chicken Donburi (Rice... | dinner, entree, easy, comfort food, asian, japanese, chicken, rice, egg | yes |
 | Chinjao Rosu (Japanese Style Pepper S... | lunch, dinner, entree, easy, asian, japanese, pork, rice | yes |
-| Chirashizushi (Scattered Sushi Bowl) | lunch, dinner, easy, healthy, asian, japanese, seafood, fish, rice, egg, mushroom, tofu | no |
+| Chirashizushi (Scattered Sushi Bowl) | lunch, dinner, easy, healthy, asian, japanese, seafood, fish, rice, egg, mushroom, tofu | yes |
 | Japanese Chicken Katsu with Ultimate ... | lunch, dinner, entree, comfort food, asian, japanese, chicken | yes |
 | Japanese Candied Sweet Potato (Daigak... | dessert, snack, easy, vegetarian, vegan, gluten-free, dairy-free, asian, japanese, potato, pantry | yes |
-| Dashimaki Tamago (Japanese Rolled Ome... | breakfast, lunch, snack, appetizer, side dish, easy, vegetarian, dairy-free, asian, japanese, egg | no |
-| Easy Dorayaki (Japanese Red Bean Panc... | dessert, snack, easy, vegetarian, japanese, egg, pantry | no |
+| Dashimaki Tamago (Japanese Rolled Ome... | breakfast, lunch, snack, appetizer, side dish, easy, vegetarian, dairy-free, asian, japanese, egg | yes |
+| Easy Dorayaki (Japanese Red Bean Panc... | dessert, snack, easy, vegetarian, japanese, egg, pantry | yes |
 | Easy Homemade Yakisoba Sauce | easy, quick, side dish, asian, japanese, pantry | yes |
-| Easy Tofu Mitarashi Dango (Japanese R... | dessert, snack, easy, vegetarian, vegan, gluten-free, dairy-free, asian, japanese, tofu, pantry | no |
-| Ebi Furai (Japanese Deep-fried Shrimp... | dinner, entree, easy, comfort food, japanese, seafood, egg, pantry | no |
+| Easy Tofu Mitarashi Dango (Japanese R... | dessert, snack, easy, vegetarian, vegan, gluten-free, dairy-free, asian, japanese, tofu, pantry | yes |
+| Ebi Furai (Japanese Deep-fried Shrimp... | dinner, entree, easy, comfort food, japanese, seafood, egg, pantry | yes |
 | Ebi Mayo (Fried Shrimp in Mayonnaise ... | dinner, appetizer, easy, comfort food, asian, japanese, seafood | yes |
 | Garlic Steak Fried Rice (Teppanyaki R... | dinner, entree, comfort food, asian, japanese, beef, rice | yes |
 | Authentic Japanese Gyoza Dipping Sauce | side dish, quick, easy, vegetarian, vegan, dairy-free, low-carb, asian, japanese, pantry | yes |
 | Homemade Hojicha Ice Cream (Roasted G... | dessert, japanese, egg | yes |
 | Imo Mochi (Hokkaido's Potato Mochi wi... | snack, appetizer, side dish, easy, comfort food, vegetarian, asian, japanese, potato, cheese | yes |
 | Chahan (Japanese-Style Fried Rice) | lunch, dinner, easy, comfort food, asian, japanese, pork, fish, rice, egg | yes |
-| Japanese Coffee Jelly | dessert, snack, easy, vegetarian, vegan, dairy-free, japanese, pantry | no |
+| Japanese Coffee Jelly | dessert, snack, easy, vegetarian, vegan, dairy-free, japanese, pantry | yes |
 | Japanese Cream Stew (White Stew with ... | dinner, entree, comfort food, japanese, chicken, potato, mushroom, cheese | yes |
-| Katsudon (Japanese Pork Cutlet Bowl) | lunch, dinner, entree, comfort food, pork, rice, egg, japanese, asian | no |
-| Korokke (Japanese Meat and Potato Cro... | dinner, entree, comfort food, japanese, beef, pork, potato | no |
+| Katsudon (Japanese Pork Cutlet Bowl) | lunch, dinner, entree, comfort food, pork, rice, egg, japanese, asian | yes |
+| Korokke (Japanese Meat and Potato Cro... | dinner, entree, comfort food, japanese, beef, pork, potato | yes |
 | Easy Oyakodon (Japanese Chicken and E... | lunch, dinner, easy, comfort food, asian, japanese, chicken, rice, egg | yes |
 | Sakana no Nitsuke (Japanese simmered ... | dinner, entree, seafood, fish, asian, japanese, greens | yes |
 | Wafu Butter Shoyu Pasta (Japanese Sty... | lunch, dinner, easy, comfort food, asian, japanese, pasta, mushroom, pantry | yes |
-| Japanese Ume Plum Syrup | japanese, pantry | no |
+| Japanese Ume Plum Syrup | japanese, pantry | yes |
 | Japanese Hamburger Steak with Egg and... | dinner, comfort food, japanese, beef, pork, rice, egg | yes |
-| Kabocha Korokke (Japanese Pumpkin Cro... | lunch, dinner, snack, appetizer, side dish, comfort food, vegetarian, japanese, potato, cheese, pantry | no |
+| Kabocha Korokke (Japanese Pumpkin Cro... | lunch, dinner, snack, appetizer, side dish, comfort food, vegetarian, japanese, potato, cheese, pantry | yes |
 | Kaisen Donburi (Seafood Rice Bowl) | lunch, dinner, easy, healthy, asian, japanese, seafood, fish, rice | yes |
-| Simple Udon Noodle Soup (Kake Udon) | lunch, dinner, easy, comfort food, vegetarian, vegan, asian, japanese, soup, pasta, pantry | no |
-| Kimchi Nabe (Kimchi Hotpot) | dinner, comfort food, asian, japanese, pork, soup, greens, mushroom, tofu | no |
+| Simple Udon Noodle Soup (Kake Udon) | lunch, dinner, easy, comfort food, vegetarian, vegan, asian, japanese, soup, pasta, pantry | yes |
+| Kimchi Nabe (Kimchi Hotpot) | dinner, comfort food, asian, japanese, pork, soup, greens, mushroom, tofu | yes |
 | Kinpira Gobo (Japanese Braised Burdoc... | side dish, easy, healthy, vegetarian, vegan, dairy-free, asian, japanese, pantry | yes |
-| Authentic Kitsune Udon Noodle Soup | lunch, dinner, comfort food, vegetarian, asian, japanese, soup, tofu | no |
+| Authentic Kitsune Udon Noodle Soup | lunch, dinner, comfort food, vegetarian, asian, japanese, soup, tofu | yes |
 | Kelp-Cured Sea Bream Sashimi (Tai no ... | dinner, appetizer, healthy, japanese, seafood, fish | yes |
-| Kombu Onigiri (Kelp "Tsukudani" Rice ... | lunch, snack, side dish, easy, vegetarian, asian, japanese, rice, pantry | no |
+| Kombu Onigiri (Kelp "Tsukudani" Rice ... | lunch, snack, side dish, easy, vegetarian, asian, japanese, rice, pantry | yes |
 | Homemade Koshian (Smooth Sweet Red Be... | dessert, snack, vegetarian, vegan, gluten-free, dairy-free, asian, japanese, legumes, pantry | yes |
 | Devil's Onigiri Copycat Recipe (Lawso... | snack, quick, easy, asian, japanese, rice, pantry | yes |
-| Matcha Green Tea Ice Cream | dessert, vegetarian, japanese | no |
-| Matcha Roll Cake (Green Tea Swiss Roll) | dessert, snack, easy, vegetarian, japanese, egg | no |
+| Matcha Green Tea Ice Cream | dessert, vegetarian, japanese | yes |
+| Matcha Roll Cake (Green Tea Swiss Roll) | dessert, snack, easy, vegetarian, japanese, egg | yes |
 | Easy Menma (Seasoned Bamboo Shoots) | snack, appetizer, side dish, easy, asian, japanese, pantry | yes |
 | Mentaiko Pasta (Spicy Cod Roe Spaghet... | lunch, dinner, easy, comfort food, japanese, seafood, fish, pasta, cheese, pantry | yes |
 | My Favorite Awase Dashi with Niboshi,... | japanese, soup, pantry, easy | yes |
 | Nagasaki Champon Ramen Noodles (Ringe... | lunch, dinner, easy, comfort food, asian, japanese, pork, seafood, soup | yes |
 | Authentic Nikujaga (Japanese Meat and... | dinner, entree, comfort food, asian, japanese, pork, potato | yes |
-| Nikuman (Japanese Steamed Pork Buns) | dinner, entree, comfort food, asian, japanese, pork, mushroom, bread | no |
+| Nikuman (Japanese Steamed Pork Buns) | dinner, entree, comfort food, asian, japanese, pork, mushroom, bread | yes |
 | Okaka Onigiri (Seasoned Bonito Flake ... | snack, appetizer, quick, easy, asian, japanese, rice, fish, pantry | yes |
-| Authentic Osaka Style Okonomiyaki (Tr... | lunch, dinner, entree, comfort food, asian, japanese, pork, egg, greens | no |
-| Ootoya's Black Vinegar Sweet and Sour... | dinner, entree, asian, japanese, chicken | no |
-| Pan Fried Japanese Teriyaki Salmon | dinner, easy, healthy, asian, japanese, seafood, fish, rice, greens | no |
-| How to Make Perfect Sushi Rice | easy, vegetarian, vegan, gluten-free, dairy-free, asian, japanese, rice, pantry | no |
+| Authentic Osaka Style Okonomiyaki (Tr... | lunch, dinner, entree, comfort food, asian, japanese, pork, egg, greens | yes |
+| Ootoya's Black Vinegar Sweet and Sour... | dinner, entree, asian, japanese, chicken | yes |
+| Pan Fried Japanese Teriyaki Salmon | dinner, easy, healthy, asian, japanese, seafood, fish, rice, greens | yes |
+| How to Make Perfect Sushi Rice | easy, vegetarian, vegan, gluten-free, dairy-free, asian, japanese, rice, pantry | yes |
 | Authentic Tonkatsu (Japanese Pork Cut... | dinner, entree, comfort food, asian, japanese, pork, rice | yes |
-| Japanese Chashu Pork (Braised Pork Be... | dinner, entree, comfort food, asian, japanese, pork | no |
+| Japanese Chashu Pork (Braised Pork Be... | dinner, entree, comfort food, asian, japanese, pork | yes |
 | Ajitama Egg (Nitamago/Ajitsuke Tamago) | snack, appetizer, side dish, easy, vegetarian, asian, japanese, egg | yes |
 | How to Make Ramen Noodle Using Spaghe... | quick, easy, vegetarian, vegan, asian, japanese, pasta, soup, pantry | yes |
-| Karami Chicken (Saizeriya Chicken Win... | snack, appetizer, side dish, easy, comfort food, asian, chicken | no |
+| Karami Chicken (Saizeriya Chicken Win... | snack, appetizer, side dish, easy, comfort food, asian, chicken | yes |
 | Salmon Ochazuke (Japanese Tea on Rice) | lunch, dinner, easy, healthy, asian, japanese, seafood, fish, rice, grill | yes |
 | Salmon Onigiri (Japanese Salmon Rice ... | lunch, dinner, snack, easy, asian, japanese, seafood, fish, rice | yes |
 | Simple Shio Onigiri (Salted Japanese ... | snack, easy, vegetarian, vegan, gluten-free, dairy-free, asian, japanese, rice, pantry | yes |
-| Seafood Doria (Japanese Rice Gratin) | dinner, entree, comfort food, seafood, mushroom, cheese, japanese, asian, rice | no |
+| Easy Sawaniwan (Japanese Vegetable an... | lunch, dinner, easy, healthy, asian, japanese, pork, soup, mushroom | yes |
+| Seafood Doria (Japanese Rice Gratin) | dinner, entree, comfort food, seafood, mushroom, cheese, japanese, asian, rice | yes |
 | Simmered Miso Mackerel (Saba no Misoni) | dinner, entree, asian, japanese, seafood, fish | yes |
 | Japanese Simmered Pumpkin (Kabocha no... | dinner, side dish, easy, healthy, vegetarian, vegan, japanese, pantry | yes |
 | Japanese Spaghetti Meat Sauce | dinner, easy, comfort food, japanese, pork, pasta | yes |
@@ -4544,123 +4585,124 @@
 | Spinach Ohitashi (Japanese Spinach Sa... | side dish, healthy, vegetarian, dairy-free, asian, japanese, salad, greens, pantry | yes |
 | Summer Soba with Miso Meat Sauce | lunch, dinner, entree, easy, asian, japanese, pork, pasta | yes |
 | Taiyaki (Japanese Fish Shaped Waffle) | dessert, snack, easy, vegetarian, japanese, egg, pantry | yes |
-| Takikomi Gohan (Japanese Seasoned Rice) | lunch, dinner, entree, comfort food, asian, japanese, chicken, rice, mushroom, tofu | no |
+| Takikomi Gohan (Japanese Seasoned Rice) | lunch, dinner, entree, comfort food, asian, japanese, chicken, rice, mushroom, tofu | yes |
 | Authentic Takoyaki (Japanese Fried Oc... | snack, appetizer, asian, japanese, seafood | yes |
-| Easy Tantanmen (Tan Tan Ramen) | lunch, dinner, easy, comfort food, asian, japanese, pork, soup, greens, pantry | no |
-| Tenshinhan (Crab Meat Omelette on Rice) | lunch, dinner, easy, comfort food, asian, japanese, egg, rice, mushroom | no |
+| Easy Tantanmen (Tan Tan Ramen) | lunch, dinner, easy, comfort food, asian, japanese, pork, soup, greens, pantry | yes |
+| Tenshinhan (Crab Meat Omelette on Rice) | lunch, dinner, easy, comfort food, asian, japanese, egg, rice, mushroom | yes |
 | Tempura Dipping Sauce (Tentsuyu) | quick, easy, vegetarian, vegan, asian, japanese, pantry | yes |
 | Teriyaki Meatballs (Niku Dango) | dinner, entree, easy, comfort food, asian, japanese, pork | yes |
 | Tofu Hanami Dango (Cherry Blossom Dum... | dessert, snack, easy, vegetarian, vegan, gluten-free, dairy-free, asian, japanese, tofu | yes |
 | Butadon (Hokkaido Style Pork Rice Bowl) | lunch, dinner, entree, comfort food, asian, japanese, pork, rice | yes |
 | Tonjiru (Butajiru) Japanese Pork Miso... | dinner, entree, easy, comfort food, asian, japanese, pork, soup, mushroom, tofu | yes |
-| Tonpeiyaki (Pork Belly and Cabbage Om... | lunch, dinner, easy, comfort food, asian, japanese, pork, egg, greens | no |
-| Unaju (Japanese Grilled Eel on Rice) | lunch, dinner, entree, asian, japanese, seafood, fish, rice, grill | no |
+| Tonpeiyaki (Pork Belly and Cabbage Om... | lunch, dinner, easy, comfort food, asian, japanese, pork, egg, greens | yes |
+| Unaju (Japanese Grilled Eel on Rice) | lunch, dinner, entree, asian, japanese, seafood, fish, rice, grill | yes |
 | Plant-Based Mabo Nasu (Japanese Mapo ... | dinner, entree, easy, healthy, comfort food, vegetarian, vegan, asian, japanese, rice, greens, pantry | yes |
 | Wasabi Cucumber Pickles | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, japanese, greens | yes |
 | Yaki Onigiri (Japanese Grilled Rice B... | snack, side dish, easy, vegetarian, asian, japanese, rice, pantry, grill | yes |
 | Yudofu (Hot Tofu) with Spicy Sesame S... | lunch, dinner, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, low-carb, asian, japanese, tofu, pantry, soup | yes |
 | Zaru Soba (Cold Buckwheat Noodles wit... | lunch, dinner, easy, vegetarian, vegan, dairy-free, asian, japanese, mushroom, pantry | yes |
 | Zaru Udon (Cold Udon with Homemade Di... | lunch, dinner, easy, vegetarian, dairy-free, asian, japanese, pasta, pantry | yes |
-| 5 Minute Chocolate Oreo Pudding | dessert, easy, comfort food, vegetarian, pantry, quick | no |
+| 5 Minute Chocolate Oreo Pudding | dessert, easy, comfort food, vegetarian, pantry, quick | yes |
 | Air Fryer Corn Recipe | snack, appetizer, side dish, easy, vegetarian, gluten-free, american, cheese, grill | yes |
 | Air Fryer Egg Bites | breakfast, snack, appetizer, quick, easy, low-carb, american, egg, cheese | yes |
-| Almond Chicken Recipe | lunch, dinner, easy, asian, chicken, mushroom | no |
-| Apple Pie Dream Dessert | dessert, comfort food, vegetarian, cheese, pantry | no |
+| Almond Chicken Recipe | lunch, dinner, easy, asian, chicken, mushroom | yes |
+| Apple Pie Dream Dessert | dessert, comfort food, vegetarian, cheese, pantry | yes |
 | Baileys S'mores Milkshake | dessert, easy, comfort food, vegetarian, pantry | yes |
-| Baked Raspberry Cheesecake | dessert, comfort food, vegetarian, cheese, holiday | no |
+| Baked Raspberry Cheesecake | dessert, comfort food, vegetarian, cheese, holiday | yes |
 | Balsamic Pork Loin Roast | dinner, entree, pork | yes |
 | Pumpkin Cake | dessert, comfort food, vegetarian, american, cheese, pantry, holiday | yes |
-| BLT Potato Salad | lunch, dinner, side dish, easy, comfort food, american, potato, greens, salad | no |
+| BLT Potato Salad | lunch, dinner, side dish, easy, comfort food, american, potato, greens, salad | yes |
 | Boiled Cabbage Recipe | side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, greens | yes |
 | Bread and Butter Pickle | snack, side dish, easy, vegetarian, gluten-free, pantry | yes |
 | Homemade Buffalo Sauce | appetizer, side dish, quick, easy, vegetarian, gluten-free, dairy-free, pantry, american | yes |
 | Cabbage Pancakes | lunch, dinner, side dish, easy, vegetarian, egg, greens, pantry, eastern european | yes |
-| Carrot Cake Roll | dessert, easy, vegetarian, comfort food, holiday, cheese | no |
+| Carrot Cake Roll | dessert, easy, vegetarian, comfort food, holiday, cheese | yes |
 | Carrot Souffle | dessert, side dish, easy, comfort food, vegetarian, american, egg, pantry, holiday | yes |
 | Three Cheese Quesadilla | lunch, dinner, snack, appetizer, easy, comfort food, vegetarian, mexican, cheese, bread | yes |
-| Cheesecake Factory Chocolate Blackout... | dessert, comfort food, pantry | no |
+| Cheesecake Factory Chocolate Blackout... | dessert, comfort food, pantry | yes |
 | Cheesy Cabbage Gratin | dinner, side dish, easy, comfort food, vegetarian, low-carb, greens, cheese | yes |
 | Easy Chicken a la King | dinner, entree, easy, comfort food, american, chicken, rice, mushroom | yes |
-| Creamy Chicken Divan Casserole | dinner, entree, easy, comfort food, american, chicken, cheese, pantry | no |
+| Creamy Chicken Divan Casserole | dinner, entree, easy, comfort food, american, chicken, cheese, pantry | yes |
 | Classic Chicken Salad | lunch, easy, healthy, american, chicken, salad | yes |
 | Chicken Stew Recipe | dinner, entree, comfort food, chicken, potato, soup | yes |
 | Chocolate Pound Cake | dessert, comfort food, vegetarian, pantry, holiday | yes |
 | Cinnamon Fried Pineapple | dessert, snack, side dish, easy, vegetarian, gluten-free | yes |
 | Easy Classic Potato Salad | lunch, dinner, snack, appetizer, side dish, easy, comfort food, vegetarian, american, salad, egg, potato, pantry, holiday | yes |
 | Best Cream of Mushroom Soup Recipe | lunch, dinner, side dish, entree, comfort food, vegetarian, italian, soup, mushroom | yes |
-| Best Creamed Corn Recipe | side dish, easy, comfort food, vegetarian, cheese, pantry | no |
-| Creamy Corn Chicken | dinner, entree, comfort food, chicken, greens | no |
+| Best Creamed Corn Recipe | side dish, easy, comfort food, vegetarian, cheese, pantry | yes |
+| Creamy Corn Chicken | dinner, entree, comfort food, chicken, greens | yes |
 | Creamy Garlic Pork Chops | dinner, entree, easy, comfort food, pork, mushroom, cheese, greens | yes |
 | Crispy Onion Rings | snack, appetizer, side dish, easy, comfort food, vegetarian, american, pantry | yes |
 | Easy Cube Steak Recipe | dinner, easy, comfort food, american, beef, potato, pantry | yes |
-| Southern Dirty Rice | lunch, dinner, entree, comfort food, american, beef, rice | no |
+| Southern Dirty Rice | lunch, dinner, entree, comfort food, american, beef, rice | yes |
 | Stuffed Easter Lamb Leg | dinner, entree, holiday | yes |
-| Easter Paska Bread | dessert, vegetarian, eastern european, bread, egg, pantry, holiday | no |
+| Easter Paska Bread | dessert, vegetarian, eastern european, bread, egg, pantry, holiday | yes |
 | How to Boil Chicken | dinner, entree, easy, healthy, comfort food, chicken, soup, sandwich, salad | yes |
 | Chili Colorado | dinner, comfort food, mexican, beef, soup, pantry | yes |
 | Grilled Pork Chops Recipe | dinner, entree, pork, grill | yes |
 | Orange Julius Recipe Copycat | quick, easy, vegetarian, american, pantry | yes |
-| Easy Yeast Bread | easy, vegetarian, vegan, dairy-free, bread, pantry | no |
+| Easy Yeast Bread | easy, vegetarian, vegan, dairy-free, bread, pantry | yes |
 | Zucchini Bread Recipe | breakfast, snack, easy, comfort food, vegetarian, american, bread, pantry | yes |
 | French Crepes Recipe | breakfast, dessert, easy, vegetarian, french, egg, pantry | yes |
 | Gingerbread Cheesecake | dessert, comfort food, vegetarian, cheese, holiday | yes |
 | Golden Syrup Recipe | easy, vegetarian, vegan, gluten-free, dairy-free, pantry | yes |
-| Grasshopper Pie | dessert, easy, comfort food, vegetarian, american, pantry, holiday | no |
+| Grasshopper Pie | dessert, easy, comfort food, vegetarian, american, pantry, holiday | yes |
 | Grilled Eggplant with Lemon Aioli | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, gluten-free, dairy-free, low-carb, mediterranean, greens, grill | yes |
 | Guinness French Onion Soup | lunch, dinner, appetizer, side dish, entree, comfort food, french, soup, bread, cheese | yes |
 | Hawaiian Pineapple Pork Loin | dinner, entree, pork, pantry | yes |
-| Homemade Lox Recipe | lunch, dinner, appetizer, entree, easy, healthy, seafood, fish, sandwich | no |
+| Homemade Lox Recipe | lunch, dinner, appetizer, entree, easy, healthy, seafood, fish, sandwich | yes |
 | Homemade Marinara Sauce | lunch, dinner, side dish, easy, vegetarian, vegan, gluten-free, dairy-free, italian, pantry | yes |
-| Homemade Omelette with Ham and Veggies | breakfast, lunch, dinner, easy, egg, mushroom, cheese, greens | no |
+| Homemade Omelette with Ham and Veggies | breakfast, lunch, dinner, easy, egg, mushroom, cheese, greens | yes |
 | Easy Homemade Salsa Recipe | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mexican, greens | yes |
 | Homemade Sweet and Sour Sauce | side dish, easy, vegetarian, vegan, dairy-free, asian, pantry | yes |
 | Turkey Soup Recipe | lunch, dinner, easy, comfort food, american, pasta, soup | yes |
-| Best Hot Cross Buns | breakfast, dessert, comfort food, vegetarian, bread, egg, pantry, holiday | no |
+| Best Hot Cross Buns | breakfast, dessert, comfort food, vegetarian, bread, egg, pantry, holiday | yes |
 | Instant Pot Chicken Breast | lunch, dinner, entree, quick, easy, healthy, chicken | yes |
-| Instant Pot Cinnamon Apple Pork Chops | dinner, entree, pork | no |
+| Instant Pot Cinnamon Apple Pork Chops | dinner, entree, pork | yes |
 | Instant Pot Cornbread | side dish, comfort food, vegetarian, american, bread | yes |
 | Instant Pot Feta Pasta Recipe | lunch, dinner, easy, comfort food, vegetarian, italian, pasta, cheese, pantry | yes |
 | Instant Pot Hawaiian Chicken | dinner, easy, chicken, rice, asian, entree, quick | yes |
 | Instant Pot Stick of Butter Rice | side dish, easy, comfort food, rice, pantry | yes |
-| Instant Pot Stuffed Shells | dinner, easy, comfort food, vegetarian, italian, pasta, cheese | no |
-| Irish Apple Cake | dessert, comfort food, vegetarian, pantry | no |
+| Instant Pot Stuffed Shells | dinner, easy, comfort food, vegetarian, italian, pasta, cheese | yes |
+| Irish Apple Cake | dessert, comfort food, vegetarian, pantry | yes |
 | Vodka Jello Shots | dessert, easy, quick, appetizer, pantry | yes |
 | Air Fryer Pork Tenderloin | dinner, entree, easy, pork, potato | yes |
-| Kiwi Margarita Recipe | pantry | no |
-| Lemon Blueberry Cake Recipe | dessert, easy, vegetarian, american, cheese, pantry, holiday | no |
+| Kiwi Margarita Recipe | pantry | yes |
+| Lemon Blueberry Cake Recipe | dessert, easy, vegetarian, american, cheese, pantry, holiday | yes |
 | Lemon Couscous | lunch, dinner, side dish, quick, easy, healthy, vegetarian, vegan, dairy-free, mediterranean, pantry | yes |
 | Maple Syrup Salmon | dinner, easy, healthy, seafood, fish | yes |
-| Meatball Stuffed Cabbage | dinner, entree, comfort food, beef, rice, salad, eastern european | no |
+| Meatball Stuffed Cabbage | dinner, entree, comfort food, beef, rice, salad, eastern european | yes |
+| Mexican Beef Stew Recipe | dinner, entree, comfort food, mexican, beef, soup, potato, mushroom | no |
 | No-Churn Cherry Ice Cream | dessert, easy, vegetarian, gluten-free | yes |
 | No-Churn Pineapple Sorbet | dessert, snack, quick, easy, healthy, vegan, gluten-free, dairy-free | yes |
 | One Pot Goulash | dinner, easy, comfort food, beef, pasta, cheese, pantry, entree, quick, american, eastern european | yes |
 | Orange Jelly Candy - 4 Ingredients! | dessert, snack, easy, vegetarian, vegan, gluten-free, dairy-free | yes |
-| Oreo Mint Cheesecake Bars | dessert, easy, vegetarian, comfort food, cheese, pantry, holiday | no |
+| Oreo Mint Cheesecake Bars | dessert, easy, vegetarian, comfort food, cheese, pantry, holiday | yes |
 | Peach Mousse Recipe | dessert, easy, vegetarian, pantry | yes |
-| Pickled Radishes Recipe | snack, appetizer, side dish, quick, easy, vegetarian, vegan, gluten-free, dairy-free, low-carb, thai, pantry | no |
+| Pickled Radishes Recipe | snack, appetizer, side dish, quick, easy, vegetarian, vegan, gluten-free, dairy-free, low-carb, thai, pantry | yes |
 | Pickled Red Cabbage | side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, pantry, greens | yes |
 | Pineapple Barbecue Chicken | dinner, entree, easy, chicken, american, pantry | yes |
 | Pineapple Cucumber Salad | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, asian, salad, greens | yes |
 | Pineapple Pie | dessert, easy, vegetarian, pantry | yes |
 | Pineapple Teriyaki Chicken | dinner, entree, easy, healthy, asian, thai, chicken, rice | yes |
 | Roasted Cabbage Recipe | dinner, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, greens | yes |
-| Shamrock Shake Recipe | dessert, easy, comfort food, american, holiday | no |
+| Shamrock Shake Recipe | dessert, easy, comfort food, american, holiday | yes |
 | Shamrock Sour Recipe | easy, holiday | yes |
 | Short Ribs and Beans | dinner, entree, comfort food, american, beef, legumes, pantry, holiday | yes |
 | Shrimp Ceviche Recipe | lunch, dinner, appetizer, side dish, quick, easy, healthy, gluten-free, dairy-free, low-carb, mexican, seafood | yes |
 | Slow Cooker Beef and Noodles | dinner, easy, comfort food, beef, pasta, mushroom, pantry | yes |
 | Slow Cooker Chicken Salad | lunch, easy, healthy, chicken, salad | yes |
 | Slow Cooker Kalua Pork | dinner, entree, comfort food, pork | yes |
-| Spice Cake Recipe | dessert, comfort food, vegetarian, holiday, pantry | no |
+| Spice Cake Recipe | dessert, comfort food, vegetarian, holiday, pantry | yes |
 | Sweet Bread Rolls | breakfast, snack, comfort food, vegetarian, bread, pantry | yes |
 | Taco Pasta Salad | dinner, easy, comfort food, mexican, beef, pasta, salad, cheese | yes |
 | Cheesy Potatoes Recipe | lunch, dinner, side dish, easy, comfort food, vegetarian, american, potato, cheese, holiday | yes |
 | Best Carne Asada | dinner, entree, easy, beef, mexican, grill | yes |
-| Turkish Cabbage Rolls | dinner, entree, comfort food, mediterranean, eastern european, pantry, greens | no |
+| Turkish Cabbage Rolls | dinner, entree, comfort food, mediterranean, eastern european, pantry, greens | yes |
 | Vanilla Wafers Recipe | dessert, snack, easy, vegetarian, pantry | yes |
-| Whole Roasted Cabbage | dinner, entree, healthy, comfort food, vegetarian, greens, mushroom, pantry | no |
+| Whole Roasted Cabbage | dinner, entree, healthy, comfort food, vegetarian, greens, mushroom, pantry | yes |
 | Almond Apricot Coffee Cake | breakfast, dessert, easy, vegetarian, american, bread, egg, pantry | yes |
-| Almond Vegetable Stir-Fry | dinner, entree, quick, easy, healthy, vegetarian, asian, chinese, greens, pantry | no |
+| Almond Vegetable Stir-Fry | dinner, entree, quick, easy, healthy, vegetarian, asian, chinese, greens, pantry | yes |
 | Angel Hair Pasta with Garden Vegetables | lunch, dinner, easy, healthy, vegetarian, italian, pasta, mushroom, cheese | yes |
 | Apple and Onion Beef Pot Roast | dinner, entree, comfort food, beef, american | yes |
 | Apple Pear Coffee Cake | dessert, comfort food, vegetarian, american, bread, egg, pantry | yes |
@@ -4678,6 +4720,7 @@
 | Browned Butter Red Potatoes | side dish, easy, comfort food, vegetarian, gluten-free, potato | yes |
 | Bunny Pear Salad | vegetarian, salad, greens, easy, appetizer, side dish, healthy, quick, pantry | yes |
 | Butter Nut Twists | dessert, snack, comfort food, vegetarian, bread, egg, pantry, holiday, eastern european | yes |
+| Buttery Carrots ‘n’ Onions | side dish, easy, comfort food, vegetarian, greens, pantry | no |
 | Cajun Chicken & Rice Soup | dinner, entree, comfort food, chicken, rice, soup, legumes | yes |
 | Callahan Christmas Wreaths | dessert, easy, vegetarian, american, pantry, holiday | yes |
 | Caramel Cashew Clusters | dessert, snack, easy, comfort food, pantry, holiday | yes |
@@ -4688,6 +4731,7 @@
 | Chinese Pork ‘n’ Noodles | dinner, entree, quick, easy, asian, chinese, pork, pasta | yes |
 | Chocolate Caramels | dessert, snack, comfort food, vegetarian, pantry, holiday | yes |
 | Chocolate-Glazed Coconut Almond Chees... | dessert, comfort food, vegetarian, cheese, holiday | yes |
+| Cod with Bacon & Balsamic Tomatoes | dinner, easy, healthy, seafood, fish | no |
 | Company Green Salad | lunch, dinner, side dish, easy, healthy, vegetarian, salad, greens | yes |
 | Contest-Winning Sugar ‘n’ Spice Nuts | snack, appetizer, easy, vegetarian, gluten-free, dairy-free, pantry, holiday | yes |
 | Cornish Hens with Wild Rice and Celery | dinner, entree, easy, comfort food, american, chicken, rice, mushroom, holiday | yes |
@@ -4856,6 +4900,7 @@
 | Weekday Meal-Prep Chicken Teriyaki St... | lunch, dinner, easy, healthy, asian, chicken, rice | yes |
 | Weekday Meal-Prep Pesto Chicken & Veg... | dinner, easy, healthy, italian, chicken, greens, pantry | yes |
 | Zesty Lime Chicken, Black Beans, And ... | lunch, dinner, entree, easy, chicken, rice, legumes | yes |
+| Low-Carb Zucchini "Ravioli" Recipe by... | lunch, dinner, easy, healthy, vegetarian, low-carb, italian, pasta, greens, cheese | no |
 | Adobo Seasoning | easy, pantry | yes |
 | Best Alfredo Sauce Recipe | lunch, dinner, side dish, easy, comfort food, vegetarian, italian, pasta, cheese | yes |
 | Crispy Baked Eggplant Parmesan Recipe | dinner, entree, easy, comfort food, vegetarian, italian, cheese | yes |
@@ -4864,7 +4909,7 @@
 | Basmati Rice Recipe with Caramelized ... | lunch, dinner, side dish, easy, healthy, vegetarian, gluten-free, dairy-free, rice, pantry | yes |
 | Beef and Broccoli Recipe | dinner, entree, easy, asian, chinese, beef, rice | yes |
 | Beef Empanadas Recipe | lunch, dinner, appetizer, comfort food, beef, cheese | yes |
-| Biryani Recipe | dinner, entree, comfort food, indian, chicken, rice | no |
+| Biryani Recipe | dinner, entree, comfort food, indian, chicken, rice | yes |
 | Blue Cheese Dressing Recipe | easy, vegetarian, low-carb, american, side dish, cheese | yes |
 | Homemade Bakery Blueberry Muffin Recipe | breakfast, easy, comfort food, vegetarian, american, bread, pantry | yes |
 | Easy Stir-Fried Bok Choy Recipe | lunch, dinner, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, asian, chinese, greens, pantry | yes |
@@ -4875,12 +4920,12 @@
 | Cheesy Buffalo Chicken Spaghetti Squa... | dinner, easy, healthy, comfort food, gluten-free, low-carb, american, chicken, cheese | yes |
 | Cannellini Beans Recipe | lunch, dinner, side dish, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, mediterranean, greens, legumes, pantry | yes |
 | Cheesy Chicken Caprese Casserole Recipe | dinner, entree, healthy, comfort food, italian, chicken, rice, greens, cheese | yes |
-| Cassoulet Recipe | dinner, entree, comfort food, pork, legumes, french | no |
+| Cassoulet Recipe | dinner, entree, comfort food, pork, legumes, french | yes |
 | Ceviche Recipe | lunch, dinner, appetizer, healthy, gluten-free, dairy-free, low-carb, mexican, seafood, fish | yes |
 | Cheese Ball Recipe | snack, appetizer, easy, comfort food, vegetarian, cheese, holiday | yes |
 | Chicken Florentine | dinner, entree, easy, comfort food, italian, chicken, greens, cheese | yes |
-| Chicken Parmesan Recipe | dinner, entree, comfort food, italian, chicken, cheese | no |
-| Classic Chicken Pot Pie Recipe | dinner, entree, easy, comfort food, american, chicken, pantry | no |
+| Chicken Parmesan Recipe | dinner, entree, comfort food, italian, chicken, cheese | yes |
+| Classic Chicken Pot Pie Recipe | dinner, entree, easy, comfort food, american, chicken, pantry | yes |
 | Chicken Soup Recipe | lunch, dinner, healthy, comfort food, entree, soup, chicken | yes |
 | Chilaquiles Recipe (with Salsa Rojo) | breakfast, lunch, dinner, easy, comfort food, mexican, egg, pantry | yes |
 | Chopped Salad with Shrimp Recipe | lunch, dinner, easy, healthy, seafood, salad, greens | yes |
@@ -4898,21 +4943,23 @@
 | Strawberry Yogurt Smoothie Bowl Recipe | breakfast, snack, quick, easy, healthy, vegetarian | yes |
 | Egg Drop Soup Recipe | lunch, dinner, appetizer, side dish, quick, easy, comfort food, asian, chinese, soup, egg | yes |
 | Egg Salad Recipe | lunch, snack, easy, vegetarian, american, salad, sandwich, egg | yes |
+| Eggs Benedict Recipe | breakfast, lunch, entree, comfort food, american, pork, egg, bread | no |
 | Fall Sangria Recipe | easy, holiday, vegetarian, dairy-free | yes |
 | French Dressing Recipe | easy, vegetarian, vegan, gluten-free, dairy-free, pantry, side dish, french, salad | yes |
 | Fried Apples Recipe | dessert, snack, side dish, easy, comfort food, vegetarian, american | yes |
 | Fried Rice Recipe | lunch, dinner, easy, comfort food, asian, chinese, egg, rice | yes |
 | Fruit Salad Recipe | dessert, snack, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, salad | yes |
 | Gazpacho Recipe | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mediterranean, soup, greens | yes |
+| Grape Salad Recipe | dessert, snack, side dish, easy, vegetarian, salad, cheese | no |
 | Chicken Souvlaki Recipe | dinner, easy, healthy, mediterranean, chicken, grill | yes |
 | Guacamole Recipe (Fresh, Easy & Authe... | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mexican | yes |
 | DIY Gyro Meat Recipe | lunch, dinner, easy, chicken, mediterranean, sandwich | yes |
 | Ham Salad Recipe | lunch, snack, easy, pork, salad, egg, holiday | yes |
-| Easy Hawaiian Meatballs Recipe | lunch, dinner, easy, comfort food, asian, chicken, rice, greens, pantry | no |
+| Easy Hawaiian Meatballs Recipe | lunch, dinner, easy, comfort food, asian, chicken, rice, greens, pantry | yes |
 | Instant Pot Bone Broth | healthy, soup, beef, chicken, pantry | yes |
 | Instant Pot Oatmeal Recipe | breakfast, quick, easy, healthy, vegetarian, gluten-free, dairy-free, pantry | yes |
 | Italian Pasta Salad Recipe | lunch, dinner, side dish, easy, italian, pasta, salad, greens, cheese | yes |
-| Jambalaya Recipe | dinner, entree, comfort food, american, chicken, seafood, rice | no |
+| Jambalaya Recipe | dinner, entree, comfort food, american, chicken, seafood, rice | yes |
 | Kheer Recipe (Indian Rice Pudding) | dessert, easy, comfort food, vegetarian, indian, rice, pantry | yes |
 | Lentil Soup Recipe | lunch, dinner, easy, healthy, comfort food, vegetarian, legumes, soup, mediterranean | yes |
 | Lo Mein Recipe | dinner, easy, chicken, asian, chinese, pasta | yes |
@@ -4921,37 +4968,37 @@
 | Margarita Recipe | mexican | yes |
 | Red Lentil Dal Recipe (Indian Masoor ... | lunch, dinner, entree, easy, healthy, comfort food, vegetarian, vegan, gluten-free, dairy-free, indian, rice, soup, legumes, pantry | yes |
 | Miso Soup Recipe | lunch, dinner, healthy, asian, japanese, soup, tofu, seafood, fish, easy, quick | yes |
-| Muhammara Recipe (Red Pepper and Waln... | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, greens, pantry | no |
+| Muhammara Recipe (Red Pepper and Waln... | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, greens, pantry | yes |
 | Negroni Recipe | quick, easy, italian | yes |
 | Paloma Cocktail Recipe | mexican, easy, pantry | yes |
-| Peach Strawberry Lemonade Recipe | easy, vegetarian, vegan, gluten-free, dairy-free | no |
+| Peach Strawberry Lemonade Recipe | easy, vegetarian, vegan, gluten-free, dairy-free | yes |
 | Pinto Beans Recipe | dinner, side dish, comfort food, american, legumes, pantry | yes |
 | Poke Bowl Recipe | lunch, dinner, easy, healthy, asian, japanese, seafood, fish, rice, salad | yes |
 | Pollo Guisado Recipe (Puerto-Rican Ch... | dinner, entree, comfort food, chicken, potato, rice | yes |
 | Poppyseed Dressing Recipe | easy, vegetarian, salad, pantry | yes |
 | Pork Fried Rice Recipe | dinner, entree, easy, comfort food, asian, chinese, pork, rice, egg, pantry | yes |
 | Pork Green Chili Recipe with White Beans | dinner, entree, comfort food, american, pork, soup, legumes, cheese, pantry | yes |
-| Pozole Rojo (Red Posole) Recipe | dinner, entree, comfort food, mexican, pork, soup, holiday | no |
+| Pozole Rojo (Red Posole) Recipe | dinner, entree, comfort food, mexican, pork, soup, holiday | yes |
 | Roasted Asparagus Recipe | side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, greens, holiday | yes |
 | Homemade Salsa Recipe - How to Make S... | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mexican | yes |
 | Oven-Roasted Sausage and Potatoes Recipe | dinner, entree, easy, comfort food, italian, pork, potato | yes |
 | Homemade Sazón Seasoning Recipe | easy, vegan, gluten-free, dairy-free, pantry | yes |
-| Scalloped Potatoes Recipe | dinner, side dish, comfort food, vegetarian, american, potato, holiday | no |
+| Scalloped Potatoes Recipe | dinner, side dish, comfort food, vegetarian, american, potato, holiday | yes |
 | Shrimp Ceviche Recipe | lunch, dinner, appetizer, easy, healthy, gluten-free, dairy-free, low-carb, mexican, seafood | yes |
-| Creamy Parmesan Risotto with Shrimp R... | dinner, entree, comfort food, italian, seafood, rice, cheese | no |
+| Creamy Parmesan Risotto with Shrimp R... | dinner, entree, comfort food, italian, seafood, rice, cheese | yes |
 | Shrimp Scampi Recipe | dinner, entree, quick, easy, seafood, italian | yes |
 | Shrimp Tacos Recipe | lunch, dinner, easy, mexican, seafood, quick | yes |
-| Skinny Baked Popcorn Chicken Recipe | lunch, dinner, snack, appetizer, easy, healthy, american, chicken | no |
+| Skinny Baked Popcorn Chicken Recipe | lunch, dinner, snack, appetizer, easy, healthy, american, chicken | yes |
 | Slow Cooker Pot Roast Recipe | dinner, entree, comfort food, american, beef, potato, mushroom, holiday | yes |
 | Puerto Rican Sofrito Recipe | vegetarian, vegan, gluten-free, dairy-free, easy, side dish, pantry | yes |
 | Strawberry Mojito Recipe | easy | yes |
 | Perfect Baked Sweet Potato Fries Recipe | snack, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, american, potato | yes |
-| Taco Soup Recipe | dinner, entree, easy, comfort food, american, mexican, beef, soup, legumes, pantry | no |
-| Easy Thai Fried Rice Recipe with Frie... | lunch, dinner, easy, comfort food, asian, thai, rice, egg | no |
+| Taco Soup Recipe | dinner, entree, easy, comfort food, american, mexican, beef, soup, legumes, pantry | yes |
+| Easy Thai Fried Rice Recipe with Frie... | lunch, dinner, easy, comfort food, asian, thai, rice, egg | yes |
 | Thousand Island Dressing Recipe | quick, easy, vegetarian, gluten-free, american, side dish, pantry | yes |
 | The BEST Tuna Noodle Casserole Recipe | dinner, entree, comfort food, american, seafood, fish, pasta, mushroom, cheese, pantry | yes |
 | Tuna Salad Recipe | lunch, snack, appetizer, easy, comfort food, seafood, fish, salad, pantry | yes |
-| Turkey Burger Recipe | dinner, easy, healthy, american, sandwich, cheese, grill | no |
+| Turkey Burger Recipe | dinner, easy, healthy, american, sandwich, cheese, grill | yes |
 | Yakisoba Noodles Recipe | lunch, dinner, easy, asian, japanese, chicken, mushroom, pantry | yes |
 | Easy Calamari Recipe with Garlic Lime... | dinner, appetizer, quick, easy, seafood, mediterranean | yes |
 | Avgolemono: Greek Lemon Chicken Soup | lunch, dinner, easy, healthy, comfort food, mediterranean, chicken, rice, soup, egg | yes |
@@ -4959,7 +5006,7 @@
 | Sheet Pan Baked Meatballs and Vegetab... | dinner, easy, comfort food, italian, beef, potato | yes |
 | Baked Shrimp Stew in a Mediterranean ... | dinner, entree, easy, healthy, comfort food, gluten-free, dairy-free, low-carb, mediterranean, seafood, soup, pantry | yes |
 | Mediterranean Baked White Fish | dinner, easy, healthy, gluten-free, dairy-free, low-carb, mediterranean, seafood, fish | yes |
-| Shish Kabob | dinner, entree, beef, grill, mediterranean | no |
+| Shish Kabob | dinner, entree, beef, grill, mediterranean | yes |
 | BEST Chicken Marinade Recipe (W/ Video) | dinner, easy, healthy, chicken, mediterranean, grill, entree | yes |
 | Best Roasted Cauliflower Recipe | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mediterranean, greens | yes |
 | Black Bean and Corn Salad Recipe | lunch, dinner, snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mexican, salad, legumes, pantry | yes |
@@ -4982,7 +5029,7 @@
 | Gazpacho Recipe | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, soup, greens | yes |
 | Easy Lahmacun Recipe | dinner, easy, comfort food, mediterranean, beef, bread | yes |
 | Eggplant Rollatini Recipe | dinner, easy, healthy, comfort food, vegetarian, italian, egg, cheese | yes |
-| Koshari Recipe | lunch, dinner, entree, comfort food, vegetarian, vegan, dairy-free, pasta, rice, legumes, pantry | no |
+| Koshari Recipe | lunch, dinner, entree, comfort food, vegetarian, vegan, dairy-free, pasta, rice, legumes, pantry | yes |
 | Fish en Papillote, Mediterrnanean-style | lunch, dinner, quick, easy, healthy, entree, mediterranean, seafood, fish, dairy-free, gluten-free | yes |
 | Mediterranean Fish Fillet Recipe, Sha... | dinner, entree, easy, healthy, dairy-free, mediterranean, seafood, fish, rice | yes |
 | Mediterranean-Style Fish Soup Recipe | dinner, healthy, seafood, fish, soup, mediterranean, dairy-free | yes |
@@ -5036,7 +5083,7 @@
 | Mediterranean Roasted Eggplant Recipe... | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, greens, pantry | yes |
 | Roasted Red Pepper Hummus Recipe | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, legumes, pantry | yes |
 | 5-Minute Romesco Sauce Recipe | quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, pantry | yes |
-| Sautéed Asparagus | side dish, quick, easy, healthy, vegetarian, gluten-free, low-carb, mediterranean, greens, cheese | no |
+| Sautéed Asparagus | side dish, quick, easy, healthy, vegetarian, gluten-free, low-carb, mediterranean, greens, cheese | yes |
 | Shallot Garlic Mushroom Recipe  | side dish, easy, comfort food, vegetarian, mediterranean, mushroom, cheese | yes |
 | Italian-Style Sheet Pan Chicken with ... | dinner, entree, quick, easy, healthy, gluten-free, dairy-free, low-carb, italian, chicken | yes |
 | Easy Homemade Spaghetti Sauce Recipe  | dinner, easy, comfort food, vegetarian, italian, pasta | yes |
@@ -5047,7 +5094,7 @@
 | Tahini Shortbread Cookie Recipe | dessert, snack, easy, vegetarian, pantry | yes |
 | No-Mayo Tuna Couscous Salad Recipe  | lunch, dinner, easy, healthy, seafood, fish, salad, egg, legumes, pantry | yes |
 | Simple Roasted Carrots Recipe | side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, greens, pantry | yes |
-| BEST Vegetarian Moussaka Recipe | dinner, entree, comfort food, vegetarian, mediterranean, eastern european, potato, legumes | no |
+| BEST Vegetarian Moussaka Recipe | dinner, entree, comfort food, vegetarian, mediterranean, eastern european, potato, legumes | yes |
 | White Bean Hummus | snack, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, legumes, pantry, mediterranean | yes |
 | Za'atar Garlic Salmon Recipe | dinner, easy, healthy, seafood, fish, potato, mediterranean, entree, quick | yes |
 | Za'atar Manaqish Recipe | breakfast, lunch, snack, appetizer, side dish, easy, vegetarian, mediterranean, bread, cheese, pantry | yes |
@@ -5073,6 +5120,7 @@
 | Fried Peach-Ginger Hand Pies | dessert, snack, vegetarian, american, pantry | yes |
 | Peach-Pecan Crisp | dessert, easy, comfort food, vegetarian, american, pantry | yes |
 | Cherry Sherbet | dessert, vegetarian, gluten-free | yes |
+| Cherry-Topped Cheesecake | dessert, vegetarian, comfort food, cheese, holiday | yes |
 | Cherry Cookie Bars | dessert, snack, vegetarian, comfort food, pantry, holiday | yes |
 | Cherry Cobbler | dessert, easy, comfort food, vegetarian, american | yes |
 | Cherry Pie | dessert, vegetarian, american, holiday, pantry | yes |
@@ -5133,12 +5181,12 @@
 | Green Chile Enchilada Casserole | dinner, entree, easy, comfort food, vegetarian, mexican, rice, cheese, pantry | yes |
 | Cajun Pasta With Veggies | dinner, entree, comfort food, vegetarian, pasta, mushroom | yes |
 | Pork Milanese | lunch, dinner, easy, comfort food, pork, greens, cheese, italian | yes |
-| Grilled Chicken with Zucchini Noodles | dinner, easy, healthy, low-carb, chicken, grill, entree | no |
+| Grilled Chicken with Zucchini Noodles | dinner, easy, healthy, low-carb, chicken, grill, entree | yes |
 | Slow-Cooker Teriyaki Ribs | dinner, entree, easy, comfort food, pork, asian | yes |
 | Sheet-Pan Curried Chicken | dinner, entree, chicken, rice, asian, thai | yes |
 | Grilled Pork Salad with Strawberries | dinner, easy, healthy, pork, salad, greens, cheese, grill | yes |
 | Shrimp and Veggie Quesadillas | dinner, easy, seafood, mexican, cheese, entree, quick, lunch | yes |
-| Steakhouse Kebabs | dinner, entree, beef, potato, mushroom, cheese, grill | no |
+| Steakhouse Kebabs | dinner, entree, beef, potato, mushroom, cheese, grill | yes |
 | Grilled Eggplant Parm Hoagies | lunch, dinner, entree, comfort food, vegetarian, italian, sandwich, cheese, grill | yes |
 | Buffalo Chicken with Blue Cheese Salad | lunch, dinner, entree, comfort food, american, chicken, salad, cheese, greens | yes |
 | Tuscan Pork Sheet-Pan Supper | dinner, entree, easy, healthy, comfort food, italian, pork, potato | yes |
@@ -5146,7 +5194,7 @@
 | Slow-Cooker Drip Beef Sandwiches | dinner, entree, comfort food, american, beef, sandwich, cheese | yes |
 | Turkey Burger Soup | dinner, easy, healthy, comfort food, gluten-free, dairy-free, american, soup, potato, greens, pantry | yes |
 | Skillet Lasagna | dinner, easy, comfort food, vegetarian, italian, pasta, cheese | yes |
-| Lemon-Garlic Shrimp and Grits | dinner, entree, easy, comfort food, american, seafood, cheese | no |
+| Lemon-Garlic Shrimp and Grits | dinner, entree, easy, comfort food, american, seafood, cheese | yes |
 | Mini Cajun Chicken Pot Pies | lunch, dinner, entree, easy, comfort food, american, chicken | yes |
 | Slow-Cooker White Chicken Chili | dinner, easy, comfort food, american, chicken, soup, legumes, pantry | yes |
 | Tex-Mex Grain Bowls | lunch, dinner, healthy, vegetarian, gluten-free, mexican, rice, legumes, greens | yes |
@@ -5155,9 +5203,9 @@
 | Penne with Cauliflower and Caramelize... | dinner, entree, easy, comfort food, vegetarian, italian, pasta, cheese | yes |
 | Peanut Chicken with Green Beans | dinner, entree, easy, comfort food, dairy-free, asian, thai, chicken, pasta, greens, pantry | yes |
 | Beef Taco Skillet | dinner, easy, comfort food, mexican, beef, potato, legumes, pantry | yes |
-| Steak Sandwiches with Wasabi Cream Sauce | lunch, dinner, easy, comfort food, american, beef, sandwich, bread, cheese, greens | no |
+| Steak Sandwiches with Wasabi Cream Sauce | lunch, dinner, easy, comfort food, american, beef, sandwich, bread, cheese, greens | yes |
 | Pepperoni Pizza Stuffed Potatoes | dinner, entree, comfort food, italian, potato, cheese | yes |
-| Flank Steak with Cheesy Waffle Hash B... | dinner, entree, comfort food, beef, potato, cheese, grill | no |
+| Flank Steak with Cheesy Waffle Hash B... | dinner, entree, comfort food, beef, potato, cheese, grill | yes |
 | Broccoli and Tomato Flatbread Pizzas | lunch, dinner, easy, vegetarian, cheese, bread, appetizer, entree | yes |
 | Pasta with Ham, Leeks and Spinach | dinner, easy, comfort food, italian, pasta, greens, cheese | yes |
 | Caribbean Burgers with Mango Slaw | lunch, dinner, entree, beef, sandwich, greens, grill | yes |
@@ -5172,8 +5220,8 @@
 | Baked Potato Recipe | lunch, dinner, snack, side dish, easy, comfort food, vegetarian, vegan, gluten-free, dairy-free, potato, american | yes |
 | Easy Strawberry Bruschetta | snack, appetizer, easy, vegetarian, bread, cheese | yes |
 | Homemade Buttermilk Biscuits | breakfast, easy, comfort food, vegetarian, american, bread, pantry | yes |
-| The BEST Carrot Cake Recipe EVER! | dessert, easy, vegetarian, american, egg, cheese, pantry, holiday | no |
-| Chocolate Cake | dessert, comfort food, vegetarian, pantry | no |
+| The BEST Carrot Cake Recipe EVER! | dessert, easy, vegetarian, american, egg, cheese, pantry, holiday | yes |
+| Chocolate Cake | dessert, comfort food, vegetarian, pantry | yes |
 | Death by Chocolate Cheesecake | dessert, comfort food, vegetarian, american, cheese, pantry, holiday | yes |
 | Corn Chowder Recipe | lunch, dinner, easy, comfort food, american, chicken, potato, soup, entree | yes |
 | The Easiest Cranberry Sauce | easy, vegetarian, vegan, gluten-free, dairy-free, side dish, holiday | yes |
@@ -5186,23 +5234,23 @@
 | The BEST Hummus I Have Ever Had! | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, legumes, pantry | yes |
 | The BEST Classic Lasagna Ever! | dinner, entree, comfort food, italian, beef, pasta, cheese | yes |
 | The Best Lobster Tail Recipe Ever! | dinner, entree, easy, seafood, low-carb, grill, holiday | yes |
-| Brown Butter Lime Mahi Mahi with Avoc... | dinner, entree, easy, healthy, gluten-free, dairy-free, low-carb, seafood, fish | no |
+| Brown Butter Lime Mahi Mahi with Avoc... | dinner, entree, easy, healthy, gluten-free, dairy-free, low-carb, seafood, fish | yes |
 | Foolproof Glazed Meatloaf | dinner, entree, easy, comfort food, american, beef, pantry | yes |
 | Mexican Shrimp Skillet | dinner, easy, healthy, mexican, seafood, legumes, pantry, quick | yes |
 | Peanut Brittle | dessert, snack, easy, vegetarian, pantry, holiday | yes |
 | Poke Bowl Recipe | lunch, dinner, easy, healthy, seafood, fish, rice, asian, japanese | yes |
 | Baked Soft Pretzels | snack, appetizer, easy, comfort food, vegetarian, bread, cheese, pantry | yes |
 | Incredible Pumpkin Cake with Cream Ch... | dessert, easy, vegetarian, american, cheese, pantry, holiday | yes |
-| Pumpkin Cheesecake with Caramel Sauce | dessert, comfort food, vegetarian, cheese, holiday | no |
-| Red Velvet Cake Recipe | dessert, comfort food, vegetarian, american, cheese, pantry, holiday | no |
+| Pumpkin Cheesecake with Caramel Sauce | dessert, comfort food, vegetarian, cheese, holiday | yes |
+| Red Velvet Cake Recipe | dessert, comfort food, vegetarian, american, cheese, pantry, holiday | yes |
 | Grandma's Sausage Herb Stuffing | dinner, side dish, comfort food, american, pork, bread, holiday | yes |
-| Cajun Garlic Shrimp and Grits | dinner, entree, comfort food, american, seafood | no |
+| Cajun Garlic Shrimp and Grits | dinner, entree, comfort food, american, seafood | yes |
 | Shrimp Ceviche | lunch, dinner, appetizer, quick, easy, healthy, gluten-free, dairy-free, low-carb, mexican, seafood, salad | yes |
-| AMAZING Texas Sheet Cake | dessert, comfort food, american, pantry, holiday | no |
+| AMAZING Texas Sheet Cake | dessert, comfort food, american, pantry, holiday | yes |
 | Turkey Brine Recipe | dinner, entree, holiday, chicken | yes |
 | Tzatziki Sauce | snack, appetizer, side dish, easy, healthy, vegetarian, low-carb, mediterranean | yes |
 | Yellow Cake | dessert, easy, comfort food, vegetarian, american, egg, pantry, holiday | yes |
-| Classic French Aligot | side dish, comfort food, vegetarian, french, potato, cheese | yes |
+| Classic French Aligot | dinner, side dish, comfort food, vegetarian, french, potato, cheese | yes |
 | The Most Amazing Lasagna | dinner, entree, comfort food, italian, beef, pasta, cheese | yes |
 | Easiest Crepe Recipe | breakfast, easy, vegetarian, egg, pantry | yes |
 | Granny's German Schnitzel | dinner, entree, comfort food, pork, eastern european | yes |
@@ -5210,7 +5258,7 @@
 | How to Make Homemade Lemonade | easy, vegan, gluten-free, dairy-free, pantry | yes |
 | Restaurant Quality Lobster Bisque | dinner, entree, comfort food, seafood, soup | yes |
 | Perfect Pancakes | breakfast, easy, vegetarian, american, egg, pantry | yes |
-| Fool Proof Pie Crust Recipe | easy, vegetarian, pantry, bread | no |
+| Fool Proof Pie Crust Recipe | easy, vegetarian, pantry, bread | yes |
 | Perfectly Soft Sugar Cookie Recipe | dessert, easy, comfort food, vegetarian, american, egg, pantry, holiday | yes |
 | The Ultimate Garlic Bread Recipe | appetizer, side dish, easy, comfort food, vegetarian, italian, bread, cheese, pantry | yes |
 | Ultimate Nacho Recipe | lunch, dinner, snack, appetizer, easy, comfort food, beef, cheese, mexican | yes |
@@ -5222,15 +5270,15 @@
 | How to Make Duck Sauce | quick, easy, vegetarian, vegan, gluten-free, dairy-free, asian, chinese, pantry | yes |
 | Easy Beef Korean Bibimbap Recipe | dinner, easy, healthy, comfort food, asian, beef, rice, egg, greens | yes |
 | Feijoada | dinner, entree, comfort food, pork, rice, legumes | yes |
-| Ham and Nut Mooncakes (Wu Ren Yue Bin... | dessert, snack, asian, chinese, pork, bread, holiday | no |
-| Judy's Homemade Brioche Recipe | breakfast, comfort food, vegetarian, bread, egg, pantry | no |
-| Milk Bread Croissants | dessert, snack, comfort food, french, bread, egg | no |
+| Ham and Nut Mooncakes (Wu Ren Yue Bin... | dessert, snack, asian, chinese, pork, bread, holiday | yes |
+| Judy's Homemade Brioche Recipe | breakfast, comfort food, vegetarian, bread, egg, pantry | yes |
+| Milk Bread Croissants | dessert, snack, comfort food, french, bread, egg | yes |
 | Mongolian Beef | dinner, entree, comfort food, asian, chinese, beef, rice, pantry | yes |
 | Chinese New Year Sweet Rice Cake (Nia... | dessert, easy, vegetarian, vegan, dairy-free, asian, chinese, rice, holiday | yes |
 | Pepper Steak | dinner, entree, asian, chinese, beef, rice | yes |
 | Roasted Chickpeas: A Versatile Recipe | snack, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, legumes, pantry | yes |
-| Sourdough Starter Recipe | vegetarian, vegan, bread, pantry | no |
-| Squirrel Fish | dinner, entree, asian, chinese, seafood, fish | no |
+| Sourdough Starter Recipe | vegetarian, vegan, bread, pantry | yes |
+| Squirrel Fish | dinner, entree, asian, chinese, seafood, fish | yes |
 | Chinese Stir-Fry Sauce | quick, easy, vegetarian, gluten-free, dairy-free, asian, chinese, pantry | yes |
 | Taiwanese Pork Chop Plate | dinner, entree, comfort food, asian, chinese, pork, rice, egg, greens | yes |
 | Next-Day Thanksgiving Pastries | lunch, dinner, snack, appetizer, easy, comfort food, american, egg, potato, cheese, holiday | yes |
@@ -5238,7 +5286,7 @@
 | Winter Pasta with Mushrooms, Sausage ... | dinner, comfort food, italian, pork, pasta, mushroom, cheese | yes |
 | How to Make XO Sauce | appetizer, side dish, asian, chinese, seafood, pantry | yes |
 | Youtiao Recipe (Chinese Fried Dough) | snack, side dish, comfort food, vegetarian, asian, chinese, bread, egg, pantry | yes |
-| Zhaliang | snack, appetizer, easy, comfort food, vegetarian, dairy-free, asian, chinese, rice | no |
+| Zhaliang | snack, appetizer, easy, comfort food, vegetarian, dairy-free, asian, chinese, rice | yes |
 | Asparagus, Spinach, and Feta Cheese F... | breakfast, lunch, dinner, easy, healthy, vegetarian, low-carb, egg, greens, cheese | yes |
 | Banana Berry Oatmeal | breakfast, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free | yes |
 | Berry Banana Smoothie | breakfast, snack, quick, easy, healthy, vegetarian | yes |
@@ -5303,19 +5351,19 @@
 | 15 Minute Creamy Garlic Alfredo Sauce | side dish, easy, comfort food, vegetarian, italian, pasta, cheese, pantry | yes |
 | Apple Spiced Coffee Cake | dessert, snack, breakfast, easy, comfort food, vegetarian, bread, holiday, egg, pantry | yes |
 | Sweet and Spicy Crispy Asian Chicken ... | dinner, appetizer, easy, comfort food, asian, chicken | yes |
-| Sweet & Sriracha Spicy Oven Roast Pul... | dinner, entree, comfort food, asian, pork | no |
+| Sweet & Sriracha Spicy Oven Roast Pul... | dinner, entree, comfort food, asian, pork | yes |
 | Spring Pickles: Quick Pickling Recipe | appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, greens, pantry | yes |
-| Baked Brie Recipe | appetizer, easy, vegetarian, cheese, pantry, french | no |
+| Baked Brie Recipe | appetizer, easy, vegetarian, cheese, pantry, french | yes |
 | Baked Garlic Butter Cod | dinner, easy, healthy, low-carb, seafood, fish | yes |
 | Baked Tomatoes with Parmesan Cheese &... | lunch, dinner, appetizer, side dish, quick, easy, healthy, vegetarian, low-carb, mediterranean, cheese, grill | yes |
 | Swiss Chard Stuffed Pork Loin Recipe | dinner, entree, pork, greens, grill | yes |
-| Amazing Beef Stew (Instant Pot, Slow ... | dinner, entree, easy, comfort food, beef, potato, pantry | no |
+| Amazing Beef Stew (Instant Pot, Slow ... | dinner, entree, easy, comfort food, beef, potato, pantry | yes |
 | Beef Sukiyaki Hot Pot (Nabe) | dinner, comfort food, asian, japanese, beef, mushroom, tofu, greens | yes |
 | Peanut Butter Dog Biscuits w/ Flax & ... | snack, easy, healthy, egg | yes |
-| Garlic Chili Hot Sauce | side dish, easy, asian, pantry | no |
+| Garlic Chili Hot Sauce | side dish, easy, asian, pantry | yes |
 | Classic Margarita w/ fresh Lime & Bit... | quick, easy, mexican, pantry | yes |
 | The Umami Loaded Burger Recipe | lunch, dinner, entree, comfort food, american, beef, sandwich, grill | yes |
-| Black Garlic Noodle Recipe | lunch, dinner, easy, vegetarian, dairy-free, asian, pasta, pantry | no |
+| Black Garlic Noodle Recipe | lunch, dinner, easy, vegetarian, dairy-free, asian, pasta, pantry | yes |
 | Blackberry Tom Collins Cocktail | easy | yes |
 | Butternut Squash Soup with (or withou... | lunch, dinner, appetizer, side dish, easy, comfort food, vegetarian, gluten-free, soup, mushroom | yes |
 | Carrot Cake with Cream Cheese Frosting | dessert, easy, vegetarian, american, cheese, pantry, holiday | yes |
@@ -5323,7 +5371,7 @@
 | Chicken Bites with Parmesan & Garlic | dinner, easy, comfort food, italian, chicken, cheese | yes |
 | Chicken Lettuce Cups with Almond Basi... | lunch, dinner, appetizer, easy, healthy, dairy-free, low-carb, asian, chicken, greens | yes |
 | Chili Garlic Crunch (Chili Crisp) | side dish, easy, vegetarian, vegan, gluten-free, dairy-free, asian, pantry | yes |
-| "Black Magic Cake" with Butterscotch ... | dessert, comfort food, cheese, egg, pantry | no |
+| "Black Magic Cake" with Butterscotch ... | dessert, comfort food, cheese, egg, pantry | yes |
 | Chocolate Chip or Chunk Cookies | dessert, snack, comfort food, american, egg, pantry | yes |
 | Japanese Somen Noodles Recipe with Sw... | lunch, dinner, easy, vegetarian, dairy-free, asian, japanese, pasta, pantry | yes |
 | Corn Fritters with Fresh Corn | snack, appetizer, side dish, easy, comfort food, vegetarian, american, egg | yes |
@@ -5338,17 +5386,17 @@
 | Fresh Blueberry Cream Cheese Frosting | dessert, easy, vegetarian, cheese, pantry | yes |
 | Garlic Butter Noodles Recipe | lunch, dinner, side dish, easy, comfort food, vegetarian, asian, pasta, pantry | yes |
 | Mango & Almond White Gazpacho Soup | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, soup | yes |
-| Gingerbread Cupcake Recipe with Maple... | dessert, easy, comfort food, vegetarian, holiday, cheese | no |
+| Gingerbread Cupcake Recipe with Maple... | dessert, easy, comfort food, vegetarian, holiday, cheese | yes |
 | Grilled Garlic Broccoli w/ Parmesan &... | side dish, easy, healthy, vegetarian, low-carb, greens, cheese, grill | yes |
 | Grilled Fennel Bulbs | lunch, dinner, appetizer, side dish, easy, healthy, vegetarian, low-carb, mediterranean, cheese, grill | yes |
 | Guava Margarita | quick, easy, vegetarian, gluten-free, dairy-free, mexican | yes |
-| Fluffy Japanese Cheesecake | dessert, vegetarian, japanese, egg, cheese | no |
-| Korean Short Ribs w/ Ginger Soy Marinade | dinner, entree, comfort food, asian, beef, grill | no |
-| Lamington Recipe | dessert, comfort food, pantry | no |
+| Fluffy Japanese Cheesecake | dessert, vegetarian, japanese, egg, cheese | yes |
+| Korean Short Ribs w/ Ginger Soy Marinade | dinner, entree, comfort food, asian, beef, grill | yes |
+| Lamington Recipe | dessert, comfort food, pantry | yes |
 | Meyer Lemon Pie | dessert, easy, vegetarian, american, egg, pantry, holiday | yes |
 | Meyer Lemon Cranberry Scones Recipe | breakfast, snack, easy, vegetarian, bread, holiday | yes |
 | Broiled Miso-Glazed Salmon Recipe | dinner, entree, quick, easy, healthy, asian, japanese, seafood, fish | yes |
-| Negroni (Gin Cocktail) | italian, easy, quick | no |
+| Negroni (Gin Cocktail) | italian, easy, quick | yes |
 | Soba with Parsley Pesto Recipe | lunch, dinner, easy, healthy, vegetarian, vegan, dairy-free, asian, japanese, pasta, greens, pantry | yes |
 | Sweet Pea Pot Stickers Recipe | lunch, dinner, appetizer, easy, healthy, vegetarian, asian, chinese, legumes, cheese | yes |
 | Boozy or Virgin Peach Cooler Recipe | quick, easy, vegetarian, vegan, gluten-free, dairy-free | yes |
@@ -5356,33 +5404,33 @@
 | Everyday Pesto Recipe | quick, easy, vegetarian, italian, side dish, greens, cheese | yes |
 | Pina Colada Cocktail | easy, dairy-free, pantry | yes |
 | Pomegranate Salad Recipe with Soy Vin... | lunch, dinner, appetizer, side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, asian, salad, greens, pantry | yes |
-| Potato Pancake Recipe | lunch, dinner, snack, appetizer, side dish, easy, comfort food, vegetarian, egg, potato, pantry, holiday | no |
+| Potato Pancake Recipe | lunch, dinner, snack, appetizer, side dish, easy, comfort food, vegetarian, egg, potato, pantry, holiday | yes |
 | Potatoes Au Gratin Recipe | dinner, side dish, comfort food, vegetarian, potato, holiday | yes |
-| Crispy Quinoa Patties with Green Or R... | lunch, dinner, snack, appetizer, side dish, easy, vegetarian, egg, cheese, pantry | no |
+| Crispy Quinoa Patties with Green Or R... | lunch, dinner, snack, appetizer, side dish, easy, vegetarian, egg, cheese, pantry | yes |
 | Ricotta Pancakes (Hotcakes) | breakfast, easy, vegetarian, egg, cheese | yes |
 | Roasted Broccoli Salad | lunch, dinner, side dish, easy, healthy, vegetarian, gluten-free, salad, greens | yes |
 | Roasted Garlic Recipe | appetizer, side dish, easy, vegetarian, vegan, gluten-free, dairy-free, mediterranean, pantry | yes |
-| Sangria Recipe (Red, White, or Rosé) | vegetarian, dairy-free, holiday, easy | no |
+| Sangria Recipe (Red, White, or Rosé) | vegetarian, dairy-free, holiday, easy | yes |
 | Perfect Saucy Sloppy Joes (in 25 Minu... | lunch, dinner, quick, easy, comfort food, american, beef, sandwich, bread, cheese, pantry | yes |
 | Sausage Potatoes au Gratin | dinner, side dish, entree, comfort food, pork, potato, holiday | yes |
 | Sautéed Peas with Mint | side dish, quick, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, legumes, greens | yes |
 | Low Carb Baked Scotch Eggs | breakfast, lunch, dinner, snack, appetizer, easy, comfort food, low-carb, pork, egg | yes |
-| Sizzling Cheeseburgers | lunch, dinner, easy, comfort food, american, beef, sandwich, cheese, grill | no |
+| Sizzling Cheeseburgers | lunch, dinner, easy, comfort food, american, beef, sandwich, cheese, grill | yes |
 | Cream Chicken With Mushroom White Win... | dinner, entree, comfort food, chicken, mushroom | yes |
 | Sriracha Chicken Wings Recipe | dinner, appetizer, easy, comfort food, american, chicken, pantry | yes |
 | Sriracha Recipe - Homemade Chili Srir... | easy, thai, pantry | yes |
-| One Pot, Stove Top Macaroni & Cheese ... | lunch, dinner, easy, comfort food, vegetarian, american, pasta, cheese | no |
+| One Pot, Stove Top Macaroni & Cheese ... | lunch, dinner, easy, comfort food, vegetarian, american, pasta, cheese | yes |
 | Sweet Onion Dip - aka "Crack Dip" | snack, appetizer, easy, comfort food, vegetarian, american, cheese | yes |
 | Sweet Potato Bars w/ Chocolate | dessert, vegetarian, comfort food, potato, pantry, holiday | yes |
-| Teriyaki Burgers with Mango Salsa | lunch, dinner, entree, beef, sandwich, asian, japanese, grill | no |
-| Thai Iced Tea Recipe | easy, vegetarian, thai | no |
-| Tunacado Sandwich | lunch, dinner, easy, comfort food, seafood, fish, sandwich, bread, cheese, pantry | no |
+| Teriyaki Burgers with Mango Salsa | lunch, dinner, entree, beef, sandwich, asian, japanese, grill | yes |
+| Thai Iced Tea Recipe | easy, vegetarian, thai | yes |
+| Tunacado Sandwich | lunch, dinner, easy, comfort food, seafood, fish, sandwich, bread, cheese, pantry | yes |
 | Ca Phe Sua Nong (Vietnamese Hot Coffe... | breakfast, easy, comfort food, asian | yes |
 | Vietnamese Iced Coffee Recipe (Cà Phê... | asian, easy, quick | yes |
-| Wonton Waffles (Savory and Crispy) | snack, appetizer, easy, comfort food, asian, chinese, pork, pantry | no |
+| Wonton Waffles (Savory and Crispy) | snack, appetizer, easy, comfort food, asian, chinese, pork, pantry | yes |
 | Yuzu & Gin Cocktail | quick, easy | yes |
 | Olive Oil Zucchini Cake with Lemon Cr... | dessert, easy, vegetarian, cheese, pantry | yes |
-| Zucchini Pad Thai Noodles "Zoodles" | dinner, easy, healthy, low-carb, asian, thai, seafood, egg | no |
+| Zucchini Pad Thai Noodles "Zoodles" | dinner, easy, healthy, low-carb, asian, thai, seafood, egg | yes |
 | Authentic Fry Bread | snack, side dish, easy, comfort food, vegetarian, american, bread, pantry | yes |
 | Baked Denver Omelet | breakfast, easy, comfort food, american, egg, cheese | yes |
 | Balsamic Chicken Tenders | lunch, dinner, entree, quick, easy, healthy, gluten-free, dairy-free, low-carb, italian, chicken, pantry | yes |
@@ -5391,7 +5439,7 @@
 | Corned Beef and Cabbage | dinner, entree, comfort food, american, eastern european, beef, potato, greens, holiday | yes |
 | Crab Dip Recipe | snack, appetizer, easy, comfort food, seafood, cheese | yes |
 | Creamy Walnut Coleslaw | side dish, quick, easy, healthy, vegetarian, gluten-free, low-carb, salad, greens | yes |
-| Cuban Sandwich | lunch, dinner, comfort food, sandwich, pork, cheese, grill | no |
+| Cuban Sandwich | lunch, dinner, comfort food, sandwich, pork, cheese, grill | yes |
 | Classic Meatloaf Recipe | dinner, entree, easy, comfort food, american, beef | yes |
 | Easy Chili Recipe | lunch, dinner, easy, comfort food, american, beef, soup, legumes, pantry | yes |
 | Coconut Shrimp | appetizer, seafood, easy, dinner, lunch, snack | yes |
@@ -5399,12 +5447,12 @@
 | French 75 Champagne Cocktail | quick, easy, french, pantry, holiday | yes |
 | Grilled Potatoes Recipe | dinner, side dish, easy, comfort food, vegetarian, gluten-free, dairy-free, american, potato, grill | yes |
 | Grilled Zucchini | lunch, dinner, side dish, easy, healthy, vegetarian, vegan, gluten-free, dairy-free, low-carb, mediterranean, greens, grill | yes |
-| Corn Tortillas | side dish, easy, vegetarian, vegan, gluten-free, dairy-free, mexican, bread, pantry | no |
+| Corn Tortillas | side dish, easy, vegetarian, vegan, gluten-free, dairy-free, mexican, bread, pantry | yes |
 | Instant Pot Chili | lunch, dinner, entree, easy, comfort food, american, beef, legumes, pantry | yes |
 | Instant Pot Roasted Tomato Soup | lunch, dinner, easy, comfort food, vegetarian, soup, rice, cheese, pantry | yes |
 | Peach Crisp | dessert, easy, comfort food, vegetarian | yes |
 | Pound Cake Recipe | dessert, easy, comfort food, vegetarian, american, bread, pantry | yes |
-| Shrimp Cocktail | appetizer, easy, seafood, american, quick, dairy-free, gluten-free, dinner, lunch | no |
+| Shrimp Cocktail | appetizer, easy, seafood, american, quick, dairy-free, gluten-free, dinner, lunch | yes |
 | Slow Cooker Pulled Pork Chili | dinner, easy, comfort food, pork, soup, american | yes |
 | Southwest Chicken Bake | dinner, easy, healthy, chicken, legumes, cheese, mexican, entree | yes |
 | Spicy Ground Turkey Meatloaf Recipe | dinner, entree, easy, comfort food, american, mexican, cheese | yes |
@@ -5418,59 +5466,59 @@
 ## Summary
 
 - Total recipes processed: 5458
-- Recipes with tag suggestions: 5408
-- Cached responses: 4898
+- Recipes with tag suggestions: 5456
+- Cached responses: 5418
 
 ## Tag Frequency
 
 | Tag | Count |
 |-----|-------|
-| easy | 3777 |
-| vegetarian | 3239 |
-| dinner | 2588 |
-| comfort food | 2586 |
-| pantry | 2362 |
-| dessert | 1350 |
-| lunch | 1349 |
-| cheese | 1326 |
-| snack | 1323 |
-| healthy | 1322 |
-| entree | 1198 |
-| gluten-free | 1083 |
-| side dish | 1082 |
-| dairy-free | 1055 |
-| american | 989 |
-| holiday | 842 |
-| greens | 836 |
-| vegan | 795 |
-| egg | 775 |
-| appetizer | 723 |
-| quick | 609 |
-| bread | 585 |
-| italian | 552 |
-| breakfast | 537 |
-| asian | 520 |
-| chicken | 519 |
-| low-carb | 460 |
-| potato | 411 |
-| pasta | 393 |
-| legumes | 389 |
-| pork | 388 |
-| mediterranean | 385 |
-| salad | 381 |
-| beef | 377 |
-| soup | 355 |
-| rice | 346 |
-| seafood | 301 |
-| japanese | 298 |
-| mexican | 298 |
-| grill | 256 |
-| mushroom | 225 |
-| sandwich | 170 |
+| easy | 3811 |
+| vegetarian | 3274 |
+| dinner | 2610 |
+| comfort food | 2609 |
+| pantry | 2378 |
+| lunch | 1367 |
+| dessert | 1359 |
+| healthy | 1338 |
+| cheese | 1337 |
+| snack | 1328 |
+| entree | 1215 |
+| gluten-free | 1098 |
+| side dish | 1096 |
+| dairy-free | 1062 |
+| american | 1007 |
+| greens | 849 |
+| holiday | 848 |
+| vegan | 804 |
+| egg | 784 |
+| appetizer | 724 |
+| quick | 617 |
+| bread | 591 |
+| italian | 559 |
+| breakfast | 542 |
+| asian | 528 |
+| chicken | 523 |
+| low-carb | 469 |
+| potato | 412 |
+| pasta | 398 |
+| pork | 396 |
+| legumes | 394 |
+| mediterranean | 392 |
+| salad | 386 |
+| beef | 378 |
+| soup | 364 |
+| rice | 354 |
+| seafood | 302 |
+| japanese | 301 |
+| mexican | 301 |
+| grill | 257 |
+| mushroom | 232 |
+| sandwich | 173 |
+| fish | 165 |
 | eastern european | 164 |
-| fish | 164 |
 | french | 116 |
-| chinese | 96 |
-| indian | 89 |
-| thai | 76 |
+| chinese | 100 |
+| indian | 91 |
+| thai | 77 |
 | tofu | 52 |

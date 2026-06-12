@@ -10,15 +10,23 @@
   "source_name": "Seriouseats.com",
   "ingredients": [
     {
-      "item": "yellow onion",
+      "item": "1 medium white onion",
       "measurements": [
         {
-          "amount": "1",
-          "unit": "small"
+          "amount": "0.5",
+          "unit": null
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
         }
       ],
-      "note": "roughly chopped",
-      "raw": "1 small yellow onion, roughly chopped",
+      "note": "about 4 ounces; 113 g, roughly chopped",
+      "raw": "1/2 of 1 medium white onion (about 4 ounces; 113 g), roughly chopped",
       "section": null
     },
     {
@@ -29,12 +37,12 @@
           "unit": null
         }
       ],
-      "note": "roughly chopped",
-      "raw": "1 serrano chile, roughly chopped",
+      "note": "remove seeds before chopping for a less hot result, stemmed and roughly chopped",
+      "raw": "1 serrano chile, stemmed and roughly chopped (remove seeds before chopping for a less hot result)",
       "section": null
     },
     {
-      "item": "picked cilantro leaves, finely chopped",
+      "item": "picked cilantro leaves and tender stems, finely chopped",
       "measurements": [
         {
           "amount": "0.5",
@@ -42,47 +50,50 @@
         }
       ],
       "note": "divided",
-      "raw": "1/2 cup picked cilantro leaves, finely chopped, divided",
+      "raw": "1/2 cup picked cilantro leaves and tender stems, finely chopped, divided",
       "section": null
     },
     {
-      "item": "kosher salt",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "5.7",
-          "unit": "g"
-        }
-      ],
+      "item": "Kosher salt",
+      "measurements": [],
       "note": null,
-      "raw": "2 teaspoons kosher salt",
+      "raw": "Kosher salt",
       "section": null
     },
     {
-      "item": "ripe avocados",
+      "item": "ripe Hass avocados",
       "measurements": [
         {
           "amount": "4",
           "unit": null
+        },
+        {
+          "amount": "7",
+          "unit": "oz each"
+        },
+        {
+          "amount": "200",
+          "unit": "g each"
         }
       ],
-      "note": null,
-      "raw": "4 ripe avocados",
+      "note": "about 7 ounces; 200 g each",
+      "raw": "4 ripe Hass avocados (about 7 ounces; 200 g each)",
       "section": null
     },
     {
-      "item": "juice from 2 limes",
+      "item": "fresh lime juice",
       "measurements": [
         {
-          "amount": "2",
+          "amount": "2 to 3",
           "unit": "tbsp"
+        },
+        {
+          "amount": "30-45",
+          "unit": "ml"
         }
       ],
-      "note": null,
-      "raw": "2 tablespoons juice from 2 limes",
+      "note": "from about 2 limes",
+      "raw": "2 to 3 tablespoons (30-45 ml) fresh lime juice (from about 2 limes)",
       "section": null
     }
   ],
@@ -90,6 +101,7 @@
     "snack",
     "appetizer",
     "side dish",
+    "quick",
     "easy",
     "healthy",
     "vegetarian",

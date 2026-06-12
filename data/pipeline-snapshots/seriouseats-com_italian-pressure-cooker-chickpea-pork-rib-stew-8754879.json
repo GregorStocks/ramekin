@@ -1,6 +1,6 @@
 {
   "title": "Italian Pressure-Cooker Chickpea and Pork Rib Stew",
-  "description": "Tender pork ribs and chickpeas in a savory tomato broth.",
+  "description": "Tender pork ribs and chickpeas in a rich, savory stew.",
   "servings": "8",
   "instructions": "In a large bowl, combine chickpeas with 4 tablespoons (36g) kosher salt and 2 teaspoons (10g) baking soda. Cover with 3 quarts (3L) cold water, stirring to dissolve salt and baking soda. Let stand at room temperature overnight. Drain and rinse beans thoroughly.\n\nSeason pork ribs all over with salt and pepper. In an electric multicooker (such as an Instant Pot), heat olive oil using the sear or sauté function until shimmering. Add ribs and cook until browned on 2 sides, about 10 minutes total. Transfer ribs to a plate.\n\nAdd onion, celery, and garlic and cook, stirring and scraping, until softened and any browned bits on bottom of cooker have dissolved, about 5 minutes. Stir in tomato paste and cook for 1 minute.\n\nAdd drained chickpeas, rosemary sprig, pork ribs (and any accumulated juices, and 8 cups (2L) water (this should be enough to cover the solids). Stir in remaining 1/2 teaspoon (3g) baking soda and a pinch of salt. Seal cooker, bring to high pressure, and cook at high pressure for 40 minutes.\n\nDepressurize cooker using quick-release valve. Carefully remove pork ribs and transfer to a plate; discard rosemary sprig. If chickpeas are still noticeably firm at this point, return to high pressure and cook for an additional 15 minutes until fully softened (we did not find this necessary during recipe development and testing, but not all chickpeas cook as quickly as others).\n\nAdd potatoes and simmer, uncovered, until potatoes and chickpeas are very tender, about 25 minutes. If stew is too thick at this point, thin slightly with additional hot water. Season to taste with salt and return pork ribs to pot to warm through. Ladle into individual bowls and top with a generous drizzle of olive oil, some freshly ground black pepper, and a sprinkle of cheese. Serve.",
   "image_urls": [
@@ -36,20 +36,20 @@
       "item": "baking soda",
       "measurements": [
         {
-          "amount": "3",
+          "amount": "2.5",
           "unit": "tsp"
         },
         {
-          "amount": "15",
+          "amount": "13",
           "unit": "g"
         }
       ],
       "note": "divided",
-      "raw": "3 teaspoons (15g) baking soda, divided",
+      "raw": "2 1/2 teaspoons (13g) baking soda, divided",
       "section": null
     },
     {
-      "item": "baby back pork ribs",
+      "item": "baby back pork ribs or spare ribs",
       "measurements": [
         {
           "amount": "1.5",
@@ -61,7 +61,7 @@
         }
       ],
       "note": "see notes, divided in half through the bones and separated into individual ribs",
-      "raw": "1 1/2 pounds (680g) baby back pork ribs, divided in half through the bones and separated into individual ribs (see notes)",
+      "raw": "1 1/2 pounds (680g) baby back pork ribs or spare ribs, divided in half through the bones and separated into individual ribs (see notes)",
       "section": null
     },
     {
@@ -112,7 +112,7 @@
       "section": null
     },
     {
-      "item": "celery rib ; minced",
+      "item": "celery rib",
       "measurements": [
         {
           "amount": "1",
@@ -127,8 +127,8 @@
           "unit": "g"
         }
       ],
-      "note": null,
-      "raw": "1 large celery rib (2 ounces; 57g); minced",
+      "note": "minced",
+      "raw": "1 large celery rib (2 ounces; 57g), minced",
       "section": null
     },
     {
@@ -197,12 +197,11 @@
   ],
   "suggested_tags": [
     "dinner",
-    "entree",
     "comfort food",
     "italian",
     "pork",
     "potato",
     "legumes",
-    "soup"
+    "entree"
   ]
 }

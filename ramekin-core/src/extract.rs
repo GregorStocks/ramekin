@@ -108,6 +108,9 @@ fn supplement_ingredient_groups(recipe: &mut RawRecipe, document: &Html) {
 /// ingredients as the structured data, so a partially rendered page can't drop
 /// rows that JSON-LD has.
 fn supplement_dotdash_ingredients(recipe: &mut RawRecipe, document: &Html) {
+    if dotdash_ingredients_look_normalized(document) {
+        return;
+    }
     let Some(html_ingredients) = extract_dotdash_meredith_ingredients(document) else {
         return;
     };
@@ -123,6 +126,43 @@ fn supplement_dotdash_ingredients(recipe: &mut RawRecipe, document: &Html) {
     if html_count >= structured_count {
         recipe.ingredients = html_ingredients;
     }
+}
+
+/// Detect Dotdash pages whose visible ingredient rows are nutrition-database
+/// normalized (e.g. "454 g pork breakfast sausage", "1 tsp, ground ground black
+/// pepper") rather than the author's text. On those pages every row's text sits
+/// entirely inside data-ingredient-* spans, with no free text (parentheticals,
+/// "divided", "see notes") outside them; the author's rows live only in the
+/// JSON-LD, so the visible rows must not replace it.
+fn dotdash_ingredients_look_normalized(document: &Html) -> bool {
+    let Ok(item_selector) = Selector::parse(".structured-ingredients__list-item") else {
+        return false;
+    };
+    let Ok(span_selector) = Selector::parse(
+        "[data-ingredient-quantity], [data-ingredient-unit], [data-ingredient-name]",
+    ) else {
+        return false;
+    };
+
+    let mut saw_item = false;
+    for item in document.select(&item_selector) {
+        saw_item = true;
+        let full_text: String = item
+            .text()
+            .collect::<String>()
+            .split_whitespace()
+            .collect();
+        let spanned_text: String = item
+            .select(&span_selector)
+            .flat_map(|el| el.text())
+            .collect::<String>()
+            .split_whitespace()
+            .collect();
+        if full_text != spanned_text {
+            return false;
+        }
+    }
+    saw_item
 }
 
 /// Prefer cleaned HTML instructions when the rendered recipe card is more accurate than
@@ -4157,6 +4197,53 @@ mod tests {
             vec![
                 "2 cups (473 ml) whole milk",
                 "1/2 cup plus 2 tablespoons all-purpose flour (80 g), plus 1 cup all-purpose flour (for dredging), divided",
+            ]
+        );
+    }
+
+    #[test]
+    fn test_dotdash_normalized_visible_ingredients_keep_jsonld() {
+        // Some Dotdash pages render nutrition-database normalized rows instead
+        // of the author's text ("454 g pork breakfast sausage" for "1 pound
+        // (454g) pork breakfast sausage, casings removed"). Those rows sit
+        // entirely inside data-ingredient-* spans with no free text outside;
+        // keep the JSON-LD version, which has the author's rows.
+        let html = r#"
+            <!DOCTYPE html>
+            <html><head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Biscuits and Gravy",
+                    "recipeIngredient": [
+                        "1 pound (454g) pork breakfast sausage, casings removed",
+                        "Freshly ground black pepper"
+                    ],
+                    "recipeInstructions": "Brown the sausage and make the gravy."
+                }
+                </script>
+            </head>
+            <body>
+                <div class="comp structured-ingredients">
+                    <ul class="structured-ingredients__list">
+                        <li class="structured-ingredients__list-item">
+                            <p><span data-ingredient-quantity="true">454</span> <span data-ingredient-unit="true">g</span> <span data-ingredient-name="true">pork breakfast sausage</span></p>
+                        </li>
+                        <li class="structured-ingredients__list-item">
+                            <p><span data-ingredient-quantity="true">1</span> <span data-ingredient-unit="true">tsp, ground</span> <span data-ingredient-name="true">ground black pepper</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://www.seriouseats.com/biscuits").unwrap();
+        let lines: Vec<&str> = result.ingredients.lines().collect();
+        assert_eq!(
+            lines,
+            vec![
+                "1 pound (454g) pork breakfast sausage, casings removed",
+                "Freshly ground black pepper",
             ]
         );
     }
