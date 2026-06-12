@@ -90,10 +90,72 @@ impl AiConfig {
         })
     }
 
+    /// Cache directory namespaced by API endpoint.
+    ///
+    /// Responses from the default OpenRouter endpoint live directly in
+    /// `cache_dir`, preserving the existing on-disk layout. Any other endpoint
+    /// (e.g. a localhost mock server in tests) gets its own subdirectory under
+    /// `endpoints/`, so non-production responses can never be cached under the
+    /// real model name and poison the shared cache.
+    pub fn namespaced_cache_dir(&self) -> std::path::PathBuf {
+        if self.base_url == DEFAULT_BASE_URL {
+            return self.cache_dir.clone();
+        }
+
+        let sanitized: String = self
+            .base_url
+            .chars()
+            .map(|c| {
+                if c.is_ascii_alphanumeric() || c == '.' || c == '-' {
+                    c
+                } else {
+                    '-'
+                }
+            })
+            .collect();
+
+        self.cache_dir.join("endpoints").join(sanitized)
+    }
+
     /// Get the default cache directory: ~/.ramekin/ai-cache
     pub fn default_cache_dir() -> std::path::PathBuf {
         dirs::home_dir()
             .map(|h| h.join(".ramekin").join("ai-cache"))
             .unwrap_or_else(|| std::path::PathBuf::from("data/ai-cache"))
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn config_with_base_url(base_url: &str) -> AiConfig {
+        AiConfig {
+            api_key: "test-key".to_string(),
+            model: DEFAULT_MODEL.to_string(),
+            image_model: DEFAULT_IMAGE_MODEL.to_string(),
+            base_url: base_url.to_string(),
+            cache_dir: std::path::PathBuf::from("/tmp/ai-cache"),
+            rate_limit_ms: 0,
+            request_timeout_secs: 1,
+        }
+    }
+
+    #[test]
+    fn default_base_url_uses_cache_dir_directly() {
+        let config = config_with_base_url(DEFAULT_BASE_URL);
+        assert_eq!(
+            config.namespaced_cache_dir(),
+            std::path::PathBuf::from("/tmp/ai-cache")
+        );
+    }
+
+    #[test]
+    fn non_default_base_url_gets_endpoint_namespace() {
+        let config = config_with_base_url("http://localhost:39123/v1");
+        assert_eq!(
+            config.namespaced_cache_dir(),
+            std::path::PathBuf::from("/tmp/ai-cache/endpoints/http---localhost-39123-v1")
+        );
     }
 }

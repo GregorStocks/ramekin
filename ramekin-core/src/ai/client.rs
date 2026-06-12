@@ -68,7 +68,7 @@ impl CachingAiClient {
             .build()
             .expect("OpenAIClient::build cannot fail with provided api_key and endpoint");
 
-        let cache = AiCache::new(config.cache_dir.clone());
+        let cache = AiCache::new(config.namespaced_cache_dir());
 
         Self {
             client,
