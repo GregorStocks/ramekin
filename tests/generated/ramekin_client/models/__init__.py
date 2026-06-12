@@ -41,6 +41,7 @@ from ramekin_client.models.ingredient import Ingredient
 from ramekin_client.models.list_recipes_response import ListRecipesResponse
 from ramekin_client.models.login_request import LoginRequest
 from ramekin_client.models.login_response import LoginResponse
+from ramekin_client.models.me_response import MeResponse
 from ramekin_client.models.meal_plan_item import MealPlanItem
 from ramekin_client.models.meal_plan_list_response import MealPlanListResponse
 from ramekin_client.models.meal_type import MealType

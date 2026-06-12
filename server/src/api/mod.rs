@@ -8,6 +8,7 @@ pub mod scrape;
 pub mod shopping_list;
 pub mod tags;
 pub mod testing;
+pub mod users;
 
 use serde::Serialize;
 use utoipa::openapi::security::{Http, HttpAuthScheme, SecurityScheme};
@@ -50,6 +51,7 @@ pub fn openapi() -> utoipa::openapi::OpenApi {
         import::ApiDoc::openapi(),
         meal_plans::ApiDoc::openapi(),
         shopping_list::ApiDoc::openapi(),
+        users::ApiDoc::openapi(),
     ];
 
     for module_spec in modules {

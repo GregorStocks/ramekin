@@ -11,6 +11,7 @@ ramekin_client/api/scrape_api.py
 ramekin_client/api/shopping_list_api.py
 ramekin_client/api/tags_api.py
 ramekin_client/api/testing_api.py
+ramekin_client/api/users_api.py
 ramekin_client/api_client.py
 ramekin_client/api_response.py
 ramekin_client/configuration.py
@@ -45,6 +46,7 @@ ramekin_client/docs/Ingredient.md
 ramekin_client/docs/ListRecipesResponse.md
 ramekin_client/docs/LoginRequest.md
 ramekin_client/docs/LoginResponse.md
+ramekin_client/docs/MeResponse.md
 ramekin_client/docs/MealPlanItem.md
 ramekin_client/docs/MealPlanListResponse.md
 ramekin_client/docs/MealPlansApi.md
@@ -88,6 +90,7 @@ ramekin_client/docs/UpdateMealPlanRequest.md
 ramekin_client/docs/UpdateRecipeRequest.md
 ramekin_client/docs/UpdateShoppingListItemRequest.md
 ramekin_client/docs/UploadPhotoResponse.md
+ramekin_client/docs/UsersApi.md
 ramekin_client/docs/VersionListResponse.md
 ramekin_client/docs/VersionSummary.md
 ramekin_client/exceptions.py
@@ -120,6 +123,7 @@ ramekin_client/models/ingredient.py
 ramekin_client/models/list_recipes_response.py
 ramekin_client/models/login_request.py
 ramekin_client/models/login_response.py
+ramekin_client/models/me_response.py
 ramekin_client/models/meal_plan_item.py
 ramekin_client/models/meal_plan_list_response.py
 ramekin_client/models/meal_type.py
@@ -191,6 +195,7 @@ ramekin_client/test/test_ingredient.py
 ramekin_client/test/test_list_recipes_response.py
 ramekin_client/test/test_login_request.py
 ramekin_client/test/test_login_response.py
+ramekin_client/test/test_me_response.py
 ramekin_client/test/test_meal_plan_item.py
 ramekin_client/test/test_meal_plan_list_response.py
 ramekin_client/test/test_meal_plans_api.py
@@ -234,6 +239,7 @@ ramekin_client/test/test_update_meal_plan_request.py
 ramekin_client/test/test_update_recipe_request.py
 ramekin_client/test/test_update_shopping_list_item_request.py
 ramekin_client/test/test_upload_photo_response.py
+ramekin_client/test/test_users_api.py
 ramekin_client/test/test_version_list_response.py
 ramekin_client/test/test_version_summary.py
 ramekin_client_README.md

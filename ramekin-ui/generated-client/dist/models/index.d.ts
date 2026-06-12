@@ -26,6 +26,7 @@ export * from './Ingredient';
 export * from './ListRecipesResponse';
 export * from './LoginRequest';
 export * from './LoginResponse';
+export * from './MeResponse';
 export * from './MealPlanItem';
 export * from './MealPlanListResponse';
 export * from './MealType';
