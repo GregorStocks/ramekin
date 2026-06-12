@@ -51,7 +51,7 @@ static INGREDIENT_MAP: LazyLock<Vec<IngredientRule>> = LazyLock::new(|| {
 
 /// The canonical set of grocery-aisle categories the categorizer can return.
 /// `categorize` always returns one of these (defaulting to "Other").
-pub const CATEGORIES: [&str; 16] = [
+pub const CATEGORIES: [&str; 19] = [
     "Produce",
     "Meat & Seafood",
     "Dairy & Eggs",
@@ -67,6 +67,9 @@ pub const CATEGORIES: [&str; 16] = [
     "Nuts & Dried Fruit",
     "Beverages",
     "Snacks",
+    "Household",
+    "Personal Care",
+    "Pet",
     "Other",
 ];
 
@@ -309,6 +312,36 @@ mod tests {
         assert_eq!(categorize("vegetable or chicken stock"), "Canned Goods");
         assert_eq!(categorize("vegetable oil"), "Oils & Vinegars");
         assert_eq!(categorize("vegetable broth"), "Canned Goods");
+    }
+
+    #[test]
+    fn test_household() {
+        assert_eq!(categorize("Dish soap"), "Household");
+        assert_eq!(categorize("Palmolive ultra strength"), "Household");
+        assert_eq!(categorize("Dishwasher detergent"), "Household");
+        assert_eq!(categorize("Cascade Platinum"), "Household");
+        assert_eq!(categorize("paper towels"), "Household");
+        assert_eq!(categorize("toilet paper"), "Household");
+        assert_eq!(categorize("trash bags"), "Household");
+        assert_eq!(categorize("aluminum foil"), "Household");
+    }
+
+    #[test]
+    fn test_personal_care() {
+        assert_eq!(categorize("Ibuprofen"), "Personal Care");
+        assert_eq!(categorize("Tylenol"), "Personal Care");
+        assert_eq!(categorize("toothpaste"), "Personal Care");
+        assert_eq!(categorize("shampoo"), "Personal Care");
+    }
+
+    #[test]
+    fn test_pet() {
+        assert_eq!(categorize("Dog treats"), "Pet");
+        assert_eq!(categorize("dog food"), "Pet");
+        assert_eq!(categorize("cat food"), "Pet");
+        assert_eq!(categorize("cat litter"), "Pet");
+        // Bare "dog"/"cat" are not keywords; hot dogs stay food.
+        assert_eq!(categorize("hot dogs"), "Meat & Seafood");
     }
 
     #[test]
