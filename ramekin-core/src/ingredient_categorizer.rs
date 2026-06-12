@@ -29,13 +29,19 @@ static INGREDIENT_MAP: LazyLock<Vec<IngredientRule>> = LazyLock::new(|| {
     let mut map: Vec<IngredientRule> = data
         .categories
         .into_iter()
-        .map(|(keyword, category)| IngredientRule {
-            keyword_tokens: word_tokens(&keyword)
-                .into_iter()
-                .map(str::to_string)
-                .collect(),
-            keyword,
-            category,
+        .map(|(keyword, category)| {
+            assert!(
+                CATEGORIES.contains(&category.as_str()),
+                "ingredients.json keyword {keyword:?} has unknown category {category:?}"
+            );
+            IngredientRule {
+                keyword_tokens: word_tokens(&keyword)
+                    .into_iter()
+                    .map(str::to_string)
+                    .collect(),
+                keyword,
+                category,
+            }
         })
         .collect();
     // Sort by keyword length descending so longer/more specific matches are tried first.
@@ -73,12 +79,12 @@ pub const CATEGORIES: [&str; 19] = [
     "Other",
 ];
 
-/// Map a category string to its canonical `&'static str`, or "Other" if unknown.
+/// Map a category string to its canonical `&'static str`.
 fn category_to_static(category: &str) -> &'static str {
     CATEGORIES
         .into_iter()
         .find(|&c| c == category)
-        .unwrap_or("Other")
+        .expect("ingredient rule categories are validated when INGREDIENT_MAP loads")
 }
 
 /// Categorize an ingredient by name.
