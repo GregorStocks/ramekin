@@ -37,6 +37,7 @@ if [ "$1" = "up" ]; then
   printf '%s\\n' 0 > "$TEST_STATUS_DIR/rust-tests-cli.exit"
   printf '%s\\n' 1 > "$TEST_STATUS_DIR/rust-tests-core.exit"
   printf '%s\\n' 0 > "$TEST_STATUS_DIR/api-tests.exit"
+  printf '%s\\n' 0 > "$TEST_STATUS_DIR/ui-unit-tests.exit"
   exit 0
 fi
 
@@ -183,6 +184,7 @@ if [ "$1" = "up" ]; then
     printf '%s\\n' 0 > "$TEST_STATUS_DIR/rust-tests-cli.exit"
     printf '%s\\n' 0 > "$TEST_STATUS_DIR/rust-tests-core.exit"
     printf '%s\\n' 0 > "$TEST_STATUS_DIR/api-tests.exit"
+    printf '%s\\n' 0 > "$TEST_STATUS_DIR/ui-unit-tests.exit"
   ) &
   exit 0
 fi
