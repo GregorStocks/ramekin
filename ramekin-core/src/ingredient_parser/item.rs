@@ -704,6 +704,20 @@ pub fn should_ignore_line(raw: &str) -> bool {
         return true;
     }
 
+    // Lines starting with asterisk(s) attached directly to text are footnotes,
+    // not ingredients (e.g., "*Substitute octopus with sausage"). Bullet markers
+    // like "* 1 cup flour" have whitespace after the asterisk and are stripped
+    // by strip_leading_list_marker instead.
+    let asterisk_count = trimmed.chars().take_while(|&c| c == '*').count();
+    if asterisk_count > 0
+        && trimmed
+            .chars()
+            .nth(asterisk_count)
+            .is_some_and(|c| c.is_alphabetic())
+    {
+        return true;
+    }
+
     if is_standalone_yield_metadata_line(trimmed) {
         return true;
     }

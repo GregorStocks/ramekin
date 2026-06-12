@@ -337,6 +337,32 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     let (mut primary_amount, after_amount) = extract_amount(&remaining);
     remaining = after_amount;
 
+    // Handle a "+" between the amount and the unit:
+    // - "1 + 1/2 teaspoons" is a mixed number -> amount "1 1/2"
+    // - "1/4 + 1/8 teaspoon" sums two fractions sharing a unit -> amount "1/4 plus 1/8"
+    // - "3+ cups sugar" / "1/4 + teaspoon salt" has a stray "+" -> drop it
+    if let Some(amount) = primary_amount.as_deref() {
+        let remaining_trimmed = remaining.trim_start();
+        if let Some(after_plus) = remaining_trimmed.strip_prefix('+') {
+            let after_plus = after_plus.trim_start();
+            let (next_amount, after_next_amount) = extract_amount(after_plus);
+            match next_amount {
+                Some(next) if next.contains('/') => {
+                    primary_amount = if amount.chars().all(|c| c.is_ascii_digit()) {
+                        Some(format!("{} {}", amount, next))
+                    } else {
+                        Some(format!("{} plus {}", amount, next))
+                    };
+                    remaining = after_next_amount;
+                }
+                None if extract_unit(after_plus).0.is_some() => {
+                    remaining = after_plus.to_string();
+                }
+                _ => {}
+            }
+        }
+    }
+
     // Step 4: Strip measurement modifiers before unit, combine with any pre-amount modifier
     // Handles "2 heaping tablespoons" - modifier goes on the unit as "heaping tablespoons"
     let (pre_unit_modifier, after_modifier) = strip_measurement_modifier(&remaining);
@@ -455,29 +481,51 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
     }
 
-    // Step 4.4b: Handle "plus [amount] [unit]" compound quantities
+    // Step 4.4b: Handle "plus [amount] [unit]" compound quantities, including the
+    // "+" spelling and chains like "3/4 cup plus 2 Tbsp. plus 1 tsp."
     // e.g., "1/2 cup plus 2 tablespoons flour" -> amount="1/2 cup plus 2 tablespoons", unit=null
     // This keeps the compound quantity together as a single amount rather than splitting into note
-    {
+    loop {
         let remaining_trimmed = remaining.trim_start();
         let remaining_lower = remaining_trimmed.to_lowercase();
-        if remaining_lower.starts_with("plus ") {
-            let after_plus = remaining_trimmed.get(5..).unwrap_or("").trim_start();
+        let (after_plus, is_plus_sign) = if let Some(rest) = remaining_trimmed.strip_prefix('+') {
+            (rest.trim_start(), true)
+        } else if remaining_lower.starts_with("plus ") {
+            (remaining_trimmed.get(5..).unwrap_or("").trim_start(), false)
+        } else {
+            break;
+        };
 
-            // Try to parse a measurement from what follows "plus"
-            let (plus_amount, after_plus_amount) = extract_amount(after_plus);
-            let (plus_unit, after_plus_unit) = extract_unit(&after_plus_amount);
+        // Try to parse a measurement from what follows "plus"
+        let (plus_amount, after_plus_amount) = extract_amount(after_plus);
+        let (plus_unit, after_plus_unit) = extract_unit(&after_plus_amount);
 
-            // Only combine if we got BOTH amount AND unit after "plus"
-            if let (Some(p_amt), Some(p_unit)) = (plus_amount, plus_unit) {
+        // Only combine if we got BOTH amount AND unit after "plus"
+        if let (Some(p_amt), Some(p_unit)) = (plus_amount, plus_unit) {
+            match (&primary_amount, &primary_unit) {
                 // Combine into a single compound amount: "1/2 cup plus 2 tablespoons"
-                if let (Some(amt), Some(unit)) = (&primary_amount, &primary_unit) {
+                (Some(amt), Some(unit)) => {
                     primary_amount = Some(format!("{} {} plus {} {}", amt, unit, p_amt, p_unit));
                     primary_unit = None; // Unit is now embedded in the compound amount
                     remaining = after_plus_unit;
+                    continue;
                 }
+                // The amount is already compound: append the next segment
+                (Some(amt), None) if amt.contains(" plus ") => {
+                    primary_amount = Some(format!("{} plus {} {}", amt, p_amt, p_unit));
+                    remaining = after_plus_unit;
+                    continue;
+                }
+                _ => {}
             }
         }
+
+        if is_plus_sign && primary_amount.is_some() {
+            // A stray "+" after the measurement (e.g., "1/4 cup + Oil") is a
+            // formatting artifact; drop it and keep the rest as item text.
+            remaining = after_plus.to_string();
+        }
+        break;
     }
 
     // Step 4.5: Handle " or " alternatives in remaining text
@@ -909,6 +957,38 @@ pub fn expand_each_ingredients(ingredient: ParsedIngredient) -> Vec<ParsedIngred
         .collect()
 }
 
+/// True if the line opens a parenthesis it never closes.
+fn has_unclosed_paren(s: &str) -> bool {
+    let mut depth: i32 = 0;
+    for c in s.chars() {
+        match c {
+            '(' => depth += 1,
+            ')' => depth = (depth - 1).max(0),
+            _ => {}
+        }
+    }
+    depth > 0
+}
+
+/// True if the line closes a parenthesis opened on a previous line, i.e. its
+/// running paren balance dips below zero.
+fn closes_open_paren(s: &str) -> bool {
+    let mut depth: i32 = 0;
+    for c in s.chars() {
+        match c {
+            '(' => depth += 1,
+            ')' => {
+                depth -= 1;
+                if depth < 0 {
+                    return true;
+                }
+            }
+            _ => {}
+        }
+    }
+    false
+}
+
 /// Parse multiple ingredient lines (separated by newlines).
 /// Detects section headers (lines ending with colon, no measurements) and
 /// applies the section name to subsequent ingredients.
@@ -917,7 +997,17 @@ pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
     let mut current_section: Option<String> = None;
     let mut results = Vec::new();
 
-    for line in blob.lines() {
+    let mut lines = blob.lines().peekable();
+    while let Some(line) = lines.next() {
+        // Re-join hard-wrapped lines: when a parenthetical opens on one line and
+        // a following line closes it, the source wrapped a single ingredient.
+        let mut line = line.to_string();
+        while has_unclosed_paren(&line) && lines.peek().is_some_and(|next| closes_open_paren(next))
+        {
+            line.push(' ');
+            line.push_str(lines.next().expect("peeked line exists").trim());
+        }
+
         let trimmed = line.trim();
         if trimmed.is_empty() {
             continue;
@@ -1148,5 +1238,138 @@ mod tests {
         // The ** line should be filtered out
         assert_eq!(result.len(), 2);
         assert_eq!(result[1].item, "fresh mint leaves");
+    }
+
+    #[test]
+    fn test_plus_sign_compound_measurement() {
+        // "+" between two measurements works like "plus"
+        let result = parse_ingredient("1 tablespoon + 1 1/4 teaspoons salt, divided");
+        assert_eq!(result.item, "salt");
+        assert_eq!(
+            result.measurements[0].amount,
+            Some("1 tablespoon plus 1 1/4 teaspoons".to_string())
+        );
+        assert_eq!(result.measurements[0].unit, None);
+        assert_eq!(result.note.as_deref(), Some("divided"));
+    }
+
+    #[test]
+    fn test_plus_sign_compound_measurement_no_space() {
+        let result = parse_ingredient("1/3 cup +2 Tbsp warm water");
+        assert_eq!(result.item, "warm water");
+        assert_eq!(
+            result.measurements[0].amount,
+            Some("1/3 cup plus 2 tbsp".to_string())
+        );
+    }
+
+    #[test]
+    fn test_chained_plus_compound_measurement() {
+        // Chains of "plus" segments fold into a single compound amount
+        let result = parse_ingredient("3/4 cup plus 2 Tbsp. plus 1 tsp. sugar, divided");
+        assert_eq!(result.item, "sugar");
+        assert_eq!(
+            result.measurements[0].amount,
+            Some("3/4 cup plus 2 tbsp plus 1 tsp".to_string())
+        );
+        assert_eq!(result.note.as_deref(), Some("divided"));
+    }
+
+    #[test]
+    fn test_stray_plus_between_amount_and_unit() {
+        // "3+ cups" / "1/4 + teaspoon" style: the "+" is junk between amount and unit
+        let result = parse_ingredient("3+ cups sugar, mixed types");
+        assert_eq!(result.item, "sugar");
+        assert_eq!(result.measurements[0].amount, Some("3".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+
+        let result = parse_ingredient("1/4 + teaspoon fine grain sea salt");
+        assert_eq!(result.item, "fine grain sea salt");
+        assert_eq!(result.measurements[0].amount, Some("1/4".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("tsp".to_string()));
+    }
+
+    #[test]
+    fn test_plus_sign_mixed_number_amount() {
+        // "1 + 1/2 teaspoons" is a mixed number written with an explicit "+"
+        let result = parse_ingredient("1 + 1/2 teaspoons potato starch");
+        assert_eq!(result.item, "potato starch");
+        assert_eq!(result.measurements[0].amount, Some("1 1/2".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("tsp".to_string()));
+
+        let result = parse_ingredient("2 + ¼ cups light brown sugar");
+        assert_eq!(result.item, "light brown sugar");
+        assert_eq!(result.measurements[0].amount, Some("2 1/4".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+    }
+
+    #[test]
+    fn test_plus_sign_fraction_sum_amount() {
+        // Two fractions sharing one unit fold into a compound amount
+        let result = parse_ingredient("1/4 + 1/8 teaspoon fine sea salt");
+        assert_eq!(result.item, "fine sea salt");
+        assert_eq!(
+            result.measurements[0].amount,
+            Some("1/4 plus 1/8".to_string())
+        );
+        assert_eq!(result.measurements[0].unit, Some("tsp".to_string()));
+    }
+
+    #[test]
+    fn test_stray_plus_before_item() {
+        // A "+" after the measurement that is not followed by another measurement
+        let result = parse_ingredient("1/4 teaspoon + fine-grain sea salt");
+        assert_eq!(result.item, "fine-grain sea salt");
+        assert_eq!(result.measurements[0].amount, Some("1/4".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("tsp".to_string()));
+
+        let result = parse_ingredient("1/4 cup + Oil");
+        assert_eq!(result.item, "Oil");
+        assert_eq!(result.measurements[0].amount, Some("1/4".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+    }
+
+    #[test]
+    fn test_parse_ingredients_drops_footnote_lines() {
+        let blob = "1 cup flour\n*Substitute octopus with sausage (cheese, ham, and etc.)\n**if more milk is needed, add 1/4 cup milk at a time";
+        let result = parse_ingredients(blob);
+        assert_eq!(result.len(), 1);
+        assert_eq!(result[0].item, "flour");
+    }
+
+    #[test]
+    fn test_parse_ingredients_keeps_asterisk_bullet_lines() {
+        // "* " is a list bullet, not a footnote marker
+        let blob = "* 1 cup flour\n* 2 eggs";
+        let result = parse_ingredients(blob);
+        assert_eq!(result.len(), 2);
+        assert_eq!(result[0].item, "flour");
+        assert_eq!(result[1].item, "eggs");
+    }
+
+    #[test]
+    fn test_parse_ingredients_merges_wrapped_parenthetical_lines() {
+        // Hard-wrapped source line: the parenthetical opens on one line and
+        // closes on the next, so the two lines are one ingredient.
+        let blob =
+            "2 envelopes unflavored powdered gelatin (about 1 Tbsp. plus 2\ntsp.)\n1 2/3 cups whole milk";
+        let result = parse_ingredients(blob);
+        assert_eq!(result.len(), 2);
+        assert_eq!(result[0].item, "envelopes unflavored powdered gelatin");
+        assert_eq!(result[1].item, "whole milk");
+
+        let blob = "6 tablespoons (90 grams) sour cream or whole Greek yogurt (i.e., a strained\nyogurt)\n1 tablespoon (15 ml) white wine vinegar";
+        let result = parse_ingredients(blob);
+        assert_eq!(result.len(), 2);
+        assert_eq!(result[1].item, "white wine vinegar");
+    }
+
+    #[test]
+    fn test_parse_ingredients_no_merge_when_paren_never_closed() {
+        // An unclosed paren whose next line doesn't close it is just a typo in
+        // the source; the lines are separate ingredients.
+        let blob = "1 (16-ounce can chickpeas\n2 cups water";
+        let result = parse_ingredients(blob);
+        assert_eq!(result.len(), 2);
     }
 }

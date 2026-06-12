@@ -119,11 +119,11 @@
     {
       "raw": "1/4  + teaspoon fine grain sea salt",
       "expected": {
-        "item": "+ teaspoon fine grain sea salt",
+        "item": "fine grain sea salt",
         "measurements": [
           {
             "amount": "0.25",
-            "unit": null
+            "unit": "tsp"
           }
         ],
         "note": null,

@@ -3,31 +3,17 @@
   "recipe_slug": "recipe-tiramisu-panna-cotta",
   "ingredients": [
     {
-      "raw": "2 envelopes unflavored powdered gelatin (about 1 Tbsp. plus 2",
+      "raw": "2 envelopes unflavored powdered gelatin (about 1 Tbsp. plus 2 tsp.)",
       "expected": {
-        "item": "envelopes unflavored powdered gelatin (about 1 Tbsp.",
+        "item": "envelopes unflavored powdered gelatin",
         "measurements": [
           {
             "amount": "2",
             "unit": null
           }
         ],
-        "note": "plus 2",
+        "note": "about 1 Tbsp. plus 2 tsp.",
         "category": "Baking"
-      }
-    },
-    {
-      "raw": "tsp.)",
-      "expected": {
-        "item": ")",
-        "measurements": [
-          {
-            "amount": null,
-            "unit": "tsp"
-          }
-        ],
-        "note": null,
-        "category": "Other"
       }
     },
     {
@@ -83,10 +69,10 @@
     {
       "raw": "¾ cup plus 2 Tbsp. plus 1 tsp. (179 g) sugar, divided",
       "expected": {
-        "item": "plus 1 tsp. sugar",
+        "item": "sugar",
         "measurements": [
           {
-            "amount": "3/4 cup plus 2 tbsp",
+            "amount": "3/4 cup plus 2 tbsp plus 1 tsp",
             "unit": null
           },
           {

@@ -83,11 +83,19 @@
     {
       "raw": "1/4  + cup / 70 ml molasses",
       "expected": {
-        "item": "+ cup / 70 ml molasses",
+        "item": "molasses",
         "measurements": [
           {
             "amount": "0.25",
-            "unit": null
+            "unit": "cup"
+          },
+          {
+            "amount": "70",
+            "unit": "ml"
+          },
+          {
+            "amount": "84",
+            "unit": "g"
           }
         ],
         "note": null,

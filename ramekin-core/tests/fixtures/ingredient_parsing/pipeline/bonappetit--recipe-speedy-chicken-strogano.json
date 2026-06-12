@@ -3,31 +3,25 @@
   "recipe_slug": "recipe-speedy-chicken-strogano",
   "ingredients": [
     {
-      "raw": "4 small thin-sliced skinless, boneless chicken breasts (about 1½",
+      "raw": "4 small thin-sliced skinless, boneless chicken breasts (about 1½ lb. total)",
       "expected": {
-        "item": "thin-sliced skinless, boneless chicken breasts (about 1 1/2",
+        "item": "thin-sliced skinless, boneless chicken breasts",
         "measurements": [
           {
             "amount": "4",
             "unit": "small"
-          }
-        ],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
-    },
-    {
-      "raw": "lb. total)",
-      "expected": {
-        "item": "total)",
-        "measurements": [
+          },
           {
-            "amount": null,
+            "amount": "1.5",
             "unit": "lb"
+          },
+          {
+            "amount": "680",
+            "unit": "g"
           }
         ],
-        "note": null,
-        "category": "Other"
+        "note": "about 1 1/2 lb. total",
+        "category": "Meat & Seafood"
       }
     },
     {

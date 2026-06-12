@@ -19,11 +19,11 @@
     {
       "raw": "1/4 cup + 2 tablespoons flour",
       "expected": {
-        "item": "+ 2 tablespoons flour",
+        "item": "flour",
         "measurements": [
           {
-            "amount": "0.25",
-            "unit": "cup"
+            "amount": "1/4 cup plus 2 tablespoons",
+            "unit": null
           }
         ],
         "note": null,

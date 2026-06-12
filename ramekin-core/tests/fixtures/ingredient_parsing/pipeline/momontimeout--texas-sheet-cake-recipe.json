@@ -163,11 +163,11 @@
     {
       "raw": "1/4 cup + 2 tbsp whole milk",
       "expected": {
-        "item": "+ 2 tbsp whole milk",
+        "item": "whole milk",
         "measurements": [
           {
-            "amount": "0.25",
-            "unit": "cup"
+            "amount": "1/4 cup plus 2 tbsp",
+            "unit": null
           }
         ],
         "note": null,

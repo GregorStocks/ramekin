@@ -91,11 +91,11 @@
     {
       "raw": "1¼ cups + 2 tablespoons granulated sugar",
       "expected": {
-        "item": "+ 2 tablespoons granulated sugar",
+        "item": "granulated sugar",
         "measurements": [
           {
-            "amount": "1.25",
-            "unit": "cup"
+            "amount": "1 1/4 cups plus 2 tablespoons",
+            "unit": null
           }
         ],
         "note": null,

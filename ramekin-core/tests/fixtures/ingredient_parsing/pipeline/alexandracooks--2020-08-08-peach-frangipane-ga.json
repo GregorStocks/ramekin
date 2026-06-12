@@ -77,11 +77,11 @@
     {
       "raw": "1/4 cup + 1 tablespoon (71 g) ice water",
       "expected": {
-        "item": "+ 1 tablespoon ice water",
+        "item": "ice water",
         "measurements": [
           {
-            "amount": "0.25",
-            "unit": "cup"
+            "amount": "1/4 cup plus 1 tablespoon",
+            "unit": null
           },
           {
             "amount": "71",

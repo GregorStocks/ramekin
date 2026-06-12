@@ -288,26 +288,21 @@
       }
     },
     {
-      "raw": "2 cups chicken stock or reduced-sodium chicken broth (16",
+      "raw": "2 cups chicken stock or reduced-sodium chicken broth (16 fl oz)",
       "expected": {
-        "item": "chicken stock or reduced-sodium chicken broth (16",
+        "item": "chicken stock or reduced-sodium chicken broth",
         "measurements": [
           {
             "amount": "2",
             "unit": "cup"
+          },
+          {
+            "amount": "16",
+            "unit": "fl oz"
           }
         ],
         "note": null,
         "category": "Canned Goods"
-      }
-    },
-    {
-      "raw": "fl oz)",
-      "expected": {
-        "item": "fl oz)",
-        "measurements": [],
-        "note": null,
-        "category": "Other"
       }
     },
     {
