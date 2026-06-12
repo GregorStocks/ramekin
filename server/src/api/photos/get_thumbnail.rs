@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -10,7 +10,6 @@ use axum::{
     extract::{Path, Query, State},
     http::{header, StatusCode},
     response::{IntoResponse, Response},
-    Json,
 };
 use diesel::prelude::*;
 use serde::Deserialize;
@@ -75,23 +74,9 @@ pub async fn get_photo_thumbnail(
         {
             Ok(t) => t,
             Err(diesel::result::Error::NotFound) => {
-                return (
-                    StatusCode::NOT_FOUND,
-                    Json(ErrorResponse {
-                        error: "Photo not found".to_string(),
-                    }),
-                )
-                    .into_response()
+                return ApiError::not_found("Photo not found").into_response()
             }
-            Err(_) => {
-                return (
-                    StatusCode::INTERNAL_SERVER_ERROR,
-                    Json(ErrorResponse {
-                        error: "Failed to fetch photo".to_string(),
-                    }),
-                )
-                    .into_response()
-            }
+            Err(_) => return ApiError::internal("Failed to fetch photo").into_response(),
         };
 
         return jpeg_response(thumbnail).into_response();
@@ -106,25 +91,11 @@ pub async fn get_photo_thumbnail(
         .first(&mut conn)
     {
         Ok(exists) => exists,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch photo".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(_) => return ApiError::internal("Failed to fetch photo").into_response(),
     };
 
     if !photo_exists {
-        return (
-            StatusCode::NOT_FOUND,
-            Json(ErrorResponse {
-                error: "Photo not found".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::not_found("Photo not found").into_response();
     }
 
     // Check the thumbnail cache
@@ -136,15 +107,7 @@ pub async fn get_photo_thumbnail(
         .optional()
     {
         Ok(value) => value,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch thumbnail cache".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(_) => return ApiError::internal("Failed to fetch thumbnail cache").into_response(),
     };
 
     if let Some(data) = cached {
@@ -160,28 +123,14 @@ pub async fn get_photo_thumbnail(
         .first(&mut conn)
     {
         Ok(d) => d,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to load photo data".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(_) => return ApiError::internal("Failed to load photo data").into_response(),
     };
 
     let thumb_bytes = match generate_thumbnail(&full_data, size) {
         Ok(bytes) => bytes,
         Err(e) => {
             tracing::error!("Failed to generate thumbnail: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to generate thumbnail".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to generate thumbnail").into_response();
         }
     };
 

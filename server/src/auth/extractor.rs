@@ -1,11 +1,10 @@
-use crate::api::ErrorResponse;
+use crate::api::ApiError;
 use crate::db::DbPool;
 use crate::models::User;
 use axum::{
     extract::{FromRef, FromRequestParts},
-    http::{header, request::Parts, StatusCode},
+    http::{header, request::Parts},
     response::{IntoResponse, Response},
-    Json,
 };
 use std::sync::Arc;
 
@@ -30,23 +29,14 @@ pub enum AuthError {
 
 impl IntoResponse for AuthError {
     fn into_response(self) -> Response {
-        let (status, message) = match self {
-            AuthError::MissingHeader => (StatusCode::UNAUTHORIZED, "Missing Authorization header"),
-            AuthError::InvalidHeader => (StatusCode::UNAUTHORIZED, "Invalid Authorization header"),
-            AuthError::InvalidFormat => (
-                StatusCode::UNAUTHORIZED,
-                "Invalid Authorization header format",
-            ),
-            AuthError::InvalidToken => (StatusCode::UNAUTHORIZED, "Invalid or expired token"),
+        let message = match self {
+            AuthError::MissingHeader => "Missing Authorization header",
+            AuthError::InvalidHeader => "Invalid Authorization header",
+            AuthError::InvalidFormat => "Invalid Authorization header format",
+            AuthError::InvalidToken => "Invalid or expired token",
         };
 
-        (
-            status,
-            Json(ErrorResponse {
-                error: message.to_string(),
-            }),
-        )
-            .into_response()
+        ApiError::unauthorized(message).into_response()
     }
 }
 

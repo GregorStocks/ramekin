@@ -17,17 +17,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
+from ramekin_client.models.error_code import ErrorCode
 from typing import Optional, Set
 from typing_extensions import Self
 
 class ErrorResponse(BaseModel):
     """
-    Shared error response used by all endpoints
+    Shared error response body returned by every endpoint.
     """ # noqa: E501
-    error: StrictStr
-    __properties: ClassVar[List[str]] = ["error"]
+    code: ErrorCode = Field(description="Machine-readable error code; branch on this, not on `error`.")
+    error: StrictStr = Field(description="Human-readable message for display and debugging.")
+    __properties: ClassVar[List[str]] = ["code", "error"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -80,6 +82,7 @@ class ErrorResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "code": obj.get("code"),
             "error": obj.get("error")
         })
         return _obj

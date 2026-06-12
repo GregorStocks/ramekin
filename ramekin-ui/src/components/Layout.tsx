@@ -174,6 +174,9 @@ const Layout: ParentComponent = (props) => {
                 >
                   {isExporting() ? "Exporting…" : "Export"}
                 </button>
+                <A href="/settings" onClick={closeAll}>
+                  Settings
+                </A>
                 <div class="user-menu-divider" aria-hidden="true" />
                 <button type="button" class="nav-link-button" onClick={logout}>
                   Logout

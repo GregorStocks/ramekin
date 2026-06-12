@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -65,24 +65,8 @@ pub async fn list_versions(
 
     let (_recipe_id, current_version_id) = match recipe {
         Ok(r) => r,
-        Err(diesel::NotFound) => {
-            return (
-                StatusCode::NOT_FOUND,
-                Json(ErrorResponse {
-                    error: "Recipe not found".to_string(),
-                }),
-            )
-                .into_response()
-        }
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch recipe".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(diesel::NotFound) => return ApiError::not_found("Recipe not found").into_response(),
+        Err(_) => return ApiError::internal("Failed to fetch recipe").into_response(),
     };
 
     // Fetch all versions for this recipe, ordered by created_at descending (newest first)
@@ -98,15 +82,7 @@ pub async fn list_versions(
         .load(&mut conn)
     {
         Ok(v) => v,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch versions".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(_) => return ApiError::internal("Failed to fetch versions").into_response(),
     };
 
     let summaries: Vec<VersionSummary> = versions

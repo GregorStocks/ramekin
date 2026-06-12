@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::scraping;
@@ -146,12 +146,7 @@ pub async fn import_recipe(
         Ok(j) => j,
         Err(e) => {
             tracing::error!("Failed to create import job: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: format!("Failed to create import job: {}", e),
-                }),
-            )
+            return ApiError::internal(format!("Failed to create import job: {}", e))
                 .into_response();
         }
     };

@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -133,13 +133,7 @@ pub async fn list_meal_plans(
         Ok(rows) => rows,
         Err(e) => {
             tracing::error!("Failed to fetch meal plans: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch meal plans".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to fetch meal plans").into_response();
         }
     };
 

@@ -1,5 +1,5 @@
 use super::list::MealType;
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -66,24 +66,12 @@ pub async fn update_meal_plan(
         Ok(record) => record,
         Err(e) => {
             tracing::error!("Failed to fetch meal plan: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch meal plan".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to fetch meal plan").into_response();
         }
     };
 
     let Some((current_date, current_type, current_notes)) = existing else {
-        return (
-            StatusCode::NOT_FOUND,
-            Json(ErrorResponse {
-                error: "Meal plan not found".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::not_found("Meal plan not found").into_response();
     };
 
     // Calculate new values
@@ -113,30 +101,14 @@ pub async fn update_meal_plan(
     .execute(&mut conn);
 
     match result {
-        Ok(0) => (
-            StatusCode::NOT_FOUND,
-            Json(ErrorResponse {
-                error: "Meal plan not found".to_string(),
-            }),
-        )
-            .into_response(),
+        Ok(0) => ApiError::not_found("Meal plan not found").into_response(),
         Ok(_) => StatusCode::OK.into_response(),
-        Err(DieselError::DatabaseError(DatabaseErrorKind::UniqueViolation, _)) => (
-            StatusCode::CONFLICT,
-            Json(ErrorResponse {
-                error: "This recipe is already planned for this meal".to_string(),
-            }),
-        )
-            .into_response(),
+        Err(DieselError::DatabaseError(DatabaseErrorKind::UniqueViolation, _)) => {
+            ApiError::conflict("This recipe is already planned for this meal").into_response()
+        }
         Err(e) => {
             tracing::error!("Failed to update meal plan: {}", e);
-            (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to update meal plan".to_string(),
-                }),
-            )
-                .into_response()
+            ApiError::internal("Failed to update meal plan").into_response()
         }
     }
 }

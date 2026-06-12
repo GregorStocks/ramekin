@@ -1,12 +1,13 @@
 
 # ErrorResponse
 
-Shared error response used by all endpoints
+Shared error response body returned by every endpoint.
 
 ## Properties
 
 Name | Type
 ------------ | -------------
+`code` | [ErrorCode](ErrorCode.md)
 `error` | string
 
 ## Example
@@ -16,6 +17,7 @@ import type { ErrorResponse } from ''
 
 // TODO: Update the object below with actual values
 const example = {
+  "code": null,
   "error": null,
 } satisfies ErrorResponse
 

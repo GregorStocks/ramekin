@@ -14,7 +14,7 @@ import VersionHistoryPanel from "../components/VersionHistoryPanel";
 import EnrichPreviewModal from "../components/EnrichPreviewModal";
 import VersionCompareModal from "../components/VersionCompareModal";
 import AddToShoppingListModal from "../components/AddToShoppingListModal";
-import { extractApiError } from "../utils/recipeFormHelpers";
+import { extractApiError, parseApiError } from "../utils/recipeFormHelpers";
 import { parseTag } from "../utils/tagHierarchy";
 import { usePageTitle } from "../utils/pageTitle";
 import { scaleAmount } from "../utils/scaleAmount";
@@ -33,6 +33,7 @@ import type {
   Ingredient,
   MealType,
 } from "ramekin-client";
+import { ErrorCode } from "ramekin-client";
 
 /** Group ingredients by contiguous sections (preserving order). */
 function groupIngredientsBySection(
@@ -213,11 +214,12 @@ export default function ViewRecipePage() {
         loadCurrentVersionId();
       }
     } catch (err) {
-      if (err instanceof Response && err.status === 404) {
-        setError("Recipe not found");
-      } else {
-        setError("Failed to load recipe");
-      }
+      const parsed = await parseApiError(err, "Failed to load recipe");
+      setError(
+        parsed.code === ErrorCode.NotFound
+          ? "Recipe not found"
+          : "Failed to load recipe",
+      );
     } finally {
       setLoading(false);
     }
@@ -634,16 +636,13 @@ export default function ViewRecipePage() {
         closeMealPlanModal();
       }, 1500);
     } catch (err) {
-      if (err instanceof Response && err.status === 409) {
+      const parsed = await parseApiError(err, "Failed to add to meal plan");
+      if (parsed.code === ErrorCode.Conflict) {
         setMealPlanError(
           `This recipe is already scheduled for ${MEAL_TYPE_LABELS[mealPlanMealType()].toLowerCase()} on this date`,
         );
       } else {
-        const message = await extractApiError(
-          err,
-          "Failed to add to meal plan",
-        );
-        setMealPlanError(message);
+        setMealPlanError(parsed.message);
       }
     } finally {
       setAddingToMealPlan(false);

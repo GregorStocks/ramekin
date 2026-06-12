@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -51,13 +51,7 @@ pub async fn create_items(
     Json(request): Json<CreateShoppingListRequest>,
 ) -> impl IntoResponse {
     if request.items.is_empty() {
-        return (
-            StatusCode::BAD_REQUEST,
-            Json(ErrorResponse {
-                error: "At least one item is required".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::invalid_request("At least one item is required").into_response();
     }
 
     let mut conn = get_conn!(pool);
@@ -124,13 +118,7 @@ pub async fn create_items(
         Ok(ids) => ids,
         Err(e) => {
             tracing::error!("Failed to create shopping list items: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to create shopping list items".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to create shopping list items").into_response();
         }
     };
 

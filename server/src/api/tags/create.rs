@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -46,13 +46,7 @@ pub async fn create_tag(
     let name = request.name.trim();
 
     if let Err(err) = ramekin_core::validate_tag_name(name) {
-        return (
-            StatusCode::BAD_REQUEST,
-            Json(ErrorResponse {
-                error: err.message().to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::invalid_request(err.message().to_string()).into_response();
     }
 
     let mut conn = get_conn!(pool);
@@ -88,24 +82,12 @@ pub async fn create_tag(
                     .into_response(),
                 Err(e) => {
                     tracing::error!("Failed to revive tag: {}", e);
-                    (
-                        StatusCode::INTERNAL_SERVER_ERROR,
-                        Json(ErrorResponse {
-                            error: "Failed to create tag".to_string(),
-                        }),
-                    )
-                        .into_response()
+                    ApiError::internal("Failed to create tag").into_response()
                 }
             };
         }
 
-        return (
-            StatusCode::CONFLICT,
-            Json(ErrorResponse {
-                error: "Tag already exists".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::conflict("Tag already exists").into_response();
     }
 
     // Insert the new tag
@@ -123,13 +105,7 @@ pub async fn create_tag(
         }
         Err(e) => {
             tracing::error!("Failed to create tag: {}", e);
-            (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to create tag".to_string(),
-                }),
-            )
-                .into_response()
+            ApiError::internal("Failed to create tag").into_response()
         }
     }
 }

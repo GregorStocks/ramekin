@@ -1,5 +1,5 @@
 use crate::api::recipes::rescrape::RescrapeResponse;
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -47,39 +47,15 @@ pub async fn rescrape_photo(
         .first(&mut conn)
     {
         Ok(r) => r,
-        Err(diesel::NotFound) => {
-            return (
-                StatusCode::NOT_FOUND,
-                Json(ErrorResponse {
-                    error: "Recipe not found".to_string(),
-                }),
-            )
-                .into_response()
-        }
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch recipe".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(diesel::NotFound) => return ApiError::not_found("Recipe not found").into_response(),
+        Err(_) => return ApiError::internal("Failed to fetch recipe").into_response(),
     };
 
     let (recipe_id, current_version_id) = recipe;
 
     let current_version_id = match current_version_id {
         Some(vid) => vid,
-        None => {
-            return (
-                StatusCode::BAD_REQUEST,
-                Json(ErrorResponse {
-                    error: "Recipe has no versions".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        None => return ApiError::invalid_request("Recipe has no versions").into_response(),
     };
 
     let source_url: Option<String> = match recipe_versions::table
@@ -88,51 +64,26 @@ pub async fn rescrape_photo(
         .first(&mut conn)
     {
         Ok(url) => url,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch recipe version".to_string(),
-                }),
-            )
-                .into_response()
-        }
+        Err(_) => return ApiError::internal("Failed to fetch recipe version").into_response(),
     };
 
     let source_url = match source_url {
         Some(url) if !url.is_empty() => url,
         _ => {
-            return (
-                StatusCode::BAD_REQUEST,
-                Json(ErrorResponse {
-                    error: "Recipe has no source URL to rescrape from".to_string(),
-                }),
-            )
+            return ApiError::invalid_request("Recipe has no source URL to rescrape from")
                 .into_response()
         }
     };
 
     if let Err(e) = scraping::is_host_allowed(&source_url) {
-        return (
-            StatusCode::BAD_REQUEST,
-            Json(ErrorResponse {
-                error: e.to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::invalid_request(e.to_string()).into_response();
     }
 
     let job = match scraping::create_photo_rescrape_job(&pool, user.id, recipe_id, &source_url) {
         Ok(j) => j,
         Err(e) => {
             tracing::error!("Failed to create photo rescrape job: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to create photo rescrape job".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to create photo rescrape job").into_response();
         }
     };
 

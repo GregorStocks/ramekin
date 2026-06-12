@@ -1,4 +1,4 @@
-use crate::api::ErrorResponse;
+use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
@@ -70,13 +70,7 @@ pub async fn update_item(
         Ok(record) => record,
         Err(e) => {
             tracing::error!("Failed to fetch shopping list item: {}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch item".to_string(),
-                }),
-            )
-                .into_response();
+            return ApiError::internal("Failed to fetch item").into_response();
         }
     };
 
@@ -89,13 +83,7 @@ pub async fn update_item(
         current_version,
     )) = existing
     else {
-        return (
-            StatusCode::NOT_FOUND,
-            Json(ErrorResponse {
-                error: "Item not found".to_string(),
-            }),
-        )
-            .into_response();
+        return ApiError::not_found("Item not found").into_response();
     };
 
     // Calculate new values
@@ -124,23 +112,11 @@ pub async fn update_item(
     .execute(&mut conn);
 
     match result {
-        Ok(0) => (
-            StatusCode::NOT_FOUND,
-            Json(ErrorResponse {
-                error: "Item not found".to_string(),
-            }),
-        )
-            .into_response(),
+        Ok(0) => ApiError::not_found("Item not found").into_response(),
         Ok(_) => StatusCode::OK.into_response(),
         Err(e) => {
             tracing::error!("Failed to update shopping list item: {}", e);
-            (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to update item".to_string(),
-                }),
-            )
-                .into_response()
+            ApiError::internal("Failed to update item").into_response()
         }
     }
 }
