@@ -11,11 +11,15 @@ class ShoppingListStore: ObservableObject {
     @Published var isSyncing = false
     @Published var isOnline = true
     @Published var lastSyncError: String?
+    /// Canonical category display order, served by the API and persisted
+    /// across launches. Empty until the first successful sync.
+    @Published var categoryOrder: [String] = []
 
     private let coreDataStack = CoreDataStack.shared
     private let networkMonitor = NWPathMonitor()
     private let monitorQueue = DispatchQueue(label: "NetworkMonitor")
     private let lastSyncAtKey = "shopping_list_last_sync_at"
+    private let categoryOrderKey = "shopping_list_category_order"
 
     private var lastSyncAt: Date? {
         get { UserDefaults.standard.object(forKey: lastSyncAtKey) as? Date }
@@ -32,6 +36,7 @@ class ShoppingListStore: ObservableObject {
             }
         }
         networkMonitor.start(queue: monitorQueue)
+        categoryOrder = UserDefaults.standard.stringArray(forKey: categoryOrderKey) ?? []
         fetchItems()
     }
 
@@ -155,6 +160,8 @@ class ShoppingListStore: ObservableObject {
             }
             processServerResponse(response, pendingItems: pending, syncStartedAt: syncStartedAt)
             lastSyncAt = response.syncTimestamp
+            categoryOrder = response.categoryOrder
+            UserDefaults.standard.set(response.categoryOrder, forKey: categoryOrderKey)
             logger.log("syncWithServer completed successfully", source: "Shopping")
         } catch {
             logger.log("syncWithServer FAILED: \(error.localizedDescription)", source: "Shopping")

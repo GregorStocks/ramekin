@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List
 from ramekin_client.models.shopping_list_item_response import ShoppingListItemResponse
 from typing import Optional, Set
@@ -27,8 +27,9 @@ class ShoppingListResponse(BaseModel):
     """
     ShoppingListResponse
     """ # noqa: E501
+    category_order: List[StrictStr] = Field(description="Canonical category display order for grouping items; every item's `category` is guaranteed to appear in this list.")
     items: List[ShoppingListItemResponse]
-    __properties: ClassVar[List[str]] = ["items"]
+    __properties: ClassVar[List[str]] = ["category_order", "items"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,6 +89,7 @@ class ShoppingListResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "category_order": obj.get("category_order"),
             "items": [ShoppingListItemResponse.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj

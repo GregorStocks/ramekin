@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**category_order** | **List[str]** | Canonical category display order for grouping items; every item&#39;s &#x60;category&#x60; is guaranteed to appear in this list. | 
 **created** | [**List[SyncCreatedItem]**](SyncCreatedItem.md) | Items that were created (maps client_id to server_id) | 
 **deleted** | **List[UUID]** | IDs of items that were deleted | 
 **server_changes** | [**List[SyncServerChange]**](SyncServerChange.md) | Server-side changes since last_sync_at | 

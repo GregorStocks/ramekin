@@ -13,12 +13,21 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ShoppingListResponse {
+    /// Canonical category display order for grouping items; every item's `category` is guaranteed to appear in this list.
+    #[serde(rename = "category_order")]
+    pub category_order: Vec<String>,
     #[serde(rename = "items")]
     pub items: Vec<models::ShoppingListItemResponse>,
 }
 
 impl ShoppingListResponse {
-    pub fn new(items: Vec<models::ShoppingListItemResponse>) -> ShoppingListResponse {
-        ShoppingListResponse { items }
+    pub fn new(
+        category_order: Vec<String>,
+        items: Vec<models::ShoppingListItemResponse>,
+    ) -> ShoppingListResponse {
+        ShoppingListResponse {
+            category_order,
+            items,
+        }
     }
 }

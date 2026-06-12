@@ -12,13 +12,17 @@ import AnyCodable
 
 public struct ShoppingListResponse: Codable, JSONEncodable, Hashable {
 
+    /** Canonical category display order for grouping items; every item's `category` is guaranteed to appear in this list. */
+    public var categoryOrder: [String]
     public var items: [ShoppingListItemResponse]
 
-    public init(items: [ShoppingListItemResponse]) {
+    public init(categoryOrder: [String], items: [ShoppingListItemResponse]) {
+        self.categoryOrder = categoryOrder
         self.items = items
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
+        case categoryOrder = "category_order"
         case items
     }
 
@@ -26,6 +30,7 @@ public struct ShoppingListResponse: Codable, JSONEncodable, Hashable {
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(categoryOrder, forKey: .categoryOrder)
         try container.encode(items, forKey: .items)
     }
 }

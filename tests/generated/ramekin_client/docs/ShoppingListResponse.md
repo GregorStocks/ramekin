@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**category_order** | **List[str]** | Canonical category display order for grouping items; every item&#39;s &#x60;category&#x60; is guaranteed to appear in this list. | 
 **items** | [**List[ShoppingListItemResponse]**](ShoppingListItemResponse.md) |  | 
 
 ## Example

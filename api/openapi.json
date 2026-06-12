@@ -3822,9 +3822,17 @@
       "ShoppingListResponse": {
         "type": "object",
         "required": [
-          "items"
+          "items",
+          "category_order"
         ],
         "properties": {
+          "category_order": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Canonical category display order for grouping items; every item's\n`category` is guaranteed to appear in this list."
+          },
           "items": {
             "type": "array",
             "items": {
@@ -4074,9 +4082,17 @@
           "updated",
           "deleted",
           "server_changes",
-          "sync_timestamp"
+          "sync_timestamp",
+          "category_order"
         ],
         "properties": {
+          "category_order": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Canonical category display order for grouping items; every item's\n`category` is guaranteed to appear in this list."
+          },
           "created": {
             "type": "array",
             "items": {

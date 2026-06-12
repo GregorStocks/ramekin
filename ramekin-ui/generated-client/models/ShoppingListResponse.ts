@@ -28,6 +28,13 @@ import {
  */
 export interface ShoppingListResponse {
     /**
+     * Canonical category display order for grouping items; every item's
+     * `category` is guaranteed to appear in this list.
+     * @type {Array<string>}
+     * @memberof ShoppingListResponse
+     */
+    categoryOrder: Array<string>;
+    /**
      * 
      * @type {Array<ShoppingListItemResponse>}
      * @memberof ShoppingListResponse
@@ -39,6 +46,7 @@ export interface ShoppingListResponse {
  * Check if a given object implements the ShoppingListResponse interface.
  */
 export function instanceOfShoppingListResponse(value: object): value is ShoppingListResponse {
+    if (!('categoryOrder' in value) || value['categoryOrder'] === undefined) return false;
     if (!('items' in value) || value['items'] === undefined) return false;
     return true;
 }
@@ -53,6 +61,7 @@ export function ShoppingListResponseFromJSONTyped(json: any, ignoreDiscriminator
     }
     return {
         
+        'categoryOrder': json['category_order'],
         'items': ((json['items'] as Array<any>).map(ShoppingListItemResponseFromJSON)),
     };
 }
@@ -68,6 +77,7 @@ export function ShoppingListResponseToJSONTyped(value?: ShoppingListResponse | n
 
     return {
         
+        'category_order': value['categoryOrder'],
         'items': ((value['items'] as Array<any>).map(ShoppingListItemResponseToJSON)),
     };
 }

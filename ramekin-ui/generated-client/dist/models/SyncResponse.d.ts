@@ -19,6 +19,13 @@ import type { SyncServerChange } from './SyncServerChange';
  */
 export interface SyncResponse {
     /**
+     * Canonical category display order for grouping items; every item's
+     * `category` is guaranteed to appear in this list.
+     * @type {Array<string>}
+     * @memberof SyncResponse
+     */
+    categoryOrder: Array<string>;
+    /**
      * Items that were created (maps client_id to server_id)
      * @type {Array<SyncCreatedItem>}
      * @memberof SyncResponse

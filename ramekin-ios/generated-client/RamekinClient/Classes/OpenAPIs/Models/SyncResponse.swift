@@ -12,6 +12,8 @@ import AnyCodable
 
 public struct SyncResponse: Codable, JSONEncodable, Hashable {
 
+    /** Canonical category display order for grouping items; every item's `category` is guaranteed to appear in this list. */
+    public var categoryOrder: [String]
     /** Items that were created (maps client_id to server_id) */
     public var created: [SyncCreatedItem]
     /** IDs of items that were deleted */
@@ -23,7 +25,8 @@ public struct SyncResponse: Codable, JSONEncodable, Hashable {
     /** Items that were updated (with success status) */
     public var updated: [SyncUpdatedItem]
 
-    public init(created: [SyncCreatedItem], deleted: [UUID], serverChanges: [SyncServerChange], syncTimestamp: Date, updated: [SyncUpdatedItem]) {
+    public init(categoryOrder: [String], created: [SyncCreatedItem], deleted: [UUID], serverChanges: [SyncServerChange], syncTimestamp: Date, updated: [SyncUpdatedItem]) {
+        self.categoryOrder = categoryOrder
         self.created = created
         self.deleted = deleted
         self.serverChanges = serverChanges
@@ -32,6 +35,7 @@ public struct SyncResponse: Codable, JSONEncodable, Hashable {
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
+        case categoryOrder = "category_order"
         case created
         case deleted
         case serverChanges = "server_changes"
@@ -43,6 +47,7 @@ public struct SyncResponse: Codable, JSONEncodable, Hashable {
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(categoryOrder, forKey: .categoryOrder)
         try container.encode(created, forKey: .created)
         try container.encode(deleted, forKey: .deleted)
         try container.encode(serverChanges, forKey: .serverChanges)

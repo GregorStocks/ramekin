@@ -42,6 +42,13 @@ import {
  */
 export interface SyncResponse {
     /**
+     * Canonical category display order for grouping items; every item's
+     * `category` is guaranteed to appear in this list.
+     * @type {Array<string>}
+     * @memberof SyncResponse
+     */
+    categoryOrder: Array<string>;
+    /**
      * Items that were created (maps client_id to server_id)
      * @type {Array<SyncCreatedItem>}
      * @memberof SyncResponse
@@ -77,6 +84,7 @@ export interface SyncResponse {
  * Check if a given object implements the SyncResponse interface.
  */
 export function instanceOfSyncResponse(value: object): value is SyncResponse {
+    if (!('categoryOrder' in value) || value['categoryOrder'] === undefined) return false;
     if (!('created' in value) || value['created'] === undefined) return false;
     if (!('deleted' in value) || value['deleted'] === undefined) return false;
     if (!('serverChanges' in value) || value['serverChanges'] === undefined) return false;
@@ -95,6 +103,7 @@ export function SyncResponseFromJSONTyped(json: any, ignoreDiscriminator: boolea
     }
     return {
         
+        'categoryOrder': json['category_order'],
         'created': ((json['created'] as Array<any>).map(SyncCreatedItemFromJSON)),
         'deleted': json['deleted'],
         'serverChanges': ((json['server_changes'] as Array<any>).map(SyncServerChangeFromJSON)),
@@ -114,6 +123,7 @@ export function SyncResponseToJSONTyped(value?: SyncResponse | null, ignoreDiscr
 
     return {
         
+        'category_order': value['categoryOrder'],
         'created': ((value['created'] as Array<any>).map(SyncCreatedItemToJSON)),
         'deleted': value['deleted'],
         'server_changes': ((value['serverChanges'] as Array<any>).map(SyncServerChangeToJSON)),

@@ -35,6 +35,9 @@ class TestSyncResponse(unittest.TestCase):
         model = SyncResponse()
         if include_optional:
             return SyncResponse(
+                category_order = [
+                    ''
+                    ],
                 created = [
                     ramekin_client.models.sync_created_item.SyncCreatedItem(
                         client_id = '', 
@@ -68,6 +71,9 @@ class TestSyncResponse(unittest.TestCase):
             )
         else:
             return SyncResponse(
+                category_order = [
+                    ''
+                    ],
                 created = [
                     ramekin_client.models.sync_created_item.SyncCreatedItem(
                         client_id = '', 

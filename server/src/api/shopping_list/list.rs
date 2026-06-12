@@ -31,6 +31,17 @@ pub struct ShoppingListItemResponse {
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct ShoppingListResponse {
     pub items: Vec<ShoppingListItemResponse>,
+    /// Canonical category display order for grouping items; every item's
+    /// `category` is guaranteed to appear in this list.
+    pub category_order: Vec<String>,
+}
+
+/// The canonical category display order, as served to clients.
+pub fn category_order() -> Vec<String> {
+    ingredient_categorizer::CATEGORIES
+        .into_iter()
+        .map(str::to_string)
+        .collect()
 }
 
 // Type alias for query result row
@@ -124,5 +135,12 @@ pub async fn list_items(
         )
         .collect();
 
-    (StatusCode::OK, Json(ShoppingListResponse { items })).into_response()
+    (
+        StatusCode::OK,
+        Json(ShoppingListResponse {
+            items,
+            category_order: category_order(),
+        }),
+    )
+        .into_response()
 }
