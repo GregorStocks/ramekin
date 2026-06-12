@@ -6,31 +6,7 @@ use std::fs;
 use std::path::PathBuf;
 
 use super::slugify_url;
-
-/// Unwrap a cache file read, warning (rather than silently missing) on IO errors.
-fn read_or_warn<T>(path: &std::path::Path, result: std::io::Result<T>) -> Option<T> {
-    match result {
-        Ok(v) => Some(v),
-        Err(e) => {
-            tracing::warn!(path = %path.display(), error = %e, "failed to read HTTP cache file; treating as miss");
-            None
-        }
-    }
-}
-
-/// Parse a cache file's JSON, warning (rather than silently missing) on corruption.
-fn parse_or_warn<T: serde::de::DeserializeOwned>(
-    path: &std::path::Path,
-    content: &str,
-) -> Option<T> {
-    match serde_json::from_str(content) {
-        Ok(v) => Some(v),
-        Err(e) => {
-            tracing::warn!(path = %path.display(), error = %e, "corrupt HTTP cache file; treating as miss");
-            None
-        }
-    }
-}
+use crate::cache_io::{parse_or_warn, read_or_warn};
 
 /// Disk-based HTTP response cache.
 pub struct DiskCache {

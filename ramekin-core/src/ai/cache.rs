@@ -7,6 +7,7 @@ use std::fs;
 use std::path::PathBuf;
 
 use super::types::{ChatMessage, ChatResponse, Usage};
+use crate::cache_io::{parse_or_warn, read_or_warn};
 
 /// Disk-based AI response cache.
 pub struct AiCache {
@@ -90,20 +91,8 @@ impl AiCache {
         if !path.exists() {
             return None;
         }
-        let content = match fs::read_to_string(&path) {
-            Ok(c) => c,
-            Err(e) => {
-                tracing::warn!(path = %path.display(), error = %e, "failed to read AI cache entry; treating as miss");
-                return None;
-            }
-        };
-        match serde_json::from_str(&content) {
-            Ok(r) => Some(r),
-            Err(e) => {
-                tracing::warn!(path = %path.display(), error = %e, "corrupt AI cache entry; treating as miss");
-                None
-            }
-        }
+        let content = read_or_warn(&path, fs::read_to_string(&path))?;
+        parse_or_warn(&path, &content)
     }
 
     /// Store a response in the cache.

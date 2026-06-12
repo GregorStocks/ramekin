@@ -1,6 +1,7 @@
 #![deny(clippy::print_stdout, clippy::print_stderr)]
 
 pub mod ai;
+mod cache_io;
 pub mod error;
 pub mod extract;
 pub mod fetch;

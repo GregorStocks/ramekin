@@ -112,12 +112,11 @@ pub(super) fn extract_microdata_instructions(
     )
     .expect("Invalid selector");
 
+    // Text property inside HowToStep
+    let text_selector = Selector::parse(r#"[itemprop="text"]"#).expect("itemprop text selector");
     let steps: Vec<String> = recipe_element
         .select(&step_selector)
         .map(|el| {
-            // Check for text property inside HowToStep
-            let text_selector =
-                Selector::parse(r#"[itemprop="text"]"#).expect("itemprop text selector");
             if let Some(text_el) = el.select(&text_selector).next() {
                 return text_el.text().collect::<String>().trim().to_string();
             }
