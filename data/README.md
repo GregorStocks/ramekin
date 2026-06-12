@@ -88,18 +88,23 @@ With `--merge`, the tool:
 
 This lets you incrementally grow the dataset over time without re-scraping everything.
 
-## shopping-list-items.txt / shopping-list-categories.tsv
+## shopping-list-categories.json
 
 A small corpus of real shopping-list usage from the prod server, used to score the
 ingredient categorizer (`ramekin-core/src/ingredient_categorizer.rs`) against
 hand-typed items — including non-recipe store items (household goods, snacks) that
 never appear in `unique-ingredients.txt`.
 
-- `shopping-list-items.txt` — every distinct item ever added to the prod
-  `shopping_list_items` table (including soft-deleted rows), one `count<TAB>item`
-  per line, ordered by count descending.
-- `shopping-list-categories.tsv` — the same items labeled with their expected
-  grocery-aisle category, one `expected_category<TAB>item` per line.
+Each entry is one distinct item ever added to the prod `shopping_list_items` table
+(including soft-deleted rows), ordered by count descending:
+
+```json
+{
+  "item": "onion",       // the item string exactly as entered
+  "count": 11,           // how many times it was added on prod
+  "category": "Produce"  // the expected grocery-aisle category (hand/LLM-labeled)
+}
+```
 
 `make shopping-list-categorizer-test` runs the categorizer over the labeled corpus
 and reports accuracy, the mismatches, and the "Other" rate — both per distinct item
@@ -116,6 +121,6 @@ is intentionally **not** a Makefile target and the extraction query is intention
 prod query should be confirmed with the maintainer rather than baked into the
 codebase. To refresh it, ask Gregor to run a read-only extraction of the distinct
 `shopping_list_items` (grouped by item with usage counts, including soft-deleted
-rows, ordered by count descending) into `data/shopping-list-items.txt` as
-`count<TAB>item`, then re-label any new items so `make shopping-list-categorizer-test`
-passes.
+rows, ordered by count descending), merge the results into
+`data/shopping-list-categories.json`, and label any new items so
+`make shopping-list-categorizer-test` passes.
