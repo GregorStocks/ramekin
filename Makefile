@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down serve serve-down check-deps lint clean clean-api generate-schema test test-core test-ui ui-unit-test venv venv-clean db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import shopping-list-categorizer-test title-normalization-test description-generation-test server-release-build
+.PHONY: help dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps lint clean clean-api generate-schema test test-core test-ui ui-unit-test venv venv-clean db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import shopping-list-categorizer-test title-normalization-test description-generation-test server-release-build
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -75,7 +75,10 @@ $(CLIENT_MARKER): api/openapi.json
 	@./scripts/generate-clients.sh
 	@cd cli && cargo fmt --all -q 2>/dev/null || true
 
-lint: venv $(CLIENT_MARKER) ## Run all linters (Rust, TypeScript, Python)
+check-lint-deps: ## Check that the tools needed by make lint are installed
+	@./scripts/check-deps.sh --lint
+
+lint: check-lint-deps venv $(CLIENT_MARKER) ## Run all linters (Rust, TypeScript, Python)
 	@bash -o pipefail -c 'PATH="$(CURDIR)/.venv/bin:$$PATH" ./scripts/lint.py 2>&1 | $(TS)'
 
 clean: ## Clean generated files and build artifacts
@@ -118,7 +121,10 @@ test-ui: check-deps $(CLIENT_MARKER) ## Run UI tests with Playwright (requires D
 ui-unit-test: $(CLIENT_MARKER) ## Run web unit tests (Vitest)
 	@cd ramekin-ui && if [ ! -x node_modules/.bin/vitest ]; then npx --yes -p npm@latest npm ci --silent; fi && npx vitest run
 
-.venv/.installed: requirements-test.txt
+check-venv-deps:
+	@./scripts/check-deps.sh --venv
+
+.venv/.installed: requirements-test.txt | check-venv-deps
 	@test -d .venv || uv venv
 	@uv pip install -r requirements-test.txt
 	@touch .venv/.installed

@@ -375,7 +375,11 @@ def lint_swift(project_root: Path) -> tuple[str, bool]:
         check=False,
     )
     if which_result.returncode != 0:
-        print("swiftlint not installed (brew install swiftlint)", file=sys.stderr)
+        print(
+            "swiftlint not installed"
+            " (run ./scripts/check-deps.sh for install instructions)",
+            file=sys.stderr,
+        )
         return ("Swift", False)
 
     # On macOS, ensure DEVELOPER_DIR points to Xcode.app if available
@@ -494,7 +498,11 @@ def lint_shell(project_root: Path) -> tuple[str, bool]:
         check=False,
     )
     if which_result.returncode != 0:
-        print("shellcheck not installed (apt install shellcheck)", file=sys.stderr)
+        print(
+            "shellcheck not installed"
+            " (run ./scripts/check-deps.sh for install instructions)",
+            file=sys.stderr,
+        )
         return ("Shell", False)
 
     scripts_dir = project_root / "scripts"
@@ -533,7 +541,11 @@ def check_raw_sql(project_root: Path) -> tuple[str, bool]:
         check=False,
     )
     if which_result.returncode != 0:
-        print("ast-grep not installed (cargo install ast-grep)", file=sys.stderr)
+        print(
+            "ast-grep not installed"
+            " (run ./scripts/check-deps.sh for install instructions)",
+            file=sys.stderr,
+        )
         return ("Raw SQL check", False)
 
     # The designated module for all raw SQL - see server/src/raw_sql.rs for safety docs
