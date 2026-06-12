@@ -601,6 +601,12 @@ def check_raw_sql(project_root: Path) -> tuple[str, bool]:
     return ("Raw SQL check", True)
 
 
+def check_client_parity(project_root: Path) -> tuple[str, bool]:
+    """Run the generated-client parity drift detector."""
+    script = project_root / "scripts" / "check_client_parity.py"
+    return run_command("Client parity", ["python3", str(script)])
+
+
 def lint_issues(project_root: Path) -> tuple[str, bool]:
     """Validate issue JSON5 files in issues/ directory."""
     issue_lint = shutil.which("issue-lint")
@@ -744,6 +750,7 @@ def main() -> None:
         ("YAML", lambda: lint_yaml(project_root)),
         ("Shell", lambda: lint_shell(project_root)),
         ("Raw SQL check", lambda: check_raw_sql(project_root)),
+        ("Client parity", lambda: check_client_parity(project_root)),
         ("Issues", lambda: lint_issues(project_root)),
     ]
 

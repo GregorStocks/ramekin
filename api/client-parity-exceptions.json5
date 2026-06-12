@@ -1,0 +1,41 @@
+// Generated-client endpoint parity exceptions.
+// See scripts/check_client_parity.py.
+//
+// The default contract is: every OpenAPI operation is used by
+// BOTH clients (ramekin-ui and ramekin-ios). This file only
+// lists deliberate exceptions to that rule.
+//
+// Each entry's `platforms` is one of:
+//   "web-only"  — referenced only in the web client
+//   "ios-only"  — referenced only in the iOS client
+//   "neither"   — not referenced by either client (e.g. infra/
+//                  health endpoint, or fetched via URL rather
+//                  than the generated client)
+//
+// Every entry must include a non-empty `reason`.
+//
+// To regenerate from the source tree after a deliberate adoption
+// or removal, run `./scripts/check_client_parity.py --update`
+// and commit the diff with a note explaining the change.
+{
+  clear_checked: { platforms: "web-only", reason: "iOS clears checked items in CoreData and flushes through sync_items." },
+  create_items: { platforms: "web-only", reason: "iOS mutates shopping list items via sync_items only." },
+  create_scrape: { platforms: "web-only", reason: "Scrape debugging page; iOS has no scrape inspector UI." },
+  create_tag: { platforms: "neither", reason: "Tags are created implicitly via update_recipe; no client surfaces a standalone create-tag flow." },
+  delete_item: { platforms: "web-only", reason: "iOS marks shopping items deleted in CoreData and flushes through sync_items." },
+  export_recipe: { platforms: "ios-only", reason: "iOS uses the generated client for single-recipe export; web still triggers downloads via a plain <a> / fetch." },
+  get_step_output: { platforms: "web-only", reason: "Scrape-step debug viewer; web-only." },
+  import_from_photos: { platforms: "neither", reason: "Endpoint exists server-side but no client surfaces it yet." },
+  import_recipe: { platforms: "web-only", reason: "URL/text import flow not yet ported to iOS." },
+  list_items: { platforms: "web-only", reason: "iOS reads the shopping list via sync_items (offline-first)." },
+  me: { platforms: "web-only", reason: "Powers the web account/settings page; iOS doesn't surface account info yet." },
+  ping: { platforms: "neither", reason: "Health check used by infra/curl; not called from either client." },
+  rescrape_photo: { platforms: "web-only", reason: "Photo rescrape control not yet ported to iOS." },
+  retry_scrape: { platforms: "web-only", reason: "Scrape debugging page; iOS has no scrape inspector UI." },
+  signup: { platforms: "web-only", reason: "Account creation happens on the web; iOS users sign in to an existing account." },
+  sync_items: { platforms: "ios-only", reason: "Web is online-only by design; offline shopping-list sync is iOS-specific." },
+  sync_recipes: { platforms: "ios-only", reason: "Web is online-only by design; iOS keeps a local recipe cache via incremental sync." },
+  unauthed_ping: { platforms: "ios-only", reason: "iOS hits this via the RamekinAPI.testConnection() health-check; web doesn't call it." },
+  update_item: { platforms: "web-only", reason: "iOS mutates shopping list items via sync_items only." },
+  update_meal_plan: { platforms: "neither", reason: "Meal plan entries are immutable in current UI; edit flow not built on either client." },
+}
