@@ -13,6 +13,10 @@ extension RecipeDetailView {
                     rescrapeProgressBanner()
                 }
 
+                if let banner = autoEnrichmentProgressLabel {
+                    autoEnrichmentProgressBanner(banner)
+                }
+
                 if let error {
                     inlineErrorBanner(message: error)
                 }
