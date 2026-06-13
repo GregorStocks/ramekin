@@ -3,7 +3,7 @@
 ## Overall
 
 - Total URLs: 5534
-- Completed: 5457 (98.6%)
+- Completed: 5458 (98.6%)
 - Failed at fetch: 1 (0.0%)
 - Failed at extract: 75 (1.4%)
 
@@ -16,18 +16,18 @@
 
 ## Ingredient Parsing
 
-- Total ingredients: 60636
-- Volume-to-weight converted: 18865/42721 (44.2%)
-- Unknown ingredient (no density data): 14294
+- Total ingredients: 60625
+- Volume-to-weight converted: 18873/42706 (44.2%)
+- Unknown ingredient (no density data): 14271
 - Already has weight: 9562
-- No volume unit (count-based): 17546
+- No volume unit (count-based): 17549
 - Metric converted (oz→g): 2451
-- Metric converted (lb→g): 1806
+- Metric converted (lb→g): 1807
 
 ## AI Cache
 
-- Cache hits: 16309/16371 (99.6%)
-- API calls: 62/16371 (0.4%)
+- Cache hits: 16374/16374 (100.0%)
+- API calls: 0/16374 (0.0%)
 
 ## By Site
 
@@ -112,7 +112,7 @@
 | spendwithpennies.com | 35 | 35 | 100.0% |
 | spoonforkbacon.com | 2 | 2 | 100.0% |
 | sprinklebakes.com | 74 | 92 | 80.4% |
-| sudachirecipes.com | 96 | 97 | 99.0% |
+| sudachirecipes.com | 97 | 97 | 100.0% |
 | sweetandsavorymeals.com | 100 | 100 | 100.0% |
 | tasteofhome.com | 100 | 100 | 100.0% |
 | tastesbetterfromscratch.com | 3 | 3 | 100.0% |
@@ -132,10 +132,6 @@
 | yellowblissroad.com | 31 | 31 | 100.0% |
 
 ## Failed URLs by Error
-
-### AI call failed: Failed to parse response: Unusable... (1 URLs)
-
-- https://sudachirecipes.com/sawaniwan-recipe/
 
 ### Cached fetch error (1 URLs)
 
