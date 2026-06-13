@@ -1858,6 +1858,7 @@
 | Best Juicy Pork Tenderloin | dinner, entree, pork | yes |
 | Mini Upside Down Blueberry Cakes | dessert, snack, easy, vegetarian, pantry | yes |
 | Perfect Homemade Caramel Sauce | dessert, easy, vegetarian, pantry | yes |
+| Breakfast Pizza Recipe with Tomatoes ... | breakfast, easy, vegetarian, italian, egg, cheese | yes |
 | Easy Baked Ziti Recipe with Shrimp an... | dinner, easy, comfort food, italian, seafood, pasta, greens, cheese | yes |
 | Mini Beef and Guinness Pies | dinner, entree, comfort food, beef | yes |
 | Steak and Eggs with Roasted Asparagus | dinner, entree, healthy, low-carb, beef, egg, greens | yes |
@@ -4575,6 +4576,7 @@
 | Salmon Ochazuke (Japanese Tea on Rice) | lunch, dinner, easy, healthy, asian, japanese, seafood, fish, rice, grill | yes |
 | Salmon Onigiri (Japanese Salmon Rice ... | lunch, dinner, snack, easy, asian, japanese, seafood, fish, rice | yes |
 | Simple Shio Onigiri (Salted Japanese ... | snack, easy, vegetarian, vegan, gluten-free, dairy-free, asian, japanese, rice, pantry | yes |
+| Easy Sawaniwan (Japanese Vegetable an... | lunch, dinner, easy, healthy, asian, japanese, pork, soup, mushroom | yes |
 | Seafood Doria (Japanese Rice Gratin) | dinner, entree, comfort food, seafood, rice, mushroom, cheese, japanese, asian | yes |
 | Simmered Miso Mackerel (Saba no Misoni) | dinner, entree, asian, japanese, seafood, fish | yes |
 | Japanese Simmered Pumpkin (Kabocha no... | dinner, side dish, easy, healthy, vegetarian, vegan, japanese, pantry | yes |
@@ -5464,23 +5466,23 @@
 
 ## Summary
 
-- Total recipes processed: 5458
-- Recipes with tag suggestions: 5455
-- Cached responses: 5456
+- Total recipes processed: 5534
+- Recipes with tag suggestions: 5457
+- Cached responses: 5458
 
 ## Tag Frequency
 
 | Tag | Count |
 |-----|-------|
-| easy | 3810 |
-| vegetarian | 3276 |
+| easy | 3812 |
+| vegetarian | 3277 |
 | comfort food | 2609 |
-| dinner | 2604 |
+| dinner | 2605 |
 | pantry | 2374 |
-| lunch | 1364 |
+| lunch | 1365 |
 | dessert | 1362 |
-| cheese | 1338 |
-| healthy | 1334 |
+| cheese | 1339 |
+| healthy | 1335 |
 | snack | 1330 |
 | entree | 1206 |
 | side dish | 1097 |
@@ -5490,29 +5492,29 @@
 | holiday | 854 |
 | greens | 850 |
 | vegan | 805 |
-| egg | 788 |
+| egg | 789 |
 | appetizer | 724 |
 | quick | 617 |
 | bread | 592 |
-| italian | 558 |
-| breakfast | 541 |
-| asian | 524 |
+| italian | 559 |
+| breakfast | 542 |
+| asian | 525 |
 | chicken | 524 |
 | low-carb | 468 |
 | potato | 412 |
 | pasta | 398 |
 | legumes | 395 |
+| pork | 394 |
 | mediterranean | 393 |
-| pork | 393 |
 | salad | 386 |
 | beef | 378 |
-| soup | 365 |
+| soup | 366 |
 | rice | 353 |
 | seafood | 302 |
-| japanese | 300 |
+| japanese | 301 |
 | mexican | 299 |
 | grill | 258 |
-| mushroom | 231 |
+| mushroom | 232 |
 | sandwich | 172 |
 | fish | 165 |
 | eastern european | 163 |

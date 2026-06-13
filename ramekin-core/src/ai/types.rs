@@ -64,6 +64,13 @@ impl ChatMessage {
     }
 }
 
+/// Output-token budget for prompts that expect a short JSON answer.
+///
+/// Generous on purpose: reasoning models spend output tokens on hidden
+/// thinking before the answer, and a too-small cap truncates the answer
+/// itself (finish_reason=length).
+pub const SHORT_JSON_ANSWER_MAX_TOKENS: u32 = 4096;
+
 /// Request for a chat completion.
 #[derive(Debug, Clone, Default, Serialize)]
 pub struct ChatRequest {

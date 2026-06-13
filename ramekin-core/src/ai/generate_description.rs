@@ -5,7 +5,9 @@ use serde::Deserialize;
 use crate::ai::prompts::generate_description::{
     render_generate_description_prompt, GENERATE_DESCRIPTION_PROMPT_NAME,
 };
-use crate::ai::{complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage};
+use crate::ai::{
+    complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage, SHORT_JSON_ANSWER_MAX_TOKENS,
+};
 
 #[derive(Debug, Deserialize)]
 struct GenerateDescriptionResponse {
@@ -33,7 +35,7 @@ pub async fn generate_description(
     let request = ChatRequest {
         messages: vec![ChatMessage::user(prompt)],
         json_response: true,
-        max_tokens: Some(256),
+        max_tokens: Some(SHORT_JSON_ANSWER_MAX_TOKENS),
         temperature: Some(0.0),
     };
 

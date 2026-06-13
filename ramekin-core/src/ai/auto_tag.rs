@@ -3,7 +3,9 @@
 use serde::Deserialize;
 
 use crate::ai::prompts::auto_tag::{render_auto_tag_prompt, AUTO_TAG_PROMPT_NAME};
-use crate::ai::{complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage};
+use crate::ai::{
+    complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage, SHORT_JSON_ANSWER_MAX_TOKENS,
+};
 
 /// Response format from the AI.
 #[derive(Debug, Deserialize)]
@@ -42,7 +44,7 @@ pub async fn suggest_tags(
     let request = ChatRequest {
         messages: vec![ChatMessage::user(prompt)],
         json_response: true,
-        max_tokens: Some(256),
+        max_tokens: Some(SHORT_JSON_ANSWER_MAX_TOKENS),
         temperature: Some(0.3),
     };
 

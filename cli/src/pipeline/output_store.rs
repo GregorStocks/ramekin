@@ -75,20 +75,88 @@ impl StepOutputStore for FileOutputStore {
         &mut self,
         step_name: &str,
         output: &JsonValue,
-        _duration_ms: i64,
-        _success: bool,
-        _error: Option<&str>,
+        duration_ms: i64,
+        success: bool,
+        error: Option<&str>,
     ) -> Result<(), Box<dyn Error + Send + Sync>> {
-        // Cache in memory
-        self.cache.insert(step_name.to_string(), output.clone());
-
-        // Also persist to disk
         let dir = self.step_dir(step_name);
         fs::create_dir_all(&dir)?;
+
+        // Failures go to error.json so that output.json (what get_output and
+        // the snapshot writer read) only ever holds successful output.
+        if !success {
+            let json = serde_json::to_string_pretty(&serde_json::json!({
+                "error": error,
+                "output": output,
+                "duration_ms": duration_ms,
+            }))?;
+            fs::write(dir.join("error.json"), json)?;
+            return Ok(());
+        }
+
+        // Cache in memory
+        self.cache.insert(step_name.to_string(), output.clone());
 
         let json = serde_json::to_string_pretty(output)?;
         fs::write(self.output_path(step_name), json)?;
 
         Ok(())
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use serde_json::json;
+    use tempfile::TempDir;
+
+    #[test]
+    fn successful_output_is_written_and_readable() {
+        let dir = TempDir::new().unwrap();
+        let mut store = FileOutputStore::new(dir.path(), "https://example.com/recipe");
+
+        store
+            .save_output("extract_recipe", &json!({ "value": 42 }), 5, true, None)
+            .unwrap();
+
+        assert_eq!(
+            store.get_output("extract_recipe"),
+            Some(json!({ "value": 42 }))
+        );
+        assert!(store.output_path("extract_recipe").exists());
+        assert!(!store.step_dir("extract_recipe").join("error.json").exists());
+    }
+
+    #[test]
+    fn failed_output_goes_to_error_json_and_is_not_readable() {
+        let dir = TempDir::new().unwrap();
+        let mut store = FileOutputStore::new(dir.path(), "https://example.com/recipe");
+
+        store
+            .save_output(
+                "enrich_normalize_title",
+                &json!({ "error": "AI call failed: details" }),
+                7,
+                false,
+                Some("AI call failed: details"),
+            )
+            .unwrap();
+
+        // get_output must keep returning None for failed steps so downstream
+        // steps and the snapshot writer never consume error payloads.
+        assert_eq!(store.get_output("enrich_normalize_title"), None);
+        assert!(!store.output_path("enrich_normalize_title").exists());
+
+        let error_path = store.step_dir("enrich_normalize_title").join("error.json");
+        let persisted: serde_json::Value =
+            serde_json::from_str(&fs::read_to_string(error_path).unwrap()).unwrap();
+        assert_eq!(
+            persisted,
+            json!({
+                "error": "AI call failed: details",
+                "output": { "error": "AI call failed: details" },
+                "duration_ms": 7,
+            })
+        );
     }
 }

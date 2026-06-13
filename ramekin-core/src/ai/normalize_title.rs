@@ -5,7 +5,9 @@ use serde::Deserialize;
 use crate::ai::prompts::normalize_title::{
     render_normalize_title_prompt, NORMALIZE_TITLE_PROMPT_NAME,
 };
-use crate::ai::{complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage};
+use crate::ai::{
+    complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage, SHORT_JSON_ANSWER_MAX_TOKENS,
+};
 
 #[derive(Debug, Deserialize)]
 struct NormalizeTitleResponse {
@@ -33,7 +35,7 @@ pub async fn normalize_title(
     let request = ChatRequest {
         messages: vec![ChatMessage::user(prompt)],
         json_response: true,
-        max_tokens: Some(128),
+        max_tokens: Some(SHORT_JSON_ANSWER_MAX_TOKENS),
         temperature: Some(0.0),
     };
 
