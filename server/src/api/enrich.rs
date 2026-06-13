@@ -98,7 +98,7 @@ async fn try_enrich_tags(
         .select(user_tags::name)
         .order(user_tags::name.asc())
         .load(&mut conn)
-        .unwrap_or_default();
+        .map_err(|e| format!("failed to fetch user tags: {}", e))?;
 
     let ai_client = CachingAiClient::from_env().map_err(|e| e.to_string())?;
 

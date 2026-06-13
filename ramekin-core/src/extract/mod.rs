@@ -131,14 +131,12 @@ fn supplement_dotdash_ingredients(recipe: &mut RawRecipe, document: &Html) {
 /// "divided", "see notes") outside them; the author's rows live only in the
 /// JSON-LD, so the visible rows must not replace it.
 fn dotdash_ingredients_look_normalized(document: &Html) -> bool {
-    let Ok(item_selector) = Selector::parse(".structured-ingredients__list-item") else {
-        return false;
-    };
-    let Ok(span_selector) = Selector::parse(
+    let item_selector = Selector::parse(".structured-ingredients__list-item")
+        .expect("structured ingredients list item selector");
+    let span_selector = Selector::parse(
         "[data-ingredient-quantity], [data-ingredient-unit], [data-ingredient-name]",
-    ) else {
-        return false;
-    };
+    )
+    .expect("data-ingredient span selector");
 
     // Whitespace is stripped entirely (not normalized to single spaces) so the
     // comparison is insensitive to how whitespace falls between text nodes.
@@ -426,19 +424,18 @@ fn extract_title_from_html(document: &Html) -> Option<String> {
     ];
 
     for selector_str in selectors {
-        if let Ok(selector) = Selector::parse(selector_str) {
-            if let Some(el) = document.select(&selector).next() {
-                let text = el.text().collect::<String>();
-                let text = text.trim();
-                if !text.is_empty() {
-                    return Some(text.to_string());
-                }
+        let selector = Selector::parse(selector_str).expect("title fallback selector");
+        if let Some(el) = document.select(&selector).next() {
+            let text = el.text().collect::<String>();
+            let text = text.trim();
+            if !text.is_empty() {
+                return Some(text.to_string());
             }
         }
     }
 
     // Last resort: <title> tag, stripped of site name suffix
-    let title_selector = Selector::parse("title").ok()?;
+    let title_selector = Selector::parse("title").expect("title selector");
     let title_el = document.select(&title_selector).next()?;
     let title_text = title_el.text().collect::<String>();
     let title_text = title_text.trim();

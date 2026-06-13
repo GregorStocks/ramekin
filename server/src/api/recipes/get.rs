@@ -132,7 +132,7 @@ pub async fn get_recipe(
 
     // Fetch recipe with version and tags in a single query.
     // The join condition differs based on whether we're fetching a specific version or current.
-    let result: Option<RecipeRow> = match params.version_id {
+    let result: Result<Option<RecipeRow>, _> = match params.version_id {
         Some(version_id) => {
             // Fetch specific version
             recipes::table
@@ -144,7 +144,6 @@ pub async fn get_recipe(
                 .select(recipe_select!())
                 .first(&mut conn)
                 .optional()
-                .unwrap_or(None)
         }
         None => {
             // Fetch current version
@@ -160,13 +159,16 @@ pub async fn get_recipe(
                 .select(recipe_select!())
                 .first(&mut conn)
                 .optional()
-                .unwrap_or(None)
         }
     };
 
     let row = match result {
-        Some(r) => r,
-        None => return ApiError::not_found("Recipe not found").into_response(),
+        Ok(Some(r)) => r,
+        Ok(None) => return ApiError::not_found("Recipe not found").into_response(),
+        Err(e) => {
+            tracing::error!(recipe_id = %id, error = %e, "failed to fetch recipe");
+            return ApiError::internal("Failed to fetch recipe").into_response();
+        }
     };
 
     let (
@@ -192,7 +194,18 @@ pub async fn get_recipe(
         tags,
     ) = row;
 
-    let ingredients: Vec<Ingredient> = serde_json::from_value(ingredients_json).unwrap_or_default();
+    let ingredients: Vec<Ingredient> = match serde_json::from_value(ingredients_json) {
+        Ok(i) => i,
+        Err(e) => {
+            tracing::error!(
+                recipe_id = %id,
+                version_id = %version_id,
+                error = %e,
+                "stored ingredients JSON failed to deserialize"
+            );
+            return ApiError::internal("Recipe ingredients are corrupt").into_response();
+        }
+    };
 
     let response = RecipeResponse {
         id,

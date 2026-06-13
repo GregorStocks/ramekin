@@ -74,12 +74,12 @@ fn convert_to_paprika(
     recipe: &RecipeWithVersion,
     photos_data: Vec<(Uuid, Vec<u8>)>,
     tags: Vec<String>,
-) -> PaprikaRecipe {
+) -> Result<PaprikaRecipe, String> {
     let version = &recipe.version;
 
     // Parse ingredients back to newline-separated format
-    let ingredients: Vec<Ingredient> =
-        serde_json::from_value(version.ingredients.clone()).unwrap_or_default();
+    let ingredients: Vec<Ingredient> = serde_json::from_value(version.ingredients.clone())
+        .map_err(|e| format!("stored ingredients JSON failed to deserialize: {}", e))?;
     let ingredients_str = ingredients
         .iter()
         .map(|i| i.item.clone())
@@ -160,7 +160,7 @@ fn convert_to_paprika(
     hasher.update(recipe_content.as_bytes());
     let hash = hex::encode_upper(hasher.finalize());
 
-    PaprikaRecipe {
+    Ok(PaprikaRecipe {
         uid: recipe.id.to_string().to_uppercase(),
         name: version.title.clone(),
         ingredients: ingredients_str,
@@ -181,7 +181,7 @@ fn convert_to_paprika(
         photos: paprika_photos,
         photo_data,
         hash,
-    }
+    })
 }
 
 /// Compress a recipe to gzip format (for .paprikarecipe files)
@@ -199,10 +199,10 @@ fn fetch_recipe_photos(
     conn: &mut diesel::PgConnection,
     user_id: Uuid,
     photo_ids: &[Option<Uuid>],
-) -> Vec<(Uuid, Vec<u8>)> {
+) -> Result<Vec<(Uuid, Vec<u8>)>, String> {
     let ids: Vec<Uuid> = photo_ids.iter().filter_map(|id| *id).collect();
     if ids.is_empty() {
-        return Vec::new();
+        return Ok(Vec::new());
     }
 
     photos::table
@@ -211,7 +211,7 @@ fn fetch_recipe_photos(
         .filter(photos::deleted_at.is_null())
         .select((photos::id, photos::data))
         .load::<(Uuid, Vec<u8>)>(conn)
-        .unwrap_or_default()
+        .map_err(|e| format!("failed to fetch photos: {}", e))
 }
 
 /// Exported single recipe data (gzipped .paprikarecipe content)
@@ -228,7 +228,7 @@ pub fn export_recipe_to_paprikarecipe(
     recipe: &RecipeWithVersion,
 ) -> Result<ExportedRecipe, String> {
     // Fetch photos for this recipe
-    let photos_data = fetch_recipe_photos(conn, user_id, &recipe.version.photo_ids);
+    let photos_data = fetch_recipe_photos(conn, user_id, &recipe.version.photo_ids)?;
     let photo_count = photos_data.len();
     let photo_bytes: usize = photos_data.iter().map(|(_, d)| d.len()).sum();
 
@@ -240,10 +240,10 @@ pub fn export_recipe_to_paprikarecipe(
         .select(user_tags::name)
         .order(user_tags::name.asc())
         .load(conn)
-        .unwrap_or_default();
+        .map_err(|e| format!("failed to fetch tags: {}", e))?;
 
     // Convert to Paprika format
-    let paprika_recipe = convert_to_paprika(recipe, photos_data, tags);
+    let paprika_recipe = convert_to_paprika(recipe, photos_data, tags)?;
 
     // Gzip compress
     let data = gzip_recipe(&paprika_recipe)?;
@@ -399,11 +399,12 @@ impl Write for ChannelWriter {
 }
 
 /// Write every recipe in `recipes` as a .paprikarecipe entry to a streaming
-/// ZIP. Per-recipe content-level failures (e.g. DB error fetching photos,
-/// zip metadata rejection) are logged and skipped; writer IO errors (client
-/// disconnect surfacing as a broken pipe from ChannelWriter) abort the
-/// stream so we don't keep doing expensive DB/CPU work with nowhere to send
-/// the bytes.
+/// ZIP. Any per-recipe failure (DB error fetching photos/tags, corrupt
+/// stored data, zip metadata rejection) aborts the stream: an export is a
+/// backup, and a 200 archive that silently omits a recipe is partial data
+/// loss the client has no way to notice. Writer IO errors (client disconnect
+/// surfacing as a broken pipe from ChannelWriter) also abort so we don't
+/// keep doing expensive DB/CPU work with nowhere to send the bytes.
 ///
 /// A fresh DB connection is checked out per recipe and dropped before the
 /// (potentially slow, backpressured) zip write, so a slow client can't pin
@@ -426,11 +427,6 @@ fn write_zip_stream(
     for recipe in recipes {
         // Short-lived per-recipe connection: held during the DB fetch and
         // in-memory encoding, released before the slow zip write.
-        //
-        // Pool checkout failures abort the stream rather than silently
-        // skipping the recipe — an export is meant as a backup, so silently
-        // omitting recipes under pool pressure is partial data loss the
-        // client would have no way to notice.
         let exported = {
             let mut conn = pool.get().map_err(|e| {
                 tracing::error!(
@@ -441,36 +437,32 @@ fn write_zip_stream(
                 );
                 io::Error::other(format!("db pool: {}", e))
             })?;
-            match export_recipe_to_paprikarecipe(&mut conn, user_id, recipe) {
-                Ok(e) => e,
-                Err(e) => {
-                    tracing::warn!(
-                        recipe_id = %recipe.id,
-                        title = %recipe.version.title,
-                        error = %e,
-                        "failed to export recipe; skipping"
-                    );
-                    continue;
-                }
-            }
-        };
-
-        // start_file writes the entry header via ChannelWriter, so an IO
-        // error here almost always means the client has gone away. Propagate
-        // it so we abort rather than spinning on the rest of the library.
-        match zip.start_file(&exported.filename, options) {
-            Ok(()) => {}
-            Err(zip::result::ZipError::Io(e)) => return Err(e),
-            Err(e) => {
-                tracing::warn!(
+            export_recipe_to_paprikarecipe(&mut conn, user_id, recipe).map_err(|e| {
+                tracing::error!(
                     recipe_id = %recipe.id,
                     title = %recipe.version.title,
                     error = %e,
-                    "failed to start zip entry; skipping"
+                    "failed to export recipe; aborting stream"
                 );
-                continue;
+                io::Error::other(format!("export recipe {}: {}", recipe.id, e))
+            })?
+        };
+
+        zip.start_file(&exported.filename, options).map_err(|e| {
+            // IO errors here almost always mean the client has gone away;
+            // anything else (zip metadata rejection) is still a recipe we
+            // would otherwise silently drop from the backup.
+            tracing::error!(
+                recipe_id = %recipe.id,
+                title = %recipe.version.title,
+                error = %e,
+                "failed to start zip entry; aborting stream"
+            );
+            match e {
+                zip::result::ZipError::Io(e) => e,
+                e => io::Error::other(format!("zip entry for {}: {}", recipe.id, e)),
             }
-        }
+        })?;
         let entry_bytes = exported.data.len() as u64;
         zip.write_all(&exported.data)?;
         total_entry_bytes += entry_bytes;

@@ -61,14 +61,20 @@ pub async fn rename_tag(
     let mut conn = get_conn!(pool);
 
     // Check if tag exists, belongs to user, and is not deleted
-    let existing_tag: Option<(Uuid, String)> = user_tags::table
+    let existing_tag: Option<(Uuid, String)> = match user_tags::table
         .filter(user_tags::id.eq(id))
         .filter(user_tags::user_id.eq(user.id))
         .filter(user_tags::deleted_at.is_null())
         .select((user_tags::id, user_tags::name))
         .first(&mut conn)
         .optional()
-        .unwrap_or(None);
+    {
+        Ok(tag) => tag,
+        Err(e) => {
+            tracing::error!("Failed to look up tag: {}", e);
+            return ApiError::internal("Failed to look up tag").into_response();
+        }
+    };
 
     let Some((_tag_id, current_name)) = existing_tag else {
         return ApiError::not_found("Tag not found").into_response();
@@ -100,7 +106,7 @@ pub async fn rename_tag(
     }
 
     // Check if another non-deleted tag with the new name already exists (case-insensitive)
-    let duplicate: Option<Uuid> = user_tags::table
+    let duplicate: Option<Uuid> = match user_tags::table
         .filter(user_tags::user_id.eq(user.id))
         .filter(user_tags::name.eq(new_name))
         .filter(user_tags::id.ne(id))
@@ -108,7 +114,13 @@ pub async fn rename_tag(
         .select(user_tags::id)
         .first(&mut conn)
         .optional()
-        .unwrap_or(None);
+    {
+        Ok(dup) => dup,
+        Err(e) => {
+            tracing::error!("Failed to check for duplicate tag: {}", e);
+            return ApiError::internal("Failed to check for duplicate tag").into_response();
+        }
+    };
 
     if duplicate.is_some() {
         return ApiError::conflict("Tag with that name already exists").into_response();

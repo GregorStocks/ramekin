@@ -61,7 +61,7 @@ impl PipelineStep for ExtractRecipeStep {
             Ok(output) => StepResult {
                 step_name: Self::NAME.to_string(),
                 success: true,
-                output: serde_json::to_value(&output).unwrap_or_default(),
+                output: serde_json::to_value(&output).expect("ExtractionOutput serializes to JSON"),
                 error: None,
                 duration_ms: start.elapsed().as_millis() as u64,
                 next_step: Some("fetch_images".to_string()),

@@ -162,7 +162,7 @@ impl PipelineStep for FetchImagesStep {
         StepResult {
             step_name: FetchImagesStepMeta::NAME.to_string(),
             success: true, // Image fetch failures don't fail the pipeline
-            output: serde_json::to_value(&output).unwrap_or_default(),
+            output: serde_json::to_value(&output).expect("FetchImagesOutput serializes to JSON"),
             error: None,
             duration_ms: start.elapsed().as_millis() as u64,
             next_step: Some("parse_ingredients".to_string()),
@@ -1079,7 +1079,7 @@ impl ApplyAutoTagsStep {
             .filter(recipe_version_tags::recipe_version_id.eq(current_version_id))
             .select(recipe_version_tags::tag_id)
             .load(&mut conn)
-            .unwrap_or_default();
+            .map_err(|e| format!("Failed to fetch existing tags: {}", e))?;
 
         // Create new version with AI-suggested tags
         conn.transaction(|conn| {

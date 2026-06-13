@@ -9,9 +9,12 @@ use super::*;
 /// `.wprm-recipe-ingredient` items. JSON-LD flattens these into a single array,
 /// losing the group structure. This function recovers it from the HTML.
 pub(super) fn extract_wprm_ingredients_with_groups(document: &Html) -> Option<String> {
-    let group_selector = Selector::parse(".wprm-recipe-ingredient-group").ok()?;
-    let name_selector = Selector::parse(".wprm-recipe-group-name").ok()?;
-    let item_selector = Selector::parse(".wprm-recipe-ingredient").ok()?;
+    let group_selector =
+        Selector::parse(".wprm-recipe-ingredient-group").expect("wprm ingredient group selector");
+    let name_selector =
+        Selector::parse(".wprm-recipe-group-name").expect("wprm group name selector");
+    let item_selector =
+        Selector::parse(".wprm-recipe-ingredient").expect("wprm ingredient selector");
 
     let groups: Vec<_> = document.select(&group_selector).collect();
     if groups.is_empty() {
@@ -166,9 +169,12 @@ pub(super) fn wprm_titles_match(recipe_title: &str, card_title: &str) -> bool {
 }
 
 pub(super) fn extract_wprm_steps(root: ElementRef<'_>) -> Option<Vec<String>> {
-    let group_selector = Selector::parse(".wprm-recipe-instruction-group").ok()?;
-    let name_selector = Selector::parse(".wprm-recipe-instruction-group-name").ok()?;
-    let text_selector = Selector::parse(".wprm-recipe-instruction-text").ok()?;
+    let group_selector =
+        Selector::parse(".wprm-recipe-instruction-group").expect("wprm instruction group selector");
+    let name_selector = Selector::parse(".wprm-recipe-instruction-group-name")
+        .expect("wprm instruction group name selector");
+    let text_selector =
+        Selector::parse(".wprm-recipe-instruction-text").expect("wprm instruction text selector");
 
     let mut lines: Vec<String> = Vec::new();
 
@@ -210,9 +216,10 @@ pub(super) fn extract_wprm_steps(root: ElementRef<'_>) -> Option<Vec<String>> {
 }
 
 pub(super) fn extract_wprm_instructions(document: &Html, recipe_title: &str) -> Option<String> {
-    let recipe_selector = Selector::parse(".wprm-recipe").ok()?;
-    let title_selector = Selector::parse(".wprm-recipe-name").ok()?;
-    let instruction_selector = Selector::parse(".wprm-recipe-instruction-text").ok()?;
+    let recipe_selector = Selector::parse(".wprm-recipe").expect("wprm recipe selector");
+    let title_selector = Selector::parse(".wprm-recipe-name").expect("wprm recipe name selector");
+    let instruction_selector =
+        Selector::parse(".wprm-recipe-instruction-text").expect("wprm instruction text selector");
 
     let normalized_title = normalize_wprm_text(recipe_title);
     let mut matching_steps = None;

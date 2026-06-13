@@ -7,6 +7,7 @@ use std::fs;
 use std::path::PathBuf;
 
 use super::types::{ChatMessage, ChatResponse, Usage};
+use crate::cache_io::{parse_or_warn, read_or_warn};
 
 /// Disk-based AI response cache.
 pub struct AiCache {
@@ -47,7 +48,7 @@ impl CacheKey {
     /// Since the messages include the full rendered prompt, any changes to the prompt
     /// template will automatically invalidate the cache (no manual version bumping needed).
     pub fn new(prompt_name: &str, model: &str, messages: &[ChatMessage]) -> Self {
-        let input_json = serde_json::to_string(messages).unwrap_or_default();
+        let input_json = serde_json::to_string(messages).expect("chat messages serialize to JSON");
         let input_hash = sha256_hex(&input_json);
 
         Self {
@@ -80,15 +81,18 @@ impl AiCache {
     }
 
     /// Get a cached response if it exists.
+    ///
+    /// A corrupt or unreadable entry is treated as a cache miss (the caller
+    /// re-fetches from the API), but loudly: silent misses would hide cache
+    /// corruption behind extra API spend.
     pub fn get(&self, key: &CacheKey) -> Option<CachedAiResponse> {
         let path = self.cache_dir.join(key.to_path());
 
-        if path.exists() {
-            let content = fs::read_to_string(&path).ok()?;
-            serde_json::from_str(&content).ok()
-        } else {
-            None
+        if !path.exists() {
+            return None;
         }
+        let content = read_or_warn(&path, fs::read_to_string(&path))?;
+        parse_or_warn(&path, &content)
     }
 
     /// Store a response in the cache.
@@ -197,6 +201,19 @@ mod tests {
         let cache = AiCache::new(dir.path().to_path_buf());
 
         cache.remove(&test_key()).unwrap();
+    }
+
+    #[test]
+    fn corrupt_entry_is_a_cache_miss() {
+        let dir = tempfile::TempDir::new().unwrap();
+        let cache = AiCache::new(dir.path().to_path_buf());
+        let key = test_key();
+        cache.put(&key, &test_response(), "test/model").unwrap();
+        assert!(cache.get(&key).is_some());
+
+        fs::write(dir.path().join(key.to_path()), "not json").unwrap();
+
+        assert!(cache.get(&key).is_none());
     }
 }
 

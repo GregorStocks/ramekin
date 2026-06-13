@@ -6,6 +6,7 @@ use std::fs;
 use std::path::PathBuf;
 
 use super::slugify_url;
+use crate::cache_io::{parse_or_warn, read_or_warn};
 
 /// Disk-based HTTP response cache.
 pub struct DiskCache {
@@ -68,15 +69,19 @@ impl DiskCache {
     }
 
     /// Get cached response if it exists.
+    ///
+    /// Corrupt or unreadable entries are treated as cache misses (the caller
+    /// falls back to the network), but loudly: silent misses would hide cache
+    /// corruption behind re-fetches.
     pub fn get(&self, url: &str) -> Option<CachedResponse> {
         let dir = self.url_dir(url);
         let response_path = dir.join("response.bin");
         let metadata_path = dir.join("metadata.json");
 
         if response_path.exists() && metadata_path.exists() {
-            let data = fs::read(&response_path).ok()?;
-            let metadata_str = fs::read_to_string(&metadata_path).ok()?;
-            let metadata: CacheMetadata = serde_json::from_str(&metadata_str).ok()?;
+            let data = read_or_warn(&response_path, fs::read(&response_path))?;
+            let metadata_str = read_or_warn(&metadata_path, fs::read_to_string(&metadata_path))?;
+            let metadata: CacheMetadata = parse_or_warn(&metadata_path, &metadata_str)?;
             Some(CachedResponse { data, metadata })
         } else {
             None
@@ -89,8 +94,8 @@ impl DiskCache {
         let error_path = dir.join("error.txt");
 
         if error_path.exists() {
-            let error_str = fs::read_to_string(&error_path).ok()?;
-            serde_json::from_str(&error_str).ok()
+            let error_str = read_or_warn(&error_path, fs::read_to_string(&error_path))?;
+            parse_or_warn(&error_path, &error_str)
         } else {
             None
         }
@@ -102,8 +107,8 @@ impl DiskCache {
         let metadata_path = dir.join("metadata.json");
 
         if metadata_path.exists() {
-            let metadata_str = fs::read_to_string(&metadata_path).ok()?;
-            serde_json::from_str(&metadata_str).ok()
+            let metadata_str = read_or_warn(&metadata_path, fs::read_to_string(&metadata_path))?;
+            parse_or_warn(&metadata_path, &metadata_str)
         } else {
             None
         }
@@ -191,5 +196,45 @@ impl DiskCache {
             fs::remove_dir_all(&self.cache_dir)?;
         }
         Ok(())
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    const URL: &str = "https://example.com/recipe";
+
+    #[test]
+    fn corrupt_metadata_is_a_cache_miss() {
+        let dir = tempfile::tempdir().unwrap();
+        let cache = DiskCache::new(dir.path().to_path_buf());
+        cache.put(URL, b"body", None, None, None).unwrap();
+        assert!(cache.get(URL).is_some());
+
+        fs::write(
+            dir.path().join(slugify_url(URL)).join("metadata.json"),
+            "not json",
+        )
+        .unwrap();
+
+        assert!(cache.get(URL).is_none());
+        assert!(cache.get_metadata(URL).is_none());
+    }
+
+    #[test]
+    fn corrupt_cached_error_is_a_cache_miss() {
+        let dir = tempfile::tempdir().unwrap();
+        let cache = DiskCache::new(dir.path().to_path_buf());
+        cache.put_error(URL, "boom").unwrap();
+        assert!(cache.get_error(URL).is_some());
+
+        fs::write(
+            dir.path().join(slugify_url(URL)).join("error.txt"),
+            "not json",
+        )
+        .unwrap();
+
+        assert!(cache.get_error(URL).is_none());
     }
 }

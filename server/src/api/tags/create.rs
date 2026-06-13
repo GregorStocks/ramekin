@@ -52,13 +52,19 @@ pub async fn create_tag(
     let mut conn = get_conn!(pool);
 
     // Check if tag already exists (including soft-deleted)
-    let existing: Option<(Uuid, String, Option<DateTime<Utc>>)> = user_tags::table
+    let existing: Option<(Uuid, String, Option<DateTime<Utc>>)> = match user_tags::table
         .filter(user_tags::user_id.eq(user.id))
         .filter(user_tags::name.eq(name))
         .select((user_tags::id, user_tags::name, user_tags::deleted_at))
         .first(&mut conn)
         .optional()
-        .unwrap_or(None);
+    {
+        Ok(tag) => tag,
+        Err(e) => {
+            tracing::error!("Failed to look up existing tag: {}", e);
+            return ApiError::internal("Failed to look up existing tag").into_response();
+        }
+    };
 
     if let Some((id, existing_name, deleted_at)) = existing {
         if deleted_at.is_some() {
