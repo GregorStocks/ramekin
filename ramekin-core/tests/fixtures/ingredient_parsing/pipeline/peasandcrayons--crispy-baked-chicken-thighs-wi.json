@@ -5,11 +5,11 @@
     {
       "raw": "1/4 cup + 1 TBSP extra virgin olive oil",
       "expected": {
-        "item": "+ 1 TBSP extra virgin olive oil",
+        "item": "extra virgin olive oil",
         "measurements": [
           {
-            "amount": "0.25",
-            "unit": "cup"
+            "amount": "1/4 cup plus 1 tbsp",
+            "unit": null
           }
         ],
         "note": null,

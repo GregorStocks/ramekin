@@ -89,30 +89,16 @@
       }
     },
     {
-      "raw": "5 extra-large egg whites (I used 6 since I was using",
+      "raw": "5 extra-large egg whites (I used 6 since I was using large eggs)",
       "expected": {
-        "item": "egg whites (I used 6 since I was using",
+        "item": "egg whites",
         "measurements": [
           {
             "amount": "5",
             "unit": "extra-large"
           }
         ],
-        "note": null,
-        "category": "Dairy & Eggs"
-      }
-    },
-    {
-      "raw": "large eggs)",
-      "expected": {
-        "item": "eggs)",
-        "measurements": [
-          {
-            "amount": null,
-            "unit": "large"
-          }
-        ],
-        "note": null,
+        "note": "I used 6 since I was using large eggs",
         "category": "Dairy & Eggs"
       }
     },

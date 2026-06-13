@@ -17,27 +17,13 @@
       }
     },
     {
-      "raw": "4 ½\"-thick pork rib chops (look for the most marbled ones you",
+      "raw": "4 ½\"-thick pork rib chops (look for the most marbled ones you can find), preferably bone-in (1½–2 lb.)",
       "expected": {
-        "item": "1/2\"-thick pork rib chops (look for the most marbled ones you",
+        "item": "1/2\"-thick pork rib chops",
         "measurements": [
           {
             "amount": "4",
             "unit": null
-          }
-        ],
-        "note": null,
-        "category": "Meat & Seafood"
-      }
-    },
-    {
-      "raw": "can find), preferably bone-in (1½–2 lb.)",
-      "expected": {
-        "item": "find)",
-        "measurements": [
-          {
-            "amount": null,
-            "unit": "can"
           },
           {
             "amount": "1.5-2",
@@ -48,8 +34,8 @@
             "unit": "g"
           }
         ],
-        "note": "preferably bone-in",
-        "category": "Other"
+        "note": "look for the most marbled ones you can find, preferably bone-in",
+        "category": "Meat & Seafood"
       }
     },
     {

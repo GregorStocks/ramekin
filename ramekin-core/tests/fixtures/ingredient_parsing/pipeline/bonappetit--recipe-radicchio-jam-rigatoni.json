@@ -3,9 +3,9 @@
   "recipe_slug": "recipe-radicchio-jam-rigatoni",
   "ingredients": [
     {
-      "raw": "4 oz. guanciale (salt-cured pork jowl) or pancetta (Italian",
+      "raw": "4 oz. guanciale (salt-cured pork jowl) or pancetta (Italian bacon), cut into ½\" pieces",
       "expected": {
-        "item": "guanciale or pancetta (Italian",
+        "item": "guanciale or pancetta",
         "measurements": [
           {
             "amount": "4",
@@ -16,16 +16,7 @@
             "unit": "g"
           }
         ],
-        "note": "salt-cured pork jowl",
-        "category": "Meat & Seafood"
-      }
-    },
-    {
-      "raw": "bacon), cut into ½\" pieces",
-      "expected": {
-        "item": "bacon)",
-        "measurements": [],
-        "note": "cut into 1/2\" pieces",
+        "note": "salt-cured pork jowl, Italian bacon, cut into 1/2\" pieces",
         "category": "Meat & Seafood"
       }
     },

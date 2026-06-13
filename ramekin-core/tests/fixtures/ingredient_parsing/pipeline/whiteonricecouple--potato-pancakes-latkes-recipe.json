@@ -102,11 +102,15 @@
     {
       "raw": "1/4 cup + Oil (, preferably peanut oil, grape seed oil, or other high flash point oil)",
       "expected": {
-        "item": "+ Oil",
+        "item": "Oil",
         "measurements": [
           {
             "amount": "0.25",
             "unit": "cup"
+          },
+          {
+            "amount": "54",
+            "unit": "g"
           }
         ],
         "note": "preferably peanut oil, grape seed oil, or other high flash point oil",

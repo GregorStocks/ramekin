@@ -23,11 +23,11 @@
     {
       "raw": "1 tbsp + 2 tsp baking powder",
       "expected": {
-        "item": "+ 2 tsp baking powder",
+        "item": "baking powder",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "tbsp"
+            "amount": "1 tbsp plus 2 tsp",
+            "unit": null
           }
         ],
         "note": null,

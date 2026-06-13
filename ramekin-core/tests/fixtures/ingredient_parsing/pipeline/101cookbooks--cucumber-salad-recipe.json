@@ -96,11 +96,11 @@
     {
       "raw": "1/4  + cup walnuts, lightly toasted, roughly chopped",
       "expected": {
-        "item": "+ cup walnuts, lightly toasted",
+        "item": "walnuts, lightly toasted",
         "measurements": [
           {
             "amount": "0.25",
-            "unit": null
+            "unit": "cup"
           }
         ],
         "note": "roughly chopped",

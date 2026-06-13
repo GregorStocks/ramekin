@@ -14,11 +14,11 @@
     {
       "raw": "2 1/2 cups + 1 tablespoon (8 1/4 ounces or 231 grams) old fashioned oats",
       "expected": {
-        "item": "+ 1 tablespoon old fashioned oats",
+        "item": "old fashioned oats",
         "measurements": [
           {
-            "amount": "2.5",
-            "unit": "cup"
+            "amount": "2 1/2 cups plus 1 tablespoon",
+            "unit": null
           },
           {
             "amount": "8.25",

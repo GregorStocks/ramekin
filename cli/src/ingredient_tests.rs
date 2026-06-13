@@ -268,9 +268,12 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
                 let mut new_ingredients = Vec::new();
                 let mut batch_iter = batch_results.into_iter().peekable();
 
-                for raw in &raw_lines {
+                let mut line_idx = 0;
+                while line_idx < raw_lines.len() {
+                    let raw = &raw_lines[line_idx];
                     // Skip lines that should be ignored (scraper artifacts like "Gather Your Ingredients")
                     if should_ignore_line(raw) {
+                        line_idx += 1;
                         continue;
                     }
                     if detect_section_header(raw).is_some() {
@@ -281,38 +284,55 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
                             is_section_header: true,
                             expanded: false,
                         });
-                    } else {
-                        // Regular ingredient - consume one batch result for this raw line,
-                        // then consume additional "each" expansion results (same raw, different item).
-                        // This avoids incorrectly treating duplicate raw lines (e.g., butter used
-                        // in two recipe steps) as "each" expansions.
-                        if let Some(result) = batch_iter.peek() {
-                            if result.raw == *raw {
-                                let first_result = batch_iter.next().unwrap();
-                                let first_item = first_result.expected.item.clone();
-                                new_ingredients.push(IngredientTestCase {
-                                    raw: first_result.raw,
-                                    expected: Some(first_result.expected),
-                                    is_section_header: false,
-                                    expanded: false,
-                                });
-                                // Consume additional "each" expansion results (same raw line, different item)
-                                while let Some(next) = batch_iter.peek() {
-                                    if next.raw == *raw && next.expected.item != first_item {
-                                        let next = batch_iter.next().unwrap();
-                                        new_ingredients.push(IngredientTestCase {
-                                            raw: next.raw,
-                                            expected: Some(next.expected),
-                                            is_section_header: false,
-                                            expanded: true,
-                                        });
-                                    } else {
-                                        break;
-                                    }
+                        line_idx += 1;
+                        continue;
+                    }
+                    // Regular ingredient - consume one batch result for this raw line,
+                    // then consume additional "each" expansion results (same raw, different item).
+                    // This avoids incorrectly treating duplicate raw lines (e.g., butter used
+                    // in two recipe steps) as "each" expansions.
+                    let mut consumed_lines = 1;
+                    if let Some(result) = batch_iter.peek() {
+                        // The parser merges hard-wrapped continuation lines (an unclosed
+                        // parenthetical closed by the next line) into one ingredient, so the
+                        // result's raw may span several raw lines.
+                        let mut merged_raw = raw.clone();
+                        while merged_raw != result.raw
+                            && result.raw.starts_with(merged_raw.as_str())
+                            && line_idx + consumed_lines < raw_lines.len()
+                        {
+                            merged_raw.push(' ');
+                            merged_raw.push_str(raw_lines[line_idx + consumed_lines].trim());
+                            consumed_lines += 1;
+                        }
+                        if result.raw == merged_raw {
+                            let first_result = batch_iter.next().unwrap();
+                            let first_item = first_result.expected.item.clone();
+                            new_ingredients.push(IngredientTestCase {
+                                raw: first_result.raw,
+                                expected: Some(first_result.expected),
+                                is_section_header: false,
+                                expanded: false,
+                            });
+                            // Consume additional "each" expansion results (same raw line, different item)
+                            while let Some(next) = batch_iter.peek() {
+                                if next.raw == merged_raw && next.expected.item != first_item {
+                                    let next = batch_iter.next().unwrap();
+                                    new_ingredients.push(IngredientTestCase {
+                                        raw: next.raw,
+                                        expected: Some(next.expected),
+                                        is_section_header: false,
+                                        expanded: true,
+                                    });
+                                } else {
+                                    break;
                                 }
                             }
+                        } else {
+                            consumed_lines = 1;
                         }
                     }
+                    line_idx += consumed_lines;
                 }
 
                 // Check if anything changed

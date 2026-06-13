@@ -23,11 +23,11 @@
     {
       "raw": "1/4 cup + 1 Tbsp  warm water",
       "expected": {
-        "item": "+ 1 Tbsp  warm water",
+        "item": "warm water",
         "measurements": [
           {
-            "amount": "0.25",
-            "unit": "cup"
+            "amount": "1/4 cup plus 1 tbsp",
+            "unit": null
           }
         ],
         "note": null,

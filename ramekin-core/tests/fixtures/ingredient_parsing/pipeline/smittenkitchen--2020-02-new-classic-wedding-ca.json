@@ -284,11 +284,11 @@
     {
       "raw": "1/4 + 1/8 teaspoon fine sea salt",
       "expected": {
-        "item": "+ 1/8 teaspoon fine sea salt",
+        "item": "fine sea salt",
         "measurements": [
           {
-            "amount": "0.25",
-            "unit": null
+            "amount": "1/4 plus 1/8",
+            "unit": "tsp"
           }
         ],
         "note": null,

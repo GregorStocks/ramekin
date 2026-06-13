@@ -163,11 +163,11 @@
     {
       "raw": "1/4 + 1/8 teaspoon baking soda",
       "expected": {
-        "item": "+ 1/8 teaspoon baking soda",
+        "item": "baking soda",
         "measurements": [
           {
-            "amount": "0.25",
-            "unit": null
+            "amount": "1/4 plus 1/8",
+            "unit": "tsp"
           }
         ],
         "note": null,

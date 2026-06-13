@@ -55,11 +55,11 @@
     {
       "raw": "3/4 cup + 1/3 cup panko breadcrumbs, (divided)",
       "expected": {
-        "item": "+ 1/3 cup panko breadcrumbs",
+        "item": "panko breadcrumbs",
         "measurements": [
           {
-            "amount": "0.75",
-            "unit": "cup"
+            "amount": "3/4 cup plus 1/3 cup",
+            "unit": null
           }
         ],
         "note": "divided",

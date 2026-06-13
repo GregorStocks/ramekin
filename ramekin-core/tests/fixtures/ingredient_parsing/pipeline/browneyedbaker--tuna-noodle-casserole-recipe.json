@@ -169,11 +169,11 @@
     {
       "raw": "1 tablespoon + 1¼ teaspoons salt (divided)",
       "expected": {
-        "item": "+ 1 1/4 teaspoons salt",
+        "item": "kosher salt",
         "measurements": [
           {
-            "amount": "1",
-            "unit": "tbsp"
+            "amount": "1 tablespoon plus 1 1/4 teaspoons",
+            "unit": null
           }
         ],
         "note": "divided",

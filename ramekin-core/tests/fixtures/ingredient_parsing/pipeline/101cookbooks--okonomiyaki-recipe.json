@@ -74,11 +74,15 @@
     {
       "raw": "1+ tablespoon olive oil",
       "expected": {
-        "item": "+ tablespoon olive oil",
+        "item": "olive oil",
         "measurements": [
           {
             "amount": "1",
-            "unit": null
+            "unit": "tbsp"
+          },
+          {
+            "amount": "14",
+            "unit": "g"
           }
         ],
         "note": null,
