@@ -6,8 +6,7 @@ use crate::ai::prompts::normalize_title::{
     render_normalize_title_prompt, NORMALIZE_TITLE_PROMPT_NAME,
 };
 use crate::ai::{
-    complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage,
-    SHORT_JSON_ANSWER_MAX_TOKENS,
+    complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage, SHORT_JSON_ANSWER_MAX_TOKENS,
 };
 
 #[derive(Debug, Deserialize)]

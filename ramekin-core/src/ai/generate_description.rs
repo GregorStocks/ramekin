@@ -6,8 +6,7 @@ use crate::ai::prompts::generate_description::{
     render_generate_description_prompt, GENERATE_DESCRIPTION_PROMPT_NAME,
 };
 use crate::ai::{
-    complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage,
-    SHORT_JSON_ANSWER_MAX_TOKENS,
+    complete_json, AiClient, AiError, ChatMessage, ChatRequest, Usage, SHORT_JSON_ANSWER_MAX_TOKENS,
 };
 
 #[derive(Debug, Deserialize)]
