@@ -13,8 +13,14 @@ declare const __EXTERNAL_URL__: string;
 export default function CreateRecipePage() {
   usePageTitle(() => "New Recipe");
   const navigate = useNavigate();
-  const { getRecipesApi, getPhotosApi, getScrapeApi, refreshTags, token } =
-    useAuth();
+  const {
+    getRecipesApi,
+    getPhotosApi,
+    getScrapeApi,
+    getUsersApi,
+    refreshTags,
+    token,
+  } = useAuth();
 
   // URL import state
   const [importUrl, setImportUrl] = createSignal("");
@@ -45,16 +51,42 @@ export default function CreateRecipePage() {
   const [saving, setSaving] = createSignal(false);
   const [error, setError] = createSignal<string | null>(null);
   const [showBookmarklet, setShowBookmarklet] = createSignal(false);
+  // A long-lived, capture-scoped token minted just for the bookmarklet. Unlike
+  // the login session token it doesn't expire, so a saved bookmarklet keeps
+  // working. Minting a fresh one never invalidates previously-saved ones.
+  const [bookmarkletToken, setBookmarkletToken] = createSignal<string | null>(
+    null,
+  );
+  const [bookmarkletError, setBookmarkletError] = createSignal<string | null>(
+    null,
+  );
+
+  const toggleBookmarklet = async () => {
+    const next = !showBookmarklet();
+    setShowBookmarklet(next);
+    // Mint the token lazily, the first time the section is opened.
+    if (next && !bookmarkletToken()) {
+      setBookmarkletError(null);
+      try {
+        const response = await getUsersApi().mintBookmarkletToken();
+        setBookmarkletToken(response.token);
+      } catch (err) {
+        setBookmarkletError(
+          await extractApiError(err, "Failed to create bookmarklet"),
+        );
+      }
+    }
+  };
 
   const bookmarkletCode = createMemo(() => {
     const origin = window.location.origin;
     // Use UI origin for API calls - Vite proxy forwards /api/* to the API server
     const apiOrigin = origin;
-    const userToken = token();
-    if (!userToken) return "";
+    const bmToken = bookmarkletToken();
+    if (!bmToken) return "";
     const code = bookmarkletSource
       .replace("__ORIGIN__", origin)
-      .replace("__TOKEN__", userToken)
+      .replace("__TOKEN__", bmToken)
       .replace("__API__", encodeURIComponent(apiOrigin))
       .replace(
         "__EXTERNAL__",
@@ -222,7 +254,7 @@ export default function CreateRecipePage() {
         <button
           type="button"
           class="bookmarklet-toggle"
-          onClick={() => setShowBookmarklet(!showBookmarklet())}
+          onClick={toggleBookmarklet}
         >
           {showBookmarklet() ? "Hide" : "Show"} Bookmarklet
         </button>
@@ -232,12 +264,22 @@ export default function CreateRecipePage() {
               Drag this link to your bookmarks bar to capture recipes from any
               page:
             </p>
-            <a href={bookmarkletCode()} class="bookmarklet-link">
-              Save to Ramekin
-            </a>
-            <p class="bookmarklet-hint">
-              This works even on paywalled sites when you're logged in.
-            </p>
+            <Show
+              when={bookmarkletToken()}
+              fallback={
+                <p class="bookmarklet-hint">
+                  {bookmarkletError() ?? "Generating bookmarklet…"}
+                </p>
+              }
+            >
+              <a href={bookmarkletCode()} class="bookmarklet-link">
+                Save to Ramekin
+              </a>
+              <p class="bookmarklet-hint">
+                This works even on paywalled sites when you're logged in. The
+                link keeps working indefinitely — no need to regenerate it.
+              </p>
+            </Show>
           </div>
         </Show>
       </div>

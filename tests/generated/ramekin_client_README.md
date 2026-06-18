@@ -108,10 +108,12 @@ Class | Method | HTTP request | Description
 *TestingApi* | [**ping**](ramekin_client/docs/TestingApi.md#ping) | **GET** /api/test/ping | 
 *TestingApi* | [**unauthed_ping**](ramekin_client/docs/TestingApi.md#unauthed_ping) | **GET** /api/test/unauthed-ping | 
 *UsersApi* | [**me**](ramekin_client/docs/UsersApi.md#me) | **GET** /api/users/me | 
+*UsersApi* | [**mint_bookmarklet_token**](ramekin_client/docs/UsersApi.md#mint_bookmarklet_token) | **POST** /api/users/bookmarklet-token | 
 
 
 ## Documentation For Models
 
+ - [BookmarkletTokenResponse](ramekin_client/docs/BookmarkletTokenResponse.md)
  - [CaptureRequest](ramekin_client/docs/CaptureRequest.md)
  - [ClearCheckedResponse](ramekin_client/docs/ClearCheckedResponse.md)
  - [CreateMealPlanRequest](ramekin_client/docs/CreateMealPlanRequest.md)

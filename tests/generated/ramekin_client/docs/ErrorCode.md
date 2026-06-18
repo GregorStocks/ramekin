@@ -12,6 +12,8 @@ Machine-readable error code surfaced in every error response.  Clients branch on
 
 * `UNAUTHORIZED` (value: `'unauthorized'`)
 
+* `FORBIDDEN` (value: `'forbidden'`)
+
 * `METHOD_NOT_ALLOWED` (value: `'method_not_allowed'`)
 
 * `PAYLOAD_TOO_LARGE` (value: `'payload_too_large'`)

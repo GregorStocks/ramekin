@@ -26,6 +26,8 @@ pub enum ErrorCode {
     Conflict,
     /// Authentication is missing, malformed, or expired.
     Unauthorized,
+    /// Authenticated, but this token/user is not permitted to access the route.
+    Forbidden,
     /// The HTTP method is not allowed for this route.
     MethodNotAllowed,
     /// The request body was larger than the server accepts.
@@ -44,6 +46,7 @@ impl ErrorCode {
             ErrorCode::InvalidRequest => StatusCode::BAD_REQUEST,
             ErrorCode::Conflict => StatusCode::CONFLICT,
             ErrorCode::Unauthorized => StatusCode::UNAUTHORIZED,
+            ErrorCode::Forbidden => StatusCode::FORBIDDEN,
             ErrorCode::MethodNotAllowed => StatusCode::METHOD_NOT_ALLOWED,
             ErrorCode::PayloadTooLarge => StatusCode::PAYLOAD_TOO_LARGE,
             ErrorCode::ServiceUnavailable => StatusCode::SERVICE_UNAVAILABLE,
@@ -60,6 +63,7 @@ impl ErrorCode {
             StatusCode::BAD_REQUEST => ErrorCode::InvalidRequest,
             StatusCode::CONFLICT => ErrorCode::Conflict,
             StatusCode::UNAUTHORIZED => ErrorCode::Unauthorized,
+            StatusCode::FORBIDDEN => ErrorCode::Forbidden,
             StatusCode::METHOD_NOT_ALLOWED => ErrorCode::MethodNotAllowed,
             StatusCode::PAYLOAD_TOO_LARGE => ErrorCode::PayloadTooLarge,
             StatusCode::SERVICE_UNAVAILABLE => ErrorCode::ServiceUnavailable,
@@ -113,6 +117,11 @@ impl ApiError {
     /// 401 — missing, invalid, or expired authentication.
     pub fn unauthorized(message: impl Into<String>) -> Self {
         Self::new(ErrorCode::Unauthorized, message)
+    }
+
+    /// 403 — authenticated but not permitted to access the route.
+    pub fn forbidden(message: impl Into<String>) -> Self {
+        Self::new(ErrorCode::Forbidden, message)
     }
 
     /// 413 — request body too large.

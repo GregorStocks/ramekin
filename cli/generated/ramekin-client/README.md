@@ -71,10 +71,12 @@ Class | Method | HTTP request | Description
 *TestingApi* | [**ping**](docs/TestingApi.md#ping) | **GET** /api/test/ping | 
 *TestingApi* | [**unauthed_ping**](docs/TestingApi.md#unauthed_ping) | **GET** /api/test/unauthed-ping | 
 *UsersApi* | [**me**](docs/UsersApi.md#me) | **GET** /api/users/me | 
+*UsersApi* | [**mint_bookmarklet_token**](docs/UsersApi.md#mint_bookmarklet_token) | **POST** /api/users/bookmarklet-token | 
 
 
 ## Documentation For Models
 
+ - [BookmarkletTokenResponse](docs/BookmarkletTokenResponse.md)
  - [CaptureRequest](docs/CaptureRequest.md)
  - [ClearCheckedResponse](docs/ClearCheckedResponse.md)
  - [CreateMealPlanRequest](docs/CreateMealPlanRequest.md)

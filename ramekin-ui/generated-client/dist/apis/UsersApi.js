@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { MeResponseFromJSON, } from '../models/index';
+import { BookmarkletTokenResponseFromJSON, MeResponseFromJSON, } from '../models/index';
 /**
  *
  */
@@ -42,6 +42,33 @@ export class UsersApi extends runtime.BaseAPI {
      */
     async me(initOverrides) {
         const response = await this.meRaw(initOverrides);
+        return await response.value();
+    }
+    /**
+     */
+    async mintBookmarkletTokenRaw(initOverrides) {
+        const queryParameters = {};
+        const headerParameters = {};
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+        let urlPath = `/api/users/bookmarklet-token`;
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => BookmarkletTokenResponseFromJSON(jsonValue));
+    }
+    /**
+     */
+    async mintBookmarkletToken(initOverrides) {
+        const response = await this.mintBookmarkletTokenRaw(initOverrides);
         return await response.value();
     }
 }

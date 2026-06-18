@@ -15,10 +15,13 @@
 
 import * as runtime from '../runtime';
 import type {
+  BookmarkletTokenResponse,
   ErrorResponse,
   MeResponse,
 } from '../models/index';
 import {
+    BookmarkletTokenResponseFromJSON,
+    BookmarkletTokenResponseToJSON,
     ErrorResponseFromJSON,
     ErrorResponseToJSON,
     MeResponseFromJSON,
@@ -62,6 +65,41 @@ export class UsersApi extends runtime.BaseAPI {
      */
     async me(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MeResponse> {
         const response = await this.meRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async mintBookmarkletTokenRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BookmarkletTokenResponse>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/api/users/bookmarklet-token`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => BookmarkletTokenResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async mintBookmarkletToken(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BookmarkletTokenResponse> {
+        const response = await this.mintBookmarkletTokenRaw(initOverrides);
         return await response.value();
     }
 

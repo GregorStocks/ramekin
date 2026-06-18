@@ -48,6 +48,13 @@
   }
   log("init, token ok; api=" + apiOrigin);
 
+  // Remove our own <script> tag before snapshotting: its src carries the
+  // bookmarklet token, and the captured HTML is persisted server-side as the
+  // fetch_html output. Leaving it in would store a reusable credential.
+  if (thisScript && thisScript.parentNode) {
+    thisScript.parentNode.removeChild(thisScript);
+  }
+
   // Capture HTML before we add our overlay
   var html = document.documentElement.outerHTML;
   var url = location.href;
@@ -212,33 +219,62 @@
     });
   }
 
-  // --- Start the capture ---------------------------------------------------
-  setPhase("Uploading page (" + fmtBytes(html.length) + ")");
-  log("POST /api/scrape/capture...");
-  fetchWithTimeout(apiOrigin + "/api/scrape/capture", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": "Bearer " + token
-    },
-    body: JSON.stringify({ html: html, source_url: url })
-  }, CAPTURE_TIMEOUT_MS, "capture POST")
+  // --- Upload the captured page, then poll for the result -----------------
+  function startCapture() {
+    setPhase("Uploading page (" + fmtBytes(html.length) + ")");
+    log("POST /api/scrape/capture...");
+    fetchWithTimeout(apiOrigin + "/api/scrape/capture", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + token
+      },
+      body: JSON.stringify({ html: html, source_url: url })
+    }, CAPTURE_TIMEOUT_MS, "capture POST")
+    .then(function (r) {
+      log("capture response " + r.status);
+      if (!r.ok) {
+        return r.json().then(function (body) {
+          throw new Error(body.error || ("Request failed (" + r.status + ")"));
+        });
+      }
+      return r.json();
+    })
+    .then(function (result) {
+      log("capture ok, job=" + result.id);
+      setPhase("Queued...");
+      startStallWatchdog();
+      pollJob(result.id, 1);
+    })
+    .catch(function (e) {
+      handleFatal("capture", "Upload timed out - check console/network", e);
+    });
+  }
+
+  // --- Fail fast on an expired/invalid token before the big upload ---------
+  // If the token is stale the server rejects the capture POST early; when that
+  // happens mid-upload through a buffering proxy the response can be dropped
+  // and the bookmarklet hangs for the full timeout. A cheap auth check first
+  // keeps the failure fast and names the real cause.
+  setPhase("Checking login");
+  log("pre-flight GET /api/users/me...");
+  fetchWithTimeout(apiOrigin + "/api/users/me", {
+    headers: { "Authorization": "Bearer " + token }
+  }, POLL_TIMEOUT_MS, "auth check")
   .then(function (r) {
-    log("capture response " + r.status);
-    if (!r.ok) {
-      return r.json().then(function (body) {
-        throw new Error(body.error || ("Request failed (" + r.status + ")"));
-      });
+    log("auth check -> " + r.status);
+    if (r.status === 401 || r.status === 403) {
+      warn("auth check failed: " + r.status);
+      setStatus("Bookmarklet expired - get a new one from your Ramekin account", true);
+      showCloseButton();
+      return;
     }
-    return r.json();
-  })
-  .then(function (result) {
-    log("capture ok, job=" + result.id);
-    setPhase("Queued...");
-    startStallWatchdog();
-    pollJob(result.id, 1);
+    if (!r.ok) {
+      throw new Error("Login check failed (" + r.status + ")");
+    }
+    startCapture();
   })
   .catch(function (e) {
-    handleFatal("capture", "Upload timed out - check console/network", e);
+    handleFatal("auth check", "Login check timed out - check console/network", e);
   });
 })();

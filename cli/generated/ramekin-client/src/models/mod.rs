@@ -1,3 +1,5 @@
+pub mod bookmarklet_token_response;
+pub use self::bookmarklet_token_response::BookmarkletTokenResponse;
 pub mod capture_request;
 pub use self::capture_request::CaptureRequest;
 pub mod clear_checked_response;

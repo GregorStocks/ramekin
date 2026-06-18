@@ -46,7 +46,16 @@ def test_capture_happy_path_logs_and_saves(
     logs: list[str] = []
     page.on("console", lambda msg: logs.append(msg.text))
 
+    # Record the uploaded HTML so we can assert the token isn't embedded in it.
+    capture_bodies: list[str] = []
+
+    def record_capture(route):
+        if route.request.method == "POST":
+            capture_bodies.append(route.request.post_data or "")
+        route.continue_()
+
     page.goto(f"{fixture_base_url}/seriouseats/rice_pilaf.html")
+    page.route("**/api/scrape/capture", record_capture)
     _inject_bookmarklet(page, ui_url, api_url, token)
 
     # Overlay reaches the terminal success state.
@@ -54,17 +63,54 @@ def test_capture_happy_path_logs_and_saves(
     expect(message).to_have_text("Recipe saved!", timeout=60_000)
     expect(page.get_by_text("View Recipe", exact=True)).to_be_visible()
 
-    # Console captured the full step trace.
+    # The bookmarklet's own <script> carries the token in its src; it must be
+    # stripped before the page is serialized so the persisted HTML never leaks
+    # a reusable credential.
+    assert capture_bodies, "expected a capture POST to be sent"
+    assert token not in capture_bodies[0], "bookmarklet token leaked into captured HTML"
+
+    # Console captured the full step trace, including the auth pre-flight.
     joined = "\n".join(logs)
     assert "[Ramekin +" in joined, joined
     for needle in [
         "captured HTML",
+        "pre-flight GET /api/users/me",
+        "auth check -> 200",
         "POST /api/scrape/capture",
         "capture ok, job=",
         "poll #1",
         "completed, recipe=",
     ]:
         assert needle in joined, f"missing {needle!r} in console:\n{joined}"
+
+
+def test_capture_preflight_fails_fast_on_expired_token(
+    logged_in_page: Page, ui_url: str, api_url: str, fixture_base_url: str
+):
+    """An invalid/expired token must fail fast on the /me pre-flight and never
+    send the large capture POST (which is what hangs through a buffering proxy).
+    """
+    page = logged_in_page
+
+    logs: list[str] = []
+    page.on("console", lambda msg: logs.append(msg.text))
+
+    capture_posts: list[str] = []
+
+    def record_capture(route):
+        if route.request.method == "POST":
+            capture_posts.append(route.request.url)
+        route.continue_()
+
+    page.goto(f"{fixture_base_url}/seriouseats/rice_pilaf.html")
+    page.route("**/api/scrape/capture", record_capture)
+    _inject_bookmarklet(page, ui_url, api_url, "not-a-valid-token")
+
+    message = page.locator("#ramekin-message")
+    expect(message).to_contain_text("expired", timeout=8_000)
+    expect(page.locator("#ramekin-close")).to_be_visible()
+    assert any("auth check failed" in line for line in logs), logs
+    assert capture_posts == [], f"capture POST should not be sent: {capture_posts}"
 
 
 def test_capture_post_timeout_surfaces(

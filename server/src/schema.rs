@@ -106,6 +106,7 @@ diesel::table! {
         token_hash -> Varchar,
         expires_at -> Timestamptz,
         created_at -> Timestamptz,
+        token_type -> Text,
     }
 }
 

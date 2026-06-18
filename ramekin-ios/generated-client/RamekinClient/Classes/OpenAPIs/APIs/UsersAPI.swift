@@ -45,4 +45,38 @@ open class UsersAPI {
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
+
+    /**
+
+     - returns: BookmarkletTokenResponse
+     */
+    @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    open class func mintBookmarkletToken() async throws -> BookmarkletTokenResponse {
+        return try await mintBookmarkletTokenWithRequestBuilder().execute().body
+    }
+
+    /**
+     - POST /api/users/bookmarklet-token
+     - Bearer Token:
+       - type: http
+       - name: bearer_auth
+     - returns: RequestBuilder<BookmarkletTokenResponse> 
+     */
+    open class func mintBookmarkletTokenWithRequestBuilder() -> RequestBuilder<BookmarkletTokenResponse> {
+        let localVariablePath = "/api/users/bookmarklet-token"
+        let localVariableURLString = RamekinClientAPI.basePath + localVariablePath
+        let localVariableParameters: [String: Any]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<BookmarkletTokenResponse>.Type = RamekinClientAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
+    }
 }

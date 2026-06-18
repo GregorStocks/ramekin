@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { MeResponse } from '../models/index';
+import type { BookmarkletTokenResponse, MeResponse } from '../models/index';
 /**
  *
  */
@@ -21,4 +21,10 @@ export declare class UsersApi extends runtime.BaseAPI {
     /**
      */
     me(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MeResponse>;
+    /**
+     */
+    mintBookmarkletTokenRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BookmarkletTokenResponse>>;
+    /**
+     */
+    mintBookmarkletToken(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BookmarkletTokenResponse>;
 }

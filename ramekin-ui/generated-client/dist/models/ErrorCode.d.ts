@@ -23,6 +23,7 @@ export declare const ErrorCode: {
     readonly InvalidRequest: "invalid_request";
     readonly Conflict: "conflict";
     readonly Unauthorized: "unauthorized";
+    readonly Forbidden: "forbidden";
     readonly MethodNotAllowed: "method_not_allowed";
     readonly PayloadTooLarge: "payload_too_large";
     readonly ServiceUnavailable: "service_unavailable";

@@ -34,6 +34,10 @@ pub struct Session {
     pub token_hash: String,
     pub expires_at: DateTime<Utc>,
     pub created_at: DateTime<Utc>,
+    /// `"session"` for normal login sessions, `"bookmarklet"` for the
+    /// long-lived, scope-restricted tokens minted for the save-recipe
+    /// bookmarklet. See [`crate::auth`].
+    pub token_type: String,
 }
 
 #[derive(Insertable)]
@@ -42,6 +46,7 @@ pub struct NewSession<'a> {
     pub user_id: Uuid,
     pub token_hash: &'a str,
     pub expires_at: DateTime<Utc>,
+    pub token_type: &'a str,
 }
 
 /// A single measurement (amount + unit pair)
