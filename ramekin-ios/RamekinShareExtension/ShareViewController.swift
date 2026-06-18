@@ -313,6 +313,10 @@ struct ShareExtensionView: View {
             try? await Task.sleep(nanoseconds: UInt64(Self.slowAffordanceDelay * 1_000_000_000))
             await MainActor.run {
                 if status == .sending {
+                    DebugLogger.shared.log(
+                        "Still sending after \(Int(Self.slowAffordanceDelay))s - showing slow affordance",
+                        source: "ShareExtension"
+                    )
                     showSlowAffordance = true
                 }
             }
@@ -320,25 +324,24 @@ struct ShareExtensionView: View {
 
         Task {
             do {
-                DebugLogger.shared.log("Calling RamekinAPI.shared.captureHTML...")
-                _ = try await RamekinAPI.shared.captureHTML(
-                    html: payload.html,
-                    sourceURL: payload.url.absoluteString
-                )
-                DebugLogger.shared.log("API call completed successfully")
+                _ = try await DebugLogger.shared.timed("captureHTML", source: "ShareExtension") {
+                    try await RamekinAPI.shared.captureHTML(
+                        html: payload.html,
+                        sourceURL: payload.url.absoluteString
+                    )
+                }
                 logger.info("API call succeeded")
 
                 await MainActor.run {
                     status = .success
-                    DebugLogger.shared.log("Status set to success, will dismiss in 1.5s")
+                    DebugLogger.shared.log("Status set to success, will dismiss in 1.5s", source: "ShareExtension")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                        DebugLogger.shared.log("Calling onComplete()")
+                        DebugLogger.shared.log("Calling onComplete()", source: "ShareExtension")
                         onComplete()
                     }
                 }
             } catch {
-                DebugLogger.shared.log("API call FAILED: \(error)")
-                DebugLogger.shared.log("Error localized: \(error.localizedDescription)")
+                DebugLogger.shared.log("API call FAILED: \(error)", source: "ShareExtension")
                 logger.error("API call failed: \(error.localizedDescription)")
                 await MainActor.run {
                     status = .error
