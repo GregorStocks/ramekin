@@ -46,13 +46,28 @@ def test_capture_happy_path_logs_and_saves(
     logs: list[str] = []
     page.on("console", lambda msg: logs.append(msg.text))
 
+    # Record the uploaded HTML so we can assert the token isn't embedded in it.
+    capture_bodies: list[str] = []
+
+    def record_capture(route):
+        if route.request.method == "POST":
+            capture_bodies.append(route.request.post_data or "")
+        route.continue_()
+
     page.goto(f"{fixture_base_url}/seriouseats/rice_pilaf.html")
+    page.route("**/api/scrape/capture", record_capture)
     _inject_bookmarklet(page, ui_url, api_url, token)
 
     # Overlay reaches the terminal success state.
     message = page.locator("#ramekin-message")
     expect(message).to_have_text("Recipe saved!", timeout=60_000)
     expect(page.get_by_text("View Recipe", exact=True)).to_be_visible()
+
+    # The bookmarklet's own <script> carries the token in its src; it must be
+    # stripped before the page is serialized so the persisted HTML never leaks
+    # a reusable credential.
+    assert capture_bodies, "expected a capture POST to be sent"
+    assert token not in capture_bodies[0], "bookmarklet token leaked into captured HTML"
 
     # Console captured the full step trace, including the auth pre-flight.
     joined = "\n".join(logs)

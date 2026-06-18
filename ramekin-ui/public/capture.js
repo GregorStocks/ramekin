@@ -48,6 +48,13 @@
   }
   log("init, token ok; api=" + apiOrigin);
 
+  // Remove our own <script> tag before snapshotting: its src carries the
+  // bookmarklet token, and the captured HTML is persisted server-side as the
+  // fetch_html output. Leaving it in would store a reusable credential.
+  if (thisScript && thisScript.parentNode) {
+    thisScript.parentNode.removeChild(thisScript);
+  }
+
   // Capture HTML before we add our overlay
   var html = document.documentElement.outerHTML;
   var url = location.href;
