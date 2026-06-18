@@ -200,7 +200,7 @@ struct ShareExtensionView: View {
                 Text("Not Signed In")
                     .font(.title2)
                     .fontWeight(.bold)
-                Text("Open the Ramekin app to sign in first")
+                Text("Your session may have expired. Open the Ramekin app to sign in, then try again.")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -324,6 +324,11 @@ struct ShareExtensionView: View {
 
         Task {
             do {
+                // Fail fast on an expired/invalid token before uploading the
+                // page. A doomed upload can otherwise hang on a buffering proxy.
+                try await DebugLogger.shared.timed("verifyAuth", source: "ShareExtension") {
+                    try await RamekinAPI.shared.verifyAuthenticated()
+                }
                 _ = try await DebugLogger.shared.timed("captureHTML", source: "ShareExtension") {
                     try await RamekinAPI.shared.captureHTML(
                         html: payload.html,
@@ -344,10 +349,31 @@ struct ShareExtensionView: View {
                 DebugLogger.shared.log("API call FAILED: \(error)", source: "ShareExtension")
                 logger.error("API call failed: \(error.localizedDescription)")
                 await MainActor.run {
-                    status = .error
-                    errorMessage = error.localizedDescription
+                    // An expired/invalid session reads as "not signed in" so the
+                    // user is pointed at re-authenticating rather than retrying.
+                    if isUnauthorized(error) {
+                        status = .notLoggedIn
+                    } else {
+                        status = .error
+                        errorMessage = error.localizedDescription
+                    }
                 }
             }
+        }
+    }
+
+    /// Whether an error from the capture flow means the session is no longer
+    /// valid (expired/revoked token or none at all), as opposed to a transient
+    /// failure worth retrying.
+    private func isUnauthorized(_ error: Error) -> Bool {
+        guard let apiError = error as? RamekinAPI.APIError else { return false }
+        switch apiError {
+        case .noAuthToken:
+            return true
+        case .httpError(let statusCode, _, _):
+            return statusCode == 401 || statusCode == 403
+        default:
+            return false
         }
     }
 }

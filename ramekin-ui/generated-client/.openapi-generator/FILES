@@ -12,6 +12,7 @@ apis/TestingApi.ts
 apis/UsersApi.ts
 apis/index.ts
 docs/AuthApi.md
+docs/BookmarkletTokenResponse.md
 docs/CaptureRequest.md
 docs/ClearCheckedResponse.md
 docs/CreateMealPlanRequest.md
@@ -91,6 +92,7 @@ docs/UsersApi.md
 docs/VersionListResponse.md
 docs/VersionSummary.md
 index.ts
+models/BookmarkletTokenResponse.ts
 models/CaptureRequest.ts
 models/ClearCheckedResponse.ts
 models/CreateMealPlanRequest.ts

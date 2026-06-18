@@ -13,6 +13,7 @@
 """  # noqa: E501
 
 # import models into model package
+from ramekin_client.models.bookmarklet_token_response import BookmarkletTokenResponse
 from ramekin_client.models.capture_request import CaptureRequest
 from ramekin_client.models.clear_checked_response import ClearCheckedResponse
 from ramekin_client.models.create_meal_plan_request import CreateMealPlanRequest

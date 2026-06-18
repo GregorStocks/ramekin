@@ -28,7 +28,7 @@
   import_from_photos: { platforms: "neither", reason: "Endpoint exists server-side but no client surfaces it yet." },
   import_recipe: { platforms: "web-only", reason: "URL/text import flow not yet ported to iOS." },
   list_items: { platforms: "web-only", reason: "iOS reads the shopping list via sync_items (offline-first)." },
-  me: { platforms: "web-only", reason: "Powers the web account/settings page; iOS doesn't surface account info yet." },
+  mint_bookmarklet_token: { platforms: "web-only", reason: "Mints the long-lived token for the web Save-Recipe bookmarklet; the iOS share extension authenticates with its login session, so there is no bookmarklet token to mint." },
   ping: { platforms: "neither", reason: "Health check used by infra/curl; not called from either client." },
   rescrape_photo: { platforms: "web-only", reason: "Photo rescrape control not yet ported to iOS." },
   retry_scrape: { platforms: "web-only", reason: "Scrape debugging page; iOS has no scrape inspector UI." },

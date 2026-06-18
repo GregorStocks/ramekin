@@ -30,6 +30,7 @@ class ErrorCode(str, Enum):
     INVALID_REQUEST = 'invalid_request'
     CONFLICT = 'conflict'
     UNAUTHORIZED = 'unauthorized'
+    FORBIDDEN = 'forbidden'
     METHOD_NOT_ALLOWED = 'method_not_allowed'
     PAYLOAD_TOO_LARGE = 'payload_too_large'
     SERVICE_UNAVAILABLE = 'service_unavailable'

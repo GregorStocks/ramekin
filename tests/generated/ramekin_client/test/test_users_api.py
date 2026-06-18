@@ -32,6 +32,12 @@ class TestUsersApi(unittest.TestCase):
         """
         pass
 
+    def test_mint_bookmarklet_token(self) -> None:
+        """Test case for mint_bookmarklet_token
+
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

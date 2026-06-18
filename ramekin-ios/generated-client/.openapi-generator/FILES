@@ -24,6 +24,7 @@ RamekinClient/Classes/OpenAPIs/Extensions.swift
 RamekinClient/Classes/OpenAPIs/JSONDataEncoding.swift
 RamekinClient/Classes/OpenAPIs/JSONEncodingHelper.swift
 RamekinClient/Classes/OpenAPIs/Models.swift
+RamekinClient/Classes/OpenAPIs/Models/BookmarkletTokenResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/CaptureRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/ClearCheckedResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/CreateMealPlanRequest.swift
@@ -97,6 +98,7 @@ RamekinClient/Classes/OpenAPIs/SynchronizedDictionary.swift
 RamekinClient/Classes/OpenAPIs/URLSessionImplementations.swift
 RamekinClient/Classes/OpenAPIs/Validation.swift
 docs/AuthAPI.md
+docs/BookmarkletTokenResponse.md
 docs/CaptureRequest.md
 docs/ClearCheckedResponse.md
 docs/CreateMealPlanRequest.md

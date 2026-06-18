@@ -38,6 +38,7 @@ __all__ = [
     "ApiKeyError",
     "ApiAttributeError",
     "ApiException",
+    "BookmarkletTokenResponse",
     "CaptureRequest",
     "ClearCheckedResponse",
     "CreateMealPlanRequest",
@@ -133,6 +134,7 @@ from ramekin_client.exceptions import ApiAttributeError as ApiAttributeError
 from ramekin_client.exceptions import ApiException as ApiException
 
 # import models into sdk package
+from ramekin_client.models.bookmarklet_token_response import BookmarkletTokenResponse as BookmarkletTokenResponse
 from ramekin_client.models.capture_request import CaptureRequest as CaptureRequest
 from ramekin_client.models.clear_checked_response import ClearCheckedResponse as ClearCheckedResponse
 from ramekin_client.models.create_meal_plan_request import CreateMealPlanRequest as CreateMealPlanRequest

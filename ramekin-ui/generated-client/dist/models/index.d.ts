@@ -1,3 +1,4 @@
+export * from './BookmarkletTokenResponse';
 export * from './CaptureRequest';
 export * from './ClearCheckedResponse';
 export * from './CreateMealPlanRequest';

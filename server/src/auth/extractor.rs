@@ -61,7 +61,9 @@ where
             .strip_prefix("Bearer ")
             .ok_or(AuthError::InvalidFormat)?;
 
-        let user = get_user_from_token(&pool, token)
+        // Scope enforcement for bookmarklet tokens happens in `require_auth`,
+        // which wraps every protected route; the extractor only needs the user.
+        let (user, _token_type) = get_user_from_token(&pool, token)
             .await
             .ok_or(AuthError::InvalidToken)?;
 

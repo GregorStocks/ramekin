@@ -16,6 +16,7 @@ ramekin_client/api_client.py
 ramekin_client/api_response.py
 ramekin_client/configuration.py
 ramekin_client/docs/AuthApi.md
+ramekin_client/docs/BookmarkletTokenResponse.md
 ramekin_client/docs/CaptureRequest.md
 ramekin_client/docs/ClearCheckedResponse.md
 ramekin_client/docs/CreateMealPlanRequest.md
@@ -96,6 +97,7 @@ ramekin_client/docs/VersionListResponse.md
 ramekin_client/docs/VersionSummary.md
 ramekin_client/exceptions.py
 ramekin_client/models/__init__.py
+ramekin_client/models/bookmarklet_token_response.py
 ramekin_client/models/capture_request.py
 ramekin_client/models/clear_checked_response.py
 ramekin_client/models/create_meal_plan_request.py
@@ -167,6 +169,7 @@ ramekin_client/models/version_summary.py
 ramekin_client/rest.py
 ramekin_client/test/__init__.py
 ramekin_client/test/test_auth_api.py
+ramekin_client/test/test_bookmarklet_token_response.py
 ramekin_client/test/test_capture_request.py
 ramekin_client/test/test_clear_checked_response.py
 ramekin_client/test/test_create_meal_plan_request.py

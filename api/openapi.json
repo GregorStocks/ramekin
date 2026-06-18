@@ -2534,6 +2534,51 @@
         }
       }
     },
+    "/api/users/bookmarklet-token": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "operationId": "mint_bookmarklet_token",
+        "responses": {
+          "201": {
+            "description": "A freshly minted bookmarklet token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BookmarkletTokenResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "A bookmarklet token may not mint tokens",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/users/me": {
       "get": {
         "tags": [
@@ -2572,6 +2617,18 @@
   },
   "components": {
     "schemas": {
+      "BookmarkletTokenResponse": {
+        "type": "object",
+        "required": [
+          "token"
+        ],
+        "properties": {
+          "token": {
+            "type": "string",
+            "description": "A freshly minted, long-lived token scoped to the capture endpoints.\nEmbed it in the bookmarklet; it does not expire and does not invalidate\npreviously minted bookmarklet tokens."
+          }
+        }
+      },
       "CaptureRequest": {
         "type": "object",
         "required": [
@@ -2843,6 +2900,7 @@
           "invalid_request",
           "conflict",
           "unauthorized",
+          "forbidden",
           "method_not_allowed",
           "payload_too_large",
           "service_unavailable",
