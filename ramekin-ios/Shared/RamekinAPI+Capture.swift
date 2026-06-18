@@ -3,8 +3,15 @@ import Foundation
 // MARK: - Scraping / capture
 
 extension RamekinAPI {
+    /// Timeout for the cheap auth pre-flight (`GET /api/users/me`) run before a
+    /// capture upload. Short so a stalled check fails fast and clearly rather
+    /// than eating into the share extension's ~30s budget before the upload.
+    static let authCheckTimeout: TimeInterval = 10
+
     func captureHTML(html: String, sourceURL: String) async throws -> ScrapeResponse {
-        logger.log("captureHTML called for: \(sourceURL) (html \(html.count) bytes)")
+        // `RamekinAPI.logger` is file-private, so this cross-file extension uses
+        // the shared logger directly (it is the same instance).
+        DebugLogger.shared.log("captureHTML called for: \(sourceURL) (html \(html.count) bytes)")
         let body = try JSONEncoder().encode(CaptureRequest(html: html, source_url: sourceURL))
         let data = try await performRequest(
             method: "POST",
@@ -15,7 +22,7 @@ extension RamekinAPI {
             logBody: false
         )
         let decoded = try JSONDecoder().decode(ScrapeResponse.self, from: data)
-        logger.log("SUCCESS: Capture job ID: \(decoded.id)")
+        DebugLogger.shared.log("SUCCESS: Capture job ID: \(decoded.id)")
         return decoded
     }
 
@@ -38,7 +45,8 @@ extension RamekinAPI {
         _ = try await performRequest(
             method: "GET",
             path: "/api/users/me",
-            acceptedStatusCodes: [200]
+            acceptedStatusCodes: [200],
+            timeoutInterval: Self.authCheckTimeout
         )
     }
 }
