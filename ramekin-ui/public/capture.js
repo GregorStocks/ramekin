@@ -9,8 +9,35 @@
   var apiOrigin = decodeURIComponent(params.get("api") || origin);
   var externalOrigin = decodeURIComponent(params.get("external") || origin);
 
+  // --- Diagnostics: timestamped logger -------------------------------------
+  var t0 = Date.now();
+  function elapsedMs() { return Date.now() - t0; }
+  function elapsedSecs() { return Math.round(elapsedMs() / 1000); }
+  function ts() { return "[Ramekin +" + elapsedMs() + "ms] "; }
+  function log(m) { console.log(ts() + m); }
+  function warn(m) { console.warn(ts() + m); }
+  function err(m) { console.error(ts() + m); }
+
+  // --- Tunable timeouts (overridable via bookmarklet query params) ---------
+  function intParam(name, dflt) {
+    var raw = params.get(name);
+    if (raw === null) return dflt;
+    var n = parseInt(raw, 10);
+    return Number.isFinite(n) && n >= 0 ? n : dflt;
+  }
+  var CAPTURE_TIMEOUT_MS = intParam("captureTimeout", 30000);
+  var POLL_TIMEOUT_MS = intParam("pollTimeout", 10000);
+  var STALL_WARN_MS = intParam("stallWarn", 60000);
+  var POLL_INTERVAL_MS = intParam("pollInterval", 500);
+
+  function fmtBytes(n) {
+    if (n < 1024) return n + " B";
+    if (n < 1024 * 1024) return (n / 1024).toFixed(0) + " KB";
+    return (n / (1024 * 1024)).toFixed(1) + " MB";
+  }
+
   if (!token) {
-    console.error("[Ramekin] No token in bookmarklet URL");
+    err("No token in bookmarklet URL");
     alert("Ramekin: Invalid bookmarklet. Please get a new one from your Ramekin account.");
     return;
   }
@@ -19,10 +46,12 @@
   if (document.getElementById("ramekin-capture-overlay")) {
     return;
   }
+  log("init, token ok; api=" + apiOrigin);
 
   // Capture HTML before we add our overlay
   var html = document.documentElement.outerHTML;
   var url = location.href;
+  log("captured HTML " + fmtBytes(html.length));
 
   // Create overlay UI
   var overlay = document.createElement("div");
@@ -43,12 +72,33 @@
   ].join("");
   document.body.appendChild(overlay);
 
-  var statusEl = document.getElementById("ramekin-status");
   var messageEl = document.getElementById("ramekin-message");
   var spinnerEl = document.getElementById("ramekin-spinner");
   var actionsEl = document.getElementById("ramekin-actions");
 
+  // --- Overlay status helpers ---------------------------------------------
+  var currentPhase = "Saving recipe...";
+  var stalled = false;
+
+  // Live elapsed-seconds counter on the spinner line.
+  var timerId = setInterval(function () {
+    if (stalled) return;
+    if (spinnerEl.style.display !== "none") {
+      messageEl.textContent = currentPhase + " (" + elapsedSecs() + "s)";
+    }
+  }, 1000);
+  function stopTimer() {
+    if (timerId) { clearInterval(timerId); timerId = null; }
+  }
+
+  function setPhase(text) {
+    if (stalled) return;
+    currentPhase = text;
+    messageEl.textContent = text + " (" + elapsedSecs() + "s)";
+  }
+
   function setStatus(message, isError, isDone) {
+    stopTimer();
     messageEl.textContent = message;
     if (isError) {
       messageEl.style.color = "#d32f2f";
@@ -67,7 +117,7 @@
       '<button id="ramekin-close" style="padding:8px 16px;background:#e0e0e0;',
       'border:none;border-radius:6px;cursor:pointer;">Close</button>'
     ].join("");
-    document.getElementById("ramekin-close").onclick = function() {
+    document.getElementById("ramekin-close").onclick = function () {
       overlay.remove();
     };
   }
@@ -78,64 +128,117 @@
       '<button id="ramekin-close" style="padding:8px 16px;background:#e0e0e0;',
       'border:none;border-radius:6px;cursor:pointer;">Close</button>'
     ].join("");
-    document.getElementById("ramekin-close").onclick = function() {
+    document.getElementById("ramekin-close").onclick = function () {
       overlay.remove();
     };
   }
 
-  function pollJob(jobId) {
-    fetch(apiOrigin + "/api/scrape/" + jobId, {
-      headers: { "Authorization": "Bearer " + token }
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(job) {
-      if (job.status === "completed" && job.recipe_id) {
-        setStatus("Recipe saved!", false, true);
-        showActions(job.recipe_id);
-      } else if (job.status === "failed") {
-        setStatus(job.error || "Failed to extract recipe", true);
-        showCloseButton();
-      } else {
-        // Still processing
-        var statusText = job.status === "parsing" ? "Extracting recipe..." : "Processing...";
-        setStatus(statusText);
-        setTimeout(function() { pollJob(jobId); }, 500);
-      }
-    })
-    .catch(function(err) {
-      console.error("[Ramekin] Poll error:", err);
-      console.error("[Ramekin] API origin:", apiOrigin);
-      console.error("[Ramekin] This may be a CORS issue - check network tab");
-      setStatus("Error checking status", true);
-      showCloseButton();
+  // --- Networking with per-request timeout --------------------------------
+  function fetchWithTimeout(resource, options, timeoutMs, label) {
+    var controller = new AbortController();
+    var timer = setTimeout(function () {
+      warn(label + " timed out after " + timeoutMs + "ms - aborting");
+      controller.abort();
+    }, timeoutMs);
+    options = options || {};
+    options.signal = controller.signal;
+    return fetch(resource, options).finally(function () {
+      clearTimeout(timer);
     });
   }
 
-  // Start the capture
-  fetch(apiOrigin + "/api/scrape/capture", {
+  function handleFatal(label, timeoutMessage, e) {
+    if (e && e.name === "AbortError") {
+      warn(label + " aborted after timeout");
+      setStatus(timeoutMessage, true);
+    } else {
+      err(label + " error: " + (e && e.message ? e.message : e));
+      err("API origin: " + apiOrigin + " - if this looks like CORS, check the network tab");
+      setStatus((e && e.message) || "Failed to save recipe", true);
+    }
+    showCloseButton();
+  }
+
+  // --- Stall watchdog ------------------------------------------------------
+  var stallId = null;
+  function startStallWatchdog() {
+    stallId = setTimeout(function () {
+      stalled = true;
+      stopTimer();
+      warn("watchdog: still not finished after " + STALL_WARN_MS + "ms");
+      messageEl.textContent =
+        "Taking longer than expected (" + elapsedSecs() + "s) - check console/network";
+      messageEl.style.color = "#d32f2f";
+      showCloseButton();
+    }, STALL_WARN_MS);
+  }
+  function clearStallWatchdog() {
+    if (stallId) { clearTimeout(stallId); stallId = null; }
+  }
+
+  // --- Poll loop -----------------------------------------------------------
+  function pollJob(jobId, attempt) {
+    log("poll #" + attempt + "...");
+    fetchWithTimeout(apiOrigin + "/api/scrape/" + jobId, {
+      headers: { "Authorization": "Bearer " + token }
+    }, POLL_TIMEOUT_MS, "poll #" + attempt)
+    .then(function (r) { return r.json(); })
+    .then(function (job) {
+      log("poll #" + attempt + " -> " + job.status);
+      if (job.status === "completed" && job.recipe_id) {
+        clearStallWatchdog();
+        log("completed, recipe=" + job.recipe_id);
+        setStatus("Recipe saved!", false, true);
+        showActions(job.recipe_id);
+      } else if (job.status === "failed") {
+        clearStallWatchdog();
+        warn("failed: " + (job.error || "unknown"));
+        setStatus(job.error || "Failed to extract recipe", true);
+        showCloseButton();
+      } else {
+        if (job.status === "parsing") {
+          setPhase("Extracting recipe...");
+        } else if (job.status === "pending") {
+          setPhase("Queued...");
+        } else {
+          setPhase("Processing (" + job.status + ")...");
+        }
+        setTimeout(function () { pollJob(jobId, attempt + 1); }, POLL_INTERVAL_MS);
+      }
+    })
+    .catch(function (e) {
+      clearStallWatchdog();
+      handleFatal("poll", "Status check timed out - check console/network", e);
+    });
+  }
+
+  // --- Start the capture ---------------------------------------------------
+  setPhase("Uploading page (" + fmtBytes(html.length) + ")");
+  log("POST /api/scrape/capture...");
+  fetchWithTimeout(apiOrigin + "/api/scrape/capture", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       "Authorization": "Bearer " + token
     },
     body: JSON.stringify({ html: html, source_url: url })
-  })
-  .then(function(r) {
+  }, CAPTURE_TIMEOUT_MS, "capture POST")
+  .then(function (r) {
+    log("capture response " + r.status);
     if (!r.ok) {
-      return r.json().then(function(body) {
-        throw new Error(body.error || "Request failed");
+      return r.json().then(function (body) {
+        throw new Error(body.error || ("Request failed (" + r.status + ")"));
       });
     }
     return r.json();
   })
-  .then(function(result) {
-    pollJob(result.id);
+  .then(function (result) {
+    log("capture ok, job=" + result.id);
+    setPhase("Queued...");
+    startStallWatchdog();
+    pollJob(result.id, 1);
   })
-  .catch(function(err) {
-    console.error("[Ramekin] Capture error:", err);
-    console.error("[Ramekin] API origin:", apiOrigin);
-    console.error("[Ramekin] This may be a CORS issue - check network tab");
-    setStatus(err.message || "Failed to save recipe", true);
-    showCloseButton();
+  .catch(function (e) {
+    handleFatal("capture", "Upload timed out - check console/network", e);
   });
 })();
