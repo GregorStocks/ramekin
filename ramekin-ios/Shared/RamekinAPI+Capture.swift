@@ -4,9 +4,11 @@ import Foundation
 
 extension RamekinAPI {
     /// Timeout for the cheap auth pre-flight (`GET /api/users/me`) run before a
-    /// capture upload. Short so a stalled check fails fast and clearly rather
-    /// than eating into the share extension's ~30s budget before the upload.
-    static let authCheckTimeout: TimeInterval = 10
+    /// capture upload. The pre-flight and the upload run sequentially in the
+    /// share extension, so this plus `captureSubmitTimeout` must stay under the
+    /// ~30s iOS share-extension budget (5 + 23 = 28). Short, since `/me` is a
+    /// tiny request and a real stall should fail fast.
+    static let authCheckTimeout: TimeInterval = 5
 
     func captureHTML(html: String, sourceURL: String) async throws -> ScrapeResponse {
         // `RamekinAPI.logger` is file-private, so this cross-file extension uses

@@ -393,10 +393,11 @@ class RamekinAPI {
         updateGeneratedClientConfig()
     }
 
-    /// Timeout for the capture POST. Must fit inside the ~30s iOS gives a
-    /// share extension before it's terminated, while leaving enough headroom
-    /// for multi-MB HTML uploads on a slow mobile uplink.
-    static let captureSubmitTimeout: TimeInterval = 25
+    /// Timeout for the capture POST. The auth pre-flight (`authCheckTimeout`,
+    /// 5s) runs first in the share extension, so pre-flight + upload together
+    /// must fit inside the ~30s iOS gives a share extension before terminating
+    /// it (5 + 23 = 28). Still ample for multi-MB HTML on a slow mobile uplink.
+    static let captureSubmitTimeout: TimeInterval = 23
 }
 
 // MARK: - Connection Test
