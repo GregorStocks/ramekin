@@ -92,8 +92,11 @@ clean-api: ## Force regeneration of OpenAPI spec and clients on next build
 	@rm -f api/openapi.json
 	@rm -rf cli/generated/ ramekin-ui/generated-client/ tests/generated/
 
-generate-schema: ## Regenerate schema.rs from database (requires db-up and migrations run)
-	@cd server && diesel print-schema > src/schema.rs
+generate-schema: db-migrate ## Regenerate schema.rs from the migrated dev database
+	@cd server && DATABASE_URL=$$(grep '^DATABASE_URL=' ../dev.env | cut -d= -f2-) \
+	    diesel print-schema --no-generate-missing-sql-type-definitions > src/schema.rs.tmp \
+	    && mv src/schema.rs.tmp src/schema.rs \
+	    || { rm -f src/schema.rs.tmp; echo "diesel print-schema failed; schema.rs left unchanged" >&2; exit 1; }
 	@echo "Schema generated at server/src/schema.rs" | $(TS)
 	$(MAKE) lint
 
