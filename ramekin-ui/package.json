@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@types/http-proxy": "^1.17.17",
-    "@types/node": "^25.9.2",
+    "@types/node": "^25.9.3",
     "@types/qrcode": "^1.5.6",
     "prettier": "^3.8.4",
     "stylelint": "^17.13.0",
@@ -32,6 +32,6 @@
     "typescript": "~6.0.3",
     "vite": "^8.0.16",
     "vite-plugin-solid": "^2.11.12",
-    "vitest": "^4.1.8"
+    "vitest": "^4.1.9"
   }
 }
