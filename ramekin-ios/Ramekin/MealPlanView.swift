@@ -249,7 +249,8 @@ struct MealPlanView: View {
     private func mealsFor(date: Date, mealType: MealType) -> [MealPlanItem] {
         let dateString = Self.localDateString(from: date)
         return mealPlans.filter { meal in
-            Self.localDateString(from: meal.mealDate) == dateString && meal.mealType == mealType
+            let mealDate = MealPlanDateSupport.localDate(fromAPIDate: meal.mealDate)
+            return Self.localDateString(from: mealDate) == dateString && meal.mealType == mealType
         }
     }
 

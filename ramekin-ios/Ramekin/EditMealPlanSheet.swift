@@ -18,7 +18,7 @@ struct EditMealPlanSheet: View {
     ) {
         self.meal = meal
         self.onSave = onSave
-        _selectedDate = State(initialValue: meal.mealDate)
+        _selectedDate = State(initialValue: MealPlanDateSupport.localDate(fromAPIDate: meal.mealDate))
         _selectedMealType = State(initialValue: meal.mealType)
         _notes = State(initialValue: meal.notes ?? "")
     }
