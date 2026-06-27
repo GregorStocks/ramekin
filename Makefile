@@ -216,7 +216,6 @@ pipeline: ## Run the full pipeline over every URL in test-urls.json
 		$(if $(DELAY),--delay-ms $(DELAY),) \
 		$(if $(FORCE_REFETCH),--force-refetch,) \
 		$(if $(ON_FETCH_FAIL),--on-fetch-fail $(ON_FETCH_FAIL),) \
-		$(if $(TAGS_FILE),--tags-file $(TAGS_FILE),) \
 		$(if $(CONCURRENCY),--concurrency $(CONCURRENCY),)
 
 pipeline-cache-stats: ## Show HTML cache statistics

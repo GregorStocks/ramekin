@@ -55,8 +55,6 @@ pub struct AllStepsResult {
     pub step_results: Vec<StepResult>,
     pub extraction_stats: Option<ExtractionStats>,
     pub ingredient_stats: Option<IngredientStats>,
-    /// Cache status for each successful AI enrichment step.
-    pub ai_cache_events: Vec<bool>,
 }
 
 // ============================================================================
@@ -159,7 +157,6 @@ pub async fn run_all_steps(
                 step_results,
                 extraction_stats: None,
                 ingredient_stats: None,
-                ai_cache_events: Vec::new(),
             };
         }
         // After force fetch, pre-populate store and start from extract_recipe
@@ -198,7 +195,6 @@ pub async fn run_all_steps(
     // Convert generic results to our StepResult format and append to any existing results
     let mut extraction_stats = None;
     let mut ingredient_stats = None;
-    let mut ai_cache_events = Vec::new();
 
     for result in &generic_results {
         // Use step_name for reliable step identification
@@ -217,19 +213,6 @@ pub async fn run_all_steps(
             ingredient_stats = extract_ingredient_stats_from_output(&result.output);
         }
 
-        // Extract AI cache status from enrichment steps
-        if matches!(
-            step,
-            PipelineStep::EnrichNormalizeTitle
-                | PipelineStep::EnrichGenerateDescription
-                | PipelineStep::EnrichAutoTag
-        ) && result.success
-        {
-            if let Some(cached) = result.output.get("cached").and_then(|v| v.as_bool()) {
-                ai_cache_events.push(cached);
-            }
-        }
-
         step_results.push(StepResult {
             step,
             success: result.success,
@@ -243,7 +226,6 @@ pub async fn run_all_steps(
         step_results,
         extraction_stats,
         ingredient_stats,
-        ai_cache_events,
     }
 }
 
