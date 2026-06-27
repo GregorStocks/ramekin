@@ -457,8 +457,6 @@ mod tests {
             "failed_at_save": 0,
             "cache_hits": 0,
             "cache_misses": 1,
-            "ai_cache_hits": 0,
-            "ai_cache_misses": 0,
             "by_site": {},
             "url_results": [
                 {

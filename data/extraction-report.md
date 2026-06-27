@@ -24,11 +24,6 @@
 - Metric converted (oz→g): 2451
 - Metric converted (lb→g): 1807
 
-## AI Cache
-
-- Cache hits: 16374/16374 (100.0%)
-- API calls: 0/16374 (0.0%)
-
 ## By Site
 
 | Site | Completed | Total | Rate |

@@ -189,9 +189,6 @@ enum Commands {
         /// What to do when fetch fails: continue (default), skip, or prompt
         #[arg(long, value_enum, default_value = "continue")]
         on_fetch_fail: OnFetchFail,
-        /// Path to tags JSON file for auto-tag evaluation
-        #[arg(long, default_value = "data/eval-tags.json")]
-        tags_file: PathBuf,
         /// Number of URLs to process concurrently
         #[arg(long, default_value = "10")]
         concurrency: usize,
@@ -386,7 +383,6 @@ async fn main() -> Result<()> {
             delay_ms,
             force_refetch,
             on_fetch_fail,
-            tags_file,
             concurrency,
         } => {
             let config = pipeline_orchestrator::OrchestratorConfig {
@@ -396,10 +392,10 @@ async fn main() -> Result<()> {
                 delay_ms,
                 force_refetch,
                 on_fetch_fail,
-                tags_file,
                 concurrency,
             };
             let results = pipeline_orchestrator::run_pipeline_test(config).await?;
+            let run_dir = output_dir.join(&timestamp);
 
             // Generate and save extraction report
             let extraction_report = pipeline_orchestrator::generate_summary_report(&results);
@@ -408,17 +404,6 @@ async fn main() -> Result<()> {
             tracing::info!(
                 "Extraction report saved to: {}",
                 extraction_report_path.display()
-            );
-
-            // Generate and save tag report
-            let (run_id, run_dir) = pipeline_orchestrator::get_latest_run_dir(&output_dir)?;
-            let tag_report = pipeline_orchestrator::generate_tag_report(&run_dir)?;
-            let tag_report_path = PathBuf::from("data/tag-report.md");
-            std::fs::write(&tag_report_path, &tag_report)?;
-            tracing::info!(
-                "Tag report saved to: {} (from run: {})",
-                tag_report_path.display(),
-                run_id
             );
 
             // Generate and save density gap report
