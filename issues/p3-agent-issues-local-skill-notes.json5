@@ -1,0 +1,22 @@
+{
+  "title": "Audit local agent skills after shared workflow migration",
+  "description": "Review .claude/skills/solve-issue-local/SKILL.md and \
+.claude/skills/create-pr-local/SKILL.md after the shared agent-issues \
+migration and keep them limited to Ramekin-specific notes.\n\
+\n\
+These files are already close to the intended shape. Confirm they do not \
+duplicate the global solve-issue/create-pr/submit-pr mechanics, and retain \
+only local validation commands, Makefile-first guidance, generated-output \
+policy, pipeline regeneration requirements, and Ramekin-specific \
+implementation constraints.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "agent-issues",
+    "skills",
+    "migration",
+  ],
+  "created_at": "2026-06-27T11:58:59-07:00",
+  "updated_at": "2026-06-27T11:58:59-07:00",
+}
