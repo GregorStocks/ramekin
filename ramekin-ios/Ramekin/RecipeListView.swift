@@ -1,7 +1,6 @@
 import SwiftUI
 struct RecipeListView: View {
     @EnvironmentObject var appState: AppState
-
     @State private var recipes: [RecipeSummary] = []
     @State private var isLoading = false
     @State private var isLoadingMore = false
@@ -18,6 +17,8 @@ struct RecipeListView: View {
     @AppStorage("recipeSourceFilter") private var sourceFilter = ""
     @AppStorage("recipeCreatedAfterFilter") private var createdAfterFilter = ""
     @AppStorage("recipeCreatedBeforeFilter") private var createdBeforeFilter = ""
+    @AppStorage("recipePhotoSizeFilter") private var photoSizeFilter = ""
+    @AppStorage("recipePhotoDimensionFilter") private var photoDimensionFilter = ""
     @State private var selectedTags: Set<String> = []
     @State private var availableTags: [TagItem] = []
     @State private var showingAdvancedFilters = false
@@ -27,7 +28,6 @@ struct RecipeListView: View {
     private var hasActiveFilters: Bool {
         currentFilterState.hasAnyFilters
     }
-
     private var currentFilterState: RecipeListFilterState {
         RecipeListFilterState(
             searchText: searchText,
@@ -35,10 +35,11 @@ struct RecipeListView: View {
             photoFilter: photoFilter,
             source: sourceFilter,
             createdAfter: createdAfterFilter,
-            createdBefore: createdBeforeFilter
+            createdBefore: createdBeforeFilter,
+            photoSizeThreshold: RecipeListFilterSupport.numericThreshold(from: photoSizeFilter),
+            photoDimensionThreshold: RecipeListFilterSupport.numericThreshold(from: photoDimensionFilter)
         )
     }
-
     var body: some View {
         Group {
             if isLoading && recipes.isEmpty {
@@ -113,13 +114,14 @@ struct RecipeListView: View {
             RecipeAdvancedFiltersSheet(
                 source: $sourceFilter,
                 createdAfter: $createdAfterFilter,
-                createdBefore: $createdBeforeFilter
+                createdBefore: $createdBeforeFilter,
+                photoSizeFilter: $photoSizeFilter,
+                photoDimensionFilter: $photoDimensionFilter
             ) {
                 reloadRecipes()
             }
         }
     }
-
     private var sortMenu: some View {
         Menu {
             ForEach(RecipeSortOrder.allCases, id: \.self) { order in
@@ -138,7 +140,6 @@ struct RecipeListView: View {
             Image(systemName: "arrow.up.arrow.down")
         }
     }
-
     private var filterBar: some View {
         RecipeListFilterBar(
             availableTags: availableTags,
@@ -158,9 +159,7 @@ struct RecipeListView: View {
             onClearFilters: clearFilters
         )
     }
-
     // MARK: - Subviews
-
     private var recipeList: some View {
         List {
             ForEach(recipes) { recipe in
@@ -231,7 +230,6 @@ struct RecipeListView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
-
     private func errorView(message: String) -> some View {
         VStack(spacing: 16) {
             Image(systemName: "exclamationmark.triangle")
@@ -276,6 +274,8 @@ extension RecipeListView {
         sourceFilter = ""
         createdAfterFilter = ""
         createdBeforeFilter = ""
+        photoSizeFilter = ""
+        photoDimensionFilter = ""
         persistSelectedTags()
         reloadRecipes()
     }

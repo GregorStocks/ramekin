@@ -7,15 +7,42 @@ struct RecipeListFilterState: Equatable {
     var source: String = ""
     var createdAfter: String = ""
     var createdBefore: String = ""
+    var photoSizeThreshold: NumericThreshold?
+    var photoDimensionThreshold: NumericThreshold?
 
     var hasAdvancedFilters: Bool {
         !RecipeListFilterSupport.normalizedSource(source).isEmpty
             || !RecipeListFilterSupport.normalizedDateValue(createdAfter).isEmpty
             || !RecipeListFilterSupport.normalizedDateValue(createdBefore).isEmpty
+            || photoSizeThreshold != nil
+            || photoDimensionThreshold != nil
     }
 
     var hasAnyFilters: Bool {
         !selectedTags.isEmpty || photoFilter != .any || hasAdvancedFilters
+    }
+}
+
+enum NumericThresholdOperator: String, CaseIterable {
+    case lessThan = "<"
+    case greaterThan = ">"
+
+    var label: String {
+        switch self {
+        case .lessThan:
+            return "<"
+        case .greaterThan:
+            return ">"
+        }
+    }
+}
+
+struct NumericThreshold: Equatable {
+    let comparison: NumericThresholdOperator
+    let value: Int
+
+    var queryValue: String {
+        "\(comparison.rawValue)\(value)"
     }
 }
 
@@ -41,6 +68,14 @@ enum RecipeListFilterSupport {
             parts.append(photoFilterToken)
         }
 
+        if let photoSizeThreshold = state.photoSizeThreshold {
+            parts.append("photo_size:\(photoSizeThreshold.queryValue)")
+        }
+
+        if let photoDimensionThreshold = state.photoDimensionThreshold {
+            parts.append("photo_dim:\(photoDimensionThreshold.queryValue)")
+        }
+
         if let createdDateToken = createdDateToken(
             createdAfter: state.createdAfter,
             createdBefore: state.createdBefore
@@ -57,15 +92,16 @@ enum RecipeListFilterSupport {
             createdAfter: state.createdAfter,
             createdBefore: state.createdBefore
         )
+        let hasPhotoThreshold = state.photoSizeThreshold != nil || state.photoDimensionThreshold != nil
 
-        switch (normalizedSource.isEmpty, createdLabel == nil) {
-        case (true, true):
+        switch (normalizedSource.isEmpty, createdLabel == nil, hasPhotoThreshold) {
+        case (true, true, false):
             return nil
-        case (false, true):
+        case (false, true, false):
             return normalizedSource
-        case (true, false):
+        case (true, false, false):
             return createdLabel
-        case (false, false):
+        default:
             return "Advanced"
         }
     }
@@ -89,6 +125,38 @@ enum RecipeListFilterSupport {
         }
 
         return SharedDateFormatters.localDateOnly.date(from: normalizedValue)
+    }
+
+    static func numericThreshold(from rawValue: String) -> NumericThreshold? {
+        let normalizedValue = rawValue.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let opCharacter = normalizedValue.first,
+              let comparison = NumericThresholdOperator(rawValue: String(opCharacter)) else {
+            return nil
+        }
+
+        let valueText = normalizedValue.dropFirst().trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let value = Int(valueText) else {
+            return nil
+        }
+
+        return NumericThreshold(comparison: comparison, value: value)
+    }
+
+    static func thresholdQueryValue(
+        isEnabled: Bool,
+        comparison: NumericThresholdOperator,
+        value: String
+    ) -> String {
+        guard isEnabled else {
+            return ""
+        }
+
+        let normalizedValue = value.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let intValue = Int(normalizedValue) else {
+            return ""
+        }
+
+        return NumericThreshold(comparison: comparison, value: intValue).queryValue
     }
 
     private static func createdFilterLabel(createdAfter: String, createdBefore: String) -> String? {

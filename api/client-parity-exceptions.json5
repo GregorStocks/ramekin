@@ -37,5 +37,4 @@
   sync_recipes: { platforms: "ios-only", reason: "Web is online-only by design; iOS keeps a local recipe cache via incremental sync." },
   unauthed_ping: { platforms: "ios-only", reason: "iOS hits this via the RamekinAPI.testConnection() health-check; web doesn't call it." },
   update_item: { platforms: "web-only", reason: "iOS mutates shopping list items via sync_items only." },
-  update_meal_plan: { platforms: "neither", reason: "Meal plan entries are immutable in current UI; edit flow not built on either client." },
 }

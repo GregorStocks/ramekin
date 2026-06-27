@@ -4,6 +4,8 @@ enum RecipeSummaryCacheSupport {
     static func canServeFromCache(filterState: RecipeListFilterState, sortOrder: RecipeSortOrder) -> Bool {
         filterState.searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
             && RecipeListFilterSupport.normalizedSource(filterState.source).isEmpty
+            && filterState.photoSizeThreshold == nil
+            && filterState.photoDimensionThreshold == nil
             && sortOrder != .random
     }
 
