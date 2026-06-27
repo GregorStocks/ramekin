@@ -3,9 +3,7 @@ import XCTest
 
 final class MealPlanDateSupportTests: XCTestCase {
     func testLocalDatePreservesAPIDateInWesternTimeZone() {
-        let originalTimeZone = NSTimeZone.default
-        NSTimeZone.default = TimeZone(identifier: "America/Los_Angeles")!
-        defer { NSTimeZone.default = originalTimeZone }
+        let pacificTime = TimeZone(identifier: "America/Los_Angeles")!
 
         let apiDate = utcCalendar.date(from: DateComponents(
             timeZone: TimeZone(secondsFromGMT: 0)!,
@@ -14,9 +12,14 @@ final class MealPlanDateSupportTests: XCTestCase {
             day: 18
         ))!
 
-        let localDate = MealPlanDateSupport.localDate(fromAPIDate: apiDate)
+        let localDate = MealPlanDateSupport.localDate(fromAPIDate: apiDate, timeZone: pacificTime)
+        var localCalendar = Calendar(identifier: .iso8601)
+        localCalendar.timeZone = pacificTime
+        let components = localCalendar.dateComponents([.year, .month, .day], from: localDate)
 
-        XCTAssertEqual(SharedDateFormatters.localDateOnly.string(from: localDate), "2026-04-18")
+        XCTAssertEqual(components.year, 2026)
+        XCTAssertEqual(components.month, 4)
+        XCTAssertEqual(components.day, 18)
     }
 
     private let utcCalendar: Calendar = {

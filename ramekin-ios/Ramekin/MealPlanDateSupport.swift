@@ -1,11 +1,13 @@
 import Foundation
 
 enum MealPlanDateSupport {
-    static func localDate(fromAPIDate apiDate: Date, calendar: Calendar = .current) -> Date {
+    static func localDate(fromAPIDate apiDate: Date, timeZone: TimeZone = .autoupdatingCurrent) -> Date {
         let components = apiCalendar.dateComponents([.year, .month, .day], from: apiDate)
-        return calendar.date(from: DateComponents(
-            calendar: calendar,
-            timeZone: calendar.timeZone,
+        var localCalendar = Calendar(identifier: .iso8601)
+        localCalendar.timeZone = timeZone
+        return localCalendar.date(from: DateComponents(
+            calendar: localCalendar,
+            timeZone: timeZone,
             year: components.year,
             month: components.month,
             day: components.day
