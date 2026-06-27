@@ -30,6 +30,7 @@ struct MealPlanView: View {
     @State private var pickerMealType: MealType = .dinner
 
     @State private var deletingMealPlan: MealPlanItem?
+    @State private var editingMealPlan: MealPlanItem?
 
     private let logger = DebugLogger.shared
 
@@ -89,6 +90,16 @@ struct MealPlanView: View {
                     mealType: pickerMealType
                 ) { recipe in
                     Task { await addMealPlan(recipe: recipe) }
+                }
+            }
+            .sheet(item: $editingMealPlan) { meal in
+                EditMealPlanSheet(meal: meal) { mealDate, mealType, notes in
+                    try await updateMealPlan(
+                        meal,
+                        mealDate: mealDate,
+                        mealType: mealType,
+                        notes: notes
+                    )
                 }
             }
             .confirmationDialog(
@@ -194,10 +205,11 @@ struct MealPlanView: View {
                 .padding(.top, 6)
 
             ForEach(meals) { meal in
-                NavigationLink(value: NavigationDestination.recipe(meal.recipeId)) {
-                    mealCard(meal)
-                }
-                .buttonStyle(.plain)
+                MealPlanItemCard(
+                    meal: meal,
+                    onEdit: { editingMealPlan = meal },
+                    onDelete: { deletingMealPlan = meal }
+                )
             }
 
             Button {
@@ -211,32 +223,6 @@ struct MealPlanView: View {
             }
             .padding(.bottom, 4)
         }
-    }
-
-    private func mealCard(_ meal: MealPlanItem) -> some View {
-        HStack(spacing: 10) {
-            RecipeThumbnail(photoId: meal.thumbnailPhotoId, size: 44)
-
-            Text(meal.recipeTitle)
-                .font(.subheadline)
-                .foregroundColor(.primary)
-                .lineLimit(2)
-
-            Spacer()
-
-            Button {
-                deletingMealPlan = meal
-            } label: {
-                Image(systemName: "xmark.circle.fill")
-                    .foregroundColor(.secondary)
-                    .font(.body)
-            }
-            .buttonStyle(.plain)
-        }
-        .padding(.vertical, 4)
-        .padding(.horizontal, 8)
-        .background(Color(.systemGray6))
-        .clipShape(RoundedRectangle(cornerRadius: 8))
     }
 
     // MARK: - Error View
@@ -346,6 +332,23 @@ struct MealPlanView: View {
                 self.error = error.localizedDescription
             }
         }
+    }
+
+    private func updateMealPlan(
+        _ meal: MealPlanItem,
+        mealDate: Date,
+        mealType: MealType,
+        notes: String
+    ) async throws {
+        try await logger.timed("updateMealPlan API", source: "MealPlan") {
+            try await RamekinAPI.shared.updateMealPlan(
+                id: meal.id,
+                mealDate: mealDate,
+                mealType: mealType.rawValue,
+                notes: notes
+            )
+        }
+        await loadMealPlans()
     }
 }
 

@@ -6,6 +6,8 @@ struct RecipeAdvancedFiltersSheet: View {
     @Binding var source: String
     @Binding var createdAfter: String
     @Binding var createdBefore: String
+    @Binding var photoSizeFilter: String
+    @Binding var photoDimensionFilter: String
 
     let onApply: () -> Void
 
@@ -14,21 +16,33 @@ struct RecipeAdvancedFiltersSheet: View {
     @State private var draftCreatedAfter: Date
     @State private var hasCreatedBefore: Bool
     @State private var draftCreatedBefore: Date
+    @State private var hasPhotoSizeFilter: Bool
+    @State private var draftPhotoSizeOperator: NumericThresholdOperator
+    @State private var draftPhotoSizeValue: String
+    @State private var hasPhotoDimensionFilter: Bool
+    @State private var draftPhotoDimensionOperator: NumericThresholdOperator
+    @State private var draftPhotoDimensionValue: String
 
     init(
         source: Binding<String>,
         createdAfter: Binding<String>,
         createdBefore: Binding<String>,
+        photoSizeFilter: Binding<String>,
+        photoDimensionFilter: Binding<String>,
         onApply: @escaping () -> Void
     ) {
         _source = source
         _createdAfter = createdAfter
         _createdBefore = createdBefore
+        _photoSizeFilter = photoSizeFilter
+        _photoDimensionFilter = photoDimensionFilter
         self.onApply = onApply
 
         let normalizedSource = RecipeListFilterSupport.normalizedSource(source.wrappedValue)
         let normalizedCreatedAfter = RecipeListFilterSupport.normalizedDateValue(createdAfter.wrappedValue)
         let normalizedCreatedBefore = RecipeListFilterSupport.normalizedDateValue(createdBefore.wrappedValue)
+        let initialPhotoSize = RecipeListFilterSupport.numericThreshold(from: photoSizeFilter.wrappedValue)
+        let initialPhotoDimension = RecipeListFilterSupport.numericThreshold(from: photoDimensionFilter.wrappedValue)
 
         _draftSource = State(initialValue: normalizedSource)
         _hasCreatedAfter = State(initialValue: !normalizedCreatedAfter.isEmpty)
@@ -39,6 +53,12 @@ struct RecipeAdvancedFiltersSheet: View {
         _draftCreatedBefore = State(
             initialValue: RecipeListFilterSupport.date(from: normalizedCreatedBefore) ?? Date()
         )
+        _hasPhotoSizeFilter = State(initialValue: initialPhotoSize != nil)
+        _draftPhotoSizeOperator = State(initialValue: initialPhotoSize?.comparison ?? .lessThan)
+        _draftPhotoSizeValue = State(initialValue: initialPhotoSize.map { String($0.value) } ?? "")
+        _hasPhotoDimensionFilter = State(initialValue: initialPhotoDimension != nil)
+        _draftPhotoDimensionOperator = State(initialValue: initialPhotoDimension?.comparison ?? .lessThan)
+        _draftPhotoDimensionValue = State(initialValue: initialPhotoDimension.map { String($0.value) } ?? "")
     }
 
     private var hasInvalidDateRange: Bool {
@@ -82,6 +102,22 @@ struct RecipeAdvancedFiltersSheet: View {
                     }
                 }
 
+                thresholdSection(
+                    title: "Photo file size",
+                    enabled: $hasPhotoSizeFilter,
+                    comparison: $draftPhotoSizeOperator,
+                    value: $draftPhotoSizeValue,
+                    placeholder: "Bytes"
+                )
+
+                thresholdSection(
+                    title: "Photo dimensions",
+                    enabled: $hasPhotoDimensionFilter,
+                    comparison: $draftPhotoDimensionOperator,
+                    value: $draftPhotoDimensionValue,
+                    placeholder: "Minimum side, px"
+                )
+
                 Section {
                     Button("Clear Filters", role: .destructive) {
                         resetDraftFilters()
@@ -106,12 +142,42 @@ struct RecipeAdvancedFiltersSheet: View {
         }
     }
 
+    private func thresholdSection(
+        title: String,
+        enabled: Binding<Bool>,
+        comparison: Binding<NumericThresholdOperator>,
+        value: Binding<String>,
+        placeholder: String
+    ) -> some View {
+        Section(title) {
+            Toggle("Enabled", isOn: enabled.animation())
+
+            if enabled.wrappedValue {
+                Picker("Comparison", selection: comparison) {
+                    ForEach(NumericThresholdOperator.allCases, id: \.self) { comparison in
+                        Text(comparison.label).tag(comparison)
+                    }
+                }
+                .pickerStyle(.segmented)
+
+                TextField(placeholder, text: value)
+                    .keyboardType(.numberPad)
+            }
+        }
+    }
+
     private func resetDraftFilters() {
         draftSource = ""
         hasCreatedAfter = false
         draftCreatedAfter = Date()
         hasCreatedBefore = false
         draftCreatedBefore = Date()
+        hasPhotoSizeFilter = false
+        draftPhotoSizeOperator = .lessThan
+        draftPhotoSizeValue = ""
+        hasPhotoDimensionFilter = false
+        draftPhotoDimensionOperator = .lessThan
+        draftPhotoDimensionValue = ""
     }
 
     private func applyFilters() {
@@ -126,6 +192,16 @@ struct RecipeAdvancedFiltersSheet: View {
         createdBefore = hasCreatedBefore
             ? RecipeListFilterSupport.dateOnlyString(from: draftCreatedBefore)
             : ""
+        photoSizeFilter = RecipeListFilterSupport.thresholdQueryValue(
+            isEnabled: hasPhotoSizeFilter,
+            comparison: draftPhotoSizeOperator,
+            value: draftPhotoSizeValue
+        )
+        photoDimensionFilter = RecipeListFilterSupport.thresholdQueryValue(
+            isEnabled: hasPhotoDimensionFilter,
+            comparison: draftPhotoDimensionOperator,
+            value: draftPhotoDimensionValue
+        )
         onApply()
         dismiss()
     }
