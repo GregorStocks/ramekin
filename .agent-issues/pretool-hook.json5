@@ -1,0 +1,53 @@
+// BEGIN agent-issues generated
+{
+  // Repo-specific settings for the shared agent-issues PreToolUse hook. This
+  // hook is a convention guardrail for good-faith agents, not a security
+  // sandbox.
+  branch_switch_signoff_env: "RAMEKIN_BRANCH_SWITCH_SIGNOFF",
+  generated_paths: [
+    "data/pipeline-snapshots",
+    "data/pipeline-runs",
+  ],
+  generated_command: "make pipeline",
+  github_issue_guidance: "doc/issues.md and local JSON5 issue files in issues/",
+  command_family_blocks: [
+    {
+      command: "cargo",
+      message: "Do not run cargo commands directly. Use the appropriate make target instead. The Makefile checks prerequisites and sets up the DB.",
+      subcommands: {
+        build: "make test",
+        test: "make test",
+        fmt: "make lint",
+        clippy: "make lint",
+        check: "make lint",
+        run: "make test or another make target",
+      },
+    },
+    {
+      command: "rustfmt",
+      message: "Do not run rustfmt directly. Use `make lint` instead.",
+    },
+    {
+      command: "docker",
+      message: "Do not run docker directly. Use the appropriate make target instead.",
+    },
+    {
+      command: "pkill",
+      message: "Do not use pkill/killall; other agents may share this machine. Only kill processes by specific PID after verifying the PID.",
+    },
+    {
+      command: "killall",
+      message: "Do not use pkill/killall; other agents may share this machine. Only kill processes by specific PID after verifying the PID.",
+    },
+  ],
+  binary_blocks: [
+    {
+      pattern: "cli/target/*/ramekin-cli",
+      message: "Do not invoke the built ramekin-cli binary directly. Use the appropriate make target instead.",
+    },
+  ],
+  internal_make_targets: {},
+  make_targets_requiring_timeout_ms: {},
+  minimum_agent_submit_timeout_ms: 4200000,
+}
+// END agent-issues generated

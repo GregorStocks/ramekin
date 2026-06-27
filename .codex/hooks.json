@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"$(git rev-parse --show-toplevel)/.claude/hooks/pre-tool-hook.py\""
+            "command": "cd \"$(git rev-parse --show-toplevel)\" && .claude/hooks/agent-issues-pretool-hook.sh"
           }
         ]
       }
