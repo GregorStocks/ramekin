@@ -38,6 +38,14 @@ pub(super) fn extract_recipe_with_html_fallback(
     let instructions = instructions
         .or_else(|| extract_instructions_from_html_classes(document, title.as_deref()))
         .or_else(|| extract_instructions_from_itemprop_unscoped(document))
+        .or_else(|| {
+            extract_smittenkitchen_post_instructions(
+                document,
+                source_url,
+                title.as_deref(),
+                ingredients.as_deref(),
+            )
+        })
         .or_else(|| extract_instructions_from_raw_html(html));
 
     // If we got all required fields from structured data / class-based fallbacks, use them
@@ -831,6 +839,68 @@ mod tests {
         assert_eq!(result.method_used, ExtractionMethod::HtmlFallback);
         assert_eq!(result.raw_recipe.title, "Test Recipe");
         assert!(result.raw_recipe.ingredients.contains("1 cup flour"));
+    }
+
+    #[test]
+    fn test_smittenkitchen_post_body_instructions_supplement_empty_jsonld() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <script type="application/ld+json">
+                {
+                    "@type": "Recipe",
+                    "name": "Slow-Roasted Tomatoes",
+                    "recipeIngredient": [
+                        "Cherry, grape or small Roma tomatoes",
+                        "Whole cloves of garlic, unpeeled",
+                        "Olive oil",
+                        "Herbs such as thyme or rosemary (optional)"
+                    ],
+                    "recipeInstructions": []
+                }
+                </script>
+            </head>
+            <body>
+                <div class="entry-content">
+                    <div class="smittenkitchen-print-hide">
+                        <p>Narrative intro with photos and old post links.</p>
+                    </div>
+                    <h3>Slow-Roasted Tomatoes</h3>
+                    <ul>
+                        <li>Time: 3 hours</li>
+                        <li>Print</li>
+                    </ul>
+                    <p>I know what you're going to say about turning on the oven.</p>
+                    <ul>
+                        <li>Cherry, grape or small Roma tomatoes</li>
+                        <li>Whole cloves of garlic, unpeeled</li>
+                        <li>Olive oil</li>
+                        <li>Herbs such as thyme or rosemary (optional)</li>
+                    </ul>
+                    <p>Preheat oven to 225°F. Halve each tomato and arrange on a parchment-lined baking sheet.</p>
+                    <p>Bake the tomatoes in the oven for about 3 hours.</p>
+                    <p>Either use them right away or let them cool and cover them with olive oil.</p>
+                    <div class="sharedaddy">Share this:</div>
+                    <p>Comment text should not be included.</p>
+                </div>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe_with_stats(
+            html,
+            "https://smittenkitchen.com/2008/08/slow-roasted-tomatoes/",
+        )
+        .unwrap();
+
+        assert_eq!(result.method_used, ExtractionMethod::HtmlFallback);
+        assert_eq!(result.raw_recipe.title, "Slow-Roasted Tomatoes");
+        assert!(result.raw_recipe.instructions.contains("Preheat oven"));
+        assert!(result.raw_recipe.instructions.contains("Bake the tomatoes"));
+        assert!(result.raw_recipe.instructions.contains("Either use them"));
+        assert!(!result.raw_recipe.instructions.contains("turning on the oven"));
+        assert!(!result.raw_recipe.instructions.contains("Comment text"));
     }
 
     #[test]
