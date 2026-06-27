@@ -1,0 +1,23 @@
+{
+  "title": "Trim agent-issues workflow duplication from repo instructions",
+  "description": "Migrate AGENTS.md and doc/issues.md to rely on the shared \
+agent-issues workflow instead of carrying a local copy of framework behavior.\n\
+\n\
+Keep Ramekin-specific guidance such as Makefile-first workflow, web+iOS scope \
+expectations, shared client logic rules, soft-delete policy, generated-code \
+policy, Diesel/raw-SQL guidance, pipeline regeneration rules, and local \
+validation commands. Remove duplicated generic text about issue schema, \
+claiming, PR submission, branch workflow, GitHub Issue policy, and logs/temp \
+locations when that behavior is already covered by the shared agent-issues \
+skill/docs.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "agent-issues",
+    "docs",
+    "migration",
+  ],
+  "created_at": "2026-06-27T11:58:59-07:00",
+  "updated_at": "2026-06-27T11:58:59-07:00",
+}
