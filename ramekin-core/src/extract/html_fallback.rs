@@ -899,7 +899,10 @@ mod tests {
         assert!(result.raw_recipe.instructions.contains("Preheat oven"));
         assert!(result.raw_recipe.instructions.contains("Bake the tomatoes"));
         assert!(result.raw_recipe.instructions.contains("Either use them"));
-        assert!(!result.raw_recipe.instructions.contains("turning on the oven"));
+        assert!(!result
+            .raw_recipe
+            .instructions
+            .contains("turning on the oven"));
         assert!(!result.raw_recipe.instructions.contains("Comment text"));
     }
 
