@@ -8,6 +8,7 @@ import { usePageTitle } from "../utils/pageTitle";
 import {
   MEAL_TYPES,
   MEAL_TYPE_LABELS,
+  parseLocalDate,
   toApiDate,
   formatDateLocal,
 } from "../utils/mealPlanHelpers";
@@ -72,6 +73,15 @@ export default function MealPlanPage() {
   const [deletingMealPlan, setDeletingMealPlan] =
     createSignal<MealPlanItem | null>(null);
   const [deleteLoading, setDeleteLoading] = createSignal(false);
+
+  // Edit modal state
+  const [editingMealPlan, setEditingMealPlan] =
+    createSignal<MealPlanItem | null>(null);
+  const [editDate, setEditDate] = createSignal("");
+  const [editMealType, setEditMealType] = createSignal<MealType>("dinner");
+  const [editNotes, setEditNotes] = createSignal("");
+  const [editLoading, setEditLoading] = createSignal(false);
+  const [editError, setEditError] = createSignal<string | null>(null);
 
   const weekDays = () => {
     const days: Date[] = [];
@@ -188,6 +198,45 @@ export default function MealPlanPage() {
     setDeletingMealPlan(mp);
   };
 
+  const openEdit = (mp: MealPlanItem) => {
+    setEditingMealPlan(mp);
+    setEditDate(formatDateUtc(mp.mealDate));
+    setEditMealType(mp.mealType);
+    setEditNotes(mp.notes ?? "");
+    setEditError(null);
+  };
+
+  const closeEdit = () => {
+    if (editLoading()) return;
+    setEditingMealPlan(null);
+    setEditError(null);
+  };
+
+  const handleEdit = async () => {
+    const mp = editingMealPlan();
+    if (!mp) return;
+
+    setEditLoading(true);
+    setEditError(null);
+    try {
+      await getMealPlansApi().updateMealPlan({
+        id: mp.id,
+        updateMealPlanRequest: {
+          mealDate: toApiDate(parseLocalDate(editDate())),
+          mealType: editMealType(),
+          notes: editNotes(),
+        },
+      });
+      setEditingMealPlan(null);
+      await loadMealPlans();
+    } catch (err) {
+      const message = await extractApiError(err, "Failed to update meal");
+      setEditError(message);
+    } finally {
+      setEditLoading(false);
+    }
+  };
+
   const handleDelete = async () => {
     const mp = deletingMealPlan();
     if (!mp) return;
@@ -285,8 +334,18 @@ export default function MealPlanPage() {
                                 href={`/recipes/${mp.recipeId}`}
                                 class="meal-title"
                               >
-                                {mp.recipeTitle}
+                                <span>{mp.recipeTitle}</span>
+                                <Show when={mp.notes}>
+                                  <span class="meal-notes">{mp.notes}</span>
+                                </Show>
                               </A>
+                              <button
+                                class="meal-edit"
+                                onClick={() => openEdit(mp)}
+                                title="Edit"
+                              >
+                                ✎
+                              </button>
                               <button
                                 class="meal-remove"
                                 onClick={() => confirmDelete(mp)}
@@ -366,6 +425,76 @@ export default function MealPlanPage() {
               </div>
             )}
           </For>
+        </div>
+      </Modal>
+
+      {/* Edit meal modal */}
+      <Modal
+        isOpen={() => editingMealPlan() !== null}
+        onClose={closeEdit}
+        title="Edit Meal"
+        actions={
+          <>
+            <button class="btn" onClick={closeEdit} disabled={editLoading()}>
+              Cancel
+            </button>
+            <button
+              class="btn btn-primary"
+              onClick={handleEdit}
+              disabled={editLoading() || !editDate()}
+            >
+              {editLoading() ? "Saving..." : "Save"}
+            </button>
+          </>
+        }
+      >
+        <div class="meal-plan-form">
+          <div class="form-group">
+            <label>Recipe</label>
+            <div class="meal-edit-title">{editingMealPlan()?.recipeTitle}</div>
+          </div>
+
+          <div class="form-group">
+            <label for="edit-meal-date">Date</label>
+            <input
+              id="edit-meal-date"
+              type="date"
+              value={editDate()}
+              onInput={(e) => setEditDate(e.currentTarget.value)}
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="edit-meal-type">Meal</label>
+            <select
+              id="edit-meal-type"
+              value={editMealType()}
+              onChange={(e) =>
+                setEditMealType(e.currentTarget.value as MealType)
+              }
+            >
+              <For each={MEAL_TYPES}>
+                {(mealType) => (
+                  <option value={mealType}>{MEAL_TYPE_LABELS[mealType]}</option>
+                )}
+              </For>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="edit-meal-notes">Notes</label>
+            <textarea
+              id="edit-meal-notes"
+              rows="3"
+              value={editNotes()}
+              onInput={(e) => setEditNotes(e.currentTarget.value)}
+              placeholder="Optional notes"
+            />
+          </div>
+
+          <Show when={editError()}>
+            <p class="error">{editError()}</p>
+          </Show>
         </div>
       </Modal>
 

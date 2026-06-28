@@ -81,6 +81,14 @@ final class RecipeSummaryCacheSupportTests: XCTestCase {
         )
         XCTAssertFalse(
             RecipeSummaryCacheSupport.canServeFromCache(
+                filterState: RecipeListFilterState(
+                    photoSizeThreshold: NumericThreshold(comparison: .lessThan, value: 100_000)
+                ),
+                sortOrder: .newest
+            )
+        )
+        XCTAssertFalse(
+            RecipeSummaryCacheSupport.canServeFromCache(
                 filterState: RecipeListFilterState(),
                 sortOrder: .random
             )

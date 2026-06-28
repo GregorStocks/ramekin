@@ -2952,6 +2952,14 @@ textarea:focus-visible {
   font-size: 0.8rem;
   color: var(--text-secondary);
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  overflow: hidden;
+}
+
+.meal-title span {
+  min-width: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -2961,15 +2969,19 @@ textarea:focus-visible {
   color: var(--accent);
 }
 
+.meal-notes {
+  color: var(--text-faint);
+  font-size: 0.72rem;
+}
+
+.meal-edit,
 .meal-remove {
   position: absolute;
   top: -4px;
-  right: -4px;
   width: 18px;
   height: 18px;
   border-radius: 50%;
   border: none;
-  background: var(--danger);
   color: var(--text-on-accent);
   font-size: 12px;
   cursor: pointer;
@@ -2980,6 +2992,17 @@ textarea:focus-visible {
   transition: opacity 0.15s;
 }
 
+.meal-edit {
+  right: 18px;
+  background: var(--accent);
+}
+
+.meal-remove {
+  right: -4px;
+  background: var(--danger);
+}
+
+.meal-card:hover .meal-edit,
 .meal-card:hover .meal-remove {
   opacity: 1;
 }
@@ -3145,6 +3168,11 @@ textarea:focus-visible {
 .meal-plan-form input[type="date"]:focus {
   outline: none;
   border-color: var(--accent);
+}
+
+.meal-edit-title {
+  font-size: 0.95rem;
+  color: var(--text-primary);
 }
 
 .meal-type-buttons {

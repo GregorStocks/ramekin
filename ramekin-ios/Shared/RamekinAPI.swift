@@ -14,6 +14,18 @@ struct CreateMealPlanRequestBody: Encodable {
     }
 }
 
+struct UpdateMealPlanRequestBody: Encodable {
+    let mealDate: String
+    let mealType: String
+    let notes: String
+
+    enum CodingKeys: String, CodingKey {
+        case mealDate = "meal_date"
+        case mealType = "meal_type"
+        case notes
+    }
+}
+
 /// API client for interacting with the Ramekin server
 class RamekinAPI {
     static let shared = RamekinAPI()
@@ -463,6 +475,22 @@ extension RamekinAPI {
         try await performRequest(
             method: "DELETE",
             path: "/api/meal-plans/\(id.uuidString)",
+            acceptedStatusCodes: [200, 204]
+        )
+    }
+
+    func updateMealPlan(
+        id: UUID, mealDate: Date, mealType: String, notes: String
+    ) async throws {
+        let body = try JSONEncoder().encode(UpdateMealPlanRequestBody(
+            mealDate: SharedDateFormatters.localDateOnly.string(from: mealDate),
+            mealType: mealType,
+            notes: notes
+        ))
+        try await performRequest(
+            method: "PUT",
+            path: "/api/meal-plans/\(id.uuidString)",
+            body: body,
             acceptedStatusCodes: [200, 204]
         )
     }
