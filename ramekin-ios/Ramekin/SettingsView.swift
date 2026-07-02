@@ -221,20 +221,10 @@ struct SettingsView: View {
             shareItem: $exportShareItem,
             errorMessage: $exportError
         ))
-        .alert("Logs Uploaded", isPresented: $showingLogUploadSuccess) {
-            Button("OK", role: .cancel) {}
-        }
-        .alert(
-            "Upload Failed",
-            isPresented: Binding(
-                get: { logUploadError != nil },
-                set: { if !$0 { logUploadError = nil } }
-            )
-        ) {
-            Button("OK", role: .cancel) {}
-        } message: {
-            Text(logUploadError ?? "")
-        }
+        .modifier(LogUploadPresentationModifier(
+            showingSuccess: $showingLogUploadSuccess,
+            errorMessage: $logUploadError
+        ))
     }
 
     @MainActor
@@ -326,6 +316,29 @@ struct SettingsView: View {
                 connectionStatus = .failed("Offline")
             }
         }
+    }
+}
+
+/// Adds the "Logs Uploaded" and "Upload Failed" alerts for the debug log
+/// upload flow. Kept as a ViewModifier so the calling view's body stays small
+/// enough for the Swift type-checker to handle.
+struct LogUploadPresentationModifier: ViewModifier {
+    @Binding var showingSuccess: Bool
+    @Binding var errorMessage: String?
+
+    func body(content: Content) -> some View {
+        content
+            .alert("Logs Uploaded", isPresented: $showingSuccess) {
+                Button("OK", role: .cancel) {}
+            }
+            .alert("Upload Failed", isPresented: Binding(
+                get: { errorMessage != nil },
+                set: { if !$0 { errorMessage = nil } }
+            )) {
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text(errorMessage ?? "")
+            }
     }
 }
 
