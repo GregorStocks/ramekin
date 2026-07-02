@@ -30,10 +30,11 @@ vectors are deterministic).\n\
 - CI wiring so one-sided edits actually fail: add shared-test-vectors/ to the \
 trigger paths of .github/workflows/ios.yml (today it only fires on \
 ramekin-ios/** changes, so a vector edit would merge without running the Swift \
-side). The Vitest side runs in main CI already once p3-web-unit-test-runner \
-lands.\n\
+side). The Vitest side already runs in main CI via make ui-unit-test.\n\
 \n\
-Blocked on p3-web-unit-test-runner landing first.",
+Formerly blocked on p3-web-unit-test-runner, which has landed (Vitest wired \
+up, and scaleAmount.test.ts already exists to extend) — this is now \
+actionable.",
   "status": "open",
   "priority": 3,
   "type": "task",
@@ -43,8 +44,6 @@ Blocked on p3-web-unit-test-runner landing first.",
     "parity",
     "testing",
   ],
-  "blocked": "needs the ramekin-ui unit test runner from \
-p3-web-unit-test-runner",
   "created_at": "2026-06-11T09:45:49-07:00",
-  "updated_at": "2026-06-11T09:45:49-07:00",
+  "updated_at": "2026-07-02T05:30:02-07:00",
 }

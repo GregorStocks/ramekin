@@ -1,0 +1,24 @@
+{
+  "title": "Web: extract PdfExportModal's pure imaging/layout helpers into \
+testable utils",
+  "description": "ramekin-ui/src/components/PdfExportModal.tsx (841 lines) \
+mixes standalone image/canvas/QR/layout helpers (blobToDataUrl, \
+cropImageToAspectRatio, drawCutGuides, fetchThumbnail, generateQrDataUrl, \
+backSlotFlipAxis — lines 32-233) with a ~15-signal stateful component \
+(234-253).\n\
+\n\
+Move the pure helpers into a utils/pdf*.ts module (unit-testable with the \
+existing Vitest setup), leaving the modal as thin UI + orchestration.\n\
+\n\
+Web-only: iOS has its own separate RecipePDFRenderer; the outputs are \
+platform-idiomatic documents, not shared deterministic logic, so no parity \
+vectors required.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "web",
+  ],
+  "created_at": "2026-07-02T05:30:02-07:00",
+  "updated_at": "2026-07-02T05:30:02-07:00",
+}

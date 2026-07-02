@@ -1,0 +1,23 @@
+{
+  "title": "Delete dead scripts/find_unsupported_sites.py and the stray root \
+package-lock.json",
+  "description": "1. scripts/find_unsupported_sites.py is unreferenced by any \
+Makefile target, other script, compose file, GitHub workflow, or doc (verified \
+repo-wide) — the only script in scripts/ with zero inbound references. Delete \
+it.\n\
+\n\
+2. package-lock.json at the repo root is a stub (\"packages\": {}, no \
+dependencies) with no accompanying root package.json — the real JS project \
+lives in ramekin-ui/. It's a dead lockfile that can confuse \
+tooling/Dependabot. Delete it (and confirm nothing in CI or openapitools \
+generation expects a root lockfile — openapitools.json sits at the root, so \
+double-check the client-generation script before removing).",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "infra",
+  ],
+  "created_at": "2026-07-02T05:30:02-07:00",
+  "updated_at": "2026-07-02T05:30:02-07:00",
+}

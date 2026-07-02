@@ -1,0 +1,34 @@
+{
+  "title": "Web: shared async-action and resource-loading primitives \
+(loading/error boilerplate repeated ~30x)",
+  "description": "Two flavors of the same missing abstraction in ramekin-ui:\n\
+\n\
+1. The skeleton `setXLoading(true); setError(null); try {...} catch { \
+setError(...) } finally { setXLoading(false) }` is hand-rolled ~30 times \
+across mutating handlers, e.g. pages/ViewRecipePage.tsx:410-443, 519-536, \
+pages/EditRecipePage.tsx:88-101, pages/ShoppingListPage.tsx (multiple, per \
+catch list at 58-143), pages/TagsPage.tsx:48-213. Add a createAsyncAction \
+primitive that wraps a promise and exposes { run, loading, error }; adopt \
+incrementally.\n\
+\n\
+2. Nearly every page re-declares `const [loading] = createSignal(true); const \
+[error] = createSignal(null)` plus an onMount/createEffect fetch for initial \
+load — TagsPage.tsx:23-24, ShoppingListPage.tsx:15-16, EditRecipePage.tsx:20, \
+MealPlanPage.tsx:58-59, ViewRecipePage.tsx:132-133 — where Solid's \
+createResource already covers it. Provide a createApiResource wrapper \
+standardizing loading/error and adopt per page.\n\
+\n\
+While adopting, route all catches through extractApiError(err, fallback) so \
+real server errors stop being discarded for hardcoded strings (fail-fast).\n\
+\n\
+Web-only infrastructure; no iOS counterpart needed (its equivalent is the \
+view-model extraction issues).",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "web",
+  ],
+  "created_at": "2026-07-02T05:30:02-07:00",
+  "updated_at": "2026-07-02T05:30:02-07:00",
+}

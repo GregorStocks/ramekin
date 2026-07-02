@@ -1,0 +1,32 @@
+{
+  "title": "Tests: dedupe wait_for_job_completion (4 divergent copies) and fix \
+the sleep-based race in test_generate_photo",
+  "description": "1. tests/conftest.py:27 defines the canonical \
+wait_for_job_completion (monotonic clock, 30s timeout), but three test files \
+re-implement their own copies instead of importing it: \
+tests/test_capture.py:43, tests/test_photo_import.py:10, \
+tests/test_rescrape.py:17. The copies use wall-clock time.time() (not \
+monotonic) and shorter/divergent timeouts (10s vs 30s), so \
+scrape/rescrape/import tests poll inconsistently and are more clock-sensitive. \
+test_scrape.py and test_scrape_status_page.py already import from conftest \
+correctly. Delete the three local copies, import from conftest, standardize \
+the timeout.\n\
+\n\
+2. tests/test_generate_photo.py:109 starts a background thread then \
+`time.sleep(0.2)` before mutating the recipe to 'simulate a photo-generation \
+race' — a wall-clock race with no synchronization that will be flaky under CI \
+contention and doesn't deterministically exercise the intended interleaving. \
+Replace with an event/barrier or assert on both valid outcomes.\n\
+\n\
+(Other bare sleeps at test_capture.py:52, test_photo_import.py:17, \
+test_rescrape.py:24 are inside proper polling loops — fine once they use the \
+shared helper.)",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "testing",
+  ],
+  "created_at": "2026-07-02T05:30:02-07:00",
+  "updated_at": "2026-07-02T05:30:02-07:00",
+}

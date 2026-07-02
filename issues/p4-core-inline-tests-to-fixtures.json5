@@ -1,0 +1,28 @@
+{
+  "title": "ramekin-core: migrate ~2000 lines of inline extractor tests to the \
+golden-fixture harness",
+  "description": "Enormous inline #[cfg(test)] modules dominate the largest \
+source files in ramekin-core: parentheticals.rs ~895 of 902 lines, \
+html_fallback.rs ~425, item.rs ~418, wprm.rs ~401, blog.rs ~345, jsonld.rs \
+~272 — mostly hardcoded HTML/string literals with one-off assertions. \
+Meanwhile a data-driven harness already exists (tests/golden_tests.rs, \
+tests/ingredient_parsing_tests.rs + tests/fixtures/**).\n\
+\n\
+Migrate incrementally: the extractor tests \
+(blog/html_fallback/wprm/jsonld/microdata) that assert on parsed output from \
+an HTML string are prime candidates for the fixture-driven golden format. \
+Shrinks source files by ~2000 lines total and consolidates fixtures. Fine to \
+do one module per PR.\n\
+\n\
+Test-only change — no `make pipeline` data/ diffs expected.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "pipeline",
+    "extraction",
+    "testing",
+  ],
+  "created_at": "2026-07-02T05:30:02-07:00",
+  "updated_at": "2026-07-02T05:30:02-07:00",
+}

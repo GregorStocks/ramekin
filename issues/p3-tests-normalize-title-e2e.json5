@@ -1,0 +1,25 @@
+{
+  "title": "Add end-to-end test for POST /api/recipes/{id}/normalize-title \
+(only untested mounted endpoint)",
+  "description": "POST /api/recipes/{id}/normalize-title \
+(server/src/api/recipes/mod.rs:38-40, handler normalize_title.rs) is consumed \
+by both web (CookbookPage.tsx, ViewRecipePage.tsx) and iOS, and the generated \
+client method exists, but .normalize_title( is never called anywhere under \
+tests/. (The normalize_title strings in tests/test_rescrape.py:68 and \
+test_scrape_status_page.py:18 are pipeline step names, not the endpoint.) \
+Every other router-mounted endpoint has an associated test file — this is the \
+one gap, and it violates the repo rule that endpoints get e2e tests.\n\
+\n\
+Fix: add tests/test_normalize_title.py mirroring \
+tests/test_generate_description.py (which tests the sibling AI endpoint \
+against the mock OpenRouter fixture).",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "testing",
+    "api",
+  ],
+  "created_at": "2026-07-02T05:30:02-07:00",
+  "updated_at": "2026-07-02T05:30:02-07:00",
+}

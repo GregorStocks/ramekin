@@ -1,0 +1,24 @@
+{
+  "title": "Dedupe test compose files (fixture/mock-openrouter/server blocks \
+duplicated, fixture process named inconsistently)",
+  "description": "test-compose.yaml and test-ui-compose.yaml each redeclare \
+near-identical fixture/mock-openrouter/server process blocks (same commands, \
+env, readiness probes). The scrape-fixture process is named `fixture` in \
+test-compose.yaml:60 but `fixture-server` in test-ui-compose.yaml:7 for no \
+functional reason. compose/base.yaml already exists as the shared base but \
+only carries the server readiness probe.\n\
+\n\
+Fix: hoist the shared fixture/mock-openrouter/server blocks into \
+compose/base.yaml and reconcile the process name across files (check for \
+anything referencing the process names, e.g. readiness dependencies or \
+scripts, before renaming).",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "testing",
+    "infra",
+  ],
+  "created_at": "2026-07-02T05:30:02-07:00",
+  "updated_at": "2026-07-02T05:30:02-07:00",
+}

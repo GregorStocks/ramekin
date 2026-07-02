@@ -2,7 +2,7 @@
   "title": "Extend shared test vectors to tag hierarchy, meal-plan dates, and \
 ingredient formatting",
   "description": "Once the recipe-scaling pilot \
-(blocked-shared-test-vectors-recipe-scaling) establishes the \
+(p3-shared-test-vectors-recipe-scaling, now unblocked) establishes the \
 shared-test-vectors/ conventions, extend them to the remaining duplicated \
 areas from doc/client-logic-sharing.md:\n\
 \n\
@@ -23,13 +23,14 @@ first.\n\
 string} plus YYYY-MM-DD formatting, covering year/month boundaries and a \
 Sunday input. Web getMonday() in pages/MealPlanPage.tsx and iOS \
 getMonday(from:) in Ramekin/MealPlanView.swift use different algorithms (both \
-currently correct). Do NOT vector display formatting like day headers — that \
-may differ per platform idiom.\n\
+currently correct; p4-ios-small-cleanups separately moves the iOS copy into \
+Shared/MealPlanDateSupport.swift). Do NOT vector display formatting like day \
+headers — that may differ per platform idiom.\n\
 \n\
 3. Ingredient display formatting — vectors of {ingredient JSON, options} -> \
-formatted string for the formatted()-equivalent on both clients. Needs \
-p3-centralize-web-ingredient-formatting done first so the web has a single \
-function to test.\n\
+formatted string for the formatted()-equivalent on both clients. The web-side \
+prerequisite (formerly p3-centralize-web-ingredient-formatting) has landed: \
+ramekin-ui/src/utils/ingredientFormatting.ts is the single function to test.\n\
 \n\
 Each area can be its own PR.",
   "status": "open",
@@ -41,9 +42,8 @@ Each area can be its own PR.",
     "parity",
     "testing",
   ],
-  "blocked": "build on conventions from \
-blocked-shared-test-vectors-recipe-scaling pilot; area 3 also needs \
-p3-centralize-web-ingredient-formatting",
+  "blocked": "build on conventions from the \
+p3-shared-test-vectors-recipe-scaling pilot",
   "created_at": "2026-06-11T09:45:49-07:00",
-  "updated_at": "2026-06-11T09:45:49-07:00",
+  "updated_at": "2026-07-02T05:30:02-07:00",
 }
