@@ -1,0 +1,28 @@
+{
+  "title": "iOS: extract a view model for RecipeDetailView (45 @State \
+properties, networking in View extensions across 5 files)",
+  "description": "ramekin-ios/Ramekin/RecipeDetailView.swift:8-45 declares 45 \
+@State vars (recipe data, 12+ loading/error flags, sheet toggles, scale state, \
+export state). All networking lives in View extensions spread across five \
+files: RecipeDetailViewVersioning.swift:254-435 (loadRecipe, \
+loadVersionHistory, revert, applyEnrichment, deleteRecipe, openCompareSheet), \
+plus RecipeDetailViewRescrape.swift and RecipeDetailViewAutoEnrich.swift. \
+State, networking, and layout are fully intermixed with no store.\n\
+\n\
+Fix: extract a RecipeDetailViewModel (ObservableObject or @Observable) owning \
+recipe/version/enrich/export state and all the RecipesAPI calls; the View \
+files become presentation-only. Largest single refactor in the iOS app — fine \
+to move one concern (versioning, enrich, export) per PR.\n\
+\n\
+iOS-only by design: the web counterpart (ViewRecipePage decomposition) is \
+tracked separately in p3-web-decompose-view-recipe-page.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ios",
+    "architecture",
+  ],
+  "created_at": "2026-07-02T05:30:02-07:00",
+  "updated_at": "2026-07-02T05:30:02-07:00",
+}

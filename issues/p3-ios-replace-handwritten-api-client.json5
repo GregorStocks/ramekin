@@ -16,7 +16,14 @@ only what genuinely can't be generated (auth/header plumbing like \
 applyAccessHeaders and updateGeneratedClientConfig, server URL normalization, \
 the share-extension-friendly surface). Delete the duplicated request/response \
 structs. Mind the share extension: Shared/ is used from the extension target, \
-so whatever remains must still work there.",
+so whatever remains must still work there.\n\
+\n\
+Evidence of the cost (2026-07 audit): meal plans are hand-rolled at \
+Shared/RamekinAPI.swift:437-497 over their own insecureSession/performRequest \
+stack (:229-291), while the generated MealPlansAPI (172 lines) has ZERO \
+references in app code — pure dead weight, as are the generated AuthAPI and \
+DefaultAPI. The migration should make those generated APIs live (or remove \
+their operations from the spec if truly unneeded).",
   "status": "open",
   "priority": 3,
   "type": "task",
@@ -26,5 +33,5 @@ so whatever remains must still work there.",
     "architecture",
   ],
   "created_at": "2026-06-11T07:01:52-07:00",
-  "updated_at": "2026-06-11T07:01:52-07:00",
+  "updated_at": "2026-07-02T05:30:02-07:00",
 }

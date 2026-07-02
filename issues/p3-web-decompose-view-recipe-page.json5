@@ -1,0 +1,38 @@
+{
+  "title": "Web: decompose ViewRecipePage.tsx (1246-line god component) and \
+converge its AI handlers with the Cookbook bulk path",
+  "description": "ramekin-ui/src/pages/ViewRecipePage.tsx:69-635 holds ~30 \
+signals and ~25 async handlers covering unrelated concerns: recipe load, \
+delete modal, version compare/revert, AI enrich (+ custom enrich), photo \
+generation, title normalization, description generation, rescrape polling, \
+shopping-list modal, and meal-plan modal.\n\
+\n\
+Extract self-contained pieces into child components/hooks that own their own \
+state: meal-plan modal (172-179/605-633), version compare (486-516), \
+enrichment (339-483).\n\
+\n\
+Two related warts to fix while in there:\n\
+\n\
+1. Inconsistent error surfacing: some handlers use extractApiError (good: \
+:419, :438) while siblings hardcode a generic string and discard the caught \
+error — :479 (custom enrichment), :507 (compare), :532 (description, ignores \
+err entirely), :575 (rescrape). Route all catches through extractApiError(err, \
+fallback).\n\
+\n\
+2. The per-recipe handlers \
+handleGeneratePhoto/handleNormalizeTitle/handleGenerateDescription (:410-536) \
+are the N=1 form of CookbookPage's bulk handlers (see \
+p3-web-cookbook-bulk-ops-dedupe) with divergent error handling — express them \
+as the 1-item case of the shared helper once it exists.\n\
+\n\
+Web-only: this is component decomposition, no behavior change; iOS god-view \
+has its own issue (p3-ios-recipe-detail-view-model).",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "web",
+  ],
+  "created_at": "2026-07-02T05:30:02-07:00",
+  "updated_at": "2026-07-02T05:30:02-07:00",
+}

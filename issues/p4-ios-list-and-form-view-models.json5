@@ -1,0 +1,28 @@
+{
+  "title": "iOS: extract view models for RecipeListView and RecipeFormView",
+  "description": "1. ramekin-ios/Ramekin/RecipeListView.swift (500 lines): \
+:4-26 has 24 stored properties (7 @AppStorage filters, cache store, search \
+task); data loading, pagination, stale-query guards, and Core Data cache sync \
+are inline methods on the View (loadRecipes, loadMore, syncCachedRecipes, \
+applyCachedRecipes — :322-500). Extract a list view model/store owning fetch + \
+cache + filter state; RecipeListFilterSupport and RecipeSummaryCacheSupport \
+already exist to lean on.\n\
+\n\
+2. ramekin-ios/Ramekin/RecipeFormView.swift (480 lines): :12-37 holds ~30 \
+field/UI states; the View directly performs photo upload (uploadPhotos, temp \
+files, PhotosAPI — :441-461), create/update networking (:399-417), and \
+tag-parse logic (:332-365). Extract a form view model; \
+RecipeFormData/RecipeFormSupport already exist to build on.\n\
+\n\
+iOS-only by design: web counterparts are tracked in \
+p3-web-recipe-form-state-hook and the general web decomposition issues.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "ios",
+    "architecture",
+  ],
+  "created_at": "2026-07-02T05:30:02-07:00",
+  "updated_at": "2026-07-02T05:30:02-07:00",
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Dedupe the recipe read query and giant tuple row-types across \
+handlers",
+  "description": "The same boxed Diesel query (join recipe_versions on \
+current_version_id, filter user_id + deleted_at, raw_sql::tags_subquery()) \
+plus a bespoke tuple alias (RecipeRow / RecipeSyncRow / CurrentVersionRow) and \
+manual destructuring is repeated in:\n\
+\n\
+- server/src/api/recipes/list.rs:261-271, 303-311, 423-467\n\
+- server/src/api/recipes/get.rs:57-106, 135-195\n\
+- server/src/api/recipes/sync.rs:38-47, 70-147\n\
+- server/src/api/recipes/update.rs:67-159\n\
+- server/src/api/recipes/export.rs:271-341\n\
+\n\
+The RecipeSummary mapping (thumbnail_photo_id: photo_ids.first().and_then(|id| \
+*id)) is identical in list.rs:449-467 and sync.rs:131-147. Only get.rs has a \
+recipe_select! macro (get.rs:81).\n\
+\n\
+Related dead abstraction: server/src/models.rs marks ten full-row Queryable \
+structs #[allow(dead_code)] (lines 10, 30, 75, 104, 125, 144, 193, 221, 268, \
+294) because handlers select tuples instead of these structs. Either adopt \
+them as the Selectable return types this dedupe uses, or delete them — the \
+blanket allow(dead_code) masks which fields are genuinely unread.\n\
+\n\
+Fix: a shared base-query builder + Selectable struct (or shared macro) and a \
+RecipeSummary::from_row constructor; audit each dead_code struct and adopt or \
+delete. Server-side only, behavior-preserving.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "api",
+    "architecture",
+  ],
+  "created_at": "2026-07-02T05:30:02-07:00",
+  "updated_at": "2026-07-02T05:30:02-07:00",
+}

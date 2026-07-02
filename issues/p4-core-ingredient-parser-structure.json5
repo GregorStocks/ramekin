@@ -1,0 +1,32 @@
+{
+  "title": "ramekin-core: split ingredient_parser/item.rs and consolidate \
+fraction knowledge",
+  "description": "1. src/ingredient_parser/item.rs (1365 lines) bundles \
+entity/unicode normalization (74-186), prep-note detection (189-530, ~10 \
+functions), yield/equipment/label line classifiers (532-760), and title-casing \
+(770-930). Split into normalize.rs / prep_notes.rs / line_classifiers.rs. \
+Similarly, extract/html_fallback.rs mixes Jetpack, WPRM, Dotdash-Meredith, and \
+old-WordPress-div strategies in one file — split per CMS family.\n\
+\n\
+2. Fraction/amount knowledge is scattered: unicode->ASCII fraction mapping in \
+item.rs:108-140; ASCII fraction->decimal in amounts.rs:21-89; a third \
+fraction-aware regex character class embedded in blog.rs:713 and \
+extract/mod.rs:34; the '1/2 -> 0.5' doc-comment block copy-pasted at \
+amounts.rs:18-20 and :57-60. Consolidate 'what counts as a fraction' \
+(is_fraction, the unicode map, the inline regexes) so the extract layer \
+references the parser's definition instead of re-enumerating glyphs — reduces \
+the risk of extractor and parser disagreeing about what a quantity looks \
+like.\n\
+\n\
+Intended behavior-preserving, but touches parsing: rerun `make pipeline` and \
+commit data/ diffs; unintended diffs mean behavior changed.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "ingredient-parser",
+    "extraction",
+  ],
+  "created_at": "2026-07-02T05:30:02-07:00",
+  "updated_at": "2026-07-02T05:30:02-07:00",
+}

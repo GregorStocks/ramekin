@@ -1,0 +1,28 @@
+{
+  "title": "ramekin-core: dedupe the two near-parallel ~245-line blog \
+extraction functions",
+  "description": "src/extract/blog.rs:198-440 \
+(extract_recipe_from_unstructured_blog, ~243 lines) and :472-720 \
+(extract_recipe_from_virtualweberbullet, ~248 lines) are both single \
+monolithic functions implementing the same 'walk paragraphs -> detect section \
+headers -> collect ingredient/instruction lines' strategy — one generic, one \
+hardcoded to a single domain (virtualweberbullet.com).\n\
+\n\
+Fix: extract the shared chunk-walking / section-detection / ingredient-line \
+collection into helpers (some already exist: looks_like_ingredient_list, \
+extract_ingredient_lines_from_chunk) and have the site-specific function reuse \
+them, isolating the one-off domain special-case to its actual deltas.\n\
+\n\
+Intended to be behavior-preserving, but this is extraction code: rerun `make \
+pipeline` and commit any data/ diffs — if diffs appear, inspect them; \
+unintended ones mean the refactor changed behavior.",
+  "status": "open",
+  "priority": 4,
+  "type": "task",
+  "labels": [
+    "pipeline",
+    "extraction",
+  ],
+  "created_at": "2026-07-02T05:30:02-07:00",
+  "updated_at": "2026-07-02T05:30:02-07:00",
+}
