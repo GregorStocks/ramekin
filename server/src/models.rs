@@ -322,3 +322,29 @@ pub struct NewShoppingListItem<'a> {
     pub sort_order: i32,
     pub client_id: Option<Uuid>,
 }
+
+// Client log uploads: debug logs uploaded from the iOS/web clients for diagnostics
+#[derive(Queryable, Selectable, Debug, Clone)]
+#[diesel(table_name = crate::schema::client_log_uploads)]
+#[diesel(check_for_backend(diesel::pg::Pg))]
+#[allow(dead_code)]
+pub struct ClientLogUpload {
+    pub id: Uuid,
+    pub user_id: Uuid,
+    pub platform: String,
+    pub app_version: Option<String>,
+    pub os_info: Option<String>,
+    pub content: String,
+    pub created_at: DateTime<Utc>,
+    pub deleted_at: Option<DateTime<Utc>>,
+}
+
+#[derive(Insertable)]
+#[diesel(table_name = crate::schema::client_log_uploads)]
+pub struct NewClientLogUpload<'a> {
+    pub user_id: Uuid,
+    pub platform: &'a str,
+    pub app_version: Option<&'a str>,
+    pub os_info: Option<&'a str>,
+    pub content: &'a str,
+}
