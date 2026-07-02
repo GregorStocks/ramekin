@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 struct ShoppingListView: View {
     @StateObject private var store = ShoppingListStore.shared
@@ -6,6 +7,7 @@ struct ShoppingListView: View {
     @State private var ingredientName = ""
     @State private var amount = ""
     @State private var addedCount = 0
+    @State private var addTapTime: CFAbsoluteTime?
     @FocusState private var addFieldFocused: Bool
 
     var body: some View {
@@ -22,6 +24,8 @@ struct ShoppingListView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     HStack(spacing: 12) {
                         Button {
+                            addTapTime = CFAbsoluteTimeGetCurrent()
+                            DebugLogger.shared.log("add tapped", source: "Shopping")
                             isAddingItem = true
                             addFieldFocused = true
                         } label: {
@@ -42,6 +46,20 @@ struct ShoppingListView: View {
             }
             .refreshable {
                 await store.syncWithServer()
+            }
+            .onReceive(
+                NotificationCenter.default.publisher(
+                    for: UIResponder.keyboardDidShowNotification
+                )
+            ) { _ in
+                if let tapTime = addTapTime {
+                    let elapsedMs = Int((CFAbsoluteTimeGetCurrent() - tapTime) * 1000)
+                    DebugLogger.shared.log(
+                        "keyboard shown +\(elapsedMs)ms after add tap",
+                        source: "Shopping"
+                    )
+                    addTapTime = nil
+                }
             }
             .overlay(alignment: .top) {
                 if !store.isOnline {
