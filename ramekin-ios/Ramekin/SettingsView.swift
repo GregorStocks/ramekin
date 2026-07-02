@@ -10,6 +10,9 @@ struct SettingsView: View {
     @State private var isExportingAll = false
     @State private var exportShareItem: ShareItem?
     @State private var exportError: String?
+    @State private var isUploadingLogs = false
+    @State private var logUploadError: String?
+    @State private var showingLogUploadSuccess = false
 
     enum ConnectionStatus {
         case unknown
@@ -148,6 +151,19 @@ struct SettingsView: View {
                     DebugLogger.shared.clearLogs()
                     debugLogs = ""
                 }
+
+                Button {
+                    Task { await uploadLogs() }
+                } label: {
+                    HStack {
+                        Label("Upload Logs to Server", systemImage: "icloud.and.arrow.up")
+                        Spacer()
+                        if isUploadingLogs {
+                            ProgressView()
+                        }
+                    }
+                }
+                .disabled(isUploadingLogs)
             }
         }
         .sheet(isPresented: $showingDebugLogs) {
@@ -205,6 +221,20 @@ struct SettingsView: View {
             shareItem: $exportShareItem,
             errorMessage: $exportError
         ))
+        .alert("Logs Uploaded", isPresented: $showingLogUploadSuccess) {
+            Button("OK", role: .cancel) {}
+        }
+        .alert(
+            "Upload Failed",
+            isPresented: Binding(
+                get: { logUploadError != nil },
+                set: { if !$0 { logUploadError = nil } }
+            )
+        ) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(logUploadError ?? "")
+        }
     }
 
     @MainActor
@@ -223,6 +253,28 @@ struct SettingsView: View {
             exportError = apiError.errorDescription ?? "Export failed"
         } catch {
             exportError = error.localizedDescription
+        }
+    }
+
+    @MainActor
+    private func uploadLogs() async {
+        guard !isUploadingLogs else { return }
+        isUploadingLogs = true
+        defer { isUploadingLogs = false }
+
+        let content = DebugLogger.shared.readLogs()
+        guard !content.isEmpty else {
+            logUploadError = "No logs to upload"
+            return
+        }
+
+        do {
+            try await RamekinAPI.shared.uploadLogs(content)
+            showingLogUploadSuccess = true
+        } catch let apiError as RamekinAPI.APIError {
+            logUploadError = apiError.errorDescription ?? "Upload failed"
+        } catch {
+            logUploadError = error.localizedDescription
         }
     }
 
