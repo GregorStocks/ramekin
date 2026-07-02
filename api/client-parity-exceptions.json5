@@ -19,7 +19,7 @@
 // and commit the diff with a note explaining the change.
 {
   clear_checked: { platforms: "web-only", reason: "iOS clears checked items in CoreData and flushes through sync_items." },
-  create_client_log: { platforms: "neither", reason: "Server endpoint lands first; web and iOS debug-log upload UI is a follow-up task." },
+  create_client_log: { platforms: "web-only", reason: "Web Settings page has a debug-log upload button; iOS debug-log upload UI is a follow-up task." },
   create_items: { platforms: "web-only", reason: "iOS mutates shopping list items via sync_items only." },
   create_scrape: { platforms: "web-only", reason: "Scrape debugging page; iOS has no scrape inspector UI." },
   create_tag: { platforms: "neither", reason: "Tags are created implicitly via update_recipe; no client surfaces a standalone create-tag flow." },
