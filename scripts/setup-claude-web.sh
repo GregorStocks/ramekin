@@ -13,6 +13,9 @@ fi
 
 echo "Setting up Claude Code for Web environment..."
 
+echo "Installing shared agent-issues hooks..."
+uv tool install -U git+https://github.com/GregorStocks/agent-issues.git
+
 # Install system dependencies if not present
 if ! dpkg -l libpq-dev >/dev/null 2>&1 || ! command -v shellcheck >/dev/null 2>&1 || ! command -v gh >/dev/null 2>&1 || ! command -v mkcert >/dev/null 2>&1; then
     echo "Installing system dependencies..."
