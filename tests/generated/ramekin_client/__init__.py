@@ -19,6 +19,7 @@ __version__ = "1.0.0"
 # Define package exports
 __all__ = [
     "AuthApi",
+    "ClientLogsApi",
     "EnrichApi",
     "ImportApi",
     "MealPlansApi",
@@ -41,6 +42,9 @@ __all__ = [
     "BookmarkletTokenResponse",
     "CaptureRequest",
     "ClearCheckedResponse",
+    "ClientLogSummary",
+    "CreateClientLogRequest",
+    "CreateClientLogResponse",
     "CreateMealPlanRequest",
     "CreateMealPlanResponse",
     "CreateRecipeRequest",
@@ -58,6 +62,7 @@ __all__ = [
     "ErrorResponse",
     "GenerateDescriptionResponse",
     "GeneratePhotoResponse",
+    "GetClientLogResponse",
     "ImportExtractionMethod",
     "ImportFromPhotosRequest",
     "ImportFromPhotosResponse",
@@ -65,6 +70,7 @@ __all__ = [
     "ImportRecipeRequest",
     "ImportRecipeResponse",
     "Ingredient",
+    "ListClientLogsResponse",
     "ListRecipesResponse",
     "LoginRequest",
     "LoginResponse",
@@ -111,6 +117,7 @@ __all__ = [
 
 # import apis into sdk package
 from ramekin_client.api.auth_api import AuthApi as AuthApi
+from ramekin_client.api.client_logs_api import ClientLogsApi as ClientLogsApi
 from ramekin_client.api.enrich_api import EnrichApi as EnrichApi
 from ramekin_client.api.import_api import ImportApi as ImportApi
 from ramekin_client.api.meal_plans_api import MealPlansApi as MealPlansApi
@@ -137,6 +144,9 @@ from ramekin_client.exceptions import ApiException as ApiException
 from ramekin_client.models.bookmarklet_token_response import BookmarkletTokenResponse as BookmarkletTokenResponse
 from ramekin_client.models.capture_request import CaptureRequest as CaptureRequest
 from ramekin_client.models.clear_checked_response import ClearCheckedResponse as ClearCheckedResponse
+from ramekin_client.models.client_log_summary import ClientLogSummary as ClientLogSummary
+from ramekin_client.models.create_client_log_request import CreateClientLogRequest as CreateClientLogRequest
+from ramekin_client.models.create_client_log_response import CreateClientLogResponse as CreateClientLogResponse
 from ramekin_client.models.create_meal_plan_request import CreateMealPlanRequest as CreateMealPlanRequest
 from ramekin_client.models.create_meal_plan_response import CreateMealPlanResponse as CreateMealPlanResponse
 from ramekin_client.models.create_recipe_request import CreateRecipeRequest as CreateRecipeRequest
@@ -154,6 +164,7 @@ from ramekin_client.models.error_code import ErrorCode as ErrorCode
 from ramekin_client.models.error_response import ErrorResponse as ErrorResponse
 from ramekin_client.models.generate_description_response import GenerateDescriptionResponse as GenerateDescriptionResponse
 from ramekin_client.models.generate_photo_response import GeneratePhotoResponse as GeneratePhotoResponse
+from ramekin_client.models.get_client_log_response import GetClientLogResponse as GetClientLogResponse
 from ramekin_client.models.import_extraction_method import ImportExtractionMethod as ImportExtractionMethod
 from ramekin_client.models.import_from_photos_request import ImportFromPhotosRequest as ImportFromPhotosRequest
 from ramekin_client.models.import_from_photos_response import ImportFromPhotosResponse as ImportFromPhotosResponse
@@ -161,6 +172,7 @@ from ramekin_client.models.import_raw_recipe import ImportRawRecipe as ImportRaw
 from ramekin_client.models.import_recipe_request import ImportRecipeRequest as ImportRecipeRequest
 from ramekin_client.models.import_recipe_response import ImportRecipeResponse as ImportRecipeResponse
 from ramekin_client.models.ingredient import Ingredient as Ingredient
+from ramekin_client.models.list_client_logs_response import ListClientLogsResponse as ListClientLogsResponse
 from ramekin_client.models.list_recipes_response import ListRecipesResponse as ListRecipesResponse
 from ramekin_client.models.login_request import LoginRequest as LoginRequest
 from ramekin_client.models.login_response import LoginResponse as LoginResponse

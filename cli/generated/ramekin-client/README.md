@@ -28,6 +28,9 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AuthApi* | [**login**](docs/AuthApi.md#login) | **POST** /api/auth/login | 
 *AuthApi* | [**signup**](docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
+*ClientLogsApi* | [**create_client_log**](docs/ClientLogsApi.md#create_client_log) | **POST** /api/client-logs | 
+*ClientLogsApi* | [**get_client_log**](docs/ClientLogsApi.md#get_client_log) | **GET** /api/client-logs/{id} | 
+*ClientLogsApi* | [**list_client_logs**](docs/ClientLogsApi.md#list_client_logs) | **GET** /api/client-logs | 
 *EnrichApi* | [**custom_enrich_recipe**](docs/EnrichApi.md#custom_enrich_recipe) | **POST** /api/enrich/custom | Apply a custom AI modification to a recipe
 *EnrichApi* | [**enrich_recipe**](docs/EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe
 *ImportApi* | [**import_from_photos**](docs/ImportApi.md#import_from_photos) | **POST** /api/import/photos | 
@@ -79,6 +82,9 @@ Class | Method | HTTP request | Description
  - [BookmarkletTokenResponse](docs/BookmarkletTokenResponse.md)
  - [CaptureRequest](docs/CaptureRequest.md)
  - [ClearCheckedResponse](docs/ClearCheckedResponse.md)
+ - [ClientLogSummary](docs/ClientLogSummary.md)
+ - [CreateClientLogRequest](docs/CreateClientLogRequest.md)
+ - [CreateClientLogResponse](docs/CreateClientLogResponse.md)
  - [CreateMealPlanRequest](docs/CreateMealPlanRequest.md)
  - [CreateMealPlanResponse](docs/CreateMealPlanResponse.md)
  - [CreateRecipeRequest](docs/CreateRecipeRequest.md)
@@ -96,6 +102,7 @@ Class | Method | HTTP request | Description
  - [ErrorResponse](docs/ErrorResponse.md)
  - [GenerateDescriptionResponse](docs/GenerateDescriptionResponse.md)
  - [GeneratePhotoResponse](docs/GeneratePhotoResponse.md)
+ - [GetClientLogResponse](docs/GetClientLogResponse.md)
  - [ImportExtractionMethod](docs/ImportExtractionMethod.md)
  - [ImportFromPhotosRequest](docs/ImportFromPhotosRequest.md)
  - [ImportFromPhotosResponse](docs/ImportFromPhotosResponse.md)
@@ -103,6 +110,7 @@ Class | Method | HTTP request | Description
  - [ImportRecipeRequest](docs/ImportRecipeRequest.md)
  - [ImportRecipeResponse](docs/ImportRecipeResponse.md)
  - [Ingredient](docs/Ingredient.md)
+ - [ListClientLogsResponse](docs/ListClientLogsResponse.md)
  - [ListRecipesResponse](docs/ListRecipesResponse.md)
  - [LoginRequest](docs/LoginRequest.md)
  - [LoginResponse](docs/LoginResponse.md)

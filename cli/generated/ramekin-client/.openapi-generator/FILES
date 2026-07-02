@@ -7,6 +7,10 @@ docs/AuthApi.md
 docs/BookmarkletTokenResponse.md
 docs/CaptureRequest.md
 docs/ClearCheckedResponse.md
+docs/ClientLogSummary.md
+docs/ClientLogsApi.md
+docs/CreateClientLogRequest.md
+docs/CreateClientLogResponse.md
 docs/CreateMealPlanRequest.md
 docs/CreateMealPlanResponse.md
 docs/CreateRecipeRequest.md
@@ -25,6 +29,7 @@ docs/ErrorCode.md
 docs/ErrorResponse.md
 docs/GenerateDescriptionResponse.md
 docs/GeneratePhotoResponse.md
+docs/GetClientLogResponse.md
 docs/ImportApi.md
 docs/ImportExtractionMethod.md
 docs/ImportFromPhotosRequest.md
@@ -33,6 +38,7 @@ docs/ImportRawRecipe.md
 docs/ImportRecipeRequest.md
 docs/ImportRecipeResponse.md
 docs/Ingredient.md
+docs/ListClientLogsResponse.md
 docs/ListRecipesResponse.md
 docs/LoginRequest.md
 docs/LoginResponse.md
@@ -85,6 +91,7 @@ docs/VersionListResponse.md
 docs/VersionSummary.md
 git_push.sh
 src/apis/auth_api.rs
+src/apis/client_logs_api.rs
 src/apis/configuration.rs
 src/apis/enrich_api.rs
 src/apis/import_api.rs
@@ -101,6 +108,9 @@ src/lib.rs
 src/models/bookmarklet_token_response.rs
 src/models/capture_request.rs
 src/models/clear_checked_response.rs
+src/models/client_log_summary.rs
+src/models/create_client_log_request.rs
+src/models/create_client_log_response.rs
 src/models/create_meal_plan_request.rs
 src/models/create_meal_plan_response.rs
 src/models/create_recipe_request.rs
@@ -118,6 +128,7 @@ src/models/error_code.rs
 src/models/error_response.rs
 src/models/generate_description_response.rs
 src/models/generate_photo_response.rs
+src/models/get_client_log_response.rs
 src/models/import_extraction_method.rs
 src/models/import_from_photos_request.rs
 src/models/import_from_photos_response.rs
@@ -125,6 +136,7 @@ src/models/import_raw_recipe.rs
 src/models/import_recipe_request.rs
 src/models/import_recipe_response.rs
 src/models/ingredient.rs
+src/models/list_client_logs_response.rs
 src/models/list_recipes_response.rs
 src/models/login_request.rs
 src/models/login_response.rs

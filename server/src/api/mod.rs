@@ -1,3 +1,4 @@
+pub mod client_logs;
 pub mod enrich;
 pub mod error;
 pub mod import;
@@ -42,6 +43,7 @@ pub fn openapi() -> utoipa::openapi::OpenApi {
         photos::ApiDoc::openapi(),
         recipes::ApiDoc::openapi(),
         scrape::ApiDoc::openapi(),
+        client_logs::ApiDoc::openapi(),
         enrich::ApiDoc::openapi(),
         tags::ApiDoc::openapi(),
         import::ApiDoc::openapi(),

@@ -2,6 +2,7 @@
 
 # import apis into api package
 from ramekin_client.api.auth_api import AuthApi
+from ramekin_client.api.client_logs_api import ClientLogsApi
 from ramekin_client.api.enrich_api import EnrichApi
 from ramekin_client.api.import_api import ImportApi
 from ramekin_client.api.meal_plans_api import MealPlansApi
