@@ -8,7 +8,7 @@ by dependency:\n\
 src/extract/mod.rs:396 and src/ingredient_parser/item.rs:74. Hoist one copy \
 into a shared util module.\n\
 \n\
-2. src/extract/html_fallback.rs:343-360 and :475-489 hand-roll \
+2. src/extract/html_fallback.rs:351-368 and :483-497 hand-roll \
 &amp;/&#8217;/&deg;/... replacement chains instead of calling \
 decode_html_entities. They miss the vast majority of entities (which leak \
 through as raw &...;) and the two chains diverge from each other. Replace both \
@@ -16,8 +16,8 @@ with the shared decoder — this is a correctness fix.\n\
 \n\
 3. There is no shared 'HTML fragment -> clean text' helper: \
 HTML_TAG_REGEX.replace_all(x, \"\") followed by varying trim/decode appears \
-~15x across blog.rs:52,95,176,341,395,603,732,779,811, \
-html_fallback.rs:338,473, wprm.rs:98, footnotes.rs:37, each with slightly \
+~15x across blog.rs:52,95,176,341,395,737,866,913,945,952, \
+html_fallback.rs:346,481, wprm.rs:98, footnotes.rs:37, each with slightly \
 different follow-up. Introduce one fragment_to_text(&str) -> String (strip \
 tags + decode + collapse whitespace) and route all call sites through it — \
 this is where extractor behavior silently diverges today.\n\

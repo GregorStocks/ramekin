@@ -10,7 +10,7 @@ old-WordPress-div strategies in one file — split per CMS family.\n\
 \n\
 2. Fraction/amount knowledge is scattered: unicode->ASCII fraction mapping in \
 item.rs:108-140; ASCII fraction->decimal in amounts.rs:21-89; a third \
-fraction-aware regex character class embedded in blog.rs:713 and \
+fraction-aware regex character class embedded in blog.rs:847 and \
 extract/mod.rs:34; the '1/2 -> 0.5' doc-comment block copy-pasted at \
 amounts.rs:18-20 and :57-60. Consolidate 'what counts as a fraction' \
 (is_fraction, the unicode map, the inline regexes) so the extract layer \
