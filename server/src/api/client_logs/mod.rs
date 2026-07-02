@@ -8,10 +8,11 @@ use axum::routing::get;
 use axum::Router;
 use utoipa::OpenApi;
 
-/// Body limit above MAX_CONTENT_BYTES so the in-handler check produces the
-/// precise 413 message for oversized `content`; this layer only backstops
-/// pathological bodies.
-const MAX_BODY_BYTES: usize = 4 * 1024 * 1024;
+/// Worst-case JSON escaping expands each content byte to a 6-byte \uXXXX
+/// sequence; 64KB covers the JSON envelope. This must stay derived from
+/// MAX_CONTENT_BYTES so the wire limit can never reject content the
+/// in-handler check would accept.
+const MAX_BODY_BYTES: usize = 6 * create::MAX_CONTENT_BYTES + 64 * 1024;
 
 pub fn router() -> Router<AppState> {
     Router::new()

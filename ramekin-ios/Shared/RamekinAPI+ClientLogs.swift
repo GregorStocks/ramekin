@@ -29,11 +29,15 @@ extension RamekinAPI {
             osInfo: "iOS \(UIDevice.current.systemVersion)",
             content: content
         ))
+        // Uploading the log must not append the log to itself, so don't log
+        // this request's body (it self-amplifies: repeat uploads would nest
+        // prior uploads inside the log they're uploading).
         _ = try await performRequest(
             method: "POST",
             path: "/api/client-logs",
             body: body,
-            acceptedStatusCodes: [201]
+            acceptedStatusCodes: [201],
+            logBody: false
         )
     }
 }

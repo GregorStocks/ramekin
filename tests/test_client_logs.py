@@ -88,3 +88,20 @@ def test_client_log_rejects_oversized_content(authed_api_client):
             CreateClientLogRequest(platform="web", content=too_big)
         )
     assert exc_info.value.status == 413
+
+
+def test_client_log_accepts_content_at_cap_with_heavy_json_escaping(authed_api_client):
+    # Exactly at the 2MiB content cap, but every character is a double quote,
+    # so the JSON-escaped wire size is well over 4MiB. The server's body
+    # limit must be sized off the escaped worst case, not the raw cap, or
+    # this legal payload gets 413'd before the in-handler check ever runs.
+    client, _user_id = authed_api_client
+    api = ClientLogsApi(client)
+    content = '"' * (2 * 1024 * 1024)
+
+    created = api.create_client_log(
+        CreateClientLogRequest(platform="web", content=content)
+    )
+
+    fetched = api.get_client_log(created.id)
+    assert len(fetched.content) == len(content), "round-tripped content length mismatch"
