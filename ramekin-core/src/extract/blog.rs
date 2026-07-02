@@ -435,6 +435,140 @@ pub(super) fn extract_recipe_from_unstructured_blog(
     })
 }
 
+pub(super) fn extract_smittenkitchen_post_instructions(
+    document: &Html,
+    source_url: &str,
+    title: Option<&str>,
+    ingredients: Option<&str>,
+) -> Option<String> {
+    let host = url::Url::parse(source_url).ok()?.host_str()?.to_lowercase();
+    let host = host.strip_prefix("www.").unwrap_or(&host);
+    if host != "smittenkitchen.com" {
+        return None;
+    }
+
+    let title = title?;
+    let expected_ingredients: Vec<String> = ingredients?
+        .lines()
+        .map(normalize_smitten_post_text)
+        .filter(|line| !line.is_empty() && !line.ends_with(':'))
+        .collect();
+    if expected_ingredients.is_empty() {
+        return None;
+    }
+
+    let entry_selector = Selector::parse(".entry-content").expect("entry content selector");
+    for entry in document.select(&entry_selector) {
+        if let Some(instructions) =
+            extract_smittenkitchen_entry_instructions(entry, title, &expected_ingredients)
+        {
+            return Some(instructions);
+        }
+    }
+
+    None
+}
+
+fn extract_smittenkitchen_entry_instructions(
+    entry: ElementRef<'_>,
+    title: &str,
+    expected_ingredients: &[String],
+) -> Option<String> {
+    let normalized_title = normalize_smitten_post_text(title).to_lowercase();
+    if normalized_title.is_empty() {
+        return None;
+    }
+
+    let mut saw_title = false;
+    let mut saw_ingredient_list = false;
+    let mut paragraphs = Vec::new();
+
+    for child in entry.children() {
+        let Some(el) = ElementRef::wrap(child) else {
+            continue;
+        };
+        if smitten_post_boundary(&el) {
+            if saw_ingredient_list {
+                break;
+            }
+            continue;
+        }
+
+        let tag = el.value().name();
+        let text = normalize_smitten_post_text(&el.text().collect::<Vec<_>>().join(" "));
+
+        if !saw_title {
+            if text.to_lowercase().starts_with(&normalized_title) {
+                saw_title = true;
+            }
+            continue;
+        }
+
+        if !saw_ingredient_list {
+            if matches!(tag, "ul" | "ol")
+                && smitten_list_matches_expected_ingredients(el, expected_ingredients)
+            {
+                saw_ingredient_list = true;
+            }
+            continue;
+        }
+
+        if tag == "p" {
+            if text.is_empty() {
+                continue;
+            }
+            paragraphs.push(text);
+        }
+    }
+
+    if paragraphs.is_empty() {
+        None
+    } else {
+        Some(paragraphs.join("\n\n"))
+    }
+}
+
+fn smitten_post_boundary(el: &ElementRef<'_>) -> bool {
+    let class_attr = el.value().attr("class").unwrap_or("");
+    class_attr.contains("sharedaddy")
+        || class_attr.contains("sd-sharing")
+        || class_attr.contains("jp-relatedposts")
+        || class_attr.contains("sk-recipe-btns")
+}
+
+fn smitten_list_matches_expected_ingredients(
+    list_el: ElementRef<'_>,
+    expected_ingredients: &[String],
+) -> bool {
+    let li_selector = Selector::parse("li").expect("li selector");
+    let mut matches = 0usize;
+    let mut items = 0usize;
+
+    for li in list_el.select(&li_selector) {
+        let item_text = normalize_smitten_post_text(&li.text().collect::<Vec<_>>().join(" "));
+        if item_text.is_empty() {
+            continue;
+        }
+        items += 1;
+        if expected_ingredients
+            .iter()
+            .any(|expected| item_text == *expected || item_text.contains(expected))
+        {
+            matches += 1;
+        }
+    }
+
+    let required = expected_ingredients.len().min(2);
+    items > 0 && matches >= required && matches * 2 >= expected_ingredients.len()
+}
+
+fn normalize_smitten_post_text(text: &str) -> String {
+    decode_html_entities(text)
+        .split_whitespace()
+        .collect::<Vec<_>>()
+        .join(" ")
+}
+
 /// Collect text from an element, skipping the contents of `<del>` and `<s>`
 /// subtrees so struck-through ingredients (e.g. `<li><del>2 Tbsp sugar</del></li>`)
 /// don't end up in the recipe.
