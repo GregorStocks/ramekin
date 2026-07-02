@@ -1,21 +1,21 @@
 import Foundation
 import UIKit
 
-extension RamekinAPI {
-    private struct UploadLogsRequestBody: Encodable {
-        let platform: String
-        let appVersion: String?
-        let osInfo: String?
-        let content: String
+private struct UploadLogsRequestBody: Encodable {
+    let platform: String
+    let appVersion: String?
+    let osInfo: String?
+    let content: String
 
-        enum CodingKeys: String, CodingKey {
-            case platform
-            case appVersion = "app_version"
-            case osInfo = "os_info"
-            case content
-        }
+    enum CodingKeys: String, CodingKey {
+        case platform
+        case appVersion = "app_version"
+        case osInfo = "os_info"
+        case content
     }
+}
 
+extension RamekinAPI {
     /// Uploads the DebugLogger contents to the server for diagnostics.
     func uploadLogs(_ content: String) async throws {
         let info = Bundle.main.infoDictionary
