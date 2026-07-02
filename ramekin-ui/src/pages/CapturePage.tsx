@@ -3,6 +3,7 @@ import { useNavigate } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
+import { logger } from "../utils/logger";
 
 interface CaptureMessage {
   type: "html";
@@ -35,7 +36,7 @@ export default function CapturePage() {
     setStatus({ type: "capturing" });
 
     if (!isAuthenticated()) {
-      console.error("[Ramekin Capture] No token found in localStorage");
+      logger.error("Capture", "No token found in localStorage");
       setStatus({ type: "error", message: "Please log in to Ramekin first" });
       return;
     }
@@ -49,7 +50,7 @@ export default function CapturePage() {
       });
       navigate(`/scrape/${response.id}`);
     } catch (err) {
-      console.error("[Ramekin Capture] API error:", err);
+      logger.error("Capture", `API error: ${String(err)}`);
       const message = await extractApiError(err, "Failed to save recipe");
       setStatus({ type: "error", message });
     }
@@ -67,7 +68,7 @@ export default function CapturePage() {
 
     // Check if logged in
     if (!isAuthenticated()) {
-      console.error("[Ramekin Capture] No token found - user not logged in");
+      logger.error("Capture", "No token found - user not logged in");
       setStatus({ type: "error", message: "Please log in to Ramekin first" });
       return;
     }
