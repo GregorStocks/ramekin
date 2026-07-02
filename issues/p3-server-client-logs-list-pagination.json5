@@ -1,0 +1,25 @@
+{
+  "title": "Paginate list_client_logs and compute content_length in-DB",
+  "description": "server/src/api/client_logs/list.rs loads every one of the \
+caller's client_log_uploads rows in full (content up to 2MB each, unbounded \
+row count) just to compute content_length = row.content.len() in Rust. That is \
+an unbounded amount of log payload pulled into memory on every list call.\n\
+\n\
+Fix: add limit/offset (or cursor) pagination to the endpoint, and compute \
+content_length in the database instead of materializing content client-side in \
+the handler. Since raw SQL is off-limits, wrap Postgres's octet_length in a \
+Diesel define_sql_function! declaration and select it alongside the other \
+columns instead of selecting the content column at all.\n\
+\n\
+Server-side only; update the OpenAPI response/query params and the generated \
+clients as needed.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "api",
+    "performance",
+  ],
+  "created_at": "2026-07-02T05:30:02-07:00",
+  "updated_at": "2026-07-02T05:30:02-07:00",
+}
