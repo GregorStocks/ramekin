@@ -26,8 +26,11 @@ struct ShoppingListView: View {
                         Button {
                             addTapTime = CFAbsoluteTimeGetCurrent()
                             DebugLogger.shared.log("add tapped", source: "Shopping")
-                            isAddingItem = true
-                            addFieldFocused = true
+                            if isAddingItem {
+                                addFieldFocused = true
+                            } else {
+                                isAddingItem = true
+                            }
                         } label: {
                             Image(systemName: "plus")
                         }
@@ -120,6 +123,9 @@ struct ShoppingListView: View {
                 .focused($addFieldFocused)
                 .submitLabel(.done)
                 .onSubmit(addItem)
+                .onAppear {
+                    addFieldFocused = true
+                }
             TextField("Amount (optional)", text: $amount)
                 .submitLabel(.done)
                 .onSubmit(addItem)
