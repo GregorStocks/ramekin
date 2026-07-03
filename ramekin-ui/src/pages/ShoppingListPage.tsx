@@ -4,6 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import Modal from "../components/Modal";
 import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
+import { logger } from "../utils/logger";
 import type { ShoppingListItemResponse } from "ramekin-client";
 
 export default function ShoppingListPage() {
@@ -52,7 +53,9 @@ export default function ShoppingListPage() {
     if (showLoading) setLoading(true);
     setError(null);
     try {
-      const response = await getShoppingListApi().listItems();
+      const response = await logger.timed("Shopping", "listItems", () =>
+        getShoppingListApi().listItems(),
+      );
       setItems(response.items);
       setCategoryOrder(response.categoryOrder);
     } catch (err) {
@@ -78,11 +81,13 @@ export default function ShoppingListPage() {
     setError(null);
     try {
       const amount = newItemAmount().trim() || undefined;
-      await getShoppingListApi().createItems({
-        createShoppingListRequest: {
-          items: [{ item: name, amount }],
-        },
-      });
+      await logger.timed("Shopping", "createItems", () =>
+        getShoppingListApi().createItems({
+          createShoppingListRequest: {
+            items: [{ item: name, amount }],
+          },
+        }),
+      );
       setNewItemName("");
       setNewItemAmount("");
       await loadItems(false);

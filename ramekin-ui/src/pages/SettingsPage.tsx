@@ -4,17 +4,21 @@ import { useAuth } from "../context/AuthContext";
 import Modal from "../components/Modal";
 import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
+import { logger } from "../utils/logger";
 
 type ConnectionStatus = "checking" | "connected" | "error";
+type UploadState = "idle" | "uploading" | "done";
 
 export default function SettingsPage() {
   usePageTitle(() => "Settings");
-  const { getUsersApi, setToken } = useAuth();
+  const { getUsersApi, getClientLogsApi, setToken } = useAuth();
 
   const [username, setUsername] = createSignal<string | null>(null);
   const [status, setStatus] = createSignal<ConnectionStatus>("checking");
   const [errorMessage, setErrorMessage] = createSignal<string | null>(null);
   const [showLogoutConfirm, setShowLogoutConfirm] = createSignal(false);
+  const [uploadState, setUploadState] = createSignal<UploadState>("idle");
+  const [uploadError, setUploadError] = createSignal<string | null>(null);
 
   // On web the server is simply the origin serving the app.
   const serverUrl = window.location.origin;
@@ -39,6 +43,25 @@ export default function SettingsPage() {
   const logout = () => {
     setShowLogoutConfirm(false);
     setToken(null);
+  };
+
+  const handleUploadLogs = async () => {
+    setUploadState("uploading");
+    setUploadError(null);
+    logger.log("Settings", "uploading debug logs");
+    try {
+      await getClientLogsApi().createClientLog({
+        createClientLogRequest: {
+          platform: "web",
+          osInfo: navigator.userAgent,
+          content: logger.dump(),
+        },
+      });
+      setUploadState("done");
+    } catch (err) {
+      setUploadState("idle");
+      setUploadError(await extractApiError(err, "Failed to upload logs"));
+    }
   };
 
   return (
@@ -94,6 +117,28 @@ export default function SettingsPage() {
         <A href="/tags" class="settings-link">
           Manage Tags
         </A>
+      </section>
+
+      <section class="settings-section">
+        <h3>Diagnostics</h3>
+        <p>
+          Upload this session's debug logs to the server so performance problems
+          can be investigated.
+        </p>
+        <button
+          type="button"
+          class="btn btn-small"
+          disabled={uploadState() === "uploading"}
+          onClick={handleUploadLogs}
+        >
+          {uploadState() === "uploading" ? "Uploading…" : "Upload debug logs"}
+        </button>
+        <Show when={uploadState() === "done"}>
+          <p class="success">Logs uploaded.</p>
+        </Show>
+        <Show when={uploadError()}>
+          <p class="error">{uploadError()}</p>
+        </Show>
       </section>
 
       <section class="settings-section">

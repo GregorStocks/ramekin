@@ -1,6 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 export * from './AuthApi';
+export * from './ClientLogsApi';
 export * from './EnrichApi';
 export * from './ImportApi';
 export * from './MealPlansApi';

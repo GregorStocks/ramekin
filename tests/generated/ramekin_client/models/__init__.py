@@ -16,6 +16,9 @@
 from ramekin_client.models.bookmarklet_token_response import BookmarkletTokenResponse
 from ramekin_client.models.capture_request import CaptureRequest
 from ramekin_client.models.clear_checked_response import ClearCheckedResponse
+from ramekin_client.models.client_log_summary import ClientLogSummary
+from ramekin_client.models.create_client_log_request import CreateClientLogRequest
+from ramekin_client.models.create_client_log_response import CreateClientLogResponse
 from ramekin_client.models.create_meal_plan_request import CreateMealPlanRequest
 from ramekin_client.models.create_meal_plan_response import CreateMealPlanResponse
 from ramekin_client.models.create_recipe_request import CreateRecipeRequest
@@ -33,6 +36,7 @@ from ramekin_client.models.error_code import ErrorCode
 from ramekin_client.models.error_response import ErrorResponse
 from ramekin_client.models.generate_description_response import GenerateDescriptionResponse
 from ramekin_client.models.generate_photo_response import GeneratePhotoResponse
+from ramekin_client.models.get_client_log_response import GetClientLogResponse
 from ramekin_client.models.import_extraction_method import ImportExtractionMethod
 from ramekin_client.models.import_from_photos_request import ImportFromPhotosRequest
 from ramekin_client.models.import_from_photos_response import ImportFromPhotosResponse
@@ -40,6 +44,7 @@ from ramekin_client.models.import_raw_recipe import ImportRawRecipe
 from ramekin_client.models.import_recipe_request import ImportRecipeRequest
 from ramekin_client.models.import_recipe_response import ImportRecipeResponse
 from ramekin_client.models.ingredient import Ingredient
+from ramekin_client.models.list_client_logs_response import ListClientLogsResponse
 from ramekin_client.models.list_recipes_response import ListRecipesResponse
 from ramekin_client.models.login_request import LoginRequest
 from ramekin_client.models.login_response import LoginResponse

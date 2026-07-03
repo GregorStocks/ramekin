@@ -1,6 +1,19 @@
 // @generated automatically by Diesel CLI.
 
 diesel::table! {
+    client_log_uploads (id) {
+        id -> Uuid,
+        user_id -> Uuid,
+        platform -> Text,
+        app_version -> Nullable<Text>,
+        os_info -> Nullable<Text>,
+        content -> Text,
+        created_at -> Timestamptz,
+        deleted_at -> Nullable<Timestamptz>,
+    }
+}
+
+diesel::table! {
     meal_plans (id) {
         id -> Uuid,
         user_id -> Uuid,
@@ -168,6 +181,7 @@ diesel::table! {
     }
 }
 
+diesel::joinable!(client_log_uploads -> users (user_id));
 diesel::joinable!(meal_plans -> recipes (recipe_id));
 diesel::joinable!(meal_plans -> users (user_id));
 diesel::joinable!(photo_thumbnails -> photos (photo_id));
@@ -183,6 +197,7 @@ diesel::joinable!(step_outputs -> scrape_jobs (scrape_job_id));
 diesel::joinable!(user_tags -> users (user_id));
 
 diesel::allow_tables_to_appear_in_same_query!(
+    client_log_uploads,
     meal_plans,
     photo_thumbnails,
     photos,

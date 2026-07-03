@@ -232,6 +232,7 @@ async fn main() {
     // Note: layer order is reversed (last added = first executed)
     // So auth runs first, then CORS adds headers to response
     let protected_router = Router::new()
+        .nest("/api/client-logs", api::client_logs::router())
         .nest("/api/test", api::testing::router())
         .nest("/api/photos", api::photos::router())
         .nest("/api/recipes", api::recipes::router())

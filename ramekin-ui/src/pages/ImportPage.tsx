@@ -5,6 +5,7 @@ import {
   type ParsedPaprikaRecipe,
 } from "../utils/paprikaImport";
 import { usePageTitle } from "../utils/pageTitle";
+import { logger } from "../utils/logger";
 import { ImportExtractionMethod, type ScrapeApi } from "ramekin-client";
 
 type RecipeStatus =
@@ -62,7 +63,10 @@ function createJobPoller(scrapeApi: ScrapeApi) {
           continue;
         }
       } catch (err) {
-        console.warn("Error polling scrape job; retrying", err);
+        logger.warn(
+          "Import",
+          `Error polling scrape job; retrying: ${String(err)}`,
+        );
       }
       // Rotate so we don't starve other jobs behind a slow one, and wait
       // before the next request to keep pressure off /api/scrape/{id}.
@@ -145,9 +149,9 @@ export default function ImportPage() {
             });
             photoIds.push(response.id);
           } catch (err) {
-            console.warn(
-              `Photo upload failed for recipe "${recipe.name}"; continuing without it`,
-              err,
+            logger.warn(
+              "Import",
+              `Photo upload failed for recipe "${recipe.name}"; continuing without it: ${String(err)}`,
             );
           }
         }
