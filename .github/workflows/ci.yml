@@ -50,6 +50,14 @@ jobs:
       - name: Create Python venv
         run: make venv
 
+      # The pretool-hook tests execute .claude/hooks/agent-issues-pretool-hook.sh,
+      # which self-installs agent-issues from GitHub HEAD if the binary is missing.
+      # Preinstall it pinned to a rev so tests never depend on that repo's tip.
+      - name: Install agent-issues (pinned)
+        run: |
+          uv tool install \
+            "git+https://github.com/GregorStocks/agent-issues.git@9d23b9d6ab63065680c12eb1a3c54e7232af7401"
+
       - name: Cache Playwright browsers
         uses: actions/cache@v4
         id: playwright-cache
