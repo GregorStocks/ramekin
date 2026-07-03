@@ -5,9 +5,6 @@ use super::*;
 pub(super) static SUBSTACK_BODY_SELECTOR: LazyLock<Selector> =
     LazyLock::new(|| Selector::parse("div.body.markup").expect("substack body markup selector"));
 
-pub(super) static LI_SELECTOR: LazyLock<Selector> =
-    LazyLock::new(|| Selector::parse("li").expect("li selector"));
-
 /// Recipe block discovered while scanning a Substack post body.
 pub(super) struct SubstackBlock {
     title: String,

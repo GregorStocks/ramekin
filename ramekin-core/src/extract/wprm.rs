@@ -2,6 +2,16 @@
 
 use super::*;
 
+static INGREDIENT_GROUP_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse(".wprm-recipe-ingredient-group").expect("wprm ingredient group selector")
+});
+
+static GROUP_NAME_SELECTOR: LazyLock<Selector> =
+    LazyLock::new(|| Selector::parse(".wprm-recipe-group-name").expect("wprm group name selector"));
+
+pub(super) static WPRM_INGREDIENT_SELECTOR: LazyLock<Selector> =
+    LazyLock::new(|| Selector::parse(".wprm-recipe-ingredient").expect("wprm ingredient selector"));
+
 /// Extract WPRM ingredients with group headers (e.g. "Meatballs:", "Broth:").
 ///
 /// WPRM structures ingredients as `.wprm-recipe-ingredient-group` containers,
@@ -9,21 +19,14 @@ use super::*;
 /// `.wprm-recipe-ingredient` items. JSON-LD flattens these into a single array,
 /// losing the group structure. This function recovers it from the HTML.
 pub(super) fn extract_wprm_ingredients_with_groups(document: &Html) -> Option<String> {
-    let group_selector =
-        Selector::parse(".wprm-recipe-ingredient-group").expect("wprm ingredient group selector");
-    let name_selector =
-        Selector::parse(".wprm-recipe-group-name").expect("wprm group name selector");
-    let item_selector =
-        Selector::parse(".wprm-recipe-ingredient").expect("wprm ingredient selector");
-
-    let groups: Vec<_> = document.select(&group_selector).collect();
+    let groups: Vec<_> = document.select(&INGREDIENT_GROUP_SELECTOR).collect();
     if groups.is_empty() {
         return None;
     }
 
     // Only use this path when at least one group actually has a name
     let has_any_group_name = groups.iter().any(|g| {
-        g.select(&name_selector)
+        g.select(&GROUP_NAME_SELECTOR)
             .next()
             .map(|el| !el.text().collect::<String>().trim().is_empty())
             .unwrap_or(false)
@@ -35,7 +38,7 @@ pub(super) fn extract_wprm_ingredients_with_groups(document: &Html) -> Option<St
     let mut lines: Vec<String> = Vec::new();
     for group in &groups {
         // Extract group name if present
-        if let Some(name_el) = group.select(&name_selector).next() {
+        if let Some(name_el) = group.select(&GROUP_NAME_SELECTOR).next() {
             let name = name_el.text().collect::<String>().trim().to_string();
             if !name.is_empty() {
                 // Add as section header (colon-terminated so the parser detects it)
@@ -48,7 +51,7 @@ pub(super) fn extract_wprm_ingredients_with_groups(document: &Html) -> Option<St
         }
 
         // Extract ingredients in this group
-        for item in group.select(&item_selector) {
+        for item in group.select(&WPRM_INGREDIENT_SELECTOR) {
             if let Some(text) = sanitize_extracted_ingredient(&item.text().collect::<String>()) {
                 lines.push(text);
             }
@@ -168,20 +171,26 @@ pub(super) fn wprm_titles_match(recipe_title: &str, card_title: &str) -> bool {
     recipe_tokens == card_tokens
 }
 
-pub(super) fn extract_wprm_steps(root: ElementRef<'_>) -> Option<Vec<String>> {
-    let group_selector =
-        Selector::parse(".wprm-recipe-instruction-group").expect("wprm instruction group selector");
-    let name_selector = Selector::parse(".wprm-recipe-instruction-group-name")
-        .expect("wprm instruction group name selector");
-    let text_selector =
-        Selector::parse(".wprm-recipe-instruction-text").expect("wprm instruction text selector");
+static INSTRUCTION_GROUP_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse(".wprm-recipe-instruction-group").expect("wprm instruction group selector")
+});
 
+static INSTRUCTION_GROUP_NAME_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse(".wprm-recipe-instruction-group-name")
+        .expect("wprm instruction group name selector")
+});
+
+static INSTRUCTION_TEXT_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse(".wprm-recipe-instruction-text").expect("wprm instruction text selector")
+});
+
+pub(super) fn extract_wprm_steps(root: ElementRef<'_>) -> Option<Vec<String>> {
     let mut lines: Vec<String> = Vec::new();
 
-    let groups: Vec<_> = root.select(&group_selector).collect();
+    let groups: Vec<_> = root.select(&INSTRUCTION_GROUP_SELECTOR).collect();
     if groups.is_empty() {
         // No group wrappers; emit the steps directly under the card.
-        for el in root.select(&text_selector) {
+        for el in root.select(&INSTRUCTION_TEXT_SELECTOR) {
             if let Some(text) = clean_wprm_instruction_text(&el.inner_html()) {
                 lines.push(text);
             }
@@ -190,7 +199,7 @@ pub(super) fn extract_wprm_steps(root: ElementRef<'_>) -> Option<Vec<String>> {
         for group in &groups {
             // Emit the group name as a colon-terminated section header (matching the
             // ingredient-group convention) so downstream parsing treats it as a header.
-            if let Some(name_el) = group.select(&name_selector).next() {
+            if let Some(name_el) = group.select(&INSTRUCTION_GROUP_NAME_SELECTOR).next() {
                 let name = normalize_wprm_text(&name_el.text().collect::<String>());
                 if !name.is_empty() {
                     if name.ends_with(':') {
@@ -200,7 +209,7 @@ pub(super) fn extract_wprm_steps(root: ElementRef<'_>) -> Option<Vec<String>> {
                     }
                 }
             }
-            for el in group.select(&text_selector) {
+            for el in group.select(&INSTRUCTION_TEXT_SELECTOR) {
                 if let Some(text) = clean_wprm_instruction_text(&el.inner_html()) {
                     lines.push(text);
                 }
@@ -215,18 +224,19 @@ pub(super) fn extract_wprm_steps(root: ElementRef<'_>) -> Option<Vec<String>> {
     }
 }
 
-pub(super) fn extract_wprm_instructions(document: &Html, recipe_title: &str) -> Option<String> {
-    let recipe_selector = Selector::parse(".wprm-recipe").expect("wprm recipe selector");
-    let title_selector = Selector::parse(".wprm-recipe-name").expect("wprm recipe name selector");
-    let instruction_selector =
-        Selector::parse(".wprm-recipe-instruction-text").expect("wprm instruction text selector");
+static RECIPE_CARD_SELECTOR: LazyLock<Selector> =
+    LazyLock::new(|| Selector::parse(".wprm-recipe").expect("wprm recipe selector"));
 
+static RECIPE_NAME_SELECTOR: LazyLock<Selector> =
+    LazyLock::new(|| Selector::parse(".wprm-recipe-name").expect("wprm recipe name selector"));
+
+pub(super) fn extract_wprm_instructions(document: &Html, recipe_title: &str) -> Option<String> {
     let normalized_title = normalize_wprm_text(recipe_title);
     let mut matching_steps = None;
     let mut only_card_steps = None;
     let mut card_count = 0;
 
-    for card in document.select(&recipe_selector) {
+    for card in document.select(&RECIPE_CARD_SELECTOR) {
         let steps = match extract_wprm_steps(card) {
             Some(steps) => steps,
             None => continue,
@@ -238,7 +248,7 @@ pub(super) fn extract_wprm_instructions(document: &Html, recipe_title: &str) -> 
         }
 
         let card_title = card
-            .select(&title_selector)
+            .select(&RECIPE_NAME_SELECTOR)
             .next()
             .map(|el| normalize_wprm_text(&el.text().collect::<String>()));
 
@@ -258,7 +268,7 @@ pub(super) fn extract_wprm_instructions(document: &Html, recipe_title: &str) -> 
         only_card_steps?
     } else if !require_title_match {
         let orphan_steps: Vec<String> = document
-            .select(&instruction_selector)
+            .select(&INSTRUCTION_TEXT_SELECTOR)
             .filter_map(|el| clean_wprm_instruction_text(&el.inner_html()))
             .collect();
 

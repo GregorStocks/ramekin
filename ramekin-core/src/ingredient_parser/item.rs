@@ -163,25 +163,25 @@ pub(super) fn strip_leading_list_marker(s: &str) -> String {
     remaining.to_string()
 }
 
+/// Regex for unit words like "grams" attached to numbers: "450grams" → "450 grams"
+static UNIT_WORD_REGEX: LazyLock<Regex> =
+    LazyLock::new(|| Regex::new(r"(?i)(\d+)(grams?)\b").expect("Invalid unit word regex"));
+
+/// Regex for "g" metric unit followed by other letters: "450gpowdered" → "450g powdered"
+static METRIC_G_REGEX: LazyLock<Regex> =
+    LazyLock::new(|| Regex::new(r"(?i)(\d+g)([a-z])").expect("Invalid metric g regex"));
+
+/// Regex for digit(s) followed by 4+ letters (clearly a word): "1finely" → "1 finely"
+static DIGIT_WORD_REGEX: LazyLock<Regex> =
+    LazyLock::new(|| Regex::new(r"(?i)(\d+)([a-z]{4,})").expect("Invalid digit word regex"));
+
 /// Insert space between digits and letters that are clearly separate words.
 /// Handles cases like "1finely" → "1 finely" and "450gpowdered" → "450g powdered"
 /// But preserves dimension patterns like "6x6-inch".
 pub(super) fn normalize_digit_letter_spacing(s: &str) -> String {
-    // Step 1: Handle unit words like "grams" attached to numbers
-    // "450grams" → "450 grams" (insert space before the whole unit word)
-    let re_unit_word = Regex::new(r"(?i)(\d+)(grams?)\b").unwrap();
-    let s = re_unit_word.replace_all(s, "$1 $2");
-
-    // Step 2: Handle "g" metric unit followed by other letters
-    // "450gpowdered" → "450g powdered"
-    let re_metric_g = Regex::new(r"(?i)(\d+g)([a-z])").unwrap();
-    let s = re_metric_g.replace_all(&s, "$1 $2");
-
-    // Step 3: Handle digit(s) followed by 4+ letters (clearly a word)
-    // "1finely" → "1 finely"
-    let re_digit_word = Regex::new(r"(?i)(\d+)([a-z]{4,})").unwrap();
-    let s = re_digit_word.replace_all(&s, "$1 $2");
-
+    let s = UNIT_WORD_REGEX.replace_all(s, "$1 $2");
+    let s = METRIC_G_REGEX.replace_all(&s, "$1 $2");
+    let s = DIGIT_WORD_REGEX.replace_all(&s, "$1 $2");
     s.into_owned()
 }
 
