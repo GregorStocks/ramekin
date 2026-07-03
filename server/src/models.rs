@@ -186,6 +186,33 @@ pub struct NewRecipeVersion<'a> {
     pub version_source: &'a str,
 }
 
+impl<'a> NewRecipeVersion<'a> {
+    /// A new version copying every content field from `current`. Override
+    /// individual fields with struct-update syntax:
+    /// `NewRecipeVersion { title: new_title, ..NewRecipeVersion::copy_of(...) }`
+    pub fn copy_of(current: &'a RecipeVersion, version_source: &'a str) -> Self {
+        Self {
+            recipe_id: current.recipe_id,
+            title: &current.title,
+            description: current.description.as_deref(),
+            ingredients: current.ingredients.clone(),
+            instructions: &current.instructions,
+            source_url: current.source_url.as_deref(),
+            source_name: current.source_name.as_deref(),
+            photo_ids: &current.photo_ids,
+            servings: current.servings.as_deref(),
+            prep_time: current.prep_time.as_deref(),
+            cook_time: current.cook_time.as_deref(),
+            total_time: current.total_time.as_deref(),
+            rating: current.rating,
+            difficulty: current.difficulty.as_deref(),
+            nutritional_info: current.nutritional_info.as_deref(),
+            notes: current.notes.as_deref(),
+            version_source,
+        }
+    }
+}
+
 // Scrape job for async URL scraping
 #[derive(Queryable, Selectable, Debug, Clone)]
 #[diesel(table_name = crate::schema::scrape_jobs)]

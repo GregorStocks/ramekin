@@ -49,6 +49,7 @@ def test_generate_photo_creates_new_version_and_photo(authed_api_client, query_t
     assert generated.photo_id is not None
     assert generated.version_id is not None
     assert recipe.version_source == "ai_photo"
+    assert recipe.tags == ["dinner"]
     assert len(recipe.photo_ids) == 1
     assert str(recipe.photo_ids[0]) == str(generated.photo_id)
     assert versions.versions[0].version_source == "ai_photo"

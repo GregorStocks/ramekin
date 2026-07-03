@@ -19,10 +19,10 @@ use ramekin_core::pipeline::{
 use ramekin_core::{ExtractionMethod, FailedImageFetch, FetchImagesOutput, RawRecipe};
 
 use crate::db::DbPool;
-use crate::models::{Ingredient, NewPhoto, NewRecipe, NewRecipeVersion, RecipeVersionTag};
+use crate::models::{Ingredient, NewPhoto, NewRecipeVersion};
 use crate::photos::processing::{process_image, MAX_FILE_SIZE};
-use crate::schema::{photos, recipe_version_tags, recipe_versions, recipes};
-use crate::tags::upsert_user_tag;
+use crate::recipes::{create_new_version, insert_recipe, TagSource};
+use crate::schema::{photos, recipe_versions, recipes};
 
 use super::is_host_allowed;
 
@@ -420,19 +420,19 @@ impl SaveRecipeStep {
         // Convert photo IDs to Option<Uuid> for the database
         let photo_ids_nullable: Vec<Option<Uuid>> = photo_ids.iter().map(|id| Some(*id)).collect();
 
+        // Categories come from Paprika imports and are applied as tags.
+        let category_tags: Vec<String> = raw
+            .categories
+            .iter()
+            .flatten()
+            .filter(|name| !name.is_empty())
+            .cloned()
+            .collect();
+
         // Use a transaction to create recipe + version atomically
         conn.transaction(|conn| {
-            // 1. Create the recipe row
-            let new_recipe = NewRecipe {
-                user_id: self.user_id,
-            };
+            let recipe_id = insert_recipe(conn, self.user_id)?;
 
-            let recipe_id: Uuid = diesel::insert_into(recipes::table)
-                .values(&new_recipe)
-                .returning(recipes::id)
-                .get_result(conn)?;
-
-            // 2. Create the initial version
             let new_version = NewRecipeVersion {
                 recipe_id,
                 title: &raw.title,
@@ -453,34 +453,14 @@ impl SaveRecipeStep {
                 version_source,
             };
 
-            let version_id: Uuid = diesel::insert_into(recipe_versions::table)
-                .values(&new_version)
-                .returning(recipe_versions::id)
-                .get_result(conn)?;
-
-            // 3. Update recipe to point to this version
-            diesel::update(recipes::table.find(recipe_id))
-                .set(recipes::current_version_id.eq(version_id))
-                .execute(conn)?;
-
-            // 4. Handle categories as tags (from Paprika imports)
-            if let Some(ref categories) = raw.categories {
-                for tag_name in categories {
-                    if tag_name.is_empty() {
-                        continue;
-                    }
-                    let tag_id = upsert_user_tag(conn, self.user_id, tag_name)?;
-
-                    // Insert into junction table
-                    diesel::insert_into(recipe_version_tags::table)
-                        .values(RecipeVersionTag {
-                            recipe_version_id: version_id,
-                            tag_id,
-                        })
-                        .on_conflict_do_nothing()
-                        .execute(conn)?;
-                }
-            }
+            create_new_version(
+                conn,
+                &new_version,
+                TagSource::Names {
+                    user_id: self.user_id,
+                    names: &category_tags,
+                },
+            )?;
 
             Ok(recipe_id)
         })
@@ -526,15 +506,7 @@ impl SaveRecipeStep {
                 version_source,
             };
 
-            let version_id: Uuid = diesel::insert_into(recipe_versions::table)
-                .values(&new_version)
-                .returning(recipe_versions::id)
-                .get_result(conn)?;
-
-            // Update recipe to point to this new version
-            diesel::update(recipes::table.find(recipe_id))
-                .set(recipes::current_version_id.eq(version_id))
-                .execute(conn)?;
+            create_new_version(conn, &new_version, TagSource::None)?;
 
             Ok(recipe_id)
         })
@@ -555,7 +527,7 @@ impl SaveRecipeStep {
         photo_ids: &[Uuid],
         version_source: &str,
     ) -> Result<Uuid, String> {
-        use crate::models::{Recipe, RecipeVersion, RecipeVersionTag};
+        use crate::models::{Recipe, RecipeVersion};
 
         if photo_ids.is_empty() {
             return Err(
@@ -575,77 +547,17 @@ impl SaveRecipeStep {
                 .find(current_version_id)
                 .first(conn)?;
 
-            let existing_tag_ids: Vec<Uuid> = recipe_version_tags::table
-                .filter(recipe_version_tags::recipe_version_id.eq(current_version_id))
-                .select(recipe_version_tags::tag_id)
-                .load(conn)?;
-
             let new_version = NewRecipeVersion {
-                recipe_id,
-                title: &current.title,
-                description: current.description.as_deref(),
-                ingredients: current.ingredients.clone(),
-                instructions: &current.instructions,
-                source_url: current.source_url.as_deref(),
-                source_name: current.source_name.as_deref(),
                 photo_ids: &photo_ids_nullable,
-                servings: current.servings.as_deref(),
-                prep_time: current.prep_time.as_deref(),
-                cook_time: current.cook_time.as_deref(),
-                total_time: current.total_time.as_deref(),
-                rating: current.rating,
-                difficulty: current.difficulty.as_deref(),
-                nutritional_info: current.nutritional_info.as_deref(),
-                notes: current.notes.as_deref(),
-                version_source,
+                ..NewRecipeVersion::copy_of(&current, version_source)
             };
 
-            let version_id: Uuid = diesel::insert_into(recipe_versions::table)
-                .values(&new_version)
-                .returning(recipe_versions::id)
-                .get_result(conn)?;
-
-            diesel::update(recipes::table.find(recipe_id))
-                .set(recipes::current_version_id.eq(version_id))
-                .execute(conn)?;
-
-            for tag_id in &existing_tag_ids {
-                diesel::insert_into(recipe_version_tags::table)
-                    .values(RecipeVersionTag {
-                        recipe_version_id: version_id,
-                        tag_id: *tag_id,
-                    })
-                    .on_conflict_do_nothing()
-                    .execute(conn)?;
-            }
+            create_new_version(conn, &new_version, TagSource::CopyFrom(current_version_id))?;
 
             Ok(recipe_id)
         })
         .map_err(|e: diesel::result::Error| e.to_string())
     }
-}
-
-fn copy_recipe_version_tags(
-    conn: &mut diesel::PgConnection,
-    old_version_id: Uuid,
-    new_version_id: Uuid,
-) -> Result<(), diesel::result::Error> {
-    let existing_tag_ids: Vec<Uuid> = recipe_version_tags::table
-        .filter(recipe_version_tags::recipe_version_id.eq(old_version_id))
-        .select(recipe_version_tags::tag_id)
-        .load(conn)?;
-
-    for tag_id in existing_tag_ids {
-        diesel::insert_into(recipe_version_tags::table)
-            .values(RecipeVersionTag {
-                recipe_version_id: new_version_id,
-                tag_id,
-            })
-            .on_conflict_do_nothing()
-            .execute(conn)?;
-    }
-
-    Ok(())
 }
 
 /// Server implementation of ApplyNormalizedTitle step.
@@ -749,35 +661,12 @@ impl ApplyNormalizedTitleStep {
             }
 
             let new_version = NewRecipeVersion {
-                recipe_id,
                 title: normalized_title,
-                description: current.description.as_deref(),
-                ingredients: current.ingredients.clone(),
-                instructions: &current.instructions,
-                source_url: current.source_url.as_deref(),
-                source_name: current.source_name.as_deref(),
-                photo_ids: &current.photo_ids,
-                servings: current.servings.as_deref(),
-                prep_time: current.prep_time.as_deref(),
-                cook_time: current.cook_time.as_deref(),
-                total_time: current.total_time.as_deref(),
-                rating: current.rating,
-                difficulty: current.difficulty.as_deref(),
-                nutritional_info: current.nutritional_info.as_deref(),
-                notes: current.notes.as_deref(),
-                version_source: "normalize_title",
+                ..NewRecipeVersion::copy_of(&current, "normalize_title")
             };
 
-            let new_version_id: Uuid = diesel::insert_into(recipe_versions::table)
-                .values(&new_version)
-                .returning(recipe_versions::id)
-                .get_result(conn)?;
-
-            diesel::update(recipes::table.find(recipe_id))
-                .set(recipes::current_version_id.eq(new_version_id))
-                .execute(conn)?;
-
-            copy_recipe_version_tags(conn, current_version_id, new_version_id)?;
+            let new_version_id =
+                create_new_version(conn, &new_version, TagSource::CopyFrom(current_version_id))?;
 
             Ok(new_version_id)
         })
@@ -886,35 +775,12 @@ impl ApplyGeneratedDescriptionStep {
             }
 
             let new_version = NewRecipeVersion {
-                recipe_id,
-                title: &current.title,
                 description: Some(description),
-                ingredients: current.ingredients.clone(),
-                instructions: &current.instructions,
-                source_url: current.source_url.as_deref(),
-                source_name: current.source_name.as_deref(),
-                photo_ids: &current.photo_ids,
-                servings: current.servings.as_deref(),
-                prep_time: current.prep_time.as_deref(),
-                cook_time: current.cook_time.as_deref(),
-                total_time: current.total_time.as_deref(),
-                rating: current.rating,
-                difficulty: current.difficulty.as_deref(),
-                nutritional_info: current.nutritional_info.as_deref(),
-                notes: current.notes.as_deref(),
-                version_source: "generate_description",
+                ..NewRecipeVersion::copy_of(&current, "generate_description")
             };
 
-            let new_version_id: Uuid = diesel::insert_into(recipe_versions::table)
-                .values(&new_version)
-                .returning(recipe_versions::id)
-                .get_result(conn)?;
-
-            diesel::update(recipes::table.find(recipe_id))
-                .set(recipes::current_version_id.eq(new_version_id))
-                .execute(conn)?;
-
-            copy_recipe_version_tags(conn, current_version_id, new_version_id)?;
+            let new_version_id =
+                create_new_version(conn, &new_version, TagSource::CopyFrom(current_version_id))?;
 
             Ok(new_version_id)
         })
@@ -1054,7 +920,7 @@ impl PipelineStep for ApplyAutoTagsStep {
 
 impl ApplyAutoTagsStep {
     fn apply_tags(&self, recipe_id: Uuid, new_tags: &[String]) -> Result<Uuid, String> {
-        use crate::models::{Recipe, RecipeVersion, RecipeVersionTag};
+        use crate::models::{Recipe, RecipeVersion};
 
         let mut conn = self.pool.get().map_err(|e| e.to_string())?;
 
@@ -1074,70 +940,21 @@ impl ApplyAutoTagsStep {
             .first(&mut conn)
             .map_err(|e| e.to_string())?;
 
-        // Fetch existing tags from current version
-        let existing_tag_ids: Vec<Uuid> = recipe_version_tags::table
-            .filter(recipe_version_tags::recipe_version_id.eq(current_version_id))
-            .select(recipe_version_tags::tag_id)
-            .load(&mut conn)
-            .map_err(|e| format!("Failed to fetch existing tags: {}", e))?;
-
         // Create new version with AI-suggested tags
         conn.transaction(|conn| {
             // 1. Create new version (copy all data, change version_source to "enrichment")
-            let new_version = NewRecipeVersion {
-                recipe_id,
-                title: &current_version.title,
-                description: current_version.description.as_deref(),
-                ingredients: current_version.ingredients.clone(),
-                instructions: &current_version.instructions,
-                source_url: current_version.source_url.as_deref(),
-                source_name: current_version.source_name.as_deref(),
-                photo_ids: &current_version.photo_ids,
-                servings: current_version.servings.as_deref(),
-                prep_time: current_version.prep_time.as_deref(),
-                cook_time: current_version.cook_time.as_deref(),
-                total_time: current_version.total_time.as_deref(),
-                rating: current_version.rating,
-                difficulty: current_version.difficulty.as_deref(),
-                nutritional_info: current_version.nutritional_info.as_deref(),
-                notes: current_version.notes.as_deref(),
-                version_source: "enrichment",
-            };
+            let new_version = NewRecipeVersion::copy_of(&current_version, "enrichment");
 
-            let new_version_id: Uuid = diesel::insert_into(recipe_versions::table)
-                .values(&new_version)
-                .returning(recipe_versions::id)
-                .get_result(conn)?;
-
-            // 2. Update recipe to point to new version
-            diesel::update(recipes::table.find(recipe_id))
-                .set(recipes::current_version_id.eq(new_version_id))
-                .execute(conn)?;
-
-            // 3. Copy existing tags to new version
-            for tag_id in &existing_tag_ids {
-                diesel::insert_into(recipe_version_tags::table)
-                    .values(RecipeVersionTag {
-                        recipe_version_id: new_version_id,
-                        tag_id: *tag_id,
-                    })
-                    .on_conflict_do_nothing()
-                    .execute(conn)?;
-            }
-
-            // 4. Add new AI-suggested tags
-            for tag_name in new_tags {
-                let tag_id = upsert_user_tag(conn, recipe.user_id, tag_name)?;
-
-                // Insert into junction table (skip if already exists from copied tags)
-                diesel::insert_into(recipe_version_tags::table)
-                    .values(RecipeVersionTag {
-                        recipe_version_id: new_version_id,
-                        tag_id,
-                    })
-                    .on_conflict_do_nothing()
-                    .execute(conn)?;
-            }
+            // 2. Carry existing tags forward and add the AI-suggested ones
+            let new_version_id = create_new_version(
+                conn,
+                &new_version,
+                TagSource::CopyAndNames {
+                    from_version: current_version_id,
+                    user_id: recipe.user_id,
+                    names: new_tags,
+                },
+            )?;
 
             Ok(new_version_id)
         })

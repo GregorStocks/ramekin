@@ -18,6 +18,7 @@ def _create_recipe(recipes_api):
             make_ingredient(item="butter", amount="3", unit="tbsp"),
             make_ingredient(item="white wine", amount="1/2", unit="cup"),
         ],
+        tags=["dinner", "seafood"],
     )
     return recipes_api.create_recipe(request).id
 
@@ -50,9 +51,10 @@ def test_generate_description_success(authed_api_client):
     assert len(result.generated_description) > 0
     assert result.changed is True
 
-    # Verify the description was persisted
+    # Verify the description was persisted and tags carried to the new version
     recipe = recipes_api.get_recipe(recipe_id)
     assert recipe.description == result.generated_description
+    assert sorted(recipe.tags) == ["dinner", "seafood"]
 
 
 def test_generate_description_idempotent(authed_api_client):
