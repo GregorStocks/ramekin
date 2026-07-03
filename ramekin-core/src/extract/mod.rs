@@ -130,22 +130,25 @@ fn supplement_dotdash_ingredients(recipe: &mut RawRecipe, document: &Html) {
 /// entirely inside data-ingredient-* spans, with no free text (parentheticals,
 /// "divided", "see notes") outside them; the author's rows live only in the
 /// JSON-LD, so the visible rows must not replace it.
-fn dotdash_ingredients_look_normalized(document: &Html) -> bool {
-    let item_selector = Selector::parse(".structured-ingredients__list-item")
-        .expect("structured ingredients list item selector");
-    let span_selector = Selector::parse(
-        "[data-ingredient-quantity], [data-ingredient-unit], [data-ingredient-name]",
-    )
-    .expect("data-ingredient span selector");
+static STRUCTURED_INGREDIENT_ITEM_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse(".structured-ingredients__list-item")
+        .expect("structured ingredients list item selector")
+});
 
+static DATA_INGREDIENT_SPAN_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse("[data-ingredient-quantity], [data-ingredient-unit], [data-ingredient-name]")
+        .expect("data-ingredient span selector")
+});
+
+fn dotdash_ingredients_look_normalized(document: &Html) -> bool {
     // Whitespace is stripped entirely (not normalized to single spaces) so the
     // comparison is insensitive to how whitespace falls between text nodes.
     let mut saw_item = false;
-    for item in document.select(&item_selector) {
+    for item in document.select(&STRUCTURED_INGREDIENT_ITEM_SELECTOR) {
         saw_item = true;
         let full_text: String = item.text().collect::<String>().split_whitespace().collect();
         let spanned_text: String = item
-            .select(&span_selector)
+            .select(&DATA_INGREDIENT_SPAN_SELECTOR)
             .flat_map(|el| el.text())
             .collect::<String>()
             .split_whitespace()
@@ -391,6 +394,9 @@ fn extract_source_name(url: &str) -> Option<String> {
 static HTML_TAG_REGEX: LazyLock<Regex> =
     LazyLock::new(|| Regex::new(r"<[^>]+>").expect("Invalid HTML tag regex"));
 
+static LI_SELECTOR: LazyLock<Selector> =
+    LazyLock::new(|| Selector::parse("li").expect("li selector"));
+
 /// Decode HTML entities using the html-escape crate.
 /// Also handles double-encoded entities like "&amp;#8531;" by decoding twice.
 fn decode_html_entities(text: &str) -> String {
@@ -412,20 +418,24 @@ struct PartialRecipe {
     servings: Option<String>,
 }
 
-/// Extract a recipe title from common HTML elements when structured data lacks a name.
-fn extract_title_from_html(document: &Html) -> Option<String> {
-    // Try Jetpack recipe title
-    let selectors = [
+static TITLE_FALLBACK_SELECTORS: LazyLock<[Selector; 5]> = LazyLock::new(|| {
+    [
         ".jetpack-recipe-title",
         ".wprm-recipe-name",
         "h1.entry-title",
         "h2.entry-title",
         "h1.heading__title",
-    ];
+    ]
+    .map(|s| Selector::parse(s).expect("title fallback selector"))
+});
 
-    for selector_str in selectors {
-        let selector = Selector::parse(selector_str).expect("title fallback selector");
-        if let Some(el) = document.select(&selector).next() {
+static TITLE_TAG_SELECTOR: LazyLock<Selector> =
+    LazyLock::new(|| Selector::parse("title").expect("title selector"));
+
+/// Extract a recipe title from common HTML elements when structured data lacks a name.
+fn extract_title_from_html(document: &Html) -> Option<String> {
+    for selector in TITLE_FALLBACK_SELECTORS.iter() {
+        if let Some(el) = document.select(selector).next() {
             let text = el.text().collect::<String>();
             let text = text.trim();
             if !text.is_empty() {
@@ -435,8 +445,7 @@ fn extract_title_from_html(document: &Html) -> Option<String> {
     }
 
     // Last resort: <title> tag, stripped of site name suffix
-    let title_selector = Selector::parse("title").expect("title selector");
-    let title_el = document.select(&title_selector).next()?;
+    let title_el = document.select(&TITLE_TAG_SELECTOR).next()?;
     let title_text = title_el.text().collect::<String>();
     let title_text = title_text.trim();
     if title_text.is_empty() {

@@ -457,8 +457,7 @@ pub(super) fn extract_smittenkitchen_post_instructions(
         return None;
     }
 
-    let entry_selector = Selector::parse(".entry-content").expect("entry content selector");
-    for entry in document.select(&entry_selector) {
+    for entry in document.select(&ENTRY_CONTENT_SELECTOR) {
         if let Some(instructions) =
             extract_smittenkitchen_entry_instructions(entry, title, &expected_ingredients)
         {
@@ -468,6 +467,9 @@ pub(super) fn extract_smittenkitchen_post_instructions(
 
     None
 }
+
+static ENTRY_CONTENT_SELECTOR: LazyLock<Selector> =
+    LazyLock::new(|| Selector::parse(".entry-content").expect("entry content selector"));
 
 fn extract_smittenkitchen_entry_instructions(
     entry: ElementRef<'_>,
@@ -540,11 +542,10 @@ fn smitten_list_matches_expected_ingredients(
     list_el: ElementRef<'_>,
     expected_ingredients: &[String],
 ) -> bool {
-    let li_selector = Selector::parse("li").expect("li selector");
     let mut matches = 0usize;
     let mut items = 0usize;
 
-    for li in list_el.select(&li_selector) {
+    for li in list_el.select(&LI_SELECTOR) {
         let item_text = normalize_smitten_post_text(&li.text().collect::<Vec<_>>().join(" "));
         if item_text.is_empty() {
             continue;
@@ -603,6 +604,15 @@ pub(super) fn collect_text_skipping_struck(el: ElementRef<'_>) -> String {
 /// sections delimited by `<h2>` headers, ingredient lists marked by
 /// `<p><strong>Section Name</strong></p>` followed immediately by `<ul>`, and
 /// instructions as `<p>` paragraphs grouped under their `<h2>` section header.
+static HEADLINE_SELECTOR: LazyLock<Selector> =
+    LazyLock::new(|| Selector::parse("h1.headline").expect("headline selector"));
+
+static POST_CONTENT_SELECTOR: LazyLock<Selector> =
+    LazyLock::new(|| Selector::parse("div.post_content").expect("post content selector"));
+
+static STRONG_SELECTOR: LazyLock<Selector> =
+    LazyLock::new(|| Selector::parse("strong").expect("strong selector"));
+
 pub(super) fn extract_recipe_from_virtualweberbullet(
     html: &str,
     document: &Html,
@@ -614,19 +624,14 @@ pub(super) fn extract_recipe_from_virtualweberbullet(
         return None;
     }
 
-    let h1_sel = Selector::parse("h1.headline").ok()?;
-    let title_el = document.select(&h1_sel).next()?;
+    let title_el = document.select(&HEADLINE_SELECTOR).next()?;
     let raw_title: String = title_el.text().collect();
     let title = decode_html_entities(raw_title.trim());
     if title.is_empty() {
         return None;
     }
 
-    let post_sel = Selector::parse("div.post_content").ok()?;
-    let post = document.select(&post_sel).next()?;
-
-    let strong_sel = Selector::parse("strong").expect("strong selector");
-    let li_sel = Selector::parse("li").expect("li selector");
+    let post = document.select(&POST_CONTENT_SELECTOR).next()?;
 
     #[derive(PartialEq)]
     enum State {
@@ -711,7 +716,7 @@ pub(super) fn extract_recipe_from_virtualweberbullet(
                 }
                 if let Some(header) = pending_strong_text.take() {
                     let mut header_emitted = false;
-                    for li in el.select(&li_sel) {
+                    for li in el.select(&LI_SELECTOR) {
                         let raw_li = collect_text_skipping_struck(li);
                         let Some(text) = sanitize_extracted_ingredient(&raw_li) else {
                             continue;
@@ -723,7 +728,7 @@ pub(super) fn extract_recipe_from_virtualweberbullet(
                         ingredient_lines.push(text);
                     }
                 } else if state == State::InInstructions {
-                    for li in el.select(&li_sel) {
+                    for li in el.select(&LI_SELECTOR) {
                         let raw_li: String = li.text().collect();
                         let text = decode_html_entities(raw_li.trim());
                         if !text.is_empty() {
@@ -741,7 +746,7 @@ pub(super) fn extract_recipe_from_virtualweberbullet(
                     continue;
                 }
 
-                let strong_text = el.select(&strong_sel).next().map(|s| {
+                let strong_text = el.select(&STRONG_SELECTOR).next().map(|s| {
                     let raw: String = s.text().collect();
                     decode_html_entities(raw.trim())
                 });

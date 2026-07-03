@@ -41,14 +41,16 @@ pub fn extract_footnotes_from_html(html: &str) -> Option<Vec<(String, String)>> 
     collect_footnotes(candidates)
 }
 
+static NOTES_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse(
+        ".wprm-recipe-notes-container li, .wprm-recipe-notes-container p, .wprm-recipe-notes li, .wprm-recipe-notes p, .tasty-recipes-notes li, .tasty-recipes-notes p, .tasty-recipe-notes li, .tasty-recipe-notes p",
+    ).expect("recipe notes selector")
+});
+
 /// Extract footnotes from a pre-parsed HTML document.
 /// Uses CSS selectors instead of regex to avoid re-parsing the DOM.
 pub(super) fn extract_footnotes_from_document(document: &Html) -> Option<Vec<(String, String)>> {
-    let notes_selector = Selector::parse(
-        ".wprm-recipe-notes-container li, .wprm-recipe-notes-container p, .wprm-recipe-notes li, .wprm-recipe-notes p, .tasty-recipes-notes li, .tasty-recipes-notes p, .tasty-recipe-notes li, .tasty-recipe-notes p",
-    ).ok()?;
-
-    let candidates = document.select(&notes_selector).filter_map(|element| {
+    let candidates = document.select(&NOTES_SELECTOR).filter_map(|element| {
         let text: String = element.text().collect::<String>();
         let text = text.trim().to_string();
 

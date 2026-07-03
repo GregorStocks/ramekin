@@ -44,14 +44,16 @@ pub(super) fn extract_jsonld_fast(html: &str, source_url: &str) -> Option<RawRec
     None
 }
 
+static JSONLD_SCRIPT_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse("script[type='application/ld+json']").expect("JSON-LD script selector")
+});
+
 /// Extract recipe from JSON-LD script tags.
 pub(super) fn extract_recipe_from_jsonld(
     document: &Html,
     source_url: &str,
 ) -> Result<RawRecipe, ExtractError> {
-    let selector = Selector::parse("script[type='application/ld+json']").expect("Invalid selector");
-
-    for element in document.select(&selector) {
+    for element in document.select(&JSONLD_SCRIPT_SELECTOR) {
         let json_text = element.inner_html();
 
         // Sanitize JSON to handle malformed content (e.g., unescaped newlines)
