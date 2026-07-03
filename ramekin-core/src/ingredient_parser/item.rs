@@ -69,19 +69,6 @@ pub(super) const PREP_NOTES: &[&str] = &[
     "scrubbed",
 ];
 
-/// Decode HTML entities using the html-escape crate.
-/// Also handles double-encoded entities like "&amp;#8531;" by decoding twice.
-pub(super) fn decode_html_entities(s: &str) -> String {
-    // First pass: decode entities (this handles &amp; -> & among others)
-    let decoded = html_escape::decode_html_entities(s);
-
-    // Second pass: decode again to handle double-encoded entities
-    // e.g., "&amp;#8531;" -> "&#8531;" -> "⅓"
-    let decoded = html_escape::decode_html_entities(&decoded);
-
-    decoded.into_owned()
-}
-
 /// Normalize unicode characters to their ASCII equivalents.
 /// This handles:
 /// - Non-breaking spaces → regular spaces

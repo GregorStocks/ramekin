@@ -343,22 +343,9 @@ pub(super) fn extract_ingredients_from_div(document: &Html) -> Option<String> {
         .split(&inner_html)
     {
         // Strip remaining HTML tags and decode entities
-        let text = HTML_TAG_REGEX.replace_all(chunk, "");
-        let text = text.trim();
-        if !text.is_empty() {
-            // Decode common HTML entities
-            let text = text
-                .replace("&amp;", "&")
-                .replace("&lt;", "<")
-                .replace("&gt;", ">")
-                .replace("&quot;", "\"")
-                .replace("&#8217;", "\u{2019}")
-                .replace("&deg;", "\u{00b0}")
-                .replace("&reg;", "\u{00ae}")
-                .replace("&#038;", "&");
-            if let Some(text) = sanitize_extracted_ingredient(&text) {
-                lines.push(text);
-            }
+        let text = fragment_to_text(chunk);
+        if let Some(text) = sanitize_extracted_ingredient(&text) {
+            lines.push(text);
         }
     }
 
@@ -477,21 +464,7 @@ pub(super) fn html_to_paragraphs(html: &str) -> Vec<String> {
     Regex::new(r"(?i)</p>\s*<p[^>]*>|<br\s*/?\s*>\s*<br\s*/?\s*>")
         .expect("Invalid paragraph split regex")
         .split(html)
-        .map(|chunk| {
-            let text = HTML_TAG_REGEX.replace_all(chunk, "");
-            let text = text
-                .replace("&amp;", "&")
-                .replace("&lt;", "<")
-                .replace("&gt;", ">")
-                .replace("&#8217;", "\u{2019}")
-                .replace("&#8220;", "\u{201c}")
-                .replace("&#8221;", "\u{201d}")
-                .replace("&#8212;", "\u{2014}")
-                .replace("&#038;", "&")
-                .replace("&deg;", "\u{00b0}")
-                .replace("&reg;", "\u{00ae}");
-            text.trim().to_string()
-        })
+        .map(fragment_to_text)
         .filter(|s| !s.is_empty())
         .collect()
 }

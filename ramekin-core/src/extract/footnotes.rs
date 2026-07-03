@@ -33,9 +33,8 @@ pub fn extract_footnotes_from_html(html: &str) -> Option<Vec<(String, String)>> 
     let candidates = FOOTNOTE_REGEX.captures_iter(search_html).map(|cap| {
         let marker = cap.get(1).unwrap().as_str().to_string();
         // Strip inline HTML tags (e.g., <em>, <strong>, <a>) from footnote text
-        let raw_text = cap.get(2).unwrap().as_str().trim();
-        let text = HTML_TAG_REGEX.replace_all(raw_text, "").trim().to_string();
-        (marker, decode_html_entities(&text))
+        let raw_text = cap.get(2).unwrap().as_str();
+        (marker, fragment_to_text(raw_text))
     });
 
     collect_footnotes(candidates)
