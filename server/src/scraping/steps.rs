@@ -548,23 +548,8 @@ impl SaveRecipeStep {
                 .first(conn)?;
 
             let new_version = NewRecipeVersion {
-                recipe_id,
-                title: &current.title,
-                description: current.description.as_deref(),
-                ingredients: current.ingredients.clone(),
-                instructions: &current.instructions,
-                source_url: current.source_url.as_deref(),
-                source_name: current.source_name.as_deref(),
                 photo_ids: &photo_ids_nullable,
-                servings: current.servings.as_deref(),
-                prep_time: current.prep_time.as_deref(),
-                cook_time: current.cook_time.as_deref(),
-                total_time: current.total_time.as_deref(),
-                rating: current.rating,
-                difficulty: current.difficulty.as_deref(),
-                nutritional_info: current.nutritional_info.as_deref(),
-                notes: current.notes.as_deref(),
-                version_source,
+                ..NewRecipeVersion::copy_of(&current, version_source)
             };
 
             create_new_version(conn, &new_version, TagSource::CopyFrom(current_version_id))?;
@@ -676,23 +661,8 @@ impl ApplyNormalizedTitleStep {
             }
 
             let new_version = NewRecipeVersion {
-                recipe_id,
                 title: normalized_title,
-                description: current.description.as_deref(),
-                ingredients: current.ingredients.clone(),
-                instructions: &current.instructions,
-                source_url: current.source_url.as_deref(),
-                source_name: current.source_name.as_deref(),
-                photo_ids: &current.photo_ids,
-                servings: current.servings.as_deref(),
-                prep_time: current.prep_time.as_deref(),
-                cook_time: current.cook_time.as_deref(),
-                total_time: current.total_time.as_deref(),
-                rating: current.rating,
-                difficulty: current.difficulty.as_deref(),
-                nutritional_info: current.nutritional_info.as_deref(),
-                notes: current.notes.as_deref(),
-                version_source: "normalize_title",
+                ..NewRecipeVersion::copy_of(&current, "normalize_title")
             };
 
             let new_version_id =
@@ -805,23 +775,8 @@ impl ApplyGeneratedDescriptionStep {
             }
 
             let new_version = NewRecipeVersion {
-                recipe_id,
-                title: &current.title,
                 description: Some(description),
-                ingredients: current.ingredients.clone(),
-                instructions: &current.instructions,
-                source_url: current.source_url.as_deref(),
-                source_name: current.source_name.as_deref(),
-                photo_ids: &current.photo_ids,
-                servings: current.servings.as_deref(),
-                prep_time: current.prep_time.as_deref(),
-                cook_time: current.cook_time.as_deref(),
-                total_time: current.total_time.as_deref(),
-                rating: current.rating,
-                difficulty: current.difficulty.as_deref(),
-                nutritional_info: current.nutritional_info.as_deref(),
-                notes: current.notes.as_deref(),
-                version_source: "generate_description",
+                ..NewRecipeVersion::copy_of(&current, "generate_description")
             };
 
             let new_version_id =
@@ -988,25 +943,7 @@ impl ApplyAutoTagsStep {
         // Create new version with AI-suggested tags
         conn.transaction(|conn| {
             // 1. Create new version (copy all data, change version_source to "enrichment")
-            let new_version = NewRecipeVersion {
-                recipe_id,
-                title: &current_version.title,
-                description: current_version.description.as_deref(),
-                ingredients: current_version.ingredients.clone(),
-                instructions: &current_version.instructions,
-                source_url: current_version.source_url.as_deref(),
-                source_name: current_version.source_name.as_deref(),
-                photo_ids: &current_version.photo_ids,
-                servings: current_version.servings.as_deref(),
-                prep_time: current_version.prep_time.as_deref(),
-                cook_time: current_version.cook_time.as_deref(),
-                total_time: current_version.total_time.as_deref(),
-                rating: current_version.rating,
-                difficulty: current_version.difficulty.as_deref(),
-                nutritional_info: current_version.nutritional_info.as_deref(),
-                notes: current_version.notes.as_deref(),
-                version_source: "enrichment",
-            };
+            let new_version = NewRecipeVersion::copy_of(&current_version, "enrichment");
 
             // 2. Carry existing tags forward and add the AI-suggested ones
             let new_version_id = create_new_version(

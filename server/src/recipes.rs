@@ -70,11 +70,11 @@ pub fn create_new_version(
 /// Like [`create_new_version`], but repoints only if `current_version_id`
 /// still equals `expected_current` and the recipe is not soft-deleted;
 /// otherwise returns [`VersionWriteError::Stale`], which rolls back the
-/// caller's transaction.
+/// caller's transaction. Tags are always carried forward from the version
+/// being replaced.
 pub fn create_new_version_cas(
     conn: &mut PgConnection,
     new_version: &NewRecipeVersion<'_>,
-    tags: TagSource<'_>,
     expected_current: Option<Uuid>,
 ) -> Result<Uuid, VersionWriteError> {
     let version_id = insert_version_row(conn, new_version)?;
@@ -92,7 +92,10 @@ pub fn create_new_version_cas(
         return Err(VersionWriteError::Stale);
     }
 
-    apply_tags(conn, version_id, tags)?;
+    // The CAS matched, so expected_current is the version we just replaced.
+    if let Some(old_version_id) = expected_current {
+        copy_recipe_version_tags(conn, old_version_id, version_id)?;
+    }
     Ok(version_id)
 }
 
@@ -128,7 +131,7 @@ fn apply_tags(conn: &mut PgConnection, version_id: Uuid, tags: TagSource<'_>) ->
 }
 
 /// Copy every tag link from `old_version_id` onto `new_version_id`.
-pub fn copy_recipe_version_tags(
+fn copy_recipe_version_tags(
     conn: &mut PgConnection,
     old_version_id: Uuid,
     new_version_id: Uuid,
@@ -138,11 +141,7 @@ pub fn copy_recipe_version_tags(
         .select(recipe_version_tags::tag_id)
         .load(conn)?;
 
-    for tag_id in existing_tag_ids {
-        link_tag(conn, new_version_id, tag_id)?;
-    }
-
-    Ok(())
+    link_tags(conn, new_version_id, existing_tag_ids)
 }
 
 fn link_tags_by_name(
@@ -151,19 +150,25 @@ fn link_tags_by_name(
     user_id: Uuid,
     names: &[String],
 ) -> QueryResult<()> {
-    for name in names {
-        let tag_id = upsert_user_tag(conn, user_id, name)?;
-        link_tag(conn, version_id, tag_id)?;
-    }
-    Ok(())
+    let tag_ids = names
+        .iter()
+        .map(|name| upsert_user_tag(conn, user_id, name))
+        .collect::<QueryResult<Vec<Uuid>>>()?;
+
+    link_tags(conn, version_id, tag_ids)
 }
 
-fn link_tag(conn: &mut PgConnection, version_id: Uuid, tag_id: Uuid) -> QueryResult<()> {
-    diesel::insert_into(recipe_version_tags::table)
-        .values(RecipeVersionTag {
+fn link_tags(conn: &mut PgConnection, version_id: Uuid, tag_ids: Vec<Uuid>) -> QueryResult<()> {
+    let rows: Vec<RecipeVersionTag> = tag_ids
+        .into_iter()
+        .map(|tag_id| RecipeVersionTag {
             recipe_version_id: version_id,
             tag_id,
         })
+        .collect();
+
+    diesel::insert_into(recipe_version_tags::table)
+        .values(&rows)
         .on_conflict_do_nothing()
         .execute(conn)?;
     Ok(())

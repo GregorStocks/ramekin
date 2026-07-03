@@ -4,7 +4,7 @@ use crate::db::DbPool;
 use crate::get_conn;
 use crate::models::{Ingredient, NewPhoto, NewRecipeVersion};
 use crate::photos::processing::{process_image, MAX_FILE_SIZE};
-use crate::recipes::{create_new_version_cas, TagSource, VersionWriteError};
+use crate::recipes::{create_new_version_cas, VersionWriteError};
 use crate::schema::{photos, recipe_versions, recipes};
 use axum::{
     extract::{Path, State},
@@ -24,27 +24,6 @@ use uuid::Uuid;
 pub struct GeneratePhotoResponse {
     pub photo_id: Uuid,
     pub version_id: Uuid,
-}
-
-#[derive(Debug)]
-enum GeneratePhotoWriteError {
-    Db(diesel::result::Error),
-    StaleVersion,
-}
-
-impl From<diesel::result::Error> for GeneratePhotoWriteError {
-    fn from(value: diesel::result::Error) -> Self {
-        Self::Db(value)
-    }
-}
-
-impl From<VersionWriteError> for GeneratePhotoWriteError {
-    fn from(value: VersionWriteError) -> Self {
-        match value {
-            VersionWriteError::Stale => Self::StaleVersion,
-            VersionWriteError::Db(e) => Self::Db(e),
-        }
-    }
 }
 
 #[allow(clippy::type_complexity)]
@@ -260,7 +239,7 @@ pub async fn generate_photo(
         }
     };
 
-    let write_result: Result<(Uuid, Uuid), GeneratePhotoWriteError> = conn.transaction(|conn| {
+    let write_result: Result<(Uuid, Uuid), VersionWriteError> = conn.transaction(|conn| {
         let current: CurrentVersionRow = recipes::table
             .inner_join(
                 recipe_versions::table.on(recipe_versions::id
@@ -291,8 +270,8 @@ pub async fn generate_photo(
             ))
             .first(conn)
             .map_err(|e| match e {
-                diesel::result::Error::NotFound => GeneratePhotoWriteError::StaleVersion,
-                other => GeneratePhotoWriteError::Db(other),
+                diesel::result::Error::NotFound => VersionWriteError::Stale,
+                other => VersionWriteError::Db(other),
             })?;
 
         let (
@@ -316,7 +295,7 @@ pub async fn generate_photo(
         ) = current;
 
         if current_version_id != Some(source_version_id) {
-            return Err(GeneratePhotoWriteError::StaleVersion);
+            return Err(VersionWriteError::Stale);
         }
 
         let new_photo = NewPhoto {
@@ -333,7 +312,7 @@ pub async fn generate_photo(
             .values(&new_photo)
             .returning(photos::id)
             .get_result(conn)
-            .map_err(GeneratePhotoWriteError::Db)?;
+            .map_err(VersionWriteError::Db)?;
 
         let mut new_photo_ids = Vec::with_capacity(current_photo_ids.len() + 1);
         new_photo_ids.push(Some(photo_id));
@@ -361,12 +340,7 @@ pub async fn generate_photo(
 
         // Compare-and-swap: only repoint if current_version_id still matches
         // the version we generated the photo for.
-        let new_version_id = create_new_version_cas(
-            conn,
-            &new_version,
-            TagSource::CopyFrom(source_version_id),
-            Some(source_version_id),
-        )?;
+        let new_version_id = create_new_version_cas(conn, &new_version, Some(source_version_id))?;
 
         Ok((photo_id, new_version_id))
     });
@@ -380,10 +354,10 @@ pub async fn generate_photo(
             }),
         )
             .into_response(),
-        Err(GeneratePhotoWriteError::StaleVersion) => {
+        Err(VersionWriteError::Stale) => {
             ApiError::conflict("Recipe changed while generating photo; try again").into_response()
         }
-        Err(GeneratePhotoWriteError::Db(e)) => {
+        Err(VersionWriteError::Db(e)) => {
             tracing::error!("Failed to persist generated recipe photo: {}", e);
             ApiError::internal("Failed to save generated photo").into_response()
         }

@@ -219,10 +219,7 @@ pub async fn normalize_title(
             .select(recipes::current_version_id)
             .first(conn)?;
 
-        let tag_source = match old_version_id {
-            Some(old_vid) => TagSource::CopyFrom(old_vid),
-            None => TagSource::None,
-        };
+        let tag_source = old_version_id.map_or(TagSource::None, TagSource::CopyFrom);
         create_new_version(conn, &new_version, tag_source)?;
 
         Ok(())

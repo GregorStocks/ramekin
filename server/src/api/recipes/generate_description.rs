@@ -3,7 +3,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
 use crate::models::{Ingredient, NewRecipeVersion};
-use crate::recipes::{create_new_version_cas, TagSource, VersionWriteError};
+use crate::recipes::{create_new_version_cas, VersionWriteError};
 use crate::schema::{recipe_versions, recipes};
 use axum::{
     extract::{Path, State},
@@ -221,11 +221,7 @@ pub async fn generate_description(
 
         // Compare-and-swap: only repoint if current_version_id hasn't changed
         // since our initial read, preventing overwrites of concurrent edits.
-        let tag_source = match version_id_snapshot {
-            Some(old_vid) => TagSource::CopyFrom(old_vid),
-            None => TagSource::None,
-        };
-        create_new_version_cas(conn, &new_version, tag_source, version_id_snapshot)?;
+        create_new_version_cas(conn, &new_version, version_id_snapshot)?;
 
         Ok(())
     });
