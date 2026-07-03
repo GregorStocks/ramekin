@@ -9,6 +9,7 @@ use regex::Regex;
 use serde::{Deserialize, Serialize};
 
 use crate::metric_weights::parse_amount;
+use crate::text::decode_html_entities;
 
 mod amounts;
 mod item;

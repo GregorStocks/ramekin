@@ -4,6 +4,7 @@ use regex::Regex;
 
 use crate::error::ExtractError;
 use crate::ingredient_parser::detect_section_header;
+pub(crate) use crate::text::{decode_html_entities, fragment_to_text};
 use crate::types::{ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod, RawRecipe};
 use scraper::{ElementRef, Html, Selector};
 
@@ -390,23 +391,8 @@ fn extract_source_name(url: &str) -> Option<String> {
     })
 }
 
-/// Regex to strip HTML tags for extracting text from raw HTML fragments.
-static HTML_TAG_REGEX: LazyLock<Regex> =
-    LazyLock::new(|| Regex::new(r"<[^>]+>").expect("Invalid HTML tag regex"));
-
 static LI_SELECTOR: LazyLock<Selector> =
     LazyLock::new(|| Selector::parse("li").expect("li selector"));
-
-/// Decode HTML entities using the html-escape crate.
-/// Also handles double-encoded entities like "&amp;#8531;" by decoding twice.
-fn decode_html_entities(text: &str) -> String {
-    // First pass: decode entities (this handles &amp; -> & among others)
-    let decoded = html_escape::decode_html_entities(text);
-    // Second pass: decode again to handle double-encoded entities
-    // e.g., "&amp;#8531;" -> "&#8531;" -> "⅓"
-    let decoded = html_escape::decode_html_entities(&decoded);
-    decoded.into_owned()
-}
 
 /// Partial recipe data extracted leniently (missing required fields are None, not errors).
 struct PartialRecipe {

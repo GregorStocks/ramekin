@@ -13,6 +13,7 @@ pub mod ingredient_parser;
 pub mod metric_weights;
 pub mod pipeline;
 pub mod tags;
+pub(crate) mod text;
 pub mod types;
 pub mod volume_to_weight;
 

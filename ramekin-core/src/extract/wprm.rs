@@ -98,9 +98,8 @@ pub(super) fn clean_wprm_instruction_text(inner_html: &str) -> Option<String> {
     let html = WPRM_STICKY_NOTE_TEXT_REGEX.replace_all(inner_html, "");
     let html = WPRM_STICKY_NOTE_WRAPPER_REGEX.replace_all(&html, "");
     let html = WPRM_BLOCK_BOUNDARY_REGEX.replace_all(&html, " ");
-    let text = HTML_TAG_REGEX.replace_all(&html, "");
-    let text = decode_html_entities(text.trim());
-    let text = normalize_wprm_text(&text);
+    // Instruction steps are single-line: collapse newlines too.
+    let text = normalize_wprm_text(&fragment_to_text(&html));
     if text.is_empty() {
         None
     } else {

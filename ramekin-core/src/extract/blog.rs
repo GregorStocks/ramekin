@@ -49,13 +49,12 @@ pub(super) fn looks_like_lookback_links_chunk(chunk: &str) -> bool {
     let mut lookback_lines = 0;
     let mut text_lines = 0;
     for line in &lines {
-        let text = HTML_TAG_REGEX.replace_all(line, "");
-        let text = text.trim();
+        let text = fragment_to_text(line);
         if text.is_empty() {
             continue;
         }
         text_lines += 1;
-        if LOOKBACK_LINK_LINE_REGEX.is_match(text) {
+        if LOOKBACK_LINK_LINE_REGEX.is_match(&text) {
             lookback_lines += 1;
         }
     }
@@ -92,8 +91,7 @@ pub(super) fn has_instruction_paragraph_between(
             continue;
         }
 
-        let text = HTML_TAG_REGEX.replace_all(chunk, "");
-        let text = text.trim();
+        let text = fragment_to_text(chunk);
         if text.is_empty() {
             continue;
         }
@@ -173,8 +171,7 @@ pub(super) fn underlined_section_title(title: &str) -> Option<String> {
 }
 
 pub(super) fn extract_underlined_section_title(part: &str, header: &str) -> Option<String> {
-    let text = HTML_TAG_REGEX.replace_all(part, "");
-    let text = decode_html_entities(text.trim());
+    let text = fragment_to_text(part);
     let suffix = text.strip_prefix(header)?.trim();
 
     if !suffix.is_empty() && !TRAILING_TITLE_QUALIFIER_RE.is_match(suffix) {
@@ -338,8 +335,7 @@ pub(super) fn extract_recipe_from_unstructured_blog(
                 break;
             }
 
-            let text = HTML_TAG_REGEX.replace_all(chunk, "");
-            let text = text.trim();
+            let text = fragment_to_text(chunk);
             if text.is_empty() {
                 continue;
             }
@@ -359,10 +355,7 @@ pub(super) fn extract_recipe_from_unstructured_blog(
                 }
             }
 
-            let decoded = decode_html_entities(text);
-            if !decoded.is_empty() {
-                block_paragraphs.push(decoded);
-            }
+            block_paragraphs.push(text);
         }
 
         if block_paragraphs.is_empty() {
@@ -392,10 +385,9 @@ pub(super) fn extract_recipe_from_unstructured_blog(
         if chunk.is_empty() {
             continue;
         }
-        let text = HTML_TAG_REGEX.replace_all(chunk, "");
-        let text = text.trim().to_lowercase();
+        let text = fragment_to_text(chunk).to_lowercase();
         if text.starts_with("makes ") || text.starts_with("serves ") || text.starts_with("yield") {
-            servings = Some(decode_html_entities(text.trim()));
+            servings = Some(text);
             break;
         }
         // Only look back a couple chunks from ingredients
@@ -739,16 +731,17 @@ pub(super) fn extract_recipe_from_virtualweberbullet(
             }
             "p" => {
                 let inner = el.inner_html();
-                let stripped = HTML_TAG_REGEX.replace_all(&inner, "");
-                let text = decode_html_entities(stripped.trim());
+                let text = fragment_to_text(&inner);
                 if text.is_empty() {
                     flush_pending_strong!();
                     continue;
                 }
 
+                // Normalize like `text` above so the strong-only-paragraph
+                // equality check isn't broken by &nbsp; or doubled spaces.
                 let strong_text = el.select(&STRONG_SELECTOR).next().map(|s| {
                     let raw: String = s.text().collect();
-                    decode_html_entities(raw.trim())
+                    fragment_to_text(&raw)
                 });
                 if let Some(stext) = strong_text.as_ref() {
                     if !stext.is_empty() && stext == &text {
@@ -868,8 +861,7 @@ pub(super) fn looks_like_ingredient_list(chunk: &str) -> bool {
     let mut long_lines = 0;
 
     for line in &lines {
-        let text = HTML_TAG_REGEX.replace_all(line, "");
-        let text = text.trim();
+        let text = fragment_to_text(line);
         if text.is_empty() {
             continue;
         }
@@ -880,7 +872,7 @@ pub(super) fn looks_like_ingredient_list(chunk: &str) -> bool {
         }
 
         // A line looks like an ingredient if it matches quantity patterns
-        if text.len() < 300 && INGREDIENT_QUANTITY_REGEX.is_match(text) {
+        if text.len() < 300 && INGREDIENT_QUANTITY_REGEX.is_match(&text) {
             quantity_lines += 1;
         }
     }
@@ -910,13 +902,10 @@ pub(super) fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<S
             continue;
         }
 
-        let u_cap = UNDERLINE_TEXT_REGEX.captures(part);
-
-        if let Some(cap) = u_cap {
+        if let Some(cap) = UNDERLINE_TEXT_REGEX.captures(part) {
             let header = cap.get(1).unwrap().as_str().trim();
             let after_u = UNDERLINE_TEXT_REGEX.replace(part, "");
-            let after_text = HTML_TAG_REGEX.replace_all(&after_u, "");
-            let after_text = after_text.trim();
+            let after_text = fragment_to_text(&after_u);
 
             // A section header is a `<u>…</u>` that (a) leads the chunk
             // before any actual text line and (b) owns its line entirely.
@@ -927,7 +916,10 @@ pub(super) fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<S
             // it as a header when the suffix is just a trailing qualifier
             // like "(enough for 9 tarts)".
             if !seen_text_line && !header.is_empty() {
-                let decoded = decode_html_entities(header);
+                // Normalize like the fragment_to_text(part) inside
+                // extract_underlined_section_title, so strip_prefix isn't
+                // broken by &nbsp; or doubled spaces in the header.
+                let decoded = fragment_to_text(header);
                 let section_title = if after_text.is_empty() {
                     underlined_section_title(&decoded)
                 } else {
@@ -944,22 +936,14 @@ pub(super) fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<S
                     continue;
                 }
             }
+        }
 
-            // Inline emphasis or non-leading <u>: keep as a plain ingredient
-            // line.
-            let text = HTML_TAG_REGEX.replace_all(part, "");
-            let text = text.trim();
-            if !text.is_empty() {
-                lines.push(decode_html_entities(text));
-                seen_text_line = true;
-            }
-        } else {
-            let text = HTML_TAG_REGEX.replace_all(part, "");
-            let text = text.trim();
-            if !text.is_empty() {
-                lines.push(decode_html_entities(text));
-                seen_text_line = true;
-            }
+        // Inline emphasis, non-leading <u>, or no <u> at all: keep as a
+        // plain ingredient line.
+        let text = fragment_to_text(part);
+        if !text.is_empty() {
+            lines.push(text);
+            seen_text_line = true;
         }
     }
 }
@@ -1114,6 +1098,56 @@ mod tests {
         assert!(!result
             .ingredients
             .contains("Cinnamon Filling (enough for 9 tarts)"));
+    }
+
+    #[test]
+    fn test_unstructured_blog_u_header_with_nbsp_and_qualifier() {
+        // &nbsp; in the <u> header must not break the prefix match that
+        // separates the header from its trailing qualifier.
+        let html = r#"
+            <html><body>
+                <p><b>Homemade Pop Tarts</b></p>
+                <p><u>Cinnamon&nbsp;Filling</u> (enough for 9 tarts)<br />1/2 cup brown sugar<br />1 teaspoon cinnamon</p>
+                <p>Mix and bake.</p>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://smittenkitchen.com/recipe").unwrap();
+        let ingredient_lines: Vec<&str> = result.ingredients.lines().collect();
+
+        assert_eq!(ingredient_lines[0], "Cinnamon Filling:");
+        assert_eq!(ingredient_lines[1], "1/2 cup brown sugar");
+    }
+
+    #[test]
+    fn test_virtualweberbullet_strong_header_with_nbsp() {
+        // &nbsp; in a strong-only header paragraph must not break the
+        // strong-text == paragraph-text equality check that turns the
+        // following <ul> into an ingredient list.
+        let html = r#"
+            <html><body>
+                <h1 class="headline">Test Ribs</h1>
+                <div class="post_content">
+                    <p><strong>The&nbsp;Rub</strong></p>
+                    <ul><li>1/4 cup paprika</li><li>2 tablespoons salt</li></ul>
+                    <h2>Fire The Cooker</h2>
+                    <p>Light the charcoal and cook the ribs.</p>
+                </div>
+            </body></html>
+        "#;
+        let document = Html::parse_document(html);
+
+        let recipe = extract_recipe_from_virtualweberbullet(
+            html,
+            &document,
+            "https://www.virtualweberbullet.com/test-ribs",
+        )
+        .expect("should extract a recipe");
+
+        let ingredient_lines: Vec<&str> = recipe.ingredients.lines().collect();
+        assert_eq!(ingredient_lines[0], "The Rub:");
+        assert_eq!(ingredient_lines[1], "1/4 cup paprika");
+        assert_eq!(ingredient_lines[2], "2 tablespoons salt");
     }
 
     #[test]
