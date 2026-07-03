@@ -3,6 +3,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
 use crate::models::{Ingredient, NewRecipeVersion};
+use crate::recipes::{create_new_version, TagSource};
 use crate::schema::{recipe_versions, recipes};
 use axum::{
     extract::{Path, State},
@@ -218,32 +219,8 @@ pub async fn normalize_title(
             .select(recipes::current_version_id)
             .first(conn)?;
 
-        let new_version_id: Uuid = diesel::insert_into(recipe_versions::table)
-            .values(&new_version)
-            .returning(recipe_versions::id)
-            .get_result(conn)?;
-
-        diesel::update(recipes::table.find(recipe_id))
-            .set(recipes::current_version_id.eq(new_version_id))
-            .execute(conn)?;
-
-        // Carry over tags from the previous version
-        if let Some(old_vid) = old_version_id {
-            use crate::schema::recipe_version_tags;
-            let old_tag_ids: Vec<Uuid> = recipe_version_tags::table
-                .filter(recipe_version_tags::recipe_version_id.eq(old_vid))
-                .select(recipe_version_tags::tag_id)
-                .load(conn)?;
-            for tag_id in old_tag_ids {
-                diesel::insert_into(recipe_version_tags::table)
-                    .values(crate::models::RecipeVersionTag {
-                        recipe_version_id: new_version_id,
-                        tag_id,
-                    })
-                    .on_conflict_do_nothing()
-                    .execute(conn)?;
-            }
-        }
+        let tag_source = old_version_id.map_or(TagSource::None, TagSource::CopyFrom);
+        create_new_version(conn, &new_version, tag_source)?;
 
         Ok(())
     });

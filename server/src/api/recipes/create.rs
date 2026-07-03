@@ -2,9 +2,8 @@ use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
-use crate::models::{NewRecipe, NewRecipeVersion, RecipeVersionTag};
-use crate::schema::{recipe_version_tags, recipe_versions, recipes};
-use crate::tags::upsert_user_tag;
+use crate::models::NewRecipeVersion;
+use crate::recipes::{create_new_version, insert_recipe, TagSource};
 use crate::types::RecipeContent;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
@@ -83,15 +82,8 @@ pub async fn create_recipe(
 
     // Use a transaction to create recipe + version atomically
     let result: Result<Uuid, diesel::result::Error> = conn.transaction(|conn| {
-        // 1. Create the recipe row
-        let new_recipe = NewRecipe { user_id: user.id };
+        let recipe_id = insert_recipe(conn, user.id)?;
 
-        let recipe_id: Uuid = diesel::insert_into(recipes::table)
-            .values(&new_recipe)
-            .returning(recipes::id)
-            .get_result(conn)?;
-
-        // 2. Create the initial version
         let new_version = NewRecipeVersion {
             recipe_id,
             title: &request.content.title,
@@ -112,29 +104,14 @@ pub async fn create_recipe(
             version_source: "user",
         };
 
-        let version_id: Uuid = diesel::insert_into(recipe_versions::table)
-            .values(&new_version)
-            .returning(recipe_versions::id)
-            .get_result(conn)?;
-
-        // 3. Update recipe to point to this version
-        diesel::update(recipes::table.find(recipe_id))
-            .set(recipes::current_version_id.eq(version_id))
-            .execute(conn)?;
-
-        // 4. Handle tags: upsert into user_tags and insert into junction table
-        for tag_name in &tags {
-            let tag_id = upsert_user_tag(conn, user.id, tag_name)?;
-
-            // Insert into junction table
-            diesel::insert_into(recipe_version_tags::table)
-                .values(RecipeVersionTag {
-                    recipe_version_id: version_id,
-                    tag_id,
-                })
-                .on_conflict_do_nothing()
-                .execute(conn)?;
-        }
+        create_new_version(
+            conn,
+            &new_version,
+            TagSource::Names {
+                user_id: user.id,
+                names: &tags,
+            },
+        )?;
 
         Ok(recipe_id)
     });

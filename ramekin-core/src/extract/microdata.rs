@@ -2,39 +2,47 @@
 
 use super::*;
 
+/// The Recipe container element; both http and https schema.org URLs.
+static RECIPE_CONTAINER_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse(
+        r#"[itemtype="http://schema.org/Recipe"], [itemtype="https://schema.org/Recipe"]"#,
+    )
+    .expect("recipe container selector")
+});
+
+static INGREDIENT_ITEMPROP_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse(r#"[itemprop="recipeIngredient"], [itemprop="ingredients"]"#)
+        .expect("ingredient itemprop selector")
+});
+
+static INSTRUCTIONS_ITEMPROP_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse(r#"[itemprop="recipeInstructions"], [itemprop="instructions"]"#)
+        .expect("instructions itemprop selector")
+});
+
 /// Extract recipe from schema.org microdata markup.
 /// This is a fallback for sites that don't use JSON-LD but have microdata attributes.
 pub(super) fn extract_recipe_from_microdata(
     document: &Html,
     source_url: &str,
 ) -> Result<RawRecipe, ExtractError> {
-    // Find the Recipe container element
-    // Try both http and https schema.org URLs
-    let recipe_selector = Selector::parse(
-        r#"[itemtype="http://schema.org/Recipe"], [itemtype="https://schema.org/Recipe"]"#,
-    )
-    .expect("Invalid selector");
-
     let recipe_element = document
-        .select(&recipe_selector)
+        .select(&RECIPE_CONTAINER_SELECTOR)
         .next()
         .ok_or(ExtractError::NoRecipe)?;
 
     // Extract title from itemprop="name"
-    let title = extract_microdata_text(&recipe_element, "name")
+    let title = extract_microdata_text(&recipe_element, &NAME_ITEMPROP_SELECTOR)
         .ok_or_else(|| ExtractError::MissingField("name".to_string()))?;
     let title = decode_html_entities(&title);
 
     // Extract description (optional)
-    let description =
-        extract_microdata_text(&recipe_element, "description").map(|s| decode_html_entities(&s));
+    let description = extract_microdata_text(&recipe_element, &DESCRIPTION_ITEMPROP_SELECTOR)
+        .map(|s| decode_html_entities(&s));
 
     // Extract ingredients
-    let ingredient_selector =
-        Selector::parse(r#"[itemprop="recipeIngredient"], [itemprop="ingredients"]"#)
-            .expect("Invalid selector");
     let ingredients: Vec<String> = recipe_element
-        .select(&ingredient_selector)
+        .select(&INGREDIENT_ITEMPROP_SELECTOR)
         .filter_map(|el| sanitize_extracted_ingredient(&el.text().collect::<String>()))
         .collect();
     let ingredients = split_and_dedup_ingredients(ingredients);
@@ -58,7 +66,7 @@ pub(super) fn extract_recipe_from_microdata(
     }
 
     let source_name = extract_source_name(source_url);
-    let servings = extract_microdata_text(&recipe_element, "recipeYield");
+    let servings = extract_microdata_text(&recipe_element, &YIELD_ITEMPROP_SELECTOR);
 
     let ingredients_str = decode_html_entities(&ingredients.join("\n"));
     let footnotes = if ingredients_str.contains('*') {
@@ -88,11 +96,23 @@ pub(super) fn extract_recipe_from_microdata(
     })
 }
 
-/// Extract text content from an element with the given itemprop.
-pub(super) fn extract_microdata_text(element: &scraper::ElementRef, prop: &str) -> Option<String> {
-    let selector =
-        Selector::parse(&format!(r#"[itemprop="{}"]"#, prop)).expect("itemprop selector");
-    element.select(&selector).next().map(|el| {
+static NAME_ITEMPROP_SELECTOR: LazyLock<Selector> =
+    LazyLock::new(|| Selector::parse(r#"[itemprop="name"]"#).expect("itemprop name selector"));
+
+static DESCRIPTION_ITEMPROP_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse(r#"[itemprop="description"]"#).expect("itemprop description selector")
+});
+
+static YIELD_ITEMPROP_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse(r#"[itemprop="recipeYield"]"#).expect("itemprop recipeYield selector")
+});
+
+/// Extract text content from an element matching the given itemprop selector.
+pub(super) fn extract_microdata_text(
+    element: &scraper::ElementRef,
+    selector: &Selector,
+) -> Option<String> {
+    element.select(selector).next().map(|el| {
         // Check for content attribute first (common for meta tags)
         if let Some(content) = el.value().attr("content") {
             content.trim().to_string()
@@ -102,22 +122,34 @@ pub(super) fn extract_microdata_text(element: &scraper::ElementRef, prop: &str) 
     })
 }
 
+static INSTRUCTION_STEP_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse(
+        r#"[itemprop="recipeInstructions"], [itemprop="instructions"], [itemtype*="HowToStep"]"#,
+    )
+    .expect("instruction step selector")
+});
+
+/// Text property inside HowToStep
+static TEXT_ITEMPROP_SELECTOR: LazyLock<Selector> =
+    LazyLock::new(|| Selector::parse(r#"[itemprop="text"]"#).expect("itemprop text selector"));
+
+/// Fallback: h-recipe microformat classes (used by Jetpack and others).
+static INSTRUCTION_CLASS_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse(
+        r#".e-instructions, .instructions, .recipe-instructions, .jetpack-recipe-directions, .recipe-directions"#,
+    )
+    .expect("instruction class selector")
+});
+
 /// Extract instructions from microdata.
 pub(super) fn extract_microdata_instructions(
     recipe_element: &scraper::ElementRef,
 ) -> Result<String, ExtractError> {
     // Try to find instruction elements using schema.org microdata
-    let step_selector = Selector::parse(
-        r#"[itemprop="recipeInstructions"], [itemprop="instructions"], [itemtype*="HowToStep"]"#,
-    )
-    .expect("Invalid selector");
-
-    // Text property inside HowToStep
-    let text_selector = Selector::parse(r#"[itemprop="text"]"#).expect("itemprop text selector");
     let steps: Vec<String> = recipe_element
-        .select(&step_selector)
+        .select(&INSTRUCTION_STEP_SELECTOR)
         .map(|el| {
-            if let Some(text_el) = el.select(&text_selector).next() {
+            if let Some(text_el) = el.select(&TEXT_ITEMPROP_SELECTOR).next() {
                 return text_el.text().collect::<String>().trim().to_string();
             }
             el.text().collect::<String>().trim().to_string()
@@ -131,13 +163,8 @@ pub(super) fn extract_microdata_instructions(
 
     // Fallback: Try h-recipe microformat class (used by Jetpack and others)
     // Look for elements with class containing "instructions" or "directions"
-    let class_selector = Selector::parse(
-        r#".e-instructions, .instructions, .recipe-instructions, .jetpack-recipe-directions, .recipe-directions"#,
-    )
-    .expect("Invalid selector");
-
     let instructions: Vec<String> = recipe_element
-        .select(&class_selector)
+        .select(&INSTRUCTION_CLASS_SELECTOR)
         .map(|el| el.text().collect::<String>().trim().to_string())
         .filter(|s| !s.is_empty())
         .collect();
@@ -151,12 +178,13 @@ pub(super) fn extract_microdata_instructions(
     ))
 }
 
+static IMAGE_ITEMPROP_SELECTOR: LazyLock<Selector> =
+    LazyLock::new(|| Selector::parse(r#"[itemprop="image"]"#).expect("itemprop image selector"));
+
 /// Extract image URLs from microdata.
 pub(super) fn extract_microdata_images(recipe_element: &scraper::ElementRef) -> Vec<String> {
-    let image_selector = Selector::parse(r#"[itemprop="image"]"#).expect("Invalid selector");
-
     recipe_element
-        .select(&image_selector)
+        .select(&IMAGE_ITEMPROP_SELECTOR)
         .filter_map(|el| {
             // Check src attribute for img tags
             if let Some(src) = el.value().attr("src") {
@@ -177,12 +205,7 @@ pub(super) fn extract_microdata_images(recipe_element: &scraper::ElementRef) -> 
 
 /// Extract whatever we can from microdata without failing on missing required fields.
 pub(super) fn extract_partial_from_microdata(document: &Html) -> PartialRecipe {
-    let recipe_selector = Selector::parse(
-        r#"[itemtype="http://schema.org/Recipe"], [itemtype="https://schema.org/Recipe"]"#,
-    )
-    .expect("Invalid selector");
-
-    let recipe_element = match document.select(&recipe_selector).next() {
+    let recipe_element = match document.select(&RECIPE_CONTAINER_SELECTOR).next() {
         Some(el) => el,
         None => {
             return PartialRecipe {
@@ -196,14 +219,11 @@ pub(super) fn extract_partial_from_microdata(document: &Html) -> PartialRecipe {
         }
     };
 
-    let title = extract_microdata_text(&recipe_element, "name");
-    let description = extract_microdata_text(&recipe_element, "description");
+    let title = extract_microdata_text(&recipe_element, &NAME_ITEMPROP_SELECTOR);
+    let description = extract_microdata_text(&recipe_element, &DESCRIPTION_ITEMPROP_SELECTOR);
 
-    let ingredient_selector =
-        Selector::parse(r#"[itemprop="recipeIngredient"], [itemprop="ingredients"]"#)
-            .expect("Invalid selector");
     let ingredients_vec: Vec<String> = recipe_element
-        .select(&ingredient_selector)
+        .select(&INGREDIENT_ITEMPROP_SELECTOR)
         .map(|el| el.text().collect::<String>().trim().to_string())
         .filter(|s| !s.is_empty())
         .collect();
@@ -217,7 +237,7 @@ pub(super) fn extract_partial_from_microdata(document: &Html) -> PartialRecipe {
     let instructions = extract_microdata_instructions(&recipe_element).ok();
 
     let image_urls = extract_microdata_images(&recipe_element);
-    let servings = extract_microdata_text(&recipe_element, "recipeYield");
+    let servings = extract_microdata_text(&recipe_element, &YIELD_ITEMPROP_SELECTOR);
 
     PartialRecipe {
         title,
@@ -233,10 +253,8 @@ pub(super) fn extract_partial_from_microdata(document: &Html) -> PartialRecipe {
 /// regardless of whether they're inside an itemscope container.
 /// Handles malformed HTML where ingredients fall outside the Recipe scope.
 pub(super) fn extract_ingredients_from_itemprop_unscoped(document: &Html) -> Option<String> {
-    let selector = Selector::parse(r#"[itemprop="recipeIngredient"], [itemprop="ingredients"]"#)
-        .expect("Invalid selector");
     let ingredients: Vec<String> = document
-        .select(&selector)
+        .select(&INGREDIENT_ITEMPROP_SELECTOR)
         .filter_map(|el| sanitize_extracted_ingredient(&el.text().collect::<String>()))
         .collect();
     let ingredients = split_and_dedup_ingredients(ingredients);
@@ -251,11 +269,8 @@ pub(super) fn extract_ingredients_from_itemprop_unscoped(document: &Html) -> Opt
 /// Search the entire document for instruction elements via itemprop,
 /// regardless of whether they're inside an itemscope container.
 pub(super) fn extract_instructions_from_itemprop_unscoped(document: &Html) -> Option<String> {
-    let selector = Selector::parse(r#"[itemprop="recipeInstructions"], [itemprop="instructions"]"#)
-        .expect("Invalid selector");
-
     let steps: Vec<String> = document
-        .select(&selector)
+        .select(&INSTRUCTIONS_ITEMPROP_SELECTOR)
         .map(|el| el.text().collect::<String>().trim().to_string())
         .filter(|s| !s.is_empty())
         .collect();

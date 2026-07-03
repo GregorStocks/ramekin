@@ -6,6 +6,7 @@ mod db;
 mod models;
 mod photos;
 mod raw_sql;
+mod recipes;
 mod schema;
 mod scraping;
 mod tags;

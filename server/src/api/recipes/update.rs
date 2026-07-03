@@ -2,10 +2,10 @@ use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
-use crate::models::{Ingredient, NewRecipeVersion, RecipeVersionTag};
+use crate::models::{Ingredient, NewRecipeVersion};
 use crate::raw_sql;
-use crate::schema::{recipe_version_tags, recipe_versions, recipes};
-use crate::tags::upsert_user_tag;
+use crate::recipes::{create_new_version, TagSource};
+use crate::schema::{recipe_versions, recipes};
 use axum::{
     extract::{Path, State},
     http::StatusCode,
@@ -242,29 +242,14 @@ pub async fn update_recipe(
             version_source: "user",
         };
 
-        let version_id: Uuid = diesel::insert_into(recipe_versions::table)
-            .values(&new_version)
-            .returning(recipe_versions::id)
-            .get_result(conn)?;
-
-        // Update recipe to point to new version
-        diesel::update(recipes::table.find(recipe_id))
-            .set(recipes::current_version_id.eq(version_id))
-            .execute(conn)?;
-
-        // Handle tags: upsert into user_tags and insert into junction table
-        for tag_name in &new_tags {
-            let tag_id = upsert_user_tag(conn, user.id, tag_name)?;
-
-            // Insert into junction table
-            diesel::insert_into(recipe_version_tags::table)
-                .values(RecipeVersionTag {
-                    recipe_version_id: version_id,
-                    tag_id,
-                })
-                .on_conflict_do_nothing()
-                .execute(conn)?;
-        }
+        create_new_version(
+            conn,
+            &new_version,
+            TagSource::Names {
+                user_id: user.id,
+                names: &new_tags,
+            },
+        )?;
 
         Ok(())
     });
