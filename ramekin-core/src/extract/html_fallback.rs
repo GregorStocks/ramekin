@@ -144,7 +144,7 @@ pub(super) fn extract_ingredients_from_html_classes(document: &Html) -> Option<S
     }
     // Fallback: WPRM without groups
     if let Some(result) =
-        extract_ingredient_items_from_selector(document, &WPRM_INGREDIENT_SELECTOR)
+        extract_ingredient_items_from_selector(document, &wprm::WPRM_INGREDIENT_SELECTOR)
     {
         return Some(result);
     }
@@ -164,10 +164,6 @@ pub(super) fn extract_ingredients_from_html_classes(document: &Html) -> Option<S
     None
 }
 
-/// Extract ingredients from Dotdash Meredith CMS pages (Serious Eats, Simply Recipes,
-/// Allrecipes). Print pages frequently ship without JSON-LD; the recipe is rendered
-/// only via `.structured-ingredients__list-item` lists. Group headers appear as
-/// `.structured-ingredients__list-heading` paragraphs interleaved with the lists.
 static STRUCTURED_INGREDIENTS_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
     Selector::parse(".structured-ingredients").expect("structured ingredients selector")
 });
@@ -177,6 +173,10 @@ static STRUCTURED_HEADING_ITEM_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
         .expect("structured ingredients heading/item selector")
 });
 
+/// Extract ingredients from Dotdash Meredith CMS pages (Serious Eats, Simply Recipes,
+/// Allrecipes). Print pages frequently ship without JSON-LD; the recipe is rendered
+/// only via `.structured-ingredients__list-item` lists. Group headers appear as
+/// `.structured-ingredients__list-heading` paragraphs interleaved with the lists.
 pub(super) fn extract_dotdash_meredith_ingredients(document: &Html) -> Option<String> {
     let mut lines: Vec<String> = Vec::new();
     for container in document.select(&STRUCTURED_INGREDIENTS_SELECTOR) {
@@ -209,11 +209,6 @@ pub(super) fn extract_dotdash_meredith_ingredients(document: &Html) -> Option<St
     }
 }
 
-/// Get the visible text of a Dotdash Meredith ingredient list-item, working
-/// around a CMS quirk: when an ingredient like "1 baguette" has no real unit,
-/// the page renders both `data-ingredient-unit` and `data-ingredient-name`
-/// spans with identical text ("1 baguette baguette"). When that pattern shows
-/// up, drop the duplicated word once.
 static INGREDIENT_UNIT_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
     Selector::parse("[data-ingredient-unit]").expect("data-ingredient-unit selector")
 });
@@ -222,6 +217,11 @@ static INGREDIENT_NAME_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
     Selector::parse("[data-ingredient-name]").expect("data-ingredient-name selector")
 });
 
+/// Get the visible text of a Dotdash Meredith ingredient list-item, working
+/// around a CMS quirk: when an ingredient like "1 baguette" has no real unit,
+/// the page renders both `data-ingredient-unit` and `data-ingredient-name`
+/// spans with identical text ("1 baguette baguette"). When that pattern shows
+/// up, drop the duplicated word once.
 pub(super) fn dotdash_ingredient_item_text(li: &ElementRef<'_>) -> String {
     let raw_text = li.text().collect::<String>();
     let mut result = raw_text.split_whitespace().collect::<Vec<_>>().join(" ");
@@ -260,13 +260,6 @@ pub(super) fn dotdash_ingredient_item_text(li: &ElementRef<'_>) -> String {
     result
 }
 
-/// Extract Jetpack recipe ingredients with group headers.
-///
-/// Jetpack structures ingredients inside a `.jetpack-recipe-ingredients` container
-/// with `<h5>` (or other heading) elements as group headers interleaved with
-/// `.jetpack-recipe-ingredient` list items. Microdata extraction only picks up
-/// the `[itemprop]` items, losing the headings. This function walks the container's
-/// children to recover the group structure.
 static JETPACK_INGREDIENTS_CONTAINER_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
     Selector::parse(".jetpack-recipe-ingredients").expect("jetpack ingredients selector")
 });
@@ -279,6 +272,13 @@ static JETPACK_HEADING_INGREDIENT_SELECTOR: LazyLock<Selector> = LazyLock::new(|
         .expect("jetpack heading/ingredient selector")
 });
 
+/// Extract Jetpack recipe ingredients with group headers.
+///
+/// Jetpack structures ingredients inside a `.jetpack-recipe-ingredients` container
+/// with `<h5>` (or other heading) elements as group headers interleaved with
+/// `.jetpack-recipe-ingredient` list items. Microdata extraction only picks up
+/// the `[itemprop]` items, losing the headings. This function walks the container's
+/// children to recover the group structure.
 pub(super) fn extract_jetpack_ingredients_with_groups(document: &Html) -> Option<String> {
     let container = document
         .select(&JETPACK_INGREDIENTS_CONTAINER_SELECTOR)
@@ -324,9 +324,6 @@ static JETPACK_INGREDIENT_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
     Selector::parse(".jetpack-recipe-ingredient").expect("jetpack ingredient selector")
 });
 
-static WPRM_INGREDIENT_SELECTOR: LazyLock<Selector> =
-    LazyLock::new(|| Selector::parse(".wprm-recipe-ingredient").expect("wprm ingredient selector"));
-
 static TASTY_INGREDIENT_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
     Selector::parse(".tasty-recipe-ingredients li").expect("tasty ingredient selector")
 });
@@ -349,9 +346,6 @@ pub(super) fn extract_ingredient_items_from_selector(
     }
 }
 
-/// Extract ingredients from a `<div class="ingredients">` container.
-/// Handles the old WordPress recipe format where ingredients are in `<p>` tags
-/// separated by `<br>` elements, with optional `<h4>` section headers.
 static INGREDIENTS_DIV_SELECTOR: LazyLock<Selector> =
     LazyLock::new(|| Selector::parse("div.ingredients").expect("div.ingredients selector"));
 
@@ -360,6 +354,9 @@ static INGREDIENT_DIV_SPLIT_REGEX: LazyLock<Regex> = LazyLock::new(|| {
     Regex::new(r"(?i)<br\s*/?>|</p>\s*<p>|</?p>").expect("Invalid ingredient div split regex")
 });
 
+/// Extract ingredients from a `<div class="ingredients">` container.
+/// Handles the old WordPress recipe format where ingredients are in `<p>` tags
+/// separated by `<br>` elements, with optional `<h4>` section headers.
 pub(super) fn extract_ingredients_from_div(document: &Html) -> Option<String> {
     let div = document.select(&INGREDIENTS_DIV_SELECTOR).next()?;
 
@@ -395,8 +392,6 @@ pub(super) fn extract_ingredients_from_div(document: &Html) -> Option<String> {
     }
 }
 
-/// Extract instructions from common recipe plugin HTML classes.
-/// Searches the entire document (not scoped to a microdata container).
 static INSTRUCTION_FALLBACK_SELECTORS: LazyLock<[Selector; 5]> = LazyLock::new(|| {
     [
         ".jetpack-recipe-directions",
@@ -408,6 +403,8 @@ static INSTRUCTION_FALLBACK_SELECTORS: LazyLock<[Selector; 5]> = LazyLock::new(|
     .map(|s| Selector::parse(s).expect("instructions fallback selector"))
 });
 
+/// Extract instructions from common recipe plugin HTML classes.
+/// Searches the entire document (not scoped to a microdata container).
 pub(super) fn extract_instructions_from_html_classes(
     document: &Html,
     recipe_title: Option<&str>,
@@ -431,10 +428,6 @@ pub(super) fn extract_instructions_from_html_classes(
     extract_wprm_instructions(document, recipe_title.unwrap_or_default())
 }
 
-/// Extract instructions from Dotdash Meredith CMS pages (Serious Eats, Simply Recipes,
-/// Allrecipes). The directions section uses `.section--instructions` containing
-/// `.structured-project__steps` with each step as `<li class="mntl-sc-block-group--LI">`
-/// holding one or more `<p class="mntl-sc-block-html">` paragraphs.
 static DOTDASH_STEPS_LI_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
     Selector::parse(".structured-project__steps li.mntl-sc-block-group--LI")
         .expect("dotdash steps selector")
@@ -444,6 +437,10 @@ static DOTDASH_STEP_P_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
     Selector::parse("p.mntl-sc-block-html").expect("dotdash step paragraph selector")
 });
 
+/// Extract instructions from Dotdash Meredith CMS pages (Serious Eats, Simply Recipes,
+/// Allrecipes). The directions section uses `.section--instructions` containing
+/// `.structured-project__steps` with each step as `<li class="mntl-sc-block-group--LI">`
+/// holding one or more `<p class="mntl-sc-block-html">` paragraphs.
 pub(super) fn extract_dotdash_meredith_instructions(document: &Html) -> Option<String> {
     let mut steps: Vec<String> = Vec::new();
     for li in document.select(&DOTDASH_STEPS_LI_SELECTOR) {

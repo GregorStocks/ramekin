@@ -32,13 +32,13 @@ pub(super) fn extract_recipe_from_microdata(
         .ok_or(ExtractError::NoRecipe)?;
 
     // Extract title from itemprop="name"
-    let title = extract_microdata_text(&recipe_element, "name")
+    let title = extract_microdata_text(&recipe_element, &NAME_ITEMPROP_SELECTOR)
         .ok_or_else(|| ExtractError::MissingField("name".to_string()))?;
     let title = decode_html_entities(&title);
 
     // Extract description (optional)
-    let description =
-        extract_microdata_text(&recipe_element, "description").map(|s| decode_html_entities(&s));
+    let description = extract_microdata_text(&recipe_element, &DESCRIPTION_ITEMPROP_SELECTOR)
+        .map(|s| decode_html_entities(&s));
 
     // Extract ingredients
     let ingredients: Vec<String> = recipe_element
@@ -66,7 +66,7 @@ pub(super) fn extract_recipe_from_microdata(
     }
 
     let source_name = extract_source_name(source_url);
-    let servings = extract_microdata_text(&recipe_element, "recipeYield");
+    let servings = extract_microdata_text(&recipe_element, &YIELD_ITEMPROP_SELECTOR);
 
     let ingredients_str = decode_html_entities(&ingredients.join("\n"));
     let footnotes = if ingredients_str.contains('*') {
@@ -96,11 +96,23 @@ pub(super) fn extract_recipe_from_microdata(
     })
 }
 
-/// Extract text content from an element with the given itemprop.
-pub(super) fn extract_microdata_text(element: &scraper::ElementRef, prop: &str) -> Option<String> {
-    let selector =
-        Selector::parse(&format!(r#"[itemprop="{}"]"#, prop)).expect("itemprop selector");
-    element.select(&selector).next().map(|el| {
+static NAME_ITEMPROP_SELECTOR: LazyLock<Selector> =
+    LazyLock::new(|| Selector::parse(r#"[itemprop="name"]"#).expect("itemprop name selector"));
+
+static DESCRIPTION_ITEMPROP_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse(r#"[itemprop="description"]"#).expect("itemprop description selector")
+});
+
+static YIELD_ITEMPROP_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
+    Selector::parse(r#"[itemprop="recipeYield"]"#).expect("itemprop recipeYield selector")
+});
+
+/// Extract text content from an element matching the given itemprop selector.
+pub(super) fn extract_microdata_text(
+    element: &scraper::ElementRef,
+    selector: &Selector,
+) -> Option<String> {
+    element.select(selector).next().map(|el| {
         // Check for content attribute first (common for meta tags)
         if let Some(content) = el.value().attr("content") {
             content.trim().to_string()
@@ -110,7 +122,6 @@ pub(super) fn extract_microdata_text(element: &scraper::ElementRef, prop: &str) 
     })
 }
 
-/// Extract instructions from microdata.
 static INSTRUCTION_STEP_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
     Selector::parse(
         r#"[itemprop="recipeInstructions"], [itemprop="instructions"], [itemtype*="HowToStep"]"#,
@@ -130,6 +141,7 @@ static INSTRUCTION_CLASS_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
     .expect("instruction class selector")
 });
 
+/// Extract instructions from microdata.
 pub(super) fn extract_microdata_instructions(
     recipe_element: &scraper::ElementRef,
 ) -> Result<String, ExtractError> {
@@ -166,10 +178,10 @@ pub(super) fn extract_microdata_instructions(
     ))
 }
 
-/// Extract image URLs from microdata.
 static IMAGE_ITEMPROP_SELECTOR: LazyLock<Selector> =
     LazyLock::new(|| Selector::parse(r#"[itemprop="image"]"#).expect("itemprop image selector"));
 
+/// Extract image URLs from microdata.
 pub(super) fn extract_microdata_images(recipe_element: &scraper::ElementRef) -> Vec<String> {
     recipe_element
         .select(&IMAGE_ITEMPROP_SELECTOR)
@@ -207,8 +219,8 @@ pub(super) fn extract_partial_from_microdata(document: &Html) -> PartialRecipe {
         }
     };
 
-    let title = extract_microdata_text(&recipe_element, "name");
-    let description = extract_microdata_text(&recipe_element, "description");
+    let title = extract_microdata_text(&recipe_element, &NAME_ITEMPROP_SELECTOR);
+    let description = extract_microdata_text(&recipe_element, &DESCRIPTION_ITEMPROP_SELECTOR);
 
     let ingredients_vec: Vec<String> = recipe_element
         .select(&INGREDIENT_ITEMPROP_SELECTOR)
@@ -225,7 +237,7 @@ pub(super) fn extract_partial_from_microdata(document: &Html) -> PartialRecipe {
     let instructions = extract_microdata_instructions(&recipe_element).ok();
 
     let image_urls = extract_microdata_images(&recipe_element);
-    let servings = extract_microdata_text(&recipe_element, "recipeYield");
+    let servings = extract_microdata_text(&recipe_element, &YIELD_ITEMPROP_SELECTOR);
 
     PartialRecipe {
         title,

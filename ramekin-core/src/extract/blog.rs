@@ -435,6 +435,9 @@ pub(super) fn extract_recipe_from_unstructured_blog(
     })
 }
 
+static ENTRY_CONTENT_SELECTOR: LazyLock<Selector> =
+    LazyLock::new(|| Selector::parse(".entry-content").expect("entry content selector"));
+
 pub(super) fn extract_smittenkitchen_post_instructions(
     document: &Html,
     source_url: &str,
@@ -467,9 +470,6 @@ pub(super) fn extract_smittenkitchen_post_instructions(
 
     None
 }
-
-static ENTRY_CONTENT_SELECTOR: LazyLock<Selector> =
-    LazyLock::new(|| Selector::parse(".entry-content").expect("entry content selector"));
 
 fn extract_smittenkitchen_entry_instructions(
     entry: ElementRef<'_>,
@@ -597,13 +597,6 @@ pub(super) fn collect_text_skipping_struck(el: ElementRef<'_>) -> String {
     out
 }
 
-/// Site-specific extractor for virtualweberbullet.com recipe pages.
-///
-/// These pages are hand-authored HTML without Recipe JSON-LD. They share a
-/// consistent layout: title in `h1.headline`, content in `div.post_content`,
-/// sections delimited by `<h2>` headers, ingredient lists marked by
-/// `<p><strong>Section Name</strong></p>` followed immediately by `<ul>`, and
-/// instructions as `<p>` paragraphs grouped under their `<h2>` section header.
 static HEADLINE_SELECTOR: LazyLock<Selector> =
     LazyLock::new(|| Selector::parse("h1.headline").expect("headline selector"));
 
@@ -613,6 +606,13 @@ static POST_CONTENT_SELECTOR: LazyLock<Selector> =
 static STRONG_SELECTOR: LazyLock<Selector> =
     LazyLock::new(|| Selector::parse("strong").expect("strong selector"));
 
+/// Site-specific extractor for virtualweberbullet.com recipe pages.
+///
+/// These pages are hand-authored HTML without Recipe JSON-LD. They share a
+/// consistent layout: title in `h1.headline`, content in `div.post_content`,
+/// sections delimited by `<h2>` headers, ingredient lists marked by
+/// `<p><strong>Section Name</strong></p>` followed immediately by `<ul>`, and
+/// instructions as `<p>` paragraphs grouped under their `<h2>` section header.
 pub(super) fn extract_recipe_from_virtualweberbullet(
     html: &str,
     document: &Html,

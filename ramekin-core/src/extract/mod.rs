@@ -124,12 +124,6 @@ fn supplement_dotdash_ingredients(recipe: &mut RawRecipe, document: &Html) {
     }
 }
 
-/// Detect Dotdash pages whose visible ingredient rows are nutrition-database
-/// normalized (e.g. "454 g pork breakfast sausage", "1 tsp, ground ground black
-/// pepper") rather than the author's text. On those pages every row's text sits
-/// entirely inside data-ingredient-* spans, with no free text (parentheticals,
-/// "divided", "see notes") outside them; the author's rows live only in the
-/// JSON-LD, so the visible rows must not replace it.
 static STRUCTURED_INGREDIENT_ITEM_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
     Selector::parse(".structured-ingredients__list-item")
         .expect("structured ingredients list item selector")
@@ -140,6 +134,12 @@ static DATA_INGREDIENT_SPAN_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
         .expect("data-ingredient span selector")
 });
 
+/// Detect Dotdash pages whose visible ingredient rows are nutrition-database
+/// normalized (e.g. "454 g pork breakfast sausage", "1 tsp, ground ground black
+/// pepper") rather than the author's text. On those pages every row's text sits
+/// entirely inside data-ingredient-* spans, with no free text (parentheticals,
+/// "divided", "see notes") outside them; the author's rows live only in the
+/// JSON-LD, so the visible rows must not replace it.
 fn dotdash_ingredients_look_normalized(document: &Html) -> bool {
     // Whitespace is stripped entirely (not normalized to single spaces) so the
     // comparison is insensitive to how whitespace falls between text nodes.

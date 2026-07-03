@@ -2,12 +2,6 @@
 
 use super::*;
 
-/// Extract WPRM ingredients with group headers (e.g. "Meatballs:", "Broth:").
-///
-/// WPRM structures ingredients as `.wprm-recipe-ingredient-group` containers,
-/// each with an optional `.wprm-recipe-group-name` header and a list of
-/// `.wprm-recipe-ingredient` items. JSON-LD flattens these into a single array,
-/// losing the group structure. This function recovers it from the HTML.
 static INGREDIENT_GROUP_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
     Selector::parse(".wprm-recipe-ingredient-group").expect("wprm ingredient group selector")
 });
@@ -15,9 +9,15 @@ static INGREDIENT_GROUP_SELECTOR: LazyLock<Selector> = LazyLock::new(|| {
 static GROUP_NAME_SELECTOR: LazyLock<Selector> =
     LazyLock::new(|| Selector::parse(".wprm-recipe-group-name").expect("wprm group name selector"));
 
-static INGREDIENT_SELECTOR: LazyLock<Selector> =
+pub(super) static WPRM_INGREDIENT_SELECTOR: LazyLock<Selector> =
     LazyLock::new(|| Selector::parse(".wprm-recipe-ingredient").expect("wprm ingredient selector"));
 
+/// Extract WPRM ingredients with group headers (e.g. "Meatballs:", "Broth:").
+///
+/// WPRM structures ingredients as `.wprm-recipe-ingredient-group` containers,
+/// each with an optional `.wprm-recipe-group-name` header and a list of
+/// `.wprm-recipe-ingredient` items. JSON-LD flattens these into a single array,
+/// losing the group structure. This function recovers it from the HTML.
 pub(super) fn extract_wprm_ingredients_with_groups(document: &Html) -> Option<String> {
     let groups: Vec<_> = document.select(&INGREDIENT_GROUP_SELECTOR).collect();
     if groups.is_empty() {
@@ -51,7 +51,7 @@ pub(super) fn extract_wprm_ingredients_with_groups(document: &Html) -> Option<St
         }
 
         // Extract ingredients in this group
-        for item in group.select(&INGREDIENT_SELECTOR) {
+        for item in group.select(&WPRM_INGREDIENT_SELECTOR) {
             if let Some(text) = sanitize_extracted_ingredient(&item.text().collect::<String>()) {
                 lines.push(text);
             }
