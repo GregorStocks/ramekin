@@ -737,9 +737,11 @@ pub(super) fn extract_recipe_from_virtualweberbullet(
                     continue;
                 }
 
+                // Normalize like `text` above so the strong-only-paragraph
+                // equality check isn't broken by &nbsp; or doubled spaces.
                 let strong_text = el.select(&STRONG_SELECTOR).next().map(|s| {
                     let raw: String = s.text().collect();
-                    decode_html_entities(raw.trim())
+                    fragment_to_text(&raw)
                 });
                 if let Some(stext) = strong_text.as_ref() {
                     if !stext.is_empty() && stext == &text {
@@ -914,7 +916,10 @@ pub(super) fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<S
             // it as a header when the suffix is just a trailing qualifier
             // like "(enough for 9 tarts)".
             if !seen_text_line && !header.is_empty() {
-                let decoded = decode_html_entities(header);
+                // Normalize like the fragment_to_text(part) inside
+                // extract_underlined_section_title, so strip_prefix isn't
+                // broken by &nbsp; or doubled spaces in the header.
+                let decoded = fragment_to_text(header);
                 let section_title = if after_text.is_empty() {
                     underlined_section_title(&decoded)
                 } else {
@@ -1093,6 +1098,56 @@ mod tests {
         assert!(!result
             .ingredients
             .contains("Cinnamon Filling (enough for 9 tarts)"));
+    }
+
+    #[test]
+    fn test_unstructured_blog_u_header_with_nbsp_and_qualifier() {
+        // &nbsp; in the <u> header must not break the prefix match that
+        // separates the header from its trailing qualifier.
+        let html = r#"
+            <html><body>
+                <p><b>Homemade Pop Tarts</b></p>
+                <p><u>Cinnamon&nbsp;Filling</u> (enough for 9 tarts)<br />1/2 cup brown sugar<br />1 teaspoon cinnamon</p>
+                <p>Mix and bake.</p>
+            </body></html>
+        "#;
+
+        let result = extract_recipe(html, "https://smittenkitchen.com/recipe").unwrap();
+        let ingredient_lines: Vec<&str> = result.ingredients.lines().collect();
+
+        assert_eq!(ingredient_lines[0], "Cinnamon Filling:");
+        assert_eq!(ingredient_lines[1], "1/2 cup brown sugar");
+    }
+
+    #[test]
+    fn test_virtualweberbullet_strong_header_with_nbsp() {
+        // &nbsp; in a strong-only header paragraph must not break the
+        // strong-text == paragraph-text equality check that turns the
+        // following <ul> into an ingredient list.
+        let html = r#"
+            <html><body>
+                <h1 class="headline">Test Ribs</h1>
+                <div class="post_content">
+                    <p><strong>The&nbsp;Rub</strong></p>
+                    <ul><li>1/4 cup paprika</li><li>2 tablespoons salt</li></ul>
+                    <h2>Fire The Cooker</h2>
+                    <p>Light the charcoal and cook the ribs.</p>
+                </div>
+            </body></html>
+        "#;
+        let document = Html::parse_document(html);
+
+        let recipe = extract_recipe_from_virtualweberbullet(
+            html,
+            &document,
+            "https://www.virtualweberbullet.com/test-ribs",
+        )
+        .expect("should extract a recipe");
+
+        let ingredient_lines: Vec<&str> = recipe.ingredients.lines().collect();
+        assert_eq!(ingredient_lines[0], "The Rub:");
+        assert_eq!(ingredient_lines[1], "1/4 cup paprika");
+        assert_eq!(ingredient_lines[2], "2 tablespoons salt");
     }
 
     #[test]
