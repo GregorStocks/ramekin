@@ -3,6 +3,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
 use crate::models::{Ingredient, NewRecipeVersion};
+use crate::recipes::{create_new_version_cas, TagSource, VersionWriteError};
 use crate::schema::{recipe_versions, recipes};
 use axum::{
     extract::{Path, State},
@@ -197,7 +198,7 @@ pub async fn generate_description(
     }
 
     let mut conn = get_conn!(pool);
-    let write_result: Result<(), diesel::result::Error> = conn.transaction(|conn| {
+    let write_result: Result<(), VersionWriteError> = conn.transaction(|conn| {
         let new_version = NewRecipeVersion {
             recipe_id,
             title: &title,
@@ -218,55 +219,29 @@ pub async fn generate_description(
             version_source: "generate_description",
         };
 
-        let new_version_id: Uuid = diesel::insert_into(recipe_versions::table)
-            .values(&new_version)
-            .returning(recipe_versions::id)
-            .get_result(conn)?;
-
-        // Compare-and-swap: only update if current_version_id hasn't changed
+        // Compare-and-swap: only repoint if current_version_id hasn't changed
         // since our initial read, preventing overwrites of concurrent edits.
-        let rows_updated = diesel::update(
-            recipes::table
-                .filter(recipes::id.eq(recipe_id))
-                .filter(recipes::current_version_id.eq(version_id_snapshot)),
-        )
-        .set(recipes::current_version_id.eq(new_version_id))
-        .execute(conn)?;
-
-        if rows_updated == 0 {
-            return Err(diesel::result::Error::RollbackTransaction);
-        }
-
-        // Carry over tags from the previous version
-        if let Some(old_vid) = version_id_snapshot {
-            use crate::schema::recipe_version_tags;
-            let old_tag_ids: Vec<Uuid> = recipe_version_tags::table
-                .filter(recipe_version_tags::recipe_version_id.eq(old_vid))
-                .select(recipe_version_tags::tag_id)
-                .load(conn)?;
-            for tag_id in old_tag_ids {
-                diesel::insert_into(recipe_version_tags::table)
-                    .values(crate::models::RecipeVersionTag {
-                        recipe_version_id: new_version_id,
-                        tag_id,
-                    })
-                    .on_conflict_do_nothing()
-                    .execute(conn)?;
-            }
-        }
+        let tag_source = match version_id_snapshot {
+            Some(old_vid) => TagSource::CopyFrom(old_vid),
+            None => TagSource::None,
+        };
+        create_new_version_cas(conn, &new_version, tag_source, version_id_snapshot)?;
 
         Ok(())
     });
 
-    if let Err(e) = write_result {
-        if matches!(e, diesel::result::Error::RollbackTransaction) {
+    match write_result {
+        Ok(()) => {}
+        Err(VersionWriteError::Stale) => {
             return ApiError::conflict(
                 "Recipe was modified while generating description; try again",
             )
             .into_response();
         }
-        tracing::error!("Failed to persist generated description: {}", e);
-        return ApiError::internal("Failed to persist generated description").into_response();
+        Err(VersionWriteError::Db(e)) => {
+            tracing::error!("Failed to persist generated description: {}", e);
+            return ApiError::internal("Failed to persist generated description").into_response();
+        }
     }
 
     (

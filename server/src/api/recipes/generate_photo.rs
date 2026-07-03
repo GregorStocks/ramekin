@@ -4,7 +4,8 @@ use crate::db::DbPool;
 use crate::get_conn;
 use crate::models::{Ingredient, NewPhoto, NewRecipeVersion};
 use crate::photos::processing::{process_image, MAX_FILE_SIZE};
-use crate::schema::{photos, recipe_version_tags, recipe_versions, recipes};
+use crate::recipes::{create_new_version_cas, TagSource, VersionWriteError};
+use crate::schema::{photos, recipe_versions, recipes};
 use axum::{
     extract::{Path, State},
     http::StatusCode,
@@ -34,6 +35,15 @@ enum GeneratePhotoWriteError {
 impl From<diesel::result::Error> for GeneratePhotoWriteError {
     fn from(value: diesel::result::Error) -> Self {
         Self::Db(value)
+    }
+}
+
+impl From<VersionWriteError> for GeneratePhotoWriteError {
+    fn from(value: VersionWriteError) -> Self {
+        match value {
+            VersionWriteError::Stale => Self::StaleVersion,
+            VersionWriteError::Db(e) => Self::Db(e),
+        }
     }
 }
 
@@ -349,43 +359,14 @@ pub async fn generate_photo(
             version_source: "ai_photo",
         };
 
-        let new_version_id: Uuid = diesel::insert_into(recipe_versions::table)
-            .values(&new_version)
-            .returning(recipe_versions::id)
-            .get_result(conn)
-            .map_err(GeneratePhotoWriteError::Db)?;
-
-        let updated_rows = diesel::update(
-            recipes::table
-                .filter(recipes::id.eq(recipe_id))
-                .filter(recipes::user_id.eq(user.id))
-                .filter(recipes::deleted_at.is_null())
-                .filter(recipes::current_version_id.eq(source_version_id)),
-        )
-        .set(recipes::current_version_id.eq(new_version_id))
-        .execute(conn)
-        .map_err(GeneratePhotoWriteError::Db)?;
-
-        if updated_rows == 0 {
-            return Err(GeneratePhotoWriteError::StaleVersion);
-        }
-
-        let old_tag_ids: Vec<Uuid> = recipe_version_tags::table
-            .filter(recipe_version_tags::recipe_version_id.eq(source_version_id))
-            .select(recipe_version_tags::tag_id)
-            .load(conn)
-            .map_err(GeneratePhotoWriteError::Db)?;
-
-        for tag_id in old_tag_ids {
-            diesel::insert_into(recipe_version_tags::table)
-                .values(crate::models::RecipeVersionTag {
-                    recipe_version_id: new_version_id,
-                    tag_id,
-                })
-                .on_conflict_do_nothing()
-                .execute(conn)
-                .map_err(GeneratePhotoWriteError::Db)?;
-        }
+        // Compare-and-swap: only repoint if current_version_id still matches
+        // the version we generated the photo for.
+        let new_version_id = create_new_version_cas(
+            conn,
+            &new_version,
+            TagSource::CopyFrom(source_version_id),
+            Some(source_version_id),
+        )?;
 
         Ok((photo_id, new_version_id))
     });
