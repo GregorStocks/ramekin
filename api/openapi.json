@@ -987,7 +987,7 @@
           {
             "name": "sort_by",
             "in": "query",
-            "description": "Sort field (default: updated_at)",
+            "description": "Sort field. Defaults to relevance when the query has text terms,\notherwise updated_at.",
             "required": false,
             "schema": {
               "$ref": "#/components/schemas/SortBy"
@@ -996,7 +996,7 @@
           {
             "name": "sort_dir",
             "in": "query",
-            "description": "Sort direction (default: desc). Ignored when sort_by=random.",
+            "description": "Sort direction (default: desc). Ignored when sort_by is random or\nrelevance.",
             "required": false,
             "schema": {
               "$ref": "#/components/schemas/Direction"
@@ -4217,6 +4217,7 @@
         "type": "string",
         "description": "Sort field for recipe list",
         "enum": [
+          "relevance",
           "updated_at",
           "rating",
           "title",

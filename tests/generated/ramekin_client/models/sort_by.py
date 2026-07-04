@@ -26,6 +26,7 @@ class SortBy(str, Enum):
     """
     allowed enum values
     """
+    RELEVANCE = 'relevance'
     UPDATED_AT = 'updated_at'
     RATING = 'rating'
     TITLE = 'title'

@@ -66,6 +66,9 @@ image = "0.25"
 # Character encoding detection and transcoding
 encoding_rs = "0.8"
 
+# Diacritic stripping for search normalization (mirror of Postgres unaccent)
+unicode-normalization = "0.1.25"
+
 [build-dependencies]
 uuid = { version = "1.23", features = ["v4"] }
 

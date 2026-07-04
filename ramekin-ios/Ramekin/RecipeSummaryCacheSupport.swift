@@ -27,7 +27,9 @@ enum RecipeSummaryCacheSupport {
 
         return filtered.sorted { lhs, rhs in
             switch sortOrder {
-            case .newest:
+            // The cache only serves empty searches (canServeFromCache), where
+            // the server's "best" default is newest-first.
+            case .best, .newest:
                 return compareDatesDescending(lhs.updatedAt, rhs.updatedAt, lhs.id, rhs.id)
             case .oldest:
                 return compareDatesAscending(lhs.updatedAt, rhs.updatedAt, lhs.id, rhs.id)

@@ -12,7 +12,7 @@ struct RecipeListView: View {
     @State private var activeQuery: String?
     @State private var searchTask: Task<Void, Never>?
     @State private var isUsingLocalCache = false
-    @AppStorage("recipeSortOrder") private var sortOrder = RecipeSortOrder.newest
+    @AppStorage("recipeSortOrder") private var sortOrder = RecipeSortOrder.best
     @AppStorage("recipePhotoFilter") private var photoFilter = PhotoFilter.any
     @AppStorage("recipeSourceFilter") private var sourceFilter = ""
     @AppStorage("recipeCreatedAfterFilter") private var createdAfterFilter = ""
@@ -123,21 +123,8 @@ struct RecipeListView: View {
         }
     }
     private var sortMenu: some View {
-        Menu {
-            ForEach(RecipeSortOrder.allCases, id: \.self) { order in
-                Button {
-                    sortOrder = order
-                    reloadRecipes()
-                } label: {
-                    if sortOrder == order {
-                        Label(order.label, systemImage: "checkmark")
-                    } else {
-                        Text(order.label)
-                    }
-                }
-            }
-        } label: {
-            Image(systemName: "arrow.up.arrow.down")
+        RecipeSortMenu(sortOrder: $sortOrder) {
+            reloadRecipes()
         }
     }
     private var filterBar: some View {

@@ -4,6 +4,8 @@ Sort field for recipe list
 
 ## Enum
 
+* `RELEVANCE` (value: `'relevance'`)
+
 * `UPDATED_AT` (value: `'updated_at'`)
 
 * `RATING` (value: `'rating'`)

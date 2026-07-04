@@ -88,12 +88,13 @@ struct RecipePickerSheet: View {
         let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
 
         do {
+            // No explicit sort, matching the web meal-plan picker: the
+            // server ranks by relevance when searching, newest-first when
+            // browsing.
             let response = try await RecipesAPI.listRecipes(
                 limit: 50,
                 offset: 0,
-                q: query.isEmpty ? nil : query,
-                sortBy: .title,
-                sortDir: .asc
+                q: query.isEmpty ? nil : query
             )
             await MainActor.run {
                 recipes = response.recipes

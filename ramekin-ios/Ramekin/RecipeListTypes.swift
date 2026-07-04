@@ -3,6 +3,7 @@ import SwiftUI
 // MARK: - Sort & Filter Types
 
 enum RecipeSortOrder: String, CaseIterable {
+    case best
     case newest
     case oldest
     case rating
@@ -10,8 +11,11 @@ enum RecipeSortOrder: String, CaseIterable {
     case created
     case random
 
-    var sortBy: SortBy {
+    /// nil means "let the server pick": relevance when the query has text
+    /// terms, newest-first otherwise.
+    var sortBy: SortBy? {
         switch self {
+        case .best: return nil
         case .newest, .oldest: return .updatedAt
         case .rating: return .rating
         case .title: return .title
@@ -20,8 +24,9 @@ enum RecipeSortOrder: String, CaseIterable {
         }
     }
 
-    var sortDir: Direction {
+    var sortDir: Direction? {
         switch self {
+        case .best: return nil
         case .newest, .rating, .created: return .desc
         case .oldest, .title: return .asc
         case .random: return .desc
@@ -30,12 +35,37 @@ enum RecipeSortOrder: String, CaseIterable {
 
     var label: String {
         switch self {
+        case .best: return "Best match"
         case .newest: return "Newest first"
         case .oldest: return "Oldest first"
         case .rating: return "Highest rated"
         case .title: return "Title A–Z"
         case .created: return "Date added"
         case .random: return "Random"
+        }
+    }
+}
+
+struct RecipeSortMenu: View {
+    @Binding var sortOrder: RecipeSortOrder
+    let onChange: () -> Void
+
+    var body: some View {
+        Menu {
+            ForEach(RecipeSortOrder.allCases, id: \.self) { order in
+                Button {
+                    sortOrder = order
+                    onChange()
+                } label: {
+                    if sortOrder == order {
+                        Label(order.label, systemImage: "checkmark")
+                    } else {
+                        Text(order.label)
+                    }
+                }
+            }
+        } label: {
+            Image(systemName: "arrow.up.arrow.down")
         }
     }
 }

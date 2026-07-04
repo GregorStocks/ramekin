@@ -1933,8 +1933,8 @@ class RecipesApi:
         limit: Annotated[Optional[StrictInt], Field(description="Number of items to return (default: 20, max: 1000)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Number of items to skip (default: 0)")] = None,
         q: Annotated[Optional[StrictStr], Field(description="Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:>2024-01-01: created after date - created:<2024-12-31: created before date - created:2024-01-01..2024-12-31: created in date range  Example: \"chicken tag:dinner tag:quick has:photos\"")] = None,
-        sort_by: Annotated[Optional[SortBy], Field(description="Sort field (default: updated_at)")] = None,
-        sort_dir: Annotated[Optional[Direction], Field(description="Sort direction (default: desc). Ignored when sort_by=random.")] = None,
+        sort_by: Annotated[Optional[SortBy], Field(description="Sort field. Defaults to relevance when the query has text terms, otherwise updated_at.")] = None,
+        sort_dir: Annotated[Optional[Direction], Field(description="Sort direction (default: desc). Ignored when sort_by is random or relevance.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1957,9 +1957,9 @@ class RecipesApi:
         :type offset: int
         :param q: Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:>2024-01-01: created after date - created:<2024-12-31: created before date - created:2024-01-01..2024-12-31: created in date range  Example: \"chicken tag:dinner tag:quick has:photos\"
         :type q: str
-        :param sort_by: Sort field (default: updated_at)
+        :param sort_by: Sort field. Defaults to relevance when the query has text terms, otherwise updated_at.
         :type sort_by: SortBy
-        :param sort_dir: Sort direction (default: desc). Ignored when sort_by=random.
+        :param sort_dir: Sort direction (default: desc). Ignored when sort_by is random or relevance.
         :type sort_dir: Direction
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2017,8 +2017,8 @@ class RecipesApi:
         limit: Annotated[Optional[StrictInt], Field(description="Number of items to return (default: 20, max: 1000)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Number of items to skip (default: 0)")] = None,
         q: Annotated[Optional[StrictStr], Field(description="Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:>2024-01-01: created after date - created:<2024-12-31: created before date - created:2024-01-01..2024-12-31: created in date range  Example: \"chicken tag:dinner tag:quick has:photos\"")] = None,
-        sort_by: Annotated[Optional[SortBy], Field(description="Sort field (default: updated_at)")] = None,
-        sort_dir: Annotated[Optional[Direction], Field(description="Sort direction (default: desc). Ignored when sort_by=random.")] = None,
+        sort_by: Annotated[Optional[SortBy], Field(description="Sort field. Defaults to relevance when the query has text terms, otherwise updated_at.")] = None,
+        sort_dir: Annotated[Optional[Direction], Field(description="Sort direction (default: desc). Ignored when sort_by is random or relevance.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2041,9 +2041,9 @@ class RecipesApi:
         :type offset: int
         :param q: Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:>2024-01-01: created after date - created:<2024-12-31: created before date - created:2024-01-01..2024-12-31: created in date range  Example: \"chicken tag:dinner tag:quick has:photos\"
         :type q: str
-        :param sort_by: Sort field (default: updated_at)
+        :param sort_by: Sort field. Defaults to relevance when the query has text terms, otherwise updated_at.
         :type sort_by: SortBy
-        :param sort_dir: Sort direction (default: desc). Ignored when sort_by=random.
+        :param sort_dir: Sort direction (default: desc). Ignored when sort_by is random or relevance.
         :type sort_dir: Direction
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2101,8 +2101,8 @@ class RecipesApi:
         limit: Annotated[Optional[StrictInt], Field(description="Number of items to return (default: 20, max: 1000)")] = None,
         offset: Annotated[Optional[StrictInt], Field(description="Number of items to skip (default: 0)")] = None,
         q: Annotated[Optional[StrictStr], Field(description="Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:>2024-01-01: created after date - created:<2024-12-31: created before date - created:2024-01-01..2024-12-31: created in date range  Example: \"chicken tag:dinner tag:quick has:photos\"")] = None,
-        sort_by: Annotated[Optional[SortBy], Field(description="Sort field (default: updated_at)")] = None,
-        sort_dir: Annotated[Optional[Direction], Field(description="Sort direction (default: desc). Ignored when sort_by=random.")] = None,
+        sort_by: Annotated[Optional[SortBy], Field(description="Sort field. Defaults to relevance when the query has text terms, otherwise updated_at.")] = None,
+        sort_dir: Annotated[Optional[Direction], Field(description="Sort direction (default: desc). Ignored when sort_by is random or relevance.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2125,9 +2125,9 @@ class RecipesApi:
         :type offset: int
         :param q: Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:>2024-01-01: created after date - created:<2024-12-31: created before date - created:2024-01-01..2024-12-31: created in date range  Example: \"chicken tag:dinner tag:quick has:photos\"
         :type q: str
-        :param sort_by: Sort field (default: updated_at)
+        :param sort_by: Sort field. Defaults to relevance when the query has text terms, otherwise updated_at.
         :type sort_by: SortBy
-        :param sort_dir: Sort direction (default: desc). Ignored when sort_by=random.
+        :param sort_dir: Sort direction (default: desc). Ignored when sort_by is random or relevance.
         :type sort_dir: Direction
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

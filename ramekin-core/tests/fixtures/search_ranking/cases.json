@@ -1,0 +1,178 @@
+{
+  "_comment": "Shared test vectors for search relevance ranking. Canonical implementation: ramekin-core/src/search.rs. Any client that implements local search (see issues/blocked-ios-local-search-relevance.json5) must consume this file and produce identical rankings. expected_order lists recipe ids from highest to lowest score and requires strictly decreasing scores (no ties); zero_score lists ids that must score exactly 0.",
+  "recipes": [
+    {
+      "id": "garlic-bread",
+      "title": "Garlic Bread",
+      "description": "Crusty baguette with garlic butter.",
+      "tags": ["course/side"],
+      "ingredients": ["baguette", "garlic", "butter", "parsley"],
+      "instructions": "Mix garlic into butter. Spread on bread. Bake.",
+      "notes": null
+    },
+    {
+      "id": "cheesy-garlic-bread-bites",
+      "title": "Cheesy Garlic Bread Bites",
+      "description": null,
+      "tags": [],
+      "ingredients": ["bread", "garlic", "mozzarella"],
+      "instructions": "Cut bread into cubes. Top with garlic and cheese.",
+      "notes": null
+    },
+    {
+      "id": "roast-chicken",
+      "title": "Roast Chicken",
+      "description": "Sunday roast.",
+      "tags": ["course/main"],
+      "ingredients": ["whole chicken", "garlic", "bread crumbs"],
+      "instructions": "Stuff with garlic. Serve with bread.",
+      "notes": "Day-old bread works best."
+    },
+    {
+      "id": "creme-brulee",
+      "title": "Crème Brûlée",
+      "description": "Classic custard.",
+      "tags": ["course/dessert"],
+      "ingredients": ["cream", "egg yolks", "sugar"],
+      "instructions": "Bake in a water bath. Torch the sugar.",
+      "notes": null
+    },
+    {
+      "id": "green-beans-amandine",
+      "title": "Green Beans Amandine",
+      "description": "Green beans with almonds.",
+      "tags": [],
+      "ingredients": ["green beans", "almonds", "butter"],
+      "instructions": "Blanch the beans. Brown the butter.",
+      "notes": null
+    },
+    {
+      "id": "bean-salad",
+      "title": "Bean Salad, Green and Otherwise",
+      "description": "Mixed beans.",
+      "tags": [],
+      "ingredients": ["green beans", "kidney beans", "chickpeas"],
+      "instructions": "Toss everything together.",
+      "notes": null
+    },
+    {
+      "id": "weeknight-pasta",
+      "title": "Weeknight Pasta",
+      "description": "Fast garlic pasta for busy nights.",
+      "tags": ["speed/quick", "garlicky"],
+      "ingredients": ["spaghetti", "olive oil"],
+      "instructions": "Boil pasta. Toss with oil.",
+      "notes": null
+    },
+    {
+      "id": "plain-omelette",
+      "title": "Plain Omelette",
+      "description": null,
+      "tags": [],
+      "ingredients": ["eggs", "butter"],
+      "instructions": "Beat eggs. Cook gently.",
+      "notes": null
+    },
+    {
+      "id": "oeufs-en-meurette",
+      "title": "Œufs en Meurette",
+      "description": "Eggs poached in red wine sauce.",
+      "tags": [],
+      "ingredients": ["eggs", "red wine", "bacon"],
+      "instructions": "Poach the eggs. Reduce the wine.",
+      "notes": null
+    },
+    {
+      "id": "hot-cocoa",
+      "title": "Hot Cocoa",
+      "description": null,
+      "tags": [],
+      "ingredients": ["ﬁnely chopped chocolate", "milk"],
+      "instructions": "Warm the milk. Whisk in the chocolate.",
+      "notes": null
+    },
+    {
+      "id": "pancakes",
+      "title": "Pancakes",
+      "description": null,
+      "tags": [],
+      "ingredients": ["2 cups flour", "1 cup milk", "1 egg"],
+      "instructions": "Mix the batter. Fry until golden.",
+      "notes": null
+    }
+  ],
+  "cases": [
+    {
+      "name": "exact title beats title phrase beats body-only match",
+      "tokens": ["garlic", "bread"],
+      "expected_order": ["garlic-bread", "cheesy-garlic-bread-bites", "roast-chicken"],
+      "zero_score": ["plain-omelette"]
+    },
+    {
+      "name": "accent-insensitive: plain ascii query finds accented title",
+      "tokens": ["creme", "brulee"],
+      "expected_order": ["creme-brulee"],
+      "zero_score": ["garlic-bread"]
+    },
+    {
+      "name": "accented query finds accented title identically",
+      "tokens": ["crème", "brûlée"],
+      "expected_order": ["creme-brulee"],
+      "zero_score": []
+    },
+    {
+      "name": "case-insensitive",
+      "tokens": ["GARLIC", "BREAD"],
+      "expected_order": ["garlic-bread", "cheesy-garlic-bread-bites", "roast-chicken"],
+      "zero_score": []
+    },
+    {
+      "name": "quoted phrase is one token; word order matters for the phrase bonus",
+      "tokens": ["green beans"],
+      "expected_order": ["green-beans-amandine", "bean-salad"],
+      "zero_score": ["plain-omelette"]
+    },
+    {
+      "name": "single token: title beats tag beats description beats ingredient",
+      "tokens": ["garlic"],
+      "expected_order": ["garlic-bread", "cheesy-garlic-bread-bites", "weeknight-pasta", "roast-chicken"],
+      "zero_score": ["plain-omelette", "green-beans-amandine"]
+    },
+    {
+      "name": "notes-only match scores lowest but nonzero",
+      "tokens": ["day-old"],
+      "expected_order": ["roast-chicken"],
+      "zero_score": ["garlic-bread", "plain-omelette"]
+    },
+    {
+      "name": "ligature expansion: ascii query gets the exact-title score on a ligature title",
+      "tokens": ["oeufs"],
+      "expected_order": ["oeufs-en-meurette"],
+      "zero_score": ["plain-omelette", "creme-brulee"]
+    },
+    {
+      "name": "ligature query normalizes identically to its ascii form",
+      "tokens": ["œufs", "en", "meurette"],
+      "expected_order": ["oeufs-en-meurette"],
+      "zero_score": ["garlic-bread"]
+    },
+    {
+      "name": "presentation ligature: ascii query scores a field whose only match uses U+FB01",
+      "tokens": ["finely"],
+      "expected_order": ["hot-cocoa"],
+      "zero_score": ["garlic-bread", "plain-omelette"]
+    },
+    {
+      "name": "measurement text scores: ingredients include amounts and units",
+      "tokens": ["cups", "flour"],
+      "expected_order": ["pancakes"],
+      "zero_score": ["plain-omelette", "garlic-bread"]
+    },
+    {
+      "name": "empty token list scores everything zero",
+      "tokens": [],
+      "expected_order": [],
+      "zero_score": ["garlic-bread", "plain-omelette", "creme-brulee"]
+    }
+  ]
+}

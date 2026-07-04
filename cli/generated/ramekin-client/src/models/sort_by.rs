@@ -15,6 +15,8 @@ use serde::{Deserialize, Serialize};
 /// Sort field for recipe list
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum SortBy {
+    #[serde(rename = "relevance")]
+    Relevance,
     #[serde(rename = "updated_at")]
     UpdatedAt,
     #[serde(rename = "rating")]
@@ -30,6 +32,7 @@ pub enum SortBy {
 impl std::fmt::Display for SortBy {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
+            Self::Relevance => write!(f, "relevance"),
             Self::UpdatedAt => write!(f, "updated_at"),
             Self::Rating => write!(f, "rating"),
             Self::Title => write!(f, "title"),
@@ -41,6 +44,6 @@ impl std::fmt::Display for SortBy {
 
 impl Default for SortBy {
     fn default() -> SortBy {
-        Self::UpdatedAt
+        Self::Relevance
     }
 }

@@ -2,6 +2,7 @@ use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
+use crate::models::Ingredient;
 use crate::raw_sql;
 use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
 use axum::{
@@ -36,11 +37,14 @@ diesel::define_sql_function! {
 }
 
 /// Sort field for recipe list
-#[derive(Debug, Default, Clone, Copy, Deserialize, ToSchema)]
+#[derive(Debug, Clone, Copy, Deserialize, ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SortBy {
+    /// Sort by relevance to the search query's text terms (title matches
+    /// rank above tag/description/ingredient/instruction matches). Ignores
+    /// sort_dir. With no text terms, equivalent to updated_at desc.
+    Relevance,
     /// Sort by update time (version created_at)
-    #[default]
     UpdatedAt,
     /// Sort by rating (1-5 stars)
     Rating,
@@ -80,10 +84,15 @@ pub struct ListRecipesParams {
     ///
     /// Example: "chicken tag:dinner tag:quick has:photos"
     pub q: Option<String>,
-    /// Sort field (default: updated_at)
-    #[serde(default)]
-    pub sort_by: SortBy,
-    /// Sort direction (default: desc). Ignored when sort_by=random.
+    /// Sort field. Defaults to relevance when the query has text terms,
+    /// otherwise updated_at.
+    // value_type avoids utoipa's `oneOf [null, $ref]` encoding of Option,
+    // which openapi-generator's Rust client renders as invalid code. The
+    // param is already non-required; absent is the only "null" we need.
+    #[param(value_type = SortBy, required = false)]
+    pub sort_by: Option<SortBy>,
+    /// Sort direction (default: desc). Ignored when sort_by is random or
+    /// relevance.
     #[serde(default)]
     pub sort_dir: Direction,
 }
@@ -270,6 +279,22 @@ type RecipeRow = (
     Vec<String>,       // tags from correlated subquery
 );
 
+// Row for relevance-sorted queries: no window count (the whole result set is
+// loaded, so total = len), plus the full-text fields the scorer reads.
+type RelevanceRow = (
+    Uuid,              // recipe id
+    DateTime<Utc>,     // recipe created_at
+    String,            // version title
+    Option<String>,    // version description
+    Vec<Option<Uuid>>, // version photo_ids
+    Option<i32>,       // version rating
+    DateTime<Utc>,     // version created_at (updated_at)
+    serde_json::Value, // version ingredients (JSONB)
+    String,            // version instructions
+    Option<String>,    // version notes
+    Vec<String>,       // tags from correlated subquery
+);
+
 #[utoipa::path(
     get,
     path = "/api/recipes",
@@ -387,8 +412,145 @@ pub async fn list_recipes(
         }
     }
 
+    // Default sort: relevance when there are text terms to rank against,
+    // recency otherwise.
+    let sort_by = params.sort_by.unwrap_or(if parsed.text.is_empty() {
+        SortBy::UpdatedAt
+    } else {
+        SortBy::Relevance
+    });
+
+    // Relevance can't be a SQL ORDER BY: the scorer is a pure Rust function
+    // (ramekin_core::search) so a client can mirror it for local search
+    // later. Load every matching row and rank in memory — search result
+    // sets are one user's matching recipes, which is small.
+    if matches!(sort_by, SortBy::Relevance) {
+        let rows: Vec<RelevanceRow> = match query
+            .select((
+                recipes::id,
+                recipes::created_at,
+                recipe_versions::title,
+                recipe_versions::description,
+                recipe_versions::photo_ids,
+                recipe_versions::rating,
+                recipe_versions::created_at,
+                recipe_versions::ingredients,
+                recipe_versions::instructions,
+                recipe_versions::notes,
+                raw_sql::tags_subquery(),
+            ))
+            .load(&mut conn)
+        {
+            Ok(r) => r,
+            Err(e) => {
+                tracing::error!("Failed to fetch recipes for relevance sort: {:?}", e);
+                return ApiError::internal("Failed to fetch recipes").into_response();
+            }
+        };
+
+        let mut scored: Vec<(u32, RecipeSummary)> = Vec::with_capacity(rows.len());
+        for (
+            id,
+            created_at,
+            title,
+            description,
+            photo_ids,
+            rating,
+            updated_at,
+            ingredients_json,
+            instructions,
+            notes,
+            tags,
+        ) in rows
+        {
+            let ingredients: Vec<Ingredient> = match serde_json::from_value(ingredients_json) {
+                Ok(i) => i,
+                Err(e) => {
+                    tracing::error!(
+                        recipe_id = %id,
+                        error = %e,
+                        "stored ingredients JSON failed to deserialize"
+                    );
+                    return ApiError::internal("Recipe ingredients are corrupt").into_response();
+                }
+            };
+            // One text per ingredient covering everything the SQL filter can
+            // match in the JSONB (measurements included), so tokens like
+            // "cups" score instead of matching silently.
+            let ingredient_texts: Vec<String> = ingredients
+                .into_iter()
+                .map(|i| {
+                    let mut parts: Vec<String> = Vec::new();
+                    for m in i.measurements {
+                        parts.extend(m.amount);
+                        parts.extend(m.unit);
+                    }
+                    parts.push(i.item);
+                    parts.extend(i.note);
+                    parts.extend(i.section);
+                    parts.join(" ")
+                })
+                .collect();
+
+            let score = ramekin_core::search::relevance_score(
+                &parsed.text,
+                &ramekin_core::search::SearchDoc {
+                    title: &title,
+                    description: description.as_deref(),
+                    tags: &tags,
+                    ingredients: &ingredient_texts,
+                    instructions: &instructions,
+                    notes: notes.as_deref(),
+                },
+            );
+
+            scored.push((
+                score,
+                RecipeSummary {
+                    id,
+                    title,
+                    description,
+                    tags,
+                    thumbnail_photo_id: photo_ids.first().and_then(|p| *p),
+                    rating,
+                    created_at,
+                    updated_at,
+                },
+            ));
+        }
+
+        // Highest score first; recency then id break ties deterministically.
+        scored.sort_by(|a, b| {
+            b.0.cmp(&a.0)
+                .then_with(|| b.1.updated_at.cmp(&a.1.updated_at))
+                .then_with(|| a.1.id.cmp(&b.1.id))
+        });
+
+        let total = scored.len() as i64;
+        let recipes: Vec<RecipeSummary> = scored
+            .into_iter()
+            .skip(offset as usize)
+            .take(limit as usize)
+            .map(|(_, summary)| summary)
+            .collect();
+
+        return (
+            StatusCode::OK,
+            Json(ListRecipesResponse {
+                recipes,
+                pagination: PaginationMetadata {
+                    total,
+                    limit,
+                    offset,
+                },
+            }),
+        )
+            .into_response();
+    }
+
     // Add ordering (with recipes::id tiebreaker for deterministic pagination)
-    let query = match (params.sort_by, params.sort_dir) {
+    let query = match (sort_by, params.sort_dir) {
+        (SortBy::Relevance, _) => unreachable!("relevance is handled above"),
         (SortBy::Random, _) => query.order(random()),
         (SortBy::UpdatedAt, Direction::Desc) => {
             query.order((recipe_versions::created_at.desc(), recipes::id.asc()))

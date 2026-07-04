@@ -287,8 +287,8 @@ open class RecipesAPI {
      - parameter limit: (query) Number of items to return (default: 20, max: 1000) (optional)
      - parameter offset: (query) Number of items to skip (default: 0) (optional)
      - parameter q: (query) Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:&gt;2024-01-01: created after date - created:&lt;2024-12-31: created before date - created:2024-01-01..2024-12-31: created in date range  Example: \&quot;chicken tag:dinner tag:quick has:photos\&quot; (optional)
-     - parameter sortBy: (query) Sort field (default: updated_at) (optional)
-     - parameter sortDir: (query) Sort direction (default: desc). Ignored when sort_by&#x3D;random. (optional)
+     - parameter sortBy: (query) Sort field. Defaults to relevance when the query has text terms, otherwise updated_at. (optional)
+     - parameter sortDir: (query) Sort direction (default: desc). Ignored when sort_by is random or relevance. (optional)
      - returns: ListRecipesResponse
      */
     @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
@@ -304,8 +304,8 @@ open class RecipesAPI {
      - parameter limit: (query) Number of items to return (default: 20, max: 1000) (optional)
      - parameter offset: (query) Number of items to skip (default: 0) (optional)
      - parameter q: (query) Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:&gt;2024-01-01: created after date - created:&lt;2024-12-31: created before date - created:2024-01-01..2024-12-31: created in date range  Example: \&quot;chicken tag:dinner tag:quick has:photos\&quot; (optional)
-     - parameter sortBy: (query) Sort field (default: updated_at) (optional)
-     - parameter sortDir: (query) Sort direction (default: desc). Ignored when sort_by&#x3D;random. (optional)
+     - parameter sortBy: (query) Sort field. Defaults to relevance when the query has text terms, otherwise updated_at. (optional)
+     - parameter sortDir: (query) Sort direction (default: desc). Ignored when sort_by is random or relevance. (optional)
      - returns: RequestBuilder<ListRecipesResponse> 
      */
     open class func listRecipesWithRequestBuilder(limit: Int64? = nil, offset: Int64? = nil, q: String? = nil, sortBy: SortBy? = nil, sortDir: Direction? = nil) -> RequestBuilder<ListRecipesResponse> {
