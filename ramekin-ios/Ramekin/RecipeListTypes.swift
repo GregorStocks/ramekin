@@ -3,6 +3,7 @@ import SwiftUI
 // MARK: - Sort & Filter Types
 
 enum RecipeSortOrder: String, CaseIterable {
+    case best
     case newest
     case oldest
     case rating
@@ -14,8 +15,8 @@ enum RecipeSortOrder: String, CaseIterable {
     /// terms, newest-first otherwise.
     var sortBy: SortBy? {
         switch self {
-        case .newest: return nil
-        case .oldest: return .updatedAt
+        case .best: return nil
+        case .newest, .oldest: return .updatedAt
         case .rating: return .rating
         case .title: return .title
         case .created: return .createdAt
@@ -25,16 +26,17 @@ enum RecipeSortOrder: String, CaseIterable {
 
     var sortDir: Direction? {
         switch self {
-        case .newest: return nil
-        case .rating, .created: return .desc
+        case .best: return nil
+        case .newest, .rating, .created: return .desc
         case .oldest, .title: return .asc
         case .random: return .desc
         }
     }
 
-    func label(searching: Bool) -> String {
+    var label: String {
         switch self {
-        case .newest: return searching ? "Best match" : "Newest first"
+        case .best: return "Best match"
+        case .newest: return "Newest first"
         case .oldest: return "Oldest first"
         case .rating: return "Highest rated"
         case .title: return "Title A–Z"
@@ -46,7 +48,6 @@ enum RecipeSortOrder: String, CaseIterable {
 
 struct RecipeSortMenu: View {
     @Binding var sortOrder: RecipeSortOrder
-    let searching: Bool
     let onChange: () -> Void
 
     var body: some View {
@@ -56,11 +57,10 @@ struct RecipeSortMenu: View {
                     sortOrder = order
                     onChange()
                 } label: {
-                    let label = order.label(searching: searching)
                     if sortOrder == order {
-                        Label(label, systemImage: "checkmark")
+                        Label(order.label, systemImage: "checkmark")
                     } else {
-                        Text(label)
+                        Text(order.label)
                     }
                 }
             }

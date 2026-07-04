@@ -12,7 +12,7 @@ struct RecipeListView: View {
     @State private var activeQuery: String?
     @State private var searchTask: Task<Void, Never>?
     @State private var isUsingLocalCache = false
-    @AppStorage("recipeSortOrder") private var sortOrder = RecipeSortOrder.newest
+    @AppStorage("recipeSortOrder") private var sortOrder = RecipeSortOrder.best
     @AppStorage("recipePhotoFilter") private var photoFilter = PhotoFilter.any
     @AppStorage("recipeSourceFilter") private var sourceFilter = ""
     @AppStorage("recipeCreatedAfterFilter") private var createdAfterFilter = ""
@@ -123,10 +123,7 @@ struct RecipeListView: View {
         }
     }
     private var sortMenu: some View {
-        RecipeSortMenu(
-            sortOrder: $sortOrder,
-            searching: !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-        ) {
+        RecipeSortMenu(sortOrder: $sortOrder) {
             reloadRecipes()
         }
     }

@@ -33,6 +33,7 @@ interface FilterState {
 }
 
 type SortOption =
+  | "best"
   | "newest"
   | "oldest"
   | "rating"
@@ -45,6 +46,8 @@ function getSortParams(sort: SortOption): {
   sortDir?: Direction;
 } {
   switch (sort) {
+    case "newest":
+      return { sortBy: "updated_at", sortDir: "desc" };
     case "oldest":
       return { sortBy: "updated_at", sortDir: "asc" };
     case "rating":
@@ -55,7 +58,7 @@ function getSortParams(sort: SortOption): {
       return { sortBy: "created_at", sortDir: "desc" };
     case "random":
       return { sortBy: "random" };
-    case "newest":
+    case "best":
     default:
       // No explicit sort: the server picks relevance when the query has
       // text terms, newest-first otherwise.
@@ -326,6 +329,7 @@ export default function CookbookPage() {
   const sortOption = (): SortOption => {
     const sort = getQueryParam(searchParams.sort);
     if (
+      sort === "newest" ||
       sort === "oldest" ||
       sort === "rating" ||
       sort === "title" ||
@@ -333,12 +337,12 @@ export default function CookbookPage() {
       sort === "random"
     )
       return sort;
-    return "newest";
+    return "best";
   };
 
   const handleSortChange = (e: Event) => {
     const value = (e.target as HTMLSelectElement).value as SortOption;
-    setSearchParams({ sort: value === "newest" ? undefined : value });
+    setSearchParams({ sort: value === "best" ? undefined : value });
   };
 
   const loadRecipes = async (appendMode = false, currentOffset = 0) => {
@@ -930,9 +934,8 @@ export default function CookbookPage() {
           value={sortOption()}
           onChange={handleSortChange}
         >
-          <option value="newest">
-            {currentTextTerms().length > 0 ? "Best match" : "Newest first"}
-          </option>
+          <option value="best">Best match</option>
+          <option value="newest">Newest first</option>
           <option value="oldest">Oldest first</option>
           <option value="rating">Highest rated</option>
           <option value="title">Title A–Z</option>
