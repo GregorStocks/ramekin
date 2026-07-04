@@ -1217,6 +1217,33 @@ def test_search_relevance_ligature_expansion(authed_api_client):
     assert [r.title for r in response.recipes] == ["Œufs en Meurette", "Brunch Board"]
 
 
+def test_search_relevance_presentation_ligature(authed_api_client):
+    """Postgres unaccent expands presentation ligatures (U+FB01 'ﬁ' -> fi);
+    the scorer must credit those matches too. If it didn't, Hot Cocoa would
+    score only its 'chocolate' matches (250), tying newer Spice Blend (250)
+    and losing the recency tiebreak."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Hot Cocoa",
+            instructions="Warm the milk. Whisk in the chocolate.",
+            ingredients=[make_ingredient("ﬁnely chopped chocolate")],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Spice Blend",
+            instructions="Grind finely.",
+            ingredients=[make_ingredient("chocolate shavings")],
+        )
+    )
+
+    response = recipes_api.list_recipes(q="finely chocolate")
+    assert [r.title for r in response.recipes] == ["Hot Cocoa", "Spice Blend"]
+
+
 def test_empty_search_returns_all(authed_api_client):
     """Test that empty search returns all recipes."""
     client, user_id = authed_api_client

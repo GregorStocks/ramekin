@@ -43,17 +43,19 @@ const WEIGHT_TOKEN_IN_INGREDIENT: u32 = 200;
 const WEIGHT_TOKEN_IN_INSTRUCTIONS: u32 = 50;
 const WEIGHT_TOKEN_IN_NOTES: u32 = 50;
 
-/// Normalize text for matching: strip diacritics, expand the Latin ligature
-/// letters that Postgres `unaccent` rewrites but Unicode NFD leaves alone,
-/// then lowercase. This is the Rust mirror of the database's `f_unaccent` +
-/// `ILIKE` semantics, so "Crème Brûlée"/"creme brulee" and "Œufs"/"oeufs"
+/// Normalize text for matching: NFKD-decompose (so presentation ligatures
+/// like "ﬁ" and full-width forms come apart), strip combining marks, expand
+/// the characters Postgres `unaccent` rewrites that no Unicode decomposition
+/// covers (ligature letters, curly punctuation), then lowercase. This is the
+/// Rust mirror of the database's `f_unaccent` + `ILIKE` semantics, so
+/// "Crème Brûlée"/"creme brulee", "Œufs"/"oeufs", and "ﬁnely"/"finely"
 /// normalize identically. Parity with the full unaccent.rules table is
 /// best-effort — an unmapped rare glyph only costs ranking points on a row
 /// the SQL filter already matched, it can't hide a result.
 pub fn normalize_for_search(s: &str) -> String {
     let mut out = String::with_capacity(s.len());
-    for c in s.nfd().filter(|c| !is_combining_mark(*c)) {
-        match latin_expansion(c) {
+    for c in s.nfkd().filter(|c| !is_combining_mark(*c)) {
+        match unaccent_expansion(c) {
             Some(replacement) => out.push_str(replacement),
             None => out.push(c),
         }
@@ -61,9 +63,10 @@ pub fn normalize_for_search(s: &str) -> String {
     out.to_lowercase()
 }
 
-/// Latin letters with no Unicode decomposition that Postgres `unaccent`
-/// nevertheless rewrites (see contrib/unaccent's rules file).
-fn latin_expansion(c: char) -> Option<&'static str> {
+/// Characters with no Unicode decomposition that Postgres `unaccent`
+/// nevertheless rewrites (see contrib/unaccent's rules file): ligature
+/// letters, plus the typographic punctuation it folds to ASCII.
+fn unaccent_expansion(c: char) -> Option<&'static str> {
     Some(match c {
         'æ' | 'Æ' => "ae",
         'œ' | 'Œ' => "oe",
@@ -73,6 +76,12 @@ fn latin_expansion(c: char) -> Option<&'static str> {
         'þ' | 'Þ' => "th",
         'ł' | 'Ł' => "l",
         'ı' => "i",
+        // NFKD decomposes vulgar fractions (½ -> 1⁄2) using the Unicode
+        // fraction slash; unaccent emits an ASCII slash.
+        '⁄' => "/",
+        '‘' | '’' | '‚' | '‛' => "'",
+        '“' | '”' | '„' | '‟' => "\"",
+        '‐' | '‑' | '‒' | '–' | '—' | '―' | '−' => "-",
         _ => return None,
     })
 }
@@ -175,6 +184,16 @@ mod tests {
             "spatzle mit sosse"
         );
         assert_eq!(normalize_for_search("Smørrebrød"), "smorrebrod");
+    }
+
+    #[test]
+    fn test_normalize_expands_presentation_forms_and_punctuation() {
+        // NFKD handles presentation ligatures and vulgar fractions.
+        assert_eq!(normalize_for_search("ﬁnely chopped"), "finely chopped");
+        assert_eq!(normalize_for_search("1½ cups"), "11/2 cups");
+        // unaccent folds typographic punctuation to ASCII.
+        assert_eq!(normalize_for_search("Mom’s Apple Cake"), "mom's apple cake");
+        assert_eq!(normalize_for_search("Sweet–and–Sour"), "sweet-and-sour");
     }
 
     #[test]

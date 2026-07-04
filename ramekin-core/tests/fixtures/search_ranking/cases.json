@@ -81,6 +81,15 @@
       "ingredients": ["eggs", "red wine", "bacon"],
       "instructions": "Poach the eggs. Reduce the wine.",
       "notes": null
+    },
+    {
+      "id": "hot-cocoa",
+      "title": "Hot Cocoa",
+      "description": null,
+      "tags": [],
+      "ingredients": ["ﬁnely chopped chocolate", "milk"],
+      "instructions": "Warm the milk. Whisk in the chocolate.",
+      "notes": null
     }
   ],
   "cases": [
@@ -137,6 +146,12 @@
       "tokens": ["œufs", "en", "meurette"],
       "expected_order": ["oeufs-en-meurette"],
       "zero_score": ["garlic-bread"]
+    },
+    {
+      "name": "presentation ligature: ascii query scores a field whose only match uses U+FB01",
+      "tokens": ["finely"],
+      "expected_order": ["hot-cocoa"],
+      "zero_score": ["garlic-bread", "plain-omelette"]
     },
     {
       "name": "empty token list scores everything zero",
