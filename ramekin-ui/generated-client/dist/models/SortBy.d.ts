@@ -14,6 +14,7 @@
  * @export
  */
 export declare const SortBy: {
+    readonly Relevance: "relevance";
     readonly UpdatedAt: "updated_at";
     readonly Rating: "rating";
     readonly Title: "title";

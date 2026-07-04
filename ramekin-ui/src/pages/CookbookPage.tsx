@@ -41,7 +41,7 @@ type SortOption =
   | "random";
 
 function getSortParams(sort: SortOption): {
-  sortBy: SortBy;
+  sortBy?: SortBy;
   sortDir?: Direction;
 } {
   switch (sort) {
@@ -57,7 +57,9 @@ function getSortParams(sort: SortOption): {
       return { sortBy: "random" };
     case "newest":
     default:
-      return { sortBy: "updated_at", sortDir: "desc" };
+      // No explicit sort: the server picks relevance when the query has
+      // text terms, newest-first otherwise.
+      return {};
   }
 }
 
@@ -928,7 +930,9 @@ export default function CookbookPage() {
           value={sortOption()}
           onChange={handleSortChange}
         >
-          <option value="newest">Newest first</option>
+          <option value="newest">
+            {currentTextTerms().length > 0 ? "Best match" : "Newest first"}
+          </option>
           <option value="oldest">Oldest first</option>
           <option value="rating">Highest rated</option>
           <option value="title">Title A–Z</option>

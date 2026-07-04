@@ -4,6 +4,7 @@
 
 | Name | Value |
 |---- | -----|
+| Relevance | relevance |
 | UpdatedAt | updated_at |
 | Rating | rating |
 | Title | title |

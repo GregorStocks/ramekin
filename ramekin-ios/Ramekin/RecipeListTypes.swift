@@ -10,9 +10,12 @@ enum RecipeSortOrder: String, CaseIterable {
     case created
     case random
 
-    var sortBy: SortBy {
+    /// nil means "let the server pick": relevance when the query has text
+    /// terms, newest-first otherwise.
+    var sortBy: SortBy? {
         switch self {
-        case .newest, .oldest: return .updatedAt
+        case .newest: return nil
+        case .oldest: return .updatedAt
         case .rating: return .rating
         case .title: return .title
         case .created: return .createdAt
@@ -20,22 +23,49 @@ enum RecipeSortOrder: String, CaseIterable {
         }
     }
 
-    var sortDir: Direction {
+    var sortDir: Direction? {
         switch self {
-        case .newest, .rating, .created: return .desc
+        case .newest: return nil
+        case .rating, .created: return .desc
         case .oldest, .title: return .asc
         case .random: return .desc
         }
     }
 
-    var label: String {
+    func label(searching: Bool) -> String {
         switch self {
-        case .newest: return "Newest first"
+        case .newest: return searching ? "Best match" : "Newest first"
         case .oldest: return "Oldest first"
         case .rating: return "Highest rated"
         case .title: return "Title A–Z"
         case .created: return "Date added"
         case .random: return "Random"
+        }
+    }
+}
+
+struct RecipeSortMenu: View {
+    @Binding var sortOrder: RecipeSortOrder
+    let searching: Bool
+    let onChange: () -> Void
+
+    var body: some View {
+        Menu {
+            ForEach(RecipeSortOrder.allCases, id: \.self) { order in
+                Button {
+                    sortOrder = order
+                    onChange()
+                } label: {
+                    let label = order.label(searching: searching)
+                    if sortOrder == order {
+                        Label(label, systemImage: "checkmark")
+                    } else {
+                        Text(label)
+                    }
+                }
+            }
+        } label: {
+            Image(systemName: "arrow.up.arrow.down")
         }
     }
 }

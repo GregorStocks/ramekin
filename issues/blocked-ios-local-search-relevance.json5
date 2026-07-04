@@ -1,0 +1,43 @@
+{
+  "title": "iOS local search using the shared search-ranking vectors",
+  "description": "Search relevance ranking is implemented server-side as a \
+pure scoring function in ramekin-core/src/search.rs, with a JSON fixture \
+corpus at ramekin-core/tests/fixtures/search_ranking/cases.json that is \
+deliberately structured as shared test vectors (query tokens + recipe fields \
+in, ranked IDs out). The long-term plan (discussed 2026-07-03) is for iOS to \
+run the same matching + scoring locally for instant, offline search, with the \
+vector file guaranteeing identical ranking to the server. Web stays \
+server-side — it has no offline story and no local recipe corpus, so it \
+consumes ranking via the API and cannot drift.\n\
+\n\
+Scope when unblocked:\n\
+- Swift implementation of normalize_for_search (lowercase + strip combining \
+marks, mirroring Postgres f_unaccent + ILIKE semantics) and relevance_score \
+with the same field weights.\n\
+- Swift implementation of the matching filter (every text token must appear in \
+title/description/instructions/notes/ingredients, accent- and case-insensitive \
+substring), which is currently SQL in server/src/api/recipes/list.rs.\n\
+- XCTest that loads the shared vector corpus as a test resource (xcodegen \
+project.yml resources entry) and asserts identical ranking; move/copy the \
+corpus to shared-test-vectors/ per the conventions from \
+p3-shared-test-vectors-recipe-scaling if that pilot has landed by then.\n\
+- CI wiring: add the vector path to .github/workflows/ios.yml trigger paths so \
+a vector edit cannot merge without running the Swift side.\n\
+\n\
+Per doc/client-logic-sharing.md this is the duplicate-and-pin pattern; do NOT \
+reach for WASM/UniFFI for a ~100-line scorer.",
+  "status": "open",
+  "priority": 3,
+  "type": "task",
+  "labels": [
+    "ios",
+    "search",
+    "parity",
+  ],
+  "blocked": "Requires an on-device recipe cache (full recipe bodies, not just \
+paged summaries) to search over — that offline-cache architecture doesn't \
+exist yet and needs Gregor's go-ahead as its own project before local search \
+is buildable.",
+  "created_at": "2026-07-03T19:00:33-07:00",
+  "updated_at": "2026-07-03T19:00:33-07:00",
+}

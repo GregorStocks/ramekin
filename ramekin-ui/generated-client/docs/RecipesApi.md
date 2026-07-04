@@ -546,9 +546,9 @@ async function example() {
     offset: 789,
     // string | Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:>2024-01-01: created after date - created:<2024-12-31: created before date - created:2024-01-01..2024-12-31: created in date range  Example: \"chicken tag:dinner tag:quick has:photos\" (optional)
     q: q_example,
-    // SortBy | Sort field (default: updated_at) (optional)
+    // SortBy | Sort field. Defaults to relevance when the query has text terms, otherwise updated_at. (optional)
     sortBy: ...,
-    // Direction | Sort direction (default: desc). Ignored when sort_by=random. (optional)
+    // Direction | Sort direction (default: desc). Ignored when sort_by is random or relevance. (optional)
     sortDir: ...,
   } satisfies ListRecipesRequest;
 
@@ -572,8 +572,8 @@ example().catch(console.error);
 | **limit** | `number` | Number of items to return (default: 20, max: 1000) | [Optional] [Defaults to `undefined`] |
 | **offset** | `number` | Number of items to skip (default: 0) | [Optional] [Defaults to `undefined`] |
 | **q** | `string` | Search query with optional filters. Supports: - Plain text: searches title and description - tag:value: filter by tag (can use multiple) - source:value: filter by source name - has:photos / no:photos: filter by photo presence - created:&gt;2024-01-01: created after date - created:&lt;2024-12-31: created before date - created:2024-01-01..2024-12-31: created in date range  Example: \&quot;chicken tag:dinner tag:quick has:photos\&quot; | [Optional] [Defaults to `undefined`] |
-| **sortBy** | `SortBy` | Sort field (default: updated_at) | [Optional] [Defaults to `undefined`] [Enum: updated_at, rating, title, created_at, random] |
-| **sortDir** | `Direction` | Sort direction (default: desc). Ignored when sort_by&#x3D;random. | [Optional] [Defaults to `undefined`] [Enum: desc, asc] |
+| **sortBy** | `SortBy` | Sort field. Defaults to relevance when the query has text terms, otherwise updated_at. | [Optional] [Defaults to `undefined`] [Enum: relevance, updated_at, rating, title, created_at, random] |
+| **sortDir** | `Direction` | Sort direction (default: desc). Ignored when sort_by is random or relevance. | [Optional] [Defaults to `undefined`] [Enum: desc, asc] |
 
 ### Return type
 

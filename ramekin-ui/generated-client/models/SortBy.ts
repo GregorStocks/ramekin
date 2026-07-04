@@ -18,6 +18,7 @@
  * @export
  */
 export const SortBy = {
+    Relevance: 'relevance',
     UpdatedAt: 'updated_at',
     Rating: 'rating',
     Title: 'title',

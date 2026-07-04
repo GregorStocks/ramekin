@@ -1080,6 +1080,115 @@ def test_search_with_pagination(authed_api_client):
     assert response.pagination.total == 5
 
 
+def _create_garlic_bread_corpus(recipes_api):
+    """Three recipes matching "garlic bread", created worst-match-last so
+    that recency ordering would invert the expected relevance ordering."""
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Garlic Bread",
+            instructions="Mix garlic into butter. Spread on bread. Bake.",
+            ingredients=[make_ingredient("baguette"), make_ingredient("garlic")],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Cheesy Garlic Bread Bites",
+            instructions="Cut bread into cubes. Top with garlic and cheese.",
+            ingredients=[make_ingredient("bread"), make_ingredient("garlic")],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Roast Chicken",
+            instructions="Stuff with garlic. Serve with bread.",
+            ingredients=[
+                make_ingredient("whole chicken"),
+                make_ingredient("garlic"),
+                make_ingredient("bread crumbs"),
+            ],
+        )
+    )
+
+
+def test_search_relevance_default_ordering(authed_api_client):
+    """Text searches default to relevance: title matches rank above
+    body-only matches regardless of recency."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+    _create_garlic_bread_corpus(recipes_api)
+
+    response = recipes_api.list_recipes(q="garlic bread")
+    titles = [r.title for r in response.recipes]
+    assert titles == ["Garlic Bread", "Cheesy Garlic Bread Bites", "Roast Chicken"]
+
+    # Explicit relevance behaves identically to the default.
+    response = recipes_api.list_recipes(q="garlic bread", sort_by=SortBy.RELEVANCE)
+    assert [r.title for r in response.recipes] == titles
+
+
+def test_search_relevance_pagination(authed_api_client):
+    """Relevance ordering paginates in memory; totals and page boundaries
+    must still be correct."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+    _create_garlic_bread_corpus(recipes_api)
+
+    response = recipes_api.list_recipes(q="garlic bread", limit=2)
+    assert [r.title for r in response.recipes] == [
+        "Garlic Bread",
+        "Cheesy Garlic Bread Bites",
+    ]
+    assert response.pagination.total == 3
+
+    response = recipes_api.list_recipes(q="garlic bread", limit=2, offset=2)
+    assert [r.title for r in response.recipes] == ["Roast Chicken"]
+    assert response.pagination.total == 3
+
+
+def test_search_explicit_sort_overrides_relevance(authed_api_client):
+    """An explicit sort_by with a text query is honored instead of
+    relevance."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+    _create_garlic_bread_corpus(recipes_api)
+
+    response = recipes_api.list_recipes(
+        q="garlic bread", sort_by=SortBy.TITLE, sort_dir=Direction.ASC
+    )
+    assert [r.title for r in response.recipes] == [
+        "Cheesy Garlic Bread Bites",
+        "Garlic Bread",
+        "Roast Chicken",
+    ]
+
+
+def test_search_relevance_accent_insensitive(authed_api_client):
+    """Relevance ranking normalizes accents the same way matching does."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Created title-match-first so recency ordering would invert the
+    # expected relevance ordering.
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Crème Brûlée",
+            instructions="Bake in a water bath. Torch the sugar.",
+            ingredients=[],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Custard Base",
+            description="Use for crème brûlée later.",
+            instructions="Whisk and chill.",
+            ingredients=[],
+        )
+    )
+
+    response = recipes_api.list_recipes(q="creme brulee")
+    assert [r.title for r in response.recipes] == ["Crème Brûlée", "Custard Base"]
+
+
 def test_empty_search_returns_all(authed_api_client):
     """Test that empty search returns all recipes."""
     client, user_id = authed_api_client

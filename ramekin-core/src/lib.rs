@@ -12,6 +12,7 @@ pub mod ingredient_categorizer;
 pub mod ingredient_parser;
 pub mod metric_weights;
 pub mod pipeline;
+pub mod search;
 pub mod tags;
 pub(crate) mod text;
 pub mod types;

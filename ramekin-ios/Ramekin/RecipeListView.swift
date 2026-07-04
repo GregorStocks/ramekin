@@ -123,21 +123,11 @@ struct RecipeListView: View {
         }
     }
     private var sortMenu: some View {
-        Menu {
-            ForEach(RecipeSortOrder.allCases, id: \.self) { order in
-                Button {
-                    sortOrder = order
-                    reloadRecipes()
-                } label: {
-                    if sortOrder == order {
-                        Label(order.label, systemImage: "checkmark")
-                    } else {
-                        Text(order.label)
-                    }
-                }
-            }
-        } label: {
-            Image(systemName: "arrow.up.arrow.down")
+        RecipeSortMenu(
+            sortOrder: $sortOrder,
+            searching: !searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        ) {
+            reloadRecipes()
         }
     }
     private var filterBar: some View {
