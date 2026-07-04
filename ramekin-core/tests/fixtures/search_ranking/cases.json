@@ -90,6 +90,15 @@
       "ingredients": ["ﬁnely chopped chocolate", "milk"],
       "instructions": "Warm the milk. Whisk in the chocolate.",
       "notes": null
+    },
+    {
+      "id": "pancakes",
+      "title": "Pancakes",
+      "description": null,
+      "tags": [],
+      "ingredients": ["2 cups flour", "1 cup milk", "1 egg"],
+      "instructions": "Mix the batter. Fry until golden.",
+      "notes": null
     }
   ],
   "cases": [
@@ -152,6 +161,12 @@
       "tokens": ["finely"],
       "expected_order": ["hot-cocoa"],
       "zero_score": ["garlic-bread", "plain-omelette"]
+    },
+    {
+      "name": "measurement text scores: ingredients include amounts and units",
+      "tokens": ["cups", "flour"],
+      "expected_order": ["pancakes"],
+      "zero_score": ["plain-omelette", "garlic-bread"]
     },
     {
       "name": "empty token list scores everything zero",

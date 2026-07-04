@@ -474,10 +474,22 @@ pub async fn list_recipes(
                     return ApiError::internal("Recipe ingredients are corrupt").into_response();
                 }
             };
+            // One text per ingredient covering everything the SQL filter can
+            // match in the JSONB (measurements included), so tokens like
+            // "cups" score instead of matching silently.
             let ingredient_texts: Vec<String> = ingredients
                 .into_iter()
-                .flat_map(|i| [Some(i.item), i.note, i.section])
-                .flatten()
+                .map(|i| {
+                    let mut parts: Vec<String> = Vec::new();
+                    for m in i.measurements {
+                        parts.extend(m.amount);
+                        parts.extend(m.unit);
+                    }
+                    parts.push(i.item);
+                    parts.extend(i.note);
+                    parts.extend(i.section);
+                    parts.join(" ")
+                })
                 .collect();
 
             let score = ramekin_core::search::relevance_score(

@@ -23,7 +23,8 @@ pub struct SearchDoc<'a> {
     pub title: &'a str,
     pub description: Option<&'a str>,
     pub tags: &'a [String],
-    /// One entry per ingredient text fragment (item, note, section).
+    /// One entry per ingredient: its full text (measurement amounts/units,
+    /// item, note, section), so unit/amount tokens score like any other.
     pub ingredients: &'a [String],
     pub instructions: &'a str,
     pub notes: Option<&'a str>,

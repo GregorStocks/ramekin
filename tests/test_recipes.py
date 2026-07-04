@@ -1244,6 +1244,32 @@ def test_search_relevance_presentation_ligature(authed_api_client):
     assert [r.title for r in response.recipes] == ["Hot Cocoa", "Spice Blend"]
 
 
+def test_search_relevance_measurement_text(authed_api_client):
+    """Amounts and units live only in ingredient measurements; the SQL filter
+    matches them via the JSONB text, so the scorer must credit them too. If
+    it didn't, Snack Mix would score 0 and lose to newer Muffins (50)."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Snack Mix",
+            instructions="Toss together.",
+            ingredients=[make_ingredient("sugar", amount="2", unit="cups")],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Muffins",
+            instructions="Fill the cups halfway.",
+            ingredients=[],
+        )
+    )
+
+    response = recipes_api.list_recipes(q="cups")
+    assert [r.title for r in response.recipes] == ["Snack Mix", "Muffins"]
+
+
 def test_empty_search_returns_all(authed_api_client):
     """Test that empty search returns all recipes."""
     client, user_id = authed_api_client
