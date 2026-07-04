@@ -43,14 +43,38 @@ const WEIGHT_TOKEN_IN_INGREDIENT: u32 = 200;
 const WEIGHT_TOKEN_IN_INSTRUCTIONS: u32 = 50;
 const WEIGHT_TOKEN_IN_NOTES: u32 = 50;
 
-/// Normalize text for matching: strip diacritics, then lowercase. This is
-/// the Rust mirror of the database's `f_unaccent` + `ILIKE` semantics, so
-/// "Crème Brûlée" and "creme brulee" normalize identically.
+/// Normalize text for matching: strip diacritics, expand the Latin ligature
+/// letters that Postgres `unaccent` rewrites but Unicode NFD leaves alone,
+/// then lowercase. This is the Rust mirror of the database's `f_unaccent` +
+/// `ILIKE` semantics, so "Crème Brûlée"/"creme brulee" and "Œufs"/"oeufs"
+/// normalize identically. Parity with the full unaccent.rules table is
+/// best-effort — an unmapped rare glyph only costs ranking points on a row
+/// the SQL filter already matched, it can't hide a result.
 pub fn normalize_for_search(s: &str) -> String {
-    s.nfd()
-        .filter(|c| !is_combining_mark(*c))
-        .collect::<String>()
-        .to_lowercase()
+    let mut out = String::with_capacity(s.len());
+    for c in s.nfd().filter(|c| !is_combining_mark(*c)) {
+        match latin_expansion(c) {
+            Some(replacement) => out.push_str(replacement),
+            None => out.push(c),
+        }
+    }
+    out.to_lowercase()
+}
+
+/// Latin letters with no Unicode decomposition that Postgres `unaccent`
+/// nevertheless rewrites (see contrib/unaccent's rules file).
+fn latin_expansion(c: char) -> Option<&'static str> {
+    Some(match c {
+        'æ' | 'Æ' => "ae",
+        'œ' | 'Œ' => "oe",
+        'ß' | 'ẞ' => "ss",
+        'ø' | 'Ø' => "o",
+        'đ' | 'Đ' | 'ð' | 'Ð' => "d",
+        'þ' | 'Þ' => "th",
+        'ł' | 'Ł' => "l",
+        'ı' => "i",
+        _ => return None,
+    })
 }
 
 /// Score one recipe against the text tokens of a search query. Tokens are
@@ -140,6 +164,24 @@ mod tests {
         assert_eq!(normalize_for_search("Crème Brûlée"), "creme brulee");
         assert_eq!(normalize_for_search("JALAPEÑO"), "jalapeno");
         assert_eq!(normalize_for_search("plain"), "plain");
+    }
+
+    #[test]
+    fn test_normalize_expands_ligature_letters() {
+        assert_eq!(normalize_for_search("Œufs"), "oeufs");
+        assert_eq!(normalize_for_search("Æbleskiver"), "aebleskiver");
+        assert_eq!(
+            normalize_for_search("Spätzle mit Soße"),
+            "spatzle mit sosse"
+        );
+        assert_eq!(normalize_for_search("Smørrebrød"), "smorrebrod");
+    }
+
+    #[test]
+    fn test_ligature_title_gets_exact_match_score() {
+        let q = tokens(&["oeufs", "en", "meurette"]);
+        let hit = relevance_score(&q, &doc("Œufs en Meurette", &[], ""));
+        assert!(hit >= WEIGHT_EXACT_TITLE);
     }
 
     #[test]

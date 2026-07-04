@@ -1189,6 +1189,34 @@ def test_search_relevance_accent_insensitive(authed_api_client):
     assert [r.title for r in response.recipes] == ["Crème Brûlée", "Custard Base"]
 
 
+def test_search_relevance_ligature_expansion(authed_api_client):
+    """Postgres unaccent expands ligatures (Œ -> OE); the scorer must rank
+    the same way so a ligature title still wins for its ascii query."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Created title-match-first so recency ordering would invert the
+    # expected relevance ordering.
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Œufs en Meurette",
+            instructions="Poach the eggs. Reduce the wine.",
+            ingredients=[],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Brunch Board",
+            description="Includes oeufs en meurette on toast.",
+            instructions="Assemble everything.",
+            ingredients=[],
+        )
+    )
+
+    response = recipes_api.list_recipes(q="oeufs")
+    assert [r.title for r in response.recipes] == ["Œufs en Meurette", "Brunch Board"]
+
+
 def test_empty_search_returns_all(authed_api_client):
     """Test that empty search returns all recipes."""
     client, user_id = authed_api_client

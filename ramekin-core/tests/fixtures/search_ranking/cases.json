@@ -72,6 +72,15 @@
       "ingredients": ["eggs", "butter"],
       "instructions": "Beat eggs. Cook gently.",
       "notes": null
+    },
+    {
+      "id": "oeufs-en-meurette",
+      "title": "Œufs en Meurette",
+      "description": "Eggs poached in red wine sauce.",
+      "tags": [],
+      "ingredients": ["eggs", "red wine", "bacon"],
+      "instructions": "Poach the eggs. Reduce the wine.",
+      "notes": null
     }
   ],
   "cases": [
@@ -116,6 +125,18 @@
       "tokens": ["day-old"],
       "expected_order": ["roast-chicken"],
       "zero_score": ["garlic-bread", "plain-omelette"]
+    },
+    {
+      "name": "ligature expansion: ascii query gets the exact-title score on a ligature title",
+      "tokens": ["oeufs"],
+      "expected_order": ["oeufs-en-meurette"],
+      "zero_score": ["plain-omelette", "creme-brulee"]
+    },
+    {
+      "name": "ligature query normalizes identically to its ascii form",
+      "tokens": ["œufs", "en", "meurette"],
+      "expected_order": ["oeufs-en-meurette"],
+      "zero_score": ["garlic-bread"]
     },
     {
       "name": "empty token list scores everything zero",
