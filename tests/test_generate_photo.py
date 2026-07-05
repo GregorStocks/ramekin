@@ -1,11 +1,41 @@
-import pytest
+import os
 import threading
-import time
+
+import pytest
+import requests
 
 from conftest import make_ingredient
 from ramekin_client.api import RecipesApi
 from ramekin_client.exceptions import ApiException
 from ramekin_client.models import CreateRecipeRequest, UpdateRecipeRequest
+
+
+def _mock_openrouter_url(path: str) -> str:
+    port = os.environ["MOCK_OPENROUTER_PORT"]
+    return f"http://localhost:{port}{path}"
+
+
+def _reset_slow_image_generation_barrier() -> None:
+    response = requests.get(
+        _mock_openrouter_url("/test/slow-image-generation/reset"), timeout=5
+    )
+    response.raise_for_status()
+
+
+def _wait_for_slow_image_generation_to_start() -> None:
+    response = requests.get(
+        _mock_openrouter_url("/test/slow-image-generation/started"),
+        params={"timeout": "5"},
+        timeout=6,
+    )
+    response.raise_for_status()
+
+
+def _release_slow_image_generation() -> None:
+    response = requests.get(
+        _mock_openrouter_url("/test/slow-image-generation/release"), timeout=5
+    )
+    response.raise_for_status()
 
 
 def test_generate_photo_requires_auth(unauthed_api_client):
@@ -81,6 +111,8 @@ def test_generate_photo_fails_if_recipe_changes_mid_generation(authed_api_client
     client, _user_id = authed_api_client
     recipes_api = RecipesApi(client)
 
+    _reset_slow_image_generation_barrier()
+
     create_response = recipes_api.create_recipe(
         CreateRecipeRequest(
             title="Slow Generated Photo",
@@ -107,21 +139,25 @@ def test_generate_photo_fails_if_recipe_changes_mid_generation(authed_api_client
     thread = threading.Thread(target=generate_photo)
     thread.start()
 
-    time.sleep(0.2)
-    recipes_api.update_recipe(
-        id=str(create_response.id),
-        update_recipe_request=UpdateRecipeRequest(
-            title="Updated While Generating",
-            description="A recipe used to simulate photo generation races.",
-            instructions="Toast the bread and serve it warm.",
-            ingredients=[
-                make_ingredient("bread", "2", "slices"),
-                make_ingredient("butter", "1", "tbsp"),
-            ],
-        ),
-    )
+    try:
+        _wait_for_slow_image_generation_to_start()
+        recipes_api.update_recipe(
+            id=str(create_response.id),
+            update_recipe_request=UpdateRecipeRequest(
+                title="Updated While Generating",
+                description="A recipe used to simulate photo generation races.",
+                instructions="Toast the bread and serve it warm.",
+                ingredients=[
+                    make_ingredient("bread", "2", "slices"),
+                    make_ingredient("butter", "1", "tbsp"),
+                ],
+            ),
+        )
+    finally:
+        _release_slow_image_generation()
 
     thread.join(timeout=5)
+    assert not thread.is_alive()
 
     assert result["status"] == "error"
     assert result["code"] == 409

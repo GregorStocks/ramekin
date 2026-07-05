@@ -7,9 +7,23 @@ Returns valid OpenAI-compatible chat completion responses.
 import base64
 import json
 import sys
-import time
-from http.server import HTTPServer, BaseHTTPRequestHandler
+import threading
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from urllib.parse import parse_qs, urlparse
+
+
+class SlowImageGenerationBarrier:
+    def __init__(self):
+        self.started = threading.Event()
+        self.release = threading.Event()
+
+    def reset(self):
+        self.started.clear()
+        self.release.clear()
+
+
+SLOW_IMAGE_GENERATION_BARRIER = SlowImageGenerationBarrier()
 
 
 def mock_png_data_url():
@@ -26,6 +40,29 @@ def mock_png_data_url():
 
 class MockOpenRouterHandler(BaseHTTPRequestHandler):
     def do_GET(self):
+        parsed = urlparse(self.path)
+        if parsed.path == "/test/slow-image-generation/reset":
+            SLOW_IMAGE_GENERATION_BARRIER.reset()
+            self.send_response(204)
+            self.end_headers()
+            return
+
+        if parsed.path == "/test/slow-image-generation/started":
+            params = parse_qs(parsed.query)
+            timeout = float(params.get("timeout", ["5"])[0])
+            if not SLOW_IMAGE_GENERATION_BARRIER.started.wait(timeout):
+                self.send_error(504, "Timed out waiting for slow image generation")
+                return
+            self.send_response(204)
+            self.end_headers()
+            return
+
+        if parsed.path == "/test/slow-image-generation/release":
+            SLOW_IMAGE_GENERATION_BARRIER.release.set()
+            self.send_response(204)
+            self.end_headers()
+            return
+
         # Health check endpoint
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
@@ -45,7 +82,11 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                 return
 
             if "image" in request.get("modalities", []):
-                response = self._mock_image_generation_response(request)
+                try:
+                    response = self._mock_image_generation_response(request)
+                except TimeoutError as exc:
+                    self.send_error(500, str(exc))
+                    return
                 self.send_response(200)
                 self.send_header("Content-Type", "application/json")
                 self.end_headers()
@@ -136,7 +177,9 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
             if isinstance(content, str)
         )
         if "Slow Generated Photo" in all_text:
-            time.sleep(1.0)
+            SLOW_IMAGE_GENERATION_BARRIER.started.set()
+            if not SLOW_IMAGE_GENERATION_BARRIER.release.wait(10.0):
+                raise TimeoutError("Slow image generation was never released")
 
         return {
             "id": "mock-image-generation-id",
@@ -244,7 +287,7 @@ def main():
         print("Usage: python mock_openrouter.py <port>", file=sys.stderr)
         sys.exit(1)
     port = int(sys.argv[1])
-    server = HTTPServer(("", port), MockOpenRouterHandler)
+    server = ThreadingHTTPServer(("", port), MockOpenRouterHandler)
     print(f"Mock OpenRouter server running on port {port}", file=sys.stderr)
     server.serve_forever()
 
