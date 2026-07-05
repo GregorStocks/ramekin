@@ -1,10 +1,13 @@
+use super::read::{
+    fetch_current_recipe_with_version, fetch_current_recipes_with_versions, RecipeWithVersion,
+};
 use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::{DbConn, DbPool};
 use crate::get_conn;
-use crate::models::{Ingredient, RecipeVersion};
+use crate::models::Ingredient;
 use crate::photos::processing::{generate_thumbnail, resize_for_export, EXPORT_PHOTO_DATA_SIZE};
-use crate::schema::{photos, recipe_version_tags, recipe_versions, recipes, user_tags};
+use crate::schema::{photos, recipe_version_tags, user_tags};
 use axum::{
     body::Body,
     extract::{Path, State},
@@ -13,7 +16,7 @@ use axum::{
 };
 use base64::Engine;
 use bytes::Bytes;
-use chrono::{DateTime, Utc};
+use chrono::Utc;
 use diesel::prelude::*;
 use flate2::write::GzEncoder;
 use flate2::Compression;
@@ -27,13 +30,6 @@ use tokio_stream::wrappers::ReceiverStream;
 use uuid::Uuid;
 use zip::write::SimpleFileOptions;
 use zip::ZipWriter;
-
-/// Recipe with version info needed for export
-pub struct RecipeWithVersion {
-    pub id: Uuid,
-    pub created_at: DateTime<Utc>,
-    pub version: RecipeVersion,
-}
 
 /// Paprika recipe format for export
 #[derive(Debug, Serialize)]
@@ -267,63 +263,6 @@ pub fn export_recipe_to_paprikarecipe(
     Ok(ExportedRecipe { filename, data })
 }
 
-/// Fetch a recipe with its current version
-fn fetch_recipe_with_version(
-    conn: &mut DbConn,
-    user_id: Uuid,
-    recipe_id: Uuid,
-) -> Result<RecipeWithVersion, diesel::result::Error> {
-    let (id, created_at, current_version_id): (Uuid, DateTime<Utc>, Option<Uuid>) = recipes::table
-        .filter(recipes::id.eq(recipe_id))
-        .filter(recipes::user_id.eq(user_id))
-        .filter(recipes::deleted_at.is_null())
-        .select((
-            recipes::id,
-            recipes::created_at,
-            recipes::current_version_id,
-        ))
-        .first(conn)?;
-
-    let version_id = current_version_id.ok_or(diesel::result::Error::NotFound)?;
-
-    let version: RecipeVersion = recipe_versions::table
-        .filter(recipe_versions::id.eq(version_id))
-        .first(conn)?;
-
-    Ok(RecipeWithVersion {
-        id,
-        created_at,
-        version,
-    })
-}
-
-/// Fetch all recipes with their current versions for a user
-fn fetch_all_recipes_with_versions(
-    conn: &mut DbConn,
-    user_id: Uuid,
-) -> Result<Vec<RecipeWithVersion>, diesel::result::Error> {
-    // Single query with JOIN
-    let rows: Vec<(Uuid, DateTime<Utc>, RecipeVersion)> = recipes::table
-        .inner_join(
-            recipe_versions::table.on(recipe_versions::id
-                .nullable()
-                .eq(recipes::current_version_id)),
-        )
-        .filter(recipes::user_id.eq(user_id))
-        .filter(recipes::deleted_at.is_null())
-        .select((recipes::id, recipes::created_at, RecipeVersion::as_select()))
-        .load(conn)?;
-
-    Ok(rows
-        .into_iter()
-        .map(|(id, created_at, version)| RecipeWithVersion {
-            id,
-            created_at,
-            version,
-        })
-        .collect())
-}
-
 #[utoipa::path(
     get,
     path = "/api/recipes/{id}/export",
@@ -348,7 +287,7 @@ pub async fn export_recipe(
     let mut conn = get_conn!(pool);
 
     // Fetch the recipe with its current version
-    let recipe = match fetch_recipe_with_version(&mut conn, user.id, id) {
+    let recipe = match fetch_current_recipe_with_version(&mut conn, user.id, id) {
         Ok(r) => r,
         Err(diesel::NotFound) => return ApiError::not_found("Recipe not found").into_response(),
         Err(_) => return ApiError::internal("Failed to fetch recipe").into_response(),
@@ -497,7 +436,7 @@ pub async fn export_all_recipes(
     let pool_for_list = Arc::clone(&pool);
     let fetched = tokio::task::spawn_blocking(move || {
         let mut conn = pool_for_list.get().map_err(|e| format!("db pool: {}", e))?;
-        fetch_all_recipes_with_versions(&mut conn, user_id).map_err(|e| e.to_string())
+        fetch_current_recipes_with_versions(&mut conn, user_id).map_err(|e| e.to_string())
     })
     .await;
 

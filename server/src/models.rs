@@ -141,7 +141,6 @@ pub struct NewRecipe {
 #[derive(Queryable, Selectable, Debug, Clone)]
 #[diesel(table_name = crate::schema::recipe_versions)]
 #[diesel(check_for_backend(diesel::pg::Pg))]
-#[allow(dead_code)]
 pub struct RecipeVersion {
     pub id: Uuid,
     pub recipe_id: Uuid,

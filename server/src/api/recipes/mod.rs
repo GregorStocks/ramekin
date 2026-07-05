@@ -6,6 +6,7 @@ pub mod generate_photo;
 pub mod get;
 pub mod list;
 pub mod normalize_title;
+pub(crate) mod read;
 pub mod rescrape;
 pub mod rescrape_photo;
 pub mod sync;

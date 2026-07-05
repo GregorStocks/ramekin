@@ -1,9 +1,11 @@
 use crate::api::recipes::list::RecipeSummary;
+use crate::api::recipes::read::{
+    current_recipe_versions_for_user, recipe_summary_select, RecipeSummaryRow,
+};
 use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
-use crate::raw_sql;
 use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
 use axum::{
     extract::{Query, State},
@@ -35,17 +37,6 @@ pub struct SyncRecipesResponse {
     pub sync_timestamp: DateTime<Utc>,
 }
 
-type RecipeSyncRow = (
-    Uuid,              // recipe id
-    DateTime<Utc>,     // recipe created_at
-    String,            // version title
-    Option<String>,    // version description
-    Vec<Option<Uuid>>, // version photo_ids
-    Option<i32>,       // version rating
-    DateTime<Utc>,     // version created_at (updated_at)
-    Vec<String>,       // tags from correlated subquery
-);
-
 #[utoipa::path(
     get,
     path = "/api/recipes/sync",
@@ -67,14 +58,7 @@ pub async fn sync_recipes(
     let sync_timestamp = Utc::now();
     let mut conn = get_conn!(pool);
 
-    let mut query = recipes::table
-        .inner_join(
-            recipe_versions::table.on(recipe_versions::id
-                .nullable()
-                .eq(recipes::current_version_id)),
-        )
-        .filter(recipes::user_id.eq(user.id))
-        .filter(recipes::deleted_at.is_null())
+    let mut query = current_recipe_versions_for_user!(user.id)
         .filter(recipe_versions::created_at.le(sync_timestamp))
         .into_boxed();
 
@@ -89,17 +73,8 @@ pub async fn sync_recipes(
         query = query.filter(recipe_versions::created_at.gt(last_sync_at).or(tag_changed));
     }
 
-    let rows: Vec<RecipeSyncRow> = match query
-        .select((
-            recipes::id,
-            recipes::created_at,
-            recipe_versions::title,
-            recipe_versions::description,
-            recipe_versions::photo_ids,
-            recipe_versions::rating,
-            recipe_versions::created_at,
-            raw_sql::tags_subquery(),
-        ))
+    let rows: Vec<RecipeSummaryRow> = match query
+        .select(recipe_summary_select!())
         .order((recipe_versions::created_at.desc(), recipes::id.asc()))
         .load(&mut conn)
     {
@@ -128,23 +103,7 @@ pub async fn sync_recipes(
         }
     };
 
-    let recipes = rows
-        .into_iter()
-        .map(
-            |(id, created_at, title, description, photo_ids, rating, updated_at, tags)| {
-                RecipeSummary {
-                    id,
-                    title,
-                    description,
-                    tags,
-                    thumbnail_photo_id: photo_ids.first().and_then(|id| *id),
-                    rating,
-                    created_at,
-                    updated_at,
-                }
-            },
-        )
-        .collect();
+    let recipes = rows.into_iter().map(RecipeSummary::from_row).collect();
 
     (
         StatusCode::OK,
