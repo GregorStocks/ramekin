@@ -1,11 +1,10 @@
 import os
-import time
 from pathlib import Path
 from uuid import uuid4
 
 import pytest
 
-from conftest import make_ingredient
+from conftest import make_ingredient, wait_for_job_completion
 from ramekin_client.api import RecipesApi, ScrapeApi
 from ramekin_client.exceptions import ApiException
 from ramekin_client.models import (
@@ -16,17 +15,6 @@ from ramekin_client.models import (
 
 
 FIXTURE_BASE_URL = os.environ.get("FIXTURE_BASE_URL", "http://localhost:8888")
-
-
-def wait_for_job_completion(scrape_api: ScrapeApi, job_id: str, timeout: float = 10.0):
-    """Poll until job reaches a terminal state (completed or failed)."""
-    start = time.time()
-    while time.time() - start < timeout:
-        job = scrape_api.get_scrape(job_id)
-        if job.status in ("completed", "failed"):
-            return job
-        time.sleep(0.1)
-    raise TimeoutError(f"Job {job_id} did not complete within {timeout}s")
 
 
 class TestRescrapeSuccess:

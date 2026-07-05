@@ -14,6 +14,7 @@ import AnyCodable
 public struct SyncCreateItem: Codable, JSONEncodable, Hashable {
 
     public var amount: String?
+    public var categoryOverride: String?
     public var clientId: UUID
     public var isChecked: Bool
     public var item: String
@@ -22,8 +23,9 @@ public struct SyncCreateItem: Codable, JSONEncodable, Hashable {
     public var sourceRecipeId: UUID?
     public var sourceRecipeTitle: String?
 
-    public init(amount: String? = nil, clientId: UUID, isChecked: Bool, item: String, note: String? = nil, sortOrder: Int, sourceRecipeId: UUID? = nil, sourceRecipeTitle: String? = nil) {
+    public init(amount: String? = nil, categoryOverride: String? = nil, clientId: UUID, isChecked: Bool, item: String, note: String? = nil, sortOrder: Int, sourceRecipeId: UUID? = nil, sourceRecipeTitle: String? = nil) {
         self.amount = amount
+        self.categoryOverride = categoryOverride
         self.clientId = clientId
         self.isChecked = isChecked
         self.item = item
@@ -35,6 +37,7 @@ public struct SyncCreateItem: Codable, JSONEncodable, Hashable {
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case amount
+        case categoryOverride = "category_override"
         case clientId = "client_id"
         case isChecked = "is_checked"
         case item
@@ -49,6 +52,7 @@ public struct SyncCreateItem: Codable, JSONEncodable, Hashable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(amount, forKey: .amount)
+        try container.encodeIfPresent(categoryOverride, forKey: .categoryOverride)
         try container.encode(clientId, forKey: .clientId)
         try container.encode(isChecked, forKey: .isChecked)
         try container.encode(item, forKey: .item)

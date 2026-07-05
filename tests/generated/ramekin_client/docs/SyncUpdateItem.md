@@ -7,6 +7,8 @@ Request to update an item during sync (modified offline)
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **str** |  | [optional] 
+**category_override** | **str** |  | [optional] 
+**clear_category_override** | **bool** |  | [optional] 
 **expected_version** | **int** | Expected version for optimistic locking | 
 **id** | **UUID** |  | 
 **is_checked** | **bool** |  | [optional] 

@@ -19,6 +19,7 @@ pub struct CreateShoppingListItemRequest {
     pub note: Option<String>,
     pub source_recipe_id: Option<Uuid>,
     pub source_recipe_title: Option<String>,
+    pub category_override: Option<String>,
     /// Client-generated ID for offline sync
     pub client_id: Option<Uuid>,
 }
@@ -54,6 +55,14 @@ pub async fn create_items(
         return ApiError::invalid_request("At least one item is required").into_response();
     }
 
+    if request.items.iter().any(|item| {
+        item.category_override
+            .as_deref()
+            .is_some_and(|category| !super::list::is_valid_category(category))
+    }) {
+        return ApiError::invalid_request("Invalid category override").into_response();
+    }
+
     let mut conn = get_conn!(pool);
 
     let ids_result = conn.transaction(|conn| {
@@ -81,6 +90,7 @@ pub async fn create_items(
                 source_recipe_title: source_title_ref,
                 is_checked: false,
                 sort_order: max_sort_order + 1 + i as i32,
+                category_override: item_req.category_override.as_deref(),
                 client_id: item_req.client_id,
             };
 

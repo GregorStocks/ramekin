@@ -26,11 +26,23 @@ export interface ShoppingListItemResponse {
      */
     amount?: string | null;
     /**
-     * Computed aisle category for grouping (e.g., "Produce", "Dairy & Eggs")
+     * Aisle category for grouping (override when set, otherwise computed).
      * @type {string}
      * @memberof ShoppingListItemResponse
      */
     category: string;
+    /**
+     * User-selected category override; when set, it wins over computed category.
+     * @type {string}
+     * @memberof ShoppingListItemResponse
+     */
+    categoryOverride?: string | null;
+    /**
+     * Category computed from the item name before applying any override.
+     * @type {string}
+     * @memberof ShoppingListItemResponse
+     */
+    computedCategory: string;
     /**
      * 
      * @type {string}
@@ -92,6 +104,7 @@ export interface ShoppingListItemResponse {
  */
 export function instanceOfShoppingListItemResponse(value: object): value is ShoppingListItemResponse {
     if (!('category' in value) || value['category'] === undefined) return false;
+    if (!('computedCategory' in value) || value['computedCategory'] === undefined) return false;
     if (!('id' in value) || value['id'] === undefined) return false;
     if (!('isChecked' in value) || value['isChecked'] === undefined) return false;
     if (!('item' in value) || value['item'] === undefined) return false;
@@ -113,6 +126,8 @@ export function ShoppingListItemResponseFromJSONTyped(json: any, ignoreDiscrimin
         
         'amount': json['amount'] == null ? undefined : json['amount'],
         'category': json['category'],
+        'categoryOverride': json['category_override'] == null ? undefined : json['category_override'],
+        'computedCategory': json['computed_category'],
         'id': json['id'],
         'isChecked': json['is_checked'],
         'item': json['item'],
@@ -138,6 +153,8 @@ export function ShoppingListItemResponseToJSONTyped(value?: ShoppingListItemResp
         
         'amount': value['amount'],
         'category': value['category'],
+        'category_override': value['categoryOverride'],
+        'computed_category': value['computedCategory'],
         'id': value['id'],
         'is_checked': value['isChecked'],
         'item': value['item'],

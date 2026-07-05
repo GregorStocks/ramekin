@@ -8,16 +8,33 @@ use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use diesel::upsert::on_constraint;
-use ramekin_core::ingredient_categorizer;
 use serde::{Deserialize, Serialize};
+use serde_with::rust::double_option;
 use std::collections::{HashMap, HashSet};
 use std::sync::Arc;
 use utoipa::ToSchema;
 use uuid::Uuid;
 
 // Type aliases for complex tuple types
-type ItemUpdateRow = (String, Option<String>, Option<String>, bool, i32, i32);
-type ItemUpdateRowWithId = (Uuid, String, Option<String>, Option<String>, bool, i32, i32);
+type ItemUpdateRow = (
+    String,
+    Option<String>,
+    Option<String>,
+    bool,
+    i32,
+    Option<String>,
+    i32,
+);
+type ItemUpdateRowWithId = (
+    Uuid,
+    String,
+    Option<String>,
+    Option<String>,
+    bool,
+    i32,
+    Option<String>,
+    i32,
+);
 type ServerChangeRow = (
     Uuid,
     String,
@@ -27,6 +44,7 @@ type ServerChangeRow = (
     Option<String>,
     bool,
     i32,
+    Option<String>,
     i32,
     DateTime<Utc>,
 );
@@ -42,6 +60,7 @@ pub struct SyncCreateItem {
     pub source_recipe_title: Option<String>,
     pub is_checked: bool,
     pub sort_order: i32,
+    pub category_override: Option<String>,
 }
 
 /// Request to update an item during sync (modified offline)
@@ -53,6 +72,10 @@ pub struct SyncUpdateItem {
     pub note: Option<String>,
     pub is_checked: Option<bool>,
     pub sort_order: Option<i32>,
+    #[serde(default, deserialize_with = "double_option::deserialize")]
+    #[schema(value_type = Option<String>)]
+    pub category_override: Option<Option<String>>,
+    pub clear_category_override: Option<bool>,
     /// Expected version for optimistic locking
     pub expected_version: i32,
 }
@@ -98,7 +121,11 @@ pub struct SyncServerChange {
     pub sort_order: i32,
     pub version: i32,
     pub updated_at: DateTime<Utc>,
-    /// Computed aisle category for grouping (e.g., "Produce", "Dairy & Eggs")
+    /// User-selected category override; when set, it wins over computed category.
+    pub category_override: Option<String>,
+    /// Category computed from the item name before applying any override.
+    pub computed_category: String,
+    /// Aisle category for grouping (override when set, otherwise computed).
     pub category: String,
 }
 
@@ -135,6 +162,25 @@ pub async fn sync_items(
     State(pool): State<Arc<DbPool>>,
     Json(request): Json<SyncRequest>,
 ) -> impl IntoResponse {
+    if request.creates.iter().any(|item| {
+        item.category_override
+            .as_deref()
+            .is_some_and(|category| !super::list::is_valid_category(category))
+    }) || request.updates.iter().any(|item| {
+        item.category_override
+            .as_ref()
+            .and_then(|category| category.as_deref())
+            .is_some_and(|category| !super::list::is_valid_category(category))
+    }) {
+        return ApiError::invalid_request("Invalid category override").into_response();
+    }
+    if request.updates.iter().any(|item| {
+        item.clear_category_override == Some(true)
+            && matches!(item.category_override, Some(Some(_)))
+    }) {
+        return ApiError::invalid_request("Conflicting category override fields").into_response();
+    }
+
     let mut conn = get_conn!(pool);
     let sync_timestamp = Utc::now();
 
@@ -154,6 +200,7 @@ pub async fn sync_items(
                     source_recipe_title: c.source_recipe_title.as_deref(),
                     is_checked: c.is_checked,
                     sort_order: c.sort_order,
+                    category_override: c.category_override.as_deref(),
                     client_id: Some(c.client_id),
                 })
                 .collect();
@@ -228,14 +275,28 @@ pub async fn sync_items(
                     shopping_list_items::note,
                     shopping_list_items::is_checked,
                     shopping_list_items::sort_order,
+                    shopping_list_items::category_override,
                     shopping_list_items::version,
                 ))
                 .load(conn)?;
 
             let mut current_map: HashMap<Uuid, ItemUpdateRow> =
                 HashMap::with_capacity(current_rows.len());
-            for (id, item, amount, note, is_checked, sort_order, version) in current_rows {
-                current_map.insert(id, (item, amount, note, is_checked, sort_order, version));
+            for (id, item, amount, note, is_checked, sort_order, category_override, version) in
+                current_rows
+            {
+                current_map.insert(
+                    id,
+                    (
+                        item,
+                        amount,
+                        note,
+                        is_checked,
+                        sort_order,
+                        category_override,
+                        version,
+                    ),
+                );
             }
 
             for update_req in &request.updates {
@@ -245,6 +306,7 @@ pub async fn sync_items(
                     current_note,
                     current_checked,
                     current_order,
+                    current_category_override,
                     current_version,
                 )) = current_map.get(&update_req.id).cloned()
                 else {
@@ -270,6 +332,14 @@ pub async fn sync_items(
                 let new_note = update_req.note.clone().or(current_note);
                 let new_checked = update_req.is_checked.unwrap_or(current_checked);
                 let new_order = update_req.sort_order.unwrap_or(current_order);
+                let new_category_override = if update_req.clear_category_override == Some(true) {
+                    None
+                } else {
+                    update_req
+                        .category_override
+                        .clone()
+                        .unwrap_or(current_category_override)
+                };
                 let new_version = current_version + 1;
 
                 let updated_rows = diesel::update(
@@ -285,6 +355,7 @@ pub async fn sync_items(
                     shopping_list_items::note.eq(&new_note),
                     shopping_list_items::is_checked.eq(new_checked),
                     shopping_list_items::sort_order.eq(new_order),
+                    shopping_list_items::category_override.eq(&new_category_override),
                     shopping_list_items::version.eq(new_version),
                     shopping_list_items::updated_at.eq(sync_timestamp),
                 ))
@@ -301,6 +372,7 @@ pub async fn sync_items(
                             new_note,
                             new_checked,
                             new_order,
+                            new_category_override,
                             new_version,
                         ),
                     );
@@ -325,6 +397,7 @@ pub async fn sync_items(
                             shopping_list_items::note,
                             shopping_list_items::is_checked,
                             shopping_list_items::sort_order,
+                            shopping_list_items::category_override,
                             shopping_list_items::version,
                         ))
                         .first(conn)
@@ -332,7 +405,7 @@ pub async fn sync_items(
 
                     match fresh {
                         Some(row) => {
-                            let fresh_version = row.5;
+                            let fresh_version = row.6;
                             current_map.insert(update_req.id, row);
                             updated.push(SyncUpdatedItem {
                                 id: update_req.id,
@@ -404,6 +477,7 @@ pub async fn sync_items(
                     shopping_list_items::source_recipe_title,
                     shopping_list_items::is_checked,
                     shopping_list_items::sort_order,
+                    shopping_list_items::category_override,
                     shopping_list_items::version,
                     shopping_list_items::updated_at,
                 ))
@@ -420,10 +494,15 @@ pub async fn sync_items(
                         source_recipe_title,
                         is_checked,
                         sort_order,
+                        category_override,
                         version,
                         updated_at,
                     )| {
-                        let category = ingredient_categorizer::categorize(&item).to_string();
+                        let computed_category = super::list::computed_category(&item);
+                        let category = super::list::item_category(
+                            &computed_category,
+                            category_override.as_deref(),
+                        );
                         SyncServerChange {
                             id,
                             item,
@@ -435,6 +514,8 @@ pub async fn sync_items(
                             sort_order,
                             version,
                             updated_at,
+                            category_override,
+                            computed_category,
                             category,
                         }
                     },
@@ -454,6 +535,7 @@ pub async fn sync_items(
                     shopping_list_items::source_recipe_title,
                     shopping_list_items::is_checked,
                     shopping_list_items::sort_order,
+                    shopping_list_items::category_override,
                     shopping_list_items::version,
                     shopping_list_items::updated_at,
                 ))
@@ -470,10 +552,15 @@ pub async fn sync_items(
                         source_recipe_title,
                         is_checked,
                         sort_order,
+                        category_override,
                         version,
                         updated_at,
                     )| {
-                        let category = ingredient_categorizer::categorize(&item).to_string();
+                        let computed_category = super::list::computed_category(&item);
+                        let category = super::list::item_category(
+                            &computed_category,
+                            category_override.as_deref(),
+                        );
                         SyncServerChange {
                             id,
                             item,
@@ -485,6 +572,8 @@ pub async fn sync_items(
                             sort_order,
                             version,
                             updated_at,
+                            category_override,
+                            computed_category,
                             category,
                         }
                     },

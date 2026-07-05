@@ -24,7 +24,11 @@ pub struct ShoppingListItemResponse {
     pub sort_order: i32,
     pub version: i32,
     pub updated_at: DateTime<Utc>,
-    /// Computed aisle category for grouping (e.g., "Produce", "Dairy & Eggs")
+    /// User-selected category override; when set, it wins over computed category.
+    pub category_override: Option<String>,
+    /// Category computed from the item name before applying any override.
+    pub computed_category: String,
+    /// Aisle category for grouping (override when set, otherwise computed).
     pub category: String,
 }
 
@@ -44,6 +48,18 @@ pub fn category_order() -> Vec<String> {
         .collect()
 }
 
+pub fn is_valid_category(category: &str) -> bool {
+    ingredient_categorizer::CATEGORIES.contains(&category)
+}
+
+pub fn computed_category(item: &str) -> String {
+    ingredient_categorizer::categorize(item).to_string()
+}
+
+pub fn item_category(computed_category: &str, category_override: Option<&str>) -> String {
+    category_override.unwrap_or(computed_category).to_string()
+}
+
 // Type alias for query result row
 type ShoppingListRow = (
     Uuid,
@@ -54,6 +70,7 @@ type ShoppingListRow = (
     Option<String>,
     bool,
     i32,
+    Option<String>,
     i32,
     DateTime<Utc>,
 );
@@ -86,6 +103,7 @@ pub async fn list_items(
             shopping_list_items::source_recipe_title,
             shopping_list_items::is_checked,
             shopping_list_items::sort_order,
+            shopping_list_items::category_override,
             shopping_list_items::version,
             shopping_list_items::updated_at,
         ))
@@ -114,10 +132,12 @@ pub async fn list_items(
                 source_recipe_title,
                 is_checked,
                 sort_order,
+                category_override,
                 version,
                 updated_at,
             )| {
-                let category = ingredient_categorizer::categorize(&item).to_string();
+                let computed_category = computed_category(&item);
+                let category = item_category(&computed_category, category_override.as_deref());
                 ShoppingListItemResponse {
                     id,
                     item,
@@ -129,6 +149,8 @@ pub async fn list_items(
                     sort_order,
                     version,
                     updated_at,
+                    category_override,
+                    computed_category,
                     category,
                 }
             },

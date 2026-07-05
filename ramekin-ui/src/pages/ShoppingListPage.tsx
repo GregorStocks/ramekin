@@ -22,6 +22,9 @@ export default function ShoppingListPage() {
   const [newItemName, setNewItemName] = createSignal("");
   const [newItemAmount, setNewItemAmount] = createSignal("");
   const [adding, setAdding] = createSignal(false);
+  const [updatingCategoryId, setUpdatingCategoryId] = createSignal<
+    string | null
+  >(null);
 
   const hasCheckedItems = () => items().some((item) => item.isChecked);
 
@@ -118,6 +121,28 @@ export default function ShoppingListPage() {
     }
   };
 
+  const handleCategoryChange = async (
+    item: ShoppingListItemResponse,
+    categoryOverride: string | null,
+  ) => {
+    setUpdatingCategoryId(item.id);
+    setError(null);
+    try {
+      await getShoppingListApi().updateItem({
+        id: item.id,
+        updateShoppingListItemRequest: {
+          categoryOverride,
+        },
+      });
+      await loadItems(false);
+    } catch (err) {
+      const message = await extractApiError(err, "Failed to update category");
+      setError(message);
+    } finally {
+      setUpdatingCategoryId(null);
+    }
+  };
+
   const confirmDelete = (item: ShoppingListItemResponse) => {
     setDeletingItem(item);
   };
@@ -180,6 +205,20 @@ export default function ShoppingListPage() {
           {item.sourceRecipeTitle}
         </A>
       </Show>
+      <select
+        class="shopping-category-select"
+        value={item.categoryOverride ?? ""}
+        disabled={updatingCategoryId() === item.id}
+        title="Category"
+        onChange={(e) =>
+          handleCategoryChange(item, e.currentTarget.value || null)
+        }
+      >
+        <option value="">Auto</option>
+        <For each={categoryOrder()}>
+          {(category) => <option value={category}>{category}</option>}
+        </For>
+      </select>
       <button
         class="shopping-item-delete"
         onClick={() => confirmDelete(item)}

@@ -8,6 +8,7 @@ Request to create an item during sync (created offline)
 Name | Type
 ------------ | -------------
 `amount` | string
+`categoryOverride` | string
 `clientId` | string
 `isChecked` | boolean
 `item` | string
@@ -24,6 +25,7 @@ import type { SyncCreateItem } from ''
 // TODO: Update the object below with actual values
 const example = {
   "amount": null,
+  "categoryOverride": null,
   "clientId": null,
   "isChecked": null,
   "item": null,

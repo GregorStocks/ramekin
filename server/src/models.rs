@@ -330,9 +330,10 @@ pub struct ShoppingListItem {
     pub sort_order: i32,
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
-    pub deleted_at: Option<DateTime<Utc>>,
     pub client_id: Option<Uuid>,
     pub version: i32,
+    pub deleted_at: Option<DateTime<Utc>>,
+    pub category_override: Option<String>,
 }
 
 #[derive(Insertable)]
@@ -346,5 +347,6 @@ pub struct NewShoppingListItem<'a> {
     pub source_recipe_title: Option<&'a str>,
     pub is_checked: bool,
     pub sort_order: i32,
+    pub category_override: Option<&'a str>,
     pub client_id: Option<Uuid>,
 }

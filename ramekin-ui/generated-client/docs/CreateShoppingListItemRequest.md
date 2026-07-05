@@ -7,6 +7,7 @@
 Name | Type
 ------------ | -------------
 `amount` | string
+`categoryOverride` | string
 `clientId` | string
 `item` | string
 `note` | string
@@ -21,6 +22,7 @@ import type { CreateShoppingListItemRequest } from ''
 // TODO: Update the object below with actual values
 const example = {
   "amount": null,
+  "categoryOverride": null,
   "clientId": null,
   "item": null,
   "note": null,

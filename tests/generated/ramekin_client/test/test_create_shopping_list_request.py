@@ -38,6 +38,7 @@ class TestCreateShoppingListRequest(unittest.TestCase):
                 items = [
                     ramekin_client.models.create_shopping_list_item_request.CreateShoppingListItemRequest(
                         amount = '', 
+                        category_override = '', 
                         client_id = '', 
                         item = '', 
                         note = '', 
@@ -50,6 +51,7 @@ class TestCreateShoppingListRequest(unittest.TestCase):
                 items = [
                     ramekin_client.models.create_shopping_list_item_request.CreateShoppingListItemRequest(
                         amount = '', 
+                        category_override = '', 
                         client_id = '', 
                         item = '', 
                         note = '', 

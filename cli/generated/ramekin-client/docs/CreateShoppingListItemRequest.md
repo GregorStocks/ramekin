@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | Option<**String**> |  | [optional]
+**category_override** | Option<**String**> |  | [optional]
 **client_id** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Client-generated ID for offline sync | [optional]
 **item** | **String** |  | 
 **note** | Option<**String**> |  | [optional]

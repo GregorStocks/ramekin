@@ -42,6 +42,8 @@ class TestShoppingListResponse(unittest.TestCase):
                     ramekin_client.models.shopping_list_item_response.ShoppingListItemResponse(
                         amount = '', 
                         category = '', 
+                        category_override = '', 
+                        computed_category = '', 
                         id = '', 
                         is_checked = True, 
                         item = '', 
@@ -62,6 +64,8 @@ class TestShoppingListResponse(unittest.TestCase):
                     ramekin_client.models.shopping_list_item_response.ShoppingListItemResponse(
                         amount = '', 
                         category = '', 
+                        category_override = '', 
+                        computed_category = '', 
                         id = '', 
                         is_checked = True, 
                         item = '', 

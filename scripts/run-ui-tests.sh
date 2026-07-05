@@ -21,6 +21,13 @@ if [ -z "${UI_PORT_HTTP:-}" ]; then
   export UI_PORT_HTTP=$((UI_PORT + 1))
 fi
 
+PROCESS_COMPOSE_STARTED=0
+PROCESS_COMPOSE_PID=""
+
+trap 'EXIT_CODE=$?; set +e; if [ "$PROCESS_COMPOSE_STARTED" -eq 1 ]; then process-compose down --port "$PROCESS_COMPOSE_PORT" >/dev/null 2>&1 || true; if [ -n "$PROCESS_COMPOSE_PID" ]; then wait "$PROCESS_COMPOSE_PID" >/dev/null 2>&1 || true; fi; fi; exit "$EXIT_CODE"' EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
+
 # Ensure logs directory exists for process-compose output
 mkdir -p logs
 
@@ -40,8 +47,13 @@ else
 fi
 
 set +e
-process-compose up -e "$ENV_FILE" -f test-ui-compose.yaml -t=false --port "$PROCESS_COMPOSE_PORT"
+PROCESS_COMPOSE_STARTED=1
+process-compose up -e "$ENV_FILE" -f test-ui-compose.yaml -t=false --port "$PROCESS_COMPOSE_PORT" &
+PROCESS_COMPOSE_PID=$!
+wait "$PROCESS_COMPOSE_PID"
 EXIT_CODE=$?
+PROCESS_COMPOSE_STARTED=0
+PROCESS_COMPOSE_PID=""
 set -e
 if [ $EXIT_CODE -ne 0 ] && [ -f logs/test-ui.log ]; then
   echo "[$(date +%H:%M:%S)] UI test orchestration failed. Last 200 lines of logs/test-ui.log:"

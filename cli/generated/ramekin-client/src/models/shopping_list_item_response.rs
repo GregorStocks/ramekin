@@ -20,9 +20,20 @@ pub struct ShoppingListItemResponse {
         skip_serializing_if = "Option::is_none"
     )]
     pub amount: Option<Option<String>>,
-    /// Computed aisle category for grouping (e.g., \"Produce\", \"Dairy & Eggs\")
+    /// Aisle category for grouping (override when set, otherwise computed).
     #[serde(rename = "category")]
     pub category: String,
+    /// User-selected category override; when set, it wins over computed category.
+    #[serde(
+        rename = "category_override",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub category_override: Option<Option<String>>,
+    /// Category computed from the item name before applying any override.
+    #[serde(rename = "computed_category")]
+    pub computed_category: String,
     #[serde(rename = "id")]
     pub id: uuid::Uuid,
     #[serde(rename = "is_checked")]
@@ -61,6 +72,7 @@ pub struct ShoppingListItemResponse {
 impl ShoppingListItemResponse {
     pub fn new(
         category: String,
+        computed_category: String,
         id: uuid::Uuid,
         is_checked: bool,
         item: String,
@@ -71,6 +83,8 @@ impl ShoppingListItemResponse {
         ShoppingListItemResponse {
             amount: None,
             category,
+            category_override: None,
+            computed_category,
             id,
             is_checked,
             item,

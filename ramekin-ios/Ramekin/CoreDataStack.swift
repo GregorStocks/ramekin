@@ -122,6 +122,7 @@ extension ShoppingItem {
         shoppingItem.sortOrder = sortOrder
         shoppingItem.createdAt = Date()
         shoppingItem.updatedAt = Date()
+        shoppingItem.clearCategoryOverride = false
         shoppingItem.syncStatus = SyncStatus.pendingCreate.rawValue
         shoppingItem.serverVersion = 0
         return shoppingItem
@@ -144,6 +145,7 @@ extension ShoppingItem {
     /// Marks the item as synced with the server
     func markSynced(serverVersion: Int32) {
         self.serverVersion = serverVersion
+        clearCategoryOverride = false
         syncStatusEnum = .synced
     }
 }

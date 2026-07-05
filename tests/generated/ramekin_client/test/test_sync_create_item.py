@@ -36,6 +36,7 @@ class TestSyncCreateItem(unittest.TestCase):
         if include_optional:
             return SyncCreateItem(
                 amount = '',
+                category_override = '',
                 client_id = '',
                 is_checked = True,
                 item = '',

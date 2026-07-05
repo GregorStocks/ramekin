@@ -22,11 +22,23 @@ export interface ShoppingListItemResponse {
      */
     amount?: string | null;
     /**
-     * Computed aisle category for grouping (e.g., "Produce", "Dairy & Eggs")
+     * Aisle category for grouping (override when set, otherwise computed).
      * @type {string}
      * @memberof ShoppingListItemResponse
      */
     category: string;
+    /**
+     * User-selected category override; when set, it wins over computed category.
+     * @type {string}
+     * @memberof ShoppingListItemResponse
+     */
+    categoryOverride?: string | null;
+    /**
+     * Category computed from the item name before applying any override.
+     * @type {string}
+     * @memberof ShoppingListItemResponse
+     */
+    computedCategory: string;
     /**
      *
      * @type {string}

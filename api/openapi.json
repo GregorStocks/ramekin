@@ -2887,6 +2887,12 @@
               "null"
             ]
           },
+          "category_override": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
           "client_id": {
             "type": [
               "string",
@@ -3935,6 +3941,7 @@
           "sort_order",
           "version",
           "updated_at",
+          "computed_category",
           "category"
         ],
         "properties": {
@@ -3946,7 +3953,18 @@
           },
           "category": {
             "type": "string",
-            "description": "Computed aisle category for grouping (e.g., \"Produce\", \"Dairy & Eggs\")"
+            "description": "Aisle category for grouping (override when set, otherwise computed)."
+          },
+          "category_override": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "User-selected category override; when set, it wins over computed category."
+          },
+          "computed_category": {
+            "type": "string",
+            "description": "Category computed from the item name before applying any override."
           },
           "id": {
             "type": "string",
@@ -4121,6 +4139,12 @@
         ],
         "properties": {
           "amount": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "category_override": {
             "type": [
               "string",
               "null"
@@ -4311,6 +4335,7 @@
           "sort_order",
           "version",
           "updated_at",
+          "computed_category",
           "category"
         ],
         "properties": {
@@ -4322,7 +4347,18 @@
           },
           "category": {
             "type": "string",
-            "description": "Computed aisle category for grouping (e.g., \"Produce\", \"Dairy & Eggs\")"
+            "description": "Aisle category for grouping (override when set, otherwise computed)."
+          },
+          "category_override": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "User-selected category override; when set, it wins over computed category."
+          },
+          "computed_category": {
+            "type": "string",
+            "description": "Category computed from the item name before applying any override."
           },
           "id": {
             "type": "string",
@@ -4378,6 +4414,18 @@
           "amount": {
             "type": [
               "string",
+              "null"
+            ]
+          },
+          "category_override": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "clear_category_override": {
+            "type": [
+              "boolean",
               "null"
             ]
           },
@@ -4649,6 +4697,18 @@
           "amount": {
             "type": [
               "string",
+              "null"
+            ]
+          },
+          "category_override": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "clear_category_override": {
+            "type": [
+              "boolean",
               "null"
             ]
           },

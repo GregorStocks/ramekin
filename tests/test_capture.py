@@ -1,9 +1,9 @@
 import os
-import time
 
 import pytest
 import requests
 
+from conftest import wait_for_job_completion
 from ramekin_client.api import RecipesApi, ScrapeApi
 from ramekin_client.exceptions import ApiException
 
@@ -38,19 +38,6 @@ def capture_recipe_raw(
         json={"html": html, "source_url": source_url},
         headers=headers,
     )
-
-
-def wait_for_job_completion(scrape_api: ScrapeApi, job_id: str, timeout: float = 10.0):
-    """Poll until job completes or fails."""
-    start = time.time()
-    while time.time() - start < timeout:
-        job = scrape_api.get_scrape(job_id)
-        if job.status == "completed":
-            return job
-        if job.status == "failed":
-            raise Exception(f"Job failed: {job.error}")
-        time.sleep(0.1)
-    raise TimeoutError(f"Job {job_id} did not complete within {timeout}s")
 
 
 class TestCaptureSuccess:
@@ -111,11 +98,8 @@ class TestCaptureFailure:
         result = capture_recipe(server_url, token, html, source_url)
         assert "id" in result
 
-        # Wait for job - it should fail
-        with pytest.raises(Exception) as exc_info:
-            wait_for_job_completion(scrape_api, result["id"])
-
-        assert "failed" in str(exc_info.value).lower()
+        job = wait_for_job_completion(scrape_api, result["id"])
+        assert job.status == "failed"
 
     def test_capture_fails_with_invalid_url(self, authed_api_client, server_url):
         """Test that capturing with invalid URL returns 400 immediately."""
@@ -143,11 +127,8 @@ class TestCaptureFailure:
         result = capture_recipe(server_url, token, html, source_url)
         assert "id" in result
 
-        # Wait for job - it should fail
-        with pytest.raises(Exception) as exc_info:
-            wait_for_job_completion(scrape_api, result["id"])
-
-        assert "failed" in str(exc_info.value).lower()
+        job = wait_for_job_completion(scrape_api, result["id"])
+        assert job.status == "failed"
 
 
 class TestCaptureAuth:

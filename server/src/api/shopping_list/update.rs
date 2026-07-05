@@ -12,12 +12,21 @@ use axum::{
 use chrono::Utc;
 use diesel::prelude::*;
 use serde::Deserialize;
+use serde_with::rust::double_option;
 use std::sync::Arc;
 use utoipa::ToSchema;
 use uuid::Uuid;
 
 // Type alias for query result row
-type ItemRow = (String, Option<String>, Option<String>, bool, i32, i32);
+type ItemRow = (
+    String,
+    Option<String>,
+    Option<String>,
+    bool,
+    i32,
+    Option<String>,
+    i32,
+);
 
 #[derive(Debug, Clone, Deserialize, ToSchema, Default)]
 pub struct UpdateShoppingListItemRequest {
@@ -26,6 +35,10 @@ pub struct UpdateShoppingListItemRequest {
     pub note: Option<String>,
     pub is_checked: Option<bool>,
     pub sort_order: Option<i32>,
+    #[serde(default, deserialize_with = "double_option::deserialize")]
+    #[schema(value_type = Option<String>)]
+    pub category_override: Option<Option<String>>,
+    pub clear_category_override: Option<bool>,
 }
 
 #[utoipa::path(
@@ -62,6 +75,7 @@ pub async fn update_item(
             shopping_list_items::note,
             shopping_list_items::is_checked,
             shopping_list_items::sort_order,
+            shopping_list_items::category_override,
             shopping_list_items::version,
         ))
         .first(&mut conn)
@@ -80,6 +94,7 @@ pub async fn update_item(
         current_note,
         current_checked,
         current_order,
+        current_category_override,
         current_version,
     )) = existing
     else {
@@ -92,6 +107,25 @@ pub async fn update_item(
     let new_note = request.note.or(current_note);
     let new_checked = request.is_checked.unwrap_or(current_checked);
     let new_order = request.sort_order.unwrap_or(current_order);
+    if request.clear_category_override == Some(true)
+        && matches!(request.category_override, Some(Some(_)))
+    {
+        return ApiError::invalid_request("Conflicting category override fields").into_response();
+    }
+    let new_category_override = if request.clear_category_override == Some(true) {
+        None
+    } else {
+        request
+            .category_override
+            .unwrap_or(current_category_override)
+    };
+
+    if new_category_override
+        .as_deref()
+        .is_some_and(|category| !super::list::is_valid_category(category))
+    {
+        return ApiError::invalid_request("Invalid category override").into_response();
+    }
 
     // Update the item
     let result = diesel::update(
@@ -106,6 +140,7 @@ pub async fn update_item(
         shopping_list_items::note.eq(&new_note),
         shopping_list_items::is_checked.eq(new_checked),
         shopping_list_items::sort_order.eq(new_order),
+        shopping_list_items::category_override.eq(&new_category_override),
         shopping_list_items::version.eq(current_version + 1),
         shopping_list_items::updated_at.eq(Utc::now()),
     ))

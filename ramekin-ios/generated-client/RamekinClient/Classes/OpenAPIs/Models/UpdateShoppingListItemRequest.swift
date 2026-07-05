@@ -13,13 +13,17 @@ import AnyCodable
 public struct UpdateShoppingListItemRequest: Codable, JSONEncodable, Hashable {
 
     public var amount: String?
+    public var categoryOverride: String?
+    public var clearCategoryOverride: Bool?
     public var isChecked: Bool?
     public var item: String?
     public var note: String?
     public var sortOrder: Int?
 
-    public init(amount: String? = nil, isChecked: Bool? = nil, item: String? = nil, note: String? = nil, sortOrder: Int? = nil) {
+    public init(amount: String? = nil, categoryOverride: String? = nil, clearCategoryOverride: Bool? = nil, isChecked: Bool? = nil, item: String? = nil, note: String? = nil, sortOrder: Int? = nil) {
         self.amount = amount
+        self.categoryOverride = categoryOverride
+        self.clearCategoryOverride = clearCategoryOverride
         self.isChecked = isChecked
         self.item = item
         self.note = note
@@ -28,6 +32,8 @@ public struct UpdateShoppingListItemRequest: Codable, JSONEncodable, Hashable {
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case amount
+        case categoryOverride = "category_override"
+        case clearCategoryOverride = "clear_category_override"
         case isChecked = "is_checked"
         case item
         case note
@@ -39,6 +45,8 @@ public struct UpdateShoppingListItemRequest: Codable, JSONEncodable, Hashable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(amount, forKey: .amount)
+        try container.encodeIfPresent(categoryOverride, forKey: .categoryOverride)
+        try container.encodeIfPresent(clearCategoryOverride, forKey: .clearCategoryOverride)
         try container.encodeIfPresent(isChecked, forKey: .isChecked)
         try container.encodeIfPresent(item, forKey: .item)
         try container.encodeIfPresent(note, forKey: .note)

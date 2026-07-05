@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | Option<**String**> |  | [optional]
+**category_override** | Option<**String**> |  | [optional]
 **client_id** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
 **is_checked** | **bool** |  | 
 **item** | **String** |  | 

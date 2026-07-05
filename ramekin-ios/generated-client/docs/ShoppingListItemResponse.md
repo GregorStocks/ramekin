@@ -4,7 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **String** |  | [optional] 
-**category** | **String** | Computed aisle category for grouping (e.g., \&quot;Produce\&quot;, \&quot;Dairy &amp; Eggs\&quot;) | 
+**category** | **String** | Aisle category for grouping (override when set, otherwise computed). | 
+**categoryOverride** | **String** | User-selected category override; when set, it wins over computed category. | [optional] 
+**computedCategory** | **String** | Category computed from the item name before applying any override. | 
 **id** | **UUID** |  | 
 **isChecked** | **Bool** |  | 
 **item** | **String** |  | 
