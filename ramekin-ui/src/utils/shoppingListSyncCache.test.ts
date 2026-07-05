@@ -131,6 +131,43 @@ describe("shopping list sync cache", () => {
     });
   });
 
+  it("replaces cached items when the sync response is a full snapshot", () => {
+    const cached: ShoppingListSyncCache = {
+      version: 1,
+      categoryOrder: ["Other"],
+      items: [
+        shoppingItem({ id: "remote-deleted", item: "old deleted" }),
+        shoppingItem({ id: "active", item: "old active", version: 1 }),
+      ],
+      lastSyncAt: null,
+    };
+    const response: SyncResponse = {
+      categoryOrder: ["Produce", "Other"],
+      created: [],
+      deleted: [],
+      serverChanges: [
+        serverChange({
+          id: "active",
+          item: "new active",
+          version: 2,
+          category: "Produce",
+        }),
+      ],
+      syncTimestamp: new Date("2026-07-01T12:05:00.000Z"),
+      updated: [],
+    };
+
+    const next = applyShoppingListSyncResponse(cached, response);
+
+    expect(next.items.map((item) => item.id)).toEqual(["active"]);
+    expect(next.items[0]).toMatchObject({
+      item: "new active",
+      version: 2,
+      category: "Produce",
+    });
+    expect(next.lastSyncAt).toEqual(new Date("2026-07-01T12:05:00.000Z"));
+  });
+
   it("throws on malformed cached data", () => {
     const storage = new MemoryStorage();
     storage.setItem(shoppingListCacheKey("token-a"), JSON.stringify({}));

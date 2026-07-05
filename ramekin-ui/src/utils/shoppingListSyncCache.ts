@@ -63,8 +63,9 @@ export function applyShoppingListSyncResponse(
 ): ShoppingListSyncCache {
   const deleted = new Set(response.deleted);
   const byId = new Map<string, ShoppingListItemResponse>();
+  const cachedItems = cache?.lastSyncAt == null ? [] : cache.items;
 
-  for (const item of cache?.items ?? []) {
+  for (const item of cachedItems) {
     if (!deleted.has(item.id)) {
       byId.set(item.id, item);
     }
