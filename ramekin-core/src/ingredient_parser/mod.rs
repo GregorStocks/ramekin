@@ -5,13 +5,13 @@
 use std::collections::HashMap;
 use std::sync::LazyLock;
 
-use regex::Regex;
 use serde::{Deserialize, Serialize};
 
 use crate::metric_weights::parse_amount;
 use crate::text::decode_html_entities;
 
 mod amounts;
+mod fractions;
 mod item;
 mod parentheticals;
 mod units;
@@ -21,6 +21,8 @@ use item::*;
 use parentheticals::*;
 use units::*;
 
+pub(in crate::ingredient_parser) use fractions::unicode_fraction_ascii;
+pub(crate) use fractions::unicode_fraction_regex_class;
 pub use item::{detect_section_header, should_ignore_line};
 
 /// A single measurement (amount + unit pair)
