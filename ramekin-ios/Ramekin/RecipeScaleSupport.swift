@@ -59,6 +59,9 @@ enum RecipeScaleSupport {
               amount.filter({ $0 == "," }).count == 1 else {
             return nil
         }
+        if amount.range(of: #"^\d{1,3},\d{3}$"#, options: .regularExpression) != nil {
+            return nil
+        }
 
         return Double(amount.replacingOccurrences(of: ",", with: "."))
     }

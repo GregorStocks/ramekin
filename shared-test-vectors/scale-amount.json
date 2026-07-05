@@ -156,6 +156,12 @@
     "expected": "1,2,3"
   },
   {
+    "name": "single-comma thousands remains unchanged",
+    "amount": "1,000",
+    "factor": 2,
+    "expected": "1,000"
+  },
+  {
     "name": "mixed dot and comma remains unchanged",
     "amount": "1,000.5",
     "factor": 2,
