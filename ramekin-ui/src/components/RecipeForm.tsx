@@ -1,5 +1,5 @@
 import { Show, Index, For, createSignal } from "solid-js";
-import type { Accessor, Setter } from "solid-js";
+import type { Accessor } from "solid-js";
 import type { SetStoreFunction } from "solid-js/store";
 import { A } from "@solidjs/router";
 import {
@@ -30,61 +30,14 @@ import {
   addIngredientWithSection,
   groupIngredientsBySection,
 } from "../utils/recipeFormHelpers";
+import type { RecipeFormState } from "../utils/recipeFormState";
 
 export interface RecipeFormProps {
-  // Form data signals
-  title: Accessor<string>;
-  setTitle: Setter<string>;
-  description: Accessor<string>;
-  setDescription: Setter<string>;
-  instructions: Accessor<string>;
-  setInstructions: Setter<string>;
-  sourceUrl: Accessor<string>;
-  setSourceUrl: Setter<string>;
-  sourceName: Accessor<string>;
-  setSourceName: Setter<string>;
-  tags: Accessor<string[]>;
-  setTags: Setter<string[]>;
-  servings: Accessor<string>;
-  setServings: Setter<string>;
-  prepTime: Accessor<string>;
-  setPrepTime: Setter<string>;
-  cookTime: Accessor<string>;
-  setCookTime: Setter<string>;
-  totalTime: Accessor<string>;
-  setTotalTime: Setter<string>;
-  rating: Accessor<number | null>;
-  setRating: Setter<number | null>;
-  difficulty: Accessor<string>;
-  setDifficulty: Setter<string>;
-  nutritionalInfo: Accessor<string>;
-  setNutritionalInfo: Setter<string>;
-  notes: Accessor<string>;
-  setNotes: Setter<string>;
-
-  // Ingredient store
-  ingredients: Ingredient[];
-  setIngredients: SetStoreFunction<Ingredient[]>;
-
-  // Photo management
-  photoIds: Accessor<string[]>;
-  onPhotoUpload: (e: Event) => Promise<void>;
-  onPhotoRemove: (photoId: string) => void;
-  uploading: Accessor<boolean>;
-
-  // Form state
-  saving: Accessor<boolean>;
-  error: Accessor<string | null>;
-
-  // Submit handling
+  form: RecipeFormState;
   onSubmit: (e: Event) => void;
   submitLabel: string;
   submitLabelSaving: string;
-
-  // Cancel handling
   cancelHref: string;
-
-  // Auth token for photo display
   token: Accessor<string | null | undefined>;
 }
 
@@ -394,8 +347,8 @@ export default function RecipeForm(props: RecipeFormProps) {
         <input
           id="title"
           type="text"
-          value={props.title()}
-          onInput={(e) => props.setTitle(e.currentTarget.value)}
+          value={props.form.title()}
+          onInput={(e) => props.form.setTitle(e.currentTarget.value)}
           required
         />
       </div>
@@ -404,8 +357,8 @@ export default function RecipeForm(props: RecipeFormProps) {
         <label for="description">Description</label>
         <textarea
           id="description"
-          value={props.description()}
-          onInput={(e) => props.setDescription(e.currentTarget.value)}
+          value={props.form.description()}
+          onInput={(e) => props.form.setDescription(e.currentTarget.value)}
           rows={2}
         />
       </div>
@@ -416,8 +369,8 @@ export default function RecipeForm(props: RecipeFormProps) {
           <input
             id="servings"
             type="text"
-            value={props.servings()}
-            onInput={(e) => props.setServings(e.currentTarget.value)}
+            value={props.form.servings()}
+            onInput={(e) => props.form.setServings(e.currentTarget.value)}
             placeholder="e.g., 4"
           />
         </div>
@@ -426,8 +379,8 @@ export default function RecipeForm(props: RecipeFormProps) {
           <input
             id="prepTime"
             type="text"
-            value={props.prepTime()}
-            onInput={(e) => props.setPrepTime(e.currentTarget.value)}
+            value={props.form.prepTime()}
+            onInput={(e) => props.form.setPrepTime(e.currentTarget.value)}
             placeholder="e.g., 15 min"
           />
         </div>
@@ -436,8 +389,8 @@ export default function RecipeForm(props: RecipeFormProps) {
           <input
             id="cookTime"
             type="text"
-            value={props.cookTime()}
-            onInput={(e) => props.setCookTime(e.currentTarget.value)}
+            value={props.form.cookTime()}
+            onInput={(e) => props.form.setCookTime(e.currentTarget.value)}
             placeholder="e.g., 30 min"
           />
         </div>
@@ -446,8 +399,8 @@ export default function RecipeForm(props: RecipeFormProps) {
           <input
             id="totalTime"
             type="text"
-            value={props.totalTime()}
-            onInput={(e) => props.setTotalTime(e.currentTarget.value)}
+            value={props.form.totalTime()}
+            onInput={(e) => props.form.setTotalTime(e.currentTarget.value)}
             placeholder="e.g., 45 min"
           />
         </div>
@@ -457,12 +410,15 @@ export default function RecipeForm(props: RecipeFormProps) {
         <div class="form-group-rating">
           <label>Rating</label>
           <div class="rating-input-wrapper">
-            <StarRating rating={props.rating()} onRate={props.setRating} />
-            <Show when={props.rating() !== null}>
+            <StarRating
+              rating={props.form.rating()}
+              onRate={props.form.setRating}
+            />
+            <Show when={props.form.rating() !== null}>
               <button
                 type="button"
                 class="rating-clear"
-                onClick={() => props.setRating(null)}
+                onClick={() => props.form.setRating(null)}
               >
                 Clear
               </button>
@@ -474,24 +430,24 @@ export default function RecipeForm(props: RecipeFormProps) {
           <input
             id="difficulty"
             type="text"
-            value={props.difficulty()}
-            onInput={(e) => props.setDifficulty(e.currentTarget.value)}
+            value={props.form.difficulty()}
+            onInput={(e) => props.form.setDifficulty(e.currentTarget.value)}
             placeholder="e.g., Easy, Medium, Hard"
           />
         </div>
       </div>
 
       <IngredientsSection
-        ingredients={props.ingredients}
-        setIngredients={props.setIngredients}
+        ingredients={props.form.ingredients}
+        setIngredients={props.form.setIngredients}
       />
 
       <div class="form-group">
         <label for="instructions">Instructions *</label>
         <textarea
           id="instructions"
-          value={props.instructions()}
-          onInput={(e) => props.setInstructions(e.currentTarget.value)}
+          value={props.form.instructions()}
+          onInput={(e) => props.form.setInstructions(e.currentTarget.value)}
           rows={8}
           required
         />
@@ -503,8 +459,8 @@ export default function RecipeForm(props: RecipeFormProps) {
           <input
             id="sourceUrl"
             type="url"
-            value={props.sourceUrl()}
-            onInput={(e) => props.setSourceUrl(e.currentTarget.value)}
+            value={props.form.sourceUrl()}
+            onInput={(e) => props.form.setSourceUrl(e.currentTarget.value)}
             placeholder="https://..."
           />
         </div>
@@ -513,8 +469,8 @@ export default function RecipeForm(props: RecipeFormProps) {
           <input
             id="sourceName"
             type="text"
-            value={props.sourceName()}
-            onInput={(e) => props.setSourceName(e.currentTarget.value)}
+            value={props.form.sourceName()}
+            onInput={(e) => props.form.setSourceName(e.currentTarget.value)}
             placeholder="e.g., Grandma's cookbook"
           />
         </div>
@@ -524,8 +480,8 @@ export default function RecipeForm(props: RecipeFormProps) {
         <label for="tags">Tags</label>
         <TagInput
           id="tags"
-          tags={props.tags}
-          onTagsChange={props.setTags}
+          tags={props.form.tags}
+          onTagsChange={props.form.setTags}
           placeholder="e.g., dinner, easy, vegetarian"
         />
       </div>
@@ -534,8 +490,8 @@ export default function RecipeForm(props: RecipeFormProps) {
         <label for="notes">Notes</label>
         <textarea
           id="notes"
-          value={props.notes()}
-          onInput={(e) => props.setNotes(e.currentTarget.value)}
+          value={props.form.notes()}
+          onInput={(e) => props.form.setNotes(e.currentTarget.value)}
           rows={3}
           placeholder="Additional notes, tips, or variations..."
         />
@@ -545,8 +501,8 @@ export default function RecipeForm(props: RecipeFormProps) {
         <label for="nutritionalInfo">Nutritional Info</label>
         <textarea
           id="nutritionalInfo"
-          value={props.nutritionalInfo()}
-          onInput={(e) => props.setNutritionalInfo(e.currentTarget.value)}
+          value={props.form.nutritionalInfo()}
+          onInput={(e) => props.form.setNutritionalInfo(e.currentTarget.value)}
           rows={2}
           placeholder="Calories, protein, carbs, etc."
         />
@@ -558,45 +514,49 @@ export default function RecipeForm(props: RecipeFormProps) {
           <div class="section-header-actions">
             <span class="photo-paste-hint">or paste from clipboard</span>
             <label class="btn btn-small">
-              {props.uploading() ? "Uploading..." : "+ Add Photo"}
+              {props.form.uploading() ? "Uploading..." : "+ Add Photo"}
               <input
                 type="file"
                 accept="image/*"
-                onChange={props.onPhotoUpload}
-                disabled={props.uploading()}
+                onChange={props.form.onPhotoUpload}
+                disabled={props.form.uploading()}
                 style={{ display: "none" }}
               />
             </label>
           </div>
         </div>
-        <Show when={props.photoIds().length > 0}>
+        <Show when={props.form.photoIds().length > 0}>
           <div class="photo-grid">
-            <For each={props.photoIds()}>
+            <For each={props.form.photoIds()}>
               {(photoId) => (
                 <PhotoThumbnail
                   photoId={photoId}
                   token={props.token() ?? ""}
-                  onRemove={() => props.onPhotoRemove(photoId)}
+                  onRemove={() => props.form.removePhoto(photoId)}
                 />
               )}
             </For>
           </div>
         </Show>
-        <Show when={props.photoIds().length === 0}>
+        <Show when={props.form.photoIds().length === 0}>
           <p class="empty-photos">No photos yet</p>
         </Show>
       </div>
 
-      <Show when={props.error()}>
-        <div class="error">{props.error()}</div>
+      <Show when={props.form.error()}>
+        <div class="error">{props.form.error()}</div>
       </Show>
 
       <div class="form-actions">
         <A href={props.cancelHref} class="btn">
           Cancel
         </A>
-        <button type="submit" class="btn btn-primary" disabled={props.saving()}>
-          {props.saving() ? props.submitLabelSaving : props.submitLabel}
+        <button
+          type="submit"
+          class="btn btn-primary"
+          disabled={props.form.saving()}
+        >
+          {props.form.saving() ? props.submitLabelSaving : props.submitLabel}
         </button>
       </div>
     </form>
