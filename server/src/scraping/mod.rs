@@ -807,9 +807,15 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
         first_step
     );
 
-    // Build the step registry and output store
-    // If job.recipe_id is already set, this is a rescrape - pass it to build_registry
-    let registry = build_registry(pool.clone(), job.user_id, job.recipe_id, job.photo_only)?;
+    // Build the step registry and output store.
+    // If job.recipe_id is already set, this is a rescrape - pass it to build_registry.
+    let registry = match build_registry(pool.clone(), job.user_id, job.recipe_id, job.photo_only) {
+        Ok(registry) => registry,
+        Err(e) => {
+            mark_failed(&pool, job_id, first_step, &e.to_string())?;
+            return Err(e);
+        }
+    };
     let mut store = DbOutputStore::new(&pool, job_id);
 
     // URL for context (empty string for imports without a URL)

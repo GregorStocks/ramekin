@@ -130,6 +130,10 @@ async fn try_enrich_tags(
         .load(&mut conn)
         .map_err(|e| TagEnrichmentError::Database(format!("failed to fetch user tags: {}", e)))?;
 
+    if user_tags.is_empty() {
+        return Ok(request.tags.clone());
+    }
+
     let ai_client =
         CachingAiClient::from_env().map_err(|e| TagEnrichmentError::Ai(e.to_string()))?;
 
