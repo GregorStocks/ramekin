@@ -6,11 +6,17 @@ import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 import { logger } from "../utils/logger";
 import { createAsyncAction } from "../utils/asyncState";
+import {
+  applyShoppingListSyncResponse,
+  loadShoppingListSyncCache,
+  saveShoppingListSyncCache,
+  type ShoppingListSyncCache,
+} from "../utils/shoppingListSyncCache";
 import type { ShoppingListItemResponse } from "ramekin-client";
 
 export default function ShoppingListPage() {
   usePageTitle(() => "Shopping List");
-  const { getShoppingListApi } = useAuth();
+  const { getShoppingListApi, token } = useAuth();
 
   const [items, setItems] = createSignal<ShoppingListItemResponse[]>([]);
   const [categoryOrder, setCategoryOrder] = createSignal<string[]>([]);
@@ -50,19 +56,38 @@ export default function ShoppingListPage() {
       .sort((a, b) => a.sortOrder - b.sortOrder),
   );
 
+  const applyCache = (cache: ShoppingListSyncCache) => {
+    setItems(cache.items);
+    setCategoryOrder(cache.categoryOrder);
+  };
+
   const loadItems = async (showLoading = true) => {
-    if (showLoading) setLoading(true);
+    const cached = loadShoppingListSyncCache(localStorage, token());
+    if (cached) {
+      applyCache(cached);
+      setLoading(false);
+    } else if (showLoading) {
+      setLoading(true);
+    }
+
     setError(null);
     try {
-      const response = await logger.timed("Shopping", "listItems", () =>
-        getShoppingListApi().listItems(),
+      const response = await logger.timed("Shopping", "syncItems", () =>
+        getShoppingListApi().syncItems({
+          syncRequest: {
+            lastSyncAt: cached?.lastSyncAt ?? undefined,
+          },
+        }),
       );
-      setItems(response.items);
-      setCategoryOrder(response.categoryOrder);
+      const nextCache = applyShoppingListSyncResponse(cached, response);
+      saveShoppingListSyncCache(localStorage, token(), nextCache);
+      applyCache(nextCache);
     } catch (err) {
       const message = await extractApiError(
         err,
-        "Failed to load shopping list",
+        cached
+          ? "Failed to sync shopping list"
+          : "Failed to load shopping list",
       );
       setError(message);
     } finally {
