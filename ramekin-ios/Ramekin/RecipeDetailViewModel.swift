@@ -246,6 +246,7 @@ extension RecipeDetailViewModel {
         guard canCompareSelectedVersions else {
             return
         }
+        let selectedVersionIds = compareSelection
 
         showingCompareSheet = true
         isLoadingCompare = true
@@ -254,8 +255,8 @@ extension RecipeDetailViewModel {
         comparedNewerVersion = nil
 
         do {
-            let first = try await api.getRecipe(recipeId, compareSelection[0])
-            let second = try await api.getRecipe(recipeId, compareSelection[1])
+            let first = try await api.getRecipe(recipeId, selectedVersionIds[0])
+            let second = try await api.getRecipe(recipeId, selectedVersionIds[1])
             let orderedVersions = RecipeVersionSupport.sortForCompare(first, second)
             comparedOlderVersion = orderedVersions.older
             comparedNewerVersion = orderedVersions.newer

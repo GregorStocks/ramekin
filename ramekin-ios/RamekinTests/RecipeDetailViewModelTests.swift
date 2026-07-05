@@ -117,6 +117,55 @@ final class RecipeDetailViewModelTests: XCTestCase {
     }
 
     @MainActor
+    func testOpenCompareSheetUsesInitialSelectionAfterAwait() async {
+        let recipeId = UUID()
+        let firstVersionId = UUID()
+        let secondVersionId = UUID()
+        let replacementVersionId = UUID()
+        let older = makeRecipe(
+            id: recipeId,
+            versionId: secondVersionId,
+            updatedAt: Date(timeIntervalSince1970: 100)
+        )
+        let newer = makeRecipe(
+            id: recipeId,
+            versionId: firstVersionId,
+            updatedAt: Date(timeIntervalSince1970: 200)
+        )
+        var requestedVersionIds: [UUID?] = []
+        var firstFetchContinuation: CheckedContinuation<RecipeResponse, Never>?
+
+        let viewModel = RecipeDetailViewModel(
+            recipeId: recipeId,
+            api: makeAPI(
+                getRecipe: { _, versionId in
+                    requestedVersionIds.append(versionId)
+                    if versionId == firstVersionId {
+                        return await withCheckedContinuation { continuation in
+                            firstFetchContinuation = continuation
+                        }
+                    }
+                    return older
+                }
+            )
+        )
+        viewModel.compareSelection = [firstVersionId, secondVersionId]
+
+        let compareTask = Task { await viewModel.openCompareSheet() }
+        while firstFetchContinuation == nil {
+            await Task.yield()
+        }
+        viewModel.compareSelection = [replacementVersionId]
+        firstFetchContinuation?.resume(returning: newer)
+
+        await compareTask.value
+
+        XCTAssertEqual(requestedVersionIds, [firstVersionId, secondVersionId])
+        XCTAssertEqual(viewModel.comparedOlderVersion?.versionId, secondVersionId)
+        XCTAssertEqual(viewModel.comparedNewerVersion?.versionId, firstVersionId)
+    }
+
+    @MainActor
     func testCustomScaleOnlyAcceptsPositiveDecimalValues() {
         let viewModel = RecipeDetailViewModel(recipeId: UUID(), api: makeAPI())
 
