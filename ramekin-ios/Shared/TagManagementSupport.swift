@@ -85,8 +85,8 @@ enum APIErrorFormatter {
             switch generatedError {
             case .error(_, let data, _, let underlyingError):
                 if let data,
-                   let errorResponse = try? JSONDecoder().decode(RamekinAPI.ErrorResponse.self, from: data) {
-                    return errorResponse.errorMessage
+                   let errorResponse = try? JSONDecoder().decode(ModelErrorResponse.self, from: data) {
+                    return errorResponse.error
                 }
 
                 let description = underlyingError.localizedDescription
@@ -111,8 +111,8 @@ enum APIErrorFormatter {
             switch generatedError {
             case .error(_, let data, _, _):
                 if let data,
-                   let errorResponse = try? JSONDecoder().decode(RamekinAPI.ErrorResponse.self, from: data) {
-                    return errorResponse.errorCode
+                   let errorResponse = try? JSONDecoder().decode(ModelErrorResponse.self, from: data) {
+                    return errorResponse.code
                 }
             }
         }
