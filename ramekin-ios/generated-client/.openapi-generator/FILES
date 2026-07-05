@@ -28,7 +28,6 @@ RamekinClient/Classes/OpenAPIs/Models.swift
 RamekinClient/Classes/OpenAPIs/Models/BookmarkletTokenResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/CaptureRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/ClearCheckedResponse.swift
-RamekinClient/Classes/OpenAPIs/Models/ClientLogSummary.swift
 RamekinClient/Classes/OpenAPIs/Models/CreateClientLogRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/CreateClientLogResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/CreateMealPlanRequest.swift
@@ -47,7 +46,6 @@ RamekinClient/Classes/OpenAPIs/Models/Direction.swift
 RamekinClient/Classes/OpenAPIs/Models/ErrorCode.swift
 RamekinClient/Classes/OpenAPIs/Models/GenerateDescriptionResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/GeneratePhotoResponse.swift
-RamekinClient/Classes/OpenAPIs/Models/GetClientLogResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportExtractionMethod.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportFromPhotosRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportFromPhotosResponse.swift
@@ -55,7 +53,6 @@ RamekinClient/Classes/OpenAPIs/Models/ImportRawRecipe.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportRecipeRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/ImportRecipeResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/Ingredient.swift
-RamekinClient/Classes/OpenAPIs/Models/ListClientLogsResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/ListRecipesResponse.swift
 RamekinClient/Classes/OpenAPIs/Models/LoginRequest.swift
 RamekinClient/Classes/OpenAPIs/Models/LoginResponse.swift
@@ -107,7 +104,6 @@ docs/AuthAPI.md
 docs/BookmarkletTokenResponse.md
 docs/CaptureRequest.md
 docs/ClearCheckedResponse.md
-docs/ClientLogSummary.md
 docs/ClientLogsAPI.md
 docs/CreateClientLogRequest.md
 docs/CreateClientLogResponse.md
@@ -128,7 +124,6 @@ docs/EnrichAPI.md
 docs/ErrorCode.md
 docs/GenerateDescriptionResponse.md
 docs/GeneratePhotoResponse.md
-docs/GetClientLogResponse.md
 docs/ImportAPI.md
 docs/ImportExtractionMethod.md
 docs/ImportFromPhotosRequest.md
@@ -137,7 +132,6 @@ docs/ImportRawRecipe.md
 docs/ImportRecipeRequest.md
 docs/ImportRecipeResponse.md
 docs/Ingredient.md
-docs/ListClientLogsResponse.md
 docs/ListRecipesResponse.md
 docs/LoginRequest.md
 docs/LoginResponse.md
