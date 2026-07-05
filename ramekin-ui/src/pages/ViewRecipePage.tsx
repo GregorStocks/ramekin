@@ -11,10 +11,11 @@ import { useParams, A, useNavigate, useSearchParams } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import StarRating from "../components/StarRating";
 import Modal from "../components/Modal";
-import VersionHistoryPanel from "../components/VersionHistoryPanel";
 import EnrichPreviewModal from "../components/EnrichPreviewModal";
-import VersionCompareModal from "../components/VersionCompareModal";
 import AddToShoppingListModal from "../components/AddToShoppingListModal";
+import AddToMealPlanModal from "../components/AddToMealPlanModal";
+import RecipeVersioningSection from "../components/RecipeVersioningSection";
+import { useRecipeAiActions } from "../hooks/useRecipeAiActions";
 import {
   extractApiError,
   parseApiError,
@@ -25,19 +26,7 @@ import { usePageTitle } from "../utils/pageTitle";
 import { scaleAmount } from "../utils/scaleAmount";
 import { formatIngredientParts } from "../utils/ingredientFormatting";
 import { AI_ENRICHMENTS } from "../utils/aiEnrichments";
-import {
-  MEAL_TYPES,
-  MEAL_TYPE_LABELS,
-  toApiDate,
-  parseLocalDate,
-  formatDateLocal,
-} from "../utils/mealPlanHelpers";
-import type {
-  RecipeResponse,
-  RecipeContent,
-  VersionSummary,
-  MealType,
-} from "ramekin-client";
+import type { RecipeResponse, VersionSummary } from "ramekin-client";
 import { ErrorCode } from "ramekin-client";
 
 function PhotoImage(props: { photoId: string; token: string; alt: string }) {
@@ -70,8 +59,7 @@ export default function ViewRecipePage() {
   const params = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const { getRecipesApi, getEnrichApi, getScrapeApi, getMealPlansApi, token } =
-    useAuth();
+  const { getRecipesApi, getEnrichApi, getScrapeApi, token } = useAuth();
 
   // Check if we're in "random browsing" mode
   const randomQuery = () =>
@@ -139,44 +127,14 @@ export default function ViewRecipePage() {
   );
   const [reverting, setReverting] = createSignal(false);
 
-  // Enrich state
-  const [enriching, setEnriching] = createSignal(false);
-  const [enrichedContent, setEnrichedContent] =
-    createSignal<RecipeContent | null>(null);
-  const [applyingEnrichment, setApplyingEnrichment] = createSignal(false);
-
-  // Custom enrich state
-  const [customInstruction, setCustomInstruction] = createSignal("");
-  const [showCustomEnrichInput, setShowCustomEnrichInput] = createSignal(false);
-
-  // Compare state
-  const [compareLoading, setCompareLoading] = createSignal(false);
-  const [compareVersions, setCompareVersions] = createSignal<
-    [RecipeResponse, RecipeResponse] | null
-  >(null);
-  const [compareError, setCompareError] = createSignal<string | null>(null);
-
   // Rescrape state
   const [rescraping, setRescraping] = createSignal(false);
-  const [generatingPhoto, setGeneratingPhoto] = createSignal(false);
-  const [normalizingTitle, setNormalizingTitle] = createSignal(false);
-
-  // Generate description state
-  const [generatingDescription, setGeneratingDescription] = createSignal(false);
 
   // Shopping list modal state
   const [showShoppingListModal, setShowShoppingListModal] = createSignal(false);
 
   // Meal plan modal state
   const [showMealPlanModal, setShowMealPlanModal] = createSignal(false);
-  const [mealPlanDate, setMealPlanDate] = createSignal(
-    formatDateLocal(new Date()),
-  );
-  const [mealPlanMealType, setMealPlanMealType] =
-    createSignal<MealType>("dinner");
-  const [addingToMealPlan, setAddingToMealPlan] = createSignal(false);
-  const [mealPlanError, setMealPlanError] = createSignal<string | null>(null);
-  const [mealPlanSuccess, setMealPlanSuccess] = createSignal(false);
 
   const loadRecipe = async () => {
     setLoading(true);
@@ -325,7 +283,11 @@ export default function ViewRecipePage() {
       setSearchParams({ version_id: undefined });
       setRevertVersion(null);
     } catch (err) {
-      setError("Failed to revert to this version");
+      const message = await extractApiError(
+        err,
+        "Failed to revert to this version",
+      );
+      setError(message);
     } finally {
       setReverting(false);
     }
@@ -335,205 +297,15 @@ export default function ViewRecipePage() {
     setRevertVersion(null);
   };
 
-  // Enrich handlers
-  const handleEnrich = async () => {
-    const r = recipe();
-    if (!r) return;
-
-    setEnriching(true);
-    setError(null);
-    try {
-      const enriched = await getEnrichApi().enrichRecipe({
-        recipeContent: {
-          title: r.title,
-          description: r.description,
-          instructions: r.instructions,
-          ingredients: r.ingredients,
-          tags: r.tags,
-          prepTime: r.prepTime,
-          cookTime: r.cookTime,
-          totalTime: r.totalTime,
-          servings: r.servings,
-          difficulty: r.difficulty,
-          notes: r.notes,
-          nutritionalInfo: r.nutritionalInfo,
-          sourceName: r.sourceName,
-          sourceUrl: r.sourceUrl,
-        },
-      });
-      setEnrichedContent(enriched);
-    } catch (err) {
-      setError("Failed to enrich recipe");
-    } finally {
-      setEnriching(false);
-    }
-  };
-
-  const handleApplyEnrichment = async () => {
-    const enriched = enrichedContent();
-    if (!enriched) return;
-
-    setApplyingEnrichment(true);
-    try {
-      await getRecipesApi().updateRecipe({
-        id: params.id,
-        updateRecipeRequest: {
-          title: enriched.title,
-          description: enriched.description,
-          instructions: enriched.instructions,
-          ingredients: enriched.ingredients,
-          tags: enriched.tags,
-          prepTime: enriched.prepTime,
-          cookTime: enriched.cookTime,
-          totalTime: enriched.totalTime,
-          servings: enriched.servings,
-          difficulty: enriched.difficulty,
-          notes: enriched.notes,
-          nutritionalInfo: enriched.nutritionalInfo,
-          sourceName: enriched.sourceName,
-          sourceUrl: enriched.sourceUrl,
-        },
-      });
-      setEnrichedContent(null);
-      await loadRecipe();
-    } catch (err) {
-      setError("Failed to apply enrichment");
-    } finally {
-      setApplyingEnrichment(false);
-    }
-  };
-
-  const handleEnrichClose = () => {
-    setEnrichedContent(null);
-  };
-
-  const handleGeneratePhoto = async () => {
-    if (!recipe()) return;
-
-    setGeneratingPhoto(true);
-    setError(null);
-    try {
-      await getRecipesApi().generatePhoto({ id: params.id });
-      await loadRecipe();
-    } catch (err) {
-      const message = await extractApiError(err, "Failed to generate AI photo");
-      setError(message);
-    } finally {
-      setGeneratingPhoto(false);
-    }
-  };
-
-  const handleNormalizeTitle = async () => {
-    if (!recipe()) return;
-
-    setNormalizingTitle(true);
-    setError(null);
-    try {
-      const res = await getRecipesApi().normalizeTitle({ id: params.id });
-      if (res.changed) {
-        setSearchParams({ version_id: undefined });
-        await loadRecipe();
-      }
-    } catch (err) {
-      const message = await extractApiError(err, "Failed to normalize title");
-      setError(message);
-    } finally {
-      setNormalizingTitle(false);
-    }
-  };
-
-  const handleCustomEnrich = async () => {
-    const r = recipe();
-    const instruction = customInstruction();
-    if (!r || !instruction.trim()) return;
-
-    setEnriching(true);
-    setError(null);
-    try {
-      const enriched = await getEnrichApi().customEnrichRecipe({
-        customEnrichRequest: {
-          recipe: {
-            title: r.title,
-            description: r.description,
-            instructions: r.instructions,
-            ingredients: r.ingredients,
-            tags: r.tags,
-            prepTime: r.prepTime,
-            cookTime: r.cookTime,
-            totalTime: r.totalTime,
-            servings: r.servings,
-            difficulty: r.difficulty,
-            notes: r.notes,
-            nutritionalInfo: r.nutritionalInfo,
-            sourceName: r.sourceName,
-            sourceUrl: r.sourceUrl,
-          },
-          instruction,
-          photoIds: r.photoIds.length > 0 ? r.photoIds : undefined,
-        },
-      });
-      setEnrichedContent(enriched);
-      setShowCustomEnrichInput(false);
-      setCustomInstruction("");
-    } catch (err) {
-      setError("Failed to apply custom enrichment");
-    } finally {
-      setEnriching(false);
-    }
-  };
-
-  // Compare handlers
-  const handleCompareVersions = async (versionIds: [string, string]) => {
-    setCompareLoading(true);
-    setCompareError(null);
-    try {
-      const [versionA, versionB] = await Promise.all([
-        getRecipesApi().getRecipe({
-          id: params.id,
-          versionId: versionIds[0],
-        }),
-        getRecipesApi().getRecipe({
-          id: params.id,
-          versionId: versionIds[1],
-        }),
-      ]);
-      // Order by date (older first)
-      if (versionA.updatedAt > versionB.updatedAt) {
-        setCompareVersions([versionB, versionA]);
-      } else {
-        setCompareVersions([versionA, versionB]);
-      }
-    } catch (err) {
-      setCompareError("Failed to load versions for comparison");
-    } finally {
-      setCompareLoading(false);
-    }
-  };
-
-  const handleCompareClose = () => {
-    setCompareVersions(null);
-    setCompareError(null);
-  };
-
-  // Generate description handler
-  const handleGenerateDescription = async () => {
-    if (!recipe()) return;
-    setGeneratingDescription(true);
-    setError(null);
-    try {
-      const res = await getRecipesApi().generateDescription({
-        id: params.id,
-      });
-      if (res.changed) {
-        setSearchParams({ version_id: undefined });
-        await loadRecipe();
-      }
-    } catch (err) {
-      setError("Failed to generate description");
-    } finally {
-      setGeneratingDescription(false);
-    }
-  };
+  const recipeAiActions = useRecipeAiActions({
+    recipeId: () => params.id,
+    recipe,
+    getRecipesApi,
+    getEnrichApi,
+    loadRecipe,
+    clearHistoricalVersion: () => setSearchParams({ version_id: undefined }),
+    setError,
+  });
 
   // Rescrape handler
   const handleRescrape = async () => {
@@ -572,7 +344,8 @@ export default function ViewRecipePage() {
 
       await poll();
     } catch (err) {
-      setError("Failed to rescrape recipe");
+      const message = await extractApiError(err, "Failed to rescrape recipe");
+      setError(message);
       setRescraping(false);
     }
   };
@@ -587,48 +360,12 @@ export default function ViewRecipePage() {
     }).format(date);
   };
 
-  // Meal plan handlers
   const openMealPlanModal = () => {
-    setMealPlanDate(formatDateLocal(new Date()));
-    setMealPlanMealType("dinner");
-    setMealPlanError(null);
-    setMealPlanSuccess(false);
     setShowMealPlanModal(true);
   };
 
   const closeMealPlanModal = () => {
     setShowMealPlanModal(false);
-    setMealPlanError(null);
-    setMealPlanSuccess(false);
-  };
-
-  const handleAddToMealPlan = async () => {
-    setAddingToMealPlan(true);
-    setMealPlanError(null);
-    try {
-      await getMealPlansApi().createMealPlan({
-        createMealPlanRequest: {
-          recipeId: params.id,
-          mealDate: toApiDate(parseLocalDate(mealPlanDate())),
-          mealType: mealPlanMealType(),
-        },
-      });
-      setMealPlanSuccess(true);
-      setTimeout(() => {
-        closeMealPlanModal();
-      }, 1500);
-    } catch (err) {
-      const parsed = await parseApiError(err, "Failed to add to meal plan");
-      if (parsed.code === ErrorCode.Conflict) {
-        setMealPlanError(
-          `This recipe is already scheduled for ${MEAL_TYPE_LABELS[mealPlanMealType()].toLowerCase()} on this date`,
-        );
-      } else {
-        setMealPlanError(parsed.message);
-      }
-    } finally {
-      setAddingToMealPlan(false);
-    }
   };
 
   // Reload when version_id changes
@@ -689,38 +426,40 @@ export default function ViewRecipePage() {
                 <button
                   type="button"
                   class="btn"
-                  onClick={handleNormalizeTitle}
+                  onClick={recipeAiActions.handleNormalizeTitle}
                   disabled={
-                    normalizingTitle() ||
+                    recipeAiActions.normalizingTitle() ||
                     isViewingHistoricalVersion() ||
                     loading()
                   }
                 >
-                  {normalizingTitle()
+                  {recipeAiActions.normalizingTitle()
                     ? "Renaming..."
                     : AI_ENRICHMENTS.normalizeTitle.individualLabel}
                 </button>
                 <button
                   type="button"
                   class="btn"
-                  onClick={handleGenerateDescription}
+                  onClick={recipeAiActions.handleGenerateDescription}
                   disabled={
-                    generatingDescription() ||
+                    recipeAiActions.generatingDescription() ||
                     isViewingHistoricalVersion() ||
                     loading()
                   }
                 >
-                  {generatingDescription()
+                  {recipeAiActions.generatingDescription()
                     ? "Generating..."
                     : AI_ENRICHMENTS.generateDescription.individualLabel}
                 </button>
                 <button
                   type="button"
                   class="btn"
-                  onClick={handleEnrich}
-                  disabled={enriching() || isViewingHistoricalVersion()}
+                  onClick={recipeAiActions.handleEnrich}
+                  disabled={
+                    recipeAiActions.enriching() || isViewingHistoricalVersion()
+                  }
                 >
-                  {enriching()
+                  {recipeAiActions.enriching()
                     ? "Enriching..."
                     : AI_ENRICHMENTS.enrichRecipe.individualLabel}
                 </button>
@@ -728,19 +467,26 @@ export default function ViewRecipePage() {
                   type="button"
                   class="btn"
                   onClick={() =>
-                    setShowCustomEnrichInput(!showCustomEnrichInput())
+                    recipeAiActions.setShowCustomEnrichInput(
+                      !recipeAiActions.showCustomEnrichInput(),
+                    )
                   }
-                  disabled={enriching() || isViewingHistoricalVersion()}
+                  disabled={
+                    recipeAiActions.enriching() || isViewingHistoricalVersion()
+                  }
                 >
                   {AI_ENRICHMENTS.customEnrich.individualLabel}
                 </button>
                 <button
                   type="button"
                   class="btn"
-                  onClick={handleGeneratePhoto}
-                  disabled={generatingPhoto() || isViewingHistoricalVersion()}
+                  onClick={recipeAiActions.handleGeneratePhoto}
+                  disabled={
+                    recipeAiActions.generatingPhoto() ||
+                    isViewingHistoricalVersion()
+                  }
                 >
-                  {generatingPhoto()
+                  {recipeAiActions.generatingPhoto()
                     ? "Generating Photo..."
                     : AI_ENRICHMENTS.generatePhoto.individualLabel}
                 </button>
@@ -771,7 +517,7 @@ export default function ViewRecipePage() {
                   {deleting() ? "Deleting..." : "Delete"}
                 </button>
               </div>
-              <Show when={showCustomEnrichInput()}>
+              <Show when={recipeAiActions.showCustomEnrichInput()}>
                 <div
                   class="custom-enrich-input"
                   style={{ display: "flex", gap: "8px", "margin-top": "8px" }}
@@ -779,21 +525,29 @@ export default function ViewRecipePage() {
                   <input
                     type="text"
                     placeholder="e.g., make this vegan, double the servings..."
-                    value={customInstruction()}
-                    onInput={(e) => setCustomInstruction(e.currentTarget.value)}
+                    value={recipeAiActions.customInstruction()}
+                    onInput={(e) =>
+                      recipeAiActions.setCustomInstruction(
+                        e.currentTarget.value,
+                      )
+                    }
                     onKeyDown={(e) => {
-                      if (e.key === "Enter") handleCustomEnrich();
+                      if (e.key === "Enter")
+                        recipeAiActions.handleCustomEnrich();
                     }}
-                    disabled={enriching()}
+                    disabled={recipeAiActions.enriching()}
                     style={{ flex: "1" }}
                   />
                   <button
                     type="button"
                     class="btn btn-primary"
-                    onClick={handleCustomEnrich}
-                    disabled={enriching() || !customInstruction().trim()}
+                    onClick={recipeAiActions.handleCustomEnrich}
+                    disabled={
+                      recipeAiActions.enriching() ||
+                      !recipeAiActions.customInstruction().trim()
+                    }
                   >
-                    {enriching() ? "Customizing..." : "Go"}
+                    {recipeAiActions.enriching() ? "Customizing..." : "Go"}
                   </button>
                 </div>
               </Show>
@@ -832,16 +586,12 @@ export default function ViewRecipePage() {
               </div>
             </Show>
 
-            {/* Version History Panel */}
-            <Show when={currentVersionId()}>
-              <VersionHistoryPanel
-                recipeId={params.id}
-                currentVersionId={currentVersionId()!}
-                onViewVersion={handleViewVersion}
-                onRevertVersion={handleRevertClick}
-                onCompareVersions={handleCompareVersions}
-              />
-            </Show>
+            <RecipeVersioningSection
+              recipeId={params.id}
+              currentVersionId={currentVersionId}
+              onViewVersion={handleViewVersion}
+              onRevertVersion={handleRevertClick}
+            />
 
             <div class="recipe-header-compact">
               <h2>{r().title}</h2>
@@ -1111,30 +861,16 @@ export default function ViewRecipePage() {
             </Modal>
 
             {/* Enrich Preview Modal */}
-            <Show when={enrichedContent() && recipe()}>
+            <Show when={recipeAiActions.enrichedContent() && recipe()}>
               <EnrichPreviewModal
-                isOpen={() => enrichedContent() !== null}
-                onClose={handleEnrichClose}
+                isOpen={() => recipeAiActions.enrichedContent() !== null}
+                onClose={recipeAiActions.handleEnrichClose}
                 currentRecipe={recipe()!}
-                enrichedContent={enrichedContent()!}
-                onApply={handleApplyEnrichment}
-                applying={applyingEnrichment()}
+                enrichedContent={recipeAiActions.enrichedContent()!}
+                onApply={recipeAiActions.handleApplyEnrichment}
+                applying={recipeAiActions.applyingEnrichment()}
               />
             </Show>
-
-            {/* Version Compare Modal */}
-            <VersionCompareModal
-              isOpen={() =>
-                compareLoading() ||
-                compareVersions() !== null ||
-                compareError() !== null
-              }
-              onClose={handleCompareClose}
-              loading={compareLoading()}
-              error={compareError()}
-              versionA={compareVersions()?.[0] ?? null}
-              versionB={compareVersions()?.[1] ?? null}
-            />
 
             {/* Add to Shopping List Modal */}
             <AddToShoppingListModal
@@ -1176,68 +912,11 @@ export default function ViewRecipePage() {
               </p>
             </Modal>
 
-            {/* Add to Meal Plan Modal */}
-            <Modal
+            <AddToMealPlanModal
               isOpen={showMealPlanModal}
               onClose={closeMealPlanModal}
-              title="Add to Meal Plan"
-              actions={
-                <>
-                  <button
-                    type="button"
-                    class="btn"
-                    onClick={closeMealPlanModal}
-                    disabled={addingToMealPlan()}
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    onClick={handleAddToMealPlan}
-                    disabled={addingToMealPlan() || mealPlanSuccess()}
-                  >
-                    {addingToMealPlan() ? "Adding..." : "Add"}
-                  </button>
-                </>
-              }
-            >
-              <Show when={mealPlanSuccess()}>
-                <div class="meal-plan-success">Added to meal plan!</div>
-              </Show>
-              <Show when={!mealPlanSuccess()}>
-                <div class="meal-plan-form">
-                  <div class="form-group">
-                    <label for="meal-plan-date">Date</label>
-                    <input
-                      type="date"
-                      id="meal-plan-date"
-                      value={mealPlanDate()}
-                      onInput={(e) => setMealPlanDate(e.currentTarget.value)}
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label>Meal</label>
-                    <div class="meal-type-buttons">
-                      <For each={MEAL_TYPES}>
-                        {(type) => (
-                          <button
-                            type="button"
-                            class={`meal-type-button ${mealPlanMealType() === type ? "selected" : ""}`}
-                            onClick={() => setMealPlanMealType(type)}
-                          >
-                            {MEAL_TYPE_LABELS[type]}
-                          </button>
-                        )}
-                      </For>
-                    </div>
-                  </div>
-                  <Show when={mealPlanError()}>
-                    <p class="error">{mealPlanError()}</p>
-                  </Show>
-                </div>
-              </Show>
-            </Modal>
+              recipeId={params.id}
+            />
           </>
         )}
       </Show>
