@@ -21,7 +21,8 @@ def test_shared_test_base_owns_fixture_and_mock_processes():
     assert "\n  fixture-server:\n" not in test_base
     assert "working_dir: ../tests/scrape_fixtures" in test_base
     assert "\n  mock-openrouter:\n" in test_base
-    assert "command: python3 ../tests/mock_openrouter.py" in test_base
+    assert "command: python3 tests/mock_openrouter.py" in test_base
+    assert "working_dir: .." in test_base
     assert "working_dir: ../server" in test_base
     assert "SCRAPE_ALLOWED_HOSTS=localhost:${FIXTURE_PORT}" in test_base
     assert (

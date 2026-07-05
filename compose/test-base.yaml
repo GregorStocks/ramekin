@@ -12,7 +12,8 @@ processes:
         path: /
 
   mock-openrouter:
-    command: python3 ../tests/mock_openrouter.py ${MOCK_OPENROUTER_PORT}
+    command: python3 tests/mock_openrouter.py ${MOCK_OPENROUTER_PORT}
+    working_dir: ..
     readiness_probe:
       http_get:
         host: localhost
