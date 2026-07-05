@@ -20,7 +20,7 @@ extension RecipeDetailView {
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
             Button("Retry") {
-                Task { await loadRecipe() }
+                Task { await viewModel.loadRecipe() }
             }
             .buttonStyle(.borderedProminent)
         }
@@ -43,24 +43,24 @@ extension RecipeDetailView {
     }
 
     var versionHistorySection: some View {
-        DisclosureGroup(isExpanded: $isVersionHistoryExpanded) {
+        DisclosureGroup(isExpanded: $viewModel.isVersionHistoryExpanded) {
             VStack(alignment: .leading, spacing: 12) {
-                if isLoadingVersions {
+                if viewModel.isLoadingVersions {
                     ProgressView("Loading versions...")
                 }
 
-                if let versionHistoryError {
+                if let versionHistoryError = viewModel.versionHistoryError {
                     VStack(alignment: .leading, spacing: 8) {
                         Text(versionHistoryError)
                             .foregroundColor(.red)
                         Button("Retry") {
-                            Task { await loadVersionHistory(force: true) }
+                            Task { await viewModel.loadVersionHistory(force: true) }
                         }
                         .buttonStyle(.bordered)
                     }
                 }
 
-                if !versionHistory.isEmpty {
+                if !viewModel.versionHistory.isEmpty {
                     HStack {
                         Text(compareSelectionMessage)
                             .font(.caption)
@@ -70,7 +70,7 @@ extension RecipeDetailView {
 
                         if canCompareSelectedVersions {
                             Button {
-                                Task { await openCompareSheet() }
+                                Task { await viewModel.openCompareSheet() }
                             } label: {
                                 Label("Compare", systemImage: "square.split.2x1")
                             }
@@ -81,13 +81,15 @@ extension RecipeDetailView {
                     }
                 }
 
-                if !isLoadingVersions && versionHistoryError == nil && versionHistory.isEmpty {
+                if !viewModel.isLoadingVersions
+                    && viewModel.versionHistoryError == nil
+                    && viewModel.versionHistory.isEmpty {
                     Text("No saved versions yet.")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
 
-                ForEach(versionHistory) { version in
+                ForEach(viewModel.versionHistory) { version in
                     versionHistoryRow(version)
                 }
             }
@@ -98,8 +100,8 @@ extension RecipeDetailView {
                     .font(.title3)
                     .fontWeight(.bold)
 
-                if !versionHistory.isEmpty {
-                    Text("(\(versionHistory.count))")
+                if !viewModel.versionHistory.isEmpty {
+                    Text("(\(viewModel.versionHistory.count))")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
@@ -127,13 +129,13 @@ extension RecipeDetailView {
 
             HStack(spacing: 12) {
                 Button("View Current") {
-                    Task { await loadRecipe() }
+                    Task { await viewModel.loadRecipe() }
                 }
                 .buttonStyle(.bordered)
-                .disabled(isLoading || isReverting)
+                .disabled(viewModel.isLoading || viewModel.isReverting)
 
                 Button("Revert to This Version") {
-                    revertCandidate = VersionSummary(
+                    viewModel.revertCandidate = VersionSummary(
                         createdAt: recipe.updatedAt,
                         id: recipe.versionId,
                         isCurrent: false,
@@ -142,7 +144,7 @@ extension RecipeDetailView {
                     )
                 }
                 .buttonStyle(.borderedProminent)
-                .disabled(isLoading || isReverting)
+                .disabled(viewModel.isLoading || viewModel.isReverting)
             }
         }
         .padding(12)
@@ -151,23 +153,20 @@ extension RecipeDetailView {
     }
 
     func versionHistoryRow(_ version: VersionSummary) -> some View {
-        let isDisplayedVersion = recipe?.versionId == version.id
-        let isSelectedForCompare = compareSelection.contains(version.id)
+        let isDisplayedVersion = viewModel.recipe?.versionId == version.id
+        let isSelectedForCompare = viewModel.compareSelection.contains(version.id)
 
         return VStack(alignment: .leading, spacing: 10) {
             HStack(alignment: .top, spacing: 12) {
                 Button {
-                    compareSelection = RecipeVersionSupport.toggleCompareSelection(
-                        compareSelection,
-                        versionId: version.id
-                    )
+                    viewModel.toggleCompareSelection(versionId: version.id)
                 } label: {
                     Image(systemName: isSelectedForCompare ? "checkmark.circle.fill" : "circle")
                         .font(.title3)
                         .foregroundColor(isSelectedForCompare ? .orange : .secondary)
                 }
                 .buttonStyle(.plain)
-                .disabled(isLoading || isLoadingCompare || isReverting)
+                .disabled(viewModel.isLoading || viewModel.isLoadingCompare || viewModel.isReverting)
                 .accessibilityIdentifier("version-select-\(version.id.uuidString)")
 
                 VStack(alignment: .leading, spacing: 8) {
@@ -193,17 +192,17 @@ extension RecipeDetailView {
 
                     HStack(spacing: 12) {
                         Button(version.isCurrent ? "View Current" : "View") {
-                            Task { await displayVersion(version) }
+                            Task { await viewModel.displayVersion(version) }
                         }
                         .buttonStyle(.bordered)
-                        .disabled(isDisplayedVersion || isLoading || isReverting)
+                        .disabled(isDisplayedVersion || viewModel.isLoading || viewModel.isReverting)
 
                         if !version.isCurrent {
                             Button("Revert") {
-                                revertCandidate = version
+                                viewModel.revertCandidate = version
                             }
                             .buttonStyle(.borderedProminent)
-                            .disabled(isLoading || isReverting)
+                            .disabled(viewModel.isLoading || viewModel.isReverting)
                         }
                     }
                     .font(.caption)
@@ -243,193 +242,16 @@ extension RecipeDetailView {
     }
 
     private var compareSelectionMessage: String {
-        if compareSelection.isEmpty {
+        if viewModel.compareSelection.isEmpty {
             return "Select two versions to compare."
         }
 
-        return "\(compareSelection.count) selected for comparison."
+        return "\(viewModel.compareSelection.count) selected for comparison."
     }
 }
 
 extension RecipeDetailView {
     func groupIngredientsBySection(_ ingredients: [Ingredient]) -> [(section: String?, items: [Ingredient])] {
         groupConsecutiveItemsBySection(ingredients) { $0.section }
-    }
-
-    @MainActor
-    func deleteRecipe() async {
-        isDeleting = true
-        do {
-            try await RecipesAPI.deleteRecipe(id: recipeId)
-            NotificationCenter.default.post(name: .recipeDeleted, object: nil)
-            dismiss()
-        } catch {
-            deleteError = error.localizedDescription
-            isDeleting = false
-        }
-    }
-
-    @MainActor
-    func loadRecipe(versionId: UUID? = nil) async {
-        isLoading = true
-        error = nil
-
-        do {
-            let loaded = try await RecipesAPI.getRecipe(id: recipeId, versionId: versionId)
-            recipe = loaded
-            isLoading = false
-
-            if versionId == nil {
-                currentVersionId = loaded.versionId
-            } else if currentVersionId == nil {
-                let current = try await RecipesAPI.getRecipe(id: recipeId)
-                currentVersionId = current.versionId
-            }
-
-            if RecipeVersionSupport.shouldRefreshVersionHistory(
-                requestedVersionId: versionId,
-                isVersionHistoryExpanded: isVersionHistoryExpanded,
-                hasCachedVersionHistory: !versionHistory.isEmpty
-            ) {
-                await loadVersionHistory(force: true)
-            }
-        } catch is CancellationError {
-            isLoading = false
-        } catch {
-            self.error = error.localizedDescription
-            isLoading = false
-        }
-    }
-
-    @MainActor
-    func loadVersionHistory(force: Bool = false) async {
-        if isLoadingVersions {
-            return
-        }
-
-        if !force && !versionHistory.isEmpty {
-            return
-        }
-
-        isLoadingVersions = true
-        versionHistoryError = nil
-
-        do {
-            let response = try await RecipesAPI.listVersions(id: recipeId)
-            versionHistory = response.versions
-
-            if let current = response.versions.first(where: { $0.isCurrent }) {
-                currentVersionId = current.id
-            }
-        } catch is CancellationError {
-        } catch {
-            versionHistoryError = error.localizedDescription
-        }
-
-        isLoadingVersions = false
-    }
-
-    @MainActor
-    func displayVersion(_ version: VersionSummary) async {
-        if version.isCurrent {
-            await loadRecipe()
-        } else {
-            await loadRecipe(versionId: version.id)
-        }
-    }
-
-    @MainActor
-    func openCompareSheet() async {
-        guard canCompareSelectedVersions else {
-            return
-        }
-
-        showingCompareSheet = true
-        isLoadingCompare = true
-        compareError = nil
-        comparedOlderVersion = nil
-        comparedNewerVersion = nil
-
-        do {
-            async let firstRecipe = RecipesAPI.getRecipe(
-                id: recipeId,
-                versionId: compareSelection[0]
-            )
-            async let secondRecipe = RecipesAPI.getRecipe(
-                id: recipeId,
-                versionId: compareSelection[1]
-            )
-
-            let first = try await firstRecipe
-            let second = try await secondRecipe
-            let orderedVersions = RecipeVersionSupport.sortForCompare(first, second)
-            comparedOlderVersion = orderedVersions.older
-            comparedNewerVersion = orderedVersions.newer
-        } catch is CancellationError {
-        } catch {
-            compareError = "Failed to load versions for comparison"
-        }
-
-        isLoadingCompare = false
-    }
-
-    func closeCompareSheet() {
-        showingCompareSheet = false
-        isLoadingCompare = false
-        compareError = nil
-        comparedOlderVersion = nil
-        comparedNewerVersion = nil
-    }
-
-    @MainActor
-    func revert(to version: VersionSummary) async {
-        revertCandidate = nil
-        isReverting = true
-        error = nil
-
-        do {
-            let historicalRecipe = try await RecipesAPI.getRecipe(
-                id: recipeId,
-                versionId: version.id
-            )
-            try await RecipeVersionSupport.revertRecipe(id: recipeId, from: historicalRecipe)
-
-            await loadRecipe()
-        } catch is CancellationError {
-        } catch {
-            self.error = "Failed to revert to this version"
-        }
-
-        isReverting = false
-    }
-
-    @MainActor
-    func applyEnrichment(_ modified: RecipeContent) async {
-        let updateRequest = UpdateRecipeRequest(
-            cookTime: modified.cookTime,
-            description: modified.description,
-            difficulty: modified.difficulty,
-            ingredients: modified.ingredients,
-            instructions: modified.instructions,
-            notes: modified.notes,
-            nutritionalInfo: modified.nutritionalInfo,
-            prepTime: modified.prepTime,
-            rating: modified.rating,
-            servings: modified.servings,
-            sourceName: modified.sourceName,
-            sourceUrl: modified.sourceUrl,
-            tags: modified.tags,
-            title: modified.title,
-            totalTime: modified.totalTime
-        )
-
-        do {
-            try await RecipesAPI.updateRecipe(id: recipeId, updateRecipeRequest: updateRequest)
-            enrichResult = nil
-            await loadRecipe()
-        } catch is CancellationError {
-        } catch {
-            self.error = error.localizedDescription
-        }
     }
 }
