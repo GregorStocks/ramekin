@@ -13,7 +13,10 @@ import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 import PhotoThumbnail from "../components/PhotoThumbnail";
 import PdfExportModal from "../components/PdfExportModal";
-import { AI_ENRICHMENTS } from "../utils/aiEnrichments";
+import {
+  AI_ENRICHMENTS,
+  runRecipeAiBatchOperation,
+} from "../utils/aiEnrichments";
 import type { RecipeSummary, SortBy, Direction } from "ramekin-client";
 import { groupTags, parseTag } from "../utils/tagHierarchy";
 
@@ -761,29 +764,21 @@ export default function CookbookPage() {
 
     setNormalizeTitleProgress({ done: 0, total: ids.length });
     const api = getRecipesApi();
-    let done = 0;
-    let changed = 0;
-    const errors: string[] = [];
-    for (const id of ids) {
-      try {
-        const res = await api.normalizeTitle({ id });
-        if (res.changed) changed += 1;
-      } catch (e) {
-        const msg = await extractApiError(e, "normalize failed");
-        errors.push(`${id.slice(0, 8)}: ${msg}`);
-      }
-      done += 1;
-      setNormalizeTitleProgress({ done, total: ids.length });
-    }
+    const summary = await runRecipeAiBatchOperation({
+      ids,
+      run: (id) => api.normalizeTitle({ id }),
+      errorFallback: "normalize failed",
+      onProgress: setNormalizeTitleProgress,
+    });
     setNormalizeTitleProgress(null);
     await loadRecipes();
-    if (errors.length > 0) {
+    if (summary.errors.length > 0) {
       setError(
-        `${ids.length - errors.length}/${ids.length} normalized (${changed} changed). Errors: ${errors.slice(0, 3).join("; ")}${errors.length > 3 ? "…" : ""}`,
+        `${summary.succeeded}/${summary.total} normalized (${summary.changed} changed). Errors: ${summary.errors.slice(0, 3).join("; ")}${summary.errors.length > 3 ? "…" : ""}`,
       );
     } else {
       setError(
-        `Normalized ${ids.length} recipes (${changed} changed, ${ids.length - changed} unchanged).`,
+        `Normalized ${summary.total} recipes (${summary.changed} changed, ${summary.total - summary.changed} unchanged).`,
       );
     }
   };
@@ -799,29 +794,21 @@ export default function CookbookPage() {
 
     setDescriptionProgress({ done: 0, total: ids.length });
     const api = getRecipesApi();
-    let done = 0;
-    let changed = 0;
-    const errors: string[] = [];
-    for (const id of ids) {
-      try {
-        const res = await api.generateDescription({ id });
-        if (res.changed) changed += 1;
-      } catch (e) {
-        const msg = await extractApiError(e, "description failed");
-        errors.push(`${id.slice(0, 8)}: ${msg}`);
-      }
-      done += 1;
-      setDescriptionProgress({ done, total: ids.length });
-    }
+    const summary = await runRecipeAiBatchOperation({
+      ids,
+      run: (id) => api.generateDescription({ id }),
+      errorFallback: "description failed",
+      onProgress: setDescriptionProgress,
+    });
     setDescriptionProgress(null);
     await loadRecipes();
-    if (errors.length > 0) {
+    if (summary.errors.length > 0) {
       setError(
-        `${ids.length - errors.length}/${ids.length} described (${changed} changed). Errors: ${errors.slice(0, 3).join("; ")}${errors.length > 3 ? "…" : ""}`,
+        `${summary.succeeded}/${summary.total} described (${summary.changed} changed). Errors: ${summary.errors.slice(0, 3).join("; ")}${summary.errors.length > 3 ? "…" : ""}`,
       );
     } else {
       setError(
-        `Generated descriptions for ${ids.length} recipes (${changed} changed, ${ids.length - changed} unchanged).`,
+        `Generated descriptions for ${summary.total} recipes (${summary.changed} changed, ${summary.total - summary.changed} unchanged).`,
       );
     }
   };
@@ -837,26 +824,20 @@ export default function CookbookPage() {
 
     setGeneratePhotoProgress({ done: 0, total: ids.length });
     const api = getRecipesApi();
-    let done = 0;
-    const errors: string[] = [];
-    for (const id of ids) {
-      try {
-        await api.generatePhoto({ id });
-      } catch (e) {
-        const msg = await extractApiError(e, "photo generation failed");
-        errors.push(`${id.slice(0, 8)}: ${msg}`);
-      }
-      done += 1;
-      setGeneratePhotoProgress({ done, total: ids.length });
-    }
+    const summary = await runRecipeAiBatchOperation({
+      ids,
+      run: (id) => api.generatePhoto({ id }),
+      errorFallback: "photo generation failed",
+      onProgress: setGeneratePhotoProgress,
+    });
     setGeneratePhotoProgress(null);
     await loadRecipes();
-    if (errors.length > 0) {
+    if (summary.errors.length > 0) {
       setError(
-        `${ids.length - errors.length}/${ids.length} photos generated. Errors: ${errors.slice(0, 3).join("; ")}${errors.length > 3 ? "…" : ""}`,
+        `${summary.succeeded}/${summary.total} photos generated. Errors: ${summary.errors.slice(0, 3).join("; ")}${summary.errors.length > 3 ? "…" : ""}`,
       );
     } else {
-      setError(`Generated AI photos for ${ids.length} recipes.`);
+      setError(`Generated AI photos for ${summary.total} recipes.`);
     }
   };
 
