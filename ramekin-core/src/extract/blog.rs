@@ -1,6 +1,7 @@
 //! Unstructured blog-post extraction heuristics (bold/underline headings, chunk scanning).
 
 use super::*;
+use crate::ingredient_parser::unicode_fraction_regex_class;
 
 /// Regex to strip trailing parenthetical or bracketed qualifiers from a title
 /// before reusing it as an ingredient section marker.
@@ -976,7 +977,10 @@ fn is_ignored_virtualweberbullet_paragraph(text: &str) -> bool {
 
 /// Regex to detect ingredient-like quantity patterns at the start of a line.
 pub(super) static INGREDIENT_QUANTITY_REGEX: LazyLock<Regex> = LazyLock::new(|| {
-    Regex::new(r"(?i)^(\d|½|⅓|¼|⅔|¾|⅛|a\s+(pinch|few|handful|dash|splash)|juice\s+of|zest\s+of|pinch\s+of|dash\s+of|kosher\s+salt|salt[,\s]|ground\s|fresh\s|sea\s+salt)")
+    Regex::new(&format!(
+        r"(?i)^(\d|[{}]|a\s+(pinch|few|handful|dash|splash)|juice\s+of|zest\s+of|pinch\s+of|dash\s+of|kosher\s+salt|salt[,\s]|ground\s|fresh\s|sea\s+salt)",
+        unicode_fraction_regex_class()
+    ))
         .expect("Invalid ingredient quantity regex")
 });
 
@@ -1086,6 +1090,17 @@ pub(super) fn extract_ingredient_lines_from_chunk(chunk: &str, lines: &mut Vec<S
 #[allow(clippy::print_stdout, clippy::print_stderr)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn test_ingredient_quantity_regex_uses_shared_unicode_fraction_set() {
+        for fraction in unicode_fraction_regex_class().chars() {
+            let line = format!("{fraction} cup sugar");
+            assert!(
+                INGREDIENT_QUANTITY_REGEX.is_match(&line),
+                "expected {fraction} to match ingredient quantity regex"
+            );
+        }
+    }
 
     #[test]
     fn test_unstructured_blog_basic_recipe() {
