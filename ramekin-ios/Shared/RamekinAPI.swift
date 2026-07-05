@@ -351,12 +351,10 @@ extension RamekinAPI {
 extension RamekinAPI {
     func listMealPlans(startDate: Date, endDate: Date) async throws -> MealPlanListResponse {
         try await executeGenerated {
-            try await buildMealPlanRequest {
-                MealPlansAPI.listMealPlansWithRequestBuilder(
-                    startDate: startDate,
-                    endDate: endDate
-                )
-            }.execute().body
+            try await listMealPlansRequestBuilder(
+                startDate: startDate,
+                endDate: endDate
+            ).execute().body
         }
     }
 
@@ -377,9 +375,7 @@ extension RamekinAPI {
             recipeId: recipeId
         )
         return try await executeGenerated {
-            try await buildMealPlanRequest {
-                MealPlansAPI.createMealPlanWithRequestBuilder(createMealPlanRequest: request)
-            }.execute().body
+            try await createMealPlanRequestBuilder(request).execute().body
         }
     }
 
@@ -398,12 +394,7 @@ extension RamekinAPI {
             notes: notes
         )
         try await executeGenerated {
-            try await buildMealPlanRequest {
-                MealPlansAPI.updateMealPlanWithRequestBuilder(
-                    id: id,
-                    updateMealPlanRequest: request
-                )
-            }.execute().body
+            try await updateMealPlanRequestBuilder(id: id, request: request).execute().body
         }
     }
 }

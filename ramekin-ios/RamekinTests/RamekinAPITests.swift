@@ -207,14 +207,14 @@ final class RamekinAPITests: XCTestCase {
         let recipeId = UUID(uuidString: "12345678-1234-1234-1234-123456789ABC")!
         let date = try XCTUnwrap(SharedDateFormatters.localDateOnly.date(from: "2026-04-17"))
 
-        let builder = RamekinAPI.shared.buildMealPlanRequest {
-            MealPlansAPI.createMealPlanWithRequestBuilder(createMealPlanRequest: CreateMealPlanRequest(
+        let builder = RamekinAPI.shared.createMealPlanRequestBuilder(
+            CreateMealPlanRequest(
                 mealDate: date,
                 mealType: .dinner,
                 notes: nil,
                 recipeId: recipeId
-            ))
-        }
+            )
+        )
         let json = try requestBodyJSON(from: builder)
 
         XCTAssertEqual(json["recipe_id"] as? String, recipeId.uuidString)
@@ -226,16 +226,14 @@ final class RamekinAPITests: XCTestCase {
     func testUpdateMealPlanRequestEncodingIncludesEmptyNotes() throws {
         let date = try XCTUnwrap(SharedDateFormatters.localDateOnly.date(from: "2026-04-18"))
 
-        let builder = RamekinAPI.shared.buildMealPlanRequest {
-            MealPlansAPI.updateMealPlanWithRequestBuilder(
-                id: UUID(uuidString: "87654321-4321-4321-4321-CBA987654321")!,
-                updateMealPlanRequest: UpdateMealPlanRequest(
-                    mealDate: date,
-                    mealType: .lunch,
-                    notes: ""
-                )
+        let builder = RamekinAPI.shared.updateMealPlanRequestBuilder(
+            id: UUID(uuidString: "87654321-4321-4321-4321-CBA987654321")!,
+            request: UpdateMealPlanRequest(
+                mealDate: date,
+                mealType: .lunch,
+                notes: ""
             )
-        }
+        )
         let json = try requestBodyJSON(from: builder)
 
         XCTAssertEqual(json["meal_date"] as? String, "2026-04-18")
