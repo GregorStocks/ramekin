@@ -2,7 +2,7 @@ use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
-use crate::models::{Ingredient, NewRecipeVersion};
+use crate::models::{Ingredient, NewRecipeVersion, RecipeVersion};
 use crate::raw_sql;
 use crate::recipes::{create_new_version, TagSource};
 use crate::schema::{recipe_versions, recipes};
@@ -62,28 +62,6 @@ pub struct UpdateRecipeRequest {
     pub notes: Option<Option<String>>,
 }
 
-// Type alias for the combined recipe + version + tags query result
-#[allow(clippy::type_complexity)]
-type CurrentVersionRow = (
-    Uuid,              // recipes.id
-    String,            // recipe_versions.title
-    Option<String>,    // description
-    serde_json::Value, // ingredients (JSON)
-    String,            // instructions
-    Option<String>,    // source_url
-    Option<String>,    // source_name
-    Vec<Option<Uuid>>, // photo_ids
-    Option<String>,    // servings
-    Option<String>,    // prep_time
-    Option<String>,    // cook_time
-    Option<String>,    // total_time
-    Option<i32>,       // rating
-    Option<String>,    // difficulty
-    Option<String>,    // nutritional_info
-    Option<String>,    // notes
-    Vec<String>,       // tags (from correlated subquery)
-);
-
 #[utoipa::path(
     put,
     path = "/api/recipes/{id}",
@@ -123,7 +101,7 @@ pub async fn update_recipe(
     let mut conn = get_conn!(pool);
 
     // Fetch recipe, current version, and tags in a single query
-    let current: CurrentVersionRow = match recipes::table
+    let (current_version, cur_tags): (RecipeVersion, Vec<String>) = match recipes::table
         .inner_join(
             recipe_versions::table.on(recipe_versions::id
                 .nullable()
@@ -132,25 +110,7 @@ pub async fn update_recipe(
         .filter(recipes::id.eq(id))
         .filter(recipes::user_id.eq(user.id))
         .filter(recipes::deleted_at.is_null())
-        .select((
-            recipes::id,
-            recipe_versions::title,
-            recipe_versions::description,
-            recipe_versions::ingredients,
-            recipe_versions::instructions,
-            recipe_versions::source_url,
-            recipe_versions::source_name,
-            recipe_versions::photo_ids,
-            recipe_versions::servings,
-            recipe_versions::prep_time,
-            recipe_versions::cook_time,
-            recipe_versions::total_time,
-            recipe_versions::rating,
-            recipe_versions::difficulty,
-            recipe_versions::nutritional_info,
-            recipe_versions::notes,
-            raw_sql::tags_subquery(),
-        ))
+        .select((RecipeVersion::as_select(), raw_sql::tags_subquery()))
         .first(&mut conn)
     {
         Ok(r) => r,
@@ -158,29 +118,13 @@ pub async fn update_recipe(
         Err(_) => return ApiError::internal("Failed to fetch recipe").into_response(),
     };
 
-    let (
-        recipe_id,
-        cur_title,
-        cur_description,
-        cur_ingredients,
-        cur_instructions,
-        cur_source_url,
-        cur_source_name,
-        cur_photo_ids,
-        cur_servings,
-        cur_prep_time,
-        cur_cook_time,
-        cur_total_time,
-        cur_rating,
-        cur_difficulty,
-        cur_nutritional_info,
-        cur_notes,
-        cur_tags,
-    ) = current;
-
     // Merge request with current version
-    let new_title = request.title.unwrap_or(cur_title);
-    let new_description = request.description.unwrap_or(cur_description);
+    let new_title = request
+        .title
+        .unwrap_or_else(|| current_version.title.clone());
+    let new_description = request
+        .description
+        .unwrap_or_else(|| current_version.description.clone());
     let new_ingredients = match request.ingredients {
         Some(ingredients) => match serde_json::to_value(&ingredients) {
             Ok(v) => v,
@@ -188,15 +132,21 @@ pub async fn update_recipe(
                 return ApiError::invalid_request("Invalid ingredients format").into_response()
             }
         },
-        None => cur_ingredients,
+        None => current_version.ingredients.clone(),
     };
-    let new_instructions = request.instructions.unwrap_or(cur_instructions);
-    let new_source_url = request.source_url.unwrap_or(cur_source_url);
-    let new_source_name = request.source_name.unwrap_or(cur_source_name);
+    let new_instructions = request
+        .instructions
+        .unwrap_or_else(|| current_version.instructions.clone());
+    let new_source_url = request
+        .source_url
+        .unwrap_or_else(|| current_version.source_url.clone());
+    let new_source_name = request
+        .source_name
+        .unwrap_or_else(|| current_version.source_name.clone());
     let new_photo_ids: Vec<Option<Uuid>> = request
         .photo_ids
         .map(|ids| ids.into_iter().map(Some).collect())
-        .unwrap_or(cur_photo_ids);
+        .unwrap_or_else(|| current_version.photo_ids.clone());
     let new_tags: Vec<String> = match request.tags {
         Some(tags) => {
             // Normalize and validate before any DB work so the trimmed
@@ -211,19 +161,32 @@ pub async fn update_recipe(
         }
         None => cur_tags,
     };
-    let new_servings = request.servings.unwrap_or(cur_servings);
-    let new_prep_time = request.prep_time.unwrap_or(cur_prep_time);
-    let new_cook_time = request.cook_time.unwrap_or(cur_cook_time);
-    let new_total_time = request.total_time.unwrap_or(cur_total_time);
-    let new_rating = request.rating.unwrap_or(cur_rating);
-    let new_difficulty = request.difficulty.unwrap_or(cur_difficulty);
-    let new_nutritional_info = request.nutritional_info.unwrap_or(cur_nutritional_info);
-    let new_notes = request.notes.unwrap_or(cur_notes);
+    let new_servings = request
+        .servings
+        .unwrap_or_else(|| current_version.servings.clone());
+    let new_prep_time = request
+        .prep_time
+        .unwrap_or_else(|| current_version.prep_time.clone());
+    let new_cook_time = request
+        .cook_time
+        .unwrap_or_else(|| current_version.cook_time.clone());
+    let new_total_time = request
+        .total_time
+        .unwrap_or_else(|| current_version.total_time.clone());
+    let new_rating = request.rating.unwrap_or(current_version.rating);
+    let new_difficulty = request
+        .difficulty
+        .unwrap_or_else(|| current_version.difficulty.clone());
+    let new_nutritional_info = request
+        .nutritional_info
+        .unwrap_or_else(|| current_version.nutritional_info.clone());
+    let new_notes = request
+        .notes
+        .unwrap_or_else(|| current_version.notes.clone());
 
     // Create new version in a transaction
     let result: Result<(), diesel::result::Error> = conn.transaction(|conn| {
         let new_version = NewRecipeVersion {
-            recipe_id,
             title: &new_title,
             description: new_description.as_deref(),
             ingredients: new_ingredients,
@@ -239,7 +202,7 @@ pub async fn update_recipe(
             difficulty: new_difficulty.as_deref(),
             nutritional_info: new_nutritional_info.as_deref(),
             notes: new_notes.as_deref(),
-            version_source: "user",
+            ..NewRecipeVersion::copy_of(&current_version, "user")
         };
 
         create_new_version(
