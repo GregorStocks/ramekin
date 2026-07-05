@@ -96,8 +96,9 @@ targets:
     platform: iOS
     sources:
       - path: RamekinTests
-    resources:
       - path: ../shared-test-vectors/scale-amount.json
+        buildPhase: resources
+        type: file
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.ramekin.app.tests
