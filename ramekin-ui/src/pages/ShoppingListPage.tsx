@@ -5,6 +5,7 @@ import Modal from "../components/Modal";
 import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 import { logger } from "../utils/logger";
+import { createAsyncAction } from "../utils/asyncState";
 import type { ShoppingListItemResponse } from "ramekin-client";
 
 export default function ShoppingListPage() {
@@ -17,11 +18,8 @@ export default function ShoppingListPage() {
   const [error, setError] = createSignal<string | null>(null);
   const [deletingItem, setDeletingItem] =
     createSignal<ShoppingListItemResponse | null>(null);
-  const [deleteLoading, setDeleteLoading] = createSignal(false);
-  const [clearingChecked, setClearingChecked] = createSignal(false);
   const [newItemName, setNewItemName] = createSignal("");
   const [newItemAmount, setNewItemAmount] = createSignal("");
-  const [adding, setAdding] = createSignal(false);
   const [updatingCategoryId, setUpdatingCategoryId] = createSignal<
     string | null
   >(null);
@@ -72,38 +70,25 @@ export default function ShoppingListPage() {
     }
   };
 
-  createEffect(() => {
-    loadItems();
-  });
-
-  const handleAddItem = async () => {
+  const addItemAction = createAsyncAction(async () => {
     const name = newItemName().trim();
     if (!name) return;
 
-    setAdding(true);
-    setError(null);
-    try {
-      const amount = newItemAmount().trim() || undefined;
-      await logger.timed("Shopping", "createItems", () =>
-        getShoppingListApi().createItems({
-          createShoppingListRequest: {
-            items: [{ item: name, amount }],
-          },
-        }),
-      );
-      setNewItemName("");
-      setNewItemAmount("");
-      await loadItems(false);
-    } catch (err) {
-      const message = await extractApiError(err, "Failed to add item");
-      setError(message);
-    } finally {
-      setAdding(false);
-    }
-  };
+    const amount = newItemAmount().trim() || undefined;
+    await logger.timed("Shopping", "createItems", () =>
+      getShoppingListApi().createItems({
+        createShoppingListRequest: {
+          items: [{ item: name, amount }],
+        },
+      }),
+    );
+    setNewItemName("");
+    setNewItemAmount("");
+    await loadItems(false);
+  }, "Failed to add item");
 
-  const handleToggleChecked = async (item: ShoppingListItemResponse) => {
-    try {
+  const toggleCheckedAction = createAsyncAction(
+    async (item: ShoppingListItemResponse) => {
       await getShoppingListApi().updateItem({
         id: item.id,
         updateShoppingListItemRequest: {
@@ -115,32 +100,92 @@ export default function ShoppingListPage() {
           i.id === item.id ? { ...i, isChecked: !i.isChecked } : i,
         ),
       );
-    } catch (err) {
-      const message = await extractApiError(err, "Failed to update item");
-      setError(message);
-    }
+    },
+    "Failed to update item",
+  );
+
+  const updateCategoryAction = createAsyncAction(
+    async (item: ShoppingListItemResponse, categoryOverride: string | null) => {
+      setUpdatingCategoryId(item.id);
+      try {
+        await getShoppingListApi().updateItem({
+          id: item.id,
+          updateShoppingListItemRequest: {
+            categoryOverride,
+          },
+        });
+        await loadItems(false);
+      } finally {
+        setUpdatingCategoryId(null);
+      }
+    },
+    "Failed to update category",
+  );
+
+  const deleteItemAction = createAsyncAction(
+    async (item: ShoppingListItemResponse) => {
+      await getShoppingListApi().deleteItem({ id: item.id });
+      setDeletingItem(null);
+      setItems((prev) => prev.filter((i) => i.id !== item.id));
+    },
+    "Failed to delete item",
+    {
+      onError: () => {
+        setDeletingItem(null);
+      },
+    },
+  );
+
+  const clearCheckedAction = createAsyncAction(async () => {
+    await getShoppingListApi().clearChecked();
+    setItems((prev) => prev.filter((i) => !i.isChecked));
+  }, "Failed to clear checked items");
+
+  const adding = addItemAction.loading;
+  const deleteLoading = deleteItemAction.loading;
+  const clearingChecked = clearCheckedAction.loading;
+  const pageError = () =>
+    error() ??
+    addItemAction.error() ??
+    toggleCheckedAction.error() ??
+    updateCategoryAction.error() ??
+    deleteItemAction.error() ??
+    clearCheckedAction.error();
+
+  const clearActionErrors = () => {
+    addItemAction.clearError();
+    toggleCheckedAction.clearError();
+    updateCategoryAction.clearError();
+    deleteItemAction.clearError();
+    clearCheckedAction.clearError();
+  };
+
+  createEffect(() => {
+    loadItems();
+  });
+
+  const handleAddItem = async () => {
+    const name = newItemName().trim();
+    if (!name) return;
+
+    setError(null);
+    clearActionErrors();
+    await addItemAction.run();
+  };
+
+  const handleToggleChecked = async (item: ShoppingListItemResponse) => {
+    setError(null);
+    clearActionErrors();
+    await toggleCheckedAction.run(item);
   };
 
   const handleCategoryChange = async (
     item: ShoppingListItemResponse,
     categoryOverride: string | null,
   ) => {
-    setUpdatingCategoryId(item.id);
     setError(null);
-    try {
-      await getShoppingListApi().updateItem({
-        id: item.id,
-        updateShoppingListItemRequest: {
-          categoryOverride,
-        },
-      });
-      await loadItems(false);
-    } catch (err) {
-      const message = await extractApiError(err, "Failed to update category");
-      setError(message);
-    } finally {
-      setUpdatingCategoryId(null);
-    }
+    clearActionErrors();
+    await updateCategoryAction.run(item, categoryOverride);
   };
 
   const confirmDelete = (item: ShoppingListItemResponse) => {
@@ -151,34 +196,15 @@ export default function ShoppingListPage() {
     const item = deletingItem();
     if (!item) return;
 
-    setDeleteLoading(true);
-    try {
-      await getShoppingListApi().deleteItem({ id: item.id });
-      setDeletingItem(null);
-      setItems((prev) => prev.filter((i) => i.id !== item.id));
-    } catch (err) {
-      const message = await extractApiError(err, "Failed to delete item");
-      setError(message);
-      setDeletingItem(null);
-    } finally {
-      setDeleteLoading(false);
-    }
+    setError(null);
+    clearActionErrors();
+    await deleteItemAction.run(item);
   };
 
   const handleClearChecked = async () => {
-    setClearingChecked(true);
-    try {
-      await getShoppingListApi().clearChecked();
-      setItems((prev) => prev.filter((i) => !i.isChecked));
-    } catch (err) {
-      const message = await extractApiError(
-        err,
-        "Failed to clear checked items",
-      );
-      setError(message);
-    } finally {
-      setClearingChecked(false);
-    }
+    setError(null);
+    clearActionErrors();
+    await clearCheckedAction.run();
   };
 
   const renderItem = (item: ShoppingListItemResponse) => (
@@ -276,8 +302,8 @@ export default function ShoppingListPage() {
         </button>
       </form>
 
-      <Show when={error()}>
-        <div class="error-message">{error()}</div>
+      <Show when={pageError()}>
+        <div class="error-message">{pageError()}</div>
       </Show>
 
       <Show when={loading()}>
