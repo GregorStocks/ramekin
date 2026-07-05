@@ -39,6 +39,8 @@ def test_client_log_upload_writes_file(authed_api_client):
     assert stored["os_info"] == "iOS 19.0"
     assert stored["content"] == "line one\nline two\n"
     assert stored["created_at"]
+    assert (CLIENT_LOG_DIR.stat().st_mode & 0o777) == 0o700
+    assert ((CLIENT_LOG_DIR / f"{created.id}.json").stat().st_mode & 0o777) == 0o600
 
 
 def test_client_log_read_endpoints_do_not_exist(authed_api_client, server_url):

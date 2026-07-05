@@ -4,7 +4,10 @@ use axum::{http::StatusCode, response::IntoResponse, Json};
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use std::env;
+#[cfg(unix)]
+use std::os::unix::fs::PermissionsExt;
 use std::path::PathBuf;
+use tokio::io::AsyncWriteExt;
 use utoipa::ToSchema;
 use uuid::Uuid;
 
@@ -39,6 +42,27 @@ fn client_log_dir() -> PathBuf {
     env::var_os("RAMEKIN_CLIENT_LOG_DIR")
         .map(PathBuf::from)
         .unwrap_or_else(|| PathBuf::from("../logs/client-logs"))
+}
+
+async fn ensure_private_client_log_dir(dir: &PathBuf) -> std::io::Result<()> {
+    tokio::fs::create_dir_all(dir).await?;
+
+    #[cfg(unix)]
+    tokio::fs::set_permissions(dir, std::fs::Permissions::from_mode(0o700)).await?;
+
+    Ok(())
+}
+
+async fn write_private_client_log_file(path: &PathBuf, body: &[u8]) -> std::io::Result<()> {
+    let mut options = tokio::fs::OpenOptions::new();
+    options.write(true).create_new(true);
+
+    #[cfg(unix)]
+    options.mode(0o600);
+
+    let mut file = options.open(path).await?;
+    file.write_all(body).await?;
+    file.flush().await
 }
 
 #[utoipa::path(
@@ -82,7 +106,7 @@ pub async fn create_client_log(
     };
 
     let dir = client_log_dir();
-    if let Err(e) = tokio::fs::create_dir_all(&dir).await {
+    if let Err(e) = ensure_private_client_log_dir(&dir).await {
         tracing::error!("Failed to create client log directory {:?}: {e}", dir);
         return ApiError::internal("Failed to store log upload").into_response();
     }
@@ -97,7 +121,7 @@ pub async fn create_client_log(
     };
     body.push(b'\n');
 
-    if let Err(e) = tokio::fs::write(&path, body).await {
+    if let Err(e) = write_private_client_log_file(&path, &body).await {
         tracing::error!("Failed to write client log upload {:?}: {e}", path);
         return ApiError::internal("Failed to store log upload").into_response();
     }
