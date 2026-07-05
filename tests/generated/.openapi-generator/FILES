@@ -20,7 +20,6 @@ ramekin_client/docs/AuthApi.md
 ramekin_client/docs/BookmarkletTokenResponse.md
 ramekin_client/docs/CaptureRequest.md
 ramekin_client/docs/ClearCheckedResponse.md
-ramekin_client/docs/ClientLogSummary.md
 ramekin_client/docs/ClientLogsApi.md
 ramekin_client/docs/CreateClientLogRequest.md
 ramekin_client/docs/CreateClientLogResponse.md
@@ -42,7 +41,6 @@ ramekin_client/docs/ErrorCode.md
 ramekin_client/docs/ErrorResponse.md
 ramekin_client/docs/GenerateDescriptionResponse.md
 ramekin_client/docs/GeneratePhotoResponse.md
-ramekin_client/docs/GetClientLogResponse.md
 ramekin_client/docs/ImportApi.md
 ramekin_client/docs/ImportExtractionMethod.md
 ramekin_client/docs/ImportFromPhotosRequest.md
@@ -51,7 +49,6 @@ ramekin_client/docs/ImportRawRecipe.md
 ramekin_client/docs/ImportRecipeRequest.md
 ramekin_client/docs/ImportRecipeResponse.md
 ramekin_client/docs/Ingredient.md
-ramekin_client/docs/ListClientLogsResponse.md
 ramekin_client/docs/ListRecipesResponse.md
 ramekin_client/docs/LoginRequest.md
 ramekin_client/docs/LoginResponse.md
@@ -107,7 +104,6 @@ ramekin_client/models/__init__.py
 ramekin_client/models/bookmarklet_token_response.py
 ramekin_client/models/capture_request.py
 ramekin_client/models/clear_checked_response.py
-ramekin_client/models/client_log_summary.py
 ramekin_client/models/create_client_log_request.py
 ramekin_client/models/create_client_log_response.py
 ramekin_client/models/create_meal_plan_request.py
@@ -127,7 +123,6 @@ ramekin_client/models/error_code.py
 ramekin_client/models/error_response.py
 ramekin_client/models/generate_description_response.py
 ramekin_client/models/generate_photo_response.py
-ramekin_client/models/get_client_log_response.py
 ramekin_client/models/import_extraction_method.py
 ramekin_client/models/import_from_photos_request.py
 ramekin_client/models/import_from_photos_response.py
@@ -135,7 +130,6 @@ ramekin_client/models/import_raw_recipe.py
 ramekin_client/models/import_recipe_request.py
 ramekin_client/models/import_recipe_response.py
 ramekin_client/models/ingredient.py
-ramekin_client/models/list_client_logs_response.py
 ramekin_client/models/list_recipes_response.py
 ramekin_client/models/login_request.py
 ramekin_client/models/login_response.py
@@ -184,7 +178,6 @@ ramekin_client/test/test_auth_api.py
 ramekin_client/test/test_bookmarklet_token_response.py
 ramekin_client/test/test_capture_request.py
 ramekin_client/test/test_clear_checked_response.py
-ramekin_client/test/test_client_log_summary.py
 ramekin_client/test/test_client_logs_api.py
 ramekin_client/test/test_create_client_log_request.py
 ramekin_client/test/test_create_client_log_response.py
@@ -206,7 +199,6 @@ ramekin_client/test/test_error_code.py
 ramekin_client/test/test_error_response.py
 ramekin_client/test/test_generate_description_response.py
 ramekin_client/test/test_generate_photo_response.py
-ramekin_client/test/test_get_client_log_response.py
 ramekin_client/test/test_import_api.py
 ramekin_client/test/test_import_extraction_method.py
 ramekin_client/test/test_import_from_photos_request.py
@@ -215,7 +207,6 @@ ramekin_client/test/test_import_raw_recipe.py
 ramekin_client/test/test_import_recipe_request.py
 ramekin_client/test/test_import_recipe_response.py
 ramekin_client/test/test_ingredient.py
-ramekin_client/test/test_list_client_logs_response.py
 ramekin_client/test/test_list_recipes_response.py
 ramekin_client/test/test_login_request.py
 ramekin_client/test/test_login_response.py

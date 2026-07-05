@@ -1,13 +1,13 @@
 use crate::api::{ApiError, ErrorResponse};
 use crate::auth::AuthUser;
-use crate::db::DbPool;
-use crate::get_conn;
-use crate::models::NewClientLogUpload;
-use crate::schema::client_log_uploads;
-use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
-use diesel::prelude::*;
+use axum::{http::StatusCode, response::IntoResponse, Json};
+use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
-use std::sync::Arc;
+use std::env;
+#[cfg(unix)]
+use std::os::unix::fs::PermissionsExt;
+use std::path::PathBuf;
+use tokio::io::AsyncWriteExt;
 use utoipa::ToSchema;
 use uuid::Uuid;
 
@@ -27,6 +27,44 @@ pub struct CreateClientLogResponse {
     pub id: Uuid,
 }
 
+#[derive(Debug, Clone, Serialize)]
+struct StoredClientLogUpload {
+    id: Uuid,
+    user_id: Uuid,
+    platform: String,
+    app_version: Option<String>,
+    os_info: Option<String>,
+    created_at: DateTime<Utc>,
+    content: String,
+}
+
+fn client_log_dir() -> PathBuf {
+    env::var_os("RAMEKIN_CLIENT_LOG_DIR")
+        .map(PathBuf::from)
+        .unwrap_or_else(|| PathBuf::from("../logs/client-logs"))
+}
+
+async fn ensure_private_client_log_dir(dir: &PathBuf) -> std::io::Result<()> {
+    tokio::fs::create_dir_all(dir).await?;
+
+    #[cfg(unix)]
+    tokio::fs::set_permissions(dir, std::fs::Permissions::from_mode(0o700)).await?;
+
+    Ok(())
+}
+
+async fn write_private_client_log_file(path: &PathBuf, body: &[u8]) -> std::io::Result<()> {
+    let mut options = tokio::fs::OpenOptions::new();
+    options.write(true).create_new(true);
+
+    #[cfg(unix)]
+    options.mode(0o600);
+
+    let mut file = options.open(path).await?;
+    file.write_all(body).await?;
+    file.flush().await
+}
+
 #[utoipa::path(
     post,
     path = "/api/client-logs",
@@ -42,7 +80,6 @@ pub struct CreateClientLogResponse {
 )]
 pub async fn create_client_log(
     AuthUser(user): AuthUser,
-    State(pool): State<Arc<DbPool>>,
     Json(request): Json<CreateClientLogRequest>,
 ) -> impl IntoResponse {
     if request.platform != "ios" && request.platform != "web" {
@@ -58,25 +95,42 @@ pub async fn create_client_log(
         .into_response();
     }
 
-    let mut conn = get_conn!(pool);
-    let new_upload = NewClientLogUpload {
+    let upload = StoredClientLogUpload {
+        id: Uuid::new_v4(),
         user_id: user.id,
-        platform: &request.platform,
-        app_version: request.app_version.as_deref(),
-        os_info: request.os_info.as_deref(),
-        content: &request.content,
+        platform: request.platform,
+        app_version: request.app_version,
+        os_info: request.os_info,
+        created_at: Utc::now(),
+        content: request.content,
     };
-    let id = match diesel::insert_into(client_log_uploads::table)
-        .values(&new_upload)
-        .returning(client_log_uploads::id)
-        .get_result::<Uuid>(&mut conn)
-    {
-        Ok(id) => id,
+
+    let dir = client_log_dir();
+    if let Err(e) = ensure_private_client_log_dir(&dir).await {
+        tracing::error!("Failed to create client log directory {:?}: {e}", dir);
+        return ApiError::internal("Failed to store log upload").into_response();
+    }
+
+    let path = dir.join(format!("{}.json", upload.id));
+    let mut body = match serde_json::to_vec_pretty(&upload) {
+        Ok(body) => body,
         Err(e) => {
-            tracing::error!("Failed to insert client log upload: {e}");
+            tracing::error!("Failed to serialize client log upload: {e}");
             return ApiError::internal("Failed to store log upload").into_response();
         }
     };
+    body.push(b'\n');
 
-    (StatusCode::CREATED, Json(CreateClientLogResponse { id })).into_response()
+    if let Err(e) = write_private_client_log_file(&path, &body).await {
+        tracing::error!("Failed to write client log upload {:?}: {e}", path);
+        return ApiError::internal("Failed to store log upload").into_response();
+    }
+
+    tracing::info!(upload_id = %upload.id, user_id = %upload.user_id, path = ?path, "stored client log upload");
+
+    (
+        StatusCode::CREATED,
+        Json(CreateClientLogResponse { id: upload.id }),
+    )
+        .into_response()
 }

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateClientLogRequestToJSON, CreateClientLogResponseFromJSON, GetClientLogResponseFromJSON, ListClientLogsResponseFromJSON, } from '../models/index';
+import { CreateClientLogRequestToJSON, CreateClientLogResponseFromJSON, } from '../models/index';
 /**
  *
  */
@@ -47,64 +47,6 @@ export class ClientLogsApi extends runtime.BaseAPI {
      */
     async createClientLog(requestParameters, initOverrides) {
         const response = await this.createClientLogRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-    /**
-     */
-    async getClientLogRaw(requestParameters, initOverrides) {
-        if (requestParameters['id'] == null) {
-            throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling getClientLog().');
-        }
-        const queryParameters = {};
-        const headerParameters = {};
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearer_auth", []);
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-        let urlPath = `/api/client-logs/{id}`;
-        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
-        const response = await this.request({
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => GetClientLogResponseFromJSON(jsonValue));
-    }
-    /**
-     */
-    async getClientLog(requestParameters, initOverrides) {
-        const response = await this.getClientLogRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-    /**
-     */
-    async listClientLogsRaw(initOverrides) {
-        const queryParameters = {};
-        const headerParameters = {};
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearer_auth", []);
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-        let urlPath = `/api/client-logs`;
-        const response = await this.request({
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ListClientLogsResponseFromJSON(jsonValue));
-    }
-    /**
-     */
-    async listClientLogs(initOverrides) {
-        const response = await this.listClientLogsRaw(initOverrides);
         return await response.value();
     }
 }

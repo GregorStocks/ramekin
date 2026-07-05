@@ -32,18 +32,6 @@ class TestClientLogsApi(unittest.TestCase):
         """
         pass
 
-    def test_get_client_log(self) -> None:
-        """Test case for get_client_log
-
-        """
-        pass
-
-    def test_list_client_logs(self) -> None:
-        """Test case for list_client_logs
-
-        """
-        pass
-
 
 if __name__ == '__main__':
     unittest.main()

@@ -66,8 +66,6 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**login**](ramekin_client/docs/AuthApi.md#login) | **POST** /api/auth/login | 
 *AuthApi* | [**signup**](ramekin_client/docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
 *ClientLogsApi* | [**create_client_log**](ramekin_client/docs/ClientLogsApi.md#create_client_log) | **POST** /api/client-logs | 
-*ClientLogsApi* | [**get_client_log**](ramekin_client/docs/ClientLogsApi.md#get_client_log) | **GET** /api/client-logs/{id} | 
-*ClientLogsApi* | [**list_client_logs**](ramekin_client/docs/ClientLogsApi.md#list_client_logs) | **GET** /api/client-logs | 
 *EnrichApi* | [**custom_enrich_recipe**](ramekin_client/docs/EnrichApi.md#custom_enrich_recipe) | **POST** /api/enrich/custom | Apply a custom AI modification to a recipe
 *EnrichApi* | [**enrich_recipe**](ramekin_client/docs/EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe
 *ImportApi* | [**import_from_photos**](ramekin_client/docs/ImportApi.md#import_from_photos) | **POST** /api/import/photos | 
@@ -119,7 +117,6 @@ Class | Method | HTTP request | Description
  - [BookmarkletTokenResponse](ramekin_client/docs/BookmarkletTokenResponse.md)
  - [CaptureRequest](ramekin_client/docs/CaptureRequest.md)
  - [ClearCheckedResponse](ramekin_client/docs/ClearCheckedResponse.md)
- - [ClientLogSummary](ramekin_client/docs/ClientLogSummary.md)
  - [CreateClientLogRequest](ramekin_client/docs/CreateClientLogRequest.md)
  - [CreateClientLogResponse](ramekin_client/docs/CreateClientLogResponse.md)
  - [CreateMealPlanRequest](ramekin_client/docs/CreateMealPlanRequest.md)
@@ -139,7 +136,6 @@ Class | Method | HTTP request | Description
  - [ErrorResponse](ramekin_client/docs/ErrorResponse.md)
  - [GenerateDescriptionResponse](ramekin_client/docs/GenerateDescriptionResponse.md)
  - [GeneratePhotoResponse](ramekin_client/docs/GeneratePhotoResponse.md)
- - [GetClientLogResponse](ramekin_client/docs/GetClientLogResponse.md)
  - [ImportExtractionMethod](ramekin_client/docs/ImportExtractionMethod.md)
  - [ImportFromPhotosRequest](ramekin_client/docs/ImportFromPhotosRequest.md)
  - [ImportFromPhotosResponse](ramekin_client/docs/ImportFromPhotosResponse.md)
@@ -147,7 +143,6 @@ Class | Method | HTTP request | Description
  - [ImportRecipeRequest](ramekin_client/docs/ImportRecipeRequest.md)
  - [ImportRecipeResponse](ramekin_client/docs/ImportRecipeResponse.md)
  - [Ingredient](ramekin_client/docs/Ingredient.md)
- - [ListClientLogsResponse](ramekin_client/docs/ListClientLogsResponse.md)
  - [ListRecipesResponse](ramekin_client/docs/ListRecipesResponse.md)
  - [LoginRequest](ramekin_client/docs/LoginRequest.md)
  - [LoginResponse](ramekin_client/docs/LoginResponse.md)

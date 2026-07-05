@@ -16,7 +16,6 @@ docs/AuthApi.md
 docs/BookmarkletTokenResponse.md
 docs/CaptureRequest.md
 docs/ClearCheckedResponse.md
-docs/ClientLogSummary.md
 docs/ClientLogsApi.md
 docs/CreateClientLogRequest.md
 docs/CreateClientLogResponse.md
@@ -38,7 +37,6 @@ docs/ErrorCode.md
 docs/ErrorResponse.md
 docs/GenerateDescriptionResponse.md
 docs/GeneratePhotoResponse.md
-docs/GetClientLogResponse.md
 docs/ImportApi.md
 docs/ImportExtractionMethod.md
 docs/ImportFromPhotosRequest.md
@@ -47,7 +45,6 @@ docs/ImportRawRecipe.md
 docs/ImportRecipeRequest.md
 docs/ImportRecipeResponse.md
 docs/Ingredient.md
-docs/ListClientLogsResponse.md
 docs/ListRecipesResponse.md
 docs/LoginRequest.md
 docs/LoginResponse.md
@@ -102,7 +99,6 @@ index.ts
 models/BookmarkletTokenResponse.ts
 models/CaptureRequest.ts
 models/ClearCheckedResponse.ts
-models/ClientLogSummary.ts
 models/CreateClientLogRequest.ts
 models/CreateClientLogResponse.ts
 models/CreateMealPlanRequest.ts
@@ -122,7 +118,6 @@ models/ErrorCode.ts
 models/ErrorResponse.ts
 models/GenerateDescriptionResponse.ts
 models/GeneratePhotoResponse.ts
-models/GetClientLogResponse.ts
 models/ImportExtractionMethod.ts
 models/ImportFromPhotosRequest.ts
 models/ImportFromPhotosResponse.ts
@@ -130,7 +125,6 @@ models/ImportRawRecipe.ts
 models/ImportRecipeRequest.ts
 models/ImportRecipeResponse.ts
 models/Ingredient.ts
-models/ListClientLogsResponse.ts
 models/ListRecipesResponse.ts
 models/LoginRequest.ts
 models/LoginResponse.ts

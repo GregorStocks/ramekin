@@ -1,16 +1,28 @@
 """E2E tests for the /api/client-logs endpoints."""
 
+import json
+from pathlib import Path
+
 import pytest
+import requests
 from ramekin_client.api import ClientLogsApi
 from ramekin_client.exceptions import ApiException
 from ramekin_client.models import CreateClientLogRequest
 
+CLIENT_LOG_DIR = Path("logs/test-client-logs")
 
-def test_client_log_round_trip(authed_api_client):
-    client, _user_id = authed_api_client
+
+def read_stored_upload(upload_id):
+    path = CLIENT_LOG_DIR / f"{upload_id}.json"
+    assert path.exists(), f"expected uploaded log at {path}"
+    return json.loads(path.read_text())
+
+
+def test_client_log_upload_writes_file(authed_api_client):
+    client, user_id = authed_api_client
     api = ClientLogsApi(client)
 
-    first = api.create_client_log(
+    created = api.create_client_log(
         CreateClientLogRequest(
             platform="ios",
             app_version="1.0.0",
@@ -18,45 +30,42 @@ def test_client_log_round_trip(authed_api_client):
             content="line one\nline two\n",
         )
     )
-    second = api.create_client_log(
-        CreateClientLogRequest(platform="web", content="web log line\n")
-    )
 
-    listing = api.list_client_logs()
-    # Newest first
-    assert [u.id for u in listing.uploads] == [second.id, first.id]
-
-    summary = listing.uploads[1]
-    assert summary.platform == "ios"
-    assert summary.app_version == "1.0.0"
-    assert summary.os_info == "iOS 19.0"
-    assert summary.content_length == len("line one\nline two\n")
-
-    fetched = api.get_client_log(first.id)
-    assert fetched.content == "line one\nline two\n"
-    assert fetched.platform == "ios"
+    stored = read_stored_upload(created.id)
+    assert stored["id"] == str(created.id)
+    assert stored["user_id"] == str(user_id)
+    assert stored["platform"] == "ios"
+    assert stored["app_version"] == "1.0.0"
+    assert stored["os_info"] == "iOS 19.0"
+    assert stored["content"] == "line one\nline two\n"
+    assert stored["created_at"]
+    assert (CLIENT_LOG_DIR.stat().st_mode & 0o777) == 0o700
+    assert ((CLIENT_LOG_DIR / f"{created.id}.json").stat().st_mode & 0o777) == 0o600
 
 
-def test_client_log_user_scoping(authed_api_client, second_authed_api_client):
+def test_client_log_read_endpoints_do_not_exist(authed_api_client, server_url):
     client, _user_id = authed_api_client
-    other_client, _other_user_id = second_authed_api_client
+    token = client.configuration.access_token
 
     created = ClientLogsApi(client).create_client_log(
         CreateClientLogRequest(platform="web", content="private logs")
     )
 
-    other_api = ClientLogsApi(other_client)
-    assert other_api.list_client_logs().uploads == []
-    with pytest.raises(ApiException) as exc_info:
-        other_api.get_client_log(created.id)
-    assert exc_info.value.status == 404
+    headers = {"Authorization": f"Bearer {token}"}
+    assert (
+        requests.get(f"{server_url}/api/client-logs", headers=headers).status_code
+        == 405
+    )
+    assert (
+        requests.get(
+            f"{server_url}/api/client-logs/{created.id}", headers=headers
+        ).status_code
+        == 404
+    )
 
 
 def test_client_log_requires_auth(unauthed_api_client):
     api = ClientLogsApi(unauthed_api_client)
-    with pytest.raises(ApiException) as exc_info:
-        api.list_client_logs()
-    assert exc_info.value.status == 401
     with pytest.raises(ApiException) as exc_info:
         api.create_client_log(CreateClientLogRequest(platform="web", content="x"))
     assert exc_info.value.status == 401
@@ -103,5 +112,5 @@ def test_client_log_accepts_content_at_cap_with_heavy_json_escaping(authed_api_c
         CreateClientLogRequest(platform="web", content=content)
     )
 
-    fetched = api.get_client_log(created.id)
-    assert len(fetched.content) == len(content), "round-tripped content length mismatch"
+    stored = read_stored_upload(created.id)
+    assert len(stored["content"]) == len(content), "stored content length mismatch"
