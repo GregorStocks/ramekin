@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps lint clean clean-api generate-schema test test-core test-ui ui-unit-test pretool-hook-test venv venv-clean db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import shopping-list-categorizer-test title-normalization-test description-generation-test server-release-build
+.PHONY: help dev dev-headless dev-down serve serve-down check-deps check-lint-deps check-venv-deps lint clean clean-api generate-schema test test-core test-ui ui-unit-test pretool-hook-test venv venv-clean python-test-deps-update db-up db-down db-clean db-migrate seed load-test install-hooks setup-claude-web worktree-setup generate-test-urls refilter-test-urls pipeline pipeline-cache-stats pipeline-cache-clear pipeline-cache-capture ios-generate ios-build ios-install ios-test ios-test-ui ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika ingredient-tests-migrate-curated ingredient-density-test ingredient-density-import shopping-list-categorizer-test title-normalization-test description-generation-test server-release-build
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -132,12 +132,22 @@ pretool-hook-test: venv $(CLIENT_MARKER) ## Run repo PreToolUse hook policy test
 check-venv-deps:
 	@./scripts/check-deps.sh --venv
 
-.venv/.installed: requirements-test.txt | check-venv-deps
+.venv/.installed: requirements-test.txt requirements-test.lock | check-venv-deps
 	@test -d .venv || uv venv
-	@uv pip install -r requirements-test.txt
+	@uv pip sync requirements-test.lock
 	@touch .venv/.installed
 
 venv: .venv/.installed ## Create Python venv with test dependencies
+
+requirements-test.lock: requirements-test.txt | check-venv-deps
+	@uv pip compile --universal --upgrade requirements-test.txt \
+	    --output-file requirements-test.lock \
+	    --custom-compile-command "make python-test-deps-update"
+
+python-test-deps-update: check-venv-deps ## Refresh pinned Python test dependencies
+	@uv pip compile --universal --upgrade requirements-test.txt \
+	    --output-file requirements-test.lock \
+	    --custom-compile-command "make python-test-deps-update"
 
 check-deps: venv setup-claude-web ## Check that all dependencies are installed
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/check-deps.sh
