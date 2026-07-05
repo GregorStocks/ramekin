@@ -1,35 +1,9 @@
 import Foundation
 
-struct CreateMealPlanRequestBody: Encodable {
-    let recipeId: UUID
-    let mealDate: String
-    let mealType: String
-    let notes: String?
-
-    enum CodingKeys: String, CodingKey {
-        case recipeId = "recipe_id"
-        case mealDate = "meal_date"
-        case mealType = "meal_type"
-        case notes
-    }
-}
-
-struct UpdateMealPlanRequestBody: Encodable {
-    let mealDate: String
-    let mealType: String
-    let notes: String
-
-    enum CodingKeys: String, CodingKey {
-        case mealDate = "meal_date"
-        case mealType = "meal_type"
-        case notes
-    }
-}
-
 /// API client for interacting with the Ramekin server
 class RamekinAPI {
     static let shared = RamekinAPI()
-    typealias RequestExecutor = @Sendable (URLRequest) async throws -> (Data, URLResponse)
+    typealias LoginExecutor = @Sendable (RequestBuilder<LoginResponse>) async throws -> LoginResponse
 
     private let logger = DebugLogger.shared
 
@@ -156,46 +130,6 @@ class RamekinAPI {
 
     // MARK: - API Types
 
-    struct LoginRequest: Encodable {
-        let username: String
-        let password: String
-    }
-
-    struct LoginResponse: Decodable {
-        let token: String
-    }
-
-    struct CaptureRequest: Encodable {
-        let html: String
-        let source_url: String
-    }
-
-    struct ScrapeResponse: Decodable {
-        let id: String
-    }
-
-    struct ScrapeJobStatus: Decodable {
-        let id: String
-        let status: String
-        let recipe_id: String?
-        let error_message: String?
-    }
-
-    struct ErrorResponse: Decodable {
-        let error: String?
-        let message: String?
-        let code: String?
-
-        var errorMessage: String {
-            error ?? message ?? "Unknown error"
-        }
-
-        /// The structured error code, if the server returned a recognized one.
-        var errorCode: ErrorCode? {
-            code.flatMap(ErrorCode.init(rawValue:))
-        }
-    }
-
     // MARK: - Request Helper
 
     /// Execute a request against the configured server, applying the common
@@ -299,13 +233,6 @@ class RamekinAPI {
         }
     }
 
-    func parseError(from data: Data, statusCode: Int) -> APIError {
-        if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
-            return .httpError(statusCode, errorResponse.errorCode, errorResponse.errorMessage)
-        }
-        return .httpError(statusCode, nil, String(data: data, encoding: .utf8))
-    }
-
     // MARK: - Authentication
 
     /// Login to the Ramekin server
@@ -317,8 +244,8 @@ class RamekinAPI {
         accessClientSecret: String? = nil,
         credentialStore: CredentialStore = KeychainHelper.shared,
         updateClientConfiguration: Bool = true,
-        requestExecutor: @escaping RequestExecutor = { request in
-            try await insecureSession.data(for: request)
+        requestExecutor: @escaping LoginExecutor = { builder in
+            try await builder.execute().body
         }
     ) async throws -> String {
         let normalizedURL = Self.normalizeServerURL(serverURL)
@@ -339,31 +266,25 @@ class RamekinAPI {
             credentialStore.deleteAccessClientSecret()
         }
 
-        guard let url = URL(string: "\(normalizedURL)/api/auth/login") else {
-            throw APIError.invalidURL
+        RamekinClientAPI.basePath = normalizedURL
+        RamekinClientAPI.customHeaders.removeValue(forKey: "Authorization")
+        if let id = normalizedAccessClientId {
+            RamekinClientAPI.customHeaders["CF-Access-Client-Id"] = id
+        } else {
+            RamekinClientAPI.customHeaders.removeValue(forKey: "CF-Access-Client-Id")
+        }
+        if let secret = normalizedAccessClientSecret {
+            RamekinClientAPI.customHeaders["CF-Access-Client-Secret"] = secret
+        } else {
+            RamekinClientAPI.customHeaders.removeValue(forKey: "CF-Access-Client-Secret")
         }
 
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        applyAccessHeaders(
-            to: &request,
-            accessClientId: normalizedAccessClientId,
-            accessClientSecret: normalizedAccessClientSecret
+        let builder = AuthAPI.loginWithRequestBuilder(
+            loginRequest: LoginRequest(password: password, username: username)
         )
 
-        let body = LoginRequest(username: username, password: password)
-        request.httpBody = try JSONEncoder().encode(body)
-
-        let (data, response) = try await requestExecutor(request)
-
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw APIError.invalidResponse
-        }
-
-        if httpResponse.statusCode == 200 {
-            let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
-
+        do {
+            let loginResponse = try await requestExecutor(builder)
             // Save credentials
             _ = credentialStore.saveServerURL(normalizedURL)
             _ = credentialStore.saveToken(loginResponse.token)
@@ -375,10 +296,8 @@ class RamekinAPI {
             }
 
             return loginResponse.token
-        } else {
-            let parsed = try? JSONDecoder().decode(ErrorResponse.self, from: data)
-            let errorMessage = parsed?.errorMessage ?? String(data: data, encoding: .utf8)
-            throw APIError.httpError(httpResponse.statusCode, parsed?.errorCode, errorMessage)
+        } catch {
+            throw translateGeneratedError(error)
         }
     }
 
@@ -419,12 +338,7 @@ extension RamekinAPI {
     /// other HTTP status; rethrows network/URL-level errors.
     func testConnection() async throws -> Bool {
         do {
-            _ = try await performRequest(
-                method: "GET",
-                path: "/api/test/unauthed-ping",
-                requiresAuth: false,
-                acceptedStatusCodes: [200]
-            )
+            _ = try await executeGenerated { try await TestingAPI.unauthedPing() }
             return true
         } catch APIError.httpError {
             return false
@@ -436,14 +350,12 @@ extension RamekinAPI {
 
 extension RamekinAPI {
     func listMealPlans(startDate: Date, endDate: Date) async throws -> MealPlanListResponse {
-        let start = SharedDateFormatters.localDateOnly.string(from: startDate)
-        let end = SharedDateFormatters.localDateOnly.string(from: endDate)
-        let data = try await performRequest(
-            method: "GET",
-            path: "/api/meal-plans?start_date=\(start)&end_date=\(end)",
-            acceptedStatusCodes: [200]
-        )
-        return try CodableHelper.jsonDecoder.decode(MealPlanListResponse.self, from: data)
+        try await executeGenerated {
+            try await listMealPlansRequestBuilder(
+                startDate: startDate,
+                endDate: endDate
+            ).execute().body
+        }
     }
 
     func createMealPlan(
@@ -456,42 +368,33 @@ extension RamekinAPI {
             normalizedNotes = nil
         }
 
-        let body = try JSONEncoder().encode(CreateMealPlanRequestBody(
-            recipeId: recipeId,
-            mealDate: SharedDateFormatters.localDateOnly.string(from: mealDate),
-            mealType: mealType,
-            notes: normalizedNotes
-        ))
-        let data = try await performRequest(
-            method: "POST",
-            path: "/api/meal-plans",
-            body: body,
-            acceptedStatusCodes: [200, 201]
+        let request = CreateMealPlanRequest(
+            mealDate: mealDate,
+            mealType: generatedMealType(from: mealType),
+            notes: normalizedNotes,
+            recipeId: recipeId
         )
-        return try CodableHelper.jsonDecoder.decode(CreateMealPlanResponse.self, from: data)
+        return try await executeGenerated {
+            try await createMealPlanRequestBuilder(request).execute().body
+        }
     }
 
     func deleteMealPlan(id: UUID) async throws {
-        try await performRequest(
-            method: "DELETE",
-            path: "/api/meal-plans/\(id.uuidString)",
-            acceptedStatusCodes: [200, 204]
-        )
+        try await executeGenerated {
+            try await MealPlansAPI.deleteMealPlan(id: id)
+        }
     }
 
     func updateMealPlan(
         id: UUID, mealDate: Date, mealType: String, notes: String
     ) async throws {
-        let body = try JSONEncoder().encode(UpdateMealPlanRequestBody(
-            mealDate: SharedDateFormatters.localDateOnly.string(from: mealDate),
-            mealType: mealType,
+        let request = UpdateMealPlanRequest(
+            mealDate: mealDate,
+            mealType: generatedMealType(from: mealType),
             notes: notes
-        ))
-        try await performRequest(
-            method: "PUT",
-            path: "/api/meal-plans/\(id.uuidString)",
-            body: body,
-            acceptedStatusCodes: [200, 204]
         )
+        try await executeGenerated {
+            try await updateMealPlanRequestBuilder(id: id, request: request).execute().body
+        }
     }
 }

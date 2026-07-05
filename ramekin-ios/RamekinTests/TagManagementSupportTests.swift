@@ -48,7 +48,9 @@ final class TagManagementSupportTests: XCTestCase {
     }
 
     func testAPIErrorFormatterPrefersServerErrorMessage() {
-        let payload = Data(#"{"error":"Tag with that name already exists"}"#.utf8)
+        let payload = Data(
+            #"{"code":"conflict","error":"Tag with that name already exists"}"#.utf8
+        )
         let error = ErrorResponse.error(
             409,
             payload,

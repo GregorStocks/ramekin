@@ -8,7 +8,11 @@ import pytest
 from conftest import make_ingredient
 from ramekin_client.api import RecipesApi, ScrapeApi
 from ramekin_client.exceptions import ApiException
-from ramekin_client.models import CreateRecipeRequest, CreateScrapeRequest
+from ramekin_client.models import (
+    CreateRecipeRequest,
+    CreateScrapeRequest,
+    UpdateRecipeRequest,
+)
 
 
 FIXTURE_BASE_URL = os.environ.get("FIXTURE_BASE_URL", "http://localhost:8888")
@@ -45,6 +49,29 @@ class TestRescrapeSuccess:
         # Get the original recipe
         original_recipe = recipes_api.get_recipe(recipe_id)
         original_version_id = original_recipe.version_id
+        recipes_api.update_recipe(
+            recipe_id,
+            UpdateRecipeRequest(
+                title=original_recipe.title,
+                description=original_recipe.description,
+                ingredients=original_recipe.ingredients,
+                instructions=original_recipe.instructions,
+                source_url=original_recipe.source_url,
+                source_name=original_recipe.source_name,
+                photo_ids=original_recipe.photo_ids,
+                servings=original_recipe.servings,
+                prep_time=original_recipe.prep_time,
+                cook_time=original_recipe.cook_time,
+                total_time=original_recipe.total_time,
+                rating=original_recipe.rating,
+                difficulty=original_recipe.difficulty,
+                nutritional_info=original_recipe.nutritional_info,
+                notes=original_recipe.notes,
+                tags=["rescrape-tag", "weeknight"],
+            ),
+        )
+        tagged_recipe = recipes_api.get_recipe(recipe_id)
+        tagged_version_id = tagged_recipe.version_id
 
         # Rescrape the recipe
         rescrape_response = recipes_api.rescrape(recipe_id)
@@ -62,13 +89,15 @@ class TestRescrapeSuccess:
         updated_recipe = recipes_api.get_recipe(recipe_id)
 
         # Verify a new version was created
-        assert updated_recipe.version_id != original_version_id
+        assert tagged_version_id != original_version_id
+        assert updated_recipe.version_id != tagged_version_id
         assert updated_recipe.version_source in (
             "rescrape",
             "normalize_title",
             "generate_description",
             "enrichment",
         )
+        assert sorted(updated_recipe.tags) == ["rescrape-tag", "weeknight"]
         versions = recipes_api.list_versions(recipe_id)
         assert any(v.version_source == "rescrape" for v in versions.versions)
         # The recipe ID should be the same
