@@ -866,7 +866,16 @@ impl VirtualWeberbulletBuilder {
 
     fn flush_pending_strong(&mut self) {
         if let Some(text) = self.pending_strong_text.take() {
-            self.push_paragraph(text);
+            match self.state {
+                VirtualWeberbulletState::BeforeSummary
+                | VirtualWeberbulletState::InSummary
+                | VirtualWeberbulletState::InDescription => {
+                    self.description_paragraphs.push(text);
+                }
+                VirtualWeberbulletState::InInstructions => {
+                    self.current_section_paras.push(text);
+                }
+            }
         }
     }
 
@@ -1273,6 +1282,41 @@ mod tests {
         assert_eq!(ingredient_lines[0], "The Rub:");
         assert_eq!(ingredient_lines[1], "1/4 cup paprika");
         assert_eq!(ingredient_lines[2], "2 tablespoons salt");
+    }
+
+    #[test]
+    fn test_virtualweberbullet_summary_strong_paragraphs_do_not_feed_ingredients() {
+        let html = r#"
+            <html><body>
+                <h1 class="headline">Test Ribs</h1>
+                <div class="post_content">
+                    <h2>Summary</h2>
+                    <p><strong>First summary line</strong></p>
+                    <p><strong>Second summary line</strong></p>
+                    <ul><li>Not a recipe ingredient</li><li>Still summary text</li></ul>
+                    <p><strong>The Rub</strong></p>
+                    <ul><li>1/4 cup paprika</li><li>2 tablespoons salt</li></ul>
+                    <h2>Fire The Cooker</h2>
+                    <p>Light the charcoal and cook the ribs.</p>
+                </div>
+            </body></html>
+        "#;
+        let document = Html::parse_document(html);
+
+        let recipe = extract_recipe_from_virtualweberbullet(
+            html,
+            &document,
+            "https://www.virtualweberbullet.com/test-ribs",
+        )
+        .expect("should extract a recipe");
+
+        let ingredient_lines: Vec<&str> = recipe.ingredients.lines().collect();
+        assert_eq!(
+            ingredient_lines,
+            vec!["The Rub:", "1/4 cup paprika", "2 tablespoons salt"]
+        );
+        assert!(recipe.description.unwrap().contains("Second summary line"));
+        assert!(!recipe.ingredients.contains("Not a recipe ingredient"));
     }
 
     #[test]
