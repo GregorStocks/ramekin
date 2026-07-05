@@ -10,12 +10,9 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { CreateClientLogRequest, CreateClientLogResponse, GetClientLogResponse, ListClientLogsResponse } from '../models/index';
+import type { CreateClientLogRequest, CreateClientLogResponse } from '../models/index';
 export interface CreateClientLogOperationRequest {
     createClientLogRequest: CreateClientLogRequest;
-}
-export interface GetClientLogRequest {
-    id: string;
 }
 /**
  *
@@ -27,16 +24,4 @@ export declare class ClientLogsApi extends runtime.BaseAPI {
     /**
      */
     createClientLog(requestParameters: CreateClientLogOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CreateClientLogResponse>;
-    /**
-     */
-    getClientLogRaw(requestParameters: GetClientLogRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetClientLogResponse>>;
-    /**
-     */
-    getClientLog(requestParameters: GetClientLogRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetClientLogResponse>;
-    /**
-     */
-    listClientLogsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ListClientLogsResponse>>;
-    /**
-     */
-    listClientLogs(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ListClientLogsResponse>;
 }

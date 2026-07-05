@@ -29,8 +29,6 @@ Class | Method | HTTP request | Description
 *AuthAPI* | [**login**](docs/AuthAPI.md#login) | **POST** /api/auth/login | 
 *AuthAPI* | [**signup**](docs/AuthAPI.md#signup) | **POST** /api/auth/signup | 
 *ClientLogsAPI* | [**createClientLog**](docs/ClientLogsAPI.md#createclientlog) | **POST** /api/client-logs | 
-*ClientLogsAPI* | [**getClientLog**](docs/ClientLogsAPI.md#getclientlog) | **GET** /api/client-logs/{id} | 
-*ClientLogsAPI* | [**listClientLogs**](docs/ClientLogsAPI.md#listclientlogs) | **GET** /api/client-logs | 
 *EnrichAPI* | [**customEnrichRecipe**](docs/EnrichAPI.md#customenrichrecipe) | **POST** /api/enrich/custom | Apply a custom AI modification to a recipe
 *EnrichAPI* | [**enrichRecipe**](docs/EnrichAPI.md#enrichrecipe) | **POST** /api/enrich | Enrich a recipe
 *ImportAPI* | [**importFromPhotos**](docs/ImportAPI.md#importfromphotos) | **POST** /api/import/photos | 
@@ -82,7 +80,6 @@ Class | Method | HTTP request | Description
  - [BookmarkletTokenResponse](docs/BookmarkletTokenResponse.md)
  - [CaptureRequest](docs/CaptureRequest.md)
  - [ClearCheckedResponse](docs/ClearCheckedResponse.md)
- - [ClientLogSummary](docs/ClientLogSummary.md)
  - [CreateClientLogRequest](docs/CreateClientLogRequest.md)
  - [CreateClientLogResponse](docs/CreateClientLogResponse.md)
  - [CreateMealPlanRequest](docs/CreateMealPlanRequest.md)
@@ -101,7 +98,6 @@ Class | Method | HTTP request | Description
  - [ErrorCode](docs/ErrorCode.md)
  - [GenerateDescriptionResponse](docs/GenerateDescriptionResponse.md)
  - [GeneratePhotoResponse](docs/GeneratePhotoResponse.md)
- - [GetClientLogResponse](docs/GetClientLogResponse.md)
  - [ImportExtractionMethod](docs/ImportExtractionMethod.md)
  - [ImportFromPhotosRequest](docs/ImportFromPhotosRequest.md)
  - [ImportFromPhotosResponse](docs/ImportFromPhotosResponse.md)
@@ -109,7 +105,6 @@ Class | Method | HTTP request | Description
  - [ImportRecipeRequest](docs/ImportRecipeRequest.md)
  - [ImportRecipeResponse](docs/ImportRecipeResponse.md)
  - [Ingredient](docs/Ingredient.md)
- - [ListClientLogsResponse](docs/ListClientLogsResponse.md)
  - [ListRecipesResponse](docs/ListRecipesResponse.md)
  - [LoginRequest](docs/LoginRequest.md)
  - [LoginResponse](docs/LoginResponse.md)

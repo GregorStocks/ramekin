@@ -112,39 +112,6 @@
       }
     },
     "/api/client-logs": {
-      "get": {
-        "tags": [
-          "client_logs"
-        ],
-        "operationId": "list_client_logs",
-        "responses": {
-          "200": {
-            "description": "Caller's log uploads, newest first",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ListClientLogsResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
-      },
       "post": {
         "tags": [
           "client_logs"
@@ -193,63 +160,6 @@
           },
           "413": {
             "description": "Content too large",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
-      }
-    },
-    "/api/client-logs/{id}": {
-      "get": {
-        "tags": [
-          "client_logs"
-        ],
-        "operationId": "get_client_log",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Log upload id",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Full log upload",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/GetClientLogResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -2813,44 +2723,6 @@
           }
         }
       },
-      "ClientLogSummary": {
-        "type": "object",
-        "required": [
-          "id",
-          "platform",
-          "created_at",
-          "content_length"
-        ],
-        "properties": {
-          "app_version": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "content_length": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "os_info": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "platform": {
-            "type": "string"
-          }
-        }
-      },
       "CreateClientLogRequest": {
         "type": "object",
         "required": [
@@ -3199,43 +3071,6 @@
           }
         }
       },
-      "GetClientLogResponse": {
-        "type": "object",
-        "required": [
-          "id",
-          "platform",
-          "created_at",
-          "content"
-        ],
-        "properties": {
-          "app_version": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "content": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "os_info": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "platform": {
-            "type": "string"
-          }
-        }
-      },
       "ImportExtractionMethod": {
         "type": "string",
         "description": "Extraction method for imported recipes (mirrors ramekin_core::ExtractionMethod)",
@@ -3464,20 +3299,6 @@
               "null"
             ],
             "description": "Section name for grouping (e.g., \"For the sauce\", \"For the dough\")"
-          }
-        }
-      },
-      "ListClientLogsResponse": {
-        "type": "object",
-        "required": [
-          "uploads"
-        ],
-        "properties": {
-          "uploads": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ClientLogSummary"
-            }
           }
         }
       },
