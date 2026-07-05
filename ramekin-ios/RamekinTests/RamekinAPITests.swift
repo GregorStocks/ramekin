@@ -111,7 +111,6 @@ final class RamekinAPITests: XCTestCase {
     func testLoginPersistsNormalizedURLTokenAndUsername() async throws {
         let credentialStore = MockCredentialStore()
         let api = RamekinAPI.shared
-        let responseData = Data(#"{"token":"secret-token"}"#.utf8)
 
         let token = try await api.login(
             serverURL: " example.com/ ",
@@ -121,21 +120,17 @@ final class RamekinAPITests: XCTestCase {
             accessClientSecret: "cf-secret",
             credentialStore: credentialStore,
             updateClientConfiguration: false,
-            requestExecutor: { request in
-                XCTAssertEqual(request.url?.absoluteString, "https://example.com/api/auth/login")
-                XCTAssertEqual(request.httpMethod, "POST")
-                XCTAssertEqual(request.value(forHTTPHeaderField: "CF-Access-Client-Id"), "cf-id")
-                XCTAssertEqual(
-                    request.value(forHTTPHeaderField: "CF-Access-Client-Secret"),
-                    "cf-secret"
-                )
-                let response = HTTPURLResponse(
-                    url: try XCTUnwrap(request.url),
-                    statusCode: 200,
-                    httpVersion: nil,
-                    headerFields: nil
-                )!
-                return (responseData, response)
+            requestExecutor: { builder in
+                XCTAssertEqual(builder.URLString, "https://example.com/api/auth/login")
+                XCTAssertEqual(builder.method, "POST")
+                XCTAssertEqual(builder.headers["CF-Access-Client-Id"], "cf-id")
+                XCTAssertEqual(builder.headers["CF-Access-Client-Secret"], "cf-secret")
+
+                let json = try requestBodyJSON(from: builder)
+                XCTAssertEqual(json["username"] as? String, "gregor")
+                XCTAssertEqual(json["password"] as? String, "pw")
+
+                return LoginResponse(token: "secret-token")
             }
         )
 
@@ -182,7 +177,7 @@ final class RamekinAPITests: XCTestCase {
     // MARK: - Request Encoding Tests
 
     func testLoginRequestEncoding() throws {
-        let request = RamekinAPI.LoginRequest(username: "testuser", password: "testpass")
+        let request = LoginRequest(password: "testpass", username: "testuser")
         let data = try JSONEncoder().encode(request)
         guard let json = try JSONSerialization.jsonObject(with: data) as? [String: String] else {
             XCTFail("Failed to decode JSON as [String: String]")
@@ -194,9 +189,9 @@ final class RamekinAPITests: XCTestCase {
     }
 
     func testCaptureRequestEncoding() throws {
-        let request = RamekinAPI.CaptureRequest(
+        let request = CaptureRequest(
             html: "<html><body>hi</body></html>",
-            source_url: "https://example.com/recipe"
+            sourceUrl: "https://example.com/recipe"
         )
         let data = try JSONEncoder().encode(request)
         guard let json = try JSONSerialization.jsonObject(with: data) as? [String: String] else {
@@ -210,39 +205,42 @@ final class RamekinAPITests: XCTestCase {
 
     func testCreateMealPlanRequestEncodingOmitsEmptyNotes() throws {
         let recipeId = UUID(uuidString: "12345678-1234-1234-1234-123456789ABC")!
-        let request = CreateMealPlanRequestBody(
-            recipeId: recipeId,
-            mealDate: "2026-04-17",
-            mealType: "dinner",
-            notes: nil
-        )
-        let data = try JSONEncoder().encode(request)
-        guard let json = try JSONSerialization.jsonObject(with: data) as? [String: String] else {
-            XCTFail("Failed to decode JSON as [String: String]")
-            return
-        }
+        let date = try XCTUnwrap(SharedDateFormatters.localDateOnly.date(from: "2026-04-17"))
 
-        XCTAssertEqual(json["recipe_id"], recipeId.uuidString)
-        XCTAssertEqual(json["meal_date"], "2026-04-17")
-        XCTAssertEqual(json["meal_type"], "dinner")
+        let builder = RamekinAPI.shared.buildMealPlanRequest {
+            MealPlansAPI.createMealPlanWithRequestBuilder(createMealPlanRequest: CreateMealPlanRequest(
+                mealDate: date,
+                mealType: .dinner,
+                notes: nil,
+                recipeId: recipeId
+            ))
+        }
+        let json = try requestBodyJSON(from: builder)
+
+        XCTAssertEqual(json["recipe_id"] as? String, recipeId.uuidString)
+        XCTAssertEqual(json["meal_date"] as? String, "2026-04-17")
+        XCTAssertEqual(json["meal_type"] as? String, "dinner")
         XCTAssertNil(json["notes"])
     }
 
     func testUpdateMealPlanRequestEncodingIncludesEmptyNotes() throws {
-        let request = UpdateMealPlanRequestBody(
-            mealDate: "2026-04-18",
-            mealType: "lunch",
-            notes: ""
-        )
-        let data = try JSONEncoder().encode(request)
-        guard let json = try JSONSerialization.jsonObject(with: data) as? [String: String] else {
-            XCTFail("Failed to decode JSON as [String: String]")
-            return
-        }
+        let date = try XCTUnwrap(SharedDateFormatters.localDateOnly.date(from: "2026-04-18"))
 
-        XCTAssertEqual(json["meal_date"], "2026-04-18")
-        XCTAssertEqual(json["meal_type"], "lunch")
-        XCTAssertEqual(json["notes"], "")
+        let builder = RamekinAPI.shared.buildMealPlanRequest {
+            MealPlansAPI.updateMealPlanWithRequestBuilder(
+                id: UUID(uuidString: "87654321-4321-4321-4321-CBA987654321")!,
+                updateMealPlanRequest: UpdateMealPlanRequest(
+                    mealDate: date,
+                    mealType: .lunch,
+                    notes: ""
+                )
+            )
+        }
+        let json = try requestBodyJSON(from: builder)
+
+        XCTAssertEqual(json["meal_date"] as? String, "2026-04-18")
+        XCTAssertEqual(json["meal_type"] as? String, "lunch")
+        XCTAssertEqual(json["notes"] as? String, "")
     }
 
     // MARK: - Response Decoding Tests
@@ -252,72 +250,30 @@ final class RamekinAPITests: XCTestCase {
         {"token": "abc123xyz"}
         """
         let data = json.data(using: .utf8)!
-        let response = try JSONDecoder().decode(RamekinAPI.LoginResponse.self, from: data)
+        let response = try JSONDecoder().decode(LoginResponse.self, from: data)
 
         XCTAssertEqual(response.token, "abc123xyz")
     }
 
-    func testScrapeResponseDecoding() throws {
+    func testCreateScrapeResponseDecoding() throws {
         let json = """
-        {"id": "job-456"}
+        {"id": "12345678-1234-1234-1234-123456789ABC", "status": "pending"}
         """
         let data = json.data(using: .utf8)!
-        let response = try JSONDecoder().decode(RamekinAPI.ScrapeResponse.self, from: data)
+        let response = try JSONDecoder().decode(CreateScrapeResponse.self, from: data)
 
-        XCTAssertEqual(response.id, "job-456")
-    }
-
-    func testScrapeJobStatusDecoding() throws {
-        let json = """
-        {
-            "id": "job-789",
-            "status": "completed",
-            "recipe_id": "recipe-123",
-            "error_message": null
-        }
-        """
-        let data = json.data(using: .utf8)!
-        let response = try JSONDecoder().decode(RamekinAPI.ScrapeJobStatus.self, from: data)
-
-        XCTAssertEqual(response.id, "job-789")
-        XCTAssertEqual(response.status, "completed")
-        XCTAssertEqual(response.recipe_id, "recipe-123")
-        XCTAssertNil(response.error_message)
-    }
-
-    func testScrapeJobStatusWithError() throws {
-        let json = """
-        {
-            "id": "job-fail",
-            "status": "failed",
-            "recipe_id": null,
-            "error_message": "Could not parse recipe"
-        }
-        """
-        let data = json.data(using: .utf8)!
-        let response = try JSONDecoder().decode(RamekinAPI.ScrapeJobStatus.self, from: data)
-
-        XCTAssertEqual(response.id, "job-fail")
-        XCTAssertEqual(response.status, "failed")
-        XCTAssertNil(response.recipe_id)
-        XCTAssertEqual(response.error_message, "Could not parse recipe")
+        XCTAssertEqual(response.id.uuidString, "12345678-1234-1234-1234-123456789ABC")
+        XCTAssertEqual(response.status, "pending")
     }
 
     func testErrorResponseDecoding() throws {
         let json1 = """
-        {"error": "Something went wrong"}
+        {"code": "internal", "error": "Something went wrong"}
         """
         let data1 = json1.data(using: .utf8)!
-        let response1 = try JSONDecoder().decode(RamekinAPI.ErrorResponse.self, from: data1)
-        XCTAssertEqual(response1.errorMessage, "Something went wrong")
-        XCTAssertNil(response1.errorCode)
-
-        let json2 = """
-        {"message": "Another error"}
-        """
-        let data2 = json2.data(using: .utf8)!
-        let response2 = try JSONDecoder().decode(RamekinAPI.ErrorResponse.self, from: data2)
-        XCTAssertEqual(response2.errorMessage, "Another error")
+        let response1 = try JSONDecoder().decode(ModelErrorResponse.self, from: data1)
+        XCTAssertEqual(response1.error, "Something went wrong")
+        XCTAssertEqual(response1.code, ._internal)
     }
 
     func testErrorResponseDecodesStructuredCode() throws {
@@ -325,18 +281,9 @@ final class RamekinAPITests: XCTestCase {
         {"code": "not_found", "error": "Recipe not found"}
         """
         let data = json.data(using: .utf8)!
-        let response = try JSONDecoder().decode(RamekinAPI.ErrorResponse.self, from: data)
-        XCTAssertEqual(response.errorMessage, "Recipe not found")
-        XCTAssertEqual(response.errorCode, .notFound)
-    }
-
-    func testErrorResponseUnknownCodeIsNil() throws {
-        let json = """
-        {"code": "teapot", "error": "I'm a teapot"}
-        """
-        let data = json.data(using: .utf8)!
-        let response = try JSONDecoder().decode(RamekinAPI.ErrorResponse.self, from: data)
-        XCTAssertNil(response.errorCode)
+        let response = try JSONDecoder().decode(ModelErrorResponse.self, from: data)
+        XCTAssertEqual(response.error, "Recipe not found")
+        XCTAssertEqual(response.code, .notFound)
     }
 }
 
@@ -413,4 +360,10 @@ private func XCTAssertThrowsErrorAsync<T>(
         XCTFail("Expected expression to throw", file: file, line: line)
     } catch {
     }
+}
+
+private func requestBodyJSON<T>(from builder: RequestBuilder<T>) throws -> [String: Any] {
+    let data = try XCTUnwrap(builder.parameters?.values.compactMap { $0 as? Data }.first)
+    let json = try JSONSerialization.jsonObject(with: data)
+    return try XCTUnwrap(json as? [String: Any])
 }
