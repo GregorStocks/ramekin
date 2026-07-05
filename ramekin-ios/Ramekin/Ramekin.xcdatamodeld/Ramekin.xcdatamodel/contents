@@ -22,6 +22,7 @@
         <attribute name="category" optional="YES" attributeType="String" defaultValueString="Other"/>
         <attribute name="categoryOverride" optional="YES" attributeType="String"/>
         <attribute name="clearCategoryOverride" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="computedCategory" optional="YES" attributeType="String"/>
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="isChecked" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>

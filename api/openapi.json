@@ -3941,6 +3941,7 @@
           "sort_order",
           "version",
           "updated_at",
+          "computed_category",
           "category"
         ],
         "properties": {
@@ -3960,6 +3961,10 @@
               "null"
             ],
             "description": "User-selected category override; when set, it wins over computed category."
+          },
+          "computed_category": {
+            "type": "string",
+            "description": "Category computed from the item name before applying any override."
           },
           "id": {
             "type": "string",
@@ -4330,6 +4335,7 @@
           "sort_order",
           "version",
           "updated_at",
+          "computed_category",
           "category"
         ],
         "properties": {
@@ -4349,6 +4355,10 @@
               "null"
             ],
             "description": "User-selected category override; when set, it wins over computed category."
+          },
+          "computed_category": {
+            "type": "string",
+            "description": "Category computed from the item name before applying any override."
           },
           "id": {
             "type": "string",

@@ -38,6 +38,7 @@ class TestSyncServerChange(unittest.TestCase):
                 amount = '',
                 category = '',
                 category_override = '',
+                computed_category = '',
                 id = '',
                 is_checked = True,
                 item = '',
@@ -51,6 +52,7 @@ class TestSyncServerChange(unittest.TestCase):
         else:
             return SyncServerChange(
                 category = '',
+                computed_category = '',
                 id = '',
                 is_checked = True,
                 item = '',

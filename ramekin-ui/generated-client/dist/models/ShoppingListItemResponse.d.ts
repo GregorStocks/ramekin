@@ -34,6 +34,12 @@ export interface ShoppingListItemResponse {
      */
     categoryOverride?: string | null;
     /**
+     * Category computed from the item name before applying any override.
+     * @type {string}
+     * @memberof ShoppingListItemResponse
+     */
+    computedCategory: string;
+    /**
      *
      * @type {string}
      * @memberof ShoppingListItemResponse

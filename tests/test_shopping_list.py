@@ -629,6 +629,7 @@ def test_update_item_category_override_wins_over_computed_category(authed_api_cl
     item = api.list_items().items[0]
     assert item.category == "Produce"
     assert item.category_override == "Produce"
+    assert item.computed_category == "Meat & Seafood"
 
 
 def test_update_item_category_override_can_be_cleared(authed_api_client):
@@ -649,6 +650,7 @@ def test_update_item_category_override_can_be_cleared(authed_api_client):
     item = api.list_items().items[0]
     assert item.category == "Dairy & Eggs"
     assert item.category_override is None
+    assert item.computed_category == "Dairy & Eggs"
 
 
 def test_update_item_category_override_can_be_cleared_with_flag(authed_api_client):
@@ -712,6 +714,7 @@ def test_sync_create_item_category_override(authed_api_client):
     item = api.list_items().items[0]
     assert item.category == "Produce"
     assert item.category_override == "Produce"
+    assert item.computed_category == "Meat & Seafood"
 
 
 def test_sync_update_item_category_override_can_be_cleared(authed_api_client):
@@ -742,6 +745,7 @@ def test_sync_update_item_category_override_can_be_cleared(authed_api_client):
     item = api.list_items().items[0]
     assert item.category == "Produce"
     assert item.category_override == "Produce"
+    assert item.computed_category == "Oils & Vinegars"
 
     sync_response = api.sync_items(
         SyncRequest(
@@ -903,6 +907,7 @@ def test_sync_server_changes_have_category(authed_api_client):
     assert len(sync_response.server_changes) == 1
     assert sync_response.server_changes[0].item == "butter"
     assert sync_response.server_changes[0].category == "Dairy & Eggs"
+    assert sync_response.server_changes[0].computed_category == "Dairy & Eggs"
 
 
 def test_sync_created_items_have_category_in_server_changes(authed_api_client):

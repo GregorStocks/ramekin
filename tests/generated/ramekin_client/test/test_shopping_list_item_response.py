@@ -38,6 +38,7 @@ class TestShoppingListItemResponse(unittest.TestCase):
                 amount = '',
                 category = '',
                 category_override = '',
+                computed_category = '',
                 id = '',
                 is_checked = True,
                 item = '',
@@ -51,6 +52,7 @@ class TestShoppingListItemResponse(unittest.TestCase):
         else:
             return ShoppingListItemResponse(
                 category = '',
+                computed_category = '',
                 id = '',
                 is_checked = True,
                 item = '',

@@ -16,7 +16,7 @@ enum ShoppingListMutationSupport {
     static func updateCategoryOverride(_ item: ShoppingItem, categoryOverride: String?) {
         item.categoryOverride = categoryOverride
         item.clearCategoryOverride = categoryOverride == nil && item.syncStatusEnum != .pendingCreate
-        item.category = categoryOverride
+        item.category = categoryOverride ?? item.computedCategory
         item.markUpdated()
     }
 

@@ -123,6 +123,8 @@ pub struct SyncServerChange {
     pub updated_at: DateTime<Utc>,
     /// User-selected category override; when set, it wins over computed category.
     pub category_override: Option<String>,
+    /// Category computed from the item name before applying any override.
+    pub computed_category: String,
     /// Aisle category for grouping (override when set, otherwise computed).
     pub category: String,
 }
@@ -496,8 +498,11 @@ pub async fn sync_items(
                         version,
                         updated_at,
                     )| {
-                        let category =
-                            super::list::item_category(&item, category_override.as_deref());
+                        let computed_category = super::list::computed_category(&item);
+                        let category = super::list::item_category(
+                            &computed_category,
+                            category_override.as_deref(),
+                        );
                         SyncServerChange {
                             id,
                             item,
@@ -510,6 +515,7 @@ pub async fn sync_items(
                             version,
                             updated_at,
                             category_override,
+                            computed_category,
                             category,
                         }
                     },
@@ -550,8 +556,11 @@ pub async fn sync_items(
                         version,
                         updated_at,
                     )| {
-                        let category =
-                            super::list::item_category(&item, category_override.as_deref());
+                        let computed_category = super::list::computed_category(&item);
+                        let category = super::list::item_category(
+                            &computed_category,
+                            category_override.as_deref(),
+                        );
                         SyncServerChange {
                             id,
                             item,
@@ -564,6 +573,7 @@ pub async fn sync_items(
                             version,
                             updated_at,
                             category_override,
+                            computed_category,
                             category,
                         }
                     },

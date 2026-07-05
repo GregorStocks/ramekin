@@ -17,6 +17,8 @@ public struct SyncServerChange: Codable, JSONEncodable, Hashable {
     public var category: String
     /** User-selected category override; when set, it wins over computed category. */
     public var categoryOverride: String?
+    /** Category computed from the item name before applying any override. */
+    public var computedCategory: String
     public var id: UUID
     public var isChecked: Bool
     public var item: String
@@ -27,10 +29,11 @@ public struct SyncServerChange: Codable, JSONEncodable, Hashable {
     public var updatedAt: Date
     public var version: Int
 
-    public init(amount: String? = nil, category: String, categoryOverride: String? = nil, id: UUID, isChecked: Bool, item: String, note: String? = nil, sortOrder: Int, sourceRecipeId: UUID? = nil, sourceRecipeTitle: String? = nil, updatedAt: Date, version: Int) {
+    public init(amount: String? = nil, category: String, categoryOverride: String? = nil, computedCategory: String, id: UUID, isChecked: Bool, item: String, note: String? = nil, sortOrder: Int, sourceRecipeId: UUID? = nil, sourceRecipeTitle: String? = nil, updatedAt: Date, version: Int) {
         self.amount = amount
         self.category = category
         self.categoryOverride = categoryOverride
+        self.computedCategory = computedCategory
         self.id = id
         self.isChecked = isChecked
         self.item = item
@@ -46,6 +49,7 @@ public struct SyncServerChange: Codable, JSONEncodable, Hashable {
         case amount
         case category
         case categoryOverride = "category_override"
+        case computedCategory = "computed_category"
         case id
         case isChecked = "is_checked"
         case item
@@ -64,6 +68,7 @@ public struct SyncServerChange: Codable, JSONEncodable, Hashable {
         try container.encodeIfPresent(amount, forKey: .amount)
         try container.encode(category, forKey: .category)
         try container.encodeIfPresent(categoryOverride, forKey: .categoryOverride)
+        try container.encode(computedCategory, forKey: .computedCategory)
         try container.encode(id, forKey: .id)
         try container.encode(isChecked, forKey: .isChecked)
         try container.encode(item, forKey: .item)

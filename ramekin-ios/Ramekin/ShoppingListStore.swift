@@ -279,6 +279,7 @@ class ShoppingListStore: ObservableObject {
             item.sourceRecipeId = change.sourceRecipeId
             item.sourceRecipeTitle = change.sourceRecipeTitle
             item.categoryOverride = change.categoryOverride
+            item.computedCategory = change.computedCategory
             item.category = change.category
             item.updatedAt = change.updatedAt
             item.markSynced(serverVersion: Int32(change.version))
@@ -293,6 +294,7 @@ class ShoppingListStore: ObservableObject {
             newItem.sourceRecipeId = change.sourceRecipeId
             newItem.sourceRecipeTitle = change.sourceRecipeTitle
             newItem.categoryOverride = change.categoryOverride
+            newItem.computedCategory = change.computedCategory
             newItem.category = change.category
             newItem.createdAt = Date()
             newItem.updatedAt = change.updatedAt

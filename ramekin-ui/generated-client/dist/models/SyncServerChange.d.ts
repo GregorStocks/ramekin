@@ -34,6 +34,12 @@ export interface SyncServerChange {
      */
     categoryOverride?: string | null;
     /**
+     * Category computed from the item name before applying any override.
+     * @type {string}
+     * @memberof SyncServerChange
+     */
+    computedCategory: string;
+    /**
      *
      * @type {string}
      * @memberof SyncServerChange

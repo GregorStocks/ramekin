@@ -26,6 +26,8 @@ pub struct ShoppingListItemResponse {
     pub updated_at: DateTime<Utc>,
     /// User-selected category override; when set, it wins over computed category.
     pub category_override: Option<String>,
+    /// Category computed from the item name before applying any override.
+    pub computed_category: String,
     /// Aisle category for grouping (override when set, otherwise computed).
     pub category: String,
 }
@@ -50,10 +52,12 @@ pub fn is_valid_category(category: &str) -> bool {
     ingredient_categorizer::CATEGORIES.contains(&category)
 }
 
-pub fn item_category(item: &str, category_override: Option<&str>) -> String {
-    category_override
-        .unwrap_or_else(|| ingredient_categorizer::categorize(item))
-        .to_string()
+pub fn computed_category(item: &str) -> String {
+    ingredient_categorizer::categorize(item).to_string()
+}
+
+pub fn item_category(computed_category: &str, category_override: Option<&str>) -> String {
+    category_override.unwrap_or(computed_category).to_string()
 }
 
 // Type alias for query result row
@@ -132,7 +136,8 @@ pub async fn list_items(
                 version,
                 updated_at,
             )| {
-                let category = item_category(&item, category_override.as_deref());
+                let computed_category = computed_category(&item);
+                let category = item_category(&computed_category, category_override.as_deref());
                 ShoppingListItemResponse {
                     id,
                     item,
@@ -145,6 +150,7 @@ pub async fn list_items(
                     version,
                     updated_at,
                     category_override,
+                    computed_category,
                     category,
                 }
             },

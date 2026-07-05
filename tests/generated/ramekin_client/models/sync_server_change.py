@@ -31,6 +31,7 @@ class SyncServerChange(BaseModel):
     amount: Optional[StrictStr] = None
     category: StrictStr = Field(description="Aisle category for grouping (override when set, otherwise computed).")
     category_override: Optional[StrictStr] = Field(default=None, description="User-selected category override; when set, it wins over computed category.")
+    computed_category: StrictStr = Field(description="Category computed from the item name before applying any override.")
     id: UUID
     is_checked: StrictBool
     item: StrictStr
@@ -40,7 +41,7 @@ class SyncServerChange(BaseModel):
     source_recipe_title: Optional[StrictStr] = None
     updated_at: datetime
     version: StrictInt
-    __properties: ClassVar[List[str]] = ["amount", "category", "category_override", "id", "is_checked", "item", "note", "sort_order", "source_recipe_id", "source_recipe_title", "updated_at", "version"]
+    __properties: ClassVar[List[str]] = ["amount", "category", "category_override", "computed_category", "id", "is_checked", "item", "note", "sort_order", "source_recipe_id", "source_recipe_title", "updated_at", "version"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -121,6 +122,7 @@ class SyncServerChange(BaseModel):
             "amount": obj.get("amount"),
             "category": obj.get("category"),
             "category_override": obj.get("category_override"),
+            "computed_category": obj.get("computed_category"),
             "id": obj.get("id"),
             "is_checked": obj.get("is_checked"),
             "item": obj.get("item"),
