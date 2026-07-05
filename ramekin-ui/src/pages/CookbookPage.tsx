@@ -13,12 +13,11 @@ import { extractApiError } from "../utils/recipeFormHelpers";
 import { usePageTitle } from "../utils/pageTitle";
 import PhotoThumbnail from "../components/PhotoThumbnail";
 import PdfExportModal from "../components/PdfExportModal";
-import { AI_ENRICHMENTS } from "../utils/aiEnrichments";
 import {
-  runBulkOperation,
-  summarizeBulkErrors,
-  type BulkOperationResult,
-} from "../utils/bulkOperation";
+  AI_ENRICHMENTS,
+  runRecipeAiBatchOperation,
+  type RecipeAiOperationSummary,
+} from "../utils/aiEnrichments";
 import type { RecipeSummary, SortBy, Direction } from "ramekin-client";
 import { groupTags, parseTag } from "../utils/tagHierarchy";
 
@@ -772,8 +771,8 @@ export default function CookbookPage() {
       : idleLabel;
   };
 
-  const changedCount = (results: Array<{ changed?: boolean }>) =>
-    results.filter((result) => result.changed).length;
+  const summarizeErrors = (errors: string[]) =>
+    `${errors.slice(0, 3).join("; ")}${errors.length > 3 ? "…" : ""}`;
 
   const runSelectedBulkOperation = async <TResult,>({
     operation,
@@ -788,7 +787,7 @@ export default function CookbookPage() {
     action: (id: string) => Promise<TResult>;
     errorFallback: string;
     reloadRecipes?: boolean;
-    summarize: (result: BulkOperationResult<TResult>) => string;
+    summarize: (summary: RecipeAiOperationSummary) => string;
   }) => {
     const ids = Array.from(selected());
     if (ids.length === 0) return;
@@ -797,12 +796,12 @@ export default function CookbookPage() {
     setError(null);
     setNotice(null);
     setBulkProgress({ operation, done: 0, total: ids.length });
-    const result = await runBulkOperation({
+    const summary = await runRecipeAiBatchOperation({
       ids,
-      action,
-      formatError: (error) => extractApiError(error, errorFallback),
-      onProgress: (done, total) => {
-        setBulkProgress({ operation, done, total });
+      run: action,
+      errorFallback,
+      onProgress: (progress) => {
+        setBulkProgress({ operation, ...progress });
       },
     });
     setBulkProgress(null);
@@ -811,8 +810,8 @@ export default function CookbookPage() {
       await loadRecipes();
     }
 
-    const message = summarize(result);
-    if (result.errors.length > 0) {
+    const message = summarize(summary);
+    if (summary.errors.length > 0) {
       setError(message);
     } else {
       setNotice(message);
@@ -830,13 +829,10 @@ export default function CookbookPage() {
       action: (id) => api.normalizeTitle({ id }),
       errorFallback: "normalize failed",
       reloadRecipes: true,
-      summarize: (result) => {
-        const changed = changedCount(result.results);
-        const base = `${result.succeeded}/${result.total} normalized (${changed} changed)`;
-        return result.errors.length > 0
-          ? `${base}. Errors: ${summarizeBulkErrors(result.errors)}`
-          : `Normalized ${result.total} recipes (${changed} changed, ${result.total - changed} unchanged).`;
-      },
+      summarize: (summary) =>
+        summary.errors.length > 0
+          ? `${summary.succeeded}/${summary.total} normalized (${summary.changed} changed). Errors: ${summarizeErrors(summary.errors)}`
+          : `Normalized ${summary.total} recipes (${summary.changed} changed, ${summary.total - summary.changed} unchanged).`,
     });
   };
 
@@ -851,13 +847,10 @@ export default function CookbookPage() {
       action: (id) => api.generateDescription({ id }),
       errorFallback: "description failed",
       reloadRecipes: true,
-      summarize: (result) => {
-        const changed = changedCount(result.results);
-        const base = `${result.succeeded}/${result.total} described (${changed} changed)`;
-        return result.errors.length > 0
-          ? `${base}. Errors: ${summarizeBulkErrors(result.errors)}`
-          : `Generated descriptions for ${result.total} recipes (${changed} changed, ${result.total - changed} unchanged).`;
-      },
+      summarize: (summary) =>
+        summary.errors.length > 0
+          ? `${summary.succeeded}/${summary.total} described (${summary.changed} changed). Errors: ${summarizeErrors(summary.errors)}`
+          : `Generated descriptions for ${summary.total} recipes (${summary.changed} changed, ${summary.total - summary.changed} unchanged).`,
     });
   };
 
@@ -872,10 +865,10 @@ export default function CookbookPage() {
       action: (id) => api.generatePhoto({ id }),
       errorFallback: "photo generation failed",
       reloadRecipes: true,
-      summarize: (result) =>
-        result.errors.length > 0
-          ? `${result.succeeded}/${result.total} photos generated. Errors: ${summarizeBulkErrors(result.errors)}`
-          : `Generated AI photos for ${result.total} recipes.`,
+      summarize: (summary) =>
+        summary.errors.length > 0
+          ? `${summary.succeeded}/${summary.total} photos generated. Errors: ${summarizeErrors(summary.errors)}`
+          : `Generated AI photos for ${summary.total} recipes.`,
     });
   };
 
@@ -889,10 +882,10 @@ export default function CookbookPage() {
           : `Queue photo rescrapes for ${count} recipes? This will issue one job per recipe.`,
       action: (id) => api.rescrapePhoto({ id }),
       errorFallback: "rescrape failed",
-      summarize: (result) =>
-        result.errors.length > 0
-          ? `${result.succeeded}/${result.total} jobs queued. Errors: ${summarizeBulkErrors(result.errors)}`
-          : `Queued photo rescrapes for ${result.total} recipes.`,
+      summarize: (summary) =>
+        summary.errors.length > 0
+          ? `${summary.succeeded}/${summary.total} jobs queued. Errors: ${summarizeErrors(summary.errors)}`
+          : `Queued photo rescrapes for ${summary.total} recipes.`,
     });
   };
 
