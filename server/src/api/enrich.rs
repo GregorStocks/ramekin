@@ -11,6 +11,7 @@ use ramekin_core::ai::{custom_enrich, suggest_tags, CachingAiClient};
 use ramekin_core::enrich_ingredient_measurements;
 use ramekin_core::ingredient_parser::ParsedIngredient;
 use serde::Deserialize;
+use std::fmt;
 use std::sync::Arc;
 use utoipa::OpenApi;
 use utoipa::ToSchema;
@@ -30,6 +31,36 @@ fn enrich_ingredients(ingredients: Vec<Ingredient>) -> Result<Vec<Ingredient>, s
         .collect()
 }
 
+#[derive(Debug)]
+enum TagEnrichmentError {
+    Database(String),
+    Ai(String),
+}
+
+impl TagEnrichmentError {
+    fn into_api_error(self) -> ApiError {
+        match self {
+            TagEnrichmentError::Database(e) => {
+                tracing::error!("Tag enrichment failed while reading user tags: {}", e);
+                ApiError::internal("Failed to enrich tags")
+            }
+            TagEnrichmentError::Ai(e) => {
+                tracing::warn!("AI tag enrichment unavailable: {}", e);
+                ApiError::service_unavailable("AI service unavailable")
+            }
+        }
+    }
+}
+
+impl fmt::Display for TagEnrichmentError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            TagEnrichmentError::Database(e) => write!(f, "database error: {}", e),
+            TagEnrichmentError::Ai(e) => write!(f, "AI error: {}", e),
+        }
+    }
+}
+
 /// Enrich a recipe
 ///
 /// This is a stateless endpoint that takes a recipe object and returns an enriched version.
@@ -38,7 +69,7 @@ fn enrich_ingredients(ingredients: Vec<Ingredient>) -> Result<Vec<Ingredient>, s
 ///
 /// Enriches:
 /// - Ingredient measurements with gram conversions (volume/weight → grams)
-/// - Tags by suggesting from the user's existing tag library (requires AI; skipped if unavailable)
+/// - Tags by suggesting from the user's existing tag library (requires AI; returns 503 if unavailable)
 #[utoipa::path(
     post,
     path = "/api/enrich",
@@ -48,6 +79,7 @@ fn enrich_ingredients(ingredients: Vec<Ingredient>) -> Result<Vec<Ingredient>, s
         (status = 200, description = "Enriched recipe object", body = RecipeContent),
         (status = 401, description = "Unauthorized", body = crate::api::ErrorResponse),
         (status = 500, description = "Internal server error", body = crate::api::ErrorResponse),
+        (status = 503, description = "AI service unavailable", body = crate::api::ErrorResponse),
     ),
     security(
         ("bearer_auth" = [])
@@ -58,13 +90,9 @@ pub async fn enrich_recipe(
     State(pool): State<Arc<DbPool>>,
     Json(request): Json<RecipeContent>,
 ) -> impl IntoResponse {
-    // Try AI-based tag enrichment (best-effort)
     let tags = match try_enrich_tags(&user.id, &pool, &request).await {
         Ok(tags) => tags,
-        Err(e) => {
-            tracing::warn!("AI tag enrichment skipped: {}", e);
-            request.tags.clone()
-        }
+        Err(e) => return e.into_api_error().into_response(),
     };
 
     // Enrich ingredient measurements (no AI needed - uses density database)
@@ -85,22 +113,25 @@ pub async fn enrich_recipe(
     (StatusCode::OK, Json(enriched)).into_response()
 }
 
-/// Try to enrich tags using AI. Returns the original tags on any failure.
+/// Try to enrich tags using AI.
 async fn try_enrich_tags(
     user_id: &uuid::Uuid,
     pool: &Arc<DbPool>,
     request: &RecipeContent,
-) -> Result<Vec<String>, String> {
-    let mut conn = pool.get().map_err(|e| e.to_string())?;
+) -> Result<Vec<String>, TagEnrichmentError> {
+    let mut conn = pool
+        .get()
+        .map_err(|e| TagEnrichmentError::Database(e.to_string()))?;
     let user_tags: Vec<String> = user_tags::table
         .filter(user_tags::user_id.eq(user_id))
         .filter(user_tags::deleted_at.is_null())
         .select(user_tags::name)
         .order(user_tags::name.asc())
         .load(&mut conn)
-        .map_err(|e| format!("failed to fetch user tags: {}", e))?;
+        .map_err(|e| TagEnrichmentError::Database(format!("failed to fetch user tags: {}", e)))?;
 
-    let ai_client = CachingAiClient::from_env().map_err(|e| e.to_string())?;
+    let ai_client =
+        CachingAiClient::from_env().map_err(|e| TagEnrichmentError::Ai(e.to_string()))?;
 
     // Format ingredients as string for prompt
     let ingredients_str = request
@@ -131,7 +162,7 @@ async fn try_enrich_tags(
         &user_tags,
     )
     .await
-    .map_err(|e| e.to_string())?;
+    .map_err(|e| TagEnrichmentError::Ai(e.to_string()))?;
 
     // Merge suggested tags with existing (dedup, case-insensitive)
     let mut tags = request.tags.clone();
@@ -239,3 +270,28 @@ pub async fn custom_enrich_recipe(
     components(schemas(RecipeContent, CustomEnrichRequest))
 )]
 pub struct ApiDoc;
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::api::ErrorCode;
+
+    #[test]
+    fn database_tag_enrichment_error_maps_to_internal() {
+        let error = TagEnrichmentError::Database("connection refused".to_string()).into_api_error();
+
+        assert_eq!(error.code, ErrorCode::Internal);
+        assert_eq!(error.message, "Failed to enrich tags");
+    }
+
+    #[test]
+    fn ai_tag_enrichment_error_maps_to_service_unavailable() {
+        let error = TagEnrichmentError::Ai(
+            "Missing required environment variable: OPENROUTER_API_KEY".to_string(),
+        )
+        .into_api_error();
+
+        assert_eq!(error.code, ErrorCode::ServiceUnavailable);
+        assert_eq!(error.message, "AI service unavailable");
+    }
+}

@@ -208,10 +208,7 @@ pub fn build_registry(
                 registry.register(Box::new(ApplyGeneratedDescriptionStep::new(pool.clone())));
             }
             ScrapeAutoAppliedAiEnrichment::AutoTag => {
-                let user_tags = fetch_user_tags(&pool, user_id).unwrap_or_else(|e| {
-                    tracing::warn!("Failed to fetch user tags: {}", e);
-                    vec![]
-                });
+                let user_tags = fetch_user_tags(&pool, user_id)?;
 
                 registry.register(Box::new(EnrichAutoTagStep::new(
                     ai_client
