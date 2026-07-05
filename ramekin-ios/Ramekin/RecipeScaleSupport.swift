@@ -54,13 +54,6 @@ enum RecipeScaleSupport {
             return value
         }
 
-        let formatter = NumberFormatter()
-        formatter.locale = .current
-        formatter.numberStyle = .decimal
-        if let value = formatter.number(from: amount)?.doubleValue {
-            return value
-        }
-
         guard amount.contains(","),
               !amount.contains("."),
               amount.filter({ $0 == "," }).count == 1 else {
@@ -152,9 +145,11 @@ enum RecipeScaleSupport {
         }
 
         let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = 2
         formatter.numberStyle = .decimal
+        formatter.usesGroupingSeparator = false
         return formatter.string(from: NSNumber(value: value)) ?? String(value)
     }
 }

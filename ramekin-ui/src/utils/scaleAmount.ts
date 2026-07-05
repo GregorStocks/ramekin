@@ -55,8 +55,8 @@ function parseAmount(raw: string): number | null {
     return num / denom;
   }
 
-  if (/^\d+(\.\d+)?$/.test(s) || /^\.\d+$/.test(s)) {
-    return Number(s);
+  if (/^\d+([\.,]\d+)?$/.test(s) || /^[\.,]\d+$/.test(s)) {
+    return Number(s.replace(",", "."));
   }
 
   return null;

@@ -1,0 +1,164 @@
+[
+  {
+    "name": "integer doubles",
+    "amount": "1",
+    "factor": 2,
+    "expected": "2"
+  },
+  {
+    "name": "dot decimal doubles",
+    "amount": "1.5",
+    "factor": 2,
+    "expected": "3"
+  },
+  {
+    "name": "comma decimal doubles",
+    "amount": "1,5",
+    "factor": 2,
+    "expected": "3"
+  },
+  {
+    "name": "leading dot decimal doubles",
+    "amount": ".5",
+    "factor": 2,
+    "expected": "1"
+  },
+  {
+    "name": "leading comma decimal doubles",
+    "amount": ",5",
+    "factor": 2,
+    "expected": "1"
+  },
+  {
+    "name": "simple fraction doubles",
+    "amount": "1/2",
+    "factor": 2,
+    "expected": "1"
+  },
+  {
+    "name": "mixed fraction doubles",
+    "amount": "1 1/2",
+    "factor": 2,
+    "expected": "3"
+  },
+  {
+    "name": "unicode fraction doubles",
+    "amount": "1\u00bd",
+    "factor": 2,
+    "expected": "3"
+  },
+  {
+    "name": "integer halves to unit fraction",
+    "amount": "1",
+    "factor": 0.5,
+    "expected": "1/2"
+  },
+  {
+    "name": "even integer halves to integer",
+    "amount": "2",
+    "factor": 0.5,
+    "expected": "1"
+  },
+  {
+    "name": "mixed fraction halves to decimal",
+    "amount": "1 1/2",
+    "factor": 0.5,
+    "expected": "0.75"
+  },
+  {
+    "name": "fraction halves to unit fraction",
+    "amount": "1/2",
+    "factor": 0.5,
+    "expected": "1/4"
+  },
+  {
+    "name": "unicode unit fraction doubles",
+    "amount": "\u00bd",
+    "factor": 2,
+    "expected": "1"
+  },
+  {
+    "name": "unicode quarter halves",
+    "amount": "\u00bc",
+    "factor": 0.5,
+    "expected": "1/8"
+  },
+  {
+    "name": "sixth doubles to third",
+    "amount": "1/6",
+    "factor": 2,
+    "expected": "1/3"
+  },
+  {
+    "name": "third doubles to trimmed decimal",
+    "amount": "1/3",
+    "factor": 2,
+    "expected": "0.67"
+  },
+  {
+    "name": "integer times decimal factor",
+    "amount": "1",
+    "factor": 1.5,
+    "expected": "1.5"
+  },
+  {
+    "name": "non-unit result uses dot decimal",
+    "amount": "2",
+    "factor": 0.75,
+    "expected": "1.5"
+  },
+  {
+    "name": "range remains unchanged",
+    "amount": "1-2",
+    "factor": 2,
+    "expected": "1-2"
+  },
+  {
+    "name": "free text remains unchanged",
+    "amount": "to taste",
+    "factor": 2,
+    "expected": "to taste"
+  },
+  {
+    "name": "zero denominator remains unchanged",
+    "amount": "1/0",
+    "factor": 2,
+    "expected": "1/0"
+  },
+  {
+    "name": "factor one remains unchanged",
+    "amount": "1",
+    "factor": 1,
+    "expected": "1"
+  },
+  {
+    "name": "zero factor remains unchanged",
+    "amount": "1",
+    "factor": 0,
+    "expected": "1"
+  },
+  {
+    "name": "negative factor remains unchanged",
+    "amount": "1",
+    "factor": -2,
+    "expected": "1"
+  },
+  {
+    "name": "empty amount remains empty",
+    "amount": "",
+    "factor": 2,
+    "expected": ""
+  },
+  {
+    "name": "multi-comma decimal remains unchanged",
+    "amount": "1,2,3",
+    "factor": 2,
+    "expected": "1,2,3"
+  },
+  {
+    "name": "mixed dot and comma remains unchanged",
+    "amount": "1,000.5",
+    "factor": 2,
+    "expected": "1,000.5"
+  }
+]
