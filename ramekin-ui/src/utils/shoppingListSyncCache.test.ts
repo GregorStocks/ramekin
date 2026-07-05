@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   applyShoppingListSyncResponse,
   loadShoppingListSyncCache,
+  replaceShoppingListCachedItems,
   saveShoppingListSyncCache,
   shoppingListCacheKey,
   type ShoppingListSyncCache,
@@ -114,6 +115,26 @@ describe("shopping list sync cache", () => {
     expect(() => loadShoppingListSyncCache(storage, "token-a")).toThrow(
       "unsupported version",
     );
+  });
+
+  it("replaces cached items without advancing the sync timestamp", () => {
+    const lastSyncAt = new Date("2026-07-01T12:00:00.000Z");
+    const nextItems = [shoppingItem({ id: "checked", item: "milk" })];
+
+    const next = replaceShoppingListCachedItems(
+      {
+        version: 1,
+        categoryOrder: ["Other"],
+        items: [shoppingItem({ id: "old", item: "eggs" })],
+        lastSyncAt,
+      },
+      nextItems,
+      ["Dairy & Eggs", "Other"],
+    );
+
+    expect(next.items).toBe(nextItems);
+    expect(next.categoryOrder).toEqual(["Dairy & Eggs", "Other"]);
+    expect(next.lastSyncAt).toBe(lastSyncAt);
   });
 });
 

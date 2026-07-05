@@ -9,6 +9,7 @@ import { createAsyncAction } from "../utils/asyncState";
 import {
   applyShoppingListSyncResponse,
   loadShoppingListSyncCache,
+  replaceShoppingListCachedItems,
   saveShoppingListSyncCache,
   type ShoppingListSyncCache,
 } from "../utils/shoppingListSyncCache";
@@ -59,6 +60,15 @@ export default function ShoppingListPage() {
   const applyCache = (cache: ShoppingListSyncCache) => {
     setItems(cache.items);
     setCategoryOrder(cache.categoryOrder);
+  };
+
+  const saveCurrentCacheItems = (nextItems: ShoppingListItemResponse[]) => {
+    const cached = loadShoppingListSyncCache(localStorage, token());
+    saveShoppingListSyncCache(
+      localStorage,
+      token(),
+      replaceShoppingListCachedItems(cached, nextItems, categoryOrder()),
+    );
   };
 
   const loadItems = async (showLoading = true) => {
@@ -120,11 +130,11 @@ export default function ShoppingListPage() {
           isChecked: !item.isChecked,
         },
       });
-      setItems((prev) =>
-        prev.map((i) =>
-          i.id === item.id ? { ...i, isChecked: !i.isChecked } : i,
-        ),
+      const nextItems = items().map((i) =>
+        i.id === item.id ? { ...i, isChecked: !i.isChecked } : i,
       );
+      setItems(nextItems);
+      saveCurrentCacheItems(nextItems);
     },
     "Failed to update item",
   );
@@ -151,7 +161,9 @@ export default function ShoppingListPage() {
     async (item: ShoppingListItemResponse) => {
       await getShoppingListApi().deleteItem({ id: item.id });
       setDeletingItem(null);
-      setItems((prev) => prev.filter((i) => i.id !== item.id));
+      const nextItems = items().filter((i) => i.id !== item.id);
+      setItems(nextItems);
+      saveCurrentCacheItems(nextItems);
     },
     "Failed to delete item",
     {
@@ -163,7 +175,9 @@ export default function ShoppingListPage() {
 
   const clearCheckedAction = createAsyncAction(async () => {
     await getShoppingListApi().clearChecked();
-    setItems((prev) => prev.filter((i) => !i.isChecked));
+    const nextItems = items().filter((i) => !i.isChecked);
+    setItems(nextItems);
+    saveCurrentCacheItems(nextItems);
   }, "Failed to clear checked items");
 
   const adding = addItemAction.loading;

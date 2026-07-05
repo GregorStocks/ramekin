@@ -74,6 +74,19 @@ export function applyShoppingListSyncResponse(
   };
 }
 
+export function replaceShoppingListCachedItems(
+  cache: ShoppingListSyncCache | null,
+  items: ShoppingListItemResponse[],
+  categoryOrder: string[],
+): ShoppingListSyncCache {
+  return {
+    version: CACHE_VERSION,
+    items,
+    categoryOrder,
+    lastSyncAt: cache?.lastSyncAt ?? null,
+  };
+}
+
 function itemFromServerChange(
   change: SyncServerChange,
 ): ShoppingListItemResponse {
