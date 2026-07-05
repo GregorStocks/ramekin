@@ -1,77 +1,38 @@
-import { createSignal, Show, onMount, onCleanup } from "solid-js";
-import { createStore, reconcile } from "solid-js/store";
+import { createSignal, Show, onMount } from "solid-js";
 import { useParams, useNavigate, A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import RecipeForm from "../components/RecipeForm";
-import {
-  extractApiError,
-  extractImageFile,
-  parseApiError,
-} from "../utils/recipeFormHelpers";
+import { extractApiError, parseApiError } from "../utils/recipeFormHelpers";
+import { createRecipeFormState } from "../utils/recipeFormState";
+import { emptyEditRecipeFormValues } from "../utils/recipeFormSerialization";
 import { ErrorCode } from "ramekin-client";
 import { usePageTitle } from "../utils/pageTitle";
-import type { Ingredient, RecipeResponse } from "ramekin-client";
+import type { RecipeResponse } from "ramekin-client";
 
 export default function EditRecipePage() {
   const params = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { getRecipesApi, getPhotosApi, refreshTags, token } = useAuth();
-
   const [loading, setLoading] = createSignal(true);
-  const [title, setTitle] = createSignal("");
-  usePageTitle(() => (title() ? `Edit: ${title()}` : "Edit Recipe"));
-  const [description, setDescription] = createSignal("");
-  const [photoIds, setPhotoIds] = createSignal<string[]>([]);
-  const [uploading, setUploading] = createSignal(false);
-  const [instructions, setInstructions] = createSignal("");
-  const [sourceUrl, setSourceUrl] = createSignal("");
-  const [sourceName, setSourceName] = createSignal("");
-  const [tags, setTags] = createSignal<string[]>([]);
-  const [ingredients, setIngredients] = createStore<Ingredient[]>([]);
-  const [servings, setServings] = createSignal("");
-  const [prepTime, setPrepTime] = createSignal("");
-  const [cookTime, setCookTime] = createSignal("");
-  const [totalTime, setTotalTime] = createSignal("");
-  const [rating, setRating] = createSignal<number | null>(null);
-  const [difficulty, setDifficulty] = createSignal("");
-  const [nutritionalInfo, setNutritionalInfo] = createSignal("");
-  const [notes, setNotes] = createSignal("");
+  const form = createRecipeFormState({
+    getPhotosApi,
+    initialValues: emptyEditRecipeFormValues(),
+    pasteEnabled: () => !loading(),
+  });
 
-  const [saving, setSaving] = createSignal(false);
-  const [error, setError] = createSignal<string | null>(null);
+  usePageTitle(() => (form.title() ? `Edit: ${form.title()}` : "Edit Recipe"));
 
   const loadRecipe = async () => {
     setLoading(true);
-    setError(null);
+    form.setError(null);
     try {
       const response: RecipeResponse = await getRecipesApi().getRecipe({
         id: params.id,
       });
-      setTitle(response.title);
-      setDescription(response.description || "");
-      setInstructions(response.instructions);
-      setSourceUrl(response.sourceUrl || "");
-      setSourceName(response.sourceName || "");
-      setTags(response.tags || []);
-      setPhotoIds(response.photoIds || []);
-      setIngredients(
-        reconcile(
-          response.ingredients?.length
-            ? response.ingredients
-            : [{ item: "", measurements: [{}] }],
-        ),
-      );
-      setServings(response.servings || "");
-      setPrepTime(response.prepTime || "");
-      setCookTime(response.cookTime || "");
-      setTotalTime(response.totalTime || "");
-      setRating(response.rating ?? null);
-      setDifficulty(response.difficulty || "");
-      setNutritionalInfo(response.nutritionalInfo || "");
-      setNotes(response.notes || "");
+      form.loadRecipe(response);
     } catch (err) {
       const parsed = await parseApiError(err, "Failed to load recipe");
-      setError(
+      form.setError(
         parsed.code === ErrorCode.NotFound
           ? "Recipe not found"
           : "Failed to load recipe",
@@ -85,82 +46,15 @@ export default function EditRecipePage() {
     loadRecipe();
   });
 
-  const uploadPhotoFile = async (file: File) => {
-    if (uploading()) return;
-    setUploading(true);
-    setError(null);
-    try {
-      const response = await getPhotosApi().upload({ file });
-      setPhotoIds([...photoIds(), response.id]);
-    } catch (err) {
-      const errorMessage = await extractApiError(err, "Failed to upload photo");
-      setError(errorMessage);
-    } finally {
-      setUploading(false);
-    }
-  };
-
-  const handlePhotoUpload = async (e: Event) => {
-    const input = e.target as HTMLInputElement;
-    const file = input.files?.[0];
-    if (!file) return;
-    try {
-      await uploadPhotoFile(file);
-    } finally {
-      input.value = "";
-    }
-  };
-
-  const handlePaste = (e: ClipboardEvent) => {
-    if (loading()) return;
-    const file = extractImageFile(e.clipboardData);
-    if (!file) return;
-    e.preventDefault();
-    void uploadPhotoFile(file);
-  };
-
-  onMount(() => {
-    document.addEventListener("paste", handlePaste);
-  });
-
-  onCleanup(() => {
-    document.removeEventListener("paste", handlePaste);
-  });
-
-  const removePhoto = (photoId: string) => {
-    setPhotoIds(photoIds().filter((id) => id !== photoId));
-  };
-
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
-    setError(null);
-    setSaving(true);
+    form.setError(null);
+    form.setSaving(true);
 
     try {
-      const validIngredients = ingredients.filter(
-        (ing) => ing.item.trim() !== "",
-      );
-
       await getRecipesApi().updateRecipe({
         id: params.id,
-        updateRecipeRequest: {
-          title: title(),
-          description: description() || null,
-          instructions: instructions(),
-          ingredients: validIngredients,
-          sourceUrl: sourceUrl() || null,
-          sourceName: sourceName() || null,
-          tags: tags().length > 0 ? tags() : undefined,
-          photoIds: photoIds(),
-          servings: servings() || null,
-          prepTime: prepTime() || null,
-          cookTime: cookTime() || null,
-          totalTime: totalTime() || null,
-          rating: rating() ?? null,
-          difficulty: difficulty() || null,
-          nutritionalInfo: nutritionalInfo() || null,
-          notes: notes() || null,
-        },
+        updateRecipeRequest: form.toUpdateRecipeRequest(),
       });
 
       // Refresh tags cache in case new tags were created
@@ -172,9 +66,9 @@ export default function EditRecipePage() {
         err,
         "Failed to update recipe",
       );
-      setError(errorMessage);
+      form.setError(errorMessage);
     } finally {
-      setSaving(false);
+      form.setSaving(false);
     }
   };
 
@@ -186,9 +80,9 @@ export default function EditRecipePage() {
         <p class="loading">Loading recipe...</p>
       </Show>
 
-      <Show when={error() && loading()}>
+      <Show when={form.error() && loading()}>
         <div class="error-state">
-          <p class="error">{error()}</p>
+          <p class="error">{form.error()}</p>
           <A href="/" class="btn">
             Back to Cookbook
           </A>
@@ -197,42 +91,7 @@ export default function EditRecipePage() {
 
       <Show when={!loading()}>
         <RecipeForm
-          title={title}
-          setTitle={setTitle}
-          description={description}
-          setDescription={setDescription}
-          instructions={instructions}
-          setInstructions={setInstructions}
-          sourceUrl={sourceUrl}
-          setSourceUrl={setSourceUrl}
-          sourceName={sourceName}
-          setSourceName={setSourceName}
-          tags={tags}
-          setTags={setTags}
-          servings={servings}
-          setServings={setServings}
-          prepTime={prepTime}
-          setPrepTime={setPrepTime}
-          cookTime={cookTime}
-          setCookTime={setCookTime}
-          totalTime={totalTime}
-          setTotalTime={setTotalTime}
-          rating={rating}
-          setRating={setRating}
-          difficulty={difficulty}
-          setDifficulty={setDifficulty}
-          nutritionalInfo={nutritionalInfo}
-          setNutritionalInfo={setNutritionalInfo}
-          notes={notes}
-          setNotes={setNotes}
-          ingredients={ingredients}
-          setIngredients={setIngredients}
-          photoIds={photoIds}
-          onPhotoUpload={handlePhotoUpload}
-          onPhotoRemove={removePhoto}
-          uploading={uploading}
-          saving={saving}
-          error={error}
+          form={form}
           onSubmit={handleSubmit}
           submitLabel="Save Changes"
           submitLabelSaving="Saving..."
