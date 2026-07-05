@@ -20,6 +20,13 @@ pub struct CreateShoppingListItemRequest {
         skip_serializing_if = "Option::is_none"
     )]
     pub amount: Option<Option<String>>,
+    #[serde(
+        rename = "category_override",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub category_override: Option<Option<String>>,
     /// Client-generated ID for offline sync
     #[serde(
         rename = "client_id",
@@ -57,6 +64,7 @@ impl CreateShoppingListItemRequest {
     pub fn new(item: String) -> CreateShoppingListItemRequest {
         CreateShoppingListItemRequest {
             amount: None,
+            category_override: None,
             client_id: None,
             item,
             note: None,

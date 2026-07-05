@@ -28,6 +28,7 @@ export function CreateShoppingListItemRequestFromJSONTyped(json, ignoreDiscrimin
     }
     return {
         'amount': json['amount'] == null ? undefined : json['amount'],
+        'categoryOverride': json['category_override'] == null ? undefined : json['category_override'],
         'clientId': json['client_id'] == null ? undefined : json['client_id'],
         'item': json['item'],
         'note': json['note'] == null ? undefined : json['note'],
@@ -44,6 +45,7 @@ export function CreateShoppingListItemRequestToJSONTyped(value, ignoreDiscrimina
     }
     return {
         'amount': value['amount'],
+        'category_override': value['categoryOverride'],
         'client_id': value['clientId'],
         'item': value['item'],
         'note': value['note'],

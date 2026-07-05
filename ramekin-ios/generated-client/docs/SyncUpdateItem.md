@@ -4,6 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **String** |  | [optional] 
+**categoryOverride** | **String** |  | [optional] 
+**clearCategoryOverride** | **Bool** |  | [optional] 
 **expectedVersion** | **Int** | Expected version for optimistic locking | 
 **id** | **UUID** |  | 
 **isChecked** | **Bool** |  | [optional] 

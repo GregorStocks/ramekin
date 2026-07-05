@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | Option<**String**> |  | [optional]
-**category** | **String** | Computed aisle category for grouping (e.g., \"Produce\", \"Dairy & Eggs\") | 
+**category** | **String** | Aisle category for grouping (override when set, otherwise computed). | 
+**category_override** | Option<**String**> | User-selected category override; when set, it wins over computed category. | [optional]
 **id** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
 **is_checked** | **bool** |  | 
 **item** | **String** |  | 

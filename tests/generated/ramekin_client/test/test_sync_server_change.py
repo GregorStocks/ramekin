@@ -37,6 +37,7 @@ class TestSyncServerChange(unittest.TestCase):
             return SyncServerChange(
                 amount = '',
                 category = '',
+                category_override = '',
                 id = '',
                 is_checked = True,
                 item = '',

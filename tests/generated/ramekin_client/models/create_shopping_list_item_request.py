@@ -28,12 +28,13 @@ class CreateShoppingListItemRequest(BaseModel):
     CreateShoppingListItemRequest
     """ # noqa: E501
     amount: Optional[StrictStr] = None
+    category_override: Optional[StrictStr] = None
     client_id: Optional[UUID] = Field(default=None, description="Client-generated ID for offline sync")
     item: StrictStr
     note: Optional[StrictStr] = None
     source_recipe_id: Optional[UUID] = None
     source_recipe_title: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["amount", "client_id", "item", "note", "source_recipe_id", "source_recipe_title"]
+    __properties: ClassVar[List[str]] = ["amount", "category_override", "client_id", "item", "note", "source_recipe_id", "source_recipe_title"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -79,6 +80,11 @@ class CreateShoppingListItemRequest(BaseModel):
         if self.amount is None and "amount" in self.model_fields_set:
             _dict['amount'] = None
 
+        # set to None if category_override (nullable) is None
+        # and model_fields_set contains the field
+        if self.category_override is None and "category_override" in self.model_fields_set:
+            _dict['category_override'] = None
+
         # set to None if client_id (nullable) is None
         # and model_fields_set contains the field
         if self.client_id is None and "client_id" in self.model_fields_set:
@@ -112,6 +118,7 @@ class CreateShoppingListItemRequest(BaseModel):
 
         _obj = cls.model_validate({
             "amount": obj.get("amount"),
+            "category_override": obj.get("category_override"),
             "client_id": obj.get("client_id"),
             "item": obj.get("item"),
             "note": obj.get("note"),

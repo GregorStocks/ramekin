@@ -3,6 +3,48 @@ import XCTest
 @testable import Ramekin
 
 final class ShoppingListMutationSupportTests: XCTestCase {
+    func testUpdateCategoryOverrideSetsCategoryAndMarksSyncedItemPending() throws {
+        let context = makeInMemoryContainer().viewContext
+        let item = ShoppingItem.create(in: context, item: "Milk", sortOrder: 0)
+        item.markSynced(serverVersion: 3)
+
+        ShoppingListMutationSupport.updateCategoryOverride(item, categoryOverride: "Produce")
+
+        XCTAssertEqual(item.categoryOverride, "Produce")
+        XCTAssertEqual(item.category, "Produce")
+        XCTAssertFalse(item.clearCategoryOverride)
+        XCTAssertEqual(item.syncStatusEnum, .pendingUpdate)
+    }
+
+    func testUpdateCategoryOverrideClearsSyncedItemWithDirtyFlag() throws {
+        let context = makeInMemoryContainer().viewContext
+        let item = ShoppingItem.create(in: context, item: "Milk", sortOrder: 0)
+        item.categoryOverride = "Produce"
+        item.category = "Produce"
+        item.markSynced(serverVersion: 3)
+
+        ShoppingListMutationSupport.updateCategoryOverride(item, categoryOverride: nil)
+
+        XCTAssertNil(item.categoryOverride)
+        XCTAssertNil(item.category)
+        XCTAssertTrue(item.clearCategoryOverride)
+        XCTAssertEqual(item.syncStatusEnum, .pendingUpdate)
+    }
+
+    func testUpdateCategoryOverrideClearsPendingCreateWithoutDirtyFlag() throws {
+        let context = makeInMemoryContainer().viewContext
+        let item = ShoppingItem.create(in: context, item: "Milk", sortOrder: 0)
+        item.categoryOverride = "Produce"
+        item.category = "Produce"
+
+        ShoppingListMutationSupport.updateCategoryOverride(item, categoryOverride: nil)
+
+        XCTAssertNil(item.categoryOverride)
+        XCTAssertNil(item.category)
+        XCTAssertFalse(item.clearCategoryOverride)
+        XCTAssertEqual(item.syncStatusEnum, .pendingCreate)
+    }
+
     func testAddItemsFromRecipeAssignsSequentialSortOrderAndMetadata() throws {
         let container = makeInMemoryContainer()
         let context = container.viewContext

@@ -26,6 +26,12 @@ export interface SyncCreateItem {
      * @type {string}
      * @memberof SyncCreateItem
      */
+    categoryOverride?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SyncCreateItem
+     */
     clientId: string;
     /**
      *

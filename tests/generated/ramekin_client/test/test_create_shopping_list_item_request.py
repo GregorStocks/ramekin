@@ -36,6 +36,7 @@ class TestCreateShoppingListItemRequest(unittest.TestCase):
         if include_optional:
             return CreateShoppingListItemRequest(
                 amount = '',
+                category_override = '',
                 client_id = '',
                 item = '',
                 note = '',

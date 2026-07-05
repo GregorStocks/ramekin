@@ -8,6 +8,7 @@ Name | Type
 ------------ | -------------
 `amount` | string
 `category` | string
+`categoryOverride` | string
 `id` | string
 `isChecked` | boolean
 `item` | string
@@ -27,6 +28,7 @@ import type { SyncServerChange } from ''
 const example = {
   "amount": null,
   "category": null,
+  "categoryOverride": null,
   "id": null,
   "isChecked": null,
   "item": null,

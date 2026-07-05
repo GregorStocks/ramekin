@@ -14,6 +14,8 @@ import AnyCodable
 public struct SyncUpdateItem: Codable, JSONEncodable, Hashable {
 
     public var amount: String?
+    public var categoryOverride: String?
+    public var clearCategoryOverride: Bool?
     /** Expected version for optimistic locking */
     public var expectedVersion: Int
     public var id: UUID
@@ -22,8 +24,10 @@ public struct SyncUpdateItem: Codable, JSONEncodable, Hashable {
     public var note: String?
     public var sortOrder: Int?
 
-    public init(amount: String? = nil, expectedVersion: Int, id: UUID, isChecked: Bool? = nil, item: String? = nil, note: String? = nil, sortOrder: Int? = nil) {
+    public init(amount: String? = nil, categoryOverride: String? = nil, clearCategoryOverride: Bool? = nil, expectedVersion: Int, id: UUID, isChecked: Bool? = nil, item: String? = nil, note: String? = nil, sortOrder: Int? = nil) {
         self.amount = amount
+        self.categoryOverride = categoryOverride
+        self.clearCategoryOverride = clearCategoryOverride
         self.expectedVersion = expectedVersion
         self.id = id
         self.isChecked = isChecked
@@ -34,6 +38,8 @@ public struct SyncUpdateItem: Codable, JSONEncodable, Hashable {
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case amount
+        case categoryOverride = "category_override"
+        case clearCategoryOverride = "clear_category_override"
         case expectedVersion = "expected_version"
         case id
         case isChecked = "is_checked"
@@ -47,6 +53,8 @@ public struct SyncUpdateItem: Codable, JSONEncodable, Hashable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(amount, forKey: .amount)
+        try container.encodeIfPresent(categoryOverride, forKey: .categoryOverride)
+        try container.encodeIfPresent(clearCategoryOverride, forKey: .clearCategoryOverride)
         try container.encode(expectedVersion, forKey: .expectedVersion)
         try container.encode(id, forKey: .id)
         try container.encodeIfPresent(isChecked, forKey: .isChecked)

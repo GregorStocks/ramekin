@@ -30,6 +30,12 @@ export interface SyncCreateItem {
      * @type {string}
      * @memberof SyncCreateItem
      */
+    categoryOverride?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof SyncCreateItem
+     */
     clientId: string;
     /**
      * 
@@ -91,6 +97,7 @@ export function SyncCreateItemFromJSONTyped(json: any, ignoreDiscriminator: bool
     return {
         
         'amount': json['amount'] == null ? undefined : json['amount'],
+        'categoryOverride': json['category_override'] == null ? undefined : json['category_override'],
         'clientId': json['client_id'],
         'isChecked': json['is_checked'],
         'item': json['item'],
@@ -113,6 +120,7 @@ export function SyncCreateItemToJSONTyped(value?: SyncCreateItem | null, ignoreD
     return {
         
         'amount': value['amount'],
+        'category_override': value['categoryOverride'],
         'client_id': value['clientId'],
         'is_checked': value['isChecked'],
         'item': value['item'],

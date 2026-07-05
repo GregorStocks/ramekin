@@ -67,7 +67,7 @@ This endpoint does not need any parameter.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import RamekinClient
 
-let createShoppingListRequest = CreateShoppingListRequest(items: [CreateShoppingListItemRequest(amount: "amount_example", clientId: 123, item: "item_example", note: "note_example", sourceRecipeId: 123, sourceRecipeTitle: "sourceRecipeTitle_example")]) // CreateShoppingListRequest | 
+let createShoppingListRequest = CreateShoppingListRequest(items: [CreateShoppingListItemRequest(amount: "amount_example", categoryOverride: "categoryOverride_example", clientId: 123, item: "item_example", note: "note_example", sourceRecipeId: 123, sourceRecipeTitle: "sourceRecipeTitle_example")]) // CreateShoppingListRequest | 
 
 ShoppingListAPI.createItems(createShoppingListRequest: createShoppingListRequest) { (response, error) in
     guard error == nil else {
@@ -204,7 +204,7 @@ This endpoint does not need any parameter.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import RamekinClient
 
-let syncRequest = SyncRequest(creates: [SyncCreateItem(amount: "amount_example", clientId: 123, isChecked: false, item: "item_example", note: "note_example", sortOrder: 123, sourceRecipeId: 123, sourceRecipeTitle: "sourceRecipeTitle_example")], deletes: [123], lastSyncAt: Date(), updates: [SyncUpdateItem(amount: "amount_example", expectedVersion: 123, id: 123, isChecked: false, item: "item_example", note: "note_example", sortOrder: 123)]) // SyncRequest | 
+let syncRequest = SyncRequest(creates: [SyncCreateItem(amount: "amount_example", categoryOverride: "categoryOverride_example", clientId: 123, isChecked: false, item: "item_example", note: "note_example", sortOrder: 123, sourceRecipeId: 123, sourceRecipeTitle: "sourceRecipeTitle_example")], deletes: [123], lastSyncAt: Date(), updates: [SyncUpdateItem(amount: "amount_example", categoryOverride: "categoryOverride_example", clearCategoryOverride: false, expectedVersion: 123, id: 123, isChecked: false, item: "item_example", note: "note_example", sortOrder: 123)]) // SyncRequest | 
 
 ShoppingListAPI.syncItems(syncRequest: syncRequest) { (response, error) in
     guard error == nil else {
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 import RamekinClient
 
 let id = 987 // UUID | Shopping list item ID
-let updateShoppingListItemRequest = UpdateShoppingListItemRequest(amount: "amount_example", isChecked: false, item: "item_example", note: "note_example", sortOrder: 123) // UpdateShoppingListItemRequest | 
+let updateShoppingListItemRequest = UpdateShoppingListItemRequest(amount: "amount_example", categoryOverride: "categoryOverride_example", clearCategoryOverride: false, isChecked: false, item: "item_example", note: "note_example", sortOrder: 123) // UpdateShoppingListItemRequest | 
 
 ShoppingListAPI.updateItem(id: id, updateShoppingListItemRequest: updateShoppingListItemRequest) { (response, error) in
     guard error == nil else {

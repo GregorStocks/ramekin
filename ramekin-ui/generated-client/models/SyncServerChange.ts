@@ -26,11 +26,17 @@ export interface SyncServerChange {
      */
     amount?: string | null;
     /**
-     * Computed aisle category for grouping (e.g., "Produce", "Dairy & Eggs")
+     * Aisle category for grouping (override when set, otherwise computed).
      * @type {string}
      * @memberof SyncServerChange
      */
     category: string;
+    /**
+     * User-selected category override; when set, it wins over computed category.
+     * @type {string}
+     * @memberof SyncServerChange
+     */
+    categoryOverride?: string | null;
     /**
      * 
      * @type {string}
@@ -113,6 +119,7 @@ export function SyncServerChangeFromJSONTyped(json: any, ignoreDiscriminator: bo
         
         'amount': json['amount'] == null ? undefined : json['amount'],
         'category': json['category'],
+        'categoryOverride': json['category_override'] == null ? undefined : json['category_override'],
         'id': json['id'],
         'isChecked': json['is_checked'],
         'item': json['item'],
@@ -138,6 +145,7 @@ export function SyncServerChangeToJSONTyped(value?: SyncServerChange | null, ign
         
         'amount': value['amount'],
         'category': value['category'],
+        'category_override': value['categoryOverride'],
         'id': value['id'],
         'is_checked': value['isChecked'],
         'item': value['item'],

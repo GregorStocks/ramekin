@@ -7,6 +7,8 @@
 Name | Type
 ------------ | -------------
 `amount` | string
+`categoryOverride` | string
+`clearCategoryOverride` | boolean
 `isChecked` | boolean
 `item` | string
 `note` | string
@@ -20,6 +22,8 @@ import type { UpdateShoppingListItemRequest } from ''
 // TODO: Update the object below with actual values
 const example = {
   "amount": null,
+  "categoryOverride": null,
+  "clearCategoryOverride": null,
   "isChecked": null,
   "item": null,
   "note": null,

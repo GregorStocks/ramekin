@@ -51,6 +51,7 @@ class TestSyncResponse(unittest.TestCase):
                     ramekin_client.models.shopping_list_item_response.ShoppingListItemResponse(
                         amount = '', 
                         category = '', 
+                        category_override = '', 
                         id = '', 
                         is_checked = True, 
                         item = '', 
@@ -87,6 +88,7 @@ class TestSyncResponse(unittest.TestCase):
                     ramekin_client.models.shopping_list_item_response.ShoppingListItemResponse(
                         amount = '', 
                         category = '', 
+                        category_override = '', 
                         id = '', 
                         is_checked = True, 
                         item = '', 

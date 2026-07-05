@@ -94,6 +94,12 @@ class ShoppingListStore: ObservableObject {
         saveAndSync()
     }
 
+    func updateCategoryOverride(_ item: ShoppingItem, categoryOverride: String?) {
+        guard item.categoryOverride != categoryOverride else { return }
+        ShoppingListMutationSupport.updateCategoryOverride(item, categoryOverride: categoryOverride)
+        saveAndSync()
+    }
+
     func deleteItem(_ item: ShoppingItem) {
         if item.syncStatusEnum == .pendingCreate {
             coreDataStack.viewContext.delete(item)
@@ -192,13 +198,16 @@ class ShoppingListStore: ObservableObject {
             switch item.syncStatusEnum {
             case .pendingCreate:
                 creates.append(SyncCreateItem(
-                    amount: item.amount, clientId: itemId, isChecked: item.isChecked,
+                    amount: item.amount, categoryOverride: item.categoryOverride,
+                    clientId: itemId, isChecked: item.isChecked,
                     item: item.item ?? "", note: item.note, sortOrder: Int(item.sortOrder),
                     sourceRecipeId: item.sourceRecipeId, sourceRecipeTitle: item.sourceRecipeTitle
                 ))
             case .pendingUpdate:
                 updates.append(SyncUpdateItem(
-                    amount: item.amount, expectedVersion: Int(item.serverVersion), id: itemId,
+                    amount: item.amount, categoryOverride: item.categoryOverride,
+                    clearCategoryOverride: item.clearCategoryOverride ? true : nil,
+                    expectedVersion: Int(item.serverVersion), id: itemId,
                     isChecked: item.isChecked, item: item.item, note: item.note, sortOrder: Int(item.sortOrder)
                 ))
             case .pendingDelete:
@@ -269,6 +278,7 @@ class ShoppingListStore: ObservableObject {
             item.sortOrder = Int32(change.sortOrder)
             item.sourceRecipeId = change.sourceRecipeId
             item.sourceRecipeTitle = change.sourceRecipeTitle
+            item.categoryOverride = change.categoryOverride
             item.category = change.category
             item.updatedAt = change.updatedAt
             item.markSynced(serverVersion: Int32(change.version))
@@ -282,6 +292,7 @@ class ShoppingListStore: ObservableObject {
             newItem.sortOrder = Int32(change.sortOrder)
             newItem.sourceRecipeId = change.sourceRecipeId
             newItem.sourceRecipeTitle = change.sourceRecipeTitle
+            newItem.categoryOverride = change.categoryOverride
             newItem.category = change.category
             newItem.createdAt = Date()
             newItem.updatedAt = change.updatedAt

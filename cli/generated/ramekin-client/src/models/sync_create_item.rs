@@ -21,6 +21,13 @@ pub struct SyncCreateItem {
         skip_serializing_if = "Option::is_none"
     )]
     pub amount: Option<Option<String>>,
+    #[serde(
+        rename = "category_override",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub category_override: Option<Option<String>>,
     #[serde(rename = "client_id")]
     pub client_id: uuid::Uuid,
     #[serde(rename = "is_checked")]
@@ -62,6 +69,7 @@ impl SyncCreateItem {
     ) -> SyncCreateItem {
         SyncCreateItem {
             amount: None,
+            category_override: None,
             client_id,
             is_checked,
             item,

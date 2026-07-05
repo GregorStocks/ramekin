@@ -21,6 +21,20 @@ pub struct SyncUpdateItem {
         skip_serializing_if = "Option::is_none"
     )]
     pub amount: Option<Option<String>>,
+    #[serde(
+        rename = "category_override",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub category_override: Option<Option<String>>,
+    #[serde(
+        rename = "clear_category_override",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub clear_category_override: Option<Option<bool>>,
     /// Expected version for optimistic locking
     #[serde(rename = "expected_version")]
     pub expected_version: i32,
@@ -61,6 +75,8 @@ impl SyncUpdateItem {
     pub fn new(expected_version: i32, id: uuid::Uuid) -> SyncUpdateItem {
         SyncUpdateItem {
             amount: None,
+            category_override: None,
+            clear_category_override: None,
             expected_version,
             id,
             is_checked: None,

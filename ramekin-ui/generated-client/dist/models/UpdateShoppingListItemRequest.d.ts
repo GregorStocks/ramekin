@@ -23,6 +23,18 @@ export interface UpdateShoppingListItemRequest {
     amount?: string | null;
     /**
      *
+     * @type {string}
+     * @memberof UpdateShoppingListItemRequest
+     */
+    categoryOverride?: string | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof UpdateShoppingListItemRequest
+     */
+    clearCategoryOverride?: boolean | null;
+    /**
+     *
      * @type {boolean}
      * @memberof UpdateShoppingListItemRequest
      */

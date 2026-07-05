@@ -26,11 +26,17 @@ export interface ShoppingListItemResponse {
      */
     amount?: string | null;
     /**
-     * Computed aisle category for grouping (e.g., "Produce", "Dairy & Eggs")
+     * Aisle category for grouping (override when set, otherwise computed).
      * @type {string}
      * @memberof ShoppingListItemResponse
      */
     category: string;
+    /**
+     * User-selected category override; when set, it wins over computed category.
+     * @type {string}
+     * @memberof ShoppingListItemResponse
+     */
+    categoryOverride?: string | null;
     /**
      * 
      * @type {string}
@@ -113,6 +119,7 @@ export function ShoppingListItemResponseFromJSONTyped(json: any, ignoreDiscrimin
         
         'amount': json['amount'] == null ? undefined : json['amount'],
         'category': json['category'],
+        'categoryOverride': json['category_override'] == null ? undefined : json['category_override'],
         'id': json['id'],
         'isChecked': json['is_checked'],
         'item': json['item'],
@@ -138,6 +145,7 @@ export function ShoppingListItemResponseToJSONTyped(value?: ShoppingListItemResp
         
         'amount': value['amount'],
         'category': value['category'],
+        'category_override': value['categoryOverride'],
         'id': value['id'],
         'is_checked': value['isChecked'],
         'item': value['item'],

@@ -26,6 +26,8 @@ export function UpdateShoppingListItemRequestFromJSONTyped(json, ignoreDiscrimin
     }
     return {
         'amount': json['amount'] == null ? undefined : json['amount'],
+        'categoryOverride': json['category_override'] == null ? undefined : json['category_override'],
+        'clearCategoryOverride': json['clear_category_override'] == null ? undefined : json['clear_category_override'],
         'isChecked': json['is_checked'] == null ? undefined : json['is_checked'],
         'item': json['item'] == null ? undefined : json['item'],
         'note': json['note'] == null ? undefined : json['note'],
@@ -41,6 +43,8 @@ export function UpdateShoppingListItemRequestToJSONTyped(value, ignoreDiscrimina
     }
     return {
         'amount': value['amount'],
+        'category_override': value['categoryOverride'],
+        'clear_category_override': value['clearCategoryOverride'],
         'is_checked': value['isChecked'],
         'item': value['item'],
         'note': value['note'],

@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | Option<**String**> |  | [optional]
+**category_override** | Option<**String**> |  | [optional]
+**clear_category_override** | Option<**bool**> |  | [optional]
 **expected_version** | **i32** | Expected version for optimistic locking | 
 **id** | [**uuid::Uuid**](uuid::Uuid.md) |  | 
 **is_checked** | Option<**bool**> |  | [optional]

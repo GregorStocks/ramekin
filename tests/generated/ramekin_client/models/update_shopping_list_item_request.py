@@ -27,11 +27,13 @@ class UpdateShoppingListItemRequest(BaseModel):
     UpdateShoppingListItemRequest
     """ # noqa: E501
     amount: Optional[StrictStr] = None
+    category_override: Optional[StrictStr] = None
+    clear_category_override: Optional[StrictBool] = None
     is_checked: Optional[StrictBool] = None
     item: Optional[StrictStr] = None
     note: Optional[StrictStr] = None
     sort_order: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["amount", "is_checked", "item", "note", "sort_order"]
+    __properties: ClassVar[List[str]] = ["amount", "category_override", "clear_category_override", "is_checked", "item", "note", "sort_order"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -77,6 +79,16 @@ class UpdateShoppingListItemRequest(BaseModel):
         if self.amount is None and "amount" in self.model_fields_set:
             _dict['amount'] = None
 
+        # set to None if category_override (nullable) is None
+        # and model_fields_set contains the field
+        if self.category_override is None and "category_override" in self.model_fields_set:
+            _dict['category_override'] = None
+
+        # set to None if clear_category_override (nullable) is None
+        # and model_fields_set contains the field
+        if self.clear_category_override is None and "clear_category_override" in self.model_fields_set:
+            _dict['clear_category_override'] = None
+
         # set to None if is_checked (nullable) is None
         # and model_fields_set contains the field
         if self.is_checked is None and "is_checked" in self.model_fields_set:
@@ -110,6 +122,8 @@ class UpdateShoppingListItemRequest(BaseModel):
 
         _obj = cls.model_validate({
             "amount": obj.get("amount"),
+            "category_override": obj.get("category_override"),
+            "clear_category_override": obj.get("clear_category_override"),
             "is_checked": obj.get("is_checked"),
             "item": obj.get("item"),
             "note": obj.get("note"),

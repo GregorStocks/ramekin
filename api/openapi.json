@@ -2887,6 +2887,12 @@
               "null"
             ]
           },
+          "category_override": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
           "client_id": {
             "type": [
               "string",
@@ -3946,7 +3952,14 @@
           },
           "category": {
             "type": "string",
-            "description": "Computed aisle category for grouping (e.g., \"Produce\", \"Dairy & Eggs\")"
+            "description": "Aisle category for grouping (override when set, otherwise computed)."
+          },
+          "category_override": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "User-selected category override; when set, it wins over computed category."
           },
           "id": {
             "type": "string",
@@ -4121,6 +4134,12 @@
         ],
         "properties": {
           "amount": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "category_override": {
             "type": [
               "string",
               "null"
@@ -4322,7 +4341,14 @@
           },
           "category": {
             "type": "string",
-            "description": "Computed aisle category for grouping (e.g., \"Produce\", \"Dairy & Eggs\")"
+            "description": "Aisle category for grouping (override when set, otherwise computed)."
+          },
+          "category_override": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "User-selected category override; when set, it wins over computed category."
           },
           "id": {
             "type": "string",
@@ -4378,6 +4404,18 @@
           "amount": {
             "type": [
               "string",
+              "null"
+            ]
+          },
+          "category_override": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "clear_category_override": {
+            "type": [
+              "boolean",
               "null"
             ]
           },
@@ -4649,6 +4687,18 @@
           "amount": {
             "type": [
               "string",
+              "null"
+            ]
+          },
+          "category_override": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "clear_category_override": {
+            "type": [
+              "boolean",
               "null"
             ]
           },

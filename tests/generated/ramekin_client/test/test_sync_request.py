@@ -38,6 +38,7 @@ class TestSyncRequest(unittest.TestCase):
                 creates = [
                     ramekin_client.models.sync_create_item.SyncCreateItem(
                         amount = '', 
+                        category_override = '', 
                         client_id = '', 
                         is_checked = True, 
                         item = '', 
@@ -53,6 +54,8 @@ class TestSyncRequest(unittest.TestCase):
                 updates = [
                     ramekin_client.models.sync_update_item.SyncUpdateItem(
                         amount = '', 
+                        category_override = '', 
+                        clear_category_override = True, 
                         expected_version = 56, 
                         id = '', 
                         is_checked = True, 

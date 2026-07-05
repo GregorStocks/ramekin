@@ -610,6 +610,229 @@ def test_items_have_category(authed_api_client):
     assert items_by_name["unknown_xyz_ingredient"].category == "Other"
 
 
+def test_update_item_category_override_wins_over_computed_category(authed_api_client):
+    """Test that a persisted category override wins over computed category."""
+    client, user_id = authed_api_client
+    api = ShoppingListApi(client)
+
+    create_response = api.create_items(
+        CreateShoppingListRequest(
+            items=[CreateShoppingListItemRequest(item="chicken breast")]
+        )
+    )
+
+    api.update_item(
+        create_response.ids[0],
+        UpdateShoppingListItemRequest(category_override="Produce"),
+    )
+
+    item = api.list_items().items[0]
+    assert item.category == "Produce"
+    assert item.category_override == "Produce"
+
+
+def test_update_item_category_override_can_be_cleared(authed_api_client):
+    """Test that explicit null clears a category override."""
+    client, user_id = authed_api_client
+    api = ShoppingListApi(client)
+
+    create_response = api.create_items(
+        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="butter")])
+    )
+    item_id = create_response.ids[0]
+
+    api.update_item(item_id, UpdateShoppingListItemRequest(category_override="Produce"))
+    assert api.list_items().items[0].category == "Produce"
+
+    api.update_item(item_id, UpdateShoppingListItemRequest(category_override=None))
+
+    item = api.list_items().items[0]
+    assert item.category == "Dairy & Eggs"
+    assert item.category_override is None
+
+
+def test_update_item_category_override_can_be_cleared_with_flag(authed_api_client):
+    """Test that clients which cannot encode null can clear with a flag."""
+    client, user_id = authed_api_client
+    api = ShoppingListApi(client)
+
+    create_response = api.create_items(
+        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="butter")])
+    )
+    item_id = create_response.ids[0]
+
+    api.update_item(item_id, UpdateShoppingListItemRequest(category_override="Produce"))
+    api.update_item(
+        item_id, UpdateShoppingListItemRequest(clear_category_override=True)
+    )
+
+    item = api.list_items().items[0]
+    assert item.category == "Dairy & Eggs"
+    assert item.category_override is None
+
+
+def test_update_item_rejects_unknown_category_override(authed_api_client):
+    """Test that category overrides must use the served category vocabulary."""
+    client, user_id = authed_api_client
+    api = ShoppingListApi(client)
+
+    create_response = api.create_items(
+        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="butter")])
+    )
+
+    with pytest.raises(ApiException) as exc_info:
+        api.update_item(
+            create_response.ids[0],
+            UpdateShoppingListItemRequest(category_override="Not A Category"),
+        )
+
+    assert exc_info.value.status == 400
+
+
+def test_sync_create_item_category_override(authed_api_client):
+    """Test that sync-created items can carry a category override."""
+    client, user_id = authed_api_client
+    api = ShoppingListApi(client)
+
+    sync_response = api.sync_items(
+        SyncRequest(
+            creates=[
+                SyncCreateItem(
+                    client_id=str(uuid.uuid4()),
+                    item="chicken breast",
+                    category_override="Produce",
+                    is_checked=False,
+                    sort_order=0,
+                )
+            ]
+        )
+    )
+
+    assert len(sync_response.created) == 1
+    item = api.list_items().items[0]
+    assert item.category == "Produce"
+    assert item.category_override == "Produce"
+
+
+def test_sync_update_item_category_override_can_be_cleared(authed_api_client):
+    """Test that sync updates can set and clear a category override."""
+    client, user_id = authed_api_client
+    api = ShoppingListApi(client)
+
+    create_response = api.create_items(
+        CreateShoppingListRequest(
+            items=[CreateShoppingListItemRequest(item="olive oil")]
+        )
+    )
+    item_id = create_response.ids[0]
+    version = api.list_items().items[0].version
+
+    sync_response = api.sync_items(
+        SyncRequest(
+            updates=[
+                SyncUpdateItem(
+                    id=item_id,
+                    category_override="Produce",
+                    expected_version=version,
+                )
+            ]
+        )
+    )
+    assert sync_response.updated[0].success is True
+    item = api.list_items().items[0]
+    assert item.category == "Produce"
+    assert item.category_override == "Produce"
+
+    sync_response = api.sync_items(
+        SyncRequest(
+            updates=[
+                SyncUpdateItem(
+                    id=item_id,
+                    category_override=None,
+                    expected_version=item.version,
+                )
+            ]
+        )
+    )
+    assert sync_response.updated[0].success is True
+    item = api.list_items().items[0]
+    assert item.category == "Oils & Vinegars"
+    assert item.category_override is None
+
+
+def test_sync_update_item_category_override_can_be_cleared_with_flag(
+    authed_api_client,
+):
+    """Test that sync clients can clear category override without encoding null."""
+    client, user_id = authed_api_client
+    api = ShoppingListApi(client)
+
+    create_response = api.create_items(
+        CreateShoppingListRequest(
+            items=[CreateShoppingListItemRequest(item="olive oil")]
+        )
+    )
+    item_id = create_response.ids[0]
+    version = api.list_items().items[0].version
+
+    sync_response = api.sync_items(
+        SyncRequest(
+            updates=[
+                SyncUpdateItem(
+                    id=item_id,
+                    category_override="Produce",
+                    expected_version=version,
+                )
+            ]
+        )
+    )
+    assert sync_response.updated[0].success is True
+
+    item = api.list_items().items[0]
+    sync_response = api.sync_items(
+        SyncRequest(
+            updates=[
+                SyncUpdateItem(
+                    id=item_id,
+                    clear_category_override=True,
+                    expected_version=item.version,
+                )
+            ]
+        )
+    )
+
+    assert sync_response.updated[0].success is True
+    item = api.list_items().items[0]
+    assert item.category == "Oils & Vinegars"
+    assert item.category_override is None
+
+
+def test_sync_update_rejects_unknown_category_override(authed_api_client):
+    """Test that sync category overrides must use the served vocabulary."""
+    client, user_id = authed_api_client
+    api = ShoppingListApi(client)
+
+    create_response = api.create_items(
+        CreateShoppingListRequest(items=[CreateShoppingListItemRequest(item="butter")])
+    )
+    item = api.list_items().items[0]
+
+    with pytest.raises(ApiException) as exc_info:
+        api.sync_items(
+            SyncRequest(
+                updates=[
+                    SyncUpdateItem(
+                        id=create_response.ids[0],
+                        category_override="Not A Category",
+                        expected_version=item.version,
+                    )
+                ]
+            )
+        )
+
+    assert exc_info.value.status == 400
+
+
 EXPECTED_CATEGORY_ORDER = [
     "Produce",
     "Meat & Seafood",

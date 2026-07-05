@@ -41,6 +41,7 @@ export function SyncServerChangeFromJSONTyped(json, ignoreDiscriminator) {
     return {
         'amount': json['amount'] == null ? undefined : json['amount'],
         'category': json['category'],
+        'categoryOverride': json['category_override'] == null ? undefined : json['category_override'],
         'id': json['id'],
         'isChecked': json['is_checked'],
         'item': json['item'],
@@ -62,6 +63,7 @@ export function SyncServerChangeToJSONTyped(value, ignoreDiscriminator = false) 
     return {
         'amount': value['amount'],
         'category': value['category'],
+        'category_override': value['categoryOverride'],
         'id': value['id'],
         'is_checked': value['isChecked'],
         'item': value['item'],

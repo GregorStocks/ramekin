@@ -37,6 +37,7 @@ class TestShoppingListItemResponse(unittest.TestCase):
             return ShoppingListItemResponse(
                 amount = '',
                 category = '',
+                category_override = '',
                 id = '',
                 is_checked = True,
                 item = '',
