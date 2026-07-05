@@ -68,10 +68,14 @@ export default function ShoppingListPage() {
     cacheMutationVersion += 1;
   };
 
-  const clearCacheAfterError = (context: string, err: unknown) => {
+  const clearCacheAfterError = (
+    context: string,
+    err: unknown,
+    cacheToken: string | null,
+  ) => {
     logger.warn("Shopping", `${context}: ${String(err)}`);
     try {
-      clearShoppingListSyncCache(localStorage, token());
+      clearShoppingListSyncCache(localStorage, cacheToken);
     } catch (clearErr) {
       logger.warn(
         "Shopping",
@@ -80,33 +84,41 @@ export default function ShoppingListPage() {
     }
   };
 
-  const loadCacheOrNull = (): ShoppingListSyncCache | null => {
+  const loadCacheOrNull = (
+    cacheToken: string | null,
+  ): ShoppingListSyncCache | null => {
     try {
-      return loadShoppingListSyncCache(localStorage, token());
+      return loadShoppingListSyncCache(localStorage, cacheToken);
     } catch (err) {
-      clearCacheAfterError("shopping list cache read failed", err);
+      clearCacheAfterError("shopping list cache read failed", err, cacheToken);
       return null;
     }
   };
 
-  const persistCache = (cache: ShoppingListSyncCache) => {
+  const persistCache = (
+    cache: ShoppingListSyncCache,
+    cacheToken: string | null,
+  ) => {
     try {
-      saveShoppingListSyncCache(localStorage, token(), cache);
+      saveShoppingListSyncCache(localStorage, cacheToken, cache);
     } catch (err) {
-      clearCacheAfterError("shopping list cache write failed", err);
+      clearCacheAfterError("shopping list cache write failed", err, cacheToken);
     }
   };
 
   const saveCurrentCacheItems = (nextItems: ShoppingListItemResponse[]) => {
     markConfirmedServerMutation();
-    const cached = loadCacheOrNull();
+    const cacheToken = token();
+    const cached = loadCacheOrNull(cacheToken);
     persistCache(
       replaceShoppingListCachedItems(cached, nextItems, categoryOrder()),
+      cacheToken,
     );
   };
 
   const loadItems = async (showLoading = true): Promise<boolean> => {
-    const cached = loadCacheOrNull();
+    const requestToken = token();
+    const cached = loadCacheOrNull(requestToken);
     const syncStartedAtMutationVersion = cacheMutationVersion;
     if (cached) {
       applyCache(cached);
@@ -124,12 +136,15 @@ export default function ShoppingListPage() {
           },
         }),
       );
+      if (requestToken !== token()) {
+        return true;
+      }
       if (syncStartedAtMutationVersion !== cacheMutationVersion) {
         return await loadItems(false);
       }
       const nextCache = applyShoppingListSyncResponse(cached, response);
       applyCache(nextCache);
-      persistCache(nextCache);
+      persistCache(nextCache, requestToken);
       return true;
     } catch (err) {
       const message = await extractApiError(
