@@ -68,35 +68,45 @@ export default function ShoppingListPage() {
     cacheMutationVersion += 1;
   };
 
+  const clearCacheAfterError = (context: string, err: unknown) => {
+    logger.warn("Shopping", `${context}: ${String(err)}`);
+    try {
+      clearShoppingListSyncCache(localStorage, token());
+    } catch (clearErr) {
+      logger.warn(
+        "Shopping",
+        `shopping list cache clear failed: ${String(clearErr)}`,
+      );
+    }
+  };
+
+  const loadCacheOrNull = (): ShoppingListSyncCache | null => {
+    try {
+      return loadShoppingListSyncCache(localStorage, token());
+    } catch (err) {
+      clearCacheAfterError("shopping list cache read failed", err);
+      return null;
+    }
+  };
+
   const persistCache = (cache: ShoppingListSyncCache) => {
     try {
       saveShoppingListSyncCache(localStorage, token(), cache);
     } catch (err) {
-      logger.warn(
-        "Shopping",
-        `shopping list cache write failed: ${String(err)}`,
-      );
-      try {
-        clearShoppingListSyncCache(localStorage, token());
-      } catch (clearErr) {
-        logger.warn(
-          "Shopping",
-          `shopping list cache clear failed: ${String(clearErr)}`,
-        );
-      }
+      clearCacheAfterError("shopping list cache write failed", err);
     }
   };
 
   const saveCurrentCacheItems = (nextItems: ShoppingListItemResponse[]) => {
     markConfirmedServerMutation();
-    const cached = loadShoppingListSyncCache(localStorage, token());
+    const cached = loadCacheOrNull();
     persistCache(
       replaceShoppingListCachedItems(cached, nextItems, categoryOrder()),
     );
   };
 
   const loadItems = async (showLoading = true): Promise<boolean> => {
-    const cached = loadShoppingListSyncCache(localStorage, token());
+    const cached = loadCacheOrNull();
     const syncStartedAtMutationVersion = cacheMutationVersion;
     if (cached) {
       applyCache(cached);
