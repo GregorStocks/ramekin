@@ -8,6 +8,7 @@ import { logger } from "../utils/logger";
 import { createAsyncAction } from "../utils/asyncState";
 import {
   applyShoppingListSyncResponse,
+  clearShoppingListSyncCache,
   loadShoppingListSyncCache,
   replaceShoppingListCachedItems,
   saveShoppingListSyncCache,
@@ -77,7 +78,7 @@ export default function ShoppingListPage() {
     );
   };
 
-  const loadItems = async (showLoading = true) => {
+  const loadItems = async (showLoading = true): Promise<boolean> => {
     const cached = loadShoppingListSyncCache(localStorage, token());
     const syncStartedAtMutationVersion = cacheMutationVersion;
     if (cached) {
@@ -97,12 +98,12 @@ export default function ShoppingListPage() {
         }),
       );
       if (syncStartedAtMutationVersion !== cacheMutationVersion) {
-        await loadItems(false);
-        return;
+        return await loadItems(false);
       }
       const nextCache = applyShoppingListSyncResponse(cached, response);
       saveShoppingListSyncCache(localStorage, token(), nextCache);
       applyCache(nextCache);
+      return true;
     } catch (err) {
       const message = await extractApiError(
         err,
@@ -111,6 +112,7 @@ export default function ShoppingListPage() {
           : "Failed to load shopping list",
       );
       setError(message);
+      return false;
     } finally {
       setLoading(false);
     }
@@ -131,7 +133,9 @@ export default function ShoppingListPage() {
     markConfirmedServerMutation();
     setNewItemName("");
     setNewItemAmount("");
-    await loadItems(false);
+    if (!(await loadItems(false))) {
+      clearShoppingListSyncCache(localStorage, token());
+    }
   }, "Failed to add item");
 
   const toggleCheckedAction = createAsyncAction(
@@ -162,7 +166,9 @@ export default function ShoppingListPage() {
           },
         });
         markConfirmedServerMutation();
-        await loadItems(false);
+        if (!(await loadItems(false))) {
+          clearShoppingListSyncCache(localStorage, token());
+        }
       } finally {
         setUpdatingCategoryId(null);
       }
