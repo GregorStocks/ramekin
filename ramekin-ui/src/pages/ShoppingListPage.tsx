@@ -63,8 +63,12 @@ export default function ShoppingListPage() {
     setCategoryOrder(cache.categoryOrder);
   };
 
-  const saveCurrentCacheItems = (nextItems: ShoppingListItemResponse[]) => {
+  const markConfirmedServerMutation = () => {
     cacheMutationVersion += 1;
+  };
+
+  const saveCurrentCacheItems = (nextItems: ShoppingListItemResponse[]) => {
+    markConfirmedServerMutation();
     const cached = loadShoppingListSyncCache(localStorage, token());
     saveShoppingListSyncCache(
       localStorage,
@@ -124,6 +128,7 @@ export default function ShoppingListPage() {
         },
       }),
     );
+    markConfirmedServerMutation();
     setNewItemName("");
     setNewItemAmount("");
     await loadItems(false);
@@ -156,6 +161,7 @@ export default function ShoppingListPage() {
             categoryOverride,
           },
         });
+        markConfirmedServerMutation();
         await loadItems(false);
       } finally {
         setUpdatingCategoryId(null);

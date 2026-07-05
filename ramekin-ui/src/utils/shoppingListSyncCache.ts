@@ -48,6 +48,15 @@ export function saveShoppingListSyncCache(
   );
 }
 
+export function clearShoppingListSyncCache(
+  storage: Pick<Storage, "removeItem">,
+  token: string | null,
+): void {
+  if (!token) return;
+
+  storage.removeItem(shoppingListCacheKey(token));
+}
+
 export function applyShoppingListSyncResponse(
   cache: ShoppingListSyncCache | null,
   response: SyncResponse,

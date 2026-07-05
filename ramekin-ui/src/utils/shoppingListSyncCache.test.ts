@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   applyShoppingListSyncResponse,
+  clearShoppingListSyncCache,
   loadShoppingListSyncCache,
   refreshShoppingListSyncCache,
   replaceShoppingListCachedItems,
@@ -23,6 +24,10 @@ class MemoryStorage {
 
   setItem(key: string, value: string): void {
     this.values.set(key, value);
+  }
+
+  removeItem(key: string): void {
+    this.values.delete(key);
   }
 }
 
@@ -63,6 +68,23 @@ describe("shopping list sync cache", () => {
     saveShoppingListSyncCache(storage, "token-a", cache);
 
     expect(loadShoppingListSyncCache(storage, "token-b")).toBeNull();
+  });
+
+  it("clears cached data for one token", () => {
+    const storage = new MemoryStorage();
+    const cache: ShoppingListSyncCache = {
+      version: 1,
+      categoryOrder: ["Other"],
+      items: [],
+      lastSyncAt: null,
+    };
+    saveShoppingListSyncCache(storage, "token-a", cache);
+    saveShoppingListSyncCache(storage, "token-b", cache);
+
+    clearShoppingListSyncCache(storage, "token-a");
+
+    expect(loadShoppingListSyncCache(storage, "token-a")).toBeNull();
+    expect(loadShoppingListSyncCache(storage, "token-b")).toEqual(cache);
   });
 
   it("applies server changes and deletions to existing cached items", () => {

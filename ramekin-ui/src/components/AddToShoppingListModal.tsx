@@ -6,7 +6,11 @@ import {
   formatIngredient,
   formatIngredientAmount,
 } from "../utils/ingredientFormatting";
-import { refreshShoppingListSyncCache } from "../utils/shoppingListSyncCache";
+import { logger } from "../utils/logger";
+import {
+  clearShoppingListSyncCache,
+  refreshShoppingListSyncCache,
+} from "../utils/shoppingListSyncCache";
 import type { RecipeResponse } from "ramekin-client";
 
 interface AddToShoppingListModalProps {
@@ -83,7 +87,15 @@ export default function AddToShoppingListModal(
       await api.createItems({
         createShoppingListRequest: { items },
       });
-      await refreshShoppingListSyncCache(api, localStorage, token());
+      try {
+        await refreshShoppingListSyncCache(api, localStorage, token());
+      } catch (refreshErr) {
+        clearShoppingListSyncCache(localStorage, token());
+        logger.warn(
+          "Shopping",
+          `cache refresh after recipe add failed: ${String(refreshErr)}`,
+        );
+      }
 
       setShowSuccess(true);
       setTimeout(() => {
