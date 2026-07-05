@@ -36,6 +36,8 @@ class TestSyncUpdateItem(unittest.TestCase):
         if include_optional:
             return SyncUpdateItem(
                 amount = '',
+                category_override = '',
+                clear_category_override = True,
                 expected_version = 56,
                 id = '',
                 is_checked = True,

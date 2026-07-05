@@ -230,32 +230,57 @@ struct ShoppingItemRow: View {
     }
 
     var body: some View {
-        Button {
-            store.toggleChecked(item)
-        } label: {
-            HStack(alignment: .center, spacing: 8) {
-                Image(systemName: item.isChecked ? "checkmark.circle.fill" : "circle")
-                    .font(.body)
-                    .foregroundColor(item.isChecked ? .green : .secondary)
-
-                VStack(alignment: .leading, spacing: 1) {
-                    Text(displayText)
+        HStack(alignment: .center, spacing: 8) {
+            Button {
+                store.toggleChecked(item)
+            } label: {
+                HStack(alignment: .center, spacing: 8) {
+                    Image(systemName: item.isChecked ? "checkmark.circle.fill" : "circle")
                         .font(.body)
-                        .strikethrough(item.isChecked)
-                        .foregroundColor(item.isChecked ? .secondary : .primary)
+                        .foregroundColor(item.isChecked ? .green : .secondary)
 
-                    if let recipeTitle = item.sourceRecipeTitle {
-                        Text(recipeTitle)
-                            .font(.caption)
-                            .foregroundColor(.orange)
+                    VStack(alignment: .leading, spacing: 1) {
+                        Text(displayText)
+                            .font(.body)
+                            .strikethrough(item.isChecked)
+                            .foregroundColor(item.isChecked ? .secondary : .primary)
+
+                        if let recipeTitle = item.sourceRecipeTitle {
+                            Text(recipeTitle)
+                                .font(.caption)
+                                .foregroundColor(.orange)
+                        }
+                    }
+
+                    Spacer()
+                }
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+
+            Menu {
+                Button("Auto") {
+                    store.updateCategoryOverride(item, categoryOverride: nil)
+                }
+                ForEach(store.categoryOrder, id: \.self) { category in
+                    Button {
+                        store.updateCategoryOverride(item, categoryOverride: category)
+                    } label: {
+                        HStack {
+                            Text(category)
+                            if item.categoryOverride == category {
+                                Spacer()
+                                Image(systemName: "checkmark")
+                            }
+                        }
                     }
                 }
-
-                Spacer()
+            } label: {
+                Image(systemName: item.categoryOverride == nil ? "tag" : "tag.fill")
+                    .foregroundColor(.secondary)
             }
-            .contentShape(Rectangle())
+            .accessibilityLabel("Category")
         }
-        .buttonStyle(.plain)
         .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
     }
 }

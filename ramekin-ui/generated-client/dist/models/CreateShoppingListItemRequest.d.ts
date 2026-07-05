@@ -22,6 +22,12 @@ export interface CreateShoppingListItemRequest {
      */
     amount?: string | null;
     /**
+     *
+     * @type {string}
+     * @memberof CreateShoppingListItemRequest
+     */
+    categoryOverride?: string | null;
+    /**
      * Client-generated ID for offline sync
      * @type {string}
      * @memberof CreateShoppingListItemRequest

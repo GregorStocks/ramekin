@@ -3,6 +3,52 @@ import XCTest
 @testable import Ramekin
 
 final class ShoppingListMutationSupportTests: XCTestCase {
+    func testUpdateCategoryOverrideSetsCategoryAndMarksSyncedItemPending() throws {
+        let context = makeInMemoryContainer().viewContext
+        let item = ShoppingItem.create(in: context, item: "Milk", sortOrder: 0)
+        item.computedCategory = "Dairy & Eggs"
+        item.markSynced(serverVersion: 3)
+
+        ShoppingListMutationSupport.updateCategoryOverride(item, categoryOverride: "Produce")
+
+        XCTAssertEqual(item.categoryOverride, "Produce")
+        XCTAssertEqual(item.category, "Produce")
+        XCTAssertEqual(item.computedCategory, "Dairy & Eggs")
+        XCTAssertFalse(item.clearCategoryOverride)
+        XCTAssertEqual(item.syncStatusEnum, .pendingUpdate)
+    }
+
+    func testUpdateCategoryOverrideClearsSyncedItemWithDirtyFlag() throws {
+        let context = makeInMemoryContainer().viewContext
+        let item = ShoppingItem.create(in: context, item: "Milk", sortOrder: 0)
+        item.categoryOverride = "Produce"
+        item.category = "Produce"
+        item.computedCategory = "Dairy & Eggs"
+        item.markSynced(serverVersion: 3)
+
+        ShoppingListMutationSupport.updateCategoryOverride(item, categoryOverride: nil)
+
+        XCTAssertNil(item.categoryOverride)
+        XCTAssertEqual(item.category, "Dairy & Eggs")
+        XCTAssertEqual(item.computedCategory, "Dairy & Eggs")
+        XCTAssertTrue(item.clearCategoryOverride)
+        XCTAssertEqual(item.syncStatusEnum, .pendingUpdate)
+    }
+
+    func testUpdateCategoryOverrideClearsPendingCreateWithoutDirtyFlag() throws {
+        let context = makeInMemoryContainer().viewContext
+        let item = ShoppingItem.create(in: context, item: "Milk", sortOrder: 0)
+        item.categoryOverride = "Produce"
+        item.category = "Produce"
+
+        ShoppingListMutationSupport.updateCategoryOverride(item, categoryOverride: nil)
+
+        XCTAssertNil(item.categoryOverride)
+        XCTAssertNil(item.category)
+        XCTAssertFalse(item.clearCategoryOverride)
+        XCTAssertEqual(item.syncStatusEnum, .pendingCreate)
+    }
+
     func testAddItemsFromRecipeAssignsSequentialSortOrderAndMetadata() throws {
         let container = makeInMemoryContainer()
         let context = container.viewContext

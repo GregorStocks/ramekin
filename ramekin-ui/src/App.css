@@ -3356,6 +3356,23 @@ textarea:focus-visible {
   text-decoration: underline;
 }
 
+.shopping-category-select {
+  width: 150px;
+  min-width: 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  background: var(--surface-2);
+  border: 1px solid var(--border-hairline);
+  border-radius: 4px;
+  padding: 0.25rem 0.4rem;
+  flex-shrink: 0;
+}
+
+.shopping-category-select:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
 .shopping-item-delete {
   background: transparent;
   border: none;

@@ -4,6 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **String** |  | [optional] 
+**categoryOverride** | **String** |  | [optional] 
+**clearCategoryOverride** | **Bool** |  | [optional] 
 **isChecked** | **Bool** |  | [optional] 
 **item** | **String** |  | [optional] 
 **note** | **String** |  | [optional] 

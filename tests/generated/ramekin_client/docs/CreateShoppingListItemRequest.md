@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **str** |  | [optional] 
+**category_override** | **str** |  | [optional] 
 **client_id** | **UUID** | Client-generated ID for offline sync | [optional] 
 **item** | **str** |  | 
 **note** | **str** |  | [optional] 

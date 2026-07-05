@@ -6,7 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **str** |  | [optional] 
-**category** | **str** | Computed aisle category for grouping (e.g., \&quot;Produce\&quot;, \&quot;Dairy &amp; Eggs\&quot;) | 
+**category** | **str** | Aisle category for grouping (override when set, otherwise computed). | 
+**category_override** | **str** | User-selected category override; when set, it wins over computed category. | [optional] 
+**computed_category** | **str** | Category computed from the item name before applying any override. | 
 **id** | **UUID** |  | 
 **is_checked** | **bool** |  | 
 **item** | **str** |  | 

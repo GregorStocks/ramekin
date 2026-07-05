@@ -6,6 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **str** |  | [optional] 
+**category_override** | **str** |  | [optional] 
+**clear_category_override** | **bool** |  | [optional] 
 **is_checked** | **bool** |  | [optional] 
 **item** | **str** |  | [optional] 
 **note** | **str** |  | [optional] 

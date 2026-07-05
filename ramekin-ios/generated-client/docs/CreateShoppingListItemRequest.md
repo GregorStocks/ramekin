@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **String** |  | [optional] 
+**categoryOverride** | **String** |  | [optional] 
 **clientId** | **UUID** | Client-generated ID for offline sync | [optional] 
 **item** | **String** |  | 
 **note** | **String** |  | [optional] 

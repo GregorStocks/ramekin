@@ -7,6 +7,7 @@ Request to create an item during sync (created offline)
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **str** |  | [optional] 
+**category_override** | **str** |  | [optional] 
 **client_id** | **UUID** |  | 
 **is_checked** | **bool** |  | 
 **item** | **str** |  | 

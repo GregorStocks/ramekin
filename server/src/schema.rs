@@ -139,6 +139,7 @@ diesel::table! {
         client_id -> Nullable<Uuid>,
         version -> Int4,
         deleted_at -> Nullable<Timestamptz>,
+        category_override -> Nullable<Text>,
     }
 }
 

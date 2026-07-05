@@ -30,6 +30,8 @@ export function SyncUpdateItemFromJSONTyped(json, ignoreDiscriminator) {
     }
     return {
         'amount': json['amount'] == null ? undefined : json['amount'],
+        'categoryOverride': json['category_override'] == null ? undefined : json['category_override'],
+        'clearCategoryOverride': json['clear_category_override'] == null ? undefined : json['clear_category_override'],
         'expectedVersion': json['expected_version'],
         'id': json['id'],
         'isChecked': json['is_checked'] == null ? undefined : json['is_checked'],
@@ -47,6 +49,8 @@ export function SyncUpdateItemToJSONTyped(value, ignoreDiscriminator = false) {
     }
     return {
         'amount': value['amount'],
+        'category_override': value['categoryOverride'],
+        'clear_category_override': value['clearCategoryOverride'],
         'expected_version': value['expectedVersion'],
         'id': value['id'],
         'is_checked': value['isChecked'],

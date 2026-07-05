@@ -36,6 +36,8 @@ class TestUpdateShoppingListItemRequest(unittest.TestCase):
         if include_optional:
             return UpdateShoppingListItemRequest(
                 amount = '',
+                category_override = '',
+                clear_category_override = True,
                 is_checked = True,
                 item = '',
                 note = '',

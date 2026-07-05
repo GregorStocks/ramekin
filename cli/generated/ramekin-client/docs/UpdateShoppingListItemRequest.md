@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | Option<**String**> |  | [optional]
+**category_override** | Option<**String**> |  | [optional]
+**clear_category_override** | Option<**bool**> |  | [optional]
 **is_checked** | Option<**bool**> |  | [optional]
 **item** | Option<**String**> |  | [optional]
 **note** | Option<**String**> |  | [optional]

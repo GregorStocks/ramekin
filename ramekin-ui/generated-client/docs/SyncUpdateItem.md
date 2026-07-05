@@ -8,6 +8,8 @@ Request to update an item during sync (modified offline)
 Name | Type
 ------------ | -------------
 `amount` | string
+`categoryOverride` | string
+`clearCategoryOverride` | boolean
 `expectedVersion` | number
 `id` | string
 `isChecked` | boolean
@@ -23,6 +25,8 @@ import type { SyncUpdateItem } from ''
 // TODO: Update the object below with actual values
 const example = {
   "amount": null,
+  "categoryOverride": null,
+  "clearCategoryOverride": null,
   "expectedVersion": null,
   "id": null,
   "isChecked": null,

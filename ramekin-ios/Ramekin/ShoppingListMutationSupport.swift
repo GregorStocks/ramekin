@@ -13,6 +13,13 @@ enum ShoppingListStoreError: LocalizedError {
 }
 
 enum ShoppingListMutationSupport {
+    static func updateCategoryOverride(_ item: ShoppingItem, categoryOverride: String?) {
+        item.categoryOverride = categoryOverride
+        item.clearCategoryOverride = categoryOverride == nil && item.syncStatusEnum != .pendingCreate
+        item.category = categoryOverride ?? item.computedCategory
+        item.markUpdated()
+    }
+
     static func addItemsFromRecipe(
         ingredients: [(name: String, amount: String?)],
         recipeId: UUID,

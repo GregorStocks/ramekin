@@ -22,6 +22,18 @@ export interface SyncUpdateItem {
      */
     amount?: string | null;
     /**
+     *
+     * @type {string}
+     * @memberof SyncUpdateItem
+     */
+    categoryOverride?: string | null;
+    /**
+     *
+     * @type {boolean}
+     * @memberof SyncUpdateItem
+     */
+    clearCategoryOverride?: boolean | null;
+    /**
      * Expected version for optimistic locking
      * @type {number}
      * @memberof SyncUpdateItem
