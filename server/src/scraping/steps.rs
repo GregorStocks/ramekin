@@ -485,6 +485,13 @@ impl SaveRecipeStep {
 
         // Use a transaction to create new version and update recipe
         conn.transaction(|conn| {
+            let current_version_id: Option<Uuid> = recipes::table
+                .find(recipe_id)
+                .select(recipes::current_version_id)
+                .first(conn)?;
+            let current_version_id =
+                current_version_id.ok_or_else(|| diesel::result::Error::RollbackTransaction)?;
+
             // Create a new version
             let new_version = NewRecipeVersion {
                 recipe_id,
@@ -506,7 +513,7 @@ impl SaveRecipeStep {
                 version_source,
             };
 
-            create_new_version(conn, &new_version, TagSource::None)?;
+            create_new_version(conn, &new_version, TagSource::CopyFrom(current_version_id))?;
 
             Ok(recipe_id)
         })
