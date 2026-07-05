@@ -67,6 +67,29 @@ struct UnstructuredRecipeBlock {
     ingredient_chunk_indices: Vec<usize>,
 }
 
+struct RecipeTextSection {
+    title: Option<String>,
+    paragraphs: Vec<String>,
+}
+
+fn push_colon_header(lines: &mut Vec<String>, title: &str) {
+    lines.push(format!("{title}:"));
+}
+
+fn flatten_recipe_text_sections(sections: Vec<RecipeTextSection>) -> Vec<String> {
+    let mut lines = Vec::new();
+    for section in sections {
+        if section.paragraphs.is_empty() {
+            continue;
+        }
+        if let Some(title) = section.title {
+            push_colon_header(&mut lines, &title);
+        }
+        lines.extend(section.paragraphs);
+    }
+    lines
+}
+
 pub(super) fn extract_bold_heading(chunk: &str) -> Option<String> {
     let cap = BOLD_TEXT_REGEX.captures(chunk)?;
     let bold_text = cap.get(1)?.as_str().trim();
@@ -196,107 +219,19 @@ pub(super) fn extract_recipe_from_unstructured_blog(
     html: &str,
     source_url: &str,
 ) -> Option<RawRecipe> {
-    // Limit search to before comments section to avoid picking up user comments.
-    // These markers are ASCII so the byte position is always a valid char boundary.
-    let comments_pos = html
-        .find("<div id=\"comments\"")
-        .or_else(|| html.find("<section id=\"comments\""))
-        .or_else(|| html.find("<ol class=\"commentlist\""))
-        .or_else(|| html.find("<div class=\"comments-area\""));
-    let search_html = match comments_pos {
-        Some(pos) => html.get(..pos).unwrap_or(html),
-        None => html,
-    };
-
-    // Split on <p> tags to get paragraph chunks
+    let search_html = html_before_comments(html);
     let chunks: Vec<&str> = P_TAG_SPLIT_REGEX.split(search_html).collect();
 
-    // Find paragraph chunks that look like ingredient lists:
-    // they contain 2+ <br> tags and their lines look like ingredients (short, with quantities)
-    let ingredient_chunk_indices: Vec<usize> = chunks
-        .iter()
-        .enumerate()
-        .filter(|(_, chunk)| {
-            let trimmed = chunk.trim();
-            !trimmed.is_empty()
-                && BR_TAG_REGEX.find_iter(trimmed).count() >= 2
-                && !looks_like_lookback_links_chunk(trimmed)
-                && looks_like_ingredient_list(trimmed)
-        })
-        .map(|(i, _)| i)
-        .collect();
-
+    let ingredient_chunk_indices = find_unstructured_ingredient_chunk_indices(&chunks);
     if ingredient_chunk_indices.is_empty() {
         return None;
     }
 
-    let mut blocks: Vec<UnstructuredRecipeBlock> = Vec::new();
-    let mut scan_start = 0;
-    for &ingredient_idx in &ingredient_chunk_indices {
-        let mut block_title = None;
-        let mut block_title_chunk_idx = None;
-        for i in (scan_start..ingredient_idx).rev() {
-            let chunk = chunks[i].trim();
-            if chunk.is_empty() {
-                continue;
-            }
-            if let Some(title) = extract_bold_heading(chunk) {
-                block_title = Some(title);
-                block_title_chunk_idx = Some(i);
-                break;
-            }
-        }
-
-        let starts_new_block = match blocks.last() {
-            None => true,
-            Some(block) => {
-                if let Some(title_chunk_idx) = block_title_chunk_idx {
-                    let previous_ingredient_idx = *block.ingredient_chunk_indices.last()?;
-                    has_instruction_paragraph_between(
-                        &chunks,
-                        previous_ingredient_idx + 1,
-                        title_chunk_idx,
-                    )
-                } else {
-                    false
-                }
-            }
-        };
-
-        if starts_new_block {
-            blocks.push(UnstructuredRecipeBlock {
-                title: block_title,
-                title_chunk_idx: block_title_chunk_idx,
-                ingredient_chunk_indices: vec![ingredient_idx],
-            });
-        } else if let Some(block) = blocks.last_mut() {
-            block.ingredient_chunk_indices.push(ingredient_idx);
-        }
-
-        scan_start = ingredient_idx + 1;
-    }
-
+    let blocks = collect_unstructured_recipe_blocks(&chunks, &ingredient_chunk_indices);
     let first_block = blocks.first()?;
     let first_ingredient_idx = *first_block.ingredient_chunk_indices.first()?;
-    let is_multi_block = blocks.len() > 1;
 
-    let mut ingredient_lines: Vec<String> = Vec::new();
-    for (block_idx, block) in blocks.iter().enumerate() {
-        if is_multi_block && block_idx > 0 {
-            if let Some(title) = block
-                .title
-                .as_deref()
-                .and_then(normalized_block_section_title)
-            {
-                ingredient_lines.push(format!("{title}:"));
-            }
-        }
-        for &idx in &block.ingredient_chunk_indices {
-            let chunk = chunks[idx];
-            extract_ingredient_lines_from_chunk(chunk, &mut ingredient_lines);
-        }
-    }
-
+    let ingredient_lines = collect_unstructured_ingredient_lines(&chunks, &blocks);
     if ingredient_lines.is_empty() {
         return None;
     }
@@ -311,90 +246,14 @@ pub(super) fn extract_recipe_from_unstructured_blog(
 
     let title = title?;
 
-    // Extract instructions: prose paragraphs after the last ingredient chunk
-    // that don't contain <br> chains (i.e., they're not ingredient lists)
-    let mut instruction_paragraphs: Vec<String> = Vec::new();
-    for (block_idx, block) in blocks.iter().enumerate() {
-        let last_ingredient_idx = *block.ingredient_chunk_indices.last()?;
-        let next_block_title_idx = blocks
-            .get(block_idx + 1)
-            .and_then(|next_block| next_block.title_chunk_idx);
-
-        let mut block_paragraphs: Vec<String> = Vec::new();
-        for (idx, chunk) in chunks.iter().enumerate().skip(last_ingredient_idx + 1) {
-            if next_block_title_idx.is_some_and(|title_idx| idx >= title_idx) {
-                break;
-            }
-
-            let chunk = chunk.trim();
-            if chunk.is_empty() {
-                continue;
-            }
-
-            if chunk.contains("sharedaddy") || chunk.contains("sd-sharing") {
-                break;
-            }
-
-            let text = fragment_to_text(chunk);
-            if text.is_empty() {
-                continue;
-            }
-
-            if LOOKBACK_LINK_REGEX.is_match(chunk) || looks_like_lookback_links_chunk(chunk) {
-                continue;
-            }
-
-            if block_paragraphs.is_empty() {
-                let lower = text.to_lowercase();
-                if lower.starts_with("adapted from")
-                    || lower.starts_with("from ")
-                    || lower.starts_with("recipe from")
-                    || lower.starts_with("source:")
-                {
-                    continue;
-                }
-            }
-
-            block_paragraphs.push(text);
-        }
-
-        if block_paragraphs.is_empty() {
-            continue;
-        }
-
-        if is_multi_block && block_idx > 0 {
-            if let Some(title) = block
-                .title
-                .as_deref()
-                .and_then(normalized_block_section_title)
-            {
-                instruction_paragraphs.push(format!("{title}:"));
-            }
-        }
-        instruction_paragraphs.extend(block_paragraphs);
-    }
+    let instruction_paragraphs =
+        flatten_recipe_text_sections(collect_unstructured_instruction_sections(&chunks, &blocks));
 
     if instruction_paragraphs.is_empty() {
         return None;
     }
 
-    // Extract servings from chunks near the title (between title and first ingredient)
-    let mut servings: Option<String> = None;
-    for i in (0..first_ingredient_idx).rev() {
-        let chunk = chunks[i].trim();
-        if chunk.is_empty() {
-            continue;
-        }
-        let text = fragment_to_text(chunk).to_lowercase();
-        if text.starts_with("makes ") || text.starts_with("serves ") || text.starts_with("yield") {
-            servings = Some(text);
-            break;
-        }
-        // Only look back a couple chunks from ingredients
-        if first_ingredient_idx - i > 3 {
-            break;
-        }
-    }
+    let servings = extract_unstructured_servings(&chunks, first_ingredient_idx);
 
     let image_urls = extract_og_image_fast(html).into_iter().collect();
     let source_name = extract_source_name(source_url);
@@ -425,6 +284,223 @@ pub(super) fn extract_recipe_from_unstructured_blog(
         categories: None,
         footnotes,
     })
+}
+
+fn html_before_comments(html: &str) -> &str {
+    // Limit search to before comments section to avoid picking up user comments.
+    // These markers are ASCII so the byte position is always a valid char boundary.
+    let comments_pos = html
+        .find("<div id=\"comments\"")
+        .or_else(|| html.find("<section id=\"comments\""))
+        .or_else(|| html.find("<ol class=\"commentlist\""))
+        .or_else(|| html.find("<div class=\"comments-area\""));
+    match comments_pos {
+        Some(pos) => html.get(..pos).unwrap_or(html),
+        None => html,
+    }
+}
+
+fn find_unstructured_ingredient_chunk_indices(chunks: &[&str]) -> Vec<usize> {
+    chunks
+        .iter()
+        .enumerate()
+        .filter(|(_, chunk)| is_unstructured_ingredient_chunk(chunk))
+        .map(|(i, _)| i)
+        .collect()
+}
+
+fn is_unstructured_ingredient_chunk(chunk: &str) -> bool {
+    let trimmed = chunk.trim();
+    !trimmed.is_empty()
+        && BR_TAG_REGEX.find_iter(trimmed).count() >= 2
+        && !looks_like_lookback_links_chunk(trimmed)
+        && looks_like_ingredient_list(trimmed)
+}
+
+fn collect_unstructured_recipe_blocks(
+    chunks: &[&str],
+    ingredient_chunk_indices: &[usize],
+) -> Vec<UnstructuredRecipeBlock> {
+    let mut blocks: Vec<UnstructuredRecipeBlock> = Vec::new();
+    let mut scan_start = 0;
+    for &ingredient_idx in ingredient_chunk_indices {
+        let (block_title, block_title_chunk_idx) =
+            find_nearest_unstructured_block_title(chunks, scan_start, ingredient_idx);
+
+        if starts_new_unstructured_block(&blocks, chunks, block_title_chunk_idx) {
+            blocks.push(UnstructuredRecipeBlock {
+                title: block_title,
+                title_chunk_idx: block_title_chunk_idx,
+                ingredient_chunk_indices: vec![ingredient_idx],
+            });
+        } else if let Some(block) = blocks.last_mut() {
+            block.ingredient_chunk_indices.push(ingredient_idx);
+        }
+
+        scan_start = ingredient_idx + 1;
+    }
+
+    blocks
+}
+
+fn find_nearest_unstructured_block_title(
+    chunks: &[&str],
+    scan_start: usize,
+    ingredient_idx: usize,
+) -> (Option<String>, Option<usize>) {
+    for i in (scan_start..ingredient_idx).rev() {
+        let chunk = chunks[i].trim();
+        if chunk.is_empty() {
+            continue;
+        }
+        if let Some(title) = extract_bold_heading(chunk) {
+            return (Some(title), Some(i));
+        }
+    }
+    (None, None)
+}
+
+fn starts_new_unstructured_block(
+    blocks: &[UnstructuredRecipeBlock],
+    chunks: &[&str],
+    block_title_chunk_idx: Option<usize>,
+) -> bool {
+    let Some(block) = blocks.last() else {
+        return true;
+    };
+    let Some(title_chunk_idx) = block_title_chunk_idx else {
+        return false;
+    };
+    let previous_ingredient_idx = *block
+        .ingredient_chunk_indices
+        .last()
+        .expect("unstructured recipe block has at least one ingredient chunk");
+    has_instruction_paragraph_between(chunks, previous_ingredient_idx + 1, title_chunk_idx)
+}
+
+fn collect_unstructured_ingredient_lines(
+    chunks: &[&str],
+    blocks: &[UnstructuredRecipeBlock],
+) -> Vec<String> {
+    let is_multi_block = blocks.len() > 1;
+    let mut ingredient_lines = Vec::new();
+    for (block_idx, block) in blocks.iter().enumerate() {
+        if is_multi_block && block_idx > 0 {
+            push_normalized_block_section_header(&mut ingredient_lines, block.title.as_deref());
+        }
+        for &idx in &block.ingredient_chunk_indices {
+            extract_ingredient_lines_from_chunk(chunks[idx], &mut ingredient_lines);
+        }
+    }
+    ingredient_lines
+}
+
+fn collect_unstructured_instruction_sections(
+    chunks: &[&str],
+    blocks: &[UnstructuredRecipeBlock],
+) -> Vec<RecipeTextSection> {
+    let is_multi_block = blocks.len() > 1;
+    let mut sections = Vec::new();
+
+    for (block_idx, block) in blocks.iter().enumerate() {
+        let last_ingredient_idx = *block
+            .ingredient_chunk_indices
+            .last()
+            .expect("unstructured recipe block has at least one ingredient chunk");
+        let next_block_title_idx = blocks
+            .get(block_idx + 1)
+            .and_then(|next_block| next_block.title_chunk_idx);
+        let paragraphs = collect_unstructured_instruction_paragraphs(
+            chunks,
+            last_ingredient_idx + 1,
+            next_block_title_idx,
+        );
+        if paragraphs.is_empty() {
+            continue;
+        }
+
+        let title = if is_multi_block && block_idx > 0 {
+            block
+                .title
+                .as_deref()
+                .and_then(normalized_block_section_title)
+        } else {
+            None
+        };
+        sections.push(RecipeTextSection { title, paragraphs });
+    }
+
+    sections
+}
+
+fn collect_unstructured_instruction_paragraphs(
+    chunks: &[&str],
+    start_idx: usize,
+    end_before_idx: Option<usize>,
+) -> Vec<String> {
+    let mut paragraphs = Vec::new();
+    for (idx, chunk) in chunks.iter().enumerate().skip(start_idx) {
+        if end_before_idx.is_some_and(|title_idx| idx >= title_idx) {
+            break;
+        }
+
+        let chunk = chunk.trim();
+        if chunk.is_empty() {
+            continue;
+        }
+
+        if chunk.contains("sharedaddy") || chunk.contains("sd-sharing") {
+            break;
+        }
+
+        let text = fragment_to_text(chunk);
+        if text.is_empty() {
+            continue;
+        }
+
+        if LOOKBACK_LINK_REGEX.is_match(chunk) || looks_like_lookback_links_chunk(chunk) {
+            continue;
+        }
+
+        if paragraphs.is_empty() && is_source_credit_paragraph(&text) {
+            continue;
+        }
+
+        paragraphs.push(text);
+    }
+    paragraphs
+}
+
+fn is_source_credit_paragraph(text: &str) -> bool {
+    let lower = text.to_lowercase();
+    lower.starts_with("adapted from")
+        || lower.starts_with("from ")
+        || lower.starts_with("recipe from")
+        || lower.starts_with("source:")
+}
+
+fn push_normalized_block_section_header(lines: &mut Vec<String>, title: Option<&str>) {
+    if let Some(title) = title.and_then(normalized_block_section_title) {
+        push_colon_header(lines, &title);
+    }
+}
+
+fn extract_unstructured_servings(chunks: &[&str], first_ingredient_idx: usize) -> Option<String> {
+    for i in (0..first_ingredient_idx).rev() {
+        let chunk = chunks[i].trim();
+        if chunk.is_empty() {
+            continue;
+        }
+        let text = fragment_to_text(chunk).to_lowercase();
+        if text.starts_with("makes ") || text.starts_with("serves ") || text.starts_with("yield") {
+            return Some(text);
+        }
+        // Only look back a couple chunks from ingredients.
+        if first_ingredient_idx - i > 3 {
+            break;
+        }
+    }
+    None
 }
 
 static ENTRY_CONTENT_SELECTOR: LazyLock<Selector> =
@@ -624,192 +700,17 @@ pub(super) fn extract_recipe_from_virtualweberbullet(
     }
 
     let post = document.select(&POST_CONTENT_SELECTOR).next()?;
-
-    #[derive(PartialEq)]
-    enum State {
-        BeforeSummary,
-        InSummary,
-        InDescription,
-        InInstructions,
-    }
-
-    let mut description_paragraphs: Vec<String> = Vec::new();
-    let mut ingredient_lines: Vec<String> = Vec::new();
-    let mut instruction_sections: Vec<(Option<String>, Vec<String>)> = Vec::new();
-    let mut current_section: Option<String> = None;
-    let mut current_section_paras: Vec<String> = Vec::new();
-    let mut state = State::BeforeSummary;
-    // A `<p><strong>X</strong></p>` followed by `<ul>` is the site's ingredient
-    // list pattern; `pending_strong_text` holds X until we see the next element
-    // and decide whether it's an ingredient header or a bold note paragraph.
-    let mut pending_strong_text: Option<String> = None;
-
-    // Restore a pending strong-only paragraph as plain prose. Used whenever the
-    // next element is something other than the `<ul>` that would consume it as
-    // an ingredient header — e.g. a bold "Note:" paragraph mid-instructions.
-    macro_rules! flush_pending_strong {
-        () => {
-            if let Some(text) = pending_strong_text.take() {
-                match state {
-                    State::BeforeSummary | State::InSummary | State::InDescription => {
-                        description_paragraphs.push(text);
-                    }
-                    State::InInstructions => {
-                        current_section_paras.push(text);
-                    }
-                }
-            }
-        };
-    }
-
-    for child in post.children() {
-        let el = match ElementRef::wrap(child) {
-            Some(e) => e,
-            None => continue,
-        };
-        let tag = el.value().name();
-        match tag {
-            "h2" => {
-                flush_pending_strong!();
-                let raw: String = el.text().collect();
-                let h_text = decode_html_entities(raw.trim());
-                let lower = h_text.to_lowercase();
-
-                // Stop at post-recipe sections that follow the actual cooking
-                // instructions: footer link blocks, author bios, "learn more"
-                // pointers, and bonus interview/video content.
-                if lower.contains("links on tvwb")
-                    || lower.starts_with("about ")
-                    || lower.starts_with("learn more")
-                    || lower.contains("interview")
-                {
-                    break;
-                }
-
-                if h_text.eq_ignore_ascii_case("Summary") {
-                    state = State::InSummary;
-                    continue;
-                }
-
-                if !current_section_paras.is_empty() {
-                    instruction_sections.push((
-                        current_section.take(),
-                        std::mem::take(&mut current_section_paras),
-                    ));
-                }
-                current_section = Some(h_text);
-                state = State::InInstructions;
-            }
-            "ul" => {
-                if state == State::InSummary {
-                    flush_pending_strong!();
-                    state = State::InDescription;
-                    continue;
-                }
-                if let Some(header) = pending_strong_text.take() {
-                    let mut header_emitted = false;
-                    for li in el.select(&LI_SELECTOR) {
-                        let raw_li = collect_text_skipping_struck(li);
-                        let Some(text) = sanitize_extracted_ingredient(&raw_li) else {
-                            continue;
-                        };
-                        if !header_emitted {
-                            ingredient_lines.push(format!("{}:", header));
-                            header_emitted = true;
-                        }
-                        ingredient_lines.push(text);
-                    }
-                } else if state == State::InInstructions {
-                    for li in el.select(&LI_SELECTOR) {
-                        let raw_li: String = li.text().collect();
-                        let text = decode_html_entities(raw_li.trim());
-                        if !text.is_empty() {
-                            current_section_paras.push(text);
-                        }
-                    }
-                }
-            }
-            "p" => {
-                let inner = el.inner_html();
-                let text = fragment_to_text(&inner);
-                if text.is_empty() {
-                    flush_pending_strong!();
-                    continue;
-                }
-
-                // Normalize like `text` above so the strong-only-paragraph
-                // equality check isn't broken by &nbsp; or doubled spaces.
-                let strong_text = el.select(&STRONG_SELECTOR).next().map(|s| {
-                    let raw: String = s.text().collect();
-                    fragment_to_text(&raw)
-                });
-                if let Some(stext) = strong_text.as_ref() {
-                    if !stext.is_empty() && stext == &text {
-                        // A new strong-only paragraph supersedes the previous
-                        // candidate; flush the old one as prose first.
-                        flush_pending_strong!();
-                        pending_strong_text = Some(stext.clone());
-                        continue;
-                    }
-                }
-                flush_pending_strong!();
-
-                let lower = text.to_lowercase();
-                if lower.starts_with("learn more later")
-                    || lower.starts_with("notice:")
-                    || lower == "back to cooking topics"
-                    || lower == "."
-                    || lower.contains("adsbygoogle")
-                {
-                    continue;
-                }
-
-                match state {
-                    State::BeforeSummary | State::InSummary | State::InDescription => {
-                        description_paragraphs.push(text);
-                        state = State::InDescription;
-                    }
-                    State::InInstructions => {
-                        current_section_paras.push(text);
-                    }
-                }
-            }
-            _ => {
-                flush_pending_strong!();
-            }
-        }
-    }
-    flush_pending_strong!();
-
-    if !current_section_paras.is_empty() {
-        instruction_sections.push((current_section, current_section_paras));
-    }
-
-    if ingredient_lines.is_empty() || instruction_sections.is_empty() {
-        return None;
-    }
-
-    let mut instructions_out: Vec<String> = Vec::new();
-    for (section, paras) in instruction_sections {
-        if paras.is_empty() {
-            continue;
-        }
-        if let Some(s) = section {
-            instructions_out.push(format!("{}:", s));
-        }
-        for p in paras {
-            instructions_out.push(p);
-        }
-    }
+    let content = collect_virtualweberbullet_content(post)?;
+    let instructions_out = flatten_recipe_text_sections(content.instruction_sections);
 
     if instructions_out.is_empty() {
         return None;
     }
 
-    let description = if description_paragraphs.is_empty() {
+    let description = if content.description_paragraphs.is_empty() {
         None
     } else {
-        Some(description_paragraphs.join("\n\n"))
+        Some(content.description_paragraphs.join("\n\n"))
     };
 
     let mut image_urls: Vec<String> = extract_og_image_fast(html).into_iter().collect();
@@ -822,7 +723,7 @@ pub(super) fn extract_recipe_from_virtualweberbullet(
     Some(RawRecipe {
         title,
         description,
-        ingredients: ingredient_lines.join("\n"),
+        ingredients: content.ingredient_lines.join("\n"),
         instructions: instructions_out.join("\n\n"),
         image_urls,
         source_url: Some(source_url.to_string()),
@@ -838,6 +739,230 @@ pub(super) fn extract_recipe_from_virtualweberbullet(
         categories: None,
         footnotes: None,
     })
+}
+
+#[derive(PartialEq)]
+enum VirtualWeberbulletState {
+    BeforeSummary,
+    InSummary,
+    InDescription,
+    InInstructions,
+}
+
+struct VirtualWeberbulletContent {
+    description_paragraphs: Vec<String>,
+    ingredient_lines: Vec<String>,
+    instruction_sections: Vec<RecipeTextSection>,
+}
+
+struct VirtualWeberbulletBuilder {
+    description_paragraphs: Vec<String>,
+    ingredient_lines: Vec<String>,
+    instruction_sections: Vec<RecipeTextSection>,
+    current_section: Option<String>,
+    current_section_paras: Vec<String>,
+    state: VirtualWeberbulletState,
+    pending_strong_text: Option<String>,
+}
+
+impl VirtualWeberbulletBuilder {
+    fn new() -> Self {
+        Self {
+            description_paragraphs: Vec::new(),
+            ingredient_lines: Vec::new(),
+            instruction_sections: Vec::new(),
+            current_section: None,
+            current_section_paras: Vec::new(),
+            state: VirtualWeberbulletState::BeforeSummary,
+            pending_strong_text: None,
+        }
+    }
+
+    fn finish(mut self) -> Option<VirtualWeberbulletContent> {
+        self.flush_pending_strong();
+        self.finish_current_section();
+        if self.ingredient_lines.is_empty() || self.instruction_sections.is_empty() {
+            return None;
+        }
+        Some(VirtualWeberbulletContent {
+            description_paragraphs: self.description_paragraphs,
+            ingredient_lines: self.ingredient_lines,
+            instruction_sections: self.instruction_sections,
+        })
+    }
+
+    fn handle_element(&mut self, el: ElementRef<'_>) -> bool {
+        match el.value().name() {
+            "h2" => self.handle_h2(el),
+            "ul" => {
+                self.handle_ul(el);
+                true
+            }
+            "p" => {
+                self.handle_paragraph(el);
+                true
+            }
+            _ => {
+                self.flush_pending_strong();
+                true
+            }
+        }
+    }
+
+    fn handle_h2(&mut self, el: ElementRef<'_>) -> bool {
+        self.flush_pending_strong();
+        let raw: String = el.text().collect();
+        let h_text = decode_html_entities(raw.trim());
+
+        if is_virtualweberbullet_footer_heading(&h_text) {
+            return false;
+        }
+
+        if h_text.eq_ignore_ascii_case("Summary") {
+            self.state = VirtualWeberbulletState::InSummary;
+            return true;
+        }
+
+        self.finish_current_section();
+        self.current_section = Some(h_text);
+        self.state = VirtualWeberbulletState::InInstructions;
+        true
+    }
+
+    fn handle_ul(&mut self, el: ElementRef<'_>) {
+        if self.state == VirtualWeberbulletState::InSummary {
+            self.flush_pending_strong();
+            self.state = VirtualWeberbulletState::InDescription;
+            return;
+        }
+        if let Some(header) = self.pending_strong_text.take() {
+            append_virtualweberbullet_ingredient_list(el, &header, &mut self.ingredient_lines);
+        } else if self.state == VirtualWeberbulletState::InInstructions {
+            append_virtualweberbullet_instruction_list(el, &mut self.current_section_paras);
+        }
+    }
+
+    fn handle_paragraph(&mut self, el: ElementRef<'_>) {
+        let inner = el.inner_html();
+        let text = fragment_to_text(&inner);
+        if text.is_empty() {
+            self.flush_pending_strong();
+            return;
+        }
+
+        if let Some(strong_text) = virtualweberbullet_strong_only_text(el, &text) {
+            self.flush_pending_strong();
+            self.pending_strong_text = Some(strong_text);
+            return;
+        }
+        self.flush_pending_strong();
+
+        if is_ignored_virtualweberbullet_paragraph(&text) {
+            return;
+        }
+
+        self.push_paragraph(text);
+    }
+
+    fn flush_pending_strong(&mut self) {
+        if let Some(text) = self.pending_strong_text.take() {
+            self.push_paragraph(text);
+        }
+    }
+
+    fn push_paragraph(&mut self, text: String) {
+        match self.state {
+            VirtualWeberbulletState::BeforeSummary
+            | VirtualWeberbulletState::InSummary
+            | VirtualWeberbulletState::InDescription => {
+                self.description_paragraphs.push(text);
+                self.state = VirtualWeberbulletState::InDescription;
+            }
+            VirtualWeberbulletState::InInstructions => {
+                self.current_section_paras.push(text);
+            }
+        }
+    }
+
+    fn finish_current_section(&mut self) {
+        if !self.current_section_paras.is_empty() {
+            self.instruction_sections.push(RecipeTextSection {
+                title: self.current_section.take(),
+                paragraphs: std::mem::take(&mut self.current_section_paras),
+            });
+        }
+    }
+}
+
+fn collect_virtualweberbullet_content(post: ElementRef<'_>) -> Option<VirtualWeberbulletContent> {
+    let mut builder = VirtualWeberbulletBuilder::new();
+    for child in post.children() {
+        let Some(el) = ElementRef::wrap(child) else {
+            continue;
+        };
+        if !builder.handle_element(el) {
+            break;
+        }
+    }
+    builder.finish()
+}
+
+fn is_virtualweberbullet_footer_heading(text: &str) -> bool {
+    let lower = text.to_lowercase();
+    lower.contains("links on tvwb")
+        || lower.starts_with("about ")
+        || lower.starts_with("learn more")
+        || lower.contains("interview")
+}
+
+fn append_virtualweberbullet_ingredient_list(
+    el: ElementRef<'_>,
+    header: &str,
+    ingredient_lines: &mut Vec<String>,
+) {
+    let mut header_emitted = false;
+    for li in el.select(&LI_SELECTOR) {
+        let raw_li = collect_text_skipping_struck(li);
+        let Some(text) = sanitize_extracted_ingredient(&raw_li) else {
+            continue;
+        };
+        if !header_emitted {
+            push_colon_header(ingredient_lines, header);
+            header_emitted = true;
+        }
+        ingredient_lines.push(text);
+    }
+}
+
+fn append_virtualweberbullet_instruction_list(el: ElementRef<'_>, paragraphs: &mut Vec<String>) {
+    for li in el.select(&LI_SELECTOR) {
+        let raw_li: String = li.text().collect();
+        let text = decode_html_entities(raw_li.trim());
+        if !text.is_empty() {
+            paragraphs.push(text);
+        }
+    }
+}
+
+fn virtualweberbullet_strong_only_text(el: ElementRef<'_>, paragraph_text: &str) -> Option<String> {
+    let strong_text = el.select(&STRONG_SELECTOR).next().map(|s| {
+        let raw: String = s.text().collect();
+        fragment_to_text(&raw)
+    })?;
+    if !strong_text.is_empty() && strong_text == paragraph_text {
+        Some(strong_text)
+    } else {
+        None
+    }
+}
+
+fn is_ignored_virtualweberbullet_paragraph(text: &str) -> bool {
+    let lower = text.to_lowercase();
+    lower.starts_with("learn more later")
+        || lower.starts_with("notice:")
+        || lower == "back to cooking topics"
+        || lower == "."
+        || lower.contains("adsbygoogle")
 }
 
 /// Regex to detect ingredient-like quantity patterns at the start of a line.
